@@ -1,9 +1,8 @@
 ---
 title: "CDCP, course-level, and the CIP-count rule"
-date: 2026-07-28
+created: 2026-07-28
 kb-status: published
-type: reference
-tags: [cip, cdcp, noncredit, coci, apportionment, credit-type, cip-count-rule]
+tags: [reference, cip, cdcp, noncredit, coci, apportionment, credit-type, cip-count-rule]
 artifacts:
   - kb/_build_cip_fitcheck.py
   - cip_crosswalk.js

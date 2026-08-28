@@ -1,8 +1,7 @@
 ---
 title: "Confirmed merges via a decision row — never infer, never block the clean set"
-date: 2026-07-08
+created: 2026-07-08
 kb-status: published
-type: methodology
 tags: [kb-notes, methodology, curation, rename, merge, supabase]
 artifacts:
   - kb/_cred_rename_dryrun.py

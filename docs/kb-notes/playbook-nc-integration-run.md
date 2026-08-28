@@ -1,11 +1,10 @@
 ---
 title: "Playbook — running an NC integration (notes and artifacts → the curated register)"
-type: playbook
 kb-status: published
 created: 2026-08-06
 updated: 2026-08-06
 session: 123 (SkyLoop)
-tags: [noncredit, learning-partners, curation, refresh, artifacts, integration, provenance]
+tags: [playbook, noncredit, learning-partners, curation, refresh, artifacts, integration, provenance]
 related:
   - "[[docs/kb-notes/methodology-a-governance-artifact-must-measure-itself]]"
   - "[[docs/kb-notes/methodology-provenance-is-a-field]]"

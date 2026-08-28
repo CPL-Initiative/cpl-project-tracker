@@ -1,9 +1,8 @@
 ---
 title: "ADR — Judgment goes in curatable tables; mechanism stays in code"
-date: 2026-08-14
+created: 2026-08-14
 kb-status: published
-kb-type: adr
-tags: [governance, architecture, curation, sierra, cobi, decision-rights]
+tags: [adr, governance, architecture, curation, sierra, cobi, decision-rights]
 artifacts:
   - chatbox/supabase/functions/cpl-chat/index.ts (the ~10 built-in rules this is about)
   - cpl_memory rows judgment-in-tables-mechanism-in-code, sierra-rules-stay-separate-from-cpl-memory

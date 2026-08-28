@@ -1,9 +1,8 @@
 ---
 title: College-homonym subject codes — detect, scope, retract
-date: 2026-06-11
+created: 2026-06-11
 kb-status: published
-type: methodology
-tags: [kb, discipline-inference, subject-codes, data-quality, ccr, lexicon]
+tags: [methodology, kb, discipline-inference, subject-codes, data-quality, ccr, lexicon]
 artifacts:
   - kb/_audit_subject_map.py (the detector + receipt kb/subject_map_audit.json)
   - kb/_infer_disciplines.py (scoped entries + retraction propagation)

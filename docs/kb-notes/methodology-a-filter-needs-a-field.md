@@ -1,7 +1,6 @@
 ---
 title: A filter needs a field — prose is not a facet
-date: 2026-08-18
-type: methodology
+created: 2026-08-18
 kb-status: published
 tags: [methodology, data-model, filters, search, provenance, gr]
 obsidian-folder: cpl-project-tracker

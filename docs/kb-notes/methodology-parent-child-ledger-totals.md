@@ -1,8 +1,7 @@
 ---
 title: In a parent/child ledger, totals sum PARENT rows only
-date: 2026-07-30
+created: 2026-07-30
 kb-status: published
-type: methodology
 tags: [methodology, ledger, budget, data-modelling, double-counting, invariants]
 artifacts:
   - budget_ledger.js (rowTotal / totalOf — the rendering rule)

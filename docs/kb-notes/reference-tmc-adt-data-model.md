@@ -1,8 +1,7 @@
 ---
 title: "Reference — TMC / ADT data model & the C-ID auto-match"
 kb-status: published
-kb-type: reference
-date: 2026-06-16
+created: 2026-06-16
 tags: [reference, tmc, adt, c-id, coci, articulation, transfer]
 related:
   - docs/tmc_builder_lessons.md

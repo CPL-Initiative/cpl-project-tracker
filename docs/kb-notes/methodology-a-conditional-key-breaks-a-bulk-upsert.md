@@ -2,9 +2,8 @@
 title: A conditional key breaks a bulk upsert, and it fails positionally
 created: 2026-08-13
 updated: 2026-08-13
-type: methodology
 kb-status: published
-tags: [postgrest, supabase, sync, data-loading, pitfall, silent-failure]
+tags: [methodology, postgrest, supabase, sync, data-loading, pitfall, silent-failure]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"

@@ -1,11 +1,10 @@
 ---
 title: "Methodology — a governance artifact must measure itself, and render what it lacks"
-type: methodology
 kb-status: published
 created: 2026-08-05
 updated: 2026-08-05
 session: 120 (SkyMail)
-tags: [governance, decision-rights, instruments, honesty, accountability]
+tags: [methodology, governance, decision-rights, instruments, honesty, accountability]
 related:
   - "[[docs/kb-notes/methodology-register-is-the-spine-narrative-cites-it]]"
   - "[[docs/kb-notes/methodology-dormant-asset-worklist]]"

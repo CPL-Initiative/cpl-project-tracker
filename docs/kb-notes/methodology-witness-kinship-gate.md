@@ -1,8 +1,7 @@
 ---
 title: "Witness-kinship gate: historical receipts need a present-tense validity check"
-date: 2026-06-11
+created: 2026-06-11
 kb-status: published
-type: methodology
 tags: [methodology, evidence, receipts, re-key, merge-rules, ccr, promotions, data-integrity]
 artifacts:
   - excel_to_dashboard.py (_kin_toks/_kin_jac/_kin_slug + the gated _row_official)

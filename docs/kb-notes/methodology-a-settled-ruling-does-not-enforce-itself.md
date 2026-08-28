@@ -2,9 +2,8 @@
 title: A settled ruling does not enforce itself — the consumer has to change
 created: 2026-08-13
 updated: 2026-08-13
-type: methodology
 kb-status: published
-tags: [memory, governance, data-quality, process, cpl-memory, pitfall]
+tags: [methodology, memory, governance, data-quality, process, cpl-memory, pitfall]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"

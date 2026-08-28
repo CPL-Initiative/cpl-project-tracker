@@ -1,8 +1,7 @@
 ---
 title: CPL Chatbox → Dashboard integration + cpl-knowledge-base re-point (Scope)
-date: 2026-06-01
+created: 2026-06-01
 kb-status: published
-kb-type: playbook
 tags: [chatbox, rag, supabase-edge-function, cpl-knowledge-base, student-portal, scope]
 related:
   - CLAUDE.md §8 (Supabase) + §3 (Cloudflare Worker proxy) + §7b (tab layout)

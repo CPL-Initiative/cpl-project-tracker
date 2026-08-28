@@ -3,7 +3,6 @@ title: Retire a mode toggle by making both modes coexist
 created: 2026-07-30
 updated: 2026-07-30
 kb-status: published
-kb-type: methodology
 tags: [methodology, ui, data-integrity, dashboard-tab, funding]
 related:
   - "[[docs/cpl_funding_lessons]]"

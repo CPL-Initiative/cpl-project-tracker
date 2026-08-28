@@ -2,9 +2,8 @@
 title: A summary field will be read as the whole record
 created: 2026-08-13
 updated: 2026-08-13
-type: methodology
 kb-status: published
-tags: [data-modelling, retrieval, rag, sierra, publishing, pitfall]
+tags: [methodology, data-modelling, retrieval, rag, sierra, publishing, pitfall]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"

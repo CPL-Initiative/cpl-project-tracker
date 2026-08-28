@@ -1,8 +1,7 @@
 ---
 title: Cross-discipline over-merge re-mint (Scope)
-date: 2026-05-29
+created: 2026-05-29
 kb-status: published
-kb-type: playbook
 tags: [unified-courses, m-id, over-merge, re-mint, rule-7, scope, auditor]
 related:
   - docs/unified_courses_audit_lessons.md (the member_top_divergence rule that found this set)

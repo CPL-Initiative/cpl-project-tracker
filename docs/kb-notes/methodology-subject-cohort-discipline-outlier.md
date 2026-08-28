@@ -1,8 +1,7 @@
 ---
 title: "Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate"
-date: 2026-07-13
+created: 2026-07-13
 kb-status: published
-type: methodology
 tags: [methodology, discipline, auditor, mis-mint, curation, ccr]
 artifacts:
   - kb/_row_audit.py (_classify_subject_discipline_outlier, _build_subject_disc_dist)

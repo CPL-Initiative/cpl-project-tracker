@@ -10,7 +10,7 @@
   },
   "summary": {
     "files": 680,
-    "bytes": 7690758,
+    "bytes": 7689995,
     "over_budget": 5,
     "handoff_max": 203,
     "always_loaded_files": 1,
@@ -40,7 +40,7 @@
       },
       "kb_note": {
         "files": 342,
-        "bytes": 1802373,
+        "bytes": 1801610,
         "over": 0
       },
       "handoff": {
@@ -52,14 +52,13 @@
     "by_rule": {
       "oversized_doc": 5,
       "american_spelling": 174,
-      "kb_note_dialect": 60,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2331,
-      "bytes": 1231667314,
-      "heavy_bytes": 598638632,
-      "heavy_share": 0.486,
+      "files": 2334,
+      "bytes": 1239105871,
+      "heavy_bytes": 598926990,
+      "heavy_share": 0.483,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -570,18 +569,6 @@
       "path": "docs/governance_lessons.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -648,63 +635,6 @@
       },
       "message": "1 British form — generalis→generaliz",
       "path": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/cer-ccr-crossover-integrations.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/cpl-chatbox-integration-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/eacr-consolidation-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/excel-retirement-final-scope.md"
     },
     {
       "rule": "american_spelling",
@@ -792,17 +722,6 @@
       },
       "message": "3 British forms — normalis→normaliz, generalis→generaliz",
       "path": "docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md"
     },
     {
       "rule": "american_spelling",
@@ -952,17 +871,6 @@
       "path": "docs/kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-a-filter-needs-a-field.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1018,17 +926,6 @@
       },
       "message": "3 British forms — behaviour→behavior",
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md"
     },
     {
       "rule": "american_spelling",
@@ -1345,17 +1242,6 @@
       "path": "docs/kb-notes/methodology-a-safe-fallback-is-caller-specific.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1450,17 +1336,6 @@
       "path": "docs/kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-a-summary-field-is-not-the-record.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1552,17 +1427,6 @@
       "path": "docs/kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-achievement-based-funding-cap-and-earn.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1580,17 +1444,6 @@
       },
       "message": "3 British forms — behaviour→behavior, prioritis→prioritiz",
       "path": "docs/kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-alias-map-resolution-semantics.md"
     },
     {
       "rule": "american_spelling",
@@ -1695,17 +1548,6 @@
       "path": "docs/kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-apply-equals-spec-via-shared-allocator.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1766,73 +1608,6 @@
       "path": "docs/kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-college-homonym-subject-codes.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-confirmed-merge-via-decision-row.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-conflicting-source-tabs-use-certified-value.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-dark-to-light-recolor-mapping.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1871,39 +1646,6 @@
       "path": "docs/kb-notes/methodology-falsify-a-claim-when-falsification-is-cheap.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-fanin-alias-lexicon-contamination.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-fix-the-root-not-a-counter-rule.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1917,28 +1659,6 @@
       },
       "message": "1 British form — labelled→labeled",
       "path": "docs/kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-grounded-lexical-cip-confidence.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md"
     },
     {
       "rule": "american_spelling",
@@ -1962,52 +1682,6 @@
       },
       "message": "3 British forms — organis→organiz, judgement→judgment, labelled→labeled",
       "path": "docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-live-curation-concurrency.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-live-vs-manual-hybrid-column.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-map-api-value-signature-probe.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-migrate-the-display-not-just-the-data.md"
     },
     {
       "rule": "american_spelling",
@@ -2082,40 +1756,6 @@
       "path": "docs/kb-notes/methodology-omit-dont-zero-an-absent-measure.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-packaging-dryrun-classification.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-paginate-postgrest-reads.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-parent-child-ledger-totals.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2131,18 +1771,6 @@
       "path": "docs/kb-notes/methodology-parent-child-ledger-totals.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-positional-pdf-column-grids.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2156,17 +1784,6 @@
       },
       "message": "1 British form — labelled→labeled",
       "path": "docs/kb-notes/methodology-promoted-record-ghosts-in-worklists.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-provenance-is-a-field.md"
     },
     {
       "rule": "american_spelling",
@@ -2199,17 +1816,6 @@
       "path": "docs/kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2223,18 +1829,6 @@
       },
       "message": "1 British form — cancelled→canceled",
       "path": "docs/kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-rekey-derived-identity-maps.md"
     },
     {
       "rule": "american_spelling",
@@ -2260,17 +1854,6 @@
       "path": "docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/methodology-route-to-a-determination-they-already-made.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2288,52 +1871,6 @@
       },
       "message": "3 British forms — catalogue→catalog, normalis→normaliz",
       "path": "docs/kb-notes/methodology-search-the-awarding-body-not-just-the-name.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-server-enforced-shared-password-gate.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-subj4-consumer-semantics.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-subject-cohort-discipline-outlier.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md"
     },
     {
       "rule": "american_spelling",
@@ -2385,18 +1922,6 @@
       "path": "docs/kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-title-similarity-merge-guards.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2442,17 +1967,6 @@
       "path": "docs/kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2468,28 +1982,6 @@
       "path": "docs/kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-witness-kinship-gate.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/over-merge-remint-scope.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2503,17 +1995,6 @@
       },
       "message": "1 British form — minimis→minimiz",
       "path": "docs/kb-notes/over-merge-remint-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/phase-2-projects-migration-scope.md"
     },
     {
       "rule": "american_spelling",
@@ -2588,29 +2069,6 @@
       "path": "docs/kb-notes/playbook-diagnose-a-starved-actions-runner.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/playbook-edge-function-502-retired-model.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/playbook-gated-bulk-autocuration.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2626,53 +2084,6 @@
       "path": "docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md"
     },
     {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`)",
-      "path": "docs/kb-notes/playbook-nc-integration-run.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/playbook-resume-long-workflow-across-failures.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-adt-acceptance-rules.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2686,42 +2097,6 @@
       },
       "message": "1 British form — programme→program",
       "path": "docs/kb-notes/reference-batch-uploaded-transcribed-credit.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-ccr-curation-sync-and-live-merge.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-cdcp-and-the-cip-count-rule.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-course-level-convention.md"
     },
     {
       "rule": "american_spelling",
@@ -2741,18 +2116,6 @@
       },
       "message": "3 British forms — recognis→recogniz, labelled→labeled",
       "path": "docs/kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-issuing-agency-authority-sources.md"
     },
     {
       "rule": "american_spelling",
@@ -2787,53 +2150,6 @@
       },
       "message": "1 British form — generalis→generaliz",
       "path": "docs/kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-tmc-adt-data-model.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/reference-tmc-confidence-data-requirements.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/tmc-adt-document-upload-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/tmc-co-review-scope.md"
     },
     {
       "rule": "american_spelling",
@@ -3949,10 +3265,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 14925059,
+        "bytes": 15214457,
         "kind": "dir"
       },
-      "message": "directory totals 14,925,059 B inside the vault"
+      "message": "directory totals 15,214,457 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4129,10 +3445,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694833,
+        "bytes": 8693812,
         "kind": "file"
       },
-      "message": "8,694,833 B single file inside the vault"
+      "message": "8,693,812 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4209,10 +3525,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267512,
+        "bytes": 6267513,
         "kind": "file"
       },
-      "message": "6,267,512 B single file inside the vault"
+      "message": "6,267,513 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4349,10 +3665,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354227,
+        "bytes": 2354207,
         "kind": "file"
       },
-      "message": "2,354,227 B single file inside the vault"
+      "message": "2,354,207 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

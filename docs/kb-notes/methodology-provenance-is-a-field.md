@@ -1,11 +1,10 @@
 ---
 title: "Methodology — provenance is a field, not a footnote (and a two-state detector is wrong about the middle)"
-type: methodology
 kb-status: published
 created: 2026-08-05
 updated: 2026-08-05
 session: 120 (SkyMail)
-tags: [provenance, data-quality, trust, curation, detectors, map]
+tags: [methodology, provenance, data-quality, trust, curation, detectors, map]
 related:
   - "[[docs/kb-notes/methodology-map-api-value-signature-probe]]"
   - "[[docs/kb-notes/methodology-route-to-a-determination-they-already-made]]"

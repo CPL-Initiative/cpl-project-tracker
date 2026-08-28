@@ -1,9 +1,8 @@
 ---
 title: "Playbook: gated bulk auto-curation (dry-run → md5-pinned server-side apply)"
-date: 2026-06-12
+created: 2026-06-12
 kb-status: published
-type: playbook
-tags: [curation, auto-merge, supabase, receipts, apply-equals-spec, kb_curation]
+tags: [playbook, curation, auto-merge, supabase, receipts, apply-equals-spec, kb_curation]
 artifacts:
   - kb/_auto_merge_worklist.py
   - kb/automerge_out/2026-06-12/ (plan.json · report.md · supabase_ops.sql · apply_log.json)
