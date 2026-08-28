@@ -28,18 +28,55 @@ Two things it exposed, both since fixed in #1372:
 - **"It didn't appear to respond at first but then the button disappeared."** The
   publish re-renders, so the only feedback was the button vanishing.
 
-## ⛔ START HERE — what is actually open
+## ⛔ START HERE — #1372 is open, verified locally, and CI HAS NOT RUN
 
-**PR #1372 — curating funding needs a magic-link reviewer, not the team phrase.**
-Sam's ask, built and pushed; **CI had produced no check runs at handoff.** Do not
-read "no checks" as green — re-read `get_check_runs` on the current head, and if
-it is still empty check `actions_list` for the branch, because the branch was
-deleted on #1371's merge and recreated, which makes GitHub attribute six stale
-pre-merge runs to this PR.
+**PR #1372** — curating funding requires a magic-link reviewer, not the team
+phrase. Sam's ask, built, and **NOT merged.**
+
+⛔ **NO WORKFLOW HAS RUN REPO-WIDE SINCE 18:28 UTC.** Not the PR-open event, not
+three separate pushes (`93f9a99`, `88dbabe`, `c44b108`). The newest `js-tests`
+run anywhere in the repo is `29fb6c0` on main at 18:28. The 12 runs GitHub lists
+against #1372 are **stale pre-merge heads**, attributed by branch name because
+the branch was deleted on #1371's merge and recreated.
+
+**Do NOT merge this on an absence of checks.** Verify first:
+1. `get_check_runs` on the CURRENT head.
+2. If still zero, `actions_list` **repo-wide** (not branch-filtered) — if nothing
+   has run anywhere, it is not this PR.
+3. Neither workflow has `workflow_dispatch`, so there is nothing to dispatch.
+   Closing/reopening the PR and empty commits to kick CI are **forbidden**.
+4. Unknowns Sam may need to settle: whether Actions is **disabled or out of
+   quota** on the repo, or whether this was a **GitHub incident**. Both look
+   identical from the API.
+
+**Local verification stands in for CI, and it earned its keep** — see below.
+
+⚠️ **AN HOURLY CHECK-IN IS ARMED (`trig_012ZkroZei3LSSHGqnC5bT5H`) BUT MAY BE
+UNABLE TO ACT.** It was created with a warning that the sessions it fires store
+no MCP connectors, and `mcp__github__*` is the ONLY way to reach GitHub from this
+sandbox (`curl`/`GH_TOKEN` against api.github.com returns "GitHub access is not
+enabled"). **Do not assume #1372 landed itself — check.** If the routine has been
+waking without effect, delete it and drive the PR from your own session.
 
 ⚠️ **`cfp_insert_self` must stay public.** It is the college self-attestation door
 (a VPAA/VPSS/CEO attests participation, field-validated), not a phrase gate. A
 blunt "narrow the auth" kills it and nobody notices until a college tries.
+
+### ⚠️ The local suite caught a regression CI never would have
+
+Narrowing `unlocked()` broke **three** blocks that simulated a reviewer with a
+TEAM PHRASE. All re-pointed at the reviewer session, none deleted — every one
+guards behavior that is still real:
+
+| Block | Was | Now |
+|---|---|---|
+| `cpl_funding_optin` B/F | phrase = "the private, UNLOCKED reviewer view" (its own comment) | reviewer session — 34/34 |
+| `cpl_funding_render` C7 | phrase unlocks; Lock returns to scenario | session; losing the SESSION returns to scenario, banner must NAME the curator |
+| `cpl_funding_render` C7b | promotion via the phrase's `unlockRow` | promotion via **Publish** — the only path left; a regression there is the #1371 bug |
+
+⭐ **COUNT CRASHED SUITES, NOT JUST `FAIL` LINES.** `cpl_funding_render` did not
+fail — it **threw**, and a crash prints no `FAIL` line. `grep -c '^FAIL'` said 7
+and would have read as "only optin is broken". Grep `✗ FAILED` too.
 
 ## What happened, in order — the diagnosis took three attempts
 
@@ -62,7 +99,8 @@ blunt "narrow the auth" kills it and nobody notices until a college tries.
 
 **#1371 — MERGED** (`29fb6c0`), Pages deploy for it succeeded. That is what let
 Sam publish.
-**#1372 — OPEN**, `93f9a99`, the auth narrowing. See START HERE.
+**#1372 — OPEN, head `c44b108`**, the auth narrowing + the handoff + the three
+fixture re-points. See START HERE. **Not merged; CI never ran.**
 
 ## Sam's rulings across this session
 
