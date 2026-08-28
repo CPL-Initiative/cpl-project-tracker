@@ -49,7 +49,7 @@ the match is judgment.
 holds the rulings keyed by a normalized occupation string; the workbook is a
 regenerable artifact and is gitignored. Each run emits `unmapped.json`, which **is
 the curator worklist**. Partner #2 inherits SJCOE's 139 rulings and pays only for
-what's new. This is the single decision that turns a favour into an instrument.
+what's new. This is the single decision that turns a favor into an instrument.
 
 **3. Token-overlap candidate generation, then curate by hand — in that order.**
 Automated matching alone is badly noisy on generic multi-word titles (`Control

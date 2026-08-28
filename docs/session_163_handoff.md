@@ -37,7 +37,7 @@ retired (folded into the other two).
 
 A College filter now returns what a college has **articulated**, not what it
 might. Anyone used to the old counts will see far fewer rows — that is the fix,
-but it is a visible behaviour change and **nobody has driven it in a browser.**
+but it is a visible behavior change and **nobody has driven it in a browser.**
 
 **Ask him directly whether `Adopted` is the right thing to open on.** The other
 two scopes are one click away (`Adopted + likely` · `Adopted + any could-adopt`).

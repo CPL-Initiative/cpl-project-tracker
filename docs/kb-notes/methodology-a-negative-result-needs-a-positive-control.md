@@ -43,7 +43,7 @@ tone it would have used if it were right.
 
 **Before reporting that something is absent, prove in the same run that your
 method finds a thing you know is present.** Not in a previous run, not on a
-different target, not by reasoning about the API's documented behaviour — in
+different target, not by reasoning about the API's documented behavior — in
 this run, over this connection, against a known-good instance.
 
 A control is cheap: one extra request. A false negative is expensive in a way
@@ -65,7 +65,7 @@ summary line said "NONE".
 
 **A response that differs in KIND from the others is a signal about the target,
 not a row in the count.** A 5xx is the server trying and failing; a 4xx is the
-server declining. Summarising them together destroys the only distinction that
+server declining. Summarizing them together destroys the only distinction that
 mattered. Discovery code should collect the odd ones out separately and say so
 loudly, because the anomaly is where the information is.
 

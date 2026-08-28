@@ -93,7 +93,7 @@ to **prerequisite**: daily to-dos off month-old data get caught the first week.
 
 ## ⚠️ Things this session got wrong — do not re-inherit
 
-1. **I shipped two guards that fired on CORRECT behaviour, hours apart.** One printed `STUDENT GRAIN LEAKED` at a
+1. **I shipped two guards that fired on CORRECT behavior, hours apart.** One printed `STUDENT GRAIN LEAKED` at a
    PostgREST timeout; one would have failed Sierra for being right. Read the KB note before writing assertions.
 2. **Numbers: compute, never paste.** Rolling up from the published table exposed that the docs' headline was
    unsourceable. **Show BOTH totals with a suppression chip** (Sam's revision): published **1,051,870 / 63,991**,

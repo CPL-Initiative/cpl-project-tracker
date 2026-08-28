@@ -35,13 +35,13 @@ college **its own allocation**. Same resolver, different job.
 ## The claim
 
 **For a display caller, returning the input unmatched is the safest possible
-behaviour. For a join caller, it is the most dangerous.** The chip renders a
+behavior. For a join caller, it is the most dangerous.** The chip renders a
 slightly long label; the join silently drops the row — and the page renders a
 college as though it has no money.
 
 The fallback did not change. The second caller arrived.
 
-Two consequences worth generalising:
+Two consequences worth generalizing:
 
 1. **A fallback is part of the contract, and the contract is caller-relative.**
    "Never fails" and "never wrong" are different guarantees. A function that
@@ -75,8 +75,8 @@ names against 115 roster rows, counting collisions in **both** directions:
 The last residue is Calbright, a noncredit feeder genuinely absent from the
 115-college credit roster — a real state, not a defect.
 
-The step from 110 to 114 is worth noting on its own: **normalise both sides with
-the same function rather than comparing a normalised value to a raw one.** Five
+The step from 110 to 114 is worth noting on its own: **normalize both sides with
+the same function rather than comparing a normalized value to a raw one.** Five
 of the six original misses were spelling drift *inside the roster* (`Reedley
 College` vs `Reedley`, `MiraCosta` vs `Mira Costa`), and running both sides
 through the resolver dissolved them without a single hand-written alias.
@@ -91,10 +91,10 @@ nothing, hit the safe fallback, returned the input, and Los Angeles Southwest
 College vanished from any join routed through it.
 
 Fixed in `kb/_seed_college_short_names.py` (the generator, never the generated
-artifact) and regenerated; verified collision-free at 146 normalised keys, 0
+artifact) and regenerated; verified collision-free at 146 normalized keys, 0
 conflicts.
 
-> **`f(f(x)) == f(x)` is a cheap and strong test for any normaliser.** It needs
+> **`f(f(x)) == f(x)` is a cheap and strong test for any normalizer.** It needs
 > no fixtures, it runs against the real data, and a fallback that returns the
 > input on failure makes it the *only* test that can tell "resolved" from
 > "gave up".
@@ -103,7 +103,7 @@ conflicts.
 
 - When adopting a fail-soft helper for a **determination** rather than a
   **display**, read its fallback first and ask what it means for your caller.
-- Assert idempotence on any normaliser you join through.
+- Assert idempotence on any normalizer you join through.
 - Count collisions in both directions, and assert **0 orphans** — a lookup table
   row nothing can reach is a silently missing answer.
 - Commit those assertions against the **real** rosters, not fixtures, so drift

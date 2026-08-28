@@ -64,9 +64,9 @@ nothing in the repo writes into it. That difference is what phased the work —
 `sierra/` and `veteran-sprint-map/` move with no decisions attached, while
 `fact-sheet/` needs its data path resolved first.
 
-## The generalisation
+## The generalization
 
-"Self-contained" is a claim about **runtime behaviour**, and static structure is
+"Self-contained" is a claim about **runtime behavior**, and static structure is
 only evidence for it. The same trap recurs wherever a cheap proxy stands in for
 the real property:
 

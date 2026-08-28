@@ -36,7 +36,7 @@ colleges the entire time — the **fourth** documented instance of curated,
 present, nightly-synced data that no consumer ever read, after the statewide
 flag, the `ccc_rec` gate, and the adopter names themselves.
 
-The generalisation is not "check the data exists." It is: **when a rule and an
+The generalization is not "check the data exists." It is: **when a rule and an
 output disagree, ask whether the rule was even satisfiable with what reached the
 prompt, before treating it as a compliance problem.**
 
@@ -48,7 +48,7 @@ silently unfunded) creates a reflex to always fold both sides. But over-folding
 is the mirror error: a fold can merge two genuinely distinct colleges, and it
 hides drift, because a name that changes upstream keeps matching until it
 doesn't. One query settled it: **86 distinct adopter names, 86 raw-exact
-matches, 86 normalised matches, 86 carrying a URL.** Exact-key `.in()` was
+matches, 86 normalized matches, 86 carrying a URL.** Exact-key `.in()` was
 therefore both correct and self-reporting — a drifted name resolves to `null`
 and renders as "no landing page on file", which is the fail-safe the rule
 already mandates.
@@ -95,7 +95,7 @@ rule-length cap asserting 500 after #1182 raised it to 1500; an extraction
 bundle missing `renderAdopters` since #1178. Each had been failing while the
 property it guards was never violated.
 
-Fixes that generalise: **scope an assertion to the function body, not a
+Fixes that generalize: **scope an assertion to the function body, not a
 character window; count call sites, not a literal call spelling; and compare
 duplicated constants to each other rather than to a pinned number** — which is
 what the SQL file's own comment already demanded ("THERE ARE THREE LENGTH LIMITS

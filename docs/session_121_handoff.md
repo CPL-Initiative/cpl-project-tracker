@@ -19,7 +19,7 @@ Session 120 was **SkyMail** (named by Sam mid-session). Claim your own moniker o
 take one Sam offers.
 
 > **Numbering note — read once so it stops propagating.** SkyPartner wrote
-> `session_119_handoff.md` *and* self-labelled `SkyPartner (119)` in
+> `session_119_handoff.md` *and* self-labeled `SkyPartner (119)` in
 > `kb/cpl_todos.json`, which can't both hold under the N-writes-N+1 rule. I took
 > **120** to avoid a collision and wrote this as 121. If Sam says otherwise, he
 > wins. Don't re-derive it.

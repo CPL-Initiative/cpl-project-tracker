@@ -48,7 +48,7 @@ Verified live: `post` → POST Basic Academy · `peace officer` → POST (not
 Correctional Officer) · `police academy certificate` → POST **with no "POST" in
 the ask** · `real estate salesperson` → CA Real Estate Salesperson License ·
 `cpr` → **none**, fallback names *First Aid, CPR & AED [local only]* ·
-`basket weaving` → none → not in catalogue.
+`basket weaving` → none → not in catalog.
 
 ⚠️ **Deploying `cpl-chat` reaches production with no staging tier.** Deploy from
 the runner (`cpl-chat-deploy.yml`), never by hand — `--no-verify-jwt` is pinned
@@ -88,7 +88,7 @@ columns are NOT in that export and never were** (⚠️ my "dropped at load" was
 
 **2. Exhibit-grain student counts are mostly unnameable.** Only **6.1%** of
 220,588 rows. Student grain is **ACE** military ids plus 32,360 `Default *`
-sentinels; Sierra's catalogue is `MAPICI-*`; overlap **624 of 6,280**. Control:
+sentinels; Sierra's catalog is `MAPICI-*`; overlap **624 of 6,280**. Control:
 CPR/AED is **17,904** students locally and **17** through the obvious join.
 
 ## Sam's three calls (decisions)

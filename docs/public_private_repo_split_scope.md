@@ -89,7 +89,7 @@ check must grep for runtime fetches and `../` traversal, not just markup.
 | Full git history and commit narrative | — |
 
 **Not hidden:** the 119 root `.js` Pages serves — the running app. That split is
-favourable: the reasoning and the machinery hide; only the UI stays visible, and
+favorable: the reasoning and the machinery hide; only the UI stays visible, and
 a UI is the cheapest thing to copy.
 
 ## 4. Which half keeps the URL
@@ -176,7 +176,7 @@ Repo visibility itself is a toggle and reverts instantly.
 1. **Should `cpl-knowledge-base` stay CC BY 4.0?** It is the store that most
    directly holds the methodology, and its licence permits remix and adaptation
    *"for any purpose, even commercially"* — the one thing actively inviting what
-   this whole exercise aims to minimise. The curation pipeline is already
+   this whole exercise aims to minimize. The curation pipeline is already
    human-gated, so the control point exists; nobody has been applying this lens
    at it. **This is the highest-leverage question on the page.**
 2. **Is the org on Free or Team?** Phase 3 cannot start on Free.

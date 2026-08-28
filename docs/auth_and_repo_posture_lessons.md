@@ -31,7 +31,7 @@ what**, asked at two layers.
 value.**
 
 `cpl-project-tracker` and `cpl-knowledge-base` are already owned by the
-**CPL-Initiative organisation**, not by Sam's personal account. Only `CPLBrain`
+**CPL-Initiative organization**, not by Sam's personal account. Only `CPLBrain`
 is personal — and it was already private. "Move them out of my personal account"
 was two-thirds done before the session started. The real exposure was that the
 org had **one owner**, two collaborators and **zero teams**, so the dashboard,
@@ -115,7 +115,7 @@ the scope doc.
 ### (d) Next concrete step
 
 Sam's go on the role column — and separately, confirm a second **owner** on the
-GitHub organisation, which the Supabase change does not cover.
+GitHub organization, which the Supabase change does not cover.
 
 ### Decisions Sam made this run
 

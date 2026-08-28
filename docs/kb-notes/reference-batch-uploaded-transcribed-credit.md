@@ -58,7 +58,7 @@ roughly one row per student:
   (Modesto 207, Norco 140) — each student's record built case by case.
 
 The discriminator is the **pair**: rows-per-student *and* exhibit count. Either
-alone misreads a small college with a narrow programme mix.
+alone misreads a small college with a narrow program mix.
 
 ## Consequences for anything published
 

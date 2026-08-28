@@ -95,7 +95,7 @@ Ed. Code **§78093.2(d)(1)**, verbatim — the statutory basis for the allocatio
 1. **Goal-tagged project line items.** `scaling_projects_tech` is one ~$8.96M box.
    Split into named projects (WestEd, Credential Engine, apprenticeship partners,
    CA Credential Registry, MAP), each tagged to the goal it serves. The pool card
-   system already supports custom labelled boxes — **math unchanged if the sum is
+   system already supports custom labeled boxes — **math unchanged if the sum is
    preserved.** Most of the (d)(2) reporting artifact, nearly free.
 2. **A four-goal spine**: goal → what funds it → how it is evidenced → *"no
    measure yet"* where true, with superscript **ᴬᴮᶜᴰ** markers linking back.

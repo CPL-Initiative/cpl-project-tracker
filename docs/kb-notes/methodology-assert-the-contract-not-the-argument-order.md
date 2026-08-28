@@ -45,7 +45,7 @@ The original assertions pinned position and adjacency:
 /\$\{offeringsContext\}\$\{creditContext\}/   // the two must be ADJACENT in the template
 ```
 
-Neither property matters. No behaviour depends on `creditContext` being last, or
+Neither property matters. No behavior depends on `creditContext` being last, or
 on it sitting immediately after `offeringsContext`. Inserting a sixth context
 section between them is a correct, intended change — and it broke both checks.
 

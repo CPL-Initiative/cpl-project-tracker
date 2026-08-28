@@ -1,8 +1,7 @@
 ---
 title: "Fan-in discipline folds must re-point every inference lexicon (or re-derivation resurrects the alias)"
-date: 2026-06-12
+created: 2026-06-12
 kb-status: published
-type: methodology
 tags: [kb-note, methodology, remint, fan-in, discipline-alias, inference, lexicon, kinesiology, m-id]
 artifacts:
   - kb/_alias_canon.py

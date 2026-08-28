@@ -52,7 +52,7 @@ The freehand lane's problem is that *Racial Issues and the Police* and
 not have that problem at the wording level**, because ACE publishes the
 recommendation and MAP stores it.
 
-Measured directly — group every ACE row by `(exhibit_id, units, normalised
+Measured directly — group every ACE row by `(exhibit_id, units, normalized
 topic)` and count how many distinct raw texts each group holds:
 
 | | |

@@ -326,7 +326,7 @@ it's lovely"* + *"would love a pic of the actual Gamble House."*
 
 ### Two root causes
 
-1. **The signature grayscale→colour reveal is a no-op on a B&W image** — it fades
+1. **The signature grayscale→color reveal is a no-op on a B&W image** — it fades
    from B&W to B&W. Seven entries are `mono:true` (the Adams NARA set, Watkins ×2,
    two missions, the Gamble House), and the **`mono` flag was DEAD**: authored in
    the selection file, copied into the manifest, **never read** by `first_light.js`.
@@ -341,7 +341,7 @@ it's lovely"* + *"would love a pic of the actual Gamble House."*
 - **Swapped the Gamble image → the actual house**: Frances Benjamin Johnston's
   *"View to sleeping porch"* (LoC, LCCN00651250, 1917) — same photographer/credit,
   the house's iconic cantilevered sleeping porches; rewrote the blurb's middle
-  sentence + the alt to match. **Alternate on file** (one-line swap if a *colour*
+  sentence + the alt to match. **Alternate on file** (one-line swap if a *color*
   full-house view is preferred): the modern NARA *"Arroyo Seco — Gamble House"*
   (7717021), captioned the "internationally famed icon" of the Craftsman style.
 - **Made `mono` load-bearing**: `.cplfl-overlay.open .cplfl-art img.cplfl-mono
@@ -350,7 +350,7 @@ it's lovely"* + *"would love a pic of the actual Gamble House."*
 - **Build guard** (`build_first_light_manifest.mjs`): an entry whose **alt** reads
   black-and-white but lacks `mono:true` fails the build. Scans the *alt* (a literal
   image description), NOT the blurb — Remington's "near-monochrome palette" nocturne
-  is a colour painting and must not trip it (verified: alt-only ⇒ 0 mismatches over
+  is a color painting and must not trip it (verified: alt-only ⇒ 0 mismatches over
   all 89). Loveliness stays a human call; the guard only enforces the mechanical
   reveal-skip contract.
 - Kept the **Mission San Juan Capistrano** B&W — my "murky" was a blind guess (the
@@ -383,5 +383,5 @@ feature nobody can rediscover is a feature you've lost).
 ### Lesson
 
 A curation **flag nobody reads is a latent bug**, not a safeguard — wire it or
-delete it. And "lovely" is the real bar (not colour-vs-B&W): the fix is a *quality
+delete it. And "lovely" is the real bar (not color-vs-B&W): the fix is a *quality
 gate + a better image*, not a blanket "drop the photos."

@@ -1,9 +1,8 @@
 ---
 title: In a parent/child ledger, totals sum PARENT rows only
-date: 2026-07-30
+created: 2026-07-30
 kb-status: published
-type: methodology
-tags: [methodology, ledger, budget, data-modelling, double-counting, invariants]
+tags: [methodology, ledger, budget, data-modeling, double-counting, invariants]
 artifacts:
   - budget_ledger.js (rowTotal / totalOf — the rendering rule)
   - excel_to_dashboard.py (build_budget_from_supabase — the read-path rule)

@@ -72,7 +72,7 @@ Full story: `docs/cpl_portal_video_lessons.md`.
   mic — or Zoom set to "Original Sound"/music mode (which disables the aggressive
   filtering) — beats any post-processing. Post can de-thin; it can't un-delete the
   lost top octave.
-- **On a voice+music mix, EQ colours the music too.** Prefer to warm the isolated
+- **On a voice+music mix, EQ colors the music too.** Prefer to warm the isolated
   voice stem and remix (see
   `[[docs/kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction]]`),
   rather than EQ the whole bus.

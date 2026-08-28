@@ -170,7 +170,7 @@ is used as a time dimension.
 ## What the loader keeps, and what it drops
 
 `fetch_custom_report.py` decides what we **ask for**; the loader decides what we
-**keep**, and it keeps less. Minimisation happens twice
+**keep**, and it keeps less. Minimization happens twice
 ([`methodology-minimisation-happens-twice`](kb-notes/methodology-minimisation-happens-twice.md)).
 
 **Stored from the student view (18 columns):** the 16 `map_student_credit`
@@ -207,7 +207,7 @@ this one.
 Zero is the source's own meaning, not an invention: `sum_applied_credits` is
 blank on **exactly** the `Not Applicable` rows and no other disposition, which is
 caveat 4 of `map_dataset_sql_for_malone` — *"all four credit fields are 0 on
-unapproved rows. That is correct behaviour, not missing data."*
+unapproved rows. That is correct behavior, not missing data."*
 
 Staging carries the live NOT NULL constraints, so a future mismatch fails at
 **load**, with a clear message, instead of at promotion.

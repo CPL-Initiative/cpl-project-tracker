@@ -19,7 +19,7 @@ artifacts:
 ## The finding
 
 When you build a search field by concatenating every alias a record has, and
-then rank with a **length-normalised** similarity function, **the records with
+then rank with a **length-normalized** similarity function, **the records with
 the most aliases score worst**. The better curated the record, the harder it is
 to find. This is exactly backwards, and nothing about the code looks wrong.
 
@@ -64,9 +64,9 @@ order by (select max(similarity(lower(v), needle))
 intended semantics: a record matches as well as its *best* alias matches, not as
 well as its aliases match *on average*.
 
-## Generalises to
+## Generalizes to
 
-Any alias/synonym/variant list scored by a normalised metric — product names,
+Any alias/synonym/variant list scored by a normalized metric — product names,
 person names, place names, org names, tag sets. The same shape appears with
 cosine similarity over a single concatenated embedding: one vector for a record
 with twenty aliases is a blurrier vector, and the record retrieves worse than a

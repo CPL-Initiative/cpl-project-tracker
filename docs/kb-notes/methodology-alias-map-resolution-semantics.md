@@ -1,8 +1,7 @@
 ---
 title: "Alias maps are permutations, not graphs: resolution semantics for stacked re-keys"
-date: 2026-06-11
+created: 2026-06-11
 kb-status: published
-type: methodology
 tags: [methodology, alias-map, re-key, remint, slot-reuse, data-integrity, promotions, ccr]
 artifacts:
   - kb/_rekey_promotions.py (the corrected resolver + V1–V5 gates)

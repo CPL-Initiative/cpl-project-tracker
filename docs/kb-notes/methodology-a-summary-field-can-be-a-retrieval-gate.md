@@ -2,7 +2,7 @@
 title: A derived summary field used as a filter is a membership test in disguise
 created: 2026-08-13
 updated: 2026-08-13
-tags: [methodology, retrieval, data-modelling, sierra, silent-failure, pitfall]
+tags: [methodology, retrieval, data-modeling, sierra, silent-failure, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:

@@ -1,8 +1,7 @@
 ---
 title: "Methodology — a hybrid live-vs-manual value column (single source by construction)"
 kb-status: published
-kb-type: methodology
-date: 2026-06-30
+created: 2026-06-30
 session: 85 (SkyLight)
 tags: [methodology, dashboard, kpi, supabase, generator, drift]
 related:

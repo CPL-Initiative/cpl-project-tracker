@@ -1,6 +1,5 @@
 ---
 title: Playbook — Pre-stage optional auth before an external API enforces it
-type: playbook
 kb-status: published
 created: 2026-06-01
 updated: 2026-06-01

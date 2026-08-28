@@ -1,6 +1,6 @@
 ---
 title: Methodology — Server-enforced shared-password edit gate (no per-user accounts)
-date: 2026-06-29
+created: 2026-06-29
 updated: 2026-06-29 (empty-Bearer 401 pitfall · validate-via-gate-RPC · reviewer-manage admin)
 tags: [methodology, auth, supabase, rls, security, raci, session-83]
 kb-status: published

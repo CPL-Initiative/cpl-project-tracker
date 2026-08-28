@@ -111,7 +111,7 @@ check("peer median is BELOW the line total",
       "the whole reason the brown number is not rec_units_total")
 ```
 
-## Generalisation
+## Generalization
 
 Whenever a view computes *"headroom"*, *"potential"*, *"opportunity"* or *"gap"*, ask
 which of two quantities it is:

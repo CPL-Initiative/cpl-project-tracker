@@ -1,9 +1,8 @@
 ---
 title: "Resume a long multi-agent workflow across task death, model swaps, and spend caps"
-date: 2026-07-12
+created: 2026-07-12
 kb-status: published
-type: playbook
-tags: [workflow, orchestration, resume, spend-cap, ccr, trail-crew, reliability]
+tags: [playbook, workflow, orchestration, resume, spend-cap, ccr, trail-crew, reliability]
 artifacts:
   - kb/_ccr_trail.py
   - kb/ccr_out/2026-07-11/

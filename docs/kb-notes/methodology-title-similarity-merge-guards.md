@@ -1,10 +1,9 @@
 ---
 title: Title-similarity merge candidates — the guard suite and the licensure-spec lesson
-date: 2026-06-12
+created: 2026-06-12
 updated: 2026-06-12 (Session 46 part 2 — the guards now also gate the twin auto-merge tier)
 kb-status: published
-type: methodology
-tags: [kb, consolidation, worklist, m-id, title-similarity, guards, ccr, licensure, twin-merge]
+tags: [methodology, kb, consolidation, worklist, m-id, title-similarity, guards, ccr, licensure, twin-merge]
 artifacts:
   - kb/_consolidation_guards.py (the shared guard suite)
   - kb/_title_consolidation_dryrun.py (the title-evidence lane; receipt kb/title_consolidation_out/candidates.json)

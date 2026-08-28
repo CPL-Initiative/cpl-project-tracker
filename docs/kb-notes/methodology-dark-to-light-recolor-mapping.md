@@ -1,9 +1,8 @@
 ---
 title: "Methodology: dark→light recolor mapping (COBI tokens)"
-date: 2026-06-30
+created: 2026-06-30
 updated: 2026-06-30
 kb-status: published
-type: methodology
 tags: [methodology, ui, theme, color, contrast, cobi, accessibility]
 obsidian-folder: cpl-project-tracker/kb-notes
 related:

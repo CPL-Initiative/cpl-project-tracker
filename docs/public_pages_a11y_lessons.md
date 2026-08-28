@@ -118,9 +118,9 @@ the other half — **when a new check PASSES, suspect it too.**
 ⭐ **And one that could not fail at all — see
 [`methodology-the-measuring-browser-can-hide-the-defect`](kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md).**
 Chromium 127+ makes an **overflowing** scroll container focusable with **no
-tabindex**, so both behavioural checks for Sierra's log passed against the
-unfixed page. The attribute is the check; the behaviour is a regression guard,
-and it is labelled as one in the code.
+tabindex**, so both behavioral checks for Sierra's log passed against the
+unfixed page. The attribute is the check; the behavior is a regression guard,
+and it is labeled as one in the code.
 
 ### The target-size exemption is guarded, not silent
 
@@ -142,6 +142,6 @@ because you started showing something is a false finding.
   from `cpl-initiative.github.io`; everything here is headless Chromium.
 - Map markers stay **7px at 390px**. Enlarging the hit radius trades against
   neighbour overlap in dense metros and needs a human eye — not changed.
-- The map's stacked phone layout (52/48) is a judgement call Sam should see.
+- The map's stacked phone layout (52/48) is a judgment call Sam should see.
 - Sierra's `--sierra-faint` is now nearly `--sierra-muted`; if that reads flat,
   the answer is a larger disclaimer, not a lighter one.

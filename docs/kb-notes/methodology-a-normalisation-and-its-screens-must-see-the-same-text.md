@@ -1,8 +1,8 @@
 ---
-title: A normalisation and the screens that judge it must see the same text
+title: A normalization and the screens that judge it must see the same text
 created: 2026-08-13
 kb-status: published
-tags: [methodology, matching, identity, curation, normalisation, silent-failure, pitfall]
+tags: [methodology, matching, identity, curation, normalization, silent-failure, pitfall]
 artifacts:
   - kb/_build_cr_reference.py
   - tests/cr_reference.test.js
@@ -12,15 +12,15 @@ related:
   - "[[docs/common_cr_reference_lessons]]"
 ---
 
-# A normalisation and the screens that judge it must see the same text
+# A normalization and the screens that judge it must see the same text
 
 ## The rule
 
-When a matcher normalises text to form a key, every **safety screen** that then
-decides whether the match may proceed has to run on that **same normalised
+When a matcher normalizes text to form a key, every **safety screen** that then
+decides whether the match may proceed has to run on that **same normalized
 text** — not on the raw input, and not on its own private re-derivation.
 
-Two derivations of one normalisation will drift. When they drift, the screen
+Two derivations of one normalization will drift. When they drift, the screen
 stops guarding the thing it was written to guard and starts blocking things it
 was never meant to touch, and it does both silently.
 
@@ -55,7 +55,7 @@ being merged; there was nothing for a screen to act on.
 The instinct on discovering drift is to bring the copies into line. That is the
 wrong repair: it leaves N derivations and buys time until the next edit.
 
-- **One derivation.** The normaliser is a named function; the key and the
+- **One derivation.** The normalizer is a named function; the key and the
   screens both call it.
 - **Emit what you computed.** The builder writes each member's screen profile
   into the artifact, so a consumer or a test asserts on **what the builder
@@ -79,7 +79,7 @@ as a finding.
 
 ## Where else this applies
 
-- **Both sides of a join** — the same family; a join key normalised on one side
+- **Both sides of a join** — the same family; a join key normalized on one side
   only silently drops rows
   ([[docs/kb-notes/methodology-normalise-both-sides-of-a-join]], where five
   colleges lost their implementation funding).
@@ -91,8 +91,30 @@ as a finding.
 - **A validator and the writer it validates** — a `maxlength` enforced at two
   layers with different limits truncates at whichever is smaller, invisibly.
 
-## The generalisation
+## The generalization
 
 *Any* predicate that gates a transformation must consume the transformation's
 own output. If it re-derives its input, the gate and the transformation are two
 programs that merely agree today.
+
+## A fourth instance — a lint and its fixer (2026-08-28, Session 204)
+
+The `american_spelling` rule scanned a document's **raw text**; the sweeper that
+applies it scanned **prose only**, masking code spans, markdown link targets,
+wikilinks, `*.md` filenames and quoted spans (an imported COCI title, a MAP
+field, or a person's own words are not ours to correct).
+
+Two definitions of "the text to judge", so after a full sweep the lint still
+reported **25 findings the fixer structurally refuses to touch** — a British
+form inside a filename, inside a code span, inside Sam quoted verbatim. Nothing
+was broken; the rule was simply asking for work nobody could do, which is how a
+guard gets muted (`methodology-a-guard-that-fails-on-truth-gets-muted`).
+
+Resolved by moving `prose_only()` into the auditor and having **both** read it —
+findings 25 → 1, and the one left belongs to a concurrently-owned file. A test
+asserts the fixer imports the mask and defines no second copy, because the fork
+is easy to reintroduce and costs nothing until it costs a muted lint.
+
+⭐ **The tell is a checker and a fixer disagreeing about the size of the
+backlog.** If the thing that reports the work and the thing that does the work
+return different counts, they are reading different text.

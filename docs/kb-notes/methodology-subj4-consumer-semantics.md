@@ -1,9 +1,8 @@
 ---
 title: SUBJ4-consumer semantics — umbrella allowances and alias families must be mirrored everywhere
-date: 2026-06-12
+created: 2026-06-12
 kb-status: published
-type: methodology
-tags: [kb, subj4, umbrella, alias, convergence, csr, ccr, re-mint, diagnostics]
+tags: [methodology, kb, subj4, umbrella, alias, convergence, csr, ccr, re-mint, diagnostics]
 artifacts:
   - kb/_row_audit.py (UMBRELLA_DISCIPLINES — the original exemption)
   - canonical_subj4.js (UMBRELLA_EXTRA_SUBJ4 + aliasFamilyOf — the sweep + live input)

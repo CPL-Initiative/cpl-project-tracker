@@ -1,8 +1,7 @@
 ---
 title: Recompute a source's own summary statistics from its line items
-date: 2026-07-30
+created: 2026-07-30
 kb-status: published
-type: methodology
 tags: [methodology, reconciliation, data-quality, funding, audit]
 artifacts:
   - cpl_funding_data.js (pool block + provenance header)

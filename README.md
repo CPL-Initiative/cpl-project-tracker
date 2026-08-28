@@ -355,6 +355,8 @@ data refresh are captured atomically.
 │   ├── remint_out/                    ← re-mint dry-run artifacts + alias_map.json
 │   └── row_audit/                     ← per-day Trust Card artifacts (latest.json + <date>.md)
 ├── docs/                              ← decision docs + lessons-learned (synced to Obsidian)
+│   ├── INDEX.md                       ← landing page (generated block; kb/_build_docs_index.py)
+│   ├── catalog/                       ← GENERATED per-lane doc catalogs — do not hand-edit
 │   ├── coursecontrolnumber_remint.md  ← the 2026-05-22 M-ID re-mint playbook
 │   ├── exhibit_unification_vision.md  ← credential-layer canonicalization design
 │   └── reference/                     ← C-ID / CCN / TMC reference PDFs from ASCCC

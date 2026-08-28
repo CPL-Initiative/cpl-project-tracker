@@ -1,8 +1,7 @@
 ---
 title: "Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)"
-date: 2026-07-17
+created: 2026-07-17
 kb-status: published
-type: methodology
 tags: [methodology, cip, matching, idf, confidence, finder-not-decider, phase-0]
 related:
   - "[[cip_crosswalk_lessons]]"

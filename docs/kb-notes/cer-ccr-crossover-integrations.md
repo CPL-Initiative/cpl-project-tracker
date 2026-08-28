@@ -1,9 +1,8 @@
 ---
 title: "CER ⇄ CCR crossover — course-identity integrations for exhibit-title curation"
-date: 2026-07-07
+created: 2026-07-07
 kb-status: published
-type: methodology
-tags: [cer, ccr, rule-5c, course-identity, triage, integrations]
+tags: [methodology, cer, ccr, rule-5c, course-identity, triage, integrations]
 artifacts:
   - kb/_suggest_unclassified.py
   - kb/_preseed_unclassified.py

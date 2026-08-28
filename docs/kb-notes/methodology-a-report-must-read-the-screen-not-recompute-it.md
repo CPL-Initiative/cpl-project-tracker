@@ -27,7 +27,7 @@ artifacts:
 The My College briefing button had to produce a document covering three
 different scopes, each with its own suppression rules, its own roll-up
 arithmetic and its own absent-vs-withheld distinction. Recomputing all of that
-in a generator would have duplicated several hundred lines of judgement.
+in a generator would have duplicated several hundred lines of judgment.
 
 This is the same lesson the EACR matrix reached from the other direction, where
 `matrixCell()` became **one function called by both the grid and the CSV** so the

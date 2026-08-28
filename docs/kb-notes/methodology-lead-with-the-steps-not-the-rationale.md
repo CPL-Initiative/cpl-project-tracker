@@ -24,7 +24,7 @@ them the simple steps."*
 ## The pattern
 
 Someone who understands a thing deeply writes it down for someone who has to
-*do* it, and produces a document organised around **why** when the reader needs
+*do* it, and produces a document organized around **why** when the reader needs
 **what next**. It is not padding and it is not condescension — every paragraph
 earns its place on the merits. It is an ordering failure, and it is invisible to
 the author because the author already knows the steps.
@@ -53,7 +53,7 @@ neither of them the reader's.
 
 Fix: a 9-row table at the very top — one action per row, where to do it, and the
 two hard gates called out inline. SQL blocks renamed so a step can reference one
-without the schemes colliding. Rationale below a rule, explicitly labelled as not
+without the schemes colliding. Rationale below a rule, explicitly labeled as not
 needed to run the thing. **No content removed.**
 
 ## Worked instance 2 — the college briefing (same day)
@@ -75,7 +75,7 @@ The instinct was right and the page then reverted to explaining itself.
 
 1. **Put the actions first, numbered, one action each.** If a step needs a
    caveat to be safe, put the caveat *in* the step, not before it.
-2. **Mark the gates.** Most steps are mechanical; one or two need judgement. Say
+2. **Mark the gates.** Most steps are mechanical; one or two need judgment. Say
    which, so attention lands where it matters instead of spreading evenly.
 3. **State what makes it low-stakes.** "Nothing changes until step 7" is worth
    more than three paragraphs of reassurance, and it is the sentence a nervous

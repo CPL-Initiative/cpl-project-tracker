@@ -1,9 +1,8 @@
 ---
 title: CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal
-date: 2026-06-19
+created: 2026-06-19
 kb-status: published
-type: scope
-tags: [cpl-assistant, chatbot, ccr, cer, eacr, adoption-leverage, demand-signal, student-portal, supabase]
+tags: [scope, cpl-assistant, chatbot, ccr, cer, eacr, adoption-leverage, demand-signal, student-portal, supabase]
 artifacts:
   - chatbox/supabase/functions/cpl-chat/index.ts   # the shared Edge Function (this bot + map.rccd.edu widget)
   - unified_courses_data.js                          # CCR — course identity + local↔unified crosswalk

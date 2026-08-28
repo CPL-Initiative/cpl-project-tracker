@@ -4,7 +4,6 @@ created: 2026-06-01
 updated: 2026-06-01 (§5 report inventory confirmed complete via screenshot)
 tags: [reference, data-pipeline, daily-refresh, kpi, data-sources, supabase, map, cccco, custom-report]
 kb-status: published
-kb-type: reference
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
   - "[[CLAUDE]]"

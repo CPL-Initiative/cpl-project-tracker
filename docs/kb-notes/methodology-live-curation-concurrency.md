@@ -1,9 +1,8 @@
 ---
 title: "Methodology: bulk-writing beside a live curator — snapshot decay + conflict-yielding writes"
-date: 2026-07-09
+created: 2026-07-09
 kb-status: published
-type: methodology
-tags: [supabase, curation, concurrency, kb_curation, cer]
+tags: [methodology, supabase, curation, concurrency, kb_curation, cer]
 related:
   - "[[exhibit_canonicalization_lessons]]"
 artifacts:

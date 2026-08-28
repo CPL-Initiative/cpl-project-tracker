@@ -211,7 +211,7 @@ instruction about this"**, which seeds the composer from the question and
 scrolls to it. It deliberately writes nothing: only a human knows what the right
 answer was.
 
-**Generalise it:** when a workflow has a *status* lane and a *remedy* lane, the
+**Generalize it:** when a workflow has a *status* lane and a *remedy* lane, the
 status lane must either link to the remedy or refuse to close without it.
 Otherwise "done" measures attention, and attention is not outcome — the same
 shape as the disposition-rate finding on the $50k tab, and as

@@ -98,7 +98,7 @@ the same system:
 - two **appendix** crosswalk slides carrying the course tables as real, legible, un-clipped tables;
 - the three originals retained as **hidden** slides at the end.
 
-Ironworkers was normalised from the original's 1-2-2-3-4 numbering onto the same five stages and
+Ironworkers was normalized from the original's 1-2-2-3-4 numbering onto the same five stages and
 redrawn as two explicit lanes (American River 29.5 units · Cerritos 38), so each route reads
 straight across.
 

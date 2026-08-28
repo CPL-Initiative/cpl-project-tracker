@@ -61,7 +61,7 @@ POST Basic Academy's is `"3 hours in Criminal Investigation"`. The actual
 statewide recommendation is **ten lines**. They were never missing — they are
 `exhibit.authoritative_recs`, covering 134 of 137 statewide exhibits (361 lines),
 and they are *already rendered on the public CPL Fact Sheet*. A field that
-summarises a set will be read as the set.
+summarizes a set will be read as the set.
 
 **2. Sam's rule, which the builder now implements literally.** *"When there is a
 statewide exhibit as there is for POST, it should only reference the credit
@@ -218,7 +218,7 @@ Apprenticeship — were unreachable on **every** credential route. Not ranked la
 Excluded. The exact inverse of Sam's ruling that they be *prominent choices for
 adoption*.
 
-**The generalisable form:** a derived summary field is dangerous as a lossy value
+**The generalizable form:** a derived summary field is dangerous as a lossy value
 and *far* more dangerous as a **filter**, because a filter's failure is invisible —
 the row does not appear wrong, it does not appear. And the derivation chain here
 (adoptions → recs → `ccc_rec` → retrieval gate) meant the credentials hardest to
@@ -267,7 +267,7 @@ peer-articulation table keyed by credential + rec, one RPC returning both signal
 
 ### Verification note
 
-`tests/sierra_credential_recs.test.js` is **behavioural, not source-regex**: it
+`tests/sierra_credential_recs.test.js` is **behavioral, not source-regex**: it
 lifts the three renderers out of the `.ts` and runs them against fixtures copied
 verbatim from live RPC output. The failure being guarded — "does the context
 actually list the ten courses" — is invisible to a grep. Doing that forced
@@ -316,8 +316,8 @@ iron, journey, worker, license]` — **"iron" was never asked**, while
 `search_credentials_any('iron')` returns 25 rows. The subject of the sentence
 was dropped by a `slice`.
 
-**⭐ It generalises far past Cerritos.** Measured across the 1,987-credential
-catalogue:
+**⭐ It generalizes far past Cerritos.** Measured across the 1,987-credential
+catalog:
 
 | | |
 |---|---|
@@ -325,7 +325,7 @@ catalogue:
 | curated title carries a word absent from every raw variant | **597 (30%)**, 465 adopted somewhere |
 
 So the name-only search was structurally unable to find a large fraction of the
-catalogue by the term a person would actually use.
+catalog by the term a person would actually use.
 
 ### (b) What shipped
 

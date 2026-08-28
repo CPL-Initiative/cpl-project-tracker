@@ -1,10 +1,9 @@
 ---
 title: Probing the MAP Custom Report API for a view's real columns (value-signature method)
-date: 2026-06-30
+created: 2026-06-30
 session: 87 (StarMax)
 kb-status: published
-type: methodology
-tags: [map-api, schema-probe, runner-as-proxy, pii-safe, supabase]
+tags: [methodology, map-api, schema-probe, runner-as-proxy, pii-safe, supabase]
 artifacts:
   - map/probe_users_schema.py
   - .github/workflows/map-users-schema-probe.yml
