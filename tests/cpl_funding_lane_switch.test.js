@@ -102,9 +102,19 @@ check("no strategy edit control renders on a noncredit card",
 // (b) the false promise.
 check("a noncredit card never promises the next daily data refresh",
   !/next daily data refresh/i.test(ncText));
-check("a noncredit card says the measure is pinned but undelivered",
-  /does not carry that measure/i.test(ncText));
-check("the undelivered line names the pinned source", /nc_p[eat]_u/.test(ncText));
+// ⚠️ ASSERT THE CONTRACT, NOT THE WORDING. The first cut of these matched the
+// sentence verbatim and went red the moment the sentence was reworded for
+// plain language — a change that says nothing about what they guard.
+check("a noncredit card says its measure is not carried yet and earns nothing",
+  /not carry this measure/i.test(ncText) && /\$0/.test(ncText));
+// Sam, 2026-08-28: "what does this mean? Metric · pinned to ppa_u". The feed key
+// is provenance a curator may want; it is not something a reader should have to
+// decode. So it must be DISCOVERABLE and INVISIBLE — a title, never body text.
+check("the feed key is discoverable from a title attribute",
+  ncCards.some((c) => Array.from(c.querySelectorAll("[title]"))
+    .some((e) => /nc_p[eat]_u/.test(e.getAttribute("title")))));
+check("no feed key appears in a noncredit card's visible text",
+  !/nc_p[eat]_u|ppa_u|pe_u|pa_u|p3_u/.test(ncText));
 
 // (c) the earning line is the NC lane's own.
 // Cross-check against the model rather than a literal: every NC priority's
@@ -153,7 +163,62 @@ check("every noncredit priority is earning $0 while the feed is undelivered",
   click(win, laneBtn(win.document, "nc"));
   const ncNow = cards(win.document).map(flat).join(" ");
   check("with no artifact, a NONCREDIT card still says uncarried, not pending",
-    /does not carry that measure/i.test(ncNow) && !/next daily data refresh/i.test(ncNow));
+    /not carry this measure/i.test(ncNow) && !/next daily data refresh/i.test(ncNow));
+})();
+
+// ── 4c. the noncredit lane has its OWN strategies ───────────────────────────
+// Sam, 2026-08-28: "NC programs do not generally award credit, they get students
+// trained and qualified to get credit at a credit college — hence different
+// strategies." So credit's list must never be the fallback, and NC's own list
+// must render when it exists. Both halves are asserted: an implementation that
+// simply never shows strategies would pass the first and fail the second.
+//
+// ⚠️ TWO TRAPS THIS BLOCK HAD TO GET PAST, both in the test rather than the code:
+//   * Clicking the lane button is a NO-OP when that lane is already selected
+//     (wireSeg early-returns on an unchanged value), so seeding config and then
+//     "clicking" never re-renders. Call render() explicitly.
+//   * A CREDIT strategy renders as <input value="…">, which textContent cannot
+//     see. Read the control's value, or the assertion tests nothing.
+(function () {
+  const stratTexts = (card) =>
+    Array.from(card.querySelectorAll(".cplfund-strat .cplfund-reqrow")).map((r) => {
+      const inp = r.querySelector("input, textarea");
+      return inp ? inp.value : r.textContent.replace(/\s+/g, " ").trim();
+    }).join(" | ");
+
+  const shared = T._getShared();
+  T._state.viewSlot = "1";
+  shared.yearPriorities = shared.yearPriorities || {};
+  shared.yearPriorities["1"] = shared.yearPriorities["1"] || {};
+  shared.ncPriorities = { "1": {} };
+  [0, 1, 2].forEach((i) => {
+    shared.yearPriorities["1"][i] = Object.assign({}, shared.yearPriorities["1"][i], {
+      strategies: ["CREDIT ONLY: batch upload transcribed CPL"]
+    });
+    shared.ncPriorities["1"][i] = { strategies: ["NC ONLY: refer completers to a credit college"] };
+  });
+
+  T._state.viewLane = "nc"; T.render();
+  const ncNow = cards(win.document);
+  check("noncredit strategies render when the NC override carries them",
+    ncNow.length === 3 && ncNow.every((c) => /NC ONLY: refer completers/.test(stratTexts(c))));
+  check("credit's strategies never leak into the noncredit lane",
+    ncNow.every((c) => !/CREDIT ONLY:/.test(flat(c) + stratTexts(c))));
+  check("noncredit strategies are read-only like every other NC field",
+    ncNow.every((c) => !c.querySelector(".cplfund-strat [data-edit], .cplfund-strat [data-stratadd]")));
+
+  T._state.viewLane = "cr"; T.render();
+  const crNow = cards(win.document);
+  check("the credit lane still shows its own strategies",
+    crNow.every((c) => /CREDIT ONLY:/.test(stratTexts(c))) &&
+    crNow.every((c) => !/NC ONLY:/.test(stratTexts(c))));
+
+  delete shared.ncPriorities;
+  T._state.viewLane = "nc"; T.render();
+  check("with no NC override, the card says none are written (never credit's)",
+    cards(win.document).every((c) => /None written for the noncredit lane/.test(flat(c))) &&
+    cards(win.document).every((c) => !/CREDIT ONLY:/.test(flat(c) + stratTexts(c))));
+  // ⚠️ Leave the lane on NC — sections 5 and 6 below assert against it.
 })();
 
 // ── 5. the NC cards may not edit the credit configuration ───────────────────

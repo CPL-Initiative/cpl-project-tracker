@@ -1032,7 +1032,17 @@
         metric: reg ? reg.basis : (p.metric + " (noncredit origin — unmapped)"),
         metric_src: src,
         unit: "ftes",
-        strategies: p.strategies,
+        // ⭐ NONCREDIT STRATEGIES ARE THEIR OWN (Sam, 2026-08-28): "NC programs
+        // do not generally award credit, they get students trained and qualified
+        // to get credit at a credit college — hence different strategies."
+        // That is a difference in the WORK, not in the wording, so credit's list
+        // cannot be the fallback: it would hand a noncredit institution a set of
+        // instructions about transcribing credit it does not award. NULL until
+        // someone writes them, and the card says so.
+        strategies: (function () {
+          var v = ncPrioOverride(slot, p.src, "strategies");
+          return Array.isArray(v) ? v.slice() : null;
+        })(),
         // Sam, 2026-08-27: NC inherits credit's shares. Sam, 2026-08-26: NC
         // keeps credit's funding factor (0.5), "no discount for being newer".
         share: share == null ? p.share : Number(share),
@@ -2994,22 +3004,47 @@
       }).join("");
       return '<label>Year ' + (i + 1) + ' <select class="cplfund-ed-sel" data-edit="year" data-idx="' + i + '">' + os + "</select></label>";
     }).join("");
+    // ⚠️ WHAT HAPPENS TO UNEARNED FUNDS IS A POLICY STATEMENT, NOT A COMPUTATION.
+    // The model reports what goes unearned (earnAgg().winUnearned); it does not
+    // redistribute it, and no line here may imply that it does. Sam floated
+    // "reallocated after 2028", then withdrew it as invented (2026-08-28) — the
+    // wording below is his replacement, and it is anchored rather than guessed:
+    // Ed. Code §78093.2(d)(1) directs the chancellor's office to allocate these
+    // funds "using all of the following goals" — (A) increasing access equitably,
+    // (B) increasing completion, (C) advancing career attainment, (D) supporting
+    // CPL through the chancellor's office's pilot projects. Unearned money going
+    // back to those same goals is the appropriation's own purpose, so the
+    // sentence claims a PRIORITY, never a mechanism we have not built.
+    // ⚠️ TWO DIFFERENT FACTS, and an early cut of this dropped the first.
+    // ROLL-FORWARD is what happens INSIDE the window: Year-1 money a college has
+    // not yet earned is still earnable in Year 2, closing out at the end.
+    // REPRIORITIZATION is what happens to money never earned AT ALL. Collapsing
+    // them loses the half that tells a college its money is still there.
+    var reprio = " Funds left unearned are reprioritized toward the goals in Ed. Code " +
+      "&sect;78093.2(d)(1) &mdash; access, completion, career attainment, and the " +
+      "chancellor&rsquo;s office&rsquo;s CPL pilot projects.";
     var note = fl
-      ? "front-loaded: the full window is available in Year 1 (" + esc(y[0]) + ") so every college can stand up CPL " +
-        "capacity immediately — staffing, faculty articulation work, local business processes; unspent funds roll " +
-        "forward" + (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
-        (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") +
-        ". Per-year performance targets are unchanged — only the cash timing moves."
-      : nYears() + "-year window · the pool splits into " + nYears() + " equal annual tranches";
+      ? "the full " + esc(windowLabel()) + " award is available from Year 1 (" + esc(y[0]) + "), so a college can " +
+        "stand up CPL capacity immediately. A college has the whole window to earn it, and the award does not " +
+        "change during that time; unearned funds roll forward" +
+        (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
+        (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") + "." + reprio
+      : nYears() + "-year window &middot; the pool splits into " + nYears() + " equal annual tranches, each " +
+        "earned against that year&rsquo;s targets." + reprio;
     return '<div class="cplfund-years">' + selects +
       (publicMode() ? "" :
         '<label>Allocation basis ' + segHtml("cplFundAllocBasis", [
           { val: "ftes", label: "Credit FTES" },
           { val: "headcount", label: "Headcount" }
         ], allocationBasis()) + "</label>") +
-      '<label>Disbursement ' + segHtml("cplFundDisb", [
-        { val: "even", label: "Even tranches" },
-        { val: "frontload", label: "Front-load Year 1" }
+      // Sam, 2026-08-28: "Disbursement / Even tranches / Front-load Year 1" was
+      // jargon on all three halves. What the choice actually is: does a college
+      // get its money one year at a time, or the whole window at once. The
+      // stored values stay `even` / `frontload` — renaming those would strand
+      // every saved config — only the words a reader sees change.
+      '<label>Funding ' + segHtml("cplFundDisb", [
+        { val: "even", label: "Annual funding" },
+        { val: "frontload", label: "Combined funding" }
       ], disbursement()) + "</label>" +
       '<span class="dk" style="font-size:.8rem;flex:1 1 260px;">' + note + "</span></div>";
   }
@@ -3028,11 +3063,9 @@
       segHtml("cplFundLane", items, state.viewLane) +
       '<span class="dk" style="font-size:.82rem;">' +
       (laneIsNc()
-        ? "The noncredit carve-out, earned by the " + ncModel().rows.length + " institutions in the lane. " +
-          "Shares and the funding factor are inherited from credit, so they are shown here and edited on the " +
-          "Credit lane."
-        : "The college pool, after the noncredit carve-out. The two lanes are solved separately and never summed.") +
-      "</span></div>";
+        ? ncModel().rows.length + " institutions. Shares and the funding factor are set on the Credit lane."
+        : "")
+      + "</span></div>";
   }
 
   function yearFilterHtml() {
@@ -3741,10 +3774,20 @@
     // college. Showing nothing, and saying so, is the honest state until Sam
     // writes the noncredit set (ncPrioOverride() is where they will live).
     if (laneIsNc()) {
+      var ncp = ncPriorities(slot)[i];
+      var ncList = (ncp && ncp.strategies) || [];
+      if (!ncList.length) {
+        return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies</div>' +
+          '<p class="nums dk">None written for the noncredit lane yet. Credit&rsquo;s are not shown here: a ' +
+          "noncredit institution does not generally award the credit &mdash; it prepares students to earn it at a " +
+          "credit college, which is different work.</p></div>";
+      }
+      // Read-only for the same reason every other NC field is (laneReadOnly):
+      // the strategy editor addresses the CREDIT priority's stored row.
       return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies</div>' +
-        '<p class="nums dk">None written for the noncredit lane yet. The credit strategies are not ' +
-        "shown here &mdash; they are written for a credit college, and one of them names noncredit " +
-        "mirror courses as an input.</p></div>";
+        ncList.map(function (x) {
+          return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' + esc(x) + "</div>";
+        }).join("") + "</div>";
     }
     var list = prioStrategies(slot, i);
     var rows = list.map(function (s, j) {
@@ -3912,15 +3955,20 @@
           ? '<p class="nums cplfund-fl-line"><span class="dk">↻ Year ' + esc(slot) + " is carryover under " +
             "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
             "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
-          : '<p class="nums cplfund-fl-line"><strong>Front-loaded:</strong> the full ' + esc(windowLabel()) +
-            " window &mdash; " + fmtMoney(winDollars) + " &mdash; is on the table in Year 1, earned against " +
-            "that same " + (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
+          // Sam, 2026-08-28 asked for less explanatory language, and the SENTENCE
+          // here was explanation ("Hitting the Year-1 target draws the whole
+          // window; unspent funds roll forward"). The effective rate is not —
+          // it is window dollars ÷ target, a derived FIGURE, and he separately
+          // asked to see more of where numbers come from. Prose out, figure in.
+          : '<p class="nums cplfund-fl-line"><strong>Combined funding:</strong> ' + fmtMoney(winDollars) +
+            " for the full " + esc(windowLabel()) + " window, earned against that same " +
+            (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
             // fmtMoney2, not fmtRate: an effective CPL-FTES rate is in the
             // $1,000s and rendered "$11299.26" without separators.
             '<span class="dk">Effective ' + fmtMoney2(sysHeads > 0 ? winDollars / sysHeads : 0) +
             "/" + (isFtesPrio ? "CPL FTES" : "student") +
             (isFtesPrio ? "" : " (" + fmtRate(p.per_student) + " &times; " + nYears() + ")") +
-            ". Hitting the Year-1 target draws the whole window; unspent funds roll forward.</span></p>")
+            ".</span></p>")
         : "";
       return '<div class="p" data-priocard="' + i + '">' +
         (ro ? "" : prioMoveHtml(ps, i, p)) +
@@ -3937,25 +3985,23 @@
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         (isFtesPrio
           ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding factor" }) +
-            "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong> " +
-            '<span class="dk">(' + (prioFactor(p) === 1 ? "par &mdash; the plain state rate"
-              : prioFactor(p) > 1 ? "a premium: pays more per FTES, so fewer FTES earn the pot"
-              : "a discount: pays less per FTES, so more FTES are needed to earn the pot") + ")</span></p>" +
-            '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> (&asymp; " +
-            fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units) " +
-            '<span class="dk">(DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; " +
-            fmtMoney2(prioPrice(p)) + " per CPL FTES" +
-            ". A performance target only; it does <strong>not</strong> move or cap the funding, " +
-            "which is set by the Allocation share above)</span></p>"
+            "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong></p>" +
+            '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> " +
+            '<span class="dk">(&asymp; ' + fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units)</span></p>"
           : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding dollars per student" }) +
-            " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount) " +
-            '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
-            "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>") +
+            " per student &rarr; " + fmtInt(sysHeads) + " students " +
+            '<span class="dk">(' + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount)</span></p>") +
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        '<div class="metric">METRIC (Year ' + slot + mirroredNote(slot) +
-          (laneIsNc() && p.metric_src ? " \u00b7 pinned to " + esc(p.metric_src) : "") + "): " +
+        // Sam, 2026-08-28: "what does this mean? Metric - pinned to ppa_u" — and
+        // that IS the finding. The pin is what stops an NC priority resolving
+        // onto a CREDIT measure by wording alone, but a reader should not need
+        // the feed's key names to read a card. The key moves into the block's
+        // title; the visible words stay plain.
+        '<div class="metric"' +
+          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
+          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
           edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
@@ -4435,12 +4481,13 @@
     // ordered these differently would contradict the one beside it.
     var pf = perf();
     function undeliveredLine() {
-      return '<p class="nums dk">No actuals yet &mdash; this priority is pinned to <code>' + esc(meas.src) +
-        "</code>, and the daily MAP feed does not carry that measure for anyone yet. It earns " +
-        "<strong>$0</strong> until the feed delivers it" +
+      // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
+      // a reader should not need to know MAP's key names to read a card.
+      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">No actuals yet &mdash; ' +
+        "the daily MAP feed does not carry this measure for anyone yet, so it earns <strong>$0</strong> " +
+        "until it does" +
         (meas.lane === "nc"
-          ? " (the noncredit-origin measures land when MAP ships the <code>Origin</code> + " +
-            "<code>LocID2</code> fields)" : "") + ".</p>";
+          ? ". The noncredit-origin measures arrive when MAP ships the origination fields" : "") + ".</p>";
     }
     if (!pf || !pf.statewide) {
       // Artifact not loaded. For CREDIT that is transient — those measures ARE
@@ -4461,6 +4508,12 @@
     return '<p class="nums">Actual <strong>' + (isFtes ? fmtNum1(act) : fmtInt(act)) + "</strong> " +
       (isFtes ? "CPL FTES" : "students") + " per MAP (as of " + esc(pf.as_of) + ")" +
       (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
+      // BOTH STAY. The conversion and meas.basis are where the figure comes
+      // from, which Sam asked to see MORE of, not less. meas.basis reads as a
+      // near-duplicate of the METRIC block below it, but they are two different
+      // authors: the METRIC is the CURATOR's wording, meas.basis is what the
+      // SYSTEM actually measured. When those diverge the card is the only place
+      // it shows, and that divergence is the whole reason metric_src exists.
       (isFtes ? ' <span class="dk">(' + fmtInt(raw) + " units &divide; " +
         fmtNum1(unitsPerCplFtes(null)) + " units/FTES)</span>" : "") +
       (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
