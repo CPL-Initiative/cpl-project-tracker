@@ -14,6 +14,50 @@ the Obsidian lane (SkySolidare, Session 204 → `docs/session_205_handoff.md`); 
 did not touch each other's files. **Read this one for funding, 205 for the docs
 corpus.**
 
+## 🔀 READ BOTH HANDOFFS — two sessions ran in parallel
+
+`docs/session_205_handoff.md` (SkySolidare, the Obsidian/docs-corpus lane) and
+this one (SkyLens, the Funding lane) are **peers, not a sequence.** Neither
+supersedes the other, and the "highest-numbered handoff is authoritative" rule
+in `CLAUDE.md` will mislead you here — it would hand you the funding lane and
+hide the docs lane entirely.
+
+**The two lanes touch in exactly one place: `CLAUDE.md` §11.** SkySolidare is
+consolidating that file; I rewrote the funding cell inside it this run. What
+follows is measured input for his consolidation, put here because it came out of
+my run:
+
+### §11 measurement, for the CLAUDE.md consolidation
+
+`CLAUDE.md` is **148,817 B — 2.48× its 60,000 B budget**, and the §11 roadmap
+rows are **59% of the whole file** (88,278 B across 29 large rows). So the lever
+is those rows; trimming prose elsewhere cannot get there.
+
+| | Rows | Bytes |
+|---|---|---|
+| ✅ done, **no** open NEXT / NEEDS SAM / BLOCKED — retirable to `docs/reference/finished_workstreams.md` | 5 | **14,379** |
+| 🔨 in progress | 5 | 10,363 |
+| ✅ but with open work — must stay inline | 19 | 63,536 |
+
+The five retirable rows, largest first: **Sierra: false absences** (4,131 B) ·
+**Partner crosswalks** (3,474) · **Disposition grain / student detail** (3,287) ·
+**Governance & team enablement** (2,389) · **NC / Learning Partners** (1,098).
+No judgment calls — the file already documents that mechanism and the rule
+("when a row's NEXT step is done and nothing is pending, move it").
+
+⚠️ **The remaining 63,536 B cannot go to an archive** — those workstreams are
+live and a session needs them. The pattern that fits is the 2026-07-10
+pare-down: a `docs/reference/<workstream>.md` holding the detail, with a
+two-line status and a *"read this before touching X"* pointer left inline.
+That already worked for `pipeline_reference` · `kb_build_status` ·
+`mid_lifecycle`.
+
+⚠️ **My funding cell is now the single largest at 5,095 B.** I archived a
+1,850 B narrative to make room, so the file went down slightly on net, but the
+cell grew ~500 B. It is a fair candidate for the `docs/reference/` treatment —
+its detail already lives in `docs/cpl_funding_lessons.md`, so moving it loses
+nothing.
+
 ## ✅ SETTLED — do not re-derive any of these
 
 **Sam's three relabels are IN SUPABASE.** He clicked Publish; config md5 moved
