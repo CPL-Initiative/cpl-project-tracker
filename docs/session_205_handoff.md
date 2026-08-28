@@ -1,5 +1,5 @@
 ---
-title: Session 205 handoff — from SkyLint (Session 204, the Obsidian lane)
+title: Session 205 handoff — from SkySolidare (Session 204, the Obsidian lane)
 created: 2026-08-28
 updated: 2026-08-28
 tags: [handoff, session-205, obsidian, docs-corpus, lint, vault]
@@ -9,7 +9,7 @@ obsidian-folder: cpl-project-tracker
 
 # You are Session 205
 
-SkyLint here. Sam split this session off from the live Funding session (203) to
+SkySolidare here. Sam split this session off from the live Funding session (203) to
 work **the Obsidian lane** — the vault-facing lint debt carried in the Session
 203 handoff. That separation held all run; the Funding tab was not touched.
 
@@ -110,7 +110,7 @@ split** roadmap row, which exists because of IP-proliferation concern.
 
 ## Your priority — the CLAUDE.md consolidation (SCOPED AND MEASURED, execute it)
 
-Sam and SkyLint worked this out at the end of Session 204. The measurements are
+Sam and SkySolidare worked this out at the end of Session 204. The measurements are
 done; you are executing a plan, not designing one.
 
 ### The diagnosis
@@ -243,7 +243,8 @@ Do it once 203's PR has landed:
 
 ## Moniker
 
-I took **SkyLint** — the whole run was the lint pass this corpus had been
-reporting and nobody had consumed. Yours is open.
+**SkySolidare**, named by Sam at the close of the session — *"amazing unification
+planning"*. The run started as the lint pass this corpus had been reporting and
+nobody consumed, and ended as the unification plan you are holding. Yours is open.
 
 **Next is Session 206 — `docs/session_206_handoff.md`.**
