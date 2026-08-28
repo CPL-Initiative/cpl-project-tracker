@@ -146,12 +146,32 @@ const {
       doc.querySelectorAll(".cplfund-card.total").length === 1 &&
       totalCard.querySelector(".v").innerHTML.indexOf(Math.round(totalAvail).toLocaleString("en-US")) !== -1 &&
       totalCard.textContent.toLowerCase().indexOf("total available funding") !== -1);
-    const awardCards = Array.from(doc.querySelectorAll(".cplfund-card.award"));
-    check("Award range shows Average / Minimum / Maximum (3 cards)",
-      awardCards.length === 3 &&
-      awardCards.some(function (c) { return c.textContent.indexOf("Average award") !== -1; }) &&
-      awardCards.some(function (c) { return c.textContent.indexOf("Minimum award") !== -1; }) &&
-      awardCards.some(function (c) { return c.textContent.indexOf("Maximum award") !== -1; }));
+    // The award range gained a SECOND LANE ROW (2026-08-28): credit, then the
+    // noncredit carve-out. Assert PER ROW rather than counting cards globally —
+    // a bare count would have to be bumped 3 -> 6 and would then pass for a
+    // layout that lost the Minimum from one row and doubled the Maximum in the
+    // other. What this guards is that each lane states all three bounds.
+    const awardRows = Array.from(doc.querySelectorAll(".cplfund-awardrow"));
+    const rowStatesAllThree = (row) => {
+      const cards = Array.from(row.querySelectorAll(".cplfund-card.award"));
+      return cards.length === 3 &&
+        cards.some(function (c) { return c.textContent.indexOf("Minimum award") !== -1; }) &&
+        cards.some(function (c) { return c.textContent.indexOf("Average award") !== -1; }) &&
+        cards.some(function (c) { return c.textContent.indexOf("Maximum award") !== -1; });
+    };
+    check("Award range states Minimum / Average / Maximum in each lane row",
+      awardRows.length === 2 && awardRows.every(rowStatesAllThree));
+    // ⚠️ The two lanes are solved separately and never summed (Sam). A single
+    // undifferentiated row is the shape this must never regress to.
+    check("Award range separates the credit and noncredit lanes",
+      awardRows.length === 2 &&
+      /^Credit/.test(awardRows[0].textContent.replace(/\s+/g, " ").trim()) &&
+      /^Noncredit/.test(awardRows[1].textContent.replace(/\s+/g, " ").trim()));
+    // The three assertions below are CREDIT-lane facts (Σ college totals ÷ N,
+    // the floored-college count), so they read the credit row's cards. Before
+    // the noncredit row existed this was the only row and a bare document-wide
+    // query meant the same thing; it no longer does.
+    const awardCards = Array.from(awardRows[0].querySelectorAll(".cplfund-card.award"));
     // Sam, 2026-08-04: ordered Minimum · Average · Maximum (low→high).
     check("Award range cards ordered Minimum · Average · Maximum",
       awardCards[0].textContent.indexOf("Minimum award") !== -1 &&
@@ -165,6 +185,21 @@ const {
     // card names the floor count, not one arbitrary college.
     check("Minimum award card reports the floored-college count (not one college)",
       awardCards[0].textContent.indexOf("floor") !== -1);
+    // ⚠️ The noncredit row must be the NONCREDIT lane's own arithmetic, not a
+    // slice of the credit one. Its average is the carve-out over the funded
+    // roster — a figure the credit lane cannot produce.
+    {
+      const ncCards = Array.from(awardRows[1].querySelectorAll(".cplfund-card.award"));
+      const nc = window.CPL_FUNDING_TAB._ncModel();
+      const ncAvg = nc.rows.reduce(function (s2, r) { return s2 + (nc.W[r.key] || 0); }, 0) / nc.rows.length;
+      check("Noncredit average award = the carve-out over the funded NC roster",
+        ncCards[1].querySelector(".v").textContent
+          .indexOf("$" + Math.round(ncAvg).toLocaleString("en-US")) !== -1);
+      check("Noncredit minimum is the NONCREDIT floor, never the credit one",
+        ncCards[0].querySelector(".v").textContent
+          .indexOf("$" + Math.round(nc.floor).toLocaleString("en-US")) !== -1 &&
+        Math.round(nc.floor) !== Math.round(window.CPL_FUNDING_TAB._model().floor));
+    }
   }
   check("scoped CSS injected once", doc.querySelectorAll("#cpl-funding-css").length === 1);
   window.CPL_FUNDING_TAB.render();

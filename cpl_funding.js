@@ -4419,14 +4419,22 @@
       return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
     }
     // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
-    // measureOf() sets `undelivered` when a priority PINS a real key the feed
-    // does not carry for anyone yet — every noncredit priority today. It carries
-    // no `gap`, so without this branch the next test falls through to "arrives
-    // with the next daily data refresh", which is the most reassuring sentence
-    // available and false: the key lands when MAP ships the origination fields,
-    // not tomorrow. The per-institution cells already say `undelivered`; this is
-    // the card saying the same thing.
-    if (meas.undelivered) {
+    // measureOf() sets `undelivered` when the feed does not carry a measure's
+    // key — for the noncredit sources, until MAP ships the origination fields.
+    // It carries no `gap`, so without a branch of its own it falls through to
+    // "arrives with the next daily data refresh": the most reassuring sentence
+    // available, and false.
+    //
+    // ⚠️ BUT `undelivered` CONFLATES TWO THINGS, and the order below is the
+    // whole fix. srcDelivered() asks the LOADED artifact whether a key is there,
+    // so when the artifact has not loaded at all it answers false for EVERY
+    // source — and an un-ordered test then tells a credit card that its measure
+    // "is not carried for anyone yet" when the truth is simply that the file has
+    // not arrived. This ordering is earnFraction()'s, deliberately: the earning
+    // line and the actuals line describe the same measure, so a surface that
+    // ordered these differently would contradict the one beside it.
+    var pf = perf();
+    function undeliveredLine() {
       return '<p class="nums dk">No actuals yet &mdash; this priority is pinned to <code>' + esc(meas.src) +
         "</code>, and the daily MAP feed does not carry that measure for anyone yet. It earns " +
         "<strong>$0</strong> until the feed delivers it" +
@@ -4434,8 +4442,16 @@
           ? " (the noncredit-origin measures land when MAP ships the <code>Origin</code> + " +
             "<code>LocID2</code> fields)" : "") + ".</p>";
     }
-    var pf = perf();
-    if (!pf || !pf.statewide || pf.statewide[meas.src] == null) {
+    if (!pf || !pf.statewide) {
+      // Artifact not loaded. For CREDIT that is transient — those measures ARE
+      // in the feed. For NONCREDIT it is not: those keys have never been carried,
+      // so the honest line is the same one they get when the artifact IS loaded.
+      return meas.lane === "nc"
+        ? undeliveredLine()
+        : '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
+    }
+    if (meas.undelivered) return undeliveredLine();
+    if (pf.statewide[meas.src] == null) {
       return '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
     }
     var raw = pf.statewide[meas.src];

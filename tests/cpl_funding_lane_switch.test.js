@@ -126,6 +126,36 @@ check("no noncredit card prints a figure larger than the whole carve-out",
 check("every noncredit priority is earning $0 while the feed is undelivered",
   ncCards.every((c) => /\$0 of \$/.test(flat(c.querySelector(".cplfund-earned-line")))));
 
+// ── 4b. `undelivered` conflates two things, and the order matters ───────────
+// REGRESSION GUARD for a bug this branch shipped and fixed. srcDelivered() asks
+// the LOADED artifact whether a key is present, so when the artifact has not
+// loaded at all it answers false for EVERY source — credit included. The first
+// cut of the undelivered branch tested `meas.undelivered` before asking whether
+// the artifact was there, so in any artifact-less context every CREDIT card
+// claimed its measure "is not carried for anyone yet", when the truth was only
+// that the file had not arrived. cpl_funding_rollup caught it.
+//
+// The ordering now mirrors earnFraction() exactly, which is the point: the
+// earning line and the actuals line describe the same measure, so a surface
+// that ordered these differently would contradict the one beside it.
+//
+// This harness boots WITHOUT the performance artifact, which is precisely the
+// state that exposed the bug.
+(function () {
+  check("the fixture has no performance artifact (the state that exposed it)",
+    !win.CPL_FUNDING_PERF);
+  click(win, laneBtn(win.document, "cr"));
+  const creditCardsNow = cards(win.document).map(flat).join(" ");
+  check("with no artifact, a CREDIT card says the refresh is pending",
+    /next daily data refresh/i.test(creditCardsNow));
+  check("with no artifact, a CREDIT card does NOT claim its measure is uncarried",
+    !/does not carry that measure/i.test(creditCardsNow));
+  click(win, laneBtn(win.document, "nc"));
+  const ncNow = cards(win.document).map(flat).join(" ");
+  check("with no artifact, a NONCREDIT card still says uncarried, not pending",
+    /does not carry that measure/i.test(ncNow) && !/next daily data refresh/i.test(ncNow));
+})();
+
 // ── 5. the NC cards may not edit the credit configuration ───────────────────
 check("no noncredit card carries an edit control",
   ncCards.every((c) => c.querySelectorAll("[data-edit]").length === 0));
