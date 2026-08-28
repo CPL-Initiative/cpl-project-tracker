@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-27T22:27:12.130338+00:00",
+  "scraped_at": "2026-08-28T18:47:22.980386+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27490,
+    "jst": 27494,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -15,14 +15,9 @@
       "jst": 110,
       "star": false
     },
-    "Merced College": {
-      "vets": 142,
-      "jst": 275,
-      "star": true
-    },
     "Chaffey College": {
       "vets": 182,
-      "jst": 349,
+      "jst": 348,
       "star": true
     },
     "San Diego Mesa College": {
@@ -35,14 +30,14 @@
       "jst": 1473,
       "star": true
     },
-    "Moreno Valley College": {
-      "vets": 916,
-      "jst": 1013,
-      "star": true
-    },
     "San Diego Miramar College": {
       "vets": 1181,
       "jst": 1626,
+      "star": true
+    },
+    "Moreno Valley College": {
+      "vets": 916,
+      "jst": 1013,
       "star": true
     },
     "City College of San Francisco": {
@@ -55,6 +50,11 @@
       "jst": 563,
       "star": true
     },
+    "Merced College": {
+      "vets": 142,
+      "jst": 275,
+      "star": true
+    },
     "West Los Angeles College": {
       "vets": 122,
       "jst": 158,
@@ -62,12 +62,12 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 542,
+      "jst": 543,
       "star": false
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 814,
+      "jst": 815,
       "star": true
     },
     "De Anza College": {
@@ -137,7 +137,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 442,
+      "jst": 443,
       "star": true
     },
     "Fresno City College": {
@@ -145,14 +145,14 @@
       "jst": 592,
       "star": true
     },
-    "Cabrillo College": {
-      "vets": 102,
-      "jst": 182,
-      "star": true
-    },
     "Sierra College": {
       "vets": 326,
       "jst": 331,
+      "star": true
+    },
+    "Cabrillo College": {
+      "vets": 102,
+      "jst": 182,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 512,
+      "jst": 513,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -477,7 +477,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 101,
+      "jst": 102,
       "star": false
     },
     "Cuyamaca College": {
