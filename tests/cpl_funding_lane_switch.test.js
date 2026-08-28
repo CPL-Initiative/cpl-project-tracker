@@ -492,7 +492,7 @@ check("the noncredit minimum counts the institutions sharing the floor",
   };
   T3.render();
   check("a fresh REVIEWER session unlocks shared editing (it used not to)",
-    /save for everyone/i.test(bar3()));
+    !!d3.querySelector(".cplfund-authbar .mode.shared"));
   check("...and the banner names the credential actually doing it",
     /Signed in/i.test(bar3()) && !/Team editing on/i.test(bar3()));
 
@@ -501,7 +501,7 @@ check("the noncredit minimum counts the institutions sharing the floor",
   w3.CPL_SESSION.isFresh = () => false;
   T3.render();
   check("a STALE reviewer session does not unlock",
-    !/save for everyone/i.test(bar3()));
+    !d3.querySelector(".cplfund-authbar .mode.shared"));
 
   // The policy accepts either credential, so the phrase must still work alone.
   w3.CPL_SESSION = null;
@@ -511,7 +511,85 @@ check("the noncredit minimum counts the institutions sharing the floor",
   };
   T3.render();
   check("the team phrase alone still unlocks, and is named as such",
-    /save for everyone/i.test(bar3()) && /Team editing on/i.test(bar3()));
+    !!d3.querySelector(".cplfund-authbar .mode.shared") && /Team editing on/i.test(bar3()));
+}
+
+// ── 12. work that exists only in this browser must say so, and be publishable ─
+// Sam lost the same three priority relabels TWICE. The gate fix (#1370) let a
+// reviewer write; it did not deal with what happens to edits made BEFORE they
+// signed in. Those live in SCENARIO, and SCENARIO WINS THE RENDER — so the tab
+// paints them back and they are indistinguishable from published work.
+//
+// ⚠️ THE PROMOTION EXISTED AND ONLY ONE PATH REACHED IT. The team-phrase unlock
+// row promotes the local what-if into shared on unlock. A magic-link reviewer
+// never passes through that row: unlocked() flips true, the row disappears, and
+// the overlay is stranded on top of shared for ever.
+{
+  const dom4 = freshDom();
+  const w4 = dom4.window;
+  const d4 = boot(w4);
+  const T4 = w4.CPL_FUNDING_TAB;
+  const bar4 = () => (d4.querySelector(".cplfund-authbar") || { textContent: "" })
+    .textContent.replace(/\s+/g, " ").trim();
+
+  // Edit while LOCKED — the edit lands in the per-browser scenario layer.
+  T4._setScenario({ yearPriorities: { "1": { "0": { title: "LOCAL ONLY TITLE" } } } });
+  T4.render();
+  check("a locked browser reports its edits as local", /this browser only/i.test(bar4()));
+
+  // Now sign in by magic link, exactly as Sam did.
+  w4.CPL_SESSION = {
+    get: () => ({ access_token: "h.p.s", refresh_token: "r" }),
+    isFresh: () => true,
+    authHeaders: (extra) => Object.assign({ apikey: "anon" }, extra || {}),
+  };
+  T4.render();
+  check("signing in unlocks shared editing", !!d4.querySelector(".cplfund-authbar .mode.shared"));
+  // ⭐ THE ASSERTION THAT WOULD HAVE CAUGHT THIS: being unlocked is not enough.
+  check("...and the stranded local overlay is called out, not left silent",
+    /nobody else can see/i.test(bar4()));
+  check("...with a control to publish it", !!d4.querySelector("#cplFundPromote"));
+
+  // Publishing merges the overlay into shared.
+  const btn4 = d4.querySelector("#cplFundPromote");
+  if (btn4) {
+    click(w4, btn4);
+    check("publishing moves the local edit into the shared scenario",
+      JSON.stringify(T4._getShared()).indexOf("LOCAL ONLY TITLE") !== -1);
+    check("...and the warning clears once nothing is browser-only",
+      !/nobody else can see/i.test(bar4()));
+  }
+}
+
+// ── 13. an expired sign-in says so ──────────────────────────────────────────
+// Sam, 2026-08-28: "I should get a notice if my token has expired." A Supabase
+// token lives ~1h; without this a session that died mid-edit reads as ordinary
+// exploring, and the curator cannot tell "I am browsing" from "I was working and
+// silently stopped being able to save".
+{
+  const dom5 = freshDom();
+  const w5 = dom5.window;
+  const d5 = boot(w5);
+  const T5 = w5.CPL_FUNDING_TAB;
+  const bar5 = () => (d5.querySelector(".cplfund-authbar") || { textContent: "" })
+    .textContent.replace(/\s+/g, " ").trim();
+
+  w5.CPL_SESSION = {
+    get: () => ({ access_token: "h.p.s", refresh_token: "r" }),
+    isFresh: () => false,          // present, but dead
+    authHeaders: (e) => Object.assign({}, e || {}),
+  };
+  T5.render();
+  check("an EXPIRED session does not unlock shared editing",
+    !d5.querySelector(".cplfund-authbar .mode.shared"));
+  check("...and says the sign-in expired, not merely that you are exploring",
+    /expired/i.test(bar5()));
+  check("...and names the remedy", /sign in again/i.test(bar5()));
+
+  // No session at all must NOT claim an expiry.
+  w5.CPL_SESSION = null;
+  T5.render();
+  check("never-signed-in is not reported as an expiry", !/expired/i.test(bar5()));
 }
 
 finish();
