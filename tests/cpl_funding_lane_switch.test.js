@@ -503,15 +503,35 @@ check("the noncredit minimum counts the institutions sharing the floor",
   check("a STALE reviewer session does not unlock",
     !d3.querySelector(".cplfund-authbar .mode.shared"));
 
-  // The policy accepts either credential, so the phrase must still work alone.
+  // ⚠️ THE TEAM PHRASE MUST NO LONGER UNLOCK THIS TAB (Sam, 2026-08-28:
+  // "clean up the auth so it requires the magic link auth and not the team
+  // phrase"). The RLS policies were narrowed to is_allowed_reviewer() alone,
+  // so a client that still offered phrase editing would hand someone a write
+  // the database now refuses — the SAME mirroring bug as #1370, pointing the
+  // other way. This assertion previously pinned the opposite behavior; it is
+  // kept, inverted, because a silent re-widening is the failure worth catching.
   w3.CPL_SESSION = null;
   w3.CPL_TEAM_PHRASE = {
     session: () => ({ teamPass: "p", email: "(team)" }),
     decorateHeaders: (h) => { h["x-team-pass"] = "p"; return h; },
   };
   T3.render();
-  check("the team phrase alone still unlocks, and is named as such",
-    !!d3.querySelector(".cplfund-authbar .mode.shared") && /Team editing on/i.test(bar3()));
+  check("a team phrase ALONE no longer unlocks — curating needs a reviewer",
+    !d3.querySelector(".cplfund-authbar .mode.shared"));
+  check("...and the tab does not advertise team editing any more",
+    !/Team editing on/i.test(bar3()));
+
+  // And the banner names the PERSON, not a shared placeholder: a per-person
+  // credential whose writes stamp "(team)" throws away what it bought.
+  w3.CPL_TEAM_PHRASE = null;
+  w3.CPL_SESSION = {
+    get: () => ({ access_token: "header.payload.sig", email: "sam@example.edu" }),
+    isFresh: () => true,
+    authHeaders: (extra) => Object.assign({ apikey: "anon", Authorization: "Bearer header.payload.sig" }, extra || {}),
+  };
+  T3.render();
+  check("the banner names the signed-in curator",
+    /sam@example\.edu/.test(bar3()));
 }
 
 // ── 12. work that exists only in this browser must say so, and be publishable ─

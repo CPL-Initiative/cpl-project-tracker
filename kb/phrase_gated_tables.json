@@ -1,7 +1,7 @@
 {
   "_about": "Tables whose RLS policies reference a phrase gate (team_pass_ok / gr_pass_ok / fin_pass_ok). Consumed ONLY by tests/team_phrase_affordance.test.js, which runs in CI where there is no database. Everything a browser can measure live it should measure live — admin.js reads cobi_rls_gates() at load precisely because a carried list goes stale silently.",
   "_why_a_snapshot_is_acceptable_here": "This list is a TRIPWIRE, not an authority. Its failure mode is UNDER-reporting: a newly gated table missing here means the guard misses one tab, which is the same coverage we had before the guard existed. It can never produce a FALSE claim that something is protected, because nothing reads it for that purpose.",
-  "_measured": "2026-08-14, live, via the Supabase MCP",
+  "_measured": "2026-08-28, live, via the Supabase MCP. The three cpl_funding_* tables left this list when curating funding was narrowed to is_allowed_reviewer() alone (PR #1372); budget_funding stays, so the tab is still phrase-touching.",
   "_refresh_with": "select tablename, bool_or(cmd='SELECT' and coalesce(qual,'') ilike '%\\_pass\\_ok%') as gates_read from pg_policies where schemaname='public' group by tablename having bool_or(coalesce(qual,'')||coalesce(with_check,'') ilike '%\\_pass\\_ok%') order by tablename;",
   "_note_gates_read": "gates_read=true means the SELECT policy itself requires the phrase, so without it the tab renders EMPTY rather than merely read-only. Those are the ones where a missing affordance reads as a broken tab.",
   "tables": {
@@ -14,9 +14,6 @@
     "cpl_contract_documents": true,
     "cpl_contract_reports": true,
     "cpl_contracts": true,
-    "cpl_funding_config": false,
-    "cpl_funding_notes": true,
-    "cpl_funding_participation": false,
     "cpl_memory": true,
     "cpl_memory_log": true,
     "cr_reference_decisions": true,
