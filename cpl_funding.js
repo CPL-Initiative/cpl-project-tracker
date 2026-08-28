@@ -186,6 +186,10 @@
     ".cplfund-strat .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 3px 0; }",
     ".cplfund-strat .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-stratadd { margin-top: 4px; }",
+    // The local-only save acknowledgment. Caution colour + a word, never a bare
+    // tick: colour is not the only signal, and a green "saved" is the exact
+    // misreading this exists to prevent.
+    ".cplfund-saving.local { color: var(--mustard-text); font-weight: 600; }",
     // Timing milestone list (below the priority boxes).
     ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
     ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
@@ -632,7 +636,39 @@
   var remoteLoaded = false; // whether the shared fetch has resolved
 
   function tp() { return window.CPL_TEAM_PHRASE || null; }
-  function unlocked() { var t = tp(); return !!(t && t.session()); }
+  // ── WHO MAY EDIT THE SHARED MODEL (fixed 2026-08-28) ─────────────────────
+  // ⚠️ THIS GATE MUST MIRROR THE RLS POLICY, AND IT DID NOT.
+  // funding/supabase_cpl_funding_config.sql:
+  //     with check (is_allowed_reviewer() OR team_pass_ok())
+  // …but unlocked() asked only `tp().session()`, non-null ONLY when a team
+  // PHRASE sits in localStorage. A magic-link reviewer was invisible to it.
+  //
+  // So a curator who was genuinely signed in — whose write the DATABASE would
+  // have accepted — was treated as locked: activeOverride() handed them the
+  // per-browser SCENARIO layer, persistActive() wrote localStorage, and that
+  // layer wins the render, so the tab showed the change back and it looked
+  // published. Sam relabelled the three priorities this way while the masthead
+  // read "● Signed in". The routing was never at fault; the change never
+  // entered it.
+  //
+  // ⭐ THE INDICATOR WAS TELLING THE TRUTH ABOUT A DIFFERENT CREDENTIAL. COBI's
+  // masthead reports the REVIEWER session; this tab gated on the TEAM PHRASE.
+  // Two mechanisms, one word. §11 already carries the standing rule for the
+  // transition — "accepts EITHER a session OR a phrase so nothing goes dark" —
+  // and this tab was one of the places it had not landed.
+  function reviewerSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.get !== "function") return null;
+    var s = S.get();
+    // isFresh, not merely present: an expired token is exactly the state that
+    // makes a write 401, and claiming unlocked() there would trade a silent
+    // private save for a loud failed one.
+    return (s && (typeof S.isFresh !== "function" || S.isFresh(s))) ? s : null;
+  }
+  function unlocked() {
+    var t = tp();
+    return !!((t && t.session()) || reviewerSession());
+  }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
   function defaultProject() { return { label: DEFAULT_PROJECT_LABEL, area: "cpl", scenarios: { "Scenario 1": {} } }; }
@@ -1876,7 +1912,10 @@
   // then re-render. For SHARED, roll back on an RLS/auth failure.
   function persistActive() {
     if (unlocked()) saveShared();
-    else { saveScenario(); render(); }
+    // savingState is set for the LOCKED path too, so authbarHtml() can
+    // acknowledge the edit. Without it the branch above renders nothing and the
+    // asymmetry it exists to close reopens silently.
+    else { saveScenario(); savingState = "local"; render(); }
   }
   function setYears(years) { activeOverride().years = years.slice(); persistActive(); }
   function setPool(field, value) {
@@ -2068,6 +2107,30 @@
       pendingPromotion = false;
     }
   }
+  // ── THE ONE PLACE A FUNDING WRITE GETS ITS CREDENTIAL (2026-08-28) ───────
+  // All three funding tables carry the SAME policy —
+  //     with check (is_allowed_reviewer() OR team_pass_ok())
+  // — and all seven write paths in this file decorated with the team phrase
+  // alone. A magic-link reviewer therefore held a credential the database would
+  // accept and the client never sent, on config, notes AND participation.
+  //
+  // One helper rather than seven patched call sites: seven copies of an auth
+  // decision is seven chances for the next one to drift from the policy, which
+  // is exactly how this shape survived. Phrase first (it is the narrower, more
+  // deliberate credential and preserves today's behavior for phrase holders),
+  // reviewer session otherwise.
+  function applyWriteAuth(headers) {
+    var t = tp();
+    var phrase = t && t.session();
+    if (phrase) { t.decorateHeaders(headers, phrase); return headers; }
+    var S = window.CPL_SESSION;
+    if (S && typeof S.authHeaders === "function") {
+      var ah = S.authHeaders();
+      for (var k in ah) headers[k] = ah[k];
+    }
+    return headers;
+  }
+
   function saveShared() {
     if (!remoteEnabled()) {
       // Offline / tests behave like a successful save.
@@ -2083,7 +2146,7 @@
       "Content-Type": "application/json", Prefer: "return=representation"
     };
     var t = tp();
-    if (t) t.decorateHeaders(headers, t.session());
+    applyWriteAuth(headers);
     fetch(CONFIG_URL + "?id=eq.default", {
       method: "PATCH", headers: headers,
       body: JSON.stringify({ config: SUPA_CONFIG, updated_by: "(team)" })
@@ -2162,7 +2225,8 @@
     // anon caller sends none and the RPC returns []. Fetched for everyone (cheap,
     // fail-soft) — it self-populates the moment a reviewer unlocks and reloads.
     var rh = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
-    var t0 = tp(); if (t0) t0.decorateHeaders(rh, t0.session());
+    var t0 = tp();
+    applyWriteAuth(rh);
     Promise.all([
       fetch(COORD_RPC_URL, {
         method: "POST", body: "{}",
@@ -2353,7 +2417,7 @@
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
     var t = tp();
-    if (t) t.decorateHeaders(headers, t.session());
+    applyWriteAuth(headers);
     var req = on
       ? fetch(PART_URL + "?on_conflict=college", {
           method: "POST",
@@ -2433,7 +2497,8 @@
     // representation would 403 the successful update.
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
       "Content-Type": "application/json", Prefer: "return=minimal" };
-    var t = tp(); if (t) t.decorateHeaders(headers, t.session());
+    var t = tp();
+    applyWriteAuth(headers);
     fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "PATCH", headers: headers, body: JSON.stringify(body) })
       .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
       .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
@@ -2454,7 +2519,8 @@
       render(); return;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, Prefer: "return=minimal" };
-    var t = tp(); if (t) t.decorateHeaders(headers, t.session());
+    var t = tp();
+    applyWriteAuth(headers);
     fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers })
       .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
       .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
@@ -2610,7 +2676,7 @@
     if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
     var t = tp();
-    if (t) t.decorateHeaders(headers, t.session());
+    applyWriteAuth(headers);
     fetch(NOTES_URL + "?select=college,note,updated_by,updated_at", { headers: headers })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
@@ -2630,7 +2696,7 @@
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
     var t = tp();
-    if (t) t.decorateHeaders(headers, t.session());
+    applyWriteAuth(headers);
     var req = note
       ? fetch(NOTES_URL + "?on_conflict=college", {
           method: "POST",
@@ -2996,7 +3062,9 @@
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
-      status = '<span class="mode shared">✎ Team editing on — changes save for everyone</span> ' +
+      status = '<span class="mode shared">✎ ' +
+        (tp() && tp().session() ? "Team editing on" : "Signed in") +
+        " — changes save for everyone</span> " +
         '<span class="dk">' + (dirty ? "team-configured scenario" : "using baked defaults") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset scenario to defaults</button>';
       rightBtn = '<button type="button" class="lock" id="cplFundLock">Lock</button>';
@@ -3007,11 +3075,30 @@
           "just start editing to explore — or unlock to save for the team") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset exploration</button>';
     }
+    // ⚠️ EVERY EDIT GETS AN EVENT, IN BOTH MODES (Sam, 2026-08-28).
+    // This block used to be gated on unlocked(), so a signed-in curator got
+    // "saving… / ✓ saved" beside the field they had just typed in, and a
+    // LOCKED one got nothing at all — only the static banner above, which was
+    // already on screen before they started and does not change when they type.
+    // The acknowledgment appeared exactly where it was not needed and was
+    // missing where it was.
+    //
+    // The cost of the gap is not a lost keystroke: a locked edit is SAVED, to
+    // localStorage, and the scenario layer wins the render — so the tab shows
+    // the change back and it looks published. Sam relabelled the three
+    // priorities this way and they never reached Supabase; the routing was
+    // never at fault, the change never entered it. See
+    // methodology-a-private-save-and-a-published-save-must-not-feel-the-same.
     var saveLine = "";
-    if (unlocked() && savingState) {
-      saveLine = '<span class="cplfund-saving' + (savingState === "err" ? " err" : "") + '">' +
-        (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
-          "⚠ couldn’t save — phrase may have changed") + "</span>";
+    if (savingState) {
+      saveLine = unlocked()
+        ? '<span class="cplfund-saving' + (savingState === "err" ? " err" : "") + '">' +
+          (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
+            "⚠ couldn’t save — phrase may have changed") + "</span>"
+        // Never a bare "✓ saved" here: it is true and it is what the reader
+        // would misread. The destination is the whole message.
+        : '<span class="cplfund-saving local">✓ saved to this browser only &mdash; ' +
+          "sign in to publish for everyone</span>";
     }
     return '<div class="cplfund-authbar"><span class="grow">' + status + " " + saveLine + "</span>" +
       resetBtn + '<span id="cplFundUnlockSlot"></span>' + rightBtn + "</div>";

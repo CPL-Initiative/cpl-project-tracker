@@ -1,9 +1,63 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-28 (SkyLane) · The noncredit lane now EARNS, and its row is on the college table — merged. It earns $0 today and that is deliberate: MAP has not shipped the field that says a student arrived through a noncredit landing page, so the row shows each institution's targets and what it could earn with nothing claimed. Every college that runs noncredit now has a row, including the 78 below the entry bar, so moving that bar visibly admits them instead of silently adding rows. \"Opt in\" is now \"Confirm participation\" throughout.",
-  "_session": "Session 200 (SkyLane)",
-  "_status": "The noncredit lane is built and live. What is left is yours: whether the entry bar moves (it cannot go below 400 without breaking the minimum award — they are one decision), and whether the little arrow beside a college's name becomes a word. Neither blocks anything.",
+  "_as_of": "2026-08-28",
+  "_session": "Session 202 (SkyLens)",
+  "_status": "The noncredit lane is live on the funding priority cards behind one CR/NC switch, and it carries its own strategies you can edit yourself. Then a bigger thing surfaced: Sam relabelled the three priorities on the live tab while signed in, and nothing saved. The tab was only accepting the team phrase, while the database accepts a magic-link sign-in too — so the edit went to his own browser, showed itself back, and looked published. Fixed, in all seven places that tab writes. Those labels need re-applying. Next is putting the four outcomes the Ed. Code requires — access, completion, career attainment, and the Chancellor's Office pilot projects — onto the tab, with the project money tagged to the ones it serves.",
   "items": [
+    {
+      "id": "s202-sam-relabel",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Re-apply your priority relabels on the Funding tab. The earlier ones never left your browser — the tab was only accepting the team phrase, so being signed in wasn't enough and it saved locally without saying so. That is fixed: signing in now saves for everyone."
+    },
+    {
+      "id": "s202-sam-threshold",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Rule on the noncredit entry threshold. It and the $50,000 minimum award are one decision, not two: 400 FTES is the last affordable step, and 350 would need $1.90M against the $1.8M set aside."
+    },
+    {
+      "id": "s202-sam-combined",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Decide whether the Award range should carry a third, Combined row. Mt. San Antonio receives $400,000 credit plus $100,000 noncredit — $500,000 in total, a figure that appears nowhere on the page today."
+    },
+    {
+      "id": "s202-sam-stories",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Add one question to how CPL stories are collected: what changed at work? Of the 36 stories we hold, only about four describe a job outcome — the rest describe degrees. As they stand they cannot evidence the career-attainment goal you are reporting them against, and that is fixable when they are gathered, not afterwards."
+    },
+    {
+      "id": "s202-sam-ncstrat",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Look over the noncredit strategies now on the cards and edit them freely — they are directly editable, no engineering needed. They are deliberately not the credit ones, because a noncredit institution prepares students to earn credit elsewhere rather than awarding it."
+    },
+    {
+      "id": "s202-fable-abcd",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Build the four-goal spine on the Funding tab — access, completion, career attainment, and support for the Chancellor's Office pilot projects — with small superscript links from whatever on the page serves each one. Design is in the session-203 handoff."
+    },
+    {
+      "id": "s202-fable-projectpool",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Split the roughly $8.96M project pool into named projects — WestEd, Credential Engine, apprenticeship partners, the CA Credential Registry, MAP — each tagged to the goal it serves. The totals do not change, and it produces most of the reporting the Ed. Code asks for."
+    },
+    {
+      "id": "s202-fable-ncdials",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Give noncredit its own share and funding-factor editors. They inherit from credit today; the store already accepts both, only the strategies have an editor so far."
+    },
+    {
+      "id": "s202-fable-authsweep",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Check the other tabs for the gap the Funding tab had: a page that only accepts the team phrase will silently lock out someone signed in by magic link, even where the database would allow the write."
+    },
     {
       "id": "s196-sam-55050-send",
       "for": "Sam",
@@ -29,12 +83,6 @@
       "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
     },
     {
-      "id": "s196-sam-metrics-opening",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Separate from the regulation and probably bigger. The new law makes every dollar of implementation funding conditional on 'the metrics described in paragraph (1)' — and paragraph (1) describes four goals and supplies no metrics at all. Somebody has to define them, and the Implementation Funding model is the only college-by-college quantification of those goals that exists. It already covers access and completion, and the pilot-project one is satisfied because MAP is named in the statute. Career advancement is the gap you said you would cover through CPL Projects and the Credential Registry. This needs no rulemaking, which is exactly its advantage — keep it out of the amendment conversation."
-    },
-    {
       "id": "s196-sam-memory-hopper",
       "for": "Sam",
       "tab": "memory",
@@ -57,91 +105,6 @@
       "for": "Sam",
       "tab": "cpl-assistant",
       "text": "Settled, and noted so nobody undoes it: the automated check found 40 of 41 answers still correct on Haiku, and the one it dropped was the caveat beside the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling rather than a debt. You said you can live with it for now, so it stays as it is. The fix is written down and ready if you change your mind: move that caveat next to the number itself instead of into a rules list further away, which would make it stick on any model."
-    }
-  ],
-  "for_sam": [
-    {
-      "id": "nc-glyph-words",
-      "title": "The little arrow next to a college's name — should it be a word instead?",
-      "tab": "implementation-funding",
-      "note": "You asked what the arrow beside Allan Hancock meant. That is the finding. It means the institution was topped up to the minimum award — but the same arrow means the $150,000 CREDIT minimum on a credit row and the $50,000 NONCREDIT minimum on a noncredit row, and the only way to tell is to hover. Your own standing preference is plain words over symbols. Suggest the words \"min\" and \"max\". Say the word and it is a one-line change."
-    },
-    {
-      "id": "nc-floor",
-      "title": "Decide the noncredit minimum award — and the entry bar with it",
-      "note": "These turned out to be ONE decision, not two. At the $50,000 minimum, 30 of the 33 institutions sit exactly on it and growth does not start paying until 3,909 FTES. And the 500 FTES entry bar cannot go below 400 without the pot being unable to pay everyone that minimum — at 350 it would need $1.90M against $1.8M. So widening the lane means changing the minimum or the pot, not the bar. Also: once the lane widens past about 450, the $100,000 maximum stops affecting anyone."
-    },
-    {
-      "id": "nc-mirror-strategy",
-      "title": "Move the noncredit line out of the credit priority's strategy list",
-      "note": "Year-1 Success still lists \"noncredit mirror courses\" among the things a college can do to earn credit-side money. The noncredit lane is live now, so it belongs there. One line, and it is your text in the live settings rather than something a session should change on its own."
-    },
-    {
-      "id": "itpi-locid",
-      "title": "ITPI: can a college have its own noncredit landing page?",
-      "note": "Only ITPI can answer. MAP is adding a field naming which noncredit location a student came from. Whether an ordinary college can have a second, noncredit landing page — or only the standalone institutions like NOCE and SDCCE — decides whether this covers about 108 colleges or a handful."
-    },
-    {
-      "id": "phone-check",
-      "title": "Look at the Fact Sheet and Sierra pages on your phone",
-      "note": "Both were reworked for small screens and checked by measurement, but nobody has actually held them in a hand. Carried from the last two sessions."
-    },
-    {
-      "id": "memory-false-stamp",
-      "title": "One memory entry carries a stamp that is not true",
-      "note": "It is marked as checked by a curator while also being marked out of date. Needs your call on which it is. The eleven entries credited to you and Jenni are real attribution and should never be swept."
-    },
-    {
-      "id": "lattc-cr-evidence-review",
-      "title": "Look at the LATTC worklist and say whether this becomes a tab",
-      "note": "Jessica asked for this and it is finished: 139 LATTC courses, each with ranked credit recommendations, what other colleges did, and a Select button. It is a web page today, which means it is a snapshot. If colleges will keep asking — Jessica says they will — it wants to be a COBI tab that any college can be pointed at. Your call. https://claude.ai/code/artifact/cbf1e2e5-e3a0-406b-9aaf-1bddcbc3a0c2"
-    },
-    {
-      "id": "lattc-course-number-mismatch",
-      "title": "Five LATTC course numbers point at a different course in COCI",
-      "note": "LATTC's list calls BLDGCTQ105 'Basic Blueprints and Drawings'; COCI says that number is 'CPR/AED/First Aid'. Four others disagree the same way. Somebody should ask LATTC which is right before anyone articulates them — a recommendation attached to the wrong course number is worse than none."
-    },
-    {
-      "id": "nccer-catalog-pdf",
-      "title": "Someone needs to hand us the NCCER catalog",
-      "note": "Jessica asked for a table of NCCER certifications and the modules inside each. NCCER's website is blocked from the machine these sessions run on, so it has to be attached to a session by a person. We already hold 19 NCCER credentials, and 14 of them have published credit recommendations that no college has adopted."
-    }
-  ],
-  "for_fable": [
-    {
-      "id": "cron-drop-alarm",
-      "title": "An alarm for when a scheduled job silently does not run",
-      "note": "Still not built. A dropped run leaves nothing behind — no failure, nothing queued — so silence and success look identical. It has to be attached to a job that still runs, work out what is overdue from the schedules themselves rather than a list someone maintains, and only complain when every attempt in a day is missed."
-    },
-    {
-      "id": "troubleshooting-prune",
-      "title": "Write down the real fix for the repeated 'unpushed commits' warning",
-      "note": "The warning after a merge is caused by a leftover local pointer to the branch GitHub deleted. One command clears it for good. The troubleshooting notes currently say only to confirm it and ignore it, which means every session re-diagnoses it."
-    },
-    {
-      "id": "signin-click",
-      "title": "The sign-in email button does not respond to a click",
-      "note": "Reported by Sam, not yet fixed. Clicking fails while tabbing to it works, which points at the field being rebuilt underneath the pointer."
-    },
-    {
-      "id": "unlock-noresponse",
-      "title": "The unlock control on the funding tab does not respond",
-      "note": "Reported by Sam, not yet fixed."
-    },
-    {
-      "id": "funding-a11y",
-      "title": "Check the funding tab on a phone, and the header at high zoom",
-      "note": "Not audited. Needs a real browser — the automated tests cannot see layout at all."
-    },
-    {
-      "id": "cr-evidence-next-college",
-      "title": "Point the CR-evidence matcher at the next college that asks",
-      "note": "kb/_match_courses_to_ace_recs.py is written to be reused, but it has only ever been run once. The next college that sends a list is the test of whether it is genuinely reusable or quietly LATTC-shaped. Read docs/college_cr_evidence_lessons.md first."
-    },
-    {
-      "id": "cr-evidence-ready-to-adopt",
-      "title": "The 46 recommendations nobody in California has claimed",
-      "note": "For 46 of LATTC's courses the credit recommendation exists and students already hold it, but no college has ever attached it to a course. That is a shelf, not a gap — and it is not LATTC-specific. Worth counting statewide."
     }
   ]
 }

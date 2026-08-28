@@ -4977,3 +4977,21 @@ where the screen shows `plain`, so **every plain-language pass that table ever h
 model**. Story `docs/t5_55050_lessons.md` · `docs/t5_55050_vs_gr_register.md` ·
 `docs/cobi_memory_tab_lessons.md` · handoff `docs/session_197_handoff.md`.
 
+### SkyVerdict S197 — read the verdict, don't infer it (2026-08-26)
+
+**Two systems told us plainly what was wrong and we were reading neither.** (#1358, #1359).
+⭐ **MAP had been answering `400 "View_StudentDetailsCredits_APIDataset is not Valid"` per dataset for
+three nights** while our loader printed a duplicate-name symptom and MAP's own `dataCount` claim.
+Sam found it in one manual pull. ⚠️ **The batch relabels a neighbour's dataset on an invalid view**, so
+the name that vanished belonged to a HEALTHY view — my byte arithmetic was right and my read of the
+labels was wrong.
+⭐ **Sam: "Never rely on the config."** I quoted a stored Year-2 `factor` of 1 from LIVE Supabase; the
+model uses 0.5 because `mirrorYears` makes that block unreachable. **A missing value sends you looking;
+a dormant one does not.** Shipped `_effective()` + `scripts/funding_effective.js`, which REFUSES to run
+without a config — and its own test caught the same bug inside the fix (a cached `ncModel()` reported
+baked numbers as "effective").
+⭐ **Sam ruled the NC lane EARNS like credit**, then ⛔ **scoping found `measurability()` matches metrics by
+PROSE**, so all three NC metrics would read CREDIT performance — plausible numbers, nothing on screen
+saying so. Build order is now `src` first. Found before a line was written.
+Story `docs/map_custom_reports_lessons.md` · `docs/cpl_funding_lessons.md` · handoff `docs/session_198_handoff.md`.
+
