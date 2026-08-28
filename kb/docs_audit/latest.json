@@ -10,7 +10,7 @@
   },
   "summary": {
     "files": 688,
-    "bytes": 7572616,
+    "bytes": 7583153,
     "over_budget": 4,
     "handoff_max": 205,
     "always_loaded_files": 1,
@@ -45,7 +45,7 @@
       },
       "handoff": {
         "files": 180,
-        "bytes": 1493808,
+        "bytes": 1504345,
         "over": 0
       }
     },
@@ -55,9 +55,9 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2346,
-      "bytes": 1239023042,
-      "heavy_bytes": 598926990,
+      "files": 2348,
+      "bytes": 1239106474,
+      "heavy_bytes": 598926483,
       "heavy_share": 0.483,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -389,10 +389,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8693812,
+        "bytes": 8693210,
         "kind": "file"
       },
-      "message": "8,693,812 B single file inside the vault"
+      "message": "8,693,210 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -549,10 +549,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007262,
+        "bytes": 3007357,
         "kind": "file"
       },
-      "message": "3,007,262 B single file inside the vault"
+      "message": "3,007,357 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
