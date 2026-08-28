@@ -10,17 +10,17 @@
   },
   "summary": {
     "files": 688,
-    "bytes": 7572616,
+    "bytes": 7583940,
     "over_budget": 4,
     "handoff_max": 205,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 150287,
+    "always_loaded_bytes": 151074,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 150287,
+        "bytes": 151074,
         "over": 1
       },
       "other": {
@@ -45,19 +45,18 @@
       },
       "handoff": {
         "files": 180,
-        "bytes": 1493808,
+        "bytes": 1504345,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 4,
-      "american_spelling": 1,
       "vault_heavy_path": 45
     },
     "vault": {
       "files": 2346,
-      "bytes": 1239023042,
-      "heavy_bytes": 598926990,
+      "bytes": 1239038821,
+      "heavy_bytes": 598926483,
       "heavy_share": 0.483,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -113,13 +112,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 150287,
+        "bytes": 151074,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 90287,
-        "ratio": 2.5
+        "over_by": 91074,
+        "ratio": 2.52
       },
-      "message": "150,287 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "151,074 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -133,29 +132,6 @@
         "ratio": 1.16
       },
       "message": "174,429 B is 1.2× the other budget (150,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons_archive.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 3,
-        "forms": {
-          "normalis": {
-            "n": 1,
-            "prefer": "normaliz"
-          },
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
-          },
-          "enrol": {
-            "n": 1,
-            "prefer": "enroll"
-          }
-        }
-      },
-      "message": "3 British forms — normalis→normaliz, labelled→labeled, enrol→enroll",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -389,10 +365,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8693812,
+        "bytes": 8693210,
         "kind": "file"
       },
-      "message": "8,693,812 B single file inside the vault"
+      "message": "8,693,210 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -549,10 +525,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007262,
+        "bytes": 3007357,
         "kind": "file"
       },
-      "message": "3,007,262 B single file inside the vault"
+      "message": "3,007,357 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

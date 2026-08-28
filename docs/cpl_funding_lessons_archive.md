@@ -89,7 +89,7 @@ row and asserts it matches the workbook to <1¢ (`max drift 0.01`):
 
 ### Workbook quirks (handle on the next edition)
 
-- The third year column is **labelled "26-27" again — a source typo for
+- The third year column is **labeled "26-27" again — a source typo for
   28-29**; the pool math (3 × 11.6M = 34.8M) pins the window. Extractor
   documents + corrects.
 - The "26-30 TOTAL AVAILABLE COLLEGE FUNDING" value cell is empty (merged
@@ -1805,7 +1805,7 @@ story is mostly about the three defects found along the way, two of them mine.
 ### The allocation basis: I argued the wrong side, and measured my way out
 
 I opposed switching the basis to FTES, reasoning that CPL serves working adults
-who enrol part-time, so FTES-weighting would penalise the colleges doing the most
+who enroll part-time, so FTES-weighting would penalise the colleges doing the most
 CPL. Plausible, and **wrong**: `corr(load factor, CPL penetration) = 0.086`, and
 the switch moves **+$307K toward** the 15 highest-CPL colleges and **−$348K away
 from** the 15 lowest. It is mildly *pro*-CPL.
@@ -1847,7 +1847,7 @@ matters is the one asserting the relationship, not the two asserting each side.*
 
 That new test then surfaced a *pre-existing* defect: an unfloored college's real
 rate is ~10.4% **below** the statewide base, because the $150K floor top-ups are
-funded by renormalising the split over exactly those colleges. The hover claimed
+funded by renormalizing the split over exactly those colleges. The hover claimed
 base rate regardless. Disclosed in the floor note, never reflected per cell.
 
 ### Defect 2 (mine, caught pre-merge): the policy dial ran backwards
