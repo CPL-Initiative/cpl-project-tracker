@@ -3130,12 +3130,13 @@
       status = staleSess
         ? '<span class="mode scenario">⏰ Your sign-in has expired' +
           (dirty ? " — the edits since then are on this browser only" : "") + "</span> " +
-          '<span class="dk">Sign in again to save for everyone' +
+          '<span class="dk">Sign in again from the account control in the header to save for everyone' +
           (dirty ? "; your changes are kept and can be published after." : ".") + "</span>"
         : '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
           "Viewing the shared model") + "</span> " +
           '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
-            "just start editing to explore — or sign in to save for the team") + "</span>";
+            "just start editing to explore — or sign in from the account control " +
+            "in the header to save for the team") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset exploration</button>';
     }
     // ⚠️ EVERY EDIT GETS AN EVENT, IN BOTH MODES (Sam, 2026-08-28).
