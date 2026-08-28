@@ -9,9 +9,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 680,
-    "bytes": 7689995,
-    "over_budget": 5,
+    "files": 684,
+    "bytes": 7544418,
+    "over_budget": 4,
     "handoff_max": 203,
     "always_loaded_files": 1,
     "always_loaded_bytes": 149538,
@@ -24,14 +24,14 @@
         "over": 1
       },
       "other": {
-        "files": 87,
-        "bytes": 2133412,
+        "files": 91,
+        "bytes": 2242242,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 273616,
-        "over": 1
+        "bytes": 19209,
+        "over": 0
       },
       "lessons": {
         "files": 70,
@@ -50,13 +50,13 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
+      "oversized_doc": 4,
       "american_spelling": 174,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2334,
-      "bytes": 1239105871,
+      "files": 2340,
+      "bytes": 1238978135,
       "heavy_bytes": 598926990,
       "heavy_share": 0.483,
       "ignore_filters": [
@@ -138,42 +138,6 @@
       "path": "CLAUDE.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 273616,
-        "limit": 40000,
-        "lane": "index",
-        "over_by": 233616,
-        "ratio": 6.84
-      },
-      "message": "273,616 B is 6.8× the index budget (40,000 B) — candidate for compaction",
-      "path": "docs/INDEX.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 13,
-        "forms": {
-          "behaviour": {
-            "n": 6,
-            "prefer": "behavior"
-          },
-          "normalis": {
-            "n": 4,
-            "prefer": "normaliz"
-          },
-          "minimis": {
-            "n": 3,
-            "prefer": "minimiz"
-          }
-        }
-      },
-      "message": "13 British forms — behaviour→behavior, normalis→normaliz, minimis→minimiz",
-      "path": "docs/INDEX.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -210,6 +174,33 @@
       },
       "message": "2 British forms — organis→organiz",
       "path": "docs/auth_and_repo_posture_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 11,
+        "forms": {
+          "behaviour": {
+            "n": 4,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 4,
+            "prefer": "normaliz"
+          },
+          "minimis": {
+            "n": 2,
+            "prefer": "minimiz"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "11 British forms — behaviour→behavior, normalis→normaliz, minimis→minimiz, summaris→summariz",
+      "path": "docs/catalog/kb-notes.md"
     },
     {
       "rule": "american_spelling",

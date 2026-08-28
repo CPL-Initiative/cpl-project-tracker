@@ -49,9 +49,10 @@ Rules
   R4 frontmatter_log_chain — a frontmatter scalar that has become an append-only
                              log. `docs/INDEX.md`'s `updated:` is the worked
                              example: one line chaining six `prior:` entries.
-  R5 unindexed_kb_note     — a KB note absent from `docs/INDEX.md`. The index is
-                             the declared Obsidian entry point; a note missing
-                             from it is effectively unreachable by browsing.
+  R5 unindexed_kb_note     — a KB note reachable from neither `docs/INDEX.md`
+                             nor a `docs/catalog/*.md` that INDEX links to. The
+                             index is the declared Obsidian entry point; a note
+                             missing from it is unreachable by browsing.
   R6 vault_heavy_path      — a heavy non-markdown path that an Obsidian vault
                              containing this repo has to watch. This repo is
                              cloned INTO the vault, so its working tree is vault
@@ -544,6 +545,29 @@ def rule_frontmatter_log_chain(entry):
     }
 
 
+def read_browsable_index():
+    """The text a human can reach by BROWSING from `docs/INDEX.md`.
+
+    INDEX.md is the landing page; the full per-lane listings live in the
+    generated `docs/catalog/*.md` (`kb/_build_docs_index.py`), because 340
+    KB-note rows cannot fit a 40,000 B landing-page budget at any width.
+
+    A catalog counts only when INDEX actually LINKS to it — reachability is the
+    invariant, not the file's existence. Unlink a catalog and every note in it
+    correctly reports as unreachable again.
+    """
+    index_path = os.path.join(ROOT, "docs", "INDEX.md")
+    if not os.path.isfile(index_path):
+        return None
+    text = read(index_path)
+    parts = [text]
+    for href in set(re.findall(r"\]\((catalog/[^)]+\.md)\)", text)):
+        p = os.path.join(ROOT, "docs", href)
+        if os.path.isfile(p):
+            parts.append(read(p))
+    return "\n".join(parts)
+
+
 def rule_unindexed_kb_note(entry, index_text):
     if entry["lane"] != "kb_note" or index_text is None:
         return None
@@ -556,7 +580,8 @@ def rule_unindexed_kb_note(entry, index_text):
         "rule": "unindexed_kb_note",
         "fixable": False,
         "detail": {"stem": base[:-3]},
-        "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+        "message": "not referenced from docs/INDEX.md or any catalog it "
+                   "links to — unreachable by browsing",
     }
 
 
@@ -811,8 +836,7 @@ def main():
 
     docs = collect(ROOT)
     handoff_max = find_handoff_max(docs)
-    index_path = os.path.join(ROOT, "docs", "INDEX.md")
-    index_text = read(index_path) if os.path.isfile(index_path) else None
+    index_text = read_browsable_index()
 
     entries = []
     for path in docs:
