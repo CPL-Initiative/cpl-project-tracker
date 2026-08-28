@@ -9,28 +9,28 @@
     "other": 150000
   },
   "summary": {
-    "files": 688,
-    "bytes": 7583153,
+    "files": 689,
+    "bytes": 7588034,
     "over_budget": 4,
     "handoff_max": 205,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 150287,
+    "always_loaded_bytes": 151074,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 150287,
+        "bytes": 151074,
         "over": 1
       },
       "other": {
-        "files": 91,
-        "bytes": 2255229,
+        "files": 92,
+        "bytes": 2256327,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 9380,
+        "bytes": 9463,
         "over": 0
       },
       "lessons": {
@@ -45,18 +45,17 @@
       },
       "handoff": {
         "files": 180,
-        "bytes": 1504345,
+        "bytes": 1507258,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 4,
-      "american_spelling": 1,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2348,
-      "bytes": 1239106474,
+      "files": 2350,
+      "bytes": 1239432904,
       "heavy_bytes": 598926483,
       "heavy_share": 0.483,
       "ignore_filters": [
@@ -113,13 +112,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 150287,
+        "bytes": 151074,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 90287,
-        "ratio": 2.5
+        "over_by": 91074,
+        "ratio": 2.52
       },
-      "message": "150,287 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "151,074 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -133,29 +132,6 @@
         "ratio": 1.16
       },
       "message": "174,429 B is 1.2× the other budget (150,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons_archive.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 3,
-        "forms": {
-          "normalis": {
-            "n": 1,
-            "prefer": "normaliz"
-          },
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
-          },
-          "enrol": {
-            "n": 1,
-            "prefer": "enroll"
-          }
-        }
-      },
-      "message": "3 British forms — normalis→normaliz, labelled→labeled, enrol→enroll",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {

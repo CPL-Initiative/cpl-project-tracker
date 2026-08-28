@@ -302,6 +302,16 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
      carries volume) — supersede don't delete, log every write, don't dump a
      session log. Full procedure (SQL patterns + the corroboration rule):
      [`docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md`](docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md).
+   - **`CPLBrain` vault — `07-session-notes/YYYY-MM-DD-<slug>.md`** (wired in
+     2026-08-28). REQUIRED for any non-trivial session; **`CPLBrain/CLAUDE.md`
+     has always marked this MANDATORY**, but it was absent from this list, so it
+     had not fired since 2026-08-09 — a rule in one repo whose procedure lives in
+     another does not fire. Template: `07-session-notes/README.md`. Also
+     `04-projects/<project>/SESSION-NOTES.md` when the run worked inside a
+     project folder, and `07-session-notes/README.md` only if the convention
+     itself changed. ⚠️ **Never edit `CPLBrain/README.md`, `.claude/skills/`,
+     `.claude/roles/`, `.kiro/` or `.gemini/`** — upstream COG framework files
+     owned by `cog-update.sh`, not our content. Still never the public KB.
 
    Capture in each: (a) what's been learned this checkpoint, (b) current
    state of the work, (c) strategic roadmap, (d) next concrete step.
