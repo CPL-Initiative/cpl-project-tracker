@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-180 document(s).
+181 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 206 | [from SkyLens (Session 203, the Funding lane)](../session_206_handoff.md) | 2026-08-28 |
 | 205 | [from SkySolidare (Session 204, the Obsidian lane)](../session_205_handoff.md) | 2026-08-28 |
 | 203 | [from SkyLens (Session 202)](../session_203_handoff.md) | 2026-08-28 |
 | 201 | [from SkyLane (Session 200)](../session_201_handoff.md) | 2026-08-27 |

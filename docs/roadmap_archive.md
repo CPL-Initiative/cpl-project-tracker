@@ -286,7 +286,31 @@ These are the shipped phases. The still-open rows stayed in CLAUDE.md §11 Roadm
 
 ---
 
-## Archived session narratives (Sessions 26-31)
+## Archived session narratives
+
+### SkyLens S202 — a gate stricter than its own policy, and a fix that was half a fix (2026-08-28)
+
+**Sam relabeled the priorities on the live tab and nothing reached Supabase — three times.**
+⭐ **The client refused a write the DATABASE would have accepted**: `unlocked()` asked only for
+the team PHRASE while all three funding tables carry `is_allowed_reviewer() OR team_pass_ok()`.
+His masthead read "● Signed in" — **two credentials, one word**. Seven write paths had it; fixed
+as ONE `applyWriteAuth()` (#1370, `995be5a`).
+⭐ **THAT FIX WAS HALF A FIX, AND THE OTHER HALF WAS THE ACTUAL CAUSE.** Work done while locked
+lands in the SCENARIO overlay, which **WINS THE RENDER** — so his labels painted back and looked
+published, and re-typing them fired no `change` event. **The promotion step already existed and
+only the TEAM-PHRASE unlock row reached it**; a magic-link reviewer strands the overlay for ever.
+Now `promoteScenarioToShared()` + *"⚠ This browser holds changes nobody else can see"* + a Publish
+button, and an **expired** sign-in says so instead of reading as ordinary exploring (#1371).
+⭐ **The sign-in dropdown closed on ANY document click** — tab worked, clicking did not; **when the
+workaround is "use the keyboard", suspect an event-model mismatch, not focus.** 47 sites already
+did containment checks; this was the lone outlier.
+⚠️ **I wrote his labels via SQL and reverted them** — *"I don't want you to fix it; I want the tab
+to save it."* A hand-applied fix destroys the experiment that proves the repair.
+⚠️ **The routing was never at fault** — every consumer reads `_prios()`/`_ncPrios()`.
+⚠️ **STILL UNPROVEN END TO END: that a reviewer save reaches Supabase.** Every layer is fixed in
+isolation; nothing has done the round trip in a browser.
+Story `docs/cpl_funding_lessons.md` · handoff `docs/session_203_handoff.md`.
+ (Sessions 26-31)
 
 The Session-25 strategic queue and the most-recent session narrative stayed in
 CLAUDE.md; Sessions 26-31 "what shipped" narratives live here.

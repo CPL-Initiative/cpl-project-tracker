@@ -1,15 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-28",
-  "_session": "Session 202 (SkyLens)",
-  "_status": "The noncredit lane is live on the funding priority cards behind one CR/NC switch. The rest of the day went to one problem: Sam renamed three priorities and it would not save, three times. Three separate causes, all now fixed — the page was only accepting the team password when the database also accepts a normal sign-in; the sign-in drop-down closed whenever you clicked the email box; and, the real one, edits made before signing in stayed in your own browser and painted themselves back over the shared version, so they looked saved. His names are still only in his browser: once the last fix deploys, the tab shows a Publish button and one click lands them.",
+  "_session": "SkyLens, Session 203 (Funding lane)",
+  "_status": "Sam published his three priority names from the Funding tab and they reached the database — the save path is proven working end to end, which had been open for three sessions. Curating the funding model now needs a personal sign-in rather than the shared team phrase. The tab also gained a section showing what the law requires this money to achieve, with links from whatever funds each goal; and the noncredit column came off the college table, because it was showing the same money twice — every institution now has its own credit and noncredit rows instead. Colleges with no noncredit program get a row too, marked as such, so if that is wrong we hear about it.",
   "items": [
-    {
-      "id": "s202-sam-publish",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Click 'Publish this browser's changes' on the Funding tab. Your three priority names are still only on your machine — the tab will now say so plainly and offer the button. One click puts them where everyone sees them, and I will confirm it landed rather than trusting the screen."
-    },
     {
       "id": "s202-sam-threshold",
       "for": "Sam",
@@ -35,16 +29,10 @@
       "text": "Look over the noncredit strategies now on the cards and edit them freely — they are directly editable. They are deliberately not the credit ones, because a noncredit institution prepares students to earn credit elsewhere rather than awarding it."
     },
     {
-      "id": "s202-fable-abcd",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Build the four-goal spine on the Funding tab — access, completion, career attainment, and support for the Chancellor's Office pilot projects — with small superscript links from whatever on the page serves each one. Sam's ask; design is in the session-203 handoff."
-    },
-    {
       "id": "s202-fable-projectpool",
-      "for": "Fable",
+      "for": "Sam",
       "tab": "cpl-implementation",
-      "text": "Split the roughly $8.96M project pool into named projects — WestEd, Credential Engine, apprenticeship partners, the CA Credential Registry, MAP — each tagged to the goal it serves. Totals do not change, and it produces most of the reporting the Ed. Code asks for."
+      "text": "Name the projects behind the roughly $8.96M project pool, and roughly what each gets. We checked: the budget ledger holds it as a single line with nothing underneath, and none of the 32 projects in the Activities register is funded from the $35M — so we cannot split it without inventing figures. Once you give us the names and amounts, tagging each to a legal goal is quick."
     },
     {
       "id": "s202-fable-savesweep",
@@ -83,28 +71,34 @@
       "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
     },
     {
-      "id": "s196-sam-memory-hopper",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "The memory entries are now readable end to end in plain English — 202 were rewritten, and there are no entries left without plain text, none with developer jargon, and no British spellings. The hopper of unreviewed entries is worth an afternoon whenever you have one. Two small things still need you: one entry is marked stale but still carries a verification stamp, which needs your go to clear, and 26 verified entries do not name who verified them."
-    },
-    {
-      "id": "s195-sam-credit-alert",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Sierra ran out of API credit this evening and you restored it — thank you. That is the third time (21 Aug, 22 Aug, 25 Aug). The uptime monitor did its job and raised the alert, but it only looks every three hours, so an outage can run that long before anyone is told. A balance-threshold alert on the Anthropic account itself would catch it before it becomes an outage, and that is the one thing a monitor here cannot do."
-    },
-    {
       "id": "s195-sam-revert-model",
       "for": "Sam",
       "tab": "cpl-assistant",
       "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
     },
     {
-      "id": "s195-sam-haiku-caveat",
+      "id": "s203-sam-sticky",
       "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Settled, and noted so nobody undoes it: the automated check found 40 of 41 answers still correct on Haiku, and the one it dropped was the caveat beside the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling rather than a debt. You said you can live with it for now, so it stays as it is. The fix is written down and ready if you change your mind: move that caveat next to the number itself instead of into a rules list further away, which would make it stick on any model."
+      "tab": "cpl-implementation",
+      "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
+    },
+    {
+      "id": "s203-sam-ncrows",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Look at the college table and the new legal-goals section. Every college now has both a credit and a noncredit row; seven show 'none on record' (Taft, Fullerton, American River, Cosumnes River, and the three San Diegos) — if any of them does run a noncredit program, tell us, because that is a data error we can trace. In the goals section, check two calls in particular: career attainment is shown as funded but unmeasurable, and the goal about serving all students equitably is marked not measured, because nothing we hold describes how credit is spread across groups of students."
+    },
+    {
+      "id": "s203-fable-sticky",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Build the frozen header and statewide rows once Sam agrees. The catch is that the second frozen row has to know exactly how tall the header is; measure it rather than typing a number, or it breaks at other zoom levels and font sizes."
+    },
+    {
+      "id": "s203-fable-savesweep2",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "The funding tab now requires a personal sign-in instead of the shared phrase. Check whether the other curator tabs should follow, and whether any of them still offers editing that the database would refuse."
     }
   ]
 }

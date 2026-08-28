@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 342,
+   "count": 345,
    "docs": [
     {
      "created": "2026-08-14",
@@ -709,6 +709,24 @@
      "title": "A conditional key breaks a bulk upsert, and it fails positionally",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [
+      ".github/workflows/js-tests.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "github",
+      "pull-requests",
+      "debugging"
+     ],
+     "title": "A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI",
+     "type": "methodology",
+     "updated": "2026-08-28"
     },
     {
      "created": "2026-08-22",
@@ -1715,6 +1733,24 @@
      "title": "A scoped question may need a different instrument, not a filter",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [
+      "cpl_funding.js"
+     ],
+     "path": "docs/kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "exports",
+      "csv",
+      "ui",
+      "data-integrity"
+     ],
+     "title": "A screen and its export must share a scope, not a shape",
+     "type": "methodology",
+     "updated": "2026-08-28"
     },
     {
      "created": "2026-08-22",
@@ -5470,6 +5506,23 @@
       "debugging"
      ],
      "title": "When the workaround is the keyboard, suspect the event model",
+     "type": "methodology",
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [
+      "tests/cpl_funding_statutory_goals.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "mutation-testing",
+      "guards"
+     ],
+     "title": "When two implementations agree on your live data, your test is not distinguishing them",
      "type": "methodology",
      "updated": "2026-08-28"
     },
@@ -10409,8 +10462,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 180,
+   "count": 181,
    "docs": [
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "n": 206,
+     "path": "docs/session_206_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-206",
+      "cpl-funding",
+      "ed-code-78093",
+      "noncredit",
+      "ci"
+     ],
+     "title": "from SkyLens (Session 203, the Funding lane)",
+     "type": null,
+     "updated": "2026-08-28"
+    },
     {
      "created": "2026-08-28",
      "governs": [],
@@ -13580,5 +13651,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 674
+ "total": 678
 }

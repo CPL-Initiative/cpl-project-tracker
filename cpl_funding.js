@@ -442,7 +442,12 @@
     ".cf-lanechip { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .06em; " +
       "padding: 1px 5px; margin-left: 5px; border: 0; border-radius: 3px; " +
       "background: var(--surface-muted); color: var(--navy-secondary); cursor: default; vertical-align: middle; }",
-    ".cplfund-ncrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
+    ".cplfund-ncrow .cf-lanename, .cplfund-ncsysrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
+    // ⚠️ The statewide noncredit row deliberately does NOT carry .cplfund-ncrow.
+    // That class means "a college's noncredit row" to several selectors and to
+    // the guards that sample them; widening it made three assertions fail on a
+    // row they were never written about. A new kind of row gets a new class.
+    ".cplfund-table tr.cplfund-ncsysrow > td { border-top: 1px solid var(--border); }",
     // Matches .cplfund-caret exactly — width AND the 1px right margin. If that
     // rule's width changes, this one has to follow, which is why they sit in the
     // same stylesheet a few lines apart.
@@ -2818,9 +2823,17 @@
     lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
       ["Eligibility (proposed)", "Floor / maximum applied"], yHead,
       ["Total " + windowLabel()], earnHead,
-      // Noncredit rides beside the credit total in the export for the same
-      // reason it does on screen: a spreadsheet that folds it in is how it
-      // stops being visible as noncredit money.
+      // ⚠️ THE EXPORT KEEPS ITS NONCREDIT COLUMN EVEN THOUGH THE SCREEN DROPPED
+      // ONE, and that is deliberate — do not "fix" the mismatch by deleting it.
+      // The table retired its NC $ column because every institution now renders
+      // as a CR/NC pair, so a second ROW carries that money. This CSV has no NC
+      // rows: it is one line per college, so this column is the ONLY place
+      // noncredit money appears in the export. Removing it to match the screen
+      // would delete the figure rather than de-duplicate it.
+      //
+      // The two surfaces still share one SCOPE — every college's noncredit
+      // money is present in both — which is the invariant that matters; the
+      // layouts differ because the carriers differ.
       ["Noncredit support " + windowLabel(), "Noncredit FTES"], ["Working adults (county)"]));
     function collegeLine(c) {
       return [c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
@@ -5418,13 +5431,21 @@
         title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (the second line of each money cell)." }
     ], yearColDefs(), [
       totalColDef(),
-      // Noncredit money rides BESIDE the credit total and is never added into
-      // it (Sam, 2026-08-22: "I want it on the surface the amount admin should
-      // give to NC so it doesn't get lumped into the whole — NC is often
-      // considered the neglected step child"). Its own column is what makes
-      // that structural rather than remembered.
-      { key: "nc_award", label: "NC $", cls: "",
-        title: "Noncredit support for this institution's own noncredit program, over the window — a SEPARATE carve-out, not part of the credit total beside it. Institutions at or above the noncredit entry threshold share it in proportion to their noncredit FTES, between the noncredit minimum and maximum. '—' means the institution is below the threshold." },
+      // ⭐ NONCREDIT MONEY IS STILL NEVER ADDED INTO THE CREDIT TOTAL — the
+      // requirement Sam set on 2026-08-22 ("I want it on the surface the amount
+      // admin should give to NC so it doesn't get lumped into the whole — NC is
+      // often considered the neglected step child") is now carried by the ROW
+      // structure rather than by a column. Every institution renders as a CR/NC
+      // pair, SYSTEM included, so the separation is one a reader sees rather
+      // than one they have to read a column header to learn.
+      //
+      // ⚠️ The column was RETIRED because it printed the same money twice: a
+      // college's carve-out appeared in its credit row's NC $ cell AND in its
+      // NC row's total. The old NC row's own cell rendered "↑" with the hover
+      // "the NC $ figure on the credit row above is the same money, summarized"
+      // — the duplication was documented rather than fixed. The college/
+      // standalone split that only its hover carried now sits on the SYSTEM NC
+      // row, in the open.
       { key: "working_adults", label: "Working adults*", cls: "" }
     ]);
   }
@@ -5996,10 +6017,10 @@
   }
   function rowChips(c) {
     var chips = "";
-    // The lane chip (Sam, 2026-08-27: "CR/NC chips", not the words). Shown ONLY
-    // where a noncredit row follows — on a college with no noncredit program
-    // there is no second lane to tell this row apart from, so a bare "CR" would
-    // be labelling a distinction that is not on screen.
+    // The lane chip (Sam, 2026-08-27: "CR/NC chips", not the words). The rule is
+    // that it appears where a noncredit row follows, so it never labels a
+    // distinction that is not on screen — and since 2026-08-28 every college is
+    // rendered as a CR/NC pair, so it always does.
     if (ncRowShown(c)) chips += '<span class="cplfund-chip cf-lanechip">CR</span>';
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
@@ -6022,36 +6043,11 @@
   // The NC $ cell. Deliberately says WHY it is empty rather than printing a
   // bare dash: "below the threshold" is a policy outcome the reader can act on
   // (the dial is one box away), while a dash reads as missing data.
-  function ncCellHtml(c) {
-    var m = ncModel();
-    var w = m.W[c.college] || 0;
-    var ftes = Number(c.noncredit_ftes) || 0;
-    if (!(w > 0)) {
-      var why = ftes > 0
-        ? fmtInt(ftes) + " NC FTES — below the " + fmtInt(m.threshold) + " threshold"
-        : "no noncredit program on record";
-      return '<td class="dk" title="' + esc(why) + '">—</td>';
-    }
-    var note = m.floored[c.college] ? "at the minimum"
-      : m.capped[c.college] ? "at the maximum" : fmtInt(ftes) + " NC FTES";
-    return '<td title="' + esc("Noncredit carve-out over the " + windowLabel() + " window — separate from the credit total.") +
-      '">' + fmtMoney(w) + '<span class="sub">' + esc(note) + "</span></td>";
-  }
 
   // The SYSTEM row's NC total. It sums the COLLEGE rows only, because the three
   // standalone institutions are not rows in this table — so the figure would
   // otherwise silently claim the whole carve-out lands on colleges. The sub-line
   // names the remainder rather than hiding it.
-  function ncSystemCellHtml() {
-    var m = ncModel();
-    var onCollegeRows = 0;
-    base().colleges.forEach(function (c) { onCollegeRows += m.W[c.college] || 0; });
-    var standalone = m.pool - onCollegeRows - m.unspent;
-    return '<td title="' + esc("Of the " + fmtMoney(m.pool) + " noncredit carve-out, this is the part earned by colleges " +
-      "with their own noncredit programs. The rest goes to the standalone noncredit institutions listed below the table.") +
-      '">' + fmtMoney(onCollegeRows) +
-      '<span class="sub">+ ' + fmtMoney(standalone) + " standalone = " + fmtMoney(m.pool) + "</span></td>";
-  }
 
   // ── OPTION A: the NONCREDIT ROW (Sam, 2026-08-27) ─────────────────────────
   // "Option A — a second NC row per college", not extra lines inside each
@@ -6108,6 +6104,136 @@
     });
     return out;
   }
+  // The SYSTEM row's noncredit counterpart — the same aggregate shape
+  // systemAlloc() builds for credit, so yearCellsHtml()/totalCellHtml() render
+  // it unchanged rather than growing a second stacking implementation.
+  //
+  // ⚠️ Summed over the WHOLE lane (colleges + standalone institutions), because
+  // the carve-out is one pot. The sub-line beside the name splits it, since
+  // "what colleges earn" and "what the standalone campuses get" are the two
+  // figures an administrator actually asks for — and that split used to live
+  // only in the NC $ column's hover, where a reader had to find it.
+  function ncSystemAlloc() {
+    var out = { nc: true, total: 0, key: "SYSTEM", college: null };
+    var eys = selectedYears().map(function () { return 0; });
+    var ys = selectedYears().map(function () { return 0; });
+    var earnTotal = 0, eMeas = 0, eAdv = 0, eHeld = 0;
+    var caps = {}, earned = {};
+    ncPriorities(state.viewSlot).forEach(function (p) {
+      caps[p.key] = ncPrioCap(ncModel().pool, state.viewSlot, p);
+      earned[p.key] = 0;
+    });
+    ncInstitutions().forEach(function (inst) {
+      var a = ncAllocFor(inst);
+      // Earned per priority = Σ institutions, each on its OWN actuals — never
+      // the statewide cap times a statewide fraction, which would invent a
+      // fraction no institution posted.
+      ncPriorities(state.viewSlot).forEach(function (p) {
+        earned[p.key] += (a[p.key] || 0) * (earnFraction(inst, p).f || 0);
+      });
+      out.total += a.total || 0;
+      earnTotal += a.earned_total || 0;
+      eMeas += a.earned_measured || 0;
+      eAdv += a.earned_advance || 0;
+      eHeld += a.earned_withheld || 0;
+      ys.forEach(function (_, i) { ys[i] += a["y" + (i + 1)] || 0; });
+      eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
+    });
+    ys.forEach(function (v, i) { out["y" + (i + 1)] = v; });
+    eys.forEach(function (v, i) { out["ey" + (i + 1)] = v; });
+    out.earned_total = earnTotal;
+    out.earned_measured = eMeas;
+    out.earned_advance = eAdv;
+    out.earned_withheld = eHeld;
+    ncPriorities(state.viewSlot).forEach(function (p) {
+      out[p.key] = caps[p.key];
+      out[p.key + "_earned"] = earned[p.key];
+    });
+    return out;
+  }
+  // The SYSTEM row's priority cell. Deliberately NOT ncPrioCellHtml(): that one
+  // is written for a single institution — prioTarget(inst), earnFraction(inst),
+  // inst.college — and a statewide row has no institution. Passing null crashed
+  // it. This reads the aggregate instead, so no per-institution figure is faked.
+  function ncSystemPrioCellHtml(row, p) {
+    var cap = row[p.key] || 0;
+    var got = row[p.key + "_earned"] || 0;
+    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
+      return '<td class="cf-prio cplfund-carry" title="' +
+        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement.") + '">↻ carryover</td>';
+    }
+    var title = p.label + " — " + p.title + " (noncredit, statewide). Funding cap " + fmtMoney(cap) +
+      " across every institution in the noncredit lane; earned " + fmtMoney(got) +
+      " — the sum of what each institution has earned on its own actuals, never a statewide rate.";
+    return '<td class="cf-prio" title="' + esc(title) + '">' +
+      '<span class="cf-u">' + fmtMoneyK(cap) + "</span>" +
+      '<span class="sub"><span class="cf-u">' + fmtMoneyK(got) + "</span></span></td>";
+  }
+  // How the carve-out divides between the college rows in this table and the
+  // standalone institutions listed beneath it.
+  function ncSystemSplit() {
+    var m = ncModel(), onCollegeRows = 0;
+    base().colleges.forEach(function (c) { onCollegeRows += m.W[c.college] || 0; });
+    return { pool: m.pool, onCollegeRows: onCollegeRows,
+             standalone: m.pool - onCollegeRows - m.unspent };
+  }
+  function ncSystemRowHtml() {
+    var row = ncSystemAlloc(), sp = ncSystemSplit();
+    var why = "The " + fmtMoney(sp.pool) + " noncredit carve-out — a SEPARATE pot, never part of the " +
+      "credit total on the row above. " + fmtMoney(sp.onCollegeRows) + " is earned by colleges with their " +
+      "own noncredit programs (the NC rows in this table); " + fmtMoney(sp.standalone) + " goes to the " +
+      "standalone noncredit institutions listed below the table.";
+    return '<tr class="cplfund-systemrow cplfund-ncsysrow" data-ncfor="SYSTEM">' +
+      '<td></td><td class="t"><span class="cf-lanename">SYSTEM (statewide)</span>' +
+        '<span class="cplfund-chip cf-lanechip">NC</span></td>' +
+      '<td class="t dk">&middot;</td>' +
+      '<td title="' + esc("Statewide noncredit FTES across every institution in the lane.") + '">' +
+        fmtInt(allNoncreditFtes()) + "</td>" +
+      tgtNowLabelCellHtml() +
+      ncPriorities(state.viewSlot).map(function (p) { return ncSystemPrioCellHtml(row, p); }).join("") +
+      '<td class="dk" title="' + esc("Participation is recorded per institution — see the credit row above.") +
+        '">&middot;</td>' +
+      yearCellsHtml(row) +
+      totalCellHtml(row) +
+      '<td class="dk" title="' + esc(why) + '">' +
+        '<span class="sub">' + esc(fmtMoney(sp.onCollegeRows) + " on colleges + " +
+          fmtMoney(sp.standalone) + " standalone") + "</span></td></tr>";
+  }
+  // A college with NO noncredit program on record. It still gets a row, so that
+  // every college in the table reads as a CR/NC pair.
+  //
+  // ⚠️ AN ABSENT ROW AND A ZERO ROW ARE INDISTINGUISHABLE BY EYE, which is the
+  // same argument that already put the below-threshold colleges in the table
+  // (Sam, 2026-08-27: "show all the NC rows for colleges, even if they don't
+  // qualify"). Before this, seven colleges silently had no partner row and the
+  // only statement that they run no noncredit program lived in a column hover.
+  function ncNoProgramRowHtml(c, alt) {
+    // ⭐ Sam, 2026-08-28, on why this row exists at all: "if they disagree and
+    // say, Yes, we have NC, we can find the error and fix it." The row is a
+    // DATA-QUALITY instrument, not just a layout nicety — a college that never
+    // appears cannot be contradicted, so an ingest gap stays invisible. (A
+    // missing row and a zero row also look identical, which is the same
+    // argument that already admitted the below-threshold colleges.)
+    var why = "No noncredit FTES on record for this college in the 2025-26 MIS data, so it is not in the " +
+      "noncredit lane and earns nothing from the carve-out. The row is shown so the claim is visible and " +
+      "checkable: if this college runs a noncredit program, this is a data error worth reporting — tell " +
+      "the MAP team and it can be traced and fixed.";
+    var dash = '<td class="dk" title="' + esc(why) + '">&mdash;</td>';
+    return '<tr class="cplfund-ncrow cplfund-ncout' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
+      "<td></td>" +
+      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
+        '</span><span class="cplfund-chip cf-lanechip">NC</span>' +
+        '<span class="cplfund-chip cf-belowchip" title="' + esc(why) + '">none on record</span></td>' +
+      '<td class="t dk">&middot;</td>' +
+      '<td class="dk" title="' + esc(why) + '">&mdash;</td>' +
+      '<td class="cf-lblcol"></td>' +
+      ncPriorities(state.viewSlot).map(function () { return dash; }).join("") +
+      '<td class="dk">&middot;</td>' +
+      yearKeys().map(function () { return dash; }).join("") +
+      dash +
+      "<td></td>" +
+      "</tr>";
+  }
   // Is there an Option A row for this college? EVERY college that runs a
   // noncredit programme gets one — not only the ones currently in the funded
   // lane (Sam, 2026-08-27: "show all the NC rows for colleges, even if they
@@ -6120,10 +6246,13 @@
   // returned the roster unfiltered for exactly this reason ("moving the dial
   // visibly drops or admits them instead of silently deleting a row"); the row
   // layer simply never honored it.
-  function ncRowShown(c) {
-    var inst = ncInstFor(c.college);
-    return !!(inst && inst.ftes > 0);
-  }
+  // ⭐ EVERY college, unconditionally (Sam, 2026-08-28). His Aug-27 rule already
+  // said "show all the NC rows for colleges, even if they don't qualify"; the
+  // implementation stopped at ftes > 0, so seven colleges with no noncredit
+  // program had no partner row at all and the only place that said so was the
+  // NC $ column's hover. With the column gone, an unpaired college would read
+  // as a rendering gap. Three shapes now: in-lane, below-threshold, none.
+  function ncRowShown() { return true; }
   // In the funded lane, or merely present? A college below the entry threshold
   // is NOT a college that earned nothing — it was never eligible to earn — and
   // the row must not print those two the same way.
@@ -6221,19 +6350,18 @@
         '</span><span class="cplfund-chip cf-lanechip">NC</span>' +
         '<span class="cplfund-chip cf-belowchip" title="' + esc(why) + '">below ' + fmtInt(thr) + '</span></td>' +
       '<td class="t dk">&middot;</td>' +
-      '<td title="' + esc(why) + '">' + fmtInt(inst.ftes) + "</td>" +
+      '<td title="' + esc(why) + '">' + fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
       '<td class="cf-lblcol"></td>' +
       ncPriorities(state.viewSlot).map(function () { return dash; }).join("") +
       '<td class="dk">&middot;</td>' +
       yearKeys().map(function () { return dash; }).join("") +
       dash +
-      '<td class="dk" title="' + esc(why) + '">&mdash;</td>' +
       "<td></td>" +
       "</tr>";
   }
   function ncCollegeRowHtml(c, alt) {
     var inst = ncInstFor(c.college);
-    if (!inst) return "";
+    if (!inst) return ncNoProgramRowHtml(c, alt);
     if (!ncInLane(inst)) return ncBelowThresholdRowHtml(c, inst, alt);
     var row = ncAllocFor(inst);
     return '<tr class="cplfund-ncrow' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
@@ -6244,17 +6372,19 @@
       '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
         '</span><span class="cplfund-chip cf-lanechip">NC</span>' + ncRowChips(row) + "</td>" +
       '<td class="t dk">&middot;</td>' +
+      // ⚠️ LABELLED, not bare. Sam asked on 2026-08-04 for an advisory
+      // noncredit-FTES companion line; it used to live in the retired NC $
+      // column's sub-line, so retiring that column would have left this figure
+      // as an unexplained number in a column headed "2025 Ttl FTES/Funding".
       '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +
         "the size basis for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
-        fmtInt(inst.ftes) + "</td>" +
+        fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
       tgtNowLabelCellHtml() +
       ncPriorities(state.viewSlot).map(function (p) { return ncPrioCellHtml(inst, row, p); }).join("") +
       '<td class="dk" title="' + esc("Participation is recorded once for the institution — see the credit row above.") +
         '">&middot;</td>' +
       yearCellsHtml(row) +
       totalCellHtml(row) +
-      '<td class="dk" title="' + esc("This row IS the noncredit carve-out; the NC $ figure on the credit row above is " +
-        "the same money, summarized.") + '">&#8593;</td>' +
       "<td></td>" +
       "</tr>";
   }
@@ -6289,7 +6419,6 @@
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
       totalCellHtml(c) +
-      ncCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
       "</tr>" +
@@ -6576,8 +6705,11 @@
         (ELIG.coordOk ? eligAllMetCount() + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         totalCellHtml(sys) +
-        ncSystemCellHtml() +
-        "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
+        "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>" +
+        // Sam, 2026-08-28: "give the header row also a CR and NC row". SYSTEM is
+        // paired like every college, so the statewide noncredit figure is a row
+        // a reader sees rather than a column they have to notice.
+        ncSystemRowHtml();
     }
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
