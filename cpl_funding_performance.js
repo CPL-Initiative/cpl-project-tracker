@@ -12,12 +12,12 @@ window.CPL_FUNDING_PERF = {
   "pa": 38960,
   "ppa": 108,
   "p2": 3062,
-  "p3": 14438,
+  "p3": 14439,
   "pp": 5,
   "pe_u": 1385014.95,
   "pa_u": 215883.15,
   "ppa_u": 661.5,
-  "p3_u": 72530.95,
+  "p3_u": 72533.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -1122,8 +1122,8 @@ window.CPL_FUNDING_PERF = {
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 9,
-   "p3": 17,
-   "p3_u": 129.0,
+   "p3": 18,
+   "p3_u": 132.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -3059,7 +3059,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1257,
    "pa": 1235,
-   "p3": 1146
+   "p3": 1147
   },
   "Industry Certification | Military": {
    "pe": 46,
@@ -3154,12 +3154,12 @@ window.CPL_FUNDING_PERF = {
   "ours": {
    "pe_u": 1384538.45,
    "pa_u": 215883.15,
-   "p3_u": 72530.95
+   "p3_u": 72533.95
   },
   "map": {
    "pe_u": 1391664.95,
    "pa_u": 216544.65,
-   "p3_u": 72555.95
+   "p3_u": 72558.95
   },
   "ratio": {
    "pe_u": 1.0051,
