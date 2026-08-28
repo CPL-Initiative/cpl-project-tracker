@@ -34,6 +34,7 @@ Usage:
   python3 kb/_build_docs_index.py --check   # exit 1 if a rebuild would change
                                             # anything (CI / tests)
 """
+import json
 import os
 import re
 import sys
@@ -83,6 +84,26 @@ def _cell(s):
     return re.sub(r"\s+", " ", str(s)).replace("|", "\\|").strip()
 
 
+def _tags(fm):
+    t = fm.get("tags") or []
+    t = t if isinstance(t, list) else [t]
+    return [x for x in (_scalar(v) for v in t) if x]
+
+
+def _governs(fm):
+    """`artifacts:` — the files a note declares it governs. This is what makes a
+    theme traceable back to the document that set it."""
+    a = fm.get("artifacts") or []
+    a = a if isinstance(a, list) else [a]
+    out = []
+    for v in a:
+        v = _scalar(v) or ""
+        v = v.split("#")[0].split("(")[0].strip()   # strip trailing commentary
+        if v:
+            out.append(v)
+    return out
+
+
 def _link(text, href):
     return f"[{_cell(text)}]({href})"
 
@@ -101,6 +122,11 @@ def kb_notes():
                       _scalar(fm.get("kb-status")) or "—",
                       _date(fm, "created", "date"),
                       _date(fm, "updated")],
+            "meta": {"path": f"docs/kb-notes/{fn}", "title": title,
+                     "type": kb_type_of(fm)[0], "status": _scalar(fm.get("kb-status")),
+                     "created": _date(fm, "created", "date"),
+                     "updated": _date(fm, "updated"),
+                     "tags": _tags(fm), "governs": _governs(fm)},
         })
     return rows
 
@@ -115,6 +141,11 @@ def _docs_matching(pred, sort_key):
             "sort": sort_key(fn, title),
             "cells": [_link(title, f"../{fn}"), f"`{fn}`",
                       _date(fm, "created", "date"), _date(fm, "updated")],
+            "meta": {"path": f"docs/{fn}", "title": title, "type": None,
+                     "status": _scalar(fm.get("kb-status")),
+                     "created": _date(fm, "created", "date"),
+                     "updated": _date(fm, "updated"),
+                     "tags": _tags(fm), "governs": _governs(fm)},
         })
     return rows
 
@@ -144,11 +175,59 @@ def handoffs():
         short = re.sub(r"^Session\s+\d+\s+handoff\s*[—–-]\s*", "", title)
         rows.append({"sort": (-n,),
                      "cells": [str(n), _link(short, f"../{fn}"),
-                               _date(fm, "created", "date")]})
+                               _date(fm, "created", "date")],
+                     "meta": {"path": f"docs/{fn}", "title": short, "n": n,
+                              "type": None, "status": _scalar(fm.get("kb-status")),
+                              "created": _date(fm, "created", "date"),
+                              "updated": _date(fm, "updated"),
+                              "tags": _tags(fm), "governs": []}})
     return rows
 
 
+def doctrine_docs():
+    """The files that SHAPE BEHAVIOR rather than record it.
+
+    ⭐ `CLAUDE.md` auto-loads into every session, so when something the system
+    does keeps disagreeing with what Sam expects, this is the likeliest source —
+    yet `kb/doctrine.py` puts it in NOISE (correct for `--changed`, wrong for a
+    "which document taught it that?" lookup). The commands are the procedures
+    sessions follow verbatim; today proved they can go stale silently.
+    """
+    cmd_dir = os.path.join(ROOT, ".claude", "commands")
+    paths = ["CLAUDE.md", "README.md", "kb/README.md"]
+    if os.path.isdir(cmd_dir):
+        paths += sorted(".claude/commands/" + f for f in os.listdir(cmd_dir)
+                        if f.endswith(".md"))
+
+    # ⚠ Dates come from FRONTMATTER only, never from git. These files mostly
+    # carry none, so their date cells stay blank — deliberate. Deriving a date
+    # from `git log` would make the committed artifact depend on history rather
+    # than content, so every edit to CLAUDE.md would leave the index stale and
+    # turn `--check` red until someone rebuilt. The entry point here is a THEME,
+    # not a date, and GitHub shows last-changed on the page you land on.
+    out = []
+    for rel_path in paths:
+        full = os.path.join(ROOT, rel_path)
+        if not os.path.isfile(full):
+            continue
+        fm, title, _ = load(full)
+        out.append({"sort": (rel_path.lower(),),
+                    "cells": [_link(title, "../../" + rel_path), f"`{rel_path}`",
+                              _date(fm, "created", "date"), _date(fm, "updated")],
+                    "meta": {"path": rel_path, "title": title, "type": "doctrine",
+                             "status": _scalar(fm.get("kb-status")),
+                             "created": _date(fm, "created", "date"),
+                             "updated": _date(fm, "updated"),
+                             "tags": _tags(fm), "governs": []}})
+    return out
+
+
 LANES = [
+    ("doctrine", "Doctrine (behavior-shaping)", "CLAUDE.md - README - .claude/commands/",
+     ["Title", "File", "Created", "Updated"], doctrine_docs,
+     "The files that shape how a session BEHAVES rather than record what it did. "
+     "`CLAUDE.md` auto-loads into every session, so it is the likeliest source of "
+     "a recurring mismatch between what the system does and what you expected."),
     ("kb-notes", "KB notes", "docs/kb-notes/",
      ["Title", "Type", "Status", "Created", "Updated"], kb_notes,
      "Distilled, durable, reusable knowledge — the Obsidian-target lane. "
@@ -212,6 +291,34 @@ def summary_block(counts):
     return "\n".join(lines)
 
 
+def catalog_json(counts, lanes_rows):
+    """Machine-readable twin of the catalogs, for the COBI Governance panel.
+
+    ⭐ WHY JSON AND NOT "just link to GitHub": Sam's use case is diagnostic, not
+    a review round — *"when I see recurring or thematic misalignments with my
+    expectations that could be artifact-based."* That means the entry point is a
+    THEME, and a theme can only be searched if titles, tags and the `artifacts:`
+    a note declares it governs are queryable. A page of links cannot answer
+    "which document taught it that?"; this can.
+
+    ⚠ It is a projection of the same rows the markdown catalogs render, built in
+    the same pass — so the panel and the catalogs cannot disagree about what
+    exists. Adding a second collector here is how they would drift.
+    """
+    return json.dumps({
+        "generated": "2026-08-28",
+        "repo": "CPL-Initiative/cpl-project-tracker",
+        "branch": "main",
+        "total": sum(counts.values()),
+        "lanes": [
+            {"slug": slug, "name": name, "blurb": blurb, "count": counts[slug],
+             "docs": [r["meta"] for r in sorted(rows, key=lambda r: r["sort"])
+                      if r.get("meta")]}
+            for (slug, name, _glob, _h, _f, blurb), rows in lanes_rows
+        ],
+    }, indent=1, sort_keys=True) + "\n"
+
+
 def replace_block(text, slug, body):
     start, end = MARKER % slug, END % slug
     pat = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
@@ -225,11 +332,16 @@ def main():
     os.makedirs(CATALOG, exist_ok=True)
     counts, writes = {}, []
 
-    for slug, name, glob, headers, fetch, blurb in LANES:
+    lanes_rows = []
+    for lane in LANES:
+        slug, name, glob, headers, fetch, blurb = lane
         rows = fetch()
         counts[slug] = len(rows)
+        lanes_rows.append((lane, rows))
         writes.append((os.path.join(CATALOG, f"{slug}.md"),
                        catalog_page(slug, name, glob, headers, rows, blurb)))
+    writes.append((os.path.join(CATALOG, "index.json"),
+                   catalog_json(counts, lanes_rows)))
 
     index = open(INDEX, encoding="utf-8").read()
     index = replace_block(index, "corpus", summary_block(counts))
