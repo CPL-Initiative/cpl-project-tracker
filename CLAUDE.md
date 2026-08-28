@@ -859,7 +859,7 @@ to save it."* A hand-applied fix destroys the experiment that proves the repair.
 isolation; nothing has done the round trip in a browser.
 Story `docs/cpl_funding_lessons.md` · handoff `docs/session_203_handoff.md`.
 
-### SkyLint S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
+### SkySolidare S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
 
 **Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
 The vault-facing debt: `kb_note_dialect` **60 → 0**, `american_spelling` **174 → 1** (the one

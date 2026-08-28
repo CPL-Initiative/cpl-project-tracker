@@ -23,7 +23,7 @@ The vault-facing half of the docs corpus: the properties Obsidian indexes, the
 landing page it opens on, and the prose Sam reads. `kb/_docs_audit.py` has
 reported all of it for weeks; this is the first pass that *applied* any of it.
 
-## 2026-08-28 — Session 204 (SkyLint)
+## 2026-08-28 — Session 204 (SkySolidare)
 
 ### What was learned
 
