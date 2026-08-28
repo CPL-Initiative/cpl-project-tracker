@@ -44,12 +44,21 @@ function boot(window) {
 }
 function click(window, el) { el.dispatchEvent(new window.MouseEvent("click", { bubbles: true })); }
 // A reviewer session: unlocked() === !!(tp() && tp().session()).
-function teamPhrase() {
+// ⚠️ THE CREDENTIAL CHANGED, THE INTENT DID NOT (2026-08-28). These blocks have
+// always meant "the private, UNLOCKED reviewer view" — the team phrase was just
+// what unlocked it at the time. Curating funding now requires a magic-link
+// reviewer (RLS narrowed to is_allowed_reviewer() alone), so the fixture supplies
+// what unlocked() actually reads. Swapping this back to a phrase turns all seven
+// of these red, which is the point.
+function reviewerSession() {
   return {
-    session: function () { return { user: "co@cccco.edu" }; },
-    decorateHeaders: function () {},
-    checkWrite: function (r) { return { ok: !!(r && r.ok), status: r ? r.status : 200 }; },
-    handleWriteFailure: function () {}
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function (extra) {
+      var h = { apikey: "anon", Authorization: "Bearer header.payload.sig" };
+      if (extra) for (var k in extra) h[k] = extra[k];
+      return h;
+    }
   };
 }
 
@@ -94,7 +103,7 @@ function teamPhrase() {
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const priv = freshDom();
-  priv.window.CPL_TEAM_PHRASE = teamPhrase();
+  priv.window.CPL_SESSION = reviewerSession();
   const doc = boot(priv.window);
   const P = priv.window.CPL_FUNDING_TAB;
   P._setElig({ coordOk: true, coord: {}, optinRow: {}, optinReview: [
@@ -233,7 +242,7 @@ function teamPhrase() {
   // was the real risk of moving the action onto the row).
   const order = D.colleges[0].order;
   const priv = freshDom();
-  priv.window.CPL_TEAM_PHRASE = teamPhrase();
+  priv.window.CPL_SESSION = reviewerSession();
   const doc = boot(priv.window);
   const P = priv.window.CPL_FUNDING_TAB;
   const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
