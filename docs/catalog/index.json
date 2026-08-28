@@ -11009,8 +11009,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 181,
+   "count": 182,
    "docs": [
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "n": 207,
+     "path": "docs/session_207_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-207",
+      "claude-md",
+      "docs-corpus",
+      "cpl-memory",
+      "context"
+     ],
+     "title": "from SkyCrush (Session 206, the CLAUDE.md consolidation)",
+     "type": null,
+     "updated": "2026-08-28"
+    },
     {
      "created": "2026-08-28",
      "governs": [],
@@ -14198,5 +14216,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 718
+ "total": 719
 }

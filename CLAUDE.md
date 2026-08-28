@@ -721,26 +721,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyLens S203 — the round trip, the spine, and a column that printed money twice (2026-08-28)
-
-**Sam's three relabels reached Supabase — he clicked Publish and the md5 moved** (`9cf58b99…` → `c95e78aa…`),
-closing the item three handoffs called unproven. Then **#1372** narrowed curation to a magic-link reviewer
-(⚠️ `cfp_insert_self` stays open — it is the college self-attestation door), **#1375** landed the
-**§78093.2(d)(1) spine**, **#1378** retired the `NC $` column and paired every institution as CR + NC rows.
-⭐ **FUNDED and MEASURED are two axes** — goal (C) is funded and unmeasured, and one status forces that into a
-green that lies or a red that denies the money. ⭐ **A goal derives from a MEASURE, not a title** — and a
-title-matching mutation **passed every first-draft assertion**, because on the live config the two agree; the
-discriminating guard had to be built deliberately.
-⚠️ **CI was never broken.** A **conflicted PR cannot produce a `pull_request` run** — GitHub tests the merge
-commit and a dirty PR has none. Five pushes, zero runs; resolving the conflict made CI appear at once, and all
-three remedies the handoff proposed would have come back clean.
-⚠️ **One merge hunk had no correct side** — either choice bound Publish twice.
-⚠️ **Two claims re-measured, not inherited**: the story corpus is **32 educational / 3 job** (not 5), and the
-$8.96M project pool has **no breakdown anywhere**, so that split is Sam's input, not free work.
-⚠️ **I told Sam the CSV had to follow the retired column. Wrong** — the export has no NC rows, so its column is
-the only carrier and deleting it removes the figure. Story `docs/cpl_funding_lessons.md` · handoff
-`docs/session_206_handoff.md`.
-
 ### SkySolidare S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
 
 **Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
@@ -764,6 +744,30 @@ deliberately not renamed (a filename is an identifier).
 run in CI.** Now wired in.
 **NEXT: `CLAUDE.md` at 2.49× its always-loaded budget** — held only to avoid colliding with 203.
 Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_205_handoff.md`.
+
+### SkyCrush S206 — the consolidation, and three guards that were not looking (2026-08-28)
+
+**`CLAUDE.md` 151,484 B → 58,006 B — 2.52× its budget to 0.97×, nothing deleted** (#1381
+mechanical, #1382 judgment). §11's 29 lane cells → `docs/reference/lanes/`; the Obsidian
+wiring, the branch-policy evidence and the UI-practice evidence → `docs/reference/`.
+⭐ **Sam's assignment rule is the whole lever** — *push what a session cannot know to ask
+for, pull everything else* — now the second thing in the file, plus
+`.claude/commands/checkpoint.md`, because a mechanism changed without its instruction
+regrows. ⭐ **Split a section, don't relocate it whole**: branch policy is entirely PUSH at
+the level of the rule and almost entirely PULL at the level of the evidence, so 8,227 →
+3,304 B kept every operative rule and reads better.
+⚠️ **The inherited "5 rows retire with no judgment calls" was wrong** — four carry an
+explicit NEXT/Open list in their own text and the fifth is invariants, not history.
+**Nothing was retired**; the test is now written down.
+⚠️ **THREE guards were not looking.** `stacked_roadmap_cell` hard-coded `rel ==
+"CLAUDE.md"`; it also skipped rows with <4 pipes, so the **two largest cells in the table**
+exempted themselves (one missing a trailing pipe, one with pipes in a code span); and
+**`docs/reference/**` had NEVER been indexed** — every index lane globs `docs/*.md`, which
+is flat, so the pare-down files this file tells sessions to read were invisible (0 → 37).
+⚠️ **Two new assertions passed for the wrong reason** until the divergent case was built.
+⚠️ **`cpl_memory.scope` is 68 of 652 rows with an uncontrolled vocabulary**, 25 duplicating
+the row's own tags — recommended, not written. Story `docs/obsidian_vault_hygiene_lessons.md`
+· handoff `docs/session_207_handoff.md`.
 
 ## Troubleshooting
 

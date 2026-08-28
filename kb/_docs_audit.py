@@ -1056,7 +1056,23 @@ def main():
 
     if args.apply:
         if not sup:
-            print("--apply: nothing to stamp (all handoffs already marked).")
+            # Say WHY there is nothing to stamp. "All handoffs already marked" is
+            # false whenever the rule spared same-day parallel siblings, which is
+            # the common case on a day two sessions checkpoint — and a lint tool
+            # reporting a clean bill for a reason it did not check is exactly the
+            # failure this file exists to catch.
+            same_day = [e for e in entries
+                        if e["lane"] == "handoff" and auth_created
+                        and e["fm"].get("created") == auth_created
+                        and HANDOFF_RE.match(os.path.basename(e["path"]))
+                        and int(HANDOFF_RE.match(
+                            os.path.basename(e["path"])).group(1)) < handoff_max]
+            if same_day:
+                print(f"--apply: nothing to stamp — {len(same_day)} lower-numbered "
+                      f"handoff(s) share the authoritative one's `created` date and "
+                      f"are treated as PARALLEL SIBLINGS, not superseded.")
+            else:
+                print("--apply: nothing to stamp (all handoffs already marked).")
         else:
             print(f"--apply: stamping {len(sup)} superseded handoff(s) "
                   f"(authoritative = session {handoff_max})")
