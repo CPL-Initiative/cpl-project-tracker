@@ -171,4 +171,28 @@ check("flipping to noncredit re-scopes the spine, it does not add to it",
   /noncredit lane/i.test(flat(win.document.querySelector(".cplfund-goals").parentNode)));
 click(win, laneBtn(win.document, "cr"));
 
+// ── 9. Timing is its own collapsible section (Sam, 2026-08-28) ─────────────
+// "The Timing block is now part of the priorities block and should probably
+// have its own so it can be collapsible separately."
+(function timingIsItsOwnSection() {
+  const d = win.document;
+  const sections = Array.from(d.querySelectorAll("#cplFundingMount details, #cplFundingMount section"));
+  const timing = d.querySelector(".cplfund-timing");
+  check("the timing block still renders", !!timing);
+  if (!timing) return;
+  // Its own collapsible ancestor, and NOT the priorities one — the whole point
+  // is that collapsing priorities no longer takes Timing with it.
+  const own = timing.closest("details");
+  check("timing sits inside its own collapsible", !!own);
+  const prioGrid = d.querySelector(".cplfund-prio");
+  const prioOwn = prioGrid && prioGrid.closest("details");
+  check("timing's collapsible is NOT the priorities one", !!own && own !== prioOwn);
+  // The h3 was lifted into the summary, so the heading is not duplicated inside.
+  check("the Timing heading reads as the section's own summary",
+    !!own && /Timing/i.test(flat(own.querySelector("summary"))));
+  // ⚠️ The add control has to survive the move — it is how a curator edits.
+  check("the add-item control is still reachable inside it",
+    !!own && !!own.querySelector("#cplFundTimingAdd"));
+})();
+
 finish();

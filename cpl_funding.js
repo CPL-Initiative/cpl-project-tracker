@@ -7717,7 +7717,14 @@
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
       section("priorities", "The three funding priorities",
         (laneIsNc() ? "" : metricDiagnosticHtml()) + laneFilterHtml() + yearFilterHtml() + prioritiesHtml() +
-        ftesFactorsHtml() + timingSectionHtml()) +
+        ftesFactorsHtml()) +
+      // Sam, 2026-08-28: "The Timing block is now part of the priorities block
+      // and should probably have its own so it can be collapsible separately."
+      // It already emits its own <h3>Timing</h3> as its first element, which is
+      // exactly what collapseH3() consumes — so it becomes an independently
+      // collapsible section through the existing helper (the same path the
+      // feeder block uses), with no new machinery and no change to its markup.
+      collapseH3("timing", timingSectionHtml()) +
       section("goals", "What the funding must achieve — Ed. Code §78093.2(d)(1)", goalSpineHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
