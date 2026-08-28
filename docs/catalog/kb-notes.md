@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-340 document(s).
+342 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -62,6 +62,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A defect that produces the value you expected is invisible](../kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
 | [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
@@ -166,6 +167,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Cron-as-window — reach egress-blocked data via a workflow + run logs](../kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Crosswalking a partner's occupation list to CPL — curate the judgment, not the run](../kb-notes/methodology-partner-occupation-crosswalk.md) | methodology | published | 2026-08-05 | 2026-08-06 |
 | [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
+| [Derive a listing from the things it lists](../kb-notes/methodology-derive-a-listing-from-the-things-it-lists.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Derive theme tokens from brand seeds with a contrast script — the mock is the spec](../kb-notes/methodology-derived-aa-token-palette.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [Detecting mis-disciplined minted identities via subject-code cohort outliers + a two-signals-agree gate](../kb-notes/methodology-subject-cohort-discipline-outlier.md) | methodology | published | 2026-07-13 |  |
 | [Emit the threshold with the label it prints](../kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md) | methodology | published | 2026-08-10 | 2026-08-10 |

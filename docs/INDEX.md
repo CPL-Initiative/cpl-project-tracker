@@ -57,11 +57,11 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 <!-- generated:corpus -->
 | Lane | Docs | Catalog |
 |---|---:|---|
-| KB notes | 340 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 72 | [`catalog/lessons.md`](catalog/lessons.md) |
+| KB notes | 342 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| Lessons docs | 73 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 75 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Session handoffs | 179 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **666** | |
+| Session handoffs | 180 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **670** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-179 document(s).
+180 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 204 | [from SkyLint (Session 203's Obsidian lane)](../session_204_handoff.md) | 2026-08-28 |
 | 203 | [from SkyLens (Session 202)](../session_203_handoff.md) | 2026-08-28 |
 | 201 | [from SkyLane (Session 200)](../session_201_handoff.md) | 2026-08-27 |
 | 200 | [college CR evidence, and the NCCER lane](../session_200_handoff.md) | 2026-08-27 |

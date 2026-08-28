@@ -96,3 +96,25 @@ as a finding.
 *Any* predicate that gates a transformation must consume the transformation's
 own output. If it re-derives its input, the gate and the transformation are two
 programs that merely agree today.
+
+## A fourth instance — a lint and its fixer (2026-08-28, Session 204)
+
+The `american_spelling` rule scanned a document's **raw text**; the sweeper that
+applies it scanned **prose only**, masking code spans, markdown link targets,
+wikilinks, `*.md` filenames and quoted spans (an imported COCI title, a MAP
+field, or a person's own words are not ours to correct).
+
+Two definitions of "the text to judge", so after a full sweep the lint still
+reported **25 findings the fixer structurally refuses to touch** — a British
+form inside a filename, inside a code span, inside Sam quoted verbatim. Nothing
+was broken; the rule was simply asking for work nobody could do, which is how a
+guard gets muted (`methodology-a-guard-that-fails-on-truth-gets-muted`).
+
+Resolved by moving `prose_only()` into the auditor and having **both** read it —
+findings 25 → 1, and the one left belongs to a concurrently-owned file. A test
+asserts the fixer imports the mask and defines no second copy, because the fork
+is easy to reintroduce and costs nothing until it costs a muted lint.
+
+⭐ **The tell is a checker and a fixer disagreeing about the size of the
+backlog.** If the thing that reports the work and the thing that does the work
+return different counts, they are reading different text.
