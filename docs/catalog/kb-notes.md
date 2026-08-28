@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-342 document(s).
+345 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -51,6 +51,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A conversation is scoped state — what you send must never exceed what you show](../kb-notes/methodology-a-conversation-is-scoped-state.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A copy detector must read the rendered string, not the lines the author typed](../kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -102,6 +103,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A second bound breaks a pin-as-you-go solver — one-sided is monotone, two-sided is not](../kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
@@ -288,6 +290,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
 | [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
 | [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |

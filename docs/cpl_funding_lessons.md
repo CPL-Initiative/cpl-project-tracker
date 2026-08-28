@@ -1889,3 +1889,120 @@ this was the lone outlier.
 - **Still unproven end to end:** that a reviewer save reaches Supabase at all.
   Every layer has now been fixed or verified in isolation; nothing has done the
   round trip in a real browser.
+
+## 2026-08-28 — SkyLens S203: the round trip closes, the spine lands, and a column that printed money twice
+
+### What shipped
+
+- **#1372** — curating the funding tab requires a **magic-link reviewer**, not the team phrase. Nine policies
+  read `is_allowed_reviewer()` alone; writes stamp `curatorEmail()` rather than `(team)`.
+- **#1375** — the **Ed. Code §78093.2(d)(1) spine**: four goal cards read live from the model, superscript
+  ᴬᴮᶜᴰ links from the priority cards and pool boxes, plus Timing as its own collapsible section.
+- **#1378** — the **`NC $` column retired**; every institution renders as a CR/NC pair, SYSTEM included.
+
+### The item three handoffs called unproven is closed
+
+Sam clicked Publish and his three relabels reached Supabase: config md5 `9cf58b99…` → `c95e78aa…`, and
+`yearPriorities` year 1 holds `Access: Outreach` (src 0) · `Completion` (src 1) · `Access: Statewide` (src 2).
+With `priorityOrder [2,0,1]` that displays exactly as he typed. **Do not re-derive this.**
+
+The write landed stamped `(team)` rather than his email, because `applyWriteAuth()` preferred the phrase when
+both credentials were present — which is what #1372 fixed. A per-person credential whose rows say `(team)`
+throws away the one thing the magic link buys.
+
+### ⚠️ CI was never broken, and the diagnosis in the inherited handoff was wrong
+
+The Session-203 handoff reported *"NO WORKFLOW HAS RUN REPO-WIDE SINCE 18:28 UTC"* and proposed three
+explanations: Actions disabled, out of quota, or a GitHub incident. **All three would have come back clean.**
+Two workflows ran successfully after 18:28 — Daily CPL Dashboard at 18:44 and Deploy Pages at 18:49.
+
+The real cause is narrower and completely determines the fix: **a conflicted PR cannot produce a
+`pull_request` CI run.** GitHub tests the *merge commit*, and a `dirty` PR has none — so five consecutive
+pushes produced zero runs, and the runs GitHub *did* list against the PR were for `7eea4461`, which was
+#1371's head, attributed by the recreated branch name. Merging main in fixed the conflict and CI appeared on
+the very next push.
+
+**The lesson generalizes:** when a PR shows no checks at all, read `mergeable_state` before investigating the
+CI system. `dirty` explains the absence completely, and every infrastructure theory is a detour.
+
+### ⚠️ A post-squash merge hunk that had no correct side
+
+#1371 was squash-merged *from the same branch* #1372 lived on, so main and the branch carried the same changes
+in two shapes. Three of four hunks in `cpl_funding.js` resolved to HEAD. The fourth could not be resolved by
+picking a side at all: **either choice left two `var promoteBtn` blocks** — one inside the hunk, one
+immediately below — so a single click on Publish would have bound the listener twice and promoted twice.
+Resolved as *neither* side, then asserted: 1 promoteBtn declaration, 0 `cplFundUnlockSlot` references.
+
+### The spine: two axes, and a derivation that had to be tested properly
+
+**Funded and measured are separate columns and are never merged.** Goal (C) — career attainment — is funded
+(the project pool, per Sam's ruling) and has no campus measure at all. A single status forces that into either
+a green that lies or a red that denies the money.
+
+**A priority's goal derives from its measure's milestone, not its title** (`eligible`/`applied` → A,
+`transcribed` → B, through `measureOf()` — the same resolver the earning math uses).
+
+⚠️ **The first draft's guard proved nothing.** A mutation swapping milestone-reading for title-matching
+**passed every assertion**, because on the live config the two agree for all three priorities. The
+discriminating case had to be constructed: rename the transcribed priority to *"Access: renamed by a curator"*
+and assert it stays under (B). *When two implementations agree on your live data, your test is not
+distinguishing them — build the case where they diverge.*
+
+⚠️ Similarly, the harness does not load `window.CPL_STORIES`, so the (C) story-corpus assertion was exercising
+the graceful no-corpus path and asserting nothing about the claim. **The absence rendered exactly like the
+success** — the same trap as testing a metric with no feed.
+
+### Two claims re-measured rather than inherited
+
+- **The story corpus.** The handoff said 5 of 36 destinations name a job. Counted: **32 end at an educational
+  destination, 3 name a job.** The sharper finding is the arrow's shape — `<prior role> → <credential>` — so
+  the corpus evidences goal **(B)**, not (C). Fixable at intake by asking what changed at work.
+- **The project pool has no breakdown.** The ledger holds `CPL Projects — $35M share` as one row with no
+  children, and **no project's `budget_source` names the $35M** (the nearest is `CPL Infrastructure & Scaling
+  ($15M one-time)`). So the handoff's "split it into named projects, nearly free" is true of the *mechanism*
+  and false of the *amounts*. The two shares are $8,959,692 + $9,040,308 = **$18,000,000** exactly.
+
+### Sam's corrections this run
+
+- **The Workplan register's goals are not a rival vocabulary.** My first pass framed them as incompatible with
+  ABCD and implied 32 projects needed retagging. They were set *before* §78093.2 existed, align with the CPL
+  Workplan and Vision 2030, and are the operational plan that **delivers** these outcomes. The alignment stack
+  he named: Vision 2030 · the California Master Plan for Career Education · the CPL Workplan · §§78092–78093.2.
+- **The no-NC row is a data-quality instrument**, not a layout nicety: *"if they disagree and say, Yes, we have
+  NC, we can find the error and fix it."* A college that never appears cannot be contradicted.
+
+### The NC column: the duplication was documented rather than fixed
+
+A college's carve-out printed in its credit row's `NC $` cell **and** in its noncredit row's total — and the
+noncredit row's own cell rendered `↑` with the hover *"the NC $ figure on the credit row above is the same
+money, summarized."* An arrow existed purely to explain a repetition.
+
+Sam's 2026-08-22 requirement (noncredit money on the surface, never lumped into the credit total) is preserved
+by the **row structure**, which is stronger: a labeled row is visible without reading a column header.
+
+⚠️ **The CSV keeps its noncredit column, and I was wrong to say otherwise.** I told Sam the export had to
+follow the screen. It must not: the CSV has **no noncredit rows** — one line per college — so that column is
+the only place noncredit money appears there, and deleting it removes the figure rather than de-duplicating
+it. *Screen and export must share a **scope**, not a **shape**; the layouts differ when the carriers differ.*
+
+⚠️ **My own defect:** putting `.cplfund-ncrow` on the new SYSTEM row **broadened what an existing class means**,
+and three assertions that sample it to mean "a college's noncredit row" failed on a statewide aggregate they
+were never written about. A new kind of row gets a new class.
+
+### Assertions inverted rather than deleted
+
+- *"a credit row with NO noncredit program gets no CR chip"* encoded the rule Sam changed. Now: every credit
+  row is paired — plus a **distinctness** check, because a bare count would pass if one college gained a
+  second row while another lost its only one.
+- The below-threshold reason was matched by the **retired column's wording**. Rekeyed to structure (a reason
+  chip plus dash cells that explain themselves), which is what the assertion's own name claimed.
+
+### Next
+
+1. **Sticky header + frozen SYSTEM rows.** Recommended; ⚠️ two-level sticky needs the second `top` to equal the
+   header's rendered height, so measure into a CSS variable rather than hardcoding px.
+   **Lazy-loading recommended AGAINST** — 115 colleges is ~230 rows, the EACR matrix paints 51,000 cells in
+   1.6s, and virtualization breaks browser Ctrl-F and the what-you-see-is-what-exports contract.
+2. **Goal-tagged project line items** — blocked on Sam supplying the $8.96M split; the mechanism is built.
+3. **The threshold/floor coupling** — 400 FTES is the last feasible step at the $50k floor, still unruled.
+4. **The optional Combined award row** (Mt. SAC $400,000 + $100,000 = $500,000).
