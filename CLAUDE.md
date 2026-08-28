@@ -1,8 +1,42 @@
 # CPL Project Tracker — Claude Code Project Memory
 
 This file is auto-loaded at the start of every Claude Code session in this
-repo. Keep the **Critical Rules** section tight — move deep reference material
-into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle — see the stubs below) or into dedicated docs.
+repo — in three repos, in fact, so every line here is a tax every future run
+pays whether or not it turns out to be relevant.
+
+## What belongs in this file (Sam's assignment rule, 2026-08-28)
+
+> **PUSH what a session cannot know to ask for. PULL everything else.**
+
+That single test decides where anything goes, and it is the reason this file
+went from 151 KB to under budget on 2026-08-28 without losing a byte:
+
+- **PUSH — belongs here.** A rule that must fire *unprompted*, before you know
+  you need it. *"Never force-push `main`"* cannot live in a queryable store:
+  you would only look it up if you already suspected it, and by then you have
+  either done it or not. Same for the naming conventions, the branch policy,
+  and the obligations to the MAP team.
+- **PULL — belongs in `docs/reference/`, `docs/kb-notes/` or `cpl_memory`.**
+  Anything you know you have a question about. *"What is the state of the
+  funding lane"* is a question you arrive with — so §11 carries a one-line
+  pointer per lane and the state lives in
+  [`docs/reference/lanes/`](docs/reference/lanes/). That was **62% of this
+  file**.
+
+⚠️ **Doctrine must never be relocated into `cpl_memory`.** Its briefing budget
+is 17,951 chars against ~85,500 of verified rows — **about 21% fits** — so a
+rule placed there can be present and silently unread, which is strictly worse
+than a large `CLAUDE.md` that at least loads completely.
+
+⚠️ **The pointer is the safety mechanism, not a courtesy.** A pulled store you
+were never told exists is the same as no store: it is exactly the failure Rule 8
+was written for, where a session re-derived three settled facts that were
+already written down. When you move something out of this file, leave the line
+that says it is out there.
+
+Deep reference already offloaded: `docs/reference/` — pipeline_reference ·
+kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
+finished_workstreams · `lanes/` (see the stubs below).
 
 ---
 
@@ -444,200 +478,94 @@ first day.** Do the remembering for them.
 
 ## Branch policy
 
-- Work on feature branches; open a PR to `main`.
-- Claude sessions: use `claude/<short-description>` branches (the session
-  harness handles this automatically). **Sibling branches authorized (Sam,
-  2026-06-11):** a session may create additional `claude/<desc>` branches
-  off `main` for INDEPENDENT PRs, instead of serializing unrelated changes
-  through one branch (the Session-41 friction: 3 stacked PRs, each needing
-  a post-squash rebuild). One concern per branch; the assigned branch stays
-  the default for the session's main workstream.
-- **Artifact policy (added Session 41, 2026-06-11):** prefer CODE-ONLY PRs —
-  ship generator/consumer changes without committing the regenerated
-  `unified_courses_*.js` / `credential_reference_data.js` artifacts, and let
-  the daily cron (or a `workflow_dispatch`) publish them. Committing ~100MB
-  of artifacts from a session is what made #348 conflict with the mid-PR
-  backstop cron (generated-file conflicts are never resolvable by picking
-  sides — you rebuild + regen). Manual live-on-merge artifact commits remain
-  the FALLBACK when same-hour liveness matters and no dispatch path exists.
-  ✅ **Dispatch GRANTED + CONFIRMED 2026-06-11** (Sam accepted the Claude
-  GitHub App's Actions permission; a session dispatched `daily-dashboard.yml`
-  via `mcp__github__actions_run_trigger` the same minute — 204). The
-  post-merge dispatch is now the DEFAULT: merge the code-only PR, dispatch
-  the workflow, let the runner publish artifacts. Manual artifact commits
-  only when the workflow itself is broken.
-- **Sam's one-time repo toggles — ALL SET 2026-06-11:** ① **Allow
-  auto-merge** ✅ (a session can `enable_pr_auto_merge` after marking ready);
-  ② **Automatically delete head branches** ✅ (the post-merge 403 branch
-  leftovers end); ③ Claude GitHub App **Actions: Read and write** ✅
-  (self-dispatch works — cron self-heal + the artifact policy above are
-  live).
-- **Always watch PRs.** When a Claude session opens a PR, subscribe to its
-  activity (CI + review comments) and follow through — fixing small/clear
-  issues, asking when ambiguous — until the PR is merged or closed.
-- **Auto-merge authorization (added Session 11, 2026-05-27; broadened
-  Session 12, 2026-05-27 — Bruh Dec; trust-expanded 2026-05-30 — Sam:
-  "change rules to not require my review before you squash-merge. I trust
-  you at this point, Bruh!").** Claude sessions merge **every** PR they
-  open in this project as soon as the universal gates below are met.
-  **Sam's review/approval is NOT a gate — do not wait for him to review,
-  and do not wait for an explicit "merge" go-ahead.** Open the PR (as a
-  draft per the harness default), let CI run, then mark it ready and
-  squash-merge the moment CI is green. The "confirm-before-merging for
-  architecturally significant PRs" carve-out was removed: the real safety
-  mechanisms for re-mints / schema migrations / Excel→Supabase phases are
-  inside the workstream itself (pre-merge dry-run review, in-script V1–V4
-  apply gates, `workflow_dispatch` manual triggers on the apply workflow),
-  not at the PR-merge button. Merging an apply-script PR doesn't auto-run
-  the apply.
-  - **CI gate = required checks pass; merge on `clean` OR `unstable`.** "Green"
-    means the *required* check(s) (TruffleHog, plus any push-only checks like
-    CodeQL when they apply) passed. In GitHub's `mergeable_state`, that is **both
-    `clean`** (everything green) **and `unstable`** (mergeable; only a
-    *non-required* check is still pending/failing — a pending/failing *required*
-    check reads **`blocked`**, never `unstable`). **So merge on `unstable` too —
-    do NOT wait for it to flip to `clean`.** Only **`blocked`** (required check
-    failing/pending), **`dirty`** (merge conflict), or **`behind`** actually gate.
-    (Over-waiting for `clean` on `unstable` PRs — then ending the turn so the
-    CI-success event never woke the session — is what made #221/#223 sit until
-    Sam nudged "Go!", 2026-06-01. Don't.)
-  - **Poll CI via the MCP `github` tools, NOT `curl` (Session 76).** The remote
-    sandbox's `GH_TOKEN`/`curl` against `api.github.com` returns *"GitHub access
-    is not enabled for this session"* — only the **MCP `github` server** can reach
-    GitHub. So a `Monitor`/Bash loop that curls the check-runs API to watch CI
-    **silently times out** (it never gets data). Check status with
-    `pull_request_read {method:"get"}` (small — read `mergeable_state`) or
-    `actions_list {method:"list_workflow_runs"}` (large — parse the saved
-    tool-result file with python, don't read it inline). Webhooks don't deliver
-    CI *success*, so you must poll. ⚠️ **A `check_suite.completed` wake is NOT a green light** —
-    it names a `head_sha`, and on this repo it is routinely a SUPERSEDED one (Session 187 hit
-    this twice; Sky188 got four in a row, the last of which reported a suite the session had
-    just CANCELED as "completed"). Always re-read `get_check_runs` on the CURRENT head before
-    acting.
-  - **Autonomous engineering PRs → merge on green; don't wait for a comment,
-    review, or "Go!".** For the session's *own* work (refactors, migrations, bug
-    fixes, dead-code deletes, generator/doc changes it initiated), Sam's
-    review/comment is **not a gate** — he trusts the session to merge. If a
-    reviewer comment **already exists** and is an unresolved change-request,
-    address it (fix, or ask when ambiguous) first; absent that, a
-    mergeable-on-green PR is squash-merged, full stop. (#221/#223 should have
-    merged on `unstable` instead of ending the turn to wait for Sam's "Go!" —
-    2026-06-01.)
-  - **Carve-out — hold for input ONLY when you have a concrete reason to.** The
-    default is always merge-on-green (above), **including for docs Sam
-    commissioned** — being a thing he asked for is **not** itself a reason to hold.
-    Hold (ready, not draft) only when there's a specific, articulable reason the
-    merge genuinely benefits from his input first: the deliverable has a known
-    **gap** pending something only he supplies (a screenshot to finish a section),
-    or an embedded **decision** only he can make. That concrete reason is what made
-    the #222 hold right — §5 had an explicit placeholder for his screenshot. (Sam,
-    2026-06-01: *"Good call on holding 222"* + *"hold for comment only if you have
-    a reason to hold."*) **No reason → merge**, even if he asked for it; fold later
-    polish into a follow-up. When you DO hold: mark **ready**, state the reason,
-    merge on his nod. Never leave it in *draft*.
-  - **Merge promptly — never PARK a PR in DRAFT.** Mark it **ready immediately** (a
-    PR can be ready while CI runs). For autonomous work, squash-merge the instant
-    it's mergeable on green (`clean` OR `unstable`) — in the SAME turn, rather than
-    ending the turn to "wait." Draft-parking is the sin (#202 left in draft during
-    recon, 2026-05-30); a *ready* PR held briefly for Sam's input on a deliverable
-    he commissioned is fine (#222).
-  - **Backstop — auto-merge is ENABLED (Sam's toggle ①, 2026-06-11):** after
-    marking ready, call `mcp__github__enable_pr_auto_merge` (squash) and GitHub
-    merges the instant required checks pass — no turn-ending wait, no nudge
-    needed. Note it refuses while a required check is still in-progress; poll
-    checks via the MCP github tools and retry, or squash-merge manually per the
-    rules above.
-  - **Method: squash and merge** — collapses to one commit on `main` with
-    the PR title + body. Matches the existing `Merge pull request #N`
-    history pattern.
-  - **Feature branches auto-delete on merge** (Sam's toggle ②, 2026-06-11).
-    Don't run `git push origin --delete` from a session — the session token
-    403s on branch deletes; GitHub's auto-delete handles it.
+The operative rules are all here; the wording Sam used, the PRs each was written
+against, and the toggle history are in
+[`docs/reference/branch_policy.md`](docs/reference/branch_policy.md).
+
+- Work on feature branches (`claude/<short-description>`); open a PR to `main`.
+  **Sibling branches are authorized** — a session may open additional
+  `claude/*` branches off `main` for INDEPENDENT PRs rather than stacking
+  unrelated changes. One concern per branch.
+- **Artifact policy: prefer CODE-ONLY PRs.** Ship generator/consumer changes
+  without the regenerated `unified_courses_*.js` / `credential_reference_data.js`
+  artifacts; merge, then dispatch `daily-dashboard.yml` and let the runner
+  publish. Generated-file conflicts are never resolvable by picking sides.
+  Manual artifact commits only when the workflow itself is broken.
+- **Always watch PRs.** Subscribe to activity and follow through — fixing
+  small/clear issues, asking when ambiguous — until merged or closed.
+- **Auto-merge authorization (Sam, trust-expanded 2026-05-30).** Claude sessions
+  merge **every** PR they open, as soon as the gates below are met. **Sam's
+  review is NOT a gate** — do not wait for him to review, and do not wait for an
+  explicit "merge" go-ahead. There is no carve-out for architecturally
+  significant PRs: the real safety mechanisms live inside the workstream
+  (dry-runs, in-script apply gates, `workflow_dispatch`), not at the merge button.
+  - **Merge on `clean` OR `unstable`.** `unstable` means only a *non-required*
+    check is pending or failing — a pending/failing *required* check reads
+    **`blocked`**, never `unstable`. **Do NOT wait for `unstable` to flip to
+    `clean`.** Only `blocked`, `dirty` (conflict) or `behind` actually gate.
+  - **Poll CI via the MCP `github` tools, NOT `curl`.** The sandbox cannot reach
+    `api.github.com`; a curl loop watching CI silently times out. Use
+    `pull_request_read {method:"get"}` or `get_check_runs`. Webhooks do not
+    deliver CI *success*, so you must poll. ⚠️ **A `check_suite.completed` wake
+    is NOT a green light** — it names a routinely SUPERSEDED `head_sha`. Always
+    re-read `get_check_runs` on the CURRENT head before acting.
+  - **Hold only with a concrete reason** — a known gap pending something only
+    Sam supplies, or a decision only he can make. Being a thing he asked for is
+    **not** a reason to hold. When you hold: mark **ready**, state the reason.
+  - **Never PARK a PR in DRAFT.** Mark ready immediately (a PR can be ready
+    while CI runs) and squash-merge the instant it is mergeable, in the SAME
+    turn rather than ending the turn to wait.
+  - **Backstop:** after marking ready, call `mcp__github__enable_pr_auto_merge`
+    (squash). It refuses while a required check is in-progress — poll and retry,
+    or squash-merge manually.
+  - **Method: squash and merge** (`mcp__github__merge_pull_request`,
+    `merge_method: "squash"`).
+  - **Branches auto-delete on merge.** Never run `git push origin --delete` from
+    a session — the token 403s; GitHub handles it.
   - **Never force-push `main`** (Rule 5 — Pages serves from it).
-  - Use `mcp__github__merge_pull_request` with `merge_method: "squash"`.
-  - The session-end handoff still notes any architecturally-significant
-    PR that landed so the next session has context, even though no
-    pre-merge pause happened.
+  - The session-end handoff still notes any architecturally-significant PR that
+    landed, even though no pre-merge pause happened.
 
 ## Engineering & UI practices (added Session 32, 2026-06-04)
 
-From a retrospective Sam asked for. These are lightweight standing practices —
-honor them in normal work:
+Standing practices — honor them in normal work. Each rule below is the whole
+rule; the **evidence** behind it (measurements, the worked failures, the
+contrast maths, token names) is in
+[`docs/reference/engineering_ui_practices.md`](docs/reference/engineering_ui_practices.md).
+Read that before a UI rework, a First Light artifact, or a table layout.
 
 - **Commit your verification.** Front-end (consumer JS) changes get a jsdom test
-  under `tests/` (run with `npm test`; `tests/run.js` auto-discovers
-  `tests/*.test.js`). Don't write a throwaway `/tmp` test and discard it — a test
-  worth running once is worth committing. Make it guard the *failure mode* (e.g.
-  the CER test injects a `raw_variants:null` row to guard the search/expand
-  crash). `node_modules`/`package-lock.json` stay gitignored; CI
-  (`.github/workflows/js-tests.yml`) runs `npm install && npm test` as a
-  **non-required** check (never gates merge-on-green). See
-  [`docs/kb-notes/methodology-commit-the-test-harness.md`](docs/kb-notes/methodology-commit-the-test-harness.md).
-- **New CSS uses `var(--token)`, never a raw hex.** The `:root` block (top of both
-  HTMLs) holds the brand + surface/text/link tokens. If a role is missing, add a
-  token (in BOTH HTMLs — Rule 4) rather than inlining hex. Palette + canonical
-  components (chip, badge, table, curate affordance):
-  [`docs/kb-notes/reference-ui-design-system.md`](docs/kb-notes/reference-ui-design-system.md).
-- **Prefer injecting tab CSS from the tab's JS** (the CER `ensureCerScopeCss()`
+  under `tests/` (`npm test`; `tests/run.js` auto-discovers `tests/*.test.js`).
+  Never a throwaway `/tmp` test — make it guard the *failure mode*. CI's
+  `js-tests.yml` is **non-required** and never gates merge-on-green.
+- **New CSS uses `var(--token)`, never a raw hex.** Missing role → add a token,
+  in **BOTH** HTMLs (Rule 4). Derived tints get their own tokens.
+- **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
-  covers both HTMLs without a Rule-4 mirror. Only the global `:root` tokens need
-  the mirror.
-- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids
-  fit the viewport at desktop widths: tighten cell padding/fonts, truncate
-  long text cells with ellipsis + the full value in `title`, fold redundant
-  suffixes ("X Community College District" → "X CCD"), shorten headers
-  (`P1`/`P2`/`P3` + a `title`), and prefer drill-in rows over extra columns.
-  Keep `overflow-x: auto` on the wrapper only as the narrow-screen safety
-  net — never as the default desktop experience. (First applied: the
-  Implementation Funding college table. Hardened on the CCR, Session 43:
-  `table-layout:fixed` + explicit colgroup — auto layout had silently parked
-  columns past the wrap's right edge, per filtered row set; see
-  [`docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md).)
+  covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
+- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids fit
+  the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
+  net, never the default desktop experience. Use `table-layout:fixed` + an
+  explicit colgroup — auto layout silently parks columns past the wrap's edge.
 - **ARTIFACTS AND PROTOTYPES USE FIRST LIGHT TOO — accessible and mobile-friendly
-  (Sam, 2026-08-19).** *"Make sure it is based on our First Light design and make it
-  always accessible and mobile friendly."* This is not only a dashboard-CSS rule: a
-  session built a decision artifact on an invented palette while the house spec sat in
-  the repo. **Do not invent a palette.** Spec:
-  [`docs/kb-notes/reference-ui-design-system.md`](docs/kb-notes/reference-ui-design-system.md)
-  + `prototype/first_light_theme_v1.html` v1.6 — warm monochrome base, five accents one
-  job each, Playfair Display + Source Sans 3, `var(--token)` never a raw hex (**derived
-  tints get their own tokens**), and **tables never on glass**.
-  **Accessible means verified, not claimed:** compute every fg-on-bg pair actually used
-  (including zebra rows and glass composites) against AA 4.5:1 / 3:1 —
-  `prototype/check_contrast.py` holds the maths; **color is never the only signal**, so
-  pair every accent with a word or an approved mark (▲▼ ✓ ⚠) — that is what "always
-  glyph-paired" is for, and it does **not** conflict with the no-cheesy-glyphs rule
-  (decorative out, state-bearing stay, muted and simple); `th scope` on every header
-  cell; a focusable `aria-label`led region around any scrolling table; skip link;
-  `:focus-visible`; `prefers-reduced-motion`. **Mobile:** single column below ~560px,
-  `clamp()` type, no fixed widths, wide tables scroll inside their own container so the
-  body never scrolls sideways. ⚠️ `--border-strong` on white is 1.92:1 — a KNOWN spec
-  exemption (decorative; header identity comes from `th scope` + typography), do not
-  "fix" it by deviating. ⚠️ First Light is a **light** identity with no dark PAGE palette
-  (only on-dark ACCENT grades) — commit single-theme and paint every color explicitly.
-- **PROSE RUNS THE FULL WIDTH OF WHATEVER SITS BESIDE IT (Sam, 2026-08-22).** *"I
-  would like the full width format rule on throughout COBI."* A ~74ch measure beside a
-  full-width table reads as a block that failed to fill its container, not as a reading
-  aid. The lever is the token **`--cpl-measure: none`** on `:root` in BOTH HTMLs
-  (Rule 4); every prose cap is `max-width:var(--cpl-measure,none)` — **the `,none`
-  fallback is load-bearing** because most of these rules ship from a tab's own JS onto
-  surfaces that never declare the token. ⚠️ **A cap below ~55ch is LAYOUT, not a
-  measure** (cell truncation, a raw-value column, a badge, a short hero lede) and must
-  NOT be swept; `tests/cobi_prose_measure.test.js` pins a sample of them so a future
-  blanket sweep fails. ⚠️ Grep **px too** — four tab intros were capped at 880/760px.
-  Two columns is the sanctioned alternative, but only where blocks run long; most COBI
-  blocks are 1–3 lines and would stack as one-liners.
+  (Sam, 2026-08-19).** *"Make sure it is based on our First Light design and make
+  it always accessible and mobile friendly."* **Do not invent a palette.** Spec:
+  [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
+  `prototype/first_light_theme_v1.html` v1.6. **Accessible means verified, not
+  claimed** — compute every fg-on-bg pair actually used against AA 4.5:1 / 3:1
+  (`prototype/check_contrast.py`), and **color is never the only signal**.
+  First Light is a **light** identity with no dark PAGE palette.
+- **PROSE RUNS THE FULL WIDTH OF WHATEVER SITS BESIDE IT (Sam, 2026-08-22).**
+  The lever is `--cpl-measure: none` on `:root` in BOTH HTMLs (Rule 4); every
+  prose cap is `max-width:var(--cpl-measure,none)` — **the `,none` fallback is
+  load-bearing.** ⚠️ A cap below ~55ch is LAYOUT, not a measure, and must NOT be
+  swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep
+  fails). Grep **px too**.
   [`methodology-a-text-measure-must-agree-with-what-sits-beside-it`](docs/kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md)
-- **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
-  rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
-  it with Sam, then implement into the monolith. In-repo analog: the EACR
-  versioned prototype gallery.
-- **Stop-hook:** the repo carries the canonical
-  [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) (install:
-  `cp scripts/stop-hook-git-check.sh ~/.claude/`). It ignores GitHub's own
-  squash-merge commits, so the "Unverified `noreply@github.com`" nag after a
-  squash-merge + `reset --hard origin/main` is gone — that commit is on `main`
-  and must NOT be amended (Rule 5).
+- **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
+  Claude artifact, lock it with Sam, then implement into the monolith.
+- **Stop-hook:** install `scripts/stop-hook-git-check.sh` to `~/.claude/`. It
+  ignores GitHub's own squash-merge commits, which must NOT be amended (Rule 5).
 
 ## Deployed site
 

@@ -5,10 +5,11 @@ description: Rule 8 checkpoint — refresh every documentation artifact so the n
 Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whatever else you're doing and update **every** artifact below — none are optional, all sync to the user's Obsidian via the repo:
 
 0a. **Retire before you append.** Act on `stacked_roadmap_cell` if the lint
-   flags it. A §11 roadmap cell states **current truth**; when this run's finding
-   contradicts what a cell says, **delete the superseded text** rather than
-   prefixing it with `*Prior:*`. History goes to the workstream's lessons doc —
-   once. (Added 2026-08-10: the "Disposition grain" cell had reached 14,338 chars
+   flags it. It guards **two** surfaces since 2026-08-28: §11's pointer table in
+   `CLAUDE.md`, and every lane file under `docs/reference/lanes/`. Both state
+   **current truth**; when this run's finding contradicts what one says,
+   **delete the superseded text** rather than prefixing it with `*Prior:*`.
+   History goes to the workstream's lessons doc — once. (Added 2026-08-10: the "Disposition grain" cell had reached 14,338 chars
    with 3 `*Prior:*` markers and 14 warnings, and `CLAUDE.md` was simultaneously
    asserting that Sierra "sits on colleges' own pages" and that "there is no
    internal COBI Sierra". Sam had to make the same correction on two consecutive
@@ -19,9 +20,31 @@ Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whateve
    narrative loses — write them to `cpl_memory` with the human named in
    `verified_by`, and to the handoff under an explicit heading.
 
-0. **`python3 kb/_docs_audit.py` — run this FIRST.** The docs **lint** pass (the third Karpathy operation: Rule 8 gives us *ingest*, sessions give us *query*, this is the missing *lint*). It is READ-ONLY and takes ~2 seconds; it writes `kb/docs_audit/<date>.md` + `latest.json`. Run it before writing anything, because its findings change what you write: an `oversized_doc` on the lessons doc you were about to append to means **compact it in this checkpoint instead of growing it**, and an `always_loaded` finding on `CLAUDE.md` means move prose to `docs/reference/` (the 2026-07-10 pare-down) rather than adding more. Read the report; act on what it flags that is in scope for this run; don't chase the whole backlog. Then, when you write the new `session_<N+1>_handoff.md` (step 8), run **`python3 kb/_docs_audit.py --apply`** to stamp every now-superseded handoff — that is the auditor's only mutation, it never touches the authoritative one, and it is idempotent. Commit `kb/docs_audit/<date>.{json,md}` with the checkpoint.
+0. **`python3 kb/_docs_audit.py` — run this FIRST.** The docs **lint** pass (the third Karpathy operation: Rule 8 gives us *ingest*, sessions give us *query*, this is the missing *lint*). It is READ-ONLY and takes ~2 seconds; it writes `kb/docs_audit/<date>.md` + `latest.json`. Run it before writing anything, because its findings change what you write: an `oversized_doc` on the lessons doc you were about to append to means **compact it in this checkpoint instead of growing it**, and an `always_loaded` finding on `CLAUDE.md` means move prose to `docs/reference/` (the 2026-07-10 pare-down, and the 2026-08-28 consolidation that took it from 151 KB to 58 KB) rather than adding more. Read the report; act on what it flags that is in scope for this run; don't chase the whole backlog. Then, when you write the new `session_<N+1>_handoff.md` (step 8), run **`python3 kb/_docs_audit.py --apply`** to stamp every now-superseded handoff — that is the auditor's only mutation, it never touches the authoritative one, and it is idempotent. Commit `kb/docs_audit/<date>.{json,md}` with the checkpoint.
 
-1. **`CLAUDE.md`** — refresh §11 (or whichever section covers the active workstream): tag counts / scores / roadmap-table status. Make sure the "DONE" / "in progress" / "parked" status on the roadmap reflects what's actually shipped on the branch.
+1. **`CLAUDE.md` and the lane file** — ⚠️ **since 2026-08-28 these are two
+   different edits, and the one you usually want is the lane file.** §11's table
+   is a **pointer index**: the detail for each roadmap lane lives in
+   [`docs/reference/lanes/<lane>.md`](../../docs/reference/lanes/).
+
+   - **Refresh the LANE FILE** with what this run learned — that is where the
+     old §11 cell's content went, and it is what a future session on that lane
+     reads. Same content, same standard, new address.
+   - **Touch the §11 ROW only when the lane's STATE changes** — live ⇄ in
+     progress ⇄ parked, or open work appearing or clearing. ⚠️ **Do not grow the
+     row back into a paragraph.** That is what put this file at 151 KB against a
+     60 KB budget; it is now 58 KB and `oversized_doc` will flag the regression.
+   - **Adding anything to `CLAUDE.md` itself?** Apply the assignment rule at the
+     top of the file: **push what a session cannot know to ask for, pull
+     everything else.** If a session would only look it up once it already
+     suspected it, that is PUSH and it belongs here. If it answers a question a
+     session arrives with, that is PULL — put it in `docs/reference/`,
+     `docs/kb-notes/` or `cpl_memory`, **and leave the one-line pointer**, which
+     is the part that makes a pulled store findable at all.
+   - **Retiring a lane?** Read the lane file first — do not grep for a ✅. Most
+     read *"✅ LIVE … NEXT: …"*, which is live with open work. Only a lane with
+     no NEXT, no NEEDS SAM and no BLOCKED in its own text moves to
+     `docs/reference/finished_workstreams.md`.
 
 2. **`kb/README.md`** — only if KB structure, generators, or audit artifacts have changed since the last checkpoint. Skip if nothing relevant changed.
 

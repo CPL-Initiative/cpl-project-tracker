@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-345 document(s).
+346 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -241,6 +241,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
 | [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
 | [Publish the denominator with the number, as a column](../kb-notes/methodology-publish-the-denominator-with-the-number.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [Push what a session cannot know to ask for; pull everything else](../kb-notes/methodology-push-what-cannot-be-asked-for-pull-everything-else.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Re-arm a success-disabled Save button the moment its inputs change](../kb-notes/methodology-rearm-disabled-save-on-edit.md) | methodology | published | 2026-07-08 | 2026-07-08 |
 | [Re-key every DERIVED identity map when a re-mint permutes slots — or make consumers prefer the canonical store](../kb-notes/methodology-rekey-derived-identity-maps.md) | methodology | published | 2026-07-09 |  |
 | [Re-key every id-keyed artifact — a re-mint isn't done until the side manifests move](../kb-notes/methodology-rekey-every-id-keyed-artifact.md) | methodology | published | 2026-06-11 | 2026-07-27 |

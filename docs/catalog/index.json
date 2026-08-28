@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 345,
+   "count": 346,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4512,6 +4512,26 @@
      "title": "Publish the denominator with the number, as a column",
      "type": "methodology",
      "updated": "2026-08-11"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [
+      "CLAUDE.md",
+      ".claude/commands/checkpoint.md",
+      "docs/reference/lanes/"
+     ],
+     "path": "docs/kb-notes/methodology-push-what-cannot-be-asked-for-pull-everything-else.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "context",
+      "claude-md",
+      "memory",
+      "docs-corpus"
+     ],
+     "title": "Push what a session cannot know to ask for; pull everything else",
+     "type": "methodology",
+     "updated": "2026-08-28"
     },
     {
      "created": "2026-07-08",
@@ -10462,7 +10482,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 37,
+   "count": 39,
    "docs": [
     {
      "created": "2026-08-28",
@@ -10864,6 +10884,38 @@
      "title": "Primary-source statutory and regulatory text",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/branch_policy.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "branch-policy",
+      "auto-merge",
+      "ci",
+      "claude-md-offload"
+     ],
+     "title": "Branch policy \u2014 the full record (CLAUDE.md offload)",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/engineering_ui_practices.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "engineering",
+      "ui",
+      "first-light",
+      "claude-md-offload"
+     ],
+     "title": "Engineering & UI practices (CLAUDE.md offload)",
+     "type": null,
+     "updated": "2026-08-28"
     },
     {
      "created": "2026-08-15",
@@ -14146,5 +14198,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 715
+ "total": 718
 }
