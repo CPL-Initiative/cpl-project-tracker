@@ -194,13 +194,27 @@ const {
     cards[2].textContent.indexOf("Portal") !== -1);
 }
 
-// C9c — Projection % row is clarified as a target that does NOT move/cap dollars.
+// C9c — the target line.
+//
+// ⚠️ THIS ASSERTION WAS DELIBERATELY NARROWED, not fixed (Sam, 2026-08-28):
+// "Remove most of the added explanatory language such as ... '(≈ 84,640 semester
+// units — DERIVED; a performance target only, it does not move or cap the
+// funding)'." The sentence this used to require is the sentence he asked to
+// delete, so requiring it would pin the card to a ruling that has been reversed.
+//
+// What survives is the fact the prose was there to protect: the TARGET and the
+// ALLOCATION SHARE are two different quantities, both stated, and the target is
+// never presented as the money. A card that printed only one of them, or that
+// let the target read as the award, still fails here.
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const box = doc.querySelector(".cplfund-prio .p").textContent;
-  check("projection line clarifies it does not cap funding + points at the Allocation share",
-    box.indexOf("cap the funding") !== -1 && box.indexOf("Allocation share above") !== -1);
+  const card = doc.querySelector(".cplfund-prio .p");
+  const box = card.textContent;
+  check("the card states the allocation share and the target as separate figures",
+    /Allocation share/.test(box) && /Target|per student/.test(box));
+  check("the target is not presented as the dollars",
+    !/Target[^<]*\$/.test(card.innerHTML.replace(/<[^>]*>/g, "")));
 }
 
 // C9d — Allocation-balance box in the Funding Pool area (Sam, 2026-07-23).

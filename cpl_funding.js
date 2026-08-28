@@ -350,6 +350,17 @@
     // tops up small colleges, which read as inequitable side-by-side) — instead
     // the % of target is the shared yardstick and the effective rate + floor
     // reason live in the cell hover. Real DOLLARS are bold; % + counts recede.
+    // ── the lane chip on a priority card + the award-range lane rows ────────
+    // Tokens only, never a raw hex (the design-system rule). The chip is a WORD
+    // (CR / NC), so the lane survives greyscale and colour-blind rendering —
+    // colour is never the only signal.
+    ".cf-lanechip { font-size: .68rem; font-weight: 700; letter-spacing: .05em; " +
+      "padding: 1px 6px; border-radius: 2px; border: 1px solid; vertical-align: middle; }",
+    ".cf-lane-cr { color: var(--green-progress); border-color: var(--green-progress); background: var(--white); }",
+    ".cf-lane-nc { color: var(--violet); border-color: var(--violet); background: var(--white); }",
+    ".cplfund-awardrow { margin-top: 10px; }",
+    ".cplfund-awardrow-h { font-size: .82rem; font-weight: 700; color: var(--text-strong); " +
+      "margin: 0 0 4px 2px; }",
     ".cplfund-table td.cf-prio { line-height: 1.28; }",
     ".cf-prio .cf-t { color: var(--text-muted); }",
     // The row labels (Tgt / Now) — tiny, muted, so the numbers lead.
@@ -1021,7 +1032,17 @@
         metric: reg ? reg.basis : (p.metric + " (noncredit origin — unmapped)"),
         metric_src: src,
         unit: "ftes",
-        strategies: p.strategies,
+        // ⭐ NONCREDIT STRATEGIES ARE THEIR OWN (Sam, 2026-08-28): "NC programs
+        // do not generally award credit, they get students trained and qualified
+        // to get credit at a credit college — hence different strategies."
+        // That is a difference in the WORK, not in the wording, so credit's list
+        // cannot be the fallback: it would hand a noncredit institution a set of
+        // instructions about transcribing credit it does not award. NULL until
+        // someone writes them, and the card says so.
+        strategies: (function () {
+          var v = ncPrioOverride(slot, p.src, "strategies");
+          return Array.isArray(v) ? v.slice() : null;
+        })(),
         // Sam, 2026-08-27: NC inherits credit's shares. Sam, 2026-08-26: NC
         // keeps credit's funding factor (0.5), "no discount for being newer".
         share: share == null ? p.share : Number(share),
@@ -1087,6 +1108,34 @@
   function ncPrioEntitlement(inst, p) {
     return (inst ? ncSizePct(inst) * ncCapScale(inst) : 1) * ncModel().pool * p.share / nYears();
   }
+  // ── WHICH LANE THE PRIORITY CARDS DESCRIBE (Sam, 2026-08-28) ─────────────
+  // One switch above the three cards, applying to all three and to every year.
+  // The lane is a property of the POOL, exactly as the year is a property of the
+  // window, so it belongs in the same control strip rather than on each card.
+  function laneIsNc() { return state.viewLane === "nc"; }
+  // The NC cards are READ-ONLY, and that is a correctness guard rather than a
+  // simplification. Every field on a priority card (title, description, share,
+  // factor, metric, strategies) is an EDITOR whose data-slot/data-idx address
+  // the stored CREDIT priority — ncPriorities() derives the NC view from those
+  // same rows. So an edit made while the NC lane is showing would land on the
+  // credit priority with nothing on screen saying so. ncPrioOverride() is where
+  // a diverging NC share/factor would be stored; until an editor writes THERE,
+  // showing an input here would be offering a control that lies about its target.
+  function laneReadOnly() { return laneIsNc(); }
+  // The lane's statewide pot per year — netCollege() for credit, the carve-out
+  // for noncredit. Never re-derived at a call site (the standing rule): the two
+  // lanes are solved separately and must never be summed.
+  function lanePerYear() { return (laneIsNc() ? ncModel().pool : netCollege()) / nYears(); }
+  // The priorities the cards render, for the lane in view.
+  function lanePriorities(slot) { return laneIsNc() ? ncPriorities(slot) : priorities(slot); }
+  // A priority's full-window statewide cap, in its own lane. prioCap normalizes
+  // on the CREDIT share sum and ncPrioCap on the NC one — identical while Sam
+  // has them equal, and silently wrong the moment he moves one, which is why
+  // there are two functions rather than one parameterized by lane.
+  function lanePrioCap(slot, p) {
+    return laneIsNc() ? ncPrioCap(ncModel().pool, slot, p) : prioCap(netCollege(), slot, p);
+  }
+
   // ── generalized pool line-items (Sam, 2026-07-23): editable labels, add/delete
   //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
   //    carve-outs; with NO custom boxes and nothing hidden this equals the old
@@ -1867,6 +1916,30 @@
     ov.yearPriorities[slot][idx][field] = value;
     persistActive();
   }
+  // ── the NONCREDIT write path (Sam, 2026-08-28) ──────────────────────────
+  // "Let's take the needed steps to ... get it into supabase where it belongs."
+  // setPrio() addresses `yearPriorities`, which is the CREDIT row — that is why
+  // every other field on an NC card is read-only. This is the one control that
+  // has somewhere correct to write, so it is the one control the NC lane offers.
+  //
+  // ⚠️ THE INDEX IS THE SOURCE INDEX, NOT THE DISPLAY POSITION. Priorities are
+  // reorderable, so a position-keyed write lands on a different priority the
+  // moment someone drags a card — the identity rule priorities() and
+  // ncPrioOverride() already follow. Callers pass `p.src`; nothing here calls
+  // srcIdx(), because converting twice would be worse than not converting.
+  function setNcPrioStrategies(slot, srcIndex, list) {
+    slot = prioSlot(slot);
+    var ov = activeOverride();
+    ov.ncPriorities = ov.ncPriorities || {};
+    ov.ncPriorities[slot] = ov.ncPriorities[slot] || {};
+    ov.ncPriorities[slot][srcIndex] = ov.ncPriorities[slot][srcIndex] || {};
+    ov.ncPriorities[slot][srcIndex].strategies = (list || []).slice();
+    persistActive();
+  }
+  function ncPrioStrategiesBySrc(slot, srcIndex) {
+    var v = ncPrioOverride(slot, srcIndex, "strategies");
+    return Array.isArray(v) ? v.slice() : [];
+  }
   function setFeeders(list) { activeOverride().feeders = list; persistActive(); }
   function setFeederMetric(v) { activeOverride().feederMetric = v; persistActive(); }
   function setDisbursement(v) { activeOverride().disbursement = v === "frontload" ? "frontload" : "even"; persistActive(); }
@@ -1950,7 +2023,7 @@
   // declarative sweep cannot miss one. wire() reads the same list.
   var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave",
     "data-reqdel", "data-reqhide", "data-reqshow",
-    "data-stratadd", "data-stratdel", "data-timingdel",
+    "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset", "cplFundLock",
@@ -2075,7 +2148,7 @@
         if (!Object.keys(pool).length) return;
         LEDGER.pool = pool;
         LEDGER.ok = true;
-        _allocCache = null; _ncCache = null; _earnCache = null;
+        _allocCache = null; _ncCache = null; _earnCache = null; _ncEarnCache = null;
         render();
       })
       .catch(function () { /* fail-soft: the committed values stand */ });
@@ -2765,7 +2838,11 @@
   // ── editable input builders ───────────────────────────────────────────
   function edNum(edit, value, opts) {
     opts = opts || {};
-    if (publicMode()) return esc(value);
+    // opts.ro — render the VALUE, no control. Passed explicitly at the call
+    // site (never inferred from a module flag) because these helpers also serve
+    // the pool / eligibility / timing surfaces, which stay editable in every
+    // lane. See laneReadOnly() for why the NC priority cards ask for it.
+    if (publicMode() || opts.ro) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -2777,7 +2854,11 @@
   }
   function edText(edit, value, opts) {
     opts = opts || {};
-    if (publicMode()) return esc(value);
+    // opts.ro — render the VALUE, no control. Passed explicitly at the call
+    // site (never inferred from a module flag) because these helpers also serve
+    // the pool / eligibility / timing surfaces, which stay editable in every
+    // lane. See laneReadOnly() for why the NC priority cards ask for it.
+    if (publicMode() || opts.ro) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -2793,7 +2874,11 @@
   // as edText, so applyEdit + the change wiring handle it unchanged.
   function edArea(edit, value, opts) {
     opts = opts || {};
-    if (publicMode()) return esc(value);
+    // opts.ro — render the VALUE, no control. Passed explicitly at the call
+    // site (never inferred from a module flag) because these helpers also serve
+    // the pool / eligibility / timing surfaces, which stay editable in every
+    // lane. See laneReadOnly() for why the NC priority cards ask for it.
+    if (publicMode() || opts.ro) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -2943,24 +3028,68 @@
       }).join("");
       return '<label>Year ' + (i + 1) + ' <select class="cplfund-ed-sel" data-edit="year" data-idx="' + i + '">' + os + "</select></label>";
     }).join("");
+    // ⚠️ WHAT HAPPENS TO UNEARNED FUNDS IS A POLICY STATEMENT, NOT A COMPUTATION.
+    // The model reports what goes unearned (earnAgg().winUnearned); it does not
+    // redistribute it, and no line here may imply that it does. Sam floated
+    // "reallocated after 2028", then withdrew it as invented (2026-08-28) — the
+    // wording below is his replacement, and it is anchored rather than guessed:
+    // Ed. Code §78093.2(d)(1) directs the chancellor's office to allocate these
+    // funds "using all of the following goals" — (A) increasing access equitably,
+    // (B) increasing completion, (C) advancing career attainment, (D) supporting
+    // CPL through the chancellor's office's pilot projects. Unearned money going
+    // back to those same goals is the appropriation's own purpose, so the
+    // sentence claims a PRIORITY, never a mechanism we have not built.
+    // ⚠️ TWO DIFFERENT FACTS, and an early cut of this dropped the first.
+    // ROLL-FORWARD is what happens INSIDE the window: Year-1 money a college has
+    // not yet earned is still earnable in Year 2, closing out at the end.
+    // REPRIORITIZATION is what happens to money never earned AT ALL. Collapsing
+    // them loses the half that tells a college its money is still there.
+    var reprio = " Funds left unearned are reprioritized toward the goals in Ed. Code " +
+      "&sect;78093.2(d)(1) &mdash; access, completion, career attainment, and the " +
+      "chancellor&rsquo;s office&rsquo;s CPL pilot projects.";
     var note = fl
-      ? "front-loaded: the full window is available in Year 1 (" + esc(y[0]) + ") so every college can stand up CPL " +
-        "capacity immediately — staffing, faculty articulation work, local business processes; unspent funds roll " +
-        "forward" + (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
-        (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") +
-        ". Per-year performance targets are unchanged — only the cash timing moves."
-      : nYears() + "-year window · the pool splits into " + nYears() + " equal annual tranches";
+      ? "the full " + esc(windowLabel()) + " award is available from Year 1 (" + esc(y[0]) + "), so a college can " +
+        "stand up CPL capacity immediately. A college has the whole window to earn it, and the award does not " +
+        "change during that time; unearned funds roll forward" +
+        (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
+        (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") + "." + reprio
+      : nYears() + "-year window &middot; the pool splits into " + nYears() + " equal annual tranches, each " +
+        "earned against that year&rsquo;s targets." + reprio;
     return '<div class="cplfund-years">' + selects +
       (publicMode() ? "" :
         '<label>Allocation basis ' + segHtml("cplFundAllocBasis", [
           { val: "ftes", label: "Credit FTES" },
           { val: "headcount", label: "Headcount" }
         ], allocationBasis()) + "</label>") +
-      '<label>Disbursement ' + segHtml("cplFundDisb", [
-        { val: "even", label: "Even tranches" },
-        { val: "frontload", label: "Front-load Year 1" }
+      // Sam, 2026-08-28: "Disbursement / Even tranches / Front-load Year 1" was
+      // jargon on all three halves. What the choice actually is: does a college
+      // get its money one year at a time, or the whole window at once. The
+      // stored values stay `even` / `frontload` — renaming those would strand
+      // every saved config — only the words a reader sees change.
+      '<label>Funding ' + segHtml("cplFundDisb", [
+        { val: "even", label: "Annual funding" },
+        { val: "frontload", label: "Combined funding" }
       ], disbursement()) + "</label>" +
       '<span class="dk" style="font-size:.8rem;flex:1 1 260px;">' + note + "</span></div>";
+  }
+
+  // The lane switch — one control, all three cards, every year (Sam,
+  // 2026-08-28: "it should only toggle the cards (all years) together").
+  // It sits in the same strip as the year because it answers the same kind of
+  // question: which pool are these three priorities being measured against.
+  function laneFilterHtml() {
+    var items = [
+      { val: "cr", label: "Credit \u00b7 " + fmtMoney(netCollege()) },
+      { val: "nc", label: "Noncredit \u00b7 " + fmtMoney(ncModel().pool) }
+    ];
+    return '<div class="cplfund-toolbar" style="margin-bottom:6px;">' +
+      '<span class="dk" style="font-size:.85rem;">Lane:</span>' +
+      segHtml("cplFundLane", items, state.viewLane) +
+      '<span class="dk" style="font-size:.82rem;">' +
+      (laneIsNc()
+        ? ncModel().rows.length + " institutions. Shares and the funding factor are set on the Credit lane."
+        : "")
+      + "</span></div>";
   }
 
   function yearFilterHtml() {
@@ -2994,7 +3123,10 @@
 
   // Statewide earned line under a priority card.
   function earnedLineHtml(i) {
-    var pp = earnAgg().perPrio[i];
+    // laneEarnAgg(), never earnAgg() — perPrio is indexed by POSITION and the
+    // credit aggregate walks credit colleges with credit priorities, so on an
+    // NC card the un-laned version prints the credit lane's earned dollars.
+    var pp = laneEarnAgg().perPrio[i];
     if (!pp) return "";
     // Front-loaded later years carry no money — the front-load line above already
     // says so; a "$0 of $0 cap (0%)" line here would just read as broken.
@@ -3541,35 +3673,110 @@
   function awardStats() {
     var cols = base().colleges;
     if (!cols.length) return null;
-    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0;
+    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0, maxCount = 0;
     cols.forEach(function (c) {
       var t = collegeAlloc(c).total;
       sum += t;
-      if (t > max) { max = t; maxC = c.college; }
+      // MAXIMUM TIES ARE COUNTED, exactly as the minimum's already are
+      // (2026-08-28). The ceiling binds for FIVE colleges on the live dials and
+      // the box named one of them, which reads as a distinguishing fact about
+      // that college rather than as "this is the cap". The minimum box has said
+      // "N colleges at the floor" since the floor shipped; this is the same
+      // sentence on the other bound.
+      if (t > max + 0.5) { max = t; maxC = c.college; maxCount = 1; }
+      else if (Math.abs(t - max) <= 0.5) { maxCount++; }
       if (t < min - 0.5) { min = t; minC = c.college; minCount = 1; }
       else if (Math.abs(t - min) <= 0.5) { minCount++; }
     });
-    return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC, minCount: minCount, n: cols.length };
+    return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC,
+             minCount: minCount, maxCount: maxCount, n: cols.length };
+  }
+  // The NONCREDIT counterpart of awardStats(), over the institutions actually in
+  // the lane and their own bounds. It is a SEPARATE ROW and never merges into
+  // the credit boxes (Sam, 2026-08-28: "add a row for NC and distinguish between
+  // the two"). Merging is not arithmetic anyone can defend: different rosters
+  // (115 colleges vs 33 institutions), different floors and ceilings, and 30 of
+  // the 33 sit in BOTH lanes — so an average "across 148" double-counts colleges
+  // and a merged MINIMUM would print the noncredit floor as the credit minimum,
+  // the same figure-that-looks-right that ncRowChips() exists to prevent.
+  function ncAwardStats() {
+    var m = ncModel();
+    var rows = m.rows || [];
+    if (!rows.length) return null;
+    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0, maxCount = 0;
+    rows.forEach(function (r) {
+      var t = ncAward(r.key);
+      sum += t;
+      if (t > max + 0.5) { max = t; maxC = r.name || r.key; maxCount = 1; }
+      else if (Math.abs(t - max) <= 0.5) { maxCount++; }
+      if (t < min - 0.5) { min = t; minC = r.name || r.key; minCount = 1; }
+      else if (Math.abs(t - min) <= 0.5) { minCount++; }
+    });
+    return { avg: sum / rows.length, min: min, max: max, minC: minC, maxC: maxC,
+             minCount: minCount, maxCount: maxCount, n: rows.length,
+             floor: m.floor, cap: m.cap, floorCount: m.floorCount, cappedCount: m.cappedCount };
+  }
+  // One bound's label: name the institution when it is alone there, and COUNT
+  // them when several share the bound — naming one of five reads as a fact about
+  // that one rather than as "this is the cap".
+  //
+  // ⚠️ THE TEST IS THE VALUE, NOT THE MODEL'S CLAMP COUNT. An institution can
+  // receive exactly the ceiling WITHOUT being held to it: on the live dials
+  // Santa Ana's unclamped proportional noncredit award solves to $100,000.00 —
+  // the bounded solve converges with it sitting on the knife edge — so
+  // ncModel().capped names 2 institutions while 3 receive the maximum. Both are
+  // true and they measure different things (held-to-the-bound vs at-the-bound);
+  // gating this sentence on the clamp count while counting recipients would make
+  // the box disagree with itself. What a reader of an AWARD RANGE asks is how
+  // many receive this figure, so that is what is counted, and the bound is
+  // named only when the extreme actually IS the bound.
+  function boundLabel(one_, count, bound, word, boundWord) {
+    var atBound = bound > 0 && Math.abs(count.value - bound) <= 0.5;
+    return (atBound && count.n > 1)
+      ? count.n + " " + word + " at the " + fmtMoney(bound) + " " + boundWord
+      : esc(dispName(one_) || "&mdash;");
   }
   function awardStatsHtml() {
     var s = awardStats();
     if (!s) return "";
-    var basis = "per college, window total (" + esc(windowLabel()) + ")";
-    // Sam, 2026-08-04: order the cards Minimum · Average · Maximum (low→high) so
-    // the range reads left-to-right.
-    var cards = [
+    var nc = ncAwardStats();
+    var win = esc(windowLabel());
+
+    function row(title, sub, cards) {
+      return '<div class="cplfund-awardrow"><div class="cplfund-awardrow-h">' + title +
+        ' <span class="dk" style="font-weight:400;">' + sub + "</span></div>" +
+        '<div class="cplfund-cards">' + cards.map(function (c) {
+          return '<div class="cplfund-card award"><div class="v">' + c.v + '</div><div class="l">' + c.l + "</div></div>";
+        }).join("") + "</div></div>";
+    }
+
+    var creditCards = [
       { v: fmtMoney(s.min), l: "Minimum award &mdash; " +
-          ((floorWindow() > 0 && allocModel().floorCount && s.minCount > 1)
-            ? s.minCount + " colleges at the " + fmtMoney(floorWindow()) + " minimum-viable floor"
-            : esc(dispName(s.minC) || "&mdash;")) },
-      { v: fmtMoney(s.avg), l: "Average award &mdash; " + basis + " across " + s.n + " colleges" },
-      { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(dispName(s.maxC) || "&mdash;") }
+          boundLabel(s.minC, { n: s.minCount, value: s.min }, floorWindow(), "colleges", "minimum-viable floor") },
+      { v: fmtMoney(s.avg), l: "Average award &mdash; across " + s.n + " colleges" },
+      { v: fmtMoney(s.max), l: "Maximum award &mdash; " +
+          boundLabel(s.maxC, { n: s.maxCount, value: s.max }, capWindow(), "colleges", "maximum allocation") }
     ];
-    return "<h3>Award range " +
-      '<span class="dk" style="font-size:.8rem;font-weight:400;">(per college &middot; ' + esc(windowLabel()) + " window total)</span></h3>" +
-      '<div class="cplfund-cards">' + cards.map(function (c) {
-        return '<div class="cplfund-card award"><div class="v">' + c.v + '</div><div class="l">' + c.l + "</div></div>";
-      }).join("") + "</div>";
+
+    var out = "<h3>Award range " +
+      '<span class="dk" style="font-size:.8rem;font-weight:400;">(per institution &middot; ' + win +
+      " window total &middot; the two lanes are solved separately and never summed)</span></h3>" +
+      row("Credit", "&mdash; the college pool", creditCards);
+
+    if (nc) {
+      // "institutions", not "colleges": 3 of the roster are the standalone
+      // continuing-education institutions, which have no credit row at all.
+      var ncCards = [
+        { v: fmtMoney(nc.min), l: "Minimum award &mdash; " +
+            boundLabel(nc.minC, { n: nc.minCount, value: nc.min }, nc.floor, "institutions", "noncredit minimum") },
+        { v: fmtMoney(nc.avg), l: "Average award &mdash; across " + nc.n + " institutions in the lane" },
+        { v: fmtMoney(nc.max), l: "Maximum award &mdash; " +
+            boundLabel(nc.maxC, { n: nc.maxCount, value: nc.max }, nc.cap, "institutions", "noncredit maximum") }
+      ];
+      out += row("Noncredit", "&mdash; the carve-out, over the " + nc.n +
+        " institutions above the entry threshold", ncCards);
+    }
+    return out;
   }
 
   // A year showing Year 1's set has to SAY it is — otherwise the Year-2 view
@@ -3583,6 +3790,39 @@
   // (Sam, 2026-07-23). Reuses the eligibility-requirement bullet/✕/＋ pattern;
   // add/delete are keyed by "slot:priorityIdx[:strategyIdx]".
   function strategiesHtml(slot, i) {
+    // NO STRATEGIES IN THE NONCREDIT LANE, on purpose (2026-08-28).
+    // ncPriorities() carries `strategies: p.strategies` — credit's list,
+    // verbatim. Credit's Success list names "noncredit mirror courses" among the
+    // things to batch-upload, so rendering it here would instruct a noncredit
+    // institution about itself; every other bullet is written for a credit
+    // college. Showing nothing, and saying so, is the honest state until Sam
+    // writes the noncredit set (ncPrioOverride() is where they will live).
+    if (laneIsNc()) {
+      var ncp = ncPriorities(slot)[i];
+      var srcI = ncp ? ncp.src : i;
+      var ncList = (ncp && ncp.strategies) || [];
+      var ncKey = slot + ":" + srcI;
+      // EDITABLE, unlike every other field on an NC card — and for a reason that
+      // is the mirror image of why the others are not: this one has a store of
+      // its own (ncPriorities), so an edit lands on the noncredit priority
+      // instead of silently rewriting credit's.
+      var ncRows = ncList.map(function (x, j) {
+        return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+          edText("nc-strategy", x, { slot: slot, idx: srcI, sidx: j,
+            label: "Noncredit recommended strategy", placeholder: "Add a noncredit strategy…" }) +
+          '<button type="button" class="cplfund-reqdel" data-ncstratdel="' + esc(ncKey + ":" + j) +
+          '" title="Remove this strategy" aria-label="Remove noncredit strategy ' + (j + 1) + '">✕</button></div>';
+      }).join("");
+      return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (noncredit)</div>' +
+        (ncList.length ? ncRows
+          : '<p class="nums dk">None written for the noncredit lane yet. Credit&rsquo;s are not shown here: a ' +
+            "noncredit institution does not generally award the credit &mdash; it prepares students to earn it at " +
+            "a credit college, which is different work.</p>") +
+        (publicMode() ? "" :
+          '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-ncstratadd="' + esc(ncKey) +
+          '" title="Add a noncredit strategy">＋ Add strategy</button>') +
+        "</div>";
+    }
     var list = prioStrategies(slot, i);
     var rows = list.map(function (s, j) {
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
@@ -3722,10 +3962,13 @@
   // ── priority cards (for the active view year) ─────────────────────────
   function prioritiesHtml() {
     var slot = state.viewSlot;
-    var ps = priorities(slot);
-    var per = perYear();
+    // EVERY figure on these cards rides the LANE, never the credit accessors —
+    // a unit earns in exactly one lane and `share` splits that lane's money.
+    var ps = lanePriorities(slot);
+    var per = lanePerYear();
     var heads = totalHeads();
     var flPrio = frontloaded();
+    var ro = laneReadOnly();   // see laneReadOnly(): these fields edit CREDIT's stored row
     return '<div class="cplfund-prio">' + ps.map(function (p, i) {
       // The ANNUAL policy figures stay annual — share, per-student rate and the
       // derived reach are the per-year target and front-load does not move them
@@ -3740,50 +3983,60 @@
       // whole line rather than patching a noun (2026-08-01).
       var isFtesPrio = prioIsFtes(p);
       var unitWord = isFtesPrio ? "CPL FTES" : "students";
-      var winDollars = prioCap(netCollege(), slot, p);
+      var winDollars = lanePrioCap(slot, p);
       var frontLine = flPrio
         ? (slotIsCarryover(slot)
           ? '<p class="nums cplfund-fl-line"><span class="dk">↻ Year ' + esc(slot) + " is carryover under " +
             "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
             "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
-          : '<p class="nums cplfund-fl-line"><strong>Front-loaded:</strong> the full ' + esc(windowLabel()) +
-            " window &mdash; " + fmtMoney(winDollars) + " &mdash; is on the table in Year 1, earned against " +
-            "that same " + (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
+          // Sam, 2026-08-28 asked for less explanatory language, and the SENTENCE
+          // here was explanation ("Hitting the Year-1 target draws the whole
+          // window; unspent funds roll forward"). The effective rate is not —
+          // it is window dollars ÷ target, a derived FIGURE, and he separately
+          // asked to see more of where numbers come from. Prose out, figure in.
+          : '<p class="nums cplfund-fl-line"><strong>Combined funding:</strong> ' + fmtMoney(winDollars) +
+            " for the full " + esc(windowLabel()) + " window, earned against that same " +
+            (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
             // fmtMoney2, not fmtRate: an effective CPL-FTES rate is in the
             // $1,000s and rendered "$11299.26" without separators.
             '<span class="dk">Effective ' + fmtMoney2(sysHeads > 0 ? winDollars / sysHeads : 0) +
             "/" + (isFtesPrio ? "CPL FTES" : "student") +
             (isFtesPrio ? "" : " (" + fmtRate(p.per_student) + " &times; " + nYears() + ")") +
-            ". Hitting the Year-1 target draws the whole window; unspent funds roll forward.</span></p>")
+            ".</span></p>")
         : "";
       return '<div class="p" data-priocard="' + i + '">' +
-        prioMoveHtml(ps, i, p) +
+        (ro ? "" : prioMoveHtml(ps, i, p)) +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
-        edText("prio-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
+        edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
+        ' <span class="cplfund-chip cf-lanechip ' + (laneIsNc() ? "cf-lane-nc" : "cf-lane-cr") + '" title="' +
+        esc(laneIsNc()
+          ? "Noncredit lane — this priority is measured against the noncredit carve-out"
+          : "Credit lane — this priority is measured against the college pool") + '">' +
+        (laneIsNc() ? "NC" : "CR") + "</span>" +
         "</h4>" +
-        '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
-        '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
+        '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
+        '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         (isFtesPrio
-          ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, label: p.label + " funding factor" }) +
-            "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong> " +
-            '<span class="dk">(' + (prioFactor(p) === 1 ? "par &mdash; the plain state rate"
-              : prioFactor(p) > 1 ? "a premium: pays more per FTES, so fewer FTES earn the pot"
-              : "a discount: pays less per FTES, so more FTES are needed to earn the pot") + ")</span></p>" +
-            '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> (&asymp; " +
-            fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units) " +
-            '<span class="dk">(DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; " +
-            fmtMoney2(prioPrice(p)) + " per CPL FTES" +
-            ". A performance target only; it does <strong>not</strong> move or cap the funding, " +
-            "which is set by the Allocation share above)</span></p>"
-          : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
-            " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount) " +
-            '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
-            "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>") +
+          ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding factor" }) +
+            "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong></p>" +
+            '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> " +
+            '<span class="dk">(&asymp; ' + fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units)</span></p>"
+          : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding dollars per student" }) +
+            " per student &rarr; " + fmtInt(sysHeads) + " students " +
+            '<span class="dk">(' + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount)</span></p>") +
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        '<div class="metric">METRIC (Year ' + slot + mirroredNote(slot) + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
+        // Sam, 2026-08-28: "what does this mean? Metric - pinned to ppa_u" — and
+        // that IS the finding. The pin is what stops an NC priority resolving
+        // onto a CREDIT measure by wording alone, but a reader should not need
+        // the feed's key names to read a card. The key moves into the block's
+        // title; the visible words stay plain.
+        '<div class="metric"' +
+          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
+          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
+          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
   }
@@ -4194,6 +4447,37 @@
     return _earnCache;
   }
 
+  // The NONCREDIT mirror of earnAgg().perPrio (2026-08-28). It exists because
+  // earnAgg() walks base().colleges with credit priorities and the credit
+  // allocation model — so the priority-card earning line, which is indexed by
+  // POSITION, would print the CREDIT lane's earned dollars under a noncredit
+  // heading. Same shape, same earnFraction, the noncredit roster and pots.
+  //
+  // The participation gate is deliberately NOT applied here, matching earnAgg():
+  // the gate belongs to the DISBURSEMENT surfaces (collegeAlloc/ncAllocFor carry
+  // it), and applying it on one lane's card line and not the other's would make
+  // the two cards disagree about what the number means.
+  var _ncEarnCache = null;
+  function ncEarnAgg() {
+    if (_ncEarnCache) return _ncEarnCache;
+    var slot = state.viewSlot;
+    var ps = ncPriorities(slot);
+    var perPrio = ps.map(function () { return { cap: 0, earned: 0, statuses: {} }; });
+    ncModel().rows.forEach(function (inst) {
+      var W = ncAward(inst.key);
+      ps.forEach(function (p, i) {
+        var cap_i = ncPrioCap(W, slot, p);
+        var fr = earnFraction(inst, p);
+        perPrio[i].cap += cap_i;
+        perPrio[i].earned += cap_i * fr.f;
+        perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
+      });
+    });
+    _ncEarnCache = { perPrio: perPrio, ps: ps };
+    return _ncEarnCache;
+  }
+  function laneEarnAgg() { return laneIsNc() ? ncEarnAgg() : earnAgg(); }
+
   // `target` is whatever prioTarget() returned for this priority — CPL FTES for
   // a unit metric, students for a headcount metric.
   //
@@ -4214,8 +4498,41 @@
     if (meas.gap) {
       return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
     }
+    // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
+    // measureOf() sets `undelivered` when the feed does not carry a measure's
+    // key — for the noncredit sources, until MAP ships the origination fields.
+    // It carries no `gap`, so without a branch of its own it falls through to
+    // "arrives with the next daily data refresh": the most reassuring sentence
+    // available, and false.
+    //
+    // ⚠️ BUT `undelivered` CONFLATES TWO THINGS, and the order below is the
+    // whole fix. srcDelivered() asks the LOADED artifact whether a key is there,
+    // so when the artifact has not loaded at all it answers false for EVERY
+    // source — and an un-ordered test then tells a credit card that its measure
+    // "is not carried for anyone yet" when the truth is simply that the file has
+    // not arrived. This ordering is earnFraction()'s, deliberately: the earning
+    // line and the actuals line describe the same measure, so a surface that
+    // ordered these differently would contradict the one beside it.
     var pf = perf();
-    if (!pf || !pf.statewide || pf.statewide[meas.src] == null) {
+    function undeliveredLine() {
+      // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
+      // a reader should not need to know MAP's key names to read a card.
+      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">No actuals yet &mdash; ' +
+        "the daily MAP feed does not carry this measure for anyone yet, so it earns <strong>$0</strong> " +
+        "until it does" +
+        (meas.lane === "nc"
+          ? ". The noncredit-origin measures arrive when MAP ships the origination fields" : "") + ".</p>";
+    }
+    if (!pf || !pf.statewide) {
+      // Artifact not loaded. For CREDIT that is transient — those measures ARE
+      // in the feed. For NONCREDIT it is not: those keys have never been carried,
+      // so the honest line is the same one they get when the artifact IS loaded.
+      return meas.lane === "nc"
+        ? undeliveredLine()
+        : '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
+    }
+    if (meas.undelivered) return undeliveredLine();
+    if (pf.statewide[meas.src] == null) {
       return '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
     }
     var raw = pf.statewide[meas.src];
@@ -4225,6 +4542,12 @@
     return '<p class="nums">Actual <strong>' + (isFtes ? fmtNum1(act) : fmtInt(act)) + "</strong> " +
       (isFtes ? "CPL FTES" : "students") + " per MAP (as of " + esc(pf.as_of) + ")" +
       (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
+      // BOTH STAY. The conversion and meas.basis are where the figure comes
+      // from, which Sam asked to see MORE of, not less. meas.basis reads as a
+      // near-duplicate of the METRIC block below it, but they are two different
+      // authors: the METRIC is the CURATOR's wording, meas.basis is what the
+      // SYSTEM actually measured. When those diverge the card is the only place
+      // it shows, and that divergence is the whole reason metric_src exists.
       (isFtes ? ' <span class="dk">(' + fmtInt(raw) + " units &divide; " +
         fmtNum1(unitsPerCplFtes(null)) + " units/FTES)</span>" : "") +
       (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
@@ -4606,6 +4929,14 @@
 
   var state = {
     q: "", view: "college", group: "none", viewSlot: "1",
+    // WHICH LANE the priority CARDS describe (Sam, 2026-08-28). One switch for
+    // all three cards and every year — never per card. He named the failure
+    // himself: three independent toggles is eight states, and six of them
+    // describe no lane at all (the shares still read 34/33/33 while the pots
+    // come from two pools that sum to nothing). This is a VIEW, not a dial:
+    // nothing here is stored, and the college table below always shows both
+    // lanes as its CR/NC row pair.
+    viewLane: "cr",
     sortKey: "order", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
     docType: "memo",    // memo | letter | report | brief
@@ -6152,6 +6483,7 @@
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
     cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
+    cplFundLane: "Funding lane",
     cplFundDisb: "Disbursement timing", cplFundAllocBasis: "Allocation basis",
     cplFundDocType: "Document type"
   };
@@ -6830,7 +7162,7 @@
     ensureDraftChip();
     paintTitleLink();
     _allocCache = null; _ncCache = null;
-    _earnCache = null;
+    _earnCache = null; _ncEarnCache = null;
     var d = base();
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
@@ -6879,7 +7211,7 @@
       section("pools", "Funding pools", ledgerNoteHtml() + poolCardsHtml() + awardStatsHtml()) +
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
       section("priorities", "The three funding priorities",
-        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
+        (laneIsNc() ? "" : metricDiagnosticHtml()) + laneFilterHtml() + yearFilterHtml() + prioritiesHtml() +
         ftesFactorsHtml() + timingSectionHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
@@ -7200,6 +7532,17 @@
       if (sj >= 0 && sj < slist.length) { slist[sj] = raw; setPrioStrategies(slot, Number(idx), slist); }
       return;
     }
+    // The noncredit twin of "strategy". `idx` here is the SOURCE index (the NC
+    // rows carry p.src, not a display position), so it is used unconverted.
+    if (edit === "nc-strategy") {
+      var nsj = Number(el.getAttribute("data-sidx"));
+      var nlist = ncPrioStrategiesBySrc(slot, Number(idx));
+      if (nsj >= 0 && nsj < nlist.length) {
+        nlist[nsj] = raw;
+        setNcPrioStrategies(slot, Number(idx), nlist);
+      }
+      return;
+    }
     if (edit === "timing-label" || edit === "timing-date") {
       var ti = Number(idx);
       var tlist = timingItems();
@@ -7246,6 +7589,11 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
+    wireSeg("cplFundLane", function (v) {
+      if (v === state.viewLane) return;
+      state.viewLane = v;
+      render();
+    });
     wireSeg("cplFundAllocBasis", function (v) {
       if (v === allocationBasis()) return;
       savingState = "";
@@ -7450,6 +7798,23 @@
         var pslot = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
         var slist = prioStrategies(pslot, pi);
         if (sj >= 0 && sj < slist.length) { slist.splice(sj, 1); setPrioStrategies(pslot, pi, slist); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncstratadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncstratadd").split(":");
+        var ps = parts[0], pi = Number(parts[1]);
+        setNcPrioStrategies(ps, pi, ncPrioStrategiesBySrc(ps, pi).concat([""]));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncstratdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncstratdel").split(":");
+        var ps = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
+        var nlist = ncPrioStrategiesBySrc(ps, pi);
+        if (sj >= 0 && sj < nlist.length) { nlist.splice(sj, 1); setNcPrioStrategies(ps, pi, nlist); }
       });
     });
     // Timing list: add a blank / remove one.
@@ -7860,7 +8225,7 @@
     _setLedger: function (o) {
       if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
       else { LEDGER = { loaded: true, ok: true, pool: o }; }
-      _allocCache = null; _ncCache = null; _earnCache = null;
+      _allocCache = null; _ncCache = null; _earnCache = null; _ncEarnCache = null;
     },
     _ledgerDrift: function () { return ledgerDrift(); },
     _setElig: function (o) {
