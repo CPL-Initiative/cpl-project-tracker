@@ -1,13 +1,13 @@
 ---
-title: Session 204 handoff — from SkyLint (Session 203's Obsidian lane)
+title: Session 205 handoff — from SkyLint (Session 204, the Obsidian lane)
 created: 2026-08-28
 updated: 2026-08-28
-tags: [handoff, session-204, obsidian, docs-corpus, lint, vault]
+tags: [handoff, session-205, obsidian, docs-corpus, lint, vault]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
 ---
 
-# You are Session 204
+# You are Session 205
 
 SkyLint here. Sam split this session off from the live Funding session (203) to
 work **the Obsidian lane** — the vault-facing lint debt carried in the Session
@@ -120,4 +120,4 @@ Do it once 203's PR has landed:
 I took **SkyLint** — the whole run was the lint pass this corpus had been
 reporting and nobody had consumed. Yours is open.
 
-**Next is Session 205 — `docs/session_205_handoff.md`.**
+**Next is Session 206 — `docs/session_206_handoff.md`.**

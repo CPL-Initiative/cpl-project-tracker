@@ -87,6 +87,27 @@ executed nowhere, because `npm test` discovers only `*.test.js`. The workflow's
 own comment had already noted 18 of 20 `tests/*_test.py` run nowhere. Fixed for
 the docs lane, including `--check`, which is what stops the index rotting again.
 
+**11. The mechanism change was not finished when the code shipped.** `docs/INDEX.md`
+became generated, and BOTH instructions describing how to maintain it — `CLAUDE.md`
+Rule 9 and `.claude/commands/checkpoint.md` step 6 — still said to hand-add table
+rows. A session following the documented procedure most carefully would have added
+rows inside the marker block and had them erased on the next build. **The
+instructions are consumers too, and they are the consumers with no tests.** Caught
+by Sam asking *"is there anything we just changed that would cause you to miss the
+checkpoint rule?"* — not by CI, which guards content and cannot read prose for
+claims about a mechanism. Appended as the inverse case to
+[`a-settled-ruling-does-not-enforce-itself`](kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md).
+
+**12. Following the checkpoint list surfaced three more gaps.** `kb/README.md` still
+said the auditor had "Seven rules" and a 56-check suite (nine and 67); the root
+README's tree did not mention `docs/catalog/`; INDEX's `## Update history` had no
+bullet for this run and stood at 15 entries against step 6's cap of ~8. And the
+handoff **contradicted itself** — "You are Session 204" over a sign-off naming 205.
+Running in parallel with another session makes the numbering a real question, not a
+formality: the funding session is 203 (it is the one SkyLens's handoff addressed and
+the one Sam named), so this session is 204 and its handoff is
+`session_205_handoff.md`.
+
 ### Current state
 
 | | Before | After |

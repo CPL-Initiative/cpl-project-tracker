@@ -243,10 +243,17 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
      workflow + tag taxonomy in [`docs/kb-notes/README.md`](docs/kb-notes/README.md).
      The checkpoint commit body lists any new candidates added this run so Sam
      sees the review queue.
-   - **`docs/INDEX.md`** — auto-maintained landing page for the project's docs
-     surface. Refresh at every checkpoint: new KB notes, lessons docs, session
-     handoffs all get table rows. Obsidian renders this as the vault-side
-     entry point for `cpl-project-tracker/`.
+   - **`docs/INDEX.md` + `docs/catalog/` — GENERATED since 2026-08-28. Run
+     `python3 kb/_build_docs_index.py`; do NOT hand-add rows.** The per-lane
+     listings live in `docs/catalog/*.md`, built from each doc's own
+     frontmatter, and INDEX keeps only the landing page. Hand-edit INDEX for
+     PROSE only — the lane explanations, the orientation pointers and the
+     `## Update history` bullet for this run; anything between
+     `<!-- generated:corpus -->` markers is replaced on every build.
+     `--check` runs in CI, so a forgotten rebuild is a red check.
+     ⚠️ It was hand-maintained until it hit **273,616 B, 6.84× its budget**,
+     half of it re-typing what the notes already said. Obsidian renders INDEX
+     as the vault-side entry point for `cpl-project-tracker/`.
    - **Pipeline visualization on the dashboard (`#tab-pipeline`)** — **refresh
      whenever the workstream moved the pipeline (added 2026-05-30).** The Pipeline
      tab is hand-maintained static content living in **both `CPL_Dashboard.html`
@@ -864,7 +871,7 @@ deliberately not renamed (a filename is an identifier).
 ⚠️ **`tests/docs_audit_test.py` — 67 assertions guarding the whole prose surface — had never
 run in CI.** Now wired in.
 **NEXT: `CLAUDE.md` at 2.49× its always-loaded budget** — held only to avoid colliding with 203.
-Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_204_handoff.md`.
+Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_205_handoff.md`.
 
 ## Troubleshooting
 
