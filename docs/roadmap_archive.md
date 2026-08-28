@@ -4995,3 +4995,28 @@ PROSE**, so all three NC metrics would read CREDIT performance — plausible num
 saying so. Build order is now `src` first. Found before a line was written.
 Story `docs/map_custom_reports_lessons.md` · `docs/cpl_funding_lessons.md` · handoff `docs/session_198_handoff.md`.
 
+### SkyMatch — the evidence a college does not keep (2026-08-27)
+
+**Jessica: LATTC approved 139 courses for military CPL and supplied no credit recommendation
+for any of them** — and MAP requires one. *"This is a common problem we have with colleges."*
+So it shipped as a reusable matcher, not a one-off (#1365).
+⭐ **Two signals, never blended:** the recommendation EXISTS (proposal) vs a peer college
+USED it (fact). 87 / 46 / 6.
+⚠️ **Three defects were mine, and each was invisible in the numbers.** A dedup folded
+`1 hour in welding` into `3 hours in welding`, so a 1-unit lab could never be offered the
+variant that fit. Ranking by breadth hid **22** exact-hour matches on one 2-unit course. And
+I turned *peers rarely reuse a recommendation* into *reuse is forbidden* — a frequency read
+as a rule, which Jessica corrected.
+⭐ **Her unit rule beat my modeled one:** >1 unit apart is not listed, exactly one apart
+scores lower. Simple, and set by the person who defends the articulation.
+⭐ **A units join is also a course-identity check** — 5 LATTC course numbers name a different
+course in COCI. The second finding was free and worth more than the first.
+⚠️ **Three CI reproductions of mine were invalid** (deps installed on one Node, run on
+another; then a Node predating `require(esm)`). The faithful one — CI's exact Node 20.20.2 —
+passes 276/276, so that failure is the runner's, not this PR's.
+Ran in PARALLEL with SkyPin (the funding lane, #1366) — two sessions, one day, two
+handoffs: `docs/session_199_handoff.md` is SkyPin's, `docs/session_200_handoff.md` is
+this one. Neither supersedes the other.
+Story `docs/college_cr_evidence_lessons.md`.
+
+*(Moved from `CLAUDE.md` §11 by Session 204, 2026-08-28 — Rule 9 keeps at most 2 session narratives inline.)*

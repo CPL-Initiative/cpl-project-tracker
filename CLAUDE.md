@@ -842,29 +842,29 @@ to save it."* A hand-applied fix destroys the experiment that proves the repair.
 isolation; nothing has done the round trip in a browser.
 Story `docs/cpl_funding_lessons.md` · handoff `docs/session_203_handoff.md`.
 
-### SkyMatch — the evidence a college does not keep (2026-08-27)
+### SkyLint S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
 
-**Jessica: LATTC approved 139 courses for military CPL and supplied no credit recommendation
-for any of them** — and MAP requires one. *"This is a common problem we have with colleges."*
-So it shipped as a reusable matcher, not a one-off (#1365).
-⭐ **Two signals, never blended:** the recommendation EXISTS (proposal) vs a peer college
-USED it (fact). 87 / 46 / 6.
-⚠️ **Three defects were mine, and each was invisible in the numbers.** A dedup folded
-`1 hour in welding` into `3 hours in welding`, so a 1-unit lab could never be offered the
-variant that fit. Ranking by breadth hid **22** exact-hour matches on one 2-unit course. And
-I turned *peers rarely reuse a recommendation* into *reuse is forbidden* — a frequency read
-as a rule, which Jessica corrected.
-⭐ **Her unit rule beat my modeled one:** >1 unit apart is not listed, exactly one apart
-scores lower. Simple, and set by the person who defends the articulation.
-⭐ **A units join is also a course-identity check** — 5 LATTC course numbers name a different
-course in COCI. The second finding was free and worth more than the first.
-⚠️ **Three CI reproductions of mine were invalid** (deps installed on one Node, run on
-another; then a Node predating `require(esm)`). The faithful one — CI's exact Node 20.20.2 —
-passes 276/276, so that failure is the runner's, not this PR's.
-Ran in PARALLEL with SkyPin (the funding lane, #1366) — two sessions, one day, two
-handoffs: `docs/session_199_handoff.md` is SkyPin's, `docs/session_200_handoff.md` is
-this one. Neither supersedes the other.
-Story `docs/college_cr_evidence_lessons.md`.
+**Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
+The vault-facing debt: `kb_note_dialect` **60 → 0**, `american_spelling` **174 → 1** (the one
+left is 203's file), `docs/INDEX.md` **273,616 B → 20,757 B** (was 6.84× its budget). PR #1373.
+⭐ **A FIELD THE RESOLVER NEVER REACHES CAN DISAGREE FOR EVER** — `kb_type_of` returns the type
+tag and stops, so 41 notes carried a `type:` key nothing ever read; **6 disagreed**, silently,
+for months. Audit agreement across every source, never the resolved value.
+⭐ **The index rotted structurally, not sloppily** — 75 workstream docs matched no table so
+sessions appended `## Added <date>` sections, and six KB notes had been appended into the
+**three-lanes table**, two breaking its column count. Generated now, `--check` in CI.
+⚠️ **Moving content out from under a guard disables the guard, and the diff looks like
+progress** — relocating the listings orphaned all 340 notes from `unindexed_kb_note`.
+⚠️ **A checker and a fixer reporting different counts are reading different text** — one
+`prose_only()` now serves both; 25 unactionable findings → 1.
+✅ **Sam, 2026-08-28: "No need to fix any spellings we import…like COCI catalog or MAP Custom
+Reports data"** — generalized to every QUOTED span; 3 of 402 replacements, and it caught Sam
+quoted verbatim. All **3,145** link/wikilink targets byte-identical; 5 British-form FILENAMES
+deliberately not renamed (a filename is an identifier).
+⚠️ **`tests/docs_audit_test.py` — 67 assertions guarding the whole prose surface — had never
+run in CI.** Now wired in.
+**NEXT: `CLAUDE.md` at 2.49× its always-loaded budget** — held only to avoid colliding with 203.
+Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_204_handoff.md`.
 
 ## Troubleshooting
 
