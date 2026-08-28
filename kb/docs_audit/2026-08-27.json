@@ -9,18 +9,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 673,
-    "bytes": 7624213,
+    "files": 675,
+    "bytes": 7645918,
     "over_budget": 5,
-    "handoff_max": 200,
+    "handoff_max": 201,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 148488,
+    "always_loaded_bytes": 148642,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 148488,
+        "bytes": 148642,
         "over": 1
       },
       "other": {
@@ -30,22 +30,22 @@
       },
       "index": {
         "files": 1,
-        "bytes": 270867,
+        "bytes": 272007,
         "over": 1
       },
       "lessons": {
         "files": 70,
-        "bytes": 1818366,
+        "bytes": 1826075,
         "over": 1
       },
       "kb_note": {
-        "files": 337,
-        "bytes": 1781905,
+        "files": 338,
+        "bytes": 1787085,
         "over": 0
       },
       "handoff": {
-        "files": 177,
-        "bytes": 1472625,
+        "files": 178,
+        "bytes": 1480147,
         "over": 0
       }
     },
@@ -56,9 +56,9 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2319,
-      "bytes": 1231447837,
-      "heavy_bytes": 598638592,
+      "files": 2323,
+      "bytes": 1231527685,
+      "heavy_bytes": 598638632,
       "heavy_share": 0.486,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -114,26 +114,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 148488,
+        "bytes": 148642,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 88488,
-        "ratio": 2.47
+        "over_by": 88642,
+        "ratio": 2.48
       },
-      "message": "148,488 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "148,642 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 270867,
+        "bytes": 272007,
         "limit": 40000,
         "lane": "index",
-        "over_by": 230867,
-        "ratio": 6.77
+        "over_by": 232007,
+        "ratio": 6.8
       },
-      "message": "270,867 B is 6.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "272,007 B is 6.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -4092,10 +4092,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694850,
+        "bytes": 8694833,
         "kind": "file"
       },
-      "message": "8,694,850 B single file inside the vault"
+      "message": "8,694,833 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4172,10 +4172,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267513,
+        "bytes": 6267512,
         "kind": "file"
       },
-      "message": "6,267,513 B single file inside the vault"
+      "message": "6,267,512 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4312,10 +4312,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354169,
+        "bytes": 2354227,
         "kind": "file"
       },
-      "message": "2,354,169 B single file inside the vault"
+      "message": "2,354,227 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

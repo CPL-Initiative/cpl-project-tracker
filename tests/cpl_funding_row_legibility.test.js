@@ -103,9 +103,14 @@ const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_fun
   check("the per-year cell passes it too",
     /earnedSubHtml\(cap, pt\.earned, pt\.adv, pt\.held, row\.gate_blocked\)/.test(src));
   // A gated college with nothing withheld must NOT be told money is held.
+  // ⚠️ Guards the BRANCH, not the wording. This pinned the literal call-to-action
+  // string, so it went red when Sam changed "opt in" to "confirm participation"
+  // (2026-08-27) — a rename that says nothing about whether the figure is
+  // conditional, which is what this assertion exists for. The words are guarded
+  // where they are RENDERED, by cpl_funding_gate_ledger_public S5.
   check("the figure renders only when there IS one to hold",
     /var showFig = due && held > 0\.5;/.test(src) &&
-    /showFig \? "held " \+ fmtMoney\(held\) : "opt in to start earning"/.test(src));
+    /showFig \? "held " \+ fmtMoney\(held\) : "[^"]+"/.test(src));
   // The old unconditional wording would have printed "held $0" after the
   // deadline for exactly the colleges this change is for.
   check("no branch can emit a bare `held $0`",

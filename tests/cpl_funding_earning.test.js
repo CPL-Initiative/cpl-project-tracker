@@ -67,7 +67,12 @@ const {
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
   check("E: the Total cell stacks the cap over the earned figure, unconditionally",
     !!potRow.querySelector("td.tot .sub") &&
-    /earned/i.test(potRow.querySelector("td.tot .sub").textContent));
+    // ⚠️ "earning", not "earned" (Sam, 2026-08-27): the money is not a done deal
+    // until the college qualifies, and the past tense read like a settled award.
+    // Asserted BOTH ways so a revert to the past tense fails rather than passing
+    // on a loose /earn/ match.
+    (function (t) { return /earning/i.test(t) && !/\bearned\b/i.test(t); })(
+      potRow.querySelector("td.tot .sub").textContent));
   check("E: the year cells stack earned under the cap too",
     !!potRow.querySelector("td:not(.tot) .sub"));
 
@@ -94,7 +99,7 @@ const {
   const earnRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
   const totTxt = earnRow.querySelector("td.tot").textContent;
   check("E: the Total cell carries BOTH the cap and the earned figure",
-    (totTxt.match(/\$/g) || []).length >= 2 && /earned/i.test(totTxt));
+    (totTxt.match(/\$/g) || []).length >= 2 && /earning/i.test(totTxt) && !/\bearned\b/i.test(totTxt));
   check("E: the Total cell hover breaks earned into measured / advance",
     /measured|advance/.test(earnRow.querySelector("td.tot").getAttribute("title") || ""));
 
