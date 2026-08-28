@@ -245,13 +245,8 @@ finished_workstreams · `lanes/` (see the stubs below).
      Each §11 roadmap lane's state lives in its own file; **§11's table is a
      POINTER INDEX**. Refresh the LANE FILE with what this run learned — same
      content and same standard as the old §11 cell, new address.
-     ⚠️ **Added 2026-08-28 because the consolidation that moved the content
-     updated `.claude/commands/checkpoint.md` and left THIS bullet describing
-     the old arrangement.** The slash command is the *pulled* path and fires
-     only when someone types it; this rule is the *pushed* path and fires
-     unprompted — so for one commit a checkpoint run from here would have
-     refreshed the pointer table and left all 30 lane files to go stale. Same
-     failure the consolidation itself was documenting.
+     ⚠️ **A checkpoint that updates only the §11 row leaves all 30 lane files to
+     go stale** — that is the failure mode, and it is why this bullet leads.
    - **`CLAUDE.md`** — rules + the §11 pointer table + ≤2 session narratives.
      **Touch a §11 ROW only when the lane's STATE changes** (live ⇄ in progress
      ⇄ parked, open work appearing or clearing) — ⚠️ **do not grow a row back
@@ -401,17 +396,12 @@ finished_workstreams · `lanes/` (see the stubs below).
   a live `sierra_guidance` row (id `cb226a48`, deactivatable in the 🧭 pane),
   and the public KB's `claude/CLAUDE.md`. Historical titles/quotes stay verbatim.
 - **AMERICAN SPELLING, ALWAYS (Sam, 2026-08-21).** *"As a Yank, I prefer
-  American, of course."* Claude drifts to British forms in chat, in artifacts and
-  in code comments, and Claude's own spell-check flags them as errors — so this
-  is a real friction, not a style quibble. Use **color · behavior · normalize ·
-  organization · analyze · center · judgment · program · catalog · license (n
-  and v) · gray · enroll · while (not while) · among (not among)** and the
-  `-ize`/`-ization` family throughout. Applies to **rendered UI text first**
-  (`college_briefing.js` was telling readers a "program" was inactive and
-  citing "the curated catalog"), then docs, then comments. Enforced by
-  `american_spelling` in `kb/_docs_audit.py` — it is a lint finding, not a
-  memory. ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name
-  is not a spelling, so never blind-replace inside code.
+  American, of course."* Use **color · behavior · normalize · organization ·
+  analyze · center · judgment · program · catalog · license (n and v) · gray ·
+  enroll** and the `-ize`/`-ization` family. **Rendered UI text first**, then
+  docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
+  ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
+  a spelling, so never blind-replace inside code.
 - **SkyView, not "Atlas" (Sam, 2026-08-24).** The CCR curation prototype is **SkyView**.
   ⚠️ **When Sam says "SkyView" he means the GRAPH VIEW specifically** — the canvas of
   identities you pan, search and drag on — **not** the surrounding informational elements
@@ -540,6 +530,54 @@ against, and the toggle history are in
   - The session-end handoff still notes any architecturally-significant PR that
     landed, even though no pre-merge pause happened.
 
+## Presentation rules — EVERY view we ship (non-negotiable)
+
+These govern **anything a human looks at** — a COBI tab, a public page, a
+prototype, a Claude artifact, a docx — and they are PUSH because nobody stops to
+ask "may I use an emoji here" before typing one. Spec detail:
+[`engineering_ui_practices`](docs/reference/engineering_ui_practices.md) ·
+[`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
+
+⚠️ **Recording a rule and having it fire are two events** — these kept scattering,
+and one was carried out of this file entirely by a relocation.
+`presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves.
+
+- **FIRST LIGHT, ALWAYS — INCLUDING ARTIFACTS AND PROTOTYPES (Sam, 2026-08-19).**
+  *"Make sure it is based on our First Light design and make it always accessible
+  and mobile friendly."* **Do not invent a palette.** Spec:
+  [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
+  `prototype/first_light_theme_v1.html` v1.6; `var(--token)`, never a raw hex.
+  It is a **light** identity with no dark PAGE palette.
+- **ACCESSIBLE TO TODAY'S STANDARDS — AND VERIFIED, NOT CLAIMED.** Compute every
+  fg-on-bg pair actually used (zebra rows and glass composites included) against
+  **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the maths. **Color is
+  never the only signal.** `th scope` on every header cell, an `aria-label`led
+  region around any scrolling table, a skip link, `:focus-visible`, and
+  `prefers-reduced-motion`.
+- **MOBILE-FRIENDLY, ALWAYS.** Single column below ~560px, `clamp()` type, no
+  fixed widths, and wide tables scroll **inside their own container** so the body
+  never scrolls sideways.
+- **PROSE RUNS THE FULL WIDTH OF WHATEVER SITS BESIDE IT (Sam, 2026-08-22).**
+  The lever is `--cpl-measure: none` on `:root` in BOTH HTMLs (Rule 4); every
+  prose cap is `max-width:var(--cpl-measure,none)` — **the `,none` fallback is
+  load-bearing.** ⚠️ A cap below ~55ch is LAYOUT, not a measure, and must NOT be
+  swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep
+  fails). Grep **px too**.
+  [`methodology-a-text-measure-must-agree-with-what-sits-beside-it`](docs/kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md)
+- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids fit
+  the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
+  net, never the default desktop experience. Use `table-layout:fixed` + an
+  explicit colgroup — auto layout silently parks columns past the wrap's edge.
+- **PLAIN WORDS, NOT GLYPHS (Sam, via #1212).** Every control is a **word** —
+  *Rename · Hide · Remove · Seen by: … · All sites* — never an emoji or an icon
+  standing in for a label. ⚠️ **This is not the same rule as "always
+  glyph-paired" above and they do not conflict:** a *state-bearing* mark beside
+  a word (▲▼ ✓ ⚠) is required, because color must never be the only signal; a
+  *decorative* emoji used AS the label is banned. Decorative out, state-bearing
+  stay, muted and simple.
+- **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
+  code-safety caveat are in **Naming & terminology** below.
+
 ## Engineering & UI practices (added Session 32, 2026-06-04)
 
 Standing practices — honor them in normal work. Each rule below is the whole
@@ -557,25 +595,6 @@ Read that before a UI rework, a First Light artifact, or a table layout.
 - **Prefer injecting tab CSS from the tab's JS** (the `ensureCerScopeCss()`
   pattern) over editing the HTML `<style>` blocks — JS is one static file, so it
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
-- **No horizontal scroll whenever feasible (Sam, 2026-06-11).** Tables/grids fit
-  the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
-  net, never the default desktop experience. Use `table-layout:fixed` + an
-  explicit colgroup — auto layout silently parks columns past the wrap's edge.
-- **ARTIFACTS AND PROTOTYPES USE FIRST LIGHT TOO — accessible and mobile-friendly
-  (Sam, 2026-08-19).** *"Make sure it is based on our First Light design and make
-  it always accessible and mobile friendly."* **Do not invent a palette.** Spec:
-  [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
-  `prototype/first_light_theme_v1.html` v1.6. **Accessible means verified, not
-  claimed** — compute every fg-on-bg pair actually used against AA 4.5:1 / 3:1
-  (`prototype/check_contrast.py`), and **color is never the only signal**.
-  First Light is a **light** identity with no dark PAGE palette.
-- **PROSE RUNS THE FULL WIDTH OF WHATEVER SITS BESIDE IT (Sam, 2026-08-22).**
-  The lever is `--cpl-measure: none` on `:root` in BOTH HTMLs (Rule 4); every
-  prose cap is `max-width:var(--cpl-measure,none)` — **the `,none` fallback is
-  load-bearing.** ⚠️ A cap below ~55ch is LAYOUT, not a measure, and must NOT be
-  swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep
-  fails). Grep **px too**.
-  [`methodology-a-text-measure-must-agree-with-what-sits-beside-it`](docs/kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md)
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
 - **Stop-hook:** install `scripts/stop-hook-git-check.sh` to `~/.claude/`. It
@@ -672,16 +691,13 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts
 > what it says, **delete the superseded text** — do not prefix it with
 > `*Prior:*` and leave it below. History belongs in the workstream's lessons
-> doc, which Rule 9 already says to write **once**. This was measured: before
-> the rule existed, the "Disposition grain" cell reached **14,338 characters**
-> with 3 `*Prior:*` markers and four generations of stacked claims, some
-> contradicting each other — and the cost was not bloat but CONTRADICTION, with
-> the same correction made on two consecutive days. **No reading order fixes a
-> contradiction inside one document.** `stacked_roadmap_cell` in
-> `kb/_docs_audit.py` guards **both** surfaces — this table and every lane file
-> — mechanically, because Sam does not review checkpoint output by design.
+> doc, which Rule 9 already says to write **once**. The cost of stacking is not
+> bloat but CONTRADICTION, and **no reading order fixes a contradiction inside
+> one document.** `stacked_roadmap_cell` guards **both** surfaces — this table
+> and every lane file — mechanically, because Sam does not review checkpoint
+> output by design.
 >
-> **Retiring a lane.** Completed rows through Session 32 are in
+> **Retiring a lane.** Completed rows through S32 are in
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). A lane that has shipped
 > and is stable — **no NEXT, no NEEDS SAM, no BLOCKED in its own text** — moves
 > verbatim to

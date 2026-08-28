@@ -294,7 +294,7 @@ check("handoff: an already-stamped handoff is not re-flagged (idempotent)",
 # cell that has become a log, and must NOT fire on an ordinary current-state cell
 # — a guard that flags healthy input gets muted, which is how three earlier rules
 # in this same file nearly shipped broken.
-import tempfile, os as _os
+import tempfile as _tf_unused, os as _os, re
 
 def _claude_md_with(cell_status):
     body = ("### Roadmap\n\n| Phase | What | Status |\n|---|---|---|\n"
@@ -436,6 +436,87 @@ _sh.rmtree(_d)
 
 check("unreferenced offload: ignores docs that are not CLAUDE.md",
       da.rule_unreferenced_offload({"rel": "docs/other.md", "path": __file__}, ".") is None)
+
+# ── presentation_doctrine ─────────────────────────────────────────────────
+# Sam, 2026-08-28: make sure the formatting preferences are preserved and
+# properly prioritized. They are the purest PUSH case in the corpus — nobody
+# queries a formatting rule before typing — and "PLAIN WORDS, NO GLYPHS" has now
+# been lost twice the same way: recorded in cpl_memory on 2026-08-14 while the
+# Admin tab shipped covered in emoji that week, then carried out of CLAUDE.md
+# entirely when the consolidation relocated the §11 row that held it.
+_SECTION = "## Presentation rules"
+
+def _claude_presentation(bullets):
+    body = (_SECTION + " — test\n\nintro prose naming NO GLYPHS and First Light "
+            "in a post-mortem, which must NOT satisfy anything.\n\n"
+            + "\n".join(bullets) + "\n\n## Next section\n")
+    fd, path = _tf.mkstemp(suffix=".md"); _os.write(fd, body.encode()); _os.close(fd)
+    return {"rel": "CLAUDE.md", "path": path}
+
+_ALL = [
+    "- **FIRST LIGHT, ALWAYS.** do not invent a palette.",
+    "- **ACCESSIBLE TO TODAY'S STANDARDS.** AA 4.5:1, aria-label, focus-visible.",
+    "- **MOBILE-FRIENDLY, ALWAYS.** single column below ~560px.",
+    "- **PLAIN WORDS, NOT GLYPHS.** every control is a word, never a decorative emoji.",
+    "- **AMERICAN SPELLING, ALWAYS.**",
+    "- **No horizontal scroll whenever feasible.**",
+    "- **PROSE RUNS THE FULL WIDTH.** `--cpl-measure`.",
+]
+_e = _claude_presentation(_ALL)
+check("presentation doctrine: silent when every rule is stated",
+      da.rule_presentation_doctrine(_e) is None)
+_os.unlink(_e["path"])
+
+# ⚠️ The first cut searched the WHOLE file and did not fire when the glyph rule
+# was deleted, because the section's own preamble names it while explaining how
+# it was once lost. A doctrine-presence check keyed on a rule's NAME is satisfied
+# by the post-mortem about losing it, so it reads the rule BULLETS only.
+for _i in range(len(_ALL)):
+    _short = _ALL[:_i] + _ALL[_i + 1:]
+    _e = _claude_presentation(_short)
+    _f = da.rule_presentation_doctrine(_e)
+    _os.unlink(_e["path"])
+    check(f"presentation doctrine: deleting rule {_i + 1} reports exactly one topic",
+          _f is not None and len(_f["detail"]["missing"]) == 1)
+
+_e = _claude_presentation([])
+_e2 = {"rel": "CLAUDE.md", "path": _e["path"]}
+open(_e["path"], "w", encoding="utf-8").write("# CLAUDE\nno such section.\n")
+_f = da.rule_presentation_doctrine(_e2)
+check("presentation doctrine: a missing section is itself the finding",
+      _f is not None and _f["detail"]["missing"] == ["(the whole section)"])
+_os.unlink(_e["path"])
+
+check("presentation doctrine: ignores docs that are not CLAUDE.md",
+      da.rule_presentation_doctrine({"rel": "docs/x.md", "path": __file__}) is None)
+
+# ⚠️ Run the SAME check against the REAL CLAUDE.md. The synthetic fixture above
+# passed while the live file had two false passes: Sam's quote inside the First
+# Light bullet ("make it always accessible and mobile friendly") satisfied both
+# the accessibility and mobile patterns, so either rule could have been deleted
+# in full and this stayed silent. A fixture is only as good as its messiness.
+_LIVE = _os.path.join(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__))),
+                      "CLAUDE.md")
+if _os.path.isfile(_LIVE):
+    _full = open(_LIVE, encoding="utf-8").read()
+    check("presentation doctrine: the live CLAUDE.md states every rule",
+          da.rule_presentation_doctrine({"rel": "CLAUDE.md", "path": _LIVE}) is None)
+    _s = _full.index("## Presentation rules")
+    _n = _full.find("\n## ", _s + 1)
+    _sec = _full[_s:_n]
+    _bs = [m.start() for m in re.finditer(r"\n- \*\*", _sec)] + [len(_sec)]
+    _one_to_one = True
+    for _i in range(len(_bs) - 1):
+        _b = _sec[_bs[_i]:_bs[_i + 1]]
+        _fd, _p = _tf.mkstemp(suffix=".md")
+        _os.write(_fd, (_full[:_s] + _sec.replace(_b, "\n") + _full[_n:]).encode())
+        _os.close(_fd)
+        _f = da.rule_presentation_doctrine({"rel": "CLAUDE.md", "path": _p})
+        _os.unlink(_p)
+        if not (_f and len(_f["detail"]["missing"]) == 1):
+            _one_to_one = False
+    check("presentation doctrine: each LIVE rule bullet is guarded 1:1 "
+          "(no rule satisfied by a neighbour's wording)", _one_to_one)
 
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
