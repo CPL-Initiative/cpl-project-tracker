@@ -8037,6 +8037,7 @@
     // masthead. promoteScenarioToShared() is still reachable — via the Publish
     // button below, which is the ONLY path now, so it must never be gated away.
 
+
     // The publish button for a local overlay held under an unlocked session.
     var promoteBtn = document.getElementById("cplFundPromote");
     if (promoteBtn) promoteBtn.addEventListener("click", function () {
