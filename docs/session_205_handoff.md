@@ -22,7 +22,7 @@ supersedes the other — read both, and check whether 203's PR landed.
 | Finding | Before | After |
 |---|---:|---:|
 | `kb_note_dialect` | 60 | **0** |
-| `american_spelling` | 174 | **1** (203's file) |
+| `american_spelling` | 174 | **0** |
 | `oversized_doc` | 5 | **4** |
 | `docs/INDEX.md` | 273,616 B (6.84×) | **20,757 B** |
 
@@ -54,6 +54,59 @@ New suites: `docs_index_build` 25/25, `american_spelling` 32/32. And
    we import…like COCI catalog or MAP Custom Reports data"* → exclude every
    **quoted span**. Costs 3 of 402 replacements, and caught a case nobody had
    considered: Sam quoted verbatim in `session_68_handoff.md`.
+
+## Shipped after the first handoff was written
+
+**The Governance "Docs & doctrine" panel** (#1376). Sam asked for a way to trace
+a recurring behavioral mismatch back to the document that caused it — *"I
+definitely don't want to get trapped reviewing for a living."* So it is a
+**lookup, not a review queue**: no checkbox, no mark-reviewed, no unread count,
+no owner, inert until opened, and `tests/governance_docs_panel.test.js` asserts
+each of those absences because they are exactly what a helpful future session
+would add. `kb/_build_docs_index.py` now also emits `docs/catalog/index.json`
+(same pass, one collector) so titles, tags and the `artifacts:` each note governs
+are searchable together. A **doctrine lane** leads it — `CLAUDE.md`, both READMEs,
+`.claude/commands/` — because `CLAUDE.md` auto-loads into every session and
+`kb/doctrine.py` deliberately excludes it.
+
+⚠️ **`docs/catalog/index.json` is committed and regenerates on every doc change**,
+so a checkpoint that adds a note produces a ~14k-line diff on it. That is the
+cost of the panel; `--check` in CI is what keeps it honest.
+
+## The public KB is six weeks stale, structurally
+
+Sam asked what would keep the public KB current with session learnings. Measured:
+
+| | |
+|---|---:|
+| KB files | 54 |
+| KB last content change | **2026-07-17** |
+| Tracker `docs/kb-notes/` | **342** |
+| Manifest entries sourced from `docs/kb-notes/` | **0** |
+
+⭐ **Not one session learning has ever been promoted**, though `CURATION.md`'s
+incremental path explicitly provides for tracker kb-notes. The manifest was built
+from a one-time vault audit dated **2026-05-08**; the kb-notes lane was created
+**2026-05-27**. It has been frozen at its first pass since, and **nothing
+accumulates candidates**, so there is no backlog to work — only absence.
+
+⚠️ **The scanner FLAGS, it does not strip.** Sam believed a routine removes PII;
+`curation_assistant.py` flags and a human PR review *is* the audit. Do not
+describe it as a scrub.
+
+⭐ **Two jobs with opposite requirements are in one repo.** A public curated
+shopfront needs a human gate; a context store needs to be complete and current.
+The gate is *why* it is stale. The context-store job is already done privately and
+better — `docs/kb-notes/`, `cpl_memory`, and now `docs/catalog/index.json`.
+⚠️ And "everything we know, public" runs directly against the **public/private
+split** roadmap row, which exists because of IP-proliferation concern.
+
+**Two recommendations await Sam's go — do not build either unasked:**
+1. A checkpoint sub-step where a session that writes a *publicly useful* note
+   appends a **`hold`-bucket** manifest row + one-line rationale. Builds a
+   candidate queue, publishes nothing, human gate untouched.
+2. Nothing reads `docs/kb-notes/` at runtime — Sierra reads `cpl_memory` but not
+   the notes. That is the concrete gap if tools should query "everything we know".
 
 ## Your priority — `CLAUDE.md` at 2.49× its always-loaded budget
 
