@@ -149,8 +149,36 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
     laneCredit.length > 0 &&
     /\bCR\b/.test(laneCredit[0].querySelector(".cf-lanechip").textContent) &&
     /\bNC\b/.test(ncRows[0].querySelector(".cf-lanechip").textContent));
-  check("D4: a credit row with NO noncredit program gets no CR chip — the label would name a distinction that is not on screen",
-    Array.from(creditRows).some((r) => !r.querySelector(".cf-lanechip")));
+  // ⚠️ INVERTED 2026-08-28, not deleted. This used to assert that a college with
+  // no noncredit program got NO CR chip, because the label would name a
+  // distinction that was not on screen. Sam changed the rule that made that
+  // true: EVERY college is now rendered as a CR/NC pair, including the seven
+  // with no noncredit FTES on record — "if they disagree and say, Yes, we have
+  // NC, we can find the error and fix it." So the chip is never orphaned, and
+  // the failure worth catching is the opposite one: a college quietly losing
+  // its partner row and leaving a chip that labels nothing.
+  check("D4: every credit row carries a CR chip, because every college is now a CR/NC pair",
+    Array.from(creditRows).length > 0 &&
+    Array.from(creditRows).every((r) => !!r.querySelector(".cf-lanechip")));
+  // The chip's premise, checked by IDENTITY rather than by count: every credit
+  // row's college has a noncredit row addressed to it. A count alone would pass
+  // if one college gained two rows while another lost its only one.
+  // The chip's premise. A bare count would pass if one college gained a second
+  // row while another lost its only one, so this checks the noncredit rows are
+  // addressed to DISTINCT colleges and that there are as many of them as there
+  // are credit rows. (Credit rows carry only data-id, so the join is asserted
+  // from the noncredit side, which is the side that names its college.)
+  check("D4a: and the noncredit rows are one-per-college, not two for one and none for another", (function () {
+    const keys = Array.from(ncRows).map((r) => r.getAttribute("data-ncfor")).filter(Boolean);
+    const distinct = new Set(keys);
+    return keys.length > 0 && distinct.size === keys.length &&
+      distinct.size === Array.from(creditRows).length;
+  })());
+  // The three shapes a noncredit row can take, all present — funded,
+  // below-threshold, and none-on-record. If any disappears, a college class has
+  // silently stopped being represented.
+  check("D4c: a college with no noncredit program on record still gets a row, chipped as such",
+    Array.from(ncRows).some((r) => /none on record/i.test(r.textContent)));
 
   // ⚠️ Pick a FUNDED noncredit row. Since 2026-08-27 every college that runs a
   // noncredit programme gets a row, including the 78 below the entry threshold,

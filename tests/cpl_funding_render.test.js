@@ -117,16 +117,25 @@ const {
   // Sam, 2026-08-04: advisory noncredit-FTES companion line in the size cell + the DeAnza display override.
   {
     const bodyText = tables[0].textContent;
-    check("size cell shows the advisory 'NC FTES' companion line", bodyText.indexOf("NC FTES") !== -1);
+    // ⚠️ Sam's 2026-08-04 advisory NC-FTES line used to be rendered by the NC $
+    // column's sub-line, NOT by the size cell this assertion names. The column
+    // was retired 2026-08-28 (it printed each college's carve-out twice); the
+    // LABELLED figure moved to the noncredit row's own size cell, which is
+    // where it belongs once every college renders as a CR/NC pair. The label is
+    // what is being protected — a bare number under a header reading
+    // "2025 Ttl FTES/Funding" does not say it is noncredit.
+    check("the advisory 'NC FTES' companion line survives, now on the noncredit row",
+      bodyText.indexOf("NC FTES") !== -1);
     check("De Anza renders via the display override 'DeAnza' (no space)",
       bodyText.indexOf("DeAnza") !== -1 &&
       D.colleges.some(function (c) { return c.college === "De Anza" && c.display === "DeAnza"; }));
     const sf = D.colleges.find(function (c) { return c.college === "San Francisco"; });
     const sfRow = Array.from(tables[0].querySelectorAll("tbody tr.cplfund-row"))
       .find(function (tr) { return tr.textContent.indexOf("San Francisco") !== -1; });
-    check("a college's own noncredit FTES renders in its size cell (San Francisco)",
-      !!sfRow && sfRow.textContent.indexOf("NC FTES") !== -1 &&
-      sfRow.textContent.indexOf(Math.round(sf.noncredit_ftes).toLocaleString("en-US")) !== -1);
+    const sfNc = tables[0].querySelector('tr.cplfund-ncrow[data-ncfor="San Francisco"]');
+    check("a college's own noncredit FTES renders, labelled, on its noncredit row (San Francisco)",
+      !!sfRow && !!sfNc && sfNc.textContent.indexOf("NC FTES") !== -1 &&
+      sfNc.textContent.indexOf(Math.round(sf.noncredit_ftes).toLocaleString("en-US")) !== -1);
   }
   check("renders one row per feeder (4)", tables[1].querySelectorAll("tbody tr").length === 4);
   // SYSTEM total moved from <tfoot> to the FIRST body row (Sam, 2026-07-23).
@@ -597,19 +606,44 @@ const {
 
   // ── integrated on the college row, and never inside the credit total ───
   const headers = Array.from(doc.querySelectorAll("#cplFundTable thead th")).map((h) => h.textContent.trim());
-  check("the college table carries its own NC $ column", headers.some((h) => /^NC \$/.test(h)));
+  // ⚠️ INVERTED 2026-08-28. The NC $ column was RETIRED because it printed the
+  // same money twice — a college's carve-out appeared in its credit row's NC $
+  // cell AND in its noncredit row's total, and the noncredit row's own cell
+  // rendered "↑ the same money, summarized". Sam: "the NC funding is sometimes
+  // landing in 2 places … maybe we don't need that column."
+  // The requirement it served (Sam, 2026-08-22: noncredit money on the surface,
+  // never lumped into the credit total) is now carried by the ROW structure and
+  // is asserted below and in the nc_lane suite. What must never come back is
+  // the duplication.
+  check("the retired NC $ column has not come back", !headers.some((h) => /^NC \$/.test(h)));
   const mtsac = Array.from(doc.querySelectorAll("tr.cplfund-row"))
     .find((tr) => tr.textContent.indexOf("Mt San Antonio") !== -1);
-  check("a college's noncredit award renders on its own row",
-    mtsac.textContent.indexOf(money(m.W["Mt San Antonio"])) !== -1);
+  const mtsacNc = doc.querySelector('tr.cplfund-ncrow[data-ncfor="Mt San Antonio"]');
+  check("a college's noncredit award renders on its NONCREDIT row",
+    !!mtsacNc && mtsacNc.textContent.indexOf(money(m.W["Mt San Antonio"])) !== -1);
+  // ⭐ And exactly once. This is the defect the column retirement fixed: the
+  // figure must not also appear on the credit row.
+  check("...and NOT also on the credit row above it — the duplication is gone",
+    mtsac.textContent.indexOf(money(m.W["Mt San Antonio"])) === -1);
   // Sam: "I want it on the surface the amount admin should give to NC so it
   // doesn't get lumped into the whole". The credit total must not move.
   check("the noncredit award is NOT added into the credit total",
     Math.round(T._alloc("Mt San Antonio").total) === Math.round(T._model().W["Mt San Antonio"]));
-  const belowThreshold = Array.from(doc.querySelectorAll("tr.cplfund-row"))
-    .find((tr) => tr.textContent.indexOf("Palomar") !== -1);
-  check("an institution below the threshold says WHY it is empty, not just —",
-    /below the .*threshold/.test(belowThreshold.innerHTML));
+  // ⚠️ KEYED ON STRUCTURE, NOT PROSE. This used to match /below the .*threshold/,
+  // which was the retired NC $ cell's wording; the noncredit row states the same
+  // fact as "N short of the 500 FTES entry threshold". Matching the sentence
+  // made a correct row look like a regression. What must hold is that the row
+  // carries a reason chip AND its empty cells explain themselves on hover —
+  // "not just —" is the actual claim in the assertion's own name.
+  const belowThreshold = doc.querySelector('tr.cplfund-ncrow[data-ncfor="Palomar"]');
+  check("an institution below the threshold says WHY it is empty, not just —", (function () {
+    if (!belowThreshold) return false;
+    const chip = belowThreshold.querySelector(".cf-belowchip");
+    const dashes = Array.from(belowThreshold.querySelectorAll("td")).filter(
+      (td) => td.textContent.trim() === "\u2014");
+    return !!chip && /threshold/i.test(chip.getAttribute("title") || "") &&
+      dashes.length > 0 && dashes.every((td) => /threshold/i.test(td.getAttribute("title") || ""));
+  })());
 
   // ── the standalone block replaced the feeder section ───────────────────
   const stand = doc.querySelectorAll(".cplfund-table")[1];
@@ -617,8 +651,12 @@ const {
     /North Orange/.test(stand.textContent) && /San Diego College of Continuing Education/.test(stand.textContent));
   check("the retired per-year feeder pool is gone (window totals, no FEEDER POOL tfoot)",
     stand.querySelector("tfoot") === null && !/FEEDER POOL/.test(stand.textContent));
-  check("the SYSTEM row's NC total names the standalone remainder rather than claiming the whole pool",
-    /standalone =/.test(doc.querySelector(".cplfund-systemrow").textContent));
+  // Sam, 2026-08-28: "give the header row also a CR and NC row." The statewide
+  // split that used to sit in the SYSTEM row's NC $ cell now has its own row.
+  const sysNc = doc.querySelector("tr.cplfund-ncsysrow");
+  check("SYSTEM is rendered as a CR/NC pair like every college", !!sysNc);
+  check("the SYSTEM noncredit row names the standalone remainder rather than claiming the whole pool",
+    !!sysNc && /standalone/.test(sysNc.textContent));
 
   // ── the Mt. SAC dedup: excluded from the SIZE BASIS, not deleted ───────
   // Removing the row outright erased a real $50,000 ESS 25-82 grant. The FTES is
