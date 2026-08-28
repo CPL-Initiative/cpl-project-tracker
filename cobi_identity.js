@@ -333,7 +333,28 @@
     window.addEventListener("storage", function (e) {
       if (!e || !e.key || e.key === "cpl_sb" || e.key.indexOf("cpl_") === 0) renderAll();
     });
-    document.addEventListener("click", function () { if (openPane) { openPane = false; render(); } });
+    // ⚠️ CLOSE ONLY ON A CLICK OUTSIDE THE PANE (Sam, 2026-08-28: "the drop down
+    // closes when I try to click into the email box... I have to trick it and
+    // tab to it").
+    //
+    // This used to close on ANY document click. The toggle button survives
+    // because it calls stopPropagation() on itself — but nothing INSIDE the pane
+    // does, so clicking the email field bubbled to here, openPane went false and
+    // render() tore the field out from under the click. Tabbing worked because a
+    // tab is not a click, which is exactly the shape that makes this read as a
+    // mysterious focus bug rather than a stray handler.
+    //
+    // Containment, not stopPropagation on each control: a pane grows new controls
+    // (the sign-in form is mounted into it by reviewer_signin.js) and every one
+    // of them would have to remember. One test at the boundary cannot be
+    // forgotten by a control that does not exist yet.
+    document.addEventListener("click", function (e) {
+      if (!openPane) return;
+      var t = e && e.target;
+      if (t && typeof t.closest === "function" && t.closest(".cobi-ident-pane")) return;
+      openPane = false;
+      render();
+    });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && openPane) { openPane = false; render(); } });
   }
 
