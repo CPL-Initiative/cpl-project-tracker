@@ -1,0 +1,24 @@
+---
+title: "MAP Custom Reports (3 new) / ITPI automation — lane state"
+created: 2026-08-28
+updated: 2026-08-28
+tags: [reference, roadmap-lane]
+kb-status: internal
+obsidian-folder: cpl-project-tracker/reference/lanes
+related:
+  - "[[CLAUDE]]"
+---
+
+# MAP Custom Reports (3 new) / ITPI automation
+
+> **Relocated verbatim from `CLAUDE.md` §11 on 2026-08-28** (Session 206, the
+> consolidation). This is **always-current lane state, not an archive** —
+> update it at every checkpoint that moves this lane, exactly as you used to
+> update the §11 cell. `CLAUDE.md` keeps the one-line pointer; the detail is
+> here.
+
+**What this lane is:** Wire the three new MAP Custom Reports, load them, keep them fresh.
+
+## Status
+
+✅ **LIVE ON THE CRON, NO HUMAN IN THE LOOP** (#1246–#1258). Daily **13:40 UTC**: fetch → staging → `map_promote_custom_reports()` → live, **ONE transaction**, gates that **FAIL CLOSED** (G1–G6 truncated pull/broken surrogate · **G7/G8 refuse to PUBLISH a recoverable suppression** · **G9 refuses if a rebuilt team table lost its gate**). ⭐ **THE RLS TRAP DOES NOT EXIST AS A STEP** — contents are replaced, never the table, so the reviewer-only policy on `map_student_credit` is never dropped. Both published aggregates + the clean-up worklist + the transcribed-gap detail rebuild in the SAME transaction. ⭐ **THE VALUE WAS TWO NEW DIMENSIONS, NOT FRESHNESS** — `Status` (articulation approval STAGE) and `CPLPlanStatus` (lifecycle CHECKS) were carried by no table we held. ⚠️ **`Status` is 91.2% BLANK**, top value `Implementation` — **it cannot facet the backlog**. ⚠️ **`CPLPlanStatus` holds SIX checks / 41 combinations**, delimiting inconsistent — split-and-strip, stored verbatim. ✅ **TRANSCRIBED = UNITS, NEVER THE TICK** (Sam, 2026-08-19; no code change needed — every published figure already sums units). ⚠️ **The grain is planned to change** — CR-row check marks are coming; re-measure the constant-within-student test first. ✅ **The 55% applied fork is RETIRED** (Sam, 2026-08-19) — the ruling *publish both and name the gap* stands, the figure does not: `applied_credits` is **identical to `articulated_credits` on all 462,355 Needs Action rows**, and scoped properly the measures agree to **0.1%**. ⚠️ **CATALOG YEAR ROLLS FORWARD, so the axis is MUTABLE.** ⚠️ **A LOAD MUST REPRODUCE ITS SOURCE, NOT IMPROVE IT** — the gate caught `""`→NULL on ~200k rows, then a NOT NULL mismatch; **zero-fill is PER TABLE**. ⭐ **MINIMIZATION HAPPENS TWICE** — 12 fetched columns with no consumer dropped and **listed**; `StudentMAPID` derives a surrogate and is discarded; rotation detector is a **min-hash sketch, not a student map**. ⚠️ **THE CLEAR IS NOT A GATED STEP** — it runs BEFORE the promotion, and its mass `DELETE` timed out the first time it met a FULL staging table (would have failed nightly). Now `map_clear_custom_report_staging()`, a no-argument TRUNCATE, **5.3 s**. ⚠️ **MAP BROKE THE STUDENT VIEW AND WE READ THE WRONG FIELD FOR THREE NIGHTS** (Sky197, #1358). `View_StudentDetailsCredits_APIDataset` answered **400 "is not Valid"** from 2026-08-24; runs 12/13/14 reported a *duplicate/missing viewName* instead. ⚠️ **One invalid view in a batch RELABELS A NEIGHBOUR's dataset**, so the name that vanished belonged to a HEALTHY view — never trust `viewName` when a duplicate is present. ⚠️ **`dataCount` is MAP's CLAIM, not a row count** (an empty dataset advertised "204,491 rows"). Now `summarize_response()` reads `responseCode`/`responseMessage` per dataset (**ABSENT = healthy; only a PRESENT non-2xx fails**) and counts `columnValue`. ⚠️ **PRINTING IS UNCONDITIONAL, FAILING IS OPT-IN (`--strict`)** — `daily-dashboard.yml` shares this fetcher and consumes NONE of these views. Live was never touched. ✅ **Pedro has both asks (2026-08-26)**: the view fixed overnight, the **origination LocID** longer. ⭐ **The LocID ask is the IDENTITY of a route MAP already records the TYPE of** — same namespace as `CollegeID`, **NULL when unknown, NEVER defaulted to the enrolling college**, and on the catalog-year view too. ⚠️ **Open, ITPI only: can a COLLEGE have a second noncredit landing page with its own LocID**, or only standalone entities (NOCE/SDCCE)? That decides ~108 colleges vs a handful. ⚠️ **`course_type` cannot substitute — all ten values are credit types.** **NEXT:** the 2026-08-27 13:40 UTC run is the first after Pedro's fix (check-in armed). Runbook [`docs/map_custom_report_load.md`](docs/map_custom_report_load.md) · story [`docs/map_custom_reports_lessons.md`](docs/map_custom_reports_lessons.md).

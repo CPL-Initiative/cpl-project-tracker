@@ -45,6 +45,7 @@ from _docs_audit import parse_frontmatter, kb_type_of, HANDOFF_RE  # noqa: E402
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, "docs")
 NOTES = os.path.join(DOCS, "kb-notes")
+REFERENCE = os.path.join(DOCS, "reference")
 CATALOG = os.path.join(DOCS, "catalog")
 INDEX = os.path.join(DOCS, "INDEX.md")
 FM_RE = re.compile(r"\A---\n(.*?)\n---\n", re.S)
@@ -128,6 +129,39 @@ def kb_notes():
                      "updated": _date(fm, "updated"),
                      "tags": _tags(fm), "governs": _governs(fm)},
         })
+    return rows
+
+
+def reference_docs():
+    """`docs/reference/**` — the pull-side store CLAUDE.md points at.
+
+    ⚠️ This lane was invisible to the index until 2026-08-28: every other lane
+    globs `docs/*.md`, which is FLAT, so the pare-down files CLAUDE.md tells
+    sessions to read (`pipeline_reference`, `kb_build_status`, `mid_lifecycle`,
+    `troubleshooting`, `finished_workstreams`) had never once appeared in the
+    corpus index. Session 206 moved §11's lane detail here and the count would
+    have gone from 5 orphans to 36. Recurse — do not add a second flat glob."""
+    rows = []
+    for dirpath, dirnames, filenames in os.walk(REFERENCE):
+        dirnames[:] = sorted(dirnames)
+        for fn in sorted(filenames):
+            if not fn.endswith(".md"):
+                continue
+            full = os.path.join(dirpath, fn)
+            rel = os.path.relpath(full, DOCS).replace(os.sep, "/")
+            fm, title, _ = load(full)
+            group = os.path.relpath(dirpath, REFERENCE).replace(os.sep, "/")
+            group = "—" if group == "." else group
+            rows.append({
+                "sort": (group, title.lower()),
+                "cells": [_link(title, f"../{rel}"), group, f"`{fn}`",
+                          _date(fm, "created", "date"), _date(fm, "updated")],
+                "meta": {"path": f"docs/{rel}", "title": title, "type": None,
+                         "status": _scalar(fm.get("kb-status")),
+                         "created": _date(fm, "created", "date"),
+                         "updated": _date(fm, "updated"),
+                         "tags": _tags(fm), "governs": _governs(fm)},
+            })
     return rows
 
 
@@ -239,6 +273,11 @@ LANES = [
      ["Title", "File", "Created", "Updated"], workstream_docs,
      "Scopes, plans, specs, briefs and workstream handoffs — everything in "
      "`docs/` that is not a lessons doc or a session handoff."),
+    ("reference", "Reference (pull-side)", "docs/reference/**",
+     ["Title", "Group", "File", "Created", "Updated"], reference_docs,
+     "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and "
+     "build-status pare-downs, and one file per §11 roadmap lane under "
+     "`reference/lanes/`. PULL — read the one lane you are working."),
     ("session-handoffs", "Session handoffs", "docs/session_<N>_handoff.md",
      ["N", "Handoff", "Created"], handoffs,
      "One per session, newest first. **Only the highest-numbered handoff is "

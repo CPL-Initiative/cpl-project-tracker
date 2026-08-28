@@ -103,6 +103,7 @@ THRESHOLDS = {
     "index":         40_000,   # a landing page you must scroll is not a landing page
     "lessons":      120_000,   # scratchpads may be long, not unbounded
     "handoff":       60_000,   # ~4500 chars is the documented sweet spot
+    "roadmap_lane":  12_000,   # one §11 lane's state; past this it is a log
     "other":        150_000,
 }
 
@@ -199,6 +200,8 @@ def lane_of(relpath: str) -> str:
     """Classify a doc into a budget lane. Order matters — the first match wins."""
     if relpath in ("CLAUDE.md",):
         return "always_loaded"
+    if relpath.startswith("docs/reference/lanes/"):
+        return "roadmap_lane"
     if relpath.startswith("docs/kb-notes/"):
         return "kb_note"
     if relpath in ("docs/INDEX.md",) or relpath.endswith("/INDEX.md"):
@@ -319,47 +322,123 @@ def rule_oversized_doc(entry):
 CELL_MAX_CHARS = 4_000     # a cell you cannot read in one breath is a log
 CELL_MAX_PRIOR = 1         # one "*Prior:*" is context; two is an unretired log
 
+# 2026-08-28 (Session 206, the consolidation): §11's detail moved to
+# docs/reference/lanes/<lane>.md, so this rule follows it. Two failures found
+# while moving it, both of the same shape — a guard that passes because it is
+# not looking:
+#
+#   1. It hard-coded `rel != "CLAUDE.md"`, so the moment the cells moved it
+#      would have gone silently green over an unguarded corpus.
+#   2. It split rows on a bare `|`, then skipped any row with fewer than four
+#      of them. The TWO LARGEST CELLS IN THE TABLE were both invisible to it:
+#      "Implementation Funding" (4,930 chars, over the cap) was missing its
+#      trailing pipe so the row was skipped outright, and "ESL packaging"
+#      (4,447 chars) carries `1|2,3|4` inside a code span, so cells[3] read
+#      1,289 chars of it. A malformed row is now a FINDING, not an exemption.
+
+
+def split_table_row(line):
+    """Split a markdown table row on pipes that are NOT inside a backtick code
+    span. `1|2,3|4` in a cell is content, not two column breaks."""
+    cells, buf, i, n, tick = [], [], 0, len(line), 0
+    while i < n:
+        ch = line[i]
+        if ch == "`":
+            j = i
+            while j < n and line[j] == "`":
+                j += 1
+            run = j - i
+            if tick == 0:
+                tick = run
+            elif run == tick:
+                tick = 0
+            buf.append(line[i:j]); i = j; continue
+        if ch == "|" and tick == 0:
+            cells.append("".join(buf)); buf = []; i += 1; continue
+        buf.append(ch); i += 1
+    cells.append("".join(buf))
+    if cells and not cells[0].strip():
+        cells = cells[1:]
+    if cells and not cells[-1].strip():
+        cells = cells[:-1]
+    return cells
+
+
+def _roadmap_offenders(text):
+    """§11 pointer rows in CLAUDE.md that have grown back into paragraphs."""
+    try:
+        sec = text[text.index("### Roadmap"):]
+    except ValueError:
+        return []
+    sec = sec.split("The auditor is the foundational instrument")[0]
+    offenders = []
+    for line in sec.split("\n"):
+        if not line.startswith("|"):
+            continue
+        cells = split_table_row(line)
+        name = (cells[0].strip().replace("*", "")[:40] if cells else "?")
+        if name in ("Phase", "---", "?"):
+            continue
+        if len(cells) != 3:
+            offenders.append({"row": name, "chars": len(line), "priors": 0,
+                              "corrections": 0, "malformed": len(cells)})
+            continue
+        status = cells[2]
+        priors = status.count("*Prior:*")
+        if len(status) > CELL_MAX_CHARS or priors > CELL_MAX_PRIOR:
+            offenders.append({"row": name, "chars": len(status), "priors": priors,
+                              "corrections": status.count("CORRECT"),
+                              "malformed": 0})
+    return offenders
+
+
+def _lane_offenders(rel, text):
+    """A lane file that has become an append-only log. Size is covered by the
+    `roadmap_lane` budget; this catches the stacking that precedes it."""
+    priors = text.count("*Prior:*")
+    if priors <= CELL_MAX_PRIOR:
+        return []
+    return [{"row": os.path.basename(rel), "chars": len(text), "priors": priors,
+             "corrections": text.count("CORRECT"), "malformed": 0}]
+
 
 def rule_stacked_roadmap_cell(entry):
-    """Roadmap cells that have become append-only logs rather than current state."""
-    if entry["rel"] != "CLAUDE.md":
+    """Roadmap state that has become an append-only log rather than current
+    truth — in CLAUDE.md's §11 pointer table, or in any lane file it points to."""
+    rel = entry["rel"]
+    is_claude = rel == "CLAUDE.md"
+    is_lane = rel.startswith("docs/reference/lanes/") and rel.endswith(".md")
+    if not (is_claude or is_lane):
         return None
     try:
         text = read(entry["path"])
     except Exception:
         return None
-    try:
-        sec = text[text.index("### Roadmap"):]
-    except ValueError:
-        return None
-    sec = sec.split("The auditor is the foundational instrument")[0]
 
-    offenders = []
-    for line in sec.split("\n"):
-        if not line.startswith("| ") or line.count("|") < 4:
-            continue
-        cells = line.split("|")
-        name = cells[1].strip().replace("*", "")[:40]
-        status = cells[3] if len(cells) > 3 else ""
-        priors = status.count("*Prior:*")
-        if len(status) > CELL_MAX_CHARS or priors > CELL_MAX_PRIOR:
-            offenders.append({"row": name, "chars": len(status), "priors": priors,
-                              "corrections": status.count("CORRECT")})
+    offenders = (_roadmap_offenders(text) if is_claude
+                 else _lane_offenders(rel, text))
     if not offenders:
         return None
     offenders.sort(key=lambda o: -o["chars"])
     worst = offenders[0]
+    if worst.get("malformed"):
+        detail = (f"\"{worst['row']}\" is a malformed table row "
+                  f"({worst['malformed']} cells, expected 3) — a row this rule "
+                  f"cannot parse is a row it cannot guard")
+    else:
+        detail = (f"worst is \"{worst['row']}\" at {worst['chars']:,} chars / "
+                  f"{worst['priors']} *Prior:* markers")
     return {
         "rule": "stacked_roadmap_cell",
         "fixable": False,
         "detail": {"cells": offenders, "cell_max": CELL_MAX_CHARS,
                    "prior_max": CELL_MAX_PRIOR},
         "message": (
-            f"{len(offenders)} roadmap cell(s) have become append-only logs — worst is "
-            f"\"{worst['row']}\" at {worst['chars']:,} chars / {worst['priors']} *Prior:* "
-            f"markers. A cell must state CURRENT truth; retire superseded text to the "
-            f"lessons doc instead of prefixing it. Contradictory claims inside one "
-            f"auto-loaded file are why the same correction gets made twice."),
+            f"{len(offenders)} roadmap cell(s)/lane file(s) have become "
+            f"append-only logs — {detail}. State must be CURRENT truth; retire "
+            f"superseded text to the lessons doc instead of prefixing it. "
+            f"Contradictory claims inside one auto-loaded file are why the same "
+            f"correction gets made twice."),
     }
 
 
