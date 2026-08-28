@@ -134,8 +134,79 @@ Suites: `docs_audit` 67/67 · `docs_index_build` 25/25 (new) ·
    static tables *inside the vault*. The generated catalogs stay for GitHub,
    which does not render Bases.
 
+---
+
+## 2026-08-28 — Session 206 (SkyCrush): the consolidation, and three guards that were not looking
+
+**`CLAUDE.md` 151,484 B → 58,006 B — 2.52× its budget to 0.97×, with nothing
+deleted.** PRs #1381 (mechanical) and #1382 (judgment). `oversized_doc` 4 → 3;
+this file is no longer flagged for the first time since the lint existed.
+
+### What was learned
+
+**The assignment rule is the whole thing.** Sam's test — *push what a session
+cannot know to ask for, pull everything else* — is what made this tractable.
+Before it, "what belongs in `CLAUDE.md`" had no answer, so everything accreted
+into the one store that loads unconditionally. After it, 62% of the file was
+obviously pull-side and moved without a single judgment call about importance.
+
+**Split sections; do not relocate them whole.** The two remaining oversized
+sections were both *entirely push at the level of the rule and almost entirely
+pull at the level of the evidence.* Branch policy went 8,227 → 3,304 B by
+keeping every operative rule and moving Sam's wording, the PR numbers and the
+toggle dates. It reads better, because the rule stopped competing with its own
+footnotes. A merge rule that has to be looked up has already failed.
+
+**⚠️ The inherited measurement was wrong, and re-measuring cost ten minutes.**
+Session 206's handoff listed *five rows / 14,379 B retirable with no judgment
+calls.* Read per-row, **four carry an explicit `NEXT` or `Open` list in their
+own text**, and the fifth holds load-bearing invariants rather than finished
+history. Session 205 had predicted exactly this (*"26 rows carry a ✅ marker,
+but that over-counts — read each row, do not grep"*). **Nothing was retired.**
+The retirement test is now written into the §11 preamble and
+`.claude/commands/checkpoint.md`.
+
+**⚠️ Three guards were not looking, all found by moving content past them.**
+This is the third consecutive session to hit the pattern:
+
+1. `stacked_roadmap_cell` hard-coded `rel == "CLAUDE.md"` — it would have gone
+   **silently green over an unguarded corpus** the moment the cells moved.
+2. It split rows on a bare `|` and skipped anything with fewer than four, so a
+   **malformed row exempted itself**. The two LARGEST cells in the live table
+   were both invisible to it: Implementation Funding (4,930 chars, over the
+   4,000 cap) was missing its trailing pipe; ESL packaging (4,447) carries
+   `` `1|2,3|4` `` inside a code span, so the measured cell read 1,289 chars.
+   **When a validator has a skip branch, ask what the skipped population looks
+   like — it is rarely a random sample.**
+3. **`docs/reference/**` had never been indexed at all.** Every lane in
+   `_build_docs_index.py` globs `docs/*.md`, which is *flat*, so the pare-down
+   files `CLAUDE.md` itself tells sessions to read had never once appeared in
+   the corpus index. 0 → 37 docs once a recursive lane was added.
+
+**⚠️ Two new assertions passed for the wrong reason.** Reverting the parser to
+prove the guard fails showed two of the four new checks staying green — the
+*malformed* branch was catching inputs meant to test the *size* branch. Tightened
+to assert `malformed == 0` **and** `chars > CELL_MAX_CHARS`. A guard proven to
+fail is worth more than a guard that merely passes.
+
+**`cpl_memory.scope` cannot do the job it was earmarked for.** Measured at **68
+of 652 rows** (not 4 of 646) with an **uncontrolled vocabulary** — `funding` and
+`cpl-funding` are one intent spelled twice, `global` and `engineering` another,
+and **25 of the 68 values are literally repeated in the row's own `tags`**. It
+conflates *where a learning was found* with *how far it applies*: generic
+methodology sits under `funding` because that is the lane it surfaced in.
+Populating it as-is would entrench a duplicate topic tag. **Recommended, not
+written**, per Sam's standing rule on Supabase.
+
+### Current state
+
+`CLAUDE.md` 58,006 B, under budget. 30 lane files under `docs/reference/lanes/`,
+0 over their new 12,000 B budget, largest 5,825 B. `stacked_roadmap_cell` guards
+both surfaces. `docs_audit` 73/73, `docs_index_build` 31/31.
+
 ### Next concrete step
 
-Pare `CLAUDE.md` once the Funding session's PR has landed — move §11 narratives
-older than two sessions to `docs/roadmap_archive.md` per Rule 9's own budget,
-and check `stacked_roadmap_cell` after.
+Retire the lanes that genuinely are finished — a per-row read of all 29 against
+the now-written test (no `NEXT`, no `NEEDS SAM`, no `BLOCKED`), which is a real
+worklist rather than the five the old measurement named. Then Sam's call on the
+`scope` vocabulary.

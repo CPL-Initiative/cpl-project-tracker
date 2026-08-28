@@ -216,6 +216,18 @@ a changelog), `unindexed_kb_note` (satisfied by `docs/INDEX.md` **or any
 filename), and `vault_heavy_path` (emits a paste-able Obsidian
 `userIgnoreFilters` block from what is actually on disk).
 
+⚠️ **`stacked_roadmap_cell` guards TWO surfaces since 2026-08-28** — §11's
+pointer table in `CLAUDE.md` *and* every lane file under
+`docs/reference/lanes/`, which is where the detail moved (Session 206, #1381).
+It had hard-coded `rel == "CLAUDE.md"`, so it would have gone silently green
+over an unguarded corpus the moment the cells moved. It also split rows on a
+bare `|` and skipped anything with fewer than four, which **silently exempted
+the two largest cells in the live table** — one row was missing its trailing
+pipe, the other carried `` `1|2,3|4` `` inside a code span. Rows are now split
+code-span-aware (`split_table_row`), and **a row the rule cannot parse is a
+finding, not an exemption**. The lane files carry their own `roadmap_lane`
+budget (12,000 B) so they cannot grow unwatched.
+
 Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
 frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
 stamp) and the scan excludes its own output directory, so two runs on the same
@@ -243,6 +255,11 @@ reported this debt for weeks and nothing applied it. All dry-run by default:
   the per-lane catalogs under `docs/catalog/` from each doc's own frontmatter.
   Hand prose outside `<!-- generated:corpus -->` survives byte-for-byte.
   `--check` exits 1 when a rebuild would change anything and runs in CI.
+  ⚠️ **Six lanes since 2026-08-28** — a recursive `Reference (pull-side)` lane
+  was added over `docs/reference/**` because every other lane globs `docs/*.md`,
+  which is **flat**: the pare-down files `CLAUDE.md` tells sessions to read had
+  **never once appeared in the corpus index** (0 → 37 docs). Recurse; do not add
+  a second flat glob.
 - **`kb/_fix_american_spelling.py`** — applies `american_spelling` over prose
   only. Never renames a FILE (a filename is an identifier referenced from
   `CLAUDE.md`, `related:` wikilinks and `cpl_memory`); it lists those and stops.

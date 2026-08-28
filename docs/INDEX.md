@@ -46,6 +46,14 @@ stubs pointing here.
 | [Pipeline Reference](reference/pipeline_reference.md) | `CLAUDE.md` §Pipeline Reference (1,087 lines) | generator/workflow/tabs/Supabase/EACR/C-ID work |
 | [KB Build Status](reference/kb_build_status.md) | `CLAUDE.md` §KB & Unified Courses (421 lines) | KB/CCR curation work, build-phase history |
 | [M-ID Lifecycle & CID/CIDx](reference/mid_lifecycle.md) | `CLAUDE.md` §11 prose + strategic roadmap (449 lines) | re-mints, MC/TMC calls, auditor, pathway decisions |
+| [Branch policy](reference/branch_policy.md) | `CLAUDE.md` §Branch policy evidence (2026-08-28) | why a merge rule says what it says |
+| [Engineering & UI practices](reference/engineering_ui_practices.md) | `CLAUDE.md` §Engineering & UI evidence (2026-08-28) | a UI rework, a First Light artifact, a table layout |
+| [Obsidian vault wiring](reference/obsidian_vault_wiring.md) | `CLAUDE.md` §Obsidian vault wiring (2026-08-28) | vault-sync, exclusion, the sparse-checkout fix |
+| [**`reference/lanes/` — one file per §11 roadmap lane**](catalog/reference.md) | `CLAUDE.md` §11 roadmap cells, 88 KB (2026-08-28) | **working any lane — and REFRESHING it at checkpoint** |
+
+⚠️ **The lane files are the usual checkpoint edit now.** §11's table is a
+pointer index: it carries each lane's state, and the lane file carries what you
+learned. A checkpoint that updates only the row leaves 30 files to go stale.
 
 ---
 
@@ -62,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 73 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 75 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 39 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 181 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **718** | |
+| Session handoffs | 182 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **719** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -114,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-08-28 (SkyCrush, S206)** — the **`CLAUDE.md` consolidation**: **151,484 B → 58,108 B**, 2.52× its always-loaded budget to under it, with nothing deleted (#1381 mechanical, #1382 judgment). §11's 29 lane cells → [`reference/lanes/`](reference/lanes/), leaving a pointer row; the Obsidian wiring, branch-policy evidence and UI-practice evidence → `reference/`. Sam's **assignment rule** (*push what a session cannot know to ask for; pull everything else*) written into `CLAUDE.md` **and** `.claude/commands/checkpoint.md`. ⚠️ **Three guards were not looking**: `stacked_roadmap_cell` hard-coded `rel == "CLAUDE.md"`; it skipped rows with <4 pipes, so **the two largest cells in the table exempted themselves**; and **`docs/reference/**` had never been indexed at all** — every lane globs `docs/*.md`, which is flat (0 → 37 docs, new `Reference (pull-side)` lane). ⚠️ The inherited *"5 rows retire with no judgment calls"* was wrong — four carry open work in their own text; **nothing was retired**. 1 KB note, 5 memory rows. SkyLens S203's narrative archived.
 - **2026-08-28 (SkyLens, S203, Funding lane)** — the curator round trip is **proven**: Sam clicked Publish and his three relabels reached Supabase (md5 `9cf58b99…` → `c95e78aa…`). Curation narrowed to a magic-link reviewer (#1372, ⚠️ `cfp_insert_self` deliberately left open); the **Ed. Code §78093.2(d)(1) spine** landed with Timing as its own section (#1375); the `NC $` column retired and every institution paired as CR + NC rows (#1378). Three KB notes. Corrected three inherited claims — CI was never broken (a **conflicted PR cannot produce a `pull_request` run**), the story corpus is 32/3 not 5, and the $8.96M project pool has no breakdown anywhere. SkyLens S202's narrative archived.
 - **2026-08-28 (SkySolidare, S204)** — this page is **generated** now (`kb/_build_docs_index.py`, `--check` in CI): 273,616 B → 20,757 B, per-lane listings moved to [`catalog/`](catalog/). Also 340 KB-note frontmatters canonicalized (`kb_note_dialect` 60 → 0, incl. 6 notes silently disagreeing about their own type) and the British-spelling sweep applied (`american_spelling` 174 → 1). #1373.
 - **2026-08-28 (SkyLens, S202, refresh)** — the gate fix was half a fix: a local overlay survives sign-in and masks shared, so Sam's relabels never landed; plus the sign-in dropdown closing on any click. 3 more KB notes / memory rows.
@@ -121,4 +130,3 @@ Authoritative external sources we've cached:
 - **2026-08-27 (SkyMatch, parallel to SkyPin)** — College CR evidence workstream: reusable matcher + LATTC worklist (PR #1365); two KB notes (a frequency is not a rule; one ranked list cannot answer two questions); §11 row added, SkyRule S196 narrative archived.
 - **2026-08-27 (SkyPin, Session 199)** — the funding measure pin (`metric_src`) + the MILESTONE-agreement check (#1363); `ppa`/`ppa_u` after Sam's `Potential Student` correction, and the live Access metric fixed from $0-for-all-115 to 12 colleges earning (#1364). New KB note: *a defect that produces the value you expected is invisible*. Compacted the §11 funding cell (stacked_roadmap_cell) and archived `cpl_funding_lessons.md` 2026-08-01 → 08-06.
 - **2026-08-27 (SkyVerdict S197)** — MAP's per-dataset verdict now read by the loader (#1358); `_effective()` + `scripts/funding_effective.js` so dials are asked of the model, not the config (#1359). Two KB notes. Two finished rows retired from `CLAUDE.md` §11 to `finished_workstreams.md`.
-- **2026-08-25 (SkyFixer S193)** — a live session with Sam in a browser (#1330/#1331). ⭐ **The Memory ✎ chip could not write because its key named NOTHING** — `slug` is UNIQUE but NULLABLE and the display handle falls back to the uuid, so 6 of 572 rows took a PATCH that matched zero rows and the page blamed the team phrase. ⭐ Then the fixed chip turned out to be a **cycle that wrote every state it passed through** — his two clicks sit in `cpl_memory_log` 15s apart and left a `stale` row carrying a verification stamp; replaced with a menu, and the stamp is cleared whenever the status leaves `verified`. ⭐ **The magic link came back to the wrong screen for everyone** — nine modules stashed the return tab in `sessionStorage`, which is per browser tab, and the link opens a new one. ⭐ **SkyView search landed where the term never pointed** (`english as a second` → Interdisciplinary Studies); subject names now outrank course titles, plus typeahead, a real subject list, and the CCR tab opening on the map. ⭐ **GR "reanalysis" had no referent** — `blast_rank` is computed by nothing in the repo — so the analysis built is deterministic and defensible to the CO. ⚠️ **Five perturbations read as 0 FAIL because the suite CRASHED**. 3 KB notes; the flagged SkyView roadmap cell compacted to current truth; S190's narrative archived.

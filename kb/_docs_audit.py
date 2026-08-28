@@ -442,6 +442,175 @@ def rule_stacked_roadmap_cell(entry):
     }
 
 
+# ── presentation_doctrine ────────────────────────────────────────────────────
+# WHY (added 2026-08-28, at Sam's request): the rules that govern what a human
+# LOOKS AT are the purest push case in the corpus — nobody stops to query "may I
+# use an emoji here" before typing one. They are also the ones that scatter,
+# because each arrives attached to whatever tab was being built that week.
+#
+# "PLAIN WORDS, NO GLYPHS" is the worked example, and it has now failed twice the
+# same way. It was recorded in `cpl_memory` on 2026-08-14 and the Admin tab
+# shipped covered in emoji that same week. It was then written into a §11 roadmap
+# ROW, and the 2026-08-28 consolidation relocated that row to a lane file —
+# carrying the rule out of the always-loaded file entirely, where it went from
+# firing on every session to firing only for someone who opened one lane doc.
+#
+# Neither loss was visible: no file was deleted, no link broke, nothing went red.
+# So presence in the PUSHED file is asserted here. Patterns are deliberately
+# loose — several alternatives per topic — because this must survive rewording
+# and only fail when a topic genuinely leaves.
+# Patterns are matched case-INSENSITIVELY against the rule bullets only, and each
+# is anchored to phrasing unique to its own rule. `tests/docs_audit_test.py`
+# deletes each bullet in turn and asserts EXACTLY that topic is reported, so a
+# pattern that drifts onto a neighbouring bullet fails the suite rather than
+# quietly satisfying itself from the wrong rule.
+PRESENTATION_DOCTRINE = {
+    "First Light design": (r"first light",),
+    # ⚠️ NOT a bare "accessib" / "mobile-friendly": Sam's quote inside the First
+    # Light bullet ("make it always accessible and mobile friendly") contains
+    # both, so those two rules could be deleted entirely and this stayed silent.
+    # Anchor on phrasing only the DIRECTIVE uses, never wording a neighbouring
+    # rule might quote.
+    "accessibility": (r"AA 4\.5", r"aria-label", r"focus-visible",
+                      r"verified,? not claimed"),
+    "mobile-friendly": (r"single column below", r"clamp\(\) type"),
+    "plain words / no decorative glyphs": (
+        r"plain words", r"n[o|ot] glyphs", r"cheesy glyph", r"decorative\W{0,3}emoji"),
+    "American spelling": (r"american spelling",),
+    "no horizontal scroll": (r"horizontal scroll",),
+    "text measure": (r"cpl-measure", r"full width"),
+}
+
+
+def rule_presentation_doctrine(entry):
+    """A presentation rule that has left the always-loaded file."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    # ⚠️ Search the RULE BULLETS ONLY, never the whole file. The first cut
+    # searched all of CLAUDE.md and did not fire when the glyph bullet was
+    # deleted, because the section's own preamble NAMES the rule while
+    # explaining how it was once lost — a doctrine-presence check keyed on a
+    # rule's name is satisfied by the post-mortem about losing it.
+    try:
+        sec = text[text.index("## Presentation rules"):]
+    except ValueError:
+        return {
+            "rule": "presentation_doctrine", "fixable": False,
+            "detail": {"missing": ["(the whole section)"],
+                       "checked": len(PRESENTATION_DOCTRINE)},
+            "message": ("CLAUDE.md has no `## Presentation rules` section. Every "
+                        "rule governing what a human looks at is PUSH and belongs "
+                        "in the always-loaded file."),
+        }
+    nxt = sec.find("\n## ", 1)
+    if nxt != -1:
+        sec = sec[:nxt]
+    first = sec.find("\n- **")
+    bullets = sec[first:] if first != -1 else ""
+
+    missing = [topic for topic, pats in PRESENTATION_DOCTRINE.items()
+               if not any(re.search(p, bullets, re.I) for p in pats)]
+    if not missing:
+        return None
+    return {
+        "rule": "presentation_doctrine",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(PRESENTATION_DOCTRINE)},
+        "message": (
+            f"{len(missing)} presentation rule(s) are no longer stated in CLAUDE.md: "
+            f"{', '.join(missing)}. These govern every view we ship and are PUSH — "
+            f"nobody queries a formatting rule before typing. Relocating one to a "
+            f"lane file or `cpl_memory` silently stops it firing (that is exactly "
+            f"how \"PLAIN WORDS, NO GLYPHS\" was lost twice). Restore it to the "
+            f"\u00a7Presentation rules section."),
+    }
+
+
+# ── unreferenced_offload ─────────────────────────────────────────────────────
+# WHY (added 2026-08-28, Session 206, the hour after the consolidation shipped):
+# moving content into `docs/reference/` is only half the move. The other half is
+# the POINTER left in CLAUDE.md — and the pointer is the safety mechanism, not a
+# courtesy, because a pull store nobody was told exists is the same as no store.
+#
+# This rule exists because the consolidation itself got it wrong. It relocated
+# §11's 29 lane cells to `docs/reference/lanes/`, updated
+# `.claude/commands/checkpoint.md`, and left Rule 9's own checkpoint list in
+# CLAUDE.md still naming only the three 2026-07-10 pare-down files. The slash
+# command is the PULLED path and fires only when someone types it; Rule 9 is the
+# PUSHED path and fires unprompted. So a checkpoint run from the rule would have
+# refreshed the pointer table and left all 30 lane files to go stale — the exact
+# failure the same session had just written a KB note about.
+#
+# A missing pointer is silent by construction: the offloaded file is fine, the
+# always-loaded file is fine, and only the LINK between them is absent. Nothing
+# else in this corpus can see that, so it is checked here.
+REFERENCE_DIR = "docs/reference"
+
+
+def rule_unreferenced_offload(entry, root):
+    """An offload under docs/reference/ that CLAUDE.md never points at."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    ref_root = os.path.join(root, REFERENCE_DIR)
+    if not os.path.isdir(ref_root):
+        return None
+
+    targets = []
+    for name in sorted(os.listdir(ref_root)):
+        full = os.path.join(ref_root, name)
+        if os.path.isdir(full):
+            # a directory counts only when it actually holds prose
+            if any(f.endswith(".md") for _, _, fs in os.walk(full) for f in fs):
+                targets.append(name.rstrip("/") + "/")
+        elif name.endswith(".md"):
+            targets.append(name)
+
+    # ⚠️ Match the PATH, never the bare name. The first cut tested for "lanes"
+    # and passed on a deliberately broken file, because CLAUDE.md says "Three
+    # doc lanes in this repo" for an unrelated reason — a guard passing on a
+    # common English word is a guard that never fires.
+    # REACHABILITY is the invariant, not a direct mention — the same standard
+    # `unindexed_kb_note` already applies. An offload named by a doc CLAUDE.md
+    # itself points at is findable, so one hop counts.
+    hop = text
+    for m in set(re.findall(r"docs/(?:reference|kb-notes)/[\w./-]+\.md", text)):
+        fp = os.path.join(root, m)
+        if os.path.isfile(fp):
+            try:
+                hop += read(fp)
+            except Exception:
+                pass
+
+    def referenced(name):
+        stem = name.rstrip("/")
+        return (f"reference/{stem}" in hop
+                or f"reference/{os.path.splitext(stem)[0]}" in hop)
+
+    missing = [n for n in targets if not referenced(n)]
+    if not missing:
+        return None
+    return {
+        "rule": "unreferenced_offload",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(targets)},
+        "message": (
+            f"{len(missing)} of {len(targets)} offload(s) under `{REFERENCE_DIR}/` "
+            f"are never named in CLAUDE.md: {', '.join(missing)}. Content was moved "
+            f"out without leaving the pointer, so the always-loaded file no longer "
+            f"says the store exists — and a pull store nobody was told about is the "
+            f"same as no store. Name it in Rule 9's checkpoint list (so it is "
+            f"refreshed) and in the read-before stub (so it is found)."),
+    }
+
+
 def _is_kb_note(entry):
     if entry["lane"] != "kb_note":
         return False
@@ -988,7 +1157,9 @@ def main():
                   rule_american_spelling(e),
                   rule_frontmatter_log_chain(e),
                   rule_unindexed_kb_note(e, index_text),
-                  rule_stacked_roadmap_cell(e)):
+                  rule_stacked_roadmap_cell(e),
+                  rule_unreferenced_offload(e, ROOT),
+                  rule_presentation_doctrine(e)):
             if f:
                 f["path"] = e["rel"]
                 findings.append(f)
@@ -1056,7 +1227,23 @@ def main():
 
     if args.apply:
         if not sup:
-            print("--apply: nothing to stamp (all handoffs already marked).")
+            # Say WHY there is nothing to stamp. "All handoffs already marked" is
+            # false whenever the rule spared same-day parallel siblings, which is
+            # the common case on a day two sessions checkpoint — and a lint tool
+            # reporting a clean bill for a reason it did not check is exactly the
+            # failure this file exists to catch.
+            same_day = [e for e in entries
+                        if e["lane"] == "handoff" and auth_created
+                        and e["fm"].get("created") == auth_created
+                        and HANDOFF_RE.match(os.path.basename(e["path"]))
+                        and int(HANDOFF_RE.match(
+                            os.path.basename(e["path"])).group(1)) < handoff_max]
+            if same_day:
+                print(f"--apply: nothing to stamp — {len(same_day)} lower-numbered "
+                      f"handoff(s) share the authoritative one's `created` date and "
+                      f"are treated as PARALLEL SIBLINGS, not superseded.")
+            else:
+                print("--apply: nothing to stamp (all handoffs already marked).")
         else:
             print(f"--apply: stamping {len(sup)} superseded handoff(s) "
                   f"(authoritative = session {handoff_max})")
