@@ -62,6 +62,21 @@ waking without effect, delete it and drive the PR from your own session.
 (a VPAA/VPSS/CEO attests participation, field-validated), not a phrase gate. A
 blunt "narrow the auth" kills it and nobody notices until a college tries.
 
+### 🔀 ANOTHER SESSION IS LIVE ON THIS LANE (Sam, 19:55 UTC)
+
+Sam is running a Session 203 from this handoff **while SkyLens (202) was still
+finishing**. Two things follow:
+
+- **SkyLens has STOOD DOWN from #1372.** The hourly check-in that would have
+  merged it autonomously is **deleted**, so nothing of 202's will act on the PR.
+  **203 owns it.**
+- **Branch `claude/funding-tab-cr-nc-ui-p1h7o1` is at `8bae0e8`** — SkyLens's
+  final push, in sync, clean tree, nothing unpushed. If your local copy predates
+  that, **fetch before you commit**; the last three commits are test and copy
+  fixes you will otherwise re-derive or clobber.
+- Rule 10 applies to Supabase too: a later write silently wins. The RLS
+  migration is already applied live — **do not re-apply it.**
+
 ### ⚠️ The local suite caught a regression CI never would have
 
 Narrowing `unlocked()` broke **three** blocks that simulated a reviewer with a
@@ -77,6 +92,21 @@ guards behavior that is still real:
 ⭐ **COUNT CRASHED SUITES, NOT JUST `FAIL` LINES.** `cpl_funding_render` did not
 fail — it **threw**, and a crash prints no `FAIL` line. `grep -c '^FAIL'` said 7
 and would have read as "only optin is broken". Grep `✗ FAILED` too.
+
+**FIVE suites broke in total, found across THREE passes** (`8bae0e8` added the
+last two — this section originally said three):
+
+| Suite | What |
+|---|---|
+| `cpl_funding_optin` | 7 assertions — phrase fixture → reviewer session |
+| `cpl_funding_render` C7/C7b | CRASH — session; C7b re-pointed at **Publish**, the only promotion path left |
+| `cpl_funding_scenarios` | CRASH on a null element — same swap |
+| `team_phrase_affordance` | ⭐ **NOT a fixture problem — a real UX regression.** Removing the unlock row left the locked tab saying "sign in" with **no indication of where**. Fixed in the **TAB**: locked + expired banners now name the account control in the header. |
+| `kb/phrase_gated_tables.json` | A **measured snapshot** whose own refresh query my migration changed. Re-measured live; the three `cpl_funding_*` tables left the list. ⚠️ **`budget_funding` STAYS** — the tab still reads it, so the affordance requirement still applies. That is why the fix is the pointer, **not** an ALLOW_LIST entry. |
+
+⚠️ **A background suite that has not finished is not a result.** Interim counts of
+0 mean "not there yet". Reading partial runs as whole ones is why this took three
+passes instead of one.
 
 ## What happened, in order — the diagnosis took three attempts
 
@@ -99,7 +129,7 @@ and would have read as "only optin is broken". Grep `✗ FAILED` too.
 
 **#1371 — MERGED** (`29fb6c0`), Pages deploy for it succeeded. That is what let
 Sam publish.
-**#1372 — OPEN, head `c44b108`**, the auth narrowing + the handoff + the three
+**#1372 — OPEN, head `8bae0e8`**, the auth narrowing + the handoff + the three
 fixture re-points. See START HERE. **Not merged; CI never ran.**
 
 ## Sam's rulings across this session
