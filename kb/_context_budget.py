@@ -51,6 +51,15 @@ USAGE
     python3 kb/_context_budget.py --transcript P   # explicit transcript
     <hook-json-on-stdin> python3 kb/_context_budget.py --hook
 
+WHY --hook DOES THE WHOLE JOB HERE AND NOT IN THE SHELL WRAPPER
+    The first version put the announce-once state and the warning text in
+    scripts/context-pressure-hook.sh, which needs bash AND jq. Sam runs Windows.
+    jq is not there, bash is Git-Bash-only, and a hook that silently fails to
+    parse its input is indistinguishable from a quiet session -- the exact
+    failure this tool exists to prevent, reintroduced by its own installer.
+    Python is already a hard dependency of this repo and is cross-platform, so
+    all of it lives here and the shell script is a two-line wrapper.
+
 EXIT CODES
     0  ok        3  warn threshold crossed        4  emergency threshold crossed
     1  could not measure (no transcript / no usage rows) -- FAIL SOFT, never
@@ -196,6 +205,73 @@ def human(m):
 
 EXIT = {OK: 0, WARN: 3, EMERGENCY: 4, UNKNOWN: 1}
 
+WARN_TEXT = """Runway is down to about one heavy turn plus one checkpoint. Finish the thought
+you are on, then run /checkpoint -- a full one, while it still fits. Tell Sam the
+number rather than checkpointing silently; he may want to redirect the runway.
+
+At one checkpoint of runway this escalates to EMERGENCY and the full list no
+longer fits."""
+
+EMERGENCY_TEXT = """EMERGENCY CHECKPOINT -- do this now, before the next substantive tool call.
+There is room for roughly ONE checkpoint and nothing else, and a single heavy
+turn has been measured at 50,425 tokens, so "one more thing first" can cost the
+whole margin.
+
+Write ONLY these four, then commit and push:
+  1. docs/session_<N+1>_handoff.md  -- the artifact that makes this session
+     recoverable at all. Say in it, explicitly, that this was an EMERGENCY
+     checkpoint and list which of the 13 Rule 9 artifacts were NOT refreshed.
+  2. docs/reference/lanes/<lane>.md -- only the lanes this run actually moved.
+  3. cpl_memory rows for this run's durable, uncaptured learnings.
+  4. git commit + push.
+
+Everything else in the Rule 9 list (INDEX rebuild, To-Do feed, pipeline tab,
+kb/README, root README, lessons doc, KB notes, vault note) is DEFERRED to the
+next session -- which is why the handoff has to name them.
+
+Tell Sam you are doing this and why. Do not ask permission first; a compaction
+mid-question loses the answer."""
+
+
+def state_path(session):
+    """Announce-once state, keyed by session so a later session is not muted by
+    an earlier one's warning."""
+    safe = "".join(c for c in str(session) if c.isalnum() or c in "-_")[:80]
+    return os.path.join(os.path.expanduser("~"), ".claude",
+                        ".context-pressure.%s" % (safe or "unknown"))
+
+
+def run_hook(payload):
+    """Full hook behavior. Returns the process exit code: 2 when there is
+    something to say (which is how Claude Code surfaces stderr to the session),
+    0 otherwise. EVERY failure path returns 0 -- a broken meter must never
+    block a session."""
+    try:
+        m = measure(payload.get("transcript_path") or None)
+        if m["status"] not in (WARN, EMERGENCY):
+            return 0
+
+        sp = state_path(payload.get("session_id"))
+        try:
+            prev = open(sp).read().strip()
+        except OSError:
+            prev = ""
+        # Escalation speaks; a repeat, or a fall back to warn, stays quiet.
+        if prev == m["status"] or (prev == EMERGENCY and m["status"] == WARN):
+            return 0
+        try:
+            os.makedirs(os.path.dirname(sp), exist_ok=True)
+            with open(sp, "w") as fh:
+                fh.write(m["status"])
+        except OSError:
+            pass  # unwritable state only costs us a repeat, never silence
+
+        body = EMERGENCY_TEXT if m["status"] == EMERGENCY else WARN_TEXT
+        sys.stderr.write("%s\n\n%s\n" % (human(m), body))
+        return 2
+    except Exception:
+        return 0
+
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
@@ -205,15 +281,18 @@ def main():
                     help="read Claude Code hook JSON from stdin for the path")
     args = ap.parse_args()
 
-    path = args.transcript
-    if args.hook and not path:
+    if args.hook:
         try:
             payload = json.loads(sys.stdin.read() or "{}")
-            path = payload.get("transcript_path") or None
+            if not isinstance(payload, dict):
+                payload = {}
         except (ValueError, TypeError):
-            path = None
+            payload = {}
+        if args.transcript:
+            payload["transcript_path"] = args.transcript
+        return run_hook(payload)
 
-    m = measure(path)
+    m = measure(args.transcript)
     print(json.dumps(m, indent=2) if args.as_json else human(m))
     return EXIT[m["status"]]
 

@@ -29,6 +29,10 @@ true:
      the hook shouting on every tool call is one typo away from suppressing the
      escalation to EMERGENCY too.
 
+The hook is driven through its PYTHON entry point, not the .sh wrapper: that is
+the implementation on every platform, and Sam's Windows machine never runs the
+shell script at all.
+
 Run: `python3 tests/context_budget_test.py` (also a CI step in
 .github/workflows/js-tests.yml).
 """
@@ -41,7 +45,6 @@ import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 METER = os.path.join(ROOT, "kb", "_context_budget.py")
-HOOK = os.path.join(ROOT, "scripts", "context-pressure-hook.sh")
 
 CHECKS = []
 
@@ -82,12 +85,13 @@ def meter(path):
 
 
 def run_hook(home, path, session):
-    payload = json.dumps({"transcript_path": path, "session_id": session,
-                          "cwd": ROOT})
-    env = dict(os.environ, HOME=home)
-    env.pop("CLAUDE_PROJECT_DIR", None)
-    r = subprocess.run([HOOK], input=payload, capture_output=True, text=True,
-                       env=env, cwd=ROOT)
+    """Drive the hook the way Claude Code does: JSON on stdin, decisions from
+    the exit code, message on stderr. Targets the PYTHON entry point, which is
+    the implementation -- the .sh is a wrapper and Windows skips it entirely."""
+    payload = json.dumps({"transcript_path": path, "session_id": session})
+    env = dict(os.environ, HOME=home, USERPROFILE=home)
+    r = subprocess.run([sys.executable, METER, "--hook"], input=payload,
+                       capture_output=True, text=True, env=env, cwd=ROOT)
     return r.returncode, r.stderr
 
 
@@ -149,16 +153,6 @@ try:
           code_missing == 1)
 
     # ---- (5) the hook: announce once, escalate once ----------------------
-    # The hook fail-softs to exit 0 when jq is absent (by design -- a broken
-    # meter must never block a session). On a runner without jq that would
-    # surface below as a *threshold* failure, which is a symptom naming the
-    # wrong thing -- a mistake this session made three times in one day. Say it
-    # plainly instead.
-    if shutil.which("jq") is None:
-        check("(5) hook checks SKIPPED — jq absent, not a threshold failure",
-              False, "install jq to exercise the hook; the meter checks above "
-                     "still ran and are the substance of this guard")
-        raise SystemExit(_report())
     home = os.path.join(tmp, "home")
     os.makedirs(os.path.join(home, ".claude"))
     warn_t = transcript(os.path.join(tmp, "w.jsonl"), 700_000)
@@ -187,8 +181,9 @@ try:
     check("(5h) a different session gets its own warning",
           c7 == 2, "state keyed globally would mute every later session")
 
-    r_garbage = subprocess.run([HOOK], input="not json", capture_output=True,
-                               text=True, env=dict(os.environ, HOME=home),
+    r_garbage = subprocess.run([sys.executable, METER, "--hook"],
+                               input="not json", capture_output=True, text=True,
+                               env=dict(os.environ, HOME=home, USERPROFILE=home),
                                cwd=ROOT)
     check("(5i) garbage input fails soft", r_garbage.returncode == 0,
           "a broken meter must never block a session")

@@ -384,17 +384,31 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    `compactMetadata.preTokens` at every compaction. `kb/_context_budget.py`
    reads it in ~50 ms and self-calibrates its ceiling from any compaction the
    transcript has actually seen. **The hook is what makes it fire** —
-   `scripts/context-pressure-hook.sh` (PostToolUse, so a long agentic run with
-   no human turn still trips it). ⚠️ **Both are inert until installed**, same as
-   the stop-hook: `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
-   ~/.claude/context-pressure-hook.sh`, then add this to `~/.claude/settings.json`
-   (merge into an existing `hooks` block rather than replacing it):
+   registered as a **PostToolUse** hook, so a long agentic run with no human turn
+   still trips it. ⚠️ **It is inert until installed.**
+
+   **Windows** (Sam's machine) — run once, idempotent, backs up `settings.json`
+   and merges rather than replacing:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File scripts\install-context-hook.ps1
+   ```
+
+   **macOS/Linux** — `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
+   ~/.claude/context-pressure-hook.sh`, then merge into `~/.claude/settings.json`:
 
    ```json
    { "hooks": { "PostToolUse": [ { "matcher": "*", "hooks": [
        { "type": "command", "command": "~/.claude/context-pressure-hook.sh" }
    ] } ] } }
    ```
+
+   ⚠️ **The hook logic lives in `kb/_context_budget.py --hook`, NOT in the shell
+   script** — the `.sh` is a wrapper and Windows skips it entirely. The first
+   version did the work in bash with `jq`; Windows has neither, and a hook that
+   cannot parse its input fails *silently*, which is indistinguishable from a
+   quiet session. That is the very failure this tool exists to prevent, and the
+   installer would have reintroduced it.
 
    Verify with `python3 kb/_context_budget.py` — it should report YOUR live
    context. An implausible number means the calibration is wrong, and a wrong
