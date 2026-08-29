@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-74 document(s).
+75 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -41,6 +41,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [College-scoped occupation → CPL crosswalk (SJCOE ↔ San Joaquin Delta) — lessons](../delta_college_crosswalk_lessons.md) | `delta_college_crosswalk_lessons.md` | 2026-08-19 |  |
 | [Common CR Reference — lessons](../common_cr_reference_lessons.md) | `common_cr_reference_lessons.md` | 2026-08-13 |  |
 | [Common Subject Code Tab — Evolution & Lessons](../common_subject_code_tab_lessons.md) | `common_subject_code_tab_lessons.md` | 2026-05-23 |  |
+| [Context pressure and doctrine probes — lessons](../context_pressure_lessons.md) | `context_pressure_lessons.md` | 2026-08-29 |  |
 | [CPL Assistant (in-dashboard RAG chatbot) — lessons](../cpl_assistant_lessons.md) | `cpl_assistant_lessons.md` | 2026-06-01 |  |
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |

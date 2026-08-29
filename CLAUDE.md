@@ -379,43 +379,12 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
 
 9a. **Context pressure is MEASURABLE — warn Sam BEFORE the compact instead of
    discovering it after.** Claude Code writes the exact live context size to the
-   session transcript every turn (`message.usage`: `input_tokens` +
-   `cache_read_input_tokens` + `cache_creation_input_tokens`), and writes
-   `compactMetadata.preTokens` at every compaction. `kb/_context_budget.py`
-   reads it in ~50 ms and self-calibrates its ceiling from any compaction the
-   transcript has actually seen. **The hook is what makes it fire** —
-   registered as a **PostToolUse** hook, so a long agentic run with no human turn
-   still trips it. ⚠️ **It is inert until installed.**
-
-   **Windows** (Sam's machine) — run once, idempotent, backs up `settings.json`
-   and merges rather than replacing:
-
-   ```powershell
-   powershell -ExecutionPolicy Bypass -File scripts\install-context-hook.ps1
-   ```
-
-   **macOS/Linux** — `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
-   ~/.claude/context-pressure-hook.sh`, then add this **to the CONTENTS of
-   `~/.claude/settings.json`** (a file to edit — ⚠️ NOT a command to paste into a
-   shell; pasted into PowerShell it errors with *"Unexpected token ':'"*, which
-   is how Sam met it on 2026-08-29), merging into any existing `hooks` block:
-
-   ```json
-   { "hooks": { "PostToolUse": [ { "matcher": "*", "hooks": [
-       { "type": "command", "command": "~/.claude/context-pressure-hook.sh" }
-   ] } ] } }
-   ```
-
-   ⚠️ **The hook logic lives in `kb/_context_budget.py --hook`, NOT in the shell
-   script** — the `.sh` is a wrapper and Windows skips it entirely. The first
-   version did the work in bash with `jq`; Windows has neither, and a hook that
-   cannot parse its input fails *silently*, which is indistinguishable from a
-   quiet session. That is the very failure this tool exists to prevent, and the
-   installer would have reintroduced it.
-
-   Verify with `python3 kb/_context_budget.py` — it should report YOUR live
-   context. An implausible number means the calibration is wrong, and a wrong
-   warning is worse than none.
+   session transcript every turn, and `compactMetadata.preTokens` at every
+   compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
+   ⚠️ **It only fires if the PostToolUse hook is INSTALLED, and it is not by
+   default** — install + mechanics:
+   [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md)
+   (Windows: `scripts\install-context-hook.ps1`).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
      silently; he may want to spend the runway differently.
@@ -427,14 +396,13 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
      rows** · **commit + push**. Everything else defers to the next session —
      which is exactly why the handoff has to name it.
 
-   ⚠️ **Both thresholds are measured, not chosen.** A full checkpoint cost
-   49,723 tokens; the worst single turn cost 50,425. WARN is their SUM plus
-   slack, because a round "2× checkpoint" (100,000) does not fit the two things
-   the warning buys time for — it misses by 336 tokens, and a threshold that
-   fires with the runway already gone is the original bug wearing a number.
-   Derivation, the per-turn distribution, and the replay proving this would have
-   fired **10 human turns** before the 2026-08-29 compaction:
-   [`docs/kb-notes/methodology-context-pressure-is-measurable.md`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
+   ⚠️ **Both thresholds are measured, not chosen.** A checkpoint cost 49,723
+   tokens; the worst single turn 50,425. WARN is their SUM plus slack — a round
+   "2× checkpoint" (100,000) misses by 336 and fires with the runway already
+   gone. ⚠️ Rule 9's older note that Claude Code *"doesn't expose an exact
+   counter"* was **factually wrong**; it does, on disk. Derivation + the replay
+   proving this warns 10 turns early:
+   [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
    rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read
@@ -846,32 +814,24 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyCrush S206 — six rules that stopped firing when they moved (2026-08-28)
+### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
 
-**`CLAUDE.md` 151,484 B → 59,954 B, nothing deleted** (#1381 mechanical · #1382 the rule ·
-#1383 the repairs · #1384 test speed). §11's 29 lane cells → `docs/reference/lanes/`; the
-Obsidian wiring and the branch/UI **evidence** → `docs/reference/`.
-⭐ **Sam's assignment rule is the whole lever** — *push what a session cannot know to ask
-for, pull everything else* — and **split a section, don't relocate it whole**: branch policy
-is PUSH at the level of the rule, PULL at the level of the evidence, so 8,227 → 3,304 B kept
-every operative rule and reads better.
-⚠️ **SIX guards/rules stopped firing because content moved, and every diff looked like
-progress.** `stacked_roadmap_cell` hard-coded `rel == "CLAUDE.md"` and skipped rows with
-<4 pipes, so the **two largest cells exempted themselves**; **`docs/reference/**` had NEVER
-been indexed** (every lane globs a flat `docs/*.md` — 0 → 37); **Rule 9 still named only the
-three 2026-07-10 pare-downs**, so a checkpoint would have left all 30 lane files to rot; and
-**"PLAIN WORDS, NO GLYPHS" left the file entirely** with the row that carried it — a rule
-that had *already* failed the same way once via `cpl_memory`. Now: a `## Presentation rules`
-section (First Light · accessible · mobile · plain words) + `presentation_doctrine` and
-`unreferenced_offload` lints, each broken on purpose and watched to fail.
-⚠️ **THREE symptoms named the wrong thing** (npm, #1384): pipe truncation reported as *"176
-checks stopped running"* (a child ending in `process.exit()` loses its buffer — 3,179 of
-20,000 lines), a deleted `require` hid behind a green `node --check`, and a fixture's stale
-dependency list read as failing assertions. **`npm test` 20.7 → 6.9 min in CI**, nothing
-skipped; *"serialize the heavy family"* was killed by measurement (28 files = 78%).
-⚠️ **`cpl_memory.scope`: 68 of 652 rows, uncontrolled vocabulary**, 25 duplicating the row's
-own tags — recommended, **not written**. Stories `docs/obsidian_vault_hygiene_lessons.md` ·
-`docs/test_suite_speed_lessons.md` · handoff `docs/session_207_handoff.md`.
+**`CLAUDE.md` 151,484 B → ~60 KB, nothing deleted** (#1381–#1384): §11's 29 lane cells →
+`docs/reference/lanes/`. ⭐ Sam's assignment rule is the lever, and **split a section,
+don't relocate it whole.** ⚠️ **SIX guards stopped firing because content moved and every
+diff looked like progress** — `stacked_roadmap_cell` exempted the two largest cells,
+`docs/reference/**` had never been indexed (0 → 37), and **"PLAIN WORDS, NO GLYPHS" left
+the file entirely** with the row carrying it. Now `## Presentation rules` +
+`presentation_doctrine`/`unreferenced_offload`. `npm test` 20.7 → 6.9 min.
+
+**Then the session demonstrated the next failure by having it** (#1387): it
+**auto-compacted at 786,077 tokens**, checkpoint 150K stale, ~778,000 dropped. ⭐ **Rule
+9's premise was FALSE, not merely unobservable** — the counter is in the transcript every
+turn (→ Rule 9a). ⚠️ **Thresholds must be a SUM of measured costs**; "2× checkpoint"
+missed by 336 tokens, caught by its own test. `docs/scenarios/` adds probes that get only
+the auto-loaded doctrine, with the **rubric committed before any probe runs**, reporting
+**holes not a score**. Ledger 7 of 9. Stories: `obsidian_vault_hygiene_lessons` ·
+`test_suite_speed_lessons` · `context_pressure_lessons` · handoff `session_207_handoff`.
 
 ## Troubleshooting
 

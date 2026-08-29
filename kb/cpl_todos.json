@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-29",
-  "_session": "SkyCrush, Session 206 — CLAUDE.md consolidation, presentation rules, test speed",
-  "_status": "Sam published his three priority names from the Funding tab and they reached the database — the save path is proven working end to end. Separately, the project's own instruction file was cut by more than half without losing anything: each workstream's detail now lives in its own file with a one-line pointer left behind, so a session reads only the workstream it is on. The formatting rules — First Light, accessible, mobile-friendly, plain words rather than emoji — were gathered into one place near the top, because one of them had quietly dropped out of the file when a section moved; an automatic check now fails if any of them leaves again. And the test suite, which had grown past twenty minutes, now runs in under seven. Nothing about what the tests check was changed.",
+  "_session": "SkyCrush, Session 206 — compact warning, doctrine probes, CLAUDE.md consolidation",
+  "_status": "A session ran out of room mid-conversation on the 29th and lost about 778,000 tokens of working memory with no warning. The cause was a rule that said the system could not measure how full it was — which turned out to be untrue, the number is written to disk every turn. Sessions now warn twice before it happens, but only once the small hook is installed on your machine, which is the first item below. Separately, we built a way to test whether our written rules actually change what a session does: fresh sessions get a realistic task and nothing else, and we score them against expectations written down beforehand so nobody can grade themselves generously after the fact. Those runs have not happened yet. NOTE: this list is at 21 items against a target of about 12, with entries going back several sessions — worth a prune together rather than us quietly deleting your asks.",
   "items": [
     {
       "id": "s202-sam-threshold",
@@ -113,10 +113,22 @@
       "text": "Work through the 29 workstream files and retire the ones that are genuinely finished. A previous estimate said five could go with no judgment needed; reading them showed four still list outstanding work in their own text, so none were retired. The test is now written down: no \"next\", no \"needs Sam\", no \"blocked\"."
     },
     {
-      "id": "s206-sam-emoji-scope",
+      "id": "s206-sam-install-hook",
       "for": "Sam",
-      "tab": "admin",
-      "text": "One judgment call on the no-emoji rule. Several emoji are in the site on purpose and named in our instructions — the to-do button, the guidance pane, the Governance tab icon. The rule as written bans emoji used INSTEAD of a word as a label, and keeps small state marks like a tick or a warning beside a word. Tell us if you want it stricter than that; we deliberately did not build an automatic checker, because it would flag the ones you approved."
+      "tab": "cpl-implementation",
+      "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
+    },
+    {
+      "id": "s206-sam-claudemd-budget",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Decide what comes out of the project instruction file. It is 4% over its size budget after the new compact-warning rule, and you asked to leave it overweight until next session. The question is which rules must fire unprompted (they stay) and which answer a question a session arrives with (they move to a reference file with a pointer left behind)."
+    },
+    {
+      "id": "s206-fable-run-probes",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Run the five doctrine probes in fresh sessions and score them against the rubric without editing it. Each gets only the auto-loaded instruction file plus one disguised task, so the result reflects the rules rather than a handoff. Report which rules failed to fire — not a pass rate, because a pass proves little and a failure proves a lot."
     }
   ]
 }
