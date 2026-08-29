@@ -444,7 +444,12 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
 - **AMERICAN SPELLING, ALWAYS (Sam, 2026-08-21).** *"As a Yank, I prefer
   American, of course."* Use **color · behavior · normalize · organization ·
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
-  enroll** and the `-ize`/`-ization` family. **Rendered UI text first**, then
+  enroll · while (not `whilst`) · among (not `amongst`)** and the
+  `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
+  in a code span.** Bare, the sweeper rewrites it: this list read *"while (not
+  while) · among (not among)"* for weeks, because `american_spelling` corrected
+  the very words the rule was documenting. `prose_only()` masks code spans, so
+  backticks are what make a word-list entry survive its own lint. **Rendered UI text first**, then
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
@@ -614,13 +619,27 @@ and one was carried out of this file entirely by a relocation.
   the viewport at desktop widths. `overflow-x: auto` is the narrow-screen safety
   net, never the default desktop experience. Use `table-layout:fixed` + an
   explicit colgroup — auto layout silently parks columns past the wrap's edge.
-- **PLAIN WORDS, NOT GLYPHS (Sam, via #1212).** Every control is a **word** —
+- **PLAIN WORDS, NOT GLYPHS — AND THE GLYPH RULE IS STRICT (Sam, 2026-08-29,
+  tightening #1212).** *"I think they are mostly noise… I prefer to eliminate
+  every visual that doesn't prove its worth."* **The default is no glyph.** The
+  burden of proof is on the mark, never on removing it: if you cannot say what a
+  reader would misunderstand without it, delete it. Every control is a **word** —
   *Rename · Hide · Remove · Seen by: … · All sites* — never an emoji or an icon
-  standing in for a label. ⚠️ **This is not the same rule as "always
-  glyph-paired" above and they do not conflict:** a *state-bearing* mark beside
-  a word (▲▼ ✓ ⚠) is required, because color must never be the only signal; a
-  *decorative* emoji used AS the label is banned. Decorative out, state-bearing
-  stay, muted and simple.
+  standing in for a label.
+  - **A glyph that earns its place is ghosted, not decorated:** muted **CO blue
+    on white** (`--cobalt-on-dark` #7DA1D4, or `--seal-blue` #002F6D where it
+    must carry weight). It should read as the quietest thing in the row.
+  - **Green and red are for a STATE the user must act on**, nothing else
+    (`--green-progress`, `--red-alert`). ⚠️ **Muted by default even then** —
+    full saturation is reserved for pulling focus deliberately, and a page where
+    everything shouts has no way left to shout.
+  - ⚠️ **This does not conflict with "color is never the only signal" above.**
+    That rule says a state already worth showing must not be shown by color
+    ALONE; this one says most states are not worth showing. Satisfy the first
+    with a **word** wherever you can, and a mark only when the word will not fit.
+  - ⚠️ **Existing approved exceptions stay** (the 📋 To-Do button, the 🧭
+    guidance pane, the ⚖️ Governance tab) — they are named here so nobody
+    "fixes" them, and they are the ceiling, not a precedent to extend.
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
