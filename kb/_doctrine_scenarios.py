@@ -109,6 +109,27 @@ def s_memory_row_contradicts_doctrine():
     opposite of the always-loaded file and nothing compares them."""
     return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + "\nNever force-push `main`.\n"}
 
+def s_conditional_checkpoint_item():
+    """2026-07-19 -> 41 days stale. Rule 9's CPLBrain bullet lists three stores
+    in ONE paragraph, and freshness tracks the grammar exactly:
+
+        07-session-notes/          "REQUIRED for any non-trivial session"  -> fresh
+        04-projects/SESSION-NOTES  "WHEN the run worked inside a project"  -> 41d stale
+        07-session-notes/README    "ONLY IF the convention itself changed" -> untouched
+
+    Same repo, same rule, same author, same day. The only variable is
+    unconditional vs conditional phrasing.
+
+    ⚠️ The conditional is not WRONG -- "update it when you worked there" is a
+    correct instruction. The defect is that nothing can observe whether the
+    condition was met, so a missed update is indistinguishable from a run the
+    condition never applied to. Uncaught today: the auditor walks this repo
+    only, and cannot see the vault at all."""
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES +
+            "\n- Update `04-projects/<project>/SESSION-NOTES.md` when the run "
+            "worked inside a project folder.\n"}
+
+
 SCENARIOS = [
     ("glyph rule relocated out of the always-loaded file", s_glyph_rule_relocated, True),
     ("an offload nothing points at",                        s_offload_without_pointer, True),
@@ -116,6 +137,7 @@ SCENARIOS = [
     ("a SKILL nobody points at",                            s_skill_loses_its_pointer, True),
     ("the spelling sweeper corrupts its own word list",     s_sweeper_corrupts_its_own_rule, True),
     ("a cpl_memory row contradicting doctrine",             s_memory_row_contradicts_doctrine, True),
+    ("a CONDITIONAL checkpoint item nobody can audit",      s_conditional_checkpoint_item, True),
 ]
 
 

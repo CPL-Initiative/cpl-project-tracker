@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 348,
+   "count": 349,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2028,6 +2028,26 @@
      "title": "A status lane must link to the remedy lane, or \"done\" measures attention",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-08-29",
+     "governs": [
+      "CLAUDE.md",
+      ".claude/commands/checkpoint.md",
+      "kb/_doctrine_scenarios.py"
+     ],
+     "path": "docs/kb-notes/methodology-freshness-tracks-conditionality-not-intent.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "docs-corpus",
+      "guards",
+      "checkpoint",
+      "memory"
+     ],
+     "title": "A store's freshness tracks whether its update is unconditional",
+     "type": "methodology",
+     "updated": "2026-08-29"
     },
     {
      "created": "2026-08-08",
@@ -14276,5 +14296,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 722
+ "total": 723
 }
