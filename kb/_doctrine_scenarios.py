@@ -49,6 +49,21 @@ def any_guard_fires(root):
                     fired.append(name)
             except Exception:
                 pass
+    # Runtime guards. Not every failure is visible in a repo tree -- the
+    # 2026-08-29 compaction left no committed trace at all, so a harness that
+    # only runs docs lints would score it "missed" forever and never notice the
+    # hook that now catches it. A scenario may drop a transcript in its sandbox.
+    tr = os.path.join(root, "transcript.jsonl")
+    if os.path.isfile(tr):
+        try:
+            cbs = importlib.util.spec_from_file_location(
+                "cb", os.path.join(ROOT, "kb", "_context_budget.py"))
+            cb = importlib.util.module_from_spec(cbs)
+            cbs.loader.exec_module(cb)
+            if cb.measure(tr).get("status") in ("warn", "emergency"):
+                fired.append("context_budget")
+        except Exception:
+            pass
     return fired
 
 
@@ -157,6 +172,24 @@ def s_conditional_checkpoint_item():
             "worked inside a project folder.\n"}
 
 
+def s_context_compacted_before_checkpoint():
+    """2026-08-29, THIS session. Auto-compacted at 786,077 tokens with the
+    checkpoint 150K stale; ~778,000 tokens of working context dropped. Nothing
+    warned, because Rule 9's trigger said Claude Code "doesn't expose an exact
+    counter; use proxies" -- a premise that was simply false. The exact counter
+    is written to the transcript every turn. Caught now by kb/_context_budget.py
+    behind a PostToolUse hook (Rule 9a)."""
+    import json as _json
+    d = tempfile.mkdtemp(prefix="scenario-")
+    open(os.path.join(d, "transcript.jsonl"), "w").write(_json.dumps({
+        "type": "assistant",
+        "message": {"usage": {"input_tokens": 2,
+                              "cache_read_input_tokens": 753_986,
+                              "cache_creation_input_tokens": 0}},
+    }) + "\n")
+    return d
+
+
 SCENARIOS = [
     ("glyph rule relocated out of the always-loaded file", s_glyph_rule_relocated, True),
     ("an offload nothing points at",                        s_offload_without_pointer, True),
@@ -166,6 +199,7 @@ SCENARIOS = [
     ("a cpl_memory row contradicting doctrine",             s_memory_row_contradicts_doctrine, True),
     ("work landed but the checkpoint never ran",            s_checkpoint_never_ran, True),
     ("a CONDITIONAL checkpoint item nobody can audit",      s_conditional_checkpoint_item, True),
+    ("the session compacted before any checkpoint ran",     s_context_compacted_before_checkpoint, True),
 ]
 
 

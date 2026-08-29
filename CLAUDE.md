@@ -245,7 +245,8 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
    newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
    original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
-   an exact counter; use proxies", which is a condition NOTHING CAN OBSERVE** —
+   an exact counter; use proxies" — a condition no session could act on, and
+   whose premise was FALSE besides (Rule 9a: the counter is on disk)** —
    the same defect that left `04-projects/` 41 days stale behind *"when the run
    worked inside a project folder"*. Handoffs land every 1–3 commits normally
    (median 2, p90 5), so 6 fires on the tail. The heuristic still applies between
@@ -375,6 +376,38 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    end abruptly and what's not in a markdown file is effectively lost. The
    user can trigger a checkpoint at any time with the **`/checkpoint`**
    slash command (`.claude/commands/checkpoint.md`).
+
+9a. **Context pressure is MEASURABLE — warn Sam BEFORE the compact instead of
+   discovering it after.** Claude Code writes the exact live context size to the
+   session transcript every turn (`message.usage`: `input_tokens` +
+   `cache_read_input_tokens` + `cache_creation_input_tokens`), and writes
+   `compactMetadata.preTokens` at every compaction. `kb/_context_budget.py`
+   reads it in ~50 ms and self-calibrates its ceiling from any compaction the
+   transcript has actually seen. **The hook is what makes it fire** —
+   `scripts/context-pressure-hook.sh` (PostToolUse, so a long agentic run with
+   no human turn still trips it). ⚠️ **Both are inert until installed**, same as
+   the stop-hook: `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
+   ~/.claude/context-pressure-hook.sh`, then register it as a `PostToolUse` hook
+   in `~/.claude/settings.json`.
+   - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
+     FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
+     silently; he may want to spend the runway differently.
+   - **EMERGENCY — ≤50,000 tokens left.** Room for ONE checkpoint and nothing
+     else. **Do not ask permission** — a compaction mid-question loses the
+     answer. Write ONLY: **`docs/session_<N+1>_handoff.md`** (stating it was an
+     emergency checkpoint and naming which of Rule 9's 13 artifacts were NOT
+     refreshed) · the **lane files this run actually moved** · the **`cpl_memory`
+     rows** · **commit + push**. Everything else defers to the next session —
+     which is exactly why the handoff has to name it.
+
+   ⚠️ **Both thresholds are measured, not chosen.** A full checkpoint cost
+   49,723 tokens; the worst single turn cost 50,425. WARN is their SUM plus
+   slack, because a round "2× checkpoint" (100,000) does not fit the two things
+   the warning buys time for — it misses by 336 tokens, and a threshold that
+   fires with the runway already gone is the original bug wearing a number.
+   Derivation, the per-turn distribution, and the replay proving this would have
+   fired **10 human turns** before the 2026-08-29 compaction:
+   [`docs/kb-notes/methodology-context-pressure-is-measurable.md`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
    rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read

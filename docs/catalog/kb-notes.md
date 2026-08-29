@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-349 document(s).
+350 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -168,6 +168,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [College-homonym subject codes — detect, scope, retract](../kb-notes/methodology-college-homonym-subject-codes.md) | methodology | published | 2026-06-11 |  |
 | [Confirmed merges via a decision row — never infer, never block the clean set](../kb-notes/methodology-confirmed-merge-via-decision-row.md) | methodology | published | 2026-07-08 |  |
 | [Consolidating near-duplicate course identities within one credential (the ordinal rule)](../kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 |
+| [Context pressure is measurable — the counter was on disk the whole time](../kb-notes/methodology-context-pressure-is-measurable.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [Cron-as-window — reach egress-blocked data via a workflow + run logs](../kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Crosswalking a partner's occupation list to CPL — curate the judgment, not the run](../kb-notes/methodology-partner-occupation-crosswalk.md) | methodology | published | 2026-08-05 | 2026-08-06 |
 | [Crowd consensus beats a single-item signal (the two-signals-agree gate, via the crowd)](../kb-notes/methodology-crowd-consensus-beats-single-item-signal.md) | methodology | published | 2026-07-17 |  |
