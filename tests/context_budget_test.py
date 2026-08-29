@@ -91,6 +91,17 @@ def run_hook(home, path, session):
     return r.returncode, r.stderr
 
 
+def _report():
+    passed = 0
+    for name, ok, why in CHECKS:
+        print(("  ok  " if ok else "FAIL  ") + name
+              + (("\n        > " + why) if (not ok and why) else ""))
+        if ok:
+            passed += 1
+    print("\ncontext_budget_test.py: %d/%d checks passed" % (passed, len(CHECKS)))
+    return 0 if passed == len(CHECKS) else 1
+
+
 tmp = tempfile.mkdtemp()
 try:
     # ---- (1) thresholds ---------------------------------------------------
@@ -138,6 +149,16 @@ try:
           code_missing == 1)
 
     # ---- (5) the hook: announce once, escalate once ----------------------
+    # The hook fail-softs to exit 0 when jq is absent (by design -- a broken
+    # meter must never block a session). On a runner without jq that would
+    # surface below as a *threshold* failure, which is a symptom naming the
+    # wrong thing -- a mistake this session made three times in one day. Say it
+    # plainly instead.
+    if shutil.which("jq") is None:
+        check("(5) hook checks SKIPPED — jq absent, not a threshold failure",
+              False, "install jq to exercise the hook; the meter checks above "
+                     "still ran and are the substance of this guard")
+        raise SystemExit(_report())
     home = os.path.join(tmp, "home")
     os.makedirs(os.path.join(home, ".claude"))
     warn_t = transcript(os.path.join(tmp, "w.jsonl"), 700_000)
@@ -197,11 +218,4 @@ try:
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
-PASSED = 0
-for name, ok, why in CHECKS:
-    print(("  ok  " if ok else "FAIL  ") + name
-          + (("\n        > " + why) if (not ok and why) else ""))
-    if ok:
-        PASSED += 1
-print("\ncontext_budget_test.py: %d/%d checks passed" % (PASSED, len(CHECKS)))
-sys.exit(0 if PASSED == len(CHECKS) else 1)
+sys.exit(_report())
