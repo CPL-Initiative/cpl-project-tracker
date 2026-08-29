@@ -109,6 +109,33 @@ def s_memory_row_contradicts_doctrine():
     opposite of the always-loaded file and nothing compares them."""
     return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + "\nNever force-push `main`.\n"}
 
+def s_checkpoint_never_ran():
+    """Sam's scenario 1: 600k context, deep in a build, no checkpoint yet --
+    "imagine you didn't know we are testing for a checkpoint prompt".
+
+    ⚠️ THE ANSWER I GAVE HIM WAS THE FAILURE. I described commit, handoff,
+    todos, "triage the rest" -- 2 of the 13 artifacts -- without ever saying the
+    word CHECKPOINT. Improvising the procedure from memory is how the other 11
+    go missing, and the answer LOOKED competent, which is what made it dangerous.
+
+    This is the one behavioral scenario that leaves a TRACE: if a checkpoint did
+    not run, the newest handoff is older than the work. That is observable, so it
+    can be scored without asking the agent what it did."""
+    import subprocess, os as _os
+    d = tempfile.mkdtemp(prefix="scenario-")
+    _os.makedirs(_os.path.join(d, "docs"))
+    open(_os.path.join(d, "docs", "session_9_handoff.md"), "w").write("# handoff\n")
+    for cmd in (["git","init","-q"], ["git","config","user.email","t@t"],
+                ["git","config","user.name","t"], ["git","add","-A"],
+                ["git","commit","-qm","handoff"]):
+        subprocess.run(cmd, cwd=d, capture_output=True)
+    for i in range(8):
+        open(_os.path.join(d, f"work{i}.txt"), "w").write("x")
+        subprocess.run(["git","add","-A"], cwd=d, capture_output=True)
+        subprocess.run(["git","commit","-qm",f"work {i}"], cwd=d, capture_output=True)
+    return d   # already a root, not a file map
+
+
 def s_conditional_checkpoint_item():
     """2026-07-19 -> 41 days stale. Rule 9's CPLBrain bullet lists three stores
     in ONE paragraph, and freshness tracks the grammar exactly:
@@ -137,6 +164,7 @@ SCENARIOS = [
     ("a SKILL nobody points at",                            s_skill_loses_its_pointer, True),
     ("the spelling sweeper corrupts its own word list",     s_sweeper_corrupts_its_own_rule, True),
     ("a cpl_memory row contradicting doctrine",             s_memory_row_contradicts_doctrine, True),
+    ("work landed but the checkpoint never ran",            s_checkpoint_never_ran, True),
     ("a CONDITIONAL checkpoint item nobody can audit",      s_conditional_checkpoint_item, True),
 ]
 
@@ -147,8 +175,14 @@ def main():
     caught = missed = 0
     rows = []
     for name, build, should in SCENARIOS:
-        root = sandbox(build())
+        built = build()
+        root = built if isinstance(built, str) else sandbox(built)
         fired = any_guard_fires(root)
+        try:
+            if da.rule_checkpoint_overdue(root):
+                fired.append("checkpoint_overdue")
+        except Exception:
+            pass
         shutil.rmtree(root, ignore_errors=True)
         ok = bool(fired) == should
         caught += bool(fired); missed += (not fired)

@@ -242,11 +242,18 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    (its only mutation — never the authoritative one, idempotent). Rationale +
    the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   Roughly every ~100K tokens of context
-   consumed in a session (heuristic — Claude Code doesn't expose an exact
-   counter; use proxies: long conversations with many tool calls, large file
-   reads, multi-phase strategic work), pause and update **every** artifact below
-   — none are optional, all sync to the user's Obsidian via the repo:
+   **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
+   newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
+   original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
+   an exact counter; use proxies", which is a condition NOTHING CAN OBSERVE** —
+   the same defect that left `04-projects/` 41 days stale behind *"when the run
+   worked inside a project folder"*. Handoffs land every 1–3 commits normally
+   (median 2, p90 5), so 6 fires on the tail. The heuristic still applies between
+   runs of the lint — long conversations, many tool calls, multi-phase work.
+   ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
+   a checkpoint under pressure on 2026-08-29 I named 2 of these 13 artifacts and
+   hand-waved the rest, and the answer looked competent. Update **every**
+   artifact below — none are optional, all sync to the user's Obsidian:
    - **`docs/reference/lanes/<lane>.md` — THE USUAL CHECKPOINT EDIT (2026-08-28).**
      Each §11 roadmap lane's state lives in its own file; **§11's table is a
      POINTER INDEX**. Refresh the LANE FILE with what this run learned — same

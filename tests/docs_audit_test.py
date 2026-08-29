@@ -437,6 +437,54 @@ _sh.rmtree(_d)
 check("unreferenced offload: ignores docs that are not CLAUDE.md",
       da.rule_unreferenced_offload({"rel": "docs/other.md", "path": __file__}, ".") is None)
 
+# ── checkpoint_overdue ────────────────────────────────────────────────────
+# Rule 9's own trigger is "roughly every ~100K tokens... Claude Code doesn't
+# expose an exact counter" — a condition nothing can observe, which is the same
+# defect that left 04-projects/SESSION-NOTES.md 41 days stale. Commits since the
+# newest handoff IS observable. Threshold measured over ~220 commits: handoffs
+# land every 1-3 (median 2, p90 5, max 9), so 6 fires on the tail.
+import subprocess as _sp
+
+def _git_repo(handoff="session_9_handoff.md", extra_commits=0):
+    d = _tf.mkdtemp()
+    _os.makedirs(_os.path.join(d, "docs"))
+    if handoff:
+        open(_os.path.join(d, "docs", handoff), "w").write("# handoff\n")
+    for cmd in (["git","init","-q"], ["git","config","user.email","t@t"],
+                ["git","config","user.name","t"], ["git","add","-A"],
+                ["git","commit","-qm","base","--allow-empty"]):
+        _sp.run(cmd, cwd=d, capture_output=True)
+    for i in range(extra_commits):
+        open(_os.path.join(d, f"w{i}.txt"), "w").write("x")
+        _sp.run(["git","add","-A"], cwd=d, capture_output=True)
+        _sp.run(["git","commit","-qm",f"w{i}"], cwd=d, capture_output=True)
+    return d
+
+_d = _git_repo(extra_commits=8)
+_f = da.rule_checkpoint_overdue(_d)
+check("checkpoint overdue: fires when work outran the handoff",
+      _f is not None and _f["detail"]["commits_since"] == 8)
+_sh.rmtree(_d)
+
+_d = _git_repo(extra_commits=2)
+check("checkpoint overdue: silent within the normal 1-3 commit rhythm",
+      da.rule_checkpoint_overdue(_d) is None)
+_sh.rmtree(_d)
+
+# ⚠️ FAIL-SOFT. A lint that cannot measure must say NOTHING rather than report a
+# clean bill — claiming "you are fine" without looking is exactly how the other
+# guards in this file failed.
+_d = _tf.mkdtemp(); _os.makedirs(_os.path.join(_d, "docs"))
+open(_os.path.join(_d, "docs", "session_9_handoff.md"), "w").write("# h\n")
+check("checkpoint overdue: silent with NO git repo (fail-soft, not a clean bill)",
+      da.rule_checkpoint_overdue(_d) is None)
+_sh.rmtree(_d)
+
+_d = _git_repo(handoff=None, extra_commits=9)
+check("checkpoint overdue: silent when there are no handoffs to measure against",
+      da.rule_checkpoint_overdue(_d) is None)
+_sh.rmtree(_d)
+
 # ── self_corrected_word_pair ──────────────────────────────────────────────
 # The sweeper ate its own rule: `american_spelling` rewrote `whilst`/`amongst`
 # INSIDE the parenthetical that named them, leaving "while (not while)" in the

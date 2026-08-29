@@ -530,6 +530,74 @@ def rule_presentation_doctrine(entry):
     }
 
 
+# ── checkpoint_overdue ───────────────────────────────────────────────────────
+# WHY (2026-08-29): Rule 9 says checkpoint "roughly every ~100K tokens of context
+# consumed... Claude Code doesn't expose an exact counter; use proxies". That is
+# a condition NOTHING CAN OBSERVE — the same defect that left
+# `04-projects/SESSION-NOTES.md` 41 days stale behind the words "when the run
+# worked inside a project folder". A rule whose trigger cannot be checked decays
+# silently, because there is no state in which it looks wrong.
+#
+# Commits since the newest handoff was last written IS observable, and it is a
+# good proxy: a session that has landed work has consumed context. Measured over
+# the last ~220 commits, handoffs land every 1-3 commits (median 2, p75 3, p90 5,
+# max 9), so 6 fires on the tail rather than the normal rhythm.
+#
+# FAIL-SOFT BY DESIGN: no git, a shallow clone, or a repo with no handoffs yields
+# NO finding rather than a wrong one. A lint that cannot measure should say
+# nothing — claiming "you are fine" without looking is how the other guards in
+# this file failed.
+CHECKPOINT_COMMIT_BUDGET = 6
+
+
+def rule_checkpoint_overdue(root):
+    """Work has landed since the handoff was last refreshed."""
+    import subprocess
+    def git(*args):
+        try:
+            r = subprocess.run(["git", *args], cwd=root, capture_output=True,
+                               text=True, timeout=10)
+            return r.stdout.strip() if r.returncode == 0 else None
+        except Exception:
+            return None
+
+    docs = os.path.join(root, "docs")
+    if not os.path.isdir(docs):
+        return None
+    ns = [(int(m.group(1)), f) for f in os.listdir(docs)
+          if (m := HANDOFF_RE.match(f))]
+    if not ns:
+        return None
+    newest = max(ns)[1]
+    rel = f"docs/{newest}"
+
+    last = git("log", "-1", "--format=%H", "--", rel)
+    if not last:
+        return None
+    head = git("rev-parse", "HEAD")
+    if not head:
+        return None
+    count = git("rev-list", "--count", f"{last}..{head}")
+    if count is None or not count.isdigit():
+        return None
+    n = int(count)
+    if n <= CHECKPOINT_COMMIT_BUDGET:
+        return None
+    return {
+        "rule": "checkpoint_overdue",
+        "fixable": False,
+        "path": rel,
+        "detail": {"commits_since": n, "budget": CHECKPOINT_COMMIT_BUDGET,
+                   "handoff": newest},
+        "message": (
+            f"{n} commit(s) have landed since `{rel}` was last written "
+            f"(budget {CHECKPOINT_COMMIT_BUDGET}). Rule 9's own trigger — "
+            f"'roughly every ~100K tokens' — is a condition nothing can observe, "
+            f"so this is the observable stand-in. Run `/checkpoint`: improvising "
+            f"one from memory is how nine of its thirteen artifacts go missing."),
+    }
+
+
 # ── self_corrected_word_pair ─────────────────────────────────────────────────
 # WHY (2026-08-29): `american_spelling` rewrote `whilst` and `amongst` INSIDE the
 # parenthetical that existed to name them, leaving "while (not while) · among
@@ -1222,6 +1290,10 @@ def main():
 
     vault_findings, vault_stats = scan_vault_weight(ROOT)
     findings.extend(vault_findings)
+
+    overdue = rule_checkpoint_overdue(ROOT)
+    if overdue:
+        findings.append(overdue)
 
     lanes = {}
     for e in entries:
