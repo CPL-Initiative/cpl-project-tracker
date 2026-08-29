@@ -666,6 +666,16 @@ diff looked like progress** — `stacked_roadmap_cell` exempted the two largest 
 the file entirely** with the row carrying it. Now `## Presentation rules` +
 `presentation_doctrine`/`unreferenced_offload`. `npm test` 20.7 → 6.9 min.
 
+⭐ **S208 then answered the question the lane exists for, with a CONTROL.** Four of
+Sam's six scenarios ran as matched pairs (doctrine vs `CLAUDE.md` removed): S1 8/8
+vs 3/8 · S2 8.5/9 vs **1.5/9** · S6 6/7 vs 2/7. **Every difference is specific
+mechanical action, never judgment** — PUSH/PULL validated. ⭐ And doctrine does a
+second job: it **suppresses plausible-but-wrong defaults** (S2's control proposed
+dark mode against `CLAUDE.md:414`), so *"the control produces it free"* is NOT
+sufficient grounds to cut a rule. ⚠️ **The ablation FAILED** — the S4 control
+rebuilt Rules 1–10 from ~400 citations, so that pair is void. Strategy + all six
+proposed changes: `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.
+
 **Then the session demonstrated the next failure by having it** (#1387): it
 **auto-compacted at 786,077 tokens**, checkpoint 150K stale, ~778,000 dropped. ⭐ **Rule
 9's premise was FALSE, not merely unobservable** — the counter is in the transcript every
