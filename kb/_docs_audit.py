@@ -538,6 +538,12 @@ def rule_probe_instrument_leak(root):
     # A probe topic quoted inside a document ABOUT the probes is the same leak
     # one level up: the phrase is what a probe searches for, and the document
     # explains the test. Only such documents are scanned - see the note above.
+    # ⚠️ THE HANDOFF IS A LEAK CHANNEL TOO (2026-08-29). CLAUDE.md tells every
+    # session the highest-numbered handoff is authoritative, so a handoff that
+    # describes the experiment hands it to its own subjects. session_209 carried
+    # 22 lines about the probes and named a probe by number; caught only while
+    # about to spawn that very probe against it. Its state lives in the vault
+    # now and the handoff keeps a pointer.
     quoted = []
     for dirpath, dirnames, filenames in os.walk(os.path.join(root, "docs")):
         dirnames[:] = [d for d in dirnames if d not in (".git", "node_modules")]
