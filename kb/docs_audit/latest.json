@@ -10,38 +10,38 @@
     "other": 150000
   },
   "summary": {
-    "files": 741,
-    "bytes": 7748381,
+    "files": 744,
+    "bytes": 7762791,
     "over_budget": 4,
     "handoff_max": 207,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 64577,
+    "always_loaded_bytes": 62124,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 64577,
+        "bytes": 62124,
         "over": 1
       },
       "other": {
-        "files": 103,
-        "bytes": 2303366,
+        "files": 104,
+        "bytes": 2307761,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 10667,
+        "bytes": 11561,
         "over": 0
       },
       "lessons": {
-        "files": 72,
-        "bytes": 1872265,
+        "files": 73,
+        "bytes": 1878158,
         "over": 1
       },
       "kb_note": {
-        "files": 352,
-        "bytes": 1847921,
+        "files": 353,
+        "bytes": 1852110,
         "over": 0
       },
       "roadmap_lane": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 182,
-        "bytes": 1539660,
+        "bytes": 1541152,
         "over": 0
       }
     },
@@ -60,8 +60,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2415,
-      "bytes": 1247631893,
+      "files": 2418,
+      "bytes": 1247648900,
       "heavy_bytes": 599584355,
       "heavy_share": 0.481,
       "ignore_filters": [
@@ -118,13 +118,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 64577,
+        "bytes": 62124,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 4577,
-        "ratio": 1.08
+        "over_by": 2124,
+        "ratio": 1.04
       },
-      "message": "64,577 B is 1.1× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "62,124 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {

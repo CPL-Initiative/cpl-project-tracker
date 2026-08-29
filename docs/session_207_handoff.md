@@ -9,6 +9,33 @@ obsidian-folder: cpl-project-tracker
 
 # You are Session 207
 
+## State at checkpoint — 2026-08-29, end of SkyCrush's second day
+
+**#1387 is MERGED** (`74bba01` on `main`): the context-pressure meter + hook, the
+Windows installer, the probe protocol, and two guard repairs. Everything below
+that predates this block is still accurate; this is what changed after it.
+
+⚠️ **`CLAUDE.md` is 62,124 B against a 60,000 budget (1.04×), and Sam decided to
+LEAVE IT OVERWEIGHT** — *"Might be wise to leave things overweight for now until
+we get this sorted in next session."* That is a deliberate carryover, not a
+regression to fix blind. Rule 9a already had its PULL half moved out to
+[`docs/reference/context_pressure_hook.md`](reference/context_pressure_hook.md);
+what remains is a judgment call about which rules are genuinely PUSH, and it
+wants a fresh head rather than more compression under budget pressure.
+
+**Your three carryovers, in priority order:**
+
+1. **Run the probes.** This is the only thing that answers Sam's actual question.
+   Everything scored so far — including my "7 of 9" — is a contaminated reading
+   by a session that already knew the answers. See the probe section below;
+   **do not answer the scenarios yourself.**
+2. **Sort the `CLAUDE.md` budget** with Sam, per his note above.
+3. **Verify the hook actually installed.** Sam ran the PowerShell on Windows
+   5.1; ⚠️ **it cannot be executed in the sandbox**, so it is reviewed, not
+   tested. If he hit an error, that is priority zero — debug from his output.
+
+
+
 SkyCrush here. Session 206 executed the consolidation Sessions 203 and 204
 scoped in parallel, then two follow-ups Sam asked for. **All five PRs are
 merged.** `CLAUDE.md` **151,484 B → 58,373 B** with nothing deleted, and
