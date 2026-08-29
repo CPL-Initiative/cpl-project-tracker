@@ -442,6 +442,232 @@ def rule_stacked_roadmap_cell(entry):
     }
 
 
+def _flat(s):
+    """Collapse whitespace so a doctrine pattern survives a line wrap.
+
+    ⚠️ 2026-08-29: `critical_rule_doctrine` reported "Rule 10 — fresh live read
+    at write-time" MISSING on a file that states it, because CLAUDE.md wraps it
+    as "fresh live read\n   at write-time". Handoff 207 flagged line-rewraps as
+    a false-positive class in the consolidation shingle audit; this is the same
+    defect inside a guard, where it is worse — a rule reported missing gets
+    "restored" by pasting a second copy in.
+    """
+    return re.sub(r"\s+", " ", s)
+
+
+# ── probe_instrument_leak ────────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): the doctrine-probe protocol was committed to
+# the repository the probes clone. A probe gets `CLAUDE.md` plus the repo — the
+# honest control condition — and the repo held `docs/scenarios/rubric.md` (109
+# lines: every pass criterion for all five probes, plus the advance predictions)
+# and all five probe prompts.
+#
+# The leak is not subtle. A probe's most natural first action is to search for
+# the topic it was handed, and for P5 the phrase `comprehensive-vs-carve-out`
+# matched EXACTLY ONE FILE in the whole repository — its own probe prompt. P5
+# found it, recognized it was inside a test, and void-flagged its own result.
+#
+# Handoff 207 anticipated leakage but located it in the PROMPT ("re-read the
+# probe prompt for a cue"). It was in the REPOSITORY.
+#
+# The instruments now live in the private vault
+# (`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`), which probe sessions
+# do not clone. The tracker keeps only docs/scenarios/README.md — the method,
+# which names no criterion and is reusable knowledge.
+#
+# ⚠️ This rule exists because the natural repair for "the docs reference a file
+# that isn't here" is to put the file back, and doing so silently re-breaks
+# every future probe. THE INSTRUMENT MAY NOT LIVE INSIDE THE SYSTEM UNDER TEST.
+PROBE_INSTRUMENT_PATHS = (
+    r"docs/scenarios/rubric\.md",
+    r"docs/scenarios/probes/",
+)
+
+
+def rule_probe_instrument_leak(root):
+    """A probe rubric or prompt has reappeared in the repo probes clone."""
+    hits = []
+    for rel in ("docs/scenarios/rubric.md",):
+        if os.path.isfile(os.path.join(root, rel)):
+            hits.append(rel)
+    pdir = os.path.join(root, "docs", "scenarios", "probes")
+    if os.path.isdir(pdir):
+        hits.append("docs/scenarios/probes/")
+    if not hits:
+        return None
+    return {
+        "rule": "probe_instrument_leak", "fixable": False,
+        "detail": {"paths": hits},
+        "message": (
+            f"Probe instrument(s) present in the repo probes clone: "
+            f"{', '.join(hits)}. A probe searching for the topic it was handed "
+            f"finds the document describing the test — measured 2026-08-29, "
+            f"where one probe's topic phrase matched its own prompt and nothing "
+            f"else. The rubric and prompts belong in the private vault at "
+            f"`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; keep only "
+            f"`docs/scenarios/README.md` (the method) here."),
+    }
+
+
+# ── lane_retirement_signal ───────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): §11's preamble states the retirement test as
+# three literal tokens — "no NEXT, no NEEDS SAM, no BLOCKED in the row's own
+# text" — one line after warning "read the lane file; do not grep for a tick".
+# The phrasing invites exactly the grep it forbids, and the grep is wrong.
+#
+# Measured: THREE consecutive hand-greps for this in one session, each wrong a
+# different way, before a per-file read got the true answer (0 of 30 retirable).
+#   1. anchored the marker to line-start   -> 0 hits across all 30 lanes
+#   2. searched `NEXT`, case-sensitive     -> missed `Next:` (4 lanes)
+#   3. required a trailing colon           -> missed bare `BLOCKED` (3 lanes)
+# Runs 2 and 3 each produced a plausible, confident, WRONG retirement list. The
+# handoff before this one recorded the same mistake at a larger grain: five rows
+# measured "retirable with no judgment calls", four of which carried an explicit
+# open-work list in their own text.
+#
+# So the vocabulary below is MEASURED from the live corpus, not imagined, and
+# the rule is deliberately FAIL-SAFE: any marker at all means "has open work".
+# A false "has open work" costs nothing (the lane stays listed, which it already
+# is); a false "retirable" costs a live workstream being filed as finished.
+# This rule therefore never says "retire this" — it says "nothing in this file
+# claims open work; go READ it", which is the §11 instruction, arrived at
+# mechanically instead of by a fresh wrong grep every time.
+LANE_OPEN_WORK_MARKERS = (
+    r"NEXT\b", r"\bNext(?:\s+by\b[^:\n]{0,30})?\s*:",   # `NEXT:` and `Next by value/effort:`
+    r"NEEDS SAM", r"(?i:blocked)",                       # incl. bare `BLOCKED ON JENNI`
+    #   ⚠️ `blocked` is case-INSENSITIVE and `Remaining:` is here because the
+    #   first cut of this list flagged `excel-to-supabase` as having no open
+    #   work while its own text reads "Remaining: P3 ... blocked only by
+    #   read_projects". Both were added by re-reading the file the lint was
+    #   wrong about — which is the only way this vocabulary ever gets right.
+    r"\bRemaining\s*:",
+    r"\bOpen\s*:", r"\bOPEN\b",
+    r"Still queued", r"Gap backlog", r"\bParked\s*:",
+    r"\bOutstanding\b", r"Needs Input",
+    r"\bawaiting\b", r"NOT built", r"not yet built",
+)
+
+
+def rule_lane_retirement_signal(root):
+    """Lane files whose own text claims no open work — read them, per §11."""
+    lanes_dir = os.path.join(root, "docs", "reference", "lanes")
+    if not os.path.isdir(lanes_dir):
+        return None
+    names = [f for f in sorted(os.listdir(lanes_dir)) if f.endswith(".md")]
+    quiet = []
+    for fn in names:
+        try:
+            body = read(os.path.join(lanes_dir, fn))
+        except Exception:
+            continue
+        # Strip frontmatter and the relocation banner: the banner is boilerplate
+        # on every lane file and must never decide whether a lane has open work.
+        body = re.sub(r"\A---.*?\n---\n", "", body, flags=re.S)
+        body = "\n".join(l for l in body.splitlines() if not l.lstrip().startswith(">"))
+        if not any(re.search(m, body) for m in LANE_OPEN_WORK_MARKERS):
+            quiet.append(fn[:-3])
+    if not quiet:
+        return None
+    return {
+        "rule": "lane_retirement_signal", "fixable": False,
+        "detail": {"lanes": quiet, "checked": len(names)},
+        "message": (
+            f"{len(quiet)} of {len(names)} lane file(s) state no open work: "
+            f"{', '.join(quiet)}. This is NOT a retirement instruction — it is "
+            f"the §11 test run for you so you do not re-derive it with a fresh "
+            f"wrong grep. READ each one. A lane with no NEXT / NEEDS SAM / "
+            f"BLOCKED and no load-bearing invariants moves verbatim to "
+            f"`docs/reference/finished_workstreams.md` and its §11 row leaves "
+            f"the table; anything else stays."),
+    }
+
+
+# ── critical_rule_doctrine ───────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): `presentation_doctrine` guards one section
+# against one failure — a rule carried out of the always-loaded file by a
+# relocation. That failure is not specific to presentation rules, and the
+# Critical Rules are where it costs most.
+#
+# ⚠️ `unreferenced_offload` CANNOT see this class. It asks whether CLAUDE.md
+# still POINTS AT the file content moved into — a FILE-level question. When
+# Rule 7's structural invariants move to `docs/reference/mid_lifecycle.md`,
+# that pointer is present and correct, so the guard stays green whether or not
+# the TOP caveat rode along into the same file. Scored empirically before this
+# was written: `kb/_doctrine_scenarios.py` scenarios "Rule 7's TOP caveat
+# relocated, pointer intact" and "Rule 9's /checkpoint imperative relocated"
+# both reported — NOTHING —.
+#
+# The registry is deliberately SHORT. It holds claims that are (a) PUSH — a
+# session cannot know to ask for them — and (b) covered by no other guard.
+# Growing it into a summary of every rule would make it a second copy of
+# CLAUDE.md that drifts, which is the defect this whole lane exists to fix.
+#
+# ⚠️ Anchor each claim on phrasing only the DIRECTIVE uses. Patterns keyed on a
+# rule's NAME are satisfied by a post-mortem ABOUT losing it — that mistake
+# gave `presentation_doctrine` four false passes, one of them satisfied by a
+# quotation from Sam sitting inside a neighbouring bullet.
+CRITICAL_RULE_DOCTRINE = {
+    "Rule 4 — the two HTMLs stay identical": (
+        r"`?index\.html`?\s+must stay identical", r"must stay identical"),
+    "Rule 5 — never force-push main": (r"[Nn]ever force-push",),
+    "Rule 7 — TOP is never a gatekeeper": (
+        r"[Nn]ever use TOP for gatekeeping", r"last-in-line corroborator"),
+    "Rule 7 — re-mints follow the playbook": (
+        r"[Nn]ever re-mint casually", r"playbook is\s+mandatory"),
+    "Rule 8 — read the memory table before you work": (
+        r"READ the memory table BEFORE", r"before you work"),
+    "Rule 9 — run /checkpoint, do not improvise": (
+        r"do not improvise", r"improvise one from memory"),
+    "Rule 9 — update the lane file, not the row": (
+        r"update the LANE FILE", r"THE USUAL CHECKPOINT EDIT"),
+    "Rule 9 — the highest-numbered handoff is authoritative": (
+        r"HIGHEST-numbered", r"highest-numbered"),
+    "Rule 10 — fresh live read at write-time": (
+        r"fresh live read at write-time", r"fresh-read at write-time"),
+}
+
+
+def rule_critical_rule_doctrine(entry):
+    """A Critical Rule claim that has left the always-loaded file."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    try:
+        sec = text[text.index("## Critical Rules"):]
+    except ValueError:
+        return {
+            "rule": "critical_rule_doctrine", "fixable": False,
+            "detail": {"missing": ["(the whole section)"],
+                       "checked": len(CRITICAL_RULE_DOCTRINE)},
+            "message": ("CLAUDE.md has no `## Critical Rules` section."),
+        }
+    nxt = sec.find("\n## ", 1)
+    if nxt != -1:
+        sec = sec[:nxt]
+
+    flat = _flat(sec)
+    missing = [claim for claim, pats in CRITICAL_RULE_DOCTRINE.items()
+               if not any(re.search(_flat(p), flat, re.I) for p in pats)]
+    if not missing:
+        return None
+    return {
+        "rule": "critical_rule_doctrine",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(CRITICAL_RULE_DOCTRINE)},
+        "message": (
+            f"{len(missing)} Critical Rule claim(s) are no longer stated in "
+            f"CLAUDE.md\u00a7Critical Rules: {'; '.join(missing)}. Each is PUSH — a "
+            f"session cannot know to ask for it — and none is covered by another "
+            f"guard. Moving one into a pulled store leaves `unreferenced_offload` "
+            f"green (the FILE is still pointed at) while the rule itself stops "
+            f"firing. Restore it, or delete it from CRITICAL_RULE_DOCTRINE "
+            f"deliberately and say why."),
+    }
+
+
 # ── presentation_doctrine ────────────────────────────────────────────────────
 # WHY (added 2026-08-28, at Sam's request): the rules that govern what a human
 # LOOKS AT are the purest push case in the corpus — nobody stops to query "may I
@@ -512,8 +738,9 @@ def rule_presentation_doctrine(entry):
     first = sec.find("\n- **")
     bullets = sec[first:] if first != -1 else ""
 
+    flat = _flat(bullets)
     missing = [topic for topic, pats in PRESENTATION_DOCTRINE.items()
-               if not any(re.search(p, bullets, re.I) for p in pats)]
+               if not any(re.search(_flat(p), flat, re.I) for p in pats)]
     if not missing:
         return None
     return {
@@ -1292,6 +1519,7 @@ def main():
                   rule_stacked_roadmap_cell(e),
                   rule_unreferenced_offload(e, ROOT),
                   rule_presentation_doctrine(e),
+                  rule_critical_rule_doctrine(e),
                   rule_self_corrected_word_pair(e)):
             if f:
                 f["path"] = e["rel"]
@@ -1299,6 +1527,16 @@ def main():
 
     vault_findings, vault_stats = scan_vault_weight(ROOT)
     findings.extend(vault_findings)
+
+    leak = rule_probe_instrument_leak(ROOT)
+    if leak:
+        leak["path"] = "docs/scenarios/"
+        findings.append(leak)
+
+    quiet_lanes = rule_lane_retirement_signal(ROOT)
+    if quiet_lanes:
+        quiet_lanes["path"] = "docs/reference/lanes/"
+        findings.append(quiet_lanes)
 
     overdue = rule_checkpoint_overdue(ROOT)
     if overdue:

@@ -5,6 +5,8 @@ updated: 2026-08-29
 tags: [handoff, session-207, claude-md, docs-corpus, cpl-memory, context]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_209_handoff.md
 ---
 
 # You are Session 207

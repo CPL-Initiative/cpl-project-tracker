@@ -625,6 +625,130 @@ if _os.path.isfile(_LIVE):
     check("presentation doctrine: each LIVE rule bullet is guarded 1:1 "
           "(no rule satisfied by a neighbour's wording)", _one_to_one)
 
+# ── critical_rule_doctrine ────────────────────────────────────────────────
+# Run against the LIVE CLAUDE.md, not a fixture. The synthetic fixture for
+# presentation_doctrine passed while the live file failed, because the fixture
+# had no quotation in it — a guard checked only against text written to satisfy
+# it is not checked at all.
+if _os.path.isfile(_LIVE):
+    _full = open(_LIVE, encoding="utf-8").read()
+    check("critical rule doctrine: the live CLAUDE.md states every claim",
+          da.rule_critical_rule_doctrine({"rel": "CLAUDE.md", "path": _LIVE}) is None)
+
+    _s = _full.index("## Critical Rules")
+    _n = _full.find("\n## ", _s + 1)
+    _sec = _full[_s:_n] if _n != -1 else _full[_s:]
+
+    # ⚠️ Redact against the FLATTENED section — the text the guard actually
+    # reads. Redacting the raw section silently removes NOTHING for any claim
+    # that wraps across lines, and the perturbation then "passes" by reporting
+    # no finding, which reads identically to a guard that cannot see the
+    # deletion. Rule 10 ("fresh live read at write-time" wraps after "read")
+    # did exactly that while this test was being written.
+    _flat_sec = da._flat(_sec)
+    _one_to_one, _detail = True, []
+    for _claim, _pats in da.CRITICAL_RULE_DOCTRINE.items():
+        _mod = _flat_sec
+        for _pat in _pats:
+            _mod = re.sub(da._flat(_pat), "REDACTED", _mod, flags=re.I)
+        if _mod == _flat_sec:
+            _one_to_one = False
+            _detail.append(f"{_claim}: patterns matched nothing to redact")
+            continue
+        _fd, _p2 = _tf.mkstemp(suffix=".md")
+        _os.write(_fd, (_full[:_s] + _mod + (_full[_n:] if _n != -1 else "")).encode())
+        _os.close(_fd)
+        _f = da.rule_critical_rule_doctrine({"rel": "CLAUDE.md", "path": _p2})
+        _os.unlink(_p2)
+        if not (_f and _f["detail"]["missing"] == [_claim]):
+            _one_to_one = False
+            _detail.append(f"{_claim}: got {_f['detail']['missing'] if _f else None}")
+    check("critical rule doctrine: each claim is guarded 1:1 "
+          "(no claim satisfied by a neighbour's wording) " + "; ".join(_detail),
+          _one_to_one)
+
+    # _flat is load-bearing, not a tidy-up: prove at least one live claim is
+    # only findable after whitespace collapse, so deleting _flat fails here.
+    _wrapped = [c for c, ps in da.CRITICAL_RULE_DOCTRINE.items()
+                if any(re.search(da._flat(x), _flat_sec, re.I) and
+                       not re.search(da._flat(x), _sec, re.I) for x in ps)]
+    check("critical rule doctrine: _flat is load-bearing "
+          f"(claims findable only after collapsing whitespace: {len(_wrapped)})",
+          len(_wrapped) >= 1)
+
+# ── lane_retirement_signal ────────────────────────────────────────────────
+_LANES = _os.path.join(ROOT, "docs", "reference", "lanes")
+if _os.path.isdir(_LANES):
+    # Ground truth, established 2026-08-29 by READING all 30 lane files one by
+    # one: every lane carries open work, so nothing is retirable. Three separate
+    # greps got this wrong first. If this assertion ever fails, a lane really
+    # may have finished — go read it, do not delete the assertion.
+    _f = da.rule_lane_retirement_signal(ROOT)
+    check("lane retirement: the live corpus agrees with the per-file read "
+          f"(quiet lanes: {_f['detail']['lanes'] if _f else []})",
+          _f is None)
+
+    # And prove it can FAIL. A guard that only ever passes is not a guard.
+    _d = _tf.mkdtemp()
+    _os.makedirs(_os.path.join(_d, "docs", "reference", "lanes"))
+    _finished = _os.path.join(_d, "docs", "reference", "lanes", "done.md")
+    open(_finished, "w").write(
+        "---\ntitle: done\n---\n\n> Relocated verbatim from CLAUDE.md.\n\n"
+        "# Done\n\n## Status\n\n✅ LIVE. Everything shipped and stable.\n")
+    _f2 = da.rule_lane_retirement_signal(_d)
+    check("lane retirement: fires on a lane stating no open work",
+          bool(_f2) and _f2["detail"]["lanes"] == ["done"])
+
+    # The relocation banner is boilerplate on EVERY lane file. A marker inside
+    # it must not count, or the rule reads the template instead of the lane.
+    open(_finished, "w").write(
+        "---\ntitle: done\n---\n\n> Relocated verbatim. NEXT: update at every\n"
+        "> checkpoint. BLOCKED on nothing.\n\n# Done\n\n## Status\n\n✅ LIVE.\n")
+    _f3 = da.rule_lane_retirement_signal(_d)
+    check("lane retirement: a marker inside the relocation banner does not count",
+          bool(_f3) and _f3["detail"]["lanes"] == ["done"])
+
+    # Each real marker shape seen in the live corpus is matched.
+    for _txt, _label in (("**Next:** do the thing", "Next:"),
+                         ("**Next by value÷effort:** thing", "Next by …:"),
+                         ("**NEEDS SAM (4 questions)**", "bare NEEDS SAM"),
+                         ("**BLOCKED ON JENNI:** thing", "bare BLOCKED"),
+                         ("**Open:** 12 titles absent", "Open:"),
+                         ("**Still queued:** cluster_title_drift", "Still queued"),
+                         ("**Remaining: P3** and P5", "Remaining:"),
+                         ("blocked only by `read_projects`", "lowercase blocked")):
+        open(_finished, "w").write(
+            "---\ntitle: done\n---\n\n> Relocated verbatim.\n\n# Done\n\n"
+            f"## Status\n\n✅ LIVE. {_txt}\n")
+        check(f"lane retirement: recognizes {_label}",
+              da.rule_lane_retirement_signal(_d) is None)
+    _sh.rmtree(_d, ignore_errors=True)
+
+# ── probe_instrument_leak ─────────────────────────────────────────────────
+check("probe instrument leak: clean once the rubric lives in the vault",
+      da.rule_probe_instrument_leak(ROOT) is None)
+
+_d = _tf.mkdtemp()
+_os.makedirs(_os.path.join(_d, "docs", "scenarios"))
+open(_os.path.join(_d, "docs", "scenarios", "rubric.md"), "w").write("# rubric\n")
+_f = da.rule_probe_instrument_leak(_d)
+check("probe instrument leak: fires when the rubric returns to the repo",
+      bool(_f) and "docs/scenarios/rubric.md" in _f["detail"]["paths"])
+
+_os.makedirs(_os.path.join(_d, "docs", "scenarios", "probes"))
+_f = da.rule_probe_instrument_leak(_d)
+check("probe instrument leak: fires on a probes/ directory too",
+      bool(_f) and "docs/scenarios/probes/" in _f["detail"]["paths"])
+
+# The METHOD may stay — only the instruments leak. A rule that also flagged
+# README.md would push the methodology out of the corpus for no benefit.
+_sh.rmtree(_os.path.join(_d, "docs", "scenarios", "probes"))
+_os.unlink(_os.path.join(_d, "docs", "scenarios", "rubric.md"))
+open(_os.path.join(_d, "docs", "scenarios", "README.md"), "w").write("# method\n")
+check("probe instrument leak: docs/scenarios/README.md alone is fine",
+      da.rule_probe_instrument_leak(_d) is None)
+_sh.rmtree(_d, ignore_errors=True)
+
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
             "summary": {"files": 1, "bytes": 10, "over_budget": 0, "handoff_max": 130,

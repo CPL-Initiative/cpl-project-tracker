@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-29",
-  "_session": "SkyCrush, Session 206 — compact warning, doctrine probes, CLAUDE.md consolidation",
-  "_status": "A session ran out of room mid-conversation on the 29th and lost about 778,000 tokens of working memory with no warning. The cause was a rule that said the system could not measure how full it was — which turned out to be untrue, the number is written to disk every turn. Sessions now warn twice before it happens, but only once the small hook is installed on your machine, which is the first item below. Separately, we built a way to test whether our written rules actually change what a session does: fresh sessions get a realistic task and nothing else, and we score them against expectations written down beforehand so nobody can grade themselves generously after the fact. Those runs have not happened yet. NOTE: this list is at 21 items against a target of about 12, with entries going back several sessions — worth a prune together rather than us quietly deleting your asks.",
+  "_session": "SkyThread, Session 208 — threading rules to guards; the probe answer key was inside the test",
+  "_status": "The project instruction file is sorted: it was 4% over budget, and is now comfortably under it without losing a rule — one section turned out to be a near-complete second copy of the checkpoint command it tells you to run. Three new automatic checks were added so a rule cannot quietly stop applying when its text is moved somewhere else, which had happened six times.\n\nThe bigger news is a mistake in how we were testing ourselves. We had built a way to check whether our written rules actually get followed: spin up a fresh session, give it an ordinary-sounding task, and see what it does. But the scoring sheet and the task wordings were saved in the same repository those test sessions download — so the test came with its own answer key. One session searched for the topic it had been handed, found the file describing the test it was in, and said so. Nothing was learned from that run, and it has to be done again. The files are now kept separately.\n\nAlso settled: all 29 workstream files were read one by one, and none is finished — every one still lists outstanding work. That question can stop being asked. The list below is longer than the dozen we aim for; the extra items are decisions waiting on you rather than work we have left undone.",
   "items": [
     {
       "id": "s202-sam-threshold",
@@ -107,28 +107,28 @@
       "text": "Decide a short, fixed list of values for the memory table's \"scope\" field. Right now people fill it in freely, so it holds ten different words — \"funding\" and \"cpl-funding\" mean the same thing — and a quarter of them just repeat a tag the entry already has. It was meant to tell us which lessons apply everywhere and which belong to one workstream, and as it stands it cannot. We suggest just two values, general or workstream-specific, leaving tags to carry the topic. 68 entries would need revisiting and 584 are blank. We have not changed anything."
     },
     {
-      "id": "s206-fable-retire-lanes",
-      "for": "Fable",
-      "tab": "pipeline",
-      "text": "Work through the 29 workstream files and retire the ones that are genuinely finished. A previous estimate said five could go with no judgment needed; reading them showed four still list outstanding work in their own text, so none were retired. The test is now written down: no \"next\", no \"needs Sam\", no \"blocked\"."
-    },
-    {
       "id": "s206-sam-install-hook",
       "for": "Sam",
       "tab": "cpl-implementation",
       "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
     },
     {
-      "id": "s206-sam-claudemd-budget",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Decide what comes out of the project instruction file. It is 4% over its size budget after the new compact-warning rule, and you asked to leave it overweight until next session. The question is which rules must fire unprompted (they stay) and which answer a question a session arrives with (they move to a reference file with a pointer left behind)."
-    },
-    {
-      "id": "s206-fable-run-probes",
+      "id": "s208-fable-rerun-probes",
       "for": "Fable",
       "tab": "cpl-implementation",
-      "text": "Run the five doctrine probes in fresh sessions and score them against the rubric without editing it. Each gets only the auto-loaded instruction file plus one disguised task, so the result reflects the rules rather than a handoff. Report which rules failed to fire — not a pass rate, because a pass proves little and a failure proves a lot."
+      "text": "Re-run the doctrine probes. The first run does not count: the answer key — the scoring rubric and all five task prompts — was stored in the same repository the test sessions download, and one probe found the file describing its own test on its very first search. Those files now live in the private vault, and a check fails if they come back."
+    },
+    {
+      "id": "s208-sam-run-p4",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Run probe 4 yourself when you have a moment — the one asking for a college readiness-tier tab. You decided a test session should not build that unattended, because it could write to the live database, and it is also the probe we expect to do worst, so it is worth watching directly. The exact wording to paste is in the vault."
+    },
+    {
+      "id": "s208-fable-memory-lint",
+      "for": "Fable",
+      "tab": "memory",
+      "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
     }
   ]
 }

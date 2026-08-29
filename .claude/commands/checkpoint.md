@@ -41,10 +41,19 @@ Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whateve
      session arrives with, that is PULL — put it in `docs/reference/`,
      `docs/kb-notes/` or `cpl_memory`, **and leave the one-line pointer**, which
      is the part that makes a pulled store findable at all.
-   - **Retiring a lane?** Read the lane file first — do not grep for a ✅. Most
-     read *"✅ LIVE … NEXT: …"*, which is live with open work. Only a lane with
-     no NEXT, no NEEDS SAM and no BLOCKED in its own text moves to
-     `docs/reference/finished_workstreams.md`.
+   - **Session narrative budget.** A session's §11 subsection is ≤ ~10 lines —
+     headline, numbers, PR #s, and pointers to the lessons doc, which holds the
+     full story (write it ONCE there, don't restate). Keep **at most 2**
+     narratives inline; move older ones **verbatim** to
+     `docs/roadmap_archive.md`. Every line in `CLAUDE.md` is context-tax on
+     every future session, in three repos.
+   - **Retiring a lane?** ⚠️ **Do not grep for it** — `lane_retirement_signal`
+     (step 0's lint) already ran the test over every lane file and names any
+     lane whose own text claims no open work. READ the ones it names; a lane
+     with no NEXT, no NEEDS SAM, no BLOCKED and no load-bearing invariants moves
+     verbatim to `docs/reference/finished_workstreams.md` and its §11 row leaves
+     the table. Most lanes read *"✅ LIVE … NEXT: …"*, which is live with open
+     work. Every hand-grep of this to date has produced a wrong list.
 
 2. **`kb/README.md`** — only if KB structure, generators, or audit artifacts have changed since the last checkpoint. Skip if nothing relevant changed.
 

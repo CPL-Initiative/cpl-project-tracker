@@ -466,3 +466,89 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md). Full story:
 > `docs/exhibit_canonicalization_lessons.md` ("continued 14"–"15 + addendum").
 
+
+## M-ID structural invariants and the re-mint record
+
+> **Relocated verbatim from `CLAUDE.md` Rule 7 on 2026-08-29** (Session 208).
+> Rule 7 keeps the PUSH half — the staging-phase posture, "never re-mint
+> casually", and the TOP caveat. Everything below is **PULL**: you read it when
+> you are re-minting, which you already know you are doing. Only the three-space
+> rule-body indent was removed; no other byte changed.
+>
+> ⚠️ These are **enforced at every re-mint; deviations become audit findings.**
+
+**M-ID structural invariants** (enforced at every re-mint; deviations
+become audit findings):
+- SUBJ portion is exactly **4 letters**. The single-letter SUBJ
+  artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
+  canonical fold; residue = **1** (`F M1002`, blank-discipline —
+  unfoldable until disciplined; `mid_id_off_scheme` tracks it).
+- Within `id_system == "M-ID"`, **all rows sharing a *corroborated*
+  `discipline` share a SUBJ4** (TOP-only-disciplined rows wait for
+  corroboration before folding/voting — see the TOP caveat above) —
+  **ENFORCED 2026-06-12 (Session 50): the canonical
+  fold re-keyed every disciplined M-ID to its curator-confirmed
+  canonical** (e.g. the 10 "Sign Language, American" variants → `SLNA`).
+  `subject_collision_signal` is the steady-state watchdog (3 documented
+  residuals = cross-discipline curated re-keys whose BASELINE file
+  discipline disagrees with the curated one — honest flags, not defects).
+- **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
+  discipline that is genuinely a *parent over many distinct subjects*
+  splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
+  → one SUBJ4*. Two umbrellas today: **"Foreign Languages"** —
+  its 1,452 identities re-keyed `FLNG` → per-language `FL**` (FLSP
+  Spanish · FLFR French · FLCH Chinese · …) while the **MQ discipline
+  stays "Foreign Languages"** (authoritative MQ has no per-language
+  discipline) — and **"Kinesiology"** (2026-06-10, the KIN/PE
+  convergence): spans `KINE` (instruction) + `ATHL` (intercollegiate
+  athletics). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
+  (`kb/_row_audit.py`) and are **exempt from `subject_collision_signal`**
+  (they're *supposed* to span many SUBJ4s). Scopes:
+  [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md) ·
+  [`docs/kin_pe_convergence_scope.md`](docs/kin_pe_convergence_scope.md);
+  map: `kb/foreign_language_subj4.json`; applies: `kb/_apply_fl_subj4_remint.py`,
+  `kb/_apply_kin_pe_convergence.py`.
+- **Fan-in convergence (2026-06-10).** The inverse of the umbrella: two MQ
+  discipline *names* for one converging field fold to a canonical name, the
+  other recorded as an **alternate name** in `kb/discipline_aliases.json`
+  (never deleted from the MQ vocab). Applied: **Kinesiology ⟵ Physical
+  Education** (+ carve-outs `ATHL`/`PEDS` — "Physical Education Disabled
+  Students" is its own MQ + SUBJ4) and **Drama/Theater Arts ⟵ Theater
+  Arts** (SUBJ4 `THEA`). Both parent + singleton layers converged; alias
+  receipts under `kb/kin_pe_out/`, `kb/drama_theater_out/`,
+  `kb/convergence_singletons_out/`.
+- **C-IDs and CCN-IDs preserve their official format** — they're
+  external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
+  `ANTH C1000`). Never re-key.
+- New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
+  consolidation via the Suggested-merges worklist) consult
+  `kb/discipline_canonical_subj4.json` (live — 146 disciplines, all
+  curator-reviewed; synced from Supabase `_CANON_SUBJ4::` picks) for
+  the canonical SUBJ4 per discipline. (The MQ vocabulary
+  `kb/reference/mq_disciplines.json` is the broader 248-title superset —
+  re-discipline proposals must be exact-MQ-name; Session 112, #746.)
+
+Authoritative old→new aliases for every re-mint live at
+`kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
+
+The 2026-05-22 `CourseControlNumber` re-mint (PR #84) was the first
+instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
+dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
+decisions + validation methodology:
+[`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
+Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
+the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
+e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply
+`kb/_uc_cur_zscheme_apply.py` share `compute_plan()`, receipts
+`kb/uc_cur_zscheme_out/2026-06-15/`, scope
+[`docs/uc_cur_zscheme_remint_scope.md`](docs/uc_cur_zscheme_remint_scope.md)).
+Surface was **entirely inside `kb_curation`** (0 articulations/promotions), so
+it added a **reusable** Supabase re-key path: `kb/_rekey_kb_curation_supabase.py`
++ `.github/workflows/supabase-rekey.yml` (service-key, reads the committed
+alias map — the only sane way to re-key thousands of rows when the alias map
+is too large to hand-pass as SQL;
+[`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`](docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md)).
+Prior: **KIN/PE pass 2** (Session 51, `kb/_kin_pe_pass2.py`, 1,057 re-keys,
+`kb/kin_pe_pass2_out/2026-06-12/`; alias-guard `kb/_alias_canon.py`) and the
+**2026-06-12 canonical-SUBJ4 fold** (Session 50) — 71,037-alias permutation,
+`kb/subj4_fold_out/2026-06-12/`, downstream chain `kb/_post_apply_chain.py`.

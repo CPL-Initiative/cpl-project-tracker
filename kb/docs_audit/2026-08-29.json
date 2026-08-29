@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 744,
-    "bytes": 7765180,
-    "over_budget": 4,
-    "handoff_max": 207,
+    "files": 740,
+    "bytes": 7771774,
+    "over_budget": 3,
+    "handoff_max": 209,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 62124,
+    "always_loaded_bytes": 50421,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 62124,
-        "over": 1
+        "bytes": 50421,
+        "over": 0
       },
       "other": {
-        "files": 104,
-        "bytes": 2307761,
+        "files": 98,
+        "bytes": 2307187,
         "over": 2
       },
       "index": {
@@ -36,12 +36,12 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1878158,
+        "bytes": 1882065,
         "over": 1
       },
       "kb_note": {
-        "files": 353,
-        "bytes": 1852110,
+        "files": 354,
+        "bytes": 1859876,
         "over": 0
       },
       "roadmap_lane": {
@@ -50,18 +50,18 @@
         "over": 0
       },
       "handoff": {
-        "files": 182,
-        "bytes": 1543541,
+        "files": 183,
+        "bytes": 1550739,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
+      "oversized_doc": 3,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2418,
-      "bytes": 1247651289,
+      "files": 2413,
+      "bytes": 1247664782,
       "heavy_bytes": 599584355,
       "heavy_share": 0.481,
       "ignore_filters": [
@@ -114,19 +114,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 62124,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 2124,
-        "ratio": 1.04
-      },
-      "message": "62,124 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "oversized_doc",
       "fixable": false,

@@ -38,6 +38,11 @@ The tension dissolves once two roles stop being the same session:
 | **Experimenter** (the next numbered session) | the full rich handoff, all context | runs the probes, scores them against the rubric, fixes what fails |
 | **Probe** (a disposable spawned session) | `CLAUDE.md` only — which auto-loads in *every* session anyway — plus one realistic task prompt | just does the task |
 
+⚠️ **The instruments — the rubric and the probe prompts — are deliberately NOT
+in this repository.** They live in the private vault, which probe sessions do
+not clone; the handoff tells the experimenter where. See "The instrument may not
+live inside the system under test", below.
+
 `CLAUDE.md` is the honest control condition. It is what a session gets **for
 free**, before anyone hands it anything. The handoff is the extra. So "rules
 only" means: auto-loaded doctrine plus whatever the session chooses to pull.
@@ -52,9 +57,9 @@ session can work, but whether **the always-loaded layer steers correctly**.
 2. **One probe, one scenario.** A probe asked six questions learns from the
    first. Fresh session per scenario.
 3. **Rubric first, and committed.** Write the pass criteria and commit them
-   BEFORE the probe runs — see [`rubric.md`](rubric.md). This is the actual
-   guard against a contaminated scorer: without it, whatever the probe does
-   becomes what we expected.
+   BEFORE the probe runs — **in the vault, not here**. This is the actual guard
+   against a contaminated scorer: without it, whatever the probe does becomes
+   what we expected.
 4. **Score the trace, not the vibe.** Every criterion is a thing that either
    appears in the transcript / repo or does not.
 
@@ -85,3 +90,42 @@ early:
 
 Recording this is the point: a scenario nobody can run is not a passing
 scenario, it is an unmeasured one.
+
+
+## ⚠️ The instrument may not live inside the system under test
+
+**Added 2026-08-29 (Session 208), after this protocol's first real run.**
+
+The rubric and all five probe prompts were committed to `cpl-project-tracker` —
+the repository a probe clones. So the control condition included, for free, a
+109-line document naming every criterion the probe was about to be scored on,
+plus the advance predictions.
+
+The leak is not subtle. A probe's most natural first action is to search for the
+topic it was just handed, and for P5 the phrase `comprehensive-vs-carve-out`
+matched **exactly one file in the entire repository — its own probe prompt**, and
+nothing else. P5 found it, recognized it was inside a test, and void-flagged its
+own result. Two probe runs were discarded.
+
+Handoff 207 anticipated leakage but located it in the *prompt*: *"re-read the
+probe prompt for a cue before believing it."* The leak was in the **repository**.
+A probe protocol is not a document; it is a document **plus where it is kept**.
+
+The instruments now live in
+`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`. This file — the method —
+stays, because it names no criterion and is reusable knowledge.
+`probe_instrument_leak` in `kb/_docs_audit.py` fails if a rubric or prompt
+reappears here, because the natural repair for a broken link is to put the file
+back, and that silently re-breaks every future probe.
+
+### Also learned, mechanically
+
+- **A probe spawned with no repository is not a control condition** — it is a
+  blank session with no `CLAUDE.md` at all. Two were wasted that way; one burned
+  $5.04 flailing in an empty sandbox before it was stopped. Always attach the
+  source explicitly; inheriting the parent session's environment does not
+  inherit its repos.
+- **A spawned session's transcript is not readable by the experimenter** from
+  inside a session, so any criterion scored on *the order of tool calls* (P3)
+  cannot be scored this way. Either a human opens the transcript, or the
+  criterion is recorded as unmeasured. It is not a pass.

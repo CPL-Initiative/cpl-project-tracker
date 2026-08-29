@@ -39,16 +39,45 @@ def any_guard_fires(root):
     if os.path.isfile(cm):
         e = {"rel": "CLAUDE.md", "path": cm, "lane": "always_loaded",
              "bytes": os.path.getsize(cm), "fm": {}, "has_fm": False}
-        for fn, name in ((lambda x: da.rule_presentation_doctrine(x), "presentation_doctrine"),
-                         (lambda x: da.rule_stacked_roadmap_cell(x), "stacked_roadmap_cell"),
-                         (lambda x: da.rule_oversized_doc(x), "oversized_doc"),
-                         (lambda x: da.rule_unreferenced_offload(x, root), "unreferenced_offload"),
-                         (lambda x: da.rule_self_corrected_word_pair(x), "self_corrected_word_pair")):
+        # ⚠️ DISCOVER the rules; do not hand-list them. This list was hard-coded
+        # until 2026-08-29, and `critical_rule_doctrine` — written specifically
+        # to catch two scenarios in this file — reported "— NOTHING —" on both
+        # after it was installed and passing, because the harness simply never
+        # called it. A harness with a hand-maintained list of what it checks is
+        # a second copy of the rule registry, and it drifts exactly when a new
+        # guard is added: the moment you most need the score to be true.
+        for name in sorted(dir(da)):
+            if not name.startswith("rule_"):
+                continue
+            fn = getattr(da, name)
+            if not callable(fn):
+                continue
+            short = name[len("rule_"):]
             try:
-                if fn(e):
-                    fired.append(name)
+                code = fn.__code__
+                params = code.co_varnames[:code.co_argcount]
+            except AttributeError:
+                continue
+            # ⚠️ Dispatch on the PARAMETER NAME, not the arity. Keying on arity
+            # made every tree-level rule -- rule_probe_instrument_leak(root),
+            # rule_lane_retirement_signal(root) -- look like an entry rule, so
+            # they were called with the entry dict, raised, and were swallowed
+            # by the except below. `probe_instrument_leak` scored "-- NOTHING --"
+            # on the scenario written for it, for the SECOND time in one session
+            # that a discovery shortcut hid a working guard.
+            try:
+                if params[:1] == ("root",):
+                    hit = fn(root)
+                elif params == ("entry",):
+                    hit = fn(e)
+                elif params[:2] == ("entry", "root"):
+                    hit = fn(e, root)
+                else:
+                    continue
             except Exception:
-                pass
+                continue
+            if hit:
+                fired.append(short)
     # Runtime guards. Not every failure is visible in a repo tree -- the
     # 2026-08-29 compaction left no committed trace at all, so a harness that
     # only runs docs lints would score it "missed" forever and never notice the
@@ -80,25 +109,52 @@ BASE_RULES = """## Presentation rules
 - **PROSE RUNS THE FULL WIDTH.** `--cpl-measure`.
 """
 
+# ⚠️ A fixture must be COMPLETE enough that only the scenario's own defect
+# fires. When `critical_rule_doctrine` was added (2026-08-29) the harness jumped
+# to "11 of 11 caught" — and every one of those catches was the new guard firing
+# on a stub CLAUDE.md that simply had no `## Critical Rules` section. A harness
+# that scores 11/11 because one guard fires indiscriminately is strictly WORSE
+# than one that scores 9/11 honestly: it conceals the two failures nothing
+# catches. So every fixture states the full doctrine, and each scenario removes
+# only the one claim it is about.
+BASE_CRITICAL = """## Critical Rules (do not violate)
+
+4. **`CPL_Dashboard.html` and `index.html` must stay identical.**
+5. **Never force-push `main`.**
+7. **M-IDs are in staging-cleanup phase.** Never re-mint casually — the
+   playbook is mandatory. **TOP caveat:** never use TOP for gatekeeping or a
+   primary determination; TOP is a last-in-line corroborator.
+8. **READ the memory table BEFORE you work.**
+9. **Document at context checkpoints.** Run `/checkpoint`; do not improvise one
+   from memory. THE USUAL CHECKPOINT EDIT is the LANE FILE, not the row; update
+   the LANE FILE. The authoritative handoff is the HIGHEST-numbered one.
+10. **Supabase live-curation safety.** Fresh live read at write-time.
+"""
+
+
 def s_glyph_rule_relocated():
     """2026-08-28: the glyph rule sat in a §11 roadmap row; relocating that row
     to a lane file carried it out of the always-loaded file. Zero occurrences
     remained. Sam caught it, a day later, by asking."""
     rules = BASE_RULES.replace(
         "- **PLAIN WORDS, NOT GLYPHS.** every control is a word, never a decorative emoji.\n", "")
-    return {"CLAUDE.md": "# CLAUDE\n\n" + rules + "\nsee docs/reference/lanes/admin.md\n",
-            "docs/reference/lanes/admin.md": "# Admin\nPLAIN WORDS, NO GLYPHS: every control is a word.\n"}
+    return {"CLAUDE.md": "# CLAUDE\n\n" + rules + BASE_CRITICAL + "\nsee docs/reference/lanes/admin.md\n",
+            # NEXT: keeps lane_retirement_signal out of this scenario's result.
+            # A lane fixture with no open-work marker makes that rule fire here
+            # too, and a scenario "caught" by a guard that has nothing to do
+            # with it is the same false green as the 11-of-11 above.
+            "docs/reference/lanes/admin.md": "# Admin\nPLAIN WORDS, NO GLYPHS: every control is a word.\nNEXT: fill the owner column.\n"}
 
 def s_offload_without_pointer():
     """2026-08-28: docs/reference/statute/ held the texts the §55050 lane drafts
     against, reachable from scripts but from nothing CLAUDE.md points at."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + "\nnothing points at the statute texts.\n",
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL + "\nnothing points at the statute texts.\n",
             "docs/reference/statute/README.md": "# Statute texts\nthe authoritative regulation text.\n"}
 
 def s_roadmap_cell_regrows():
     """The failure stacked_roadmap_cell exists for: a pointer row grown back
     into a paragraph."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES +
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL +
             "\n### Roadmap\n\n| Phase | What | Status |\n|---|---|---|\n"
             "| **Lane** | a thing | " + ("x" * 4500) + " |\n\n"
             "The auditor is the foundational instrument for everything.\n"}
@@ -107,7 +163,7 @@ def s_skill_loses_its_pointer():
     """NOT YET A GUARD. A skill is where we are about to put the M-ID re-mint
     rules. .claude/skills/ is outside the corpus walk entirely (0 of 732 files),
     so a skill nobody points at is invisible."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + "\nno mention of any skill.\n",
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL + "\nno mention of any skill.\n",
             ".claude/skills/mid-remint/SKILL.md":
                 "---\nname: mid-remint\n---\n# M-ID re-mint\nthe invariants live here.\n"}
 
@@ -115,14 +171,14 @@ def s_sweeper_corrupts_its_own_rule():
     """2026-08-29: american_spelling rewrote `whilst`/`amongst` INSIDE the
     parenthetical that named them, leaving 'while (not while)'. Nothing flags
     it — both halves are correctly spelled American English."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES.replace(
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_CRITICAL + BASE_RULES.replace(
         "- **AMERICAN SPELLING, ALWAYS.**",
         "- **AMERICAN SPELLING, ALWAYS.** Use while (not while) and among (not among).")}
 
 def s_memory_row_contradicts_doctrine():
     """NOT YET A GUARD. cpl_memory has no lint at all. A row can assert the
     opposite of the always-loaded file and nothing compares them."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + "\nNever force-push `main`.\n"}
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL + "\nNever force-push `main`.\n"}
 
 def s_checkpoint_never_ran():
     """Sam's scenario 1: 600k context, deep in a build, no checkpoint yet --
@@ -167,7 +223,7 @@ def s_conditional_checkpoint_item():
     condition was met, so a missed update is indistinguishable from a run the
     condition never applied to. Uncaught today: the auditor walks this repo
     only, and cannot see the vault at all."""
-    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES +
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL +
             "\n- Update `04-projects/<project>/SESSION-NOTES.md` when the run "
             "worked inside a project folder.\n"}
 
@@ -190,6 +246,68 @@ def s_context_compacted_before_checkpoint():
     return d
 
 
+def s_top_caveat_relocated():
+    """SESSION 208, the cut this scenario was written to score. Rule 7 is 8,052
+    chars and most of it is PULL — you read the M-ID structural invariants when
+    you are re-minting, which you already know you are doing. So the invariants
+    move to docs/reference/mid_lifecycle.md.
+
+    The danger is the TOP caveat riding along. It is the purest PUSH in the rule:
+    a session joining discipline data has no reason to ask "is TOP trustworthy?"
+    — it just uses the column, and ~52% of consolidated M-IDs are TOP-mixed.
+
+    ⚠️ unreferenced_offload CANNOT see this. CLAUDE.md still points at
+    mid_lifecycle.md — correctly, for the invariants — so the file-level pointer
+    is satisfied while the rule itself is gone from every always-loaded byte.
+    That is the rule-level gap: exactly how the glyph rule was lost, one level
+    down."""
+    stripped = BASE_CRITICAL.replace(
+        " **TOP caveat:** never use TOP for gatekeeping or a\n   primary "
+        "determination; TOP is a last-in-line corroborator.", "")
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + stripped +
+            "\nDeep reference: [`docs/reference/mid_lifecycle.md`]"
+            "(docs/reference/mid_lifecycle.md).\n",
+            "docs/reference/mid_lifecycle.md":
+                "# M-ID lifecycle\nNever use TOP for gatekeeping or a primary "
+                "determination. TOP is a last-in-line corroborator.\n"}
+
+
+def s_checkpoint_imperative_relocated():
+    """SESSION 208. Rule 9's artifact list duplicates .claude/commands/checkpoint.md
+    almost artifact-for-artifact (34 vs 36 names), so the list is PULL and the
+    command already holds it.
+
+    What must NOT go with it is the imperative: "Run /checkpoint; do not improvise
+    one from memory." A session improvising cannot know it is improvising — that
+    is the whole failure, recorded in s_checkpoint_never_ran, where the answer
+    named 2 of 13 artifacts and looked competent.
+
+    Same shape as the TOP caveat: the pointer survives, the rule does not."""
+    stripped = BASE_CRITICAL.replace(
+        " Run `/checkpoint`; do not improvise one\n   from memory.", "")
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + stripped +
+            "\nThe artifact list lives in `.claude/commands/checkpoint.md`.\n",
+            ".claude/commands/checkpoint.md":
+                "# checkpoint\nRun /checkpoint; do not improvise one from memory.\n"}
+
+
+def s_probe_instrument_in_repo():
+    """2026-08-29: the probe rubric and all five prompts were committed to the
+    repo the probes clone, so the "CLAUDE.md only" control condition silently
+    included the answer key. P5's topic phrase matched exactly one file in the
+    repository — its own prompt — and it void-flagged itself.
+
+    The generalization is what matters: THE INSTRUMENT MAY NOT LIVE INSIDE THE
+    SYSTEM UNDER TEST."""
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL,
+            "docs/scenarios/rubric.md":
+                "# Probe rubric\n| 5.5 | Recognizes a mechanically-checkable "
+                "lesson and writes a lint | [S] |\n",
+            "docs/scenarios/probes/p5-new-learnings.md":
+                "# P5\nPaste exactly this: the comprehensive-vs-carve-out split "
+                "has to be decided BEFORE the relevel bands are computed.\n"}
+
+
 SCENARIOS = [
     ("glyph rule relocated out of the always-loaded file", s_glyph_rule_relocated, True),
     ("an offload nothing points at",                        s_offload_without_pointer, True),
@@ -200,6 +318,9 @@ SCENARIOS = [
     ("work landed but the checkpoint never ran",            s_checkpoint_never_ran, True),
     ("a CONDITIONAL checkpoint item nobody can audit",      s_conditional_checkpoint_item, True),
     ("the session compacted before any checkpoint ran",     s_context_compacted_before_checkpoint, True),
+    ("Rule 7's TOP caveat relocated, pointer intact",       s_top_caveat_relocated, True),
+    ("Rule 9's /checkpoint imperative relocated",           s_checkpoint_imperative_relocated, True),
+    ("the probe answer key sits in the repo probes clone",  s_probe_instrument_in_repo, True),
 ]
 
 

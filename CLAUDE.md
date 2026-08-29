@@ -87,27 +87,19 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
 
 7. **M-IDs are in staging-cleanup phase — re-mints permitted under the
    playbook.** The M-ID identity layer is "AI-assisted STAGING" (per the
-   data-file headers), **not yet faculty-published**. Re-mints in service
-   of cleanup are welcome, but they must follow
-   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md):
-   dry-run first, alias map committed, Supabase `kb_curation` fresh-read at
-   write-time, articulations re-keyed, **`kb/promotions.json` re-keyed**
-   (`kb/_rekey_promotions.py` — added 2026-06-11 after four re-mints skipped
-   it, silently severing 53% of the Phase A/B official-ID fold evidence;
-   `docs/official_id_fold_scope.md`. Resolution semantics corrected SAME DAY,
-   Session 42: alias maps are simultaneous PERMUTATIONS with slot reuse —
-   apply each map ONCE, chronologically, era-stamped (`_rekeyed_through`),
-   apply-confirmed maps only, V5-validated against per-row `*_remint_from`
-   stamps; an apply that consumes a dry-run plan must RESTAMP the receipt's
-   `_status` —
-   [`docs/kb-notes/methodology-alias-map-resolution-semantics.md`](docs/kb-notes/methodology-alias-map-resolution-semantics.md)),
-   atomic land within one cron window (06:17 UTC primary). The "never bulk renumber" framing that previously lived
-   here was **defensive** (against accidental re-keys); it's been relaxed
-   for the staging phase. **Never re-mint casually** — the playbook is
-   mandatory. Once we explicitly declare the M-ID layer
-   **faculty-published**, this rule re-locks to "stable identifiers, no
-   renumbering." Until then, principled re-mints are part of the cleanup
-   loop.
+   data-file headers), **not yet faculty-published**, so principled re-mints
+   are part of the cleanup loop rather than something to fear. **Never re-mint
+   casually** — the playbook is **mandatory**:
+   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
+   Once we explicitly declare the M-ID layer **faculty-published**, this rule
+   re-locks to "stable identifiers, no renumbering."
+
+   The **M-ID structural invariants** (SUBJ4 shape, the umbrella and fan-in
+   exceptions, C-ID/CCN format), the re-mint **mechanics** (dry-run, alias map,
+   `kb/promotions.json` re-key, alias-map resolution semantics, atomic land in
+   one cron window) and every past re-mint are **PULL** — you read them when you
+   are re-minting, which you already know you are doing:
+   [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md).
 
    **TOP caveat — standing rule (2026-07-16).** TOP codes are faculty-entered
    in COCI during local curriculum approval with **no data-entry gatekeeper**,
@@ -126,82 +118,6 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    [`docs/kb-notes/methodology-top-is-a-last-in-line-signal.md`](docs/kb-notes/methodology-top-is-a-last-in-line-signal.md).
    The CO's **TOP→CIP** cutover (fall 2026) is the systemic exit from TOP —
    apply the same "corroborate, don't gate" posture to CIP until it earns trust.
-
-   **M-ID structural invariants** (enforced at every re-mint; deviations
-   become audit findings):
-   - SUBJ portion is exactly **4 letters**. The single-letter SUBJ
-     artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
-     canonical fold; residue = **1** (`F M1002`, blank-discipline —
-     unfoldable until disciplined; `mid_id_off_scheme` tracks it).
-   - Within `id_system == "M-ID"`, **all rows sharing a *corroborated*
-     `discipline` share a SUBJ4** (TOP-only-disciplined rows wait for
-     corroboration before folding/voting — see the TOP caveat above) —
-     **ENFORCED 2026-06-12 (Session 50): the canonical
-     fold re-keyed every disciplined M-ID to its curator-confirmed
-     canonical** (e.g. the 10 "Sign Language, American" variants → `SLNA`).
-     `subject_collision_signal` is the steady-state watchdog (3 documented
-     residuals = cross-discipline curated re-keys whose BASELINE file
-     discipline disagrees with the curated one — honest flags, not defects).
-   - **Umbrella-discipline exception (2026-06-09, Session 37).** One MQ
-     discipline that is genuinely a *parent over many distinct subjects*
-     splits its SUBJ4 per subject — the invariant becomes *one **SUBJECT**
-     → one SUBJ4*. Two umbrellas today: **"Foreign Languages"** —
-     its 1,452 identities re-keyed `FLNG` → per-language `FL**` (FLSP
-     Spanish · FLFR French · FLCH Chinese · …) while the **MQ discipline
-     stays "Foreign Languages"** (authoritative MQ has no per-language
-     discipline) — and **"Kinesiology"** (2026-06-10, the KIN/PE
-     convergence): spans `KINE` (instruction) + `ATHL` (intercollegiate
-     athletics). Umbrella disciplines are listed in `UMBRELLA_DISCIPLINES`
-     (`kb/_row_audit.py`) and are **exempt from `subject_collision_signal`**
-     (they're *supposed* to span many SUBJ4s). Scopes:
-     [`docs/fl_subj4_remint_scope.md`](docs/fl_subj4_remint_scope.md) ·
-     [`docs/kin_pe_convergence_scope.md`](docs/kin_pe_convergence_scope.md);
-     map: `kb/foreign_language_subj4.json`; applies: `kb/_apply_fl_subj4_remint.py`,
-     `kb/_apply_kin_pe_convergence.py`.
-   - **Fan-in convergence (2026-06-10).** The inverse of the umbrella: two MQ
-     discipline *names* for one converging field fold to a canonical name, the
-     other recorded as an **alternate name** in `kb/discipline_aliases.json`
-     (never deleted from the MQ vocab). Applied: **Kinesiology ⟵ Physical
-     Education** (+ carve-outs `ATHL`/`PEDS` — "Physical Education Disabled
-     Students" is its own MQ + SUBJ4) and **Drama/Theater Arts ⟵ Theater
-     Arts** (SUBJ4 `THEA`). Both parent + singleton layers converged; alias
-     receipts under `kb/kin_pe_out/`, `kb/drama_theater_out/`,
-     `kb/convergence_singletons_out/`.
-   - **C-IDs and CCN-IDs preserve their official format** — they're
-     external authorities with variable lengths (`ANTH 100`, `AG-PS 104`,
-     `ANTH C1000`). Never re-key.
-   - New M-IDs minted by `_seed_coci_minted_mids.py` (or curator
-     consolidation via the Suggested-merges worklist) consult
-     `kb/discipline_canonical_subj4.json` (live — 146 disciplines, all
-     curator-reviewed; synced from Supabase `_CANON_SUBJ4::` picks) for
-     the canonical SUBJ4 per discipline. (The MQ vocabulary
-     `kb/reference/mq_disciplines.json` is the broader 248-title superset —
-     re-discipline proposals must be exact-MQ-name; Session 112, #746.)
-
-   Authoritative old→new aliases for every re-mint live at
-   `kb/remint_out/<date>/alias_map.json`. Rollback notes per the playbook.
-
-   The 2026-05-22 `CourseControlNumber` re-mint (PR #84) was the first
-   instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
-   dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
-   decisions + validation methodology:
-   [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-   Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
-   the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
-   e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply
-   `kb/_uc_cur_zscheme_apply.py` share `compute_plan()`, receipts
-   `kb/uc_cur_zscheme_out/2026-06-15/`, scope
-   [`docs/uc_cur_zscheme_remint_scope.md`](docs/uc_cur_zscheme_remint_scope.md)).
-   Surface was **entirely inside `kb_curation`** (0 articulations/promotions), so
-   it added a **reusable** Supabase re-key path: `kb/_rekey_kb_curation_supabase.py`
-   + `.github/workflows/supabase-rekey.yml` (service-key, reads the committed
-   alias map — the only sane way to re-key thousands of rows when the alias map
-   is too large to hand-pass as SQL;
-   [`docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md`](docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md)).
-   Prior: **KIN/PE pass 2** (Session 51, `kb/_kin_pe_pass2.py`, 1,057 re-keys,
-   `kb/kin_pe_pass2_out/2026-06-12/`; alias-guard `kb/_alias_canon.py`) and the
-   **2026-06-12 canonical-SUBJ4 fold** (Session 50) — 71,037-alias permutation,
-   `kb/subj4_fold_out/2026-06-12/`, downstream chain `kb/_post_apply_chain.py`.
 
 8. **READ the memory table BEFORE you work — Rule 8 had no query step until
    2026-08-10.** The very first thing a session does on a workstream, before
@@ -235,147 +151,47 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
    are *query*; this is the third operation, and its absence is why the corpus
    accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
-   flags **in scope for this run**: an `oversized_doc` on the lessons doc you
-   were about to append to means compact it now instead of growing it; an
-   `always_loaded` flag on this file means move prose to `docs/reference/`.
-   After writing the new handoff, `--apply` stamps the now-superseded ones
-   (its only mutation — never the authoritative one, idempotent). Rationale +
-   the vault-weight finding:
+   flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
    **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
    newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
    original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
    an exact counter; use proxies" — a condition no session could act on, and
-   whose premise was FALSE besides (Rule 9a: the counter is on disk)** —
-   the same defect that left `04-projects/` 41 days stale behind *"when the run
-   worked inside a project folder"*. Handoffs land every 1–3 commits normally
-   (median 2, p90 5), so 6 fires on the tail. The heuristic still applies between
-   runs of the lint — long conversations, many tool calls, multi-phase work.
+   whose premise was FALSE besides (Rule 9a: the counter is on disk).** The
+   heuristic still applies between runs of the lint — long conversations, many
+   tool calls, multi-phase work.
+
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
-   a checkpoint under pressure on 2026-08-29 I named 2 of these 13 artifacts and
-   hand-waved the rest, and the answer looked competent. Update **every**
-   artifact below — none are optional, all sync to the user's Obsidian:
-   - **`docs/reference/lanes/<lane>.md` — THE USUAL CHECKPOINT EDIT (2026-08-28).**
-     Each §11 roadmap lane's state lives in its own file; **§11's table is a
-     POINTER INDEX**. Refresh the LANE FILE with what this run learned — same
-     content and same standard as the old §11 cell, new address.
-     ⚠️ **A checkpoint that updates only the §11 row leaves all 30 lane files to
-     go stale** — that is the failure mode, and it is why this bullet leads.
-   - **`CLAUDE.md`** — rules + the §11 pointer table + ≤2 session narratives.
-     **Touch a §11 ROW only when the lane's STATE changes** (live ⇄ in progress
-     ⇄ parked, open work appearing or clearing) — ⚠️ **do not grow a row back
-     into a paragraph.** **Deep memory lives in `docs/reference/`
-     (`lanes/` · pipeline_reference.md · kb_build_status.md · mid_lifecycle.md ·
-     troubleshooting.md · branch_policy.md · engineering_ui_practices.md ·
-     obsidian_vault_wiring.md): update THOSE at checkpoints** for tag counts,
-     lifecycle/pathway changes, build-phase state, and new tabs/pipeline
-     surface — do NOT re-inflate this file.
-     **Session-narrative budget (added Session 41):** a new session's §11
-     subsection is ≤ ~10 lines — headline, numbers, PR #s, pointers to the
-     lessons doc (which holds the full story; write it ONCE there, don't
-     restate). Keep **at most 2** session narratives inline; at checkpoint,
-     move older ones verbatim to `docs/roadmap_archive.md`. Every line in
-     this file is context-tax on every future session.
-   - **`kb/README.md`** — when KB structure, generators, or audit artifacts
-     change.
-   - **`README.md`** — root project README. Kept current for first-time visitors.
-   - **`docs/<topic>_lessons.md`** — **lessons doc REQUIRED on every checkpoint.**
-     Create one on the first checkpoint for a workstream (e.g.
-     `docs/unified_courses_audit_lessons.md`), then APPEND a dated section on
-     every subsequent checkpoint capturing: what's been learned since the last
-     checkpoint, current state, strategic roadmap, and next concrete step.
-     Use the Obsidian frontmatter format that
-     [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md)
-     established (title / date / tags / artifacts / related front-matter).
-   - **`docs/kb-notes/<topic>.md`** — **KB-candidate lane (added Session 11,
-     2026-05-27).** At every checkpoint, ask: did this run produce a learning
-     that's durable, reusable, distilled, and self-contained? If yes → author
-     a standalone note in `docs/kb-notes/` using
-     [`docs/kb-notes/_template.md`](docs/kb-notes/_template.md) with
-     `kb-status: candidate`. Five types: `methodology` (reusable patterns),
-     `reference` (external-source distillations), `adr` (architecture
-     decisions), `glossary` (lookup cards), `playbook` (procedures). Lessons
-     docs are the workstream scratchpad; KB notes are the **distilled, durable
-     output** intended for Obsidian-vault first-class indexing. Promotion
-     workflow + tag taxonomy in [`docs/kb-notes/README.md`](docs/kb-notes/README.md).
-     The checkpoint commit body lists any new candidates added this run so Sam
-     sees the review queue.
-   - **`docs/INDEX.md` + `docs/catalog/` — GENERATED since 2026-08-28. Run
-     `python3 kb/_build_docs_index.py`; do NOT hand-add rows.** The per-lane
-     listings live in `docs/catalog/*.md`, built from each doc's own
-     frontmatter, and INDEX keeps only the landing page. Hand-edit INDEX for
-     PROSE only — the lane explanations, the orientation pointers and the
-     `## Update history` bullet for this run; anything between
-     `<!-- generated:corpus -->` markers is replaced on every build.
-     `--check` runs in CI, so a forgotten rebuild is a red check.
-     ⚠️ It was hand-maintained until it hit **273,616 B, 6.84× its budget**,
-     half of it re-typing what the notes already said. Obsidian renders INDEX
-     as the vault-side entry point for `cpl-project-tracker/`.
-   - **Pipeline visualization on the dashboard (`#tab-pipeline`)** — **refresh
-     whenever the workstream moved the pipeline (added 2026-05-30).** The Pipeline
-     tab is hand-maintained static content living in **both `CPL_Dashboard.html`
-     and `index.html`** (Rule 4 — keep the two identical; this tab is NOT
-     regenerated by `excel_to_dashboard.py`). Keep it in sync with reality:
-     **Phase roadmap** (`.pl-phase` cards in `#pl-section-roadmap` — flip
-     done/active/parked to match the §11 roadmap table), **Auditor receipt**
-     (`.pl-stat` cards in `#pl-section-audit` — latest `kb/_row_audit.py` tag
-     counts/scores), **Recent re-mint** (`#pl-section-remint` — newest
-     re-mint/apply), and the **M-ID lifecycle** mermaid (`#pl-section-lifecycle`,
-     only if the stages themselves changed). Skip only if this checkpoint didn't
-     touch the pipeline at all.
-   - **`docs/session_<N+1>_handoff.md`** — **next-session prompt, written/refreshed
-     on EVERY checkpoint (safeguard, changed 2026-05-30).** Previously session-end
-     only; now refreshed every checkpoint so a fresh paste-able prompt ALWAYS exists
-     if a session gets bricked or context is consolidated mid-stream. Overwrite the
-     same N+1 file each checkpoint so it always reflects the latest state. Second
-     person ("You are Session N+1"), paste-able into the next session's first
-     message, covering: what shipped, docs to read in order, the priority
-     workstream(s), carryover items + status, patterns that worked, safety patterns
-     to honor, and a moniker suggestion with an open door for the next session to
-     claim its own. Reference example: [`docs/session_6_handoff.md`](docs/session_6_handoff.md)
-     (Bruh Quad → Session 6, the first instance of this practice). Keep it long
-     enough to be useful (~4500 chars / 170 lines is the sweet spot) — the next
-     session is starting cold.
-     **The authoritative handoff is the HIGHEST-numbered
-     `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
-     (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read
-     the highest, and confirm the number with Sam if they diverge. Sam's
-     greeting sometimes names the session's moniker (SkyTime S104, SkyPhilo
-     S108 precedent) — claim it and carry it in the §11 narrative + handoff;
-     otherwise take the handoff's suggestion or coin your own.
+   a checkpoint under pressure on 2026-08-29 I named 2 of its 13 artifacts and
+   hand-waved the rest, and the answer looked competent. **The artifact list is
+   the checkpoint command, not this file** — all 13, none optional, all syncing
+   to Sam's Obsidian:
+   [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
+   authority. ⚠️ This file carried a near-complete SECOND copy of it until
+   2026-08-29 (34 of the same artifact names), and the two had already drifted:
+   the copy here still said KB notes land `kb-status: candidate`, a state
+   retired in Session 11.
 
-   - **`kb/cpl_todos.json`** — **the dashboard To-Do feed (added Session 47),
-     refreshed on EVERY checkpoint alongside the handoff** (it is the handoff
-     distilled for the dashboard: ≤ ~12 layman-readable items split For Sam /
-     For Fable + a "where we are" `_status`, rendered by `cpl_todos.js` as the
-     📋 button on every tab). Bump `_as_of` (resets viewers' check-offs),
-     DELETE done items (never leave them checked), keep counts current.
-   - **`cpl_memory` (live Supabase memory table) — auto-write every checkpoint
-     (Phase 3, 2026-07-24).** Sessions write this run's *durable, uncaptured*
-     learnings via the Supabase MCP, **no approval gate**: own writes land
-     **`proposed`**; corroboration (a 2nd session / a committed KB-note-or-PR
-     `source` / Sam's ✓) promotes to `verified` (the only status shown by
-     default). Keep the truth table lean (the append-only `cpl_memory_log`
-     carries volume) — supersede don't delete, log every write, don't dump a
-     session log. Full procedure (SQL patterns + the corroboration rule):
-     [`docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md`](docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md).
-   - **`CPLBrain` vault — `07-session-notes/YYYY-MM-DD-<slug>.md`** (wired in
-     2026-08-28). REQUIRED for any non-trivial session; **`CPLBrain/CLAUDE.md`
-     has always marked this MANDATORY**, but it was absent from this list, so it
-     had not fired since 2026-08-09 — a rule in one repo whose procedure lives in
-     another does not fire. Template: `07-session-notes/README.md`. Also
-     `04-projects/<project>/SESSION-NOTES.md` when the run worked inside a
-     project folder, and `07-session-notes/README.md` only if the convention
-     itself changed. ⚠️ **Never edit `CPLBrain/README.md`, `.claude/skills/`,
-     `.claude/roles/`, `.kiro/` or `.gemini/`** — upstream COG framework files
-     owned by `cog-update.sh`, not our content. Still never the public KB.
+   ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
+   table is a POINTER INDEX; each lane's state lives in
+   [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/). A checkpoint that
+   updates only the row leaves all 30 lane files to go stale — that is the
+   failure mode. Deep memory lives in `docs/reference/`: update THOSE, and do
+   **not** re-inflate this file. **Session-narrative budget:** a session's §11
+   subsection is ≤ ~10 lines, **at most 2** kept inline; move older ones verbatim
+   to `docs/roadmap_archive.md`.
 
-   Capture in each: (a) what's been learned this checkpoint, (b) current
-   state of the work, (c) strategic roadmap, (d) next concrete step.
-   Better to checkpoint slightly early than slightly late — sessions can
-   end abruptly and what's not in a markdown file is effectively lost. The
-   user can trigger a checkpoint at any time with the **`/checkpoint`**
-   slash command (`.claude/commands/checkpoint.md`).
+   **The authoritative handoff is the HIGHEST-numbered
+   `docs/session_<N>_handoff.md`.** A greeting citing a lower number is stale
+   (2026-07-10: "105" vs actual 111) — `ls docs/session_*_handoff.md`, read the
+   highest, and confirm the number with Sam if they diverge. Sam's greeting
+   sometimes names the session's moniker (SkyTime S104, SkyPhilo S108
+   precedent) — claim it and carry it in the §11 narrative + handoff.
+
+   Capture in each artifact: (a) what's been learned this checkpoint, (b) the
+   current state of the work, (c) strategic roadmap, (d) next concrete step.
+   Better to checkpoint slightly early than slightly late — sessions end
+   abruptly and what is not in a markdown file is effectively lost.
 
 9a. **Context pressure is MEASURABLE — warn Sam BEFORE the compact instead of
    discovering it after.** Claude Code writes the exact live context size to the
@@ -764,11 +580,21 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > and is stable — **no NEXT, no NEEDS SAM, no BLOCKED in its own text** — moves
 > verbatim to
 > [`docs/reference/finished_workstreams.md`](docs/reference/finished_workstreams.md)
-> and its row leaves this table. ⚠️ **Read the lane file before retiring it; do
-> not grep for a ✅.** Most lanes read *"✅ LIVE … NEXT: …"* — live with open
-> work, which is not finished. Session 206 checked the five rows a prior
-> measurement called retirable-with-no-judgment-calls and **four of them carried
-> an explicit open-work list in their own text.**
+> and its row leaves this table.
+>
+> ⚠️ **Do not grep for this; the lint already did.** `lane_retirement_signal`
+> in `kb/_docs_audit.py` runs the test over every lane file with a vocabulary
+> measured from the live corpus, and names any lane whose own text claims no
+> open work. **Today it names none: all 30 lanes have open work** (Session 208,
+> confirmed by reading all 30). Then READ the ones it names — the lint is
+> fail-safe and deliberately never says "retire this".
+>
+> ⚠️ **Hand-grepping this has been wrong every single time it was tried.**
+> Session 206 called five rows retirable-with-no-judgment-calls; four carried an
+> explicit open-work list in their own text. Session 208 then mis-grepped it
+> three more times in one run — anchoring to line-start (0 hits), searching
+> `NEXT` and missing `Next:`, and requiring a trailing colon and missing bare
+> `BLOCKED` — each producing a confident, plausible, wrong list.
 
 | Phase | What | Status |
 |---|---|---|
@@ -813,6 +639,22 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
+
+### SkyThread S208 — the answer key was inside the test (2026-08-29)
+
+**`CLAUDE.md` 62,124 → 49,098 B** (#1389), on Sam's ruling. Rule 9 was a second copy of
+`.claude/commands/checkpoint.md` — **same 34 artifacts**, already drifted (it still said
+`kb-status: candidate`, retired S11). Rule 7 keeps staging-phase + the TOP caveat; invariants
+→ `mid_lifecycle.md`, 73/73 lines verified. ⭐ `unreferenced_offload` is **file-level**, so a
+rule can vanish into an already-pointed-at file — `critical_rule_doctrine` guards 9 PUSH claims.
+⚠️ **Three false greens**: the scenario harness hand-listed its rules (new guard scored NOTHING
+on its own scenarios — then *again* via arity-based discovery); "11 of 11" was one guard firing
+on stub fixtures, **hiding the 2 real gaps**; a wrapped line read as a missing rule.
+⭐ **The probe protocol was VOID** (#1389, CPLBrain#38): rubric + prompts were committed to the
+repo probes clone, and P5's topic phrase matched **exactly one file — its own prompt**. It found
+the test and void-flagged itself. Instruments → vault; `probe_instrument_leak` guards the return.
+**Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
+`lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
 
 ### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
 
