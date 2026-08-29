@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-28T22:29:19.493579+00:00",
+  "scraped_at": "2026-08-29T12:45:15.040387+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27494,
+    "jst": 27524,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -22,17 +22,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1596,
+      "jst": 1603,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1473,
+      "jst": 1487,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1626,
+      "jst": 1635,
       "star": true
     },
     "Moreno Valley College": {

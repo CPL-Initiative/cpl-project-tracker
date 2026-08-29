@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-28T22:29:19.073Z",
+  "scraped_at": "2026-08-29T12:45:14.736Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -93,32 +93,32 @@
         },
         {
           "college": "San Diego City College",
-          "students": 6664,
-          "units": 15150,
-          "avgUnits": 2.273409363745498,
-          "transcriptionRate": 61,
-          "avgTranscribed": 1.3873049219687874,
+          "students": 6678,
+          "units": 15206,
+          "avgUnits": 2.2770290506139563,
+          "transcriptionRate": 60.8,
+          "avgTranscribed": 1.3843965259059599,
           "criteriaMetCount": 3,
-          "militaryStudents": 1473,
+          "militaryStudents": 1487,
           "nonMilitaryStudents": 5201,
           "apprenticeStudents": 0,
-          "savings": 19104110,
-          "yearImpact": 79509604,
+          "savings": 19200990,
+          "yearImpact": 79849356,
           "transcribedUnits": 9245
         },
         {
           "college": "San Diego Mesa College",
-          "students": 5839,
-          "units": 15909.5,
-          "avgUnits": 2.724696009590683,
-          "transcriptionRate": 60,
-          "avgTranscribed": 1.6344408289090597,
+          "students": 5846,
+          "units": 15937.5,
+          "avgUnits": 2.7262230585015397,
+          "transcriptionRate": 59.9,
+          "avgTranscribed": 1.6324837495723572,
           "criteriaMetCount": 3,
-          "militaryStudents": 1596,
+          "militaryStudents": 1603,
           "nonMilitaryStudents": 4249,
           "apprenticeStudents": 0,
-          "savings": 20217267.5,
-          "yearImpact": 83779849,
+          "savings": 20265707.5,
+          "yearImpact": 83949725,
           "transcribedUnits": 9543.5
         },
         {
@@ -138,17 +138,17 @@
         },
         {
           "college": "San Diego Miramar College",
-          "students": 3544,
-          "units": 12848.7,
-          "avgUnits": 3.625479683972912,
-          "transcriptionRate": 49,
-          "avgTranscribed": 1.7750282167042892,
+          "students": 3553,
+          "units": 12880.7,
+          "avgUnits": 3.6253025612158742,
+          "transcriptionRate": 48.8,
+          "avgTranscribed": 1.7705319448353507,
           "criteriaMetCount": 3,
-          "militaryStudents": 1626,
+          "militaryStudents": 1635,
           "nonMilitaryStudents": 1922,
           "apprenticeStudents": 14,
-          "savings": 17865715.5,
-          "yearImpact": 71963137.8,
+          "savings": 17921075.5,
+          "yearImpact": 72157281.8,
           "transcribedUnits": 6290.700000000001
         },
         {
@@ -252,14 +252,14 @@
           "units": 9562,
           "avgUnits": 4.088071825566481,
           "transcriptionRate": 1.4,
-          "avgTranscribed": 0.05643437366395896,
+          "avgTranscribed": 0.05814450619923044,
           "criteriaMetCount": 2,
           "militaryStudents": 1330,
           "nonMilitaryStudents": 1011,
           "apprenticeStudents": 7,
           "savings": 16555380,
           "yearImpact": 58142353,
-          "transcribedUnits": 132
+          "transcribedUnits": 136
         },
         {
           "college": "Coastline Community College",
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,844",
+      "value": "50,874",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,494"
+          "value": "27,524"
         },
         {
           "label": "Workforce/Other",
@@ -1835,7 +1835,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$745M"
+          "value": "$746M"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50844,
-    "Units": 216544.65000000002,
-    "TranscribedUnits": 72558.95,
-    "Savings": 323882530.25,
-    "YearImpact": 1285003687.9,
-    "MilitaryStudents": 27494,
+    "Students": 50874,
+    "Units": 216660.65000000002,
+    "TranscribedUnits": 72562.95,
+    "Savings": 324083210.25,
+    "YearImpact": 1285707459.9,
+    "MilitaryStudents": 27524,
     "NonMilitaryStudents": 23434,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.259001062072222,
-    "TranscribedAverage": 1.4270897254346628
+    "AverageUnits": 4.258769705547039,
+    "TranscribedAverage": 1.4263268074065338
   }
 }
