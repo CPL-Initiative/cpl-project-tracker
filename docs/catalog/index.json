@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 351,
+   "count": 352,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5252,8 +5252,6 @@
      "created": "2026-08-29",
      "governs": [
       "docs/scenarios/README.md",
-      "docs/scenarios/rubric.md",
-      "docs/scenarios/probes/",
       "kb/_doctrine_scenarios.py"
      ],
      "path": "docs/kb-notes/methodology-testing-a-rule-without-cueing-the-answer.md",
@@ -5288,6 +5286,26 @@
      "title": "The feedback queue already knew \u2014 collection is not the bottleneck, triage is",
      "type": "methodology",
      "updated": "2026-08-07"
+    },
+    {
+     "created": "2026-08-29",
+     "governs": [
+      "kb/_docs_audit.py",
+      "kb/_doctrine_scenarios.py",
+      "docs/scenarios/README.md"
+     ],
+     "path": "docs/kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "doctrine",
+      "testing",
+      "evaluation",
+      "session-memory"
+     ],
+     "title": "The instrument may not live inside the system under test",
+     "type": "methodology",
+     "updated": "2026-08-29"
     },
     {
      "created": "2026-08-20",
@@ -11175,8 +11193,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 182,
+   "count": 183,
    "docs": [
+    {
+     "created": "2026-08-29",
+     "governs": [],
+     "n": 209,
+     "path": "docs/session_209_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-209",
+      "doctrine",
+      "probes",
+      "claude-md",
+      "docs-corpus"
+     ],
+     "title": "from SkyThread (Session 208, threading rules to guards)",
+     "type": null,
+     "updated": "2026-08-29"
+    },
     {
      "created": "2026-08-28",
      "governs": [],
@@ -14382,5 +14418,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 727
+ "total": 729
 }

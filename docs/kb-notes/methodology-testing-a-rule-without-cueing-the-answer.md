@@ -9,10 +9,9 @@ related:
   - "[[CLAUDE]]"
   - docs/kb-notes/methodology-context-pressure-is-measurable.md
   - docs/kb-notes/methodology-freshness-tracks-conditionality-not-intent.md
+  - docs/kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md
 artifacts:
   - docs/scenarios/README.md
-  - docs/scenarios/rubric.md
-  - docs/scenarios/probes/
   - kb/_doctrine_scenarios.py
 ---
 
@@ -92,3 +91,29 @@ criteria**. Being wrong about them costs nothing, and it makes a surprise legibl
 *as* a surprise rather than something quietly absorbed into the write-up. It also
 sets a tripwire: if a scenario the author expected to fail comes back clean, the
 first hypothesis is **prompt leakage**, not doctrine strength.
+
+## ⚠️ Update, 2026-08-29 (Session 208) — the protocol was void on first run
+
+This note described the design correctly and it was still not testable, because
+of something the design did not treat as part of itself: **the rubric and all
+five probe prompts were committed to the repository the probes clone.**
+
+The control condition was defined as "`CLAUDE.md`, which auto-loads anyway, plus
+the repo" — and the repo held a 109-line document naming every criterion, plus
+the advance predictions. For probe P5 the topic phrase `comprehensive-vs-carve-out`
+matched **exactly one file in the whole repository, its own prompt**. The probe
+searched for what it had been handed, found the test, and void-flagged itself.
+
+The warning in handoff 207 — *"the likeliest explanation is prompt leakage; re-read
+the probe prompt for a cue"* — looked in the right spirit and the wrong place.
+**The instrument may not live inside the system under test**; the instruments now
+live in the vault, and `probe_instrument_leak` fails if they come back. See
+[`methodology-the-instrument-may-not-live-inside-the-system-under-test`](methodology-the-instrument-may-not-live-inside-the-system-under-test.md).
+
+Two further mechanics, both measured rather than reasoned:
+
+- A session spawned with **no repo** has no `CLAUDE.md` and is a blank session,
+  not a control. Attach the source explicitly.
+- A spawned session's **transcript is not readable** from another session, so
+  P3's criterion (the order of the first six tool calls) is **unmeasured**, not
+  passed.

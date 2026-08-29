@@ -640,6 +640,22 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyThread S208 — the answer key was inside the test (2026-08-29)
+
+**`CLAUDE.md` 62,124 → 49,098 B** (#1389), on Sam's ruling. Rule 9 was a second copy of
+`.claude/commands/checkpoint.md` — **same 34 artifacts**, already drifted (it still said
+`kb-status: candidate`, retired S11). Rule 7 keeps staging-phase + the TOP caveat; invariants
+→ `mid_lifecycle.md`, 73/73 lines verified. ⭐ `unreferenced_offload` is **file-level**, so a
+rule can vanish into an already-pointed-at file — `critical_rule_doctrine` guards 9 PUSH claims.
+⚠️ **Three false greens**: the scenario harness hand-listed its rules (new guard scored NOTHING
+on its own scenarios — then *again* via arity-based discovery); "11 of 11" was one guard firing
+on stub fixtures, **hiding the 2 real gaps**; a wrapped line read as a missing rule.
+⭐ **The probe protocol was VOID** (#1389, CPLBrain#38): rubric + prompts were committed to the
+repo probes clone, and P5's topic phrase matched **exactly one file — its own prompt**. It found
+the test and void-flagged itself. Instruments → vault; `probe_instrument_leak` guards the return.
+**Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
+`lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
+
 ### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
 
 **`CLAUDE.md` 151,484 B → ~60 KB, nothing deleted** (#1381–#1384): §11's 29 lane cells →

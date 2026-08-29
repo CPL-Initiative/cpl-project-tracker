@@ -5,6 +5,8 @@ updated: 2026-08-28
 tags: [handoff, session-206, cpl-funding, ed-code-78093, noncredit, ci]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_209_handoff.md
 ---
 
 # You are Session 206

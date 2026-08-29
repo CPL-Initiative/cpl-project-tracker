@@ -5,6 +5,8 @@ updated: 2026-08-28
 tags: [handoff, session-205, obsidian, docs-corpus, lint, vault]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_209_handoff.md
 ---
 
 # You are Session 205
