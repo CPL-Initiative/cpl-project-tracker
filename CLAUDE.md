@@ -387,8 +387,18 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    `scripts/context-pressure-hook.sh` (PostToolUse, so a long agentic run with
    no human turn still trips it). ⚠️ **Both are inert until installed**, same as
    the stop-hook: `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
-   ~/.claude/context-pressure-hook.sh`, then register it as a `PostToolUse` hook
-   in `~/.claude/settings.json`.
+   ~/.claude/context-pressure-hook.sh`, then add this to `~/.claude/settings.json`
+   (merge into an existing `hooks` block rather than replacing it):
+
+   ```json
+   { "hooks": { "PostToolUse": [ { "matcher": "*", "hooks": [
+       { "type": "command", "command": "~/.claude/context-pressure-hook.sh" }
+   ] } ] } }
+   ```
+
+   Verify with `python3 kb/_context_budget.py` — it should report YOUR live
+   context. An implausible number means the calibration is wrong, and a wrong
+   warning is worse than none.
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
      silently; he may want to spend the runway differently.
