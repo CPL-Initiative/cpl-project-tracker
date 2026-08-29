@@ -5078,3 +5078,29 @@ $8.96M project pool has **no breakdown anywhere**, so that split is Sam's input,
 ⚠️ **I told Sam the CSV had to follow the retired column. Wrong** — the export has no NC rows, so its column is
 the only carrier and deleting it removes the figure. Story `docs/cpl_funding_lessons.md` · handoff
 `docs/session_206_handoff.md`.
+
+---
+
+### SkySolidare S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
+
+**Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
+The vault-facing debt: `kb_note_dialect` **60 → 0**, `american_spelling` **174 → 1** (the one
+left is 203's file), `docs/INDEX.md` **273,616 B → 20,757 B** (was 6.84× its budget). PR #1373.
+⭐ **A FIELD THE RESOLVER NEVER REACHES CAN DISAGREE FOR EVER** — `kb_type_of` returns the type
+tag and stops, so 41 notes carried a `type:` key nothing ever read; **6 disagreed**, silently,
+for months. Audit agreement across every source, never the resolved value.
+⭐ **The index rotted structurally, not sloppily** — 75 workstream docs matched no table so
+sessions appended `## Added <date>` sections, and six KB notes had been appended into the
+**three-lanes table**, two breaking its column count. Generated now, `--check` in CI.
+⚠️ **Moving content out from under a guard disables the guard, and the diff looks like
+progress** — relocating the listings orphaned all 340 notes from `unindexed_kb_note`.
+⚠️ **A checker and a fixer reporting different counts are reading different text** — one
+`prose_only()` now serves both; 25 unactionable findings → 1.
+✅ **Sam, 2026-08-28: "No need to fix any spellings we import…like COCI catalog or MAP Custom
+Reports data"** — generalized to every QUOTED span; 3 of 402 replacements, and it caught Sam
+quoted verbatim. All **3,145** link/wikilink targets byte-identical; 5 British-form FILENAMES
+deliberately not renamed (a filename is an identifier).
+⚠️ **`tests/docs_audit_test.py` — 67 assertions guarding the whole prose surface — had never
+run in CI.** Now wired in.
+**NEXT: `CLAUDE.md` at 2.49× its always-loaded budget** — held only to avoid colliding with 203.
+Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_205_handoff.md`.

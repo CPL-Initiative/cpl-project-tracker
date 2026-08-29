@@ -204,9 +204,58 @@ written**, per Sam's standing rule on Supabase.
 0 over their new 12,000 B budget, largest 5,825 B. `stacked_roadmap_cell` guards
 both surfaces. `docs_audit` 73/73, `docs_index_build` 31/31.
 
+### 2026-08-29 addendum — the consolidation had broken the rule that makes checkpoints fire
+
+Sam asked whether this consolidation had damaged a rule the way an earlier one
+did. **It had, three times, all the same shape** — and then a fourth, which he
+found himself.
+
+⚠️ **Rule 9's own checkpoint list still named only the three 2026-07-10
+pare-downs.** #1382 updated `.claude/commands/checkpoint.md` and left the rule
+describing the old arrangement. **The slash command is the PULLED path and fires
+only when someone types it; Rule 9 is the PUSHED path and fires unprompted** — so
+a checkpoint run from the rule would have refreshed the pointer table and left all
+30 lane files to go stale. `docs/INDEX.md`'s offload table said the same. And
+`docs/reference/statute/` — the texts the whole §55050 lane drafts against — was
+reachable from scripts but from **nothing `CLAUDE.md` points at**.
+
+⚠️ **Then the formatting rules.** Sam: *"make sure that formatting preferences are
+also preserved and properly prioritized."* **"PLAIN WORDS, NO GLYPHS" had been in
+`CLAUDE.md`** — inside the §11 Admin row — and the consolidation relocated that row
+to a lane file, carrying the rule out entirely. **Zero occurrences remained.** It
+had already failed the same way once: `cpl_memory` row
+`a-recorded-rule-is-not-an-applied-rule` records it being written to memory on
+2026-08-14 while the Admin tab shipped covered in emoji that week.
+
+⭐ **The problem was structural: presentation rules were never a CLASS.** Scattered
+across a §11 row, the engineering practices, the naming conventions and
+`cpl_memory`, so any relocation could carry one off unnoticed. They now have one
+home — `## Presentation rules — EVERY view we ship` — with First Light,
+accessibility and mobile split into three bullets rather than one, because Sam
+names them as three concerns and a rule buried inside another rule is weaker.
+
+⭐ **Where formatting rules belong, since it will come up again.** `CLAUDE.md`, not
+`cpl_memory`. Four formatting rulings are already in the memory table and
+`verified` — and the glyph rule still shipped broken. **Memory is the record, not
+the enforcement**; ~21% of verified rows fit the briefing budget, so a rule there
+can be present and silently unread. The escalation that works is **always-loaded →
+lint → CI**. ⚠️ **Do not build an emoji lint**: the site deliberately uses 📋, 🧭
+and ⚖️, all named in `CLAUDE.md`, so it would need an allowlist and emit findings
+nobody can action.
+
+⚠️ **Four false passes while building `presentation_doctrine`**, each the shape of
+the bug it guards: searching the whole file was satisfied by the section's own
+**post-mortem naming the lost rule**; patterns keyed on "NO GLYPHS" missed the
+bullet's own "NOT GLYPHS"; bare `accessib`/`mobile-friendly` were satisfied by
+**Sam's quote inside the First Light bullet**, so either rule could have been
+deleted in full; and the synthetic fixture passed while the live file failed,
+because the fixture had no quotation in it. **The suite runs against the real
+`CLAUDE.md` now**, deleting each live bullet and asserting exactly one topic is
+reported.
+
 ### Next concrete step
 
 Retire the lanes that genuinely are finished — a per-row read of all 29 against
-the now-written test (no `NEXT`, no `NEEDS SAM`, no `BLOCKED`), which is a real
-worklist rather than the five the old measurement named. Then Sam's call on the
-`scope` vocabulary.
+the written test (no `NEXT`, no `NEEDS SAM`, no `BLOCKED`). Then Sam's ruling on
+the `cpl_memory.scope` vocabulary, and his call on how strict the no-emoji rule
+should be.

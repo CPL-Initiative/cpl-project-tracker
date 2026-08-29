@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-73 document(s).
+74 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -87,6 +87,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [SUBJ4 Canonicalization Re-Mint — Decisions & Lessons (Phase 1e)](../subj4_canonicalization_remint_lessons.md) | `subj4_canonicalization_remint_lessons.md` | 2026-05-23 |  |
 | [Subject/discipline cleanup lessons — mis-mint detection + blank-discipline pre-seed](../subject_discipline_cleanup_lessons.md) | `subject_discipline_cleanup_lessons.md` | 2026-07-13 |  |
 | [Team phrase & site access — workstream lessons](../team_phrase_lessons.md) | `team_phrase_lessons.md` | 2026-08-12 | 2026-08-12 |
+| [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-08-29 |
 | [Title 5 §55050 — conforming the regulation to Ed. Code Article 9 (lessons)](../t5_55050_lessons.md) | `t5_55050_lessons.md` | 2026-08-26 | 2026-08-26 |
 | [TMC Builder — workstream lessons](../tmc_builder_lessons.md) | `tmc_builder_lessons.md` | 2026-06-16 |  |
 | [Unified Courses Trust-Card Auditor — Decisions & Lessons](../unified_courses_audit_lessons.md) | `unified_courses_audit_lessons.md` | 2026-05-23 |  |

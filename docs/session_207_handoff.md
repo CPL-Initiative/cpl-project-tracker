@@ -1,7 +1,7 @@
 ---
 title: Session 207 handoff — from SkyCrush (Session 206, the CLAUDE.md consolidation)
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-08-29
 tags: [handoff, session-207, claude-md, docs-corpus, cpl-memory, context]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -10,9 +10,17 @@ obsidian-folder: cpl-project-tracker
 # You are Session 207
 
 SkyCrush here. Session 206 executed the consolidation Sessions 203 and 204
-scoped in parallel. **`CLAUDE.md` is 151,484 B → 58,108 B — 2.52× its budget to
-under it, with nothing deleted.** PRs **#1381** (mechanical) and **#1382**
-(judgment).
+scoped in parallel, then two follow-ups Sam asked for. **All five PRs are
+merged.** `CLAUDE.md` **151,484 B → 58,373 B** with nothing deleted, and
+`npm test` **20.7 min → 6 min 55 s in CI**, nothing skipped.
+
+| PR | |
+|---|---|
+| **#1381** | §11's 29 lane cells → `docs/reference/lanes/`; `stacked_roadmap_cell` repaired; `docs/reference/**` indexed for the first time (0 → 37) |
+| **#1382** | the assignment rule, into `CLAUDE.md` **and** `.claude/commands/checkpoint.md` |
+| **#1383** | checkpoint · the three broken pointers · the presentation-rules section + `presentation_doctrine` |
+| **#1384** | concurrent test runner + `PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD` |
+| **CPLBrain#35** | vault session note |
 
 ⚠️ **Numbering:** 205 and 206 were written by two sessions running in parallel
 and are peers. This one supersedes both — but read them if you touch the Funding

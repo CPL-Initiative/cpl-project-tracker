@@ -752,53 +752,32 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkySolidare S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
+### SkyCrush S206 — six rules that stopped firing when they moved (2026-08-28)
 
-**Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
-The vault-facing debt: `kb_note_dialect` **60 → 0**, `american_spelling` **174 → 1** (the one
-left is 203's file), `docs/INDEX.md` **273,616 B → 20,757 B** (was 6.84× its budget). PR #1373.
-⭐ **A FIELD THE RESOLVER NEVER REACHES CAN DISAGREE FOR EVER** — `kb_type_of` returns the type
-tag and stops, so 41 notes carried a `type:` key nothing ever read; **6 disagreed**, silently,
-for months. Audit agreement across every source, never the resolved value.
-⭐ **The index rotted structurally, not sloppily** — 75 workstream docs matched no table so
-sessions appended `## Added <date>` sections, and six KB notes had been appended into the
-**three-lanes table**, two breaking its column count. Generated now, `--check` in CI.
-⚠️ **Moving content out from under a guard disables the guard, and the diff looks like
-progress** — relocating the listings orphaned all 340 notes from `unindexed_kb_note`.
-⚠️ **A checker and a fixer reporting different counts are reading different text** — one
-`prose_only()` now serves both; 25 unactionable findings → 1.
-✅ **Sam, 2026-08-28: "No need to fix any spellings we import…like COCI catalog or MAP Custom
-Reports data"** — generalized to every QUOTED span; 3 of 402 replacements, and it caught Sam
-quoted verbatim. All **3,145** link/wikilink targets byte-identical; 5 British-form FILENAMES
-deliberately not renamed (a filename is an identifier).
-⚠️ **`tests/docs_audit_test.py` — 67 assertions guarding the whole prose surface — had never
-run in CI.** Now wired in.
-**NEXT: `CLAUDE.md` at 2.49× its always-loaded budget** — held only to avoid colliding with 203.
-Story `docs/obsidian_vault_hygiene_lessons.md` · handoff `docs/session_205_handoff.md`.
-
-### SkyCrush S206 — the consolidation, and three guards that were not looking (2026-08-28)
-
-**`CLAUDE.md` 151,484 B → 58,006 B — 2.52× its budget to 0.97×, nothing deleted** (#1381
-mechanical, #1382 judgment). §11's 29 lane cells → `docs/reference/lanes/`; the Obsidian
-wiring, the branch-policy evidence and the UI-practice evidence → `docs/reference/`.
+**`CLAUDE.md` 151,484 B → 59,954 B, nothing deleted** (#1381 mechanical · #1382 the rule ·
+#1383 the repairs · #1384 test speed). §11's 29 lane cells → `docs/reference/lanes/`; the
+Obsidian wiring and the branch/UI **evidence** → `docs/reference/`.
 ⭐ **Sam's assignment rule is the whole lever** — *push what a session cannot know to ask
-for, pull everything else* — now the second thing in the file, plus
-`.claude/commands/checkpoint.md`, because a mechanism changed without its instruction
-regrows. ⭐ **Split a section, don't relocate it whole**: branch policy is entirely PUSH at
-the level of the rule and almost entirely PULL at the level of the evidence, so 8,227 →
-3,304 B kept every operative rule and reads better.
-⚠️ **The inherited "5 rows retire with no judgment calls" was wrong** — four carry an
-explicit NEXT/Open list in their own text and the fifth is invariants, not history.
-**Nothing was retired**; the test is now written down.
-⚠️ **THREE guards were not looking.** `stacked_roadmap_cell` hard-coded `rel ==
-"CLAUDE.md"`; it also skipped rows with <4 pipes, so the **two largest cells in the table**
-exempted themselves (one missing a trailing pipe, one with pipes in a code span); and
-**`docs/reference/**` had NEVER been indexed** — every index lane globs `docs/*.md`, which
-is flat, so the pare-down files this file tells sessions to read were invisible (0 → 37).
-⚠️ **Two new assertions passed for the wrong reason** until the divergent case was built.
-⚠️ **`cpl_memory.scope` is 68 of 652 rows with an uncontrolled vocabulary**, 25 duplicating
-the row's own tags — recommended, not written. Story `docs/obsidian_vault_hygiene_lessons.md`
-· handoff `docs/session_207_handoff.md`.
+for, pull everything else* — and **split a section, don't relocate it whole**: branch policy
+is PUSH at the level of the rule, PULL at the level of the evidence, so 8,227 → 3,304 B kept
+every operative rule and reads better.
+⚠️ **SIX guards/rules stopped firing because content moved, and every diff looked like
+progress.** `stacked_roadmap_cell` hard-coded `rel == "CLAUDE.md"` and skipped rows with
+<4 pipes, so the **two largest cells exempted themselves**; **`docs/reference/**` had NEVER
+been indexed** (every lane globs a flat `docs/*.md` — 0 → 37); **Rule 9 still named only the
+three 2026-07-10 pare-downs**, so a checkpoint would have left all 30 lane files to rot; and
+**"PLAIN WORDS, NO GLYPHS" left the file entirely** with the row that carried it — a rule
+that had *already* failed the same way once via `cpl_memory`. Now: a `## Presentation rules`
+section (First Light · accessible · mobile · plain words) + `presentation_doctrine` and
+`unreferenced_offload` lints, each broken on purpose and watched to fail.
+⚠️ **THREE symptoms named the wrong thing** (npm, #1384): pipe truncation reported as *"176
+checks stopped running"* (a child ending in `process.exit()` loses its buffer — 3,179 of
+20,000 lines), a deleted `require` hid behind a green `node --check`, and a fixture's stale
+dependency list read as failing assertions. **`npm test` 20.7 → 6.9 min in CI**, nothing
+skipped; *"serialize the heavy family"* was killed by measurement (28 files = 78%).
+⚠️ **`cpl_memory.scope`: 68 of 652 rows, uncontrolled vocabulary**, 25 duplicating the row's
+own tags — recommended, **not written**. Stories `docs/obsidian_vault_hygiene_lessons.md` ·
+`docs/test_suite_speed_lessons.md` · handoff `docs/session_207_handoff.md`.
 
 ## Troubleshooting
 

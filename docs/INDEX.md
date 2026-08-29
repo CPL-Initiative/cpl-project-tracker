@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-08-28
+updated: 2026-08-29
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 4 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 347 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 73 | [`catalog/lessons.md`](catalog/lessons.md) |
+| KB notes | 348 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| Lessons docs | 74 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 75 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 39 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 182 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **720** | |
+| **total** | **722** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-08-28 (SkyCrush, S206)** — the **`CLAUDE.md` consolidation**: **151,484 B → 58,108 B**, 2.52× its always-loaded budget to under it, with nothing deleted (#1381 mechanical, #1382 judgment). §11's 29 lane cells → [`reference/lanes/`](reference/lanes/), leaving a pointer row; the Obsidian wiring, branch-policy evidence and UI-practice evidence → `reference/`. Sam's **assignment rule** (*push what a session cannot know to ask for; pull everything else*) written into `CLAUDE.md` **and** `.claude/commands/checkpoint.md`. ⚠️ **Three guards were not looking**: `stacked_roadmap_cell` hard-coded `rel == "CLAUDE.md"`; it skipped rows with <4 pipes, so **the two largest cells in the table exempted themselves**; and **`docs/reference/**` had never been indexed at all** — every lane globs `docs/*.md`, which is flat (0 → 37 docs, new `Reference (pull-side)` lane). ⚠️ The inherited *"5 rows retire with no judgment calls"* was wrong — four carry open work in their own text; **nothing was retired**. 1 KB note, 5 memory rows. SkyLens S203's narrative archived.
+- **2026-08-29 (SkyCrush, S206 — final)** — the **`CLAUDE.md` consolidation**, all five PRs merged (#1381–#1384, CPLBrain#35): **151,484 B → 58,373 B**, nothing deleted. §11's 29 lane cells → [`reference/lanes/`](reference/lanes/); Sam's **assignment rule** (*push what a session cannot know to ask for; pull everything else*) into `CLAUDE.md` **and** `checkpoint.md`. ⚠️ **Six rules/guards stopped firing because content moved** — `stacked_roadmap_cell` keyed to a filename; **`docs/reference/**` never indexed at all** (0 → 37, every lane globs a flat `docs/*.md`); Rule 9 still naming the 2026-07-10 pare-downs, so a checkpoint would have left 30 lane files to rot; and **"PLAIN WORDS, NO GLYPHS" carried out of the file entirely** — a rule that had already failed the same way once via `cpl_memory`. New `## Presentation rules` section + `presentation_doctrine` and `unreferenced_offload` lints. ⚠️ **`npm test` 20.7 → 6.9 min in CI** with three symptoms that named the wrong thing (pipe truncation reported as 176 disabled rules). 2 KB notes, 8 memory rows. SkySolidare S204's narrative archived.
 - **2026-08-28 (SkyLens, S203, Funding lane)** — the curator round trip is **proven**: Sam clicked Publish and his three relabels reached Supabase (md5 `9cf58b99…` → `c95e78aa…`). Curation narrowed to a magic-link reviewer (#1372, ⚠️ `cfp_insert_self` deliberately left open); the **Ed. Code §78093.2(d)(1) spine** landed with Timing as its own section (#1375); the `NC $` column retired and every institution paired as CR + NC rows (#1378). Three KB notes. Corrected three inherited claims — CI was never broken (a **conflicted PR cannot produce a `pull_request` run**), the story corpus is 32/3 not 5, and the $8.96M project pool has no breakdown anywhere. SkyLens S202's narrative archived.
 - **2026-08-28 (SkySolidare, S204)** — this page is **generated** now (`kb/_build_docs_index.py`, `--check` in CI): 273,616 B → 20,757 B, per-lane listings moved to [`catalog/`](catalog/). Also 340 KB-note frontmatters canonicalized (`kb_note_dialect` 60 → 0, incl. 6 notes silently disagreeing about their own type) and the British-spelling sweep applied (`american_spelling` 174 → 1). #1373.
 - **2026-08-28 (SkyLens, S202, refresh)** — the gate fix was half a fix: a local overlay survives sign-in and masks shared, so Sam's relabels never landed; plus the sign-in dropdown closing on any click. 3 more KB notes / memory rows.
