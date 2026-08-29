@@ -252,3 +252,80 @@ cap — splitting it is the documented fix, with precedent.
 **SkyCrush**, given by Sam at the start of the run. Yours is open.
 
 **Next is Session 208 — `docs/session_208_handoff.md`.**
+
+---
+
+## ⚠️ The probes: you are the EXPERIMENTER, not the subject
+
+Sam asked the sharp question that reframes this whole lane:
+
+> *"Can your handoff set up the next session to check our scenarios against
+> rules only rather than cueing up the next session with cheater context?"*
+
+He is right that a handoff-fed session cannot test the rules — **and you are a
+handoff-fed session.** By the time you read this you know about `presentation_
+doctrine`, the assignment rule, Rule 9a and the six scenarios. Your answers to
+them are worth nothing as evidence.
+
+So **do not answer the scenarios yourself.** Your job is to run them on sessions
+that have not read this file.
+
+**The protocol is committed:** [`docs/scenarios/README.md`](scenarios/README.md).
+The short version:
+
+| Role | Gets | Job |
+|---|---|---|
+| **You** | this handoff, full context | spawn probes, score them, fix what fails |
+| **Probe** | `CLAUDE.md` (auto-loads anyway) + one realistic prompt | just does the task |
+
+`CLAUDE.md` is the honest control — it is what every session gets for free.
+
+**Run them in this order, and do not skip step 0:**
+
+0. **Read [`docs/scenarios/rubric.md`](scenarios/rubric.md) and do not edit it.**
+   It was committed *before* any probe ran, precisely so the scorer (you, or me,
+   equally contaminated) cannot retrofit expectations to results. It also carries
+   SkyCrush's advance predictions — clearly marked as **not criteria**. If a
+   result contradicts a prediction, the prediction was wrong; the rubric stands.
+1. Spawn one fresh session per probe, pasting **only** the quoted block from
+   `docs/scenarios/probes/<p>.md`. One probe per session — a probe asked two
+   scenarios learns from the first.
+2. Score HIT/MISS against the rubric. Record the session id.
+3. **Report holes, not a score.** A pass is weak evidence (a capable session
+   reaches good behavior without the rule); a fail is strong evidence. "5/6
+   passed" is not a coverage number and must not be written as one.
+
+**P6 needs the repo staged** so `checkpoint_overdue` genuinely fires — verify
+with `python3 kb/_docs_audit.py` before running it, or it measures nothing.
+
+Two scenarios are **not probeable cold** and that is recorded, not hidden:
+context pressure at 600K (a fresh session has none — handled mechanically
+instead, below) and sign-out staleness (probeable only via the staged repo).
+
+## Rule 9a — the compact warning (INSTALL IT, it is inert until you do)
+
+We auto-compacted at **786,077 tokens** with the checkpoint 150K stale. Rule 9's
+trigger had said Claude Code *"doesn't expose an exact counter; use proxies."*
+**That premise was false.** The exact counter is in the session transcript every
+turn, and `compactMetadata.preTokens` records every compaction.
+
+- `kb/_context_budget.py` — reads it in ~50 ms, self-calibrates its ceiling from
+  compactions the transcript has actually seen. Run it any time.
+- `scripts/context-pressure-hook.sh` — PostToolUse hook so it fires unprompted.
+  **Install like the stop-hook:** `cp scripts/context-pressure-hook.sh ~/.claude/
+  && chmod +x ~/.claude/context-pressure-hook.sh`, then register it as a
+  `PostToolUse` hook in `~/.claude/settings.json`.
+- **WARN ≤110,000 left** → finish the thought, full `/checkpoint`, tell Sam the
+  number. **EMERGENCY ≤50,000** → reduced checkpoint, no permission-asking.
+
+Thresholds are a **sum of measured costs**, not a round multiple: a checkpoint
+cost 49,723 and the worst single turn 50,425. The first draft used "2×
+checkpoint" = 100,000 and its own test caught it — short by 336 tokens. Replayed
+against the real failure it warns **10 human turns** early and stays quiet at
+633,409 where Sam had just checkpointed. Story:
+[`methodology-context-pressure-is-measurable`](kb-notes/methodology-context-pressure-is-measurable.md).
+
+⚠️ **Do not "verify" the meter by trusting this handoff.** Run
+`python3 kb/_context_budget.py` on your own session — it should report your live
+context. If it reports something implausible, the calibration is wrong and the
+warning is worse than none.

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 348,
+   "count": 350,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2030,6 +2030,26 @@
      "updated": "2026-08-12"
     },
     {
+     "created": "2026-08-29",
+     "governs": [
+      "CLAUDE.md",
+      ".claude/commands/checkpoint.md",
+      "kb/_doctrine_scenarios.py"
+     ],
+     "path": "docs/kb-notes/methodology-freshness-tracks-conditionality-not-intent.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "docs-corpus",
+      "guards",
+      "checkpoint",
+      "memory"
+     ],
+     "title": "A store's freshness tracks whether its update is unconditional",
+     "type": "methodology",
+     "updated": "2026-08-29"
+    },
+    {
      "created": "2026-08-08",
      "governs": [
       "map_student_credit"
@@ -3011,6 +3031,27 @@
      "title": "Consolidating near-duplicate course identities within one credential (the ordinal rule)",
      "type": "methodology",
      "updated": "2026-06-04"
+    },
+    {
+     "created": "2026-08-29",
+     "governs": [
+      "kb/_context_budget.py",
+      "scripts/context-pressure-hook.sh",
+      "tests/context_budget_test.py",
+      "CLAUDE.md"
+     ],
+     "path": "docs/kb-notes/methodology-context-pressure-is-measurable.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "session-memory",
+      "checkpoint",
+      "tooling",
+      "observability"
+     ],
+     "title": "Context pressure is measurable \u2014 the counter was on disk the whole time",
+     "type": "methodology",
+     "updated": "2026-08-29"
     },
     {
      "created": "2026-06-09",
@@ -14276,5 +14317,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 722
+ "total": 724
 }

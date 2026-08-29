@@ -38,6 +38,12 @@ Deep reference already offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · `lanes/` (see the stubs below).
 
+**Skills** (`.claude/skills/`) are pull-side too, triggered by their own
+`description` rather than by a pointer: **exhibit-canonicalization** (collapsing
+freehand MAP exhibit titles into unified credential names) and
+**obsidian-markdown**. They are named here because a store nobody names is a
+store nobody finds — `unreferenced_offload` flags any that stop being.
+
 ---
 
 ## Critical Rules (do not violate)
@@ -236,11 +242,19 @@ finished_workstreams · `lanes/` (see the stubs below).
    (its only mutation — never the authoritative one, idempotent). Rationale +
    the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   Roughly every ~100K tokens of context
-   consumed in a session (heuristic — Claude Code doesn't expose an exact
-   counter; use proxies: long conversations with many tool calls, large file
-   reads, multi-phase strategic work), pause and update **every** artifact below
-   — none are optional, all sync to the user's Obsidian via the repo:
+   **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
+   newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
+   original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
+   an exact counter; use proxies" — a condition no session could act on, and
+   whose premise was FALSE besides (Rule 9a: the counter is on disk)** —
+   the same defect that left `04-projects/` 41 days stale behind *"when the run
+   worked inside a project folder"*. Handoffs land every 1–3 commits normally
+   (median 2, p90 5), so 6 fires on the tail. The heuristic still applies between
+   runs of the lint — long conversations, many tool calls, multi-phase work.
+   ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
+   a checkpoint under pressure on 2026-08-29 I named 2 of these 13 artifacts and
+   hand-waved the rest, and the answer looked competent. Update **every**
+   artifact below — none are optional, all sync to the user's Obsidian:
    - **`docs/reference/lanes/<lane>.md` — THE USUAL CHECKPOINT EDIT (2026-08-28).**
      Each §11 roadmap lane's state lives in its own file; **§11's table is a
      POINTER INDEX**. Refresh the LANE FILE with what this run learned — same
@@ -363,6 +377,65 @@ finished_workstreams · `lanes/` (see the stubs below).
    user can trigger a checkpoint at any time with the **`/checkpoint`**
    slash command (`.claude/commands/checkpoint.md`).
 
+9a. **Context pressure is MEASURABLE — warn Sam BEFORE the compact instead of
+   discovering it after.** Claude Code writes the exact live context size to the
+   session transcript every turn (`message.usage`: `input_tokens` +
+   `cache_read_input_tokens` + `cache_creation_input_tokens`), and writes
+   `compactMetadata.preTokens` at every compaction. `kb/_context_budget.py`
+   reads it in ~50 ms and self-calibrates its ceiling from any compaction the
+   transcript has actually seen. **The hook is what makes it fire** —
+   registered as a **PostToolUse** hook, so a long agentic run with no human turn
+   still trips it. ⚠️ **It is inert until installed.**
+
+   **Windows** (Sam's machine) — run once, idempotent, backs up `settings.json`
+   and merges rather than replacing:
+
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File scripts\install-context-hook.ps1
+   ```
+
+   **macOS/Linux** — `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
+   ~/.claude/context-pressure-hook.sh`, then add this **to the CONTENTS of
+   `~/.claude/settings.json`** (a file to edit — ⚠️ NOT a command to paste into a
+   shell; pasted into PowerShell it errors with *"Unexpected token ':'"*, which
+   is how Sam met it on 2026-08-29), merging into any existing `hooks` block:
+
+   ```json
+   { "hooks": { "PostToolUse": [ { "matcher": "*", "hooks": [
+       { "type": "command", "command": "~/.claude/context-pressure-hook.sh" }
+   ] } ] } }
+   ```
+
+   ⚠️ **The hook logic lives in `kb/_context_budget.py --hook`, NOT in the shell
+   script** — the `.sh` is a wrapper and Windows skips it entirely. The first
+   version did the work in bash with `jq`; Windows has neither, and a hook that
+   cannot parse its input fails *silently*, which is indistinguishable from a
+   quiet session. That is the very failure this tool exists to prevent, and the
+   installer would have reintroduced it.
+
+   Verify with `python3 kb/_context_budget.py` — it should report YOUR live
+   context. An implausible number means the calibration is wrong, and a wrong
+   warning is worse than none.
+   - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
+     FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
+     silently; he may want to spend the runway differently.
+   - **EMERGENCY — ≤50,000 tokens left.** Room for ONE checkpoint and nothing
+     else. **Do not ask permission** — a compaction mid-question loses the
+     answer. Write ONLY: **`docs/session_<N+1>_handoff.md`** (stating it was an
+     emergency checkpoint and naming which of Rule 9's 13 artifacts were NOT
+     refreshed) · the **lane files this run actually moved** · the **`cpl_memory`
+     rows** · **commit + push**. Everything else defers to the next session —
+     which is exactly why the handoff has to name it.
+
+   ⚠️ **Both thresholds are measured, not chosen.** A full checkpoint cost
+   49,723 tokens; the worst single turn cost 50,425. WARN is their SUM plus
+   slack, because a round "2× checkpoint" (100,000) does not fit the two things
+   the warning buys time for — it misses by 336 tokens, and a threshold that
+   fires with the runway already gone is the original bug wearing a number.
+   Derivation, the per-turn distribution, and the replay proving this would have
+   fired **10 human turns** before the 2026-08-29 compaction:
+   [`docs/kb-notes/methodology-context-pressure-is-measurable.md`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
+
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
    rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read
    at write-time, re-measure any queue/worklist staged earlier in the session,
@@ -400,9 +473,11 @@ finished_workstreams · `lanes/` (see the stubs below).
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
   `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
-  in a code span.** Bare, the sweeper rewrites it: this list read *"while (not
-  while) · among (not among)"* for weeks, because `american_spelling` corrected
-  the very words the rule was documenting. `prose_only()` masks code spans, so
+  in a code span.** Bare, the sweeper rewrites it: this list read
+  `while (not while)` · `among (not among)` for weeks, because `american_spelling`
+  corrected the very words the rule was documenting — and a bare quotation of the
+  corruption trips `self_corrected_word_pair` in turn, so even the POST-MORTEM
+  needs the backticks. `prose_only()` masks code spans, so
   backticks are what make a word-list entry survive its own lint. **Rendered UI text first**, then
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not

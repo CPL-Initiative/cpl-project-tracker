@@ -62,6 +62,15 @@ jobs:
       # python; same non-required check.
       - name: Doctrine lookup lint (kb/doctrine.py)
         run: python3 tests/doctrine_lookup_test.py
+      # Context-pressure meter (Session 206) — this session auto-compacted at
+      # 786,077 tokens with the checkpoint 150K stale, because Rule 9's trigger
+      # said "Claude Code doesn't expose an exact counter; use proxies". It
+      # does, in the transcript. The guard pins that the WARN threshold still
+      # fits a heavy turn AND a full checkpoint (the first draft missed by 336
+      # tokens) and that announce-once never becomes announce-never. Pure
+      # stdlib; same non-required check.
+      - name: Context-pressure meter (kb/_context_budget.py)
+        run: python3 tests/context_budget_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
       # source and a target; the merge-target loop never skipped those, and 340
