@@ -38,6 +38,12 @@ Deep reference already offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · `lanes/` (see the stubs below).
 
+**Skills** (`.claude/skills/`) are pull-side too, triggered by their own
+`description` rather than by a pointer: **exhibit-canonicalization** (collapsing
+freehand MAP exhibit titles into unified credential names) and
+**obsidian-markdown**. They are named here because a store nobody names is a
+store nobody finds — `unreferenced_offload` flags any that stop being.
+
 ---
 
 ## Critical Rules (do not violate)

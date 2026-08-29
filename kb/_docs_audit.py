@@ -530,6 +530,42 @@ def rule_presentation_doctrine(entry):
     }
 
 
+# ── self_corrected_word_pair ─────────────────────────────────────────────────
+# WHY (2026-08-29): `american_spelling` rewrote `whilst` and `amongst` INSIDE the
+# parenthetical that existed to name them, leaving "while (not while) · among
+# (not among)" in the always-loaded file for weeks. The sentence still scans, so
+# a reader skims past it as a formatting oddity rather than a destroyed rule, and
+# NOTHING can flag it by spelling — both halves are correct American English.
+#
+# The general shape: any document that teaches a transformation contains examples
+# of that transformation's INPUT, which is exactly what the transformation eats.
+# Style guides, lint docs and glossaries are all self-consuming this way. The fix
+# is to put the named form in a code span (prose_only masks those); this rule is
+# how you find out you forgot.
+SELF_CORRECTED_RE = re.compile(r"\b(\w{3,})\b\s*\(\s*not\s+\1\s*\)", re.I)
+
+
+def rule_self_corrected_word_pair(entry):
+    """A word pair that now names the same word on both sides."""
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    hits = [m.group(0) for m in SELF_CORRECTED_RE.finditer(text)]
+    if not hits:
+        return None
+    return {
+        "rule": "self_corrected_word_pair",
+        "fixable": False,
+        "detail": {"hits": hits[:8], "count": len(hits)},
+        "message": (
+            f"{len(hits)} word pair(s) name the same word on both sides: "
+            f"{', '.join(hits[:3])}. A normalizer corrected the form the rule "
+            f"existed to NAME — put the named form in a code span, which "
+            f"`prose_only()` masks, or it will be eaten again on the next sweep."),
+    }
+
+
 # ── unreferenced_offload ─────────────────────────────────────────────────────
 # WHY (added 2026-08-28, Session 206, the hour after the consolidation shipped):
 # moving content into `docs/reference/` is only half the move. The other half is
@@ -559,12 +595,31 @@ def rule_unreferenced_offload(entry, root):
         text = read(entry["path"])
     except Exception:
         return None
+    # ⚠️ No early return on a missing docs/reference/: skills and commands are
+    # offloads in their own right, and a repo can have those without it. The
+    # first cut returned here and scored "a SKILL nobody points at" as caught by
+    # NOTHING in kb/_doctrine_scenarios.py — the exact gap the extension was for.
     ref_root = os.path.join(root, REFERENCE_DIR)
-    if not os.path.isdir(ref_root):
-        return None
 
     targets = []
-    for name in sorted(os.listdir(ref_root)):
+    # `.claude/skills/` and `.claude/commands/` are offloads too — a skill is
+    # PULL content reached by a trigger, exactly like a reference doc. Added
+    # 2026-08-29 after `kb/_doctrine_scenarios.py` scored "a SKILL nobody points
+    # at" as caught by NOTHING, while the M-ID re-mint rules were about to be
+    # moved into one.
+    for extra in (".claude/skills", ".claude/commands"):
+        ed = os.path.join(root, extra)
+        if not os.path.isdir(ed):
+            continue
+        for name in sorted(os.listdir(ed)):
+            sub = os.path.join(ed, name)
+            if os.path.isdir(sub) and any(f.endswith(".md") for f in os.listdir(sub)):
+                if name not in text:
+                    targets.append(f"{extra}/{name}/")
+            elif name.endswith(".md") and os.path.splitext(name)[0] not in text:
+                targets.append(f"{extra}/{name}")
+
+    for name in (sorted(os.listdir(ref_root)) if os.path.isdir(ref_root) else []):
         full = os.path.join(ref_root, name)
         if os.path.isdir(full):
             # a directory counts only when it actually holds prose
@@ -594,7 +649,7 @@ def rule_unreferenced_offload(entry, root):
         return (f"reference/{stem}" in hop
                 or f"reference/{os.path.splitext(stem)[0]}" in hop)
 
-    missing = [n for n in targets if not referenced(n)]
+    missing = [n for n in targets if n.startswith(".claude/") or not referenced(n)]
     if not missing:
         return None
     return {
@@ -1159,7 +1214,8 @@ def main():
                   rule_unindexed_kb_note(e, index_text),
                   rule_stacked_roadmap_cell(e),
                   rule_unreferenced_offload(e, ROOT),
-                  rule_presentation_doctrine(e)):
+                  rule_presentation_doctrine(e),
+                  rule_self_corrected_word_pair(e)):
             if f:
                 f["path"] = e["rel"]
                 findings.append(f)

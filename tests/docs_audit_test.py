@@ -437,6 +437,65 @@ _sh.rmtree(_d)
 check("unreferenced offload: ignores docs that are not CLAUDE.md",
       da.rule_unreferenced_offload({"rel": "docs/other.md", "path": __file__}, ".") is None)
 
+# ── self_corrected_word_pair ──────────────────────────────────────────────
+# The sweeper ate its own rule: `american_spelling` rewrote `whilst`/`amongst`
+# INSIDE the parenthetical that named them, leaving "while (not while)" in the
+# always-loaded file for weeks. Nothing could flag it by spelling — both halves
+# are correct American English.
+def _tmp_md(body):
+    fd, path = _tf.mkstemp(suffix=".md"); _os.write(fd, body.encode()); _os.close(fd)
+    return {"rel": "CLAUDE.md", "path": path}
+
+_corrupt = _tmp_md("Use while (not while) and among (not among) in prose.")
+_f = da.rule_self_corrected_word_pair(_corrupt)
+check("self-corrected pair: fires when both sides name the same word",
+      _f is not None and _f["detail"]["count"] == 2)
+_os.unlink(_corrupt["path"])
+
+# The fix is a code span, because prose_only() masks those. This asserts the FIX
+# is recognised, not merely that the corruption is — a guard that flags the
+# repaired form too would just get muted.
+_fixed = _tmp_md("Use while (not `whilst`) and among (not `amongst`) in prose.")
+check("self-corrected pair: silent once the named form is in a code span",
+      da.rule_self_corrected_word_pair(_fixed) is None)
+_os.unlink(_fixed["path"])
+
+_ok = _tmp_md("Use color (not colour) and behavior (not behaviour).")
+check("self-corrected pair: silent on a healthy pair naming two DIFFERENT words",
+      da.rule_self_corrected_word_pair(_ok) is None)
+_os.unlink(_ok["path"])
+
+# ── unreferenced_offload now covers .claude/skills/ ───────────────────────
+# A skill is PULL content reached by a trigger, exactly like a reference doc —
+# and `.claude/skills/` sits outside the corpus walk (0 of 732 files), so a
+# skill nobody points at was invisible. Found by kb/_doctrine_scenarios.py while
+# the M-ID re-mint rules were about to be moved into one.
+_d, _e = _repo_with({}, "# CLAUDE\nno mention of any skill.\n")
+_os.makedirs(_os.path.join(_d, ".claude", "skills", "mid-remint"), exist_ok=True)
+open(_os.path.join(_d, ".claude", "skills", "mid-remint", "SKILL.md"),
+     "w", encoding="utf-8").write("# M-ID re-mint\n")
+_u = da.rule_unreferenced_offload(_e, _d)
+check("unreferenced offload: a skill CLAUDE.md never names is a finding",
+      _u is not None and any("mid-remint" in m for m in _u["detail"]["missing"]))
+_sh.rmtree(_d)
+
+# ⚠️ It must find that WITHOUT docs/reference/ existing. The first cut returned
+# early when that directory was absent, so the skills check never ran at all.
+# ⚠️ Built WITHOUT docs/reference/ on purpose. `_repo_with` always creates that
+# directory, so using it here would have made this test pass no matter what --
+# which is exactly what happened on the first cut: the early return was restored
+# and the suite stayed green.
+_d2 = _tf.mkdtemp()
+_os.makedirs(_os.path.join(_d2, ".claude", "skills", "mid-remint"), exist_ok=True)
+open(_os.path.join(_d2, ".claude", "skills", "mid-remint", "SKILL.md"),
+     "w", encoding="utf-8").write("# M-ID re-mint\n")
+_cp2 = _os.path.join(_d2, "CLAUDE.md")
+open(_cp2, "w", encoding="utf-8").write("# CLAUDE\nno mention of any skill.\n")
+_u2 = da.rule_unreferenced_offload({"rel": "CLAUDE.md", "path": _cp2}, _d2)
+check("unreferenced offload: finds an unnamed skill even with NO docs/reference/",
+      _u2 is not None and any("mid-remint" in m for m in _u2["detail"]["missing"]))
+_sh.rmtree(_d2)
+
 # ── presentation_doctrine ─────────────────────────────────────────────────
 # Sam, 2026-08-28: make sure the formatting preferences are preserved and
 # properly prioritized. They are the purest PUSH case in the corpus — nobody
