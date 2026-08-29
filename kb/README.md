@@ -203,7 +203,7 @@ nothing kept the docs honest, and the docs corpus is the larger of the two.
 Wired as **step 0 of `/checkpoint`** so its findings shape what the checkpoint
 writes rather than arriving after.
 
-Nine rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
+Eleven rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
 `session_<N>_handoff.md` below the highest, so search can filter them),
 `oversized_doc` (per-LANE budgets — an always-loaded file, a KB note and a
 lessons doc have different economics), `stacked_roadmap_cell` (a §11 cell that
@@ -215,6 +215,33 @@ a changelog), `unindexed_kb_note` (satisfied by `docs/INDEX.md` **or any
 `docs/catalog/*.md` INDEX links to** — reachability is the invariant, not a
 filename), and `vault_heavy_path` (emits a paste-able Obsidian
 `userIgnoreFilters` block from what is actually on disk).
+
+⚠️ **Two rules added 2026-08-28 (Session 206), both guarding a RELOCATION.**
+Moving content is only half a move; the other half is the pointer left behind,
+and a missing pointer is silent by construction — the offloaded file is fine, the
+always-loaded file is fine, and only the LINK between them is gone.
+
+- **`unreferenced_offload`** — an offload under `docs/reference/` that
+  `CLAUDE.md` never names. It exists because the consolidation itself got this
+  wrong: Rule 9's checkpoint list still named only the three 2026-07-10
+  pare-downs after 30 lane files had moved. **Reachability is the invariant, not
+  a direct mention** — one hop through a doc `CLAUDE.md` points at counts, the
+  same standard `unindexed_kb_note` applies. ⚠️ It matches the PATH, never the
+  bare directory name: the first cut tested for `lanes` and passed on a
+  deliberately broken file, because `CLAUDE.md` says *"Three doc lanes in this
+  repo"* for an unrelated reason.
+- **`presentation_doctrine`** — a rule governing what a human LOOKS AT that has
+  left the always-loaded file. *"PLAIN WORDS, NO GLYPHS"* has now been lost twice
+  the same way: recorded in `cpl_memory` on 2026-08-14 while the Admin tab
+  shipped covered in emoji that week, then carried out of `CLAUDE.md` entirely
+  when a §11 row was relocated. ⚠️ It reads the rule BULLETS only — searching the
+  whole file was satisfied by the section's own *post-mortem naming the lost
+  rule*. ⚠️ Patterns anchor on directive-only phrasing (`AA 4.5`, `focus-visible`,
+  `single column below`), never on words a neighbouring rule might quote: bare
+  `accessib` and `mobile-friendly` were satisfied by Sam's QUOTE inside the First
+  Light bullet, so either rule could have been deleted in full. The suite runs
+  the check against the REAL `CLAUDE.md`, deleting each live bullet in turn and
+  asserting exactly one topic is reported.
 
 ⚠️ **`stacked_roadmap_cell` guards TWO surfaces since 2026-08-28** — §11's
 pointer table in `CLAUDE.md` *and* every lane file under
@@ -232,7 +259,7 @@ Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
 frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
 stamp) and the scan excludes its own output directory, so two runs on the same
 day are byte-identical and never dirty the tree. Guarded by
-`tests/docs_audit_test.py` (67 checks). Run: `python3 kb/_docs_audit.py`.
+`tests/docs_audit_test.py` (91 checks). Run: `python3 kb/_docs_audit.py`.
 
 ⚠️ `prose_only()` lives here and defines what counts as PROSE — code spans,
 markdown link targets, wikilinks, `*.md` filenames and QUOTED spans are masked.
