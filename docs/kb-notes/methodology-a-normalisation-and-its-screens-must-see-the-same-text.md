@@ -118,3 +118,44 @@ is easy to reintroduce and costs nothing until it costs a muted lint.
 ⭐ **The tell is a checker and a fixer disagreeing about the size of the
 backlog.** If the thing that reports the work and the thing that does the work
 return different counts, they are reading different text.
+
+---
+
+## A normalizer will correct its own documentation (2026-08-29)
+
+A third instance, and the sharpest: **`american_spelling` rewrote the very words
+the rule was documenting.** `CLAUDE.md`'s word list was written as
+
+> `while (not whilst) · among (not amongst)`
+
+and the sweeper corrected the British forms *inside the parenthetical that
+existed to name them*, leaving
+
+> `while (not while) · among (not among)`
+
+which is not a rule, it is noise. It sat that way for weeks, in the
+always-loaded file, and nobody caught it — the sentence still scans, and a
+reader skims past it as a formatting oddity rather than a destroyed rule.
+
+**The general shape:** a normalizer cannot see the difference between *using* a
+form and *naming* one. Any document that teaches a transformation contains, by
+necessity, examples of the input — which is exactly what the transformation
+consumes. Style guides, lint docs, migration notes and glossaries are all
+self-consuming in this way.
+
+**The fix is to put the named form somewhere the mask already excludes.**
+`prose_only()` masks code spans, so backticks make a word-list entry survive its
+own lint:
+
+```
+while (not `whilst`) · among (not `amongst`)
+```
+
+Verified by running the fixer: **0 replacements**. Before the backticks it would
+have eaten them again on the next sweep.
+
+⚠️ **The detection problem is worse than the fix.** This was found only by
+diffing a pre-consolidation file against its successors and reading the
+unmatched spans — nothing flags `X (not X)`, because both halves are correctly
+spelled American English. If you add a word-list entry, backtick the foreign
+form the same day; there is no lint that will tell you later.
