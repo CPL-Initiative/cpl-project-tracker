@@ -157,6 +157,38 @@ else is 252 files in 277s; the median file is 1.1s.
   a silent pass for the exact bug the file exists to catch. Every wait is
   time-bounded and the check total is asserted.
 
+⚠️ **Three more bugs surfaced only in full end-to-end runs, all mine, and each
+symptom named the wrong thing.** Targeted tests were green throughout.
+
+1. **PIPES TRUNCATE.** `console.log` to a pipe is asynchronous, so a child
+   ending in `process.exit()` discards whatever is still buffered. `spawnSync`
+   never saw it — the parent was blocked, the OS pipe filled, and the child
+   blocked on write rather than getting ahead. Measured on a child printing
+   20,000 lines then exiting: **pipe delivered 3,179, a file descriptor
+   delivered 20,000.** It surfaced as `cip_crosswalk.test.js` reporting 178 of
+   354 assertions, which the check-ledger called *"176 checks stopped running"*
+   — the signal that is supposed to mean a rule was silently disabled. Every
+   assertion had run. Children write to a temp file now.
+2. **`node --check` PARSES; it does not resolve references.** A rewrite deleted
+   the limiter's `require`, `--check` stayed green, and the runner died at
+   startup having run **zero** tests. A parse check is not a smoke test.
+3. **`check_ledger.test.js` copies the runner into a fixture with a HAND-LISTED
+   set of `lib/` dependencies**, which did not include the new `lib/limiter.js`.
+   The copied runner died on `MODULE_NOT_FOUND`, surfacing as four failing
+   ledger assertions rather than "the fixture is missing a file". It copies the
+   whole directory now — a dependency list inside a test is a second copy of
+   `run.js`'s requires and will drift again.
+
+✅ **CI confirmed the speedup, and my worry that it would not was wrong.** The
+GitHub run executed all 282 files in **~8.5 minutes including `npm install`**
+(against 20.7 min serial), failing only on bug 3 above. `cip_crosswalk` passed
+there too, which independently confirms the file-descriptor fix off this
+sandbox. The runner now prints its chosen width and the machine's RAM as its
+first line, because a slow CI run was otherwise indistinguishable from a serial
+one. **Next lever if more speed is wanted:** `cpl_funding_render` is 3,825 MB
+against ~2,100 MB for the rest of the family and alone forces the conservative
+cap — splitting it is the documented fix, with precedent.
+
 ## Your queue
 
 1. **Retire the lanes that genuinely are finished.** A per-row read of all 29
