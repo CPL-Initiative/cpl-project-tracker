@@ -61,7 +61,21 @@ Do not summarize it back into this file: `CLAUDE.md` tells every session the
 newest handoff is authoritative, so a handoff describing the experiment hands it
 to its own subjects.
 
-## ⭐ Six changes for SAM to rule on (do not implement unasked)
+## ⭐ Sam RULED on these 2026-08-29 — A, B, C, D, F approved; E held
+
+⚠️ **Approved means approved to BUILD. None is implemented.** The ruling is in
+`cpl_memory` as `sam-approved-five-doctrine-remediations-2026-08-29`
+(`verified`, `verified_by` Sam) — Rule 8 says query memory before working.
+
+**E is still open**, and Sam asked for the implications first. The advice given:
+prefer **required-but-conditional-fast** — one job that always runs and executes
+the suite only when the diff touches JS/tests/generators. ⚠️ `paths-ignore`
+CANNOT be used on a required check: a skipped required check never reports and
+blocks the PR forever, so the conditional must be inside an always-run job.
+⚠️ **And gating PRs does not protect `main` from the daily cron**, which commits
+straight to `main` while Pages serves from it — E closes the smaller path.
+⭐ The economics changed: #1384 took the suite from 20.7 min to ~8.5 min, so
+gating is affordable now in a way it was not a week ago.
 
 | | | evidence |
 |---|---|---|
