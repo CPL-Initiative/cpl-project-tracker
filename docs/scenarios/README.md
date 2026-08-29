@@ -102,8 +102,9 @@ the repository a probe clones. So the control condition included, for free, a
 plus the advance predictions.
 
 The leak is not subtle. A probe's most natural first action is to search for the
-topic it was just handed, and for P5 the phrase `comprehensive-vs-carve-out`
-matched **exactly one file in the entire repository — its own probe prompt**, and
+topic it was just handed, and for P5 its distinctive topic phrase (held in the vault, deliberately
+not repeated here) matched **exactly one file in the entire repository — its own
+probe prompt**, and
 nothing else. P5 found it, recognized it was inside a test, and void-flagged its
 own result. Two probe runs were discarded.
 

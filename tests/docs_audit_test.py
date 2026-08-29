@@ -749,6 +749,38 @@ check("probe instrument leak: docs/scenarios/README.md alone is fine",
       da.rule_probe_instrument_leak(_d) is None)
 _sh.rmtree(_d, ignore_errors=True)
 
+# ── probe topic quoted in a doc about the probes ──────────────────────────
+# The post-mortem re-leaked the thing: within an hour of moving the instruments
+# out, the write-ups EXPLAINING the leak had put a probe's topic phrase back on
+# main in four files -- in documents that also say what the probe is scored on.
+check("probe instrument leak: no doc about the probes quotes a probe topic",
+      da.rule_probe_instrument_leak(ROOT) is None)
+
+_d = _tf.mkdtemp()
+_os.makedirs(_os.path.join(_d, "docs", "scenarios"))
+_wp = _os.path.join(_d, "docs", "scenarios", "writeup.md")
+# A doc that discusses the probes AND quotes a topic phrase -> must fire.
+open(_wp, "w").write(
+    "# The probe rubric leak\nP5's scenario turned on the "
+    "comprehensive-vs-carve-out split, which matched one file.\n")
+_f = da.rule_probe_instrument_leak(_d)
+check("probe topic quote: fires on a probe write-up that reproduces the phrase",
+      bool(_f) and _f["detail"]["topic_quoted_in"] == ["docs/scenarios/writeup.md"])
+
+# The SAME phrase in a doc that is not about the probes is real content, not a
+# leak. `relevel bands` and friends belong to the ESL lane and must stay legible.
+open(_wp, "w").write(
+    "# ESL relevel\nThe comprehensive-vs-carve-out split is decided before "
+    "banding.\n")
+check("probe topic quote: does NOT fire on genuine content outside a probe doc",
+      da.rule_probe_instrument_leak(_d) is None)
+
+# And the lint must not itself contain the secrets it detects.
+_src = open(_os.path.join(ROOT, "kb", "_docs_audit.py"), encoding="utf-8").read()
+check("probe topic quote: the lint stores hashes, never the phrases",
+      not da._probe_topic_hits(_src))
+_sh.rmtree(_d, ignore_errors=True)
+
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
             "summary": {"files": 1, "bytes": 10, "over_budget": 0, "handoff_max": 130,
