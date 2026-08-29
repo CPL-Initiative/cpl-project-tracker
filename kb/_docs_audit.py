@@ -455,6 +455,60 @@ def _flat(s):
     return re.sub(r"\s+", " ", s)
 
 
+# ── probe_instrument_leak ────────────────────────────────────────────────────
+# WHY (2026-08-29, Session 208): the doctrine-probe protocol was committed to
+# the repository the probes clone. A probe gets `CLAUDE.md` plus the repo — the
+# honest control condition — and the repo held `docs/scenarios/rubric.md` (109
+# lines: every pass criterion for all five probes, plus the advance predictions)
+# and all five probe prompts.
+#
+# The leak is not subtle. A probe's most natural first action is to search for
+# the topic it was handed, and for P5 the phrase `comprehensive-vs-carve-out`
+# matched EXACTLY ONE FILE in the whole repository — its own probe prompt. P5
+# found it, recognized it was inside a test, and void-flagged its own result.
+#
+# Handoff 207 anticipated leakage but located it in the PROMPT ("re-read the
+# probe prompt for a cue"). It was in the REPOSITORY.
+#
+# The instruments now live in the private vault
+# (`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`), which probe sessions
+# do not clone. The tracker keeps only docs/scenarios/README.md — the method,
+# which names no criterion and is reusable knowledge.
+#
+# ⚠️ This rule exists because the natural repair for "the docs reference a file
+# that isn't here" is to put the file back, and doing so silently re-breaks
+# every future probe. THE INSTRUMENT MAY NOT LIVE INSIDE THE SYSTEM UNDER TEST.
+PROBE_INSTRUMENT_PATHS = (
+    r"docs/scenarios/rubric\.md",
+    r"docs/scenarios/probes/",
+)
+
+
+def rule_probe_instrument_leak(root):
+    """A probe rubric or prompt has reappeared in the repo probes clone."""
+    hits = []
+    for rel in ("docs/scenarios/rubric.md",):
+        if os.path.isfile(os.path.join(root, rel)):
+            hits.append(rel)
+    pdir = os.path.join(root, "docs", "scenarios", "probes")
+    if os.path.isdir(pdir):
+        hits.append("docs/scenarios/probes/")
+    if not hits:
+        return None
+    return {
+        "rule": "probe_instrument_leak", "fixable": False,
+        "detail": {"paths": hits},
+        "message": (
+            f"Probe instrument(s) present in the repo probes clone: "
+            f"{', '.join(hits)}. A probe searching for the topic it was handed "
+            f"finds the document describing the test — measured 2026-08-29, "
+            f"where one probe's topic phrase matched its own prompt and nothing "
+            f"else. The rubric and prompts belong in the private vault at "
+            f"`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; keep only "
+            f"`docs/scenarios/README.md` (the method) here."),
+    }
+
+
 # ── lane_retirement_signal ───────────────────────────────────────────────────
 # WHY (2026-08-29, Session 208): §11's preamble states the retirement test as
 # three literal tokens — "no NEXT, no NEEDS SAM, no BLOCKED in the row's own
@@ -1473,6 +1527,11 @@ def main():
 
     vault_findings, vault_stats = scan_vault_weight(ROOT)
     findings.extend(vault_findings)
+
+    leak = rule_probe_instrument_leak(ROOT)
+    if leak:
+        leak["path"] = "docs/scenarios/"
+        findings.append(leak)
 
     quiet_lanes = rule_lane_retirement_signal(ROOT)
     if quiet_lanes:

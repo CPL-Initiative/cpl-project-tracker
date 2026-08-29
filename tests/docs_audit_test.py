@@ -724,6 +724,31 @@ if _os.path.isdir(_LANES):
               da.rule_lane_retirement_signal(_d) is None)
     _sh.rmtree(_d, ignore_errors=True)
 
+# ── probe_instrument_leak ─────────────────────────────────────────────────
+check("probe instrument leak: clean once the rubric lives in the vault",
+      da.rule_probe_instrument_leak(ROOT) is None)
+
+_d = _tf.mkdtemp()
+_os.makedirs(_os.path.join(_d, "docs", "scenarios"))
+open(_os.path.join(_d, "docs", "scenarios", "rubric.md"), "w").write("# rubric\n")
+_f = da.rule_probe_instrument_leak(_d)
+check("probe instrument leak: fires when the rubric returns to the repo",
+      bool(_f) and "docs/scenarios/rubric.md" in _f["detail"]["paths"])
+
+_os.makedirs(_os.path.join(_d, "docs", "scenarios", "probes"))
+_f = da.rule_probe_instrument_leak(_d)
+check("probe instrument leak: fires on a probes/ directory too",
+      bool(_f) and "docs/scenarios/probes/" in _f["detail"]["paths"])
+
+# The METHOD may stay — only the instruments leak. A rule that also flagged
+# README.md would push the methodology out of the corpus for no benefit.
+_sh.rmtree(_os.path.join(_d, "docs", "scenarios", "probes"))
+_os.unlink(_os.path.join(_d, "docs", "scenarios", "rubric.md"))
+open(_os.path.join(_d, "docs", "scenarios", "README.md"), "w").write("# method\n")
+check("probe instrument leak: docs/scenarios/README.md alone is fine",
+      da.rule_probe_instrument_leak(_d) is None)
+_sh.rmtree(_d, ignore_errors=True)
+
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
             "summary": {"files": 1, "bytes": 10, "over_budget": 0, "handoff_max": 130,

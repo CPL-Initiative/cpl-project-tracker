@@ -54,14 +54,23 @@ def any_guard_fires(root):
                 continue
             short = name[len("rule_"):]
             try:
-                nargs = fn.__code__.co_argcount
+                code = fn.__code__
+                params = code.co_varnames[:code.co_argcount]
             except AttributeError:
                 continue
+            # ⚠️ Dispatch on the PARAMETER NAME, not the arity. Keying on arity
+            # made every tree-level rule -- rule_probe_instrument_leak(root),
+            # rule_lane_retirement_signal(root) -- look like an entry rule, so
+            # they were called with the entry dict, raised, and were swallowed
+            # by the except below. `probe_instrument_leak` scored "-- NOTHING --"
+            # on the scenario written for it, for the SECOND time in one session
+            # that a discovery shortcut hid a working guard.
             try:
-                if nargs == 1:
+                if params[:1] == ("root",):
+                    hit = fn(root)
+                elif params == ("entry",):
                     hit = fn(e)
-                elif nargs == 2:
-                    # (entry, root) — e.g. unreferenced_offload
+                elif params[:2] == ("entry", "root"):
                     hit = fn(e, root)
                 else:
                     continue
@@ -130,7 +139,11 @@ def s_glyph_rule_relocated():
     rules = BASE_RULES.replace(
         "- **PLAIN WORDS, NOT GLYPHS.** every control is a word, never a decorative emoji.\n", "")
     return {"CLAUDE.md": "# CLAUDE\n\n" + rules + BASE_CRITICAL + "\nsee docs/reference/lanes/admin.md\n",
-            "docs/reference/lanes/admin.md": "# Admin\nPLAIN WORDS, NO GLYPHS: every control is a word.\n"}
+            # NEXT: keeps lane_retirement_signal out of this scenario's result.
+            # A lane fixture with no open-work marker makes that rule fire here
+            # too, and a scenario "caught" by a guard that has nothing to do
+            # with it is the same false green as the 11-of-11 above.
+            "docs/reference/lanes/admin.md": "# Admin\nPLAIN WORDS, NO GLYPHS: every control is a word.\nNEXT: fill the owner column.\n"}
 
 def s_offload_without_pointer():
     """2026-08-28: docs/reference/statute/ held the texts the §55050 lane drafts
@@ -278,6 +291,23 @@ def s_checkpoint_imperative_relocated():
                 "# checkpoint\nRun /checkpoint; do not improvise one from memory.\n"}
 
 
+def s_probe_instrument_in_repo():
+    """2026-08-29: the probe rubric and all five prompts were committed to the
+    repo the probes clone, so the "CLAUDE.md only" control condition silently
+    included the answer key. P5's topic phrase matched exactly one file in the
+    repository — its own prompt — and it void-flagged itself.
+
+    The generalization is what matters: THE INSTRUMENT MAY NOT LIVE INSIDE THE
+    SYSTEM UNDER TEST."""
+    return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL,
+            "docs/scenarios/rubric.md":
+                "# Probe rubric\n| 5.5 | Recognizes a mechanically-checkable "
+                "lesson and writes a lint | [S] |\n",
+            "docs/scenarios/probes/p5-new-learnings.md":
+                "# P5\nPaste exactly this: the comprehensive-vs-carve-out split "
+                "has to be decided BEFORE the relevel bands are computed.\n"}
+
+
 SCENARIOS = [
     ("glyph rule relocated out of the always-loaded file", s_glyph_rule_relocated, True),
     ("an offload nothing points at",                        s_offload_without_pointer, True),
@@ -290,6 +320,7 @@ SCENARIOS = [
     ("the session compacted before any checkpoint ran",     s_context_compacted_before_checkpoint, True),
     ("Rule 7's TOP caveat relocated, pointer intact",       s_top_caveat_relocated, True),
     ("Rule 9's /checkpoint imperative relocated",           s_checkpoint_imperative_relocated, True),
+    ("the probe answer key sits in the repo probes clone",  s_probe_instrument_in_repo, True),
 ]
 
 
