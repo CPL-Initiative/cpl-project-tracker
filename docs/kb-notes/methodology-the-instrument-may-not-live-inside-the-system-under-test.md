@@ -178,6 +178,16 @@ check so the description is out of range — never rely on remembering not to qu
   Two probes were wasted this way; one burned $5.04 flailing in an empty
   sandbox. Inheriting a parent session's *environment* does not inherit its
   *repos*: attach the source explicitly.
+- ⛔ **The blast-radius guard destroyed the only channel a probe has back.** Both
+  probes were told *"no push credentials — leave your work in the working tree."*
+  That was false (they had credentials), and it was also the **wrong instruction**:
+  a spawned session's transcript is unreadable from another session, and so is
+  its working tree. **A probe's only channel back to the experimenter is a PR.**
+  The probe that ignored the guard and pushed produced the best findings of the
+  run; the probe that complied produced **nothing scoreable at all** — $17.44,
+  idle, unreadable. Tell a probe to commit and open a PR; the diff and the PR
+  body *are* the result. If blast radius is the worry, remove the **merge**
+  capability, not the push.
 - **A spawned session's transcript is not readable from inside another session.**
   Any criterion scored on the *order of tool calls* therefore cannot be scored
   that way. A human opens the transcript, or the criterion is recorded
