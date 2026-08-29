@@ -23,6 +23,51 @@ regression to fix blind. Rule 9a already had its PULL half moved out to
 what remains is a judgment call about which rules are genuinely PUSH, and it
 wants a fresh head rather than more compression under budget pressure.
 
+## ⚠️ Restoring lost steps WITHOUT re-inflating — read this before you start
+
+Sam, 2026-08-29: *"we will need to be careful in the next session to add back in
+the lost steps from the consolidation while preserving the consolidation and new
+threading."* The two failure modes pull opposite ways — restore by re-inflating
+and you undo the consolidation; restore from memory and you miss what is still
+orphaned. Do neither. Measure.
+
+**First: content loss is mostly NOT the problem.** A shingle check of every
+imperative line in the pre-consolidation `CLAUDE.md` (`git show 781c426:CLAUDE.md`,
+151,484 B) against today's reachable corpus:
+
+| | |
+|---|---|
+| old imperative lines examined | 93 |
+| still in `CLAUDE.md` | 33 |
+| moved into `docs/` (correct PULL) | 50 |
+| not found anywhere | 9 — **and at least 3 are false positives** |
+
+The false positives are line-rewraps (`Range-paginated`, the `*Prior:*` rule) and
+narrative that correctly went to `docs/roadmap_archive.md`, which that corpus did
+not search. **Redo it with the archive and lessons docs included before drawing
+any conclusion** — the honest read today is that the consolidation held.
+
+⭐ **Second, and this is the actual gap: five of the six broken guards were NOT
+content loss.** Their text was perfectly intact. `stacked_roadmap_cell` hard-coded
+a filename; `docs/reference/**` had never been indexed; Rule 9 still named the
+2026-07-10 pare-downs. Only the glyph rule genuinely vanished. So a shingle audit
+answers *"is the text still there"* — the **wrong question for five of six.**
+
+The right question is **"does anything still point at it or enforce it?"** That
+instrument does not exist. Building it is what Sam means by *threading*:
+
+- for each rule, is there a **guard** (a `kb/_docs_audit.py` rule), a **trigger**
+  (something that fires unprompted), or an explicit note that it relies on being
+  read?
+- `unreferenced_offload` does this at FILE level. The gap is **rule level**.
+- Score any candidate against `kb/_doctrine_scenarios.py` **before** building it —
+  that is what stopped the last session moving 5 KB of M-ID rules into a
+  directory with no guard.
+
+⚠️ **Do not restore by pasting text back into `CLAUDE.md`.** Sam has already ruled
+it stays overweight pending a proper PUSH/PULL pass. Anything genuinely lost gets
+placed by the assignment rule, not by where it used to live.
+
 **Your three carryovers, in priority order:**
 
 1. **Run the probes.** This is the only thing that answers Sam's actual question.
