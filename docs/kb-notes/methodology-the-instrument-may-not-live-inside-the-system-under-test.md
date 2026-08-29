@@ -90,6 +90,35 @@ The same shape recurs wherever a check and its subject share a store:
 Ask, before running any evaluation: **what can the subject read that I did not
 intend to hand it?**
 
+## The leak scales with how good the disguise is
+
+Measured across the two probes that actually ran, searching `main` as a probe
+would:
+
+| probe | its distinctive topic phrase | files matched | its own prompt among them |
+|---|---|---:|---|
+| **P5** | `comprehensive-vs-carve-out` | **1** | **yes — the only hit** |
+| **P2** | `Implementation Funding tab` | 24 | yes, 1 of 24 |
+| **P2** | `allocation table` | 5 | no |
+
+P5 leaked catastrophically and P2 barely at all, and the reason is uncomfortable:
+**P5 was the better-designed probe.** Its scenario was specific, novel, and
+phrased in vocabulary the corpus did not already contain — exactly what the
+protocol's own first rule ("disguise the scenario") asks for. P2 described a
+surface documented in 24 other files, so its prompt was buried in real content.
+
+So the effort that makes a probe realistic and novel is the same effort that
+makes its prompt the **unique** match for its own topic. **The better the
+disguise, the louder the leak** — which means this failure gets worse, not
+better, as the protocol improves. It cannot be mitigated by writing more careful
+prompts; only by moving the instrument out.
+
+⚠️ It also means **contamination is not all-or-nothing, and a contaminated run is
+not uniformly worthless.** A *pass* under leak is void. A *failure* under leak is
+**stronger** evidence than a clean failure would be: the session had the criteria
+available and still did not meet them. Score contaminated runs asymmetrically,
+and say which they are.
+
 ## Corollaries measured the same day
 
 - **A session spawned with no repository is not a control condition** — it has no
