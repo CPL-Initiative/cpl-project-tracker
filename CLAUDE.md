@@ -395,7 +395,10 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    ```
 
    **macOS/Linux** — `cp scripts/context-pressure-hook.sh ~/.claude/ && chmod +x
-   ~/.claude/context-pressure-hook.sh`, then merge into `~/.claude/settings.json`:
+   ~/.claude/context-pressure-hook.sh`, then add this **to the CONTENTS of
+   `~/.claude/settings.json`** (a file to edit — ⚠️ NOT a command to paste into a
+   shell; pasted into PowerShell it errors with *"Unexpected token ':'"*, which
+   is how Sam met it on 2026-08-29), merging into any existing `hooks` block:
 
    ```json
    { "hooks": { "PostToolUse": [ { "matcher": "*", "hooks": [
