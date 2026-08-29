@@ -198,6 +198,14 @@ function runOne(f) {
 }
 
 async function main() {
+// Say what was chosen and why. Without this a slow CI run is indistinguishable
+// from a serial one: the cap is derived from the RUNNER's RAM, so the same
+// commit legitimately runs 4-wide on a 16 GB machine and 1-wide on a small one,
+// and nothing in the log would tell you which happened.
+console.log("runner: " + files.length + " file(s), concurrency " + CONCURRENCY +
+  " (" + os.cpus().length + " cpu, " +
+  Math.round(os.totalmem() / (1024 * 1024)) + " MB RAM" +
+  (process.env.TEST_CONCURRENCY ? ", TEST_CONCURRENCY set" : "") + ")");
 const limit = makeLimiter(Math.max(1, Math.min(CONCURRENCY, files.length)));
 const pending = {};
 for (const f of files) pending[f] = limit(() => runOne(f));

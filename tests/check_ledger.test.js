@@ -89,8 +89,17 @@ block("(3)", function () {
   const tdir = path.join(tmp, "tests");
   fs.mkdirSync(path.join(tdir, "lib"), { recursive: true });
   fs.copyFileSync(path.join(__dirname, "run.js"), path.join(tdir, "run.js"));
-  fs.copyFileSync(path.join(__dirname, "lib", "check_ledger.js"),
-    path.join(tdir, "lib", "check_ledger.js"));
+  // Copy the WHOLE lib/, not a named list. This broke once already: run.js
+  // gained `lib/limiter.js` when the runner went concurrent (2026-08-28), the
+  // fixture still copied only check_ledger.js, and the copied runner died on
+  // MODULE_NOT_FOUND — which reads as four failing ledger assertions rather
+  // than "the fixture is missing a file". A dependency list maintained by hand
+  // in a test is a second copy of run.js's requires, and it will drift again.
+  for (const f of fs.readdirSync(path.join(__dirname, "lib"))) {
+    if (f.endsWith(".js")) {
+      fs.copyFileSync(path.join(__dirname, "lib", f), path.join(tdir, "lib", f));
+    }
+  }
 
   // A fixture shaped like the real corpus: it counts what it ran and prints the
   // house summary line. SKIP=1 removes two checks the way a selector that stops
