@@ -13,18 +13,74 @@ SkyThread here. Two PRs:
 [cpl-project-tracker#1389](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1389)
 and [samueltlee/CPLBrain#38](https://github.com/samueltlee/CPLBrain/pull/38).
 
-## The doctrine-probe lane — state is in the VAULT, not here
+## ⭐ The doctrine question is ANSWERED — with a control
 
-⚠️ **Deliberate.** A handoff in this repo is readable by any session that clones
-it, and `CLAUDE.md` tells every session the highest-numbered handoff is
-authoritative — so a handoff that describes the experiment hands the experiment
-to its own subjects. That is the same defeat-by-diligence the lane already found
-one level down, and it cost this session a run before it was noticed.
+**Sam's goal was: do our always-loaded rules actually fire?** Four of his six
+scenarios ran as **matched pairs** — same prompt, same model, one arm on `main`
+and one on a clone with `CLAUDE.md` removed.
 
-**Everything about that lane — what was found, what is blocked, what to run next,
-and the instruments themselves — is in
-`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.** Read it there before
-touching the lane. Do not summarize it back into this file.
+| scenario | doctrine | control | gap |
+|---|---|---|---|
+| S1 — 600K, no checkpoint | **8/8** | 3/8 | **5** |
+| S2 — revising a tab | **8.5/9** | **1.5/9** | **7** |
+| S6 — signing out | **6/7** | 2/7 | **4** |
+| S4 — integrating tab | ~5.5/7 | void (ablation failed) | — |
+
+⭐ **Every point of difference is specific mechanical action, never judgment.**
+Both arms wanted to save the work and close cleanly; only the doctrine arm knew
+to measure context, say the number, lint first, run `/checkpoint` rather than
+improvise, edit the lane file not the §11 row, and sign off with moniker + next
+handoff number. **That is the PUSH/PULL rule validated empirically.**
+
+⭐ **Doctrine does a SECOND job nobody had named: it suppresses
+plausible-but-wrong defaults.** S2's control proposed *"including dark mode if
+the app supports it"* against `CLAUDE.md:414` (*"a light identity with no dark
+PAGE palette"*). A capable session would build that while believing it was best
+practice. **A miss is visible as absence; a wrong default arrives looking like
+competence**, and nothing catches it.
+
+⚠️ **Consequence: "the control produces it free" is NOT sufficient grounds to cut
+a rule.** If the control produces a near-miss or an opposite, the rule is doing
+suppression work and stays.
+
+⚠️ **MY ABLATION FAILED — repair before reusing.** Removing `CLAUDE.md` does not
+remove the doctrine: the S4 control ran 23 commands and **rebuilt Rules 1–10 from
+~400 citations across `docs/`**, so its comparison is void. S1/S2/S6 controls
+were fast and did not dig — treat as sound but unproven. Ablate by using a
+scenario the corpus does not document, or strip citations too.
+⚠️ **Delete the S208 control branch and do not reuse it** — the vault names it;
+it is listed there rather than here because **its own name encodes a probe's
+topic**, which `probe_instrument_leak` caught in the first draft of this very
+paragraph. Name the next one neutrally.
+⚠️ It also found a real corpus defect: **rule numbering disagrees across
+citations** (Supabase safety cited as both Rule 9 and Rule 10).
+
+**Everything else about this lane — criteria, all results, the compiled strategy —
+is in `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.** Read it there.
+Do not summarize it back into this file: `CLAUDE.md` tells every session the
+newest handoff is authoritative, so a handoff describing the experiment hands it
+to its own subjects.
+
+## ⭐ Six changes for SAM to rule on (do not implement unasked)
+
+| | | evidence |
+|---|---|---|
+| **A** | Build a **dependency map** — dataset → consuming tabs | ⭐ BOTH arms independently named it THE miss |
+| **B** | **Widen Rule 10 beyond `kb_curation`** — it is table-scoped, so a tab writing to activities/`map_users` is generalizing, not following | verified in the file |
+| **C** | A **rollback path for DATA writes** — `git revert` covers code only | verified |
+| **D** | Route a new write surface through **Governance + privacy ADRs** | control only |
+| **E** | Decide whether **`js-tests` should gate** — non-required while the required check is a secret scanner; with merge-on-`unstable` a cross-tab regression can reach Pages | control |
+| **F** | Fix **rule-number drift** across citations | ablation finding |
+
+## Your queue
+
+1. **Run S3 and S5** — criteria already committed in the vault. **S3.1 is the cell
+   to watch**: the `cpl_memory` read step has no guard, so a *treatment* MISS
+   there is a genuine hole. Encouraging: S2's treatment led with it unprompted.
+2. **Repair the ablation**, then re-test against whatever Sam rules on A–F.
+3. ⚠️ **P5 stays BLOCKED** — its premise is false at the commit, so a passing run
+   fabricates `cpl_memory` rows about work nobody did, and memory promotes to
+   `verified` on second-session corroboration.
 
 ## A real bug, found incidentally and independently confirmed
 

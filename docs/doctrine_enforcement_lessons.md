@@ -207,3 +207,63 @@ answer key was still committed, so neither result stands. The instruments are in
 the vault; P6 additionally needs `checkpoint_overdue` to fire, which needs more
 than 6 commits on `main` after the newest handoff — it is 0 today, so P6 is
 **unmeasured**, not passed.
+
+## 2026-08-29 (later) — the matched pair, and what the probes were measuring
+
+### The design error upstream of everything
+
+Sam's six scenarios are **questions** — *what do you do · what will you ensure ·
+what are the criteria · what do you miss out on*. Session 206 converted all six
+into disguised **build tasks** under its "disguise the scenario" rule.
+Defensible, and it cost most of a day: **$43.70**, the repo leak (topic-specific
+phrasing is what a probe greps for), two unrecoverable runs, a control arm
+dangerous enough to be blocked by the permission classifier, the dropped second
+halves of scenarios 4 and 6, and scenario 1 excluded on a misreading — his
+wording asks what a session WOULD do and already handles cueing itself.
+
+**Ask form costs ~$1.25 a matched pair against $13.70 for one build-form probe**,
+writes nothing, and cannot leak.
+
+### ⭐ The answer, with a control
+
+S1 8/8 vs 3/8 · S2 8.5/9 vs 1.5/9 · S6 6/7 vs 2/7. **Every point of difference is
+specific mechanical action, never judgment.** Both arms wanted to save the work
+and close cleanly; only doctrine supplied measure-then-say-the-number, lint
+first, `/checkpoint` not improvisation, lane file not §11 row, moniker + next
+number. The PUSH/PULL rule, validated: generic judgment is free, repo mechanics
+are not.
+
+### ⭐ The second job nobody had named
+
+Doctrine also **suppresses plausible-but-wrong defaults**. S2's control offered
+*"including dark mode if the app supports it"* against `CLAUDE.md:414`, *"a light
+identity with no dark PAGE palette"* — a capable session building the wrong thing
+while believing it was best practice. **A miss is visible as absence; a wrong
+default arrives looking like competence.** Nothing catches it —
+`presentation_doctrine` checks our rules are still *stated*, not that a session
+did not import a different design system wholesale.
+
+⚠️ So the pruning test needs a second clause: *"the control produces it free"* is
+necessary but **not sufficient** to cut a rule. A near-miss or an opposite means
+the rule is doing suppression work and stays.
+
+### ⚠️ Three ablation and instrument failures, all mine
+
+1. **The ablation failed.** Removing `CLAUDE.md` does not remove the doctrine —
+   the S4 control rebuilt Rules 1–10 from ~400 citations across `docs/`. Its
+   comparison is void. **Third instance of defeat-by-diligence in one day.**
+2. **Criterion 6.5 contradicted 6.2** — it required naming `cpl_todos.json` while
+   6.2 rewarded refusing to recite the artifact list. Any session correct on 6.2
+   must fail 6.5.
+3. **Spawned sessions can tell the prompt is an automated event** and say so.
+   Harmless for ask-form; may explain why P2 and P4 both stopped before pushing.
+
+### Current state
+
+Four of six scenarios have matched-pair data; S3/S5 have committed criteria and
+have not run. Six changes (A–F) are proposed for Sam, none implemented.
+
+### Next concrete step
+
+Repair the ablation (use a scenario the corpus does not document, or strip
+citations), run S3 and S5, then re-test against whatever Sam rules on A–F.

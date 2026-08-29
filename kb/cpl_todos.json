@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-29",
-  "_session": "SkyThread, Session 208 — threading rules to guards; the probe answer key was inside the test",
-  "_status": "The project instruction file is sorted: it was 4% over budget, and is now comfortably under it without losing a rule — one section turned out to be a near-complete second copy of the checkpoint command it tells you to run. Three new automatic checks were added so a rule cannot quietly stop applying when its text is moved somewhere else, which had happened six times.\n\nThe bigger news is a mistake in how we were testing ourselves. We had built a way to check whether our written rules actually get followed: spin up a fresh session, give it an ordinary-sounding task, and see what it does. But the scoring sheet and the task wordings were saved in the same repository those test sessions download — so the test came with its own answer key. One session searched for the topic it had been handed, found the file describing the test it was in, and said so. Nothing was learned from that run, and it has to be done again. The files are now kept separately.\n\nAlso settled: all 29 workstream files were read one by one, and none is finished — every one still lists outstanding work. That question can stop being asked. The list below is longer than the dozen we aim for; the extra items are decisions waiting on you rather than work we have left undone.",
+  "_session": "SkyThread, Session 208 — the rules were tested against sessions that did not have them",
+  "_status": "We finally answered the question we had been circling: do the written rules actually change what a session does? We ran the same task twice, once with our rules loaded and once without, and the answer is yes - clearly. Sessions without the rules still had good instincts: save the work, close cleanly, do not break things. What they could not do was the specific part - measure how full the session is rather than guess, tell you the number, keep the two dashboard files identical, know that a daily job overwrites the section they were about to edit.\n\nOne finding was a surprise. The rules do not only add things - they also STOP a session doing the wrong thing confidently. A session without them proposed adding a dark mode, which is against our design, and it would have built it believing that was best practice. That is worse than forgetting something, because a missing step looks missing while a wrong one looks finished.\n\nAlso honest: our method for testing a session 'without the rules' did not fully work, and the list below is longer than the dozen we aim for because most of it is decisions waiting on you.",
   "items": [
     {
       "id": "s202-sam-threshold",
@@ -113,22 +113,22 @@
       "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
     },
     {
-      "id": "s208-fable-rerun-probes",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Re-run the doctrine probes. The first run does not count: the answer key — the scoring rubric and all five task prompts — was stored in the same repository the test sessions download, and one probe found the file describing its own test on its very first search. Those files now live in the private vault, and a check fails if they come back."
-    },
-    {
-      "id": "s208-sam-run-p4",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Run probe 4 yourself when you have a moment — the one asking for a college readiness-tier tab. You decided a test session should not build that unattended, because it could write to the live database, and it is also the probe we expect to do worst, so it is worth watching directly. The exact wording to paste is in the vault."
-    },
-    {
       "id": "s208-fable-memory-lint",
       "for": "Fable",
       "tab": "memory",
       "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
+    },
+    {
+      "id": "s208-sam-rule-doctrine-changes",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Six proposed changes to our working rules, from testing them against sessions that did and did not have them. The big one: we tell a session to flag what its change affects, but we give it no way to work that out - no list of which screens read which data. Two independent test sessions both called that the real weak point. Also: our database write-safety rule only literally covers one table, there is no undo for a bad data write, and nothing routes a new editable field past the governance and privacy checks."
+    },
+    {
+      "id": "s208-fable-repair-ablation",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Finish the rule-testing run. Four of the six scenarios are done and the method works; two remain. One caveat first: our way of testing a session WITHOUT the rules did not actually work, because a thorough session rebuilt the rules from the hundreds of places the docs quote them. That also turned up a real defect worth fixing on its own - the rules are numbered inconsistently across those quotes."
     }
   ]
 }
