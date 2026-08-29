@@ -100,7 +100,7 @@ five probe prompts were committed to the repository the probes clone.**
 
 The control condition was defined as "`CLAUDE.md`, which auto-loads anyway, plus
 the repo" — and the repo held a 109-line document naming every criterion, plus
-the advance predictions. For probe P5 the topic phrase `comprehensive-vs-carve-out`
+the advance predictions. For probe P5 the topic phrase P5's topic phrase (vault-only)
 matched **exactly one file in the whole repository, its own prompt**. The probe
 searched for what it had been handed, found the test, and void-flagged itself.
 

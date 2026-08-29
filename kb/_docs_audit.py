@@ -463,7 +463,9 @@ def _flat(s):
 # and all five probe prompts.
 #
 # The leak is not subtle. A probe's most natural first action is to search for
-# the topic it was handed, and for P5 the phrase `comprehensive-vs-carve-out`
+# the topic it was handed, and for P5 its distinctive topic phrase - held in
+# the vault, deliberately NOT repeated here, and note that this very comment
+# carried it verbatim until the self-check below caught it -
 # matched EXACTLY ONE FILE in the whole repository — its own probe prompt. P5
 # found it, recognized it was inside a test, and void-flagged its own result.
 #
@@ -478,6 +480,46 @@ def _flat(s):
 # ⚠️ This rule exists because the natural repair for "the docs reference a file
 # that isn't here" is to put the file back, and doing so silently re-breaks
 # every future probe. THE INSTRUMENT MAY NOT LIVE INSIDE THE SYSTEM UNDER TEST.
+# ⚠️ THE POST-MORTEM RE-LEAKED THE THING (2026-08-29, later the same day).
+# Moving the instruments out of the repo closed the leak; then the write-ups
+# EXPLAINING the leak quoted the probe topic phrases verbatim, and P5's phrase
+# was back on `main` in four files within the hour - in documents that also
+# explain what the probe is scored on, which is strictly worse than the prompt
+# alone. This is the third instance of the same recursive shape in this repo:
+# `presentation_doctrine`'s first cut was satisfied by the POST-MORTEM about
+# losing the rule, and `american_spelling` corrupted the very word list that
+# documented it.
+#
+# So the phrases cannot be stored here in plaintext - a lint holding the secrets
+# it detects IS the leak. Salted hashes instead; the phrases live only in the
+# vault beside the prompts.
+#
+# ⚠️ Scanned ONLY in docs that discuss the probe protocol. "relevel bands" is
+# real ESL content and must not be flagged where it legitimately belongs; the
+# defect is a probe topic quoted inside a document about probes.
+PROBE_TOPIC_SALT = b"cpl-probe-topic-v1:"
+PROBE_TOPIC_HASHES = {
+    "940d1bc5b0b1b70d",
+    "f1211527cb2787f1",
+    "1cd16189141c0453",
+    "c53cf76c63c82dfc",
+}
+
+
+def _probe_topic_hits(text):
+    """Normalized word n-grams of `text` whose hash is a known probe topic."""
+    import hashlib
+    words = re.sub(r"[^a-z0-9]+", " ", text.lower()).split()
+    hits = set()
+    for n in range(2, 9):
+        for i in range(len(words) - n + 1):
+            gram = " ".join(words[i:i + n])
+            d = hashlib.sha256(PROBE_TOPIC_SALT + gram.encode()).hexdigest()[:16]
+            if d in PROBE_TOPIC_HASHES:
+                hits.add(d)
+    return hits
+
+
 PROBE_INSTRUMENT_PATHS = (
     r"docs/scenarios/rubric\.md",
     r"docs/scenarios/probes/",
@@ -493,11 +535,30 @@ def rule_probe_instrument_leak(root):
     pdir = os.path.join(root, "docs", "scenarios", "probes")
     if os.path.isdir(pdir):
         hits.append("docs/scenarios/probes/")
-    if not hits:
+    # A probe topic quoted inside a document ABOUT the probes is the same leak
+    # one level up: the phrase is what a probe searches for, and the document
+    # explains the test. Only such documents are scanned - see the note above.
+    quoted = []
+    for dirpath, dirnames, filenames in os.walk(os.path.join(root, "docs")):
+        dirnames[:] = [d for d in dirnames if d not in (".git", "node_modules")]
+        for fn in filenames:
+            if not fn.endswith(".md"):
+                continue
+            fp = os.path.join(dirpath, fn)
+            try:
+                body = read(fp)
+            except Exception:
+                continue
+            low = body.lower()
+            if "probe" not in low or ("rubric" not in low and "scenario" not in low):
+                continue
+            if _probe_topic_hits(body):
+                quoted.append(os.path.relpath(fp, root))
+    if not hits and not quoted:
         return None
     return {
         "rule": "probe_instrument_leak", "fixable": False,
-        "detail": {"paths": hits},
+        "detail": {"paths": hits, "topic_quoted_in": sorted(quoted)},
         "message": (
             f"Probe instrument(s) present in the repo probes clone: "
             f"{', '.join(hits)}. A probe searching for the topic it was handed "
@@ -505,7 +566,11 @@ def rule_probe_instrument_leak(root):
             f"where one probe's topic phrase matched its own prompt and nothing "
             f"else. The rubric and prompts belong in the private vault at "
             f"`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; keep only "
-            f"`docs/scenarios/README.md` (the method) here."),
+            f"`docs/scenarios/README.md` (the method) here."
+            + (f" ALSO: {len(quoted)} doc(s) about the probes quote a probe's own "
+               f"topic phrase verbatim, which puts it back in the repo probes "
+               f"search: {', '.join(sorted(quoted))}. Describe the phrase, do not "
+               f"reproduce it." if quoted else "")),
     }
 
 

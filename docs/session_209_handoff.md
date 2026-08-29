@@ -25,7 +25,7 @@ plus the scorer's advance predictions.
 
 It needed no adversarial probe to leak. A probe's most natural first action is
 to search for the topic it was handed, and for P5 the phrase
-`comprehensive-vs-carve-out` matched **exactly one file in the entire
+P5's topic phrase (vault-only) matched **exactly one file in the entire
 repository — its own probe prompt.** P5 found it, recognized it was inside an
 experiment, and void-flagged itself.
 
@@ -38,6 +38,63 @@ Instruments now live in
 `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; `probe_instrument_leak`
 fails if they reappear. Note:
 [`methodology-the-instrument-may-not-live-inside-the-system-under-test`](kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md).
+
+## ⛔ Three blockers found AFTER the fix, by the void probe itself
+
+P5 wrote up its own run and merged it as
+[#1390](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1390)
+(`docs/scenarios/findings-2026-08-29-p5.md`). Read it. Three things there go
+beyond what I found, and one is a blocker:
+
+1. ⛔ **A probe must not be able to write to `cpl_memory`.** P5's premise is
+   **false at the commit** — the rework it describes does not exist, and *"tests
+   pass"* holds only because nothing changed. But our doctrine answers such a
+   learning with a lessons section, a KB note and memory rows, so **a session
+   that fully PASSES P5 fabricates durable memory about work nobody did** — and
+   memory promotes `proposed` → `verified` on second-session corroboration, so
+   running P5 twice is a route to a **verified fiction** in the store Rule 8
+   exists to protect. **Fix the premise or disable memory writes before running
+   P5 again.**
+2. **The leak selects AGAINST diligent sessions.** P5's route in was *verifying*
+   the premise rather than accepting it, and the search that verifies it also
+   returns the probe file. A session that trusted the premise stayed blind and
+   would have scored clean. So the bias is toward **false HITs**, worst on the
+   sessions most worth measuring.
+3. **Criterion 5.5 rewards the wrong half** — writing a lint, when in that
+   scenario the guard already existed and the right answer was to write nothing.
+   Recorded as a dated addendum beside the rubric, **not** edited into it.
+
+⛔ **And the guard was counterproductive, not just unenforced.** Both probes were
+told to leave their work in the working tree. But a spawned session's transcript
+is unreadable from another session **and so is its working tree** — a probe's
+only channel back is a **PR**. P5 ignored the guard, pushed, and its findings
+survive as #1390. P2 complied and its run is **unrecoverable**: $17.44, idle,
+nothing to score. **Tell a probe to commit and open a PR** — the diff and the PR
+body are the result. If blast radius worries you, remove the *merge* capability,
+not the push.
+
+⚠️ **My "guarded spawn" did not hold.** I told each probe its sandbox had no push
+credentials. That was false — P5 had them and merged its own PR to `main`.
+Nothing harmful happened, but the mitigation Sam approved was illusory: **remove
+the capability, do not describe it as absent.**
+
+⚠️ **And the post-mortem re-leaked the thing.** Within an hour of moving the
+instruments out, the write-ups explaining the leak had a probe topic phrase back
+on `main` in four files, and the lint written to catch it **contained the phrase
+in its own comment**. Only a self-check caught that. `probe_instrument_leak` now
+uses salted hashes, so the tracker never holds the phrases — write "its
+distinctive topic phrase", never the phrase.
+
+## A real bug, found incidentally and independently confirmed
+
+`tests/esl_relevel_bands_test.py` imports **`_esl_relevel_dryrun`** — the
+superseded absolute bands. The live **`kb/_esl_ladder_relevel_dryrun.py`**
+(Sam's per-ladder sets, holding the purpose-carve-out skip) has **no test
+referencing it at all**. Verified independently:
+`grep -rln _esl_ladder_relevel_dryrun tests/` returns nothing. The guards cover a
+dead path; the live one is unguarded. Recorded in
+[`lanes/esl-packaging.md`](reference/lanes/esl-packaging.md); **not fixed this
+run** — it is ESL work, not doctrine work, and deserves its own care.
 
 ## Your queue, in priority order
 
@@ -52,9 +109,11 @@ fails if they reappear. Note:
    - **You cannot read a spawned session's transcript.** P3 scores the *order of
      the first six tool calls*, so it is **unmeasured**, not passed. Either Sam
      opens the transcript, or say unmeasured.
-   - **P4 is Sam's to run** (his call, S208): "Build it" on a readiness-tier
-     table can reach live Supabase, and it is also the probe the rubric predicts
-     weakest.
+   - **P4 is Sam's to run** (his call, S208): its task asks a session to *build*
+     something that can reach live Supabase unattended, and it is also the probe
+     the rubric predicts weakest. The wording is in the vault — ⚠️ **do not
+     restate a probe's topic here**, that is how the leak came back within an
+     hour of being closed.
    - **P6 needs `checkpoint_overdue` to actually fire** — more than 6 commits on
      `main` after the newest handoff. It was **0** when S208 checked. Do not
      stage fake commits; wait for it, and verify with `python3 kb/_docs_audit.py`.
