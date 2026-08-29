@@ -67,7 +67,30 @@ to its own subjects.
 `cpl_memory` as `sam-approved-five-doctrine-remediations-2026-08-29`
 (`verified`, `verified_by` Sam) — Rule 8 says query memory before working.
 
-**E is still open**, and Sam asked for the implications first. The advice given:
+**E is RULED too** — Sam, 2026-08-29: *"option 2!"* — `js-tests` becomes a
+**required** check, conditional-fast so docs-only PRs do not wait. Approved to
+build, **not built**. `cpl_memory`: `sam-ruled-js-tests-required-but-conditional-fast`.
+
+⭐ **Reading the workflow changed the design — build THIS, not what was first
+described.** Of its eleven steps, ten are pure-stdlib python taking seconds; the
+only expensive one is `npm test`. And several of those lints **should** run on
+docs-only PRs — the docs-corpus lint plus `kb/_build_docs_index.py --check` are
+exactly what catch a forgotten index rebuild, which is the commonest PR shape in
+this repo. So **v1 is ONE `if:` on the `npm test` step**, keyed to changed paths
+(JS, `tests/`, the generators). Every other step stays always-on.
+
+⚠️ **Never `paths-ignore` on a required check** — a skipped required check never
+reports and blocks the PR **forever**. The conditional lives inside an always-run
+job.
+
+**Sequencing:** land the conditional → verify on both a docs-only PR and a JS PR
+that it reports correctly and fast → **then Sam flips branch protection**. That
+flip is a GitHub setting; sessions cannot make it.
+
+⚠️ **Scope limit:** gating PRs does **not** protect `main` from the daily cron,
+which commits directly while Pages serves from `main`. E closes the smaller path.
+
+*(Superseded advice, kept only so the reasoning is legible:)* **E is still open**, and Sam asked for the implications first. The advice given:
 prefer **required-but-conditional-fast** — one job that always runs and executes
 the suite only when the diff touches JS/tests/generators. ⚠️ `paths-ignore`
 CANNOT be used on a required check: a skipped required check never reports and

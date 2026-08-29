@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 741,
-    "bytes": 7788197,
+    "bytes": 7789617,
     "over_budget": 3,
     "handoff_max": 209,
     "always_loaded_files": 1,
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 183,
-        "bytes": 1553954,
+        "bytes": 1555374,
         "over": 0
       }
     },
@@ -61,7 +61,7 @@
     },
     "vault": {
       "files": 2414,
-      "bytes": 1247686602,
+      "bytes": 1247688022,
       "heavy_bytes": 599584355,
       "heavy_share": 0.481,
       "ignore_filters": [
