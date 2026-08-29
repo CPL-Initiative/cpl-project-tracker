@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 346,
+   "count": 347,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3514,6 +3514,25 @@
      "title": "Lead with the steps, not the rationale",
      "type": "methodology",
      "updated": "2026-08-10"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [
+      "tests/run.js",
+      ".github/workflows/js-tests.yml"
+     ],
+     "path": "docs/kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "ci",
+      "performance",
+      "measurement"
+     ],
+     "title": "Measure the distribution before you pick a parallel strategy",
+     "type": "methodology",
+     "updated": "2026-08-28"
     },
     {
      "created": "2026-08-24",
@@ -14216,5 +14235,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 719
+ "total": 720
 }

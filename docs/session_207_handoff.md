@@ -79,6 +79,116 @@ Everything relocated was verified byte-for-byte against the pre-change file.
    Keeping the rule and moving the evidence made branch policy *shorter and
    clearer* — the rule stopped competing with its own footnotes.
 
+## Shipped after the first handoff was written
+
+Sam asked two things at the end of the session, and both turned into real work.
+
+### 1. "Make sure formatting preferences are preserved and properly prioritized"
+
+He was right to ask. **"PLAIN WORDS, NO GLYPHS" had been in `CLAUDE.md`** —
+inside the §11 Admin roadmap row — and the consolidation relocated that row to a
+lane file, carrying the rule out of the always-loaded file entirely. Zero
+occurrences remained.
+
+⚠️ **That rule had already failed once the same way.** `cpl_memory` row
+`a-recorded-rule-is-not-an-applied-rule`: recorded in the memory table on
+2026-08-14, and the Admin tab shipped covered in emoji that same week.
+
+New **`## Presentation rules — EVERY view we ship (non-negotiable)`** section:
+First Light · accessible (verified, not claimed) · mobile-friendly · no
+horizontal scroll · plain words not glyphs · American spelling · full-width
+prose. First Light/accessibility/mobile were one bullet and are now three,
+because Sam names them as three concerns and a rule buried inside another rule
+is weaker. Net reorganization, not addition — `CLAUDE.md` is **59,954 B**.
+
+**`presentation_doctrine` lint** fails if any of them leaves the file. ⚠️ Four
+false passes were found while building it, each the shape of the bug it guards:
+searching the whole file was satisfied by the section's own *post-mortem* naming
+the lost rule; patterns keyed on "NO GLYPHS" missed the bullet's own "NOT
+GLYPHS"; bare `accessib`/`mobile-friendly` were satisfied by **Sam's quote inside
+the First Light bullet**, so either rule could have been deleted in full; and the
+synthetic fixture passed while the live file failed, because the fixture had no
+quotation in it. **The suite now runs the check against the real `CLAUDE.md`**,
+deleting each live bullet in turn and asserting exactly one topic is reported.
+
+⭐ **Where formatting rules should live — the answer, since it comes up.**
+`CLAUDE.md` is the *high-priority* store for these, not `cpl_memory`. Four
+formatting rulings are already in `cpl_memory` and `verified`
+(`artifacts-use-first-light-accessible-and-mobile`, `sam-american-spelling-always`,
+`sam-full-width-prose-throughout-cobi`, `sam-eacr-defaults-and-a11y-standing`) —
+**and the glyph rule still shipped broken.** Memory is the record, not the
+enforcement: ~21% of verified rows fit the briefing budget, so a rule there can
+be present and silently unread. The escalation that works is
+**always-loaded → lint → CI**, and two already run (`american_spelling`,
+`prototype/check_contrast.py --live`).
+⚠️ **Do NOT build an emoji lint over the UI JS.** The codebase deliberately uses
+emoji in places Sam approved (the 📋 To-Do button, the 🧭 pane, the ⚖️ Governance
+tab, all named in `CLAUDE.md`), so it would need an allowlist and would emit
+findings nobody can action — the unactionable-findings failure Session 204
+already fixed once.
+
+### 2. "Is there anything I can safely do about the npm test?"
+
+Measured rather than guessed. **Every file timed individually: 280 files,
+1,245s (20.7 min).** `cpl_funding_*` is **28 files and 967s — 78%**; everything
+else is 252 files in 277s; the median file is 1.1s.
+
+- **`PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 1`** in the workflow. `playwright` is a
+  RUNTIME dependency but **nothing under `tests/` requires it** — only the
+  browser-check scripts, which are deliberately outside `npm test`. CI was
+  downloading three browsers on every run for a suite that never launches one.
+- **`tests/run.js` runs files concurrently**, each still in its own process.
+  ⚠️ **My first design was wrong and the measurement killed it:** "serialize the
+  heavy family, parallelize the rest" is bounded at 967s *no matter how many
+  workers you add*. The heavy files ARE the suite, so they have to run together
+  — which makes memory the constraint, not scheduling.
+- **Peak RSS, polled:** `cpl_funding_render` **3,825 MB** (a lone outlier), the
+  rest of the family ~2,100 MB, a typical file 258 MB. ⚠️ Modeling this as
+  `N × worst-file` said 3 concurrent needed 11.5 GB and forced the cap to 2;
+  running the three heaviest together measured **6,187 MB**, because peaks do
+  not coincide. The cap is derived from `os.totalmem()` — 4 on a 16 GB runner,
+  degrading to 2 or 1 on a smaller box — and `TEST_CONCURRENCY` overrides it.
+- ⚠️ **A pool would have printed nothing until the end** — losing progress, and
+  printing *nothing at all* on a hang. It is a limiter, not a pool: every file
+  gets its promise up front so the reporting loop awaits them in alphabetical
+  order and the log streams in the same sequence as the serial runner's.
+- `tests/lib/limiter.js` + `tests/limiter.test.js` (9 checks). ⚠️ An unresolved
+  promise does **not** keep Node alive, so a deadlock originally **exited 0** —
+  a silent pass for the exact bug the file exists to catch. Every wait is
+  time-bounded and the check total is asserted.
+
+⚠️ **Three more bugs surfaced only in full end-to-end runs, all mine, and each
+symptom named the wrong thing.** Targeted tests were green throughout.
+
+1. **PIPES TRUNCATE.** `console.log` to a pipe is asynchronous, so a child
+   ending in `process.exit()` discards whatever is still buffered. `spawnSync`
+   never saw it — the parent was blocked, the OS pipe filled, and the child
+   blocked on write rather than getting ahead. Measured on a child printing
+   20,000 lines then exiting: **pipe delivered 3,179, a file descriptor
+   delivered 20,000.** It surfaced as `cip_crosswalk.test.js` reporting 178 of
+   354 assertions, which the check-ledger called *"176 checks stopped running"*
+   — the signal that is supposed to mean a rule was silently disabled. Every
+   assertion had run. Children write to a temp file now.
+2. **`node --check` PARSES; it does not resolve references.** A rewrite deleted
+   the limiter's `require`, `--check` stayed green, and the runner died at
+   startup having run **zero** tests. A parse check is not a smoke test.
+3. **`check_ledger.test.js` copies the runner into a fixture with a HAND-LISTED
+   set of `lib/` dependencies**, which did not include the new `lib/limiter.js`.
+   The copied runner died on `MODULE_NOT_FOUND`, surfacing as four failing
+   ledger assertions rather than "the fixture is missing a file". It copies the
+   whole directory now — a dependency list inside a test is a second copy of
+   `run.js`'s requires and will drift again.
+
+✅ **CI confirmed the speedup, and my worry that it would not was wrong.** The
+GitHub run executed all 282 files in **~8.5 minutes including `npm install`**
+(against 20.7 min serial), failing only on bug 3 above. `cip_crosswalk` passed
+there too, which independently confirms the file-descriptor fix off this
+sandbox. The runner now prints its chosen width and the machine's RAM as its
+first line, because a slow CI run was otherwise indistinguishable from a serial
+one. **Next lever if more speed is wanted:** `cpl_funding_render` is 3,825 MB
+against ~2,100 MB for the rest of the family and alone forces the conservative
+cap — splitting it is the documented fix, with precedent.
+
 ## Your queue
 
 1. **Retire the lanes that genuinely are finished.** A per-row read of all 29

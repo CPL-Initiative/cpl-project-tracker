@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-346 document(s).
+347 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -191,6 +191,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Judge a detector by what it prints — filters are only observable in their output](../kb-notes/methodology-judge-a-detector-by-what-it-prints.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
+| [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Measure your mechanism's ceiling before working the queue](../kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Methodology — A consumer must guard fields the baked payload omits but the fallback fills](../kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — a frequency is not a rule](../kb-notes/methodology-a-frequency-is-not-a-rule.md) | methodology | published | 2026-08-27 | 2026-08-27 |

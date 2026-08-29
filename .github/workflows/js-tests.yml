@@ -13,12 +13,26 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    # `playwright` is a RUNTIME dependency of this package, but NOTHING under
+    # tests/ requires it -- it is used only by the browser-check scripts in
+    # prototype/, scripts/ and fact-sheet/, which are deliberately outside
+    # `npm test` (see the SkyView launcher note below). Without this, every CI
+    # run downloads Chromium + Firefox + WebKit before running a suite that
+    # never launches a browser. Measured 2026-08-28: with the download skipped,
+    # `npm install` is ~5s for 41 packages / 45 MB.
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v6
         with:
           node-version: '20'
       - run: npm install
+      # `tests/run.js` runs files CONCURRENTLY since 2026-08-28 (each still in
+      # its own process). It sizes the pool from measured peak RSS and the
+      # runner's RAM — 4 on a 16 GB ubuntu-latest. Measured before: 280 files,
+      # 1,245s serial, of which `cpl_funding_*` was 28 files and 967s (78%).
+      # If this job ever OOMs, set TEST_CONCURRENCY here rather than reverting.
       - run: npm test
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
