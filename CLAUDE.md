@@ -456,9 +456,11 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
   `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
-  in a code span.** Bare, the sweeper rewrites it: this list read *"while (not
-  while) · among (not among)"* for weeks, because `american_spelling` corrected
-  the very words the rule was documenting. `prose_only()` masks code spans, so
+  in a code span.** Bare, the sweeper rewrites it: this list read
+  `while (not while)` · `among (not among)` for weeks, because `american_spelling`
+  corrected the very words the rule was documenting — and a bare quotation of the
+  corruption trips `self_corrected_word_pair` in turn, so even the POST-MORTEM
+  needs the backticks. `prose_only()` masks code spans, so
   backticks are what make a word-list entry survive its own lint. **Rendered UI text first**, then
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not

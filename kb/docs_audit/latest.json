@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 741,
-    "bytes": 7747428,
+    "bytes": 7747561,
     "over_budget": 4,
     "handoff_max": 207,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 63624,
+    "always_loaded_bytes": 63757,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 63624,
+        "bytes": 63757,
         "over": 1
       },
       "other": {
@@ -57,12 +57,11 @@
     },
     "by_rule": {
       "oversized_doc": 4,
-      "self_corrected_word_pair": 2,
       "vault_heavy_path": 45
     },
     "vault": {
       "files": 2414,
-      "bytes": 1247621869,
+      "bytes": 1247622557,
       "heavy_bytes": 599584355,
       "heavy_share": 0.481,
       "ignore_filters": [
@@ -119,26 +118,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 63624,
+        "bytes": 63757,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 3624,
+        "over_by": 3757,
         "ratio": 1.06
       },
-      "message": "63,624 B is 1.1× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
-      "rule": "self_corrected_word_pair",
-      "fixable": false,
-      "detail": {
-        "hits": [
-          "while (not\n  while)",
-          "among (not among)"
-        ],
-        "count": 2
-      },
-      "message": "2 word pair(s) name the same word on both sides: while (not\n  while), among (not among). A normalizer corrected the form the rule existed to NAME — put the named form in a code span, which `prose_only()` masks, or it will be eaten again on the next sweep.",
+      "message": "63,757 B is 1.1× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -166,19 +152,6 @@
       },
       "message": "150,822 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/exhibit_canonicalization_lessons.md"
-    },
-    {
-      "rule": "self_corrected_word_pair",
-      "fixable": false,
-      "detail": {
-        "hits": [
-          "while (not while)",
-          "among (not among)"
-        ],
-        "count": 2
-      },
-      "message": "2 word pair(s) name the same word on both sides: while (not while), among (not among). A normalizer corrected the form the rule existed to NAME — put the named form in a code span, which `prose_only()` masks, or it will be eaten again on the next sweep.",
-      "path": "docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md"
     },
     {
       "rule": "oversized_doc",

@@ -614,9 +614,18 @@ SELF_CORRECTED_RE = re.compile(r"\b(\w{3,})\b\s*\(\s*not\s+\1\s*\)", re.I)
 
 
 def rule_self_corrected_word_pair(entry):
-    """A word pair that now names the same word on both sides."""
+    """A word pair that now names the same word on both sides.
+
+    ⚠️ SCANS PROSE ONLY, and this rule shipped without doing so (Session 206).
+    Its own message told you to "put the named form in a code span, which
+    `prose_only()` masks" -- advice the implementation did not honor, because it
+    matched raw text. So the documented fix did not silence it, and the repo's
+    own post-mortem QUOTING the corruption was reported as the corruption. A
+    guard whose remedy does not work is the muted-guard failure again: the only
+    way to clear it would have been to delete the explanation.
+    """
     try:
-        text = read(entry["path"])
+        text = prose_only(read(entry["path"]))
     except Exception:
         return None
     hits = [m.group(0) for m in SELF_CORRECTED_RE.finditer(text)]
