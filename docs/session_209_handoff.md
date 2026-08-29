@@ -13,77 +13,18 @@ SkyThread here. Two PRs:
 [cpl-project-tracker#1389](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1389)
 and [samueltlee/CPLBrain#38](https://github.com/samueltlee/CPLBrain/pull/38).
 
-## ⭐ The one thing to carry forward
+## The doctrine-probe lane — state is in the VAULT, not here
 
-**The probe protocol was void on its first real run, and the reason generalizes.**
+⚠️ **Deliberate.** A handoff in this repo is readable by any session that clones
+it, and `CLAUDE.md` tells every session the highest-numbered handoff is
+authoritative — so a handoff that describes the experiment hands the experiment
+to its own subjects. That is the same defeat-by-diligence the lane already found
+one level down, and it cost this session a run before it was noticed.
 
-The rubric and all five probe prompts were committed to `cpl-project-tracker` —
-**the repository a probe session clones.** The control condition was defined as
-"`CLAUDE.md`, which auto-loads anyway, plus the repo", and that repo held a
-109-line document naming every criterion the probe was about to be scored on,
-plus the scorer's advance predictions.
-
-It needed no adversarial probe to leak. A probe's most natural first action is
-to search for the topic it was handed, and for P5 the phrase
-P5's topic phrase (vault-only) matched **exactly one file in the entire
-repository — its own probe prompt.** P5 found it, recognized it was inside an
-experiment, and void-flagged itself.
-
-Handoff 207 warned about this and looked in the wrong place: *"the likeliest
-explanation is **prompt** leakage — re-read the probe prompt for a cue."* The
-leak was the **repository**, which the design treated as neutral background
-rather than as an input. **Anything the subject can read is an input.**
-
-Instruments now live in
-`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; `probe_instrument_leak`
-fails if they reappear. Note:
-[`methodology-the-instrument-may-not-live-inside-the-system-under-test`](kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md).
-
-## ⛔ Three blockers found AFTER the fix, by the void probe itself
-
-P5 wrote up its own run and merged it as
-[#1390](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1390)
-(`docs/scenarios/findings-2026-08-29-p5.md`). Read it. Three things there go
-beyond what I found, and one is a blocker:
-
-1. ⛔ **A probe must not be able to write to `cpl_memory`.** P5's premise is
-   **false at the commit** — the rework it describes does not exist, and *"tests
-   pass"* holds only because nothing changed. But our doctrine answers such a
-   learning with a lessons section, a KB note and memory rows, so **a session
-   that fully PASSES P5 fabricates durable memory about work nobody did** — and
-   memory promotes `proposed` → `verified` on second-session corroboration, so
-   running P5 twice is a route to a **verified fiction** in the store Rule 8
-   exists to protect. **Fix the premise or disable memory writes before running
-   P5 again.**
-2. **The leak selects AGAINST diligent sessions.** P5's route in was *verifying*
-   the premise rather than accepting it, and the search that verifies it also
-   returns the probe file. A session that trusted the premise stayed blind and
-   would have scored clean. So the bias is toward **false HITs**, worst on the
-   sessions most worth measuring.
-3. **Criterion 5.5 rewards the wrong half** — writing a lint, when in that
-   scenario the guard already existed and the right answer was to write nothing.
-   Recorded as a dated addendum beside the rubric, **not** edited into it.
-
-⛔ **And the guard was counterproductive, not just unenforced.** Both probes were
-told to leave their work in the working tree. But a spawned session's transcript
-is unreadable from another session **and so is its working tree** — a probe's
-only channel back is a **PR**. P5 ignored the guard, pushed, and its findings
-survive as #1390. P2 complied and its run is **unrecoverable**: $17.44, idle,
-nothing to score. **Tell a probe to commit and open a PR** — the diff and the PR
-body are the result. If blast radius worries you, remove the *merge* capability,
-not the push.
-
-⚠️ **My "guarded spawn" did not hold.** I told each probe its sandbox had no push
-credentials. That was false — P5 had them and merged its own PR to `main`.
-Nothing harmful happened, but the mitigation Sam approved was illusory: **remove
-the capability, do not describe it as absent.**
-
-⚠️ **And the post-mortem re-leaked the thing.** Within an hour of moving the
-instruments out, the write-ups explaining the leak had a probe topic phrase back
-on `main` in four files, and the lint written to catch it **contained the phrase
-in its own comment**. Only a self-check caught that. `probe_instrument_leak` now
-uses salted hashes, so the tracker never holds the phrases — write "its
-distinctive topic phrase", never the phrase.
+**Everything about that lane — what was found, what is blocked, what to run next,
+and the instruments themselves — is in
+`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.** Read it there before
+touching the lane. Do not summarize it back into this file.
 
 ## A real bug, found incidentally and independently confirmed
 
@@ -98,25 +39,9 @@ run** — it is ESL work, not doctrine work, and deserves its own care.
 
 ## Your queue, in priority order
 
-1. **Re-run the probes against the cleaned repo.** ⚠️ **No probe result from
-   S208 stands** — P2 and P5 both ran while the answer key was still committed.
-   Read the vault README first; it carries the run procedure and two mechanics
-   that cost this session real money:
-   - **A session spawned with no repo has no `CLAUDE.md`** and is a blank
-     session, not a control. `create_session` does **not** inherit the parent's
-     repos — pass `source_url` explicitly. One probe burned **$5.04** flailing
-     in an empty sandbox before it was stopped.
-   - **You cannot read a spawned session's transcript.** P3 scores the *order of
-     the first six tool calls*, so it is **unmeasured**, not passed. Either Sam
-     opens the transcript, or say unmeasured.
-   - **P4 is Sam's to run** (his call, S208): its task asks a session to *build*
-     something that can reach live Supabase unattended, and it is also the probe
-     the rubric predicts weakest. The wording is in the vault — ⚠️ **do not
-     restate a probe's topic here**, that is how the leak came back within an
-     hour of being closed.
-   - **P6 needs `checkpoint_overdue` to actually fire** — more than 6 commits on
-     `main` after the newest handoff. It was **0** when S208 checked. Do not
-     stage fake commits; wait for it, and verify with `python3 kb/_docs_audit.py`.
+1. **The doctrine-probe lane.** State, blockers and next actions are in the
+   vault (see the section above). ⚠️ Do not restate them here.
+
 2. **The two uncaught scenarios are the real backlog.** `kb/_doctrine_scenarios.py`
    scores **10 of 12** honestly. What is missed: **a `cpl_memory` row that
    contradicts doctrine** (the memory table has no lint at all) and **a
