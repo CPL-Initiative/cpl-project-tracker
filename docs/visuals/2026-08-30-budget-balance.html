@@ -1,0 +1,322 @@
+<title>Budget Balance</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — single-theme light by design. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36;
+    --text-muted: #5C5C55; --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000; --cobalt: #0047AB; --hunter: #2C601A;
+    --mustard-text: #8B6800; --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px;
+    line-height: 1.55; margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: 880px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.15rem; margin: 0 0 10px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .note { font-size: .9rem; color: var(--text-muted); }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  /* The verdict strip — the one always-on answer to "where am I over or under". */
+  #verdicts { border: 1.5px solid var(--border-strong); }
+  #verdicts ul { margin: 6px 0 0; padding-left: 1.2em; }
+  #verdicts li { margin: 4px 0; }
+  .over { color: var(--crimson); font-weight: 700; }
+  .under { color: var(--mustard-text); font-weight: 700; }
+  .balanced { color: var(--hunter); font-weight: 700; }
+  .dials { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 16px; }
+  .dial label { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .06em; color: var(--text-muted); margin-bottom: 3px; }
+  .dial input { width: 100%; box-sizing: border-box; font: inherit; font-weight: 600;
+    font-variant-numeric: tabular-nums; color: var(--text-strong);
+    background: var(--surface-subtle); border: 1px solid var(--border-strong);
+    border-radius: 8px; padding: 7px 10px; }
+  .dial .live { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
+  .drift { font-size: .82rem; margin-top: 2px; }
+  .stack { list-style: none; margin: 10px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
+  .stack li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;
+    border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .stack li:first-child { border-top: none; }
+  .stack .amt { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  .stack .sub { flex-basis: 100%; font-size: .82rem; color: var(--text-muted); }
+  .facts { margin: 8px 0 0; padding-left: 1.2em; }
+  .facts li { margin: 4px 0; }
+  .reset { font: inherit; font-weight: 700; color: var(--cobalt); background: var(--surface-opaque);
+    border: 1.5px solid var(--cobalt); border-radius: 999px; padding: 7px 18px; cursor: pointer; }
+  .asof { font-size: .82rem; color: var(--text-muted); }
+</style>
+
+<a class="skip" href="#verdicts">Skip to the balance verdicts</a>
+<div class="wrap">
+
+<p class="kicker">The $35M model as an experiment rig · reaction mock · numbers as of 2026-08-30</p>
+<h1>Budget Balance</h1>
+<p class="lede">Your item-1 ruling, made touchable: the noncredit entry threshold,
+the minimums, and the funding buckets are independent dials, and this page always
+says where the plan is over or under budget as you turn them. Every figure below
+starts at the <strong>live published config and budget ledger</strong>; the
+rosters are the real 115 colleges and 4 standalone noncredit institutions with
+their reported FTES. Nothing here writes anywhere — it is a sandbox for your
+reaction, and the real version belongs on the funding tab's dial surface once
+you have shaped it.</p>
+
+<section class="card" id="verdicts" aria-live="polite">
+  <h2>Where you stand</h2>
+  <ul id="verdictList"></ul>
+</section>
+
+<p class="kicker">The dials</p>
+<section class="card">
+  <div class="dials" id="dials"></div>
+  <p style="margin:14px 0 0"><button type="button" class="reset" id="resetBtn">Reset to the live settings</button>
+  <span class="asof">— published config + ledger, 2026-08-30</span></p>
+  <p class="note" style="margin-top:10px">One open referent for you: the sheet
+  said "$50,000 minimum award," and the live noncredit minimum is $40,000 —
+  if $50,000 was the intent, set the noncredit minimum dial to 50,000 and the
+  verdicts recompute. The lane priority split (34/33/33, factors) is
+  deliberately untouched by this page; these dials are the budget skeleton.</p>
+</section>
+
+<p class="kicker">The money, top to bottom</p>
+<section class="card">
+  <ul class="stack" id="stack"></ul>
+</section>
+
+<p class="kicker">The credit lane</p>
+<section class="card">
+  <ul class="facts" id="crFacts"></ul>
+</section>
+
+<p class="kicker">The noncredit lane — the coupling from item 1</p>
+<section class="card">
+  <ul class="facts" id="ncFacts"></ul>
+</section>
+
+<p class="note" style="margin-top:28px">Method notes: allocations use the tab's
+own bounded split (proportional share clamped between the floor and the ceiling,
+re-split so the lane balances; when floors alone exceed a pool, the lane is
+infeasible and every institution is paid below the promised minimum — that state
+is called out above, never smoothed over). Calbright's noncredit FTES uses Sam's
+1,000-FTES stand-in pending Malone's verification; Mt. SAC Noncredit is counted
+on the Mt. San Antonio college row, not twice.</p>
+
+</div>
+
+<script>
+var COLLEGES = [["Alameda",3111.6,43.4],["Berkeley City",3833,62.2],["Chabot",5862.2,152.8],["Laney",5604.2,110.6],["Las Positas",4070.7,72.1],["Merritt",3887,17.3],["Ohlone",7585,185.6],["Butte",10844.5,428.8],["Contra Costa",5369.8,173.7],["Diablo Valley",14707.7,77.5],["Los Medanos",7917.2,60.7],["Lake Tahoe",3860.9,63.7],["Clovis",7590,34.5],["Fresno City",21916.9,370.6],["Reedley College",7356.5,284.6],["West Hills Coalinga",2242.9,84.7],["Redwoods",4296.3,148.3],["Imperial",3966.9,27.6],["Bakersfield",21292.8,315.4],["Cerro Coso",3686.5,29.5],["Taft",2434.5,0],["West Hills Lemoore",3361.2,243.7],["Lassen",1633.2,60.8],["Antelope Valley",11698.6,115.7],["Canyons",13528.6,2022.5],["Cerritos",17753.9,640.6],["Citrus",9532.7,225.6],["Compton",2591.3,31.2],["East LA",19065.7,1138.2],["El Camino",12613.2,1.5],["Glendale",10663.5,2911.1],["LA City",9609.7,791.2],["LA Harbor",6405.3,96.9],["LA Mission",6777.9,693],["LA Pierce",12216.9,607.7],["LA Swest",3008.9,249.4],["LA Trade",10570.4,233.8],["LA Valley",10920.4,991.7],["Long Beach",22535.9,518.1],["Mt San Antonio",26804.4,10829.3],["Pasadena",23347.4,1470.4],["Rio Hondo",11693.5,1568.3],["Santa Monica",19453.5,877.7],["West LA",6016.2,234.7],["Madera",4234.7,46.5],["Marin",3374.6,366.5],["Mendocino",3729.4,145.9],["Merced",11311.3,508.8],["Hartnell",8301.2,109.4],["Monterey",5681.1,178.7],["Napa",3722.5,29.3],["Coastline",5342.7,325.4],["Cypress",12850.7,41.6],["Fullerton",15875,0],["Golden West",8832.5,242.2],["Irvine",5754.1,902],["Orange Coast",13996.7,256.5],["Saddleback",8580.2,2890.5],["Santa Ana",16043.6,7817.7],["Santiago Canyon",7047.1,3577.3],["Sierra",14544.1,295],["Feather River",1098.2,25.6],["Desert",8658.5,907.3],["Moreno Valley",9743,62.8],["Mt. San Jacinto",13978.3,319.3],["Norco College",8008.4,100.9],["Palo Verde",1414,10.8],["Riverside",18650.9,208.8],["American River",20744.6,0],["Cosumnes River",11359,0],["Folsom Lake",7835.2,3.7],["Sacramento City",14386.7,1.5],["Barstow",3019.2,43.2],["Chaffey",17951,229.5],["Copper Mountain",1688,67],["Crafton Hills",5038.9,57.4],["San Bernardino",11992.7,274.4],["Victor Valley",13946.9,621.3],["Cuyamaca",4901.4,2.9],["Grossmont",9099.4,95.7],["MiraCosta",9580.7,1046.8],["Palomar",15488.9,476.7],["San Diego City",8921.9,0],["San Diego Mesa",16732.2,0],["San Diego Miramar",11276.5,0],["Southwestern",16346.8,230.4],["San Francisco",12951.8,3896.6],["San Joaquin Delta",17034.4,183.1],["Cuesta",7616.8,510.6],["Canada",4631.2,1.4],["San Mateo",8117.7,0.3],["Skyline",9029.2,1],["Allan Hancock",8995.6,764.9],["Santa Barbara",10973.7,1232.6],["De Anza",16628.1,364.6],["Evergreen Valley",3189.3,61.3],["Foothill",11018.6,242.7],["Gavilan",5026,1591.4],["Mission",5128.5,254.1],["San Jose City",2722.1,110.8],["West Valley",6222.7,924.1],["Cabrillo",7616.7,782.3],["Shasta",7241.9,132.7],["Siskiyous",1725.4,328.6],["Solano",7328.7,8.4],["Santa Rosa",13640.2,3009.6],["Modesto",15550,924.7],["Porterville",3558.3,45.5],["Sequoias",11474,224.9],["Columbia",2078,36.6],["Moorpark",12728.2,14.6],["Oxnard",5629,74.4],["Ventura",9996.3,150.7],["Woodland",2589.2,53.1],["Yuba",4419.1,81.1]];
+var FEEDERS = [["NOCE",3828],["SD Cont. Ed",9337.8],["Mt. SAC NC",0],["Calbright",1000]];
+
+// ── the tab's bounded split, ported faithfully ────────────────────────────
+function solveBounded(sizes, net, floor, cap) {
+  var capEff = cap > 0 ? Math.max(floor, cap) : Infinity;
+  var n = sizes.length, tot = 0, i;
+  for (i = 0; i < n; i++) tot += sizes[i];
+  var totFloor = floor * n, totCap = capEff === Infinity ? Infinity : capEff * n;
+  var res = { n: n, totSize: tot, floorDemanded: totFloor, unspent: 0,
+              floorInfeasible: false, floored: 0, capped: 0 };
+  if (floor > 0 && totFloor >= net) {
+    res.floorInfeasible = true; res.floored = n;
+    res.each = n > 0 ? net / n : 0;      // floor-proportional (equal floors)
+    return res;
+  }
+  if (capEff !== Infinity && totCap < net) {
+    res.capped = n; res.unspent = net - totCap;
+    return res;
+  }
+  var clampSum = function (lam) {
+    var s = 0;
+    for (var j = 0; j < n; j++) s += Math.min(Math.max(lam * sizes[j], floor), capEff);
+    return s;
+  };
+  var lo = 0, hi = 1;
+  while (clampSum(hi) < net && hi < 1e12) hi *= 2;
+  for (i = 0; i < 70; i++) {
+    var mid = (lo + hi) / 2;
+    if (clampSum(mid) < net) lo = mid; else hi = mid;
+  }
+  var lam = (lo + hi) / 2;
+  for (i = 0; i < n; i++) {
+    var w = Math.min(Math.max(lam * sizes[i], floor), capEff);
+    if (floor > 0 && lam * sizes[i] < floor) res.floored++;
+    else if (capEff !== Infinity && lam * sizes[i] > capEff) res.capped++;
+  }
+  res.lam = lam;
+  return res;
+}
+
+// ── dial definitions: live value = shared config over baked, ledger anchors ──
+var DIALS = [
+  { key: "admin",     label: "CO administration",                live: 800000,   ledger: 800000,  ledgerName: "CO Staff — 2.0 FTE" },
+  { key: "projects",  label: "CPL projects & innovation",        live: 8959692,  ledger: 8959692, ledgerName: "CPL Projects — $35M share" },
+  { key: "carveout",  label: "Noncredit carve-out",              live: 2000000 },
+  { key: "crFloor",   label: "Credit minimum (per college)",     live: 150000 },
+  { key: "crCap",     label: "Credit maximum (per college)",     live: 400000 },
+  { key: "ncThresh",  label: "Noncredit entry threshold (FTES)", live: 300 },
+  { key: "ncFloor",   label: "Noncredit minimum (per institution)", live: 40000 },
+  { key: "ncCap",     label: "Noncredit maximum (per institution)", live: 100000 }
+];
+var TOTAL = 35000000;
+var LEDGER_COLLEGE = 25240308;   // "College Implementation Awards — 115 colleges & 4 noncredit"
+
+var state = {};
+function fm(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
+function fi(v) { return Math.round(v).toLocaleString("en-US"); }
+
+function ncRoster(thresh) {
+  var out = [];
+  COLLEGES.forEach(function (c) { if (c[2] >= thresh && c[2] > 0) out.push(c[2]); });
+  FEEDERS.forEach(function (f) { if (f[1] >= thresh && f[1] > 0) out.push(f[1]); });
+  return out;
+}
+
+function compute() {
+  var d = state;
+  var collegeFunding = TOTAL - d.admin - d.projects;
+  var crPool = collegeFunding - d.carveout;
+  var crSizes = COLLEGES.map(function (c) { return c[1]; });
+  var cr = solveBounded(crSizes, Math.max(0, crPool), d.crFloor, d.crCap);
+  var ncSizes = ncRoster(d.ncThresh);
+  var nc = solveBounded(ncSizes, Math.max(0, d.carveout), d.ncFloor, d.ncCap);
+  var ncDemand = ncSizes.length * d.ncFloor;
+
+  // The threshold frontier at the current floor: the lowest threshold the
+  // carve-out can honor, and the cost of one step below it.
+  var candidates = [];
+  COLLEGES.forEach(function (c) { if (c[2] > 0) candidates.push(c[2]); });
+  FEEDERS.forEach(function (f) { if (f[1] > 0) candidates.push(f[1]); });
+  candidates.sort(function (a, b) { return b - a; });
+  var frontier = null, oneBelow = null;
+  for (var i = 0; i < candidates.length; i++) {
+    var t = candidates[i];
+    var count = ncRoster(t).length;
+    if (count * d.ncFloor <= d.carveout) frontier = { t: t, count: count, demand: count * d.ncFloor };
+    else { oneBelow = { t: t, count: count, demand: count * d.ncFloor }; break; }
+  }
+  return { collegeFunding: collegeFunding, crPool: crPool, cr: cr, nc: nc,
+           ncCount: ncSizes.length, ncDemand: ncDemand, frontier: frontier, oneBelow: oneBelow };
+}
+
+function verdictHtml(m) {
+  var v = [];
+  var bucketDrift = 0;
+  DIALS.forEach(function (dl) {
+    if (dl.ledger != null && state[dl.key] !== dl.ledger) {
+      var delta = state[dl.key] - dl.ledger;
+      bucketDrift++;
+      v.push("<li>The " + dl.label.toLowerCase() + " dial sits <span class=\"" + (delta > 0 ? "over" : "under") + "\">" +
+        fm(Math.abs(delta)) + " " + (delta > 0 ? "above" : "below") + "</span> its budget ledger line (" + dl.ledgerName + ", " + fm(dl.ledger) + ").</li>");
+    }
+  });
+  if (m.collegeFunding !== LEDGER_COLLEGE) {
+    var cd = m.collegeFunding - LEDGER_COLLEGE;
+    v.push("<li>College funding computes to " + fm(m.collegeFunding) + " — <span class=\"" + (cd > 0 ? "under" : "over") + "\">" +
+      fm(Math.abs(cd)) + " " + (cd > 0 ? "more than" : "less than") + "</span> the ledger's College Implementation Awards line (" + fm(LEDGER_COLLEGE) + ").</li>");
+  }
+  if (m.crPool <= 0) {
+    v.push("<li><span class=\"over\">The credit pool is gone</span> — the buckets and carve-out consume all college funding before any college is paid.</li>");
+  } else if (m.cr.floorInfeasible) {
+    v.push("<li><span class=\"over\">Credit lane over budget by " + fm(m.cr.floorDemanded - m.crPool) + "</span>: " +
+      "the " + fm(state.crFloor) + " minimum × " + m.cr.n + " colleges demands " + fm(m.cr.floorDemanded) +
+      " against a " + fm(m.crPool) + " pool — every college would be paid below the promised minimum.</li>");
+  } else if (m.cr.unspent > 0.5) {
+    v.push("<li><span class=\"under\">Credit lane under budget by " + fm(m.cr.unspent) + "</span>: the " +
+      fm(state.crCap) + " ceiling binds every college and that much cannot be spent.</li>");
+  }
+  if (m.nc.floorInfeasible) {
+    v.push("<li><span class=\"over\">Noncredit lane over budget by " + fm(m.ncDemand - state.carveout) + "</span>: " +
+      fm(state.ncFloor) + " × " + m.ncCount + " institutions at the " + fi(state.ncThresh) +
+      "-FTES threshold demands " + fm(m.ncDemand) + " against the " + fm(state.carveout) + " carve-out.</li>");
+  } else if (m.nc.unspent > 0.5) {
+    v.push("<li><span class=\"under\">Noncredit lane under budget by " + fm(m.nc.unspent) + "</span>: the " +
+      fm(state.ncCap) + " ceiling binds all " + m.ncCount + " institutions.</li>");
+  }
+  if (!v.length) v.push("<li><span class=\"balanced\">Balanced.</span> Every dial matches its ledger line, both lanes spend their pools exactly, and no minimum is broken.</li>");
+  else if (bucketDrift === 0 && !m.cr.floorInfeasible && !m.nc.floorInfeasible && m.cr.unspent <= 0.5 && m.nc.unspent <= 0.5) {
+    v.push("<li><span class=\"balanced\">Both lanes still balance</span> — the flags above are ledger drift, not broken lanes.</li>");
+  }
+  return v.join("");
+}
+
+function render() {
+  var m = compute();
+  document.getElementById("verdictList").innerHTML = verdictHtml(m);
+  document.getElementById("stack").innerHTML =
+    "<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class=\"amt\">" + fm(TOTAL) + "</span></li>" +
+    "<li><span>CO administration</span><span class=\"amt\">− " + fm(state.admin) + "</span></li>" +
+    "<li><span>CPL projects &amp; innovation</span><span class=\"amt\">− " + fm(state.projects) + "</span>" +
+      "<span class=\"sub\">Sourced from the jointly wired Activities · Annual Targets · Budget tables (your item-5 ruling); this dial only moves the bucket's size.</span></li>" +
+    "<li><span><strong>College funding</strong></span><span class=\"amt\">" + fm(m.collegeFunding) + "</span></li>" +
+    "<li><span>Noncredit carve-out</span><span class=\"amt\">− " + fm(state.carveout) + "</span></li>" +
+    "<li><span><strong>Credit pool (115 colleges)</strong></span><span class=\"amt\">" + fm(Math.max(0, m.crPool)) + "</span></li>";
+  var cr = m.cr;
+  document.getElementById("crFacts").innerHTML =
+    "<li>Pool " + fm(Math.max(0, m.crPool)) + " across <strong>" + cr.n + "</strong> colleges, split by credit FTES share, clamped between " +
+      fm(state.crFloor) + " and " + fm(state.crCap) + " per college for the window.</li>" +
+    (cr.floorInfeasible
+      ? "<li><span class=\"over\">Infeasible:</span> floors alone demand " + fm(cr.floorDemanded) + "; each college receives a pro-rata " + fm(cr.each) + " — below the promised minimum.</li>"
+      : "<li><strong>" + cr.floored + "</strong> colleges sit at the minimum, <strong>" + cr.capped + "</strong> at the ceiling" +
+        (cr.unspent > 0.5 ? "; <span class=\"under\">" + fm(cr.unspent) + " unspendable</span> under the ceiling." : "; the pool spends exactly.") + "</li>");
+  var lines = [
+    "<li>Carve-out " + fm(state.carveout) + " · entry threshold <strong>" + fi(state.ncThresh) + " FTES</strong> admits <strong>" +
+      m.ncCount + "</strong> institutions (of " + (COLLEGES.filter(function(c){return c[2]>0;}).length + FEEDERS.filter(function(f){return f[1]>0;}).length) +
+      " with any noncredit FTES) · minimum " + fm(state.ncFloor) + " each.</li>",
+    "<li>Floor demand: " + fm(state.ncFloor) + " × " + m.ncCount + " = <strong>" + fm(m.ncDemand) + "</strong> against the " + fm(state.carveout) + " pool — " +
+      (m.ncDemand > state.carveout
+        ? "<span class=\"over\">over by " + fm(m.ncDemand - state.carveout) + "</span>."
+        : "<span class=\"balanced\">covered</span>, with " + fm(state.carveout - m.ncDemand) + " left to earn above the minimums.") + "</li>"
+  ];
+  if (m.frontier) {
+    lines.push("<li>At this floor, the lowest affordable threshold is <strong>" + fi(m.frontier.t) + " FTES</strong> (" +
+      m.frontier.count + " institutions, " + fm(m.frontier.demand) + " demanded)" +
+      (m.oneBelow ? " — one step lower, " + fi(m.oneBelow.t) + " FTES, admits " + m.oneBelow.count +
+        " and would need " + fm(m.oneBelow.demand) + ": <span class=\"over\">" + fm(m.oneBelow.demand - state.carveout) + " more than the pool holds</span>." : ".") + "</li>");
+  } else {
+    lines.push("<li><span class=\"over\">No threshold is affordable at this floor</span> — even the largest institution alone demands more than the pool.</li>");
+  }
+  if (m.ncCount > 0 && !m.nc.floorInfeasible) {
+    lines.push("<li>The floor this pool could afford at the current threshold: up to <strong>" + fm(state.carveout / m.ncCount) + "</strong> per institution.</li>");
+  }
+  document.getElementById("ncFacts").innerHTML = lines.join("");
+  DIALS.forEach(function (dl) {
+    var el = document.getElementById("drift-" + dl.key);
+    if (el) el.textContent = state[dl.key] === dl.live ? "live setting" : "live: " + (dl.key === "ncThresh" ? fi(dl.live) : fm(dl.live));
+  });
+}
+
+function buildDials() {
+  var host = document.getElementById("dials");
+  host.innerHTML = DIALS.map(function (dl) {
+    return '<div class="dial"><label for="in-' + dl.key + '">' + dl.label + '</label>' +
+      '<input id="in-' + dl.key + '" type="number" min="0" step="' + (dl.key === "ncThresh" ? "25" : "10000") + '" value="' + dl.live + '">' +
+      '<div class="live" id="drift-' + dl.key + '">live setting</div></div>';
+  }).join("");
+  DIALS.forEach(function (dl) {
+    state[dl.key] = dl.live;
+    document.getElementById("in-" + dl.key).addEventListener("input", function () {
+      var v = Number(this.value);
+      if (isFinite(v) && v >= 0) { state[dl.key] = v; render(); }
+    });
+  });
+}
+
+document.getElementById("resetBtn").addEventListener("click", function () {
+  DIALS.forEach(function (dl) {
+    state[dl.key] = dl.live;
+    document.getElementById("in-" + dl.key).value = dl.live;
+  });
+  render();
+});
+
+buildDials();
+render();
+</script>

@@ -333,6 +333,16 @@ first day.** Do the remembering for them.
   example: `docs/visuals/2026-08-30-governance-fifteen-tables.html` —
   fifteen rulings in one sitting. Human-facing version:
   `docs/working_with_claude_code.md` §11.
+- **CAPTURE UNPLANNED SUBSTANCE ON THE FLY (Sam, 2026-08-30).** His important
+  statements are never planned — *"just comes out of our interactions and I
+  don't think to say specifically braindump."* When Sam or a team member says
+  something substantive unasked — a decision rationale, a vision, a lesson, a
+  failure or success story — capture their words VERBATIM with who/when,
+  unprompted, and say in one line that you did (veto stays with them). Where:
+  the `CPLBrain` vault's braindump pipeline when the vault is attached (its
+  `CLAUDE.md` + the `braindump` skill carry the mechanics); otherwise a
+  `cpl_memory` row plus the lane/lessons doc. The test: would the words be
+  worth re-reading in six months? Routine task talk never qualifies.
 - **Call the effort level (added Session 128, 2026-08-08).** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no

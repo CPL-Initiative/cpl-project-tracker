@@ -143,8 +143,14 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
   check("D1: there is one noncredit row per college in the NC lane",
     ncRows.length > 0 && ncRows.length === Array.from(creditRows).filter((r) => r.querySelector(".cf-lanechip")).length);
   const laneCredit = Array.from(creditRows).filter((r) => r.querySelector(".cf-lanechip"));
-  check("D2: the NC row carries exactly as many cells as the credit row above it — a short row would silently shift every column",
-    ncRows.length > 0 && ncRows[0].children.length === creditRows[0].children.length);
+  // ⚠️ REWRITTEN 2026-08-30 (Sam's Open Verdicts item 2): the CR row now
+  // carries the pair's Combined cell with rowspan=2, so an NC row holds
+  // exactly ONE fewer td than its credit row — equal counts would mean the
+  // spanning cell disappeared. The no-column-shift guarantee this used to
+  // carry lives in tests/cpl_funding_combined.test.js (the nth-child hide
+  // compensation is pinned both ways there).
+  check("D2: the NC row carries exactly one fewer cell than the credit row — the Combined cell spans the pair from the CR row",
+    ncRows.length > 0 && ncRows[0].children.length === creditRows[0].children.length - 1);
   check("D3: the lane chips are the WORDS CR and NC (Sam), not color alone",
     laneCredit.length > 0 &&
     /\bCR\b/.test(laneCredit[0].querySelector(".cf-lanechip").textContent) &&
@@ -224,8 +230,8 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
     // different facts. A $0 here would read as a college that posted nothing.
     check("D15: and its money cells are em-dashes, NOT $0 — it was never eligible to earn",
       !!out && !/\$0/.test(out.textContent) && /—/.test(out.textContent));
-    check("D16: it still carries the same cell count, so no column shifts under it",
-      !!out && out.children.length === creditRows[0].children.length);
+    check("D16: it still carries the pair's NC cell count — one fewer than the credit row, whose Combined cell spans it — so no column shifts under it",
+      !!out && out.children.length === creditRows[0].children.length - 1);
     check("D17: the row states the gap to the dial, which is the number that decides whether to move it",
       !!out && /short of the/.test(out.getAttribute("data-ncfor") !== null
         ? Array.from(out.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" ") : ""));

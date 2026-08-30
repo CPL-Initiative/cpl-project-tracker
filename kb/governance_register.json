@@ -96,8 +96,8 @@
    "id": "DR-09",
    "element": "Implementation funding model parameters",
    "drives": "Dollar allocations per college.",
-   "decides": "CPL Initiative (CO) Folded 2026-08-30 (the Fifteen Tables): cpl_funding_config, cpl_funding_notes and cpl_funding_participation are the same money decision — a dial change states its basis against the allocation memo, a participation flag changes only with a stated reason (dollars follow it), and cpl_funding_config also reaches the college briefings.",
-   "maintained_in": "Supabase + kb/ · cpl_funding_config / cpl_funding_notes / cpl_funding_participation via the Implementation Funding tab",
+   "decides": "CPL Initiative (CO) Folded 2026-08-30 (the Fifteen Tables): cpl_funding_config, cpl_funding_notes and cpl_funding_participation are the same money decision — a dial change states its basis against the allocation memo, a participation flag changes only with a stated reason (dollars follow it), and cpl_funding_config also reaches the college briefings. The college-briefing tab folded in 2026-08-30 (Open Verdicts item 15, Sam): its cpl_funding_optin_review / cpl_funding_config / cpl_funding_notes / cpl_funding_participation writes are the same money decision's college-facing doorway.",
+   "maintained_in": "Supabase + kb/ · cpl_funding_config / cpl_funding_notes / cpl_funding_participation via the Implementation Funding tab + the College Briefing tab",
    "owner": null,
    "when_empty": "n/a — this is ours to set, and the one place on this list where WE are the authority rather than a router.",
    "load_bearing": true,
@@ -334,7 +334,7 @@
    "frequency": "Undecided — never established",
    "owner": null,
    "state": "never-run",
-   "note": "The same shape as CA-03, but a step worse: that loop was decided and never fired; this one was never even decided. Measured 2026-08-07 — of 56 ratings since 1 July, not one had ever moved off status='new'. 31 of them are our own CI smoke test, which writes through the public anon RPC on every run and CANNOT delete its own rows (anon is deliberately write-only on that table). That share is visibly growing: it went 28 -> 31 during a single working session, purely from re-running the test. The unread rows were not noise — a geography bug reported 2026-07-03 sat five weeks, and a student-routing report on 2026-07-17 described a problem only fixed three weeks later, after it happened to come up in conversation. 4 rows have now been marked addressed; 7 real thumbs-down remain. GATE: the MAP/CO test invitation should not go out until this has an owner — inviting people into a channel nobody reads manufactures unread rows and teaches the team their feedback goes nowhere.",
+   "note": "The same shape as CA-03, but a step worse: that loop was decided and never fired; this one was never even decided. Measured 2026-08-07 — of 56 ratings since 1 July, not one had ever moved off status='new'. 31 of them are our own CI smoke test, which writes through the public anon RPC on every run and CANNOT delete its own rows (anon is deliberately write-only on that table). That share is visibly growing: it went 28 -> 31 during a single working session, purely from re-running the test. The unread rows were not noise — a geography bug reported 2026-07-03 sat five weeks, and a student-routing report on 2026-07-17 described a problem only fixed three weeks later, after it happened to come up in conversation. 4 rows have now been marked addressed; 7 real thumbs-down remain. GATE: the MAP/CO test invitation should not go out until this has an owner — inviting people into a channel nobody reads manufactures unread rows and teaches the team their feedback goes nowhere. Folded 2026-08-30 (Open Verdicts item 14, Sam): the chatbot tab's sierra_feedback_upsert writes the very queue this cadence exists to read - the tab is this loop's intake, not a separate decision.",
    "live": "feedback"
   },
   {
