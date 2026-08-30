@@ -165,51 +165,81 @@ def build() -> str:
         fail("cannot find %s" % DASHBOARD)
     html = DASHBOARD.read_text(encoding="utf-8")
 
-    lazy = tab_to_js(html)
-    if len(lazy) < 15:
-        # The boot-dispatch regex is the single point of failure for the lazy
-        # half. If it stops matching, those tabs would render as "reads
-        # nothing", which reads as "nothing to protect" — the most dangerous
-        # wrong answer this tab can give. Fail loudly rather than emit a
-        # confident blank.
-        fail("only %d tabs matched the boot dispatch (expected 15+) — the regex "
-             "has stopped matching, not the tabs" % len(lazy))
-
-    eager = eager_modules(html)
     all_tabs = nav_tabs(html)
     if len(all_tabs) < 25:
         fail("only %d nav tabs matched (expected 25+) — the nav markup changed" % len(all_tabs))
 
+    # Since 2026-08-30 the per-tab tables/rpcs PROJECT FROM THE DEPENDENCY MAP
+    # (kb/_build_dependency_map.py) instead of a local per-module scan, because
+    # the local scan had measurably stopped seeing surfaces: it could not
+    # follow helper wrappers (raci.js's sbGet/sbWrite left the raci tab
+    # reporting "reads: [], writes: []" while it touches four tables), chained
+    # loadScript modules, or URL consts fetched far from their definition.
+    # Four tabs under-reported 12 tables and 3 RPCs at once — on the tab whose
+    # whole job is telling the truth about what is protected. One derivation,
+    # CI-checked and adversarially sampled, both tabs project from it.
+    #
+    # tab_to_js/eager_modules/tables_for/rpcs_for above are NOT dead: the map
+    # imports them — the boot-dispatch parsing still lives here, the map adds
+    # the idioms this file's scan lacked, and this file reads the result back.
+    dep_path = ROOT / "kb" / "dependency_map.json"
+    try:
+        dep = json.loads(dep_path.read_text(encoding="utf-8"))
+    except OSError:
+        dep = None
+    if not dep or not dep.get("datasets") or not dep.get("module_tabs"):
+        # An absent map must fail LOUD: emitting tabs with empty tables reads
+        # as "nothing to protect" — the most dangerous wrong answer this tab
+        # can give.
+        fail("kb/dependency_map.json missing or empty — run "
+             "python3 kb/_build_dependency_map.py first")
+
+    module_tabs = dep["module_tabs"]
+    if sum(1 for mods in module_tabs.values() for _ in mods) < 15:
+        fail("the map attributes fewer than 15 module->tab edges — its boot "
+             "dispatch parse broke, not the tabs")
+
+    per_tab = {t: {"reads": set(), "writes": set(), "rpcs": set()} for t in all_tabs}
+    for ds, d in dep["datasets"].items():
+        is_table = ds.startswith("supabase:")
+        is_rpc = ds.startswith("rpc:")
+        if not (is_table or is_rpc):
+            continue
+        name = ds.split(":", 1)[1]
+        # PostgREST exposes views on the same path shape; derived views stay
+        # out of the display, as they always have (DERIVED_SUFFIXES above).
+        if is_table and name.endswith(DERIVED_SUFFIXES):
+            continue
+        for e in d.get("consumers", []):
+            for tab in e.get("tabs", []):
+                if tab not in per_tab:
+                    continue
+                slot = per_tab[tab]
+                if is_rpc:
+                    slot["rpcs"].add(name)
+                elif e.get("direction") == "write":
+                    slot["writes"].add(name)
+                else:
+                    slot["reads"].add(name)
+
     tabs, unmeasured = {}, []
     for tab in all_tabs:
-        modules = list(lazy.get(tab, []))
-        for m in MODULE_ALIASES.get(tab, []) + modules_by_convention(tab, eager):
-            if m not in modules:
-                modules.append(m)
-
-        reads, writes, rpcs, seen = set(), set(), set(), []
-        for js in modules:
-            path = ROOT / js
-            if not path.exists():
-                continue
-            seen.append(js)
-            body = path.read_text(encoding="utf-8")
-            r, w = tables_for(body)
-            reads.update(r); writes.update(w)
-            rpcs.update(rpcs_for(body))
-
-        if not seen:
+        modules = sorted(m for m, mtabs in module_tabs.items() if tab in mtabs)
+        if not modules:
             # NOT the same as "touches no data". Recorded as its own state so
             # admin.js can say "not measured" — an absent measurement must never
             # render as a clean bill of health.
             unmeasured.append(tab)
             tabs[tab] = {"modules": [], "reads": [], "writes": [], "rpcs": [], "measured": False}
             continue
+        slot = per_tab[tab]
         tabs[tab] = {
-            "modules": seen,
-            "reads": sorted(reads - writes),
-            "writes": sorted(writes),
-            "rpcs": sorted(rpcs),
+            "modules": modules,
+            # A table that is both read and written is a write surface; keeping
+            # it in both lists would double-count it in the tab's own summary.
+            "reads": sorted(slot["reads"] - slot["writes"]),
+            "writes": sorted(slot["writes"]),
+            "rpcs": sorted(slot["rpcs"]),
             "measured": True,
         }
 
@@ -219,7 +249,9 @@ def build() -> str:
                   "org visibility and the RLS gates are NOT here on purpose: admin.js "
                   "measures those at load, from the nav DOM, window.CPL_ORGS and the "
                   "cobi_rls_gates() RPC respectively.",
-        "_source": "CPL_Dashboard.html boot dispatch + page-level <script src> + the root consumer JS",
+        "_source": "kb/dependency_map.json (kb/_build_dependency_map.py — boot dispatch, "
+                   "script tags, helper wrappers, chained modules, URL consts), "
+                   "projected onto the CPL_Dashboard.html nav",
         "unmeasured": unmeasured,
         "tabs": tabs,
     }
