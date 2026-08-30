@@ -30,9 +30,16 @@ gate steps verified live on both PR shapes — docs PRs report in ~1.5 min;
 ⚠️ honest caveat: both verification runs' CHECKS were themselves red at the
 stale-dependency-map step until #1402 cured it — main@ba76dcb is green,
 confirmed) · F (#1402:
-16 living files renumbered, `citation_drift` lint added). The ONLY step left
-is **Sam's branch-protection flip** (add the `test` check from `js-tests.yml`
-to required checks on `main` — a GitHub setting sessions cannot make).
+16 living files renumbered, `citation_drift` lint added). **E's endgame
+RESOLVED late 2026-08-30, Sam's amended ruling:** a required-check ruleset was
+live-tested and REJECTED all five cron push attempts (GH013 — rulesets gate
+every ref update, no Actions-bot bypass), so the `test` gate is
+**doctrine-level**: the check must SUCCEED on the head before a session
+merges (branch policy amended; evidence in
+`docs/reference/branch_policy.md`'s dated section). The ruleset stays Active
+with **force-push + deletion blocks only** — Rule 5 mechanically enforced
+for the first time. No flip is pending; the deploy-key bypass stays in the
+drawer.
 
 Read IN ORDER before touching anything:
 1. `cpl_memory` (Rule 8 — query FIRST): tags `doctrine`, `dependency-map`;
@@ -71,8 +78,6 @@ Read IN ORDER before touching anything:
 
 ## NEEDS SAM (say these back to him early)
 
-- **Flip `js-tests` to required** (branch protection; after that a
-  pending/failing js-tests reads `blocked`, and sessions wait for green).
 - **Judge the 15 governance table candidates** in
   `kb/governance_surface_map.json`; then tighten the noise guard back <30.
 - **React to the "Blast Radius" Admin-pane mock** (S209's artifact).
@@ -124,8 +129,10 @@ Read IN ORDER before touching anything:
 
 ## Safety patterns to honor
 
-- Never force-push `main`. Merge on `clean` OR `unstable`; poll CI via MCP
-  tools; a `check_suite` wake names a superseded `head_sha`.
+- Never force-push `main` (now also platform-enforced). Merge only after
+  the `test` check SUCCEEDS on the head; beyond that, `clean` OR `unstable`
+  merges. Poll CI via MCP tools; a `check_suite` wake names a superseded
+  `head_sha`.
 - Sam curates LIVE beside sessions — Rule 10 now covers ANY shared-table
   bulk write, and a write is only approvable if its receipt can undo it.
 - `cpl_memory` writes: INSERT-only, `status='proposed'`, `plain` on every

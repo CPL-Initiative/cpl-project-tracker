@@ -136,3 +136,34 @@ related:
   - The session-end handoff still notes any architecturally-significant
     PR that landed so the next session has context, even though no
     pre-merge pause happened.
+
+## The `test` gate is doctrine, not branch protection (Sam, 2026-08-30)
+
+Sam's E ruling (2026-08-29, "option 2!") made `js-tests` a
+required-but-conditional-fast check; the gate itself landed in #1400. Making
+it a REQUIRED check at the platform level then failed on measured fact:
+
+- The repo had NO branch protection at all before 2026-08-30 (the standing
+  claim that "the required check is a secret scanner" was refuted by
+  inspection — nothing was ever required).
+- A branch ruleset requiring `test` was created Active and tested live
+  against a dispatched daily-dashboard run. **GitHub rejected all five of
+  the cron's push attempts** with `GH013: Repository rule violations —
+  Required status check "test" is expected` (run 33291464601, 2026-08-30
+  04:04–04:05 UTC). Rulesets gate every ref update, not just PR merges,
+  and GitHub offers no bypass actor for the Actions bot — so "required
+  check + working cron" is not purchasable as configured.
+- **Sam's ruling, 2026-08-30: option (b)** — the requirement moves into
+  doctrine ("the `test` check must have SUCCEEDED on the current head
+  before you merge"), and the ruleset keeps only what tested clean:
+  **Block force pushes** and **Restrict deletions** on `main`, Enforcement
+  Active — the first mechanical enforcement of Rule 5. The deploy-key
+  bypass alternative (a long-lived credential + rewiring ~12 pushing
+  workflows) stays in the drawer in case the team grows past
+  policy-following mergers.
+
+Consequences for the merge flow: `merge on clean OR unstable` survives for
+every check EXCEPT `test`; the E gate's skip-list is what keeps the wait
+cheap (docs-only diffs ~1.5 min, code ~9); and `enable_pr_auto_merge`
+cannot do the waiting (with no required checks it merges immediately), so
+sessions poll `get_check_runs` and merge after success.

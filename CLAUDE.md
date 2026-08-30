@@ -388,10 +388,18 @@ against, and the toggle history are in
   explicit "merge" go-ahead. There is no carve-out for architecturally
   significant PRs: the real safety mechanisms live inside the workstream
   (dry-runs, in-script apply gates, `workflow_dispatch`), not at the merge button.
-  - **Merge on `clean` OR `unstable`.** `unstable` means only a *non-required*
-    check is pending or failing — a pending/failing *required* check reads
-    **`blocked`**, never `unstable`. **Do NOT wait for `unstable` to flip to
-    `clean`.** Only `blocked`, `dirty` (conflict) or `behind` actually gate.
+  - **The `test` check must have SUCCEEDED on the current head before you
+    merge (Sam's E ruling, amended to doctrine-level 2026-08-30).** GitHub
+    cannot make it a required check without rejecting the cron's direct
+    pushes (measured live: a rules-active test declined all five of the
+    cron's push attempts with GH013), so the requirement is DOCTRINE: poll
+    `get_check_runs` on the head until `test` (from `js-tests.yml`) reports
+    success — a docs-only diff finishes in ~1.5 min, a code diff ~9 — and
+    never merge past a pending or failing `test`. A failing `test` on your
+    PR is yours to fix. Waiting for it is the ONE sanctioned merge wait.
+  - **Beyond `test`, merge on `clean` OR `unstable`.** `unstable` from any
+    OTHER non-required check still merges — do NOT wait for it to flip to
+    `clean`. Only `blocked`, `dirty` (conflict) or `behind` gate beyond that.
   - **Poll CI via the MCP `github` tools, NOT `curl`.** The sandbox cannot reach
     `api.github.com`; a curl loop watching CI silently times out. Use
     `pull_request_read {method:"get"}` or `get_check_runs`. Webhooks do not
@@ -404,9 +412,10 @@ against, and the toggle history are in
   - **Never PARK a PR in DRAFT.** Mark ready immediately (a PR can be ready
     while CI runs) and squash-merge the instant it is mergeable, in the SAME
     turn rather than ending the turn to wait.
-  - **Backstop:** after marking ready, call `mcp__github__enable_pr_auto_merge`
-    (squash). It refuses while a required check is in-progress — poll and retry,
-    or squash-merge manually.
+  - **Backstop:** `mcp__github__enable_pr_auto_merge` (squash) — but with no
+    required checks configured, GitHub auto-merge fires IMMEDIATELY, so it
+    cannot do the `test` wait for you. Call it (or merge manually) only
+    AFTER `test` reports success on the current head.
   - **Method: squash and merge** (`mcp__github__merge_pull_request`,
     `merge_method: "squash"`).
   - **Branches auto-delete on merge.** Never run `git push origin --delete` from
