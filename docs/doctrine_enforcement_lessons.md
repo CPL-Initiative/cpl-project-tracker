@@ -11,6 +11,8 @@ artifacts:
   - tests/check_ledger.test.js
   - tests/check_floor.json
   - tests/run.js
+  - scripts/js_suite_gate.sh
+  - tests/js_suite_gate_test.py
 related:
   - "[[docs/kb-notes/methodology-index-the-doctrine-to-the-file]]"
   - "[[docs/kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied]]"
@@ -327,3 +329,39 @@ merged and consumed by two tabs in one session (#1396, #1397, #1398).
 - `kb/credentials.json` rebuilt by `kb/_match_cos_authority.py` under
   `cos-authority-sync.yml`, absent from ITS commit list (found by the map's
   stale-copy rule on regeneration — the rule generalizes).
+
+## 2026-08-30 — Session 210 (SkyLedger): the E gate, and the suite's inputs moved the design again
+
+Remediation E built ([#1400](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1400)):
+`js-tests` is now flippable to a required check — one always-run job, with
+`npm test` alone (the only expensive step, ~8.5 min) skipped when every changed
+file is docs-shaped. The flip itself is Sam's, in branch protection.
+
+### What the build taught
+
+- **S208's lesson recursed: reading the artifact changes the design.** S208
+  read the *workflow* and moved the conditional from the job to one step. This
+  session read the *suite* and inverted the key: the jsdom tests read
+  `.js`/`.html`/`.json`/`.css`/`.sql`/`.ts` — 120 `readFileSync` sites on HTML
+  alone — so the planned "run when JS/`tests/`/generators change" whitelist
+  under-triggers silently, the worst failure a required check can have (a
+  Rule-4 `:root` token mirror would skip the suite that reads both HTMLs).
+  The shipped rule is a fail-safe **skip-list** (`scripts/js_suite_gate.sh`):
+  skip only when every changed file is provably inert; anything unrecognized
+  runs the suite.
+- **The one measured hole got its own branch, not a wider hot set.**
+  `docs/catalog/**` regenerates on most docs PRs and is read by exactly one
+  test file — putting it in the run set would defeat E for the commonest PR
+  shape. Instead the skip branch runs `tests/governance_docs_panel.test.js`
+  directly (~2s), and the guard re-derives the set of inert-path readers every
+  run, so a future docs-reading test cannot be skipped silently.
+- **The ban tripped on its own warning — again.** The check forbidding
+  `paths-ignore` failed on the comment that *warns against* `paths-ignore`,
+  the exact `self_corrected_word_pair` class from the American-spelling rule.
+  Comments are stripped before the check runs; the class now has two worked
+  instances in this corpus.
+- **The verification rode on real work.** The gate's `run` path was proven
+  live by #1400's own CI (the decision step chose `run` for a
+  workflow-touching diff and the suite executed); the `skip` path is proven by
+  the PR carrying this very section — docs-only by design, catalog
+  regeneration included, so the carve-out branch executes too.
