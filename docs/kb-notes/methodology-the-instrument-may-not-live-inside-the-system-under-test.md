@@ -197,20 +197,19 @@ check so the description is out of range — never rely on remembering not to qu
 ## The fourth instance: the subject's REQUIRED READING is a location too (2026-08-30)
 
 Moving the instruments out of the subject's repository closed the storage
-leak — and the next void arrived anyway, through scheduling. A realistic
-scenario says "pick up the priority work"; the subject correctly reads the
-authoritative handoff; the handoff's queue, correctly, lists the instrument
-lane's own next step and points at the instruments' home; the subject,
-correctly, follows. **Three correct moves, and the subject is inside the
-answer key.** The instrument had been moved out of the subject's *store* but
-not out of the subject's *path*.
+leak — and the next void arrived through scheduling instead. When a subject's
+task is "whatever is currently most important," the subject inherits whatever
+the priority queue currently holds; if the queue's top item is the evaluation
+program itself, then every correct move — and the diligent subject makes them
+fastest — walks the subject toward the apparatus. The instrument had been
+moved out of the subject's *store* but not off the subject's *path*.
 
 The generalization tightens: the earlier rule said *anything the subject can
 read is an input*. This instance adds: **anything the subject's task will make
-it read is part of the apparatus** — and a task defined as "whatever is
-currently most important" inherits whatever the queue currently holds. An
-evaluation whose subject is pointed at a live work queue is only clean while
-the queue's top item is not the evaluation itself. Check that as a staging
-condition, or sequence the runs so instrument work is never the top of the
-queue while a run is possible, or give the subject a pinned task instead of a
-pointer to the queue — each fixes it; relocation alone does not.
+it read is part of the apparatus.** An evaluation whose subject is pointed at
+a live work queue is only clean while the queue's top item is not the
+evaluation itself. Check that as a staging condition, or sequence the runs so
+instrument work is never the queue's top while a run is possible, or give the
+subject a pinned task instead of a pointer to the queue — each fixes it;
+relocation alone does not. (The measured instance is filed with the
+instruments, deliberately not here.)

@@ -461,40 +461,70 @@ day (#1406–#1409). What the sitting taught:
   bare `git push` targets nothing useful — push explicitly
   (`git push origin <branch>`), and verify the remote ref actually moved.
 
-## 2026-08-30 (evening) — Session 213 (SkyMirror): the queue routed a compliant session into the instruments
+## 2026-08-30 (late) — a human-gated practice becomes a machine-checked one, and an instrument meets its first real user
 
-The probe lane's queued pre-run work is done and banked **vault-side** (the
-instruments' home): the criteria re-read against the post-remediation corpus
-landed as a dated addendum beside the criteria (never inside them), the lane's
-current-truth file moved, and the redo recipe for the failed ablation is
-written. Tracker-side, per the standing rule, this section carries the class
-of what happened and a pointer, not the material:
-`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.
+- **The gate names itself.** Sam, unprompted: attaching all three repos is his
+  standing practice, taught to the team — *"but it's a human gated practice."*
+  Same failure class this file keeps finding ("a habit that depends on a new
+  user remembering it will fail on their first day"), fixed the same way:
+  move the remembering into the session. #1412 ships the three layers —
+  detection in the always-loaded file (verify the set, name what's missing),
+  a one-time per-machine installer for the zero-repo case (the only channel
+  that exists when nothing loads), and guide §12 for the humans. KB note:
+  `methodology-a-human-gated-practice-becomes-a-machine-checked-one`.
+- **The zero-repo case has exactly one lever.** With no repo attached, no
+  CLAUDE.md loads at all, so no rule in any repo can fire — the backstop must
+  live on the machine (user-level memory), installed once, like the hooks.
+  Expectation set honestly: a repo-less session is generic Claude.
+- **An instrument's first real user finds the traps its author cannot.** The
+  first live operator sitting on the session-testing bench surfaced three
+  usability defects in one afternoon — a reply that reads as a go-ahead
+  converts a primed test session into a working session; boot narration that
+  names one repo reads as a failed attach; selector state persisting between
+  attempts nearly mislabels a run — each fixed and pinned into the
+  walkthrough the same hour, with the live case cited. Specifics stay in the
+  vault's probe folder by leak discipline; the durable operations rule
+  (results file one-paste into the vault's append-only log) lives in that
+  folder's README.
+- **The queue survives its sessions.** The register re-analysis sheet Sam
+  ordered at the sitting was built and merged by a parallel session line
+  (#1413) that booted off nothing but the one-line handoff pointer — the
+  doctrine chain (sibling check → highest handoff → memory query → queue)
+  ran end-to-end unprompted. The sheet awaits his reply-by-number verdicts.
 
-- ⭐ **Fourth instance of defeat-by-diligence, first via the QUEUE.** The
-  measured-void condition the lane was waiting on ("relocate only if a void
-  actually fires") fired — through the authoritative handoff chain itself:
-  greeting → highest handoff → queue → ordered reading → the instrument
-  folder. The prior three instances were storage problems (the repo held the
-  answer key); this one is a **scheduling** problem — while the instrument
-  work sits at the top of the priority queue, any session sent to "the
-  priority workstream" ends inside the instruments. Location fixes do not
-  cover it; sequencing or a staging pre-check does. Options are recorded
-  vault-side for Sam.
-- **A session's boot can be its own best evidence.** The run's opening
-  sequence (three-repo check → numeric highest-handoff sort → stale-greeting
-  flag → Rule 8 memory query before any edit → lane file → live-session
-  reconnaissance) executed from the always-loaded layer alone, unprimed —
-  the strongest live observation yet that the PUSH layer steers a cold boot,
-  recorded with its exact call order in the vault.
-- **Mid-session workstream pivots re-trigger Rule 8.** The register queue
-  item was the greeting's target; the actual work turned out to be the
-  doctrine lane. The second `cpl_memory` query (doctrine tags) ran before
-  any doctrine-lane write — Rule 8 is per-workstream, not per-session; a
-  session that queries once at boot and then pivots is unread on the lane
-  it actually works.
-- **Register lane truth caught up**: the re-analysis sheet merged as #1413
-  from the prior session without a checkpoint, leaving the lane file claiming
-  the sheet was still queued. Fixed this checkpoint; the general lesson is
-  standing (a merged PR without its lane-file edit is a stale lane by the
-  next morning).
+## 2026-08-30 (evening) — Session 213 (SkyMirror): the lane's groundwork banked, and the boundary honored the hard way
+
+The probe lane's queued pre-run work is done and filed in the VAULT, its
+sanctioned home: the criteria re-read against the post-remediation corpus
+(dated addenda beside the criteria, never inside them), the lane's
+current-truth update, the leak-perimeter verification, and the redo recipe
+for the failed ablation. A fourth instance of the defeat-by-diligence class
+was recorded the same hour, and the measured datum one of the lane's
+standing decisions was waiting on now exists. **Per the boundary handoff 213
+set the same evening — none of that folder's topics, criteria, or results
+restated in any tracker doc or in `cpl_memory` — the instance's shape and
+consequences live only there.** This section's own first draft said more and
+was cut to this during the #1414/#1415 merge; one `cpl_memory` row was
+superseded for the same reason. The boundary's cost is real (a lesson a
+tracker reader cannot see) and it is the cheaper side of the trade.
+
+- **The boot ran on the PUSH layer alone.** This session started from a
+  stale greeting (205/208 named against 212 highest) with NO handoff-pointer
+  paste, and the chain still fired: three-repo check → numeric
+  highest-handoff sort → stale-number flag → Rule 8 memory query before any
+  edit → lane file → live-session reconnaissance. Same chain the PM section
+  observed under a one-line pointer; this boot had none.
+- **Mid-session workstream pivots re-trigger Rule 8.** The greeting's target
+  lane and the lane actually worked differed; the second `cpl_memory` query
+  (doctrine tags) ran before any doctrine-lane write. Rule 8 is
+  per-workstream, not per-session — a session that queries once at boot and
+  then pivots is unread on the lane it actually works.
+- **A merged PR without its lane-file edit is a stale lane by the next
+  morning** — #1413 sat on main for hours while the register lane file still
+  said "queued next sheet". Fixed this checkpoint; if you merge substantive
+  work, move the lane file in the same run, even outside a full checkpoint.
+- **The conflicted-PR trap fired live, exactly as pinned.** #1415 showed ZERO
+  check runs for ten minutes — not Actions lag: `mergeable_state: dirty`
+  against a main that had moved (#1414, the parallel PM checkpoint), and a
+  conflicted PR cannot produce a `pull_request` run. The memory row and the
+  S203 narrative both carry it; the fix is the merge, never a re-run.

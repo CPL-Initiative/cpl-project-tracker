@@ -9,27 +9,47 @@ obsidian-folder: cpl-project-tracker
 
 # You are Session 214
 
-SkyMirror here. This session booted from a STALE greeting (it named 205/208
-while 212 was highest — Rule 9's known failure mode; the boot is worth reading
-about, but only from the vault, see below). It verified the ladder, ran Rule 8,
-found the S212 queue's item 1 already merged, and spent the run on the two
-things that were actually open: register-lane truth and the doctrine-probe
-lane's queued groundwork. Merged: the Rule 9 checkpoint PR on this repo, and
-the probe-lane PR on CPLBrain (see the checkpoint commit for numbers).
+SkyMirror here. 2026-08-30 ran THREE parallel session lines, and two of them
+checkpointed within the same hour: `session_213_handoff.md` (SkyLedger's PM
+half — #1411/#1412/#1414) and this file (my evening half — #1415, merged onto
+it). **Read 213 too**; neither supersedes the other, the 203/204 precedent.
+My session booted from a STALE greeting (it named 205/208 while 212 was
+highest — Rule 9's known failure mode), verified the ladder, ran Rule 8,
+found the S212 queue's item 1 already merged (#1413), and spent the run on
+register-lane truth and the doctrine-probe lane's queued groundwork
+(vault-side, CPLBrain#59). It also ate the conflicted-PR trap so you don't
+have to: zero check runs on a fresh PR means check `mergeable_state` FIRST —
+`dirty` produces no `pull_request` run at all.
+
+## Two live facts (carried from 213, still true)
+
+1. **Parallel session lines may still be alive.** The #1413 line is
+   subscribed to its PR and owns executing the register verdicts if Sam
+   replies THERE. If Sam rules to YOU, you execute — the sheet's provenance
+   paragraph states the contract (receipted register edits, the memo-queue
+   doc, lane updates, republish as scoreboard). Do not grab the lane
+   unprompted; committed docs are the only cross-session sync.
+2. **Sam is actively running cold-session tests from a bench artifact he
+   holds.** ALL of that program's state, protocol, instruments, and results
+   live in the VAULT: `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`
+   — read its `README.md` FIRST if he asks for probe support, staging, or
+   pastes a bench export. ⚠️ **Never restate that folder's contents —
+   topics, criteria, results — in ANY tracker doc or in `cpl_memory`**;
+   booting sessions read `cpl_memory`, so a row there hands the answer key
+   to future test subjects. This rule was applied retroactively to S213's
+   own drafts during the #1414/#1415 merge — it binds you too.
 
 ## Read IN ORDER before touching anything
 
 1. `cpl_memory` (Rule 8 — query FIRST, per workstream; re-query when you
    PIVOT workstreams mid-session, that is the rule's unit).
-2. The register sheet, if Sam has ruled: `docs/visuals/2026-08-30-register-reanalysis.html`
+2. `docs/session_213_handoff.md` — the PM half's full picture.
+3. The register sheet, if Sam has ruled: `docs/visuals/2026-08-30-register-reanalysis.html`
    — 16 rows × still-needed × instrument, 5 candidate rows (#17–21), the
    three-memo grouping (item 22). His verdicts arrive by number, often
    mid-turn; execute each as it lands.
-3. `docs/reference/lanes/gr-register.md` — current truth, including the
+4. `docs/reference/lanes/gr-register.md` — current truth, including the
    sequencing warning below.
-4. Working the doctrine-probe lane and ONLY then:
-   `CPLBrain/04-projects/cpl-initiative/doctrine-probes/` (state, criteria,
-   queue — vault-side on purpose; the tracker carries pointers only).
 
 ## Your queue, in priority order
 
@@ -44,11 +64,11 @@ the probe-lane PR on CPLBrain (see the checkpoint commit for numbers).
 2. **Port the Budget Balance readout on Sam's reaction** to the dials mock
    (`docs/visuals/2026-08-30-budget-balance.html`) — unchanged, still waits
    on him.
-3. **The doctrine-probe lane** — the pre-run groundwork is DONE (criteria
-   re-read, dated addenda, perimeter verified, ablation recipe written).
-   What remains is mostly Sam-run sittings; the vault folder's lane-state
-   file says exactly what is runnable today and what each needs. Do not
-   summarize its contents into this repo.
+3. **Probe-support loop on demand** — the pre-run groundwork is DONE
+   (criteria re-read with dated addenda, perimeter verified, the ablation
+   recipe written). What remains is mostly Sam-run sittings; the vault
+   folder's lane-state file says exactly what is runnable today and what
+   each needs. This handoff deliberately says nothing more (live fact 2).
 4. **The cross-store checker** (`kb/_doctrine_scenarios.py`, honest 10 of 12):
    a `cpl_memory` row contradicting doctrine, and a conditional checkpoint
    item the auditor cannot see — an architecture step spanning two stores;
@@ -70,8 +90,10 @@ the probe-lane PR on CPLBrain (see the checkpoint commit for numbers).
 - **React to the Budget Balance dials** (queue item 2's gate).
 - **Merge cpl-knowledge-base#22** (his click IS the curation gate).
 - **Confirm the context-pressure hook installed** (`s206-sam-install-hook`).
-- **The probe lane's staging decisions** — recorded vault-side with the
-  measured datum he asked to wait for; one line from him picks the path.
+- **Export the bench log at the end of every scoring sitting** — scores are
+  browser-local until pasted to a session (`s210-sam-export-bench-log`).
+- **The probe lane's open decisions** — recorded vault-side; one line from
+  him picks the path.
 
 ## Watch-outs this run earned
 

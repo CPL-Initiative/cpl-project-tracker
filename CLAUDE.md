@@ -715,8 +715,12 @@ all executed same day (#1407–#1409): Combined award column · frozen header +
 statewide pair · pool card wired to the Budget table · goal-card policy · scope
 68→2 values (receipted) · tab folds · §55050 SENT 2026-08-28 · post-SB 135
 register re-analysis ordered · Blast Radius on Admin. ⚠️ `npm test | tail`
-reports TAIL's exit — CI caught what local masked. Story:
-`doctrine_enforcement_lessons` + `cpl_funding_lessons`; handoff `session_212_handoff`.
+reports TAIL's exit — CI caught what local masked. PM: the three-repo attach
+practice became session-checked doctrine (#1411/#1412 — verify at start, name
+what's missing; per-machine installer for the zero-repo case); the parallel
+Session-212 line shipped the register re-analysis sheet (#1413, awaiting Sam's
+numbers). Story: `doctrine_enforcement_lessons` + `cpl_funding_lessons`;
+handoff `session_213_handoff`.
 
 ### SkyMirror S213 — the sheet caught up with its lane, and the probe groundwork banked (2026-08-30)
 
@@ -727,9 +731,11 @@ lane file and feed said "queued" while main said "built". ⚠️ Run the Sierra 
 sweep BEFORE verdicts rewrite rows (same-ground comparison). **Doctrine-probe lane**:
 the S211-ordered pre-run work is done vault-side — criteria re-read against the settled
 corpus (dated addenda beside, never inside), lane current-truth, the ablation-redo
-recipe, perimeter verified clean. Fourth defeat-by-diligence instance recorded, first
-via the QUEUE; detail stays vault-only by standing rule. Story:
-`doctrine_enforcement_lessons`; handoff `session_214_handoff`.
+recipe, perimeter verified clean. A fourth defeat-by-diligence instance is recorded
+with the instruments; handoff 213's boundary (nothing of that folder restated
+tracker-side or in `cpl_memory`) is honored and was applied retroactively to this
+session's own drafts in the #1414/#1415 merge. Story:
+`doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
 
 ## Troubleshooting
 
