@@ -1,0 +1,570 @@
+<title>Register Re-analysis</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — single-theme light by design (repo doctrine:
+     no dark page palette). Frame cloned from 2026-08-30-open-verdicts.html;
+     all fg/bg pairs inherited from that verified sheet, no new colors. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36;
+    --text-muted: #5C5C55; --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000; --cobalt: #0047AB; --hunter: #2C601A;
+    --mustard-text: #8B6800; --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px;
+    line-height: 1.55; margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  .howto code { background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em; }
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 14px; font-size: .9rem; }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip { margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .chip.rec     { color: var(--cobalt);       border-color: var(--cobalt);        background: var(--surface-opaque); }
+  .chip.fold    { color: var(--hunter);       border-color: var(--hunter);        background: var(--surface-opaque); }
+  .chip.yours   { color: var(--mustard-text); border-color: var(--mustard-text);  background: var(--surface-opaque); }
+  .card dl { margin: 8px 0 0; }
+  .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem;
+    font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .prov { font-size: .85rem; color: var(--text-muted); border-top: 1px solid var(--border);
+    margin-top: 36px; padding-top: 14px; }
+  @media (max-width: 560px) { .card header { gap: 8px; } .chip { margin-left: 0; } }
+</style>
+
+<a class="skip" href="#sheet">Skip to the rows</a>
+<div class="wrap">
+
+<p class="kicker">Decision sheet · the GR register against SB 135 · 2026-08-30</p>
+<h1>Register Re-analysis</h1>
+<p class="lede">Your item-8 order, executed: every CPL register reform re-read
+against the ground you named — trailer bill language became verbatim Ed Code
+(Article 9, §78093–78093.2, effective 2026-07-13, plus §75013 and §88782 from
+the same chapter). Each row below proposes <strong>still needed or not</strong>,
+and if needed, an <strong>instrument</strong>: memo, Title 5, legislative
+change, or procedure. Rows landing on memo feed the guidance-memo queue you
+named in item 7.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> reply by number — <code>yes</code> takes the
+  proposal, or override with your own call
+  (<code>edit: …</code> · <code>fold: …</code> · <code>dismiss</code>).</p>
+  <p>Numbers <strong>1–16 are the register's own row numbers</strong>; 17–21 are
+  candidate new rows; 22 is the memo plan. Rulings execute as register edits
+  with receipted before-values, and this sheet republishes as the scoreboard.</p>
+</div>
+
+<ul class="tally">
+  <li><b>7</b> rows already ride the sent §55050 package</li>
+  <li><b>1</b> rides the November filing you ruled together</li>
+  <li><b>7</b> need a fresh instrument</li>
+  <li><b>1</b> proposed retirement</li>
+  <li><b>5</b> candidate new rows</li>
+  <li><b>8</b> rows land on the memo queue</li>
+</ul>
+
+<div id="sheet">
+
+<h2 class="kicker">Riding the sent package — §55050 v5, filed 2026-08-28 · instrument: procedure</h2>
+
+<section class="card">
+  <header><span class="num">1</span> <span class="tname">Authorize CPL for course, GE area, and elective</span>
+  <span class="chip rec">Keep — procedure + memo</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 4 · instrument §55050 · memo + Title 5. Asks that an award may be a
+    catalog course, a GE area, or elective credit.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.1(d) now <em>defines</em> a credit recommendation as exactly these
+    three, and §75013(b) orders per-program recommendations built on that
+    definition. The v5 package carries the clause — with your ruling that no GE
+    framework is named, so the row's summary (which lists Cal-GETC, CSU GE
+    Breadth, UC GE Breadth) should align to the open-ended wording.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Procedure (the filed clause through the 2026–27 calendar)
+    plus a memo <em>now</em> — the three-way award no longer rests on
+    §55050's "if possible"; it rests on a statutory definition. Register edits:
+    add EC §78093.1(d) and §75013(b); align the summary's GE wording to the
+    draft. Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">2</span> <span class="tname">CPL reciprocity between colleges</span>
+  <span class="chip rec">Keep — rewritten, memo + procedure</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 2 · instrument §55050 · TBL · Title 5 + Ed. Code. Still asks the
+    Legislature for reciprocity that §78093.2(b)(2) already mandates — the fix
+    you approved in item 8, folded here rather than rewritten twice.</dd>
+    <dt>What changed</dt>
+    <dd>CCC-to-CCC acceptance is enacted law. What survives: "no secondary
+    review" is not stated in terms (drafted as the (n) second sentence in the
+    sent package), and the intersegmental half landed weaker than the TBL draft
+    — CSU "shall collaborate … to ensure," UC only "encouraged"
+    (§78093.2(c)(1)(A)). The row's consideration also still says de-flagging
+    (#9) is what achieves reciprocity — that reasoning now runs backwards:
+    reciprocity is mandatory, and de-flagging just removes friction in it.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed, rewritten smaller: a memo confirming (b)(2) binds every
+    campus today, plus procedure for the drafted no-secondary-review clause.
+    Drop the Ed. Code pathway — the Legislature already acted; park a
+    UC-hardening ask unless "encouraged" proves insufficient in practice.
+    Register edits: rewrite summary and consideration, pathway to memo +
+    Title 5, add EC §78093.2(b)(2) and (c)(1)(A). Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">6</span> <span class="tname">Honor ASCCC statewide credit recommendations</span>
+  <span class="chip rec">Keep — procedure, and verify the row</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 5 · instrument §55050 · TBL. Its summary still says the honor duty
+    is "currently only a funding condition."</dd>
+    <dt>What changed</dt>
+    <dd>That sentence is no longer true twice over: the v5 package drafts the
+    §55050 "shall consider … where possible honor" mirror, and §75013(b)
+    <em>mandates</em> the recommendation machinery — the CO and ASCCC shall
+    produce per-program recommendations, uniform systemwide, by 2027-07-01,
+    with colleges strongly encouraged to award consistent with them.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Procedure (the filed clause + the §75013(b) machinery).
+    Register edits: rewrite the summary, add EC §75013(b) — and mark the row
+    <em>verified</em> against the authenticated statute, the first of the
+    register's zero-of-sixteen to move.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">9</span> <span class="tname">Remove the CPL transcript annotation</span>
+  <span class="chip rec">Done into procedure</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 3 · instrument §55050 · Title 5. Title carries a typo
+    ("requirement to requirement").</dd>
+    <dt>What changed</dt>
+    <dd>You ruled it 2026-08-26: nothing in the Education Code requires the
+    annotation, and the sent package strikes it as a tracked deletion, with
+    identification living in the (b)(4) infrastructure duty instead.</dd>
+    <dt>Proposed</dt>
+    <dd>No new instrument — the ask is filed; what remains is the rulemaking
+    calendar. Register edits: mark the row in-procedure and fix the title
+    typo.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">11</span> <span class="tname">CPL data on MAP + MAP/MIS integrity</span>
+  <span class="chip rec">Keep — procedure + memo</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 8 · instrument §55050 · AB 123 · memo + Title 5. The data
+    backbone row.</dd>
+    <dt>What changed</dt>
+    <dd>MAP is now named in statute three times — §78093.2(a) builds the
+    initiative on it, (a)(2) requires the statewide technology infrastructure,
+    §88782(b) builds the Career Passport off it — and the sent package's
+    (b)(4) obliges districts to maintain student CPL records in that
+    infrastructure. §75013(c)(1) adds a MAP/MIS adjacency (Calbright into MIS
+    on the noncredit schedule), and (d)(2) makes the data the allocation
+    evidence.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Procedure (the filed duty) plus a memo carrying the
+    data-integrity guidance as a funding condition. Register edits: citations
+    to EC §78093.2(a)(2) · §88782(b) · §78093.2(d)(2) · §75013(c)(1),
+    keeping AB 123. Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">14</span> <span class="tname">Identify and verify skills for all CPL</span>
+  <span class="chip rec">Keep — procedure + memo</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 10 · instrument §55050 · memo + Title 5. The quality floor that
+    justifies portability.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.1(f) <em>defines</em> "validated" — faculty discipline review
+    groups, faculty-approved assessment methods — and §78093.1(c) makes
+    validation constitutive of CPL itself; (a)(5) requires enabling,
+    documenting, and validating skills, and §88782(a)(2) points the validated
+    record at competency-informed hiring. The sent package restores
+    "authenticated competencies."</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Procedure plus the memo — under Article 9, unvalidated
+    prior learning simply is not CPL, which is the portability argument stated
+    as law. Register edits: add EC §78093.1(f), §78093.2(a)(5), §88782(a)(2).
+    Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">16</span> <span class="tname">Honor MAP CPL recommendations</span>
+  <span class="chip rec">Keep — procedure</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 5 · instrument §55050(c) — the citation you already approved
+    fixing (old value receipted in the memory log).</dd>
+    <dt>What changed</dt>
+    <dd>§78093.1(d) requires credit recommendations be "documented in detailed
+    exhibits for faculty credit evaluation" — MAP's exhibit model, in statute —
+    and names ACE alongside faculty discipline review groups. The sent package
+    extends the ACE "shall consider" template to MAP recommendations.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed; nothing left to draft. Procedure through the calendar.
+    Register edit: add EC §78093.1(d).</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">The November filing — the four items you ruled travel together</h2>
+
+<section class="card">
+  <header><span class="num">3</span> <span class="tname">"CR" notation rather than P/NP</span>
+  <span class="chip rec">Keep — Title 5, via the November filing</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 9 · instrument §55023 · §55050 · Title 5. Article 9 is silent on
+    grading symbols, so the ask is unchanged in substance.</dd>
+    <dt>What changed</dt>
+    <dd>The vehicle. The grading clause was drafted in an early package version
+    and deliberately left out of the conformity filing (v5 ends at (n));
+    your item-7 ruling routes it with the four November items as one filing,
+    the §55023 companion amendment riding along.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Title 5, via the ruled November filing — from this
+    sheet's side that is procedure: the decision is made, the work is the
+    filing itself. No register edit beyond noting the vehicle.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Fresh instrument</h2>
+
+<section class="card">
+  <header><span class="num">4</span> <span class="tname">No local limit on CPL units</span>
+  <span class="chip rec">Keep — memo now, Title 5 later</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 7 · instrument §55050 · §55063 floor · memo + Title 5. Caps are
+    purely local policy; no statewide rule sets one.</dd>
+    <dt>What changed</dt>
+    <dd>Three memo arguments where there was one: (d)(1)(A) "equitably for all
+    eligible students," (b)(1) "all incoming students," and — sharpest —
+    §75013(b): recommended awards "shall be the same systemwide," which a
+    local cap truncates. Honestly scoped: the uniformity clause binds only
+    §75013(b) recommendations (Calbright-like and industry-certification
+    programs), not all CPL.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Memo now recommending districts drop numerical caps,
+    carrying all three arguments with the scope stated; a Title 5 prohibition
+    at the next policy window rather than the conformity package. Register
+    edit: add EC §75013(b). Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">7</span> <span class="tname">CPL through apportionment (units-based FTES)</span>
+  <span class="chip rec">Keep — legislative change + the workgroup seat</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 1 · instrument §58003.2 + §58050 → TBL · Ed. Code first. The
+    named obstacle: the statutory attendance premise and the Department of
+    Finance.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.2(d) turned out to be a categorical allocation, not
+    apportionment — a live funding channel that does not solve attendance, and
+    does not need to. And §75013(a) built the venue: a funded statutory
+    workgroup that must design a competency-to-FTES equivalence and report to
+    the Joint Legislative Budget Committee and the Department of Finance by
+    2028-10-01. You ruled the seat pursuit in item 9, with CO Governmental
+    Relations, CO Finance, and DoF.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed at rank 1. Legislative change remains the durable
+    instrument; the live procedure is the §75013(a) seat — the outreach note
+    is already on your list, drafted whenever you want it. Register edits: add
+    EC §75013(a) as the near-term pathway and note (d) as the interim
+    channel.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">8</span> <span class="tname">High-school CPL toward dual enrollment</span>
+  <span class="chip rec">Keep — split: memo + fold funding into 7</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 13 · instrument §55050 / §76002 · §76004 · split. Award half
+    lawful now; funding half hits the apportionment wall.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.2(a)(1)(A)(ii) names "high school articulated coursework"
+    explicitly, so the award half now has statutory footing, not just a memo
+    inference.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed, split standing: the award half goes in the memo (feeds
+    the queue); the funding half folds into #7 so there is one apportionment
+    fight, not two. Register edit: add EC §78093.2(a)(1)(A)(ii).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">10</span> <span class="tname">Transcribe all CPL — including waived, GE-area, elective</span>
+  <span class="chip yours">Keep — Title 5; the vehicle is your call</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 3 · instrument §55050 · Title 5. The other fold-in from item 8 —
+    #9's counterweight, wanting a fresh look now #9 is settled.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.2(b)(2) requires accepting <em>transcribed</em> CPL, which
+    presupposes transcription — the duty now implements a statutory mandate.
+    The one-sentence addition to (l) was recommended for the conformity
+    package but the package went without it, so the ask is real and currently
+    has no vehicle. Recording the credit was never the same request as
+    flagging its source; the register should say so now that #9 struck the
+    flag.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Title 5 — and the vehicle is your call: add it as a
+    fifth item to the November filing (it implements enacted law, so it
+    strengthens rather than reopens), or hold it for the next conformity
+    window. Register edits: rewrite summary and consideration to state the
+    #9 relationship; add EC §78093.2(b)(2).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">12</span> <span class="tname">CPL need not be listed on CORs</span>
+  <span class="chip yours">Keep — memo, with one legal read to confirm</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 6 · memo only — the cleanest win in the package, written as
+    though nothing could be said against it.</dd>
+    <dt>What changed</dt>
+    <dd>Something can now be said against it: §78093.1(f)(2) requires
+    assessment "approved through established curricular processes and
+    procedures," and a reader can lift that as "doesn't that mean the COR?"
+    The answer — (f)(2) governs how mastery is <em>assessed</em>, not whether
+    an outline must enumerate CPL as a mode — should be pre-empted in the
+    memo rather than met in the room.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Memo, leading the already-law memo — with the (f)(2)
+    pre-emption written into the row's consideration. The legal read above is
+    the one call to confirm: if you read (f)(2) my way, the memo carries it;
+    if not, this row weakens and should say so. Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">13</span> <span class="tname">Common Course Crosswalk via ASCCC Pathways to Credit</span>
+  <span class="chip rec">Keep — procedure, Title 5 later</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 5 · instrument §55050 · AB 1111 · memo + Title 5. Already funded
+    and in motion.</dd>
+    <dt>What changed</dt>
+    <dd>§78093.2(a)(3) is the crosswalk's mechanism in statute (discipline
+    review groups developing systemwide-adoptable recommendations), and
+    §75013(b)'s uniform amounts are exactly what a crosswalk has to carry.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Procedure — the funded ASCCC work, aligned to AB 1111 —
+    with Title 5 later to require use once the crosswalk exists to require.
+    Register edits: add EC §78093.2(a)(3), §75013(b).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">15</span> <span class="tname">Record CPL denials in writing</span>
+  <span class="chip rec">Keep — memo now, Title 5 at the next window</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 11 · instrument §55050 · memo + Title 5, on the §76001(b)
+    recorded-denial model.</dd>
+    <dt>What changed</dt>
+    <dd>Nothing in Article 9 — it is silent on denials. The one-sentence (g)
+    addition was offered for the conformity package and correctly left out:
+    it is policy, not conformity, and would have been a fourth named
+    stretch.</dd>
+    <dt>Proposed</dt>
+    <dd>Still needed. Memo now interpreting the existing accept / decline /
+    appeal right to include a written, reasoned denial; the Title 5 sentence
+    at the next policy window. Feeds the memo queue.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Proposed retirement</h2>
+
+<section class="card">
+  <header><span class="num">5</span> <span class="tname">A central body awards CPL (CVC)</span>
+  <span class="chip yours">Retire</span></header>
+  <dl>
+    <dt>The row today</dt>
+    <dd>Rank 12 · instrument §70902 → §55050 · Ed. Code first. A true central
+    grantor needs new Ed. Code against §70902's district vesting and the
+    accreditation questions.</dd>
+    <dt>What changed</dt>
+    <dd>Its own consideration always said reciprocity delivers ~90% of the
+    benefit — and reciprocity is now statute <em>and</em> drafted. The
+    residual has shrunk twice since the row was written, and nobody is
+    pursuing the statute it needs.</dd>
+    <dt>Proposed</dt>
+    <dd>No longer needed as a pursued reform. Retire the row with its reason
+    recorded; the residual folds into #2 (no secondary review) and #6/#16
+    (honor statewide recommendations). If you want it kept as a long-horizon
+    marker instead, say so and it stays at the bottom of the ranks.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Candidate new rows — what the statute orders that no row covers</h2>
+
+<section class="card">
+  <header><span class="num">17</span> <span class="tname">§75013(b) — the 2027-07-01 recommendation set</span>
+  <span class="chip rec">Add — procedure, with a statutory deadline</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The CO and the ASCCC <em>shall</em> produce per-program CPL
+    recommendations — uniform statewide — for Calbright programs, similar
+    programs elsewhere, and programs preparing students for industry
+    certifications, reported to JLBC and DoF, by 2027-07-01.</dd>
+    <dt>Why a row</dt>
+    <dd>It is an obligation the CPL Initiative has to meet, with a date, and
+    the register has no entry for it. It is also the authority behind #1, #4,
+    #6, and #13 — the row the others cite.</dd>
+    <dt>Proposed</dt>
+    <dd>Add, ranked high. Instrument: procedure — deliver the obligation with
+    the ASCCC partnership; nothing to ask anyone for.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">18</span> <span class="tname">§75013(a) — the CBE-to-FTES workgroup</span>
+  <span class="chip rec">Add — procedure, already ruled pursued</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The funded workgroup designing a non-attendance FTES equivalence,
+    reporting to the Department of Finance by 2028-10-01. Distinct from #7:
+    #7 is "change how CPL generates apportionment"; this is "a room is
+    already designing the mechanism — be in it."</dd>
+    <dt>Why a row</dt>
+    <dd>Your item-9 ruling made the seat pursuit live, with CO Governmental
+    Relations, CO Finance, and DoF. A pursued position with a deadline and
+    named partners is register-shaped work; keeping it inside #7's text hides
+    it.</dd>
+    <dt>Proposed</dt>
+    <dd>Add. Instrument: procedure — the outreach note first (on order
+    whenever you want it), then the watching brief.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">19</span> <span class="tname">§78093.2(c)(1)(C) — CPL in transfer pathways and ADTs</span>
+  <span class="chip rec">Add — procedure</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Publish credit for prior learning opportunities in transfer pathways
+    and, to the extent feasible, associate degrees for transfer — an
+    intersegmental duty under the CSU collaboration clause.</dd>
+    <dt>Why a row</dt>
+    <dd>A system duty, so correctly not in §55050 — and still in neither the
+    register nor the draft. Uncovered by both is exactly what this sheet
+    exists to catch.</dd>
+    <dt>Proposed</dt>
+    <dd>Add. Instrument: procedure (intersegmental work), with a mention in
+    the MAP-data memo so colleges see where the visibility duty lands.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">20</span> <span class="tname">§78093.2(d)(2) — the demonstrate-before-allocation gate</span>
+  <span class="chip fold">Fold into the funding lane</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Each campus must demonstrate implementation through the (d)(1) metrics
+    before receiving an allocation — and the statute's three goal words
+    (access · completion · career attainment) are not the funding model's
+    three.</dd>
+    <dt>Why not a row</dt>
+    <dd>The register tracks reforms to seek; this is an obligation the
+    Implementation Funding tab already operationalizes, and career attainment
+    is already ruled (carried by the project pool, reported qualitatively,
+    2026-08-28). What is owed is a deliberate vocabulary reconciliation in
+    the model's documentation, not a register entry.</dd>
+    <dt>Proposed</dt>
+    <dd>Fold to the implementation-funding lane as a documentation task; no
+    register row. If you would rather see it on the register anyway, say
+    add.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">21</span> <span class="tname">§88782(g) — the privacy floor under the record duty</span>
+  <span class="chip rec">Add — memo + procedure</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The sent package's (b)(4) obliges districts to maintain student CPL
+    records in the statewide infrastructure; §88782(g) is the statutory
+    privacy floor beneath the Career Passport that consumes them. Nothing in
+    the register or the draft says what protects those records.</dd>
+    <dt>Why a row</dt>
+    <dd>A duty we helped create the reach of deserves a tracked answer — and
+    it adjoins the project's own privacy ADR family, so the guidance can be
+    written from ground we already hold.</dd>
+    <dt>Proposed</dt>
+    <dd>Add. Instrument: memo + procedure — privacy guidance for the (b)(4)
+    duty, aligned to §88782(g) and the existing student-detail disclosure
+    ADRs.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">The memo queue this sheet produces</h2>
+
+<section class="card">
+  <header><span class="num">22</span> <span class="tname">Three memos, not eight</span>
+  <span class="chip rec">Build A first</span></header>
+  <dl>
+    <dt>What falls out</dt>
+    <dd>Eight rows land on memo. Grouped by what a college reader needs, they
+    are three documents: <strong>Memo A — "What is already law"</strong>
+    (#12 leading, #1, #2, #8's award half, #14, plus #6's now-mandatory
+    recommendation machinery): each section states the statute and what a
+    campus may rely on today. <strong>Memo B — recommended local practice
+    pending Title 5</strong> (#4 caps, #15 written denials).
+    <strong>Memo C — MAP data duties and funding conditions</strong> (#11,
+    the #16 honor condition, the (d)(2) gate, the §88782(g) privacy
+    handling).</dd>
+    <dt>Proposed</dt>
+    <dd>Build Memo A first — it is the one the field needs most and the
+    strongest ground, and it is exactly the register-to-memo value you named
+    in item 7. B and C follow as their rows settle.</dd>
+  </dl>
+</section>
+
+</div>
+
+<p class="prov">Measured from live <code>gr_revisions</code> (16 CPL rows,
+2026-08-30) against: the SB 135 row sweep (<code>docs/gr_sb135_row_sweep.md</code>),
+the draft-vs-register comparison (<code>docs/t5_55050_vs_gr_register.md</code>),
+authenticated §78093–78093.2, §75013, §88782, the sent §55050 v5 package
+(2026-08-28), and your Open Verdicts rulings, items 6–9 (2026-08-30). Verdicts
+execute as receipted register edits, the memo-queue doc, and lane updates; the
+verification pass over the newly citable rows follows the rulings.</p>
+
+</div>
