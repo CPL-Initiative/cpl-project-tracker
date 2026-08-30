@@ -14,6 +14,7 @@ status: archive
 
 - **2026-08-27 (SkyMatch, parallel to SkyPin)** — College CR evidence workstream: reusable matcher + LATTC worklist (PR #1365); two KB notes (a frequency is not a rule; one ranked list cannot answer two questions); §11 row added, SkyRule S196 narrative archived.
 - **2026-08-27 (SkyPin, Session 199)** — the funding measure pin (`metric_src`) + the MILESTONE-agreement check (#1363); `ppa`/`ppa_u` after Sam's `Potential Student` correction, and the live Access metric fixed from $0-for-all-115 to 12 colleges earning (#1364). New KB note: *a defect that produces the value you expected is invisible*. Compacted the §11 funding cell (stacked_roadmap_cell) and archived `cpl_funding_lessons.md` 2026-08-01 → 08-06.
+- **2026-08-28 (SkyLens, S202)** — funding CR/NC lane switch merged (#1369); found a client gate stricter than its own RLS policy silently losing Sam's relabels; 2 KB notes; session-203 handoff.
 
 ## INDEX update-history entries rotated out (2026-08-20)
 
@@ -5154,3 +5155,4 @@ repo probes clone, and P5's topic phrase matched **exactly one file — its own 
 the test and void-flagged itself. Instruments → vault; `probe_instrument_leak` guards the return.
 **Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
 `lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
+

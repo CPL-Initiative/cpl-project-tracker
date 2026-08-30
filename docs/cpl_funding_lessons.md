@@ -2006,3 +2006,57 @@ were never written about. A new kind of row gets a new class.
 2. **Goal-tagged project line items** — blocked on Sam supplying the $8.96M split; the mechanism is built.
 3. **The threshold/floor coupling** — 400 FTES is the last feasible step at the $50k floor, still unruled.
 4. **The optional Combined award row** (Mt. SAC $400,000 + $100,000 = $500,000).
+
+## 2026-08-30 — The Open Verdicts afternoon: four builds ruled and landed same day
+
+Sam ruled the 19-item Open Verdicts sheet live (reply-by-number, the first full
+exercise of the decision-sheets rule), and the funding tab took four of the
+builds the same afternoon (#1407, #1408):
+
+1. **The Combined award COLUMN (item 2, resolving the "third Award-range row"
+   question his way).** His spec: the pair's ONE total "centered vertically and
+   horizontally (like the total FTES)". Built as `combinedColDef()` /
+   `combinedCellHtml()` — a `rowspan="2"` cell on the CR row directly after
+   Total; all three NC row shapes emit NO cell in the column; `colHideStyleHtml()`
+   splits its nth-child rules at the combined position (NC rows sit one index
+   earlier to its right, and the combined rule never touches them); the
+   statewide pair included; sortable on the summed cap. **Not the retired NC $
+   column's defect**: that printed the same money twice; this prints the sum
+   that appeared nowhere (Mt. SAC $400,000 + $100,000 = $500,000).
+   `tests/cpl_funding_combined.test.js`, 19 checks.
+2. **The pair invariant MOVED, and an old test asserted the old truth.**
+   `cpl_funding_nc_lane` D2/D16 pinned "NC row carries exactly as many cells as
+   the credit row" — the very thing the spanning cell changes. CI caught it;
+   the assertions now pin the NEW invariant (exactly one fewer). ⚠️ **The local
+   full suite had "passed" first — because `npm test 2>&1 | tail -30` reports
+   TAIL's exit status, not the suite's.** The pipe masked a real failure and CI
+   told the truth. Check unpiped exit codes (`set -o pipefail`, or `$?` on the
+   command itself), and treat "green through a pipe" as unproven.
+3. **Frozen header + statewide pair (item 11: freeze, NO lazy loading).**
+   `pinFrozenRows()` measures the thead and system-CR-row heights into
+   `--cf-pin1/--cf-pin2` on every render + resize — the S203 catch (a typed
+   pixel breaks at other zoom/font sizes) is now a test assertion, and the
+   no-lazy-loading ruling is pinned by row count. `tests/cpl_funding_sticky.test.js`.
+4. **The project-pool card wired (item 5: "sourced from the jointly wired
+   Activities, Annual Targets, and Budget table" — never a hand-typed split).**
+   The ledger's `pool`-section rows (two program parents + children) fold behind
+   a word toggle on the card, framed as ONE $18,000,000 program (the $35M and
+   $15M shares join; per-share attribution would be the invented split he ruled
+   out), with an honest-empty state and a DRIFT LINE when the program rows stop
+   summing to the two shares. The live ledger sums to $18,000,000 exactly.
+   `tests/cpl_funding_pool_projects.test.js`.
+5. **Goal-card policy (items 12 + 3).** Goal (C): *demonstrated, not directly
+   measured — by design* (My CPL Stories touching career attainment + funded
+   infrastructure/interagency projects), while KEEPING the counted
+   evidence-for-(B) finding; goal (A): student-level equity belongs to the
+   system's 3-year legislative reports (MIS + CCCApply + MAP), not college
+   outcome funding. The story-intake question's final wording is his: *"What
+   changed in your work or career path?"*
+6. **Item 1 dissolved rather than decided**: threshold, minimums and buckets are
+   independent dials and the model's job is an over/under-budget readout. The
+   dials and the solver's feasibility figures already existed; the missing
+   surface is the consolidated readout — mocked with the REAL rosters + live
+   config (`docs/visuals/2026-08-30-budget-balance.html`; live finding: 42
+   institutions demand $1.68M of the $2M carve-out, and 242.7 FTES is the
+   frontier where 50 institutions consume exactly $2,000,000). Port on Sam's
+   reaction.

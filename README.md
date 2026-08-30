@@ -111,7 +111,11 @@ The whole ecosystem, end-to-end:
    funding factor and strategies all travel with it and no stored figure moves —
    and an optional **Year 2 mirrors Year 1** switch), a **noncredit-feeder carve-out** (NOCE / SD
    Continuing Ed / Mt. SAC Noncredit / Calbright, split by headcount),
-   per-college potential allocations with district rollups and drill-ins,
+   per-college potential allocations with district rollups and drill-ins —
+   every institution shown as a CR/NC row pair with a **Combined award column**
+   spanning the pair, under a **frozen header + statewide rows** (measured
+   pins, no lazy loading), with the project-pool card's named projects folded
+   in **live from the Budget table** —
    and **layered editing** — anonymous edits are a private per-browser
    sandbox, while the shared team phrase saves the base model everyone
    opens to (Supabase-backed) — plus live P2/P3 priority-metric actuals
