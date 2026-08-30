@@ -305,6 +305,22 @@ def supabase_edges(rel: str, text: str) -> list:
                 add("rpc:%s" % name, "call", m.start())
             else:
                 add("supabase:%s" % name, direction_near(text, m.end()), m.start())
+    # URL-const direction (governance-feed finding, 2026-08-30): NOTES_URL =
+    # SUPABASE_URL + "/rest/v1/nc_partner_notes" is defined at the file top and
+    # fetched hundreds of lines later — direction taken at the const line reads
+    # every such table as read-only (cpl_adoption_interest's POST was lost).
+    # Follow the identifier to its fetch()/usage sites and take direction THERE.
+    for cm in re.finditer(
+            r"([A-Za-z_]\w*)\s*=\s*[^=\n]*rest/v1/([a-z][a-z0-9_]{2,})", text):
+        ident, tbl = cm.group(1), cm.group(2)
+        if tbl in NOT_TABLES or tbl == "rpc":
+            continue
+        for um in re.finditer(r"\b%s\b" % re.escape(ident), text):
+            if um.start() == cm.start(1) - 0 or commented(text, um.start()):
+                continue
+            if um.start() >= cm.start() and um.start() <= cm.end():
+                continue        # the definition itself
+            add("supabase:%s" % tbl, direction_near(text, um.end()), um.start())
     # module-constant table names: TABLE = "chatbox_credential_recs" reached as
     # f"…/rest/v1/{TABLE}?…" (the four kb/_sync_* upserts) or as
     # "/rest/v1/" + TABLE (reflections digest). The identifier, not the table,

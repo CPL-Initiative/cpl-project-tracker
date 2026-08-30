@@ -4,7 +4,7 @@
   "supabase_tables": 72,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 388,
+  "file_datasets": 390,
   "external_services": 136,
   "consumers": 304,
   "workflows": 32,
@@ -5561,6 +5561,19 @@
     },
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_dependency_map.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -12380,6 +12393,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/dependency_map_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/docs_audit_test.py": {
    "consumers": [
     {
@@ -14213,6 +14239,16 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 93,
+     "tabs": [
+      "cpl-pathways"
+     ]
     }
    ],
    "main_committers": []
@@ -14343,6 +14379,17 @@
       "college-briefing",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 2227,
+     "tabs": [
+      "college-briefing",
+      "implementation-funding"
+     ]
     }
    ],
    "main_committers": []
@@ -14359,6 +14406,17 @@
       "college-briefing",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 2770,
+     "tabs": [
+      "college-briefing",
+      "implementation-funding"
+     ]
     }
    ],
    "main_committers": []
@@ -14371,6 +14429,17 @@
      "direction": "read",
      "how": "literal",
      "line": 59,
+     "tabs": [
+      "college-briefing",
+      "implementation-funding"
+     ]
+    },
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 2312,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14495,6 +14564,16 @@
      "direction": "read",
      "how": "literal",
      "line": 947,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
+     "id": "module:first_light.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 1222,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -15954,6 +16033,16 @@
      "direction": "read",
      "how": "literal",
      "line": 41,
+     "pages": [
+      "CPL_Dashboard.html"
+     ]
+    },
+    {
+     "id": "module:assoc_editor.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 111,
      "pages": [
       "CPL_Dashboard.html"
      ]
