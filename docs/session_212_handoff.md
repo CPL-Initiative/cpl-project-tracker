@@ -80,10 +80,6 @@ sits as a DRAFT on purpose — Sam's merge is the curation gate.
 - **React to the Budget Balance dials** — the port waits on it.
 - **Merge cpl-knowledge-base#22** (the Rule 8→9 renumber; his click IS the
   curation audit).
-- **Delete the leftover S208 control branch** — its name was given to him in
-  chat on 2026-08-30 and lives in the vault's probe lane file; it encodes a
-  probe topic, so NEVER write it in this repo (probe_instrument_leak has
-  caught three drafts already).
 - **Confirm the context-pressure hook installed** (he has the PowerShell
   snippet from the sitting).
 - **Test-speed follow-ups if he wants them:** the runner is already parallel
