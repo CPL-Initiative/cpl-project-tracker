@@ -44,6 +44,10 @@
   .chip.fold    { color: var(--hunter);       border-color: var(--hunter);        background: var(--surface-opaque); }
   .chip.yours   { color: var(--mustard-text); border-color: var(--mustard-text);  background: var(--surface-opaque); }
   .chip.action  { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .chip.ruled   { color: var(--hunter);       border-color: var(--hunter);        background: var(--surface-subtle); }
+  .ruling { border-top: 1px solid var(--border); margin-top: 12px; padding-top: 8px; }
+  .ruling .rlabel { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem;
+    font-weight: 700; color: var(--hunter); }
   .card dl { margin: 8px 0 0; }
   .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem;
     font-weight: 700; color: var(--text-muted); margin-top: 10px; }
@@ -73,6 +77,7 @@ only you can physically take.</p>
 <ul class="tally">
   <li><b>15</b> judgments (13 with a recommendation)</li>
   <li><b>4</b> actions only you can take</li>
+  <li><b>11</b> ruled so far — items 1–11, being executed</li>
   <li><b>1</b> future sheet queued: owners for the 30 register rows</li>
 </ul>
 
@@ -82,7 +87,7 @@ only you can physically take.</p>
 
 <section class="card">
   <header><span class="num">1</span> <span class="tname">Noncredit entry threshold</span>
-  <span class="chip rec">Recommend: 400 FTES</span></header>
+  <span class="chip ruled">Ruled — edit</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>The noncredit entry threshold and the $50,000 minimum award are one
@@ -91,12 +96,19 @@ only you can physically take.</p>
     <dt>Recommendation</dt>
     <dd>Hold at 400 FTES — it is what the money covers. Choosing 350 is really
     the decision to find another $100,000, so say it that way if you want it.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>The decision dissolves instead of picking a value: the threshold, the
+    minimum award, and the funding buckets become independent dials, and the
+    model reports over or under budget as they move — experimentation finds
+    the best mix to recognize and incentivize scalable CR/NC CPL. The dials
+    already exist in the model's config; the build is the balance readout.
+    A mock with the real numbers is on its way for your reaction.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">2</span> <span class="tname">Combined award row</span>
-  <span class="chip rec">Recommend: yes</span></header>
+  <span class="chip ruled">Ruled — built</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Whether the Award range gets a third, Combined row. Mt. San Antonio
@@ -105,12 +117,18 @@ only you can physically take.</p>
     <dt>Recommendation</dt>
     <dd>Add it. A college reading its own award should be able to see its own
     total.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Yes — but as a column, the pair's one total centered across the CR and
+    NC rows like the total FTES. Built that way: a Combined column right after
+    Total, spanning each institution's two rows, sortable, with combined
+    earned beneath (Mt. San Antonio reads $500,000). Shipping in this
+    round's pull request.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">3</span> <span class="tname">The story-collection question</span>
-  <span class="chip rec">Recommend: yes</span></header>
+  <span class="chip ruled">Ruled — yes</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Add one question when CPL stories are gathered: <em>what changed at
@@ -119,23 +137,30 @@ only you can physically take.</p>
     are reported against.</dd>
     <dt>Recommendation</dt>
     <dd>Yes — costless at collection time, unfixable afterward.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Yes, with your wording as the final form: <em>"What changed in your
+    work or career path?"</em> — broader than "at work", so promotions, field
+    changes, and getting hired all count. Recorded in the funding lane and
+    the memory table.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">4</span> <span class="tname">Noncredit strategies on the cards</span>
-  <span class="chip action">Action — yours only</span></header>
+  <span class="chip ruled">Done</span></header>
   <dl>
     <dt>What to do</dt>
     <dd>Read the noncredit strategies now on the cards and edit freely — they
     are directly editable, and deliberately not the credit ones (a noncredit
     institution prepares students to earn credit elsewhere).</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Done — reviewed. Closed.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">5</span> <span class="tname">The $8.96M project pool</span>
-  <span class="chip yours">Your data needed</span></header>
+  <span class="chip ruled">Ruled — wire it</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Name the projects behind the pool and roughly what each gets. The
@@ -145,6 +170,10 @@ only you can physically take.</p>
     <dt>What happens on your answer</dt>
     <dd>Give the names and amounts in any form; tagging each to a legal goal is
     same-day work after that.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Yes — and no hand-typed split: the projects come from the jointly
+    wired Activities, Annual Targets, and Budget tables, and the project pool
+    card becomes hidable with a toggle. Queued to build.</dd></div>
   </dl>
 </section>
 
@@ -152,7 +181,7 @@ only you can physically take.</p>
 
 <section class="card">
   <header><span class="num">6</span> <span class="tname">Send the §55050 package</span>
-  <span class="chip rec">Recommend: send</span></header>
+  <span class="chip ruled">Sent 2026-08-28</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Version 5 is ready: every one of your decisions in it, real tracked
@@ -164,12 +193,20 @@ only you can physically take.</p>
     <dt>Recommendation</dt>
     <dd>Send on your timing; the dates can go in marked proposed if the
     recipient is the one who sets them. Nothing else is waiting.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Already sent — last Friday, 2026-08-28. Recorded in the lane and the
+    memory table. You will continue the procedure on the GR Priorities tab,
+    noting you went around it to draft §55050, so its value is unproven; the
+    recommendation you asked for: measure the tab as the register a session
+    cannot be — package status, the five procedure dates as booked-vs-blank
+    fields, the sent file as evidence — not as a drafting surface, and judge
+    it after it carries this procedure once end-to-end.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">7</span> <span class="tname">The four November policy items</span>
-  <span class="chip rec">Recommend: separately</span></header>
+  <span class="chip ruled">Ruled — together</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Whether the four policy items from your November draft travel with the
@@ -180,12 +217,17 @@ only you can physically take.</p>
     negotiation. Two riders when they do travel: the grading clause needs its
     §55023 companion amendment, and the no-fee item just gained a second legal
     anchor in the Career Passport statute.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30 — overrides the recommendation</span>
+    <dd>The four travel together as one filing, both riders aboard. And the
+    downstream purpose is set: guidance memos prepped from these proposed and
+    draft changes plus the funding — which is where the GR tab's priority
+    rows prove their value. Recorded in both lanes.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">8</span> <span class="tname">Three register fixes</span>
-  <span class="chip rec">Recommend: all three</span></header>
+  <span class="chip ruled">Ruled — and widened</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Entry #16 points at a lettered paragraph the August adoption moved;
@@ -195,12 +237,20 @@ only you can physically take.</p>
     credit was never the same request as flagging where it came from.</dd>
     <dt>Recommendation</dt>
     <dd>Approve all three; each is a correction, not a position change.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30 — approved, then widened</span>
+    <dd>Yes to all three — #16's citation is already fixed in the register
+    (old value receipted). And the bigger follow-up is ordered: you wrote the
+    register before realizing SB 135's trailer bill language becomes verbatim
+    Ed Code, so all ~16 reforms get re-analyzed — still needed at all, and if
+    so, addressed by memo, Title 5, legislative change, or procedure. That
+    re-analysis arrives as the next decision sheet; #2 and #10 fold into it
+    rather than being rewritten twice.</dd></div>
   </dl>
 </section>
 
 <section class="card">
   <header><span class="num">9</span> <span class="tname">The §75013 workgroup</span>
-  <span class="chip rec">Recommend: pursue a seat</span></header>
+  <span class="chip ruled">Ruled — pursue</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Register entry #7 — making prior-learning credit generate funding —
@@ -213,6 +263,10 @@ only you can physically take.</p>
     <dd>Pursue a seat or at least a liaison when you have the bandwidth — a
     watching brief costs little and the alternative is reading the design
     after it is fixed.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Yes — in collaboration with CO Governmental Relations, CO Finance,
+    and the Department of Finance. On your list; a session drafts the
+    outreach note whenever you want it.</dd></div>
   </dl>
 </section>
 
@@ -220,7 +274,7 @@ only you can physically take.</p>
 
 <section class="card">
   <header><span class="num">10</span> <span class="tname">Model revert timing</span>
-  <span class="chip rec">Recommend: test first, then revert</span></header>
+  <span class="chip ruled">Ruled — test first</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Sierra runs on the smaller model as your temporary cost measure (about
@@ -231,6 +285,11 @@ only you can physically take.</p>
     register sweep on it once — the hardest thing the assistant does and where
     a smaller model would show first. Revert when corporate billing lands, or
     immediately if that sweep disappoints.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Yes. The next register-lane session runs the sweep on the small model
+    and reports what it caught versus the last full-model run; if it
+    disappoints, the revert is one setting (the chat-model config on the
+    Supabase project), no code change.</dd></div>
   </dl>
 </section>
 
@@ -238,7 +297,7 @@ only you can physically take.</p>
 
 <section class="card">
   <header><span class="num">11</span> <span class="tname">Frozen header on the college table</span>
-  <span class="chip rec">Recommend: freeze, no lazy loading</span></header>
+  <span class="chip ruled">Ruled — freeze</span></header>
   <dl>
     <dt>The decision</dt>
     <dd>Whether the college table scrolls inside a frozen header.</dd>
@@ -246,6 +305,10 @@ only you can physically take.</p>
     <dd>Freeze the header and the two statewide rows so they stay visible; do
     NOT load colleges lazily — 115 rows is small, and lazy loading breaks
     Ctrl-F and makes the Excel export stop matching the screen.</dd>
+    <div class="ruling"><span class="rlabel">Sam's ruling, 2026-08-30</span>
+    <dd>Recommendation adopted — freeze the header and the statewide pair, no
+    lazy loading. Build unblocked and queued; it follows the Combined column
+    onto the tab.</dd></div>
   </dl>
 </section>
 

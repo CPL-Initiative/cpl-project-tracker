@@ -259,6 +259,10 @@
     ".cplfund-table tbody tr.cplfund-alt > td { background: var(--surface-subtle); }",
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
     ".cplfund-table td.tot, .cplfund-table tfoot td { font-weight: 700; color: var(--navy-primary); }",
+    // The combined cell spans its CR/NC pair from the credit row; Sam's item-2
+    // ruling (2026-08-30) asked for the pair's one total "centered vertically
+    // and horizontally", so it is the lone money cell not right-aligned.
+    ".cplfund-table td.cf-combined { vertical-align: middle; text-align: center; }",
     ".cplfund-table tfoot td { border-top: 2px solid var(--seal-blue); background: var(--surface-muted); }",
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23) —
     // bold, muted-fill, a heavy rule under it, and immune to the zebra + hover.
@@ -5231,6 +5235,20 @@
       title: "Window allocation cap, with earned so far beneath (Σ priorities: cap × actual ÷ target, capped at 100%; " +
         "priorities MAP cannot measure yet pay an advance at full cap)" };
   }
+  // Sam's item-2 ruling (2026-08-30): the institution's ONE total — CR cap plus
+  // NC cap — as a column whose cell spans the CR/NC pair, centered both ways,
+  // rather than a third Award-range row. This is NOT the retired NC $ column
+  // coming back: that column printed the SAME money twice (a college's
+  // carve-out on its credit row and again on its NC row); this one prints a
+  // figure that appeared nowhere — the pair's sum (Mt. San Antonio: $400,000
+  // CR + $100,000 NC = $500,000). The pools stay separate; only the display adds.
+  function combinedColDef() {
+    return { key: "combined", label: "Combined " + windowLabel(), cls: "",
+      title: "The institution's combined window cap — the credit total plus the noncredit carve-out share, " +
+        "shown once for the CR/NC pair, with combined earned beneath. The two pots remain separate " +
+        "(noncredit is funded by its own carve-out, never the credit split); this column adds the caps for " +
+        "the reader, it does not merge the pools." };
+  }
   // Per-priority columns (Sam, 2026-07-24): one P1/P2/P3 column per priority of
   // the VIEWED year; the header hover is the priority goal + metric, the cell
   // stacks target over actual. Keys are stable (prio0/1/2) across the year filter.
@@ -5431,6 +5449,7 @@
         title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (the second line of each money cell)." }
     ], yearColDefs(), [
       totalColDef(),
+      combinedColDef(),
       // ⭐ NONCREDIT MONEY IS STILL NEVER ADDED INTO THE CREDIT TOTAL — the
       // requirement Sam set on 2026-08-22 ("I want it on the surface the amount
       // admin should give to NC so it doesn't get lumped into the whole — NC is
@@ -5525,10 +5544,27 @@
   function idColKey() { return "college"; }
   function colHideStyleHtml() {
     var hid = hiddenCols(), id = idColKey(), rules = [];
-    activeCols().forEach(function (col, i) {
+    var cols = activeCols();
+    // The combined cell spans each CR/NC pair from the CR row, so the NC row
+    // shapes (.cplfund-ncrow and the statewide .cplfund-ncsysrow) carry one
+    // FEWER td: a column to the right of it sits one nth-child earlier there,
+    // and the combined column's own rule must not touch them at all. nth-child
+    // counts DOM cells, not visible ones, so hiding the combined column keeps
+    // every later index valid on the CR side while the LAYOUT re-aligns (both
+    // row kinds then show the same visible cell count).
+    var combinedPos = -1;
+    cols.forEach(function (col, i) { if (col.key === "combined") combinedPos = i + 1; });
+    var NOT_NC = ":not(.cplfund-ncrow):not(.cplfund-ncsysrow)";
+    cols.forEach(function (col, i) {
       if (hid[col.key] && col.key !== id) {
         var p = i + 1;
-        rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
+        if (combinedPos < 0 || p < combinedPos) {
+          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
+        } else if (p === combinedPos) {
+          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail)" + NOT_NC + " td:nth-child(" + p + "){display:none}");
+        } else {
+          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail)" + NOT_NC + " td:nth-child(" + p + "),.cplfund-table tbody tr.cplfund-ncrow td:nth-child(" + (p - 1) + "),.cplfund-table tbody tr.cplfund-ncsysrow td:nth-child(" + (p - 1) + "){display:none}");
+        }
       }
     });
     return rules.length ? "<style>" + rules.join("") + "</style>" : "";
@@ -5883,6 +5919,13 @@
         var fr = earnFraction(r, p);
         return fr.status === "earned" ? fr.actual : !earnIsMeasured(fr) ? null : 0;
       }
+      // The combined column sorts on the pair's summed window cap — computed
+      // here rather than stored on the row, so a presentation column never
+      // mutates the college objects.
+      if (state.sortKey === "combined") {
+        var nca = ncPairAlloc(r.college);
+        return (r.total || 0) + (nca ? nca.total || 0 : 0);
+      }
       return r[state.sortKey];
     }
     rows = rows.slice().sort(function (a, b) {
@@ -6014,6 +6057,30 @@
       fmtMoney(row.total) +
       earnedSubHtml(row.total, row.earned_total || 0, row.earned_advance || 0,
         row.earned_withheld || 0, row.gate_blocked) + "</td>";
+  }
+  // The NC half of a college pair's money, as the row object ncCollegeRowHtml
+  // renders. Null when the pair's NC row is a below-threshold or none-on-record
+  // shape — those earn $0 from the carve-out, so the combined figure is the CR
+  // total alone.
+  function ncPairAlloc(college) {
+    var inst = ncInstFor(college);
+    if (!inst || !ncInLane(inst)) return null;
+    return ncAllocFor(inst);
+  }
+  // The pair's one cell (Sam's item-2 ruling, 2026-08-30). It spans both rows of
+  // the pair from the CR row — the three NC row shapes deliberately emit no cell
+  // in this column, and colHideStyleHtml() compensates their nth-child indices.
+  function combinedCellHtml(cr, nc, spanTwo, gateBlocked) {
+    var total = (cr.total || 0) + (nc ? nc.total || 0 : 0);
+    var earned = (cr.earned_total || 0) + (nc ? nc.earned_total || 0 : 0);
+    var meas = (cr.earned_measured || 0) + (nc ? nc.earned_measured || 0 : 0);
+    var adv = (cr.earned_advance || 0) + (nc ? nc.earned_advance || 0 : 0);
+    var held = (cr.earned_withheld || 0) + (nc ? nc.earned_withheld || 0 : 0);
+    return '<td class="tot cf-combined"' + (spanTwo ? ' rowspan="2"' : "") +
+      ' title="' + esc(earnedCellTitle("Combined CR + NC window cap (" + windowLabel() + ")",
+        total, earned, meas, adv, held)) + '">' +
+      fmtMoney(total) +
+      earnedSubHtml(total, earned, adv, held, gateBlocked) + "</td>";
   }
   function rowChips(c) {
     var chips = "";
@@ -6419,6 +6486,7 @@
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
       totalCellHtml(c) +
+      combinedCellHtml(c, ncPairAlloc(c.college), ncRowShown(c), c.gate_blocked) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
       "</tr>" +
@@ -6705,6 +6773,9 @@
         (ELIG.coordOk ? eligAllMetCount() + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         totalCellHtml(sys) +
+        // The statewide pair carries the same one combined cell as every
+        // college pair — statewide CR total + the whole carve-out's caps.
+        combinedCellHtml(sys, ncSystemAlloc(), true, false) +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>" +
         // Sam, 2026-08-28: "give the header row also a CR and NC row". SYSTEM is
         // paired like every college, so the statewide noncredit figure is a row

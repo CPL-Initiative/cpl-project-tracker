@@ -1,146 +1,122 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-30",
-  "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
-  "_status": "The rule-hardening package Sam approved on Thursday is now fully built. The test suite can become a required gate on every change: routine documentation updates now pass in about ninety seconds instead of waiting nine minutes on tests they cannot break, and and the mandatory-merge question was settled the same night: the platform's version of the switch also rejects the daily automation's routine updates (proven by a live test), so the rule now lives in the written operating policy that binds every assistant session, and the live branch gained permanent protection against history rewrites. The database write-safety rule now covers every shared table, not just the one it was written for; every bulk data write must be undoable from its own receipt; and any tool that starts writing to shared data must first be registered on the Governance tab and checked against the privacy rules.\n\nWe also fixed a long-standing numbering problem: the rulebook was renumbered months ago, and fourteen current documents still cited rules by their old numbers — including two scripts citing the same rule under two different numbers. A new automatic check keeps that from creeping back. Twice during the work, a quality scoreboard claimed everything was passing when it was not; both cases are fixed and the scoreboard now refuses to run when its own test materials go stale, instead of quietly reporting good news.",
-  "items": [
-    {
-      "id": "s210-sam-tidyups",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "Two one-minute tidy-ups only you can do: delete the leftover experiment branch on GitHub (its name is deliberately written only in your private vault's probe notes — it gives away a test topic — and sessions cannot delete branches), and in the public knowledge base's instruction file change the one stale '(Rule 8)' to '(Rule 9)' — that repo only changes through your review pipeline."
-    },
-    {
-      "id": "s202-sam-threshold",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Rule on the noncredit entry threshold. It and the $50,000 minimum award are one decision, not two: 400 FTES is the last affordable step, and 350 would need $1.90M against the $1.8M set aside."
-    },
-    {
-      "id": "s202-sam-combined",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Decide whether the Award range should carry a third, Combined row. Mt. San Antonio receives $400,000 credit plus $100,000 noncredit — $500,000 in total, a figure that appears nowhere on the page today."
-    },
-    {
-      "id": "s202-sam-stories",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Add one question to how CPL stories are collected: what changed at work? Of the 36 we hold, only about four describe a job outcome — the rest describe degrees. As they stand they cannot evidence the career-attainment goal you are reporting them against, and that is fixable when stories are gathered, not afterwards."
-    },
-    {
-      "id": "s202-sam-ncstrat",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Look over the noncredit strategies now on the cards and edit them freely — they are directly editable. They are deliberately not the credit ones, because a noncredit institution prepares students to earn credit elsewhere rather than awarding it."
-    },
-    {
-      "id": "s202-fable-projectpool",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Name the projects behind the roughly $8.96M project pool, and roughly what each gets. We checked: the budget ledger holds it as a single line with nothing underneath, and none of the 32 projects in the Activities register is funded from the $35M — so we cannot split it without inventing figures. Once you give us the names and amounts, tagging each to a legal goal is quick."
-    },
-    {
-      "id": "s202-fable-savesweep",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Check the other curator tabs for the two save faults found here: a page that only accepts the team password locks out someone signed in by magic link, and edits made before signing in can stay stranded in the browser while looking saved."
-    },
-    {
-      "id": "s202-fable-ncdials",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Give noncredit its own share and funding-factor editors. They inherit from credit today; the store already accepts both, only the strategies have an editor so far."
-    },
-    {
-      "id": "s196-sam-55050-send",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "The Title 5 55050 package is ready to send: v5 of the Word file, with every one of your decisions in it and real tracked changes against the version the Board of Governors adopted, plus a Regulatory Action Proposal in the same format as your November one. Undoing every tracked change gives back the adopted regulation word for word, checked by machine. The only blank left is the 2026-27 calendar — five steps to set dates against: the curriculum committee, field vetting, Consultation Council, and two Board readings."
-    },
-    {
-      "id": "s196-sam-tier2-companion",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "One judgment call left on the package: whether the four policy items from your November draft travel with it or separately. Recommendation is separately — they were argued last November and lost, and bundling lets a reader treat the whole filing as reopening a settled negotiation. Two notes: the new grading clause needs its companion amendment to section 55023, which is what makes a 'credit' mark exist at all; and the no-fee item just gained a second legal anchor, because the Career Passport statute says a student's records must be available at no or low cost."
-    },
-    {
-      "id": "s196-sam-register-three",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Three quick fixes on the policy register, now that the draft is settled. Entry #16 points at the wrong lettered paragraph — the August adoption moved that clause. Entry #2 still asks the Legislature for reciprocity between colleges, which is already law; what survives is the 'no second review' half and the CSU/UC half. And entry #10 deserves a fresh look now that #9 is settled: recording the credit was never the same request as flagging where it came from."
-    },
-    {
-      "id": "s196-sam-75013-workgroup",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
-    },
-    {
-      "id": "s195-sam-revert-model",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
-    },
-    {
-      "id": "s203-sam-sticky",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
-    },
-    {
-      "id": "s203-sam-ncrows",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Look at the college table and the new legal-goals section. Every college now has both a credit and a noncredit row; seven show 'none on record' (Taft, Fullerton, American River, Cosumnes River, and the three San Diegos) — if any of them does run a noncredit program, tell us, because that is a data error we can trace. In the goals section, check two calls in particular: career attainment is shown as funded but unmeasurable, and the goal about serving all students equitably is marked not measured, because nothing we hold describes how credit is spread across groups of students."
-    },
-    {
-      "id": "s203-fable-sticky",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Build the frozen header and statewide rows once Sam agrees. The catch is that the second frozen row has to know exactly how tall the header is; measure it rather than typing a number, or it breaks at other zoom levels and font sizes."
-    },
-    {
-      "id": "s203-fable-savesweep2",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "The funding tab now requires a personal sign-in instead of the shared phrase. Check whether the other curator tabs should follow, and whether any of them still offers editing that the database would refuse."
-    },
-    {
-      "id": "s206-sam-memory-scope",
-      "for": "Sam",
-      "tab": "cobi-memory",
-      "text": "Decide a short, fixed list of values for the memory table's \"scope\" field. Right now people fill it in freely, so it holds ten different words — \"funding\" and \"cpl-funding\" mean the same thing — and a quarter of them just repeat a tag the entry already has. It was meant to tell us which lessons apply everywhere and which belong to one workstream, and as it stands it cannot. We suggest just two values, general or workstream-specific, leaving tags to carry the topic. 68 entries would need revisiting and 584 are blank. We have not changed anything."
-    },
-    {
-      "id": "s206-sam-install-hook",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
-    },
-    {
-      "id": "s208-fable-memory-lint",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
-    },
-    {
-      "id": "s208-fable-repair-ablation",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Run the two remaining rule-testing scenarios and the repaired ablation — deliberately held until the rulebook stopped moving, which it now has. Re-read the committed test criteria first: the rulebook changed since they were written, so score against what is true today and note any adjustments beside the criteria, never inside them."
-    },
-    {
-      "id": "s209-sam-blast-radius-mock",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "React to the Blast Radius mock-up (link in our chat). It is the tool the impact map makes possible: pick any dataset and see every tab, page, script and scheduled job that touches it, who writes it, and whether the daily job publishes it without review. Say what to change and we will build it into the Admin tab; until you react, it stays a mock-up."
-    },
-    {
-      "id": "s209-fable-stale-copies",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "One file is rebuilt daily by a scheduled job but never committed by it, so the published copy goes stale: the pathways dataset. Small mechanical fix when someone wants it. (The second file originally listed here was re-checked and cleared - the job everyone suspected never actually rewrites it; the one that does also publishes it.)"
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-30",
+ "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
+ "_status": "Sam is ruling the Open Verdicts sheet live (2026-08-30): items 1-5 landed - the funding model becomes independent dials with an over/under-budget readout (mock next), the Combined award column is built and shipping, the story-intake question has his final wording, the noncredit strategies are reviewed, and the project pool card wires to the joint Activities/Targets/Budget tables. Remaining sheet items await his numbers.",
+ "items": [
+  {
+   "id": "s210-fable-register-reanalysis",
+   "for": "Fable",
+   "tab": "gr-register",
+   "text": "The register re-analysis Sam ordered (2026-08-30, item 8): all ~16 reforms against the post-SB 135 ground - trailer bill language became verbatim Ed Code, so each row needs (a) still needed at all? and (b) if so, which instrument: memo, Title 5, legislative change, or procedure. Output is the next decision sheet; rows landing on 'memo' feed his guidance-memo queue. #16's stale citation already fixed; #2 and #10 fold in here."
+  },
+  {
+   "id": "s210-sam-75013-collab",
+   "for": "Sam",
+   "tab": "gr-register",
+   "text": "The SS75013 workgroup seat (your yes, 2026-08-30, item 9): pursue it in collaboration with CO Governmental Relations, CO Finance, and the Department of Finance - the CBE-to-FTES funding measure that reports to Finance by October 2028 is register row #7's named obstacle being designed. A session can draft the outreach note whenever you want it."
+  },
+  {
+   "id": "s210-sam-guidance-memos",
+   "for": "Sam",
+   "tab": "gr-register",
+   "text": "Guidance memos (your call, 2026-08-30): prep memos based on the proposed and draft regulatory changes and the funding model. The GR tab's priority rows are the source of record — this is where the tab proves its value. Say the word and a session drafts the first one from a register row; the Tier 2 bundle travels together (all four November items, with the §55023 companion and the §88782(c)(3) anchor aboard)."
+  },
+  {
+   "id": "s210-fable-balance-readout",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Build the Budget Balance readout Sam ruled for on the Open Verdicts sheet (item 1): the noncredit threshold, the minimum award, and the funding buckets are independent dials, and one always-on surface says where the model is over or under budget as they move. The dials and the solver's feasibility figures already exist; the build is the consolidated readout. First Light mock first, port on his reaction."
+  },
+  {
+   "id": "s210-fable-projectpool-wire",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Wire the project pool card's breakdown from the jointly wired Activities, Annual Targets, and Budget tables — never a hand-invented split — and make the card hidable with a toggle (Sam's Open Verdicts item-5 ruling, 2026-08-30)."
+  },
+  {
+   "id": "s210-sam-tidyups",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "Two one-minute tidy-ups only you can do: delete the leftover experiment branch on GitHub (its name is deliberately written only in your private vault's probe notes — it gives away a test topic — and sessions cannot delete branches), and in the public knowledge base's instruction file change the one stale '(Rule 8)' to '(Rule 9)' — that repo only changes through your review pipeline."
+  },
+  {
+   "id": "s202-fable-savesweep",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Check the other curator tabs for the two save faults found here: a page that only accepts the team password locks out someone signed in by magic link, and edits made before signing in can stay stranded in the browser while looking saved."
+  },
+  {
+   "id": "s202-fable-ncdials",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Give noncredit its own share and funding-factor editors. They inherit from credit today; the store already accepts both, only the strategies have an editor so far."
+  },
+  {
+   "id": "s210-fable-sierra-sweep-test",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
+  },
+  {
+   "id": "s203-sam-sticky",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
+  },
+  {
+   "id": "s203-sam-ncrows",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Look at the college table and the new legal-goals section. Every college now has both a credit and a noncredit row; seven show 'none on record' (Taft, Fullerton, American River, Cosumnes River, and the three San Diegos) — if any of them does run a noncredit program, tell us, because that is a data error we can trace. In the goals section, check two calls in particular: career attainment is shown as funded but unmeasurable, and the goal about serving all students equitably is marked not measured, because nothing we hold describes how credit is spread across groups of students."
+  },
+  {
+   "id": "s203-fable-sticky",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "UNBLOCKED - Sam adopted the recommendation (2026-08-30, item 11): freeze the college table's header and the statewide CR/NC pair, no lazy loading. Build it next on the funding tab, after the Combined column lands. The catch is that the second frozen row has to know exactly how tall the header is; measure it rather than typing a number, or it breaks at other zoom levels and font sizes."
+  },
+  {
+   "id": "s203-fable-savesweep2",
+   "for": "Fable",
+   "tab": "admin",
+   "text": "The funding tab now requires a personal sign-in instead of the shared phrase. Check whether the other curator tabs should follow, and whether any of them still offers editing that the database would refuse."
+  },
+  {
+   "id": "s206-sam-memory-scope",
+   "for": "Sam",
+   "tab": "cobi-memory",
+   "text": "Decide a short, fixed list of values for the memory table's \"scope\" field. Right now people fill it in freely, so it holds ten different words — \"funding\" and \"cpl-funding\" mean the same thing — and a quarter of them just repeat a tag the entry already has. It was meant to tell us which lessons apply everywhere and which belong to one workstream, and as it stands it cannot. We suggest just two values, general or workstream-specific, leaving tags to carry the topic. 68 entries would need revisiting and 584 are blank. We have not changed anything."
+  },
+  {
+   "id": "s206-sam-install-hook",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
+  },
+  {
+   "id": "s208-fable-memory-lint",
+   "for": "Fable",
+   "tab": "memory",
+   "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
+  },
+  {
+   "id": "s208-fable-repair-ablation",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Run the two remaining rule-testing scenarios and the repaired ablation — deliberately held until the rulebook stopped moving, which it now has. Re-read the committed test criteria first: the rulebook changed since they were written, so score against what is true today and note any adjustments beside the criteria, never inside them."
+  },
+  {
+   "id": "s209-sam-blast-radius-mock",
+   "for": "Sam",
+   "tab": "admin",
+   "text": "React to the Blast Radius mock-up (link in our chat). It is the tool the impact map makes possible: pick any dataset and see every tab, page, script and scheduled job that touches it, who writes it, and whether the daily job publishes it without review. Say what to change and we will build it into the Admin tab; until you react, it stays a mock-up."
+  },
+  {
+   "id": "s209-fable-stale-copies",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "One file is rebuilt daily by a scheduled job but never committed by it, so the published copy goes stale: the pathways dataset. Small mechanical fix when someone wants it. (The second file originally listed here was re-checked and cleared - the job everyone suspected never actually rewrites it; the one that does also publishes it.)"
+  }
+ ]
 }
