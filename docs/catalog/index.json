@@ -8104,7 +8104,9 @@
       "tests/lib/check_ledger.js",
       "tests/check_ledger.test.js",
       "tests/check_floor.json",
-      "tests/run.js"
+      "tests/run.js",
+      "scripts/js_suite_gate.sh",
+      "tests/js_suite_gate_test.py"
      ],
      "path": "docs/doctrine_enforcement_lessons.md",
      "status": "internal",
