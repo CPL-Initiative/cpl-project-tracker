@@ -85,6 +85,18 @@ Read IN ORDER before touching anything:
   memory edit-rules clarification and doubles as the S211 checker's spec.
 - **Row `f7`'s provenance refreshed** to Rule 10c on Sam's approval (the
   before-value is in `cpl_memory_log`).
+- **Decision sheets are now the standing method for Sam's decisions** (his
+  ruling, verbatim in the memory row
+  `sam-ruled-decisions-arrive-as-decision-sheets`): pending judgments are
+  gathered onto ONE numbered First Light sheet in `docs/visuals/`, he replies
+  by number, a session executes. Doctrine: the CLAUDE.md bullet under
+  *Working with the MAP team*; human-facing:
+  `docs/working_with_claude_code.md` §11. **Every open verdict as of
+  2026-08-30 evening is on `docs/visuals/2026-08-30-open-verdicts.html`**
+  (19 items — it consolidates this file's NEEDS SAM list, the To-Do feed's
+  For-Sam items, and the 2 remaining tab candidates). If Sam has ruled by
+  the time you read this, execute from his reply; if not, the sheet is
+  already served — do not re-ask item by item.
 
 ## NEEDS SAM (say these back to him early)
 
