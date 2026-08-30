@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-08-30)
+
+- **2026-08-27 (SkyMatch, parallel to SkyPin)** — College CR evidence workstream: reusable matcher + LATTC worklist (PR #1365); two KB notes (a frequency is not a rule; one ranked list cannot answer two questions); §11 row added, SkyRule S196 narrative archived.
+- **2026-08-27 (SkyPin, Session 199)** — the funding measure pin (`metric_src`) + the MILESTONE-agreement check (#1363); `ppa`/`ppa_u` after Sam's `Potential Student` correction, and the live Access metric fixed from $0-for-all-115 to 12 colleges earning (#1364). New KB note: *a defect that produces the value you expected is invisible*. Compacted the §11 funding cell (stacked_roadmap_cell) and archived `cpl_funding_lessons.md` 2026-08-01 → 08-06.
+
 ## INDEX update-history entries rotated out (2026-08-20)
 
 - **2026-08-16 (Session 162, Sky162)** — **the filter was answering a different question** (#1221–#1223, plus sibling #1224). Sam suspected the EACR College filter matched *adopted or could adopt*; he was right, and the ratio is the argument: **93.6% of College-filter hits were not adoptions** — Pasadena City College returned **1,790 cards against 44 adopted**, and the median card carries **1 adopter and 41 potentials**, because `potential` is *program-of-study under the same TOP code* (Rule 7, as a primary determination). ⭐ **The strong signal already existed and drove nothing** — the prescriptive M-ID layer (739 titles / 4,972 pairs, 25× tighter) **names the local course** and no filter could reach it, which is why the answer is **three scopes rather than Sam's two-position toggle**: a binary would pool it with the TOP guesses, the exact conflation being fixed. ⭐ **The exports were outside the loop I had just built** — found by re-reading against Sam's *goal* rather than my diff; CSV/JSON/Word still emitted the 41-college list, and **a spreadsheet outlives the screen that produced it**. ✅ CER wiring sound (**1,745/1,745** titles resolve); 8 credentials had been rendering twice under a **blank-issuer** twin (*unknown is not different*), and **5,135 `exhibit_ids` were in the payload and rendered nowhere**. ⭐ **The a11y pass found more defects in day-old work than in inherited code** — a half-declared ARIA tab pattern, a scope control exposing no selected state, a **color-only** WCAG 1.4.1 failure. ⚠️ **`val()` guards the check; the driver is the other half** — handoff 161 predicted the harness trap and prescribed `val()`, the harness used it, and it still printed **zero checks** pre-fix: the throw was in a driver *between* checks. The prescription had been recorded as a mechanism, not a principle. ⚠️ The one red file on main was a **stale `{0,900}` window** from Sky160's own rename, not a defect. **All 224 test files pass.** 2 new KB notes, 1 updated.
@@ -20,6 +25,35 @@ status: archive
 - **2026-08-13 (evening)** — SkyBridge: the **alignment layer is LIVE**, cpl-chat **v41** (#1153/#1154/#1155). Sierra now tells a college which of its OWN courses to articulate against each credit recommendation, with how other colleges did it alongside as evidence. Sam's acceptance case verified live: Cerritos `WELD 214L` tops both FCAW recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`, Santa Ana `WELD 240`/`244`. Three surfaces: `chatbox_peer_articulations` (9,413), `chatbox_college_courses` (141,696), and one RPC returning both. ⭐ **Two signals, neither sufficient** — Santa Ana mapped courses whose titles contain no "FCAW", so title similarity can never propose them. ⚠️ **The first scorer ranked `ART 100 Introduction To World Art` third for a WELDING rec** — a plausible false positive costs more than a miss on a trust-building surface; content-token gate added, and it *raised* the right answer to 0.761. 1 new KB note.
 - **2026-08-13 (later)** — SkyBridge: Sierra wired to the credit-rec set, **cpl-chat v40** (#1150), and the MAP Users contact audit (#1151). ⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary** — it is derived from *adoptions*, and the statewide route required it non-null, so **38 never-adopted statewide credentials (36 carrying 75 published rec lines)** were excluded from **every** credential route: the Carpenters ladder, NCCER, the CSLB licences, OSHA 10/30. Not ranked last — absent. ⭐ `college_adoption_opportunities` now returns **two labeled bands** with reserved slots, because "N peers already articulate it" said of a zero-adopter credential is a fabricated route. ⭐ **The shelf collapses to 32 distinct courses**, one of which unlocks 12. ⭐ **MAP Users wiring was SOUND** — the expected join bug was not there; the real findings were a personal Gmail first in Mission College's cascade and a trailing-space fragility caught before it fired. 🔬 **Local-course↔CR alignment PROVEN offline** (Cerritos `WELD 214L` tops both FCAW recs) — and it needs **two signals**, because Santa Ana mapped courses whose titles contain no "FCAW". 3 new KB notes.
 
+
+### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
+
+**`CLAUDE.md` 151,484 B → ~60 KB, nothing deleted** (#1381–#1384): §11's 29 lane cells →
+`docs/reference/lanes/`. ⭐ Sam's assignment rule is the lever, and **split a section,
+don't relocate it whole.** ⚠️ **SIX guards stopped firing because content moved and every
+diff looked like progress** — `stacked_roadmap_cell` exempted the two largest cells,
+`docs/reference/**` had never been indexed (0 → 37), and **"PLAIN WORDS, NO GLYPHS" left
+the file entirely** with the row carrying it. Now `## Presentation rules` +
+`presentation_doctrine`/`unreferenced_offload`. `npm test` 20.7 → 6.9 min.
+
+⭐ **S208 then answered the question the lane exists for, with a CONTROL.** Four of
+Sam's six scenarios ran as matched pairs (doctrine vs `CLAUDE.md` removed): S1 8/8
+vs 3/8 · S2 8.5/9 vs **1.5/9** · S6 6/7 vs 2/7. **Every difference is specific
+mechanical action, never judgment** — PUSH/PULL validated. ⭐ And doctrine does a
+second job: it **suppresses plausible-but-wrong defaults** (S2's control proposed
+dark mode against `CLAUDE.md:414`), so *"the control produces it free"* is NOT
+sufficient grounds to cut a rule. ⚠️ **The ablation FAILED** — the S4 control
+rebuilt Rules 1–10 from ~400 citations, so that pair is void. Strategy + all six
+proposed changes: `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.
+
+**Then the session demonstrated the next failure by having it** (#1387): it
+**auto-compacted at 786,077 tokens**, checkpoint 150K stale, ~778,000 dropped. ⭐ **Rule
+9's premise was FALSE, not merely unobservable** — the counter is in the transcript every
+turn (→ Rule 9a). ⚠️ **Thresholds must be a SUM of measured costs**; "2× checkpoint"
+missed by 336 tokens, caught by its own test. `docs/scenarios/` adds probes that get only
+the auto-loaded doctrine, with the **rubric committed before any probe runs**, reporting
+**holes not a score**. Ledger 7 of 9. Stories: `obsidian_vault_hygiene_lessons` ·
+`test_suite_speed_lessons` · `context_pressure_lessons` · handoff `session_207_handoff`.
 
 ### SkySwap — the cron would have failed tonight, one step short of the gates (2026-08-19, Session 172)
 

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-352 document(s).
+353 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -238,6 +238,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [On a trust-building surface, a plausible false positive costs more than a miss](../kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [One assistant, three files — compare them in a test or they drift](../kb-notes/methodology-one-assistant-three-files-is-a-drift-machine.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [One college, many course numbers is an over-merge signal](../kb-notes/methodology-one-college-many-course-numbers-is-an-over-merge-signal.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [One dependency derivation, many projections](../kb-notes/methodology-one-dependency-derivation-many-projections.md) | methodology | published | 2026-08-30 | 2026-08-30 |
 | [Overlay live data onto generated cards via a stamped data-key hook](../kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 |
 | [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
