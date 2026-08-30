@@ -1,10 +1,20 @@
 name: JS tests
 
 # Consumer (jsdom) regression tests for the dashboard's static front-end JS
-# (credential_reference.js, …). Non-required check — informational on PRs; it
-# does NOT gate the merge-on-green flow (a failing non-required check leaves the
-# PR `unstable`, which the auto-merge policy still merges). Catches regressions
-# like the Session-32 raw_variants:null search/expand crash before they ship.
+# (credential_reference.js, …) plus the pure-stdlib python lints. Catches
+# regressions like the Session-32 raw_variants:null search/expand crash before
+# they ship.
+#
+# E (Sam's ruling, 2026-08-29: "option 2!") — this check is meant to become
+# REQUIRED in branch protection, conditional-fast: the only expensive step is
+# `npm test` (~8.5 min), and it alone is skipped when every changed file is
+# docs-shaped (see the gate step). Every other step always runs, so the check
+# ALWAYS reports. Until Sam flips branch protection (a GitHub setting sessions
+# cannot change) it remains non-required: a failing run leaves the PR
+# `unstable`, which the auto-merge policy still merges.
+# ⚠️ NEVER convert this to `paths-ignore:`/`paths:` on the trigger, or an `if:`
+# on the JOB — a skipped required check never reports, which blocks the PR
+# FOREVER. The conditional must stay inside an always-run job.
 on:
   pull_request:
   push:
@@ -28,12 +38,45 @@ jobs:
         with:
           node-version: '20'
       - run: npm install
+      # The E gate (Sam, 2026-08-29: "option 2!"): skip `npm test` alone when
+      # the whole diff is docs-shaped. The decision is a SKIP-LIST, not a
+      # run-list — measured 2026-08-30, the suite reads .js/.html/.json/.css/
+      # .sql/.ts, so "run when JS changes" under-triggers silently; instead
+      # anything unrecognized runs the suite (scripts/js_suite_gate.sh holds
+      # the rule; tests/js_suite_gate_test.py pins its boundary both ways).
+      # On push to main there is no base to diff against and the full suite
+      # always runs.
+      - name: Decide whether the full JS suite runs
+        id: gate
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+        run: |
+          if [ -z "$BASE_SHA" ]; then
+            decision=run
+          else
+            git fetch --no-tags --depth=1 origin "$BASE_SHA"
+            files=$(git diff --name-only "$BASE_SHA" HEAD)
+            decision=$(printf '%s\n' "$files" | scripts/js_suite_gate.sh)
+          fi
+          echo "JS suite decision: $decision"
+          echo "decision=$decision" >> "$GITHUB_OUTPUT"
       # `tests/run.js` runs files CONCURRENTLY since 2026-08-28 (each still in
       # its own process). It sizes the pool from measured peak RSS and the
       # runner's RAM — 4 on a 16 GB ubuntu-latest. Measured before: 280 files,
       # 1,245s serial, of which `cpl_funding_*` was 28 files and 967s (78%).
       # If this job ever OOMs, set TEST_CONCURRENCY here rather than reverting.
-      - run: npm test
+      - if: steps.gate.outputs.decision == 'run'
+        run: npm test
+      # The ONE suite input a docs-shaped diff can still change is
+      # docs/catalog/** — regenerated beside the docs index on most docs PRs,
+      # and read by exactly one test file. Run that file even when the suite
+      # is skipped (~2s), so a catalog-reshaping docs PR cannot merge green
+      # and then turn main's always-full push run red.
+      # tests/js_suite_gate_test.py fails if a future test starts reading
+      # another inert path without being added here.
+      - name: Docs-reading jsdom tests (run even when the suite is skipped)
+        if: steps.gate.outputs.decision == 'skip'
+        run: node tests/governance_docs_panel.test.js
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
@@ -147,3 +190,10 @@ jobs:
         run: |
           python3 tests/dependency_map_test.py
           python3 kb/_build_dependency_map.py --check
+      # E gate guards (Session 210) — pins the skip/run boundary from both
+      # sides, re-derives which test files read inert (docs-shaped) paths and
+      # requires each to run in the skip branch above, and keeps the
+      # forever-block shape (`paths-ignore` on a required check) out of this
+      # file. Pure-stdlib python; always-on like every other lint here.
+      - name: JS-suite gate lint (scripts/js_suite_gate.sh)
+        run: python3 tests/js_suite_gate_test.py
