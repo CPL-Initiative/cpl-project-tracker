@@ -31,16 +31,18 @@ and instrument work you should NOT restate here; see the boundary below).
    edits, the memo-queue doc, lane updates, republish as scoreboard). Do not
    grab that lane unprompted; committed docs are the only cross-session sync.
 2. **Sam is actively running cold-session tests from a bench artifact he
-   holds.** ALL of that program's state, protocol, instruments, and results
-   live in the VAULT: `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`
-   — read its `README.md` FIRST if he asks for probe support, staging, or
-   pastes a bench export (the one-paste contract there tells you exactly
-   what to do). ⚠️ **Never restate that folder's contents — topics, criteria,
-   results — in ANY tracker doc or in `cpl_memory`**; the tracker's lint
-   holds only salted hashes of the phrases, and booting sessions read
-   `cpl_memory`, so a row there hands the answer key to future test
-   subjects. If he asks you to update the bench itself, it is a Claude
-   artifact in his gallery — find it by name, update via its URL.
+   holds — and the program's records were relocated OUT of the attach set
+   the same night (his ruling).** The vault keeps only a nameless stub at
+   `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`; when Sam asks for
+   probe support, staging, or pastes a bench export, **he supplies the
+   records location at that moment** (his bench carries it — a channel test
+   subjects cannot read). Do not go looking for it. ⚠️ **Never restate
+   program content — topics, criteria, results — in ANY tracker doc, vault
+   doc, or `cpl_memory` row**; the tracker's lint holds only salted hashes
+   of the phrases, and booting sessions read `cpl_memory`, so a row there
+   hands the answer key to future test subjects. If he asks you to update
+   the bench itself, it is a Claude artifact in his gallery — find it by
+   name, update via its URL.
 
 ## Read IN ORDER
 
