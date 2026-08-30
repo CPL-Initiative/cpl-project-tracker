@@ -58,6 +58,11 @@
     // overlay and mutated locally; nothing reaches the database until Save, so
     // a mis-drag costs a click on Discard rather than everyone's menu.
     draft: null,         // {containers:[{id,label,isTop,hidden,tabs:[…]}]}
+    // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+    // The impact map's viewer state. The map itself is FETCHED live from
+    // kb/dependency_map.json, never carried — a carried copy would be the
+    // stale list this tab exists to refuse.
+    blast: { load: "idle", map: null, q: "", kind: "all", sel: null },
     dirty: false,
     saving: false,
     saveMsg: null,
@@ -758,6 +763,39 @@
       ".adm-input { padding:6px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:220px; }",
       ".adm-check { font-size:.82rem; color: var(--text-body); display:flex; align-items:center; gap:5px; }",
       ".adm-count { font-size:.8rem; color: var(--text-muted); margin-left:auto; }",
+      // ── Blast Radius (item 19) — the impact-map pane ──
+      ".adm-blast-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
+      ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:5px; }",
+      ".adm-blast-kind { border:1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); border-radius:10px; padding:3px 10px; font-size:.76rem; font-weight:600; cursor:pointer; }",
+      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--white, #fff); }",
+      ".adm-blast-panes { display:grid; grid-template-columns:minmax(230px,300px) 1fr; gap:12px; align-items:start; }",
+      "@media (max-width:700px) { .adm-blast-panes { grid-template-columns:1fr; } }",
+      ".adm-blast-list { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; max-height:60vh; overflow-y:auto; padding:4px; }",
+      ".adm-blast-grp { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); padding:8px 8px 3px; }",
+      ".adm-blast-ds { display:flex; width:100%; justify-content:space-between; align-items:baseline; gap:8px; border:0; background:none; text-align:left; padding:5px 8px; font:inherit; font-size:.85rem; color: var(--text-body); border-radius:7px; cursor:pointer; }",
+      ".adm-blast-ds:hover { background: var(--surface-subtle); }",
+      ".adm-blast-ds[aria-pressed=\"true\"] { background: var(--surface-muted); color: var(--text-strong); font-weight:600; }",
+      ".adm-blast-ds .n { overflow-wrap:anywhere; }",
+      ".adm-blast-ds .c { color: var(--text-muted); font-size:.72rem; font-variant-numeric:tabular-nums; flex:none; }",
+      ".adm-blast-card { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; padding:14px 16px 16px; }",
+      ".adm-blast-chips { display:flex; flex-wrap:wrap; gap:5px; margin:0 0 6px; }",
+      ".adm-blast-chip { border-radius:10px; font-size:.68rem; font-weight:600; padding:2px 8px; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); }",
+      ".adm-blast-chip.public { color: var(--green-progress, #2C601A); }",
+      ".adm-blast-name { color: var(--navy-primary); font-size:1.15rem; margin:0 0 4px; overflow-wrap:anywhere; }",
+      ".adm-blast-sum { margin:0 0 10px; font-size:.9rem; }",
+      // Red is an act-on state and stays muted: a border and a bold lead-in,
+      // never a filled box (the glyph/color doctrine).
+      ".adm-blast-strip { border:1px solid var(--border); border-left:3px solid var(--red-alert, #920000); background: var(--surface-subtle); border-radius:8px; padding:7px 11px; margin:0 0 8px; font-size:.85rem; }",
+      ".adm-blast-strip b { color: var(--red-alert, #920000); }",
+      ".adm-blast-strip.caution { border-left-color: var(--border-strong); }",
+      ".adm-blast-strip.caution b { color: var(--text-strong); }",
+      ".adm-blast-sec { font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color: var(--text-muted); margin:12px 0 4px; }",
+      ".adm-blast-cons { display:flex; flex-wrap:wrap; gap:5px; margin:0; padding:0; list-style:none; }",
+      ".adm-blast-cons li { border:1px solid var(--border); background: var(--surface-subtle); border-radius:10px; padding:3px 9px; font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
+      ".adm-blast-cons li .w { font-weight:700; color: var(--red-alert, #920000); }",
+      ".adm-blast-how { color: var(--text-muted); font-size:.74rem; }",
+      ".adm-blast-empty { color: var(--text-muted); font-size:.85rem; }",
+      ".adm-blast-foot { color: var(--text-muted); font-size:.8rem; margin:10px 0 0; max-width:900px; }",
       // table-layout:fixed + an explicit colgroup — auto layout has silently
       // parked columns past the wrapper's right edge here before (the CCR).
       ".adm-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; }",
@@ -1063,6 +1101,232 @@
   }
 
   // ── Render ──
+  // ── Blast Radius (Sam's Open Verdicts item 19, 2026-08-30: "blast away") ──
+  // The impact map's human face, ported from the S209 mock he approved: pick a
+  // dataset and see every tab, page, module, script and scheduled job touching
+  // it, who WRITES it, and whether the daily cron commits it straight to main
+  // (which Pages serves — so a bad value ships without review). Check here
+  // before a bulk write, a schema change, or a rename.
+  var BLAST_KINDS = [
+    ["all", "All"],
+    ["supabase", "Supabase tables"],
+    ["rpc", "RPCs"],
+    ["edgefn", "Edge functions"],
+    ["datajs", "Generated JS"],
+    ["file", "Files"],
+    ["external", "External services"],
+    ["other", "Other"]
+  ];
+  var BLAST_GROUP = {
+    supabase: "Supabase tables", rpc: "RPCs", edgefn: "Edge functions",
+    datajs: "Generated JS artifacts", file: "JSON, Excel and other files",
+    external: "External services", other: "Storage and inline data"
+  };
+  var BLAST_KIND_ORDER = { supabase: 0, rpc: 1, edgefn: 2, datajs: 3, file: 4, external: 5, other: 6 };
+  var BLAST_CONSUMER_ORDER = ["tab", "page", "module", "script", "workflow", "edgefn"];
+  function blastShort(id) { var i = String(id).indexOf(":"); return i > 0 ? String(id).slice(i + 1) : String(id); }
+  function blastKindOf(id) {
+    var i = String(id).indexOf(":");
+    var p = i > 0 ? String(id).slice(0, i) : "file";
+    if (p === "inline" || p === "storage") return "other";
+    if (p === "file") return /\.js$/.test(blastShort(id)) ? "datajs" : "file";
+    if (p === "supabase" || p === "rpc" || p === "edgefn" || p === "external") return p;
+    return "other";
+  }
+  // Served on GitHub Pages? Only file datasets can be, and the map records the
+  // NOT-served patterns rather than a served flag. When a pattern cannot be
+  // read, claim nothing — the missing "Public" chip is the safe direction.
+  function blastServed(id) {
+    var k = blastKindOf(id);
+    if (k !== "file" && k !== "datajs") return false;
+    var name = blastShort(id);
+    var pats = (state.blast.map && state.blast.map.not_served) || [];
+    for (var i = 0; i < pats.length; i++) {
+      var p = String(pats[i]);
+      try {
+        if (p === name || name.indexOf(p + "/") === 0) return false;
+        var rx = new RegExp("^" + p.split("*").map(function (s) {
+          return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }).join(".*") + "$");
+        if (rx.test(name)) return false;
+      } catch (e) { return false; }
+    }
+    return true;
+  }
+  function loadBlast() {
+    if (state.blast.load === "loading" || state.blast.load === "ok") return Promise.resolve();
+    state.blast.load = "loading";
+    // Promise.resolve() first, so a test stub that returns nothing for this
+    // URL lands in the catch as an honest error state instead of throwing
+    // through activate().
+    return Promise.resolve()
+      .then(function () { return fetch("kb/dependency_map.json", { cache: "no-store" }); })
+      .then(function (r) { if (!r || !r.ok) throw new Error("http"); return r.json(); })
+      .then(function (m) {
+        if (!m || !m.datasets) throw new Error("shape");
+        state.blast.map = m;
+        state.blast.load = "ok";
+      })
+      .catch(function () { state.blast.load = "error"; });
+  }
+  function blastRows() {
+    var b = state.blast;
+    if (!b.map) return [];
+    var q = String(b.q || "").toLowerCase();
+    var ids = Object.keys(b.map.datasets).filter(function (id) {
+      if (b.kind !== "all" && blastKindOf(id) !== b.kind) return false;
+      return blastShort(id).toLowerCase().indexOf(q) >= 0;
+    });
+    ids.sort(function (a, b2) {
+      var ka = BLAST_KIND_ORDER[blastKindOf(a)], kb = BLAST_KIND_ORDER[blastKindOf(b2)];
+      if (ka !== kb) return ka - kb;
+      return blastShort(a) < blastShort(b2) ? -1 : 1;
+    });
+    return ids;
+  }
+  function blastDetailHtml(id) {
+    var m = state.blast.map, d = m.datasets[id];
+    if (!d) return '<p class="adm-blast-empty">Pick a dataset from the list.</p>';
+    var cons = d.consumers || [];
+    var surfaces = {}, writers = {}, tabsTouched = {}, tabWrites = {};
+    cons.forEach(function (c) {
+      surfaces[c.id] = 1;
+      if (c.direction === "write") writers[c.id] = 1;
+      (c.tabs || []).forEach(function (t) {
+        tabsTouched[t] = 1;
+        if (c.direction === "write") tabWrites[t] = 1;
+      });
+      if (c.kind === "tab") {
+        tabsTouched[blastShort(c.id)] = 1;
+        if (c.direction === "write") tabWrites[blastShort(c.id)] = 1;
+      }
+    });
+    var nSurf = Object.keys(surfaces).length, nW = Object.keys(writers).length;
+    var chips = '<span class="adm-blast-chip">' + esc(BLAST_GROUP[blastKindOf(id)]) + "</span>";
+    if (blastServed(id)) chips += '<span class="adm-blast-chip public">Public on GitHub Pages</span>';
+    var h = '<div class="adm-blast-chips">' + chips + "</div>" +
+      '<h4 class="adm-blast-name">' + esc(blastShort(id)) + "</h4>" +
+      '<p class="adm-blast-sum">Consumed by ' + nSurf + " surface" + (nSurf === 1 ? "" : "s") +
+      (nW ? " — <b>" + nW + " of them write" + (nW === 1 ? "s" : "") + "</b>." : " — none of them write.") + "</p>";
+    var mainBy = d.main_committers || [];
+    if (mainBy.length) {
+      h += '<p class="adm-blast-strip"><b>Bypasses pull requests.</b> Committed directly to main by ' +
+        mainBy.map(function (x) { return esc(blastShort(x)); }).join(", ") +
+        " — and GitHub Pages serves from main, so a bad value ships without review.</p>";
+    }
+    (m.stale_risk || []).forEach(function (r) {
+      if (String(r).indexOf(blastShort(id)) === 0) {
+        h += '<p class="adm-blast-strip caution"><b>Stale-copy risk.</b> ' + esc(r) + ".</p>";
+      }
+    });
+    var tabs = Object.keys(tabsTouched).sort();
+    if (tabs.length) {
+      h += '<h5 class="adm-blast-sec">Tabs that touch it</h5><ul class="adm-blast-cons">' +
+        tabs.map(function (t) {
+          return "<li>" + esc(t) + (tabWrites[t] ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    var kinds = BLAST_CONSUMER_ORDER.concat(["other"]);
+    kinds.forEach(function (gk) {
+      var items = [], seen = {};
+      cons.forEach(function (c) {
+        var ck = BLAST_CONSUMER_ORDER.indexOf(c.kind) >= 0 ? c.kind : "other";
+        if (ck !== gk) return;
+        if (!seen[c.id]) { seen[c.id] = { name: blastShort(c.id), write: false }; items.push(seen[c.id]); }
+        if (c.direction === "write") seen[c.id].write = true;
+      });
+      if (!items.length) return;
+      var label = gk === "tab" ? "Tabs" : gk === "page" ? "Pages" : gk === "module" ? "Modules"
+        : gk === "script" ? "Scripts" : gk === "workflow" ? "Workflows"
+        : gk === "edgefn" ? "Edge functions" : "Other consumers";
+      h += '<h5 class="adm-blast-sec">' + label + '</h5><ul class="adm-blast-cons">' +
+        items.map(function (it) {
+          return "<li>" + esc(it.name) + (it.write ? ' <span class="w">writes</span>' : "") + "</li>";
+        }).join("") + "</ul>";
+    });
+    if ((d.producers || []).length) {
+      h += '<h5 class="adm-blast-sec">Produced by</h5><ul class="adm-blast-cons">' +
+        d.producers.map(function (p) {
+          var by = p && p.by != null ? p.by : p;
+          return "<li>" + esc(blastShort(String(by))) +
+            (p && p.how ? ' <span class="adm-blast-how">' + esc(String(p.how)) + "</span>" : "") + "</li>";
+        }).join("") + "</ul>";
+    }
+    return h;
+  }
+  function blastShellHtml() {
+    return '<h3>Blast Radius</h3>' +
+      '<p class="adm-intro">Pick a dataset and see everything that consumes it — tabs, pages, scripts, ' +
+      "workflows — with who writes it and whether the daily cron commits it straight to main. Check here " +
+      "before a bulk write, a schema change, or a rename. Read live from the impact map " +
+      "(<code>kb/dependency_map.json</code>, derived from the code and drift-checked in CI).</p>" +
+      '<div id="admBlast"></div>';
+  }
+  function renderBlast() {
+    var host = document.getElementById("admBlast");
+    if (!host) return;
+    var b = state.blast;
+    if (b.load === "idle" || b.load === "loading") {
+      host.innerHTML = '<div class="adm-empty">Loading the impact map…</div>';
+      return;
+    }
+    if (b.load === "error" || !b.map) {
+      host.innerHTML = '<div class="adm-empty">Could not load the impact map — no list rather than a stale ' +
+        "copy. Re-open the tab to try again; the map itself lives at <code>kb/dependency_map.json</code>.</div>";
+      return;
+    }
+    if (!b.sel || !b.map.datasets[b.sel]) {
+      var first = blastRows()[0];
+      b.sel = first || null;
+    }
+    var kindsBar = BLAST_KINDS.map(function (k) {
+      return '<button type="button" class="adm-blast-kind" data-blastkind="' + k[0] + '" aria-pressed="' +
+        (b.kind === k[0]) + '">' + k[1] + "</button>";
+    }).join("");
+    var ids = blastRows(), listH = "", lastGrp = "";
+    ids.forEach(function (id) {
+      var g = BLAST_GROUP[blastKindOf(id)];
+      if (g !== lastGrp) { listH += '<div class="adm-blast-grp">' + esc(g) + "</div>"; lastGrp = g; }
+      var n = (b.map.datasets[id].consumers || []).length;
+      listH += '<button type="button" class="adm-blast-ds" data-blastid="' + esc(id) + '" aria-pressed="' +
+        (b.sel === id) + '"><span class="n">' + esc(blastShort(id)) + '</span><span class="c">' + n + "</span></button>";
+    });
+    if (!listH) listH = '<p class="adm-blast-empty" style="padding:.6rem">Nothing matches. Clear the search or pick another kind.</p>';
+    var s = b.map.stats || {};
+    host.innerHTML =
+      '<div class="adm-blast-bar"><input type="search" class="adm-input" data-blastq placeholder="Search datasets" ' +
+        'aria-label="Search datasets" value="' + esc(b.q) + '">' +
+        '<div class="adm-blast-kinds" role="group" aria-label="Filter by dataset kind">' + kindsBar + "</div></div>" +
+      '<div class="adm-blast-panes">' +
+        '<nav class="adm-blast-list" aria-label="Datasets">' + listH + "</nav>" +
+        '<section class="adm-blast-card" aria-label="Selected dataset">' + blastDetailHtml(b.sel) + "</section>" +
+      "</div>" +
+      '<p class="adm-blast-foot">Coverage: ' + esc(String(s.supabase_tables || 0)) + " Supabase tables · " +
+        esc(String(s.rpcs || 0)) + " RPCs · " + esc(String(s.edge_functions || 0)) + " edge functions · " +
+        esc(String(s.file_datasets || 0)) + " file datasets · " + esc(String(s.workflows || 0)) +
+        " workflows · " + esc(String(s.tabs || 0)) + " tabs. Regenerate with " +
+        "<code>python3 kb/_build_dependency_map.py</code>.</p>";
+    var q = host.querySelector("[data-blastq]");
+    if (q) q.addEventListener("input", function () {
+      state.blast.q = q.value;
+      renderBlast();
+      var again = document.querySelector("[data-blastq]");
+      if (again) { again.focus(); again.setSelectionRange(again.value.length, again.value.length); }
+    });
+    host.querySelectorAll("[data-blastkind]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.kind = btn.getAttribute("data-blastkind");
+        renderBlast();
+      });
+    });
+    host.querySelectorAll("[data-blastid]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.blast.sel = btn.getAttribute("data-blastid");
+        renderBlast();
+      });
+    });
+  }
+
   function render(root) {
     ensureCss();
     var h = '<div class="adm">';
@@ -1295,9 +1559,12 @@
       + "is on it. Folding it in here would hide the fact that the phrases exist from the people who most need "
       + "to know they do.</p>";
 
+    h += blastShellHtml();
+
     h += "</div>";
     root.innerHTML = h;
     wire(root);
+    renderBlast();
   }
 
   function wire(root) {
@@ -1511,9 +1778,10 @@
     wireOverlay();
     var root = document.getElementById("admin-root");
     if (!root) return;
-    if (state.loadState === "ok") { render(root); return; }
+    if (state.loadState === "ok") { render(root); loadBlast().then(renderBlast); return; }
     render(root);
     loadGates().then(function () { render(root); });
+    loadBlast().then(renderBlast);
   }
 
   window.CPL_ADMIN_TAB = {
@@ -1533,6 +1801,17 @@
     _loadGates: loadGates,
     _authHeaders: authHeaders,
     _GATES: GATES,
+    // blast radius (item 19)
+    _loadBlast: loadBlast,
+    _renderBlast: renderBlast,
+    _blastKindOf: blastKindOf,
+    _blastShort: blastShort,
+    _blastServed: blastServed,
+    _blastRows: blastRows,
+    // test hook: hand the pane a map without a network — the fetch stub in
+    // tests falls through for unknown URLs, which loadBlast reads as its
+    // honest error state.
+    _setBlastMap: function (m) { state.blast.map = m || null; state.blast.load = m ? "ok" : "error"; },
     // arrange (drag and drop)
     _buildDraft: buildDraft,
     _ensureDraft: ensureDraft,
