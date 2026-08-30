@@ -460,3 +460,41 @@ day (#1406–#1409). What the sitting taught:
   `git checkout -B <branch> origin/main`, the upstream IS origin/main, so a
   bare `git push` targets nothing useful — push explicitly
   (`git push origin <branch>`), and verify the remote ref actually moved.
+
+## 2026-08-30 (evening) — Session 213 (SkyMirror): the queue routed a compliant session into the instruments
+
+The probe lane's queued pre-run work is done and banked **vault-side** (the
+instruments' home): the criteria re-read against the post-remediation corpus
+landed as a dated addendum beside the criteria (never inside them), the lane's
+current-truth file moved, and the redo recipe for the failed ablation is
+written. Tracker-side, per the standing rule, this section carries the class
+of what happened and a pointer, not the material:
+`CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.
+
+- ⭐ **Fourth instance of defeat-by-diligence, first via the QUEUE.** The
+  measured-void condition the lane was waiting on ("relocate only if a void
+  actually fires") fired — through the authoritative handoff chain itself:
+  greeting → highest handoff → queue → ordered reading → the instrument
+  folder. The prior three instances were storage problems (the repo held the
+  answer key); this one is a **scheduling** problem — while the instrument
+  work sits at the top of the priority queue, any session sent to "the
+  priority workstream" ends inside the instruments. Location fixes do not
+  cover it; sequencing or a staging pre-check does. Options are recorded
+  vault-side for Sam.
+- **A session's boot can be its own best evidence.** The run's opening
+  sequence (three-repo check → numeric highest-handoff sort → stale-greeting
+  flag → Rule 8 memory query before any edit → lane file → live-session
+  reconnaissance) executed from the always-loaded layer alone, unprimed —
+  the strongest live observation yet that the PUSH layer steers a cold boot,
+  recorded with its exact call order in the vault.
+- **Mid-session workstream pivots re-trigger Rule 8.** The register queue
+  item was the greeting's target; the actual work turned out to be the
+  doctrine lane. The second `cpl_memory` query (doctrine tags) ran before
+  any doctrine-lane write — Rule 8 is per-workstream, not per-session; a
+  session that queries once at boot and then pivots is unread on the lane
+  it actually works.
+- **Register lane truth caught up**: the re-analysis sheet merged as #1413
+  from the prior session without a checkpoint, leaving the lane file claiming
+  the sheet was still queued. Fixed this checkpoint; the general lesson is
+  standing (a merged PR without its lane-file edit is a stale lane by the
+  next morning).

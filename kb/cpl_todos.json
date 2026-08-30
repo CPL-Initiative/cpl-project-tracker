@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
- "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
- "_status": "All 19 Open Verdicts rulings are executed and merged (2026-08-30): the Combined award column, the frozen header and statewide pair, the project-pool card wired to the Budget table, the goal-card policy, the scope migration (receipted), the governance folds, and Blast Radius on the Admin tab. The Rule 9 checkpoint is committed. Next up: the post-SB 135 register re-analysis sheet, and the Budget Balance port once Sam reacts to the dials.",
+ "_session": "SkyMirror, Session 213 — the register sheet awaits your verdicts; the rule-test groundwork is banked",
+ "_status": "The post-SB 135 register re-analysis sheet is BUILT and merged (2026-08-30): all 16 rows re-read against the enacted law, each with a proposed keep-or-retire call and an instrument, plus 5 candidate new rows and the three-memo grouping. It now waits on Sam ruling by number; a session then applies the verdicts to the register with a receipt for every edit. Also this session: the rule-testing groundwork moved (criteria re-checked against the current rulebook, notes recorded beside them in the vault) and the register lane's docs were caught up to what actually merged. Still open on Sam: the Budget Balance dials reaction, and the public KB draft PR #22.",
  "items": [
   {
    "id": "s210-sam-react-dials",
@@ -11,10 +11,10 @@
    "text": "React to the Budget Balance dials (the item-1 sandbox with the real rosters and live settings). Your reaction shapes the real version on the funding tab; one live finding already baked in: at today's settings the noncredit lane needs $1.68M of the $2M carve-out, and 242.7 FTES is the lowest threshold the pool can cover at the $40k minimum."
   },
   {
-   "id": "s210-fable-register-reanalysis",
-   "for": "Fable",
+   "id": "s213-sam-register-verdicts",
+   "for": "Sam",
    "tab": "gr-register",
-   "text": "The register re-analysis Sam ordered (2026-08-30, item 8): all ~16 reforms against the post-SB 135 ground - trailer bill language became verbatim Ed Code, so each row needs (a) still needed at all? and (b) if so, which instrument: memo, Title 5, legislative change, or procedure. Output is the next decision sheet; rows landing on 'memo' feed his guidance-memo queue. #16's stale citation already fixed; #2 and #10 fold in here."
+   "text": "Rule by number on the register re-analysis sheet (docs/visuals/2026-08-30-register-reanalysis.html, merged 2026-08-30): 16 rows re-read against the enacted law, each proposing keep-or-retire plus an instrument (memo, Title 5, legislative change, or procedure), 5 candidate new rows, and the 8 memo-landing rows grouped as three memos. Reply yes / edit / fold / dismiss by number; a session then applies every verdict to the register with a receipt per edit."
   },
   {
    "id": "s210-sam-75013-collab",
@@ -56,7 +56,7 @@
    "id": "s210-fable-sierra-sweep-test",
    "for": "Fable",
    "tab": "cpl-assistant",
-   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
+   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Sequencing: run it BEFORE the register verdicts rewrite rows, so both models are compared on the same ground. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
   },
   {
    "id": "s203-sam-sticky",
