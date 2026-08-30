@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
- "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
- "_status": "All 19 Open Verdicts rulings are executed and merged (2026-08-30): the Combined award column, the frozen header and statewide pair, the project-pool card wired to the Budget table, the goal-card policy, the scope migration (receipted), the governance folds, and Blast Radius on the Admin tab. The Rule 9 checkpoint is committed. Next up: the post-SB 135 register re-analysis sheet, and the Budget Balance port once Sam reacts to the dials.",
+ "_session": "SkyLedger, Session 210 — three-repo practice enforced session-side; the register sheet is built and awaits Sam's numbers",
+ "_status": "Since the morning checkpoint: the branch-deletion records are trued (#1411), the three-repo attach practice is session-checked doctrine with a per-machine installer for the zero-repo case (#1412), and a parallel session built the post-SB 135 Register Re-analysis decision sheet (#1413) — 22 numbered items awaiting Sam's reply-by-number verdicts. Sam's cold-session testing is live off his bench artifact; its records file into the vault, never here. Next up: execute the register verdicts as they land, and the Budget Balance port once Sam reacts to the dials.",
  "items": [
   {
    "id": "s210-sam-react-dials",
@@ -11,10 +11,10 @@
    "text": "React to the Budget Balance dials (the item-1 sandbox with the real rosters and live settings). Your reaction shapes the real version on the funding tab; one live finding already baked in: at today's settings the noncredit lane needs $1.68M of the $2M carve-out, and 242.7 FTES is the lowest threshold the pool can cover at the $40k minimum."
   },
   {
-   "id": "s210-fable-register-reanalysis",
-   "for": "Fable",
+   "id": "s210-sam-rule-register-sheet",
+   "for": "Sam",
    "tab": "gr-register",
-   "text": "The register re-analysis Sam ordered (2026-08-30, item 8): all ~16 reforms against the post-SB 135 ground - trailer bill language became verbatim Ed Code, so each row needs (a) still needed at all? and (b) if so, which instrument: memo, Title 5, legislative change, or procedure. Output is the next decision sheet; rows landing on 'memo' feed his guidance-memo queue. #16's stale citation already fixed; #2 and #10 fold in here."
+   "text": "Rule the Register Re-analysis sheet (docs/visuals/2026-08-30-register-reanalysis.html, built same day you ordered it): 22 numbered items — 16 register rows re-read against the enacted Ed Code, 5 candidate new rows, and the three-memo plan. Reply by number (yes / edit / fold / dismiss); verdicts execute as receipted register edits and the sheet republishes as the scoreboard."
   },
   {
    "id": "s210-sam-75013-collab",
@@ -59,12 +59,6 @@
    "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
   },
   {
-   "id": "s203-sam-sticky",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
-  },
-  {
    "id": "s203-fable-savesweep2",
    "for": "Fable",
    "tab": "admin",
@@ -93,6 +87,12 @@
    "for": "Fable",
    "tab": "cpl-implementation",
    "text": "One file is rebuilt daily by a scheduled job but never committed by it, so the published copy goes stale: the pathways dataset. Small mechanical fix when someone wants it. (The second file originally listed here was re-checked and cleared - the job everyone suspected never actually rewrites it; the one that does also publishes it.)"
+  },
+  {
+   "id": "s210-sam-export-bench-log",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
   }
  ]
 }

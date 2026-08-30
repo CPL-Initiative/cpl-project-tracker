@@ -727,8 +727,12 @@ all executed same day (#1407–#1409): Combined award column · frozen header +
 statewide pair · pool card wired to the Budget table · goal-card policy · scope
 68→2 values (receipted) · tab folds · §55050 SENT 2026-08-28 · post-SB 135
 register re-analysis ordered · Blast Radius on Admin. ⚠️ `npm test | tail`
-reports TAIL's exit — CI caught what local masked. Story:
-`doctrine_enforcement_lessons` + `cpl_funding_lessons`; handoff `session_212_handoff`.
+reports TAIL's exit — CI caught what local masked. PM: the three-repo attach
+practice became session-checked doctrine (#1411/#1412 — verify at start, name
+what's missing; per-machine installer for the zero-repo case); the parallel
+Session-212 line shipped the register re-analysis sheet (#1413, awaiting Sam's
+numbers). Story: `doctrine_enforcement_lessons` + `cpl_funding_lessons`;
+handoff `session_213_handoff`.
 
 ## Troubleshooting
 

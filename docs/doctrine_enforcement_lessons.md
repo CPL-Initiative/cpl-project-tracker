@@ -460,3 +460,34 @@ day (#1406–#1409). What the sitting taught:
   `git checkout -B <branch> origin/main`, the upstream IS origin/main, so a
   bare `git push` targets nothing useful — push explicitly
   (`git push origin <branch>`), and verify the remote ref actually moved.
+
+## 2026-08-30 (late) — a human-gated practice becomes a machine-checked one, and an instrument meets its first real user
+
+- **The gate names itself.** Sam, unprompted: attaching all three repos is his
+  standing practice, taught to the team — *"but it's a human gated practice."*
+  Same failure class this file keeps finding ("a habit that depends on a new
+  user remembering it will fail on their first day"), fixed the same way:
+  move the remembering into the session. #1412 ships the three layers —
+  detection in the always-loaded file (verify the set, name what's missing),
+  a one-time per-machine installer for the zero-repo case (the only channel
+  that exists when nothing loads), and guide §12 for the humans. KB note:
+  `methodology-a-human-gated-practice-becomes-a-machine-checked-one`.
+- **The zero-repo case has exactly one lever.** With no repo attached, no
+  CLAUDE.md loads at all, so no rule in any repo can fire — the backstop must
+  live on the machine (user-level memory), installed once, like the hooks.
+  Expectation set honestly: a repo-less session is generic Claude.
+- **An instrument's first real user finds the traps its author cannot.** The
+  first live operator sitting on the session-testing bench surfaced three
+  usability defects in one afternoon — a reply that reads as a go-ahead
+  converts a primed test session into a working session; boot narration that
+  names one repo reads as a failed attach; selector state persisting between
+  attempts nearly mislabels a run — each fixed and pinned into the
+  walkthrough the same hour, with the live case cited. Specifics stay in the
+  vault's probe folder by leak discipline; the durable operations rule
+  (results file one-paste into the vault's append-only log) lives in that
+  folder's README.
+- **The queue survives its sessions.** The register re-analysis sheet Sam
+  ordered at the sitting was built and merged by a parallel session line
+  (#1413) that booted off nothing but the one-line handoff pointer — the
+  doctrine chain (sibling check → highest handoff → memory query → queue)
+  ran end-to-end unprompted. The sheet awaits his reply-by-number verdicts.
