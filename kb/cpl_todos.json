@@ -38,7 +38,7 @@
    "id": "s210-sam-tidyups",
    "for": "Sam",
    "tab": "governance",
-   "text": "Two one-click finishes (2026-08-30): (1) delete the leftover experiment branch on the tracker's Branches page - exact name given in chat, kept out of committed docs on purpose; (2) review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate."
+   "text": "One one-click finish left (2026-08-30): review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate. (The experiment-branch deletion is DONE and verified.)"
   },
   {
    "id": "s202-fable-savesweep",
