@@ -129,8 +129,10 @@ Read IN ORDER before touching anything:
 
 ## Safety patterns to honor
 
-- Never force-push `main`. Merge on `clean` OR `unstable`; poll CI via MCP
-  tools; a `check_suite` wake names a superseded `head_sha`.
+- Never force-push `main` (now also platform-enforced). Merge only after
+  the `test` check SUCCEEDS on the head; beyond that, `clean` OR `unstable`
+  merges. Poll CI via MCP tools; a `check_suite` wake names a superseded
+  `head_sha`.
 - Sam curates LIVE beside sessions — Rule 10 now covers ANY shared-table
   bulk write, and a write is only approvable if its receipt can undo it.
 - `cpl_memory` writes: INSERT-only, `status='proposed'`, `plain` on every
