@@ -308,6 +308,16 @@ first day.** Do the remembering for them.
   **who and when** alongside it (the provenance tiers in `map_users.js` are the
   worked pattern). A curator's knowledge is a first-class input — attribute it,
   don't launder it into an anonymous value.
+- **VERIFY THE THREE-REPO SET AT SESSION START (Sam, ruled enforced
+  2026-08-30).** Sessions run with all THREE repos attached —
+  `cpl-knowledge-base` · `cpl-project-tracker` · `CPLBrain` — *"so they can
+  stay informed and syncd."* Check all three are present before working; if
+  any is missing, say which in ONE line and ask whether to continue without
+  it. The driver may be a teammate on day one — do the remembering for them.
+  (A session with NO repo attached loads no CLAUDE.md at all; the backstop
+  there is per-machine: `scripts/install-three-repo-check.ps1` installs a
+  one-time user-level check line. Human-facing:
+  `docs/working_with_claude_code.md` §12.)
 - **Their domain knowledge outranks your inference.** They live in MAP daily.
   When a team member contradicts something derived, believe them and record the
   correction; when they supply a value that violates a rule you set for

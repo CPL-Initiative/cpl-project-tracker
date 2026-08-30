@@ -254,6 +254,26 @@ Scattered questions across a chat, or a to-do list that just names the
 decision without preparing it, are what this replaces. If someone asks you to
 decide something without the preparation, ask for the sheet.
 
+## 12. Start every session with all three repos
+
+Sam's standing practice, ruled enforced 2026-08-30: a CPL session gets all
+**three** repos — the public knowledge base (`cpl-knowledge-base`), the
+project tracker (`cpl-project-tracker`), and the vault (`CPLBrain` /
+COG-second-brain) — *"so they can stay informed and syncd."* Each repo
+carries standing instructions the others rely on; attach one and I know some
+of the rules, attach all three and I know the system.
+
+You don't have to remember this — checking is my job. If you start me with
+some of the three missing, I'll say which in one line and ask before carrying
+on. Attaching the missing one mid-session is fine.
+
+The one case I can't catch is a session with **no** repos at all: none of
+these instructions load there, so that session is generic Claude and doesn't
+know our rules exist. The fix is a one-time install on your machine —
+`scripts/install-three-repo-check.ps1` adds a short check line to your
+user-level Claude memory, so even a bare session asks about the repos before
+doing CPL work. Run it once per machine; any session can walk you through it.
+
 ## For Sam — a note on agents
 
 You floated *"maybe need some established agents who are mindful of these
