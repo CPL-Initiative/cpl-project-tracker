@@ -10646,7 +10646,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 40,
+   "count": 41,
    "docs": [
     {
      "created": "2026-08-28",
@@ -11082,6 +11082,23 @@
       "context"
      ],
      "title": "Context-pressure hook \u2014 install and mechanics",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "path": "docs/reference/dependency_map.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "dependency-map",
+      "cross-impact",
+      "supabase",
+      "cron",
+      "pipeline"
+     ],
+     "title": "Dependency map \u2014 dataset to consuming tabs, scripts, workflows and surfaces",
      "type": null,
      "updated": ""
     },
@@ -14418,5 +14435,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 729
+ "total": 730
 }

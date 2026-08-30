@@ -136,3 +136,14 @@ jobs:
           python3 tests/docs_index_build_test.py
           python3 tests/american_spelling_test.py
           python3 kb/_build_docs_index.py --check
+      # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
+      # artifact every session's cross-impact flag depends on. `--check` turns
+      # "somebody forgot to rebuild after adding a fetch()" into a red check
+      # (same shape as the docs index above); the test guards the content —
+      # each of its checks is a failure mode the build actually hit, verified
+      # by perturbation against the live artifact. Pure-stdlib python; same
+      # non-required check.
+      - name: Dependency map — content guards + drift check
+        run: |
+          python3 tests/dependency_map_test.py
+          python3 kb/_build_dependency_map.py --check
