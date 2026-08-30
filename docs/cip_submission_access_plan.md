@@ -58,7 +58,7 @@ real rollout tracking. The tool writes here instead of (or alongside) `localStor
    The gate is the door; the DB is the lock.
 2. **Attribution:** every change records who + when.
 3. **Reversibility:** append-only / versioned — edits never overwrite, so any bad change is one-click
-   revertible and auditable (the `kb_curation` INSERT-only + receipts doctrine, Rule 9, applied to CIP).
+   revertible and auditable (the `kb_curation` INSERT-only + receipts doctrine, Rule 10, applied to CIP).
 
 With those three, a leaked credential is a **contained, traceable, undoable** mess — not a fire — which
 makes the front-door choice low-stakes:

@@ -794,6 +794,52 @@ _payload = {"generated": "2026-01-01",
 check("report: renders a clean corpus without raising",
       "Docs-corpus audit" in da.build_report(_payload))
 
+# ── citation_drift ────────────────────────────────────────────────────────
+# Remediation F (Sam, 2026-08-29). Every pattern is proven to FIRE and every
+# exclusion proven to HOLD — a lint tested only on the side it was built for
+# rots on the other one (the js-suite gate's lesson, same session).
+def _cd(relpath, text, lane=None):
+    e = entry(relpath, text, lane)
+    e["text"] = text
+    return da.rule_citation_drift(e)
+
+
+check("citation drift: Rule 9c fires (Rule 9 has no (c))",
+      _cd("docs/kb-notes/x-note.md",
+          "Supabase only through the MCP (Rule 9c).") is not None)
+check("citation drift: 'Rule 8 checkpoint' fires",
+      _cd("docs/reference/x.md",
+          "Run a Rule 8 checkpoint before signing off.") is not None)
+check("citation drift: 'Rule 8 / `/checkpoint`' fires",
+      _cd("docs/reference/x.md",
+          "Rule 8 / `/checkpoint` refreshes the docs.") is not None)
+check("citation drift: bare Rule 9 beside Supabase vocabulary fires",
+      _cd("docs/kb-notes/x-note.md",
+          "Stage it as a kb_curation write under Rule 9 with a receipt.")
+      is not None)
+check("citation drift: the measured pipeline_reference FP stays fixed "
+      "(frontmatter Supabase title + correct 'Rule 9 checkpoints' body)",
+      _cd("docs/reference/x.md",
+          '---\ntitle: "X — tabs, Supabase (offload)"\n---\n\n'
+          "> Moved verbatim (Session 111 — the pare-down).** This is "
+          "ALWAYS-CURRENT: Rule 9 checkpoints update THIS file now.") is None)
+check("citation drift: 'rides Rule 8. Each checkpoint' does not fire "
+      "(sentence boundary between them)",
+      _cd("docs/kb-notes/x-note.md",
+          "The loop rides Rule 8. Each checkpoint proposes rows.") is None)
+check("citation drift: possessive Rule 9's beside Supabase does not fire",
+      _cd("docs/kb-notes/x-note.md",
+          "Rule 9's trigger has nothing to do with Supabase timing.") is None)
+check("citation drift: a session handoff keeps its era's numbering",
+      _cd("docs/session_118_handoff.md",
+          "Honor Rule 9 on every Supabase write.") is None)
+check("citation drift: an archive keeps its era's numbering",
+      _cd("docs/cip_crosswalk_lessons_archive.md",
+          "kb_curation receipts doctrine, Rule 9.", lane="other") is None)
+check("citation drift: a lessons doc keeps its era's numbering",
+      _cd("docs/noncredit_cpl_lessons.md",
+          "The schema went through the MCP (Rule 9c).") is None)
+
 # ── summary ───────────────────────────────────────────────────────────────
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

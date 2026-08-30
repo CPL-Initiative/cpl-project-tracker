@@ -60,7 +60,7 @@ The **10** `ASE X (with Practical Assessment)` → `ASE X` merges:
 - **Staged** as `kb_curation` `_CREDENTIAL_REVIEW::<variant>` rows —
   `unified_title_override` + `unified_title_merge_confirm` = the base cert,
   reviewer `ase-practical-merge@bot`, INSERT-only `ON CONFLICT DO NOTHING`
-  (Rule 9 fresh read + pending-merge cross-check: **0 overlap** with the 14
+  (Rule 10 fresh read + pending-merge cross-check: **0 overlap** with the 14
   pending Carpenters/Medical/Spanish merges).
 - **Verified** via `kb/_cred_rename_dryrun.py`: all 10 classify as confirmed
   merges, `apply_safe=true`, 0 collisions.

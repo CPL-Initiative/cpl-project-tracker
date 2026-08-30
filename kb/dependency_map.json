@@ -4,7 +4,7 @@
   "supabase_tables": 72,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 390,
+  "file_datasets": 392,
   "external_services": 136,
   "consumers": 304,
   "workflows": 32,
@@ -2669,7 +2669,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 290
+     "line": 323
     }
    ],
    "served": true,
@@ -4753,7 +4753,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 270
+     "line": 303
     }
    ],
    "served": false,
@@ -4766,7 +4766,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 152
+     "line": 185
     }
    ],
    "served": false,
@@ -12471,6 +12471,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/governance_docs_panel.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/js_suite_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/map_custom_report_sync_test.py": {
    "consumers": [
     {
@@ -16599,6 +16625,7 @@
    "name": "JS tests",
    "crons": [],
    "scripts": [
+    "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/custom_report_response_test.py",
@@ -16613,7 +16640,8 @@
     "tests/american_spelling_test.py",
     "kb/_build_docs_index.py",
     "tests/dependency_map_test.py",
-    "kb/_build_dependency_map.py"
+    "kb/_build_dependency_map.py",
+    "tests/js_suite_gate_test.py"
    ],
    "adds": [],
    "push": null,

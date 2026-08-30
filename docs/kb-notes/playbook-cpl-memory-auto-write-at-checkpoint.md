@@ -37,7 +37,7 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
 1. **Fresh read (MCP).** `select slug,kind,summary,status from cpl_memory order by
    updated_at desc` — know what's already there (dedupe; it's also the
    corroboration check). The sandbox can't reach `*.supabase.co` — **MCP only**
-   (Rule 9c).
+   (Rule 10c).
 2. **Decide what to write — a handful, not dozens.** Only learnings that cross the
    KB-note bar: **durable · reusable · distilled · genuinely uncaptured.** A
    `fact`/`pitfall`/`decision`/`procedure`/`risk`/`question`/`opportunity`/`milestone`

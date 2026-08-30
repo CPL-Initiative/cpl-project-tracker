@@ -1,8 +1,8 @@
 ---
-description: Rule 8 checkpoint — refresh every documentation artifact so the next session can pick up from markdown alone.
+description: Rule 9 checkpoint — refresh every documentation artifact so the next session can pick up from markdown alone.
 ---
 
-Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whatever else you're doing and update **every** artifact below — none are optional, all sync to the user's Obsidian via the repo:
+Execute a **Rule 9 checkpoint** (see `CLAUDE.md` Critical Rule 9; the memory-row ingest half of it rides Critical Rule 8). Pause whatever else you're doing and update **every** artifact below — none are optional, all sync to the user's Obsidian via the repo:
 
 0a. **Retire before you append.** Act on `stacked_roadmap_cell` if the lint
    flags it. It guards **two** surfaces since 2026-08-28: §11's pointer table in
@@ -81,7 +81,7 @@ For each artifact, capture:
 - (c) strategic roadmap (what's next, what's parked)
 - (d) the next concrete step
 
-Then commit all (however many actually changed) in **one commit** with a `Rule 8 checkpoint: <one-line summary>` subject. Include the docs-audit artifacts from step 0 and, if `--apply` ran, the stamped handoffs. The commit body MUST include a "KB notes added this run" section listing any new `docs/kb-notes/` entries (or "(none)" if nothing crossed the durability bar). Push to the current branch.
+Then commit all (however many actually changed) in **one commit** with a `Rule 9 checkpoint: <one-line summary>` subject (history before S210 says `Rule 8 checkpoint:` — the same ritual under the pre-split numbering; do not "fix" old commits). Include the docs-audit artifacts from step 0 and, if `--apply` ran, the stamped handoffs. The commit body MUST include a "KB notes added this run" section listing any new `docs/kb-notes/` entries (or "(none)" if nothing crossed the durability bar). Push to the current branch.
 
 Before starting, briefly state what you're going to update and why — don't bombard with detailed plan, just one or two sentences. After committing + pushing, give a tight summary (which files changed, the new commit SHA, what the next session will pick up, and any new KB notes worth flagging (they'll already be in the vault via auto-sync, so no manual review queue).
 

@@ -10,7 +10,7 @@ related:
 
 > **Moved verbatim from `CLAUDE.md` on 2026-07-10 (Session 111 — SkyMighty,
 > the pare-down).** This is ALWAYS-CURRENT project memory, not an archive:
-> Rule 8 checkpoints update THIS file now. `CLAUDE.md` keeps a stub pointing here.
+> Rule 9 checkpoints update THIS file now. `CLAUDE.md` keeps a stub pointing here.
 
 ### The pipeline
 
@@ -193,7 +193,7 @@ the locked decisions live in [`docs/session_26_handoff.md`](docs/session_26_hand
 > **Session narratives 26–40 archived** →
 > [`docs/roadmap_archive.md`](docs/roadmap_archive.md) (sections
 > "Archived session narratives"). Only the Session-25 strategic queue (above)
-> and the most-recent session (below) stay inline — **Rule 8 keeps it that
+> and the most-recent session (below) stay inline — **Rule 9 keeps it that way**
 > way** (≤2 narratives inline; older ones move to the archive at checkpoint).
 > **Consult the archive when** a carryover item, artifact, decision, PR
 > number, or "why is it built this way" question traces to an earlier

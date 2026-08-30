@@ -10670,7 +10670,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 41,
+   "count": 42,
    "docs": [
     {
      "created": "2026-08-28",
@@ -11106,6 +11106,22 @@
       "context"
      ],
      "title": "Context-pressure hook \u2014 install and mechanics",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "path": "docs/reference/data_write_rollback.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "supabase",
+      "rollback",
+      "curation-safety",
+      "rule-10"
+     ],
+     "title": "Data-write rollback \u2014 undoing a bulk write to a shared Supabase table",
      "type": null,
      "updated": ""
     },
@@ -14477,5 +14493,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 732
+ "total": 733
 }
