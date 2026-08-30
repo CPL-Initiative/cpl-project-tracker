@@ -267,3 +267,63 @@ have not run. Six changes (A–F) are proposed for Sam, none implemented.
 
 Repair the ablation (use a scenario the corpus does not document, or strip
 citations), run S3 and S5, then re-test against whatever Sam rules on A–F.
+
+## 2026-08-30 — Session 209 (SkyGov): remediation A, then both tabs learned to read it
+
+The dependency map went from "both probe arms named THE miss" to built, verified,
+merged and consumed by two tabs in one session (#1396, #1397, #1398).
+
+### What the build taught
+
+- **The code has more idioms than any one scanner.** A seven-agent sweep before
+  writing a line found what a straight regex never would: THREE coexisting
+  PostgREST base conventions (one with a trailing slash that makes table names
+  concatenate bare), helpers whose FIRST argument is the HTTP verb, f-string
+  `{TABLE}` module constants, tables bound to URL consts fetched hundreds of
+  lines away, write-shaped RPCs standing in for PATCH, shell `$REST_BASE/$t`
+  loops, and Python reading generated `window.*` JS back by blind brace-slice
+  with no global literal at all. The fact-sheet trap (script tags look
+  self-contained, `factsheet.js` fetches `../live_metrics.json` at runtime) is
+  a CLASS, not a case.
+- **Adversarial sampling earns its cost.** Three refuters on three datasets:
+  one CONFIRMED, two returned real defects — the rekey script's bulk PATCH of
+  `kb_curation` recorded read-only (the worst direction error the Rule-10 table
+  can carry), a tempdir self-bake counted as a consumer, a `path.join("..")`
+  read minted a bogus `file:.` dataset. Two-of-three finding defects is the
+  verification WORKING; it ran before the merge, not after.
+- **Direction lives at the fetch site, not the const line.** Both integration
+  rounds re-taught it: `ADOPT_INTAKE = …/rest/v1/cpl_adoption_interest` scored
+  read-only while line 93 POSTs through it. Fixed by following the identifier;
+  pinned in `tests/dependency_map_test.py` (23 checks, each perturbation-tested
+  against the live artifact — every mutation fails exactly its own check).
+- **An absent measurement must be visible.** The map carries an UNMEASURED tail
+  and anchor-verified seeds: a dynamic read no literal scan resolves is either
+  seeded (and the seed's anchor is re-verified every build, dropping its edges
+  WITH a warning when the anchor rots) or listed as unresolved — never silently
+  absent. The admin surface's false-zero discipline, generalized.
+
+### The integrations (Sam picked all three, 2026-08-30)
+
+- **One derivation, not three scanners that drift.** Governance's `scan_tables`
+  required a slash after the REST base and `method:` adjacency; the Admin
+  surface could not follow helper wrappers. Result: EIGHT human-write surfaces
+  invisible to the entire governance layer at once, and raci reporting
+  `reads: [] writes: []` while touching four tables. Both now project from
+  `kb/dependency_map.json`; the boot-dispatch parsing stays in the admin
+  builder and the map imports it, so the direction of reuse is a LOOP, not a
+  fork.
+- **A tab whose only writes are tables needs no candidate row** — each table is
+  its own row; a tab earns one only for what a table row cannot represent
+  (write-shaped RPCs: `nc-learning-partners` writes ONLY through
+  `nc_partner_note_revise`/`nc_artifact_revise` and read as a pure view under
+  a tables-only projection).
+- **A noise guard breached by a better detector is raised with the reason on
+  the record, not satisfied by hiding finds.** 25→30 in `governance.test.js`,
+  comment says why and when to tighten instead (after Sam clears the backlog).
+
+### Derived findings now pinned
+
+- `cpl_pathways_ccr_data.js` rebuilt daily, absent from the daily commit list.
+- `kb/credentials.json` rebuilt by `kb/_match_cos_authority.py` under
+  `cos-authority-sync.yml`, absent from ITS commit list (found by the map's
+  stale-copy rule on regeneration — the rule generalizes).

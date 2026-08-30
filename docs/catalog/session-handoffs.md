@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-183 document(s).
+184 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 210 | [from SkyGov (Session 209, the map and its projections)](../session_210_handoff.md) | 2026-08-30 |
 | 209 | [from SkyThread (Session 208, threading rules to guards)](../session_209_handoff.md) | 2026-08-29 |
 | 207 | [from SkyCrush (Session 206, the CLAUDE.md consolidation)](../session_207_handoff.md) | 2026-08-28 |
 | 206 | [from SkyLens (Session 203, the Funding lane)](../session_206_handoff.md) | 2026-08-28 |

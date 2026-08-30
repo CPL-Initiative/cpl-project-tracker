@@ -661,34 +661,17 @@ the test and void-flagged itself. Instruments → vault; `probe_instrument_leak`
 **Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
 `lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
 
-### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
+### SkyGov S209 — the map, and then both tabs learned to read it (2026-08-30)
 
-**`CLAUDE.md` 151,484 B → ~60 KB, nothing deleted** (#1381–#1384): §11's 29 lane cells →
-`docs/reference/lanes/`. ⭐ Sam's assignment rule is the lever, and **split a section,
-don't relocate it whole.** ⚠️ **SIX guards stopped firing because content moved and every
-diff looked like progress** — `stacked_roadmap_cell` exempted the two largest cells,
-`docs/reference/**` had never been indexed (0 → 37), and **"PLAIN WORDS, NO GLYPHS" left
-the file entirely** with the row carrying it. Now `## Presentation rules` +
-`presentation_doctrine`/`unreferenced_offload`. `npm test` 20.7 → 6.9 min.
-
-⭐ **S208 then answered the question the lane exists for, with a CONTROL.** Four of
-Sam's six scenarios ran as matched pairs (doctrine vs `CLAUDE.md` removed): S1 8/8
-vs 3/8 · S2 8.5/9 vs **1.5/9** · S6 6/7 vs 2/7. **Every difference is specific
-mechanical action, never judgment** — PUSH/PULL validated. ⭐ And doctrine does a
-second job: it **suppresses plausible-but-wrong defaults** (S2's control proposed
-dark mode against `CLAUDE.md:414`), so *"the control produces it free"* is NOT
-sufficient grounds to cut a rule. ⚠️ **The ablation FAILED** — the S4 control
-rebuilt Rules 1–10 from ~400 citations, so that pair is void. Strategy + all six
-proposed changes: `CPLBrain/04-projects/cpl-initiative/doctrine-probes/`.
-
-**Then the session demonstrated the next failure by having it** (#1387): it
-**auto-compacted at 786,077 tokens**, checkpoint 150K stale, ~778,000 dropped. ⭐ **Rule
-9's premise was FALSE, not merely unobservable** — the counter is in the transcript every
-turn (→ Rule 9a). ⚠️ **Thresholds must be a SUM of measured costs**; "2× checkpoint"
-missed by 336 tokens, caught by its own test. `docs/scenarios/` adds probes that get only
-the auto-loaded doctrine, with the **rubric committed before any probe runs**, reporting
-**holes not a score**. Ledger 7 of 9. Stories: `obsidian_vault_hygiene_lessons` ·
-`test_suite_speed_lessons` · `context_pressure_lessons` · handoff `session_207_handoff`.
+**Remediation A BUILT** (#1396): `kb/_build_dependency_map.py` derives dataset →
+consuming tabs/scripts/workflows/surfaces FROM THE CODE; `docs/reference/dependency_map.md`
++ `kb/dependency_map.json`; `--check` in CI; verified by three adversarial samples
+(2 of 3 found real scanner defects — that is the verification working). Then, on Sam's
+go: **governance candidates project from the map** (#1397 — **15 never-seen human-write
+tables** proposed, NEEDS SAM) and the **Admin surface tells the truth** (#1398 — raci
+showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, not three
+scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
+"Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.
 
 ## Troubleshooting
 

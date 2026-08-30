@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 352,
+   "count": 353,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4452,6 +4452,28 @@
      "title": "One college, many course numbers is an over-merge signal",
      "type": "methodology",
      "updated": "2026-08-24"
+    },
+    {
+     "created": "2026-08-30",
+     "governs": [
+      "kb/_build_dependency_map.py",
+      "kb/_build_governance_candidates.py",
+      "kb/_build_cobi_admin_surface.py",
+      "tests/dependency_map_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-one-dependency-derivation-many-projections.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "dependency-map",
+      "cross-impact",
+      "scanners",
+      "governance",
+      "admin-tab"
+     ],
+     "title": "One dependency derivation, many projections",
+     "type": "methodology",
+     "updated": "2026-08-30"
     },
     {
      "created": "2026-06-26",
@@ -10672,7 +10694,7 @@
      ],
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-08-30"
     },
     {
      "created": "2026-08-28",
@@ -10789,7 +10811,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-08-30"
     },
     {
      "created": "2026-08-28",
@@ -11210,8 +11232,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 183,
+   "count": 184,
    "docs": [
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "n": 210,
+     "path": "docs/session_210_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-210",
+      "dependency-map",
+      "doctrine",
+      "governance",
+      "memory-consolidation"
+     ],
+     "title": "from SkyGov (Session 209, the map and its projections)",
+     "type": null,
+     "updated": "2026-08-30"
+    },
     {
      "created": "2026-08-29",
      "governs": [],
@@ -14435,5 +14475,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 730
+ "total": 732
 }

@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-29",
-  "_session": "SkyThread, Session 208 — the rules were tested against sessions that did not have them",
-  "_status": "We finally answered the question we had been circling: do the written rules actually change what a session does? We ran the same task twice, once with our rules loaded and once without, and the answer is yes - clearly. Sessions without the rules still had good instincts: save the work, close cleanly, do not break things. What they could not do was the specific part - measure how full the session is rather than guess, tell you the number, keep the two dashboard files identical, know that a daily job overwrites the section they were about to edit.\n\nOne finding was a surprise. The rules do not only add things - they also STOP a session doing the wrong thing confidently. A session without them proposed adding a dark mode, which is against our design, and it would have built it believing that was best practice. That is worse than forgetting something, because a missing step looks missing while a wrong one looks finished.\n\nAlso honest: our method for testing a session 'without the rules' did not fully work, and the list below is longer than the dozen we aim for because most of it is decisions waiting on you.",
+  "_as_of": "2026-08-30",
+  "_session": "SkyGov, Session 209 — the impact map is built, and two tabs now read from it",
+  "_status": "Big one closed: sessions were told to check what their changes affect before touching shared data, with no way to actually check. Now there is a map, built by reading the code itself, of every dataset and everything that consumes it - which tabs, which pages, which scripts, which scheduled jobs, and whether the daily job publishes it straight to the live site without review. We tested it by trying hard to prove it wrong on three samples; two of the three turned up real mistakes, which we fixed before shipping.\n\nThen, on Sam's go, the two places that already tried to answer this question on their own - the Governance tab's gap detector and the Admin tab's what-does-each-tab-touch list - were switched to read from the map instead of their own weaker scans. That surfaced fifteen editable tables the governance register had never heard of (they are now waiting for Sam's judgment, one by one), and corrected four tabs on the Admin page that were reporting less data access than they really have.\n\nA mock-up of a third use - pick any dataset, see its blast radius - is published for Sam to react to before we build it into the Admin tab. The list below is still longer than we like; most of it is decisions only Sam can make.",
   "items": [
     {
       "id": "s202-sam-threshold",
@@ -119,16 +119,34 @@
       "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
     },
     {
-      "id": "s208-sam-rule-doctrine-changes",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Six proposed changes to our working rules, from testing them against sessions that did and did not have them. The big one: we tell a session to flag what its change affects, but we give it no way to work that out - no list of which screens read which data. Two independent test sessions both called that the real weak point. Also: our database write-safety rule only literally covers one table, there is no undo for a bad data write, and nothing routes a new editable field past the governance and privacy checks."
-    },
-    {
       "id": "s208-fable-repair-ablation",
       "for": "Fable",
       "tab": "cpl-implementation",
       "text": "Finish the rule-testing run. Four of the six scenarios are done and the method works; two remain. One caveat first: our way of testing a session WITHOUT the rules did not actually work, because a thorough session rebuilt the rules from the hundreds of places the docs quote them. That also turned up a real defect worth fixing on its own - the rules are numbered inconsistently across those quotes."
+    },
+    {
+      "id": "s209-sam-governance-judgments",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "Judge the fifteen new rows on the Governance tab's proposals strip. Each is a table a person can edit through a tab or page that the register has never ruled on - the session memory table, the RACI lists, the fact-sheet overrides, the funding settings, and others. For each: either it deserves a decision-rights row with a named owner, or dismiss it with a reason. The reason is the point - it gets recorded and it stops the row coming back."
+    },
+    {
+      "id": "s209-sam-blast-radius-mock",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "React to the Blast Radius mock-up (link in our chat). It is the tool the impact map makes possible: pick any dataset and see every tab, page, script and scheduled job that touches it, who writes it, and whether the daily job publishes it without review. Say what to change and we will build it into the Admin tab; until you react, it stays a mock-up."
+    },
+    {
+      "id": "s209-fable-remaining-remediations",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Build the four approved rule fixes that remain: widen the database write-safety rule beyond its one named table, add an undo path for bad data writes, route any new editable field past the governance and privacy checks, and fix the inconsistent rule numbering across the docs. Also the ruled-but-unbuilt test gate: make the test suite a required check that skips its slow half on docs-only changes, then Sam flips the branch-protection switch."
+    },
+    {
+      "id": "s209-fable-stale-copies",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Two files are rebuilt by scheduled jobs but never committed by them, so the published copy quietly goes stale: the CPL Pathways data file under the daily job, and the credentials file under the monthly certification sync. Add each to its job's commit list - the map's stale-copy check will confirm both are cleared."
     }
   ]
 }

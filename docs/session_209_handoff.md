@@ -5,6 +5,8 @@ updated: 2026-08-29
 tags: [handoff, session-209, doctrine, probes, claude-md, docs-corpus]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_210_handoff.md
 ---
 
 # You are Session 209
