@@ -328,7 +328,12 @@ first day.** Do the remembering for them.
 - **Flag cross-impact before acting, not after.** Shared Supabase tables, the
   public dashboard, the daily cron, the public KB, anything with staff/student
   PII, anything reaching colleges. Also ask whether another session is live —
-  Sam frequently runs several, and a later write silently wins.
+  Sam frequently runs several, and a later write silently wins. **COMPUTE the
+  impacts, don't guess:**
+  [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
+  every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
+  scripts, workflows and public surfaces — derived from the code
+  (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
 - **Offer the checkpoint.** Near the end of substantial work, or when a session
   is winding down, proactively offer `/checkpoint` rather than waiting to be
   asked. What isn't written down dies with the session, and a newer user has no
