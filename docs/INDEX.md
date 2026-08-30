@@ -38,7 +38,7 @@ See [`docs/kb-notes/README.md`](kb-notes/README.md) for the lane contract.
 ## CLAUDE.md reference offloads (`docs/reference/`) — added 2026-07-10 (Session 111, the pare-down)
 
 Always-current project memory moved out of `CLAUDE.md` (2,514 → ~590 lines);
-**Rule 8 checkpoints update these files now**, and `CLAUDE.md` keeps read-before
+**Rule 9 checkpoints update these files now**, and `CLAUDE.md` keeps read-before
 stubs pointing here.
 
 | Doc | Was | Read before |
@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 353 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 75 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 75 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 41 | [`catalog/reference.md`](catalog/reference.md) |
+| Reference (pull-side) | 42 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 184 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **732** | |
+| **total** | **733** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:

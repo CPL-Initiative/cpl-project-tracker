@@ -152,7 +152,7 @@ the actual product of the run for the person who asked.
   means `kb/nc_learning_partners.json` and `docs/kb-notes/` — both internal, both
   vault-synced. The public KB changes only through its own `CURATION.md`
   human-reviewed draft PR.
-- **Supabase only through the MCP** (Rule 9c) — the sandbox cannot reach
+- **Supabase only through the MCP** (Rule 10c) — the sandbox cannot reach
   `*.supabase.co`.
 - **Attribute the human.** A note's `author` and an artifact's `added_by` travel
   into whatever the run produces. A curator's knowledge is a first-class input, not

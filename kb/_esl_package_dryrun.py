@@ -45,7 +45,7 @@ Sam 2026-07-14):
     3. Vocational ESL / VESL (workforce/CTE purpose).
 
 This is the flagship packaging pass (`package-esl@bot`). The apply (a separate,
-Sam-gated step) is a curation write under Rule 9 (fresh live read at write-time,
+Sam-gated step) is a curation write under Rule 10 (fresh live read at write-time,
 INSERT-only ON CONFLICT DO NOTHING, cohort `package-esl-s117@bot`, receipt); a
 packaging merge that changes a survivor id also re-keys any articulations /
 promotions pointing at a folded ESL identity (Rule 7) — the downstream surface is
@@ -336,7 +336,7 @@ def main():
              "transfer-review stays per-identity pending Sam).")
     R.append(f"- **`merge_into` pointers to write:** {three} (the identities folding "
              "into the 3 comprehensives) — INSERT-only, `ON CONFLICT DO NOTHING`, "
-             "cohort `package-esl-s117@bot` (Rule 9).")
+             "cohort `package-esl-s117@bot` (Rule 10).")
     R.append(f"- **Downstream re-key surface (Rule 7):** "
              f"{surface.get('promotions_pointing_at_esl')} promotions and "
              f"{surface.get('crosswalk_rows_pointing_at_esl')} crosswalk rows "

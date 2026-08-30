@@ -128,8 +128,41 @@ BASE_CRITICAL = """## Critical Rules (do not violate)
 9. **Document at context checkpoints.** Run `/checkpoint`; do not improvise one
    from memory. THE USUAL CHECKPOINT EDIT is the LANE FILE, not the row; update
    the LANE FILE. The authoritative handoff is the HIGHEST-numbered one.
-10. **Supabase live-curation safety.** Fresh live read at write-time.
+10. **Supabase live-curation safety.** Fresh live read at write-time. The
+   unit of caution is ANY bulk write to a shared human-write table —
+   `kb_curation` is the worked example, NOT the boundary. A data write is
+   REVERSIBLE FROM ITS RECEIPT. A new write surface routes through
+   Governance and the privacy ADRs.
 """
+# ⚠️ Continuation lines above are THREE spaces, matching the live CLAUDE.md.
+# Four spaces reads as an indented CODE BLOCK to prose_only(), which masks it
+# AND the unindented lines after it — discovered here when a 4-space draft of
+# this stub silently blinded self_corrected_word_pair to its own scenario.
+
+
+def _assert_fixtures_current():
+    """Refuse to score when the pristine fixture is no longer 'healthy'.
+
+    The 12-of-12 false green, S210 edition: three registry claims added to
+    CRITICAL_RULE_DOCTRINE after BASE_CRITICAL was written were absent from
+    every fixture, so critical_rule_doctrine fired on ALL of them — including
+    the two scenarios nothing really catches — and the summary read 12 of 12.
+    A score that improves is when to check the fixtures (S208), so now the
+    harness checks them itself: registry drift raises here, loudly, instead
+    of repainting the scoreboard."""
+    root = sandbox({"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL})
+    cm = os.path.join(root, "CLAUDE.md")
+    e = {"rel": "CLAUDE.md", "path": cm, "lane": "always_loaded",
+         "bytes": os.path.getsize(cm), "fm": {}, "has_fm": False}
+    for fn in (da.rule_critical_rule_doctrine, da.rule_presentation_doctrine,
+               da.rule_citation_drift):
+        f = fn(e)
+        if f:
+            raise SystemExit(
+                "FIXTURE DRIFT — the pristine BASE fixture trips '%s', so "
+                "every scenario would score 'caught' for the wrong reason. "
+                "Extend BASE_CRITICAL/BASE_RULES to satisfy: %s"
+                % (f["rule"], f["detail"]))
 
 
 def s_glyph_rule_relocated():
@@ -329,6 +362,7 @@ def main():
     args = ap.parse_args()
     caught = missed = 0
     rows = []
+    _assert_fixtures_current()
     for name, build, should in SCENARIOS:
         built = build()
         root = built if isinstance(built, str) else sandbox(built)

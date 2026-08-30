@@ -221,13 +221,29 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
-   rows always win. (a) Before ANY bulk `kb_curation` write: fresh live read
-   at write-time, re-measure any queue/worklist staged earlier in the session,
-   and cross-check pending `unified_title_merge_confirm` TARGETS (a rename
+   rows always win. (a) The unit of caution is ANY bulk write to a shared
+   human-write table — `kb_curation` is the worked example, NOT the boundary;
+   the [dependency map](docs/reference/dependency_map.md)'s write edges name
+   the rest. Before one: fresh live read at write-time, re-measure any
+   queue/worklist staged earlier in the session, and (for `kb_curation`)
+   cross-check pending `unified_title_merge_confirm` TARGETS (a rename
    whose key is a pending merge target fights the curator — hold it). Then
    INSERT-only `ON CONFLICT DO NOTHING` under a cohort `reviewer_email`
    (`<lane>-s<N>@bot`) with a committed receipt; guarded UPDATEs only where a
-   reviewed plan explicitly says so. (b) `kb_curation` reads via PostgREST
+   reviewed plan explicitly says so. (a2) A data write must be REVERSIBLE
+   FROM ITS RECEIPT — `git revert` covers code, and nothing covers data
+   unless the receipt does: an INSERT-only cohort rolls back by its
+   `reviewer_email`; a guarded UPDATE's receipt captures before-values or the
+   plan is not approvable. Procedure:
+   [`data_write_rollback`](docs/reference/data_write_rollback.md). (a3) A NEW
+   write surface routes through Governance and the privacy ADRs BEFORE it
+   ships — the first writer to any shared table, or a read-only surface
+   gaining writes, is a decision-rights change, not a code detail: map or
+   dismiss it in `kb/governance_surface_map.json` (the reason is the point)
+   and check the student-detail disclosure boundary
+   ([`adr-student-detail-aggregate-disclosure-control`](docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md);
+   the CER-counts and funding-metrics privacy ADRs sit beside it).
+   (b) `kb_curation` reads via PostgREST
    MUST be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
    authenticated` DOES NOT WORK** — Postgres grants EXECUTE to **PUBLIC** at
    creation and anon inherits through it, so the statement protects nothing.
@@ -509,7 +525,7 @@ something durable, a new note lands in `docs/kb-notes/` with `kb-status:
 published` (no review-queue middle state — sessions author at final
 quality). The checkpoint commit body lists new notes for the audit trail.
 
-**Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
+**Checkpoint scope — vault, never the public KB.** Rule 9 / `/checkpoint`
 refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),
 which auto-sync into Sam's Obsidian vault + the `CPLBrain` repo with no review
 gate — correct for internal working memory. Checkpoint must **never** write to

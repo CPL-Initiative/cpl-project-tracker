@@ -584,6 +584,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
+| `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
+| `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
@@ -765,5 +767,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 72 Supabase tables · 30 RPCs · 5 edge functions · 390 file
+Coverage: 72 Supabase tables · 30 RPCs · 5 edge functions · 392 file
 datasets · 136 external services · 304 consumers · 32 workflows · 37 tabs.

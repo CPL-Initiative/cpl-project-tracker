@@ -14,7 +14,7 @@ That asymmetry has a cost with a specific shape. Rule 8 gives us **ingest**
 third operation — **lint** — has never existed, so the corpus accretes. The
 failure mode is not "we lost something"; it is "a session finds the stale copy
 and believes it", which has already happened once (a greeting citing session
-handoff 105 when the authoritative one was 111 — see CLAUDE.md Rule 8).
+handoff 105 when the authoritative one was 111 — see CLAUDE.md Rule 9).
 
 This auditor is READ-ONLY by default. It reports; it does not tidy. The single
 exception is `--apply`, which performs exactly one mutation (R1 below) and
@@ -24,7 +24,7 @@ Rules
 -----
   R1 superseded_handoff    — a `session_<N>_handoff.md` below the highest N that
                              is not stamped `superseded: true`. **FIXABLE.**
-                             CLAUDE.md Rule 8 already declares only the highest
+                             CLAUDE.md Rule 9 already declares only the highest
                              authoritative; this makes that machine-readable so
                              Obsidian search and future sessions can filter.
   R2 oversized_doc         — a file past its lane's compaction threshold. Lanes
@@ -236,7 +236,7 @@ def collect(root: str):
 # Rules
 # ══════════════════════════════════════════════════════════════════════════
 def find_handoff_max(docs):
-    """Highest session_<N>_handoff.md — the one CLAUDE.md Rule 8 calls
+    """Highest session_<N>_handoff.md — the one CLAUDE.md Rule 9 calls
     authoritative. Returns None when the lane is empty."""
     ns = [int(m.group(1)) for p in docs
           if (m := HANDOFF_RE.match(os.path.basename(p)))]
@@ -653,6 +653,82 @@ def rule_lane_retirement_signal(root):
     }
 
 
+# ── citation_drift ───────────────────────────────────────────────────────────
+# WHY (2026-08-30, Session 210 — remediation F, Sam's ruling 2026-08-29): the
+# S208 ablation control rebuilt the Critical Rules from ~400 citations across
+# docs/ and reported the numbering DISAGREES across them — Supabase safety
+# cited as both Rule 9 and Rule 10. Measured this session: the drift is one
+# systematic shift from a pre-split numbering (checkpoints 8→9, Supabase
+# 9→10), and it was live in current code too — `kb/_esl_package_dryrun.py`
+# cited as Rule 9 the same rule `kb/_esl_package_actionable.py` cites as 10.
+#
+# Scope: LIVING docs only. Dated capsules (session handoffs, lessons docs,
+# archives, workstream *_handoff.md plans, docs/scenarios/) keep their era's
+# numbering verbatim — they were correct when written, and rewriting history
+# is worse than reading it with its date on. The authority is CLAUDE.md's
+# CURRENT numbered list; this rule pins living prose to it.
+#
+# ⚠️ Deliberately NARROW — two measured patterns plus one sentence-scoped
+# vocabulary test. `.claude/skills/exhibit-canonicalization/` carries its own
+# internal Rule 5g/8b/9 numbering (outside collect(), but the lesson stands):
+# a broad "Rule N near keyword" match drowns in false positives, and a lint
+# that cries wolf gets deleted. Grow this one measured pattern at a time.
+CITATION_DRIFT = (
+    (r"\bRule 9c\b",
+     "Rule 9 has no (c); the sandbox/MCP sub-point is Rule 10 (c)"),
+    (r"\bRule 8 checkpoints?\b|\bRule 8 / `/checkpoint`",
+     "the checkpoint imperative is Rule 9 (Rule 8 is the memory read/ingest)"),
+)
+_SUPABASE_VOCAB = re.compile(
+    r"Supabase|kb_curation|PostgREST|cohort reviewer|live.curation"
+    r"|merge_confirm|fresh live read", re.I)
+# "Rule 9 checkpoint(s)" is the CORRECT post-split citation, so it is exempt
+# from the bare match — without the exemption, pipeline_reference.md's
+# frontmatter title ("… Supabase …") and its correct "Rule 9 checkpoints
+# update THIS file" line landed in one pseudo-sentence (`).** ` does not
+# split) and produced this rule's first false positive.
+_RULE9_BARE = re.compile(r"\bRule 9\b(?!['’a-z0-9]| checkpoints?\b)")
+
+
+def rule_citation_drift(entry):
+    """A living doc citing a Critical Rule by a number it no longer has."""
+    if entry["lane"] in ("handoff", "lessons"):
+        return None
+    r = entry["rel"]
+    if (r.endswith(("_handoff.md", "_archive.md"))
+            or r.startswith("docs/scenarios/")):
+        return None
+    # main() supplies "text"; other callers (the scenario harness builds bare
+    # entries) get the file read here — a rule that KeyErrors in a harness
+    # whose dispatch swallows exceptions is a guard that silently never runs.
+    text = entry.get("text")
+    if text is None:
+        try:
+            text = read(entry["path"])
+        except Exception:
+            return None
+    # Body only: a frontmatter title is a name, not a prose citation.
+    _fm, body_start, _has_fm = split_frontmatter(text)
+    flat = _flat("\n".join(text.split("\n")[body_start:]))
+    hits = [why for pat, why in CITATION_DRIFT if re.search(pat, flat)]
+    # Supabase vocabulary beside a bare "Rule 9", sentence-scoped: the rule's
+    # own text may legitimately sit near the vocabulary elsewhere in a file.
+    # Possessives ("Rule 9's") and lettered/decimal forms never match.
+    for sent in re.split(r"(?<=[.!?])\s+", flat):
+        if _RULE9_BARE.search(sent) and _SUPABASE_VOCAB.search(sent):
+            hits.append("Supabase live-curation safety is Rule 10, cited "
+                        "here as Rule 9: “" + sent[:110] + "”")
+            break
+    if not hits:
+        return None
+    return {
+        "rule": "citation_drift", "fixable": False,
+        "detail": {"hits": hits},
+        "message": (r + ": a rule-number citation contradicts CLAUDE.md's "
+                    "current numbering — " + "; ".join(hits)),
+    }
+
+
 # ── critical_rule_doctrine ───────────────────────────────────────────────────
 # WHY (2026-08-29, Session 208): `presentation_doctrine` guards one section
 # against one failure — a rule carried out of the always-loaded file by a
@@ -695,6 +771,14 @@ CRITICAL_RULE_DOCTRINE = {
         r"HIGHEST-numbered", r"highest-numbered"),
     "Rule 10 — fresh live read at write-time": (
         r"fresh live read at write-time", r"fresh-read at write-time"),
+    # The three below are remediations B, C, D (Sam, 2026-08-29 — cpl_memory:
+    # sam-approved-five-doctrine-remediations-2026-08-29), added S210.
+    "Rule 10 — any shared table, not just kb_curation": (
+        r"worked example, NOT the boundary", r"ANY bulk write to a shared"),
+    "Rule 10 — a data write is reversible from its receipt": (
+        r"REVERSIBLE\s+FROM ITS RECEIPT", r"reversible from its receipt"),
+    "Rule 10 — a new write surface routes through Governance": (
+        r"routes through Governance and the privacy ADRs",),
 }
 
 
@@ -1591,6 +1675,7 @@ def main():
                   rule_unreferenced_offload(e, ROOT),
                   rule_presentation_doctrine(e),
                   rule_critical_rule_doctrine(e),
+                  rule_citation_drift(e),
                   rule_self_corrected_word_pair(e)):
             if f:
                 f["path"] = e["rel"]

@@ -10,7 +10,7 @@ related:
 
 > **Moved verbatim from `CLAUDE.md` on 2026-07-10 (Session 111 — SkyMighty,
 > the pare-down).** This is ALWAYS-CURRENT project memory, not an archive:
-> Rule 8 checkpoints update THIS file now. `CLAUDE.md` keeps a stub pointing here.
+> Rule 9 checkpoints update THIS file now. `CLAUDE.md` keeps a stub pointing here.
 
 ## Pipeline Reference
 

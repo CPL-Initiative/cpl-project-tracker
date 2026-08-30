@@ -68,7 +68,7 @@
   var REVISE_RPC = SUPABASE_URL + "/rest/v1/rpc/nc_partner_note_revise";
   // ── Artifact layer (kb/supabase_nc_artifacts.sql) ─────────────────────────
   // Artifacts are LINKS, not uploaded bytes: a file uploaded to Supabase Storage
-  // is one a Claude session can never read back (Rule 9c — the sandbox cannot
+  // is one a Claude session can never read back (Rule 10c — the sandbox cannot
   // reach *.supabase.co, there is no storage MCP tool, and the public object URL
   // 403s through the proxy), which would put the artifact one inch beyond the
   // thing meant to analyze it. A Drive link or a public URL is readable today.

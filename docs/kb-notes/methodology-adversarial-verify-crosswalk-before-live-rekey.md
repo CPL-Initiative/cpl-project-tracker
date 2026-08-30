@@ -65,7 +65,7 @@ before any Supabase write. The blind-classify lane failed its schema that run
 
 - **Applies** to any live re-key where dependent rows are keyed by the mutating id
   (RACI/updates/lifecycle/associations), *especially* on a table a human curates
-  against in parallel (Rule 9).
+  against in parallel (Rule 10).
 - **Caveat that bit us**: a verification pass validates the crosswalk *as it was at
   that moment*. If you edit the crosswalk afterward (we added sprint-symmetry +
   deeper nesting), **re-run the dry-run** — a stale "verified" stamp is worse than
