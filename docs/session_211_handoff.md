@@ -76,10 +76,18 @@ Read IN ORDER before touching anything:
    sparse-checkout action); the two public-KB recommendations awaiting his
    go; whether the context-pressure hook installed on his machine (ask).
 
+## RESOLVED after this handoff was first written (2026-08-30, same day)
+
+- **The 15 governance candidates are RULED** (the Fifteen Tables sheet):
+  DR-19..DR-23 + CA-07, folds into DR-09/DR-13, `cpl_reflections` dismissed.
+  Register + surface map carry it; noise guard back to <25; queue now 11
+  (9 cadences + 2 tab RPC candidates still to judge). DR-19 carries Sam's
+  memory edit-rules clarification and doubles as the S211 checker's spec.
+- **Row `f7`'s provenance refreshed** to Rule 10c on Sam's approval (the
+  before-value is in `cpl_memory_log`).
+
 ## NEEDS SAM (say these back to him early)
 
-- **Judge the 15 governance table candidates** in
-  `kb/governance_surface_map.json`; then tighten the noise guard back <30.
 - **React to the "Blast Radius" Admin-pane mock** (S209's artifact).
 - **Delete the S208 control branch** on GitHub — its NAME is written only in
   the vault's probe lane-state file, because the name itself encodes a probe
@@ -90,10 +98,6 @@ Read IN ORDER before touching anything:
 - **Public KB `claude/CLAUDE.md`**: one "(Rule 8)" → "(Rule 9)" — that repo
   changes only through its human-gated curation pipeline, so it is his.
 - **Confirm the context-pressure hook installed** on Windows.
-- The live `cpl_memory` row `f7` cites "CLAUDE.md Rule 9c" in its `source` —
-  ingest-time provenance; ask whether to refresh it to Rule 10c or leave.
-  (This bullet's head line was eaten by a killed bisect loop's disk state and
-  the loss was caught only by the adversarial verify pass — see watch-outs.)
 
 ## Watch-outs this run earned
 

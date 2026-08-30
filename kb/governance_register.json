@@ -1,338 +1,391 @@
 {
-  "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
-  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review.",
-  "_as_of": "2026-08-14",
-  "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
-  "decision_rights": [
-    {
-      "id": "DR-01",
-      "element": "Primary Contact email (MAP)",
-      "drives": "MAP routes a student's CPL request to this address. Empty = the request reaches nobody.",
-      "decides": "The college",
-      "maintained_in": "MAP platform (no write API — only the college can set it)",
-      "owner": null,
-      "when_empty": "We propose someone the college already designated in MAP and tell them we did. We never appoint.",
-      "load_bearing": true,
-      "live": "contact_pc"
-    },
-    {
-      "id": "DR-02",
-      "element": "CPL Coordinator (MAP)",
-      "drives": "The Implementation Funding baseline-eligibility badge.",
-      "decides": "The college",
-      "maintained_in": "MAP platform",
-      "owner": null,
-      "when_empty": "Eligibility badge is absent. No substitute is invented.",
-      "load_bearing": true,
-      "live": "contact_coord"
-    },
-    {
-      "id": "DR-03",
-      "element": "TOP code",
-      "drives": "Discipline inference, CTE flag, the CIP crosswalk.",
-      "decides": "College faculty at local curriculum approval",
-      "maintained_in": "COCI",
-      "owner": null,
-      "when_empty": "Nothing downstream may gate on it. See AS-03 — this is our most developed acceptance standard and the template for the rest.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-04",
-      "element": "M-ID identity + canonical SUBJ4",
-      "drives": "The whole unified-course layer and the eventual C-ID submission pathway.",
-      "decides": "CPL Initiative (CO) — explicitly AI-assisted STAGING, not faculty-published",
-      "maintained_in": "kb/ + Supabase kb_curation",
-      "owner": null,
-      "when_empty": "Re-mints permitted under the playbook. Rule re-locks to 'stable identifiers' once we declare the layer faculty-published — that declaration is itself a governance act with no owner today.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-05",
-      "element": "C-ID descriptors",
-      "drives": "Statewide course identity and articulation.",
-      "decides": "ASCCC — external authority",
-      "maintained_in": "c-id.net",
-      "owner": null,
-      "when_empty": "Never re-keyed, never invented. We submit; they decide.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-06",
-      "element": "Articulated exhibits (what a college grants credit for)",
-      "drives": "Every CPL award a student actually receives.",
-      "decides": "College faculty",
-      "maintained_in": "MAP platform",
-      "owner": null,
-      "when_empty": "The gap is an outreach worklist, not a build backlog.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-07",
-      "element": "Unified credential titles (CER)",
-      "drives": "How exhibits collapse into one credential across colleges.",
-      "decides": "CO curation, curator-confirmed",
-      "maintained_in": "Supabase kb_curation",
-      "owner": null,
-      "when_empty": "Falls back to the college's freehand title, which is why the canonicalization exists.",
-      "load_bearing": false,
-      "live": null
-    },
-    {
-      "id": "DR-08",
-      "element": "College landing page URL",
-      "drives": "Where a student actually lands, and where our nudges deep-link.",
-      "decides": "MAP platform team",
-      "maintained_in": "MAP platform",
-      "owner": null,
-      "when_empty": "3 of 123 have none. A college with no page cannot receive a routed request at all.",
-      "load_bearing": true,
-      "live": "landing"
-    },
-    {
-      "id": "DR-09",
-      "element": "Implementation funding model parameters",
-      "drives": "Dollar allocations per college.",
-      "decides": "CPL Initiative (CO)",
-      "maintained_in": "Supabase + kb/",
-      "owner": null,
-      "when_empty": "n/a — this is ours to set, and the one place on this list where WE are the authority rather than a router.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-10",
-      "element": "Who a college's MAP users are",
-      "drives": "Access to MAP; who can act on CPL at that college.",
-      "decides": "The college",
-      "maintained_in": "MAP platform",
-      "owner": null,
-      "when_empty": "3 institutions have ZERO active users. That is an onboarding problem, not a contact problem — do not paper over it with a routing fix.",
-      "load_bearing": true,
-      "live": "users"
-    },
-    {
-      "id": "DR-11",
-      "element": "What Sierra tells the public (answer rules + guardrails)",
-      "drives": "Sierra is deployed on COBI ONLY today (Sam, 2026-08-08 and again 2026-08-10) and is INTENDED for colleges' own pages; she answers students, prospective students, faculty, administrators and employers. Her rule text IS the product — it decides what a CPL seeker is told exists, and how a host college is characterised on its own site.",
-      "decides": "CPL Initiative (CO) — in practice Sam personally, four consecutive times on 2026-08-06/07 (either/or → Yes/And → the portal's fuller portfolio → anti-poaching → the salesmanship/facts tie-break)",
-      "maintained_in": "chatbox/supabase/functions/cpl-chat/index.ts (prompt constants) + live sierra_guidance rows (🧭 pane)",
-      "owner": null,
-      "when_empty": "Each rule change gets resolved ad hoc by whichever session is running. Two consequences already observed: (1) a rule written purely as a prohibition made Sierra WITHHOLD facts from seekers, and nothing caught it because the prohibition was the only half tested; (2) two rules in different constants conflicted with nothing saying which governed, so the later one silently won. Also unowned: prompt text only takes effect ON DEPLOY, so 'decided' and 'live' are distinct states and no one tracks the gap between them.",
-      "load_bearing": true,
-      "live": null
-    },
-    {
-      "id": "DR-12",
-      "element": "What the COBI side menu shows, and to whom",
-      "drives": "The menu is the entry point for every visitor including anonymous ones. Its order, grouping, labels, per-site mapping and audience filter are curator-editable data (public.cobi_nav) as of 2026-08-14, so one drag changes what everyone sees, immediately, with no PR, no CI and no deploy in between.",
-      "decides": "CPL Initiative (CO) — any magic-link reviewer, via the Admin tab. No second pair of eyes exists between an edit and the public.",
-      "maintained_in": "public.cobi_nav (reviewer-write, public-read) via the Admin tab; code defaults in nav_groups.js + cobi_orgs.js; every change logged to cobi_nav_log",
-      "owner": null,
-      "when_empty": "Nobody is accountable for menu changes that every visitor sees. Two specific risks, both already mitigated in code but not in process: (1) the audience filter is DISPLAY ONLY and someone may believe hiding a tab protects its data — RLS does, and only the Admin tab says so; (2) an arrangement can be changed by any reviewer with no review, so the audit trail in cobi_nav_log is the only record of who decided what.",
-      "notes": "Lockout is prevented in CODE, not by this row: `admin` and `dashboard` cannot be hidden and refuse to be dragged into a group, because the table is the thing being guarded. Seeded EMPTY, so today the menu is exactly what the code ships."
-    },
-    {
-      "id": "DR-13",
-      "element": "The workplan itself — activities, projects, goals and lifecycle",
-      "drives": "The workplan IS the CPL Initiative's public record of what it committed to and how far it has got. Its rows drive the dashboard every visitor sees, the Activities tab, the annual report and the KPI ladder. Four tables are editable in-page by any team-phrase holder.",
-      "decides": "CPL Initiative (CO). Not otherwise recorded — the workplan predates this register and nobody has been named for it, which is why it appears here.",
-      "maintained_in": "public.projects · public.workplan_goals · public.workplan_activity_associations · public.project_lifecycle, edited inline on the Activities and Workplan Goals tabs",
-      "owner": null,
-      "when_empty": "The most public artifact the project has is the one with no named owner. A wrong figure typed into a goal cell reaches the published dashboard on the next cron with nothing in between, and there is no convention for who may restate a target once it is set."
-    },
-    {
-      "id": "DR-14",
-      "element": "Which shared phrase opens what, and when it is rotated",
-      "drives": "The team and site phrases are the only credential most of the team ever uses. Rotating one silently darkens every surface its holders rely on; not rotating one leaves access with whoever has ever been told it, including people who have left.",
-      "decides": "CPL Initiative (CO) — in practice whoever is on the Team Phrases tab, which requires a magic-link reviewer sign-in. No rotation schedule exists.",
-      "maintained_in": "public.team_access (reviewer-only read and write) via the Team Phrases tab",
-      "owner": null,
-      "when_empty": "Nobody is accountable for rotation, so it happens only when someone remembers. The open superset question compounds it: under 'allow either', a site phrase opens its own tabs PLUS every shared one, which is safe only while every holder is trusted with all shared CPL data."
-    },
-    {
-      "id": "DR-15",
-      "element": "Vendor contracts — deliverables, reports and documents of record",
-      "drives": "The Contracts register carries payment terms and deliverable status for the initiative's vendors. It is EXCLUSIVE to the Finance site and gated on the Finance phrase, so its audience is narrow and its contents are consequential.",
-      "decides": "CPL Initiative (CO) / Finance. Which of the two signs off a deliverable as met is not recorded anywhere.",
-      "maintained_in": "public.cpl_contracts · cpl_contract_deliverables · cpl_contract_reports · cpl_contract_documents (Finance phrase or reviewer) via the Contracts tab",
-      "owner": null,
-      "when_empty": "A deliverable can be marked met, or a payment term edited, with no second pair of eyes and no record of who decided. The distinction that matters and is currently unwritten: recording what a vendor reported is bookkeeping; judging a deliverable met is a decision."
-    },
-    {
-      "id": "DR-16",
-      "element": "What appears in the CPL News feed",
-      "drives": "CPL News is public-facing content on the dashboard. Items are harvested by a weekly job and curated in-page, so both a script and a person can change what the initiative appears to be saying about itself.",
-      "decides": "CPL Initiative (CO). The harvest job's inclusion rules and the curator's keep/drop calls have never been written down as a standard.",
-      "maintained_in": "public.cpl_news · public.cpl_news_requests via the CPL News tab; harvested by .github/workflows/cpl-news.yml",
-      "owner": null,
-      "when_empty": "There is no acceptance standard for a news item, so inclusion is whatever the harvester matched plus whatever a curator left in. For a public feed carrying the initiative's name that is a reputational surface with no stated bar."
-    },
-    {
-      "id": "DR-17",
-      "element": "Canonical wording of a credit recommendation (the Common CR Reference)",
-      "drives": "Deliberately NOT folded into DR-04 or DR-07. DR-04 governs M-ID course identity and DR-07 governs credential titles; this governs the wording of the CREDIT a credential earns — a third vocabulary, with its own worklist and its own decisions table, and Sam's ruling that C-ID is only one factor among title, course name and number, description and subject.",
-      "decides": "CPL Initiative (CO) — curator judgment, and measured to be ~90% of the work: no achievable matcher resolves it.",
-      "maintained_in": "public.cr_reference_decisions keyed on group_key (a rebuild can never overwrite a judgement) via the CR Reference tab",
-      "owner": null,
-      "when_empty": "A merge decision here collapses wordings across colleges and credentials. With nobody named, two curators can reach opposite judgements on neighbouring groups and neither is wrong by any written standard."
-    },
-    {
-      "id": "DR-18",
-      "element": "TMC submissions and curator notes",
-      "drives": "The TMC Builder accepts submissions from outside the immediate team and records curator notes against them. Accepting one is a judgement about someone else's work.",
-      "decides": "CPL Initiative (CO). The submission RPC is server-gated to a reviewer, so the mechanism is enforced; the criterion is not written down.",
-      "maintained_in": "public.tmc_submissions · public.tmc_curator_notes via the TMC Builder tab (submission RPC requires is_allowed_reviewer())",
-      "owner": null,
-      "when_empty": "The gate is technical, not editorial: the database says who MAY accept, nothing says on what basis. A submitter has no statement of what would make their submission acceptable."
-    }
-  ],
-  "acceptance_standards": [
-    {
-      "id": "AS-01",
-      "input": "MAP articulation data",
-      "stance": "authoritative",
-      "rule": "The system of record for what a college has articulated. We surface it; we never edit it (no write API by design — see the surface-don't-edit ADR)."
-    },
-    {
-      "id": "AS-02",
-      "input": "MAP contact fields",
-      "stance": "authoritative-but-unvalidated",
-      "rule": "Authoritative for WHO the college named, but the values are not validated at entry: 15 colleges hold several addresses in one cell and some hold single-character junk. Parse, never trust as a single clean value."
-    },
-    {
-      "id": "AS-03",
-      "input": "TOP code",
-      "stance": "corroborating only",
-      "rule": "Faculty-entered with no data-entry gatekeeper. NEVER gates a determination (discipline / identity / membership / merge). Usable only when a second independent signal agrees. Authoritative in exactly two places: the CTE flag and the CIP↔TOP crosswalk. This is the most developed standard we have — use it as the template for every new input."
-    },
-    {
-      "id": "AS-04",
-      "input": "CIP code (arriving fall 2026)",
-      "stance": "advisory until earned",
-      "rule": "Same posture as TOP: corroborate, don't gate, until it demonstrates reliability. Decide the promotion criteria BEFORE the cutover, not after we're depending on it."
-    },
-    {
-      "id": "AS-05",
-      "input": "COCI course + program data",
-      "stance": "authoritative for existence",
-      "rule": "Reliable that a course/program exists; lags on currency, and the program-course membership file is partially populated — treat joins through it as a LOWER BOUND."
-    },
-    {
-      "id": "AS-06",
-      "input": "Curator statement (a team member's knowledge)",
-      "stance": "strong, attributable",
-      "rule": "Record who said it and when, so it stays questionable later rather than only believable-or-deletable. A curator MAY name an individual where a lookup may not — they know who actually answers."
-    },
-    {
-      "id": "AS-07",
-      "input": "Web lookup / public college pages",
-      "stance": "advisory",
-      "rule": "A starting point to verify, never a designation. Show the source link. Department inboxes only — naming an individual from a web page is a determination we don't have standing to make."
-    },
-    {
-      "id": "AS-08",
-      "input": "Model-generated inference (mine)",
-      "stance": "advisory",
-      "rule": "Anything I derive is a proposal until a human or a second independent signal confirms it. Where I've guessed, the artifact should say so — that is what the provenance tiers are for."
-    }
-  ],
-  "cadences": [
-    {
-      "id": "CA-01",
-      "loop": "Daily dashboard rebuild",
-      "frequency": "Daily, 06:17 / 09:17 / 12:17 UTC",
-      "owner": "Automation (GitHub Actions)",
-      "state": "running",
-      "live": null
-    },
-    {
-      "id": "CA-02",
-      "loop": "MAP users + contacts sync",
-      "frequency": "Monthly, 1st at 13:00 UTC",
-      "owner": "Automation (GitHub Actions)",
-      "state": "running",
-      "live": "sync"
-    },
-    {
-      "id": "CA-03",
-      "loop": "College contact-refresh nudge",
-      "frequency": "Each semester (decided Session 87, 2026-06-30)",
-      "owner": null,
-      "state": "decided-never-run",
-      "note": "The instrument was built in June and has never been fired. A cadence nobody runs is a document, not governance. This is the single most actionable item on this page.",
-      "live": "nudge"
-    },
-    {
-      "id": "CA-04",
-      "loop": "Session checkpoint (docs, memory, To-Do feed)",
-      "frequency": "Every ~100K tokens + on request",
-      "owner": "Claude sessions",
-      "state": "running",
-      "live": null
-    },
-    {
-      "id": "CA-05",
-      "loop": "Public KB curation (vault → cpl-knowledge-base)",
-      "frequency": "On demand",
-      "owner": null,
-      "state": "human-gated",
-      "note": "Deliberately manual: a human-reviewed draft PR IS the sensitivity audit. Correct as designed; it just has no named reviewer.",
-      "live": null
-    },
-    {
-      "id": "CA-06",
-      "loop": "Sierra feedback triage (👍/👎 + notes)",
-      "frequency": "Undecided — never established",
-      "owner": null,
-      "state": "never-run",
-      "note": "The same shape as CA-03, but a step worse: that loop was decided and never fired; this one was never even decided. Measured 2026-08-07 — of 56 ratings since 1 July, not one had ever moved off status='new'. 31 of them are our own CI smoke test, which writes through the public anon RPC on every run and CANNOT delete its own rows (anon is deliberately write-only on that table). That share is visibly growing: it went 28 -> 31 during a single working session, purely from re-running the test. The unread rows were not noise — a geography bug reported 2026-07-03 sat five weeks, and a student-routing report on 2026-07-17 described a problem only fixed three weeks later, after it happened to come up in conversation. 4 rows have now been marked addressed; 7 real thumbs-down remain. GATE: the MAP/CO test invitation should not go out until this has an owner — inviting people into a channel nobody reads manufactures unread rows and teaches the team their feedback goes nowhere.",
-      "live": "feedback"
-    }
-  ],
-  "open_questions": [
-    {
-      "id": "OQ-01",
-      "q": "Who owns each row above?",
-      "why": "Every `owner` is null. A decision right with no accountable person is a description of the past, not governance. This is the review."
-    },
-    {
-      "id": "OQ-02",
-      "q": "Is there an existing MOU or participation agreement with colleges that already allocates some of these rights?",
-      "why": "If so, this register should MIRROR it rather than invent a parallel structure. I can't see those documents."
-    },
-    {
-      "id": "OQ-03",
-      "q": "What are the promotion criteria for CIP — what would it have to demonstrate to move from advisory to corroborating to authoritative?",
-      "why": "Fall 2026 cutover. Decide before we depend on it; TOP shows what happens when an input is trusted by default."
-    },
-    {
-      "id": "OQ-04",
-      "q": "What declares the M-ID layer 'faculty-published'?",
-      "why": "The rules change materially at that moment (re-mints stop). Today no one owns making that call or knows what evidence it requires."
-    },
-    {
-      "id": "OQ-05",
-      "q": "Which fields are genuinely load-bearing?",
-      "why": "I marked 8 of 10 as load-bearing from the data's behavior, which is almost certainly too many. Governing everything is how governance dies — cut this list."
-    },
-    {
-      "id": "OQ-06",
-      "q": "Should this tab be team-gated or public?",
-      "why": "Gated today. A public decision-rights table could be genuinely good for college trust — but 'last run: never' is a bad look before it's addressed. Fix the cadence first, then consider opening it."
-    },
-    {
-      "id": "OQ-07",
-      "q": "What has to be true before we invite the MAP and CO teams to test Sierra?",
-      "why": "Sam wants to open Sierra up to the wider team. The invitation is cheap; the failure is not. At minimum it needs CA-06 to have a named owner and a stated frequency, and DR-11 to have someone who decides when a reported behaviour is a bug versus a product choice — the last four rule changes were all the latter, and all of them needed Sam. Worth deciding whether the invitation is staged (MAP team first, CO second) so the queue's volume is survivable while the loop is new."
-    },
-    {
-      "id": "OQ-08",
-      "q": "How does a new governable surface get onto this register — and who notices when one appears?",
-      "why": "Today: a human happens to notice. Sam noticed Sierra was missing; nothing else would have. Measured 2026-08-07 the drift is already large and one-directional — the register lists 6 cadences while 9 GitHub Actions workflows carry a schedule (only 2 overlap, so ~7 recurring loops run unlisted); it lists 11 decision rights while 42 Supabase tables accept writes; there are 31 dashboard tabs. 32 rows describing 80+ surfaces, and we add surfaces far faster than rows. Proposal (Sam, 2026-08-07): a detector in the daily cron writes kb/governance_candidates.json — scheduled workflows, write-policied tables and tabs with no matching row, PLUS the inverse sweep for rows pointing at things that no longer exist — and the tab grows a Refresh that re-fetches it alongside the live reads. TWO CONSTRAINTS. (1) The browser cannot see .github/workflows or the schema, so repo-side detection MUST run in the cron; only liveness can be computed client-side. (2) It must PROPOSE, never auto-add: `decides`, `load_bearing` and `when_empty` are judgment, and auto-generating 80 plausible rows nobody decided would be governance theatre — the exact failure this tab exists to expose. Candidates get a one-click promote that still lands owner:null. The real design work is FILTERING: 42 raw table candidates is a second queue nobody reads, which is how the Sierra feedback inbox failed."
-    }
-  ]
+ "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
+ "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review.",
+ "_as_of": "2026-08-30",
+ "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
+ "decision_rights": [
+  {
+   "id": "DR-01",
+   "element": "Primary Contact email (MAP)",
+   "drives": "MAP routes a student's CPL request to this address. Empty = the request reaches nobody.",
+   "decides": "The college",
+   "maintained_in": "MAP platform (no write API — only the college can set it)",
+   "owner": null,
+   "when_empty": "We propose someone the college already designated in MAP and tell them we did. We never appoint.",
+   "load_bearing": true,
+   "live": "contact_pc"
+  },
+  {
+   "id": "DR-02",
+   "element": "CPL Coordinator (MAP)",
+   "drives": "The Implementation Funding baseline-eligibility badge.",
+   "decides": "The college",
+   "maintained_in": "MAP platform",
+   "owner": null,
+   "when_empty": "Eligibility badge is absent. No substitute is invented.",
+   "load_bearing": true,
+   "live": "contact_coord"
+  },
+  {
+   "id": "DR-03",
+   "element": "TOP code",
+   "drives": "Discipline inference, CTE flag, the CIP crosswalk.",
+   "decides": "College faculty at local curriculum approval",
+   "maintained_in": "COCI",
+   "owner": null,
+   "when_empty": "Nothing downstream may gate on it. See AS-03 — this is our most developed acceptance standard and the template for the rest.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-04",
+   "element": "M-ID identity + canonical SUBJ4",
+   "drives": "The whole unified-course layer and the eventual C-ID submission pathway.",
+   "decides": "CPL Initiative (CO) — explicitly AI-assisted STAGING, not faculty-published",
+   "maintained_in": "kb/ + Supabase kb_curation",
+   "owner": null,
+   "when_empty": "Re-mints permitted under the playbook. Rule re-locks to 'stable identifiers' once we declare the layer faculty-published — that declaration is itself a governance act with no owner today.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-05",
+   "element": "C-ID descriptors",
+   "drives": "Statewide course identity and articulation.",
+   "decides": "ASCCC — external authority",
+   "maintained_in": "c-id.net",
+   "owner": null,
+   "when_empty": "Never re-keyed, never invented. We submit; they decide.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-06",
+   "element": "Articulated exhibits (what a college grants credit for)",
+   "drives": "Every CPL award a student actually receives.",
+   "decides": "College faculty",
+   "maintained_in": "MAP platform",
+   "owner": null,
+   "when_empty": "The gap is an outreach worklist, not a build backlog.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-07",
+   "element": "Unified credential titles (CER)",
+   "drives": "How exhibits collapse into one credential across colleges.",
+   "decides": "CO curation, curator-confirmed",
+   "maintained_in": "Supabase kb_curation",
+   "owner": null,
+   "when_empty": "Falls back to the college's freehand title, which is why the canonicalization exists.",
+   "load_bearing": false,
+   "live": null
+  },
+  {
+   "id": "DR-08",
+   "element": "College landing page URL",
+   "drives": "Where a student actually lands, and where our nudges deep-link.",
+   "decides": "MAP platform team",
+   "maintained_in": "MAP platform",
+   "owner": null,
+   "when_empty": "3 of 123 have none. A college with no page cannot receive a routed request at all.",
+   "load_bearing": true,
+   "live": "landing"
+  },
+  {
+   "id": "DR-09",
+   "element": "Implementation funding model parameters",
+   "drives": "Dollar allocations per college.",
+   "decides": "CPL Initiative (CO) Folded 2026-08-30 (the Fifteen Tables): cpl_funding_config, cpl_funding_notes and cpl_funding_participation are the same money decision — a dial change states its basis against the allocation memo, a participation flag changes only with a stated reason (dollars follow it), and cpl_funding_config also reaches the college briefings.",
+   "maintained_in": "Supabase + kb/ · cpl_funding_config / cpl_funding_notes / cpl_funding_participation via the Implementation Funding tab",
+   "owner": null,
+   "when_empty": "n/a — this is ours to set, and the one place on this list where WE are the authority rather than a router.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-10",
+   "element": "Who a college's MAP users are",
+   "drives": "Access to MAP; who can act on CPL at that college.",
+   "decides": "The college",
+   "maintained_in": "MAP platform",
+   "owner": null,
+   "when_empty": "3 institutions have ZERO active users. That is an onboarding problem, not a contact problem — do not paper over it with a routing fix.",
+   "load_bearing": true,
+   "live": "users"
+  },
+  {
+   "id": "DR-11",
+   "element": "What Sierra tells the public (answer rules + guardrails)",
+   "drives": "Sierra is deployed on COBI ONLY today (Sam, 2026-08-08 and again 2026-08-10) and is INTENDED for colleges' own pages; she answers students, prospective students, faculty, administrators and employers. Her rule text IS the product — it decides what a CPL seeker is told exists, and how a host college is characterised on its own site.",
+   "decides": "CPL Initiative (CO) — in practice Sam personally, four consecutive times on 2026-08-06/07 (either/or → Yes/And → the portal's fuller portfolio → anti-poaching → the salesmanship/facts tie-break)",
+   "maintained_in": "chatbox/supabase/functions/cpl-chat/index.ts (prompt constants) + live sierra_guidance rows (🧭 pane)",
+   "owner": null,
+   "when_empty": "Each rule change gets resolved ad hoc by whichever session is running. Two consequences already observed: (1) a rule written purely as a prohibition made Sierra WITHHOLD facts from seekers, and nothing caught it because the prohibition was the only half tested; (2) two rules in different constants conflicted with nothing saying which governed, so the later one silently won. Also unowned: prompt text only takes effect ON DEPLOY, so 'decided' and 'live' are distinct states and no one tracks the gap between them.",
+   "load_bearing": true,
+   "live": null
+  },
+  {
+   "id": "DR-12",
+   "element": "What the COBI side menu shows, and to whom",
+   "drives": "The menu is the entry point for every visitor including anonymous ones. Its order, grouping, labels, per-site mapping and audience filter are curator-editable data (public.cobi_nav) as of 2026-08-14, so one drag changes what everyone sees, immediately, with no PR, no CI and no deploy in between.",
+   "decides": "CPL Initiative (CO) — any magic-link reviewer, via the Admin tab. No second pair of eyes exists between an edit and the public.",
+   "maintained_in": "public.cobi_nav (reviewer-write, public-read) via the Admin tab; code defaults in nav_groups.js + cobi_orgs.js; every change logged to cobi_nav_log",
+   "owner": null,
+   "when_empty": "Nobody is accountable for menu changes that every visitor sees. Two specific risks, both already mitigated in code but not in process: (1) the audience filter is DISPLAY ONLY and someone may believe hiding a tab protects its data — RLS does, and only the Admin tab says so; (2) an arrangement can be changed by any reviewer with no review, so the audit trail in cobi_nav_log is the only record of who decided what.",
+   "notes": "Lockout is prevented in CODE, not by this row: `admin` and `dashboard` cannot be hidden and refuse to be dragged into a group, because the table is the thing being guarded. Seeded EMPTY, so today the menu is exactly what the code ships."
+  },
+  {
+   "id": "DR-13",
+   "element": "The workplan itself — activities, projects, goals and lifecycle",
+   "drives": "The workplan IS the CPL Initiative's public record of what it committed to and how far it has got. Its rows drive the dashboard every visitor sees, the Activities tab, the annual report and the KPI ladder. Four tables are editable in-page by any team-phrase holder.",
+   "decides": "CPL Initiative (CO). Not otherwise recorded — the workplan predates this register and nobody has been named for it, which is why it appears here. Folded 2026-08-30: liftoff_state (Mission Control task statuses and decision-branch choices — the chosen branch doubles as the decision log) is the same program-tracking family.",
+   "maintained_in": "public.projects · public.workplan_goals · public.workplan_activity_associations · public.project_lifecycle, edited inline on the Activities and Workplan Goals tabs · public.liftoff_state via Mission Control",
+   "owner": null,
+   "when_empty": "The most public artifact the project has is the one with no named owner. A wrong figure typed into a goal cell reaches the published dashboard on the next cron with nothing in between, and there is no convention for who may restate a target once it is set."
+  },
+  {
+   "id": "DR-14",
+   "element": "Which shared phrase opens what, and when it is rotated",
+   "drives": "The team and site phrases are the only credential most of the team ever uses. Rotating one silently darkens every surface its holders rely on; not rotating one leaves access with whoever has ever been told it, including people who have left.",
+   "decides": "CPL Initiative (CO) — in practice whoever is on the Team Phrases tab, which requires a magic-link reviewer sign-in. No rotation schedule exists.",
+   "maintained_in": "public.team_access (reviewer-only read and write) via the Team Phrases tab",
+   "owner": null,
+   "when_empty": "Nobody is accountable for rotation, so it happens only when someone remembers. The open superset question compounds it: under 'allow either', a site phrase opens its own tabs PLUS every shared one, which is safe only while every holder is trusted with all shared CPL data."
+  },
+  {
+   "id": "DR-15",
+   "element": "Vendor contracts — deliverables, reports and documents of record",
+   "drives": "The Contracts register carries payment terms and deliverable status for the initiative's vendors. It is EXCLUSIVE to the Finance site and gated on the Finance phrase, so its audience is narrow and its contents are consequential.",
+   "decides": "CPL Initiative (CO) / Finance. Which of the two signs off a deliverable as met is not recorded anywhere.",
+   "maintained_in": "public.cpl_contracts · cpl_contract_deliverables · cpl_contract_reports · cpl_contract_documents (Finance phrase or reviewer) via the Contracts tab",
+   "owner": null,
+   "when_empty": "A deliverable can be marked met, or a payment term edited, with no second pair of eyes and no record of who decided. The distinction that matters and is currently unwritten: recording what a vendor reported is bookkeeping; judging a deliverable met is a decision."
+  },
+  {
+   "id": "DR-16",
+   "element": "What appears in the CPL News feed",
+   "drives": "CPL News is public-facing content on the dashboard. Items are harvested by a weekly job and curated in-page, so both a script and a person can change what the initiative appears to be saying about itself.",
+   "decides": "CPL Initiative (CO). The harvest job's inclusion rules and the curator's keep/drop calls have never been written down as a standard.",
+   "maintained_in": "public.cpl_news · public.cpl_news_requests via the CPL News tab; harvested by .github/workflows/cpl-news.yml",
+   "owner": null,
+   "when_empty": "There is no acceptance standard for a news item, so inclusion is whatever the harvester matched plus whatever a curator left in. For a public feed carrying the initiative's name that is a reputational surface with no stated bar."
+  },
+  {
+   "id": "DR-17",
+   "element": "Canonical wording of a credit recommendation (the Common CR Reference)",
+   "drives": "Deliberately NOT folded into DR-04 or DR-07. DR-04 governs M-ID course identity and DR-07 governs credential titles; this governs the wording of the CREDIT a credential earns — a third vocabulary, with its own worklist and its own decisions table, and Sam's ruling that C-ID is only one factor among title, course name and number, description and subject.",
+   "decides": "CPL Initiative (CO) — curator judgment, and measured to be ~90% of the work: no achievable matcher resolves it.",
+   "maintained_in": "public.cr_reference_decisions keyed on group_key (a rebuild can never overwrite a judgement) via the CR Reference tab",
+   "owner": null,
+   "when_empty": "A merge decision here collapses wordings across colleges and credentials. With nobody named, two curators can reach opposite judgements on neighbouring groups and neither is wrong by any written standard."
+  },
+  {
+   "id": "DR-18",
+   "element": "TMC submissions and curator notes",
+   "drives": "The TMC Builder accepts submissions from outside the immediate team and records curator notes against them. Accepting one is a judgement about someone else's work.",
+   "decides": "CPL Initiative (CO). The submission RPC is server-gated to a reviewer, so the mechanism is enforced; the criterion is not written down.",
+   "maintained_in": "public.tmc_submissions · public.tmc_curator_notes via the TMC Builder tab (submission RPC requires is_allowed_reviewer())",
+   "owner": null,
+   "when_empty": "The gate is technical, not editorial: the database says who MAY accept, nothing says on what basis. A submitter has no statement of what would make their submission acceptable."
+  },
+  {
+   "id": "DR-19",
+   "element": "The shared memory table (cpl_memory)",
+   "drives": "Every session is required to read this table before working; what it asserts steers behavior across all three repos. A wrong row is a steering error, not a typo.",
+   "decides": "Sam, through the Memory pane's verify / stale / supersede controls. Sessions PROPOSE only: inserts land status='proposed' with the plain-language field filled, and become trusted (verified) only through the corroboration gate — a committed source, a second session, or Sam's check. A session may correct its OWN rows with a logged reason, and supersede-with-pointer, never delete. A human-sourced row is never silently superseded by a session's inference: disagree by filing a NEW row and flagging the conflict. Autogenerate drafts are human-reviewed before save. Every write logs to cpl_memory_log under the actor's moniker. (Sam's clarification, 2026-08-30.)",
+   "maintained_in": "public.cpl_memory + public.cpl_memory_log via the Memory tab and the checkpoint auto-write (Supabase MCP)",
+   "owner": null,
+   "when_empty": "These rules are written, not enforced — the memory table has no lint (one of the two known uncaught doctrine scenarios). The cross-store checker queued for Session 211 is the enforcement half; this row is its spec."
+  },
+  {
+   "id": "DR-20",
+   "element": "Team responsibility, updates and the directory (item_raci · item_updates · team_members)",
+   "drives": "Who is Responsible / Accountable / Consulted / Informed per activity and project; the posted updates that travel to the card faces, the master report and the Annual Report; and the team directory (staff contact data) that feeds the nudge builder.",
+   "decides": "The Accountable person for the item; Sam is the default while the owner column is being filled. Acceptance: a signed-in team member (reviewer magic link or team phrase); assignments name people, not roles; an update reads as Annual-Report-quotable and carries its author; directory entries are real staff who know they are listed, removed when someone leaves rather than by cleanup sweeps.",
+   "maintained_in": "public.item_raci · public.item_updates · public.team_members via the Team & RACI tab",
+   "owner": null,
+   "when_empty": "Before this row, outward-facing Annual Report text could be edited with no named standard behind it."
+  },
+  {
+   "id": "DR-21",
+   "element": "Public Fact Sheet figure overrides (factsheet_overrides)",
+   "drives": "Hand overrides on figures the public CPL Fact Sheet displays — numbers journalists and the public read. An override makes a published figure disagree with the live data on purpose.",
+   "decides": "Sam. Acceptance: every override carries its source and date; only aggregate figures are ever shown (the student-detail disclosure ADRs apply); an override with no stated basis is reverted.",
+   "maintained_in": "public.factsheet_overrides via the Fact Sheet edit layer",
+   "owner": null,
+   "when_empty": "The highest-stakes table the drift detector surfaced: public numbers, previously no named decider."
+  },
+  {
+   "id": "DR-22",
+   "element": "The GR register (gr_areas · gr_revisions · gr_artifacts)",
+   "drives": "What the register asserts about CO policy positions — the priority areas under review, the specific regulatory and Ed. Code revisions, and the artifacts informing them. Pointed at the whole CO, not just CPL.",
+   "decides": "Sam. Acceptance: every entry names its instrument — does the change contradict a STATUTE, a REGULATION, or merely a PRACTICE (the test measured from the register's own rows, 2026-08-25) — and artifacts cite their origin so official sources read apart from our own analysis.",
+   "maintained_in": "public.gr_areas · public.gr_revisions · public.gr_artifacts via the GR register tab",
+   "owner": null,
+   "when_empty": "Policy positions without a named decider read as the Chancellor's Office voice by accident."
+  },
+  {
+   "id": "DR-23",
+   "element": "Adoption-interest intake (cpl_adoption_interest)",
+   "drives": "Colleges express interest in adopting a pathway from the CPL Pathways tab. An unanswered interest queue is a silent promise to a college.",
+   "decides": "Sam, until delegated. Acceptance: each entry resolves to a real college identity (college_id), and the queue carries a response expectation the register can measure.",
+   "maintained_in": "public.cpl_adoption_interest via the CPL Pathways tab (POST intake)",
+   "owner": null,
+   "when_empty": "Intake without an owner manufactures exactly the unread-rows failure CA-06 documented."
+  }
+ ],
+ "acceptance_standards": [
+  {
+   "id": "AS-01",
+   "input": "MAP articulation data",
+   "stance": "authoritative",
+   "rule": "The system of record for what a college has articulated. We surface it; we never edit it (no write API by design — see the surface-don't-edit ADR)."
+  },
+  {
+   "id": "AS-02",
+   "input": "MAP contact fields",
+   "stance": "authoritative-but-unvalidated",
+   "rule": "Authoritative for WHO the college named, but the values are not validated at entry: 15 colleges hold several addresses in one cell and some hold single-character junk. Parse, never trust as a single clean value."
+  },
+  {
+   "id": "AS-03",
+   "input": "TOP code",
+   "stance": "corroborating only",
+   "rule": "Faculty-entered with no data-entry gatekeeper. NEVER gates a determination (discipline / identity / membership / merge). Usable only when a second independent signal agrees. Authoritative in exactly two places: the CTE flag and the CIP↔TOP crosswalk. This is the most developed standard we have — use it as the template for every new input."
+  },
+  {
+   "id": "AS-04",
+   "input": "CIP code (arriving fall 2026)",
+   "stance": "advisory until earned",
+   "rule": "Same posture as TOP: corroborate, don't gate, until it demonstrates reliability. Decide the promotion criteria BEFORE the cutover, not after we're depending on it."
+  },
+  {
+   "id": "AS-05",
+   "input": "COCI course + program data",
+   "stance": "authoritative for existence",
+   "rule": "Reliable that a course/program exists; lags on currency, and the program-course membership file is partially populated — treat joins through it as a LOWER BOUND."
+  },
+  {
+   "id": "AS-06",
+   "input": "Curator statement (a team member's knowledge)",
+   "stance": "strong, attributable",
+   "rule": "Record who said it and when, so it stays questionable later rather than only believable-or-deletable. A curator MAY name an individual where a lookup may not — they know who actually answers."
+  },
+  {
+   "id": "AS-07",
+   "input": "Web lookup / public college pages",
+   "stance": "advisory",
+   "rule": "A starting point to verify, never a designation. Show the source link. Department inboxes only — naming an individual from a web page is a determination we don't have standing to make."
+  },
+  {
+   "id": "AS-08",
+   "input": "Model-generated inference (mine)",
+   "stance": "advisory",
+   "rule": "Anything I derive is a proposal until a human or a second independent signal confirms it. Where I've guessed, the artifact should say so — that is what the provenance tiers are for."
+  }
+ ],
+ "cadences": [
+  {
+   "id": "CA-01",
+   "loop": "Daily dashboard rebuild",
+   "frequency": "Daily, 06:17 / 09:17 / 12:17 UTC",
+   "owner": "Automation (GitHub Actions)",
+   "state": "running",
+   "live": null
+  },
+  {
+   "id": "CA-02",
+   "loop": "MAP users + contacts sync",
+   "frequency": "Monthly, 1st at 13:00 UTC",
+   "owner": "Automation (GitHub Actions)",
+   "state": "running",
+   "live": "sync"
+  },
+  {
+   "id": "CA-03",
+   "loop": "College contact-refresh nudge",
+   "frequency": "Each semester (decided Session 87, 2026-06-30)",
+   "owner": null,
+   "state": "decided-never-run",
+   "note": "The instrument was built in June and has never been fired. A cadence nobody runs is a document, not governance. This is the single most actionable item on this page.",
+   "live": "nudge"
+  },
+  {
+   "id": "CA-04",
+   "loop": "Session checkpoint (docs, memory, To-Do feed)",
+   "frequency": "Every ~100K tokens + on request",
+   "owner": "Claude sessions",
+   "state": "running",
+   "live": null
+  },
+  {
+   "id": "CA-05",
+   "loop": "Public KB curation (vault → cpl-knowledge-base)",
+   "frequency": "On demand",
+   "owner": null,
+   "state": "human-gated",
+   "note": "Deliberately manual: a human-reviewed draft PR IS the sensitivity audit. Correct as designed; it just has no named reviewer.",
+   "live": null
+  },
+  {
+   "id": "CA-06",
+   "loop": "Sierra feedback triage (👍/👎 + notes)",
+   "frequency": "Undecided — never established",
+   "owner": null,
+   "state": "never-run",
+   "note": "The same shape as CA-03, but a step worse: that loop was decided and never fired; this one was never even decided. Measured 2026-08-07 — of 56 ratings since 1 July, not one had ever moved off status='new'. 31 of them are our own CI smoke test, which writes through the public anon RPC on every run and CANNOT delete its own rows (anon is deliberately write-only on that table). That share is visibly growing: it went 28 -> 31 during a single working session, purely from re-running the test. The unread rows were not noise — a geography bug reported 2026-07-03 sat five weeks, and a student-routing report on 2026-07-17 described a problem only fixed three weeks later, after it happened to come up in conversation. 4 rows have now been marked addressed; 7 real thumbs-down remain. GATE: the MAP/CO test invitation should not go out until this has an owner — inviting people into a channel nobody reads manufactures unread rows and teaches the team their feedback goes nowhere.",
+   "live": "feedback"
+  },
+  {
+   "id": "CA-07",
+   "loop": "MAP data-quality flag triage (map_data_quality)",
+   "frequency": "Undecided — set with the owner",
+   "owner": null,
+   "state": "never-run",
+   "note": "Ruled 2026-08-30 (the Fifteen Tables): a flag queue's failure mode is not a bad write but nobody triaging it — the same shape as CA-06. Flags are raised from the MAP data-quality view; each needs a fix in MAP or a reasoned dismissal. The register's own lesson applies as the gate: a queue nobody reads teaches the team their flags go nowhere."
+  }
+ ],
+ "open_questions": [
+  {
+   "id": "OQ-01",
+   "q": "Who owns each row above?",
+   "why": "Every `owner` is null. A decision right with no accountable person is a description of the past, not governance. This is the review."
+  },
+  {
+   "id": "OQ-02",
+   "q": "Is there an existing MOU or participation agreement with colleges that already allocates some of these rights?",
+   "why": "If so, this register should MIRROR it rather than invent a parallel structure. I can't see those documents."
+  },
+  {
+   "id": "OQ-03",
+   "q": "What are the promotion criteria for CIP — what would it have to demonstrate to move from advisory to corroborating to authoritative?",
+   "why": "Fall 2026 cutover. Decide before we depend on it; TOP shows what happens when an input is trusted by default."
+  },
+  {
+   "id": "OQ-04",
+   "q": "What declares the M-ID layer 'faculty-published'?",
+   "why": "The rules change materially at that moment (re-mints stop). Today no one owns making that call or knows what evidence it requires."
+  },
+  {
+   "id": "OQ-05",
+   "q": "Which fields are genuinely load-bearing?",
+   "why": "I marked 8 of 10 as load-bearing from the data's behavior, which is almost certainly too many. Governing everything is how governance dies — cut this list."
+  },
+  {
+   "id": "OQ-06",
+   "q": "Should this tab be team-gated or public?",
+   "why": "Gated today. A public decision-rights table could be genuinely good for college trust — but 'last run: never' is a bad look before it's addressed. Fix the cadence first, then consider opening it."
+  },
+  {
+   "id": "OQ-07",
+   "q": "What has to be true before we invite the MAP and CO teams to test Sierra?",
+   "why": "Sam wants to open Sierra up to the wider team. The invitation is cheap; the failure is not. At minimum it needs CA-06 to have a named owner and a stated frequency, and DR-11 to have someone who decides when a reported behaviour is a bug versus a product choice — the last four rule changes were all the latter, and all of them needed Sam. Worth deciding whether the invitation is staged (MAP team first, CO second) so the queue's volume is survivable while the loop is new."
+  },
+  {
+   "id": "OQ-08",
+   "q": "How does a new governable surface get onto this register — and who notices when one appears?",
+   "why": "Today: a human happens to notice. Sam noticed Sierra was missing; nothing else would have. Measured 2026-08-07 the drift is already large and one-directional — the register lists 6 cadences while 9 GitHub Actions workflows carry a schedule (only 2 overlap, so ~7 recurring loops run unlisted); it lists 11 decision rights while 42 Supabase tables accept writes; there are 31 dashboard tabs. 32 rows describing 80+ surfaces, and we add surfaces far faster than rows. Proposal (Sam, 2026-08-07): a detector in the daily cron writes kb/governance_candidates.json — scheduled workflows, write-policied tables and tabs with no matching row, PLUS the inverse sweep for rows pointing at things that no longer exist — and the tab grows a Refresh that re-fetches it alongside the live reads. TWO CONSTRAINTS. (1) The browser cannot see .github/workflows or the schema, so repo-side detection MUST run in the cron; only liveness can be computed client-side. (2) It must PROPOSE, never auto-add: `decides`, `load_bearing` and `when_empty` are judgment, and auto-generating 80 plausible rows nobody decided would be governance theatre — the exact failure this tab exists to expose. Candidates get a one-click promote that still lands owner:null. The real design work is FILTERING: 42 raw table candidates is a second queue nobody reads, which is how the Sierra feedback inbox failed."
+  }
+ ]
 }

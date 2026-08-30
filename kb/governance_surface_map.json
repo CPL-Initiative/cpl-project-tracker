@@ -1,6 +1,6 @@
 {
  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
- "_as_of": "2026-08-14",
+ "_as_of": "2026-08-30",
  "mapped": {
   "workflow:daily-dashboard.yml": "CA-01",
   "workflow:map-users-sync.yml": "CA-02",
@@ -30,7 +30,21 @@
   "tab:cr-reference": "DR-17",
   "table:cr_reference_decisions": "DR-17",
   "table:tmc_submissions": "DR-18",
-  "table:tmc_curator_notes": "DR-18"
+  "table:tmc_curator_notes": "DR-18",
+  "table:cpl_memory": "DR-19",
+  "table:item_raci": "DR-20",
+  "table:item_updates": "DR-20",
+  "table:team_members": "DR-20",
+  "table:liftoff_state": "DR-13",
+  "table:map_data_quality": "CA-07",
+  "table:factsheet_overrides": "DR-21",
+  "table:gr_areas": "DR-22",
+  "table:gr_revisions": "DR-22",
+  "table:gr_artifacts": "DR-22",
+  "table:cpl_funding_config": "DR-09",
+  "table:cpl_funding_notes": "DR-09",
+  "table:cpl_funding_participation": "DR-09",
+  "table:cpl_adoption_interest": "DR-23"
  },
  "dismissed": {
   "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",
@@ -47,6 +61,7 @@
   "tab:annual-report": "Covered by the item_updates table proposed separately.",
   "tab:map-data-quality": "A read-and-flag view; its writes go to tables proposed separately.",
   "tab:memory": "The cpl_memory layer has its own documented checkpoint procedure (playbook-cpl-memory-auto-write-at-checkpoint); propose a row only if that lapses.",
-  "tab:admin": "The Admin tab IS the surface DR-12 governs. Its only write is cobi_nav, mapped above; the cobi_rls_gates() RPC it reads is read-only policy metadata."
+  "tab:admin": "The Admin tab IS the surface DR-12 governs. Its only write is cobi_nav, mapped above; the cobi_rls_gates() RPC it reads is read-only policy metadata.",
+  "table:cpl_reflections": "A journaling surface whose audience is its own authors: written from the First Light page, read only by the weekly digest that goes back to the same team. No third party relies on it, nothing downstream publishes it, and burdening it with decision rights would discourage the writing it exists for. Reversible if the digest ever grows an outside audience. (Sam's ruling, 2026-08-30, the Fifteen Tables.)"
  }
 }

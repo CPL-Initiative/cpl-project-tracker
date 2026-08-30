@@ -500,16 +500,15 @@ function signInRefreshTest() {
   // ever climbs back there the filters have stopped doing their job and the strip
   // is on its way to being ignored.
   //
-  // Raised 25 -> 30 on 2026-08-30, with the reason on the record: the table/tab
-  // scans now project from the dependency map, which sees the write idioms the
-  // old regex could not (trailing-slash REST, verb-first helpers, URL consts
-  // fetched far from their definition, write-shaped RPCs, served pages) — 15
-  // human-write TABLES surfaced at once, none previously judged. That burst is
-  // the detector improving, not the filters decaying, and it is TRANSIENT:
-  // every row Sam judges moves to mapped/dismissed in the surface map and the
-  // count falls back toward ~11. If the list sits near this ceiling after that
-  // backlog clears, that is real noise — tighten the filters, not this number.
-  check("⚠ the candidate list stays readable (< 30)", (d.candidates || []).length < 30);
+  // Raised 25 -> 30 on 2026-08-30 for the dependency-map burst (15 human-write
+  // tables surfaced at once — the detector improving, not the filters
+  // decaying), and TIGHTENED BACK to 25 the same day after Sam ruled all 15
+  // (the Fifteen Tables judgment: DR-19..DR-23 + CA-07, four folds, one
+  // reasoned dismissal — kb/governance_surface_map.json carries the reasons).
+  // Measured count after the rulings: 11. If the list climbs back toward this
+  // ceiling without a detector improvement to explain it, that is real noise —
+  // tighten the filters, not this number.
+  check("⚠ the candidate list stays readable (< 25)", (d.candidates || []).length < 25);
 })();
 
 // ── report ──

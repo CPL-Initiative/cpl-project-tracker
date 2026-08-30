@@ -131,12 +131,6 @@
       "text": "Run the two remaining rule-testing scenarios and the repaired ablation — deliberately held until the rulebook stopped moving, which it now has. Re-read the committed test criteria first: the rulebook changed since they were written, so score against what is true today and note any adjustments beside the criteria, never inside them."
     },
     {
-      "id": "s209-sam-governance-judgments",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "Judge the fifteen new rows on the Governance tab's proposals strip. A judgment sheet is ready (delivered in chat, 2026-08-30, and committed as docs/visuals/2026-08-30-governance-fifteen-tables.html): each table has a proposed row, fold, cadence, or dismissal with a draft reason — reply by number and a session writes your rulings into the register."
-    },
-    {
       "id": "s209-sam-blast-radius-mock",
       "for": "Sam",
       "tab": "admin",
