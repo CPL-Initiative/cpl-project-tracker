@@ -140,6 +140,15 @@ def main() -> int:
           p["workflows"].get("credential-catalog-sync.yml", {}).get("crons") ==
           ["20 13 * * *"])
 
+    # (o) URL-const direction (governance-feed finding, 2026-08-30): a table
+    # bound to a const (ADOPT_INTAKE = …/rest/v1/cpl_adoption_interest) takes
+    # its direction at the FETCH SITES, not at the const line — the POST at
+    # cpl_pathways.js:93 was read as read-only, and the governance scan lost
+    # a human-write surface the old crude regex had caught.
+    check("cpl_adoption_interest write survives const indirection",
+          ("module:cpl_pathways.js", "write") in
+          consumers(p, "supabase:cpl_adoption_interest"))
+
     failed = [n for n, ok in results if not ok]
     for n, ok in results:
         print("%s %s" % ("PASS" if ok else "FAIL", n))

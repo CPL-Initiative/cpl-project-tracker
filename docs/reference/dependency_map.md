@@ -62,21 +62,21 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `chatbox_peer_articulations` | none found | scripts: `kb/_sync_peer_articulations.py` |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `college_geo` | `edgefn:cpl-chat` | — |
-| `cpl_adoption_interest` | tabs: `cpl-pathways` | — |
+| `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
 | `cpl_contract_documents` | tabs: `contracts` | tabs: `contracts` |
 | `cpl_contract_reports` | tabs: `contracts` | tabs: `contracts` |
 | `cpl_contracts` | tabs: `contracts` | — |
 | `cpl_document_sections` | `edgefn:cpl-chat` | — |
 | `cpl_documents` | `edgefn:cpl-chat` | — |
-| `cpl_funding_config` | tabs: `college-briefing`, `implementation-funding` | — |
-| `cpl_funding_notes` | tabs: `college-briefing`, `implementation-funding` | — |
-| `cpl_funding_participation` | tabs: `college-briefing`, `implementation-funding` | — |
+| `cpl_funding_config` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
+| `cpl_funding_notes` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
+| `cpl_funding_participation` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_memory` | tabs: `memory` | tabs: `memory` |
 | `cpl_memory_log` | none found | tabs: `memory` |
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
-| `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | — |
+| `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |
@@ -121,7 +121,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `team_members` | tabs: `raci` · scripts: `nudges/build_nudges.py` | tabs: `raci` |
 | `tmc_curator_notes` | tabs: `tmc-builder` | tabs: `tmc-builder` |
 | `tmc_submissions` | tabs: `tmc-builder` | tabs: `tmc-builder` |
-| `workplan_activity_associations` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
+| `workplan_activity_associations` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` |
 | `workplan_goals` | scripts: `excel_to_dashboard.py`, `kb/_load_workplan_goals.py`, `kb/_seed_workplan_goals.py`, `kb/_seed_workplan_goals_apply.py`, `kb/_validate_workplan_goals.py` | tabs: `workplan-goals` |
 
 ## Supabase RPCs
@@ -350,6 +350,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_cpl_pathway_membership.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_cr_reference.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_credential_recs.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
+| `kb/_build_dependency_map.py` | workflows: `js-tests.yml` | — |
 | `kb/_build_docs_index.py` | workflows: `js-tests.yml` | — |
 | `kb/_build_governance_candidates.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
@@ -577,6 +578,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
+| `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_index_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
@@ -763,5 +765,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 72 Supabase tables · 30 RPCs · 5 edge functions · 388 file
+Coverage: 72 Supabase tables · 30 RPCs · 5 edge functions · 390 file
 datasets · 136 external services · 304 consumers · 32 workflows · 37 tabs.
