@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 355,
+   "count": 356,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1225,6 +1225,25 @@
      "title": "A hide affordance must suppress the item in the report too \u2014 reuse the class the export already strips",
      "type": "methodology",
      "updated": "2026-07-23"
+    },
+    {
+     "created": "2026-08-30",
+     "governs": [
+      "CLAUDE.md",
+      "scripts/install-three-repo-check.ps1",
+      "docs/working_with_claude_code.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "doctrine",
+      "onboarding",
+      "session-hygiene"
+     ],
+     "title": "A human-gated practice becomes a machine-checked one",
+     "type": "methodology",
+     "updated": ""
     },
     {
      "created": "2026-08-09",
@@ -11288,8 +11307,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 186,
+   "count": 187,
    "docs": [
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "n": 213,
+     "path": "docs/session_213_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-213",
+      "three-repo-check",
+      "decision-sheets",
+      "register-reanalysis",
+      "doctrine-probes"
+     ],
+     "title": "from SkyLedger (Session 210, the day that would not end)",
+     "type": null,
+     "updated": "2026-08-30"
+    },
     {
      "created": "2026-08-30",
      "governs": [],
@@ -14568,5 +14605,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 737
+ "total": 739
 }

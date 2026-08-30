@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-355 document(s).
+356 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -77,6 +77,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A harness must verify its own healthy fixture, or growth repaints the scoreboard](../kb-notes/methodology-a-harness-must-verify-its-own-fixture.md) | methodology | published | 2026-08-30 |  |
 | [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |
+| [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
 | [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |

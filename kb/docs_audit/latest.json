@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 749,
-    "bytes": 7949940,
+    "files": 751,
+    "bytes": 7964238,
     "over_budget": 3,
-    "handoff_max": 212,
+    "handoff_max": 213,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 53494,
+    "always_loaded_bytes": 54449,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 53494,
+        "bytes": 54449,
         "over": 0
       },
       "other": {
         "files": 101,
-        "bytes": 2406149,
+        "bytes": 2407569,
         "over": 2
       },
       "index": {
@@ -36,22 +36,22 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1901443,
+        "bytes": 1903614,
         "over": 1
       },
       "kb_note": {
-        "files": 357,
-        "bytes": 1875245,
+        "files": 358,
+        "bytes": 1878491,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 121585,
+        "bytes": 122064,
         "over": 0
       },
       "handoff": {
-        "files": 186,
-        "bytes": 1578263,
+        "files": 187,
+        "bytes": 1584290,
         "over": 0
       }
     },
@@ -60,9 +60,9 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2438,
-      "bytes": 1255891204,
-      "heavy_bytes": 599873738,
+      "files": 2442,
+      "bytes": 1255937440,
+      "heavy_bytes": 599873746,
       "heavy_share": 0.478,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -358,10 +358,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9061593,
+        "bytes": 9061602,
         "kind": "file"
       },
-      "message": "9,061,593 B single file inside the vault"
+      "message": "9,061,602 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -438,10 +438,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267513,
+        "bytes": 6267512,
         "kind": "file"
       },
-      "message": "6,267,513 B single file inside the vault"
+      "message": "6,267,512 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
