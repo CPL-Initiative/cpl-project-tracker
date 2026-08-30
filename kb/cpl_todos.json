@@ -5,6 +5,18 @@
  "_status": "Sam is ruling the Open Verdicts sheet live (2026-08-30): items 1-5 landed - the funding model becomes independent dials with an over/under-budget readout (mock next), the Combined award column is built and shipping, the story-intake question has his final wording, the noncredit strategies are reviewed, and the project pool card wires to the joint Activities/Targets/Budget tables. Remaining sheet items await his numbers.",
  "items": [
   {
+   "id": "s210-fable-blast-radius-build",
+   "for": "Fable",
+   "tab": "admin",
+   "text": "Build Blast Radius into the Admin tab (Sam's 'blast away', 2026-08-30, item 19): pick any dataset, see every tab, page, script and scheduled job touching it, who writes it, and whether the daily job publishes it without review - the S209 mock's design, reading kb/dependency_map.json live."
+  },
+  {
+   "id": "s210-fable-goal-card-language",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Carry Sam's item-12 policy onto the two goal cards (2026-08-30): career attainment is demonstrated - My CPL Stories touching career attainment plus funded projects building infrastructure and interagency integration - never directly measured; equity is analyzed in the system's 3-year legislative reports (MIS + CCCApply + MAP disaggregated), not in college outcome funding."
+  },
+  {
    "id": "s210-fable-register-reanalysis",
    "for": "Fable",
    "tab": "gr-register",
@@ -38,7 +50,7 @@
    "id": "s210-sam-tidyups",
    "for": "Sam",
    "tab": "governance",
-   "text": "Two one-minute tidy-ups only you can do: delete the leftover experiment branch on GitHub (its name is deliberately written only in your private vault's probe notes — it gives away a test topic — and sessions cannot delete branches), and in the public knowledge base's instruction file change the one stale '(Rule 8)' to '(Rule 9)' — that repo only changes through your review pipeline."
+   "text": "Two one-click finishes (2026-08-30): (1) delete the leftover experiment branch on the tracker's Branches page - exact name given in chat, kept out of committed docs on purpose; (2) review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate."
   },
   {
    "id": "s202-fable-savesweep",
@@ -65,12 +77,6 @@
    "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
   },
   {
-   "id": "s203-sam-ncrows",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Look at the college table and the new legal-goals section. Every college now has both a credit and a noncredit row; seven show 'none on record' (Taft, Fullerton, American River, Cosumnes River, and the three San Diegos) — if any of them does run a noncredit program, tell us, because that is a data error we can trace. In the goals section, check two calls in particular: career attainment is shown as funded but unmeasurable, and the goal about serving all students equitably is marked not measured, because nothing we hold describes how credit is spread across groups of students."
-  },
-  {
    "id": "s203-fable-sticky",
    "for": "Fable",
    "tab": "cpl-implementation",
@@ -81,12 +87,6 @@
    "for": "Fable",
    "tab": "admin",
    "text": "The funding tab now requires a personal sign-in instead of the shared phrase. Check whether the other curator tabs should follow, and whether any of them still offers editing that the database would refuse."
-  },
-  {
-   "id": "s206-sam-memory-scope",
-   "for": "Sam",
-   "tab": "cobi-memory",
-   "text": "Decide a short, fixed list of values for the memory table's \"scope\" field. Right now people fill it in freely, so it holds ten different words — \"funding\" and \"cpl-funding\" mean the same thing — and a quarter of them just repeat a tag the entry already has. It was meant to tell us which lessons apply everywhere and which belong to one workstream, and as it stands it cannot. We suggest just two values, general or workstream-specific, leaving tags to carry the topic. 68 entries would need revisiting and 584 are blank. We have not changed anything."
   },
   {
    "id": "s206-sam-install-hook",
@@ -105,12 +105,6 @@
    "for": "Fable",
    "tab": "cpl-implementation",
    "text": "Run the two remaining rule-testing scenarios and the repaired ablation — deliberately held until the rulebook stopped moving, which it now has. Re-read the committed test criteria first: the rulebook changed since they were written, so score against what is true today and note any adjustments beside the criteria, never inside them."
-  },
-  {
-   "id": "s209-sam-blast-radius-mock",
-   "for": "Sam",
-   "tab": "admin",
-   "text": "React to the Blast Radius mock-up (link in our chat). It is the tool the impact map makes possible: pick any dataset and see every tab, page, script and scheduled job that touches it, who writes it, and whether the daily job publishes it without review. Say what to change and we will build it into the Admin tab; until you react, it stays a mock-up."
   },
   {
    "id": "s209-fable-stale-copies",
