@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 353,
+   "count": 354,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1184,6 +1184,25 @@
      "title": "A guidance rule that references a fact the request does not carry is an instruction to guess",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-08-30",
+     "governs": [
+      "kb/_doctrine_scenarios.py",
+      "kb/_docs_audit.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-harness-must-verify-its-own-fixture.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "doctrine",
+      "false-green",
+      "fixtures"
+     ],
+     "title": "A harness must verify its own healthy fixture, or growth repaints the scoreboard",
+     "type": "methodology",
+     "updated": ""
     },
     {
      "created": "2026-07-23",
@@ -11250,8 +11269,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 184,
+   "count": 185,
    "docs": [
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "n": 211,
+     "path": "docs/session_211_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-211",
+      "doctrine",
+      "remediations",
+      "citation-drift",
+      "memory-consolidation"
+     ],
+     "title": "from SkyLedger (Session 210, all six remediations built)",
+     "type": null,
+     "updated": "2026-08-30"
+    },
     {
      "created": "2026-08-30",
      "governs": [],
@@ -14493,5 +14530,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 733
+ "total": 735
 }

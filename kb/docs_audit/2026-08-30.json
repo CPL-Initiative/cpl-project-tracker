@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 745,
-    "bytes": 7898893,
+    "files": 747,
+    "bytes": 7917116,
     "over_budget": 3,
-    "handoff_max": 210,
+    "handoff_max": 211,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 51382,
+    "always_loaded_bytes": 51118,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 51382,
+        "bytes": 51118,
         "over": 0
       },
       "other": {
         "files": 101,
-        "bytes": 2401250,
+        "bytes": 2402877,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 11824,
+        "bytes": 12765,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1891184,
+        "bytes": 1895071,
         "over": 1
       },
       "kb_note": {
-        "files": 355,
-        "bytes": 1868108,
+        "files": 356,
+        "bytes": 1872070,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 113204,
+        "bytes": 113440,
         "over": 0
       },
       "handoff": {
-        "files": 184,
-        "bytes": 1561941,
+        "files": 185,
+        "bytes": 1569775,
         "over": 0
       }
     },
@@ -60,8 +60,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2424,
-      "bytes": 1248269030,
+      "files": 2426,
+      "bytes": 1248289160,
       "heavy_bytes": 599584355,
       "heavy_share": 0.48,
       "ignore_filters": [
@@ -144,13 +144,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 524278,
+        "bytes": 525601,
         "limit": 150000,
         "lane": "other",
-        "over_by": 374278,
+        "over_by": 375601,
         "ratio": 3.5
       },
-      "message": "524,278 B is 3.5× the other budget (150,000 B) — candidate for compaction",
+      "message": "525,601 B is 3.5× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

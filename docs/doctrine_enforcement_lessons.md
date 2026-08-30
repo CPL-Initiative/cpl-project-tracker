@@ -326,9 +326,13 @@ merged and consumed by two tabs in one session (#1396, #1397, #1398).
 ### Derived findings now pinned
 
 - `cpl_pathways_ccr_data.js` rebuilt daily, absent from the daily commit list.
-- `kb/credentials.json` rebuilt by `kb/_match_cos_authority.py` under
-  `cos-authority-sync.yml`, absent from ITS commit list (found by the map's
-  stale-copy rule on regeneration — the rule generalizes).
+- ⚠️ *(Corrected S210, adversarial verify)* `kb/credentials.json` was pinned
+  here as rebuilt-under-`cos-authority-sync.yml`-but-uncommitted; **refuted**
+  — that workflow runs `--apply` without `--apply-issuers`, and the only
+  write to `credentials.json` sits inside the `--apply-issuers` branch (a
+  deliberate dry-run-first manual step per the workflow's own header). The
+  regenerated map lists its producers as `cred-rename-apply.yml` and
+  `daily-dashboard.yml`, which DOES commit it. No stale-copy hazard there.
 
 ## 2026-08-30 — Session 210 (SkyLedger): the E gate, and the suite's inputs moved the design again
 
@@ -364,4 +368,56 @@ file is docs-shaped. The flip itself is Sam's, in branch protection.
   live by #1400's own CI (the decision step chose `run` for a
   workflow-touching diff and the suite executed); the `skip` path is proven by
   the PR carrying this very section — docs-only by design, catalog
-  regeneration included, so the carve-out branch executes too.
+  regeneration included, so the carve-out branch executes too. ⚠️ Honest
+  caveat (added by the S210 adversarial verify): both verification runs'
+  overall CHECKS were red — each failed at the stale-dependency-map step
+  #1400 itself introduced — so the gate STEPS verified while the checks
+  did not go green until #1402's map regeneration (main@ba76dcb: green).
+
+### B, C, D, F — the doctrine revision completed (#1402, CPLBrain#46)
+
+With A (#1396) and E (#1400) already landed, this closed the 2026-08-29
+remediation package. B widened Rule 10's unit of caution to any bulk write to
+a shared human-write table; C made reversibility-from-the-receipt a condition
+of approval (`docs/reference/data_write_rollback.md` holds the procedure); D
+made a new write surface a Governance event (map or dismiss in
+`kb/governance_surface_map.json`, check the privacy ADRs). All three are
+pinned as `CRITICAL_RULE_DOCTRINE` claims, auto-perturbation-tested.
+
+- **F's drift was systematic, not scattered.** One whole shift from a
+  pre-split numbering (checkpoints 8→9, Supabase 9→10), live in current code:
+  `kb/_esl_package_dryrun.py` cited as Rule 9 the same rule
+  `kb/_esl_package_actionable.py` cites as 10. Fixed in 16 living files;
+  dated capsules keep their era's numbering (they were correct when written).
+  The `citation_drift` lint pins living docs to the current list — and its
+  first corpus run found four genuinely drifted files the hand-inventory had
+  missed, the S208 instrument-beats-grep lesson replaying on its author.
+- **The checkpoint ritual is now titled "Rule 9 checkpoint"** (command title,
+  description, commit-subject convention); pre-S210 history keeps its
+  `Rule 8 checkpoint:` subjects, noted in the command so nobody "fixes" them.
+- **The 12-of-12 false green, S210 edition.** The moment the registry grew,
+  the scenario harness reported every scenario caught: `BASE_CRITICAL` no
+  longer satisfied the registry, `critical_rule_doctrine` fired on all
+  fixtures, and the two real cross-store gaps repainted as covered.
+  `_assert_fixtures_current()` now refuses to score on registry drift —
+  fixture health is checked, not assumed. Honest score stays 10 of 12.
+- **`prose_only()` treats a 4-space continuation as an indented code block
+  and masks the unindented lines after it too.** Found because a 4-space
+  draft of the fixture stub silently blinded `self_corrected_word_pair` to
+  its own scenario; the live `CLAUDE.md` uses 3-space continuations and is
+  unaffected. ⚠️ Latent corpus-wide hazard: any doc using 4-space list
+  continuations has its following prose invisible to the spelling and
+  word-pair lints. Worth a deliberate look at `prose_only` — not patched
+  here because the fixer shares the definition and a hasty change ripples.
+- **A workflow edit is a dependency-map input.** #1400's new steps made
+  `kb/dependency_map.json` stale, and main's push runs went red at the drift
+  check until #1402 carried the regeneration. When touching
+  `.github/workflows/`, rebuild the map in the same PR.
+- **The leak class recursed a third time, and the lint's scope has a hole.**
+  This checkpoint's handoff draft reproduced the S208 control branch's name —
+  which encodes a probe topic — and `probe_instrument_leak` caught it. But
+  the same name had also gone into `kb/cpl_todos.json`, which renders on the
+  PUBLIC dashboard and which the lint never sees: the docs audit collects
+  `.md` files only. Caught by adjacency this time. If the probes lane keeps
+  living, consider extending the leak scan to the JSON render surfaces
+  (`cpl_todos.json` at minimum).
