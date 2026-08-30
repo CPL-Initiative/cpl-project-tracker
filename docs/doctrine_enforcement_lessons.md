@@ -421,3 +421,42 @@ pinned as `CRITICAL_RULE_DOCTRINE` claims, auto-perturbation-tested.
   `.md` files only. Caught by adjacency this time. If the probes lane keeps
   living, consider extending the leak scan to the JSON render surfaces
   (`cpl_todos.json` at minimum).
+
+## 2026-08-30 (afternoon) — Decision sheets became the method, and the first full sitting proved it
+
+**Sam's ruling, verbatim: "Let's keep rolling with your wonderful decision
+sheets! I'd like do handle all my current and future decisions this way:)
+Ironically, should be a rule:)"** — so it is one (the CLAUDE.md bullet under
+*Working with the MAP team*; human-facing `docs/working_with_claude_code.md`
+§11). The Open Verdicts sheet (19 items consolidating every pending judgment)
+was then ruled LIVE, one message per item, and every verdict executed the same
+day (#1406–#1409). What the sitting taught:
+
+- **`edit:` is where the best verdicts arrive.** Item 1 asked "400 or 350
+  FTES"; Sam's edit dissolved the either/or into an instrument (independent
+  dials + an over/under readout). A sheet that only accepts yes/no would have
+  extracted the worse decision. Related: a self-balancing model hides the
+  number its owner needs — the solver keeps the balance at $0 by construction,
+  which is exactly why he could not see over/under.
+- **Overrides are information.** Item 7's recommendation (send the November
+  items separately) was reasoned, and he reversed it with the context in view
+  — the reversal signals his read of the post-SB 135 ground, not a failure of
+  the sheet. Sheets should keep making the case and expect to lose some.
+- **Rulings stream mid-turn; the sheet is the scoreboard.** Each card gained a
+  "Sam's ruling" block and a republish as verdicts landed, so the artifact
+  stayed the live record of the sitting rather than a stale ask.
+- **A ground-shift realization re-founds a register.** Item 8's verbatim gift:
+  *"I wasn't aware that TBL for funding actually results in law"* — the policy
+  register was written for a weaker world, so all ~16 reforms get re-analyzed
+  (still needed × instrument: memo / Title 5 / legislation / procedure), and
+  rows landing on "memo" feed the guidance-memo queue he named in item 7. The
+  re-analysis is the next decision sheet.
+- **On-the-fly braindumps went live the same hour** (vault CLAUDE.md +
+  braindump skill, CPLBrain#48/#49): the trigger is substantive unplanned
+  content appearing, never the word "braindump" — his important statements
+  "just come out of our interactions."
+- **Bookkeeping pitfalls this sitting bit:** a piped test run reports the
+  pipe's exit (see `cpl_funding_lessons.md` §2026-08-30); and after
+  `git checkout -B <branch> origin/main`, the upstream IS origin/main, so a
+  bare `git push` targets nothing useful — push explicitly
+  (`git push origin <branch>`), and verify the remote ref actually moved.

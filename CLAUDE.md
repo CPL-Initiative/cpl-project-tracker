@@ -705,18 +705,20 @@ showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, n
 scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
 "Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.
 
-### SkyLedger S210 — all six remediations built; the score that improved was lying again (2026-08-30)
+### SkyLedger S210 — remediations, the ruleset verdict, and all nineteen verdicts executed (2026-08-30)
 
-**A–F complete** (#1400 E gate · #1401 skip-verify · #1402 B/C/D/F · CPLBrain#46): `js-tests`
-flippable to REQUIRED (docs PRs ~1.5 min, suite PRs ~9 — **the flip is Sam's**); Rule 10 widened
-to ANY shared-table bulk write + reversible-from-receipt (`data_write_rollback.md`) + new write
-surfaces route through Governance/privacy ADRs; F's drift was ONE systematic shift (checkpoints
-8→9, Supabase 9→10) — 16 living files fixed, `citation_drift` lints it, capsules stay verbatim,
-the ritual is now titled **Rule 9 checkpoint**. ⚠️ Registry growth flipped the scenario harness
-to a false 12/12 — `_assert_fixtures_current()` now refuses to score on fixture drift (10/12
-honest). ⚠️ `prose_only` masks 4-space continuations AND the lines after them. ⚠️ A workflow
-edit is a dependency-map input (#1400 made it stale; main red at the drift check until #1402).
-Story: `doctrine_enforcement_lessons`; handoff `session_211_handoff`.
+**A–F BUILT** (#1400–#1402 · CPLBrain#46): Rule 10 widened; 16 files renumbered
+(`citation_drift` lints it); the harness refuses to score on fixture drift. **E
+resolved by measurement**: a required-check ruleset rejected all five cron pushes
+(GH013) — the `test` gate is DOCTRINE; the ruleset keeps force-push + deletion
+blocks only. **Fifteen Tables ruled** (#1404–#1405). **Decision sheets became
+the standing method** (#1406) and Sam ruled the 19-item Open Verdicts sheet LIVE,
+all executed same day (#1407–#1409): Combined award column · frozen header +
+statewide pair · pool card wired to the Budget table · goal-card policy · scope
+68→2 values (receipted) · tab folds · §55050 SENT 2026-08-28 · post-SB 135
+register re-analysis ordered · Blast Radius on Admin. ⚠️ `npm test | tail`
+reports TAIL's exit — CI caught what local masked. Story:
+`doctrine_enforcement_lessons` + `cpl_funding_lessons`; handoff `session_212_handoff`.
 
 ## Troubleshooting
 

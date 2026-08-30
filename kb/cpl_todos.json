@@ -2,8 +2,14 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
  "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
- "_status": "All 19 Open Verdicts items are ruled and executed (2026-08-30). Built same day: the Combined award column, the frozen header + statewide pair, the project-pool card wired to the Budget table's own program rows, the goal cards carrying Sam's demonstration/3-year-report policy, and the Budget Balance mock (awaiting his reaction for the tab port). Queued: Blast Radius, the register re-analysis sheet, the Sierra sweep test, NC dials.",
+ "_status": "All 19 Open Verdicts rulings are executed and merged (2026-08-30): the Combined award column, the frozen header and statewide pair, the project-pool card wired to the Budget table, the goal-card policy, the scope migration (receipted), the governance folds, and Blast Radius on the Admin tab. The Rule 9 checkpoint is committed. Next up: the post-SB 135 register re-analysis sheet, and the Budget Balance port once Sam reacts to the dials.",
  "items": [
+  {
+   "id": "s210-sam-react-dials",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "React to the Budget Balance dials (the item-1 sandbox with the real rosters and live settings). Your reaction shapes the real version on the funding tab; one live finding already baked in: at today's settings the noncredit lane needs $1.68M of the $2M carve-out, and 242.7 FTES is the lowest threshold the pool can cover at the $40k minimum."
+  },
   {
    "id": "s210-fable-register-reanalysis",
    "for": "Fable",
