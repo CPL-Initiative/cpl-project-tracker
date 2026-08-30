@@ -134,7 +134,7 @@
       "id": "s209-sam-governance-judgments",
       "for": "Sam",
       "tab": "governance",
-      "text": "Judge the fifteen new rows on the Governance tab's proposals strip. Each is a table a person can edit through a tab or page that the register has never ruled on - the session memory table, the RACI lists, the fact-sheet overrides, the funding settings, and others. For each: either it deserves a decision-rights row with a named owner, or dismiss it with a reason. The reason is the point - it gets recorded and it stops the row coming back."
+      "text": "Judge the fifteen new rows on the Governance tab's proposals strip. A judgment sheet is ready (delivered in chat, 2026-08-30, and committed as docs/visuals/2026-08-30-governance-fifteen-tables.html): each table has a proposed row, fold, cadence, or dismissal with a draft reason — reply by number and a session writes your rulings into the register."
     },
     {
       "id": "s209-sam-blast-radius-mock",
