@@ -491,3 +491,40 @@ day (#1406–#1409). What the sitting taught:
   (#1413) that booted off nothing but the one-line handoff pointer — the
   doctrine chain (sibling check → highest handoff → memory query → queue)
   ran end-to-end unprompted. The sheet awaits his reply-by-number verdicts.
+
+## 2026-08-30 (evening) — Session 213 (SkyMirror): the lane's groundwork banked, and the boundary honored the hard way
+
+The probe lane's queued pre-run work is done and filed in the VAULT, its
+sanctioned home: the criteria re-read against the post-remediation corpus
+(dated addenda beside the criteria, never inside them), the lane's
+current-truth update, the leak-perimeter verification, and the redo recipe
+for the failed ablation. A fourth instance of the defeat-by-diligence class
+was recorded the same hour, and the measured datum one of the lane's
+standing decisions was waiting on now exists. **Per the boundary handoff 213
+set the same evening — none of that folder's topics, criteria, or results
+restated in any tracker doc or in `cpl_memory` — the instance's shape and
+consequences live only there.** This section's own first draft said more and
+was cut to this during the #1414/#1415 merge; one `cpl_memory` row was
+superseded for the same reason. The boundary's cost is real (a lesson a
+tracker reader cannot see) and it is the cheaper side of the trade.
+
+- **The boot ran on the PUSH layer alone.** This session started from a
+  stale greeting (205/208 named against 212 highest) with NO handoff-pointer
+  paste, and the chain still fired: three-repo check → numeric
+  highest-handoff sort → stale-number flag → Rule 8 memory query before any
+  edit → lane file → live-session reconnaissance. Same chain the PM section
+  observed under a one-line pointer; this boot had none.
+- **Mid-session workstream pivots re-trigger Rule 8.** The greeting's target
+  lane and the lane actually worked differed; the second `cpl_memory` query
+  (doctrine tags) ran before any doctrine-lane write. Rule 8 is
+  per-workstream, not per-session — a session that queries once at boot and
+  then pivots is unread on the lane it actually works.
+- **A merged PR without its lane-file edit is a stale lane by the next
+  morning** — #1413 sat on main for hours while the register lane file still
+  said "queued next sheet". Fixed this checkpoint; if you merge substantive
+  work, move the lane file in the same run, even outside a full checkpoint.
+- **The conflicted-PR trap fired live, exactly as pinned.** #1415 showed ZERO
+  check runs for ten minutes — not Actions lag: `mergeable_state: dirty`
+  against a main that had moved (#1414, the parallel PM checkpoint), and a
+  conflicted PR cannot produce a `pull_request` run. The memory row and the
+  S203 narrative both carry it; the fix is the merge, never a re-run.

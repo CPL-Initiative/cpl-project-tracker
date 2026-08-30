@@ -1,7 +1,7 @@
 ---
 title: The instrument may not live inside the system under test
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-08-30
 tags: [methodology, doctrine, testing, evaluation, session-memory]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -193,3 +193,23 @@ check so the description is out of range — never rely on remembering not to qu
   that way. A human opens the transcript, or the criterion is recorded
   **unmeasured** — which is not the same as passed, and must never be written up
   as one.
+
+## The fourth instance: the subject's REQUIRED READING is a location too (2026-08-30)
+
+Moving the instruments out of the subject's repository closed the storage
+leak — and the next void arrived through scheduling instead. When a subject's
+task is "whatever is currently most important," the subject inherits whatever
+the priority queue currently holds; if the queue's top item is the evaluation
+program itself, then every correct move — and the diligent subject makes them
+fastest — walks the subject toward the apparatus. The instrument had been
+moved out of the subject's *store* but not off the subject's *path*.
+
+The generalization tightens: the earlier rule said *anything the subject can
+read is an input*. This instance adds: **anything the subject's task will make
+it read is part of the apparatus.** An evaluation whose subject is pointed at
+a live work queue is only clean while the queue's top item is not the
+evaluation itself. Check that as a staging condition, or sequence the runs so
+instrument work is never the queue's top while a run is possible, or give the
+subject a pinned task instead of a pointer to the queue — each fixes it;
+relocation alone does not. (The measured instance is filed with the
+instruments, deliberately not here.)

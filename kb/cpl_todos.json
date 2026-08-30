@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
- "_session": "SkyLedger, Session 210 — three-repo practice enforced session-side; the register sheet is built and awaits Sam's numbers",
- "_status": "Since the morning checkpoint: the branch-deletion records are trued (#1411), the three-repo attach practice is session-checked doctrine with a per-machine installer for the zero-repo case (#1412), and a parallel session built the post-SB 135 Register Re-analysis decision sheet (#1413) — 22 numbered items awaiting Sam's reply-by-number verdicts. Sam's cold-session testing is live off his bench artifact; its records file into the vault, never here. Next up: execute the register verdicts as they land, and the Budget Balance port once Sam reacts to the dials.",
+ "_session": "SkyMirror, Session 213 — both halves of 2026-08-30 merged; the register sheet awaits your verdicts",
+ "_status": "Since the morning checkpoint: the branch-deletion records are trued (#1411), the three-repo attach practice is session-checked doctrine with a per-machine installer for the zero-repo case (#1412), and the post-SB 135 Register Re-analysis decision sheet is BUILT (#1413) — 22 numbered items awaiting Sam's reply-by-number verdicts; a session then applies them to the register with a receipt for every edit (run the Sierra small-model comparison first, so both models are judged on the same rows). The rule-testing groundwork is current again; its records file into the vault, never here. Still open on Sam: the Budget Balance dials reaction and the public KB draft PR #22.",
  "items": [
   {
    "id": "s210-sam-react-dials",
@@ -56,7 +56,7 @@
    "id": "s210-fable-sierra-sweep-test",
    "for": "Fable",
    "tab": "cpl-assistant",
-   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
+   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Sequencing: run it BEFORE the register verdicts rewrite rows, so both models are compared on the same ground. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
   },
   {
    "id": "s203-fable-savesweep2",
@@ -80,7 +80,7 @@
    "id": "s208-fable-repair-ablation",
    "for": "Fable",
    "tab": "cpl-implementation",
-   "text": "Run the two remaining rule-testing scenarios and the repaired ablation — deliberately held until the rulebook stopped moving, which it now has. Re-read the committed test criteria first: the rulebook changed since they were written, so score against what is true today and note any adjustments beside the criteria, never inside them."
+   "text": "The rule-testing groundwork is DONE (2026-08-30): the committed criteria were re-checked against the current rulebook with notes recorded beside them, and the redo recipe for the control-arm comparison is written — all filed in the vault. What remains is running the sittings themselves, on demand from the bench; results file into the vault, never here."
   },
   {
    "id": "s209-fable-stale-copies",

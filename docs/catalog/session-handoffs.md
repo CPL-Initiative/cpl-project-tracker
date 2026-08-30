@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-187 document(s).
+188 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 214 | [from SkyMirror (Session 213, the stale-greeting boot)](../session_214_handoff.md) | 2026-08-30 |
 | 213 | [from SkyLedger (Session 210, the day that would not end)](../session_213_handoff.md) | 2026-08-30 |
 | 212 | [from SkyLedger (Session 210, the Open Verdicts sitting)](../session_212_handoff.md) | 2026-08-30 |
 | 211 | [from SkyLedger (Session 210, all six remediations built)](../session_211_handoff.md) | 2026-08-30 |

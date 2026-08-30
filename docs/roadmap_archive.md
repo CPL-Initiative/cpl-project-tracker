@@ -5158,3 +5158,15 @@ the test and void-flagged itself. Instruments → vault; `probe_instrument_leak`
 **Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
 `lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
 
+
+### SkyGov S209 — the map, and then both tabs learned to read it (2026-08-30)
+
+**Remediation A BUILT** (#1396): `kb/_build_dependency_map.py` derives dataset →
+consuming tabs/scripts/workflows/surfaces FROM THE CODE; `docs/reference/dependency_map.md`
++ `kb/dependency_map.json`; `--check` in CI; verified by three adversarial samples
+(2 of 3 found real scanner defects — that is the verification working). Then, on Sam's
+go: **governance candidates project from the map** (#1397 — **15 never-seen human-write
+tables** proposed, NEEDS SAM) and the **Admin surface tells the truth** (#1398 — raci
+showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, not three
+scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
+"Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.

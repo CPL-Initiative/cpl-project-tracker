@@ -5384,7 +5384,7 @@
      ],
      "title": "The instrument may not live inside the system under test",
      "type": "methodology",
-     "updated": "2026-08-29"
+     "updated": "2026-08-30"
     },
     {
      "created": "2026-08-20",
@@ -11307,8 +11307,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 187,
+   "count": 188,
    "docs": [
+    {
+     "created": "2026-08-30",
+     "governs": [],
+     "n": 214,
+     "path": "docs/session_214_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-214",
+      "gr-register",
+      "decision-sheets",
+      "doctrine",
+      "probes"
+     ],
+     "title": "from SkyMirror (Session 213, the stale-greeting boot)",
+     "type": null,
+     "updated": "2026-08-30"
+    },
     {
      "created": "2026-08-30",
      "governs": [],
@@ -14605,5 +14623,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 739
+ "total": 740
 }

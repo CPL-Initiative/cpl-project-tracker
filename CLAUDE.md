@@ -703,18 +703,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyGov S209 — the map, and then both tabs learned to read it (2026-08-30)
-
-**Remediation A BUILT** (#1396): `kb/_build_dependency_map.py` derives dataset →
-consuming tabs/scripts/workflows/surfaces FROM THE CODE; `docs/reference/dependency_map.md`
-+ `kb/dependency_map.json`; `--check` in CI; verified by three adversarial samples
-(2 of 3 found real scanner defects — that is the verification working). Then, on Sam's
-go: **governance candidates project from the map** (#1397 — **15 never-seen human-write
-tables** proposed, NEEDS SAM) and the **Admin surface tells the truth** (#1398 — raci
-showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, not three
-scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
-"Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.
-
 ### SkyLedger S210 — remediations, the ruleset verdict, and all nineteen verdicts executed (2026-08-30)
 
 **A–F BUILT** (#1400–#1402 · CPLBrain#46): Rule 10 widened; 16 files renumbered
@@ -733,6 +721,21 @@ what's missing; per-machine installer for the zero-repo case); the parallel
 Session-212 line shipped the register re-analysis sheet (#1413, awaiting Sam's
 numbers). Story: `doctrine_enforcement_lessons` + `cpl_funding_lessons`;
 handoff `session_213_handoff`.
+
+### SkyMirror S213 — the sheet caught up with its lane, and the probe groundwork banked (2026-08-30)
+
+**Register lane truth restored**: the re-analysis sheet is BUILT (#1413 — 16 rows ×
+still-needed × instrument, 5 candidate rows, the three-memo grouping) and waits on
+**Sam's by-number verdicts**; the prior session merged it without a checkpoint, so the
+lane file and feed said "queued" while main said "built". ⚠️ Run the Sierra small-model
+sweep BEFORE verdicts rewrite rows (same-ground comparison). **Doctrine-probe lane**:
+the S211-ordered pre-run work is done vault-side — criteria re-read against the settled
+corpus (dated addenda beside, never inside), lane current-truth, the ablation-redo
+recipe, perimeter verified clean. A fourth defeat-by-diligence instance is recorded
+with the instruments; handoff 213's boundary (nothing of that folder restated
+tracker-side or in `cpl_memory`) is honored and was applied retroactively to this
+session's own drafts in the #1414/#1415 merge. Story:
+`doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
 
 ## Troubleshooting
 
