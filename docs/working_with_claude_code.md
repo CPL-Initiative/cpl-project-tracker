@@ -243,6 +243,17 @@ for is the wrong thing to build.
 
 ---
 
+## 11. Decisions come to you as a sheet
+
+When work piles up decisions only you can make, ask for (or expect) a
+**decision sheet**: one page, numbered, where every item says what it is in
+plain words, what we measured, and what we propose — so your part is a short
+reply like `1–6 yes · 7 edit: also needs my sign-off · 15 dismiss`. A session
+then carries your verdicts into the registers and commits the reasons.
+Scattered questions across a chat, or a to-do list that just names the
+decision without preparing it, are what this replaces. If someone asks you to
+decide something without the preparation, ask for the sheet.
+
 ## For Sam — a note on agents
 
 You floated *"maybe need some established agents who are mindful of these

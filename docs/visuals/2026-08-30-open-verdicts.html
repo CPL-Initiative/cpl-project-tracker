@@ -1,0 +1,373 @@
+<title>Open Verdicts</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — single-theme light by design. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36;
+    --text-muted: #5C5C55; --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000; --cobalt: #0047AB; --hunter: #2C601A;
+    --mustard-text: #8B6800; --focus-ring: var(--cobalt); --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px;
+    line-height: 1.55; margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  .howto code { background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em; }
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: 999px; padding: 5px 14px; font-size: .9rem; }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip { margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .chip.rec     { color: var(--cobalt);       border-color: var(--cobalt);        background: var(--surface-opaque); }
+  .chip.fold    { color: var(--hunter);       border-color: var(--hunter);        background: var(--surface-opaque); }
+  .chip.yours   { color: var(--mustard-text); border-color: var(--mustard-text);  background: var(--surface-opaque); }
+  .chip.action  { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .card dl { margin: 8px 0 0; }
+  .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem;
+    font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  @media (max-width: 560px) { .card header { gap: 8px; } .chip { margin-left: 0; } }
+</style>
+
+<a class="skip" href="#sheet">Skip to the verdicts</a>
+<div class="wrap">
+
+<p class="kicker">Everything waiting on Sam · all lanes · 2026-08-30</p>
+<h1>Open Verdicts</h1>
+<p class="lede">Every decision currently parked on your side of the fence, in one
+place — gathered from the To-Do feed, the handoff, and this morning's governance
+round. Fifteen are judgments with a recommendation attached; four are actions
+only you can physically take.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> reply by number — <code>yes</code> takes the
+  recommendation, or override with your own call
+  (<code>edit: …</code>, <code>later</code>, <code>dismiss</code>).</p>
+  <p>Example: <code>1–3 yes · 5: here are the names… · 9 later</code></p>
+  <p>Items marked <em>Action — yours only</em> need a click or a command from
+  you, not a verdict.</p>
+</div>
+
+<ul class="tally">
+  <li><b>15</b> judgments (13 with a recommendation)</li>
+  <li><b>4</b> actions only you can take</li>
+  <li><b>1</b> future sheet queued: owners for the 30 register rows</li>
+</ul>
+
+<div id="sheet">
+
+<h2 class="kicker">Implementation funding — the $35M tab</h2>
+
+<section class="card">
+  <header><span class="num">1</span> <span class="tname">Noncredit entry threshold</span>
+  <span class="chip rec">Recommend: 400 FTES</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>The noncredit entry threshold and the $50,000 minimum award are one
+    decision, not two: 400 FTES is the last step the $1.8M set-aside covers;
+    350 would need $1.90M.</dd>
+    <dt>Recommendation</dt>
+    <dd>Hold at 400 FTES — it is what the money covers. Choosing 350 is really
+    the decision to find another $100,000, so say it that way if you want it.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">2</span> <span class="tname">Combined award row</span>
+  <span class="chip rec">Recommend: yes</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Whether the Award range gets a third, Combined row. Mt. San Antonio
+    receives $400,000 credit plus $100,000 noncredit — a real $500,000 total
+    that appears nowhere on the page today.</dd>
+    <dt>Recommendation</dt>
+    <dd>Add it. A college reading its own award should be able to see its own
+    total.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">3</span> <span class="tname">The story-collection question</span>
+  <span class="chip rec">Recommend: yes</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Add one question when CPL stories are gathered: <em>what changed at
+    work?</em> Of 36 stories held, about four describe a job outcome — the rest
+    describe degrees, so they cannot evidence the career-attainment goal they
+    are reported against.</dd>
+    <dt>Recommendation</dt>
+    <dd>Yes — costless at collection time, unfixable afterward.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">4</span> <span class="tname">Noncredit strategies on the cards</span>
+  <span class="chip action">Action — yours only</span></header>
+  <dl>
+    <dt>What to do</dt>
+    <dd>Read the noncredit strategies now on the cards and edit freely — they
+    are directly editable, and deliberately not the credit ones (a noncredit
+    institution prepares students to earn credit elsewhere).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">5</span> <span class="tname">The $8.96M project pool</span>
+  <span class="chip yours">Your data needed</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Name the projects behind the pool and roughly what each gets. The
+    ledger holds it as one line with nothing underneath, and none of the 32
+    registered projects is funded from the $35M — splitting it without you
+    means inventing figures.</dd>
+    <dt>What happens on your answer</dt>
+    <dd>Give the names and amounts in any form; tagging each to a legal goal is
+    same-day work after that.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Title 5 §55050 and the policy register</h2>
+
+<section class="card">
+  <header><span class="num">6</span> <span class="tname">Send the §55050 package</span>
+  <span class="chip rec">Recommend: send</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Version 5 is ready: every one of your decisions in it, real tracked
+    changes against the adopted regulation (undoing them reproduces it word for
+    word, machine-checked), plus the Regulatory Action Proposal in your
+    November format. The only blank is the 2026-27 calendar — five dates
+    (curriculum committee, field vetting, Consultation Council, two Board
+    readings).</dd>
+    <dt>Recommendation</dt>
+    <dd>Send on your timing; the dates can go in marked proposed if the
+    recipient is the one who sets them. Nothing else is waiting.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">7</span> <span class="tname">The four November policy items</span>
+  <span class="chip rec">Recommend: separately</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Whether the four policy items from your November draft travel with the
+    package or on their own.</dd>
+    <dt>Recommendation</dt>
+    <dd>Separately — they were argued last November and lost, and bundling
+    invites a reader to treat the whole filing as reopening a settled
+    negotiation. Two riders when they do travel: the grading clause needs its
+    §55023 companion amendment, and the no-fee item just gained a second legal
+    anchor in the Career Passport statute.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">8</span> <span class="tname">Three register fixes</span>
+  <span class="chip rec">Recommend: all three</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Entry #16 points at a lettered paragraph the August adoption moved;
+    entry #2 still asks the Legislature for college-to-college reciprocity that
+    is already law (the "no second review" half and the CSU/UC half survive);
+    entry #10 deserves a fresh look now that #9 is settled — recording the
+    credit was never the same request as flagging where it came from.</dd>
+    <dt>Recommendation</dt>
+    <dd>Approve all three; each is a correction, not a position change.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">9</span> <span class="tname">The §75013 workgroup</span>
+  <span class="chip rec">Recommend: pursue a seat</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Register entry #7 — making prior-learning credit generate funding —
+    names the Department of Finance and the attendance rules as its obstacle.
+    The same new bill creates a workgroup that must design exactly that kind
+    of non-seat-time funding measure and report to Finance by October 2028.
+    Scoped to competency-based education, so a venue rather than a solution —
+    but it is the room where this gets designed, and we are not in it.</dd>
+    <dt>Recommendation</dt>
+    <dd>Pursue a seat or at least a liaison when you have the bandwidth — a
+    watching brief costs little and the alternative is reading the design
+    after it is fixed.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Sierra</h2>
+
+<section class="card">
+  <header><span class="num">10</span> <span class="tname">Model revert timing</span>
+  <span class="chip rec">Recommend: test first, then revert</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Sierra runs on the smaller model as your temporary cost measure (about
+    a third the price). Switching back needs no code change: one setting on
+    the Supabase project.</dd>
+    <dt>Recommendation</dt>
+    <dd>Before relying on the small model longer-term, run the sixteen-row
+    register sweep on it once — the hardest thing the assistant does and where
+    a smaller model would show first. Revert when corporate billing lands, or
+    immediately if that sweep disappoints.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Funding tab presentation</h2>
+
+<section class="card">
+  <header><span class="num">11</span> <span class="tname">Frozen header on the college table</span>
+  <span class="chip rec">Recommend: freeze, no lazy loading</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Whether the college table scrolls inside a frozen header.</dd>
+    <dt>Recommendation</dt>
+    <dd>Freeze the header and the two statewide rows so they stay visible; do
+    NOT load colleges lazily — 115 rows is small, and lazy loading breaks
+    Ctrl-F and makes the Excel export stop matching the screen.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">12</span> <span class="tname">Noncredit rows and the goals section</span>
+  <span class="chip yours">Your read needed</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>Seven colleges show "none on record" for noncredit (Taft, Fullerton,
+    American River, Cosumnes River, and the three San Diegos) — if any runs a
+    noncredit program, that is a traceable data error. And two goal labels
+    need your blessing or correction: career attainment shown as <em>funded
+    but unmeasurable</em>, and the equity goal marked <em>not measured</em>
+    (nothing we hold describes how credit spreads across student groups).</dd>
+    <dt>What happens on your answer</dt>
+    <dd>Name any college wrongly at "none" and we trace it; confirm or reword
+    the two labels and they stand as policy, not placeholder.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Memory and governance</h2>
+
+<section class="card">
+  <header><span class="num">13</span> <span class="tname">The memory scope field</span>
+  <span class="chip rec">Recommend: two values</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>The scope field is free-form: ten different words where "funding" and
+    "cpl-funding" mean the same thing, a quarter duplicating a tag the entry
+    already has. 68 entries filled, 584 blank.</dd>
+    <dt>Recommendation</dt>
+    <dd>Two values — <em>general</em> vs <em>workstream-specific</em> — with
+    tags keeping the topic. A session migrates the 68; blanks stay blank until
+    touched. Nothing has been changed yet.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">14</span> <span class="tname">The chatbot tab candidate</span>
+  <span class="chip fold">Recommend: fold into CA-06</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>The last governance candidates after your fifteen: the chatbot tab
+    writes shared state through the feedback-upsert call.</dd>
+    <dt>Recommendation</dt>
+    <dd>Map it to CA-06 — that call feeds the very queue the Sierra feedback
+    triage cadence exists to read. No new row.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">15</span> <span class="tname">The college-briefing tab candidate</span>
+  <span class="chip fold">Recommend: fold into DR-09</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>The college-briefing tab writes the funding opt-in review and the
+    funding tables through its own calls.</dd>
+    <dt>Recommendation</dt>
+    <dd>Map it to DR-09 — the same money decision you just folded the three
+    funding tables into; this is its college-facing doorway. Ruling 14 and 15
+    empties the governance candidates strip completely.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Actions only you can take</h2>
+
+<section class="card">
+  <header><span class="num">16</span> <span class="tname">Delete the old experiment branch</span>
+  <span class="chip action">Action — yours only</span></header>
+  <dl>
+    <dt>What to do</dt>
+    <dd>On GitHub's Branches page, delete the leftover experiment branch — its
+    name is written only in your vault's probe notes because the name itself
+    gives away a test topic, and sessions cannot delete branches.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">17</span> <span class="tname">One word in the public knowledge base</span>
+  <span class="chip action">Action — yours only</span></header>
+  <dl>
+    <dt>What to do</dt>
+    <dd>In the public KB's instruction file, change the one stale "(Rule 8)"
+    to "(Rule 9)" — that repo changes only through your review pipeline, so
+    the edit is yours (the GitHub web editor's propose-change flow is the
+    two-minute path).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">18</span> <span class="tname">The context-pressure installer</span>
+  <span class="chip action">Action — yours only</span></header>
+  <dl>
+    <dt>What to do</dt>
+    <dd>On your machine: pull main, then run
+    <code>powershell -ExecutionPolicy Bypass -File scripts\install-context-hook.ps1</code>
+    — or simply ask your next local session to verify the hook is installed
+    and fires. Until it is, nothing warns before a session runs out of room,
+    which is how 778,000 tokens of working context were lost on the 29th.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">19</span> <span class="tname">The Blast Radius mock</span>
+  <span class="chip rec">Recommend: build it</span></header>
+  <dl>
+    <dt>The decision</dt>
+    <dd>React to the Blast Radius mock-up (link in your Session 209 chat):
+    pick any dataset, see every tab, page, script and scheduled job touching
+    it, who writes it, and whether the daily job publishes it without review.</dd>
+    <dt>Recommendation</dt>
+    <dd>Build it into the Admin tab — it is the human face of the impact map,
+    and the map is now the one derivation everything else already trusts. One
+    look from you first, per your own prototype-first rule.</dd>
+  </dl>
+</section>
+
+</div>
+
+<p class="lede" style="margin-top:34px">Queued as its own future sheet: owners
+for the thirty register rows — that one needs your knowledge of the team, so it
+arrives when you want it, not before. Nothing on this page changes anything
+until you rule.</p>
+
+</div>

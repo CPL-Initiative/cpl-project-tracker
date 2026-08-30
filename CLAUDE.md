@@ -320,6 +320,19 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
+- **DECISIONS ARRIVE AS DECISION SHEETS (Sam, 2026-08-30).** *"I'd like to
+  handle all my current and future decisions this way."* When judgments only
+  Sam can make accumulate — in one lane or across many — build ONE numbered
+  sheet (a First Light artifact, committed to `docs/visuals/` with a dated
+  slug): per item, what it is in plain words, the measured context (from the
+  maps and feeds, never guessed), a PROPOSED disposition with its draft
+  reason, and reply-by-number verdicts (`yes · edit: … · fold: … ·
+  dismiss: …`). The session executes the verdicts and commits the reasons.
+  This replaces asks scattered through chat and feed items parked for weeks;
+  the To-Do feed POINTS at the live sheet, never substitutes for it. Worked
+  example: `docs/visuals/2026-08-30-governance-fifteen-tables.html` —
+  fifteen rulings in one sitting. Human-facing version:
+  `docs/working_with_claude_code.md` §11.
 - **Call the effort level (added Session 128, 2026-08-08).** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no
