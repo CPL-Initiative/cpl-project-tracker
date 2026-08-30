@@ -4,7 +4,7 @@
   "supabase_tables": 72,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 392,
+  "file_datasets": 393,
   "external_services": 136,
   "consumers": 304,
   "workflows": 32,
@@ -3425,7 +3425,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 212,
+     "line": 217,
      "tabs": [
       "admin"
      ]
@@ -8395,6 +8395,22 @@
      "direction": "read",
      "how": "literal",
      "line": 257
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/dependency_map.json": {
+   "consumers": [
+    {
+     "id": "module:admin.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1163,
+     "tabs": [
+      "admin"
+     ]
     }
    ],
    "served": true,
@@ -13529,7 +13545,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 294,
+     "line": 299,
      "tabs": [
       "admin"
      ]
@@ -14224,7 +14240,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 671,
+     "line": 676,
      "tabs": [
       "admin"
      ]

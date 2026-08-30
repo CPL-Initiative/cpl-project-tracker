@@ -5,12 +5,6 @@
  "_status": "All 19 Open Verdicts items are ruled and executed (2026-08-30). Built same day: the Combined award column, the frozen header + statewide pair, the project-pool card wired to the Budget table's own program rows, the goal cards carrying Sam's demonstration/3-year-report policy, and the Budget Balance mock (awaiting his reaction for the tab port). Queued: Blast Radius, the register re-analysis sheet, the Sierra sweep test, NC dials.",
  "items": [
   {
-   "id": "s210-fable-blast-radius-build",
-   "for": "Fable",
-   "tab": "admin",
-   "text": "Build Blast Radius into the Admin tab (Sam's 'blast away', 2026-08-30, item 19): pick any dataset, see every tab, page, script and scheduled job touching it, who writes it, and whether the daily job publishes it without review - the S209 mock's design, reading kb/dependency_map.json live."
-  },
-  {
    "id": "s210-fable-register-reanalysis",
    "for": "Fable",
    "tab": "gr-register",
