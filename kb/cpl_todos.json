@@ -2,19 +2,13 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
  "_session": "SkyLedger, Session 210 — all six approved rule fixes are built",
- "_status": "Sam is ruling the Open Verdicts sheet live (2026-08-30): items 1-5 landed - the funding model becomes independent dials with an over/under-budget readout (mock next), the Combined award column is built and shipping, the story-intake question has his final wording, the noncredit strategies are reviewed, and the project pool card wires to the joint Activities/Targets/Budget tables. Remaining sheet items await his numbers.",
+ "_status": "All 19 Open Verdicts items are ruled and executed (2026-08-30). Built same day: the Combined award column, the frozen header + statewide pair, the project-pool card wired to the Budget table's own program rows, the goal cards carrying Sam's demonstration/3-year-report policy, and the Budget Balance mock (awaiting his reaction for the tab port). Queued: Blast Radius, the register re-analysis sheet, the Sierra sweep test, NC dials.",
  "items": [
   {
    "id": "s210-fable-blast-radius-build",
    "for": "Fable",
    "tab": "admin",
    "text": "Build Blast Radius into the Admin tab (Sam's 'blast away', 2026-08-30, item 19): pick any dataset, see every tab, page, script and scheduled job touching it, who writes it, and whether the daily job publishes it without review - the S209 mock's design, reading kb/dependency_map.json live."
-  },
-  {
-   "id": "s210-fable-goal-card-language",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Carry Sam's item-12 policy onto the two goal cards (2026-08-30): career attainment is demonstrated - My CPL Stories touching career attainment plus funded projects building infrastructure and interagency integration - never directly measured; equity is analyzed in the system's 3-year legislative reports (MIS + CCCApply + MAP disaggregated), not in college outcome funding."
   },
   {
    "id": "s210-fable-register-reanalysis",
@@ -39,12 +33,6 @@
    "for": "Fable",
    "tab": "cpl-implementation",
    "text": "Build the Budget Balance readout Sam ruled for on the Open Verdicts sheet (item 1): the noncredit threshold, the minimum award, and the funding buckets are independent dials, and one always-on surface says where the model is over or under budget as they move. The dials and the solver's feasibility figures already exist; the build is the consolidated readout. First Light mock first, port on his reaction."
-  },
-  {
-   "id": "s210-fable-projectpool-wire",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Wire the project pool card's breakdown from the jointly wired Activities, Annual Targets, and Budget tables — never a hand-invented split — and make the card hidable with a toggle (Sam's Open Verdicts item-5 ruling, 2026-08-30)."
   },
   {
    "id": "s210-sam-tidyups",
@@ -75,12 +63,6 @@
    "for": "Sam",
    "tab": "cpl-implementation",
    "text": "Say whether you want the college table to scroll inside a frozen header. We recommend freezing the header and the two statewide rows so they stay visible while you scroll. We recommend AGAINST loading colleges lazily — 115 colleges is a small table, and it would break Ctrl-F searching and make the Excel export stop matching the screen."
-  },
-  {
-   "id": "s203-fable-sticky",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "UNBLOCKED - Sam adopted the recommendation (2026-08-30, item 11): freeze the college table's header and the statewide CR/NC pair, no lazy loading. Build it next on the funding tab, after the Combined column lands. The catch is that the second frozen row has to know exactly how tall the header is; measure it rather than typing a number, or it breaks at other zoom levels and font sizes."
   },
   {
    "id": "s203-fable-savesweep2",

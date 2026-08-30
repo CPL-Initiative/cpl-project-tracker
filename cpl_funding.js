@@ -263,11 +263,30 @@
     // ruling (2026-08-30) asked for the pair's one total "centered vertically
     // and horizontally", so it is the lone money cell not right-aligned.
     ".cplfund-table td.cf-combined { vertical-align: middle; text-align: center; }",
+    // The project-pool card's folded project list (Sam's item 5): word-toggle
+    // summary, left-aligned inside the centered card, quiet type.
+    ".cplfund-pool-projects { margin-top: 8px; text-align: left; font-size: .85rem; }",
+    ".cplfund-pool-projects summary { cursor: pointer; font-weight: 600; color: var(--accent-link); }",
+    ".cplfund-pool-projects ul { margin: 6px 0; padding-left: 1.1em; }",
+    ".cplfund-pool-projects li { margin: 2px 0; font-variant-numeric: tabular-nums; }",
+    ".cplfund-pool-projects-drift { color: var(--red-alert); font-weight: 600; }",
     ".cplfund-table tfoot td { border-top: 2px solid var(--seal-blue); background: var(--surface-muted); }",
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23) —
     // bold, muted-fill, a heavy rule under it, and immune to the zebra + hover.
     ".cplfund-table tbody tr.cplfund-systemrow td { font-weight: 700; color: var(--navy-primary); background: var(--surface-muted); border-top: none; border-bottom: 2px solid var(--seal-blue); }",
     ".cplfund-table tbody tr.cplfund-systemrow:hover td { background: var(--surface-muted); }",
+    // FROZEN HEADER + STATEWIDE PAIR (Sam's Open Verdicts item 11, 2026-08-30:
+    // freeze, NO lazy loading). The header th is already sticky at top:0; the
+    // two SYSTEM rows pin beneath it at offsets MEASURED by pinFrozenRows() —
+    // a typed pixel height breaks at other zoom levels and font sizes (the
+    // S203 catch), so the vars default to nothing and the rows only pin once
+    // real heights are read. Both system rows carry .cplfund-systemrow, so the
+    // sticky+z rule below covers the NC half too; its own top comes from the
+    // second var. The opaque --surface-muted fill above means college rows
+    // slide UNDER, never through; the th outranks both.
+    ".cplfund-table th { z-index: 3; }",
+    ".cplfund-table tbody tr.cplfund-systemrow td { position: sticky; top: var(--cf-pin1, auto); z-index: 2; }",
+    ".cplfund-table tbody tr.cplfund-ncsysrow td { top: var(--cf-pin2, auto); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
     // The caret is a real <button> (a11y, 2026-07-28) — reset the button chrome
     // so it still reads as a bare caret glyph, keep it keyboard-focusable.
@@ -896,7 +915,11 @@
   //    say so (see ledgerDriftHtml) rather than letting it diverge silently.
   //    Fail-soft: no fetch, no row, or a non-finite value ⇒ the committed value
   //    stands, so the tab can never render $0 because Supabase was unreachable.
-  var LEDGER = { loaded: false, ok: false, pool: {} };
+  // projectRows: the ledger's `pool`-section rows (the named project program —
+  // two parent rows + their children), for the project-pool card's live
+  // breakdown (Sam's Open Verdicts item 5, 2026-08-30: sourced from the
+  // jointly wired tables, never a hand-typed split). null until fetched.
+  var LEDGER = { loaded: false, ok: false, pool: {}, projectRows: null };
   function ledgerPool(field) {
     var v = LEDGER.ok ? LEDGER.pool[field] : undefined;
     return (v == null || !isFinite(v)) ? undefined : v;
@@ -2279,8 +2302,14 @@
   function loadLedger() {
     if (!remoteEnabled()) return;
     LEDGER.loaded = true;
+    // Widened 2026-08-30 (Sam's item 5): the same anon read also brings the
+    // `pool`-section rows — the named project program (two parents + children)
+    // — so the project-pool card lists real projects from the Budget table
+    // instead of holding a second copy. budget_ledger.js already reads these
+    // rows publicly; nothing new is disclosed.
     fetch(SUPABASE_URL + "/rest/v1/budget_funding" +
-          "?select=model_field,total,archived&model_field=not.is.null&archived=is.false",
+          "?select=id,name,model_field,total,parent_id,section,sort_order,archived" +
+          "&or=(model_field.not.is.null,section.eq.pool)&archived=is.false",
           { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rows) {
@@ -2291,6 +2320,7 @@
           if (row.model_field && isFinite(v)) pool[row.model_field] = v;
         });
         if (!Object.keys(pool).length) return;
+        LEDGER.projectRows = rows.filter(function (row) { return row.section === "pool"; });
         LEDGER.pool = pool;
         LEDGER.ok = true;
         _allocCache = null; _ncCache = null; _earnCache = null; _ncEarnCache = null;
@@ -3617,13 +3647,60 @@
         l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool" }));
     }
 
+    // The project-pool card's live breakdown (Sam's Open Verdicts item 5,
+    // 2026-08-30): the named projects come FROM the jointly wired Activities /
+    // Annual Targets / Budget tables — the ledger's `pool`-section rows are
+    // the Budget table's own program list — and the list folds behind a word
+    // toggle so the card stays compact. The amendment does not split projects
+    // by appropriation: the $35M share and the $15M share fund ONE program,
+    // so no project is ever attributed to either share alone (that attribution
+    // would be the invented split Sam ruled out). Leads and status stay in the
+    // Activities register; this card never copies them.
+    function poolProjectsFoldHtml() {
+      var share35 = Number(poolField("scaling_projects_tech")) || 0;
+      var share15 = Number((LEDGER.pool && LEDGER.pool.remaining_2025_26) != null
+        ? LEDGER.pool.remaining_2025_26 : base().pool.remaining_2025_26) || 0;
+      var combined = share35 + share15;
+      var rows = LEDGER.projectRows;
+      var body;
+      if (!rows || !rows.length) {
+        body = '<p class="dk">The Budget table&rsquo;s project rows are not loaded right now &mdash; ' +
+          "no list rather than a stale copy. They appear here live once the ledger read completes.</p>";
+      } else {
+        var parents = rows.filter(function (r) { return r.parent_id == null; });
+        var groupSum = 0;
+        var groups = parents.map(function (p) {
+          var kids = rows.filter(function (c) { return c.parent_id === p.id; });
+          var pTot = Number(p.total) || 0;
+          groupSum += pTot;
+          return "<li><strong>" + esc(p.name) + "</strong> &mdash; " + fmtMoney(pTot) +
+            (kids.length ? "<ul>" + kids.map(function (c) {
+              return "<li>" + esc(c.name) + " &mdash; " + fmtMoney(Number(c.total) || 0) + "</li>";
+            }).join("") + "</ul>" : "") + "</li>";
+        }).join("");
+        var drift = Math.round(groupSum - combined);
+        body = "<p>This share joins the $15M appropriation&rsquo;s " + fmtMoney(share15) +
+          " in <strong>one " + fmtMoney(combined) + " project program</strong> &mdash; the amendment does not " +
+          "split projects by appropriation, so no project below is attributed to either share alone.</p>" +
+          "<ul>" + groups + "</ul>" +
+          (drift !== 0
+            ? '<p class="cplfund-pool-projects-drift">⚠ The program rows sum to ' + fmtMoney(groupSum) +
+              " &mdash; " + fmtMoney(Math.abs(drift)) + (drift > 0 ? " more" : " less") +
+              " than the two shares. The Budget table decides; this card only reports the gap.</p>"
+            : "") +
+          '<p class="dk">Amounts read live from the Budget table; leads and status live in the Activities register.</p>';
+      }
+      return '<details class="cplfund-pool-projects"><summary>Named projects &mdash; show the list</summary>' +
+        body + "</details>";
+    }
     // Deductions (skip hidden).
     CORE_DEDUCTION.forEach(function (b) {
       var def = b.def || base().pool.admin_cost_label;
       if (poolSkip(b.field)) return;
       out.push(card({ neg: true, v: valueEd(b.field, true),
         l: labelEd(b.field, def) + goalSupHtml(poolGoals(b.field), poolLabel(b.field, def)) +
-           ' <span class="dk">&mdash; deducted</span>',
+           ' <span class="dk">&mdash; deducted</span>' +
+           (b.field === "scaling_projects_tech" ? poolProjectsFoldHtml() : ""),
         x: pubEye(b.field, poolLabel(b.field, def)) + hideX(b.field, poolLabel(b.field, def)) }));
     });
 
@@ -4118,19 +4195,33 @@
       // not a caveat someone remembered to type.
       var extra = "";
       if (g.key === "A") {
-        extra = '<p class="cplfund-goal-limit">⚠ <strong>&ldquo;Equitably&rdquo; is not measured.</strong> ' +
-          "The measures behind this goal count CPL volume; none of them describes how that volume is " +
-          "distributed across student populations. The model&rsquo;s equity devices &mdash; the minimum-award " +
-          "floor and the award ceiling &mdash; equalise between <em>colleges</em>, which is a different claim " +
-          "from equitable access <em>for students</em>.</p>";
+        // Sam's item-12 ruling (2026-08-30): the limit stands AND is policy,
+        // not an open problem — student-level equity belongs to the system's
+        // 3-year legislative reports, never to college outcome funding.
+        extra = '<p class="cplfund-goal-limit">⚠ <strong>&ldquo;Equitably&rdquo; is not measured here &mdash; by design.</strong> ' +
+          "The measures behind this goal count CPL volume; none describes how that volume is distributed " +
+          "across student populations, and the model&rsquo;s equity devices &mdash; the minimum-award floor " +
+          "and the award ceiling &mdash; equalise between <em>colleges</em>, a different claim from equitable " +
+          "access <em>for students</em>. Student-level equity is deliberately not scored in college outcome " +
+          "funding: it belongs to the system&rsquo;s <strong>three-year reports to the Legislature</strong>, " +
+          "where MIS, CCCApply, and MAP data are pulled together, disaggregated, and analyzed (Sam, 2026-08-30).</p>";
       }
       if (g.key === "C" && story) {
-        extra = '<p class="cplfund-goal-limit">⚠ <strong>The qualitative evidence documents a different goal.</strong> ' +
-          "Of the <strong>" + fmtInt(story.total) + "</strong> published CPL stories, <strong>" +
-          fmtInt(story.edu) + "</strong> end at an educational destination and <strong>" + fmtInt(story.job) +
-          "</strong> name a job or role. The corpus records where people came from in work and where they " +
-          "arrived in <em>education</em> &mdash; evidence for (B), not for (C). Fixable at intake, by asking " +
-          "what changed at work; nothing in analysis recovers it.</p>";
+        // Sam's items 3 + 12 rulings (2026-08-30): goal C is DEMONSTRATED,
+        // never directly measured ("not measurable at this time, and may
+        // never be") — stories touching career attainment plus funded
+        // infrastructure/interagency projects are the evidence, and the
+        // intake question now has his final wording.
+        extra = '<p class="cplfund-goal-limit"><strong>Demonstrated, not directly measured &mdash; by design.</strong> ' +
+          "The Initiative shows support for career-attainment outcomes without attempting to measure " +
+          "recipients&rsquo; attainment directly (not measurable at this time, and may never be). The " +
+          "evidence is qualitative: <strong>My CPL Stories</strong> that touch on career attainment, plus " +
+          "funded projects and innovations building infrastructure and interagency integration (Sam, 2026-08-30). " +
+          "⚠ The corpus is still catching up: of the <strong>" + fmtInt(story.total) + "</strong> published " +
+          "stories, <strong>" + fmtInt(story.edu) + "</strong> end at an educational destination and only " +
+          "<strong>" + fmtInt(story.job) + "</strong> name a job or role &mdash; today&rsquo;s corpus is " +
+          "evidence for (B), not yet for (C) &mdash; which is why every story collection now asks " +
+          "<em>&ldquo;What changed in your work or career path?&rdquo;</em> (his wording, items 3 + 12).</p>";
       }
 
       return '<article class="cplfund-goal" id="cplfund-goal-' + esc(g.key) + '">' +
@@ -8032,9 +8123,26 @@
     var name = wrap.querySelector('[data-optinfield="name"]');
     if (name) { try { name.focus(); } catch (e) {} }
   }
+  // Measure the frozen offsets (Sam's item 11, 2026-08-30). The statewide pair
+  // pins under the sticky header at top = the header's REAL height (and the
+  // NC half under that plus the CR row's real height) — measured, never typed,
+  // or it breaks at other zoom levels and font sizes (the S203 catch). Runs
+  // after every table (re)render and on window resize; in jsdom the rects are
+  // zero and the vars are simply harmless zeros.
+  function pinFrozenRows() {
+    var wrap = document.querySelector("#cplFundTable .cplfund-tablewrap");
+    if (!wrap) return;
+    var thead = wrap.querySelector("thead");
+    var sysCr = wrap.querySelector("tbody tr.cplfund-systemrow:not(.cplfund-ncsysrow)");
+    var h1 = thead ? thead.getBoundingClientRect().height : 0;
+    var h2 = sysCr ? sysCr.getBoundingClientRect().height : 0;
+    wrap.style.setProperty("--cf-pin1", h1 + "px");
+    wrap.style.setProperty("--cf-pin2", (h1 + h2) + "px");
+  }
   function wireTable() {
     var holder = document.getElementById("cplFundTable");
     if (!holder) return;
+    pinFrozenRows();
     if (publicMode()) stripCurateAffordances(holder);   // the table re-renders on its own
     function activateKey(e) {   // Enter or Space activates a focusable control
       return e.key === "Enter" || e.key === " " || e.key === "Spacebar" || e.keyCode === 13 || e.keyCode === 32;
@@ -8677,6 +8785,10 @@
   function boot() {
     if (booted) { render(); return; }
     booted = true;
+    // Re-measure the frozen-row pins when the window changes size or zoom —
+    // registered ONCE here, behind the booted guard, so re-boots never stack
+    // listeners.
+    try { window.addEventListener("resize", pinFrozenRows); } catch (e) {}
     loadScenario();
     if (window.CPL_FUNDING) applyCollegeDeepLink();
     function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
@@ -8694,6 +8806,9 @@
 
   window.CPL_FUNDING_TAB = {
     boot: boot, render: render, _state: state,
+    // test hook: the ledger store, so suites can exercise the project-pool
+    // breakdown's loaded state without a network (NO_REMOTE keeps fetch out).
+    _ledger: LEDGER,
     // test hooks
     // _setShared writes the ACTIVE scenario's overrides; _setScenario the active
     // per-browser what-if overlay (keeps the SCENARIO ?? SHARED ?? BASE contract).

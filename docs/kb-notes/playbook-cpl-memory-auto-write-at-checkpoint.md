@@ -87,6 +87,11 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
 7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
    on. It's a retrieval surface (query by scope), not an infinite feed.
+8. **`scope` is a TWO-VALUE vocabulary (Sam's ruling, 2026-08-30, Open Verdicts
+   item 13): `general` | `workstream-specific`** — tags keep the topic. Never
+   write any other value; leave it blank when unsure (blanks are legitimate and
+   stay blank until touched). The 68 legacy free-form values were migrated that
+   day with per-row before/after receipts in `cpl_memory_log`.
 
 ### SQL patterns (via `mcp__Supabase__execute_sql`, project `hvuwhnbuahrtptokpqfh`)
 
