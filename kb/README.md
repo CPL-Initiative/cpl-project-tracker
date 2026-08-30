@@ -257,11 +257,22 @@ code-span-aware (`split_table_row`), and **a row the rule cannot parse is a
 finding, not an exemption**. The lane files carry their own `roadmap_lane`
 budget (12,000 B) so they cannot grow unwatched.
 
+⚠️ **`citation_drift` added 2026-08-30 (Session 210, remediation F).** A living
+doc citing a Critical Rule by a number it no longer has — the S208 ablation
+found Supabase safety cited as both Rule 9 and Rule 10, and the drift turned
+out to be one systematic shift from a pre-split numbering (checkpoints 8→9,
+Supabase 9→10), live in current code. Deliberately NARROW (two measured
+patterns + one sentence-scoped vocabulary test); dated capsules — handoffs,
+lessons, archives — keep their era's numbering verbatim and are excluded.
+Scans the BODY only (a frontmatter title is a name, not a citation), and
+"Rule 9 checkpoint(s)" is exempt as the correct post-split form. Its first
+corpus run found 4 drifted files the hand-inventory had missed.
+
 Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
 frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
 stamp) and the scan excludes its own output directory, so two runs on the same
 day are byte-identical and never dirty the tree. Guarded by
-`tests/docs_audit_test.py` (91 checks). Run: `python3 kb/_docs_audit.py`.
+`tests/docs_audit_test.py` (132 checks). Run: `python3 kb/_docs_audit.py`.
 
 ⚠️ `prose_only()` lives here and defines what counts as PROSE — code spans,
 markdown link targets, wikilinks, `*.md` filenames and QUOTED spans are masked.

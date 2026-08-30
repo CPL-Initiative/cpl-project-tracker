@@ -661,22 +661,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyThread S208 — the answer key was inside the test (2026-08-29)
-
-**`CLAUDE.md` 62,124 → 49,098 B** (#1389), on Sam's ruling. Rule 9 was a second copy of
-`.claude/commands/checkpoint.md` — **same 34 artifacts**, already drifted (it still said
-`kb-status: candidate`, retired S11). Rule 7 keeps staging-phase + the TOP caveat; invariants
-→ `mid_lifecycle.md`, 73/73 lines verified. ⭐ `unreferenced_offload` is **file-level**, so a
-rule can vanish into an already-pointed-at file — `critical_rule_doctrine` guards 9 PUSH claims.
-⚠️ **Three false greens**: the scenario harness hand-listed its rules (new guard scored NOTHING
-on its own scenarios — then *again* via arity-based discovery); "11 of 11" was one guard firing
-on stub fixtures, **hiding the 2 real gaps**; a wrapped line read as a missing rule.
-⭐ **The probe protocol was VOID** (#1389, CPLBrain#38): rubric + prompts were committed to the
-repo probes clone, and P5's topic phrase matched **exactly one file — its own prompt**. It found
-the test and void-flagged itself. Instruments → vault; `probe_instrument_leak` guards the return.
-**Lane retirement: 0 of 30**, by reading all 30; three more wrong greps got there first, so
-`lane_retirement_signal` runs it now. Story: `doctrine_enforcement_lessons`; handoff `session_209_handoff`.
-
 ### SkyGov S209 — the map, and then both tabs learned to read it (2026-08-30)
 
 **Remediation A BUILT** (#1396): `kb/_build_dependency_map.py` derives dataset →
@@ -688,6 +672,19 @@ tables** proposed, NEEDS SAM) and the **Admin surface tells the truth** (#1398 �
 showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, not three
 scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
 "Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.
+
+### SkyLedger S210 — all six remediations built; the score that improved was lying again (2026-08-30)
+
+**A–F complete** (#1400 E gate · #1401 skip-verify · #1402 B/C/D/F · CPLBrain#46): `js-tests`
+flippable to REQUIRED (docs PRs ~1.5 min, suite PRs ~9 — **the flip is Sam's**); Rule 10 widened
+to ANY shared-table bulk write + reversible-from-receipt (`data_write_rollback.md`) + new write
+surfaces route through Governance/privacy ADRs; F's drift was ONE systematic shift (checkpoints
+8→9, Supabase 9→10) — 16 living files fixed, `citation_drift` lints it, capsules stay verbatim,
+the ritual is now titled **Rule 9 checkpoint**. ⚠️ Registry growth flipped the scenario harness
+to a false 12/12 — `_assert_fixtures_current()` now refuses to score on fixture drift (10/12
+honest). ⚠️ `prose_only` masks 4-space continuations AND the lines after them. ⚠️ A workflow
+edit is a dependency-map input (#1400 made it stale; main red at the drift check until #1402).
+Story: `doctrine_enforcement_lessons`; handoff `session_211_handoff`.
 
 ## Troubleshooting
 
