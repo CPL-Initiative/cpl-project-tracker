@@ -201,10 +201,12 @@ tab follows it.</p>
 
 <p class="kicker">Every institution — one row, the whole story behind it</p>
 <section class="card">
-  <p class="note" style="margin:0 0 6px">Click a row for its per-priority money,
-  targets, and actuals. Sorted by allocation, largest first.</p>
-  <div class="thead" aria-hidden="true"><span>#</span><span>Institution</span><span>FTES</span><span>Allocation</span></div>
-  <div class="insts" id="insts" role="region" aria-label="Every institution's allocation"></div>
+  <p class="note" style="margin:0 0 6px">Alphabetical. Click a row for its
+  per-priority money, targets, and actuals. The figure shown is the
+  <strong>max award</strong> — what an institution can earn by outcomes, not an
+  automatic payment.</p>
+  <div class="thead" aria-hidden="true"><span>#</span><span>Institution</span><span>FTES</span><span>Max award</span></div>
+  <div class="insts" id="insts" role="region" aria-label="Every institution's max award"></div>
 </section>
 
 <section class="card">
@@ -369,24 +371,26 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
     "</ul></details></div>";
 }).join("");
 
-var sorted = ROWS.slice().sort(function (a, b) { return b.alloc - a.alloc || b.size - a.size; });
+// Alphabetical on purpose (Sam, 2026-08-31): a size-sorted list reads as a
+// league table and invites colleges to compare max awards first.
+var sorted = ROWS.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
 document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
   var chips = "";
-  if (r.nco) chips += '<span class="chip nco">noncredit-only</span>';
-  if (r.atMin) chips += '<span class="chip min">at minimum</span>';
-  if (r.atMax) chips += '<span class="chip max">at maximum</span>';
+  if (r.nco) chips += '<span class="chip nco" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">noncredit-only</span>';
+  if (r.atMin) chips += '<span class="chip min" title="This institution\u2019s share of the pool by size came out below $150,000, so it is lifted to the guaranteed minimum \u2014 funded from within the same pool.">at minimum</span>';
+  if (r.atMax) chips += '<span class="chip max" title="This institution\u2019s share of the pool by size came out above $400,000, so it is held at the ceiling \u2014 the difference goes back into the pool for everyone else.">at maximum</span>';
   var detail;
   if (r.nco) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts, so today it holds " + fm(r.alloc) +
-      " and has drawn $0 — the origination feed unlocks it." +
+      ". No advances: it draws only as originated CPL posts — its max award is " + fm(r.alloc) +
+      " and it has drawn $0; the origination feed unlocks it." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
     detail = "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: <strong>" + fm(r.earned) + "</strong> of " + fm(r.alloc) :
+      (hasData ? "Earned so far: <strong>" + fm(r.earned) + "</strong> of its " + fm(r.alloc) + " max award" :
         "No MAP data for this college in today’s pull — actuals show as no data yet") + "</caption>" +
       "<colgroup><col style=\"width:34%\"><col style=\"width:22%\"><col style=\"width:22%\"><col style=\"width:22%\"></colgroup>" +
       '<tr><th scope="col">Priority</th><th scope="col">Money</th><th scope="col">Target</th><th scope="col">Actual</th></tr>' +

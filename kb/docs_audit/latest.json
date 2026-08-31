@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 754,
-    "bytes": 7994319,
+    "bytes": 7994228,
     "over_budget": 3,
     "handoff_max": 214,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 127879,
+        "bytes": 127788,
         "over": 0
       },
       "handoff": {
@@ -57,12 +57,13 @@
     },
     "by_rule": {
       "oversized_doc": 3,
-      "vault_heavy_path": 45
+      "vault_heavy_path": 45,
+      "checkpoint_overdue": 1
     },
     "vault": {
       "files": 2451,
-      "bytes": 1263522946,
-      "heavy_bytes": 600163109,
+      "bytes": 1263582992,
+      "heavy_bytes": 600211312,
       "heavy_share": 0.475,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -358,10 +359,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9061566,
+        "bytes": 9109769,
         "kind": "file"
       },
-      "message": "9,061,566 B single file inside the vault"
+      "message": "9,109,769 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -602,6 +603,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_214_handoff.md",
+      "detail": {
+        "commits_since": 9,
+        "budget": 6,
+        "handoff": "session_214_handoff.md"
+      },
+      "message": "9 commit(s) have landed since `docs/session_214_handoff.md` was last written (budget 6). Rule 9's own trigger — 'roughly every ~100K tokens' — is a condition nothing can observe, so this is the observable stand-in. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
