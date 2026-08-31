@@ -712,21 +712,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyMirror S213 — the sheet caught up with its lane, and the probe groundwork banked (2026-08-30)
-
-**Register lane truth restored**: the re-analysis sheet is BUILT (#1413 — 16 rows ×
-still-needed × instrument, 5 candidate rows, the three-memo grouping) and waits on
-**Sam's by-number verdicts**; the prior session merged it without a checkpoint, so the
-lane file and feed said "queued" while main said "built". ⚠️ Run the Sierra small-model
-sweep BEFORE verdicts rewrite rows (same-ground comparison). **Doctrine-probe lane**:
-the S211-ordered pre-run work is done vault-side — criteria re-read against the settled
-corpus (dated addenda beside, never inside), lane current-truth, the ablation-redo
-recipe, perimeter verified clean. A fourth defeat-by-diligence instance is recorded
-with the instruments; handoff 213's boundary (nothing of that folder restated
-tracker-side or in `cpl_memory`) is honored and was applied retroactively to this
-session's own drafts in the #1414/#1415 merge. Story:
-`doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
-
 ### SkyLedger S214 — the one-pool day (2026-08-31)
 
 **Sam ADOPTED the one-pool funding model** ($25.24M · $150K floor / $400K cap
@@ -740,6 +725,19 @@ award" · alphabetical** (#1423 + the Naming doctrine block). Memo A is now an
 editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions
 delivered for Malone/Pedro (CPLBrain#67). Story: `cpl_funding_lessons`;
 handoff `session_215_handoff`.
+
+### SkyPool S215 — current vs. possible on the face, and the full revised tab (2026-08-31)
+
+**Queue item 1 built and ruled**: every expand + priority card carries **Current
+Total / Total Possible** (#1424; Sam's labels — "Total Possible" is the CEILING,
+his refinement after "Potential Total" read two ways). **The full revised-tab
+mock is BUILT** (#1425) from a measured inventory of `cpl_funding.js`'s ~30
+surfaces: Baseline-eligibility card (N1 a), §78093.2(d)(1) goal cards +
+superscripts, sticky header + ONE SYSTEM row, live search, the MAP-team note,
+and the **R1–R11 "what leaves the tab" sheet (8 ruled · 3 proposed, reply by
+number)** — awaiting Sam's lock; the port (origin feed first) starts on it.
+⚠️ A phrase sweep misses what a line break splits (new KB note). Story:
+`cpl_funding_lessons`; handoff `session_216_handoff`.
 
 ## Troubleshooting
 

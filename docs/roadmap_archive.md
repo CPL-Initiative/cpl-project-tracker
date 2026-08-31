@@ -5194,3 +5194,22 @@ tables** proposed, NEEDS SAM) and the **Admin surface tells the truth** (#1398 �
 showed `reads:[] writes:[]` while touching four tables). ⭐ **One derivation, not three
 scanners that drift.** ⚠️ Direction lives at the FETCH SITE, not the const line.
 "Blast Radius" pane mock awaits Sam. Story: `doctrine_enforcement_lessons`; handoff `session_210_handoff`.
+
+### SkyMirror S213 — the sheet caught up with its lane, and the probe groundwork banked (2026-08-30)
+
+**Register lane truth restored**: the re-analysis sheet is BUILT (#1413 — 16 rows ×
+still-needed × instrument, 5 candidate rows, the three-memo grouping) and waits on
+**Sam's by-number verdicts**; the prior session merged it without a checkpoint, so the
+lane file and feed said "queued" while main said "built". ⚠️ Run the Sierra small-model
+sweep BEFORE verdicts rewrite rows (same-ground comparison). **Doctrine-probe lane**:
+the S211-ordered pre-run work is done vault-side — criteria re-read against the settled
+corpus (dated addenda beside, never inside), lane current-truth, the ablation-redo
+recipe, perimeter verified clean. A fourth defeat-by-diligence instance is recorded
+with the instruments; handoff 213's boundary (nothing of that folder restated
+tracker-side or in `cpl_memory`) is honored and was applied retroactively to this
+session's own drafts in the #1414/#1415 merge. Story:
+`doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
+
+### INDEX update-history rotation (2026-08-31, S215)
+
+- **2026-08-29 (SkyCrush, S206 — final)** — the **`CLAUDE.md` consolidation**, all five PRs merged (#1381–#1384, CPLBrain#35): **151,484 B → 58,373 B**, nothing deleted. §11's 29 lane cells → [`reference/lanes/`](reference/lanes/); Sam's **assignment rule** (*push what a session cannot know to ask for; pull everything else*) into `CLAUDE.md` **and** `checkpoint.md`. ⚠️ **Six rules/guards stopped firing because content moved** — `stacked_roadmap_cell` keyed to a filename; **`docs/reference/**` never indexed at all** (0 → 37, every lane globs a flat `docs/*.md`); Rule 9 still naming the 2026-07-10 pare-downs, so a checkpoint would have left 30 lane files to rot; and **"PLAIN WORDS, NO GLYPHS" carried out of the file entirely** — a rule that had already failed the same way once via `cpl_memory`. New `## Presentation rules` section + `presentation_doctrine` and `unreferenced_offload` lints. ⚠️ **`npm test` 20.7 → 6.9 min in CI** with three symptoms that named the wrong thing (pipe truncation reported as 176 disabled rules). 2 KB notes, 8 memory rows. SkySolidare S204's narrative archived.

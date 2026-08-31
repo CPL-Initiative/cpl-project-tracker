@@ -2034,3 +2034,42 @@ origination feed) rather than in front of it.
   (N1–N3 stamped) · #1421 (who-moves + mock memory) · #1422 (adoption + the
   phases 1–3 visual) · #1423 (two lanes on one face · max award · vocabulary —
   in flight at checkpoint). Vault: CPLBrain #64–#67.
+
+## 2026-08-31 — S215 (SkyPool): the labels ruled twice, and the mock became the whole tab
+
+- **Boot race, not a stale greeting**: Sam's greeting named
+  `session_215_handoff.md` while main's highest was 214 — the handoff sat in
+  SkyLedger's in-flight checkpoint PR (#1423), which merged minutes into the
+  session. A greeting can be AHEAD of main, not just behind it: check open PRs
+  before declaring a number wrong.
+- **Queue item 1 shipped** (#1424): per-priority earned/available dollars in
+  every expand, the statewide cards, and the trio's expands — labels shipped as
+  the handoff-recommended proposed wording for Sam to rule on.
+- **The label two-step**: Sam ruled "Current Total / Potential Total"; the
+  session flagged that "Potential Total" reads as ceiling OR gap; he refined
+  live — *"I see that it can be read both ways. Let's use 'Total Possible' as
+  the ceiling."* Ceiling semantics settled: per priority the CR+NC shares' sum;
+  per institution the max award (captions keep his coined term); statewide as a
+  mini-label on the card headline, because a duplicate row is exactly the
+  redundancy he flags.
+- **The sweep miss**: replacing the phrase "Potential Total" left
+  `Potential␊Total` split across a hard-wrapped line — the residual scan in the
+  smoke (grep the distinctive WORD, not the phrase) caught it; the sweep never
+  would have. KB note:
+  [`methodology-a-phrase-sweep-misses-what-a-line-break-splits`](kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md).
+- **The full revised tab** (#1425): Sam saw the live tab's pre-port hybrid and
+  asked to see the whole revised tab before the port. An agent inventoried
+  `cpl_funding.js`'s ACTUAL render assembly (~30 surfaces — assembly order, not
+  file order); every surface got a disposition. Survivors built into the mock:
+  the Baseline-eligibility card (N1 a for the trio; held-in-reserve never
+  redistributed), §78093.2(d)(1) goal cards + measure-derived superscripts,
+  sticky header + ONE SYSTEM row (offset measured, never typed — the S203 catch
+  honored even in a mock), live search, the word-control toolbar. Removals
+  became **R1–R11** (8 ruled · 3 proposed), each with its successor,
+  reply-by-number.
+- **The lint earned its keep twice**: the lane file crossed its budget
+  (12,691 > 12,000) at checkpoint and the trim pass found a "double count"
+  vocabulary violation hiding in superseded pre-adoption text — deleted both.
+- **PRs:** #1424 (Current/Total-Possible columns) · #1425 (the full-tab mock).
+  Artifact: "CPL Implementation Funding," same URL, versions
+  earned-available → full-tab-r1-r11.
