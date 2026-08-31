@@ -587,6 +587,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_origination_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
@@ -624,6 +625,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `bsky.app` | `edgefn:cpl-news-harvest` |
 | `c-id.net` | scripts: `kb/_ingest_cid_articulations.py` |
 | `c-idsystem.org` | scripts: `tmc/_parse_tmc_pdfs.py` |
+| `california.public.law` | tabs: `college-briefing`, `implementation-funding` |
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
@@ -770,5 +772,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 393 file
-datasets · 136 external services · 304 consumers · 32 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 394 file
+datasets · 137 external services · 304 consumers · 32 workflows · 37 tabs.

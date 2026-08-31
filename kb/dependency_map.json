@@ -4,8 +4,8 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 393,
-  "external_services": 136,
+  "file_datasets": 394,
+  "external_services": 137,
   "consumers": 304,
   "workflows": 32,
   "data_js_files": 59,
@@ -374,6 +374,22 @@
    ],
    "main_committers": []
   },
+  "external:california.public.law": {
+   "consumers": [
+    {
+     "id": "module:cpl_funding.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 7171,
+     "tabs": [
+      "college-briefing",
+      "implementation-funding"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:calmatters.org": {
    "consumers": [
     {
@@ -488,7 +504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 7155,
+     "line": 6395,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -629,7 +645,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1557,
+     "line": 1559,
      "tabs": [
       "college-briefing"
      ]
@@ -1098,7 +1114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1549,
+     "line": 1551,
      "tabs": [
       "college-briefing"
      ]
@@ -1108,7 +1124,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 7412,
+     "line": 6522,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -1533,7 +1549,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1575,
+     "line": 1577,
      "tabs": [
       "college-briefing"
      ]
@@ -2565,7 +2581,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1577,
+     "line": 1579,
      "tabs": [
       "college-briefing"
      ]
@@ -2781,7 +2797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4137,
+     "line": 4061,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -2922,7 +2938,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 169
+     "line": 206
     },
     {
      "id": "script:kb/_sync_map_custom_reports.py",
@@ -4067,7 +4083,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2837,
+     "line": 2830,
      "tabs": [
       "college-briefing"
      ]
@@ -4091,7 +4107,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 711
+     "line": 703
     }
    ],
    "served": true,
@@ -4104,7 +4120,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2804,
+     "line": 2797,
      "tabs": [
       "college-briefing"
      ]
@@ -4114,7 +4130,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 8883,
+     "line": 7934,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4149,7 +4165,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 709
+     "line": 701
     },
     {
      "id": "script:excel_to_dashboard.py",
@@ -4170,7 +4186,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 119
+     "line": 156
     }
    ],
    "producers": [
@@ -4189,7 +4205,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1928,
+     "line": 1930,
      "tabs": [
       "college-briefing"
      ]
@@ -4199,7 +4215,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 8830,
+     "line": 7881,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4242,7 +4258,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 8815,
+     "line": 7866,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4253,7 +4269,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 154
     }
    ],
    "producers": [
@@ -4861,7 +4877,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2540,
+     "line": 2533,
      "tabs": [
       "college-briefing"
      ]
@@ -4881,7 +4897,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7950,
+     "line": 7010,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -4996,7 +5012,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4180,
+     "line": 4104,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -5279,7 +5295,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 710
+     "line": 702
     }
    ],
    "served": true,
@@ -7797,7 +7813,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 118
+     "line": 155
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
@@ -11399,7 +11415,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2818,
+     "line": 2811,
      "tabs": [
       "college-briefing"
      ]
@@ -12027,7 +12043,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2213,
+     "line": 2172,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -12475,6 +12491,19 @@
    "main_committers": []
   },
   "file:tests/esl_relevel_bands_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/funding_origination_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -13428,7 +13457,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 120
+     "line": 157
     }
    ],
    "producers": [
@@ -14085,7 +14114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2373,
+     "line": 2332,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14406,7 +14435,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3117,
+     "line": 3110,
      "tabs": [
       "college-briefing"
      ]
@@ -14427,7 +14456,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2317,
+     "line": 2276,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14443,7 +14472,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2842,
+     "line": 2832,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14454,7 +14483,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2867,
+     "line": 2857,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -14481,7 +14510,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 2409,
+     "line": 2368,
      "tabs": [
       "college-briefing",
       "implementation-funding"
@@ -15236,7 +15265,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3140,
+     "line": 3133,
      "tabs": [
       "college-briefing"
      ]
@@ -15301,7 +15330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3139,
+     "line": 3132,
      "tabs": [
       "college-briefing"
      ]
@@ -15422,7 +15451,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3138,
+     "line": 3131,
      "tabs": [
       "college-briefing"
      ]
@@ -16695,6 +16724,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/custom_report_response_test.py",
+    "tests/funding_origination_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",

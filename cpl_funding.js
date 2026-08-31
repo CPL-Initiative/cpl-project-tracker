@@ -1554,7 +1554,7 @@
     return measureOf(p).unit === "units";   // legacy rows: sniff the label
   }
   // The PRE-BOUNDS proportional per-year entitlement behind one priority. The
-  // target must ride THIS, never the topped-up cap: the floor raises a college's
+  // target must ride THIS, never the brought-up-to-base cap: the base raises a college's
   // funding, not its targets, and prioCap() would double under front-load —
   // which would cancel the front-load incentive exactly. (A CAPPED college is
   // the one exception, and it is handled by capScale(), not here: a bound on the
@@ -2770,7 +2770,7 @@
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
-      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible to earn — it moves no money by itself and is reversible.</div>" +
+      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible to earn — it moves no funding by itself and is reversible.</div>" +
       "</div>";
   }
 
@@ -3154,7 +3154,7 @@
   // No glyph: the link's own name says what it is (Sam's 2026-08-14 rule —
   // decorative glyphs go, state-bearing ones stay).
   var SANITY_BLURB = "A plain-language walk-through of the whole model: what comes off the top, " +
-    "how each college's share is set, what a college has to do to qualify, and how the money is " +
+    "how each college's share is set, what a college has to do to qualify, and how the funding is " +
     "earned. Team-access Claude artifact — opens in a new tab.";
   function sanityLinkHtml() {
     if (publicMode()) return "";
@@ -3479,7 +3479,7 @@
             : bearing
               ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
-              : '<span class="dk">◦ not measurable &mdash; but no money rides on it (front-loaded: Year ' +
+              : '<span class="dk">◦ not measurable &mdash; but no funding rides on it (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
             ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
@@ -4276,7 +4276,7 @@
       "CPL Initiative works to, all of them pointed at the same buildout of statewide CPL infrastructure: " +
       "<strong>Vision 2030</strong>, the <strong>California Master Plan for Career Education</strong>, the " +
       "<strong>CPL Workplan</strong>, and <strong>Ed. Code &sect;&sect;78092&ndash;78093.2</strong>. " +
-      "The funding outcomes below are what the legislature approved money against; the Workplan&rsquo;s own " +
+      "The funding outcomes below are what the legislature approved funding against; the Workplan&rsquo;s own " +
       "goals are how the work gets done.</p>" +
       '<div class="cplfund-goals">' + cards + "</div>" + regNote;
   }
@@ -4490,7 +4490,7 @@
         ? '<span class="cf-ok">\u2714 The years currently hold the same priorities.</span>'
         : '<span class="cplfund-warn-text">\u26a0 Year 2 differs from Year 1.</span>' +
           (frontloaded()
-            ? " Under front-loaded disbursement Year 2 carries no money, so its metrics are never scored " +
+            ? " Under front-loaded disbursement Year 2 carries no funding, so its metrics are never scored " +
               "\u2014 but the difference becomes real the moment timing moves back to even tranches."
             : "");
     return '<div class="cplfund-yearsync">' +
@@ -5183,7 +5183,7 @@
         "college&#39;s window total is unchanged."
       : "That same " + fmtMoney(per) + " tranche disburses again in each of the " + nYears() +
         " years (" + windowLabel() + "), in <strong>equal annual amounts</strong>.";
-    var basisSentence = " That allocation is the <strong>cap</strong> &mdash; the top line of every money cell. A college is " +
+    var basisSentence = " That allocation is the <strong>cap</strong> &mdash; the top line of every funding cell. A college is " +
       "paid <code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
       "(its funding &divide; the per-student rate) is the achievement <em>target</em> the MAP actuals are measured " +
       "against (a college at half its target draws half its cap; it never needs the full target to be funded), and " +
@@ -6014,20 +6014,20 @@
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
     var floorLine = "";
     if (c.floored) {
-      floorLine = '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
-        " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " +
-        basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
+      floorLine = '<div><span class="dk">At the base:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; brought up to the " + fmtMoney(m.floor) +
+        " base award. Targets above stay scaled to this institution&#39;s own PRE-BASE share of statewide " +
+        basisLabel() + " &mdash; the base raises the funding, not the bar.</div>";
     }
-    // The ceiling's mirror of the floor line. Both name the pure proportional
+    // The cap's mirror of the base line. Both name the pure proportional
     // share first, so the two read as one pair rather than two unrelated notes.
     var capLine = "";
     if (c.capped) {
-      capLine = '<div><span class="dk">⬇ Maximum applied:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held to the " + fmtMoney(m.cap) +
-        " maximum allocation. The difference re-splits across the colleges below the maximum. Targets above stay scaled to this " +
-        "college&#39;s own PRE-CAP share of statewide " + basisLabel() +
-        " &mdash; the maximum lowers the funding, not the bar.</div>";
+      capLine = '<div><span class="dk">At the cap:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held at the " + fmtMoney(m.cap) +
+        " cap. The difference re-splits across the institutions below the cap. Targets above stay scaled to this " +
+        "institution&#39;s own PRE-CAP share of statewide " + basisLabel() +
+        " &mdash; the cap lowers the funding, not the bar.</div>";
     }
     var eligBtns = "";
     if (unlocked()) {
@@ -6255,7 +6255,9 @@
           status = '<div class="cplfund-reqstatus"><strong>' + starN + " of " + total +
             "</strong> colleges qualify " +
             '<span class="dk">(auto-scored &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
-            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>";
+            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>" +
+            '<div class="dk">For the three noncredit-only campuses this gate is replaced by noncredit ' +
+            "certificates posted as exhibits in MAP (N1 a, ruled 2026-08-31).</div>";
         } else {
           status = '<div class="cplfund-reqstatus"><span class="dk">auto-scored from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
         }
@@ -6297,6 +6299,8 @@
       edArea("elig-intro", eligIntro(), { rows: 2, label: "Baseline eligibility introduction" }) + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
+      '<div class="dk" style="margin:4px 0 6px;">Funding for institutions that have not met baseline ' +
+      "participation is held in reserve &mdash; it is never redistributed to others.</div>" +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another proposed baseline requirement">＋ Add requirement</button>' +
