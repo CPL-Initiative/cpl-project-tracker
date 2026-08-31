@@ -1965,14 +1965,14 @@
           + "active revision.</div>";
         var bits = [];
         if (f.alloc.floored) {
-          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
-            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+          bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
+            + "out below the base, so it is brought up to it. Its allocation is <b>not</b> its share of the pool.");
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
         // names the beneficiary of every amount it shows.
         if (f.alloc.capped && f.cap) {
-          bits.push("At the <b>" + money(f.cap) + " maximum allocation</b> — this college's proportional share came "
+          bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
             + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
             + "Its performance targets scale down with it, so it earns at the same rate as every other college "
             + "above the minimum.");
