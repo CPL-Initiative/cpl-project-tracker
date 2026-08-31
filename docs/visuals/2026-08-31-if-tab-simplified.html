@@ -48,6 +48,8 @@
     background: var(--surface-subtle); }
   .prio h3 { font-size: 1rem; margin: 0 0 2px; }
   .prio .share { font-size: .82rem; color: var(--text-muted); margin: 0 0 8px; }
+  .prio .mlab { font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--text-muted); margin: 0 0 1px; }
   .prio .money { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
     font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; }
   .prio dl { margin: 8px 0 0; font-size: .9rem; }
@@ -124,10 +126,11 @@ bottom, every deeper detail folds open in place, and each institution is one
 row with its full allocation detail behind a click. Every figure is real — the
 adopted dials ($150,000 base to $400,000 cap on the combined award), the real
 rosters, and MAP actuals as of 2026-08-31. This page is for your reaction; the
-port to the live tab follows it. New this round, from your parting question:
-each expand and each priority card now carries <strong>Earned so far</strong>
-and <strong>Available to earn</strong> in dollars — the gap is the incentive.
-The two labels are proposed wording; edit them freely.</p>
+port to the live tab follows it. From your parting question: each expand and
+each priority card carries <strong>Current Total</strong> and <strong>Potential
+Total</strong> in dollars (your labels, ruled 2026-08-31) — the gap between
+them is the incentive. Potential Total is the ceiling: per priority, the CR and
+NC shares together; per institution, the max award.</p>
 
 <section class="card" id="verdicts" aria-live="polite">
   <h2>Summary</h2>
@@ -222,11 +225,11 @@ The two labels are proposed wording; edit them freely.</p>
         above; the live port will carry the tab's full earning machinery
         (advances for unmeasured priorities included), so the earned line there
         can read higher than here.</li>
-      <li>Available to earn = the max-award share minus what is earned to date.
-        The noncredit share counts as available in full (it reads $0 earned
-        until its feeds report), and the noncredit-only institutions' whole
-        awards are available, gated on the origination feed. Every "available"
-        figure and its "earned" partner sum back to the funding they split.</li>
+      <li>Potential Total = the ceiling: per priority, its credit and noncredit
+        shares together; per institution, the max award; statewide, the
+        priority's full funding. Current Total = what is earned to date, and
+        the noncredit share reads $0 in it until its feeds report. Current
+        never exceeds Potential, and the gap between them is the incentive.</li>
       <li>Nothing on this page writes anywhere.</li>
     </ul>
   </details>
@@ -365,12 +368,12 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
   var s = stw[i];
   return '<div class="prio"><h3>' + p.title + "</h3>" +
     '<p class="share">' + Math.round(p.share * 100) + "% of the pool · factor 0.50×</p>" +
+    '<p class="mlab" title="The priority’s full funding for the window — the ceiling its Current Total can reach.">Potential Total</p>' +
     '<div class="money">' + fm(s.money) + "</div>" +
     "<dl>" +
     "<div><dt>Target (window)</dt><dd>" + f1(s.target) + " FTES</dd></div>" +
     "<div><dt>Actual so far</dt><dd>" + f1(s.actual) + " FTES</dd></div>" +
-    "<div><dt>Earned so far</dt><dd>" + fm(s.earned) + "</dd></div>" +
-    '<div title="Still on the table statewide: unearned credit shares, the noncredit shares awaiting their feeds, and the origination funding the noncredit-only institutions have yet to draw."><dt>Available to earn</dt><dd>' + fm(s.money - s.earned) + "</dd></div>" +
+    '<div title="What has been earned statewide on this priority to date — credit shares only; noncredit shares read $0 in it until their feeds report."><dt>Current Total</dt><dd>' + fm(s.earned) + "</dd></div>" +
     "</dl>" +
     '<details class="fold"><summary>the metric and the strategies</summary><ul>' +
     "<li><em>" + p.metric + "</em></li>" +
@@ -391,27 +394,27 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts. Earned so far: $0 · available to earn: its full " + fm(r.alloc) +
-      " max award, unlocked by the origination feed." +
+      ". No advances: it draws only as originated CPL posts. Current Total: $0 · Potential Total: " + fm(r.alloc) +
+      ", its max award — unlocked by the origination feed." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
     detail = '<div class="tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
       "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: " + fm(r.earned) + " · available to earn: " + fm(r.alloc - r.earned) + " — of its " + fm(r.alloc) + " max award" :
-        "No MAP data for this college in today’s pull — earned reads $0 here, and its full " + fm(r.alloc) + " max award is available to earn") + "</caption>" +
+      (hasData ? "Current Total: " + fm(r.earned) + " · Potential Total: " + fm(r.alloc) + " — its max award" :
+        "No MAP data for this college in today’s pull — Current Total reads $0 here; Potential Total: " + fm(r.alloc) + ", its max award") + "</caption>" +
       "<colgroup><col style=\"width:10%\"><col style=\"width:14%\"><col style=\"width:14%\"><col style=\"width:13%\"><col style=\"width:17%\"><col style=\"width:15%\"><col style=\"width:17%\"></colgroup>" +
       '<tr><th scope="col">Priority</th>' +
       '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
       '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
       '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
       '<th scope="col">Actual</th>' +
-      '<th scope="col" title="What the credit share has earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 until its measures report.">Earned so far</th>' +
-      '<th scope="col" title="Still on the table for this priority: the unearned credit share plus the noncredit share awaiting its feeds. Unearned funding rolls forward.">Available to earn</th></tr>' +
+      '<th scope="col" title="What has been earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 in it until its measures report.">Current Total</th>' +
+      '<th scope="col" title="This priority’s full funding — its credit and noncredit shares together; the ceiling the Current Total can reach. Unearned funding rolls forward.">Potential Total</th></tr>' +
       r.prios.map(function (p, i) {
         var e = (p.frac || 0) * p.crM;
         return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
-          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM - e) + "</td></tr>";
+          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM) + "</td></tr>";
       }).join("") + "</table></div>" +
       (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
   }
