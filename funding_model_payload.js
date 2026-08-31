@@ -19,15 +19,25 @@
     const pool = function (k) { return Number(T._pool(k)); };
     const model = T._model();
 
-  // One row per college: name, district, credit FTES, two-year offer, and the two
-  // flags the page marks — lifted to the minimum and held to the maximum. (Index 5
-  // is a retired rural flag, kept as 0 so the row shape and the page's r[6] index
-  // stay stable; drop both together if the rows are ever renumbered.)
+  // One row per INSTITUTION under one pool (2026-08-31): name, district,
+  // combined FTES, the one combined max award, and the two flags the page
+  // marks — brought up to the base and held at the cap. (Index 5 is a retired
+  // rural flag, kept as 0 so the row shape and the page's r[6] index stay
+  // stable; drop both together if the rows are ever renumbered.)
+  const trio = ["NOCE", "SD Cont. Ed", "Calbright"];
   const rows = D.colleges.map(function (c) {
     const a = T._alloc(c.college);
-    return [c.college, c.district || "", Math.round(c.credit_ftes || 0), Math.round(a.total),
+    return [c.college, c.district || "",
+            Math.round((c.credit_ftes || 0) + (c.noncredit_ftes || 0)), Math.round(a.total),
             a.floored ? 1 : 0, 0, a.capped ? 1 : 0];
-  }).sort(function (x, y) {
+  }).concat(trio.map(function (k) {
+    const a = T._alloc(k);
+    if (!a) return null;
+    const f = (D.feeders || []).filter(function (x) { return x.short === k; })[0] || {};
+    const ftes = Number(f.noncredit_ftes_placeholder || f.noncredit_ftes) || 0;
+    return [k, "", Math.round(ftes), Math.round(a.total),
+            a.floored ? 1 : 0, 0, a.capped ? 1 : 0];
+  }).filter(Boolean)).sort(function (x, y) {
     // Six colleges now TIE at the ceiling, so the offer alone no longer orders
     // the table — fall back to size, which is what a reader expects to see and
     // what explains why those six are the ones held.
@@ -72,32 +82,30 @@
   const avg = Math.round(totals.reduce(function (s, v) { return s + v; }, 0) / totals.length);
    const payload = {
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
-            scaling: pool("scaling_projects_tech"), feeder: pool("feeder_carveout"),
+            scaling: pool("scaling_projects_tech"),
             floor: pool("floor_window"),
             cap: pool("cap_window"), rate: pool("ftes_rate_2026_27") },
     net_main: Math.round(T._netCollege()),
-    // The noncredit lane (2026-08-23). Emitted so the page can STATE it rather
-    // than have a writer describe it: the "four noncredit campuses" sentence in
-    // this document was true until the lane became 33 institutions, 30 of them
-    // credit colleges running their own noncredit programs, and a hand-typed
+    // The noncredit DECOMPOSITION under one pool (2026-08-31). Emitted so the
+    // page can STATE it rather than have a writer describe it — a hand-typed
     // count is exactly the thing that goes stale without anyone noticing.
     nc: (function () {
-      const n = T._ncModel();
-      return { pool: Math.round(n.pool), threshold: Math.round(n.threshold),
-               floor: Math.round(n.floor), cap: Math.round(n.cap),
-               count: n.rows.length,
-               colleges: n.rows.filter(function (r) { return r.kind === "college"; }).length,
-               standalone: n.rows.filter(function (r) { return r.kind === "standalone"; }).length,
-               floorCount: n.floorCount, breakEven: Math.round(n.breakEven),
-               // A minimum the carve-out cannot honor must travel INTO the
-               // document. Without it the explainer states the dial's figure as
-               // the amount each institution receives, which is the exact claim
-               // #1302 stopped the tab from making — and it is worse here,
-               // because this page is the thing a reader is sent to when they
-               // want to check the arithmetic.
-               floorInfeasible: !!n.floorInfeasible,
-               floorDemanded: Math.round(n.floorDemanded || 0),
-               perInstitution: n.rows.length ? Math.round(n.pool / n.rows.length) : 0 };
+      const e = T._effective();
+      const trioAwards = trio.map(function (k) {
+        const a = T._alloc(k);
+        return { name: k, total: a ? Math.round(a.total) : 0 };
+      });
+      const ncColleges = D.colleges.filter(function (c) {
+        return (Number(c.noncredit_ftes) || 0) > 0;
+      }).length;
+      return {
+        collegeShares: Math.round(e.pool.nc_college_shares),
+        trioHeld: Math.round(e.pool.nc_only_held_by_origination),
+        face: Math.round(e.pool.nc_college_shares + e.pool.nc_only_held_by_origination),
+        trio: trioAwards,
+        ncColleges: ncColleges,
+        institutions: e.pool.institutions
+      };
     })(),
     model: { floor: model.floor, floorCount: model.floorCount, floorCost: Math.round(model.floorCost),
              cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },

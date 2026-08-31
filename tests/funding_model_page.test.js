@@ -67,8 +67,8 @@ check("the engine's own figures reach the page's headline numbers",
   doc.getElementById("f-floorv").textContent === money(D.pool.floor));
 check("the college table is painted from the engine's rows, all of them",
   doc.querySelectorAll("#tbody tr").length === D.rows.length && D.rows.length > 100);
-check("the noncredit lane count comes from the model, not a typed word",
-  doc.getElementById("l-nc-count").textContent === String(D.nc.count));
+check("the noncredit-share college count comes from the model, not a typed word",
+  doc.getElementById("l-nc-count").textContent === String(D.nc.ncColleges));
 check("the status line is empty on a successful paint",
   (doc.getElementById("live-status").textContent || "").trim() === "");
 
@@ -92,7 +92,7 @@ check("the status line is empty on a successful paint",
   };
   check("the first paint fills every container from the payload",
     before.cards === D.cards.length && before.prios === D.prios.length &&
-    before.worked === D.prios.length && before.nc === 4 && before.rows === D.rows.length);
+    before.worked === D.prios.length && before.nc === 3 && before.rows === D.rows.length);
   win.CPL_PAINT_EXPLAINER(D);
   win.CPL_PAINT_EXPLAINER(D);
   check("repainting twice more changes NOTHING — no container accumulates",
@@ -103,22 +103,23 @@ check("the status line is empty on a successful paint",
     doc.querySelectorAll("#tbody tr").length === before.rows);
 }
 
-// ── the noncredit lane must be EXPLAINED, not just carried in the payload ──
-// D.nc shipped with the lane, but nothing on the page said a second lane
-// existed — a reader was told $1,000,000 was "dedicated to noncredit" and never
-// told who receives it or on what terms. Sam noticed. Every figure is written
-// from the payload, so a dial change moves the prose.
+// ── the noncredit DECOMPOSITION must be EXPLAINED, not just carried ──
+// One pool (2026-08-31): no separate lane — the page states the CR/NC
+// decomposition, its restriction, and the origination rule for the
+// noncredit-only three. Every figure is written from the payload, so a dial
+// change moves the prose.
 {
   const ncText = doc.getElementById("nc-body").textContent + " " +
     Array.from(doc.querySelectorAll("#nc-list li")).map((li) => li.textContent).join(" ");
-  check("the page explains the noncredit lane's size, entry rule and bounds",
-    ncText.indexOf(String(D.nc.count) + " institutions") !== -1 &&
-    ncText.indexOf(D.nc.threshold.toLocaleString("en-US")) !== -1 &&
-    ncText.indexOf(money(D.nc.floor)) !== -1 && ncText.indexOf(money(D.nc.cap)) !== -1);
-  check("...and states where growth starts paying, from the model not a typed number",
-    ncText.indexOf(D.nc.breakEven.toLocaleString("en-US")) !== -1);
-  check("...and says the noncredit money is kept separate from the credit figure",
-    /kept separate/i.test(ncText) || /without it disappearing/i.test(ncText));
+  check("the page states the decomposition's figures — college shares, the trio's origination hold, one window",
+    ncText.indexOf(money(D.nc.collegeShares)) !== -1 &&
+    ncText.indexOf(money(D.nc.trioHeld)) !== -1 &&
+    ncText.indexOf(String(D.nc.ncColleges)) !== -1 &&
+    ncText.indexOf(money(D.pool.floor)) !== -1 && ncText.indexOf(money(D.pool.cap)) !== -1);
+  check("...and states the restriction and the no-advance origination rule",
+    /restricted/i.test(ncText) && /originating|origination/i.test(ncText) && /No advances/i.test(ncText));
+  check("...and says the noncredit share stays visible rather than disappearing into the credit figure",
+    /disappearing into the credit figure/i.test(ncText));
 }
 
 // ── a failed computation must SAY so, never leave stale figures standing ──
