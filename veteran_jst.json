@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-31T13:58:32.844593+00:00",
+  "scraped_at": "2026-08-31T17:06:50.631638+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27527,
+    "jst": 27533,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -170,14 +170,14 @@
       "jst": 494,
       "star": true
     },
+    "Glendale Community College": {
+      "vets": 196,
+      "jst": 225,
+      "star": true
+    },
     "Los Angeles Trade Technical College": {
       "vets": 318,
       "jst": 414,
-      "star": true
-    },
-    "Glendale Community College": {
-      "vets": 196,
-      "jst": 223,
       "star": true
     },
     "Clovis Community College": {
@@ -235,14 +235,14 @@
       "jst": 174,
       "star": false
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 178,
+      "star": true
+    },
     "Citrus College": {
       "vets": 181,
       "jst": 219,
-      "star": true
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 176,
       "star": true
     },
     "Lemoore College": {
@@ -282,7 +282,7 @@
     },
     "Allan Hancock College": {
       "vets": 392,
-      "jst": 142,
+      "jst": 143,
       "star": false
     },
     "College of San Mateo": {
@@ -550,6 +550,21 @@
       "jst": 1,
       "star": false
     },
+    "College of Marin": {
+      "vets": 69,
+      "jst": 1,
+      "star": false
+    },
+    "College of the Siskiyous": {
+      "vets": 77,
+      "jst": 0,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
+      "jst": 0,
+      "star": false
+    },
     "Lake Tahoe Community College": {
       "vets": 92,
       "jst": 0,
@@ -567,21 +582,6 @@
     },
     "Folsom Lake College": {
       "vets": 65,
-      "jst": 0,
-      "star": false
-    },
-    "Palomar College": {
-      "vets": 1019,
-      "jst": 0,
-      "star": false
-    },
-    "College of Marin": {
-      "vets": 69,
-      "jst": 0,
-      "star": false
-    },
-    "College of the Siskiyous": {
-      "vets": 77,
       "jst": 0,
       "star": false
     }

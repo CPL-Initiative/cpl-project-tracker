@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-20T07:11:53Z",
- "count": 133,
+ "_generated_at": "2026-08-31T17:09:17Z",
+ "count": 151,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -11,6 +11,38 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "AGBUS 010: Introduction to Agriculture Business": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 104",
+    "title": "Introduction to Agriculture Business",
+    "code": "AGBUS 10"
+   }
+  ],
+  "AGBUS 015: Computer Application to Agriculture": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 108 108",
+    "title": "Agricultural Computer Applications",
+    "code": "AGBUS 15"
+   }
+  ],
+  "AGBUS 024: Agricultural Accounting": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 128",
+    "title": "Agricultural Accounting",
+    "code": "AGBUS 24"
+   }
+  ],
+  "AGBUS 040: Introductory Agricultural Economics": [
+   {
+    "kind": "cid",
+    "id": "AG-AB 124",
+    "title": "Agriculture Economics",
+    "code": "AGBUS 40"
    }
   ],
   "AGEH-01 Elements of Landscape Horticulture": [
@@ -63,6 +95,42 @@
     "scoped": true
    }
   ],
+  "AOJ 006: Correctional Interviewing & Counseling": [
+   {
+    "kind": "course",
+    "title": "Correctional Interviewing and Counseling",
+    "code": "AOJ 6",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AOJ 012: Written Criminal Justice Communications": [
+   {
+    "kind": "course",
+    "title": "Written Criminal Justice Communications",
+    "code": "AOJ 12",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "AOJ 016: Human and Community Relations in Criminal Justice": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "AOJ 16"
+   }
+  ],
+  "AOJ 029: Criminology": [
+   {
+    "kind": "cid",
+    "id": "SOCI 160",
+    "title": "Introduction to Crime",
+    "code": "AOJ 29"
+   }
+  ],
   "ARMEN 1: Beginning Armenian": [
    {
     "kind": "course",
@@ -80,6 +148,92 @@
     "code": "ARMEN 2",
     "share": 1.0,
     "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "ART 002: Two-Dimensional Design": [
+   {
+    "kind": "cid",
+    "id": "ARTS 100",
+    "title": "2-D Foundations",
+    "code": "ART 2"
+   }
+  ],
+  "ART 009: Beginning Printmaking": [
+   {
+    "kind": "course",
+    "title": "Beginning Printmaking",
+    "code": "ART 9",
+    "share": 1.0,
+    "colleges": 16,
+    "scoped": true
+   }
+  ],
+  "ASCI 012: Animal Science": [
+   {
+    "kind": "cid",
+    "id": "AG-AS 104",
+    "title": "Introduction to Animal Science",
+    "code": "ASCI 12"
+   }
+  ],
+  "ASF 001: Agriculture Technical Literacy": [
+   {
+    "kind": "course",
+    "title": "Agriculture Technical Literacy",
+    "code": "ASF 1",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 002: Agricultural Systems": [
+   {
+    "kind": "course",
+    "title": "Agricultural Systems",
+    "code": "ASF 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 003: Agriculture Safety": [
+   {
+    "kind": "course",
+    "title": "Agriculture Safety",
+    "code": "ASF 3",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 004: Equipment Operation, Configuration and Troubleshooting": [
+   {
+    "kind": "course",
+    "title": "Equipment Operation, Configuration and Troubleshooting",
+    "code": "ASF 4",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASF 005: Workplace Effectiveness": [
+   {
+    "kind": "course",
+    "title": "Workplace Effectiveness",
+    "code": "ASF 5",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ASL 002: Intermediate American Sign Language: Level 2": [
+   {
+    "kind": "course",
+    "title": "Intermediate American Sign Language: Level 2",
+    "code": "ASL 2",
+    "share": 1.0,
+    "colleges": 24,
     "scoped": true
    }
   ],
@@ -287,6 +441,14 @@
     "share": 1.0,
     "colleges": 2,
     "scoped": true
+   }
+  ],
+  "BUS 001A: Beginning Principles of Accounting": [
+   {
+    "kind": "cid",
+    "id": "ACCT 110",
+    "title": "Financial Accounting",
+    "code": "BUS 1A"
    }
   ],
   "CADD 14: 2D CAD I": [

@@ -8,14 +8,14 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43023,
-  "pa": 38992,
+  "pe": 43028,
+  "pa": 38997,
   "ppa": 108,
   "p2": 3062,
   "p3": 14440,
   "pp": 5,
-  "pe_u": 1386712.95,
-  "pa_u": 216035.15,
+  "pe_u": 1386871.95,
+  "pa_u": 216062.15,
   "ppa_u": 661.5,
   "p3_u": 72537.95,
   "pp_u": 25.0
@@ -35,10 +35,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Allan Hancock": {
-   "pe": 142,
-   "pe_u": 6323.0,
-   "pa": 142,
-   "pa_u": 568.0,
+   "pe": 143,
+   "pe_u": 6355.0,
+   "pa": 143,
+   "pa_u": 572.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -178,10 +178,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 175,
-   "pe_u": 8963.5,
-   "pa": 171,
-   "pa_u": 855.0,
+   "pe": 177,
+   "pe_u": 9009.5,
+   "pa": 173,
+   "pa_u": 865.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -517,10 +517,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Glendale": {
-   "pe": 223,
-   "pe_u": 9963.5,
-   "pa": 223,
-   "pa_u": 1213.5,
+   "pe": 225,
+   "pe_u": 10044.5,
+   "pa": 225,
+   "pa_u": 1226.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1486,8 +1486,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Allan Hancock": {
    "Military": {
-    "pe": 142,
-    "pa": 142,
+    "pe": 143,
+    "pa": 143,
     "p3": 0
    }
   },
@@ -1616,8 +1616,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 175,
-    "pa": 171,
+    "pe": 177,
+    "pa": 173,
     "p3": 0
    }
   },
@@ -1903,8 +1903,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Glendale": {
    "Military": {
-    "pe": 223,
-    "pa": 223,
+    "pe": 225,
+    "pa": 225,
     "p3": 0
    }
   },
@@ -3104,8 +3104,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26973,
-   "pa": 24849,
+   "pe": 26978,
+   "pa": 24854,
    "p3": 2484
   },
   "Military | Portfolio Review": {
@@ -3153,13 +3153,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1386236.45,
-   "pa_u": 216035.15,
+   "pe_u": 1386395.45,
+   "pa_u": 216062.15,
    "p3_u": 72537.95
   },
   "map": {
-   "pe_u": 1393362.95,
-   "pa_u": 216696.65,
+   "pe_u": 1393521.95,
+   "pa_u": 216723.65,
    "p3_u": 72562.95
   },
   "ratio": {
@@ -3201,8 +3201,8 @@ window.CPL_FUNDING_PERF = {
   "Mt. San Jacinto": true,
   "Canyons": true,
   "San Joaquin Delta": true,
-  "LA Trade": true,
   "Glendale": true,
+  "LA Trade": true,
   "Clovis": true,
   "Antelope Valley": true,
   "Solano": false,
@@ -3214,8 +3214,8 @@ window.CPL_FUNDING_PERF = {
   "LA Mission": true,
   "Mission": true,
   "Sequoias": false,
-  "Citrus": true,
   "Cerro Coso": true,
+  "Citrus": true,
   "West Hills Lemoore": false,
   "East LA": false,
   "Evergreen Valley": true,
@@ -3277,13 +3277,13 @@ window.CPL_FUNDING_PERF = {
   "Orange Coast": false,
   "Yuba": false,
   "Grossmont": false,
+  "Marin": false,
+  "Siskiyous": false,
+  "Palomar": false,
   "Lake Tahoe": false,
   "LA Swest": false,
   "Cosumnes River": false,
-  "Folsom Lake": false,
-  "Palomar": false,
-  "Marin": false,
-  "Siskiyous": false
+  "Folsom Lake": false
  },
  "vet_star_as_of": "2026-08-31",
  "vet_star_threshold": 0.75,
