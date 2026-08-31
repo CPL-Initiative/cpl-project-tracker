@@ -1966,7 +1966,7 @@
         var bits = [];
         if (f.alloc.floored) {
           bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
-            + "out below the base, so it is brought up to it. Its allocation is <b>not</b> its share of the pool.");
+            + "out below the base, so it is brought up to it. Its allocation is <b>not</b> its proportional share of the funding.");
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer

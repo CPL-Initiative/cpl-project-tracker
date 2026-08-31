@@ -165,9 +165,18 @@ const POOL = 25240308;
   const T = window.CPL_FUNDING_TAB;
   const text = doc.getElementById("cplFundingMount").textContent;
 
-  check("D1: the Summary renders at the top with the origination-hold line (R11)",
-    !!doc.querySelector(".cplfund-summary") &&
-    /waits on the origination feed/.test(doc.querySelector(".cplfund-summary").textContent));
+  check("D1: the Summary renders at the top with Sam's verbatim first bullet (reaction round 2, " +
+        "2026-08-31) — the origination-wait bullet is deleted, and 'on its face' is banned",
+    (function () {
+      const sum = doc.querySelector(".cplfund-summary");
+      if (!sum) return false;
+      const t = sum.textContent;
+      return /Allocation balances:/.test(t) &&
+        /is allocated based on FTES size/.test(t) &&
+        /ready for distribution based on measurable outcomes/.test(t) &&
+        !/waits on the origination feed/.test(t) &&
+        !/on its face/.test(t);
+    })());
   check("D2: no lane switch anywhere (R1)", !doc.querySelector("#cplFundLane"));
   check("D3: no paired noncredit rows and no NC SYSTEM row — one row per institution (R6)",
     !doc.querySelector(".cplfund-ncrow") && !doc.querySelector(".cplfund-ncsysrow"));
@@ -249,6 +258,80 @@ const POOL = 25240308;
       return /Credit share/.test(head) && /Noncredit share/.test(head) && /Max award/.test(head) &&
         lines.filter(function (l) { return /NOCE|Calbright|SD Cont\. Ed/.test(l); }).length >= 3 &&
         lines.length >= 120;   // meta + header + 118 institutions + SYSTEM
+    })());
+
+  // ── reaction round 2 (Sam, 2026-08-31) — the mock is the spec ────────────
+  check("D19: the titleline reads 'Version as of <date>' — the 'Model version … sourced from' " +
+        "form is retired",
+    (function () {
+      const src = doc.querySelector(".cplfund-src");
+      return !!src && /^Version as of \d{4}-\d{2}-\d{2}$/.test(src.textContent.trim()) &&
+        !/Model version/.test(src.textContent);
+    })());
+  check("D20: the actions row carries the four WORD controls — expand/collapse all, Draft memo, " +
+        "Save as PDF, and the Internal · Public view preview",
+    (function () {
+      const row = doc.querySelector(".cplfund-actions");
+      if (!row) return false;
+      return !!doc.getElementById("cplFundXall") &&
+        !!doc.getElementById("cplFundDraftMemo") &&
+        !!doc.getElementById("cplFundPdfTop") &&
+        doc.querySelectorAll('.cplfund-actions [data-viewmode]').length === 2;
+    })());
+  check("D21: expand/collapse all really moves every section fold and flips its own label",
+    (function () {
+      const btn = doc.getElementById("cplFundXall");
+      const secs = function () { return Array.from(doc.querySelectorAll("details.cplfund-sec")); };
+      if (!btn || !secs().length) return false;
+      btn.dispatchEvent(new window.Event("click", { bubbles: true }));
+      const allClosed = secs().every(function (s) { return !s.open; });
+      const label1 = btn.textContent;
+      btn.dispatchEvent(new window.Event("click", { bubbles: true }));
+      const allOpen = secs().every(function (s) { return s.open; });
+      return allClosed && /Expand all/.test(label1) && allOpen && /Collapse all/.test(btn.textContent);
+    })());
+  check("D22: goal (D)'s quote is the statute VERBATIM — 'opportunities' restored " +
+        "(ec_78093_2_initiative.txt is the source of record)",
+    /Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects/
+      .test(text));
+  check("D23: CR FTES · NC FTES · Elig · CR award are centered columns (th.c + td.c); " +
+        "NC award, the last column, stays right-aligned",
+    (function () {
+      const th = function (k) { return doc.querySelector('th[data-sort="' + k + '"]'); };
+      const centered = ["cr_ftes", "nc_ftes", "elig", "cr_award"].every(function (k) {
+        return th(k) && th(k).className.split(/\s+/).indexOf("c") !== -1;
+      });
+      const ncRight = th("nc_award") && th("nc_award").className.split(/\s+/).indexOf("c") === -1;
+      const sysC = doc.querySelectorAll(".cplfund-systemrow td.c").length >= 3;
+      return centered && ncRight && sysC;
+    })());
+  check("D24: no rendered 'on its face' anywhere on the tab (Sam's ban, 2026-08-31)",
+    !/on its face/.test(doc.getElementById("cplFundingMount").textContent));
+  check("D25: the View preview flips the tab to the PUBLIC rendering and back — dial editors " +
+        "and Draft memo drop out, the toggle itself survives to flip back",
+    (function () {
+      const pubBtn = doc.querySelector('.cplfund-actions [data-viewmode="public"]');
+      if (!pubBtn) return false;
+      pubBtn.dispatchEvent(new window.Event("click", { bubbles: true }));
+      const inPreview = !doc.querySelector("#cplFundingMount [data-edit]") &&
+        !doc.getElementById("cplFundDraftMemo") &&
+        !!doc.querySelector('.cplfund-actions [data-viewmode="public"][aria-pressed="true"]');
+      const intBtn = doc.querySelector('.cplfund-actions [data-viewmode="internal"]');
+      if (!intBtn) return false;
+      intBtn.dispatchEvent(new window.Event("click", { bubbles: true }));
+      const restored = !!doc.querySelector("#cplFundingMount [data-edit]") &&
+        !!doc.getElementById("cplFundDraftMemo");
+      return inPreview && restored;
+    })());
+  check("D26: Draft memo opens the Report sub-view carrying the one-pool allocation",
+    (function () {
+      const btn = doc.getElementById("cplFundDraftMemo");
+      if (!btn) return false;
+      btn.dispatchEvent(new window.Event("click", { bubbles: true }));
+      const inReport = !!doc.getElementById("cplFundMemoRegen") &&
+        /Total credit and noncredit potential awards/.test(doc.getElementById("cplFundingMount").textContent);
+      T._setSubview("model");   // leave the window on the model view
+      return inReport;
     })());
 }
 

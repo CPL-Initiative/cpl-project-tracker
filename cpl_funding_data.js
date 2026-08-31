@@ -102,7 +102,7 @@
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-30.1",
+ "model_version": "2026-08-31",
  "source": "Sept-2026 BOG budget amendment (20260729_CPL_Amendment_Sep_BOG.xlsx) · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (refreshed 2026-07-31; 10 colleges not in that pull carry their prior vintage)",
  "headcount_source": {

@@ -89,6 +89,11 @@
     ".cplfund-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }",
     ".cplfund-src { font-size: .8rem; color: var(--text-faint); margin: -6px 0 14px; }",
     ".cplfund-src a { color: var(--accent-link); }",
+    // Page actions row (Sam, 2026-08-31): expand/collapse-all, Draft memo,
+    // Save as PDF, and the reviewer view preview. Words, not glyphs.
+    ".cplfund-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: -6px 0 14px; }",
+    ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
+    '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }',
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
     ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; position: relative; }",
@@ -265,6 +270,9 @@
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     ".cplfund-table th { background: var(--seal-blue); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
+    // Centered numeric columns (Sam, 2026-08-31): CR FTES · NC FTES · Elig ·
+    // CR award sit centered; the last column (NC award) stays right-aligned.
+    ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
     ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
     ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
@@ -2143,7 +2151,14 @@
   // enforced server-side is the CO Monitor notes (cpl_funding_notes SELECT is
   // `is_allowed_reviewer() OR team_pass_ok()`, verified 2026-07-30), so an
   // anonymous reader gets nothing from that table regardless of this flag.
-  function publicMode() { return !!window.CPL_FUNDING_PUBLIC; }
+  // previewPublic (Sam, 2026-08-31): a signed-in reviewer can flip the whole
+  // tab to the public rendering without signing out — the View control in the
+  // actions row. The typeof guard matters: publicMode() must be safe to call
+  // before the state literal further down has executed.
+  function publicMode() {
+    if (window.CPL_FUNDING_PUBLIC) return true;
+    return typeof state === "object" && !!state && !!state.previewPublic;
+  }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
   // publicMode() — a missed call site is the failure mode that matters, and a
@@ -3325,7 +3340,7 @@
         "change during that time; unearned funds roll forward" +
         (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
         (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") + "." + reprio
-      : nYears() + "-year window &middot; the pool splits into " + nYears() + " equal annual tranches, each " +
+      : nYears() + "-year window &middot; the funding splits into " + nYears() + " equal annual tranches, each " +
         "earned against that year&rsquo;s targets." + reprio;
     return '<div class="cplfund-years">' + selects +
       (publicMode() ? "" :
@@ -3522,7 +3537,7 @@
     { key: "C", sup: "ᶜ", short: "Career attainment",
       text: "Advancing career attainment through credit for prior learning" },
     { key: "D", sup: "ᴰ", short: "Pilot projects",
-      text: "Supporting credit for prior learning through the chancellor’s office’s pilot projects, " +
+      text: "Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, " +
             "such as the California Mapping Articulated Pathways Initiative" }
   ];
   function goalByKey(k) {
@@ -3645,53 +3660,54 @@
     });
     var items = [];
     // 1 — the balance: shares, bounds, and whether the pool lands allocated.
+    // Sam's verbatim first bullet (2026-08-31); the unallocated-balance
+    // CAPABILITY survives as the first bullet's closing sentence — the warn
+    // branches swap it in whenever the solve leaves a balance uncommitted.
+    var b1lead = "Base awards comprise " +
+      Math.round(pool > 0 ? m.floor * nInst / pool * 100 : 0) + "% of available funds (" +
+      fmtMoney(m.floor * nInst) + " of " + fmtMoney(pool) + "); " +
+      fmtMoney(Math.max(0, pool - m.floor * nInst)) + " is allocated based on FTES size. ";
     if (m.floorInfeasible) {
       items.push('<li><span class="warn">&#9888; The base award cannot be honored</span> &mdash; ' +
         fmtMoney(m.floor) + " &times; " + nInst + " institutions exceeds the " + fmtMoney(pool) +
-        " pool; every institution receives a pro-rata share BELOW the stated base. Lower the base or raise the pool.</li>");
+        " available; every institution receives a pro-rata share BELOW the stated base. Lower the base or raise the funding.</li>");
     } else if (m.unspent > 0.5) {
-      items.push('<li><span class="warn">&#9888; ' + fmtMoney(m.unspent) + " cannot be allocated</span> &mdash; " +
-        "every institution is at the cap. Raise the cap or move the remainder to another line.</li>");
+      items.push('<li><span class="warn">&#9888; Allocation out of balance:</span> ' + b1lead +
+        "A balance of " + fmtMoney(m.unspent) + " remains to be allocated &mdash; every institution is at " +
+        "the cap. Raise the cap or move the remainder to another line.</li>");
     } else if (remainder < -0.5) {
       items.push('<li><span class="warn">&#9888; Over-allocated</span> &mdash; the Year ' + esc(vslot) +
         " priority shares total " + fmtPctTrim(ssum) + " (&gt;100%): the priorities claim " +
         fmtMoney(per * ssum) + " of the " + fmtMoney(per) + " annual tranche &mdash; <strong>" +
-        fmtMoney(-remainder) + " over</strong>. Lower a share to bring it back within the pool.</li>");
+        fmtMoney(-remainder) + " over</strong>. Lower a share to bring it back within the funding.</li>");
     } else if (remainder > 0.5) {
       items.push("<li>The Year " + esc(vslot) + " priority shares total " + fmtPctTrim(ssum) +
         " (&lt;100%): " + fmtMoney(remainder) + " of the " + fmtMoney(per) +
-        " annual tranche is unallocated (spare within the pool).</li>");
+        " annual tranche is unallocated (spare within the funding).</li>");
     } else {
-      items.push('<li><span class="ok">The pool balances.</span> Base awards take ' +
-        fmtPctTrim(pool > 0 ? m.floor * nInst / pool : 0) + " of it (" + fmtMoney(m.floor * nInst) +
-        " of " + fmtMoney(pool) + "); " + fmtMoney(Math.max(0, pool - m.floor * nInst)) +
-        " differentiates by size, the priority shares total " + fmtPctTrim(ssum) +
-        ", and the pool is fully allocated.</li>");
+      items.push('<li><span class="ok">Allocation balances:</span> ' + b1lead +
+        "Funding is fully allocated to institutions and ready for distribution based on measurable outcomes.</li>");
     }
     // 2 — Current Total vs the pool, with the advance share named so the
     // figure can be read honestly (Sam, 2026-07-30).
     items.push("<li><strong>" + fmtMoney(ea.winEarned) + " earned so far</strong> (" +
-      fmtPctTrim(pool > 0 ? ea.winEarned / pool : 0) + " of the pool)" +
+      fmtPctTrim(pool > 0 ? ea.winEarned / pool : 0) + " of the funding)" +
       (pf && pf.as_of ? " on MAP actuals as of " + esc(pf.as_of) : " &mdash; awaiting today&#39;s MAP pull") +
       (ea.winAdvance > 0.5
         ? " &mdash; " + fmtMoney(ea.winMeasured) + " measured + " + fmtMoney(ea.winAdvance) +
           " advanced for credit metrics MAP cannot measure yet"
         : "") +
       "; " + fmtMoney(ea.winUnearned) + " unearned rolls forward within the window.</li>");
-    // 3 — the origination hold (N2 b).
-    if (trioN > 0) {
-      items.push("<li><strong>" + fmtMoney(trioHeld) + " waits on the origination feed</strong> &mdash; the " +
-        trioN + " noncredit-only institutions hold their allocations and draw nothing until CPL " +
-        "originating from them posts at a credit college (no advances &mdash; N2 b).</li>");
-    }
-    // 4 — the noncredit funding on the pool's face (F1: listed from day one,
-    // $0 earned until the noncredit measures report).
+    // 3 — the noncredit share of the funding (F1: listed from day one, $0
+    // earned until the noncredit measures report). The origination-wait bullet
+    // is deleted (Sam, 2026-08-31) — the trio's hold reads from the rows and
+    // the earning-rules fold, not the Summary.
     items.push("<li><strong>" + fmtMoney(ncFace + trioHeld) +
-      " of the pool is noncredit funding on its face</strong> &mdash; " + fmtMoney(trioHeld) +
-      " held by origination plus " + fmtMoney(ncFace) + " riding " + ncColN +
+      " of the funding is noncredit</strong> &mdash; " + fmtMoney(trioHeld) + " at the " + trioN +
+      " noncredit-only institutions plus " + fmtMoney(ncFace) + " riding " + ncColN +
       " college awards, restricted to noncredit outcomes and reading $0 earned until the " +
       "noncredit measures report.</li>");
-    // 5 — held in reserve, its own line whenever non-zero (never redistributed).
+    // 4 — held in reserve, its own line whenever non-zero (never redistributed).
     if (ea.winHeld > 0.5) {
       items.push("<li><strong>" + fmtMoney(ea.winHeld) + " held in reserve</strong> &mdash; " +
         ea.gatedN + " institutions have not met baseline participation; held, never redistributed &mdash; " +
@@ -3857,8 +3873,8 @@
           ? "Total credit and noncredit potential awards &mdash; " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr"
           : "Total credit and noncredit potential awards &mdash; " + windowLabel() + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
         note: "no carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
-          fmtMoney(ncFace + trioHeld) + " of it is noncredit funding on its face (" + fmtMoney(trioHeld) +
-          " held by origination at the noncredit-only institutions + " + fmtMoney(ncFace) +
+          fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
+          " at the noncredit-only institutions + " + fmtMoney(ncFace) +
           " riding college awards, restricted to noncredit outcomes)" }));
     })();
 
@@ -3873,7 +3889,7 @@
         fmtMoney(m.floor) + " &times; " + m.floorCount + " " + noun + "s = " + fmtMoney(m.floorDemanded) +
         ", more than the " + fmtMoney(pot) + " available. Every " + noun + " receives an equal " +
         fmtMoney(each) + " instead, BELOW the stated minimum. Lower the minimum, narrow the lane, " +
-        "or raise the pool.</strong>";
+        "or raise the funding.</strong>";
     }
 
     // Minimum and maximum per-college allocation — one box, two editable dials
@@ -3884,13 +3900,13 @@
     (function () {
       var m = allocModel();
       var floorNote = m.floorCount
-        ? "<strong>" + m.floorCount + " brought up to the base</strong> (&asymp;" + fmtMoney(m.floorCost) + ", funded within the pool)"
+        ? "<strong>" + m.floorCount + " brought up to the base</strong> (&asymp;" + fmtMoney(m.floorCost) + ", funded from within the same total)"
         : "none brought up to the base at current settings";
       var capNote = !(m.cap > 0)
         ? "no cap set &mdash; enter one to cap the largest allocations"
         : (m.cappedCount
             ? "<strong>" + m.cappedCount + " held at the cap</strong> (&asymp;" + fmtMoney(m.capReleased) +
-              " released back into the pool)"
+              " released back to the other institutions)"
             : "no institution reaches the cap at current settings");
       var warn = "";
       if (m.floorInfeasible) {
@@ -3901,7 +3917,7 @@
           "no college is paid under " + fmtMoney(m.floor) + ".</strong>";
       } else if (m.unspent > 0.5) {
         warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
-          " cannot be spent &mdash; every college is at the maximum and the pool no longer balances. " +
+          " cannot be spent &mdash; every college is at the maximum and the funding no longer balances. " +
           "Raise the maximum or move the remainder to another line.</strong>";
       }
       out.push(card({ cls: " floor",
@@ -4266,7 +4282,7 @@
     return '<p class="cplfund-goal-intro">The chancellor&rsquo;s office must allocate this appropriation ' +
       '&ldquo;using all of the following goals&rdquo; (Ed. Code &sect;78093.2(d)(1)), and &sect;78093.2(d)(2) ' +
       "makes demonstrating them a condition of a campus allocation. This is that account, read live from the " +
-      "model rather than written down beside it. A priority&rsquo;s figure is its full pool share &mdash; " +
+      "model rather than written down beside it. A priority&rsquo;s figure is its full funding share &mdash; " +
       "its credit and noncredit shares together, the same ceiling its card calls Total Possible.</p>" +
       // Sam, 2026-08-28: the statutory goals are not a separate errand. They sit
       // inside one alignment stack, and the frames were written at different
@@ -4342,7 +4358,7 @@
       "<ul>" +
       "<li><strong>At the cap:</strong> " + (atCap.length ? atCap.join(" &middot; ") : "none at current settings") + "</li>" +
       "<li><strong>At the base:</strong> " + m.floorCount + " institutions &mdash; every proportional share below " +
-        fmtMoney(m.floor) + " is brought up to the base, funded within the pool.</li>" +
+        fmtMoney(m.floor) + " is brought up to the base, funded from within the same total.</li>" +
       "<li><strong>Range:</strong> " +
         boundLabel(s.minC, { n: s.minCount, value: s.min }, floorWindow(), "institutions", "base award") +
         " at " + fmtMoney(s.min) + " to " +
@@ -5119,18 +5135,18 @@
       ? "The three Year-" + state.viewSlot + " priority shares (" + parts + ") sum to 100%, so a college&#39;s " +
         "<strong>total potential allocation equals its share of statewide " + basisLabel() +
         "</strong> applied to the " +
-        fmtMoney(per) + " annual pool"
+        fmtMoney(per) + " annual funding"
       : "The three Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
         fmtPctTrim(shareSum) + " &mdash; the model " + (shareSum > 1 ? "over" : "under") +
-        "-allocates the annual pool (see Balance)</span>";
+        "-allocates the annual funding (see Balance)</span>";
     var bal = per * (1 - shareSum);
     var balStr = Math.abs(bal) < 0.5 ? "$0" : (bal < 0 ? "−" : "") + fmtMoney(Math.abs(bal));
     var m = allocModel();
     var floorSentence = (m.floor > 0 && m.floorCount)
       ? " <strong>Base award:</strong> no institution&#39;s window allocation falls below " + fmtMoney(m.floor) +
         " &mdash; " + m.floorCount + " institutions are brought up to the base (&asymp;" + fmtMoney(m.floorCost) +
-        ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the pool), funded by renormalizing the " +
-        "proportional split over the remaining institutions, so the pool still balances. <em>The base raises an " +
+        ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the funding), funded by renormalizing the " +
+        "proportional split over the remaining institutions, so the total still balances. <em>The base raises an " +
         "institution&#39;s funding, not its targets:</em> performance targets stay proportional to the institution&#39;s " +
         "PRE-BASE share of statewide " + basisLabel() + ", so an institution at the base is NOT asked to exceed its " +
         "size-appropriate numbers to receive it."
@@ -5142,7 +5158,7 @@
     var capSentence = (m.cap > 0 && m.cappedCount)
       ? " <strong>Cap:</strong> no institution&#39;s window allocation rises above " + fmtMoney(m.cap) +
         " &mdash; " + m.cappedCount + " institutions are held there, releasing " + fmtMoney(m.capReleased) +
-        " (" + fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the pool) back into the proportional " +
+        " (" + fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the funding) back into the proportional " +
         "split. The base and the cap are solved together, so an institution can come back OFF the base once " +
         "the cap releases funding. <em>The cap lowers an institution&#39;s funding, not its targets:</em> " +
         "performance targets stay proportional to its PRE-CAP share of statewide " + basisLabel() + "."
@@ -5265,15 +5281,15 @@
       { key: "order", label: "#", cls: "" },
       { key: "college", label: "Institution", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      { key: "cr_ftes", label: "CR FTES", cls: "",
-        title: "Credit full-time-equivalent students (2025-26 DataMart) — the institution's credit teaching size. Combined with its noncredit FTES it sets the institution's share of the one pool." },
-      { key: "nc_ftes", label: "NC FTES", cls: "",
+      { key: "cr_ftes", label: "CR FTES", cls: "c",
+        title: "Credit full-time-equivalent students (2025-26 DataMart) — the institution's credit teaching size. Combined with its noncredit FTES it sets the institution's share of the funding." },
+      { key: "nc_ftes", label: "NC FTES", cls: "c",
         title: "Annual noncredit FTES (MIS 2025-26) — the institution's noncredit teaching size. It sizes the award WITH the credit FTES, and sets the noncredit share of the award — restricted to noncredit outcomes." },
       // KEPT ON by Sam's ruling (2026-08-31 — the one R-sheet veto): the
       // eligibility column stays visible by default; the Columns menu can hide it.
-      { key: "elig", label: "Elig", cls: "",
+      { key: "elig", label: "Elig", cls: "c",
         title: "Baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation confirmed by the deadline + Veteran Star ≥75% JSTs — replaced for the three noncredit-only campuses by noncredit certificates posted as exhibits in MAP). A sector turns green when the institution meets it; a fully green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL." },
-      { key: "cr_award", label: "CR award", cls: "",
+      { key: "cr_award", label: "CR award", cls: "c",
         title: "The credit share of the max award, " + awardWhen + " — earned against the credit priority measures, with the Current Total beneath. Awards are based on outcomes, not automatically awarded." },
       { key: "nc_award", label: "NC award", cls: "",
         title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; it reads $0 earned until those feeds report, and the credit program cannot draw it. The pair's sum is the institution's one combined max award." },
@@ -5292,6 +5308,7 @@
     // first).
     sortKey: "college", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
+    previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
   };
 
@@ -5863,13 +5880,13 @@
   function crAwardCellHtml(row) {
     var cap = (row.cr_award || 0) / awardDivisor();
     if (row.nco) {
-      return '<td class="cf-award dk" title="A noncredit-only institution: its whole award is the noncredit share, earned by origination (N2 b).">$0</td>';
+      return '<td class="cf-award dk c" title="A noncredit-only institution: its whole award is the noncredit share, earned by origination (N2 b).">$0</td>';
     }
     var earned = row.earned_cr || 0;
     var title = earnedCellTitle("Credit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
-    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) +
+    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) +
       earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
   }
   function ncAwardCellHtml(row) {
@@ -5906,11 +5923,11 @@
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the pool by size came out below " + fmtMoney(allocModel().floor) +
-        ", so it is brought up to the base award — funded from within the same pool.") + '">at base</span>';
+      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
+        ", so it is brought up to the base award — funded from within the same total.") + '">at base</span>';
     if (c.capped) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the pool by size came out above " + fmtMoney(allocModel().cap) +
-        ", so it is held at the cap — the difference stays in the pool for everyone else.") + '">at cap</span>';
+      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
+        ", so it is held at the cap — the difference funds the other institutions.") + '">at cap</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in.
     if (partShown() && !ELIG.optin[c.college]) {
@@ -5929,13 +5946,13 @@
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      '<td title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
-      '<td title="' + esc((c.nco
-        ? "This institution's own noncredit teaching — its whole size in the one pool" +
+      '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
+      '<td class="c" title="' + esc((c.nco
+        ? "This institution's own noncredit teaching — its whole size in the one split" +
           (c.feeder && c.feeder.noncredit_ftes_placeholder ? " (a stand-in figure; nothing disburses on a placeholder — N3 a)" : "")
         : "Annual noncredit FTES (MIS 2025-26) — sizes the award with the credit FTES and sets the award's noncredit share, restricted to noncredit outcomes") + ".") + '">' +
         fmtInt(c.nc_ftes) + "</td>" +
-      '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
+      '<td class="c" title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       crAwardCellHtml(c) + ncAwardCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
@@ -6188,10 +6205,10 @@
     var foot = '<tr class="cplfund-systemrow">' +
       '<td></td><td class="t">SYSTEM (statewide)</td>' +
       '<td class="t">' + esc(base().system.district || "") + "</td>" +
-      '<td title="Statewide credit FTES — Σ of every institution row.">' + fmtInt(sys.cr_ftes) + "</td>" +
-      '<td title="Statewide noncredit FTES — Σ of every institution row (Mt. SAC Noncredit counted once, on the Mt. San Antonio row; Calbright at its stand-in size).">' +
+      '<td class="c" title="Statewide credit FTES — Σ of every institution row.">' + fmtInt(sys.cr_ftes) + "</td>" +
+      '<td class="c" title="Statewide noncredit FTES — Σ of every institution row (Mt. SAC Noncredit counted once, on the Mt. San Antonio row; Calbright at its stand-in size).">' +
         fmtInt(sys.nc_ftes) + "</td>" +
-      '<td title="institutions satisfying ALL tracked baseline requirements (fully-green glyph)">' +
+      '<td class="c" title="institutions satisfying ALL tracked baseline requirements (fully-green glyph)">' +
       (ELIG.coordOk ? eligAllMetCount() + "/" + oneRoster().length : "—") + "</td>" +
       crAwardCellHtml(sysRow) + ncAwardCellHtml(sysRow) +
       "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
@@ -7099,6 +7116,33 @@
     _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
   }
 
+  // ── page actions (Sam, 2026-08-31) ────────────────────────────────────────
+  // Words, not glyphs: expand/collapse-all for the section folds, the draft
+  // memo and the PDF as one-click buttons at the top, and — for signed-in
+  // reviewers — the Internal · Public view preview.
+  function anySectionOpenNow() {
+    var ids = ["window", "pools", "formula", "eligibility", "priorities", "timing", "goals", "college"];
+    for (var i = 0; i < ids.length; i++) if (sectionOpen(ids[i])) return true;
+    return false;
+  }
+  function actionsRowHtml() {
+    var view = "";
+    if (!window.CPL_FUNDING_PUBLIC) {
+      view = '<span class="cplfund-viewlab">View</span>' +
+        '<button type="button" class="cplfund-optbtn" data-viewmode="internal" aria-pressed="' + (!state.previewPublic) +
+        '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
+        '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
+        '" title="Preview what colleges see — the reviewer-only controls drop out; nothing changes for anyone else.">Public</button>';
+    }
+    return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
+        (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
+      (publicMode() ? "" :
+        '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
+      '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab — use your browser&#39;s Print &rarr; Save as PDF">Save as PDF</button>' +
+      view + "</div>";
+  }
+
   function render() {
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
@@ -7154,7 +7198,11 @@
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
       subviewTabsHtml() +
-      '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
+      // "Version as of <date>" (Sam's wording, 2026-08-31); the source detail
+      // lives on in the memo masthead. A ".N" sub-revision is internal — the
+      // date alone displays.
+      '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
+      actionsRowHtml() +
       authbarHtml() +
       // The Summary sits at the top, never inside a fold (R11, 2026-08-31) —
       // it is the one over/under readout the retired balance boxes fed.
@@ -7530,7 +7578,15 @@
     // Persist each collapsible section's open/closed state so it survives the
     // re-render an edit triggers (native <details> resets otherwise).
     document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
-      dt.addEventListener("toggle", function () { saveSectionState(dt.getAttribute("data-sec"), dt.open); });
+      dt.addEventListener("toggle", function () {
+        saveSectionState(dt.getAttribute("data-sec"), dt.open);
+        var xb = document.getElementById("cplFundXall");
+        if (xb) {
+          var any = false;
+          document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (d2) { if (d2.open) any = true; });
+          xb.textContent = any ? "Collapse all sections" : "Expand all sections";
+        }
+      });
     });
     var input = document.getElementById("cplFundSearch");
     if (input) {
@@ -7606,6 +7662,28 @@
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
     var pdfBtn = document.getElementById("cplFundPdf");
     if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
+    var pdfTop = document.getElementById("cplFundPdfTop");
+    if (pdfTop) pdfTop.addEventListener("click", openPdf);
+    var memoTop = document.getElementById("cplFundDraftMemo");
+    if (memoTop) memoTop.addEventListener("click", function () {
+      if (publicMode()) return;   // belt-and-braces: the button never renders public
+      if (state.subview !== "report") { state.subview = "report"; render(); }
+    });
+    var xallBtn = document.getElementById("cplFundXall");
+    if (xallBtn) xallBtn.addEventListener("click", function () {
+      var secs = document.querySelectorAll("#cplFundingMount details.cplfund-sec");
+      var anyOpen = false;
+      secs.forEach(function (dt) { if (dt.open) anyOpen = true; });
+      secs.forEach(function (dt) { dt.open = !anyOpen; });   // each toggle event persists its own state
+      xallBtn.textContent = anyOpen ? "Expand all sections" : "Collapse all sections";
+    });
+    document.querySelectorAll("#cplFundingMount [data-viewmode]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pub = b.getAttribute("data-viewmode") === "public";
+        if (!!state.previewPublic === pub) return;
+        state.previewPublic = pub; render();
+      });
+    });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
     // ⚙ menu lives in the toolbar so it stays open across the toggle).

@@ -17,6 +17,14 @@
 //   * SCOPE — the fold belongs to the projects card alone; the admin card
 //     carries none.
 //
+// ⚠️ SELECTOR NOTE (one-pool port, 2026-08-31): `details.cplfund-pool-projects`
+// stopped being unique to this card — the one-pool tab reuses the class for the
+// window card's bounds fold (R7's successor), the who-moves fold and the NC
+// earning-rules fold. The fold is therefore located by ITS OWN summary wording
+// ("Named projects"), never by the shared class alone; asserting `all.length
+// === 1` on the class was what crashed this suite after the port, not anything
+// about what it guards.
+//
 // Memory budget (tests/lib/cpl_funding_harness.js): 1 booted window.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_pool_projects.test.js`).
@@ -33,14 +41,25 @@ const {
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
 
-  function fold() {
-    const all = Array.from(doc.querySelectorAll(".cplfund-card details.cplfund-pool-projects"));
-    return all.length === 1 ? all[0] : null;
+  // Every fold that carries the Named-projects summary — there must be exactly
+  // one, and it must be THIS card's.
+  function folds() {
+    return Array.from(doc.querySelectorAll("details.cplfund-pool-projects")).filter(function (d) {
+      const s = d.querySelector("summary");
+      return !!s && /named projects/i.test(s.textContent);
+    });
   }
+  function fold() { const all = folds(); return all.length === 1 ? all[0] : null; }
 
   // ── honest empty state (NO_REMOTE: the ledger never loaded) ───────────────
   let f = fold();
-  check("exactly one projects fold renders, on the projects card only", !!f);
+  check("exactly one Named-projects fold renders", !!f);
+  check("it sits on the projects card (the CPL Projects & Innovation deduction), and on no other card",
+    !!f && !!f.closest(".cplfund-card") &&
+    /CPL Projects (&|&amp;) Innovation/.test(f.closest(".cplfund-card").textContent + f.closest(".cplfund-card").innerHTML) &&
+    Array.from(doc.querySelectorAll(".cplfund-card")).filter(function (c) {
+      return folds().some(function (d) { return c.contains(d); });
+    }).length === 1);
   check("the toggle is a word control, collapsed by default",
     !!f && /named projects/i.test(f.querySelector("summary").textContent) && !f.hasAttribute("open"));
   check("without the ledger, the fold says so — no list, never a stale copy",
@@ -70,7 +89,7 @@ const {
   check("no project is attributed to either share alone",
     !/\$35M share pays|\$15M share pays|funded by the \$35M|funded by the \$15M/i.test(txt));
   check("matching sums draw NO drift warning",
-    !f.querySelector(".cplfund-pool-projects-drift"));
+    !!f && !f.querySelector(".cplfund-pool-projects-drift"));
   check("leads and status are pointed at the Activities register, not copied",
     /Activities register/.test(txt) && !/lead:/i.test(txt));
 

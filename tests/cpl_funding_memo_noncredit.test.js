@@ -1,346 +1,262 @@
 // CPL Implementation Funding — the MEMO's noncredit figures must come from the
-// noncredit MODEL, not from a re-split of the carve-out.
+// MODEL, never re-derived on the export surface.
 //
-// WHY THIS FILE EXISTS. On 2026-08-23 the noncredit lane stopped being a flat
-// FTES split of the carve-out among the standalone feeder campuses and became
-// the same bounded allocation the credit pool uses (ncModel: 33 institutions —
-// 30 credit colleges running their own noncredit programs plus 3 standalone —
-// clamped between a floor and a ceiling). The TAB was migrated. `memoModel()`
-// was not: it kept `feederBasis(f) / Σ feederBasis * carve`, the retired
-// mechanism, and the memo is the EXPORTED document — the artifact that leaves
-// the tab, the gate and the room.
+// WHY THIS FILE EXISTS. The memo is the EXPORTED document — the artifact that
+// leaves the tab, the gate and the room — and it is where re-derivation is
+// hardest to notice, because nobody reads the export next to the screen. This
+// file caught exactly that once: on 2026-08-23 the tab's noncredit lane was
+// migrated and `memoModel()` was not — it kept the retired flat re-split
+// (`feederBasis(f) / Σ feederBasis × carve`) and paid the whole $1.8M
+// carve-out to four campuses, $779,862 of it to a campus the model paid $0.
 //
-// What that produced at Sam's live dials ($1,800,000 carve-out):
+// ONE-POOL PORT (Sam adopted the model 2026-08-31). The carve-out lane those
+// figures came from is retired (R3–R5) — see tests/cpl_funding_nc_lane.test.js
+// for the lane retirement and tests/cpl_funding_one_pool.test.js for the
+// adopted model's anchor suite. The memo now prints ONE line per institution:
+// District / Institution · Credit share · Noncredit share · Max award, all
+// four from the same solve the tab renders. What survives here, re-aimed:
 //
-//     institution        memo said     the model pays
-//     Mt. SAC NC         $779,862      $0    (deduped — see below)
-//     SD Cont. Ed        $672,453      $100,000
-//     North Orange       $275,671      $50,000
-//     Calbright          $ 72,014      $50,000
-//     the 30 colleges    absent        the remaining $1,600,000
-//
-// Two independent defects, either of which alone is disqualifying:
-//
-//   1. It pays the ENTIRE carve-out to four institutions, so 30 colleges'
-//      noncredit money is missing from the one document that tells a district
-//      what it is getting.
-//   2. It pays $779,862 to Mt. SAC Noncredit, whose noncredit FTES is ALREADY
-//      counted on the Mt. San Antonio credit row. `ncInstitutions()` zeroes its
-//      size for exactly this reason and the model pays it $0. Re-deriving the
-//      split re-introduces the double payment that
-//      `methodology-a-deduplication-has-a-scope` was written to prevent.
-//
-// The standing invariant this file enforces is the one CLAUDE.md already states
-// for the credit lane — NEVER re-derive an allocation, call the model — applied
-// to the noncredit lane, and pinned on the surface where re-derivation is
-// hardest to notice because nobody reads the export next to the screen.
+//   * FIGURES FROM THE MODEL — every row's three money cells tie to
+//     instSplit/_alloc/_ncAward, for all 118 institutions, not a sample.
+//   * THE DEDUP — Mt. SAC Noncredit is NOT a row: its FTES rides the
+//     Mt. San Antonio row (`nc_ftes_on_credit_row`), so the same program is
+//     never paid twice (`methodology-a-deduplication-has-a-scope`).
+//   * THE TRIO — NOCE / SD Cont. Ed / Calbright are ordinary rows FLAGGED
+//     noncredit-only (origination, no advances — N2 b), credit cell "—".
+//   * NEVER FUSED — noncredit money beside credit money in its own column
+//     (Sam's standing "neglected step child" rule), and the totals tie to the
+//     one pool.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_memo_noncredit.test.js`).
 const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
 
-// Sam's live overlay, read from cpl_funding_config on 2026-08-23 21:15:31Z. The
-// defect is present at the baked defaults too, but it is worth pinning at the
-// dials actually in production: a $1.8M carve-out makes the misstatement bigger,
-// and this is the configuration a reader would have been handed.
-const LIVE = { admin_cost: 800000, floor_window: 150000, feeder_carveout: 1800000,
-               nc_floor_window: 50000, scaling_projects_tech: 8959692 };
-
 const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
-// PARSE THE ROW, do not grep the document. The first draft of this file
-// substring-matched `money(award)` against the whole memo and three assertions
-// could not fail: "$50,000" is also the ESS 25-82 seed grant named in the memo
-// intro, so two institutions "passed" on a sentence about something else. An
-// assertion that matches text the document prints for another reason is not a
-// guard — the same shape as asserting on the one container that clears itself.
-function allocRows(memo) {
-  const out = {};
-  const re = /<td class='t' style='padding-left:1\.5em;'>([\s\S]*?)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td>/g;
+// PARSE THE ROW, do not grep the document. The first draft of the old file
+// substring-matched money strings against the whole memo and three assertions
+// could not fail ("$50,000" is also the seed grant named in the intro). Same
+// discipline here, updated to the one-pool row shape: an indented 4-cell row
+// is an institution; a bold 4-cell row is a district header (or the TOTAL).
+// The name group must not cross a row boundary — the summary table's indented
+// rows carry ONE value cell, and a greedy group would splice two of them into
+// a phantom institution (measured: it did, before the (?!</tr>) guard).
+function parseNum(s) {
+  const t = String(s).replace(/&mdash;|—/g, "").replace(/[$,]/g, "").trim();
+  return t === "" ? null : Number(t);
+}
+function instRows(memo) {
+  const out = [];
+  const re = /<tr><td class='t' style='padding-left:1\.5em;'>((?:(?!<\/tr>)[\s\S])*?)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><td>([^<]*)<\/td><\/tr>/g;
   let m;
   while ((m = re.exec(memo)) !== null) {
-    const name = m[1].replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
-    const num = (s) => {
-      const t = String(s).replace(/&mdash;|—/g, "").replace(/[$,]/g, "").trim();
-      return t === "" ? null : Number(t);
-    };
-    out[name] = { credit: num(m[2]), nc: num(m[3]), raw: name };
+    out.push({ name: m[1].replace(/<[^>]*>/g, " ").replace(/&mdash;/g, "—").replace(/\s+/g, " ").trim(),
+               cr: parseNum(m[2]), nc: parseNum(m[3]), total: parseNum(m[4]) });
   }
   return out;
 }
-// A row keyed by the institution's name, however the memo decorated it.
-function rowFor(rows, needle) {
-  const k = Object.keys(rows).find((n) => n.indexOf(needle) === 0 || n.indexOf(needle) !== -1);
-  return k ? rows[k] : null;
+function boldRows(memo) {
+  const out = [];
+  const re = /<tr><td class='t'><strong>([^<]*)<\/strong><\/td><td><strong>([^<]*)<\/strong><\/td><td><strong>([^<]*)<\/strong><\/td><td><strong>([^<]*)<\/strong><\/td><\/tr>/g;
+  let m;
+  while ((m = re.exec(memo)) !== null) {
+    out.push({ name: m[1], cr: parseNum(m[2]), nc: parseNum(m[3]), total: parseNum(m[4]), raw: m });
+  }
+  return out;
 }
+const rowFor = (rows, needle) => rows.find((r) => r.name.indexOf(needle) !== -1) || null;
 
-function boots(pool) {
-  const { window } = freshDom();
-  boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  if (pool) T._setScenario({ pool: pool });
-  T.render();
-  const memo = T._buildMemo("memo");
-  return { T, memo, nc: T._ncModel(), rows: allocRows(memo) };
-}
+const { window } = freshDom();
+boot(window);
+const T = window.CPL_FUNDING_TAB;
+const memo = T._buildMemo("memo");
+const rows = instRows(memo);
+const eff = T._effective();
 
 // ─────────────────────────────────────────────────────────────────────────────
-// N1 — the memo agrees with the model, institution by institution
+// N1 — the one-pool table shape, and the counts that describe it
 // ─────────────────────────────────────────────────────────────────────────────
-// The check is deliberately "the model's figure appears in the memo AND the
-// re-split figure does not". Asserting only the first would pass on a document
-// that printed both, which is exactly what a half-migration looks like.
+check("the allocation table carries the one-pool columns (District / Institution · Credit share · Noncredit share · Max award)",
+  /District \/ Institution<\/th><th>Credit share<\/th><th>Noncredit share<\/th><th>Max award<\/th>/.test(memo));
+check("the summary names the pool by Sam's label and the restricted noncredit line",
+  memo.indexOf("Total credit and noncredit potential awards") !== -1 &&
+  memo.indexOf("Noncredit shares (restricted to noncredit outcomes)") !== -1);
+check("the memo reports the roster the model funds — 118 (115 colleges + 3 noncredit-only institutions)",
+  (memo.match(/Funded institutions<\/td><td>([^<]*)</) || [])[1] === "118 (115 colleges + 3 noncredit-only institutions)");
+check("one line per institution — all 118, no more, no fewer", rows.length === 118);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// N2 — the memo agrees with the model, institution by institution
+// ─────────────────────────────────────────────────────────────────────────────
+// EVERY row, not a sample — a join that drops some institutions and keeps
+// others is the likeliest failure and a spot-check cannot see it. Names are
+// display-decorated, so the tie-out is by VALUE TRIPLE: the multiset of
+// (max award · noncredit share · credit share), rounded exactly as fmtMoney
+// rounds, must equal the model's. cell() prints "—" for ≤ $0.50, which
+// normalizes to 0 on both sides.
 {
-  const { memo, nc, rows } = boots(LIVE);
-
-  // The three standalone institutions that ARE in the lane. Asserted on the
-  // institution's OWN row, so the figure has to be where a reader would read it.
-  [["North Orange Continuing Education", "NC:NOCE"],
-   ["San Diego College of Continuing Education", "NC:SD Cont. Ed"],
-   ["Calbright College", "NC:Calbright"]].forEach(function (pair) {
-    const award = nc.W[pair[1]] || 0;
-    const row = rowFor(rows, pair[0]);
-    check("memo row for " + pair[0] + " pays what the model pays (" + money(award) + ")",
-      award > 0 && !!row && row.nc === Math.round(award));
-    check("...and shows no credit allocation for it (it has no credit row)",
-      !!row && row.credit === null);
+  const m = T._model();
+  const norm = (v) => { const r = Math.round(v || 0); return r > 0 ? r : 0; };
+  const expected = Object.keys(m.W).map((k) => {
+    const nc = T._ncAward(k);
+    return [norm(m.W[k]), norm(nc), norm(m.W[k] - nc) > 0.5 ? Math.round(m.W[k] - nc) : 0];
   });
-
-  // THE DEDUP. Mt. SAC Noncredit is a real grantee and stays listed — the rule
-  // is "zero the measure, keep the record, render the reason" — but it must not
-  // be paid from a lane whose size basis excludes it.
-  const mtsac = rowFor(rows, "Mt. San Antonio College — Noncredit");
-  check("Mt. SAC Noncredit is still LISTED in the memo (a real ESS 25-82 grantee)",
-    !!mtsac);
-  check("...paid nothing, shown as — rather than a $0 that reads as passed over",
-    !!mtsac && mtsac.nc === null);
-  check("...and the memo says WHY, naming the row that carries its FTES",
-    /Mt\. San Antonio College — Noncredit[\s\S]{0,200}counted on the Mt San Antonio row/.test(
-      memo.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ")));
-  check("model pays Mt. SAC Noncredit nothing (its FTES is on the credit row)",
-    !(nc.W["NC:Mt. SAC NC"] > 0));
-  // The re-split figure at these dials. Pinned as a literal because that is the
-  // number a reader would have acted on.
-  check("memo does NOT print the re-split figure $779,862 for the deduped campus",
-    memo.indexOf("$779,862") === -1);
-  check("memo does NOT print the other three re-split figures either",
-    memo.indexOf("$672,453") === -1 && memo.indexOf("$275,671") === -1 &&
-    memo.indexOf("$72,014") === -1);
+  const got = rows.map((r) => [r.total || 0, r.nc || 0, r.cr || 0]);
+  const key = (t) => t.join("|");
+  const sortT = (a, b) => a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
+  expected.sort(sortT); got.sort(sortT);
+  const mismatch = expected.filter((e, i) => !got[i] ||
+    Math.abs(e[0] - got[i][0]) > 1 || Math.abs(e[1] - got[i][1]) > 1 || Math.abs(e[2] - got[i][2]) > 1);
+  check("every institution's (max award · noncredit share · credit share) triple is the MODEL's — all 118 tie out" +
+        (mismatch.length ? " — first drift: " + key(mismatch[0]) : ""),
+    expected.length === 118 && got.length === 118 && mismatch.length === 0);
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// N2 — the 30 colleges' noncredit money is IN the document
-// ─────────────────────────────────────────────────────────────────────────────
-// A district reading the allocation table must be able to see the noncredit
-// money its colleges receive. Under the re-split it was not in the document at
-// all, and its absence is invisible: the table still tied to the institution
-// total, because the four campuses had absorbed the whole carve-out.
+// And by NAME for the rows a reader will actually look up:
 {
-  const { T, nc, rows } = boots(LIVE);
-  const collegeRows = nc.rows.filter(function (r) { return r.kind === "college"; });
-  check("the lane really is mostly colleges (guards the fixture, not the code)",
-    collegeRows.length >= 25);
-
-  // EVERY college award, not a sample. A join that drops some colleges and keeps
-  // others is the likeliest failure here, and one spot-check cannot see it.
-  var missing = collegeRows.filter(function (r) {
-    const row = rowFor(rows, T._display ? T._display(r.name) : r.name) || rowFor(rows, r.name);
-    return !row || row.nc !== Math.round(nc.W[r.key] || 0);
-  });
-  check("every college in the lane shows its own noncredit award on its own row" +
-        (missing.length ? " — missing: " + missing.slice(0, 3).map(function (r) { return r.name; }).join(", ") : ""),
-    missing.length === 0);
+  const mtsa = rowFor(rows, "Mt San Antonio");
+  const a = T._alloc("Mt San Antonio");
+  check("the Mt San Antonio row pays what the model pays (at the cap), decomposed by ITS own FTES split",
+    !!mtsa && !!a && mtsa.total === Math.round(a.w) &&
+    mtsa.nc === Math.round(T._ncAward("Mt San Antonio")) &&
+    Math.abs((mtsa.cr + mtsa.nc) - mtsa.total) <= 1);
+  const taft = rowFor(rows, "Taft");
+  check("a no-noncredit college's Noncredit cell is — (not applicable), never a $0 that reads as passed over (Taft)",
+    !!taft && taft.nc === null && taft.cr === Math.round(T._alloc("Taft").total));
+  check("every row's credit and noncredit shares sum to its ONE max award (per-row conservation)",
+    rows.every((r) => Math.abs(((r.cr || 0) + (r.nc || 0)) - (r.total || 0)) <= 1));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// N3 — noncredit money is shown BESIDE credit money, never folded into it
+// N3 — THE DEDUP: Mt. SAC Noncredit is not a row
+// ─────────────────────────────────────────────────────────────────────────────
+// `nc_ftes_on_credit_row` moves its 10,829.3 FTES onto the Mt. San Antonio
+// row, whose noncredit SHARE therefore carries that program — listed once,
+// paid once. A second Mt. SAC row is the double payment coming back.
+check("Mt. SAC Noncredit is NOT an allocation row — its FTES rides the Mt. San Antonio row",
+  !rowFor(rows, "Mt. San Antonio College — Noncredit") &&
+  rows.filter((r) => /Mt\.? San Antonio/.test(r.name)).length === 1);
+// The retired re-split's figures at the dials of record, pinned as literals
+// because those are the numbers a reader would have acted on (2026-08-23).
+check("the memo does NOT print the retired re-split figures ($779,862 / $672,453 / $275,671 / $72,014)",
+  ["$779,862", "$672,453", "$275,671", "$72,014"].every((s) => memo.indexOf(s) === -1));
+
+// ─────────────────────────────────────────────────────────────────────────────
+// N4 — the noncredit-only trio: rows, flagged, held by origination
+// ─────────────────────────────────────────────────────────────────────────────
+[["North Orange Continuing Education", "NOCE"],
+ ["San Diego College of Continuing Education", "SD Cont. Ed"],
+ ["Calbright College", "Calbright"]].forEach(([full, short]) => {
+  const row = rowFor(rows, full);
+  const award = T._alloc(short);
+  check("memo row for " + full + " pays what the model pays (" + money(award ? award.total : 0) + "), all of it the noncredit share",
+    !!row && !!award && award.total > 0 && row.nc === Math.round(award.total) && row.total === Math.round(award.total));
+  check("…its Credit cell is — (no credit program), and the row is FLAGGED noncredit-only / origination / no advances",
+    !!row && row.cr === null && /noncredit-only/.test(row.name) && /earns by origination, no advances/.test(row.name));
+});
+// N3 a: Calbright's 1,000-FTES size is a stand-in — the memo must say nothing
+// disburses on a placeholder, on Calbright's own row.
+check("Calbright's row carries the N3 a stand-in caveat (nothing disburses on a placeholder)",
+  (function () { const r = rowFor(rows, "Calbright College"); return !!r && /stand-in/.test(r.name) && /nothing disburses on a placeholder/.test(r.name); })());
+
+// ─────────────────────────────────────────────────────────────────────────────
+// N5 — noncredit money is shown BESIDE credit money, never folded into it
 // ─────────────────────────────────────────────────────────────────────────────
 // Sam's constraint, recorded twice: noncredit "never sums into the credit
-// total — own column, own CSV columns, own My College line" ("the neglected
-// step child"). So the fix must not repair the tie-out by adding the noncredit
-// award onto the college's credit figure.
+// total — own column" ("the neglected step child"). Under one pool "fused"
+// would print the whole combined award in the Credit column.
 {
-  const { T, memo, nc, rows } = boots(LIVE);
-  const withNc = nc.rows.filter(function (r) { return r.kind === "college" && (nc.W[r.key] || 0) > 0; })
-    .map(function (r) { return { name: r.name, nc: nc.W[r.key], credit: T._alloc(r.name).total }; })
-    .sort(function (a, b) { return b.nc - a.nc; })[0];
+  const withNc = D.colleges
+    .filter((c) => (c.noncredit_ftes || 0) > 0)
+    .map((c) => ({ name: c.college, nc: T._ncAward(c.college), a: T._alloc(c.college) }))
+    .sort((a, b) => b.nc - a.nc)[0];
   const row = rowFor(rows, withNc.name);
-  check("that college's CREDIT column is its credit allocation, unmodified",
-    !!row && row.credit === Math.round(withNc.credit));
-  check("...its NONCREDIT column is the noncredit award, in a column of its own",
-    !!row && row.nc === Math.round(withNc.nc));
-  check("...and the two are never fused into one figure",
-    !!row && row.credit !== Math.round(withNc.credit + withNc.nc) &&
-    memo.indexOf(money(withNc.credit + withNc.nc)) === -1);
-  check("the table header names the noncredit column",
-    memo.indexOf("Noncredit support") !== -1);
+  check("the college with the largest noncredit share keeps it in a column of its OWN (" + withNc.name + ")",
+    !!row && row.nc === Math.round(withNc.nc) && row.nc > 0);
+  check("…and its CREDIT column is the credit share alone, never the fused combined figure",
+    !!row && row.cr === Math.round(withNc.a.w - withNc.nc) && row.cr < row.total);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// N4 — the counts describe the lane, not the standalone roster
+// N6 — the allocation table still ties out, lane by lane and to the pool
 // ─────────────────────────────────────────────────────────────────────────────
+// The tie-out is what made the 2026-08-23 defect survivable: a table that adds
+// up reads as correct. So the totals must be honest AND decomposed.
 {
-  const { memo, nc } = boots(LIVE);
-  const m = memo.match(/Funded Noncredit Campuses<\/td><td>(\d+)</);
-  check("memo reports a Funded Noncredit count", !!m);
-  check("...and it is the LANE count (" + nc.rows.length + "), not the " +
-        D.feeders.length + "-record standalone roster",
-    !!m && Number(m[1]) === nc.rows.length);
+  const bold = boldRows(memo);
+  const total = bold.find((r) => /TOTAL \(statewide\)/.test(r.name));
+  check("the TOTAL (statewide) row is present and IS the one pool ($25,240,308)",
+    !!total && Math.abs(total.total - 25240308) <= 1);
+  check("…split across the two columns, so each ties to its own lane and the pair ties to the pool",
+    !!total && Math.abs((total.cr + total.nc) - total.total) <= 1 &&
+    Math.abs(total.nc - (eff.pool.nc_college_shares + eff.pool.nc_only_held_by_origination)) <= 1);
+  // District subtotals: a district with no credit member must not print "$0" —
+  // the retired memo printed Calbright's district as "$0 credit" beside real
+  // noncredit money. Not zero: not applicable. cell() renders "—" for both.
+  const dists = bold.filter((r) => r !== total);
+  check("district subtotals were parsed (guards the assertion below)", dists.length > 50);
+  check("no district subtotal claims $0 credit while carrying noncredit money — it prints — instead",
+    !dists.some((r) => String(r.raw[2]).trim() === "$0" && (r.nc || 0) > 0) &&
+    /<strong>Statewide \(no district\)<\/strong><\/td><td><strong>&mdash;<\/strong>/.test(memo));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// N5 — the allocation table still ties out
-// ─────────────────────────────────────────────────────────────────────────────
-// The tie-out is what made the defect survivable: four campuses absorbing the
-// whole carve-out produced a table that added up. So the fix has to keep the
-// total honest while moving the money to the right rows.
-{
-  const { T, memo, nc } = boots(LIVE);
-  const credit = D.colleges.reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
-  const ncTotal = nc.rows.reduce(function (s, r) { return s + (nc.W[r.key] || 0); }, 0);
-  check("the noncredit lane spends the whole carve-out (sanity on the model)",
-    Math.abs(ncTotal - nc.pool) < 1);
-  check("memo TOTAL row still carries the statewide institution total",
-    memo.indexOf("TOTAL (statewide") !== -1 &&
-    memo.indexOf(money(credit + ncTotal)) !== -1);
-  check("...split across the two columns, so each ties to its own lane",
-    memo.indexOf(money(credit)) !== -1 && memo.indexOf(money(ncTotal)) !== -1);
-
-  // A district with no credit member must not print "$0" — Calbright's subtotal
-  // did, beside its real $50,000 of noncredit support. Not zero: not applicable.
-  const subtotals = [...memo.matchAll(/<td class='t'><strong>([^<]*)<\/strong><\/td><td><strong>([^<]*)<\/strong><\/td><td><strong>([^<]*)<\/strong>/g)]
-    .map((m) => ({ d: m[1], credit: m[2], nc: m[3] }));
-  check("district subtotals were parsed (guards the assertion below)", subtotals.length > 50);
-  check("no district subtotal claims $0 credit while carrying noncredit money",
-    !subtotals.some((s) => /^\$0$/.test(s.credit.trim())));
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// N6 — the retired mechanism is GONE from the source, not merely unused
+// N7 — the retired mechanism is GONE from the source, not merely unused
 // ─────────────────────────────────────────────────────────────────────────────
 // A dormant re-split is a defect waiting for its next caller. Comment lines are
-// stripped first: a grep for "the old formula is gone" otherwise matches the
-// comment that explains why it went — the trap named in the Session 185 handoff.
+// stripped first: a grep for the old formula otherwise matches the comment that
+// explains why it went — the trap named in the Session 185 handoff.
 {
   const code = consumerSrc.split("\n")
-    .filter(function (l) { return !/^\s*(\/\/|\*|\/\*)/.test(l); }).join("\n");
+    .filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l)).join("\n");
   check("no `/ fbasis * carve` re-split survives in live code",
     !/fbasis\s*\*\s*carve|\/\s*fbasis\s*\*\s*carve/.test(code));
-  check("memoModel reads the noncredit MODEL",
-    /memoModel[\s\S]{0,1200}?ncModel\s*\(/.test(code));
+  check("memoModel reads the ONE-POOL model — the roster and the per-award decomposition, never its own split",
+    /function memoModel\(\)[\s\S]{0,1500}?oneRoster\(\)\.map/.test(code) &&
+    /function memoModel\(\)[\s\S]{0,1800}?instSplit\(c\)/.test(code));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// N7 — and it holds at the baked defaults too, not just at Sam's dials
+// N8 — the retired carve-out dials cannot reach the memo through the config
 // ─────────────────────────────────────────────────────────────────────────────
+// The stored fields survive in old configs; the model reads none of them
+// (R3–R5). If any dial still moved the export, the carve-out would be back
+// under another name — on the one surface nobody reads next to the screen.
 {
-  const { memo, nc } = boots(null);
-  const sd = nc.W["NC:SD Cont. Ed"] || 0;
-  check("at the baked defaults the memo still agrees with the model",
-    sd > 0 && memo.indexOf(money(sd)) !== -1);
-  check("...and still pays the deduped campus nothing",
-    !(nc.W["NC:Mt. SAC NC"] > 0));
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// N8 — the two ON-SCREEN cards describe the LANE, not the standalone roster
-// ─────────────────────────────────────────────────────────────────────────────
-// Same defect class as the memo, found by the same reading. The pool card said
-// the carve-out went "to the 4 NC campuses below" and the table count line said
-// "plus 4 noncredit campuses (74,968 students)". Both describe a 33-institution
-// lane by a 4-record roster, and the 74,968 is a HEADCOUNT the lane does not
-// allocate on that also counts Mt. SAC Noncredit — the institution the carve-out
-// pays $0. The pool card is the one a reader uses to judge whether the carve-out
-// is proportionate, which is the question Sam raised it to $1.8M to answer.
-{
-  const { window } = freshDom();
-  boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  T._setScenario({ pool: LIVE });
+  T._setScenario({ pool: { feeder_carveout: 1800000, nc_floor_window: 50000,
+                           nc_cap_window: 100000, nc_threshold_ftes: 500 } });
   T.render();
+  const memo2 = T._buildMemo("memo");
+  check("setting the retired carve-out/NC-window/threshold dials changes NOT ONE BYTE of the memo",
+    memo2 === memo);
+  T._setScenario({});
+  T.render();
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// N9 — the ON-SCREEN surfaces beside the export describe the same one pool
+// ─────────────────────────────────────────────────────────────────────────────
+// Successors of the old N8/N9 (the "4 NC campuses" card and the carve-out
+// bullet, both retired): the table count line counts the ONE roster, and the
+// computed-how section's noncredit bullet states the DECOMPOSITION with the
+// model's own figures — never a transcription, which is how this tab acquired
+// most of its defects.
+{
   const doc = window.document;
-  const nc = T._ncModel();
-  const page = doc.body.textContent.replace(/\s+/g, " ");
-
-  check("pool card no longer says the carve-out goes to 4 NC campuses",
-    !/\b4 NC campuses\b/.test(page));
-  check("pool card names the LANE size (" + nc.rows.length + " institutions)",
-    page.indexOf(nc.rows.length + " institutions in the noncredit lane") !== -1);
-
   const line = doc.getElementById("cplFundCount");
-  check("the table count line is painted", !!line);
-  check("...it counts the lane, not the standalone roster",
-    !!line && line.textContent.indexOf("noncredit support for " + nc.rows.length + " institutions") !== -1);
-  check("...it reports noncredit FTES, the basis the lane allocates on",
-    !!line && /noncredit FTES\)/.test(line.textContent));
-  // 74,968 = Σ feederHeads() including the deduped campus's 35,363. Pinned as a
-  // literal: nearly half of the retired figure was an institution paid nothing.
-  check("...and no longer prints the 74,968-student roster headcount",
-    !!line && line.textContent.indexOf("74,968") === -1);
-  check("...it still names the carve-out that funds it",
-    !!line && line.textContent.indexOf("carve-out") !== -1);
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// N9 — "How an allocation is computed" describes the noncredit lane
-// ─────────────────────────────────────────────────────────────────────────────
-// Sam, 2026-08-23: "need to add the NC calcs explanation to How these are
-// computed". The section a reader opens to check the arithmetic described only
-// the credit pool and never mentioned that a second lane exists. Every figure
-// is asserted against the model, because a hand-typed one decays the moment a
-// dial moves — which is how this tab acquired most of its defects.
-{
-  const { window } = freshDom();
-  boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  T._setScenario({ pool: LIVE });
-  T.render();
-  const nc = T._ncModel();
-  const li = [...window.document.querySelectorAll(".cplfund-formula li")]
+  check("the table count line counts the one roster (118 institutions), with the average max award",
+    !!line && /118 institutions/.test(line.textContent) && /average max award/.test(line.textContent));
+  check("…and no longer names a carve-out or the retired 74,968-student roster headcount",
+    !!line && line.textContent.indexOf("carve-out") === -1 && line.textContent.indexOf("74,968") === -1);
+  const li = Array.from(doc.querySelectorAll(".cplfund-formula-list li"))
     .map((e) => e.textContent.replace(/\s+/g, " "))
-    .find((t) => /Noncredit support/.test(t));
-
-  check("the computed-how section carries a noncredit bullet", !!li);
-  check("...it names the carve-out from the model", !!li && li.indexOf(money(nc.pool)) !== -1);
-  check("...the entry threshold", !!li && li.indexOf(String(Math.round(nc.threshold))) !== -1);
-  check("...the lane size and its split (" + nc.rows.length + ")",
-    !!li && li.indexOf(nc.rows.length + " qualify today") !== -1);
-  check("...the minimum and maximum",
-    !!li && li.indexOf(money(nc.floor)) !== -1 && li.indexOf(money(nc.cap)) !== -1);
-  check("...and where growth starts paying (" + Math.round(nc.breakEven) + " FTES)",
-    !!li && li.indexOf(Math.round(nc.breakEven).toLocaleString("en-US")) !== -1);
-  check("...and it says noncredit is never part of the credit allocation",
-    !!li && /never part of the credit allocation/.test(li));
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// N10 — an unaffordable minimum is stated as such HERE too
-// ─────────────────────────────────────────────────────────────────────────────
-// #1302 stopped the noncredit BOX from reporting a floor it could not honor.
-// The computed-how section is a second place that states the minimum, and it is
-// the one a reader opens precisely to check the arithmetic — so it must not
-// quote a minimum nobody receives.
-{
-  const { window } = freshDom();
-  boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  // 33 institutions × $50,000 against a $1,000,000 carve-out — the exact
-  // configuration Sam hit on 2026-08-23.
-  T._setScenario({ pool: { feeder_carveout: 1000000, nc_floor_window: 50000 } });
-  T.render();
-  const nc = T._ncModel();
-  const li = [...window.document.querySelectorAll(".cplfund-formula li")]
-    .map((e) => e.textContent.replace(/\s+/g, " "))
-    .find((t) => /Noncredit support/.test(t));
-  check("the fixture really is infeasible (guards the test, not the code)",
-    !!nc.floorInfeasible);
-  check("the computed-how section says the minimum cannot be honored",
-    !!li && /cannot be honored/.test(li));
-  check("...and names what each institution actually receives",
-    !!li && li.indexOf(money(nc.pool / nc.rows.length)) !== -1);
-  check("...and does NOT claim institutions sit at the minimum",
-    !!li && !/sit at the minimum/.test(li));
-  check("...nor that growth starts paying (nothing is proportional there)",
-    !!li && !/growth only starts paying/.test(li));
+    .find((t) => /The noncredit share:/.test(t));
+  check("the computed-how section carries the noncredit-share bullet (the decomposition, not a lane)", !!li);
+  check("…its college-shares figure is the model's (" + money(eff.pool.nc_college_shares) + ")",
+    !!li && li.indexOf(money(eff.pool.nc_college_shares)) !== -1);
+  check("…its origination-held figure is the model's (" + money(eff.pool.nc_only_held_by_origination) + ")",
+    !!li && li.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1);
+  check("…and it states the restriction and the no-advance rule in words (F1 / N2 b)",
+    !!li && /restricted to the noncredit measures/.test(li) && /\$0 earned until/.test(li) &&
+    /no advances \(N2 b\)/.test(li));
 }
 
 finish();

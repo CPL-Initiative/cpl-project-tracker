@@ -223,10 +223,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <div class="fig"><div class="v num" id="f-staff">$800,000</div><p class="k">two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
     </div>
     <p class="figs-note">Those three are the whole appropriation. The
-      <b id="f-main">$25,240,308</b> to institutions is <b>one pool</b>, shared among all 118 in proportion
-      to combined credit + noncredit size within a base award and a cap &mdash; and every award splits on
-      its face into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix.
-      Statewide, <b id="f-nc">$1,783,399</b> of the pool is noncredit funding on its face &mdash; riding
+      <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in proportion
+      to combined credit + noncredit size within a base award and a cap &mdash; and every award splits
+      into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix.
+      Statewide, <b id="f-nc">$1,783,399</b> of the funding is noncredit &mdash; riding
       <b id="l-nc-count">108</b> college awards, restricted to noncredit outcomes, plus the three
       noncredit-only institutions&rsquo; awards, drawn only as CPL originating from them posts at a credit
       college. The $9.04&nbsp;million remaining from 2025-26 is a separate distribution and is deliberately
@@ -625,7 +625,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     if (!n || !body || !list) return;
     while (list.firstChild) list.removeChild(list.firstChild);
     body.textContent = "There is no separate noncredit pot: every institution's award is sized by its " +
-      "combined credit + noncredit teaching, and the award then splits on its face into a credit share " +
+      "combined credit + noncredit teaching, and the award then splits into a credit share " +
       "and a noncredit share by that institution's own mix. The noncredit share is restricted — it earns " +
       "only against the noncredit measures, so the credit program cannot draw it — and it is visible on " +
       "every screen and in every export rather than disappearing into the credit figure.";
