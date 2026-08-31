@@ -204,7 +204,9 @@ window.CPL_FUNDING = {
    "headcount": 15560,
    "vintage": "2025-26",
    "noncredit_ftes": 3828.02,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "North Orange County Community College District"
   },
   {
    "name": "San Diego College of Continuing Education",
@@ -212,7 +214,9 @@ window.CPL_FUNDING = {
    "headcount": 21561,
    "vintage": "2025-26",
    "noncredit_ftes": 9337.8,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "San Diego Community College District"
   },
   {
    "name": "Mt. San Antonio College — Noncredit",
@@ -221,7 +225,9 @@ window.CPL_FUNDING = {
    "vintage": "2022-23",
    "noncredit_ftes": 10829.3,
    "ftes_vintage": "2025-26",
-   "nc_ftes_on_credit_row": "Mt San Antonio"
+   "nc_ftes_on_credit_row": "Mt San Antonio",
+   "origin_scope": "district",
+   "district": "Mt. San Antonio Community College District"
   },
   {
    "name": "Calbright College",
@@ -231,7 +237,8 @@ window.CPL_FUNDING = {
    "noncredit_ftes": 21438.17,
    "noncredit_ftes_placeholder": 1000,
    "noncredit_ftes_placeholder_basis": "Sam's stand-in (2026-08-06), inside the peer-plausible band: the other three feeders run 0.25-0.43 noncredit FTES per student, which puts Calbright's 2,484 headcount at 611-1,076 FTES. The reported 21,438.17 implies 8.63 FTES per student, which is not physically possible (a full-time year is ~1.0) and most plausibly counts enrollments, not FTES. Pending Malone's verification.",
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "statewide"
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
