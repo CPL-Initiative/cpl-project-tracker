@@ -323,6 +323,20 @@ const POOL = 25240308;
         !!doc.getElementById("cplFundDraftMemo");
       return inPreview && restored;
     })());
+  check("D27: on a priority card the METRIC sits on the surface just below the share line, " +
+        "and the strategies are a closed fold (reaction round 3, 2026-08-31)",
+    (function () {
+      const card = doc.querySelector(".cplfund-prio .p");
+      if (!card) return false;
+      const kids = Array.from(card.children);
+      const iMetric = kids.findIndex(function (k) { return /(^| )metric( |$)/.test(k.className); });
+      // the share line is the first .nums <p>; the metric must directly follow it
+      const iShare = kids.findIndex(function (k) { return /(^| )nums( |$)/.test(k.className); });
+      const strat = card.querySelector("details.cplfund-strat");
+      return iShare >= 0 && iMetric === iShare + 1 &&
+        !!strat && !strat.open &&
+        !!strat.querySelector("summary.cplfund-strat-h");
+    })());
   check("D26: Draft memo opens the Report sub-view carrying the one-pool allocation",
     (function () {
       const btn = doc.getElementById("cplFundDraftMemo");

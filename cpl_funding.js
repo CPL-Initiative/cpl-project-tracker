@@ -235,7 +235,10 @@
     ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
-    ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
+    // The strategies are a FOLD (Sam, 2026-08-31): the summary IS the block
+    // header — a word affordance ("— show them"), no marker glyph.
+    ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; cursor: pointer; list-style: none; }",
+    ".cplfund-strat > summary::-webkit-details-marker { display: none; }",
     ".cplfund-strat .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 3px 0; }",
     ".cplfund-strat .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-stratadd { margin-top: 4px; }",
@@ -4389,10 +4392,13 @@
         '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
         '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">✕</button></div>';
     }).join("");
-    return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ")</div>" +
+    // A FOLD (Sam, 2026-08-31, reaction round 3): the metric sits on the card
+    // surface; the strategies stay in detail. The rows remain editable inside
+    // the open fold — <details> hides, it never disables.
+    return '<details class="cplfund-strat"><summary class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ") &mdash; show them</summary>" +
       rows +
       '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
-      '" title="Add a recommended strategy">＋ Add strategy</button></div>';
+      '" title="Add a recommended strategy">＋ Add strategy</button></details>';
   }
 
   // Timing — an editable milestone list below the priority boxes (Sam,
@@ -4577,6 +4583,18 @@
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
+        // Sam, 2026-08-31 (reaction round 3): the metric sits ON THE SURFACE,
+        // just below the share line — the thing being measured reads before
+        // its target and actuals. And 2026-08-28: "what does this mean?
+        // Metric - pinned to ppa_u" — that IS the finding. The pin is what
+        // stops an NC priority resolving onto a CREDIT measure by wording
+        // alone, but a reader should not need the feed's key names to read a
+        // card. The key moves into the block's title; the visible words stay
+        // plain.
+        '<div class="metric"' +
+          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
+          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
+          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         (isFtesPrio
           ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding factor" }) +
             "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong></p>" +
@@ -4588,15 +4606,6 @@
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        // Sam, 2026-08-28: "what does this mean? Metric - pinned to ppa_u" — and
-        // that IS the finding. The pin is what stops an NC priority resolving
-        // onto a CREDIT measure by wording alone, but a reader should not need
-        // the feed's key names to read a card. The key moves into the block's
-        // title; the visible words stay plain.
-        '<div class="metric"' +
-          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
-          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
-          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
   }

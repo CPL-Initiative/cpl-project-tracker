@@ -100,6 +100,10 @@
     background: var(--surface-subtle); }
   .prio h3 { font-size: 1rem; margin: 0 0 2px; }
   .prio .share { font-size: .82rem; color: var(--text-muted); margin: 0 0 8px; }
+  /* The metric ON THE SURFACE, just below the share line (Sam, reaction
+     round 3, 2026-08-31) — the thing measured reads before its target. */
+  .prio .metric { font-size: .82rem; color: var(--text-body); margin: 0 0 10px;
+    padding-top: 6px; border-top: 1px dashed var(--border); }
   .prio .mlab { font-size: .72rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: .05em; color: var(--text-muted); margin: 0 0 1px; }
   .prio .money { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
@@ -207,7 +211,8 @@ button, the numeric columns truly centered (the header, SYSTEM row, and college
 rows now share one column template — in em they silently disagreed), the
 verbatim statute behind each goal card, the reworked Summary, funding
 vocabulary throughout, Draft memo and Save as PDF, and the Internal · Public
-view toggle above.</p>
+view toggle above. <strong>Round 3:</strong> each priority's metric sits on the
+card surface, just below its share line; the strategies stay in the fold.</p>
 
 <details class="sect" open>
 <summary class="kicker" style="margin-top:20px">Summary</summary>
@@ -611,6 +616,7 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
   return '<div class="prio"><h3>' + p.title +
     '<a class="gsup" href="#goals" title="Serves statutory goal (' + GOAL_OF[i] + ') — Ed. Code §78093.2(d)(1), derived from the priority’s measure, never its title.">' + GOAL_OF[i] + "</a></h3>" +
     '<p class="share">' + Math.round(p.share * 100) + "% of the funding · factor 0.50×</p>" +
+    '<p class="metric">' + p.metric + "</p>" +
     '<p class="mlab" title="The priority’s full funding for the window — the ceiling its Current Total can reach.">Total Possible</p>' +
     '<div class="money">' + fm(s.money) + "</div>" +
     "<dl>" +
@@ -618,8 +624,7 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
     "<div><dt>Actual so far</dt><dd>" + f1(s.actual) + " FTES</dd></div>" +
     '<div title="What has been earned statewide on this priority to date — credit shares only; noncredit shares read $0 in it until their feeds report."><dt>Current Total</dt><dd>' + fm(s.earned) + "</dd></div>" +
     "</dl>" +
-    '<details class="fold"><summary>the metric and the strategies</summary><ul>' +
-    "<li><em>" + p.metric + "</em></li>" +
+    '<details class="fold"><summary>the strategies</summary><ul>' +
     p.strategies.map(function (st) { return "<li>" + st + "</li>"; }).join("") +
     "</ul></details></div>";
 }).join("");
