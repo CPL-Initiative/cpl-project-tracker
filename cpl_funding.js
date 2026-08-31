@@ -1022,6 +1022,69 @@
     var thr = ncThresholdFtes();
     return ncInstitutions().filter(function (r) { return r.ftes >= thr && r.ftes > 0; });
   }
+  /* ── Who moves — this exploration vs the saved model ──────────────────────
+   * (Sam, 2026-08-31: "If the Who moves, against the saved model today could
+   * be wired into the correct card on the Funding Pools IF tab, that would be
+   * great." Ported from the Budget Balance mock.)
+   *
+   * The saved model is computed by the SAME pipeline with the what-if overlay
+   * lifted for one solve — never a second implementation that could drift
+   * (the mock's own lesson: two implementations agreeing on live data proves
+   * only that the data is self-consistent). SCENARIO is swapped for an empty
+   * object, the two allocation caches are cleared, both lane models run, and
+   * everything is restored in a finally — the caches are cleared again so no
+   * later reader sees the saved world by accident. */
+  function savedModelSnapshot() {
+    var prev = SCENARIO;
+    SCENARIO = {};
+    _allocCache = null; _ncCache = null;
+    var snap = { W: {}, ncW: {} };
+    try {
+      var m = allocModel();
+      Object.keys(m.W).forEach(function (k) { snap.W[k] = m.W[k]; });
+      var nc = ncModel();
+      Object.keys(nc.W).forEach(function (k) { snap.ncW[k] = nc.W[k]; });
+    } finally {
+      SCENARIO = prev;
+      _allocCache = null; _ncCache = null;
+    }
+    return snap;
+  }
+  /* Combined (credit + noncredit) award per institution, explored vs saved.
+   * Returns null when nothing moves by more than a dollar — an overlay that
+   * only renames or reshuffles priority shares moves no allocation, and a
+   * card comparing a model to itself would be noise. */
+  function whoMoves() {
+    // Gate on the per-browser overlay itself, not isDirty(): a signed-in
+    // curator's activeOverride() is SHARED, which almost always has keys, and
+    // that would run the double solve on every render for a comparison that
+    // is by construction empty (SCENARIO is what the saved solve lifts).
+    if (!SCENARIO || !Object.keys(SCENARIO).length) return null;
+    var saved = savedModelSnapshot();
+    var cur = allocModel(), nc = ncModel();
+    var combined = {};
+    function add(map, key, field) {
+      if (!combined[key]) combined[key] = { saved: 0, cur: 0 };
+      combined[key][field] += map[key];
+    }
+    Object.keys(saved.W).forEach(function (k) { add(saved.W, k, "saved"); });
+    Object.keys(saved.ncW).forEach(function (k) { add(saved.ncW, k, "saved"); });
+    Object.keys(cur.W).forEach(function (k) { add(cur.W, k, "cur"); });
+    Object.keys(nc.W).forEach(function (k) { add(nc.W, k, "cur"); });
+    var list = [], gainers = 0, losers = 0, moved = 0;
+    Object.keys(combined).forEach(function (k) {
+      var d = combined[k].cur - combined[k].saved;
+      if (Math.abs(d) <= 1) return;
+      if (d > 0) gainers++; else { losers++; moved += -d; }
+      // NC-lane standalone keys read "NC:<short>"; every other key is the
+      // college name the credit lane already uses.
+      var name = k.indexOf("NC:") === 0 ? k.slice(3) + " (noncredit)" : k;
+      list.push({ name: name, key: k, saved: combined[k].saved, cur: combined[k].cur, d: d });
+    });
+    if (!list.length) return null;
+    list.sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); });
+    return { list: list, gainers: gainers, losers: losers, moved: moved };
+  }
   var _ncCache = null;
   // The noncredit lane, solved with the SAME clamp as the credit pool. The pool
   // is the carve-out taken off the top (pool.feeder_carveout) and the figures are
@@ -3897,6 +3960,29 @@
            ' <span class="dk">&mdash;</span> ' + labelEd("nc_cap_window", "Noncredit maximum"),
         note: "per institution from the " + fmtMoney(m.pool) + " noncredit carve-out &middot; " +
           lane + " &middot; " + floorNote + growth + capNote + warn }));
+    })();
+
+    // ── Who moves — renders ONLY while a what-if overlay is changing awards.
+    // The comparison the Budget Balance mock proved out (Sam, 2026-08-31):
+    // each institution's combined credit + noncredit award under the dials as
+    // they stand on THIS browser, against the saved model everyone else sees.
+    (function () {
+      var moves = whoMoves();
+      if (!moves) return;
+      var top = moves.list.slice(0, 4).map(function (x) {
+        return esc(x.name) + " " + (x.d >= 0 ? "+" : "&minus;") + fmtMoney(Math.abs(x.d));
+      }).join(" &middot; ");
+      var fold = '<details class="cplfund-pool-projects"><summary>Every institution that moves &mdash; show the list</summary><ul>' +
+        moves.list.map(function (x) {
+          return "<li>" + esc(x.name) + ": " + fmtMoney(x.saved) + " &rarr; " + fmtMoney(x.cur) +
+            " (" + (x.d >= 0 ? "+" : "&minus;") + fmtMoney(Math.abs(x.d)) + ")</li>";
+        }).join("") + "</ul></details>";
+      out.push(card({ cls: " whomoves",
+        v: fmtMoney(moves.moved),
+        l: "Who moves &mdash; this exploration vs the saved model",
+        note: "<strong>" + moves.gainers + "</strong> institutions gain and <strong>" + moves.losers +
+          "</strong> lose, combined credit + noncredit per institution, under the dials as they " +
+          "stand on this browser &middot; largest: " + top + fold }));
     })();
 
     // ── Computed context cards ────────────────────────────────────────────
@@ -9009,6 +9095,7 @@
     // carve-out it used to fund is retired (2026-08-22) — this moves no money.
     // The noncredit lane, for tests and for My College.
     _ncModel: ncModel,
+    _whoMoves: whoMoves,
     _grantRecipients: grantRecipients,
     _ncAward: function (name) {
       var c = baseCollege(name);

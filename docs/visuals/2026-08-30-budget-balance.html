@@ -102,7 +102,12 @@ Nothing here writes anywhere — it is a sandbox for your reaction.</p>
 <section class="card">
   <div class="dials" id="dials"></div>
   <p style="margin:14px 0 0"><button type="button" class="reset" id="resetBtn">Reset this mode's dials</button>
+  <button type="button" class="reset" id="copyBtn" style="margin-left:8px">Copy these settings</button>
   <span class="asof">— two-lane resets to the saved config + ledger (2026-08-31); one-pool resets to your 8-31 numbers ($180,000 / $400,000)</span></p>
+  <input id="settingsLine" readonly hidden aria-label="The current settings as one line"
+    style="width:100%; box-sizing:border-box; margin-top:8px; font:inherit; font-size:.9rem; padding:7px 10px; border:1px solid var(--border-strong); border-radius:8px; background:var(--surface-subtle); color:var(--text-strong);">
+  <p class="note" style="margin-top:8px">Your dials and mode are remembered on this browser and restored when you
+  return — but they live only here until you paste them to a session. "Copy these settings" builds the one line to paste.</p>
   <p class="note" style="margin-top:10px" id="dialNote"></p>
 </section>
 
@@ -568,6 +573,40 @@ function buildDials() {
   });
 }
 
+// ── the settings survive this browser, and can leave it ─────────────────────
+// Sam set dials in a session where nothing persisted them, and the numbers
+// were unreadable to anyone else and one reload from gone. Storage keeps them
+// on THIS browser; the copy line is how they reach a session or a teammate.
+var STORE_KEY = "cpl_budget_balance_mock_v1";
+function saveState() {
+  try { localStorage.setItem(STORE_KEY, JSON.stringify({ mode: MODE, state: state })); } catch (e) { /* private windows */ }
+}
+function restoreState() {
+  try {
+    var raw = localStorage.getItem(STORE_KEY);
+    if (!raw) return;
+    var s = JSON.parse(raw);
+    if (s && (s.mode === "one" || s.mode === "two")) MODE = s.mode;
+    if (s && s.state) DIALS.forEach(function (dl) {
+      var v = Number(s.state[dl.key]);
+      if (isFinite(v) && v >= 0) {
+        state[dl.key] = v;
+        var el = document.getElementById("in-" + dl.key);
+        if (el) el.value = v;
+      }
+    });
+  } catch (e) { /* unreadable storage never blocks the page */ }
+}
+function settingsLine() {
+  var parts = ["Budget Balance settings (" + new Date().toISOString().slice(0, 10) + ") · mode: " +
+    (MODE === "one" ? "One pool" : "Two lanes")];
+  DIALS.forEach(function (dl) {
+    var inThisMode = dl.both || (MODE === "one" ? !!dl.one : !dl.one);
+    if (inThisMode) parts.push(dl.label + " = " + Math.round(state[dl.key]).toLocaleString("en-US"));
+  });
+  return parts.join(" · ");
+}
+
 document.getElementById("resetBtn").addEventListener("click", function () {
   DIALS.forEach(function (dl) {
     var inThisMode = dl.both || (MODE === "one" ? !!dl.one : !dl.one);
@@ -575,11 +614,26 @@ document.getElementById("resetBtn").addEventListener("click", function () {
     state[dl.key] = dl.live;
     document.getElementById("in-" + dl.key).value = dl.live;
   });
+  saveState();
   render();
 });
-document.getElementById("modeTwo").addEventListener("click", function () { MODE = "two"; render(); });
-document.getElementById("modeOne").addEventListener("click", function () { MODE = "one"; render(); });
+document.getElementById("copyBtn").addEventListener("click", function () {
+  var line = settingsLine();
+  var out = document.getElementById("settingsLine");
+  out.hidden = false;
+  out.value = line;
+  out.focus();
+  try { out.select(); } catch (e) { /* selection is a convenience */ }
+  var btn = this;
+  function done(ok) { btn.textContent = ok ? "Copied — paste it to a session" : "Select the line and copy"; }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(line).then(function () { done(true); }, function () { done(false); });
+  } else { done(false); }
+});
+document.getElementById("modeTwo").addEventListener("click", function () { MODE = "two"; saveState(); render(); });
+document.getElementById("modeOne").addEventListener("click", function () { MODE = "one"; saveState(); render(); });
 
 buildDials();
+restoreState();
 render();
 </script>

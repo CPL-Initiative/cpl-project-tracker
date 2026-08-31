@@ -86,6 +86,7 @@
     "cpl_funding_scenarios.test.js": 80,
     "cpl_funding_shell.test.js": 49,
     "cpl_funding_statutory_goals.test.js": 39,
+    "cpl_funding_whomoves.test.js": 13,
     "cpl_memory.test.js": 47,
     "cpl_memory_autogen.test.js": 43,
     "cpl_memory_briefing.test.js": 76,
