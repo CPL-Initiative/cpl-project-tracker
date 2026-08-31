@@ -34,10 +34,20 @@ the one-pool model**. Everything below is committed; read in this order:
   on origination (the feed is the gate — no dollar moves to the trio until
   origination data flows); Calbright placeholder FTES kept for allocation but
   never disbursed against.
-- **NC protection = the earning rule, not a second pool.** Every award shows
-  "incl. NC $Y"; the NC share draws only against NC measures. **F1 PENDING:**
-  hold vs label-and-report for the $1,300,738 of college NC shares — a
-  one-letter ruling on the visual's F1 card. Do not build past it.
+- **NC protection = the earning rule, not a second pool.** Every award splits
+  into CR/NC columns; the NC share draws only against NC measures. **F1
+  RESOLVED (later same day):** NC shares list from day one and read $0 earned
+  until the feeds report — no interim policy, because nothing publishes before
+  the feeds exist. His standing rule, verbatim in `cpl_memory`
+  (`f1-resolved-and-never-design-for-missing-feeds`): never design for a
+  missing feed; he never publishes anything the data cannot measure.
+- **Two reaction rounds executed on the visual** (same day): renamed **CPL
+  Implementation Funding** · "Summary" strip · CR/NC columns for FTES and max
+  award · chips ghosted, AT BASE / AT CAP · rows non-bold, columns centered
+  (rightmost right) · Coalinga/Lemoore · expands split CR/NC per priority with
+  the **earn restricted to the CR share** ($7,900,711 statewide — arithmetic
+  now honors the restriction) · planning-note sections tinted "for Sam, not
+  tab copy".
 - **Vocabulary (now CLAUDE.md Naming doctrine):** *funding*, never "money";
   CCC norms — allocated / restricted / designated / redirect / brought up to
   the minimum; *apportionment* reserved for SCFF. Per-institution figure is
@@ -55,8 +65,9 @@ the one-pool model**. Everything below is committed; read in this order:
 - **#1421** — `whoMoves()` + the "Who moves — this exploration vs the saved
   model" pool card in `cpl_funding.js` (13-check test, floored).
 - **#1422** — the One-Pool Funding Tab visual (phases 1–3 implemented).
-- **#1423** — F1 card, max-award/alpha/hovers, CCC-vocabulary sweep,
-  CLAUDE.md vocabulary doctrine, lane/todos updates + this checkpoint.
+- **#1423** — max-award/alpha/hovers, CCC-vocabulary sweep, CLAUDE.md
+  vocabulary doctrine, the F1 resolution, both reaction rounds, lane/todos
+  updates + this checkpoint.
 - **CPLBrain #64–#67** — Memo A snapshot banner; two braindumps (one-pool
   hunch; NC-origination design); the Malone/Pedro origination instructions
   (`04-projects/cpl-initiative/20260831_MAP_Custom_Reports_Origination_Data_Instructions.md`
@@ -64,12 +75,16 @@ the one-pool model**. Everything below is committed; read in this order:
 
 ## Priority queue
 
-1. **F1 ruling** — when Sam answers (a hold / b label), execute on the visual
-   + lane + memory; it shapes the tab port.
-2. **The tab port** — Sam's reaction to the visual locks the look; then port
-   phases 1–3 into `cpl_funding.js`. **Origination feed first per N2 b** for
-   the trio's earn-out; phases ② (priority cards) and ③ (college table
-   folds) do NOT depend on the feed and can start on his word.
+1. **Current vs. potential funding in the detail rows** — Sam's parting
+   question, recommended YES: per-priority "Earned so far" and "Available to
+   earn" dollars in each expand (the gap is the incentive; the NC share's
+   waiting dollars strengthen the feed case; arithmetic already on the page).
+   Confirm labels with him, build it into the visual, likely the last piece
+   before the port.
+2. **The tab port** — two reaction rounds are executed and the look is close;
+   then port phases 1–3 into `cpl_funding.js`. **Origination feed first per
+   N2 b** for the trio's earn-out; phases ② (priority cards) and ③ (college
+   table folds) do NOT depend on the feed and can start on his word.
 3. **Origination feed** — Malone/Pedro docx is with Sam to forward; the ITPI
    second-landing-page question is the open external dependency.
 4. Register sheet (#1413) still awaits Sam's by-number verdicts — run the
