@@ -63,6 +63,12 @@
   details.fold[open] > summary::before { content: "Hide "; }
   details.fold ul { margin: 8px 0 0; padding-left: 1.2em; font-size: .88rem; color: var(--text-muted); }
   details.fold li { margin: 4px 0; }
+  .amt .ncsub { display: block; font-size: .72rem; font-weight: 600; color: var(--text-muted); }
+  .decision { border-left: 4px solid var(--cobalt); }
+  .decision ol { padding-left: 1.3em; margin: 8px 0 0; }
+  .decision .opts { margin: 6px 0 0; padding-left: 1.1em; font-size: .95rem; }
+  .decision .opts li { margin: 4px 0; }
+  .proposed { font-weight: 700; color: var(--hunter); }
   .chip { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
     text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-strong);
     border-radius: 999px; padding: 1px 9px; margin-left: 6px; white-space: nowrap; }
@@ -133,6 +139,39 @@ tab follows it.</p>
   </details>
 </section>
 
+<p class="kicker">Two lanes on one face — needs your ruling (F1)</p>
+<section class="card decision">
+  <p style="margin:0 0 8px">One pool, one solve — and every award decomposes on
+  its face into a <strong>credit share</strong> and a <strong>noncredit
+  share</strong>, by each lane's share of the institution's FTES. The noncredit
+  share is not a label: it earns only against the noncredit priority measures,
+  so the credit program cannot draw it by doing credit work. On this page it
+  appears on the pool line, in the verdict strip, on every row, and inside
+  every expand. What is left to rule is how hard the fence is while the
+  noncredit feeds are still absent:</p>
+  <ol>
+    <li><strong>F1 — the fence on college noncredit shares ($1,300,738 across
+      108 colleges).</strong>
+      <ul class="opts">
+        <li><span class="proposed">a · Proposed: hold.</span> Extend N2 b's
+          no-advance to every noncredit-attributable dollar — a college draws
+          its noncredit share only as noncredit measures actually post. Nothing
+          can be usurped because nothing arrives unearned, and the noncredit
+          feeds become every college's concern, not just the three standalone
+          campuses'. Cost, stated plainly: $1.3M sits undrawable until the
+          feeds land — Santa Ana ($131,052), Mt. San Antonio ($115,102), and
+          San Francisco ($76,226) feel it most.</li>
+        <li>b · Label. The noncredit share advances with the rest of the award,
+          but every disbursement carries it as a designated noncredit line the
+          college reports against. Softer: money moves now; the fence is
+          reporting, not holding.</li>
+      </ul></li>
+  </ol>
+  <p class="note" style="margin:8px 0 0">Reply <strong>F1 a</strong> or
+  <strong>F1 b</strong> (or edit). The three noncredit-only institutions are
+  already ruled — no advances, origination only (N2 b).</p>
+</section>
+
 <p class="kicker">The three priorities — how the money is earned</p>
 <section class="card">
   <div class="prios" id="prios"></div>
@@ -144,8 +183,8 @@ tab follows it.</p>
   <details class="fold"><summary>the earning rules for noncredit</summary>
     <ul>
       <li><strong>A college's noncredit share</strong> of its combined award earns
-        against the noncredit priority measures; while those feeds are absent it
-        advances the way unmeasured credit priorities do.</li>
+        against the noncredit priority measures; whether it advances before those
+        feeds land is F1, above.</li>
       <li><strong>The noncredit-only institutions earn by origination</strong> —
         CPL that originates from their programs and is transcribed at a credit
         college. NOCE and SDCCE's origination counts across their district's
@@ -264,6 +303,14 @@ ROWS.forEach(function (r) {
   }
 });
 
+// the noncredit money on the face of the pool
+var NC_FACE = { col: 0, trio: 0, n: 0 };
+ROWS.forEach(function (r) {
+  if (r.size <= 0) return;
+  if (r.nco) NC_FACE.trio += r.alloc;
+  else if (r.nc > 0) { NC_FACE.col += r.alloc * (r.nc / r.size); NC_FACE.n++; }
+});
+
 // statewide priority roll-ups
 var stw = SHARES.map(function (p, i) {
   var money = POOL * p.share;
@@ -285,6 +332,9 @@ document.getElementById("verdictList").innerHTML =
     " unearned rolls forward.</li>" +
   '<li><span class="under">' + fm(ncoAlloc) + " waits on the origination feed</span>" +
     " — the three noncredit-only institutions hold their allocations and draw nothing until originated CPL posts (N2 b).</li>" +
+  "<li><strong>" + fm(NC_FACE.col + NC_FACE.trio) + " of the pool is noncredit on its face</strong> — " +
+    fm(NC_FACE.trio) + " held by origination (the three noncredit-only institutions) plus " + fm(NC_FACE.col) +
+    " riding " + NC_FACE.n + " college awards, fenced to noncredit earning (F1 sets how hard the fence is).</li>" +
   "<li>The priority shares total 100% — every dollar of the pool is apportioned, none left over.</li>";
 
 document.getElementById("stack").innerHTML =
@@ -293,7 +343,7 @@ document.getElementById("stack").innerHTML =
   '<li><span>CPL projects &amp; innovation</span><span class="amt">− ' + fm(PROJECTS) + "</span>" +
     '<span class="sub">Sourced live from the Budget ledger; the named projects fold lives on the Budget tab’s card as today.</span></li>' +
   '<li><span><strong>One pool — every institution, credit + noncredit</strong></span><span class="amt">' + fm(POOL) + "</span>" +
-    '<span class="sub">No carve-out line: noncredit FTES carry money to where the teaching is, inside the one split.</span></li>';
+    '<span class="sub">No carve-out line: noncredit FTES carry money to where the teaching is, inside the one split — and ' + fm(NC_FACE.col + NC_FACE.trio) + ' of it is noncredit on its face (the lane fence keeps it noncredit).</span></li>';
 
 document.getElementById("windowNote").textContent =
   atMin.length + " institutions are lifted to the minimum and " + atMax.length +
@@ -344,12 +394,12 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
         return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.money) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
           (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td></tr>";
       }).join("") + "</table>" +
-      (r.nc > 0 ? '<p class="dnote">Includes ' + f1(r.nc) + " noncredit FTES in this institution’s size; that share earns by the noncredit measures once their feeds land.</p>" : "");
+      (r.nc > 0 ? '<p class="dnote"><strong>Noncredit share of this award: ' + fm(r.alloc * r.nc / r.size) + "</strong> (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly absorb it. F1 decides whether it advances before the noncredit feeds land.</p>" : "");
   }
   return '<details class="inst"><summary><span class="n">' + (idx + 1) + '</span>' +
     '<span class="who">' + r.name + chips + "</span>" +
     '<span class="ftes">' + Math.round(r.size).toLocaleString("en-US") + "</span>" +
-    '<span class="amt">' + fm(r.alloc) + "</span></summary>" +
+    '<span class="amt">' + fm(r.alloc) + (!r.nco && r.nc > 0 ? '<span class="ncsub">incl. NC ' + fm(r.alloc * r.nc / r.size) + "</span>" : "") + "</span></summary>" +
     '<div class="detail">' + detail + "</div></details>";
 }).join("");
 </script>
