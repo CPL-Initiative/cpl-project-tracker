@@ -8,7 +8,7 @@
    "id": "s210-sam-react-dials",
    "for": "Sam",
    "tab": "cpl-implementation",
-   "text": "React to the Budget Balance dials (the item-1 sandbox with the real rosters and live settings). Your reaction shapes the real version on the funding tab; one live finding already baked in: at today's settings the noncredit lane needs $1.68M of the $2M carve-out, and 242.7 FTES is the lowest threshold the pool can cover at the $40k minimum."
+   "text": "The Budget Balance mock now carries your one-pool idea as a second mode - open it, press 'One pool', and drag the minimum ($180K vs $150K is the real choice: how much money flows by size vs sits at flat floors). Three rulings wait at the bottom as N1-N3: the JST-gate substitute for the noncredit-only campuses, the origination feed and its advance policy, and Calbright's placeholder size plus whether the double count covers all three. Reply by number and a session executes."
   },
   {
    "id": "s210-sam-75013-collab",

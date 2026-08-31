@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 754,
-    "bytes": 7991430,
+    "bytes": 7993185,
     "over_budget": 3,
     "handoff_max": 214,
     "always_loaded_files": 1,
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 125311,
+        "bytes": 126745,
         "over": 0
       },
       "handoff": {
         "files": 188,
-        "bytes": 1591891,
+        "bytes": 1592212,
         "over": 0
       }
     },
@@ -60,10 +60,10 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2446,
-      "bytes": 1256008556,
-      "heavy_bytes": 599873746,
-      "heavy_share": 0.478,
+      "files": 2449,
+      "bytes": 1263480285,
+      "heavy_bytes": 600163109,
+      "heavy_share": 0.475,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -178,10 +178,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 15793253,
+        "bytes": 16082651,
         "kind": "dir"
       },
-      "message": "directory totals 15,793,253 B inside the vault"
+      "message": "directory totals 16,082,651 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -358,10 +358,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9061602,
+        "bytes": 9061566,
         "kind": "file"
       },
-      "message": "9,061,602 B single file inside the vault"
+      "message": "9,061,566 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -438,10 +438,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267512,
+        "bytes": 6267513,
         "kind": "file"
       },
-      "message": "6,267,512 B single file inside the vault"
+      "message": "6,267,513 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -19,9 +19,10 @@
   .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
   .skip:focus { left: 8px; }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
-  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1, h2, h3 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
   h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
   h2 { font-size: 1.15rem; margin: 0 0 10px; }
+  h3 { font-size: 1rem; margin: 14px 0 4px; }
   .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
   .lede { font-size: 1.05rem; }
   .note { font-size: .9rem; color: var(--text-muted); }
@@ -34,6 +35,10 @@
   .over { color: var(--crimson); font-weight: 700; }
   .under { color: var(--mustard-text); font-weight: 700; }
   .balanced { color: var(--hunter); font-weight: 700; }
+  .modes { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 6px; }
+  .mode { font: inherit; font-weight: 700; border: 1.5px solid var(--cobalt); border-radius: 999px;
+    padding: 7px 18px; cursor: pointer; background: var(--surface-opaque); color: var(--cobalt); }
+  .mode[aria-pressed="true"] { background: var(--cobalt); color: #FFFFFF; }
   .dials { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px 16px; }
   .dial label { display: block; font-size: .78rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: .06em; color: var(--text-muted); margin-bottom: 3px; }
@@ -42,7 +47,6 @@
     background: var(--surface-subtle); border: 1px solid var(--border-strong);
     border-radius: 8px; padding: 7px 10px; }
   .dial .live { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
-  .drift { font-size: .82rem; margin-top: 2px; }
   .stack { list-style: none; margin: 10px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
   .stack li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;
     border-top: 1px solid var(--border); flex-wrap: wrap; }
@@ -51,24 +55,43 @@
   .stack .sub { flex-basis: 100%; font-size: .82rem; color: var(--text-muted); }
   .facts { margin: 8px 0 0; padding-left: 1.2em; }
   .facts li { margin: 4px 0; }
+  .movers { margin: 6px 0 0; padding: 0; list-style: none; font-variant-numeric: tabular-nums; font-size: .92rem; }
+  .movers li { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; border-top: 1px dotted var(--border); flex-wrap: wrap; }
+  .movers li:first-child { border-top: none; }
+  .movers .who { font-weight: 600; color: var(--text-strong); }
+  .decision { border-left: 4px solid var(--cobalt); }
+  .decision ol { padding-left: 1.3em; margin: 8px 0 0; }
+  .decision li.item { margin: 12px 0; }
+  .decision .opts { margin: 6px 0 0; padding-left: 1.1em; font-size: .95rem; }
+  .decision .opts li { margin: 3px 0; }
+  .proposed { font-weight: 700; color: var(--hunter); }
   .reset { font: inherit; font-weight: 700; color: var(--cobalt); background: var(--surface-opaque);
     border: 1.5px solid var(--cobalt); border-radius: 999px; padding: 7px 18px; cursor: pointer; }
   .asof { font-size: .82rem; color: var(--text-muted); }
+  [hidden] { display: none !important; }
 </style>
 
 <a class="skip" href="#verdicts">Skip to the balance verdicts</a>
 <div class="wrap">
 
-<p class="kicker">The $35M model as an experiment rig · reaction mock · numbers as of 2026-08-30</p>
+<p class="kicker">The $35M model as an experiment rig · reaction mock · updated 2026-08-31 with the one-pool scenario</p>
 <h1>Budget Balance</h1>
-<p class="lede">Your item-1 ruling, made touchable: the noncredit entry threshold,
-the minimums, and the funding buckets are independent dials, and this page always
-says where the plan is over or under budget as you turn them. Every figure below
-starts at the <strong>live published config and budget ledger</strong>; the
-rosters are the real 115 colleges and 4 standalone noncredit institutions with
-their reported FTES. Nothing here writes anywhere — it is a sandbox for your
-reaction, and the real version belongs on the funding tab's dial surface once
-you have shaped it.</p>
+<p class="lede">Two ways to run the same money, side by side. <strong>Two lanes</strong>
+is the saved model: a credit pool with a noncredit carve-out beside it.
+<strong>One pool</strong> is your 8-31 idea: fold the carve-out in, size every
+institution by its total teaching (credit + noncredit FTES), one minimum and one
+maximum applied to each institution's combined award — your ruling: the cap is
+per institution, CR + NC together, up to the maximum. The rosters are the real
+115 colleges and the standalone noncredit institutions with their reported FTES.
+Nothing here writes anywhere — it is a sandbox for your reaction.</p>
+
+<section class="card">
+  <div class="modes" role="group" aria-label="Model mode">
+    <button type="button" class="mode" id="modeTwo" aria-pressed="true">Two lanes — the saved model</button>
+    <button type="button" class="mode" id="modeOne" aria-pressed="false">One pool — the 8-31 idea</button>
+  </div>
+  <p class="note" id="modeNote"></p>
+</section>
 
 <section class="card" id="verdicts" aria-live="polite">
   <h2>Where you stand</h2>
@@ -78,13 +101,9 @@ you have shaped it.</p>
 <p class="kicker">The dials</p>
 <section class="card">
   <div class="dials" id="dials"></div>
-  <p style="margin:14px 0 0"><button type="button" class="reset" id="resetBtn">Reset to the live settings</button>
-  <span class="asof">— published config + ledger, 2026-08-30</span></p>
-  <p class="note" style="margin-top:10px">One open referent for you: the sheet
-  said "$50,000 minimum award," and the live noncredit minimum is $40,000 —
-  if $50,000 was the intent, set the noncredit minimum dial to 50,000 and the
-  verdicts recompute. The lane priority split (34/33/33, factors) is
-  deliberately untouched by this page; these dials are the budget skeleton.</p>
+  <p style="margin:14px 0 0"><button type="button" class="reset" id="resetBtn">Reset this mode's dials</button>
+  <span class="asof">— two-lane resets to the saved config + ledger (2026-08-31); one-pool resets to your 8-31 numbers ($180,000 / $400,000)</span></p>
+  <p class="note" style="margin-top:10px" id="dialNote"></p>
 </section>
 
 <p class="kicker">The money, top to bottom</p>
@@ -92,23 +111,109 @@ you have shaped it.</p>
   <ul class="stack" id="stack"></ul>
 </section>
 
-<p class="kicker">The credit lane</p>
-<section class="card">
-  <ul class="facts" id="crFacts"></ul>
-</section>
+<div id="twoLaneCards">
+  <p class="kicker">The credit lane</p>
+  <section class="card">
+    <ul class="facts" id="crFacts"></ul>
+  </section>
 
-<p class="kicker">The noncredit lane — the coupling from item 1</p>
-<section class="card">
-  <ul class="facts" id="ncFacts"></ul>
-</section>
+  <p class="kicker">The noncredit lane — the coupling from item 1</p>
+  <section class="card">
+    <ul class="facts" id="ncFacts"></ul>
+  </section>
+</div>
+
+<div id="onePoolCards" hidden>
+  <p class="kicker">The one pool, solved</p>
+  <section class="card">
+    <ul class="facts" id="opFacts"></ul>
+    <h3>Who moves, against the saved model today</h3>
+    <p class="note" style="margin:0">Each institution's combined award (credit + noncredit) under the
+    one pool, compared with what the saved two-lane model gives it today.</p>
+    <ul class="movers" id="opMovers"></ul>
+  </section>
+
+  <p class="kicker">The three noncredit-only institutions — your origination design</p>
+  <section class="card">
+    <p class="note" style="margin:0 0 6px">Your direction this morning, reflected here:
+    all three ride the pool with <strong>the same window as every college</strong> — no
+    separate carve-out — and what differs is how each <strong>earns</strong> its
+    allocation: by the CPL that <em>originates</em> from its noncredit programs and is
+    transcribed at a credit college. NOCE and SDCCE's origination counts wherever it
+    lands <strong>across their district's credit campuses</strong> (not just one);
+    Calbright's counts at <strong>any credit college statewide</strong>. The receiving
+    college earns on the same CPL under its own measures — the deliberate double count
+    that puts an incentive on both ends of the handoff.</p>
+    <ul class="facts" id="opStandalone"></ul>
+    <p class="note">Mt. San Antonio College — Noncredit is the same institution as the
+    Mt San Antonio row (its FTES are counted there once), so it is not a fourth line here.</p>
+  </section>
+
+  <p class="kicker">Needs your ruling — what the origination design still leaves open</p>
+  <section class="card decision">
+    <p class="note" style="margin:0 0 4px">Reply by number, your usual way:
+    <strong>yes · edit: … · dismiss: …</strong> — or pick a letter where options are listed.
+    Everything measured below is from the live tab and MAP as of 2026-08-31.</p>
+    <ol>
+      <li class="item"><strong>N1 — The veteran-JST gate cannot apply to them.</strong>
+        The three baseline requirements are a CPL contact in MAP, a participation request,
+        and 75% of enrolled veterans' JSTs uploaded — and the funding tab's own fine print
+        says noncredit campuses are not obligated to collect JSTs. As full institutions
+        with the full floor, they need a stated third gate.
+        <ul class="opts">
+          <li><span class="proposed">a · Proposed:</span> substitute an in-kind readiness gate —
+            the campus's noncredit certificates are posted as exhibits in MAP. Same function as
+            the JST gate (your records are in the system before money moves), checkable in MAP
+            today, and it is already the first recommended noncredit strategy. It is also the
+            precondition of your origination measure: CPL cannot originate from a program MAP
+            cannot see.</li>
+          <li>b · Exempt noncredit-only institutions from the third gate — two gates for them.</li>
+          <li>c · Keep the JST gate but score it only where a campus has enrolled veterans'
+            JSTs to process — vacuously met otherwise.</li>
+        </ul></li>
+      <li class="item"><strong>N2 — Origination needs a feed that carries the origin.</strong>
+        Your linkage rule (SDCCE's CPL credited to SDCCE wherever it lands among the district's
+        credit campuses) is a data requirement before it is a funding rule: the model's
+        performance feed does not carry a noncredit origin today — every noncredit measure row
+        reads <em>no feed</em>. The known wiring path is the noncredit origin location in MAP
+        (each campus's own MAP location ID on its landing page and exhibits) flowing into the
+        daily performance pull.
+        <ul class="opts">
+          <li><span class="proposed">a · Proposed:</span> adopt the rule as stated and name the
+            feed as the build item; until it lands, origination-earned money advances at full
+            cap the way unmeasurable credit priorities already do — with the honest framing
+            that "flows exactly how it is earned" arrives when the origin feed does.</li>
+          <li>b · Stricter: no advance on origination — the noncredit-only institutions draw
+            only as originated CPL actually posts, from the first dollar.</li>
+        </ul></li>
+      <li class="item"><strong>N3 — Two Calbright specifics.</strong> In the pool with the
+        same window, its allocation is set by its size — and its noncredit FTES is your
+        1,000-FTES stand-in (reported figure 21,438, pending Malone's verification). At the
+        stand-in it sits at the floor; a verified figure near the reported one moves it toward
+        the ceiling, a swing of up to about $220,000.
+        <ul class="opts">
+          <li><span class="proposed">a · Proposed:</span> keep the stand-in for exploration, and
+            the model refuses to publish or disburse an allocation built on a placeholder size —
+            the verified MIS figure is the unlock (the tab's existing warning, promoted to a
+            rule). And confirm the double count is intended for all three institutions, not
+            Calbright alone — NOCE and SDCCE's origination has the same both-sides property.</li>
+          <li>b · Edit: your call on either half.</li>
+        </ul></li>
+    </ol>
+  </section>
+</div>
 
 <p class="note" style="margin-top:28px">Method notes: allocations use the tab's
 own bounded split (proportional share clamped between the floor and the ceiling,
-re-split so the lane balances; when floors alone exceed a pool, the lane is
+re-split so the pool balances; when floors alone exceed a pool, the model is
 infeasible and every institution is paid below the promised minimum — that state
-is called out above, never smoothed over). Calbright's noncredit FTES uses Sam's
-1,000-FTES stand-in pending Malone's verification; Mt. SAC Noncredit is counted
-on the Mt. San Antonio college row, not twice.</p>
+is called out above, never smoothed over). In one-pool mode an institution's size
+is its credit + noncredit FTES and the floor and ceiling apply once to the
+combined award (your 8-31 ruling). Calbright's noncredit FTES uses the
+1,000-FTES stand-in pending verification; Mt. SAC Noncredit is counted on the
+Mt. San Antonio college row, not twice. The two-lane baseline used for the
+"who moves" list is the saved config as of 2026-08-31 (floor $150,000 · cap
+$400,000 · carve-out $2,000,000 · noncredit 300 FTES / $40,000 / $100,000).</p>
 
 </div>
 
@@ -116,21 +221,23 @@ on the Mt. San Antonio college row, not twice.</p>
 var COLLEGES = [["Alameda",3111.6,43.4],["Berkeley City",3833,62.2],["Chabot",5862.2,152.8],["Laney",5604.2,110.6],["Las Positas",4070.7,72.1],["Merritt",3887,17.3],["Ohlone",7585,185.6],["Butte",10844.5,428.8],["Contra Costa",5369.8,173.7],["Diablo Valley",14707.7,77.5],["Los Medanos",7917.2,60.7],["Lake Tahoe",3860.9,63.7],["Clovis",7590,34.5],["Fresno City",21916.9,370.6],["Reedley College",7356.5,284.6],["West Hills Coalinga",2242.9,84.7],["Redwoods",4296.3,148.3],["Imperial",3966.9,27.6],["Bakersfield",21292.8,315.4],["Cerro Coso",3686.5,29.5],["Taft",2434.5,0],["West Hills Lemoore",3361.2,243.7],["Lassen",1633.2,60.8],["Antelope Valley",11698.6,115.7],["Canyons",13528.6,2022.5],["Cerritos",17753.9,640.6],["Citrus",9532.7,225.6],["Compton",2591.3,31.2],["East LA",19065.7,1138.2],["El Camino",12613.2,1.5],["Glendale",10663.5,2911.1],["LA City",9609.7,791.2],["LA Harbor",6405.3,96.9],["LA Mission",6777.9,693],["LA Pierce",12216.9,607.7],["LA Swest",3008.9,249.4],["LA Trade",10570.4,233.8],["LA Valley",10920.4,991.7],["Long Beach",22535.9,518.1],["Mt San Antonio",26804.4,10829.3],["Pasadena",23347.4,1470.4],["Rio Hondo",11693.5,1568.3],["Santa Monica",19453.5,877.7],["West LA",6016.2,234.7],["Madera",4234.7,46.5],["Marin",3374.6,366.5],["Mendocino",3729.4,145.9],["Merced",11311.3,508.8],["Hartnell",8301.2,109.4],["Monterey",5681.1,178.7],["Napa",3722.5,29.3],["Coastline",5342.7,325.4],["Cypress",12850.7,41.6],["Fullerton",15875,0],["Golden West",8832.5,242.2],["Irvine",5754.1,902],["Orange Coast",13996.7,256.5],["Saddleback",8580.2,2890.5],["Santa Ana",16043.6,7817.7],["Santiago Canyon",7047.1,3577.3],["Sierra",14544.1,295],["Feather River",1098.2,25.6],["Desert",8658.5,907.3],["Moreno Valley",9743,62.8],["Mt. San Jacinto",13978.3,319.3],["Norco College",8008.4,100.9],["Palo Verde",1414,10.8],["Riverside",18650.9,208.8],["American River",20744.6,0],["Cosumnes River",11359,0],["Folsom Lake",7835.2,3.7],["Sacramento City",14386.7,1.5],["Barstow",3019.2,43.2],["Chaffey",17951,229.5],["Copper Mountain",1688,67],["Crafton Hills",5038.9,57.4],["San Bernardino",11992.7,274.4],["Victor Valley",13946.9,621.3],["Cuyamaca",4901.4,2.9],["Grossmont",9099.4,95.7],["MiraCosta",9580.7,1046.8],["Palomar",15488.9,476.7],["San Diego City",8921.9,0],["San Diego Mesa",16732.2,0],["San Diego Miramar",11276.5,0],["Southwestern",16346.8,230.4],["San Francisco",12951.8,3896.6],["San Joaquin Delta",17034.4,183.1],["Cuesta",7616.8,510.6],["Canada",4631.2,1.4],["San Mateo",8117.7,0.3],["Skyline",9029.2,1],["Allan Hancock",8995.6,764.9],["Santa Barbara",10973.7,1232.6],["De Anza",16628.1,364.6],["Evergreen Valley",3189.3,61.3],["Foothill",11018.6,242.7],["Gavilan",5026,1591.4],["Mission",5128.5,254.1],["San Jose City",2722.1,110.8],["West Valley",6222.7,924.1],["Cabrillo",7616.7,782.3],["Shasta",7241.9,132.7],["Siskiyous",1725.4,328.6],["Solano",7328.7,8.4],["Santa Rosa",13640.2,3009.6],["Modesto",15550,924.7],["Porterville",3558.3,45.5],["Sequoias",11474,224.9],["Columbia",2078,36.6],["Moorpark",12728.2,14.6],["Oxnard",5629,74.4],["Ventura",9996.3,150.7],["Woodland",2589.2,53.1],["Yuba",4419.1,81.1]];
 var FEEDERS = [["NOCE",3828],["SD Cont. Ed",9337.8],["Mt. SAC NC",0],["Calbright",1000]];
 
-// ── the tab's bounded split, ported faithfully ────────────────────────────
+// ── the tab's bounded split, ported faithfully; returns per-row awards too ──
 function solveBounded(sizes, net, floor, cap) {
   var capEff = cap > 0 ? Math.max(floor, cap) : Infinity;
   var n = sizes.length, tot = 0, i;
   for (i = 0; i < n; i++) tot += sizes[i];
   var totFloor = floor * n, totCap = capEff === Infinity ? Infinity : capEff * n;
   var res = { n: n, totSize: tot, floorDemanded: totFloor, unspent: 0,
-              floorInfeasible: false, floored: 0, capped: 0 };
+              floorInfeasible: false, floored: 0, capped: 0, W: [], cappedIdx: [] };
   if (floor > 0 && totFloor >= net) {
     res.floorInfeasible = true; res.floored = n;
     res.each = n > 0 ? net / n : 0;      // floor-proportional (equal floors)
+    for (i = 0; i < n; i++) res.W.push(res.each);
     return res;
   }
   if (capEff !== Infinity && totCap < net) {
     res.capped = n; res.unspent = net - totCap;
+    for (i = 0; i < n; i++) { res.W.push(capEff); res.cappedIdx.push(i); }
     return res;
   }
   var clampSum = function (lam) {
@@ -147,27 +254,31 @@ function solveBounded(sizes, net, floor, cap) {
   var lam = (lo + hi) / 2;
   for (i = 0; i < n; i++) {
     var w = Math.min(Math.max(lam * sizes[i], floor), capEff);
+    res.W.push(w);
     if (floor > 0 && lam * sizes[i] < floor) res.floored++;
-    else if (capEff !== Infinity && lam * sizes[i] > capEff) res.capped++;
+    else if (capEff !== Infinity && lam * sizes[i] > capEff) { res.capped++; res.cappedIdx.push(i); }
   }
   res.lam = lam;
   return res;
 }
 
-// ── dial definitions: live value = shared config over baked, ledger anchors ──
+// ── dial definitions per mode ───────────────────────────────────────────────
 var DIALS = [
-  { key: "admin",     label: "CO administration",                live: 800000,   ledger: 800000,  ledgerName: "CO Staff — 2.0 FTE" },
-  { key: "projects",  label: "CPL projects & innovation",        live: 8959692,  ledger: 8959692, ledgerName: "CPL Projects — $35M share" },
+  { key: "admin",     label: "CO administration",                live: 800000,   ledger: 800000,  ledgerName: "CO Staff — 2.0 FTE", both: true },
+  { key: "projects",  label: "CPL projects & innovation",        live: 8959692,  ledger: 8959692, ledgerName: "CPL Projects — $35M share", both: true },
   { key: "carveout",  label: "Noncredit carve-out",              live: 2000000 },
   { key: "crFloor",   label: "Credit minimum (per college)",     live: 150000 },
   { key: "crCap",     label: "Credit maximum (per college)",     live: 400000 },
   { key: "ncThresh",  label: "Noncredit entry threshold (FTES)", live: 300 },
   { key: "ncFloor",   label: "Noncredit minimum (per institution)", live: 40000 },
-  { key: "ncCap",     label: "Noncredit maximum (per institution)", live: 100000 }
+  { key: "ncCap",     label: "Noncredit maximum (per institution)", live: 100000 },
+  { key: "opFloor",   label: "Minimum (per institution, combined)", live: 180000, one: true },
+  { key: "opCap",     label: "Maximum (per institution, combined)", live: 400000, one: true }
 ];
 var TOTAL = 35000000;
 var LEDGER_COLLEGE = 25240308;   // "College Implementation Awards — 115 colleges & 4 noncredit"
 
+var MODE = "two";
 var state = {};
 function fm(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
 function fi(v) { return Math.round(v).toLocaleString("en-US"); }
@@ -178,6 +289,37 @@ function ncRoster(thresh) {
   FEEDERS.forEach(function (f) { if (f[1] >= thresh && f[1] > 0) out.push(f[1]); });
   return out;
 }
+
+// The one-pool roster: every institution once, sized by its total teaching.
+// Mt. SAC NC carries 0 here (counted on the Mt San Antonio row) and is skipped.
+var PAIRS = (function () {
+  var out = COLLEGES.map(function (c) { return { name: c[0], size: c[1] + c[2], nc: c[2], standalone: false }; });
+  FEEDERS.forEach(function (f) {
+    // All three noncredit-only institutions ride the pool with the same window
+    // as every college (Sam's 8-31 refinement: "the same possible allocation as
+    // all other colleges... so no separate carve out"); what differs is how
+    // they EARN it — by origination. Mt. SAC NC carries 0 (counted on the
+    // Mt San Antonio row) and is skipped.
+    if (f[1] > 0) out.push({ name: f[0], size: f[1], nc: f[1], standalone: true });
+  });
+  return out;
+})();
+
+// The two-lane model at the SAVED settings — the fixed baseline "who moves" is
+// measured against. Computed once; the dials never change it.
+var BASELINE = (function () {
+  var crPool = TOTAL - 800000 - 8959692 - 2000000;
+  var cr = solveBounded(COLLEGES.map(function (c) { return c[1]; }), crPool, 150000, 400000);
+  var map = {};
+  COLLEGES.forEach(function (c, i) { map[c[0]] = cr.W[i]; });
+  var lane = [];
+  COLLEGES.forEach(function (c) { if (c[2] >= 300) lane.push({ name: c[0], s: c[2] }); });
+  FEEDERS.forEach(function (f) { if (f[1] >= 300) lane.push({ name: f[0], s: f[1] }); });
+  var nc = solveBounded(lane.map(function (x) { return x.s; }), 2000000, 40000, 100000);
+  lane.forEach(function (x, i) { map[x.name] = (map[x.name] || 0) + nc.W[i]; });
+  FEEDERS.forEach(function (f) { if (f[1] > 0 && !(f[0] in map)) map[f[0]] = 0; });
+  return map;
+})();
 
 function compute() {
   var d = state;
@@ -204,6 +346,26 @@ function compute() {
   }
   return { collegeFunding: collegeFunding, crPool: crPool, cr: cr, nc: nc,
            ncCount: ncSizes.length, ncDemand: ncDemand, frontier: frontier, oneBelow: oneBelow };
+}
+
+function computeOne() {
+  var d = state;
+  var pool = TOTAL - d.admin - d.projects;   // no carve-out: the whole college funding is one pool
+  var s = solveBounded(PAIRS.map(function (p) { return p.size; }), Math.max(0, pool), d.opFloor, d.opCap);
+  var ncMoney = 0;
+  PAIRS.forEach(function (p, i) { if (p.size > 0) ncMoney += s.W[i] * (p.nc / p.size); });
+  var deltas = PAIRS.map(function (p, i) {
+    var now = BASELINE[p.name] || 0;
+    return { name: p.name, now: now, then: s.W[i], d: s.W[i] - now, standalone: p.standalone };
+  });
+  deltas.sort(function (a, b) { return a.d - b.d; });
+  var losers = 0, gainers = 0, moved = 0;
+  deltas.forEach(function (x) {
+    if (x.d < -1) { losers++; moved += -x.d; } else if (x.d > 1) gainers++;
+  });
+  return { pool: pool, s: s, ncMoney: ncMoney, deltas: deltas,
+           losers: losers, gainers: gainers, moved: moved,
+           cappedNames: s.cappedIdx.map(function (i) { return PAIRS[i].name; }) };
 }
 
 function verdictHtml(m) {
@@ -247,49 +409,141 @@ function verdictHtml(m) {
   return v.join("");
 }
 
-function render() {
-  var m = compute();
-  document.getElementById("verdictList").innerHTML = verdictHtml(m);
-  document.getElementById("stack").innerHTML =
-    "<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class=\"amt\">" + fm(TOTAL) + "</span></li>" +
-    "<li><span>CO administration</span><span class=\"amt\">− " + fm(state.admin) + "</span></li>" +
-    "<li><span>CPL projects &amp; innovation</span><span class=\"amt\">− " + fm(state.projects) + "</span>" +
-      "<span class=\"sub\">Sourced from the jointly wired Activities · Annual Targets · Budget tables (your item-5 ruling); this dial only moves the bucket's size.</span></li>" +
-    "<li><span><strong>College funding</strong></span><span class=\"amt\">" + fm(m.collegeFunding) + "</span></li>" +
-    "<li><span>Noncredit carve-out</span><span class=\"amt\">− " + fm(state.carveout) + "</span></li>" +
-    "<li><span><strong>Credit pool (115 colleges)</strong></span><span class=\"amt\">" + fm(Math.max(0, m.crPool)) + "</span></li>";
-  var cr = m.cr;
-  document.getElementById("crFacts").innerHTML =
-    "<li>Pool " + fm(Math.max(0, m.crPool)) + " across <strong>" + cr.n + "</strong> colleges, split by credit FTES share, clamped between " +
-      fm(state.crFloor) + " and " + fm(state.crCap) + " per college for the window.</li>" +
-    (cr.floorInfeasible
-      ? "<li><span class=\"over\">Infeasible:</span> floors alone demand " + fm(cr.floorDemanded) + "; each college receives a pro-rata " + fm(cr.each) + " — below the promised minimum.</li>"
-      : "<li><strong>" + cr.floored + "</strong> colleges sit at the minimum, <strong>" + cr.capped + "</strong> at the ceiling" +
-        (cr.unspent > 0.5 ? "; <span class=\"under\">" + fm(cr.unspent) + " unspendable</span> under the ceiling." : "; the pool spends exactly.") + "</li>");
-  var lines = [
-    "<li>Carve-out " + fm(state.carveout) + " · entry threshold <strong>" + fi(state.ncThresh) + " FTES</strong> admits <strong>" +
-      m.ncCount + "</strong> institutions (of " + (COLLEGES.filter(function(c){return c[2]>0;}).length + FEEDERS.filter(function(f){return f[1]>0;}).length) +
-      " with any noncredit FTES) · minimum " + fm(state.ncFloor) + " each.</li>",
-    "<li>Floor demand: " + fm(state.ncFloor) + " × " + m.ncCount + " = <strong>" + fm(m.ncDemand) + "</strong> against the " + fm(state.carveout) + " pool — " +
-      (m.ncDemand > state.carveout
-        ? "<span class=\"over\">over by " + fm(m.ncDemand - state.carveout) + "</span>."
-        : "<span class=\"balanced\">covered</span>, with " + fm(state.carveout - m.ncDemand) + " left to earn above the minimums.") + "</li>"
-  ];
-  if (m.frontier) {
-    lines.push("<li>At this floor, the lowest affordable threshold is <strong>" + fi(m.frontier.t) + " FTES</strong> (" +
-      m.frontier.count + " institutions, " + fm(m.frontier.demand) + " demanded)" +
-      (m.oneBelow ? " — one step lower, " + fi(m.oneBelow.t) + " FTES, admits " + m.oneBelow.count +
-        " and would need " + fm(m.oneBelow.demand) + ": <span class=\"over\">" + fm(m.oneBelow.demand - state.carveout) + " more than the pool holds</span>." : ".") + "</li>");
+function verdictHtmlOne(o) {
+  var v = [];
+  DIALS.forEach(function (dl) {
+    if (dl.ledger != null && state[dl.key] !== dl.ledger) {
+      var delta = state[dl.key] - dl.ledger;
+      v.push("<li>The " + dl.label.toLowerCase() + " dial sits <span class=\"" + (delta > 0 ? "over" : "under") + "\">" +
+        fm(Math.abs(delta)) + " " + (delta > 0 ? "above" : "below") + "</span> its budget ledger line (" + dl.ledgerName + ", " + fm(dl.ledger) + ").</li>");
+    }
+  });
+  var pct = o.pool > 0 ? Math.round(o.s.floorDemanded / o.pool * 100) : 0;
+  if (o.s.floorInfeasible) {
+    v.push("<li><span class=\"over\">Over budget by " + fm(o.s.floorDemanded - o.pool) + "</span>: the " +
+      fm(state.opFloor) + " minimum × " + o.s.n + " institutions demands " + fm(o.s.floorDemanded) +
+      " against the " + fm(o.pool) + " pool — every institution would be paid below the promised minimum.</li>");
+  } else if (o.s.unspent > 0.5) {
+    v.push("<li><span class=\"under\">Under budget by " + fm(o.s.unspent) + "</span>: the " +
+      fm(state.opCap) + " ceiling binds every institution and that much cannot be spent.</li>");
   } else {
-    lines.push("<li><span class=\"over\">No threshold is affordable at this floor</span> — even the largest institution alone demands more than the pool.</li>");
+    v.push("<li><span class=\"balanced\">The pool balances.</span> Minimums take " + pct +
+      "% of it (" + fm(o.s.floorDemanded) + " of " + fm(o.pool) + "); " +
+      fm(o.pool - o.s.floorDemanded) + " differentiates by size above the floor.</li>");
   }
-  if (m.ncCount > 0 && !m.nc.floorInfeasible) {
-    lines.push("<li>The floor this pool could afford at the current threshold: up to <strong>" + fm(state.carveout / m.ncCount) + "</strong> per institution.</li>");
+  return v.join("");
+}
+
+function render() {
+  document.getElementById("modeTwo").setAttribute("aria-pressed", MODE === "two" ? "true" : "false");
+  document.getElementById("modeOne").setAttribute("aria-pressed", MODE === "one" ? "true" : "false");
+  document.getElementById("twoLaneCards").hidden = MODE !== "two";
+  document.getElementById("onePoolCards").hidden = MODE !== "one";
+  document.getElementById("modeNote").textContent = MODE === "two"
+    ? "The saved model: a credit pool for the 115 colleges plus a $-dial noncredit carve-out with its own threshold, minimum and maximum."
+    : "Your 8-31 idea: no carve-out, no threshold, no separate noncredit bounds — every institution once, sized by credit + noncredit FTES, one minimum and one maximum on the combined award (the cap is per institution, your ruling).";
+  document.getElementById("dialNote").textContent = MODE === "two"
+    ? "One open referent: the sheet said “$50,000 minimum award” and the live noncredit minimum is $40,000 — set the dial to 50,000 to see that world. The lane priority split (34/33/33, factors) is deliberately untouched; these dials are the budget skeleton."
+    : "Only four dials exist in this world — the two deductions and the one window. The carve-out, the entry threshold, and the separate noncredit bounds are the apparatus this idea retires; their dials are hidden, not set to zero.";
+
+  DIALS.forEach(function (dl) {
+    var wrap = document.getElementById("in-" + dl.key).parentNode;
+    var show = dl.both || (MODE === "one" ? !!dl.one : !dl.one);
+    wrap.hidden = !show;
+  });
+
+  if (MODE === "two") {
+    var m = compute();
+    document.getElementById("verdictList").innerHTML = verdictHtml(m);
+    document.getElementById("stack").innerHTML =
+      "<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class=\"amt\">" + fm(TOTAL) + "</span></li>" +
+      "<li><span>CO administration</span><span class=\"amt\">− " + fm(state.admin) + "</span></li>" +
+      "<li><span>CPL projects &amp; innovation</span><span class=\"amt\">− " + fm(state.projects) + "</span>" +
+        "<span class=\"sub\">Sourced from the jointly wired Activities · Annual Targets · Budget tables (your item-5 ruling); this dial only moves the bucket's size.</span></li>" +
+      "<li><span><strong>College funding</strong></span><span class=\"amt\">" + fm(m.collegeFunding) + "</span></li>" +
+      "<li><span>Noncredit carve-out</span><span class=\"amt\">− " + fm(state.carveout) + "</span></li>" +
+      "<li><span><strong>Credit pool (115 colleges)</strong></span><span class=\"amt\">" + fm(Math.max(0, m.crPool)) + "</span></li>";
+    var cr = m.cr;
+    document.getElementById("crFacts").innerHTML =
+      "<li>Pool " + fm(Math.max(0, m.crPool)) + " across <strong>" + cr.n + "</strong> colleges, split by credit FTES share, clamped between " +
+        fm(state.crFloor) + " and " + fm(state.crCap) + " per college for the window.</li>" +
+      (cr.floorInfeasible
+        ? "<li><span class=\"over\">Infeasible:</span> floors alone demand " + fm(cr.floorDemanded) + "; each college receives a pro-rata " + fm(cr.each) + " — below the promised minimum.</li>"
+        : "<li><strong>" + cr.floored + "</strong> colleges sit at the minimum, <strong>" + cr.capped + "</strong> at the ceiling" +
+          (cr.unspent > 0.5 ? "; <span class=\"under\">" + fm(cr.unspent) + " unspendable</span> under the ceiling." : "; the pool spends exactly.") + "</li>");
+    var lines = [
+      "<li>Carve-out " + fm(state.carveout) + " · entry threshold <strong>" + fi(state.ncThresh) + " FTES</strong> admits <strong>" +
+        m.ncCount + "</strong> institutions (of " + (COLLEGES.filter(function(c){return c[2]>0;}).length + FEEDERS.filter(function(f){return f[1]>0;}).length) +
+        " with any noncredit FTES) · minimum " + fm(state.ncFloor) + " each.</li>",
+      "<li>Floor demand: " + fm(state.ncFloor) + " × " + m.ncCount + " = <strong>" + fm(m.ncDemand) + "</strong> against the " + fm(state.carveout) + " pool — " +
+        (m.ncDemand > state.carveout
+          ? "<span class=\"over\">over by " + fm(m.ncDemand - state.carveout) + "</span>."
+          : "<span class=\"balanced\">covered</span>, with " + fm(state.carveout - m.ncDemand) + " left to earn above the minimums.") + "</li>"
+    ];
+    if (m.frontier) {
+      lines.push("<li>At this floor, the lowest affordable threshold is <strong>" + fi(m.frontier.t) + " FTES</strong> (" +
+        m.frontier.count + " institutions, " + fm(m.frontier.demand) + " demanded)" +
+        (m.oneBelow ? " — one step lower, " + fi(m.oneBelow.t) + " FTES, admits " + m.oneBelow.count +
+          " and would need " + fm(m.oneBelow.demand) + ": <span class=\"over\">" + fm(m.oneBelow.demand - state.carveout) + " more than the pool holds</span>." : ".") + "</li>");
+    } else {
+      lines.push("<li><span class=\"over\">No threshold is affordable at this floor</span> — even the largest institution alone demands more than the pool.</li>");
+    }
+    if (m.ncCount > 0 && !m.nc.floorInfeasible) {
+      lines.push("<li>The floor this pool could afford at the current threshold: up to <strong>" + fm(state.carveout / m.ncCount) + "</strong> per institution.</li>");
+    }
+    document.getElementById("ncFacts").innerHTML = lines.join("");
+  } else {
+    var o = computeOne();
+    document.getElementById("verdictList").innerHTML = verdictHtmlOne(o);
+    document.getElementById("stack").innerHTML =
+      "<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class=\"amt\">" + fm(TOTAL) + "</span></li>" +
+      "<li><span>CO administration</span><span class=\"amt\">− " + fm(state.admin) + "</span></li>" +
+      "<li><span>CPL projects &amp; innovation</span><span class=\"amt\">− " + fm(state.projects) + "</span></li>" +
+      "<li><span><strong>One pool — every institution, credit + noncredit</strong></span><span class=\"amt\">" + fm(Math.max(0, o.pool)) + "</span>" +
+        "<span class=\"sub\">No carve-out line: the " + fm(2000000) + " that was the noncredit bucket is simply in the pool, and noncredit FTES carry it to where the teaching is.</span></li>";
+    var s = o.s;
+    var facts = [
+      "<li>Pool " + fm(Math.max(0, o.pool)) + " across <strong>" + s.n + "</strong> institutions (115 colleges + " +
+        (s.n - 115) + " noncredit-only), split by total FTES share, clamped between " + fm(state.opFloor) + " and " + fm(state.opCap) + " per institution.</li>"
+    ];
+    if (s.floorInfeasible) {
+      facts.push("<li><span class=\"over\">Infeasible:</span> floors alone demand " + fm(s.floorDemanded) + "; each institution receives a pro-rata " + fm(s.each) + " — below the promised minimum.</li>");
+    } else {
+      facts.push("<li><strong>" + s.floored + "</strong> institutions sit at the minimum, <strong>" + s.capped + "</strong> at the ceiling" +
+        (s.cappedIdx.length ? " (" + o.cappedNames.join(" · ") + ")" : "") +
+        (s.unspent > 0.5 ? "; <span class=\"under\">" + fm(s.unspent) + " unspendable</span> under the ceiling." : "; the pool spends exactly.") + "</li>");
+      facts.push("<li>Noncredit-attributable money (each award × its noncredit share of size): <strong>" + fm(o.ncMoney) +
+        "</strong> — beside the " + fm(2000000) + " the carve-out held by hand.</li>");
+    }
+    facts.push("<li><strong>" + o.gainers + "</strong> institutions gain and <strong>" + o.losers + "</strong> lose against the saved model; <strong>" +
+      fm(o.moved) + "</strong> changes hands in total.</li>");
+    document.getElementById("opFacts").innerHTML = facts.join("");
+
+    var down = o.deltas.slice(0, 5);
+    var up = o.deltas.slice(-5).reverse();
+    function moverLi(x) {
+      var cls = x.d >= 0 ? "balanced" : "over";
+      return "<li><span class=\"who\">" + x.name + "</span><span>" + fm(x.now) + " → " + fm(x.then) +
+        " <span class=\"" + cls + "\">(" + (x.d >= 0 ? "+" : "−") + fm(Math.abs(x.d)) + ")</span></span></li>";
+    }
+    document.getElementById("opMovers").innerHTML =
+      down.map(moverLi).join("") +
+      "<li><span class=\"who\" style=\"font-weight:400;color:var(--text-muted)\">— and the largest gains —</span><span></span></li>" +
+      up.map(moverLi).join("");
+
+    document.getElementById("opStandalone").innerHTML = o.deltas
+      .filter(function (x) { return x.standalone; })
+      .map(function (x) {
+        return "<li><strong>" + x.name + "</strong>: " + fm(x.now) + " under the carve-out today → <strong>" +
+          fm(x.then) + "</strong> as a full institution (" + (x.d >= 0 ? "+" : "−") + fm(Math.abs(x.d)) + ").</li>";
+      }).join("");
   }
-  document.getElementById("ncFacts").innerHTML = lines.join("");
+
   DIALS.forEach(function (dl) {
     var el = document.getElementById("drift-" + dl.key);
-    if (el) el.textContent = state[dl.key] === dl.live ? "live setting" : "live: " + (dl.key === "ncThresh" ? fi(dl.live) : fm(dl.live));
+    if (el) el.textContent = state[dl.key] === dl.live
+      ? (dl.one ? "your 8-31 number" : "live setting")
+      : (dl.one ? "8-31 number: " + fm(dl.live) : "live: " + (dl.key === "ncThresh" ? fi(dl.live) : fm(dl.live)));
   });
 }
 
@@ -311,11 +565,15 @@ function buildDials() {
 
 document.getElementById("resetBtn").addEventListener("click", function () {
   DIALS.forEach(function (dl) {
+    var inThisMode = dl.both || (MODE === "one" ? !!dl.one : !dl.one);
+    if (!inThisMode) return;
     state[dl.key] = dl.live;
     document.getElementById("in-" + dl.key).value = dl.live;
   });
   render();
 });
+document.getElementById("modeTwo").addEventListener("click", function () { MODE = "two"; render(); });
+document.getElementById("modeOne").addEventListener("click", function () { MODE = "one"; render(); });
 
 buildDials();
 render();
