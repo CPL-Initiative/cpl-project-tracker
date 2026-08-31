@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-30T16:48:28.610Z",
+  "scraped_at": "2026-08-31T13:58:32.697Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -18,14 +18,14 @@
       "colleges": [
         {
           "college": "Moreno Valley College",
-          "students": 2485,
+          "students": 2486,
           "units": 12542,
-          "avgUnits": 5.0470824949698185,
+          "avgUnits": 5.0450522928399035,
           "transcriptionRate": 92.4,
-          "avgTranscribed": 4.662776659959759,
+          "avgTranscribed": 4.660901045856798,
           "criteriaMetCount": 5,
           "militaryStudents": 1013,
-          "nonMilitaryStudents": 1489,
+          "nonMilitaryStudents": 1490,
           "apprenticeStudents": 0,
           "savings": 16814332.5,
           "yearImpact": 67700717,
@@ -63,17 +63,17 @@
         },
         {
           "college": "Riverside City College",
-          "students": 833,
-          "units": 3996,
-          "avgUnits": 4.797118847539015,
-          "transcriptionRate": 99.9,
-          "avgTranscribed": 4.791116446578632,
+          "students": 836,
+          "units": 4011,
+          "avgUnits": 4.797846889952153,
+          "transcriptionRate": 99.5,
+          "avgTranscribed": 4.773923444976076,
           "criteriaMetCount": 4,
-          "militaryStudents": 815,
+          "militaryStudents": 818,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7214415,
-          "yearImpact": 25409829,
+          "savings": 7240365,
+          "yearImpact": 25500834,
           "transcribedUnits": 3991
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,874",
+      "value": "50,878",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,524"
+          "value": "27,527"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,435"
+          "value": "23,436"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50874,
-    "Units": 216681.65000000002,
+    "Students": 50878,
+    "Units": 216696.65000000002,
     "TranscribedUnits": 72562.95,
-    "Savings": 324103475.25,
-    "YearImpact": 1285806873.9,
-    "MilitaryStudents": 27524,
-    "NonMilitaryStudents": 23435,
+    "Savings": 324129425.25,
+    "YearImpact": 1285897878.9,
+    "MilitaryStudents": 27527,
+    "NonMilitaryStudents": 23436,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.259182490073515,
-    "TranscribedAverage": 1.4263268074065338
+    "AverageUnits": 4.25914245842997,
+    "TranscribedAverage": 1.426214670387987
   }
 }
