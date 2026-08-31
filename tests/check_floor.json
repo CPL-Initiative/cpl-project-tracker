@@ -127,6 +127,7 @@
     "governance.test.js": 91,
     "governance_docs_panel.test.js": 39,
     "gr_deep_analysis.test.js": 77,
+    "gr_memos.test.js": 26,
     "gr_priorities.test.js": 126,
     "gr_revision_edit.test.js": 25,
     "kb_portal_composer.test.js": 48,

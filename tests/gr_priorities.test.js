@@ -350,9 +350,11 @@ check("a null read is distinguished from an empty read",
     w.indexOf("<img") === -1 && w.indexOf("&lt;IMG") !== -1);
 }
 
-// (e) The export filename carries the mandatory YYYYMMDD prefix.
-check("Word filename is date-prefixed per the vault naming rule",
-  /stamp \+ "_GR_Register_"/.test(fs.readFileSync("gr_priorities.js", "utf8")));
+// (e) The export filenames carry the mandatory YYYYMMDD prefix — the register
+// export and the guidance-memo export both build on dateStamp().
+check("Word filenames are date-prefixed per the vault naming rule",
+  /dateStamp\(\) \+ "_GR_Register_"/.test(fs.readFileSync("gr_priorities.js", "utf8"))
+  && /dateStamp\(\) \+ "_Guidance_Memo_"/.test(fs.readFileSync("gr_priorities.js", "utf8")));
 
 // (f) A transient read failure must NOT delete the stored phrase.
 {

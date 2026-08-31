@@ -41,6 +41,8 @@
   "table:gr_areas": "DR-22",
   "table:gr_revisions": "DR-22",
   "table:gr_artifacts": "DR-22",
+  "table:gr_memos": "DR-22",
+  "table:gr_memo_sections": "DR-22",
   "table:cpl_funding_config": "DR-09",
   "table:cpl_funding_notes": "DR-09",
   "table:cpl_funding_participation": "DR-09",
