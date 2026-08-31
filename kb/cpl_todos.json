@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-30",
- "_session": "SkyMirror, Session 213 — both halves of 2026-08-30 merged; the register sheet awaits your verdicts",
- "_status": "Since the morning checkpoint: the branch-deletion records are trued (#1411), the three-repo attach practice is session-checked doctrine with a per-machine installer for the zero-repo case (#1412), and the post-SB 135 Register Re-analysis decision sheet is BUILT (#1413) — 22 numbered items awaiting Sam's reply-by-number verdicts; a session then applies them to the register with a receipt for every edit (run the Sierra small-model comparison first, so both models are judged on the same rows). The rule-testing groundwork is current again; its records file into the vault, never here. Still open on Sam: the Budget Balance dials reaction and the public KB draft PR #22.",
+ "_session": "SkyLedger, Session 210 — the Register Re-analysis is ruled 22/22 and executed",
+ "_status": "The Register Re-analysis sheet is fully ruled (22 of 22, one evening, reply-by-number) and executed: seven rows ride the sent §55050 package (row 6 first re-verified), row 5 retired, rows 17-19 and 21 added, and Sam's sequencing doctrine now governs guidance — Title 5 revised and BOG-adopted first, memos after (drafting may precede). Receipts and the ruled sheet are committed. Next up: draft Memo A (hold for adoption), the Budget Balance port on Sam's reaction, and the November filing now carries five items.",
  "items": [
   {
    "id": "s210-sam-react-dials",
@@ -11,10 +11,10 @@
    "text": "React to the Budget Balance dials (the item-1 sandbox with the real rosters and live settings). Your reaction shapes the real version on the funding tab; one live finding already baked in: at today's settings the noncredit lane needs $1.68M of the $2M carve-out, and 242.7 FTES is the lowest threshold the pool can cover at the $40k minimum."
   },
   {
-   "id": "s210-sam-rule-register-sheet",
-   "for": "Sam",
+   "id": "s210-fable-memo-a-draft",
+   "for": "Fable",
    "tab": "gr-register",
-   "text": "Rule the Register Re-analysis sheet (docs/visuals/2026-08-30-register-reanalysis.html, built same day you ordered it): 22 numbered items — 16 register rows re-read against the enacted Ed Code, 5 candidate new rows, and the three-memo plan. Reply by number (yes / edit / fold / dismiss); verdicts execute as receipted register edits and the sheet republishes as the scoreboard."
+   "text": "Draft Memo A ('what is already law') from the ruled register rows - #12 leads with Sam's (f)(2)/COR pre-emption, #4's no-caps clarification promoted in, plus #1, #2, #8's award half, #14, and #6's mandated machinery. DRAFT ONLY: issuance waits for BOG adoption of the Title 5 revisions (Sam's sequencing doctrine). The draft doubles as a reverse-check on the T5 text while the November filing can still fix it."
   },
   {
    "id": "s210-sam-75013-collab",
@@ -26,7 +26,7 @@
    "id": "s210-sam-guidance-memos",
    "for": "Sam",
    "tab": "gr-register",
-   "text": "Guidance memos (your call, 2026-08-30): prep memos based on the proposed and draft regulatory changes and the funding model. The GR tab's priority rows are the source of record — this is where the tab proves its value. Say the word and a session drafts the first one from a register row; the Tier 2 bundle travels together (all four November items, with the §55023 companion and the §88782(c)(3) anchor aboard)."
+   "text": "Guidance memos, sequenced by your ruling (2026-08-30): Title 5 revised and BOG-adopted first, memos issue after - drafting may precede. The three-memo plan is adopted (A: what is already law, led by your (f)(2)/COR doctrine with the caps clarification promoted in; B: local practice; C: MAP data duties). Say the word and a session drafts Memo A from the register rows."
   },
   {
    "id": "s210-fable-balance-readout",

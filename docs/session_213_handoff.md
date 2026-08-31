@@ -18,18 +18,18 @@ morning one ([#1410](https://github.com/CPL-Initiative/cpl-project-tracker/pull/
 per-machine installer) ·
 [#1413](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1413)
 (the Register Re-analysis decision sheet — built and merged by a PARALLEL
-session line, not this one). Vault: CPLBrain #52–#56 (all merged — the
+session line, not this one). Vault: CPLBrain #52–#61 (all merged — the
 three-repo braindump, the Cowork section, the probe-lane operations rules,
 and instrument work you should NOT restate here; see the boundary below).
 
 ## Two live facts before you touch anything
 
-1. **A parallel session line may still be alive.** It built #1413 and is
-   subscribed to it; it owns executing the register verdicts if Sam replies
-   there. If Sam replies his numbers to YOU instead, you execute — the
-   sheet's own provenance paragraph states the contract (receipted register
-   edits, the memo-queue doc, lane updates, republish as scoreboard). Do not
-   grab that lane unprompted; committed docs are the only cross-session sync.
+1. **The register verdicts are DONE — do not re-execute.** Sam ruled all 22
+   items in the 2026-08-30 evening sitting and this session line executed
+   them (receipted `gr_revisions` edits; the ruled sheet is the scoreboard).
+   A parallel session line built the sheet (#1413) and may still exist —
+   committed docs are the only cross-session sync; don't grab lanes
+   unprompted.
 2. **Sam is actively running cold-session tests from a bench artifact he
    holds — and the program's records were relocated OUT of the attach set
    the same night (his ruling).** The vault keeps only a nameless stub at
@@ -51,15 +51,14 @@ and instrument work you should NOT restate here; see the boundary below).
    `workstream-specific`).
 2. `docs/doctrine_enforcement_lessons.md` — BOTH 2026-08-30 sections carry
    the day.
-3. The two live decision sheets: Open Verdicts (all 19 ruled) and Register
-   Re-analysis (`docs/visuals/2026-08-30-register-reanalysis.html`, 22 items
-   AWAITING Sam).
+3. The two ruled decision sheets: Open Verdicts (19/19) and Register
+   Re-analysis (`docs/visuals/2026-08-30-register-reanalysis.html`, 22/22 —
+   every card carries Sam's verdict verbatim).
 
 ## Your queue, in priority order
 
-1. **Execute register verdicts as they land** (if Sam rules to you — see
-   live fact 1). Rows landing on "memo" feed his guidance-memo queue; Memo A
-   ("what is already law") is the sheet's own proposed first build.
+1. **Draft Memo A** ("what is already law") from the ruled register — the sheet is 22/22 RULED and EXECUTED (2026-08-30 sitting, this session line): #12 leads with Sam's (f)(2)/COR doctrine, #4 promoted in. **DRAFT only — issuance waits for BOG adoption of the Title 5 revisions** (Sam's sequencing doctrine, in the lane file and `cpl_memory` slug `co-guidance-sequencing-doctrine`). Receipts:
+   `docs/receipts/2026-08-30-register-reanalysis-receipts.md`.
 2. **Probe-support loop on demand**: pre-flight staging, scoring help,
    filing exports — the vault README is the contract; this handoff
    deliberately says nothing more.
@@ -74,7 +73,6 @@ and instrument work you should NOT restate here; see the boundary below).
 
 ## NEEDS SAM (say these back early)
 
-- **Rule the Register Re-analysis sheet** — 22 items, reply by number.
 - **React to the Budget Balance dials** — the port waits on it.
 - **Merge cpl-knowledge-base#22** (his click IS the curation audit).
 - **Export the bench log at the end of every scoring sitting** — scores are
