@@ -183,7 +183,7 @@ consolidate) and the port is underway on this lock.</p>
   non-zero.</p>
 </section>
 
-<p class="kicker">The funding, top to bottom</p>
+<p class="kicker">Funding Breakdown</p>
 <section class="card">
   <ul class="stack" id="stack"></ul>
   <details class="fold"><summary>the named projects</summary>
@@ -199,7 +199,7 @@ consolidate) and the port is underway on this lock.</p>
   <div class="window"><span class="big">$150,000</span><span>to</span><span class="big">$400,000</span>
   <span class="note">per institution, combined credit + noncredit, for the 2026–2028 window</span></div>
   <p class="note" id="windowNote" style="margin-top:8px"></p>
-  <details class="fold"><summary>the institutions at the bounds</summary>
+  <details class="fold"><summary>the institutions with Base and Cap funding</summary>
     <ul id="boundsList"></ul>
   </details>
   <details class="fold"><summary>how an allocation is computed</summary>
@@ -215,7 +215,7 @@ consolidate) and the port is underway on this lock.</p>
   </details>
 </section>
 
-<p class="kicker">Baseline eligibility — the gate to participate</p>
+<p class="kicker">Eligibility Requirements</p>
 <section class="card">
   <ul style="margin:6px 0 0;padding-left:1.2em">
     <li>A named CPL Coordinator and Counselor, listed in MAP and responsive to Landing Page and Student
@@ -247,7 +247,7 @@ consolidate) and the port is underway on this lock.</p>
   ruled the same way — no advances, origination only (N2 b).</p>
 </section>
 
-<p class="kicker">The three priorities — how the funding is earned</p>
+<p class="kicker">Three Priority Outcome-Based Allocations</p>
 <section class="card">
   <div class="prios" id="prios"></div>
   <p class="note" style="margin-top:12px">Each priority funds its target at
@@ -274,7 +274,7 @@ consolidate) and the port is underway on this lock.</p>
   </details>
 </section>
 
-<p class="kicker" id="goals">What the funding must achieve — Ed. Code §78093.2(d)(1)</p>
+<p class="kicker" id="goals">Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code §78093.2(d)(1)</a></p>
 <section class="card">
   <div class="goals">
     <div class="goal"><h3>(A) Equitable access</h3>
@@ -515,7 +515,7 @@ document.getElementById("stack").innerHTML =
   '<li><span>CO administration</span><span class="amt">− ' + fm(ADMIN) + "</span></li>" +
   '<li><span>CPL projects &amp; innovation</span><span class="amt">− ' + fm(PROJECTS) + "</span>" +
     '<span class="sub">Sourced live from the Budget ledger; the named projects fold lives on the Budget tab’s card as today.</span></li>' +
-  '<li><span><strong>One pool — every institution, credit + noncredit</strong></span><span class="amt">' + fm(POOL) + "</span>" +
+  '<li><span><strong>Total credit and noncredit potential awards</strong></span><span class="amt">' + fm(POOL) + "</span>" +
     '<span class="sub">No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split — and ' + fm(NC_FACE.col + NC_FACE.trio) + ' of it is noncredit funding on its face (the lane restriction keeps it noncredit).</span></li>';
 
 document.getElementById("windowNote").textContent =
