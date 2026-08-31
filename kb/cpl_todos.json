@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-08-31",
- "_session": "SkyLedger, Sessions 210→214 — the one-pool day",
- "_status": "Sam adopted the one-pool funding model: one $25.24M pool across 118 institutions, $150K floor and $400K cap per institution with credit and noncredit combined, and the three noncredit-only institutions earning by origination with no advances. The noncredit share of every award is protected by its earning rule, not a second pool — each award shows its noncredit portion, drawable only against the noncredit measures. Built and shipped today: the Budget Balance mock Sam set the dials on, the who-moves card on the live tab, the simplified one-pool tab visual, Memo A as an editable surface in the GR tab, and the origination-data instructions for Malone and Pedro. Open: Sam's F1 ruling (hold vs label for the interim), his reaction locking the visual, then the port — origination feed first.",
+ "_session": "SkyPool, Session 215 — the labels ruled, and the mock became the whole tab",
+ "_status": "The one-pool model stands ($25.24M, $150K base to $400K cap per institution, credit and noncredit combined) and the reaction visual is now the COMPLETE revised tab: every section that survives the port in its final order — a baseline-eligibility card, the statutory goal cards, one statewide row under a frozen header, live search — plus a numbered list (R1–R11) of everything that leaves the tab and what replaces it. Sam ruled the detail labels twice in one sitting, landing on Current Total / Total Possible (the ceiling). Open: Sam rules R1–R11 and locks the mock; then the port — origination feed first, because the three noncredit-only institutions draw nothing until originated CPL posts.",
  "items": [
   {
-   "id": "s214-sam-f1-and-visual",
+   "id": "s215-sam-lock-the-mock",
    "for": "Sam",
    "tab": "cpl-implementation",
-   "text": "Your reaction round is IN the visual now (renamed CPL Implementation Funding): Summary strip, CR/NC columns for both FTES and max award, At Base / At Cap, Coalinga and Lemoore, and F1 resolved your way — noncredit shares listed from day one, reading $0 earned until the feeds report. Look it over once more; when it reads right, say go and the port to the live tab starts (origination feed first)."
+   "text": "The visual is now the FULL revised tab (your labels Current Total / Total Possible are in): every surviving section in final order, and at the bottom a numbered list — R1 to R11 — of everything that leaves the tab with what replaces it. Eight follow from rulings you already made; three are proposed and yours to veto by number (R8 the parity card, R10 the eligibility-pie column moving into the Columns menu, R11 folding the scattered balance boxes into the Summary). Reply by number with any vetoes or edits; your lock starts the port."
   },
   {
    "id": "s214-sam-origination-docx",
@@ -50,7 +50,7 @@
    "id": "s214-fable-onepool-port",
    "for": "Fable",
    "tab": "cpl-implementation",
-   "text": "Port the adopted one-pool model and the simplified look into the live Implementation Funding tab once Sam's reaction locks the visual. Sequencing: the origination feed comes first (no advances - the trio's earn-out has nothing to read until it flows); the priority-card and college-table simplification phases do NOT depend on the feed and can start on his word. The old NC box dials are abandoned by the model; decide during the port which noncredit share/factor editors, if any, survive."
+   "text": "Port the adopted one-pool model into the live Implementation Funding tab once Sam locks the full-tab mock (R1-R11 is the approval surface). Sequencing: the origination feed comes first (no advances - the trio's earn-out has nothing to read until it flows); the priority-card and college-table restructure does NOT depend on the feed and can start on his lock. R1-R11's ruled removals are the demolition list; decide during the port which noncredit share/factor editors, if any, survive."
   },
   {
    "id": "s202-fable-savesweep",
