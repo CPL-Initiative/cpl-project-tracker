@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-31T17:06:50.325Z",
+  "scraped_at": "2026-08-31T19:11:59.314Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,17 +198,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 609,
-          "units": 8692.5,
-          "avgUnits": 14.273399014778326,
+          "students": 610,
+          "units": 8697.5,
+          "avgUnits": 14.258196721311476,
           "transcriptionRate": 11.2,
-          "avgTranscribed": 1.6001642036124795,
+          "avgTranscribed": 1.5975409836065573,
           "criteriaMetCount": 3,
-          "militaryStudents": 563,
+          "militaryStudents": 564,
           "nonMilitaryStudents": 59,
           "apprenticeStudents": 0,
-          "savings": 15625125,
-          "yearImpact": 55949054.5,
+          "savings": 15633775,
+          "yearImpact": 55979389.5,
           "transcribedUnits": 974.5
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,884",
+      "value": "50,885",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,533"
+          "value": "27,534"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50884,
-    "Units": 216723.65000000002,
+    "Students": 50885,
+    "Units": 216728.65000000002,
     "TranscribedUnits": 72562.95,
-    "Savings": 324176135.25,
-    "YearImpact": 1286061687.9,
-    "MilitaryStudents": 27533,
+    "Savings": 324184785.25,
+    "YearImpact": 1286092022.9,
+    "MilitaryStudents": 27534,
     "NonMilitaryStudents": 23436,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.259170859209182,
-    "TranscribedAverage": 1.4260464979168304
+    "AverageUnits": 4.259185418099637,
+    "TranscribedAverage": 1.4260184730274148
   }
 }

@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-31T17:09:17Z",
- "count": 151,
+ "_generated_at": "2026-08-31T19:14:32Z",
+ "count": 164,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -451,6 +451,62 @@
     "code": "BUS 1A"
    }
   ],
+  "BUS 001B: Elementary Principles of Accounting": [
+   {
+    "kind": "cid",
+    "id": "ACCT 120",
+    "title": "Managerial Accounting",
+    "code": "BUS 1B"
+   }
+  ],
+  "BUS 002: Introductory Keyboarding": [
+   {
+    "kind": "course",
+    "title": "Introductory Keyboarding",
+    "code": "BUS 2",
+    "share": 1.0,
+    "colleges": 9,
+    "scoped": true
+   }
+  ],
+  "BUS 003: Intermediate Keyboarding": [
+   {
+    "kind": "course",
+    "title": "Intermediate Keyboarding",
+    "code": "BUS 3",
+    "share": 1.0,
+    "colleges": 4,
+    "scoped": true
+   }
+  ],
+  "BUS 018: Business Law": [
+   {
+    "kind": "cid",
+    "id": "BUS 125",
+    "title": "Business Law",
+    "code": "BUS 18"
+   }
+  ],
+  "BUS 035: Human Resources Management": [
+   {
+    "kind": "course",
+    "title": "Human Resources Management",
+    "code": "BUS 35",
+    "share": 1.0,
+    "colleges": 8,
+    "scoped": true
+   }
+  ],
+  "BUS 074": [
+   {
+    "kind": "course",
+    "title": "Computerized Accounting",
+    "code": "BUS 74",
+    "share": 1.0,
+    "colleges": 7,
+    "scoped": true
+   }
+  ],
   "CADD 14: 2D CAD I": [
    {
     "kind": "course",
@@ -548,6 +604,70 @@
     "code": "CHIN 2",
     "share": 1.0,
     "colleges": 11,
+    "scoped": true
+   }
+  ],
+  "CIS 005A: Information & Communication Technology Essentials": [
+   {
+    "kind": "cid",
+    "id": "ITIS 110",
+    "title": "Information & Communication Technology Essentials",
+    "code": "CIS 5A"
+   }
+  ],
+  "CIS 005B: Systems and Network Administration": [
+   {
+    "kind": "course",
+    "title": "Systems and Network Administration",
+    "code": "CIS 5B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005C: Computer Network Fundamentals": [
+   {
+    "kind": "cid",
+    "id": "ITIS 150",
+    "title": "Computer Network Fundamentals",
+    "code": "CIS 5C"
+   }
+  ],
+  "CIS 005D: Routing and Switching Essentials": [
+   {
+    "kind": "course",
+    "title": "Routing and Switching Essentials",
+    "code": "CIS 5D",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005E: Introduction to Information Systems Security": [
+   {
+    "kind": "cid",
+    "id": "ITIS 160",
+    "title": "Introduction to Information Systems Security",
+    "code": "CIS 5E"
+   }
+  ],
+  "CIS 005F: Introduction to Information Assurance": [
+   {
+    "kind": "course",
+    "title": "Introduction to Information Assurance",
+    "code": "CIS 5F",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CIS 005G: Computer Forensics Fundamentals": [
+   {
+    "kind": "course",
+    "title": "Computer Forensics Fundamentals",
+    "code": "CIS 5G",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
