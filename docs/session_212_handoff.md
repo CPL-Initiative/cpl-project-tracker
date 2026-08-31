@@ -5,6 +5,8 @@ updated: 2026-08-30
 tags: [handoff, session-212, decision-sheets, open-verdicts, funding, governance, register-reanalysis]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_215_handoff.md
 ---
 
 # You are Session 212

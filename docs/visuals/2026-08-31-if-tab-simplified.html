@@ -1,4 +1,4 @@
-<title>One-Pool Funding Tab</title>
+<title>CPL Implementation Funding</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
   /* First Light v1.6 tokens — single-theme light by design. */
@@ -63,24 +63,27 @@
   details.fold[open] > summary::before { content: "Hide "; }
   details.fold ul { margin: 8px 0 0; padding-left: 1.2em; font-size: .88rem; color: var(--text-muted); }
   details.fold li { margin: 4px 0; }
-  .chip { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-    text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-strong);
-    border-radius: 999px; padding: 1px 9px; margin-left: 6px; white-space: nowrap; }
-  .chip.min { color: var(--mustard-text); border-color: var(--mustard-text); }
-  .chip.max { color: var(--cobalt); border-color: var(--cobalt); }
-  .chip.nco { color: var(--hunter); border-color: var(--hunter); }
+  /* Row chips are ghosted on purpose (Sam, 2026-08-31): the quietest thing in
+     the row, never the first read. One muted treatment for all three. */
+  .chip { display: inline-block; font-size: .68rem; font-weight: 400; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border);
+    border-radius: 999px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
   /* the institution table — details rows on a fixed grid, no sideways scroll */
   .insts { margin-top: 8px; }
   .inst { border-top: 1px solid var(--border); }
   .inst > summary { list-style: none; cursor: pointer; display: grid;
-    grid-template-columns: 2.2em minmax(0,1fr) 6.5em 7.5em; gap: 8px; align-items: baseline;
+    grid-template-columns: 2.2em minmax(0,1fr) 5em 5em 6.2em 6.2em; gap: 8px; align-items: baseline;
     padding: 7px 4px; font-variant-numeric: tabular-nums; }
   .inst > summary::-webkit-details-marker { display: none; }
   .inst > summary:hover { background: var(--surface-subtle); }
+  /* Low-key rows (Sam, 2026-08-31): nothing bold, FTES and funding centered,
+     the rightmost column right-justified. */
   .inst .n { color: var(--text-muted); font-size: .82rem; }
-  .inst .who { font-weight: 600; color: var(--text-strong); min-width: 0; }
-  .inst .ftes { text-align: right; color: var(--text-muted); }
-  .inst .amt { text-align: right; font-weight: 700; color: var(--text-strong); }
+  .inst .who { font-weight: 400; color: var(--text-body); min-width: 0; }
+  .inst .ftes { color: var(--text-muted); }
+  .inst .amt { font-weight: 400; color: var(--text-body); }
+  .inst > summary > span:nth-child(n+3) { text-align: center; }
+  .inst > summary > span:last-child { text-align: right; }
   .inst .detail { padding: 4px 4px 12px 2.6em; }
   .inst .detail table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .88rem; }
   .inst .detail th { text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em;
@@ -88,42 +91,51 @@
   .inst .detail th[scope=col]:not(:first-child), .inst .detail td:not(:first-child) { text-align: right; }
   .inst .detail td { padding: 4px 6px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }
   .inst .detail .dnote { font-size: .82rem; color: var(--text-muted); margin: 8px 0 0; }
-  .thead { display: grid; grid-template-columns: 2.2em minmax(0,1fr) 6.5em 7.5em; gap: 8px;
+  .thead { display: grid; grid-template-columns: 2.2em minmax(0,1fr) 5em 5em 6.2em 6.2em; gap: 8px;
     padding: 4px; font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
     color: var(--text-muted); border-bottom: 1px solid var(--border-strong); }
-  .thead span:nth-child(3), .thead span:nth-child(4) { text-align: right; }
-  @media (max-width: 560px) {
-    .inst > summary, .thead { grid-template-columns: minmax(0,1fr) 7.5em; }
-    .inst .n, .inst .ftes, .thead span:nth-child(1), .thead span:nth-child(3) { display: none; }
+  .thead span:nth-child(n+3) { text-align: center; }
+  .thead span:last-child { text-align: right; }
+  /* Planning notes (Sam, 2026-08-31): sections that exist for Sam, not for the
+     eventual tab — tinted so nobody edits their language as if it were tab copy. */
+  .meta { background: rgba(139,104,0,.06); border-color: rgba(139,104,0,.28); }
+  p.lede.meta { border: 1px solid rgba(139,104,0,.28); border-radius: var(--radius);
+    padding: 14px 16px; }
+  .meta-tag { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--mustard-text); margin-bottom: 6px; }
+  @media (max-width: 700px) {
+    .inst > summary, .thead { grid-template-columns: minmax(0,1fr) 6.2em 6.2em; }
+    .inst .n, .inst .ftes, .thead span:nth-child(1), .thead span:nth-child(3), .thead span:nth-child(4) { display: none; }
     .inst .detail { padding-left: 4px; }
   }
 </style>
 
-<a class="skip" href="#verdicts">Skip to where you stand</a>
+<a class="skip" href="#verdicts">Skip to summary</a>
 <div class="wrap">
 
-<p class="kicker">CPL implementation funding · proposed simplified tab · one pool adopted 2026-08-31 · reaction visual</p>
-<h1>One-Pool Funding Tab</h1>
-<p class="lede">The Implementation Funding tab as it would look with your three
-simplification phases implemented under the adopted one-pool model: the verdict
-strip answers "where do I stand" before anything else, the money reads top to
+<p class="kicker">Proposed simplified tab · one pool adopted 2026-08-31 · reaction visual</p>
+<h1>CPL Implementation Funding</h1>
+<p class="lede meta"><span class="meta-tag">Planning note — for Sam, not tab copy</span>
+The Implementation Funding tab as it would look with your three
+simplification phases implemented under the adopted one-pool model: the summary
+answers "where do I stand" before anything else, the funding reads top to
 bottom, every deeper detail folds open in place, and each institution is one
-row with its whole story behind a click. Every figure is real — the adopted
-dials ($150,000 to $400,000 on the combined award), the real rosters, and MAP
-actuals as of 2026-08-31. This page is for your reaction; the port to the live
-tab follows it.</p>
+row with its full allocation detail behind a click. Every figure is real — the
+adopted dials ($150,000 base to $400,000 cap on the combined award), the real
+rosters, and MAP actuals as of 2026-08-31. This page is for your reaction; the
+port to the live tab follows it.</p>
 
 <section class="card" id="verdicts" aria-live="polite">
-  <h2>Where you stand</h2>
+  <h2>Summary</h2>
   <ul id="verdictList"></ul>
 </section>
 
-<p class="kicker">The money, top to bottom</p>
+<p class="kicker">The funding, top to bottom</p>
 <section class="card">
   <ul class="stack" id="stack"></ul>
 </section>
 
-<p class="kicker">The window — one minimum, one maximum, every institution</p>
+<p class="kicker">The window — one base, one cap, every institution</p>
 <section class="card">
   <div class="window"><span class="big">$150,000</span><span>to</span><span class="big">$400,000</span>
   <span class="note">per institution, combined credit + noncredit, for the 2026–2028 window</span></div>
@@ -133,42 +145,63 @@ tab follows it.</p>
   </details>
 </section>
 
-<p class="kicker">The three priorities — how the money is earned</p>
+<p class="kicker">Two lanes on one face — ruled 2026-08-31</p>
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
+  <p style="margin:0 0 8px">One pool, one solve — and every award decomposes on
+  its face into a <strong>credit share</strong> and a <strong>noncredit
+  share</strong>, by each lane's share of the institution's FTES. The noncredit
+  share is not a label: it earns only against the noncredit priority measures,
+  so the credit program cannot draw it by doing credit work. On this page it
+  appears on the pool line, in the summary, and in every institution's columns
+  and expand.</p>
+  <p class="note" style="margin:8px 0 0"><strong>F1 ruled (2026-08-31):</strong>
+  the noncredit shares are listed from day one and simply read $0 earned until
+  the noncredit measures report — no interim policy needed, because the data
+  feeds are wired in before this page reaches colleges. Nothing publishes on
+  funding we cannot measure. The three noncredit-only institutions were already
+  ruled the same way — no advances, origination only (N2 b).</p>
+</section>
+
+<p class="kicker">The three priorities — how the funding is earned</p>
 <section class="card">
   <div class="prios" id="prios"></div>
   <p class="note" style="margin-top:12px">Each priority funds its target at
   0.50× the 2026-27 state rate of $5,649.63 — an effective $2,824.82 per CPL
-  FTES. A college earns cap × (actual ÷ target) on each priority, capped at
-  100%; unearned dollars roll forward. Units convert at 30 semester units per
-  FTES (45 on a quarter calendar).</p>
+  FTES. A college's credit share earns (actual ÷ target) on each priority, up
+  to 100%; its noncredit share earns against the noncredit measures once their
+  feeds report; unearned dollars roll forward. Units convert at 30 semester
+  units per FTES (45 on a quarter calendar).</p>
   <details class="fold"><summary>the earning rules for noncredit</summary>
     <ul>
       <li><strong>A college's noncredit share</strong> of its combined award earns
-        against the noncredit priority measures; while those feeds are absent it
-        advances the way unmeasured credit priorities do.</li>
+        against the noncredit priority measures; it is listed from day one and
+        reads $0 earned until those feeds report (ruled 2026-08-31).</li>
       <li><strong>The noncredit-only institutions earn by origination</strong> —
         CPL that originates from their programs and is transcribed at a credit
         college. NOCE and SDCCE's origination counts across their district's
         credit campuses; Calbright's counts statewide. The receiving college earns
-        on the same CPL under its own measures — the deliberate double count
-        (ruled 2026-08-31).</li>
+        on the same CPL under its own measures — the same CPL credits both institutions by design (ruled 2026-08-31).</li>
       <li><strong>No advances on origination</strong> (N2 b): a noncredit-only
         institution draws only as its originated CPL actually posts, so the
         origination feed (Origin + LocID2 on the Custom Reports) is the gate
-        between these campuses and any money.</li>
+        between these campuses and any funding.</li>
     </ul>
   </details>
 </section>
 
-<p class="kicker">Every institution — one row, the whole story behind it</p>
+<p class="kicker">Outcomes-based awards — the full allocation detail on click</p>
 <section class="card">
-  <p class="note" style="margin:0 0 6px">Click a row for its per-priority money,
-  targets, and actuals. Sorted by allocation, largest first.</p>
-  <div class="thead" aria-hidden="true"><span>#</span><span>Institution</span><span>FTES</span><span>Allocation</span></div>
-  <div class="insts" id="insts" role="region" aria-label="Every institution's allocation"></div>
+  <p class="note" style="margin:0 0 6px">Alphabetical. The award figures are
+  each institution's <strong>max award</strong> — what it can earn by outcomes,
+  not an automatic payment — split into its credit and noncredit shares. Click
+  a row for its per-priority funding, targets, and actuals.</p>
+  <div class="thead" aria-hidden="true"><span>#</span><span>Institution</span><span title="Credit full-time-equivalent students — the institution's credit teaching size.">CR FTES</span><span title="Noncredit full-time-equivalent students — the institution's noncredit teaching size.">NC FTES</span><span title="The credit share of the max award — earned against the credit priority measures.">CR award</span><span title="The noncredit share of the max award — earned only against the noncredit measures; the credit program cannot draw it.">NC award</span></div>
+  <div class="insts" id="insts" role="region" aria-label="Every institution's max award, credit and noncredit"></div>
 </section>
 
-<section class="card">
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
   <details class="fold"><summary>method and sources</summary>
     <ul>
       <li>Allocations use the tab's own bounded split (proportional to total
@@ -193,9 +226,9 @@ tab follows it.</p>
 </div>
 
 <script>
-var COLLEGES = [["Alameda",3111.6,43.4],["Berkeley City",3833,62.2],["Chabot",5862.2,152.8],["Laney",5604.2,110.6],["Las Positas",4070.7,72.1],["Merritt",3887,17.3],["Ohlone",7585,185.6],["Butte",10844.5,428.8],["Contra Costa",5369.8,173.7],["Diablo Valley",14707.7,77.5],["Los Medanos",7917.2,60.7],["Lake Tahoe",3860.9,63.7],["Clovis",7590,34.5],["Fresno City",21916.9,370.6],["Reedley College",7356.5,284.6],["West Hills Coalinga",2242.9,84.7],["Redwoods",4296.3,148.3],["Imperial",3966.9,27.6],["Bakersfield",21292.8,315.4],["Cerro Coso",3686.5,29.5],["Taft",2434.5,0],["West Hills Lemoore",3361.2,243.7],["Lassen",1633.2,60.8],["Antelope Valley",11698.6,115.7],["Canyons",13528.6,2022.5],["Cerritos",17753.9,640.6],["Citrus",9532.7,225.6],["Compton",2591.3,31.2],["East LA",19065.7,1138.2],["El Camino",12613.2,1.5],["Glendale",10663.5,2911.1],["LA City",9609.7,791.2],["LA Harbor",6405.3,96.9],["LA Mission",6777.9,693],["LA Pierce",12216.9,607.7],["LA Swest",3008.9,249.4],["LA Trade",10570.4,233.8],["LA Valley",10920.4,991.7],["Long Beach",22535.9,518.1],["Mt San Antonio",26804.4,10829.3],["Pasadena",23347.4,1470.4],["Rio Hondo",11693.5,1568.3],["Santa Monica",19453.5,877.7],["West LA",6016.2,234.7],["Madera",4234.7,46.5],["Marin",3374.6,366.5],["Mendocino",3729.4,145.9],["Merced",11311.3,508.8],["Hartnell",8301.2,109.4],["Monterey",5681.1,178.7],["Napa",3722.5,29.3],["Coastline",5342.7,325.4],["Cypress",12850.7,41.6],["Fullerton",15875,0],["Golden West",8832.5,242.2],["Irvine",5754.1,902],["Orange Coast",13996.7,256.5],["Saddleback",8580.2,2890.5],["Santa Ana",16043.6,7817.7],["Santiago Canyon",7047.1,3577.3],["Sierra",14544.1,295],["Feather River",1098.2,25.6],["Desert",8658.5,907.3],["Moreno Valley",9743,62.8],["Mt. San Jacinto",13978.3,319.3],["Norco College",8008.4,100.9],["Palo Verde",1414,10.8],["Riverside",18650.9,208.8],["American River",20744.6,0],["Cosumnes River",11359,0],["Folsom Lake",7835.2,3.7],["Sacramento City",14386.7,1.5],["Barstow",3019.2,43.2],["Chaffey",17951,229.5],["Copper Mountain",1688,67],["Crafton Hills",5038.9,57.4],["San Bernardino",11992.7,274.4],["Victor Valley",13946.9,621.3],["Cuyamaca",4901.4,2.9],["Grossmont",9099.4,95.7],["MiraCosta",9580.7,1046.8],["Palomar",15488.9,476.7],["San Diego City",8921.9,0],["San Diego Mesa",16732.2,0],["San Diego Miramar",11276.5,0],["Southwestern",16346.8,230.4],["San Francisco",12951.8,3896.6],["San Joaquin Delta",17034.4,183.1],["Cuesta",7616.8,510.6],["Canada",4631.2,1.4],["San Mateo",8117.7,0.3],["Skyline",9029.2,1],["Allan Hancock",8995.6,764.9],["Santa Barbara",10973.7,1232.6],["De Anza",16628.1,364.6],["Evergreen Valley",3189.3,61.3],["Foothill",11018.6,242.7],["Gavilan",5026,1591.4],["Mission",5128.5,254.1],["San Jose City",2722.1,110.8],["West Valley",6222.7,924.1],["Cabrillo",7616.7,782.3],["Shasta",7241.9,132.7],["Siskiyous",1725.4,328.6],["Solano",7328.7,8.4],["Santa Rosa",13640.2,3009.6],["Modesto",15550,924.7],["Porterville",3558.3,45.5],["Sequoias",11474,224.9],["Columbia",2078,36.6],["Moorpark",12728.2,14.6],["Oxnard",5629,74.4],["Ventura",9996.3,150.7],["Woodland",2589.2,53.1],["Yuba",4419.1,81.1]];
+var COLLEGES = [["Alameda",3111.6,43.4],["Berkeley City",3833,62.2],["Chabot",5862.2,152.8],["Laney",5604.2,110.6],["Las Positas",4070.7,72.1],["Merritt",3887,17.3],["Ohlone",7585,185.6],["Butte",10844.5,428.8],["Contra Costa",5369.8,173.7],["Diablo Valley",14707.7,77.5],["Los Medanos",7917.2,60.7],["Lake Tahoe",3860.9,63.7],["Clovis",7590,34.5],["Fresno City",21916.9,370.6],["Reedley College",7356.5,284.6],["Coalinga",2242.9,84.7],["Redwoods",4296.3,148.3],["Imperial",3966.9,27.6],["Bakersfield",21292.8,315.4],["Cerro Coso",3686.5,29.5],["Taft",2434.5,0],["Lemoore",3361.2,243.7],["Lassen",1633.2,60.8],["Antelope Valley",11698.6,115.7],["Canyons",13528.6,2022.5],["Cerritos",17753.9,640.6],["Citrus",9532.7,225.6],["Compton",2591.3,31.2],["East LA",19065.7,1138.2],["El Camino",12613.2,1.5],["Glendale",10663.5,2911.1],["LA City",9609.7,791.2],["LA Harbor",6405.3,96.9],["LA Mission",6777.9,693],["LA Pierce",12216.9,607.7],["LA Swest",3008.9,249.4],["LA Trade",10570.4,233.8],["LA Valley",10920.4,991.7],["Long Beach",22535.9,518.1],["Mt San Antonio",26804.4,10829.3],["Pasadena",23347.4,1470.4],["Rio Hondo",11693.5,1568.3],["Santa Monica",19453.5,877.7],["West LA",6016.2,234.7],["Madera",4234.7,46.5],["Marin",3374.6,366.5],["Mendocino",3729.4,145.9],["Merced",11311.3,508.8],["Hartnell",8301.2,109.4],["Monterey",5681.1,178.7],["Napa",3722.5,29.3],["Coastline",5342.7,325.4],["Cypress",12850.7,41.6],["Fullerton",15875,0],["Golden West",8832.5,242.2],["Irvine",5754.1,902],["Orange Coast",13996.7,256.5],["Saddleback",8580.2,2890.5],["Santa Ana",16043.6,7817.7],["Santiago Canyon",7047.1,3577.3],["Sierra",14544.1,295],["Feather River",1098.2,25.6],["Desert",8658.5,907.3],["Moreno Valley",9743,62.8],["Mt. San Jacinto",13978.3,319.3],["Norco College",8008.4,100.9],["Palo Verde",1414,10.8],["Riverside",18650.9,208.8],["American River",20744.6,0],["Cosumnes River",11359,0],["Folsom Lake",7835.2,3.7],["Sacramento City",14386.7,1.5],["Barstow",3019.2,43.2],["Chaffey",17951,229.5],["Copper Mountain",1688,67],["Crafton Hills",5038.9,57.4],["San Bernardino",11992.7,274.4],["Victor Valley",13946.9,621.3],["Cuyamaca",4901.4,2.9],["Grossmont",9099.4,95.7],["MiraCosta",9580.7,1046.8],["Palomar",15488.9,476.7],["San Diego City",8921.9,0],["San Diego Mesa",16732.2,0],["San Diego Miramar",11276.5,0],["Southwestern",16346.8,230.4],["San Francisco",12951.8,3896.6],["San Joaquin Delta",17034.4,183.1],["Cuesta",7616.8,510.6],["Canada",4631.2,1.4],["San Mateo",8117.7,0.3],["Skyline",9029.2,1],["Allan Hancock",8995.6,764.9],["Santa Barbara",10973.7,1232.6],["De Anza",16628.1,364.6],["Evergreen Valley",3189.3,61.3],["Foothill",11018.6,242.7],["Gavilan",5026,1591.4],["Mission",5128.5,254.1],["San Jose City",2722.1,110.8],["West Valley",6222.7,924.1],["Cabrillo",7616.7,782.3],["Shasta",7241.9,132.7],["Siskiyous",1725.4,328.6],["Solano",7328.7,8.4],["Santa Rosa",13640.2,3009.6],["Modesto",15550,924.7],["Porterville",3558.3,45.5],["Sequoias",11474,224.9],["Columbia",2078,36.6],["Moorpark",12728.2,14.6],["Oxnard",5629,74.4],["Ventura",9996.3,150.7],["Woodland",2589.2,53.1],["Yuba",4419.1,81.1]];
 var FEEDERS = [["NOCE",3828],["SD Cont. Ed",9337.8],["Mt. SAC NC",0],["Calbright",1000]];
-var PERF = {"Alameda":[6,529,0],"Allan Hancock":[0,6323,0],"American River":[0,2377,0],"Antelope Valley":[4,9474,0],"Bakersfield":[66,25998.5,974.5],"Barstow":[0,4865,0],"Berkeley City":[6,887,0],"Butte":[0,435,0],"Cabrillo":[0,8788,258.5],"Canada":[3,1066,0],"Canyons":[23,21587,0],"Cerritos":[0,6817,0],"Cerro Coso":[0,8963.5,0],"Chabot":[0,983,0],"Chaffey":[6,32886,286],"Citrus":[0,8282,0],"Clovis":[12,8090,0],"Coastline":[10,63462,0],"Columbia":[0,1398,0],"Compton":[0,600,0],"Contra Costa":[0,0,0],"Copper Mountain":[3,3770,0],"Crafton Hills":[0,1045,0],"Cuesta":[0,4641.5,0],"Cuyamaca":[0,6939,0],"Cypress":[0,17353.5,131],"De Anza":[0,24241.5,0],"Desert":[4,17445.5,831.5],"Diablo Valley":[3,7441,0],"East LA":[3,9200,78],"El Camino":[9,21892,0],"Evergreen Valley":[6,5100.5,0],"Feather River":[0,454,0],"Foothill":[12,3300,0],"Fresno City":[0,22445,0],"Fullerton":[7,21595,0],"Gavilan":[0,1891,0],"Glendale":[0,9963.5,0],"Golden West":[6,5306,0],"Grossmont":[0,0,0],"Hartnell":[0,2537,0],"Irvine":[3,5715,0],"LA City":[0,6192,0],"LA Harbor":[0,5172,0],"LA Mission":[0,6818,0],"LA Pierce":[9,6058,907],"LA Trade":[0,15165,0],"LA Valley":[5,15980,945],"Laney":[0,2181,0],"Las Positas":[18,1266,0],"Lassen":[0,5743,0],"Long Beach":[39,36440.5,0],"Los Medanos":[0,8966,0],"Madera":[5,1751,0],"Mendocino":[0,62,0],"Merced":[5,29623.5,9856],"Merritt":[0,671,0],"MiraCosta":[18,0,0],"Mission":[0,6690,0],"Modesto":[25,8240,1417.5],"Monterey":[0,5582.5,0],"Moorpark":[0,9669,0],"Moreno Valley":[53.5,52435,11587],"Mt San Antonio":[8,31389.5,0],"Mt. San Jacinto":[15,30779,0],"Napa":[0,2253,0],"Norco College":[69,25881,3997],"Ohlone":[0,5231,0],"Orange Coast":[0,0,0],"Oxnard":[4,8495,0],"Palo Verde":[0,601.8,151.8],"Pasadena":[4,5926,0],"Porterville":[5,675,0],"Redwoods":[0,1432,0],"Reedley College":[0,4819.5,0],"Riverside":[5,36442,3991],"Sacramento City":[0,2566,0],"Saddleback":[12,2683,0],"San Bernardino":[0,9500,748],"San Diego City":[8,97140.5,9245],"San Diego Mesa":[4,105505.5,9543.5],"San Diego Miramar":[8,95938.2,6290.7],"San Francisco":[0,62624.5,136],"San Joaquin Delta":[0,20764,0],"San Jose City":[6,6198,0],"San Mateo":[6,9420,0],"Santa Ana":[8,16504,0],"Santa Barbara":[0,4016,0],"Santa Monica":[16,0,0],"Santa Rosa":[4,19207,0],"Santiago Canyon":[7,29064.5,3378.5],"Sequoias":[0,8132,0],"Shasta":[6,7715,0],"Sierra":[0,11461,0],"Skyline":[0,3966,0],"Solano":[12,7634,0],"Southwestern":[10,37156,0],"Taft":[0,403,0],"Ventura":[0,10671,0],"Victor Valley":[6,13366,0],"West Hills Coalinga":[0,0,0],"West Hills Lemoore":[21,2714,189],"West LA":[42,14726,7446.5],"West Valley":[6,2020,0],"Woodland":[0,222,0]};   // name → [P1 applied portal-origin units, P2 eligible units, P3 transcribed units], as of 2026-08-31
+var PERF = {"Alameda":[6,529,0],"Allan Hancock":[0,6323,0],"American River":[0,2377,0],"Antelope Valley":[4,9474,0],"Bakersfield":[66,25998.5,974.5],"Barstow":[0,4865,0],"Berkeley City":[6,887,0],"Butte":[0,435,0],"Cabrillo":[0,8788,258.5],"Canada":[3,1066,0],"Canyons":[23,21587,0],"Cerritos":[0,6817,0],"Cerro Coso":[0,8963.5,0],"Chabot":[0,983,0],"Chaffey":[6,32886,286],"Citrus":[0,8282,0],"Clovis":[12,8090,0],"Coastline":[10,63462,0],"Columbia":[0,1398,0],"Compton":[0,600,0],"Contra Costa":[0,0,0],"Copper Mountain":[3,3770,0],"Crafton Hills":[0,1045,0],"Cuesta":[0,4641.5,0],"Cuyamaca":[0,6939,0],"Cypress":[0,17353.5,131],"De Anza":[0,24241.5,0],"Desert":[4,17445.5,831.5],"Diablo Valley":[3,7441,0],"East LA":[3,9200,78],"El Camino":[9,21892,0],"Evergreen Valley":[6,5100.5,0],"Feather River":[0,454,0],"Foothill":[12,3300,0],"Fresno City":[0,22445,0],"Fullerton":[7,21595,0],"Gavilan":[0,1891,0],"Glendale":[0,9963.5,0],"Golden West":[6,5306,0],"Grossmont":[0,0,0],"Hartnell":[0,2537,0],"Irvine":[3,5715,0],"LA City":[0,6192,0],"LA Harbor":[0,5172,0],"LA Mission":[0,6818,0],"LA Pierce":[9,6058,907],"LA Trade":[0,15165,0],"LA Valley":[5,15980,945],"Laney":[0,2181,0],"Las Positas":[18,1266,0],"Lassen":[0,5743,0],"Long Beach":[39,36440.5,0],"Los Medanos":[0,8966,0],"Madera":[5,1751,0],"Mendocino":[0,62,0],"Merced":[5,29623.5,9856],"Merritt":[0,671,0],"MiraCosta":[18,0,0],"Mission":[0,6690,0],"Modesto":[25,8240,1417.5],"Monterey":[0,5582.5,0],"Moorpark":[0,9669,0],"Moreno Valley":[53.5,52435,11587],"Mt San Antonio":[8,31389.5,0],"Mt. San Jacinto":[15,30779,0],"Napa":[0,2253,0],"Norco College":[69,25881,3997],"Ohlone":[0,5231,0],"Orange Coast":[0,0,0],"Oxnard":[4,8495,0],"Palo Verde":[0,601.8,151.8],"Pasadena":[4,5926,0],"Porterville":[5,675,0],"Redwoods":[0,1432,0],"Reedley College":[0,4819.5,0],"Riverside":[5,36442,3991],"Sacramento City":[0,2566,0],"Saddleback":[12,2683,0],"San Bernardino":[0,9500,748],"San Diego City":[8,97140.5,9245],"San Diego Mesa":[4,105505.5,9543.5],"San Diego Miramar":[8,95938.2,6290.7],"San Francisco":[0,62624.5,136],"San Joaquin Delta":[0,20764,0],"San Jose City":[6,6198,0],"San Mateo":[6,9420,0],"Santa Ana":[8,16504,0],"Santa Barbara":[0,4016,0],"Santa Monica":[16,0,0],"Santa Rosa":[4,19207,0],"Santiago Canyon":[7,29064.5,3378.5],"Sequoias":[0,8132,0],"Shasta":[6,7715,0],"Sierra":[0,11461,0],"Skyline":[0,3966,0],"Solano":[12,7634,0],"Southwestern":[10,37156,0],"Taft":[0,403,0],"Ventura":[0,10671,0],"Victor Valley":[6,13366,0],"Coalinga":[0,0,0],"Lemoore":[21,2714,189],"West LA":[42,14726,7446.5],"West Valley":[6,2020,0],"Woodland":[0,222,0]};   // name → [P1 applied portal-origin units, P2 eligible units, P3 transcribed units], as of 2026-08-31
 var TOTAL = 35000000, ADMIN = 800000, PROJECTS = 8959692;
 var FLOOR = 150000, CAP = 400000, RATE = 5649.63, FACTOR = 0.5;
 var SHARES = [
@@ -248,20 +281,33 @@ var atMax = ROWS.filter(function (r) { return r.atMax; });
 var effRate = RATE * FACTOR;
 var totalEarned = 0, ncoAlloc = 0, noData = 0;
 ROWS.forEach(function (r) {
+  // the award's two lanes, by FTES share — the restriction's own arithmetic
+  r.ncAward = r.size > 0 ? r.alloc * r.nc / r.size : 0;
+  r.crAward = r.alloc - r.ncAward;
   r.prios = SHARES.map(function (p, i) {
-    var money = r.alloc * p.share;
-    var target = money / effRate;                     // window target, FTES
+    var crM = r.crAward * p.share, ncM = r.ncAward * p.share;
+    var target = crM / effRate;                       // credit-share target, FTES
     var perf = PERF[r.name];
     var actual = perf ? perf[i] / 30 : null;          // units → FTES
     var frac = (actual != null && target > 0) ? Math.min(1, actual / target) : null;
-    return { money: money, target: target, actual: actual, frac: frac };
+    // only the credit share earns against these actuals; the noncredit share
+    // reads $0 until the noncredit measures report (ruled 2026-08-31)
+    return { crM: crM, ncM: ncM, target: target, actual: actual, frac: frac };
   });
   if (r.nco) { r.earned = 0; ncoAlloc += r.alloc; }
   else if (!PERF[r.name]) { r.earned = 0; noData++; }
   else {
-    r.earned = r.prios.reduce(function (s, p) { return s + (p.frac || 0) * p.money; }, 0);
+    r.earned = r.prios.reduce(function (s, p) { return s + (p.frac || 0) * p.crM; }, 0);
     totalEarned += r.earned;
   }
+});
+
+// the noncredit funding on the face of the pool
+var NC_FACE = { col: 0, trio: 0, n: 0 };
+ROWS.forEach(function (r) {
+  if (r.size <= 0) return;
+  if (r.nco) NC_FACE.trio += r.alloc;
+  else if (r.nc > 0) { NC_FACE.col += r.alloc * (r.nc / r.size); NC_FACE.n++; }
 });
 
 // statewide priority roll-ups
@@ -271,21 +317,24 @@ var stw = SHARES.map(function (p, i) {
   var actual = 0;
   ROWS.forEach(function (r) { var pf = PERF[r.name]; if (pf) actual += pf[i] / 30; });
   var earned = 0;
-  ROWS.forEach(function (r) { if (!r.nco) earned += (r.prios[i].frac || 0) * r.prios[i].money; });
+  ROWS.forEach(function (r) { if (!r.nco) earned += (r.prios[i].frac || 0) * r.prios[i].crM; });
   return { money: money, target: target, actual: actual, earned: earned };
 });
 
 // ── render ──────────────────────────────────────────────────────────────────
 document.getElementById("verdictList").innerHTML =
-  '<li><span class="balanced">The pool balances.</span> Minimums take ' +
+  '<li><span class="balanced">The pool balances.</span> Base awards take ' +
     Math.round(FLOOR * ROWS.length / POOL * 100) + "% of it (" + fm(FLOOR * ROWS.length) + " of " + fm(POOL) +
-    "); " + fm(POOL - FLOOR * ROWS.length) + " differentiates by size, and the pool spends exactly.</li>" +
+    "); " + fm(POOL - FLOOR * ROWS.length) + " differentiates by size, and the pool is fully allocated.</li>" +
   "<li><strong>" + fm(totalEarned) + " earned so far</strong> (" + pct(totalEarned / POOL) +
     " of the pool) on MAP actuals as of 2026-08-31; " + fm(POOL - totalEarned - ncoAlloc) +
     " unearned rolls forward.</li>" +
   '<li><span class="under">' + fm(ncoAlloc) + " waits on the origination feed</span>" +
     " — the three noncredit-only institutions hold their allocations and draw nothing until originated CPL posts (N2 b).</li>" +
-  "<li>The priority shares total 100% — every dollar of the pool is apportioned, none left over.</li>";
+  "<li><strong>" + fm(NC_FACE.col + NC_FACE.trio) + " of the pool is noncredit funding on its face</strong> — " +
+    fm(NC_FACE.trio) + " held by origination (the three noncredit-only institutions) plus " + fm(NC_FACE.col) +
+    " riding " + NC_FACE.n + " college awards, restricted to noncredit outcomes — listed from day one, reading $0 earned until the noncredit measures report.</li>" +
+  "<li>The priority shares total 100% — every dollar of the pool is allocated, none left over.</li>";
 
 document.getElementById("stack").innerHTML =
   '<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class="amt">' + fm(TOTAL) + "</span></li>" +
@@ -293,15 +342,15 @@ document.getElementById("stack").innerHTML =
   '<li><span>CPL projects &amp; innovation</span><span class="amt">− ' + fm(PROJECTS) + "</span>" +
     '<span class="sub">Sourced live from the Budget ledger; the named projects fold lives on the Budget tab’s card as today.</span></li>' +
   '<li><span><strong>One pool — every institution, credit + noncredit</strong></span><span class="amt">' + fm(POOL) + "</span>" +
-    '<span class="sub">No carve-out line: noncredit FTES carry money to where the teaching is, inside the one split.</span></li>';
+    '<span class="sub">No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split — and ' + fm(NC_FACE.col + NC_FACE.trio) + ' of it is noncredit funding on its face (the lane restriction keeps it noncredit).</span></li>';
 
 document.getElementById("windowNote").textContent =
-  atMin.length + " institutions are lifted to the minimum and " + atMax.length +
-  " are held to the maximum; the floor and ceiling are solved together, so the pool still spends exactly.";
+  atMin.length + " institutions are brought up to the base and " + atMax.length +
+  " are held at the cap; base and cap are solved together, so the pool is still fully allocated.";
 document.getElementById("boundsList").innerHTML =
-  "<li><strong>At the maximum:</strong> " + atMax.map(function (r) { return r.name; }).join(" · ") + "</li>" +
-  "<li><strong>At the minimum:</strong> " + atMin.length + " institutions — every proportional share below " +
-  fm(FLOOR) + " is topped up, funded within the pool.</li>";
+  "<li><strong>At the cap:</strong> " + atMax.map(function (r) { return r.name; }).join(" · ") + "</li>" +
+  "<li><strong>At the base:</strong> " + atMin.length + " institutions — every proportional share below " +
+  fm(FLOOR) + " is brought up to the base, funded within the pool.</li>";
 
 document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
   var s = stw[i];
@@ -319,37 +368,45 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
     "</ul></details></div>";
 }).join("");
 
-var sorted = ROWS.slice().sort(function (a, b) { return b.alloc - a.alloc || b.size - a.size; });
+// Alphabetical on purpose (Sam, 2026-08-31): a size-sorted list reads as a
+// league table and invites colleges to compare max awards first.
+var sorted = ROWS.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
 document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
   var chips = "";
-  if (r.nco) chips += '<span class="chip nco">noncredit-only</span>';
-  if (r.atMin) chips += '<span class="chip min">at minimum</span>';
-  if (r.atMax) chips += '<span class="chip max">at maximum</span>';
+  if (r.nco) chips += '<span class="chip nco" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
+  if (r.atMin) chips += '<span class="chip min" title="This institution\u2019s share of the pool by size came out below $150,000, so it is brought up to the base award \u2014 funded from within the same pool.">at base</span>';
+  if (r.atMax) chips += '<span class="chip max" title="This institution\u2019s share of the pool by size came out above $400,000, so it is held at the cap \u2014 the difference stays in the pool for everyone else.">at cap</span>';
   var detail;
   if (r.nco) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts, so today it holds " + fm(r.alloc) +
-      " and has drawn $0 — the origination feed unlocks it." +
+      ". No advances: it draws only as originated CPL posts — its max award is " + fm(r.alloc) +
+      " and it has drawn $0; the origination feed unlocks it." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
     detail = "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: <strong>" + fm(r.earned) + "</strong> of " + fm(r.alloc) :
+      (hasData ? "Earned so far: " + fm(r.earned) + " of its " + fm(r.alloc) + " max award" :
         "No MAP data for this college in today’s pull — actuals show as no data yet") + "</caption>" +
-      "<colgroup><col style=\"width:34%\"><col style=\"width:22%\"><col style=\"width:22%\"><col style=\"width:22%\"></colgroup>" +
-      '<tr><th scope="col">Priority</th><th scope="col">Money</th><th scope="col">Target</th><th scope="col">Actual</th></tr>' +
+      "<colgroup><col style=\"width:24%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"></colgroup>" +
+      '<tr><th scope="col">Priority</th>' +
+      '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
+      '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
+      '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
+      '<th scope="col">Actual</th></tr>' +
       r.prios.map(function (p, i) {
-        return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.money) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
+        return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
           (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td></tr>";
       }).join("") + "</table>" +
-      (r.nc > 0 ? '<p class="dnote">Includes ' + f1(r.nc) + " noncredit FTES in this institution’s size; that share earns by the noncredit measures once their feeds land.</p>" : "");
+      (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
   }
   return '<details class="inst"><summary><span class="n">' + (idx + 1) + '</span>' +
     '<span class="who">' + r.name + chips + "</span>" +
-    '<span class="ftes">' + Math.round(r.size).toLocaleString("en-US") + "</span>" +
-    '<span class="amt">' + fm(r.alloc) + "</span></summary>" +
+    '<span class="ftes">' + Math.round(r.size - r.nc).toLocaleString("en-US") + "</span>" +
+    '<span class="ftes">' + Math.round(r.nc).toLocaleString("en-US") + "</span>" +
+    '<span class="amt">' + fm(r.crAward) + "</span>" +
+    '<span class="amt nc">' + fm(r.ncAward) + "</span></summary>" +
     '<div class="detail">' + detail + "</div></details>";
 }).join("");
 </script>

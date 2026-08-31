@@ -41,86 +41,6 @@ shell-first, then new-files-only.
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
 
-## 2026-08-20 — SkySort (Session 173): drag-to-reorder the priorities, "funding factor", and the Year-2 mirror
-
-Sam's three asks, in his words: move **Priority 3 into the Priority 1 position**
-by drag and drop rather than retyping both years; rename **Price factor →
-Funding factor**; and **auto-copy each priority's detail from Year 1 to Year 2
-when Front-load is selected**. Plus: *"push back and better alternatives always
-welcome"* — taken up on the third.
-
-**(a) Learned**
-
-- ⭐ **A reorder must never rewrite the config.** The obvious implementation —
-  permute `yearPriorities[slot]` and save — has to enumerate every field, and a
-  field it forgets silently re-points a priority at a *different* identity's
-  baked default. That is not theoretical here: the live overrides are **partial**
-  (Scenario 2 sets `metric` and `share` on two priorities and neither `factor`
-  nor `title`), and `yearPriorities[slot]` is stored as an **object keyed by
-  index string**, not an array. The order ships instead as a **permutation
-  stored beside the config** (`priorityOrder: [2,0,1]`), so not one stored value
-  moves and every allocation, cap and target comes back byte-identical.
-- ⭐ **One translation seam, not per-emitter translation.** Exactly four
-  functions index a priority list (`prioField`, `prioMetricSource`, `prioUnit`,
-  `setPrio`) plus `priorities()`. Everything above them speaks DISPLAY index and
-  everything below speaks SOURCE index. The failure mode that matters is an edit
-  landing silently on the wrong priority, and a per-call-site translation is a
-  call site somebody eventually misses.
-- ⚠️ **The label is positional, the key is not.** `label` becomes
-  `"Priority " + (i+1)`, `key`/`src` stay with the identity — so the P1/P2/P3
-  columns follow the eye while every per-college cap stays attached to its own
-  priority. `DEFAULT_PRIORITY_TITLES` had to move to the source index too, or an
-  untitled priority adopts the default title of the slot it was dragged into.
-- ⚠️ **The order is WINDOW-LEVEL, not per-year** — Sam's own ruling that the
-  years are deliberately identical (`cpl_memory` `funding-years-are-mirrored-two-year-project`)
-  decides it, and a per-year order would both make P1/P2/P3 mean different
-  things in different years and cost him the second drag this exists to save.
-- ⭐ **MY COLLEGE JOINED THE MONEY TO THE ADVICE BY POSITION, and its own guard
-  could not see the reorder.** `prioritiesAlign()` gates on COUNT equality —
-  correct while both sides walked one ordered set, useless once one of them is
-  reordered, because three still equals three. The join is now by identity
-  (`_prios().src` ↔ `collectPrograms().key`). **And the identity was being
-  dropped**: `buildBriefing()` re-maps each priority into a fresh object and did
-  not carry `key`, so the first version of the identity join resolved to nothing
-  and the strategies quietly left the funding box. Caught by the existing Part-P
-  assertions in `tests/college_briefing.test.js`, which is exactly what they are
-  for.
-- ⭐ **Pushed back on "copy on front-load".** A copy fired by that toggle
-  overwrites whatever Year 2 holds, with no undo, as a side effect of a control
-  about *cash timing* — and the same click is a no-op for Scenario 1 (years
-  byte-identical) and a silent policy edit for Scenario 2 (they differ). Worse,
-  front-load is the case where it matters **least**: it already makes Year 2 pure
-  carryover, so the Year-2 metrics are never scored. Shipped the non-destructive
-  form instead — a **mirror** that resolves later years from Year 1 while it is
-  on, plus an explicit **Copy Year 1 → Year 2** that asks first. Default OFF, so
-  shipping changes nothing until a curator asks for it.
-- ⚠️ **A mirrored year must SAY it is mirrored**, or the Year-2 view reads as a
-  Year-2 decision that happens to match and an edit there silently lands on both.
-
-**(b) State.** All three live in `cpl_funding.js` + `college_briefing.js`;
-`tests/cpl_funding_reorder.test.js` (69 assertions) covers the seam, the
-malformed-order fallbacks, both affordances, public mode, the rename, the
-mirror and the My College join. `cpl_funding.test.js` and the ten other funding
-suites unchanged; `college_briefing.test.js` 236/236.
-
-**(c) Roadmap.** The order is stored per project+scenario like every other
-override, so a new scenario clones it. If the priority list ever stops being
-three, `isPermutation()` drops a stale order back to the natural one rather than
-dropping a priority off the page.
-
-**(d) Next.** Sam drags them in a browser and sets the new shares + funding
-factors; the recalculation is live (target = pot ÷ factor × base rate) and was
-asserted rather than assumed.
-
-⚠️ **The audit flagged this doc at 1.5× its budget (179 KB / 120 KB) and this
-checkpoint acted on it**: 2026-06-11 → 2026-07-31 moved verbatim to
-[`cpl_funding_lessons_archive.md`](cpl_funding_lessons_archive.md), leaving
-52 KB live. The rule that produced the flag is the one worth keeping — a
-checkpoint that only ever appends eventually makes the doc unreadable to the
-session that needs it.
-
----
-
 ## 2026-08-20 — SkyGlass (Session 176): splitting `cpl_funding.test.js`, and the leak that was never the test's to fix
 
 **(a) What happened.** SkySort's handoff left one item explicitly for a
@@ -2060,3 +1980,57 @@ builds the same afternoon (#1407, #1408):
    institutions demand $1.68M of the $2M carve-out, and 242.7 FTES is the
    frontier where 50 institutions consume exactly $2,000,000). Port on Sam's
    reaction.
+
+## 2026-08-31 — The one-pool day: from morning hunch to adopted model (SkyLedger, S210 line continuing)
+
+**The arc, in one paragraph.** Sam opened with a hunch ("move the NC money into
+CR… let all the apportionment flow exactly how it is earned"), and by evening
+the one-pool model was **adopted** with its design questions ruled and its
+reaction visual built. The instrument chain that made that speed safe: scenario
+math validated **to the dollar** against the tab's own solver on both live
+lanes before any hypothetical ran; the Budget Balance mock grew a second mode
+rather than a second implementation; each ruling landed as a stamped
+scoreboard; and the port is sequenced behind its data dependency (the
+origination feed) rather than in front of it.
+
+- **Adopted (Sam, verbatim):** *"we should hold on 1 until we finalize
+  one-pool, which yes, I want to go with now."* One pool: $25.24M to 118
+  institutions sized by credit+noncredit FTES, floor $150K / cap $400K per
+  institution combined (his dials, chosen in the mock). The cap is **per
+  institution** (Mt San Antonio's pair trims $500K→$400K; Pasadena and Santa
+  Ana — big-NC colleges — rise to the cap: the pair sizing working as intended).
+- **The origination design (his, refined live):** the three noncredit-only
+  institutions hold ordinary max awards and earn by ORIGINATION — their CPL
+  transcribed at a credit college, district-scoped for NOCE/SDCCE, statewide
+  for Calbright, the same CPL crediting both institutions by design. His first
+  sketch (a separate Calbright carve-out) he folded back into the pool himself
+  minutes later — present the numbers, let the designer iterate.
+- **N1–N3 ruled by number on the mock:** N1 a (exhibits-in-MAP replaces the
+  veteran-JST gate) · N2 b (**no advance on origination** — the origin feed is
+  the gate to any funding, which re-prioritized the Custom Reports work:
+  instructions doc to Malone/Pedro shipped the same hour, formalizing the
+  standing 08-26 `Origin`+`LocID2` ask) · N3 a (nothing disburses on
+  Calbright's placeholder size; the both-sides credit confirmed for all three).
+- **The anti-usurpation answer is a restriction, not a second pool.** Sam's
+  worry — NC funding usurped by the CR program — was answered by decomposing
+  every award on its face (CR + NC by FTES share) and RESTRICTING the NC share
+  to noncredit outcomes. Two pools would have reopened the carve-out-sizing
+  problem the adoption killed. The residue is **F1** (hold vs label on the
+  $1,300,738 across 108 college awards), posed on the visual, awaiting Sam.
+- **Vocabulary is part of the model** (three rulings in one afternoon): the
+  per-institution figure is the **max award** (*"communicates that awards are
+  based on outcomes, not automatically awarded"*); the list is **alphabetical**
+  so colleges don't open on a league table; and **funding, never "money"**,
+  with CCC norms over business norms (allocated, restricted/designated,
+  redirect, brought up to the minimum; "double count" avoided as an MIS
+  audit-error term). Now doctrine in CLAUDE.md Naming.
+- **Instruments that carried the day:** the mock's dial persistence + "Copy
+  these settings" (built the hour his chosen dials proved browser-only and
+  volatile — the bench lesson recurring); the who-moves card ported to the
+  live tab (`cpl_funding_whomoves`, 13 floored checks, the saved solve being
+  the SAME pipeline with the overlay lifted); and the reaction visual carrying
+  every ruling within minutes of its making.
+- **PRs:** #1418 (Memo A on the GR tab) · #1419 (mock one-pool mode) · #1420
+  (N1–N3 stamped) · #1421 (who-moves + mock memory) · #1422 (adoption + the
+  phases 1–3 visual) · #1423 (two lanes on one face · max award · vocabulary —
+  in flight at checkpoint). Vault: CPLBrain #64–#67.

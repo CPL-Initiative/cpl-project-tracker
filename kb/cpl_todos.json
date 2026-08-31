@@ -1,14 +1,20 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-30",
- "_session": "SkyLedger, Session 210 — the Register Re-analysis is ruled 22/22 and executed",
- "_status": "The Register Re-analysis sheet is fully ruled (22 of 22, one evening, reply-by-number) and executed: seven rows ride the sent §55050 package (row 6 first re-verified), row 5 retired, rows 17-19 and 21 added, and Sam's sequencing doctrine now governs guidance — Title 5 revised and BOG-adopted first, memos after (drafting may precede). Receipts and the ruled sheet are committed. Next up: draft Memo A (hold for adoption), the Budget Balance port on Sam's reaction, and the November filing now carries five items.",
+ "_as_of": "2026-08-31",
+ "_session": "SkyLedger, Sessions 210→214 — the one-pool day",
+ "_status": "Sam adopted the one-pool funding model: one $25.24M pool across 118 institutions, $150K floor and $400K cap per institution with credit and noncredit combined, and the three noncredit-only institutions earning by origination with no advances. The noncredit share of every award is protected by its earning rule, not a second pool — each award shows its noncredit portion, drawable only against the noncredit measures. Built and shipped today: the Budget Balance mock Sam set the dials on, the who-moves card on the live tab, the simplified one-pool tab visual, Memo A as an editable surface in the GR tab, and the origination-data instructions for Malone and Pedro. Open: Sam's F1 ruling (hold vs label for the interim), his reaction locking the visual, then the port — origination feed first.",
  "items": [
   {
-   "id": "s210-sam-simplified-tab-visual",
+   "id": "s214-sam-f1-and-visual",
    "for": "Sam",
    "tab": "cpl-implementation",
-   "text": "One pool is ADOPTED (your 8-31 ruling). React to the simplified-tab visual - the Implementation Funding tab as it would look with all three simplification phases under the one-pool model, real allocations and today's MAP actuals throughout ($8.33M earned, $482,669 waiting on the origination feed). Your reaction locks the look; the port then lands the model and the restructure together, origination feed first."
+   "text": "Your reaction round is IN the visual now (renamed CPL Implementation Funding): Summary strip, CR/NC columns for both FTES and max award, At Base / At Cap, Coalinga and Lemoore, and F1 resolved your way — noncredit shares listed from day one, reading $0 earned until the feeds report. Look it over once more; when it reads right, say go and the port to the live tab starts (origination feed first)."
+  },
+  {
+   "id": "s214-sam-origination-docx",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "The MAP Custom Reports origination instructions for Malone and Pedro are ready to forward (Word doc delivered in chat; also filed in the vault). It formalizes the Origin + LocID2 plan Pedro has held since 8-26, adds the per-tool capture table and your early Portal prompt, and flags the open ITPI question: can a college hold a second noncredit landing page with its own LocID? No funding moves to NOCE, SDCCE, or Calbright until this feed flows."
   },
   {
    "id": "s210-sam-75013-collab",
@@ -23,46 +29,40 @@
    "text": "Memo A ('what is already law') is drafted and lives IN the GR tab now - open Guidance memos under the CPL area, edit any section, and Export memo (Word) uses the register's generator (the hold banner and drafting annex travel in the file until status says issued). Your sequencing ruling holds: BOG adoption first, then issuance. One external confirm before issuance: the section-2 accreditation-standards claim needs an ACCJC touchpoint. Memo B and C stubs sit beside it when you want them drafted."
   },
   {
-   "id": "s210-fable-balance-readout",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Build the Budget Balance readout Sam ruled for on the Open Verdicts sheet (item 1): the noncredit threshold, the minimum award, and the funding buckets are independent dials, and one always-on surface says where the model is over or under budget as they move. The dials and the solver's feasibility figures already exist; the build is the consolidated readout. First Light mock first, port on his reaction."
-  },
-  {
    "id": "s210-sam-tidyups",
    "for": "Sam",
    "tab": "governance",
    "text": "One one-click finish left (2026-08-30): review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate. (The experiment-branch deletion is DONE and verified.)"
   },
   {
-   "id": "s202-fable-savesweep",
-   "for": "Fable",
+   "id": "s206-sam-install-hook",
+   "for": "Sam",
    "tab": "cpl-implementation",
-   "text": "Check the other curator tabs for the two save faults found here: a page that only accepts the team password locks out someone signed in by magic link, and edits made before signing in can stay stranded in the browser while looking saved."
+   "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
   },
   {
-   "id": "s202-fable-ncdials",
+   "id": "s210-sam-export-bench-log",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
+  },
+  {
+   "id": "s214-fable-onepool-port",
    "for": "Fable",
    "tab": "cpl-implementation",
-   "text": "Give noncredit its own share and funding-factor editors. They inherit from credit today; the store already accepts both, only the strategies have an editor so far."
+   "text": "Port the adopted one-pool model and the simplified look into the live Implementation Funding tab once Sam's reaction locks the visual. Sequencing: the origination feed comes first (no advances - the trio's earn-out has nothing to read until it flows); the priority-card and college-table simplification phases do NOT depend on the feed and can start on his word. The old NC box dials are abandoned by the model; decide during the port which noncredit share/factor editors, if any, survive."
+  },
+  {
+   "id": "s202-fable-savesweep",
+   "for": "Fable",
+   "tab": "admin",
+   "text": "Sweep the other curator tabs for three save faults found on the funding tab: a page that only accepts the team password locks out someone signed in by magic link; edits made before signing in can stay stranded in the browser while looking saved; and a tab may still offer editing that the database would refuse. Decide per tab whether it should require a personal sign-in like the funding tab now does."
   },
   {
    "id": "s210-fable-sierra-sweep-test",
    "for": "Fable",
    "tab": "cpl-assistant",
    "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Sequencing: run it BEFORE the register verdicts rewrite rows, so both models are compared on the same ground. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
-  },
-  {
-   "id": "s203-fable-savesweep2",
-   "for": "Fable",
-   "tab": "admin",
-   "text": "The funding tab now requires a personal sign-in instead of the shared phrase. Check whether the other curator tabs should follow, and whether any of them still offers editing that the database would refuse."
-  },
-  {
-   "id": "s206-sam-install-hook",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
   },
   {
    "id": "s208-fable-memory-lint",
@@ -81,12 +81,6 @@
    "for": "Fable",
    "tab": "cpl-implementation",
    "text": "One file is rebuilt daily by a scheduled job but never committed by it, so the published copy goes stale: the pathways dataset. Small mechanical fix when someone wants it. (The second file originally listed here was re-checked and cleared - the job everyone suspected never actually rewrites it; the one that does also publishes it.)"
-  },
-  {
-   "id": "s210-sam-export-bench-log",
-   "for": "Sam",
-   "tab": "governance",
-   "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
   }
  ]
 }
