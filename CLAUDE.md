@@ -288,6 +288,15 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   (discipline cells, the ESL packaging card, the decision list). Those are panes *on* the
   SkyView page; only the graph is SkyView. Files still carry `ccr_atlas_*` paths; the
   user-facing name is what changed.
+- **FUNDING VOCABULARY — CCC NORMS, NOT BUSINESS NORMS (Sam, 2026-08-31).** Say
+  **funding**, never "money," on any funding surface. Prefer sector terms:
+  *allocated / fully allocated* (not "spent"/"apportioned" for this program's
+  split — apportionment is the SCFF term), *restricted / designated* (not
+  "fenced"), *redirect* (not "absorb"), *brought up to the minimum* (not
+  "topped up"); avoid "double count" (an MIS audit-error term — say *the same
+  CPL credits both institutions by design*). The per-institution figure is the
+  **max award** — *"communicates that awards are based on outcomes, not
+  automatically awarded."* Sweep prose only, never identifiers.
 - **"Activities" = activities AND their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from
