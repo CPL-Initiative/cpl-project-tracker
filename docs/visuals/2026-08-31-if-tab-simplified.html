@@ -23,6 +23,44 @@
   h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
   h2 { font-size: 1.15rem; margin: 0 0 10px; }
   .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .draftchip { display: inline-block; vertical-align: middle; font-size: .66rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--text-muted);
+    border: 1px solid var(--border-strong); border-radius: 999px; padding: 2px 9px; margin-left: 10px; }
+  .titleline { font-size: .9rem; color: var(--text-muted); margin: 2px 0 0; }
+  .titleline .lnk { color: var(--cobalt); text-decoration: underline; cursor: help; }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0 0; }
+  .tabs span { border: 1px solid var(--border); border-radius: 8px 8px 0 0; padding: 7px 14px;
+    font-size: .88rem; color: var(--text-muted); background: var(--surface-subtle); }
+  .tabs .on { background: var(--surface-opaque); color: var(--text-strong); font-weight: 700;
+    border-bottom-color: var(--surface-opaque); }
+  .goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; }
+  .goal { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px 10px;
+    background: var(--surface-subtle); font-size: .88rem; }
+  .goal h3 { font-size: .95rem; margin: 0 0 6px; }
+  .goal p { margin: 4px 0; }
+  .goal .glab { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--text-muted); }
+  .gsup { font-size: .7em; color: var(--text-muted); text-decoration: none; margin-left: 2px; }
+  a.gsup { color: var(--cobalt); }
+  .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0 0 8px; }
+  .toolbar input[type=search] { flex: 1 1 220px; min-width: 160px; font: inherit; font-size: .9rem;
+    padding: 6px 10px; border: 1px solid var(--border-strong); border-radius: 8px;
+    background: var(--surface-opaque); color: var(--text-body); }
+  .toolbar .tct { font-size: .85rem; color: var(--text-muted); white-space: nowrap; }
+  .toolbar .tbtn { font-size: .85rem; color: var(--cobalt); border: 1px solid var(--border);
+    border-radius: 8px; padding: 5px 10px; background: var(--surface-opaque); cursor: help; white-space: nowrap; }
+  .thead { position: sticky; top: 0; background: var(--surface-opaque); z-index: 3; }
+  .sysrow { position: sticky; top: var(--pin1, 26px); z-index: 2; display: grid;
+    grid-template-columns: 2.2em minmax(0,1fr) 5em 5em 6.2em 6.2em; gap: 8px; align-items: baseline;
+    padding: 6px 4px; font-variant-numeric: tabular-nums; background: var(--surface-subtle);
+    border-bottom: 1px solid var(--border-strong); font-size: .95rem; }
+  .sysrow span:nth-child(n+3) { text-align: center; }
+  .sysrow span:last-child { text-align: right; }
+  .sysrow .who { font-weight: 700; color: var(--text-strong); }
+  .rmlist { margin: 8px 0 0; padding-left: 1.5em; font-size: .9rem; }
+  .rmlist li { margin: 7px 0; }
+  .rmlist .tag { font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--text-muted); }
   .lede { font-size: 1.05rem; }
   .note { font-size: .9rem; color: var(--text-muted); }
   .card { background: var(--surface-opaque); border: 1px solid var(--border);
@@ -48,6 +86,8 @@
     background: var(--surface-subtle); }
   .prio h3 { font-size: 1rem; margin: 0 0 2px; }
   .prio .share { font-size: .82rem; color: var(--text-muted); margin: 0 0 8px; }
+  .prio .mlab { font-size: .72rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .05em; color: var(--text-muted); margin: 0 0 1px; }
   .prio .money { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
     font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; }
   .prio dl { margin: 8px 0 0; font-size: .9rem; }
@@ -105,8 +145,9 @@
   .meta-tag { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
     text-transform: uppercase; color: var(--mustard-text); margin-bottom: 6px; }
   @media (max-width: 700px) {
-    .inst > summary, .thead { grid-template-columns: minmax(0,1fr) 6.2em 6.2em; }
-    .inst .n, .inst .ftes, .thead span:nth-child(1), .thead span:nth-child(3), .thead span:nth-child(4) { display: none; }
+    .inst > summary, .thead, .sysrow { grid-template-columns: minmax(0,1fr) 6.2em 6.2em; }
+    .inst .n, .inst .ftes, .thead span:nth-child(1), .thead span:nth-child(3), .thead span:nth-child(4),
+    .sysrow .n, .sysrow .ftes { display: none; }
     .inst .detail { padding-left: 4px; }
   }
 </style>
@@ -114,29 +155,41 @@
 <a class="skip" href="#verdicts">Skip to summary</a>
 <div class="wrap">
 
-<p class="kicker">Proposed simplified tab · one pool adopted 2026-08-31 · reaction visual</p>
-<h1>CPL Implementation Funding</h1>
+<p class="kicker">The fully revised tab · one pool adopted 2026-08-31 · reaction visual</p>
+<h1>CPL Implementation Funding<span class="draftchip">Draft</span></h1>
+<p class="titleline"><span class="lnk" title="Carries over unchanged — opens the public explainer of the model.">How this funding model works</span> · Model version saved 2026-08-31 · sourced from the Budget ledger</p>
+<div class="tabs" aria-hidden="true"><span class="on">2026–2028 College Implementation Funding</span><span title="Carries over unchanged — the separate $15M ESS 25-82 seed-grant appropriation.">2025–2026 $50K Seed Funding</span></div>
 <p class="lede meta"><span class="meta-tag">Planning note — for Sam, not tab copy</span>
-The Implementation Funding tab as it would look with your three
-simplification phases implemented under the adopted one-pool model: the summary
-answers "where do I stand" before anything else, the funding reads top to
-bottom, every deeper detail folds open in place, and each institution is one
-row with its full allocation detail behind a click. Every figure is real — the
+This is now the COMPLETE revised tab, not just the three phases: every section
+that survives the one-pool port, in its final order, with real figures — the
 adopted dials ($150,000 base to $400,000 cap on the combined award), the real
-rosters, and MAP actuals as of 2026-08-31. This page is for your reaction; the
-port to the live tab follows it. New this round, from your parting question:
-each expand and each priority card now carries <strong>Earned so far</strong>
-and <strong>Available to earn</strong> in dollars — the gap is the incentive.
-The two labels are proposed wording; edit them freely.</p>
+rosters, and MAP actuals as of 2026-08-31. What you saw on the live tab that is
+absent here left on purpose: <strong>"What leaves the tab" (R1–R11)</strong>
+near the end names each removal and its successor, and the MAP-team note lists
+what only signed-in reviewers see. Each expand and each priority card carries
+<strong>Current Total</strong> and <strong>Total Possible</strong> in dollars
+(your labels, ruled 2026-08-31) — Total Possible is the ceiling: per priority,
+the CR and NC shares together; per institution, the max award. React to
+anything; the port follows your lock.</p>
 
 <section class="card" id="verdicts" aria-live="polite">
   <h2>Summary</h2>
   <ul id="verdictList"></ul>
+  <p class="note" style="margin:8px 0 0">Window 2026–2028 · Year 2 mirrors Year 1 · figures shown for the
+  combined window (the Annual · Combined switch carries over) · funding for institutions that have not met
+  baseline participation is held in reserve, never redistributed, and gets its own line here whenever it is
+  non-zero.</p>
 </section>
 
 <p class="kicker">The funding, top to bottom</p>
 <section class="card">
   <ul class="stack" id="stack"></ul>
+  <details class="fold"><summary>the named projects</summary>
+    <ul><li>CPL Initiative RCCD Projects ($10,556,650) and Additional CPL Initiative Projects — CO or TBA
+      ($7,443,350) make the $18,000,000 project funding; the $8,959,692 above is this appropriation's share
+      of it. The rows read live from the jointly wired Activities, Annual Targets, and Budget tables — never
+      a hand-invented split — and the card stays hidable for reviewers (ruled 2026-08-30).</li></ul>
+  </details>
 </section>
 
 <p class="kicker">The window — one base, one cap, every institution</p>
@@ -147,6 +200,31 @@ The two labels are proposed wording; edit them freely.</p>
   <details class="fold"><summary>the institutions at the bounds</summary>
     <ul id="boundsList"></ul>
   </details>
+  <details class="fold"><summary>how an allocation is computed</summary>
+    <ul>
+      <li>Each institution's share of the one pool is proportional to its total credit + noncredit FTES.</li>
+      <li>Shares below $150,000 are brought up to the base; shares above $400,000 are held at the cap; the
+        split re-solves so the pool lands fully allocated.</li>
+      <li>The award then decomposes into credit and noncredit shares by FTES share — the noncredit share is
+        restricted to the noncredit measures.</li>
+      <li>Earning: each priority's Current Total = (actual ÷ target, capped at 100%) × its credit funding, at
+        $2,824.82 per CPL FTES; unearned funding rolls forward within the window.</li>
+    </ul>
+  </details>
+</section>
+
+<p class="kicker">Baseline eligibility — the gate to participate</p>
+<section class="card">
+  <ul style="margin:6px 0 0;padding-left:1.2em">
+    <li>A named CPL Coordinator and Counselor, listed in MAP and responsive to Landing Page and Student
+      Portal requests.</li>
+    <li>Participation confirmed by the deadline — each institution attests from its own row below
+      ("Confirm participation" inside the expand).</li>
+    <li>Veteran Star: at least 75% of veteran JSTs uploaded. For the three noncredit-only campuses this gate
+      is replaced by noncredit certificates posted as exhibits in MAP (N1 a).</li>
+  </ul>
+  <p class="note" style="margin:8px 0 0">Funding for institutions that have not met baseline participation
+  is held in reserve — it is never redistributed to others.</p>
 </section>
 
 <p class="kicker">Two lanes on one face — ruled 2026-08-31</p>
@@ -194,14 +272,96 @@ The two labels are proposed wording; edit them freely.</p>
   </details>
 </section>
 
+<p class="kicker" id="goals">What the funding must achieve — Ed. Code §78093.2(d)(1)</p>
+<section class="card">
+  <div class="goals">
+    <div class="goal"><h3>(A) Equitable access</h3>
+      <p class="glab">What funds it</p><p>Priorities 1 and 2 — the applied and eligible measures.</p>
+      <p class="glab">How it is evidenced</p><p>Performance-measured. Equity is by design — the base and cap
+      equalize between colleges — and is reported in the system's three-year reports, not scored per
+      college.</p></div>
+    <div class="goal"><h3>(B) Completion</h3>
+      <p class="glab">What funds it</p><p>Priority 3 — the transcribed measure.</p>
+      <p class="glab">How it is evidenced</p><p>Performance-measured.</p></div>
+    <div class="goal"><h3>(C) Career attainment</h3>
+      <p class="glab">What funds it</p><p>The project funding, held out of the direct college awards.</p>
+      <p class="glab">How it is evidenced</p><p>Demonstrated, not measured — CPL stories and the funded
+      infrastructure; no campus measure by design.</p></div>
+    <div class="goal"><h3>(D) Pilot projects</h3>
+      <p class="glab">What funds it</p><p>The named projects on the Budget ledger.</p>
+      <p class="glab">How it is evidenced</p><p>Declared and delivered through the Activities register.</p></div>
+  </div>
+  <p class="note" style="margin:10px 0 0">§78093.2(d)(2): each campus demonstrates implementation through
+  these metrics before receiving an allocation. The statute's goal words (access · completion · career
+  attainment) and the model's three priorities are reconciled in the model documentation.</p>
+</section>
+
 <p class="kicker">Outcomes-based awards — the full allocation detail on click</p>
 <section class="card">
   <p class="note" style="margin:0 0 6px">Alphabetical. The award figures are
   each institution's <strong>max award</strong> — what it can earn by outcomes,
   not an automatic payment — split into its credit and noncredit shares. Click
-  a row for its per-priority funding, targets, and actuals.</p>
+  a row for its per-priority funding, targets, actuals, and the participation
+  confirmation.</p>
+  <div class="toolbar">
+    <input type="search" id="instSearch" placeholder="Search institution…" aria-label="Search institutions">
+    <span class="tct" id="instCount"></span>
+    <span class="tbtn" title="Carries over unchanged — flat list or grouped by district.">Group by district</span>
+    <span class="tbtn" title="Carries over unchanged — choose which columns show; district, county, and the eligibility column live here.">Columns</span>
+    <span class="tbtn" title="Carries over unchanged — the export keeps every fact on this table; its flat shape carries the noncredit figures as columns.">Excel</span>
+    <span class="tbtn" title="Carries over unchanged.">PDF</span>
+  </div>
   <div class="thead" aria-hidden="true"><span>#</span><span>Institution</span><span title="Credit full-time-equivalent students — the institution's credit teaching size.">CR FTES</span><span title="Noncredit full-time-equivalent students — the institution's noncredit teaching size.">NC FTES</span><span title="The credit share of the max award — earned against the credit priority measures.">CR award</span><span title="The noncredit share of the max award — earned only against the noncredit measures; the credit program cannot draw it.">NC award</span></div>
+  <div class="sysrow" id="sysrow" aria-label="Statewide totals"></div>
   <div class="insts" id="insts" role="region" aria-label="Every institution's max award, credit and noncredit"></div>
+</section>
+
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
+  <h2>What only the MAP team sees</h2>
+  <p class="note" style="margin:0">Signed-in reviewers additionally get: the project/scenario strip and the
+  auth bar (publish this browser's changes · reset exploration); the dial editors — base, cap, shares,
+  factor, rate — the dials that survive one pool; the metric-wiring diagnostic; the CO opt-in review lane;
+  per-college monitor notes; the Report sub-view (memo/letter/brief generator — its allocation table gets
+  the one-pool rewrite in the port); and "Who moves — this exploration vs the saved model," which appears
+  whenever an exploration changes awards. The $50K Seed Funding sub-tab and the Timing milestone list carry
+  over unchanged.</p>
+</section>
+
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
+  <h2>What leaves the tab — R1–R11, reply by number</h2>
+  <ol class="rmlist">
+    <li><span class="tag">ruled</span> — <strong>The lane switch</strong> (Lane: Credit · Noncredit): one
+      pool, one solve; the CR/NC story now sits on every award's face — columns, expands, the pool line.</li>
+    <li><span class="tag">ruled</span> — <strong>The noncredit priority card set</strong> and its strategies
+      editor: one card set remains; noncredit strategies return with the noncredit feeds (nothing publishes
+      on funding we cannot measure) — parked, not lost.</li>
+    <li><span class="tag">ruled</span> — <strong>The $2M noncredit feeder carve-out</strong>: folded into
+      the one pool; origination earning replaces it for the three noncredit-only campuses.</li>
+    <li><span class="tag">ruled</span> — <strong>The noncredit entry-threshold dial</strong> (300 FTES):
+      dissolved — at the adopted dials it moves less than $1.5K; noncredit FTES simply size the award.</li>
+    <li><span class="tag">ruled</span> — <strong>The noncredit minimum/maximum dials</strong>: one window
+      now — $150K base to $400K cap per institution, combined.</li>
+    <li><span class="tag">ruled</span> — <strong>The second noncredit row per college and the paired SYSTEM
+      noncredit row</strong>: one row per institution with CR/NC columns; one SYSTEM row.</li>
+    <li><span class="tag">ruled</span> — <strong>The Award range card</strong> (Credit and Noncredit rows,
+      solved separately): the window card carries the bounds and the average — the lanes are no longer
+      solved separately.</li>
+    <li><span class="tag">proposed</span> — <strong>The "noncredit share of the teaching" parity card and
+      the noncredit side of the basis card</strong>: the CR/NC decomposition on every award now makes the
+      parity case continuously, so the standalone cards retire.</li>
+    <li><span class="tag">ruled</span> — <strong>The "Standalone noncredit institutions" section</strong>:
+      NOCE, SDCCE, and Calbright are ordinary rows (NC ONLY chip); the origination rules live in the
+      earning-rules fold.</li>
+    <li><span class="tag">proposed</span> — <strong>The eligibility-pie column</strong>: off by default;
+      eligibility lives in the Baseline eligibility card and each expand, and the Columns menu can restore
+      the column.</li>
+    <li><span class="tag">proposed</span> — <strong>The scattered balance boxes</strong> (allocation
+      balance, the earned and unearned boxes, held in reserve): consolidated into the Summary — the
+      over/under-budget readout in one place, with held-in-reserve keeping its own Summary line whenever it
+      is non-zero.</li>
+  </ol>
 </section>
 
 <section class="card meta">
@@ -222,11 +382,11 @@ The two labels are proposed wording; edit them freely.</p>
         above; the live port will carry the tab's full earning machinery
         (advances for unmeasured priorities included), so the earned line there
         can read higher than here.</li>
-      <li>Available to earn = the max-award share minus what is earned to date.
-        The noncredit share counts as available in full (it reads $0 earned
-        until its feeds report), and the noncredit-only institutions' whole
-        awards are available, gated on the origination feed. Every "available"
-        figure and its "earned" partner sum back to the funding they split.</li>
+      <li>Total Possible = the ceiling: per priority, its credit and noncredit
+        shares together; per institution, the max award; statewide, the
+        priority's full funding. Current Total = what is earned to date, and
+        the noncredit share reads $0 in it until its feeds report. Current
+        never exceeds the Total Possible, and the gap between them is the incentive.</li>
       <li>Nothing on this page writes anywhere.</li>
     </ul>
   </details>
@@ -252,6 +412,9 @@ var SHARES = [
     strategies: ["Batch upload all transcribed CPL from academic year 2023 to date, including high-school articulated Cx grades","Include AP, IB, CLEP, high-school articulated credit by exam, noncredit mirror courses, basic training credit, and elective and GE Area CPL previously waived but never transcribed","Complete the Transcribe step in MAP for every student record carrying CPL","Match SIS transcribed CPL to MAP records to close data gaps and ensure correct MIS reporting","Support Admissions and Records and Veterans Resource Center staff in CPL work","Screen near-completers for CPL that would finish their award"] }
 ];
 
+// A priority's statutory goal derives from its MEASURE's milestone, never its
+// title (eligible/applied → A, transcribed → B) — ruled; the tag drives no arithmetic.
+var GOAL_OF = ["A", "A", "B"];
 function fm(v) { return "$" + Math.round(v).toLocaleString("en-US"); }
 function f1(v) { return (Math.round(v * 10) / 10).toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 }); }
 function pct(v) { return (Math.round(v * 1000) / 10) + "%"; }
@@ -355,7 +518,8 @@ document.getElementById("stack").innerHTML =
 
 document.getElementById("windowNote").textContent =
   atMin.length + " institutions are brought up to the base and " + atMax.length +
-  " are held at the cap; base and cap are solved together, so the pool is still fully allocated.";
+  " are held at the cap; base and cap are solved together, so the pool is still fully allocated. " +
+  "The average max award across " + ROWS.length + " institutions is " + fm(POOL / ROWS.length) + ".";
 document.getElementById("boundsList").innerHTML =
   "<li><strong>At the cap:</strong> " + atMax.map(function (r) { return r.name; }).join(" · ") + "</li>" +
   "<li><strong>At the base:</strong> " + atMin.length + " institutions — every proportional share below " +
@@ -363,14 +527,15 @@ document.getElementById("boundsList").innerHTML =
 
 document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
   var s = stw[i];
-  return '<div class="prio"><h3>' + p.title + "</h3>" +
+  return '<div class="prio"><h3>' + p.title +
+    '<a class="gsup" href="#goals" title="Serves statutory goal (' + GOAL_OF[i] + ') — Ed. Code §78093.2(d)(1), derived from the priority’s measure, never its title.">' + GOAL_OF[i] + "</a></h3>" +
     '<p class="share">' + Math.round(p.share * 100) + "% of the pool · factor 0.50×</p>" +
+    '<p class="mlab" title="The priority’s full funding for the window — the ceiling its Current Total can reach.">Total Possible</p>' +
     '<div class="money">' + fm(s.money) + "</div>" +
     "<dl>" +
     "<div><dt>Target (window)</dt><dd>" + f1(s.target) + " FTES</dd></div>" +
     "<div><dt>Actual so far</dt><dd>" + f1(s.actual) + " FTES</dd></div>" +
-    "<div><dt>Earned so far</dt><dd>" + fm(s.earned) + "</dd></div>" +
-    '<div title="Still on the table statewide: unearned credit shares, the noncredit shares awaiting their feeds, and the origination funding the noncredit-only institutions have yet to draw."><dt>Available to earn</dt><dd>' + fm(s.money - s.earned) + "</dd></div>" +
+    '<div title="What has been earned statewide on this priority to date — credit shares only; noncredit shares read $0 in it until their feeds report."><dt>Current Total</dt><dd>' + fm(s.earned) + "</dd></div>" +
     "</dl>" +
     '<details class="fold"><summary>the metric and the strategies</summary><ul>' +
     "<li><em>" + p.metric + "</em></li>" +
@@ -391,27 +556,27 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts. Earned so far: $0 · available to earn: its full " + fm(r.alloc) +
-      " max award, unlocked by the origination feed." +
+      ". No advances: it draws only as originated CPL posts. Current Total: $0 · Total Possible: " + fm(r.alloc) +
+      ", its max award — unlocked by the origination feed." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
     detail = '<div class="tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
       "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: " + fm(r.earned) + " · available to earn: " + fm(r.alloc - r.earned) + " — of its " + fm(r.alloc) + " max award" :
-        "No MAP data for this college in today’s pull — earned reads $0 here, and its full " + fm(r.alloc) + " max award is available to earn") + "</caption>" +
+      (hasData ? "Current Total: " + fm(r.earned) + " · Total Possible: " + fm(r.alloc) + " — its max award" :
+        "No MAP data for this college in today’s pull — Current Total reads $0 here; Total Possible: " + fm(r.alloc) + ", its max award") + "</caption>" +
       "<colgroup><col style=\"width:10%\"><col style=\"width:14%\"><col style=\"width:14%\"><col style=\"width:13%\"><col style=\"width:17%\"><col style=\"width:15%\"><col style=\"width:17%\"></colgroup>" +
       '<tr><th scope="col">Priority</th>' +
       '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
       '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
       '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
       '<th scope="col">Actual</th>' +
-      '<th scope="col" title="What the credit share has earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 until its measures report.">Earned so far</th>' +
-      '<th scope="col" title="Still on the table for this priority: the unearned credit share plus the noncredit share awaiting its feeds. Unearned funding rolls forward.">Available to earn</th></tr>' +
+      '<th scope="col" title="What has been earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 in it until its measures report.">Current Total</th>' +
+      '<th scope="col" title="This priority’s full funding — its credit and noncredit shares together; the ceiling the Current Total can reach. Unearned funding rolls forward.">Total Possible</th></tr>' +
       r.prios.map(function (p, i) {
         var e = (p.frac || 0) * p.crM;
         return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
-          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM - e) + "</td></tr>";
+          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM) + "</td></tr>";
       }).join("") + "</table></div>" +
       (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
   }
@@ -423,4 +588,36 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
     '<span class="amt nc">' + fm(r.ncAward) + "</span></summary>" +
     '<div class="detail">' + detail + "</div></details>";
 }).join("");
+
+// one SYSTEM row under the sticky header (the CR/NC pair became one row with one pool)
+var sysCr = 0, sysNc = 0, sysCrA = 0, sysNcA = 0;
+ROWS.forEach(function (r) { sysCr += r.size - r.nc; sysNc += r.nc; sysCrA += r.crAward; sysNcA += r.ncAward; });
+document.getElementById("sysrow").innerHTML = '<span class="n"></span><span class="who">SYSTEM (statewide)</span>' +
+  '<span class="ftes">' + Math.round(sysCr).toLocaleString("en-US") + "</span>" +
+  '<span class="ftes">' + Math.round(sysNc).toLocaleString("en-US") + "</span>" +
+  '<span class="amt">' + fm(sysCrA) + "</span>" +
+  '<span class="amt">' + fm(sysNcA) + "</span>";
+
+// the frozen offset is MEASURED from the real header, never a typed number
+// (the S203 catch: a typed offset breaks at other zoom levels and font sizes)
+function pinRows() {
+  var th = document.querySelector(".thead");
+  if (th && th.offsetHeight) document.documentElement.style.setProperty("--pin1", th.offsetHeight + "px");
+}
+pinRows();
+addEventListener("resize", pinRows);
+
+// live search over the institution rows
+var sIn = document.getElementById("instSearch"), sCt = document.getElementById("instCount");
+function applySearch() {
+  var q = (sIn.value || "").trim().toLowerCase(), n = 0;
+  document.querySelectorAll("#insts details.inst").forEach(function (d) {
+    var who = d.querySelector(".who");
+    var hit = !q || (who && who.textContent.toLowerCase().indexOf(q) >= 0);
+    d.hidden = !hit; if (hit) n++;
+  });
+  sCt.textContent = (q ? n + " of " + ROWS.length : ROWS.length) + " institutions";
+}
+sIn.addEventListener("input", applySearch);
+applySearch();
 </script>
