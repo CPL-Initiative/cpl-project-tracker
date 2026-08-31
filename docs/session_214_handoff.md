@@ -5,6 +5,8 @@ updated: 2026-08-30
 tags: [handoff, session-214, gr-register, decision-sheets, doctrine, probes]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_215_handoff.md
 ---
 
 # You are Session 214

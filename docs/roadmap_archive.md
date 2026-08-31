@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-08-31)
+
+- **2026-08-28 (SkyLens, S203, Funding lane)** — the curator round trip is **proven**: Sam clicked Publish and his three relabels reached Supabase (md5 `9cf58b99…` → `c95e78aa…`). Curation narrowed to a magic-link reviewer (#1372, ⚠️ `cfp_insert_self` deliberately left open); the **Ed. Code §78093.2(d)(1) spine** landed with Timing as its own section (#1375); the `NC $` column retired and every institution paired as CR + NC rows (#1378). Three KB notes. Corrected three inherited claims — CI was never broken (a **conflicted PR cannot produce a `pull_request` run**), the story corpus is 32/3 not 5, and the $8.96M project pool has no breakdown anywhere. SkyLens S202's narrative archived.
+- **2026-08-28 (SkySolidare, S204)** — this page is **generated** now (`kb/_build_docs_index.py`, `--check` in CI): 273,616 B → 20,757 B, per-lane listings moved to [`catalog/`](catalog/). Also 340 KB-note frontmatters canonicalized (`kb_note_dialect` 60 → 0, incl. 6 notes silently disagreeing about their own type) and the British-spelling sweep applied (`american_spelling` 174 → 1). #1373.
+
 ## INDEX update-history entries rotated out (2026-08-30)
 
 - **2026-08-28 (SkyLens, S202, refresh)** — the gate fix was half a fix: a local overlay survives sign-in and masks shared, so Sam's relabels never landed; plus the sign-in dropdown closing on any click. 3 more KB notes / memory rows.
@@ -28,6 +33,25 @@ status: archive
 - **2026-08-13 (evening)** — SkyBridge: the **alignment layer is LIVE**, cpl-chat **v41** (#1153/#1154/#1155). Sierra now tells a college which of its OWN courses to articulate against each credit recommendation, with how other colleges did it alongside as evidence. Sam's acceptance case verified live: Cerritos `WELD 214L` tops both FCAW recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`, Santa Ana `WELD 240`/`244`. Three surfaces: `chatbox_peer_articulations` (9,413), `chatbox_college_courses` (141,696), and one RPC returning both. ⭐ **Two signals, neither sufficient** — Santa Ana mapped courses whose titles contain no "FCAW", so title similarity can never propose them. ⚠️ **The first scorer ranked `ART 100 Introduction To World Art` third for a WELDING rec** — a plausible false positive costs more than a miss on a trust-building surface; content-token gate added, and it *raised* the right answer to 0.761. 1 new KB note.
 - **2026-08-13 (later)** — SkyBridge: Sierra wired to the credit-rec set, **cpl-chat v40** (#1150), and the MAP Users contact audit (#1151). ⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary** — it is derived from *adoptions*, and the statewide route required it non-null, so **38 never-adopted statewide credentials (36 carrying 75 published rec lines)** were excluded from **every** credential route: the Carpenters ladder, NCCER, the CSLB licences, OSHA 10/30. Not ranked last — absent. ⭐ `college_adoption_opportunities` now returns **two labeled bands** with reserved slots, because "N peers already articulate it" said of a zero-adopter credential is a fabricated route. ⭐ **The shelf collapses to 32 distinct courses**, one of which unlocks 12. ⭐ **MAP Users wiring was SOUND** — the expected join bug was not there; the real findings were a personal Gmail first in Mission College's cascade and a trailing-space fragility caught before it fired. 🔬 **Local-course↔CR alignment PROVEN offline** (Cerritos `WELD 214L` tops both FCAW recs) — and it needs **two signals**, because Santa Ana mapped courses whose titles contain no "FCAW". 3 new KB notes.
 
+
+### SkyLedger S210 — remediations, the ruleset verdict, and all nineteen verdicts executed (2026-08-30)
+
+**A–F BUILT** (#1400–#1402 · CPLBrain#46): Rule 10 widened; 16 files renumbered
+(`citation_drift` lints it); the harness refuses to score on fixture drift. **E
+resolved by measurement**: a required-check ruleset rejected all five cron pushes
+(GH013) — the `test` gate is DOCTRINE; the ruleset keeps force-push + deletion
+blocks only. **Fifteen Tables ruled** (#1404–#1405). **Decision sheets became
+the standing method** (#1406) and Sam ruled the 19-item Open Verdicts sheet LIVE,
+all executed same day (#1407–#1409): Combined award column · frozen header +
+statewide pair · pool card wired to the Budget table · goal-card policy · scope
+68→2 values (receipted) · tab folds · §55050 SENT 2026-08-28 · post-SB 135
+register re-analysis ordered · Blast Radius on Admin. ⚠️ `npm test | tail`
+reports TAIL's exit — CI caught what local masked. PM: the three-repo attach
+practice became session-checked doctrine (#1411/#1412 — verify at start, name
+what's missing; per-machine installer for the zero-repo case); the parallel
+Session-212 line shipped the register re-analysis sheet (#1413, awaiting Sam's
+numbers). Story: `doctrine_enforcement_lessons` + `cpl_funding_lessons`;
+handoff `session_213_handoff`.
 
 ### SkyCrush S206 — things that stop firing when they move (2026-08-28/29)
 

@@ -712,25 +712,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyLedger S210 — remediations, the ruleset verdict, and all nineteen verdicts executed (2026-08-30)
-
-**A–F BUILT** (#1400–#1402 · CPLBrain#46): Rule 10 widened; 16 files renumbered
-(`citation_drift` lints it); the harness refuses to score on fixture drift. **E
-resolved by measurement**: a required-check ruleset rejected all five cron pushes
-(GH013) — the `test` gate is DOCTRINE; the ruleset keeps force-push + deletion
-blocks only. **Fifteen Tables ruled** (#1404–#1405). **Decision sheets became
-the standing method** (#1406) and Sam ruled the 19-item Open Verdicts sheet LIVE,
-all executed same day (#1407–#1409): Combined award column · frozen header +
-statewide pair · pool card wired to the Budget table · goal-card policy · scope
-68→2 values (receipted) · tab folds · §55050 SENT 2026-08-28 · post-SB 135
-register re-analysis ordered · Blast Radius on Admin. ⚠️ `npm test | tail`
-reports TAIL's exit — CI caught what local masked. PM: the three-repo attach
-practice became session-checked doctrine (#1411/#1412 — verify at start, name
-what's missing; per-machine installer for the zero-repo case); the parallel
-Session-212 line shipped the register re-analysis sheet (#1413, awaiting Sam's
-numbers). Story: `doctrine_enforcement_lessons` + `cpl_funding_lessons`;
-handoff `session_213_handoff`.
-
 ### SkyMirror S213 — the sheet caught up with its lane, and the probe groundwork banked (2026-08-30)
 
 **Register lane truth restored**: the re-analysis sheet is BUILT (#1413 — 16 rows ×
@@ -745,6 +726,20 @@ with the instruments; handoff 213's boundary (nothing of that folder restated
 tracker-side or in `cpl_memory`) is honored and was applied retroactively to this
 session's own drafts in the #1414/#1415 merge. Story:
 `doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
+
+### SkyLedger S214 — the one-pool day (2026-08-31)
+
+**Sam ADOPTED the one-pool funding model** ($25.24M · $150K floor / $400K cap
+per institution, CR+NC combined; the NC-only trio earns by ORIGINATION, no
+advances — rulings N1 a / N2 b / N3 a) via a measured arc: the Budget Balance
+mock (#1419–#1420), the who-moves card wired into the live tab (#1421), the
+One-Pool Funding Tab visual (#1422). NC protection is the **earning rule, not a
+second pool** (new KB note; **F1 pending** — hold vs label on the $1.3M college
+NC shares). Vocabulary ruled: **funding never "money" · CCC norms · "max
+award" · alphabetical** (#1423 + the Naming doctrine block). Memo A is now an
+editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions
+delivered for Malone/Pedro (CPLBrain#67). Story: `cpl_funding_lessons`;
+handoff `session_215_handoff`.
 
 ## Troubleshooting
 

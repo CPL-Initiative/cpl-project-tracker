@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 356,
+   "count": 357,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3425,6 +3425,22 @@
      "title": "Forward-looking display for a curate-now / re-key-later split",
      "type": "methodology",
      "updated": "2026-06-24"
+    },
+    {
+     "created": "2026-08-31",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "funding-model",
+      "noncredit",
+      "one-pool",
+      "design"
+     ],
+     "title": "Funding is restricted by its earning rule, not by a label",
+     "type": "methodology",
+     "updated": "2026-08-31"
     },
     {
      "created": "2026-07-17",
@@ -11307,8 +11323,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 188,
+   "count": 189,
    "docs": [
+    {
+     "created": "2026-08-31",
+     "governs": [],
+     "n": 215,
+     "path": "docs/session_215_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session-215",
+      "implementation-funding",
+      "one-pool",
+      "origination",
+      "gr-register"
+     ],
+     "title": "from SkyLedger (Sessions 210\u2192214, the one-pool day)",
+     "type": null,
+     "updated": "2026-08-31"
+    },
     {
      "created": "2026-08-30",
      "governs": [],
@@ -14623,5 +14657,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 740
+ "total": 742
 }
