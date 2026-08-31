@@ -85,7 +85,8 @@
   .inst > summary > span:nth-child(n+3) { text-align: center; }
   .inst > summary > span:last-child { text-align: right; }
   .inst .detail { padding: 4px 4px 12px 2.6em; }
-  .inst .detail table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .88rem; }
+  .inst .detail .tscroll { overflow-x: auto; }
+  .inst .detail table { border-collapse: collapse; width: 100%; min-width: 640px; table-layout: fixed; font-size: .88rem; }
   .inst .detail th { text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em;
     color: var(--text-muted); font-weight: 700; padding: 4px 6px; border-bottom: 1px solid var(--border-strong); }
   .inst .detail th[scope=col]:not(:first-child), .inst .detail td:not(:first-child) { text-align: right; }
@@ -123,7 +124,10 @@ bottom, every deeper detail folds open in place, and each institution is one
 row with its full allocation detail behind a click. Every figure is real — the
 adopted dials ($150,000 base to $400,000 cap on the combined award), the real
 rosters, and MAP actuals as of 2026-08-31. This page is for your reaction; the
-port to the live tab follows it.</p>
+port to the live tab follows it. New this round, from your parting question:
+each expand and each priority card now carries <strong>Earned so far</strong>
+and <strong>Available to earn</strong> in dollars — the gap is the incentive.
+The two labels are proposed wording; edit them freely.</p>
 
 <section class="card" id="verdicts" aria-live="polite">
   <h2>Summary</h2>
@@ -218,6 +222,11 @@ port to the live tab follows it.</p>
         above; the live port will carry the tab's full earning machinery
         (advances for unmeasured priorities included), so the earned line there
         can read higher than here.</li>
+      <li>Available to earn = the max-award share minus what is earned to date.
+        The noncredit share counts as available in full (it reads $0 earned
+        until its feeds report), and the noncredit-only institutions' whole
+        awards are available, gated on the origination feed. Every "available"
+        figure and its "earned" partner sum back to the funding they split.</li>
       <li>Nothing on this page writes anywhere.</li>
     </ul>
   </details>
@@ -361,6 +370,7 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
     "<div><dt>Target (window)</dt><dd>" + f1(s.target) + " FTES</dd></div>" +
     "<div><dt>Actual so far</dt><dd>" + f1(s.actual) + " FTES</dd></div>" +
     "<div><dt>Earned so far</dt><dd>" + fm(s.earned) + "</dd></div>" +
+    '<div title="Still on the table statewide: unearned credit shares, the noncredit shares awaiting their feeds, and the origination funding the noncredit-only institutions have yet to draw."><dt>Available to earn</dt><dd>' + fm(s.money - s.earned) + "</dd></div>" +
     "</dl>" +
     '<details class="fold"><summary>the metric and the strategies</summary><ul>' +
     "<li><em>" + p.metric + "</em></li>" +
@@ -381,24 +391,28 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts — its max award is " + fm(r.alloc) +
-      " and it has drawn $0; the origination feed unlocks it." +
+      ". No advances: it draws only as originated CPL posts. Earned so far: $0 · available to earn: its full " + fm(r.alloc) +
+      " max award, unlocked by the origination feed." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
-    detail = "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: " + fm(r.earned) + " of its " + fm(r.alloc) + " max award" :
-        "No MAP data for this college in today’s pull — actuals show as no data yet") + "</caption>" +
-      "<colgroup><col style=\"width:24%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"></colgroup>" +
+    detail = '<div class="tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
+      "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
+      (hasData ? "Earned so far: " + fm(r.earned) + " · available to earn: " + fm(r.alloc - r.earned) + " — of its " + fm(r.alloc) + " max award" :
+        "No MAP data for this college in today’s pull — earned reads $0 here, and its full " + fm(r.alloc) + " max award is available to earn") + "</caption>" +
+      "<colgroup><col style=\"width:10%\"><col style=\"width:14%\"><col style=\"width:14%\"><col style=\"width:13%\"><col style=\"width:17%\"><col style=\"width:15%\"><col style=\"width:17%\"></colgroup>" +
       '<tr><th scope="col">Priority</th>' +
       '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
       '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
       '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
-      '<th scope="col">Actual</th></tr>' +
+      '<th scope="col">Actual</th>' +
+      '<th scope="col" title="What the credit share has earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 until its measures report.">Earned so far</th>' +
+      '<th scope="col" title="Still on the table for this priority: the unearned credit share plus the noncredit share awaiting its feeds. Unearned funding rolls forward.">Available to earn</th></tr>' +
       r.prios.map(function (p, i) {
+        var e = (p.frac || 0) * p.crM;
         return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
-          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td></tr>";
-      }).join("") + "</table>" +
+          (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM - e) + "</td></tr>";
+      }).join("") + "</table></div>" +
       (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
   }
   return '<details class="inst"><summary><span class="n">' + (idx + 1) + '</span>' +
