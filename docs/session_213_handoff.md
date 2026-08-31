@@ -57,8 +57,7 @@ and instrument work you should NOT restate here; see the boundary below).
 
 ## Your queue, in priority order
 
-1. **Draft Memo A** ("what is already law") from the ruled register — the sheet is 22/22 RULED and EXECUTED (2026-08-30 sitting, this session line): #12 leads with Sam's (f)(2)/COR doctrine, #4 promoted in. **DRAFT only — issuance waits for BOG adoption of the Title 5 revisions** (Sam's sequencing doctrine, in the lane file and `cpl_memory` slug `co-guidance-sequencing-doctrine`). Receipts:
-   `docs/receipts/2026-08-30-register-reanalysis-receipts.md`.
+1. ~~**Draft Memo A**~~ **DONE, then WIRED INTO THE TAB (2026-08-31, same session line).** Draft 1 was delivered to the vault, and on Sam's follow-up ask ("wire it into the current memo generator there? So I can iterate?") the memo now lives IN the GR tab: `gr_memos` + `gr_memo_sections`, seeded from the ruled rows, editable per-section, exported through the register's Word generator with the hold banner + drafting annex riding in the file until status says issued. **The tab rows are the working copy; the vault docx is the snapshot** (its banner says so). Issuance still waits for BOG adoption (`co-guidance-sequencing-doctrine`). Seed receipt: `docs/receipts/2026-08-31-gr-memos-seed-receipt.md`; verdict receipts: `docs/receipts/2026-08-30-register-reanalysis-receipts.md`.
 2. **Probe-support loop on demand**: pre-flight staging, scoring help,
    filing exports — the vault README is the contract; this handoff
    deliberately says nothing more.

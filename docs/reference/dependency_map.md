@@ -82,6 +82,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |
 | `gr_areas` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `gr_artifacts` | tabs: `gr-priorities` | tabs: `gr-priorities` |
+| `gr_memo_sections` | tabs: `gr-priorities` | tabs: `gr-priorities` |
+| `gr_memos` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `gr_revisions` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `item_raci` | tabs: `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` | tabs: `raci` |
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` |
@@ -768,5 +770,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 72 Supabase tables · 30 RPCs · 5 edge functions · 393 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 393 file
 datasets · 136 external services · 304 consumers · 32 workflows · 37 tabs.

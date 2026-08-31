@@ -242,6 +242,24 @@
       method: "PATCH", headers: headers(true), body: JSON.stringify(rec)
     }).then(wrote);
   }
+  // Guidance memos — the downstream documents the register rows feed (Sam's
+  // item-7 ruling: the rows prove their value feeding the guidance memos).
+  function addMemo(rec) {
+    return fetch(REST + "/gr_memos", { method: "POST", headers: headers(true), body: JSON.stringify([rec]) }).then(wrote);
+  }
+  function addMemoSection(rec) {
+    return fetch(REST + "/gr_memo_sections", { method: "POST", headers: headers(true), body: JSON.stringify([rec]) }).then(wrote);
+  }
+  function patchMemo(id, rec) {
+    return fetch(REST + "/gr_memos?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: headers(true), body: JSON.stringify(rec)
+    }).then(wrote);
+  }
+  function patchMemoSection(id, rec) {
+    return fetch(REST + "/gr_memo_sections?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: headers(true), body: JSON.stringify(rec)
+    }).then(wrote);
+  }
   var WRITERS = { gr_areas: addArea, gr_revisions: addRevision, gr_artifacts: addArtifact };
   function post(table, rec) { return WRITERS[table](rec); }
 
@@ -435,6 +453,11 @@
       ".grx .gx-err{color:var(--gx-r);font-size:11.6px;margin-top:7px;min-height:1em;}",
       ".grx .gx-ok{color:var(--gx-g);font-size:11.6px;margin-top:7px;}",
       ".grx .gx-note{font-size:11.4px;color:var(--gx-muted);margin:6px 0 0;}",
+      // guidance memos
+      ".grx .gx-memohold{border:1px solid var(--gx-y);border-left:4px solid var(--gx-y);border-radius:6px;",
+      "background:var(--gx-card);padding:9px 12px;margin:0 0 10px;font-size:12.4px;line-height:1.5;color:var(--gx-ink);}",
+      ".grx .gx-msec{border-top:1px solid var(--gx-border);padding-top:9px;margin-top:10px;}",
+      ".grx .gx-msec h4{font-size:13.2px;margin:0 0 5px;}",
       ".grx .gx-unread{color:var(--gx-y)!important;border-color:var(--gx-y)!important;}",
       ".grx .gx-empty .row{display:flex;gap:8px;justify-content:center;margin-top:11px;}",
       ".grx .gx-empty{padding:22px;text-align:center;color:var(--gx-muted);font-size:13px;",
@@ -489,8 +512,8 @@
   }
 
   // ── state ───────────────────────────────────────────────────────────────────
-  var state = { areas: [], areaId: null, revisions: [], artifacts: [], filters: null,
-               failed: { revisions: false, artifacts: false, cross: false } };
+  var state = { areas: [], areaId: null, revisions: [], artifacts: [], memos: [], memoSections: [], filters: null,
+               failed: { revisions: false, artifacts: false, cross: false, memos: false, memoSections: false } };
 
   function loadAreas() {
     return getJson(REST + "/gr_areas?select=*&status=eq.active&order=sort.asc,title.asc");
@@ -498,7 +521,14 @@
   function loadArea(id) {
     return Promise.all([
       getJson(REST + "/gr_revisions?select=*&area_id=eq." + encodeURIComponent(id) + "&order=n.asc"),
-      getJson(REST + "/gr_artifacts?select=*&area_id=eq." + encodeURIComponent(id) + "&order=created_at.desc")
+      getJson(REST + "/gr_artifacts?select=*&area_id=eq." + encodeURIComponent(id) + "&order=created_at.desc"),
+      getJson(REST + "/gr_memos?select=*&area_id=eq." + encodeURIComponent(id) + "&order=sort.asc,memo_key.asc"),
+      // Sections read whole — the table only holds guidance-memo sections, the
+      // register's scale is a handful of memos, and memoSectionsOf() scopes by
+      // memo id at render. A server-side join filter would be the one piece of
+      // syntax this sandbox cannot exercise before it ships (Supabase is MCP-only
+      // here), and its failure mode is a permanent "couldn't read".
+      getJson(REST + "/gr_memo_sections?select=*&order=n.asc")
     ]);
   }
 
@@ -2069,6 +2099,273 @@
     return f;
   }
 
+  // ── Guidance memos — the documents the register rows feed ──────────────────
+  /* The register rows are the SOURCE OF RECORD the guidance memos draw from
+   * (Sam's item-7 ruling, 2026-08-30: "the GR tab priorities rows will prove
+   * their value there") — so the memos live ON the register, beside the rows
+   * they cite, and iterate here rather than in a folder of Word files.
+   *
+   * ⚠️ SEQUENCING IS DOCTRINE, AND THE TAB SAYS IT RATHER THAN ENFORCING IT
+   * (Sam, 2026-08-30): "Ed Code is the basis for regulation and the CO issues
+   * memos based on regulation supported by ed code" — Title 5 revised and
+   * BOG-adopted FIRST, guidance after. Drafting may precede: a draft that
+   * cannot cite its regulation is a November amendment found in time. No
+   * machinery here can verify BOG adoption, so the gate is a human flipping
+   * status to "issued"; until then the hold banner and the drafting annex
+   * travel INSIDE every export, the same way the register caveat does. */
+  var MEMO_STATUSES = ["draft", "hold_for_adoption", "issued"];
+  function memoSectionsOf(m) {
+    return state.memoSections.filter(function (s) { return s.memo_id === m.id; });
+  }
+  function currentArea() {
+    var area = null;
+    state.areas.forEach(function (a) { if (a.id === state.areaId) area = a; });
+    return area;
+  }
+  function renderMemoBlock(root) {
+    var box = el("div", { class: "gx-arts" });
+    box.appendChild(el("h3", { text: "Guidance memos — drafted from this register" }));
+    box.appendChild(el("p", { class: "gx-note", text:
+      "Sequencing is doctrine (2026-08-30): Title 5 is revised and adopted by the Board of Governors first; guidance issues after. " +
+      "A memo here is a working draft until its status says issued — drafting early lets the memo reverse-check the regulatory text while a filing can still be amended." }));
+    // A failed read and an empty list are DIFFERENT states (the same rule the
+    // revisions and artifacts lists already honor).
+    if (state.failed.memos || state.failed.memoSections) {
+      box.appendChild(el("p", { class: "gx-note gx-unread",
+        text: "Couldn't read the guidance memos for this area — a loading failure, not an empty list." }));
+      return box;
+    }
+    if (!state.memos.length) {
+      box.appendChild(el("p", { class: "gx-note", text: "No guidance memos drafted for this area yet." }));
+    }
+    state.memos.forEach(function (m) { box.appendChild(memoCard(m, root)); });
+    if (canWrite()) {
+      var host = el("div");
+      var add = el("button", { class: "gx-btn ghost", type: "button", text: "Add a memo" });
+      add.addEventListener("click", function () {
+        if (host.firstChild) { clear(host); return; }
+        host.appendChild(newMemoForm(state.areaId, function () { load(root); }));
+      });
+      box.appendChild(add);
+      box.appendChild(host);
+    }
+    return box;
+  }
+  function memoCard(m, root) {
+    var secs = memoSectionsOf(m);
+    var d = el("details", { class: "gx-item" });
+    var sum = el("summary");
+    sum.appendChild(el("span", { class: "gx-num", text: "Memo " + (m.memo_key || "") }));
+    sum.appendChild(el("span", { class: "gx-ttl", text: m.title || "" }));
+    sum.appendChild(el("span", { class: "gx-st", text: stLabel(m.status) }));
+    sum.appendChild(el("span", { class: "gx-count",
+      text: secs.length ? secs.length + (secs.length === 1 ? " section" : " sections") : "no sections yet" }));
+    d.appendChild(sum);
+    var body = el("div", { class: "gx-desc" });
+    if (m.status !== "issued" && m.hold_note) {
+      var holdP = el("p", { class: "gx-memohold" });
+      holdP.appendChild(el("b", { text: "Draft — held for Board of Governors adoption. " }));
+      appendRich(holdP, m.hold_note);
+      body.appendChild(holdP);
+    }
+    var metaBits = [];
+    if (m.audience) metaBits.push("To: " + m.audience);
+    if (m.from_line) metaBits.push("From: " + m.from_line);
+    if (m.date_line) metaBits.push("Date: " + m.date_line);
+    if (metaBits.length) body.appendChild(el("p", { class: "gx-note", text: metaBits.join("  ·  ") }));
+    if (m.purpose) richBody(body, m.purpose);
+    secs.forEach(function (s) { body.appendChild(memoSectionView(m, s, root)); });
+    var ctl = el("div", { class: "gx-rowctl" });
+    var exportBtn = el("button", { class: "gx-chip", type: "button", text: "Export memo (Word)" });
+    exportBtn.addEventListener("click", function () {
+      memoWord(currentArea(), m, memoSectionsOf(m));
+    });
+    ctl.appendChild(exportBtn);
+    var editHost = el("div"), addHost = el("div");
+    if (canWrite()) {
+      var editBtn = el("button", { class: "gx-chip", type: "button", text: "Edit memo" });
+      editBtn.addEventListener("click", function () {
+        if (editHost.firstChild) { clear(editHost); return; }
+        editMemoForm(m, editHost, function (saved) { if (saved) load(root); else clear(editHost); });
+      });
+      ctl.appendChild(editBtn);
+      var addSec = el("button", { class: "gx-chip", type: "button", text: "Add a section" });
+      addSec.addEventListener("click", function () {
+        if (addHost.firstChild) { clear(addHost); return; }
+        var live = memoSectionsOf(m);
+        var nextN = live.reduce(function (mx, s) { return Math.max(mx, s.n || 0); }, 0) + 1;
+        addHost.appendChild(memoSectionForm(m.id, nextN, null, function (saved) {
+          if (saved) load(root); else clear(addHost);
+        }));
+      });
+      ctl.appendChild(addSec);
+    }
+    body.appendChild(ctl);
+    body.appendChild(editHost);
+    body.appendChild(addHost);
+    d.appendChild(body);
+    return d;
+  }
+  function memoSectionView(m, s, root) {
+    var sd = el("div", { class: "gx-msec" });
+    sd.appendChild(el("h4", { text: (s.n == null ? "" : s.n + ". ") + (s.heading || "") }));
+    richBody(sd, s.body);
+    var meta = el("p", { class: "gx-note" });
+    if ((s.citations || []).length) meta.appendChild(citeChips(s.citations, !!s.citations_derived));
+    var bits = [];
+    if ((s.revision_ns || []).length) {
+      bits.push("Draws on register row" + (s.revision_ns.length === 1 ? " " : "s ") +
+        s.revision_ns.map(function (n) { return "#" + n; }).join(", "));
+    }
+    if (s.authority) bits.push("Authority: " + s.authority);
+    if (bits.length) meta.appendChild(document.createTextNode((meta.firstChild ? "  ·  " : "") + bits.join("  ·  ")));
+    if (meta.firstChild) sd.appendChild(meta);
+    if (s.confirm_note) {
+      sd.appendChild(el("p", { class: "gx-note gx-unread", text: "Before issuance: " + s.confirm_note }));
+    }
+    if (canWrite()) {
+      var host = el("div");
+      var editBtn = el("button", { class: "gx-chip", type: "button", text: "Edit section" });
+      editBtn.addEventListener("click", function () {
+        if (host.firstChild) { clear(host); return; }
+        host.appendChild(memoSectionForm(m.id, s.n, s, function (saved) {
+          if (saved) load(root); else clear(host);
+        }));
+      });
+      sd.appendChild(el("div", { class: "gx-rowctl" }, [editBtn]));
+      sd.appendChild(host);
+    }
+    return sd;
+  }
+  /* One form serves add and edit — field-for-field with what a section RENDERS,
+   * the same rule editRevisionForm follows. Citations go through parseCites and
+   * rejects come BACK to the typist; register rows are the human row numbers on
+   * this area's rows (#12, #4), validated as whole numbers, never uuids. */
+  function memoSectionForm(memoId, n, s, onSaved) {
+    var isEdit = !!(s && s.id);
+    var f = el("div", { class: "gx-form gx-edit" });
+    f.appendChild(el("h4", { text: isEdit ? "Edit section — " + (s.heading || "") : "New section (" + n + ")" }));
+    var heading = textInput("Section heading"); heading.value = (s && s.heading) || "";
+    var bodyTa = el("textarea", { placeholder: "Section text — blank line between paragraphs; <b>, <i> and https:// links carry through" });
+    bodyTa.value = (s && s.body) || "";
+    bodyTa.style.minHeight = "160px";
+    var cites = textInput("T5 §55050, EC §78093.1 — comma separated");
+    cites.value = ((s && s.citations) || []).join(", ");
+    var rowsIn = textInput("12, 4 — the register rows this section draws on");
+    rowsIn.value = ((s && s.revision_ns) || []).join(", ");
+    var auth = textInput("e.g. enacted statute + pending regulation"); auth.value = (s && s.authority) || "";
+    var confirmIn = textInput("An external confirm required before issuance, if any"); confirmIn.value = (s && s.confirm_note) || "";
+    f.appendChild(field("Heading", heading));
+    f.appendChild(field("Text", bodyTa));
+    f.appendChild(field("Citations", cites));
+    f.appendChild(el("div", { class: "gx-frow" }, [field("Register rows", rowsIn), field("Authority class", auth)]));
+    f.appendChild(field("Confirm before issuance", confirmIn));
+    var err = el("p", { class: "gx-err", text: "" });
+    f.appendChild(err);
+    var save = el("button", { class: "gx-chip primary", type: "button", text: isEdit ? "Save section" : "Add section" });
+    var cancel = el("button", { class: "gx-chip", type: "button", text: "Cancel" });
+    cancel.addEventListener("click", function () { onSaved(false); });
+    save.addEventListener("click", function () {
+      var parsed = parseCites(cites.value);
+      if (parsed.bad.length) {
+        err.textContent = "No code band claims " + parsed.bad.join(", ") +
+          ". Write the code out (T5 / EC / GC) or remove it.";
+        return;
+      }
+      var rowsRaw = rowsIn.value.trim();
+      if (rowsRaw && !/^[0-9]{1,3}(\s*,\s*[0-9]{1,3})*$/.test(rowsRaw)) {
+        err.textContent = "Register rows are the numbers on this area's rows — whole numbers, comma separated (e.g. 12, 4).";
+        return;
+      }
+      if (!heading.value.trim()) { err.textContent = "A heading is required."; return; }
+      var rec = {
+        heading: heading.value.trim(), body: bodyTa.value.trim() || null,
+        citations: parsed.ok, citations_derived: parsed.inferred,
+        revision_ns: rowsRaw ? rowsRaw.split(/\s*,\s*/).map(function (x) { return parseInt(x, 10); }) : [],
+        authority: auth.value.trim() || null, confirm_note: confirmIn.value.trim() || null,
+        updated_by: whoami(), updated_at: new Date().toISOString()
+      };
+      if (!isEdit) { rec.memo_id = memoId; rec.n = n; rec.created_by = whoami(); }
+      save.disabled = true; err.textContent = "";
+      (isEdit ? patchMemoSection(s.id, rec) : addMemoSection(rec))
+        .then(function () { save.disabled = false; onSaved(true); })
+        .catch(function (e) { save.disabled = false; err.textContent = e.message; });
+    });
+    f.appendChild(el("div", { class: "gx-rowctl" }, [save, cancel]));
+    return f;
+  }
+  function editMemoForm(m, host, onSaved) {
+    var f = el("div", { class: "gx-form gx-edit" });
+    f.appendChild(el("h4", { text: "Edit — Memo " + (m.memo_key || "") }));
+    var title = textInput(""); title.value = m.title || "";
+    var audience = textInput("The TO line"); audience.value = m.audience || "";
+    var fromLine = textInput("The FROM line"); fromLine.value = m.from_line || "";
+    var dateLine = textInput("The DATE line while unissued"); dateLine.value = m.date_line || "";
+    var purpose = el("textarea", { placeholder: "Purpose — blank line between paragraphs" });
+    purpose.value = m.purpose || "";
+    var hold = el("textarea", { placeholder: "Why issuance waits — travels in every export while the memo is unissued" });
+    hold.value = m.hold_note || "";
+    var st = selectOf(MEMO_STATUSES, MEMO_STATUSES.map(stLabel)); st.value = m.status || "draft";
+    f.appendChild(field("Title (the SUBJECT line)", title));
+    f.appendChild(field("To", audience));
+    f.appendChild(el("div", { class: "gx-frow" }, [field("From", fromLine), field("Date line", dateLine)]));
+    f.appendChild(field("Purpose", purpose));
+    f.appendChild(field("Hold note", hold));
+    f.appendChild(field("Status", st));
+    f.appendChild(el("p", { class: "gx-note", text:
+      "Issued means the Board of Governors has adopted the Title 5 revisions this memo cites and the memo has gone out — the 2026-08-30 sequencing ruling. Issuing removes the draft banner and the drafting annex from the export." }));
+    var err = el("p", { class: "gx-err", text: "" });
+    f.appendChild(err);
+    var save = el("button", { class: "gx-chip primary", type: "button", text: "Save changes" });
+    var cancel = el("button", { class: "gx-chip", type: "button", text: "Cancel" });
+    cancel.addEventListener("click", function () { onSaved(false); });
+    save.addEventListener("click", function () {
+      if (!title.value.trim()) { err.textContent = "A title is required."; return; }
+      var rec = {
+        title: title.value.trim(), audience: audience.value.trim() || null,
+        from_line: fromLine.value.trim() || null, date_line: dateLine.value.trim() || null,
+        purpose: purpose.value.trim() || null, hold_note: hold.value.trim() || null,
+        status: st.value, updated_by: whoami(), updated_at: new Date().toISOString()
+      };
+      save.disabled = true; err.textContent = "";
+      patchMemo(m.id, rec).then(function () {
+        for (var k in rec) m[k] = rec[k];
+        save.disabled = false; onSaved(true);
+      }).catch(function (e) { save.disabled = false; err.textContent = e.message; });
+    });
+    f.appendChild(el("div", { class: "gx-rowctl" }, [save, cancel]));
+    host.innerHTML = "";
+    host.appendChild(f);
+    title.focus();
+  }
+  function newMemoForm(areaId, onSaved) {
+    var f = el("div", { class: "gx-form" });
+    f.appendChild(el("h4", { text: "New guidance memo" }));
+    var key = textInput("One letter — the next in the memo plan (A, B, C…)");
+    var title = textInput("The SUBJECT line");
+    var purpose = el("textarea", { placeholder: "Purpose — what this memo tells colleges" });
+    f.appendChild(el("div", { class: "gx-frow" }, [field("Memo letter", key), field("Title", title)]));
+    f.appendChild(field("Purpose", purpose));
+    var err = el("p", { class: "gx-err", text: "" });
+    f.appendChild(err);
+    var save = el("button", { class: "gx-chip primary", type: "button", text: "Add memo (as a draft)" });
+    save.addEventListener("click", function () {
+      var k = key.value.trim().toUpperCase();
+      if (!/^[A-Z]$/.test(k)) { err.textContent = "The memo letter is a single letter (A–Z)."; return; }
+      if (!title.value.trim()) { err.textContent = "A title is required."; return; }
+      save.disabled = true; err.textContent = "";
+      addMemo({
+        area_id: areaId, memo_key: k, title: title.value.trim(),
+        purpose: purpose.value.trim() || null, status: "draft",
+        hold_note: "Guidance issues only after the Board of Governors adopts the regulation it cites — drafting may precede issuance (the 2026-08-30 sequencing ruling).",
+        created_by: whoami(), updated_by: whoami()
+      }).then(function () { onSaved(true); })
+        .catch(function (e) { save.disabled = false; err.textContent = e.message; });
+    });
+    f.appendChild(el("div", { class: "gx-rowctl" }, [save]));
+    return f;
+  }
+
   // ── main render ─────────────────────────────────────────────────────────────
   function renderRegister(root, allRevisions) {
     clear(root);
@@ -2363,6 +2660,10 @@
       wrap.appendChild(revHost);
     }
 
+    // guidance memos — the documents the register rows feed (Sam's item-7
+    // ruling; the current draft set is the three-memo plan of 2026-08-30)
+    wrap.appendChild(renderMemoBlock(root));
+
     // artifacts
     var arts = el("div", { class: "gx-arts" });
     arts.appendChild(el("h3", { text: "Knowledge base — artifacts informing this area" }));
@@ -2440,10 +2741,41 @@
   var secSelects = [];
 
   // ── Word export — built from the rows on screen ─────────────────────────────
+  function esc(s) {
+    return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  // The stored prose carries the allowlisted inline markup the screen renders
+  // (<a>/<b>/<i>). esc()-ing it printed literal "<p>" and "<a href=...>" into
+  // the document and destroyed every primary-source link — the links being, on
+  // a legal brief, most of the value. Round-tripping through the SAME tokenizer
+  // the screen uses means an export can never emit an element the renderer
+  // would have refused. Shared by the register export and the memo export.
+  function rich(html) {
+    var node = appendRich(document.createElement("div"), html);
+    var out = "";
+    Array.prototype.forEach.call(node.childNodes, function (n) {
+      if (n.nodeType === 3) { out += esc(n.nodeValue); return; }
+      var t = (n.tagName || "").toLowerCase();
+      if (t === "a" && /^https:\/\//.test(n.getAttribute("href") || "")) {
+        out += '<a href="' + esc(n.getAttribute("href")) + '">' + esc(n.textContent) + "</a>";
+      } else if (t === "b" || t === "i") {
+        out += "<" + t + ">" + esc(n.textContent) + "</" + t + ">";
+      } else { out += esc(n.textContent); }
+    });
+    return out;
+  }
+  // Memo prose is stored as plain text + the same inline allowlist, with blank
+  // lines separating paragraphs. One splitter serves screen and export so the
+  // file can never paragraph differently from the page.
+  function bodyParas(text) {
+    return String(text == null ? "" : text).split(/\n\s*\n/)
+      .map(function (p) { return p.trim(); }).filter(Boolean);
+  }
+  function richBody(node, text, cls) {
+    bodyParas(text).forEach(function (p) { node.appendChild(richP(p, cls)); });
+    return node;
+  }
   function docBody(area, rows) {
-    function esc(s) {
-      return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    }
     // Object.create(null): pathway values are DATA read straight from the row, so
     // a plain literal here makes tl['toString'] resolve to Function.prototype
     // .toString — truthy, so the `||` fallback never fires, v[1] is undefined and
@@ -2462,26 +2794,6 @@
         return '<span style="color:' + (tl[x] ? v[0] : "#666") + ';font-weight:bold;font-size:8.5pt">' +
           esc(String(v[1]).toUpperCase()) + "</span>";
       }).join(' <span style="color:#aaa">&#8594;</span> ');
-    }
-    // The migrated summaries carry the allowlisted inline markup the screen
-    // renders (<a>/<b>/<i>). esc()-ing them printed literal "<p>" and "<a
-    // href=...>" into the document and destroyed every primary-source link —
-    // the links being, on a legal brief, most of the value. Round-tripping
-    // through the SAME tokenizer the screen uses means the export can never
-    // emit an element the renderer would have refused.
-    function rich(html) {
-      var node = appendRich(document.createElement("div"), html);
-      var out = "";
-      Array.prototype.forEach.call(node.childNodes, function (n) {
-        if (n.nodeType === 3) { out += esc(n.nodeValue); return; }
-        var t = (n.tagName || "").toLowerCase();
-        if (t === "a" && /^https:\/\//.test(n.getAttribute("href") || "")) {
-          out += '<a href="' + esc(n.getAttribute("href")) + '">' + esc(n.textContent) + "</a>";
-        } else if (t === "b" || t === "i") {
-          out += "<" + t + ">" + esc(n.textContent) + "</" + t + ">";
-        } else { out += esc(n.textContent); }
-      });
-      return out;
     }
     var items = (rows || []).map(function (r) {
       var cites = (r.citations || []).map(citeLabel).join(", ");
@@ -2518,13 +2830,98 @@
         "This file reflects the rows and filters shown on screen at export time. " +
         "Working draft — verify quoted statutory and regulatory text against primary sources before external use.</i></p>";
   }
-  function draftWord(area, rows) {
-    var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>GR register</title></head><body style="font-family:Calibri,Arial,sans-serif;color:#23252b;margin:0.6in">' + docBody(area, rows) + "</body></html>";
-    var slug = String((area && area.id) || "gr").replace(/[^a-z0-9]+/gi, "_");
+  function wordShell(title, body) {
+    return '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>' + esc(title) + '</title></head><body style="font-family:Calibri,Arial,sans-serif;color:#23252b;margin:0.6in">' + body + "</body></html>";
+  }
+  function dateStamp() {
     var d = new Date();
-    var stamp = d.getFullYear() +
-      ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2);
-    var fn = stamp + "_GR_Register_" + slug + ".doc";   // YYYYMMDD_ per the vault naming rule
+    return d.getFullYear() + ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2);
+  }
+  function draftWord(area, rows) {
+    var slug = String((area && area.id) || "gr").replace(/[^a-z0-9]+/gi, "_");
+    var fn = dateStamp() + "_GR_Register_" + slug + ".doc";   // YYYYMMDD_ per the vault naming rule
+    downloadDoc(wordShell("GR register", docBody(area, rows)), fn);
+  }
+
+  /* The memo export is the register's Word generator pointed at a DOCUMENT:
+   * TO/FROM/DATE/SUBJECT, the hold banner while unissued, the ruled sections,
+   * and a drafting annex (authority classes + pre-issuance confirms) that is
+   * internal by construction — it renders only while the memo is unissued, so
+   * flipping status to issued is what removes it, not someone remembering to.
+   * Register-row references print as words ("Draws on register rows #12, #4"):
+   * the file leaves the building, and a bare uuid means nothing outside it. */
+  function memoDocBody(area, m, secs) {
+    var unissued = ((m && m.status) || "draft") !== "issued";
+    var head =
+      '<p style="font-family:Georgia,serif;font-size:20pt;font-weight:bold;margin:0 0 2pt 0;color:#23252b">' +
+        (unissued ? "DRAFT &mdash; " : "") + esc((m && m.title) || "Guidance memo") + "</p>" +
+      '<p style="font-size:11pt;color:#555;margin:0">Guidance memo ' + esc((m && m.memo_key) || "") +
+        " &#183; " + esc((area && area.title) || "GR register") + " &#183; Chancellor&rsquo;s Office</p>" +
+      '<hr style="border:none;border-top:2px solid #3d4a60;margin:8pt 0 12pt 0">';
+    var meta = "";
+    [["TO", m && m.audience], ["FROM", m && m.from_line], ["DATE", m && m.date_line], ["SUBJECT", m && m.title]]
+      .forEach(function (kv) {
+        if (kv[1]) meta += '<p style="margin:0 0 2pt 0;font-size:10.5pt;color:#23252b"><b>' + kv[0] + ":</b> " + esc(kv[1]) + "</p>";
+      });
+    if (meta) meta += '<hr style="border:none;border-top:1px solid #bbb;margin:8pt 0 12pt 0">';
+    // The hold travels IN the file, like the register caveat: a banner that
+    // only exists on screen is not a banner once the file leaves by email.
+    var hold = "";
+    if (unissued && m && m.hold_note) {
+      hold = '<p style="font-size:10pt;color:#7a5c00;margin:0 0 12pt 0;padding:7pt 10pt;background:#fdf6e3;border-left:3px solid #b8901f">' +
+        "<b>Pre-decisional draft &mdash; not for distribution.</b> " + rich(m.hold_note) + "</p>";
+    }
+    var purpose = (m && m.purpose)
+      ? '<p style="font-family:Georgia,serif;font-size:13pt;margin:0 0 4pt 0;color:#23252b"><b>Purpose</b></p>' +
+        bodyParas(m.purpose).map(function (p) {
+          return '<p style="font-size:10.5pt;line-height:1.4;color:#23252b;margin:0 0 8pt 0">' + rich(p) + "</p>";
+        }).join("")
+      : "";
+    var items = (secs || []).map(function (s) {
+      var cites = (s.citations || []).map(citeLabel).join(", ");
+      var rowRefs = (s.revision_ns || []).map(function (n) { return "#" + n; }).join(", ");
+      return '<div style="margin:0 0 14pt 0">' +
+        '<p style="margin:0 0 3pt 0;font-family:Georgia,serif;font-size:13pt;color:#23252b"><b>' +
+          (s.n == null ? "" : s.n + ". ") + esc(s.heading) + "</b></p>" +
+        bodyParas(s.body).map(function (p) {
+          return '<p style="margin:0 0 6pt 0;font-size:10.5pt;line-height:1.4;color:#23252b">' + rich(p) + "</p>";
+        }).join("") +
+        (cites || rowRefs
+          ? '<p style="margin:0;font-size:9pt;color:#555">' +
+            (cites ? "<b>Citations:</b> " + esc(cites) : "") +
+            (rowRefs ? (cites ? " &nbsp;&#183;&nbsp; " : "") + "Draws on register row" +
+              ((s.revision_ns || []).length === 1 ? " " : "s ") + esc(rowRefs) : "") + "</p>"
+          : "") +
+        (unissued && s.confirm_note
+          ? '<p style="margin:2pt 0 0;font-size:9pt;color:#7a5c00"><b>Before issuance:</b> ' + esc(s.confirm_note) + "</p>"
+          : "") +
+        "</div>";
+    }).join("");
+    var annexRows = (secs || []).filter(function (s) { return s.authority || s.confirm_note; });
+    var annex = "";
+    if (unissued && annexRows.length) {
+      annex = '<hr style="border:none;border-top:1px solid #bbb;margin:14pt 0 8pt 0">' +
+        '<p style="font-family:Georgia,serif;font-size:12pt;margin:0 0 4pt 0;color:#23252b"><b>Drafting annex &mdash; authority classes (internal; remove before issuance)</b></p>' +
+        '<table style="border-collapse:collapse;font-size:9pt;color:#23252b">' +
+        annexRows.map(function (s) {
+          return '<tr><td style="border:1px solid #bbb;padding:3pt 6pt;vertical-align:top">&#167;' + esc(s.n == null ? "" : s.n) + "</td>" +
+            '<td style="border:1px solid #bbb;padding:3pt 6pt;vertical-align:top">' + esc(s.authority || "") + "</td>" +
+            '<td style="border:1px solid #bbb;padding:3pt 6pt;vertical-align:top">' + esc(s.confirm_note || "") + "</td></tr>";
+        }).join("") + "</table>";
+    }
+    return head + meta + hold + purpose + items + annex +
+      '<p style="font-size:9pt;color:#777;margin:12pt 0 0"><i>Exported from the COBI GR register (guidance memos). ' +
+        "This file reflects the memo as stored at export time. " +
+        "Working draft &mdash; verify quoted statutory and regulatory text against primary sources before external use.</i></p>";
+  }
+  function memoWord(area, m, secs) {
+    var slug = String((m && m.title) || "memo").replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/g, "").slice(0, 60);
+    var key = String((m && m.memo_key) || "X").replace(/[^A-Za-z0-9]/g, "");
+    var fn = dateStamp() + "_Guidance_Memo_" + key + "_" + slug + ".doc";   // YYYYMMDD_ per the vault naming rule
+    downloadDoc(wordShell("Guidance memo " + key, memoDocBody(area, m, secs)), fn);
+  }
+
+  function downloadDoc(html, fn) {
     try {
       var blob = new Blob(["﻿" + html], { type: "application/msword" });
       var url = URL.createObjectURL(blob);
@@ -2613,9 +3010,13 @@
         // which is this register's headline claim asserted from no data at all.
         // The states are kept apart and the failed ones say so.
         var rev = res[0] && res[0][0], art = res[0] && res[0][1], cross = res[1];
-        state.failed = { revisions: rev === null, artifacts: art === null, cross: cross === null };
+        var memos = res[0] && res[0][2], msecs = res[0] && res[0][3];
+        state.failed = { revisions: rev === null, artifacts: art === null, cross: cross === null,
+                         memos: memos === null, memoSections: msecs === null };
         state.revisions = rev || [];
         state.artifacts = art || [];
+        state.memos = memos || [];
+        state.memoSections = msecs || [];
         renderRegister(root, cross || []);
       });
     });
@@ -2637,6 +3038,10 @@
     _matches: matches,
     _renderRegister: renderRegister,
     _draftDocBody: docBody,
+    _memoDocBody: memoDocBody,
+    _renderMemoBlock: renderMemoBlock,
+    _memoSectionForm: memoSectionForm,
+    _bodyParas: bodyParas,
     _patchRevision: patchRevision,
     _analyzeRevision: analyzeRevision,
     _renderAnalysis: renderAnalysis,

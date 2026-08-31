@@ -342,6 +342,8 @@ window.COBI_ADMIN_SURFACE = {
       "writes": [
         "gr_areas",
         "gr_artifacts",
+        "gr_memo_sections",
+        "gr_memos",
         "gr_revisions"
       ],
       "rpcs": [
