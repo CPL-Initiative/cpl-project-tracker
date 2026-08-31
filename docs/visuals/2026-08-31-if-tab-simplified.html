@@ -63,12 +63,11 @@
   details.fold[open] > summary::before { content: "Hide "; }
   details.fold ul { margin: 8px 0 0; padding-left: 1.2em; font-size: .88rem; color: var(--text-muted); }
   details.fold li { margin: 4px 0; }
-  .chip { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .04em;
-    text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border-strong);
-    border-radius: 999px; padding: 1px 9px; margin-left: 6px; white-space: nowrap; }
-  .chip.min { color: var(--mustard-text); border-color: var(--mustard-text); }
-  .chip.max { color: var(--cobalt); border-color: var(--cobalt); }
-  .chip.nco { color: var(--hunter); border-color: var(--hunter); }
+  /* Row chips are ghosted on purpose (Sam, 2026-08-31): the quietest thing in
+     the row, never the first read. One muted treatment for all three. */
+  .chip { display: inline-block; font-size: .68rem; font-weight: 400; letter-spacing: .04em;
+    text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border);
+    border-radius: 999px; padding: 1px 8px; margin-left: 6px; white-space: nowrap; }
   /* the institution table — details rows on a fixed grid, no sideways scroll */
   .insts { margin-top: 8px; }
   .inst { border-top: 1px solid var(--border); }
@@ -77,11 +76,14 @@
     padding: 7px 4px; font-variant-numeric: tabular-nums; }
   .inst > summary::-webkit-details-marker { display: none; }
   .inst > summary:hover { background: var(--surface-subtle); }
+  /* Low-key rows (Sam, 2026-08-31): nothing bold, FTES and funding centered,
+     the rightmost column right-justified. */
   .inst .n { color: var(--text-muted); font-size: .82rem; }
-  .inst .who { font-weight: 600; color: var(--text-strong); min-width: 0; }
-  .inst .ftes { text-align: right; color: var(--text-muted); }
-  .inst .amt { text-align: right; font-weight: 700; color: var(--text-strong); }
-  .inst .amt.nc { font-weight: 600; color: var(--text-body); }
+  .inst .who { font-weight: 400; color: var(--text-body); min-width: 0; }
+  .inst .ftes { color: var(--text-muted); }
+  .inst .amt { font-weight: 400; color: var(--text-body); }
+  .inst > summary > span:nth-child(n+3) { text-align: center; }
+  .inst > summary > span:last-child { text-align: right; }
   .inst .detail { padding: 4px 4px 12px 2.6em; }
   .inst .detail table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .88rem; }
   .inst .detail th { text-align: left; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em;
@@ -92,7 +94,15 @@
   .thead { display: grid; grid-template-columns: 2.2em minmax(0,1fr) 5em 5em 6.2em 6.2em; gap: 8px;
     padding: 4px; font-size: .74rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em;
     color: var(--text-muted); border-bottom: 1px solid var(--border-strong); }
-  .thead span:nth-child(n+3) { text-align: right; }
+  .thead span:nth-child(n+3) { text-align: center; }
+  .thead span:last-child { text-align: right; }
+  /* Planning notes (Sam, 2026-08-31): sections that exist for Sam, not for the
+     eventual tab — tinted so nobody edits their language as if it were tab copy. */
+  .meta { background: rgba(139,104,0,.06); border-color: rgba(139,104,0,.28); }
+  p.lede.meta { border: 1px solid rgba(139,104,0,.28); border-radius: var(--radius);
+    padding: 14px 16px; }
+  .meta-tag { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--mustard-text); margin-bottom: 6px; }
   @media (max-width: 700px) {
     .inst > summary, .thead { grid-template-columns: minmax(0,1fr) 6.2em 6.2em; }
     .inst .n, .inst .ftes, .thead span:nth-child(1), .thead span:nth-child(3), .thead span:nth-child(4) { display: none; }
@@ -105,7 +115,8 @@
 
 <p class="kicker">Proposed simplified tab · one pool adopted 2026-08-31 · reaction visual</p>
 <h1>CPL Implementation Funding</h1>
-<p class="lede">The Implementation Funding tab as it would look with your three
+<p class="lede meta"><span class="meta-tag">Planning note — for Sam, not tab copy</span>
+The Implementation Funding tab as it would look with your three
 simplification phases implemented under the adopted one-pool model: the summary
 answers "where do I stand" before anything else, the funding reads top to
 bottom, every deeper detail folds open in place, and each institution is one
@@ -135,7 +146,8 @@ port to the live tab follows it.</p>
 </section>
 
 <p class="kicker">Two lanes on one face — ruled 2026-08-31</p>
-<section class="card">
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
   <p style="margin:0 0 8px">One pool, one solve — and every award decomposes on
   its face into a <strong>credit share</strong> and a <strong>noncredit
   share</strong>, by each lane's share of the institution's FTES. The noncredit
@@ -156,9 +168,10 @@ port to the live tab follows it.</p>
   <div class="prios" id="prios"></div>
   <p class="note" style="margin-top:12px">Each priority funds its target at
   0.50× the 2026-27 state rate of $5,649.63 — an effective $2,824.82 per CPL
-  FTES. A college earns cap × (actual ÷ target) on each priority, capped at
-  100%; unearned dollars roll forward. Units convert at 30 semester units per
-  FTES (45 on a quarter calendar).</p>
+  FTES. A college's credit share earns (actual ÷ target) on each priority, up
+  to 100%; its noncredit share earns against the noncredit measures once their
+  feeds report; unearned dollars roll forward. Units convert at 30 semester
+  units per FTES (45 on a quarter calendar).</p>
   <details class="fold"><summary>the earning rules for noncredit</summary>
     <ul>
       <li><strong>A college's noncredit share</strong> of its combined award earns
@@ -187,7 +200,8 @@ port to the live tab follows it.</p>
   <div class="insts" id="insts" role="region" aria-label="Every institution's max award, credit and noncredit"></div>
 </section>
 
-<section class="card">
+<section class="card meta">
+  <span class="meta-tag">Planning note — for Sam, not tab copy</span>
   <details class="fold"><summary>method and sources</summary>
     <ul>
       <li>Allocations use the tab's own bounded split (proportional to total
@@ -267,18 +281,23 @@ var atMax = ROWS.filter(function (r) { return r.atMax; });
 var effRate = RATE * FACTOR;
 var totalEarned = 0, ncoAlloc = 0, noData = 0;
 ROWS.forEach(function (r) {
+  // the award's two lanes, by FTES share — the restriction's own arithmetic
+  r.ncAward = r.size > 0 ? r.alloc * r.nc / r.size : 0;
+  r.crAward = r.alloc - r.ncAward;
   r.prios = SHARES.map(function (p, i) {
-    var money = r.alloc * p.share;
-    var target = money / effRate;                     // window target, FTES
+    var crM = r.crAward * p.share, ncM = r.ncAward * p.share;
+    var target = crM / effRate;                       // credit-share target, FTES
     var perf = PERF[r.name];
     var actual = perf ? perf[i] / 30 : null;          // units → FTES
     var frac = (actual != null && target > 0) ? Math.min(1, actual / target) : null;
-    return { money: money, target: target, actual: actual, frac: frac };
+    // only the credit share earns against these actuals; the noncredit share
+    // reads $0 until the noncredit measures report (ruled 2026-08-31)
+    return { crM: crM, ncM: ncM, target: target, actual: actual, frac: frac };
   });
   if (r.nco) { r.earned = 0; ncoAlloc += r.alloc; }
   else if (!PERF[r.name]) { r.earned = 0; noData++; }
   else {
-    r.earned = r.prios.reduce(function (s, p) { return s + (p.frac || 0) * p.money; }, 0);
+    r.earned = r.prios.reduce(function (s, p) { return s + (p.frac || 0) * p.crM; }, 0);
     totalEarned += r.earned;
   }
 });
@@ -298,7 +317,7 @@ var stw = SHARES.map(function (p, i) {
   var actual = 0;
   ROWS.forEach(function (r) { var pf = PERF[r.name]; if (pf) actual += pf[i] / 30; });
   var earned = 0;
-  ROWS.forEach(function (r) { if (!r.nco) earned += (r.prios[i].frac || 0) * r.prios[i].money; });
+  ROWS.forEach(function (r) { if (!r.nco) earned += (r.prios[i].frac || 0) * r.prios[i].crM; });
   return { money: money, target: target, actual: actual, earned: earned };
 });
 
@@ -354,7 +373,7 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
 var sorted = ROWS.slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
 document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
   var chips = "";
-  if (r.nco) chips += '<span class="chip nco" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">noncredit-only</span>';
+  if (r.nco) chips += '<span class="chip nco" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
   if (r.atMin) chips += '<span class="chip min" title="This institution\u2019s share of the pool by size came out below $150,000, so it is brought up to the base award \u2014 funded from within the same pool.">at base</span>';
   if (r.atMax) chips += '<span class="chip max" title="This institution\u2019s share of the pool by size came out above $400,000, so it is held at the cap \u2014 the difference stays in the pool for everyone else.">at cap</span>';
   var detail;
@@ -368,24 +387,26 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
   } else {
     var hasData = !!PERF[r.name];
     detail = "<table><caption class=\"dnote\" style=\"text-align:left;caption-side:top\">" +
-      (hasData ? "Earned so far: <strong>" + fm(r.earned) + "</strong> of its " + fm(r.alloc) + " max award" :
+      (hasData ? "Earned so far: " + fm(r.earned) + " of its " + fm(r.alloc) + " max award" :
         "No MAP data for this college in today’s pull — actuals show as no data yet") + "</caption>" +
-      "<colgroup><col style=\"width:34%\"><col style=\"width:22%\"><col style=\"width:22%\"><col style=\"width:22%\"></colgroup>" +
-      '<tr><th scope="col">Priority</th><th scope="col">Funding</th><th scope="col">Target</th><th scope="col">Actual</th></tr>' +
+      "<colgroup><col style=\"width:24%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"><col style=\"width:19%\"></colgroup>" +
+      '<tr><th scope="col">Priority</th>' +
+      '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
+      '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
+      '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
+      '<th scope="col">Actual</th></tr>' +
       r.prios.map(function (p, i) {
-        return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.money) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
+        return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
           (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td></tr>";
       }).join("") + "</table>" +
-      (r.nc > 0 ? '<p class="dnote"><strong>Noncredit share of this award: ' + fm(r.alloc * r.nc / r.size) + "</strong> (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
+      (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
   }
-  var ncAward = r.size > 0 ? r.alloc * r.nc / r.size : 0;
-  var crAward = r.alloc - ncAward;
   return '<details class="inst"><summary><span class="n">' + (idx + 1) + '</span>' +
     '<span class="who">' + r.name + chips + "</span>" +
     '<span class="ftes">' + Math.round(r.size - r.nc).toLocaleString("en-US") + "</span>" +
     '<span class="ftes">' + Math.round(r.nc).toLocaleString("en-US") + "</span>" +
-    '<span class="amt">' + fm(crAward) + "</span>" +
-    '<span class="amt nc">' + fm(ncAward) + "</span></summary>" +
+    '<span class="amt">' + fm(r.crAward) + "</span>" +
+    '<span class="amt nc">' + fm(r.ncAward) + "</span></summary>" +
     '<div class="detail">' + detail + "</div></details>";
 }).join("");
 </script>
