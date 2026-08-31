@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 754,
-    "bytes": 7995412,
-    "over_budget": 4,
+    "bytes": 7994276,
+    "over_budget": 3,
     "handoff_max": 214,
     "always_loaded_files": 1,
     "always_loaded_bytes": 54661,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 128972,
-        "over": 1
+        "bytes": 127836,
+        "over": 0
       },
       "handoff": {
         "files": 188,
@@ -56,12 +56,12 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
+      "oversized_doc": 3,
       "vault_heavy_path": 45
     },
     "vault": {
       "files": 2450,
-      "bytes": 1263495594,
+      "bytes": 1263494458,
       "heavy_bytes": 600163109,
       "heavy_share": 0.475,
       "ignore_filters": [
@@ -139,19 +139,6 @@
       },
       "message": "150,822 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/exhibit_canonicalization_lessons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 13088,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 1088,
-        "ratio": 1.09
-      },
-      "message": "13,088 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "oversized_doc",
