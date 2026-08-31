@@ -84,6 +84,19 @@
 // is $25,240,308 ÷ 119. Under this file's model the correct figures are
 // avg $210,785 / min $150,000 / max $623,871.
 //
+// 2026-08-31 — ONE POOL ADOPTED (Sam). The two-lane model above is HISTORY:
+// the $25,240,308 to institutions is ONE pool over every institution — the 115
+// colleges plus the noncredit-only three — sized by combined credit +
+// noncredit FTES, base $150,000 / cap $400,000 per institution on the COMBINED
+// award (floor_window/cap_window below). The noncredit carve-out and the three
+// NC dials (feeder_carveout / nc_threshold_ftes / nc_floor_window /
+// nc_cap_window) are RETIRED — the fields remain below for config-shape
+// stability but cpl_funding.js reads none of them. Every award decomposes into
+// credit and noncredit shares by FTES share; the noncredit share is restricted
+// to the noncredit measures, and the noncredit-only institutions earn by
+// origination (no advances — N2 b). Feeders carry `origin_scope`/`district`
+// for the origination feed's ruled scoping.
+//
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
 // and bump model_version. The prior builder lives in git history if a full
@@ -107,10 +120,10 @@ window.CPL_FUNDING = {
   "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before noncredit carve-out)",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT SUPPORT (carve-out)",
-  "floor_window": 175000.0,
-  "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
+  "floor_window": 150000.0,
+  "floor_window_label": "BASE AWARD (per institution, combined, window floor)",
   "cap_window": 400000.0,
-  "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",
+  "cap_window_label": "CAP (per institution, combined, window ceiling)",
   "nc_threshold_ftes": 500.0,
   "nc_threshold_ftes_label": "NONCREDIT ENTRY THRESHOLD (annual noncredit FTES)",
   "nc_floor_window": 25000.0,
