@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funding Tab Consolidations</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — single-theme light by design.
+     Same block as docs/visuals/2026-08-31-if-tab-simplified.html; contrast was
+     computed there with prototype/check_contrast.py, not claimed. */
+  :root {
+    --paper: #F4F2ED; --text-strong: #1C1C1A; --text-body: #3A3A36;
+    --text-muted: #5C5C55; --surface-opaque: #FFFFFF; --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14); --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000; --cobalt: #0047AB; --hunter: #2C601A;
+    --mustard-text: #8B6800; --focus-ring: var(--cobalt); --radius: 14px;
+    /* The CO seal blue, for the one box the tab paints solid today. */
+    --seal-blue: #002F6D; --white: #FFFFFF;
+  }
+  html { color-scheme: light; }
+  body { background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px;
+    line-height: 1.55; margin: 0; padding: 0 16px 64px; }
+  .wrap { max-width: 940px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque);
+    color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2, h3, h4 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.3rem; margin: 0 0 4px; }
+  h3 { font-size: 1rem; margin: 18px 0 4px; }
+  h4 { font-size: .92rem; margin: 0 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 34px; }
+  .titleline { font-size: .9rem; color: var(--text-muted); margin: 2px 0 0; }
+  .lede { font-size: 1.05rem; }
+  .note { font-size: .9rem; color: var(--text-muted); }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card.ask { border: 1.5px solid var(--border-strong); }
+  .num { display: inline-block; min-width: 1.9em; font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700; color: var(--cobalt); }
+  /* Verdict lines — the reply-by-number contract (working_with_claude_code §11). */
+  .verdict { margin: 12px 0 0; padding: 10px 12px; background: var(--surface-subtle);
+    border-left: 3px solid var(--cobalt); border-radius: 0 8px 8px 0; font-size: .92rem; }
+  .verdict code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .88em;
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
+  .prop { border-left: 3px solid var(--hunter); background: var(--surface-subtle);
+    padding: 10px 12px; border-radius: 0 8px 8px 0; margin: 12px 0 0; }
+  .prop .plab, .verdict .plab { display: block; font-size: .7rem; font-weight: 700;
+    letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 4px; }
+  /* Comparison pair — current beside proposed, stacking under ~700px. */
+  .pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 12px 0 0; }
+  .pane { border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px;
+    background: var(--surface-subtle); }
+  .pane .plab { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .pane.now { background: var(--surface-opaque); }
+  table { border-collapse: collapse; width: 100%; font-size: .88rem; }
+  .tscroll { overflow-x: auto; margin: 10px 0 0; }
+  .tscroll table { min-width: 560px; }
+  th { text-align: left; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em;
+    color: var(--text-muted); font-weight: 700; padding: 5px 8px; border-bottom: 1px solid var(--border-strong); }
+  td { padding: 5px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+  .rep { color: var(--crimson); font-weight: 700; }
+  .keep { color: var(--hunter); font-weight: 700; }
+  /* The flat ledger being proposed — the shape from the 2026-08-31 mock. */
+  .stack { list-style: none; margin: 8px 0 0; padding: 0; font-variant-numeric: tabular-nums; }
+  .stack li { display: flex; justify-content: space-between; gap: 12px; padding: 6px 0;
+    border-top: 1px solid var(--border); flex-wrap: wrap; }
+  .stack li:first-child { border-top: none; }
+  .stack .amt { font-weight: 700; color: var(--text-strong); white-space: nowrap; }
+  .stack .sub { flex-basis: 100%; font-size: .82rem; color: var(--text-muted); }
+  .stack .tot { border-top: 1.5px solid var(--border-strong); }
+  .window { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+    font-variant-numeric: tabular-nums; margin-top: 4px; }
+  .window .big { font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.5rem; color: var(--text-strong); }
+  /* The seven boxes as they ship today, drawn small so the density is the point. */
+  .boxes { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; margin-top: 8px; }
+  .box { border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px;
+    background: var(--surface-opaque); font-size: .78rem; }
+  .box .bv { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1rem;
+    color: var(--text-strong); font-variant-numeric: tabular-nums; display: block; }
+  .box.hero { background: var(--seal-blue); border-color: var(--seal-blue); }
+  .box.hero, .box.hero .bv { color: var(--white); }
+  .band { border: 1px solid var(--border); border-radius: 10px; margin: 10px 0 0;
+    background: var(--surface-opaque); }
+  .band .bh { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline;
+    padding: 8px 12px; border-bottom: 1px solid var(--border); background: var(--surface-subtle);
+    border-radius: 10px 10px 0 0; }
+  .band .bk { font-weight: 700; color: var(--text-strong); }
+  .band .bcite { font-size: .76rem; color: var(--text-muted); }
+  .band .btot { margin-left: auto; font-size: .84rem; font-variant-numeric: tabular-nums; }
+  .band .bb { padding: 10px 12px; }
+  .band blockquote { margin: 0 0 8px; font-size: .86rem; color: var(--text-muted); font-style: italic; }
+  .ev { margin: 8px 0 0; padding: 8px 10px; border: 1px dashed var(--border-strong);
+    border-radius: 8px; font-size: .86rem; background: var(--surface-subtle); }
+  .ev div { margin: 3px 0; }
+  .evk { font-weight: 700; color: var(--text-strong); }
+  .pcard { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px;
+    background: var(--surface-subtle); font-size: .86rem; margin: 8px 0 0; }
+  .pcard .ptitle { font-weight: 700; color: var(--text-strong); }
+  details.fold { margin-top: 10px; }
+  details.fold > summary { cursor: pointer; font-weight: 700; font-size: .88rem; color: var(--cobalt);
+    list-style: none; }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before { content: "Show "; }
+  details.fold[open] > summary::before { content: "Hide "; }
+  details.fold ul { margin: 8px 0 0; padding-left: 1.2em; font-size: .9rem; color: var(--text-body); }
+  details.fold li { margin: 5px 0; }
+  ul.plain { padding-left: 1.15em; }
+  ul.plain li { margin: 5px 0; }
+  .done { border-left: 3px solid var(--hunter); padding-left: 12px; }
+  @media print { .skip { display: none; } details { display: block; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#item1">Skip to the first decision</a>
+<div class="wrap">
+
+<p class="kicker">Decision sheet · CPL Implementation Funding tab</p>
+<h1>Two consolidations</h1>
+<p class="titleline">Session 219 · 2026-09-01 · reply by number. Figures are the tab as rendered
+on 2026-09-01, one pool, Year&nbsp;1.</p>
+
+<p class="lede">Two of your seven items asked for advice rather than an edit &mdash; whether the
+priority boxes can absorb the Ed.&nbsp;Code boxes, and whether the flat funding ledger you remember
+was real. Both answers are yes, with a qualification each. The other five shipped.</p>
+
+<h2 class="kicker" style="margin-top:30px">Already shipped in this branch</h2>
+<section class="card done">
+  <ul class="plain" style="margin:0">
+    <li><strong>The four distractions in the college detail are gone</strong> &mdash; the headcount
+      aside, the base and cap tails that re-explained the rule, the parenthetical after
+      &ldquo;Baseline eligibility&rdquo;, and the reserve sentence that restated the gate.</li>
+    <li><strong>Targets and current numbers now read.</strong> They were always rendered &mdash; the
+      table was a grid item landing in a 240&nbsp;px column and scrolling 620&nbsp;px of content
+      sideways inside it. It spans the full detail width now, and carries a new
+      <strong>To go</strong> column: the distance to the target and the funding that distance
+      would earn.</li>
+    <li><strong>The red gate mark is gone</strong> from the institution row &mdash; the Elig pie
+      beside it already says the same thing.</li>
+    <li><strong>Confirm Participation</strong>, no pencil, on both the row control and the one
+      inside the expand.</li>
+  </ul>
+</section>
+
+<h2 class="kicker" id="item1">Decision 1</h2>
+<section class="card ask">
+  <h2><span class="num">1.</span> Fold the Ed.&nbsp;Code goal cards into the priority bands</h2>
+
+  <h3>What it is</h3>
+  <p>The section already became one section on 2026-09-01: three bands &mdash; (A)&nbsp;Access,
+  (B)+(C)&nbsp;Success, (D)&nbsp;Opportunities &mdash; with the priority cards inside them, and the
+  four statutory goal cards moved one click down into <em>Statutory reporting detail</em>. Your
+  question is whether that fold can go away entirely and everything live in the bands.</p>
+
+  <h3>What actually repeats</h3>
+  <p class="note">Element by element, comparing the band head and priority cards against the goal
+  card for the same goal.</p>
+  <div class="tscroll" role="region" aria-label="What repeats between the goal cards and the bands" tabindex="0">
+  <table>
+    <thead><tr><th scope="col">Element in the goal card</th><th scope="col">Already on the band or its cards?</th><th scope="col">Verdict</th></tr></thead>
+    <tbody>
+      <tr><td>Goal key, name and Ed.&nbsp;Code citation</td><td>Band head carries all three</td><td class="rep">repeats</td></tr>
+      <tr><td>The statute quoted verbatim</td><td>Band head carries it</td><td class="rep">repeats</td></tr>
+      <tr><td>&ldquo;What funds it&rdquo; &mdash; per-priority funding for the window</td><td>Every priority card prints its own; the band head prints the sum</td><td class="rep">repeats</td></tr>
+      <tr><td>&ldquo;What funds it&rdquo; &mdash; CPL Projects &amp; Innovation, and the tagged projects</td><td>Only for goal (D), whose band note names it in prose</td><td class="keep">partly</td></tr>
+      <tr><td>&ldquo;How it is evidenced&rdquo; &mdash; the measured / not-measured state</td><td>Nowhere. The metric line says what is measured, never whether the goal has a measure at all</td><td class="keep">keep</td></tr>
+      <tr><td>(A) &mdash; &ldquo;equitably&rdquo; is not measured here, by design</td><td>Nowhere else</td><td class="keep">keep</td></tr>
+      <tr><td>(C) &mdash; demonstrated, not directly measured, with the story counts</td><td>Nowhere else</td><td class="keep">keep</td></tr>
+      <tr><td>The Activities register note &mdash; 32 named projects and their goal tags</td><td>Nowhere else</td><td class="keep">keep</td></tr>
+      <tr><td>The two openers &mdash; the &sect;78093.2(d)(2) condition, and the four frames this sits inside</td><td>Nowhere else; both are section-level, not per-goal</td><td class="keep">keep</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="note" style="margin-top:10px">So roughly half of the fold is a second printing of the
+  band, and half has no other home. The one structural catch: <strong>(B) and (C) are separate
+  goals sharing one band</strong>, and they differ on precisely the axis
+  &sect;78093.2(d)(2) asks about &mdash; (B) is earned against a MAP measure, (C) is funded and
+  deliberately not measured. A band-level evidence statement cannot say both.</p>
+
+  <div class="prop"><span class="plab">Proposed</span>
+    Delete the duplicated shell, move the unique content up into the band it belongs to, and keep
+    the (d)(2) account as a four-row table rather than four cards. The tab loses one card set and
+    keeps every fact.</div>
+
+  <h3>What that looks like</h3>
+  <div class="pair">
+    <div class="pane now"><span class="plab">Today &mdash; the Success band, then the same goals again in the fold</span>
+      <div class="band">
+        <div class="bh"><span class="bk">(B) + (C) Success</span>
+          <span class="bcite">Ed. Code &sect;78093.2(d)(1)(B) and (C)</span>
+          <span class="btot">33% &mdash; <strong>$8,329,302</strong> Total Possible</span></div>
+        <div class="bb">
+          <blockquote>&ldquo;Increasing completion through credit for prior learning awards&rdquo; &middot;
+          &ldquo;Advancing career attainment through credit for prior learning&rdquo;</blockquote>
+          <div class="pcard"><span class="ptitle">Priority 3: Completion</span> &mdash; 33% &middot;
+          $8,329,302 &middot; metric, target, actual, Current Total</div>
+        </div>
+      </div>
+      <p class="note" style="margin:10px 0 0">&hellip;and one click down, two more cards headed
+      <strong>(B) Completion</strong> and <strong>(C) Career attainment</strong>, each re-quoting the
+      statute, each re-listing Priority&nbsp;3&rsquo;s $8,329,302 under &ldquo;What funds it&rdquo;.</p>
+    </div>
+
+    <div class="pane"><span class="plab">Proposed &mdash; one band, the evidence per goal inside it</span>
+      <div class="band">
+        <div class="bh"><span class="bk">(B) + (C) Success</span>
+          <span class="bcite">Ed. Code &sect;78093.2(d)(1)(B) and (C)</span>
+          <span class="btot">33% &mdash; <strong>$8,329,302</strong> Total Possible</span></div>
+        <div class="bb">
+          <blockquote>&ldquo;Increasing completion through credit for prior learning awards&rdquo; &middot;
+          &ldquo;Advancing career attainment through credit for prior learning&rdquo;</blockquote>
+          <div class="pcard"><span class="ptitle">Priority 3: Completion</span> &mdash; 33% &middot;
+          $8,329,302 &middot; metric, target, actual, Current Total</div>
+          <div class="ev">
+            <div><span class="evk">(B) Completion</span> &mdash; performance-measured. Earned against
+            Priority&nbsp;3 (transcribed), per the daily MAP feed.</div>
+            <div><span class="evk">(C) Career attainment</span> &mdash; no campus performance measure.
+            Demonstrated through My CPL Stories and funded projects, not scored on this tab.
+            <details class="fold" style="margin-top:4px"><summary>why</summary>
+              <ul><li>The Initiative shows support for career-attainment outcomes without attempting to
+              measure recipients&rsquo; attainment directly. The card&rsquo;s live story counts move up
+              with it &mdash; how many published stories end at an educational destination against how
+              many name a job or role.</li></ul>
+            </details></div>
+          </div>
+        </div>
+      </div>
+      <p class="note" style="margin:10px 0 0">The fold that remains holds one four-row table &mdash;
+      goal, what funds it, how it is evidenced &mdash; which is the artifact
+      &sect;78093.2(d)(2) actually asks for, and the only place all four goals read in statute
+      order.</p>
+    </div>
+  </div>
+
+  <div class="verdict"><span class="plab">Reply</span>
+    <code>1 yes</code> &middot; <code>1 edit: &hellip;</code> &middot;
+    <code>1 fold: drop the (d)(2) table too</code> &middot; <code>1 dismiss</code>
+    <br><span class="note">A note on <code>fold</code>: the (d)(2) table is the only place the four
+    goals appear together with their funding, and nothing in the Report sub-view carries it. Dropping
+    it means the demonstration gets rebuilt by hand when it is asked for.</span>
+  </div>
+</section>
+
+<h2 class="kicker" id="item2">Decision 2</h2>
+<section class="card ask">
+  <h2><span class="num">2.</span> The flat funding ledger &mdash; you are not imagining it</h2>
+
+  <h3>What it is</h3>
+  <p>It is committed:
+  <a href="2026-08-31-if-tab-simplified.html"><code>docs/visuals/2026-08-31-if-tab-simplified.html</code></a>,
+  section <em>Funding Breakdown</em>. Four lines, right-aligned amounts, a muted sub-line where one
+  is needed, and the named projects behind a fold. Base and cap were lifted out into their own
+  section with two folds under them. None of it reached the tab, which still ships seven boxes.</p>
+
+  <h3>Why the port stopped there</h3>
+  <p>The mock is read-only. The seven boxes are your editing surface &mdash; the amount and the label
+  in each are inline editors, with a control to drop a box from the funding math and another to hide
+  it from the public college page, plus the two Add buttons. A flat list of text looked like it would
+  cost that, so it stayed. It does not: an inline editor sits in a ledger row exactly as it sits in a
+  box, and the row-end controls come along.</p>
+
+  <h3>The second thing worth saying</h3>
+  <p>Two of the seven boxes are not ledger lines at all. <strong>1,151,171 institution credit +
+  noncredit FTES</strong> is the allocation basis, and <strong>$5,649.63 per CPL FTES</strong> is the
+  reimbursement rate &mdash; both context for how an allocation is computed, neither one a sum that
+  nets down to the total. Standing in the money ledger they read as though they do.</p>
+
+  <div class="prop"><span class="plab">Proposed</span>
+    Port the ledger, keep every dial editable in place, and split the section three ways: the money
+    ledger, the base and cap on their own line, and the two context figures moved down into
+    <em>How an allocation is computed</em>, where a reader is already asking about them.</div>
+
+  <h3>What that looks like</h3>
+  <div class="pair">
+    <div class="pane now"><span class="plab">Today &mdash; seven boxes, four kinds of thing</span>
+      <div class="boxes">
+        <div class="box"><span class="bv">35,000,000</span>2026-27 CPL one-time funding</div>
+        <div class="box"><span class="bv">800,000</span>CO staff &mdash; deducted</div>
+        <div class="box"><span class="bv">8,959,692</span>CPL Projects &amp; Innovation &mdash; deducted</div>
+        <div class="box hero"><span class="bv">$25,240,308</span>Total credit and noncredit potential awards</div>
+        <div class="box"><span class="bv">150,000 to 400,000</span>Base award &mdash; Cap</div>
+        <div class="box"><span class="bv">1,151,171</span>Institution credit + noncredit FTES</div>
+        <div class="box"><span class="bv">5,649.63</span>Reimbursement rate per CPL FTES</div>
+      </div>
+      <p class="note" style="margin:10px 0 0">A revenue source, two deductions, a computed total, a
+      pair of dials, and two context figures &mdash; all in one visual register, so the eye has to
+      sort them.</p>
+    </div>
+
+    <div class="pane"><span class="plab">Proposed &mdash; the ledger reads down; the dials still edit</span>
+      <h4 style="margin-top:0">Funding Breakdown</h4>
+      <ul class="stack">
+        <li><span>2026-27 CPL one-time funding</span><span class="amt">$35,000,000</span></li>
+        <li><span>CO staff &mdash; 2.0 FTE &times; 2 yrs</span><span class="amt">&minus; $800,000</span></li>
+        <li><span>CPL Projects &amp; Innovation</span><span class="amt">&minus; $8,959,692</span>
+          <span class="sub">Sourced from the Budget ledger. Named projects &mdash; show the list</span></li>
+        <li class="tot"><span><strong>Total credit and noncredit potential awards</strong></span>
+          <span class="amt">$25,240,308</span>
+          <span class="sub">2026&ndash;2028, disbursed up front in 2026-27; institutions receive
+          $12,620,154/yr. No carve-out line: $1,783,399 of it is noncredit, restricted to noncredit
+          outcomes.</span></li>
+      </ul>
+      <h4 style="margin-top:16px">Funding base and cap</h4>
+      <div class="window"><span class="big">$150,000</span><span>to</span><span class="big">$400,000</span></div>
+      <p class="note" style="margin:4px 0 0">per institution, combined credit + noncredit, for the
+      2026&ndash;2028 window &middot; 118 institutions &middot; 51 supported by minimum base funding
+      &middot; 7 capped at maximum funding &middot; average max award $213,901</p>
+      <details class="fold"><summary>the institutions with base and cap funding</summary>
+        <ul><li>Unchanged &mdash; the same fold that is there now.</li></ul></details>
+      <p class="note" style="margin:12px 0 0">Every amount and every label stays an inline editor.
+      The remove and public-visibility controls sit at the end of their row. Add revenue source and
+      Add deduction sit under the ledger as they do now.</p>
+    </div>
+  </div>
+
+  <div class="verdict"><span class="plab">Reply</span>
+    <code>2 yes</code> &middot; <code>2 edit: &hellip;</code> &middot;
+    <code>2 fold: ledger only, leave base and cap where they are</code> &middot;
+    <code>2 dismiss</code>
+  </div>
+</section>
+
+<h2 class="kicker">One more, unasked</h2>
+<section class="card">
+  <p style="margin-top:0">Adding <strong>To go</strong> took the expand&rsquo;s priority table to eight
+  columns, and three of them are money: <strong>CR funding</strong>, <strong>NC funding</strong>, and
+  <strong>Total Possible</strong> &mdash; which is the first two added together. That is the same
+  redundancy you struck four times in the detail today, and it is the one column set a college has to
+  read to answer &ldquo;what could we earn here.&rdquo; It would collapse to a single
+  <strong>Total Possible</strong> with the noncredit share as its sub-line, the way the award cells in
+  the main table already carry theirs.</p>
+  <div class="verdict"><span class="plab">Reply</span>
+    <code>3 yes &mdash; collapse the three money columns to one</code> &middot;
+    <code>3 dismiss &mdash; the lane split is worth the width</code></div>
+</section>
+
+<p class="note" style="margin-top:28px">Kept per <code>docs/visuals/README.md</code>. Decisions
+recorded here when they land.</p>
+</div>
+</body>
+</html>

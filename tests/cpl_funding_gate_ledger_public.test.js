@@ -138,8 +138,11 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
     !/^\s*\$0\s*$/.test(gatedSub.textContent));
   check("S5: ...and its hover says plainly that nothing is withheld yet",
     !!gatedSub && /nothing is withheld yet/i.test(gatedSub.getAttribute("title") || ""));
-  check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
-    !!gatedRow.querySelector(".cf-gatechip"));
+  check("S5: the gate is visible WITHOUT a hover — the Elig pie plus the award cell's own words",
+    !!gatedRow.querySelector("svg.cf-eligpie") &&
+    /confirm participation/i.test(gatedRow.querySelector("td.cf-award").textContent));
+  check("S5: …and the ⛔ chip that duplicated the pie is gone (Sam, 2026-09-01)",
+    !gatedRow.querySelector(".cf-gatechip") && gatedRow.innerHTML.indexOf("⛔") === -1);
   check("S5: the gated cell's hover explains the dollars roll forward",
     /roll forward|held in reserve/i.test(gatedRow.querySelector("td.cf-award").getAttribute("title") || "") ||
     /roll forward|reserve/i.test((gatedSub && gatedSub.getAttribute("title")) || ""));
