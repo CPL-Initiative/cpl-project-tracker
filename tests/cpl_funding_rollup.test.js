@@ -167,24 +167,27 @@ const DISTRICTS = (function () {
   T.render();
   check("Y1-P1 card hints actuals arrive with the daily refresh (measurable metric)",
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("next daily data refresh") !== -1);
-  check("Y1-P2 card carries the exhibit-linkage data-gap label",
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("data gap") !== -1 &&
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("STATEWIDE credit recommendation") !== -1);
-  check("Y1-P3 (Portal/Landing) is no longer a hard data gap — it's the wired portal metric",
-    doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("data gap") === -1 &&
+  // Reworded 2026-09-01 (Sam): the card reads a plain "no data yet"; the WHY
+  // lives only in the curator-only metric-wiring diagnostic.
+  check("Y1-P2 card reads a plain 'no data yet' — the gap reason no longer renders on the card",
+    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("no data yet") !== -1 &&
+    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("STATEWIDE credit recommendation") === -1);
+  check("Y1-P3 (Portal/Landing) is no longer a hard gap — it's the wired portal metric",
+    doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("no data yet") === -1 &&
     doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("Portal") !== -1);
-  // Per-priority detail (the expand — the P-columns' successor): the
-  // exhibit-linkage P2 row reads "data gap"; the wired-but-feedless P3 row
-  // reads pending — both say they advance, neither reads as a measured zero.
+  // Per-priority detail (the expand — the P-columns' successor). Since the
+  // 2026-09-01 rewording, gap and pending both read a plain "no data yet" on
+  // the SURFACE (the status distinction survives in the API and the curator
+  // diagnostic); the durable guard is that neither reads as a measured zero.
   T._state.open["c:" + D.colleges[0].college] = true;
   T.render();
   const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
   const act = function (i) {
     return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[4].textContent;
   };
-  check("P2 (exhibit-linkage) detail reads 'data gap'; P3 (portal, feed pending) reads 'pending' not 'gap'",
-    act(1).indexOf("data gap") !== -1 &&
-    act(2).indexOf("pending") !== -1 && act(2).indexOf("gap") === -1);
+  check("P2 (gap) and P3 (pending) detail rows both read 'no data yet' — never a measured zero",
+    act(1).indexOf("no data yet") !== -1 && act(1).indexOf("0 · 0%") === -1 &&
+    act(2).indexOf("no data yet") !== -1 && act(2).indexOf("0 · 0%") === -1);
 }
 {
   // With a synthetic perf artifact.
@@ -233,8 +236,10 @@ const DISTRICTS = (function () {
     Array.from(alaDtl.querySelectorAll("tr"))[1].querySelectorAll("td")[4].textContent.indexOf("300") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
-  check("Y2 cards carry data-gap labels (MIS match-back)",
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("match-back") !== -1);
+  // The gap REASON ("MIS match-back") left the cards with the 2026-09-01
+  // rewording — it lives in the curator diagnostic; the card reads plainly.
+  check("Y2 cards read 'no data yet' (their metrics are unmeasured today)",
+    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("no data yet") !== -1);
 }
 
 // C9b — measurability follows the METRIC, not the slot position (Sam, 2026-07-23).
@@ -258,14 +263,13 @@ const DISTRICTS = (function () {
   } } });
   window.CPL_FUNDING_TAB.render();
   const cards = doc.querySelectorAll(".cplfund-prio .p");
-  check("reordered slot-0 (statewide eligibility) shows the exhibit-linkage data gap, not a number",
-    cards[0].textContent.indexOf("data gap") !== -1 &&
-    cards[0].textContent.indexOf("STATEWIDE credit recommendation") !== -1 &&
+  check("reordered slot-0 (statewide eligibility) reads 'no data yet', not a number",
+    cards[0].textContent.indexOf("no data yet") !== -1 &&
     cards[0].textContent.indexOf("16,807") === -1);
   check("reordered slot-1 (any transcribed) now carries the measurable actual (16,807 of target)",
     cards[1].textContent.indexOf("16,807") !== -1 && cards[1].textContent.indexOf("of target") !== -1);
   check("reordered slot-2 (Portal/Landing) carries the wired portal metric, not the eligibility gap",
-    cards[2].textContent.indexOf("data gap") === -1 &&
+    cards[2].textContent.indexOf("no data yet") === -1 &&
     cards[2].textContent.indexOf("STATEWIDE credit recommendation") === -1 &&
     cards[2].textContent.indexOf("Portal") !== -1);
 }

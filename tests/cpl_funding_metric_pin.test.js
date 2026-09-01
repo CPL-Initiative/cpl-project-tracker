@@ -165,10 +165,13 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   } } });
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
-  check("3e: an undelivered NC source earns $0 and says 'no feed'",
-    P.length === 3 && /no feed/.test(P[0][4]) && P[0][5] === "$0");
-  check("3e2: it does NOT advance the full cap — the contrast is the data-gap row beside it",
-    P.length === 3 && !/no feed/.test(P[1][4]) && /gap/.test(P[1][4]));
+  check("3e: an undelivered NC source earns $0 and reads 'no data yet' (2026-09-01 wording)",
+    P.length === 3 && /no data yet/.test(P[0][4]) && P[0][5] === "$0");
+  // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
+  // contrast that matters (the gap row's Current Total pays, the undelivered
+  // row's is strictly $0) is 3e4's check, on the dollars.
+  check("3e2: the gap row beside it also reads 'no data yet' — never a measured zero",
+    P.length === 3 && /no data yet/.test(P[1][4]) && !/0 · 0%/.test(P[1][4]));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
     P.length === 3 && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
@@ -189,8 +192,9 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // "The feed carries no such measure" and "this college posted nothing" are two
 // different zeros and the tab must not print them the same way. The surface is
 // the expand's Actual column now (one pool, 2026-08-31): "no feed" vs "0 · 0%".
-check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero)",
-  /status === "undelivered"\) act = "no feed"/.test(consumerSrc) &&
+check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
+      "'no data yet' vs '0 · 0%' since the 2026-09-01 rewording",
+  /status === "undelivered"\) act = "no data yet"/.test(consumerSrc) &&
   /status === "none"\) act = "0 &middot; 0%"/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
@@ -231,10 +235,14 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
 // statewide card names the true reason (the feed carries no such measure), and
 // the expand's undelivered branch is decided before any zero can render (3e3
 // proves it behaviorally).
-check("5d: an undelivered measure is blamed on the FEED, never on the college",
-  /the daily MAP feed does not carry this measure for anyone yet/.test(consumerSrc) &&
-  consumerSrc.indexOf('status === "undelivered") act = "no feed"') <
-    consumerSrc.indexOf('status === "gap") act ='));
+// Reworded 2026-09-01: the feed-blame SENTENCE left the surface with the
+// unshipped-feed sweep; the durable half of the guard is that an absent
+// measure still never renders as a college's measured zero (4d above), and
+// the undelivered branch still decides before the catch-all.
+check("5d: an undelivered measure never falls through to the catch-all label",
+  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') !== -1 &&
+  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') <
+    consumerSrc.indexOf('else act = "no data yet"'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a

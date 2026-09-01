@@ -212,7 +212,11 @@ rows now share one column template — in em they silently disagreed), the
 verbatim statute behind each goal card, the reworked Summary, funding
 vocabulary throughout, Draft memo and Save as PDF, and the Internal · Public
 view toggle above. <strong>Round 3:</strong> each priority's metric sits on the
-card surface, just below its share line; the strategies stay in the fold.</p>
+card surface, just below its share line; the strategies stay in the fold.
+<strong>Round 4 (2026-09-01):</strong> no mention of advances and no reference
+to a feed that is not live yet, anywhere in the copy; "Funding base and cap"
+with your two sentences, the fully-allocated line rendering only when the
+solve actually adjusted a share to a bound.</p>
 
 <details class="sect" open>
 <summary class="kicker" style="margin-top:20px">Summary</summary>
@@ -239,7 +243,7 @@ card surface, just below its share line; the strategies stay in the fold.</p>
 </details>
 
 <details class="sect" open>
-<summary class="kicker">The window — one base, one cap, every institution</summary>
+<summary class="kicker">Funding base and cap</summary>
 <section class="card">
   <div class="window"><span class="big">$150,000</span><span>to</span><span class="big">$400,000</span>
   <span class="note">per institution, combined credit + noncredit, for the 2026–2028 window</span></div>
@@ -288,12 +292,6 @@ card surface, just below its share line; the strategies stay in the fold.</p>
   so the credit program cannot draw it by doing credit work. On this page it
   appears in the Funding Breakdown, in the Summary, and in every institution's
   columns and expand.</p>
-  <p class="note" style="margin:8px 0 0"><strong>F1 ruled (2026-08-31):</strong>
-  the noncredit shares are listed from day one and simply read $0 earned until
-  the noncredit measures report — no interim policy needed, because the data
-  feeds are wired in before this page reaches colleges. Nothing publishes on
-  funding we cannot measure. The three noncredit-only institutions were already
-  ruled the same way — no advances, origination only (N2 b).</p>
 </section>
 </details>
 
@@ -304,23 +302,18 @@ card surface, just below its share line; the strategies stay in the fold.</p>
   <p class="note" style="margin-top:12px">Each priority funds its target at
   0.50× the 2026-27 state rate of $5,649.63 — an effective $2,824.82 per CPL
   FTES. A college's credit share earns (actual ÷ target) on each priority, up
-  to 100%; its noncredit share earns against the noncredit measures once their
-  feeds report; unearned dollars roll forward. Units convert at 30 semester
+  to 100%; its noncredit share earns against the noncredit measures; unearned
+  dollars roll forward. Units convert at 30 semester
   units per FTES (45 on a quarter calendar).</p>
   <details class="fold"><summary>the earning rules for noncredit</summary>
     <ul>
       <li><strong>A college's noncredit share</strong> of its combined award earns
-        against the noncredit priority measures; it is listed from day one and
-        reads $0 earned until those feeds report (ruled 2026-08-31).</li>
+        against the noncredit priority measures (ruled 2026-08-31).</li>
       <li><strong>The noncredit-only institutions earn by origination</strong> —
         CPL that originates from their programs and is transcribed at a credit
         college. NOCE and SDCCE's origination counts across their district's
         credit campuses; Calbright's counts statewide. The receiving college earns
         on the same CPL under its own measures — the same CPL credits both institutions by design (ruled 2026-08-31).</li>
-      <li><strong>No advances on origination</strong> (N2 b): a noncredit-only
-        institution draws only as its originated CPL actually posts, so the
-        origination feed (Origin + LocID2 on the Custom Reports) is the gate
-        between these campuses and any funding.</li>
     </ul>
   </details>
 </section>
@@ -456,13 +449,11 @@ card surface, just below its share line; the strategies stay in the fold.</p>
       <li>Calbright's noncredit FTES is the 1,000-FTES stand-in; nothing
         publishes or disburses on a placeholder size (N3 a).</li>
       <li>Statewide earned figures on this page sum the per-college computation
-        above; the live port will carry the tab's full earning machinery
-        (advances for unmeasured priorities included), so the earned line there
-        can read higher than here.</li>
+        above; the live port carries the tab's full earning machinery, so its
+        earned line can read higher than here.</li>
       <li>Total Possible = the ceiling: per priority, its credit and noncredit
         shares together; per institution, the max award; statewide, the
-        priority's full funding. Current Total = what is earned to date, and
-        the noncredit share reads $0 in it until its feeds report. Current
+        priority's full funding. Current Total = what is earned to date. Current
         never exceeds the Total Possible, and the gap between them is the incentive.</li>
       <li>Nothing on this page writes anywhere.</li>
     </ul>
@@ -592,7 +583,7 @@ document.getElementById("verdictList").innerHTML =
     " unearned rolls forward within the window.</li>" +
   "<li><strong>" + fm(NC_FACE.col + NC_FACE.trio) + " of the funding is noncredit</strong> — " +
     fm(NC_FACE.trio) + " at the three noncredit-only institutions plus " + fm(NC_FACE.col) +
-    " riding " + NC_FACE.n + " college awards, restricted to noncredit outcomes — listed from day one, reading $0 earned until the noncredit measures report.</li>";
+    " riding " + NC_FACE.n + " college awards, restricted to noncredit outcomes.</li>";
 
 document.getElementById("stack").innerHTML =
   '<li><span>One-time appropriation (Prop 98, 2026-27)</span><span class="amt">' + fm(TOTAL) + "</span></li>" +
@@ -602,10 +593,14 @@ document.getElementById("stack").innerHTML =
   '<li><span><strong>Total credit and noncredit potential awards</strong></span><span class="amt">' + fm(POOL) + "</span>" +
     '<span class="sub">No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split — ' + fm(NC_FACE.col + NC_FACE.trio) + ' of it is noncredit, restricted to the noncredit measures.</span></li>';
 
+// "Implementation funding is fully allocated" renders ONLY when the solve
+// actually adjusted a share to a bound (Sam, 2026-09-01) — with nobody at
+// base or cap nothing was redistributed and the sentence says nothing.
 document.getElementById("windowNote").textContent =
-  atMin.length + " institutions are brought up to the base and " + atMax.length +
-  " are held at the cap; base and cap are solved together, so the funding is still fully allocated. " +
-  "The average max award across " + ROWS.length + " institutions is " + fm(POOL / ROWS.length) + ".";
+  atMin.length + " institutions are supported by minimum base funding and " + atMax.length +
+  " are capped at maximum funding. " +
+  ((atMin.length + atMax.length) > 0 ? "Implementation funding is fully allocated. " : "") +
+  "The average award is " + fm(POOL / ROWS.length) + ".";
 document.getElementById("boundsList").innerHTML =
   "<li><strong>At the cap:</strong> " + atMax.map(function (r) { return r.name; }).join(" · ") + "</li>" +
   "<li><strong>At the base:</strong> " + atMin.length + " institutions — every proportional share below " +
@@ -622,7 +617,7 @@ document.getElementById("prios").innerHTML = SHARES.map(function (p, i) {
     "<dl>" +
     "<div><dt>Target (window)</dt><dd>" + f1(s.target) + " FTES</dd></div>" +
     "<div><dt>Actual so far</dt><dd>" + f1(s.actual) + " FTES</dd></div>" +
-    '<div title="What has been earned statewide on this priority to date — credit shares only; noncredit shares read $0 in it until their feeds report."><dt>Current Total</dt><dd>' + fm(s.earned) + "</dd></div>" +
+    '<div title="What has been earned statewide on this priority to date."><dt>Current Total</dt><dd>' + fm(s.earned) + "</dd></div>" +
     "</dl>" +
     '<details class="fold"><summary>the strategies</summary><ul>' +
     p.strategies.map(function (st) { return "<li>" + st + "</li>"; }).join("") +
@@ -642,8 +637,7 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
     detail = '<p class="dnote"><strong>Earns by origination</strong> — CPL originating from this ' +
       "institution and transcribed at a credit college" +
       (r.name === "Calbright" ? " anywhere in the state" : " across its district’s campuses") +
-      ". No advances: it draws only as originated CPL posts. Current Total: $0 · Total Possible: " + fm(r.alloc) +
-      ", its max award — unlocked by the origination feed." +
+      ". Current Total: $0 · Total Possible: " + fm(r.alloc) + ", its max award." +
       (r.name === "Calbright" ? " Its 1,000-FTES size is a stand-in; nothing disburses on a placeholder (N3 a)." : "") + "</p>";
   } else {
     var hasData = !!PERF[r.name];
@@ -654,17 +648,17 @@ document.getElementById("insts").innerHTML = sorted.map(function (r, idx) {
       "<colgroup><col style=\"width:10%\"><col style=\"width:14%\"><col style=\"width:14%\"><col style=\"width:13%\"><col style=\"width:17%\"><col style=\"width:15%\"><col style=\"width:17%\"></colgroup>" +
       '<tr><th scope="col">Priority</th>' +
       '<th scope="col" title="The credit share of this priority’s funding — earns against the credit actuals below.">CR funding</th>' +
-      '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
-      '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES; noncredit targets arrive with the noncredit feeds.">Target</th>' +
+      '<th scope="col" title="The noncredit share of this priority’s funding — restricted to the noncredit measures.">NC funding</th>' +
+      '<th scope="col" title="What the credit share funds at $2,824.82 per CPL FTES.">Target</th>' +
       '<th scope="col">Actual</th>' +
-      '<th scope="col" title="What has been earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding. The noncredit share reads $0 in it until its measures report.">Current Total</th>' +
+      '<th scope="col" title="What has been earned on this priority to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
       '<th scope="col" title="This priority’s full funding — its credit and noncredit shares together; the ceiling the Current Total can reach. Unearned funding rolls forward.">Total Possible</th></tr>' +
       r.prios.map(function (p, i) {
         var e = (p.frac || 0) * p.crM;
         return "<tr><td>P" + (i + 1) + "</td><td>" + fm(p.crM) + "</td><td>" + fm(p.ncM) + "</td><td>" + f1(p.target) + " FTES</td><td>" +
           (p.actual == null ? "no data yet" : f1(p.actual) + " FTES · " + pct(p.frac)) + "</td><td>" + fm(e) + "</td><td>" + fm(p.crM + p.ncM) + "</td></tr>";
       }).join("") + "</table></div>" +
-      (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it. It reads $0 earned until the noncredit measures report.</p>" : "");
+      (r.nc > 0 ? '<p class="dnote">Noncredit share of this award: ' + fm(r.ncAward) + " (" + f1(r.nc) + " noncredit FTES) — earned by the noncredit measures and kept on its own line, so the credit program cannot quietly redirect it.</p>" : "");
   }
   return '<details class="inst"><summary><span class="n">' + (idx + 1) + '</span>' +
     '<span class="who">' + r.name + chips + "</span>" +

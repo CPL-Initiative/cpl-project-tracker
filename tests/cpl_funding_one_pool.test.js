@@ -214,8 +214,18 @@ const POOL = 25240308;
     !/NONCREDIT SUPPORT \(carve-out\)/.test(text));
   check("D12: the bounds fold carries Sam's wording",
     /Show the institutions with Base and Cap funding/.test(text));
-  check("D13: the earning-rules fold states F1 and N2 b in words",
-    /earning rules for noncredit/i.test(text) && /No advances on origination/.test(text));
+  check("D13: the earning-rules fold states the restriction and origination — with NO mention of " +
+        "advances and NO reference to an unshipped feed (Sam, 2026-09-01)",
+    /earning rules for noncredit/i.test(text) &&
+    /earn by origination/i.test(text) &&
+    !/No advances/i.test(text) &&
+    !/until (the|their|its|those) [^.]{0,50}(feeds?|measures) report/i.test(text) &&
+    !/feed lands/i.test(text) && !/awaits origination/i.test(text) &&
+    !/listed from day one/i.test(text) &&
+    // the payment-advance concept is banned everywhere on the rendered tab;
+    // the statute's "Advancing career attainment" and "advance the …
+    // priority outcomes" (to further) are the allowed senses
+    !/\badvances?\b(?! (the|each|Vision))/i.test(text.replace(/Advancing career attainment[^.]*\./g, "")));
   check("D14: the priority cards read Current Total / Total Possible (Sam's labels)",
     /Current Total/.test(text) && /Total Possible/.test(text));
   check("D15: a trio row expands to the origination note (not a priority table)",

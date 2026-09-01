@@ -116,8 +116,11 @@ check("the status line is empty on a successful paint",
     ncText.indexOf(money(D.nc.trioHeld)) !== -1 &&
     ncText.indexOf(String(D.nc.ncColleges)) !== -1 &&
     ncText.indexOf(money(D.pool.floor)) !== -1 && ncText.indexOf(money(D.pool.cap)) !== -1);
-  check("...and states the restriction and the no-advance origination rule",
-    /restricted/i.test(ncText) && /originating|origination/i.test(ncText) && /No advances/i.test(ncText));
+  // The "No advances" phrase retired 2026-09-01 (Sam: no mention of the
+  // advance concept on any funding surface); origination-as-the-earning-rule
+  // is the claim that survives.
+  check("...and states the restriction and the origination earning rule — without the advance concept",
+    /restricted/i.test(ncText) && /originating|origination/i.test(ncText) && !/advance/i.test(ncText));
   check("...and says the noncredit share stays visible rather than disappearing into the credit figure",
     /disappearing into the credit figure/i.test(ncText));
 }

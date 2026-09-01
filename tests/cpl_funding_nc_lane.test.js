@@ -169,18 +169,30 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
 
   // ── the NC award CELL (the rendered face of F1 / N2 b) ────────────────────
   // One row per institution (R6): the second .cf-award cell is the noncredit
-  // share. Its sub-line is the earning rule in words — the honest "$0 until
-  // feeds report" for a college share, "awaits origination" for the trio, and
-  // "none on record" for the checkable-claim zero. A $0 that read as "posted
-  // nothing" would be the same misstatement the old paired-row suite guarded.
+  // share. Reworded 2026-09-01 (Sam: the rendered copy names no advance and no
+  // unshipped feed): the feeds-waiting sub-labels ("$0 until feeds report" /
+  // "awaits origination") are RETIRED — the cell renders the share with the
+  // SAME standard earning sub every cell uses, and the F1 arithmetic shows as
+  // a plain "earning $0". "none on record" (a data fact, not a feed reference)
+  // survives as the checkable-claim zero.
   function ncCell(id) {
     const r = doc.querySelector('tr[data-id="c:' + id + '"]');
     return r ? r.querySelectorAll("td.cf-award")[1] : null;
   }
-  check("B14: a college's NC award cell reads its share with '$0 until feeds report' — listed, not advanced",
-    (function () { const c = ncCell("Mt San Antonio"); return !!c && /\$0 until feeds report/.test(c.textContent) && /\$57,551|\$115,102/.test(c.textContent); })());
-  check("B15: a trio row's NC award cell reads 'awaits origination' (N2 b), never an earned or advanced figure",
-    (function () { const c = ncCell("NOCE"); return !!c && /awaits origination/.test(c.textContent); })());
+  check("B14: a college's NC award cell reads its share with the STANDARD earning sub at $0 — the " +
+        "retired feeds-waiting label is gone (2026-09-01)",
+    (function () {
+      const c = ncCell("Mt San Antonio");
+      return !!c && /\$57,551|\$115,102/.test(c.textContent) &&
+        /earning \$0/.test(c.textContent) &&
+        !/until feeds report/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+    })());
+  check("B15: a trio row's NC award cell is the whole award earning $0 — no 'awaits origination' " +
+        "label, no advanced figure (N2 b arithmetic unchanged)",
+    (function () {
+      const c = ncCell("NOCE");
+      return !!c && /earning \$0/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+    })());
   check("B16: a no-noncredit college's cell is the checkable claim — '$0 · none on record', inviting the correction",
     (function () { const c = ncCell("Taft"); return !!c && /none on record/.test(c.textContent); })());
   check("B17: no paired NC row and no NC SYSTEM row survives (R6) — the share lives ON the one row",

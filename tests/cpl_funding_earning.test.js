@@ -91,9 +91,12 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     // on a loose /earn/ match.
     (function (t) { return /earning/i.test(t) && !/\bearned\b/i.test(t); })(
       awardCells[0].querySelector(".sub").textContent));
-  check("E: the NC award cell carries its own sub-line — '$0 until feeds report' (F1, never an advance)",
+  // Reworded 2026-09-01 (Sam: no unshipped-feed references on the surface):
+  // the F1 arithmetic shows as the STANDARD earning sub at $0.
+  check("E: the NC award cell carries the standard earning sub at $0 (F1 arithmetic; no feeds-waiting label)",
     !!awardCells[1].querySelector(".sub") &&
-    /\$0 until feeds report/.test(awardCells[1].textContent));
+    /earning \$0/.test(awardCells[1].textContent) &&
+    !/until feeds report/.test(awardCells[1].textContent));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
   const f = Math.min(1, 200 / la.p1_heads);
@@ -123,14 +126,21 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const pcards = doc.querySelectorAll(".cplfund-prio .p");
   check("E: measurable priority card shows a Current Total line (not full advance)",
     pcards[0].textContent.indexOf("Current Total") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
-  check("E: data-gap priority cards show full advance until the feed lands",
-    pcards[1].textContent.indexOf("full advance") !== -1 && pcards[2].textContent.indexOf("full advance") !== -1);
+  // The "full advance until the feed lands" suffix RETIRED 2026-09-01 (Sam:
+  // no mention of the advance concept on any rendered surface; the model's
+  // internal accounting is unchanged and guarded below at the API level).
+  check("E: unmeasured priority cards carry a Current Total line with NO advance wording",
+    pcards[1].textContent.indexOf("Current Total") !== -1 &&
+    pcards[2].textContent.indexOf("Current Total") !== -1 &&
+    pcards[1].textContent.indexOf("full advance") === -1 &&
+    pcards[2].textContent.indexOf("full advance") === -1);
 
   const crTxt = awardCells[0].textContent;
   check("E: the CR award cell carries BOTH the max award and the earning figure",
     (crTxt.match(/\$/g) || []).length >= 2 && /earning/i.test(crTxt) && !/\bearned\b/i.test(crTxt));
-  check("E: the CR award cell hover breaks earning into measured / advance",
-    /measured|advance/.test(awardCells[0].getAttribute("title") || ""));
+  check("E: the CR award cell hover names the earning figure — the measured/advance breakdown is retired",
+    /earning so far/.test(awardCells[0].getAttribute("title") || "") &&
+    !/advance|measured on actual/.test(awardCells[0].getAttribute("title") || ""));
 
   // Earned splits TWO ways since the guaranteed rural slice was retired
   // (2026-08-22), and the parts must reconstitute the whole — this is what keeps
@@ -140,14 +150,17 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     Math.abs((la.earned_measured + la.earned_advance) - la.earned_total) < 1);
   check("E: the data-gap priorities land in the ADVANCE bucket, not measured",
     la.earned_advance > 0);
-  check("E: the advance is visibly TAGGED in the cell (adv chip), so it cannot read as achievement",
-    /adv/.test(awardCells[0].textContent));
+  check("E: no adv chip renders in the cell (retired 2026-09-01 with the advance wording)",
+    !/\badv\b/.test(awardCells[0].textContent));
 
   const csv = T._csv().split("\r\n");
   check("E: CSV always carries Earned + % of max award columns",
     csv[1].indexOf("Earned ") !== -1 && csv[1].indexOf("% of max award") !== -1);
-  check("E: CSV carries the measured/advance split, not just a lump earned figure",
-    csv[1].indexOf("Earned: measured") !== -1 && csv[1].indexOf("Earned: advance") !== -1);
+  // The measured/advance breakdown columns RETIRED 2026-09-01 (Sam: no
+  // mention of the advance concept anywhere rendered, the CSV included).
+  check("E: CSV carries no measured/advance breakdown columns — the earned total and the reserve remain",
+    csv[1].indexOf("Earned: measured") === -1 && csv[1].indexOf("Earned: advance") === -1 &&
+    csv[1].indexOf("Withheld") !== -1);
   check("E: CSV meta describes max-awards-with-earned rather than a basis mode",
     csv[0].indexOf("earned-to-date") !== -1 && csv[0].indexOf("EARNED basis") === -1);
 }
@@ -336,8 +349,10 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     Array.from(dtl.querySelectorAll("th")).map(function (h) { return h.textContent; }).join("|").indexOf("Target|Actual") !== -1);
   check("G: the measurable P1 row shows the actual + a % of target",
     cells(0)[4].indexOf("200") !== -1 && cells(0)[4].indexOf("%") !== -1);
-  check("G: a data-gap priority row reads 'data gap' in its Actual cell (and says it advances)",
-    cells(1)[4].indexOf("data gap") !== -1 && cells(1)[4].indexOf("advances") !== -1);
+  check("G: an unmeasured priority row reads a plain 'no data yet' — never a measured zero, and " +
+        "never the retired advance wording (2026-09-01)",
+    cells(1)[4].indexOf("no data yet") !== -1 && cells(1)[4].indexOf("advance") === -1 &&
+    cells(1)[4].indexOf("0 · 0%") === -1);
   check("G: the priority rows carry funding ($ figures) alongside the measures",
     /\$/.test(cells(0)[1]) && /\$/.test(cells(0)[6]));
   // The metric itself stays visible where the priority is defined — the card's

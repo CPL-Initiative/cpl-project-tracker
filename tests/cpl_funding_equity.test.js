@@ -115,12 +115,14 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("floored college is flagged for the 'at base' chip", cm.floored === true);
 
   // UI: floor pool card + chip + drill-in line. Chips are ghosted WORDS since
-  // 2026-08-31 ("at base" / "at cap" — no ⬆/⬇ glyphs), and the vocabulary is
-  // CCC norms: "brought up to the base", never "topped up".
+  // 2026-08-31 ("at base" / "at cap" — no ⬆/⬇ glyphs). The card note carries
+  // Sam's sentence shape (2026-09-01): "supported by minimum base funding";
+  // "topped up" stays banned (CCC norms doctrine).
   const doc = window.document;
   const floorCard = doc.querySelector(".cplfund-card.floor");
-  check("floor pool card renders with the brought-up-to-the-base count",
-    floorCard && /brought up to the base/.test(floorCard.textContent));
+  check("floor pool card renders with the supported-by-minimum-base-funding count",
+    floorCard && /supported by minimum base funding/.test(floorCard.textContent) &&
+    !/topped up/.test(floorCard.textContent));
   check("formula explains the base award renormalization",
     /Base award:/.test(doc.querySelector(".cplfund-formula").textContent));
   const cmRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {

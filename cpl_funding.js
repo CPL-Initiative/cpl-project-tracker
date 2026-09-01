@@ -2912,12 +2912,12 @@
     // export keeps every fact the screen holds (scope, not shape): FTES pair,
     // eligibility, base/cap state, per-priority targets/actuals, the earned
     // split, and the county context.
-    var earnHead = ["Earned " + windowLabel(), "% of max award", "Earned: measured", "Earned: advance",
-      "Withheld (baseline not met)"];
+    // The measured/advance breakdown columns retired 2026-09-01 (Sam: no
+    // mention of the advance concept); the earned total already carries both.
+    var earnHead = ["Earned " + windowLabel(), "% of max award", "Withheld (baseline not met)"];
     function earnCells(row) {
       var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
-      return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_measured || 0),
-        Math.round(row.earned_advance || 0), Math.round(row.earned_withheld || 0)];
+      return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_withheld || 0)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -2962,7 +2962,7 @@
     var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
       (frontloaded() ? " · combined (front-loaded) funding" : " · annual funding") +
       " · max awards with earned-to-date beside them (earned = cap × actual ÷ target, capped at 100%; " +
-      "the noncredit share earns only against the noncredit measures and reads $0 until their feeds report)" +
+      "the noncredit share earns only against the noncredit measures)" +
       (isDirty() && !unlocked() ? " · local what-if: " + activeScenario : "")];
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
   }
@@ -3390,10 +3390,7 @@
       "awarded: institutions earn on the CPL they actually post in MAP &mdash; " +
       "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
       "target draws half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
-      "Credit priorities MAP cannot measure yet pay the full cap as an <strong>advance</strong> (marked " +
-      "<span class=\"cf-adv\">adv</span>) until their feed lands, then flip to achievement automatically; the " +
-      "<strong>noncredit share</strong> of an award earns only against the noncredit measures and reads $0 " +
-      "until those feeds report &mdash; never an advance." +
+      "The <strong>noncredit share</strong> of an award earns only against the noncredit measures." +
       "</span></div>";
   }
 
@@ -3407,15 +3404,12 @@
     // already says so; a "$0 of $0 (0%)" line here would just read as broken.
     if (pp.cap <= 0 && slotIsCarryover(state.viewSlot)) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
-    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
     return '<p class="nums cplfund-earned-line" title="' +
-      esc("Current Total: what has been earned statewide on this priority to date — credit shares on the " +
-        "credit measures (advances included where a feed has not landed); noncredit shares read $0 in it " +
-        "until their feeds report. Total Possible: the ceiling — the priority's credit and noncredit " +
-        "shares together" + (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "") + ".") +
+      esc("Current Total: what has been earned statewide on this priority to date. Total Possible: the " +
+        "ceiling — the priority's credit and noncredit shares together" +
+        (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "") + ".") +
       '">Current Total: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
-      fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(pct) + ")</strong>" +
-      (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
+      fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(pct) + ")</strong></p>";
   }
 
   // Curate-view diagnostic: per priority slot, is the metric MEASURABLE (and by
@@ -3468,7 +3462,7 @@
           (meas.bad_src
             ? '<span class="cplfund-warn-text">⚠ NOT WIRED &mdash; pinned to ' + esc(String(meas.bad_src)) +
               ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong> " +
-              "(it does NOT advance).</span>"
+              "(it pays $0, never the full cap).</span>"
             : measurable
             ? (msMismatch
                 ? '<span class="cplfund-warn-text">⚠ MILESTONE MISMATCH &mdash; this metric asks for ' +
@@ -3493,7 +3487,7 @@
               (pinned ? ", pinned" : "") +
               (live ? ", " + live : "") + "</span>"
             : bearing
-              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
+              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays the FULL CAP</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
               : '<span class="dk">◦ not measurable &mdash; but no funding rides on it (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
@@ -3511,7 +3505,7 @@
         : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
       ' <span class="dk">(curator view only)</span></summary>' +
       '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure pays every college its ' +
-      "full cap as an advance &mdash; so it earns nothing and incentivises nothing. A slot marked " +
+      "full cap &mdash; so it earns nothing and incentivises nothing. A slot marked " +
       '<em>inheriting baked default</em> is falling back to the hand-maintained defaults in ' +
       "<code>cpl_funding_data.js</code>; nothing keeps those in sync with your edits here, so set the " +
       "metric to pin it.</div>" +
@@ -3694,10 +3688,6 @@
     items.push("<li><strong>" + fmtMoney(ea.winEarned) + " earned so far</strong> (" +
       fmtPctTrim(pool > 0 ? ea.winEarned / pool : 0) + " of the funding)" +
       (pf && pf.as_of ? " on MAP actuals as of " + esc(pf.as_of) : " &mdash; awaiting today&#39;s MAP pull") +
-      (ea.winAdvance > 0.5
-        ? " &mdash; " + fmtMoney(ea.winMeasured) + " measured + " + fmtMoney(ea.winAdvance) +
-          " advanced for credit metrics MAP cannot measure yet"
-        : "") +
       "; " + fmtMoney(ea.winUnearned) + " unearned rolls forward within the window.</li>");
     // 3 — the noncredit share of the funding (F1: listed from day one, $0
     // earned until the noncredit measures report). The origination-wait bullet
@@ -3706,8 +3696,7 @@
     items.push("<li><strong>" + fmtMoney(ncFace + trioHeld) +
       " of the funding is noncredit</strong> &mdash; " + fmtMoney(trioHeld) + " at the " + trioN +
       " noncredit-only institutions plus " + fmtMoney(ncFace) + " riding " + ncColN +
-      " college awards, restricted to noncredit outcomes and reading $0 earned until the " +
-      "noncredit measures report.</li>");
+      " college awards, restricted to noncredit outcomes.</li>");
     // 4 — held in reserve, its own line whenever non-zero (never redistributed).
     if (ea.winHeld > 0.5) {
       items.push("<li><strong>" + fmtMoney(ea.winHeld) + " held in reserve</strong> &mdash; " +
@@ -3900,13 +3889,15 @@
     // release are the two halves of one redistribution.
     (function () {
       var m = allocModel();
+      // Sam's sentence shapes (2026-09-01): "supported by minimum base
+      // funding" / "capped at maximum funding".
       var floorNote = m.floorCount
-        ? "<strong>" + m.floorCount + " brought up to the base</strong> (&asymp;" + fmtMoney(m.floorCost) + ", funded from within the same total)"
-        : "none brought up to the base at current settings";
+        ? "<strong>" + m.floorCount + " institutions supported by minimum base funding</strong> (&asymp;" + fmtMoney(m.floorCost) + " from within the same total)"
+        : "none at minimum base funding at current settings";
       var capNote = !(m.cap > 0)
         ? "no cap set &mdash; enter one to cap the largest allocations"
         : (m.cappedCount
-            ? "<strong>" + m.cappedCount + " held at the cap</strong> (&asymp;" + fmtMoney(m.capReleased) +
+            ? "<strong>" + m.cappedCount + " capped at maximum funding</strong> (&asymp;" + fmtMoney(m.capReleased) +
               " released back to the other institutions)"
             : "no institution reaches the cap at current settings");
       var warn = "";
@@ -4617,16 +4608,13 @@
   function ncEarningRulesFoldHtml() {
     return '<details class="cplfund-pool-projects cplfund-ncrules"><summary>The earning rules for noncredit &mdash; show them</summary><ul>' +
       "<li><strong>A college&rsquo;s noncredit share</strong> of its combined award earns against the " +
-      "noncredit priority measures; it is listed from day one and reads $0 earned until those feeds " +
-      "report (ruled 2026-08-31).</li>" +
+      "noncredit priority measures (ruled 2026-08-31).</li>" +
       "<li><strong>The noncredit-only institutions earn by origination</strong> &mdash; CPL that " +
       "originates from their programs and is transcribed at a credit college. NOCE and SDCCE&rsquo;s " +
       "origination counts across their district&rsquo;s credit campuses; Calbright&rsquo;s counts " +
       "statewide. The receiving college earns on the same CPL under its own measures &mdash; the same " +
       "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
-      "<li><strong>No advances on origination</strong> (N2 b): a noncredit-only institution draws only " +
-      "as its originated CPL actually posts, so the origination feed (Origin + LocID2 on the MAP " +
-      "Custom Reports) is the gate between these campuses and any funding.</li>" +
+
       "</ul></details>";
   }
 
@@ -5078,7 +5066,9 @@
   function actualLineHtml(p, idx, target) {
     var meas = measureOf(p);
     if (meas.gap) {
-      return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
+      // The WHY lives in the curator-only metric-wiring diagnostic (Sam,
+      // 2026-09-01: the rendered copy names no unshipped feed and no advance).
+      return '<p class="nums dk">&#9203; Actual: no data yet.</p>';
     }
     // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
     // measureOf() sets `undelivered` when the feed does not carry a measure's
@@ -5100,10 +5090,7 @@
       // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
       // a reader should not need to know MAP's key names to read a card.
       return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">No actuals yet &mdash; ' +
-        "the daily MAP feed does not carry this measure for anyone yet, so it earns <strong>$0</strong> " +
-        "until it does" +
-        (meas.lane === "nc"
-          ? ". The noncredit-origin measures arrive when MAP ships the origination fields" : "") + ".</p>";
+        "this measure earns <strong>$0</strong> today.</p>";
     }
     if (!pf || !pf.statewide) {
       // Artifact not loaded. For CREDIT that is transient — those measures ARE
@@ -5189,10 +5176,9 @@
       });
       ncSentence = " <strong>The noncredit share:</strong> every award decomposes into a credit and a " +
         "noncredit share by the institution&#39;s own FTES split &mdash; " + fmtMoney(ncFace) +
-        " rides college awards today, restricted to the noncredit measures (it reads $0 earned until " +
-        "those feeds report, and the credit program cannot draw it) &mdash; and the " + trioN +
-        " noncredit-only institutions hold " + fmtMoney(trioHeld) +
-        " earned by origination: CPL from their programs, transcribed at a credit college, with no advances (N2 b).";
+        " rides college awards, restricted to the noncredit measures (the credit program cannot draw " +
+        "it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
+        " earned by origination: CPL from their programs, transcribed at a credit college.";
     })();
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
     // 2026-07-27: the box read as an even-tranche explainer even when front-load
@@ -5213,8 +5199,7 @@
       "paid <code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
       "(its funding &divide; the per-student rate) is the achievement <em>target</em> the MAP actuals are measured " +
       "against (a college at half its target draws half its cap; it never needs the full target to be funded), and " +
-      "unearned dollars roll forward. That earned figure is the second line of each cell. Only priorities MAP can " +
-      "measure today flex on actuals; the rest advance at full cap until their feed lands.";
+      "unearned dollars roll forward. That earned figure is the second line of each cell.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
@@ -5302,7 +5287,7 @@
       { key: "cr_award", label: "CR award", cls: "c",
         title: "The credit share of the max award, " + awardWhen + " — earned against the credit priority measures, with the Current Total beneath. Awards are based on outcomes, not automatically awarded." },
       { key: "nc_award", label: "NC award", cls: "",
-        title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; it reads $0 earned until those feeds report, and the credit program cannot draw it. The pair's sum is the institution's one combined max award." },
+        title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; the credit program cannot draw it. The pair's sum is the institution's one combined max award." },
       { key: "working_adults", label: "Working adults*", cls: "" }
     ];
   }
@@ -5860,18 +5845,15 @@
         (showFig ? "held " + fmtMoney(held) : "confirm participation to start earning") + "</span>";
     }
     var pct = earned / cap;
-    var advTag = adv > 0.5
-      ? ' <span class="cf-adv" title="' + fmtMoney(adv) + " of this is a provisional ADVANCE — paid at full cap because MAP cannot measure that priority's metric yet; it flips to achievement-based automatically when the feed lands" +
-        '">adv ' + fmtMoney(adv) + "</span>"
-      : "";
     // Sam, 2026-08-27: "earning", not "earned" — the money is not a done deal
     // until the college qualifies, and the past tense read like a settled award.
-    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + advTag + "</span>";
+    // The adv chip retired 2026-09-01 (Sam: no mention of the advance concept
+    // on any rendered surface; the earning arithmetic is unchanged).
+    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + "</span>";
   }
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
+    // meas/adv accepted for call-site stability; neither renders (2026-09-01).
     var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + fmtMoney(earned)];
-    if (meas > 0.5) bits.push(fmtMoney(meas) + " measured on actual CPL in MAP");
-    if (adv > 0.5) bits.push(fmtMoney(adv) + " advance (metric not measurable yet)");
     if (held > 0.5) bits.push(fmtMoney(held) + " WITHHELD — baseline participation not met; held in reserve, rolls forward");
     return bits.join(" · ");
   }
@@ -5908,17 +5890,10 @@
       return '<td class="cf-award dk" title="No noncredit FTES on record for this institution in the 2025-26 MIS data, so its award has no noncredit share. If it runs a noncredit program, this is a data error worth reporting — tell the MAP team and it can be traced and fixed.">$0' +
         '<span class="sub">none on record</span></td>';
     }
-    if (!ncFeedsDelivered()) {
-      var tip = row.nco
-        ? "Held by origination (N2 b, ruled 2026-08-31): this institution draws only as CPL originating " +
-          "from it posts at a credit college — no advances. The origination feed (Origin + LocID2 on the " +
-          "MAP Custom Reports) is the gate; its max award stands meanwhile."
-        : "The noncredit share of this award earns only against the noncredit measures. It is listed from " +
-          "day one and reads $0 earned until those feeds report (ruled 2026-08-31) — deliberately NOT an " +
-          "advance, and the credit program cannot draw it.";
-      return '<td class="cf-award" title="' + esc(tip) + '">' + fmtMoney(cap) +
-        '<span class="sub cf-ncwait">' + (row.nco ? "awaits origination" : "$0 until feeds report") + "</span></td>";
-    }
+    // The feeds-waiting branch retired 2026-09-01 (Sam: the rendered copy
+    // names no unshipped feed) — a $0-earning noncredit share renders exactly
+    // like any other cell; the arithmetic (F1: never a stand-in figure) is
+    // unchanged.
     var title = earnedCellTitle("Noncredit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
@@ -5929,7 +5904,7 @@
     var chips = "";
     // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): AT BASE /
     // AT CAP / NC ONLY — the quietest thing in the row, never the first read.
-    if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college (N2 b — no advances).">NC only</span>';
+    if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="' +
@@ -5982,9 +5957,9 @@
         ? "anywhere in the state" : "across its district&#39;s credit campuses";
       prio = '<div class="cplfund-ncorigin"><strong>Earns by origination</strong> &mdash; CPL originating from this ' +
         "institution and transcribed at a credit college " + scopeWords +
-        ". No advances: it draws only as originated CPL posts (N2 b). Current Total: <strong>" +
+        ". Current Total: <strong>" +
         fmtMoney(c.earned_total || 0) + "</strong> &middot; Total Possible: <strong>" + fmtMoney(c.total || 0) +
-        "</strong>, its max award &mdash; unlocked by the origination feed." +
+        "</strong>, its max award." +
         (c.feeder && c.feeder.noncredit_ftes_placeholder
           ? ' <span class="dk">Its ' + fmtInt(c.feeder.noncredit_ftes_placeholder) +
             "-FTES size is a stand-in; nothing publishes or disburses on a placeholder (N3 a).</span>"
@@ -6006,10 +5981,9 @@
             fmtPctTrim(Math.min(1, fr.target > 0 ? fr.actual / fr.target : 0));
         } else if (fr.status === "none") act = "0 &middot; 0%";
         else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
-        else if (fr.status === "undelivered") act = "no feed";
+        else if (fr.status === "undelivered") act = "no data yet";
         else if (fr.status === "bad_src") act = "not wired";
-        else if (fr.status === "gap") act = "data gap &middot; advances";
-        else act = "pending &middot; advances";
+        else act = "no data yet";   // gap / pending — plain absence on the surface (2026-09-01)
         return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(crM) +
           "</td><td>" + fmtMoney(ncM) + "</td><td>" + (isF ? fmtNum1(target) + " FTES" : fmtInt(target) + " stu") +
           "</td><td>" + act + "</td><td>" + fmtMoney(earnedP) + "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
@@ -6023,16 +5997,16 @@
         '<colgroup><col style="width:16%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:16%"><col style="width:13%"><col style="width:16%"></colgroup>' +
         '<tr><th scope="col">Priority</th>' +
         '<th scope="col" title="The credit share of this priority&#39;s funding — earns against the credit actuals.">CR funding</th>' +
-        '<th scope="col" title="The noncredit share — earns only against the noncredit measures, reading $0 until their feeds report.">NC funding</th>' +
-        '<th scope="col" title="What the credit share funds at the priority&#39;s price; noncredit targets arrive with the noncredit feeds.">Target</th>' +
+        '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
+        '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
         '<th scope="col">Actual</th>' +
-        '<th scope="col" title="Earned to date — actual ÷ target, capped at 100%, applied to the credit funding; advances included where a credit feed has not landed. The noncredit share reads $0 in it until its measures report.">Current Total</th>' +
+        '<th scope="col" title="Earned to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
         '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; unearned funding rolls forward.">Total Possible</th></tr>' +
         rowsHtml + "</table></div>" +
         (c.nc_award > 0.5
           ? '<div class="dk">Noncredit share of this award: ' + fmtMoney(c.nc_award) + " (" + fmtNum1(c.nc_ftes) +
             " noncredit FTES) &mdash; earned by the noncredit measures and kept on its own line, so the credit " +
-            "program cannot quietly redirect it. It reads $0 earned until those feeds report.</div>"
+            "program cannot quietly redirect it.</div>"
           : "");
     }
     var county = c.working_adults == null
@@ -6488,7 +6462,7 @@
       // per-priority detail lives in each row's expand.
       return "<div>Each row expands to its per-priority detail table (CR funding &middot; NC funding &middot; " +
         "Target &middot; Actual &middot; Current Total &middot; Total Possible); the Actual column fills in " +
-        "with the next daily MAP refresh. Only measurable metrics show an actual; the rest advance at full cap until their feed lands.</div>";
+        "with the next daily MAP refresh.</div>";
     }
     var un = Object.keys((pf && pf.unmatched) || {});
     var unLine = un.length
@@ -6500,8 +6474,8 @@
       "cards above carry the statewide pair. Actuals per MAP as of " + esc(pf.as_of) +
       "; test/potential records excluded; counts under " + pf.suppress_below +
       " read &lt;" + pf.suppress_below + "; statewide figures " +
-      "deduplicate across colleges (not the column sum). Only the metric(s) MAP can measure today show an actual; the " +
-      "rest read <span class=\"cf-gap\">data gap</span> in the expand and advance at full cap until their feed lands.</div>" + unLine;
+      "deduplicate across colleges (not the column sum). Only the metrics MAP measures today show an actual; the " +
+      "rest read <span class=\"cf-gap\">no data yet</span> in the expand.</div>" + unLine;
   }
 
   // Segmented single-choice control. role=group + a label for screen readers,
@@ -6674,7 +6648,7 @@
         "</strong></td><td><strong>" + cell(ncSub) + "</strong></td><td><strong>" + cell(sub) + "</strong></td></tr>" +
         grp.map(function (it) {
           return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
-            (it.nco ? " <em>(noncredit-only &mdash; earns by origination, no advances)</em>" : "") +
+            (it.nco ? " <em>(noncredit-only &mdash; earns by origination)</em>" : "") +
             (it.placeholder ? " <em class='dk'>(size is a stand-in; nothing disburses on a placeholder)</em>" : "") +
             "</td><td>" + cell(it.cr) + "</td><td>" + cell(it.nc) + "</td><td>" + cell(it.total) + "</td></tr>";
         }).join("");

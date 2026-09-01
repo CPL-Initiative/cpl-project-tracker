@@ -149,8 +149,10 @@ check("the memo does NOT print the retired re-split figures ($779,862 / $672,453
   const award = T._alloc(short);
   check("memo row for " + full + " pays what the model pays (" + money(award ? award.total : 0) + "), all of it the noncredit share",
     !!row && !!award && award.total > 0 && row.nc === Math.round(award.total) && row.total === Math.round(award.total));
-  check("…its Credit cell is — (no credit program), and the row is FLAGGED noncredit-only / origination / no advances",
-    !!row && row.cr === null && /noncredit-only/.test(row.name) && /earns by origination, no advances/.test(row.name));
+  check("…its Credit cell is — (no credit program), and the row is FLAGGED noncredit-only / origination " +
+        "(the 'no advances' wording retired 2026-09-01 — Sam: no mention of the concept)",
+    !!row && row.cr === null && /noncredit-only/.test(row.name) &&
+    /earns by origination/.test(row.name) && !/no advances/.test(row.name));
 });
 // N3 a: Calbright's 1,000-FTES size is a stand-in — the memo must say nothing
 // disburses on a placeholder, on Calbright's own row.
@@ -254,9 +256,11 @@ check("Calbright's row carries the N3 a stand-in caveat (nothing disburses on a 
     !!li && li.indexOf(money(eff.pool.nc_college_shares)) !== -1);
   check("…its origination-held figure is the model's (" + money(eff.pool.nc_only_held_by_origination) + ")",
     !!li && li.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1);
-  check("…and it states the restriction and the no-advance rule in words (F1 / N2 b)",
-    !!li && /restricted to the noncredit measures/.test(li) && /\$0 earned until/.test(li) &&
-    /no advances \(N2 b\)/.test(li));
+  // The feed clause and the no-advances phrase retired 2026-09-01 (Sam: no
+  // mention of the advance concept, no reference to an unshipped feed).
+  check("…and it states the restriction and the origination earning rule — without the retired wording",
+    !!li && /restricted to the noncredit measures/.test(li) && /origination/.test(li) &&
+    !/\$0 earned until/.test(li) && !/no advances/.test(li));
 }
 
 finish();

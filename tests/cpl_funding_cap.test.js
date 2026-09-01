@@ -360,11 +360,12 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const m = T._model();
   const cappedName = Object.keys(m.capped)[0];
 
-  // Wording is the one-pool vocabulary (Sam, 2026-08-31): "brought up to the
-  // base" / "held at the cap" — never "topped up" (CCC norms doctrine).
+  // Wording is Sam's sentence shape (2026-09-01): "supported by minimum base
+  // funding" / "capped at maximum funding" — never "topped up" (CCC norms).
   const card = doc.querySelector(".cplfund-card.floor");
   check("C7: the box reports how many institutions each bound caught",
-    /brought up to the base/.test(card.textContent) && /held at the cap/.test(card.textContent));
+    /supported by minimum base funding/.test(card.textContent) &&
+    /capped at maximum funding/.test(card.textContent) && !/topped up/.test(card.textContent));
 
   const formula = doc.querySelector(".cplfund-formula");
   check("C7: the formula box explains the cap beside the base",

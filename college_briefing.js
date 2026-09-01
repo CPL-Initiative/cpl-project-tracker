@@ -1995,7 +1995,7 @@
         if (f.nc != null && f.nc > 0) {
           fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
             + "award above — set by this institution's own noncredit FTES, restricted to the noncredit "
-            + "measures (it reads $0 earned until those feeds report), and never drawable by credit work.</div>";
+            + "measures, and never drawable by credit work.</div>";
         }
 
         // ── What the cap is FOR — the three priorities, each with this
