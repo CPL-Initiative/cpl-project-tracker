@@ -311,6 +311,30 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   and the statute's "Advancing career attainment" are the allowed senses.
   The anchor suite's D13 ban guard enforces it. Sweep prose only, never
   identifiers.
+- **HOUSE VOICE — write outward artifacts the way the CO writes (Sam,
+  2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
+  standard: *"the word choice and tone provide an extensive example of the tone
+  and vocabulary and sentence variety I would like to see in our artifacts."*
+  **Scope: letters, memos, board/legislative materials, college-facing
+  communications, public explainer prose, report narrative, deck narration.**
+  NOT lane files, handoffs, commits or code comments — those are deliberately
+  dense, and register follows audience.
+  - **Concede before you argue**, stating the other position at full strength;
+    **preserve their authority explicitly** (what is not ours to decide);
+    **say what a thing is NOT** where it could be misread; keep the **student as
+    the subject** of the problem; **anchor claims to a named instrument** rather
+    than asserting them; **vary sentence length and let a short declarative
+    land** after a long qualified one; put the **ask last, and make it small**.
+  - **No business register** — never *leverage · utilize · robust · deep dive ·
+    synergy · operationalize · impactful*. Reach for *invite · partnership ·
+    shared aim · complement · warrant · examine together · practical first step*.
+  - **No bold, bullets or glyphs in outward prose.** The argument carries itself.
+  - ⚠️ **A voice, not a template** — copying its shapes onto a piece with no
+    concession to make produces parody, and length is not seriousness. Moves +
+    exemplars + before/after:
+    [`reference-cccco-house-voice`](docs/kb-notes/reference-cccco-house-voice.md);
+    exemplars in `CPLBrain/04-projects/cpl-initiative/resources/`. Mechanical
+    floor linted by `house_voice` in `kb/_docs_audit.py`.
 - **"Activities" = activities AND their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from

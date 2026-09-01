@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-01",
-  "_session": "SkyMeld, Session 218 — four outcomes folded into three bands",
-  "_status": "The Implementation Funding tab has been carrying two sections that described the same allocation in two different vocabularies: the three priorities, and the four funding outcomes the Education Code requires. They are now one. Four outcomes fold into three bands — Access, Success (completion and career attainment together, Sam's pairing), and Opportunities — and each band holds the measures that earn against it, with every dial still where a curator can adjust it. Which band a measure sits in is worked out from what the measure actually counts, not from its name, so the band a college reads and the funding it earns can never tell different stories. Measuring the model against live college data to justify the change turned up something worth knowing: the model currently pays out about a third of the college funding, and 84% of that comes from a single measure that 97 of 115 colleges already max out — so most of what it pays rewards work that was already happening. Sam has ruled the new settings; they are his to enter on the tab. Two of the three measures will show no earnings until MAP starts sending the new data, which is the honest picture rather than a fault.",
+  "_session": "SkyMeld, Session 218 — bands, the $NaN fix, and the house voice",
+  "_status": "The Implementation Funding tab has been carrying two sections that described the same allocation in two different vocabularies: the three priorities, and the four funding outcomes the Education Code requires. They are now one. Four outcomes fold into three bands — Access, Success (completion and career attainment together, Sam's pairing), and Opportunities — and each band holds the measures that earn against it, with every dial still where a curator can adjust it. Which band a measure sits in is worked out from what the measure actually counts, not from its name, so the band a college reads and the funding it earns can never tell different stories. Measuring the model against live college data to justify the change turned up something worth knowing: the model currently pays out about a third of the college funding, and 84% of that comes from a single measure that 97 of 115 colleges already max out — so most of what it pays rewards work that was already happening. Sam has ruled the new settings; they are his to enter on the tab. Two of the three measures will show no earnings until MAP starts sending the new data, which is the honest picture rather than a fault. Since then two more things landed: the public how-the-model-works page was printing \"$NaN\" where the amount going to institutions should be — a leftover from the funding model's redesign, now fixed and guarded so a future change fails a test instead of the live page. And the Chancellor's Office writing style Sam shared is now the standard for our outward documents, with the example letter filed in the vault.",
   "items": [
+    {
+      "id": "s218-sam-house-voice-scope",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "The Chancellor's Office writing style you shared is now the standard for outward documents — letters, memos, board and legislative materials, college-facing communications, and the public explainer. It is deliberately NOT applied to internal working notes, which stay dense on purpose. If you want it to reach report narrative and deck narration more strongly, say so and the scope widens. The example letter is filed in the vault beside the ESS 25-82 memo."
+    },
+    {
+      "id": "s218-fable-explainer-audit",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Walk the public how-the-model-works page once, end to end, and check every figure and claim against the live model. Three separate things on that page turned out to be left over from the funding redesign and each surfaced on its own; two are still there. One pass is cheaper than a fourth surprise."
+    },
     {
       "id": "s218-sam-set-dials",
       "for": "Sam",
@@ -45,18 +57,6 @@
       "for": "Sam",
       "tab": "gr-register",
       "text": "Memo A ('what is already law') is drafted and lives IN the GR tab now - open Guidance memos under the CPL area, edit any section, and Export memo (Word) uses the register's generator (the hold banner and drafting annex travel in the file until status says issued). Your sequencing ruling holds: BOG adoption first, then issuance. One external confirm before issuance: the section-2 accreditation-standards claim needs an ACCJC touchpoint. Memo B and C stubs sit beside it when you want them drafted."
-    },
-    {
-      "id": "s210-sam-tidyups",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "One one-click finish left (2026-08-30): review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate. (The experiment-branch deletion is DONE and verified.)"
-    },
-    {
-      "id": "s206-sam-install-hook",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
     },
     {
       "id": "s210-sam-export-bench-log",

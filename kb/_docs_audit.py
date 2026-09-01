@@ -1322,6 +1322,66 @@ def rule_american_spelling(entry):
     }
 
 
+# ── the house-voice mechanical floor (Sam, 2026-09-01) ──────────────────────
+# Sam shared the CO VC of Academic Affairs' letter to CSU as the standard for
+# our outward writing. Voice itself is NOT lintable — concession, preserved
+# authority, a short declarative landing after a long qualified one are
+# judgments, and the moves live in docs/kb-notes/reference-cccco-house-voice.md.
+#
+# ⚠️ WHAT IS LINTABLE IS THE FLOOR: business register that the CO register never
+# uses. This rides `prose_only()`, the same mask american_spelling uses, so it
+# can never flag a word inside a code span or an identifier.
+#
+# ⚠️ AND IT IS INFORMATIONAL, NEVER A DEFECT — same posture as american_spelling
+# and kb_note_dialect. A quoted source may legitimately say "leverage", and a
+# rule that failed on a quotation would make the corpus lie to satisfy a lint.
+# ⚠️ `robust` IS DELIBERATELY ABSENT. It has a legitimate technical sense the CO
+# register shares — "make the flaky test robust" is CLAUDE.md's own CI doctrine —
+# and it was 7 of the 27 hits on the first run. A rule whose false positives are
+# a quarter of its output trains people to ignore it.
+BUSINESS_REGISTER = (
+    "leverage", "utilize", "utilise", "deep dive", "deep-dive",
+    "synergy", "synergies", "operationalize", "operationalise", "impactful",
+    "circle back", "low-hanging fruit", "best-in-class", "best in class",
+    "move the needle", "boil the ocean", "at the end of the day",
+)
+
+
+def rule_house_voice(entry):
+    """Informational: business register in a doc that faces outward.
+
+    Scoped to the lanes a reader outside the team judges us by. Lane files,
+    handoffs, lessons docs and commit-adjacent notes are deliberately dense and
+    are NOT scanned — register follows audience, and flattening internal working
+    memory to correspondence voice would make it worse.
+    """
+    lane = entry.get("lane")
+    if lane in ("handoff", "lessons", "roadmap_lane", "always_loaded"):
+        return None
+    text = entry.get("text") or ""
+    if not text:
+        return None
+    low = prose_only(text).lower()
+    hits = {}
+    for term in BUSINESS_REGISTER:
+        n = len(re.findall(r"\b" + re.escape(term) + r"\b", low))
+        if n:
+            hits[term] = n
+    if not hits:
+        return None
+    total = sum(hits.values())
+    top = sorted(hits.items(), key=lambda kv: -kv[1])[:6]
+    return {
+        "rule": "house_voice",
+        "fixable": False,
+        "detail": {"total": total, "terms": hits},
+        "message": "%d business-register term%s — %s (house voice: "
+                   "docs/kb-notes/reference-cccco-house-voice.md)" % (
+            total, "" if total == 1 else "s",
+            ", ".join("%s x%d" % (k, v) for k, v in top)),
+    }
+
+
 def rule_frontmatter_log_chain(entry):
     if not entry["has_fm"]:
         return None
@@ -1669,6 +1729,7 @@ def main():
                   rule_kb_note_frontmatter(e),
                   rule_kb_note_dialect(e),
                   rule_american_spelling(e),
+                  rule_house_voice(e),
                   rule_frontmatter_log_chain(e),
                   rule_unindexed_kb_note(e, index_text),
                   rule_stacked_roadmap_cell(e),

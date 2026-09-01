@@ -513,6 +513,53 @@ check("self-corrected pair: silent on a healthy pair naming two DIFFERENT words"
       da.rule_self_corrected_word_pair(_ok) is None)
 _os.unlink(_ok["path"])
 
+# ── house_voice ───────────────────────────────────────────────────────────
+# Sam, 2026-09-01, shared the CO VC of Academic Affairs' letter to CSU as the
+# standard for our outward writing. Voice itself is not lintable; the MECHANICAL
+# FLOOR is — business register the CO register never uses.
+def _entry(rel, body, lane="kb_note"):
+    fd, path = _tf.mkstemp(suffix=".md"); _os.write(fd, body.encode()); _os.close(fd)
+    return {"rel": rel, "path": path, "lane": lane, "text": body}
+
+_biz = _entry("docs/kb-notes/x.md",
+              "We should leverage the data and utilize a deep dive to operationalize this.")
+_f = da.rule_house_voice(_biz)
+check("house voice: fires on business register in an outward-facing doc",
+      _f is not None and _f["detail"]["total"] == 4)
+check("house voice: names the terms it found",
+      _f is not None and "leverage" in _f["detail"]["terms"])
+_os.unlink(_biz["path"])
+
+# ⚠️ THE RULE MUST SURVIVE ITS OWN DOCUMENTATION. The note that lists the banned
+# terms would otherwise flag itself — the same trap `american_spelling` fell
+# into when the sweeper rewrote the words the rule was documenting. prose_only()
+# masks code spans, so backticks are the fix, and this asserts the FIX is
+# recognised rather than merely that the corruption is.
+_documented = _entry("docs/kb-notes/reference-cccco-house-voice.md",
+                     "**Avoid:** `leverage` \u00b7 `utilize` \u00b7 `deep dive` \u00b7 `operationalize`.")
+check("house voice: silent when the banned terms sit in code spans",
+      da.rule_house_voice(_documented) is None)
+_os.unlink(_documented["path"])
+
+# ⚠️ REGISTER FOLLOWS AUDIENCE. Internal working memory is deliberately dense
+# and is NOT held to correspondence voice — flattening a handoff or a lane file
+# would make it worse, so those lanes are out of scope by construction.
+for _lane in ("handoff", "lessons", "roadmap_lane", "always_loaded"):
+    _internal = _entry("docs/session_9_handoff.md",
+                       "We should leverage this and utilize that.", lane=_lane)
+    check("house voice: does NOT scan the %s lane (register follows audience)" % _lane,
+          da.rule_house_voice(_internal) is None)
+    _os.unlink(_internal["path"])
+
+# `robust` is deliberately absent from the list: it has a legitimate technical
+# sense the CO register shares, and CLAUDE.md's own CI doctrine says "make the
+# flaky test robust". It was 7 of 27 hits on the first run — a rule whose false
+# positives are a quarter of its output trains people to ignore it.
+_tech = _entry("docs/kb-notes/y.md", "Make the flaky test robust before re-running.")
+check("house voice: silent on `robust`, which has a real technical sense",
+      da.rule_house_voice(_tech) is None)
+_os.unlink(_tech["path"])
+
 # ── unreferenced_offload now covers .claude/skills/ ───────────────────────
 # A skill is PULL content reached by a trigger, exactly like a reference doc —
 # and `.claude/skills/` sits outside the corpus walk (0 of 732 files), so a

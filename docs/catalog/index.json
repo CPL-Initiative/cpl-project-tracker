@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 363,
+   "count": 364,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7186,6 +7186,24 @@
      "title": "The authoritative statewide MAP exhibit is the raw row with Collaborative Type == \"CCC",
      "type": "reference",
      "updated": "2026-06-28"
+    },
+    {
+     "created": "2026-09-01",
+     "governs": [
+      "kb/_docs_audit.py"
+     ],
+     "path": "docs/kb-notes/reference-cccco-house-voice.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "house-voice",
+      "writing",
+      "communications",
+      "cccco"
+     ],
+     "title": "The CCCCO house voice \u2014 how our outward writing should read",
+     "type": "reference",
+     "updated": "2026-09-01"
     },
     {
      "created": "2026-07-27",
@@ -14816,5 +14834,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 752
+ "total": 753
 }
