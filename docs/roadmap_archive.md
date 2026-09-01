@@ -5250,3 +5250,23 @@ number)** — awaiting Sam's lock; the port (origin feed first) starts on it.
 <!-- INDEX update-history bullets rotated out at the 2026-09-01 checkpoint -->
 
 - **2026-08-30 (SkyGov, S209)** — **remediation A built, then both tabs learned to read it.** The dependency map (#1396): dataset → consuming tabs/pages/scripts/workflows, derived FROM THE CODE (`kb/_build_dependency_map.py` → [`reference/dependency_map.md`](reference/dependency_map.md) + `kb/dependency_map.json`), `--check` in CI, verified by three adversarial samples — two found real scanner defects, fixed and pinned (23 guards). On Sam's go: **governance candidates project from the map** (#1397 — **15 never-seen human-write tables** proposed, noise guard 25→30 with the reason on record) and the **Admin surface tells the truth** (#1398 — raci reported `reads:[] writes:[]` while touching four tables). ⭐ *One derivation, many projections*; ⚠️ *direction lives at the fetch site, not the const line*. "Blast Radius" pane mock published for Sam's reaction. Two stale-copy finds (`cpl_pathways_ccr_data.js`, `kb/credentials.json`). 1 KB note, 4 memory rows.
+
+### SkyPort S216 — the one-pool model shipped (2026-08-31 → 09-01)
+
+**The port is DONE and the whole family is green**: `cpl_funding.js` runs the
+one-pool solve (118 rows · 51 base / 7 cap · trio by origination), all 33
+funding suites re-aimed (~2,000 checks) by a 5-agent fan-out, PR #1427.
+Sam's three reaction rounds landed live (collapsible sections + expand/collapse
+all · rem-shared column template — em grids misalign across font sizes ·
+verbatim statute folds · his Summary bullet · "Version as of" · pool→funding +
+"on its face" banned · Draft memo / Save as PDF · Internal·Public preview ·
+metric on the card face · max-award definition · LA Southwest / Riverside City
+via `display` aliases). The ports FOUND three product bugs (prioTarget lane
+slice; `c:<order>` keys; low-key-rows bold) — all fixed. Story:
+`cpl_funding_lessons`; handoff `session_217_handoff`.
+
+*(Moved verbatim from `CLAUDE.md` §11 on 2026-09-01, Session 218 — the two-inline session-narrative budget.)*
+
+### INDEX update-history entries trimmed 2026-09-01 (Session 218)
+
+- **2026-08-30 (SkyLedger, S210)** — **all six doctrine remediations built** (#1400 E gate · #1401 skip-verify · #1402 B/C/D/F · CPLBrain#46): `js-tests` flippable to REQUIRED (docs PRs ~1.5 min — **the flip is Sam's**); Rule 10 widened to ANY shared-table bulk write + reversible-from-receipt ([`reference/data_write_rollback.md`](reference/data_write_rollback.md)) + Governance/privacy-ADR routing for new write surfaces; F's drift was ONE systematic shift (checkpoints 8→9, Supabase 9→10) — 16 living files fixed, `citation_drift` lints it, the ritual retitled **Rule 9 checkpoint**. ⚠️ Two false greens caught: registry growth flipped the scenario harness to a fake 12/12 (`_assert_fixtures_current()` now refuses to score on fixture drift), and `prose_only()` masks 4-space continuations plus their neighbors. ⚠️ A workflow edit is a dependency-map input (#1400 → red main until #1402). 1 KB note, 5 memory rows.

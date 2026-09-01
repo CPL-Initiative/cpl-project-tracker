@@ -144,6 +144,73 @@ check("the status line is empty on a successful paint",
     /out of date|could not compute/i.test(msg));
 }
 
+// ── every payload key the painter reads must still EXIST ──────────────────
+// ⚠️ THIS SECTION EXISTS BECAUSE THE PAGE PRINTED "$NaN" TO THE PUBLIC
+// (found by Sam, 2026-09-01). The painter read `P.feeder` — a carve-out the
+// one-pool model retired on 2026-08-31 — so `hero` and `inst` were
+// `number - undefined`, and the "allocated to the 118 institutions" box
+// rendered `$NaN` while the prose beside it printed the right figure.
+//
+// ⚠️ AND EVERY ASSERTION ABOVE PASSED THROUGH IT. They read the page as TEXT:
+// no baked payload, every figure carries an id, the disclosure fires. All true,
+// all useless here, because none of them ever asks the payload whether a key
+// the script names still exists. A static check cannot see a NaN; only the
+// arithmetic can.
+//
+// So this guards the CLASS, not the instance: every `P.<key>` the inline script
+// references must be a key the payload actually emits. A future retired dial
+// fails here instead of on the public page.
+{
+  const { JSDOM: J3 } = require("jsdom");
+  const dom3 = new J3(
+    '<!DOCTYPE html><body><div class="cpl-tab-pane" id="tab-implementation-funding">' +
+    '<div class="main-container"><div><h2>CPL Implementation Funding</h2>' +
+    '<span id="cplFundTitleLink"></span></div><div id="cplFundingMount">x</div>' +
+    "</div></div></body>", { runScripts: "outside-only", url: "https://example.org/" });
+  const w3 = dom3.window;
+  w3.scrollTo = function () {};
+  w3.CPL_FUNDING_NO_REMOTE = true;
+  w3.eval(fs.readFileSync(path.join(ROOT, "cpl_funding_data.js"), "utf8"));
+  w3.eval(fs.readFileSync(path.join(ROOT, "cpl_funding.js"), "utf8"));
+  const T3 = w3.CPL_FUNDING_TAB;
+  T3.boot();
+  const D3 = require(path.join(ROOT, "funding_model_payload.js"))
+    .buildPayload(T3, w3.CPL_FUNDING);
+
+  const poolKeys = Object.keys(D3.pool);
+  const inlineRaw = html.split(/<script(?![^>]*\ssrc=)[^>]*>/i).slice(1)
+    .map(function (c) { return c.split(/<\/script>/i)[0]; }).join("\n");
+  // Scan CODE, not commentary. The comment explaining this very defect names
+  // the retired key, and a scan that reads prose would fail on its own
+  // post-mortem — the same shape as the spelling rule that corrected the words
+  // documenting it. Strip block comments, then line comments (leaving `://` in
+  // URLs alone).
+  const inline = inlineRaw
+    .replace(/\/\*[\s\S]*?\*\//g, " ")
+    .replace(/(^|[^:])\/\/[^\n]*/g, "$1");
+  const referenced = Array.from(new Set(
+    (inline.match(/\bP\.([A-Za-z_][A-Za-z0-9_]*)/g) || [])
+      .map(function (m) { return m.slice(2); })));
+  const missing = referenced.filter(function (k) { return poolKeys.indexOf(k) < 0; });
+  check("the painter references at least one payload pool key (the scan works)",
+    referenced.length > 0);
+  check("EVERY pool key the painter reads still exists in the payload — a "
+        + "retired dial fails here, not as $NaN on the public page"
+        + (missing.length ? " [missing: " + missing.join(", ") + "]" : ""),
+    missing.length === 0);
+
+  // The figure that actually broke, asserted against the model's own authority
+  // rather than against the arithmetic that produced it.
+  const instBox = D3.pool.one_time - D3.pool.admin - D3.pool.scaling;
+  check("what reaches institutions is a real number, not NaN",
+    Number.isFinite(instBox));
+  check("...and it equals the model's own net_college figure",
+    Math.round(instBox) === Math.round(D3.net_main));
+  check("the three destination boxes sum to the appropriation, by construction",
+    Math.round(instBox + D3.pool.scaling + D3.pool.admin)
+      === Math.round(D3.pool.one_time));
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

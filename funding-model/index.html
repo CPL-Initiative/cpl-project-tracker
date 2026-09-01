@@ -497,10 +497,26 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
 
   // ── the appropriation and where it goes ───────────────────────────────
-  // hero is the appropriation minus every other destination, so the four boxes
-  // sum to the top line by construction and cannot drift apart on a rebuild.
-  var P = D.pool, hero = P.one_time - P.admin - P.scaling - P.feeder;
-  var inst = hero + P.feeder;   // everything that reaches an institution
+  // The boxes sum to the top line by construction and cannot drift apart on a
+  // rebuild: what reaches institutions is the appropriation minus every other
+  // destination.
+  //
+  // ⚠️ THIS PRINTED "$NaN" ON THE LIVE PUBLIC PAGE (found 2026-09-01, Sam).
+  // It read `hero = one_time - admin - scaling - P.feeder; inst = hero +
+  // P.feeder` — a carve-out that the one-pool model retired on 2026-08-31.
+  // `pool` no longer emits `feeder`, so `P.feeder` was `undefined`, and
+  // `number - undefined` is NaN. Subtracting a term and adding it straight back
+  // is what hid it: the expression looks self-cancelling, so a reader checks the
+  // ARITHMETIC and never asks whether the key still exists.
+  //
+  // ⚠️ AND ONLY ONE OF THE TWO NaNs WAS VISIBLE. `f-nc` was painted from
+  // `P.feeder` here and REPAINTED from `D.nc.face` further down, so it rescued
+  // itself and looked correct; `f-inst` had no second write and showed the NaN.
+  // A defect that renders correctly in one place and wrong in another is the
+  // same shape as the stale-prose defect below — the page is painted from the
+  // payload in some places and not others, and only the unpainted ones lie.
+  var P = D.pool;
+  var inst = P.one_time - P.admin - P.scaling;   // everything that reaches an institution
 
   // ── priorities ────────────────────────────────────────────────────────
   var plain = {
@@ -568,7 +584,6 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // Headline figures, so the prose can never drift from the model.
   document.getElementById("f-total").textContent = money(P.one_time);
   document.getElementById("f-inst").textContent = money(inst);
-  document.getElementById("f-nc").textContent = money(P.feeder);
   document.getElementById("f-proj").textContent = money(P.scaling);
   document.getElementById("f-staff").textContent = money(P.admin);
   document.getElementById("f-main").textContent = money(D.net_main);

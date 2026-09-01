@@ -1,98 +1,80 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-01",
- "_session": "SkyDeck, Session 217 — the 9/02 session deck + the sunshine rule",
- "_status": "Sam's deck for the September 2 session is rebuilt and in the vault: an agenda for his run of show (30 minutes on the new Education Code article, 5 minutes on $50K reporting methods, 10 for questions), the 2025-26 $50K seed-funding review with a reporting-methods slide, three Education Code slides including the statute verbatim, and the funding slides updated to the current model at GENERAL PRINCIPLES only — his ruling: no new-funding specifics anywhere outward until CO leadership confirms. The one-pool tab itself is live (the pull request merged). One new defect found: two sentences on the public how-the-model-works page still describe the old model and the live painter cannot fix prose — queued for the next session.",
- "items": [
-  {
-   "id": "s217-sam-deck-review",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Tomorrow's deck (20260831_Taco_Tuesday_3.pptx, in the vault and in chat) is ready for your read-through: agenda 30/5/10, the $50K review + a reporting-methods slide for your teammate, three Ed Code slides, funding at general principles only per your ruling — no new-model dollars, weights, or links anywhere. If any slide reads wrong, say which number and a session fixes it tonight. Your own follow-up when ready: confirm the new-funding details with CO leadership, which unlocks sunshining specifics."
-  },
-  {
-   "id": "s216-sam-annual-percent",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "One display call is yours: in Annual funding view an award cell can read 'earning $140,476 · 191%' because the earning shown is the whole two-year window while the figure beside it is one year's. The code does this on purpose (earning is a window quantity) but two independent reviewers read it as over-earning. Say the word and the percent will be computed against the window figure instead, which never exceeds 100%."
-  },
-  {
-   "id": "s214-sam-origination-docx",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "The MAP Custom Reports origination instructions for Malone and Pedro are ready to forward (Word doc delivered in chat; also filed in the vault). It formalizes the Origin + LocID2 plan Pedro has held since 8-26. The tab is now BUILT to consume this feed with no further code change — but no funding moves to NOCE, SDCCE, or Calbright until it flows, so the column spellings from Malone/Pedro are the one thing holding the trio's earn-out."
-  },
-  {
-   "id": "s210-sam-75013-collab",
-   "for": "Sam",
-   "tab": "gr-register",
-   "text": "The SS75013 workgroup seat (your yes, 2026-08-30, item 9): pursue it in collaboration with CO Governmental Relations, CO Finance, and the Department of Finance - the CBE-to-FTES funding measure that reports to Finance by October 2028 is register row #7's named obstacle being designed. A session can draft the outreach note whenever you want it."
-  },
-  {
-   "id": "s210-sam-guidance-memos",
-   "for": "Sam",
-   "tab": "gr-register",
-   "text": "Memo A ('what is already law') is drafted and lives IN the GR tab now - open Guidance memos under the CPL area, edit any section, and Export memo (Word) uses the register's generator (the hold banner and drafting annex travel in the file until status says issued). Your sequencing ruling holds: BOG adoption first, then issuance. One external confirm before issuance: the section-2 accreditation-standards claim needs an ACCJC touchpoint. Memo B and C stubs sit beside it when you want them drafted."
-  },
-  {
-   "id": "s210-sam-tidyups",
-   "for": "Sam",
-   "tab": "governance",
-   "text": "One one-click finish left (2026-08-30): review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate. (The experiment-branch deletion is DONE and verified.)"
-  },
-  {
-   "id": "s206-sam-install-hook",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
-  },
-  {
-   "id": "s210-sam-export-bench-log",
-   "for": "Sam",
-   "tab": "governance",
-   "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
-  },
-  {
-   "id": "s217-fable-origination-cutover",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "PR #1427 is merged and the one-pool tab is live. The remaining finish: when Malone/Pedro confirm the origination columns' exact spellings, flip the performance builder's cutover so the feed flows — the tab itself needs no further change, the tests prove it. Until then the three noncredit-only campuses correctly draw nothing."
-  },
-  {
-   "id": "s216-fable-post-port-polish",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Three small polish jobs on the shipped tab family: (1) the public how-the-model-works page has two SENTENCES still describing the old model (sizing 'by credit FTES over 115 colleges'; 'all factors 1.0') — the live painter fixes numbers, not prose, so rewrite or paint those claims; (2) the college briefing still shows internal short names where the funding tab says LA Southwest / Riverside City — sweep with the college-and-district identity work; (3) a cleanup commit for ~15 styling rules serving retired row shapes. Nothing visible moves."
-  },
-  {
-   "id": "s210-fable-sierra-sweep-test",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Sam's yes (2026-08-30, item 10): run the sixteen-row register sweep once on the small model - the hardest thing Sierra does - and report what it caught versus the last full-model run. Sequencing: run it BEFORE the register verdicts rewrite rows, so both models are compared on the same ground. Revert immediately if it disappoints, else when corporate billing lands; the revert is one Supabase config setting, no code change."
-  },
-  {
-   "id": "s208-fable-repair-ablation",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "The rule-testing groundwork is DONE (2026-08-30): the committed criteria were re-checked against the current rulebook with notes recorded beside them, and the redo recipe for the control-arm comparison is written — all filed in the vault. What remains is running the sittings themselves, on demand from the bench; results file into the vault, never here."
-  },
-  {
-   "id": "s209-fable-stale-copies",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "One file is rebuilt daily by a scheduled job but never committed by it, so the published copy goes stale: the pathways dataset. Small mechanical fix when someone wants it. (The second file originally listed here was re-checked and cleared - the job everyone suspected never actually rewrites it; the one that does also publishes it.)"
-  },
-  {
-   "id": "s202-fable-savesweep",
-   "for": "Fable",
-   "tab": "admin",
-   "text": "Sweep the other curator tabs for three save faults found on the funding tab: a page that only accepts the team password locks out someone signed in by magic link; edits made before signing in can stay stranded in the browser while looking saved; and a tab may still offer editing that the database would refuse. Decide per tab whether it should require a personal sign-in like the funding tab now does."
-  },
-  {
-   "id": "s208-fable-memory-lint",
-   "for": "Fable",
-   "tab": "memory",
-   "text": "The memory table has no consistency check at all, so a saved note can say the opposite of the standing rules and nothing notices. This is one of only two known failures nothing catches; the other is that our document checker cannot see the Obsidian vault, so it cannot tell a skipped update from one that never applied."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-09-01",
+  "_session": "SkyMeld, Session 218 — four outcomes folded into three bands",
+  "_status": "The Implementation Funding tab has been carrying two sections that described the same allocation in two different vocabularies: the three priorities, and the four funding outcomes the Education Code requires. They are now one. Four outcomes fold into three bands — Access, Success (completion and career attainment together, Sam's pairing), and Opportunities — and each band holds the measures that earn against it, with every dial still where a curator can adjust it. Which band a measure sits in is worked out from what the measure actually counts, not from its name, so the band a college reads and the funding it earns can never tell different stories. Measuring the model against live college data to justify the change turned up something worth knowing: the model currently pays out about a third of the college funding, and 84% of that comes from a single measure that 97 of 115 colleges already max out — so most of what it pays rewards work that was already happening. Sam has ruled the new settings; they are his to enter on the tab. Two of the three measures will show no earnings until MAP starts sending the new data, which is the honest picture rather than a fault.",
+  "items": [
+    {
+      "id": "s218-sam-set-dials",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Enter the new funding settings on the tab — they are yours to save, not ours to write into the database. You ruled: the new Accepted measure at a 25% share with a funding factor of 1.0, and the three measures at Eligible 40% / Accepted 25% / Transcribed 35%. At those settings a college needs a counselor-accepted CPL Plan on about one in seven of the CPL units it already applies, over the two-year window. Note a per-year ramp is not available in this window, so the factor is set once and revisited at the next appropriation."
+    },
+    {
+      "id": "s218-sam-pedro-three-feeds",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Three MAP data additions should travel to Pedro as ONE request, not three: the CPL lifecycle checkboxes you already asked for, the Origin and location fields that have been pending, and completion data. Completion is a new report rather than a column — the student report MAP sends has no award field, and the programs report is a course catalog rather than student awards. Completion would let the completion outcome be measured in the statute's own word, and joined with eligible CPL it would name each college's near-completers whose existing eligible CPL would finish an award."
+    },
+    {
+      "id": "s218-fable-rerun-earn-diagnostic",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Once Sam has entered the new settings, re-measure what each measure actually earns across all 115 colleges and report the spread. Today the model pays 34% of the college funding and 84% of that comes from one measure that 97 colleges already max out — a measure everyone clears rewards nothing, the same way a measure nobody can meet rewards nothing. This is the single best health check on the model and it takes minutes; it had never been run before today."
+    },
+    {
+      "id": "s216-sam-annual-percent",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "One display call is yours: in Annual funding view an award cell can read 'earning $140,476 · 191%' because the earning shown is the whole two-year window while the figure beside it is one year's. The code does this on purpose (earning is a window quantity) but two independent reviewers read it as over-earning. Say the word and the percent will be computed against the window figure instead, which never exceeds 100%."
+    },
+    {
+      "id": "s214-sam-origination-docx",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "The MAP Custom Reports origination instructions for Malone and Pedro are ready to forward (Word doc delivered in chat; also filed in the vault). It formalizes the Origin + LocID2 plan Pedro has held since 8-26. The tab is now BUILT to consume this feed with no further code change — but no funding moves to NOCE, SDCCE, or Calbright until it flows, so the column spellings from Malone/Pedro are the one thing holding the trio's earn-out."
+    },
+    {
+      "id": "s210-sam-75013-collab",
+      "for": "Sam",
+      "tab": "gr-register",
+      "text": "The SS75013 workgroup seat (your yes, 2026-08-30, item 9): pursue it in collaboration with CO Governmental Relations, CO Finance, and the Department of Finance - the CBE-to-FTES funding measure that reports to Finance by October 2028 is register row #7's named obstacle being designed. A session can draft the outreach note whenever you want it."
+    },
+    {
+      "id": "s210-sam-guidance-memos",
+      "for": "Sam",
+      "tab": "gr-register",
+      "text": "Memo A ('what is already law') is drafted and lives IN the GR tab now - open Guidance memos under the CPL area, edit any section, and Export memo (Word) uses the register's generator (the hold banner and drafting annex travel in the file until status says issued). Your sequencing ruling holds: BOG adoption first, then issuance. One external confirm before issuance: the section-2 accreditation-standards claim needs an ACCJC touchpoint. Memo B and C stubs sit beside it when you want them drafted."
+    },
+    {
+      "id": "s210-sam-tidyups",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "One one-click finish left (2026-08-30): review and merge the public KB's draft PR #22 (the Rule 8 -> Rule 9 renumber, two files) - your merge IS the curation gate. (The experiment-branch deletion is DONE and verified.)"
+    },
+    {
+      "id": "s206-sam-install-hook",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Run the context-pressure installer so sessions warn you before they run out of room: pull main, then `powershell -ExecutionPolicy Bypass -File scripts\\install-context-hook.ps1`. Until it is installed nothing warns — which is how we lost 778,000 tokens of working context on the 29th. Tell us if it errors; it could not be tested from the agent side."
+    },
+    {
+      "id": "s210-sam-export-bench-log",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
+    },
+    {
+      "id": "s217-fable-origination-cutover",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "PR #1427 is merged and the one-pool tab is live. The remaining finish: when Malone/Pedro confirm the origination columns' exact spellings, flip the performance builder's cutover so the feed flows — the tab itself needs no further change, the tests prove it. Until then the three noncredit-only campuses correctly draw nothing."
+    },
+    {
+      "id": "s216-fable-post-port-polish",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Three small polish jobs on the shipped tab family: (1) the public how-the-model-works page has two SENTENCES still describing the old model (sizing 'by credit FTES over 115 colleges'; 'all factors 1.0') — the live painter fixes numbers, not prose, so rewrite or paint those claims; (2) the college briefing still shows internal short names where the funding tab says LA Southwest / Riverside City — sweep with the college-and-district identity work; (3) a cleanup commit for ~15 styling rules serving retired row shapes. Nothing visible moves."
+    }
+  ]
 }
