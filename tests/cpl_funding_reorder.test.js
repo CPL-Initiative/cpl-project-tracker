@@ -56,13 +56,24 @@ function boot(window) {
   window.CPL_FUNDING_TAB.boot();
   return window.document;
 }
+// ⚠️ LOCATE BY DISPLAY INDEX, NOT BY DOM ORDINAL (re-aimed 2026-09-01).
+// The band consolidation groups cards under their statutory outcome, and the
+// bands render in statute order — so the card at display position 1 is first
+// WITHIN ITS BAND, not necessarily first in the document. `data-priocard` is
+// the display index the renderer stamps on each card, which is exactly what
+// these assertions were always reaching for: every check below is about the
+// card SHOWN at a position, and none of them was ever about document order.
+// Indexing by ordinal is the coupling this suite's own siblings broke on.
+function cardAt(doc, i) {
+  return doc.querySelector('#cplFundingMount .cplfund-prio .p[data-priocard="' + i + '"]');
+}
 function cardText(doc, i) {
-  const cards = doc.querySelectorAll("#cplFundingMount .cplfund-prio .p");
-  return cards[i] ? cards[i].textContent.replace(/\s+/g, " ") : "";
+  const card = cardAt(doc, i);
+  return card ? card.textContent.replace(/\s+/g, " ") : "";
 }
 function cardValue(doc, i, edit) {
-  const cards = doc.querySelectorAll("#cplFundingMount .cplfund-prio .p");
-  const el = cards[i] && cards[i].querySelector('[data-edit="' + edit + '"]');
+  const card = cardAt(doc, i);
+  const el = card && card.querySelector('[data-edit="' + edit + '"]');
   return el ? el.value : null;
 }
 function totalOf(T) {
@@ -142,8 +153,7 @@ check("A: reorderList is pure, so the DOM handlers are a thin shell over it",
   check("B: the first card's editable share is the MOVED priority's share",
     share0 != null && Math.abs(Number(share0) / 100 - natural[2].share) < 1e-9);
 
-  const el = doc.querySelectorAll("#cplFundingMount .cplfund-prio .p")[0]
-    .querySelector('[data-edit="metric"]');
+  const el = cardAt(doc, 0).querySelector('[data-edit="metric"]');
   el.value = "Units of transcribed CPL — retyped in position 1";
   el.dispatchEvent(new window.Event("change", { bubbles: true }));
   const after = T._prios(D.colleges[0].college, "1");

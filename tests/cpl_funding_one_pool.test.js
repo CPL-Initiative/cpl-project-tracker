@@ -203,8 +203,18 @@ const POOL = 25240308;
     !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));
   check("D9: section titles carry Sam's renames (2026-08-31)",
     /Funding Breakdown/.test(text) && /Eligibility Requirements/.test(text) &&
-    /Three Priority Outcome-Based Allocations/.test(text) &&
     /Funding Outcomes Required by/.test(text));
+  // D9b (2026-09-01) — the BAND CONSOLIDATION's absence guard, in the R1-R11
+  // shape. "Three Priority Outcome-Based Allocations" was one of two sections
+  // describing one allocation; Sam folded them into a single section whose
+  // title is the statutory one, with the priorities as bands inside it. The
+  // retired title must not come back: its return would mean the second section
+  // came back with it, which is the thing the consolidation removed.
+  check("D9b: the retired 'Three Priority Outcome-Based Allocations' title is GONE " +
+        "(Sam's band consolidation, 2026-09-01)",
+    !/Three Priority Outcome-Based Allocations/.test(text));
+  check("D9c: the statutory outcomes title appears exactly ONCE — one section, not two",
+    (text.match(/Funding Outcomes Required by/g) || []).length === 1);
   check("D10: the goals title links to the statute (california.public.law)",
     !!doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]'));
   check("D11: the hero card is 'Total credit and noncredit potential awards'; no carve-out CARD " +

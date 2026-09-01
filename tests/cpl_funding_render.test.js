@@ -161,9 +161,16 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     const mountText = doc.getElementById("cplFundingMount").textContent;
     check("section titles carry Sam's renames (2026-08-31)",
       /Funding Breakdown/.test(mountText) && /Eligibility Requirements/.test(mountText) &&
-      /Three Priority Outcome-Based Allocations/.test(mountText) &&
       /Funding Outcomes Required by/.test(mountText) &&
       /Outcomes-based awards/.test(mountText));
+    // The band consolidation's absence guard (Sam, 2026-09-01). The priorities
+    // and the statutory goals were two sections describing one allocation; they
+    // are now one, titled by the statute, with the priorities as bands inside
+    // it. The retired title returning would mean the second section returned.
+    check("the retired 'Three Priority Outcome-Based Allocations' title is GONE, and the " +
+          "statutory title appears exactly once (Sam's band consolidation, 2026-09-01)",
+      !/Three Priority Outcome-Based Allocations/.test(mountText) &&
+      (mountText.match(/Funding Outcomes Required by/g) || []).length === 1);
     check("chips are ghosted WORDS — at base / at cap / NC only, no ⬆/⬇ glyphs in the table",
       /at base/.test(mountText) && /at cap/.test(mountText) && /NC only/.test(mountText) &&
       !/[⬆⬇]/.test(doc.getElementById("cplFundTable").textContent));

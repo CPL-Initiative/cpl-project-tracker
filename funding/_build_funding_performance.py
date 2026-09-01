@@ -459,6 +459,20 @@ def main():
     i_type = cm.get("CPL Type Description")
     i_loc2 = cm.get("LocID2")
     i_origin = cm.get("Origin")
+    # The CPL lifecycle attestation (Sam -> Pedro, 2026-09-01): boolean fields
+    # for the lifecycle steps, upload through transcribe. The one the funding
+    # model reads is the counselor/accepted step — "either the student or the
+    # counselor/coordinator/initiator could check the counseling step done, and
+    # by doing so attesting that the student accepted the CPL on the plan."
+    #
+    # ⚠️ THE SPELLING IS NOT CONFIRMED YET, so candidates are SWEPT rather than
+    # assumed — the same posture the Origin cutover takes, and for the same
+    # reason: a guessed column name resolves to None and silently omits the
+    # measure, which is indistinguishable from the feed simply not carrying it.
+    # Sweeping and printing which one matched makes the cutover verifiable.
+    i_accept = next((cm[k] for k in ("Counselor Step", "Counselor", "CPL Plan Accepted",
+                                     "Plan Accepted", "Accepted", "Counseling Step")
+                     if k in cm), None)
     if i_tcr is None or i_sid is None:
         print("funding-performance: required columns missing — exiting 0 without changes.")
         return
@@ -495,6 +509,28 @@ def main():
     if not has_applied:
         print("funding-performance: NOTE — 'Applied Credits' not in this pull; "
               "pa/pa_u omitted (not zeroed). Check fetch_custom_report.py's column list.")
+    # ── the consolidated three (Sam, 2026-09-01) ─────────────────────────
+    # `ppe` = ELIGIBLE units among portal-origin students, the Access band's
+    # measure once Sam ruled "filter now". It needs no new column — Potential
+    # Student is already in the pull — so unlike pac it emits from today's feed.
+    #
+    # ⚠️ IT IS pe's COMPLEMENT, NOT pe FILTERED, exactly as ppa is pa's: every
+    # pe/pa/p2/p3 hit below carries `and not is_potential`. Reading ppe as a
+    # narrowing of pe would score Access on the cohort its own wording excludes,
+    # which is the error the ppa block above exists to document.
+    metrics = metrics + ("ppe",)
+    # `pac` = APPLIED units on an accepted Student CPL Plan. OMITTED (not zeroed)
+    # until the pull carries the attestation column — same shape as pa and the
+    # nc_* keys, because a present-but-all-zero key reads to earnFraction() as
+    # "the feed published and this college posted nothing" and would pay every
+    # college $0 on a column we never asked for.
+    has_accept = i_accept is not None
+    if has_accept:
+        metrics = metrics + ("pac",)
+    else:
+        print("funding-performance: NOTE — no CPL lifecycle attestation column in this pull; "
+              "pac/pac_u omitted (not zeroed). Awaiting the counselor-step boolean "
+              "(Sam -> Pedro, 2026-09-01); srcDelivered() reads the absence as undelivered.")
     # ── ORIGINATION (2026-08-31, the N2 b gate) ──────────────────────────
     # The nc_* keys exist only when the pull carries `LocID2` — the same
     # OMITTED-not-zeroed shape as `pa`: srcDelivered() in cpl_funding.js asks
@@ -539,9 +575,10 @@ def main():
     # (which is what the test fixture assumes). MAP's own per-college totals are
     # read below as an independent cross-check so the real grain is measured
     # rather than assumed.
-    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "p3", "pp",
+    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "ppe", "pac", "p3", "pp",
                                      "nc_pe", "nc_pa", "nc_pt") if m in metrics)
-    unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "p3": "tcr", "pp": "tcr",
+    unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "ppe": "ecr", "pac": "acr",
+               "p3": "tcr", "pp": "tcr",
                "nc_pe": "ecr", "nc_pa": "acr", "nc_pt": "tcr"}
     units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
     unmatched_units = {}
@@ -601,6 +638,13 @@ def main():
         # Portal launches). We no longer skip Potential rows outright — we route
         # them to pp instead.
         is_potential = i_pot is not None and (row[i_pot] or "").strip().lower() == "yes"
+        # The lifecycle attestation. MAP has not confirmed how the boolean is
+        # rendered on the wire, so every truthy spelling a boolean column
+        # plausibly carries is accepted — and nothing else is, so an unexpected
+        # value reads False and shows up as a missing measure rather than as a
+        # silently inflated one.
+        accepted = i_accept is not None and (row[i_accept] or "").strip().lower() in (
+            "true", "yes", "y", "1", "t")
         # `Origin` value histogram — verification only, so the ppa cutover to
         # named origins can be made on CONFIRMED spellings, never guessed ones.
         if i_origin is not None:
@@ -660,6 +704,16 @@ def main():
                             # The mirror of `pa` on the other side of the
                             # partition: same rung, opposite cohort.
                             ("ppa", acr > 0 and is_potential),
+                            # ELIGIBLE on the portal side of the same partition
+                            # — the Access band's measure (Sam, 2026-09-01).
+                            ("ppe", ecr > 0 and is_potential),
+                            # The accepted Student CPL Plan. Guarded by `accepted`
+                            # staying False when the column is absent, so the hit
+                            # never fires then (the `pa` pattern). Deliberately NO
+                            # is_potential condition: the attestation is a thing
+                            # done for one student regardless of how they arrived,
+                            # so it spans BOTH cohorts rather than picking a side.
+                            ("pac", acr > 0 and accepted),
                             # Noncredit-origin cut (2026-08-31): the receiving
                             # college's funnel among students whose LocID2
                             # resolves to a known noncredit location. Guarded by

@@ -617,6 +617,30 @@
     "  #cplFundingMount { padding: 12px !important; }",
     "  .cplfund-card { padding: 11px 12px; }",
     "  .cplfund-card .v { font-size: 1.15rem; }",
+    "}",
+    /* ═══ statutory bands (Sam, 2026-09-01) ═══
+       The priorities and the §78093.2(d)(1) goals were two sections describing
+       one allocation, stitched by a raised letter. One section now: the band is
+       the statutory outcome, the priority cards sit inside it. */
+    ".cplfund-band { border: 1px solid var(--border); border-radius: 10px;",
+    "  background: var(--surface-opaque); overflow: hidden; margin-bottom: 14px; }",
+    ".cplfund-band-head { padding: 10px 14px; background: var(--surface-subtle);",
+    "  border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap;",
+    "  align-items: baseline; gap: 4px 14px; }",
+    ".cplfund-band-key { font-weight: 700; color: var(--seal-blue); white-space: nowrap; }",
+    ".cplfund-band-name { font-size: 1.1rem; font-weight: 700; color: var(--text-strong); }",
+    ".cplfund-band-cite { font-size: .78rem; font-weight: 600; color: var(--text-muted); }",
+    ".cplfund-band-tot { margin-left: auto; font-size: .88rem; color: var(--text-body);",
+    "  font-variant-numeric: tabular-nums; white-space: nowrap; }",
+    ".cplfund-band-tot strong { color: var(--text-strong); }",
+    ".cplfund-band-quote { padding: 8px 14px; font-size: .86rem; font-style: italic;",
+    "  color: var(--text-body); border-bottom: 1px solid var(--border); }",
+    ".cplfund-band-body { padding: 10px 12px 12px; }",
+    ".cplfund-band-body .cplfund-prio { margin: 0; }",
+    ".cplfund-band-note { padding: 10px 14px 12px; font-size: .87rem; color: var(--text-body); }",
+    ".cplfund-band-orphan .cplfund-band-head { background: var(--surface-muted); }",
+    "@media (max-width: 560px) {",
+    "  .cplfund-band-tot { margin-left: 0; width: 100%; }",
     "}"
   ].join("\n");
 
@@ -3565,6 +3589,13 @@
     // caption and the dollars disagree about what this priority measures.
     var ms = (measureOf(p || priorities(slot)[i] || {}) || {}).milestone;
     if (ms === "transcribed") return { keys: ["B"], derived: true };
+    // The Counselor step (Sam, 2026-09-01). An accepted CPL Plan is a student
+    // committing prior learning toward a goal with a counselor, so it serves
+    // completion (B) AND is the step career attainment depends on — the only
+    // part of (C) a campus controls and can be measured on. It is deliberately
+    // BOTH: goal (C) has never had a campus measure, and claiming it here is
+    // honest only because the thing counted is the advising step, not attainment.
+    if (ms === "accepted") return { keys: ["B", "C"], derived: true };
     if (ms === "eligible" || ms === "applied") return { keys: ["A"], derived: true };
     return { keys: [], derived: true };
   }
@@ -4528,7 +4559,7 @@
     var heads = totalHeads();
     var flPrio = frontloaded();
     var ro = false;
-    return '<div class="cplfund-prio">' + ps.map(function (p, i) {
+    var cards = ps.map(function (p, i) {
       // The ANNUAL policy figures stay annual — share, per-student rate and the
       // derived reach are the per-year target and front-load does not move them
       // (Sam: double the per-student amount, NOT the student count). What
@@ -4599,7 +4630,93 @@
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
         strategiesHtml(slot, i) + "</div>";
-    }).join("") + "</div>";
+    });
+    return bandsHtml(slot, ps, cards);
+  }
+
+  // ── the statutory bands (Sam, 2026-09-01) ─────────────────────────────
+  // Four outcomes fold into three bands: (A) Access, (B)+(C) Success, and
+  // (D) Opportunities. Sam's fold — Success pairs completion with career
+  // attainment "the same way we combine two aspects of Access" — and (D) is
+  // named for the statute's own object ("credit for prior learning
+  // opportunities") rather than for the pilot projects that are its means.
+  //
+  // ⚠️ MEMBERSHIP IS DERIVED, NEVER TYPED. A card lands in a band by the goal
+  // prioGoals() resolves from its metric's MILESTONE, which is the same
+  // resolver the earning math uses — so the band a priority displays in and
+  // the dollars it earns can never disagree about what it measures. A card
+  // whose goal does not resolve lands in a visible ORPHAN band rather than
+  // being dropped: a priority silently vanishing off this page is the one
+  // failure here that would cost real funding without showing anything.
+  var BANDS = [
+    { id: "access",  keys: ["A"],      name: "Access" },
+    { id: "success", keys: ["B", "C"], name: "Success" },
+    { id: "opps",    keys: ["D"],      name: "Opportunities" }
+  ];
+  function bandCite(keys) {
+    return "Ed. Code &sect;78093.2(d)(1)(" + keys.join(") and (") + ")";
+  }
+  function bandQuote(keys) {
+    return keys.map(function (k) {
+      var g = goalByKey(k);
+      return g ? "&ldquo;" + esc(g.text) + "&rdquo;" : "";
+    }).filter(Boolean).join(" &nbsp;&middot;&nbsp; ");
+  }
+  function bandsHtml(slot, ps, cards) {
+    var used = {}, out = "";
+    BANDS.forEach(function (b) {
+      var members = [];
+      ps.forEach(function (p, i) {
+        if (used[i]) return;
+        var gk = prioGoals(slot, i, p).keys || [];
+        if (gk.some(function (k) { return b.keys.indexOf(k) >= 0; })) { used[i] = true; members.push(i); }
+      });
+      // (D) carries no priority card by design — the statute points that goal at
+      // the chancellor's office, not at the campuses, so no college earns
+      // against it. It still gets a band, because a reader asked to allocate
+      // "using all of the following goals" must be able to see all of them.
+      if (!members.length && b.id !== "opps") return;
+      var shareSum = 0, dollarSum = 0;
+      members.forEach(function (i) {
+        shareSum += Number(ps[i].share) || 0;
+        dollarSum += prioCap(netCollege(), slot, ps[i]);
+      });
+      out += '<section class="cplfund-band" id="cplfund-band-' + esc(b.id) + '">' +
+        '<div class="cplfund-band-head">' +
+          '<span class="cplfund-band-key">(' + esc(b.keys.join(") + (")) + ")</span> " +
+          '<span class="cplfund-band-name">' + esc(b.name) + "</span> " +
+          '<span class="cplfund-band-cite">' + bandCite(b.keys) + "</span>" +
+          (members.length
+            ? '<span class="cplfund-band-tot">' + fmtRatePct(shareSum) + "% &mdash; <strong>" +
+              fmtMoney(dollarSum) + "</strong> Total Possible</span>"
+            : '<span class="cplfund-band-tot">' + fmtMoney(poolField("scaling_projects_tech")) +
+              " &mdash; CPL Projects &amp; Innovation</span>") +
+        "</div>" +
+        '<p class="cplfund-band-quote">' + bandQuote(b.keys) + "</p>" +
+        (members.length
+          ? '<div class="cplfund-band-body"><div class="cplfund-prio">' +
+            members.map(function (i) { return cards[i]; }).join("") + "</div></div>"
+          : '<p class="cplfund-band-note">Outcomes reported by the MAP and Chancellor&rsquo;s Office teams. ' +
+            "No campus earns against this goal and none should &mdash; the statute points it at the " +
+            "Chancellor&rsquo;s Office. It is funded from the project allocation, read live from the Budget " +
+            "ledger, and evidenced by the named projects in the Activities register.</p>") +
+        "</section>";
+    });
+    // Orphans: any priority whose goal did not resolve. Loud, not silent.
+    var orphans = [];
+    ps.forEach(function (p, i) { if (!used[i]) orphans.push(i); });
+    if (orphans.length) {
+      out += '<section class="cplfund-band cplfund-band-orphan"><div class="cplfund-band-head">' +
+        '<span class="cplfund-band-name">Not yet tied to a statutory outcome</span> ' +
+        '<span class="cplfund-band-cite">' + fmtInt(orphans.length) +
+        " of " + fmtInt(ps.length) + " priorities</span></div>" +
+        '<p class="cplfund-band-note">These priorities carry a metric whose milestone does not resolve to a ' +
+        "goal in &sect;78093.2(d)(1). They still earn normally &mdash; this band exists so the gap is visible " +
+        "rather than silent. Set the metric, or tag the goal explicitly, to place them.</p>" +
+        '<div class="cplfund-band-body"><div class="cplfund-prio">' +
+        orphans.map(function (i) { return cards[i]; }).join("") + "</div></div></section>";
+    }
+    return out;
   }
 
   // The earning rules for noncredit (the locked mock's fold, 2026-08-31) —
@@ -4788,6 +4905,74 @@
              basis: "portal-origin students (Potential Student = Yes) with CPL applied in MAP" },
     ppa_u: { unit: "units", milestone: "applied",
              basis: "units of CPL APPLIED for portal-origin students (via the CPL Student Portal / Landing Page)" },
+    // ── the consolidated three (Sam, 2026-09-01) ──────────────────────────
+    // The bands re-aim the same three priorities: Eligible under Access,
+    // Accepted and Transcribed under Success. Two of the three need sources
+    // that did not exist, and both are DECLARED BEFORE THEY ARE DELIVERED on
+    // the noncredit lane's proven pattern — srcDelivered() asks the published
+    // artifact whether the key is there, so "not delivering yet" stays a
+    // MEASUREMENT of the feed rather than a flag anyone has to keep in sync,
+    // and earnFraction() reads f=0 for an undelivered key instead of paying a
+    // full cap. Sam, 2026-09-01: "let's wire this as if we have the needed data."
+    //
+    // ⚠️ ppe IS NOT A FILTERED pe. pe/pa/p2/p3 all carry `and not is_potential`
+    // in the builder, so they EXCLUDE portal-origin students — ppe is pe's
+    // DISJOINT SIBLING, exactly as ppa is pa's. Reading it as a narrowing of pe
+    // is the same error that would have scored Access on the cohort its own
+    // wording excludes (see the ppa block above, and pa_u=21 vs ppa_u=60).
+    ppe:   { unit: "students", milestone: "eligible",
+             basis: "portal-origin students (Potential Student = Yes) with any eligible CPL identified in MAP" },
+    ppe_u: { unit: "units", milestone: "eligible",
+             basis: "units of ELIGIBLE CPL for portal-origin students (via the CPL Student Portal / Landing Page)" },
+    // The Counselor lifecycle step: applied CPL on a Student CPL Plan the
+    // student ACCEPTED. Sam's spec (2026-09-01): "Applied CPL units measured in
+    // FTES for each accepted Student CPL Plan (which should set the counselor
+    // step to True)."
+    //
+    // ⚠️ THE MEASURE IS NAMED FOR THE CREDIT'S STATE, NOT FOR WHO CLICKED, and
+    // that is load-bearing: Sam ruled the same day that "either the student or
+    // the counselor/coordinator/initiator could check the counseling step
+    // done — and by doing so attesting that the student accepted the CPL on the
+    // plan." So this is not a staff-only signal and must never be described as
+    // one.
+    //
+    // ⚠️ AND IT IS AN ATTESTATION, NOT A TECHNICAL GUARANTEE. An earlier draft of
+    // this comment said the step "cannot be batch-loaded". That is FALSE and the
+    // correction matters, because the claim was the stated reason the measure
+    // repairs the applied rung. Sam, 2026-09-01: "there are allowable uses for
+    // batch uploading the counselor step checked true — we ask colleges to batch
+    // upload previously transcribed CPL from their SIS, with the assumption that
+    // they went through the counseling steps with each student before
+    // transcribing." So a batch CAN set it, legitimately.
+    //
+    // What the measure actually rests on is POLICY plus the AUDIT TRAIL, not the
+    // mechanism: the Chancellor's Office is instructing colleges to stop
+    // auto-awarding (Sam: auto-award "can impact students negatively"), to
+    // confirm acceptance with the student before awarding, and only then to check
+    // the step — and the attestation records WHO checked it and WHEN. The live
+    // risk this leaves is a college that auto-awards (military basic-training
+    // credit especially) and batch-sets the flag anyway, which the instruction
+    // targets and the audit trail makes reviewable.
+    //
+    // It still does real work against the rung it replaces: an undifferentiated
+    // applied count asks the college to assert NOTHING, while this one requires
+    // an assertion they are accountable for. That is the honest version of the
+    // builder's note that an undifferentiated count "rewards batch loading and
+    // real counselling identically" — the gap narrows, it does not close.
+    //
+    // ⚠️ NO is_potential CONDITION, deliberately — unlike pa (documented cohort)
+    // and ppa (portal cohort), the accepted-plan measure spans BOTH, because the
+    // counselor step is a thing the college did for a student regardless of how
+    // that student arrived. Same posture as the origination block in the builder.
+    //
+    // ⚠️ MILESTONE "accepted" IS NEW, and it is what puts this measure in the
+    // Success band rather than Access. prioGoals() derives the statutory goal
+    // from the milestone, never from a title, so the derivation has to know this
+    // rung exists or an accepted-plan measure would silently read as (A).
+    pac:   { unit: "students", milestone: "accepted",
+             basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
+    pac_u: { unit: "units", milestone: "accepted",
+             basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
     // against the same three milestones, filtered to students who originated
@@ -7197,12 +7382,21 @@
       section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("eligibility", "Eligibility Requirements", eligibilityHtml()) +
-      section("priorities", "Three Priority Outcome-Based Allocations",
+      // ONE section, not two (Sam, 2026-09-01). The priorities and the statutory
+      // goals described the same allocation in two vocabularies, stitched by a
+      // raised letter; the bands make the outcome the structure and the
+      // priority the thing inside it. goalSpineHtml() is NOT retired — it is the
+      // §78093.2(d)(2) reporting artifact, including the honest empty on goal
+      // (C) — so it stays, one click down, rather than becoming a rival section.
+      section("priorities",
+        'Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>',
         metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
+        '<details class="cplfund-goalspine-fold"><summary><strong>Statutory reporting detail</strong> ' +
+        '<span class="dk">&mdash; what funds each goal and how it is evidenced (&sect;78093.2(d)(2))</span>' +
+        "</summary>" + goalSpineHtml() + "</details>" +
         ncEarningRulesFoldHtml() + ftesFactorsHtml()) +
       // Sam, 2026-08-28: the Timing block is independently collapsible.
       collapseH3("timing", timingSectionHtml()) +
-      section("goals", 'Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>', goalSpineHtml()) +
       section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeBody) +
       '<div class="cplfund-foot">' +
       "<div>Funding cells show the <strong>max award</strong> with the Current Total beneath; dollar cells " +
@@ -7735,15 +7929,30 @@
     // Both land on movePriority(), which is pure over the order array — the DOM
     // handlers are a thin shell, so the tests exercise every reordering without
     // synthesising HTML5 drag events (jsdom does not implement them).
-    var prioGrid = document.querySelector("#cplFundingMount .cplfund-prio");
-    if (prioGrid && !publicMode()) {
+    // ⚠️ ALL the grids, not the first one. The band consolidation (Sam,
+    // 2026-09-01) puts each statutory band's cards in their OWN .cplfund-prio,
+    // so a `querySelector` here wired only the Access band and the position
+    // picker on every card below it silently did nothing — a control that looks
+    // live, accepts the click, and changes no order. Reordering is also
+    // CROSS-BAND by nature (moving a priority can move it to another band), so
+    // the handlers must span every grid rather than being scoped per band.
+    var prioGrids = Array.prototype.slice.call(
+      document.querySelectorAll("#cplFundingMount .cplfund-prio"));
+    if (prioGrids.length && !publicMode()) {
+      var qsa = function (sel) {
+        var out = [];
+        prioGrids.forEach(function (g) {
+          Array.prototype.push.apply(out, Array.prototype.slice.call(g.querySelectorAll(sel)));
+        });
+        return out;
+      };
       var dragFrom = null;
       var clearDragCls = function () {
-        prioGrid.querySelectorAll(".p").forEach(function (c) {
+        qsa(".p").forEach(function (c) {
           c.classList.remove("cplfund-dragging", "cplfund-dropover");
         });
       };
-      prioGrid.querySelectorAll("[data-priodrag]").forEach(function (g) {
+      qsa("[data-priodrag]").forEach(function (g) {
         g.addEventListener("dragstart", function (e) {
           dragFrom = Number(g.getAttribute("data-priodrag"));
           var card = g.closest(".p");
@@ -7757,7 +7966,7 @@
         });
         g.addEventListener("dragend", function () { dragFrom = null; clearDragCls(); });
       });
-      prioGrid.querySelectorAll("[data-priocard]").forEach(function (card) {
+      qsa("[data-priocard]").forEach(function (card) {
         card.addEventListener("dragover", function (e) {
           if (dragFrom == null) return;
           e.preventDefault();
@@ -7778,7 +7987,7 @@
           movePriority(state.viewSlot, from, to);
         });
       });
-      prioGrid.querySelectorAll("[data-priopos]").forEach(function (sel) {
+      qsa("[data-priopos]").forEach(function (sel) {
         sel.addEventListener("change", function () {
           savingState = "";
           movePriority(state.viewSlot, Number(sel.getAttribute("data-priopos")), Number(sel.value));

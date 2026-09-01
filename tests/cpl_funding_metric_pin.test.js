@@ -31,6 +31,22 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
 const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
 
+// ⚠️ LOCATE A PRIORITY CARD BY ITS DISPLAY INDEX, NOT BY DOM ORDINAL
+// (re-aimed 2026-09-01, Sam's band consolidation). Cards are now grouped under
+// their statutory outcome and the bands render in statute order, so the card at
+// display position N is Nth WITHIN ITS BAND, not Nth in the document.
+// `data-priocard` is the display index the renderer stamps on each card — which
+// is what every assertion below was always reaching for. None of them was ever
+// about document order.
+function cardAt(doc, i) {
+  return doc.querySelector('.cplfund-prio .p[data-priocard="' + i + '"]');
+}
+function allCards(doc) {
+  return Array.from(doc.querySelectorAll(".cplfund-prio .p")).sort(
+    (a, b) => Number(a.getAttribute("data-priocard")) - Number(b.getAttribute("data-priocard")));
+}
+
+
 // ⚠️ LOCATE PRIORITY ROWS STRUCTURALLY. The expand's detail table rows ARE
 // P1, P2, P3 in document order; each row's cells are read by POSITION in the
 // locked mock's 7-column shape (0 Priority · 1 CR funding · 2 NC funding ·
@@ -335,7 +351,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
     p1vals.filter((v) => v === "").length === 0);
   // ...and the statewide card shows the portal measure's own tiny raw figure —
   // the fingerprint of WHERE the prose landed.
-  const cards = Array.from(doc.querySelectorAll(".cplfund-prio .p"));
+  const cards = allCards(doc);
   check("7b2: the statewide Access card reads the portal measure's 25 units, not the applied lane",
     /25 units/.test(cards[0].textContent));
   // ⚠️ 7c USED TO READ "every pinned cell says 'no feed'", which was true only
@@ -381,7 +397,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   T.render();
   // The statewide Access card earns on the delivered key, and a college's
   // expand scores its P3 row on a real FTES actual — no "no feed" anywhere.
-  const card3 = Array.from(doc.querySelectorAll(".cplfund-prio .p"))[2];
+  const card3 = cardAt(doc, 2);
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
     /Actual/.test(card3.textContent) && !/No actuals yet/.test(card3.textContent) &&
