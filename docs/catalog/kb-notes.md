@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-358 document(s).
+360 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A locked mock's figures of record are the port's anchor test](../kb-notes/methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [A manager must show everything it manages, or say what it cannot see](../kb-notes/methodology-a-manager-must-show-everything-it-manages.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A mechanism that looks redundant may be carrying a second job the table cannot show](../kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) | methodology | published | 2026-08-22 | 2026-08-22 |
@@ -272,6 +273,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [RLS is not a gate in front of a service-role edge function](../kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [Search the awarding body, not just the credential's name](../kb-notes/methodology-search-the-awarding-body-not-just-the-name.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [Separate affordance visibility from action eligibility](../kb-notes/methodology-affordance-visibility-vs-action-eligibility.md) | methodology | published | 2026-06-28 | 2026-06-28 |
+| [Shared grid columns must share one unit](../kb-notes/methodology-shared-grid-columns-must-share-one-unit.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [Shared prose over-claims on the rows it was not written for](../kb-notes/methodology-shared-prose-over-claims-on-rows-it-was-not-written-for.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Ship generator changes live-on-merge when the artifact regenerates from committed inputs](../kb-notes/methodology-ship-generator-changes-live-on-merge.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key](../kb-notes/methodology-single-source-of-truth-flows-via-snapshot.md) | methodology | published | 2026-07-27 | 2026-07-27 |

@@ -296,7 +296,13 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   "topped up"); avoid "double count" (an MIS audit-error term — say *the same
   CPL credits both institutions by design*). The per-institution figure is the
   **max award** — *"communicates that awards are based on outcomes, not
-  automatically awarded."* Sweep prose only, never identifiers.
+  automatically awarded"* — defined on the tab in his verbatim (2026-09-01):
+  *"maximum funding to be awarded based on measurable outcomes and allocated
+  as credit and noncredit subtotals."* **Tightened 2026-08-31/09-01:** say
+  **funding**, not "pool," for the model's total (vary the wording — "the
+  total", "the allocation" — rather than drumming "funding"; the model's NAME
+  "one-pool" and code identifiers stay); **never the phrase "on its face"** —
+  end the statement instead. Sweep prose only, never identifiers.
 - **"Activities" = activities AND their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from
@@ -712,20 +718,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyLedger S214 — the one-pool day (2026-08-31)
-
-**Sam ADOPTED the one-pool funding model** ($25.24M · $150K floor / $400K cap
-per institution, CR+NC combined; the NC-only trio earns by ORIGINATION, no
-advances — rulings N1 a / N2 b / N3 a) via a measured arc: the Budget Balance
-mock (#1419–#1420), the who-moves card wired into the live tab (#1421), the
-One-Pool Funding Tab visual (#1422). NC protection is the **earning rule, not a
-second pool** (new KB note; **F1 pending** — hold vs label on the $1.3M college
-NC shares). Vocabulary ruled: **funding never "money" · CCC norms · "max
-award" · alphabetical** (#1423 + the Naming doctrine block). Memo A is now an
-editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions
-delivered for Malone/Pedro (CPLBrain#67). Story: `cpl_funding_lessons`;
-handoff `session_215_handoff`.
-
 ### SkyPool S215 — current vs. possible on the face, and the full revised tab (2026-08-31)
 
 **Queue item 1 built and ruled**: every expand + priority card carries **Current
@@ -738,6 +730,20 @@ and the **R1–R11 "what leaves the tab" sheet (8 ruled · 3 proposed, reply by
 number)** — awaiting Sam's lock; the port (origin feed first) starts on it.
 ⚠️ A phrase sweep misses what a line break splits (new KB note). Story:
 `cpl_funding_lessons`; handoff `session_216_handoff`.
+
+### SkyPort S216 — the one-pool model shipped (2026-08-31 → 09-01)
+
+**The port is DONE and the whole family is green**: `cpl_funding.js` runs the
+one-pool solve (118 rows · 51 base / 7 cap · trio by origination), all 33
+funding suites re-aimed (~2,000 checks) by a 5-agent fan-out, PR #1427.
+Sam's three reaction rounds landed live (collapsible sections + expand/collapse
+all · rem-shared column template — em grids misalign across font sizes ·
+verbatim statute folds · his Summary bullet · "Version as of" · pool→funding +
+"on its face" banned · Draft memo / Save as PDF · Internal·Public preview ·
+metric on the card face · max-award definition · LA Southwest / Riverside City
+via `display` aliases). The ports FOUND three product bugs (prioTarget lane
+slice; `c:<order>` keys; low-key-rows bold) — all fixed. Story:
+`cpl_funding_lessons`; handoff `session_217_handoff`.
 
 ## Troubleshooting
 

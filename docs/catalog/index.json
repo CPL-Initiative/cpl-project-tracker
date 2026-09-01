@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 358,
+   "count": 360,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1342,6 +1342,21 @@
      "title": "A live rename must be order-proof, because the database and the deploy cannot be simultaneous",
      "type": "methodology",
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-08-31",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test.md",
+     "status": "published",
+     "tags": [
+      "kb",
+      "methodology",
+      "testing",
+      "funding"
+     ],
+     "title": "A locked mock's figures of record are the port's anchor test",
+     "type": "methodology",
+     "updated": "2026-08-31"
     },
     {
      "created": "2026-08-15",
@@ -5131,6 +5146,21 @@
      "title": "Separate affordance visibility from action eligibility",
      "type": "methodology",
      "updated": "2026-06-28"
+    },
+    {
+     "created": "2026-09-01",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-shared-grid-columns-must-share-one-unit.md",
+     "status": "published",
+     "tags": [
+      "kb",
+      "methodology",
+      "ui",
+      "css"
+     ],
+     "title": "Shared grid columns must share one unit",
+     "type": "methodology",
+     "updated": "2026-09-01"
     },
     {
      "created": "2026-08-19",
@@ -10928,7 +10958,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-08-30"
+     "updated": "2026-09-01"
     },
     {
      "created": "2026-08-28",
@@ -11339,8 +11369,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 190,
+   "count": 191,
    "docs": [
+    {
+     "created": "2026-09-01",
+     "governs": [],
+     "n": 217,
+     "path": "docs/session_217_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the one-pool model is shipped; feed cutover + polish next",
+     "type": null,
+     "updated": "2026-09-01"
+    },
     {
      "created": "2026-08-31",
      "governs": [],
@@ -14691,5 +14734,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 744
+ "total": 747
 }
