@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 766,
-    "bytes": 8090904,
+    "files": 767,
+    "bytes": 8102533,
     "over_budget": 4,
     "handoff_max": 219,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 55524,
+    "always_loaded_bytes": 57316,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 55524,
+        "bytes": 57316,
         "over": 0
       },
       "other": {
         "files": 103,
-        "bytes": 2486699,
+        "bytes": 2486958,
         "over": 2
       },
       "index": {
@@ -40,13 +40,13 @@
         "over": 1
       },
       "kb_note": {
-        "files": 365,
-        "bytes": 1904153,
+        "files": 366,
+        "bytes": 1912513,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 131026,
+        "bytes": 132244,
         "over": 1
       },
       "handoff": {
@@ -56,12 +56,14 @@
       }
     },
     "by_rule": {
+      "house_voice": 21,
       "oversized_doc": 4,
+      "unindexed_kb_note": 1,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2470,
-      "bytes": 1271417330,
+      "files": 2471,
+      "bytes": 1271436396,
       "heavy_bytes": 600667439,
       "heavy_share": 0.472,
       "ignore_filters": [
@@ -115,6 +117,66 @@
   },
   "findings": [
     {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "README.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/catalog/kb-notes.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "terms": {
+          "leverage": 2
+        }
+      },
+      "message": "2 business-register terms — leverage x2 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/ccr_convergence_strategy.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/co_platform_strategy.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
+      },
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/coursecontrolnumber_remint.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
@@ -141,16 +203,145 @@
       "path": "docs/exhibit_canonicalization_lessons.md"
     },
     {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "terms": {
+          "leverage": 4
+        }
+      },
+      "message": "4 business-register terms — leverage x4 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "terms": {
+          "leverage": 5
+        }
+      },
+      "message": "5 business-register terms — leverage x5 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/eacr-consolidation-scope.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "utilize": 1
+        }
+      },
+      "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
+      },
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-rank-cleanup-by-downstream-impact.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/methodology-rekey-derived-identity-maps.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "terms": {
+          "leverage": 2
+        }
+      },
+      "message": "2 business-register terms — leverage x2 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "reference-cccco-house-voice"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/reference-cccco-house-voice.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/noncredit_cpl_thinking.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/public_private_repo_split_scope.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 15142,
+        "bytes": 16360,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 3142,
-        "ratio": 1.26
+        "over_by": 4360,
+        "ratio": 1.36
       },
-      "message": "15,142 B is 1.3× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "16,360 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
@@ -165,6 +356,78 @@
       },
       "message": "537,914 B is 3.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
+      },
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/sierra_maturity_roadmap.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "utilize": 1
+        }
+      },
+      "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_amendment_package_draft.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_article9_amendments.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/t5_55050_restore_the_2025_draft.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/working_with_claude_code.md"
     },
     {
       "rule": "vault_heavy_path",

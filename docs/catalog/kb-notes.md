@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-363 document(s).
+364 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -372,6 +372,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Statewide Collaborative (CCC) credit recommendations are not housed at one college](../kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
 | [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 |
+| [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-09-01 |
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |
 | [CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal](../kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 |  |
