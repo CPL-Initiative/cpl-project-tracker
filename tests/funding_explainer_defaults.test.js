@@ -34,15 +34,18 @@ if (m) {
   const BOUND = {
     "f-floorv":  money(D.pool.floor),
     "f-floor":   String(D.model.floorCount),
-    "f-floor-k": "colleges land on the " + money(D.pool.floor) + " minimum",
+    // One-pool payload shape (2026-09-01): pool.feeder is retired; the
+    // noncredit figures are the decomposition — nc.face = collegeShares +
+    // trioHeld, nc.ncColleges the college count.
+    "f-floor-k": "institutions are brought up to the " + money(D.pool.floor) + " base award",
     "r-min":     money(D.min),
     "l-floor":   money(D.pool.floor),
     "t-floor":   money(D.pool.floor),
     "g-floor":   money(D.pool.floor),
-    "f-nc":      money(D.pool.feeder),
-    "l-nc-count": D.nc ? String(D.nc.count) : null,
-    "t-nc":      money(D.pool.feeder),
-    "f-nc2":     money(D.pool.feeder),
+    "f-nc":      D.nc ? money(D.nc.face) : null,
+    "l-nc-count": D.nc ? String(D.nc.ncColleges) : null,
+    "t-nc":      D.nc ? money(D.nc.face) : null,
+    "f-nc2":     D.nc ? money(D.nc.face) : null,
   };
 
   // BOUND is hand-maintained, and a hand-maintained list is precisely what let
@@ -90,8 +93,12 @@ if (m) {
   // audience-facing document is a claim nothing checks.
   check("the explainer no longer says the noncredit money goes to four campuses",
     !/four noncredit/i.test(html.replace(m[0], "")));
-  check("the noncredit lane's size is stated from the payload",
-    !!D.nc && D.nc.count > 4 && D.nc.colleges + D.nc.standalone === D.nc.count);
+  // One-pool form: the "lane" is the decomposition — the payload's noncredit
+  // figures must reconcile with each other, and the count must be the real
+  // many-college fact (108), never the old hand-typed "four campuses".
+  check("the noncredit decomposition is stated from the payload and reconciles",
+    !!D.nc && D.nc.ncColleges > 4 && Array.isArray(D.nc.trio) && D.nc.trio.length === 3 &&
+    Math.abs(D.nc.collegeShares + D.nc.trioHeld - D.nc.face) < 2);
 }
 
 let pass = 0;
