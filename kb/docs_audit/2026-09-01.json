@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 767,
-    "bytes": 8102533,
+    "bytes": 8106696,
     "over_budget": 4,
     "handoff_max": 219,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 103,
-        "bytes": 2486958,
+        "bytes": 2488392,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 16416,
+        "bytes": 16630,
         "over": 0
       },
       "lessons": {
@@ -51,19 +51,18 @@
       },
       "handoff": {
         "files": 193,
-        "bytes": 1621072,
+        "bytes": 1623587,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 21,
       "oversized_doc": 4,
-      "unindexed_kb_note": 1,
       "vault_heavy_path": 45
     },
     "vault": {
       "files": 2471,
-      "bytes": 1271436396,
+      "bytes": 1271444511,
       "heavy_bytes": 600667439,
       "heavy_share": 0.472,
       "ignore_filters": [
@@ -299,15 +298,6 @@
       "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "reference-cccco-house-voice"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/reference-cccco-house-voice.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -348,13 +338,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 537914,
+        "bytes": 539187,
         "limit": 150000,
         "lane": "other",
-        "over_by": 387914,
+        "over_by": 389187,
         "ratio": 3.59
       },
-      "message": "537,914 B is 3.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "539,187 B is 3.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

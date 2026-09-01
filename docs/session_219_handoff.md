@@ -41,6 +41,36 @@ pattern: `ppe`/`ppe_u` (portal-origin eligible — emits from today's feed) and
 `pac`/`pac_u` (applied on an accepted CPL Plan — omitted, not zeroed, until the
 attestation column lands).
 
+## Two things that landed AFTER the checkpoint
+
+**1. The public explainer printed `$NaN`** (Sam caught it; fixed same day, PR
+#1430). `funding-model/index.html` computed `hero = one_time - admin - scaling -
+P.feeder; inst = hero + P.feeder` — the carve-out the one-pool model retired on
+2026-08-31. `pool` no longer emits `feeder`, so `P.feeder` was `undefined` and
+the "allocated to the 118 institutions" box rendered `$NaN` while the prose
+beside it printed $25,240,308. ⚠️ **Every assertion in
+`tests/funding_model_page.test.js` passed through it** — that suite reads the
+page as TEXT, and a static check cannot see a NaN. It now also boots the engine
+and asserts every `P.<key>` the painter references still exists in the payload.
+⚠️ **This is the THIRD thing the one-pool port left stale on that page** (two
+prose passages, still open as NEXT ①, plus this). The page is painted from the
+payload in some places and not others, and only the unpainted ones lie — **an
+audit pass over the whole explainer is worth more than fixing them as they
+surface.**
+
+**2. The CCCCO house voice is now doctrine** (PR #1431). Sam shared his VC of
+Academic Affairs' letter to CSU as the standard for outward writing. Rules that
+fire unprompted are in `CLAUDE.md` → Naming & terminology; the nine moves and a
+before/after are in
+[`reference-cccco-house-voice`](docs/kb-notes/reference-cccco-house-voice.md);
+exemplars in `CPLBrain/04-projects/cpl-initiative/resources/`; the mechanical
+floor is linted by `house_voice` in `kb/_docs_audit.py` (informational, 21 open
+findings, nearly all `leverage`). ⚠️ **Scope is deliberate** — outward artifacts
+only. Lane files, handoffs, commits and code comments stay dense; register
+follows audience. ⚠️ **Anything worth being an exemplar belongs in
+`resources/`, not a session upload** — a committed document can be consulted, an
+uploaded one exists for a single session.
+
 ## ⭐ THE FINDING THAT MATTERS MOST
 
 Booting the live model against the live feed measured what the priorities
@@ -85,10 +115,14 @@ move** — it is the lane's best single health check. KB note:
    booleans (sent 2026-09-01), Origin/LocID2, and **completions** (a NEW MAP
    view; `View_StudentAggregatedValues_APIDataset` has no award column and
    `View_ProgramsofStudy_APIDataset` is a program catalog).
-3. **Explainer's two stale STATIC prose passages** (open since S217): step one
-   sizes on credit FTES over "all 115 … 1,069,182" (one-pool sizes on COMBINED
-   over 118) and step three says factors are 1.0 (live Year-1 is 0.5). The
-   painter only overwrites elements with ids, so no repaint corrects a sentence.
+3. **AUDIT THE WHOLE EXPLAINER, don't fix it defect by defect.** Three things
+   the one-pool port left stale have now surfaced one at a time. Two remain
+   (open since S217): step one sizes on credit FTES over "all 115 … 1,069,182"
+   (one-pool sizes on COMBINED over 118) and step three says factors are 1.0
+   (live Year-1 is 0.5). The painter only overwrites elements with ids, so no
+   repaint corrects a sentence. **Walk every figure and every load-bearing
+   claim on the page against the payload once**, and give each an id or delete
+   it — that is cheaper than a fourth surprise.
 4. **Sam's open display call** — Annual-view earning % can read >100%.
 5. **Cleanup commit** — dead CSS for retired row shapes.
 
@@ -118,3 +152,7 @@ move** — it is the lane's best single health check. KB note:
   before committing; a LOWER floor is a check that stopped running.
 - Expect **two of three measures at ~$0** until the feeds land, so the Summary
   shows a large uncommitted balance. Intended, not a defect.
+- **`--update-floor` and `--apply` are the only mutating switches** in the docs
+  tooling; both rewrite broadly, so review their diff before committing.
+- **Write outward artifacts in the house voice** (above). Internal working
+  memory stays dense — do not flatten a lane file to correspondence register.
