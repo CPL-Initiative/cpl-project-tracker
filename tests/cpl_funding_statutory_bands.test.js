@@ -86,7 +86,7 @@ check("Success's card is placed without the word 'Success' appearing in its titl
 // following goals" has to be able to see all of them.
 check("Opportunities carries no priority card", cardsIn(bandById(doc, "opps")).length === 0);
 check("Opportunities says no campus earns against it",
-  /no campus earns against/i.test(flat(bandById(doc, "opps"))));
+  /no (campus|college) earns against/i.test(flat(bandById(doc, "opps"))));
 check("Opportunities names its funding source rather than showing a share",
   /CPL Projects & Innovation/i.test(flat(bandById(doc, "opps"))));
 
