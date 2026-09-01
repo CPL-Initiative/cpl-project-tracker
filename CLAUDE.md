@@ -302,7 +302,15 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   **funding**, not "pool," for the model's total (vary the wording — "the
   total", "the allocation" — rather than drumming "funding"; the model's NAME
   "one-pool" and code identifiers stay); **never the phrase "on its face"** —
-  end the statement instead. Sweep prose only, never identifiers.
+  end the statement instead. **NEVER the concept of ADVANCES and NEVER a
+  reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
+  *"I don't want to suggest that advances are possible in the model,
+  regardless of current missing data feeds or any other factor"* — an
+  unmeasured metric reads a plain "no data yet" (the why lives in the
+  curator-only diagnostic); "advancing the priority outcomes" (to further)
+  and the statute's "Advancing career attainment" are the allowed senses.
+  The anchor suite's D13 ban guard enforces it. Sweep prose only, never
+  identifiers.
 - **"Activities" = activities AND their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from
