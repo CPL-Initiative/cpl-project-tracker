@@ -726,18 +726,17 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyPool S215 — current vs. possible on the face, and the full revised tab (2026-08-31)
+### SkyDeck S217 — the 9/02 session deck; the sunshine rule (2026-09-01)
 
-**Queue item 1 built and ruled**: every expand + priority card carries **Current
-Total / Total Possible** (#1424; Sam's labels — "Total Possible" is the CEILING,
-his refinement after "Potential Total" read two ways). **The full revised-tab
-mock is BUILT** (#1425) from a measured inventory of `cpl_funding.js`'s ~30
-surfaces: Baseline-eligibility card (N1 a), §78093.2(d)(1) goal cards +
-superscripts, sticky header + ONE SYSTEM row, live search, the MAP-team note,
-and the **R1–R11 "what leaves the tab" sheet (8 ruled · 3 proposed, reply by
-number)** — awaiting Sam's lock; the port (origin feed first) starts on it.
-⚠️ A phrase sweep misses what a line break splits (new KB note). Story:
-`cpl_funding_lessons`; handoff `session_216_handoff`.
+**Sam's Taco Tuesday deck rebuilt for the 2026-09-02 session** (8 → 14
+slides, in CPLBrain `04-projects/cpl-initiative/`): ESS 25-82 $50K review +
+reporting-methods slide, THREE Ed Code §78093.2 slides (30 min), funding at
+**general principles only — his sunshine rule: no new-model specifics until
+CO leadership confirms** (ruling + verbatim in the lane file). Priorities
+read live (Access: Statewide 34 / Access: Outreach 33 / Completion 33);
+deck's stale Oct. 31 opt-in → Nov. 1. Found: the public explainer's two
+STATIC prose passages still assert the old model (fix = lane NEXT ①). PR
+#1427 was already merged. Story: `cpl_funding_lessons`; handoff `session_218_handoff`.
 
 ### SkyPort S216 — the one-pool model shipped (2026-08-31 → 09-01)
 
