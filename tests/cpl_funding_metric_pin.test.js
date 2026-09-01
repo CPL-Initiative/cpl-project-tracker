@@ -48,12 +48,13 @@ function allCards(doc) {
 
 
 // ⚠️ LOCATE PRIORITY ROWS STRUCTURALLY. The expand's detail table rows ARE
-// P1, P2, P3 in document order; each row's cells are read by POSITION in the
-// locked mock's 7-column shape (0 Priority · 1 CR funding · 2 NC funding ·
-// 3 Target · 4 Actual · 5 Current Total · 6 Total Possible). The old suite
-// indexed the COLLEGE ROW's <td> list and broke the day a label column landed
-// before P1 — the expand table's columns are the contract now, so position is
-// the structure here, not an accident of layout.
+// P1, P2, P3 in document order. Their CELLS are read by HEADER NAME, not by
+// position: the suite indexed the COLLEGE ROW's <td> list once and broke when a
+// label column landed before P1, then indexed the expand table by position and
+// broke again on 2026-09-01 when "To go" was inserted before Current Total —
+// three assertions still checking the right thing about the wrong cell. The
+// header is the contract now, and DTL_COL below throws on an unmapped column,
+// so a new column is a loud failure rather than a silent shift.
 function openDetail(window, doc, name) {
   const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find((r) => r.textContent.indexOf(name) !== -1);
@@ -64,15 +65,30 @@ function openDetail(window, doc, name) {
   const det = row2 && row2.nextElementSibling;
   return det && det.classList.contains("cplfund-detail") ? det : null;
 }
+const DTL_COL = { "priority": "priority", "cr funding": "crFunding", "nc funding": "ncFunding",
+  "target": "target", "actual": "actual", "to go": "toGo", "current total": "current",
+  "total possible": "possible" };
 function detRows(det) {
   if (!det) return [];
-  return Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).slice(1)   // drop the header row
-    .map((tr) => Array.from(tr.querySelectorAll("td"))
-      .map((td) => td.textContent.replace(/\s+/g, " ").trim()));
+  const trs = Array.from(det.querySelectorAll(".cplfund-dtl-table tr"));
+  // Header → key, so a cell is addressed by NAME. Every unmapped header is a
+  // loud failure rather than a silent shift: a new column must be named here.
+  const keys = Array.from((trs[0] || { querySelectorAll: () => [] }).querySelectorAll("th"))
+    .map((th) => {
+      const k = DTL_COL[th.textContent.replace(/\s+/g, " ").trim().toLowerCase()];
+      if (!k) throw new Error("unmapped detail column: " + th.textContent.trim());
+      return k;
+    });
+  return trs.slice(1).map((tr) => {
+    const cells = Array.from(tr.querySelectorAll("td"))
+      .map((td) => td.textContent.replace(/\s+/g, " ").trim());
+    keys.forEach((k, i) => { cells[k] = cells[i]; });
+    return cells;
+  });
 }
 // "N FTES" on the ACTUAL cell (fmtNum1 renders one decimal — "400.0 FTES"),
 // not preceded by a digit or dot (so 400 does not match inside 1,400).
-const actFtes = (cells, n) => new RegExp("(^|[^\\d.])" + n + "(\\.0)? FTES").test(cells[4] || "");
+const actFtes = (cells, n) => new RegExp("(^|[^\\d.])" + n + "(\\.0)? FTES").test(cells.actual || "");
 
 // ── 1. the defect itself, against the REAL predicates ────────────────────────
 // Rebuilt out of the consumer so this cannot drift into testing a copy.
@@ -139,11 +155,11 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   check("3a: the pinned priority scores on pa_u (400 FTES), not on the prose's pp_u",
     P.length === 3 && actFtes(P[0], 400));
   check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure (0.1 FTES)",
-    P.length === 3 && /(^|[^\d.])0\.1 FTES/.test(P[1][4]));
+    P.length === 3 && /(^|[^\d.])0\.1 FTES/.test(P[1].actual));
   check("3b2: so the pin changes the answer — identical prose, different earning",
-    P.length === 3 && P[0][4] !== P[1][4] && P[0][5] !== P[1][5]);
+    P.length === 3 && P[0].actual !== P[1].actual && P[0].current !== P[1].current);
   check("3c: an unknown pin renders 'not wired' rather than a plausible number",
-    P.length === 3 && /not wired/.test(P[2][4]) && P[2][5] === "$0");
+    P.length === 3 && /not wired/.test(P[2].actual) && P[2].current === "$0");
   check("3d: a pinned unit source forces the FTES unit, whatever the prose sniffs",
     T._prios("Laney", "1")[0].unit === "FTES");
 
@@ -182,18 +198,18 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
   check("3e: an undelivered NC source earns $0 and reads 'no data yet' (2026-09-01 wording)",
-    P.length === 3 && /no data yet/.test(P[0][4]) && P[0][5] === "$0");
+    P.length === 3 && /no data yet/.test(P[0].actual) && P[0].current === "$0");
   // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
   // contrast that matters (the gap row's Current Total pays, the undelivered
   // row's is strictly $0) is 3e4's check, on the dollars.
   check("3e2: the gap row beside it also reads 'no data yet' — never a measured zero",
-    P.length === 3 && /no data yet/.test(P[1][4]) && !/0 · 0%/.test(P[1][4]));
+    P.length === 3 && /no data yet/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
     P.length === 3 && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
   // strictly $0 — read straight off the Current Total column.
   check("3e4: the undelivered row earns strictly less than the data-gap row advances",
-    P.length === 3 && P[0][5] === "$0" && P[1][5] !== "$0" && P[1][5] === P[1][1]);
+    P.length === 3 && P[0].current === "$0" && P[1].current !== "$0" && P[1].current === P[1].crFunding);
 }
 
 // ── 4. the two states that must never advance ────────────────────────────────
@@ -401,7 +417,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
     /Actual/.test(card3.textContent) && !/No actuals yet/.test(card3.textContent) &&
-    P.length === 3 && /[\d,.]+ FTES · /.test(P[2][4]) && !/no feed/.test(P[2][4]));
+    P.length === 3 && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
   check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
     /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
   check("8c: the registry records that ppa is NOT a filtered pa (disjoint cohorts)",
@@ -427,7 +443,7 @@ check("9a: an empty-string metric_src clears the pin rather than being an unknow
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
   check("9b: a cleared pin falls back to the prose matcher, not to 'not wired'",
-    P.length === 3 && !/not wired/.test(P[0][4]) && actFtes(P[0], 400));
+    P.length === 3 && !/not wired/.test(P[0].actual) && actFtes(P[0], 400));
 }
 
 finish();

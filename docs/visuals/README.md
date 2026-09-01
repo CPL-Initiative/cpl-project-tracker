@@ -49,6 +49,12 @@ a number in passing is not a deliverable.
 | Date | Visual | What it was for | Status |
 |---|---|---|---|
 | 2026-08-20 | [`2026-08-20-ace-deferrals-credit-by-exam.html`](2026-08-20-ace-deferrals-credit-by-exam.html) | The 5,311 ACE recommendations that defer to the college rather than refusing — three things a college could record, and what each one costs. Built to put one ruling in front of Sam. | ✅ **Ruled 2026-08-20** — present as Credit by Exam options; never bulk-close. **Scoped the same day** after Sam challenged it: only 1,310 name a course. Extended 2026-08-20 with the exhibit titles (219/225 resolve) and the peer-course tiering — including why a two-college floor was not enough. |
+| 2026-08-30 | [`2026-08-30-budget-balance.html`](2026-08-30-budget-balance.html) | The Budget ledger against the funding model — where the two disagree and by how much. | ✅ Worked through |
+| 2026-08-30 | [`2026-08-30-governance-fifteen-tables.html`](2026-08-30-governance-fifteen-tables.html) | Fifteen shared tables needing a decision-rights ruling each. The decision-sheet pattern's first outing. | ✅ **Fifteen rulings in one sitting, 2026-08-30** |
+| 2026-08-30 | [`2026-08-30-open-verdicts.html`](2026-08-30-open-verdicts.html) | Every judgment waiting on Sam across lanes, numbered for reply. | ✅ Verdicts taken |
+| 2026-08-30 | [`2026-08-30-register-reanalysis.html`](2026-08-30-register-reanalysis.html) | The Activities register re-read against the statutory goals — which projects evidence which outcome. | ✅ Worked through |
+| 2026-08-31 | [`2026-08-31-if-tab-simplified.html`](2026-08-31-if-tab-simplified.html) | The whole Implementation Funding tab rebuilt simply, one-pool, for reaction. Three reaction rounds ran against it. | 🔨 Mostly ported — the **flat Funding Breakdown ledger** had not reached the tab as of 2026-09-01; it is decision 2 of the sheet below |
+| 2026-09-01 | [`2026-09-01-if-tab-two-consolidations.html`](2026-09-01-if-tab-two-consolidations.html) | Two consolidations on the funding tab: folding the Ed. Code goal cards into the priority bands, and porting the flat funding ledger. Numbered for reply. | ⏳ **Awaiting Sam's verdicts** |
 
 ## Not this folder
 

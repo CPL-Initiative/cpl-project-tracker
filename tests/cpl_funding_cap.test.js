@@ -397,8 +397,13 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
     .find(function (tr) { return tr.textContent.indexOf("At the cap:") !== -1; });
   check("C7: the capped drill-in explains the hold vs the proportional share",
     !!detail && /a pure proportional share would be/.test(detail.textContent));
-  check("C7: …and says where the difference went",
-    !!detail && /re-splits across the institutions below the cap/.test(detail.textContent));
+  // Sam, 2026-09-01: the drill-in's explanatory tail was struck — it restated
+  // the base/cap rule the formula box states in full, in a place meant to carry
+  // THIS college's own figures. The fact stays pinned above, on the formula box.
+  check("C7: …and does NOT re-explain the re-split there (that lives in the formula box)",
+    !!detail && !/re-splits across the institutions below the cap/.test(detail.textContent) &&
+    !/lowers the funding, not the bar/.test(detail.textContent) &&
+    /re-split|releasing/.test(doc.querySelector(".cplfund-formula").textContent));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

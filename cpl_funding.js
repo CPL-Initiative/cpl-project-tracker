@@ -131,7 +131,6 @@
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
     ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
-    ".cf-gatechip { filter: grayscale(.25); }",
     ".cf-adv { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 3px; font-size: .62rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-muted); border: 1px solid var(--border); white-space: nowrap; }",
     ".cplfund-basis-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-basis-note { font-size: .8rem; flex: 1 1 320px; }",
@@ -151,11 +150,12 @@
     ".cf-ncwait { color: var(--text-muted); }",
     ".cplfund-ncorigin { font-size: .85rem; margin: 4px 0; }",
     ".cplfund-dtl-tscroll { overflow-x: auto; margin: 6px 0; }",
-    ".cplfund-dtl-table { border-collapse: collapse; width: 100%; min-width: 620px; table-layout: fixed; font-size: .8rem; }",
+    ".cplfund-dtl-table { border-collapse: collapse; width: 100%; min-width: 740px; table-layout: fixed; font-size: .8rem; }",
     ".cplfund-dtl-table caption { text-align: left; caption-side: top; padding: 2px 0 4px; }",
     ".cplfund-dtl-table th { text-align: left; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); padding: 3px 6px; border-bottom: 1px solid var(--border-strong); }",
     ".cplfund-dtl-table th:not(:first-child), .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
     ".cplfund-dtl-table td { padding: 3px 6px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }",
+    ".cplfund-dtl-table td .sub { display: block; font-size: .75rem; color: var(--text-faint); }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
       " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
@@ -328,6 +328,7 @@
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
     ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
     ".cplfund-detail-grid .dk { color: var(--text-muted); }",
+    ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-foot { font-size: .78rem; color: var(--text-faint); margin: 10px 2px; }",
     ".cplfund-foot div { margin: 2px 0; overflow-wrap: anywhere; }",
     ".cplfund-empty { border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center; }",
@@ -2788,7 +2789,7 @@
     if (!ui.open) {
       return '<div class="cplfund-optin">' + withdrawn +
         '<button type="button" class="cplfund-optbtn cplfund-optin-open" data-optinbtn="' + esc(college) + '">' +
-        "✎ Confirm participation</button> " +
+        "Confirm Participation</button> " +
         '<span class="dk">for your college&#39;s VPAA / VP of Student Services / President</span></div>';
     }
     var titleOpts = OPTIN_TITLES.map(function (o) {
@@ -6009,7 +6010,7 @@
     // all 115 rows reads as the state withholding money from the whole system,
     // when in fact the requirement is not yet due. Before the deadline the row
     // says what to DO and names no figure (the cap is already on the line above,
-    // and the row carries an ✎ Confirm button). After the deadline the money
+    // and the row carries a Confirm Participation button). After the deadline the money
     // genuinely is being held back, and the figure returns because then it is
     // true. Same fact either way; only the claim about the college changes.
     if (held > 0.5 || gated) {
@@ -6090,8 +6091,6 @@
     // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): AT BASE /
     // AT CAP / NC ONLY — the quietest thing in the row, never the first read.
     if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
-    if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
-      esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="' +
       esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
         ", so it is brought up to the base award — funded from within the same total.") + '">at base</span>';
@@ -6102,7 +6101,7 @@
     // attestation form focused. Public + private; hidden once opted in.
     if (partShown() && !ELIG.optin[c.college]) {
       chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
-        '" title="Confirm ' + esc(dispName(c.college)) + '&#39;s participation in CPL Implementation Funding — opens the short attestation form">✎ Confirm</button>';
+        '" title="Confirm ' + esc(dispName(c.college)) + '&#39;s participation in CPL Implementation Funding — opens the short attestation form">Confirm Participation</button>';
     }
     return chips;
   }
@@ -6169,22 +6168,41 @@
         else if (fr.status === "undelivered") act = "no data yet";
         else if (fr.status === "bad_src") act = "not wired";
         else act = "no data yet";   // gap / pending — plain absence on the surface (2026-09-01)
+        // TO GO — the distance between where this college is and where it could
+        // be, which is what Sam asked the detail to say (2026-09-01). Only a
+        // MEASURED state has a distance: a suppressed actual is masked, so its
+        // gap would leak the value by subtraction, and an unmeasured one has no
+        // number to subtract. Both read the plain absence rather than a zero.
+        // The dollars beside it are the measure's own remainder (crM × (1 − f)),
+        // never the gate's — a gated college's funding is held in reserve, which
+        // is a different fact and already has its own line.
+        var toGo;
+        if (fr.status === "earned" || fr.status === "none") {
+          var short = Math.max(0, target - (fr.status === "earned" ? fr.actual : 0));
+          toGo = short <= 0
+            ? '<span class="dk">target met</span>'
+            : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu") +
+              '<span class="sub">' + fmtMoney(crM * (1 - fr.f)) + " still to earn</span>";
+        } else toGo = '<span class="dk">&mdash;</span>';
         return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(crM) +
           "</td><td>" + fmtMoney(ncM) + "</td><td>" + (isF ? fmtNum1(target) + " FTES" : fmtInt(target) + " stu") +
-          "</td><td>" + act + "</td><td>" + fmtMoney(earnedP) + "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
+          "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + fmtMoney(earnedP) +
+          "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
       }).join("");
       prio = '<div class="cplfund-dtl-tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
         '<table class="cplfund-dtl-table"><caption class="dk">' +
-        "Current Total: " + fmtMoney(c.earned_total || 0) + " &middot; Total Possible: " + fmtMoney(c.total || 0) +
-        " &mdash; its max award" +
+        "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
+        "is still to earn. Current Total: " + fmtMoney(c.earned_total || 0) + " &middot; Total Possible: " +
+        fmtMoney(c.total || 0) + " &mdash; its max award" +
         (c.gate_blocked ? " &middot; earnings held in reserve until baseline participation is met" : "") +
         "</caption>" +
-        '<colgroup><col style="width:16%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:16%"><col style="width:13%"><col style="width:16%"></colgroup>' +
+        '<colgroup><col style="width:16%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:15%"><col style="width:14%"><col style="width:11%"><col style="width:10%"></colgroup>' +
         '<tr><th scope="col">Priority</th>' +
         '<th scope="col" title="The credit share of this priority&#39;s funding — earns against the credit actuals.">CR funding</th>' +
         '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
         '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
-        '<th scope="col">Actual</th>' +
+        '<th scope="col" title="What this college has posted against the target so far, and that as a percent of it.">Actual</th>' +
+        '<th scope="col" title="How far this college still is from the target, and the funding that distance would earn.">To go</th>' +
         '<th scope="col" title="Earned to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
         '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; unearned funding rolls forward.">Total Possible</th></tr>' +
         rowsHtml + "</table></div>" +
@@ -6202,8 +6220,7 @@
     if (c.floored) {
       floorLine = '<div><span class="dk">At the base:</span> a pure proportional share would be ' +
         fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; brought up to the " + fmtMoney(m.floor) +
-        " base award. Targets above stay scaled to this institution&#39;s own PRE-BASE share of statewide " +
-        basisLabel() + " &mdash; the base raises the funding, not the bar.</div>";
+        " base award.</div>";
     }
     // The cap's mirror of the base line. Both name the pure proportional
     // share first, so the two read as one pair rather than two unrelated notes.
@@ -6211,9 +6228,7 @@
     if (c.capped) {
       capLine = '<div><span class="dk">At the cap:</span> a pure proportional share would be ' +
         fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held at the " + fmtMoney(m.cap) +
-        " cap. The difference re-splits across the institutions below the cap. Targets above stay scaled to this " +
-        "institution&#39;s own PRE-CAP share of statewide " + basisLabel() +
-        " &mdash; the cap lowers the funding, not the bar.</div>";
+        " cap.</div>";
     }
     var eligBtns = "";
     if (unlocked()) {
@@ -6239,14 +6254,12 @@
       if (isVetJstReq(txt)) eligBits.push("Veteran Star (&ge;75% veteran JSTs) &mdash; " +
         (!vsD ? '<span class="dk">pending</span>' : vsD[c.college] ? "✓" : '<span class="dk">not yet</span>'));
     });
-    var eligLine = '<div><span class="dk">Baseline eligibility (proposed — the gate to participate):</span> ' +
+    var eligLine = '<div><span class="dk">Baseline eligibility:</span> ' +
       (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') +
       ' <span class="dk">&mdash; ' + esc(baselineGateText(c.college)) + '</span>' + eligBtns + "</div>" +
       (c.earned_withheld > 0.5
         ? '<div class="cf-withheld"><strong>' + fmtMoney(c.earned_withheld) + " held in reserve</strong> &mdash; " +
-          "this college would have earned that on its main allocation, but baseline participation is not met. " +
-          "Its " + fmtMoney(c.total) + " cap is unchanged and the dollars roll forward &mdash; nothing is redistributed, " +
-          "so qualifying later still lets it draw.</div>"
+          "this college would have earned that on its main allocation, but baseline participation is not met.</div>"
         : "") +
       optinAffordanceHtml(c.college);
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
@@ -6270,8 +6283,7 @@
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">' + (usesFtes() ? "Credit FTES share:" : "Headcount share:") + "</span> " +
       fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
-      fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() +
-      (usesFtes() ? ' <span class="dk">&mdash; ' + fmtInt(c.headcount) + " headcount, context only</span>" : "") + "</div>" +
+      fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() + "</div>" +
       floorLine + capLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
@@ -7401,8 +7413,8 @@
       '<div class="cplfund-foot">' +
       "<div>Funding cells show the <strong>max award</strong> with the Current Total beneath; dollar cells " +
       "round to whole dollars. Click a row to expand its per-priority detail (CR funding &middot; NC funding " +
-      "&middot; Target &middot; Actual &middot; Current Total &middot; Total Possible, for the year selected " +
-      "above). " +
+      "&middot; Target &middot; Actual &middot; To go &middot; Current Total &middot; Total Possible, for the " +
+      "year selected above). " +
       (frontloaded()
         ? "Combined funding: the award columns are the full " + esc(windowLabel()) + " window, available up " +
           "front &mdash; unspent funding rolls forward" +
