@@ -166,7 +166,20 @@ check("a priority card carries a goal marker", (function () {
 // CPL Workplan and Vision 2030 — they are the operational plan that DELIVERS
 // these outcomes. This section must never read as though 32 projects are
 // mis-tagged and need fixing.
-const goalsSec = doc.querySelector('details[data-sec="goals"]');
+// ⚠️ RE-AIMED FOR THE BAND CONSOLIDATION (Sam, 2026-09-01). The goal spine no
+// longer has a section of its own: the priorities and the §78093.2(d)(1) goals
+// were two sections describing one allocation, and they are now one section
+// whose title carries the statutory outcomes and whose body carries the three
+// bands, with this spine as a fold inside it (see cpl_funding_statutory_bands).
+// So the section is located by THE STATUTE LINK ITSELF rather than by a
+// `data-sec` name — which is what these two assertions were always about, and
+// is the structural locator the header of this file asks for. The guard is
+// unchanged in force: the title must still be a section's own title, not a
+// footnote parked somewhere else on the page.
+const goalsSec = (function () {
+  const a = doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]');
+  return a ? a.closest("details[data-sec]") : null;
+})();
 const spine = flat(goalsSec || doc.body);
 check("the alignment stack is named, so the statute does not read as a replacement",
   /Vision 2030/.test(spine) && /Master Plan for Career Education/.test(spine) &&
