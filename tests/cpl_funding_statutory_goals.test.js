@@ -12,9 +12,18 @@
 // change collapses "funded" and "measured" into one status, or quietly derives
 // a statutory tag from the Workplan's own goal names.
 //
+// ONE-POOL PORT (2026-08-31). The lane switch this suite used to flip is
+// retired (R1) — there is no per-lane spine to re-scope. Under one pool a
+// priority's goal dollars are its FULL funding share (credit and noncredit
+// shares together, the ceiling the cards call Total Possible), and the intro
+// says so;
+// section 8 below pins that reading plus the R1 absence. Sam also renamed the
+// section live ("Funding Outcomes Required by Ed. Code §78093.2(d)(1)") and
+// linked the title to california.public.law — pinned in section 8 too.
+//
 // Run from repo root: `npm test` (or `node tests/cpl_funding_statutory_goals.test.js`).
 const fs = require("fs");
-const { check, freshDom, boot, click, commit, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, commit, finish } = require("./lib/cpl_funding_harness.js");
 
 // Locate STRUCTURALLY — never by index, never by a literal sentence. Two suites
 // broke on 2026-08-27 for exactly those two reasons.
@@ -24,8 +33,6 @@ const goalCards = (doc) => Array.from(doc.querySelectorAll(".cplfund-goal"));
 const axis = (card, name) =>
   Array.from(card.querySelectorAll(".cplfund-goal-ax")).find((s) =>
     new RegExp(name, "i").test(flat(s.querySelector("h5"))));
-const laneSeg = (doc) => doc.getElementById("cplFundLane");
-const laneBtn = (doc, v) => laneSeg(doc) && laneSeg(doc).querySelector('button[data-val="' + v + '"]');
 
 const dom = freshDom();
 const win = dom.window;
@@ -102,7 +109,9 @@ check("a derived goal tag is labelled as derived",
 // ── 4. (C) is funded and unmeasured, and says BOTH ──────────────────────────
 // ⚠️ The single most important behaviour in this file. Sam ruled career
 // attainment is carried by the project pool and reported qualitatively, with no
-// invented metric. So (C) must show money AND an explicit absence of measure.
+// invented metric — sharpened by his items 3 + 12 rulings (2026-08-30): (C) is
+// DEMONSTRATED, never directly measured ("not measurable at this time, and may
+// never be"). So (C) must show money AND an explicit absence of measure.
 const cCard = goalCard(doc, "C");
 const cFund = flat(axis(cCard, "what funds it"));
 const cMeas = flat(axis(cCard, "how it is evidenced"));
@@ -110,6 +119,8 @@ check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
 check("goal (C) reports NO performance measure", /no performance measure/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
+check("goal (C) carries Sam's demonstrated-not-measured ruling in words (items 3 + 12)",
+  /Demonstrated, not directly measured/i.test(cMeas));
 // And the honest half: the qualitative evidence documents a different goal.
 check("goal (C) names what its qualitative evidence actually documents",
   /\bevidence for \(B\)/i.test(flat(cCard)));
@@ -128,7 +139,9 @@ check("(C) reports the educational majority, which is the finding", (function ()
 // ── 5. (A)'s equity qualifier is not silently dropped ───────────────────────
 // The statute says "equitably"; nothing in the model measures distribution
 // across student populations. A card that shows (A) as cleanly measured would
-// be overclaiming against the statute's own wording.
+// be overclaiming against the statute's own wording. (Sam's item-12 ruling,
+// 2026-08-30: the limit is POLICY — student-level equity belongs to the
+// system's three-year legislative reports, never to college outcome funding.)
 check("goal (A) states that 'equitably' is not measured",
   /equitably.{0,40}not measured/i.test(flat(goalCard(doc, "A"))));
 
@@ -153,30 +166,52 @@ check("a priority card carries a goal marker", (function () {
 // CPL Workplan and Vision 2030 — they are the operational plan that DELIVERS
 // these outcomes. This section must never read as though 32 projects are
 // mis-tagged and need fixing.
-const spine = flat(doc.getElementById("cplfund-goal-A").closest(".cplfund")
-  ? doc.querySelector(".cplfund-goals").parentNode : doc.body);
+const goalsSec = doc.querySelector('details[data-sec="goals"]');
+const spine = flat(goalsSec || doc.body);
 check("the alignment stack is named, so the statute does not read as a replacement",
   /Vision 2030/.test(spine) && /Master Plan for Career Education/.test(spine) &&
   /CPL Workplan/.test(spine));
 check("Ed. Code is cited as the §§78092–78093.2 range Sam named",
   /78092/.test(spine));
-check("an untagged project is never called an error", !/mis-?tagged|incorrect|wrong goal/i.test(spine));
+check("an untagged project is never called an error", !/mis-?tagged|wrong goal/i.test(spine));
 check("the register's own goals are named as the operational plan",
   /operational plan/i.test(spine) || /how the work gets done/i.test(spine));
 
-// ── 8. the lane is named, and the two lanes are never summed ────────────────
-check("the spine says which lane its figures describe", /credit lane/i.test(spine));
-click(win, laneBtn(doc, "nc"));
-check("flipping to noncredit re-scopes the spine, it does not add to it",
-  /noncredit lane/i.test(flat(win.document.querySelector(".cplfund-goals").parentNode)));
-click(win, laneBtn(win.document, "cr"));
+// ── 8. one pool: the renamed title, the statute link, and the full-pool
+//        reading (was: the lane re-scope — retired with the lane switch, R1) ──
+// Sam renamed the section live (2026-08-31) and linked the title to the law
+// itself, so a reader can check the model against the statute in one click.
+check("the section title reads 'Funding Outcomes Required by …' (Sam's rename)",
+  !!goalsSec && /Funding Outcomes Required by/.test(flat(goalsSec.querySelector("summary"))));
+check("the title links to the statute on california.public.law",
+  (function () {
+    const a = doc.querySelector('a[href*="california.public.law/codes/education_code_section_78093.2"]');
+    return !!a && a.getAttribute("target") === "_blank" && /noopener/.test(a.getAttribute("rel") || "");
+  })());
+check("the statute link IS the goals section's own title, not a footnote elsewhere",
+  (function () {
+    const a = doc.querySelector('a[href*="california.public.law"]');
+    return !!a && !!goalsSec && !!a.closest("summary") && goalsSec.contains(a);
+  })());
+// R1 (2026-08-31): the lane switch is retired — there is no control left that
+// could re-scope this spine to one lane. tests/cpl_funding_lane_switch.test.js
+// carries the full retirement guard; this is the spine's own stake in it.
+check("no lane switch exists to re-scope the spine (R1)", !doc.getElementById("cplFundLane"));
+// The reading that replaced the per-lane figures: a priority's dollars are its
+// FULL funding share — credit and noncredit shares together, the same ceiling
+// the priority card calls Total Possible — and the intro must say so, or the
+// goal figures and the card figures would silently describe different
+// quantities. ("pool" → "funding" is Sam's vocabulary sweep, 2026-08-31.)
+check("the intro states a priority's figure is its FULL funding share (one pool)",
+  /full funding share/i.test(spine));
+check("…with the credit and noncredit shares together, the cards' Total Possible ceiling",
+  /credit and noncredit shares together/i.test(spine) && /Total Possible/.test(spine));
 
 // ── 9. Timing is its own collapsible section (Sam, 2026-08-28) ─────────────
 // "The Timing block is now part of the priorities block and should probably
 // have its own so it can be collapsible separately."
 (function timingIsItsOwnSection() {
   const d = win.document;
-  const sections = Array.from(d.querySelectorAll("#cplFundingMount details, #cplFundingMount section"));
   const timing = d.querySelector(".cplfund-timing");
   check("the timing block still renders", !!timing);
   if (!timing) return;

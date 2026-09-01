@@ -5,6 +5,8 @@ updated: 2026-08-31
 tags: [handoff, session-216, implementation-funding, one-pool, port, origination]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_217_handoff.md
 ---
 
 # You are Session 216

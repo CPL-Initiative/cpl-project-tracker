@@ -2073,3 +2073,72 @@ origination feed) rather than in front of it.
 - **PRs:** #1424 (Current/Total-Possible columns) · #1425 (the full-tab mock).
   Artifact: "CPL Implementation Funding," same URL, versions
   earned-available → full-tab-r1-r11.
+
+## 2026-08-31 → 09-01 — S216 (SkyPort): the port ships, and the test family finds three bugs
+
+**What shipped.** The one-pool model is live in `cpl_funding.js` (PR #1427):
+one solve over 118 institutions, $150K/$400K on the combined award, FTES-share
+decomposition, NC restriction (F1), origination earning for the trio (N2 b),
+targets on the pre-bounds CR slice. All 33 funding suites re-aimed
+(~2,000 checks) plus briefing (243) and explainer (15). Sam ran three live
+reaction rounds against the mock, all ported same-day; three product bugs
+found by the ports were fixed. Vocabulary tightened to doctrine: funding never
+"pool"; "on its face" banned.
+
+**Lessons.**
+
+- **The anchor-first order worked exactly as designed.** The mock's figures of
+  record became `tests/cpl_funding_one_pool.test.js` BEFORE any family triage;
+  the family port then fanned out to five agents whose brief said "re-run the
+  anchor at the end." Every agent's re-aims were verified against a moving
+  product (three reaction rounds landed mid-port) and the anchor caught none
+  of them drifting the model — because none did. The KB note
+  (`methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test`)
+  now has its full worked case.
+- **Intent-preserving ports are a bug-finding instrument.** Three real product
+  bugs surfaced not from users but from agents refusing to weaken guards:
+  (1) `prioTarget`'s per-student path omitted the lane slice — cap ÷ target
+  scattered 1.5076× and the scatter WAS each college's lane split; the fix
+  mirrors `prioEntitlement`'s routing, and the original 2026-07-31 seam
+  comment ("the target must ride the SAME basis as the cap") gained its
+  one-pool clause: the same-basis rule includes the LANE SLICE.
+  (2) Three consumers still keyed rows by the retired `"c:"+order` after rows
+  moved to `"c:"+college` — the `?college=` deep link, its scroll, and Sam's
+  one-click "✎ Confirm" chip were all dead clicks. A key migration is only
+  done when every WRITER of the key is found; the readers announce themselves
+  by failing, the writers fail silently.
+  (3) "Nothing bold" (the low-key-rows ruling) had shipped only two of its
+  three parts — centering and rightmost-right landed, the `<strong>` name
+  didn't — caught by a computed-style guard, not a selector guard.
+- **Grid columns denominated in `em` disagree across font sizes.** The mock's
+  header (.74rem), SYSTEM row (.95rem) and college rows (1rem) shared one
+  grid-template *string* but not one grid: em resolved against each element's
+  own font-size, so the header's numeric columns were ~25% narrower and every
+  label sat right of its values — Sam's screenshot. One `rem` template fixed
+  all three at once. (KB note filed.)
+- **A display rename and a key rename are different operations.** "LA
+  Southwest" and "Riverside City" landed as `display` aliases on the roster
+  rows: `dispName()` carries them to rows, CSV, memo, and the explainer's
+  display cells, while the `college` key keeps feeding PERF lookups, data-ids,
+  opt-ins and deep links. The college briefing renders raw keys and is the
+  known gap — queued for college-district-identity rather than half-patched.
+- **A wording sweep needs its tests swept in the same motion.** pool→funding
+  broke exactly one fresh port (`statutory_goals` pinning "full pool share")
+  and my own Summary rework broke the anchor's D1 — both expected, both
+  re-aimed within minutes because the porting policy said re-aim, never
+  weaken. The cost of sweeping vocabulary while five agents port tests is one
+  collision per overlapping phrase; the alternative (freezing wording until
+  the port lands) would have cost Sam's live reaction loop.
+- **boundLabel doubled a shared bound's figure** ("51 institutions at the
+  $150,000 base award at $150,000") because the helper embedded the figure in
+  one branch while the caller appended it unconditionally. When a helper
+  formats EITHER a name OR a count-phrase, the figure belongs inside both
+  branches and the caller appends nothing.
+- **Flagged for Sam, not decided:** Annual-view award cells show cumulative
+  window earning over the per-year figure ("earning $140,476 · 191%") —
+  deliberate per its comment, but two independent porting agents read it as
+  over-earning. His display-semantics call.
+
+**Numbers of record:** 118 · 51 base / 7 cap · trio $482,669 · college NC
+shares $1,300,738 · SYSTEM NC $1,783,407 (baked; real-data $1,783,399) ·
+average $213,901 · Mt. SAC uncapped $711,567 (its NC FTES now rides its row).

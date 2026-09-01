@@ -20,24 +20,43 @@
 // origination field is undelivered. The wrong number and the right number are
 // indistinguishable by eye.
 //
+// SURFACES, one-pool form (adopted 2026-08-31): the P1/P2/P3 row cells this
+// suite used to read are retired — the per-college view of a priority is the
+// row EXPAND's 7-column detail table (Priority · CR funding · NC funding ·
+// Target · Actual · Current Total · Total Possible), and the statewide view is
+// the priority cards. The pin machinery itself is unchanged; the assertions
+// below read the new surfaces plus the CSV (which kept its per-priority
+// target/actual columns).
+//
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
 const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
 
-// ⚠️ LOCATE PRIORITY CELLS STRUCTURALLY, AND READ THEIR TWO LINES BY CLASS.
-// Every assertion below used to index the row's <td> list (cells[4], [5], [6])
-// and match on the inline "Now" label. Both broke the day a TGT/NOW label
-// column landed before P1 (2026-08-27) — a LAYOUT change that says nothing
-// about what this suite tests, and which made nine assertions fail for a reason
-// unrelated to any of them. `td.cf-prio` in document order IS P1, P2, P3
-// whatever else the row carries, and `.cf-t` / `.cf-a` are the target and
-// actual lines whatever labels the design puts on them.
-const prios = (row) => Array.from(row.querySelectorAll("td.cf-prio"));
-const line = (td, sel) => ((td && td.querySelector(sel)) || { textContent: "" })
-  .textContent.replace(/\s+/g, " ").trim();
-const now = (td) => line(td, ".cf-a");
-// "N FTES" on the ACTUAL line, not preceded by a digit or dot (so 400 does not
-// match inside 1,400 and 0 does not match inside 20.0).
-const nowFtes = (td, n) => new RegExp("(^|[^\\d.])" + n + " FTES").test(now(td));
+// ⚠️ LOCATE PRIORITY ROWS STRUCTURALLY. The expand's detail table rows ARE
+// P1, P2, P3 in document order; each row's cells are read by POSITION in the
+// locked mock's 7-column shape (0 Priority · 1 CR funding · 2 NC funding ·
+// 3 Target · 4 Actual · 5 Current Total · 6 Total Possible). The old suite
+// indexed the COLLEGE ROW's <td> list and broke the day a label column landed
+// before P1 — the expand table's columns are the contract now, so position is
+// the structure here, not an accident of layout.
+function openDetail(window, doc, name) {
+  const find = () => Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find((r) => r.textContent.indexOf(name) !== -1);
+  const row = find();
+  if (!row) return null;
+  row.querySelector(".cplfund-caret").dispatchEvent(new window.Event("click", { bubbles: true }));
+  const row2 = find();
+  const det = row2 && row2.nextElementSibling;
+  return det && det.classList.contains("cplfund-detail") ? det : null;
+}
+function detRows(det) {
+  if (!det) return [];
+  return Array.from(det.querySelectorAll(".cplfund-dtl-table tr")).slice(1)   // drop the header row
+    .map((tr) => Array.from(tr.querySelectorAll("td"))
+      .map((td) => td.textContent.replace(/\s+/g, " ").trim()));
+}
+// "N FTES" on the ACTUAL cell (fmtNum1 renders one decimal — "400.0 FTES"),
+// not preceded by a digit or dot (so 400 does not match inside 1,400).
+const actFtes = (cells, n) => new RegExp("(^|[^\\d.])" + n + "(\\.0)? FTES").test(cells[4] || "");
 
 // ── 1. the defect itself, against the REAL predicates ────────────────────────
 // Rebuilt out of the consumer so this cannot drift into testing a copy.
@@ -95,24 +114,20 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
     "2": { metric: NC_METRICS[1], metric_src: "nope_u" } // unknown pin
   } } });
   T.render();
-  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find((r) => /Laney/.test(r.textContent));
-  const P = prios(row);
-  const cells = P.map((td) => td.textContent);
-  const joined = Array.from(row.querySelectorAll("td")).map((td) => td.textContent).join(" | ");
+  const P = detRows(openDetail(window, doc, "Laney"));
   // P1 and P2 carry the SAME metric prose and differ only by the pin. P1 scores
   // on pa_u (12,000 units / 30 = 400 CPL FTES, its full cap); P2 falls through
-  // to the prose and scores on pp_u (3 units = 0.1 FTES, ~$389). One config
-  // field, a 4,000x difference in what the college is judged on — and neither
-  // cell looks broken.
+  // to the prose and scores on pp_u (3 units = 0.1 FTES, ~1% of target). One
+  // config field, a 4,000x difference in what the college is judged on — and
+  // neither row looks broken.
   check("3a: the pinned priority scores on pa_u (400 FTES), not on the prose's pp_u",
-    nowFtes(P[0], 400));
-  check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure",
-    nowFtes(P[1], 0) && /1\.06%/.test(cells[1]));
+    P.length === 3 && actFtes(P[0], 400));
+  check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure (0.1 FTES)",
+    P.length === 3 && /(^|[^\d.])0\.1 FTES/.test(P[1][4]));
   check("3b2: so the pin changes the answer — identical prose, different earning",
-    cells[0] !== cells[1]);
+    P.length === 3 && P[0][4] !== P[1][4] && P[0][5] !== P[1][5]);
   check("3c: an unknown pin renders 'not wired' rather than a plausible number",
-    /not wired/.test(cells[2]) && /\$0/.test(cells[2]));
+    P.length === 3 && /not wired/.test(P[2][4]) && P[2][5] === "$0");
   check("3d: a pinned unit source forces the FTES unit, whatever the prose sniffs",
     T._prios("Laney", "1")[0].unit === "FTES");
 
@@ -149,20 +164,20 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
     "2": { metric: NC_METRICS[1], metric_src: "pa_u" }
   } } });
   T.render();
-  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find((r) => /Laney/.test(r.textContent));
-  const P = prios(row);
-  const cells = P.map((td) => td.textContent);
-  check("3e: an undelivered NC source earns $0 and says 'no feed'",
-    /no feed/.test(cells[0]) && /\$0/.test(cells[0]));
-  check("3e2: it does NOT advance the full cap — the contrast is the data-gap cell beside it",
-    !/no feed/.test(cells[1]) && /gap/.test(cells[1]));
-  check("3e3: and it is not reported as a measured zero ('0 FTES ... 0%')",
-    !nowFtes(P[0], 0));
-  const nc = cells[0].match(/\$[\d.,]+K?/g) || [];
-  const gap = cells[1].match(/\$[\d.,]+K?/g) || [];
-  check("3e4: the undelivered cell earns strictly less than the data-gap cell advances",
-    nc.length >= 2 && gap.length >= 2 && nc[1] === "$0" && gap[1] !== "$0");
+  const P = detRows(openDetail(window, doc, "Laney"));
+  check("3e: an undelivered NC source earns $0 and reads 'no data yet' (2026-09-01 wording)",
+    P.length === 3 && /no data yet/.test(P[0][4]) && P[0][5] === "$0");
+  // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
+  // contrast that matters (the gap row's Current Total pays, the undelivered
+  // row's is strictly $0) is 3e4's check, on the dollars.
+  check("3e2: the gap row beside it also reads 'no data yet' — never a measured zero",
+    P.length === 3 && /no data yet/.test(P[1][4]) && !/0 · 0%/.test(P[1][4]));
+  check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
+    P.length === 3 && !actFtes(P[0], 0));
+  // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
+  // strictly $0 — read straight off the Current Total column.
+  check("3e4: the undelivered row earns strictly less than the data-gap row advances",
+    P.length === 3 && P[0][5] === "$0" && P[1][5] !== "$0" && P[1][5] === P[1][1]);
 }
 
 // ── 4. the two states that must never advance ────────────────────────────────
@@ -174,8 +189,13 @@ check("4b: bad_src is checked BEFORE the gap branch (order is the whole protecti
   consumerSrc.indexOf('status: "bad_src"') < consumerSrc.indexOf('status: "gap"'));
 check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not a full-cap advance",
   /if \(meas\.undelivered\) return \{ f: 0, status: "undelivered"/.test(consumerSrc));
-check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero)",
-  /status === "undelivered"[\s\S]{0,400}not in the daily feed yet/.test(consumerSrc));
+// "The feed carries no such measure" and "this college posted nothing" are two
+// different zeros and the tab must not print them the same way. The surface is
+// the expand's Actual column now (one pool, 2026-08-31): "no feed" vs "0 · 0%".
+check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
+      "'no data yet' vs '0 · 0%' since the 2026-09-01 rewording",
+  /status === "undelivered"\) act = "no data yet"/.test(consumerSrc) &&
+  /status === "none"\) act = "0 &middot; 0%"/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
 check("5a: earnIsMeasured() exists, so a new status cannot be forgotten at four sites",
@@ -209,8 +229,20 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
   check("5c3: and the undelivered priorities export EMPTY cells, not zeros",
     cols[p1a - 2] === "" && cols[p1a + 2] === "");
 }
-check("5d: the drill-in does not claim 'no CPL posted' when nothing was measured",
-  /status === "undelivered"[\s\S]{0,300}nothing about this college has been measured/.test(consumerSrc));
+// The old drill-in's "nothing about this college has been measured" sentence
+// went with the P-cells; what must survive is the CLAIM DISCIPLINE — an
+// undelivered measure is never described as this college posting nothing. The
+// statewide card names the true reason (the feed carries no such measure), and
+// the expand's undelivered branch is decided before any zero can render (3e3
+// proves it behaviorally).
+// Reworded 2026-09-01: the feed-blame SENTENCE left the surface with the
+// unshipped-feed sweep; the durable half of the guard is that an absent
+// measure still never renders as a college's measured zero (4d above), and
+// the undelivered branch still decides before the catch-all.
+check("5d: an undelivered measure never falls through to the catch-all label",
+  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') !== -1 &&
+  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') <
+    consumerSrc.indexOf('else act = "no data yet"'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a
@@ -286,22 +318,35 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   };
   T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
   T.render();
-  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const cells = rows.map((r) => prios(r));
-  const unpinned = cells.map((c) => c[0].textContent);
-  const pinned   = cells.map((c) => c[2].textContent);
-  check("7b: UNPINNED, the live Access prose still reads 0 FTES for every college",
-    rows.length > 100 && cells.every((c) => nowFtes(c[0], 0)));
-  // ⚠️ THIS ASSERTION USED TO READ "every pinned cell says 'no feed'", which was
-  // true only while ppa_u was undelivered. The cron delivered it hours later and
-  // the guard went red on a change that was the feature working. An assertion
-  // pinned to a value that can leave the data stops being a guard the moment it
-  // does — so assert the INVARIANT instead: the pin resolves somewhere other than
-  // the prose does. Whether that source is delivered yet is section 3e/8's job.
+  // The per-college surface is the CSV now (one line per institution, the
+  // P<n> target/actual pairs kept — the row cells are retired). Compare the
+  // unpinned P1 actual column against the pinned P3 one.
+  const csv = T._csv().split("\r\n");
+  const head = csv[1].split(",");
+  const iP1 = head.indexOf("P1 actual"), iP3 = head.indexOf("P3 actual");
+  const dataLines = csv.slice(2).filter((l) => l && !/SYSTEM/.test(l));
+  const p1vals = dataLines.map((l) => l.split(",")[iP1]);
+  const p3vals = dataLines.map((l) => l.split(",")[iP3]);
+  const nonzero = (a) => a.filter((v) => v !== "" && v !== "0" && !/^</.test(v));
+  check("7b: UNPINNED, the live Access prose lands on the credit portal measure — at most the 3 " +
+        "pp_u carriers read anything, every other institution a measured 0",
+    dataLines.length > 100 && nonzero(p1vals).length <= 3 &&
+    p1vals.filter((v) => v === "0").length >= 110 &&
+    p1vals.filter((v) => v === "").length === 0);
+  // ...and the statewide card shows the portal measure's own tiny raw figure —
+  // the fingerprint of WHERE the prose landed.
+  const cards = Array.from(doc.querySelectorAll(".cplfund-prio .p"));
+  check("7b2: the statewide Access card reads the portal measure's 25 units, not the applied lane",
+    /25 units/.test(cards[0].textContent));
+  // ⚠️ 7c USED TO READ "every pinned cell says 'no feed'", which was true only
+  // while ppa_u was undelivered. The cron delivered it and the guard went red on
+  // a change that was the feature working. Assert the INVARIANT instead: the pin
+  // resolves somewhere other than the prose does — whether that source is
+  // delivered yet is section 3e/8's job.
   check("7c: PINNED, the same prose does NOT land on the prose matcher's answer",
-    pinned.some((t, i) => t !== unpinned[i]));
-  check("7c2: and the pinned column is never the unpinned one's universal zero",
-    !cells.every((c) => nowFtes(c[2], 0)));
+    p3vals.join("|") !== p1vals.join("|"));
+  check("7c2: and the pinned column is never the unpinned one's universal measured zero",
+    !p3vals.every((v) => v === "0"));
   const diag = doc.querySelector(".cplfund-metricdiag");
   const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
   const mm = lis.filter((t) => /MILESTONE MISMATCH/.test(t));
@@ -311,10 +356,11 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
     !lis.some((t) => /P3/.test(t) && /MILESTONE MISMATCH/.test(t)));
 }
 // ── 8. the pin activates itself when the feed catches up ─────────────────────
-// `ppa_u` is emitted by funding/_build_funding_performance.py but the published
-// artifact predates it, so today the pin is DECLARED-BUT-UNDELIVERED ($0, "no
-// feed"). It must start earning with no code change the moment the cron
-// regenerates the artifact — that is the whole point of pinning a named key.
+// `ppa_u` is emitted by funding/_build_funding_performance.py and the published
+// artifact now carries it — the cutover this section was written to guarantee
+// has HAPPENED once already. The synthetic overlay stays: it proves the
+// mechanism (a pinned key starts earning with no consumer edit the moment the
+// artifact carries it) independently of whatever the committed artifact holds.
 {
   const { window } = freshDom();
   const fs = require("fs");
@@ -333,11 +379,13 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   };
   T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
   T.render();
-  const pinnedCells = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .map((r) => prios(r)[2]);
-  const pinned = pinnedCells.map((td) => td.textContent);
+  // The statewide Access card earns on the delivered key, and a college's
+  // expand scores its P3 row on a real FTES actual — no "no feed" anywhere.
+  const card3 = Array.from(doc.querySelectorAll(".cplfund-prio .p"))[2];
+  const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
-    pinnedCells.some((td) => /[\d,.]+ FTES/.test(now(td))) && !pinned.some((t) => /no feed/.test(t)));
+    /Actual/.test(card3.textContent) && !/No actuals yet/.test(card3.textContent) &&
+    P.length === 3 && /[\d,.]+ FTES · /.test(P[2][4]) && !/no feed/.test(P[2][4]));
   check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
     /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
   check("8c: the registry records that ppa is NOT a filtered pa (disjoint cohorts)",
@@ -361,11 +409,9 @@ check("9a: an empty-string metric_src clears the pin rather than being an unknow
     "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
   } } });
   T.render();
-  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find((r) => /Laney/.test(r.textContent));
-  const cell = prios(row)[0];
+  const P = detRows(openDetail(window, doc, "Laney"));
   check("9b: a cleared pin falls back to the prose matcher, not to 'not wired'",
-    !/not wired/.test(cell.textContent) && nowFtes(cell, 400));
+    P.length === 3 && !/not wired/.test(P[0][4]) && actFtes(P[0], 400));
 }
 
-finish("cpl_funding_metric_pin");
+finish();

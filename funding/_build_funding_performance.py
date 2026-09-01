@@ -57,6 +57,43 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   Emitted as top-level `feeders`; empty until campuses attach
                   exhibits to their NC student records in MAP.
 
+  ORIGINATION / NC_* (added 2026-08-31, the N2 b gate) = the noncredit-origin
+                  cut of the funnel, keyed by MAP's `LocID2` (the identity of
+                  the noncredit origin — NULL when unknown, NEVER defaulted;
+                  see the Malone/Pedro instructions doc, CPLBrain
+                  04-projects/cpl-initiative/20260831_MAP_Custom_Reports_
+                  Origination_Data_Instructions.md). Three cuts from the same
+                  rows, ALL OMITTED (never zeroed) until the pull carries the
+                  LocID2 column — the `pa` absent-keys pattern:
+                    1. Per-college `nc_pe`/`nc_pa`/`nc_pt` (+ `_u` unit sums):
+                       the receiving college's funnel among students whose
+                       LocID2 names a KNOWN noncredit location. These are the
+                       keys METRIC_SOURCES in cpl_funding.js declared on
+                       2026-08-27 as nc_pe_u/nc_pa_u/nc_pt_u — the college
+                       NC-share measures. Same first-seen dedupe + <5
+                       suppression as the credit rungs.
+                    2. `origination.in_scope` per origin institution: the
+                       SCOPED originated funnel — the same keys, deduped per
+                       (origin, student), counted only where the receiving
+                       college is inside the origin's ruled scope (NOCE/SDCCE:
+                       their district's credit colleges; Calbright: statewide
+                       — feeder `origin_scope`/`district` in
+                       cpl_funding_data.js). This is what the trio's
+                       origination earn-out reads (N2 b: they draw only as
+                       originated CPL posts). Computed at the student grain so
+                       a suppressed college cell never subtracts from it.
+                    3. `origination.by_origin` — the (origin × college)
+                       matrix, for display/audit, cell-suppressed.
+                  An unresolvable non-empty LocID2 lands in
+                  `origination.unmatched_origins` (visible, earns nothing) —
+                  never guessed onto an institution: a wrong origin now
+                  misdirects funding, not just analytics. The `Origin` column
+                  (Student Portal / Landing Page / Batch / College Entered) is
+                  DETECTED and surfaced as a value histogram when it appears,
+                  but the ppa cutover from `Potential Student` waits for
+                  verified value spellings — switching the cohort logic on
+                  guessed strings could silently zero an $8M priority.
+
   CPL_TYPES (added 2026-08-06) = per-college distinct-student counts BY
                   `CPL Type Description` for the pe/pa/p3 rungs, emitted as
                   `cpl_types` (+ `cpl_types_statewide`). Two things the
@@ -312,6 +349,64 @@ def _feeder_resolver():
     return resolve
 
 
+NC_ORIGIN_LOCIDS = os.path.join(ROOT, "kb", "nc_origin_locids.json")
+
+
+def _origin_resolver():
+    """LocID2 value -> noncredit-origin SHORT name (or None).
+
+    LocID2 is "the MAP LocID (same namespace as CollegeID)" per the ruled
+    field plan — but until real values arrive we cannot know whether the pull
+    will carry IDs or names. So: resolve NAMES against the feeder roster
+    (full name / short, normalized), and IDs through kb/nc_origin_locids.json
+    ({"<locid>": "<feeder short>"}) — a file that DOES NOT EXIST yet and is
+    created the day MAP tells us the IDs. Anything unresolved is surfaced in
+    `origination.unmatched_origins` rather than guessed: NULL-when-unknown /
+    never-defaulted is the ruled invariant, and a wrong origin misdirects
+    funding."""
+    feeder_resolve = _feeder_resolver()
+    id_map = {}
+    if os.path.exists(NC_ORIGIN_LOCIDS):
+        try:
+            with open(NC_ORIGIN_LOCIDS, encoding="utf-8") as f:
+                raw = json.load(f)
+            id_map = {str(k).strip(): v for k, v in raw.items() if v}
+        except (OSError, ValueError):
+            id_map = {}
+
+    def resolve(loc2):
+        v = str(loc2 or "").strip()
+        if not v:
+            return None
+        return id_map.get(v) or feeder_resolve(v)
+    return resolve
+
+
+def _origin_scopes():
+    """Feeder short -> the set of funding-college names its origination counts
+    toward, or None for statewide (Calbright). Data-driven from
+    cpl_funding_data.js: each feeder's `origin_scope` ("district"|"statewide")
+    and `district`, joined against the college rows' own district strings —
+    the ruled scope (2026-08-31): NOCE and SDCCE wherever it lands among their
+    district's credit colleges, Calbright statewide."""
+    with open(FUNDING_DATA, encoding="utf-8") as f:
+        m = re.search(r"window\.CPL_FUNDING = (\{.*\});\s*$", f.read(), re.S)
+    d = json.loads(m.group(1)) if m else {}
+    by_district = {}
+    for c in d.get("colleges", []):
+        by_district.setdefault(c.get("district"), set()).add(c["college"])
+    scopes = {}
+    for fd in d.get("feeders", []):
+        short = fd.get("short")
+        if not short:
+            continue
+        if fd.get("origin_scope") == "statewide":
+            scopes[short] = None
+        else:
+            scopes[short] = set(by_district.get(fd.get("district"), set()))
+    return scopes
+
+
 def read_veteran_stars(resolve):
     """Per-college Veteran Star flag (funding-name → bool) from veteran_jst.json —
     a college where >= star_threshold (0.75) of enrolled veterans have a JST
@@ -362,6 +457,8 @@ def main():
     i_test = cm.get("Test Student")
     i_sid = cm.get("MAP Internal StudentID")
     i_type = cm.get("CPL Type Description")
+    i_loc2 = cm.get("LocID2")
+    i_origin = cm.get("Origin")
     if i_tcr is None or i_sid is None:
         print("funding-performance: required columns missing — exiting 0 without changes.")
         return
@@ -398,6 +495,30 @@ def main():
     if not has_applied:
         print("funding-performance: NOTE — 'Applied Credits' not in this pull; "
               "pa/pa_u omitted (not zeroed). Check fetch_custom_report.py's column list.")
+    # ── ORIGINATION (2026-08-31, the N2 b gate) ──────────────────────────
+    # The nc_* keys exist only when the pull carries `LocID2` — the same
+    # OMITTED-not-zeroed shape as `pa`: srcDelivered() in cpl_funding.js asks
+    # the artifact whether a key is there, and an absent key is what keeps the
+    # noncredit shares at the honest "no feed yet" $0 rather than a measured
+    # zero. The day the column lands these keys appear and the 2026-08-27
+    # METRIC_SOURCES wiring starts returning real values with no consumer edit.
+    has_loc2 = i_loc2 is not None
+    if has_loc2:
+        metrics = metrics + ("nc_pe", "nc_pa", "nc_pt")
+        print("funding-performance: 'LocID2' is in this pull — emitting the "
+              "nc_* origination measures and the origination block.")
+    else:
+        print("funding-performance: NOTE — 'LocID2' not in this pull; the nc_* "
+              "origination measures and the origination block are omitted (not "
+              "zeroed). They appear the day MAP ships the origination fields.")
+    if i_origin is not None:
+        print("funding-performance: NOTE — an 'Origin' column arrived. Its value "
+              "histogram is emitted as `origin_values` for verification; the ppa "
+              "cutover from 'Potential Student' to named origins stays PENDING "
+              "until the value spellings are confirmed (a guessed match could "
+              "silently zero the Access priority).")
+    resolve_origin = _origin_resolver() if has_loc2 else None
+    origin_scopes = _origin_scopes() if has_loc2 else {}
     seen = {m: set() for m in metrics}          # per-(college,sid) dedupe
     state_seen = {m: set() for m in metrics}    # statewide distinct (cross-college dedupe by sid)
     counts = {}                                 # funding-name -> {pe,p2,p3,pp}
@@ -418,13 +539,23 @@ def main():
     # (which is what the test fixture assumes). MAP's own per-college totals are
     # read below as an independent cross-check so the real grain is measured
     # rather than assumed.
-    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "p3", "pp") if m in metrics)
-    unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "p3": "tcr", "pp": "tcr"}
+    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "p3", "pp",
+                                     "nc_pe", "nc_pa", "nc_pt") if m in metrics)
+    unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "p3": "tcr", "pp": "tcr",
+               "nc_pe": "ecr", "nc_pa": "acr", "nc_pt": "tcr"}
     units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
     unmatched_units = {}
     state_units = {m: 0.0 for m in UNIT_METRICS}
     feeder_counts = {}                          # feeder-short -> {pe}  (F1 eligible headcount)
     feeder_seen = set()                         # per-(feeder,sid) dedupe
+    # ── ORIGINATION accumulators (only fed when has_loc2) ────────────────
+    ORIG_RUNGS = (("pe", "ecr"), ("pa", "acr"), ("pt", "tcr"))
+    orig_matrix = {}        # origin short -> receiving funding name -> {pe,pe_u,pa,pa_u,pt,pt_u}
+    orig_seen = set()       # per-(origin, college, sid, rung) dedupe
+    orig_tot = {}           # origin short -> {nc_pe..nc_pt_u} — SCOPED, student grain
+    orig_tot_seen = set()   # per-(origin, sid, rung) dedupe
+    unmatched_origins = {}  # raw LocID2 value -> distinct-student set (masked on emit)
+    origin_values = {}      # raw Origin value -> row count (verification only)
     # ── CPL TYPE split (2026-08-06) ──────────────────────────────────────
     # Per-college distinct-student counts BY `CPL Type Description`, for the
     # funnel rungs pe/pa/p3. Two questions it answers, neither of which the
@@ -470,6 +601,12 @@ def main():
         # Portal launches). We no longer skip Potential rows outright — we route
         # them to pp instead.
         is_potential = i_pot is not None and (row[i_pot] or "").strip().lower() == "yes"
+        # `Origin` value histogram — verification only, so the ppa cutover to
+        # named origins can be made on CONFIRMED spellings, never guessed ones.
+        if i_origin is not None:
+            _ov = (row[i_origin] or "").strip()
+            if _ov:
+                origin_values[_ov] = origin_values.get(_ov, 0) + 1
         try:
             tcr = float((row[i_tcr] or "0").strip() or 0)
         except ValueError:
@@ -485,6 +622,15 @@ def main():
         if tcr <= 0 and ecr <= 0 and acr <= 0:
             continue
         sid = (row[i_sid] or "").strip()
+        # Origination (2026-08-31): `LocID2` names the noncredit origin. Only a
+        # RESOLVED known location feeds the money-bearing nc_* measures; an
+        # unknown value is surfaced in unmatched_origins, never guessed onto an
+        # institution (NULL-when-unknown / never-defaulted is the ruled
+        # invariant — a wrong origin misdirects funding).
+        loc2 = (row[i_loc2] or "").strip() if has_loc2 else ""
+        nc_origin = resolve_origin(loc2) if loc2 else None
+        if loc2 and not nc_origin:
+            unmatched_origins.setdefault(loc2, set()).add(sid or f"row{rowno}")
         fname = resolve(college)
         if not fname:
             # Not a funding college — is it a noncredit FEEDER campus? If so, count
@@ -513,7 +659,17 @@ def main():
                             ("pp", tcr > 0 and is_potential),
                             # The mirror of `pa` on the other side of the
                             # partition: same rung, opposite cohort.
-                            ("ppa", acr > 0 and is_potential)):
+                            ("ppa", acr > 0 and is_potential),
+                            # Noncredit-origin cut (2026-08-31): the receiving
+                            # college's funnel among students whose LocID2
+                            # resolves to a known noncredit location. Guarded by
+                            # nc_origin staying None when the column is absent,
+                            # so the hits never fire then (the `pa` pattern).
+                            # Deliberately NO is_potential condition — Origin/
+                            # LocID2 are what replace that temporary flag.
+                            ("nc_pe", ecr > 0 and nc_origin is not None),
+                            ("nc_pa", acr > 0 and nc_origin is not None),
+                            ("nc_pt", tcr > 0 and nc_origin is not None)):
             if not hit:
                 continue
             k = (key, sid) if sid else (key, f"row{rowno}")
@@ -537,6 +693,34 @@ def main():
             if sk not in state_seen[metric]:
                 state_seen[metric].add(sk)
                 state[metric] += 1
+        # Origination matrix + scoped totals (funding colleges only — the
+        # receiving side of an originated record is a credit college). The
+        # SCOPED totals are computed here at the student grain, deduped per
+        # (origin, student, rung), so a <5-suppressed matrix cell never
+        # subtracts from the figure the trio's earn-out reads.
+        if nc_origin is not None and fname:
+            _sk = sid if sid else f"row{rowno}"
+            _scope = origin_scopes.get(nc_origin, set())
+            _scoped = _scope is None or fname in _scope
+            for _rung, _field in ORIG_RUNGS:
+                _val = {"ecr": ecr, "acr": acr, "tcr": tcr}[_field]
+                if _val <= 0:
+                    continue
+                _mk = (nc_origin, fname, _sk, _rung)
+                if _mk not in orig_seen:
+                    orig_seen.add(_mk)
+                    _cell = orig_matrix.setdefault(nc_origin, {}).setdefault(
+                        fname, {r + s: 0 for r, _f in ORIG_RUNGS for s in ("", "_u")})
+                    _cell[_rung] += 1
+                    _cell[_rung + "_u"] += _val
+                if _scoped:
+                    _tk = (nc_origin, _sk, _rung)
+                    if _tk not in orig_tot_seen:
+                        orig_tot_seen.add(_tk)
+                        _tot = orig_tot.setdefault(nc_origin, {
+                            "nc_" + r + s: 0 for r, _f in ORIG_RUNGS for s in ("", "_u")})
+                        _tot["nc_" + _rung] += 1
+                        _tot["nc_" + _rung + "_u"] += _val
         # CPL-type split — funding colleges only (the `unmatched` bucket already
         # exists for name-join visibility and doesn't need a type breakdown).
         # A student carrying rows of two types counts once under EACH; the
@@ -675,6 +859,9 @@ def main():
                   "PPA = APPLIED units among those same portal-origin students — the measure the "
                   "Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE "
                   "Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). "
+                  "NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 "
+                  "resolves to a known noncredit origin (present only when the pull carries "
+                  "LocID2; see the `origination` block for the per-origin scoped cuts). "
                   "*_u keys are UNIT sums over exactly the same students as their count "
                   "(first row per college+student, matching the count dedupe); statewide "
                   "unit sums are the plain sum of the per-college sums, NOT sid-deduped, "
@@ -703,6 +890,56 @@ def main():
             "arrive already-transcribed by construction (students already in the college "
             "SIS, surfaced in MAP), so read p3 by type before treating a transcribed "
             "figure as lifecycle work.")
+    # Origination block — OMITTED (not zeroed) when the pull lacks LocID2, the
+    # same shape `pa` uses. The per-college nc_* keys and the statewide nc_*
+    # sums already rode the ordinary machinery above; this block adds the
+    # per-origin cuts the one-pool model and its audit surfaces read.
+    if has_loc2:
+        def _suppress_orig_rec(rec, keys):
+            o = {}
+            for bk in keys:
+                n = rec.get(bk, 0)
+                hide = 0 < n < SUPPRESS_BELOW
+                o[bk] = None if hide else n
+                if hide:
+                    o[bk + "_suppressed"] = True
+                uk = bk + "_u"
+                if uk in rec:
+                    o[uk] = None if hide else round(rec[uk], 2)
+                    if hide:
+                        o[uk + "_suppressed"] = True
+            return o
+
+        payload["origination"] = {
+            "note": ("Noncredit-origin cuts keyed by MAP LocID2 (2026-08-31, the N2 b gate). "
+                     "in_scope = each origin institution's originated funnel counted only where "
+                     "the receiving college is inside its ruled scope (NOCE/SDCCE: their "
+                     "district's credit colleges; Calbright: statewide) — computed at the "
+                     "student grain, deduped per (origin, student, rung), so a suppressed "
+                     "matrix cell never subtracts from it. This is what the noncredit-only "
+                     "institutions' origination earn-out reads: they draw only as originated "
+                     "CPL posts, no advances. by_origin = the (origin x receiving college) "
+                     "matrix for audit, cell-suppressed per the privacy ADR. Only LocID2 "
+                     "values resolving to a KNOWN noncredit location count; unresolved values "
+                     "are surfaced in unmatched_origins, never guessed onto an institution."),
+            "scopes": {short: ({"scope": "statewide", "colleges": None} if s is None
+                               else {"scope": "district", "colleges": sorted(s)})
+                       for short, s in origin_scopes.items()},
+            "in_scope": {short: _suppress_orig_rec(rec, ("nc_pe", "nc_pa", "nc_pt"))
+                         for short, rec in sorted(orig_tot.items())},
+            "by_origin": {short: {cn: _suppress_orig_rec(cell, ("pe", "pa", "pt"))
+                                  for cn, cell in sorted(cols.items())}
+                          for short, cols in sorted(orig_matrix.items())},
+            "unmatched_origins": {v: (len(sids) if len(sids) >= SUPPRESS_BELOW
+                                      else "<" + str(SUPPRESS_BELOW))
+                                  for v, sids in sorted(unmatched_origins.items())},
+        }
+    if i_origin is not None:
+        payload["origin_values"] = dict(sorted(origin_values.items()))
+        payload["origin_values_note"] = (
+            "Row counts per raw `Origin` value — verification only. The ppa cutover from "
+            "'Potential Student' to named origins is made on these CONFIRMED spellings, "
+            "never guessed ones.")
     # Cross-check our per-student unit sums against MAP's OWN published per-college
     # totals. Reported, never used to overwrite: a gap is information about the
     # source view's grain, and silently "correcting" to it would mix populations
@@ -754,7 +991,9 @@ def main():
     print(f"wrote {os.path.normpath(out)}: {len(payload['colleges'])} colleges "
           f"({sup} suppressed cells), {len(payload['unmatched'])} unmatched, "
           f"{len(payload['feeders'])} feeders (F1 eligible), "
-          f"statewide pe={state['pe']:,} "
+          + (f"origination: {len(orig_tot)} origins in scope, "
+             f"{len(unmatched_origins)} unmatched LocID2 values, " if has_loc2 else "")
+          + f"statewide pe={state['pe']:,} "
           + (f"pa={state['pa']:,} " if has_applied else "")
           + f"p2={state['p2']:,} p3={state['p3']:,} "
           f"pp={state['pp']:,} "

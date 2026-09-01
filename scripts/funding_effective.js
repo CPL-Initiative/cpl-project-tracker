@@ -115,21 +115,16 @@ console.log("  priorityOrder   [" + e.priorityOrder.join(", ") + "]" +
   (e.priorityOrder.some((v, i) => v !== i)
     ? "   <-- screen ordinal != stored index" : "   (identity)"));
 
-console.log("\nCREDIT POOL");
-console.log("  to institutions " + money(e.pool.net_before_feeder));
-console.log("  college pool    " + money(e.pool.net_college) + "   (after the noncredit carve-out)");
-console.log("  floor / cap     " + money(e.pool.floor_window) + " / " + money(e.pool.cap_window));
-
-console.log("\nNONCREDIT LANE");
-console.log("  carve-out       " + money(e.nc.pool));
-console.log("  entry threshold " + num(e.nc.threshold_ftes) + " FTES  ->  " + e.nc.institutions + " institutions");
-console.log("  floor / cap     " + money(e.nc.floor_window) + " / " + money(e.nc.cap_window));
-console.log("  at floor / cap  " + e.nc.at_floor + " / " + e.nc.at_cap);
-console.log("  break-even      " + (e.nc.floor_infeasible ? "— (not meaningful: the floor is infeasible)"
-  : num(e.nc.break_even_ftes) + " FTES   (below this, another noncredit FTES earns nothing)"));
-if (e.nc.unspent > 0.5) console.log("  UNSPENT         " + money(e.nc.unspent) + "  <-- the dials strand this");
-if (e.nc.floor_infeasible) console.log("  FLOOR INFEASIBLE — the pool cannot pay this minimum to every institution");
-if (e.nc.cap_below_floor) console.log("  CAP BELOW FLOOR — check the dials");
+console.log("\nONE POOL (adopted 2026-08-31 — the two-lane carve-out model is superseded)");
+console.log("  to institutions " + money(e.pool.net_college) + "   over " + e.pool.institutions + " institutions");
+console.log("  base / cap      " + money(e.pool.floor_window) + " / " + money(e.pool.cap_window) + "   (per institution, combined)");
+console.log("  at base / cap   " + e.pool.at_floor + " / " + e.pool.at_cap);
+console.log("  noncredit face  " + money(e.pool.nc_college_shares + e.pool.nc_only_held_by_origination) +
+  "   (" + money(e.pool.nc_college_shares) + " riding college awards + " +
+  money(e.pool.nc_only_held_by_origination) + " held by origination at the noncredit-only three)");
+if (e.pool.unspent > 0.5) console.log("  UNSPENT         " + money(e.pool.unspent) + "  <-- the dials strand this");
+if (e.pool.floor_infeasible) console.log("  BASE INFEASIBLE — the pool cannot pay this base award to every institution");
+if (e.pool.cap_below_floor) console.log("  CAP BELOW BASE — check the dials");
 
 for (const y of e.years) {
   const tags = [];
@@ -147,29 +142,27 @@ for (const y of e.years) {
   }
 }
 
-// ── optional: what a different noncredit floor would do ────────────────────
-// The open decision as of 2026-08-23. The model is re-solved at each floor —
-// the numbers are not interpolated, because a bounded solve is not linear.
-const sweep = flag("--nc-sweep");
+// ── optional: what a different BASE AWARD would do ─────────────────────────
+// One pool (2026-08-31): the swept dial is the per-institution base on the
+// combined award. The model is re-solved at each base — the numbers are not
+// interpolated, because a bounded solve is not linear. (--nc-sweep is retired
+// with the carve-out lane; this flag replaces it.)
+const sweep = flag("--base-sweep") || flag("--nc-sweep");
+if (flag("--nc-sweep")) console.warn("--nc-sweep is retired (one pool); sweeping the BASE AWARD instead.");
 if (sweep) {
   const floors = sweep.split(",").map((s) => Number(s.trim())).filter((v) => v > 0);
-  console.log("\nNONCREDIT FLOOR SWEEP — model re-solved at each floor");
-  console.log("  floor        in lane   at floor   at cap   break-even FTES   unspent");
+  console.log("\nBASE-AWARD SWEEP — model re-solved at each base (combined award, all institutions)");
+  console.log("  base         at base    at cap    unspent");
   const shared = T._getShared();
   const original = JSON.parse(JSON.stringify(shared.pool || {}));
   for (const f of floors) {
-    shared.pool = Object.assign({}, original, { nc_floor_window: f });
-    const nc = T._nc();
+    shared.pool = Object.assign({}, original, { floor_window: f });
+    const m = T._model();
     console.log("  " + money(f).padEnd(12) +
-      String(nc.rows.length).padStart(7) +
-      String(Object.keys(nc.floored).length).padStart(11) +
-      String(Object.keys(nc.capped).length).padStart(9) +
-      // An infeasible floor puts EVERY institution on the minimum, so the
-      // proportional rate the break-even is derived from no longer describes
-      // anything. Printing the number anyway would be a figure with no referent.
-      (nc.floorInfeasible ? "—" : num(nc.breakEven)).padStart(18) +
-      money(nc.unspent).padStart(12) +
-      (nc.floorInfeasible ? "   INFEASIBLE" : ""));
+      String(Object.keys(m.floored).length).padStart(8) +
+      String(Object.keys(m.capped).length).padStart(9) +
+      money(m.unspent).padStart(11) +
+      (m.floorInfeasible ? "   INFEASIBLE" : ""));
   }
   shared.pool = original;   // leave the loaded config as we found it
 }

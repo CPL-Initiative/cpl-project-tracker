@@ -97,6 +97,15 @@ jobs:
       # never reads. Pure-stdlib python, no network.
       - name: MAP CustomReport response verdict (responseCode / duplicate views)
         run: python3 tests/custom_report_response_test.py
+      # Origination feed (Session 216, the N2 b gate) — the noncredit-only
+      # institutions draw ONLY as CPL originating from them posts at a credit
+      # college, so the nc_* keys and the origination block must be ABSENT (not
+      # zeroed) until the pull carries LocID2, district/statewide scope must
+      # follow the ruling, and an unresolvable LocID2 must surface rather than
+      # be guessed onto an institution. Pure-stdlib python; same non-required
+      # check.
+      - name: Origination feed lint (funding/_build_funding_performance.py)
+        run: python3 tests/funding_origination_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs

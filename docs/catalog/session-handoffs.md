@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-190 document(s).
+191 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 217 | [the one-pool model is shipped; feed cutover + polish next](../session_217_handoff.md) | 2026-09-01 |
 | 216 | [from SkyPool (Session 215, the full-tab-mock run)](../session_216_handoff.md) | 2026-08-31 |
 | 215 | [from SkyLedger (Sessions 210→214, the one-pool day)](../session_215_handoff.md) | 2026-08-31 |
 | 214 | [from SkyMirror (Session 213, the stale-greeting boot)](../session_214_handoff.md) | 2026-08-30 |

@@ -1441,25 +1441,27 @@
       key: key, onRoster: true, grant: grant,
       floor: model ? model.floor : null,
       cap: model ? model.cap : null,
-      // A noncredit feeder receives the seed grant but is not in the $35M
-      // college pool — it is funded through the $1M noncredit carve-out, a
-      // different mechanism. _alloc returns null and we say so.
-      alloc: grant.kind === "credit" ? M._alloc(key) : null,
+      // ONE POOL (2026-08-31): the noncredit-only institutions hold ordinary
+      // combined awards, so _alloc answers for everyone — earned by
+      // origination for the noncredit-only three (no advances, N2 b).
+      alloc: M._alloc(key),
       // The per-priority split of that cap. Year 1 is passed EXPLICITLY: the
       // module would otherwise use the Implementation Funding tab's viewed
       // year, and under front-loaded disbursement every year after the first
       // has a zero cap — so a briefing that inherited a Year-2 view would show
       // $0 against all three priorities. Year 1 is also the authoritative set
       // (Sam, 2026-08-09: Year 1 and Year 2 are deliberately identical).
-      prios: (grant.kind === "credit" && typeof M._prios === "function") ? M._prios(key, "1") : null,
+      prios: (typeof M._prios === "function") ? M._prios(key, "1") : null,
       ess: M._ess(key),
       // The noncredit carve-out, kept as its OWN fact rather than folded into
       // `alloc` (Sam: "I want it on the surface the amount admin should give to
       // NC so it doesn't get lumped into the whole"). Null when the module
       // predates the noncredit lane, so an older cached build renders no line
       // rather than a zero that reads like a denial.
+      // The award's NONCREDIT SHARE (one pool: a decomposition of the one
+      // combined award, restricted to noncredit outcomes — never a second
+      // pot's figure).
       nc: (typeof M._ncAward === "function") ? M._ncAward(key) : null,
-      ncModel: (typeof M._ncModel === "function") ? M._ncModel() : null,
       rural: M._isRural(key),
       district: M._district(key)
     };
@@ -1963,14 +1965,14 @@
           + "active revision.</div>";
         var bits = [];
         if (f.alloc.floored) {
-          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
-            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+          bits.push("At the <b>" + money(f.floor) + " base award</b> — this institution's proportional share came "
+            + "out below the base, so it is brought up to it. Its allocation is <b>not</b> its proportional share of the funding.");
         }
         // The floor's mirror image. Say where the difference WENT, not just
         // that the college lost it — the same reason the funding explainer
         // names the beneficiary of every amount it shows.
         if (f.alloc.capped && f.cap) {
-          bits.push("At the <b>" + money(f.cap) + " maximum allocation</b> — this college's proportional share came "
+          bits.push("At the <b>" + money(f.cap) + " cap</b> — this institution's proportional share came "
             + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
             + "Its performance targets scale down with it, so it earns at the same rate as every other college "
             + "above the minimum.");
@@ -1985,24 +1987,15 @@
         if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
 
         // ── Noncredit money, stated separately and never added in ───────────
-        // This college's own noncredit program earns from a different pot. It
-        // is shown as its own line, with its own heading, because the whole
-        // reason it has its own column on the funding tab is that noncredit
-        // money folded into a credit total stops being visible as noncredit
-        // money — and it is the noncredit dean who needs to see it.
-        if (f.nc != null && f.ncModel) {
-          if (f.nc > 0) {
-            var ncNote = f.ncModel.floored[f.key] ? " (at the noncredit minimum)"
-              : f.ncModel.capped[f.key] ? " (at the noncredit maximum)" : "";
-            fundBody += '<div class="cb-note cb-floor"><b>Noncredit: ' + money(f.nc) + esc(ncNote) + "</b> over the "
-              + "same window, from a separate " + money(f.ncModel.pool) + " noncredit carve-out — <b>not</b> part of "
-              + "the figure above and not to be spent against it. It is earned on this college's own noncredit "
-              + "program, and the share is set by its noncredit FTES.</div>";
-          } else if (f.ncModel.threshold > 0) {
-            fundBody += '<div class="cb-lab">No noncredit allocation: this college is below the '
-              + esc(Math.round(f.ncModel.threshold).toLocaleString("en-US")) + "-FTES entry threshold for the separate "
-              + "noncredit carve-out.</div>";
-          }
+        // The award's NONCREDIT SHARE (one pool, 2026-08-31). Its own line
+        // with its own heading, because noncredit funding folded into a credit
+        // total stops being visible as noncredit funding — and it is the
+        // noncredit dean who needs to see it. The share is INSIDE the combined
+        // figure above, restricted to noncredit outcomes.
+        if (f.nc != null && f.nc > 0) {
+          fundBody += '<div class="cb-note cb-floor"><b>Noncredit share: ' + money(f.nc) + "</b> of the combined "
+            + "award above — set by this institution's own noncredit FTES, restricted to the noncredit "
+            + "measures, and never drawable by credit work.</div>";
         }
 
         // ── What the cap is FOR — the three priorities, each with this

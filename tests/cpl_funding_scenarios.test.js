@@ -1,7 +1,12 @@
-// CPL Implementation Funding tab — the 2026-07-06 evening batch + the shared project/scenario layer (Part E).
+// CPL Implementation Funding tab — the 2026-07-06 evening batch + the shared project/scenario layer (Part E),
+// ported to the ONE-POOL model (adopted 2026-08-31).
 //
 // Table refinements, CO seal-blue, the shared project + scenario selectors,
-// exports, and the gated CO Monitor notes.
+// exports, and the gated CO Monitor notes. The scenario/project MACHINERY is
+// unchanged; what moved is the table (one row per institution, the CR award /
+// NC award pair — the P1/P2/P3 columns live on in the expand's 7-column
+// detail table), the retired NC carve-out dial the edit checks used to type
+// into (they type into admin_cost now), and the one-pool CSV/memo shapes.
 //
 // One of nine suites the 2,955-line cpl_funding.test.js was split into on
 // 2026-08-20, after it stopped fitting in a 12 GB heap. Shared setup + the
@@ -23,6 +28,12 @@ const {
   finish,
 } = require("./lib/cpl_funding_harness.js");
 
+// The one-pool roster: 115 colleges + the noncredit-only rows (Mt. SAC
+// Noncredit rides the Mt San Antonio row, so it is not one of them).
+const NCO_N = D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; }).length;
+const ROSTER_N = D.colleges.length + NCO_N;
+const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); };
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Part E — the 2026-07-06 evening batch (Sam's 8+3): county hidden, eligible
 // column, count note, floor-targets note, seal-blue, scenarios, exports,
@@ -33,29 +44,25 @@ const {
 {
   const { window } = freshDom();
   const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
   check("County column is hidden (data stays in drill-in + CSV)",
     !doc.querySelector('#cplFundTable th[data-sort="county"]'));
-  check("per-priority P1/P2/P3 columns render (replacing Eligible/Transcribed)",
-    !!doc.querySelector('th[data-sort="prio0"]') && !!doc.querySelector('th[data-sort="prio1"]') &&
-    !!doc.querySelector('th[data-sort="prio2"]') &&
-    doc.querySelector('th[data-sort="prio0"]').textContent.indexOf("P1") !== -1);
-  check("a P1 column header hover carries the priority goal + metric",
-    (doc.querySelector('th[data-sort="prio0"]').getAttribute("title") || "").indexOf("METRIC:") !== -1);
-  // The count line names the noncredit lane beside the college count. It used
-  // to be asserted on the literal words "noncredit campuses", which is what the
-  // line said while it was WRONG: it counted the 4-record standalone roster for
-  // a 33-institution lane and printed a 74,968 student headcount — a basis the
-  // lane does not allocate on, including the deduped campus the carve-out pays
-  // $0 (2026-08-23). Assert the lane size and the funding source instead.
+  // The per-priority P1/P2/P3 COLUMNS are retired (one-pool table, 2026-08-31):
+  // one row per institution carries the CR award / NC award pair, and the
+  // per-priority detail lives in the expand's 7-column .cplfund-dtl-table.
+  check("the P1/P2/P3 columns are retired — the award pair heads the table instead",
+    !doc.querySelector('th[data-sort="prio0"]') && !doc.querySelector('th[data-sort="prio1"]') &&
+    !doc.querySelector('th[data-sort="prio2"]') &&
+    !!doc.querySelector('th[data-sort="cr_award"]') && !!doc.querySelector('th[data-sort="nc_award"]'));
+  // The count line sizes the ONE roster and quotes the average in Sam's ruled
+  // vocabulary ("max award"); the carve-out it used to name is retired (R3).
   {
     const line = doc.getElementById("cplFundCount").textContent;
-    const laneN = window.CPL_FUNDING_TAB._ncModel().rows.length;
-    check("count note names the noncredit lane and what funds it",
-      /noncredit/i.test(line) && line.indexOf("carve-out") !== -1);
-    check("...sized by the lane (" + laneN + " institutions), not the standalone roster",
-      line.indexOf(laneN + " institutions") !== -1);
-    check("...and reports noncredit FTES, the basis the lane allocates on",
-      /noncredit FTES/.test(line));
+    check("count note sizes the one-pool roster (" + ROSTER_N + " institutions)",
+      line.indexOf(ROSTER_N + " institutions") !== -1);
+    check("...and quotes the average max award from the model",
+      /average max award/.test(line) && line.indexOf(fmtM(T._netCollege() / ROSTER_N)) !== -1);
+    check("...and no carve-out survives in it (R3)", line.indexOf("carve-out") === -1);
   }
   check("floor note: funding raised, targets not (formula)",
     doc.querySelector(".cplfund-formula").textContent.indexOf("not its targets") !== -1);
@@ -63,22 +70,26 @@ const {
   click(window, doc.querySelector("tr.cplfund-row"));
   check("drill-in still shows the county context",
     doc.querySelector("tr.cplfund-detail").textContent.indexOf("County context") !== -1);
-  // Priority-column actuals render from the perf artifact. P1's live metric is
-  // the ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's
-  // pe value is what the P1 cell must show.
+  // Priority actuals render from the perf artifact. P1's live metric is the
+  // ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's pe
+  // value is what the surfaces must show — the per-college figure in the
+  // expand's detail table (the P-cells' successor), the statewide figure on
+  // the priority card's Actual line.
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
     statewide: { pe: 50000, p2: 100, p3: 20000 },
     colleges: { "Alameda": { pe: 777, p2: 10, p3: 300 } }, unmatched: {}
   };
-  window.CPL_FUNDING_TAB.render();
-  const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) {
-    return tr.textContent.indexOf("Alameda") !== -1;
-  });
-  check("Alameda's P1 cell shows the measurable actual (777 eligible) in its actual line",
-    alamedaRow.querySelector("td.cf-prio .cf-a").textContent.indexOf("777") !== -1);
-  check("SYSTEM P1 cell shows the statewide measurable actual (50K eligible, compact)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("50K") !== -1);
+  T._state.open["c:Alameda"] = true;   // rows key by name since 2026-08-31
+  T.render();
+  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
+  check("Alameda's expand shows the measurable actual (777 eligible) in its Actual column",
+    !!dtl && Array.from(dtl.querySelectorAll("tr")).slice(1).some(function (tr) {
+      const tds = tr.querySelectorAll("td");
+      return tds[4] && /^777 stu/.test(tds[4].textContent);
+    }));
+  check("the priority card shows the statewide measurable actual (50,000 eligible per MAP)",
+    /Actual 50,000 students per MAP/.test(doc.getElementById("cplFundingMount").textContent));
   delete window.CPL_FUNDING_PERF;
 }
 
@@ -87,7 +98,6 @@ const {
   const { window } = freshDom();
   const doc = boot(window);
   const css = doc.getElementById("cpl-funding-css").textContent;
-  ["card.hero", "table th", "seg button.on"].forEach(function (which) {});
   check("hero card background = seal blue", /cplfund-card\.hero \{ background: var\(--seal-blue\)/.test(css));
   check("table header background = seal blue", /cplfund-table th \{ background: var\(--seal-blue\)/.test(css));
   check("active seg button background = seal blue", /seg button\.on \{ background: var\(--seal-blue\)/.test(css));
@@ -103,7 +113,9 @@ const {
 
 // E3 — the shared project + scenario layer (Sam, 2026-07-23): selectors render
 // for everyone; ＋New / ＋Project are curator-gated; a locked edit is a per-browser
-// what-if overlay on the selected shared scenario.
+// what-if overlay on the selected shared scenario. (The edits type into
+// admin_cost — the feeder_carveout dial these blocks used to use is retired,
+// R3, and no longer renders an input.)
 {
   const { window } = freshDom();
   const doc = boot(window);
@@ -115,9 +127,9 @@ const {
   check("locked mode hides ＋New / ＋Project (curator-only) + shows the unlock hint",
     !doc.getElementById("cplFundScenNew") && !doc.getElementById("cplFundProjAdd") &&
     !!doc.querySelector(".cplfund-ctl-hint"));
-  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="admin_cost"]'), "900,000");
   check("locked edit lands in the CPL / Scenario-1 what-if overlay",
-    scenSlot(window, "Scenario 1").pool.feeder_carveout === 2000000);
+    scenSlot(window, "Scenario 1").pool.admin_cost === 900000);
 }
 
 // E3b — curator (unlocked): ＋New CLONES the current scenario; ＋Project clones the
@@ -142,19 +154,19 @@ const {
   const T = window.CPL_FUNDING_TAB;
   check("curator sees ＋New + ＋Project", !!doc.getElementById("cplFundScenNew") && !!doc.getElementById("cplFundProjAdd"));
   // Edit Scenario 1 (unlocked → shared), then ＋New clones it.
-  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "2,000,000");
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="admin_cost"]'), "2,000,000");
   click(window, doc.getElementById("cplFundScenNew"));
   check("＋New creates Scenario 2 that CLONES the current scenario (not blank)",
-    T._scenario().name === "Scenario 2" && T._getShared().pool.feeder_carveout === 2000000);
+    T._scenario().name === "Scenario 2" && T._getShared().pool.admin_cost === 2000000);
   // The clone is independent.
-  commit(window, doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]'), "3,000,000");
+  commit(window, doc.querySelector('input[data-edit="pool"][data-field="admin_cost"]'), "3,000,000");
   const cfg = T._config();
   check("cloned scenarios are independent",
-    cfg.projects["cpl-implementation"].scenarios["Scenario 2"].pool.feeder_carveout === 3000000 &&
-    cfg.projects["cpl-implementation"].scenarios["Scenario 1"].pool.feeder_carveout === 2000000);
+    cfg.projects["cpl-implementation"].scenarios["Scenario 2"].pool.admin_cost === 3000000 &&
+    cfg.projects["cpl-implementation"].scenarios["Scenario 1"].pool.admin_cost === 2000000);
   const scenSel = doc.getElementById("cplFundScenSel");
   scenSel.value = "Scenario 1"; scenSel.dispatchEvent(new window.Event("change"));
-  check("switching scenario restores its model", T._getShared().pool.feeder_carveout === 2000000);
+  check("switching scenario restores its model", T._getShared().pool.admin_cost === 2000000);
   // ＋Project → the add form → create a C&I project cloning the current (CPL) model.
   click(window, doc.getElementById("cplFundProjAdd"));
   const nameEl = doc.getElementById("cplFundProjName");
@@ -169,13 +181,16 @@ const {
     newPid !== "cpl-implementation" &&
     cfg2.projects[newPid].area === "ci" &&
     cfg2.projects[newPid].label === "C&I Faculty Support" &&
-    cfg2.projects[newPid].scenarios["Scenario 1"].pool.feeder_carveout === 2000000);
+    cfg2.projects[newPid].scenarios["Scenario 1"].pool.admin_cost === 2000000);
   check("the area badge reflects the active project's area",
     doc.querySelector(".cplfund-area").textContent.indexOf("C&I") !== -1);
   delete window.CPL_ORGS;
 }
 
 // E3c — normalizeConfig migration: an OLD flat override becomes CPL / Scenario 1.
+// The flat fixture deliberately carries the retired feeder_carveout key — a
+// real legacy store would — and the migration must carry it inertly rather
+// than choke on it (the model reads no retired dial either way).
 {
   const { window } = freshDom();
   const doc = boot(window);
@@ -206,7 +221,7 @@ const {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  // Three sub-views since 2026-07-29: the $35M funding model, the $15M
+  // Three sub-views since 2026-07-29: the funding model, the $15M
   // Distributions receipt, and the Report.
   check("Report sub-tab renders alongside the Funding-model + $15M Distributions tabs",
     doc.querySelectorAll('#cplFundingMount [data-subview]').length === 3 &&
@@ -226,30 +241,41 @@ const {
     check("memo includes the ESS section — " + sec, memo.indexOf(sec) !== -1);
   });
   // The memo reflects the live model numbers + priorities + allocation.
-  // Sam, 2026-08-04: the memo now leads with the AVAILABLE college funding (the
-  // pool colleges actually receive = Σ window totals), not the $35M gross
-  // appropriation — that reference was dropped.
-  const collegePool = D.colleges.reduce(function (s, c) {
-    return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0);
-  const poolFig = "$" + Math.round(collegePool).toLocaleString("en-US");
-  check("memo Funding Overview leads with the available college funding figure", memo.indexOf(poolFig) !== -1);
-  const gross35 = "$" + Math.round(D.pool.one_time_2026_27).toLocaleString("en-US");
+  // Sam, 2026-08-04: the memo leads with the AVAILABLE institution funding, not
+  // the $35M gross appropriation — under one pool that is netCollege(), the
+  // $25,240,308 every institution surface ties out to.
+  const poolFig = fmtM(T._netCollege());
+  check("memo Funding Overview leads with the available institution funding figure", memo.indexOf(poolFig) !== -1);
+  const gross35 = fmtM(D.pool.one_time_2026_27);
   check("memo no longer prints the $35M gross appropriation", memo.indexOf(gross35) === -1);
   check("memo lists the three priorities",
     D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
   check("memo allocation table carries the statewide institution total", memo.indexOf("TOTAL (statewide") !== -1);
-  // Sam, 2026-08-04: the allocation summary leads with the INSTITUTION total (college
-  // pool + the $1M noncredit feeder support) and relabels the counts.
-  const instTotal = collegePool + (D.pool.feeder_carveout || 0);
-  check("memo allocation summary shows the institution total (incl. the $1M NC)",
-    memo.indexOf("$" + Math.round(instTotal).toLocaleString("en-US")) !== -1);
-  check("memo relabels the counts: Funded Colleges + Funded Noncredit Campuses",
-    memo.indexOf("Funded Colleges") !== -1 && memo.indexOf("Funded Noncredit Campuses") !== -1);
-  // Per-district grouping + the NC campuses listed under their districts.
+  // ONE POOL (2026-08-31): the allocation summary counts FUNDED INSTITUTIONS
+  // (115 colleges + the 3 noncredit-only) — the old carve-out-era "Funded
+  // Colleges / Funded Noncredit Campuses" split is retired with the carve-out.
+  check("memo allocation summary counts the funded institutions (colleges + noncredit-only)",
+    memo.indexOf("Funded institutions") !== -1 &&
+    memo.indexOf(ROSTER_N + " (" + D.colleges.length + " colleges + " + NCO_N + " noncredit-only institutions)") !== -1);
+  check("memo no longer splits the count into Funded Colleges / Funded Noncredit Campuses",
+    memo.indexOf("Funded Colleges") === -1 && memo.indexOf("Funded Noncredit Campuses") === -1);
+  // The one-pool allocation table: one combined max award per institution with
+  // its credit/noncredit shares beside it (the anchor suite pins the headers;
+  // here the SHAPE claims are the counts and the trio's rows).
+  check("memo allocation table is one-pool shaped (Credit share · Noncredit share · Max award)",
+    memo.indexOf("Credit share") !== -1 && memo.indexOf("Noncredit share") !== -1 &&
+    memo.indexOf("Max award") !== -1);
+  // Per-district grouping + the noncredit-only institutions under their districts.
   check("memo allocation is grouped by district (a district header appears)",
     memo.indexOf(D.colleges[0].district) !== -1);
-  check("memo lists every noncredit feeder campus, marked (noncredit)",
-    memo.indexOf("(noncredit)") !== -1 && D.feeders.every(function (f) { return memo.indexOf(f.name) !== -1; }));
+  check("memo lists every noncredit-only institution, marked as earning by origination",
+    memo.indexOf("(noncredit-only") !== -1 &&
+    D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .every(function (f) { return memo.indexOf(f.name) !== -1; }));
+  check("memo gives Mt. SAC Noncredit no row of its own (its FTES ride the Mt San Antonio row)",
+    memo.indexOf("Mt. San Antonio College — Noncredit") === -1);
+  check("memo flags Calbright's stand-in size (nothing disburses on a placeholder — N3 a)",
+    memo.indexOf("stand-in") !== -1);
   // $50k seed-funding intro (Sam, 2026-08-04) + the ESS 25-82 reference.
   check("memo intro cites the $50,000 seed grant and ESS 25-82",
     memo.indexOf("$50,000") !== -1 && memo.indexOf("ESS 25-82") !== -1);
@@ -295,24 +321,35 @@ const {
     !!doc.getElementById("cplFundCsv") && !!doc.getElementById("cplFundPdf"));
   const csv = T._csv();
   const lines = csv.split("\r\n");
-  check("CSV: meta line + header + one line per college + SYSTEM",
-    lines.length === 2 + D.colleges.length + 1 && lines[0].indexOf("DRAFT model") !== -1);
-  check("CSV: header carries County + per-priority target/actual + eligibility + floor/maximum",
+  check("CSV: meta line + header + one line per institution + SYSTEM",
+    lines.length === 2 + ROSTER_N + 1 && lines[0].indexOf("DRAFT model") !== -1);
+  check("CSV: header carries County + per-priority target/actual + eligibility + base/cap state",
     lines[1].indexOf("County") !== -1 && lines[1].indexOf("P1 target") !== -1 && lines[1].indexOf("P1 actual") !== -1 &&
-    lines[1].indexOf("Floor / maximum applied") !== -1);
+    lines[1].indexOf("Eligibility (proposed)") !== -1 && lines[1].indexOf("Base / cap applied") !== -1);
   // The Rural column went with the carve-out (2026-08-22) — guard its absence so
   // it cannot come back as an empty column nobody notices.
   check("CSV: no Rural column survives", lines[1].split(",").indexOf("Rural") === -1);
-  // Counted against the model rather than a named college: the ceiling's bite
+  // Counted against the model rather than a named college: the cap's bite
   // depends on the pool and the roster, so a literal name here would break for
   // a reason that has nothing to do with the CSV.
-  check("CSV: every college held to the ceiling carries the 'maximum' flag",
+  check("CSV: every institution held at the cap carries the 'cap' flag",
     T._model().cappedCount > 0 &&
-    lines.filter(function (l) { return /,maximum,/.test(l); }).length === T._model().cappedCount);
-  check("CSV: a floored college carries its flag",
-    lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("floor") !== -1; }));
-  check("CSV: SYSTEM row includes the noncredit-inclusive headcount",
-    lines[lines.length - 1].indexOf(String(D.system.headcount + D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0))) !== -1);
+    lines.filter(function (l) { return /,cap,/.test(l); }).length === T._model().cappedCount);
+  check("CSV: a floored college carries its 'base' flag",
+    lines.some(function (l) { return l.indexOf("Feather River") !== -1 && /,base,/.test(l); }));
+  // The SYSTEM line totals each lane in its own column (the unit-agreement
+  // rule): Σ credit FTES and ALL noncredit — college rows + the standalone
+  // trio, placeholder-aware (Calbright at its stand-in), Mt. SAC once.
+  const crSum = Math.round(D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0));
+  const ncSum = Math.round(D.colleges.reduce(function (s, c) { return s + (Number(c.noncredit_ftes) || 0); }, 0) +
+    D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .reduce(function (s, f) {
+        const ph = Number(f.noncredit_ftes_placeholder);
+        return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
+      }, 0));
+  check("CSV: SYSTEM row totals both FTES lanes (credit; all noncredit incl. the standalone trio)",
+    lines[lines.length - 1].indexOf(String(crSum)) !== -1 &&
+    lines[lines.length - 1].indexOf(String(ncSum)) !== -1);
   check("CSV: no HTML entities leak", csv.indexOf("&lt;") === -1 && csv.indexOf("<span") === -1);
   const ph = T._printHtml();
   check("print HTML: standalone doc with the seal-blue header style",
@@ -339,7 +376,7 @@ const {
   // Phrase-holder (read-only view): a fetched note renders as text.
   T._setNotes({ "Alameda": { college: "Alameda", note: "Coordinator hire in progress.", updated_at: "2026-07-06T20:00:00Z" } });
   T.render();
-  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Alameda"; }).order + '"] = true;');
+  T._state.open["c:Alameda"] = true;   // rows key by name since 2026-08-31
   T.render();
   const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
     return tr.textContent.indexOf("Alameda") !== -1 || tr.textContent.indexOf("Coordinator hire") !== -1;
@@ -378,18 +415,21 @@ const {
     return { head: head, bad: lines.filter((l) => fields(l).length !== head).length, n: lines.length };
   }
   const flat = shapeOf(T._csv());
-  check("CSV: every college line matches the header's field count",
+  check("CSV: every institution line matches the header's field count",
     flat.bad === 0 && flat.n > 110);
   const cols = fields(T._csv().split("\r\n")[1]);
-  check("CSV: the SYSTEM total lands under the Total column, not one to its right",
+  check("CSV: the SYSTEM total lands under the Max-award column, not one to its right",
     (function () {
       const lines = T._csv().split("\r\n");
       const sys = fields(lines[lines.length - 1]);
-      return sys[1] === "SYSTEM (statewide)" &&
-        Number(sys[cols.indexOf("Total 2026–2028")]) === Math.round(T._netCollege());
+      // The window column label follows windowLabel() ("Max award 2026–2028").
+      const idx = cols.findIndex(function (c) { return /^Max award /.test(c); });
+      return sys[1] === "SYSTEM (statewide)" && idx !== -1 &&
+        Number(sys[idx]) === Math.round(T._netCollege());
     })());
-  check("CSV: noncredit support is its own column, never folded into the credit total",
-    cols.indexOf("Noncredit support 2026–2028") !== -1 && cols.indexOf("Noncredit FTES") !== -1);
+  check("CSV: the noncredit share is its own column, never folded into the credit figure",
+    cols.some(function (c) { return /^Noncredit share /.test(c); }) &&
+    cols.indexOf("Noncredit FTES") !== -1);
   // The district-grouped export interleaves subtotal lines — a second shape that
   // has to agree with the same header.
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));

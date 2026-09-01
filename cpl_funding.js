@@ -89,6 +89,11 @@
     ".cplfund-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }",
     ".cplfund-src { font-size: .8rem; color: var(--text-faint); margin: -6px 0 14px; }",
     ".cplfund-src a { color: var(--accent-link); }",
+    // Page actions row (Sam, 2026-08-31): expand/collapse-all, Draft memo,
+    // Save as PDF, and the reviewer view preview. Words, not glyphs.
+    ".cplfund-actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: -6px 0 14px; }",
+    ".cplfund-viewlab { font-size: .7rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--text-muted); margin-left: 6px; }",
+    '.cplfund-actions [data-viewmode][aria-pressed="true"] { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }',
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
     ".cplfund-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }",
     ".cplfund-card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; position: relative; }",
@@ -131,6 +136,26 @@
     ".cplfund-basis-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-basis-note { font-size: .8rem; flex: 1 1 320px; }",
     ".cplfund-basis-note code, .cplfund-earned-line code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; white-space: nowrap; }",
+    // The Summary (R11, 2026-08-31) — the one over/under readout: the
+    // allocation balance, Current Total / rolls-forward, the origination hold,
+    // the noncredit face, and held-in-reserve whenever it is non-zero.
+    ".cplfund-summary { margin: 4px 0 14px; padding: 10px 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; }",
+    ".cplfund-summary-lbl { display: block; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
+    ".cplfund-summary ul { margin: 0; padding-left: 1.15em; font-size: .84rem; }",
+    ".cplfund-summary li { margin: 3px 0; font-variant-numeric: tabular-nums; }",
+    ".cplfund-summary .ok { color: var(--green-progress); font-weight: 700; }",
+    ".cplfund-summary .warn { color: var(--red-alert); font-weight: 700; }",
+    // Award cells + the expand's 7-column priority table (one-pool port).
+    ".cf-award { font-variant-numeric: tabular-nums; white-space: nowrap; }",
+    ".cf-award .sub, .cplfund-table td .sub { display: block; font-size: .68rem; color: var(--text-muted); font-weight: 400; }",
+    ".cf-ncwait { color: var(--text-muted); }",
+    ".cplfund-ncorigin { font-size: .85rem; margin: 4px 0; }",
+    ".cplfund-dtl-tscroll { overflow-x: auto; margin: 6px 0; }",
+    ".cplfund-dtl-table { border-collapse: collapse; width: 100%; min-width: 620px; table-layout: fixed; font-size: .8rem; }",
+    ".cplfund-dtl-table caption { text-align: left; caption-side: top; padding: 2px 0 4px; }",
+    ".cplfund-dtl-table th { text-align: left; font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); padding: 3px 6px; border-bottom: 1px solid var(--border-strong); }",
+    ".cplfund-dtl-table th:not(:first-child), .cplfund-dtl-table td:not(:first-child) { text-align: right; }",
+    ".cplfund-dtl-table td { padding: 3px 6px; border-bottom: 1px solid var(--border); font-variant-numeric: tabular-nums; }",
     ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
     ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
       " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
@@ -210,7 +235,10 @@
     ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
     ".cplfund-strat { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 6px; font-size: .8rem; }",
-    ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
+    // The strategies are a FOLD (Sam, 2026-08-31): the summary IS the block
+    // header — a word affordance ("— show them"), no marker glyph.
+    ".cplfund-strat-h { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; cursor: pointer; list-style: none; }",
+    ".cplfund-strat > summary::-webkit-details-marker { display: none; }",
     ".cplfund-strat .cplfund-reqrow { display: flex; align-items: center; gap: 6px; margin: 3px 0; }",
     ".cplfund-strat .cplfund-reqrow .cplfund-ed-t { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-stratadd { margin-top: 4px; }",
@@ -245,6 +273,9 @@
     "table.cplfund-table { border-collapse: collapse; width: 100%; font-size: .82rem; }",
     ".cplfund-table th { background: var(--seal-blue); color: var(--white); padding: 6px 7px; text-align: right; white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0; }",
     ".cplfund-table th.t, .cplfund-table td.t { text-align: left; }",
+    // Centered numeric columns (Sam, 2026-08-31): CR FTES · NC FTES · Elig ·
+    // CR award sit centered; the last column (NC award) stays right-aligned.
+    ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
     ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
     ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
@@ -946,7 +977,8 @@
     });
     return out;
   }
-  function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
+  // feederCarveout() is retired (R3, 2026-08-31) — the stored config field
+  // remains but nothing reads it; noncredit funding rides the one pool.
   // RURAL CARVE-OUT RETIRED 2026-08-22 (Sam). ruralCarve/ruralPerCollege/
   // ruralPoolDistributed/ruralAlloc/ruralWindow, the Rural section, the 🌲 chip
   // and the curator override are all gone. What survives is the per-college
@@ -958,70 +990,14 @@
   // rises above this. 0 = no ceiling, which is the identity — allocModel below
   // reproduces the pure floor waterfall bit-for-bit when the ceiling is off.
   function capWindow() { return Math.max(0, Number(poolField("cap_window")) || 0); }
-  // ── the NONCREDIT lane's three dials (Sam, 2026-08-23) ───────────────────
-  // Same shape as the credit floor/ceiling pair, plus one the credit lane has no
-  // equivalent for: an ENTRY THRESHOLD. The credit lane's roster is "every
-  // college"; the noncredit lane's roster is a policy choice, because 108 of the
-  // 115 college rows carry SOME noncredit FTES (median 98.9) and paying all 111
-  // institutions a $25,000 floor would need $2,775,000 against a $1,000,000
-  // carve-out. The threshold is what makes the lane affordable, so it is a dial
-  // Sam can move rather than a constant nobody can see.
-  function ncThresholdFtes() { return Math.max(0, Number(poolField("nc_threshold_ftes")) || 0); }
-  function ncFloorWindow() { return Math.max(0, Number(poolField("nc_floor_window")) || 0); }
-  function ncCapWindow() { return Math.max(0, Number(poolField("nc_cap_window")) || 0); }
-
-  // Every institution that COULD be in the noncredit lane, threshold ignored —
-  // the credit colleges carrying noncredit FTES, plus the standalone noncredit
-  // institutions that have no credit row at all. Returned unfiltered on purpose:
-  // the table renders the standalone three whatever the threshold says, so
-  // moving the dial visibly drops or admits them instead of silently deleting a
-  // row. `key` is namespaced because a standalone's short name is not a college
-  // name and must never collide with one in the allocation map.
-  function ncInstitutions() {
-    var out = [];
-    base().colleges.forEach(function (c) {
-      var v = Number(c.noncredit_ftes) || 0;
-      if (v > 0) out.push({ key: c.college, name: c.college, ftes: v, kind: "college", college: c.college });
-    });
-    feeders().forEach(function (f) {
-      // `nc_ftes_on_credit_row` names the college row that ALREADY carries this
-      // institution's noncredit FTES (Mt. SAC Noncredit ≡ the Mt. San Antonio
-      // row's 10,829.3). Its size is zeroed here so the same program cannot earn
-      // twice — but the institution is NOT dropped: it is a real grantee (ESS
-      // 25-82 paid it its own $50,000) and it renders with the reason, because a
-      // silently missing institution and a deliberately-zero one look identical.
-      var dup = f.nc_ftes_on_credit_row || null;
-      out.push({ key: "NC:" + (f.short || f.name), name: f.name, short: f.short,
-                 ftes: dup ? 0 : feederBasis(f), rawFtes: feederBasis(f),
-                 countedOn: dup, kind: "standalone", feeder: f });
-    });
-    return out;
-  }
-  // Every noncredit FTES in the system, counted ONCE. feederNoncreditFtes()
-  // sums the standalone roster only, which was the whole noncredit story until
-  // 2026-08-23 — it now misses the 108 college rows that carry their own, and
-  // understated the system total by ~57,000 FTES on the two surfaces that print
-  // a "CCC total". Reads ncInstitutions(), so the Mt. SAC dedup applies here for
-  // free rather than being re-derived.
-  function allNoncreditFtes() {
-    return ncInstitutions().reduce(function (s, r) { return s + (r.ftes || 0); }, 0);
-  }
-  // What share of the money noncredit receives, against what share of the
-  // teaching it does. Sam, 2026-08-23, on keeping the carve-out at $1M: "I can
-  // adjust it up for parity later". This is the figure that says by how much.
-  function ncParity() {
-    var nc = allNoncreditFtes();
-    var credit = base().colleges.reduce(function (s, c) { return s + (Number(c.credit_ftes) || 0); }, 0);
-    var inst = netBeforeFeeder();
-    var pool = feederCarveout();
-    var teaching = (credit + nc) > 0 ? nc / (credit + nc) : 0;
-    return { ncFtes: nc, creditFtes: credit, teachingShare: teaching,
-             moneyShare: inst > 0 ? pool / inst : 0, parityPool: teaching * inst, pool: pool };
-  }
-  function ncRoster() {
-    var thr = ncThresholdFtes();
-    return ncInstitutions().filter(function (r) { return r.ftes >= thr && r.ftes > 0; });
-  }
+  // The noncredit lane's three dials (entry threshold / NC floor / NC cap),
+  // the separate NC roster, the parity figure and the carve-out solve were
+  // RETIRED with one-pool adoption (Sam, 2026-08-31; R3–R5, R7, R8): noncredit
+  // FTES simply size the combined award (sizeOf/oneRoster above) and the
+  // CR/NC decomposition on every award's face carries the parity story
+  // continuously. Their stored config fields (`nc_threshold_ftes`,
+  // `nc_floor_window`, `nc_cap_window`, `feeder_carveout`) remain in the
+  // shared config but are read by nothing.
   /* ── Who moves — this exploration vs the saved model ──────────────────────
    * (Sam, 2026-08-31: "If the Who moves, against the saved model today could
    * be wired into the correct card on the Funding Pools IF tab, that would be
@@ -1037,16 +1013,14 @@
   function savedModelSnapshot() {
     var prev = SCENARIO;
     SCENARIO = {};
-    _allocCache = null; _ncCache = null;
-    var snap = { W: {}, ncW: {} };
+    _allocCache = null;
+    var snap = { W: {} };
     try {
       var m = allocModel();
       Object.keys(m.W).forEach(function (k) { snap.W[k] = m.W[k]; });
-      var nc = ncModel();
-      Object.keys(nc.W).forEach(function (k) { snap.ncW[k] = nc.W[k]; });
     } finally {
       SCENARIO = prev;
-      _allocCache = null; _ncCache = null;
+      _allocCache = null;
     }
     return snap;
   }
@@ -1061,65 +1035,31 @@
     // is by construction empty (SCENARIO is what the saved solve lifts).
     if (!SCENARIO || !Object.keys(SCENARIO).length) return null;
     var saved = savedModelSnapshot();
-    var cur = allocModel(), nc = ncModel();
+    var cur = allocModel();
     var combined = {};
     function add(map, key, field) {
       if (!combined[key]) combined[key] = { saved: 0, cur: 0 };
       combined[key][field] += map[key];
     }
     Object.keys(saved.W).forEach(function (k) { add(saved.W, k, "saved"); });
-    Object.keys(saved.ncW).forEach(function (k) { add(saved.ncW, k, "saved"); });
     Object.keys(cur.W).forEach(function (k) { add(cur.W, k, "cur"); });
-    Object.keys(nc.W).forEach(function (k) { add(nc.W, k, "cur"); });
     var list = [], gainers = 0, losers = 0, moved = 0;
     Object.keys(combined).forEach(function (k) {
       var d = combined[k].cur - combined[k].saved;
       if (Math.abs(d) <= 1) return;
       if (d > 0) gainers++; else { losers++; moved += -d; }
-      // NC-lane standalone keys read "NC:<short>"; every other key is the
-      // college name the credit lane already uses.
-      var name = k.indexOf("NC:") === 0 ? k.slice(3) + " (noncredit)" : k;
-      list.push({ name: name, key: k, saved: combined[k].saved, cur: combined[k].cur, d: d });
+      // One pool, one solve (2026-08-31): every key is an institution's row
+      // name — the noncredit-only institutions ride their short names.
+      list.push({ name: k, key: k, saved: combined[k].saved, cur: combined[k].cur, d: d });
     });
     if (!list.length) return null;
     list.sort(function (a, b) { return Math.abs(b.d) - Math.abs(a.d); });
     return { list: list, gainers: gainers, losers: losers, moved: moved };
   }
-  var _ncCache = null;
-  // The noncredit lane, solved with the SAME clamp as the credit pool. The pool
-  // is the carve-out taken off the top (pool.feeder_carveout) and the figures are
-  // WINDOW totals, matching the credit floor/ceiling — not per-year.
-  function ncModel() {
-    if (_ncCache) return _ncCache;
-    var rows = ncRoster();
-    var pool = feederCarveout();
-    var floor = ncFloorWindow();
-    var cap = ncCapWindow();
-    var r = solveBounded({
-      rows: rows,
-      keyOf: function (x) { return x.key; },
-      sizeOf: function (x) { return x.ftes; },
-      net: pool, floor: floor, cap: cap
-    });
-    _ncCache = {
-      W: r.W, floored: r.floored, capped: r.capped, unspent: r.unspent,
-      plainRatio: r.plainRatio, floor: floor, cap: cap, pool: pool,
-      threshold: ncThresholdFtes(), rows: rows, totFtes: r.totSize,
-      floorCount: Object.keys(r.floored).length,
-      cappedCount: Object.keys(r.capped).length,
-      capBelowFloor: cap > 0 && floor > 0 && cap < floor,
-      floorInfeasible: r.floorInfeasible, floorDemanded: r.floorDemanded,
-      // Where growth starts paying: below this an institution is on the floor and
-      // another noncredit FTES earns it nothing. Reported because a lane that is
-      // mostly floor is mostly NOT an incentive, and that should be visible on
-      // the box rather than discovered later.
-      breakEven: (r.plainRatio > 0 && r.totSize > 0 && pool > 0 && floor > 0)
-        ? floor / (r.plainRatio * pool / r.totSize) : 0
-    };
-    return _ncCache;
-  }
-  // A single institution's noncredit award (0 when it is not in the lane).
-  function ncAward(key) { var m = ncModel(); return m.W[key] || 0; }
+  // ncModel() — the carve-out solved as a second bounded allocation — was
+  // retired with one-pool adoption (2026-08-31). An institution's noncredit
+  // award is now the FTES-share decomposition of its ONE combined award:
+  // instSplit(c).nc. One pool, one solve.
 
   // ── THE NONCREDIT PRIORITY LAYER (build step 2 — Sam, 2026-08-26/27) ──────
   // Until now the noncredit lane only ALLOCATED: ncModel() splits the carve-out
@@ -1242,64 +1182,13 @@
     var ss = ncShareSum(slot);
     return ss > 0 ? ncSlotEntitlement(W, slot) * p.share / ss : 0;
   }
-  // One institution's entry in the noncredit roster, by key.
-  function ncInstFor(key) {
-    var list = ncInstitutions(), i;
-    for (i = 0; i < list.length; i++) if (list[i].key === key) return list[i];
-    return null;
-  }
-  function ncTotalSize() {
-    return ncRoster().reduce(function (s, r) { return s + (Number(r.ftes) || 0); }, 0);
-  }
-  function ncSizePct(inst) {
-    var t = ncTotalSize();
-    return t > 0 ? (Number(inst && inst.ftes) || 0) / t : 0;
-  }
-  // The NC lane's capScale — the ceiling lowers the bar, the floor never raises
-  // it. Same asymmetry Sam ruled for credit (2026-08-22): a bound on the money
-  // is a bound on the bar, and the floor is deliberately one-way.
-  function ncCapScale(inst) {
-    if (!inst) return 1;
-    var m = ncModel();
-    if (!(m.cap > 0) || !m.capped[inst.key]) return 1;
-    var prop = ncSizePct(inst) * m.pool;
-    var ratio = m.plainRatio > 0 ? m.plainRatio : 1;
-    return prop > 0 ? Math.min(1, m.cap / ratio / prop) : 1;
-  }
-  // The PRE-BOUNDS proportional per-year entitlement behind one NC priority —
-  // what prioTarget() divides by the price. Rides the roster's own size share
-  // and the carve-out, never the floored award: an institution topped up to the
-  // NC minimum gets more money and the SAME target, exactly as in credit.
-  function ncPrioEntitlement(inst, p) {
-    return (inst ? ncSizePct(inst) * ncCapScale(inst) : 1) * ncModel().pool * p.share / nYears();
-  }
-  // ── WHICH LANE THE PRIORITY CARDS DESCRIBE (Sam, 2026-08-28) ─────────────
-  // One switch above the three cards, applying to all three and to every year.
-  // The lane is a property of the POOL, exactly as the year is a property of the
-  // window, so it belongs in the same control strip rather than on each card.
-  function laneIsNc() { return state.viewLane === "nc"; }
-  // The NC cards are READ-ONLY, and that is a correctness guard rather than a
-  // simplification. Every field on a priority card (title, description, share,
-  // factor, metric, strategies) is an EDITOR whose data-slot/data-idx address
-  // the stored CREDIT priority — ncPriorities() derives the NC view from those
-  // same rows. So an edit made while the NC lane is showing would land on the
-  // credit priority with nothing on screen saying so. ncPrioOverride() is where
-  // a diverging NC share/factor would be stored; until an editor writes THERE,
-  // showing an input here would be offering a control that lies about its target.
-  function laneReadOnly() { return laneIsNc(); }
-  // The lane's statewide pot per year — netCollege() for credit, the carve-out
-  // for noncredit. Never re-derived at a call site (the standing rule): the two
-  // lanes are solved separately and must never be summed.
-  function lanePerYear() { return (laneIsNc() ? ncModel().pool : netCollege()) / nYears(); }
-  // The priorities the cards render, for the lane in view.
-  function lanePriorities(slot) { return laneIsNc() ? ncPriorities(slot) : priorities(slot); }
-  // A priority's full-window statewide cap, in its own lane. prioCap normalizes
-  // on the CREDIT share sum and ncPrioCap on the NC one — identical while Sam
-  // has them equal, and silently wrong the moment he moves one, which is why
-  // there are two functions rather than one parameterized by lane.
-  function lanePrioCap(slot, p) {
-    return laneIsNc() ? ncPrioCap(ncModel().pool, slot, p) : prioCap(netCollege(), slot, p);
-  }
+  // The lane SWITCH (Lane: Credit · Noncredit) and the per-lane view helpers
+  // (laneIsNc / laneReadOnly / lanePerYear / lanePriorities / lanePrioCap)
+  // were retired with one-pool adoption (R1, ruled 2026-08-31): one pool, one
+  // solve, and the CR/NC story sits on every award's face — columns, expands,
+  // the pool line. ncPriorities()/ncPrioCap() above SURVIVE: they are the
+  // noncredit shares' earning layer (the restriction's arithmetic), not the
+  // retired second solve.
 
   // ── generalized pool line-items (Sam, 2026-07-23): editable labels, add/delete
   //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
@@ -1365,7 +1254,12 @@
     return s;
   }
   function netBeforeFeeder() { return grossRevenue() - grossDeduction(); }
-  function netCollege() { return netBeforeFeeder() - feederCarveout(); }
+  // ONE POOL (Sam, adopted 2026-08-31): the noncredit carve-out is FOLDED IN
+  // (R3) — noncredit FTES carry funding to where the teaching is, inside the
+  // one split. The stored `feeder_carveout` config field is deliberately left
+  // in place but read by NOTHING: deleting a curator's saved value is a data
+  // write this code change does not need.
+  function netCollege() { return netBeforeFeeder(); }
   function perYear() { return netCollege() / nYears(); }
   function totalHeads() { return base().system.headcount; }
   function perStudent() { return totalHeads() ? perYear() / totalHeads() : 0; }
@@ -1396,16 +1290,85 @@
     return v === "headcount" ? "headcount" : "ftes";
   }
   function usesFtes() { return allocationBasis() === "ftes"; }
-  function basisLabel() { return usesFtes() ? "credit FTES" : "headcount"; }
-  // A college's size on the active basis. Falls back to headcount if a row has
-  // no FTES (fail-safe: a missing figure must never zero a college's allocation).
+  function basisLabel() { return usesFtes() ? "credit + noncredit FTES" : "headcount"; }
+  // An institution's size under ONE POOL (Sam, adopted 2026-08-31): its
+  // COMBINED teaching. On the FTES basis that is credit FTES + annual
+  // noncredit FTES (the adopted sizing — "$25.24M to 118 institutions sized by
+  // credit+noncredit FTES"); on the headcount basis it is the institution's
+  // headcount (which already describes its whole student body — adding
+  // noncredit FTES to a headcount would mix units). The three noncredit-only
+  // institutions are ordinary rows sized by their noncredit FTES (Calbright at
+  // its 1,000-FTES stand-in until a verified MIS figure — N3 a).
+  // Falls back to headcount if a row has no FTES (fail-safe: a missing figure
+  // must never zero an institution's allocation).
   function sizeOf(c) {
     if (!c) return 0;
-    if (usesFtes() && c.credit_ftes != null) return c.credit_ftes || 0;
+    if (c.nco) return usesFtes() ? (Number(c.ftes) || 0) : (c.headcount || Number(c.ftes) || 0);
+    if (usesFtes() && c.credit_ftes != null) {
+      return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0);
+    }
     return c.headcount || 0;
   }
+  // The DECOMPOSITION of an award into its credit and noncredit shares is by
+  // FTES share, ALWAYS (ruled 2026-08-31: "every award decomposes on its face
+  // into a credit share and a noncredit share, by each lane's share of the
+  // institution's FTES") — never by the display basis. The noncredit share is
+  // restricted to the noncredit measures; the credit program cannot draw it.
+  function laneShareOf(c) {
+    if (!c) return { cr: 1, nc: 0 };
+    if (c.nco) return { cr: 0, nc: 1 };
+    var cr = Number(c.credit_ftes) || 0, nc = Number(c.noncredit_ftes) || 0;
+    var t = cr + nc;
+    if (!(t > 0)) return { cr: 1, nc: 0 };
+    return { cr: cr / t, nc: nc / t };
+  }
   function totalSize() {
-    return base().colleges.reduce(function (s, c) { return s + sizeOf(c); }, 0);
+    return oneRoster().reduce(function (s, c) { return s + sizeOf(c); }, 0);
+  }
+  // ── the ONE-POOL roster (Sam, adopted 2026-08-31) ─────────────────────
+  // Every institution once: the 115 college rows PLUS the noncredit-only
+  // institutions as ordinary rows (R9 — NOCE, SD Cont. Ed, Calbright; the
+  // "Standalone noncredit institutions" section is retired). Mt. SAC
+  // Noncredit's FTES already rides the Mt. San Antonio row
+  // (`nc_ftes_on_credit_row`), so it gets no row of its own — the same program
+  // must not be paid twice. Calbright sizes at its 1,000-FTES stand-in via
+  // feederBasis(); nothing publishes or disburses on a placeholder (N3 a).
+  // The pseudo-rows carry the college-row fields every downstream surface
+  // reads (college/headcount/district/order), keyed by the SHORT name — which
+  // never collides with a college name.
+  var _ncoRows = null;
+  function ncOnlyRows() {
+    if (_ncoRows) return _ncoRows;
+    var out = [];
+    feeders().forEach(function (f) {
+      if (f.nc_ftes_on_credit_row) return;
+      var ftes = feederBasis(f);
+      if (!(ftes > 0)) return;
+      out.push({
+        college: f.short || f.name, name: f.name, short: f.short || f.name,
+        nco: true, feeder: f, ftes: ftes,
+        credit_ftes: 0, noncredit_ftes: ftes,
+        headcount: Number(f.headcount) || 0,
+        hc_vintage: f.vintage || "",
+        district: f.district || "", county: "",
+        working_adults: null,
+        order: 900 + out.length
+      });
+    });
+    _ncoRows = out;
+    return _ncoRows;
+  }
+  function oneRoster() { return base().colleges.concat(ncOnlyRows()); }
+  // One institution by name — a college row, or a noncredit-only row by its
+  // short or full name. The single lookup every by-name consumer goes through.
+  function rosterRow(name) {
+    var c = baseCollege(name);
+    if (c) return c;
+    var t = ncOnlyRows(), i;
+    for (i = 0; i < t.length; i++) {
+      if (t[i].college === name || t[i].short === name || t[i].name === name) return t[i];
+    }
+    return null;
   }
   // Share of the statewide basis — COMPUTED, never baked, so it cannot drift
   // from the figure it is a share of.
@@ -1422,8 +1385,8 @@
   function sizeCellTitle(c) {
     var pct = fmtPct(c.size_pct, 2);
     return usesFtes()
-      ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + ") — " + pct +
-        " of statewide, the allocation basis. Headcount: " + fmtInt(c.headcount) +
+      ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + "). Combined with its noncredit FTES, " +
+        pct + " of the statewide allocation basis. Headcount: " + fmtInt(c.headcount) +
         " (" + (c.hc_vintage || "n/a") + "), context only."
       : fmtInt(c.headcount) + " headcount (" + (c.hc_vintage || "n/a") + ") — " + pct +
         " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
@@ -1490,6 +1453,15 @@
   // every college inside the bounds — which is the equal-yardstick property
   // the per-priority cells were built around.
   //
+  // One-pool extension (2026-08-31): the SAME-basis rule now includes the LANE
+  // SLICE. A credit priority's cap rides the CR slice of the award
+  // (prioEntitlement's laneFrac), so its per-college target must ride the CR
+  // slice of the size — the students path below carried the COMBINED size and
+  // reproduced the original defect one level up: cap ÷ target scattered
+  // 1.5076× across colleges, and the scatter WAS each college's own lane
+  // split. Statewide (c = null) both paths read the full size, matching
+  // prioEntitlement's contract.
+  //
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
     if (prioIsFtes(p)) {
@@ -1501,7 +1473,9 @@
       // invariant; see prioEntitlement + cpl_funding_cumulative_target.test.js).
       return (r > 0 && fac > 0) ? (prioEntitlement(c, p) / r) * (nYears() / fac) : 0;   // target in CPL FTES
     }
-    return (c ? sizeOf(c) * capScale(c) : totalSize()) * p.target_rate;   // target in students
+    var laneFrac = 1;
+    if (c) laneFrac = (p && p.lane === "nc") ? laneShareOf(c).nc : laneShareOf(c).cr;
+    return (c ? sizeOf(c) * capScale(c) * laneFrac : totalSize()) * p.target_rate;   // target in students
   }
   // What a target is counted in — drives every label and the actual's conversion.
   function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
@@ -1602,7 +1576,7 @@
     return measureOf(p).unit === "units";   // legacy rows: sniff the label
   }
   // The PRE-BOUNDS proportional per-year entitlement behind one priority. The
-  // target must ride THIS, never the topped-up cap: the floor raises a college's
+  // target must ride THIS, never the brought-up-to-base cap: the base raises a college's
   // funding, not its targets, and prioCap() would double under front-load —
   // which would cancel the front-load incentive exactly. (A CAPPED college is
   // the one exception, and it is handled by capScale(), not here: a bound on the
@@ -1652,13 +1626,20 @@
     return prop > 0 ? Math.min(1, m.cap / ratio / prop) : 1;
   }
   function prioEntitlement(c, p) {
-    // ROUTE, DON'T SPLIT (Sam, 2026-08-26). A priority belongs to exactly ONE
-    // lane and is measured against that lane's pot; `share` splits the MONEY
-    // inside the lane, never the FTES. Without this seam an NC priority would
-    // divide the CREDIT pool by a noncredit size share — a figure that balances
-    // against the wrong total and reads perfectly plausible on screen.
-    if (p && p.lane === "nc") return ncPrioEntitlement(c, p);
-    return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
+    // ROUTE, DON'T SPLIT (Sam, 2026-08-26; one-pool form 2026-08-31). A
+    // priority belongs to exactly ONE lane and is measured against that lane's
+    // SLICE of the institution's entitlement; `share` splits the MONEY inside
+    // the lane, never the FTES. Under one pool the lane slice is the award's
+    // FTES-share decomposition (laneShareOf) — the restriction's own
+    // arithmetic: the noncredit share is restricted to the noncredit measures,
+    // so a credit priority's target rides only the credit slice and can never
+    // quietly absorb the noncredit funding by credit work.
+    // Statewide (c = null) both lanes read the FULL pool share — the priority
+    // card's Total Possible is the ceiling with its credit and noncredit
+    // shares together (Sam's label semantics, ruled 2026-08-31).
+    var laneFrac = 1;
+    if (c) laneFrac = (p && p.lane === "nc") ? laneShareOf(c).nc : laneShareOf(c).cr;
+    return (c ? sizePct(c) * capScale(c) * laneFrac : 1) * netCollege() * p.share / nYears();
   }
 
   // The target's reach as a share of actual STUDENTS. `target_rate` denominates
@@ -1909,8 +1890,9 @@
   // `noncredit_ftes_placeholder` is a curator-supplied stand-in for a campus
   // whose reported figure is not yet trustworthy. It NEVER overwrites the
   // reported value — both ride in the data so the discrepancy stays visible —
-  // and every surface that renders a placeholder-derived number must show
-  // feederPlaceholderChip() beside it.
+  // and every surface that renders a placeholder-derived number says so in
+  // WORDS beside it — the Calbright rows' stand-in notes and hovers (N3 a).
+  // (feederPlaceholderChip retired with the feeder section, R9 2026-08-31.)
   function feederBasis(f) {
     if (!f) return 0;
     var ph = Number(f.noncredit_ftes_placeholder);
@@ -1920,20 +1902,6 @@
   function feederIsPlaceholder(f) {
     var ph = f && Number(f.noncredit_ftes_placeholder);
     return !!(isFinite(ph) && ph > 0);
-  }
-  function feederPlaceholderChip(f) {
-    if (!feederIsPlaceholder(f)) return "";
-    var reported = Number(f.noncredit_ftes);
-    return ' <span class="cplfund-chip cplfund-ph" title="' +
-      esc("PLACEHOLDER — not a reported figure. " +
-        (isFinite(reported) && reported > 0
-          ? "The campus's reported noncredit FTES (" + Math.round(reported).toLocaleString("en-US") +
-            ") implies " + (f.headcount ? (reported / f.headcount).toFixed(2) : "?") +
-            " FTES per student, which is not physically possible (a full-time year is ~1.0). "
-          : "") +
-        (f.noncredit_ftes_placeholder_basis || "") +
-        " Replace with the verified MIS figure before this drives a disbursement.") +
-      '">placeholder</span>';
   }
   function feederNoncreditFtes() {
     return feeders().reduce(function (s, f) { return s + feederBasis(f); }, 0);
@@ -2184,7 +2152,14 @@
   // enforced server-side is the CO Monitor notes (cpl_funding_notes SELECT is
   // `is_allowed_reviewer() OR team_pass_ok()`, verified 2026-07-30), so an
   // anonymous reader gets nothing from that table regardless of this flag.
-  function publicMode() { return !!window.CPL_FUNDING_PUBLIC; }
+  // previewPublic (Sam, 2026-08-31): a signed-in reviewer can flip the whole
+  // tab to the public rendering without signing out — the View control in the
+  // actions row. The typeof guard matters: publicMode() must be safe to call
+  // before the state literal further down has executed.
+  function publicMode() {
+    if (window.CPL_FUNDING_PUBLIC) return true;
+    return typeof state === "object" && !!state && !!state.previewPublic;
+  }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
   // publicMode() — a missed call site is the failure mode that matters, and a
@@ -2386,7 +2361,7 @@
         LEDGER.projectRows = rows.filter(function (row) { return row.section === "pool"; });
         LEDGER.pool = pool;
         LEDGER.ok = true;
-        _allocCache = null; _ncCache = null; _earnCache = null; _ncEarnCache = null;
+        _allocCache = null; _ncoRows = null; _earnCache = null;
         render();
       })
       .catch(function () { /* fail-soft: the committed values stand */ });
@@ -2473,13 +2448,37 @@
     if (!lbl) return participationDeadline();
     return (/\bby$/i.test(lbl) ? lbl : lbl + " by") + " " + participationDeadline();
   }
+  // Is this name one of the noncredit-only institutions? (the name-keyed seam
+  // every eligibility surface goes through)
+  function isNcOnlyName(college) {
+    return ncOnlyRows().some(function (r) { return r.college === college; });
+  }
+  // N1 a (ruled 2026-08-31): for the noncredit-only campuses the veteran-JST
+  // gate is REPLACED by noncredit certificates posted as exhibits in MAP —
+  // evidenced by the daily feed's per-feeder F1 count (students with eligible
+  // CPL identified against this institution's exhibits; a suppressed small
+  // count still proves exhibits exist).
+  function ncExhibitsMet(college) {
+    var pf = perf();
+    var f = pf && pf.feeders && pf.feeders[college];
+    if (!f) return { met: false, pending: !pf };
+    return { met: (Number(f.pe) || 0) > 0 || !!f.pe_suppressed, pending: false };
+  }
+  var NC_EXHIBITS_REQ = "Noncredit certificates posted as exhibits in MAP " +
+    "(replaces the veteran-JST gate for the noncredit-only campuses — N1 a)";
   function eligReqList(college) {
     var list = [];
     if (coordShown()) list.push({ met: !!ELIG.coord[college], label: coordLabel() });
     if (partShown()) list.push({ met: !!ELIG.optin[college], label: partReqText() });
     var vs = vetStar();
     extraReqs().forEach(function (txt) {
-      if (isVetJstReq(txt)) list.push({ met: !!(vs && vs[college]), label: txt, auto: "vetstar", pending: !vs });
+      if (!isVetJstReq(txt)) return;
+      if (isNcOnlyName(college)) {
+        var ex = ncExhibitsMet(college);
+        list.push({ met: ex.met, label: NC_EXHIBITS_REQ, auto: "exhibits", pending: ex.pending });
+      } else {
+        list.push({ met: !!(vs && vs[college]), label: txt, auto: "vetstar", pending: !vs });
+      }
     });
     return list;
   }
@@ -2529,7 +2528,7 @@
   function eligAllMetCount() {
     if (!ELIG.coordOk) return null;
     var n = 0;
-    base().colleges.forEach(function (c) {
+    oneRoster().forEach(function (c) {
       var p = eligParts(c.college);
       if (p.shown > 0 && p.met === p.shown) n++;
     });
@@ -2573,8 +2572,15 @@
       (ELIG.optin[college] ? "opted in" : "not yet"));
     var vs = vetStar();
     extraReqs().forEach(function (txt) {
-      if (isVetJstReq(txt)) parts.push("Veteran Star (≥75% veteran JSTs uploaded): " +
-        (!vs ? "pending data" : (vs[college] ? "yes" : "not yet")));
+      if (!isVetJstReq(txt)) return;
+      if (isNcOnlyName(college)) {
+        var ex = ncExhibitsMet(college);
+        parts.push("Noncredit certificates as exhibits in MAP (N1 a — replaces the veteran-JST gate): " +
+          (ex.pending ? "pending data" : (ex.met ? "yes" : "not yet")));
+      } else {
+        parts.push("Veteran Star (≥75% veteran JSTs uploaded): " +
+          (!vs ? "pending data" : (vs[college] ? "yes" : "not yet")));
+      }
     });
     return (parts.join(" · ") || "no tracked requirements") +
       " — the participation gate (informational in this draft); funding is earned separately on actual CPL";
@@ -2780,7 +2786,7 @@
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
-      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible to earn — it moves no money by itself and is reversible.</div>" +
+      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible to earn — it moves no funding by itself and is reversible.</div>" +
       "</div>";
   }
 
@@ -2901,78 +2907,62 @@
   // The CSV carries MORE than the screen: the hidden County + working-adults
   // context plus rural/floor flags ride along.
   function csvText() {
-    var fl = frontloaded();
-    var ys = selectedYears();
-    var yHead = ys.map(function (yr, i) {
-      return (fl && i === 0 ? "Window (front-loaded) (" + yr + ")"
-        : "Yr " + (i + 1) + " (" + yr + ")" + (fl ? " carryover" : ""));
-    });
-    // Earned rides beside the cap in every export (the basis toggle was retired
-    // 2026-07-30), split so an ADVANCE never reads as achievement.
-    var earnHead = ["Earned " + windowLabel(), "% of cap", "Earned: measured", "Earned: advance",
-      "Withheld (baseline not met)"];
+    // ONE POOL (2026-08-31): one line per institution — the noncredit-only
+    // three included — with the award's CR/NC decomposition as columns. The
+    // export keeps every fact the screen holds (scope, not shape): FTES pair,
+    // eligibility, base/cap state, per-priority targets/actuals, the earned
+    // split, and the county context.
+    // The measured/advance breakdown columns retired 2026-09-01 (Sam: no
+    // mention of the advance concept); the earned total already carries both.
+    var earnHead = ["Earned " + windowLabel(), "% of max award", "Withheld (baseline not met)"];
     function earnCells(row) {
       var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
-      return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_measured || 0),
-        Math.round(row.earned_advance || 0), Math.round(row.earned_withheld || 0)];
+      return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_withheld || 0)];
     }
     var lines = [];
-    lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
-      ["Eligibility (proposed)", "Floor / maximum applied"], yHead,
-      ["Total " + windowLabel()], earnHead,
-      // ⚠️ THE EXPORT KEEPS ITS NONCREDIT COLUMN EVEN THOUGH THE SCREEN DROPPED
-      // ONE, and that is deliberate — do not "fix" the mismatch by deleting it.
-      // The table retired its NC $ column because every institution now renders
-      // as a CR/NC pair, so a second ROW carries that money. This CSV has no NC
-      // rows: it is one line per college, so this column is the ONLY place
-      // noncredit money appears in the export. Removing it to match the screen
-      // would delete the figure rather than de-duplicate it.
-      //
-      // The two surfaces still share one SCOPE — every college's noncredit
-      // money is present in both — which is the invariant that matters; the
-      // layouts differ because the carriers differ.
-      ["Noncredit support " + windowLabel(), "Noncredit FTES"], ["Working adults (county)"]));
-    function collegeLine(c) {
-      return [c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
-        [csvEligText(c.college), c.floored ? "floor" : (c.capped ? "maximum" : "")],
-        yearKeys().map(function (yk) { return Math.round(c[yk]); }),
-        [Math.round(c.total)], earnCells(c),
-        [Math.round(c.nc_award || 0), c.noncredit_ftes == null ? "" : c.noncredit_ftes],
+    lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
+      .concat(prioCsvHead(),
+      ["Eligibility (proposed)", "Base / cap applied"],
+      ["Credit share " + windowLabel(), "Noncredit share " + windowLabel(), "Max award " + windowLabel()],
+      earnHead, ["Working adults (county)"]));
+    function instLine(c, idx) {
+      return [idx + 1, dispName(c.college), c.district, c.county,
+        Math.round(c.cr_ftes || 0), Math.round(c.nc_ftes || 0), c.headcount == null ? "" : c.headcount]
+        .concat(prioCsvCells(c, false),
+        [csvEligText(c.college), c.floored ? "base" : (c.capped ? "cap" : "")],
+        [Math.round(c.cr_award || 0), Math.round(c.nc_award || 0), Math.round(c.total || 0)],
+        earnCells(c),
         [c.working_adults == null ? "" : c.working_adults]);
     }
+    var n = 0;
     if (grouped()) {
-      // Grouping is a display concern, so the CSV keeps the college shape and
-      // interleaves a DISTRICT SUBTOTAL line — the one thing the retired
-      // Districts view's export gave that a flat college list doesn't.
+      // Grouping is a display concern, so the CSV keeps the institution shape
+      // and interleaves a DISTRICT SUBTOTAL line.
       groupRowsByDistrict(rowsFiltered()).forEach(function (g) {
-        // TWO empties for the two header cells — the district subtotal carried
-        // the same off-by-one as the SYSTEM row until 2026-08-23, shifting every
-        // subtotal one column right in the grouped export.
-        lines.push(["", "DISTRICT SUBTOTAL — " + g.district, g.district, "", g.headcount].concat(
+        lines.push(["", "DISTRICT SUBTOTAL — " + g.district, g.district, "",
+          Math.round(g.cr_ftes || 0), Math.round(g.nc_ftes || 0), ""].concat(
           prioCsvCells(null, true).map(function () { return ""; }),
           ["", ""],
-          yearKeys().map(function (yk) { return Math.round(g[yk]); }),
-          [Math.round(g.total)], earnCells(g),
-          [Math.round(g.rows.reduce(function (s, c) { return s + (c.nc_award || 0); }, 0)), ""], [""]));
-        g.rows.forEach(function (c) { lines.push(collegeLine(c)); });
+          [Math.round(g.cr_award || 0), Math.round(g.nc_award || 0), Math.round(g.total || 0)],
+          earnCells(g), [""]));
+        g.rows.forEach(function (c) { lines.push(instLine(c, n++)); });
       });
     } else {
-      rowsFiltered().forEach(function (c) { lines.push(collegeLine(c)); });
+      rowsFiltered().forEach(function (c) { lines.push(instLine(c, n++)); });
     }
     var sysc = systemAlloc();
     // TWO empties, matching the two header cells ("Eligibility (proposed)" and
-    // "Floor / maximum applied"). This was THREE until 2026-08-23, which shifted
-    // the SYSTEM row one column right from that point on: every year figure, the
-    // window total and all five earned columns landed under the wrong heading in
-    // the one row a reader checks first. Silent in the browser, wrong in Excel.
-    lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads()].concat(prioCsvCells(null, true),
+    // "Base / cap applied") — the off-by-one class the 2026-08-23 fix pinned.
+    lines.push(["", "SYSTEM (statewide)", "", "",
+      Math.round(sysc.cr_ftes || 0), Math.round(sysc.nc_ftes || 0), sysc.headcount].concat(
+      prioCsvCells(null, true),
       ["", ""],
-      yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
-      [Math.round(sysc.total)], earnCells(sysc),
-      [Math.round(rowsFiltered().reduce(function (s, c) { return s + (c.nc_award || 0); }, 0)), ""], [""]));
+      [Math.round(sysc.cr_award || 0), Math.round(sysc.nc_award || 0), Math.round(sysc.total || 0)],
+      earnCells(sysc), [""]));
     var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
-      (fl ? " · front-loaded disbursement" : "") +
-      " · allocation caps with earned-to-date beside them (earned = cap × actual ÷ target, capped at 100%)" +
+      (frontloaded() ? " · combined (front-loaded) funding" : " · annual funding") +
+      " · max awards with earned-to-date beside them (earned = cap × actual ÷ target, capped at 100%; " +
+      "the noncredit share earns only against the noncredit measures)" +
       (isDirty() && !unlocked() ? " · local what-if: " + activeScenario : "")];
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
   }
@@ -3064,7 +3054,16 @@
   function maskLt(esc) { return (esc ? "&lt;" : "<") + suppressFloor(); }
   function perfFor(collegeName) {
     var p = perf();
-    return (p && p.colleges && p.colleges[collegeName]) || null;
+    if (!p) return null;
+    var rec = p.colleges && p.colleges[collegeName];
+    if (rec) return rec;
+    // A noncredit-only institution's record is its SCOPED origination cut
+    // (N2 b, 2026-08-31): the same nc_* keys, counted where its originated CPL
+    // posts inside its ruled scope — NOCE/SDCCE across their district's credit
+    // colleges, Calbright statewide. The keys are shorts ("NOCE", "SD Cont.
+    // Ed", "Calbright"), which never collide with college names.
+    var og = p.origination && p.origination.in_scope;
+    return (og && og[collegeName]) || null;
   }
   function fmtActual(rec, key) {
     if (!rec) return "—";
@@ -3171,7 +3170,7 @@
   // No glyph: the link's own name says what it is (Sam's 2026-08-14 rule —
   // decorative glyphs go, state-bearing ones stay).
   var SANITY_BLURB = "A plain-language walk-through of the whole model: what comes off the top, " +
-    "how each college's share is set, what a college has to do to qualify, and how the money is " +
+    "how each college's share is set, what a college has to do to qualify, and how the funding is " +
     "earned. Team-access Claude artifact — opens in a new tab.";
   function sanityLinkHtml() {
     if (publicMode()) return "";
@@ -3342,7 +3341,7 @@
         "change during that time; unearned funds roll forward" +
         (y.length > 1 ? " to " + esc(y[y.length - 1]) : "") +
         (nextFy(y[y.length - 1]) ? " and close out by " + esc(nextFy(y[y.length - 1])) : "") + "." + reprio
-      : nYears() + "-year window &middot; the pool splits into " + nYears() + " equal annual tranches, each " +
+      : nYears() + "-year window &middot; the funding splits into " + nYears() + " equal annual tranches, each " +
         "earned against that year&rsquo;s targets." + reprio;
     return '<div class="cplfund-years">' + selects +
       (publicMode() ? "" :
@@ -3362,24 +3361,9 @@
       '<span class="dk" style="font-size:.8rem;flex:1 1 260px;">' + note + "</span></div>";
   }
 
-  // The lane switch — one control, all three cards, every year (Sam,
-  // 2026-08-28: "it should only toggle the cards (all years) together").
-  // It sits in the same strip as the year because it answers the same kind of
-  // question: which pool are these three priorities being measured against.
-  function laneFilterHtml() {
-    var items = [
-      { val: "cr", label: "Credit \u00b7 " + fmtMoney(netCollege()) },
-      { val: "nc", label: "Noncredit \u00b7 " + fmtMoney(ncModel().pool) }
-    ];
-    return '<div class="cplfund-toolbar" style="margin-bottom:6px;">' +
-      '<span class="dk" style="font-size:.85rem;">Lane:</span>' +
-      segHtml("cplFundLane", items, state.viewLane) +
-      '<span class="dk" style="font-size:.82rem;">' +
-      (laneIsNc()
-        ? ncModel().rows.length + " institutions. Shares and the funding factor are set on the Credit lane."
-        : "")
-      + "</span></div>";
-  }
+  // The lane switch (Lane: Credit · Noncredit) was retired with one-pool
+  // adoption (R1, 2026-08-31): one pool, one card set, and the CR/NC story
+  // sits on every award's face instead of behind a toggle.
 
   function yearFilterHtml() {
     var y = selectedYears();
@@ -3399,32 +3383,33 @@
   // invisibly with the per-priority cells. This box just explains the two lines.
   function basisNoteHtml() {
     return '<div class="cplfund-basis">' +
-      '<span class="cplfund-basis-lbl">Reading the money</span>' +
+      '<span class="cplfund-basis-lbl">Reading the funding</span>' +
       '<span class="dk cplfund-basis-note">' +
-      "Every money cell shows the <strong>allocation cap</strong> on top and what the college has " +
-      "<strong>earning</strong> so far beneath it. Colleges are paid on the CPL they actually post in MAP &mdash; " +
-      "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (a college at half its target draws " +
-      "half its cap; it never needs the full target to be funded). Unearned dollars roll forward. Priorities MAP " +
-      "cannot measure yet pay the full cap as an <strong>advance</strong> (marked <span class=\"cf-adv\">adv</span>) " +
-      "until their feed lands, then flip to achievement automatically." +
+      "Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
+      "&mdash; what has been earned to date &mdash; beneath it. Awards are based on outcomes, not automatically " +
+      "awarded: institutions earn on the CPL they actually post in MAP &mdash; " +
+      "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
+      "target draws half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
+      "The <strong>noncredit share</strong> of an award earns only against the noncredit measures." +
       "</span></div>";
   }
 
-  // Statewide earned line under a priority card.
+  // Statewide Current Total / Total Possible line under a priority card
+  // (Sam's labels, ruled 2026-08-31 — Total Possible is the CEILING: the
+  // priority's credit and noncredit shares together).
   function earnedLineHtml(i) {
-    // laneEarnAgg(), never earnAgg() — perPrio is indexed by POSITION and the
-    // credit aggregate walks credit colleges with credit priorities, so on an
-    // NC card the un-laned version prints the credit lane's earned dollars.
-    var pp = laneEarnAgg().perPrio[i];
+    var pp = earnAgg().perPrio[i];
     if (!pp) return "";
-    // Front-loaded later years carry no money — the front-load line above already
-    // says so; a "$0 of $0 cap (0%)" line here would just read as broken.
+    // Front-loaded later years carry no funding — the front-load line above
+    // already says so; a "$0 of $0 (0%)" line here would just read as broken.
     if (pp.cap <= 0 && slotIsCarryover(state.viewSlot)) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
-    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
-    return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
-      fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
-      (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
+    return '<p class="nums cplfund-earned-line" title="' +
+      esc("Current Total: what has been earned statewide on this priority to date. Total Possible: the " +
+        "ceiling — the priority's credit and noncredit shares together" +
+        (pp.ncCap > 0 ? " (" + fmtMoney(pp.ncCap) + " of it is the noncredit share)" : "") + ".") +
+      '">Current Total: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
+      fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " Total Possible <strong>(" + fmtPctTrim(pct) + ")</strong></p>";
   }
 
   // Curate-view diagnostic: per priority slot, is the metric MEASURABLE (and by
@@ -3477,7 +3462,7 @@
           (meas.bad_src
             ? '<span class="cplfund-warn-text">⚠ NOT WIRED &mdash; pinned to ' + esc(String(meas.bad_src)) +
               ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong> " +
-              "(it does NOT advance).</span>"
+              "(it pays $0, never the full cap).</span>"
             : measurable
             ? (msMismatch
                 ? '<span class="cplfund-warn-text">⚠ MILESTONE MISMATCH &mdash; this metric asks for ' +
@@ -3502,9 +3487,9 @@
               (pinned ? ", pinned" : "") +
               (live ? ", " + live : "") + "</span>"
             : bearing
-              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
+              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays the FULL CAP</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
-              : '<span class="dk">◦ not measurable &mdash; but no money rides on it (front-loaded: Year ' +
+              : '<span class="dk">◦ not measurable &mdash; but no funding rides on it (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
             ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
@@ -3520,7 +3505,7 @@
         : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
       ' <span class="dk">(curator view only)</span></summary>' +
       '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure pays every college its ' +
-      "full cap as an advance &mdash; so it earns nothing and incentivises nothing. A slot marked " +
+      "full cap &mdash; so it earns nothing and incentivises nothing. A slot marked " +
       '<em>inheriting baked default</em> is falling back to the hand-maintained defaults in ' +
       "<code>cpl_funding_data.js</code>; nothing keeps those in sync with your edits here, so set the " +
       "metric to pin it.</div>" +
@@ -3547,7 +3532,7 @@
     { key: "C", sup: "ᶜ", short: "Career attainment",
       text: "Advancing career attainment through credit for prior learning" },
     { key: "D", sup: "ᴰ", short: "Pilot projects",
-      text: "Supporting credit for prior learning through the chancellor’s office’s pilot projects, " +
+      text: "Supporting credit for prior learning opportunities through the chancellor’s office’s pilot projects, " +
             "such as the California Mapping Articulated Pathways Initiative" }
   ];
   function goalByKey(k) {
@@ -3578,7 +3563,7 @@
     // measureOf() is the ONE resolver the earning math itself uses, pin first and
     // prose only as a fallback. Deriving from anything else would let the goal
     // caption and the dollars disagree about what this priority measures.
-    var ms = (measureOf(p || lanePriorities(slot)[i] || {}) || {}).milestone;
+    var ms = (measureOf(p || priorities(slot)[i] || {}) || {}).milestone;
     if (ms === "transcribed") return { keys: ["B"], derived: true };
     if (ms === "eligible" || ms === "applied") return { keys: ["A"], derived: true };
     return { keys: [], derived: true };
@@ -3647,6 +3632,81 @@
       '. <span class="dk">A scenario override is a deliberate what-if, not an error &mdash; but the two now ' +
       "disagree, so treat the ledger as the appropriation of record.</span></p>";
   }
+  // ── the SUMMARY (R11, ruled 2026-08-31) ───────────────────────────────
+  // The over/under-budget readout in ONE place — consolidating the retired
+  // allocation-balance box, the earned and unearned boxes, and held-in-reserve
+  // (which keeps its own line whenever it is non-zero). Sits at the top of the
+  // tab; nothing below repeats it.
+  function summaryHtml() {
+    var ea = earnAgg();
+    var m = allocModel();
+    var pool = netCollege();
+    var per = perYear();
+    var vslot = state.viewSlot;
+    var ssum = shareSum(vslot);
+    var remainder = per - per * ssum;
+    var pf = perf();
+    var nInst = oneRoster().length;
+    var ncFace = 0, trioHeld = 0, trioN = 0, ncColN = 0;
+    oneRoster().forEach(function (c) {
+      var sp = instSplit(c);
+      if (c.nco) { trioHeld += sp.w; trioN++; }
+      else if (sp.nc > 0.5) { ncFace += sp.nc; ncColN++; }
+    });
+    var items = [];
+    // 1 — the balance: shares, bounds, and whether the pool lands allocated.
+    // Sam's verbatim first bullet (2026-08-31); the unallocated-balance
+    // CAPABILITY survives as the first bullet's closing sentence — the warn
+    // branches swap it in whenever the solve leaves a balance uncommitted.
+    var b1lead = "Base awards comprise " +
+      Math.round(pool > 0 ? m.floor * nInst / pool * 100 : 0) + "% of available funds (" +
+      fmtMoney(m.floor * nInst) + " of " + fmtMoney(pool) + "); " +
+      fmtMoney(Math.max(0, pool - m.floor * nInst)) + " is allocated based on FTES size. ";
+    if (m.floorInfeasible) {
+      items.push('<li><span class="warn">&#9888; The base award cannot be honored</span> &mdash; ' +
+        fmtMoney(m.floor) + " &times; " + nInst + " institutions exceeds the " + fmtMoney(pool) +
+        " available; every institution receives a pro-rata share BELOW the stated base. Lower the base or raise the funding.</li>");
+    } else if (m.unspent > 0.5) {
+      items.push('<li><span class="warn">&#9888; Allocation out of balance:</span> ' + b1lead +
+        "A balance of " + fmtMoney(m.unspent) + " remains to be allocated &mdash; every institution is at " +
+        "the cap. Raise the cap or move the remainder to another line.</li>");
+    } else if (remainder < -0.5) {
+      items.push('<li><span class="warn">&#9888; Over-allocated</span> &mdash; the Year ' + esc(vslot) +
+        " priority shares total " + fmtPctTrim(ssum) + " (&gt;100%): the priorities claim " +
+        fmtMoney(per * ssum) + " of the " + fmtMoney(per) + " annual tranche &mdash; <strong>" +
+        fmtMoney(-remainder) + " over</strong>. Lower a share to bring it back within the funding.</li>");
+    } else if (remainder > 0.5) {
+      items.push("<li>The Year " + esc(vslot) + " priority shares total " + fmtPctTrim(ssum) +
+        " (&lt;100%): " + fmtMoney(remainder) + " of the " + fmtMoney(per) +
+        " annual tranche is unallocated (spare within the funding).</li>");
+    } else {
+      items.push('<li><span class="ok">Allocation balances:</span> ' + b1lead +
+        "Funding is fully allocated to institutions and ready for distribution based on measurable outcomes.</li>");
+    }
+    // 2 — Current Total vs the pool, with the advance share named so the
+    // figure can be read honestly (Sam, 2026-07-30).
+    items.push("<li><strong>" + fmtMoney(ea.winEarned) + " earned so far</strong> (" +
+      fmtPctTrim(pool > 0 ? ea.winEarned / pool : 0) + " of the funding)" +
+      (pf && pf.as_of ? " on MAP actuals as of " + esc(pf.as_of) : " &mdash; awaiting today&#39;s MAP pull") +
+      "; " + fmtMoney(ea.winUnearned) + " unearned rolls forward within the window.</li>");
+    // 3 — the noncredit share of the funding (F1: listed from day one, $0
+    // earned until the noncredit measures report). The origination-wait bullet
+    // is deleted (Sam, 2026-08-31) — the trio's hold reads from the rows and
+    // the earning-rules fold, not the Summary.
+    items.push("<li><strong>" + fmtMoney(ncFace + trioHeld) +
+      " of the funding is noncredit</strong> &mdash; " + fmtMoney(trioHeld) + " at the " + trioN +
+      " noncredit-only institutions plus " + fmtMoney(ncFace) + " riding " + ncColN +
+      " college awards, restricted to noncredit outcomes.</li>");
+    // 4 — held in reserve, its own line whenever non-zero (never redistributed).
+    if (ea.winHeld > 0.5) {
+      items.push("<li><strong>" + fmtMoney(ea.winHeld) + " held in reserve</strong> &mdash; " +
+        ea.gatedN + " institutions have not met baseline participation; held, never redistributed &mdash; " +
+        "qualifying later still lets an institution draw.</li>");
+    }
+    return '<div class="cplfund-summary" role="region" aria-label="Funding summary">' +
+      '<span class="cplfund-summary-lbl">Summary</span><ul>' + items.join("") + "</ul></div>";
+  }
+
   function poolCardsHtml() {
     var per = perYear();
     var y = selectedYears();
@@ -3699,7 +3759,7 @@
       var b0 = revShown[0];
       out.push(card({ cls: " total", v: valueEd(b0.field, false),
         l: labelEd(b0.field, b0.def) +
-           ' <span class="dk">&mdash; total available funding; the deductions + feeder carve-out below net down to the college pool</span>',
+           ' <span class="dk">&mdash; total available funding; the deductions below net down to the one institution pool</span>',
         x: pubEye(b0.field, poolLabel(b0.field, b0.def)) + hideX(b0.field, poolLabel(b0.field, b0.def)) }));
     } else {
       revShown.forEach(function (b) {
@@ -3707,7 +3767,7 @@
           x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
       });
       out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
-        l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool" }));
+        l: "Total available funding &mdash; sum of all funding sources; the deductions below net down to the one institution pool" }));
     }
 
     // The project-pool card's live breakdown (Sam's Open Verdicts item 5,
@@ -3782,81 +3842,30 @@
       }));
     });
 
-    // Carve-outs — editable value + label, NOT deletable (they drive their own sections below).
-    out.push(card({ cls: " feeder", neg: true, v: valueEd("feeder_carveout", true),
-      l: labelEd("feeder_carveout", "Noncredit feeder support — carve-out") + ' <span class="dk">&mdash; deducted</span>' }));
-    // Available college funding (computed hero) — the WHOLE college pool; ties
+    // The noncredit carve-out card is RETIRED (R3, one-pool adoption
+    // 2026-08-31): no carve-out line — noncredit FTES carry funding to where
+    // the teaching is, inside the one split. The allocation-balance box and
+    // the earned / unearned / held-in-reserve boxes are consolidated into the
+    // Summary (R11) — summaryHtml() renders them once, at the top.
+    // Available funding to institutions (computed hero) — the ONE POOL; ties
     // out to the SYSTEM total row.
-    // Sam, 2026-08-04: the hero is the INSTITUTION total — the college pool PLUS
-    // the $1M noncredit feeder carve-out = the amendment's $25,240,308 "to
-    // institutions". Two parts since the rural carve-out was retired (2026-08-22).
     var perTotal = netCollege() / nYears();
-    var instTotal = netCollege() + feederCarveout();
-    out.push(card({ cls: " hero", v: fmtMoney(instTotal),
-      l: (frontloaded()
-        ? "Available funding to institutions " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); colleges receive " + fmtMoney(perTotal) + "/yr"
-        : "Available funding to institutions " + windowLabel() + " &mdash; " + nYears() + " annual tranches; colleges receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
-      // The carve-out reaches the whole noncredit LANE, not the standalone
-      // roster. This said "to the 4 NC campuses below" until 2026-08-23 — true
-      // of the retired flat split, and badly wrong once 30 credit colleges
-      // running their own noncredit programs joined: it described a $1.8M
-      // carve-out as reaching four institutions on the one card a reader uses
-      // to judge whether that figure is proportionate.
-      note: fmtMoney(netCollege()) + " main proportional pool (" + base().colleges.length +
-            " colleges) + " + fmtMoney(feederCarveout()) + " noncredit support (shared by the " +
-            ncModel().rows.length + " institutions in the noncredit lane)" }));
-
-    // Allocation balance (Sam, 2026-07-23): available annual tranche − the
-    // dollars the priority SHARES apportion = remainder. The allocation SHARE is
-    // what moves money (the Projection % is a performance target only), so this
-    // is the "are the percentages within the available funding?" check Sam had
-    // in the original workbook (N3 BALANCE). Shares total 100% → $0 (fully
-    // apportioned); > 100% → over-allocated (red, exceeding the pool); < 100% →
-    // an unallocated surplus. Uses the currently-viewed year's shares.
-    var vslot = state.viewSlot;
-    var ssum = shareSum(vslot);
-    var apportioned = per * ssum;
-    var remainder = per - apportioned;   // = per × (1 − Σshare)
-    var balOver = remainder < -0.5;
-    var balLbl;
-    if (Math.abs(remainder) < 0.5) {
-      balLbl = "Allocation balance &mdash; the Year " + esc(vslot) + " priority shares total " +
-        fmtPctTrim(ssum) + ", so each " + fmtMoney(per) + " annual tranche is fully apportioned with $0 left over";
-    } else if (balOver) {
-      balLbl = "&#9888; Over-allocated &mdash; the Year " + esc(vslot) + " priority shares total " +
-        fmtPctTrim(ssum) + " (&gt;100%): the priorities claim " + fmtMoney(apportioned) + " of the " +
-        fmtMoney(per) + " annual tranche &mdash; <strong>" + fmtMoney(-remainder) +
-        " over</strong>. Lower a share to bring it back within the pool.";
-    } else {
-      balLbl = "Allocation balance &mdash; the Year " + esc(vslot) + " priority shares total " +
-        fmtPctTrim(ssum) + " (&lt;100%): " + fmtMoney(remainder) + " of the " + fmtMoney(per) +
-        " annual tranche is unallocated (spare within the pool)";
-    }
-    out.push(card({ cls: " balance" + (balOver ? " over" : ""), neg: balOver,
-      v: (Math.abs(remainder) < 0.5 ? "$0" : (remainder < 0 ? "&minus;" : "") + fmtMoney(Math.abs(remainder))),
-      l: balLbl }));
-
-    // Achievement-based earning (Sam, 2026-07-23): when the basis is "earned",
-    // surface the real disbursement so far (Σ colleges, each on its own actuals)
-    // and the unearned remainder that rolls forward.
     (function () {
-      var ea = earnAgg();
-      var pctEarned = ea.winCap > 0 ? ea.winEarned / ea.winCap : 0;
-      out.push(card({ cls: " earned", v: fmtMoney(ea.winEarned),
-        l: "Earned so far &mdash; colleges&#39; actual CPL posted in MAP, <strong>" + fmtPctTrim(pctEarned) +
-           "</strong> of the " + fmtMoney(ea.winCap) + " college pool (not the noncredit carve-out)",
-        note: "each college earns cap &times; (actual &divide; target), capped at 100%; today only the measurable priority flexes, the rest advance at full cap" }));
-      out.push(card({ cls: " unearned", v: fmtMoney(ea.winUnearned),
-        l: "Unearned &mdash; rolls forward &amp; relevels",
-        note: "the gap to full achievement; disbursed in later years as colleges post more CPL in MAP" }));
-      // Held in reserve — the baseline participation gate (Sam, 2026-07-30).
-      // Never redistributed: a college that qualifies mid-window can still draw.
-      if (ea.winHeld > 0.5) {
-        out.push(card({ cls: " withheld", v: fmtMoney(ea.winHeld),
-          l: "Held in reserve &mdash; <strong>" + ea.gatedN + "</strong> colleges have not met baseline participation",
-          note: "withheld from earning until a CPL Coordinator is on file in MAP and a participation request is in; " +
-            "held, NOT redistributed &mdash; qualifying later still lets the college draw" }));
-      }
+      var ncFace = 0, trioHeld = 0;
+      oneRoster().forEach(function (c) {
+        var sp = instSplit(c);
+        if (c.nco) trioHeld += sp.w; else ncFace += sp.nc;
+      });
+      // "Total credit and noncredit potential awards" — Sam's label,
+      // 2026-08-31 (renamed live from "One pool — every institution…").
+      out.push(card({ cls: " hero", v: fmtMoney(netCollege()),
+        l: (frontloaded()
+          ? "Total credit and noncredit potential awards &mdash; " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr"
+          : "Total credit and noncredit potential awards &mdash; " + windowLabel() + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
+        note: "no carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
+          fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
+          " at the noncredit-only institutions + " + fmtMoney(ncFace) +
+          " riding college awards, restricted to noncredit outcomes)" }));
     })();
 
     // An unhonorable floor is the model's worst state: every row is marked
@@ -3870,7 +3879,7 @@
         fmtMoney(m.floor) + " &times; " + m.floorCount + " " + noun + "s = " + fmtMoney(m.floorDemanded) +
         ", more than the " + fmtMoney(pot) + " available. Every " + noun + " receives an equal " +
         fmtMoney(each) + " instead, BELOW the stated minimum. Lower the minimum, narrow the lane, " +
-        "or raise the pool.</strong>";
+        "or raise the funding.</strong>";
     }
 
     // Minimum and maximum per-college allocation — one box, two editable dials
@@ -3880,15 +3889,17 @@
     // release are the two halves of one redistribution.
     (function () {
       var m = allocModel();
+      // Sam's sentence shapes (2026-09-01): "supported by minimum base
+      // funding" / "capped at maximum funding".
       var floorNote = m.floorCount
-        ? "<strong>" + m.floorCount + " topped up to the minimum</strong> (&asymp;" + fmtMoney(m.floorCost) + ", funded within the pool)"
-        : "no top-ups needed at current settings";
+        ? "<strong>" + m.floorCount + " institutions supported by minimum base funding</strong> (&asymp;" + fmtMoney(m.floorCost) + " from within the same total)"
+        : "none at minimum base funding at current settings";
       var capNote = !(m.cap > 0)
-        ? "no maximum set &mdash; enter one to cap the largest allocations"
+        ? "no cap set &mdash; enter one to cap the largest allocations"
         : (m.cappedCount
-            ? "<strong>" + m.cappedCount + " held to the maximum</strong> (&asymp;" + fmtMoney(m.capReleased) +
-              " released back into the pool)"
-            : "no college reaches the maximum at current settings");
+            ? "<strong>" + m.cappedCount + " capped at maximum funding</strong> (&asymp;" + fmtMoney(m.capReleased) +
+              " released back to the other institutions)"
+            : "no institution reaches the cap at current settings");
       var warn = "";
       if (m.floorInfeasible) {
         floorNote = "<strong>the minimum is not being paid</strong>";
@@ -3898,69 +3909,25 @@
           "no college is paid under " + fmtMoney(m.floor) + ".</strong>";
       } else if (m.unspent > 0.5) {
         warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
-          " cannot be spent &mdash; every college is at the maximum and the pool no longer balances. " +
+          " cannot be spent &mdash; every college is at the maximum and the funding no longer balances. " +
           "Raise the maximum or move the remainder to another line.</strong>";
       }
       out.push(card({ cls: " floor",
-        v: valueEd("floor_window", false, "Minimum allocation per college for the window") +
+        v: valueEd("floor_window", false, "Base award per institution for the window") +
           ' <span class="cplfund-range-sep">to</span> ' +
-          valueEd("cap_window", false, "Maximum allocation per college for the window"),
-        l: labelEd("floor_window", "Minimum viable allocation (floor)") +
-           ' <span class="dk">&mdash;</span> ' + labelEd("cap_window", "Maximum allocation (ceiling)"),
-        note: "per college for the " + windowLabel() + " window &middot; " + floorNote +
-          " &middot; " + capNote + warn }));
+          valueEd("cap_window", false, "Cap per institution for the window"),
+        l: labelEd("floor_window", "Base award (minimum)") +
+           ' <span class="dk">&mdash;</span> ' + labelEd("cap_window", "Cap (maximum)"),
+        note: "per institution, combined credit + noncredit, for the " + windowLabel() + " window &middot; " +
+          oneRoster().length + " institutions &middot; " + floorNote +
+          " &middot; " + capNote + warn + " &middot; average max award " +
+          fmtMoney(oneRoster().length ? netCollege() / oneRoster().length : 0) +
+          boundsFoldHtml() }));
     })();
 
-    // ── the NONCREDIT lane's box (Sam, 2026-08-23: "add a funding box to make
-    // the NC>=500 a variable"). Three dials, because this lane needs one the
-    // credit lane does not: WHO IS IN IT. The threshold sits in the note rather
-    // than the value line so the box keeps the credit box's shape — two amounts,
-    // "to" between them — and the note then reports what all three did.
-    (function () {
-      var m = ncModel();
-      var cols = m.rows.filter(function (r) { return r.kind === "college"; }).length;
-      var stand = m.rows.length - cols;
-      var thrEd = edNum("pool", fmtInt(m.threshold),
-        { field: "nc_threshold_ftes", small: true, label: "Noncredit entry threshold in annual noncredit FTES" });
-      var lane = "in the lane: institutions with at least " + thrEd + " noncredit FTES &mdash; <strong>" +
-        m.rows.length + "</strong> today (" + cols + " colleges + " + stand + " standalone)";
-      var floorNote = m.floorCount
-        ? "<strong>" + m.floorCount + " at the minimum</strong>"
-        : "none at the minimum";
-      // A lane that is mostly floor is mostly not an incentive. Sam's reason for
-      // this lane is that it "gives the smaller NC programs an incentive to
-      // grow", so the box has to say where growth actually starts paying rather
-      // than leave that to be discovered.
-      var growth = m.breakEven > 0
-        ? " &middot; growth starts paying above <strong>" + fmtInt(m.breakEven) + " FTES</strong>"
-        : "";
-      var capNote = !(m.cap > 0)
-        ? " &middot; no maximum set"
-        : (m.cappedCount ? " &middot; <strong>" + m.cappedCount + " held to the maximum</strong>"
-                         : " &middot; no institution reaches the maximum");
-      var warn = "";
-      if (m.floorInfeasible) {
-        // Both the count AND the break-even are false in this state: nobody is on
-        // a proportional rate at all, so "growth starts paying above X" describes
-        // a mechanism that is not running. Drop both rather than qualify them.
-        floorNote = "<strong>the minimum is not being paid</strong>";
-        growth = "";
-        warn = floorInfeasibleWarn(m, "institution");
-      } else if (m.capBelowFloor) {
-        warn = ' <strong class="cplfund-capwarn">&#9888; the maximum is below the minimum &mdash; the minimum wins.</strong>';
-      } else if (m.unspent > 0.5) {
-        warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
-          " cannot be spent &mdash; every institution is at the maximum. Raise the maximum or widen the lane.</strong>";
-      }
-      out.push(card({ cls: " floor",
-        v: valueEd("nc_floor_window", false, "Minimum noncredit allocation per institution for the window") +
-          ' <span class="cplfund-range-sep">to</span> ' +
-          valueEd("nc_cap_window", false, "Maximum noncredit allocation per institution for the window"),
-        l: labelEd("nc_floor_window", "Noncredit minimum") +
-           ' <span class="dk">&mdash;</span> ' + labelEd("nc_cap_window", "Noncredit maximum"),
-        note: "per institution from the " + fmtMoney(m.pool) + " noncredit carve-out &middot; " +
-          lane + " &middot; " + floorNote + growth + capNote + warn }));
-    })();
+    // The noncredit lane's three-dial box (entry threshold / NC minimum / NC
+    // maximum) was retired with one-pool adoption (R4–R5, 2026-08-31): one
+    // window — the base and cap above — per institution, combined.
 
     // ── Who moves — renders ONLY while a what-if overlay is changing awards.
     // The comparison the Budget Balance mock proved out (Sam, 2026-08-31):
@@ -3995,53 +3962,18 @@
     // denominator. These now follow the basis SEAM, so flipping the toggle
     // relabels them instead of leaving one of the two lying.
     var basisTotal = totalSize();
-    // ALL noncredit, not just the standalone roster. Under the FTES basis this
-    // is every institution's noncredit teaching (deduped); headcount has no
-    // college-side noncredit figure, so it keeps the feeder heads it always had.
-    var feederSide = usesFtes() ? allNoncreditFtes() : feederHeads();
     out.push(card({ v: fmtInt(basisTotal),
-      l: "College " + basisLabel() + " (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
-        " college rows &middot; plus " + fmtInt(feederSide) + " noncredit " +
-        (usesFtes() ? "FTES" : "students") + " = <strong>" +
-        fmtInt(basisTotal + feederSide) + " CCC total</strong>",
+      l: "Institution " + basisLabel() + " (allocation basis) &mdash; &Sigma; of all " + oneRoster().length +
+        " institution rows, credit + noncredit combined",
       note: basisTotal > 0
         ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
           basisLabel() + " &mdash; pool depth, informational"
         : "" }));
 
-    // ── the noncredit PARITY card (Sam, 2026-08-23) ───────────────────────
-    // He kept the carve-out at $1,000,000 and said "I can adjust it up for
-    // parity later — would be good to have that 7.1% number at the ready". So
-    // the tab computes it rather than leaving it in a chat message: what share
-    // of the system's teaching is noncredit, against what share of the money it
-    // receives, and what the pool would be if those matched. The carve-out is a
-    // policy choice; this is the figure that says what it is choosing.
-    //
-    // FTES on both sides, always — a teaching share computed against headcount
-    // on one side and FTES on the other is not a share of anything. Under the
-    // headcount basis the card says so instead of printing a number.
-    (function () {
-      if (!usesFtes()) {
-        out.push(card({ v: "&mdash;",
-          l: "Noncredit share of the funding &mdash; needs the credit-FTES basis",
-          note: "the comparison is FTES on both sides; switch the allocation basis to see it" }));
-        return;
-      }
-      var q = ncParity();
-      var gap = q.parityPool - q.pool;
-      out.push(card({ v: fmtPct(q.teachingShare, 1),
-        l: "Noncredit share of the <strong>teaching</strong> &mdash; " + fmtInt(q.ncFtes) +
-          " noncredit FTES against " + fmtInt(q.creditFtes) + " credit &middot; it receives <strong>" +
-          fmtPct(q.moneyShare, 1) + " of the money</strong> (" + fmtMoney(q.pool) + " of " +
-          fmtMoney(netBeforeFeeder()) + " to institutions)",
-        note: Math.abs(gap) < 1000
-          ? "the carve-out is at parity with noncredit teaching"
-          : (gap > 0 ? "parity would be " + fmtMoney(q.parityPool) + " &mdash; " + fmtMoney(gap) +
-                       " above the current carve-out"
-                     : "the carve-out is " + fmtMoney(-gap) + " above parity (" +
-                       fmtMoney(q.parityPool) + ")") +
-            " &middot; a policy choice, not a formula" }));
-    })();
+    // The "noncredit share of the teaching" parity card and the basis card's
+    // noncredit side were retired (R8, ruled 2026-08-31): the CR/NC
+    // decomposition on every award's face — columns, expands, the pool line —
+    // makes the parity case continuously.
 
     // The RATE card. Under FTES-denominated priorities the operative price is
     // the reimbursement rate per CPL FTES — what a college must actually
@@ -4190,20 +4122,18 @@
     return { total: arr.length, job: job, edu: arr.length - job };
   }
 
-  // Everything tagged to each goal, in the lane currently in view.
-  // ⚠️ LANE-SCOPED ON PURPOSE. The credit pool and the noncredit carve-out are
-  // solved separately and must never be summed (lanePerYear's standing rule), so
-  // this reports the lane you are looking at and SAYS which one, rather than
-  // producing a statewide figure that is the sum of two incompatible models.
+  // Everything tagged to each goal. One pool (2026-08-31): a priority's goal
+  // dollars are its FULL pool share — the credit and noncredit shares together,
+  // which is the same ceiling the priority card calls Total Possible.
   function goalFunding(slot) {
     var map = {};
     STATUTORY_GOALS.forEach(function (g) { map[g.key] = { prios: [], pools: [], projects: [] }; });
-    lanePriorities(slot).forEach(function (p, i) {
+    priorities(slot).forEach(function (p, i) {
       var gk = prioGoals(slot, i, p);
       var meas = measureOf(p) || {};
       gk.keys.forEach(function (k) {
         if (map[k]) map[k].prios.push({ p: p, idx: i, derived: gk.derived, meas: meas,
-                                        dollars: lanePrioCap(slot, p) });
+                                        dollars: prioCap(netCollege(), slot, p) });
       });
     });
     // Pool line items are statewide, not lane-scoped — they are taken off the
@@ -4344,9 +4274,8 @@
     return '<p class="cplfund-goal-intro">The chancellor&rsquo;s office must allocate this appropriation ' +
       '&ldquo;using all of the following goals&rdquo; (Ed. Code &sect;78093.2(d)(1)), and &sect;78093.2(d)(2) ' +
       "makes demonstrating them a condition of a campus allocation. This is that account, read live from the " +
-      "model rather than written down beside it. Figures are for the <strong>" +
-      (laneIsNc() ? "noncredit" : "credit") + " lane</strong> currently in view; the two lanes are solved " +
-      "separately and are never summed.</p>" +
+      "model rather than written down beside it. A priority&rsquo;s figure is its full funding share &mdash; " +
+      "its credit and noncredit shares together, the same ceiling its card calls Total Possible.</p>" +
       // Sam, 2026-08-28: the statutory goals are not a separate errand. They sit
       // inside one alignment stack, and the frames were written at different
       // times — naming them together is what stops the newest one reading as a
@@ -4355,18 +4284,19 @@
       "CPL Initiative works to, all of them pointed at the same buildout of statewide CPL infrastructure: " +
       "<strong>Vision 2030</strong>, the <strong>California Master Plan for Career Education</strong>, the " +
       "<strong>CPL Workplan</strong>, and <strong>Ed. Code &sect;&sect;78092&ndash;78093.2</strong>. " +
-      "The funding outcomes below are what the legislature approved money against; the Workplan&rsquo;s own " +
+      "The funding outcomes below are what the legislature approved funding against; the Workplan&rsquo;s own " +
       "goals are how the work gets done.</p>" +
       '<div class="cplfund-goals">' + cards + "</div>" + regNote;
   }
 
-  // ── award distribution (per college, window total) ────────────────────
-  // Sam, 2026-07-23: a box showing Average / Minimum / Maximum award. Computed
-  // over each college's window Total (floor-aware; timing-independent), so it
-  // tracks every pool / priority / floor edit live. When the floor is active it
-  // is the minimum by construction.
+  // ── award distribution (per institution, window total) ────────────────
+  // Sam, 2026-07-23: Average / Minimum / Maximum award. One pool (2026-08-31):
+  // computed over EVERY institution's window Total (floor-aware;
+  // timing-independent), so it tracks every pool / priority / floor edit live.
+  // Rendered inside the window card's bounds fold (R7) — the Award range
+  // section with its separate Credit and Noncredit rows is retired.
   function awardStats() {
-    var cols = base().colleges;
+    var cols = oneRoster();
     if (!cols.length) return null;
     var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0, maxCount = 0;
     cols.forEach(function (c) {
@@ -4386,31 +4316,6 @@
     return { avg: sum / cols.length, min: min, max: max, minC: minC, maxC: maxC,
              minCount: minCount, maxCount: maxCount, n: cols.length };
   }
-  // The NONCREDIT counterpart of awardStats(), over the institutions actually in
-  // the lane and their own bounds. It is a SEPARATE ROW and never merges into
-  // the credit boxes (Sam, 2026-08-28: "add a row for NC and distinguish between
-  // the two"). Merging is not arithmetic anyone can defend: different rosters
-  // (115 colleges vs 33 institutions), different floors and ceilings, and 30 of
-  // the 33 sit in BOTH lanes — so an average "across 148" double-counts colleges
-  // and a merged MINIMUM would print the noncredit floor as the credit minimum,
-  // the same figure-that-looks-right that ncRowChips() exists to prevent.
-  function ncAwardStats() {
-    var m = ncModel();
-    var rows = m.rows || [];
-    if (!rows.length) return null;
-    var sum = 0, min = Infinity, max = -Infinity, minC = null, maxC = null, minCount = 0, maxCount = 0;
-    rows.forEach(function (r) {
-      var t = ncAward(r.key);
-      sum += t;
-      if (t > max + 0.5) { max = t; maxC = r.name || r.key; maxCount = 1; }
-      else if (Math.abs(t - max) <= 0.5) { maxCount++; }
-      if (t < min - 0.5) { min = t; minC = r.name || r.key; minCount = 1; }
-      else if (Math.abs(t - min) <= 0.5) { minCount++; }
-    });
-    return { avg: sum / rows.length, min: min, max: max, minC: minC, maxC: maxC,
-             minCount: minCount, maxCount: maxCount, n: rows.length,
-             floor: m.floor, cap: m.cap, floorCount: m.floorCount, cappedCount: m.cappedCount };
-  }
   // One bound's label: name the institution when it is alone there, and COUNT
   // them when several share the bound — naming one of five reads as a fact about
   // that one rather than as "this is the cap".
@@ -4426,52 +4331,35 @@
   // many receive this figure, so that is what is counted, and the bound is
   // named only when the extreme actually IS the bound.
   function boundLabel(one_, count, bound, word, boundWord) {
+    // Each branch carries its own figure exactly once — the caller appends
+    // nothing (the old shape appended " at $X" and doubled a shared bound:
+    // "51 institutions at the $150,000 base award at $150,000").
     var atBound = bound > 0 && Math.abs(count.value - bound) <= 0.5;
     return (atBound && count.n > 1)
       ? count.n + " " + word + " at the " + fmtMoney(bound) + " " + boundWord
-      : esc(dispName(one_) || "&mdash;");
+      : esc(dispName(one_) || "&mdash;") + " at " + fmtMoney(count.value);
   }
-  function awardStatsHtml() {
+  // The bounds fold on the window card (R7's successor, per the locked mock):
+  // the institutions at the cap by NAME, the at-base count, and the range —
+  // where the Award range section's two separately-solved rows used to be.
+  function boundsFoldHtml() {
     var s = awardStats();
     if (!s) return "";
-    var nc = ncAwardStats();
-    var win = esc(windowLabel());
-
-    function row(title, sub, cards) {
-      return '<div class="cplfund-awardrow"><div class="cplfund-awardrow-h">' + title +
-        ' <span class="dk" style="font-weight:400;">' + sub + "</span></div>" +
-        '<div class="cplfund-cards">' + cards.map(function (c) {
-          return '<div class="cplfund-card award"><div class="v">' + c.v + '</div><div class="l">' + c.l + "</div></div>";
-        }).join("") + "</div></div>";
-    }
-
-    var creditCards = [
-      { v: fmtMoney(s.min), l: "Minimum award &mdash; " +
-          boundLabel(s.minC, { n: s.minCount, value: s.min }, floorWindow(), "colleges", "minimum-viable floor") },
-      { v: fmtMoney(s.avg), l: "Average award &mdash; across " + s.n + " colleges" },
-      { v: fmtMoney(s.max), l: "Maximum award &mdash; " +
-          boundLabel(s.maxC, { n: s.maxCount, value: s.max }, capWindow(), "colleges", "maximum allocation") }
-    ];
-
-    var out = "<h3>Award range " +
-      '<span class="dk" style="font-size:.8rem;font-weight:400;">(per institution &middot; ' + win +
-      " window total &middot; the two lanes are solved separately and never summed)</span></h3>" +
-      row("Credit", "&mdash; the college pool", creditCards);
-
-    if (nc) {
-      // "institutions", not "colleges": 3 of the roster are the standalone
-      // continuing-education institutions, which have no credit row at all.
-      var ncCards = [
-        { v: fmtMoney(nc.min), l: "Minimum award &mdash; " +
-            boundLabel(nc.minC, { n: nc.minCount, value: nc.min }, nc.floor, "institutions", "noncredit minimum") },
-        { v: fmtMoney(nc.avg), l: "Average award &mdash; across " + nc.n + " institutions in the lane" },
-        { v: fmtMoney(nc.max), l: "Maximum award &mdash; " +
-            boundLabel(nc.maxC, { n: nc.maxCount, value: nc.max }, nc.cap, "institutions", "noncredit maximum") }
-      ];
-      out += row("Noncredit", "&mdash; the carve-out, over the " + nc.n +
-        " institutions above the entry threshold", ncCards);
-    }
-    return out;
+    var m = allocModel();
+    var atCap = oneRoster().filter(function (c) { return m.capped[c.college]; })
+      .map(function (c) { return esc(dispName(c.college)); });
+    // Summary wording is Sam's (2026-08-31 rename, corrected same day).
+    return '<details class="cplfund-pool-projects"><summary>Show the institutions with Base and Cap funding</summary>' +
+      "<ul>" +
+      "<li><strong>At the cap:</strong> " + (atCap.length ? atCap.join(" &middot; ") : "none at current settings") + "</li>" +
+      "<li><strong>At the base:</strong> " + m.floorCount + " institutions &mdash; every proportional share below " +
+        fmtMoney(m.floor) + " is brought up to the base, funded from within the same total.</li>" +
+      "<li><strong>Range:</strong> " +
+        boundLabel(s.minC, { n: s.minCount, value: s.min }, floorWindow(), "institutions", "base award") +
+        " to " +
+        boundLabel(s.maxC, { n: s.maxCount, value: s.max }, capWindow(), "institutions", "cap") +
+        " &middot; average max award " + fmtMoney(s.avg) + " across " + s.n + " institutions.</li>" +
+      "</ul></details>";
   }
 
   // A year showing Year 1's set has to SAY it is — otherwise the Year-2 view
@@ -4485,39 +4373,10 @@
   // (Sam, 2026-07-23). Reuses the eligibility-requirement bullet/✕/＋ pattern;
   // add/delete are keyed by "slot:priorityIdx[:strategyIdx]".
   function strategiesHtml(slot, i) {
-    // NO STRATEGIES IN THE NONCREDIT LANE, on purpose (2026-08-28).
-    // ncPriorities() carries `strategies: p.strategies` — credit's list,
-    // verbatim. Credit's Success list names "noncredit mirror courses" among the
-    // things to batch-upload, so rendering it here would instruct a noncredit
-    // institution about itself; every other bullet is written for a credit
-    // college. Showing nothing, and saying so, is the honest state until Sam
-    // writes the noncredit set (ncPrioOverride() is where they will live).
-    if (laneIsNc()) {
-      var ncp = ncPriorities(slot)[i];
-      var srcI = ncp ? ncp.src : i;
-      var ncList = (ncp && ncp.strategies) || [];
-      var ncKey = slot + ":" + srcI;
-      // EDITABLE, unlike every other field on an NC card — and for a reason that
-      // is the mirror image of why the others are not: this one has a store of
-      // its own (ncPriorities), so an edit lands on the noncredit priority
-      // instead of silently rewriting credit's.
-      var ncRows = ncList.map(function (x, j) {
-        return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
-          edText("nc-strategy", x, { slot: slot, idx: srcI, sidx: j,
-            label: "Noncredit recommended strategy", placeholder: "Add a noncredit strategy…" }) +
-          '<button type="button" class="cplfund-reqdel" data-ncstratdel="' + esc(ncKey + ":" + j) +
-          '" title="Remove this strategy" aria-label="Remove noncredit strategy ' + (j + 1) + '">✕</button></div>';
-      }).join("");
-      return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (noncredit)</div>' +
-        (ncList.length ? ncRows
-          : '<p class="nums dk">None written for the noncredit lane yet. Credit&rsquo;s are not shown here: a ' +
-            "noncredit institution does not generally award the credit &mdash; it prepares students to earn it at " +
-            "a credit college, which is different work.</p>") +
-        (publicMode() ? "" :
-          '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-ncstratadd="' + esc(ncKey) +
-          '" title="Add a noncredit strategy">＋ Add strategy</button>') +
-        "</div>";
-    }
+    // The NONCREDIT strategies editor left the tab with the noncredit card set
+    // (R2, ruled 2026-08-31): one card set remains, and the noncredit
+    // strategies return with the noncredit feeds — parked in the config
+    // (ncPriorities/ncPrioOverride still carry them), not lost.
     var list = prioStrategies(slot, i);
     var rows = list.map(function (s, j) {
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
@@ -4525,10 +4384,13 @@
         '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
         '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">✕</button></div>';
     }).join("");
-    return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ")</div>" +
+    // A FOLD (Sam, 2026-08-31, reaction round 3): the metric sits on the card
+    // surface; the strategies stay in detail. The rows remain editable inside
+    // the open fold — <details> hides, it never disables.
+    return '<details class="cplfund-strat"><summary class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ") &mdash; show them</summary>" +
       rows +
       '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
-      '" title="Add a recommended strategy">＋ Add strategy</button></div>';
+      '" title="Add a recommended strategy">＋ Add strategy</button></details>';
   }
 
   // Timing — an editable milestone list below the priority boxes (Sam,
@@ -4642,7 +4504,7 @@
         ? '<span class="cf-ok">\u2714 The years currently hold the same priorities.</span>'
         : '<span class="cplfund-warn-text">\u26a0 Year 2 differs from Year 1.</span>' +
           (frontloaded()
-            ? " Under front-loaded disbursement Year 2 carries no money, so its metrics are never scored " +
+            ? " Under front-loaded disbursement Year 2 carries no funding, so its metrics are never scored " +
               "\u2014 but the difference becomes real the moment timing moves back to even tranches."
             : "");
     return '<div class="cplfund-yearsync">' +
@@ -4657,13 +4519,15 @@
   // ── priority cards (for the active view year) ─────────────────────────
   function prioritiesHtml() {
     var slot = state.viewSlot;
-    // EVERY figure on these cards rides the LANE, never the credit accessors —
-    // a unit earns in exactly one lane and `share` splits that lane's money.
-    var ps = lanePriorities(slot);
-    var per = lanePerYear();
+    // ONE card set (R2, 2026-08-31). Every statewide figure on these cards is
+    // the FULL pool share — the priority's credit and noncredit shares
+    // together, the ceiling Sam's labels call Total Possible — while the
+    // Current Total line adds each lane on its own measures (earnedLineHtml).
+    var ps = priorities(slot);
+    var per = perYear();
     var heads = totalHeads();
     var flPrio = frontloaded();
-    var ro = laneReadOnly();   // see laneReadOnly(): these fields edit CREDIT's stored row
+    var ro = false;
     return '<div class="cplfund-prio">' + ps.map(function (p, i) {
       // The ANNUAL policy figures stay annual — share, per-student rate and the
       // derived reach are the per-year target and front-load does not move them
@@ -4678,7 +4542,7 @@
       // whole line rather than patching a noun (2026-08-01).
       var isFtesPrio = prioIsFtes(p);
       var unitWord = isFtesPrio ? "CPL FTES" : "students";
-      var winDollars = lanePrioCap(slot, p);
+      var winDollars = prioCap(netCollege(), slot, p);
       var frontLine = flPrio
         ? (slotIsCarryover(slot)
           ? '<p class="nums cplfund-fl-line"><span class="dk">↻ Year ' + esc(slot) + " is carryover under " +
@@ -4703,11 +4567,6 @@
         (ro ? "" : prioMoveHtml(ps, i, p)) +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, ro: ro, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
-        ' <span class="cplfund-chip cf-lanechip ' + (laneIsNc() ? "cf-lane-nc" : "cf-lane-cr") + '" title="' +
-        esc(laneIsNc()
-          ? "Noncredit lane — this priority is measured against the noncredit carve-out"
-          : "Credit lane — this priority is measured against the college pool") + '">' +
-        (laneIsNc() ? "NC" : "CR") + "</span>" +
         // The statutory goal this priority serves (§78093.2(d)(1)) — a link
         // back to the spine, never a bare raised letter: it carries a hover
         // naming the goal in words and an accessible label.
@@ -4716,6 +4575,18 @@
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
+        // Sam, 2026-08-31 (reaction round 3): the metric sits ON THE SURFACE,
+        // just below the share line — the thing being measured reads before
+        // its target and actuals. And 2026-08-28: "what does this mean?
+        // Metric - pinned to ppa_u" — that IS the finding. The pin is what
+        // stops an NC priority resolving onto a CREDIT measure by wording
+        // alone, but a reader should not need the feed's key names to read a
+        // card. The key moves into the block's title; the visible words stay
+        // plain.
+        '<div class="metric"' +
+          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
+          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
+          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         (isFtesPrio
           ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding factor" }) +
             "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong></p>" +
@@ -4727,17 +4598,24 @@
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        // Sam, 2026-08-28: "what does this mean? Metric - pinned to ppa_u" — and
-        // that IS the finding. The pin is what stops an NC priority resolving
-        // onto a CREDIT measure by wording alone, but a reader should not need
-        // the feed's key names to read a card. The key moves into the block's
-        // title; the visible words stay plain.
-        '<div class="metric"' +
-          (p.metric_src ? ' title="' + esc("Measured from the MAP feed key " + p.metric_src) + '"' : "") +
-          '>METRIC (Year ' + slot + mirroredNote(slot) + "): " +
-          edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
+  }
+
+  // The earning rules for noncredit (the locked mock's fold, 2026-08-31) —
+  // the one place the restriction and the origination rule are stated in
+  // words, under the cards whose arithmetic honors them.
+  function ncEarningRulesFoldHtml() {
+    return '<details class="cplfund-pool-projects cplfund-ncrules"><summary>The earning rules for noncredit &mdash; show them</summary><ul>' +
+      "<li><strong>A college&rsquo;s noncredit share</strong> of its combined award earns against the " +
+      "noncredit priority measures (ruled 2026-08-31).</li>" +
+      "<li><strong>The noncredit-only institutions earn by origination</strong> &mdash; CPL that " +
+      "originates from their programs and is transcribed at a credit college. NOCE and SDCCE&rsquo;s " +
+      "origination counts across their district&rsquo;s credit campuses; Calbright&rsquo;s counts " +
+      "statewide. The receiving college earns on the same CPL under its own measures &mdash; the same " +
+      "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
+
+      "</ul></details>";
   }
 
   // ── metric measurability (2026-07-03 analysis; metric-keyed 2026-07-23) ───
@@ -5117,65 +4995,58 @@
   var _earnCache = null;
   function earnAgg() {
     if (_earnCache) return _earnCache;
-    var ny = nYears();
-    var ps = priorities(state.viewSlot);
-    var perPrio = ps.map(function () { return { cap: 0, earned: 0, statuses: {} }; });
+    var slot = state.viewSlot;
+    var ps = priorities(slot);
+    var ncPs = ncPriorities(slot);
+    var perPrio = ps.map(function () {
+      return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, statuses: {} };
+    });
     var winCap = 0, winEarned = 0, winHeld = 0, gatedN = 0;
-    base().colleges.forEach(function (col) {
-      // perPrio drives the priority CARDS, which are main-pool POLICY (their
-      // "statewide $ ÷ per-student rate = target" identity requires the main
-      // allocation) — so keep the per-priority caps on the main entitlement.
+    var winMeasured = 0, winAdvance = 0;
+    oneRoster().forEach(function (col) {
+      // perPrio drives the priority CARDS. Under one pool a priority's card
+      // ceiling — Sam's "Total Possible" (ruled 2026-08-31) — is its credit
+      // and noncredit shares TOGETHER, so `cap` sums the FULL award's slice
+      // while the earned line adds each lane on its own measures: the credit
+      // slices on the credit priorities (advances included), the noncredit
+      // slices on the noncredit priorities (f = 0 until their feeds report —
+      // F1 — and never an advance). Position i pairs the two lanes: ncPs is
+      // the same three priorities re-pointed at the noncredit measures.
       // winCap/winEarned below read collegeAlloc to match the distribution
-      // surfaces (Sam, 2026-07-28; the rural fold retired 2026-08-22).
-      var W = allocModel().W[col.college] || 0;
+      // surfaces (Sam, 2026-07-28).
+      var sp = instSplit(col);
       ps.forEach(function (p, i) {
-        var cap_i = prioCap(W, state.viewSlot, p);
+        perPrio[i].cap += prioCap(sp.w, slot, p);
+        perPrio[i].crCap += prioCap(sp.cr, slot, p);
         var fr = earnFraction(col, p);
-        perPrio[i].cap += cap_i;
-        perPrio[i].earned += cap_i * fr.f;
-        perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
+        perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
+        // Status counts describe the CREDIT measures; the noncredit-only rows
+        // hold no credit slice, so counting their (empty) credit status would
+        // add noise the diagnostic then reports.
+        if (!col.nco) perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
+      });
+      ncPs.forEach(function (p, i) {
+        if (!(sp.nc > 0)) return;
+        var capNc = ncPrioCap(sp.nc, slot, p);
+        perPrio[i].ncCap += capNc;
+        var fr = earnFraction(col, p);
+        var paid = capNc * fr.f;
+        perPrio[i].earned += paid;
+        perPrio[i].ncEarned += paid;
       });
       var a = collegeAlloc(col);
       winCap += a.total;
       winEarned += a.earned_total;
+      winMeasured += a.earned_measured || 0;
+      winAdvance += a.earned_advance || 0;
       winHeld += a.earned_withheld || 0;
       if (a.gate_blocked) gatedN++;
     });
     _earnCache = { perPrio: perPrio, ps: ps, winCap: winCap, winEarned: winEarned, winUnearned: winCap - winEarned,
+      winMeasured: winMeasured, winAdvance: winAdvance,
       winHeld: winHeld, gatedN: gatedN };
     return _earnCache;
   }
-
-  // The NONCREDIT mirror of earnAgg().perPrio (2026-08-28). It exists because
-  // earnAgg() walks base().colleges with credit priorities and the credit
-  // allocation model — so the priority-card earning line, which is indexed by
-  // POSITION, would print the CREDIT lane's earned dollars under a noncredit
-  // heading. Same shape, same earnFraction, the noncredit roster and pots.
-  //
-  // The participation gate is deliberately NOT applied here, matching earnAgg():
-  // the gate belongs to the DISBURSEMENT surfaces (collegeAlloc/ncAllocFor carry
-  // it), and applying it on one lane's card line and not the other's would make
-  // the two cards disagree about what the number means.
-  var _ncEarnCache = null;
-  function ncEarnAgg() {
-    if (_ncEarnCache) return _ncEarnCache;
-    var slot = state.viewSlot;
-    var ps = ncPriorities(slot);
-    var perPrio = ps.map(function () { return { cap: 0, earned: 0, statuses: {} }; });
-    ncModel().rows.forEach(function (inst) {
-      var W = ncAward(inst.key);
-      ps.forEach(function (p, i) {
-        var cap_i = ncPrioCap(W, slot, p);
-        var fr = earnFraction(inst, p);
-        perPrio[i].cap += cap_i;
-        perPrio[i].earned += cap_i * fr.f;
-        perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
-      });
-    });
-    _ncEarnCache = { perPrio: perPrio, ps: ps };
-    return _ncEarnCache;
-  }
-  function laneEarnAgg() { return laneIsNc() ? ncEarnAgg() : earnAgg(); }
 
   // `target` is whatever prioTarget() returned for this priority — CPL FTES for
   // a unit metric, students for a headcount metric.
@@ -5195,7 +5066,9 @@
   function actualLineHtml(p, idx, target) {
     var meas = measureOf(p);
     if (meas.gap) {
-      return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
+      // The WHY lives in the curator-only metric-wiring diagnostic (Sam,
+      // 2026-09-01: the rendered copy names no unshipped feed and no advance).
+      return '<p class="nums dk">&#9203; Actual: no data yet.</p>';
     }
     // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
     // measureOf() sets `undelivered` when the feed does not carry a measure's
@@ -5217,10 +5090,7 @@
       // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
       // a reader should not need to know MAP's key names to read a card.
       return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">No actuals yet &mdash; ' +
-        "the daily MAP feed does not carry this measure for anyone yet, so it earns <strong>$0</strong> " +
-        "until it does" +
-        (meas.lane === "nc"
-          ? ". The noncredit-origin measures arrive when MAP ships the origination fields" : "") + ".</p>";
+        "this measure earns <strong>$0</strong> today.</p>";
     }
     if (!pf || !pf.statewide) {
       // Artifact not loaded. For CREDIT that is transient — those measures ARE
@@ -5262,76 +5132,54 @@
       ? "The three Year-" + state.viewSlot + " priority shares (" + parts + ") sum to 100%, so a college&#39;s " +
         "<strong>total potential allocation equals its share of statewide " + basisLabel() +
         "</strong> applied to the " +
-        fmtMoney(per) + " annual pool"
+        fmtMoney(per) + " annual funding"
       : "The three Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
         fmtPctTrim(shareSum) + " &mdash; the model " + (shareSum > 1 ? "over" : "under") +
-        "-allocates the annual pool (see Balance)</span>";
+        "-allocates the annual funding (see Balance)</span>";
     var bal = per * (1 - shareSum);
     var balStr = Math.abs(bal) < 0.5 ? "$0" : (bal < 0 ? "−" : "") + fmtMoney(Math.abs(bal));
     var m = allocModel();
     var floorSentence = (m.floor > 0 && m.floorCount)
-      ? " <strong>Minimum-viable floor:</strong> no college&#39;s window allocation falls below " + fmtMoney(m.floor) +
-        " &mdash; " + m.floorCount + " colleges are topped up (&asymp;" + fmtMoney(m.floorCost) +
-        ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the pool), funded by renormalizing the " +
-        "proportional split over the remaining colleges, so the pool still balances. <em>The floor raises a " +
-        "college&#39;s funding, not its targets:</em> performance targets stay proportional to the college&#39;s " +
-        "PRE-FLOOR share of statewide " + basisLabel() + ", so a floored college is NOT asked to exceed its " +
-        "size-appropriate numbers to receive the floor."
+      ? " <strong>Base award:</strong> no institution&#39;s window allocation falls below " + fmtMoney(m.floor) +
+        " &mdash; " + m.floorCount + " institutions are brought up to the base (&asymp;" + fmtMoney(m.floorCost) +
+        ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the funding), funded by renormalizing the " +
+        "proportional split over the remaining institutions, so the total still balances. <em>The base raises an " +
+        "institution&#39;s funding, not its targets:</em> performance targets stay proportional to the institution&#39;s " +
+        "PRE-BASE share of statewide " + basisLabel() + ", so an institution at the base is NOT asked to exceed its " +
+        "size-appropriate numbers to receive it."
       : "";
-    // The ceiling's own sentence. It says the thing the floor sentence cannot:
-    // floor and ceiling are solved TOGETHER, so the release can lift a college
-    // back OFF the floor — which is why the floor count moves when the ceiling
+    // The cap's own sentence. It says the thing the base sentence cannot:
+    // base and cap are solved TOGETHER, so the release can lift an institution
+    // back OFF the base — which is why the base count moves when the cap
     // moves, and why that is correct rather than a bug.
     var capSentence = (m.cap > 0 && m.cappedCount)
-      ? " <strong>Maximum allocation:</strong> no college&#39;s window allocation rises above " + fmtMoney(m.cap) +
-        " &mdash; " + m.cappedCount + " colleges are held there, releasing " + fmtMoney(m.capReleased) +
-        " (" + fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the pool) back into the proportional " +
-        "split. The minimum and the maximum are solved together, so a college can come back OFF the floor once " +
-        "the ceiling releases money. <em>The maximum lowers a college&#39;s funding, not its targets:</em> " +
+      ? " <strong>Cap:</strong> no institution&#39;s window allocation rises above " + fmtMoney(m.cap) +
+        " &mdash; " + m.cappedCount + " institutions are held there, releasing " + fmtMoney(m.capReleased) +
+        " (" + fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the funding) back into the proportional " +
+        "split. The base and the cap are solved together, so an institution can come back OFF the base once " +
+        "the cap releases funding. <em>The cap lowers an institution&#39;s funding, not its targets:</em> " +
         "performance targets stay proportional to its PRE-CAP share of statewide " + basisLabel() + "."
       : (m.cap > 0
-          ? " <strong>Maximum allocation:</strong> set at " + fmtMoney(m.cap) +
-            " per college for the window; no college reaches it at current settings."
+          ? " <strong>Cap:</strong> set at " + fmtMoney(m.cap) +
+            " per institution for the window; none reaches it at current settings."
           : "");
-    // THE NONCREDIT LANE (Sam, 2026-08-23: "need to add the NC calcs
-    // explanation to How these are computed"). It was explained on its own box
-    // and in the noncredit column's hover, but not here — so the one section a
-    // reader opens to learn how the money is worked out described only the
-    // credit pool and never said the second lane existed. Every figure comes
-    // from ncModel(); nothing here is a transcription, because the dials are
-    // live and a hand-typed number would decay the moment one moved.
-    var ncm = ncModel();
+    // THE NONCREDIT SHARE (one-pool form, 2026-08-31). The carve-out lane and
+    // its dials are retired (R3–R5); what the reader now needs to know is the
+    // DECOMPOSITION and its restriction. Every figure comes from the model,
+    // never a transcription.
     var ncSentence = "";
-    if (ncm.pool > 0 && ncm.rows.length) {
-      var ncFloored = ncm.floorCount, ncCapped = ncm.cappedCount;
-      ncSentence = " <strong>Noncredit support:</strong> a separate " + fmtMoney(ncm.pool) +
-        " carve-out, taken off the top and <em>never part of the credit allocation beside it</em> " +
-        "&mdash; it has its own column here, its own columns in the export and its own line on My College. " +
-        "An institution joins the lane at <strong>" + fmtInt(ncm.threshold) +
-        " annual noncredit FTES</strong> or above; " + ncm.rows.length + " qualify today (" +
-        ncm.rows.filter(function (r) { return r.kind === "college"; }).length + " colleges running their own " +
-        "noncredit programs plus " + ncm.rows.filter(function (r) { return r.kind === "standalone"; }).length +
-        " standalone institutions). Within the lane the split is proportional to noncredit FTES, clamped " +
-        "between a " + fmtMoney(ncm.floor) + " minimum" + (ncm.cap > 0 ? " and a " + fmtMoney(ncm.cap) +
-        " maximum" : "") + " &mdash; the same two-sided solve the credit pool uses.";
-      if (ncm.floorInfeasible) {
-        // The dial is promising more than the pot holds. Say so HERE too: this
-        // section is where a reader checks the arithmetic, and a floor that
-        // cannot be honored is exactly the thing they would be checking.
-        ncSentence += ' <span class="cplfund-warn-text">The minimum cannot be honored at this pool size: ' +
-          fmtMoney(ncm.floor) + " &times; " + ncm.rows.length + " institutions = " + fmtMoney(ncm.floorDemanded) +
-          ", more than the " + fmtMoney(ncm.pool) + " carve-out, so every institution receives an equal " +
-          fmtMoney(ncm.pool / ncm.rows.length) + " share instead.</span>";
-      } else {
-        ncSentence += " " + ncFloored + " of " + ncm.rows.length + " sit at the minimum" +
-          (ncCapped ? " and " + ncCapped + " at the maximum" : "") +
-          (ncm.breakEven > 0
-            ? ", so growth only starts paying above <strong>" + fmtInt(ncm.breakEven) +
-              " noncredit FTES</strong> &mdash; below that an institution is on the floor and another " +
-              "noncredit FTES earns it nothing."
-            : ".");
-      }
-    }
+    (function () {
+      var ncFace = 0, trioHeld = 0, trioN = 0;
+      oneRoster().forEach(function (c) {
+        var sp = instSplit(c);
+        if (c.nco) { trioHeld += sp.w; trioN++; } else ncFace += sp.nc;
+      });
+      ncSentence = " <strong>The noncredit share:</strong> every award decomposes into a credit and a " +
+        "noncredit share by the institution&#39;s own FTES split &mdash; " + fmtMoney(ncFace) +
+        " rides college awards, restricted to the noncredit measures (the credit program cannot draw " +
+        "it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
+        " earned by origination: CPL from their programs, transcribed at a credit college.";
+    })();
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
     // 2026-07-27: the box read as an even-tranche explainer even when front-load
     // was ON). Each branch tells the whole timing story for its mode.
@@ -5347,12 +5195,11 @@
         "college&#39;s window total is unchanged."
       : "That same " + fmtMoney(per) + " tranche disburses again in each of the " + nYears() +
         " years (" + windowLabel() + "), in <strong>equal annual amounts</strong>.";
-    var basisSentence = " That allocation is the <strong>cap</strong> &mdash; the top line of every money cell. A college is " +
+    var basisSentence = " That allocation is the <strong>cap</strong> &mdash; the top line of every funding cell. A college is " +
       "paid <code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
       "(its funding &divide; the per-student rate) is the achievement <em>target</em> the MAP actuals are measured " +
       "against (a college at half its target draws half its cap; it never needs the full target to be funded), and " +
-      "unearned dollars roll forward. That earned figure is the second line of each cell. Only priorities MAP can " +
-      "measure today flex on actuals; the rest advance at full cap until their feed lands.";
+      "unearned dollars roll forward. That earned figure is the second line of each cell.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
@@ -5389,199 +5236,21 @@
   // only be 2, one for each year of funding?") + a window Total. The
   // per-priority P1/P2/P3 math lives in the row drill-in for the active
   // filter year. Columns are built dynamically from the selected years.
-  function yearColDefs() {
-    var fl = frontloaded();
-    return selectedYears().map(function (yr, i) {
-      // Under front-load the first column is NOT a year — it is the whole
-      // window disbursed up front. Naming it "Yr 1" is what made the money
-      // columns look like they disagreed with the per-year P-cells (Sam,
-      // 2026-07-30); calling it what it is kills the question at the source.
-      var flHead = fl && i === 0;
-      var title = flHead
-        ? "Full window (" + windowLabel() + ") — disbursed up front in " + yr +
-          " (front-loaded). Cap on top, earned so far beneath."
-        : fl
-          ? "Year " + (i + 1) + " (" + yr + ") — carryover only: unspent Year-1 funds roll forward"
-          : "Year " + (i + 1) + " (" + yr + ") allocation cap, with earned so far beneath";
-      return { key: "y" + (i + 1), cls: "", title: title,
-        label: flHead ? "Window (front-loaded)" : "Yr " + (i + 1) };
-    });
-  }
-  function totalColDef() {
-    return { key: "total", label: "Total " + windowLabel(), cls: "",
-      title: "Window allocation cap, with earned so far beneath (Σ priorities: cap × actual ÷ target, capped at 100%; " +
-        "priorities MAP cannot measure yet pay an advance at full cap)" };
-  }
-  // Sam's item-2 ruling (2026-08-30): the institution's ONE total — CR cap plus
-  // NC cap — as a column whose cell spans the CR/NC pair, centered both ways,
-  // rather than a third Award-range row. This is NOT the retired NC $ column
-  // coming back: that column printed the SAME money twice (a college's
-  // carve-out on its credit row and again on its NC row); this one prints a
-  // figure that appeared nowhere — the pair's sum (Mt. San Antonio: $400,000
-  // CR + $100,000 NC = $500,000). The pools stay separate; only the display adds.
-  function combinedColDef() {
-    return { key: "combined", label: "Combined " + windowLabel(), cls: "",
-      title: "The institution's combined window cap — the credit total plus the noncredit carve-out share, " +
-        "shown once for the CR/NC pair, with combined earned beneath. The two pots remain separate " +
-        "(noncredit is funded by its own carve-out, never the credit split); this column adds the caps for " +
-        "the reader, it does not merge the pools." };
-  }
+  // The per-year Yr1/Yr2 columns, the window Total column and the Combined
+  // column were retired with one-pool adoption (2026-08-31): one row per
+  // institution now carries a CR award / NC award pair, shown for the
+  // window under Combined funding and per year under Annual funding (the
+  // switch carries over). The pair's sum IS the one combined award.
+  // Per-priority columns (retired 2026-08-31 with the one-pool port)
   // Per-priority columns (Sam, 2026-07-24): one P1/P2/P3 column per priority of
   // the VIEWED year; the header hover is the priority goal + metric, the cell
   // stacks target over actual. Keys are stable (prio0/1/2) across the year filter.
   function stripTags(s) { return String(s || "").replace(/<[^>]*>/g, ""); }
-  function prioColDefs() {
-    return priorities(state.viewSlot).map(function (p, i) {
-      // Sam, 2026-08-23: "center the P1,2,3 column headers for the college rows
-      // and add the main title to them (e.g., P1 Access)". The ordinal alone
-      // made the reader hover to find out which priority a column was.
-      // `cls: "c"` centers the HEADER only — the cells build their own <td> in
-      // prioCellHtml and never read col.cls, and their two stacked lines
-      // (Tgt/Now) stay left-aligned so the figures line up down the column.
-      //
-      // The title is OPTIONAL and must stay so: yearPriorities in the live
-      // config is a SPARSE overlay over the baked defaults, and today slot 1
-      // carries no title at all (P1 Access and P2 Outreach do). A missing title
-      // falls back to the bare ordinal rather than printing "P3 undefined".
-      var nm = p.title ? String(p.title).trim() : "";
-      return { key: "prio" + i, label: "P" + (i + 1) + (nm ? " " + esc(nm) : ""), cls: "c",
-        title: p.label + (nm ? " — " + nm : "") + ": " + stripTags(p.description) +
-          " · METRIC: " + stripTags(p.metric) + ". " +
-          "Each cell: top = Tgt (target students · funding cap), bottom = Now (students posted in MAP · earning $ · % of target). " +
-          "Hover a cell for the effective $/student rate." };
-    });
-  }
-  // One priority cell: a TARGET line ("Tgt N stu · $cap") over an ACTUAL line
-  // ("Now N stu · $earned · %"). Redesigned 2026-07-28 (Sam) for non-techie
-  // clarity + an EQUITABLE look: the per-student rate is NOT shown inline —
-  // it varies by college once the $150k floor tops up small colleges, and a
-  // $38-vs-$47 spread side by side reads as unequal. Instead every college is
-  // measured on the same yardstick, "% of its own target," real dollars stay
-  // true (they match the Yr/Total columns), and the effective $/student + the
-  // floor reason live in the cell HOVER (Sam: "add a hover to explain the
-  // per-student amount difference"). Counts + % are normal weight; the real
-  // DOLLARS (cap + earned) are bold. c = shaped college row; isSystem = totals.
-  // The TGT/NOW label cell (Sam, 2026-08-27). It uses the SAME two span classes
-  // the priority cells stack with, which is what makes the labels line up with
-  // the lines they name — matching the line-height by hand would drift the first
-  // time either cell's typography changed.
-  function tgtNowLabelCellHtml() {
-    return '<td class="cf-lblcol"><span class="cf-t"><span class="cf-lbl">TGT:</span></span>' +
-      '<span class="cf-a"><span class="cf-lbl">NOW:</span></span></td>';
-  }
-  function prioCellHtml(c, p, isSystem) {
-    var isFtes = prioIsFtes(p);
-    var heads = isSystem ? totalHeads() : (c.headcount || 0);
-    var target = prioTarget(isSystem ? null : c, p);
-    var cap = isSystem ? prioCap(netCollege(), state.viewSlot, p) : (c[p.key] || 0);
-    var fr = earnFraction(isSystem ? null : c, p);
-    // A front-loaded later year has no new money on the table — say so rather
-    // than rendering a wall of $0 that reads as a defect.
-    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
-      return '<td class="cf-prio cplfund-carry" title="' +
-        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement — the whole " +
-          windowLabel() + " window was placed on the table in Year 1 and is earned against the Year-1 " +
-          "targets. Unspent Year-1 funds roll forward to be drawn here.") +
-        '">↻ carryover</td>';
-    }
-    // Every dollar flexes on achievement now that the guaranteed rural allowance
-    // is retired (2026-08-22) — nothing in the college pool is unconditional.
-    var earned = cap * fr.f;
-    // The row's OWN effective rate (cap ÷ target) — equals the statewide base for
-    // most colleges; higher for the small colleges topped up to the floor.
-    var effRate = target > 0 ? cap / target : 0;
-    var baseRate = p.per_student || effRate;   // statewide/average rate
-    var floored = !isSystem && c && c.floored;
-    // Actual line — a shared "% of target" yardstick, real earned dollars bold.
-    var actLine;
-    if (fr.status === "earned") {
-      actLine = '' + fmtCountK(fr.actual) + " " + (isFtes ? "FTES" : "stu") + " &middot; " +
-        '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
-        (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
-    } else if (fr.status === "none") {
-      actLine = '0 ' + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-u">' + fmtMoneyK(0) +
-        '</span> &middot; <span class="cf-pct">0%</span>';
-    } else if (fr.status === "suppressed") {
-      actLine = '<span class="cf-gap">' + maskLt(true) + '</span> &middot; <span class="cf-u">' +
-        fmtMoneyK(earned) + "</span>";
-    } else if (fr.status === "undelivered" || fr.status === "bad_src") {
-      // Both earn $0, and the "advances at full cap" wording in the branch below
-      // would be a plain lie about them — so they get their own line rather than
-      // sharing the gap/pending one. "no feed" is the ABSENT zero; the 0% is
-      // omitted deliberately, because a percentage of a target nothing is
-      // measuring against would read as a measurement.
-      actLine = '<span class="cf-gap">' +
-        (fr.status === "bad_src" ? "not wired" : "no feed") + '</span> &middot; <span class="cf-u">' +
-        fmtMoneyK(0) + "</span>";
-    } else {   // gap / pending — not measurable yet; advances at full cap
-      actLine = '<span class="cf-gap">' +
-        (fr.status === "gap" ? "gap" : "&hellip;") + '</span> &middot; <span class="cf-u">' + fmtMoneyK(earned) + "</span>";
-    }
-    var actExplain = fr.status === "earned"
-      ? (isFtes
-          ? fmtNum1(fr.actual) + " CPL FTES posted (" + fmtInt(fr.raw) + " units \u00f7 " +
-            fmtNum1(unitsPerCplFtes(c && baseCollege(c.college))) + " units/FTES" +
-            (c && baseCollege(c.college) && baseCollege(c.college).quarter ? ", quarter calendar" : "") + ")"
-          : fmtInt(fr.actual) + " students posted") + " (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
-      : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
-      : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
-      : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
-      : fr.status === "undelivered"
-        ? "this measure is not in the daily feed yet — $0 earned, and deliberately NOT an advance " +
-          "(the target and the potential stand; the earning starts when the feed carries it)"
-      : fr.status === "bad_src"
-        ? "this priority is pinned to an unknown measure (" + esc(String(fr.meas && fr.meas.bad_src)) +
-          ") — nothing can score it, so it earns $0 rather than advancing"
-      : "nothing posted in MAP yet";
-    // Hover — the full story incl. the effective per-student rate + WHY it differs
-    // (the floor top-up or the ceiling hold; the SYSTEM row has neither).
-    var reasons = [];
-    if (floored) {
-      reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up to stand up the program)");
-    } else if (!isSystem && c && c.capped) {
-      // The ceiling's mirror of the floor reason. Say it the same way round —
-      // what the college's own size would have earned, and where the difference
-      // went — so a capped college can see the money was redistributed, not lost.
-      reasons.push("held to the " + fmtMoney(capWindow()) + " maximum allocation (the largest colleges are capped so the " +
-        "difference re-splits across the rest of the system)");
-    }
-    // Under front-load the WHOLE window sits behind an unchanged per-year target,
-    // so the statewide base to compare against is the window rate, not the annual
-    // one — otherwise a plain college reads "at the base rate" while its cap is
-    // nYears× that rate, which is simply false (Sam, 2026-07-30).
-    var flCell = frontloaded();
-    var cmpBase = flCell ? baseRate * nYears() : baseRate;
-    var flNote = flCell
-      ? " Front-loaded: the full " + windowLabel() + " window is on the table in Year 1 against the same " +
-        fmtInt(target) + "-student target, so the statewide base works out to " + fmtRate(cmpBase) +
-        "/student (" + fmtRate(baseRate) + " × " + nYears() + ")."
-      : "";
-    // An UNFLOORED college's effective rate sits BELOW the statewide base, because
-    // the $150K floor top-ups are funded by renormalizing the proportional split
-    // over exactly these colleges (see the Floor note in the formula box). Saying
-    // "at the statewide base rate" while the cell's own cap ÷ target is ~10% lower
-    // is a claim the cell itself contradicts — so name the renormalization.
-    var offBase = cmpBase > 0 ? Math.abs(effRate - cmpBase) / cmpBase : 0;
-    var rateSentence = (reasons.length
-      ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
-        fmtRate(cmpBase) + "/student statewide base because this college's allocation is " + reasons.join(" and ") + "."
-      : offBase > 0.02
-        ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, " +
-          (effRate < cmpBase ? "below" : "above") + " the " + fmtRate(cmpBase) +
-          "/student statewide base because the proportional split is renormalized over the colleges above the " +
-          fmtMoney(floorWindow()) + " floor to fund the ones topped up to it."
-        : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
-    var title = p.label + " — " + p.title + ". Target " +
-      (isFtes ? fmtNum1(target) + " CPL FTES (" + fmtInt(target * unitsPerCplFtes(c && baseCollege(c.college))) +
-                " units — its allocation \u00f7 " + fmtRate(prioPrice(p)) + "/FTES)"
-              : fmtInt(target) + " students (" + fmtPctTrim(reachPct(isSystem ? null : c, target)) +
-                " of its headcount)") + ". " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
-    return '<td class="cf-prio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) +
-      "</span> " + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
-      '<span class="cf-a">' + actLine + "</span>" +
-      "</td>";
-  }
+  // prioColDefs / the TGT-NOW label column / prioCellHtml are retired: the
+  // per-priority math lives in each row's expand (the locked mock's 7-column
+  // detail table — CR funding / NC funding / Target / Actual / Current Total /
+  // Total Possible), not in table columns.
+  // CSV columns for the per-priority target/actual (the export keeps every fact).
   // CSV columns for the per-priority target/actual (matches the on-screen cells).
   function prioCsvHead() {
     var h = [];
@@ -5601,49 +5270,26 @@
     return out;
   }
   function COLS_COLLEGE() {
+    var win = frontloaded();
+    var awardWhen = win ? "for the " + windowLabel() + " window (Combined funding)" : "per year (Annual funding)";
     return [
       { key: "order", label: "#", cls: "" },
-      { key: "college", label: "College", cls: "t" },
+      { key: "college", label: "Institution", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      // Sam, 2026-08-27: the size column now carries BOTH lanes (CR + NC), so
-      // "Credit FTES" no longer describes what is in it.
-      { key: sizeSortKey(), label: usesFtes() ? "2025 Ttl FTES/Funding" : "Headcount", cls: "",
-        title: usesFtes()
-          ? "2025-26 annual CREDIT FTES (CCCCO DataMart). This is the allocation basis — each college's share of statewide credit FTES sets its share of the pool. Noncredit FTES is excluded here; the noncredit campuses have their own carve-out. Hover a cell for that college's headcount."
-          : "Annual student headcount (CCCCO MIS DataMart). This is the allocation basis — each college's share of statewide headcount sets its share of the pool. Hover a cell for that college's credit FTES." }
-    ].concat([
-      // Sam, 2026-08-27: "Remove repeated Tgt and Now and move those labels
-      // before the P1 column, left justified." One label column instead of the
-      // same two words repeated in every priority cell on every row — the
-      // labels were costing 6 repetitions per college pair and saying nothing
-      // the reader had not already learned by the second row.
-      // ⚠️ NOT sortable: it holds no data. A focusable header that sorts on a
-      // key no row carries is a keyboard trap that does nothing.
-      { key: "tgtnow", label: "", cls: "cf-lblcol", sortable: false,
-        title: "Each priority cell stacks two lines: TGT — the target and the funding cap for this year; NOW — what the college has actually posted in MAP and earned against it." }
-    ], prioColDefs(), [
-      { key: "elig", label: "Elig", cls: "",
-        title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (the second line of each money cell)." }
-    ], yearColDefs(), [
-      totalColDef(),
-      combinedColDef(),
-      // ⭐ NONCREDIT MONEY IS STILL NEVER ADDED INTO THE CREDIT TOTAL — the
-      // requirement Sam set on 2026-08-22 ("I want it on the surface the amount
-      // admin should give to NC so it doesn't get lumped into the whole — NC is
-      // often considered the neglected step child") is now carried by the ROW
-      // structure rather than by a column. Every institution renders as a CR/NC
-      // pair, SYSTEM included, so the separation is one a reader sees rather
-      // than one they have to read a column header to learn.
-      //
-      // ⚠️ The column was RETIRED because it printed the same money twice: a
-      // college's carve-out appeared in its credit row's NC $ cell AND in its
-      // NC row's total. The old NC row's own cell rendered "↑" with the hover
-      // "the NC $ figure on the credit row above is the same money, summarized"
-      // — the duplication was documented rather than fixed. The college/
-      // standalone split that only its hover carried now sits on the SYSTEM NC
-      // row, in the open.
+      { key: "cr_ftes", label: "CR FTES", cls: "c",
+        title: "Credit full-time-equivalent students (2025-26 DataMart) — the institution's credit teaching size. Combined with its noncredit FTES it sets the institution's share of the funding." },
+      { key: "nc_ftes", label: "NC FTES", cls: "c",
+        title: "Annual noncredit FTES (MIS 2025-26) — the institution's noncredit teaching size. It sizes the award WITH the credit FTES, and sets the noncredit share of the award — restricted to noncredit outcomes." },
+      // KEPT ON by Sam's ruling (2026-08-31 — the one R-sheet veto): the
+      // eligibility column stays visible by default; the Columns menu can hide it.
+      { key: "elig", label: "Elig", cls: "c",
+        title: "Baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation confirmed by the deadline + Veteran Star ≥75% JSTs — replaced for the three noncredit-only campuses by noncredit certificates posted as exhibits in MAP). A sector turns green when the institution meets it; a fully green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL." },
+      { key: "cr_award", label: "CR award", cls: "c",
+        title: "The credit share of the max award, " + awardWhen + " — earned against the credit priority measures, with the Current Total beneath. Awards are based on outcomes, not automatically awarded." },
+      { key: "nc_award", label: "NC award", cls: "",
+        title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; the credit program cannot draw it. The pair's sum is the institution's one combined max award." },
       { key: "working_adults", label: "Working adults*", cls: "" }
-    ]);
+    ];
   }
   function districtShort(name) {
     return String(name || "").replace(/\s+Community College District$/i, " CCD");
@@ -5651,16 +5297,13 @@
 
   var state = {
     q: "", view: "college", group: "none", viewSlot: "1",
-    // WHICH LANE the priority CARDS describe (Sam, 2026-08-28). One switch for
-    // all three cards and every year — never per card. He named the failure
-    // himself: three independent toggles is eight states, and six of them
-    // describe no lane at all (the shares still read 34/33/33 while the pots
-    // come from two pools that sum to nothing). This is a VIEW, not a dial:
-    // nothing here is stored, and the college table below always shows both
-    // lanes as its CR/NC row pair.
-    viewLane: "cr",
-    sortKey: "order", sortDir: 1, open: {}, addingProject: false,
+    // The lane view switch is retired (R1, 2026-08-31) — one pool, one card
+    // set. Default sort is ALPHABETICAL (Sam, 2026-08-31: a size-sorted list
+    // reads as a league table and invites colleges to compare max awards
+    // first).
+    sortKey: "college", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
+    previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
   };
 
@@ -5713,35 +5356,23 @@
   var COLS_STORE = "cplfund_cols_v1";
   var COL_PREFS = (function () {
     try { var r = JSON.parse(localStorage.getItem(COLS_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
-    return { college: { working_adults: true } };   // default: county context hidden
+    // Default hidden: district and the county context — the mock's default
+    // view (they live in the Columns menu); the eligibility column is ON
+    // (Sam's R10 veto, 2026-08-31).
+    return { college: { district: true, working_adults: true } };
   })();
   function saveColPrefs() { try { localStorage.setItem(COLS_STORE, JSON.stringify(COL_PREFS)); } catch (e) {} }
   function hiddenCols() { return COL_PREFS.college || (COL_PREFS.college = {}); }
   function isColHidden(key) { return !!hiddenCols()[key]; }
   function idColKey() { return "college"; }
   function colHideStyleHtml() {
+    // One row shape per institution (R6, 2026-08-31) — no paired-NC-row
+    // nth-child compensation any more.
     var hid = hiddenCols(), id = idColKey(), rules = [];
-    var cols = activeCols();
-    // The combined cell spans each CR/NC pair from the CR row, so the NC row
-    // shapes (.cplfund-ncrow and the statewide .cplfund-ncsysrow) carry one
-    // FEWER td: a column to the right of it sits one nth-child earlier there,
-    // and the combined column's own rule must not touch them at all. nth-child
-    // counts DOM cells, not visible ones, so hiding the combined column keeps
-    // every later index valid on the CR side while the LAYOUT re-aligns (both
-    // row kinds then show the same visible cell count).
-    var combinedPos = -1;
-    cols.forEach(function (col, i) { if (col.key === "combined") combinedPos = i + 1; });
-    var NOT_NC = ":not(.cplfund-ncrow):not(.cplfund-ncsysrow)";
-    cols.forEach(function (col, i) {
+    activeCols().forEach(function (col, i) {
       if (hid[col.key] && col.key !== id) {
         var p = i + 1;
-        if (combinedPos < 0 || p < combinedPos) {
-          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
-        } else if (p === combinedPos) {
-          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail)" + NOT_NC + " td:nth-child(" + p + "){display:none}");
-        } else {
-          rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail)" + NOT_NC + " td:nth-child(" + p + "),.cplfund-table tbody tr.cplfund-ncrow td:nth-child(" + (p - 1) + "),.cplfund-table tbody tr.cplfund-ncsysrow td:nth-child(" + (p - 1) + "){display:none}");
-        }
+        rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
       }
     });
     return rules.length ? "<style>" + rules.join("") + "</style>" : "";
@@ -5906,13 +5537,16 @@
       floorInfeasible: floorInfeasible, floorDemanded: totFloor };
   }
 
-  // ── the CREDIT lane's caller ─────────────────────────────────────────────
-  // Parameterized on the ceiling so allocModel can run it twice: once for real,
-  // once with the ceiling OFF, which is what makes the "released" figure the
-  // money the ceiling actually moved rather than a proxy for it.
+  // ── the ONE POOL's caller (Sam, adopted 2026-08-31) ──────────────────────
+  // One roster — every institution, the noncredit-only three included — sized
+  // by combined teaching, clamped to the one window ($150K base / $400K cap on
+  // the combined award). Parameterized on the ceiling so allocModel can run it
+  // twice: once for real, once with the ceiling OFF, which is what makes the
+  // "released" figure the money the ceiling actually moved rather than a proxy
+  // for it.
   function solveAlloc(cap) {
     return solveBounded({
-      rows: base().colleges,
+      rows: oneRoster(),
       keyOf: function (c) { return c.college; },
       sizeOf: sizeOf,
       net: netCollege(),
@@ -5924,7 +5558,7 @@
     if (_allocCache) return _allocCache;
     var cap = capWindow();
     var r = solveAlloc(cap);
-    var cols = base().colleges;
+    var cols = oneRoster();
     // What the FLOOR costs the pool: the top-up vs a pure proportional split.
     // Every row is measured against the same floor now — the reduced-floor case
     // went with the rural carve-out (2026-08-22).
@@ -5969,12 +5603,20 @@
   // IS its main-pool entitlement — there is no second, guaranteed component, and
   // NOTHING in the college pool is unconditional any more. Every dollar flexes
   // on MAP achievement.
+  // An institution's one award and its two lanes — the FTES-share
+  // decomposition (ruled 2026-08-31). The noncredit share is restricted to the
+  // noncredit measures; the credit program cannot draw it.
+  function instSplit(c) {
+    var W = allocModel().W[c.college] || 0;
+    var f = laneShareOf(c);
+    return { w: W, cr: W * f.cr, nc: W * f.nc };
+  }
   function collegeAlloc(c) {
-    var mainW = allocModel().W[c.college] || 0;
-    var W = mainW;
+    var sp = instSplit(c);
+    var W = sp.w, crW = sp.cr, ncW = sp.nc;
     var ny = nYears();
     var fl = frontloaded();
-    var out = { total: 0, w: W, main_w: mainW,
+    var out = { total: 0, w: W, main_w: W, cr_award: 0, nc_award: 0,
       floored: !!allocModel().floored[c.college], capped: !!allocModel().capped[c.college] };
     var ys = [], eys = [], earnTotal = 0;
     // Earned splits two ways so the figure can be read honestly (Sam,
@@ -5983,6 +5625,7 @@
     // provisionally, flips automatically when the feed lands). Without the
     // split, advances silently dominate the earned number.
     var earnMeasured = 0, earnAdvance = 0, earnWithheld = 0;
+    var earnCr = 0, earnNc = 0;
     // The baseline participation gate (Sam, 2026-07-30). Blocked → the college
     // earns NOTHING; the cap is untouched. What it could have earned is tracked
     // as WITHHELD and held in reserve (never redistributed).
@@ -5995,19 +5638,34 @@
       var v = W * shareSum(slot) / ny;
       ys.push(v);
       out.total += v;
-      // Earned this year: the allocation flexes on MAP achievement (Σ
-      // priorities: cap × fraction; data-gap/absent priorities pay full cap).
+      out.cr_award += crW * shareSum(slot) / ny;
+      out.nc_award += ncW * ncShareSum(slot) / ny;
+      // Earned this year, per lane (one-pool form, 2026-08-31):
+      //  • the CREDIT slice earns on the credit priorities — advances for
+      //    unmeasured metrics included, exactly as before;
+      //  • the NONCREDIT slice earns ONLY on the noncredit priorities
+      //    (ncPriorities — pinned to the origination measures), whose
+      //    undelivered/absent branches all yield f = 0: listed from day one,
+      //    $0 earned until the feeds report (F1), and NEVER an advance. For
+      //    the noncredit-only institutions crW is 0 and their entire award
+      //    rides this lane — no advance on origination (N2 b).
       // Goes through prioCap, so under front-load ALL of it is earnable in
-      // Year 1 against the Year-1 targets and later years carry nothing (their
-      // metrics never touch the money).
+      // Year 1 against the Year-1 targets and later years carry nothing.
       var ey = 0;
-      priorities(slot).forEach(function (p) {
-        var fr = earnFraction(c, p);
-        var paid = prioCap(mainW, slot, p) * fr.f;
+      var pay = function (paid, fr, lane) {
         if (gate.blocked) { earnWithheld += paid; return; }   // held in reserve
         ey += paid;
+        if (lane === "nc") earnNc += paid; else earnCr += paid;
         if (!earnIsMeasured(fr)) earnAdvance += paid;   // gap/pending advance; undelivered/bad_src contribute $0
         else earnMeasured += paid;
+      };
+      priorities(slot).forEach(function (p) {
+        var fr = earnFraction(c, p);
+        pay(prioCap(crW, slot, p) * fr.f, fr, "cr");
+      });
+      ncPriorities(slot).forEach(function (p) {
+        var fr = earnFraction(c, p);
+        pay(ncPrioCap(ncW, slot, p) * fr.f, fr, "nc");
       });
       eys.push(ey);
       earnTotal += ey;
@@ -6018,13 +5676,18 @@
     out.earned_total = earnTotal;
     out.earned_measured = earnMeasured;
     out.earned_advance = earnAdvance;
+    out.earned_cr = earnCr;
+    out.earned_nc = earnNc;
     priorities(state.viewSlot).forEach(function (p) {
-      // The per-priority CAP for the viewed year — the money actually on the
-      // table there. Under front-load that is the whole window in Year 1
-      // (against an unchanged target → the doubled effective per-student rate)
-      // and $0 in later years, which read as carryover.
-      out[p.key] = prioCap(W, state.viewSlot, p);
+      // The per-priority caps for the viewed year, BY LANE — the drill-in's
+      // CR funding / NC funding columns. p.key carries the credit slice (the
+      // earn base); "nc_" + p.key its noncredit twin. Under front-load that is
+      // the whole window in Year 1 and $0 in later years (carryover).
+      out[p.key] = prioCap(crW, state.viewSlot, p);
       out[p.key + "_heads"] = prioTarget(c, p);
+    });
+    ncPriorities(state.viewSlot).forEach(function (p) {
+      out[p.key] = ncPrioCap(ncW, state.viewSlot, p);
     });
     return out;
   }
@@ -6040,22 +5703,34 @@
       out.total += v;
     });
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
-    // Earned totals = Σ colleges (the real disbursement, each on its own actuals).
+    // Earned totals = Σ institutions (the real disbursement, each on its own
+    // actuals) — the noncredit-only rows included. The CR/NC decomposition
+    // sums feed the ONE SYSTEM row's paired columns.
     var eys = selectedYears().map(function () { return 0; }), earnTotal = 0;
-    var eMeas = 0, eAdv = 0, eHeld = 0;
-    base().colleges.forEach(function (col) {
+    var eMeas = 0, eAdv = 0, eHeld = 0, eCr = 0, eNc = 0;
+    var crA = 0, ncA = 0, crF = 0, ncF = 0;
+    oneRoster().forEach(function (col) {
       var a = collegeAlloc(col);
       earnTotal += a.earned_total;
       eMeas += a.earned_measured || 0;
       eAdv += a.earned_advance || 0;
       eHeld += a.earned_withheld || 0;
+      eCr += a.earned_cr || 0;
+      eNc += a.earned_nc || 0;
       eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
+      var sp = instSplit(col);
+      crA += sp.cr; ncA += sp.nc;
+      crF += Number(col.credit_ftes) || 0;
+      ncF += col.nco ? (Number(col.ftes) || 0) : (Number(col.noncredit_ftes) || 0);
     });
     eys.forEach(function (v, i) { out["ey" + (i + 1)] = v; });
     out.earned_total = earnTotal;
     out.earned_measured = eMeas;
     out.earned_advance = eAdv;
     out.earned_withheld = eHeld;
+    out.earned_cr = eCr; out.earned_nc = eNc;
+    out.cr_award = crA; out.nc_award = ncA;
+    out.cr_ftes = crF; out.nc_ftes = ncF;
     return out;
   }
 
@@ -6065,21 +5740,25 @@
 
   function rowsFiltered() {
     var q = state.q.trim().toLowerCase();
-    var rows;
-    {
-      rows = base().colleges.map(function (c) {
+    // EVERY institution once (one pool, 2026-08-31): the college rows plus the
+    // noncredit-only three as ordinary rows. Shaped rows carry both lanes'
+    // FTES and award shares beside the collegeAlloc() figures.
+    var rows = oneRoster().map(function (c) {
       var a = collegeAlloc(c);
+      var sp = instSplit(c);
       var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
         headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
-        credit_ftes: c.credit_ftes, noncredit_ftes: c.noncredit_ftes, size_pct: sizePct(c),
+        credit_ftes: c.credit_ftes, noncredit_ftes: c.nco ? c.ftes : c.noncredit_ftes,
+        cr_ftes: Number(c.credit_ftes) || 0,
+        nc_ftes: c.nco ? (Number(c.ftes) || 0) : (Number(c.noncredit_ftes) || 0),
+        size_pct: sizePct(c),
         working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
-        rural: !!c.rural, nc_award: ncAward(c.college)
+        rural: !!c.rural, nco: !!c.nco, feeder: c.feeder || null, ftes: c.ftes
       };
       Object.keys(a).forEach(function (k) { r[k] = a[k]; });
       return r;
-      });
-    }
+    });
     if (q) {
       rows = rows.filter(function (r) {
         var hay = [r.college, dispName(r.college), r.district, r.county].join(" ");
@@ -6088,21 +5767,9 @@
     }
     function sortVal(r) {
       if (state.sortKey === "elig") return eligScore(r.college);
-      // Per-priority columns sort by the college's posted actual on that
-      // priority (earned status); nothing-posted → 0, unmeasurable → last.
-      if (state.sortKey.indexOf("prio") === 0) {
-        var p = priorities(state.viewSlot)[Number(state.sortKey.slice(4))];
-        if (!p) return null;
-        var fr = earnFraction(r, p);
-        return fr.status === "earned" ? fr.actual : !earnIsMeasured(fr) ? null : 0;
-      }
-      // The combined column sorts on the pair's summed window cap — computed
-      // here rather than stored on the row, so a presentation column never
-      // mutates the college objects.
-      if (state.sortKey === "combined") {
-        var nca = ncPairAlloc(r.college);
-        return (r.total || 0) + (nca ? nca.total || 0 : 0);
-      }
+      // Alphabetical sorts on the DISPLAYED name (Coalinga, Lemoore …), which
+      // is the order a reader scans, not the internal key.
+      if (state.sortKey === "college") return dispName(r.college);
       return r[state.sortKey];
     }
     rows = rows.slice().sort(function (a, b) {
@@ -6116,7 +5783,7 @@
     return rows;
   }
 
-  // ── row + drill-in rendering ──────────────────────────────────────────
+  // ── row + drill-in rendering ──────────────────────────────────────────  // ── row + drill-in rendering ──────────────────────────────────────────
   // Every money cell STACKS cap over earned (Sam, 2026-07-30 — the basis toggle
   // was retired because the two numbers could never be compared side by side and
   // the toggle's scope silently differed from the P-cells'). Same shape the
@@ -6178,599 +5845,190 @@
         (showFig ? "held " + fmtMoney(held) : "confirm participation to start earning") + "</span>";
     }
     var pct = earned / cap;
-    var advTag = adv > 0.5
-      ? ' <span class="cf-adv" title="' + fmtMoney(adv) + " of this is a provisional ADVANCE — paid at full cap because MAP cannot measure that priority's metric yet; it flips to achievement-based automatically when the feed lands" +
-        '">adv ' + fmtMoney(adv) + "</span>"
-      : "";
     // Sam, 2026-08-27: "earning", not "earned" — the money is not a done deal
     // until the college qualifies, and the past tense read like a settled award.
-    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + advTag + "</span>";
+    // The adv chip retired 2026-09-01 (Sam: no mention of the advance concept
+    // on any rendered surface; the earning arithmetic is unchanged).
+    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + "</span>";
   }
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
+    // meas/adv accepted for call-site stability; neither renders (2026-09-01).
     var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + fmtMoney(earned)];
-    if (meas > 0.5) bits.push(fmtMoney(meas) + " measured on actual CPL in MAP");
-    if (adv > 0.5) bits.push(fmtMoney(adv) + " advance (metric not measurable yet)");
     if (held > 0.5) bits.push(fmtMoney(held) + " WITHHELD — baseline participation not met; held in reserve, rolls forward");
     return bits.join(" · ");
   }
-  // Per-year earned components, pro-rated from the window split (the split is
-  // accumulated across the whole window; each year carries its share of it).
-  function yearEarnParts(row, i) {
-    var earned = row["ey" + (i + 1)] == null ? 0 : row["ey" + (i + 1)];
-    var tot = row.earned_total || 0;
-    var f = tot > 0 ? earned / tot : 0;
-    // WITHHELD is pro-rated by the cell's share of the WINDOW CAP, not by 1/nYears.
-    // Those differ under front-load, where the year-1 cell carries the whole window
-    // (y1 == total) — a flat 1/nYears split would show the full cap over half the
-    // withheld amount. A gated college can also have earned_total == 0, so `f` is
-    // unusable here; the cap share is always well defined.
-    var capFrac = row.total > 0 ? ((row[yearKeys()[i]] || 0) / row.total) : 0;
-    return { earned: earned, meas: (row.earned_measured || 0) * f,
-      adv: (row.earned_advance || 0) * f,
-      held: (row.earned_withheld || 0) * capFrac };
+  // ── the CR award / NC award cells (one row per institution — R6) ──────
+  // Shown for the window under Combined funding, per year under Annual
+  // funding; the Current Total stacks beneath (cumulative to date in both
+  // views — earning is a window quantity).
+  function awardDivisor() { return frontloaded() ? 1 : nYears(); }
+  // Does the daily feed CARRY the noncredit measures at all? Global — a
+  // property of the feed, not of a row (srcDelivered asks the artifact).
+  function ncFeedsDelivered() {
+    var p = ncPriorities(state.viewSlot)[0];
+    var meas = p && measureOf(p);
+    return !!(meas && meas.src && !meas.undelivered && !meas.bad_src);
   }
-  function yearCellsHtml(row) {
-    var ys = selectedYears();
-    var fl = frontloaded();
-    return yearKeys().map(function (yk, i) {
-      if (fl && i > 0) {
-        return '<td class="cplfund-carry" title="Year ' + (i + 1) + " (" + esc(ys[i]) +
-          ') — carryover only: unspent Year-1 funds roll forward (front-loaded disbursement)">↻ carryover</td>';
-      }
-      var cap = row[yk] == null ? 0 : row[yk];
-      var pt = yearEarnParts(row, i);
-      var capLabel = fl
-        ? "Full window (" + esc(windowLabel()) + "), disbursed up front (front-loaded)"
-        : "Year " + (i + 1) + " (" + esc(ys[i]) + ") allocation cap";
-      return '<td title="' + esc(earnedCellTitle(capLabel, cap, pt.earned, pt.meas, pt.adv, pt.held)) + '">' +
-        fmtMoney(cap) + earnedSubHtml(cap, pt.earned, pt.adv, pt.held, row.gate_blocked) + "</td>";
-    }).join("");
+  function crAwardCellHtml(row) {
+    var cap = (row.cr_award || 0) / awardDivisor();
+    if (row.nco) {
+      return '<td class="cf-award dk c" title="A noncredit-only institution: its whole award is the noncredit share, earned by origination (N2 b).">$0</td>';
+    }
+    var earned = row.earned_cr || 0;
+    var title = earnedCellTitle("Credit share of the max award" +
+        (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
+      cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
+    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) +
+      earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
   }
-  // Window total cell — the cap, with earned + % (+ any advance) stacked under it.
-  function totalCellHtml(row) {
-    return '<td class="tot" title="' + esc(earnedCellTitle("Window cap (" + windowLabel() + ")",
-        row.total, row.earned_total || 0, row.earned_measured || 0,
-        row.earned_advance || 0, row.earned_withheld || 0)) + '">' +
-      fmtMoney(row.total) +
-      earnedSubHtml(row.total, row.earned_total || 0, row.earned_advance || 0,
-        row.earned_withheld || 0, row.gate_blocked) + "</td>";
-  }
-  // The NC half of a college pair's money, as the row object ncCollegeRowHtml
-  // renders. Null when the pair's NC row is a below-threshold or none-on-record
-  // shape — those earn $0 from the carve-out, so the combined figure is the CR
-  // total alone.
-  function ncPairAlloc(college) {
-    var inst = ncInstFor(college);
-    if (!inst || !ncInLane(inst)) return null;
-    return ncAllocFor(inst);
-  }
-  // The pair's one cell (Sam's item-2 ruling, 2026-08-30). It spans both rows of
-  // the pair from the CR row — the three NC row shapes deliberately emit no cell
-  // in this column, and colHideStyleHtml() compensates their nth-child indices.
-  function combinedCellHtml(cr, nc, spanTwo, gateBlocked) {
-    var total = (cr.total || 0) + (nc ? nc.total || 0 : 0);
-    var earned = (cr.earned_total || 0) + (nc ? nc.earned_total || 0 : 0);
-    var meas = (cr.earned_measured || 0) + (nc ? nc.earned_measured || 0 : 0);
-    var adv = (cr.earned_advance || 0) + (nc ? nc.earned_advance || 0 : 0);
-    var held = (cr.earned_withheld || 0) + (nc ? nc.earned_withheld || 0 : 0);
-    return '<td class="tot cf-combined"' + (spanTwo ? ' rowspan="2"' : "") +
-      ' title="' + esc(earnedCellTitle("Combined CR + NC window cap (" + windowLabel() + ")",
-        total, earned, meas, adv, held)) + '">' +
-      fmtMoney(total) +
-      earnedSubHtml(total, earned, adv, held, gateBlocked) + "</td>";
+  function ncAwardCellHtml(row) {
+    var cap = (row.nc_award || 0) / awardDivisor();
+    if (cap <= 0.5) {
+      // Sam's data-quality instrument (2026-08-28): a zero row is a CHECKABLE
+      // claim — "if they disagree and say, Yes, we have NC, we can find the
+      // error and fix it."
+      return '<td class="cf-award dk" title="No noncredit FTES on record for this institution in the 2025-26 MIS data, so its award has no noncredit share. If it runs a noncredit program, this is a data error worth reporting — tell the MAP team and it can be traced and fixed.">$0' +
+        '<span class="sub">none on record</span></td>';
+    }
+    // The feeds-waiting branch retired 2026-09-01 (Sam: the rendered copy
+    // names no unshipped feed) — a $0-earning noncredit share renders exactly
+    // like any other cell; the arithmetic (F1: never a stand-in figure) is
+    // unchanged.
+    var title = earnedCellTitle("Noncredit share of the max award" +
+        (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
+      cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
+    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) +
+      earnedSubHtml(cap, row.earned_nc || 0, 0, 0, row.gate_blocked) + "</td>";
   }
   function rowChips(c) {
     var chips = "";
-    // The lane chip (Sam, 2026-08-27: "CR/NC chips", not the words). The rule is
-    // that it appears where a noncredit row follows, so it never labels a
-    // distinction that is not on screen — and since 2026-08-28 every college is
-    // rendered as a CR/NC pair, so it always does.
-    if (ncRowShown(c)) chips += '<span class="cplfund-chip cf-lanechip">CR</span>';
+    // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): AT BASE /
+    // AT CAP / NC ONLY — the quietest thing in the row, never the first read.
+    if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
-    if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
-    if (c.capped) chips += '<span class="cplfund-chip" title="Maximum allocation applied — held to ' + fmtMoney(allocModel().cap) + ' for the window; the difference re-splits across the other colleges">⬇</span>';
+    if (c.floored) chips += '<span class="cplfund-chip" title="' +
+      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
+        ", so it is brought up to the base award — funded from within the same total.") + '">at base</span>';
+    if (c.capped) chips += '<span class="cplfund-chip" title="' +
+      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
+        ", so it is held at the cap — the difference funds the other institutions.") + '">at cap</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
-    // attestation form focused, so a college admin doesn't have to expand-then-hunt.
-    // ⚠️ The CHIP says "Confirm" and the drill-in button says "Confirm
-    // participation" — the row is width-constrained (no horizontal scroll at
-    // desktop widths) and the noun is carried by the hover. Sam approved the
-    // phrase with the short chip form, 2026-08-27.
-    // Public + private; hidden once opted in. Not a CURATE_ATTR, so it survives the
-    // public-mode sweep like the form button does.
+    // attestation form focused. Public + private; hidden once opted in.
     if (partShown() && !ELIG.optin[c.college]) {
       chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
         '" title="Confirm ' + esc(dispName(c.college)) + '&#39;s participation in CPL Implementation Funding — opens the short attestation form">✎ Confirm</button>';
     }
     return chips;
   }
-  // The NC $ cell. Deliberately says WHY it is empty rather than printing a
-  // bare dash: "below the threshold" is a policy outcome the reader can act on
-  // (the dial is one box away), while a dash reads as missing data.
-
-  // The SYSTEM row's NC total. It sums the COLLEGE rows only, because the three
-  // standalone institutions are not rows in this table — so the figure would
-  // otherwise silently claim the whole carve-out lands on colleges. The sub-line
-  // names the remainder rather than hiding it.
-
-  // ── OPTION A: the NONCREDIT ROW (Sam, 2026-08-27) ─────────────────────────
-  // "Option A — a second NC row per college", not extra lines inside each
-  // priority cell. His display rules, verbatim: CR/NC chips (not the words
-  // "Credit"/"Noncredit"), Tgt and Now folded onto aligned lines, abbreviated
-  // $99.7K, bold only on the Total column.
-  //
-  // The row is built as a collegeAlloc()-SHAPED object so yearCellsHtml() and
-  // totalCellHtml() render it unchanged. That is deliberate: those two carry the
-  // cap/earned/advance/withheld stacking and the front-load carryover states,
-  // and a second copy of that logic for the NC lane is a second thing to keep in
-  // step. Every figure inside the object is the noncredit lane's own.
-  function ncAllocFor(inst) {
-    var W = ncAward(inst.key);
-    var m = ncModel();
-    var ny = nYears(), fl = frontloaded();
-    // The participation gate is a property of the INSTITUTION, not of a lane, so
-    // a college that has not opted in does not earn noncredit money either. It
-    // can only ever REDUCE, so carrying it cannot over-pay. ⚠️ Sam has NOT ruled
-    // on whether the standalone continuing-education institutions (which have no
-    // credit row, and so no gate record) have a gate of their own — they are
-    // treated as ungated here, which is the reading that does not invent one.
-    var gate = inst.kind === "college" ? baselineGate(inst.college) : { blocked: false };
-    var out = { nc: true, key: inst.key, college: inst.college || null, w: W,
-      ftes: inst.ftes, total: 0,
-      floored: !!m.floored[inst.key], capped: !!m.capped[inst.key],
-      gate_blocked: !!gate.blocked };
-    var ys = [], eys = [], earnTotal = 0, earnMeasured = 0, earnAdvance = 0, earnWithheld = 0;
-    selectedYears().forEach(function (_, i) {
-      var slot = String(i + 1);
-      var v = W * ncShareSum(slot) / ny;
-      ys.push(v);
-      out.total += v;
-      var ey = 0;
-      ncPriorities(slot).forEach(function (p) {
-        var fr = earnFraction(inst, p);
-        var paid = ncPrioCap(W, slot, p) * fr.f;
-        if (gate.blocked) { earnWithheld += paid; return; }
-        ey += paid;
-        if (!earnIsMeasured(fr)) earnAdvance += paid; else earnMeasured += paid;
-      });
-      eys.push(ey);
-      earnTotal += ey;
-    });
-    ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
-    eys.forEach(function (v, i) { out["ey" + (i + 1)] = fl ? (i === 0 ? earnTotal : 0) : v; });
-    out.earned_total = earnTotal;
-    out.earned_measured = earnMeasured;
-    out.earned_advance = earnAdvance;
-    out.earned_withheld = earnWithheld;
-    ncPriorities(state.viewSlot).forEach(function (p) {
-      out[p.key] = ncPrioCap(W, state.viewSlot, p);
-      out[p.key + "_heads"] = prioTarget(inst, p);
-    });
-    return out;
-  }
-  // The SYSTEM row's noncredit counterpart — the same aggregate shape
-  // systemAlloc() builds for credit, so yearCellsHtml()/totalCellHtml() render
-  // it unchanged rather than growing a second stacking implementation.
-  //
-  // ⚠️ Summed over the WHOLE lane (colleges + standalone institutions), because
-  // the carve-out is one pot. The sub-line beside the name splits it, since
-  // "what colleges earn" and "what the standalone campuses get" are the two
-  // figures an administrator actually asks for — and that split used to live
-  // only in the NC $ column's hover, where a reader had to find it.
-  function ncSystemAlloc() {
-    var out = { nc: true, total: 0, key: "SYSTEM", college: null };
-    var eys = selectedYears().map(function () { return 0; });
-    var ys = selectedYears().map(function () { return 0; });
-    var earnTotal = 0, eMeas = 0, eAdv = 0, eHeld = 0;
-    var caps = {}, earned = {};
-    ncPriorities(state.viewSlot).forEach(function (p) {
-      caps[p.key] = ncPrioCap(ncModel().pool, state.viewSlot, p);
-      earned[p.key] = 0;
-    });
-    ncInstitutions().forEach(function (inst) {
-      var a = ncAllocFor(inst);
-      // Earned per priority = Σ institutions, each on its OWN actuals — never
-      // the statewide cap times a statewide fraction, which would invent a
-      // fraction no institution posted.
-      ncPriorities(state.viewSlot).forEach(function (p) {
-        earned[p.key] += (a[p.key] || 0) * (earnFraction(inst, p).f || 0);
-      });
-      out.total += a.total || 0;
-      earnTotal += a.earned_total || 0;
-      eMeas += a.earned_measured || 0;
-      eAdv += a.earned_advance || 0;
-      eHeld += a.earned_withheld || 0;
-      ys.forEach(function (_, i) { ys[i] += a["y" + (i + 1)] || 0; });
-      eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
-    });
-    ys.forEach(function (v, i) { out["y" + (i + 1)] = v; });
-    eys.forEach(function (v, i) { out["ey" + (i + 1)] = v; });
-    out.earned_total = earnTotal;
-    out.earned_measured = eMeas;
-    out.earned_advance = eAdv;
-    out.earned_withheld = eHeld;
-    ncPriorities(state.viewSlot).forEach(function (p) {
-      out[p.key] = caps[p.key];
-      out[p.key + "_earned"] = earned[p.key];
-    });
-    return out;
-  }
-  // The SYSTEM row's priority cell. Deliberately NOT ncPrioCellHtml(): that one
-  // is written for a single institution — prioTarget(inst), earnFraction(inst),
-  // inst.college — and a statewide row has no institution. Passing null crashed
-  // it. This reads the aggregate instead, so no per-institution figure is faked.
-  function ncSystemPrioCellHtml(row, p) {
-    var cap = row[p.key] || 0;
-    var got = row[p.key + "_earned"] || 0;
-    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
-      return '<td class="cf-prio cplfund-carry" title="' +
-        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement.") + '">↻ carryover</td>';
-    }
-    var title = p.label + " — " + p.title + " (noncredit, statewide). Funding cap " + fmtMoney(cap) +
-      " across every institution in the noncredit lane; earned " + fmtMoney(got) +
-      " — the sum of what each institution has earned on its own actuals, never a statewide rate.";
-    return '<td class="cf-prio" title="' + esc(title) + '">' +
-      '<span class="cf-u">' + fmtMoneyK(cap) + "</span>" +
-      '<span class="sub"><span class="cf-u">' + fmtMoneyK(got) + "</span></span></td>";
-  }
-  // How the carve-out divides between the college rows in this table and the
-  // standalone institutions listed beneath it.
-  function ncSystemSplit() {
-    var m = ncModel(), onCollegeRows = 0;
-    base().colleges.forEach(function (c) { onCollegeRows += m.W[c.college] || 0; });
-    return { pool: m.pool, onCollegeRows: onCollegeRows,
-             standalone: m.pool - onCollegeRows - m.unspent };
-  }
-  function ncSystemRowHtml() {
-    var row = ncSystemAlloc(), sp = ncSystemSplit();
-    var why = "The " + fmtMoney(sp.pool) + " noncredit carve-out — a SEPARATE pot, never part of the " +
-      "credit total on the row above. " + fmtMoney(sp.onCollegeRows) + " is earned by colleges with their " +
-      "own noncredit programs (the NC rows in this table); " + fmtMoney(sp.standalone) + " goes to the " +
-      "standalone noncredit institutions listed below the table.";
-    return '<tr class="cplfund-systemrow cplfund-ncsysrow" data-ncfor="SYSTEM">' +
-      '<td></td><td class="t"><span class="cf-lanename">SYSTEM (statewide)</span>' +
-        '<span class="cplfund-chip cf-lanechip">NC</span></td>' +
-      '<td class="t dk">&middot;</td>' +
-      '<td title="' + esc("Statewide noncredit FTES across every institution in the lane.") + '">' +
-        fmtInt(allNoncreditFtes()) + "</td>" +
-      tgtNowLabelCellHtml() +
-      ncPriorities(state.viewSlot).map(function (p) { return ncSystemPrioCellHtml(row, p); }).join("") +
-      '<td class="dk" title="' + esc("Participation is recorded per institution — see the credit row above.") +
-        '">&middot;</td>' +
-      yearCellsHtml(row) +
-      totalCellHtml(row) +
-      '<td class="dk" title="' + esc(why) + '">' +
-        '<span class="sub">' + esc(fmtMoney(sp.onCollegeRows) + " on colleges + " +
-          fmtMoney(sp.standalone) + " standalone") + "</span></td></tr>";
-  }
-  // A college with NO noncredit program on record. It still gets a row, so that
-  // every college in the table reads as a CR/NC pair.
-  //
-  // ⚠️ AN ABSENT ROW AND A ZERO ROW ARE INDISTINGUISHABLE BY EYE, which is the
-  // same argument that already put the below-threshold colleges in the table
-  // (Sam, 2026-08-27: "show all the NC rows for colleges, even if they don't
-  // qualify"). Before this, seven colleges silently had no partner row and the
-  // only statement that they run no noncredit program lived in a column hover.
-  function ncNoProgramRowHtml(c, alt) {
-    // ⭐ Sam, 2026-08-28, on why this row exists at all: "if they disagree and
-    // say, Yes, we have NC, we can find the error and fix it." The row is a
-    // DATA-QUALITY instrument, not just a layout nicety — a college that never
-    // appears cannot be contradicted, so an ingest gap stays invisible. (A
-    // missing row and a zero row also look identical, which is the same
-    // argument that already admitted the below-threshold colleges.)
-    var why = "No noncredit FTES on record for this college in the 2025-26 MIS data, so it is not in the " +
-      "noncredit lane and earns nothing from the carve-out. The row is shown so the claim is visible and " +
-      "checkable: if this college runs a noncredit program, this is a data error worth reporting — tell " +
-      "the MAP team and it can be traced and fixed.";
-    var dash = '<td class="dk" title="' + esc(why) + '">&mdash;</td>';
-    return '<tr class="cplfund-ncrow cplfund-ncout' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
-      "<td></td>" +
-      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
-        '</span><span class="cplfund-chip cf-lanechip">NC</span>' +
-        '<span class="cplfund-chip cf-belowchip" title="' + esc(why) + '">none on record</span></td>' +
-      '<td class="t dk">&middot;</td>' +
-      '<td class="dk" title="' + esc(why) + '">&mdash;</td>' +
-      '<td class="cf-lblcol"></td>' +
-      ncPriorities(state.viewSlot).map(function () { return dash; }).join("") +
-      '<td class="dk">&middot;</td>' +
-      yearKeys().map(function () { return dash; }).join("") +
-      dash +
-      "<td></td>" +
-      "</tr>";
-  }
-  // Is there an Option A row for this college? EVERY college that runs a
-  // noncredit programme gets one — not only the ones currently in the funded
-  // lane (Sam, 2026-08-27: "show all the NC rows for colleges, even if they
-  // don't qualify … I may adjust the minimum 500 threshold").
-  //
-  // ⭐ THE THRESHOLD IS A DIAL, AND THAT IS THE WHOLE ARGUMENT. While the table
-  // listed only qualifiers, moving the dial changed WHICH ROWS EXIST, so the
-  // table could not show the consequence of the curator's own edit — you had to
-  // already know who was missing to see who joined. ncInstitutions() has always
-  // returned the roster unfiltered for exactly this reason ("moving the dial
-  // visibly drops or admits them instead of silently deleting a row"); the row
-  // layer simply never honored it.
-  // ⭐ EVERY college, unconditionally (Sam, 2026-08-28). His Aug-27 rule already
-  // said "show all the NC rows for colleges, even if they don't qualify"; the
-  // implementation stopped at ftes > 0, so seven colleges with no noncredit
-  // program had no partner row at all and the only place that said so was the
-  // NC $ column's hover. With the column gone, an unpaired college would read
-  // as a rendering gap. Three shapes now: in-lane, below-threshold, none.
-  function ncRowShown() { return true; }
-  // In the funded lane, or merely present? A college below the entry threshold
-  // is NOT a college that earned nothing — it was never eligible to earn — and
-  // the row must not print those two the same way.
-  function ncInLane(inst) { return !!(inst && (ncModel().W[inst.key] || 0) > 0); }
-  function ncRowChips(row) {
-    var m = ncModel(), chips = "";
-    if (row.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
-      esc(baselineGateText(row.college)) + '">⛔</span>';
-    // The NC lane's OWN bounds, never the credit floor/ceiling — naming the
-    // $150,000 credit floor on a row held by the $50,000 noncredit one would be
-    // a figure that looks right and is not.
-    if (row.floored) chips += '<span class="cplfund-chip" title="Noncredit minimum applied — topped up to ' +
-      fmtMoney(m.floor) + ' for the window">⬆</span>';
-    if (row.capped) chips += '<span class="cplfund-chip" title="Noncredit maximum applied — held to ' +
-      fmtMoney(m.cap) + ' for the window">⬇</span>';
-    return chips;
-  }
-  // One NC priority cell. Same two-line Tgt/Now shape as the credit cell so the
-  // two rows read down the column (Sam's "Tgt and Now folded onto aligned
-  // lines"), with every figure and every word taken from the noncredit lane.
-  function ncPrioCellHtml(inst, row, p) {
-    var target = prioTarget(inst, p);
-    var cap = row[p.key] || 0;
-    var fr = earnFraction(inst, p);
-    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
-      return '<td class="cf-prio cplfund-carry" title="' +
-        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement — the whole " +
-          windowLabel() + " noncredit window was placed in Year 1.") + '">↻ carryover</td>';
-    }
-    var earned = cap * fr.f;
-    var actLine, actExplain;
-    if (fr.status === "earned") {
-      actLine = '' + fmtFtesSmall(fr.actual) + " FTES &middot; " +
-        '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
-        (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
-      actExplain = fmtNum1(fr.actual) + " noncredit-origin CPL FTES posted (" +
-        fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)";
-    } else if (fr.status === "none") {
-      actLine = '0 FTES &middot; <span class="cf-u">' + fmtMoneyK(0) +
-        '</span> &middot; <span class="cf-pct">0%</span>';
-      actExplain = "nothing posted against this measure yet";
-    } else if (fr.status === "bad_src") {
-      actLine = '<span class="cf-gap">not wired</span> &middot; <span class="cf-u">' +
-        fmtMoneyK(0) + "</span>";
-      actExplain = "this priority has no noncredit measure at its milestone (" +
-        esc(String(fr.meas && fr.meas.bad_src)) + ") — nothing can score it, so it earns $0 rather than advancing";
-    } else {
-      // undelivered — and today that is EVERY noncredit priority. The daily MAP
-      // feed carries no nc_* key, so nothing about this institution has been
-      // measured either way. $0, and deliberately NOT the full-cap advance the
-      // credit lane gives an unmeasurable metric (Sam's ruling). The percentage
-      // is omitted on purpose: a percentage of a target nothing is measuring
-      // against would read as a measurement.
-      actLine = '<span class="cf-gap">no feed</span> &middot; <span class="cf-u">' +
-        fmtMoneyK(0) + "</span>";
-      actExplain = "the daily feed does not carry a noncredit-origin measure yet — $0 earned, and deliberately " +
-        "NOT an advance. The target and the potential stand; earning starts when MAP delivers the origination LocID.";
-    }
-    var title = p.label + " — " + p.title + " (noncredit). Target " + fmtNum1(target) + " CPL FTES (" +
-      fmtInt(target * unitsPerCplFtes(inst.college ? baseCollege(inst.college) : null)) + " units — its noncredit " +
-      "allocation ÷ " + fmtRate(prioPrice(p)) + "/FTES). Noncredit funding cap " + fmtMoney(cap) +
-      ", from the " + fmtMoney(ncModel().pool) + " noncredit carve-out — separate money from the credit total. " +
-      "Measure: " + p.metric + ". Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
-    return '<td class="cf-prio cf-ncprio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-n">' + fmtFtesSmall(target) +
-      '</span> FTES &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
-      '<span class="cf-a">' + actLine + "</span>" +
-      "</td>";
-  }
-  // Sam: "make the NC row college names line up on the left with their sibling
-  // … I'm a big fan of symmetry." The credit row opens with a caret BUTTON and
-  // the noncredit row has nothing to expand, so the two names started at
-  // different x. An empty inline-block of the caret's exact width restores the
-  // column. aria-hidden + empty: it is a spacer, and a screen reader announcing
-  // a blank before every noncredit college name would be a real cost for a
-  // purely visual fix.
-  var NC_CARET_PAD = '<span class="cf-caretpad" aria-hidden="true"></span>';
-  // A college that runs noncredit but sits BELOW the entry threshold. It earns
-  // nothing, and the row must not say so with a $0: "$0 earned" and "never
-  // eligible to earn" are two different facts, and this tab has spent months
-  // keeping its kinds of zero apart. So the money cells are em-dashes with the
-  // reason, and the only figures are the two that decide the question — the
-  // college's noncredit FTES and how far below the dial it sits.
-  function ncBelowThresholdRowHtml(c, inst, alt) {
-    var thr = ncThresholdFtes();
-    var gap = Math.max(0, thr - inst.ftes);
-    var why = fmtNum1(inst.ftes) + " noncredit FTES — " + fmtNum1(gap) + " short of the " +
-      fmtInt(thr) + " FTES entry threshold, so this college is not in the noncredit lane and " +
-      "earns nothing from the carve-out. It is listed so that moving the threshold visibly " +
-      "admits it rather than silently adding a row.";
-    var dash = '<td class="dk" title="' + esc(why) + '">&mdash;</td>';
-    return '<tr class="cplfund-ncrow cplfund-ncout' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
-      "<td></td>" +
-      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
-        '</span><span class="cplfund-chip cf-lanechip">NC</span>' +
-        '<span class="cplfund-chip cf-belowchip" title="' + esc(why) + '">below ' + fmtInt(thr) + '</span></td>' +
-      '<td class="t dk">&middot;</td>' +
-      '<td title="' + esc(why) + '">' + fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
-      '<td class="cf-lblcol"></td>' +
-      ncPriorities(state.viewSlot).map(function () { return dash; }).join("") +
-      '<td class="dk">&middot;</td>' +
-      yearKeys().map(function () { return dash; }).join("") +
-      dash +
-      "<td></td>" +
-      "</tr>";
-  }
-  function ncCollegeRowHtml(c, alt) {
-    var inst = ncInstFor(c.college);
-    if (!inst) return ncNoProgramRowHtml(c, alt);
-    if (!ncInLane(inst)) return ncBelowThresholdRowHtml(c, inst, alt);
-    var row = ncAllocFor(inst);
-    return '<tr class="cplfund-ncrow' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
-      "<td></td>" +
-      // Sam: the NC chip sits to the RIGHT of the name, like the CR chip — the
-      // two lane chips have to occupy the same position or the eye cannot pair
-      // them down the column.
-      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
-        '</span><span class="cplfund-chip cf-lanechip">NC</span>' + ncRowChips(row) + "</td>" +
-      '<td class="t dk">&middot;</td>' +
-      // ⚠️ LABELLED, not bare. Sam asked on 2026-08-04 for an advisory
-      // noncredit-FTES companion line; it used to live in the retired NC $
-      // column's sub-line, so retiring that column would have left this figure
-      // as an unexplained number in a column headed "2025 Ttl FTES/Funding".
-      '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +
-        "the size basis for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
-        fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
-      tgtNowLabelCellHtml() +
-      ncPriorities(state.viewSlot).map(function (p) { return ncPrioCellHtml(inst, row, p); }).join("") +
-      '<td class="dk" title="' + esc("Participation is recorded once for the institution — see the credit row above.") +
-        '">&middot;</td>' +
-      yearCellsHtml(row) +
-      totalCellHtml(row) +
-      "<td></td>" +
-      "</tr>";
-  }
   function collegeRowHtml(c, idx) {
-    var id = "c:" + c.order;
-    // One stripe per COLLEGE, carried by every row of its block (credit row,
-    // noncredit row, drill-in). See the cplfund-alt rule for why this is not
-    // nth-child.
+    var id = "c:" + c.college;
     var alt = (idx % 2 === 1) ? " cplfund-alt" : "";
-    // The expand control is a real <button> on the caret (a11y, 2026-07-28) —
-    // keyboard-focusable + announced, WITHOUT overriding the row's table
-    // semantics. Its native Enter/Space fires a click that bubbles to the row's
-    // toggle handler; mouse users still click anywhere on the row.
     return '<tr class="cplfund-row' + alt + (state.open[id] ? " cplfund-open" : "") +
       (_deepLinkCollege && c.college === _deepLinkCollege ? " cplfund-deeplink" : "") +
       '" data-id="' + esc(id) + '">' +
-      "<td>" + esc(c.order) + "</td>" +
+      "<td>" + (idx + 1) + "</td>" +
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
+      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      // Sam, 2026-08-27 (second pass): "We don't need the CR/NC column since you
-      // added a CR and NC chip next to the College name." So each row shows its
-      // OWN lane's figure and the chip beside the name says which lane that is.
-      // ⚠️ CONSEQUENCE, raised to Sam: a college whose noncredit programme is
-      // BELOW the entry threshold has no NC row, so its noncredit FTES now
-      // appears only in the NC $ column's hover. That is the Alameda case in his
-      // question 3 — it has 43 NC FTES and does not qualify at 500.
-      '<td title="' + esc(sizeCellTitle(c)) + '">' +
-        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</td>" +
-      tgtNowLabelCellHtml() +
-      priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
-      '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
-      yearCellsHtml(c) +
-      totalCellHtml(c) +
-      combinedCellHtml(c, ncPairAlloc(c.college), ncRowShown(c), c.gate_blocked) +
+      '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
+      '<td class="c" title="' + esc((c.nco
+        ? "This institution's own noncredit teaching — its whole size in the one split" +
+          (c.feeder && c.feeder.noncredit_ftes_placeholder ? " (a stand-in figure; nothing disburses on a placeholder — N3 a)" : "")
+        : "Annual noncredit FTES (MIS 2025-26) — sizes the award with the credit FTES and sets the award's noncredit share, restricted to noncredit outcomes") + ".") + '">' +
+        fmtInt(c.nc_ftes) + "</td>" +
+      '<td class="c" title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
+      crAwardCellHtml(c) + ncAwardCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
       "</tr>" +
-      // Sam: the noncredit row sits DIRECTLY under its credit row, before the
-      // drill-in, so the pair reads as one institution in two lanes.
-      (ncRowShown(c) ? ncCollegeRowHtml(c, alt) : "") +
       (state.open[id] ? collegeDetailHtml(c, alt) : "");
   }
 
   function collegeDetailHtml(c, alt) {
-    var ps = priorities(state.viewSlot);
-    var per = perYear();
-    var rec = perfFor(c.college);
     var m = allocModel();
-    var floorActive = m.floor > 0 && m.floorCount > 0;
-    var prio = ps.map(function (p, i) {
-      var meas = measureOf(p);
-      var actual = "";
-      if (meas.src && rec) {
-        actual = " &middot; actual <strong>" + fmtActual(rec, meas.src) + "</strong>";
-        if (rec[meas.src] != null && c[p.key + "_heads"] > 0) {
-          actual += " (" + fmtPctTrim(rec[meas.src] / c[p.key + "_heads"]) + " of target)";
-        }
-      } else if (meas.gap) {
-        actual = ' &middot; actual: <span class="dk">' + esc(meas.gap_short || "data gap") + "</span>";
-      }
-      // With a bound active the pure "size share × pool" identity no longer
-      // holds row-exactly (the split is renormalized) — show the college's own
-      // tranche instead.
-      var flPrio = frontloaded();
-      var trancheLbl = flPrio ? " full " + esc(windowLabel()) + " entitlement (front-loaded)" : " annual tranche";
-      var math = (floorActive || c.capped)
-        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " +
-          fmtMoney(flPrio ? (c.w || 0) : ((c.w || 0) / nYears())) + trancheLbl
-        : fmtPctTrim(c.size_pct) + " " + basisLabel() + " share &times; " + fmtPctTrim(p.share) + " share &times; " +
-          fmtMoney(flPrio ? per * nYears() : per) + (flPrio ? " (full window, front-loaded)" : "");
-      var earnSeg = "";
-      (function () {
+    var slot = state.viewSlot;
+    var prio;
+    if (c.nco) {
+      // A noncredit-only institution's expand: the origination rule in words
+      // (the locked mock), never a priority table scored on measures that do
+      // not describe it.
+      var scopeWords = c.feeder && c.feeder.origin_scope === "statewide"
+        ? "anywhere in the state" : "across its district&#39;s credit campuses";
+      prio = '<div class="cplfund-ncorigin"><strong>Earns by origination</strong> &mdash; CPL originating from this ' +
+        "institution and transcribed at a credit college " + scopeWords +
+        ". Current Total: <strong>" +
+        fmtMoney(c.earned_total || 0) + "</strong> &middot; Total Possible: <strong>" + fmtMoney(c.total || 0) +
+        "</strong>, its max award." +
+        (c.feeder && c.feeder.noncredit_ftes_placeholder
+          ? ' <span class="dk">Its ' + fmtInt(c.feeder.noncredit_ftes_placeholder) +
+            "-FTES size is a stand-in; nothing publishes or disburses on a placeholder (N3 a).</span>"
+          : "") + "</div>";
+    } else if (slotIsCarryover(slot)) {
+      prio = '<div><span class="dk">↻ Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
+        "&mdash; the whole window is placed and earned in Year 1; unspent funds roll forward.</span></div>";
+    } else {
+      var rowsHtml = priorities(slot).map(function (p, i) {
+        var crM = c[p.key] || 0;
+        var ncM = c["nc_" + p.key] || 0;
         var fr = earnFraction(c, p);
-        var capYr = c[p.key];
-        // Mirror collegeAlloc/prioCellHtml so the drill-in agrees with the cell +
-        // row + pool totals. Every dollar flexes on achievement (2026-08-22).
-        var earnedYr = capYr * fr.f;
-        var earnedPctYr = capYr > 0 ? earnedYr / capYr : 0;
-        var tail = fr.status === "earned"
-          ? " &mdash; " + fmtInt(fr.actual) + " actual &divide; " + fmtInt(fr.target) + " target"
-          : fr.status === "gap"
-            ? ' <span class="dk">&mdash; full advance (metric not measurable in MAP yet)</span>'
-            : fr.status === "pending"
-              ? ' <span class="dk">&mdash; full advance (actuals arrive with the next data refresh)</span>'
-              : fr.status === "suppressed"
-                ? ' <span class="dk">&mdash; fewer than 5 students (privacy-suppressed); not yet credited</span>'
-                : fr.status === "undelivered"
-                  ? ' <span class="dk">&mdash; $0, and NOT an advance: the daily feed does not carry this measure yet, ' +
-                    'so nothing about this college has been measured either way</span>'
-                  : fr.status === "bad_src"
-                    ? ' <span class="dk">&mdash; $0: this priority is pinned to an unknown measure, so nothing can score it</span>'
-                    : ' <span class="dk">&mdash; $0 on the main allocation: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
-                      fmtInt(fr.target) + '-student target)</span>';
-        earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(earnedYr) + "</strong> of " +
-          fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(earnedPctYr) + ")</strong>" + tail +
-          "";
-      })();
-      // Under front-load the TARGET is deliberately unchanged (per-year), so the
-      // effective $/student is the whole window over the same target — Sam's
-      // "double the per-student amount rather than doubling the students."
-      var tgtHeads = c[p.key + "_heads"] || 0;
-      var effPrioRate = tgtHeads > 0 ? (c[p.key] || 0) / tgtHeads : 0;
-      var rateSeg = " &middot; target " + fmtInt(tgtHeads) + " students at " +
-        fmtRate(flPrio ? effPrioRate : p.per_student) + "/student (" + fmtPctTrim(reachPct(c, tgtHeads)) +
-        " of its headcount)" +
-        (flPrio
-          ? ' <span class="dk">&mdash; the same per-year target, funded at the full window rate (' +
-            fmtRate(p.per_student) + "/student &times; " + nYears() + "): hit it in Year 1 and the whole " +
-            "window is drawn</span>"
+        var target = c[p.key + "_heads"] || 0;
+        var isF = prioIsFtes(p);
+        var earnedP = c.gate_blocked ? 0 : crM * fr.f;
+        var act;
+        if (fr.status === "earned") {
+          act = (isF ? fmtNum1(fr.actual) + " FTES" : fmtInt(fr.actual) + " stu") + " &middot; " +
+            fmtPctTrim(Math.min(1, fr.target > 0 ? fr.actual / fr.target : 0));
+        } else if (fr.status === "none") act = "0 &middot; 0%";
+        else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
+        else if (fr.status === "undelivered") act = "no data yet";
+        else if (fr.status === "bad_src") act = "not wired";
+        else act = "no data yet";   // gap / pending — plain absence on the surface (2026-09-01)
+        return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(crM) +
+          "</td><td>" + fmtMoney(ncM) + "</td><td>" + (isF ? fmtNum1(target) + " FTES" : fmtInt(target) + " stu") +
+          "</td><td>" + act + "</td><td>" + fmtMoney(earnedP) + "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
+      }).join("");
+      prio = '<div class="cplfund-dtl-tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
+        '<table class="cplfund-dtl-table"><caption class="dk">' +
+        "Current Total: " + fmtMoney(c.earned_total || 0) + " &middot; Total Possible: " + fmtMoney(c.total || 0) +
+        " &mdash; its max award" +
+        (c.gate_blocked ? " &middot; earnings held in reserve until baseline participation is met" : "") +
+        "</caption>" +
+        '<colgroup><col style="width:16%"><col style="width:13%"><col style="width:13%"><col style="width:13%"><col style="width:16%"><col style="width:13%"><col style="width:16%"></colgroup>' +
+        '<tr><th scope="col">Priority</th>' +
+        '<th scope="col" title="The credit share of this priority&#39;s funding — earns against the credit actuals.">CR funding</th>' +
+        '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
+        '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
+        '<th scope="col">Actual</th>' +
+        '<th scope="col" title="Earned to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
+        '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; unearned funding rolls forward.">Total Possible</th></tr>' +
+        rowsHtml + "</table></div>" +
+        (c.nc_award > 0.5
+          ? '<div class="dk">Noncredit share of this award: ' + fmtMoney(c.nc_award) + " (" + fmtNum1(c.nc_ftes) +
+            " noncredit FTES) &mdash; earned by the noncredit measures and kept on its own line, so the credit " +
+            "program cannot quietly redirect it.</div>"
           : "");
-      if (slotIsCarryover(state.viewSlot)) {
-        return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
-          '<span class="dk">↻ carryover &mdash; no new money on the table (front-loaded; the whole window is ' +
-          "placed and earned in Year 1). Unspent Year-1 funds roll forward to be drawn here.</span>" +
-          "<br><span class='dk'>metric:</span> " + esc(p.metric) + "</div>";
-      }
-      return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
-        math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>" + (flPrio ? " for the window" : "/yr") +
-        rateSeg +
-        "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + earnSeg + "</div>";
-    }).join("");
+    }
     var county = c.working_adults == null
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
       : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
     var floorLine = "";
     if (c.floored) {
-      floorLine = '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
-        " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " +
-        basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
+      floorLine = '<div><span class="dk">At the base:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; brought up to the " + fmtMoney(m.floor) +
+        " base award. Targets above stay scaled to this institution&#39;s own PRE-BASE share of statewide " +
+        basisLabel() + " &mdash; the base raises the funding, not the bar.</div>";
     }
-    // The ceiling's mirror of the floor line. Both name the pure proportional
+    // The cap's mirror of the base line. Both name the pure proportional
     // share first, so the two read as one pair rather than two unrelated notes.
     var capLine = "";
     if (c.capped) {
-      capLine = '<div><span class="dk">⬇ Maximum applied:</span> a pure proportional share would be ' +
-        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held to the " + fmtMoney(m.cap) +
-        " maximum allocation. The difference re-splits across the colleges below the maximum. Targets above stay scaled to this " +
-        "college&#39;s own PRE-CAP share of statewide " + basisLabel() +
-        " &mdash; the maximum lowers the funding, not the bar.</div>";
+      capLine = '<div><span class="dk">At the cap:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held at the " + fmtMoney(m.cap) +
+        " cap. The difference re-splits across the institutions below the cap. Targets above stay scaled to this " +
+        "institution&#39;s own PRE-CAP share of statewide " + basisLabel() +
+        " &mdash; the cap lowers the funding, not the bar.</div>";
     }
     var eligBtns = "";
     if (unlocked()) {
@@ -6846,40 +6104,43 @@
   // the figure it totals. Not a .cplfund-row — it isn't expandable (its members
   // are already visible right below it, which is the entire point).
   function districtGroupHeaderHtml(g, colCount) {
-    var lead = 4;   // #, College, District, Headcount
-    // +1 for the TGT/NOW label column, which sits inside this span (2026-08-27).
-    var prioN = priorities(state.viewSlot).length + 1;
     return '<tr class="cplfund-grouphdr">' +
-      '<td class="t" colspan="' + lead + '"><strong>' + esc(districtShort(g.district)) + "</strong>" +
-      ' <span class="dk">&middot; ' + g.n + (g.n === 1 ? " college" : " colleges") +
-      " &middot; " + fmtInt(g.headcount) + " students</span></td>" +
-      '<td colspan="' + (prioN + 1) + '" class="dk">district subtotal</td>' +
-      yearCellsHtml(g) +
-      totalCellHtml(g) +
+      '<td class="t" colspan="3"><strong>' + esc(districtShort(g.district)) + "</strong>" +
+      ' <span class="dk">&middot; ' + g.n + (g.n === 1 ? " institution" : " institutions") + "</span></td>" +
+      "<td>" + fmtInt(g.cr_ftes) + "</td><td>" + fmtInt(g.nc_ftes) + "</td>" +
+      '<td class="dk">district subtotal</td>' +
+      crAwardCellHtml(g) + ncAwardCellHtml(g) +
       "<td></td></tr>";
   }
-  // Group the FILTERED college rows by district. Groups are ordered by their
-  // subtotal (largest first) and colleges keep the table's active sort WITHIN
-  // each group — sorting inside groups, groups by size (Sam's explicit call).
+  // Group the FILTERED institution rows by district. Groups are ordered by
+  // their subtotal (largest first) and institutions keep the table's active
+  // sort WITHIN each group — sorting inside groups, groups by size (Sam's
+  // explicit call). The noncredit-only three carry their own districts
+  // (Calbright none), so they group like everyone else.
   function groupRowsByDistrict(rows) {
     var by = {}, order = [];
     rows.forEach(function (r) {
       var k = r.district || "(no district)";
-      if (!by[k]) { by[k] = { district: k, n: 0, headcount: 0, total: 0, earned_total: 0,
-        earned_measured: 0, earned_advance: 0, earned_withheld: 0, rows: [] };
-        yearKeys().forEach(function (yk) { by[k][yk] = 0; });
-        selectedYears().forEach(function (_, i) { by[k]["ey" + (i + 1)] = 0; });
-        order.push(k); }
+      if (!by[k]) {
+        by[k] = { district: k, n: 0, cr_ftes: 0, nc_ftes: 0, total: 0,
+          cr_award: 0, nc_award: 0, earned_cr: 0, earned_nc: 0, earned_total: 0,
+          earned_measured: 0, earned_advance: 0, earned_withheld: 0,
+          gate_blocked: false, nco: false, rows: [] };
+        order.push(k);
+      }
       var g = by[k];
       g.n += 1;
-      g.headcount += r.headcount || 0;
+      g.cr_ftes += r.cr_ftes || 0;
+      g.nc_ftes += r.nc_ftes || 0;
       g.total += r.total || 0;
+      g.cr_award += r.cr_award || 0;
+      g.nc_award += r.nc_award || 0;
+      g.earned_cr += r.earned_cr || 0;
+      g.earned_nc += r.earned_nc || 0;
       g.earned_total += r.earned_total || 0;
       g.earned_measured += r.earned_measured || 0;
       g.earned_advance += r.earned_advance || 0;
       g.earned_withheld += r.earned_withheld || 0;
-      yearKeys().forEach(function (yk) { g[yk] += r[yk] || 0; });
-      selectedYears().forEach(function (_, i) { g["ey" + (i + 1)] += r["ey" + (i + 1)] || 0; });
       g.rows.push(r);
     });
     return order.map(function (k) { return by[k]; })
@@ -6894,9 +6155,6 @@
       // Sortable headers are keyboard-operable (a11y, 2026-07-28): scope + role +
       // tabindex + aria-sort mirror the visible arrow; the keydown handler in
       // wireTable() sorts on Enter/Space.
-      // A label-only column is not a sortable header: no data-sort, no
-      // tabindex, no aria-sort — otherwise the keyboard lands on a control that
-      // reorders the table by a key no row carries.
       if (col.sortable === false) {
         return '<th class="' + col.cls + '" scope="col"' +
           (col.title ? ' title="' + esc(col.title) + '"' : "") + ">" + col.label + "</th>";
@@ -6904,14 +6162,13 @@
       var active = state.sortKey === col.key;
       var arr = active ? ' <span class="arr" aria-hidden="true">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
       var ariaSort = active ? (state.sortDir === 1 ? "ascending" : "descending") : "none";
-      var titleVal = (col.key === "headcount" && base().headcount_label) ? base().headcount_label : col.title;
-      var title = titleVal ? ' title="' + esc(titleVal) + '"' : "";
+      var title = col.title ? ' title="' + esc(col.title) + '"' : "";
       return '<th class="' + col.cls + '" scope="col" role="columnheader" tabindex="0" aria-sort="' + ariaSort +
         '" data-sort="' + col.key + '"' + title + ">" + col.label + arr + "</th>";
     }).join("");
     var body;
     if (!rows.length) {
-      body = '<tr><td colspan="' + cols.length + '" class="t">No colleges match the search.</td></tr>';
+      body = '<tr><td colspan="' + cols.length + '" class="t">No institutions match the search.</td></tr>';
     } else if (grouped()) {
       body = groupRowsByDistrict(rows).map(function (g) {
         return districtGroupHeaderHtml(g, cols.length) +
@@ -6920,49 +6177,29 @@
     } else {
       body = rows.map(function (c, i) { return collegeRowHtml(c, i); }).join("");
     }
-    var sysYearCells = yearCellsHtml(sys);
-    // The SYSTEM size total INCLUDES the noncredit feeder side (Sam,
-    // 2026-07-06) — shown as allocation basis + feeders = the CCC total, so
-    // the noncredit population is never invisible in a total while staying out
-    // of the college split (their support is the feeder carve-out).
-    //
-    // BASIS-AWARE 2026-08-01. This printed sys.headcount unconditionally, so
-    // under the credit-FTES basis the column header read "Credit FTES" and the
-    // SYSTEM row beneath it read 2,517,685 — the headcount — while every
-    // college row above it correctly read credit FTES. A total that is not in
-    // the units of the column it tops is worse than no total: it invites the
-    // reader to check the sum, and it will not add up.
-    var fh = usesFtes() ? allNoncreditFtes() : feederHeads();
-    var sysSize = totalSize();
-    var sysHeadCell = '<td title="Allocation basis (' + basisLabel() + ') = Σ of the ' + base().colleges.length +
-      ' college rows. The ' + fmtInt(fh) + " noncredit-feeder " + (usesFtes() ? "FTES are" : "students are") +
-      ' counted in the CCC total; noncredit is funded by its own carve-out, not the credit split.">' +
-      fmtInt(sysSize) +
-      '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sysSize + fh) + " CCC total</span></td>";
-    var foot;
-    {
-      foot = '<tr class="cplfund-systemrow">' +
-        '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
-        sysHeadCell +
-        tgtNowLabelCellHtml() +
-        priorities(state.viewSlot).map(function (p) { return prioCellHtml(null, p, true); }).join("") +
-        "<td title=\"colleges satisfying ALL tracked baseline requirements (fully-green glyph)\">" +
-        (ELIG.coordOk ? eligAllMetCount() + "/" + base().colleges.length : "—") + "</td>" +
-        sysYearCells +
-        totalCellHtml(sys) +
-        // The statewide pair carries the same one combined cell as every
-        // college pair — statewide CR total + the whole carve-out's caps.
-        combinedCellHtml(sys, ncSystemAlloc(), true, false) +
-        "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>" +
-        // Sam, 2026-08-28: "give the header row also a CR and NC row". SYSTEM is
-        // paired like every college, so the statewide noncredit figure is a row
-        // a reader sees rather than a column they have to notice.
-        ncSystemRowHtml();
-    }
+    // ONE SYSTEM row (R6, 2026-08-31) — the statewide CR/NC pair as columns on
+    // one sticky line, shaped like an institution row so the award cells render
+    // it unchanged.
+    var sysRow = { college: "SYSTEM", nco: false, gate_blocked: false,
+      cr_award: sys.cr_award, nc_award: sys.nc_award, total: sys.total,
+      cr_ftes: sys.cr_ftes, nc_ftes: sys.nc_ftes,
+      earned_cr: sys.earned_cr, earned_nc: sys.earned_nc,
+      earned_total: sys.earned_total, earned_measured: sys.earned_measured,
+      earned_advance: sys.earned_advance, earned_withheld: sys.earned_withheld };
+    var foot = '<tr class="cplfund-systemrow">' +
+      '<td></td><td class="t">SYSTEM (statewide)</td>' +
+      '<td class="t">' + esc(base().system.district || "") + "</td>" +
+      '<td class="c" title="Statewide credit FTES — Σ of every institution row.">' + fmtInt(sys.cr_ftes) + "</td>" +
+      '<td class="c" title="Statewide noncredit FTES — Σ of every institution row (Mt. SAC Noncredit counted once, on the Mt. San Antonio row; Calbright at its stand-in size).">' +
+        fmtInt(sys.nc_ftes) + "</td>" +
+      '<td class="c" title="institutions satisfying ALL tracked baseline requirements (fully-green glyph)">' +
+      (ELIG.coordOk ? eligAllMetCount() + "/" + oneRoster().length : "—") + "</td>" +
+      crAwardCellHtml(sysRow) + ncAwardCellHtml(sysRow) +
+      "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
     // sorted rows and is not itself a sortable/clickable .cplfund-row.
-    var caption = "Potential CPL implementation funding allocation by college" +
+    var caption = "Outcomes-based max awards by institution — alphabetical" +
       (grouped() ? ", grouped under district subtotal rows" : "") +
       ". Column headers are sortable — focus a header and press Enter or Space to sort. " +
       "Rows expand for per-priority detail.";
@@ -7019,7 +6256,9 @@
           status = '<div class="cplfund-reqstatus"><strong>' + starN + " of " + total +
             "</strong> colleges qualify " +
             '<span class="dk">(auto-scored &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
-            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>";
+            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>" +
+            '<div class="dk">For the three noncredit-only campuses this gate is replaced by noncredit ' +
+            "certificates posted as exhibits in MAP (N1 a, ruled 2026-08-31).</div>";
         } else {
           status = '<div class="cplfund-reqstatus"><span class="dk">auto-scored from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
         }
@@ -7061,6 +6300,8 @@
       edArea("elig-intro", eligIntro(), { rows: 2, label: "Baseline eligibility introduction" }) + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
+      '<div class="dk" style="margin:4px 0 6px;">Funding for institutions that have not met baseline ' +
+      "participation is held in reserve &mdash; it is never redistributed to others.</div>" +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
       'title="Add another proposed baseline requirement">＋ Add requirement</button>' +
@@ -7192,142 +6433,13 @@
   // ── noncredit feeder section ──────────────────────────────────────────
   // A feeder's per-year support is released in TWO batches (like the credit
   // colleges — Timing section); show the per-batch figure under the annual.
-  function feederBatchNote(amount) {
-    return '<div class="dk" style="font-size:.72rem;font-weight:400;margin-top:1px;" ' +
-      'title="Disbursed in two batches per funding year, tracking the cumulative eligible CPL these campuses stand up in MAP (see Timing)">' +
-      "2 batches &middot; " + fmtMoney(amount / 2) + " ea</div>";
-  }
-  // F1 (noncredit feeder eligible headcount) actuals, per-feeder short → {pe}.
-  function feederPerf() { var pf = perf(); return (pf && pf.feeders) || null; }
-  // A per-feeder F1 sub-note in the row name cell (only when the feed carries it).
-  function feederF1Note(short) {
-    var fp = feederPerf(); var r = fp && fp[short];
-    if (!r) return "";
-    if (r.pe == null) return r.pe_suppressed
-      ? ' <span class="dk" style="font-size:.72rem;">&middot; ' + maskLt(true) + ' eligible in MAP</span>' : "";
-    return ' <span class="dk" style="font-size:.72rem;">&middot; ' + fmtInt(r.pe) + " eligible in MAP</span>";
-  }
-  // The noncredit measurables ladder (Sam, 2026-07-27): F1 (eligible headcount —
-  // measurable once campuses attach exhibits to their NC records; wired to the
-  // F1 feed) + F2 (noncredit-certificate CPL waivers — the one award a NC campus
-  // owns; awaiting a data source). NOT transcription (colleges do that) or JST /
-  // Veteran Star (NC campuses aren't obligated to collect JST).
-  function feederMeasurablesHtml() {
-    var fp = feederPerf();
-    var pf = perf();
-    var f1;
-    if (fp) {
-      var total = 0, anyReal = false, supp = false;
-      feeders().forEach(function (f) {
-        var r = fp[f.short];
-        if (!r) return;
-        if (r.pe == null) { if (r.pe_suppressed) supp = true; }
-        else { total += r.pe; anyReal = true; }
-      });
-      f1 = anyReal
-        ? "<strong>" + fmtInt(total) + "</strong> eligible NC students identified across the feeders" +
-          (supp ? " (＋suppressed)" : "") + ' <span class="dk">(per MAP' +
-          (pf && pf.as_of ? ", as of " + esc(pf.as_of) : "") + ")</span>"
-        : '<span class="dk">measurable once campuses attach exhibits to their NC student records in MAP</span>';
-    } else {
-      f1 = '<span class="dk">measurable once campuses attach exhibits to their NC student records in MAP</span>';
-    }
-    return '<div class="cplfund-fmeas">' +
-      '<div class="cplfund-fmeas-h">Noncredit measurables <span class="dk">&mdash; what these campuses can track in MAP</span></div>' +
-      '<ul class="cplfund-fmeas-list">' +
-      "<li><strong>F1 &middot; Eligible headcount</strong> &mdash; distinct NC students with an exhibit attached in MAP showing " +
-      "&ge;1 eligible unit. " + f1 + " <span class='dk'>&mdash; the measure the two-batch disbursement tracks.</span></li>" +
-      "<li><strong>F2 &middot; Noncredit-certificate CPL waivers</strong> &mdash; a noncredit certificate awarded with a course " +
-      "waived on work experience (CPL) &mdash; the one award a NC campus issues itself. " +
-      "<span class='dk'>Awaiting a data source &mdash; recorded when a campus posts the waiver in MAP.</span></li>" +
-      "</ul>" +
-      "<div class='dk' style='font-size:.72rem;'>Not tracked here: transcription (the credit colleges do that) and " +
-      "JST / Veteran Star (noncredit campuses aren&#39;t obligated to collect JST).</div></div>";
-  }
-  // ── the standalone noncredit institutions ────────────────────────────────
-  // RETIRED 2026-08-23: this was a whole parallel funding mechanism — a flat
-  // FTES split of the $1M among 4 feeder campuses, with its own formula box,
-  // metric editor, batch notes and totals. The noncredit lane is now the same
-  // bounded allocation the credit pool uses (ncModel), and 30 of its 33
-  // institutions are credit colleges whose award shows in the NC $ column of
-  // the table above — integrated on the college row, exactly as Sam asked.
-  //
-  // What survives is the part that CANNOT be integrated: three institutions
-  // that have no credit row to put a figure on. They are listed here rather
-  // than forced into the college table as three rows of dashes across every
-  // credit column, which would also have put them into the credit totals, the
-  // district rollup and the eligibility counts they have no business in.
-  // The award figures in this lane are WINDOW totals, like the credit floor and
-  // ceiling and unlike the retired feeder pool (which was denominated per year).
-  // Front-load is a TIMING toggle, so it moves when the money lands, never how
-  // much — this sub-line is the only thing the old per-year table carried that
-  // the window figure does not say on its own.
-  // The award figures here are WINDOW totals; this says when the money lands.
-  // The two-batch-per-funding-year cadence is the credit colleges' cadence and
-  // predates this rework — it is disbursement policy, not part of the retired
-  // feeder mechanism, so it survives the rewrite.
-  function timingNote(w) {
-    if (!(w > 0)) return "";
-    var perYear = frontloaded() ? w : w / nYears();
-    return '<span class="sub">' +
-      (frontloaded() ? "all in Yr 1 &mdash; front-loaded" : fmtMoney(perYear) + "/yr") +
-      "</span>" + feederBatchNote(perYear);
-  }
-  function ncStandaloneHtml() {
-    var m = ncModel();
-    var all = ncInstitutions().filter(function (r) { return r.kind === "standalone"; });
-    if (!all.length) return "";
-    var rows = all.map(function (r) {
-      var w = m.W[r.key] || 0;
-      var inLane = w > 0;
-      var note = r.countedOn
-        ? '<span class="dk">counted on the ' + esc(dispName(r.countedOn)) + " row</span>"
-        : !inLane
-        ? '<span class="dk">below the ' + fmtInt(m.threshold) + " FTES threshold</span>"
-        : m.floored[r.key] ? '<span class="sub">at the minimum</span>'
-        : m.capped[r.key] ? '<span class="sub">at the maximum</span>' : "";
-      var ftesCell = r.countedOn
-        ? '<span class="dk" title="' + esc(fmtInt(r.rawFtes) + " noncredit FTES, already carried on the " +
-            dispName(r.countedOn) + " college row — counting both would pay the same program twice.") + '">' +
-          fmtInt(r.rawFtes) + " &mdash; on " + esc(dispName(r.countedOn)) + "</span>"
-        : fmtInt(r.ftes);
-      return "<tr>" +
-        '<td class="t"><strong>' + esc(r.name) + "</strong>" + feederPlaceholderChip(r.feeder) +
-        feederF1Note(r.short) + "</td>" +
-        "<td>" + ftesCell + '<span class="sub">' + fmtInt(Number(r.feeder.headcount) || 0) +
-        " headcount, context</span></td>" +
-        '<td class="tot">' + (inLane ? fmtMoney(w) + timingNote(w) : "&mdash;") + note + "</td></tr>";
-    }).join("");
-    var standaloneTotal = all.reduce(function (s, r) { return s + (m.W[r.key] || 0); }, 0);
-    var anyPlaceholder = all.some(function (r) { return feederIsPlaceholder(r.feeder); });
-    return "<h3>Standalone noncredit institutions " +
-      '<span class="dk" style="font-size:.8rem;font-weight:400;">(no credit row &mdash; same carve-out, same rules)</span></h3>' +
-      '<div class="cplfund-formula" style="margin-bottom:10px;">' +
-      "The <strong>" + fmtMoney(m.pool) + "</strong> noncredit carve-out is shared by every institution with at " +
-      "least <strong>" + fmtInt(m.threshold) + " noncredit FTES</strong> &mdash; <strong>" + m.rows.length +
-      "</strong> of them, between a <strong>" + fmtMoney(m.floor) + "</strong> minimum and a <strong>" +
-      (m.cap > 0 ? fmtMoney(m.cap) : "no") + "</strong> maximum. " +
-      "<strong>" + m.rows.filter(function (r) { return r.kind === "college"; }).length + "</strong> are credit " +
-      "colleges running their own noncredit programs; their award is the <strong>NC $</strong> column in the table " +
-      "above, kept separate from the credit total so it is visible as noncredit money. The institutions below have " +
-      "no credit row, so they are listed here &mdash; <strong>" + fmtMoney(standaloneTotal) + "</strong> between them. " +
-      "Support is released in <strong>two batches per funding year</strong> &mdash; the same cadence as the credit " +
-      "colleges (see the <em>Timing</em> section) &mdash; tracking the cumulative eligible CPL these institutions " +
-      "stand up in MAP." +
-      "<div style='margin-top:8px;'><span class='dk'>Noncredit metric:</span> " +
-      edText("feeder-metric", feederMetric(), { label: "Noncredit metric" }) + "</div></div>" +
-      '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
-      "<thead><tr><th class='t' scope='col'>Institution</th><th scope='col'>Noncredit FTES</th>" +
-      "<th scope='col'>Support &mdash; " + esc(windowLabel()) + "</th></tr></thead>" +
-      "<tbody>" + rows + "</tbody></table></div>" +
-      feederMeasurablesHtml() +
-      (anyPlaceholder ? '<div class="cplfund-foot"><div><strong>&#9888; One or more institutions use a placeholder ' +
-        "noncredit-FTES figure</strong> &mdash; a stand-in, not a reported number, used so the split computes. " +
-        "The institution&#39;s own reported figure is retained in the data and shown in the chip&#39;s hover. " +
-        "Replace with the verified MIS figure before this drives a disbursement.</div></div>" : "");
-  }
-
-  // ── footnotes ─────────────────────────────────────────────────────────
+  // The noncredit feeder section and the "Standalone noncredit
+  // institutions" section were retired with one-pool adoption (R9, ruled
+  // 2026-08-31): NOCE, SD Cont. Ed and Calbright are ordinary rows in the
+  // institution table (NC only chip), the origination rules live in the
+  // earning-rules fold under the priority cards, and each trio row's expand
+  // carries its origination note. The F1 exhibits evidence now feeds the
+  // N1 a eligibility sector (ncExhibitsMet) instead of its own section.
   function headcountSourceHtml() {
     var d = base();
     if (!d.headcount_label && !d.headcount_source) return "";
@@ -7346,29 +6458,30 @@
   function actualsFootHtml() {
     var pf = perf();
     if (!pf) {
-      return "<div>The <strong>P1 / P2 / P3</strong> columns show each priority&#39;s <strong>target</strong> " +
-        "(projected students · cap) over its <strong>actual</strong> (posted in MAP · earned); the actual row fills in " +
-        "with the next daily MAP refresh. Only measurable metrics show an actual; the rest advance at full cap until their feed lands.</div>";
+      // The P1/P2/P3 COLUMNS retired with the one-pool port (2026-08-31) —
+      // per-priority detail lives in each row's expand.
+      return "<div>Each row expands to its per-priority detail table (CR funding &middot; NC funding &middot; " +
+        "Target &middot; Actual &middot; Current Total &middot; Total Possible); the Actual column fills in " +
+        "with the next daily MAP refresh.</div>";
     }
     var un = Object.keys((pf && pf.unmatched) || {});
     var unLine = un.length
       ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
         un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
       : "";
-    return "<div>The <strong>P1 / P2 / P3</strong> columns stack each priority&#39;s <strong>target</strong> " +
-      "(top: projected students &middot; cap) over its <strong>actual</strong> (bottom: students posted in MAP &middot; " +
-      "earned, % of target) &mdash; hover the header for the priority&#39;s goal + metric. Actuals per MAP as of " + esc(pf.as_of) +
+    return "<div>Each row expands to its per-priority detail table &mdash; <strong>Target</strong> and " +
+      "<strong>Actual</strong> per priority, with Current Total and Total Possible beside them; the priority " +
+      "cards above carry the statewide pair. Actuals per MAP as of " + esc(pf.as_of) +
       "; test/potential records excluded; counts under " + pf.suppress_below +
       " read &lt;" + pf.suppress_below + "; statewide figures " +
-      "deduplicate across colleges (not the column sum). Only the metric(s) MAP can measure today show an actual; the " +
-      "rest read <span class=\"cf-gap\">gap</span> and advance at full cap until their feed lands.</div>" + unLine;
+      "deduplicate across colleges (not the column sum). Only the metrics MAP measures today show an actual; the " +
+      "rest read <span class=\"cf-gap\">no data yet</span> in the expand.</div>" + unLine;
   }
 
   // Segmented single-choice control. role=group + a label for screen readers,
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
     cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
-    cplFundLane: "Funding lane",
     cplFundDisb: "Disbursement timing", cplFundAllocBasis: "Allocation basis",
     cplFundDocType: "Document type"
   };
@@ -7427,50 +6540,29 @@
     var expendYear = endYr[1] ? (endYr[0].slice(0, 2) + endYr[1]) : (endYr[0] || "");
     var s = awardStats() || { avg: 0, min: 0, max: 0, minCount: 0 };
     var proj = activeProjectObj();
-    // The noncredit carve-out comes from the noncredit MODEL — never re-derived
-    // here. Until 2026-08-23 this open-coded `feederBasis(f) / Σ * carve`, which
-    // was the correct mechanism right up until the lane stopped being a flat
-    // FTES split among the standalone campuses and became the same bounded
-    // allocation the credit pool uses (30 credit colleges + 3 standalone, 33
-    // today, clamped between the noncredit floor and ceiling). The tab migrated;
-    // this did not, and the memo is the EXPORTED document — it leaves the tab,
-    // the gate and the room. At Sam's live $1.8M carve-out the re-split paid
-    // Mt. SAC Noncredit $779,862, an institution the model pays $0 because its
-    // FTES is already counted on the Mt. San Antonio credit row, and showed
-    // nothing at all for the 30 colleges that receive the other $1.6M.
-    // Same standing rule as the credit lane: call the model, never re-derive.
-    var carve = feederCarveout();
-    var ncm = ncModel();
-    var ncAwardOf = function (key) { return ncm.W[key] || 0; };
-    // Standalone institutions are listed whether or not the threshold admits
-    // them — a deliberately-zero row and a silently missing one look identical,
-    // and Mt. SAC Noncredit is a real ESS 25-82 grantee. `countedOn` names the
-    // credit row already carrying its FTES, so the reason travels with the row.
-    var feederRows = ncInstitutions().filter(function (r) { return r.kind === "standalone"; })
-      .map(function (r) {
-        return { name: r.name, short: r.short,
-          district: MEMO_FEEDER_DISTRICT[r.short] || "Noncredit Campuses",
-          placeholder: feederIsPlaceholder(r.feeder),
-          countedOn: r.countedOn || null,
-          total: ncAwardOf(r.key) };
-      });
-    // The colleges' own noncredit awards, keyed by college name so the district
-    // table can show them BESIDE the credit figure. Sam's rule is that noncredit
-    // money never sums into the credit total ("the neglected step child"), so
-    // this is its own column, never an addition to the row it sits on.
-    var ncByCollege = {};
-    ncm.rows.forEach(function (r) { if (r.kind === "college") ncByCollege[r.name] = ncAwardOf(r.key); });
+    // ONE POOL (2026-08-31): the memo is the EXPORTED document — it leaves
+    // the tab, the gate and the room — so it lists every institution's ONE
+    // combined award with its credit and noncredit shares, from the same model
+    // the tab renders. Same standing rule as ever: call the model, never
+    // re-derive.
+    var instRows = oneRoster().map(function (c) {
+      var sp = instSplit(c);
+      return { name: c.nco ? (c.name || c.college) : dispName(c.college),
+               district: c.district || (c.nco ? "Statewide (no district)" : "—"),
+               cr: sp.cr, nc: sp.nc, total: sp.w, nco: !!c.nco,
+               placeholder: !!(c.nco && c.feeder && feederIsPlaceholder(c.feeder)) };
+    });
+    var crSum = 0, ncSum = 0;
+    instRows.forEach(function (r) { crSum += r.cr; ncSum += r.nc; });
     return {
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
       totalAvailable: grossRevenue(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
-      collegePool: netCollege(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
-      // nFeeders counts the LANE, not the standalone roster: the carve-out is
-      // shared by every institution in it, and "4" described where the money
-      // went only under the retired mechanism.
-      feederCarve: carve, nFeeders: ncm.rows.length, feederRows: feederRows,
-      ncByCollege: ncByCollege,
-      institutionTotal: netCollege() + carve,
+      collegePool: netCollege(), collegePoolMain: netCollege(),
+      nInstitutions: oneRoster().length, nColleges: base().colleges.length,
+      instRows: instRows, crSum: crSum, ncSum: ncSum,
+      floor: floorWindow(), cap: capWindow(),
+      institutionTotal: netCollege(),
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
       priorities: priorities("1")
@@ -7485,7 +6577,7 @@
     return "<h2>Funding Overview</h2><p>Each California Community College and each noncredit institution may receive " +
       "implementation funding to support local " + esc(m.area.full) + " efforts in accordance with AB 123 and Vision 2030 " +
       "goals. A total of <strong>" + fmtMoney(m.collegePool) + "</strong> in one-time 2026-27 implementation funding is " +
-      "available to the " + m.nColleges + " colleges across the <strong>" +
+      "available to the " + m.nInstitutions + " institutions (" + m.nColleges + " colleges and the noncredit-only campuses) across the <strong>" +
       esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
       "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
       "commitment to advancing the three systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
@@ -7523,82 +6615,53 @@
       "senate-driven policies that honor statewide credit recommendations.</p>";
   }
   function memoAllocation(m, full) {
-    // Summary (Sam, 2026-08-04): the total now INCLUDES the $1M noncredit feeder
-    // support (the institution total), broken out; "Colleges" → "Funded Colleges"
-    // and a "Funded Noncredit Campuses" line is added.
+    // ONE POOL (2026-08-31): one combined award per institution — its credit
+    // and noncredit shares side by side (the noncredit share is restricted to
+    // noncredit outcomes and is never folded into the credit figure — Sam's
+    // standing "neglected step child" rule, carried by the columns).
     var summary = "<h2>" + esc(m.area.label) + " Allocation (" + esc(m.window) + ")</h2>" +
       '<table><tbody>' +
-      "<tr><td class='t'>Total available funding</td><td>" + fmtMoney(m.institutionTotal) + "</td></tr>" +
-      "<tr><td class='t' style='padding-left:1.5em;'>College implementation pool</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
-      "<tr><td class='t' style='padding-left:1.5em;'>Noncredit feeder support</td><td>" + fmtMoney(m.feederCarve) + "</td></tr>" +
-      "<tr><td class='t'>Funded Colleges</td><td>" + m.nColleges + "</td></tr>" +
-      "<tr><td class='t'>Funded Noncredit Campuses</td><td>" + m.nFeeders + "</td></tr>" +
-      "<tr><td class='t'>Average award (window)</td><td>" + fmtMoney(m.avg) + "</td></tr>" +
+      "<tr><td class='t'>Total credit and noncredit potential awards</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
+      "<tr><td class='t' style='padding-left:1.5em;'>Credit shares</td><td>" + fmtMoney(m.crSum) + "</td></tr>" +
+      "<tr><td class='t' style='padding-left:1.5em;'>Noncredit shares (restricted to noncredit outcomes)</td><td>" + fmtMoney(m.ncSum) + "</td></tr>" +
+      "<tr><td class='t'>Funded institutions</td><td>" + m.nInstitutions + " (" + m.nColleges + " colleges + " +
+        (m.nInstitutions - m.nColleges) + " noncredit-only institutions)</td></tr>" +
+      "<tr><td class='t'>Base award &middot; Cap (per institution, combined)</td><td>" + fmtMoney(m.floor) +
+        " &middot; " + fmtMoney(m.cap) + "</td></tr>" +
+      "<tr><td class='t'>Average max award (window)</td><td>" + fmtMoney(m.avg) + "</td></tr>" +
       "<tr><td class='t'>Minimum &middot; Maximum award</td><td>" + fmtMoney(m.min) + " &middot; " + fmtMoney(m.max) + "</td></tr>" +
       "</tbody></table>";
     if (!full) return summary;
-    // Per-district allocation (Sam, 2026-08-04): colleges + their noncredit feeder
-    // campus(es), grouped under a district header — districts A→Z, colleges A→Z
-    // within (NC campuses list after their district's colleges). Each district
-    // header carries its subtotal; the final row is the statewide institution total.
-    // Noncredit gets its OWN column, never an addition to the credit figure
-    // beside it (Sam: "the neglected step child" — folding it in is how it stops
-    // being visible as noncredit money; the on-screen table and the CSV already
-    // hold this line). That is also what lets the table tie back to the
-    // institution total now that the carve-out reaches 30 colleges as well as
-    // the standalone campuses, rather than the four that once absorbed all of it.
-    var ncByCollege = m.ncByCollege || {};
-    var items = base().colleges.map(function (c) {
-      return { name: dispName(c.college), total: collegeAlloc(c).total,
-               ncTotal: ncByCollege[c.college] || 0, district: c.district || "—", nc: false };
-    }).concat((m.feederRows || []).map(function (f) {
-      return { name: f.name, total: 0, ncTotal: f.total, district: f.district, nc: true,
-               countedOn: f.countedOn || null };
-    }));
+    // Per-district allocation: institutions grouped under district headers —
+    // districts A→Z, institutions A→Z within. Each district header carries its
+    // subtotals; the final row is the statewide total. The award figures are
+    // max awards — earned by outcomes, not automatically awarded.
     var byDist = {};
-    items.forEach(function (it) { (byDist[it.district] = byDist[it.district] || []).push(it); });
-    var cell = function (v, isNc) {
-      // A standalone institution has no credit allocation and a credit-only
-      // college has no noncredit award: an em dash says "not applicable here",
-      // which $0 does not — $0 reads as an institution that earned nothing.
-      return v > 0 ? fmtMoney(v) : (isNc ? "&mdash;" : "&mdash;");
-    };
+    (m.instRows || []).forEach(function (it) { (byDist[it.district] = byDist[it.district] || []).push(it); });
+    var cell = function (v) { return v > 0.5 ? fmtMoney(v) : "&mdash;"; };
     var body = Object.keys(byDist).sort(function (a, b) { return a.localeCompare(b); }).map(function (d) {
-      var grp = byDist[d].slice().sort(function (a, b) {
-        if (a.nc !== b.nc) return a.nc ? 1 : -1;           // colleges first, NC campuses after
-        return a.name.localeCompare(b.name);
-      });
+      var grp = byDist[d].slice().sort(function (a, b) { return a.name.localeCompare(b.name); });
       var sub = grp.reduce(function (ss, it) { return ss + it.total; }, 0);
-      var ncSub = grp.reduce(function (ss, it) { return ss + it.ncTotal; }, 0);
-      // A district whose only member is a standalone noncredit institution has
-      // no credit allocation, and "$0" there reads as a district passed over —
-      // the same false claim the em dash avoids on the institution rows. It is
-      // not zero, it is not applicable: Calbright's district subtotal printed
-      // "$0" beside its real $50,000 of noncredit support.
-      return "<tr><td class='t'><strong>" + esc(d) + "</strong></td><td><strong>" +
-        (sub > 0 ? fmtMoney(sub) : "&mdash;") +
-        "</strong></td><td><strong>" + (ncSub > 0 ? fmtMoney(ncSub) : "&mdash;") + "</strong></td></tr>" +
+      var crSub = grp.reduce(function (ss, it) { return ss + it.cr; }, 0);
+      var ncSub = grp.reduce(function (ss, it) { return ss + it.nc; }, 0);
+      return "<tr><td class='t'><strong>" + esc(d) + "</strong></td><td><strong>" + cell(crSub) +
+        "</strong></td><td><strong>" + cell(ncSub) + "</strong></td><td><strong>" + cell(sub) + "</strong></td></tr>" +
         grp.map(function (it) {
           return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
-            (it.nc ? " <em>(noncredit)</em>" : "") +
-            // The deduped grantee renders WITH its reason. A bare $0 beside a
-            // named institution reads as a college that was passed over.
-            (it.countedOn ? " <em class='dk'>(noncredit FTES counted on the " +
-               esc(it.countedOn) + " row)</em>" : "") +
-            "</td><td>" + cell(it.total, false) + "</td><td>" + cell(it.ncTotal, true) + "</td></tr>";
+            (it.nco ? " <em>(noncredit-only &mdash; earns by origination)</em>" : "") +
+            (it.placeholder ? " <em class='dk'>(size is a stand-in; nothing disburses on a placeholder)</em>" : "") +
+            "</td><td>" + cell(it.cr) + "</td><td>" + cell(it.nc) + "</td><td>" + cell(it.total) + "</td></tr>";
         }).join("");
     }).join("");
-    return summary + "<p>Per-college allocation for the " + esc(m.window) +
-      " window, by district (colleges A&ndash;Z; each district&#39;s standalone noncredit institution listed beneath it). " +
-      "Noncredit support is a separate carve-out shown in its own column &mdash; it is not part of the credit allocation " +
-      "beside it:</p>" +
-      "<table><thead><tr><th class='t'>District / College</th><th>Window allocation</th>" +
-      "<th>Noncredit support</th></tr></thead><tbody>" + body +
-      "<tr><td class='t'><strong>TOTAL (statewide, incl. noncredit)</strong></td><td><strong>" +
-      fmtMoney(m.collegePool) + "</strong></td><td><strong>" + fmtMoney(m.feederCarve) +
-      "</strong></td></tr>" +
-      "<tr><td class='t'><strong>TOTAL to institutions</strong></td><td colspan='2'><strong>" +
-      fmtMoney(m.institutionTotal) + "</strong></td></tr></tbody></table>";
+    return summary + "<p>Max award by institution for the " + esc(m.window) +
+      " window, by district (institutions A&ndash;Z). Each award is one combined figure with its credit and " +
+      "noncredit shares beside it &mdash; the noncredit share is restricted to noncredit outcomes and is not " +
+      "part of the credit figure:</p>" +
+      "<table><thead><tr><th class='t'>District / Institution</th><th>Credit share</th>" +
+      "<th>Noncredit share</th><th>Max award</th></tr></thead><tbody>" + body +
+      "<tr><td class='t'><strong>TOTAL (statewide)</strong></td><td><strong>" +
+      fmtMoney(m.crSum) + "</strong></td><td><strong>" + fmtMoney(m.ncSum) +
+      "</strong></td><td><strong>" + fmtMoney(m.collegePool) + "</strong></td></tr></tbody></table>";
   }
   // Technical Assistance (Sam, 2026-08-04) — support channels + resources, sourced
   // verbatim from the public CPL Knowledge Base (verified links only; Office Hours
@@ -8039,6 +7102,33 @@
     _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
   }
 
+  // ── page actions (Sam, 2026-08-31) ────────────────────────────────────────
+  // Words, not glyphs: expand/collapse-all for the section folds, the draft
+  // memo and the PDF as one-click buttons at the top, and — for signed-in
+  // reviewers — the Internal · Public view preview.
+  function anySectionOpenNow() {
+    var ids = ["window", "pools", "formula", "eligibility", "priorities", "timing", "goals", "college"];
+    for (var i = 0; i < ids.length; i++) if (sectionOpen(ids[i])) return true;
+    return false;
+  }
+  function actionsRowHtml() {
+    var view = "";
+    if (!window.CPL_FUNDING_PUBLIC) {
+      view = '<span class="cplfund-viewlab">View</span>' +
+        '<button type="button" class="cplfund-optbtn" data-viewmode="internal" aria-pressed="' + (!state.previewPublic) +
+        '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
+        '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
+        '" title="Preview what colleges see — the reviewer-only controls drop out; nothing changes for anyone else.">Public</button>';
+    }
+    return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +
+        (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
+      (publicMode() ? "" :
+        '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
+      '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab — use your browser&#39;s Print &rarr; Save as PDF">Save as PDF</button>' +
+      view + "</div>";
+  }
+
   function render() {
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
@@ -8046,8 +7136,7 @@
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
-    _allocCache = null; _ncCache = null;
-    _earnCache = null; _ncEarnCache = null;
+    _allocCache = null; _ncoRows = null; _earnCache = null;
     var d = base();
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
@@ -8077,11 +7166,16 @@
     // Each top-level section is wrapped in a collapsible <details> (Sam,
     // 2026-07-27). The college section body (toolbar + table) is built first so
     // its IDs (#cplFundSearch/#cplFundCount/#cplFundTable) live inside the fold.
+    // Section titles are Sam's (renamed live, 2026-08-31).
     var collegeBody =
+      '<p class="dk" style="margin:0 0 6px;">Alphabetical. The award figures are each institution&#39;s ' +
+      "<strong>max award</strong> &mdash; maximum funding to be awarded based on measurable outcomes and " +
+      "allocated as credit and noncredit subtotals. Click a row for its per-priority funding, targets, " +
+      "actuals, and the participation confirmation.</p>" +
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
         { val: "district", label: "Group by district" }], state.group) +
-      '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
+      '<input type="search" id="cplFundSearch" placeholder="Search institution / district / county&hellip;" aria-label="Search institutions">' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
       '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (the full data incl. any hidden columns + the County/working-adults context)">⬇ Excel</button>' +
@@ -8090,39 +7184,44 @@
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
       subviewTabsHtml() +
-      '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
+      // "Version as of <date>" (Sam's wording, 2026-08-31); the source detail
+      // lives on in the memo masthead. A ".N" sub-revision is internal — the
+      // date alone displays.
+      '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
+      actionsRowHtml() +
       authbarHtml() +
+      // The Summary sits at the top, never inside a fold (R11, 2026-08-31) —
+      // it is the one over/under readout the retired balance boxes fed.
+      summaryHtml() +
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
-      section("pools", "Funding pools", ledgerNoteHtml() + poolCardsHtml() + awardStatsHtml()) +
-      section("eligibility", "Baseline eligibility", eligibilityHtml()) +
-      section("priorities", "The three funding priorities",
-        (laneIsNc() ? "" : metricDiagnosticHtml()) + laneFilterHtml() + yearFilterHtml() + prioritiesHtml() +
-        ftesFactorsHtml()) +
-      // Sam, 2026-08-28: "The Timing block is now part of the priorities block
-      // and should probably have its own so it can be collapsible separately."
-      // It already emits its own <h3>Timing</h3> as its first element, which is
-      // exactly what collapseH3() consumes — so it becomes an independently
-      // collapsible section through the existing helper (the same path the
-      // feeder block uses), with no new machinery and no change to its markup.
-      collapseH3("timing", timingSectionHtml()) +
-      section("goals", "What the funding must achieve — Ed. Code §78093.2(d)(1)", goalSpineHtml()) +
+      section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
-      section("college", "Potential allocation by college", collegeBody) +
-      collapseH3("feeder", ncStandaloneHtml()) +
+      section("eligibility", "Eligibility Requirements", eligibilityHtml()) +
+      section("priorities", "Three Priority Outcome-Based Allocations",
+        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
+        ncEarningRulesFoldHtml() + ftesFactorsHtml()) +
+      // Sam, 2026-08-28: the Timing block is independently collapsible.
+      collapseH3("timing", timingSectionHtml()) +
+      section("goals", 'Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>', goalSpineHtml()) +
+      section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeBody) +
       '<div class="cplfund-foot">' +
-      "<div>Dollar cells round to whole dollars; click a row to expand its detail (the per-priority math for the " +
-      "year selected above). " +
+      "<div>Funding cells show the <strong>max award</strong> with the Current Total beneath; dollar cells " +
+      "round to whole dollars. Click a row to expand its per-priority detail (CR funding &middot; NC funding " +
+      "&middot; Target &middot; Actual &middot; Current Total &middot; Total Possible, for the year selected " +
+      "above). " +
       (frontloaded()
-        ? "Front-loaded disbursement: the Yr 1 column is the full " + esc(windowLabel()) + " window available up " +
-          "front; later Yr columns show ↻ carryover &mdash; unspent Year-1 funds roll forward" +
+        ? "Combined funding: the award columns are the full " + esc(windowLabel()) + " window, available up " +
+          "front &mdash; unspent funding rolls forward" +
           (nextFy(selectedYears()[selectedYears().length - 1])
-            ? " and close out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
-        : "The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
-          "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
-      "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, 2 = participation, 3 = Veteran Star ≥75% JSTs); " +
-      "each sector turns green when the college satisfies it — a fully green glyph = all met (informational in this draft). " +
-      "⬆ = minimum-viable floor applied; ⬇ = held to the maximum allocation. " +
-      "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
+            ? " and closes out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
+        : "Annual funding: the award columns are each year&#39;s potential allocation. ") +
+      "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, " +
+      "2 = participation, 3 = Veteran Star &ge;75% JSTs &mdash; replaced for the noncredit-only campuses by " +
+      "noncredit certificates posted as exhibits in MAP, N1 a); each sector turns green when the institution " +
+      "satisfies it &mdash; a fully green glyph = all met (informational in this draft). " +
+      "AT BASE = brought up to the base award; AT CAP = held at the cap. " +
+      "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the " +
+      "institution&#39;s county.</div>" +
       headcountSourceHtml() +
       actualsFootHtml() +
       d.footnotes.map(function (f) { return "<div>" + esc(f) + "</div>"; }).join("") +
@@ -8136,24 +7235,14 @@
     var el = document.getElementById("cplFundCount");
     if (!el) return;
     var n = rowsFiltered().length;
-    var denom = base().colleges.length;
-    var avg = base().colleges.reduce(function (s, c) { return s + collegeAlloc(c).total; }, 0) / denom;
+    var denom = oneRoster().length;
     var groupN = grouped() ? groupRowsByDistrict(rowsFiltered()).length : 0;
-    var ncm = ncModel();
-    el.textContent = n + " of " + denom + " colleges" +
+    el.textContent = (state.q.trim() ? n + " of " + denom : String(denom)) + " institutions" +
       (grouped() ? " in " + groupN + (groupN === 1 ? " district" : " districts") : "") +
-      " · average allocation " + fmtMoney(avg) + " over " + windowLabel() +
-      // Same correction as the pool card, plus a basis one: this counted the
-      // standalone roster and printed its HEADCOUNT — a measure the lane does
-      // not allocate on, and one that included Mt. SAC Noncredit's 35,363
-      // students, the record whose FTES is deliberately zeroed because the
-      // Mt. San Antonio credit row already carries it. So the figure was both
-      // the wrong quantity and counted an institution the carve-out pays $0.
-      " · plus noncredit support for " + ncm.rows.length + " institutions (" +
-      fmtInt(ncm.totFtes) + " noncredit FTES) via the " + fmtMoney(feederCarveout()) + " carve-out";
+      " · average max award " + fmtMoney(denom ? netCollege() / denom : 0) + " over " + windowLabel();
   }
 
-  // refreshTable() replaces the whole table subtree via innerHTML, which would
+  // refreshTable() replaces the whole table subtree via innerHTML  // refreshTable() replaces the whole table subtree via innerHTML, which would
   // drop keyboard focus to <body> on every sort/expand (WCAG 2.4.3). Capture the
   // focused control by a STABLE key before the swap and re-focus its counterpart
   // after, so a keyboard/SR user stays on the header they just sorted or the
@@ -8318,7 +7407,8 @@
         e.stopPropagation();
         var college = b.getAttribute("data-optinjump");
         var c = baseCollege(college);
-        if (c) state.open["c:" + c.order] = true;
+        // rows key by NAME since the one-pool port (data-id "c:<college>")
+        if (c) state.open["c:" + c.college] = true;
         OPTIN_UI[college] = { open: true };
         _optinFocusCollege = college;
         refreshTable();
@@ -8475,7 +7565,15 @@
     // Persist each collapsible section's open/closed state so it survives the
     // re-render an edit triggers (native <details> resets otherwise).
     document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
-      dt.addEventListener("toggle", function () { saveSectionState(dt.getAttribute("data-sec"), dt.open); });
+      dt.addEventListener("toggle", function () {
+        saveSectionState(dt.getAttribute("data-sec"), dt.open);
+        var xb = document.getElementById("cplFundXall");
+        if (xb) {
+          var any = false;
+          document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (d2) { if (d2.open) any = true; });
+          xb.textContent = any ? "Collapse all sections" : "Expand all sections";
+        }
+      });
     });
     var input = document.getElementById("cplFundSearch");
     if (input) {
@@ -8499,11 +7597,7 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
-    wireSeg("cplFundLane", function (v) {
-      if (v === state.viewLane) return;
-      state.viewLane = v;
-      render();
-    });
+    // The Lane seg control is retired (R1, 2026-08-31).
     wireSeg("cplFundAllocBasis", function (v) {
       if (v === allocationBasis()) return;
       savingState = "";
@@ -8555,6 +7649,28 @@
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
     var pdfBtn = document.getElementById("cplFundPdf");
     if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
+    var pdfTop = document.getElementById("cplFundPdfTop");
+    if (pdfTop) pdfTop.addEventListener("click", openPdf);
+    var memoTop = document.getElementById("cplFundDraftMemo");
+    if (memoTop) memoTop.addEventListener("click", function () {
+      if (publicMode()) return;   // belt-and-braces: the button never renders public
+      if (state.subview !== "report") { state.subview = "report"; render(); }
+    });
+    var xallBtn = document.getElementById("cplFundXall");
+    if (xallBtn) xallBtn.addEventListener("click", function () {
+      var secs = document.querySelectorAll("#cplFundingMount details.cplfund-sec");
+      var anyOpen = false;
+      secs.forEach(function (dt) { if (dt.open) anyOpen = true; });
+      secs.forEach(function (dt) { dt.open = !anyOpen; });   // each toggle event persists its own state
+      xallBtn.textContent = anyOpen ? "Expand all sections" : "Collapse all sections";
+    });
+    document.querySelectorAll("#cplFundingMount [data-viewmode]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var pub = b.getAttribute("data-viewmode") === "public";
+        if (!!state.previewPublic === pub) return;
+        state.previewPublic = pub; render();
+      });
+    });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
     // ⚙ menu lives in the toolbar so it stays open across the toggle).
@@ -8852,7 +7968,7 @@
       if (k === q || disp === q || k.indexOf(q) === 0 || disp.indexOf(q) === 0) hit = c;
     });
     if (!hit) return;
-    state.open["c:" + hit.order] = true;
+    state.open["c:" + hit.college] = true;   // rows key by NAME (one-pool port)
     state.q = "";
     _deepLinkCollege = hit.college;
     _deepLinkPending = true;
@@ -8863,7 +7979,7 @@
     if (!_deepLinkPending || !_deepLinkCollege) return;
     var c = baseCollege(_deepLinkCollege);
     if (!c) { _deepLinkPending = false; return; }
-    var row = document.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + c.order + '"]');
+    var row = document.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + c.college + '"]');
     if (!row) return;   // table not built yet — try again on the next render
     _deepLinkPending = false;
     if (typeof row.scrollIntoView === "function") row.scrollIntoView({ block: "center" });
@@ -8916,7 +8032,7 @@
     _newScenario: newScenario,
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
-    _model: function () { _allocCache = null; _ncCache = null; return allocModel(); },
+    _model: function () { _allocCache = null; _ncoRows = null; return allocModel(); },
     // ── the EFFECTIVE dials, in one call (2026-08-26) ──────────────────────
     // Sam, after a session read yearPriorities["2"].factor from the live
     // Supabase config and reported it as what the model uses: "Never rely on
@@ -8936,8 +8052,8 @@
       // config afterwards got the BAKED numbers reported as "effective", which
       // is the very error this hook exists to prevent, reproduced inside it.
       // Caught by tests/cpl_funding_effective.test.js 3b/3c: _effective() and
-      // _nc() disagreed, which is what two readers of one fact always do.
-      _allocCache = null; _ncCache = null;
+      // the model disagreed, which is what two readers of one fact always do.
+      _allocCache = null; _ncoRows = null;
       var slots = [], n = nYears(), i;
       for (i = 1; i <= n; i++) {
         var slot = String(i);
@@ -8961,7 +8077,15 @@
           })
         });
       }
-      var nc = ncModel();
+      var m = allocModel();
+      // The noncredit funding on the pool's face — the trio's origination-held
+      // awards plus the college awards' noncredit shares (one pool: this is a
+      // DECOMPOSITION of the one solve, never a second pool).
+      var ncFace = 0, trioHeld = 0;
+      oneRoster().forEach(function (c) {
+        var sp = instSplit(c);
+        if (c.nco) trioHeld += sp.w; else ncFace += sp.nc;
+      });
       return {
         project: activeProject, scenario: activeScenario,
         basis: allocationBasis(),
@@ -8969,31 +8093,29 @@
         mirrorYears: mirrorYears(),
         priorityOrder: priorityOrder("1"),
         window: windowLabel(),
+        // ONE POOL (adopted 2026-08-31): every institution, credit + noncredit,
+        // one base/cap window on the combined award. The retired dials
+        // (feeder_carveout, nc_threshold_ftes, nc_floor/cap_window) may still
+        // sit in the stored config; the model reads none of them.
         pool: {
-          net_before_feeder: netBeforeFeeder(), net_college: netCollege(),
+          net_college: netCollege(),
           floor_window: floorWindow(), cap_window: capWindow(),
-          feeder_carveout: feederCarveout()
-        },
-        nc: {
-          pool: nc.pool, threshold_ftes: nc.threshold,
-          floor_window: nc.floor, cap_window: nc.cap,
-          institutions: nc.rows.length, at_floor: nc.floorCount, at_cap: nc.cappedCount,
-          break_even_ftes: nc.breakEven, unspent: nc.unspent,
-          floor_infeasible: !!nc.floorInfeasible, cap_below_floor: !!nc.capBelowFloor
+          institutions: oneRoster().length,
+          at_floor: m.floorCount, at_cap: m.cappedCount,
+          unspent: m.unspent,
+          floor_infeasible: !!m.floorInfeasible, cap_below_floor: !!m.capBelowFloor,
+          nc_college_shares: ncFace, nc_only_held_by_origination: trioHeld
         },
         years: slots
       };
     },
-    // The noncredit lane itself, for a sweep. Cache cleared so a caller that
-    // moved a dial between calls gets the new answer rather than the old one.
-    _nc: function () { _ncCache = null; return ncModel(); },
     // The composed participation-requirement text. Exposed because its only
     // render surfaces need live eligibility data (baselineGate() short-circuits
     // to "pending" when the coordinator feed has not loaded), so the join it
     // performs — the one that was printing "… by by 2026-11-01" — is otherwise
     // unreachable from a test.
     _partReqText: function () { return partReqText(); },
-    _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
+    _alloc: function (name) { var c = rosterRow(name); return c ? collegeAlloc(c) : null; },
 
     // ── read-only API for the My College tab (#college-briefing) ────────────
     // The briefing shows one college its own money. It MUST NOT re-derive any
@@ -9030,10 +8152,13 @@
     // about the college rather than as the carryover state of another tab.
     // Year 1 is also the authoritative set (Sam, 2026-08-09: Y1 ≡ Y2).
     _prios: function (name, slot) {
-      var c = baseCollege(name);
+      var c = rosterRow(name);
       if (!c) return null;
       slot = String(slot || "1");
-      var W = collegeAlloc(c).w;   // the college's window entitlement
+      // The CREDIT slice of the one combined award (one pool, 2026-08-31) —
+      // the earn base for these priorities. The noncredit slice's caps live in
+      // _ncPrios, which is the restriction on the award's own face.
+      var W = instSplit(c).cr;
       return priorities(slot).map(function (p) {
         return {
           // `src` is the priority's index in the stored config — its IDENTITY,
@@ -9050,15 +8175,17 @@
         };
       });
     },
-    // The NONCREDIT lane's counterpart of _prios (build step 2, 2026-08-27).
-    // Same standing rule as _alloc/_prios: never re-derive an NC figure, ask the
-    // model. Takes a college name, or an "NC:<short>" key for one of the
-    // standalone continuing-education institutions that have no credit row.
+    // The noncredit SHARE's counterpart of _prios (one-pool form, 2026-08-31).
+    // Same standing rule as _alloc/_prios: never re-derive an NC figure, ask
+    // the model. Takes a college name or a noncredit-only institution's short
+    // ("NOCE" / "SD Cont. Ed" / "Calbright"); the retired "NC:<short>" key
+    // form is still accepted so existing consumers keep working.
     _ncPrios: function (key, slot) {
-      var inst = ncInstFor(key);
+      var name = String(key || "").indexOf("NC:") === 0 ? String(key).slice(3) : key;
+      var inst = rosterRow(name);
       if (!inst) return null;
       slot = String(slot || "1");
-      var W = ncAward(inst.key);
+      var W = instSplit(inst).nc;
       return ncPriorities(slot).map(function (p) {
         var cap = ncPrioCap(W, slot, p);
         var fr = earnFraction(inst, p);
@@ -9070,9 +8197,10 @@
           cap: cap,
           target: prioTarget(inst, p),
           status: fr.status,
-          // $0 today by construction: the daily feed carries no nc_* measure, so
-          // every NC priority resolves `undelivered`. That is Sam's ruling —
-          // targets and potential shown, current earnings zero, NOT an advance.
+          // $0 until the noncredit feeds report (F1) — every NC priority
+          // resolves `undelivered` while the daily feed carries no nc_*
+          // measure. Targets and potential shown, current earnings zero,
+          // NEVER an advance (N2 b for the noncredit-only institutions).
           earned: cap * fr.f
         };
       });
@@ -9091,15 +8219,14 @@
         display: feeder ? (feeder.name || feeder.short) : dispName(name)
       };
     },
-    // Kept for My College, which still labels a rural college as CONTEXT. The
-    // carve-out it used to fund is retired (2026-08-22) — this moves no money.
-    // The noncredit lane, for tests and for My College.
-    _ncModel: ncModel,
     _whoMoves: whoMoves,
     _grantRecipients: grantRecipients,
+    // An institution's noncredit AWARD SHARE under one pool — the FTES-share
+    // decomposition of its one combined award (never a second pool's figure).
     _ncAward: function (name) {
-      var c = baseCollege(name);
-      return c ? ncAward(c.college) : ncAward("NC:" + name);
+      var key = String(name || "").indexOf("NC:") === 0 ? String(name).slice(3) : name;
+      var row = rosterRow(key);
+      return row ? instSplit(row).nc : 0;
     },
     _isRural: function (name) { var c = baseCollege(name); return c ? !!c.rural : null; },
     _district: function (name) { var c = baseCollege(name); return c ? (c.district || null) : null; },
@@ -9121,7 +8248,7 @@
     _setLedger: function (o) {
       if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
       else { LEDGER = { loaded: true, ok: true, pool: o }; }
-      _allocCache = null; _ncCache = null; _earnCache = null; _ncEarnCache = null;
+      _allocCache = null; _ncoRows = null; _earnCache = null;
     },
     _ledgerDrift: function () { return ledgerDrift(); },
     _setElig: function (o) {

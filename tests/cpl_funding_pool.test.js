@@ -33,14 +33,23 @@ const {
 // the guaranteed allowance in the drill-in, the floor-fill hover, and returning
 // the $1M to the main pool when the roster was cleared. The mechanism is gone
 // and its absence is guarded in tests/cpl_funding_rural.test.js. The one check
-// worth keeping is O2b, which was never about rural at all: the SYSTEM row's
-// per-priority cell must render without a per-college `c`.
+// worth keeping is O2b, which was never about rural at all: the statewide
+// (null-c) per-priority path must render without a per-college `c`. The
+// in-table P-cells are retired (one-pool port, 2026-08-31 — per-priority detail
+// lives in the row expand), so the surfaces that still exercise null-c are the
+// ONE SYSTEM row's CR/NC award pair (R6) and the CSV's SYSTEM line, whose
+// per-priority targets come from prioTarget(null, p) at the statewide base.
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const sysCell = doc.querySelector("#cplFundTable tr.cplfund-systemrow td.cf-prio");
-  check("O2b: the SYSTEM row per-priority cell renders (no null-c crash) at the base rate",
-    !!sysCell && /statewide base rate|statewide base/.test(sysCell.getAttribute("title") || ""));
+  const sysAward = doc.querySelectorAll("#cplFundTable tr.cplfund-systemrow td.cf-award");
+  const csvO = window.CPL_FUNDING_TAB._csv().split("\r\n");
+  const headO = (csvO[1] || "").split(",");
+  const sysO = (csvO.find(function (l) { return l.indexOf("SYSTEM (statewide)") !== -1; }) || "").split(",");
+  const p1t = Number(sysO[headO.indexOf("P1 target")]);
+  check("O2b: the statewide (null-c) per-priority path renders — SYSTEM award pair + CSV targets, no crash",
+    sysAward.length === 2 && /Credit share of the max award/.test(sysAward[0].getAttribute("title") || "") &&
+    headO.indexOf("P1 target") !== -1 && p1t > 0);
 }
 
 // Part P — display rename (SkyHighness, 2026-07-29): show the current college
@@ -229,7 +238,11 @@ const {
     p.scaling_projects_tech === AMEND_PROJECTS);
   check("R3: college_funding_before_feeder mirrors the institution total",
     p.college_funding_before_feeder === AMEND_INSTITUTIONS);
-  check("R4: the one surviving $1M earmark is carved from INSIDE the institution total",
+  // ONE POOL (Sam, 2026-08-31): the noncredit carve-out is RETIRED (R3) — the
+  // stored field survives for config-shape stability (deleting a curator's
+  // saved value is a data write the code change does not need) but the model
+  // reads NOTHING from it; R6 below proves the pool it once carved is whole.
+  check("R4: the $1M earmark FIELD survives (config-shape stability) but rural stays gone",
     p.feeder_carveout === 1000000 && p.rural_carveout === undefined);
   check("R4: the data file records the amendment as the authority",
     /20260729_CPL_Amendment_Sep_BOG/.test(dataSrc) && /BOG budget amendment/i.test(dataSrc));
@@ -242,46 +255,56 @@ const {
     15000000 - 118 * 50000 - p.remaining_2025_26 === 59692);
 }
 {
-  // The distribution engine must consume exactly the carved pool — Σ college
-  // window totals == institution total − the noncredit carve-out (the rural $1M
-  // is distributed back INTO the college rows, so it stays inside the sum).
+  // ONE POOL (Sam, adopted 2026-08-31): the distribution engine must consume
+  // exactly the institution total — the noncredit carve-out is FOLDED IN (R3),
+  // so nothing is netted off it, and the roster it distributes over is every
+  // institution ONCE: the 115 college rows plus the noncredit-only three as
+  // ordinary rows keyed by their shorts (Mt. SAC Noncredit rides the
+  // Mt San Antonio row — the same program must not be paid twice).
+  // (History: the rural $1M was folded back on 2026-08-22, funding a $175K
+  // floor; one-pool adoption re-set the baked window to $150K/$400K.)
   const { window } = freshDom();
   boot(window);
   const T = window.CPL_FUNDING_TAB;
   const p = window.CPL_FUNDING.pool;
   const institutions = p.one_time_2026_27 - p.admin_cost - p.scaling_projects_tech;
-  // One earmark now — the rural carve-out was retired 2026-08-22 and its $1M
-  // folded back in, which is what funded the floor's rise to $175,000.
-  const heroPool = institutions - p.feeder_carveout;
-  const mainPool = heroPool;
+  const heroPool = institutions;   // $25,240,308 — the amendment's line IS the pool
+  const roster = window.CPL_FUNDING.colleges.map(function (c) { return c.college; })
+    .concat(window.CPL_FUNDING.feeders
+      .filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .map(function (f) { return f.short; }));
 
-  check("R6: netCollege() is the institution total less the ONE remaining earmark",
-    Math.abs(T._netCollege() - mainPool) < 0.5);
+  check("R6: netCollege() IS the institution total — the carve-out is folded in (R3)",
+    Math.abs(T._netCollege() - heroPool) < 0.5);
 
   let sum = 0;
-  window.CPL_FUNDING.colleges.forEach(function (c) { sum += T._alloc(c.college).total; });
-  check("R7: Σ college window totals == the hero pool (conservation across the carve-outs)",
-    Math.abs(sum - heroPool) < 1);
+  roster.forEach(function (n) { sum += T._alloc(n).total; });
+  check("R7: Σ institution window totals over all 118 == the hero pool (conservation)",
+    roster.length === 118 && Math.abs(sum - heroPool) < 1);
 
   // Asserted by DERIVATION (never hardcoded), so a floor/ceiling change re-proves
   // the relationships instead of failing on a stale literal.
-  const totals = window.CPL_FUNDING.colleges.map(function (c) { return T._alloc(c.college).total; });
+  const totals = roster.map(function (n) { return T._alloc(n).total; });
   const min = Math.min.apply(null, totals), max = Math.max.apply(null, totals);
-  check("R8: the average award is the hero pool over the 115 colleges",
-    Math.abs(sum / totals.length - heroPool / window.CPL_FUNDING.colleges.length) < 0.01);
+  check("R8: the average max award is the hero pool over the 118 institutions",
+    Math.abs(sum / totals.length - heroPool / roster.length) < 0.01);
   check("R8: the minimum award is the floor (the floor binds at this pool size)",
     Math.abs(min - p.floor_window) < 0.5);
-  // The maximum award is now the CEILING, not the largest college's share
-  // (Sam's $400K maximum, 2026-08-22). Note the largest college is picked on the
-  // ALLOCATION BASIS (credit FTES) — the largest by HEADCOUNT is East LA, which
-  // sits below the ceiling, so a headcount-picked college would fail this for a
-  // reason that has nothing to do with the ceiling.
+  // The maximum award is the CEILING, not the largest institution's share
+  // (Sam's $400K maximum, 2026-08-22; combined-award window ruled 2026-08-31).
+  // The largest institution is picked on the ALLOCATION BASIS — COMBINED
+  // credit + noncredit FTES (Mt San Antonio, whose Mt. SAC NC FTES ride its
+  // row) — the largest by HEADCOUNT is East LA, which sits below the ceiling,
+  // so a headcount-picked institution would fail this for a reason that has
+  // nothing to do with the ceiling.
   const biggest = window.CPL_FUNDING.colleges.reduce(function (a, b) {
-    return (a.credit_ftes || 0) >= (b.credit_ftes || 0) ? a : b;
+    const sa = (a.credit_ftes || 0) + (Number(a.noncredit_ftes) || 0);
+    const sb = (b.credit_ftes || 0) + (Number(b.noncredit_ftes) || 0);
+    return sa >= sb ? a : b;
   }).college;
   check("R8: the maximum award is the ceiling (the ceiling binds at this pool size)",
     p.cap_window > 0 && Math.abs(max - p.cap_window) < 0.5 && max > p.floor_window);
-  check("R8: the largest college on the allocation basis is the one held to the ceiling",
+  check("R8: the largest institution on the allocation basis is one held to the ceiling",
     T._alloc(biggest).capped === true && Math.abs(T._alloc(biggest).total - p.cap_window) < 0.5);
 }
 

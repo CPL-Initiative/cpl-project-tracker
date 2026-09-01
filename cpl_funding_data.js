@@ -84,12 +84,25 @@
 // is $25,240,308 ÷ 119. Under this file's model the correct figures are
 // avg $210,785 / min $150,000 / max $623,871.
 //
+// 2026-08-31 — ONE POOL ADOPTED (Sam). The two-lane model above is HISTORY:
+// the $25,240,308 to institutions is ONE pool over every institution — the 115
+// colleges plus the noncredit-only three — sized by combined credit +
+// noncredit FTES, base $150,000 / cap $400,000 per institution on the COMBINED
+// award (floor_window/cap_window below). The noncredit carve-out and the three
+// NC dials (feeder_carveout / nc_threshold_ftes / nc_floor_window /
+// nc_cap_window) are RETIRED — the fields remain below for config-shape
+// stability but cpl_funding.js reads none of them. Every award decomposes into
+// credit and noncredit shares by FTES share; the noncredit share is restricted
+// to the noncredit measures, and the noncredit-only institutions earn by
+// origination (no advances — N2 b). Feeders carry `origin_scope`/`district`
+// for the origination feed's ruled scoping.
+//
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-30.1",
+ "model_version": "2026-08-31",
  "source": "Sept-2026 BOG budget amendment (20260729_CPL_Amendment_Sep_BOG.xlsx) · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (refreshed 2026-07-31; 10 colleges not in that pull carry their prior vintage)",
  "headcount_source": {
@@ -107,10 +120,10 @@ window.CPL_FUNDING = {
   "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before noncredit carve-out)",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT SUPPORT (carve-out)",
-  "floor_window": 175000.0,
-  "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
+  "floor_window": 150000.0,
+  "floor_window_label": "BASE AWARD (per institution, combined, window floor)",
   "cap_window": 400000.0,
-  "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",
+  "cap_window_label": "CAP (per institution, combined, window ceiling)",
   "nc_threshold_ftes": 500.0,
   "nc_threshold_ftes_label": "NONCREDIT ENTRY THRESHOLD (annual noncredit FTES)",
   "nc_floor_window": 25000.0,
@@ -204,7 +217,9 @@ window.CPL_FUNDING = {
    "headcount": 15560,
    "vintage": "2025-26",
    "noncredit_ftes": 3828.02,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "North Orange County Community College District"
   },
   {
    "name": "San Diego College of Continuing Education",
@@ -212,7 +227,9 @@ window.CPL_FUNDING = {
    "headcount": 21561,
    "vintage": "2025-26",
    "noncredit_ftes": 9337.8,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "district",
+   "district": "San Diego Community College District"
   },
   {
    "name": "Mt. San Antonio College — Noncredit",
@@ -221,7 +238,9 @@ window.CPL_FUNDING = {
    "vintage": "2022-23",
    "noncredit_ftes": 10829.3,
    "ftes_vintage": "2025-26",
-   "nc_ftes_on_credit_row": "Mt San Antonio"
+   "nc_ftes_on_credit_row": "Mt San Antonio",
+   "origin_scope": "district",
+   "district": "Mt. San Antonio Community College District"
   },
   {
    "name": "Calbright College",
@@ -231,7 +250,8 @@ window.CPL_FUNDING = {
    "noncredit_ftes": 21438.17,
    "noncredit_ftes_placeholder": 1000,
    "noncredit_ftes_placeholder_basis": "Sam's stand-in (2026-08-06), inside the peer-plausible band: the other three feeders run 0.25-0.43 noncredit FTES per student, which puts Calbright's 2,484 headcount at 611-1,076 FTES. The reported 21,438.17 implies 8.63 FTES per student, which is not physically possible (a full-time year is ~1.0) and most plausibly counts enrollments, not FTES. Pending Malone's verification.",
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "origin_scope": "statewide"
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
@@ -720,6 +740,7 @@ window.CPL_FUNDING = {
   {
    "order": 50,
    "college": "LA Swest",
+   "display": "LA Southwest",
    "headcount": 12270,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
@@ -1138,6 +1159,7 @@ window.CPL_FUNDING = {
   {
    "order": 85,
    "college": "Riverside",
+   "display": "Riverside City",
    "headcount": 33234,
    "district": "Riverside Community College District",
    "county": "Riverside",

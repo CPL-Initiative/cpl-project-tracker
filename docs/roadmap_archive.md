@@ -5210,6 +5210,24 @@ tracker-side or in `cpl_memory`) is honored and was applied retroactively to thi
 session's own drafts in the #1414/#1415 merge. Story:
 `doctrine_enforcement_lessons`; handoffs `session_213_handoff` + `session_214_handoff`.
 
-### INDEX update-history rotation (2026-08-31, S215)
+### INDEX update-history rotation (2026-09-01, S216)
+
+- **2026-08-29 (SkyCrush, S206 — day 2)** — the session **auto-compacted at 786,077 tokens** with the checkpoint 150K stale, ~778,000 dropped. ⭐ **Rule 9's premise was FALSE, not merely unobservable**: `message.usage` carries the live context every turn and `compactMetadata.preTokens` records every compaction, so the trigger needed a file read, not a proxy. `kb/_context_budget.py` + a PostToolUse hook + `scripts/install-context-hook.ps1` (Windows PowerShell **5.1** — three 5.1-only traps, and ⚠️ PowerShell cannot be executed from a session). ⚠️ **Thresholds must be a SUM of measured costs**: "2× checkpoint" missed by **336 tokens**, caught by its own test. New `docs/scenarios/` probe protocol — subjects get only the auto-loaded doctrine, the **rubric is committed before any probe runs**, and they report **holes, not a score**. Two more guard repairs: `self_corrected_word_pair` was ignoring its own advice (matched raw text while telling you to use a code span), and Rule 9a pointed at a settings block that did not exist. Ledger 7 of 9. #1387. ⚠️ `CLAUDE.md` left at **1.04× budget by Sam's decision**, to sort next session. 2 KB notes, 5 memory rows.
+
+#### prior rotation — INDEX update-history rotation (2026-08-31, S215)
 
 - **2026-08-29 (SkyCrush, S206 — final)** — the **`CLAUDE.md` consolidation**, all five PRs merged (#1381–#1384, CPLBrain#35): **151,484 B → 58,373 B**, nothing deleted. §11's 29 lane cells → [`reference/lanes/`](reference/lanes/); Sam's **assignment rule** (*push what a session cannot know to ask for; pull everything else*) into `CLAUDE.md` **and** `checkpoint.md`. ⚠️ **Six rules/guards stopped firing because content moved** — `stacked_roadmap_cell` keyed to a filename; **`docs/reference/**` never indexed at all** (0 → 37, every lane globs a flat `docs/*.md`); Rule 9 still naming the 2026-07-10 pare-downs, so a checkpoint would have left 30 lane files to rot; and **"PLAIN WORDS, NO GLYPHS" carried out of the file entirely** — a rule that had already failed the same way once via `cpl_memory`. New `## Presentation rules` section + `presentation_doctrine` and `unreferenced_offload` lints. ⚠️ **`npm test` 20.7 → 6.9 min in CI** with three symptoms that named the wrong thing (pipe truncation reported as 176 disabled rules). 2 KB notes, 8 memory rows. SkySolidare S204's narrative archived.
+
+### SkyLedger S214 — the one-pool day (2026-08-31) *(archived from §11 at the S216/S217 checkpoint)*
+
+**Sam ADOPTED the one-pool funding model** ($25.24M · $150K floor / $400K cap
+per institution, CR+NC combined; the NC-only trio earns by ORIGINATION, no
+advances — rulings N1 a / N2 b / N3 a) via a measured arc: the Budget Balance
+mock (#1419–#1420), the who-moves card wired into the live tab (#1421), the
+One-Pool Funding Tab visual (#1422). NC protection is the **earning rule, not a
+second pool** (new KB note; **F1 pending** — hold vs label on the $1.3M college
+NC shares). Vocabulary ruled: **funding never "money" · CCC norms · "max
+award" · alphabetical** (#1423 + the Naming doctrine block). Memo A is now an
+editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions
+delivered for Malone/Pedro (CPLBrain#67). Story: `cpl_funding_lessons`;
+handoff `session_215_handoff`.

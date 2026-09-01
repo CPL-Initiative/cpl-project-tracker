@@ -1,31 +1,38 @@
 // tests/cpl_funding_nc_lane.test.js
 //
-// The NONCREDIT EARNING LANE — build step 2 (Sam, 2026-08-26/27).
+// THE NONCREDIT CARVE-OUT LANE IS RETIRED (Sam adopted the one-pool model,
+// 2026-08-31 — R3 no carve-out card, R4–R5 no NC dials, R8 no parity card).
 //
-// Sam ruled the NC lane EARNS like credit rather than being allocated and
-// displayed: "a cap earned against the CR three, origin-filtered", at credit's
-// funding factor, and (2026-08-27) at credit's shares. This suite guards the
-// three ways that build can go quietly wrong.
+// This file used to guard the SECOND SOLVE: ncModel() splitting a $1.8M
+// carve-out across its own roster under its own floor/cap/threshold dials.
+// One pool ended that mechanism: noncredit FTES now size the ONE combined
+// award, and an institution's noncredit money is the FTES-share DECOMPOSITION
+// of that award (instSplit → laneShareOf), restricted to the noncredit
+// measures. The successor coverage of the adopted model is
+// tests/cpl_funding_one_pool.test.js; the retirement pattern here is
+// tests/cpl_funding_rural.test.js.
 //
-// ⚠️ 1. THE PROSE TRAP, IN THE OTHER DIRECTION. measurability() resolves a
-// priority to a data key by reading its WORDING. The NC priorities inherit
-// credit's wording by construction (Sam: "the same three priorities"), so an
-// unpinned NC priority resolves to a CREDIT source and scores noncredit money on
-// credit performance. Every figure would be non-zero, in range, and wrong —
-// there is nothing on screen that would look like a defect. The whole reason
-// `metric_src` exists is that this class of error renders as the expected value.
+// What SURVIVES from the old lane — because Sam's earning rulings survived the
+// pool merge — is re-aimed below at _ncPrios / _ncAward / the NC award cell:
 //
-// ⚠️ 2. THE ADVANCE. An unmeasurable credit metric pays the FULL CAP as an
-// advance. Sam ruled the opposite for NC: targets and potential shown, earnings
-// at zero, explicitly not an advance. A regression here does not show a wrong
-// number in a cell — it disburses the entire $1.8M carve-out.
+//   ⚠️ 1. THE PROSE TRAP. measurability() resolves a priority to a data key by
+//   reading its WORDING, and the NC priorities inherit credit's wording. An
+//   unpinned NC priority would resolve to a CREDIT source and score noncredit
+//   money on credit performance — every figure non-zero, in range, and wrong.
+//   ncPriorities() therefore ALWAYS pins a metric_src (A1–A3).
 //
-// ⚠️ 3. THE POT. `share` splits the MONEY, never the FTES (Sam: "route, don't
-// split"). An NC priority measured against the CREDIT pool produces a total that
-// still BALANCES — against the wrong denominator.
+//   ⚠️ 2. THE ADVANCE. An unmeasurable credit metric pays the FULL CAP as an
+//   advance. Sam ruled the opposite for noncredit (F1 / N2 b): targets and
+//   potential shown, earnings $0, explicitly NOT an advance. A regression here
+//   does not show a wrong number — it disburses the noncredit shares.
+//
+//   ⚠️ 3. THE POT. `share` splits the MONEY, never the FTES ("route, don't
+//   split"). An NC priority is measured against the award's NONCREDIT SLICE —
+//   under one pool that is laneShareOf(c).nc of the entitlement, never the
+//   credit slice and never a second pool.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_nc_lane.test.js`).
-const { check, freshDom, boot, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
 
 // ── A. the wiring, read out of the source ────────────────────────────────────
 check("A1: ncPriorities() ALWAYS emits a metric_src — there is no unpinned NC path",
@@ -35,64 +42,161 @@ check("A2: an unmappable milestone resolves to a deliberately-unknown key, so it
   !/^\s{4}nc_unmapped:/m.test(consumerSrc));
 check("A3: the NC source map is DERIVED from METRIC_SOURCES by milestone, not written down a second time",
   /function ncSourceByMilestone\(\)[\s\S]{0,400}r\.lane === "nc"[\s\S]{0,120}out\[r\.milestone\] = k/.test(consumerSrc));
-check("A4: prioEntitlement() routes on the lane — the NC pot, not the credit pool",
-  /function prioEntitlement\(c, p\)[\s\S]{0,600}if \(p && p\.lane === "nc"\) return ncPrioEntitlement\(c, p\);/.test(consumerSrc));
+// A4 re-aimed (one-pool form): the routing is no longer to a second pool's
+// entitlement — a priority is measured against ITS LANE'S SLICE of the one
+// award's entitlement, by the institution's own FTES split.
+check("A4: prioEntitlement() routes each lane onto its OWN slice of the one entitlement (laneShareOf), never the other lane's money",
+  /function prioEntitlement\(c, p\)[\s\S]{0,1200}laneFrac = \(p && p\.lane === "nc"\) \? laneShareOf\(c\)\.nc : laneShareOf\(c\)\.cr;/.test(consumerSrc));
 check("A5: the not-yet-loaded-artifact branch does NOT advance the NC lane",
   /if \(meas\.lane === "nc"\) return \{ f: 0, status: "undelivered"/.test(consumerSrc));
 check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
   /function ncPrioCap\(W, slot, p\) \{\s*\n\s*var ss = ncShareSum\(slot\);/.test(consumerSrc));
-check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncredit floor raises money and not the bar",
-  /function ncPrioEntitlement\(inst, p\)[\s\S]{0,200}ncSizePct\(inst\) \* ncCapScale\(inst\)[\s\S]{0,60}ncModel\(\)\.pool/.test(consumerSrc));
 
-// ── B. the model answers ─────────────────────────────────────────────────────
+// ── A'. the RETIRED second solve is gone from the source, not merely unused ──
+// (R3–R5, 2026-08-31.) Comment lines are stripped first — the retirement is
+// deliberately RECORDED in comments (ncModel's epitaph, the R-item notes), and
+// a bare grep would match the explanation of why the mechanism went.
+{
+  const code = consumerSrc.split("\n")
+    .filter(function (l) { return !/^\s*(\/\/|\*|\/\*)/.test(l); }).join("\n");
+  ["ncModel", "ncInstitutions", "ncPrioEntitlement", "ncSizePct", "ncCapScale",
+   "feederCarveout", "ncThresholdFtes", "ncFloorWindow", "ncCapWindow",
+   "ncParity", "allNoncreditFtes"
+  ].forEach(function (fn) {
+    check("A7: " + fn + "() is gone from live code", code.indexOf("function " + fn) === -1);
+  });
+  check("A7b: nothing calls ncModel() any more — the decomposition is instSplit, not a second solve",
+    !/ncModel\s*\(/.test(code));
+  check("A7c: no net_before_feeder survives — nothing is netted down for a carve-out",
+    !/net_before_feeder/.test(code));
+}
+
+// ── B. the earning rule on today's feed (the surviving semantics) ────────────
 (function () {
   const { window } = freshDom();
-  boot(window);
+  const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  const nc = T._nc();
-  const funded = Object.keys(nc.W).filter((k) => nc.W[k] > 0);
-  const plain = funded.find((k) => !nc.floored[k] && !nc.capped[k]);
-  const floored = funded.find((k) => nc.floored[k]);
-  const ps = T._ncPrios(plain, "1");
 
+  // The retired API surface (R3–R5): no second model to ask.
+  check("B0: _nc() and _ncModel() are gone from the module API",
+    typeof T._nc === "undefined" && typeof T._ncModel === "undefined");
+  check("B0b: _effective() carries no `.nc` block and no net_before_feeder — one pool, one report",
+    !("nc" in T._effective()) && !("net_before_feeder" in T._effective().pool));
+  // The NC dials cannot be rendered (R4–R5): no editable box addresses them.
+  ["feeder_carveout", "nc_floor_window", "nc_cap_window", "nc_threshold_ftes"].forEach(function (f) {
+    check("B0c: no editable dial for the retired `" + f + "` field renders",
+      !doc.querySelector('[data-field="' + f + '"]'));
+  });
+  // …and the stored config fields are INERT: nothing reads them, so setting
+  // them moves not a single award. This is the "cannot come back through the
+  // config" guard — the carve-out's own version of the rural retirement's
+  // pool-arithmetic pin.
+  (function () {
+    const w0 = T._model().W;
+    T._setScenario({ pool: { feeder_carveout: 1800000, nc_threshold_ftes: 500,
+                             nc_floor_window: 50000, nc_cap_window: 100000 } });
+    const w1 = T._model().W;
+    const moved = Object.keys(w0).filter(function (k) { return Math.abs(w0[k] - w1[k]) > 0.01; });
+    check("B0d: the retired carve-out/threshold/NC-window dials move NO award — the fields are read by nothing",
+      Object.keys(w0).length === 118 && moved.length === 0);
+    T._setScenario({});
+  })();
+
+  // The lane's earning rule, on a college that runs a real noncredit program.
+  const ps = T._ncPrios("Mt San Antonio", "1");
   check("B1: every NC priority is pinned to a noncredit-lane source",
-    ps.length === 3 && ps.every((p) => /^nc_/.test(p.metric_src) && p.metric_src !== "nc_unmapped"));
+    ps.length === 3 && ps.every(function (p) { return /^nc_/.test(p.metric_src) && p.metric_src !== "nc_unmapped"; }));
   check("B2: every NC priority reports lane 'nc' and is scored in FTES",
-    ps.every((p) => p.lane === "nc" && p.unit === "FTES"));
+    ps.every(function (p) { return p.lane === "nc" && p.unit === "FTES"; }));
   check("B3: TODAY every NC priority is 'undelivered' — the feed carries no nc_* key",
-    ps.every((p) => p.status === "undelivered"));
-  check("B4: and therefore earns exactly $0 — NOT the full-cap advance an unmeasurable credit metric gets",
-    ps.every((p) => p.earned === 0));
+    ps.every(function (p) { return p.status === "undelivered"; }));
+  check("B4: and therefore earns exactly $0 — NOT the full-cap advance an unmeasurable credit metric gets (F1)",
+    ps.every(function (p) { return p.earned === 0; }));
   check("B5: but the TARGET and the CAP still stand (Sam: targets and potential shown)",
-    ps.every((p) => p.target > 0 && p.cap > 0));
+    ps.every(function (p) { return p.target > 0 && p.cap > 0; }));
 
   // `share` splits the MONEY: the three caps summed across every year slot are
-  // the institution's whole noncredit award, no more and no less.
+  // the award's whole NONCREDIT SHARE — instSplit(c).nc, the same figure
+  // _ncAward returns — no more and no less. Under the old lane this summed to
+  // ncModel's W; the invariant survived the pool merge with a new right-hand
+  // side.
   const slots = ["1", "2"];
-  const capAll = slots.reduce((s, sl) =>
-    s + (T._ncPrios(plain, sl) || []).reduce((t, p) => t + p.cap, 0), 0);
-  check("B6: the three shares split the institution's NC award exactly — share splits the MONEY, not the FTES",
-    Math.abs(capAll - nc.W[plain]) < 0.01);
+  const capAll = slots.reduce(function (s, sl) {
+    return s + (T._ncPrios("Mt San Antonio", sl) || []).reduce(function (t, p) { return t + p.cap; }, 0);
+  }, 0);
+  check("B6: the three shares split the award's noncredit slice exactly — share splits the MONEY, not the FTES",
+    Math.abs(capAll - T._ncAward("Mt San Antonio")) < 0.01);
 
-  // The FLOOR is deliberately one-way in credit (more money, same bar). It must
-  // stay one-way here: a floored institution's target per noncredit FTES has to
-  // match an unfloored one's, or the minimum would be charging for itself.
-  const fp = T._ncPrios(floored, "1");
-  const rowOf = (k) => nc.rows.find((r) => r.key === k);
-  const rate = (arr, k) => arr[0].target / rowOf(k).ftes;
-  check("B7: the noncredit floor raises an institution's MONEY and never its TARGET",
-    floored && Math.abs(rate(fp, floored) - rate(ps, plain)) < 1e-9);
-  check("B8: so a floored institution earns its money at a better rate than an unfloored one",
-    floored && (fp[0].cap / fp[0].target) > (ps[0].cap / ps[0].target));
+  // The BASE is deliberately one-way (the base raises funding, not the bar —
+  // targets ride the PRE-BOUNDS entitlement). It must stay one-way for the
+  // noncredit slice too: a brought-up-to-base institution's NC target per
+  // noncredit FTES has to match an unbounded one's, or the base would be
+  // charging for itself.
+  const withNc = D.colleges.filter(function (c) { return (c.noncredit_ftes || 0) > 0; });
+  const floored = withNc.find(function (c) { var a = T._alloc(c.college); return a.floored && !a.capped; });
+  const plain = withNc.find(function (c) { var a = T._alloc(c.college); return !a.floored && !a.capped; });
+  const rate = function (c) { return T._ncPrios(c.college, "1")[0].target / c.noncredit_ftes; };
+  check("B7: the base raises an institution's noncredit MONEY and never its TARGET (equal target per NC FTES, floored vs not)",
+    !!floored && !!plain && Math.abs(rate(floored) / rate(plain) - 1) < 1e-6);
+  check("B8: so a brought-up-to-base institution earns its noncredit share at a better rate than an unbounded one",
+    !!floored && !!plain &&
+    (function () {
+      const fp = T._ncPrios(floored.college, "1"), pp = T._ncPrios(plain.college, "1");
+      return (fp[0].cap / fp[0].target) > (pp[0].cap / pp[0].target);
+    })());
 
-  // Sam, 2026-08-27: NC inherits credit's shares.
-  const cs = T._prios(plain, "1");
+  // Sam, 2026-08-27: NC inherits credit's shares (the ncPriorities override
+  // layer survives one pool as the divergence seam — see block E).
+  const cs = T._prios("Mt San Antonio", "1");
   check("B9: NC shares default to credit's (Sam's ruling), matched by priority IDENTITY not position",
-    ps.every((p) => { const c = cs.find((x) => x.src === p.src); return c && c.share === p.share; }));
+    ps.every(function (p) { const c = cs.find(function (x) { return x.src === p.src; }); return c && c.share === p.share; }));
   check("B10: an NC priority key can never be read off a credit row — the keys are namespaced",
-    ps.every((p) => /^nc_/.test(p.key)) && cs.every((p) => !/^nc_/.test(p.key)));
-  check("B11: the NC target is the NC lane's own, not a copy of the credit target",
-    ps.every((p) => { const c = cs.find((x) => x.src === p.src); return c && Math.abs(c.target - p.target) > 1; }));
+    ps.every(function (p) { return /^nc_/.test(p.key); }) && cs.every(function (p) { return !/^nc_/.test(p.key); }));
+  check("B11: the NC target is the noncredit slice's own, never a copy of the credit target",
+    ps.every(function (p) { const c = cs.find(function (x) { return x.src === p.src; }); return c && Math.abs(c.target - p.target) > 1; }));
+
+  // The noncredit-only trio: their WHOLE award is the nc slice, held by
+  // origination (N2 b — no advances). This is where the old standalone-feeder
+  // rows went: ordinary roster rows whose credit slice is zero.
+  const noce = T._alloc("NOCE");
+  check("B12: a noncredit-only institution's whole award IS its noncredit share, and it earns $0 today (N2 b)",
+    !!noce && noce.cr_award === 0 && Math.abs(noce.nc_award - noce.total) < 0.5 &&
+    Math.abs(T._ncAward("NOCE") - noce.total) < 0.5 && noce.earned_total === 0);
+  // A college with no noncredit program: nothing to restrict, nothing to earn.
+  check("B13: a no-noncredit college's NC priorities cap at $0 and its award has no NC share (Taft)",
+    T._ncAward("Taft") === 0 &&
+    (T._ncPrios("Taft", "1") || []).every(function (p) { return p.cap === 0; }));
+
+  // ── the NC award CELL (the rendered face of F1 / N2 b) ────────────────────
+  // One row per institution (R6): the second .cf-award cell is the noncredit
+  // share. Reworded 2026-09-01 (Sam: the rendered copy names no advance and no
+  // unshipped feed): the feeds-waiting sub-labels ("$0 until feeds report" /
+  // "awaits origination") are RETIRED — the cell renders the share with the
+  // SAME standard earning sub every cell uses, and the F1 arithmetic shows as
+  // a plain "earning $0". "none on record" (a data fact, not a feed reference)
+  // survives as the checkable-claim zero.
+  function ncCell(id) {
+    const r = doc.querySelector('tr[data-id="c:' + id + '"]');
+    return r ? r.querySelectorAll("td.cf-award")[1] : null;
+  }
+  check("B14: a college's NC award cell reads its share with the STANDARD earning sub at $0 — the " +
+        "retired feeds-waiting label is gone (2026-09-01)",
+    (function () {
+      const c = ncCell("Mt San Antonio");
+      return !!c && /\$57,551|\$115,102/.test(c.textContent) &&
+        /earning \$0/.test(c.textContent) &&
+        !/until feeds report/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+    })());
+  check("B15: a trio row's NC award cell is the whole award earning $0 — no 'awaits origination' " +
+        "label, no advanced figure (N2 b arithmetic unchanged)",
+    (function () {
+      const c = ncCell("NOCE");
+      return !!c && /earning \$0/.test(c.textContent) && !/awaits origination/.test(c.textContent);
+    })());
+  check("B16: a no-noncredit college's cell is the checkable claim — '$0 · none on record', inviting the correction",
+    (function () { const c = ncCell("Taft"); return !!c && /none on record/.test(c.textContent); })());
+  check("B17: no paired NC row and no NC SYSTEM row survives (R6) — the share lives ON the one row",
+    !doc.querySelector("tr.cplfund-ncrow") && !doc.querySelector("tr.cplfund-ncsysrow"));
 })();
 
 // ── C. the trap: a rich CREDIT feed must not leak into the NC lane ───────────
@@ -109,11 +213,11 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
   boot(window);
   const T = window.CPL_FUNDING_TAB;
   const ps = T._ncPrios("Mt San Antonio", "1");
-  check("C1: with a full CREDIT feed and no nc_* key, the NC lane still earns $0 — it did not silently score credit performance",
-    ps.every((p) => p.status === "undelivered" && p.earned === 0));
-  check("C2: and the credit lane on the same college IS earning, so C1 is not just an empty artifact",
-    (T._prios("Mt San Antonio", "1") || []).length === 3 &&
-    (T._alloc("Mt San Antonio") || {}).earned_total > 0);
+  check("C1: with a full CREDIT feed and no nc_* key, the NC share still earns $0 — it did not silently score credit performance",
+    ps.every(function (p) { return p.status === "undelivered" && p.earned === 0; }));
+  const a = T._alloc("Mt San Antonio");
+  check("C2: and the credit slice of the same award IS earning, so C1 is not just an empty artifact",
+    (T._prios("Mt San Antonio", "1") || []).length === 3 && a.earned_total > 0 && (a.earned_nc || 0) === 0);
 })();
 
 // ── C'. and the cutover is zero-change: deliver the keys, earning starts ─────
@@ -125,180 +229,61 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
     colleges: { "Mt San Antonio": { pe_u: 9000, pa_u: 8000, p3_u: 7000, nc_pe_u: 60, nc_pa_u: 45, nc_pt_u: 30 } }
   };
   boot(window);
-  const ps = window.CPL_FUNDING_TAB._ncPrios("Mt San Antonio", "1");
-  check("C3: the day MAP delivers the nc_* keys the lane starts earning with NO code change",
-    ps.some((p) => p.status === "earned" && p.earned > 0));
-  check("C4: and an institution with no nc_* value of its own reads 'none' ($0 posted), never an advance",
-    (window.CPL_FUNDING_TAB._ncPrios("Canyons", "1") || []).every((p) => p.status === "none" && p.earned === 0));
-})();
-
-// ── D. the Option A row ──────────────────────────────────────────────────────
-(function () {
-  const { window } = freshDom();
-  const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  const nc = T._nc();
-  const ncRows = doc.querySelectorAll("tr.cplfund-ncrow");
-  const creditRows = doc.querySelectorAll("tr.cplfund-row");
-  check("D1: there is one noncredit row per college in the NC lane",
-    ncRows.length > 0 && ncRows.length === Array.from(creditRows).filter((r) => r.querySelector(".cf-lanechip")).length);
-  const laneCredit = Array.from(creditRows).filter((r) => r.querySelector(".cf-lanechip"));
-  // ⚠️ REWRITTEN 2026-08-30 (Sam's Open Verdicts item 2): the CR row now
-  // carries the pair's Combined cell with rowspan=2, so an NC row holds
-  // exactly ONE fewer td than its credit row — equal counts would mean the
-  // spanning cell disappeared. The no-column-shift guarantee this used to
-  // carry lives in tests/cpl_funding_combined.test.js (the nth-child hide
-  // compensation is pinned both ways there).
-  check("D2: the NC row carries exactly one fewer cell than the credit row — the Combined cell spans the pair from the CR row",
-    ncRows.length > 0 && ncRows[0].children.length === creditRows[0].children.length - 1);
-  check("D3: the lane chips are the WORDS CR and NC (Sam), not color alone",
-    laneCredit.length > 0 &&
-    /\bCR\b/.test(laneCredit[0].querySelector(".cf-lanechip").textContent) &&
-    /\bNC\b/.test(ncRows[0].querySelector(".cf-lanechip").textContent));
-  // ⚠️ INVERTED 2026-08-28, not deleted. This used to assert that a college with
-  // no noncredit program got NO CR chip, because the label would name a
-  // distinction that was not on screen. Sam changed the rule that made that
-  // true: EVERY college is now rendered as a CR/NC pair, including the seven
-  // with no noncredit FTES on record — "if they disagree and say, Yes, we have
-  // NC, we can find the error and fix it." So the chip is never orphaned, and
-  // the failure worth catching is the opposite one: a college quietly losing
-  // its partner row and leaving a chip that labels nothing.
-  check("D4: every credit row carries a CR chip, because every college is now a CR/NC pair",
-    Array.from(creditRows).length > 0 &&
-    Array.from(creditRows).every((r) => !!r.querySelector(".cf-lanechip")));
-  // The chip's premise, checked by IDENTITY rather than by count: every credit
-  // row's college has a noncredit row addressed to it. A count alone would pass
-  // if one college gained two rows while another lost its only one.
-  // The chip's premise. A bare count would pass if one college gained a second
-  // row while another lost its only one, so this checks the noncredit rows are
-  // addressed to DISTINCT colleges and that there are as many of them as there
-  // are credit rows. (Credit rows carry only data-id, so the join is asserted
-  // from the noncredit side, which is the side that names its college.)
-  check("D4a: and the noncredit rows are one-per-college, not two for one and none for another", (function () {
-    const keys = Array.from(ncRows).map((r) => r.getAttribute("data-ncfor")).filter(Boolean);
-    const distinct = new Set(keys);
-    return keys.length > 0 && distinct.size === keys.length &&
-      distinct.size === Array.from(creditRows).length;
-  })());
-  // The three shapes a noncredit row can take, all present — funded,
-  // below-threshold, and none-on-record. If any disappears, a college class has
-  // silently stopped being represented.
-  check("D4c: a college with no noncredit program on record still gets a row, chipped as such",
-    Array.from(ncRows).some((r) => /none on record/i.test(r.textContent)));
-
-  // ⚠️ Pick a FUNDED noncredit row. Since 2026-08-27 every college that runs a
-  // noncredit programme gets a row, including the 78 below the entry threshold,
-  // and those deliberately render em-dashes rather than priority cells — so
-  // `ncRows[0]` is whichever college sorts first, not necessarily one in the
-  // lane (it is Alameda, at 43 FTES against a 500 threshold).
-  const funded = Array.from(ncRows).filter((r) => !r.classList.contains("cplfund-ncout"));
-  check("D4b: both kinds of noncredit row are present — funded, and present-but-below-threshold",
-    funded.length > 0 && funded.length < ncRows.length);
-  const cells = funded[0].querySelectorAll("td.cf-ncprio");
-  check("D5: the NC row's priority cells keep the Tgt/Now two-line shape so the lanes read down the column",
-    cells.length === 3 && Array.from(cells).every((td) => td.querySelector(".cf-t") && td.querySelector(".cf-a")));
-  check("D6: today they read 'no feed' — the ABSENT zero, distinct from a measured 0",
-    Array.from(cells).every((td) => /no feed/.test(td.textContent)));
-  check("D7: and carry NO percentage — a percentage of a target nothing is measuring against would read as a measurement",
-    Array.from(cells).every((td) => !td.querySelector(".cf-pct")));
-  check("D8: the NC row states the noncredit measure, never the credit metric's wording",
-    Array.from(cells).every((td) => /noncredit/i.test(td.getAttribute("title"))));
-  // ⚠️ PRECISION. Noncredit targets are order 1–25 CPL FTES. The credit cell's
-  // compact formatter rounds to a whole number, which is right for a target in
-  // the hundreds and a MISSTATEMENT here — 1.4 would paint "1", and a target
-  // below 0.5 would paint "0" on a row whose honest zeros are the entire point.
-  // Found in Chromium; the markup was correct and the number was not.
-  {
-    const small = Array.from(cells).filter((td) => {
-      const t = parseFloat((td.querySelector(".cf-n") || {}).textContent || "0");
-      return t > 0 && t < 100;
-    });
-    check("D11: a small NC target keeps a decimal rather than rounding to a bare integer",
-      small.length > 0 && small.every((td) => /\.\d/.test(td.querySelector(".cf-n").textContent)));
-    check("D12: and the cell hover still carries the full-precision figure",
-      Array.from(cells).every((td) => /Target \d+\.\d+ CPL FTES/.test(td.getAttribute("title"))));
-  }
-
-  // ── the below-threshold row (Sam, 2026-08-27) ─────────────────────────────
-  {
-    const out = Array.from(ncRows).find((r) => r.classList.contains("cplfund-ncout"));
-    check("D13: a college below the entry threshold still gets a noncredit row",
-      !!out);
-    check("D14: it carries a gentle chip naming the THRESHOLD it misses, as a word plus a number",
-      !!out && /below\s*\d+/.test((out.querySelector(".cf-belowchip") || {}).textContent || ""));
-    // ⚠️ THE POINT OF THE ROW. "$0 earned" and "never eligible to earn" are two
-    // different facts. A $0 here would read as a college that posted nothing.
-    check("D15: and its money cells are em-dashes, NOT $0 — it was never eligible to earn",
-      !!out && !/\$0/.test(out.textContent) && /—/.test(out.textContent));
-    check("D16: it still carries the pair's NC cell count — one fewer than the credit row, whose Combined cell spans it — so no column shifts under it",
-      !!out && out.children.length === creditRows[0].children.length - 1);
-    check("D17: the row states the gap to the dial, which is the number that decides whether to move it",
-      !!out && /short of the/.test(out.getAttribute("data-ncfor") !== null
-        ? Array.from(out.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" ") : ""));
-  }
-
-  // The floored chip must name the NONCREDIT minimum. Naming the credit floor
-  // here is the exact "plausible wrong number" class: a real dollar figure, in
-  // the right place, describing the wrong dial.
-  const flooredKey = Object.keys(nc.floored)[0];
-  const flooredRow = Array.from(ncRows).find((r) => r.getAttribute("data-ncfor") === flooredKey);
-  if (flooredRow) {
-    const chipTitles = Array.from(flooredRow.querySelectorAll(".cplfund-chip"))
-      .map((e) => e.getAttribute("title") || "").join(" ");
-    check("D9: a floored NC row names the NONCREDIT minimum, not the credit floor",
-      /[Nn]oncredit minimum/.test(chipTitles) && chipTitles.indexOf(String(Math.round(nc.floor))) === -1
-        ? true
-        : /[Nn]oncredit minimum/.test(chipTitles));
-    check("D10: and it does NOT quote the credit floor figure",
-      !/minimum-viable floor/.test(chipTitles));
-  } else {
-    check("D9: a floored NC row names the NONCREDIT minimum, not the credit floor", false);
-    check("D10: and it does NOT quote the credit floor figure", false);
-  }
+  const ps = T._ncPrios("Mt San Antonio", "1");
+  check("C3: the day MAP delivers the nc_* keys the noncredit share starts earning with NO code change",
+    ps.some(function (p) { return p.status === "earned" && p.earned > 0; }) &&
+    (T._alloc("Mt San Antonio").earned_nc || 0) > 0);
+  check("C4: and an institution with no nc_* value of its own reads 'none' ($0 posted), never an advance",
+    (T._ncPrios("Canyons", "1") || []).every(function (p) { return p.status === "none" && p.earned === 0; }));
 })();
 
 // ── E. divergence: NC shares are a dial of their own ─────────────────────────
+// The ncPriorities override layer SURVIVED the pool merge (it is the noncredit
+// shares' earning arithmetic, not the retired second solve), so its divergence
+// semantics still need pinning.
 (function () {
   const { window } = freshDom();
   // Give the NC lane its own share on ONE priority. If ncPrioCap normalized by
-  // the CREDIT share sum, the three caps would no longer add to the award.
+  // the CREDIT share sum, the three caps would no longer land on the invariant.
   window.localStorage.setItem("cpl_funding_whatif_v3", JSON.stringify({
     "cpl-implementation::Scenario 1": { ncPriorities: { "1": { "0": { share: 0.6 } } } }
   }));
   boot(window);
   const T = window.CPL_FUNDING_TAB;
-  const nc = T._nc();
-  const key = Object.keys(nc.W).find((k) => nc.W[k] > 0 && !nc.floored[k] && !nc.capped[k]);
+  const key = (D.colleges.find(function (c) {
+    const a = T._alloc(c.college);
+    return (c.noncredit_ftes || 0) > 0 && !a.floored && !a.capped;
+  }) || {}).college;
   const ps = T._ncPrios(key, "1");
   const cs = T._prios(key, "1");
   check("E1: an NC share override actually moves the NC share",
-    ps.find((p) => p.src === 0).share === 0.6);
+    ps.find(function (p) { return p.src === 0; }).share === 0.6);
   check("E2: and does NOT move the credit share — the lanes are separate dials",
-    cs.find((p) => p.src === 0).share !== 0.6);
-  const capAll = ["1", "2"].reduce((s, sl) =>
-    s + (T._ncPrios(key, sl) || []).reduce((t, p) => t + p.cap, 0), 0);
+    cs.find(function (p) { return p.src === 0; }).share !== 0.6);
+  const capAll = ["1", "2"].reduce(function (s, sl) {
+    return s + (T._ncPrios(key, sl) || []).reduce(function (t, p) { return t + p.cap; }, 0);
+  }, 0);
   // ⚠️ MEASURED, not assumed. A share set is a MULTIPLIER on the pot in this
   // model, not a normalizer: the credit lane's own slotEntitlement() is
-  // `W × shareSum ÷ nYears`, so shares summing to 1.30 place 1.30 × W. The NC
-  // lane must behave IDENTICALLY (Sam ruled parity), so the invariant is not
-  // "the caps sum to the award" — it is "the caps sum to the award scaled by
-  // this lane's OWN share sum". Wiring ncPrioCap to the credit shareSum (the
-  // bug this guards) yields W × ncSS²/creditSS instead, which for these numbers
-  // is 1.69 × W — a plausible figure that no total on the page contradicts.
-  // ⚠️ Per SLOT — the override above lands on year 1 only (this config does not
-  // mirror years), so year 2 keeps the inherited shares and the two slots have
-  // DIFFERENT share sums. Summing one slot's shares and calling it "the" share
-  // sum is the mistake this comment exists to stop.
-  const ssOf = (sl) => (T._ncPrios(key, sl) || []).reduce((t, p) => t + p.share, 0);
-  const slots = ["1", "2"];
-  const expected = slots.reduce((s, sl) => s + nc.W[key] * ssOf(sl) / slots.length, 0);
-  const wrong = slots.reduce((s, sl) =>
-    s + nc.W[key] * ssOf(sl) / slots.length * ssOf(sl) / ((T._prios(key, sl) || [])
-      .reduce((t, p) => t + p.share, 0)), 0);
+  // `W × shareSum ÷ nYears`, so shares summing past 1 place MORE than the pot.
+  // The NC arithmetic must behave IDENTICALLY (Sam ruled parity), so the
+  // invariant is not "the caps sum to the nc share" — it is "the caps sum to
+  // the nc share scaled by this lane's OWN per-slot share sums". Wiring
+  // ncPrioCap to the credit shareSum (the bug this guards) yields an ncSS²/crSS
+  // scaling instead — a plausible figure no total on the page contradicts.
+  // ⚠️ Per SLOT — the override lands on year 1 only when years are not
+  // mirrored, so the two slots can hold DIFFERENT share sums; both are read
+  // from the model rather than assumed.
+  const ssOf = function (sl) { return (T._ncPrios(key, sl) || []).reduce(function (t, p) { return t + p.share; }, 0); };
+  const ncW = T._ncAward(key);
+  const expected = ["1", "2"].reduce(function (s, sl) { return s + ncW * ssOf(sl) / 2; }, 0);
+  const crSS = function (sl) { return (T._prios(key, sl) || []).reduce(function (t, p) { return t + p.share; }, 0); };
+  const wrong = ["1", "2"].reduce(function (s, sl) { return s + ncW * ssOf(sl) / 2 * ssOf(sl) / crSS(sl); }, 0);
   check("E3: with the shares diverged the NC caps scale on the NC lane's OWN share sum, exactly as the credit lane scales on its own",
     Math.abs(capAll - expected) < 0.01);
   check("E4: and NOT on the credit share sum — the two now differ, so this discriminates",
-    Math.abs(ssOf("1") - cs.reduce((t, p) => t + p.share, 0)) > 0.01 && Math.abs(capAll - wrong) > 1);
+    Math.abs(ssOf("1") - crSS("1")) > 0.01 && Math.abs(capAll - wrong) > 1);
 })();
 
 // ── F. the LIVE-SHAPED config ────────────────────────────────────────────────
@@ -310,17 +295,17 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
 //
 // This fixture is live-SHAPED, not a copy of live: it reproduces the four
 // STRUCTURAL properties (mirrorYears, front-load, a reordered priorityOrder,
-// three DISTINCT milestones) without pinning a single dial Sam can move — a
-// test carrying today's shares would go red the next time he edits one, which
-// is how a guard turns into a chore and then into a deletion.
+// three DISTINCT milestones) without pinning a single dial Sam can move. Its
+// pool block now carries only the DIALS THAT EXIST — the adopted base/cap pair
+// (the retired carve-out/threshold/NC-window fields are read by nothing; block
+// B pins that).
 (function () {
   const { window } = freshDom();
   boot(window);
   const T = window.CPL_FUNDING_TAB;
-  const prio = (share, title, metric, factor) => ({ share, title, factor, metric, unit: "ftes" });
+  const prio = function (share, title, metric, factor) { return { share: share, title: title, factor: factor, metric: metric, unit: "ftes" }; };
   T._setConfig({ projects: { "cpl-implementation": { area: "cpl", label: "CPL", scenarios: { "Scenario 1": {
-    pool: { admin_cost: 800000, floor_window: 150000, feeder_carveout: 1800000,
-            nc_floor_window: 50000, nc_cap_window: 100000, nc_threshold_ftes: 500,
+    pool: { admin_cost: 800000, floor_window: 150000, cap_window: 400000,
             scaling_projects_tech: 8959692 },
     years: ["2026-27", "2027-28"],
     mirrorYears: true, disbursement: "frontload", priorityOrder: [2, 0, 1],
@@ -335,51 +320,55 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
       "2": Object.assign(prio(0.34, "Access", "Applied units measured in FTES for students originating from either CPL Portal, College CPL Landing Page, or batch upload", 0.5), { metric_src: "ppa_u" })
     } }
   } } } } });
-  const nc = T._nc();
-  const funded = Object.keys(nc.W).filter((k) => nc.W[k] > 0);
-  check("F1: the noncredit roster stands up under a live-shaped config",
-    funded.length > 0 && nc.pool > 0 && nc.floor > 0);
+  // Institutions whose award HAS a noncredit share under this config — the
+  // college programs plus the noncredit-only trio, read from the model.
+  const funded = D.colleges.filter(function (c) { return (c.noncredit_ftes || 0) > 0; })
+    .map(function (c) { return c.college; })
+    .concat(["NOCE", "SD Cont. Ed", "Calbright"])
+    .filter(function (k) { return T._ncAward(k) > 0.5; });
+  check("F1: the noncredit shares stand up under a live-shaped config (no second solve required)",
+    funded.length > 30 && T._ncAward("NOCE") > 0);
 
   const ps = T._ncPrios(funded[0], "1");
   check("F2: three DISTINCT noncredit sources — one per milestone (the bake collapses two onto the transcribed rung; live does not)",
-    new Set(ps.map((p) => p.metric_src)).size === 3 &&
-    ["nc_pe_u", "nc_pa_u", "nc_pt_u"].every((k) => ps.some((p) => p.metric_src === k)));
+    new Set(ps.map(function (p) { return p.metric_src; })).size === 3 &&
+    ["nc_pe_u", "nc_pa_u", "nc_pt_u"].every(function (k) { return ps.some(function (p) { return p.metric_src === k; }); }));
   check("F3: each NC priority sits on the SAME milestone as the credit priority it mirrors",
-    ps.every((p) => {
-      const c = (T._prios(funded[0], "1") || []).find((x) => x.src === p.src);
+    ps.every(function (p) {
+      const c = (T._prios(funded[0], "1") || []).find(function (x) { return x.src === p.src; });
       const rung = { nc_pe_u: "Eligible", nc_pa_u: "Applied", nc_pt_u: "Transcribed" }[p.metric_src];
       return c && new RegExp(rung, "i").test(c.metric);
     }));
   check("F4: NC inherits the live factor and shares from credit, priority by IDENTITY",
-    ps.every((p) => {
-      const c = (T._prios(funded[0], "1") || []).find((x) => x.src === p.src);
+    ps.every(function (p) {
+      const c = (T._prios(funded[0], "1") || []).find(function (x) { return x.src === p.src; });
       return c && c.share === p.share && p.factor === 0.5;
     }));
   // Front-load: the whole window is on the table in year 1, later years carry
-  // nothing. The NC lane has to agree with the credit lane about this or the two
-  // rows on one college would describe different disbursement schedules.
-  const sum = (sl) => (T._ncPrios(funded[0], sl) || []).reduce((t, p) => t + p.cap, 0);
-  check("F5: front-loaded — the whole noncredit window is on the table in Year 1",
-    Math.abs(sum("1") - nc.W[funded[0]]) < 0.01);
-  check("F6: and Year 2 carries no new noncredit money",
+  // nothing. The noncredit slice has to agree with the credit slice about this
+  // or one award's two shares would describe different disbursement schedules.
+  const sum = function (sl) { return (T._ncPrios(funded[0], sl) || []).reduce(function (t, p) { return t + p.cap; }, 0); };
+  check("F5: front-loaded — the whole noncredit share is on the table in Year 1",
+    Math.abs(sum("1") - T._ncAward(funded[0])) < 0.01);
+  check("F6: and Year 2 carries no new noncredit funding",
     Math.abs(sum("2")) < 0.01);
-  check("F7: EVERY funded institution earns exactly $0 today — across the whole lane, not just the sampled one",
-    funded.every((k) => (T._ncPrios(k, "1") || []).every((p) => p.status === "undelivered" && p.earned === 0)));
+  check("F7: EVERY institution with a noncredit share earns exactly $0 today — across the whole roster, not just the sampled one",
+    funded.every(function (k) { return (T._ncPrios(k, "1") || []).every(function (p) { return p.status === "undelivered" && p.earned === 0; }); }));
   check("F8: while every one of them carries a real target and a real cap",
-    funded.every((k) => (T._ncPrios(k, "1") || []).every((p) => p.target > 0 && p.cap > 0)));
+    funded.every(function (k) { return (T._ncPrios(k, "1") || []).every(function (p) { return p.target > 0 && p.cap > 0; }); }));
 
   // ⭐ THE COUPLING, stated so it is a decision rather than an accident. An NC
   // priority takes its RUNG from how the CREDIT priority resolved, so the two
   // lanes can never disagree about which milestone a priority is on — which is
   // what you want, and which also means a mis-resolved credit metric hands its
-  // error straight to the noncredit lane. Un-pin the credit Access metric and
+  // error straight to the noncredit share. Un-pin the credit Access metric and
   // the noncredit one follows it onto the transcribed rung.
   T._setScenario({ yearPriorities: { "1": { "2": { metric_src: "" } } } });
   const unpinned = T._ncPrios(funded[0], "1");
   check("F9: un-pinning the CREDIT metric moves its NONCREDIT counterpart too — the lanes share one milestone by design",
-    unpinned.find((p) => p.src === 2).metric_src === "nc_pt_u");
+    unpinned.find(function (p) { return p.src === 2; }).metric_src === "nc_pt_u");
   check("F10: and that collapses two NC priorities onto one source, which is why the credit pin is load-bearing for BOTH lanes",
-    new Set(unpinned.map((p) => p.metric_src)).size === 2);
+    new Set(unpinned.map(function (p) { return p.metric_src; })).size === 2);
 })();
 
 finish();

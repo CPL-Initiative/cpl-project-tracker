@@ -560,7 +560,9 @@ check("funding: the allocation is stated positively — driven by the college's 
 check("funding: the retired 'not a cheque' framing is gone",
   !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
 check("funding: a college held to the maximum is told where the difference went",
-  /maximum allocation<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
+  // "cap" vocabulary (one pool + Sam's funding-vocabulary sweep, 2026-08-31);
+  // the promise is unchanged — say where the difference WENT.
+  / cap<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
@@ -599,7 +601,10 @@ const ftxt = fr.textContent;
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
 check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
-  /minimum-viable floor/.test(ftxt) && /not.{0,3} its share of the pool/i.test(ftxt));
+  // "base award" vocabulary (one pool, 2026-08-31; "pool" → "funding" is Sam's
+  // sweep of the same day). The promise is unchanged: name the state AND say
+  // the figure is not the college's raw proportional share.
+  /base award/.test(ftxt) && /not its proportional share of the funding/i.test(ftxt));
 // The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
 // named it would promise a college money that no longer exists.
 check("render: no retired rural allowance is still promised",
@@ -1188,16 +1193,16 @@ JOIN_CASES.forEach(function (c) {
 FUND._setScenario({ pool: { cap_window: 0 } });
 FUND._model();
 const mtsacOpen = FUND._alloc("Mt San Antonio");
-// ⚠ The Sep-BOG cross-check figure MOVED, and legitimately: it was derived when
-// the college pool was $23,240,308 behind a $150K floor. Retiring the rural
-// carve-out folded $1M back in and the floor rose to $175K (2026-08-22), so the
-// largest college's uncapped share is now $471,834. Re-derived here from the
-// pool rather than re-typed, so the NEXT pool change fails loudly instead of
-// quietly agreeing with a stale literal.
-check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT pool",
-  !!mtsacOpen && Math.round(mtsacOpen.total) === 471834 &&
+// ⚠ The Sep-BOG cross-check figure MOVED AGAIN, and legitimately: one-pool
+// adoption (2026-08-31) put $25,240,308 behind a $150K base over 118
+// institutions, and Mt. SAC's own noncredit FTES (10,829.3) now rides its row
+// — so the largest institution's uncapped share is $711,567. Re-derived here
+// from the model rather than re-typed, so the NEXT model change fails loudly
+// instead of quietly agreeing with a stale literal.
+check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT funding",
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 711567 &&
   Math.round(mtsacOpen.total) > 400000,
-  "the waterfall still runs underneath the ceiling; only the pool and floor moved");
+  "the waterfall still runs underneath the ceiling; only the model's dials moved");
 FUND._setScenario({});
 FUND._model();
 const mtsac = FUND._alloc("Mt San Antonio");
@@ -1225,7 +1230,8 @@ check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
   "the roster row was always there — the join dropped it");
 check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
 check("(P) …and it is told it is held to the maximum, and where the difference went",
-  /maximum allocation/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
+  // "cap" vocabulary (one pool, 2026-08-31); the where-it-went promise holds.
+  /cap/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
 
 // ── The collapsed shape ──
 // RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam

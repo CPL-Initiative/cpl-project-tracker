@@ -109,18 +109,21 @@ The whole ecosystem, end-to-end:
    and description editable, **draggable into a different order** — the order is
    stored as a permutation beside the config, so a priority's wording, share,
    funding factor and strategies all travel with it and no stored figure moves —
-   and an optional **Year 2 mirrors Year 1** switch), a **noncredit-feeder carve-out** (NOCE / SD
-   Continuing Ed / Mt. SAC Noncredit / Calbright, split by headcount),
-   per-college potential allocations with district rollups and drill-ins —
-   every institution shown as a CR/NC row pair with a **Combined award column**
-   spanning the pair, under a **frozen header + statewide rows** (measured
-   pins, no lazy loading), with the project-pool card's named projects folded
-   in **live from the Budget table** —
-   and **layered editing** — anonymous edits are a private per-browser
-   sandbox, while the shared team phrase saves the base model everyone
-   opens to (Supabase-backed) — plus live P2/P3 priority-metric actuals
-   from MAP; Priority 1 completions are a deliberate, labeled data gap
-   kept as an incentive), a **TMC Builder** tab (align a college's local
+   and an optional **Year 2 mirrors Year 1** switch), **one funding total over
+   all 118 institutions** (the one-pool model, adopted 2026-08-31: $150K base
+   to $400K cap on the combined credit + noncredit award; the three
+   noncredit-only campuses — NOCE / SD Continuing Ed / Calbright — are ordinary
+   rows earning by origination, no advances), one row per institution with
+   **CR/NC FTES and award columns**, its max award decomposing into credit and
+   noncredit shares, per-priority drill-ins, district rollups, and one
+   statewide row under a **frozen header** (measured pins, no lazy loading),
+   with the project card's named projects folded in **live from the Budget
+   table** — and **layered editing** — anonymous edits are a private
+   per-browser sandbox, while a signed-in reviewer saves the base model
+   everyone opens to (Supabase-backed) — plus live per-priority actuals from
+   the daily MAP pull (a metric MAP cannot measure yet is a labeled advance,
+   and the noncredit shares read $0 earned until their feeds report)), a
+   **TMC Builder** tab (align a college's local
    courses to an ASCCC Transfer Model Curriculum / ADT — pick a college + a TMC
    and the right column auto-fills the local course already carrying each
    slot's C-ID; all 45 official TMCs, a GE Breadth companion for the full ADT,
