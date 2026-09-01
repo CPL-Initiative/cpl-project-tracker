@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-31T19:14:32Z",
- "count": 164,
+ "_generated_at": "2026-09-01T11:46:45Z",
+ "count": 199,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -83,6 +83,46 @@
     "share": 1.0,
     "colleges": 2,
     "scoped": true
+   }
+  ],
+  "AJ 101 Criminal Law": [
+   {
+    "kind": "cid",
+    "id": "AJ 120",
+    "title": "Concepts of Criminal Law",
+    "code": "AJ 101"
+   }
+  ],
+  "AJ 102 Introduction to Criminal Justice": [
+   {
+    "kind": "cid",
+    "id": "AJ 110",
+    "title": "Introduction to Criminal Justice",
+    "code": "AJ 102"
+   }
+  ],
+  "AJ 108 Criminal Investigation": [
+   {
+    "kind": "cid",
+    "id": "AJ 140",
+    "title": "Criminal Investigation",
+    "code": "AJ 108"
+   }
+  ],
+  "AJ 111 Criminal Procedures": [
+   {
+    "kind": "cid",
+    "id": "AJ 122",
+    "title": "Criminal Court Process",
+    "code": "AJ 111"
+   }
+  ],
+  "AJ 118 Community and the Justice System": [
+   {
+    "kind": "cid",
+    "id": "AJ 160",
+    "title": "Community and the Justice System",
+    "code": "AJ 118"
    }
   ],
   "ALLH-67 MEDICAL TERMINOLOGY": [
@@ -671,6 +711,16 @@
     "scoped": true
    }
   ],
+  "CIS 005H: Operating Systems - Linux": [
+   {
+    "kind": "course",
+    "title": "Operating Systems - Linux",
+    "code": "CIS 5H",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "CLDV-01 CHILD GROWTH AND DEVELOPMENT": [
    {
     "kind": "cid",
@@ -787,12 +837,80 @@
     "scoped": true
    }
   ],
+  "CRPSCI 001: Introduction to Plant Science": [
+   {
+    "kind": "cid",
+    "id": "AG-PS 106 106 L",
+    "title": "Introduction to Plant Science (with Laboratory)",
+    "code": "CRPSCI 1"
+   }
+  ],
+  "CRPSCI 019: California Water": [
+   {
+    "kind": "course",
+    "title": "California Water",
+    "code": "CRPSCI 19",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
   "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY": [
    {
     "kind": "cid",
     "id": "ITIS 160",
     "title": "Introduction to Information Systems Security",
     "code": "CTIS 20"
+   }
+  ],
+  "CUL 052: Introduction to Commercial Baking": [
+   {
+    "kind": "course",
+    "title": "Introduction to Commercial Baking",
+    "code": "CUL 52",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 053: Advanced Commercial Baking": [
+   {
+    "kind": "course",
+    "title": "Advanced Commercial Baking",
+    "code": "CUL 53",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 056: Garde Manger": [
+   {
+    "kind": "course",
+    "title": "Garde Manger",
+    "code": "CUL 56",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "CUL 057: Beverage Management": [
+   {
+    "kind": "course",
+    "title": "Beverage Management",
+    "code": "CUL 57",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "CUL 058: Dining Room Service and Management": [
+   {
+    "kind": "course",
+    "title": "Dining Room Service and Management",
+    "code": "CUL 58",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
    }
   ],
   "Cisco Certified Network Professional (CCNP) Security Certification": [
@@ -812,6 +930,16 @@
     "colleges": 2
    }
   ],
+  "DIME 002: User Experience Design Tools and Applications": [
+   {
+    "kind": "course",
+    "title": "User Experience Design Tools and Applications",
+    "code": "DIME 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "ECON 25: Introduction to Economics": [
    {
     "kind": "course",
@@ -819,6 +947,66 @@
     "code": "ECON 25",
     "share": 1.0,
     "colleges": 5,
+    "scoped": true
+   }
+  ],
+  "ELET 002: Electronic Circuits": [
+   {
+    "kind": "course",
+    "title": "Electronic Circuits",
+    "code": "ELET 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 003: Programmable Logic Controllers": [
+   {
+    "kind": "course",
+    "title": "Programmable Logic Controllers",
+    "code": "ELET 3",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 004: Computer Integrated Manufacturing": [
+   {
+    "kind": "course",
+    "title": "Computer Integrated Manufacturing",
+    "code": "ELET 4",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 005: Instrumentation and Process Control": [
+   {
+    "kind": "course",
+    "title": "Instrumentation and Process Control",
+    "code": "ELET 5",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 006: Electric Motors and Controls": [
+   {
+    "kind": "course",
+    "title": "Electric Motors and Controls",
+    "code": "ELET 6",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ELET 007: Advanced Programmable Logic Controllers": [
+   {
+    "kind": "course",
+    "title": "Advanced Programmable Logic Controllers",
+    "code": "ELET 7",
+    "share": 1.0,
+    "colleges": 1,
     "scoped": true
    }
   ],
@@ -1072,6 +1260,32 @@
     "scoped": true
    }
   ],
+  "HE 035: Personal Health and Hygiene": [
+   {
+    "kind": "cid",
+    "id": "PH 100",
+    "title": "Personal Health and Wellness",
+    "code": "HE 35"
+   }
+  ],
+  "HIST 032: Cultural History of the Chicano": [
+   {
+    "kind": "course",
+    "title": "Cultural History of the Chicano",
+    "code": "HIST 32",
+    "share": 1.0,
+    "colleges": 11,
+    "scoped": true
+   }
+  ],
+  "HIST 035: History of African Americans in the United States": [
+   {
+    "kind": "cid",
+    "id": "HIST 180",
+    "title": "Western Civilization II",
+    "code": "HIST 35"
+   }
+  ],
   "HIT 10: Medical Terminology": [
    {
     "kind": "cid",
@@ -1107,6 +1321,16 @@
     "code": "HMONG 2",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "HRCM 001: Introduction to Hospitality Management": [
+   {
+    "kind": "course",
+    "title": "Introduction to Hospitality Management",
+    "code": "HRCM 1",
+    "share": 1.0,
+    "colleges": 2,
     "scoped": true
    }
   ],
@@ -1225,6 +1449,16 @@
     "kind": "course",
     "title": "Refrigerant Usage Certification and R-410A Safety",
     "code": "INDT 52",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "ITEC 002: Introduction to Drafting and CAD": [
+   {
+    "kind": "course",
+    "title": "Introduction to Drafting and CAD",
+    "code": "ITEC 2",
     "share": 1.0,
     "colleges": 1,
     "scoped": true
@@ -1352,6 +1586,46 @@
     "org": "Microsoft Corporation"
    }
   ],
+  "NC 190: Maker Innovation": [
+   {
+    "kind": "course",
+    "title": "Maker Innovation",
+    "code": "NC 190",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "NC 193: Agricultural Safety": [
+   {
+    "kind": "course",
+    "title": "Agricultural Safety",
+    "code": "NC 193",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "NC 194: Equipment Operation, Configuration and Troubleshooting": [
+   {
+    "kind": "course",
+    "title": "Equipment Operation, Configuration and Troubleshooting",
+    "code": "NC 194",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "NC 195: Workplace Effectiveness": [
+   {
+    "kind": "course",
+    "title": "Workplace Effectiveness",
+    "code": "NC 195",
+    "share": 1.0,
+    "colleges": 3,
+    "scoped": true
+   }
+  ],
   "PHIL 1A: Theories of Knowledge and Reality": [
    {
     "kind": "cid",
@@ -1418,6 +1692,14 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "POLSCI 005: Introduction to Political Theory": [
+   {
+    "kind": "cid",
+    "id": "POLS 120",
+    "title": "Introduction to Political Theory and Thought",
+    "code": "POLSCI 5"
    }
   ],
   "PORT 1: Beginning Portuguese": [
@@ -1508,6 +1790,44 @@
     "scoped": true
    }
   ],
+  "SLSCI 021: Introduction to Soil Science": [
+   {
+    "kind": "cid",
+    "id": "AG-PS 128 128 L",
+    "title": "Introduction to Soil Science",
+    "code": "SLSCI 21"
+   }
+  ],
+  "SPAN 001: Elementary Spanish I": [
+   {
+    "kind": "course",
+    "title": "Elementary Spanish I",
+    "code": "SPAN 1",
+    "share": 1.0,
+    "colleges": 33,
+    "scoped": true
+   }
+  ],
+  "SPAN 002: Elementary Spanish II": [
+   {
+    "kind": "course",
+    "title": "Elementary Spanish II",
+    "code": "SPAN 2",
+    "share": 1.0,
+    "colleges": 33,
+    "scoped": true
+   }
+  ],
+  "SPAN 003: Intermediate Spanish I": [
+   {
+    "kind": "course",
+    "title": "Intermediate Spanish I",
+    "code": "SPAN 3",
+    "share": 1.0,
+    "colleges": 29,
+    "scoped": true
+   }
+  ],
   "SPAN 1: Beginning Spanish": [
    {
     "kind": "cid",
@@ -1522,6 +1842,16 @@
     "id": "SPAN 110",
     "title": "Elementary Spanish II",
     "code": "SPAN 2"
+   }
+  ],
+  "SW 020: Introduction to Social Work and Human Services": [
+   {
+    "kind": "course",
+    "title": "Introduction to Social Work and Human Services",
+    "code": "SW 20",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
    }
   ],
   "VOCN-46A Applied Mathematics for Pharmacology": [
