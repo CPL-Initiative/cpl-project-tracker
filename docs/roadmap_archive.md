@@ -5274,3 +5274,15 @@ slice; `c:<order>` keys; low-key-rows bold) — all fixed. Story:
 ### INDEX update-history entries trimmed 2026-09-01 (Session 218, second pass)
 
 - **2026-08-30 (SkyLedger, S210 — the Open Verdicts sitting)** — **decision sheets became Sam's standing method** (#1406; CLAUDE.md bullet + team-guide §11) and he ruled the 19-item Open Verdicts sheet LIVE, all executed and merged same day: the **Combined award column** (his spec: a pair-spanning column, not a third Award-range row), **frozen header + statewide pair** (measured pins), the **project-pool card wired to the Budget table** (one $18M program, drift line, never a per-share split), **goal-card policy** ((C) demonstrated not measured; equity in the 3-year reports), the **scope migration** (68→2 values, per-row receipts), the tab folds, **§55050 recorded SENT 2026-08-28**, the **post-SB 135 register re-analysis ordered** (instrument per row), and **Blast Radius live on Admin** (#1407–#1409). On-the-fly braindumps became vault doctrine with two real captures (CPLBrain#48/#49). ⚠️ A piped test run reports the pipe's exit — CI caught what local masked ([`kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit`](kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md)). 1 KB note, 3 memory rows (plus the sitting's 15 verified ruling rows).
+
+### SkyDeck S217 — the 9/02 session deck; the sunshine rule (2026-09-01)
+
+**Sam's Taco Tuesday deck rebuilt for the 2026-09-02 session** (8 → 14
+slides, in CPLBrain `04-projects/cpl-initiative/`): ESS 25-82 $50K review +
+reporting-methods slide, THREE Ed Code §78093.2 slides (30 min), funding at
+**general principles only — his sunshine rule: no new-model specifics until
+CO leadership confirms** (ruling + verbatim in the lane file). Priorities
+read live (Access: Statewide 34 / Access: Outreach 33 / Completion 33);
+deck's stale Oct. 31 opt-in → Nov. 1. Found: the public explainer's two
+STATIC prose passages still assert the old model (fix = lane NEXT ①). PR
+#1427 was already merged. Story: `cpl_funding_lessons`; handoff `session_218_handoff`.

@@ -149,12 +149,25 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     })());
   // The Summary sits at the TOP, before any section fold (R11) — the one
   // over/under readout the retired balance boxes fed.
-  check("the Summary renders at the top, above the first section (R11)",
+  // ⚠️ RE-AIMED to R11's actual requirement (2026-09-01), not weakened. R11 is
+  // "the Summary is never inside a fold"; "above the first section" was an
+  // equivalent proxy until Sam asked for a collapsible introduction, which is a
+  // section and belongs above it — a reader should be told what the model IS
+  // before being shown a readout about it. So assert BOTH halves directly: the
+  // Summary is in no <details> at all, and nothing carrying figures precedes it.
+  check("the Summary is never inside a fold (R11)",
     (function () {
       const sum = doc.querySelector(".cplfund-summary");
-      const sec = doc.querySelector("details.cplfund-sec");
-      return !!sum && !!sec &&
-        !!(sum.compareDocumentPosition(sec) & 4 /* DOCUMENT_POSITION_FOLLOWING */);
+      return !!sum && !sum.closest("details");
+    })());
+  check("...and every figure-bearing section still follows it — only the intro may precede",
+    (function () {
+      const sum = doc.querySelector(".cplfund-summary");
+      const secs = Array.from(doc.querySelectorAll("details.cplfund-sec"));
+      if (!sum || !secs.length) return false;
+      const before = secs.filter((s) =>
+        !!(s.compareDocumentPosition(sum) & 4 /* sum FOLLOWS s */));
+      return before.length === 1 && before[0].getAttribute("data-sec") === "about";
     })());
   // Section titles carry Sam's live renames (2026-08-31).
   {
@@ -483,7 +496,10 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   {
     const note = doc.querySelector(".cplfund-card.hero .l").textContent;
     check("hero note decomposes the pool's noncredit share (no carve-out line)",
-      /no carve-out line/.test(note) &&
+      // Case-insensitive: the phrase became the start of its own sentence when
+      // the timing moved out of the hero LABEL into its note (2026-09-01), and
+      // this check is deliberately about the figures rather than the wording.
+      /no carve-out line/i.test(note) &&
       note.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1 &&
       /riding college awards/.test(note) &&
       !/Rural College allowance/.test(note) && !/NC campuses/.test(note));

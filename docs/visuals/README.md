@@ -54,7 +54,7 @@ a number in passing is not a deliverable.
 | 2026-08-30 | [`2026-08-30-open-verdicts.html`](2026-08-30-open-verdicts.html) | Every judgment waiting on Sam across lanes, numbered for reply. | ✅ Verdicts taken |
 | 2026-08-30 | [`2026-08-30-register-reanalysis.html`](2026-08-30-register-reanalysis.html) | The Activities register re-read against the statutory goals — which projects evidence which outcome. | ✅ Worked through |
 | 2026-08-31 | [`2026-08-31-if-tab-simplified.html`](2026-08-31-if-tab-simplified.html) | The whole Implementation Funding tab rebuilt simply, one-pool, for reaction. Three reaction rounds ran against it. | 🔨 Mostly ported — the **flat Funding Breakdown ledger** had not reached the tab as of 2026-09-01; it is decision 2 of the sheet below |
-| 2026-09-01 | [`2026-09-01-if-tab-two-consolidations.html`](2026-09-01-if-tab-two-consolidations.html) | Two consolidations on the funding tab: folding the Ed. Code goal cards into the priority bands, and porting the flat funding ledger. Numbered for reply. | ⏳ **Awaiting Sam's verdicts** |
+| 2026-09-01 | [`2026-09-01-if-tab-two-consolidations.html`](2026-09-01-if-tab-two-consolidations.html) | Two consolidations on the funding tab: folding the Ed. Code goal cards into the priority bands, and porting the flat funding ledger. Numbered for reply. | ✅ **All three ruled and shipped 2026-09-01** — consolidate (1), port the ledger with editability and folds intact (2), keep the three money columns (3) |
 
 ## Not this folder
 

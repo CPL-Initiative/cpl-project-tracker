@@ -11443,8 +11443,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 193,
+   "count": 194,
    "docs": [
+    {
+     "created": "2026-09-01",
+     "governs": [],
+     "n": 220,
+     "path": "docs/session_220_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the tab is consolidated; the dials are still Sam's to set",
+     "type": null,
+     "updated": "2026-09-01"
+    },
     {
      "created": "2026-09-01",
      "governs": [],
@@ -14834,5 +14847,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 753
+ "total": 754
 }

@@ -117,6 +117,11 @@
   ul.plain { padding-left: 1.15em; }
   ul.plain li { margin: 5px 0; }
   .done { border-left: 3px solid var(--hunter); padding-left: 12px; }
+  /* A visual that asked a question keeps its answer (docs/visuals/README.md). */
+  .ruled { margin: 12px 0 0; padding: 10px 12px; border-left: 3px solid var(--hunter);
+    background: var(--surface-subtle); border-radius: 0 8px 8px 0; font-size: .92rem; }
+  .ruled .plab { display: block; font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--hunter); margin-bottom: 4px; }
   @media print { .skip { display: none; } details { display: block; } }
 </style>
 </head>
@@ -126,8 +131,8 @@
 
 <p class="kicker">Decision sheet · CPL Implementation Funding tab</p>
 <h1>Two consolidations</h1>
-<p class="titleline">Session 219 · 2026-09-01 · reply by number. Figures are the tab as rendered
-on 2026-09-01, one pool, Year&nbsp;1.</p>
+<p class="titleline">Session 219 · 2026-09-01 · <strong>all three ruled the same day</strong>.
+Figures are the tab as rendered on 2026-09-01, one pool, Year&nbsp;1.</p>
 
 <p class="lede">Two of your seven items asked for advice rather than an edit &mdash; whether the
 priority boxes can absorb the Ed.&nbsp;Code boxes, and whether the flat funding ledger you remember
@@ -241,12 +246,12 @@ was real. Both answers are yes, with a qualification each. The other five shippe
     </div>
   </div>
 
-  <div class="verdict"><span class="plab">Reply</span>
-    <code>1 yes</code> &middot; <code>1 edit: &hellip;</code> &middot;
-    <code>1 fold: drop the (d)(2) table too</code> &middot; <code>1 dismiss</code>
-    <br><span class="note">A note on <code>fold</code>: the (d)(2) table is the only place the four
-    goals appear together with their funding, and nothing in the Report sub-view carries it. Dropping
-    it means the demonstration gets rebuilt by hand when it is asked for.</span>
+  <div class="ruled"><span class="plab">Ruled 2026-09-01 — Sam</span>
+    &ldquo;Yes, consolidate as you recommend.&rdquo; Shipped the same day. The four goal cards became
+    four rows; each goal&rsquo;s evidence line and its design limit moved up into the band it belongs
+    to; the (d)(2) account stayed as the table, one click down. The evidence state and the limits are
+    computed by one function that both surfaces call, so the band and the report cannot disagree
+    about the same goal.
   </div>
 </section>
 
@@ -322,10 +327,15 @@ was real. Both answers are yes, with a qualification each. The other five shippe
     </div>
   </div>
 
-  <div class="verdict"><span class="plab">Reply</span>
-    <code>2 yes</code> &middot; <code>2 edit: &hellip;</code> &middot;
-    <code>2 fold: ledger only, leave base and cap where they are</code> &middot;
-    <code>2 dismiss</code>
+  <div class="ruled"><span class="plab">Ruled 2026-09-01 — Sam</span>
+    &ldquo;Incorporate flat ledger while preserving a way to click into details,&rdquo; with a
+    condition added while the port was in flight: &ldquo;I don&rsquo;t want to lose editability of
+    variables we have in the model through the simplifying and consolidation process.&rdquo; Shipped
+    the same day, all three parts &mdash; the money ledger, the base and cap on their own line, the
+    two context figures moved down into <em>How an allocation is computed</em>. Every dial is still
+    an inline editor and every fold survived;
+    <code>tests/cpl_funding_ledger_editable.test.js</code> is the guard, and it goes red when a
+    ledger row prints its value instead of offering an editor.
   </div>
 </section>
 
@@ -338,9 +348,10 @@ was real. Both answers are yes, with a qualification each. The other five shippe
   read to answer &ldquo;what could we earn here.&rdquo; It would collapse to a single
   <strong>Total Possible</strong> with the noncredit share as its sub-line, the way the award cells in
   the main table already carry theirs.</p>
-  <div class="verdict"><span class="plab">Reply</span>
-    <code>3 yes &mdash; collapse the three money columns to one</code> &middot;
-    <code>3 dismiss &mdash; the lane split is worth the width</code></div>
+  <div class="ruled"><span class="plab">Ruled 2026-09-01 — Sam</span>
+    Dismissed: &ldquo;the lane split is worth the width.&rdquo; The expand keeps CR&nbsp;funding,
+    NC&nbsp;funding and Total&nbsp;Possible as three columns.
+  </div>
 </section>
 
 <p class="note" style="margin-top:28px">Kept per <code>docs/visuals/README.md</code>. Decisions

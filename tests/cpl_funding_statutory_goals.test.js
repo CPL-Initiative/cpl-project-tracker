@@ -30,9 +30,23 @@ const { check, freshDom, boot, commit, finish } = require("./lib/cpl_funding_har
 const flat = (el) => (el ? el.textContent : "").replace(/\s+/g, " ").trim();
 const goalCard = (doc, k) => doc.getElementById("cplfund-goal-" + k);
 const goalCards = (doc) => Array.from(doc.querySelectorAll(".cplfund-goal"));
-const axis = (card, name) =>
-  Array.from(card.querySelectorAll(".cplfund-goal-ax")).find((s) =>
-    new RegExp(name, "i").test(flat(s.querySelector("h5"))));
+// Address a goal row's cells BY COLUMN HEADER, never by position — a third
+// column would otherwise re-point every assertion below one cell to the left.
+const axis = (row, name) => {
+  const table = row.closest("table");
+  if (!table) return null;
+  const heads = Array.from(table.querySelector("tr").querySelectorAll("th"));
+  const i = heads.findIndex((th) => new RegExp(name, "i").test(flat(th)));
+  if (i < 0) return null;
+  // The goal cell is a <th scope=row>; the axis cells are the <td>s after it.
+  return Array.from(row.querySelectorAll("th[scope=row], td"))[i] || null;
+};
+// The design LIMIT on a goal renders on that goal's band (Sam, 2026-09-01) —
+// one line per goal, keyed by "(K) Short name", with the reasoning behind a
+// fold. Locate it structurally, the same way the goal rows are located.
+const bandRow = (doc, k) =>
+  Array.from(doc.querySelectorAll(".cplfund-evrow")).find((r) =>
+    new RegExp("^\\(" + k + "\\)").test(flat(r.querySelector(".cplfund-evk"))));
 
 const dom = freshDom();
 const win = dom.window;
@@ -119,20 +133,25 @@ check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
 check("goal (C) reports NO performance measure", /no performance measure/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
+const cBand = bandRow(doc, "C");
+check("goal (C) has an evidence line on its band", !!cBand);
 check("goal (C) carries Sam's demonstrated-not-measured ruling in words (items 3 + 12)",
-  /Demonstrated, not directly measured/i.test(cMeas));
+  /Demonstrated, not directly measured/i.test(flat(cBand)));
 // And the honest half: the qualitative evidence documents a different goal.
 check("goal (C) names what its qualitative evidence actually documents",
-  /\bevidence for \(B\)/i.test(flat(cCard)));
+  /\bevidence for \(B\)/i.test(flat(cBand)));
+// The account and the band must not disagree about the SAME goal — they read
+// one goalEvidence(), and this is what would catch a second copy appearing.
+check("the (d)(2) account and the band agree that (C) has no performance measure",
+  /no performance measure/i.test(cMeas) && /no performance measure/i.test(flat(cBand)));
 // The figures are COUNTED, so they must agree with the corpus in the window —
 // a hardcoded pair would pass the line above and drift the moment a story lands.
 check("(C)'s story figures are counted from the corpus, not hardcoded", (function () {
   const total = win.CPL_STORIES.stories.length;
-  const t = flat(cCard);
-  return new RegExp("\\b" + total + "\\b").test(t);
+  return new RegExp("\\b" + total + "\\b").test(flat(cBand));
 })());
 check("(C) reports the educational majority, which is the finding", (function () {
-  const m = flat(cCard).match(/(\d+)\s*end at an educational destination/i);
+  const m = flat(cBand).match(/(\d+)\s*end at an educational destination/i);
   return !!m && Number(m[1]) > win.CPL_STORIES.stories.length / 2;
 })());
 
@@ -143,7 +162,12 @@ check("(C) reports the educational majority, which is the finding", (function ()
 // 2026-08-30: the limit is POLICY — student-level equity belongs to the
 // system's three-year legislative reports, never to college outcome funding.)
 check("goal (A) states that 'equitably' is not measured",
-  /equitably.{0,40}not measured/i.test(flat(goalCard(doc, "A"))));
+  /equitably.{0,40}not measured/i.test(flat(bandRow(doc, "A"))));
+// ⚠️ The limits are stated ONCE. Carrying them in both places is the exact
+// duplication the band consolidation removed, and a second copy drifts.
+check("...on the band only — the (d)(2) account points at it rather than repeating it",
+  !/equitably.{0,40}not measured/i.test(flat(goalCard(doc, "A"))) &&
+  /stated on its band/i.test(flat(axis(goalCard(doc, "A"), "how it is evidenced"))));
 
 // ── 6. superscript markers link cards back to the spine ─────────────────────
 const sups = Array.from(doc.querySelectorAll(".cplfund-goalsup"));
