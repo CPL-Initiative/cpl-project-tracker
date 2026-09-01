@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-192 document(s).
+193 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 219 | [the bands shipped; Sam sets the dials, then re-run the earn diagnostic](../session_219_handoff.md) | 2026-09-01 |
 | 218 | [the 9/02 deck is delivered; fix the explainer's prose next](../session_218_handoff.md) | 2026-09-01 |
 | 217 | [the one-pool model is shipped; feed cutover + polish next](../session_217_handoff.md) | 2026-09-01 |
 | 216 | [from SkyPool (Session 215, the full-tab-mock run)](../session_216_handoff.md) | 2026-08-31 |

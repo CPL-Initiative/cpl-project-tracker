@@ -738,19 +738,18 @@ deck's stale Oct. 31 opt-in → Nov. 1. Found: the public explainer's two
 STATIC prose passages still assert the old model (fix = lane NEXT ①). PR
 #1427 was already merged. Story: `cpl_funding_lessons`; handoff `session_218_handoff`.
 
-### SkyPort S216 — the one-pool model shipped (2026-08-31 → 09-01)
+### SkyMeld S218 — four outcomes fold into three bands (2026-09-01)
 
-**The port is DONE and the whole family is green**: `cpl_funding.js` runs the
-one-pool solve (118 rows · 51 base / 7 cap · trio by origination), all 33
-funding suites re-aimed (~2,000 checks) by a 5-agent fan-out, PR #1427.
-Sam's three reaction rounds landed live (collapsible sections + expand/collapse
-all · rem-shared column template — em grids misalign across font sizes ·
-verbatim statute folds · his Summary bullet · "Version as of" · pool→funding +
-"on its face" banned · Draft memo / Save as PDF · Internal·Public preview ·
-metric on the card face · max-award definition · LA Southwest / Riverside City
-via `display` aliases). The ports FOUND three product bugs (prioTarget lane
-slice; `c:<order>` keys; low-key-rows bold) — all fixed. Story:
-`cpl_funding_lessons`; handoff `session_217_handoff`.
+**Sam's consolidation shipped, PR #1429 (`724feac`).** The priorities and the
+§78093.2(d)(1) goals were two sections describing one allocation; they are now
+one — **(A) Access · (B)+(C) Success · (D) Opportunities** — with membership
+DERIVED from each metric's milestone and an orphan band so nothing vanishes.
+Two measure sources declared (`ppe`/`ppe_u` live, `pac`/`pac_u` awaiting the
+attestation column). **The finding that carried it: the model pays 34% of the
+credit slice and 84% of that comes from the one measure 97 of 115 colleges
+already max out.** Sam ruled the dials (Accepted 25% / factor 1.0) — his to set
+via the tab. Corrected mid-run: the counselor step is a policy attestation, NOT
+batch-proof. Story: `cpl_funding_lessons`; handoff `session_219_handoff`.
 
 ## Troubleshooting
 

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-361 document(s).
+363 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -87,6 +87,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A locked mock's figures of record are the port's anchor test](../kb-notes/methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [A manager must show everything it manages, or say what it cannot see](../kb-notes/methodology-a-manager-must-show-everything-it-manages.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [A measure everyone already clears incentivizes nothing — the same failure as one nobody can measure](../kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [A mechanism that looks redundant may be carrying a second job the table cannot show](../kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A metric matched by its prose mis-measures the moment a second lane exists](../kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
@@ -192,6 +193,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
+| [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [Hiding a control also hides the way to get access](../kb-notes/methodology-hiding-a-control-also-hides-the-way-in.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [In a parent/child ledger, totals sum PARENT rows only](../kb-notes/methodology-parent-child-ledger-totals.md) | methodology | published | 2026-07-30 |  |
 | [In-browser doc capture → Claude → tokenless GitHub write](../kb-notes/methodology-browser-doc-capture-to-claude-and-github.md) | methodology | published | 2026-06-19 | 2026-06-19 |
