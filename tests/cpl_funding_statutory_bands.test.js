@@ -121,6 +121,29 @@ check("the orphan band says what is wrong and how to fix it",
   /does not resolve to a goal/i.test(flat(orphanBands[0])) &&
   /tag the goal explicitly/i.test(flat(orphanBands[0])));
 
+// ── 5b. the reorder controls are wired in EVERY band, not just the first ────
+// A real bug this consolidation introduced and this check now pins. The handler
+// bound `document.querySelector("#cplFundingMount .cplfund-prio")` — singular —
+// which was right while there was one grid. Banding creates one grid per band,
+// so only Access's cards got listeners: the position picker on every card below
+// it looked live, accepted the change, and reordered nothing. A control that
+// silently does nothing is worse than one that is visibly absent, and no
+// assertion about markup would have caught it — only exercising the last card.
+const lastIdx = modelPrios - 1;
+const lastCard = doc.querySelector('.cplfund-prio .p[data-priocard="' + lastIdx + '"]');
+check("the last priority card exists and sits in a later band than the first",
+  !!lastCard && !!doc.querySelector('.cplfund-prio .p[data-priocard="0"]'));
+const picker = lastCard && lastCard.querySelector("[data-priopos]");
+check("the LAST card carries a position picker", !!picker);
+const orderBefore = win.CPL_FUNDING_TAB._effective().years[0].priorities
+  .map((p) => p.srcIndex).join("");
+picker.value = "0";
+picker.dispatchEvent(new win.Event("change", { bubbles: true }));
+const orderAfter = win.CPL_FUNDING_TAB._effective().years[0].priorities
+  .map((p) => p.srcIndex).join("");
+check("changing it ACTUALLY reorders — the handler reaches past the first band",
+  orderBefore !== orderAfter, "before " + orderBefore + " after " + orderAfter);
+
 // ── 6. the §78093.2(d)(2) reporting artifact SURVIVES the consolidation ─────
 // Collapsing two sections into one must not delete the goal spine: it is the
 // (d)(2) demonstration record, and it is the only place goal (C) comes out

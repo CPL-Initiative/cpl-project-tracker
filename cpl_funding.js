@@ -7908,15 +7908,30 @@
     // Both land on movePriority(), which is pure over the order array — the DOM
     // handlers are a thin shell, so the tests exercise every reordering without
     // synthesising HTML5 drag events (jsdom does not implement them).
-    var prioGrid = document.querySelector("#cplFundingMount .cplfund-prio");
-    if (prioGrid && !publicMode()) {
+    // ⚠️ ALL the grids, not the first one. The band consolidation (Sam,
+    // 2026-09-01) puts each statutory band's cards in their OWN .cplfund-prio,
+    // so a `querySelector` here wired only the Access band and the position
+    // picker on every card below it silently did nothing — a control that looks
+    // live, accepts the click, and changes no order. Reordering is also
+    // CROSS-BAND by nature (moving a priority can move it to another band), so
+    // the handlers must span every grid rather than being scoped per band.
+    var prioGrids = Array.prototype.slice.call(
+      document.querySelectorAll("#cplFundingMount .cplfund-prio"));
+    if (prioGrids.length && !publicMode()) {
+      var qsa = function (sel) {
+        var out = [];
+        prioGrids.forEach(function (g) {
+          Array.prototype.push.apply(out, Array.prototype.slice.call(g.querySelectorAll(sel)));
+        });
+        return out;
+      };
       var dragFrom = null;
       var clearDragCls = function () {
-        prioGrid.querySelectorAll(".p").forEach(function (c) {
+        qsa(".p").forEach(function (c) {
           c.classList.remove("cplfund-dragging", "cplfund-dropover");
         });
       };
-      prioGrid.querySelectorAll("[data-priodrag]").forEach(function (g) {
+      qsa("[data-priodrag]").forEach(function (g) {
         g.addEventListener("dragstart", function (e) {
           dragFrom = Number(g.getAttribute("data-priodrag"));
           var card = g.closest(".p");
@@ -7930,7 +7945,7 @@
         });
         g.addEventListener("dragend", function () { dragFrom = null; clearDragCls(); });
       });
-      prioGrid.querySelectorAll("[data-priocard]").forEach(function (card) {
+      qsa("[data-priocard]").forEach(function (card) {
         card.addEventListener("dragover", function (e) {
           if (dragFrom == null) return;
           e.preventDefault();
@@ -7951,7 +7966,7 @@
           movePriority(state.viewSlot, from, to);
         });
       });
-      prioGrid.querySelectorAll("[data-priopos]").forEach(function (sel) {
+      qsa("[data-priopos]").forEach(function (sel) {
         sel.addEventListener("change", function () {
           savingState = "";
           movePriority(state.viewSlot, Number(sel.getAttribute("data-priopos")), Number(sel.value));

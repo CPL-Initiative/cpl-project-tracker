@@ -28,6 +28,22 @@ const {
   finish,
 } = require("./lib/cpl_funding_harness.js");
 
+// ⚠️ LOCATE A PRIORITY CARD BY ITS DISPLAY INDEX, NOT BY DOM ORDINAL
+// (re-aimed 2026-09-01, Sam's band consolidation). Cards are now grouped under
+// their statutory outcome and the bands render in statute order, so the card at
+// display position N is Nth WITHIN ITS BAND, not Nth in the document.
+// `data-priocard` is the display index the renderer stamps on each card — which
+// is what every assertion below was always reaching for. None of them was ever
+// about document order.
+function cardAt(doc, i) {
+  return doc.querySelector('.cplfund-prio .p[data-priocard="' + i + '"]');
+}
+function allCards(doc) {
+  return Array.from(doc.querySelectorAll(".cplfund-prio .p")).sort(
+    (a, b) => Number(a.getAttribute("data-priocard")) - Number(b.getAttribute("data-priocard")));
+}
+
+
 const NET = 25240308;   // the one pool (pinned to the model by the anchor suite)
 // First $-figure in a cell (the max award; the earning sub-line comes after).
 function firstMoney(el) {
@@ -166,15 +182,15 @@ const DISTRICTS = (function () {
   } } });
   T.render();
   check("Y1-P1 card hints actuals arrive with the daily refresh (measurable metric)",
-    doc.querySelector(".cplfund-prio .p").textContent.indexOf("next daily data refresh") !== -1);
+    cardAt(doc, 0).textContent.indexOf("next daily data refresh") !== -1);
   // Reworded 2026-09-01 (Sam): the card reads a plain "no data yet"; the WHY
   // lives only in the curator-only metric-wiring diagnostic.
   check("Y1-P2 card reads a plain 'no data yet' — the gap reason no longer renders on the card",
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("no data yet") !== -1 &&
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("STATEWIDE credit recommendation") === -1);
+    cardAt(doc, 1).textContent.indexOf("no data yet") !== -1 &&
+    cardAt(doc, 1).textContent.indexOf("STATEWIDE credit recommendation") === -1);
   check("Y1-P3 (Portal/Landing) is no longer a hard gap — it's the wired portal metric",
-    doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("no data yet") === -1 &&
-    doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("Portal") !== -1);
+    cardAt(doc, 2).textContent.indexOf("no data yet") === -1 &&
+    cardAt(doc, 2).textContent.indexOf("Portal") !== -1);
   // Per-priority detail (the expand — the P-columns' successor). Since the
   // 2026-09-01 rewording, gap and pending both read a plain "no data yet" on
   // the SURFACE (the status distinction survives in the API and the curator
@@ -206,7 +222,7 @@ const DISTRICTS = (function () {
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." }
   } } });
   T.render();
-  const p1card = doc.querySelectorAll(".cplfund-prio .p")[0];
+  const p1card = cardAt(doc, 0);
   check("Y1-P1 card shows the any-transcribed statewide actual vs target",
     p1card.textContent.indexOf("20,000") !== -1 && p1card.textContent.indexOf("of target") !== -1);
   // The SYSTEM row's P-columns are retired; the deduplicated statewide actual
@@ -239,7 +255,7 @@ const DISTRICTS = (function () {
   // The gap REASON ("MIS match-back") left the cards with the 2026-09-01
   // rewording — it lives in the curator diagnostic; the card reads plainly.
   check("Y2 cards read 'no data yet' (their metrics are unmeasured today)",
-    doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("no data yet") !== -1);
+    cardAt(doc, 1).textContent.indexOf("no data yet") !== -1);
 }
 
 // C9b — measurability follows the METRIC, not the slot position (Sam, 2026-07-23).
@@ -262,7 +278,7 @@ const DISTRICTS = (function () {
     "2": { title: "Capacity", metric: "Headcount with Transcribed Credit from either CPL Student Portal or CPL Landing Page" }
   } } });
   window.CPL_FUNDING_TAB.render();
-  const cards = doc.querySelectorAll(".cplfund-prio .p");
+  const cards = allCards(doc);
   check("reordered slot-0 (statewide eligibility) reads 'no data yet', not a number",
     cards[0].textContent.indexOf("no data yet") !== -1 &&
     cards[0].textContent.indexOf("16,807") === -1);
@@ -292,7 +308,7 @@ const DISTRICTS = (function () {
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const card = doc.querySelector(".cplfund-prio .p");
+  const card = cardAt(doc, 0);
   const box = card.textContent;
   check("the card states the allocation share and the target as separate figures",
     /Allocation share/.test(box) && /Target|per student/.test(box));
