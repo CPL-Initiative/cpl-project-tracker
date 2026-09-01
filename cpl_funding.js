@@ -4934,10 +4934,31 @@
     // the counselor/coordinator/initiator could check the counseling step
     // done — and by doing so attesting that the student accepted the CPL on the
     // plan." So this is not a staff-only signal and must never be described as
-    // one. What it still cannot be is BATCH-LOADED: it is a per-plan attestation
-    // about one student, which is the whole reason it repairs the applied rung
-    // (the builder's own note: an undifferentiated count "rewards batch loading
-    // and real counselling identically").
+    // one.
+    //
+    // ⚠️ AND IT IS AN ATTESTATION, NOT A TECHNICAL GUARANTEE. An earlier draft of
+    // this comment said the step "cannot be batch-loaded". That is FALSE and the
+    // correction matters, because the claim was the stated reason the measure
+    // repairs the applied rung. Sam, 2026-09-01: "there are allowable uses for
+    // batch uploading the counselor step checked true — we ask colleges to batch
+    // upload previously transcribed CPL from their SIS, with the assumption that
+    // they went through the counseling steps with each student before
+    // transcribing." So a batch CAN set it, legitimately.
+    //
+    // What the measure actually rests on is POLICY plus the AUDIT TRAIL, not the
+    // mechanism: the Chancellor's Office is instructing colleges to stop
+    // auto-awarding (Sam: auto-award "can impact students negatively"), to
+    // confirm acceptance with the student before awarding, and only then to check
+    // the step — and the attestation records WHO checked it and WHEN. The live
+    // risk this leaves is a college that auto-awards (military basic-training
+    // credit especially) and batch-sets the flag anyway, which the instruction
+    // targets and the audit trail makes reviewable.
+    //
+    // It still does real work against the rung it replaces: an undifferentiated
+    // applied count asks the college to assert NOTHING, while this one requires
+    // an assertion they are accountable for. That is the honest version of the
+    // builder's note that an undifferentiated count "rewards batch loading and
+    // real counselling identically" — the gap narrows, it does not close.
     //
     // ⚠️ NO is_potential CONDITION, deliberately — unlike pa (documented cohort)
     // and ppa (portal cohort), the accepted-plan measure spans BOTH, because the
