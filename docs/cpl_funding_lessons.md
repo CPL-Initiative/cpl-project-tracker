@@ -1579,3 +1579,100 @@ cannot say both. Both went to Sam as
 `session-219-skytrim` — rollback is
 `delete from cpl_memory where author = 'session-219-skytrim'`. No data writes
 beyond that; shares, factors and titles remain curator edits through the tab.
+
+## 2026-09-01 (later, Session 219) — both consolidations ruled and shipped, and the condition that made one of them dangerous
+
+Sam ruled the decision sheet the day it was written — consolidate the goal
+spine, port the flat ledger — and then added two things mid-flight that changed
+the work: an introduction, and *"I don't want to lose editability of variables
+we have in the model through the simplifying and consolidation process."*
+
+### The condition was the whole risk, and it was not obvious
+
+The Funding Breakdown's seven boxes looked like a display. They were the
+**editing surface**: each box held an inline editor for its amount, another for
+its label, a control to drop it from the funding math, and another to hide it
+from the public college page. "Flatten this into a ledger" reads like a
+presentation task, and the natural way to build a ledger is to print the values
+— which would have looked *correct in a screenshot* and silently cost Sam the
+model. Nothing on the page would have said so; the numbers would all be right.
+
+Two things followed from taking that seriously.
+
+**The class vocabulary did not change.** `.cplfund-card` names a ROLE — a
+labeled figure — not a shape, so the flat treatment is CSS scoped to a
+`.cplfund-ledger` wrapper and the markup is untouched. Every editor, every
+control, every fold and every absence guard (`.feeder`, `.balance`, `.rural`)
+kept working. A rename would have been a day of re-aiming ~25 assertions that
+were each asserting the right thing about a container that had moved.
+
+**The guard came before the confidence.** `cpl_funding_ledger_editable.test.js`
+asserts the dials rather than the look, and it is mutation-verified in the
+direction that matters: make one row print its value instead of offering an
+editor and it fails eight assertions **by name**. That "by name" cost a fix of
+its own — the first version threw at an unguarded `commit(null)` and the run
+died before `finish()` printed, so the assertion that caught the bug never
+reached the log and the next reader would have seen a stack trace instead of a
+cause. **A guard that dies before it can report is only half a guard.**
+
+### One function, two surfaces
+
+The spine consolidation's real content is not the layout. Half the fold was a
+second printing of the band above it, and deleting that half is easy. The other
+half — the evidence state, the (A) equity limit, the (C)
+demonstrated-not-measured note — had to render in the BAND (where a reader
+works) while the §78093.2(d)(2) account still had to stand on its own one click
+down. That is two surfaces describing the same goal, which is exactly the shape
+that drifts.
+
+So `goalEvidence()` / `goalLimitHtml()` / `goalFundsHtml()` were extracted
+first, and both surfaces call them. A check asserts the band and the table agree
+about (C). Without it, the tab could have told a college "no performance
+measure" on the band and something else in the report, and neither would look
+wrong on its own.
+
+**And the reason the evidence line is per GOAL rather than per band:** Success
+is (B)+(C), and they differ on precisely the axis (d)(2) asks about — (B) is
+earned against a MAP measure, (C) is funded and deliberately not measured. A
+band-level sentence would have to be wrong about one of them. The consolidation
+that groups two goals into one band is the same consolidation that forbids one
+statement for the pair.
+
+### R11, and re-aiming versus weakening
+
+The introduction broke a guard: R11's check read *"the Summary sits above the
+first section"*, and an intro section precedes it. The lazy fix is to move the
+intro below the Summary; the wrong fix is to delete the check. R11's actual
+requirement is that **the Summary is never inside a fold** — "above the first
+section" was an equivalent proxy until there was a section that belonged above
+it. The check now asserts both halves directly: no enclosing `<details>`, and
+only the intro may precede it. Strictly stronger than the proxy, and it says
+what it means.
+
+Three other re-aims this run, each to a requirement rather than a phrasing: the
+goals suite addresses the (d)(2) cells **by column header** (the metric-pin fix
+from earlier today, applied before a third column could re-point anything); the
+bands suite accepts "campus" or "college" in the no-one-earns claim, which is a
+fact and not a spelling; and the hero-note check went case-insensitive when its
+phrase became the start of a sentence.
+
+### What the port actually moved, and what it did not
+
+Two of the seven boxes were never ledger lines. The **allocation basis** is a
+denominator and the **reimbursement rate** is a price; neither nets down to the
+total the ledger sums to, and standing in a money ledger they read as though
+they did. They moved into *How an allocation is computed* — with their editors,
+which is the same trap in miniature: moving a read-only figure is a layout
+change, moving an editable one and printing it as text is a lost dial.
+
+The print CSS learned the ledger too. The print window **clones the live tab**,
+so without it "Save as PDF" would have carried the ledger's markup and the
+boxes' look — the one place the two surfaces could quietly disagree about what
+the model looks like.
+
+**Receipts.** PR #1433, on top of #1432 the same day. 292 test files green; all
+sixteen `js-tests.yml` lint steps run locally before the push, which is now
+habit rather than diligence: the previous PR went red on
+`kb/_build_dependency_map.py --check`, and **editing `cpl_funding.js` at all
+moves recorded line numbers in that artifact**, so it is stale after every
+change to this tab.

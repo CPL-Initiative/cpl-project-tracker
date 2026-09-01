@@ -750,17 +750,23 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyDeck S217 — the 9/02 session deck; the sunshine rule (2026-09-01)
+### SkyTrim S219 — the drill-in trims, and both consolidations land (2026-09-01)
 
-**Sam's Taco Tuesday deck rebuilt for the 2026-09-02 session** (8 → 14
-slides, in CPLBrain `04-projects/cpl-initiative/`): ESS 25-82 $50K review +
-reporting-methods slide, THREE Ed Code §78093.2 slides (30 min), funding at
-**general principles only — his sunshine rule: no new-model specifics until
-CO leadership confirms** (ruling + verbatim in the lane file). Priorities
-read live (Access: Statewide 34 / Access: Outreach 33 / Completion 33);
-deck's stale Oct. 31 opt-in → Nov. 1. Found: the public explainer's two
-STATIC prose passages still assert the old model (fix = lane NEXT ①). PR
-#1427 was already merged. Story: `cpl_funding_lessons`; handoff `session_218_handoff`.
+**Three PRs.** #1432 struck four restatements from the college expand and found
+the per-priority targets were never missing — the table is a GRID ITEM in a
+`minmax(240px, 1fr)` grid, so 620px of it scrolled sideways inside 240px with
+three columns past the clip edge; a `grid-column: 1 / -1` span is the whole fix,
+plus a **To go** column that prints a distance only for a MEASURED row (a
+suppressed actual plus a gap IS the value, by subtraction). #1433 shipped both
+sheet decisions Sam ruled the same day: the **goal spine folded into the bands**
+(per-goal evidence lines, the limits on the line they belong to, the four cards
+reduced to a four-row (d)(2) table — one function feeds both surfaces) and the
+**flat ledger**, with his condition *"I don't want to lose editability of
+variables"* met by keeping the class vocabulary and guarding the dials
+(`cpl_funding_ledger_editable.test.js`, mutation-verified). Plus a collapsible
+intro, and R11 re-aimed to its requirement rather than moved around. Item 3
+dismissed: *"the lane split is worth the width."* Story: `cpl_funding_lessons`;
+handoff `session_220_handoff`.
 
 ### SkyMeld S218 — four outcomes fold into three bands (2026-09-01)
 
