@@ -1,9 +1,15 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-01",
- "_session": "SkyPort, Session 216 — the one-pool model shipped",
- "_status": "The adopted one-pool model is BUILT into the live Implementation Funding tab and every test is green: $25.24M over all 118 institutions, $150K base to $400K cap on the combined award, every award split into credit and noncredit shares, the three noncredit-only campuses earning by origination. Sam ran three reaction rounds live (collapsible sections, centered columns, the statute verbatim behind each goal card, his Summary wording, Draft memo and Save as PDF buttons, an Internal/Public preview, the metric on each priority card's face, LA Southwest and Riverside City) and all of it is in. The pull request was awaiting its final automated check at checkpoint time; merging it publishes the tab. Next up: the origination data feed (the three noncredit-only campuses draw nothing until it flows) and one display decision for Sam.",
+ "_session": "SkyDeck, Session 217 — the 9/02 session deck + the sunshine rule",
+ "_status": "Sam's deck for the September 2 session is rebuilt and in the vault: an agenda for his run of show (30 minutes on the new Education Code article, 5 minutes on $50K reporting methods, 10 for questions), the 2025-26 $50K seed-funding review with a reporting-methods slide, three Education Code slides including the statute verbatim, and the funding slides updated to the current model at GENERAL PRINCIPLES only — his ruling: no new-funding specifics anywhere outward until CO leadership confirms. The one-pool tab itself is live (the pull request merged). One new defect found: two sentences on the public how-the-model-works page still describe the old model and the live painter cannot fix prose — queued for the next session.",
  "items": [
+  {
+   "id": "s217-sam-deck-review",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Tomorrow's deck (20260831_Taco_Tuesday_3.pptx, in the vault and in chat) is ready for your read-through: agenda 30/5/10, the $50K review + a reporting-methods slide for your teammate, three Ed Code slides, funding at general principles only per your ruling — no new-model dollars, weights, or links anywhere. If any slide reads wrong, say which number and a session fixes it tonight. Your own follow-up when ready: confirm the new-funding details with CO leadership, which unlocks sunshining specifics."
+  },
   {
    "id": "s216-sam-annual-percent",
    "for": "Sam",
@@ -47,16 +53,16 @@
    "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
   },
   {
-   "id": "s216-fable-merge-and-cutover",
+   "id": "s217-fable-origination-cutover",
    "for": "Fable",
    "tab": "cpl-implementation",
-   "text": "Two finishes on the shipped one-pool tab: (1) if PR #1427 is still open, merge it once its automated test check passes — that publishes the new tab; (2) when Malone/Pedro confirm the origination columns' exact spellings, flip the performance builder's cutover so the feed flows — the tab itself needs no further change, the tests prove it."
+   "text": "PR #1427 is merged and the one-pool tab is live. The remaining finish: when Malone/Pedro confirm the origination columns' exact spellings, flip the performance builder's cutover so the feed flows — the tab itself needs no further change, the tests prove it. Until then the three noncredit-only campuses correctly draw nothing."
   },
   {
    "id": "s216-fable-post-port-polish",
    "for": "Fable",
    "tab": "cpl-implementation",
-   "text": "Two small polish jobs left behind by the port: (1) the college briefing still shows internal short names ('LA Swest', 'Riverside') where the funding tab now says LA Southwest and Riverside City — sweeping it belongs with the college-and-district identity work so every surface renames once, consistently; (2) a cleanup commit for ~15 styling rules serving row shapes that no longer exist plus one frozen-header selector naming a retired row class. Nothing visible moves; it keeps future sessions from chasing ghosts."
+   "text": "Three small polish jobs on the shipped tab family: (1) the public how-the-model-works page has two SENTENCES still describing the old model (sizing 'by credit FTES over 115 colleges'; 'all factors 1.0') — the live painter fixes numbers, not prose, so rewrite or paint those claims; (2) the college briefing still shows internal short names where the funding tab says LA Southwest / Riverside City — sweep with the college-and-district identity work; (3) a cleanup commit for ~15 styling rules serving retired row shapes. Nothing visible moves."
   },
   {
    "id": "s210-fable-sierra-sweep-test",

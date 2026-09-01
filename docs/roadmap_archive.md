@@ -5231,3 +5231,22 @@ award" · alphabetical** (#1423 + the Naming doctrine block). Memo A is now an
 editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions
 delivered for Malone/Pedro (CPLBrain#67). Story: `cpl_funding_lessons`;
 handoff `session_215_handoff`.
+
+<!-- moved verbatim from CLAUDE.md §11 at the 2026-09-01 Rule 9 checkpoint -->
+
+### SkyPool S215 — current vs. possible on the face, and the full revised tab (2026-08-31)
+
+**Queue item 1 built and ruled**: every expand + priority card carries **Current
+Total / Total Possible** (#1424; Sam's labels — "Total Possible" is the CEILING,
+his refinement after "Potential Total" read two ways). **The full revised-tab
+mock is BUILT** (#1425) from a measured inventory of `cpl_funding.js`'s ~30
+surfaces: Baseline-eligibility card (N1 a), §78093.2(d)(1) goal cards +
+superscripts, sticky header + ONE SYSTEM row, live search, the MAP-team note,
+and the **R1–R11 "what leaves the tab" sheet (8 ruled · 3 proposed, reply by
+number)** — awaiting Sam's lock; the port (origin feed first) starts on it.
+⚠️ A phrase sweep misses what a line break splits (new KB note). Story:
+`cpl_funding_lessons`; handoff `session_216_handoff`.
+
+<!-- INDEX update-history bullets rotated out at the 2026-09-01 checkpoint -->
+
+- **2026-08-30 (SkyGov, S209)** — **remediation A built, then both tabs learned to read it.** The dependency map (#1396): dataset → consuming tabs/pages/scripts/workflows, derived FROM THE CODE (`kb/_build_dependency_map.py` → [`reference/dependency_map.md`](reference/dependency_map.md) + `kb/dependency_map.json`), `--check` in CI, verified by three adversarial samples — two found real scanner defects, fixed and pinned (23 guards). On Sam's go: **governance candidates project from the map** (#1397 — **15 never-seen human-write tables** proposed, noise guard 25→30 with the reason on record) and the **Admin surface tells the truth** (#1398 — raci reported `reads:[] writes:[]` while touching four tables). ⭐ *One derivation, many projections*; ⚠️ *direction lives at the fetch site, not the const line*. "Blast Radius" pane mock published for Sam's reaction. Two stale-copy finds (`cpl_pathways_ccr_data.js`, `kb/credentials.json`). 1 KB note, 4 memory rows.

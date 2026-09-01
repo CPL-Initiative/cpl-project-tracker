@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-360 document(s).
+361 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A live-painted page still goes stale in its prose](../kb-notes/methodology-a-live-painted-page-still-goes-stale-in-its-prose.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [A locked mock's figures of record are the port's anchor test](../kb-notes/methodology-a-locked-mock-s-figures-of-record-are-the-port-s-anchor-test.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [A manager must show everything it manages, or say what it cannot see](../kb-notes/methodology-a-manager-must-show-everything-it-manages.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 360,
+   "count": 361,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1342,6 +1342,24 @@
      "title": "A live rename must be order-proof, because the database and the deploy cannot be simultaneous",
      "type": "methodology",
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-09-01",
+     "governs": [
+      "funding-model/index.html",
+      "cpl_funding.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-live-painted-page-still-goes-stale-in-its-prose.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "funding",
+      "explainer",
+      "staleness"
+     ],
+     "title": "A live-painted page still goes stale in its prose",
+     "type": "methodology",
+     "updated": "2026-09-01"
     },
     {
      "created": "2026-08-31",
@@ -8067,7 +8085,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-08-22"
+     "updated": "2026-09-01"
     },
     {
      "created": "2026-06-21",
@@ -11369,8 +11387,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 191,
+   "count": 192,
    "docs": [
+    {
+     "created": "2026-09-01",
+     "governs": [],
+     "n": 218,
+     "path": "docs/session_218_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the 9/02 deck is delivered; fix the explainer's prose next",
+     "type": null,
+     "updated": "2026-09-01"
+    },
     {
      "created": "2026-09-01",
      "governs": [],
@@ -14734,5 +14765,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 747
+ "total": 749
 }

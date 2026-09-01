@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-08-22
+updated: 2026-09-01
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -40,157 +40,6 @@ shell-first, then new-files-only.
 > groundwork) on **2026-08-27** — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-
-## 2026-08-20 — SkyGlass (Session 176): splitting `cpl_funding.test.js`, and the leak that was never the test's to fix
-
-**(a) What happened.** SkySort's handoff left one item explicitly for a
-successor's judgment: the per-child heap cap had been raised 8,192 → 12,288 MB
-to get PR #1268 green, and the note said plainly that the cap buys headroom and
-does not fix the file — 2,955 lines, 61 jsdom windows, one process. It also
-recorded a suspicion: *the windows are never reclaimed; `window.close()` does not
-release them, which is its own finding.*
-
-**The suspicion was half right, and the wrong half is the one that matters.**
-Measured this run:
-
-| | |
-|---|---|
-| 15 windows **constructed, not booted** | 57 MB **total** — collected normally |
-| 15 windows **booted** | 705 MB — ~44 MB each, never released |
-| the same 20 windows with `window.close()` | identical curve to one decimal place |
-
-So jsdom is not the leak and the windows are not "unreclaimable" — *rendering* is
-what leaves 44 MB behind, and nothing the test does can free it. Heap snapshots
-name the retainers: while the file's top-level frame is running every window is
-rooted from **`(Stack roots)`**, the frame's own live registers; wrap each block
-in an IIFE and that root disappears while the DOM stays rooted from
-**`(Micro tasks)`** — a promise reaction holding `boot()`'s `onDOMContentLoad`
-closure, on a queue a long synchronous script never drains. Remove one, the other
-holds.
-
-⭐ **The process boundary is the only allocator.** The one event that reclaims a
-booted window is the process exiting, which `tests/run.js` already gives every
-file. Peak memory is therefore a property of the **largest file**, and the only
-lever is how many windows that file builds. That is the whole argument for the
-split — and the reason no amount of in-file tidying was ever going to work,
-including the close-stale-windows attempt #1268 correctly reverted.
-
-⚠️ **A loop-shaped probe cannot reproduce a block-shaped file.** Booting in a
-`for` loop and measuring afterwards shows the memory coming back, because the
-frame returned. The real file is sixty *sibling blocks* in one still-running
-frame. Reproduce the shape, not the operation, or you will conclude there is no
-leak.
-
-**(b) State.** `tests/cpl_funding.test.js` is gone, replaced by nine suites —
-`shell` (static invariants, no jsdom, ~1 s), `render`, `rollup`, `equity`,
-`scenarios`, `earning`, `rate`, `rural`, `pool` — over a shared
-`tests/lib/cpl_funding_harness.js` (the same `freshDom`/`boot`/`click`/`commit`/
-`scenSlot`/`footText`/`greenSlices`/`pieSlices`, plus `check`/`finish`). The
-assertion bodies were moved verbatim by line range, not retyped.
-
-| | before | after |
-|---|---|---|
-| assertions | 575 | **575** (49+123+39+103+72+41+37+56+55) |
-| peak RSS | 8,642 MB | **2,393 MB** (the `render` suite) |
-| wall clock | 462 s | 333 s sequential — and they now parallelise |
-
-**(c) Roadmap.** The budget is written where the next person will hit it (the
-harness header, `tests/run.js`, and the KB note): **~44 MB per booted window over
-a ~40 MB floor; past ~15 windows in one file, start a new suite.** The cap stays
-at 12,288 MB as headroom for everything else, not as this file's life support.
-
-**(d) Next.** Nothing pending on this thread. If a funding suite starts creeping
-past ~15 windows, split it rather than trimming inside it.
-
-Durable:
-[`methodology-a-test-file-is-a-memory-budget`](kb-notes/methodology-a-test-file-is-a-memory-budget.md).
-
----
-
-## 2026-08-21 — SkyGlass cont.: the sanity check becomes an explainer
-
-**(a) What Sam asked.** *"Have a look at the CPL implementation funding tab
-Calculation sanity check and make sure it reflects the latest changes I made…
-revise the language to be non-techie and as simple as possible… I'm getting ready
-to shop this to my CO colleagues and I want the sanity check to guide folks
-through the basics of the model. Change the Calculation sanity check label to
-'How this funding model works'."*
-
-⭐ **The rename was the whole brief in miniature.** "Calculation sanity check" is
-an *engineering* artifact — it existed to prove the tab's arithmetic, and it was
-written in the model's own vocabulary (`netCollege`, `sizePct`, `prioTarget`,
-price factors, a live-config calculator with policy dials). A CO colleague opening
-it does not want to verify the engine; they want to understand the policy. Same
-arithmetic, different reader, so it is a different document — not a copy-edit of
-the old one.
-
-**(b) The config had moved, and reading it was the first step.** The live shared
-scenario had changed since the artifact was last published on 2026-08-04, and
-none of it was guessable:
-
-| | 2026-08-04 artifact | live on 2026-08-21 |
-|---|---|---|
-| shares | .50 / .30 / .20 | **.34 / .33 / .33** |
-| funding factors | ½ / 1 / 2 | **1.0 / 1.0 / 1.0** |
-| priority order | source order | **`[2,0,1]` — Sam dragged Access to first** |
-| metrics | headcount-era wording | **all three in CPL FTES** |
-| deadline | 2026-09-01 | **2026-11-01** |
-| Year-2 mirror | did not exist | **on** |
-
-⭐ **Sam had used the reorder** (SkySort's #1268) — `priorityOrder: [2,0,1]` is
-sitting in the saved config. That is the second time this week a question was
-answered by *reading the table* rather than asking (the Admin tab's `cobi_nav`
-was the first).
-
-**(c) Every number is generated, never retyped.** The page's figures come from
-`cpl_funding.js`'s own engine, driven through `tests/lib/cpl_funding_harness.js`
-with the live config injected via `_setConfig` — pool waterfall, all 115 offers,
-the floor count, the worked example. `prototype/build_funding_model_explainer.js`
-regenerates the embedded block, so refreshing after a dial moves is one command
-rather than a re-derivation. ⚠️ **It is a SNAPSHOT and that is deliberate** — a
-colleague opening a link from an email should not see a page mid-edit — so the
-generator's docstring is where the refresh procedure lives.
-
-**(d) One honest number the old page did not surface.** The $150,000 minimum is
-funded from inside the same pot, so a college above the minimum is effectively
-funded at **~$5,060 per FTES rather than the full $5,649.63**, while a small
-college lifted to the minimum reaches its target on far less (Lassen: ~$23,900
-per FTES). That is the floor working as designed, but "everyone is paid the state
-rate" would have been false, so the page says it plainly.
-
-**(e) Verified, not claimed.** All **26 painted contrast pairs pass AA** (computed
-with `prototype/check_contrast.py`'s own math); `prototype/check_funding_explainer.js`
-runs a real Chromium over **nine widths** plus structure and keyboard checks —
-**36 checks, all green**. ⚠️ **Two of those checks were wrong before the page
-was**: the reduced-motion probe `return`ed on the first *cross-origin* stylesheet
-(Google Fonts) and so never looked at the page's own sheet, and the skip-link tab
-test ran with the search box still focused from an earlier step. Both are the
-Sky175 lesson repeating — suspect a new check when it goes red.
-
-**(f) Sam's copy note.** *"Use American English (e.g., check rather than
-cheque)."* Swept the page and this run's new files; `cheque`, `color` and two
-`towards` were the whole list. Left the two pre-existing `modeling`s in
-`cpl_funding.js` alone rather than churn code this run did not touch.
-
-**(g) Sam's second copy note — and the trap in it.** *"Revise 'the middle
-college's offer for the two years' to 'average funding for two years' and add a
-detail on the min and max funding."* ⚠️ **The tile was showing the MEDIAN
-($167,171); the average is $210,785.** Relabeling it without changing the number
-would have stated a false figure on the page he is about to send to colleagues.
-Shipped as: the tile now carries the true **average**, and a three-up strip below
-it gives **lowest $150,000** (the guaranteed minimum, where 50 of 115 land),
-**typical $167,171** (the median, kept because it is the more honest answer to
-"what would my college get?") and **highest $522,239** (Mt San Antonio). A line
-underneath says why they differ — a handful of very large colleges pull the
-average above what most colleges see. Both figures are emitted by the generator,
-so neither can drift.
-
-**(h) Next.** Sam reads it end to end before sending it out; re-run the generator
-and re-publish whenever the shares, factors or order change.
-
-
----
-
 ## 2026-08-22 — SkyPlain (Session 182): the explainer stopped arguing against itself
 
 Five rounds on `prototype/funding_model_explainer.html` with Sam reading it as its
@@ -2142,3 +1991,44 @@ found by the ports were fixed. Vocabulary tightened to doctrine: funding never
 **Numbers of record:** 118 · 51 base / 7 cap · trio $482,669 · college NC
 shares $1,300,738 · SYSTEM NC $1,783,407 (baked; real-data $1,783,399) ·
 average $213,901 · Mt. SAC uncapped $711,567 (its NC FTES now rides its row).
+
+## 2026-09-01 — Session 217 (SkyDeck): the deck run, and where a live-painted page still lies
+
+Sam pivoted S217 to a deliverable: revise his Taco Tuesday deck for the
+2026-09-02 session (Ed Code §78093.2 · the 2025–26 $50K review · the new
+funding). The lane lessons out of a *presentation* run, of all things:
+
+- **The live config is the only place the priorities exist correctly.** The
+  deck's three priority cards were two models stale (P1 Access / P2 Success /
+  P3 Capacity with headcount metrics). Rebuilt from the live effective values
+  (P1 Access: Statewide 34% · P2 Access: Outreach 33% · P3 Completion 33%,
+  units-in-FTES metrics), read via the config dump — never from memory rows,
+  which hold rulings, not values. The deck's opt-in date was also stale
+  (Oct. 31 vs the live participationDeadline 2026-11-01) and its
+  coordinator count happened to still be exactly right (48 of 115,
+  re-verified against `map_coordinator_summary()`).
+- **Sam's sunshine ruling (2026-09-01, verbatim):** "I don't want to get into
+  specifics on the new funding, just the general principles… New funding is
+  still in draft form that I need to confirm with CO leadership before
+  sunshining details." So outward materials carry the model's SHAPE (one
+  funding total · base and cap · sized by combined teaching · outcomes-based
+  draw-down · three draft priorities · noncredit riding every award) and no
+  dollar figures, weights, counts, or the explainer link. The tab and
+  explainer remain reachable but are not to be pointed at from presented
+  materials until he confirms with CO leadership.
+- **A live-painted page still goes stale in its PROSE.** Found while sourcing
+  the deck: `funding-model/index.html` step one still says awards are sized by
+  *credit* FTES over "all 115 … 1,069,182", and step three + the
+  choices-table still say every funding factor is **1.0** — while the live
+  Year-1 factors are **0.5** (mirrored years make them effective) and the
+  one-pool sizes on combined FTES over 118. The 2026-08 fix gave every
+  FIGURE an id the painter overwrites; SENTENCES that assert model mechanics
+  have no ids, so the page can no longer lie in numbers but still lies in
+  prose. KB note filed; the fix (next session) is to paint the load-bearing
+  claims or delete the duplicated mechanics prose in favor of painted text.
+- **Deliverable:** `CPLBrain/04-projects/cpl-initiative/20260831_Taco_Tuesday_3.pptx`
+  (+ searchable companion .md and the build script beside it). 14 slides:
+  agenda (30 min Ed Code · 5 min $50K reporting methods · 10 min questions),
+  the ESS 25-82 commitments + a reporting-methods slide for the teammate,
+  three Ed Code slides (establishes / requires / the statute verbatim), and
+  the funding slides held at general principles.
