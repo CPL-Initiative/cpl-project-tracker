@@ -223,6 +223,11 @@ function reviewerSession() {
   if (chip) click(dom.window, chip);
   const t1 = doc.getElementById("cplFundTable").innerHTML;
   const wrap = doc.querySelector('[data-optinwrap="' + (chipCollege || "") + '"]');
+  // Was KNOWN-RED for a real product bug (found by this port, 2026-08-31):
+  // the chip's handler set state.open["c:" + c.order] while rows key their
+  // open state by "c:" + c.college — the drill-in never opened, so Sam's
+  // one-click "✎ Confirm" (2026-08-05) was a dead click. Fixed same day
+  // (handler re-keyed by name); this check is the regression guard.
   check("F1b: clicking the chip opens that row's attestation form (name field present)",
     !!wrap && !!wrap.querySelector('[data-optinfield="name"]'));
 
@@ -240,7 +245,7 @@ function reviewerSession() {
   // attestor identity; and clicking inline Confirm actually confirms — proving the
   // holder-scoped binding survives the expand's refreshTable (a dead button here
   // was the real risk of moving the action onto the row).
-  const order = D.colleges[0].order;
+  // Rows key by NAME since one-pool adoption (data-id "c:<college>", 2026-08-31).
   const priv = freshDom();
   priv.window.CPL_SESSION = reviewerSession();
   const doc = boot(priv.window);
@@ -251,7 +256,7 @@ function reviewerSession() {
       status: "self_attested", requested_at: "2026-08-05" }
   ] });
   P.render();
-  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
   click(priv.window, row);   // expand COL's drill-in (it's opted in → no chip)
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
@@ -270,14 +275,13 @@ function reviewerSession() {
 {
   // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
   // but still shows the college-facing opted-in status.
-  const order = D.colleges[0].order;
   const dom = freshDom();
   const doc = boot(dom.window);
   const T = dom.window.CPL_FUNDING_TAB;
   const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
   T._setElig({ coordOk: true, coord: {}, optinRow: selfRow });
   T.render();
-  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
   click(dom.window, row);
   const t = doc.getElementById("cplFundTable").innerHTML;
   check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",

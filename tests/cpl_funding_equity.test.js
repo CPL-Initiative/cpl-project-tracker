@@ -1,7 +1,13 @@
-// CPL Implementation Funding tab — the 2026-07-06 equity refinements (Part D).
+// CPL Implementation Funding tab — the 2026-07-06 equity refinements (Part D),
+// ported to the ONE-POOL model (adopted 2026-08-31).
 //
-// Front-load · minimum-viable floor · rural allowance · baseline eligibility.
-// Data defaults first, then renderer behaviour.
+// Front-load · base-award floor · rural retirement · baseline eligibility.
+// Data defaults first, then renderer behavior. The floor/cap now bound ONE
+// combined award per institution (118 rows — the noncredit-only trio are
+// ordinary rows), sized by credit + noncredit FTES; the per-year Yr1/Yr2
+// columns and the standalone-noncredit table these checks used to read are
+// retired (R6/R9), so the front-load and SYSTEM-row guards are re-aimed at
+// the CR award / NC award pair and the drill-in.
 //
 // One of nine suites the 2,955-line cpl_funding.test.js was split into on
 // 2026-08-20, after it stopped fitting in a 12 GB heap. Shared setup + the
@@ -28,14 +34,23 @@ const {
   finish,
 } = require("./lib/cpl_funding_harness.js");
 
+// The one-pool roster: 115 colleges + the noncredit-only rows (NOCE / SD
+// Cont. Ed / Calbright; Mt. SAC Noncredit rides the Mt San Antonio row).
+const NCO_N = D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; }).length;
+const ROSTER_N = D.colleges.length + NCO_N;
+// An institution's size under one pool: credit + noncredit FTES combined.
+function combinedFtes(c) { return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0); }
+
 // ─────────────────────────────────────────────────────────────────────────────
 // Part D — the 2026-07-06 equity refinements (front-load · floor · rural ·
-// eligibility). Data defaults first, then renderer behaviour.
+// eligibility). Data defaults first, then renderer behavior.
 // ─────────────────────────────────────────────────────────────────────────────
 
 // D0 — data defaults for all four features.
 check("data: disbursement defaults to even tranches", D.disbursement === "even");
-check("data: minimum-viable floor default $175K/window (raised 2026-08-22)", D.pool.floor_window === 175000);
+check("data: base award default $150K/window on the COMBINED award (one-pool dials, 2026-08-31; " +
+  "the pre-adoption floor was $175K)", D.pool.floor_window === 150000);
+check("data: the cap ships beside it at $400K", D.pool.cap_window === 400000);
 check("data: the rural carve-out and its label are retired",
   D.pool.rural_carveout === undefined && D.pool.rural_carveout_label === undefined &&
   D.rural_threshold === undefined);
@@ -52,12 +67,11 @@ check("data: rural roster provenance cites the federal rural categorization",
   /federally categorized as rural/.test(D.rural_source || ""));
 check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
 
-// D1 — minimum-viable floor: waterfall math (model-level, via test hooks).
-// The CEILING is switched OFF for this whole block (Sam's $400K maximum ships
-// on by default from 2026-08-22). These assertions are about the floor in
-// isolation — with a ceiling live the six largest colleges TIE at it, so
+// D1 — base-award floor: waterfall math (model-level, via test hooks).
+// The CAP is switched OFF for this whole block. These assertions are about the
+// floor in isolation — with a cap live the largest institutions TIE at it, so
 // "the largest takes the max entitlement" stops being a floor property at all.
-// The ceiling, and the two solved together, have their own suite:
+// The cap, and the two solved together, have their own suite:
 // tests/cpl_funding_cap.test.js.
 {
   const { window } = freshDom();
@@ -66,84 +80,109 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T._setScenario({ pool: { cap_window: 0 } });
   const m = T._model();
   const net = T._netCollege();
-  check("floor model: MAIN pool conserved (Σ main entitlements = net main pool)",
+  check("floor model: ONE pool conserved (Σ entitlements over all 118 institutions = net pool)",
     Math.abs(Object.values(m.W).reduce(function (s, w) { return s + w; }, 0) - net) < 1);
-  // One floor for everyone since the carve-out was retired: no college's MAIN
+  // One floor for everyone since the carve-out was retired: no institution's
   // entitlement sits below it any more, because there is no second component to
   // make up the difference.
   check("floor model: no college's TOTAL window falls below the floor",
     D.colleges.every(function (c) { return T._alloc(c.college).total >= m.floor - 0.01; }));
   // How MANY colleges the floor catches scales inversely with the pool, so bound it
-  // by the structural invariant (a minority, and only sub-scale colleges) rather
-  // than a literal that a pool change silently invalidates.
-  // ⚠ TWO bounds here went stale with the $175K floor (2026-08-22): "fewer than
-  // half the roster" (it is now 69 of 115) and "only sub-scale colleges" (four
-  // colleges within 5% of the mean are floored — Citrus, MiraCosta, LA City,
-  // Moreno Valley). Both were describing the $150K floor, not the model.
-  //
-  // The invariant that CANNOT go stale is monotonicity: the floored set is a
-  // contiguous bottom slice by size, so no college is floored while a SMALLER
-  // one is not. That holds at any floor, and it is the property that would
-  // actually break if the waterfall were wrong.
-  const bySize = D.colleges.slice().sort(function (a, b) { return (a.credit_ftes || 0) - (b.credit_ftes || 0); });
+  // by the structural invariant rather than a literal that a pool change silently
+  // invalidates. The invariant that CANNOT go stale is monotonicity: the floored
+  // set is a contiguous bottom slice by SIZE, so no college is floored while a
+  // SMALLER one is not. Size under one pool is credit + noncredit FTES COMBINED
+  // (sorting by credit alone would call a noncredit-heavy college "smaller" than
+  // it is and read a correct waterfall as broken).
+  const bySize = D.colleges.slice().sort(function (a, b) { return combinedFtes(a) - combinedFtes(b); });
   const flooredFlags = bySize.map(function (c) { return !!m.floored[c.college]; });
-  check("floor model: the floored set is a contiguous bottom slice by size",
-    m.floorCount > 0 && m.floorCount < D.colleges.length &&
+  check("floor model: the floored set is a contiguous bottom slice by combined size",
+    m.floorCount > 0 && m.floorCount < ROSTER_N &&
     flooredFlags.indexOf(false) !== -1 &&
     flooredFlags.slice(flooredFlags.indexOf(false)).every(function (f) { return f === false; }));
   check("floor model: a rural college is floored on the SAME floor as anyone else",
     Math.abs(m.W["Copper Mountain"] - m.floor) < 1);
-  // Named college removed deliberately: the largest entitlement follows the
-  // ALLOCATION BASIS, and under credit FTES that is Mt San Antonio, not East LA
-  // (which is the largest by headcount). Assert the property, not the name.
+  // Assert the property, not the name: the largest entitlement follows the
+  // ALLOCATION BASIS, which is combined FTES under one pool.
   {
-    const biggestByFtes = D.colleges.slice().sort(function (a, b) { return b.credit_ftes - a.credit_ftes; })[0].college;
-    check("floor model: the largest college on the basis takes the max entitlement, well above the floor",
+    const biggestByFtes = D.colleges.slice().sort(function (a, b) { return combinedFtes(b) - combinedFtes(a); })[0].college;
+    check("floor model: the largest institution on the basis takes the max entitlement, well above the floor",
       m.W[biggestByFtes] === Math.max.apply(null, Object.values(m.W)) && m.W[biggestByFtes] > m.floor * 2);
   }
   const cm = T._alloc("Copper Mountain");
   check("a floored college's window total = exactly the floor, with no second component",
     cm.rural_w === undefined && Math.abs(cm.total - m.floor) < 1 && Math.abs(cm.main_w - m.floor) < 1);
-  check("floored college is flagged for the ⬆ chip", cm.floored === true);
+  check("floored college is flagged for the 'at base' chip", cm.floored === true);
 
-  // UI: floor pool card + chip + drill-in line.
+  // UI: floor pool card + chip + drill-in line. Chips are ghosted WORDS since
+  // 2026-08-31 ("at base" / "at cap" — no ⬆/⬇ glyphs), and the vocabulary is
+  // CCC norms: "brought up to the base", never "topped up".
   const doc = window.document;
   const floorCard = doc.querySelector(".cplfund-card.floor");
-  check("floor pool card renders with the top-up count", floorCard && /topped up/.test(floorCard.textContent));
-  check("formula explains the floor renormalization", /Minimum-viable floor/.test(doc.querySelector(".cplfund-formula").textContent));
+  check("floor pool card renders with the brought-up-to-the-base count",
+    floorCard && /brought up to the base/.test(floorCard.textContent));
+  check("formula explains the base award renormalization",
+    /Base award:/.test(doc.querySelector(".cplfund-formula").textContent));
   const cmRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Copper Mountain") !== -1;
   });
-  check("floored row carries the ⬆ chip", cmRow && cmRow.innerHTML.indexOf("⬆") !== -1);
-  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).order + '"] = true;');
+  check("floored row carries the 'at base' word chip, no ⬆ glyph",
+    cmRow && cmRow.textContent.indexOf("at base") !== -1 && cmRow.innerHTML.indexOf("⬆") === -1);
+  // Rows key their open state by NAME now (data-id "c:<college>", 2026-08-31).
+  T._state.open["c:Copper Mountain"] = true;
   T.render();
   const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
-    return tr.textContent.indexOf("Floor applied") !== -1;
+    return tr.textContent.indexOf("At the base:") !== -1;
   });
-  check("floored drill-in explains the top-up vs the proportional share", !!detail);
+  check("floored drill-in explains the base top-up vs the proportional share",
+    !!detail && /pure proportional share/.test(detail.textContent));
+  T._state.open = {};
 
   // Setting the floor to 0 disables it (pure proportional, no floored rows).
   T._setScenario({ pool: { floor_window: 0, cap_window: 0 } });
   const m0 = T._model();
-  check("floor 0 disables the waterfall (no floored colleges)", m0.floorCount === 0);
-  check("floor 0 → pure proportional (Copper Mountain ≈ credit-FTES share × net)",
+  check("floor 0 disables the waterfall (no floored institutions)", m0.floorCount === 0);
+  // Pure proportional = combined-FTES share × net, over the WHOLE roster —
+  // the trio (placeholder-aware: Calbright sizes at its 1,000-FTES stand-in)
+  // are in the denominator.
+  const totalBasis = D.colleges.reduce(function (s, c) { return s + combinedFtes(c); }, 0) +
+    D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .reduce(function (s, f) {
+        const ph = Number(f.noncredit_ftes_placeholder);
+        return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
+      }, 0);
+  check("floor 0 → pure proportional (Copper Mountain ≈ combined-FTES share × net)",
     Math.abs(m0.W["Copper Mountain"] -
-      D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).credit_ftes /
-        D.colleges.reduce(function (t, c) { return t + c.credit_ftes; }, 0) * net) < 1);
+      combinedFtes(D.colleges.find(function (c) { return c.college === "Copper Mountain"; })) /
+        totalBasis * net) < 1);
 }
 
 // D2 — front-load Year 1: timing changes, totals don't.
+// The Yr1/Yr2 columns are retired (2026-08-31): the ONE award pair (CR award ·
+// NC award) reads per year under Annual funding and the full window under
+// Combined funding, so the timing story is asserted on those cells, the year
+// filter, and the drill-in's carryover line.
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); };
   check("disbursement toggle renders (even ⇄ front-load)",
     doc.querySelectorAll("#cplFundDisb button").length === 2 &&
     doc.querySelector('#cplFundDisb button[data-val="even"]').className === "on");
   const evenAlloc = T._alloc("Alameda");
+  const noceEven = T._alloc("NOCE").total;
+  const ncEvenMt = T._ncAward("Mt San Antonio");
   check("even mode: Y1 ≈ half the window total", Math.abs(evenAlloc.y1 - evenAlloc.total / 2) < 1);
+  const alaCr = function () {
+    const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+      .find(function (r) { return /Alameda/.test(r.textContent); });
+    return row.querySelector("td.cf-award").textContent;
+  };
+  check("even mode: the CR award cell reads the ANNUAL figure (cr_award ÷ 2)",
+    alaCr().indexOf(fmtM(evenAlloc.cr_award / 2)) === 0);
 
-  // Click Front-load Year 1.
+  // Click Combined funding (stored value stays `frontload`).
   click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
   check("front-load click persisted to the local scenario",
     T._getScenario().disbursement === "frontload");
@@ -151,24 +190,36 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("front-load: Y1 carries the FULL window total", Math.abs(fl.y1 - fl.total) < 0.01);
   check("front-load: Y2 disbursement is $0 (carryover only)", fl.y2 === 0);
   check("front-load: window total unchanged (timing only)", Math.abs(fl.total - evenAlloc.total) < 0.01);
-  const row = doc.querySelector("#cplFundTable tbody tr");
-  check("front-load: later year cells render ↻ carryover", row.textContent.indexOf("↻ carryover") !== -1);
-  check("front-load: SYSTEM tfoot Y2 is carryover too",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("↻ carryover") !== -1);
+  check("front-load: the CR award cell now reads the WHOLE window (same cell, window figure)",
+    alaCr().indexOf(fmtM(fl.cr_award)) === 0);
+  check("front-load: the year filter marks Year 2 as carryover (↻)",
+    /↻/.test(Array.from(doc.querySelectorAll("#cplFundYear button"))
+      .map(function (b) { return b.textContent; }).join(" ")));
+  // The carryover story on a Year-2 drill-in — the per-year columns' successor.
+  T._state.viewSlot = "2";
+  T._state.open["c:Alameda"] = true;
+  T.render();
+  check("front-load: a Year-2 drill-in says the year is carryover",
+    (function () {
+      const det = Array.from(doc.querySelectorAll("tr.cplfund-detail")).find(function (tr) {
+        return /carryover under front-loaded disbursement/.test(tr.textContent);
+      });
+      return !!det;
+    })());
+  T._state.viewSlot = "1";
+  T._state.open = {};
+  T.render();
   check("front-load: window note explains roll-forward + the close-out year",
     doc.querySelector(".cplfund-years").textContent.indexOf("close out by 2028-29") !== -1);
-  check("front-load: footer explains the Yr-1 column + carryover",
-    footText(doc).indexOf("Front-loaded disbursement") !== -1);
-  // The noncredit lane became WINDOW-denominated on 2026-08-23 (its floor and
-  // ceiling are window figures, like the credit pair), so front-load can no
-  // longer change its totals — only WHEN they land. That is the whole point of
-  // a timing toggle, and the standalone table has to say which it is showing.
-  const standTable = doc.querySelectorAll(".cplfund-table")[1];
-  check("front-load: the standalone noncredit rows say the money lands in Yr 1",
-    /all in Yr 1/.test(standTable.textContent) && !/\/yr/.test(standTable.textContent));
+  check("front-load: footer explains the Combined-funding columns + roll-forward",
+    /Combined funding:/.test(footText(doc)) && /rolls forward/.test(footText(doc)));
+  // The standalone-noncredit table is retired (R9, 2026-08-31): ONE table, one
+  // row per institution — the trio's timing rides the same cells as everyone's.
+  check("one college table only — no standalone noncredit table survives (R9)",
+    doc.querySelectorAll(".cplfund-table").length === 1);
   check("front-load: it moves the TIMING, never the noncredit totals",
-    Math.abs(Object.values(window.CPL_FUNDING_TAB._ncModel().W).reduce((s, v) => s + v, 0) -
-      D.pool.feeder_carveout) < 0.5);
+    Math.abs(T._alloc("NOCE").total - noceEven) < 0.5 &&
+    Math.abs(T._ncAward("Mt San Antonio") - ncEvenMt) < 0.5);
 
   // Three-layer resolution: SHARED frontload, SCENARIO even → even wins.
   T._setScenario({ disbursement: "even" });
@@ -224,10 +275,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   });
   check("both requirements met → 2 green pie slices", greenSlices(alamedaRow) === 2);
   check("one requirement met → 1 green pie slice", greenSlices(butteRow) === 1);
-  // SYSTEM row Elig = colleges meeting ALL tracked requirements (Sam, 2026-07-27):
-  // only Alameda has BOTH coordinator + participation here, so 1 of N.
-  check("SYSTEM tfoot shows the all-requirements-met fraction (not the coordinator count)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
+  // SYSTEM row Elig = institutions meeting ALL tracked requirements (Sam,
+  // 2026-07-27) — over the 118-row one-pool roster, not just the colleges:
+  // only Alameda has BOTH coordinator + participation here, so 1 of 118.
+  check("SYSTEM row shows the all-requirements-met fraction over the one-pool roster",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
   check("deadline edit writes to the scenario", (function () {
     commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
     return T._getScenario().participationDeadline === "2026-10-01";
@@ -356,8 +408,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("hide persists to the scenario", scenSlot(window).partHidden === true);
   check("badge follows: with only coordinator tracked, Alameda's pie is 1 green of 1",
     greenSlices(alamedaEligCell()) === 1 && pieSlices(alamedaEligCell()) === 1);
-  check("SYSTEM tfoot still shows the coordinator fraction (coord not hidden)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
+  check("SYSTEM row still shows the coordinator fraction over the roster (coord not hidden)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + ROSTER_N) !== -1);
 
   // Restore it.
   click(window, doc.querySelector('[data-reqshow="part"]'));
@@ -399,54 +451,45 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   })());
 }
 
-// D5 — the noncredit feeders are included in the totals (Sam, 2026-07-06):
-// the SYSTEM row shows allocation basis + feeders = CCC total in BOTH table
-// views (the pool card already showed it).
+// D5 — the SYSTEM row totals each lane in the UNITS of the column it tops.
 //
-// BASIS-AWARE 2026-08-01. This row printed sys.headcount unconditionally, so
-// under the credit-FTES basis the column header read "Credit FTES" and the
-// SYSTEM row beneath it read 2,517,685 — the headcount — while every college
-// row above it correctly read credit FTES. A total not in the units of the
-// column it tops is worse than no total: it invites the reader to add up the
-// column, and it will not reconcile. The feeder side switches with it too
-// (noncredit FTES against credit FTES, never feeder headcount).
+// BASIS-AWARE 2026-08-01, RE-SHAPED for one pool 2026-08-31. This row once
+// printed sys.headcount under a "Credit FTES" header — a total not in the
+// units of its column is worse than no total: it invites the reader to add up
+// the column, and it will not reconcile. Under one pool the SYSTEM row carries
+// a CR FTES / NC FTES pair: the credit column must total the college credit
+// FTES, and the noncredit column must total ALL noncredit — the college rows'
+// own noncredit FTES plus the standalone trio (placeholder-aware, matching
+// feederBasis(); Mt. SAC Noncredit counted ONCE, on the Mt San Antonio row) —
+// while the 2.5M headcount stays context-only and never appears as a row figure.
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const feederFtes = D.feeders.reduce(function (s, f) {
-    // Placeholder-aware, matching feederBasis(): a campus whose reported figure
-    // is not yet trustworthy contributes its PLACEHOLDER to the basis. Summing
-    // the raw reported values here would silently re-admit the number the
-    // placeholder exists to keep out of the model.
-    const ph = Number(f.noncredit_ftes_placeholder);
-    return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
-  }, 0);
   const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
-  // ALL noncredit, not just the standalone roster (2026-08-23). 108 college rows
-  // carry noncredit FTES of their own, so the old feeder-only figure understated
-  // system noncredit by ~57,000 FTES. This assertion is a DUPLICATE of the one in
-  // cpl_funding_render.test.js and was missed when that one was corrected — which
-  // is how it reached main red.
-  const allNoncredit = D.colleges.reduce(function (s, c) { return s + (c.noncredit_ftes || 0); }, 0) +
+  // ALL noncredit: 108 college rows carry noncredit FTES of their own, plus the
+  // standalone rows. A campus whose reported figure is not yet trustworthy
+  // contributes its PLACEHOLDER to the basis — summing the raw reported values
+  // would silently re-admit the number the placeholder exists to keep out.
+  const allNoncredit = D.colleges.reduce(function (s, c) { return s + (Number(c.noncredit_ftes) || 0); }, 0) +
     D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
       .reduce(function (s, f) {
         const ph = Number(f.noncredit_ftes_placeholder);
         return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
       }, 0);
-  const combined = Math.round(collegeFtes + allNoncredit).toLocaleString("en-US");
   const sysText = function () {
     return doc.querySelector("#cplFundTable .cplfund-systemrow").textContent;
   };
-  check("college-view SYSTEM row includes ALL noncredit in the CCC total",
-    sysText().indexOf(combined) !== -1 && sysText().indexOf("noncredit") !== -1);
-  // The regression that shipped: the row total must be in the SAME unit as the
-  // column header above it, so assert the headcount total is NOT what's there.
-  check("SYSTEM row totals the ACTIVE basis, not headcount, under its own header",
-    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1 &&
+  check("SYSTEM row totals credit FTES under the CR FTES header",
+    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1);
+  check("SYSTEM row totals ALL noncredit (college rows + standalone trio, Mt. SAC once) under NC FTES",
+    sysText().indexOf(Math.round(allNoncredit).toLocaleString("en-US")) !== -1);
+  // The regression that shipped: the headcount total must NOT be a row figure.
+  check("SYSTEM row never prints the context headcount as a column total",
     sysText().indexOf(D.system.headcount.toLocaleString("en-US")) === -1);
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
-  check("the SYSTEM row still carries all noncredit when grouped by district",
-    sysText().indexOf(combined) !== -1);
+  check("the SYSTEM row still carries both lane totals when grouped by district",
+    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1 &&
+    sysText().indexOf(Math.round(allNoncredit).toLocaleString("en-US")) !== -1);
 }
 
 // D6 — consumer wiring for the eligibility reads (static greps).

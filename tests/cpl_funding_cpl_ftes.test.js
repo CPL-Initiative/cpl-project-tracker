@@ -1,7 +1,8 @@
 // tests/cpl_funding_cpl_ftes.test.js
 //
 // CPL FTES: the conversion, the term-length multiplier, and the target
-// denominated in the 2026-27 credit rate (Sam, 2026-07-31).
+// denominated in the 2026-27 credit rate (Sam, 2026-07-31; one-pool form
+// adopted 2026-08-31).
 //
 //   1 FTES = 525 contact hours
 //   1 semester unit = 17.5 contact hours  ->  30 units per FTES
@@ -11,14 +12,20 @@
 // "the only conversion factor needed is to use 11.67 as the tlm rather than
 // 17.5 for semesters." TLM is a parameter; everything else derives.
 //
-// TARGET = the college's PRE-FLOOR, PRE-RURAL proportional entitlement divided
-// by the reimbursement rate x a policy multiplier — "earn your allocation by
-// producing the CPL FTES it would have paid for at the state rate."
+// TARGET = the CREDIT SLICE of the college's PRE-BOUNDS proportional
+// entitlement divided by the reimbursement rate x a policy factor — "earn your
+// allocation by producing the CPL FTES it would have paid for at the state
+// rate." Under one pool (2026-08-31) the entitlement is sized by COMBINED
+// credit+noncredit FTES over all 118 institutions, and a credit priority's
+// target rides only the award's CREDIT share (laneShareOf) — the noncredit
+// share is restricted to the noncredit measures and must never raise a credit
+// bar. The base still raises funding, not the bar; capScale is the one
+// exception (the ceiling lowers the bar WITH the funding).
 //
 // THE NAMING HAZARD these guard: two quantities here are called FTES and differ
 // by ~500x. `credit_ftes` / sizeOf / totalSize are ENROLMENT FTES (1,069,182
-// statewide) and are the ALLOCATION BASIS. CPL FTES is prior learning awarded,
-// order 10^3-10^4, and is a PERFORMANCE quantity. Conflating them is a
+// credit statewide) and are the ALLOCATION BASIS. CPL FTES is prior learning
+// awarded, order 10^3-10^4, and is a PERFORMANCE quantity. Conflating them is a
 // one-character mistake, so several assertions below exist purely to keep the
 // two apart.
 //
@@ -43,6 +50,21 @@ const FTES_METRICS = {
   "1": { metric: "Transcribed CPL Units as FTES (1 Unit = .0334 FTES)" },
   "2": { metric: "Transcribed Units for Students from either CPL Student Portal or College CPL Landing Page" },
 };
+
+// The ONE-POOL allocation basis: combined credit+noncredit FTES over the 115
+// colleges PLUS the noncredit-only rows (their feederBasis — the placeholder
+// where one is set, N3 a; Mt. SAC NC rides the Mt San Antonio row and adds no
+// row of its own). Recomputed from the data so an assertion never trusts the
+// consumer for the figure it is checking.
+const trioBasis = (D.feeders || []).filter(function (f) { return !f.nc_ftes_on_credit_row; })
+  .map(function (f) {
+    var ph = Number(f.noncredit_ftes_placeholder);
+    return (isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0);
+  });
+const TOTAL_BASIS = D.colleges.reduce(function (s, c) {
+  return s + (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0);
+}, 0) + trioBasis.reduce(function (s, v) { return s + v; }, 0);
+const sizeOfC = function (c) { return (c.credit_ftes || 0) + (Number(c.noncredit_ftes) || 0); };
 
 function freshDom() {
   const dom = new JSDOM(
@@ -71,6 +93,24 @@ function bootWithUnits(window, units) {
   T._setShared({ yearPriorities: { "1": FTES_METRICS, "2": FTES_METRICS } });
   T.render();
   return T;
+}
+// The per-priority table columns are retired (one-pool port, 2026-08-31): the
+// per-college target/actual now lives in each row's EXPAND as the 7-column
+// .cplfund-dtl-table. Open a college's row and return its first priority row's
+// cells: [label, CR funding, NC funding, Target, Actual, Current Total,
+// Total Possible].
+function dtlRow0(window, T, name) {
+  T._state.open["c:" + name] = true;
+  T.render();
+  const row = Array.from(window.document.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (r) {
+      const td = r.querySelectorAll("td")[1];
+      return td && td.textContent.trim().replace(/^▸/, "").indexOf(name) === 0;
+    });
+  const det = row && row.nextElementSibling;
+  const dtl = det && det.querySelector(".cplfund-dtl-table");
+  if (!dtl) return null;
+  return Array.from(dtl.querySelectorAll("tr"))[1].querySelectorAll("td");
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -103,7 +143,9 @@ check("exactly the two known quarter colleges are flagged",
 // ─────────────────────────────────────────────────────────────────────────────
 check("the CPL quantity is named cplFtes, never a bare ftes",
   /function unitsToCplFtes/.test(consumerSrc) && /function unitsPerCplFtes/.test(consumerSrc));
-// The target must never be built from the ALLOCATION basis quantity.
+// The target must never be built from the ALLOCATION basis quantity directly.
+// (One pool: the entitlement seam — prioEntitlement/laneShareOf — owns the
+// basis arithmetic; prioTarget itself only prices an entitlement.)
 {
   const body = (consumerSrc.match(/function prioTarget\(c, p\)[\s\S]*?\n  \}/) || [""])[0];
   check("prioTarget never reads credit_ftes (that is enrolment FTES, a different quantity)",
@@ -114,77 +156,78 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part C — the TLM does the whole job: same units, different FTES
+//
+// The per-priority P-cells (and their hover working) are retired surfaces —
+// the conversion now shows in each row's EXPAND (the dtl-table's Target and
+// Actual columns) and its WORKING lives in the FTES-factors box (both derived
+// divisors, and which colleges are on the quarter calendar). The engine is
+// unchanged: earnFraction converts at the college's OWN calendar.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
   const T = bootWithUnits(window, 900);
-  const P = T._priorities ? null : null;   // (no seam needed; read via the row)
 
   // 900 units: semester -> 30.0 FTES, quarter -> 20.0 FTES.
-  const rows = ["Alameda", "Foothill"].map(function (n) {
-    const row = Array.from(window.document.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-      .find(function (r) {
-        const td = r.querySelectorAll("td")[1];
-        return td && td.textContent.trim().replace(/^▸/, "").indexOf(n) === 0;
-      });
-    return { n: n, td: row.querySelector("td.cf-prio") };
-  });
-  const txt = function (i) { return rows[i].td.textContent.replace(/\s+/g, " "); };
-  // ⚠️ The inline "Tgt"/"Now" labels moved out of the cell into a single label
-  // COLUMN (Sam, 2026-08-27), so a label string can no longer tell the target
-  // line from the actual one. Read the two lines STRUCTURALLY instead — .cf-t
-  // is the target line, .cf-a the actual — which is what the labels were only
-  // ever standing in for, and which cannot be broken by a wording change.
-  const tline = function (i) { return rows[i].td.querySelector(".cf-t").textContent.replace(/\s+/g, " "); };
-  const aline = function (i) { return rows[i].td.querySelector(".cf-a").textContent.replace(/\s+/g, " "); };
-  check("semester college: 900 units reads 30 CPL FTES", /(^|[^\d.])30 FTES/.test(aline(0)));
-  check("QUARTER college: the same 900 units reads 20 CPL FTES (÷45, not ÷30)",
-    /(^|[^\d.])20 FTES/.test(aline(1)));
+  const ala = dtlRow0(window, T, "Alameda");
+  const foo = dtlRow0(window, T, "Foothill");
+  const aline = function (cells) { return cells[4].textContent.replace(/\s+/g, " "); };
+  const tline = function (cells) { return cells[3].textContent.replace(/\s+/g, " "); };
+  check("semester college: 900 units reads 30.0 CPL FTES in its expand's Actual cell",
+    !!ala && /(^|[^\d.])30\.0 FTES/.test(aline(ala)));
+  check("QUARTER college: the same 900 units reads 20.0 CPL FTES (÷45, not ÷30)",
+    !!foo && /(^|[^\d.])20\.0 FTES/.test(aline(foo)));
   check("...so the quarter college is NOT credited 1.5x for identical work",
-    /(^|[^\d.])30 FTES/.test(aline(0)) && !/(^|[^\d.])30 FTES/.test(aline(1)));
-  check("the cell counts in FTES, not students, when the metric is FTES",
-    /[\d.,]+ FTES/.test(tline(0)) && !/stu/.test(txt(0)));
-  // The labels MOVED; they did not vanish. Without this, deleting them outright
-  // would leave every assertion above passing and the reader with two unlabelled
-  // numbers stacked in every cell.
+    /(^|[^\d.])30\.0 FTES/.test(aline(ala)) && !/(^|[^\d.])30\.0 FTES/.test(aline(foo)));
+  check("the expand counts in FTES, not students, when the metric is FTES",
+    /[\d.,]+ FTES/.test(tline(ala)) && !/stu/.test(tline(ala)) && !/stu/.test(aline(ala)));
+  // The Tgt/Now label column went with the P-cells; the two lines are now two
+  // NAMED COLUMNS. Without this, dropping the headers would leave the reader
+  // two unlabelled numbers per priority — the exact failure the labels (and
+  // then the label column) existed to prevent.
   {
-    const lbl = rows[0].td.closest("tr").querySelector("td.cf-lblcol");
-    const lt = lbl ? lbl.textContent.replace(/\s+/g, " ").trim() : "";
-    check("the Tgt/Now labels moved to a single label column on the row, once, left-justified",
-      /TGT:/.test(lt) && /NOW:/.test(lt));
-    check("and the priority cells no longer repeat them",
-      !/Tgt|Now/.test(txt(0)));
+    const heads = Array.from(window.document.querySelectorAll(".cplfund-dtl-table th"))
+      .map(function (h) { return h.textContent; }).join("|");
+    check("the expand names its Target and Actual columns (the retired Tgt/Now labels' successor)",
+      heads.indexOf("Target|Actual") !== -1);
   }
-  // The hover has to show the working, including which calendar was applied.
-  const q = rows[1].td.getAttribute("title") || "";
-  check("the quarter college's hover shows units ÷ units-per-FTES and names the calendar",
-    /900 units ÷ 45\.0 units\/FTES, quarter calendar/.test(q));
-  check("the hover states the target in CPL FTES and where it came from",
-    /Target [\d.]+ CPL FTES \([\d,]+ units — its allocation ÷ \$5,?649\.63\/FTES\)/.test(q));
+  // The WORKING — which divisor, and whose calendar — shows in the FTES-factors
+  // box (the retired hover's successor): both derived divisors and the
+  // quarter-college count are stated, so a reader can reconstruct either cell.
+  const ff = window.document.querySelector(".cplfund-ftesfactors");
+  const ffTxt = ff ? ff.textContent.replace(/\s+/g, " ") : "";
+  check("the FTES-factors box derives BOTH divisors (30.0 semester · 45.0 quarter)",
+    /30\.0 semester/.test(ffTxt) && /45\.0 quarter/.test(ffTxt));
+  check("...and names the quarter calendar (2 colleges on it)",
+    /2 colleges on a quarter calendar/.test(ffTxt));
+  check("...and states the rate the targets are priced at, beside the factors",
+    /Reimbursement rate \(base\)/.test(ffTxt));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part D — the target is entitlement ÷ rate, and rides the RIGHT entitlement
+// Part D — the target is entitlement ÷ rate, and rides the RIGHT entitlement:
+// the CREDIT SLICE of the pre-bounds share of the COMBINED-FTES basis.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
   const T = bootWithUnits(window, 900);
   const m = T._model();
 
-  // An UNBOUND (neither floored nor capped), non-rural college's target must be
-  // its PRE-FLOOR proportional entitlement ÷ the rate. Recompute from the baked
-  // data, independently.
+  // An UNBOUND (neither at base nor at cap), non-rural college's target must be
+  // its PRE-BOUNDS proportional CREDIT entitlement ÷ the rate. Recompute from
+  // the baked data, independently: under one pool the size share is
+  // (credit+noncredit FTES) ÷ the 118-institution combined basis, and the
+  // credit slice is that share × the college's own credit fraction — which
+  // reduces to credit_ftes ÷ TOTAL_BASIS. The noncredit share of the award can
+  // never raise a credit target (the restriction's arithmetic).
   //
   // Sam's $400K MAXIMUM (2026-08-22) added the second way to be bound, and a
-  // capped college's target is deliberately scaled DOWN with its money — the
+  // capped college's target is deliberately scaled DOWN with its funding — the
   // ceiling lowers the bar as well as the funding, or the largest colleges would
   // be asked for ~40% more CPL per dollar than anyone else. So capped rows leave
   // this assertion and get their own below, rather than being silently dropped.
-  const totFtes = D.colleges.reduce(function (s, c) { return s + c.credit_ftes; }, 0);
   const net = T._netCollege();
-  const ny = D.default_years.length || 2;
   const share = D.year_priorities["1"][0].share;
-  const propTarget = function (c) { return (c.credit_ftes / totFtes) * net * share / 5649.63; };
+  const propTarget = function (c) { return (c.credit_ftes / TOTAL_BASIS) * net * share / 5649.63; };
   const targetOf = function (c) {
     const row = T._alloc(c.college);
     return row[Object.keys(row).find(function (k) { return /_heads$/.test(k); })];
@@ -203,30 +246,31 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   check("a CAPPED college's target is scaled BELOW its pre-cap proportional target",
     cappedRows.every(function (c) { return targetOf(c) < propTarget(c) - 0.01; }));
   // …and scaled by exactly ceiling ÷ plainRatio ÷ proportional share, which is
-  // what keeps cap ÷ target one rate for every college above the minimum.
+  // what keeps cap ÷ target one rate for every college above the base.
   const capWorst = cappedRows.reduce(function (mx, c) {
-    const scale = Math.min(1, m.cap / m.plainRatio / ((c.credit_ftes / totFtes) * net));
+    const scale = Math.min(1, m.cap / m.plainRatio / ((sizeOfC(c) / TOTAL_BASIS) * net));
     return Math.max(mx, Math.abs(targetOf(c) - propTarget(c) * scale));
   }, 0);
   check("…by exactly ceiling ÷ plainRatio (max err < 0.01 FTES)", capWorst < 0.01);
-  check("target == pre-floor proportional CUMULATIVE entitlement ÷ rate (max err < 0.01 FTES)",
+  check("target == pre-bounds proportional CUMULATIVE credit entitlement ÷ rate (max err < 0.01 FTES)",
     plain.length > 5 && worst < 0.01);
 
-  // THE FLOOR TRAP: a floored college's cap is topped up to $150K. Its TARGET
-  // must not rise with it — "the floor raises a college's funding, not its
-  // targets". Compare a floored college's target against its own pre-floor share.
-  const floored = D.colleges.filter(function (c) { return m.floored[c.college] && !c.rural; })[0];
+  // THE BASE TRAP: a college below the base is brought up to $150K. Its TARGET
+  // must not rise with it — "the base raises a college's funding, not its
+  // targets". Compare the smallest such college's target against its own
+  // pre-base credit share (smallest = the clearest top-up).
+  const floored = D.colleges.filter(function (c) { return m.floored[c.college] && !c.rural; })
+    .sort(function (a, b) { return sizeOfC(a) - sizeOfC(b); })[0];
   if (floored) {
-    const row = T._alloc(floored.college);
-    const key = Object.keys(row).find(function (k) { return /_heads$/.test(k); });
-    const cap = key.replace(/_heads$/, "");
-    const preFloor = (floored.credit_ftes / totFtes) * net * share / 5649.63;
-    check("FLOOR TRAP: a floored college's target stays on its PRE-floor share",
-      near(row[key], preFloor, 0.01));
-    check("...even though its cap was topped up above that share",
-      row[cap] > preFloor * 5649.63 * 1.05);
+    const a = T._alloc(floored.college);
+    const preFloor = propTarget(floored);
+    const preShareDollars = (sizeOfC(floored) / TOTAL_BASIS) * net;
+    check("BASE TRAP: a brought-up college's target stays on its PRE-base credit share",
+      near(targetOf(floored), preFloor, 0.01));
+    check("...even though its award was brought up to the base, above that share",
+      near(a.total, m.floor, 1) && a.total > preShareDollars * 1.05);
   } else {
-    check("FLOOR TRAP: (no unfloored-rural-free floored college to test)", false);
+    check("BASE TRAP: (no unrural floored college to test)", false);
   }
 }
 
@@ -282,7 +326,7 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   T._setScenario({ disbursement: "frontload" });
   T.render();
   const flT = tgt(), flC = cap();
-  check("front-load leaves the CPL FTES target unchanged (per-year, as designed)",
+  check("front-load leaves the CPL FTES target unchanged (cumulative window, as designed)",
     near(flT, evenT, 0.001));
   check("...while the cap DOES scale to the whole window",
     flC > evenC * 1.5);
@@ -293,7 +337,7 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
 // ─────────────────────────────────────────────────────────────────────────────
 // Part F — UNIT AGREEMENT on the SUMMARY surfaces (2026-08-01)
 //
-// The per-college P-cells convert units -> CPL FTES (Part C above). Three
+// The per-college expands convert units -> CPL FTES (Part C above). Three
 // summary surfaces did NOT, and shipped live saying so:
 //
 //   priority card, actual : "Actual 1,354,527 students — 193,700% of target"
@@ -327,7 +371,10 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   check("F: the actual shows its working (units ÷ units-per-FTES)",
     prio.some(function (t) { return /181,975 units ÷ 30\.0 units\/FTES/.test(t); }));
   // The ratio is the thing that was 30x wrong — assert it against the target
-  // the same card prints, not against a literal.
+  // the same card prints, not against a literal. (One pool: the statewide
+  // target is the FULL pool share — both lanes — which is the same figure the
+  // card's Total Possible ceiling is built on; the ratio must still be the
+  // card's own two numbers.)
   {
     const m = prio.join(" ").match(/Target ([\d,.]+) CPL FTES[\s\S]*?Actual ([\d,.]+) CPL FTES[^%]*?— ([\d.]+)% of target/);
     const num = function (s) { return parseFloat(String(s).replace(/,/g, "")); };
@@ -370,11 +417,13 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   }
 
   // ── the basis card ──
-  check("F: the basis card names credit FTES, not headcount",
-    cardTexts.some(function (t) { return /credit FTES \(allocation basis\)/.test(t); }));
-  check("F: pool-depth per credit FTES rides as a NOTE, not as the headline rate",
+  // One pool sizes institutions by COMBINED FTES (2026-08-31), and the card
+  // must say so — "credit FTES" alone would misstate the split's denominator.
+  check("F: the basis card names credit + noncredit FTES as the allocation basis",
+    cardTexts.some(function (t) { return /credit \+ noncredit FTES \(allocation basis\)/.test(t); }));
+  check("F: pool-depth per combined FTES rides as a NOTE, not as the headline rate",
     Array.from(doc.querySelectorAll(".cplfund-card")).some(function (c) {
-      return /per credit FTES — pool depth, informational/.test(c.textContent.replace(/\s+/g, " "));
+      return /per credit \+ noncredit FTES — pool depth, informational/.test(c.textContent.replace(/\s+/g, " "));
     }));
 }
 

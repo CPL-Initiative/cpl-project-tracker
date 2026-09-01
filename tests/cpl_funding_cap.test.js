@@ -18,8 +18,28 @@
 // solver reproduces the OLD pin loop bit-for-bit. Everything else is the
 // ceiling's own behavior.
 //
+// ONE-POOL port (Sam adopted 2026-08-31): the window is $150K base / $400K cap
+// per institution on the COMBINED award, solved over 118 rows — the 115
+// colleges plus the noncredit-only three by their shorts, sized by combined
+// credit + noncredit FTES — against the whole $25,240,308. The pin-loop
+// transcription in C2 runs on those same one-pool inputs so the equivalence
+// stays meaningful.
+//
 // Run from repo root: `npm test` (or `node tests/cpl_funding_cap.test.js`).
 const { check, freshDom, boot, commit, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+
+// The one-pool roster: college rows then the noncredit-only three, in
+// oneRoster() order (feeders order, Mt. SAC NC skipped — its FTES ride the
+// Mt San Antonio row). Sizes mirror sizeOf() on the FTES basis: combined
+// credit + noncredit for a college, own noncredit FTES for the trio
+// (Calbright at its 1,000-FTES stand-in, N3 a).
+const TRIO = D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; });
+const ROSTER = D.colleges.map(function (c) {
+  return { key: c.college,
+    size: (c.credit_ftes != null) ? (c.credit_ftes + (Number(c.noncredit_ftes) || 0)) : (c.headcount || 0) };
+}).concat(TRIO.map(function (f) {
+  return { key: f.short, size: Number(f.noncredit_ftes_placeholder || f.noncredit_ftes) || 0 };
+}));
 
 // Re-run the model under a given scenario and hand back the rows + the model.
 // _model() is what clears the allocation cache — _alloc() alone reads a stale
@@ -28,9 +48,9 @@ const { check, freshDom, boot, commit, D, consumerSrc, finish } = require("./lib
 function under(T, pool) {
   T._setScenario(pool ? { pool: pool } : {});
   const m = T._model();
-  const rows = D.colleges.map(function (c) {
-    const a = T._alloc(c.college);
-    return { college: c.college, total: a.total, main: a.main_w, rural: a.rural_w,
+  const rows = ROSTER.map(function (r) {
+    const a = T._alloc(r.key);
+    return { college: r.key, total: a.total, main: a.main_w, rural: a.rural_w,
              floored: a.floored, capped: a.capped };
   });
   return { m: m, rows: rows, sum: rows.reduce(function (s, r) { return s + r.total; }, 0) };
@@ -40,18 +60,21 @@ function under(T, pool) {
 // C1 — the data default
 // ─────────────────────────────────────────────────────────────────────────────
 check("data: maximum allocation default $400K/window", D.pool.cap_window === 400000);
-check("data: the maximum carries its own editable label",
-  /MAXIMUM ALLOCATION/.test(D.pool.cap_window_label || ""));
+check("data: the maximum carries its own editable label (the one-pool CAP wording)",
+  /CAP \(per institution, combined/.test(D.pool.cap_window_label || ""));
 check("data: the maximum sits above the minimum (a ceiling under the floor is a typo)",
   D.pool.cap_window > D.pool.floor_window);
 
 // ─────────────────────────────────────────────────────────────────────────────
 // C2 — BEHAVIOR-NEUTRAL MIGRATION: ceiling off == the old pin loop, exactly
 // ─────────────────────────────────────────────────────────────────────────────
-// The pre-2026-08-22 algorithm, transcribed verbatim from git history. If the
-// bisection ever disagrees with it by a cent while the ceiling is off, the
-// migration was not behavior-neutral and every college's number moved for a
-// reason nobody chose.
+// The pre-2026-08-22 algorithm, transcribed from git history and FED THE
+// ONE-POOL INPUTS (2026-08-31 port): the 118-row roster, combined-FTES sizes,
+// the $150K floor and the whole $25,240,308 — so the equivalence proved is
+// "the bisection with the ceiling off IS the floor-only pin loop on today's
+// model", not a replay of a retired roster. If the bisection ever disagrees
+// with it by a cent while the ceiling is off, the solver changed shape and
+// every institution's number moved for a reason nobody chose.
 {
   const { window } = freshDom();
   boot(window);
@@ -59,27 +82,25 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const open = under(T, { cap_window: 0 });
   const net = T._netCollege();
   const floor = D.pool.floor_window;
-  const byName = {};
-  D.colleges.forEach(function (c) { byName[c.college] = c; });
   // One floor for everyone since the rural carve-out was retired (2026-08-22).
   function floorFor() { return floor; }
   const F = {}, W = {};
   let changed = true, guard = 0;
-  while (changed && guard++ < 30) {
+  while (changed && guard++ < 130) {
     changed = false;
     let usedFloor = 0;
-    Object.keys(F).forEach(function (k) { usedFloor += floorFor(byName[k]); });
+    Object.keys(F).forEach(function () { usedFloor += floorFor(); });
     const remaining = net - usedFloor;
     let baseSize = 0;
-    D.colleges.forEach(function (c) { if (!F[c.college]) baseSize += (c.credit_ftes || c.headcount || 0); });
-    D.colleges.forEach(function (c) {
-      if (F[c.college]) return;
-      const fl = floorFor(c);
-      const w = baseSize > 0 ? (c.credit_ftes || c.headcount || 0) / baseSize * remaining : 0;
-      if (fl > 0 && w < fl) { F[c.college] = true; changed = true; } else W[c.college] = w;
+    ROSTER.forEach(function (r) { if (!F[r.key]) baseSize += r.size; });
+    ROSTER.forEach(function (r) {
+      if (F[r.key]) return;
+      const fl = floorFor(r);
+      const w = baseSize > 0 ? r.size / baseSize * remaining : 0;
+      if (fl > 0 && w < fl) { F[r.key] = true; changed = true; } else W[r.key] = w;
     });
   }
-  Object.keys(F).forEach(function (k) { W[k] = floorFor(byName[k]); });
+  Object.keys(F).forEach(function (k) { W[k] = floorFor(); });
   const worst = open.rows.reduce(function (mx, r) {
     return Math.max(mx, Math.abs(r.total - (W[r.college] || 0)));
   }, 0);
@@ -98,44 +119,58 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   boot(window);
   const T = window.CPL_FUNDING_TAB;
   const open = under(T, { cap_window: 0 });
-  const capped = under(T, null);            // shipped defaults: $150K floor, $400K ceiling
+  const capped = under(T, null);            // shipped defaults: $150K base, $400K cap
   const cap = D.pool.cap_window;
 
-  check("C3: no college's WINDOW total exceeds the maximum",
+  check("C3: no institution's WINDOW total exceeds the maximum",
     capped.rows.every(function (r) { return r.total <= cap + 0.01; }));
-  // Every college carries the SAME ceiling now that the rural carve-out is gone
-  // (2026-08-22) — there is no second component that could slip past it. Tested
-  // where the ceiling actually BINDS for everyone, not at $400K where only the
-  // largest six reach it.
+  // Every institution carries the SAME ceiling — one window on the combined
+  // award (2026-08-31); there is no second component that could slip past it.
+  // Tested where the ceiling actually BINDS for everyone, not at $400K where
+  // only the largest seven reach it.
   const tightAll = under(T, { cap_window: 210000 });
-  check("C3: at a ceiling everyone reaches, EVERY college sits exactly on it",
-    tightAll.rows.length === D.colleges.length &&
+  check("C3: at a ceiling everyone reaches, EVERY institution sits exactly on it",
+    tightAll.rows.length === ROSTER.length &&
     tightAll.rows.every(function (r) { return Math.abs(r.total - 210000) < 0.01; }));
-  check("C3: …and no college carries a second, unbounded component",
+  check("C3: …and no institution carries a second, unbounded component",
     tightAll.rows.every(function (r) { return r.rural === undefined && Math.abs(r.total - r.main) < 0.01; }));
   check("C3: the floor still holds underneath the ceiling",
     capped.rows.every(function (r) { return r.total >= capped.m.floor - 0.01; }));
-  check("C3: the pool is still fully apportioned (Σ totals == the hero pool)",
-    Math.abs(capped.sum - open.sum) < 0.01 && capped.m.unspent === 0);
-  check("C3: some colleges are actually held to the ceiling (it is not inert at $400K)",
-    capped.m.cappedCount > 0 && capped.m.cappedCount < D.colleges.length / 4);
-  check("C3: every capped college sits exactly ON the ceiling",
+  check("C3: the pool is still fully apportioned (Σ totals over all 118 == the ONE pool)",
+    Math.abs(capped.sum - open.sum) < 0.01 && Math.abs(capped.sum - 25240308) < 1 &&
+    capped.m.unspent === 0);
+  check("C3: some institutions are actually held to the ceiling (it is not inert at $400K)",
+    capped.m.cappedCount > 0 && capped.m.cappedCount < ROSTER.length / 4);
+  check("C3: every capped institution sits exactly ON the ceiling",
     capped.rows.filter(function (r) { return r.capped; })
       .every(function (r) { return Math.abs(r.total - cap) < 0.01; }));
-  check("C3: the capped set is exactly the colleges the open model put above the ceiling",
-    capped.rows.filter(function (r) { return r.capped; }).length ===
-    open.rows.filter(function (r) { return r.total > cap + 0.01; }).length);
+  // The bounds are solved TOGETHER, so the capped set is a SUPERSET of the
+  // open model's over-the-ceiling set: releasing the excess pushes everyone
+  // else up, and that push can carry an institution just under the ceiling
+  // PAST it (measured at the shipped dials: 6 above it open, 7 held). The
+  // subset direction is the invariant; the old equality claim was an artifact
+  // of settings where the release pushed nobody over.
+  const overOpen = open.rows.filter(function (r) { return r.total > cap + 0.01; });
+  check("C3: every institution the open model put above the ceiling is in the capped set",
+    overOpen.length > 0 && overOpen.every(function (r) {
+      const now = capped.rows.find(function (x) { return x.college === r.college; });
+      return now && now.capped;
+    }));
+  check("C3: …and the one extra capped institution was pushed OVER by the release itself",
+    capped.m.cappedCount - overOpen.length === 1 &&
+    capped.rows.filter(function (r) {
+      if (!r.capped) return false;
+      const was = open.rows.find(function (x) { return x.college === r.college; });
+      return was.total <= cap + 0.01;   // under the ceiling until the release
+    }).length === 1);
 
   // ⭐ The reason the pin loop had to go: releasing the ceiling's money lifts
   // colleges back OFF the floor, and a pin-as-you-go algorithm never revisits a
   // pin, so it would strand them at the minimum.
   //
-  // ⚠ Tested at a $300K ceiling, NOT the shipped $400K. Since the floor rose to
-  // $175,000 (2026-08-22) the $400K ceiling binds only TWO colleges and releases
-  // too little to lift anyone — so at the shipped settings this assertion is
-  // VACUOUS and would pass against the broken monotone loop. The structural
-  // property is what matters and it has to be tested where it is observable.
-  // (Second time this file has needed that correction; see the rural note below.)
+  // ⚠ Still tested at a $300K ceiling as well as relying on the shipped $400K:
+  // the tighter ceiling releases enough to lift EIGHT institutions off the
+  // base, so the structural property is observable far from the margin.
   const tight = under(T, { cap_window: 300000 });
   const openAgain = under(T, { cap_window: 0 });
   const cameOff = openAgain.rows.filter(function (r) { return r.floored; })
@@ -143,35 +178,47 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
       const now = tight.rows.find(function (x) { return x.college === r.college; });
       return now && !now.floored;
     });
-  check("C3: ⭐ releasing the ceiling's money lifts colleges back OFF the floor (solved together)",
+  check("C3: ⭐ releasing the ceiling's money lifts institutions back OFF the floor (solved together)",
     cameOff.length > 0 && tight.m.floorCount < openAgain.m.floorCount);
-  check("C3: those colleges are genuinely above the floor now, not merely unflagged",
+  check("C3: those institutions are genuinely above the floor now, not merely unflagged",
     cameOff.every(function (r) {
       const now = tight.rows.find(function (x) { return x.college === r.college; });
       return now.total > tight.m.floor + 0.01;
     }));
   // And say out loud what the shipped settings actually do, so nobody reads the
-  // assertion above as a claim about them.
-  check("C3: at the SHIPPED settings the ceiling binds only a couple of colleges",
-    capped.m.cappedCount > 0 && capped.m.cappedCount <= 4);
+  // assertion above as a claim about them: 7 at the cap (the mock's figure of
+  // record, anchored in tests/cpl_funding_one_pool.test.js A6).
+  check("C3: at the SHIPPED settings the ceiling binds exactly the 7 institutions of record",
+    capped.m.cappedCount === 7);
 
   // What the ceiling released is the money that ACTUALLY moved — measured
   // against this same model with the ceiling off, not against a pure
-  // proportional split. The two answers differ by more than 2x, and only the
-  // first one is money that changed hands.
-  const actuallyMoved = capped.rows.filter(function (r) { return r.capped; })
+  // proportional split (the proxy answer is more than 2x the real one).
+  // capReleased is the GROSS release: Σ over capped institutions of what each
+  // gave up, floored at $0 — the pushed-over institution GAINED on the way to
+  // the ceiling, and its gain is part of where the released money LANDED, not
+  // a negative release.
+  const grossReleased = capped.rows.filter(function (r) { return r.capped; })
+    .reduce(function (s, r) {
+      const was = open.rows.find(function (x) { return x.college === r.college; });
+      return s + Math.max(0, was.total - r.total);
+    }, 0);
+  check("C3: capReleased is the money that actually moved (not a proportional-split proxy)",
+    Math.abs(capped.m.capReleased - grossReleased) < 1);
+  // Conservation of the movement: what the over-the-ceiling institutions gave
+  // up (net) is exactly what everyone else — the pushed-over institution's
+  // climb included — received. Signed sums over the whole roster cancel.
+  const netMoved = capped.rows.filter(function (r) { return r.capped; })
     .reduce(function (s, r) {
       const was = open.rows.find(function (x) { return x.college === r.college; });
       return s + (was.total - r.total);
     }, 0);
-  check("C3: capReleased is the money that actually moved (not a proportional-split proxy)",
-    Math.abs(capped.m.capReleased - actuallyMoved) < 1);
-  check("C3: every dollar the ceiling released landed on other colleges",
+  check("C3: every dollar the ceiling released landed on other institutions",
     Math.abs(capped.rows.filter(function (r) { return !r.capped; })
       .reduce(function (s, r) {
         const was = open.rows.find(function (x) { return x.college === r.college; });
         return s + (r.total - was.total);
-      }, 0) - actuallyMoved) < 1);
+      }, 0) - netMoved) < 1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -181,6 +228,21 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
 // produce ~40% more CPL per dollar than anyone else, and statewide the model
 // would ask for more CPL than it funds. cap ÷ target must stay one rate for
 // every college above the minimum — capped colleges included, not excused.
+//
+// ⚠️ KNOWN PRODUCT BUG (measured 2026-08-31, one-pool port): the two ⭐ checks
+// below FAIL because prioTarget's STUDENTS-unit path (the baked default) reads
+// `sizeOf(c) × capScale(c) × target_rate` — the COMBINED size — while the cap
+// moved to the CR SLICE of the award (prioCap over instSplit(c).cr). Measured
+// spread: 1.5076× across unbound colleges on BOTH bases (the scatter is the
+// lane split itself); with laneShareOf(c).cr on the target it closes to exactly
+// 1.000000, the model statement ("a credit priority's per-college target rides
+// only the CR slice of the entitlement") and the expand's own Target header
+// ("what the credit share funds at the priority's price"). The FTES-unit path
+// (prioEntitlement) already carries the lane slice. Leave these failing until
+// prioTarget's students return (the `sizeOf(c) * capScale(c) ... *
+// p.target_rate` line) carries it too — do not re-aim them to the buggy
+// arithmetic. (The rural exclusion is dropped: the allowance is retired
+// 2026-08-22 and rural rows carry the same window as everyone.)
 {
   const { window } = freshDom();
   boot(window);
@@ -194,10 +256,10 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
       const k = Object.keys(a).find(function (x) { return /_heads$/.test(x); });
       return a[k] > 0 ? a[k.replace(/_heads$/, "")] / a[k] : null;
     }
-    const aboveMin = D.colleges.filter(function (c) { return !m.floored[c.college] && !c.rural; })
+    const aboveMin = D.colleges.filter(function (c) { return !m.floored[c.college]; })
       .map(function (c) { return rateOf(c.college); }).filter(function (x) { return x; });
     const spread = Math.max.apply(null, aboveMin) / Math.min.apply(null, aboveMin);
-    const nCapped = D.colleges.filter(function (c) { return m.capped[c.college] && !c.rural; }).length;
+    const nCapped = D.colleges.filter(function (c) { return m.capped[c.college]; }).length;
     check(basis + ": ⭐ ONE earn rate for every college above the minimum, capped ones included",
       nCapped > 0 && spread < 1.000001);
     // Guard the direction too: a capped college must be asked for LESS, never
@@ -229,10 +291,11 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const T = window.CPL_FUNDING_TAB;
 
   // A ceiling so low the pool cannot be spent. The balance stops being $0, and
-  // that is exactly the thing that must never happen quietly.
+  // that is exactly the thing that must never happen quietly. (118 × $150K =
+  // $17.7M against the $25.24M pool — every institution capped.)
   const tight = under(T, { cap_window: 150000 });
   check("C5: a ceiling below the pool's reach reports the unspendable remainder",
-    tight.m.unspent > 1 && tight.m.cappedCount === D.colleges.length);
+    tight.m.unspent > 1 && tight.m.cappedCount === ROSTER.length);
   check("C5: the unspendable remainder is the pool minus what the ceilings can hold",
     Math.abs(tight.m.unspent - (tight.m.net - tight.rows.reduce(function (s, r) { return s + r.main; }, 0))) < 1);
 
@@ -261,16 +324,18 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const card = Array.from(doc.querySelectorAll(".cplfund-card.floor"))[0];
   // Both dials are <input>s, so their text lives in value/title attributes —
   // textContent sees an empty box and would pass this for the wrong reason.
+  // Labels carry the one-pool vocabulary (2026-08-31): BASE AWARD / CAP, per
+  // institution, on the COMBINED award.
   const labelEds = card ? Array.from(card.querySelectorAll('.l input[data-edit="pool-label"]')) : [];
-  check("C6: the minimum and the maximum share ONE box", !!card && labelEds.length === 2 &&
-    /Minimum viable allocation/.test(labelEds[0].getAttribute("value")) &&
-    /Maximum allocation/.test(labelEds[1].getAttribute("value")));
+  check("C6: the base and the cap share ONE box", !!card && labelEds.length === 2 &&
+    /Base award \(minimum\)/.test(labelEds[0].getAttribute("value")) &&
+    /Cap \(maximum\)/.test(labelEds[1].getAttribute("value")));
   const eds = card ? card.querySelectorAll('.v [data-field]') : [];
   check("C6: the two amount inputs carry DISTINCT accessible names",
     Array.from(eds).map(function (e) { return e.getAttribute("aria-label"); })
       .filter(function (v, i, a) { return v && a.indexOf(v) === i; }).length === 2);
-  check("C6: both amounts show the shipped defaults",
-    Array.from(eds).map(function (e) { return e.getAttribute("value"); }).join("|") === "175,000|400,000");
+  check("C6: both amounts show the shipped defaults ($150K base / $400K cap, adopted 2026-08-31)",
+    Array.from(eds).map(function (e) { return e.getAttribute("value"); }).join("|") === "150,000|400,000");
   check("C6: the box carries two editable amounts", eds.length === 2);
   check("C6: one of them is the maximum",
     Array.from(eds).some(function (e) { return e.getAttribute("data-field") === "cap_window"; }));
@@ -295,36 +360,44 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const m = T._model();
   const cappedName = Object.keys(m.capped)[0];
 
+  // Wording is the one-pool vocabulary (Sam, 2026-08-31): "brought up to the
+  // base" / "held at the cap" — never "topped up" (CCC norms doctrine).
   const card = doc.querySelector(".cplfund-card.floor");
-  check("C7: the box reports how many colleges each bound caught",
-    /topped up to the minimum/.test(card.textContent) && /held to the maximum/.test(card.textContent));
+  check("C7: the box reports how many institutions each bound caught",
+    /brought up to the base/.test(card.textContent) && /held at the cap/.test(card.textContent));
 
   const formula = doc.querySelector(".cplfund-formula");
-  check("C7: the formula box explains the maximum beside the minimum",
-    /Maximum allocation:/.test(formula.textContent) && /Minimum-viable floor:/.test(formula.textContent));
-  check("C7: …and says the two are solved together (why the floor count moves)",
-    /solved together/.test(formula.textContent) && /back OFF the floor/.test(formula.textContent));
-  check("C7: …and says the maximum lowers the funding, not the bar",
-    /maximum lowers a college&#39;s funding, not its targets|maximum lowers a college's funding, not its targets/
+  check("C7: the formula box explains the cap beside the base",
+    /Cap:/.test(formula.textContent) && /Base award:/.test(formula.textContent));
+  check("C7: …and says the two are solved together (why the base count moves)",
+    /solved together/.test(formula.textContent) && /back OFF the base/.test(formula.textContent));
+  check("C7: …and says the cap lowers the funding, not the bar",
+    /cap lowers an institution&#39;s funding, not its targets|cap lowers an institution's funding, not its targets/
       .test(formula.innerHTML + formula.textContent));
 
+  // Chips are ghosted WORDS, not glyphs (Sam's reaction round, 2026-08-31):
+  // "at cap" replaced the ⬇ — and the glyph must not linger anywhere.
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (tr) { return tr.textContent.indexOf("Mt San Antonio") !== -1; });
-  check("C7: a capped row carries the ⬇ chip", !!row && row.innerHTML.indexOf("⬇") !== -1);
+  check("C7: a capped row carries the 'at cap' word-chip (no ⬇ glyph anywhere)",
+    !!row && row.innerHTML.indexOf(">at cap<") !== -1 &&
+    doc.getElementById("cplFundTable").textContent.indexOf("⬇") === -1);
   // There is more than one .cplfund-foot (the feeder note + the main footer),
   // so scan them all — querySelector picks the wrong one.
-  check("C7: the footer legend names the ⬇ chip",
-    /⬇ = held to the maximum allocation/.test(
+  check("C7: the footer legend explains the chip words",
+    /AT BASE = brought up to the base award; AT CAP = held at the cap/.test(
       Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ")));
 
-  const order = D.colleges.find(function (c) { return c.college === cappedName; }).order;
-  window.eval('CPL_FUNDING_TAB._state.open["c:' + order + '"] = true;');
+  // Row open-state is keyed by NAME since the one-pool port ("c:<college>",
+  // R6 — rows' data-id carries the college, not the order).
+  window.eval('CPL_FUNDING_TAB._state.open[' + JSON.stringify("c:" + cappedName) + '] = true;');
   T.render();
   const detail = Array.from(doc.querySelectorAll("tr.cplfund-detail"))
-    .find(function (tr) { return tr.textContent.indexOf("Maximum applied") !== -1; });
-  check("C7: the capped drill-in explains the hold vs the proportional share", !!detail);
+    .find(function (tr) { return tr.textContent.indexOf("At the cap:") !== -1; });
+  check("C7: the capped drill-in explains the hold vs the proportional share",
+    !!detail && /a pure proportional share would be/.test(detail.textContent));
   check("C7: …and says where the difference went",
-    !!detail && /re-splits across the colleges below the maximum/.test(detail.textContent));
+    !!detail && /re-splits across the institutions below the cap/.test(detail.textContent));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

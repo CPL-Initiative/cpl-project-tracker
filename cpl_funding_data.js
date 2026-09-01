@@ -740,6 +740,7 @@ window.CPL_FUNDING = {
   {
    "order": 50,
    "college": "LA Swest",
+   "display": "LA Southwest",
    "headcount": 12270,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
@@ -1158,6 +1159,7 @@ window.CPL_FUNDING = {
   {
    "order": 85,
    "college": "Riverside",
+   "display": "Riverside City",
    "headcount": 33234,
    "district": "Riverside Community College District",
    "county": "Riverside",

@@ -112,11 +112,14 @@ function boot(window) {
   // Sam's minimum/maximum box holds TWO editable dials (2026-08-22). On the
   // college page both must degrade to plain figures — the curate sweep takes
   // data-edit inputs out, and an empty box would read as "no minimum is set".
+  // The dials are the ADOPTED one-pool pair (base $150,000 / cap $400,000 on
+  // the combined award, 2026-08-31 — the baked floor was 175,000 before), and
+  // the labels are Sam's renames: "Base award (minimum)" / "Cap (maximum)".
   const pubFloor = pubDoc.querySelector(".cplfund-card.floor");
   const privFloor = privDoc.querySelector(".cplfund-card.floor");
-  check("W2c: the public page shows the minimum AND the maximum as plain figures",
-    !!pubFloor && /175,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
-    /Minimum viable allocation/.test(pubFloor.textContent) && /Maximum allocation/.test(pubFloor.textContent));
+  check("W2c: the public page shows the base AND the cap as plain figures",
+    !!pubFloor && /150,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
+    /Base award \(minimum\)/.test(pubFloor.textContent) && /Cap \(maximum\)/.test(pubFloor.textContent));
   check("W2c: …with no editable control on either dial",
     !!pubFloor && pubFloor.querySelectorAll("[data-edit]").length === 0 &&
     !!privFloor && privFloor.querySelectorAll("[data-edit]").length === 4);

@@ -20,13 +20,30 @@
 // per-college bounds and four UI surfaces. Re-introducing any one of them
 // silently changes every college's number, so each is pinned as absent.
 //
+// EPILOGUE — ONE POOL (Sam, adopted 2026-08-31). The $175K-floor era this file
+// was written in ended when Sam adopted the one-pool model: the noncredit
+// carve-out folded back in too, so the pool to institutions is the amendment's
+// full $25,240,308 over 118 rows (115 colleges + the noncredit-only three),
+// and the baked window became base $150,000 / cap $400,000 on the COMBINED
+// award. Under those dials all 13 rural colleges sit at the uniform base —
+// 13 × $150,000 = $1,950,000. The 175K-era measurement that justified the
+// retirement ($2,275,000 vs the carve-out's $2,038,594) is history, recorded
+// above; what this file still guards is that no rural-SPECIFIC mechanism ever
+// returns: same pool, same bounds, nothing unconditional.
+//
 // Run from repo root: `npm test` (or `node tests/cpl_funding_rural.test.js`).
 const { check, freshDom, boot, D, consumerSrc, dataSrc, finish } = require("./lib/cpl_funding_harness.js");
 
 // ── the data no longer carries the earmark ───────────────────────────────
 check("data: no rural_carveout in the pool", D.pool.rural_carveout === undefined);
 check("data: no rural_carveout label either", D.pool.rural_carveout_label === undefined);
-check("data: the minimum rose to $175,000 in the same change", D.pool.floor_window === 175000);
+// The floor rose to $175,000 WITH the retirement (so rural colleges came out
+// ahead), then the one-pool adoption (2026-08-31) reset the baked base to
+// $150,000 on the COMBINED award — a bigger pool, a cap, and the trio joining
+// the same window. What must stay true: the floor is the ADOPTED base, one
+// figure for every institution, with no rural-era value lingering.
+check("data: the baked base is the adopted one-pool $150,000 (was $175,000 in the carve-out retirement era)",
+  D.pool.floor_window === 150000);
 // The FLAGS stay — they are federal categorization, i.e. a true fact about the
 // college that costs nothing to keep. They just no longer move a dollar.
 check("data: the 13 rural flags survive as context", D.colleges.filter(function (c) { return c.rural; }).length === 13);
@@ -41,20 +58,32 @@ check("data: the retirement is recorded in the data file's own header",
   boot(window);
   const T = window.CPL_FUNDING_TAB;
   const m = T._model();
-  // $23,240,308 + the released $1,000,000. If a rural deduction ever comes back
-  // this is the first thing that moves.
-  check("pool: the college pool absorbed the $1M (net = $24,240,308)",
-    Math.abs(T._netCollege() - 24240308) < 1);
-  check("pool: Σ college window totals == the pool, with nothing held aside",
-    Math.abs(D.colleges.reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0) - 24240308) < 1);
-  check("pool: no college's total falls below the raised minimum",
-    D.colleges.every(function (c) { return T._alloc(c.college).total >= 175000 - 0.01; }));
+  // The rural $1M went into the pool in 2026-08-22; one-pool adoption
+  // (2026-08-31) then folded the noncredit carve-out in too and seated the
+  // noncredit-only three as ordinary rows, so the pool to institutions is the
+  // amendment's full figure. If a rural deduction ever comes back this is the
+  // first thing that moves.
+  check("pool: no rural deduction — net to institutions is the amendment's $25,240,308",
+    Math.abs(T._netCollege() - 25240308) < 1);
+  const roster = D.colleges.map(function (c) { return c.college; })
+    .concat(D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .map(function (f) { return f.short; }));
+  check("pool: Σ window totals over all 118 institutions == the pool, with nothing held aside",
+    Math.abs(roster.reduce(function (s, n) { return s + T._alloc(n).total; }, 0) - 25240308) < 1);
+  check("pool: no institution's total falls below the one uniform base",
+    roster.every(function (n) { return T._alloc(n).total >= 150000 - 0.01; }));
 
-  // ⭐ The measurement that justified the change, pinned so it cannot rot.
+  // ⭐ Rural colleges ride the UNIFORM base — no rural-specific bound in either
+  // direction. Under the adopted one-pool dials all 13 sit at the $150,000
+  // base: 13 × $150,000 = $1,950,000, every one of them floored like any other
+  // small college. (The 175K-era "better off than the carve-out" measurement —
+  // $2,275,000 vs $2,038,594 — is history; see the header.)
   const rural13 = D.colleges.filter(function (c) { return c.rural; })
     .reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
-  check("⭐ the 13 rural colleges are BETTER off than under the carve-out ($2,275,000 vs $2,038,594)",
-    Math.abs(rural13 - 2275000) < 1 && rural13 > 2038594);
+  check("⭐ the 13 rural colleges all sit at the uniform base (13 × $150,000 = $1,950,000, no rural bound)",
+    Math.abs(rural13 - 1950000) < 1 &&
+    D.colleges.filter(function (c) { return c.rural; })
+      .every(function (c) { return T._alloc(c.college).floored; }));
 
   // ── the row shape: no second, guaranteed component ─────────────────────
   const row = T._alloc("Feather River");

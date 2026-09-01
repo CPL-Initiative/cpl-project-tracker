@@ -191,7 +191,7 @@ const POOL = 25240308;
   check("D7: the institution list is alphabetical by default (Alameda before Bakersfield, " +
         "and the trio interleaved — Calbright between Cabrillo and Canada)",
     (function () {
-      const names = Array.from(doc.querySelectorAll(".cplfund-row td:nth-child(2) strong"))
+      const names = Array.from(doc.querySelectorAll(".cplfund-row td:nth-child(2) .cplfund-instname"))
         .map(function (e) { return e.textContent; });
       const iCal = names.indexOf("Calbright");
       return names.length === 118 && iCal > 0 &&

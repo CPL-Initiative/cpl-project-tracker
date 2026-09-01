@@ -1453,6 +1453,15 @@
   // every college inside the bounds — which is the equal-yardstick property
   // the per-priority cells were built around.
   //
+  // One-pool extension (2026-08-31): the SAME-basis rule now includes the LANE
+  // SLICE. A credit priority's cap rides the CR slice of the award
+  // (prioEntitlement's laneFrac), so its per-college target must ride the CR
+  // slice of the size — the students path below carried the COMBINED size and
+  // reproduced the original defect one level up: cap ÷ target scattered
+  // 1.5076× across colleges, and the scatter WAS each college's own lane
+  // split. Statewide (c = null) both paths read the full size, matching
+  // prioEntitlement's contract.
+  //
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
     if (prioIsFtes(p)) {
@@ -1464,7 +1473,9 @@
       // invariant; see prioEntitlement + cpl_funding_cumulative_target.test.js).
       return (r > 0 && fac > 0) ? (prioEntitlement(c, p) / r) * (nYears() / fac) : 0;   // target in CPL FTES
     }
-    return (c ? sizeOf(c) * capScale(c) : totalSize()) * p.target_rate;   // target in students
+    var laneFrac = 1;
+    if (c) laneFrac = (p && p.lane === "nc") ? laneShareOf(c).nc : laneShareOf(c).cr;
+    return (c ? sizeOf(c) * capScale(c) * laneFrac : totalSize()) * p.target_rate;   // target in students
   }
   // What a target is counted in — drives every label and the actual's conversion.
   function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
@@ -1879,8 +1890,9 @@
   // `noncredit_ftes_placeholder` is a curator-supplied stand-in for a campus
   // whose reported figure is not yet trustworthy. It NEVER overwrites the
   // reported value — both ride in the data so the discrepancy stays visible —
-  // and every surface that renders a placeholder-derived number must show
-  // feederPlaceholderChip() beside it.
+  // and every surface that renders a placeholder-derived number says so in
+  // WORDS beside it — the Calbright rows' stand-in notes and hovers (N3 a).
+  // (feederPlaceholderChip retired with the feeder section, R9 2026-08-31.)
   function feederBasis(f) {
     if (!f) return 0;
     var ph = Number(f.noncredit_ftes_placeholder);
@@ -1890,20 +1902,6 @@
   function feederIsPlaceholder(f) {
     var ph = f && Number(f.noncredit_ftes_placeholder);
     return !!(isFinite(ph) && ph > 0);
-  }
-  function feederPlaceholderChip(f) {
-    if (!feederIsPlaceholder(f)) return "";
-    var reported = Number(f.noncredit_ftes);
-    return ' <span class="cplfund-chip cplfund-ph" title="' +
-      esc("PLACEHOLDER — not a reported figure. " +
-        (isFinite(reported) && reported > 0
-          ? "The campus's reported noncredit FTES (" + Math.round(reported).toLocaleString("en-US") +
-            ") implies " + (f.headcount ? (reported / f.headcount).toFixed(2) : "?") +
-            " FTES per student, which is not physically possible (a full-time year is ~1.0). "
-          : "") +
-        (f.noncredit_ftes_placeholder_basis || "") +
-        " Replace with the verified MIS figure before this drives a disbursement.") +
-      '">placeholder</span>';
   }
   function feederNoncreditFtes() {
     return feeders().reduce(function (s, f) { return s + feederBasis(f); }, 0);
@@ -4342,10 +4340,13 @@
   // many receive this figure, so that is what is counted, and the bound is
   // named only when the extreme actually IS the bound.
   function boundLabel(one_, count, bound, word, boundWord) {
+    // Each branch carries its own figure exactly once — the caller appends
+    // nothing (the old shape appended " at $X" and doubled a shared bound:
+    // "51 institutions at the $150,000 base award at $150,000").
     var atBound = bound > 0 && Math.abs(count.value - bound) <= 0.5;
     return (atBound && count.n > 1)
       ? count.n + " " + word + " at the " + fmtMoney(bound) + " " + boundWord
-      : esc(dispName(one_) || "&mdash;");
+      : esc(dispName(one_) || "&mdash;") + " at " + fmtMoney(count.value);
   }
   // The bounds fold on the window card (R7's successor, per the locked mock):
   // the institutions at the cap by NAME, the at-base count, and the range —
@@ -4364,8 +4365,8 @@
         fmtMoney(m.floor) + " is brought up to the base, funded from within the same total.</li>" +
       "<li><strong>Range:</strong> " +
         boundLabel(s.minC, { n: s.minCount, value: s.min }, floorWindow(), "institutions", "base award") +
-        " at " + fmtMoney(s.min) + " to " +
-        boundLabel(s.maxC, { n: s.maxCount, value: s.max }, capWindow(), "institutions", "cap") + " at " + fmtMoney(s.max) +
+        " to " +
+        boundLabel(s.maxC, { n: s.maxCount, value: s.max }, capWindow(), "institutions", "cap") +
         " &middot; average max award " + fmtMoney(s.avg) + " across " + s.n + " institutions.</li>" +
       "</ul></details>";
   }
@@ -5953,7 +5954,7 @@
       '" data-id="' + esc(id) + '">' +
       "<td>" + (idx + 1) + "</td>" +
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
+      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
       '<td class="c" title="' + esc((c.nco
@@ -6483,8 +6484,10 @@
   function actualsFootHtml() {
     var pf = perf();
     if (!pf) {
-      return "<div>The <strong>P1 / P2 / P3</strong> columns show each priority&#39;s <strong>target</strong> " +
-        "(projected students · cap) over its <strong>actual</strong> (posted in MAP · earned); the actual row fills in " +
+      // The P1/P2/P3 COLUMNS retired with the one-pool port (2026-08-31) —
+      // per-priority detail lives in each row's expand.
+      return "<div>Each row expands to its per-priority detail table (CR funding &middot; NC funding &middot; " +
+        "Target &middot; Actual &middot; Current Total &middot; Total Possible); the Actual column fills in " +
         "with the next daily MAP refresh. Only measurable metrics show an actual; the rest advance at full cap until their feed lands.</div>";
     }
     var un = Object.keys((pf && pf.unmatched) || {});
@@ -6492,13 +6495,13 @@
       ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
         un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
       : "";
-    return "<div>The <strong>P1 / P2 / P3</strong> columns stack each priority&#39;s <strong>target</strong> " +
-      "(top: projected students &middot; cap) over its <strong>actual</strong> (bottom: students posted in MAP &middot; " +
-      "earned, % of target) &mdash; hover the header for the priority&#39;s goal + metric. Actuals per MAP as of " + esc(pf.as_of) +
+    return "<div>Each row expands to its per-priority detail table &mdash; <strong>Target</strong> and " +
+      "<strong>Actual</strong> per priority, with Current Total and Total Possible beside them; the priority " +
+      "cards above carry the statewide pair. Actuals per MAP as of " + esc(pf.as_of) +
       "; test/potential records excluded; counts under " + pf.suppress_below +
       " read &lt;" + pf.suppress_below + "; statewide figures " +
       "deduplicate across colleges (not the column sum). Only the metric(s) MAP can measure today show an actual; the " +
-      "rest read <span class=\"cf-gap\">gap</span> and advance at full cap until their feed lands.</div>" + unLine;
+      "rest read <span class=\"cf-gap\">data gap</span> in the expand and advance at full cap until their feed lands.</div>" + unLine;
   }
 
   // Segmented single-choice control. role=group + a label for screen readers,
@@ -7192,8 +7195,8 @@
     // Section titles are Sam's (renamed live, 2026-08-31).
     var collegeBody =
       '<p class="dk" style="margin:0 0 6px;">Alphabetical. The award figures are each institution&#39;s ' +
-      "<strong>max award</strong> &mdash; what it can earn by outcomes, not an automatic payment &mdash; " +
-      "split into its credit and noncredit shares. Click a row for its per-priority funding, targets, " +
+      "<strong>max award</strong> &mdash; maximum funding to be awarded based on measurable outcomes and " +
+      "allocated as credit and noncredit subtotals. Click a row for its per-priority funding, targets, " +
       "actuals, and the participation confirmation.</p>" +
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
@@ -7430,7 +7433,8 @@
         e.stopPropagation();
         var college = b.getAttribute("data-optinjump");
         var c = baseCollege(college);
-        if (c) state.open["c:" + c.order] = true;
+        // rows key by NAME since the one-pool port (data-id "c:<college>")
+        if (c) state.open["c:" + c.college] = true;
         OPTIN_UI[college] = { open: true };
         _optinFocusCollege = college;
         refreshTable();
@@ -7990,7 +7994,7 @@
       if (k === q || disp === q || k.indexOf(q) === 0 || disp.indexOf(q) === 0) hit = c;
     });
     if (!hit) return;
-    state.open["c:" + hit.order] = true;
+    state.open["c:" + hit.college] = true;   // rows key by NAME (one-pool port)
     state.q = "";
     _deepLinkCollege = hit.college;
     _deepLinkPending = true;
@@ -8001,7 +8005,7 @@
     if (!_deepLinkPending || !_deepLinkCollege) return;
     var c = baseCollege(_deepLinkCollege);
     if (!c) { _deepLinkPending = false; return; }
-    var row = document.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + c.order + '"]');
+    var row = document.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + c.college + '"]');
     if (!row) return;   // table not built yet — try again on the next render
     _deepLinkPending = false;
     if (typeof row.scrollIntoView === "function") row.scrollIntoView({ block: "center" });

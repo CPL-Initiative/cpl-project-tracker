@@ -1,8 +1,12 @@
 // CPL Implementation Funding tab — renderer behaviour, part 2 (C8–C10).
 //
-// District rollup + period toggle + drill-ins, metric-measurability actuals,
-// and the failure mode where the data never arrives (404 -> loadScript fails
-// soft). Continues Part C of the original file.
+// District rollup + drill-ins + the SYSTEM row's conservation, metric-
+// measurability actuals, and the failure mode where the data never arrives
+// (404 -> loadScript fails soft). Continues Part C of the original file,
+// ported to the one-pool model (adopted 2026-08-31): ONE row per institution
+// over the 118-row roster, a CR award / NC award pair instead of the Yr/Total
+// columns, per-priority detail in each row's expand instead of P1/P2/P3 table
+// columns, and the allocation-balance box consolidated into the Summary (R11).
 //
 // One of nine suites the 2,955-line cpl_funding.test.js was split into on
 // 2026-08-20, after it stopped fitting in a 12 GB heap. Shared setup + the
@@ -24,62 +28,116 @@ const {
   finish,
 } = require("./lib/cpl_funding_harness.js");
 
-// C8 — district rollup + period toggle + drill-ins (feature parity).
+const NET = 25240308;   // the one pool (pinned to the model by the anchor suite)
+// First $-figure in a cell (the max award; the earning sub-line comes after).
+function firstMoney(el) {
+  const m = (el ? el.textContent : "").match(/\$[\d,]+/);
+  return m ? Number(m[0].replace(/[$,]/g, "")) : NaN;
+}
+// Minimal CSV splitter honoring double-quoted fields (csvEscape's shape).
+function splitCsv(line) {
+  const out = [];
+  let cur = "", inQ = false;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (inQ) {
+      if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; }
+      else if (ch === '"') inQ = false;
+      else cur += ch;
+    } else if (ch === '"') inQ = true;
+    else if (ch === ",") { out.push(cur); cur = ""; }
+    else cur += ch;
+  }
+  out.push(cur);
+  return out;
+}
+// The one-pool roster's district set: the 115 college rows plus the
+// noncredit-only rows (Calbright carries none → "(no district)"; Mt. SAC NC
+// rides the Mt San Antonio row and adds nothing). Recomputed from the data so
+// the expected group count never trusts the code it is checking.
+const DISTRICTS = (function () {
+  const s = new Set(D.colleges.map(function (c) { return c.district || "(no district)"; }));
+  (D.feeders || []).forEach(function (f) {
+    if (f.nc_ftes_on_credit_row) return;
+    const ph = Number(f.noncredit_ftes_placeholder);
+    const basis = (isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0);
+    if (basis > 0) s.add(f.district || "(no district)");
+  });
+  return s;
+})();
+
+// C8 — district rollup + drill-ins + SYSTEM conservation (feature parity).
 {
   const { window } = freshDom();
   const doc = boot(window);
-  // Drill-in.
+  // Drill-in: one row per institution; a click opens the expand, whose
+  // 7-column detail table replaced the in-row P1/P2/P3 math (2026-08-31).
   click(window, doc.querySelector("tr.cplfund-row"));
   let detail = doc.querySelector("tr.cplfund-detail");
   check("college drill-in renders a detail row with per-priority math",
     detail && detail.textContent.indexOf("Priority 1") !== -1 && detail.textContent.indexOf("share") !== -1);
-  check("drill-in shows the active year's metric", detail.textContent.indexOf("metric:") !== -1);
+  check("drill-in carries the 7-column detail table (Current Total / Total Possible)",
+    !!detail.querySelector(".cplfund-dtl-table") &&
+    Array.from(detail.querySelectorAll(".cplfund-dtl-table th")).map(function (h) { return h.textContent; })
+      .join("|").indexOf("Current Total|Total Possible") !== -1);
+  // The active year's metric moved from the drill-in to the priority CARDS —
+  // still one click away, and the card is the surface the curator edits.
+  check("the active year's metric shows on the priority cards (the drill-in's metric line moved there)",
+    doc.querySelectorAll(".cplfund-prio .p .metric").length === 3);
   click(window, doc.querySelector("tr.cplfund-row"));
   check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
 
-  // Year columns: SYSTEM tfoot carries each year's tranche + the window total.
-  // The rural carve-out is now FOLDED into rural colleges' rows (Sam, 2026-07-28),
-  // so the SYSTEM total = main net + rural = college funding before feeder only.
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;
-  const tranche = net / 2;
-  check("SYSTEM tfoot Total = the college pool incl. folded rural ($" + net.toLocaleString() + ")",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
-  check("SYSTEM tfoot year cells carry the per-year tranche ($" + Math.round(tranche).toLocaleString() + ")",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + Math.round(tranche).toLocaleString("en-US")) !== -1);
+  // SYSTEM row conservation: the ONE SYSTEM row's CR/NC pair must reconstitute
+  // the pool — the per-year tranche under Annual funding, the full window under
+  // Combined funding (the retired Yr1/Yr2/Total columns' invariants, on the
+  // pair). ±$2 = two independently rounded cells.
+  const sysCells = function () { return doc.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award"); };
+  check("ONE SYSTEM row renders (R6), carrying the CR/NC award pair",
+    doc.querySelectorAll("tr.cplfund-systemrow").length === 1 && sysCells().length === 2);
+  check("SYSTEM pair under Annual funding = the per-year tranche ($" + Math.round(NET / 2).toLocaleString("en-US") + ")",
+    Math.abs((firstMoney(sysCells()[0]) + firstMoney(sysCells()[1])) - NET / 2) <= 2);
+  click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
+  check("SYSTEM pair under Combined funding = the full pool ($" + NET.toLocaleString("en-US") + ")",
+    Math.abs((firstMoney(sysCells()[0]) + firstMoney(sysCells()[1])) - NET) <= 2);
+  click(window, doc.querySelector('#cplFundDisb button[data-val="even"]'));
 
   // GROUP BY DISTRICT (Sam, 2026-07-30) replaced the Colleges|Districts VIEW
   // toggle. The old toggle REPLACED the college rows, so the per-college
   // numbers a curator wanted to compare vanished behind a drill-in. Grouping
-  // keeps every college row visible and only ADDS district subtotal headers.
-  const distinct = new Set(D.colleges.map(function (c) { return c.district || "(no district)"; })).size;
+  // keeps every institution row visible and only ADDS district subtotal headers
+  // — the trio group under their own districts (Calbright none).
+  const distinct = DISTRICTS.size;
   const flatN = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length;
+  check("the flat list is the whole 118-institution roster", flatN === D.colleges.length + 3);
   check("the retired Colleges|Districts view toggle is gone", !doc.querySelector("#cplFundView"));
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
   const hdrs = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-grouphdr");
   check("grouping adds one district header per district (" + distinct + ")", hdrs.length === distinct);
-  check("grouping KEEPS every college row visible (the point of retiring the toggle)",
+  check("grouping KEEPS every institution row visible (the point of retiring the toggle)",
     doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === flatN);
-  const listHeads = D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0);
-  const gHead = Array.from(hdrs).reduce(function (s, tr) {
-    const m = tr.textContent.match(/·\s*([\d,]+) students/);
-    return s + (m ? Number(m[1].replace(/,/g, "")) : 0);
+  // Subtotals conserve the size column (credit FTES — each header's cell is
+  // independently rounded, so tolerance = one dollar per header).
+  const listCrFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+  const gCrFtes = Array.from(hdrs).reduce(function (s, tr) {
+    return s + (Number(tr.querySelectorAll("td")[1].textContent.replace(/,/g, "")) || 0);
   }, 0);
-  check("district subtotals conserve the college-list headcount", gHead === listHeads);
+  check("district subtotals conserve the roster's credit FTES", Math.abs(gCrFtes - listCrFtes) <= distinct);
   // Groups are ordered by their subtotal, largest first (Sam's explicit call).
+  // The subtotal now reads as the CR/NC award pair on each header row.
   const gTotals = Array.from(hdrs).map(function (tr) {
-    const t = tr.querySelector("td.tot").textContent.match(/\$([\d,]+)/);
-    return t ? Number(t[1].replace(/,/g, "")) : 0;
+    const aw = tr.querySelectorAll("td.cf-award");
+    return firstMoney(aw[0]) + firstMoney(aw[1]);
   });
   check("district groups are ordered by subtotal, largest first",
-    gTotals.every(function (v, i) { return i === 0 || gTotals[i - 1] >= v; }));
-  // Σ district subtotals == Σ college rows (conservation across the grouping).
-  const sumCollege = D.colleges.reduce(function (s, c) {
-    return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0);
-  check("Σ district subtotals == Σ college allocations",
-    Math.abs(gTotals.reduce(function (a, b) { return a + b; }, 0) - sumCollege) < distinct + 2);
-  // A college drill-in still works while grouped.
+    gTotals.every(function (v, i) { return i === 0 || gTotals[i - 1] >= v - 2; }));
+  // Σ district subtotal pairs == the pool's tranche (conservation across the grouping).
+  check("Σ district subtotal pairs == the annual tranche of the one pool",
+    Math.abs(gTotals.reduce(function (a, b) { return a + b; }, 0) - NET / 2) < distinct * 2 + 2);
+  check("each header labels itself a district subtotal",
+    /district subtotal/.test(hdrs[0].textContent));
+  // A drill-in still works while grouped.
   click(window, doc.querySelector("#cplFundTable tr.cplfund-row"));
-  check("a college drill-in still opens while grouped", !!doc.querySelector("tr.cplfund-detail"));
+  check("an institution drill-in still opens while grouped", !!doc.querySelector("tr.cplfund-detail"));
   // Back to flat, and a college sort still works.
   click(window, doc.querySelector('#cplFundGroup button[data-val="none"]'));
   click(window, doc.querySelector('#cplFundTable th[data-sort="college"]'));
@@ -100,12 +158,13 @@ const {
   // and drifted out from under this block on 2026-07-30.
   const { window } = freshDom();
   const doc = boot(window);
-  window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Headcount with Transcribed Credit from either CPL Portal or CPL Landing Page" }
   } } });
-  window.CPL_FUNDING_TAB.render();
+  T.render();
   check("Y1-P1 card hints actuals arrive with the daily refresh (measurable metric)",
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("next daily data refresh") !== -1);
   check("Y1-P2 card carries the exhibit-linkage data-gap label",
@@ -114,12 +173,18 @@ const {
   check("Y1-P3 (Portal/Landing) is no longer a hard data gap — it's the wired portal metric",
     doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("data gap") === -1 &&
     doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("Portal") !== -1);
-  // Per-priority table columns: the exhibit-linkage P2 cell reads "gap"; the
-  // wired-but-feedless P3 cell reads the pending ellipsis (…), not "gap".
-  const gapCells = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio");
-  check("P2 (exhibit-linkage) cell reads 'gap'; P3 (portal, feed pending) reads '…' not 'gap'",
-    gapCells[1].textContent.indexOf("gap") !== -1 &&
-    gapCells[2].textContent.indexOf("…") !== -1 && gapCells[2].textContent.indexOf("gap") === -1);
+  // Per-priority detail (the expand — the P-columns' successor): the
+  // exhibit-linkage P2 row reads "data gap"; the wired-but-feedless P3 row
+  // reads pending — both say they advance, neither reads as a measured zero.
+  T._state.open["c:" + D.colleges[0].college] = true;
+  T.render();
+  const dtl = doc.querySelector("tr.cplfund-detail .cplfund-dtl-table");
+  const act = function (i) {
+    return Array.from(dtl.querySelectorAll("tr"))[i + 1].querySelectorAll("td")[4].textContent;
+  };
+  check("P2 (exhibit-linkage) detail reads 'data gap'; P3 (portal, feed pending) reads 'pending' not 'gap'",
+    act(1).indexOf("data gap") !== -1 &&
+    act(2).indexOf("pending") !== -1 && act(2).indexOf("gap") === -1);
 }
 {
   // With a synthetic perf artifact.
@@ -131,30 +196,41 @@ const {
     unmatched: { "Mystery University": { p2: null, p2_suppressed: true, p3: 7 } }
   };
   const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
   // Pin P1 to the any-transcribed metric this fixture's p3 numbers are written
   // for (the baked default is now the ELIGIBLE metric → pe).
-  window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
+  T._setShared({ yearPriorities: { "1": {
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." }
   } } });
-  window.CPL_FUNDING_TAB.render();
+  T.render();
   const p1card = doc.querySelectorAll(".cplfund-prio .p")[0];
   check("Y1-P1 card shows the any-transcribed statewide actual vs target",
     p1card.textContent.indexOf("20,000") !== -1 && p1card.textContent.indexOf("of target") !== -1);
-  check("system row's P1 column carries the deduplicated statewide actual (20K, compact)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("20K") !== -1);
-  check("footer explains the per-priority target/actual cells + dedup",
+  // The SYSTEM row's P-columns are retired; the deduplicated statewide actual
+  // still exports on the CSV's SYSTEM line (never the column sum).
+  const csvLines = T._csv().split("\r\n").map(splitCsv);
+  const head = csvLines[1];
+  const iP1a = head.indexOf("P1 actual");
+  const sysLine = csvLines.find(function (f) { return /SYSTEM/.test(f[1] || ""); });
+  check("the CSV SYSTEM line carries the deduplicated statewide P1 actual (20,000)",
+    iP1a >= 0 && !!sysLine && Number(sysLine[iP1a]) === 20000);
+  check("the retired P1/P2/P3 table columns are gone (absence guard, 2026-08-31)",
+    !doc.querySelector('th[data-sort="prio0"]') && !doc.querySelector("#cplFundTable td.cf-prio"));
+  check("footer explains the per-priority target/actual detail + dedup",
+    // case-insensitive: the footer names the expand's Target/Actual COLUMNS
+    // since the P-columns sentence was rewritten (2026-09-01)
     footText(doc).indexOf("deduplicate across colleges") !== -1 &&
-    footText(doc).indexOf("target") !== -1 && footText(doc).indexOf("actual") !== -1);
+    /target/i.test(footText(doc)) && /actual/i.test(footText(doc)));
   check("a non-empty unmatched bucket is surfaced in the footer",
     footText(doc).indexOf("Mystery University") !== -1);
-  const rowsArr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const alaRow = rowsArr.find(function (tr) { return tr.textContent.indexOf("Alameda") !== -1; });
-  check("Alameda's P1 cell shows the any-transcribed actual (300) stacked under its target",
-    alaRow.querySelector("td.cf-prio").querySelector(".cf-a").textContent.indexOf("300") !== -1);
-  // Sort by the P1 (prio0) column → highest actual first.
-  click(window, doc.querySelector('#cplFundTable th[data-sort="prio0"]'));
-  check("sort by the P1 column puts the highest actual first",
-    doc.querySelector("#cplFundTable tbody tr.cplfund-row").textContent.indexOf("Alameda") !== -1);
+  // Alameda's expand: the P1 detail row stacks the actual (300) under its target.
+  T._state.open["c:Alameda"] = true;
+  T.render();
+  const alaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (tr) { return tr.getAttribute("data-id") === "c:Alameda"; });
+  const alaDtl = alaRow.nextElementSibling.querySelector(".cplfund-dtl-table");
+  check("Alameda's P1 detail row shows the any-transcribed actual (300) beside its target",
+    Array.from(alaDtl.querySelectorAll("tr"))[1].querySelectorAll("td")[4].textContent.indexOf("300") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   check("Y2 cards carry data-gap labels (MIS match-back)",
@@ -204,8 +280,11 @@ const {
 //
 // What survives is the fact the prose was there to protect: the TARGET and the
 // ALLOCATION SHARE are two different quantities, both stated, and the target is
-// never presented as the money. A card that printed only one of them, or that
-// let the target read as the award, still fails here.
+// never presented as the funding. A card that printed only one of them, or that
+// denominated the target in dollars, still fails here.
+//
+// C9d — the allocation balance moved into the SUMMARY (R11, ruled 2026-08-31):
+// the balance box is retired and the over/under readout rides .cplfund-summary.
 {
   const { window } = freshDom();
   const doc = boot(window);
@@ -213,28 +292,27 @@ const {
   const box = card.textContent;
   check("the card states the allocation share and the target as separate figures",
     /Allocation share/.test(box) && /Target|per student/.test(box));
-  check("the target is not presented as the dollars",
-    !/Target[^<]*\$/.test(card.innerHTML.replace(/<[^>]*>/g, "")));
-}
+  check("the target is never denominated in dollars",
+    !/Target\s*\$/.test(card.innerHTML.replace(/<[^>]*>/g, "")));
 
-// C9d — Allocation-balance box in the Funding Pool area (Sam, 2026-07-23).
-{
-  const { window } = freshDom();
-  const doc = boot(window);
-  const bal = doc.querySelector(".cplfund-card.balance");
-  check("a balance box renders in the pool area", !!bal);
-  check("at 100% shares the balance is $0 (fully apportioned)",
-    bal && bal.querySelector(".v").textContent.trim() === "$0" &&
-    bal.textContent.indexOf("fully apportioned") !== -1 && bal.textContent.indexOf("100%") !== -1);
-  check("balance box is not flagged over-allocated at 100%", bal && !bal.classList.contains("over"));
-  // Push the shares past 100% → over-allocated, red, and quantified.
+  // C9d — the balance readout, now in the Summary.
+  check("the balance boxes are retired (R11) — no .cplfund-card.balance renders",
+    !doc.querySelector(".cplfund-card.balance"));
+  // The balanced line's WORDING is being polished live; the durable tokens are
+  // the OK state and Sam's funding vocabulary ("fully allocated" — never
+  // "spent"/"apportioned" for this split, 2026-08-31).
+  const sum0 = doc.querySelector(".cplfund-summary");
+  check("at 100% shares the Summary reads as the OK state and says fully allocated",
+    !!sum0 && /fully allocated/.test(sum0.textContent) && !!sum0.querySelector(".ok") &&
+    !sum0.querySelector(".warn"));
+  // Push the shares past 100% → over-allocated, warned, and quantified.
   commit(window, doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]'), "60");
-  const over = doc.querySelector(".cplfund-card.balance");
-  check("shares over 100% flag the balance box as over-allocated (red border class)",
-    over && over.classList.contains("over"));
-  check("over-allocated balance names the overage + the >100% share sum",
-    over && over.textContent.indexOf("Over-allocated") !== -1 &&
-    over.textContent.indexOf("130%") !== -1 && over.querySelector(".v.neg"));
+  const sum1 = doc.querySelector(".cplfund-summary");
+  check("shares over 100% flag the Summary as over-allocated (warn styling)",
+    !!sum1 && /Over-allocated/.test(sum1.textContent) && !!sum1.querySelector(".warn"));
+  check("over-allocated Summary names the overage + the >100% share sum",
+    /130%/.test(sum1.textContent) && /over/.test(sum1.textContent) &&
+    /\$[\d,]+ over/.test(sum1.textContent.replace(/\s+/g, " ")));
 }
 
 // C9e — the priority box + timing rows share one body-copy size (Sam, 2026-07-23).

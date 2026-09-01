@@ -1,7 +1,11 @@
 // CPL Implementation Funding tab — per-student funding rate, the veteran-JST qualifier, and SkyMore (Parts H, I, J).
 //
 // The curator-typed per-student rate; the JST qualifier feeding the Veteran Star
-// sector; and the "How an allocation is computed" box.
+// sector; and the "How an allocation is computed" box. Ported to the one-pool
+// model (adopted 2026-08-31): the P1/P2/P3 table columns are retired (the
+// per-priority detail lives in each row's expand), the noncredit feeder section
+// and its two-batch table are retired (R9 — the trio are ordinary rows earning
+// by origination), and the retired NC second solve (_ncModel) is pinned absent.
 //
 // One of nine suites the 2,955-line cpl_funding.test.js was split into on
 // 2026-08-20, after it stopped fitting in a 12 GB heap. Shared setup + the
@@ -39,7 +43,7 @@ const {
     !doc.querySelector('input[data-edit="target"]'));
   // The reach percentage is now computed against STATEWIDE HEADCOUNT explicitly.
   // It used to render p.target_rate, which since 2026-07-31 denominates on the
-  // allocation basis (credit FTES) and is therefore no longer a headcount %.
+  // allocation basis and is therefore no longer a headcount %.
   check("H1: the priority line reads 'per student' + shows the derived reach % of statewide headcount",
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("per student") !== -1 &&
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("of statewide headcount") !== -1);
@@ -56,19 +60,21 @@ const {
   T._setShared({ yearPriorities: { "1": { "0": { per_student: 50 } } } });
   T.render();
   const a50 = T._alloc(D.colleges[0].college);
+  // The clamp bound is the ALLOCATION BASIS (combined FTES since one-pool
+  // adoption) — target_rate caps at 100% of it, not of headcount.
+  const basis0 = (D.colleges[0].credit_ftes || 0) + (Number(D.colleges[0].noncredit_ftes) || 0);
   check("H2: halving $/student ~doubles the student target (inverse), unless clamped at 100%",
-    Math.abs(a50.p1_heads - 2 * a100.p1_heads) < 1 || a50.p1_heads >= D.colleges[0].headcount - 1);
+    Math.abs(a50.p1_heads - 2 * a100.p1_heads) < 1 || a50.p1_heads >= basis0 - 1);
   check("H2: changing the per-student rate moves NO dollars (allocation is share-based)",
     Math.abs(a50.total - a100.total) < 1);
 
-  // H3 — the per-student rate moved from the P-cell to its HOVER (Sam,
-  // 2026-07-28): it varies per college once the $150k floor tops up small
-  // colleges, so showing it inline reads as inequitable. It's now in the title.
-  const pcell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio");
-  check("H3: the per-student rate is no longer shown inline (.cf-rate removed)",
-    !!pcell && pcell.querySelector(".cf-rate") === null);
-  check("H3: the P-cell hover explains the per-student rate ($/student)",
-    !!pcell && /\/student/.test(pcell.getAttribute("title") || ""));
+  // H3 — the per-priority P-cells (and the per-student hover that had moved
+  // into them, Sam 2026-07-28) are RETIRED with the one-pool columns
+  // (2026-08-31): the per-priority math lives in each row's expand, and the
+  // rate stays visible on the priority card's own line (H1 above).
+  check("H3: no per-priority P-cells survive in the table (the expand carries the detail)",
+    !doc.querySelector("#cplFundTable td.cf-prio") &&
+    !doc.querySelector('#cplFundTable th[data-sort="prio0"]'));
 }
 {
   // H4 — collapsible sections: native <details>; default COLLAPSED except the
@@ -119,26 +125,37 @@ const {
     cards[2].textContent.indexOf("of target") !== -1 &&
     cards[2].textContent.indexOf("advancing") === -1);
   // Achievement-based P3: a college with 0 portal students earns $0 on P3 (its
-  // full P3 cap is unearned); a college with a portal count shows it in the cell.
-  T.render();
+  // full P3 cap is unearned; the P-caps ride the CREDIT share of the one
+  // award since 2026-08-31, so the bound is cr_award, not the combined total).
   const oh = T._alloc("Ohlone");     // pp = 0 → P3 fully unearned
   check("H5: P3 earns $0 for a college with no portal students (P3 cap fully unearned, no advance)",
-    oh.earned_total <= oh.total - oh.p3 + 1);
-  const rowsE = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const ohP3 = rowsE.find(function (r) { return /Ohlone/.test(r.textContent); }).querySelectorAll("td.cf-prio")[2];
-  const laP3 = rowsE.find(function (r) { return /Laney/.test(r.textContent); }).querySelectorAll("td.cf-prio")[2];
-  check("H5: P3 cell reads 0 (none) for a college with no portal students — not 'gap'/'…'",
-    ohP3.querySelector(".cf-a").textContent.indexOf("0") !== -1 &&
-    ohP3.textContent.indexOf("gap") === -1 && ohP3.textContent.indexOf("…") === -1);
-  check("H5: P3 cell surfaces the portal count for a college WITH portal students",
-    laP3.querySelector(".cf-a").textContent.indexOf("3") !== -1);
+    oh.earned_total <= oh.cr_award - oh.p3 + 1);
+  // The P-cells are retired — the same detail now reads from each row's
+  // expand: the dtl-table's P3 row stacks Target and Actual.
+  T._state.open["c:Ohlone"] = true;
+  T._state.open["c:Laney"] = true;
+  T.render();
+  const p3ActOf = function (name) {
+    const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+      .find(function (r) { return r.getAttribute("data-id") === "c:" + name; });
+    const dtl = row.nextElementSibling.querySelector(".cplfund-dtl-table");
+    const trs = Array.from(dtl.querySelectorAll("tr"));
+    return trs[3].querySelectorAll("td")[4].textContent;   // P3 row, Actual cell
+  };
+  check("H5: P3 reads 0 (a measured none) for a college with no portal students — not 'gap'/'…'",
+    p3ActOf("Ohlone").indexOf("0") !== -1 &&
+    p3ActOf("Ohlone").indexOf("gap") === -1 && p3ActOf("Ohlone").indexOf("…") === -1);
+  check("H5: P3 surfaces the portal count for a college WITH portal students",
+    p3ActOf("Laney").indexOf("3") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part I — the veteran-JST qualifier → Veteran Star sector (Sam, 2026-07-27). A
 // free-text "75% veteran JSTs uploaded" requirement is AUTO-scored off the daily
 // pf.vet_star flag; it adds a 3rd pie sector, a fully-green glyph = all 3 met,
-// and the SYSTEM Elig count = colleges meeting all.
+// and the SYSTEM Elig count = institutions meeting all. Since one-pool adoption
+// the roster is 118 (the noncredit-only trio ride it, their JST sector replaced
+// by exhibits-in-MAP — N1 a), so the denominator is the ONE roster.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -162,8 +179,8 @@ const {
     greenSlices(eligCell("Alameda")) === 3);
   check("I: a non-star college is 2 of 3 (JST sector not green)",
     pieSlices(eligCell("Butte")) === 3 && greenSlices(eligCell("Butte")) === 2);
-  check("I: SYSTEM Elig counts colleges meeting ALL 3 (only Alameda) → 1 of N",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
+  check("I: SYSTEM Elig counts institutions meeting ALL 3 (only Alameda) → 1 of the 118-row roster",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + (D.colleges.length + 3)) !== -1);
   check("I: the eligibility section shows the Veteran Star auto-score status line",
     doc.querySelector(".cplfund-elig").textContent.indexOf("Veteran Star") !== -1 &&
     doc.querySelector(".cplfund-elig").textContent.indexOf("qualify") !== -1);
@@ -181,9 +198,10 @@ const {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part J — SkyMore (2026-07-27): (1) the "How an allocation is computed" box is
-// RESPONSIVE to the Even ⇄ Front-load toggle; (2) the priority cell re-weights so
-// the earned DOLLAR is bold and the count/% recede; (3) the noncredit feeder rows
-// reflect the 2-batch-per-year disbursement cadence.
+// RESPONSIVE to the Even ⇄ Front-load toggle; (2) the money cell re-weights so
+// the max award reads first and the earning line recedes; (3) the retired
+// noncredit-feeder cadence surfaces are pinned absent (R9) while the invariant
+// they carried — front-load is TIMING, never money — survives on the trio rows.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -205,45 +223,49 @@ const {
     fFL.indexOf("equal annual amounts") === -1);
 }
 {
-  // J3 — priority cell weighting: the earned dollar (.cf-u) is bold; the actual
-  // line (.cf-a, holds the student count) and the % (.cf-pct) recede. Guarded on
-  // the injected CSS (Sam: "get the focus in the right place").
-  check("J3: earned dollar (.cf-u) is bold navy",
-    /\.cf-prio \.cf-u \{ font-weight: 700; color: var\(--navy-primary\); \}/.test(consumerSrc));
-  check("J3: the actual line (.cf-a, student count) is de-bolded (normal weight)",
-    /\.cf-prio \.cf-a \{ font-weight: 400;/.test(consumerSrc));
-  check("J3: the % of target (.cf-pct) is de-bolded (normal weight)",
-    /\.cf-prio \.cf-pct \{ color: var\(--green-progress\); font-weight: 400; \}/.test(consumerSrc));
+  // J3 — money-cell weighting under one pool: the MAX AWARD is the cell's first
+  // read; the earning line (.sub — count, %, adv chip) recedes (smaller, muted,
+  // normal weight). Guarded on the injected CSS (Sam: "get the focus in the
+  // right place"). The retired .cf-prio cell weights went with the P-columns.
+  check("J3: the award cell's earning sub-line recedes (block, .68rem, muted, weight 400)",
+    /\.cf-award \.sub, \.cplfund-table td \.sub \{ display: block; font-size: \.68rem; color: var\(--text-muted\); font-weight: 400; \}/.test(consumerSrc));
+  check("J3: the advance chip is a quiet ghosted tag, never a shout (muted on surface-muted)",
+    /\.cf-adv \{[^}]*color: var\(--text-muted\); background: var\(--surface-muted\);/.test(consumerSrc));
+  check("J3: the award figures read in tabular numerals so the column scans",
+    /\.cf-award \{ font-variant-numeric: tabular-nums;/.test(consumerSrc));
 }
 {
-  // J4 — the noncredit rows keep the 2-batch-per-funding-year disbursement (the
-  // credit colleges' cadence, Timing section). The lane's ARITHMETIC changed on
-  // 2026-08-23 — bounded allocation instead of a flat split, window totals
-  // instead of a per-year pool — but the cadence is disbursement policy and did
-  // not, so it must survive the rewrite. Per-row now, since there is no longer a
-  // single pool figure to halve.
+  // J4/J5 — the noncredit feeder section, its standalone table and the
+  // two-batch cadence readout are RETIRED (R9, ruled 2026-08-31): NOCE /
+  // SD Cont. Ed / Calbright are ordinary rows in the one institution table,
+  // earning by ORIGINATION with no advances (N2 b). The second solve
+  // (_ncModel/_nc) is gone from the API. What SURVIVES is the invariant the
+  // batch arithmetic used to carry: disbursement timing never moves an award.
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  const sec = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
-  check("J4: the noncredit section explains the two-batch-per-year cadence",
-    sec.textContent.indexOf("two batches per funding year") !== -1);
-  const standTable = doc.querySelectorAll(".cplfund-table")[1];
-  check("J4: noncredit rows surface a per-batch amount (2 batches · $X ea)",
-    standTable.textContent.indexOf("2 batches") !== -1 && standTable.textContent.indexOf(" ea") !== -1);
-  const noce = T._ncModel().W["NC:NOCE"];
-  const evenBatch = "$" + Math.round(noce / 2 / 2).toLocaleString("en-US") + " ea";
-  check("J4: even mode — a row's batch is a quarter of its window award (" + evenBatch + ")",
-    standTable.textContent.indexOf(evenBatch) !== -1);
-  // J5 — front-load: the whole window award lands in Year 1, still 2 batches, so
-  // each batch DOUBLES. The award itself must not move: front-load is timing.
+  check("J4: the noncredit feeder section is gone (R9)",
+    !doc.querySelector('details.cplfund-sec[data-sec="feeder"]') &&
+    doc.getElementById("cplFundingMount").textContent.indexOf("2 batches") === -1);
+  check("J4: ONE table — no standalone-noncredit second table survives",
+    doc.querySelectorAll(".cplfund-table").length === 1);
+  check("J4: the retired NC second solve is gone from the API (_ncModel/_nc)",
+    T._ncModel === undefined && T._nc === undefined && !doc.querySelector("#cplFundLane"));
+  check("J4: the trio ride the one table as ordinary rows (NC only chip)",
+    !!Array.from(doc.querySelectorAll(".cplfund-row")).find(function (r) { return /NOCE/.test(r.textContent) && /NC only/.test(r.textContent); }));
+  // J5 — front-load is timing, not money: a noncredit-only institution's award
+  // is unchanged; only the year placement moves. And origination pays no
+  // advance in EITHER mode (N2 b).
+  const noceEven = T._alloc("NOCE");
   click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
-  const flTable = doc.querySelectorAll(".cplfund-table")[1];
-  const flBatch = "$" + Math.round(noce / 2).toLocaleString("en-US") + " ea";
-  check("J5: front-load — the batch doubles because the whole award lands in Yr 1",
-    flTable.textContent.indexOf(flBatch) !== -1 && /all in Yr 1/.test(flTable.textContent));
-  check("J5: ...and the award itself is unchanged (front-load is timing, not money)",
-    Math.round(T._ncModel().W["NC:NOCE"]) === Math.round(noce));
+  const noceFl = T._alloc("NOCE");
+  check("J5: front-load doubles nothing for the trio — the award itself is unchanged",
+    Math.round(noceFl.total) === Math.round(noceEven.total));
+  check("J5: only the timing moves (even: half per year; front-load: all in Year 1)",
+    Math.abs(noceEven.y1 - noceEven.total / 2) < 1 &&
+    Math.abs(noceFl.y1 - noceFl.total) < 1 && Math.abs(noceFl.y2) < 1);
+  check("J5: origination pays no advance in either mode (earned stays $0 — N2 b)",
+    noceEven.earned_total === 0 && noceFl.earned_total === 0);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

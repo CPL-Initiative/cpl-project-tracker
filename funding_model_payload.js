@@ -27,7 +27,9 @@
   const trio = ["NOCE", "SD Cont. Ed", "Calbright"];
   const rows = D.colleges.map(function (c) {
     const a = T._alloc(c.college);
-    return [c.college, c.district || "",
+    // display cell: the roster's display alias when one exists (the college
+    // KEY stays the lookup everywhere else)
+    return [c.display || c.college, c.district || "",
             Math.round((c.credit_ftes || 0) + (c.noncredit_ftes || 0)), Math.round(a.total),
             a.floored ? 1 : 0, 0, a.capped ? 1 : 0];
   }).concat(trio.map(function (k) {
@@ -127,7 +129,7 @@
       const net = T._netCollege();
       return [bySize[0], bySize[bySize.length - 1]].map(function (c, i) {
         const a = T._alloc(c.college);
-        return { name: c.college, role: i === 0 ? "The largest college" : "The smallest college",
+        return { name: c.display || c.college, role: i === 0 ? "The largest college" : "The smallest college",
                  ftes: Math.round(c.credit_ftes || 0),
                  pct: +((c.credit_ftes || 0) / totFtes * 100).toFixed(1),
                  share: Math.round((c.credit_ftes || 0) / totFtes * net),
