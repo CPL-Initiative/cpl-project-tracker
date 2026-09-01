@@ -1479,3 +1479,103 @@ mapping to (B)+(C), and two measure sources — `ppe`/`ppe_u` emitting today,
 **Not shipped, deliberately:** shares and factors. Sam's standing rule — *"I
 don't want you to fix it; I want the tab to save it"* — makes those curator edits
 through the tab, not session SQL.
+
+## 2026-09-01 — Session 219 (SkyTrim): the targets were there all along, laid out into a 240px column
+
+Sam's pass over the college drill-in was seven items: four strikes, one "give me
+the targets", two questions. The four strikes were easy and the interesting one
+was the request, because **the thing he asked for was already rendered.**
+
+### The finding
+
+`collegeDetailHtml()` builds a `.cplfund-detail-grid` — `repeat(auto-fit,
+minmax(240px, 1fr))` — and drops every part of the drill-in into it as a sibling:
+the FTES-share line, the base/cap line, the eligibility line, the CO note, the
+county line, the district line, **and the per-priority table.** The table is
+`table-layout: fixed` with `min-width: 620px` inside an `overflow-x: auto`
+scroller, which is exactly right on a phone and catastrophic here: as a grid item
+it got ONE ~240px track, so three of its columns lived past a clip edge that no
+error, no missing node and no text-based assertion can see. Sam read the expand
+and concluded it had no targets. It had all of them.
+
+`grid-column: 1 / -1` is the entire fix. The attestation form and the CO note
+were being squeezed the same way and got the same span.
+
+**The generalizable bit:** a scroll container is a correct narrow-screen safety
+net and a silent desktop defect the moment its parent track is narrower than its
+content. `CLAUDE.md`'s presentation rules already say `overflow-x: auto` is "the
+narrow-screen safety net, never the default desktop experience" — this is what
+violating it looks like when nothing is obviously broken. And when a curator says
+a surface does not show something the code demonstrably renders, **check layout
+before you check logic.**
+
+### The column that answers the question he actually asked
+
+"Where they are and where they could be" is a distance, and the table had no
+distance — Target and Actual sit two columns apart and the reader subtracts. **To
+go** now names it, with the funding that distance would earn beside it.
+
+The interesting constraint is which rows may have one. `earnFraction()` returns
+six statuses and only three carry a measurement. Two must not print a distance:
+
+- **suppressed** — the actual is masked for privacy below 5. A mask plus a gap
+  *is* the value; the reader subtracts and the suppression has done nothing. The
+  mask has to hold across the whole ROW, not just the cell it was applied to.
+- **undelivered / bad_src / gap / pending** — there is no number to subtract from.
+  Printing "0 to go" would say *you are done*, when the true claim is *we cannot
+  see*. That is the same silent-omission class the earned column already guards.
+
+Both read the plain absence. `earnIsMeasured()` already existed for exactly this
+question and is the reason the branch is two lines rather than a status list
+copied to a fifth site.
+
+### The strikes, and why the base tail went with the cap tail
+
+Sam named the cap line. The base line is its mirror — same sentence shape, same
+tail, written as a pair so the two read as one thing. Striking one would leave a
+half-pair, which reads worse than either state. The re-split FACT is not lost:
+the formula box states it in full and `cpl_funding_cap.test.js` C7 still pins it
+there, which is what made the drill-in copy redundant in the first place.
+
+The gate chip is the same shape of judgment run in reverse. Removing a duplicated
+signal is not removing the signal, so the guard that demanded the gate read
+**without a hover** was re-aimed onto the Elig pie plus the award cell's own
+"confirm participation to start earning" — both of which were already there.
+A guard whose subject is retired gets re-aimed at the requirement, never deleted.
+
+### The lesson that recurred
+
+`a-test-coupled-to-position-or-wording-breaks-on-correct-work` was recorded on
+2026-08-27 after exactly this: a suite indexing cells by position broke when a
+column was added. Today the To go insert shifted every index in
+`cpl_funding_metric_pin.test.js` and left three checks asserting the right thing
+about the wrong cell. **Recording the lesson did not prevent the repeat, because
+the 08-27 fix repaired the assertions rather than the addressing.** The suite now
+maps header text to a key from the table's own `<th>` row and **throws on an
+unmapped header**, so the next column insert is a loud failure naming the column.
+When a coupling lesson recurs, change what the test is coupled *to*.
+
+### The two questions, and the one that had a factual answer
+
+Item 7 — "I thought we designed a simplified flat funding box yesterday, am I
+imagining things" — is checkable, and he is not. It is
+`docs/visuals/2026-08-31-if-tab-simplified.html` §Funding Breakdown: a four-line
+ledger stack with the named-projects fold, base and cap lifted into their own
+section. It never reached the tab. **The reason it stopped is not a reason:** the
+mock is read-only and the seven boxes are the curator's editing surface, but an
+inline editor sits in a ledger row exactly as it sits in a box. Worth saying
+plainly — *"a mock is read-only"* is a description of the mock, not a constraint
+on the port, and it stalled this for a day.
+
+Item 5 got the element-by-element count rather than an opinion: half the
+goal-spine fold is a second printing of the band above it (key, name, citation,
+statute quote, per-priority funding), and half has no other home. The structural
+catch is that **(B) and (C) are separate goals sharing one band and differ on
+precisely the axis §78093.2(d)(2) asks about**, so a band-level evidence sentence
+cannot say both. Both went to Sam as
+`docs/visuals/2026-09-01-if-tab-two-consolidations.html`, numbered for reply.
+
+**Receipts.** PR #1432. `cpl_memory` rows written INSERT-only under author
+`session-219-skytrim` — rollback is
+`delete from cpl_memory where author = 'session-219-skytrim'`. No data writes
+beyond that; shares, factors and titles remain curator edits through the tab.
