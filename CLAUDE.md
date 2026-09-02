@@ -750,6 +750,19 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyCalm S220 — the calm pass, and the text a test does not see (2026-09-02)
+
+**One PR.** Sam's brief: *"get rid of any cheesy glyphs (per our rules) … I want
+folks to feel calm when they open this model."* Every rendered glyph on the
+funding tab is a word or gone (the row toggle is the institution's NAME; the
+sort mark is the one ghosted survivor), the chrome lost its fills, stripes and
+red, the "pools" subtitle left both HTMLs, and **five prose blocks are editable
+in curate** (`text.<key>` overrides, Edit → Save · Cancel · Restore). His
+mid-turn call moved the held-in-reserve figure into the gate sentence and ahead
+of Total Possible. ⭐ `textContent` has no seams and no tooltips — a word sweep
+must read the markup (KB note). Story: `cpl_funding_lessons`; handoff
+`session_221_handoff`.
+
 ### SkyTrim S219 — the drill-in trims, and both consolidations land (2026-09-01)
 
 **Three PRs.** #1432 struck four restatements from the college expand and found
@@ -781,19 +794,6 @@ through a chain that looked entirely computed. **A defaulted field looks compute
 and never moves**, and no single-paint test can see it; the guard changes a dial
 and requires the page to disagree with itself. Story: `cpl_funding_lessons`;
 handoff `session_220_handoff`.
-
-### SkyMeld S218 — four outcomes fold into three bands (2026-09-01)
-
-**Sam's consolidation shipped, PR #1429 (`724feac`).** The priorities and the
-§78093.2(d)(1) goals were two sections describing one allocation; they are now
-one — **(A) Access · (B)+(C) Success · (D) Opportunities** — with membership
-DERIVED from each metric's milestone and an orphan band so nothing vanishes.
-Two measure sources declared (`ppe`/`ppe_u` live, `pac`/`pac_u` awaiting the
-attestation column). **The finding that carried it: the model pays 34% of the
-credit slice and 84% of that comes from the one measure 97 of 115 colleges
-already max out.** Sam ruled the dials (Accepted 25% / factor 1.0) — his to set
-via the tab. Corrected mid-run: the counselor step is a policy attestation, NOT
-batch-proof. Story: `cpl_funding_lessons`; handoff `session_219_handoff`.
 
 ## Troubleshooting
 

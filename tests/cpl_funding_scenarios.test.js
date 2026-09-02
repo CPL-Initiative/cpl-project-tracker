@@ -317,8 +317,11 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  check("toolbar renders ⬇ Excel + ⬇ PDF buttons",
-    !!doc.getElementById("cplFundCsv") && !!doc.getElementById("cplFundPdf"));
+  // The toolbar's second PDF button is gone (2026-09-02): one Save as PDF
+  // control, in the actions row, and Excel as words.
+  check("toolbar renders Download as Excel; the one Save as PDF control is the actions row's",
+    !!doc.getElementById("cplFundCsv") && /Download as Excel/.test(doc.getElementById("cplFundCsv").textContent) &&
+    !doc.getElementById("cplFundPdf") && !!doc.getElementById("cplFundPdfTop"));
   const csv = T._csv();
   const lines = csv.split("\r\n");
   check("CSV: meta line + header + one line per institution + SYSTEM",

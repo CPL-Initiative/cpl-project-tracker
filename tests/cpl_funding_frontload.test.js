@@ -285,7 +285,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   T.render();
 
   check("front-load: the year filter marks the carryover year",
-    doc.querySelector("#cplFundYear").textContent.indexOf("↻") !== -1);
+    /carryover/i.test(doc.querySelector("#cplFundYear").textContent));
   const flLine = doc.querySelector(".cplfund-prio .cplfund-fl-line");
   check("front-load: the priority card states the window is on the table in Year 1",
     !!flLine && /full .* window/i.test(flLine.textContent) &&

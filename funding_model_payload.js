@@ -18,6 +18,12 @@
   function buildPayload(T, D) {
     const pool = function (k) { return Number(T._pool(k)); };
     const model = T._model();
+    // The masthead's two identity tags. The version is the tab's own "Version
+    // as of" date (the ".N" sub-revision is internal and does not display);
+    // the scenario is whichever one this browser has selected, because the
+    // engine resolves the same selection and overlay the tab does.
+    const modelVersion = String(D.model_version || "").replace(/\.\d+$/, "");
+    const scenarioName = (typeof T._scenario === "function" && T._scenario().name) || "";
 
   // One row per INSTITUTION under one pool (2026-08-31): name, district,
   // combined FTES, the one combined max award, and the two flags the page
@@ -105,6 +111,7 @@
   // with the other's number would state a false figure.
   const avg = Math.round(totals.reduce(function (s, v) { return s + v; }, 0) / totals.length);
    const payload = {
+    model_version: modelVersion, scenario: scenarioName,
     pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
             scaling: pool("scaling_projects_tech"),
             floor: pool("floor_window"),

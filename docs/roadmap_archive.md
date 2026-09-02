@@ -10,6 +10,11 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-09-02)
+
+- **2026-08-30 (SkyMirror, S213)** — booted from a **stale greeting** (named 205/208 against highest 212 — Rule 9's failure mode, verified and flagged) with no pointer paste, and the doctrine chain still fired end-to-end; found S212 queue item 1 already merged without a checkpoint, and caught the docs up: the **register re-analysis sheet is BUILT** (#1413) and **awaits Sam's by-number verdicts**; lane file + To-Do feed now say so, with the sequencing rule (Sierra small-model sweep BEFORE verdicts rewrite rows). **Doctrine-probe lane groundwork banked vault-side** (criteria re-read vs the settled corpus, dated addenda, perimeter verified, ablation-redo recipe — CPLBrain#59); a fourth defeat-by-diligence instance is recorded with the instruments, and [`kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test`](kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) gained the abstract form. Merged both 2026-08-30 checkpoint halves (#1414/#1415), tightening this session's tracker text to handoff 213's vault-only boundary. 0 new KB notes (1 updated), 2 memory rows (1 later superseded to honor the boundary).
+- **2026-08-30 (SkyLedger, S210 — PM)** — **the three-repo attach practice became session-checked doctrine** (#1411/#1412, Sam's two yeses): `CLAUDE.md` verifies the set at session start and names what's missing; `scripts/install-three-repo-check.ps1` is the one-time per-machine backstop for the zero-repo case (no CLAUDE.md loads there — a repo-less session is generic Claude, said honestly); guide §12 carries the human half with his reason verbatim ("so they can stay informed and syncd"). A **parallel session line** booted off the one-line handoff pointer and shipped the ordered **Register Re-analysis decision sheet** (#1413 — 22 items awaiting Sam's reply-by-number verdicts). ⚠️ To a primed session, a go-ahead is a work order — "keep going" launched the queue, legitimately. 1 KB note ([`kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one`](kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md)), 2 memory rows.
+
 ## INDEX update-history entries rotated out (2026-08-31)
 
 - **2026-08-28 (SkyLens, S203, Funding lane)** — the curator round trip is **proven**: Sam clicked Publish and his three relabels reached Supabase (md5 `9cf58b99…` → `c95e78aa…`). Curation narrowed to a magic-link reviewer (#1372, ⚠️ `cfp_insert_self` deliberately left open); the **Ed. Code §78093.2(d)(1) spine** landed with Timing as its own section (#1375); the `NC $` column retired and every institution paired as CR + NC rows (#1378). Three KB notes. Corrected three inherited claims — CI was never broken (a **conflicted PR cannot produce a `pull_request` run**), the story corpus is 32/3 not 5, and the $8.96M project pool has no breakdown anywhere. SkyLens S202's narrative archived.
@@ -33,6 +38,21 @@ status: archive
 - **2026-08-13 (evening)** — SkyBridge: the **alignment layer is LIVE**, cpl-chat **v41** (#1153/#1154/#1155). Sierra now tells a college which of its OWN courses to articulate against each credit recommendation, with how other colleges did it alongside as evidence. Sam's acceptance case verified live: Cerritos `WELD 214L` tops both FCAW recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`, Santa Ana `WELD 240`/`244`. Three surfaces: `chatbox_peer_articulations` (9,413), `chatbox_college_courses` (141,696), and one RPC returning both. ⭐ **Two signals, neither sufficient** — Santa Ana mapped courses whose titles contain no "FCAW", so title similarity can never propose them. ⚠️ **The first scorer ranked `ART 100 Introduction To World Art` third for a WELDING rec** — a plausible false positive costs more than a miss on a trust-building surface; content-token gate added, and it *raised* the right answer to 0.761. 1 new KB note.
 - **2026-08-13 (later)** — SkyBridge: Sierra wired to the credit-rec set, **cpl-chat v40** (#1150), and the MAP Users contact audit (#1151). ⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary** — it is derived from *adoptions*, and the statewide route required it non-null, so **38 never-adopted statewide credentials (36 carrying 75 published rec lines)** were excluded from **every** credential route: the Carpenters ladder, NCCER, the CSLB licences, OSHA 10/30. Not ranked last — absent. ⭐ `college_adoption_opportunities` now returns **two labeled bands** with reserved slots, because "N peers already articulate it" said of a zero-adopter credential is a fabricated route. ⭐ **The shelf collapses to 32 distinct courses**, one of which unlocks 12. ⭐ **MAP Users wiring was SOUND** — the expected join bug was not there; the real findings were a personal Gmail first in Mission College's cascade and a trailing-space fragility caught before it fired. 🔬 **Local-course↔CR alignment PROVEN offline** (Cerritos `WELD 214L` tops both FCAW recs) — and it needs **two signals**, because Santa Ana mapped courses whose titles contain no "FCAW". 3 new KB notes.
 
+
+### §11 narrative rotated out (2026-09-02)
+
+### SkyMeld S218 — four outcomes fold into three bands (2026-09-01)
+
+**Sam's consolidation shipped, PR #1429 (`724feac`).** The priorities and the
+§78093.2(d)(1) goals were two sections describing one allocation; they are now
+one — **(A) Access · (B)+(C) Success · (D) Opportunities** — with membership
+DERIVED from each metric's milestone and an orphan band so nothing vanishes.
+Two measure sources declared (`ppe`/`ppe_u` live, `pac`/`pac_u` awaiting the
+attestation column). **The finding that carried it: the model pays 34% of the
+credit slice and 84% of that comes from the one measure 97 of 115 colleges
+already max out.** Sam ruled the dials (Accepted 25% / factor 1.0) — his to set
+via the tab. Corrected mid-run: the counselor step is a policy attestation, NOT
+batch-proof. Story: `cpl_funding_lessons`; handoff `session_219_handoff`.
 
 ### SkyLedger S210 — remediations, the ruleset verdict, and all nineteen verdicts executed (2026-08-30)
 

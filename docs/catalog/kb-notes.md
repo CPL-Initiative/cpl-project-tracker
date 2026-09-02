@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-365 document(s).
+366 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -295,6 +295,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-07-16 |

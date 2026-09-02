@@ -119,15 +119,17 @@
     // toggle + earned/unearned pool boxes; earned cards green, unearned mustard.
     ".cplfund-card.earned { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.unearned { border-left: 4px solid var(--mustard-fill); }",
-    ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
+    ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; }",
     ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
     ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
-    ".cplfund-card-eye { position: absolute; top: 4px; right: 22px; border: 0; background: none; cursor: pointer; font-size: .8rem; line-height: 1; padding: 2px; opacity: .5; }",
-    ".cplfund-card-eye:hover, .cplfund-card-eye:focus-visible { opacity: 1; }",
-    ".cplfund-card-eye.off { opacity: .85; }",
-    ".cplfund-metricdiag { margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--border); border-left: 4px solid var(--mustard-text); border-radius: 8px; background: var(--surface-subtle); font-size: .82rem; }",
+    // The public-visibility control is a WORD (Hide from public / Show to public),
+    // sized to its text and sitting beside the Remove word — never an eye glyph.
+    ".cplfund-card-eye { position: static; border: 1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-muted); border-radius: 5px; cursor: pointer; font-size: .7rem; line-height: 1.2; padding: 1px 6px; font-family: inherit; white-space: nowrap; }",
+    ".cplfund-card-eye:hover, .cplfund-card-eye:focus-visible { color: var(--navy-primary); border-color: var(--navy-secondary); }",
+    ".cplfund-card-eye.off { color: var(--mustard-text); border-color: var(--mustard-text); }",
+    ".cplfund-metricdiag { margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-subtle); font-size: .82rem; }",
     ".cplfund-metricdiag summary { cursor: pointer; }",
-    ".cf-ok { color: var(--green-progress); font-weight: 600; }",
+    ".cf-ok { color: var(--text-muted); font-weight: 600; }",
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
     ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
@@ -138,11 +140,13 @@
     // The Summary (R11, 2026-08-31) — the one over/under readout: the
     // allocation balance, Current Total / rolls-forward, the origination hold,
     // the noncredit face, and held-in-reserve whenever it is non-zero.
-    ".cplfund-summary { margin: 4px 0 14px; padding: 10px 14px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; }",
+    ".cplfund-summary { margin: 4px 0 14px; padding: 10px 14px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; }",
     ".cplfund-summary-lbl { display: block; font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 4px; }",
     ".cplfund-summary ul { margin: 0; padding-left: 1.15em; font-size: .84rem; }",
     ".cplfund-summary li { margin: 3px 0; font-variant-numeric: tabular-nums; }",
-    ".cplfund-summary .ok { color: var(--green-progress); font-weight: 700; }",
+    // The balanced state is the ordinary state, so it reads in ink, not green:
+    // green and red are for a state the reader must act on (the glyph rule).
+    ".cplfund-summary .ok { color: var(--text-strong); font-weight: 700; }",
     ".cplfund-summary .warn { color: var(--red-alert); font-weight: 700; }",
     // Award cells + the expand's 7-column priority table (one-pool port).
     ".cf-award { font-variant-numeric: tabular-nums; white-space: nowrap; }",
@@ -165,13 +169,16 @@
     ".cplfund-earned-line { border-top: 1px dotted var(--border-strong); padding-top: 5px; margin-top: 2px; }",
     // The front-load line — the whole window on the table in Year 1, against an
     // unchanged per-year target. Tinted so it reads as a policy call-out.
-    ".cplfund-fl-line { border-left: 3px solid var(--gold-accent); background: var(--surface-subtle);" +
+    ".cplfund-fl-line { border-left: 3px solid var(--border-strong); background: var(--surface-subtle);" +
       " padding: 5px 8px; margin: 6px 0 2px; border-radius: 0 4px 4px 0; }",
     // Editable/add/delete pool boxes (Sam, 2026-07-23).
     ".cplfund-card.custom-rev { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.custom-ded { border-left: 4px solid var(--red-alert); }",
-    ".cplfund-card-x { position: absolute; top: 5px; right: 6px; background: transparent; color: var(--text-faint); border: 1px solid transparent; border-radius: 5px; width: 20px; height: 20px; line-height: 1; padding: 0; cursor: pointer; font-size: .8rem; font-family: inherit; }",
-    ".cplfund-card-x:hover { border-color: var(--red-alert); color: var(--red-alert); background: var(--surface-opaque); }",
+    // Remove is a WORD, sized to its text, and sits after the figure it removes.
+    ".cplfund-card-x { position: static; background: var(--surface-opaque); color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 5px; line-height: 1.2; padding: 1px 6px; cursor: pointer; font-size: .7rem; font-family: inherit; white-space: nowrap; }",
+    ".cplfund-card-x:hover, .cplfund-card-x:focus-visible { border-color: var(--red-alert); color: var(--red-alert); background: var(--surface-opaque); }",
+    // The two word controls sit in one quiet group at the end of a card.
+    ".cplfund-card-ctl { display: inline-flex; gap: 6px; align-items: center; margin-top: 6px; }",
     ".cplfund-card .l .cplfund-pool-label-input { font-size: .8rem; color: var(--text-muted); text-align: center; }",
     ".cplfund-card-note { font-size: .72rem; color: var(--text-faint); margin-top: 3px; line-height: 1.3; }",
     // ── THE FLAT LEDGER (Sam, 2026-09-01) ──────────────────────────────────
@@ -180,7 +187,7 @@
     // ROLE (a labelled figure), not a shape — so every editor, control, fold
     // and absence guard keeps working; only the presentation moves.
     ".cplfund-cards.cplfund-ledger { display: block; }",
-    ".cplfund-ledger .cplfund-card { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; background: none; border: 0; border-top: 1px solid var(--border); border-radius: 0; padding: 9px 52px 9px 2px; text-align: left; }",
+    ".cplfund-ledger .cplfund-card { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 16px; background: none; border: 0; border-top: 1px solid var(--border); border-radius: 0; padding: 9px 2px; text-align: left; }",
     ".cplfund-ledger .cplfund-card:first-child { border-top: 0; }",
     ".cplfund-ledger .cplfund-card .v { order: 2; font-size: 1rem; text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }",
     ".cplfund-ledger .cplfund-card .l { order: 1; flex: 1 1 260px; min-width: 0; margin-top: 0; font-size: .9rem; color: var(--text-body); text-align: left; }",
@@ -198,8 +205,7 @@
     ".cplfund-ledger .cplfund-card.total, .cplfund-ledger .cplfund-card.custom-rev, .cplfund-ledger .cplfund-card.custom-ded { background: none; border-left: 0; }",
     ".cplfund-ledger .cplfund-card.custom-rev .v { color: var(--green-progress); }",
     ".cplfund-sign { font-variant-numeric: tabular-nums; }",
-    ".cplfund-ledger .cplfund-card-x { top: 9px; }",
-    ".cplfund-ledger .cplfund-card-eye { top: 9px; }",
+    ".cplfund-ledger .cplfund-card-ctl { order: 3; margin-top: 0; }",
     // The amount editor is width:100% for a BOX. In a ledger that stretches its
     // dashed rule most of the way across the row and the figure stops reading as
     // a figure — so the input is sized to the number it holds and right-aligned
@@ -221,8 +227,7 @@
     ".cplfund-context { margin-top: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }",
     ".cplfund-context .cplfund-card { text-align: left; }",
     ".cplfund-context .cplfund-card .v { text-align: left; font-size: 1.1rem; }",
-    "@media (max-width: 560px) { .cplfund-ledger .cplfund-card { padding-right: 44px; } }",
-    ".cplfund-kindtoggle { display: inline-block; margin-top: 3px; background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 5px; padding: 1px 7px; cursor: pointer; font-size: .72rem; font-family: inherit; }",
+        ".cplfund-kindtoggle { display: inline-block; margin-top: 3px; background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 5px; padding: 1px 7px; cursor: pointer; font-size: .72rem; font-family: inherit; }",
     ".cplfund-kindtoggle:hover { border-color: var(--gold-accent); }",
     ".cplfund-addbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 2px; }",
     ".cplfund-addbox .dk { font-size: .8rem; }",
@@ -232,23 +237,23 @@
     // never the only signal — every state chip carries a WORD, so the section
     // reads the same in greyscale and to a screen reader.
     ".cplfund-goal-intro, .cplfund-goal-regnote { font-size: .85rem; max-width: var(--cpl-measure, none); }",
-    ".cplfund-goal-align { padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
+    ".cplfund-goal-align { padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; }",
     ".cplfund-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin: 12px 0 4px; }",
     ".cplfund-goal { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-goal h4 { margin: 0 0 8px; color: var(--navy-primary); font-size: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }",
     ".cplfund-goal-key { font-weight: 700; }",
     ".cplfund-goal-cite { font-size: .7rem; font-weight: 400; color: var(--text-faint); letter-spacing: .02em; }",
-    ".cplfund-goal-quote { margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--gold-accent); background: var(--surface-opaque); font-size: .8rem; font-style: italic; color: var(--text-body); border-radius: 0 4px 4px 0; }",
+    ".cplfund-goal-quote { margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--border-strong); background: var(--surface-opaque); font-size: .8rem; font-style: italic; color: var(--text-body); border-radius: 0 4px 4px 0; }",
     ".cplfund-goal-axes { display: grid; gap: 10px; }",
     ".cplfund-goal-ax h5 { margin: 0 0 4px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-goal-ax ul { margin: 0; padding-left: 18px; font-size: .8rem; line-height: 1.6; }",
     ".cplfund-goal-ax p { margin: 0; font-size: .8rem; line-height: 1.55; }",
     ".cplfund-goal-empty { color: var(--text-faint); font-style: italic; }",
     ".cplfund-goal-chip { display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border: 1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); }",
-    ".cplfund-goal-chip.ok { border-color: var(--green-progress); color: var(--green-progress); }",
+    ".cplfund-goal-chip.ok { border-color: var(--border-strong); color: var(--text-strong); }",
     ".cplfund-goal-chip.warn { border-color: var(--mustard-text); color: var(--mustard-text); }",
     ".cplfund-goal-chip.gap { border-color: var(--text-faint); color: var(--text-faint); }",
-    ".cplfund-goal-limit { margin-top: 8px !important; padding: 6px 9px; border-left: 3px solid var(--mustard-text); background: var(--surface-opaque); border-radius: 0 4px 4px 0; font-size: .78rem !important; }",
+    ".cplfund-goal-limit { margin-top: 8px !important; padding: 6px 9px; border-left: 3px solid var(--border-strong); background: var(--surface-opaque); border-radius: 0 4px 4px 0; font-size: .78rem !important; }",
     ".cplfund-goal-derived { font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-faint); border: 1px dashed var(--border-strong); border-radius: 4px; padding: 0 4px; }",
     // ── the (d)(2) account: four ROWS, not four cards (Sam, 2026-09-01) ──
     // These come after the card rules above deliberately: .cplfund-goal is now
@@ -284,7 +289,7 @@
     ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link); text-decoration: underline; text-decoration-style: dotted; margin-left: 1px; }",
     ".cplfund-goalsup:focus-visible { outline: 2px solid var(--navy-secondary); outline-offset: 2px; border-radius: 2px; }",
     "@media (max-width: 560px) { .cplfund-goals { grid-template-columns: 1fr; } }",
-    ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
+    ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
     // Uniform body-copy size across the whole priority box + the timing rows
     // (Sam, 2026-07-23) — desc / nums / metric / strategies / timing all sit at
@@ -324,7 +329,7 @@
     // misreading this exists to prevent.
     ".cplfund-saving.local { color: var(--mustard-text); font-weight: 600; }",
     // Timing milestone list (below the priority boxes).
-    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
+    ".cplfund-timing { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .8rem; }",
     ".cplfund-timing-row { display: flex; align-items: center; gap: 8px; margin: 4px 0; }",
     ".cplfund-timing-label { flex: 1 1 auto; min-width: 0; }",
     ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
@@ -353,7 +358,10 @@
     // Centered numeric columns (Sam, 2026-08-31): CR FTES · NC FTES · Elig ·
     // CR award sit centered; the last column (NC award) stays right-aligned.
     ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
-    ".cplfund-table th .arr { font-size: .7rem; opacity: .85; }",
+    // The sort mark is the one glyph that earns its place (no word fits a column
+    // header, and aria-sort carries the state for a reader who cannot see it) —
+    // so it is ghosted CO blue on white, the quietest thing in the header row.
+    ".cplfund-table th .arr { font-size: .7rem; color: var(--cobalt-on-dark); margin-left: 2px; }",
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
     ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
     ".cplfund-table tbody tr.cplfund-row { cursor: pointer; }",
@@ -398,10 +406,11 @@
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
     // The caret is a real <button> (a11y, 2026-07-28) — reset the button chrome
     // so it still reads as a bare caret glyph, keep it keyboard-focusable.
-    ".cplfund-caret { display: inline-block; width: 1.2em; color: var(--text-faint); transition: transform .12s; background: none; border: none; padding: 0; margin: 0 1px 0 0; font: inherit; line-height: 1; cursor: pointer; vertical-align: baseline; }",
-    ".cplfund-caret:hover { color: var(--navy-secondary); }",
+    // The row toggle is the institution's NAME, as a real <button> (a11y): every
+    // control is a word, and the name is the word. No caret, no rotation.
+    ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 0; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
+    ".cplfund-caret:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }",
     ".cplfund-caret:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
-    "tr.cplfund-open .cplfund-caret { transform: rotate(90deg); }",
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
     ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
     ".cplfund-detail-grid .dk { color: var(--text-muted); }",
@@ -410,24 +419,29 @@
     ".cplfund-foot div { margin: 2px 0; overflow-wrap: anywhere; }",
     ".cplfund-empty { border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center; }",
     // ── config / auth bar ──
-    ".cplfund-authbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 10px 14px; font-size: .85rem; margin: 0 0 14px; }",
+    // One quiet line, no fill and no stripe: who is signed in, where edits go,
+    // and the two word controls. Calm is the brief (Sam, 2026-09-02).
+    ".cplfund-authbar { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; background: none; border: 0; border-bottom: 1px solid var(--border); padding: 2px 0 10px; font-size: .85rem; margin: 0 0 14px; }",
     ".cplfund-authbar .grow { flex: 1 1 240px; }",
     ".cplfund-authbar .mode { font-weight: 600; }",
-    ".cplfund-authbar .mode.shared { color: var(--green-progress); }",
-    ".cplfund-authbar .mode.scenario { color: var(--navy-secondary); }",
-    ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
-    ".cplfund-authbar button.rst.warn { background: var(--red-alert); }",
+    ".cplfund-authbar .mode.shared, .cplfund-authbar .mode.scenario { color: var(--text-body); }",
+    // Reset is a quiet outlined word; Publish — the one action that resolves a
+    // state the curator must act on — is the single filled control on the line.
+    ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-authbar button.rst.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     // ── calculation sanity-check link (private tab only) ──
-    ".cplfund-sanity { display: inline-block; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--seal-blue); border-radius: 8px; padding: 6px 12px; font-size: .83rem; font-weight: 600; white-space: nowrap; }",
+    // A plain link, not a boxed strip: the explainer is a reference, not a control.
+    ".cplfund-sanity { display: inline-block; background: none; border: 0; padding: 0; font-size: .88rem; font-weight: 600; color: var(--accent-link); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }",
     "#cplFundTitleLink:empty { display: none; }",
     // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
-    ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 10px; padding: 10px 14px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; }",
+    ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; margin: 0 0 12px; padding: 0; background: none; border: 0; }",
     ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; }",
     ".cplfund-ctl-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-ctl-hint { font-size: .78rem; }",
-    ".cplfund-area { font-size: .72rem; font-weight: 700; color: var(--navy-primary); background: var(--surface-opaque); border: 1px solid var(--gold-accent); border-radius: 10px; padding: 1px 8px; }",
+    ".cplfund-area { font-size: .72rem; font-weight: 600; color: var(--text-muted); background: none; border: 0; padding: 0; }",
     ".cplfund-strip select, .cplfund-addproj select, .cplfund-addproj input { padding: 4px 8px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .85rem; font-family: inherit; background: var(--surface-opaque); color: var(--text-body); }",
-    ".cplfund-strip button.rst, .cplfund-addproj button.rst { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-strip button.rst, .cplfund-addproj button.rst { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
+    ".cplfund-strip button.rst:hover, .cplfund-addproj button.rst:hover { border-color: var(--navy-secondary); }",
     ".cplfund-addproj { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 0 0 12px; padding: 10px 14px; background: var(--surface-muted); border: 1px dashed var(--border-strong); border-radius: 8px; }",
     // ── Report sub-view: doc-type toolbar + editable memo (Sam, 2026-07-23) ──
     ".cplfund-subtabs { display: inline-flex; gap: 4px; margin: 0 0 12px; }",
@@ -475,11 +489,12 @@
     ".cplfund-ed-area { display: block; width: 100%; resize: vertical; line-height: 1.35; margin-top: 2px; }",
     ".cplfund-warn-text { color: var(--red-alert); font-weight: 600; }",
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
-    ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
+    ".cplfund-est { font-size: .72rem; color: var(--mustard-text); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
+    ".cplfund-bound { color: var(--text-muted); margin-left: 3px; }",
     // so it reads as a quiet marker, not a bright emoji.
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
-    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
+    ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
     // Requirement list: a bullet + one full-width editable line per item, all
     // left-aligned so they line up; the two built-ins carry a muted status
@@ -495,7 +510,7 @@
     ".cplfund-reqadd .dk { margin-left: 8px; font-size: .8rem; }",
     ".cplfund-reqrestore { margin: 8px 0 0 20px; font-size: .82rem; }",
     ".cplfund-reqactions { margin: 10px 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }",
-    ".cplfund-copymsg { color: var(--green-progress); font-size: .8rem; font-weight: 600; }",
+    ".cplfund-copymsg { color: var(--text-body); font-size: .8rem; font-weight: 600; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
     // Column show/hide menu (Sam, 2026-07-24) — a ⚙ Columns dropdown of checkboxes.
@@ -583,7 +598,7 @@
     // Matches .cplfund-caret exactly — width AND the 1px right margin. If that
     // rule's width changes, this one has to follow, which is why they sit in the
     // same stylesheet a few lines apart.
-    ".cf-caretpad { display: inline-block; width: 1.2em; margin: 0 1px 0 0; }",
+    ".cf-caretpad { display: none; }",
     // Sam: "maybe add a gentle chip to note that it doesn't meet the threshold."
     // Gentle = quieter than the lane chip beside it, and a WORD plus a NUMBER
     // ("below 500") rather than a colour or a glyph, so it survives greyscale
@@ -597,14 +612,14 @@
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
-    ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
+    // Ghosted, not decorated: a quiet outlined word beside the title, no fill.
+    ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: none; color: var(--text-muted); border: 1px solid var(--border-strong); font-size: .38em; font-weight: 600; letter-spacing: .08em; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; }",
     // ── self-service opt-in (public + private) + the CO confirm lane ──────────
     ".cplfund-optin { grid-column: 1 / -1; margin-top: 8px; }",
-    ".cplfund-optin-done { color: var(--green-progress); font-weight: 600; }",
+    ".cplfund-optin-done { color: var(--text-body); font-weight: 600; }",
     ".cplfund-optin-done .dk { font-weight: 400; }",
     ".cplfund-optin-tick { font-weight: 700; }",
-    ".cplfund-optin-open { border-color: var(--gold-accent); }",
-    ".cplfund-optin-form { background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; max-width: 640px; }",
+        ".cplfund-optin-form { background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; max-width: 640px; }",
     ".cplfund-optin-head { font-weight: 600; color: var(--navy-secondary); margin-bottom: 8px; }",
     ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
     ".cplfund-optin-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
@@ -615,21 +630,21 @@
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
     // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
-    ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; font-size: .68rem; font-weight: 600; border: 1px solid var(--gold-accent); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
-    ".cplfund-optin-jump:hover { background: var(--mustard-fill); }",
+    ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; font-size: .68rem; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
+    ".cplfund-optin-jump:hover { background: var(--surface-subtle); border-color: var(--navy-secondary); }",
     // CO confirm/revoke block shown inline in a reviewer's row drill-in.
-    ".cplfund-corow { border: 1px dashed var(--gold-accent); border-radius: 8px; background: var(--surface-opaque); padding: 7px 10px; margin-top: 8px; }",
+    ".cplfund-corow { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 7px 10px; margin-top: 8px; }",
     ".cplfund-corow-head { font-weight: 700; color: var(--navy-primary); font-size: .8rem; margin-bottom: 3px; }",
-    ".cplfund-colane { border: 1px solid var(--gold-accent); border-radius: 8px; background: var(--surface-opaque); padding: 10px 13px; margin: 4px 0 14px; }",
+    ".cplfund-colane { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 10px 13px; margin: 4px 0 14px; }",
     ".cplfund-colane-head { font-weight: 700; color: var(--navy-primary); display: flex; align-items: center; gap: 9px; }",
-    ".cplfund-colane-badge { background: var(--mustard-fill); color: var(--text-strong); font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 11px; }",
+    ".cplfund-colane-badge { background: none; border: 1px solid var(--mustard-text); color: var(--mustard-text); font-size: .68rem; font-weight: 700; padding: 1px 9px; border-radius: 11px; }",
     ".cplfund-colane-intro { font-size: .78rem; margin: 5px 0 9px; line-height: 1.4; }",
     ".cplfund-colane-sub { font-weight: 600; color: var(--navy-secondary); font-size: .82rem; margin: 6px 0 4px; }",
     ".cplfund-colane-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--border); }",
     ".cplfund-colane-who { font-size: .84rem; color: var(--text-body); line-height: 1.35; }",
     ".cplfund-colane-act { flex: 0 0 auto; display: flex; gap: 6px; }",
-    ".cplfund-colane-ok { border-color: var(--green-progress); color: var(--green-progress); }",
-    ".cplfund-colane-no { border-color: var(--red-alert); color: var(--red-alert); }",
+    ".cplfund-colane-ok { border-color: var(--border-strong); color: var(--navy-primary); }",
+    ".cplfund-colane-no { border-color: var(--border-strong); color: var(--red-alert); }",
     ".cplfund-colane-more { margin-top: 7px; }",
     ".cplfund-colane-more > summary { cursor: pointer; font-size: .8rem; color: var(--text-muted); }",
     // ── collapsible sections (Sam, 2026-07-27): each top-level section folds ──
@@ -640,16 +655,34 @@
     ".cplfund-sec > summary h3 { margin: 13px 0; }",
     ".cplfund-sec > summary:hover h3 { color: var(--navy-secondary); }",
     ".cplfund-sec > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; border-radius: 8px; }",
-    ".cplfund-sec-chev { color: var(--text-muted); transition: transform .15s; font-size: .8em; flex: 0 0 auto; }",
-    ".cplfund-sec:not([open]) > summary .cplfund-sec-chev { transform: rotate(-90deg); }",
+    // The fold control is a WORD at the right edge of the heading — Show when the
+    // section is closed, Hide when open — never a chevron. Generated content so
+    // the native <details> keeps carrying the state to assistive tech.
+    ".cplfund-sec-word { margin-left: auto; flex: 0 0 auto; font-size: .78rem; font-weight: 600; color: var(--text-muted); }",
+    ".cplfund-sec-word::before { content: \"Hide\"; }",
+    ".cplfund-sec:not([open]) > summary .cplfund-sec-word::before { content: \"Show\"; }",
+    ".cplfund-sec > summary:hover .cplfund-sec-word { text-decoration: underline; }",
     ".cplfund-sec-body { padding: 2px 16px 14px; }",
     ".cplfund-about p { margin: 0 0 10px; font-size: .92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }",
-    ".cplfund-about p:last-child { margin-bottom: 0; color: var(--text-muted); }",
+    // ── editable prose blocks (Sam, 2026-09-02: "edit while in curate, any of
+    // the text sections"). Prose reads as prose; a signed-in reviewer gets one
+    // word — Edit — under the block, and a plain textarea when they take it.
+    ".cplfund-prose p { margin: 0 0 10px; font-size: .92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }",
+    ".cplfund-prose p:last-of-type { margin-bottom: 0; }",
+    ".cplfund-college-intro { margin: 0 0 8px; }",
+    ".cplfund-basis .cplfund-prose p { margin: 0; line-height: 1.5; }",
+    ".cplfund-prose-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: .78rem; }",
+    ".cplfund-textbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 9px; cursor: pointer; font-size: .75rem; font-family: inherit; }",
+    ".cplfund-textbtn:hover { border-color: var(--navy-secondary); }",
+    ".cplfund-textbtn.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
+    ".cplfund-prose-ta { display: block; width: 100%; box-sizing: border-box; font: inherit; font-size: .9rem; line-height: 1.5; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; resize: vertical; }",
+    ".cplfund-prose-ta:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
     // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
     // (privacy-suppressed) / not-yet / pending-feed.
-    ".cf-ess { font-weight: 700; font-size: .95rem; }",
-    ".cf-ess.ok { color: var(--green-progress); }",
-    ".cf-ess.part { color: var(--gold-accent); }",
+    // Words, not marks (met / partial / not yet / n/a / pending), in ink grades.
+    ".cf-ess { font-weight: 600; font-size: .8rem; white-space: nowrap; }",
+    ".cf-ess.ok { color: var(--text-strong); }",
+    ".cf-ess.part { color: var(--mustard-text); }",
     ".cf-ess.no { color: var(--text-muted); font-weight: 400; }",
     ".cf-ess.pend { color: var(--text-faint); font-weight: 400; }",
     ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
@@ -2144,7 +2177,7 @@
   function confirmPoolDelete() {
     try {
       return window.confirm("Deleting or hiding this box changes the funding calculations " +
-        "(the net college pool and every college's allocation update). Continue?");
+        "(the net institution funding and every institution's allocation update). Continue?");
     } catch (e) { return true; }
   }
   function setPrio(slot, idx, field, value) {
@@ -2239,13 +2272,152 @@
   }
   function setTiming(list) { activeOverride().timing = (list || []).slice(); persistActive(); }
 
+  // ── EDITABLE PROSE (Sam, 2026-09-02: "It would be nice to be able to edit
+  //    while in curate, any of the text sections") ─────────────────────────
+  // Every prose block on the tab renders from ONE registry: a house default
+  // (HTML, written here) and an optional override a signed-in reviewer typed,
+  // stored as PLAIN TEXT under `text.<key>` in the config layers — SCENARIO ??
+  // SHARED ?? default, the same resolution every dial uses, so Reset returns
+  // the words with the numbers and Publish carries them to everyone. Plain
+  // text on purpose: an override is escaped on render, a blank line starts a
+  // paragraph, and nobody can type markup into a page every visitor reads.
+  // The eligibility introduction moved in here from its own always-open
+  // textarea; its legacy `eligIntro` key still resolves so nothing saved is lost.
+  var TEXT_BLOCKS = {
+    about:         { label: "the introduction", rows: 9 },
+    reading:       { label: "Reading the funding", rows: 5 },
+    elig_intro:    { label: "the eligibility introduction", rows: 3 },
+    nc_rules:      { label: "the earning rules for noncredit", rows: 7 },
+    college_intro: { label: "the institution table introduction", rows: 4 }
+  };
   var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
     "(badges are informational in this draft — no dollar figure changes yet):";
-  function eligIntro() {
-    var v = firstDefined(SCENARIO.eligIntro, SHARED.eligIntro, base().elig_intro);
-    return v == null ? DEFAULT_ELIG_INTRO : v;
+  // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01).
+  // Written in the CCCCO house voice: no bold, no bullets, no glyphs, claims
+  // anchored to the instrument that carries them, and a short declarative after
+  // a long qualified one. It carries NO dollar figures, counts or weights —
+  // partly the sunshine rule, and partly because an introduction that has to be
+  // re-checked against a live solve every time a dial moves is a liability.
+  var ABOUT_DEFAULT_HTML =
+    "<p>The Legislature appropriated one-time funding to the Chancellor&rsquo;s Office to help colleges " +
+    "build the capacity to award credit for prior learning. This page is the model that distributes it.</p>" +
+    "<p>Every participating institution is sized by the teaching it actually does, its credit and " +
+    "noncredit FTES together, and receives a share of the total on that basis. That share is then held " +
+    "between a minimum and a maximum, so a small college still receives enough to staff the work and no " +
+    "single institution takes a disproportionate part of the allocation. What results is a maximum award, " +
+    "not a grant. An institution draws it down by meeting the outcomes Ed. Code &sect;78093.2(d)(1) names, " +
+    "measured from what its own students record in MAP, and any part it does not earn stays available to " +
+    "it rather than moving elsewhere.</p>" +
+    "<p>The model is in draft, and every figure here is computed live from the dials below.</p>";
+  var READING_DEFAULT_HTML =
+    "<p>Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
+    "&mdash; what has been earned to date &mdash; beneath it. Awards are based on outcomes, not automatically " +
+    "awarded: institutions earn on the CPL they actually post in MAP &mdash; " +
+    "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
+    "target draws half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
+    "The <strong>noncredit share</strong> of an award earns only against the noncredit measures.</p>";
+  var NC_RULES_DEFAULT_HTML = "<ul>" +
+    "<li><strong>A college&rsquo;s noncredit share</strong> of its combined award earns against the " +
+    "noncredit priority measures (ruled 2026-08-31).</li>" +
+    "<li><strong>The noncredit-only institutions earn by origination</strong> &mdash; CPL that " +
+    "originates from their programs and is transcribed at a credit college. NOCE and SDCCE&rsquo;s " +
+    "origination counts across their district&rsquo;s credit campuses; Calbright&rsquo;s counts " +
+    "statewide. The receiving college earns on the same CPL under its own measures &mdash; the same " +
+    "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
+    "</ul>";
+  var COLLEGE_INTRO_DEFAULT_HTML =
+    "<p>Alphabetical. The award figures are each institution&#39;s <strong>max award</strong> &mdash; " +
+    "maximum funding to be awarded based on measurable outcomes and allocated as credit and noncredit " +
+    "subtotals. Click an institution for its per-priority funding, targets, actuals, and the participation " +
+    "confirmation.</p>";
+  function textDefaultHtml(key) {
+    if (key === "about") return ABOUT_DEFAULT_HTML;
+    if (key === "reading") return READING_DEFAULT_HTML;
+    if (key === "nc_rules") return NC_RULES_DEFAULT_HTML;
+    if (key === "college_intro") return COLLEGE_INTRO_DEFAULT_HTML;
+    if (key === "elig_intro") {
+      var v = base().elig_intro;
+      return "<p>" + esc(v == null ? DEFAULT_ELIG_INTRO : v) + "</p>";
+    }
+    return "";
   }
-  function setEligIntro(v) { activeOverride().eligIntro = v; persistActive(); }
+  // HTML → the plain text a reviewer edits: paragraphs separated by a blank
+  // line, entities decoded, tags dropped. The same function normalizes what
+  // they type back, so "unchanged" compares equal and stores nothing.
+  function htmlToPlain(html) {
+    var t = String(html || "")
+      .replace(/<br\s*\/?>/gi, "\n")
+      .replace(/<\/(p|li|div|h[1-6])>/gi, "\n\n")
+      .replace(/<[^>]+>/g, "")
+      .replace(/&nbsp;/g, " ").replace(/&mdash;/g, "\u2014").replace(/&ndash;/g, "\u2013")
+      .replace(/&rsquo;/g, "\u2019").replace(/&lsquo;/g, "\u2018").replace(/&rdquo;/g, "\u201d").replace(/&ldquo;/g, "\u201c")
+      .replace(/&hellip;/g, "\u2026").replace(/&sect;/g, "\u00a7").replace(/&times;/g, "\u00d7").replace(/&divide;/g, "\u00f7")
+      .replace(/&asymp;/g, "\u2248").replace(/&middot;/g, "\u00b7").replace(/&ge;/g, "\u2265").replace(/&le;/g, "\u2264")
+      .replace(/&bull;/g, "\u2022").replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+      .replace(/&#(\d+);/g, function (_, n) { return String.fromCharCode(Number(n)); })
+      .replace(/&amp;/g, "&");
+    return plainNormalize(t);
+  }
+  function plainNormalize(t) {
+    return String(t == null ? "" : t).replace(/\r\n?/g, "\n").split(/\n\s*\n/)
+      .map(function (para) { return para.replace(/[ \t]+/g, " ").replace(/ ?\n ?/g, "\n").trim(); })
+      .filter(Boolean).join("\n\n");
+  }
+  function plainToHtml(t) {
+    return plainNormalize(t).split(/\n\n/).map(function (para) {
+      return "<p>" + esc(para).replace(/\n/g, "<br>") + "</p>";
+    }).join("");
+  }
+  function textOverride(key) {
+    var v = firstDefined(
+      SCENARIO.text && SCENARIO.text[key],
+      SHARED.text && SHARED.text[key],
+      key === "elig_intro" ? SCENARIO.eligIntro : undefined,
+      key === "elig_intro" ? SHARED.eligIntro : undefined);
+    return (v == null || !String(v).trim()) ? null : String(v);
+  }
+  function textIsCustom(key) { return textOverride(key) != null; }
+  function textPlain(key) { var o = textOverride(key); return o != null ? plainNormalize(o) : htmlToPlain(textDefaultHtml(key)); }
+  function textHtml(key) { var o = textOverride(key); return o != null ? plainToHtml(o) : textDefaultHtml(key); }
+  function setText(key, v) {
+    var ov = activeOverride();
+    var clean = plainNormalize(v);
+    ov.text = isPlainObj(ov.text) ? ov.text : {};
+    if (!clean || clean === htmlToPlain(textDefaultHtml(key))) delete ov.text[key];
+    else ov.text[key] = clean;
+    if (!Object.keys(ov.text).length) delete ov.text;
+    if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
+    persistActive();
+  }
+  // One prose block. Prose reads as prose for everyone; a signed-in reviewer
+  // gets the word Edit beneath it, and a plain textarea when they take it —
+  // Save · Cancel · Restore the default text. Public mode never sees a control
+  // (the emitter checks, and the CURATE_ATTRS sweep is the backstop).
+  function proseBlockHtml(key, extraCls) {
+    var canEdit = unlocked() && !publicMode();
+    var editing = canEdit && state.textEditing === key;
+    var meta = TEXT_BLOCKS[key] || { label: key, rows: 4 };
+    var custom = textIsCustom(key);
+    var html = '<div class="cplfund-prose' + (extraCls ? " " + extraCls : "") + '" data-textblock="' + esc(key) + '">';
+    if (editing) {
+      var draft = state.textDraft[key] != null ? state.textDraft[key] : textPlain(key);
+      html += '<textarea class="cplfund-prose-ta" data-textarea="' + esc(key) + '" rows="' + meta.rows +
+        '" aria-label="Edit ' + esc(meta.label) + '">' + esc(draft) + "</textarea>" +
+        '<div class="cplfund-prose-ctl">' +
+        '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
+        '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
+        (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
+        '<span class="dk">Plain text. A blank line starts a new paragraph. Saves for everyone.</span></div>';
+    } else {
+      html += textHtml(key);
+      if (canEdit) {
+        html += '<div class="cplfund-prose-ctl">' +
+          '<button type="button" class="cplfund-textbtn" data-textedit="' + esc(key) + '">Edit</button>' +
+          (custom ? '<span class="dk">Customized text.</span>' : "") + "</div>";
+      }
+    }
+    return html + "</div>";
+  }
 
   // ── Supabase shared config I/O ────────────────────────────────────────
   // ── PUBLIC MODE (Sam's ask #3, 2026-07-30) ───────────────────────────────
@@ -2272,7 +2444,8 @@
     "data-reqdel", "data-reqhide", "data-reqshow",
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
-    "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
+    "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
+    "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -2615,13 +2788,27 @@
     if (partShown() && !ELIG.optin[college]) missing.push(partReqText());
     return { pending: false, blocked: missing.length > 0, missing: missing };
   }
-  function baselineGateText(college) {
+  // `held` — the dollars this college's posted CPL would already have earned
+  // of its max award. Named INSIDE the gate sentence rather than as a note of
+  // its own (Sam, 2026-09-02: a separate "$132k in reserve" item under the NC
+  // column "isn't clear when compared to 400k available"), so the figure reads
+  // beside the requirement that holds it and as a part of the max award.
+  function baselineGateText(college, held) {
     var g = baselineGate(college);
     if (g.pending) return "baseline participation status pending (MAP coordinator data not loaded) — funding is not withheld while pending";
     if (!g.blocked) return "baseline participation met — this college can draw its earned funding";
-    return "BASELINE NOT MET — earned funding is withheld and held in reserve until this college " +
-      stripTags(g.missing.join(" and ")) + ". Its allocation cap is unchanged and the dollars roll forward, " +
-      "so qualifying later still lets it draw.";
+    // Calm words, and each missing requirement numbered on its own — the
+    // requirement texts are curator-written sentences, and joined with "and"
+    // they ran together into one unreadable clause (Sam's screenshot, 2026-09-02).
+    var reqs = g.missing.map(function (m, i) { return "(" + (i + 1) + ") " + stripTags(m); }).join("; ");
+    var scope = (g.missing.length > 1 ? "each of these: " : "this requirement: ") + reqs;
+    if (held > 0.5) {
+      return "Baseline not met. " + fmtMoney(held) + " of its max award — earned on the CPL this college has " +
+        "already posted in MAP — is held in reserve, not lost, until it meets " + scope +
+        ". The rest of the max award stays there to earn, and qualifying later still lets it draw.";
+    }
+    return "Baseline not met. Earned funding is held in reserve until this college meets " + scope +
+      ". Its max award is unchanged and the dollars roll forward, so qualifying later still lets it draw.";
   }
   function eligScore(college) {
     if (!ELIG.coordOk) return null;
@@ -2836,12 +3023,12 @@
         (rev.requested_at ? ' <span class="dk">&middot; submitted ' + esc(String(rev.requested_at).slice(0, 10)) + "</span>" : "") + "</div>"
       : "";
     var actions = row.status === "confirmed"
-      ? '<span class="cplfund-optin-tick">✓</span> <strong>CO-confirmed</strong>' +
+      ? '<strong>CO-confirmed</strong>' +
         (rev && rev.confirmed_at ? ' <span class="dk">' + esc(String(rev.confirmed_at).slice(0, 10)) + "</span>" : "") +
         ' <button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Revoke</button>'
-      : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(college) + '">✓ Confirm</button>' +
-        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">✕ Reject</button>';
-    return '<div class="cplfund-corow"><div class="cplfund-corow-head">🗳 Chancellor&#39;s Office</div>' +
+      : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(college) + '">Confirm</button>' +
+        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Reject</button>';
+    return '<div class="cplfund-corow"><div class="cplfund-corow-head">Chancellor&#39;s Office</div>' +
       who + '<div class="cplfund-optin-actions">' + actions + "</div></div>";
   }
   // The per-college opt-in affordance shown in the row drill-in — a plain button
@@ -2852,13 +3039,13 @@
     var row = ELIG.optinRow[college];
     var ui = OPTIN_UI[college] || {};
     if (row && row.status !== "revoked") {
-      var done = '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
+      var done = '<div class="cplfund-optin cplfund-optin-done">' +
         "<strong>Opted in to participate</strong> <span class=\"dk\">(" + esc(optinStateLabel(college)) + ")</span></div>";
       // Reviewers get the confirm/revoke controls right here on the college's row.
       return unlocked() ? done + coRowActionsHtml(college, row) : done;
     }
     if (ui.done) {
-      return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
+      return '<div class="cplfund-optin cplfund-optin-done">' +
         "<strong>Thank you — your participation is confirmed.</strong> " +
         '<span class="dk">The Chancellor&#39;s Office will acknowledge it; your college is counted as participating in the meantime.</span></div>';
     }
@@ -2918,8 +3105,8 @@
       body += '<div class="cplfund-colane-sub">Awaiting your confirmation (' + pending.length + ")</div>" +
         pending.map(function (r) {
           return line(r,
-            '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(r.college) + '">✓ Confirm</button>' +
-            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">✕ Reject</button>');
+            '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(r.college) + '">Confirm</button>' +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">Reject</button>');
         }).join("");
     }
     if (confirmed.length) {
@@ -2936,7 +3123,7 @@
             '<button type="button" class="cplfund-optbtn" data-optinremove="' + esc(r.college) + '">Remove</button>');
         }).join("") + "</details>";
     }
-    return '<div class="cplfund-colane"><div class="cplfund-colane-head">🗳 CO opt-in review' +
+    return '<div class="cplfund-colane"><div class="cplfund-colane-head">CO opt-in review' +
       (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " to confirm</span>" : "") +
       "</div>" +
       '<div class="dk cplfund-colane-intro">A college administrator self-attested each request below. Confirm to acknowledge it (the college already counts as participating — this is your record check), or Reject to withhold participation.</div>' +
@@ -3103,7 +3290,7 @@
     });
     // Editable textareas (priority description/metric) flatten to their text;
     // the remaining textareas (internal monitor notes) + buttons + auth bar drop.
-    clone.querySelectorAll("textarea[data-edit]").forEach(function (el) {
+    clone.querySelectorAll("textarea[data-edit], textarea[data-textarea]").forEach(function (el) {
       var span = el.ownerDocument.createElement("strong");
       span.textContent = el.value || el.textContent || "";
       el.parentNode.replaceChild(span, el);
@@ -3149,7 +3336,7 @@
       ".dk{color:#555;}@media print{body{margin:8mm;}}";
     return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — " +
       esc(windowLabel()) + "</title><style>" + css + "</style></head><body>" +
-      "<h2>CPL Implementation Funding <small style='font-weight:400;'>(DRAFT scenario tool" +
+      "<h2>CPL Implementation Funding <small style='font-weight:400;'>(draft scenario tool" +
       (isDirty() && !unlocked() ? " · " + esc(activeScenario) : "") + ")</small></h2>" +
       clone.innerHTML + "</body></html>";
   }
@@ -3292,7 +3479,7 @@
   // decorative glyphs go, state-bearing ones stay).
   var SANITY_BLURB = "A plain-language walk-through of the whole model: what comes off the top, " +
     "how each college's share is set, what a college has to do to qualify, and how the funding is " +
-    "earned. Team-access Claude artifact — opens in a new tab.";
+    "earned. Opens in a new tab.";
   function sanityLinkHtml() {
     if (publicMode()) return "";
     return '<a class="cplfund-sanity" href="' + SANITY_URL + '" target="_blank" rel="noopener" title="' +
@@ -3320,19 +3507,19 @@
     var projBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Project</span>' +
       '<select id="cplFundProjSel" class="cplfund-ed-sel" aria-label="Funding project">' + projOpts + "</select>" +
       '<span class="cplfund-area" title="COBI area: ' + esc(am.full) + '">' + esc(am.label) + "</span>" +
-      (curator ? '<button type="button" class="rst" id="cplFundProjAdd" title="Add a new funding project (clones the current model as its starting point)">＋ Project</button>' : "") +
+      (curator ? '<button type="button" class="rst" id="cplFundProjAdd" title="Add a new funding project (clones the current model as its starting point)">Add project</button>' : "") +
       "</div>";
     var scNames = scenarioNames();
     var scOpts = scNames.map(function (n) {
       var hasEdits = proj.scenarios[n] && Object.keys(proj.scenarios[n]).length;
-      return '<option value="' + esc(n) + '"' + (n === activeScenario ? " selected" : "") + ">" + esc(n) + (hasEdits ? " ●" : "") + "</option>";
+      return '<option value="' + esc(n) + '"' + (n === activeScenario ? " selected" : "") + ">" + esc(n) + (hasEdits ? " (edited)" : "") + "</option>";
     }).join("");
     var scBlock = '<div class="cplfund-ctl"><span class="cplfund-ctl-lbl">Scenario</span>' +
       '<select id="cplFundScenSel" class="cplfund-ed-sel" aria-label="Active scenario">' + scOpts + "</select>" +
       (curator
-        ? '<button type="button" class="rst" id="cplFundScenNew" title="New scenario — copies the current scenario so you can tweak from it">＋ New</button>' +
-          (scNames.length > 1 ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario">✕</button>' : "")
-        : '<span class="dk cplfund-ctl-hint">unlock team editing to add scenarios</span>') +
+        ? '<button type="button" class="rst" id="cplFundScenNew" title="New scenario — copies the current scenario so you can tweak from it">New scenario</button>' +
+          (scNames.length > 1 ? '<button type="button" class="rst" id="cplFundScenDel" title="Delete this scenario">Delete scenario</button>' : "")
+        : '<span class="dk cplfund-ctl-hint">sign in to add scenarios</span>') +
       "</div>";
     var addForm = "";
     if (curator && state.addingProject) {
@@ -3353,27 +3540,25 @@
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
-      status = '<span class="mode shared">✎ ' +
-        "Signed in as " + esc(curatorEmail()) +
-        " — changes save for everyone</span> " +
-        '<span class="dk">' + (dirty ? "team-configured scenario" : "using baked defaults") + "</span>";
+      status = '<span class="mode shared">Signed in as ' + esc(curatorEmail()) + ".</span> " +
+        '<span class="dk">Changes save for everyone' + (dirty ? "." : "; nothing is customized yet.") + "</span>";
       // ⚠️ WORK THAT EXISTS ONLY HERE MUST SAY SO, and offer the way out. A
       // reviewer who edited before signing in now holds a local overlay that
       // masks the shared model — the screen looks published and is not. The
       // phrase path promotes automatically; this path had no promotion at all.
       if (hasLocalOnlyEdits()) {
-        status += ' <span class="cplfund-saving local">⚠ This browser holds changes nobody else can see</span>';
+        status += ' <span class="cplfund-saving local">This browser holds changes nobody else can see.</span>';
         // ⚠️ A CONTROL WHOSE JOB IS REASSURANCE MUST ACKNOWLEDGE THE CLICK.
         // Sam, 2026-08-28: "it didn't appear to respond at first but then the
         // button disappeared". The publish is async and re-renders, so without
         // a pending state the only feedback is the button vanishing — on the
         // one control that exists to prove private work became shared.
         rightBtn = savingState === "saving"
-          ? '<button type="button" class="rst warn" id="cplFundPromote" disabled>Publishing&hellip;</button>'
-          : '<button type="button" class="rst warn" id="cplFundPromote">' +
+          ? '<button type="button" class="rst primary" id="cplFundPromote" disabled>Publishing&hellip;</button>'
+          : '<button type="button" class="rst primary" id="cplFundPromote">' +
             "Publish this browser&#39;s changes</button>";
       }
-      if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset scenario to defaults</button>';
+      if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset scenario to defaults</button>';
       // No per-tab Lock any more: the credential is a whole-session sign-in,
       // so ending it belongs to the masthead identity menu, not to one tab.
     } else {
@@ -3386,11 +3571,11 @@
       var staleSess = !!(S && typeof S.get === "function" && S.get() &&
         typeof S.isFresh === "function" && !S.isFresh(S.get()));
       status = staleSess
-        ? '<span class="mode scenario">⏰ Your sign-in has expired' +
+        ? '<span class="mode scenario">Your sign-in has expired' +
           (dirty ? " — the edits since then are on this browser only" : "") + "</span> " +
           '<span class="dk">Sign in again from the account control in the header to save for everyone' +
           (dirty ? "; your changes are kept and can be published after." : ".") + "</span>"
-        : '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
+        : '<span class="mode scenario">' + (dirty ? "Exploring " + esc(activeScenario) + " on this browser only" :
           "Viewing the shared model") + "</span> " +
           '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
             "just start editing to explore — or sign in from the account control " +
@@ -3415,11 +3600,11 @@
     if (savingState) {
       saveLine = unlocked()
         ? '<span class="cplfund-saving' + (savingState === "err" ? " err" : "") + '">' +
-          (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
-            "⚠ couldn’t save — your sign-in may have expired") + "</span>"
-        // Never a bare "✓ saved" here: it is true and it is what the reader
+          (savingState === "saving" ? "saving…" : savingState === "saved" ? "saved" :
+            "could not save; your sign-in may have expired") + "</span>"
+        // Never a bare "saved" here: it is true and it is what the reader
         // would misread. The destination is the whole message.
-        : '<span class="cplfund-saving local">✓ saved to this browser only &mdash; ' +
+        : '<span class="cplfund-saving local">saved to this browser only &mdash; ' +
           "sign in to publish for everyone</span>";
     }
     return '<div class="cplfund-authbar"><span class="grow">' + status + " " + saveLine + "</span>" +
@@ -3490,7 +3675,7 @@
     var y = selectedYears();
     var items = y.map(function (yr, i) {
       return { val: String(i + 1), label: "Year " + (i + 1) + " · " + yr +
-        (slotIsCarryover(String(i + 1)) ? " ↻" : "") };
+        (slotIsCarryover(String(i + 1)) ? " (carryover)" : "") };
     });
     return '<div class="cplfund-toolbar" style="margin-bottom:6px;">' +
       '<span class="dk" style="font-size:.85rem;">Show priorities for:</span>' +
@@ -3505,14 +3690,7 @@
   function basisNoteHtml() {
     return '<div class="cplfund-basis">' +
       '<span class="cplfund-basis-lbl">Reading the funding</span>' +
-      '<span class="dk cplfund-basis-note">' +
-      "Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
-      "&mdash; what has been earned to date &mdash; beneath it. Awards are based on outcomes, not automatically " +
-      "awarded: institutions earn on the CPL they actually post in MAP &mdash; " +
-      "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
-      "target draws half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
-      "The <strong>noncredit share</strong> of an award earns only against the noncredit measures." +
-      "</span></div>";
+      proseBlockHtml("reading", "dk cplfund-basis-note") + "</div>";
   }
 
   // Statewide Current Total / Total Possible line under a priority card
@@ -3581,39 +3759,38 @@
         if ((!measurable && !meas.bad_src && bearing) || srcOf === "baked") anyRisk = true;
         rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
           (meas.bad_src
-            ? '<span class="cplfund-warn-text">⚠ NOT WIRED &mdash; pinned to ' + esc(String(meas.bad_src)) +
-              ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong> " +
-              "(it pays $0, never the full cap).</span>"
+            ? '<span class="cplfund-warn-text">Not wired &mdash; pinned to ' + esc(String(meas.bad_src)) +
+              ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong>.</span>"
             : measurable
             ? (msMismatch
-                ? '<span class="cplfund-warn-text">⚠ MILESTONE MISMATCH &mdash; this metric asks for ' +
+                ? '<span class="cplfund-warn-text">Milestone mismatch &mdash; this metric asks for ' +
                   esc(wantM.toUpperCase()) + " CPL but " + esc(meas.src) + " returns " +
                   esc(meas.milestone) + ". These are different rungs of MAP&#39;s funnel and are not " +
                   "interchangeable&#59; pin the priority with <code>metric_src</code>, or reword it.</span>"
                 : mismatch
-                ? '<span class="cplfund-warn-text">⚠ UNIT MISMATCH &mdash; this metric asks for ' +
+                ? '<span class="cplfund-warn-text">Unit mismatch &mdash; this metric asks for ' +
                   (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
                   esc(meas.unit) + '</span>'
                 : meas.undelivered
-                  ? '<span class="dk">◦ declared, not delivered yet &mdash; the daily feed carries no ' +
-                    esc(meas.src) + " column, so this earns <strong>$0</strong> rather than advancing. " +
+                  ? '<span class="dk">Declared, not delivered yet &mdash; the daily feed carries no ' +
+                    esc(meas.src) + " column, so this earns <strong>$0</strong>. " +
                     "It starts earning the day the feed carries it, with no edit here.</span>"
                 : wording
-                  ? '<span class="cf-ok">✔ measurable</span> <span class="cplfund-warn-text">&mdash; but the ' +
+                  ? '<span class="cf-ok">Measurable</span> <span class="cplfund-warn-text">&mdash; but the ' +
                     "wording says " + (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " while the pin measures " +
                     esc(meas.unit) + "; reword the metric so it matches what it scores</span>"
-                : '<span class="cf-ok">✔ measurable</span>') +
+                : '<span class="cf-ok">Measurable</span>') +
               ' <span class="dk">&mdash; ' + esc(meas.src) +
               (meas.unit ? " (" + esc(meas.unit) + ")" : "") +
               (pinned ? ", pinned" : "") +
               (live ? ", " + live : "") + "</span>"
             : bearing
-              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays the FULL CAP</span> <span class="dk">(' +
+              ? '<span class="cplfund-warn-text">Not measurable &mdash; nothing can score it, so every institution would receive this share without earning it</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
-              : '<span class="dk">◦ not measurable &mdash; but no funding depends on it (front-loaded: Year ' +
+              : '<span class="dk">Not measurable &mdash; but no funding depends on it (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
-            ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
+            ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">inheriting baked default</span>'
             : ' <span class="dk">&middot; curated</span>') +
           ' <span class="dk">&mdash; ' + esc(stripTags(p.metric || "(no metric set)")) + "</span></li>");
       });
@@ -3625,8 +3802,8 @@
         ? '<span class="cplfund-warn-text">&mdash; needs attention</span>'
         : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
       ' <span class="dk">(curator view only)</span></summary>' +
-      '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure pays every college its ' +
-      "full cap &mdash; so it earns nothing and incentivises nothing. A slot marked " +
+      '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure cannot be scored: every ' +
+      "institution would receive that share without earning it, so it incentivizes nothing. A slot marked " +
       '<em>inheriting baked default</em> is falling back to the hand-maintained defaults in ' +
       "<code>cpl_funding_data.js</code>; nothing keeps those in sync with your edits here, so set the " +
       "metric to pin it.</div>" +
@@ -3747,12 +3924,12 @@
       remaining_2025_26: "2025-26 remaining balance" };
     var drift = ledgerDrift();
     var fields = Object.keys(LEDGER.pool).map(function (f) { return names[f] || f; });
-    var base = '<p class="dk cplfund-ledgernote">📒 <strong>Sourced from the Budget ledger</strong> &mdash; ' +
-      esc(fields.join(", ")) + " read live from <code>budget_funding</code>, not held as a second copy here. " +
-      "Edit them on the Budget tab and this model follows.";
+    var base = '<p class="dk cplfund-ledgernote"><strong>Sourced from the Budget ledger.</strong> ' +
+      esc(fields.join(", ")) + " are read live from the Budget tab and are not held as a second copy here. " +
+      "Edit them there and this model follows.";
     if (!drift.length) return base + "</p>";
     return base + "</p>" +
-      '<p class="cplfund-warn-text cplfund-ledgerdrift">⚠ <strong>This scenario overrides the ledger.</strong> ' +
+      '<p class="cplfund-warn-text cplfund-ledgerdrift"><strong>This scenario overrides the ledger.</strong> ' +
       drift.map(function (d) {
         return esc(names[d.field] || d.field) + ": modeling <strong>" + fmtMoney(d.effective) +
           "</strong> against the ledger&#39;s " + fmtMoney(d.ledger);
@@ -3791,15 +3968,15 @@
       fmtMoney(m.floor * nInst) + " of " + fmtMoney(pool) + "); " +
       fmtMoney(Math.max(0, pool - m.floor * nInst)) + " is allocated based on FTES size. ";
     if (m.floorInfeasible) {
-      items.push('<li><span class="warn">&#9888; The base award cannot be honored</span> &mdash; ' +
+      items.push('<li><span class="warn">The base award cannot be honored</span> &mdash; ' +
         fmtMoney(m.floor) + " &times; " + nInst + " institutions exceeds the " + fmtMoney(pool) +
         " available; every institution receives a pro-rata share BELOW the stated base. Lower the base or raise the funding.</li>");
     } else if (m.unspent > 0.5) {
-      items.push('<li><span class="warn">&#9888; Allocation out of balance:</span> ' + b1lead +
+      items.push('<li><span class="warn">Allocation out of balance:</span> ' + b1lead +
         "A balance of " + fmtMoney(m.unspent) + " remains to be allocated &mdash; every institution is at " +
         "the cap. Raise the cap or move the remainder to another line.</li>");
     } else if (remainder < -0.5) {
-      items.push('<li><span class="warn">&#9888; Over-allocated</span> &mdash; the Year ' + esc(vslot) +
+      items.push('<li><span class="warn">Over-allocated</span> &mdash; the Year ' + esc(vslot) +
         " priority shares total " + fmtPctTrim(ssum) + " (&gt;100%): the priorities claim " +
         fmtMoney(per * ssum) + " of the " + fmtMoney(per) + " annual tranche &mdash; <strong>" +
         fmtMoney(-remainder) + " over</strong>. Lower a share to bring it back within the funding.</li>");
@@ -3841,13 +4018,16 @@
   // trapped inside poolCardsHtml would have forced either a duplicate or a
   // parameter nobody needs.
   function card(o) {
-    return '<div class="cplfund-card' + (o.cls || "") + '">' + (o.x || "") +
+    // The word controls (Hide from public · Remove) render LAST, in one quiet
+    // group after the figure and its label, never as marks in a corner.
+    return '<div class="cplfund-card' + (o.cls || "") + '">' +
       '<div class="v' + (o.neg ? " neg" : "") + '">' +
       // A ledger reads DOWN to a total, so a deduction has to look like one.
       // Not aria-hidden: "minus 800,000" is the correct thing to hear, and the
       // red is a second signal rather than the only one.
       (o.neg ? '<span class="cplfund-sign">&minus;</span> ' : "") + o.v + "</div>" +
-      '<div class="l">' + o.l + (o.note ? '<div class="cplfund-card-note">' + o.note + "</div>" : "") + "</div></div>";
+      '<div class="l">' + o.l + (o.note ? '<div class="cplfund-card-note">' + o.note + "</div>" : "") + "</div>" +
+      (o.x ? '<span class="cplfund-card-ctl">' + o.x + "</span>" : "") + "</div>";
   }
 
   function poolCardsHtml() {
@@ -3868,10 +4048,10 @@
     }
     function hideX(field, label) {
       return '<button type="button" class="cplfund-card-x" data-poolhide="' + esc(field) +
-        '" title="Remove this box from the FUNDING MATH (a what-if — restore it below). To keep the math but hide it from colleges, use the 👁 toggle instead." aria-label="Remove ' + esc(label) + ' from the funding math">✕</button>';
+        '" title="Remove this line from the funding math (a what-if; restore it below). To keep the math but hide the line from colleges, use Hide from public instead." aria-label="Remove ' + esc(label) + ' from the funding math">Remove</button>';
     }
     // Display-only visibility on the public college page. Curator-gated, and
-    // deliberately a DIFFERENT control from ✕ — this one never moves a dollar.
+    // deliberately a DIFFERENT control from Remove — this one never moves a dollar.
     function pubEye(field, label) {
       if (publicMode() || !unlocked()) return "";
       var off = poolPublicHidden(field);
@@ -3880,7 +4060,7 @@
         (off ? "Hidden from the public college page — click to show it there. The funding math is unaffected either way."
              : "Visible on the public college page — click to hide it there. The funding math is unaffected either way.") +
         '" aria-pressed="' + (off ? "true" : "false") +
-        '" aria-label="' + (off ? "Show " : "Hide ") + esc(label) + ' on the public page">' + (off ? "🙈" : "👁") + "</button>";
+        '" aria-label="' + (off ? "Show " : "Hide ") + esc(label) + ' on the public page">' + (off ? "Show to public" : "Hide from public") + "</button>";
     }
 
     // THREE DESTINATIONS (Sam, 2026-09-01 — "incorporate flat ledger while
@@ -3904,7 +4084,7 @@
       var b0 = revShown[0];
       out.push(card({ cls: " total", v: valueEd(b0.field, false),
         l: labelEd(b0.field, b0.def) +
-           ' <span class="dk">&mdash; total available funding; the deductions below net down to the one institution pool</span>',
+           ' <span class="dk">&mdash; total available funding; the deductions below net down to the institution funding</span>',
         x: pubEye(b0.field, poolLabel(b0.field, b0.def)) + hideX(b0.field, poolLabel(b0.field, b0.def)) }));
     } else {
       revShown.forEach(function (b) {
@@ -3912,7 +4092,7 @@
           x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
       });
       out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
-        l: "Total available funding &mdash; sum of all funding sources; the deductions below net down to the one institution pool" }));
+        l: "Total available funding &mdash; sum of all funding sources; the deductions below net down to the institution funding" }));
     }
 
     // The project-pool card's live breakdown (Sam's Open Verdicts item 5,
@@ -3952,7 +4132,7 @@
           "split projects by appropriation, so no project below is attributed to either share alone.</p>" +
           "<ul>" + groups + "</ul>" +
           (drift !== 0
-            ? '<p class="cplfund-pool-projects-drift">⚠ The program rows sum to ' + fmtMoney(groupSum) +
+            ? '<p class="cplfund-pool-projects-drift">The program rows sum to ' + fmtMoney(groupSum) +
               " &mdash; " + fmtMoney(Math.abs(drift)) + (drift > 0 ? " more" : " less") +
               " than the two shares. The Budget table decides; this card only reports the gap.</p>"
             : "") +
@@ -3981,9 +4161,9 @@
         l: edText("pool-custom-label", it.label, { idx: i, cls: "cplfund-pool-label-input", label: "Custom box label", placeholder: "Label this box…" }) +
            goalSupHtml(Array.isArray(it.goals) ? it.goals : [], it.label) +
            ' <button type="button" class="cplfund-kindtoggle" data-poolkind="' + i +
-           '" title="Flip between a revenue source (+) and a deduction (−)">' + (ded ? "&minus; deduction" : "&plus; revenue") + "</button>",
+           '" title="Flip between a revenue source and a deduction">' + (ded ? "deduction" : "revenue") + "</button>",
         x: '<button type="button" class="cplfund-card-x" data-pooldel="' + i +
-           '" title="Delete this box — it changes the funding math" aria-label="Delete custom box">✕</button>'
+           '" title="Remove this line — it changes the funding math" aria-label="Remove custom line">Remove</button>'
       }));
     });
 
@@ -4007,7 +4187,7 @@
         l: "Total credit and noncredit potential awards",
         note: (frontloaded()
           ? esc(windowLabel()) + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr. "
-          : esc(windowLabel()) + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + "). ") +
+          : esc(windowLabel()) + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " to " + esc(y[y.length - 1]) + "). ") +
           "No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
           fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
           " at the noncredit-only institutions + " + fmtMoney(ncFace) +
@@ -4021,7 +4201,7 @@
     function floorInfeasibleWarn(m, noun) {
       var pot = (m.net != null ? m.net : m.pool) || 0;
       var each = m.floorDemanded > 0 ? m.floor / m.floorDemanded * pot : 0;
-      return ' <strong class="cplfund-capwarn">&#9888; the minimum cannot be honored &mdash; ' +
+      return ' <strong class="cplfund-capwarn">The minimum cannot be honored &mdash; ' +
         fmtMoney(m.floor) + " &times; " + m.floorCount + " " + noun + "s = " + fmtMoney(m.floorDemanded) +
         ", more than the " + fmtMoney(pot) + " available. Every " + noun + " receives an equal " +
         fmtMoney(each) + " instead, BELOW the stated minimum. Lower the minimum, narrow the lane, " +
@@ -4051,11 +4231,11 @@
         floorNote = "<strong>the minimum is not being paid</strong>";
         warn = floorInfeasibleWarn(m, "college");
       } else if (m.capBelowFloor) {
-        warn = ' <strong class="cplfund-capwarn">&#9888; the maximum is below the minimum &mdash; the minimum wins; ' +
+        warn = ' <strong class="cplfund-capwarn">The maximum is below the minimum &mdash; the minimum wins; ' +
           "no college is paid under " + fmtMoney(m.floor) + ".</strong>";
       } else if (m.unspent > 0.5) {
-        warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
-          " cannot be spent &mdash; every college is at the maximum and the funding no longer balances. " +
+        warn = ' <strong class="cplfund-capwarn">' + fmtMoney(m.unspent) +
+          " cannot be allocated &mdash; every college is at the maximum and the funding no longer balances. " +
           "Raise the maximum or move the remainder to another line.</strong>";
       }
       bounds.push(card({ cls: " floor",
@@ -4087,7 +4267,7 @@
       }).join(" &middot; ");
       var fold = '<details class="cplfund-pool-projects"><summary>Every institution that moves &mdash; show the list</summary><ul>' +
         moves.list.map(function (x) {
-          return "<li>" + esc(x.name) + ": " + fmtMoney(x.saved) + " &rarr; " + fmtMoney(x.cur) +
+          return "<li>" + esc(x.name) + ": " + fmtMoney(x.saved) + " to " + fmtMoney(x.cur) +
             " (" + (x.d >= 0 ? "+" : "&minus;") + fmtMoney(Math.abs(x.d)) + ")</li>";
         }).join("") + "</ul></details>";
       extras.push(card({ cls: " whomoves",
@@ -4099,12 +4279,12 @@
     })();
 
     // Curate-view summary of what the PUBLIC page omits. Without this, a curator
-    // sets 👁 once and has no way to see the public page's shape from here.
+    // hides a line from the public page once and has no way to see the public page's shape from here.
     var pubOff = CORE_REVENUE.concat(CORE_DEDUCTION).filter(function (b) {
       return !poolHidden(b.field) && poolPublicHidden(b.field);
     });
     var pubNote = (pubOff.length && !publicMode() && unlocked())
-      ? '<div class="cplfund-reqrestore"><span class="dk">🙈 Hidden from the ' +
+      ? '<div class="cplfund-reqrestore"><span class="dk">Hidden from the ' +
         '<a href="cpl_funding_public.html" target="_blank" rel="noopener">public college page</a> ' +
         '(display only &mdash; the funding math is unchanged):</span> ' +
         pubOff.map(function (b) {
@@ -4119,15 +4299,15 @@
       ? '<div class="cplfund-reqrestore"><span class="dk">Hidden boxes:</span> ' +
         hidden.map(function (b) {
           var def = b.def || base().pool.admin_cost_label;
-          return '<button type="button" class="cplfund-optbtn" data-poolshow="' + esc(b.field) + '">&#8617; ' + esc(poolLabel(b.field, def)) + "</button>";
+          return '<button type="button" class="cplfund-optbtn" data-poolshow="' + esc(b.field) + '">Restore: ' + esc(poolLabel(b.field, def)) + "</button>";
         }).join(" ") + "</div>"
       : "";
 
     // Add-box controls.
     var add = '<div class="cplfund-addbox">' +
-      '<button type="button" class="cplfund-optbtn" data-pooladd="revenue">&plus; Add revenue source</button>' +
-      '<button type="button" class="cplfund-optbtn" data-pooladd="deduction">&plus; Add deduction / carve-out</button>' +
-      '<span class="dk">new boxes flow into the college-pool math &mdash; revenue adds, deduction subtracts</span></div>';
+      '<button type="button" class="cplfund-optbtn" data-pooladd="revenue">Add revenue source</button>' +
+      '<button type="button" class="cplfund-optbtn" data-pooladd="deduction">Add deduction</button>' +
+      '<span class="dk">a new line flows into the institution funding math: revenue adds, a deduction subtracts</span></div>';
 
     // The BOUND is a heading + a figure pair + its note, with its folds under
     // it — the same shape as the ledger's own detail folds, so "click into the
@@ -4267,7 +4447,7 @@
           "and no figure on this tab scores it." };
     }
     return { cls: "gap", word: "Nothing tagged",
-      text: "No priority, pool line item or project is tagged to this goal in the model as it stands." };
+      text: "No priority, funding line or project is tagged to this goal in the model as it stands." };
   }
 
   // The two goals whose LIMIT is a ruling rather than a gap. Each renders in
@@ -4322,7 +4502,7 @@
     });
     f.pools.forEach(function (x) {
       bits.push("<li><strong>" + esc(x.label) + "</strong> &mdash; " + fmtMoney(x.amount) +
-        ' <span class="dk">withheld from the college pool for statewide work</span></li>');
+        ' <span class="dk">withheld from the institution funding for statewide work</span></li>');
     });
     if (f.projects.length) {
       bits.push("<li><strong>" + f.projects.length + " tagged " +
@@ -4368,7 +4548,7 @@
     }).join("");
 
     var regNote = reg.length
-      ? '<p class="cplfund-goal-regnote">📋 <strong>The Activities register carries ' + fmtInt(reg.length) +
+      ? '<p class="cplfund-goal-regnote"><strong>The Activities register carries ' + fmtInt(reg.length) +
         " named projects</strong>, which is what goal (D) asks the chancellor&rsquo;s office to show. " +
         (untagged
           ? "<strong>" + fmtInt(untagged) + "</strong> of them do not yet carry an additional statutory " +
@@ -4496,7 +4676,7 @@
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
         edText("strategy", s, { slot: slot, idx: i, sidx: j, label: "Recommended strategy", placeholder: "Add a strategy…" }) +
         '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
-        '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">✕</button></div>';
+        '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">Remove</button></div>';
     }).join("");
     // A FOLD (Sam, 2026-08-31, reaction round 3): the metric sits on the card
     // surface; the strategies stay in detail. The rows remain editable inside
@@ -4504,7 +4684,7 @@
     return '<details class="cplfund-strat"><summary class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ") &mdash; show them</summary>" +
       rows +
       '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
-      '" title="Add a recommended strategy">＋ Add strategy</button></details>';
+      '" title="Add a recommended strategy">Add strategy</button></details>';
   }
 
   // Timing — an editable milestone list below the priority boxes (Sam,
@@ -4519,12 +4699,12 @@
         edText("timing-label", it.label || "", { idx: i, cls: "cplfund-timing-label", label: "Timing milestone", placeholder: "Milestone…" }) +
         edText("timing-date", it.date || "", { idx: i, cls: "cplfund-timing-date", label: "Timing date", placeholder: "Date" }) +
         '<button type="button" class="cplfund-reqdel" data-timingdel="' + i +
-        '" title="Remove this item" aria-label="Remove timing item ' + (i + 1) + '">✕</button></div>';
+        '" title="Remove this item" aria-label="Remove timing item ' + (i + 1) + '">Remove</button></div>';
     }).join("");
     return "<h3>Timing</h3>" +
       '<div class="cplfund-timing">' + rows +
       '<button type="button" class="cplfund-optbtn cplfund-timingadd" id="cplFundTimingAdd" ' +
-      'title="Add a timing item">＋ Add item</button></div>';
+      'title="Add a timing item">Add item</button></div>';
   }
 
   // ── FTES factors + the reimbursement rate ─────────────────────────────
@@ -4552,7 +4732,7 @@
       row("Contact hours per unit &mdash; semester", fmtNum2(sem), "1 hr/wk &times; 17.5 TLM") +
       row("Contact hours per unit &mdash; quarter", fmtNum2(qtr),
           nQ + " college" + (nQ === 1 ? "" : "s") + " on a quarter calendar") +
-      row("&rarr; Units per FTES", fmtNum1(ch / sem) + " semester &middot; " + fmtNum1(ch / qtr) + " quarter",
+      row("Units per FTES", fmtNum1(ch / sem) + " semester &middot; " + fmtNum1(ch / qtr) + " quarter",
           "derived &mdash; " + fmtInt(ch) + " &divide; the term-length multiplier", true) +
       // Editable here TOO, and deliberately through the SAME data-edit hook as
       // the pool card. Two entry points for one value is only dangerous when
@@ -4615,8 +4795,8 @@
       ? "Every later year shows and edits the Year-1 set. Nothing is written over &mdash; clearing this " +
         "restores each year\u2019s own values."
       : match
-        ? '<span class="cf-ok">\u2714 The years currently hold the same priorities.</span>'
-        : '<span class="cplfund-warn-text">\u26a0 Year 2 differs from Year 1.</span>' +
+        ? '<span class="cf-ok">The years currently hold the same priorities.</span>'
+        : '<span class="cplfund-warn-text">Year 2 differs from Year 1.</span>' +
           (frontloaded()
             ? " Under front-loaded disbursement Year 2 carries no funding, so its metrics are never scored " +
               "\u2014 but the difference becomes real the moment timing moves back to even tranches."
@@ -4625,7 +4805,7 @@
       '<label><input type="checkbox" id="cplFundMirror"' + (on ? " checked" : "") +
       "> Year 2 mirrors Year 1</label>" +
       (!on && !match
-        ? '<button type="button" class="cplfund-optbtn" id="cplFundCopyYear1">Copy Year 1 \u2192 Year 2</button>'
+        ? '<button type="button" class="cplfund-optbtn" id="cplFundCopyYear1">Copy Year 1 to Year 2</button>'
         : "") +
       '<span class="dk" style="flex:1 1 300px;">' + note + "</span></div>";
   }
@@ -4659,7 +4839,7 @@
       var winDollars = prioCap(netCollege(), slot, p);
       var frontLine = flPrio
         ? (slotIsCarryover(slot)
-          ? '<p class="nums cplfund-fl-line"><span class="dk">↻ Year ' + esc(slot) + " is carryover under " +
+          ? '<p class="nums cplfund-fl-line"><span class="dk">Year ' + esc(slot) + " is carryover under " +
             "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
             "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
           // Sam, 2026-08-28 asked for less explanatory language, and the SENTENCE
@@ -4707,7 +4887,7 @@
             '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> " +
             '<span class="dk">(&asymp; ' + fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units)</span></p>"
           : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " funding dollars per student" }) +
-            " per student &rarr; " + fmtInt(sysHeads) + " students " +
+            " per student, so " + fmtInt(sysHeads) + " students " +
             '<span class="dk">(' + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount)</span></p>") +
         frontLine +
         actualLineHtml(p, i, sysHeads) +
@@ -4833,16 +5013,8 @@
   // the one place the restriction and the origination rule are stated in
   // words, under the cards whose arithmetic honors them.
   function ncEarningRulesFoldHtml() {
-    return '<details class="cplfund-pool-projects cplfund-ncrules"><summary>The earning rules for noncredit &mdash; show them</summary><ul>' +
-      "<li><strong>A college&rsquo;s noncredit share</strong> of its combined award earns against the " +
-      "noncredit priority measures (ruled 2026-08-31).</li>" +
-      "<li><strong>The noncredit-only institutions earn by origination</strong> &mdash; CPL that " +
-      "originates from their programs and is transcribed at a credit college. NOCE and SDCCE&rsquo;s " +
-      "origination counts across their district&rsquo;s credit campuses; Calbright&rsquo;s counts " +
-      "statewide. The receiving college earns on the same CPL under its own measures &mdash; the same " +
-      "CPL credits both institutions by design (ruled 2026-08-31).</li>" +
-
-      "</ul></details>";
+    return '<details class="cplfund-pool-projects cplfund-ncrules"><summary>The earning rules for noncredit &mdash; show them</summary>' +
+      proseBlockHtml("nc_rules") + "</details>";
   }
 
   // ── metric measurability (2026-07-03 analysis; metric-keyed 2026-07-23) ───
@@ -5363,7 +5535,7 @@
     if (meas.gap) {
       // The WHY lives in the curator-only metric-wiring diagnostic (Sam,
       // 2026-09-01: the rendered copy names no unshipped feed and no advance).
-      return '<p class="nums dk">&#9203; Actual: no data yet.</p>';
+      return '<p class="nums dk">Actual: no data yet.</p>';
     }
     // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
     // measureOf() sets `undelivered` when the feed does not carry a measure's
@@ -5442,7 +5614,7 @@
         " institution rows, credit + noncredit combined",
       note: basisTotal > 0
         ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
-          basisLabel() + " &mdash; pool depth, informational"
+          basisLabel() + " &mdash; funding per FTES, informational"
         : "" }));
 
     // The "noncredit share of the teaching" parity card and the basis card's
@@ -5593,7 +5765,7 @@
       cadenceSentence,
       "Balance for Year " + state.viewSlot + ": <strong>" +
         (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
-        "</strong> &mdash; the annual pool is fully apportioned.",
+        "</strong> &mdash; the annual funding is fully allocated.",
       trim(basisSentence)
     ];
     if (floorSentence) items.push(trim(floorSentence));
@@ -5680,6 +5852,8 @@
     subview: "model",   // "model" | "report"
     previewPublic: false,   // reviewer previewing the public rendering (session-only, never persisted)
     docType: "memo",    // memo | letter | report | brief
+    textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
+    textDraft: {},      // what they have typed so far, kept across the re-renders an edit triggers
   };
 
   // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
@@ -5707,35 +5881,18 @@
   }
   function sectionShell(id, titleHtml, bodyHtml) {
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><span class="cplfund-sec-chev" aria-hidden="true">▾</span>' +
-      "<h3>" + titleHtml + "</h3></summary>" +
+      '<summary class="cplfund-sec-sum"><h3>' + titleHtml + '</h3>' +
+      '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
       '<div class="cplfund-sec-body">' + bodyHtml + "</div></details>";
   }
   // Inline section: explicit title + body.
   function section(id, title, body) { return sectionShell(id, title, body); }
 
-  // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01;
-  // collapsible on his follow-up, and it opens by default — an introduction
-  // nobody sees is not one).
-  //
-  // Written in the CCCCO house voice: no bold, no bullets, no glyphs, claims
-  // anchored to the instrument that carries them, and a short declarative after
-  // a long qualified one. It carries NO dollar figures, counts or weights —
-  // partly the sunshine rule, and partly because an introduction that has to be
-  // re-checked against a live solve every time a dial moves is a liability.
+  // The introduction (Sam asked for it, 2026-09-01; collapsible on his
+  // follow-up, open by default — an introduction nobody sees is not one). Its
+  // house text is ABOUT_DEFAULT_HTML; a signed-in reviewer can replace it.
   function aboutHtml() {
-    return '<div class="cplfund-about">' +
-      "<p>The Legislature appropriated one-time funding to the Chancellor&rsquo;s Office to help colleges " +
-      "build the capacity to award credit for prior learning. This page is the model that distributes it.</p>" +
-      "<p>Every participating institution is sized by the teaching it actually does, its credit and " +
-      "noncredit FTES together, and receives a share of the total on that basis. That share is then held " +
-      "between a minimum and a maximum, so a small college still receives enough to staff the work and no " +
-      "single institution takes a disproportionate part of the allocation. What results is a maximum award, " +
-      "not a grant. An institution draws it down by meeting the outcomes Ed. Code &sect;78093.2(d)(1) names, " +
-      "measured from what its own students record in MAP, and any part it does not earn stays available to " +
-      "it rather than moving elsewhere.</p>" +
-      "<p>The model is in draft, and every figure here is computed live from the dials below.</p>" +
-      "</div>";
+    return '<div class="cplfund-about">' + proseBlockHtml("about") + "</div>";
   }
   // A block whose FIRST element is its own <h3>…</h3> (the feeder
   // sub-generator): lift that h3 into the summary. Empty input → nothing.
@@ -5783,7 +5940,7 @@
       return '<label class="cplfund-colmenu-item"><input type="checkbox" data-colkey="' + esc(c.key) + '"' +
         (isColHidden(c.key) ? "" : " checked") + "> " + esc(lbl) + "</label>";
     }).join("");
-    return '<details class="cplfund-colmenu"><summary class="cplfund-optbtn" title="Show or hide table columns">⚙ Columns</summary>' +
+    return '<details class="cplfund-colmenu"><summary class="cplfund-optbtn" title="Show or hide table columns">Columns</summary>' +
       '<div class="cplfund-colmenu-panel"><div class="cplfund-colmenu-h">Show columns</div>' + items + "</div></details>";
   }
 
@@ -6253,7 +6410,7 @@
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
     // meas/adv accepted for call-site stability; neither renders (2026-09-01).
     var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + fmtMoney(earned)];
-    if (held > 0.5) bits.push(fmtMoney(held) + " WITHHELD — baseline participation not met; held in reserve, rolls forward");
+    if (held > 0.5) bits.push(fmtMoney(held) + " held in reserve — baseline participation not met; it rolls forward");
     return bits.join(" · ");
   }
   // ── the CR award / NC award cells (one row per institution — R6) ──────
@@ -6277,7 +6434,7 @@
     var title = earnedCellTitle("Credit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
-    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) +
+    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
       earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
   }
   function ncAwardCellHtml(row) {
@@ -6296,20 +6453,27 @@
     var title = earnedCellTitle("Noncredit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
-    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) +
+    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
       earnedSubHtml(cap, row.earned_nc || 0, 0, 0, row.gate_blocked) + "</td>";
+  }
+  // The bound word — (at base) / (at cap) — sits beside the award figures it
+  // qualifies, in parentheses, on both the CR and NC cells (Sam, 2026-09-02:
+  // "move the at cap and at base notes next to the CR and NC total funding on
+  // main rows and put the note in parens"). Ghosted word, hover explains.
+  function boundWordHtml(c) {
+    if (c.floored) return ' <span class="cplfund-chip cplfund-bound" title="' +
+      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
+        ", so it is brought up to the base award — funded from within the same total.") + '">(at base)</span>';
+    if (c.capped) return ' <span class="cplfund-chip cplfund-bound" title="' +
+      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
+        ", so it is held at the cap — the difference funds the other institutions.") + '">(at cap)</span>';
+    return "";
   }
   function rowChips(c) {
     var chips = "";
-    // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): AT BASE /
-    // AT CAP / NC ONLY — the quietest thing in the row, never the first read.
+    // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): NC ONLY stays
+    // by the name (an identity); the bound word moved to the award cells.
     if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
-    if (c.floored) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
-        ", so it is brought up to the base award — funded from within the same total.") + '">at base</span>';
-    if (c.capped) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
-        ", so it is held at the cap — the difference funds the other institutions.") + '">at cap</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in.
     if (partShown() && !ELIG.optin[c.college]) {
@@ -6325,8 +6489,10 @@
       (_deepLinkCollege && c.college === _deepLinkCollege ? " cplfund-deeplink" : "") +
       '" data-id="' + esc(id) + '">' +
       "<td>" + (idx + 1) + "</td>" +
+      // The NAME is the toggle (every control is a word): a real <button> for
+      // keyboard users, aria-expanded for the state, no caret glyph.
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span>" + rowChips(c) + "</td>" +
+      '" aria-label="' + esc(dispName(c.college) + ", per-priority detail") + '"><span class="cplfund-instname">' + esc(dispName(c.college)) + "</span></button>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
       '<td class="c" title="' + esc((c.nco
@@ -6362,7 +6528,7 @@
             "-FTES size is a stand-in; nothing publishes or disburses on a placeholder (N3 a).</span>"
           : "") + "</div>";
     } else if (slotIsCarryover(slot)) {
-      prio = '<div><span class="dk">↻ Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
+      prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
         "&mdash; the whole window is placed and earned in Year 1; unspent funds roll forward.</span></div>";
     } else {
       var rowsHtml = priorities(slot).map(function (p, i) {
@@ -6405,10 +6571,12 @@
       prio = '<div class="cplfund-dtl-tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
         '<table class="cplfund-dtl-table"><caption class="dk">' +
         "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
-        "is still to earn. Current Total: " + fmtMoney(c.earned_total || 0) + " &middot; Total Possible: " +
-        fmtMoney(c.total || 0) + " &mdash; its max award" +
-        (c.gate_blocked ? " &middot; earnings held in reserve until baseline participation is met" : "") +
-        "</caption>" +
+        "is still to earn. Current Total: " + fmtMoney(c.earned_total || 0) +
+        (c.gate_blocked
+          ? " &middot; " + (c.earned_withheld > 0.5 ? fmtMoney(c.earned_withheld) + " held in reserve" : "earnings held in reserve") +
+            " until baseline participation is met"
+          : "") +
+        " &middot; Total Possible: " + fmtMoney(c.total || 0) + " &mdash; its max award</caption>" +
         '<colgroup><col style="width:16%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:15%"><col style="width:14%"><col style="width:11%"><col style="width:10%"></colgroup>' +
         '<tr><th scope="col">Priority</th>' +
         '<th scope="col" title="The credit share of this priority&#39;s funding — earns against the credit actuals.">CR funding</th>' +
@@ -6456,24 +6624,25 @@
     }
     var eligBits = [];
     if (coordShown()) eligBits.push("CPL Coordinator in MAP &mdash; " +
-      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>'));
+      (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "on file" : '<span class="cplfund-warn-text">not on file</span>'));
     if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
       (ELIG.optin[c.college]
-        ? "✓ <span class=\"dk\">(" + (ELIG.optinRow[c.college] && ELIG.optinRow[c.college].status === "confirmed"
+        ? "yes <span class=\"dk\">(" + (ELIG.optinRow[c.college] && ELIG.optinRow[c.college].status === "confirmed"
             ? "CO-confirmed" : "self-attested") + ")</span>"
         : '<span class="dk">not yet</span>'));
     var vsD = vetStar();
     extraReqs().forEach(function (txt) {
       if (isVetJstReq(txt)) eligBits.push("Veteran Star (&ge;75% veteran JSTs) &mdash; " +
-        (!vsD ? '<span class="dk">pending</span>' : vsD[c.college] ? "✓" : '<span class="dk">not yet</span>'));
+        (!vsD ? '<span class="dk">pending</span>' : vsD[c.college] ? "met" : '<span class="dk">not yet</span>'));
     });
+    // The held figure reads WITH the gate that holds it and, below, ahead of
+    // Total Possible in the priority table's caption — beside the figures it
+    // is part of, never as a floating item of its own that lands under the NC
+    // column (Sam, 2026-09-02: "put it before the $400k CR total and not on
+    // the NC total").
     var eligLine = '<div><span class="dk">Baseline eligibility:</span> ' +
       (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') +
-      ' <span class="dk">&mdash; ' + esc(baselineGateText(c.college)) + '</span>' + eligBtns + "</div>" +
-      (c.earned_withheld > 0.5
-        ? '<div class="cf-withheld"><strong>' + fmtMoney(c.earned_withheld) + " held in reserve</strong> &mdash; " +
-          "this college would have earned that on its main allocation, but baseline participation is not met.</div>"
-        : "") +
+      ' <span class="dk">&mdash; ' + esc(baselineGateText(c.college, c.earned_withheld)) + '</span>' + eligBtns + "</div>" +
       optinAffordanceHtml(c.college);
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
     // read-only for phrase-holders who haven't flipped team-editing on.
@@ -6494,8 +6663,8 @@
     }
     return '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
-      '<div><span class="dk">' + (usesFtes() ? "Credit FTES share:" : "Headcount share:") + "</span> " +
-      fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
+      '<div><span class="dk">' + (usesFtes() ? "FTES share:" : "Headcount share:") + "</span> " +
+      fmtInt(sizeOf(c)) + (usesFtes() ? " FTES = " : " students = ") +
       fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() + "</div>" +
       floorLine + capLine + eligLine + noteLine +
       prio + county +
@@ -6650,7 +6819,7 @@
     // a restore chip below brings it back, and the Elig badge follows suit.
     function hideBtn(kind, label) {
       return '<button type="button" class="cplfund-reqdel" data-reqhide="' + kind +
-        '" title="Hide this requirement (restore it below)" aria-label="Hide ' + esc(label) + '">✕</button>';
+        '" title="Hide this requirement (restore it below)" aria-label="Hide ' + esc(label) + '">Hide</button>';
     }
     var extras = extraReqs();
     var extraHtml = extras.map(function (txt, i) {
@@ -6677,7 +6846,7 @@
         edText("extra-req", txt, { idx: i, label: "Baseline requirement",
           placeholder: "Describe the requirement…" }),
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
-        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">✕</button>'
+        '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">Remove</button>'
       ) + status + "</div>";
     }).join("");
     var pendN = (ELIG.optinReview || []).filter(function (r) { return r.status === "self_attested"; }).length;
@@ -6700,31 +6869,30 @@
         '<div class="cplfund-reqstatus">' + partStatus + "</div></div>"
       : "";
     var chips = [];
-    if (!coordShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="coord">&#8617; ' + esc(coordLabel()) + "</button>");
-    if (!partShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="part">&#8617; ' + esc(partLabel()) + "</button>");
+    if (!coordShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="coord">Restore: ' + esc(coordLabel()) + "</button>");
+    if (!partShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="part">Restore: ' + esc(partLabel()) + "</button>");
     var restoreRow = chips.length
       ? '<div class="cplfund-reqrestore"><span class="dk">Hidden:</span> ' + chips.join(" ") + "</div>"
       : "";
     return '<div class="cplfund-elig">' +
-      '<div class="cplfund-elig-intro">' +
-      edArea("elig-intro", eligIntro(), { rows: 2, label: "Baseline eligibility introduction" }) + "</div>" +
+      '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
       coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
       '<div class="dk" style="margin:4px 0 6px;">Funding for institutions that have not met baseline ' +
       "participation is held in reserve &mdash; it is never redistributed to others.</div>" +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
-      'title="Add another proposed baseline requirement">＋ Add requirement</button>' +
+      'title="Add another proposed baseline requirement">Add requirement</button>' +
       '<span class="dk">' + (unlocked()
         ? "saved for the whole team"
-        : "explored on this browser &mdash; unlock team editing to save for everyone") + "</span>" +
+        : "explored on this browser &mdash; sign in to save for everyone") + "</span>" +
       "</div>" +
       restoreRow +
       '<div class="cplfund-reqactions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqCopy" ' +
-      'title="Copy the requirements as formatted text for a memo or email">📋 Copy requirements</button>' +
+      'title="Copy the requirements as formatted text for a memo or email">Copy requirements</button>' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqBrief" ' +
-      'title="Open a formatted brief (reflects the current requirements + funding) to send to CBOs and field staff">📄 Generate brief</button>' +
+      'title="Open a formatted brief (reflects the current requirements + funding) to send to CBOs and field staff">Generate brief</button>' +
       '<span id="cplFundReqCopyMsg" class="cplfund-copymsg"></span>' +
       "</div>" +
       "</div>";
@@ -6834,7 +7002,7 @@
   }
   function copyReqs() {
     var text = buildRequirementsText();
-    var done = function () { flashCopyMsg("✓ Copied — paste into your memo or email"); };
+    var done = function () { flashCopyMsg("Copied. Paste it into your memo or email."); };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
     } else { fallbackCopy(text); done(); }
@@ -6876,7 +7044,7 @@
     }
     var un = Object.keys((pf && pf.unmatched) || {});
     var unLine = un.length
-      ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
+      ? "<div>MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
         un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
       : "";
     return "<div>Each row expands to its per-priority detail table &mdash; <strong>Target</strong> and " +
@@ -7164,11 +7332,11 @@
       { val: "report", label: "Report" }, { val: "brief", label: "Brief" }];
     return '<div class="cplfund-reptoolbar">' +
       '<span class="cplfund-ctl-lbl">Document type</span>' + segHtml("cplFundDocType", types, state.docType) +
-      '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">↻ Regenerate</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoRegen" title="Regenerate from the current model (discards inline edits)">Regenerate</button>' +
       '<span style="flex:1 1 auto;"></span>' +
-      '<button type="button" class="cplfund-optbtn" id="cplFundMemoCopy" title="Copy the document text">📋 Copy</button>' +
-      '<button type="button" class="cplfund-optbtn" id="cplFundMemoPdf" title="Open a print-ready view — use Print → Save as PDF">⬇ PDF</button>' +
-      '<button type="button" class="cplfund-optbtn" id="cplFundMemoDocx" title="Download as an editable Word (.docx) file">⬇ Word</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoCopy" title="Copy the document text">Copy text</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoPdf" title="Open a print-ready view, then use Print and choose Save as PDF">Save as PDF</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundMemoDocx" title="Download as an editable Word (.docx) file">Download as Word</button>' +
       "</div>" +
       '<div class="cplfund-repnote">Generated from <strong>' + esc(activeProjectObj().label) + " &middot; " +
       esc(activeScenario) + "</strong>. Edit any text directly below, then export. Inline edits are for the export only " +
@@ -7184,7 +7352,7 @@
       // The Report is an internal drafting surface (an editable ESS memo), not
       // something a college audience should see mid-draft.
       (publicMode() ? ""
-        : '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">📄 Report</button>") +
+        : '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">Report</button>") +
       "</div>";
   }
 
@@ -7261,8 +7429,9 @@
     return { state: "not", why: "no CPL eligibility or transcription recorded in MAP yet" };
   }
   function essGlyph(o) {
-    var g = o.state === "met" ? "✓" : o.state === "partial" ? "◐" : o.state === "not" ? "—"
-      : o.state === "na" ? "n/a" : "⏳";
+    // Words, never marks: met / partial / not yet / n/a / pending.
+    var g = o.state === "met" ? "met" : o.state === "partial" ? "partial" : o.state === "not" ? "not yet"
+      : o.state === "na" ? "n/a" : "pending";
     var cls = o.state === "met" ? "ok" : o.state === "partial" ? "part" : o.state === "pending" ? "pend" : "no";
     return '<span class="cf-ess ' + cls + '" title="' + esc(o.why) + '">' + g + "</span>";
   }
@@ -7375,12 +7544,12 @@
       '<tfoot><tr><td class="t">TOTAL DISTRIBUTED</td><td>' + fmtMoney(distributed) + "</td>" +
       '<td class="c">' + counts[1] + '</td><td class="c">' + counts[2] + '</td><td class="c">' + counts[3] +
       "</td></tr></tfoot></table></div>" +
-      '<div class="cplfund-foot">Legend: <span class="cf-ess ok">✓</span> met &middot; ' +
-      '<span class="cf-ess part">◐</span> present but privacy-suppressed (' + maskLt(true) + ' students) &middot; ' +
-      '<span class="cf-ess no">—</span> not yet evidenced in MAP &middot; ' +
+      '<div class="cplfund-foot">Legend: <span class="cf-ess ok">met</span> evidenced in MAP &middot; ' +
+      '<span class="cf-ess part">partial</span> present but privacy-suppressed (' + maskLt(true) + ' students) &middot; ' +
+      '<span class="cf-ess no">not yet</span> not yet evidenced in MAP &middot; ' +
       '<span class="cf-ess no">n/a</span> no enrolled veterans to measure &middot; ' +
-      '<span class="cf-ess pend">⏳</span> data feed not loaded. ' +
-      "Outcome tracking is through MAP plus MIS reporting per ESS 25-82; a dash reflects what MAP shows today, " +
+      '<span class="cf-ess pend">pending</span> data feed not loaded. ' +
+      "Outcome tracking is through MAP plus MIS reporting per ESS 25-82; a not-yet reflects what MAP shows today, " +
       "not a finding that a college failed to use its funds. Grants are expended through June 30, 2028.</div>";
   }
 
@@ -7535,7 +7704,7 @@
         (anySectionOpenNow() ? "Collapse all sections" : "Expand all sections") + "</button>" +
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
-      '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab — use your browser&#39;s Print &rarr; Save as PDF">Save as PDF</button>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab, then use your browser&#39;s Print and choose Save as PDF">Save as PDF</button>' +
       view + "</div>";
   }
 
@@ -7543,6 +7712,12 @@
     notifyModel();
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
+    // A re-render mid-edit (a remote load landing, a dial moved elsewhere on
+    // the page) rebuilds the textarea; keep what the reviewer has typed so far.
+    if (state.textEditing) {
+      var liveTa = mount.querySelector('[data-textarea="' + state.textEditing + '"]');
+      if (liveTa) state.textDraft[state.textEditing] = liveTa.value;
+    }
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
@@ -7578,18 +7753,14 @@
     // its IDs (#cplFundSearch/#cplFundCount/#cplFundTable) live inside the fold.
     // Section titles are Sam's (renamed live, 2026-08-31).
     var collegeBody =
-      '<p class="dk" style="margin:0 0 6px;">Alphabetical. The award figures are each institution&#39;s ' +
-      "<strong>max award</strong> &mdash; maximum funding to be awarded based on measurable outcomes and " +
-      "allocated as credit and noncredit subtotals. Click a row for its per-priority funding, targets, " +
-      "actuals, and the participation confirmation.</p>" +
+      proseBlockHtml("college_intro", "dk cplfund-college-intro") +
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
         { val: "district", label: "Group by district" }], state.group) +
       '<input type="search" id="cplFundSearch" placeholder="Search institution / district / county&hellip;" aria-label="Search institutions">' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
-      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (the full data incl. any hidden columns + the County/working-adults context)">⬇ Excel</button>' +
-      '<button type="button" class="cplfund-optbtn" id="cplFundPdf" title="Open a print-ready view of the whole tab — use your browser&#39;s Print → Save as PDF">⬇ PDF</button></div>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>";
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
@@ -7639,7 +7810,7 @@
       "2 = participation, 3 = Veteran Star &ge;75% JSTs &mdash; replaced for the noncredit-only campuses by " +
       "noncredit certificates posted as exhibits in MAP, N1 a); each sector turns green when the institution " +
       "satisfies it &mdash; a fully green glyph = all met (informational in this draft). " +
-      "AT BASE = brought up to the base award; AT CAP = held at the cap. " +
+      "(at base) beside an award figure = brought up to the base award; (at cap) = held at the cap. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the " +
       "institution&#39;s county.</div>" +
       headcountSourceHtml() +
@@ -7972,7 +8143,6 @@
       }
       return;
     }
-    if (edit === "elig-intro") { setEligIntro(raw); return; }
   }
 
   function wire() {
@@ -8104,6 +8274,40 @@
       });
     });
 
+    // Editable prose blocks (2026-09-02): Edit opens a textarea; Save commits
+    // to the active layer (shared when signed in); Cancel discards; Restore
+    // drops the override so the house text returns.
+    document.querySelectorAll("#cplFundingMount [data-textedit]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textedit");
+        state.textEditing = key; delete state.textDraft[key];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-textsave]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textsave");
+        var ta = document.querySelector('#cplFundingMount [data-textarea="' + key + '"]');
+        state.textEditing = null; delete state.textDraft[key];
+        savingState = "";
+        setText(key, ta ? ta.value : "");
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-textcancel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textcancel");
+        state.textEditing = null; delete state.textDraft[key];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-textreset]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-textreset");
+        state.textEditing = null; delete state.textDraft[key];
+        savingState = "";
+        setText(key, "");
+      });
+    });
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
     document.querySelectorAll("#cplFundingMount [data-edit]").forEach(function (el) {

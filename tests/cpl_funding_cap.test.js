@@ -381,12 +381,14 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (tr) { return tr.textContent.indexOf("Mt San Antonio") !== -1; });
   check("C7: a capped row carries the 'at cap' word-chip (no ⬇ glyph anywhere)",
-    !!row && row.innerHTML.indexOf(">at cap<") !== -1 &&
+    // In parentheses, beside the award figure, since 2026-09-02 (Sam).
+    !!row && row.innerHTML.indexOf(">(at cap)<") !== -1 &&
+    !!row.querySelector("td.cf-award .cplfund-bound") &&
     doc.getElementById("cplFundTable").textContent.indexOf("⬇") === -1);
   // There is more than one .cplfund-foot (the feeder note + the main footer),
   // so scan them all — querySelector picks the wrong one.
   check("C7: the footer legend explains the chip words",
-    /AT BASE = brought up to the base award; AT CAP = held at the cap/.test(
+    /\(at base\) beside an award figure = brought up to the base award; \(at cap\) = held at the cap/.test(
       Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ")));
 
   // Row open-state is keyed by NAME since the one-pool port ("c:<college>",
