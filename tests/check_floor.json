@@ -61,6 +61,7 @@
     "cpl_chat_audience.test.js": 39,
     "cpl_funding_applied.test.js": 23,
     "cpl_funding_basis.test.js": 38,
+    "cpl_funding_calm.test.js": 56,
     "cpl_funding_cap.test.js": 53,
     "cpl_funding_combined.test.js": 27,
     "cpl_funding_cpl_ftes.test.js": 59,
