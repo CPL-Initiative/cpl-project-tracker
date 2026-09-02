@@ -1881,3 +1881,131 @@ after the figure in both award cells (the NC cell only when it holds a share;
 "$0 (at cap)" would claim a bound on nothing), with the same hover text. The
 NC only word stays by the name: that one is an identity, not a bound. The
 footer legend and the cap suite followed the words.
+
+## 2026-09-02 — Session 221 (SkyLead): lead with the table, and the default its author could not see
+
+Sam's brief arrived as seven numbered items, with a screenshot of the Success
+band, and a recommendation he wanted before deciding the first: *"I am
+considering using the Explainer view as the public view … The only thing
+missing from it would be to duplicate the college rows in the public view —
+a bit more complicated than the current view but probably worth having it all
+in one place."* Then: move the institution table *"up just after the intro
+section, so folks don't have to scroll down through the steps to see it —
+most won't care about the details, just their funding"*, on both the tab and
+the public view; *"collapse all sections on open except the intro and college
+table view"*; the Summary *"into the same box as the intro text"*; every
+priority box *"the narrower width as is used for the 1st 2 priorities"*; the
+Combined funding line gone with *"any necessary numbers"* moved to the band's
+top row; and *"make sure the timing and strategies are included in the
+Explainer (now public view)"*. One branch, one PR (#1436).
+
+### The default its author could not see
+
+The tab already opened with everything collapsed except the introduction and
+the table. My BEFORE screenshot, from a fresh Chromium with no storage,
+showed exactly that — the state Sam was asking for. He was asking anyway,
+because on his browser it was not true: the section folds had been persisted
+per browser since 2026-07-28 (`cplfund_sections_v2`), so every section he had
+opened during six weeks of review stayed open on every visit since. The
+author of a page with remembered toggles is the one reader who never sees its
+default.
+
+The fix is not a bigger default but a smaller memory: the open-state is
+per VISIT now. A toggle survives the re-renders an edit triggers (kept in
+memory — the reason the store existed), and a fresh open starts from the
+default. The retired key is removed once on load so an old browser keeps no
+dead entry. The guard for this is the one thing a screenshot could never
+show: it seeds the old store with three sections open and boots, and requires
+them closed. KB note:
+[`methodology-a-remembered-toggle-hides-the-default-from-its-author`](kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md).
+
+### The hidden host was an embed waiting to happen
+
+The explainer's every-institution table was the question behind item 1.
+The page already loaded `cpl_funding.js`, booted the whole tab into a hidden
+mount (`#cplFundHiddenHost`) to compute its payload, and then drew its OWN
+four-column table from `rows` — a second implementation of the same rows,
+which is the shape that drifts: S219 found its header mislabeled and its
+sort order the opposite of the tab's. "Duplicate the college rows" read as
+a request to write that copy a third time, with the drill-in.
+
+The better answer was already on the page. If the engine is running, show
+the engine's rendering: `window.CPL_FUNDING_EMBED = "college"` makes
+`render()` emit only the college section body and its footnote into the
+mount, which now sits in the Every institution section rather than hidden.
+Same rows, same drill-in on the institution's name, same editable
+introduction, same search, grouping, columns and Excel export — and nothing
+to keep in step, because there is nothing to copy. It cost a flag, moving
+the footnote into a function both hosts call, scoping the page's own table
+CSS to `.tablebox` so it could not restyle the embed, and a `../`-prefixed
+`CPL_TABS.loadScript` shim so the actuals load from one directory down.
+The page's `draw()` and its search box went with the table they drew.
+
+### The Combined funding line restated three figures
+
+The screenshot's red line ran from *Combined funding: $8,329,302 for the full
+2026–2028 window, earned against that same 2,948.6 CPL FTES target. Effective
+$2,824.82/CPL FTES* up to the band head's *33% — $8,329,302 Total Possible*.
+The head carries the window figure; the Target line carries the target; and
+under front-load the effective rate IS the price line (*Funding factor 0.50 ×
+the base rate — $2,824.82 per CPL FTES*), because the target is the window
+figure divided by that price. The Current Total line still reads "of
+$8,329,302 full-window Total Possible", so the card kept its own copy of the
+window figure too. Nothing needed moving; the line was a fourth statement
+of three numbers. Only the carryover year keeps a line, because a Year-2 card
+with no funding on it has to say why.
+
+The basis suite's "every stated rate matches its own funding ÷ target" guard
+had been reading all three numbers from that one sentence. It reads them
+from the card's three surfaces now — price line, Current Total line, Target
+line — which is the stronger check: a reader has to be able to reproduce the
+rate from what the card actually shows.
+
+### R11, re-aimed a second time
+
+R11 (2026-08-31) said the Summary is never inside a fold. S219 re-aimed the
+guard once, when the introduction became a section that belongs above it.
+Moving the Summary INTO the introduction re-aims it again, and the shape of
+the argument is the same: the requirement was never "outside every
+`<details>`", it was "never hidden on open". The introduction is the section
+that is open on every visit — per-visit folds made that true for everyone,
+not just a fresh browser — so the guard asserts the requirement directly:
+inside the introduction, in no other fold, the fold open by default, and
+every figure-bearing section still after it.
+
+### auto-fit stretches a lone card
+
+`repeat(auto-fit, minmax(260px, 1fr))` gives a band with two cards two
+columns and a band with one card one column of the band's full width — so
+Completion, alone in the Success band, read twice as wide as the two Access
+cards above it. A fixed pair (`repeat(2, minmax(0, 1fr))`, one column below
+560px) is what Sam described: every card the width of the first two, and a
+lone card leaves its second column empty.
+
+### A guard that dies cannot report — third recurrence, in my own suite
+
+Twelve mutations, twelve caught. But under the one that dropped `strategies`
+from `_prios()`, the new suite ended with a TypeError instead of a named
+failure: the check that pushes onto the returned array assumed the array was
+there. S219 recorded this, S220's first draft repeated it, and this session's
+first draft repeated it again with the lesson in front of me. The fix is a
+`return false` before the dereference, and the reason it matters is the same
+each time: a crash reports nothing, and the run's exit code is the only
+thing CI reads.
+
+### Shipped
+
+Sections: introduction (with the Summary inside) → institution table (with
+its footnote) → window → breakdown → formula → eligibility → outcomes →
+timing. Per-visit folds. Two-column cards. No Combined funding line. Embed
+mode; the explainer's Every institution section hosts the tab's college
+section directly after the introduction, its steps fold closed on open with a
+Show / Hide word, its Step four paints the timing milestones and each
+priority card its strategies, both from the payload (`_timing()`,
+`_prios().strategies`) with a dial-change check so a typed copy cannot pass.
+Both pages fit a 390px phone without sideways scroll. New suite
+`tests/cpl_funding_lead_with_the_table.test.js` (29 checks); four suites
+re-aimed; `funding_model_page.test.js` up to 37. The old public page
+(`cpl_funding_public.html`) is untouched and still live — retiring it into a
+redirect is the recommendation in the lane's NEEDS SAM ④, not this PR's
+decision to make.
