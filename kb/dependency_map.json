@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 394,
+  "file_datasets": 393,
   "external_services": 137,
-  "consumers": 304,
+  "consumers": 303,
   "workflows": 32,
   "data_js_files": 59,
   "tabs": 37
@@ -5767,19 +5767,6 @@
    "consumers": [
     {
      "id": "workflow:overmerge-apply.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/_probe_confirmed_custom_reports.py": {
-   "consumers": [
-    {
-     "id": "workflow:discover-map-datasets.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -16693,7 +16680,7 @@
    "name": "Discover MAP datasets (manual)",
    "crons": [],
    "scripts": [
-    "kb/_probe_confirmed_custom_reports.py"
+    "kb/_probe_lifecycle_checks.py"
    ],
    "adds": [],
    "push": null,
@@ -16724,6 +16711,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/custom_report_response_test.py",
+    "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
