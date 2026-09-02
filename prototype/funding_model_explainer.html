@@ -1,4 +1,20 @@
 <title>How This Funding Model Works</title>
+<!-- ⚠ THE BAKED PAYLOAD BELOW PREDATES THE 2026-09-02 CARD FIX.
+     The prose on this page was revised with the live page's on 2026-09-02, but
+     the #DATA block still carries `cards` computed on the retired two-lane
+     basis — credit_ftes over the 115 colleges — so the two illustration cards
+     read 26,804 FTES / 2.5% for Mt San Antonio while the table below them reads
+     37,634 for the same college. funding_model_payload.js builds them from
+     `rows` now, so ONE regeneration fixes it:
+
+       select config::text from public.cpl_funding_config where id='default';
+       (save it, verify md5 — never hand-transcribe a config)
+       node prototype/build_funding_model_explainer.js <config.json>
+
+     Not run here: the sandbox reaches Supabase only through the MCP tools, and
+     the repo's own rule is to verify a config's md5 rather than paste one
+     through a conversation. The LIVE page (funding-model/index.html) is already
+     correct and is what the SANITY_URL points at. -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
@@ -218,8 +234,8 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <b id="f-main">$25,240,308</b> to institutions is <b>one funding total</b>, shared among all 118 in proportion
       to combined credit + noncredit size within a base award and a cap &mdash; and every award splits
       into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix.
-      Statewide, <b id="f-nc">$1,783,399</b> of the funding is noncredit &mdash; riding
-      <b id="l-nc-count">108</b> college awards, restricted to noncredit outcomes, plus the three
+      Statewide, <b id="f-nc">$1,783,399</b> of the funding is noncredit, carried within
+      <b id="l-nc-count">108</b> college awards and restricted to noncredit outcomes, plus the three
       noncredit-only institutions&rsquo; awards, drawn only as CPL originating from them posts at a credit
       college. The $9.04&nbsp;million remaining from 2025-26 is a separate distribution and is deliberately
       not part of this appropriation.</p>

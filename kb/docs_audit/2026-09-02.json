@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 768,
-    "bytes": 8139810,
+    "bytes": 8140590,
     "over_budget": 4,
     "handoff_max": 220,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 138772,
+        "bytes": 139552,
         "over": 1
       },
       "handoff": {
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 2475,
-      "bytes": 1271557927,
-      "heavy_bytes": 600667678,
+      "bytes": 1271560144,
+      "heavy_bytes": 600668696,
       "heavy_share": 0.472,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -325,13 +325,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 22888,
+        "bytes": 23668,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 10888,
-        "ratio": 1.91
+        "over_by": 11668,
+        "ratio": 1.97
       },
-      "message": "22,888 B is 1.9× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "23,668 B is 2.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
@@ -464,10 +464,10 @@
       "fixable": false,
       "path": "prototype",
       "detail": {
-        "bytes": 10898418,
+        "bytes": 10899436,
         "kind": "dir"
       },
-      "message": "directory totals 10,898,418 B inside the vault"
+      "message": "directory totals 10,899,436 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
