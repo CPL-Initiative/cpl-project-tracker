@@ -1,44 +1,56 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-02",
- "_session": "SkyTrim, Session 219 — the drill-in trim, both consolidations, and the explainer audit",
- "_status": "The Implementation Funding tab got a full pass. The college expand lost four sentences that restated rules stated elsewhere, and gained a To go column showing each priority's distance to target and the funding that distance would earn — the targets were always rendered, but the table was being laid out into a 240-pixel column with three of its columns past the edge of the screen. The Ed. Code goal boxes folded into the priority bands, so each band now carries its own outcomes and how each is evidenced, with the four-goal statutory account one click down. The Funding Breakdown became a flat ledger reading down to the total, with the base and cap on their own line — every dial still editable, every detail still one click away. A short introduction opens the tab. The public explainer was rewritten to read formally, and that rewrite turned up four claims it had been getting wrong, including one where the page could never have shown the right number.",
- "items": [
-  {
-   "id": "s219-sam-set-dials",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Set the funding dials on this tab: Accepted at 25% share and factor 1.0, with the starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save here rather than something a session writes into the database for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets, and it will read differently now."
-  },
-  {
-   "id": "s219-sam-annual-earning-percent",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Decide whether the Annual view should keep showing earning above 100%. An award cell can read \"earning $140,476 · 191%\" there, because earning is a window quantity measured against a per-year figure. That is deliberate, but two readers have now read it as over-earning. Keep it as is, or compute the percent against the window figure."
-  },
-  {
-   "id": "s219-sam-refresh-explainer-snapshot",
-   "for": "Sam",
-   "tab": "cpl-implementation",
-   "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
-  },
-  {
-   "id": "s219-fable-pedro-three-feeds",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "One request to Pedro carrying all three feed additions: the CPL lifecycle booleans (sent 2026-09-01), Origin and LocID2, and completions. Completions needs a new MAP view — the existing student view has no award column and the programs view is a catalog. Completion data would let the Completion outcome be measured in the statute's own word."
-  },
-  {
-   "id": "s219-fable-explainer-browser-check",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Repair the explainer's browser check. It waits for an element id retired long ago, and also pins a dollar figure and a college count that have both moved. It fails the same way on main and sits outside the main test run, so nothing has been reporting it."
-  },
-  {
-   "id": "s219-fable-dead-css-cleanup",
-   "for": "Fable",
-   "tab": "cpl-implementation",
-   "text": "Cut the dead CSS left behind by the retired row shapes — about fifteen rules for shapes the one-pool model removed, plus a stale selector in the frozen-header code."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-09-02",
+  "_session": "SkyCalm, Session 220 — the calm pass, editable text sections, and the held figure beside its total",
+  "_status": "The Implementation Funding tab had its calm pass. Every icon and emoji on the page became a plain word or was removed: the fold arrows are Show and Hide, the little caret before each college is gone and the college's name is what you click, every button says what it does, and the $50K view's check marks are the words met, partial, not yet, n/a and pending. The colored stripes, filled bars and red buttons came off; the Draft chip is a quiet outlined word; the line under the title that still said \"pools\" is gone. Five text sections — the introduction, Reading the funding, the eligibility introduction, the noncredit earning rules and the table introduction — can be edited in place when signed in (Edit, then Save), and the new wording shows on the public page too. The held-in-reserve amount on a college's detail now reads beside the total it is part of, as Sam asked, instead of floating under the noncredit column. A published edit reaches the explainer page on its next load.",
+  "items": [
+    {
+      "id": "s220-sam-calm-pass-calls",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "React to the calm pass's judgment calls on the Implementation Funding tab, by letter: (a) the subtitle under the title is gone; (b) the college's name is what opens its detail, no caret; (c) the sort arrow is the one mark kept, ghosted; (d) the CPL area word stays as muted text by the project picker; (e) a scenario with edits reads (edited) in the picker; (f) the held-in-reserve amount reads inside the eligibility sentence and again ahead of Total Possible; (g) the eligibility introduction is prose with an Edit word for reviewers. Reply keep, edit, or revert per letter."
+    },
+    {
+      "id": "s220-sam-more-editable-text",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "Say whether more of the tab's text should be editable in place. Five sections are today (the introduction, Reading the funding, the eligibility introduction, the noncredit earning rules, the table introduction). Any other paragraph is one registry entry away."
+    },
+    {
+      "id": "s219-sam-set-dials",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Set the funding dials on this tab: Accepted at 25% share and factor 1.0, with the starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save here rather than something a session writes into the database for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets, and it will read differently now."
+    },
+    {
+      "id": "s219-sam-annual-earning-percent",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Decide whether the Annual view should keep showing earning above 100%. An award cell can read \"earning $140,476 · 191%\" there, because earning is a window quantity measured against a per-year figure. That is deliberate, but two readers have now read it as over-earning. Keep it as is, or compute the percent against the window figure."
+    },
+    {
+      "id": "s219-sam-refresh-explainer-snapshot",
+      "for": "Sam",
+      "tab": "cpl-implementation",
+      "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
+    },
+    {
+      "id": "s219-fable-pedro-three-feeds",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "One request to Pedro carrying all three feed additions: the CPL lifecycle booleans (sent 2026-09-01), Origin and LocID2, and completions. Completions needs a new MAP view — the existing student view has no award column and the programs view is a catalog. Completion data would let the Completion outcome be measured in the statute's own word."
+    },
+    {
+      "id": "s219-fable-explainer-browser-check",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Repair the explainer's browser check. It waits for an element id retired long ago, and also pins a dollar figure and a college count that have both moved. It fails the same way on main and sits outside the main test run, so nothing has been reporting it."
+    },
+    {
+      "id": "s219-fable-dead-css-cleanup",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Cut the dead CSS left behind by the retired row shapes — about fifteen rules for shapes the one-pool model removed, plus a stale selector in the frozen-header code."
+    }
+  ]
 }

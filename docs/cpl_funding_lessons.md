@@ -1765,3 +1765,108 @@ and in the handoff rather than folded into a register pass.
 
 **Receipts.** PR #1434. `_prios()` gained one field; the rest is prose, ids and
 guards. Full suite green; all sixteen `js-tests.yml` steps run locally.
+
+## 2026-09-02 — Session 220 (SkyCalm): the calm pass, and the text a test does not see
+
+Sam opened with the brief in one sentence — *"get rid of any cheesy glyphs (per
+our rules) and preserve all needed functionality while eliminating any visual
+noise possible. I want folks to feel calm when they open this model"* — and
+added, mid-turn, the two things that turned out to matter most: the reserve
+note on a college row *"isn't clear when compared to 400k available"*, then
+*"put it before the $400k CR total and not on the NC total"*; and *"It would be
+nice to be able to edit while in curate, any of the text sections."* One PR.
+
+### What the sweep found that the eye had not
+
+The tab had 273 glyph characters in its source; 60-odd of them rendered. Sam's
+screenshot circled the obvious ones (the pencil, the warning sign, the tick on
+"saved", the chevrons). The guard written for the pass — a character-class
+sweep over the whole mount's `innerHTML`, on four sub-views — found two the
+eye had missed, and both were in places a reader does see:
+
+- **Tooltips.** `title="… use your browser's Print → Save as PDF"` on two
+  buttons. A hover text is rendered text.
+- **Entities.** `" per student &rarr; " + students` on every priority card.
+  The source shows `&rarr;`; the page shows an arrow.
+
+Neither is in `textContent`'s idea of the page, and neither is in a
+screenshot at rest. A sweep over the markup sees both.
+
+### `textContent` has no seams
+
+The vocabulary guard — no `pool`, `money`, `apportion`, `pot` or the advance
+concept anywhere rendered — passed with "the one institution pool" put back
+into a ledger label. Not because the label was unrendered: because the label
+ends where a button begins, and `textContent` joins the two with nothing —
+`…the one institution poolRemove`. `\bpool\b` has no boundary to match. The
+gate test had recorded the same trap on 2026-07-30 (`"$150,000held $147,606"`)
+and the lesson had not traveled to the next guard. Now the sweep reads words
+off the markup with a space where every tag was, and the mutation fails by
+name. KB note:
+[`methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads`](kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md).
+
+The method that found it is worth keeping too: a mutation that "passes" is
+first a question about the fixture, not the guard. Check that the mutated
+branch renders at all (the ledger has a single-source branch and a
+multi-source branch; only one shows in tests), and only then ask why the
+guard let it through.
+
+### A guard that dies cannot report — recurred, in my own suite
+
+S219 wrote it down: the first draft of the ledger guard threw at an unguarded
+call and the run ended before `finish()` printed. This session's first draft
+did the same thing under mutation — with the Edit control removed, the click
+on a null element crashed the process and the log showed no failure, no
+summary, nothing. Every click on a control a regression could remove now goes
+through a helper that records absence as a failure by name. The pattern is
+general enough that it belongs in the harness one day; for now it is in the
+suite, with the comment that explains it.
+
+### The reserve note was relating two quantities without saying so
+
+"$400,000" (the max award) sat in the row; "$132,000 held in reserve — this
+college would have earned that on its main allocation" sat in the fourth
+column of the drill-in, under the NC award. Two problems. "Main allocation" is
+two-lane-era vocabulary (main vs feeder) and means nothing in the one-pool
+model. And the sentence never said what the $132k was a part OF. Sam's fix
+was placement — *before the $400k CR total, not on the NC total* — and the
+wording followed: the figure now reads inside the gate sentence (*"$132,000 of
+its max award — earned on the CPL this college has already posted in MAP — is
+held in reserve, not lost, until it meets each of these: (1) … (2) …"*) and
+again in the priority caption ahead of Total Possible. No standalone item, so
+nothing lands under a column it does not belong to. The gate sentence also
+stopped joining two curator-written requirement sentences with "and", which
+had produced one unreadable clause; they are numbered now.
+
+### Prose is not a dial
+
+Every dial on the tab is editable by everyone — a signed-out visitor's edits
+land in a per-browser overlay ("just start editing to explore"). The
+eligibility introduction rode that convention as an always-open textarea,
+which is why the tab greeted every visitor with an input box above the
+requirements. The prose blocks deliberately do not: they render as prose for
+everyone and offer Edit only to a signed-in reviewer. Exploring a sentence
+has no modeling value, and a textarea is the least calm thing on a page.
+Same storage discipline as the dials, though — `text.<key>` in the config
+layers, so Reset and Publish treat words and numbers alike.
+
+### Sam's question, answered from the code
+
+*Does Publish reach the explainer?* Yes: the explainer boots the same engine
+in a hidden mount and fetches the same shared config, so a published edit is
+on it at the next load with no republish step. Two things worth knowing
+beside that. When signed in, an edit saves to the shared config immediately —
+Publish exists only for edits made before signing in. And the explainer
+shares the dashboard's origin, so in the curator's OWN browser it also shows
+the unpublished what-if overlay; it looks published from that chair and is
+not, for anyone else, until Publish. The snapshot twin under `prototype/` is
+the one copy that never updates.
+
+### Shipped
+
+`cpl_funding.js` (glyphs → words on every surface; the calm chrome; the
+five prose blocks; the reserve placement; the vocabulary), both HTML shells
+(the subtitle), `cpl_funding_public.html`, `funding-model/index.html` + the
+payload (masthead tags painted), the snapshot twin (register only), seven
+suites re-aimed, and `tests/cpl_funding_calm.test.js` (56 checks,
+mutation-verified seven ways).

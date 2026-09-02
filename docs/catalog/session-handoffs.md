@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-194 document(s).
+195 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 221 | [the tab is calm; the dials are still Sam's to set](../session_221_handoff.md) | 2026-09-02 |
 | 220 | [the tab is consolidated; the dials are still Sam's to set](../session_220_handoff.md) | 2026-09-01 |
 | 219 | [the bands shipped; Sam sets the dials, then re-run the earn diagnostic](../session_219_handoff.md) | 2026-09-01 |
 | 218 | [the 9/02 deck is delivered; fix the explainer's prose next](../session_218_handoff.md) | 2026-09-01 |

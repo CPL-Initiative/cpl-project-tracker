@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 365,
+   "count": 366,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5581,6 +5581,26 @@
      "title": "The same arithmetic can read as withholding or as investment",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-02",
+     "governs": [
+      "tests/cpl_funding_calm.test.js",
+      "tests/cpl_funding_gate_ledger_public.test.js",
+      "docs/cpl_funding_lessons.md"
+     ],
+     "path": "docs/kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "jsdom",
+      "presentation-doctrine",
+      "implementation-funding"
+     ],
+     "title": "The text a reader sees is not the text a test reads",
+     "type": "methodology",
+     "updated": "2026-09-02"
     },
     {
      "created": "2026-08-24",
@@ -11463,8 +11483,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 194,
+   "count": 195,
    "docs": [
+    {
+     "created": "2026-09-02",
+     "governs": [],
+     "n": 221,
+     "path": "docs/session_221_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the tab is calm; the dials are still Sam's to set",
+     "type": null,
+     "updated": "2026-09-02"
+    },
     {
      "created": "2026-09-01",
      "governs": [],
@@ -14867,5 +14900,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 755
+ "total": 757
 }
