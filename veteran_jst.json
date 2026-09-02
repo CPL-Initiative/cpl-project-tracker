@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-01T16:46:43.536506+00:00",
+  "scraped_at": "2026-09-02T11:24:29.099800+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27540,
+    "jst": 27576,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -62,12 +62,12 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 546,
+      "jst": 549,
       "star": false
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 815,
+      "jst": 816,
       "star": true
     },
     "De Anza College": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 513,
+      "jst": 514,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -495,14 +495,14 @@
       "jst": 46,
       "star": false
     },
+    "Chabot College": {
+      "vets": 304,
+      "jst": 46,
+      "star": false
+    },
     "Columbia College": {
       "vets": 33,
       "jst": 24,
-      "star": false
-    },
-    "Chabot College": {
-      "vets": 304,
-      "jst": 15,
       "star": false
     },
     "Taft College": {
