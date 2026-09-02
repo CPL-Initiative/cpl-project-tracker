@@ -147,18 +147,25 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
         return i === 0 || a[i - 1].localeCompare(n) <= 0;
       });
     })());
-  // The Summary sits at the TOP, before any section fold (R11) — the one
-  // over/under readout the retired balance boxes fed.
-  // ⚠️ RE-AIMED to R11's actual requirement (2026-09-01), not weakened. R11 is
-  // "the Summary is never inside a fold"; "above the first section" was an
-  // equivalent proxy until Sam asked for a collapsible introduction, which is a
-  // section and belongs above it — a reader should be told what the model IS
-  // before being shown a readout about it. So assert BOTH halves directly: the
-  // Summary is in no <details> at all, and nothing carrying figures precedes it.
-  check("the Summary is never inside a fold (R11)",
+  // The Summary is the one over/under readout the retired balance boxes fed
+  // (R11, 2026-08-31: "never inside a fold").
+  // ⚠️ RE-AIMED to R11's actual requirement (2026-09-01), not weakened: "above
+  // the first section" was an equivalent proxy until Sam asked for a
+  // collapsible introduction, which belongs above it.
+  // ⚠️ RE-AIMED AGAIN (2026-09-02), when Sam moved the Summary INTO the
+  // introduction ("into the same box as the intro text"). R11's requirement is
+  // that the readout is never HIDDEN ON OPEN; the introduction is the one
+  // section that is open on every visit (per-visit folds, same day). So the
+  // guard asserts that directly: the Summary sits inside the introduction and
+  // in no other fold, that fold is open by default, and (below) every
+  // figure-bearing section still follows it.
+  check("the Summary sits inside the introduction, which is open on every visit (R11, re-aimed 2026-09-02)",
     (function () {
       const sum = doc.querySelector(".cplfund-summary");
-      return !!sum && !sum.closest("details");
+      const fold = sum && sum.closest("details");
+      return !!fold && fold.classList.contains("cplfund-sec") &&
+        fold.getAttribute("data-sec") === "about" && fold.open === true &&
+        sum.closest("details.cplfund-sec details") === null;
     })());
   check("...and every figure-bearing section still follows it — only the intro may precede",
     (function () {

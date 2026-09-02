@@ -77,6 +77,36 @@ section:last-of-type{border-bottom:0}
 .step-no{display:inline-block; font-family:"Source Sans 3",sans-serif; font-size:.74rem; font-weight:700;
   letter-spacing:.14em; text-transform:uppercase; color:var(--cobalt); margin-bottom:.5em}
 
+/* ── folded steps (Sam, 2026-09-02) ───────────────────────────────────────
+   The page opens on the introduction and the institution table; the steps
+   that explain the mechanics are folded, each behind its own heading with a
+   Show / Hide word — a reader who wants the detail opens it, and one who
+   wants their figure never scrolls past it. The summary holds phrasing
+   content and one heading, which is what the element permits, so the step
+   label is a span here rather than the paragraph it is in an open section. */
+details.fold > summary{list-style:none; cursor:pointer; display:grid;
+  grid-template-columns:minmax(0,1fr) auto; align-items:center; column-gap:16px}
+details.fold > summary::-webkit-details-marker{display:none}
+details.fold > summary::marker{content:''}
+details.fold > summary .step-no{grid-column:1; margin-bottom:.35em}
+details.fold > summary h2{grid-column:1}
+details.fold > summary .fold-word{grid-column:2; grid-row:1 / span 2; font-size:.88rem; font-weight:600;
+  color:var(--text-muted); white-space:nowrap}
+details.fold > summary .fold-word::before{content:"Show"}
+details.fold[open] > summary .fold-word::before{content:"Hide"}
+details.fold > summary:hover .fold-word{text-decoration:underline}
+details.fold > summary:focus-visible{outline:2px solid var(--focus-ring); outline-offset:6px; border-radius:3px}
+details.fold > .fold-body{padding-top:1.4em}
+
+/* ── the embedded institution table ──────────────────────────────────────
+   The table is the Implementation Funding tab's own college section, rendered
+   by the same code (cpl_funding.js in embed mode) into #cplFundingMount, so
+   the rows, the drill-in and the footnote are one implementation, not a copy.
+   The tab injects its own stylesheet; the page's table rules are scoped to
+   .tablebox below so they never reach it. */
+.loading{color:var(--text-muted); font-size:.9rem}
+#cplFundingMount .cplfund{font-size:.95rem}
+
 /* ── key figures ──────────────────────────────────────────────────────── */
 .figs{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 6px; max-width:none}
 .fig{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; padding:16px 18px}
@@ -130,30 +160,28 @@ section:last-of-type{border-bottom:0}
 .prio .metric{margin:.5em 0 0; font-size:.94rem}
 .prio .aim{margin:.35em 0 0; font-size:.88rem; color:var(--text-muted)}
 
-/* ── plain tables ─────────────────────────────────────────────────────── */
+/* ── plain tables (the page's own: the worked example and the choices table;
+      scoped to .tablebox so the embedded institution table keeps its own) ── */
 .tablebox{border:1px solid var(--border); border-radius:4px; background:var(--surface-opaque);
   overflow-x:auto; max-width:none; margin-top:1.2em}
-table{width:100%; border-collapse:collapse; background:var(--surface-opaque); font-size:.92rem}
-caption{text-align:left; padding:14px 18px 0; color:var(--text-muted); font-size:.86rem}
-th,td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--border)}
-thead th{background:var(--surface-subtle); color:var(--text-strong); font-weight:700; font-size:.8rem;
+.tablebox table{width:100%; border-collapse:collapse; background:var(--surface-opaque); font-size:.92rem}
+.tablebox caption{text-align:left; padding:14px 18px 0; color:var(--text-muted); font-size:.86rem}
+.tablebox th,.tablebox td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--border)}
+.tablebox thead th{background:var(--surface-subtle); color:var(--text-strong); font-weight:700; font-size:.8rem;
   letter-spacing:.03em; text-transform:uppercase; white-space:nowrap; position:sticky; top:0}
-td.n,th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
-tbody tr:nth-child(even) td{background:var(--surface-subtle)}
-tbody tr:last-child td{border-bottom:0}
-.mark{font-size:.74rem; font-weight:700; padding:1px 7px; border-radius:10px; margin-left:6px; white-space:nowrap}
-.mark.floor{color:var(--mustard-text); background:var(--tint-mustard)}
-.mark.cap{color:var(--cobalt); background:var(--tint-cobalt)}
-.scroller{max-height:520px; overflow:auto}
-.searchrow{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin:1.2em 0 0; max-width:none}
-label.srch{font-weight:600; color:var(--text-strong)}
-input[type=search]{font:inherit; padding:9px 13px; border:1px solid var(--border-strong); border-radius:4px;
-  background:var(--surface-opaque); color:var(--text-body); min-width:0; flex:1 1 220px}
-.count{font-size:.88rem; color:var(--text-muted)}
+.tablebox td.n,.tablebox th.n{text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap}
+.tablebox tbody tr:nth-child(even) td{background:var(--surface-subtle)}
+.tablebox tbody tr:last-child td{border-bottom:0}
 
-/* ── dials vs facts ───────────────────────────────────────────────────── */
-.legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:1em; font-size:.88rem; color:var(--text-muted); max-width:none}
-.legend span{display:inline-flex; align-items:center; gap:6px}
+/* ── the strategies under a priority, and the timing milestones ───────── */
+.prio .strat-h{margin:.8em 0 .2em; font-size:.82rem; font-weight:700; letter-spacing:.04em;
+  text-transform:uppercase; color:var(--text-muted)}
+.prio ul.strat{margin:0; padding-left:1.2em; font-size:.92rem}
+.prio ul.strat li{margin:.2em 0}
+ul.timing{margin:0; padding-left:1.2em}
+ul.timing li{margin:.25em 0; display:flex; flex-wrap:wrap; gap:0 12px; justify-content:space-between}
+ul.timing li .when{font-variant-numeric:tabular-nums; color:var(--text-muted); white-space:nowrap}
+ul.timing li.open{font-style:italic; color:var(--text-muted)}
 
 footer{padding:34px 0 56px; color:var(--text-muted); font-size:.88rem}
 footer p{max-width:none}
@@ -173,8 +201,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
 }
 @media print{
-  .searchrow,.skip{display:none}
-  .scroller{max-height:none; overflow:visible}
+  .skip{display:none}
   body{background:#FFFFFF}
 }
 </style>
@@ -260,12 +287,34 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<!-- EVERY INSTITUTION — directly after the introduction (Sam, 2026-09-02:
+     "so folks don't have to scroll down through the steps to see it — most
+     won't care about the details, just their funding"). The table is the
+     Implementation Funding tab's own college section, rendered here by the
+     same code in embed mode: the same rows, the same drill-in on an
+     institution's name, the same footnote. Its introduction is the tab's
+     editable block, so a curator's Publish reaches this page too. -->
+<section id="institutions">
   <div class="wrap">
     <div class="sec-head">
-      <p class="step-no">Step one</p>
-      <h2>How much each institution is allocated</h2>
+      <hr class="rule">
+      <h2>Every institution</h2>
     </div>
+    <div class="main-container">
+      <div id="cplFundingMount"><p class="loading">Loading the institution table&hellip;</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <details class="fold">
+    <summary>
+      <span class="step-no">Step one</span>
+      <h2>How much each institution is allocated</h2>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
     <p>An institution&rsquo;s size is measured in <strong>full-time equivalent students</strong>, the
       Chancellor&rsquo;s Office&rsquo;s standard measure of instructional volume, counting credit and
       noncredit instruction together. Across the <span id="l-basis-n">118</span> institutions in the model
@@ -298,15 +347,20 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       instruction originates in the noncredit program and the credit is awarded at a credit college in the
       district.</p>
     <ul id="nc-list"></ul>
+    </div>
+    </details>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head">
-      <p class="step-no">Step two</p>
+    <details class="fold">
+    <summary>
+      <span class="step-no">Step two</span>
       <h2>What a college has to do to qualify</h2>
-    </div>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
     <p>Three requirements, each verifiable from MAP:</p>
     <ol>
       <li>A <strong>CPL Coordinator or Counselor listed in MAP</strong>, so a student&rsquo;s request reaches
@@ -321,15 +375,20 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
         not redistributed in the interim</strong>. Funding an institution has not yet earned is held in
         reserve for it rather than reallocated to institutions that qualified earlier.</p>
     </div>
+    </div>
+    </details>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head">
-      <p class="step-no">Step three</p>
+    <details class="fold">
+    <summary>
+      <span class="step-no">Step three</span>
       <h2>How the funding is earned</h2>
-    </div>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
     <p>Each institution&rsquo;s allocation is divided across three priorities. Each priority carries a
       share of the allocation and a single measure. The order and the shares below are those currently set
       in the model.</p>
@@ -378,15 +437,20 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
         is assessed against a proportionally smaller target, so it earns at the same rate as every other
         institution above the minimum.</p>
     </div>
+    </div>
+    </details>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head">
-      <p class="step-no">Step four</p>
+    <details class="fold">
+    <summary>
+      <span class="step-no">Step four</span>
       <h2>When the funding is disbursed</h2>
-    </div>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
     <p>Two timing settings are in effect in the current model. Neither changes the amount an institution
       can earn.</p>
     <ul>
@@ -399,15 +463,24 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
         one is reflected in the other. Nothing is overwritten: disabling the mirror leaves both years as
         they were.</li>
     </ul>
+    <!-- The milestones the tab's Timing section carries, painted from the
+         payload (D.timing) so a curator's edit reaches this page. -->
+    <h3 style="margin-top:1.6em">Milestones</h3>
+    <p>The milestones set in the model, as they stand. A milestone without a date is contingent.</p>
+    <ul class="timing" id="timing-list"></ul>
+    </div>
+    </details>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sec-head">
-      <hr class="rule">
+    <details class="fold">
+    <summary>
       <h2>What is a choice, and what is a given</h2>
-    </div>
+      <span class="fold-word" aria-hidden="true"></span>
+    </summary>
+    <div class="fold-body">
     <p>Some of the figures in this model are policy decisions the Chancellor&rsquo;s Office can change.
       Others are given, and the model takes them as it finds them.</p>
     <div class="tablebox">
@@ -433,42 +506,8 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
         </tbody>
       </table>
     </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <hr class="rule">
-      <h2>Every institution</h2>
     </div>
-    <p>The amount allocated to each institution across the two years under the current settings, ordered
-      largest first. Each figure is that institution&rsquo;s single combined maximum award. The three
-      noncredit-only institutions appear as ordinary rows, and statewide
-      <b class="num" id="f-nc2">$1,783,399</b> of these awards is the noncredit share, restricted to
-      noncredit outcomes rather than presented as a separate table.</p>
-    <div class="searchrow">
-      <label class="srch" for="q">Find an institution</label>
-      <input type="search" id="q" placeholder="Type an institution or district name" autocomplete="off">
-      <span class="count" id="count" role="status" aria-live="polite">118 institutions</span>
-    </div>
-    <div class="tablebox scroller" tabindex="0" role="region" aria-label="Two-year allocation for every institution, scrollable">
-      <table>
-        <thead>
-          <tr>
-            <th scope="col">Institution</th>
-            <th scope="col">District</th>
-            <th scope="col" class="n">Credit + noncredit FTES</th>
-            <th scope="col" class="n">Allocated</th>
-          </tr>
-        </thead>
-        <tbody id="tbody"></tbody>
-      </table>
-    </div>
-    <div class="legend">
-      <span><span class="mark floor">at the minimum</span> brought up to <span id="g-floor">$150,000</span></span>
-      <span><span class="mark cap">at the maximum</span> held at <span id="g-cap">$400,000</span></span>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -477,9 +516,9 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 <footer>
   <div class="wrap">
     <p><strong>Where these numbers come from.</strong> Every figure on this page is produced by the same
-      code that runs the Implementation Funding tab, over the committed 2025-26 credit-FTES roster for
-      118 institutions and the policy settings saved in the model on 31 August 2026. Change a setting on the
-      tab and these figures move with it.</p>
+      code that runs the Implementation Funding tab, over the committed 2025-26 credit and noncredit FTES
+      roster for 118 institutions and the policy settings saved in the model. Change a setting on the tab
+      and these figures move with it; the institution table above is the tab&rsquo;s own.</p>
     <p>This is a working model for discussion, not adopted policy. The figures shown are the maximum
       allocated to each institution; the amount actually disbursed depends on the baseline requirements it
       meets and the prior learning it records.</p>
@@ -497,10 +536,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // third copy of themselves on screen (Sam caught it: the two worked-example
   // cards rendered three times over).
   //
-  // #tbody is NOT in this list because draw() already clears it — which is
-  // exactly why the first test missed this: it asserted on the one container
-  // that could not fail.
-  ["prios", "workedbody", "cards", "nc-list"].forEach(function (id) {
+  // (The page's own every-college table, whose draw() cleared itself, is
+  // retired — the institution table is the tab's embed now, and the tab owns
+  // its rendering. The milestone list joins the emptied set.)
+  ["prios", "workedbody", "cards", "nc-list", "timing-list"].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) el.textContent = "";
   });
@@ -554,8 +593,37 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var a = document.createElement("p"); a.className = "aim";
     a.textContent = "Measured as: " + p.metric;
     el.appendChild(top); el.appendChild(m); el.appendChild(a);
+    // The recommended strategies for the year, as the tab's card lists them
+    // (Sam, 2026-09-02). Painted from the payload, so an edit on the tab
+    // reaches this page; a priority with none gets no empty heading.
+    if (p.strategies && p.strategies.length) {
+      var sh = document.createElement("p"); sh.className = "strat-h";
+      sh.textContent = "Recommended strategies";
+      var sl = document.createElement("ul"); sl.className = "strat";
+      p.strategies.forEach(function (s) {
+        var li = document.createElement("li"); li.textContent = s; sl.appendChild(li);
+      });
+      el.appendChild(sh); el.appendChild(sl);
+    }
     box.appendChild(el);
   });
+
+  // ── the timing milestones (Step four) ─────────────────────────────────
+  // The tab's Timing section, verbatim from the same config layers; a
+  // milestone with no date renders as contingent rather than as a blank.
+  (function () {
+    var host = document.getElementById("timing-list");
+    if (!host || !D.timing) return;
+    D.timing.forEach(function (t) {
+      var li = document.createElement("li");
+      var when = String(t.date || "").trim();
+      if (!when) li.className = "open";
+      var lbl = document.createElement("span"); lbl.textContent = t.label || "";
+      li.appendChild(lbl);
+      if (when) { var w = document.createElement("span"); w.className = "when"; w.textContent = when; li.appendChild(w); }
+      host.appendChild(li);
+    });
+  })();
 
   // ── worked example ────────────────────────────────────────────────────
   var wb = document.getElementById("workedbody");
@@ -571,30 +639,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   });
 
   // ── every college ─────────────────────────────────────────────────────
-  var tbody = document.getElementById("tbody"), count = document.getElementById("count");
-  function draw(filter){
-    tbody.textContent = "";
-    var f = (filter || "").trim().toLowerCase(), shown = 0;
-    D.rows.forEach(function(r){
-      if (f && (r[0] + " " + r[1]).toLowerCase().indexOf(f) === -1) return;
-      shown++;
-      var tr = document.createElement("tr");
-      var th = document.createElement("th"); th.scope = "row";
-      th.appendChild(document.createTextNode(r[0]));
-      if (r[4]) { var m1 = document.createElement("span"); m1.className = "mark floor"; m1.textContent = "at the minimum"; th.appendChild(m1); }
-      if (r[6]) { var m3 = document.createElement("span"); m3.className = "mark cap"; m3.textContent = "at the maximum"; th.appendChild(m3); }
-      var d = document.createElement("td"); d.textContent = r[1].replace(/ Community College District$/, " CCD").replace(/ Joint Community College District$/, " CCD");
-      var f1 = document.createElement("td"); f1.className = "n"; f1.textContent = num(r[2]);
-      var f2 = document.createElement("td"); f2.className = "n"; f2.textContent = money(r[3]);
-      tr.appendChild(th); tr.appendChild(d); tr.appendChild(f1); tr.appendChild(f2);
-      tbody.appendChild(tr);
-    });
-    count.textContent = shown === D.rows.length
-      ? D.rows.length + " institutions"
-      : shown + " of " + D.rows.length + " institutions";
-  }
-  draw("");
-  document.getElementById("q").addEventListener("input", function(e){ draw(e.target.value); });
+  // Not painted here since 2026-09-02: the institution table is the
+  // Implementation Funding tab's own college section, rendered by
+  // cpl_funding.js in embed mode into #cplFundingMount. D.rows still feeds
+  // the basis, the range and the two illustration cards above.
 
   // Headline figures, so the prose can never drift from the model.
   document.getElementById("f-total").textContent = money(P.one_time);
@@ -623,12 +671,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     setText("l-nc-count", String(D.nc.ncColleges));
     setText("t-nc", money(D.nc.face));
     setText("f-nc", money(D.nc.face));
-    // The every-college table's lead-in named the carve-out too and was the one
-    // mention with no id, so it alone kept saying $1,000,000 after the figure
-    // moved to $1.8M. A figure this page fills in three places and hard-codes in
-    // a fourth is worse than one it hard-codes everywhere: three agree and the
-    // fourth reads as the considered exception.
-    setText("f-nc2", money(D.nc.face));
+    // (The every-college table's own lead-in, which once hard-coded this
+    // figure a fourth time, is gone with that table — the embedded table's
+    // introduction is the tab's editable block.)
   }
   setText("f-floorv", money(D.pool.floor));
   setText("f-capv", money(D.pool.cap));
@@ -642,8 +687,6 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   setText("l-capr", money(D.model.capReleased));
   setText("t-floor", money(D.pool.floor));
   setText("t-cap", hasCap ? money(D.pool.cap) : "none set");
-  setText("g-floor", money(D.pool.floor));
-  setText("g-cap", money(D.pool.cap));
   setText("f-rate", money(D.pool.rate));
   // ── PAINTED 2026-09-01, after the audit the S217 handoff called for ────────
   // Three claims on this page were STATIC and had been wrong since the one-pool
@@ -761,14 +804,34 @@ window.CPL_PAINT_EXPLAINER = function (D) {
      Supabase config, so there is nothing to recalculate and nothing to go stale.
 
      cpl_funding.js is a TAB renderer: it needs a mount to draw into and it
-     re-renders when the remote config lands. The mount below is hidden and its
-     output is never shown — we only want the model behind it. onModelChange is
-     the same hook My College uses for exactly this reason.
+     re-renders when the remote config lands. Until 2026-09-02 that mount was a
+     hidden host and only the model behind it was wanted; the mount is now the
+     Every institution section above, and the renderer runs in EMBED mode —
+     the public rendering of the tab's college section alone, with the tab's
+     chrome, sections and Summary left to this page. onModelChange is the same
+     hook My College uses for exactly this reason.
      ──────────────────────────────────────────────────────────────────────── -->
-<div id="cplFundHiddenHost" hidden aria-hidden="true" style="display:none">
-  <div><h2>CPL Implementation Funding</h2><span id="cplFundTitleLink"></span></div>
-  <div id="cplFundingMount"></div>
-</div>
+<script>
+// PUBLIC + EMBED. cpl_funding.js reads both flags: public mode suppresses
+// every curate/edit affordance and sweeps the DOM after each render; embed
+// mode renders only the institution table and its footnote into the mount.
+window.CPL_FUNDING_PUBLIC = true;
+window.CPL_FUNDING_EMBED = "college";
+// The tab lazy-loads its optional sidecars (the MAP actuals and the ESS
+// rollup) through CPL_TABS.loadScript when the dashboard provides it. This
+// page lives one directory down, so give it the same contract with the path
+// corrected; both sidecars fail open if absent.
+window.CPL_TABS = {
+  loadScript: function (src, globalName, cb) {
+    if (window[globalName]) { if (cb) cb(); return; }
+    var s = document.createElement("script");
+    s.src = "../" + src;
+    s.onload = function () { if (cb) cb(); };
+    s.onerror = function () { if (cb) cb(); };   // fail open — never block the render
+    document.head.appendChild(s);
+  }
+};
+</script>
 <script src="../cpl_funding_data.js"></script>
 <script src="../funding_model_payload.js"></script>
 <script src="../cpl_funding.js"></script>
