@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 773,
-    "bytes": 8205967,
+    "bytes": 8212419,
     "over_budget": 4,
     "handoff_max": 222,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 103,
-        "bytes": 2497723,
+        "bytes": 2497825,
         "over": 2
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1906987,
+        "bytes": 1910408,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 150277,
+        "bytes": 153206,
         "over": 1
       },
       "handoff": {
@@ -61,8 +61,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2485,
-      "bytes": 1279154873,
+      "files": 2486,
+      "bytes": 1279188591,
       "heavy_bytes": 600963039,
       "heavy_share": 0.47,
       "ignore_filters": [
@@ -325,13 +325,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 34393,
+        "bytes": 35669,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 22393,
-        "ratio": 2.87
+        "over_by": 23669,
+        "ratio": 2.97
       },
-      "message": "34,393 B is 2.9× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "35,669 B is 3.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {

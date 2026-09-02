@@ -365,7 +365,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_match_cos_authority.py` | workflows: `cos-authority-sync.yml` | — |
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
-| `kb/_probe_confirmed_custom_reports.py` | workflows: `discover-map-datasets.yml` | — |
+| `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
 | `kb/_seed_projects_apply.py` | workflows: `projects-seed-apply.yml` | — |
@@ -592,6 +592,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
+| `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
@@ -662,7 +663,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.rccd.edu` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_seed_statewide_categories.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
-| `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
+| `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
 | `miracosta.edu` | tabs: `map-queue`, `map-users` |
 | `missioncollege.edu` | tabs: `map-queue`, `map-users` |
@@ -772,5 +773,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 394 file
-datasets · 137 external services · 304 consumers · 32 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 395 file
+datasets · 137 external services · 305 consumers · 32 workflows · 37 tabs.

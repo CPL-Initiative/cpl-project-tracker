@@ -97,6 +97,13 @@ jobs:
       # never reads. Pure-stdlib python, no network.
       - name: MAP CustomReport response verdict (responseCode / duplicate views)
         run: python3 tests/custom_report_response_test.py
+      # Lifecycle-booleans probe (Session 223) — the runner-side instrument that
+      # finds Pedro's CPL lifecycle boolean columns + CollegeID2 on the MAP API.
+      # Pins its truncated-response reader, boolean/token logic, PII denylist,
+      # and that a student key used for in-memory grouping never reaches the
+      # log. Pure-stdlib python, no network.
+      - name: Lifecycle-booleans probe guard (kb/_probe_lifecycle_checks.py)
+        run: python3 tests/probe_lifecycle_checks_test.py
       # Origination feed (Session 216, the N2 b gate) — the noncredit-only
       # institutions draw ONLY as CPL originating from them posts at a credit
       # college, so the nc_* keys and the origination block must be ABSENT (not
