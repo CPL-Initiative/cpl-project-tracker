@@ -8604,6 +8604,16 @@
           key: p.key, src: p.src, label: p.label, title: p.title || null,
           description: p.description || null, metric: p.metric || null,
           share: p.share,
+          // ⚠ THE FACTOR WAS MISSING FROM THIS PROJECTION until 2026-09-01, and
+          // its absence was invisible because every consumer defaulted it to 1.
+          // The public explainer read `p.factor == null ? 1 : p.factor` and so
+          // printed "all three factors are currently set to 1.0" no matter what
+          // a curator had set — a claim that looked computed, moved when nothing
+          // else on the page moved, and was wrong the moment Year 1 went to 0.5.
+          // The factor is half the PRICE of a priority (prioPrice = rate ×
+          // factor), so a projection that carries `share`, `cap` and `target`
+          // and omits it cannot explain how the target was reached.
+          factor: prioFactor(p),
           unit: prioUnitLabel(p),
           cap: prioCap(W, slot, p),
           target: prioTarget(c, p)
