@@ -91,7 +91,25 @@ REQUEST_PAYLOAD = [
                        "Last Updated", "MAP Internal StudentID",
                        "Military Credits", "NonMilitary Credits",
                        "Potential Student", "Test Student",
-                       "Transcribed Credits", "Uploaded Date"]
+                       "Transcribed Credits", "Uploaded Date",
+                       # ── The CPL lifecycle checks as BOOLEANS (Pedro, 2026-09-02) ──
+                       # Enumerated from the API itself on 2026-09-02
+                       # (kb/_probe_lifecycle_checks.py, discover-map-datasets run
+                       # 33693966335): six new columns, '0'/'1' strings, 100% fill
+                       # over 53,267 rows. They are the six checks the student-
+                       # detail view's pipe-delimited CPLPlanStatus carries — CPL
+                       # Docs · Ed Plan · Analysis · Counselor · Student ·
+                       # Transcribed — split out, at this view's grain.
+                       # `Counselor_Verified` is the counselor stage: Sam,
+                       # 2026-09-02 — "signifies the student met with a counselor
+                       # and accepted their CPL". Fetched so the feed carries them;
+                       # funding/_build_funding_performance.py reads the accepted
+                       # step ONLY once its sweep names this spelling, which waits
+                       # on Sam confirming the column's meaning with Pedro.
+                       # ⚠️ `Transcribed` is a CHECK, not units — the same fork as
+                       # at CR-row grain (17,342 flagged vs 14,455 with units > 0).
+                       "CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
+                       "Counselor_Verified", "Student_Verified", "Transcribed"]
     },
     {
         # ── College Exhibit CRs, BY CATALOG YEAR (NEW 2026-08-19) ─────────

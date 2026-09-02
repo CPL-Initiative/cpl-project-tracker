@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 393,
+  "file_datasets": 395,
   "external_services": 137,
-  "consumers": 303,
+  "consumers": 305,
   "workflows": 32,
   "data_js_files": 59,
   "tabs": 37
@@ -1190,6 +1190,13 @@
      "direction": "read",
      "how": "url",
      "line": 54
+    },
+    {
+     "id": "script:kb/_probe_lifecycle_checks.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 61
     },
     {
      "id": "script:kb/_probe_new_custom_reports.py",
@@ -5767,6 +5774,19 @@
    "consumers": [
     {
      "id": "workflow:overmerge-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_probe_lifecycle_checks.py": {
+   "consumers": [
+    {
+     "id": "workflow:discover-map-datasets.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -12543,6 +12563,19 @@
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/probe_lifecycle_checks_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",

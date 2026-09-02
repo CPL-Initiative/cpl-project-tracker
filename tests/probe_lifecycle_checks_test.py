@@ -145,6 +145,18 @@ check("profile: no student key value reaches the log",
 check("profile: a value under MIN_ROWS is withheld", "9001" not in out and "withheld" in out)
 check("profile: the builder's sweep spelling check is reachable", "Counselor Step" in P.BUILDER_SWEEP)
 
+# Two boolean columns: the overlap block must say how they nest. In the
+# fixture the Student flag is TRUE on exactly the rows where the Counselor
+# flag is TRUE for students 0-4 (10 rows), so Student sits WITHIN Counselor.
+rcols_o = rcols + ["Student_Verified"]
+rows_o = [r + ["1" if (idx // 2) < 5 else "0"] for idx, r in enumerate(rows)]
+with contextlib.redirect_stdout(io.StringIO()):
+    fo = P.profile_rows(P.STUDENT_DETAIL, rcols_o, rows_o, ["Counselor Step", "Student_Verified"],
+                        group_key="StudentMAPID")
+ov = fo["_overlaps"][("Counselor Step", "Student_Verified")]
+check("profile: pairwise overlap counts (both 10, A-only 9, B-only 0, B within A)",
+      ov == (10, 9, 0, "B within A"), repr(ov))
+
 # JSON bools on the wire are the case the builder cannot survive — the probe
 # must report the type so the verdict can say so.
 rows_b = [[r[0], r[1], r[2], r[3], r[4], r[5], (r[6] == "True"), r[7], r[8]] for r in rows]

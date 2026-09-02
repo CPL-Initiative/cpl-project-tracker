@@ -509,6 +509,26 @@ def profile_rows(view, rcols, rows, new_cols, group_key=None):
                   f"({fmt_pct(const, len(by))}) — 100% means a PLAN-level flag "
                   f"repeated per CR row; less means a per-row check")
             f["constant_within_student"] = (const, len(by))
+    # Pairwise overlap among the boolean-shaped new columns: does one check
+    # nest inside another (a workflow step order), or do they move together
+    # (one attestation setting several flags)? This is what decides whether
+    # `Student_Verified` and `Counselor_Verified` are two steps or one.
+    bools = [c for c in new_cols if (facts.get(c) or {}).get("boolean")]
+    if len(bools) >= 2:
+        series = {c: [truthy(v) for v in col(c)] for c in bools}
+        print("\n    pairwise overlap (rows TRUE on both / TRUE on A only / TRUE on B only):")
+        overlaps = {}
+        for i, a in enumerate(bools):
+            for b in bools[i + 1:]:
+                both = sum(1 for x, y in zip(series[a], series[b]) if x and y)
+                a_only = sum(series[a]) - both
+                b_only = sum(series[b]) - both
+                rel = ("A within B" if a_only == 0 and b_only else
+                       "B within A" if b_only == 0 and a_only else
+                       "identical" if a_only == 0 and b_only == 0 else "overlap")
+                print(f"      {a:<20} x {b:<20} {both:>8,} {a_only:>8,} {b_only:>8,}   {rel}")
+                overlaps[(a, b)] = (both, a_only, b_only, rel)
+        facts["_overlaps"] = overlaps
     return facts
 
 
