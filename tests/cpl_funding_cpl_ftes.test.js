@@ -421,9 +421,12 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   // must say so — "credit FTES" alone would misstate the split's denominator.
   check("F: the basis card names credit + noncredit FTES as the allocation basis",
     cardTexts.some(function (t) { return /credit \+ noncredit FTES \(allocation basis\)/.test(t); }));
-  check("F: pool-depth per combined FTES rides as a NOTE, not as the headline rate",
+  // "pool depth" became "funding per FTES" on 2026-09-02 (pool is retired
+  // vocabulary on every rendered surface); the requirement is unchanged — the
+  // per-FTES figure is a NOTE on the basis card, never the headline rate.
+  check("F: funding per combined FTES rides as a NOTE, not as the headline rate",
     Array.from(doc.querySelectorAll(".cplfund-card")).some(function (c) {
-      return /per credit \+ noncredit FTES — pool depth, informational/.test(c.textContent.replace(/\s+/g, " "));
+      return /per credit \+ noncredit FTES — funding per FTES, informational/.test(c.textContent.replace(/\s+/g, " "));
     }));
 }
 

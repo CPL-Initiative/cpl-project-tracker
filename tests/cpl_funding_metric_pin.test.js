@@ -299,13 +299,13 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   const diag = doc.querySelector(".cplfund-metricdiag");
   const txt = diag ? diag.textContent : "";
   check("6a: an undelivered pin reads 'declared, not delivered yet', not 'pays a FULL ADVANCE'",
-    /declared, not delivered yet/.test(txt));
+    /declared, not delivered yet/i.test(txt));
   check("6b: a bad pin reads NOT WIRED and says it earns $0",
-    /NOT WIRED/.test(txt) && /earns \$0/.test(txt));
+    /not wired/i.test(txt) && /earns \$0/.test(txt));
   check("6c: neither new state is described as advancing",
     !/nc_pa_u[\s\S]{0,120}FULL ADVANCE/.test(txt) && !/nope_u[\s\S]{0,120}FULL ADVANCE/.test(txt));
   check("6d: a prose/pin wording disagreement is flagged as WORDING, not as a unit mismatch",
-    /wording says/.test(txt) && !/UNIT MISMATCH/.test(txt));
+    /wording says/.test(txt) && !/unit mismatch/i.test(txt));
   check("6e: the panel opens itself when a pin is bad",
     !!diag && diag.hasAttribute("open"));
 }
@@ -381,11 +381,11 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
     !p3vals.every((v) => v === "0"));
   const diag = doc.querySelector(".cplfund-metricdiag");
   const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
-  const mm = lis.filter((t) => /MILESTONE MISMATCH/.test(t));
+  const mm = lis.filter((t) => /milestone mismatch/i.test(t));
   check("7d: the diagnostic flags the unpinned slot and only that slot",
     mm.length === 2 && mm.every((t) => /P1/.test(t)));
   check("7e: and the pinned Access slot is NOT flagged",
-    !lis.some((t) => /P3/.test(t) && /MILESTONE MISMATCH/.test(t)));
+    !lis.some((t) => /P3/.test(t) && /milestone mismatch/i.test(t)));
 }
 // ── 8. the pin activates itself when the feed catches up ─────────────────────
 // `ppa_u` is emitted by funding/_build_funding_performance.py and the published

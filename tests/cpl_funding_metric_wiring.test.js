@@ -113,7 +113,7 @@ check("a headcount metric that mentions units still reaches its GAP, not a unit 
   (function () { const m = measure("Headcount with Completion and 3+ Transcribed CPL Units");
     return !!m && !m.src && /match-back/.test(m.gap_short || ""); })());
 check("the diagnostic flags a unit mismatch (not just measurable-vs-gap)",
-  /UNIT MISMATCH/.test(consumerSrc) && /function wantsUnits/.test(consumerSrc));
+  /Unit mismatch/.test(consumerSrc) && /function wantsUnits/.test(consumerSrc));
 
 // Every baked metric must at least MATCH a predicate — an unmatched metric falls
 // through to "no measure" and pays a silent advance with no explanation at all.

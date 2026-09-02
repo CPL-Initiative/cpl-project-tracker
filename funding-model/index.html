@@ -68,7 +68,7 @@ header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
 .tag{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--border-strong);
   border-radius:999px; padding:4px 13px; font-size:.8rem; color:var(--text-muted); background:var(--surface-subtle)}
 .tag b{color:var(--text-strong); font-weight:600}
-.tag.draft{background:var(--tint-mustard); border-color:var(--mustard-text); color:var(--mustard-text); font-weight:600}
+.tag.draft{color:var(--text-muted); font-weight:600}
 
 /* ── sections ─────────────────────────────────────────────────────────── */
 section{padding:clamp(34px,6vw,60px) 0; border-bottom:1px solid var(--border)}
@@ -189,10 +189,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
     <div class="head-top">
       <p class="eyebrow">CPL Implementation Funding · Chancellor&rsquo;s Office</p>
       <div class="meta">
-        <span class="tag draft">⚠ Draft model &mdash; not adopted policy</span>
-        <span class="tag">Scenario <b>1</b></span>
+        <span class="tag draft">Draft model &mdash; not adopted policy</span>
+        <span class="tag">Scenario <b id="x-scenario">1</b></span>
         <span class="tag">Window <b>2026-27 &amp; 2027-28</b></span>
-        <span class="tag">Figures as of <b>31 Aug 2026</b></span>
+        <span class="tag">Version as of <b id="x-version">2026-08-31</b></span>
       </div>
     </div>
     <h1>How this funding model works</h1>
@@ -506,6 +506,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   });
   var money = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
   var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
+  // The masthead identity tags come from the engine too — the version the tab
+  // prints and the scenario this browser has selected — never typed here.
+  if (D.model_version) document.getElementById("x-version").textContent = D.model_version;
+  if (D.scenario) document.getElementById("x-scenario").textContent = String(D.scenario).replace(/^Scenario\s+/i, "");
 
   // ── the appropriation and where it goes ───────────────────────────────
   // The boxes sum to the top line by construction and cannot drift apart on a
@@ -543,7 +547,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var name = document.createElement("div"); name.className = "name";
     name.textContent = p.label + (p.title ? " · " + p.title : "");
     var pct = document.createElement("div"); pct.className = "pct num";
-    pct.textContent = Math.round(p.share * 100) + "% of the money";
+    pct.textContent = Math.round(p.share * 100) + "% of the funding";
     top.appendChild(name); top.appendChild(pct);
     var m = document.createElement("p"); m.className = "metric";
     m.textContent = plain[p.title] || p.metric;

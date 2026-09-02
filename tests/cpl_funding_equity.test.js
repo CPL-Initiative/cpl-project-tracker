@@ -194,8 +194,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("front-load: window total unchanged (timing only)", Math.abs(fl.total - evenAlloc.total) < 0.01);
   check("front-load: the CR award cell now reads the WHOLE window (same cell, window figure)",
     alaCr().indexOf(fmtM(fl.cr_award)) === 0);
-  check("front-load: the year filter marks Year 2 as carryover (↻)",
-    /↻/.test(Array.from(doc.querySelectorAll("#cplFundYear button"))
+  check("front-load: the year filter marks Year 2 as carryover (a word, never a glyph)",
+    /carryover/i.test(Array.from(doc.querySelectorAll("#cplFundYear button"))
       .map(function (b) { return b.textContent; }).join(" ")));
   // The carryover story on a Year-2 drill-in — the per-year columns' successor.
   T._state.viewSlot = "2";

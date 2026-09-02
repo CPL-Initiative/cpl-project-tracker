@@ -384,12 +384,32 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   click(window, doc.querySelector('[data-timingdel="0"]'));
   check("✕ removes a timing row", doc.querySelectorAll(".cplfund-timing-row").length === 9);
 
-  // #4 — baseline eligibility intro is editable.
-  const introEl = doc.querySelector('.cplfund-elig-intro [data-edit="elig-intro"]');
-  check("eligibility intro is an editable field with the default sentence",
-    !!introEl && introEl.value.indexOf("Proposed baseline requirements to qualify") !== -1);
-  commit(window, introEl, "Colleges must meet these to receive funding:");
-  check("editing the eligibility intro persists", T._getScenario().eligIntro === "Colleges must meet these to receive funding:");
+  // #4 — baseline eligibility intro is editable — as a PROSE BLOCK since
+  // 2026-09-02: prose for everyone, an Edit word for a signed-in reviewer, and
+  // the override stored under text.elig_intro in the layer the edit lands in.
+  check("eligibility intro renders as prose with the default sentence, not as a bare textarea",
+    !doc.querySelector('.cplfund-elig-intro [data-edit="elig-intro"]') &&
+    doc.querySelector(".cplfund-elig-intro").textContent.indexOf("Proposed baseline requirements to qualify") !== -1);
+  check("signed out, the intro carries no Edit control (prose is not a dial to explore)",
+    !doc.querySelector('.cplfund-elig-intro [data-textedit]'));
+  window.CPL_SESSION = {
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; }
+  };
+  T.render();
+  click(window, doc.querySelector('.cplfund-elig-intro [data-textedit="elig_intro"]'));
+  const introTa = doc.querySelector('.cplfund-elig-intro [data-textarea="elig_intro"]');
+  check("signed in, Edit opens a textarea pre-filled with the default sentence",
+    !!introTa && introTa.value.indexOf("Proposed baseline requirements to qualify") !== -1);
+  introTa.value = "Colleges must meet these to receive funding:";
+  click(window, doc.querySelector('.cplfund-elig-intro [data-textsave="elig_intro"]'));
+  check("editing the eligibility intro persists to the shared layer under text.elig_intro",
+    !!T._getShared().text && T._getShared().text.elig_intro === "Colleges must meet these to receive funding:" &&
+    doc.querySelector(".cplfund-elig-intro").textContent.indexOf("Colleges must meet these to receive funding:") !== -1);
+  delete window.CPL_SESSION;
+  T._setShared({});
+  T.render();
 
   // Year-specific: Year 2's P1 title is independent of the Year-1 edit above.
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));

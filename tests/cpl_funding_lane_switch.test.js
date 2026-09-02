@@ -170,9 +170,9 @@ const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
       /this browser/i.test(after));
     check("...and tells the curator how to publish it",
       /sign in/i.test(after));
-    // ⚠️ A bare "✓ saved" is true and is the exact misreading this prevents.
+    // ⚠️ A bare "saved" is true and is the exact misreading this prevents.
     check("a locked save never reads as a plain published save",
-      !/^\s*✓ saved\s*$/.test(after) && !/save for everyone/i.test(after));
+      !/^\s*saved\s*$/.test(after) && !/save for everyone/i.test(after));
   }
 }
 
