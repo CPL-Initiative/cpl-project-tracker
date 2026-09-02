@@ -5,34 +5,40 @@
  "_status": "The Implementation Funding tab got a full pass. The college expand lost four sentences that restated rules stated elsewhere, and gained a To go column showing each priority's distance to target and the funding that distance would earn — the targets were always rendered, but the table was being laid out into a 240-pixel column with three of its columns past the edge of the screen. The Ed. Code goal boxes folded into the priority bands, so each band now carries its own outcomes and how each is evidenced, with the four-goal statutory account one click down. The Funding Breakdown became a flat ledger reading down to the total, with the base and cap on their own line — every dial still editable, every detail still one click away. A short introduction opens the tab. The public explainer was rewritten to read formally, and that rewrite turned up four claims it had been getting wrong, including one where the page could never have shown the right number.",
  "items": [
   {
-   "for": "sam",
-   "title": "Set the funding dials through the tab",
-   "note": "Accepted at 25% share and factor 1.0, starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save on the tab rather than something a session should write for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets."
+   "id": "s219-sam-set-dials",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Set the funding dials on this tab: Accepted at 25% share and factor 1.0, with the starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save here rather than something a session writes into the database for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets, and it will read differently now."
   },
   {
-   "for": "sam",
-   "title": "Decide whether the Annual view should show earning above 100%",
-   "note": "In the Annual view an award cell can read \"earning $140,476 · 191%\", because earning is a window quantity measured against a per-year figure. Deliberate, but two readers have now read it as over-earning. Keep it, or compute the percent against the window figure."
+   "id": "s219-sam-annual-earning-percent",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Decide whether the Annual view should keep showing earning above 100%. An award cell can read \"earning $140,476 · 191%\" there, because earning is a window quantity measured against a per-year figure. That is deliberate, but two readers have now read it as over-earning. Keep it as is, or compute the percent against the window figure."
   },
   {
-   "for": "sam",
-   "title": "Say whether the shareable copy of the explainer should be refreshed",
-   "note": "The share-a-copy version of How this funding model works still has two illustration figures computed on the old basis, so one card disagrees with its own table. Refreshing it is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
+   "id": "s219-sam-refresh-explainer-snapshot",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
   },
   {
-   "for": "fable",
-   "title": "One request to Pedro carrying all three feed additions",
-   "note": "The CPL lifecycle booleans (sent 2026-09-01), Origin and LocID2, and completions — which needs a new MAP view, since the existing student view has no award column and the programs view is a catalog. Completion data would let goal (B) be measured in the statute's own word."
+   "id": "s219-fable-pedro-three-feeds",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "One request to Pedro carrying all three feed additions: the CPL lifecycle booleans (sent 2026-09-01), Origin and LocID2, and completions. Completions needs a new MAP view — the existing student view has no award column and the programs view is a catalog. Completion data would let the Completion outcome be measured in the statute's own word."
   },
   {
-   "for": "fable",
-   "title": "Repair the explainer's browser check",
-   "note": "prototype/check_funding_explainer.js waits for an element id that was retired long ago, and also pins a dollar figure and a college count that have both moved. It fails the same way on main and sits outside the main test run, so nothing has been reporting it."
+   "id": "s219-fable-explainer-browser-check",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Repair the explainer's browser check. It waits for an element id retired long ago, and also pins a dollar figure and a college count that have both moved. It fails the same way on main and sits outside the main test run, so nothing has been reporting it."
   },
   {
-   "for": "fable",
-   "title": "Cut the dead CSS left by the retired row shapes",
-   "note": "About fifteen rules for row shapes the one-pool model retired, plus a stale selector in the frozen-header code."
+   "id": "s219-fable-dead-css-cleanup",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Cut the dead CSS left behind by the retired row shapes — about fifteen rules for shapes the one-pool model removed, plus a stale selector in the frozen-header code."
   }
  ]
 }
