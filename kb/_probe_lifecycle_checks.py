@@ -131,6 +131,16 @@ ORIGIN_CANDIDATES = [
     "Referring College", "ReferringCollegeID", "Home College", "HomeCollegeID",
 ]
 
+# Columns already in the daily request whose profile is still wanted on every
+# run — the overlap block among the six checks and the Transcribed fork. The
+# diff stops calling a column new the moment fetch_custom_report.py requests it
+# (run 12 on 2026-09-02 measured exactly that: "NEW: none" one commit after the
+# six were wired), so the ones worth re-reading are named here instead.
+WATCH = {
+    STUDENT_AGG: ["CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
+                  "Counselor_Verified", "Student_Verified", "Transcribed"],
+}
+
 # If the booleans landed on a NEW view rather than a new column, these are the
 # spellings worth one bounded request each. A miss here proves nothing; a hit
 # or a 5xx is a lead.
@@ -623,33 +633,43 @@ def main():
     print("[3] PROFILE the new columns (PII-denylisted; values echoed only when")
     print(f"    >= {MIN_ROWS} rows carry them)")
     print("=" * 78)
-    facts = {}
-    for view, new in new_by_view.items():
-        if not new:
+    to_profile = {}
+    for view in VIEWS:
+        if view not in new_by_view:          # never enumerated — nothing to ask for
             continue
+        cols = list(new_by_view[view])
+        cols += [w for w in WATCH.get(view, []) if w not in cols]
+        if cols:
+            to_profile[view] = cols
+    facts = {}
+    for view, cols in to_profile.items():
         print(f"\n### {view}")
-        facts[view] = profile(view, new)
+        watched = [c for c in cols if c not in (new_by_view.get(view) or [])]
+        if watched:
+            print(f"    watched (already in the daily request, profiled every run): {watched}")
+        facts[view] = profile(view, cols)
 
     print("\n" + "=" * 78)
     print("VERDICT")
     print("=" * 78)
     any_new = any(new_by_view.get(v) for v in VIEWS)
     if not any_new:
-        print("  No new column on any of the four views today, and no new view under")
+        print("  No NEW column on any of the four views today, and no new view under")
         print("  the candidate spellings. Either the additions are in the BUILDER but")
         print("  not yet exposed on this API, or they sit on a view/name not swept —")
         print("  ask Pedro for the viewName + header (the 2026-08-19 path).")
     for view in VIEWS:
-        new = new_by_view.get(view) or []
-        if not new:
+        cols = to_profile.get(view) or []
+        if not cols:
             continue
         print(f"\n  {view}")
-        for name in new:
+        for name in cols:
+            mark = "+" if name in (new_by_view.get(view) or []) else "~"
             f = (facts.get(view) or {}).get(name)
             if not f:
-                print(f"    + {name!r}  (not profiled)")
+                print(f"    {mark} {name!r}  (not profiled)")
                 continue
-            line = f"    + {name!r}  kind={f['kind']}  fill={fmt_pct(f['fill'], f['n']).strip()}"
+            line = f"    {mark} {name!r}  kind={f['kind']}  fill={fmt_pct(f['fill'], f['n']).strip()}"
             if f.get("boolean"):
                 line += f"  boolean TRUE={f['true']:,}"
                 if f.get("best_token"):

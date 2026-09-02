@@ -93,6 +93,11 @@ check("diff: nothing reported gone", gone == [], repr(gone))
 _, gone2 = P.diff_columns(P.STUDENT_DETAIL, [c for c in live if c != "CPLPlanStatus"])
 check("diff: a vanished requested column is reported gone", gone2 == ["CPLPlanStatus"], repr(gone2))
 
+# ── 5b. the watch list names columns the daily fetch actually requests ──
+check("WATCH columns are all in the daily request for the aggregated view",
+      set(P.WATCH[P.STUDENT_AGG]) <= set(P.known_columns(P.STUDENT_AGG)),
+      repr(set(P.WATCH[P.STUDENT_AGG]) - set(P.known_columns(P.STUDENT_AGG))))
+
 # ── 6. profile_rows on a synthetic column-oriented dataset ──────────────
 # 30 students x 2 rows. Ed Plan sits on students 0-14, Analysis on 0-11 and
 # Counselor on 0-9 (nested, like the live checklist), so no two tokens tie.
