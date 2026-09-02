@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 366,
+   "count": 367,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1760,6 +1760,25 @@
      "title": "A published asset with zero uptake is an outreach worklist, not a build backlog",
      "type": "methodology",
      "updated": "2026-08-05"
+    },
+    {
+     "created": "2026-09-02",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_lead_with_the_table.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "state",
+      "testing",
+      "implementation-funding"
+     ],
+     "title": "A remembered toggle hides the default from its author",
+     "type": "methodology",
+     "updated": "2026-09-02"
     },
     {
      "created": "2026-08-17",
@@ -11483,8 +11502,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 195,
+   "count": 196,
    "docs": [
+    {
+     "created": "2026-09-02",
+     "governs": [],
+     "n": 222,
+     "path": "docs/session_222_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the table leads, the explainer is the public view, and one page is waiting to be retired",
+     "type": null,
+     "updated": "2026-09-02"
+    },
     {
      "created": "2026-09-02",
      "governs": [],
@@ -14900,5 +14932,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 757
+ "total": 759
 }

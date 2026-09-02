@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 771,
-    "bytes": 8177470,
+    "files": 773,
+    "bytes": 8205967,
     "over_budget": 4,
-    "handoff_max": 221,
+    "handoff_max": 222,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 58721,
+    "always_loaded_bytes": 57489,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 58721,
+        "bytes": 57489,
         "over": 0
       },
       "other": {
         "files": 103,
-        "bytes": 2494492,
+        "bytes": 2497723,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 17263,
+        "bytes": 18638,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1898656,
+        "bytes": 1906987,
         "over": 1
       },
       "kb_note": {
-        "files": 368,
-        "bytes": 1923833,
+        "files": 369,
+        "bytes": 1927914,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 144619,
+        "bytes": 150277,
         "over": 1
       },
       "handoff": {
-        "files": 195,
-        "bytes": 1639886,
+        "files": 196,
+        "bytes": 1646939,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2482,
-      "bytes": 1279097481,
+      "files": 2485,
+      "bytes": 1279154873,
       "heavy_bytes": 600963039,
       "heavy_share": 0.47,
       "ignore_filters": [
@@ -325,26 +325,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 28735,
+        "bytes": 34393,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 16735,
-        "ratio": 2.39
+        "over_by": 22393,
+        "ratio": 2.87
       },
-      "message": "28,735 B is 2.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "34,393 B is 2.9× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 543069,
+        "bytes": 545380,
         "limit": 150000,
         "lane": "other",
-        "over_by": 393069,
-        "ratio": 3.62
+        "over_by": 395380,
+        "ratio": 3.64
       },
-      "message": "543,069 B is 3.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "545,380 B is 3.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

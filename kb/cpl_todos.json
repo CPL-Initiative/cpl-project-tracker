@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-02",
-  "_session": "SkyCalm, Session 220 — the calm pass, editable text sections, and the held figure beside its total",
-  "_status": "The Implementation Funding tab had its calm pass. Every icon and emoji on the page became a plain word or was removed: the fold arrows are Show and Hide, the little caret before each college is gone and the college's name is what you click, every button says what it does, and the $50K view's check marks are the words met, partial, not yet, n/a and pending. The colored stripes, filled bars and red buttons came off; the Draft chip is a quiet outlined word; the line under the title that still said \"pools\" is gone. Five text sections — the introduction, Reading the funding, the eligibility introduction, the noncredit earning rules and the table introduction — can be edited in place when signed in (Edit, then Save), and the new wording shows on the public page too. The held-in-reserve amount on a college's detail now reads beside the total it is part of, as Sam asked, instead of floating under the noncredit column. A published edit reaches the explainer page on its next load.",
+  "_session": "SkyLead, Session 221 — the table leads, and the explainer is the public view",
+  "_status": "The Implementation Funding tab now opens on the introduction (with the Summary inside it) and the institution table right underneath; everything else — the funding window, the breakdown, the formula, the eligibility requirements, the outcomes and the timing — is folded until you open it, and the folds start closed on every visit rather than remembering last time. The priority boxes are all the same width, and the line that restated a priority's window funding is gone because the band heading and the box already carry those numbers. The public explainer, How this funding model works, is now the public view: its Every institution section sits right after the introduction and is the tab's own table — same rows, same click-to-open detail, same search and Excel download — and it now shows the timing milestones and each priority's recommended strategies. The old public page is still live; whether it becomes a redirect to the explainer is Sam's call.",
   "items": [
+    {
+      "id": "s221-sam-explainer-is-the-public-view",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Confirm the explainer (How this funding model works) as the one public page, and whether the old public page (cpl_funding_public.html) should become a redirect to it so there is a single public link. Then react by letter to this run's calls: (a) the explainer's steps fold closed on open like the tab's sections; (b) its own four-column table is retired in favor of the tab's rows; (c) the table's footnote sits under the table; (d) section folds are no longer remembered across visits; (e) the embedded table sits in the explainer's narrower column, where its toolbar wraps to two lines. Reply keep, edit, or revert per letter."
+    },
     {
       "id": "s220-sam-calm-pass-calls",
       "for": "Sam",
@@ -33,6 +39,18 @@
       "for": "Sam",
       "tab": "cpl-implementation",
       "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
+    },
+    {
+      "id": "s221-fable-retire-old-public-page",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Once Sam confirms: make cpl_funding_public.html a redirect to funding-model/ (keep the URL alive), repoint the ledger note's public-page link, re-aim the public/private test onto the explainer, and re-label the tab's Internal · Public preview for what it now previews."
+    },
+    {
+      "id": "s221-fable-layout-harness-explainer",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Add the explainer to the on-demand layout harness (scripts/check_public_page_layout.js measures Sierra alone today) so its folds, the embedded scrolling table, the tap-target sizes and every contrast pair are measured in a real browser rather than claimed."
     },
     {
       "id": "s219-fable-pedro-three-feeds",

@@ -342,29 +342,42 @@ check("sizePct is COMPUTED, never read from a baked percentage",
 
   // And whatever rate the tab STATES, it must equal the two numbers beside it.
   // The per-college P-cells are retired (one-pool port — per-priority detail
-  // lives in the row expand, which states no rate); the surviving stated-rate
-  // surface is the priority card's front-load line: "Combined funding: $W …
-  // earned against that same N students target. Effective $E/student". The E
-  // the reader sees has to survive dividing the W and N in the same sentence.
+  // lives in the row expand, which states no rate), and so is the priority
+  // card's "Combined funding: $W … Effective $E" line (Sam, 2026-09-02: it
+  // restated figures the card already carried). The surviving stated-rate
+  // surface is the card's own price — "$P per CPL FTES" on an FTES metric, the
+  // per-student rate on a headcount one — read against the SAME card's window
+  // figure ("of $W full-window Total Possible", the Current Total line) and
+  // its target ("Target N CPL FTES" / "so N students"). Under front-load the
+  // window figure divided by the target IS the price, and a reader has to be
+  // able to reproduce that from the card alone.
   T._setScenario({ disbursement: "frontload" });
   T.render();
-  const lines = Array.from(doc.querySelectorAll(".cplfund-prio .cplfund-fl-line"));
+  const nYears = (function () {
+    const foot = Array.from(doc.querySelectorAll(".cplfund-foot")).map((e) => e.textContent).join(" ");
+    const m = foot.match(/full (\d{4})[–-](\d{4}) window/);
+    return m ? Number(m[2]) - Number(m[1]) : 2;
+  })();
+  const cards = Array.from(doc.querySelectorAll(".cplfund-prio .p"));
   const checked = [];
   const lying = [];
-  lines.forEach(function (el) {
-    const t = el.textContent.replace(/\s+/g, " ");
-    const w = (t.match(/Combined funding: \$([\d,]+)/) || [])[1];
-    const n = (t.match(/that same ([\d,.]+) (?:students|CPL FTES) target/) || [])[1];
-    const e = (t.match(/Effective \$([\d,.]+)\//) || [])[1];
-    if (!w || !n || !e) return;
+  cards.forEach(function (card) {
+    const t = card.textContent.replace(/\s+/g, " ");
+    const w = (t.match(/of \$([\d,]+) full-window Total Possible/) || [])[1];
+    const n = (t.match(/Target ([\d,.]+) CPL FTES/) || t.match(/so ([\d,]+) students/) || [])[1];
+    const ftesPrice = (t.match(/\$([\d,.]+) per CPL FTES/) || [])[1];
+    const perStudent = card.querySelector('input[data-edit="perstudent"]');
+    const say = ftesPrice
+      ? Number(ftesPrice.replace(/,/g, ""))
+      : (perStudent ? Number(perStudent.value) * nYears : NaN);
+    if (!w || !n || !(say > 0)) return;
     const eff = Number(w.replace(/,/g, "")) / Number(n.replace(/,/g, ""));
-    const say = Number(e.replace(/,/g, ""));
-    checked.push(el);
-    // 1c tolerance on the rate, plus the rounding of a whole-dollar cap.
+    checked.push(card);
+    // 2% tolerance on the rate, plus the rounding of a whole-dollar cap.
     if (Math.abs(eff - say) / say > 0.02) lying.push([eff, say, t.slice(0, 90)]);
   });
-  check("every stated Effective $/unit rate matches its OWN funding ÷ target (all 3 priority cards)",
-    checked.length === 3 && lying.length === 0);
+  check("every stated rate matches its OWN card's window funding ÷ target (all 3 priority cards, no restating line)",
+    checked.length === 3 && lying.length === 0 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
   T._setScenario({});
 }
 

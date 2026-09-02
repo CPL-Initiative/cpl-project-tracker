@@ -148,6 +148,9 @@
     // green and red are for a state the reader must act on (the glyph rule).
     ".cplfund-summary .ok { color: var(--text-strong); font-weight: 700; }",
     ".cplfund-summary .warn { color: var(--red-alert); font-weight: 700; }",
+    // Inside the introduction (Sam, 2026-09-02) the Summary is a ruled-off
+    // list at the foot of the SAME box — not a second box inside the first.
+    ".cplfund-sec-body .cplfund-summary { margin: 4px 0 0; padding: 10px 0 0; border: 0; border-top: 1px solid var(--border); border-radius: 0; background: transparent; }",
     // Award cells + the expand's 7-column priority table (one-pool port).
     ".cf-award { font-variant-numeric: tabular-nums; white-space: nowrap; }",
     ".cf-award .sub, .cplfund-table td .sub { display: block; font-size: .68rem; color: var(--text-muted); font-weight: 400; }",
@@ -231,7 +234,13 @@
     ".cplfund-kindtoggle:hover { border-color: var(--gold-accent); }",
     ".cplfund-addbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 2px; }",
     ".cplfund-addbox .dk { font-size: .8rem; }",
-    ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
+    // TWO fixed columns (Sam, 2026-09-02: "Make Priority boxes all the narrower
+    // width as is used for the 1st 2 priorities"). auto-fit stretched a band's
+    // lone card to the band's full width, so the Success band's one card read
+    // twice as wide as the two Access cards above it. A fixed pair keeps every
+    // card the same width; a band with one card leaves its second column empty.
+    ".cplfund-prio { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }",
+    "@media (max-width: 560px) { .cplfund-prio { grid-template-columns: minmax(0, 1fr); } }",
     // ── the statutory goal spine (§78093.2(d)(1)) ─────────────────────────
     // First Light: warm monochrome base, tokens only, no raw hex. Colour is
     // never the only signal — every state chip carries a WORD, so the section
@@ -2433,8 +2442,17 @@
   // actions row. The typeof guard matters: publicMode() must be safe to call
   // before the state literal further down has executed.
   function publicMode() {
-    if (window.CPL_FUNDING_PUBLIC) return true;
+    if (window.CPL_FUNDING_PUBLIC || embedMode()) return true;
     return typeof state === "object" && !!state && !!state.previewPublic;
+  }
+  // EMBED MODE (2026-09-02): the public explainer (funding-model/index.html)
+  // hosts the institution table INSIDE its own narrative page — the same
+  // renderer, the same rows, the same drill-in, no second implementation of
+  // either. Only the table body and its footnote render; the chrome, the
+  // sections and the Summary are the host page's own. Embedding implies the
+  // public rendering: a host page never gets a dial.
+  function embedMode() {
+    return window.CPL_FUNDING_EMBED === "college";
   }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
@@ -4835,27 +4853,18 @@
       // divides FTES by people. All three read as fact on screen, so branch the
       // whole line rather than patching a noun (2026-08-01).
       var isFtesPrio = prioIsFtes(p);
-      var unitWord = isFtesPrio ? "CPL FTES" : "students";
-      var winDollars = prioCap(netCollege(), slot, p);
-      var frontLine = flPrio
-        ? (slotIsCarryover(slot)
-          ? '<p class="nums cplfund-fl-line"><span class="dk">Year ' + esc(slot) + " is carryover under " +
-            "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
-            "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
-          // Sam, 2026-08-28 asked for less explanatory language, and the SENTENCE
-          // here was explanation ("Hitting the Year-1 target draws the whole
-          // window; unspent funds roll forward"). The effective rate is not —
-          // it is window dollars ÷ target, a derived FIGURE, and he separately
-          // asked to see more of where numbers come from. Prose out, figure in.
-          : '<p class="nums cplfund-fl-line"><strong>Combined funding:</strong> ' + fmtMoney(winDollars) +
-            " for the full " + esc(windowLabel()) + " window, earned against that same " +
-            (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
-            // fmtMoney2, not fmtRate: an effective CPL-FTES rate is in the
-            // $1,000s and rendered "$11299.26" without separators.
-            '<span class="dk">Effective ' + fmtMoney2(sysHeads > 0 ? winDollars / sysHeads : 0) +
-            "/" + (isFtesPrio ? "CPL FTES" : "student") +
-            (isFtesPrio ? "" : " (" + fmtRate(p.per_student) + " &times; " + nYears() + ")") +
-            ".</span></p>")
+      // The "Combined funding" line is RETIRED (Sam, 2026-09-02, with a
+      // screenshot drawing the line from it up to the band head). It restated
+      // three figures the card and its band already carry: the window figure
+      // (the band head's Total Possible and the Current Total line's "of $W"),
+      // the target (the Target line), and the effective rate — which under
+      // front-load IS the price line, since the target is the window figure
+      // divided by that price. Only the carryover year keeps a line, because
+      // a Year-2 card with no funding on it has to say why.
+      var frontLine = flPrio && slotIsCarryover(slot)
+        ? '<p class="nums cplfund-fl-line"><span class="dk">Year ' + esc(slot) + " is carryover under " +
+          "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
+          "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
         : "";
       return '<div class="p" data-priocard="' + i + '">' +
         (ro ? "" : prioMoveHtml(ps, i, p)) +
@@ -5858,27 +5867,28 @@
 
   // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
   // Each top-level tab section is a native <details> whose <summary> IS its h3.
-  // Open/closed is per-browser persisted (default open), so a curator can fold
-  // away the parts they aren't working on and it stays folded across the many
+  // Open/closed is remembered for the visit, so a curator can fold away the
+  // parts they aren't working on and it stays folded across the many
   // re-renders that an edit triggers.
   // v2 (Sam, 2026-07-28): every section starts COLLAPSED except the college
   // allocation table — the tab leads with the table, the policy/model sections
-  // open on demand. Bumping the store key resets everyone to the new default
-  // (old v1 open-states are discarded). An explicit user toggle still persists.
-  var SEC_STORE = "cplfund_sections_v2";
+  // open on demand.
+  // v3 (Sam, 2026-09-02): "Collapse all sections on open except the intro and
+  // college table view." Open/closed is PER VISIT, not per browser. A toggle
+  // still survives the re-renders an edit triggers (kept in memory), but every
+  // fresh open starts from the default — the introduction and the institution
+  // table. The v2 per-browser store is retired because a section opened once
+  // stayed open on every visit after, which is exactly what the ask was about;
+  // its key is cleared once so an old browser keeps no dead entry.
+  var SEC_STORE_RETIRED = "cplfund_sections_v2";
   var SECTION_DEFAULT_OPEN = { about: true, college: true };
-  var SEC_STATE = (function () {
-    try { var r = JSON.parse(localStorage.getItem(SEC_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
-    return {};
-  })();
+  var SEC_STATE = {};
+  try { localStorage.removeItem(SEC_STORE_RETIRED); } catch (e) {}
   function sectionOpen(id) {
-    if (Object.prototype.hasOwnProperty.call(SEC_STATE, id)) return SEC_STATE[id] !== false;   // honor a saved toggle
-    return !!SECTION_DEFAULT_OPEN[id];   // default: only the college table is open
+    if (Object.prototype.hasOwnProperty.call(SEC_STATE, id)) return SEC_STATE[id] !== false;   // honor a toggle made this visit
+    return !!SECTION_DEFAULT_OPEN[id];   // default: the introduction and the institution table
   }
-  function saveSectionState(id, open) {
-    SEC_STATE[id] = !!open;
-    try { localStorage.setItem(SEC_STORE, JSON.stringify(SEC_STATE)); } catch (e) {}
-  }
+  function saveSectionState(id, open) { SEC_STATE[id] = !!open; }
   function sectionShell(id, titleHtml, bodyHtml) {
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
       '<summary class="cplfund-sec-sum"><h3>' + titleHtml + '</h3>' +
@@ -7762,6 +7772,18 @@
       colMenuHtml() +
       '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>";
+    // The table's footnote travels WITH the table (2026-09-02): the notes
+    // explain its cells, and the table no longer sits at the foot of the page.
+    var collegeSection = collegeBody + footHtml(d);
+    // EMBED (the public explainer, 2026-09-02): only the institution table and
+    // its footnote render — the host page carries its own chrome and story.
+    if (embedMode()) {
+      mount.innerHTML = '<div class="cplfund cplfund-embed">' + collegeSection + "</div>";
+      updateCount();
+      wire();
+      scrollToDeepLink();
+      return;
+    }
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
       subviewTabsHtml() +
@@ -7771,10 +7793,17 @@
       '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
       actionsRowHtml() +
       authbarHtml() +
-      // The Summary sits at the top, never inside a fold (R11, 2026-08-31) —
-      // it is the one over/under readout the retired balance boxes fed.
-      section("about", "About this funding model", aboutHtml()) +
-      summaryHtml() +
+      // The introduction CARRIES the Summary (Sam, 2026-09-02: "move the text
+      // from the intro summary section … into the same box as the intro
+      // text"). R11 (2026-08-31) kept the Summary out of every fold; it now
+      // sits inside the one section that is open on every visit, still ahead
+      // of every figure-bearing section — the readout is never hidden on open.
+      section("about", "About this funding model", aboutHtml() + summaryHtml()) +
+      // The institution table comes FIRST (Sam, 2026-09-02: "so folks don't
+      // have to scroll down through the steps to see it — most won't care
+      // about the details, just their funding"): right after the introduction,
+      // ahead of the model's mechanics.
+      section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeSection) +
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
       section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
@@ -7794,19 +7823,33 @@
         ncEarningRulesFoldHtml() + ftesFactorsHtml()) +
       // Sam, 2026-08-28: the Timing block is independently collapsible.
       collapseH3("timing", timingSectionHtml()) +
-      section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeBody) +
-      '<div class="cplfund-foot">' +
+      "</div>";
+    updateCount();
+    wire();
+    scrollToDeepLink();
+  }
+
+  // The institution table's footnote — what its cells mean. It renders
+  // directly under the table in both places the table appears (the tab's
+  // college section and the explainer's embed), so it is one function rather
+  // than a string copied into each. The year and the requirement list no
+  // longer say "above": the table now precedes the sections they live in.
+  function footHtml(d) {
+    var yearNote = embedMode()
+      ? "for Year " + esc(state.viewSlot)
+      : "for the year selected under the funding outcomes below";
+    return '<div class="cplfund-foot">' +
       "<div>Funding cells show the <strong>max award</strong> with the Current Total beneath; dollar cells " +
       "round to whole dollars. Click a row to expand its per-priority detail (CR funding &middot; NC funding " +
-      "&middot; Target &middot; Actual &middot; To go &middot; Current Total &middot; Total Possible, for the " +
-      "year selected above). " +
+      "&middot; Target &middot; Actual &middot; To go &middot; Current Total &middot; Total Possible, " +
+      yearNote + "). " +
       (frontloaded()
         ? "Combined funding: the award columns are the full " + esc(windowLabel()) + " window, available up " +
           "front &mdash; unspent funding rolls forward" +
           (nextFy(selectedYears()[selectedYears().length - 1])
             ? " and closes out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
         : "Annual funding: the award columns are each year&#39;s potential allocation. ") +
-      "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, " +
+      "Elig = a numbered pie, one sector per tracked baseline requirement (1 = coordinator, " +
       "2 = participation, 3 = Veteran Star &ge;75% JSTs &mdash; replaced for the noncredit-only campuses by " +
       "noncredit certificates posted as exhibits in MAP, N1 a); each sector turns green when the institution " +
       "satisfies it &mdash; a fully green glyph = all met (informational in this draft). " +
@@ -7816,10 +7859,7 @@
       headcountSourceHtml() +
       actualsFootHtml() +
       d.footnotes.map(function (f) { return "<div>" + esc(f) + "</div>"; }).join("") +
-      "</div></div>";
-    updateCount();
-    wire();
-    scrollToDeepLink();
+      "</div>";
   }
 
   function updateCount() {
@@ -8790,6 +8830,10 @@
     // would render "$0" against all three priorities and read as a finding
     // about the college rather than as the carryover state of another tab.
     // Year 1 is also the authoritative set (Sam, 2026-08-09: Y1 ≡ Y2).
+    // The timing milestones, verbatim from the same layers the tab renders
+    // (SCENARIO ?? SHARED ?? baked) — so the explainer prints the list a
+    // curator edited, never a typed copy of it.
+    _timing: function () { return timingItems(); },
     _prios: function (name, slot) {
       var c = rosterRow(name);
       if (!c) return null;
@@ -8800,6 +8844,9 @@
       var W = instSplit(c).cr;
       return priorities(slot).map(function (p) {
         return {
+          // The recommended strategies for the year, as the card's fold shows
+          // them (Sam, 2026-09-02: the explainer carries the strategies too).
+          strategies: (p.strategies || []).slice(),
           // `src` is the priority's index in the stored config — its IDENTITY,
           // unchanged by a drag reorder — so a consumer can join back to the
           // same config by something other than position (My College nests each

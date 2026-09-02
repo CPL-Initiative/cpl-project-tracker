@@ -750,6 +750,21 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyLead S221 — lead with the table; the explainer is the public view (2026-09-02)
+
+**One PR (#1436).** Sam's seven asks: the institution table is the FIRST section after
+the introduction on the tab and the explainer (*"most won't care about the
+details, just their funding"*); every section is closed on open except those
+two — per VISIT now, the per-browser fold store retired; the Summary sits
+inside the introduction's box (R11 re-aimed to its requirement: never hidden on
+open); the priority cards are a fixed two-column pair; the card's "Combined
+funding" line is gone (it restated the band head, the Target line and the
+price line). ⭐ The explainer hosts the tab's OWN college section in a new embed
+mode instead of painting a second table from the payload — the hidden engine
+mount was an embed waiting to happen — and paints the timing milestones and
+each priority's strategies from the engine. Story: `cpl_funding_lessons`;
+handoff `session_222_handoff`.
+
 ### SkyCalm S220 — the calm pass, and the text a test does not see (2026-09-02)
 
 **One PR.** Sam's brief: *"get rid of any cheesy glyphs (per our rules) … I want
@@ -762,38 +777,6 @@ mid-turn call moved the held-in-reserve figure into the gate sentence and ahead
 of Total Possible. ⭐ `textContent` has no seams and no tooltips — a word sweep
 must read the markup (KB note). Story: `cpl_funding_lessons`; handoff
 `session_221_handoff`.
-
-### SkyTrim S219 — the drill-in trims, and both consolidations land (2026-09-01)
-
-**Three PRs.** #1432 struck four restatements from the college expand and found
-the per-priority targets were never missing — the table is a GRID ITEM in a
-`minmax(240px, 1fr)` grid, so 620px of it scrolled sideways inside 240px with
-three columns past the clip edge; a `grid-column: 1 / -1` span is the whole fix,
-plus a **To go** column that prints a distance only for a MEASURED row (a
-suppressed actual plus a gap IS the value, by subtraction). #1433 shipped both
-sheet decisions Sam ruled the same day: the **goal spine folded into the bands**
-(per-goal evidence lines, the limits on the line they belong to, the four cards
-reduced to a four-row (d)(2) table — one function feeds both surfaces) and the
-**flat ledger**, with his condition *"I don't want to lose editability of
-variables"* met by keeping the class vocabulary and guarding the dials
-(`cpl_funding_ledger_editable.test.js`, mutation-verified). Plus a collapsible
-intro, and R11 re-aimed to its requirement rather than moved around. Item 3
-dismissed: *"the lane split is worth the width."*
-
-**Then #1434, the explainer.** Sam asked for a register pass over the public
-*How this funding model works* (*"revise any spoken-like text"*), and the S217
-audit ran in the same pass — which mattered, because **the sentences that read
-worst were the sentences that were wrong.** `pot` appeared 19 times (banned, and
-imprecise: the model has ONE total); "riding/rides college awards" turned out to
-be the tab's house idiom for the noncredit share, live in five more rendered
-places once Sam struck it (*"'ride the face of' was also an unfortunate
-phrase"*). ⭐ **Four claims were wrong, not the two the handoff named — and the
-factors one was not stale prose at all:** `_prios()` never emitted `factor`, the
-payload defaulted a missing one to 1, and the page printed 1.0 at every setting
-through a chain that looked entirely computed. **A defaulted field looks computed
-and never moves**, and no single-paint test can see it; the guard changes a dial
-and requires the page to disagree with itself. Story: `cpl_funding_lessons`;
-handoff `session_220_handoff`.
 
 ## Troubleshooting
 

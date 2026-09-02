@@ -5306,3 +5306,38 @@ read live (Access: Statewide 34 / Access: Outreach 33 / Completion 33);
 deck's stale Oct. 31 opt-in → Nov. 1. Found: the public explainer's two
 STATIC prose passages still assert the old model (fix = lane NEXT ①). PR
 #1427 was already merged. Story: `cpl_funding_lessons`; handoff `session_218_handoff`.
+
+
+<!-- moved verbatim from CLAUDE.md §11 on 2026-09-02 (Session 221, the two-narrative budget) -->
+
+### SkyTrim S219 — the drill-in trims, and both consolidations land (2026-09-01)
+
+**Three PRs.** #1432 struck four restatements from the college expand and found
+the per-priority targets were never missing — the table is a GRID ITEM in a
+`minmax(240px, 1fr)` grid, so 620px of it scrolled sideways inside 240px with
+three columns past the clip edge; a `grid-column: 1 / -1` span is the whole fix,
+plus a **To go** column that prints a distance only for a MEASURED row (a
+suppressed actual plus a gap IS the value, by subtraction). #1433 shipped both
+sheet decisions Sam ruled the same day: the **goal spine folded into the bands**
+(per-goal evidence lines, the limits on the line they belong to, the four cards
+reduced to a four-row (d)(2) table — one function feeds both surfaces) and the
+**flat ledger**, with his condition *"I don't want to lose editability of
+variables"* met by keeping the class vocabulary and guarding the dials
+(`cpl_funding_ledger_editable.test.js`, mutation-verified). Plus a collapsible
+intro, and R11 re-aimed to its requirement rather than moved around. Item 3
+dismissed: *"the lane split is worth the width."*
+
+**Then #1434, the explainer.** Sam asked for a register pass over the public
+*How this funding model works* (*"revise any spoken-like text"*), and the S217
+audit ran in the same pass — which mattered, because **the sentences that read
+worst were the sentences that were wrong.** `pot` appeared 19 times (banned, and
+imprecise: the model has ONE total); "riding/rides college awards" turned out to
+be the tab's house idiom for the noncredit share, live in five more rendered
+places once Sam struck it (*"'ride the face of' was also an unfortunate
+phrase"*). ⭐ **Four claims were wrong, not the two the handoff named — and the
+factors one was not stale prose at all:** `_prios()` never emitted `factor`, the
+payload defaulted a missing one to 1, and the page printed 1.0 at every setting
+through a chain that looked entirely computed. **A defaulted field looks computed
+and never moves**, and no single-paint test can see it; the guard changes a dial
+and requires the page to disagree with itself. Story: `cpl_funding_lessons`;
+handoff `session_220_handoff`.

@@ -86,7 +86,17 @@
   const prios = T._prios(example, "1").map(function (p) {
     return { label: p.label, title: p.title || "", metric: p.metric, share: p.share,
              factor: p.factor == null ? 1 : p.factor,
-             cap: Math.round(p.cap), target: +p.target.toFixed(1) };
+             cap: Math.round(p.cap), target: +p.target.toFixed(1),
+             // The recommended strategies for the year, as the tab's card
+             // fold lists them (Sam, 2026-09-02: the explainer carries the
+             // strategies and the timing). An engine without the field paints
+             // no list rather than a wrong one.
+             strategies: Array.isArray(p.strategies) ? p.strategies.slice() : [] };
+  });
+  // The timing milestones, from the same layers the tab renders — the list a
+  // curator edited, never a typed copy of it. Absent on an older engine.
+  const timing = (typeof T._timing === "function" ? T._timing() : []).map(function (t) {
+    return { label: String(t.label || ""), date: String(t.date || "") };
   });
 
   // The effective rate an UNBOUND college earns at, measured off the model rather
@@ -190,6 +200,7 @@
              colleges: rows.filter(function (r) { return r[1]; }).length },
     effRate: Math.round(effRate),
     prios: prios,
+    timing: timing,
     rows: rows,
   };
     return payload;

@@ -286,12 +286,17 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
 
   check("front-load: the year filter marks the carryover year",
     /carryover/i.test(doc.querySelector("#cplFundYear").textContent));
-  const flLine = doc.querySelector(".cplfund-prio .cplfund-fl-line");
-  check("front-load: the priority card states the window is on the table in Year 1",
-    !!flLine && /full .* window/i.test(flLine.textContent) &&
-    flLine.textContent.indexOf("Effective") !== -1);
-  check("front-load: the priority card names the SAME student target",
-    !!flLine && /same .*-student target|that same/.test(flLine.textContent));
+  // The "Combined funding: $W for the full window … Effective $E" card line is
+  // RETIRED (Sam, 2026-09-02 — it restated the band head's Total Possible, the
+  // Target line and the price line). The window figure has to survive on the
+  // card regardless: the Current Total line reads "of $W full-window Total
+  // Possible", and the band head above carries the same figure.
+  const card1 = doc.querySelector(".cplfund-prio .p");
+  check("front-load: the Year-1 priority card carries NO restating 'Combined funding' line (retired 2026-09-02)",
+    !!card1 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
+  check("front-load: the card still states the window figure — its Current Total line reads the full-window Total Possible",
+    !!card1 && /of \$[\d,]+ full-window Total Possible/.test(card1.textContent) &&
+    /Total Possible/.test((doc.querySelector(".cplfund-band-tot") || {}).textContent || ""));
 
   // Switch the viewed year to the carryover year. The in-table P-cells are
   // retired (one-pool port, 2026-08-31) — per-priority money lives in the row
