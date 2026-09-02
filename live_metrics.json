@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-02T13:43:25.944Z",
+  "scraped_at": "2026-09-02T16:43:07.704Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -33,17 +33,17 @@
         },
         {
           "college": "Norco College",
-          "students": 796,
-          "units": 6495.5,
-          "avgUnits": 8.160175879396984,
-          "transcriptionRate": 61.5,
-          "avgTranscribed": 5.021356783919598,
+          "students": 799,
+          "units": 6528.5,
+          "avgUnits": 8.170838548185232,
+          "transcriptionRate": 61.2,
+          "avgTranscribed": 5.002503128911139,
           "criteriaMetCount": 5,
-          "militaryStudents": 549,
+          "militaryStudents": 552,
           "nonMilitaryStudents": 253,
           "apprenticeStudents": 94,
-          "savings": 9934060,
-          "yearImpact": 40914945,
+          "savings": 9991150,
+          "yearImpact": 41115156,
           "transcribedUnits": 3997
         },
         {
@@ -198,17 +198,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 611,
-          "units": 8697.5,
-          "avgUnits": 14.234860883797054,
+          "students": 614,
+          "units": 8736.5,
+          "avgUnits": 14.228827361563518,
           "transcriptionRate": 11.2,
-          "avgTranscribed": 1.5949263502454991,
+          "avgTranscribed": 1.5871335504885993,
           "criteriaMetCount": 3,
-          "militaryStudents": 564,
-          "nonMilitaryStudents": 60,
+          "militaryStudents": 567,
+          "nonMilitaryStudents": 61,
           "apprenticeStudents": 0,
-          "savings": 15633775,
-          "yearImpact": 55979389.5,
+          "savings": 15682885,
+          "yearImpact": 56184010.5,
           "transcribedUnits": 974.5
         },
         {
@@ -548,17 +548,17 @@
         },
         {
           "college": "Clovis Community College",
-          "students": 191,
-          "units": 1141,
-          "avgUnits": 5.973821989528796,
+          "students": 192,
+          "units": 1147,
+          "avgUnits": 5.973958333333333,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 191,
+          "militaryStudents": 192,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1953170,
-          "yearImpact": 6849643,
+          "savings": 1963550,
+          "yearImpact": 6886045,
           "transcribedUnits": 0
         },
         {
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,940",
+      "value": "50,947",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,576"
+          "value": "27,583"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,449"
+          "value": "23,450"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50940,
-    "Units": 216807.65000000002,
+    "Students": 50947,
+    "Units": 216885.65000000002,
     "TranscribedUnits": 72582.45,
-    "Savings": 324326315.25,
-    "YearImpact": 1286607256.9,
-    "MilitaryStudents": 27576,
-    "NonMilitaryStudents": 23449,
+    "Savings": 324442895.25,
+    "YearImpact": 1287048490.9,
+    "MilitaryStudents": 27583,
+    "NonMilitaryStudents": 23450,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.256137612877896,
-    "TranscribedAverage": 1.4248616018845701
+    "AverageUnits": 4.257083832217796,
+    "TranscribedAverage": 1.4246658291950458
   }
 }
