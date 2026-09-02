@@ -937,3 +937,71 @@ Military Service ×3). There is no noncredit marker anywhere in the data we hold
 
 - [`methodology-read-the-per-item-verdict-not-just-the-envelope`] — `cpl_memory`
   `read-the-per-item-verdict-not-just-the-envelope`.
+
+## 2026-09-02 — Session 222 (SkyCheck): the six checks arrived as booleans, on the other view
+
+Sam's ask: Pedro had just added CPL lifecycle boolean checks to the student
+Custom Reports and is adding `CollegeID2` (where a student originated before
+the CR college; the NC FTES key). Find the Counselor stage — *"signifies the
+student met with a counselor and accepted their CPL"* — on the student
+aggregated report.
+
+### (a) What the runner found (PR #1437, runs 33693966335 / 33694399728 / 33694773606)
+
+`View_StudentAggregatedValues_APIDataset` gained six columns, all `'0'`/`'1'`
+strings at 100% fill over 53,267 rows:
+
+| column | TRUE | colleges with any TRUE |
+|---|---:|---:|
+| `CPL_Docs_Verified` | 27,949 | 102 |
+| `Transcribed` | 17,342 | 30 |
+| `Ed_Plan_Created` | 4,423 | 32 |
+| `Analysis_Completed` | 4,267 | 26 |
+| `Counselor_Verified` | 3,429 | 25 |
+| `Student_Verified` | 3,293 | 23 |
+
+They are the six `CPLPlanStatus` checks split out — same names, same order —
+but on the AGGREGATED view, not the CR-row view, which is unchanged at 30
+columns. **`Counselor_Verified` is the counselor stage.** Of its 3,429 rows,
+2,820 carry applied units and 2,478 transcribed units; none is a Test Student.
+Nothing origin-shaped (`CollegeID2` / `LocID2` / `Origin`) is on any of the
+four views yet. The catalog-year view gained `RecCreatedOn`, one refresh stamp
+on every row.
+
+### (b) How the checks nest
+
+Pairwise overlap (both / A-only / B-only): Counselor × Student **3,072 / 357 /
+221** — two steps that usually travel together, not one attestation recorded
+twice. Analysis × Counselor 3,412 / 855 / 17, so Counselor sits almost entirely
+inside Analysis. Counselor × Transcribed 3,010 / 419 / **14,332**: most
+transcribed CPL never carried the counselor step, which is the batch-loaded
+population Sam described on 2026-09-01. `Transcribed` is a CHECK at this grain
+too: 17,342 flagged, 14,455 with units.
+
+### (c) The instrument changed under us
+
+`columnName: []` — the enumeration trick behind the June and August probes —
+now answers HTTP 500 on every view, the two known-good controls included;
+omitting `columnName` also 500s. `["*"]` returns the real schema. The probe
+runs its control first and tries all three, so the negative would have been
+reported AS a failed control rather than as absence. The four identity columns
+`fetch_custom_report.py` holds by name are no longer on the live view (25 =
+our 19 + the 6).
+
+### (d) A probe silenced by its own success
+
+Run 12 printed "NEW: none" one commit after the six joined the daily request,
+because the diff is live-schema minus what the fetch asks for — so wiring a
+column stopped its profile, overlap block included. A `WATCH` list now names
+the already-wired columns profiled every run; the test pins it to columns the
+fetch really requests. `cpl_memory: wiring-a-column-silences-the-probes-diff`.
+
+### (e) What is wired, and what is deliberately not
+
+The six columns are in the daily fetch (data lands from the next run). The
+funding builder's sweep does NOT yet name `Counselor_Verified`: one line adds
+it, and the moment it does the public explainer prices every college's
+Accepted earning on that flag — so the meaning is confirmed with Pedro first
+(funding lane NEEDS SAM ⑤). Nine `cpl_memory` rows under
+`author = 'session-222-skycheck'`; braindump in the vault
+(`braindump-2026-09-02-2319-lifecycle-booleans-and-collegeid2`).
