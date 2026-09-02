@@ -6,13 +6,13 @@
   "items": [
     {
       "id": "s220-sam-calm-pass-calls",
-      "for": "sam",
+      "for": "Sam",
       "tab": "implementation-funding",
       "text": "React to the calm pass's judgment calls on the Implementation Funding tab, by letter: (a) the subtitle under the title is gone; (b) the college's name is what opens its detail, no caret; (c) the sort arrow is the one mark kept, ghosted; (d) the CPL area word stays as muted text by the project picker; (e) a scenario with edits reads (edited) in the picker; (f) the held-in-reserve amount reads inside the eligibility sentence and again ahead of Total Possible; (g) the eligibility introduction is prose with an Edit word for reviewers. Reply keep, edit, or revert per letter."
     },
     {
       "id": "s220-sam-more-editable-text",
-      "for": "sam",
+      "for": "Sam",
       "tab": "implementation-funding",
       "text": "Say whether more of the tab's text should be editable in place. Five sections are today (the introduction, Reading the funding, the eligibility introduction, the noncredit earning rules, the table introduction). Any other paragraph is one registry entry away."
     },
