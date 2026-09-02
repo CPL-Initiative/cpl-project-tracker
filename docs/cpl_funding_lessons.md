@@ -1870,3 +1870,14 @@ five prose blocks; the reserve placement; the vocabulary), both HTML shells
 payload (masthead tags painted), the snapshot twin (register only), seven
 suites re-aimed, and `tests/cpl_funding_calm.test.js` (56 checks,
 mutation-verified seven ways).
+
+### Follow-up the same hour: the bound word beside the figure it bounds
+
+Sam, on the row screenshot: *"Let's move the at cap and at base notes next to
+the CR and NC total funding on main rows and put the note in parens (at cap),
+(at base)."* The chip had sat by the institution's name — where it read as a
+label on the college rather than on its award. It now renders in parentheses
+after the figure in both award cells (the NC cell only when it holds a share;
+"$0 (at cap)" would claim a bound on nothing), with the same hover text. The
+NC only word stays by the name: that one is an identity, not a bound. The
+footer legend and the cap suite followed the words.

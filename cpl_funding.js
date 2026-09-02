@@ -491,6 +491,7 @@
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-est { font-size: .72rem; color: var(--mustard-text); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
+    ".cplfund-bound { color: var(--text-muted); margin-left: 3px; }",
     // so it reads as a quiet marker, not a bright emoji.
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
@@ -6433,7 +6434,7 @@
     var title = earnedCellTitle("Credit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, earned, row.earned_measured || 0, row.earned_advance || 0, row.earned_withheld || 0);
-    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) +
+    return '<td class="cf-award c" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
       earnedSubHtml(cap, earned, row.earned_advance || 0, row.earned_withheld || 0, row.gate_blocked) + "</td>";
   }
   function ncAwardCellHtml(row) {
@@ -6452,20 +6453,27 @@
     var title = earnedCellTitle("Noncredit share of the max award" +
         (frontloaded() ? " (" + windowLabel() + " window)" : " (per year)"),
       cap, row.earned_nc || 0, row.earned_nc || 0, 0, 0);
-    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) +
+    return '<td class="cf-award" title="' + esc(title) + '">' + fmtMoney(cap) + boundWordHtml(row) +
       earnedSubHtml(cap, row.earned_nc || 0, 0, 0, row.gate_blocked) + "</td>";
+  }
+  // The bound word — (at base) / (at cap) — sits beside the award figures it
+  // qualifies, in parentheses, on both the CR and NC cells (Sam, 2026-09-02:
+  // "move the at cap and at base notes next to the CR and NC total funding on
+  // main rows and put the note in parens"). Ghosted word, hover explains.
+  function boundWordHtml(c) {
+    if (c.floored) return ' <span class="cplfund-chip cplfund-bound" title="' +
+      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
+        ", so it is brought up to the base award — funded from within the same total.") + '">(at base)</span>';
+    if (c.capped) return ' <span class="cplfund-chip cplfund-bound" title="' +
+      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
+        ", so it is held at the cap — the difference funds the other institutions.") + '">(at cap)</span>';
+    return "";
   }
   function rowChips(c) {
     var chips = "";
-    // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): AT BASE /
-    // AT CAP / NC ONLY — the quietest thing in the row, never the first read.
+    // Chips are GHOSTED WORDS (Sam's reaction round, 2026-08-31): NC ONLY stays
+    // by the name (an identity); the bound word moved to the award cells.
     if (c.nco) chips += '<span class="cplfund-chip" title="A standalone noncredit institution. It holds the same award window as every college and earns by origination: CPL from its programs, transcribed at a credit college.">NC only</span>';
-    if (c.floored) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the funding by size came out below " + fmtMoney(allocModel().floor) +
-        ", so it is brought up to the base award — funded from within the same total.") + '">at base</span>';
-    if (c.capped) chips += '<span class="cplfund-chip" title="' +
-      esc("This institution's share of the funding by size came out above " + fmtMoney(allocModel().cap) +
-        ", so it is held at the cap — the difference funds the other institutions.") + '">at cap</span>';
     // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused. Public + private; hidden once opted in.
     if (partShown() && !ELIG.optin[c.college]) {
@@ -7802,7 +7810,7 @@
       "2 = participation, 3 = Veteran Star &ge;75% JSTs &mdash; replaced for the noncredit-only campuses by " +
       "noncredit certificates posted as exhibits in MAP, N1 a); each sector turns green when the institution " +
       "satisfies it &mdash; a fully green glyph = all met (informational in this draft). " +
-      "AT BASE = brought up to the base award; AT CAP = held at the cap. " +
+      "(at base) beside an award figure = brought up to the base award; (at cap) = held at the cap. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the " +
       "institution&#39;s county.</div>" +
       headcountSourceHtml() +
