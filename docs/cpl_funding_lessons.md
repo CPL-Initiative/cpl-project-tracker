@@ -1676,3 +1676,92 @@ habit rather than diligence: the previous PR went red on
 `kb/_build_dependency_map.py --check`, and **editing `cpl_funding.js` at all
 moves recorded line numbers in that artifact**, so it is stale after every
 change to this tab.
+
+## 2026-09-02 — Session 219 (SkyTrim): the explainer audit, and a figure that was never computed
+
+Sam asked for a register pass over the public explainer — *"revise any
+spoken-like text"* — and gave one example: **"Noncredit funding rides every
+award's face — not a separate pot."** His replacement named the instrument
+(MIS-reported NC FTES), the mechanism (earned against the model's priorities)
+and the counting rule (originating in noncredit, awarded at a credit college).
+
+The S217 audit was still open on the same page, so it ran as one pass. That
+turned out to matter: **the sentences that read worst were the sentences that
+were wrong.**
+
+### "Pot" was doing two kinds of damage
+
+`pot` appeared nineteen times across the two explainer pages. It is banned
+vocabulary (`CLAUDE.md`, Funding vocabulary: say **funding**, not "pool" — and
+"pot" is worse), and it is also imprecise in a way that matters here: the model
+has ONE total, and "a separate pot", "the same pot", "half that pot" invite a
+reader to picture several. Sam's own example objected to exactly that — *"could
+be misconstrued"* — and the fix is not a synonym but naming the thing: the
+appropriation, the amount allocated to institutions, a priority's share.
+
+Same for **"money"** on two section headings, **"offered"** throughout (the
+model's term is the **max award**, chosen precisely because it "communicates
+that awards are based on outcomes, not automatically awarded"), and the spoken
+asides — *"worth saying out loud"*, *"none of them onerous"*, *"a handful of
+very large colleges pull it up"*, *"would work against the point"*.
+
+⚠️ **The painted twin.** `#nc-body` has a static fallback AND a painted version,
+and the painter's copy is what a browser shows. Revising the static text alone
+would have left *"There is no separate noncredit pot"* on the live page — the
+same banned word and the same denial Sam flagged, in the one copy that renders.
+On a page with a painter, revise both or revise the painted one.
+
+### The figure that was never computed
+
+Step three said **"All three factors are currently set to 1.0"**, and the choices
+table said `1.0 / 1.0 / 1.0`. Live Year-1 factors are 0.5. The S217 handoff
+recorded this as stale STATIC prose — text the painter cannot reach because it
+carries no id.
+
+That was the wrong diagnosis, and the right one is worse. `_prios()` — the
+accessor every consumer is told to use instead of reading the config — **never
+emitted `factor`**. The payload builder read `p.factor == null ? 1 : p.factor`.
+So the page printed 1.0 at *every* setting, through a chain that looked entirely
+computed: a live page, a payload built from the engine, a defensive default. A
+reader checking the page against the tab would find the tab saying 0.5 and the
+page saying 1.0 and have no way to tell which was lying.
+
+**A defaulted field looks computed and never moves.** The tell is not the value —
+it is that the value never changes when the dial does, and no single-paint test
+can see that. So the guard is now: change a dial through the layer a curator
+writes to, repaint, and require the page to disagree with itself. Mutation-tested
+by dropping `factor` from the projection again; three assertions go red by name.
+
+### Two more the audit turned up, both invisible in prose
+
+**The worked-example cards** were still sized on `credit_ftes` over
+`D.colleges` — the two-lane basis retired on 2026-08-31 — while `rows` beside
+them used combined FTES over 118 institutions. One page said Mt San Antonio was
+26,804 FTES and 2.5% of the state in a card, and 37,634 in the table directly
+below. Both figures were computed; they were computed against different
+denominators. They are built FROM `rows` now, so the card and the table are one
+number by construction rather than by two computations agreeing.
+
+**The every-college table's "Credit FTES" header** had carried combined figures
+since the port — a mislabeled column, and the one column a reader uses to check
+the proportional share.
+
+### Why the existing guard missed all of it
+
+`tests/funding_model_page.test.js` already required every hard-coded **money**
+figure in the prose to carry an id. Both stale claims were numbers without a
+dollar sign: `1,069,182` and `1.0`. The guard now also fails on an unpainted
+thousands-separated number in the prose, which is the shape the basis claim had,
+and the dial-change check covers the factors. Mutation-verified: restoring
+`1,069,182` unpainted fails the new check and names the figure.
+
+### Not fixed, deliberately
+
+`prototype/check_funding_explainer.js` waits on `#f-pool`, an id retired long
+ago, and also pins `$24,240,308`, "115 colleges" and a 115-row count. It fails
+identically on clean `main`, it sits outside `npm test`, and repairing it means
+re-aiming four assertions onto live values — a separate change, and named here
+and in the handoff rather than folded into a register pass.
+
+**Receipts.** PR #1434. `_prios()` gained one field; the rest is prose, ids and
+guards. Full suite green; all sixteen `js-tests.yml` steps run locally.

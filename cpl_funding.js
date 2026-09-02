@@ -3610,7 +3610,7 @@
             : bearing
               ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays the FULL CAP</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
-              : '<span class="dk">◦ not measurable &mdash; but no funding rides on it (front-loaded: Year ' +
+              : '<span class="dk">◦ not measurable &mdash; but no funding depends on it (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
             ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
@@ -3823,7 +3823,7 @@
     // the earning-rules fold, not the Summary.
     items.push("<li><strong>" + fmtMoney(ncFace + trioHeld) +
       " of the funding is noncredit</strong> &mdash; " + fmtMoney(trioHeld) + " at the " + trioN +
-      " noncredit-only institutions plus " + fmtMoney(ncFace) + " riding " + ncColN +
+      " noncredit-only institutions plus " + fmtMoney(ncFace) + " carried within " + ncColN +
       " college awards, restricted to noncredit outcomes.</li>");
     // 4 — held in reserve, its own line whenever non-zero (never redistributed).
     if (ea.winHeld > 0.5) {
@@ -4011,7 +4011,7 @@
           "No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
           fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
           " at the noncredit-only institutions + " + fmtMoney(ncFace) +
-          " riding college awards, restricted to noncredit outcomes)" }));
+          " carried within college awards, restricted to noncredit outcomes)" }));
     })();
 
     // An unhonorable floor is the model's worst state: every row is marked
@@ -5551,8 +5551,8 @@
       });
       ncSentence = " <strong>The noncredit share:</strong> every award decomposes into a credit and a " +
         "noncredit share by the institution&#39;s own FTES split &mdash; " + fmtMoney(ncFace) +
-        " rides college awards, restricted to the noncredit measures (the credit program cannot draw " +
-        "it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
+        " is carried within college awards, restricted to the noncredit measures (the credit program " +
+        "cannot draw it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
         " earned by origination: CPL from their programs, transcribed at a credit college.";
     })();
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
@@ -8604,6 +8604,16 @@
           key: p.key, src: p.src, label: p.label, title: p.title || null,
           description: p.description || null, metric: p.metric || null,
           share: p.share,
+          // ⚠ THE FACTOR WAS MISSING FROM THIS PROJECTION until 2026-09-01, and
+          // its absence was invisible because every consumer defaulted it to 1.
+          // The public explainer read `p.factor == null ? 1 : p.factor` and so
+          // printed "all three factors are currently set to 1.0" no matter what
+          // a curator had set — a claim that looked computed, moved when nothing
+          // else on the page moved, and was wrong the moment Year 1 went to 0.5.
+          // The factor is half the PRICE of a priority (prioPrice = rate ×
+          // factor), so a projection that carries `share`, `cap` and `target`
+          // and omits it cannot explain how the target was reached.
+          factor: prioFactor(p),
           unit: prioUnitLabel(p),
           cap: prioCap(W, slot, p),
           target: prioTarget(c, p)

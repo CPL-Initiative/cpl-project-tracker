@@ -36,6 +36,34 @@ check("the page carries NO baked payload block", html.indexOf('id="DATA"') === -
   check("every hard-coded money figure in the prose carries an id" +
         (bare.length ? " — bare: " + bare.join(", ") : ""), bare.length === 0);
 }
+// ── AND A FIGURE THAT IS NOT A DOLLAR SIGN ───────────────────────────────
+// The guard above catches a bare "$..." only, and TWO of the page's load-bearing
+// claims were not currency: the allocation basis ("all 115 … 1,069,182" — the
+// model divides by combined credit + noncredit FTES over 118) and the funding
+// factors ("all three currently set to 1.0" — Year 1 is 0.5). Both were written
+// when they were true, survived the one-pool port, and were still asserting the
+// retired model on a LIVE page nine days later. The painter only overwrites
+// elements that carry an id, so an unpainted figure is not stale at build time —
+// it is wrong from the first dial change.
+//
+// So: a large bare number or a bare N.N factor inside the page's prose has to
+// carry an id. FTES counts, roster counts and factors are the shapes that bit
+// us; years, section numbers and statute citations are not figures a dial moves.
+{
+  const body = html.slice(html.indexOf("<main"), html.indexOf("</main>"));
+  const prose = body.replace(/<script[\s\S]*?<\/script>/g, "");
+  const offenders = [];
+  // A thousands-separated number (1,069,182) not already inside an id-bearing tag.
+  const idTag = /<(?:b|span|strong|td|div|p)[^>]*\bid=/;
+  prose.split(/(?=<)/).forEach(function (chunk) {
+    if (idTag.test(chunk)) return;                 // painted — the point of the rule
+    const m = chunk.match(/>[^<]*?\b(\d{1,3}(?:,\d{3})+)\b/);
+    if (m) offenders.push(m[1]);
+  });
+  check("no unpainted thousands-figure in the prose" +
+        (offenders.length ? " — bare: " + offenders.join(", ") : ""), offenders.length === 0);
+}
+
 check("the page loads the engine and the shared payload builder",
   /src="\.\.\/cpl_funding\.js"/.test(html) &&
   /src="\.\.\/cpl_funding_data\.js"/.test(html) &&
@@ -121,8 +149,54 @@ check("the status line is empty on a successful paint",
   // is the claim that survives.
   check("...and states the restriction and the origination earning rule — without the advance concept",
     /restricted/i.test(ncText) && /originating|origination/i.test(ncText) && !/advance/i.test(ncText));
-  check("...and says the noncredit share stays visible rather than disappearing into the credit figure",
-    /disappearing into the credit figure/i.test(ncText));
+  // The REQUIREMENT is that the page says the noncredit share stays separately
+  // visible — not one phrasing of it. Pinned to a literal sentence, this went
+  // red on a register pass that left the claim intact (Sam, 2026-09-01), which
+  // is the coupling this repo has now been bitten by three times.
+  check("...and says the noncredit share stays visible rather than being merged into the credit figure",
+    /(separately|visible)/i.test(ncText) && /credit figure/i.test(ncText));
+}
+
+// ── A DIAL CHANGE MUST MOVE THE PAGE ─────────────────────────────────────
+// Every check above paints once and reads the result, which proves the figure
+// came from the payload but NOT that the payload came from the model. The
+// difference is not academic: `_prios()` omitted `factor` from its projection
+// until 2026-09-01, the payload defaulted a missing factor to 1, and the page
+// printed "all three factors are currently set to 1.0" at every setting — a
+// hardcoded claim wearing a computed one's clothes, wrong from the day Year 1
+// went to 0.5 and invisible to a single-paint assertion.
+//
+// So: change a dial through the same layer a curator writes to, repaint, and
+// require the page to disagree with itself.
+{
+  const T = win.CPL_FUNDING_TAB;
+  const before = doc.getElementById("t-factors").textContent;
+  const repaint = function () {
+    win.CPL_PAINT_EXPLAINER(win.CPL_FUNDING_EXPLAINER.buildPayload(T, win.CPL_FUNDING));
+  };
+  T._setShared({ yearPriorities: { "1": {
+    "0": { factor: 0.5, share: 0.34 }, "1": { factor: 0.5, share: 0.33 }, "2": { factor: 0.5, share: 0.33 }
+  } } });
+  repaint();
+  const after = doc.getElementById("t-factors").textContent;
+  check("changing the funding factors moves the figure the page prints",
+    before !== after && /0\.5/.test(after));
+  check("...and the sentence that explains them moves with it, rather than the table alone",
+    /0\.5/.test(doc.getElementById("l-factors").textContent));
+  check("changing the shares moves the shares row too",
+    /34%/.test(doc.getElementById("t-shares").textContent));
+  // A MIXED set is the case the single-value sentence must not paper over: with
+  // three different factors there is no "all three are set to N" to say.
+  T._setShared({ yearPriorities: { "1": {
+    "0": { factor: 1.5 }, "1": { factor: 0.5 }, "2": { factor: 1 }
+  } } });
+  repaint();
+  const mixed = doc.getElementById("l-factors").textContent;
+  check("mixed factors are stated as a list, never collapsed into a false 'all three'",
+    /1\.5/.test(mixed) && /0\.5/.test(mixed) && !/All three/i.test(mixed));
+  // Leave the fixture as it was found.
+  T._setShared({});
+  repaint();
 }
 
 // ── a failed computation must SAY so, never leave stale figures standing ──

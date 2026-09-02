@@ -765,7 +765,21 @@ reduced to a four-row (d)(2) table — one function feeds both surfaces) and the
 variables"* met by keeping the class vocabulary and guarding the dials
 (`cpl_funding_ledger_editable.test.js`, mutation-verified). Plus a collapsible
 intro, and R11 re-aimed to its requirement rather than moved around. Item 3
-dismissed: *"the lane split is worth the width."* Story: `cpl_funding_lessons`;
+dismissed: *"the lane split is worth the width."*
+
+**Then #1434, the explainer.** Sam asked for a register pass over the public
+*How this funding model works* (*"revise any spoken-like text"*), and the S217
+audit ran in the same pass — which mattered, because **the sentences that read
+worst were the sentences that were wrong.** `pot` appeared 19 times (banned, and
+imprecise: the model has ONE total); "riding/rides college awards" turned out to
+be the tab's house idiom for the noncredit share, live in five more rendered
+places once Sam struck it (*"'ride the face of' was also an unfortunate
+phrase"*). ⭐ **Four claims were wrong, not the two the handoff named — and the
+factors one was not stale prose at all:** `_prios()` never emitted `factor`, the
+payload defaulted a missing one to 1, and the page printed 1.0 at every setting
+through a chain that looked entirely computed. **A defaulted field looks computed
+and never moves**, and no single-paint test can see it; the guard changes a dial
+and requires the page to disagree with itself. Story: `cpl_funding_lessons`;
 handoff `session_220_handoff`.
 
 ### SkyMeld S218 — four outcomes fold into three bands (2026-09-01)

@@ -1,7 +1,7 @@
 ---
 title: A live-painted page still goes stale in its prose
 created: 2026-09-01
-updated: 2026-09-01
+updated: 2026-09-02
 tags: [methodology, funding, explainer, staleness]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -65,3 +65,22 @@ The two passages above are open defects in `funding-model/index.html` as of
 2026-09-01 (queued in the implementation-funding lane's NEXT). The
 presentation sourced from the page carries no factor figure, so it is not
 exposed.
+
+## Update, 2026-09-02 — one of the two passages was not this failure at all
+
+The audit this note called for ran on 2026-09-02 (Session 219). It found **four**
+wrong claims on the page rather than the two recorded here — and one of them, the
+funding factors, was **not stale prose**. `_prios()` never emitted `factor`, the
+payload defaulted a missing one to 1, and the page therefore printed 1.0 at every
+setting through a fully live path.
+
+That distinction matters for anyone applying this note: **painting a wrong figure
+does not fix it if the payload does not know the right one.** A stale sentence
+and a defaulted field look identical on screen, and the first diagnosis fits the
+second symptom perfectly. Check the payload before reaching for an id.
+See [`methodology-a-defaulted-field-looks-computed-and-never-moves`](methodology-a-defaulted-field-looks-computed-and-never-moves.md).
+
+The audit also produced a mechanical guard this note lacked: the page's existing
+check required every hard-coded **money** figure in the prose to carry an id, and
+both stale claims were numbers without a dollar sign. **The scope you choose is
+the hole.** It now also fails on an unpainted thousands-separated figure.

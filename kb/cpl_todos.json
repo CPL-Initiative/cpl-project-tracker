@@ -1,80 +1,44 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-01",
-  "_session": "SkyMeld, Session 218 — bands, the $NaN fix, and the house voice",
-  "_status": "The Implementation Funding tab has been carrying two sections that described the same allocation in two different vocabularies: the three priorities, and the four funding outcomes the Education Code requires. They are now one. Four outcomes fold into three bands — Access, Success (completion and career attainment together, Sam's pairing), and Opportunities — and each band holds the measures that earn against it, with every dial still where a curator can adjust it. Which band a measure sits in is worked out from what the measure actually counts, not from its name, so the band a college reads and the funding it earns can never tell different stories. Measuring the model against live college data to justify the change turned up something worth knowing: the model currently pays out about a third of the college funding, and 84% of that comes from a single measure that 97 of 115 colleges already max out — so most of what it pays rewards work that was already happening. Sam has ruled the new settings; they are his to enter on the tab. Two of the three measures will show no earnings until MAP starts sending the new data, which is the honest picture rather than a fault. Since then two more things landed: the public how-the-model-works page was printing \"$NaN\" where the amount going to institutions should be — a leftover from the funding model's redesign, now fixed and guarded so a future change fails a test instead of the live page. And the Chancellor's Office writing style Sam shared is now the standard for our outward documents, with the example letter filed in the vault.",
-  "items": [
-    {
-      "id": "s218-sam-house-voice-scope",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "The Chancellor's Office writing style you shared is now the standard for outward documents — letters, memos, board and legislative materials, college-facing communications, and the public explainer. It is deliberately NOT applied to internal working notes, which stay dense on purpose. If you want it to reach report narrative and deck narration more strongly, say so and the scope widens. The example letter is filed in the vault beside the ESS 25-82 memo."
-    },
-    {
-      "id": "s218-fable-explainer-audit",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Walk the public how-the-model-works page once, end to end, and check every figure and claim against the live model. Three separate things on that page turned out to be left over from the funding redesign and each surfaced on its own; two are still there. One pass is cheaper than a fourth surprise."
-    },
-    {
-      "id": "s218-sam-set-dials",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Enter the new funding settings on the tab — they are yours to save, not ours to write into the database. You ruled: the new Accepted measure at a 25% share with a funding factor of 1.0, and the three measures at Eligible 40% / Accepted 25% / Transcribed 35%. At those settings a college needs a counselor-accepted CPL Plan on about one in seven of the CPL units it already applies, over the two-year window. Note a per-year ramp is not available in this window, so the factor is set once and revisited at the next appropriation."
-    },
-    {
-      "id": "s218-sam-pedro-three-feeds",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Three MAP data additions should travel to Pedro as ONE request, not three: the CPL lifecycle checkboxes you already asked for, the Origin and location fields that have been pending, and completion data. Completion is a new report rather than a column — the student report MAP sends has no award field, and the programs report is a course catalog rather than student awards. Completion would let the completion outcome be measured in the statute's own word, and joined with eligible CPL it would name each college's near-completers whose existing eligible CPL would finish an award."
-    },
-    {
-      "id": "s218-fable-rerun-earn-diagnostic",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Once Sam has entered the new settings, re-measure what each measure actually earns across all 115 colleges and report the spread. Today the model pays 34% of the college funding and 84% of that comes from one measure that 97 colleges already max out — a measure everyone clears rewards nothing, the same way a measure nobody can meet rewards nothing. This is the single best health check on the model and it takes minutes; it had never been run before today."
-    },
-    {
-      "id": "s216-sam-annual-percent",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "One display call is yours: in Annual funding view an award cell can read 'earning $140,476 · 191%' because the earning shown is the whole two-year window while the figure beside it is one year's. The code does this on purpose (earning is a window quantity) but two independent reviewers read it as over-earning. Say the word and the percent will be computed against the window figure instead, which never exceeds 100%."
-    },
-    {
-      "id": "s214-sam-origination-docx",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "The MAP Custom Reports origination instructions for Malone and Pedro are ready to forward (Word doc delivered in chat; also filed in the vault). It formalizes the Origin + LocID2 plan Pedro has held since 8-26. The tab is now BUILT to consume this feed with no further code change — but no funding moves to NOCE, SDCCE, or Calbright until it flows, so the column spellings from Malone/Pedro are the one thing holding the trio's earn-out."
-    },
-    {
-      "id": "s210-sam-75013-collab",
-      "for": "Sam",
-      "tab": "gr-register",
-      "text": "The SS75013 workgroup seat (your yes, 2026-08-30, item 9): pursue it in collaboration with CO Governmental Relations, CO Finance, and the Department of Finance - the CBE-to-FTES funding measure that reports to Finance by October 2028 is register row #7's named obstacle being designed. A session can draft the outreach note whenever you want it."
-    },
-    {
-      "id": "s210-sam-guidance-memos",
-      "for": "Sam",
-      "tab": "gr-register",
-      "text": "Memo A ('what is already law') is drafted and lives IN the GR tab now - open Guidance memos under the CPL area, edit any section, and Export memo (Word) uses the register's generator (the hold banner and drafting annex travel in the file until status says issued). Your sequencing ruling holds: BOG adoption first, then issuance. One external confirm before issuance: the section-2 accreditation-standards claim needs an ACCJC touchpoint. Memo B and C stubs sit beside it when you want them drafted."
-    },
-    {
-      "id": "s210-sam-export-bench-log",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "End every scoring sitting on your testing bench with 'Show the log as text' and paste it into a working session — one paste files everything durably in the vault. Until you export, scores live only in that browser and a cleared browser eats them."
-    },
-    {
-      "id": "s217-fable-origination-cutover",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "PR #1427 is merged and the one-pool tab is live. The remaining finish: when Malone/Pedro confirm the origination columns' exact spellings, flip the performance builder's cutover so the feed flows — the tab itself needs no further change, the tests prove it. Until then the three noncredit-only campuses correctly draw nothing."
-    },
-    {
-      "id": "s216-fable-post-port-polish",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Three small polish jobs on the shipped tab family: (1) the public how-the-model-works page has two SENTENCES still describing the old model (sizing 'by credit FTES over 115 colleges'; 'all factors 1.0') — the live painter fixes numbers, not prose, so rewrite or paint those claims; (2) the college briefing still shows internal short names where the funding tab says LA Southwest / Riverside City — sweep with the college-and-district identity work; (3) a cleanup commit for ~15 styling rules serving retired row shapes. Nothing visible moves."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-09-02",
+ "_session": "SkyTrim, Session 219 — the drill-in trim, both consolidations, and the explainer audit",
+ "_status": "The Implementation Funding tab got a full pass. The college expand lost four sentences that restated rules stated elsewhere, and gained a To go column showing each priority's distance to target and the funding that distance would earn — the targets were always rendered, but the table was being laid out into a 240-pixel column with three of its columns past the edge of the screen. The Ed. Code goal boxes folded into the priority bands, so each band now carries its own outcomes and how each is evidenced, with the four-goal statutory account one click down. The Funding Breakdown became a flat ledger reading down to the total, with the base and cap on their own line — every dial still editable, every detail still one click away. A short introduction opens the tab. The public explainer was rewritten to read formally, and that rewrite turned up four claims it had been getting wrong, including one where the page could never have shown the right number.",
+ "items": [
+  {
+   "id": "s219-sam-set-dials",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Set the funding dials on this tab: Accepted at 25% share and factor 1.0, with the starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save here rather than something a session writes into the database for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets, and it will read differently now."
+  },
+  {
+   "id": "s219-sam-annual-earning-percent",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Decide whether the Annual view should keep showing earning above 100%. An award cell can read \"earning $140,476 · 191%\" there, because earning is a window quantity measured against a per-year figure. That is deliberate, but two readers have now read it as over-earning. Keep it as is, or compute the percent against the window figure."
+  },
+  {
+   "id": "s219-sam-refresh-explainer-snapshot",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
+  },
+  {
+   "id": "s219-fable-pedro-three-feeds",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "One request to Pedro carrying all three feed additions: the CPL lifecycle booleans (sent 2026-09-01), Origin and LocID2, and completions. Completions needs a new MAP view — the existing student view has no award column and the programs view is a catalog. Completion data would let the Completion outcome be measured in the statute's own word."
+  },
+  {
+   "id": "s219-fable-explainer-browser-check",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Repair the explainer's browser check. It waits for an element id retired long ago, and also pins a dollar figure and a college count that have both moved. It fails the same way on main and sits outside the main test run, so nothing has been reporting it."
+  },
+  {
+   "id": "s219-fable-dead-css-cleanup",
+   "for": "Fable",
+   "tab": "cpl-implementation",
+   "text": "Cut the dead CSS left behind by the retired row shapes — about fifteen rules for shapes the one-pool model removed, plus a stale selector in the frozen-header code."
+  }
+ ]
 }

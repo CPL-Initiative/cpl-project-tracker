@@ -46,6 +46,28 @@
     return (y[3] - x[3]) || (y[2] - x[2]);
   });
 
+  // The statewide allocation basis: the SAME per-institution figure the rows
+  // carry (credit + noncredit, placeholder-aware for the trio), summed. Derived
+  // from `rows` rather than recomputed, so the denominator and the numerators a
+  // reader compares it against cannot drift apart.
+  // ⚠ Summed UNROUNDED, then rounded once. Summing the rows' already-rounded
+  // cells gave 1,151,175 against the tab's 1,151,171 — four FTES of accumulated
+  // rounding, and a reader comparing the two surfaces has no way to know which
+  // is right or that the gap is meaningless. Same source, same order of
+  // operations as the tab.
+  const basisTotal = Math.round(
+    D.colleges.reduce(function (s, c) {
+      return s + (Number(c.credit_ftes) || 0) + (Number(c.noncredit_ftes) || 0);
+    }, 0) +
+    trio.reduce(function (s, k) {
+      const f = (D.feeders || []).filter(function (x) { return x.short === k; })[0] || {};
+      return s + (Number(f.noncredit_ftes_placeholder || f.noncredit_ftes) || 0);
+    }, 0));
+  // Rows carry the DISPLAY alias; _alloc keys on the college. One map, so a
+  // renamed college does not silently lose its allocation lookup.
+  const nameToKey = {};
+  D.colleges.forEach(function (c) { if (c.display) nameToKey[c.display] = c.college; });
+
   // The worked example must be a college whose offer is NOT bent by either bound
   // — the whole point of the walk-through is that the arithmetic on the page
   // produces the figure on the page. It used to be simply the largest college,
@@ -123,19 +145,42 @@
     // four figures were already stale by 2026-08-22 (the largest college's share,
     // and the smallest college's, both computed against a retired pool). Every
     // number a reader can check must come from the engine, so they are emitted.
+    // ⚠ SIZED ON THE COMBINED BASIS, over the WHOLE roster (2026-09-01). Until
+    // now these two cards sorted and divided by `credit_ftes` across
+    // `D.colleges` alone — the two-lane basis the one-pool model retired on
+    // 2026-08-31. So a reader checking the walk-through got a percentage
+    // computed against 1,069,182 credit FTES over 115 colleges while every
+    // other figure on the page, and the model itself, divides by the combined
+    // credit + noncredit basis over 118 institutions. The cards agreed with
+    // nothing and looked arithmetically fine.
+    //
+    // They are built FROM `rows` now, which is the same array the every-college
+    // table draws, so the size a reader sees in a card and the size in the table
+    // are one number by construction rather than by two computations agreeing.
+    //
+    // ⚠ Colleges only, deliberately. Ranking the full roster would put a
+    // noncredit-only campus at one end, and Calbright's is a stand-in figure
+    // that never publishes (N3 a) — so the illustration stays on the 115 while
+    // the BASIS it divides by stays the statewide combined total.
     cards: (function () {
-      const bySize = D.colleges.slice().sort(function (a, b) { return (b.credit_ftes || 0) - (a.credit_ftes || 0); });
-      const totFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+      const collegeRows = rows.filter(function (r) { return r[1]; });   // districted = a college
+      const bySize = collegeRows.slice().sort(function (a, b) { return b[2] - a[2]; });
       const net = T._netCollege();
-      return [bySize[0], bySize[bySize.length - 1]].map(function (c, i) {
-        const a = T._alloc(c.college);
-        return { name: c.display || c.college, role: i === 0 ? "The largest college" : "The smallest college",
-                 ftes: Math.round(c.credit_ftes || 0),
-                 pct: +((c.credit_ftes || 0) / totFtes * 100).toFixed(1),
-                 share: Math.round((c.credit_ftes || 0) / totFtes * net),
-                 offered: Math.round(a.total), floored: !!a.floored, capped: !!a.capped };
+      if (!bySize.length || !basisTotal) return [];
+      return [bySize[0], bySize[bySize.length - 1]].map(function (r, i) {
+        const a = T._alloc(r[0]) || T._alloc(nameToKey[r[0]] || r[0]) || {};
+        return { name: r[0], role: i === 0 ? "The largest college" : "The smallest college",
+                 ftes: r[2],
+                 pct: +(r[2] / basisTotal * 100).toFixed(1),
+                 share: Math.round(r[2] / basisTotal * net),
+                 offered: r[3], floored: !!r[4], capped: !!r[6] };
       });
     })(),
+    // The statewide denominator every proportional share on the page divides by,
+    // and the roster it is summed over. Emitted because the page STATED both as
+    // typed prose ("all 115 … 1,069,182") and neither moved when the basis did.
+    basis: { total: basisTotal, institutions: rows.length,
+             colleges: rows.filter(function (r) { return r[1]; }).length },
     effRate: Math.round(effRate),
     prios: prios,
     rows: rows,

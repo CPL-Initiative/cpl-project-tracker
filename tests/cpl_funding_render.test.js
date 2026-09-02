@@ -501,7 +501,12 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
       // this check is deliberately about the figures rather than the wording.
       /no carve-out line/i.test(note) &&
       note.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1 &&
-      /riding college awards/.test(note) &&
+      // The claim is that the note says the college shares are carried WITHIN
+      // college awards — not one idiom for it. "Riding college awards" was the
+      // house phrase until Sam struck it (2026-09-02: "'ride the face of' was
+      // also an unfortunate phrase"), and the comment two lines up already says
+      // this check is about the figures rather than a fixed sentence.
+      /college awards/.test(note) &&
       !/Rural College allowance/.test(note) && !/NC campuses/.test(note));
   }
 

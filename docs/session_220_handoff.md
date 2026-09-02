@@ -78,6 +78,49 @@ Two defenses, both used and both reusable:
   an unguarded `commit(null)`, so the run ended before `finish()` printed and
   the assertion that caught the bug never reached the log.
 
+## Then S219 kept going (2026-09-02) — the explainer
+
+Sam asked for a register pass over the public explainer (*"revise any
+spoken-like text"*), giving one example: **"Noncredit funding rides every
+award's face — not a separate pot."** The S217 audit was open on the same page,
+so it ran in the same pass — which mattered, because **the sentences that read
+worst were the sentences that were wrong.**
+
+**Register.** `pot` appeared 19 times across the two explainer pages: banned
+vocabulary, and imprecise in the way Sam flagged — the model has ONE total, and
+"a separate pot / the same pot / half that pot" invites a reader to picture
+several. Also swept: "money" on two headings, "offered" throughout (the model's
+term is the **max award**), and the spoken asides. ⭐ **Then Sam struck the idiom
+itself** — *"'ride the face of' was also an unfortunate phrase"* — and
+"riding/rides college awards" turned out to be the tab's house phrase for the
+noncredit share, live in five more rendered places. All now read "carried
+within".
+
+⚠️ **`#nc-body` has a static fallback AND a painted version**, and the painted
+one renders. Revising the static text alone would have left the flagged sentence
+live. On a page with a painter, revise the painted copy.
+
+**Four claims were wrong, not the two the handoff named.** ① the basis sentence
+(credit FTES over 115; the model uses combined over 118) ② the factors ③ the
+worked-example cards, still sized on the retired two-lane basis — one page said
+Mt San Antonio was 26,804 FTES in a card and 37,634 in the table below it ④ the
+every-college table's "Credit FTES" header, carrying combined figures.
+
+⭐ **② was not stale prose.** `_prios()` — the accessor everything is told to use
+— **never emitted `factor`**, and the payload read `p.factor == null ? 1 :
+p.factor`. The page printed 1.0 at *every* setting through a chain that looked
+entirely computed. **A defaulted field looks computed and never moves,** and no
+single-paint test can see it. The guard that works: change a dial, repaint,
+require the page to disagree with itself.
+
+**Still open on this page:** `prototype/check_funding_explainer.js` waits on
+`#f-pool` (an id retired long ago) and pins `$24,240,308`, "115 colleges" and a
+115-row count. It fails identically on clean `main` and sits outside `npm test`,
+so nothing reported it. And the snapshot's baked `#DATA` payload predates the
+card fix — one `node prototype/build_funding_model_explainer.js <config.json>`
+clears it, needing the live config md5-verified rather than hand-transcribed. A
+header comment on the file says so.
+
 ## Read in order
 
 1. `docs/reference/lanes/implementation-funding.md` — lane truth (the earn
