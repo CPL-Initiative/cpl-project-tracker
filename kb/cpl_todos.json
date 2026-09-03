@@ -1,92 +1,92 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-03",
-  "_session": "SkyOrbit, Session 223 — SkyView meets the five goals: full screen, jump to anything, details on hover and click, every stand-alone in orbit",
-  "_status": "SkyView, the graph view of the Common Course Reference, now does what Sam asked for on 2026-09-03. It fills the first screen with the whole reference (16,482 course identities and 33,423 stand-alone courses in 159 subject areas) and the other panes sit one scroll below; a Full screen button uses the browser's own mode. The search box at the top jumps to a subject, a course identity, a stand-alone course, or a college course typed by its code or control number. Hovering a point shows its number, title, units and identity system; clicking opens a details panel over the map where each college course's number opens its catalog description. Every stand-alone course now sits in orbit around the identity it is most aligned to (30,274 of 33,423; the 3,149 that share nothing with any identity in their subject sit on the subject's rim) as a suggestion the curator can accept with one drag or a Move here button. Nothing on the page writes to the database. The course descriptions are published to a public Supabase storage bucket by a workflow; the workflow's first run after the merge filled that bucket on 2026-09-03 (160 objects, 52.7 MB). The funding queue was measured first: the dials are still Sam's to set, CollegeID2 has still not landed in MAP, and nothing there needed a session. Also filed today: Sam wants a banner on COBI while he is working with a session so team members can drop in and observe (a to-do below), and his Business / Vocational example turned into a rule: an orbit may cross disciplines when the course is filed under a grab bag like Vocational or when nothing in its own subject fits.",
-  "items": [
-    {
-      "id": "s223-sam-confirm-three-readings",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Confirm three readings of your rulings on the authority-codes sheet (https://claude.ai/code/artifact/589e20cd-e6ed-4c07-ba44-514e92572278): item 8, CRIM stays the canonical code with a C-ID chip reading AJ, because a two-letter code cannot be canonical under your rule 3; item 13, Media Production shares FTVE with Film and Media Studies as a fan-in pair; item 14, the agriculture families take the hyphen-stripped four-letter codes AGAB, AGAS, AGPS, AGEH and AGMA with AGRI as the residual. Reply yes or edit by number."
-    },
-    {
-      "id": "s223-fable-remint-series",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Run the re-mint series Sam ruled on 2026-09-03 (kb/csr_authority_codes_rulings_2026-09-03.json is the plan): add the C-ID chip fields to the canonical seed and show the chip on the CSR, CCR and SkyView; run the canonical fold dry run for the ruled changes on a scratch copy of the seed; write a Z-to-M dry run, the reverse of kb/_uc_cur_zscheme_dryrun.py, covering the 4,024 Z ids and the 221 legacy ids by gap-filling; review each dry run in its own pull request before any apply, then land the applies in one cron window with kb_curation re-keyed from the alias map."
-    },
-    {
-      "id": "s223-sam-drive-skyview",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Open the Common Course Reference tab and drive SkyView for ten minutes, then react by number: (1) are the orbiting stand-alone courses readable or too dense around the big identities, (2) is the details panel the right width and in the right place, (3) do the labels appear at the right zoom (number first, then title, then units and system), (4) should a course that shares nothing with any identity in its subject stay on the subject's rim or orbit the biggest identity with its subject code anyway. Each answer is a one-line change."
-    },
-    {
-      "id": "s223-sam-live-banner-link",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "For the live-session banner you asked for (a banner on COBI while you are working with a session, so team members can drop in and observe): decide what link the banner should offer observers — a shared view of the Claude Code session, a Teams call, or the pull request being worked — and whether it shows on every COBI tab or only the ones the session names."
-    },
-    {
-      "id": "s223-sam-daily-rebuild",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Decide whether the daily dashboard run should rebuild SkyView's map layout too. Today the layout is rebuilt by hand and committed, so the map shows the reference as of the last rebuild while the course descriptions follow the daily artifacts. A daily rebuild keeps the map current at the cost of two files of about 5 MB changing in the repository every day and subject islands shifting position as counts change."
-    },
-    {
-      "id": "s222-sam-collegeid2-when",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Tell the next session the day Pedro says CollegeID2 has landed, and whether it will be on both student reports the daily pull reads. A fresh probe on 2026-09-03 found it on none of the four MAP views. It is the field that identifies where a student originated before the credit college and the one the noncredit FTES calculation will use; until then the public-upload Yes/No (Potential Student) stands in. The probe is one click (Actions, Discover MAP datasets)."
-    },
-    {
-      "id": "s218-sam-set-dials",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Set the Accepted priority's dials through the Implementation Funding tab (your ruling of 2026-09-01: Accepted at a 25% share and factor 1.0; the starting set Eligible 40%, Accepted 25%, Transcribed 35%). The saved configuration on 2026-09-02 still carries the three original priorities at 33/33/34, so the counselor-verified measure is published but not yet priced."
-    },
-    {
-      "id": "s221-sam-funding-reactions",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "React by letter to the calm pass and the lead-with-the-table changes on the Implementation Funding tab, confirm the explainer as the one public view (the old public page would become a redirect), and say whether the internal tab should keep showing <10 until the public/private split gives it its own copy. These are NEEDS SAM ③, ④ and ⑤ in the funding lane file."
-    },
-    {
-      "id": "s223-fable-live-session-banner",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "Build the live-session banner Sam asked for on 2026-09-03: a small Supabase table holding one presence row (who is driving, the session moniker, the lane, a link for observers, started-at and a heartbeat) that a session writes through the MCP when it starts and clears when it signs off; every COBI page reads it on load and every few minutes and shows a slim banner — for example 'Sam is working with SkyTune on SkyView now — drop in' — until the heartbeat is twenty minutes old. It is a new write surface: map it in the governance file before it ships, and keep it internal to COBI."
-    },
-    {
-      "id": "s223-fable-decision-packs",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Build the grouped decision view for every subject area, fetched on demand the way the description shards are, so the Open the work surface button on a subject stops saying it exists for five subjects out of 159. This has been the bottleneck behind every SkyView improvement since Session 192."
-    },
-    {
-      "id": "s223-fable-remint-queue",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "When a SkyView move leaves the destination identity's subject code inconsistent with its corroborated discipline, queue a re-mint candidate for the batch playbook rather than doing nothing or minting on the spot. Propose, never auto-add; a person dismisses with a reason."
-    },
-    {
-      "id": "s192-fable-two-course-keys",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Work the 73 course control numbers that name two genuinely different courses, 93 of them at San Jose City College. SkyView refuses to move those courses because the write key cannot say which one; the fix is upstream in COCI or a wider key."
-    },
-    {
-      "id": "s223-fable-rim-by-description",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Give the 2,073 rim courses in SkyView a third signal: the catalog description. Measured on 2026-09-03: 1,600 of them have one; a description match places about 130 well inside their own subject area and agrees with the title-based parent only 20% of the time, so it fills the gap when the title says nothing and never outvotes a title match. Strip college boilerplate first, hold cross-island matches to a higher bar, show the shared terms as the reason, and say orbit by description in words. Sam asked for this on 2026-09-03."
-    },
-    {
-      "id": "s223-fable-ccr-dropdown-labels",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "On the Common Course Reference tab, make the Subject dropdown read the code, its full title and its discipline (for example CRIM, Administration of Justice; FLSP, Spanish, Foreign Languages) and the Discipline dropdown read the discipline and its Common SUBJ codes, moving the local college codes to the hover text. Rename SkyView's search kind word from subject to discipline. Sam asked on 2026-09-03; each Common SUBJ belongs to exactly one discipline, so the full title is the discipline's name except for the umbrella codes."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-09-03",
+ "_session": "SkyTune, Session 224 — the C-ID chip is live; both re-mint dry runs are receipts; fourteen readings wait on Sam",
+ "_status": "2026-09-03 SkyTune, Session 224 — the chip is live, the two dry runs are receipts, nothing is applied. Sam ruled the authority-codes sheet the evening before, and this session ran the series the way the playbook asks: measure first. The C-ID chip shipped (#1447): where a discipline's Common SUBJ differs from the code C-ID or CCN uses, the CSR tab, the CCR tab's Subject list and SkyView's subject card show that code as a word (C-ID AJ beside CRIM), and a CSR-minted code no authority names reads proposed. The recode of the eleven ruled code changes was dry-run as a keep-number prefix re-key (#1448): 10,292 ids move, 10,039 keep their number; the June allocator would have renumbered 62,638 ids to change nothing, so it is the wrong tool for a rename. The Z-band retirement was dry-run after it (#1449): 4,053 Z identities take free M numbers, 218 legacy anchors fold, and Kinesiology credit ends three numbers short of its ceiling. Fourteen readings from the two runs are on one sheet for Sam; the applies are built after his replies and land in one cron window.",
+ "items": [
+  {
+   "id": "s224-sam-fourteen-readings",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Reply by number to the fourteen readings the two re-mint dry runs raised (https://claude.ai/code/artifact/5674d4c3-9f77-4c16-bdc7-40c5fd10bfbb; committed as docs/visuals/2026-09-03-remint-series-readings.html). Cards 1 to 3 are the readings the morning's sheet left to confirm (CRIM with the AJ chip, Media Production sharing FTVE, the hyphen-stripped agriculture codes); the rest came out of the measurements: which code the residual agriculture rows keep, viticulture, AG-EH's home, Arabic, the flagged languages, PH under Health, Kinesiology's three free numbers, whether the retired Z identities become catalog records, the legacy anchors, and the apply window. Nothing is applied until you reply."
+  },
+  {
+   "id": "s224-fable-build-the-applies",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "After Sam's replies, build the two applies from the dry runs' shared allocators (kb/_authority_recode_dryrun.py and kb/_zband_retire_dryrun.py both expose compute_plan): a fidelity gate against the committed receipt, a fresh kb_curation read at write time, provenance stamps, receipts restamped applied. Land both in one cron window, recode first, with the Supabase re-key run from each receipt, the canonical picks updated, the post-apply chain run once, and the code that knows the Z shape changed with it (the retirement report lists every site). Then rebuild SkyView by hand so the islands read the new codes."
+  },
+  {
+   "id": "s223-sam-drive-skyview",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Open the Common Course Reference tab and drive SkyView for ten minutes, then react by number: (1) are the orbiting stand-alone courses readable or too dense around the big identities, (2) is the details panel the right width and in the right place, (3) do the labels appear at the right zoom (number first, then title, then units and system), (4) should a course that shares nothing with any identity in its subject stay on the subject's rim or orbit the biggest identity with its subject code anyway. Each answer is a one-line change."
+  },
+  {
+   "id": "s223-sam-live-banner-link",
+   "for": "Sam",
+   "tab": "admin",
+   "text": "For the live-session banner you asked for (a banner on COBI while you are working with a session, so team members can drop in and observe): decide what link the banner should offer observers — a shared view of the Claude Code session, a Teams call, or the pull request being worked — and whether it shows on every COBI tab or only the ones the session names."
+  },
+  {
+   "id": "s223-sam-daily-rebuild",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Decide whether the daily dashboard run should rebuild SkyView's map layout too. Today the layout is rebuilt by hand and committed, so the map shows the reference as of the last rebuild while the course descriptions follow the daily artifacts. A daily rebuild keeps the map current at the cost of two files of about 5 MB changing in the repository every day and subject islands shifting position as counts change."
+  },
+  {
+   "id": "s222-sam-collegeid2-when",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Tell the next session the day Pedro says CollegeID2 has landed, and whether it will be on both student reports the daily pull reads. A fresh probe on 2026-09-03 found it on none of the four MAP views. It is the field that identifies where a student originated before the credit college and the one the noncredit FTES calculation will use; until then the public-upload Yes/No (Potential Student) stands in. The probe is one click (Actions, Discover MAP datasets)."
+  },
+  {
+   "id": "s218-sam-set-dials",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Set the Accepted priority's dials through the Implementation Funding tab (your ruling of 2026-09-01: Accepted at a 25% share and factor 1.0; the starting set Eligible 40%, Accepted 25%, Transcribed 35%). The saved configuration on 2026-09-02 still carries the three original priorities at 33/33/34, so the counselor-verified measure is published but not yet priced."
+  },
+  {
+   "id": "s221-sam-funding-reactions",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "React by letter to the calm pass and the lead-with-the-table changes on the Implementation Funding tab, confirm the explainer as the one public view (the old public page would become a redirect), and say whether the internal tab should keep showing <10 until the public/private split gives it its own copy. These are NEEDS SAM ③, ④ and ⑤ in the funding lane file."
+  },
+  {
+   "id": "s223-fable-live-session-banner",
+   "for": "Fable",
+   "tab": "admin",
+   "text": "Build the live-session banner Sam asked for on 2026-09-03: a small Supabase table holding one presence row (who is driving, the session moniker, the lane, a link for observers, started-at and a heartbeat) that a session writes through the MCP when it starts and clears when it signs off; every COBI page reads it on load and every few minutes and shows a slim banner — for example 'Sam is working with SkyTune on SkyView now — drop in' — until the heartbeat is twenty minutes old. It is a new write surface: map it in the governance file before it ships, and keep it internal to COBI."
+  },
+  {
+   "id": "s223-fable-decision-packs",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Build the grouped decision view for every subject area, fetched on demand the way the description shards are, so the Open the work surface button on a subject stops saying it exists for five subjects out of 159. This has been the bottleneck behind every SkyView improvement since Session 192."
+  },
+  {
+   "id": "s223-fable-remint-queue",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "When a SkyView move leaves the destination identity's subject code inconsistent with its corroborated discipline, queue a re-mint candidate for the batch playbook rather than doing nothing or minting on the spot. Propose, never auto-add; a person dismisses with a reason."
+  },
+  {
+   "id": "s192-fable-two-course-keys",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Work the 73 course control numbers that name two genuinely different courses, 93 of them at San Jose City College. SkyView refuses to move those courses because the write key cannot say which one; the fix is upstream in COCI or a wider key."
+  },
+  {
+   "id": "s223-fable-rim-by-description",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Give the 2,073 rim courses in SkyView a third signal: the catalog description. Measured on 2026-09-03: 1,600 of them have one; a description match places about 130 well inside their own subject area and agrees with the title-based parent only 20% of the time, so it fills the gap when the title says nothing and never outvotes a title match. Strip college boilerplate first, hold cross-island matches to a higher bar, show the shared terms as the reason, and say orbit by description in words. Sam asked for this on 2026-09-03."
+  },
+  {
+   "id": "s223-fable-ccr-dropdown-labels",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "On the Common Course Reference tab, make the Subject dropdown read the code, its full title and its discipline (for example CRIM, Administration of Justice; FLSP, Spanish, Foreign Languages) and the Discipline dropdown read the discipline and its Common SUBJ codes, moving the local college codes to the hover text. Rename SkyView's search kind word from subject to discipline. Sam asked on 2026-09-03; each Common SUBJ belongs to exactly one discipline, so the full title is the discipline's name except for the umbrella codes."
+  }
+ ]
 }

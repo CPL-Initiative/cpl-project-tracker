@@ -536,6 +536,21 @@ instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
 dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
 decisions + validation methodology:
 [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
+**In flight (2026-09-03, SkyTune S224): the authority-codes re-mint series.**
+Sam's 22 rulings (`kb/csr_authority_codes_rulings_2026-09-03.json`) are planned as
+two receipts, nothing applied: the **authority recode** (`kb/_authority_recode_dryrun.py`,
+`kb/authority_recode_out/2026-09-03/`; THEA→THTR, ECED→CDEV, CSIS→ITIS, OTEC→BSOT,
+FIMS/FIMP→FTVE, CISC→COMP, the per-language codes, the agriculture families) as a
+**keep-number prefix re-key** — ⚠️ `kb/_subj4_dryrun.py` is a re-sequencer and would
+move 62,638 ids for a rename; use it only when a bucket is genuinely renumbered
+([KB note](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md))
+— and the **Z-band retirement** (`kb/_zband_retire_dryrun.py`,
+`kb/zband_retire_out/2026-09-03/`, computed `--after-recode`; every `SUBJ Z####`
+becomes `SUBJ M####` by gap-filling, the 221 legacy May anchors fold). ⚠️ **The
+corroborated M shape has 999 numbers per subject and band and Kinesiology credit
+lands at 996** — a continuation band digit is proposed. Rulings on the fourteen
+readings, then the two applies in one cron window: `docs/reference/lanes/skyview-ccr-interface.md`.
+
 Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
 the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
 e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply

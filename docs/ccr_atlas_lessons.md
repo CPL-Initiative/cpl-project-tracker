@@ -1011,3 +1011,92 @@ changes, the Z band retired, the legacy ids folded, one re-mint series to run; t
 is `kb/csr_authority_codes_rulings_2026-09-03.json`. ⭐ **A decision sheet that returns
 verdicts the same day is the fastest curation loop this repo has had** — the measured
 context was already on the card, so each verdict took him one line.
+
+## 2026-09-03 — SkyTune (Session 224): the chips, the two dry runs, and the allocator that was the wrong tool
+
+Sam's rulings from the evening before were the queue: eleven code changes, the
+Z band retired, the C-ID chip, one re-mint series. The day produced three pull
+requests and nothing applied — which is the playbook working, not stalling.
+
+### The chip is data plus a display
+
+Rule 3 as Sam shaped it keeps the four-letter invariant and moves the
+authority's code to where a reader looks for it. `kb/_seed_authority_codes.py`
+attributes every C-ID and CCN subject code to a discipline from the promotions
+evidence in precedence order — ruled, then the discipline whose canonical IS the
+code, then the corpus majority above item 17's floor of four rows, then a small
+name-home table — and a code with a ruled or canonical home never spills onto
+the discipline its mis-filed rows sit under (C-ID ARTH's 25 rows under Art stay
+with Art History). Measured: 12 disciplines sit on a CCN code, 14 on a C-ID
+code, 120 are CSR proposals, 29 show a chip. ⚠️ **One pair the rulings and the
+evidence disagree on**: item 17 dismissed `PH` under Health as mis-filed, and the
+promotions file carries 30 `PH` rows there. Kept as ruled, listed as unhomed,
+put to Sam — a human-sourced ruling is not superseded by a session's count
+(Rule 8). The three displays read the same seed fields; SkyView reads the seed
+live so the map never lags it and no layout rebuild was needed.
+
+### ⭐ The June allocator is a re-sequencer, and a rename is not a re-sequence
+
+The first instinct was to point `kb/_subj4_dryrun.py` at a scratch seed carrying
+THTR, CDEV, ITIS, BSOT, FTVE and COMP. Measured first with the seed exactly as
+committed: **62,638 of 70,946 ids would move to change nothing**, all but 148 of
+them fate `no_change`. The allocator numbers every bucket by title order, the
+title-normalization passes since June changed the sort keys, and the catalog is
+no longer at that tool's fixpoint. The rulings' own measured plan had said
+"7,921 plain prefix re-keys" — the POLS pattern of July, letters changed and the
+number kept — and that is what `kb/_authority_recode_dryrun.py` does for the
+whole ruled set: 10,292 ids move, 10,039 keep their number, 253 gap-fill (202 of
+them Media Production entering FTVE after Film keeps its numbers), 539 Z ids move
+with their namespace. KB note:
+[`methodology-a-code-change-is-a-prefix-rekey-not-a-resequence`](kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md).
+
+### ⚠️ Two allocator defects, one run each
+
+- **One pass cascades.** One stray already keyed `COMP M1001` made `CISC M1001`
+  take `M1002`, which was `CISC M1002`'s number, and so on: 554 Computer Science
+  ids shifted from one taken key. Two passes — everyone who can keep a number
+  keeps it, then the rest gap-fill — and the same input gap-fills one row.
+- **Ghosts are not occupants.** The articulation doc's identities map still holds
+  pre-fold keys (the S110 class); counting them as taken gap-filled rows for
+  nothing. They are reported, 54 of them healed by the move.
+
+Both are pinned on a fixture in `tests/authority_recode_dryrun_test.py`.
+
+### The languages and the families, by rule
+
+Item 10 mechanically: a ruled language takes the code the ruling names; any
+other takes its dominant local code when that code is four letters and no other
+language holds it; else it keeps the CSR code, flagged. The rule caught its own
+edge case: Nahuatl's rows carry `SPAN` (taught in Spanish departments) and would
+have taken Spanish's code. Korean, Tagalog, Hebrew, Persian (a tie), Punjabi,
+Hmong, Greek and Nahuatl keep their CSR codes; eleven stray prefixes the file
+does not know (ARME 18 rows, ARAM, ARMN, HUPA …) are listed for Sam. Item 14 by
+two agreeing signals with TOP last in line: 498 rows take a family, 517 stay
+residual with the reason on the row, 121 of them viticulture / enology, which has
+no C-ID family — a reading.
+
+### ⭐ Retiring the Z band is a gap-fill, and Kinesiology credit has three numbers left
+
+Keeping a Z number was never possible: both sequences started at 1, so 3,836 of
+4,053 Z numbers are already M numbers in the same bucket — and the collision
+surface is every catalog key, because a merged-away member keeps its id (its
+curation rows point at it). `kb/_zband_retire_dryrun.py` gap-fills in
+Z-sequence order, composes with the recode receipt (`--after-recode`), folds
+218 of the 221 legacy May anchors (122 of which duplicate a catalog identity: a
+merge worklist), and reports capacity: **KINE M1 lands at 996 of 999**. The
+corroborated shape has no room for the next Kinesiology mint; a continuation
+band digit is proposed, Sam's call. The apply must also settle whether these
+identities stay curation-only or are materialized into the catalog.
+
+### ⚠️ The dependency map scans `git ls-files`
+
+Both code PRs went red on `--check` once: the map was rebuilt before the new
+files were added, so the runner's map had edges the committed one lacked.
+Rebuild after `git add`.
+
+### Verification
+
+`tests/authority_codes_seed_test.py` (17) · `tests/csr_authority_chip.test.js`
+(18) · `tests/ccr_subject_authority_label.test.js` (10) · five checks added to
+`tests/ccr_skyview_universe.test.js` (74) · `tests/authority_recode_dryrun_test.py`
+(20) · `tests/zband_retire_dryrun_test.py` (17).
