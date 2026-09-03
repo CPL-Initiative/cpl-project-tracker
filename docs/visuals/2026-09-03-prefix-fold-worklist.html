@@ -1,0 +1,191 @@
+<title>Prefix Fold Worklist</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Single-theme by design: First Light is a light identity with no dark page
+     palette, so every surface and color is painted explicitly. Same sheet
+     treatment as docs/visuals/2026-09-03-csr-authority-codes.html, which Sam
+     ruled the same day, so the two read as one series. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; max-width: 66ch; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  code { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: .92em; }
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px; font-size: .9rem; color: var(--text-body); }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip { margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em; border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .chip.reading { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.judge   { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .chip.design  { color: var(--hunter);       border-color: var(--hunter);       background: var(--surface-opaque); }
+  .chip.timing  { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .card dl { margin: 8px 0 0; }
+  .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .card dd.ruled { color: var(--text-strong); border-left: 3px solid var(--cobalt); padding-left: 10px; }
+  .card dd.proposed { color: var(--text-strong); border-left: 3px solid var(--cobalt); padding-left: 10px; }
+  .tablewrap { overflow-x: auto; margin: 12px 0 4px; }
+  table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .95rem; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+  th { color: var(--text-muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .close { margin-top: 36px; color: var(--text-muted); }
+  @media (max-width: 560px) { .card header { gap: 8px; } .chip { margin-left: 0; } }
+</style>
+<a class="skip" href="#sheet">Skip to the sheet</a>
+<main class="wrap">
+<p class="kicker" style="margin-top:28px">Common Course Reference · the worklist the land surfaced · 2026-09-03</p>
+<h1>Prefix Fold Worklist</h1>
+<p class="lede">Yesterday's land put every machine cluster into the catalog as a record, and the planners could see them for the first time.
+Fold-verify now names 285 rows whose M-ID prefix is not the code their discipline owns: 132 of the new records, and 146 older rows
+the July cohorts re-disciplined without the prefix following. The dry run in
+<a href="https://github.com/CPL-Initiative/cpl-project-tracker/pull/1458">#1458</a> plans a keep-number prefix re-key for them under yesterday's allocator; nothing is applied.
+Seven items, each with what was measured and what the session proposes. Reply by number.</p>
+
+<div class="howto">
+  <p><strong>How to reply.</strong> <code>yes</code> accepts a proposal as written; or override with
+  <code>edit: your wording</code>, <code>fold: N</code> (treat with item N), or <code>dismiss</code>.</p>
+  <p>Example: <code>1–2 yes · 3 edit: fold them · 4 edit: AERO is Aerospace Studies · 5–7 yes</code></p>
+  <p>The receipt: <a href="https://github.com/CPL-Initiative/cpl-project-tracker/pull/1458">#1458</a> (<code>kb/prefix_fold_out/2026-09-03/report.md</code> carries all 123 prefix pairs, the held rows and the gap-fills).
+  A session then builds the apply from the same allocator and lands it in one cron window with the Supabase re-key.</p>
+</div>
+
+<ul class="tally">
+  <li><b>7</b> items</li>
+  <li><b>278</b> ids would move · <b>132</b> materialized · <b>146</b> legacy</li>
+  <li><b>153</b> keep their number · <b>125</b> gap-fill</li>
+  <li><b>7</b> held on TOP alone</li>
+  <li><b>17</b> without a discipline</li>
+  <li><b>0</b> applied</li>
+</ul>
+
+<div id="sheet">
+
+<section class="card" id="item-1">
+  <header><span class="num">1</span><span class="tname">The 132 materialized records off their discipline&#x27;s code</span><span class="chip reading">reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Yesterday's retirement made each machine cluster a real M-ID record under the prefix the cluster was minted with in June (the members' modal local subject code). For 132 of the 4,053, the members' discipline owns a different Common SUBJ: CIS-coded courses whose members are classified Computer Science sit under <code>ITIS</code> while Computer Science owns <code>COMP</code>; HVAC-coded trades courses sit under <code>HVAC</code> while Construction Technology owns <code>CNST</code>. Until yesterday these clusters lived only in the overlay, where no planner could see them.</dd>
+    <dt>Measured</dt>
+    <dd>132 materialized records in 46 prefix pairs; 88 keep their number. The largest pairs, with the record's members' discipline as the catalog carries it:<div class="tablewrap" role="region" aria-label="materialized groups"><table><colgroup><col style="width:15%"><col style="width:17%"><col style="width:6%"><col style="width:8%"><col style="width:7%"><col style="width:8%"><col></colgroup><thead><tr><th scope="col">old → new</th><th scope="col">discipline</th><th scope="col" class="n">rows</th><th scope="col" class="n">materialized</th><th scope="col" class="n">keep number</th><th scope="col" class="n">gap-fill</th><th scope="col">examples</th></tr></thead><tbody><tr><td><code>ITIS</code> → <code>COMP</code></td><td>Computer Science</td><td class="n">26</td><td class="n">26</td><td class="n">25</td><td class="n">1</td><td><code>ITIS M1209</code> → <code>COMP M1209</code> · Web 2.0 Social Media Strategies<br><code>ITIS M1490</code> → <code>COMP M1490</code> · Linux 2, System Administration</td></tr><tr><td><code>BUSI</code> → <code>BSOT</code></td><td>Office Technologies</td><td class="n">13</td><td class="n">9</td><td class="n">11</td><td class="n">2</td><td><code>BUSI M1096</code> → <code>BSOT M1261</code> · Microsoft Word: Advanced<br><code>BUSI M1289</code> → <code>BSOT M1289</code> · Medical Billing and Coding 1</td></tr><tr><td><code>HVAC</code> → <code>CNST</code></td><td>Construction Technology</td><td class="n">10</td><td class="n">8</td><td class="n">0</td><td class="n">10</td><td><code>HVAC M1038</code> → <code>CNST M1139</code> · Construction Fundamentals: Principles and Practices Lab<br><code>HVAC M1039</code> → <code>CNST M1140</code> · Construction Fundamentals: Principles and Practices</td></tr><tr><td><code>ITIS</code> → <code>BSOT</code></td><td>Office Technologies</td><td class="n">8</td><td class="n">8</td><td class="n">4</td><td class="n">4</td><td><code>ITIS M1536</code> → <code>BSOT M1536</code> · Spreadsheet Applications for Business<br><code>ITIS M1541</code> → <code>BSOT M1541</code> · Google Apps for Business and Personal Use</td></tr><tr><td><code>NRSV</code> → <code>NRSR</code></td><td>Nursing</td><td class="n">8</td><td class="n">8</td><td class="n">0</td><td class="n">8</td><td><code>NRSV M1019</code> → <code>NRSR M1290</code> · Common Health Deviations 1<br><code>NRSV M1020</code> → <code>NRSR M1291</code> · Common Health Deviations 1 Lab</td></tr><tr><td><code>ARTS</code> → <code>ARTD</code></td><td>Commercial Art</td><td class="n">7</td><td class="n">7</td><td class="n">7</td><td class="n">0</td><td><code>ARTS M1519</code> → <code>ARTD M1519</code> · Wood and Stone Sculpture 1<br><code>ARTS M1569</code> → <code>ARTD M1569</code> · Human Anatomy for Artists</td></tr><tr><td><code>ARTS</code> → <code>ARTH</code></td><td>Art History</td><td class="n">15</td><td class="n">6</td><td class="n">15</td><td class="n">0</td><td><code>ARTS M1065</code> → <code>ARTH M1065</code> · Arts of Africa, Oceania, and Indigenous North America<br><code>ARTS M1073</code> → <code>ARTH M1073</code> · American Art</td></tr><tr><td><code>THTR</code> → <code>MUSI</code></td><td>Music</td><td class="n">6</td><td class="n">6</td><td class="n">0</td><td class="n">6</td><td><code>THTR M1314</code> → <code>MUSI M1081</code> · Thea 290 F<br><code>THTR M1340</code> → <code>MUSI M1512</code> · Intermediate Broadway Voice</td></tr><tr><td><code>NUTR</code> → <code>FDNT</code></td><td>Nutritional Science/Dietetics</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">0</td><td><code>NUTR M1043</code> → <code>FDNT M1043</code> · Food and Nutrition: Cross Cultural Perspectives<br><code>NUTR M1044</code> → <code>FDNT M1044</code> · Food, Nutrition Customs, and Culture</td></tr><tr><td><code>HVAC</code> → <code>ELEC</code></td><td>Electricity</td><td class="n">9</td><td class="n">4</td><td class="n">7</td><td class="n">2</td><td><code>HVAC M1088</code> → <code>ELEC M1088</code> · Advanced Motor Controls, Variable Frequency Drives, Programmable Logic Controls<br><code>HVAC M1097</code> → <code>ELEC M1097</code> · Apprentice Plumbers, HVAC/Refrigeration, Fourth Semester</td></tr><tr><td><code>AUTO</code> → <code>AUTD</code></td><td>Diesel Mechanics</td><td class="n">3</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td><code>AUTO M1295</code> → <code>AUTD M1295</code> · Individualized Skills Training (IST) Truck &amp; Bus Chassis System I Laboratory<br><code>AUTO M1296</code> → <code>AUTD M1296</code> · Individualized Skills Training (IST) Truck &amp; Bus Power Train Systems Laboratory</td></tr><tr><td><code>ELEC</code> → <code>ELCT</code></td><td>Electronic Technology</td><td class="n">3</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td><code>ELEC M1055</code> → <code>ELCT M1055</code> · Introduction to Electrical Blueprints<br><code>ELEC M1057</code> → <code>ELCT M1057</code> · Electrical Power Distribution Systems and Machinery</td></tr></tbody></table></div><p>And 34 smaller pairs of one to three records each, all in <code>kb/prefix_fold_out/2026-09-03/report.md</code>.</p></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes: fold them, a keep-number prefix re-key under the same allocator as yesterday's recode, stamped with the id each came from. The discipline does not change; the prefix follows the discipline the members already carry.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>1 yes</code>, or <code>1 edit: …</code> · <code>1 fold: N</code> · <code>1 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-2">
+  <header><span class="num">2</span><span class="tname">The 146 legacy strays the July cohorts re-disciplined</span><span class="chip reading">reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Corroborated M-IDs and stand-alone rows whose discipline was set in <code>kb_curation</code> by the July cohorts (<code>trailcrew-ccr3-s112</code> 84, <code>mismint-s113</code> 39, <code>trailcrew-ccr1-s111</code> 23) under reviewed plans, without the prefix ever following. The CCR tab has shown the new discipline since July; the id still says the old one. Fold-verify has counted them as re-keys since then (148 at the start of yesterday).</dd>
+    <dt>Measured</dt>
+    <dd>146 rows in 83 prefix pairs, 33 of them stand-alone shapes (<code>CNSC M10AK</code>, <code>HVAC M10BZ</code>, <code>INDT M10FZ</code>, <code>WELD M10FI</code>); 65 keep their number. The largest pairs:<div class="tablewrap" role="region" aria-label="legacy groups"><table><colgroup><col style="width:15%"><col style="width:17%"><col style="width:6%"><col style="width:8%"><col style="width:7%"><col style="width:8%"><col></colgroup><thead><tr><th scope="col">old → new</th><th scope="col">discipline</th><th scope="col" class="n">rows</th><th scope="col" class="n">legacy</th><th scope="col" class="n">keep number</th><th scope="col" class="n">gap-fill</th><th scope="col">examples</th></tr></thead><tbody><tr><td><code>ARTS</code> → <code>ARTH</code></td><td>Art History</td><td class="n">15</td><td class="n">9</td><td class="n">15</td><td class="n">0</td><td><code>ARTS M1065</code> → <code>ARTH M1065</code> · Arts of Africa, Oceania, and Indigenous North America<br><code>ARTS M1073</code> → <code>ARTH M1073</code> · American Art</td></tr><tr><td><code>CNSC</code> → <code>CARP</code></td><td>Carpentry</td><td class="n">9</td><td class="n">9</td><td class="n">0</td><td class="n">9</td><td><code>CNSC M10AK</code> → <code>CARP M10ER</code> · Machinery Shaft Alignment<br><code>CNSC M10AR</code> → <code>CARP M10ES</code> · Machinery Installation and Erection - B</td></tr><tr><td><code>HVAC</code> → <code>AUTD</code></td><td>Diesel Mechanics</td><td class="n">6</td><td class="n">6</td><td class="n">3</td><td class="n">3</td><td><code>HVAC M1009</code> → <code>AUTD M1042</code> · Transit Vehicle Heating, Ventilation, Air Conditioning<br><code>HVAC M10FQ</code> → <code>AUTD M10FX</code> · Heavy Duty Truck and Heavy Equipment Heating and Air Conditioning</td></tr><tr><td><code>MANU</code> → <code>DRAF</code></td><td>Drafting/CADD</td><td class="n">6</td><td class="n">6</td><td class="n">0</td><td class="n">6</td><td><code>MANU M1008</code> → <code>DRAF M1089</code> · Creo Parametric: Top-Down Design and Advanced System Tools<br><code>MANU M1009</code> → <code>DRAF M1090</code> · SolidWorks: Top-Down Design and Advanced System Tools</td></tr><tr><td><code>HVAC</code> → <code>ELEC</code></td><td>Electricity</td><td class="n">9</td><td class="n">5</td><td class="n">7</td><td class="n">2</td><td><code>HVAC M1088</code> → <code>ELEC M1088</code> · Advanced Motor Controls, Variable Frequency Drives, Programmable Logic Controls<br><code>HVAC M1097</code> → <code>ELEC M1097</code> · Apprentice Plumbers, HVAC/Refrigeration, Fourth Semester</td></tr><tr><td><code>ARTS</code> → <code>GRAF</code></td><td>Graphic Arts</td><td class="n">5</td><td class="n">5</td><td class="n">5</td><td class="n">0</td><td><code>ARTS M1300</code> → <code>GRAF M1300</code> · Graphic Design 1<br><code>ARTS M1306</code> → <code>GRAF M1306</code> · Introduction to Graphic Design</td></tr><tr><td><code>HVAC</code> → <code>AUTO</code></td><td>Automotive Technology</td><td class="n">5</td><td class="n">5</td><td class="n">0</td><td class="n">5</td><td><code>HVAC M1015</code> → <code>AUTO M1296</code> · Structural Analysis and Damage Repair<br><code>HVAC M1032</code> → <code>AUTO M1315</code> · Climate Control</td></tr><tr><td><code>BUSI</code> → <code>BSOT</code></td><td>Office Technologies</td><td class="n">13</td><td class="n">4</td><td class="n">11</td><td class="n">2</td><td><code>BUSI M1096</code> → <code>BSOT M1261</code> · Microsoft Word: Advanced<br><code>BUSI M1289</code> → <code>BSOT M1289</code> · Medical Billing and Coding 1</td></tr><tr><td><code>BUSI</code> → <code>MRKT</code></td><td>Marketing</td><td class="n">4</td><td class="n">4</td><td class="n">4</td><td class="n">0</td><td><code>BUSI M1099</code> → <code>MRKT M1099</code> · Introduction to Advertising<br><code>BUSI M1139</code> → <code>MRKT M1139</code> · Consumer Behavior</td></tr><tr><td><code>ARTS</code> → <code>PHOT</code></td><td>Photography</td><td class="n">3</td><td class="n">3</td><td class="n">2</td><td class="n">1</td><td><code>ARTS M1043</code> → <code>PHOT M1142</code> · Advanced Digital Photography<br><code>ARTS M1187</code> → <code>PHOT M1187</code> · Beginning Digital Photography</td></tr><tr><td><code>MUSI</code> → <code>MUSC</code></td><td>Commercial Music</td><td class="n">3</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td><code>MUSI M1081</code> → <code>MUSC M1081</code> · Recording Arts 2<br><code>MUSI M1512</code> → <code>MUSC M1512</code> · Live Sound</td></tr><tr><td><code>PHSC</code> → <code>GEOL</code></td><td>Earth Science</td><td class="n">3</td><td class="n">3</td><td class="n">0</td><td class="n">3</td><td><code>PHSC M1012</code> → <code>GEOL M1075</code> · Earth History Laboratory<br><code>PHSC M1038</code> → <code>GEOL M1087</code> · Oceanography Laboratory</td></tr></tbody></table></div><p>And 71 smaller pairs. Every row's evidence (the cohort that set the discipline) is carried in the alias map.</p></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes: fold them in the same receipt. A reviewed cohort's discipline is the identity the CCR tab shows, and the prefix follows it. If you would rather see the July cohorts' calls again before they move, reply <code>2 edit: hold</code> and the receipt is cut to item 1 alone (<code>--scope materialized</code>).</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>2 yes</code>, or <code>2 edit: …</code> · <code>2 fold: N</code> · <code>2 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-3">
+  <header><span class="num">3</span><span class="tname">Seven records whose discipline rests on TOP alone</span><span class="chip judge">your call</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Rule 7: TOP is a last-in-line corroborator, never a primary determination of identity. Seven materialized records would move, but every member's discipline was inferred from its TOP code or division and nothing else, so the fold holds them.</dd>
+    <dt>Measured</dt>
+    <dd><div class="tablewrap" role="region" aria-label="held records"><table><colgroup><col style="width:16%"><col style="width:10%"><col style="width:22%"><col><col style="width:20%"></colgroup><thead><tr><th scope="col">id</th><th scope="col">would go to</th><th scope="col">discipline</th><th scope="col">title</th><th scope="col">members' evidence</th></tr></thead><tbody><tr><td><code>CNSC M1004</code></td><td><code>CARP</code></td><td>Carpentry</td><td>Hand and Power Tool Application</td><td>top_code, top_code</td></tr><tr><td><code>COMP M9074</code></td><td><code>BSOT</code></td><td>Office Technologies</td><td>Introduction to iOS Application Development</td><td>top_code, top_code</td></tr><tr><td><code>FCSH M1042</code></td><td><code>FASH</code></td><td>Fashion and Related Technologies</td><td>Apparel and Textiles</td><td>top_code, top_division</td></tr><tr><td><code>FCSH M9084</code></td><td><code>FASH</code></td><td>Fashion and Related Technologies</td><td>Quilting and Patchwork (Ei)</td><td>top_code, top_division</td></tr><tr><td><code>HLTH M1222</code></td><td><code>HEIT</code></td><td>Health Information Technology</td><td>Introduction to Pathology</td><td>top_code, top_division</td></tr><tr><td><code>ITIS M9056</code></td><td><code>BSOT</code></td><td>Office Technologies</td><td>Computer Keyboarding Basics</td><td>top_code, top_division</td></tr><tr><td><code>OSHA M1014</code></td><td><code>INDT</code></td><td>Industrial Technology</td><td>Foreman Training and Ironworkers Union History</td><td>top_division, top_code</td></tr></tbody></table></div></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Hold them where they are (they stay counted by fold-verify), and let a curator's discipline row on any of them be the second signal; the next fold takes them. The titles read as the disciplines say, so <code>3 edit: fold them</code> is a defensible override, and the receipt would then carry your ruling as the second signal.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>3 yes</code>, or <code>3 edit: …</code> · <code>3 fold: N</code> · <code>3 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-4">
+  <header><span class="num">4</span><span class="tname">Seventeen materialized records without a discipline</span><span class="chip judge">your call</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Their members carry no discipline, so the materialized record carries none, and no canonical code exists to fold to. They are part of the 3,001 identities with no discipline, the different job the lane file names, not of this fold.</dd>
+    <dt>Measured</dt>
+    <dd><div class="tablewrap" role="region" aria-label="records without a discipline"><table><colgroup><col style="width:18%"><col><col style="width:12%"><col style="width:12%"></colgroup><thead><tr><th scope="col">id</th><th scope="col">title</th><th scope="col" class="n">members</th><th scope="col" class="n">colleges</th></tr></thead><tbody><tr><td><code>AERO M1001</code></td><td>AS200 Leadership Laboratory C</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>AFXX M1001</code></td><td>Evolution of the U.S. Air Force Air and Space Power</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>ATXX M1001</code></td><td>Introduction Flight Attendant Training</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>ATXX M1002</code></td><td>Introduction to Travel Careers</td><td class="n">2</td><td class="n">2</td></tr><tr><td><code>DANC M1456</code></td><td>Advanced Restorative Mind Body Healing</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>DANC M1507</code></td><td>Dancers&#x27; Workshop - Student, Small Group</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>DBAX M1001</code></td><td>Beginning Radio Station Operations</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>DGME M1001</code></td><td>Radio and Podcast Production Lab 2</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>EPHO M9001</code></td><td>Fundamentals of Digital Show Presentations (Ei)</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>ESTI M1001</code></td><td>Esthetics Intermediate Concepts Ll</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>FLGH M1002</code></td><td>Human Factors and Crew Resource Management</td><td class="n">2</td><td class="n">2</td></tr><tr><td><code>MCOM M1002</code></td><td>Advanced KCTH TV Experience</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>MCOM M1003</code></td><td>Introduction to KCRH Radio Experience</td><td class="n">3</td><td class="n">1</td></tr><tr><td><code>TOUR M1001</code></td><td>Advanced Airline Computer Training</td><td class="n">2</td><td class="n">1</td></tr><tr><td><code>TOUR M1002</code></td><td>Travel Destinations: Europe, Africa, and the Middle East</td><td class="n">3</td><td class="n">3</td></tr><tr><td><code>TOUR M1003</code></td><td>Destinations- Americas and Europe</td><td class="n">2</td><td class="n">2</td></tr><tr><td><code>TOUR M1004</code></td><td>World Destinations and Resorts--Western Hemisphere</td><td class="n">2</td><td class="n">2</td></tr></tbody></table></div><p>The prefixes (<code>AERO</code>, <code>AFXX</code>, <code>ATXX</code>, <code>TOUR</code>) are the members' local subject codes, kept as minted.</p></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">No fold; they stay as they are and appear on the CCR tab as records with no discipline. If you name a discipline for any of them here (<code>4 edit: AERO and AFXX are Aerospace Studies …</code>), the session writes it as a curation row under your name and the next fold moves them.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>4 yes</code>, or <code>4 edit: …</code> · <code>4 fold: N</code> · <code>4 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-5">
+  <header><span class="num">5</span><span class="tname">The 125 rows that cannot keep their number</span><span class="chip design">mechanics</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Keeping the number is the rule; a row gap-fills only when the target bucket already holds that number. <code>HVAC M1079</code> wants <code>CNST M1079</code>, which exists, so it takes <code>CNST M1009</code>, the first free number in its band.</dd>
+    <dt>Measured</dt>
+    <dd>153 of 278 keep their number and 125 gap-fill; none needs a continuation band. Where the gap-fills land:<ul class="tally" style="margin:10px 0 0"><li><code>CNST</code> <b>12</b></li><li><code>BSOT</code> <b>9</b></li><li><code>CARP</code> <b>9</b></li><li><code>NRSR</code> <b>8</b></li><li><code>DRAF</code> <b>7</b></li><li><code>MUSI</code> <b>7</b></li><li><code>MULT</code> <b>6</b></li><li><code>AUTO</code> <b>6</b></li><li><code>MATH</code> <b>4</b></li><li><code>FTVE</code> <b>4</b></li></ul><p>30 keys are both vacated and taken in the same plan (a row leaves <code>ANTH M1099</code> as another arrives); the catalog re-key maps every key at once and the Supabase re-key applies vacate-first since #1455, so a chain is safe. No swap cycles.</p></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes: gap-fill as yesterday's recode did. A number carries no meaning beyond identity, and every moved row keeps the id it came from on the record.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>5 yes</code>, or <code>5 edit: …</code> · <code>5 fold: N</code> · <code>5 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-6">
+  <header><span class="num">6</span><span class="tname">Kinesiology&#x27;s ATHL span stays a span</span><span class="chip timing">not now</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Fold-verify and the audit both allow Kinesiology two codes, <code>KINE</code> and <code>ATHL</code>, an allowance made in June so the 999 numbers of <code>KINE M1###</code> would not burst. Yesterday you ruled continuation bands (<code>KINE M2001</code> follows <code>KINE M1999</code>), so folding the athletics rows into KINE is now possible, but it is 1,468 rows and its own decision.</dd>
+    <dt>Measured</dt>
+    <dd>3,430 Kinesiology rows sit under <code>KINE</code> and 1,468 under <code>ATHL</code> (88 of the materialized records among them); none is in this receipt. The 30 other umbrella rows outside their allowance (languages on a prefix the file does not know, such as <code>FIRE M1453</code>) are the strays you ruled keep their keys yesterday.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Keep the span; nothing moves here. If you want one Kinesiology code, reply <code>6 edit: fold ATHL into KINE</code> and the next dry run measures it with the continuation bands.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>6 yes</code>, or <code>6 edit: …</code> · <code>6 fold: N</code> · <code>6 dismiss</code></dd>
+  </dl>
+</section>
+<section class="card" id="item-7">
+  <header><span class="num">7</span><span class="tname">The apply: one window, from this receipt</span><span class="chip design">mechanics</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The same shape as yesterday: the plan recomputed at apply time and checked against the frozen receipt, a fresh read of <code>kb_curation</code> at write-time, the conservation gates, the catalog and overlay re-keyed at once, then <code>supabase-rekey.yml</code> with the alias map, the post-apply chain, and fold-verify reading 0 (V8 already proves the sets are equal).</dd>
+    <dt>Measured</dt>
+    <dd>278 aliases, invertible; 9 of 9 gates pass on the dry run; 8 stale identities-map keys healed on the way. The receipt is <code>kb/prefix_fold_out/2026-09-03/</code>; a per-verdict cut is one flag.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes: build the apply from this receipt after your replies, bring it back as a pull request, and land it in the next cron window with the Supabase re-key.</dd>
+    <dt>Your verdict</dt>
+    <dd>reply <code>7 yes</code>, or <code>7 edit: …</code> · <code>7 fold: N</code> · <code>7 dismiss</code></dd>
+  </dl>
+</section>
+</div>
+
+<p class="close">That is the whole worklist. Items 1, 2, 5 and 7 are one receipt; items 3, 4 and 6 are the rows it deliberately leaves where they are, so that what moves is only what the evidence carries.</p>
+</main>

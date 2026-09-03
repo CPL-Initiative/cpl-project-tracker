@@ -467,6 +467,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/pathway_feeder_fields.json` | scripts: `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py` | — |
 | `kb/plan.json` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/pols_remint_out/<date>/alias_map.json` | scripts: `kb/_rekey_promotions.py` | — |
+| `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
@@ -609,6 +610,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
+| `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
@@ -792,5 +794,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 413 file
-datasets · 137 external services · 311 consumers · 33 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 415 file
+datasets · 137 external services · 312 consumers · 33 workflows · 37 tabs.
