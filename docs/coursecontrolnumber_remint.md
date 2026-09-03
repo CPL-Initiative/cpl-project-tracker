@@ -319,6 +319,13 @@ PRs:
   the keep-number pattern (`kb/_pols_remint.py`, `kb/_authority_recode_dryrun.py`),
   in two passes so one taken key cannot cascade. See
   `docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md`.
+- **Rehearse the apply on a scratch copy of `kb/`, and count freshness on the
+  sync's own fields** (2026-09-03). The 2026-09-03 land ran end to end on a copy
+  first (it showed the retirement only verifies after the recode is applied) and
+  its P3 fresh read uses the seven fields of `kb/_apply_curation.py` — a
+  five-field count reads `merge_dismissed`-only entries as drift. Read the
+  post-land fold-verify and audit deltas as worklists:
+  `docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md`.
 - **Measure first, change second.** A dry-run that maps the *distribution* of
   outcomes before you build the apply step is cheap, reviewable, and
   decouples the data question ("what changes?") from the implementation

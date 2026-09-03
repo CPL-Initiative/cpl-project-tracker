@@ -536,22 +536,33 @@ instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
 dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
 decisions + validation methodology:
 [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-**In flight (2026-09-03, SkyTune S224): the authority-codes re-mint series.**
-Sam's 22 rulings (`kb/csr_authority_codes_rulings_2026-09-03.json`) are planned as
-two receipts, nothing applied: the **authority recode** (`kb/_authority_recode_dryrun.py`,
-`kb/authority_recode_out/2026-09-03/`; THEA→THTR, ECED→CDEV, CSIS→ITIS, OTEC→BSOT,
-FIMS/FIMP→FTVE, CISC→COMP, the per-language codes, the agriculture families) as a
-**keep-number prefix re-key** — ⚠️ `kb/_subj4_dryrun.py` is a re-sequencer and would
-move 62,638 ids for a rename; use it only when a bucket is genuinely renumbered
+**Latest instance (2026-09-03, SkyTune S224): the authority-codes re-mint series, APPLIED.**
+Sam's 22 rulings (`kb/csr_authority_codes_rulings_2026-09-03.json`) plus his yes to all
+fourteen readings (`kb/remint_series_readings_rulings_2026-09-03.json`) landed in one
+cron window as two receipted applies (#1454): the **authority recode**
+(`kb/_authority_recode_apply.py`, `kb/authority_recode_out/2026-09-03/`; THEA→THTR,
+ECED→CDEV, CSIS→ITIS, OTEC→BSOT, FIMS and FIMP→FTVE as a fan-in pair, CISC→COMP, the
+per-language codes, the agriculture family codes under two new umbrellas) as a
+**keep-number prefix re-key** — 10,296 ids, 10,041 keeping their number — ⚠️
+`kb/_subj4_dryrun.py` is a re-sequencer and would move 62,638 ids for a rename; use it
+only when a bucket is genuinely renumbered
 ([KB note](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md))
-— and the **Z-band retirement** (`kb/_zband_retire_dryrun.py`,
-`kb/zband_retire_out/2026-09-03/`, computed `--after-recode`; every `SUBJ Z####`
-becomes `SUBJ M####` by gap-filling, the 221 legacy May anchors fold). ⚠️ **The
-corroborated M shape has 999 numbers per subject and band and Kinesiology credit
-lands at 996** — a continuation band digit is proposed. Rulings on the fourteen
-readings, then the two applies in one cron window: `docs/reference/lanes/skyview-ccr-interface.md`.
+— and the **Z-band retirement** (`kb/_zband_retire_apply.py`,
+`kb/zband_retire_out/2026-09-03/`): every `SUBJ Z####` became a real `SUBJ M####`
+catalog record with `origin: machine cluster` (4,053), the 221 legacy May anchors
+folded but three that carry no seed discipline, and `kb/uc_cur_zseq.json` retired.
+**Two invariants joined the scheme that day:** a full corroborated CREDIT bucket
+continues into the next band digit (`KINE M2001` follows `KINE M1999`; noncredit stays
+a single band; Kinesiology credit stands at 996 of 999), and a discipline may be an
+**umbrella** declared on the seed (`is_umbrella` + `umbrella_codes`: Foreign Languages,
+Agriculture, Agricultural Production) or a **fan-in pair** (`fan_in_with`: Film and
+Media Studies with Media Production on FTVE, the Theater precedent). Read the post-land
+fold-verify and audit deltas as worklists (137 materialized records sit on a prefix
+their discipline no longer owns):
+[KB note](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md);
+lane state in `docs/reference/lanes/skyview-ccr-interface.md`.
 
-Latest instance: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
+Previous instance, superseded by the retirement above: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
 the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,
 e.g. `BIOL Z9001`; dry-run `kb/_uc_cur_zscheme_dryrun.py` + apply
 `kb/_uc_cur_zscheme_apply.py` share `compute_plan()`, receipts

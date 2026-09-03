@@ -1100,3 +1100,63 @@ Rebuild after `git add`.
 (18) · `tests/ccr_subject_authority_label.test.js` (10) · five checks added to
 `tests/ccr_skyview_universe.test.js` (74) · `tests/authority_recode_dryrun_test.py`
 (20) · `tests/zband_retire_dryrun_test.py` (17).
+
+## 2026-09-03 — SkyTune (Session 224), the land
+
+### Sam said yes to all, and the two rules that changed were re-run first
+
+The fourteen readings came back *"Yes to all"* in the afternoon. Two of them
+change a rule rather than confirm one: card 9 puts Armenian into
+`kb/foreign_language_subj4.json` as `ARME` (its `ARMN` rows fold in), card 10
+takes `(PH, Health)` out of the item-17 dismissals. Both dry runs were re-run on
+the ruled state before anything was built on them (#1452): the recode grew by
+four ids to 10,296, the retirement did not move.
+
+### The applies: apply == spec, gated three ways
+
+Each apply recomputes the plan through the dry run's `compute_plan()` and
+refuses to proceed unless it equals the frozen receipt Sam's yes was given
+against (P1), unless the overlay is fresh at write-time (P3), and unless ten
+conservation gates pass after the mutation (counts, untouched rows byte for
+byte, key == course_id, exact keyset permutations, articulation multisets,
+overlay integrity, stamps, disjoint key spaces). The retirement materializes
+each retired identity as an M-ID record from its members' aggregate and gives
+it **no membership entry**, so a college course is never counted twice. Card 2
+said the FTVE pair would go in `kb/discipline_aliases.json`; that file folds an
+alternate name away in every inference pass, and item 13 keeps both names, so
+the pair is recorded on the seed as `fan_in_with` — the deviation is stated in
+#1453.
+
+### ⭐ Rehearse on a scratch copy
+
+A copy of `kb/` under the scratchpad ran the whole land first: recode,
+retirement, promotions, seed, chips, audit, fold-verify. It showed the
+retirement can only verify after the recode is applied (the recode frees
+`AGPR M1003`, which the retirement takes), and it printed the numbers the real
+run then matched line for line.
+
+### ⚠️ A freshness count must use the sync's own field list
+
+The five-field overlay list the June apply carried reads six fresh
+`merge_dismissed`-only entries as deletions (30,688 vs 30,694). A prefix
+drill-down named them (`PARN M9003`, `M9004`, `M9015` among them). The apply
+now imports `FIELDS` from `kb/_apply_curation.py`.
+
+### What the land moved, and what it surfaced
+
+Recode: 10,296 ids (2,170 minted, 7,587 singletons, 539 Z ids), 491
+articulations, 13 identities with one ghost healed, 3,832 overlay keys and
+2,842 pointers, 23 counters, seven codes, three umbrellas, twelve language
+codes. Retirement: 4,053 materialized, 10,704 pointers, 218 anchors, 254
+crosswalk references. Afterwards fold-verify wants 285 re-keys (148 before) and
+the audit tags 153 `subject_collision_signal` rows (0 before): 137 materialized
+records sit on the June prefix their members' discipline no longer owns
+(`ITIS` under Computer Science, `HVAC` under the trades, `ARTS` under Art
+History). Materializing made a latent inconsistency visible; the next
+keep-number prefix re-key is its fix.
+
+### Verification
+
+`tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`
+(16) · the dry-run tests re-run · `tests/uc_zscheme_recognition.test.js` (9,
+now pinning the row-less M-ID shape) · the rehearsal on the scratch copy.
