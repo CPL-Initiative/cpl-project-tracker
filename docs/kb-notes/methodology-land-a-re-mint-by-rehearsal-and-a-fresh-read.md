@@ -54,7 +54,7 @@ it.
 
 The fold planner's re-key count moved from 148 to 285 and the audit's
 `subject_collision_signal` from 0 to 153. Neither is the apply misbehaving:
-137 of the materialized records sit on the prefix their machine cluster was
+139 of the materialized records sit on the prefix their machine cluster was
 minted under in June (`ITIS`, `HVAC`, `ARTS`, `THTR`) while their members'
 discipline now owns a different canonical code (`COMP`, `CNST`, `ARTH`,
 `MUSI`). Before the retirement those clusters lived only in the overlay, where

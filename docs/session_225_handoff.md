@@ -43,6 +43,11 @@ Then Sam replied *"Yes to all"* and the afternoon half applied the whole series:
    in order, the `_CANON_SUBJ4::` picks updated (before-values in
    `kb/authority_recode_out/2026-09-03/picks_before.json`), then
    `daily-dashboard.yml` for the artifacts and a hand rebuild of SkyView.
+6. **#1458 — the fold worklist, planned.** `kb/_prefix_fold_dryrun.py` plans a
+   keep-number prefix re-key for every row fold-verify names (278: 132
+   materialized, 146 legacy strays; 7 held on TOP alone; V8 parity), receipt
+   `kb/prefix_fold_out/2026-09-03/`, and the seven-item sheet for Sam:
+   https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b
 5. **#1455 — the re-key verify.** An alias map can chain (`ARME M10AJ →
    FLNG M10AJ` beside `ARMN M10AJ → ARME M10AJ`); the re-key now applies
    vacate-first and keeps chained keys off its verify surface, and the two
@@ -91,9 +96,12 @@ numbers now (0 placeholders today).
    `supabase-rekey.yml` with that receipt (it is idempotent). Both re-keys
    completed on 2026-09-03 (0 Z keys, 0 true leftovers); the recode run's
    red verify was a chained-key false positive, fixed in #1455.
-1. **The fold worklist:** a keep-number prefix re-key for the 137 materialized
-   records off their discipline's canonical code, planned with the recode
-   allocator's pattern (dry run, receipt, Sam's yes, apply in one window).
+1. **The fold worklist is on Sam's sheet** (#1458; the artifact link above).
+   When he rules by number: build the apply from the receipt (reuse
+   `kb/_authority_recode_apply.py`'s `apply_plan`, P1 against the frozen
+   alias map, `--scope` per verdict, stamp `_prefix_fold_from`), rehearse on
+   a scratch copy of `kb/`, land in one cron window with `supabase-rekey.yml`
+   (vacate-first handles the 30 chained keys), then fold-verify must read 0.
 2. **The 122 legacy-anchor duplicates** as a merge worklist on the CCR tab
    (`kb/zband_retire_out/2026-09-03/duplicates.json`), and **the three HOSP
    anchors** once Sam gives them a discipline (NEEDS SAM ⑤).

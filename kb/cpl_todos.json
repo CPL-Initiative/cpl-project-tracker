@@ -2,8 +2,14 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-03",
   "_session": "224 (SkyTune) — the re-mint series applied",
-  "_status": "2026-09-03 SkyTune, Session 224 — the chip is live, the two dry runs are receipts, nothing is applied. Sam ruled the authority-codes sheet the evening before, and this session ran the series the way the playbook asks: measure first. The C-ID chip shipped (#1447): where a discipline's Common SUBJ differs from the code C-ID or CCN uses, the CSR tab, the CCR tab's Subject list and SkyView's subject card show that code as a word (C-ID AJ beside CRIM), and a CSR-minted code no authority names reads proposed. The recode of the eleven ruled code changes was dry-run as a keep-number prefix re-key (#1448): 10,292 ids move, 10,039 keep their number; the June allocator would have renumbered 62,638 ids to change nothing, so it is the wrong tool for a rename. The Z-band retirement was dry-run after it (#1449): 4,053 Z identities take free M numbers, 218 legacy anchors fold, and Kinesiology credit ends three numbers short of its ceiling. Fourteen readings from the two runs are on one sheet for Sam; the applies are built after his replies and land in one cron window.",
+  "_status": "2026-09-03 SkyTune, Session 224 — the re-mint series is APPLIED and the next worklist is on Sam's sheet. Sam ruled the fourteen readings yes to all; the same day the authority recode re-keyed 10,296 ids onto the ruled codes (10,041 keeping their number), the 4,053 machine clusters became real M-ID records, the Z band retired, kb_curation was re-keyed from the receipts and the seven canonical picks updated. The land let the planners see the machine clusters for the first time: fold-verify now names 285 rows whose prefix is not their discipline's code (132 of the new records, 146 older strays the July cohorts re-disciplined). A keep-number dry run plans them (#1458, 278 moves, 7 held on TOP alone); the seven-item decision sheet is with Sam and the apply follows his verdicts in one cron window.",
   "items": [
+    {
+      "id": "s224-sam-prefix-fold-sheet",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Rule the prefix fold worklist sheet, seven items, reply by number: https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b — 278 rows would move to the code their discipline owns (132 of yesterday's materialized records, 146 strays re-disciplined in July); the seven held on TOP alone, the seventeen records without a discipline and Kinesiology's ATHL span are your calls. Nothing is applied until you reply."
+    },
     {
       "id": "s224-sam-hosp-anchors",
       "for": "Sam",
@@ -14,7 +20,7 @@
       "id": "s224-fable-fold-worklist",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The land surfaced a fold worklist: 137 materialized machine-cluster records sit on the June prefix their members' discipline no longer owns (ITIS under Computer Science, HVAC under the trades, ARTS under Art History), so fold-verify wants 285 re-keys (148 before) and the audit tags 153 subject_collision_signal rows. Plan a keep-number prefix re-key for them with the recode allocator's pattern (dry run, receipt, Sam's yes, one window), and surface the 122 legacy-anchor duplicates (kb/zband_retire_out/2026-09-03/duplicates.json) as a merge worklist on the CCR tab."
+      "text": "The fold worklist the land surfaced is planned: kb/_prefix_fold_dryrun.py (#1458) re-keys 278 rows keeping the number where free (132 materialized machine-cluster records under a June prefix their members' discipline does not own, 146 legacy strays the July cohorts re-disciplined), holds 7 whose discipline rests on TOP alone, and proves parity with fold-verify's 285. When Sam rules the sheet, build the apply from the receipt (reuse the recode apply's apply_plan, --scope per verdict), rehearse on a scratch copy, land in one window with supabase-rekey.yml, and confirm fold-verify reads 0. Then the 122 legacy-anchor duplicates (kb/zband_retire_out/2026-09-03/duplicates.json) as a merge worklist."
     },
     {
       "id": "s224-fable-promote-placeholders-to-m",

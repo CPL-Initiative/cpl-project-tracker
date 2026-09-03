@@ -786,8 +786,8 @@ to change nothing; the Z-band retirement was dry-run after it (4,053 Z identitie
 218 legacy anchors; **Kinesiology credit at 996 of 999**). Sam ruled the fourteen
 readings yes to all and the series was applied the same day: 10,296 ids recoded,
 4,053 machine clusters materialized as M-ID records, the Z band retired, Supabase
-re-keyed from the receipts. ⭐ 137 materialized records sit on a prefix their
-discipline no longer owns — the fold planner's next worklist. Story:
+re-keyed from the receipts. ⭐ 139 materialized records sit on a prefix their
+discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Story:
 `ccr_atlas_lessons`; handoff `session_225_handoff`.
 
 ## Troubleshooting

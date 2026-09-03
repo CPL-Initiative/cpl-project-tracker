@@ -1188,6 +1188,28 @@ they had run nowhere (#1455). **A verify has to be written against the shape of
 the map, not against the assumption that old and new keys are disjoint** — the
 collision surface forbids a target that exists, but the same map can vacate one.
 
+### The fold worklist, measured against the planner of record
+
+The land's "137 materialized records on a prefix their discipline no longer
+owns" was read off the audit. Measured against fold-verify (`kb/_subj4_dryrun.py`),
+the planner of record, the worklist is 285 rows: 139 materialized records and
+146 older strays. Three readings shaped the dry run (`kb/_prefix_fold_dryrun.py`,
+#1458). First, a seed-only measure over-counts: 88 Kinesiology records under
+`ATHL` are inside a documented span (`KINE`/`ATHL`, made in June so KINE's 999
+numbers would not burst), and fold-verify's allowances, not the seed's
+`canonical_subj4` alone, define what is off-code; the dry run imports the same
+allowances and proves parity (V8). Second, the 146 legacy strays are not
+curator rows: their disciplines were set in July by the trail-crew and mismint
+cohorts under reviewed plans, and the prefix never followed — the CCR tab has
+shown one discipline and the id another for two months. Third, Rule 7 has to
+be applied to the evidence, not the row: a materialized record's discipline is
+its members' modal, and for seven of them every member was disciplined from
+TOP alone, so they are held and listed rather than moved. The allocator is the
+recode's, unchanged: 153 of 278 keep their number, 125 gap-fill, none needs a
+continuation band, and 30 keys are vacated and taken in the same plan, which
+#1455's vacate-first order makes safe. The sheet for Sam is generated from the
+receipt, so no number on it is typed by hand.
+
 ### Verification
 
 `tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`
