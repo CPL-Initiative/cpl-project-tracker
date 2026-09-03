@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 398,
+  "file_datasets": 403,
   "external_services": 137,
-  "consumers": 306,
+  "consumers": 307,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -2658,6 +2658,19 @@
    ],
    "main_committers": []
   },
+  "file:  - kb/csr_authority_codes_rulings_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 675
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:*.full.json": {
    "consumers": [
     {
@@ -4653,6 +4666,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:csr_authority_codes_rulings_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:dashboard_filters.js": {
    "consumers": [
     {
@@ -6025,6 +6051,45 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/authority_recode_out/2026-09-03/ag_classification.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 634
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/authority_recode_out/2026-09-03/fl_classification.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 629
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/authority_recode_out/2026-09-03/seed_edits.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 639
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/budget_snapshot.json": {
    "consumers": [
     {
@@ -6158,6 +6223,13 @@
      "direction": "read",
      "how": "literal",
      "line": 189
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 83
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -6453,6 +6525,13 @@
      "direction": "write",
      "how": "literal",
      "line": 267
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -6757,6 +6836,13 @@
      "direction": "read",
      "how": "literal",
      "line": 200
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -7121,6 +7207,13 @@
      "line": 202
     },
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 82
+    },
+    {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "read",
@@ -7397,6 +7490,13 @@
      "direction": "read",
      "how": "literal",
      "line": 201
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
@@ -8547,6 +8647,13 @@
      "line": 173
     },
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 85
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -9013,6 +9120,13 @@
      "tabs": [
       "canonical-subj4"
      ]
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
     },
     {
      "id": "script:kb/_fl_subj4_dryrun.py",
@@ -10525,6 +10639,13 @@
   },
   "file:kb/reference/top_categories.json": {
    "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    },
     {
      "id": "script:kb/_join_cte_from_top.py",
      "kind": "script",
