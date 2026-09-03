@@ -28,22 +28,22 @@ was the re-mint series he ruled the evening before
    list reads `CRIM — C-ID AJ · proposed`; SkyView's subject card and tooltip
    read `Common SUBJ CRIM · C-ID AJ`, from the seed read live. 12 disciplines on
    a CCN code, 14 on a C-ID code, 120 proposed, 29 with a chip.
-2. **#1448 — the authority recode dry run** (`kb/_authority_recode_dryrun.py`,
+2. **#1448 (merged) — the authority recode dry run** (`kb/_authority_recode_dryrun.py`,
    receipts `kb/authority_recode_out/2026-09-03/`): items 7, 9, 10, 11, 12, 13,
    14, 16 as a keep-number prefix re-key. 10,292 ids move, 10,039 keep their
    number, 253 gap-fill, 539 Z ids move with their namespace; the languages by
    rule; the agriculture families by two agreeing signals; 7 of 7 gates.
-3. **#1449 — the Z-band retirement dry run** (`kb/_zband_retire_dryrun.py`,
+3. **#1449 (merged) — the Z-band retirement dry run** (`kb/_zband_retire_dryrun.py`,
    receipts `kb/zband_retire_out/2026-09-03/`, computed `--after-recode`):
    4,053 Z identities to M by gap-filling, 10,704 pointers, 218 of 221 legacy
    anchors, 122 duplicates listed as a merge worklist; 7 of 7 gates. Stacked on
-   #1448 because it consumes that receipt; it retargets to `main` when #1448
-   merges.
+   #1448 because it consumes that receipt; it retargeted to `main` when #1448
+   merged.
 
-At the time of this handoff #1448 and #1449 were open with CI re-running after
-a dependency-map merge conflict was resolved by regenerating the map. **Check
-both first** (`pull_request_read` → `get_check_runs`); merge on a green `test`
-(#1448 first, then #1449 once it has retargeted to `main`).
+All of it landed before SkyTune signed off: #1448 at `ce72d60`, #1449 at
+`811d376`, and this checkpoint as #1450 at `0a15703` (the dependency-map
+conflicts along the way were resolved by regenerating the map, never by hand).
+Nothing from this session is open on `cpl-project-tracker`.
 
 ## Sam's decisions this run (record, don't re-derive)
 
@@ -82,7 +82,7 @@ rebuild it after `git add`, or CI's `--check` goes red (it did, twice).
 
 ## Priority work, in order
 
-0. **Merge what is green** (#1448, then #1449 after it retargets to `main`).
+0. **Nothing is left to merge** — start from `main` at `811d376` or later.
 1. **Sam's replies to the fourteen readings.** Record them the way SkyOrbit did:
    a rulings file beside the first (`kb/remint_series_readings_rulings_<date>.json`),
    the sheet's cards stamped "Ruled", a `cpl_memory` row per decision with Sam in

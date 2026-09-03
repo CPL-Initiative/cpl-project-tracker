@@ -775,7 +775,7 @@ by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
 
 ### SkyTune S224 — the chip is live, both re-mint dry runs are receipts, nothing applied (2026-09-03)
 
-**Three PRs (#1447 merged; #1448, #1449 the two dry runs).** Item 19's C-ID
+**Three PRs, all merged (#1447; #1448 and #1449 the two dry runs).** Item 19's C-ID
 chip shipped: `kb/_seed_authority_codes.py` writes the authority fields into the
 seed from the promotions evidence plus the rulings, and the CSR tab, the CCR
 Subject list and SkyView show `C-ID AJ` beside `CRIM` (12 disciplines on a CCN
