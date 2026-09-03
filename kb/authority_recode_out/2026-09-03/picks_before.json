@@ -1,0 +1,82 @@
+{
+  "_about": "Before-values of the _CANON_SUBJ4:: pick rows the recode's supabase_ops.json updates (Rule 10 a2: a guarded UPDATE is reversible from its receipt). Read via the MCP lane at 2026-09-03 20:19 UTC, before any pick was changed. Rollback: restore value per (course_id, field).",
+  "rows": [
+    {
+      "course_id": "_CANON_SUBJ4::Child Development/Early Childhood Education",
+      "field": "canonical_subj4",
+      "value": "ECED",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:28:50.721584+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Child Development/Early Childhood Education",
+      "field": "canonical_subj4_notes",
+      "value": "CS4 divergence recorded (Sam, 2026-07-10): official CCN prefix CDEV has nominal adoption (2 official rows); field is fragmented (ECE/CD/CDEV/CHLD, no CS1-valid modal); discipline name supports ECED; re-mint would touch 1,349 M-IDs. Keep ECED; revisit if CCN CDEV adoption grows. Ref: kb/csr_out/2026-07-10 CSR0013.",
+      "reviewer_email": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-07-10 15:58:36.55856+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Computer Information Systems",
+      "field": "canonical_subj4",
+      "value": "CSIS",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:25:14.419498+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Computer Information Systems",
+      "field": "canonical_subj4_notes",
+      "value": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix ITIS has zero COCI adoption; CSIS is the established canonical. Revisit if CCN ITIS lands. Ref: CSR0013 sibling.",
+      "reviewer_email": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-07-10 15:58:36.55856+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Computer Science",
+      "field": "canonical_subj4",
+      "value": "CISC",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:31:34.900799+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Drama/Theater Arts",
+      "field": "canonical_subj4",
+      "value": "THEA",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-06-12 14:29:15.876275+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Drama/Theater Arts",
+      "field": "canonical_subj4_notes",
+      "value": "THEA deliberately shared with alias 'Theater Arts' — fan-in convergence (Session 38). Reverted from DRAM 2026-06-12 per Sam (the DRAM re-code was curing a sweep false positive, fixed in #402).",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-06-12 17:18:32.914671+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Film and Media Studies",
+      "field": "canonical_subj4",
+      "value": "FIMS",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:34:59.258685+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Media Production",
+      "field": "canonical_subj4",
+      "value": "FIMP",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:39:58.022414+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Office Technologies",
+      "field": "canonical_subj4",
+      "value": "OTEC",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-05-23 17:27:17.864983+00"
+    },
+    {
+      "course_id": "_CANON_SUBJ4::Office Technologies",
+      "field": "canonical_subj4_notes",
+      "value": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix BSOT has zero COCI adoption; OTEC is the established canonical. Revisit if CCN BSOT lands. Ref: CSR0013 sibling.",
+      "reviewer_email": "csr-doctrine-s111@bot",
+      "reviewed_at": "2026-07-10 15:58:36.55856+00"
+    }
+  ]
+}

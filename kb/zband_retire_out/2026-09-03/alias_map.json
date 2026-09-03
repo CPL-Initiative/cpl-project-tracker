@@ -1,5 +1,5 @@
 {
-  "_status": "DRY-RUN — Z-band retirement (items 20-21 of 2026-09-03); no kb files mutated, no Supabase writes.",
+  "_status": "APPLIED 2026-09-03T20:19:27Z — Z-band retirement (items 20-21 of 2026-09-03; readings ruled yes to all). Every retired identity is a real M-ID record with origin 'machine cluster' and a _zband_retired_from stamp; the alias map is the rollback handle (read right-to-left).",
   "_generated_by": "kb/_zband_retire_dryrun.py",
   "_generated_at": "2026-09-03",
   "_after_recode": "kb/authority_recode_out/2026-09-03",
@@ -38663,5 +38663,7 @@
       "title": "Women and Gender in Global Perspectives",
       "origin": "machine cluster"
     }
-  }
+  },
+  "_applied_at": "2026-09-03T20:19:27Z",
+  "_applied_by": "kb/_zband_retire_apply.py"
 }

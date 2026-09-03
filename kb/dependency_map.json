@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 407,
+  "file_datasets": 410,
   "external_services": 137,
   "consumers": 311,
   "workflows": 33,
@@ -6111,6 +6111,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/authority_recode_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_rekey_promotions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 101
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/budget_snapshot.json": {
    "consumers": [
     {
@@ -7031,7 +7044,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 241
+     "line": 243
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7393,7 +7406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 246
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7713,7 +7726,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 244
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -9916,14 +9929,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 224
+     "line": 226
     },
     {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 334
+     "line": 336
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -11700,6 +11713,32 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/zband_retire_out/2026-09-03/materialized.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_zband_retire_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 377
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/zband_retire_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_rekey_promotions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 102
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kpi_cards.js": {

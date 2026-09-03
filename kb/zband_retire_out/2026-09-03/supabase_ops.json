@@ -1,0 +1,9 @@
+{
+  "_about": "The Supabase half, same cron window: dispatch .github/workflows/supabase-rekey.yml with alias_map_path = this receipt's alias_map.json. Legacy anchors have no kb_curation rows; their pairs no-op. Idempotent.",
+  "_emitted_at": "2026-09-03T20:19:27Z",
+  "rekey": {
+    "workflow": ".github/workflows/supabase-rekey.yml",
+    "alias_map_path": "kb/zband_retire_out/2026-09-03/alias_map.json",
+    "z_pairs": 4053
+  }
+}

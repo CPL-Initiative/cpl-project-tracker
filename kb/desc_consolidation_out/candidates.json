@@ -1,6 +1,6 @@
 {
  "_generated_by": "kb/_desc_consolidation_dryrun.py",
- "_generated_at": "2026-07-10",
+ "_generated_at": "2026-09-03",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
  "_params": {
   "cosine_min": 0.6,
@@ -9,17 +9,17 @@
   "group_cap": 8
  },
  "population": {
-  "dark_mids_with_desc": 6748,
-  "candidate_pairs": 28008,
-  "passing_pairs": 389,
+  "dark_mids_with_desc": 6228,
+  "candidate_pairs": 24994,
+  "passing_pairs": 354,
   "gate_rejections": {
-   "below_cosine": 8216,
-   "credit_mismatch": 5315,
-   "level_risk": 2216,
-   "units_mismatch": 10786,
-   "variant_risk": 471,
+   "below_cosine": 7749,
+   "credit_mismatch": 4254,
+   "level_risk": 1975,
+   "units_mismatch": 9674,
+   "variant_risk": 443,
+   "sport_risk": 506,
    "gender_risk": 38,
-   "sport_risk": 576,
    "year_risk": 1
   }
  },
@@ -91,8 +91,8 @@
     "youth",
     "observational",
     "practitioners",
-    "adherence",
     "anxiety",
+    "adherence",
     "counseling"
    ]
   },
@@ -152,7 +152,7 @@
   {
    "members": [
     {
-     "id": "ECED M1118",
+     "id": "CDEV M1118",
      "title": "The Young Child with Special Needs",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -163,7 +163,7 @@
      ]
     },
     {
-     "id": "ECED M1160",
+     "id": "CDEV M1160",
      "title": "Introduction to Children with Special Needs",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -197,7 +197,7 @@
      ]
     },
     {
-     "id": "ECED M1161",
+     "id": "CDEV M1161",
      "title": "Introduction to Young Children with Special Needs",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -224,13 +224,13 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.663,
+   "cos_min": 0.661,
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
     "referral",
-    "eight",
     "resulting",
+    "eight",
     "variations",
     "societal",
     "birth"
@@ -314,7 +314,7 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.645,
+   "cos_min": 0.647,
    "cos_max": 0.97,
    "cross_college": true,
    "shared_terms": [
@@ -361,8 +361,8 @@
    "cos_max": 0.921,
    "cross_college": true,
    "shared_terms": [
-    "traffic",
     "patrol",
+    "traffic",
     "officer",
     "philosophies",
     "expectations",
@@ -395,8 +395,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.898,
-   "cos_max": 0.898,
+   "cos_min": 0.894,
+   "cos_max": 0.894,
    "cross_college": true,
    "shared_terms": [
     "ifsac",
@@ -410,48 +410,7 @@
   {
    "members": [
     {
-     "id": "BUSI M1041",
-     "title": "Excel for Accounting",
-     "units": 3.0,
-     "disc": "Business",
-     "colleges": [
-      "Coastline Community College",
-      "Moorpark College",
-      "Mt. San Antonio College",
-      "Santa Monica College",
-      "Santiago Canyon College",
-      "Skyline College",
-      "West Valley College"
-     ]
-    },
-    {
-     "id": "BUSI M1042",
-     "title": "Excel for Accounting and Finance",
-     "units": 3.0,
-     "disc": "Business",
-     "colleges": [
-      "Golden West College",
-      "Orange Coast College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.893,
-   "cos_max": 0.893,
-   "cross_college": true,
-   "shared_terms": [
-    "spreadsheet",
-    "detailed",
-    "formulas",
-    "expected",
-    "excel",
-    "accounting"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "OTEC M1119",
+     "id": "BSOT M1119",
      "title": "Computer Keyboarding 1",
      "units": 1.5,
      "disc": "Office Technologies",
@@ -461,7 +420,7 @@
      ]
     },
     {
-     "id": "OTEC M1121",
+     "id": "BSOT M1121",
      "title": "Introduction to Computer Keyboarding",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -472,8 +431,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.879,
-   "cos_max": 0.879,
+   "cos_min": 0.881,
+   "cos_max": 0.881,
    "cross_college": true,
    "shared_terms": [
     "alphanumeric",
@@ -510,8 +469,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.869,
-   "cos_max": 0.869,
+   "cos_min": 0.862,
+   "cos_max": 0.862,
    "cross_college": true,
    "shared_terms": [
     "radiological",
@@ -525,7 +484,7 @@
   {
    "members": [
     {
-     "id": "ECED M1032",
+     "id": "CDEV M1032",
      "title": "Advanced Infant and Toddler Development",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -535,7 +494,7 @@
      ]
     },
     {
-     "id": "ECED M1185",
+     "id": "CDEV M1185",
      "title": "Infant and Toddler Development",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -622,7 +581,7 @@
      ]
     },
     {
-     "id": "FIMS M1026",
+     "id": "FTVE M1026",
      "title": "Film Study and Appreciation",
      "units": 3.0,
      "disc": "Film and Media Studies",
@@ -632,7 +591,7 @@
      ]
     },
     {
-     "id": "FIMS M1029",
+     "id": "FTVE M1029",
      "title": "Introduction to Cinematic Arts",
      "units": 3.0,
      "disc": "Film and Media Studies",
@@ -644,21 +603,21 @@
    ],
    "n": 3,
    "cos_min": 0.685,
-   "cos_max": 0.852,
+   "cos_max": 0.853,
    "cross_college": true,
    "shared_terms": [
     "ideology",
     "possibilities",
     "cinematic",
-    "narrative",
-    "form",
-    "film"
+    "close",
+    "modes",
+    "narrative"
    ]
   },
   {
    "members": [
     {
-     "id": "ECED M1010",
+     "id": "CDEV M1010",
      "title": "Administration 1: Programs in Early Childhood Education",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -710,7 +669,7 @@
      ]
     },
     {
-     "id": "ECED M1015",
+     "id": "CDEV M1015",
      "title": "Administration of Programs for Young Children",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -721,7 +680,7 @@
      ]
     },
     {
-     "id": "ECED M1017",
+     "id": "CDEV M1017",
      "title": "Introduction to Program Administration",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -736,10 +695,10 @@
    "cos_max": 0.851,
    "cross_college": true,
    "shared_terms": [
-    "operate",
     "organize",
-    "administrative",
+    "operate",
     "philosophies",
+    "administrative",
     "childhood",
     "implementation"
    ]
@@ -768,8 +727,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.844,
-   "cos_max": 0.844,
+   "cos_min": 0.842,
+   "cos_max": 0.842,
    "cross_college": true,
    "shared_terms": [
     "flatwork",
@@ -778,45 +737,6 @@
     "elevation",
     "concrete",
     "construct"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "BUSI M1342",
-     "title": "Individual Income Tax",
-     "units": 4.0,
-     "disc": "Business",
-     "colleges": [
-      "College of the Sequoias",
-      "Fullerton College",
-      "MiraCosta College",
-      "Orange Coast College",
-      "Saddleback College"
-     ]
-    },
-    {
-     "id": "BUSI M1348",
-     "title": "Income Tax Procedures",
-     "units": 4.0,
-     "disc": "Business",
-     "colleges": [
-      "Palo Verde College",
-      "San Joaquin Delta College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.814,
-   "cos_max": 0.814,
-   "cross_college": true,
-   "shared_terms": [
-    "ftb",
-    "irs",
-    "exemptions",
-    "itemized",
-    "exclusions",
-    "tax"
    ]
   },
   {
@@ -853,16 +773,16 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.678,
-   "cos_max": 0.806,
+   "cos_min": 0.677,
+   "cos_max": 0.805,
    "cross_college": true,
    "shared_terms": [
     "reassembling",
     "disassembling",
     "diagnosing",
     "diesel",
-    "running",
-    "engines"
+    "engines",
+    "testing"
    ]
   },
   {
@@ -888,8 +808,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.767,
-   "cos_max": 0.767,
+   "cos_min": 0.766,
+   "cos_max": 0.766,
    "cross_college": true,
    "shared_terms": [
     "democratization",
@@ -903,7 +823,7 @@
   {
    "members": [
     {
-     "id": "FLFR M1012",
+     "id": "FREN M1012",
      "title": "Basic French Conversation and Culture",
      "units": 3.0,
      "disc": "Foreign Languages",
@@ -912,7 +832,7 @@
      ]
     },
     {
-     "id": "FLIT M1004",
+     "id": "ITAL M1004",
      "title": "Basic Italian Conversation and Culture",
      "units": 3.0,
      "disc": "Foreign Languages",
@@ -921,7 +841,7 @@
      ]
     },
     {
-     "id": "FLJA M1004",
+     "id": "JAPN M1004",
      "title": "Basic Japanese Conversation and Culture",
      "units": 3.0,
      "disc": "Foreign Languages",
@@ -930,7 +850,7 @@
      ]
     },
     {
-     "id": "FLSP M1031",
+     "id": "SPAN M1031",
      "title": "Basic Conversational Spanish and Culture",
      "units": 3.0,
      "disc": "Foreign Languages",
@@ -940,8 +860,8 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.627,
-   "cos_max": 0.753,
+   "cos_min": 0.606,
+   "cos_max": 0.763,
    "cross_college": true,
    "shared_terms": [
     "studying",
@@ -949,6 +869,40 @@
     "customs",
     "conversation",
     "conversational"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ETHS M1207",
+     "title": "Ethnic Studies, Place, and Social Justice",
+     "units": 3.0,
+     "disc": "Ethnic Studies",
+     "colleges": [
+      "Cerritos College"
+     ]
+    },
+    {
+     "id": "ETHS M1208",
+     "title": "Ethnic Studies, Space, and Social Justice",
+     "units": 3.0,
+     "disc": "Ethnic Studies",
+     "colleges": [
+      "Saddleback College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.742,
+   "cos_max": 0.742,
+   "cross_college": true,
+   "shared_terms": [
+    "responded",
+    "geog",
+    "segregation",
+    "exclusion",
+    "intersections",
+    "groups"
    ]
   },
   {
@@ -982,8 +936,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.742,
-   "cos_max": 0.742,
+   "cos_min": 0.739,
+   "cos_max": 0.739,
    "cross_college": true,
    "shared_terms": [
     "prescription",
@@ -991,40 +945,6 @@
     "regarding",
     "weight",
     "exercise"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1207",
-     "title": "Ethnic Studies, Place, and Social Justice",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Cerritos College"
-     ]
-    },
-    {
-     "id": "ETHS M1208",
-     "title": "Ethnic Studies, Space, and Social Justice",
-     "units": 3.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Saddleback College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.742,
-   "cos_max": 0.742,
-   "cross_college": true,
-   "shared_terms": [
-    "geog",
-    "responded",
-    "segregation",
-    "exclusion",
-    "intersections",
-    "groups"
    ]
   },
   {
@@ -1084,8 +1004,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.731,
-   "cos_max": 0.731,
+   "cos_min": 0.736,
+   "cos_max": 0.736,
    "cross_college": true,
    "shared_terms": [
     "integrates",
@@ -1119,8 +1039,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.719,
-   "cos_max": 0.719,
+   "cos_min": 0.718,
+   "cos_max": 0.718,
    "cross_college": true,
    "shared_terms": [
     "advancing",
@@ -1133,7 +1053,7 @@
   {
    "members": [
     {
-     "id": "ECED M1102",
+     "id": "CDEV M1102",
      "title": "Games & Rhythms Child's Physical Development:Foundation/Framework",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -1142,7 +1062,7 @@
      ]
     },
     {
-     "id": "ECED M1130",
+     "id": "CDEV M1130",
      "title": "Language and Literacy Development in Early Childhood",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -1156,8 +1076,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.71,
-   "cos_max": 0.71,
+   "cos_min": 0.693,
+   "cos_max": 0.693,
    "cross_college": true,
    "shared_terms": [
     "holders",
@@ -1193,8 +1113,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.664,
-   "cos_max": 0.664,
+   "cos_min": 0.663,
+   "cos_max": 0.663,
    "cross_college": true,
    "shared_terms": [
     "coastlines",
@@ -1208,149 +1128,7 @@
   {
    "members": [
     {
-     "id": "FIRE M1147",
-     "title": "Introduction to Fire Effects (RX-310)",
-     "units": 2.0,
-     "disc": "Fire Technology",
-     "colleges": [
-      "Allan Hancock College",
-      "American River College"
-     ]
-    },
-    {
-     "id": "FIRE M1148",
-     "title": "RX-310, Introduction to Fire Effects",
-     "units": 2.0,
-     "disc": "Fire Technology",
-     "colleges": [
-      "Reedley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.638,
-   "cos_max": 0.638,
-   "cross_college": true,
-   "shared_terms": [
-    "regimes",
-    "recognize",
-    "communicate",
-    "effects",
-    "fire",
-    "relationships"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CISC M1062",
-     "title": "Cybersecurity Fundamentals",
-     "units": 3.5,
-     "disc": "Computer Science",
-     "colleges": [
-      "Cerritos College",
-      "Foothill College"
-     ]
-    },
-    {
-     "id": "CSIS M1259",
-     "title": "Computer Security Principles",
-     "units": 4.0,
-     "disc": "Computer Information Systems",
-     "colleges": [
-      "Hartnell College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.637,
-   "cos_max": 0.637,
-   "cross_college": true,
-   "shared_terms": [
-    "intrusion",
-    "baselines",
-    "messaging",
-    "cryptography",
-    "infrastructure",
-    "network"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ATHL M1130",
-     "title": "Intercollegiate Volleyball-Fitness & Skills Training",
-     "units": 1.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles City College",
-      "Los Angeles Harbor College",
-      "Los Angeles Mission College",
-      "Los Angeles Trade Technical College",
-      "West Los Angeles College"
-     ]
-    },
-    {
-     "id": "ATHL M1305",
-     "title": "Volleyball Conditioning",
-     "units": 1.0,
-     "disc": "Kinesiology",
-     "colleges": [
-      "CaÃ±ada College",
-      "Glendale Community College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.634,
-   "cos_max": 0.634,
-   "cross_college": true,
-   "shared_terms": [
-    "volleyball",
-    "athlete",
-    "plays",
-    "focused",
-    "injury",
-    "prevention"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "EMST M1018",
-     "title": "Ambulance Operations",
-     "units": 1.0,
-     "disc": "Emergency Medical Technologies",
-     "colleges": [
-      "College of the Desert"
-     ]
-    },
-    {
-     "id": "FIRE M1261",
-     "title": "Basic Emergency Vehicle Operations",
-     "units": 0.5,
-     "disc": "Fire Technology",
-     "colleges": [
-      "East Los Angeles College",
-      "El Camino College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.631,
-   "cos_max": 0.631,
-   "cross_college": true,
-   "shared_terms": [
-    "simulated",
-    "defensive",
-    "driving"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLGE M1005",
+     "id": "GERM M1005",
      "title": "Beginning German",
      "units": 5.0,
      "disc": "Foreign Languages",
@@ -1361,7 +1139,7 @@
      ]
     },
     {
-     "id": "FLGE M1015",
+     "id": "GERM M1015",
      "title": "Elementary German 1",
      "units": 5.0,
      "disc": "Foreign Languages",
@@ -1389,26 +1167,152 @@
      ]
     },
     {
-     "id": "FLIT M1007",
+     "id": "GERM M1017",
+     "title": "German 1",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Citrus College",
+      "Cuesta College",
+      "Grossmont College",
+      "Palomar College"
+     ]
+    },
+    {
+     "id": "ITAL M1007",
      "title": "Beginning Italian",
      "units": 5.0,
      "disc": "Foreign Languages",
      "colleges": [
       "West Valley College"
      ]
+    },
+    {
+     "id": "ITAL M1027",
+     "title": "Italian 1",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Citrus College",
+      "Grossmont College",
+      "Modesto Junior College",
+      "Palomar College",
+      "Riverside City College"
+     ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.603,
-   "cos_max": 0.626,
+   "n": 5,
+   "cos_min": 0.609,
+   "cos_max": 0.647,
    "cross_college": true,
    "shared_terms": [
     "communicative",
     "acquisition",
-    "proficiency",
     "comprehension",
-    "context",
-    "speaking"
+    "proficiency",
+    "speaking",
+    "context"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "FIRE M1147",
+     "title": "Introduction to Fire Effects (RX-310)",
+     "units": 2.0,
+     "disc": "Fire Technology",
+     "colleges": [
+      "Allan Hancock College",
+      "American River College"
+     ]
+    },
+    {
+     "id": "FIRE M1148",
+     "title": "RX-310, Introduction to Fire Effects",
+     "units": 2.0,
+     "disc": "Fire Technology",
+     "colleges": [
+      "Reedley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.637,
+   "cos_max": 0.637,
+   "cross_college": true,
+   "shared_terms": [
+    "regimes",
+    "recognize",
+    "communicate",
+    "effects",
+    "fire"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "COMP M1062",
+     "title": "Cybersecurity Fundamentals",
+     "units": 3.5,
+     "disc": "Computer Science",
+     "colleges": [
+      "Cerritos College",
+      "Foothill College"
+     ]
+    },
+    {
+     "id": "ITIS M1259",
+     "title": "Computer Security Principles",
+     "units": 4.0,
+     "disc": "Computer Information Systems",
+     "colleges": [
+      "Hartnell College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.635,
+   "cos_max": 0.635,
+   "cross_college": true,
+   "shared_terms": [
+    "baselines",
+    "intrusion",
+    "messaging",
+    "cryptography",
+    "infrastructure",
+    "network"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "EMST M1018",
+     "title": "Ambulance Operations",
+     "units": 1.0,
+     "disc": "Emergency Medical Technologies",
+     "colleges": [
+      "College of the Desert"
+     ]
+    },
+    {
+     "id": "FIRE M1261",
+     "title": "Basic Emergency Vehicle Operations",
+     "units": 0.5,
+     "disc": "Fire Technology",
+     "colleges": [
+      "East Los Angeles College",
+      "El Camino College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.629,
+   "cos_max": 0.629,
+   "cross_college": true,
+   "shared_terms": [
+    "simulated",
+    "defensive",
+    "driving"
    ]
   },
   {
@@ -1468,8 +1372,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.606,
-   "cos_max": 0.606,
+   "cos_min": 0.604,
+   "cos_max": 0.604,
    "cross_college": true,
    "shared_terms": [
     "stream",
@@ -1481,7 +1385,7 @@
   {
    "members": [
     {
-     "id": "THEA M1089",
+     "id": "THTR M1089",
      "title": "Brad Carroll's Peter and the Star Catcher",
      "units": 3.0,
      "disc": "Drama/Theater Arts",
@@ -1490,7 +1394,7 @@
      ]
     },
     {
-     "id": "THEA M1165",
+     "id": "THTR M1165",
      "title": "Rep of Million Dollar Quartet & Earnest",
      "units": 3.0,
      "disc": "Drama/Theater Arts",
@@ -1499,7 +1403,7 @@
      ]
     },
     {
-     "id": "THEA M1175",
+     "id": "THTR M1175",
      "title": "Repertory of My Fair Lady and Man of La Mancha",
      "units": 3.0,
      "disc": "Drama/Theater Arts",
@@ -1508,7 +1412,7 @@
      ]
     },
     {
-     "id": "THEA M1181",
+     "id": "THTR M1181",
      "title": "Rep of into the Woods to Native Garden",
      "units": 3.0,
      "disc": "Drama/Theater Arts",
@@ -1527,13 +1431,13 @@
     "detail",
     "interview",
     "existing",
-    "particular"
+    "disciplines"
    ]
   },
   {
    "members": [
     {
-     "id": "THEA M1092",
+     "id": "THTR M1092",
      "title": "Exploration of My Fair Lady Through Peter and the Star Catcher",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -1542,7 +1446,7 @@
      ]
     },
     {
-     "id": "THEA M1107",
+     "id": "THTR M1107",
      "title": "R. DeLaurier's Other Desert Cities",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -1551,7 +1455,7 @@
      ]
     },
     {
-     "id": "THEA M1174",
+     "id": "THTR M1174",
      "title": "Exploration of Sense and Sensibility and Trying",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -1560,7 +1464,7 @@
      ]
     },
     {
-     "id": "THEA M1282",
+     "id": "THTR M1282",
      "title": "Topics in Theatrical Performance",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -1579,7 +1483,7 @@
     "detail",
     "interview",
     "existing",
-    "particular"
+    "disciplines"
    ]
   },
   {
@@ -1633,50 +1537,12 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "discontinue",
-    "noted",
     "criterion",
+    "noted",
+    "discontinue",
     "actually",
     "submitted",
     "committee"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "INDT M1011",
-     "title": "Advanced Automatic Finishing Tools",
-     "units": 1.5,
-     "disc": "Industrial Technology",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "INDT M1030",
-     "title": "Automatic Finishing Tools",
-     "units": 1.5,
-     "disc": "Industrial Technology",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 1.0,
-   "cos_max": 1.0,
-   "cross_college": false,
-   "shared_terms": [
-    "bazooka",
-    "spotters",
-    "skim",
-    "coat",
-    "butt",
-    "boxes"
    ]
   },
   {
@@ -1715,6 +1581,44 @@
     "colleges",
     "conference",
     "coast"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "INDT M1011",
+     "title": "Advanced Automatic Finishing Tools",
+     "units": 1.5,
+     "disc": "Industrial Technology",
+     "colleges": [
+      "Norco College",
+      "Palomar College",
+      "Santiago Canyon College"
+     ]
+    },
+    {
+     "id": "INDT M1030",
+     "title": "Automatic Finishing Tools",
+     "units": 1.5,
+     "disc": "Industrial Technology",
+     "colleges": [
+      "Norco College",
+      "Palomar College",
+      "Santiago Canyon College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 1.0,
+   "cos_max": 1.0,
+   "cross_college": false,
+   "shared_terms": [
+    "skim",
+    "spotters",
+    "bazooka",
+    "coat",
+    "butt",
+    "boxes"
    ]
   },
   {
@@ -1777,99 +1681,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.981,
-   "cos_max": 0.981,
+   "cos_min": 0.979,
+   "cos_max": 0.979,
    "cross_college": false,
    "shared_terms": [
     "inpsec",
     "prescriptive",
     "packages",
-    "green",
     "efficiency",
+    "green",
     "compliance"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1148",
-     "title": "High-Intermediate American College English",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Moreno Valley College",
-      "Norco College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "ESOL M1149",
-     "title": "Intermediate American College English",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Moreno Valley College",
-      "Norco College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "ESOL M1150",
-     "title": "Low-Intermediate American College English",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Moreno Valley College",
-      "Norco College",
-      "Riverside City College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.728,
-   "cos_max": 0.978,
-   "cross_college": false,
-   "shared_terms": [
-    "integrates",
-    "evaluated",
-    "enter",
-    "tba",
-    "essay",
-    "response"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1071",
-     "title": "High-Intermediate Academic ESL Lab",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    },
-    {
-     "id": "ESOL M1073",
-     "title": "Low-Intermediate Academic ESL Lab",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.978,
-   "cos_max": 0.978,
-   "cross_college": false,
-   "shared_terms": [
-    "staffed",
-    "drop",
-    "appointment",
-    "operates",
-    "tutorial",
-    "tutors"
    ]
   },
   {
@@ -1901,8 +1722,8 @@
    "cos_max": 0.969,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
@@ -1912,7 +1733,7 @@
   {
    "members": [
     {
-     "id": "OTEC M1014",
+     "id": "BSOT M1014",
      "title": "Comprehensive Access, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -1922,7 +1743,7 @@
      ]
     },
     {
-     "id": "OTEC M1113",
+     "id": "BSOT M1113",
      "title": "Comprehensive Excel, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -1932,7 +1753,7 @@
      ]
     },
     {
-     "id": "OTEC M1118",
+     "id": "BSOT M1118",
      "title": "Comprehensive Word, Level 3",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -1943,15 +1764,15 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.958,
-   "cos_max": 0.965,
+   "cos_min": 0.957,
+   "cos_max": 0.964,
    "cross_college": false,
    "shared_terms": [
     "mos",
-    "thorough",
     "similar",
-    "coverage",
+    "thorough",
     "examinations",
+    "coverage",
     "specialist"
    ]
   },
@@ -1977,8 +1798,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.957,
-   "cos_max": 0.957,
+   "cos_min": 0.958,
+   "cos_max": 0.958,
    "cross_college": false,
    "shared_terms": [
     "honed",
@@ -1987,6 +1808,40 @@
     "performer",
     "costume",
     "concert"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "AUTO M1160",
+     "title": "Electric and Hybrid Vehicle Design and Maintenance Repair",
+     "units": 3.0,
+     "disc": "Automotive Technology",
+     "colleges": [
+      "College of Marin"
+     ]
+    },
+    {
+     "id": "AUTO M1161",
+     "title": "Electric and Hybrid Vehicle Design and Maintenance Troubleshooting",
+     "units": 3.0,
+     "disc": "Automotive Technology",
+     "colleges": [
+      "College of Marin"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.952,
+   "cos_max": 0.952,
+   "cross_college": false,
+   "shared_terms": [
+    "hybrids",
+    "guiding",
+    "cars",
+    "elec",
+    "voltage",
+    "hybrid"
    ]
   },
   {
@@ -2026,10 +1881,10 @@
    "shared_terms": [
     "book",
     "expertise",
-    "editorial",
     "descriptive",
-    "rendering",
-    "historic"
+    "editorial",
+    "historic",
+    "rendering"
    ]
   },
   {
@@ -2054,8 +1909,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.951,
-   "cos_max": 0.951,
+   "cos_min": 0.95,
+   "cos_max": 0.95,
    "cross_college": false,
    "shared_terms": [
     "mundane",
@@ -2064,76 +1919,6 @@
     "accomplishments",
     "constructs",
     "transnational"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "AUTO M1160",
-     "title": "Electric and Hybrid Vehicle Design and Maintenance Repair",
-     "units": 3.0,
-     "disc": "Automotive Technology",
-     "colleges": [
-      "College of Marin"
-     ]
-    },
-    {
-     "id": "AUTO M1161",
-     "title": "Electric and Hybrid Vehicle Design and Maintenance Troubleshooting",
-     "units": 3.0,
-     "disc": "Automotive Technology",
-     "colleges": [
-      "College of Marin"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.951,
-   "cos_max": 0.951,
-   "cross_college": false,
-   "shared_terms": [
-    "hybrids",
-    "guiding",
-    "cars",
-    "elec",
-    "voltage",
-    "hybrid"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "OTEC M1116",
-     "title": "Comprehensive PowerPoint, Level 2",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "OTEC M1117",
-     "title": "Comprehensive Word, Level 2",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.95,
-   "cos_max": 0.95,
-   "cross_college": false,
-   "shared_terms": [
-    "mos",
-    "thorough",
-    "similar",
-    "coverage",
-    "examinations",
-    "specialist"
    ]
   },
   {
@@ -2167,16 +1952,88 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.881,
-   "cos_max": 0.949,
+   "cos_min": 0.884,
+   "cos_max": 0.95,
    "cross_college": false,
    "shared_terms": [
     "limiting",
-    "modified",
     "restricted",
+    "modified",
     "release",
     "condition",
     "performed"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "BSOT M1116",
+     "title": "Comprehensive PowerPoint, Level 2",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    },
+    {
+     "id": "BSOT M1117",
+     "title": "Comprehensive Word, Level 2",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.948,
+   "cos_max": 0.948,
+   "cross_college": false,
+   "shared_terms": [
+    "mos",
+    "similar",
+    "thorough",
+    "examinations",
+    "coverage",
+    "specialist"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MUSI M9007",
+     "title": "Jazz Band for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Las Positas College",
+      "Mendocino College"
+     ]
+    },
+    {
+     "id": "MUSI M9014",
+     "title": "Guitar for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Mendocino College",
+      "Santa Monica College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.947,
+   "cos_max": 0.947,
+   "cross_college": false,
+   "shared_terms": [
+    "accommodate",
+    "aptitude",
+    "varying",
+    "enrichment",
+    "stylistic",
+    "repertoire"
    ]
   },
   {
@@ -2211,51 +2068,15 @@
    ],
    "n": 3,
    "cos_min": 0.668,
-   "cos_max": 0.947,
+   "cos_max": 0.945,
    "cross_college": false,
    "shared_terms": [
-    "changed",
     "due",
+    "changed",
     "lifting",
     "condition",
     "adaptations",
     "brief"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MUSI M9007",
-     "title": "Jazz Band for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Las Positas College",
-      "Mendocino College"
-     ]
-    },
-    {
-     "id": "MUSI M9014",
-     "title": "Guitar for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Mendocino College",
-      "Santa Monica College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.946,
-   "cos_max": 0.946,
-   "cross_college": false,
-   "shared_terms": [
-    "accommodate",
-    "aptitude",
-    "varying",
-    "stylistic",
-    "enrichment",
-    "repertoire"
    ]
   },
   {
@@ -2316,16 +2137,15 @@
     }
    ],
    "n": 6,
-   "cos_min": 0.694,
+   "cos_min": 0.693,
    "cos_max": 0.943,
    "cross_college": false,
    "shared_terms": [
     "reflection",
-    "institution",
-    "get",
-    "belongs",
     "civic",
-    "offer"
+    "institution",
+    "hrs",
+    "work"
    ]
   },
   {
@@ -2365,17 +2185,6 @@
      ]
     },
     {
-     "id": "FLSP M1109",
-     "title": "Topics in Spanish",
-     "units": 0.5,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Contra Costa College",
-      "Diablo Valley College",
-      "MiraCosta College"
-     ]
-    },
-    {
      "id": "LIBR M1029",
      "title": "Topics in Library Science",
      "units": 0.5,
@@ -2384,10 +2193,21 @@
       "American River College",
       "MiraCosta College"
      ]
+    },
+    {
+     "id": "SPAN M1109",
+     "title": "Topics in Spanish",
+     "units": 0.5,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Contra Costa College",
+      "Diablo Valley College",
+      "MiraCosta College"
+     ]
     }
    ],
    "n": 5,
-   "cos_min": 0.902,
+   "cos_min": 0.903,
    "cos_max": 0.941,
    "cross_college": false,
    "shared_terms": [
@@ -2421,8 +2241,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.939,
-   "cos_max": 0.939,
+   "cos_min": 0.94,
+   "cos_max": 0.94,
    "cross_college": false,
    "shared_terms": [
     "varietals",
@@ -2436,7 +2256,7 @@
   {
    "members": [
     {
-     "id": "OTEC M1012",
+     "id": "BSOT M1012",
      "title": "Comprehensive Access, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -2446,7 +2266,7 @@
      ]
     },
     {
-     "id": "OTEC M1111",
+     "id": "BSOT M1111",
      "title": "Comprehensive Excel, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -2456,7 +2276,7 @@
      ]
     },
     {
-     "id": "OTEC M1114",
+     "id": "BSOT M1114",
      "title": "Comprehensive PowerPoint, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -2466,7 +2286,7 @@
      ]
     },
     {
-     "id": "OTEC M1115",
+     "id": "BSOT M1115",
      "title": "Comprehensive Word, Level 1",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -2477,50 +2297,16 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.898,
-   "cos_max": 0.937,
+   "cos_min": 0.897,
+   "cos_max": 0.934,
    "cross_college": false,
    "shared_terms": [
     "less",
     "bot",
     "desiring",
     "mos",
-    "thorough",
-    "similar"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "KINE M1917",
-     "title": "Beginning Volleyball Quads",
-     "units": 1.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ]
-    },
-    {
-     "id": "KINE M1930",
-     "title": "Introductory Volleyball Quads",
-     "units": 1.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.934,
-   "cos_max": 0.934,
-   "cross_college": false,
-   "shared_terms": [
-    "person",
-    "volleyball",
-    "contact",
-    "exposure",
-    "competition",
-    "increase"
+    "similar",
+    "thorough"
    ]
   },
   {
@@ -2550,11 +2336,45 @@
    "cross_college": false,
    "shared_terms": [
     "club",
-    "consent",
     "relative",
+    "consent",
     "soccer",
     "competitive",
     "hrs"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "KINE M1917",
+     "title": "Beginning Volleyball Quads",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    },
+    {
+     "id": "KINE M1930",
+     "title": "Introductory Volleyball Quads",
+     "units": 1.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.932,
+   "cos_max": 0.932,
+   "cross_college": false,
+   "shared_terms": [
+    "person",
+    "volleyball",
+    "contact",
+    "exposure",
+    "competition",
+    "increase"
    ]
   },
   {
@@ -2634,15 +2454,15 @@
    ],
    "n": 7,
    "cos_min": 0.728,
-   "cos_max": 0.932,
+   "cos_max": 0.931,
    "cross_college": false,
    "shared_terms": [
     "motivated",
     "agreement",
     "independent",
     "painting",
-    "studio",
-    "portfolio"
+    "portfolio",
+    "studio"
    ]
   },
   {
@@ -2675,8 +2495,8 @@
     "corrected",
     "consisting",
     "diction",
-    "presence",
     "tone",
+    "presence",
     "identified"
    ]
   },
@@ -2711,119 +2531,15 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.603,
-   "cos_max": 0.923,
+   "cos_min": 0.634,
+   "cos_max": 0.926,
    "cross_college": false,
    "shared_terms": [
-    "experiments",
     "extended",
     "pursue",
+    "experiments",
     "regular",
     "available"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1079",
-     "title": "High Intermediate Academic Reading",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    },
-    {
-     "id": "ESOL M1081",
-     "title": "High Intermediate Academic Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    },
-    {
-     "id": "ESOL M1089",
-     "title": "Low-Intermediate Academic Reading",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    },
-    {
-     "id": "ESOL M1090",
-     "title": "Low-Intermediate Academic Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    },
-    {
-     "id": "ESOL M1091",
-     "title": "Intermediate Academic Reading and Vocabulary",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    },
-    {
-     "id": "ESOL M1092",
-     "title": "Intermediate Academic Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Madera College"
-     ]
-    }
-   ],
-   "n": 6,
-   "cos_min": 0.667,
-   "cos_max": 0.917,
-   "cross_college": false,
-   "shared_terms": [
-    "languages",
-    "want",
-    "successfully",
-    "concurrently",
-    "low",
-    "esl"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DANC M1007",
-     "title": "Fall Dance Concert 2",
-     "units": 2.0,
-     "disc": "Dance",
-     "colleges": [
-      "Fresno City College"
-     ]
-    },
-    {
-     "id": "DANC M1008",
-     "title": "Spring Dance Concert 2",
-     "units": 2.0,
-     "disc": "Dance",
-     "colleges": [
-      "Fresno City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.911,
-   "cos_max": 0.911,
-   "cross_college": false,
-   "shared_terms": [
-    "memorizing",
-    "choreographer",
-    "hone",
-    "clean",
-    "performer",
-    "concert"
    ]
   },
   {
@@ -2861,7 +2577,7 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.64,
+   "cos_min": 0.638,
    "cos_max": 0.909,
    "cross_college": false,
    "shared_terms": [
@@ -2876,36 +2592,35 @@
   {
    "members": [
     {
-     "id": "WELD M9003",
-     "title": "Basic Electric Arc Welding",
-     "units": 0.0,
-     "disc": "Welding",
+     "id": "DANC M1007",
+     "title": "Fall Dance Concert 2",
+     "units": 2.0,
+     "disc": "Dance",
      "colleges": [
-      "Mt. San Antonio College",
-      "Rio Hondo College"
+      "Fresno City College"
      ]
     },
     {
-     "id": "WELD M9004",
-     "title": "Manual Electric Arc Welding Processes",
-     "units": 0.0,
-     "disc": "Welding",
+     "id": "DANC M1008",
+     "title": "Spring Dance Concert 2",
+     "units": 2.0,
+     "disc": "Dance",
      "colleges": [
-      "Rio Hondo College"
+      "Fresno City College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.908,
-   "cos_max": 0.908,
+   "cos_min": 0.909,
+   "cos_max": 0.909,
    "cross_college": false,
    "shared_terms": [
-    "ferrous",
-    "wants",
-    "electrode",
-    "electric",
-    "arc",
-    "welding"
+    "memorizing",
+    "choreographer",
+    "hone",
+    "clean",
+    "performer",
+    "concert"
    ]
   },
   {
@@ -2930,13 +2645,13 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.907,
-   "cos_max": 0.907,
+   "cos_min": 0.908,
+   "cos_max": 0.908,
    "cross_college": false,
    "shared_terms": [
     "dermatology",
-    "transcription",
     "dictation",
+    "transcription",
     "htec",
     "speech",
     "recognition"
@@ -2945,80 +2660,7 @@
   {
    "members": [
     {
-     "id": "ESOL M1266",
-     "title": "English Skills for Success 2",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Monterey Peninsula College"
-     ]
-    },
-    {
-     "id": "ESOL M1346",
-     "title": "Low Intermediate Reading and Writing",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Mission College",
-      "Monterey Peninsula College",
-      "West Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.906,
-   "cos_max": 0.906,
-   "cross_college": false,
-   "shared_terms": [
-    "speaker",
-    "low",
-    "portions",
-    "fully",
-    "emphasizing",
-    "native"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MUSI M1440",
-     "title": "Jazz Improvisation Workshop 3",
-     "units": 1.0,
-     "disc": "Music",
-     "colleges": [
-      "Los Angeles City College",
-      "Los Angeles Pierce College"
-     ]
-    },
-    {
-     "id": "MUSI M1449",
-     "title": "Music Performance Workshop 3",
-     "units": 1.0,
-     "disc": "Music",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles Pierce College",
-      "Los Angeles Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.905,
-   "cos_max": 0.905,
-   "cross_college": false,
-   "shared_terms": [
-    "microphone",
-    "rehearsing",
-    "outcome",
-    "rehearse",
-    "articulation",
-    "intonation"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CISC M1057",
+     "id": "COMP M1057",
      "title": "Topics in Computer Science",
      "units": 0.5,
      "disc": "Computer Science",
@@ -3037,16 +2679,6 @@
       "Diablo Valley College",
       "MiraCosta College",
       "Palomar College"
-     ]
-    },
-    {
-     "id": "CSIS M1247",
-     "title": "Topics in Computer Information Systems",
-     "units": 0.5,
-     "disc": "Computer Information Systems",
-     "colleges": [
-      "Contra Costa College",
-      "Diablo Valley College"
      ]
     },
     {
@@ -3094,7 +2726,17 @@
      ]
     },
     {
-     "id": "THEA M1168",
+     "id": "ITIS M1247",
+     "title": "Topics in Computer Information Systems",
+     "units": 0.5,
+     "disc": "Computer Information Systems",
+     "colleges": [
+      "Contra Costa College",
+      "Diablo Valley College"
+     ]
+    },
+    {
+     "id": "THTR M1168",
      "title": "Topics in Drama",
      "units": 0.5,
      "disc": "Drama/Theater Arts",
@@ -3105,8 +2747,8 @@
     }
    ],
    "n": 8,
-   "cos_min": 0.608,
-   "cos_max": 0.905,
+   "cos_min": 0.612,
+   "cos_max": 0.907,
    "cross_college": false,
    "shared_terms": [
     "announced",
@@ -3115,6 +2757,78 @@
     "problems",
     "specific",
     "current"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "WELD M9003",
+     "title": "Basic Electric Arc Welding",
+     "units": 0.0,
+     "disc": "Welding",
+     "colleges": [
+      "Mt. San Antonio College",
+      "Rio Hondo College"
+     ]
+    },
+    {
+     "id": "WELD M9004",
+     "title": "Manual Electric Arc Welding Processes",
+     "units": 0.0,
+     "disc": "Welding",
+     "colleges": [
+      "Rio Hondo College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.907,
+   "cos_max": 0.907,
+   "cross_college": false,
+   "shared_terms": [
+    "ferrous",
+    "wants",
+    "electrode",
+    "electric",
+    "arc",
+    "welding"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MUSI M1440",
+     "title": "Jazz Improvisation Workshop 3",
+     "units": 1.0,
+     "disc": "Music",
+     "colleges": [
+      "Los Angeles City College",
+      "Los Angeles Pierce College"
+     ]
+    },
+    {
+     "id": "MUSI M1449",
+     "title": "Music Performance Workshop 3",
+     "units": 1.0,
+     "disc": "Music",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles Pierce College",
+      "Los Angeles Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.905,
+   "cos_max": 0.905,
+   "cross_college": false,
+   "shared_terms": [
+    "microphone",
+    "intonation",
+    "outcome",
+    "rehearsing",
+    "articulation",
+    "rehearse"
    ]
   },
   {
@@ -3181,7 +2895,7 @@
   {
    "members": [
     {
-     "id": "OTEC M1023",
+     "id": "BSOT M1023",
      "title": "Creating Accessible Documents",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -3190,7 +2904,7 @@
      ]
     },
     {
-     "id": "OTEC M1024",
+     "id": "BSOT M1024",
      "title": "Creating Accessible Media",
      "units": 1.0,
      "disc": "Office Technologies",
@@ -3208,8 +2922,8 @@
     "barriers",
     "accessible",
     "accessibility",
-    "arranged",
-    "follow"
+    "follow",
+    "arranged"
    ]
   },
   {
@@ -3273,8 +2987,8 @@
     }
    ],
    "n": 6,
-   "cos_min": 0.727,
-   "cos_max": 0.897,
+   "cos_min": 0.728,
+   "cos_max": 0.898,
    "cross_college": false,
    "shared_terms": [
     "onboard",
@@ -3283,40 +2997,6 @@
     "technician",
     "diagnostic",
     "approved"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DANC M1001",
-     "title": "Fall Dance Concert 1",
-     "units": 2.0,
-     "disc": "Dance",
-     "colleges": [
-      "Fresno City College"
-     ]
-    },
-    {
-     "id": "DANC M1002",
-     "title": "Spring Dance Concert 1",
-     "units": 2.0,
-     "disc": "Dance",
-     "colleges": [
-      "Fresno City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.897,
-   "cos_max": 0.897,
-   "cross_college": false,
-   "shared_terms": [
-    "memorizing",
-    "concert",
-    "expectations",
-    "rehearsal",
-    "choreography",
-    "stage"
    ]
   },
   {
@@ -3351,7 +3031,7 @@
    ],
    "n": 3,
    "cos_min": 0.886,
-   "cos_max": 0.895,
+   "cos_max": 0.896,
    "cross_college": false,
    "shared_terms": [
     "stay",
@@ -3360,42 +3040,6 @@
     "landscapes",
     "geographical",
     "possible"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1104",
-     "title": "ESL Center: Advanced-Low Skills in ESL",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "American River College",
-      "Sacramento City College"
-     ]
-    },
-    {
-     "id": "ESOL M1105",
-     "title": "ESL Center: Advanced-Low Support in ESL",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "American River College",
-      "Sacramento City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.892,
-   "cos_max": 0.892,
-   "cross_college": false,
-   "shared_terms": [
-    "accumulating",
-    "split",
-    "increments",
-    "nine",
-    "confer",
-    "semesters"
    ]
   },
   {
@@ -3422,8 +3066,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.891,
-   "cos_max": 0.891,
+   "cos_min": 0.892,
+   "cos_max": 0.892,
    "cross_college": false,
    "shared_terms": [
     "duplication",
@@ -3437,82 +3081,92 @@
   {
    "members": [
     {
-     "id": "ESOL M1169",
-     "title": "Basic Writing Skills",
-     "units": 4.0,
-     "disc": "English as a Second Language",
+     "id": "DANC M1001",
+     "title": "Fall Dance Concert 1",
+     "units": 2.0,
+     "disc": "Dance",
      "colleges": [
-      "Bakersfield College",
-      "Moorpark College"
+      "Fresno City College"
      ]
     },
     {
-     "id": "ESOL M1240",
-     "title": "Grammar and Composition",
-     "units": 4.0,
-     "disc": "English as a Second Language",
+     "id": "DANC M1002",
+     "title": "Spring Dance Concert 1",
+     "units": 2.0,
+     "disc": "Dance",
      "colleges": [
-      "Bakersfield College"
+      "Fresno City College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.888,
-   "cos_max": 0.888,
+   "cos_min": 0.892,
+   "cos_max": 0.892,
    "cross_college": false,
    "shared_terms": [
-    "ensl",
-    "emls",
-    "multilingual",
-    "exams",
-    "essay",
-    "require"
+    "memorizing",
+    "expectations",
+    "rehearsal",
+    "concert",
+    "choreography",
+    "stage"
    ]
   },
   {
    "members": [
     {
-     "id": "ESOL M1197",
-     "title": "ESL Center: Intermediate-High Skills in ESL",
-     "units": 0.5,
-     "disc": "English as a Second Language",
+     "id": "FREN M1013",
+     "title": "Beginning Conversational French",
+     "units": 3.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "American River College",
-      "Sacramento City College"
+      "Cerritos College",
+      "City College of San Francisco",
+      "College of the Canyons",
+      "El Camino College",
+      "Laney College"
      ]
     },
     {
-     "id": "ESOL M1198",
-     "title": "ESL Center: Intermediate-High Support in ESL",
-     "units": 0.5,
-     "disc": "English as a Second Language",
+     "id": "ITAL M1005",
+     "title": "Beginning Conversational Italian",
+     "units": 3.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "American River College",
-      "Sacramento City College"
+      "City College of San Francisco",
+      "El Camino College"
      ]
     },
     {
-     "id": "ESOL M1199",
-     "title": "ESL Center: Intermediate-Low Support in ESL",
-     "units": 0.5,
-     "disc": "English as a Second Language",
+     "id": "SPAN M1033",
+     "title": "Beginning Conversational Spanish",
+     "units": 3.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "American River College",
-      "Sacramento City College"
+      "Butte College",
+      "Citrus College",
+      "City College of San Francisco",
+      "College of Alameda",
+      "College of the Canyons",
+      "Compton College",
+      "El Camino College",
+      "Laney College",
+      "Ohlone College",
+      "Santiago Canyon College"
      ]
     }
    ],
    "n": 3,
-   "cos_min": 0.623,
-   "cos_max": 0.885,
+   "cos_min": 0.87,
+   "cos_max": 0.887,
    "cross_college": false,
    "shared_terms": [
-    "accumulating",
-    "split",
-    "increments",
-    "nine",
-    "confer",
-    "beneficial"
+    "pronunciation",
+    "conversational",
+    "comprehension",
+    "competency",
+    "oral",
+    "expression"
    ]
   },
   {
@@ -3579,8 +3233,8 @@
     "cadd",
     "operator",
     "orthographic",
-    "illustration",
-    "latest"
+    "latest",
+    "illustration"
    ]
   },
   {
@@ -3641,14 +3295,14 @@
     }
    ],
    "n": 5,
-   "cos_min": 0.633,
-   "cos_max": 0.872,
+   "cos_min": 0.634,
+   "cos_max": 0.873,
    "cross_college": false,
    "shared_terms": [
     "homework",
     "often",
-    "graded",
     "connected",
+    "graded",
     "arithmetic",
     "assignments"
    ]
@@ -3701,22 +3355,62 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.616,
-   "cos_max": 0.87,
+   "cos_min": 0.614,
+   "cos_max": 0.871,
    "cross_college": false,
    "shared_terms": [
     "issue",
     "culminating",
-    "considered",
     "portion",
-    "disciplines",
-    "investigation"
+    "investigation",
+    "interdisciplinary"
    ]
   },
   {
    "members": [
     {
-     "id": "ECED M1119",
+     "id": "FLKO M1004",
+     "title": "Conversational Korean",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Los Angeles City College",
+      "Santa Monica College"
+     ]
+    },
+    {
+     "id": "JAPN M1014",
+     "title": "Conversational Japanese",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Cypress College",
+      "East Los Angeles College",
+      "Grossmont College",
+      "Long Beach City College",
+      "Los Angeles City College",
+      "Mt. San Antonio College",
+      "Santa Monica College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.87,
+   "cos_max": 0.87,
+   "cross_college": false,
+   "shared_terms": [
+    "actfl",
+    "spoken",
+    "low",
+    "utilize",
+    "proficiency",
+    "listening"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "CDEV M1119",
      "title": "Parenting the Preschool Child",
      "units": 1.0,
      "disc": "Child Development/Early Childhood Education",
@@ -3726,7 +3420,7 @@
      ]
     },
     {
-     "id": "ECED M1120",
+     "id": "CDEV M1120",
      "title": "Parenting the Young Child",
      "units": 1.0,
      "disc": "Child Development/Early Childhood Education",
@@ -3736,8 +3430,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.868,
-   "cos_max": 0.868,
+   "cos_min": 0.87,
+   "cos_max": 0.87,
    "cross_college": false,
    "shared_terms": [
     "parent",
@@ -3746,63 +3440,6 @@
     "observation",
     "behaviors",
     "interaction"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLFR M1013",
-     "title": "Beginning Conversational French",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Cerritos College",
-      "City College of San Francisco",
-      "College of the Canyons",
-      "El Camino College",
-      "Laney College"
-     ]
-    },
-    {
-     "id": "FLIT M1005",
-     "title": "Beginning Conversational Italian",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "City College of San Francisco",
-      "El Camino College"
-     ]
-    },
-    {
-     "id": "FLSP M1033",
-     "title": "Beginning Conversational Spanish",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Butte College",
-      "Citrus College",
-      "City College of San Francisco",
-      "College of Alameda",
-      "College of the Canyons",
-      "Compton College",
-      "El Camino College",
-      "Laney College",
-      "Ohlone College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.844,
-   "cos_max": 0.865,
-   "cross_college": false,
-   "shared_terms": [
-    "conversational",
-    "pronunciation",
-    "competency",
-    "expression",
-    "help",
-    "comprehension"
    ]
   },
   {
@@ -3831,9 +3468,9 @@
    "cos_max": 0.864,
    "cross_college": false,
    "shared_terms": [
-    "consequential",
     "perceived",
     "relied",
+    "consequential",
     "interacted",
     "impacted",
     "technological"
@@ -3863,12 +3500,12 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.864,
-   "cos_max": 0.864,
+   "cos_min": 0.863,
+   "cos_max": 0.863,
    "cross_college": false,
    "shared_terms": [
-    "provision",
     "brn",
+    "provision",
     "put",
     "attributes",
     "inform",
@@ -3902,8 +3539,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.861,
-   "cos_max": 0.861,
+   "cos_min": 0.862,
+   "cos_max": 0.862,
    "cross_college": false,
    "shared_terms": [
     "sponsored",
@@ -3917,7 +3554,7 @@
   {
    "members": [
     {
-     "id": "OTEC M9025",
+     "id": "BSOT M9025",
      "title": "Computer Concepts and Applications IBEST",
      "units": 0.0,
      "disc": "Office Technologies",
@@ -3927,7 +3564,7 @@
      ]
     },
     {
-     "id": "OTEC M9048",
+     "id": "BSOT M9048",
      "title": "Databases and Presentations for Business",
      "units": 0.0,
      "disc": "Office Technologies",
@@ -3937,7 +3574,7 @@
      ]
     },
     {
-     "id": "OTEC M9050",
+     "id": "BSOT M9050",
      "title": "Excel for Business",
      "units": 0.0,
      "disc": "Office Technologies",
@@ -3947,7 +3584,7 @@
      ]
     },
     {
-     "id": "OTEC M9054",
+     "id": "BSOT M9054",
      "title": "Windows and Word for Business",
      "units": 0.0,
      "disc": "Office Technologies",
@@ -3958,16 +3595,16 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.635,
-   "cos_max": 0.856,
+   "cos_min": 0.63,
+   "cos_max": 0.854,
    "cross_college": false,
    "shared_terms": [
-    "mos",
     "workforce",
+    "mos",
     "specialist",
     "windows",
-    "microsoft",
-    "word"
+    "word",
+    "microsoft"
    ]
   },
   {
@@ -3992,8 +3629,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.855,
-   "cos_max": 0.855,
+   "cos_min": 0.853,
+   "cos_max": 0.853,
    "cross_college": false,
    "shared_terms": [
     "raster",
@@ -4001,7 +3638,7 @@
     "arcgis",
     "esri",
     "smart",
-    "vector"
+    "gis"
    ]
   },
   {
@@ -4041,15 +3678,15 @@
    ],
    "n": 3,
    "cos_min": 0.652,
-   "cos_max": 0.85,
+   "cos_max": 0.852,
    "cross_college": false,
    "shared_terms": [
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "department",
-    "theories"
+    "theories",
+    "one"
    ]
   },
   {
@@ -4074,8 +3711,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.848,
-   "cos_max": 0.848,
+   "cos_min": 0.846,
+   "cos_max": 0.846,
    "cross_college": false,
    "shared_terms": [
     "installer",
@@ -4084,93 +3721,6 @@
     "refrigeration",
     "technician",
     "air"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLJA M1014",
-     "title": "Conversational Japanese",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Cypress College",
-      "East Los Angeles College",
-      "Grossmont College",
-      "Long Beach City College",
-      "Los Angeles City College",
-      "Mt. San Antonio College",
-      "Santa Monica College"
-     ]
-    },
-    {
-     "id": "FLKO M1004",
-     "title": "Conversational Korean",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Los Angeles City College",
-      "Santa Monica College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.846,
-   "cos_max": 0.846,
-   "cross_college": false,
-   "shared_terms": [
-    "actfl",
-    "spoken",
-    "utilize",
-    "low",
-    "proficiency",
-    "speaking"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DANC M1239",
-     "title": "Dance Improvisation 2",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Cabrillo College",
-      "Orange Coast College",
-      "San Diego City College",
-      "San Diego Mesa College"
-     ]
-    },
-    {
-     "id": "DANC M1281",
-     "title": "Dance Improvisation",
-     "units": 1.5,
-     "disc": "Dance",
-     "colleges": [
-      "Allan Hancock College",
-      "Antelope Valley College",
-      "Cerritos College",
-      "Cypress College",
-      "Grossmont College",
-      "San Diego City College",
-      "San Diego Mesa College",
-      "San Jose City College",
-      "Santa Ana College",
-      "Santa Barbara City College",
-      "Ventura College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.844,
-   "cos_max": 0.844,
-   "cross_college": false,
-   "shared_terms": [
-    "improvisational",
-    "means",
-    "space",
-    "settings",
-    "dance"
    ]
   },
   {
@@ -4212,54 +3762,15 @@
    ],
    "n": 3,
    "cos_min": 0.632,
-   "cos_max": 0.844,
+   "cos_max": 0.845,
    "cross_college": false,
    "shared_terms": [
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "department",
-    "theories"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DANC M1354",
-     "title": "Jazz 1",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Fullerton College",
-      "Grossmont College",
-      "Mt. San Antonio College",
-      "Ventura College"
-     ]
-    },
-    {
-     "id": "DANC M1357",
-     "title": "Modern 1",
-     "units": 1.5,
-     "disc": "Dance",
-     "colleges": [
-      "Grossmont College",
-      "Mt. San Antonio College",
-      "Ventura College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.843,
-   "cos_max": 0.843,
-   "cross_college": false,
-   "shared_terms": [
-    "sponsored",
-    "attend",
-    "produced",
-    "concert",
-    "master",
-    "live"
+    "theories",
+    "one"
    ]
   },
   {
@@ -4306,8 +3817,8 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.813,
-   "cos_max": 0.842,
+   "cos_min": 0.815,
+   "cos_max": 0.844,
    "cross_college": false,
    "shared_terms": [
     "cypress",
@@ -4315,50 +3826,46 @@
     "composers",
     "guest",
     "attendance",
-    "concert"
+    "speakers"
    ]
   },
   {
    "members": [
     {
-     "id": "ARTS M1249",
-     "title": "Creative Coding",
-     "units": 3.0,
-     "disc": "Art",
+     "id": "DANC M1354",
+     "title": "Jazz 1",
+     "units": 1.0,
+     "disc": "Dance",
      "colleges": [
-      "Pasadena City College"
+      "Fullerton College",
+      "Grossmont College",
+      "Mt. San Antonio College",
+      "Ventura College"
      ]
     },
     {
-     "id": "ARTS M1250",
-     "title": "Creative Coding for Mobile Devices",
-     "units": 3.0,
-     "disc": "Art",
+     "id": "DANC M1357",
+     "title": "Modern 1",
+     "units": 1.5,
+     "disc": "Dance",
      "colleges": [
-      "Pasadena City College"
-     ]
-    },
-    {
-     "id": "ARTS M1251",
-     "title": "Creative Coding for the Internet",
-     "units": 3.0,
-     "disc": "Art",
-     "colleges": [
-      "Pasadena City College"
+      "Grossmont College",
+      "Mt. San Antonio College",
+      "Ventura College"
      ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.63,
-   "cos_max": 0.838,
+   "n": 2,
+   "cos_min": 0.843,
+   "cos_max": 0.843,
    "cross_college": false,
    "shared_terms": [
-    "fabrications",
-    "parsing",
-    "conditionals",
-    "iteration",
-    "outputs",
-    "programming"
+    "sponsored",
+    "attend",
+    "produced",
+    "concert",
+    "master",
+    "department"
    ]
   },
   {
@@ -4398,84 +3905,105 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.746,
-   "cos_max": 0.833,
+   "cos_min": 0.754,
+   "cos_max": 0.839,
    "cross_college": false,
    "shared_terms": [
     "employability",
     "dynamic",
+    "noncredit",
     "today",
     "century",
-    "noncredit",
     "increase"
    ]
   },
   {
    "members": [
     {
-     "id": "BIOL M1148",
-     "title": "Pepperwood Natural History- Biotic Environment",
-     "units": 2.0,
-     "disc": "Biological Sciences",
+     "id": "ARTS M1249",
+     "title": "Creative Coding",
+     "units": 3.0,
+     "disc": "Art",
      "colleges": [
-      "Santa Rosa Junior College"
+      "Pasadena City College"
      ]
     },
     {
-     "id": "BIOL M1186",
-     "title": "Pepperwood Natural History: Physical Environment",
-     "units": 2.0,
-     "disc": "Biological Sciences",
+     "id": "ARTS M1250",
+     "title": "Creative Coding for Mobile Devices",
+     "units": 3.0,
+     "disc": "Art",
      "colleges": [
-      "Santa Rosa Junior College"
+      "Pasadena City College"
+     ]
+    },
+    {
+     "id": "ARTS M1251",
+     "title": "Creative Coding for the Internet",
+     "units": 3.0,
+     "disc": "Art",
+     "colleges": [
+      "Pasadena City College"
      ]
     }
    ],
-   "n": 2,
-   "cos_min": 0.83,
-   "cos_max": 0.83,
+   "n": 3,
+   "cos_min": 0.633,
+   "cos_max": 0.839,
    "cross_college": false,
    "shared_terms": [
-    "uneven",
-    "steward",
-    "pepperwood",
-    "erths",
-    "preserve",
-    "hiking"
+    "fabrications",
+    "conditionals",
+    "parsing",
+    "iteration",
+    "outputs",
+    "programming"
    ]
   },
   {
    "members": [
     {
-     "id": "ESOL M9137",
-     "title": "Noncredit High-Beginning English",
-     "units": 0.0,
-     "disc": "English as a Second Language",
+     "id": "DANC M1239",
+     "title": "Dance Improvisation 2",
+     "units": 1.0,
+     "disc": "Dance",
      "colleges": [
-      "Santa Rosa Junior College"
+      "Cabrillo College",
+      "Orange Coast College",
+      "San Diego City College",
+      "San Diego Mesa College"
      ]
     },
     {
-     "id": "ESOL M9140",
-     "title": "Noncredit Low-Beginning English",
-     "units": 0.0,
-     "disc": "English as a Second Language",
+     "id": "DANC M1281",
+     "title": "Dance Improvisation",
+     "units": 1.5,
+     "disc": "Dance",
      "colleges": [
-      "Santa Rosa Junior College"
+      "Allan Hancock College",
+      "Antelope Valley College",
+      "Cerritos College",
+      "Cypress College",
+      "Grossmont College",
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Jose City College",
+      "Santa Ana College",
+      "Santa Barbara City College",
+      "Ventura College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.826,
-   "cos_max": 0.826,
+   "cos_min": 0.838,
+   "cos_max": 0.838,
    "cross_college": false,
    "shared_terms": [
-    "emls",
-    "encouraged",
-    "everyday",
-    "placement",
-    "learners",
-    "noncredit"
+    "improvisational",
+    "means",
+    "space",
+    "settings",
+    "dance"
    ]
   },
   {
@@ -4503,16 +4031,50 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.826,
-   "cos_max": 0.826,
+   "cos_min": 0.831,
+   "cos_max": 0.831,
    "cross_college": false,
    "shared_terms": [
     "microphone",
-    "outcome",
-    "rehearse",
-    "articulation",
     "intonation",
+    "outcome",
+    "articulation",
+    "rehearse",
     "instrument"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "BIOL M1148",
+     "title": "Pepperwood Natural History- Biotic Environment",
+     "units": 2.0,
+     "disc": "Biological Sciences",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    },
+    {
+     "id": "BIOL M1186",
+     "title": "Pepperwood Natural History: Physical Environment",
+     "units": 2.0,
+     "disc": "Biological Sciences",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.827,
+   "cos_max": 0.827,
+   "cross_college": false,
+   "shared_terms": [
+    "uneven",
+    "steward",
+    "erths",
+    "pepperwood",
+    "preserve",
+    "hiking"
    ]
   },
   {
@@ -4540,16 +4102,52 @@
     }
    ],
    "n": 2,
+   "cos_min": 0.827,
+   "cos_max": 0.827,
+   "cross_college": false,
+   "shared_terms": [
+    "microphone",
+    "intonation",
+    "outcome",
+    "articulation",
+    "rehearse",
+    "instrument"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "CNST M1015",
+     "title": "Basic Frame Scaffold",
+     "units": 1.5,
+     "disc": "Construction Technology",
+     "colleges": [
+      "Palomar College",
+      "Rio Hondo College"
+     ]
+    },
+    {
+     "id": "CNST M1017",
+     "title": "Basic Systems Scaffold",
+     "units": 1.5,
+     "disc": "Construction Technology",
+     "colleges": [
+      "Palomar College",
+      "Rio Hondo College"
+     ]
+    }
+   ],
+   "n": 2,
    "cos_min": 0.822,
    "cos_max": 0.822,
    "cross_college": false,
    "shared_terms": [
-    "microphone",
-    "outcome",
-    "rehearse",
-    "articulation",
-    "intonation",
-    "instrument"
+    "jobsites",
+    "erect",
+    "frequently",
+    "scaffold",
+    "configurations",
+    "type"
    ]
   },
   {
@@ -4578,52 +4176,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.822,
-   "cos_max": 0.822,
+   "cos_min": 0.82,
+   "cos_max": 0.82,
    "cross_college": false,
    "shared_terms": [
-    "guards",
     "shin",
+    "guards",
     "cleats",
     "attire",
     "soccer",
     "conditioning"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CNST M1015",
-     "title": "Basic Frame Scaffold",
-     "units": 1.5,
-     "disc": "Construction Technology",
-     "colleges": [
-      "Palomar College",
-      "Rio Hondo College"
-     ]
-    },
-    {
-     "id": "CNST M1017",
-     "title": "Basic Systems Scaffold",
-     "units": 1.5,
-     "disc": "Construction Technology",
-     "colleges": [
-      "Palomar College",
-      "Rio Hondo College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.821,
-   "cos_max": 0.821,
-   "cross_college": false,
-   "shared_terms": [
-    "jobsites",
-    "erect",
-    "scaffold",
-    "frequently",
-    "configurations",
-    "where"
    ]
   },
   {
@@ -4660,8 +4222,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.819,
-   "cos_max": 0.819,
+   "cos_min": 0.816,
+   "cos_max": 0.816,
    "cross_college": false,
    "shared_terms": [
     "combinations",
@@ -4670,83 +4232,6 @@
     "performing",
     "terminology",
     "dance"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "LSKL M1003",
-     "title": "Math Skills for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1007",
-     "title": "Reading for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    },
-    {
-     "id": "LSKL M1009",
-     "title": "Writing for Academic Success",
-     "units": 0.5,
-     "disc": "Learning Assistance or Learning Skills",
-     "colleges": [
-      "Bakersfield College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.727,
-   "cos_max": 0.811,
-   "cross_college": false,
-   "shared_terms": [
-    "tutorials",
-    "lessons",
-    "assessments",
-    "individually",
-    "prescribed",
-    "assigned"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1023",
-     "title": "Listen/Speak for Work for ESL Level 2",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Long Beach City College"
-     ]
-    },
-    {
-     "id": "ESOL M1024",
-     "title": "Read/Write for Work for ESL Level 2",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Long Beach City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.809,
-   "cos_max": 0.809,
-   "cross_college": false,
-   "shared_terms": [
-    "sociolinguistic",
-    "norms",
-    "identified",
-    "analyzed",
-    "practiced",
-    "sequence"
    ]
   },
   {
@@ -4773,16 +4258,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.806,
-   "cos_max": 0.806,
+   "cos_min": 0.805,
+   "cos_max": 0.805,
    "cross_college": false,
    "shared_terms": [
     "maneuvers",
     "aeronautical",
     "contained",
     "pilot",
-    "attain",
-    "faa"
+    "faa",
+    "attain"
    ]
   },
   {
@@ -4819,8 +4304,8 @@
    "shared_terms": [
     "baseball",
     "optimize",
-    "reduce",
     "athlete",
+    "reduce",
     "agility",
     "intercollegiate"
    ]
@@ -4828,41 +4313,7 @@
   {
    "members": [
     {
-     "id": "ESOL M1032",
-     "title": "Listen/Speak for Work for ESL Level 3",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Long Beach City College"
-     ]
-    },
-    {
-     "id": "ESOL M1033",
-     "title": "Read/Write for Work for ESL Level 3",
-     "units": 5.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Long Beach City College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.797,
-   "cos_max": 0.797,
-   "cross_college": false,
-   "shared_terms": [
-    "sociolinguistic",
-    "norms",
-    "identified",
-    "analyzed",
-    "practiced",
-    "third"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "THEA M1086",
+     "id": "THTR M1086",
      "title": "Beginning Theatre Production",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -4872,7 +4323,7 @@
      ]
     },
     {
-     "id": "THEA M1281",
+     "id": "THTR M1281",
      "title": "Student Performance/Production Workshop",
      "units": 1.0,
      "disc": "Drama/Theater Arts",
@@ -4883,16 +4334,59 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.797,
-   "cos_max": 0.797,
+   "cos_min": 0.798,
+   "cos_max": 0.798,
    "cross_college": false,
    "shared_terms": [
     "ranked",
-    "kcactf",
     "kennedy",
+    "kcactf",
     "festival",
     "workshop",
-    "theater"
+    "theatrical"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "LSKL M1003",
+     "title": "Math Skills for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1007",
+     "title": "Reading for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    },
+    {
+     "id": "LSKL M1009",
+     "title": "Writing for Academic Success",
+     "units": 0.5,
+     "disc": "Learning Assistance or Learning Skills",
+     "colleges": [
+      "Bakersfield College"
+     ]
+    }
+   ],
+   "n": 3,
+   "cos_min": 0.688,
+   "cos_max": 0.789,
+   "cross_college": false,
+   "shared_terms": [
+    "tutorials",
+    "lessons",
+    "assessments",
+    "individually",
+    "prescribed",
+    "assigned"
    ]
   },
   {
@@ -4926,7 +4420,7 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.718,
+   "cos_min": 0.717,
    "cos_max": 0.787,
    "cross_college": false,
    "shared_terms": [
@@ -4936,40 +4430,6 @@
     "inspection",
     "diversity",
     "automotive"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DANC M1103",
-     "title": "Beginning Contemporary Musical Theatre Dance",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Victor Valley College"
-     ]
-    },
-    {
-     "id": "DANC M1170",
-     "title": "Introduction to Contemporary Musical Theatre Dance",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Victor Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.782,
-   "cos_max": 0.782,
-   "cross_college": false,
-   "shared_terms": [
-    "listing",
-    "broadway",
-    "theatre",
-    "musical",
-    "dance",
-    "contemporary"
    ]
   },
   {
@@ -4996,88 +4456,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.778,
-   "cos_max": 0.778,
+   "cos_min": 0.784,
+   "cos_max": 0.784,
    "cross_college": false,
    "shared_terms": [
     "cuyamaca",
     "extra",
     "geometry",
-    "applicable",
+    "concurrently",
     "support",
     "pass"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1064",
-     "title": "College Ready Skills: Academic Success Strategies",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Laney College"
-     ]
-    },
-    {
-     "id": "ESOL M1187",
-     "title": "College Ready Skills: Best Study Practices",
-     "units": 0.5,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Laney College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.774,
-   "cos_max": 0.774,
-   "cross_college": false,
-   "shared_terms": [
-    "esol",
-    "facilitate",
-    "learners",
-    "individualized",
-    "low",
-    "continuation"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CARP M1056",
-     "title": "Molding and Trims",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "CARP M1061",
-     "title": "Stair Trim",
-     "units": 1.5,
-     "disc": "Carpentry",
-     "colleges": [
-      "Norco College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.768,
-   "cos_max": 0.768,
-   "cross_college": false,
-   "shared_terms": [
-    "trims",
-    "trim",
-    "installing",
-    "finish",
-    "practiced",
-    "cutting"
    ]
   },
   {
@@ -5111,58 +4499,127 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.659,
-   "cos_max": 0.766,
+   "cos_min": 0.674,
+   "cos_max": 0.779,
    "cross_college": false,
    "shared_terms": [
     "interpreters",
     "translation",
     "strongly",
+    "fluency",
     "spanish",
-    "government",
-    "fluency"
+    "government"
    ]
   },
   {
    "members": [
     {
-     "id": "IDST M9098",
-     "title": "GED Preparation - Language Arts/Social Studies",
-     "units": 0.0,
-     "disc": "Interdisciplinary Studies",
+     "id": "DANC M1103",
+     "title": "Beginning Contemporary Musical Theatre Dance",
+     "units": 1.0,
+     "disc": "Dance",
      "colleges": [
-      "College of the Canyons",
-      "Cuesta College"
+      "Victor Valley College"
      ]
     },
     {
-     "id": "IDST M9250",
-     "title": "GED Preparation - Math/Science",
-     "units": 0.0,
-     "disc": "Interdisciplinary Studies",
+     "id": "DANC M1170",
+     "title": "Introduction to Contemporary Musical Theatre Dance",
+     "units": 1.0,
+     "disc": "Dance",
      "colleges": [
-      "College of the Canyons",
-      "Cuesta College"
+      "Victor Valley College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.763,
-   "cos_max": 0.763,
+   "cos_min": 0.779,
+   "cos_max": 0.779,
    "cross_college": false,
    "shared_terms": [
-    "subtests",
-    "ged",
-    "reasoning",
-    "exam",
-    "prepares",
-    "requirements"
+    "listing",
+    "theatre",
+    "musical",
+    "dance",
+    "contemporary"
    ]
   },
   {
    "members": [
     {
-     "id": "ECED M1100",
+     "id": "CARP M1056",
+     "title": "Molding and Trims",
+     "units": 1.5,
+     "disc": "Carpentry",
+     "colleges": [
+      "Norco College",
+      "Santiago Canyon College"
+     ]
+    },
+    {
+     "id": "CARP M1061",
+     "title": "Stair Trim",
+     "units": 1.5,
+     "disc": "Carpentry",
+     "colleges": [
+      "Norco College",
+      "Palomar College",
+      "Rio Hondo College",
+      "Santiago Canyon College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.769,
+   "cos_max": 0.769,
+   "cross_college": false,
+   "shared_terms": [
+    "trims",
+    "trim",
+    "installing",
+    "finish",
+    "practiced",
+    "open"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "DANC M1236",
+     "title": "Jazz Dance IB",
+     "units": 1.0,
+     "disc": "Dance",
+     "colleges": [
+      "Victor Valley College"
+     ]
+    },
+    {
+     "id": "DANC M1237",
+     "title": "Tap Dance Ib",
+     "units": 1.0,
+     "disc": "Dance",
+     "colleges": [
+      "Victor Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.759,
+   "cos_max": 0.759,
+   "cross_college": false,
+   "shared_terms": [
+    "counting",
+    "listing",
+    "clarity",
+    "phrasing",
+    "sense",
+    "musicality"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "CDEV M1100",
      "title": "Child Growth and Development During the School Years",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -5172,7 +4629,7 @@
      ]
     },
     {
-     "id": "ECED M1101",
+     "id": "CDEV M1101",
      "title": "Early Child Development",
      "units": 3.0,
      "disc": "Child Development/Early Childhood Education",
@@ -5182,8 +4639,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.76,
-   "cos_max": 0.76,
+   "cos_min": 0.758,
+   "cos_max": 0.758,
    "cross_college": false,
    "shared_terms": [
     "cdev",
@@ -5224,14 +4681,276 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.699,
-   "cos_max": 0.759,
+   "cos_min": 0.696,
+   "cos_max": 0.756,
    "cross_college": false,
    "shared_terms": [
     "uniquely",
     "families",
     "overall",
     "family"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "IDST M9098",
+     "title": "GED Preparation - Language Arts/Social Studies",
+     "units": 0.0,
+     "disc": "Interdisciplinary Studies",
+     "colleges": [
+      "College of the Canyons",
+      "Cuesta College"
+     ]
+    },
+    {
+     "id": "IDST M9250",
+     "title": "GED Preparation - Math/Science",
+     "units": 0.0,
+     "disc": "Interdisciplinary Studies",
+     "colleges": [
+      "College of the Canyons",
+      "Cuesta College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.752,
+   "cos_max": 0.752,
+   "cross_college": false,
+   "shared_terms": [
+    "subtests",
+    "ged",
+    "reasoning",
+    "exam",
+    "prepares",
+    "pass"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "HIST M1088",
+     "title": "Women in Early American History",
+     "units": 3.0,
+     "disc": "History",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    },
+    {
+     "id": "HIST M1097",
+     "title": "Women in Modern American History",
+     "units": 3.0,
+     "disc": "History",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.75,
+   "cos_max": 0.75,
+   "cross_college": false,
+   "shared_terms": [
+    "now",
+    "entire",
+    "intellectual",
+    "institutions",
+    "area",
+    "women"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "BSOT M1016",
+     "title": "Essential Access",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    },
+    {
+     "id": "BSOT M1156",
+     "title": "Essential Excel",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    },
+    {
+     "id": "BSOT M1157",
+     "title": "Essential PowerPoint",
+     "units": 1.0,
+     "disc": "Office Technologies",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College"
+     ]
+    }
+   ],
+   "n": 3,
+   "cos_min": 0.682,
+   "cos_max": 0.75,
+   "cross_college": false,
+   "shared_terms": [
+    "revise",
+    "bot",
+    "desiring",
+    "proficient",
+    "consider"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "CRIM M1081",
+     "title": "Driver Awareness Instructor",
+     "units": 0.5,
+     "disc": "Administration of Justice",
+     "colleges": [
+      "Allan Hancock College",
+      "College of the Canyons",
+      "Fresno City College",
+      "Monterey Peninsula College"
+     ]
+    },
+    {
+     "id": "CRIM M1208",
+     "title": "Driver Training Instructor",
+     "units": 1.0,
+     "disc": "Administration of Justice",
+     "colleges": [
+      "Allan Hancock College",
+      "College of the Canyons",
+      "Fresno City College",
+      "Monterey Peninsula College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.743,
+   "cos_max": 0.743,
+   "cross_college": false,
+   "shared_terms": [
+    "skidpan",
+    "driver",
+    "driving",
+    "vehicle",
+    "emergency"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MATH M1116",
+     "title": "Support for Applied Calculus",
+     "units": 2.0,
+     "disc": "Mathematics",
+     "colleges": [
+      "Moorpark College",
+      "Napa Valley College",
+      "Southwestern College"
+     ]
+    },
+    {
+     "id": "MATH M1229",
+     "title": "Support for Mathematics (General Education)",
+     "units": 2.0,
+     "disc": "Mathematics",
+     "colleges": [
+      "Southwestern College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.738,
+   "cos_max": 0.738,
+   "cross_college": false,
+   "shared_terms": [
+    "frequent",
+    "indicate",
+    "reinforces",
+    "feedback",
+    "additional",
+    "support"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ARCH M1023",
+     "title": "Architecture and Interiors History: Antiquity - Classical Revival",
+     "units": 3.0,
+     "disc": "Architecture",
+     "colleges": [
+      "College of the Canyons"
+     ]
+    },
+    {
+     "id": "ARCH M1056",
+     "title": "Architecture and Interiors History: Classical Revival - Post Modern",
+     "units": 3.0,
+     "disc": "Architecture",
+     "colleges": [
+      "College of the Canyons"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.733,
+   "cos_max": 0.733,
+   "cross_college": false,
+   "shared_terms": [
+    "revival",
+    "roughly",
+    "decorative",
+    "classical",
+    "relates",
+    "influences"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "AUTO M9041",
+     "title": "Automotive Technician",
+     "units": 0.0,
+     "disc": "Automotive Technology",
+     "colleges": [
+      "San Diego College of Continuing Education",
+      "San Diego College of Continuing Education Credit"
+     ]
+    },
+    {
+     "id": "AUTO M9065",
+     "title": "Engine/Electrical/Performance",
+     "units": 0.0,
+     "disc": "Automotive Technology",
+     "colleges": [
+      "San Diego College of Continuing Education",
+      "San Diego College of Continuing Education Credit"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.733,
+   "cos_max": 0.733,
+   "cross_college": false,
+   "shared_terms": [
+    "miramar",
+    "articulated",
+    "malfunctions",
+    "repairing",
+    "natef",
+    "diagnosing"
    ]
   },
   {
@@ -5278,8 +4997,8 @@
     }
    ],
    "n": 4,
-   "cos_min": 0.633,
-   "cos_max": 0.758,
+   "cos_min": 0.621,
+   "cos_max": 0.732,
    "cross_college": false,
    "shared_terms": [
     "hiset",
@@ -5291,310 +5010,7 @@
   {
    "members": [
     {
-     "id": "DANC M1236",
-     "title": "Jazz Dance IB",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Victor Valley College"
-     ]
-    },
-    {
-     "id": "DANC M1237",
-     "title": "Tap Dance Ib",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "Victor Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.756,
-   "cos_max": 0.756,
-   "cross_college": false,
-   "shared_terms": [
-    "counting",
-    "listing",
-    "phrasing",
-    "sense",
-    "clarity",
-    "musicality"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "OTEC M1016",
-     "title": "Essential Access",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "OTEC M1156",
-     "title": "Essential Excel",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "OTEC M1157",
-     "title": "Essential PowerPoint",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.677,
-   "cos_max": 0.75,
-   "cross_college": false,
-   "shared_terms": [
-    "revise",
-    "bot",
-    "desiring",
-    "proficient",
-    "consider"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "HIST M1088",
-     "title": "Women in Early American History",
-     "units": 3.0,
-     "disc": "History",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    },
-    {
-     "id": "HIST M1097",
-     "title": "Women in Modern American History",
-     "units": 3.0,
-     "disc": "History",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.749,
-   "cos_max": 0.749,
-   "cross_college": false,
-   "shared_terms": [
-    "now",
-    "entire",
-    "intellectual",
-    "institutions",
-    "area",
-    "women"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "CRIM M1081",
-     "title": "Driver Awareness Instructor",
-     "units": 0.5,
-     "disc": "Administration of Justice",
-     "colleges": [
-      "Allan Hancock College",
-      "College of the Canyons",
-      "Fresno City College",
-      "Monterey Peninsula College"
-     ]
-    },
-    {
-     "id": "CRIM M1208",
-     "title": "Driver Training Instructor",
-     "units": 1.0,
-     "disc": "Administration of Justice",
-     "colleges": [
-      "Allan Hancock College",
-      "College of the Canyons",
-      "Fresno City College",
-      "Monterey Peninsula College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.744,
-   "cos_max": 0.744,
-   "cross_college": false,
-   "shared_terms": [
-    "skidpan",
-    "driver",
-    "driving",
-    "vehicle",
-    "emergency"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ARCH M1023",
-     "title": "Architecture and Interiors History: Antiquity - Classical Revival",
-     "units": 3.0,
-     "disc": "Architecture",
-     "colleges": [
-      "College of the Canyons"
-     ]
-    },
-    {
-     "id": "ARCH M1056",
-     "title": "Architecture and Interiors History: Classical Revival - Post Modern",
-     "units": 3.0,
-     "disc": "Architecture",
-     "colleges": [
-      "College of the Canyons"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.734,
-   "cos_max": 0.734,
-   "cross_college": false,
-   "shared_terms": [
-    "roughly",
-    "revival",
-    "decorative",
-    "classical",
-    "relates",
-    "influences"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MATH M1116",
-     "title": "Support for Applied Calculus",
-     "units": 2.0,
-     "disc": "Mathematics",
-     "colleges": [
-      "Moorpark College",
-      "Napa Valley College",
-      "Southwestern College"
-     ]
-    },
-    {
-     "id": "MATH M1229",
-     "title": "Support for Mathematics (General Education)",
-     "units": 2.0,
-     "disc": "Mathematics",
-     "colleges": [
-      "Southwestern College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.733,
-   "cos_max": 0.733,
-   "cross_college": false,
-   "shared_terms": [
-    "frequent",
-    "indicate",
-    "reinforces",
-    "feedback",
-    "additional",
-    "support"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "AUTO M9041",
-     "title": "Automotive Technician",
-     "units": 0.0,
-     "disc": "Automotive Technology",
-     "colleges": [
-      "San Diego College of Continuing Education",
-      "San Diego College of Continuing Education Credit"
-     ]
-    },
-    {
-     "id": "AUTO M9065",
-     "title": "Engine/Electrical/Performance",
-     "units": 0.0,
-     "disc": "Automotive Technology",
-     "colleges": [
-      "San Diego College of Continuing Education",
-      "San Diego College of Continuing Education Credit"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.732,
-   "cos_max": 0.732,
-   "cross_college": false,
-   "shared_terms": [
-    "articulated",
-    "miramar",
-    "malfunctions",
-    "repairing",
-    "natef",
-    "diagnosing"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MANU M1008",
-     "title": "Creo Parametric: Top-Down Design and Advanced System Tools",
-     "units": 4.0,
-     "disc": "Manufacturing Technology",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "MANU M1009",
-     "title": "SolidWorks: Top-Down Design and Advanced System Tools",
-     "units": 4.0,
-     "disc": "Manufacturing Technology",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "MANU M1063",
-     "title": "SolidWorks: Surface Modeling",
-     "units": 4.0,
-     "disc": "Manufacturing Technology",
-     "colleges": [
-      "De Anza College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.603,
-   "cos_max": 0.728,
-   "cross_college": false,
-   "shared_terms": [
-    "mates",
-    "top",
-    "down",
-    "parametric",
-    "solid",
-    "assembly"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ECED M1018",
+     "id": "CDEV M1018",
      "title": "Topics in Preschool Program Administration",
      "units": 1.0,
      "disc": "Child Development/Early Childhood Education",
@@ -5603,7 +5019,7 @@
      ]
     },
     {
-     "id": "ECED M1097",
+     "id": "CDEV M1097",
      "title": "Current Issues in Child Development",
      "units": 1.0,
      "disc": "Child Development/Early Childhood Education",
@@ -5614,7 +5030,7 @@
      ]
     },
     {
-     "id": "ECED M1098",
+     "id": "CDEV M1098",
      "title": "Curriculum for Child Development Personnel",
      "units": 1.0,
      "disc": "Child Development/Early Childhood Education",
@@ -5624,14 +5040,14 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.646,
-   "cos_max": 0.722,
+   "cos_min": 0.653,
+   "cos_max": 0.727,
    "cross_college": false,
    "shared_terms": [
     "counts",
     "hrs",
-    "child",
-    "concurrently"
+    "concurrently",
+    "child"
    ]
   },
   {
@@ -5675,11 +5091,11 @@
    ],
    "n": 4,
    "cos_min": 0.685,
-   "cos_max": 0.721,
+   "cos_max": 0.72,
    "cross_college": false,
    "shared_terms": [
-    "pevm",
     "completions",
+    "pevm",
     "mentally",
     "allowed",
     "collegiate",
@@ -5721,48 +5137,6 @@
   {
    "members": [
     {
-     "id": "DANC M1085",
-     "title": "Ballet Techniques 4",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles City College",
-      "Los Angeles Pierce College",
-      "Los Angeles Valley College",
-      "West Los Angeles College"
-     ]
-    },
-    {
-     "id": "DANC M1297",
-     "title": "Jazz Dance Techniques 4",
-     "units": 1.0,
-     "disc": "Dance",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles City College",
-      "Los Angeles Pierce College",
-      "Los Angeles Valley College",
-      "West Los Angeles College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.715,
-   "cos_max": 0.715,
-   "cross_college": false,
-   "shared_terms": [
-    "combinations",
-    "steps",
-    "appreciation",
-    "performing",
-    "terminology",
-    "form"
-   ]
-  },
-  {
-   "members": [
-    {
      "id": "CSAI M1003",
      "title": "Introduction to Artificial Intelligence and Data Science",
      "units": 3.0,
@@ -5792,43 +5166,9 @@
    "shared_terms": [
     "bias",
     "exposed",
-    "cases",
     "surrounding",
+    "cases",
     "deep"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "HMDT M1001",
-     "title": "Advanced Heavy-Duty Truck Engines",
-     "units": 4.0,
-     "disc": "Heavy Duty Equipment Mechanics",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    },
-    {
-     "id": "HMDT M1009",
-     "title": "Heavy-Duty Truck Engines",
-     "units": 4.0,
-     "disc": "Heavy Duty Equipment Mechanics",
-     "colleges": [
-      "San Bernardino Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.711,
-   "cos_max": 0.711,
-   "cross_college": false,
-   "shared_terms": [
-    "truck",
-    "heavy",
-    "duty",
-    "excellence",
-    "ase",
-    "engines"
    ]
   },
   {
@@ -5853,8 +5193,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.708,
-   "cos_max": 0.708,
+   "cos_min": 0.712,
+   "cos_max": 0.712,
    "cross_college": false,
    "shared_terms": [
     "mdia",
@@ -5863,6 +5203,128 @@
     "esll",
     "placement",
     "popular"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ITAL M1014",
+     "title": "Intermediate Conversational Italian",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "City College of San Francisco",
+      "El Camino College"
+     ]
+    },
+    {
+     "id": "SPAN M1066",
+     "title": "Intermediate Conversational Spanish",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "American River College",
+      "Butte College",
+      "Citrus College",
+      "City College of San Francisco",
+      "Compton College",
+      "Cosumnes River College",
+      "El Camino College",
+      "Irvine Valley College",
+      "Merritt College",
+      "Sacramento City College",
+      "Saddleback College",
+      "Sierra College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.711,
+   "cos_max": 0.711,
+   "cross_college": false,
+   "shared_terms": [
+    "pronunciation",
+    "fluency",
+    "conversational",
+    "daily",
+    "comprehension",
+    "oral"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "DANC M1085",
+     "title": "Ballet Techniques 4",
+     "units": 1.0,
+     "disc": "Dance",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles City College",
+      "Los Angeles Pierce College",
+      "Los Angeles Valley College",
+      "West Los Angeles College"
+     ]
+    },
+    {
+     "id": "DANC M1297",
+     "title": "Jazz Dance Techniques 4",
+     "units": 1.0,
+     "disc": "Dance",
+     "colleges": [
+      "East Los Angeles College",
+      "Los Angeles City College",
+      "Los Angeles Pierce College",
+      "Los Angeles Valley College",
+      "West Los Angeles College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.711,
+   "cos_max": 0.711,
+   "cross_college": false,
+   "shared_terms": [
+    "combinations",
+    "steps",
+    "appreciation",
+    "performing",
+    "terminology",
+    "form"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "HMDT M1001",
+     "title": "Advanced Heavy-Duty Truck Engines",
+     "units": 4.0,
+     "disc": "Heavy Duty Equipment Mechanics",
+     "colleges": [
+      "San Bernardino Valley College"
+     ]
+    },
+    {
+     "id": "HMDT M1009",
+     "title": "Heavy-Duty Truck Engines",
+     "units": 4.0,
+     "disc": "Heavy Duty Equipment Mechanics",
+     "colleges": [
+      "San Bernardino Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.709,
+   "cos_max": 0.709,
+   "cross_college": false,
+   "shared_terms": [
+    "truck",
+    "heavy",
+    "duty",
+    "excellence",
+    "ase",
+    "engines"
    ]
   },
   {
@@ -5900,7 +5362,7 @@
   {
    "members": [
     {
-     "id": "CSIS M1033",
+     "id": "ITIS M1033",
      "title": "Database Management Using Microsoft Access",
      "units": 3.0,
      "disc": "Computer Information Systems",
@@ -5911,7 +5373,7 @@
      ]
     },
     {
-     "id": "CSIS M1066",
+     "id": "ITIS M1066",
      "title": "Advanced Database Applications",
      "units": 3.0,
      "disc": "Computer Information Systems",
@@ -5969,62 +5431,15 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.653,
-   "cos_max": 0.696,
+   "cos_min": 0.646,
+   "cos_max": 0.693,
    "cross_college": false,
    "shared_terms": [
     "mixture",
     "manufacturer",
     "coating",
     "consistency",
-    "highlight",
     "finishing"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M9147",
-     "title": "ESL Skill Review, Beginning High",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "North Orange Continuing Education",
-      "North Orange Continuing Education Credit"
-     ]
-    },
-    {
-     "id": "ESOL M9152",
-     "title": "ESL Skill Review, Beginning Literacy",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "North Orange Continuing Education",
-      "North Orange Continuing Education Credit"
-     ]
-    },
-    {
-     "id": "ESOL M9153",
-     "title": "ESL Skill Review, Beginning Low",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "North Orange Continuing Education",
-      "North Orange Continuing Education Credit"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.602,
-   "cos_max": 0.693,
-   "cross_college": false,
-   "shared_terms": [
-    "reinforcing",
-    "immigrant",
-    "adult",
-    "structures",
-    "needs",
-    "vocabulary"
    ]
   },
   {
@@ -6051,8 +5466,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.693,
-   "cos_max": 0.693,
+   "cos_min": 0.692,
+   "cos_max": 0.692,
    "cross_college": false,
    "shared_terms": [
     "discussing",
@@ -6084,168 +5499,15 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.692,
-   "cos_max": 0.692,
+   "cos_min": 0.684,
+   "cos_max": 0.684,
    "cross_college": false,
    "shared_terms": [
     "interactively",
     "independently",
     "guided",
-    "hands",
-    "developing"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M9116",
-     "title": "Advanced High",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Santa Ana College",
-      "Santiago Canyon College"
-     ]
-    },
-    {
-     "id": "ESOL M9120",
-     "title": "Advanced Low",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Santa Ana College",
-      "Santiago Canyon College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.686,
-   "cos_max": 0.686,
-   "cross_college": false,
-   "shared_terms": [
-    "granted",
-    "informational",
-    "elective",
-    "civic",
-    "passing",
-    "workforce"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLIT M1014",
-     "title": "Intermediate Conversational Italian",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "City College of San Francisco",
-      "El Camino College"
-     ]
-    },
-    {
-     "id": "FLSP M1066",
-     "title": "Intermediate Conversational Spanish",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "American River College",
-      "Butte College",
-      "Citrus College",
-      "City College of San Francisco",
-      "Compton College",
-      "Cosumnes River College",
-      "El Camino College",
-      "Irvine Valley College",
-      "Merritt College",
-      "Sacramento City College",
-      "Saddleback College",
-      "Sierra College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.682,
-   "cos_max": 0.682,
-   "cross_college": false,
-   "shared_terms": [
-    "conversational",
-    "daily",
-    "fluency",
-    "pronunciation",
-    "increase",
-    "oral"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M9087",
-     "title": "ESL for Acting",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "North Orange Continuing Education",
-      "North Orange Continuing Education Credit"
-     ]
-    },
-    {
-     "id": "ESOL M9191",
-     "title": "Drama for Communication",
-     "units": 0.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "North Orange Continuing Education",
-      "North Orange Continuing Education Credit"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.681,
-   "cos_max": 0.681,
-   "cross_college": false,
-   "shared_terms": [
-    "imagined",
-    "norms",
-    "confidence",
-    "performances",
-    "pronunciation",
-    "speaking"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ETHS M1018",
-     "title": "Adapted Physical Exercise",
-     "units": 1.0,
-     "disc": "Ethnic Studies",
-     "colleges": [
-      "Cuyamaca College",
-      "Grossmont College",
-      "Victor Valley College"
-     ]
-    },
-    {
-     "id": "PEDS M1031",
-     "title": "Advanced Adapted Physical Exercise",
-     "units": 1.0,
-     "disc": "Physical Education Disabled Students",
-     "colleges": [
-      "Grossmont College",
-      "Victor Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.679,
-   "cos_max": 0.679,
-   "cross_college": false,
-   "shared_terms": [
-    "postural",
-    "relaxation",
-    "maintain",
-    "fitness"
+    "developing",
+    "hands"
    ]
   },
   {
@@ -6274,36 +5536,39 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.679,
-   "cos_max": 0.679,
+   "cos_min": 0.682,
+   "cos_max": 0.682,
    "cross_college": false,
    "shared_terms": [
     "suspended",
     "drywall",
     "ceilings",
-    "ceiling",
     "square",
+    "ceiling",
     "suspension"
    ]
   },
   {
    "members": [
     {
-     "id": "ESOL M1202",
-     "title": "ESL for Child Development: Domains 2",
-     "units": 3.0,
-     "disc": "English as a Second Language",
+     "id": "ETHS M1018",
+     "title": "Adapted Physical Exercise",
+     "units": 1.0,
+     "disc": "Ethnic Studies",
      "colleges": [
-      "Mission College"
+      "Cuyamaca College",
+      "Grossmont College",
+      "Victor Valley College"
      ]
     },
     {
-     "id": "ESOL M1203",
-     "title": "ESL for Child Development: Factors",
-     "units": 3.0,
-     "disc": "English as a Second Language",
+     "id": "PEDS M1031",
+     "title": "Advanced Adapted Physical Exercise",
+     "units": 1.0,
+     "disc": "Physical Education Disabled Students",
      "colleges": [
-      "Mission College"
+      "Grossmont College",
+      "Victor Valley College"
      ]
     }
    ],
@@ -6312,11 +5577,10 @@
    "cos_max": 0.678,
    "cross_college": false,
    "shared_terms": [
-    "nce",
-    "crosslisted",
-    "describe",
-    "identify",
-    "written"
+    "postural",
+    "relaxation",
+    "maintain",
+    "fitness"
    ]
   },
   {
@@ -6350,7 +5614,7 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.604,
+   "cos_min": 0.6,
    "cos_max": 0.677,
    "cross_college": false,
    "shared_terms": [
@@ -6360,46 +5624,6 @@
     "staff",
     "association",
     "certified"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "IDST M9099",
-     "title": "Language Arts",
-     "units": 0.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "College of the Siskiyous",
-      "El Camino College",
-      "Pasadena City College"
-     ]
-    },
-    {
-     "id": "IDST M9301",
-     "title": "Mathematics",
-     "units": 0.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Chabot College",
-      "El Camino College",
-      "Merritt College",
-      "Pasadena City College",
-      "San Diego College of Continuing Education",
-      "San Diego College of Continuing Education Credit"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.672,
-   "cos_max": 0.672,
-   "cross_college": false,
-   "shared_terms": [
-    "ahsd",
-    "advancement",
-    "ged",
-    "diploma",
-    "educational"
    ]
   },
   {
@@ -6432,7 +5656,7 @@
     "ordinances",
     "comparison",
     "completing",
-    "along",
+    "international",
     "code",
     "construction"
    ]
@@ -6440,136 +5664,82 @@
   {
    "members": [
     {
-     "id": "MACH M1007",
-     "title": "Advanced Individual Projects",
-     "units": 2.0,
-     "disc": "Machine Tool Technology",
+     "id": "FREN M1015",
+     "title": "High-Beginning French",
+     "units": 5.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "Chabot College"
+      "Clovis Community College",
+      "Fresno City College",
+      "Reedley College"
      ]
     },
     {
-     "id": "MACH M1034",
-     "title": "Geometric Dimension and Tolerancing",
-     "units": 2.0,
-     "disc": "Machine Tool Technology",
+     "id": "JAPN M1032",
+     "title": "Beginning Japanese",
+     "units": 5.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "Chabot College"
+      "Chabot College",
+      "Fresno City College",
+      "Irvine Valley College",
+      "Santa Barbara City College",
+      "Southwestern College",
+      "West Valley College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.664,
-   "cos_max": 0.664,
+   "cos_min": 0.667,
+   "cos_max": 0.667,
    "cross_college": false,
    "shared_terms": [
-    "appm",
-    "mtt",
-    "apprenticeship",
-    "completed"
+    "authentic",
+    "interact",
+    "acquisition",
+    "context",
+    "language",
+    "cultural"
    ]
   },
   {
    "members": [
     {
-     "id": "ELEC M1004",
-     "title": "Grounding Systems, Advanced Blueprints and Specifications, Motor Design and Installation, and National Electric Code",
-     "units": 3.5,
-     "disc": "Electricity",
+     "id": "IDST M9099",
+     "title": "Language Arts",
+     "units": 0.0,
+     "disc": "Interdisciplinary Studies",
      "colleges": [
-      "Norco College"
+      "College of the Siskiyous",
+      "El Camino College",
+      "Pasadena City College"
      ]
     },
     {
-     "id": "ELEC M1009",
-     "title": "Electrician Blueprint Reading with Code Applications for National Electrical Code (NEC)",
-     "units": 3.5,
-     "disc": "Electricity",
+     "id": "IDST M9301",
+     "title": "Mathematics",
+     "units": 0.0,
+     "disc": "Interdisciplinary Studies",
      "colleges": [
-      "Norco College"
-     ]
-    },
-    {
-     "id": "ELEC M1010",
-     "title": "Digital Logic Circuits, Conductor Characteristics, Applications, and National Electric Code (NEC)",
-     "units": 3.5,
-     "disc": "Electricity",
-     "colleges": [
-      "Norco College"
-     ]
-    }
-   ],
-   "n": 3,
-   "cos_min": 0.649,
-   "cos_max": 0.664,
-   "cross_college": false,
-   "shared_terms": [
-    "elc",
-    "ele",
-    "indentured",
-    "blueprints",
-    "code",
-    "national"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLIT M1015",
-     "title": "Conversational Italian",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Citrus College",
-      "College of Marin",
-      "College of the Canyons",
-      "Grossmont College",
-      "Los Angeles Pierce College",
-      "Mt. San Antonio College",
-      "Santa Monica College"
-     ]
-    },
-    {
-     "id": "FLSP M1067",
-     "title": "Conversational Spanish",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "College of Marin",
-      "Contra Costa College",
-      "Cuyamaca College",
-      "Cypress College",
-      "East Los Angeles College",
-      "Fullerton College",
-      "Gavilan College",
-      "Grossmont College",
-      "Los Angeles City College",
-      "Los Angeles Southwest College",
-      "Mt. San Antonio College",
-      "Napa Valley College",
-      "Orange Coast College",
-      "Porterville College",
-      "San Jose City College",
-      "Santa Monica College",
-      "Solano Community College",
-      "Ventura College",
-      "Victor Valley College",
-      "West Los Angeles College",
-      "Yuba College"
+      "Chabot College",
+      "El Camino College",
+      "Merritt College",
+      "Pasadena City College",
+      "San Diego College of Continuing Education",
+      "San Diego College of Continuing Education Credit"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.664,
-   "cos_max": 0.664,
+   "cos_min": 0.665,
+   "cos_max": 0.665,
    "cross_college": false,
    "shared_terms": [
-    "except",
-    "colloquial",
-    "professor",
-    "difficulty",
-    "cases",
-    "determined"
+    "ahsd",
+    "advancement",
+    "ged",
+    "diploma",
+    "educational"
    ]
   },
   {
@@ -6656,7 +5826,7 @@
    ],
    "n": 3,
    "cos_min": 0.659,
-   "cos_max": 0.663,
+   "cos_max": 0.664,
    "cross_college": false,
    "shared_terms": [
     "supplement",
@@ -6668,107 +5838,135 @@
   {
    "members": [
     {
-     "id": "ESOL M1321",
-     "title": "High Intermediate Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
+     "id": "MACH M1007",
+     "title": "Advanced Individual Projects",
+     "units": 2.0,
+     "disc": "Machine Tool Technology",
      "colleges": [
-      "Allan Hancock College",
+      "Chabot College"
+     ]
+    },
+    {
+     "id": "MACH M1034",
+     "title": "Geometric Dimension and Tolerancing",
+     "units": 2.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.663,
+   "cos_max": 0.663,
+   "cross_college": false,
+   "shared_terms": [
+    "appm",
+    "mtt",
+    "apprenticeship",
+    "completed"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ELEC M1004",
+     "title": "Grounding Systems, Advanced Blueprints and Specifications, Motor Design and Installation, and National Electric Code",
+     "units": 3.5,
+     "disc": "Electricity",
+     "colleges": [
+      "Norco College"
+     ]
+    },
+    {
+     "id": "ELEC M1009",
+     "title": "Electrician Blueprint Reading with Code Applications for National Electrical Code (NEC)",
+     "units": 3.5,
+     "disc": "Electricity",
+     "colleges": [
+      "Norco College"
+     ]
+    },
+    {
+     "id": "ELEC M1010",
+     "title": "Digital Logic Circuits, Conductor Characteristics, Applications, and National Electric Code (NEC)",
+     "units": 3.5,
+     "disc": "Electricity",
+     "colleges": [
+      "Norco College"
+     ]
+    }
+   ],
+   "n": 3,
+   "cos_min": 0.645,
+   "cos_max": 0.661,
+   "cross_college": false,
+   "shared_terms": [
+    "elc",
+    "ele",
+    "indentured",
+    "blueprints",
+    "code",
+    "national"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ITAL M1015",
+     "title": "Conversational Italian",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Citrus College",
+      "College of Marin",
+      "College of the Canyons",
+      "Grossmont College",
+      "Los Angeles Pierce College",
+      "Mt. San Antonio College",
+      "Santa Monica College"
+     ]
+    },
+    {
+     "id": "SPAN M1067",
+     "title": "Conversational Spanish",
+     "units": 3.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "College of Marin",
+      "Contra Costa College",
+      "Cuyamaca College",
+      "Cypress College",
+      "East Los Angeles College",
+      "Fullerton College",
+      "Gavilan College",
+      "Grossmont College",
+      "Los Angeles City College",
+      "Los Angeles Southwest College",
+      "Mt. San Antonio College",
+      "Napa Valley College",
+      "Orange Coast College",
+      "Porterville College",
+      "San Jose City College",
+      "Santa Monica College",
+      "Solano Community College",
+      "Ventura College",
+      "Victor Valley College",
+      "West Los Angeles College",
       "Yuba College"
      ]
-    },
-    {
-     "id": "IDST M1136",
-     "title": "High Intermediate Reading",
-     "units": 4.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Allan Hancock College",
-      "Pasadena City College"
-     ]
     }
    ],
    "n": 2,
-   "cos_min": 0.652,
-   "cos_max": 0.652,
+   "cos_min": 0.661,
+   "cos_max": 0.661,
    "cross_college": false,
    "shared_terms": [
-    "assisted",
-    "received",
-    "per",
-    "esl"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESLN M9003",
-     "title": "Writing Summaries and Paragraphs: Academic Bridge",
-     "units": 0.0,
-     "disc": "English as a Second Language Noncredit 53412",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles Southwest College"
-     ]
-    },
-    {
-     "id": "ESLN M9004",
-     "title": "Reading and Vocabulary: Academic Bridge",
-     "units": 0.0,
-     "disc": "English as a Second Language Noncredit 53412",
-     "colleges": [
-      "East Los Angeles College",
-      "Los Angeles Southwest College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.648,
-   "cos_max": 0.648,
-   "cross_college": false,
-   "shared_terms": [
-    "cte",
-    "transition",
-    "noncredit",
-    "preparing",
-    "programs",
-    "esl"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "IDST M1137",
-     "title": "Student Leadership 2",
-     "units": 2.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Chabot College",
-      "Ohlone College"
-     ]
-    },
-    {
-     "id": "IDST M1143",
-     "title": "Introduction to Student Leadership",
-     "units": 2.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Chabot College",
-      "Glendale Community College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.647,
-   "cos_max": 0.647,
-   "cross_college": false,
-   "shared_terms": [
-    "senate",
-    "clubs",
-    "shared",
-    "governance",
-    "advocacy",
-    "meetings"
+    "except",
+    "colloquial",
+    "professor",
+    "difficulty",
+    "spoken"
    ]
   },
   {
@@ -6805,14 +6003,14 @@
     }
    ],
    "n": 3,
-   "cos_min": 0.61,
-   "cos_max": 0.646,
+   "cos_min": 0.625,
+   "cos_max": 0.656,
    "cross_college": false,
    "shared_terms": [
     "complementary",
     "polynomials",
-    "mathematics",
     "noncredit",
+    "mathematics",
     "support",
     "college"
    ]
@@ -6841,8 +6039,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.644,
-   "cos_max": 0.644,
+   "cos_min": 0.648,
+   "cos_max": 0.648,
    "cross_college": false,
    "shared_terms": [
     "ets",
@@ -6854,52 +6052,37 @@
   {
    "members": [
     {
-     "id": "BUSI M1242",
-     "title": "Communicating with People",
-     "units": 0.5,
-     "disc": "Business",
+     "id": "IDST M1137",
+     "title": "Student Leadership 2",
+     "units": 2.0,
+     "disc": "Interdisciplinary Studies",
      "colleges": [
-      "Cuesta College",
-      "Shasta College"
+      "Chabot College",
+      "Ohlone College"
      ]
     },
     {
-     "id": "MGMT M1004",
-     "title": "Team Building",
-     "units": 0.5,
-     "disc": "Management",
+     "id": "IDST M1143",
+     "title": "Introduction to Student Leadership",
+     "units": 2.0,
+     "disc": "Interdisciplinary Studies",
      "colleges": [
-      "College of the Redwoods",
-      "Columbia College",
-      "Cuesta College",
-      "Feather River College",
-      "Las Positas College",
-      "Merced College",
-      "Ohlone College",
-      "Shasta College",
-      "Taft College"
-     ]
-    },
-    {
-     "id": "OTEC M1082",
-     "title": "Communication and Team Building",
-     "units": 1.0,
-     "disc": "Office Technologies",
-     "colleges": [
-      "Shasta College"
+      "Chabot College",
+      "Glendale Community College"
      ]
     }
    ],
-   "n": 3,
-   "cos_min": 0.614,
-   "cos_max": 0.644,
+   "n": 2,
+   "cos_min": 0.646,
+   "cos_max": 0.646,
    "cross_college": false,
    "shared_terms": [
-    "nonverbal",
-    "verbal",
-    "organizations",
-    "key",
-    "communication"
+    "senate",
+    "clubs",
+    "shared",
+    "governance",
+    "advocacy",
+    "meetings"
    ]
   },
   {
@@ -6930,14 +6113,14 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.642,
-   "cos_max": 0.642,
+   "cos_min": 0.64,
+   "cos_max": 0.64,
    "cross_college": false,
    "shared_terms": [
     "plyometrics",
     "optimize",
-    "basketball",
     "athlete",
+    "basketball",
     "agility",
     "intercollegiate"
    ]
@@ -6970,10 +6153,77 @@
    "cos_max": 0.639,
    "cross_college": false,
    "shared_terms": [
-    "welders",
     "fitters",
+    "welders",
     "plumbers",
     "union"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ENGT M1022",
+     "title": "Introduction to Engineering Design 1",
+     "units": 1.5,
+     "disc": "Engineering Technology",
+     "colleges": [
+      "Compton College",
+      "El Camino College"
+     ]
+    },
+    {
+     "id": "ENGT M1025",
+     "title": "Principles of Engineering Technology 1",
+     "units": 1.5,
+     "disc": "Engineering Technology",
+     "colleges": [
+      "Compton College",
+      "El Camino College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.639,
+   "cos_max": 0.639,
+   "cross_college": false,
+   "shared_terms": [
+    "sequence",
+    "engineering",
+    "two",
+    "technology"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "PEDS M1013",
+     "title": "Adapted Cardiovascular Training",
+     "units": 0.5,
+     "disc": "Physical Education Disabled Students",
+     "colleges": [
+      "De Anza College"
+     ]
+    },
+    {
+     "id": "PEDS M1016",
+     "title": "Adapted Strength Development",
+     "units": 0.5,
+     "disc": "Physical Education Disabled Students",
+     "colleges": [
+      "De Anza College",
+      "Modesto Junior College",
+      "Skyline College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.638,
+   "cos_max": 0.638,
+   "cross_college": false,
+   "shared_terms": [
+    "affective",
+    "limitations",
+    "abilities"
    ]
   },
   {
@@ -7002,8 +6252,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.639,
-   "cos_max": 0.639,
+   "cos_min": 0.635,
+   "cos_max": 0.635,
    "cross_college": false,
    "shared_terms": [
     "fcaw",
@@ -7012,116 +6262,6 @@
     "gas",
     "metal",
     "welding"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "PEDS M1013",
-     "title": "Adapted Cardiovascular Training",
-     "units": 0.5,
-     "disc": "Physical Education Disabled Students",
-     "colleges": [
-      "De Anza College"
-     ]
-    },
-    {
-     "id": "PEDS M1016",
-     "title": "Adapted Strength Development",
-     "units": 0.5,
-     "disc": "Physical Education Disabled Students",
-     "colleges": [
-      "De Anza College",
-      "Modesto Junior College",
-      "Skyline College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.635,
-   "cos_max": 0.635,
-   "cross_college": false,
-   "shared_terms": [
-    "affective",
-    "limitations",
-    "abilities",
-    "physical"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "DENT M1101",
-     "title": "Oral Pathology",
-     "units": 2.0,
-     "disc": "Dental Technology",
-     "colleges": [
-      "Cabrillo College",
-      "Moreno Valley College",
-      "Sacramento City College"
-     ]
-    },
-    {
-     "id": "DENT M1104",
-     "title": "Periodontology",
-     "units": 2.0,
-     "disc": "Dental Technology",
-     "colleges": [
-      "Fresno City College",
-      "Moreno Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.635,
-   "cos_max": 0.635,
-   "cross_college": false,
-   "shared_terms": [
-    "deh",
-    "pathologic",
-    "hygiene",
-    "dental"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLFR M1015",
-     "title": "High-Beginning French",
-     "units": 5.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Clovis Community College",
-      "Fresno City College",
-      "Reedley College"
-     ]
-    },
-    {
-     "id": "FLJA M1007",
-     "title": "Beginning Japanese",
-     "units": 5.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Chabot College",
-      "Fresno City College",
-      "Irvine Valley College",
-      "Santa Barbara City College",
-      "Southwestern College",
-      "West Valley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.634,
-   "cos_max": 0.634,
-   "cross_college": false,
-   "shared_terms": [
-    "interact",
-    "authentic",
-    "acquisition",
-    "context",
-    "cultural",
-    "language"
    ]
   },
   {
@@ -7160,54 +6300,189 @@
   {
    "members": [
     {
-     "id": "ENGT M1022",
-     "title": "Introduction to Engineering Design 1",
-     "units": 1.5,
-     "disc": "Engineering Technology",
+     "id": "BSOT M1082",
+     "title": "Communication and Team Building",
+     "units": 1.0,
+     "disc": "Office Technologies",
      "colleges": [
-      "Compton College",
-      "El Camino College"
+      "Shasta College"
      ]
     },
     {
-     "id": "ENGT M1025",
-     "title": "Principles of Engineering Technology 1",
-     "units": 1.5,
-     "disc": "Engineering Technology",
+     "id": "BUSI M1242",
+     "title": "Communicating with People",
+     "units": 0.5,
+     "disc": "Business",
      "colleges": [
-      "Compton College",
-      "El Camino College"
+      "Cuesta College",
+      "Shasta College"
+     ]
+    },
+    {
+     "id": "MGMT M1004",
+     "title": "Team Building",
+     "units": 0.5,
+     "disc": "Management",
+     "colleges": [
+      "College of the Redwoods",
+      "Columbia College",
+      "Cuesta College",
+      "Feather River College",
+      "Las Positas College",
+      "Merced College",
+      "Ohlone College",
+      "Shasta College",
+      "Taft College"
      ]
     }
    ],
-   "n": 2,
-   "cos_min": 0.633,
+   "n": 3,
+   "cos_min": 0.628,
    "cos_max": 0.633,
    "cross_college": false,
    "shared_terms": [
-    "engineering",
-    "two",
-    "technology"
+    "nonverbal",
+    "verbal",
+    "organizations",
+    "listening",
+    "communication"
    ]
   },
   {
    "members": [
     {
-     "id": "MACH M1013",
-     "title": "Basic Toolmaking",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
+     "id": "FREN M1011",
+     "title": "Advanced French 2",
+     "units": 3.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "Chabot College"
+      "College of Marin",
+      "El Camino College",
+      "Los Angeles Pierce College",
+      "Los Angeles Valley College"
      ]
     },
     {
-     "id": "MACH M1055",
-     "title": "Production Practices",
-     "units": 4.0,
-     "disc": "Machine Tool Technology",
+     "id": "SPAN M1015",
+     "title": "Advanced Spanish 2",
+     "units": 3.0,
+     "disc": "Foreign Languages",
      "colleges": [
-      "Chabot College"
+      "College of Marin",
+      "Compton College",
+      "El Camino College",
+      "Los Angeles Mission College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.632,
+   "cos_max": 0.632,
+   "cross_college": false,
+   "shared_terms": [
+    "criticism",
+    "writers",
+    "fluency",
+    "functional",
+    "write",
+    "representative"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "DENT M1101",
+     "title": "Oral Pathology",
+     "units": 2.0,
+     "disc": "Dental Technology",
+     "colleges": [
+      "Cabrillo College",
+      "Moreno Valley College",
+      "Sacramento City College"
+     ]
+    },
+    {
+     "id": "DENT M1104",
+     "title": "Periodontology",
+     "units": 2.0,
+     "disc": "Dental Technology",
+     "colleges": [
+      "Fresno City College",
+      "Moreno Valley College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.631,
+   "cos_max": 0.631,
+   "cross_college": false,
+   "shared_terms": [
+    "deh",
+    "pathologic",
+    "hygiene",
+    "dental"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "FREN M1041",
+     "title": "French 2",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Citrus College",
+      "Cuesta College",
+      "Grossmont College",
+      "Palomar College",
+      "Rio Hondo College"
+     ]
+    },
+    {
+     "id": "JAPN M1024",
+     "title": "Japanese 2",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Bakersfield College",
+      "Citrus College",
+      "Grossmont College",
+      "Palomar College",
+      "Rio Hondo College",
+      "Riverside City College",
+      "Shasta College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.627,
+   "cos_max": 0.627,
+   "cross_college": false,
+   "shared_terms": [
+    "speak",
+    "cds",
+    "via"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "BARB M1005",
+     "title": "Barbershop and Licensure Prep",
+     "units": 4.5,
+     "disc": null,
+     "colleges": [
+      "Long Beach City College"
+     ]
+    },
+    {
+     "id": "BARB M1006",
+     "title": "Business and Barbershop Experience",
+     "units": 4.5,
+     "disc": "Barbering",
+     "colleges": [
+      "Long Beach City College",
+      "Skyline College"
      ]
     }
    ],
@@ -7216,9 +6491,12 @@
    "cos_max": 0.626,
    "cross_college": false,
    "shared_terms": [
-    "mtt",
-    "apprenticeship",
-    "completed"
+    "barbering",
+    "cosmetology",
+    "towards",
+    "subjects",
+    "continue",
+    "board"
    ]
   },
   {
@@ -7249,114 +6527,12 @@
    "cos_max": 0.626,
    "cross_college": false,
    "shared_terms": [
+    "nine",
     "campuses",
+    "holistic",
     "transformative",
     "fund",
-    "nine",
-    "holistic",
     "education"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "BARB M1005",
-     "title": "Barbershop and Licensure Prep",
-     "units": 4.5,
-     "disc": null,
-     "colleges": [
-      "Long Beach City College"
-     ]
-    },
-    {
-     "id": "BARB M1006",
-     "title": "Business and Barbershop Experience",
-     "units": 4.5,
-     "disc": "Barbering",
-     "colleges": [
-      "Long Beach City College",
-      "Skyline College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.624,
-   "cos_max": 0.624,
-   "cross_college": false,
-   "shared_terms": [
-    "barbering",
-    "cosmetology",
-    "towards",
-    "subjects",
-    "continue",
-    "board"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "HIST M9002",
-     "title": "The Roman Republic and Rise of Empire (500 BCE -14 CE)",
-     "units": 0.0,
-     "disc": "History",
-     "colleges": [
-      "Monterey Peninsula College"
-     ]
-    },
-    {
-     "id": "SOCS M9001",
-     "title": "The Roman Empire (14 - 600 CE)",
-     "units": 0.0,
-     "disc": "Social Science",
-     "colleges": [
-      "Monterey Peninsula College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.621,
-   "cos_max": 0.621,
-   "cross_college": false,
-   "shared_terms": [
-    "roman",
-    "empire",
-    "constructions",
-    "older",
-    "adults"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1054",
-     "title": "High Advanced Academic ESL",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    },
-    {
-     "id": "ESOL M1056",
-     "title": "Low-Advanced Academic ESL",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Cabrillo College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.62,
-   "cos_max": 0.62,
-   "cross_college": false,
-   "shared_terms": [
-    "improved",
-    "university",
-    "words",
-    "accuracy",
-    "usage",
-    "write"
    ]
   },
   {
@@ -7381,14 +6557,260 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.619,
-   "cos_max": 0.619,
+   "cos_min": 0.625,
+   "cos_max": 0.625,
    "cross_college": false,
    "shared_terms": [
     "rigor",
     "concurrent",
     "math",
     "support"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MACH M1013",
+     "title": "Basic Toolmaking",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    },
+    {
+     "id": "MACH M1055",
+     "title": "Production Practices",
+     "units": 4.0,
+     "disc": "Machine Tool Technology",
+     "colleges": [
+      "Chabot College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.625,
+   "cos_max": 0.625,
+   "cross_college": false,
+   "shared_terms": [
+    "mtt",
+    "apprenticeship",
+    "completed"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "HIST M9002",
+     "title": "The Roman Republic and Rise of Empire (500 BCE -14 CE)",
+     "units": 0.0,
+     "disc": "History",
+     "colleges": [
+      "Monterey Peninsula College"
+     ]
+    },
+    {
+     "id": "SOCS M9001",
+     "title": "The Roman Empire (14 - 600 CE)",
+     "units": 0.0,
+     "disc": "Social Science",
+     "colleges": [
+      "Monterey Peninsula College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.62,
+   "cos_max": 0.62,
+   "cross_college": false,
+   "shared_terms": [
+    "roman",
+    "empire",
+    "constructions",
+    "older",
+    "adults"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "THTR M1233",
+     "title": "Intermediate Musical Theatre Techniques",
+     "units": 2.0,
+     "disc": "Drama/Theater Arts",
+     "colleges": [
+      "Fullerton College",
+      "Santa Ana College"
+     ]
+    },
+    {
+     "id": "THTR M1234",
+     "title": "Intermediate Musical Theatre Workshop",
+     "units": 2.0,
+     "disc": "Drama/Theater Arts",
+     "colleges": [
+      "Fullerton College",
+      "Santa Ana College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.62,
+   "cos_max": 0.62,
+   "cross_college": false,
+   "shared_terms": [
+    "theatrical",
+    "solo",
+    "performances",
+    "theatre",
+    "musical",
+    "group"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "IDST M1006",
+     "title": "Low Intermediate Academic Reading and Composition",
+     "units": 7.0,
+     "disc": "Interdisciplinary Studies",
+     "colleges": [
+      "Modesto Junior College"
+     ]
+    },
+    {
+     "id": "IDST M1007",
+     "title": "Intermediate Academic Reading and Composition",
+     "units": 7.0,
+     "disc": "Interdisciplinary Studies",
+     "colleges": [
+      "Modesto Junior College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.618,
+   "cos_max": 0.618,
+   "cross_college": false,
+   "shared_terms": [
+    "cited",
+    "summary",
+    "words",
+    "compositions"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ATHL M1084",
+     "title": "Off Season Conditioning for Softball",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "American River College",
+      "Cosumnes River College",
+      "Folsom Lake College",
+      "Merced College",
+      "Reedley College",
+      "Sacramento City College"
+     ]
+    },
+    {
+     "id": "ATHL M1300",
+     "title": "Pre-Season Conditioning for Softball",
+     "units": 0.5,
+     "disc": "Kinesiology",
+     "colleges": [
+      "Cosumnes River College",
+      "Folsom Lake College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.613,
+   "cos_max": 0.613,
+   "cross_college": false,
+   "shared_terms": [
+    "softball",
+    "optimize",
+    "athlete",
+    "reduce",
+    "agility"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "MUSI M9011",
+     "title": "Jazz Ensemble for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Cabrillo College",
+      "Riverside City College"
+     ]
+    },
+    {
+     "id": "MUSI M9012",
+     "title": "Vocal Jazz Ensemble for Older Adults",
+     "units": 0.0,
+     "disc": "Music",
+     "colleges": [
+      "Cabrillo College",
+      "Las Positas College",
+      "Mendocino College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.611,
+   "cos_max": 0.611,
+   "cross_college": false,
+   "shared_terms": [
+    "performs",
+    "proficient",
+    "arranged",
+    "demonstrated"
+   ]
+  },
+  {
+   "members": [
+    {
+     "id": "ARAB M1009",
+     "title": "Arabic 3",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Cuyamaca College",
+      "Grossmont College",
+      "Palomar College"
+     ]
+    },
+    {
+     "id": "JAPN M1026",
+     "title": "Japanese 3",
+     "units": 5.0,
+     "disc": "Foreign Languages",
+     "colleges": [
+      "Bakersfield College",
+      "Grossmont College",
+      "Palomar College",
+      "Riverside City College",
+      "Shasta College"
+     ]
+    }
+   ],
+   "n": 2,
+   "cos_min": 0.61,
+   "cos_max": 0.61,
+   "cross_college": false,
+   "shared_terms": [
+    "largely",
+    "authentic",
+    "culturally",
+    "conducted",
+    "third",
+    "readings"
    ]
   },
   {
@@ -7426,237 +6848,14 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.619,
-   "cos_max": 0.619,
+   "cos_min": 0.61,
+   "cos_max": 0.61,
    "cross_college": false,
    "shared_terms": [
     "reliance",
     "signing",
     "deaf",
     "community"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLFR M1041",
-     "title": "French 2",
-     "units": 5.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Citrus College",
-      "Cuesta College",
-      "Grossmont College",
-      "Palomar College",
-      "Rio Hondo College"
-     ]
-    },
-    {
-     "id": "FLJA M1024",
-     "title": "Japanese 2",
-     "units": 5.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "Bakersfield College",
-      "Citrus College",
-      "Grossmont College",
-      "Palomar College",
-      "Rio Hondo College",
-      "Riverside City College",
-      "Shasta College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.619,
-   "cos_max": 0.619,
-   "cross_college": false,
-   "shared_terms": [
-    "cds",
-    "comparisons",
-    "via"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ATHL M1084",
-     "title": "Off Season Conditioning for Softball",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "American River College",
-      "Cosumnes River College",
-      "Folsom Lake College",
-      "Merced College",
-      "Reedley College",
-      "Sacramento City College"
-     ]
-    },
-    {
-     "id": "ATHL M1300",
-     "title": "Pre-Season Conditioning for Softball",
-     "units": 0.5,
-     "disc": "Kinesiology",
-     "colleges": [
-      "Cosumnes River College",
-      "Folsom Lake College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.615,
-   "cos_max": 0.615,
-   "cross_college": false,
-   "shared_terms": [
-    "softball",
-    "optimize",
-    "reduce",
-    "athlete",
-    "agility"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "IDST M1006",
-     "title": "Low Intermediate Academic Reading and Composition",
-     "units": 7.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Modesto Junior College"
-     ]
-    },
-    {
-     "id": "IDST M1007",
-     "title": "Intermediate Academic Reading and Composition",
-     "units": 7.0,
-     "disc": "Interdisciplinary Studies",
-     "colleges": [
-      "Modesto Junior College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.615,
-   "cos_max": 0.615,
-   "cross_college": false,
-   "shared_terms": [
-    "cited",
-    "summary",
-    "compositions",
-    "words"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "THEA M1233",
-     "title": "Intermediate Musical Theatre Techniques",
-     "units": 2.0,
-     "disc": "Drama/Theater Arts",
-     "colleges": [
-      "Fullerton College",
-      "Santa Ana College"
-     ]
-    },
-    {
-     "id": "THEA M1234",
-     "title": "Intermediate Musical Theatre Workshop",
-     "units": 2.0,
-     "disc": "Drama/Theater Arts",
-     "colleges": [
-      "Fullerton College",
-      "Santa Ana College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.614,
-   "cos_max": 0.614,
-   "cross_college": false,
-   "shared_terms": [
-    "solo",
-    "theatrical",
-    "performances",
-    "theatre",
-    "musical",
-    "group"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "MUSI M9011",
-     "title": "Jazz Ensemble for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Cabrillo College",
-      "Riverside City College"
-     ]
-    },
-    {
-     "id": "MUSI M9012",
-     "title": "Vocal Jazz Ensemble for Older Adults",
-     "units": 0.0,
-     "disc": "Music",
-     "colleges": [
-      "Cabrillo College",
-      "Las Positas College",
-      "Mendocino College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.612,
-   "cos_max": 0.612,
-   "cross_college": false,
-   "shared_terms": [
-    "performs",
-    "proficient",
-    "arranged",
-    "demonstrated"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "FLFR M1011",
-     "title": "Advanced French 2",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "College of Marin",
-      "El Camino College",
-      "Los Angeles Pierce College",
-      "Los Angeles Valley College"
-     ]
-    },
-    {
-     "id": "FLSP M1015",
-     "title": "Advanced Spanish 2",
-     "units": 3.0,
-     "disc": "Foreign Languages",
-     "colleges": [
-      "College of Marin",
-      "Compton College",
-      "El Camino College",
-      "Los Angeles Mission College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.61,
-   "cos_max": 0.61,
-   "cross_college": false,
-   "shared_terms": [
-    "criticism",
-    "writers",
-    "functional",
-    "representative",
-    "critically",
-    "acquire"
    ]
   },
   {
@@ -7685,48 +6884,16 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.609,
-   "cos_max": 0.609,
-   "cross_college": false,
-   "shared_terms": [
-    "icc",
-    "petition",
-    "admissions",
-    "council",
-    "published",
-    "repeat"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "ESOL M1278",
-     "title": "Fundamentals of ESL Reading and Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Barstow Community College"
-     ]
-    },
-    {
-     "id": "ESOL M1289",
-     "title": "Intermediate ESL Reading and Writing",
-     "units": 4.0,
-     "disc": "English as a Second Language",
-     "colleges": [
-      "Barstow Community College"
-     ]
-    }
-   ],
-   "n": 2,
    "cos_min": 0.607,
    "cos_max": 0.607,
    "cross_college": false,
    "shared_terms": [
-    "connecting",
-    "takes",
-    "earn",
-    "reading"
+    "icc",
+    "petition",
+    "council",
+    "admissions",
+    "published",
+    "repeat"
    ]
   },
   {
@@ -7755,8 +6922,8 @@
     }
    ],
    "n": 2,
-   "cos_min": 0.606,
-   "cos_max": 0.606,
+   "cos_min": 0.607,
+   "cos_max": 0.607,
    "cross_college": false,
    "shared_terms": [
     "met",
@@ -7770,77 +6937,31 @@
   {
    "members": [
     {
-     "id": "ECED M1050",
-     "title": "Creative Art for Young Children",
-     "units": 3.0,
-     "disc": "Child Development/Early Childhood Education",
+     "id": "COUN M9010",
+     "title": "Latine First Year Experience – Career and Life Planning",
+     "units": 0.0,
+     "disc": "Counseling",
      "colleges": [
-      "Compton College",
-      "El Camino College"
+      "San Joaquin Delta College"
      ]
     },
     {
-     "id": "ECED M1056",
-     "title": "Language Arts for Young Children",
-     "units": 3.0,
-     "disc": "Child Development/Early Childhood Education",
+     "id": "COUN M9013",
+     "title": "Latine First Year Experience – College Success",
+     "units": 0.0,
+     "disc": "Counseling",
      "colleges": [
-      "Compton College",
-      "El Camino College"
+      "San Joaquin Delta College"
      ]
     }
    ],
    "n": 2,
-   "cos_min": 0.603,
-   "cos_max": 0.603,
+   "cos_min": 0.606,
+   "cos_max": 0.606,
    "cross_college": false,
    "shared_terms": [
-    "adapting",
-    "teachers",
-    "children"
-   ]
-  },
-  {
-   "members": [
-    {
-     "id": "SLNA M1008",
-     "title": "High-Beginning American Sign Language",
-     "units": 4.0,
-     "disc": "Sign Language, American",
-     "colleges": [
-      "Clovis Community College",
-      "Fresno City College",
-      "Madera College",
-      "Merced College",
-      "Reedley College"
-     ]
-    },
-    {
-     "id": "SLNA M1011",
-     "title": "Beginning American Sign Language",
-     "units": 4.0,
-     "disc": "Sign Language, American",
-     "colleges": [
-      "Clovis Community College",
-      "College of the Siskiyous",
-      "Fresno City College",
-      "Madera College",
-      "Merced College",
-      "Porterville College",
-      "Reedley College"
-     ]
-    }
-   ],
-   "n": 2,
-   "cos_min": 0.6,
-   "cos_max": 0.6,
-   "cross_college": false,
-   "shared_terms": [
-    "asl",
-    "sign",
-    "deaf",
-    "community",
-    "language"
+    "latine",
+    "noncredit"
    ]
   }
  ]

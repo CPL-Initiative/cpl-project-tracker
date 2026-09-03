@@ -2,7 +2,7 @@
 title: Z-band retirement — DRY-RUN (items 20 and 21 of 2026-09-03)
 date: 2026-09-03
 session: 224 (SkyTune)
-status: DRY-RUN — nothing mutated; awaiting Sam's review before any apply
+status: APPLIED 2026-09-03T20:19:27Z — see validation.md; the readings were ruled yes to all on 2026-09-03 (materialized, card 12)
 tags: [remint, dry-run, z-scheme, m-id, identity, rule-7]
 artifacts:
   - kb/zband_retire_out/2026-09-03/alias_map.json

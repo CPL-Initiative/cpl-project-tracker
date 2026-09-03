@@ -2690,27 +2690,6 @@
       ],
       "colleges_offering_count": 3
     },
-    "AGRI M1002": {
-      "identity_system": "M-ID",
-      "title": "Agriculture, Environment and Society",
-      "discipline": "Agriculture",
-      "confidence": 0.72,
-      "subject_spread": 4,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Bakersfield College",
-        "College of the Redwoods",
-        "Merced College",
-        "Modesto Junior College",
-        "Victor Valley College"
-      ],
-      "colleges_offering_count": 5
-    },
     "AGRI M1003": {
       "identity_system": "M-ID",
       "title": "Introduction to Agriculture Education",
@@ -19505,83 +19484,6 @@
       ],
       "colleges_offering_count": 7
     },
-    "CISC M1001": {
-      "identity_system": "M-ID",
-      "title": "C/C++ Programming",
-      "discipline": "Computer Information Systems",
-      "confidence": 0.68,
-      "subject_spread": 2,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Jose City College"
-      ],
-      "colleges_offering_count": 4
-    },
-    "CISC M1014": {
-      "identity_system": "M-ID",
-      "title": "Introduction to Computer and Information Sciences",
-      "discipline": "Computer Information Systems",
-      "confidence": 0.68,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "San Diego City College",
-        "San Diego Mesa College"
-      ],
-      "colleges_offering_count": 2
-    },
-    "CISC M1021": {
-      "identity_system": "M-ID",
-      "title": "Linux Operating System",
-      "discipline": "Computer Information Systems",
-      "confidence": 0.85,
-      "subject_spread": 3,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College",
-        "Cosumnes River College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Mt. San Antonio College",
-        "Sacramento City College"
-      ],
-      "colleges_offering_count": 6
-    },
-    "CISC M10AM": {
-      "identity_system": "M-ID",
-      "title": "Introduction to Systems & Network Cybersecurity",
-      "discipline": "Computer Information Systems",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Chaffey College"
-      ],
-      "colleges_offering_count": 1
-    },
     "CISH M10AA": {
       "identity_system": "M-ID",
       "title": "Microcomputer Hardware",
@@ -21087,21 +20989,21 @@
     },
     "COMP M1001": {
       "identity_system": "M-ID",
-      "title": "AWS ACADEMY CLOUD FOUNDATIONS",
-      "discipline": "Computer Science",
-      "confidence": 0.85,
-      "subject_spread": 3,
+      "title": "C/C++ Programming",
+      "discipline": "Computer Information Systems",
+      "confidence": 0.68,
+      "subject_spread": 2,
       "over_merged": false,
       "is_singleton": false,
       "credit_status": "Credit",
-      "credit_status_mixed": true,
-      "top_code_mixed": true,
+      "credit_status_mixed": false,
+      "top_code_mixed": false,
       "noncredit_category_mixed": false,
       "colleges_offering": [
-        "Palomar College",
-        "Riverside City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit"
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Jose City College"
       ],
       "colleges_offering_count": 4
     },
@@ -23902,25 +23804,6 @@
         "Los Medanos College"
       ],
       "colleges_offering_count": 2
-    },
-    "CSIS M1014": {
-      "identity_system": "M-ID",
-      "title": "Introduction to UNIX and Linux",
-      "discipline": "Computer Information Systems",
-      "confidence": 0.85,
-      "subject_spread": 3,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": true,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Diablo Valley College",
-        "Monterey Peninsula College",
-        "Sierra College"
-      ],
-      "colleges_offering_count": 3
     },
     "CSNT M1001": {
       "identity_system": "M-ID",
@@ -45791,28 +45674,6 @@
       ],
       "colleges_offering_count": 1
     },
-    "OTEC M1001": {
-      "identity_system": "M-ID",
-      "title": "Computer Basics",
-      "discipline": "Office Technologies",
-      "confidence": 0.72,
-      "subject_spread": 5,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": true,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": true,
-      "colleges_offering": [
-        "Cerro Coso Community College",
-        "Madera College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Reedley College",
-        "Shasta College"
-      ],
-      "colleges_offering_count": 6
-    },
     "PE M1030": {
       "identity_system": "M-ID",
       "title": "Basic Self Defense",
@@ -50439,119 +50300,6 @@
       ],
       "colleges_offering_count": 6
     },
-    "THEA M1057": {
-      "identity_system": "M-ID",
-      "title": "Make-Up",
-      "discipline": "Theater Arts",
-      "confidence": 0.85,
-      "subject_spread": 2,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Golden West College",
-        "Orange Coast College",
-        "Santa Monica College"
-      ],
-      "colleges_offering_count": 3
-    },
-    "THEA M1058": {
-      "identity_system": "M-ID",
-      "title": "Motion Picture Performance Production",
-      "discipline": "Theater Arts",
-      "confidence": 0.68,
-      "subject_spread": 2,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": true,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Santa Ana College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "THEA M1069": {
-      "identity_system": "M-ID",
-      "title": "Rehearsal and Performance in Production",
-      "discipline": "Theater Arts",
-      "confidence": 0.72,
-      "subject_spread": 4,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": true,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": true,
-      "colleges_offering": [
-        "Butte College",
-        "Citrus College",
-        "Merced College",
-        "Santa Ana College",
-        "Solano Community College"
-      ],
-      "colleges_offering_count": 5
-    },
-    "THEA M1082": {
-      "identity_system": "M-ID",
-      "title": "Single Camera Production",
-      "discipline": "Theater Arts",
-      "confidence": 0.72,
-      "subject_spread": 6,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Citrus College",
-        "Gavilan College",
-        "Los Angeles Valley College",
-        "Porterville College",
-        "San Diego City College",
-        "West Valley College"
-      ],
-      "colleges_offering_count": 6
-    },
-    "THEA M10RU": {
-      "identity_system": "M-ID",
-      "title": "Theatre Design-Lighting",
-      "discipline": "Theater Arts",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Chaffey College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "THEA M10RZ": {
-      "identity_system": "M-ID",
-      "title": "Theatre History: 1700-present",
-      "discipline": "Theater Arts",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "Chaffey College"
-      ],
-      "colleges_offering_count": 1
-    },
     "THTR 111": {
       "identity_system": "C-ID",
       "title": null,
@@ -52107,6 +51855,238 @@
         "Palomar College"
       ],
       "colleges_offering_count": 3
+    },
+    "AGAS M1002": {
+      "identity_system": "M-ID",
+      "title": "Agriculture, Environment and Society",
+      "discipline": "Agriculture",
+      "confidence": 0.72,
+      "subject_spread": 4,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Bakersfield College",
+        "College of the Redwoods",
+        "Merced College",
+        "Modesto Junior College",
+        "Victor Valley College"
+      ],
+      "colleges_offering_count": 5
+    },
+    "COMP M1014": {
+      "identity_system": "M-ID",
+      "title": "Introduction to Computer and Information Sciences",
+      "discipline": "Computer Information Systems",
+      "confidence": 0.68,
+      "subject_spread": 1,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": false,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "San Diego City College",
+        "San Diego Mesa College"
+      ],
+      "colleges_offering_count": 2
+    },
+    "COMP M1021": {
+      "identity_system": "M-ID",
+      "title": "Linux Operating System",
+      "discipline": "Computer Information Systems",
+      "confidence": 0.85,
+      "subject_spread": 3,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "American River College",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Mt. San Antonio College",
+        "Sacramento City College"
+      ],
+      "colleges_offering_count": 6
+    },
+    "COMP M10AM": {
+      "identity_system": "M-ID",
+      "title": "Introduction to Systems & Network Cybersecurity",
+      "discipline": "Computer Information Systems",
+      "confidence": null,
+      "subject_spread": 1,
+      "over_merged": false,
+      "is_singleton": true,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": false,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Chaffey College"
+      ],
+      "colleges_offering_count": 1
+    },
+    "ITIS M1014": {
+      "identity_system": "M-ID",
+      "title": "Introduction to UNIX and Linux",
+      "discipline": "Computer Information Systems",
+      "confidence": 0.85,
+      "subject_spread": 3,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": true,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Diablo Valley College",
+        "Monterey Peninsula College",
+        "Sierra College"
+      ],
+      "colleges_offering_count": 3
+    },
+    "BSOT M1001": {
+      "identity_system": "M-ID",
+      "title": "Computer Basics",
+      "discipline": "Office Technologies",
+      "confidence": 0.72,
+      "subject_spread": 5,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": true,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": true,
+      "colleges_offering": [
+        "Cerro Coso Community College",
+        "Madera College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Reedley College",
+        "Shasta College"
+      ],
+      "colleges_offering_count": 6
+    },
+    "THTR M1057": {
+      "identity_system": "M-ID",
+      "title": "Make-Up",
+      "discipline": "Theater Arts",
+      "confidence": 0.85,
+      "subject_spread": 2,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Golden West College",
+        "Orange Coast College",
+        "Santa Monica College"
+      ],
+      "colleges_offering_count": 3
+    },
+    "THTR M1058": {
+      "identity_system": "M-ID",
+      "title": "Motion Picture Performance Production",
+      "discipline": "Theater Arts",
+      "confidence": 0.68,
+      "subject_spread": 2,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": true,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Santa Ana College"
+      ],
+      "colleges_offering_count": 1
+    },
+    "THTR M1069": {
+      "identity_system": "M-ID",
+      "title": "Rehearsal and Performance in Production",
+      "discipline": "Theater Arts",
+      "confidence": 0.72,
+      "subject_spread": 4,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": true,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": true,
+      "colleges_offering": [
+        "Butte College",
+        "Citrus College",
+        "Merced College",
+        "Santa Ana College",
+        "Solano Community College"
+      ],
+      "colleges_offering_count": 5
+    },
+    "THTR M1082": {
+      "identity_system": "M-ID",
+      "title": "Single Camera Production",
+      "discipline": "Theater Arts",
+      "confidence": 0.72,
+      "subject_spread": 6,
+      "over_merged": false,
+      "is_singleton": false,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": true,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Citrus College",
+        "Gavilan College",
+        "Los Angeles Valley College",
+        "Porterville College",
+        "San Diego City College",
+        "West Valley College"
+      ],
+      "colleges_offering_count": 6
+    },
+    "THTR M10RU": {
+      "identity_system": "M-ID",
+      "title": "Theatre Design-Lighting",
+      "discipline": "Theater Arts",
+      "confidence": null,
+      "subject_spread": 1,
+      "over_merged": false,
+      "is_singleton": true,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": false,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Chaffey College"
+      ],
+      "colleges_offering_count": 1
+    },
+    "THTR M10RZ": {
+      "identity_system": "M-ID",
+      "title": "Theatre History: 1700-present",
+      "discipline": "Theater Arts",
+      "confidence": null,
+      "subject_spread": 1,
+      "over_merged": false,
+      "is_singleton": true,
+      "credit_status": "Credit",
+      "credit_status_mixed": false,
+      "top_code_mixed": false,
+      "noncredit_category_mixed": false,
+      "colleges_offering": [
+        "Chaffey College"
+      ],
+      "colleges_offering_count": 1
     }
   },
   "articulations": [
@@ -58647,7 +58627,7 @@
       "_remint_from": "M-ID AG 334"
     },
     {
-      "course_id": "AGRI M10EH",
+      "course_id": "AGMA M10EH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59441,7 +59421,7 @@
       "_remint_from": "M-ID AGM 112"
     },
     {
-      "course_id": "AGRI M10AW",
+      "course_id": "AGMA M10AW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59561,7 +59541,7 @@
       "_remint_from": "M-ID AGM 120"
     },
     {
-      "course_id": "AGRI M10NY",
+      "course_id": "AGMA M10NY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59591,7 +59571,7 @@
       "_remint_from": "M-ID AGM 122"
     },
     {
-      "course_id": "AGRI M10RF",
+      "course_id": "AGMA M10RF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59621,7 +59601,7 @@
       "_remint_from": "M-ID AGM 124"
     },
     {
-      "course_id": "AGRI M10RF",
+      "course_id": "AGMA M10RF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59651,7 +59631,7 @@
       "_remint_from": "M-ID AGM 124"
     },
     {
-      "course_id": "AGRI M10MP",
+      "course_id": "AGMA M10MP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59681,7 +59661,7 @@
       "_remint_from": "M-ID AGM 126"
     },
     {
-      "course_id": "AGRI M10PL",
+      "course_id": "AGMA M10PL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59711,7 +59691,7 @@
       "_remint_from": "M-ID AGM 128"
     },
     {
-      "course_id": "AGRI M10UC",
+      "course_id": "AGMA M10UC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59741,7 +59721,7 @@
       "_remint_from": "M-ID AGM 130"
     },
     {
-      "course_id": "AGRI M10UC",
+      "course_id": "AGMA M10UC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59771,7 +59751,7 @@
       "_remint_from": "M-ID AGM 130"
     },
     {
-      "course_id": "WELD M10VS",
+      "course_id": "AGMA M10VS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59801,7 +59781,7 @@
       "_remint_from": "M-ID AGM 132"
     },
     {
-      "course_id": "WELD M10VS",
+      "course_id": "AGMA M10VS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59831,7 +59811,7 @@
       "_remint_from": "M-ID AGM 132"
     },
     {
-      "course_id": "AGRI M10UK",
+      "course_id": "AGMA M10UK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59861,7 +59841,7 @@
       "_remint_from": "M-ID AGM 134"
     },
     {
-      "course_id": "AGRI M10OL",
+      "course_id": "AGMA M10OL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59891,7 +59871,7 @@
       "_remint_from": "M-ID AGM 136"
     },
     {
-      "course_id": "AGRI M10OL",
+      "course_id": "AGMA M10OL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59921,7 +59901,7 @@
       "_remint_from": "M-ID AGM 136"
     },
     {
-      "course_id": "AGRI M10VX",
+      "course_id": "AGMA M10VX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59951,7 +59931,7 @@
       "_remint_from": "M-ID AGM 138"
     },
     {
-      "course_id": "AGRI M10AB",
+      "course_id": "AGMA M10AB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -59981,7 +59961,7 @@
       "_remint_from": "M-ID AGM 140"
     },
     {
-      "course_id": "AGRI M10AE",
+      "course_id": "AGMA M10AE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -60011,7 +59991,7 @@
       "_remint_from": "M-ID AGM 142"
     },
     {
-      "course_id": "AGRI M10UB",
+      "course_id": "AGMA M10UB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -60041,7 +60021,7 @@
       "_remint_from": "M-ID AGM 144"
     },
     {
-      "course_id": "WELD M10WW",
+      "course_id": "AGMA M10WW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -60071,7 +60051,7 @@
       "_remint_from": "M-ID AGM 146"
     },
     {
-      "course_id": "WELD M10WW",
+      "course_id": "AGMA M10WW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -60101,7 +60081,7 @@
       "_remint_from": "M-ID AGM 146"
     },
     {
-      "course_id": "AGRI M10PU",
+      "course_id": "AGMA M10PU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -60131,7 +60111,7 @@
       "_remint_from": "M-ID AGM 148"
     },
     {
-      "course_id": "AGRI M10WS",
+      "course_id": "AGMA M10WS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75181,7 +75161,7 @@
       "_remint_from": "M-ID ANIM 128"
     },
     {
-      "course_id": "AGRI M1129",
+      "course_id": "AGAS M1129",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -75213,7 +75193,7 @@
       "_remint_from": "M-ID ANSC 116"
     },
     {
-      "course_id": "AGRI M10NN",
+      "course_id": "AGAS M10NN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75243,7 +75223,7 @@
       "_remint_from": "M-ID ANSC 138"
     },
     {
-      "course_id": "AGRI M10NN",
+      "course_id": "AGAS M10NN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75273,7 +75253,7 @@
       "_remint_from": "M-ID ANSC 138"
     },
     {
-      "course_id": "AGRI M10NN",
+      "course_id": "AGAS M10NN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75303,7 +75283,7 @@
       "_remint_from": "M-ID ANSC 138"
     },
     {
-      "course_id": "AGRI M10WQ",
+      "course_id": "AGAS M10WQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75333,7 +75313,7 @@
       "_remint_from": "M-ID ANSC 176"
     },
     {
-      "course_id": "AGRI M10WQ",
+      "course_id": "AGAS M10WQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75363,7 +75343,7 @@
       "_remint_from": "M-ID ANSC 176"
     },
     {
-      "course_id": "AGRI M10WQ",
+      "course_id": "AGAS M10WQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75393,7 +75373,7 @@
       "_remint_from": "M-ID ANSC 176"
     },
     {
-      "course_id": "AGRI M10JA",
+      "course_id": "AGAS M10JA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75423,7 +75403,7 @@
       "_remint_from": "M-ID ANSC 178"
     },
     {
-      "course_id": "AGRI M10FY",
+      "course_id": "AGAS M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75453,7 +75433,7 @@
       "_remint_from": "M-ID ANSC 196"
     },
     {
-      "course_id": "AGRI M10JB",
+      "course_id": "AGAS M10JB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75483,7 +75463,7 @@
       "_remint_from": "M-ID ANSC 198"
     },
     {
-      "course_id": "AGRI M10QX",
+      "course_id": "AGAS M10QX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75513,7 +75493,7 @@
       "_remint_from": "M-ID ANSC 202"
     },
     {
-      "course_id": "AGRI M10VK",
+      "course_id": "AGAS M10VK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -77264,7 +77244,7 @@
       "_remint_from": "M-ID AERO 138"
     },
     {
-      "course_id": "FLAR M1005",
+      "course_id": "ARAB M1005",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -77300,7 +77280,7 @@
       "_remint_from": "M-ID ARAB 104"
     },
     {
-      "course_id": "FLAR M1010",
+      "course_id": "ARAB M1010",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -99545,7 +99525,7 @@
       "adoption_leverage_count": 1
     },
     {
-      "course_id": "OTEC M1037",
+      "course_id": "BSOT M1037",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -99849,7 +99829,7 @@
       "_remint_from": "M-ID BOAP 108"
     },
     {
-      "course_id": "OTEC M9059",
+      "course_id": "BSOT M9059",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -100386,7 +100366,7 @@
       "adoption_leverage_count": 3
     },
     {
-      "course_id": "OTEC M10DB",
+      "course_id": "BSOT M10DB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103395,7 +103375,7 @@
       "_remint_from": "M-ID BUSMGT 114"
     },
     {
-      "course_id": "OTEC M1027",
+      "course_id": "BSOT M1027",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -103427,7 +103407,7 @@
       "_remint_from": "M-ID BA 122"
     },
     {
-      "course_id": "OTEC M10IA",
+      "course_id": "BSOT M10IA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103457,7 +103437,7 @@
       "_remint_from": "M-ID BUSTEC 134"
     },
     {
-      "course_id": "OTEC M10CB",
+      "course_id": "BSOT M10CB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103487,7 +103467,7 @@
       "_remint_from": "M-ID BUSTEC 154"
     },
     {
-      "course_id": "OTEC M10KB",
+      "course_id": "BSOT M10KB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103517,7 +103497,7 @@
       "_remint_from": "M-ID BUSTEC 156"
     },
     {
-      "course_id": "OTEC M10PF",
+      "course_id": "BSOT M10PF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103547,7 +103527,7 @@
       "_remint_from": "M-ID BUSTEC 158"
     },
     {
-      "course_id": "OTEC M10PG",
+      "course_id": "BSOT M10PG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103577,7 +103557,7 @@
       "_remint_from": "M-ID BUSTEC 160"
     },
     {
-      "course_id": "OTEC M10MX",
+      "course_id": "BSOT M10MX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103607,7 +103587,7 @@
       "_remint_from": "M-ID BUSTEC 162"
     },
     {
-      "course_id": "OTEC M10PI",
+      "course_id": "BSOT M10PI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103667,7 +103647,7 @@
       "_remint_from": "M-ID BUSTEC 166"
     },
     {
-      "course_id": "OTEC M10MD",
+      "course_id": "BSOT M10MD",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103697,7 +103677,7 @@
       "_remint_from": "M-ID BUSTEC 170"
     },
     {
-      "course_id": "CSIS M1333",
+      "course_id": "ITIS M1333",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -103809,7 +103789,7 @@
       "_remint_from": "M-ID CS 190"
     },
     {
-      "course_id": "OTEC M1066",
+      "course_id": "BSOT M1066",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -103839,7 +103819,7 @@
       "_remint_from": "M-ID CABT 104"
     },
     {
-      "course_id": "OTEC M1068",
+      "course_id": "BSOT M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -103874,7 +103854,7 @@
       "_remint_from": "M-ID CABT 106"
     },
     {
-      "course_id": "OTEC M1068",
+      "course_id": "BSOT M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -103909,7 +103889,7 @@
       "_remint_from": "M-ID CABT 106"
     },
     {
-      "course_id": "OTEC M1067",
+      "course_id": "BSOT M1067",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -103939,7 +103919,7 @@
       "_remint_from": "M-ID CABT 108"
     },
     {
-      "course_id": "OTEC M1023",
+      "course_id": "BSOT M1023",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -103969,7 +103949,7 @@
       "_remint_from": "M-ID CABT 114"
     },
     {
-      "course_id": "OTEC M1024",
+      "course_id": "BSOT M1024",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -103999,7 +103979,7 @@
       "_remint_from": "M-ID CABT 116"
     },
     {
-      "course_id": "OTEC M1225",
+      "course_id": "BSOT M1225",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -105296,7 +105276,7 @@
       "_remint_from": "M-ID CAHM 156"
     },
     {
-      "course_id": "OTEC M10PN",
+      "course_id": "BSOT M10PN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -109073,7 +109053,7 @@
       "_remint_from": "M-ID CART 132"
     },
     {
-      "course_id": "OTEC M1036",
+      "course_id": "BSOT M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -109108,7 +109088,7 @@
       "_remint_from": "M-ID CAT 102"
     },
     {
-      "course_id": "OTEC M1074",
+      "course_id": "BSOT M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -109143,7 +109123,7 @@
       "_remint_from": "M-ID CAT 104"
     },
     {
-      "course_id": "OTEC M1046",
+      "course_id": "BSOT M1046",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109175,7 +109155,7 @@
       "_remint_from": "M-ID CAT 110"
     },
     {
-      "course_id": "OTEC M1222",
+      "course_id": "BSOT M1222",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109207,7 +109187,7 @@
       "_remint_from": "M-ID CAT 130"
     },
     {
-      "course_id": "OTEC M1222",
+      "course_id": "BSOT M1222",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109239,7 +109219,7 @@
       "_remint_from": "M-ID CAT 130"
     },
     {
-      "course_id": "OTEC M1010",
+      "course_id": "BSOT M1010",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -109271,7 +109251,7 @@
       "_remint_from": "M-ID CBTE 112"
     },
     {
-      "course_id": "OTEC M1077",
+      "course_id": "BSOT M1077",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109306,7 +109286,7 @@
       "_remint_from": "M-ID CBTE 100"
     },
     {
-      "course_id": "OTEC M1077",
+      "course_id": "BSOT M1077",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109341,7 +109321,7 @@
       "_remint_from": "M-ID CBTE 100"
     },
     {
-      "course_id": "OTEC M1077",
+      "course_id": "BSOT M1077",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -109376,7 +109356,7 @@
       "_remint_from": "M-ID CBTE 100"
     },
     {
-      "course_id": "OTEC M1078",
+      "course_id": "BSOT M1078",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -111846,7 +111826,7 @@
       "_remint_from": "M-ID CHEM 574"
     },
     {
-      "course_id": "ECED M1061",
+      "course_id": "CDEV M1061",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -111881,7 +111861,7 @@
       "_remint_from": "M-ID CD 180"
     },
     {
-      "course_id": "ECED M1061",
+      "course_id": "CDEV M1061",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -111916,7 +111896,7 @@
       "_remint_from": "M-ID CD 180"
     },
     {
-      "course_id": "ECED M1061",
+      "course_id": "CDEV M1061",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -111952,7 +111932,7 @@
       "_remint_from": "M-ID CD 180"
     },
     {
-      "course_id": "ECED M1105",
+      "course_id": "CDEV M1105",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -111984,7 +111964,7 @@
       "_remint_from": "M-ID CHIL 130"
     },
     {
-      "course_id": "ECED M1105",
+      "course_id": "CDEV M1105",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112017,7 +111997,7 @@
       "_remint_from": "M-ID CHIL 130"
     },
     {
-      "course_id": "ECED M1105",
+      "course_id": "CDEV M1105",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112049,7 +112029,7 @@
       "_remint_from": "M-ID CHIL 130"
     },
     {
-      "course_id": "ECED M1092",
+      "course_id": "CDEV M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112081,7 +112061,7 @@
       "_remint_from": "M-ID CHIL 132"
     },
     {
-      "course_id": "ECED M1092",
+      "course_id": "CDEV M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112114,7 +112094,7 @@
       "_remint_from": "M-ID CHIL 132"
     },
     {
-      "course_id": "ECED M1092",
+      "course_id": "CDEV M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112146,7 +112126,7 @@
       "_remint_from": "M-ID CHIL 132"
     },
     {
-      "course_id": "FLCH M1002",
+      "course_id": "CHIN M1045",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112179,7 +112159,7 @@
       "_remint_from": "M-ID CHIN 108"
     },
     {
-      "course_id": "FLCH M1002",
+      "course_id": "CHIN M1045",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112212,7 +112192,7 @@
       "_remint_from": "M-ID CHIN 108"
     },
     {
-      "course_id": "FLCH M1004",
+      "course_id": "CHIN M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112245,7 +112225,7 @@
       "_remint_from": "M-ID CHIN 110"
     },
     {
-      "course_id": "FLCH M1012",
+      "course_id": "CHIN M1012",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112285,7 +112265,7 @@
       "_remint_from": "M-ID CHIN 126"
     },
     {
-      "course_id": "FLCH M1012",
+      "course_id": "CHIN M1012",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112325,7 +112305,7 @@
       "_remint_from": "M-ID CHIN 126"
     },
     {
-      "course_id": "FLCH M1014",
+      "course_id": "CHIN M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112360,7 +112340,7 @@
       "_remint_from": "M-ID CHIN 130"
     },
     {
-      "course_id": "FLCH M1013",
+      "course_id": "CHIN M1013",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112392,7 +112372,7 @@
       "_remint_from": "M-ID CHIN 140"
     },
     {
-      "course_id": "FLCH M1013",
+      "course_id": "CHIN M1013",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112424,7 +112404,7 @@
       "_remint_from": "M-ID CHIN 140"
     },
     {
-      "course_id": "FLCH M1015",
+      "course_id": "CHIN M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112456,7 +112436,7 @@
       "_remint_from": "M-ID CHIN 142"
     },
     {
-      "course_id": "FLCH M1015",
+      "course_id": "CHIN M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112488,7 +112468,7 @@
       "_remint_from": "M-ID CHIN 142"
     },
     {
-      "course_id": "FLCH M1025",
+      "course_id": "CHIN M1025",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112524,7 +112504,7 @@
       "_remint_from": "M-ID CHIN 146"
     },
     {
-      "course_id": "FLCH M1025",
+      "course_id": "CHIN M1025",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112560,7 +112540,7 @@
       "_remint_from": "M-ID CHIN 146"
     },
     {
-      "course_id": "CSIS M1093",
+      "course_id": "ITIS M1093",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112592,7 +112572,7 @@
       "_remint_from": "M-ID CIM 114"
     },
     {
-      "course_id": "OTEC M1075",
+      "course_id": "BSOT M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112622,7 +112602,7 @@
       "_remint_from": "M-ID CIM 128"
     },
     {
-      "course_id": "OTEC M1171",
+      "course_id": "BSOT M1171",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112654,7 +112634,7 @@
       "_remint_from": "M-ID CIMA 104"
     },
     {
-      "course_id": "CSIS M1182",
+      "course_id": "ITIS M1182",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112690,7 +112670,7 @@
       "_remint_from": "M-ID CIMN 100"
     },
     {
-      "course_id": "CSIS M1183",
+      "course_id": "ITIS M1183",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -112726,7 +112706,7 @@
       "_remint_from": "M-ID CIMN 102"
     },
     {
-      "course_id": "CSIS M11CF",
+      "course_id": "ITIS M11CF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112756,7 +112736,7 @@
       "_remint_from": "M-ID CIMN 104"
     },
     {
-      "course_id": "CSIS M11LA",
+      "course_id": "ITIS M11LA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112786,7 +112766,7 @@
       "_remint_from": "M-ID CIMN 106"
     },
     {
-      "course_id": "CSIS M11IX",
+      "course_id": "ITIS M11IX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112816,7 +112796,7 @@
       "_remint_from": "M-ID CIMN 112"
     },
     {
-      "course_id": "CSIS M11QQ",
+      "course_id": "ITIS M11QQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112846,7 +112826,7 @@
       "_remint_from": "M-ID CIMN 114"
     },
     {
-      "course_id": "CSIS M11IV",
+      "course_id": "ITIS M11IV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112876,7 +112856,7 @@
       "_remint_from": "M-ID CIMS 102"
     },
     {
-      "course_id": "FIMS M10FK",
+      "course_id": "FTVE M10FK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -112906,7 +112886,7 @@
       "_remint_from": "M-ID CINE 150"
     },
     {
-      "course_id": "CSIS M1184",
+      "course_id": "ITIS M1184",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112939,7 +112919,7 @@
       "_remint_from": "M-ID CIS 114"
     },
     {
-      "course_id": "CSIS M1190",
+      "course_id": "ITIS M1190",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -112972,7 +112952,7 @@
       "_remint_from": "M-ID CIS 116"
     },
     {
-      "course_id": "CSIS M1125",
+      "course_id": "ITIS M1125",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113004,7 +112984,7 @@
       "_remint_from": "M-ID CIS 892"
     },
     {
-      "course_id": "CSIS M1058",
+      "course_id": "ITIS M1058",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113034,7 +113014,7 @@
       "_remint_from": "M-ID CIS 158"
     },
     {
-      "course_id": "CSIS M1092",
+      "course_id": "ITIS M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113064,7 +113044,7 @@
       "_remint_from": "M-ID CIS 162"
     },
     {
-      "course_id": "CSIS M1171",
+      "course_id": "ITIS M1171",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113094,7 +113074,7 @@
       "_remint_from": "M-ID CIS 170"
     },
     {
-      "course_id": "CSIS M1171",
+      "course_id": "ITIS M1171",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113124,7 +113104,7 @@
       "_remint_from": "M-ID CIS 170"
     },
     {
-      "course_id": "CSIS M1178",
+      "course_id": "ITIS M1178",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113160,7 +113140,7 @@
       "_remint_from": "M-ID CIS 174"
     },
     {
-      "course_id": "CSIS M1178",
+      "course_id": "ITIS M1178",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113196,7 +113176,7 @@
       "_remint_from": "M-ID CIS 174"
     },
     {
-      "course_id": "CSIS M1089",
+      "course_id": "ITIS M1089",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113232,7 +113212,7 @@
       "_remint_from": "M-ID CIS 194"
     },
     {
-      "course_id": "CSIS M1230",
+      "course_id": "ITIS M1230",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -113276,7 +113256,7 @@
       "_remint_from": "M-ID CIS 200"
     },
     {
-      "course_id": "CSIS M1235",
+      "course_id": "ITIS M1235",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113314,7 +113294,7 @@
       "_remint_from": "M-ID CIS 210"
     },
     {
-      "course_id": "CSIS M1235",
+      "course_id": "ITIS M1235",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113352,7 +113332,7 @@
       "_remint_from": "M-ID CIS 210"
     },
     {
-      "course_id": "CSIS M1008",
+      "course_id": "ITIS M1008",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113382,7 +113362,7 @@
       "_remint_from": "M-ID CIS 228"
     },
     {
-      "course_id": "CSIS M1009",
+      "course_id": "ITIS M1009",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113412,7 +113392,7 @@
       "_remint_from": "M-ID CIS 230"
     },
     {
-      "course_id": "CSIS M1014",
+      "course_id": "ITIS M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113442,7 +113422,7 @@
       "_remint_from": "M-ID CIS 232"
     },
     {
-      "course_id": "CSIS M1015",
+      "course_id": "ITIS M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113472,7 +113452,7 @@
       "_remint_from": "M-ID CIS 234"
     },
     {
-      "course_id": "CSIS M1021",
+      "course_id": "ITIS M1021",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113502,7 +113482,7 @@
       "_remint_from": "M-ID CIS 236"
     },
     {
-      "course_id": "CSIS M1022",
+      "course_id": "ITIS M1022",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113532,7 +113512,7 @@
       "_remint_from": "M-ID CIS 238"
     },
     {
-      "course_id": "CSIS M1091",
+      "course_id": "ITIS M1091",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113573,7 +113553,7 @@
       "_remint_from": "M-ID CIS 260"
     },
     {
-      "course_id": "CSIS M1299",
+      "course_id": "ITIS M1299",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -113609,7 +113589,7 @@
       "_remint_from": "M-ID CIS 266"
     },
     {
-      "course_id": "CSIS M1016",
+      "course_id": "ITIS M1016",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -113639,7 +113619,7 @@
       "_remint_from": "M-ID CIS 294"
     },
     {
-      "course_id": "CSIS M1352",
+      "course_id": "ITIS M1352",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -113689,7 +113669,7 @@
       "_remint_from": "M-ID CIS 304"
     },
     {
-      "course_id": "CSIS M1355",
+      "course_id": "ITIS M1355",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113721,7 +113701,7 @@
       "_remint_from": "M-ID CIS 306"
     },
     {
-      "course_id": "CSIS M1196",
+      "course_id": "ITIS M1196",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113751,7 +113731,7 @@
       "_remint_from": "M-ID CIS 314"
     },
     {
-      "course_id": "CSIS M1196",
+      "course_id": "ITIS M1196",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113781,7 +113761,7 @@
       "_remint_from": "M-ID CIS 314"
     },
     {
-      "course_id": "CSIS M1196",
+      "course_id": "ITIS M1196",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113811,7 +113791,7 @@
       "_remint_from": "M-ID CIS 314"
     },
     {
-      "course_id": "CSIS M1196",
+      "course_id": "ITIS M1196",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -113841,7 +113821,7 @@
       "_remint_from": "M-ID CIS 314"
     },
     {
-      "course_id": "CSIS M10BX",
+      "course_id": "ITIS M10BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -113871,7 +113851,7 @@
       "_remint_from": "M-ID CIS 1034"
     },
     {
-      "course_id": "CSIS M10BY",
+      "course_id": "ITIS M10BY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -113901,7 +113881,7 @@
       "_remint_from": "M-ID CIS 1036"
     },
     {
-      "course_id": "CSIS M10BZ",
+      "course_id": "ITIS M10BZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -113931,7 +113911,7 @@
       "_remint_from": "M-ID CIS 1038"
     },
     {
-      "course_id": "CSIS M10TT",
+      "course_id": "ITIS M10TT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -113961,7 +113941,7 @@
       "_remint_from": "M-ID CIS 1114"
     },
     {
-      "course_id": "CSIS M10TT",
+      "course_id": "ITIS M10TT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -113991,7 +113971,7 @@
       "_remint_from": "M-ID CIS 1114"
     },
     {
-      "course_id": "CSIS M10TT",
+      "course_id": "ITIS M10TT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114021,7 +114001,7 @@
       "_remint_from": "M-ID CIS 1114"
     },
     {
-      "course_id": "CSIS M10TT",
+      "course_id": "ITIS M10TT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114051,7 +114031,7 @@
       "_remint_from": "M-ID CIS 1114"
     },
     {
-      "course_id": "CSIS M10TT",
+      "course_id": "ITIS M10TT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114081,7 +114061,7 @@
       "_remint_from": "M-ID CIS 1114"
     },
     {
-      "course_id": "CSIS M10FS",
+      "course_id": "ITIS M10FS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114111,7 +114091,7 @@
       "_remint_from": "M-ID CIS 1236"
     },
     {
-      "course_id": "CSIS M10XF",
+      "course_id": "ITIS M10XF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114141,7 +114121,7 @@
       "_remint_from": "M-ID CIS 1300"
     },
     {
-      "course_id": "CSIS M12AE",
+      "course_id": "ITIS M12AE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114171,7 +114151,7 @@
       "_remint_from": "M-ID CIS 1364"
     },
     {
-      "course_id": "CSIS M11HY",
+      "course_id": "ITIS M11HY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114201,7 +114181,7 @@
       "_remint_from": "M-ID CIS 1450"
     },
     {
-      "course_id": "CSIS M11SY",
+      "course_id": "ITIS M11SY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114231,7 +114211,7 @@
       "_remint_from": "M-ID CIS 1464"
     },
     {
-      "course_id": "CSIS M11QS",
+      "course_id": "ITIS M11QS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114261,7 +114241,7 @@
       "_remint_from": "M-ID CIS 1532"
     },
     {
-      "course_id": "CSIS M11IW",
+      "course_id": "ITIS M11IW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114291,7 +114271,7 @@
       "_remint_from": "M-ID CIS 1634"
     },
     {
-      "course_id": "CSIS M11OJ",
+      "course_id": "ITIS M11OJ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114321,7 +114301,7 @@
       "_remint_from": "M-ID CIS 1756"
     },
     {
-      "course_id": "CSIS M10IX",
+      "course_id": "ITIS M10IX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114351,7 +114331,7 @@
       "_remint_from": "M-ID CIS 1794"
     },
     {
-      "course_id": "CSIS M10IX",
+      "course_id": "ITIS M10IX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114381,7 +114361,7 @@
       "_remint_from": "M-ID CIS 1794"
     },
     {
-      "course_id": "CSIS M10UW",
+      "course_id": "ITIS M10UW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114411,7 +114391,7 @@
       "_remint_from": "M-ID CIS 1804"
     },
     {
-      "course_id": "CSIS M10UW",
+      "course_id": "ITIS M10UW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114441,7 +114421,7 @@
       "_remint_from": "M-ID CIS 1804"
     },
     {
-      "course_id": "CSIS M10UW",
+      "course_id": "ITIS M10UW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114471,7 +114451,7 @@
       "_remint_from": "M-ID CIS 1804"
     },
     {
-      "course_id": "CSIS M11GZ",
+      "course_id": "ITIS M11GZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114501,7 +114481,7 @@
       "_remint_from": "M-ID CIS 1816"
     },
     {
-      "course_id": "CSIS M11GZ",
+      "course_id": "ITIS M11GZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114531,7 +114511,7 @@
       "_remint_from": "M-ID CIS 1816"
     },
     {
-      "course_id": "CSIS M11GZ",
+      "course_id": "ITIS M11GZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114561,7 +114541,7 @@
       "_remint_from": "M-ID CIS 1816"
     },
     {
-      "course_id": "CSIS M11GZ",
+      "course_id": "ITIS M11GZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114591,7 +114571,7 @@
       "_remint_from": "M-ID CIS 1816"
     },
     {
-      "course_id": "CSIS M10BL",
+      "course_id": "ITIS M10BL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114621,7 +114601,7 @@
       "_remint_from": "M-ID CIS 1854"
     },
     {
-      "course_id": "CSIS M10QY",
+      "course_id": "ITIS M10QY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -114651,7 +114631,7 @@
       "_remint_from": "M-ID CIS 2218"
     },
     {
-      "course_id": "CSIS M1208",
+      "course_id": "ITIS M1208",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -114691,7 +114671,7 @@
       "_remint_from": "M-ID CIS 338"
     },
     {
-      "course_id": "CSIS M1208",
+      "course_id": "ITIS M1208",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -114731,7 +114711,7 @@
       "_remint_from": "M-ID CIS 338"
     },
     {
-      "course_id": "CSIS M1208",
+      "course_id": "ITIS M1208",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -114771,7 +114751,7 @@
       "_remint_from": "M-ID CIS 338"
     },
     {
-      "course_id": "CSIS M1395",
+      "course_id": "ITIS M1395",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -114803,7 +114783,7 @@
       "_remint_from": "M-ID CIS 340"
     },
     {
-      "course_id": "CSIS M1063",
+      "course_id": "ITIS M1063",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -114837,7 +114817,7 @@
       "_remint_from": "M-ID CIS 358"
     },
     {
-      "course_id": "CSIS M1197",
+      "course_id": "ITIS M1197",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -114903,7 +114883,7 @@
       "_remint_from": "M-ID CIS 370"
     },
     {
-      "course_id": "CSIS M1197",
+      "course_id": "ITIS M1197",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -114959,7 +114939,7 @@
       "_remint_from": "M-ID CIS 370"
     },
     {
-      "course_id": "CSIS M1197",
+      "course_id": "ITIS M1197",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115015,7 +114995,7 @@
       "_remint_from": "M-ID CIS 370"
     },
     {
-      "course_id": "CSIS M1197",
+      "course_id": "ITIS M1197",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115076,7 +115056,7 @@
       "_remint_from": "M-ID CIS 370"
     },
     {
-      "course_id": "CSIS M1197",
+      "course_id": "ITIS M1197",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115132,7 +115112,7 @@
       "_remint_from": "M-ID CIS 370"
     },
     {
-      "course_id": "CSIS M1245",
+      "course_id": "ITIS M1245",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115174,7 +115154,7 @@
       "_remint_from": "M-ID CIS 376"
     },
     {
-      "course_id": "CSIS M1245",
+      "course_id": "ITIS M1245",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115216,7 +115196,7 @@
       "_remint_from": "M-ID CIS 376"
     },
     {
-      "course_id": "CSIS M1245",
+      "course_id": "ITIS M1245",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115258,7 +115238,7 @@
       "_remint_from": "M-ID CIS 376"
     },
     {
-      "course_id": "CSIS M1245",
+      "course_id": "ITIS M1245",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115300,7 +115280,7 @@
       "_remint_from": "M-ID CIS 376"
     },
     {
-      "course_id": "CSIS M1249",
+      "course_id": "ITIS M1249",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -115338,7 +115318,7 @@
       "_remint_from": "M-ID CIS 378"
     },
     {
-      "course_id": "CSIS M1263",
+      "course_id": "ITIS M1263",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115375,7 +115355,7 @@
       "_remint_from": "M-ID CIS 382"
     },
     {
-      "course_id": "CSIS M1286",
+      "course_id": "ITIS M1286",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115417,7 +115397,7 @@
       "_remint_from": "M-ID CIS 386"
     },
     {
-      "course_id": "CSIS M1286",
+      "course_id": "ITIS M1286",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115464,7 +115444,7 @@
       "_remint_from": "M-ID CIS 386"
     },
     {
-      "course_id": "OTEC M1167",
+      "course_id": "BSOT M1167",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115499,7 +115479,7 @@
       "_remint_from": "M-ID CAT 118"
     },
     {
-      "course_id": "CSIS M1388",
+      "course_id": "ITIS M1388",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115550,7 +115530,7 @@
       "_remint_from": "M-ID CIS 410"
     },
     {
-      "course_id": "CSIS M1388",
+      "course_id": "ITIS M1388",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115596,7 +115576,7 @@
       "_remint_from": "M-ID CIS 410"
     },
     {
-      "course_id": "CSIS M1415",
+      "course_id": "ITIS M1415",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -115626,7 +115606,7 @@
       "_remint_from": "M-ID CIS 420"
     },
     {
-      "course_id": "CSIS M1419",
+      "course_id": "ITIS M1419",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -115658,7 +115638,7 @@
       "_remint_from": "M-ID CIS 428"
     },
     {
-      "course_id": "CSIS M1002",
+      "course_id": "ITIS M1002",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115690,7 +115670,7 @@
       "_remint_from": "M-ID CIS 432"
     },
     {
-      "course_id": "CSIS M1002",
+      "course_id": "ITIS M1002",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115722,7 +115702,7 @@
       "_remint_from": "M-ID CIS 432"
     },
     {
-      "course_id": "CSIS M1423",
+      "course_id": "ITIS M1423",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115757,7 +115737,7 @@
       "_remint_from": "M-ID CIS 436"
     },
     {
-      "course_id": "CSIS M1423",
+      "course_id": "ITIS M1423",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -115792,7 +115772,7 @@
       "_remint_from": "M-ID CIS 436"
     },
     {
-      "course_id": "CSIS M1426",
+      "course_id": "ITIS M1426",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -115822,7 +115802,7 @@
       "_remint_from": "M-ID CIS 444"
     },
     {
-      "course_id": "CSIS M1417",
+      "course_id": "ITIS M1417",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -115867,7 +115847,7 @@
       "_remint_from": "M-ID CIS 452"
     },
     {
-      "course_id": "CSIS M1429",
+      "course_id": "ITIS M1429",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -115911,7 +115891,7 @@
       "_remint_from": "M-ID CIS 456"
     },
     {
-      "course_id": "CSIS M1429",
+      "course_id": "ITIS M1429",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -115955,7 +115935,7 @@
       "_remint_from": "M-ID CIS 456"
     },
     {
-      "course_id": "CSIS M1436",
+      "course_id": "ITIS M1436",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -115990,7 +115970,7 @@
       "_remint_from": "M-ID CIS 458"
     },
     {
-      "course_id": "CSIS M1416",
+      "course_id": "ITIS M1416",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116029,7 +116009,7 @@
       "_remint_from": "M-ID CIS 472"
     },
     {
-      "course_id": "CSIS M1079",
+      "course_id": "ITIS M1079",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116062,7 +116042,7 @@
       "_remint_from": "M-ID CIS 490"
     },
     {
-      "course_id": "CSIS M1458",
+      "course_id": "ITIS M1458",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -116108,7 +116088,7 @@
       "_remint_from": "M-ID CIS 530"
     },
     {
-      "course_id": "CSIS M1368",
+      "course_id": "ITIS M1368",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116151,7 +116131,7 @@
       "_remint_from": "M-ID CIS 544"
     },
     {
-      "course_id": "CSIS M10JM",
+      "course_id": "ITIS M10JM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -116181,7 +116161,7 @@
       "_remint_from": "M-ID CIS 2294"
     },
     {
-      "course_id": "CSIS M1369",
+      "course_id": "ITIS M1369",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116218,7 +116198,7 @@
       "_remint_from": "M-ID CIS 552"
     },
     {
-      "course_id": "CSIS M1369",
+      "course_id": "ITIS M1369",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116255,7 +116235,7 @@
       "_remint_from": "M-ID CIS 552"
     },
     {
-      "course_id": "CSIS M1454",
+      "course_id": "ITIS M1454",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -116287,7 +116267,7 @@
       "_remint_from": "M-ID CIS 574"
     },
     {
-      "course_id": "CSIS M1253",
+      "course_id": "ITIS M1253",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -116319,7 +116299,7 @@
       "_remint_from": "M-ID CIS 578"
     },
     {
-      "course_id": "CSIS M1095",
+      "course_id": "ITIS M1095",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -116351,7 +116331,7 @@
       "_remint_from": "M-ID CIS 584"
     },
     {
-      "course_id": "CSIS M1161",
+      "course_id": "ITIS M1161",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116382,7 +116362,7 @@
       "_remint_from": "M-ID CIS 592"
     },
     {
-      "course_id": "CSIS M1161",
+      "course_id": "ITIS M1161",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116413,7 +116393,7 @@
       "_remint_from": "M-ID CIS 592"
     },
     {
-      "course_id": "CSIS M1161",
+      "course_id": "ITIS M1161",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116444,7 +116424,7 @@
       "_remint_from": "M-ID CIS 592"
     },
     {
-      "course_id": "CSIS M1162",
+      "course_id": "ITIS M1162",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116475,7 +116455,7 @@
       "_remint_from": "M-ID CIS 594"
     },
     {
-      "course_id": "CSIS M1477",
+      "course_id": "ITIS M1477",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -116518,7 +116498,7 @@
       "_remint_from": "M-ID CIS 608"
     },
     {
-      "course_id": "CSIS M1477",
+      "course_id": "ITIS M1477",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -116561,7 +116541,7 @@
       "_remint_from": "M-ID CIS 608"
     },
     {
-      "course_id": "CSIS M1349",
+      "course_id": "ITIS M1349",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116598,7 +116578,7 @@
       "_remint_from": "M-ID CIS 620"
     },
     {
-      "course_id": "CSIS M1188",
+      "course_id": "ITIS M1188",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116633,7 +116613,7 @@
       "_remint_from": "M-ID CIS 628"
     },
     {
-      "course_id": "CSIS M1204",
+      "course_id": "ITIS M1204",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116671,7 +116651,7 @@
       "_remint_from": "M-ID CIS 630"
     },
     {
-      "course_id": "CSIS M1010",
+      "course_id": "ITIS M1010",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -116701,7 +116681,7 @@
       "_remint_from": "M-ID CIS 648"
     },
     {
-      "course_id": "CSIS M1099",
+      "course_id": "ITIS M1099",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116746,7 +116726,7 @@
       "_remint_from": "M-ID CIS 654"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116789,7 +116769,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116832,7 +116812,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116880,7 +116860,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116923,7 +116903,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -116966,7 +116946,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1054",
+      "course_id": "ITIS M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117014,7 +116994,7 @@
       "_remint_from": "M-ID CIS 658"
     },
     {
-      "course_id": "CSIS M1371",
+      "course_id": "ITIS M1371",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -117046,7 +117026,7 @@
       "_remint_from": "M-ID CIS 664"
     },
     {
-      "course_id": "CSIS M1371",
+      "course_id": "ITIS M1371",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -117078,7 +117058,7 @@
       "_remint_from": "M-ID CIS 664"
     },
     {
-      "course_id": "CSIS M1371",
+      "course_id": "ITIS M1371",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -117110,7 +117090,7 @@
       "_remint_from": "M-ID CIS 664"
     },
     {
-      "course_id": "CSIS M1154",
+      "course_id": "ITIS M1154",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117145,7 +117125,7 @@
       "_remint_from": "M-ID CIS 670"
     },
     {
-      "course_id": "CSIS M1154",
+      "course_id": "ITIS M1154",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117180,7 +117160,7 @@
       "_remint_from": "M-ID CIS 670"
     },
     {
-      "course_id": "CSIS M1154",
+      "course_id": "ITIS M1154",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117215,7 +117195,7 @@
       "_remint_from": "M-ID CIS 670"
     },
     {
-      "course_id": "CSIS M1154",
+      "course_id": "ITIS M1154",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117250,7 +117230,7 @@
       "_remint_from": "M-ID CIS 670"
     },
     {
-      "course_id": "CSIS M9010",
+      "course_id": "ITIS M9010",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117282,7 +117262,7 @@
       "_remint_from": "M-ID CIS 360"
     },
     {
-      "course_id": "CSIS M90AC",
+      "course_id": "ITIS M90AC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -117312,7 +117292,7 @@
       "_remint_from": "M-ID CIS 982"
     },
     {
-      "course_id": "OTEC M1079",
+      "course_id": "BSOT M1079",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -117349,7 +117329,7 @@
       "_remint_from": "M-ID CISA 100"
     },
     {
-      "course_id": "CSIS M1160",
+      "course_id": "ITIS M1160",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117383,7 +117363,7 @@
       "_remint_from": "M-ID CISC 100"
     },
     {
-      "course_id": "CSIS M1160",
+      "course_id": "ITIS M1160",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117417,7 +117397,7 @@
       "_remint_from": "M-ID CISC 100"
     },
     {
-      "course_id": "CSIS M1244",
+      "course_id": "ITIS M1244",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117449,7 +117429,7 @@
       "_remint_from": "M-ID CISC 142"
     },
     {
-      "course_id": "CSIS M1244",
+      "course_id": "ITIS M1244",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117481,7 +117461,7 @@
       "_remint_from": "M-ID CISC 142"
     },
     {
-      "course_id": "CSIS M1453",
+      "course_id": "ITIS M1453",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -117517,7 +117497,7 @@
       "_remint_from": "M-ID CISC 126"
     },
     {
-      "course_id": "CSIS M1453",
+      "course_id": "ITIS M1453",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -117553,7 +117533,7 @@
       "_remint_from": "M-ID CISC 126"
     },
     {
-      "course_id": "CSIS M11QX",
+      "course_id": "ITIS M11QX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -117583,7 +117563,7 @@
       "_remint_from": "M-ID CISCYBR 106"
     },
     {
-      "course_id": "CSIS M12CY",
+      "course_id": "ITIS M12CY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -117613,7 +117593,7 @@
       "_remint_from": "M-ID CISHDSP 100"
     },
     {
-      "course_id": "CSIS M9015",
+      "course_id": "ITIS M9015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -117646,7 +117626,7 @@
       "_remint_from": "M-ID CIST 100"
     },
     {
-      "course_id": "CSIS M11ID",
+      "course_id": "ITIS M11ID",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -117676,7 +117656,7 @@
       "_remint_from": "M-ID CIT 154"
     },
     {
-      "course_id": "CSIS M11IO",
+      "course_id": "ITIS M11IO",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118677,7 +118657,7 @@
       "_remint_from": "M-ID CLNART 130"
     },
     {
-      "course_id": "CSIS M10UP",
+      "course_id": "ITIS M10UP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118707,7 +118687,7 @@
       "_remint_from": "M-ID CMPET 100"
     },
     {
-      "course_id": "CSIS M10UP",
+      "course_id": "ITIS M10UP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118737,7 +118717,7 @@
       "_remint_from": "M-ID CMPET 100"
     },
     {
-      "course_id": "CSIS M11DM",
+      "course_id": "ITIS M11DM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118767,7 +118747,7 @@
       "_remint_from": "M-ID CMPET 102"
     },
     {
-      "course_id": "CSIS M10VX",
+      "course_id": "ITIS M10VX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118797,7 +118777,7 @@
       "_remint_from": "M-ID CMPET 104"
     },
     {
-      "course_id": "CSIS M10PS",
+      "course_id": "ITIS M10PS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118827,7 +118807,7 @@
       "_remint_from": "M-ID CMPET 108"
     },
     {
-      "course_id": "CSIS M11DX",
+      "course_id": "ITIS M11DX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118857,7 +118837,7 @@
       "_remint_from": "M-ID CMPET 110"
     },
     {
-      "course_id": "CSIS M11DY",
+      "course_id": "ITIS M11DY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118887,7 +118867,7 @@
       "_remint_from": "M-ID CMPET 112"
     },
     {
-      "course_id": "CSIS M11DI",
+      "course_id": "ITIS M11DI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118917,7 +118897,7 @@
       "_remint_from": "M-ID CMPET 116"
     },
     {
-      "course_id": "CSIS M11DI",
+      "course_id": "ITIS M11DI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118947,7 +118927,7 @@
       "_remint_from": "M-ID CMPET 116"
     },
     {
-      "course_id": "CSIS M10BF",
+      "course_id": "ITIS M10BF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -118977,7 +118957,7 @@
       "_remint_from": "M-ID CMPET 118"
     },
     {
-      "course_id": "CSIS M10BF",
+      "course_id": "ITIS M10BF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119007,7 +118987,7 @@
       "_remint_from": "M-ID CMPET 118"
     },
     {
-      "course_id": "CSIS M10BF",
+      "course_id": "ITIS M10BF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119037,7 +119017,7 @@
       "_remint_from": "M-ID CMPET 118"
     },
     {
-      "course_id": "CSIS M10CU",
+      "course_id": "ITIS M10CU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119067,7 +119047,7 @@
       "_remint_from": "M-ID CMPET 120"
     },
     {
-      "course_id": "CSIS M10CU",
+      "course_id": "ITIS M10CU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119097,7 +119077,7 @@
       "_remint_from": "M-ID CMPET 120"
     },
     {
-      "course_id": "CSIS M10DN",
+      "course_id": "ITIS M10DN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119127,7 +119107,7 @@
       "_remint_from": "M-ID CMPET 122"
     },
     {
-      "course_id": "CSIS M10EG",
+      "course_id": "ITIS M10EG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119157,7 +119137,7 @@
       "_remint_from": "M-ID CMPET 124"
     },
     {
-      "course_id": "CSIS M10BK",
+      "course_id": "ITIS M10BK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119247,7 +119227,7 @@
       "_remint_from": "M-ID CMPGR 114"
     },
     {
-      "course_id": "CSIS M1351",
+      "course_id": "ITIS M1351",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -119277,7 +119257,7 @@
       "_remint_from": "M-ID CMPR 100"
     },
     {
-      "course_id": "CISC M1058",
+      "course_id": "COMP M1058",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -119309,7 +119289,7 @@
       "_remint_from": "M-ID CMPR 106"
     },
     {
-      "course_id": "CSIS M11ZQ",
+      "course_id": "ITIS M11ZQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119339,7 +119319,7 @@
       "_remint_from": "M-ID CMPR 114"
     },
     {
-      "course_id": "CSIS M11IT",
+      "course_id": "ITIS M11IT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119369,7 +119349,7 @@
       "_remint_from": "M-ID CMPR 124"
     },
     {
-      "course_id": "CSIS M11IT",
+      "course_id": "ITIS M11IT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119399,7 +119379,7 @@
       "_remint_from": "M-ID CMPR 124"
     },
     {
-      "course_id": "CSIS M11IU",
+      "course_id": "ITIS M11IU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119429,7 +119409,7 @@
       "_remint_from": "M-ID CMPR 126"
     },
     {
-      "course_id": "CSIS M11IU",
+      "course_id": "ITIS M11IU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119459,7 +119439,7 @@
       "_remint_from": "M-ID CMPR 126"
     },
     {
-      "course_id": "CSIS M11IU",
+      "course_id": "ITIS M11IU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119489,7 +119469,7 @@
       "_remint_from": "M-ID CMPR 126"
     },
     {
-      "course_id": "CSIS M11QW",
+      "course_id": "ITIS M11QW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119519,7 +119499,7 @@
       "_remint_from": "M-ID CMPR 140"
     },
     {
-      "course_id": "CSIS M11VV",
+      "course_id": "ITIS M11VV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119549,7 +119529,7 @@
       "_remint_from": "M-ID CMPR 146"
     },
     {
-      "course_id": "CSIS M12JO",
+      "course_id": "ITIS M12JO",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119579,7 +119559,7 @@
       "_remint_from": "M-ID CMPR 148"
     },
     {
-      "course_id": "CSIS M12LO",
+      "course_id": "ITIS M12LO",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119609,7 +119589,7 @@
       "_remint_from": "M-ID CMPR 168"
     },
     {
-      "course_id": "CSIS M1420",
+      "course_id": "ITIS M1420",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -119713,7 +119693,7 @@
       "_remint_from": "M-ID AJ 146"
     },
     {
-      "course_id": "CSIS M10GW",
+      "course_id": "ITIS M10GW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119743,7 +119723,7 @@
       "_remint_from": "M-ID CNIT 138"
     },
     {
-      "course_id": "CSIS M11FF",
+      "course_id": "ITIS M11FF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119773,7 +119753,7 @@
       "_remint_from": "M-ID CNIT 180"
     },
     {
-      "course_id": "CSIS M11EX",
+      "course_id": "ITIS M11EX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -119912,7 +119892,7 @@
       "_remint_from": "M-ID CNST 134"
     },
     {
-      "course_id": "CSIS M1044",
+      "course_id": "ITIS M1044",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -119942,7 +119922,7 @@
       "_remint_from": "M-ID CNT 102"
     },
     {
-      "course_id": "CSIS M1044",
+      "course_id": "ITIS M1044",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -119972,7 +119952,7 @@
       "_remint_from": "M-ID CNT 102"
     },
     {
-      "course_id": "CSIS M10DK",
+      "course_id": "ITIS M10DK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -120002,7 +119982,7 @@
       "_remint_from": "M-ID CNT 110"
     },
     {
-      "course_id": "CSIS M10DL",
+      "course_id": "ITIS M10DL",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -120032,7 +120012,7 @@
       "_remint_from": "M-ID CNT 112"
     },
     {
-      "course_id": "CSIS M10AC",
+      "course_id": "ITIS M10AC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -120062,7 +120042,7 @@
       "_remint_from": "M-ID CNT 114"
     },
     {
-      "course_id": "CSIS M11IY",
+      "course_id": "ITIS M11IY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -120092,7 +120072,7 @@
       "_remint_from": "M-ID CNT 136"
     },
     {
-      "course_id": "CSIS M12ED",
+      "course_id": "ITIS M12ED",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -124179,7 +124159,7 @@
       "adoption_leverage_count": 45
     },
     {
-      "course_id": "CISC M1009",
+      "course_id": "COMP M1009",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -124213,7 +124193,7 @@
       "_remint_from": "M-ID COMP 104"
     },
     {
-      "course_id": "CSIS M1057",
+      "course_id": "ITIS M1057",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -124245,7 +124225,7 @@
       "_remint_from": "M-ID CIS 676"
     },
     {
-      "course_id": "CSIS M11OD",
+      "course_id": "ITIS M11OD",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -124275,7 +124255,7 @@
       "_remint_from": "M-ID ComputerInformationSystems(CIS) 102"
     },
     {
-      "course_id": "CSIS M12DA",
+      "course_id": "ITIS M12DA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -124305,7 +124285,7 @@
       "_remint_from": "M-ID ComputerInformationSystems(CIS) 104"
     },
     {
-      "course_id": "CSIS M12BQ",
+      "course_id": "ITIS M12BQ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -124367,7 +124347,7 @@
       "_remint_from": "M-ID COMS 102"
     },
     {
-      "course_id": "OTEC M10EY",
+      "course_id": "BSOT M10EY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -125654,7 +125634,7 @@
       "_remint_from": "M-ID COSM 576"
     },
     {
-      "course_id": "CSIS M10OT",
+      "course_id": "ITIS M10OT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -125684,7 +125664,7 @@
       "_remint_from": "M-ID COSN 106"
     },
     {
-      "course_id": "CSIS M12BU",
+      "course_id": "ITIS M12BU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -125714,7 +125694,7 @@
       "_remint_from": "M-ID COSN 118"
     },
     {
-      "course_id": "CSIS M11OG",
+      "course_id": "ITIS M11OG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -125798,7 +125778,7 @@
       "_remint_from": "M-ID COUN 126"
     },
     {
-      "course_id": "ECED M1091",
+      "course_id": "CDEV M1091",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -132296,7 +132276,7 @@
       "_remint_from": "M-ID CRP 136"
     },
     {
-      "course_id": "AGPR M1005",
+      "course_id": "AGPS M1005",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132333,7 +132313,7 @@
       "_remint_from": "M-ID CRPSCI 100"
     },
     {
-      "course_id": "AGPR M1005",
+      "course_id": "AGPS M1005",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132370,7 +132350,7 @@
       "_remint_from": "M-ID CRPSCI 100"
     },
     {
-      "course_id": "CSIS M1191",
+      "course_id": "ITIS M1191",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -132403,7 +132383,7 @@
       "_remint_from": "M-ID CIS 176"
     },
     {
-      "course_id": "CISC M1054",
+      "course_id": "COMP M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132450,7 +132430,7 @@
       "_remint_from": "M-ID CS 176"
     },
     {
-      "course_id": "CISC M1054",
+      "course_id": "COMP M1054",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132497,7 +132477,7 @@
       "_remint_from": "M-ID CS 176"
     },
     {
-      "course_id": "CISC M1094",
+      "course_id": "COMP M1094",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132543,7 +132523,7 @@
       "_remint_from": "M-ID CS 202"
     },
     {
-      "course_id": "CISC M1094",
+      "course_id": "COMP M1094",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132589,7 +132569,7 @@
       "_remint_from": "M-ID CS 202"
     },
     {
-      "course_id": "CISC M1101",
+      "course_id": "COMP M1101",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -132633,7 +132613,7 @@
       "_remint_from": "M-ID CS 236"
     },
     {
-      "course_id": "CSIS M1145",
+      "course_id": "ITIS M1145",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -132665,7 +132645,7 @@
       "_remint_from": "M-ID CIS 682"
     },
     {
-      "course_id": "CISC M10KC",
+      "course_id": "COMP M10KC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132695,7 +132675,7 @@
       "_remint_from": "M-ID CS 428"
     },
     {
-      "course_id": "CISC M10LX",
+      "course_id": "COMP M10LX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132725,7 +132705,7 @@
       "_remint_from": "M-ID CS 444"
     },
     {
-      "course_id": "CISC M10SH",
+      "course_id": "COMP M10SH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132755,7 +132735,7 @@
       "_remint_from": "M-ID CS 726"
     },
     {
-      "course_id": "CISC M10RS",
+      "course_id": "COMP M10RS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132785,7 +132765,7 @@
       "_remint_from": "M-ID CS 772"
     },
     {
-      "course_id": "CISC M10PZ",
+      "course_id": "COMP M10PZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132815,7 +132795,7 @@
       "_remint_from": "M-ID CS 810"
     },
     {
-      "course_id": "CSIS M1486",
+      "course_id": "ITIS M1486",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -132847,7 +132827,7 @@
       "_remint_from": "M-ID CIS 638"
     },
     {
-      "course_id": "CSIS M1379",
+      "course_id": "ITIS M1379",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -132879,7 +132859,7 @@
       "_remint_from": "M-ID CIS 708"
     },
     {
-      "course_id": "CISC M10NU",
+      "course_id": "COMP M10NU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132909,7 +132889,7 @@
       "_remint_from": "M-ID CSCI 174"
     },
     {
-      "course_id": "CISC M10BP",
+      "course_id": "COMP M10BP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132939,7 +132919,7 @@
       "_remint_from": "M-ID CSCI 176"
     },
     {
-      "course_id": "CISC M10BP",
+      "course_id": "COMP M10BP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132969,7 +132949,7 @@
       "_remint_from": "M-ID CSCI 176"
     },
     {
-      "course_id": "CISC M10PE",
+      "course_id": "COMP M10PE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -132999,7 +132979,7 @@
       "_remint_from": "M-ID CSCI 178"
     },
     {
-      "course_id": "CISC M10KZ",
+      "course_id": "COMP M10KZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -133029,7 +133009,7 @@
       "_remint_from": "M-ID CSCI 182"
     },
     {
-      "course_id": "CISC M10HH",
+      "course_id": "COMP M10HH",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -133059,7 +133039,7 @@
       "_remint_from": "M-ID CSCI 248"
     },
     {
-      "course_id": "CISC M10LP",
+      "course_id": "COMP M10LP",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -133089,7 +133069,7 @@
       "_remint_from": "M-ID CSCI 258"
     },
     {
-      "course_id": "CISC M10SB",
+      "course_id": "COMP M10SB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -133119,7 +133099,7 @@
       "_remint_from": "M-ID CSCI 262"
     },
     {
-      "course_id": "CISC M10SO",
+      "course_id": "COMP M10SO",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -133181,7 +133161,7 @@
       "_remint_from": "M-ID CSFM 102"
     },
     {
-      "course_id": "CSIS M1416",
+      "course_id": "ITIS M1416",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -133214,7 +133194,7 @@
       "_remint_from": "M-ID CSIS 130"
     },
     {
-      "course_id": "CSIS M1025",
+      "course_id": "ITIS M1025",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -133281,7 +133261,7 @@
       "_remint_from": "M-ID APCL 100"
     },
     {
-      "course_id": "CSIS M10OA",
+      "course_id": "ITIS M10OA",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -137951,7 +137931,7 @@
       "adoption_leverage_count": 51
     },
     {
-      "course_id": "ECED M1185",
+      "course_id": "CDEV M1185",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -138018,7 +137998,7 @@
       "_remint_from": "M-ID ECE 164"
     },
     {
-      "course_id": "ECED M1186",
+      "course_id": "CDEV M1186",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -138048,7 +138028,7 @@
       "_remint_from": "M-ID ECE 216"
     },
     {
-      "course_id": "ECED M1187",
+      "course_id": "CDEV M1187",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -170963,7 +170943,7 @@
       "_remint_from": "M-ID FOT 184"
     },
     {
-      "course_id": "FLFR M1014",
+      "course_id": "FREN M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -170997,7 +170977,7 @@
       "_remint_from": "M-ID FR 100"
     },
     {
-      "course_id": "FLFR M1014",
+      "course_id": "FREN M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171031,7 +171011,7 @@
       "_remint_from": "M-ID FR 100"
     },
     {
-      "course_id": "FLFR M1016",
+      "course_id": "FREN M1016",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171065,7 +171045,7 @@
       "_remint_from": "M-ID FR 102"
     },
     {
-      "course_id": "FLFR M1035",
+      "course_id": "FREN M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171116,7 +171096,7 @@
       "_remint_from": "M-ID FREN 122"
     },
     {
-      "course_id": "FLFR M1035",
+      "course_id": "FREN M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171162,7 +171142,7 @@
       "_remint_from": "M-ID FREN 122"
     },
     {
-      "course_id": "FLFR M1035",
+      "course_id": "FREN M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171213,7 +171193,7 @@
       "_remint_from": "M-ID FREN 122"
     },
     {
-      "course_id": "FLFR M1035",
+      "course_id": "FREN M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171248,7 +171228,7 @@
       "_remint_from": "M-ID FREN 124"
     },
     {
-      "course_id": "FLFR M1036",
+      "course_id": "FREN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171281,7 +171261,7 @@
       "_remint_from": "M-ID FREN 126"
     },
     {
-      "course_id": "FLFR M1036",
+      "course_id": "FREN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171314,7 +171294,7 @@
       "_remint_from": "M-ID FREN 126"
     },
     {
-      "course_id": "FLFR M1036",
+      "course_id": "FREN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -171347,7 +171327,7 @@
       "_remint_from": "M-ID FREN 126"
     },
     {
-      "course_id": "FLFR M1035",
+      "course_id": "FREN M1035",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171406,7 +171386,7 @@
       "_remint_from": "M-ID FREN 128"
     },
     {
-      "course_id": "FLFR M1036",
+      "course_id": "FREN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171467,7 +171447,7 @@
       "_remint_from": "M-ID FREN 130"
     },
     {
-      "course_id": "FLFR M1036",
+      "course_id": "FREN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171528,7 +171508,7 @@
       "_remint_from": "M-ID FREN 130"
     },
     {
-      "course_id": "FLFR M1045",
+      "course_id": "FREN M1045",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -171575,7 +171555,7 @@
       "_remint_from": "M-ID FREN 154"
     },
     {
-      "course_id": "FLFR M1045",
+      "course_id": "FREN M1045",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -175622,7 +175602,7 @@
       "adoption_leverage_count": 11
     },
     {
-      "course_id": "FIMS M1082",
+      "course_id": "FTVE M1082",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -177190,7 +177170,7 @@
       "adoption_leverage_count": 25
     },
     {
-      "course_id": "FLGE M1015",
+      "course_id": "GERM M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -177231,7 +177211,7 @@
       "_remint_from": "M-ID GERM 112"
     },
     {
-      "course_id": "FLGE M1015",
+      "course_id": "GERM M1015",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -177272,7 +177252,7 @@
       "_remint_from": "M-ID GERM 112"
     },
     {
-      "course_id": "FLGE M1022",
+      "course_id": "GERM M1022",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -177513,7 +177493,7 @@
       "_remint_from": "M-ID GRC 106"
     },
     {
-      "course_id": "FLGE M1014",
+      "course_id": "GERM M1014",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186410,7 +186390,7 @@
       "_remint_from": "M-ID INSPEC 124"
     },
     {
-      "course_id": "CSIS M1354",
+      "course_id": "ITIS M1354",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -186442,7 +186422,7 @@
       "_remint_from": "M-ID INWT 100"
     },
     {
-      "course_id": "CSIS M1273",
+      "course_id": "ITIS M1273",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186472,7 +186452,7 @@
       "_remint_from": "M-ID INWT 102"
     },
     {
-      "course_id": "CSIS M1273",
+      "course_id": "ITIS M1273",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -186502,7 +186482,7 @@
       "_remint_from": "M-ID INWT 102"
     },
     {
-      "course_id": "CSIS M11DT",
+      "course_id": "ITIS M11DT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186532,7 +186512,7 @@
       "_remint_from": "M-ID INWT 106"
     },
     {
-      "course_id": "CSIS M11DT",
+      "course_id": "ITIS M11DT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186562,7 +186542,7 @@
       "_remint_from": "M-ID INWT 106"
     },
     {
-      "course_id": "CSIS M11DT",
+      "course_id": "ITIS M11DT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186592,7 +186572,7 @@
       "_remint_from": "M-ID INWT 106"
     },
     {
-      "course_id": "CSIS M11DT",
+      "course_id": "ITIS M11DT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186622,7 +186602,7 @@
       "_remint_from": "M-ID INWT 106"
     },
     {
-      "course_id": "CSIS M11MF",
+      "course_id": "ITIS M11MF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186652,7 +186632,7 @@
       "_remint_from": "M-ID INWT 108"
     },
     {
-      "course_id": "CSIS M11MF",
+      "course_id": "ITIS M11MF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186682,7 +186662,7 @@
       "_remint_from": "M-ID INWT 108"
     },
     {
-      "course_id": "CSIS M11MF",
+      "course_id": "ITIS M11MF",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186712,7 +186692,7 @@
       "_remint_from": "M-ID INWT 108"
     },
     {
-      "course_id": "CSIS M12BX",
+      "course_id": "ITIS M12BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186742,7 +186722,7 @@
       "_remint_from": "M-ID INWT 120"
     },
     {
-      "course_id": "CSIS M12BX",
+      "course_id": "ITIS M12BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186773,7 +186753,7 @@
       "_remint_from": "M-ID INWT 120"
     },
     {
-      "course_id": "CSIS M12BX",
+      "course_id": "ITIS M12BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186803,7 +186783,7 @@
       "_remint_from": "M-ID INWT 120"
     },
     {
-      "course_id": "CSIS M12BX",
+      "course_id": "ITIS M12BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186833,7 +186813,7 @@
       "_remint_from": "M-ID INWT 120"
     },
     {
-      "course_id": "CSIS M12BX",
+      "course_id": "ITIS M12BX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186864,7 +186844,7 @@
       "_remint_from": "M-ID INWT 120"
     },
     {
-      "course_id": "CSIS M12CC",
+      "course_id": "ITIS M12CC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186894,7 +186874,7 @@
       "_remint_from": "M-ID INWT 122"
     },
     {
-      "course_id": "CSIS M12CC",
+      "course_id": "ITIS M12CC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186925,7 +186905,7 @@
       "_remint_from": "M-ID INWT 122"
     },
     {
-      "course_id": "CSIS M12CC",
+      "course_id": "ITIS M12CC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186956,7 +186936,7 @@
       "_remint_from": "M-ID INWT 122"
     },
     {
-      "course_id": "CSIS M12CC",
+      "course_id": "ITIS M12CC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -186986,7 +186966,7 @@
       "_remint_from": "M-ID INWT 122"
     },
     {
-      "course_id": "CSIS M1240",
+      "course_id": "ITIS M1240",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187018,7 +186998,7 @@
       "_remint_from": "M-ID IS 110"
     },
     {
-      "course_id": "CSIS M1240",
+      "course_id": "ITIS M1240",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187050,7 +187030,7 @@
       "_remint_from": "M-ID IS 110"
     },
     {
-      "course_id": "CSIS M1241",
+      "course_id": "ITIS M1241",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187083,7 +187063,7 @@
       "_remint_from": "M-ID IS 112"
     },
     {
-      "course_id": "CSIS M1241",
+      "course_id": "ITIS M1241",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187116,7 +187096,7 @@
       "_remint_from": "M-ID IS 112"
     },
     {
-      "course_id": "CSIS M1241",
+      "course_id": "ITIS M1241",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187149,7 +187129,7 @@
       "_remint_from": "M-ID IS 112"
     },
     {
-      "course_id": "CSIS M1278",
+      "course_id": "ITIS M1278",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187181,7 +187161,7 @@
       "_remint_from": "M-ID IS 114"
     },
     {
-      "course_id": "CSIS M1140",
+      "course_id": "ITIS M1140",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -187216,7 +187196,7 @@
       "_remint_from": "M-ID IS 118"
     },
     {
-      "course_id": "CSIS M1282",
+      "course_id": "ITIS M1282",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187248,7 +187228,7 @@
       "_remint_from": "M-ID IS 124"
     },
     {
-      "course_id": "CSIS M1422",
+      "course_id": "ITIS M1422",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -187283,7 +187263,7 @@
       "_remint_from": "M-ID IS 128"
     },
     {
-      "course_id": "CSIS M1422",
+      "course_id": "ITIS M1422",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -187318,7 +187298,7 @@
       "_remint_from": "M-ID IS 128"
     },
     {
-      "course_id": "CSIS M1422",
+      "course_id": "ITIS M1422",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -187353,7 +187333,7 @@
       "_remint_from": "M-ID IS 128"
     },
     {
-      "course_id": "CSIS M1422",
+      "course_id": "ITIS M1422",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -187388,7 +187368,7 @@
       "_remint_from": "M-ID IS 128"
     },
     {
-      "course_id": "OTEC M1175",
+      "course_id": "BSOT M1175",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187422,7 +187402,7 @@
       "_remint_from": "M-ID IS 132"
     },
     {
-      "course_id": "CSIS M11HZ",
+      "course_id": "ITIS M11HZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -187452,7 +187432,7 @@
       "_remint_from": "M-ID IS 152"
     },
     {
-      "course_id": "CSIS M9041",
+      "course_id": "ITIS M9041",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187482,7 +187462,7 @@
       "_remint_from": "M-ID IS 122"
     },
     {
-      "course_id": "CSIS M9036",
+      "course_id": "ITIS M9036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187547,7 +187527,7 @@
       "_remint_from": "M-ID BIT 104"
     },
     {
-      "course_id": "FLIT M1006",
+      "course_id": "ITAL M1006",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187579,7 +187559,7 @@
       "_remint_from": "M-ID ITAL 114"
     },
     {
-      "course_id": "FLIT M1024",
+      "course_id": "ITAL M1024",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187620,7 +187600,7 @@
       "_remint_from": "M-ID ITAL 128"
     },
     {
-      "course_id": "FLIT M1024",
+      "course_id": "ITAL M1024",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187661,7 +187641,7 @@
       "_remint_from": "M-ID ITAL 128"
     },
     {
-      "course_id": "FLIT M1022",
+      "course_id": "ITAL M1022",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187693,7 +187673,7 @@
       "_remint_from": "M-ID ITAL 132"
     },
     {
-      "course_id": "FLIT M1032",
+      "course_id": "ITAL M1032",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -187727,7 +187707,7 @@
       "_remint_from": "M-ID ITAL 142"
     },
     {
-      "course_id": "FLIT M1019",
+      "course_id": "ITAL M1019",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -187759,7 +187739,7 @@
       "_remint_from": "M-ID ITA 104"
     },
     {
-      "course_id": "FLIT M10AT",
+      "course_id": "ITAL M10AT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -187789,7 +187769,7 @@
       "_remint_from": "M-ID ITAL 176"
     },
     {
-      "course_id": "FLIT M10AT",
+      "course_id": "ITAL M10AT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -189312,7 +189292,7 @@
       "_remint_from": "M-ID IWAP 142"
     },
     {
-      "course_id": "FLJA M1017",
+      "course_id": "JAPN M1017",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189358,7 +189338,7 @@
       "_remint_from": "M-ID JAPAN 108"
     },
     {
-      "course_id": "FLJA M1017",
+      "course_id": "JAPN M1017",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189399,7 +189379,7 @@
       "_remint_from": "M-ID JAPAN 108"
     },
     {
-      "course_id": "FLJA M1017",
+      "course_id": "JAPN M1017",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189440,7 +189420,7 @@
       "_remint_from": "M-ID JAPAN 108"
     },
     {
-      "course_id": "FLJA M1017",
+      "course_id": "JAPN M1017",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189486,7 +189466,7 @@
       "_remint_from": "M-ID JAPAN 108"
     },
     {
-      "course_id": "FLJA M1028",
+      "course_id": "JAPN M1028",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189526,7 +189506,7 @@
       "_remint_from": "M-ID JAPAN 116"
     },
     {
-      "course_id": "FLJA M1028",
+      "course_id": "JAPN M1028",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -189566,7 +189546,7 @@
       "_remint_from": "M-ID JAPAN 116"
     },
     {
-      "course_id": "FLJA M10BB",
+      "course_id": "JAPN M10BB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -189596,7 +189576,7 @@
       "_remint_from": "M-ID JAPAN 134"
     },
     {
-      "course_id": "FLJA M10BB",
+      "course_id": "JAPN M10BB",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -189626,7 +189606,7 @@
       "_remint_from": "M-ID JAPAN 134"
     },
     {
-      "course_id": "FLJA M10BC",
+      "course_id": "JAPN M10BC",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -189656,7 +189636,7 @@
       "_remint_from": "M-ID JAPAN 136"
     },
     {
-      "course_id": "FLJA M1017",
+      "course_id": "JAPN M1017",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -189689,7 +189669,7 @@
       "_remint_from": "M-ID JAPN 102"
     },
     {
-      "course_id": "FLJA M1018",
+      "course_id": "JAPN M1018",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -193109,7 +193089,7 @@
       "_remint_from": "M-ID MAN 106"
     },
     {
-      "course_id": "CSIS M1310",
+      "course_id": "ITIS M1310",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -193143,7 +193123,7 @@
       "_remint_from": "M-ID CIMP 100"
     },
     {
-      "course_id": "CSIS M1310",
+      "course_id": "ITIS M1310",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -201094,7 +201074,7 @@
       "_remint_from": "M-ID MEDA 162"
     },
     {
-      "course_id": "FIMP M1012",
+      "course_id": "FTVE M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -201129,7 +201109,7 @@
       "_remint_from": "M-ID MEDIART 104"
     },
     {
-      "course_id": "FIMP M1012",
+      "course_id": "FTVE M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -201164,7 +201144,7 @@
       "_remint_from": "M-ID MEDIART 104"
     },
     {
-      "course_id": "FIMP M1012",
+      "course_id": "FTVE M1113",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -204301,7 +204281,7 @@
       "_remint_from": "M-ID MULTIMD 102"
     },
     {
-      "course_id": "FIMP M10ED",
+      "course_id": "FTVE M10TG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -204331,7 +204311,7 @@
       "_remint_from": "M-ID MULT 128"
     },
     {
-      "course_id": "FIMP M10ED",
+      "course_id": "FTVE M10TG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -207998,7 +207978,7 @@
       "_remint_from": "M-ID FIPT 128"
     },
     {
-      "course_id": "OTEC M9091",
+      "course_id": "BSOT M9091",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -208031,7 +208011,7 @@
       "_remint_from": "M-ID CBTE 106"
     },
     {
-      "course_id": "CSIS M1218",
+      "course_id": "ITIS M1218",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -212770,7 +212750,7 @@
       "_remint_from": "M-ID OSHA 102"
     },
     {
-      "course_id": "OTEC M1134",
+      "course_id": "BSOT M1134",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -212802,7 +212782,7 @@
       "_remint_from": "M-ID OT 104"
     },
     {
-      "course_id": "OTEC M1134",
+      "course_id": "BSOT M1134",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -213199,7 +213179,7 @@
       "_remint_from": "M-ID OTA 234"
     },
     {
-      "course_id": "OTEC M1070",
+      "course_id": "BSOT M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -213235,7 +213215,7 @@
       "_remint_from": "M-ID OT 102"
     },
     {
-      "course_id": "OTEC M1070",
+      "course_id": "BSOT M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -213271,7 +213251,7 @@
       "_remint_from": "M-ID OT 102"
     },
     {
-      "course_id": "OTEC M1070",
+      "course_id": "BSOT M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -213307,7 +213287,7 @@
       "_remint_from": "M-ID OT 102"
     },
     {
-      "course_id": "OTEC M1070",
+      "course_id": "BSOT M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -217742,7 +217722,7 @@
       "_remint_from": "M-ID PLNTSC 108"
     },
     {
-      "course_id": "AGPR M10FG",
+      "course_id": "AGPS M10FG",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -219151,7 +219131,7 @@
       "_remint_from": "M-ID POLS 188"
     },
     {
-      "course_id": "FLPO M1003",
+      "course_id": "PORT M1003",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -219218,7 +219198,7 @@
       "_remint_from": "M-ID POSC 108"
     },
     {
-      "course_id": "FLAR M1012",
+      "course_id": "ARAB M1012",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -226717,7 +226697,7 @@
       "_remint_from": "M-ID REALES 140"
     },
     {
-      "course_id": "AGRI M1004",
+      "course_id": "AGEH M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -226752,7 +226732,7 @@
       "_remint_from": "M-ID AGNR 100"
     },
     {
-      "course_id": "AGRI M1004",
+      "course_id": "AGEH M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -226787,7 +226767,7 @@
       "_remint_from": "M-ID AGNR 100"
     },
     {
-      "course_id": "AGRI M1004",
+      "course_id": "AGEH M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -227004,7 +226984,7 @@
       "_remint_from": "M-ID RT 250"
     },
     {
-      "course_id": "FIMS M10KS",
+      "course_id": "FTVE M10KS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -227034,7 +227014,7 @@
       "_remint_from": "M-ID RTVF 144"
     },
     {
-      "course_id": "FIMS M10KS",
+      "course_id": "FTVE M10KS",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -227064,7 +227044,7 @@
       "_remint_from": "M-ID RTVF 144"
     },
     {
-      "course_id": "FIMS M10LM",
+      "course_id": "FTVE M10LM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -227094,7 +227074,7 @@
       "_remint_from": "M-ID RTVF 218"
     },
     {
-      "course_id": "FIMS M10LM",
+      "course_id": "FTVE M10LM",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -227779,7 +227759,7 @@
       "_remint_from": "M-ID HUMSR 100"
     },
     {
-      "course_id": "FLSP M1001",
+      "course_id": "SPAN M1001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227813,7 +227793,7 @@
       "_remint_from": "M-ID SPA 106"
     },
     {
-      "course_id": "FLSP M1001",
+      "course_id": "SPAN M1001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227847,7 +227827,7 @@
       "_remint_from": "M-ID SPA 106"
     },
     {
-      "course_id": "FLSP M1001",
+      "course_id": "SPAN M1001",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227881,7 +227861,7 @@
       "_remint_from": "M-ID SPA 106"
     },
     {
-      "course_id": "FLSP M1003",
+      "course_id": "SPAN M1003",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227915,7 +227895,7 @@
       "_remint_from": "M-ID SPA 108"
     },
     {
-      "course_id": "FLSP M1003",
+      "course_id": "SPAN M1003",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227949,7 +227929,7 @@
       "_remint_from": "M-ID SPA 108"
     },
     {
-      "course_id": "FLSP M1003",
+      "course_id": "SPAN M1003",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -227983,7 +227963,7 @@
       "_remint_from": "M-ID SPA 108"
     },
     {
-      "course_id": "FLSP M1004",
+      "course_id": "SPAN M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -228017,7 +227997,7 @@
       "_remint_from": "M-ID SPA 110"
     },
     {
-      "course_id": "FLSP M1004",
+      "course_id": "SPAN M1004",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -231160,7 +231140,7 @@
       "adoption_leverage_count": 32
     },
     {
-      "course_id": "FLSP M1036",
+      "course_id": "SPAN M1036",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -231196,7 +231176,7 @@
       "_remint_from": "M-ID SPAN 134"
     },
     {
-      "course_id": "FLSP M1048",
+      "course_id": "SPAN M1048",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -231228,7 +231208,7 @@
       "_remint_from": "M-ID SPAN 150"
     },
     {
-      "course_id": "FLSP M1049",
+      "course_id": "SPAN M1049",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -231260,7 +231240,7 @@
       "_remint_from": "M-ID SPAN 154"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -231306,7 +231286,7 @@
       "_remint_from": "M-ID SPAN 172"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231364,7 +231344,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231422,7 +231402,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231480,7 +231460,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231538,7 +231518,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231596,7 +231576,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231654,7 +231634,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231712,7 +231692,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1074",
+      "course_id": "SPAN M1074",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231770,7 +231750,7 @@
       "_remint_from": "M-ID SPAN 182"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231825,7 +231805,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231880,7 +231860,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231935,7 +231915,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -231990,7 +231970,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -232045,7 +232025,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1075",
+      "course_id": "SPAN M1075",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -232100,7 +232080,7 @@
       "_remint_from": "M-ID SPAN 184"
     },
     {
-      "course_id": "FLSP M1068",
+      "course_id": "SPAN M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232132,7 +232112,7 @@
       "_remint_from": "M-ID SPAN 190"
     },
     {
-      "course_id": "FLSP M1068",
+      "course_id": "SPAN M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232164,7 +232144,7 @@
       "_remint_from": "M-ID SPAN 190"
     },
     {
-      "course_id": "FLSP M1068",
+      "course_id": "SPAN M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232196,7 +232176,7 @@
       "_remint_from": "M-ID SPAN 190"
     },
     {
-      "course_id": "FLSP M1068",
+      "course_id": "SPAN M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232228,7 +232208,7 @@
       "_remint_from": "M-ID SPAN 190"
     },
     {
-      "course_id": "FLSP M1068",
+      "course_id": "SPAN M1068",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232260,7 +232240,7 @@
       "_remint_from": "M-ID SPAN 190"
     },
     {
-      "course_id": "FLSP M1090",
+      "course_id": "SPAN M1090",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232293,7 +232273,7 @@
       "_remint_from": "M-ID SPA 104"
     },
     {
-      "course_id": "FLSP M1090",
+      "course_id": "SPAN M1090",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232326,7 +232306,7 @@
       "_remint_from": "M-ID SPA 104"
     },
     {
-      "course_id": "FLSP M1002",
+      "course_id": "SPAN M1002",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232358,7 +232338,7 @@
       "_remint_from": "M-ID SPAN 210"
     },
     {
-      "course_id": "FLSP M1090",
+      "course_id": "SPAN M1090",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232408,7 +232388,7 @@
       "_remint_from": "M-ID SPAN 218"
     },
     {
-      "course_id": "FLSP M1090",
+      "course_id": "SPAN M1090",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232458,7 +232438,7 @@
       "_remint_from": "M-ID SPAN 218"
     },
     {
-      "course_id": "FLSP M1093",
+      "course_id": "SPAN M1093",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232509,7 +232489,7 @@
       "_remint_from": "M-ID SPAN 220"
     },
     {
-      "course_id": "FLSP M1093",
+      "course_id": "SPAN M1093",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232560,7 +232540,7 @@
       "_remint_from": "M-ID SPAN 220"
     },
     {
-      "course_id": "FLSP M1070",
+      "course_id": "SPAN M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232592,7 +232572,7 @@
       "_remint_from": "M-ID SPAN 248"
     },
     {
-      "course_id": "FLSP M1070",
+      "course_id": "SPAN M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232624,7 +232604,7 @@
       "_remint_from": "M-ID SPAN 248"
     },
     {
-      "course_id": "FLSP M1070",
+      "course_id": "SPAN M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232656,7 +232636,7 @@
       "_remint_from": "M-ID SPAN 248"
     },
     {
-      "course_id": "FLSP M1070",
+      "course_id": "SPAN M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232688,7 +232668,7 @@
       "_remint_from": "M-ID SPAN 248"
     },
     {
-      "course_id": "FLSP M1070",
+      "course_id": "SPAN M1070",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232720,7 +232700,7 @@
       "_remint_from": "M-ID SPAN 248"
     },
     {
-      "course_id": "FLSP M1086",
+      "course_id": "SPAN M1086",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -232752,7 +232732,7 @@
       "_remint_from": "M-ID SPAN 262"
     },
     {
-      "course_id": "FLSP M1085",
+      "course_id": "SPAN M1085",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232789,7 +232769,7 @@
       "_remint_from": "M-ID SPAN 264"
     },
     {
-      "course_id": "FLSP M1086",
+      "course_id": "SPAN M1086",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -232824,7 +232804,7 @@
       "_remint_from": "M-ID SPAN 266"
     },
     {
-      "course_id": "FLSP M10AJ",
+      "course_id": "SPAN M10AJ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -232854,7 +232834,7 @@
       "_remint_from": "M-ID SPAN 382"
     },
     {
-      "course_id": "FLSP M10AK",
+      "course_id": "SPAN M10AK",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -232884,7 +232864,7 @@
       "_remint_from": "M-ID SPAN 384"
     },
     {
-      "course_id": "FLSP M10JT",
+      "course_id": "SPAN M10JT",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -232914,7 +232894,7 @@
       "_remint_from": "M-ID SPAN 486"
     },
     {
-      "course_id": "FLSP M10DI",
+      "course_id": "SPAN M10DI",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -232944,7 +232924,7 @@
       "_remint_from": "M-ID Spanish(SPAN) 100"
     },
     {
-      "course_id": "FLSP M10AE",
+      "course_id": "SPAN M10AE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -232974,7 +232954,7 @@
       "_remint_from": "M-ID Spanish(SPAN) 104"
     },
     {
-      "course_id": "FLSP M1092",
+      "course_id": "SPAN M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -233016,7 +232996,7 @@
       "_remint_from": "M-ID SPANISH 122"
     },
     {
-      "course_id": "FLSP M1092",
+      "course_id": "SPAN M1092",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -233058,7 +233038,7 @@
       "_remint_from": "M-ID SPANISH 122"
     },
     {
-      "course_id": "FLSP M1096",
+      "course_id": "SPAN M1096",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -233481,7 +233461,7 @@
       "_remint_from": "M-ID CONS 102"
     },
     {
-      "course_id": "CSIS M1272",
+      "course_id": "ITIS M1272",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233516,7 +233496,7 @@
       "_remint_from": "M-ID CSIS 128"
     },
     {
-      "course_id": "CSIS M1272",
+      "course_id": "ITIS M1272",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233551,7 +233531,7 @@
       "_remint_from": "M-ID CSIS 128"
     },
     {
-      "course_id": "CSIS M1272",
+      "course_id": "ITIS M1272",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233655,7 +233635,7 @@
       "_remint_from": "M-ID TECTHTR 106"
     },
     {
-      "course_id": "THEA M1287",
+      "course_id": "THTR M1287",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233691,7 +233671,7 @@
       "_remint_from": "M-ID THART 110"
     },
     {
-      "course_id": "THEA M1265",
+      "course_id": "THTR M1265",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.85,
@@ -233724,7 +233704,7 @@
       "_remint_from": "M-ID THEA 162"
     },
     {
-      "course_id": "THEA M1269",
+      "course_id": "THTR M1269",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -233754,7 +233734,7 @@
       "_remint_from": "M-ID THEA 164"
     },
     {
-      "course_id": "THEA M1280",
+      "course_id": "THTR M1280",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233789,7 +233769,7 @@
       "_remint_from": "M-ID THEA 172"
     },
     {
-      "course_id": "THEA M1091",
+      "course_id": "THTR M1091",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233825,7 +233805,7 @@
       "_remint_from": "M-ID THEA 186"
     },
     {
-      "course_id": "THEA M1091",
+      "course_id": "THTR M1091",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -233861,7 +233841,7 @@
       "_remint_from": "M-ID THEA 186"
     },
     {
-      "course_id": "THEA M11FV",
+      "course_id": "THTR M11FV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -233891,7 +233871,7 @@
       "_remint_from": "M-ID THEATRE 102"
     },
     {
-      "course_id": "THEA M10BN",
+      "course_id": "THTR M10BN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -234463,7 +234443,7 @@
       "_remint_from": "M-ID TOUR 104"
     },
     {
-      "course_id": "FLVI M10AP",
+      "course_id": "VIET M10BE",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -234576,7 +234556,7 @@
       "_remint_from": "M-ID CUL 128"
     },
     {
-      "course_id": "AGRI M1118",
+      "course_id": "AGAS M1118",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -234612,7 +234592,7 @@
       "_remint_from": "M-ID ANSC 108"
     },
     {
-      "course_id": "AGRI M1118",
+      "course_id": "AGAS M1118",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -234648,7 +234628,7 @@
       "_remint_from": "M-ID ANSC 108"
     },
     {
-      "course_id": "AGRI M1118",
+      "course_id": "AGAS M1118",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -234860,7 +234840,7 @@
       "_remint_from": "M-ID WDTO 100"
     },
     {
-      "course_id": "CSIS M1179",
+      "course_id": "ITIS M1179",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -234890,7 +234870,7 @@
       "_remint_from": "M-ID WEBD 100"
     },
     {
-      "course_id": "CSIS M1179",
+      "course_id": "ITIS M1179",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -234920,7 +234900,7 @@
       "_remint_from": "M-ID WEBD 100"
     },
     {
-      "course_id": "CSIS M10YW",
+      "course_id": "ITIS M10YW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -234950,7 +234930,7 @@
       "_remint_from": "M-ID WEBD 104"
     },
     {
-      "course_id": "CSIS M10YW",
+      "course_id": "ITIS M10YW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -234980,7 +234960,7 @@
       "_remint_from": "M-ID WEBD 104"
     },
     {
-      "course_id": "CSIS M11BZ",
+      "course_id": "ITIS M11BZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -235010,7 +234990,7 @@
       "_remint_from": "M-ID WEBD 110"
     },
     {
-      "course_id": "CSIS M11WN",
+      "course_id": "ITIS M11WN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -235040,7 +235020,7 @@
       "_remint_from": "M-ID WEBD 112"
     },
     {
-      "course_id": "CSIS M11NV",
+      "course_id": "ITIS M11NV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -235070,7 +235050,7 @@
       "_remint_from": "M-ID WEBD 120"
     },
     {
-      "course_id": "CSIS M11NV",
+      "course_id": "ITIS M11NV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -242951,5 +242931,6 @@
     }
   ],
   "_subj4_remint_applied_at": "2026-05-23T19:22:06Z",
-  "_subj4_fold_applied_at": "2026-06-12T18:11:26Z"
+  "_subj4_fold_applied_at": "2026-06-12T18:11:26Z",
+  "_authority_recode_applied_at": "2026-09-03T20:19:16Z"
 }
