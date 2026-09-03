@@ -5341,3 +5341,23 @@ through a chain that looked entirely computed. **A defaulted field looks compute
 and never moves**, and no single-paint test can see it; the guard changes a dial
 and requires the page to disagree with itself. Story: `cpl_funding_lessons`;
 handoff `session_220_handoff`.
+
+### §11 session narrative rotated 2026-09-03 (verbatim from `CLAUDE.md`)
+
+### SkyCalm S220 — the calm pass, and the text a test does not see (2026-09-02)
+
+**One PR.** Sam's brief: *"get rid of any cheesy glyphs (per our rules) … I want
+folks to feel calm when they open this model."* Every rendered glyph on the
+funding tab is a word or gone (the row toggle is the institution's NAME; the
+sort mark is the one ghosted survivor), the chrome lost its fills, stripes and
+red, the "pools" subtitle left both HTMLs, and **five prose blocks are editable
+in curate** (`text.<key>` overrides, Edit → Save · Cancel · Restore). His
+mid-turn call moved the held-in-reserve figure into the gate sentence and ahead
+of Total Possible. ⭐ `textContent` has no seams and no tooltips — a word sweep
+must read the markup (KB note). Story: `cpl_funding_lessons`; handoff
+`session_221_handoff`.
+
+### `docs/INDEX.md` update-history entries rotated 2026-09-03 (verbatim)
+
+- **2026-08-31 (SkyPool, S215 — labels ruled, the mock became the whole tab)** — Sam ruled the detail labels twice in one sitting, landing on **Current Total / Total Possible** (the ceiling — his refinement after "Potential Total" read two ways), built into every expand, statewide card, and the trio (#1424); then, on his ask to see the fully revised tab before the port, the reaction visual became the **COMPLETE revised tab** (#1425) from a measured inventory of `cpl_funding.js`'s ~30 rendered surfaces — Baseline-eligibility card (N1 a), §78093.2(d)(1) goal cards + measure-derived superscripts, sticky header + ONE SYSTEM row, live search, the MAP-team note, and the **R1–R11 "what leaves the tab" sheet (8 ruled · 3 proposed, reply by number)**, which is now the port's approval surface. 1 KB note ([`kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits`](kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md)), 2 memory writes (1 new + 1 receipted in-place correction).
+- **2026-08-31 (SkyLedger, S210→S214 — the one-pool day)** — **Sam ADOPTED the one-pool funding model** ($25.24M · $150K floor / $400K cap per institution, CR+NC combined; the NC-only trio earns by ORIGINATION, no advances — rulings N1 a / N2 b / N3 a): the Budget Balance mock he set the dials on (#1419/#1420), the who-moves card on the live tab (#1421), the One-Pool Funding Tab visual with phases 1–3 (#1422), and the CCC-norms vocabulary sweep + doctrine (#1423 — *funding* never "money", **max award**, alphabetical lists). NC protection = **the earning rule, not a second pool** ([`kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label`](kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md)); **F1 pending** (hold vs label on the $1.3M of college NC shares). Memo A became an editable GR-tab surface (`gr_memos`, #1418); origination-feed instructions delivered for Malone/Pedro (CPLBrain#67). 1 KB note, 4 memory rows.

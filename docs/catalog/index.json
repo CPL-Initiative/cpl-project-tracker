@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 368,
+   "count": 369,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1044,6 +1044,29 @@
      "title": "A filter, the column that justifies it, and the export must share one source",
      "type": "methodology",
      "updated": "2026-08-16"
+    },
+    {
+     "created": "2026-09-03",
+     "governs": [
+      "funding/_build_funding_performance.py",
+      "tests/cpl_funding_applied.test.js",
+      "tests/cpl_funding_performance.test.js",
+      "tests/cpl_funding_row_legibility.test.js",
+      "tests/suppression_floor.test.js",
+      "tests/check_floor.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "privacy",
+      "funding",
+      "small-cell-suppression"
+     ],
+     "title": "A floor lives in test fixtures as well as in code",
+     "type": "methodology",
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-17",
@@ -8189,9 +8212,9 @@
       "implementation-funding",
       "dashboard-tab"
      ],
-     "title": "CPL Implementation Funding tab \u2014 archived lessons (2026-06-11 \u2192 2026-08-23)",
+     "title": "CPL Implementation Funding tab \u2014 archived lessons (2026-06-11 \u2192 2026-08-27)",
      "type": null,
-     "updated": "2026-09-01"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-06-11",
@@ -8220,7 +8243,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-01"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-06-21",
@@ -11111,7 +11134,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-02"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-28",
@@ -11137,7 +11160,7 @@
      ],
      "title": "MAP Custom Reports (3 new) / ITPI automation \u2014 lane state",
      "type": null,
-     "updated": "2026-09-02"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-28",
@@ -11522,8 +11545,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 196,
+   "count": 197,
    "docs": [
+    {
+     "created": "2026-09-03",
+     "governs": [],
+     "n": 223,
+     "path": "docs/session_223_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the counselor step is on the API, under 10 is the mask, and CollegeID2 is the key still to land",
+     "type": null,
+     "updated": "2026-09-03"
+    },
     {
      "created": "2026-09-02",
      "governs": [],
@@ -14952,5 +14988,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 760
+ "total": 762
 }
