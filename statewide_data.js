@@ -187463,6 +187463,214 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 2.0
     },
     {
+      "exhibit_id": "MAPICI-O1A1-1-001",
+      "exhibit_ids": [
+        "MAPICI-O1A1-1-001"
+      ],
+      "title": "OSHA 10 Card",
+      "unified_title": "OSHA 10 Card",
+      "is_classified": true,
+      "issuing_agency": "U.S. Department of Labor",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA 10 and 1 yr Experience"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "City College of San Francisco",
+        "Copper Mountain College"
+      ],
+      "potential": 46,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 48,
+      "credit_recs": [
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 69",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
+      ],
+      "adopter_units": {
+        "City College of San Francisco": 1.0,
+        "Copper Mountain College": 1.0
+      },
+      "adopter_lines": {
+        "City College of San Francisco": 1,
+        "Copper Mountain College": 1
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICI-O3A1-1-001|MAPICI-OST3-1-001",
+      "exhibit_ids": [
+        "MAPICI-O3A1-1-001",
+        "MAPICI-OST3-1-001"
+      ],
+      "title": "OSHA 30 Card",
+      "unified_title": "OSHA 30 Card",
+      "is_classified": true,
+      "issuing_agency": "U.S. Department of Labor",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "OSHA 30 and 6 months Experience",
+        "OSHA Safety Training 30-Hour Card"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "City College of San Francisco",
+        "Copper Mountain College"
+      ],
+      "potential": 46,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 48,
+      "credit_recs": [
+        {
+          "course": "CNST 010",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        },
+        {
+          "course": "CNST 77",
+          "credit": "1-3 hours in Introduction to Construction Safety"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "1-3 hours in Introduction to Construction Safety",
+          "cid": ""
+        }
+      ],
+      "adopter_units": {
+        "City College of San Francisco": 1.0,
+        "Copper Mountain College": 1.0
+      },
+      "adopter_lines": {
+        "City College of San Francisco": 1,
+        "Copper Mountain College": 1
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 2.0
+    },
+    {
       "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-A61-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASE6-1-001|MAPICI-ASE61-1-001|MAPICI-ASEA3-1-001|MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001|MAPICI-BEAE-1-001",
       "exhibit_ids": [
         "CPLICI-ASE6-1-001",
@@ -237224,160 +237432,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 29.0,
       "peer_units_max": 29.0,
       "rec_units_total": 29.0
-    },
-    {
-      "exhibit_id": "MAPICI-O1A1-1-001",
-      "exhibit_ids": [
-        "MAPICI-O1A1-1-001"
-      ],
-      "title": "OSHA 10 Card",
-      "unified_title": "OSHA 10 Card",
-      "is_classified": true,
-      "issuing_agency": "U.S. Department of Labor",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "OSHA 10 and 1 yr Experience"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CNST 010",
-          "credit": "1-3 hours in Introduction to Construction Safety"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "1-3 hours in Introduction to Construction Safety",
-          "cid": ""
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 1.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPICI-O3A1-1-001|MAPICI-OST3-1-001",
-      "exhibit_ids": [
-        "MAPICI-O3A1-1-001",
-        "MAPICI-OST3-1-001"
-      ],
-      "title": "OSHA 30 Card",
-      "unified_title": "OSHA 30 Card",
-      "is_classified": true,
-      "issuing_agency": "U.S. Department of Labor",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "OSHA 30 and 6 months Experience",
-        "OSHA Safety Training 30-Hour Card"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 1,
-      "adopter_names": [
-        "Copper Mountain College"
-      ],
-      "potential": 26,
-      "potential_names": [
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "Cosumnes River College",
-        "Diablo Valley College",
-        "Fullerton College",
-        "Gavilan College",
-        "Hartnell College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Valley College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego Mesa College",
-        "Santa Rosa Junior College",
-        "Sierra College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "CNST 010",
-          "credit": "1-3 hours in Introduction to Construction Safety"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "1-3 hours in Introduction to Construction Safety",
-          "cid": ""
-        }
-      ],
-      "adopter_units": {
-        "Copper Mountain College": 1.0
-      },
-      "adopter_lines": {
-        "Copper Mountain College": 1
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
     },
     {
       "exhibit_id": "MAPICI-GS&B-1-001",
@@ -301625,11 +301679,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 199,
-        "exhibits": 149,
+        "credit_recs": 201,
+        "exhibits": 151,
         "disciplines": 13,
-        "ccc_collaborative": 70,
-        "industry_certs": 98,
+        "ccc_collaborative": 72,
+        "industry_certs": 100,
         "pct": 1.5
       },
       {
@@ -301981,7 +302035,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 6,
         "industry_certs": 33,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Merritt College",
@@ -301990,7 +302044,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 0,
         "industry_certs": 4,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "College of Marin",
@@ -302401,11 +302455,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2232,
+        "credit_recs": 2234,
         "exhibits": 1008,
-        "courses": 1122,
+        "courses": 1124,
         "colleges": 53,
-        "ccc_collaborative": 499,
+        "ccc_collaborative": 501,
         "pct": 16.9
       },
       {
@@ -302608,7 +302662,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3635,
+        "credit_recs": 3637,
         "exhibits": 1112,
         "colleges": 79,
         "pct": 27.5
@@ -302652,7 +302706,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2754,
+        "credit_recs": 2756,
         "exhibits": 1059,
         "colleges": 76,
         "pct": 20.8
@@ -302725,7 +302779,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1335,
+        "credit_recs": 1337,
         "exhibits": 167,
         "colleges": 63,
         "disciplines": 11,
@@ -303143,6 +303197,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-03T00:14:32",
-  "total_credit_recs": 13230
+  "generated_at": "2026-09-03T01:40:44",
+  "total_credit_recs": 13232
 };
