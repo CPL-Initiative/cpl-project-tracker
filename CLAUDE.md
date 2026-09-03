@@ -773,21 +773,18 @@ dispatch, 2026-09-03). ⭐ Corroborators must not outvote the primary signal; a 
 by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
 `session_224_handoff`.
 
-### SkyCheck S222 — the lifecycle checks are on the API, and under 10 is the mask (2026-09-02 → 03)
+### SkyTune S224 — the chip is live, both re-mint dry runs are receipts, nothing applied (2026-09-03)
 
-**Three PRs (#1437, #1438, #1439).** Pedro's six CPL lifecycle checks were found
-as booleans on the student aggregated view by a runner-side probe (the sandbox
-cannot reach MAP; `columnName: []` now 500s, `["*"]` enumerates). Sam ruled the
-funding attestation is `Counselor_Verified` alone, and `pac` publishes from the
-2026-09-03 run (2,820 students · 24,699 units · 18 colleges). His "applied but
-no eligible" worklist for Malone and Pedro had zero rows at either grain: the
-shape was our artifact's own inconsistent suppression, which left 54 small-portal
-colleges earning nothing on Access. Ruled the same day: counts mask under 10
-(FERPA practice), units carry the money, public dollars read "<$1,000" or the
-nearest $1,000, the curator view exact (ADR ratified); 57 colleges earn on Access
-now. `CollegeID2`, the NC FTES origination key, has not landed. ⭐ A floor lives
-in fixtures as well as code — four jsdom suites pinned the old number. Story:
-`map_custom_reports_lessons` + `cpl_funding_lessons`; handoff `session_223_handoff`.
+**Three PRs (#1447 merged; #1448, #1449 the two dry runs).** Item 19's C-ID
+chip shipped: `kb/_seed_authority_codes.py` writes the authority fields into the
+seed from the promotions evidence plus the rulings, and the CSR tab, the CCR
+Subject list and SkyView show `C-ID AJ` beside `CRIM` (12 disciplines on a CCN
+code, 14 on a C-ID code, 120 proposed, 29 with a chip). The ruled code changes
+were dry-run as a **keep-number prefix re-key** (10,292 ids, 10,039 keeping their
+number) after a scratch run showed the June allocator would renumber 62,638 ids
+to change nothing; the Z-band retirement was dry-run after it (4,053 Z identities,
+218 legacy anchors; **Kinesiology credit at 996 of 999**). Fourteen readings for
+Sam on one sheet. Story: `ccr_atlas_lessons`; handoff `session_225_handoff`.
 
 ## Troubleshooting
 

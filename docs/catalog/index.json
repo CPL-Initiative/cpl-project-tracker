@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 370,
+   "count": 371,
    "docs": [
     {
      "created": "2026-08-14",
@@ -651,6 +651,30 @@
      "title": "A client gate stricter than its RLS policy fails silently, toward lost work",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-09-03",
+     "governs": [
+      "kb/_authority_recode_dryrun.py",
+      "kb/_zband_retire_dryrun.py",
+      "kb/_subj4_dryrun.py",
+      "kb/_pols_remint.py",
+      "kb/authority_recode_out/2026-09-03/report.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "remint",
+      "rule-7",
+      "subj4",
+      "identity",
+      "allocator",
+      "ccr"
+     ],
+     "title": "A code change is a prefix re-key that keeps the number, not a re-sequence",
+     "type": "methodology",
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-12",
@@ -11565,8 +11589,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 198,
+   "count": 199,
    "docs": [
+    {
+     "created": "2026-09-03",
+     "governs": [],
+     "n": 225,
+     "path": "docs/session_225_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the chip is live, both re-mint dry runs are receipts, and fourteen readings wait on Sam",
+     "type": null,
+     "updated": "2026-09-03"
+    },
     {
      "created": "2026-09-03",
      "governs": [],
@@ -15021,5 +15058,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 764
+ "total": 766
 }

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-370 document(s).
+371 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -48,6 +48,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A client gate stricter than its RLS policy fails silently, toward lost work](../kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A code change is a prefix re-key that keeps the number, not a re-sequence](../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A collapsed section must still inform, or it is hidden rather than minimal](../kb-notes/methodology-a-collapsed-section-must-still-inform.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |

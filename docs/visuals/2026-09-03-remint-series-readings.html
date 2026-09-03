@@ -1,0 +1,376 @@
+<title>Re-mint Series Readings</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Single-theme by design: First Light is a light identity with no dark page
+     palette, so every surface and color is painted explicitly. Same sheet
+     treatment as docs/visuals/2026-09-03-csr-authority-codes.html, which Sam
+     ruled the same day, so the two read as one series. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; max-width: 66ch; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  code { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: .92em; }
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px; font-size: .9rem; color: var(--text-body); }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip { margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em; border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .chip.reading { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.judge   { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .chip.design  { color: var(--hunter);       border-color: var(--hunter);       background: var(--surface-opaque); }
+  .chip.timing  { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .card dl { margin: 8px 0 0; }
+  .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .card dd.proposed { color: var(--text-strong); border-left: 3px solid var(--cobalt); padding-left: 10px; }
+  .tablewrap { overflow-x: auto; margin: 12px 0 4px; }
+  table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .95rem; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+  th { color: var(--text-muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .close { margin-top: 36px; color: var(--text-muted); }
+  @media (max-width: 560px) { .card header { gap: 8px; } .chip { margin-left: 0; } }
+</style>
+<a class="skip" href="#sheet">Skip to the sheet</a>
+<main class="wrap">
+<p class="kicker" style="margin-top:28px">Common Course Reference · the re-mint series · readings from the dry runs · 2026-09-03</p>
+<h1>Re-mint Series Readings</h1>
+<p class="lede">You ruled the authority-codes sheet this morning, all twenty-two items. The session
+built the chip, then ran the two measure-first dry runs the playbook asks for before any
+apply: the recode of the eleven code changes, and the retirement of the Z band. Nothing
+is applied. The dry runs raised fourteen readings, three of them carried over from the
+sheet; each card says what was measured and what the session proposes. Reply by number.</p>
+
+<div class="howto">
+  <p><strong>How to reply.</strong> <code>yes</code> accepts a proposal as written; or override with
+  <code>edit: your wording</code>, <code>fold: N</code> (treat with item N), or <code>dismiss</code>.</p>
+  <p>Example: <code>1–3 yes · 5 edit: AGPS · 10 yes · 12 edit: stay curation-only</code></p>
+  <p>The receipts: <a href="https://github.com/CPL-Initiative/cpl-project-tracker/pull/1447">#1447</a> the chip ·
+  <a href="https://github.com/CPL-Initiative/cpl-project-tracker/pull/1448">#1448</a> the recode dry run
+  (<code>kb/authority_recode_out/2026-09-03/report.md</code>) ·
+  <a href="https://github.com/CPL-Initiative/cpl-project-tracker/pull/1449">#1449</a> the Z-band retirement dry run
+  (<code>kb/zband_retire_out/2026-09-03/report.md</code>). A session then builds the two applies from the
+  same allocators and brings them back as pull requests, to land in one cron window.</p>
+</div>
+
+<ul class="tally">
+  <li><b>14</b> readings</li>
+  <li><b>3</b> carried from the sheet (8, 13, 14)</li>
+  <li><b>10,292</b> ids in the recode, 10,039 keeping their number</li>
+  <li><b>4,053</b> Z identities and <b>218</b> legacy anchors in the retirement</li>
+  <li><b>29</b> disciplines showing a chip today</li>
+  <li><b>0</b> applied</li>
+</ul>
+
+<div id="sheet">
+
+<h2 class="kicker">Carried from the sheet</h2>
+
+<section class="card">
+  <header><span class="num">1</span> <span class="tname">Item 8 — CRIM stays, the chip reads C-ID AJ</span>
+  <span class="chip reading">Reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Under your rule 3 a two-letter code cannot be canonical, so Administration of Justice keeps
+    <code>CRIM</code> and the authority's code sits beside it as a chip.</dd>
+    <dt>Measured</dt>
+    <dd>The chip is live in #1447 on the CSR tab, the CCR tab's Subject list and SkyView's subject card:
+    <code>C-ID AJ</code>. The second C-ID code under the discipline, <code>LPPS</code>, waits for the
+    identity-level chips you scoped for later.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">2</span> <span class="tname">Item 13 — Media Production shares FTVE with Film and Media Studies</span>
+  <span class="chip reading">Reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>A fan-in pair, the Theater precedent: two MQ disciplines on one Common SUBJ, both names kept.</dd>
+    <dt>Measured</dt>
+    <dd>Film and Media Studies moves 525 rows and 520 keep their number (five gap-fill around strays
+    already keyed <code>FTVE</code>). Media Production's 202 rows cannot keep theirs — two disciplines
+    cannot both hold <code>M1001</code> — so they gap-fill into the FTVE bucket after Film's, in
+    title order. Both disciplines stay as they are; only the code changes.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes: FTVE for both, Film keeps its numbers, Media Production renumbers after them,
+    the pair recorded in <code>kb/discipline_aliases.json</code> like Theater.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">3</span> <span class="tname">Item 14 — the agriculture families take AGAB, AGAS, AGPS, AGEH, AGMA</span>
+  <span class="chip reading">Reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Rule 3 bans hyphens, so C-ID's <code>AG-AB</code> becomes the four-letter <code>AGAB</code> in the
+    id; the chip keeps the hyphenated original.</dd>
+    <dt>Measured</dt>
+    <dd>Each of the 1,015 rows was read by three signals — the colleges' own subject-code family,
+    the title's words, the TOP family — and takes a family only when two agree; TOP never decides
+    alone. 498 rows take a family; 517 stay residual with the reason on the row.
+    <div class="tablewrap"><table>
+      <colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup>
+      <thead><tr><th scope="col">family</th><th scope="col">C-ID</th><th scope="col">code</th><th scope="col" class="n">rows</th></tr></thead>
+      <tbody>
+        <tr><td>animal science</td><td>AG-AS</td><td>AGAS</td><td class="n">242</td></tr>
+        <tr><td>plant science</td><td>AG-PS</td><td>AGPS</td><td class="n">92</td></tr>
+        <tr><td>mechanized agriculture</td><td>AG-MA</td><td>AGMA</td><td class="n">86</td></tr>
+        <tr><td>agriculture business</td><td>AG-AB</td><td>AGAB</td><td class="n">41</td></tr>
+        <tr><td>environmental horticulture</td><td>AG-EH</td><td>AGEH</td><td class="n">37</td></tr>
+        <tr><td>residual: one signal only, with its proposal</td><td>—</td><td>AGRI / AGPR</td><td class="n">235</td></tr>
+        <tr><td>residual: no family signal</td><td>—</td><td>AGRI / AGPR</td><td class="n">161</td></tr>
+        <tr><td>residual: viticulture and enology (item 5)</td><td>—</td><td>AGRI / AGPR</td><td class="n">121</td></tr>
+      </tbody></table></div></dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes. The 235 one-signal rows are a curator's worklist after the fold, each with the
+    family the one signal proposes.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Readings the dry runs raised</h2>
+
+<section class="card">
+  <header><span class="num">4</span> <span class="tname">Agricultural Production keeps AGPR as its residual</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The sheet said AGRI is the residual. Agriculture and Agricultural Production are two MQ
+    disciplines, and a row that classifies to no family has to sit on one code or the other.</dd>
+    <dt>Measured</dt>
+    <dd>Agriculture moves 455 rows (454 keep their number); Agricultural Production moves 85. A
+    residual row on <code>AGRI</code> in both disciplines would put two MQ disciplines on one code,
+    which the CSR's collision check flags as a fan-in.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Agriculture's residual is <code>AGRI</code>, Agricultural Production's is <code>AGPR</code>;
+    both disciplines carry the five family codes. Say <code>edit: AGRI for both</code> to make the pair a fan-in instead.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">5</span> <span class="tname">Viticulture and enology stay residual</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>121 rows — TOP 0104, local codes VWT, VEN, WINE, VIT — carry two agreeing signals for a family
+    C-ID does not have.</dd>
+    <dt>Measured</dt>
+    <dd>C-ID's five agriculture families have no viticulture descriptor; grape growing is plant science
+    by content, winemaking and wine business are not.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Residual, on the discipline's own code, until C-ID names a family. Say <code>edit: AGPS</code>
+    to file them under plant science.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">6</span> <span class="tname">Ornamental Horticulture keeps HORT, with a C-ID AG-EH chip</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>A discipline the sheet did not list. C-ID's environmental-horticulture descriptors sit mostly
+    under it in our corpus.</dd>
+    <dt>Measured</dt>
+    <dd>Of the twelve rows carrying an <code>AG-EH</code> target, seven are filed under Ornamental Horticulture,
+    three under Agricultural Production, two under Environmental Technologies. The chip
+    <code>C-ID AG-EH</code> already shows on Ornamental Horticulture in #1447; inside the umbrella,
+    <code>AGEH</code> takes the 37 Agriculture rows that classify as horticulture.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Ornamental Horticulture keeps <code>HORT</code> and the chip. Say <code>edit: umbrella</code>
+    to move it into the agriculture umbrella on <code>AGEH</code>.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">7</span> <span class="tname">Arabic takes ARAB</span>
+  <span class="chip reading">Reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The ruling names <code>ARAB</code> among the dominant local codes.</dd>
+    <dt>Measured</dt>
+    <dd>On the Arabic rows the colleges write <code>ARBC</code> 30 times and <code>ARAB</code> 28; the spelled-out
+    <code>ARABIC</code> 11 more. 56 rows move either way.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed"><code>ARAB</code>, as ruled. Say <code>edit: ARBC</code> for the measured code.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">8</span> <span class="tname">Eight languages keep their CSR codes, flagged</span>
+  <span class="chip reading">Reading</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Your rule for item 10: a language whose dominant local code is not four letters keeps a CSR
+    code, flagged. The dry run applied it mechanically and it caught one more case: Nahuatl's rows
+    carry <code>SPAN</code>, because the courses live in Spanish departments, and a language may not
+    take another language's code.</dd>
+    <dt>Measured</dt>
+    <dd><div class="tablewrap"><table>
+      <colgroup><col style="width:22%"><col style="width:16%"><col style="width:62%"></colgroup>
+      <thead><tr><th scope="col">language</th><th scope="col">code</th><th scope="col">why it keeps the CSR code</th></tr></thead>
+      <tbody>
+        <tr><td>Korean</td><td>FLKO</td><td>ruled: the dominant code is <code>KOREAN</code>, then <code>KOR</code></td></tr>
+        <tr><td>Tagalog</td><td>FLTA</td><td><code>PIL</code> leads (10) over <code>TAGA</code> (9)</td></tr>
+        <tr><td>Hebrew</td><td>FLHE</td><td><code>HEBREW</code> leads (8) over <code>HEBR</code> (4)</td></tr>
+        <tr><td>Persian</td><td>FLPE</td><td>a tie: <code>PRSN</code>, <code>PERSIN</code>, <code>PERS</code>, <code>PERSN</code>, three rows each</td></tr>
+        <tr><td>Punjabi</td><td>FLPU</td><td><code>PUNJABI</code> only</td></tr>
+        <tr><td>Hmong</td><td>FLHM</td><td><code>HMONG</code> leads over <code>HMNG</code></td></tr>
+        <tr><td>Greek</td><td>FLGR</td><td><code>GREEK</code> only</td></tr>
+        <tr><td>Nahuatl</td><td>FLNA</td><td>its rows carry <code>SPAN</code>, Spanish's code</td></tr>
+      </tbody></table></div>
+    Spanish, French, Chinese, Italian, Japanese, German, Russian, Arabic, Vietnamese and Portuguese take
+    the codes the ruling names; Latin takes <code>LATN</code> and Hindi <code>HNDI</code> by the same rule
+    (both already keyed so, nothing moves).</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Yes, as flagged. To hand one a four-letter code anyway, say for instance
+    <code>edit: Tagalog TAGA</code>.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">9</span> <span class="tname">Eleven stray prefixes the language file does not know</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Rows under Foreign Languages keyed with a code that is no language in
+    <code>kb/foreign_language_subj4.json</code>, so the classifier cannot place them.</dd>
+    <dt>Measured</dt>
+    <dd><code>ARME</code> 18 rows (Armenian), <code>ARAM</code> 3, <code>ARMN</code> 2, <code>HUPA</code> 2, and one each of
+    <code>KHME</code>, <code>FL</code>, <code>HIER</code>, <code>LING</code>, <code>NAL</code>, <code>TURK</code>, <code>YUR</code>.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Add Armenian to the file with <code>ARME</code> as its code and fold <code>ARMN</code> into it;
+    the rest keep their keys until the file names them. Say <code>dismiss</code> to leave all eleven as they are.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">10</span> <span class="tname">PH under Health: the evidence and item 17 disagree</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Item 17 dismissed the codes seen on mis-filed rows, and named <code>PH</code> under Health among
+    them. The chip data follows your ruling, so Health shows no <code>C-ID PH</code> chip today.</dd>
+    <dt>Measured</dt>
+    <dd>The promotions evidence carries 30 identities under Health whose members align to C-ID
+    <code>PH</code> descriptors (public health), the largest count for any dismissed pair by far; the
+    others are one to three rows. Health does show <code>C-ID PHS</code> (public health science, nine rows),
+    which item 17 did not name.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Reverse the dismissal for this one pair: Health shows <code>C-ID PH</code> beside
+    <code>C-ID PHS</code>. The other item-17 pairs stay dismissed.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">11</span> <span class="tname">Kinesiology credit has three numbers left</span>
+  <span class="chip design">Design</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Corroborated M numbers run 001 to 999 per subject and band, and every id ever minted stays
+    reserved, because a merged-away member keeps its id for the curation rows that point at it.</dd>
+    <dt>Measured</dt>
+    <dd>Kinesiology credit holds 797 numbers today; the Z retirement adds 199; 996 of 999 are taken
+    afterwards. Next: Art 339 free, Music 352, Computer Information Systems 366. No other bucket is
+    near its ceiling.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">A continuation band digit for credit when a bucket fills — <code>KINE M2001</code> follows
+    <code>KINE M1999</code>. The band digit carries no transferability meaning today (§10 of the pipeline
+    reference), the parsers accept any digit, and no id changes. Say <code>edit</code> for another shape.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">12</span> <span class="tname">Materialize the retired identities into the catalog</span>
+  <span class="chip design">Design</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>After the re-key the 4,053 identities are M-ids that live only in the curation overlay, as
+    the Z ids do today: a self-keyed title row and the <code>merge_into</code> pointers of their members,
+    no record in the minted catalog.</dd>
+    <dt>Measured</dt>
+    <dd>Two members in the typical case, twelve at most, none single-member; 10,704 pointers. The CCR
+    tab and the export already read a row-less <code>SUBJ M####</code> target as an M-ID by its shape.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">Materialize them at the apply: each becomes a real M-ID record (title, discipline,
+    members) with <code>origin: machine cluster</code>, so the generator, the auditor and SkyView carry it
+    like any other. This is the honest end state of your ruling and the bigger apply. Say
+    <code>edit: stay curation-only</code> for the smaller one.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">13</span> <span class="tname">The legacy anchors: three wait for a discipline, 122 are a merge worklist</span>
+  <span class="chip judge">Judgment</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The 221 <code>M-ID SUBJ ###</code> anchors you reviewed on 2026-05-20 fold to <code>SUBJ M####</code>
+    under their discipline's canonical code, digits for two or more colleges (11), letters for one (207).</dd>
+    <dt>Measured</dt>
+    <dd>Three anchors carry a discipline the seed does not know — Travel Services (two) and Hotel and
+    Motel Services (one) — so they have no canonical code and wait. 122 anchors share a title and
+    discipline with an identity already in the catalog; the fold gives them their own M-id and does
+    not merge them.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">A curator gives the three one of the 146 MQ disciplines on the CSR tab (the next run
+    folds them); the 122 become a merge worklist on the CCR tab after the fold. Say
+    <code>edit: fold the 122 into their twins</code> to have the apply merge them.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">14</span> <span class="tname">Order and window</span>
+  <span class="chip timing">Timing</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Item 22's mechanics, made concrete by the two receipts.</dd>
+    <dt>Measured</dt>
+    <dd>The recode moves 10,292 ids (539 of them Z ids moving with their namespace); the retirement is
+    computed after it, so its plan already assumes the recode's buckets and codes. The Supabase
+    <code>kb_curation</code> re-key follows each from its receipt; the daily cron fires at 06:17 UTC.</dd>
+    <dt>Proposed</dt>
+    <dd class="proposed">After your replies: a session builds the two applies from the same allocators
+    (<code>compute_plan</code> shared, apply equals spec), brings each back as a pull request, and lands both
+    in one cron window — recode first, then the retirement — with <code>kb_curation</code> re-keyed from
+    the receipts and the post-apply chain run once at the end.</dd>
+  </dl>
+</section>
+
+</div>
+
+<p class="close">That is the whole set. Nothing moves until you reply. The three earlier readings (items 8, 13
+and 14 of the morning's sheet) are cards 1 to 3 here, so one reply covers both sheets.</p>
+</main>

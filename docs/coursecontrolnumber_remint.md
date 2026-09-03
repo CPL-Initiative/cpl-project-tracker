@@ -313,6 +313,12 @@ PRs:
 
 ## Lessons / patterns to reuse
 
+- **A code change is a prefix re-key that keeps the number** (2026-09-03). The
+  June fold allocator (`kb/_subj4_dryrun.py`) numbers every bucket by title and
+  would renumber the whole catalog for a rename; a canonical-code change uses
+  the keep-number pattern (`kb/_pols_remint.py`, `kb/_authority_recode_dryrun.py`),
+  in two passes so one taken key cannot cascade. See
+  `docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md`.
 - **Measure first, change second.** A dry-run that maps the *distribution* of
   outcomes before you build the apply step is cheap, reviewable, and
   decouples the data question ("what changes?") from the implementation
