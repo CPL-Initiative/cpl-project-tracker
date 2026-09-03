@@ -1403,14 +1403,16 @@
         // Merging into an existing identity keeps that identity's native
         // kind/id_system (an M-ID gaining members is still that M-ID). A
         // synthetic Unified target is a brand-new "Unified" course (the
-        // "Cluster" label was retired 2026-05-30, Session 19) — either the
-        // settled `SUBJ Z<band><seq>` form (the 2026-06-15 UC-CUR→Z re-mint)
-        // or a transient `UC-CUR-*` placeholder a client mint hasn't yet had
-        // promoted to Z by the daily generator. A row-less OFFICIAL target
+        // "Cluster" label was retired 2026-05-30, Session 19): a transient
+        // `UC-CUR-*` placeholder a client mint hasn't yet had promoted to an
+        // M-ID by the generator. The `SUBJ Z<band><seq>` form retired on
+        // 2026-09-03 (items 20-21): every machine cluster is a real M-ID record
+        // now, so a row-less `SUBJ M####` target is an M-ID by shape (below).
+        // A row-less OFFICIAL target
         // (#342 — a descriptor-catalog C-ID, or a CCN) gets its official
         // id_system inferred from the id shape so it renders — and is
         // title-firewalled — like the anchor it stands in for.
-        if (/^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
+        if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
         else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
         else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
         else { urow.kind = "Course"; urow.id_system = "C-ID"; }
@@ -3290,7 +3292,7 @@
             memberIds.forEach(function (m) { delete liveMergePending[m]; if (byId[m]) byId[m]._mergedAway = false; });
             var stillMerged = Object.keys(liveMergePending).filter(function (id) { return liveMergePending[id] === target; });
             var trow = byId[target];
-            var sessionMint = /^UC-CUR-/.test(target) || /\sZ\d{4}\b/.test(target);
+            var sessionMint = /^UC-CUR-/.test(target);
             if (trow) {
               if (sessionMint && !stillMerged.length) {
                 trow._mergedAway = true;   // a course minted this session, now emptied → remove it

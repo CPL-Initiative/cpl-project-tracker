@@ -95,17 +95,12 @@ def main():
         sys.exit("usage: python3 kb/_rekey_kb_curation_supabase.py <alias_map.json> [--check]")
     pairs = load_alias(args[0])
     print(f"alias map: {len(pairs)} old→new pairs from {args[0]}")
-    bad = [n for n in pairs.values() if " Z" not in n]   # this re-key targets Z-ids
-    if bad:
-        print(f"  note: {len(bad)} targets are not Z-ids (e.g. {bad[:3]}) — generic re-key")
     if check:
         print("--check: alias map loads OK; no Supabase writes.")
         return
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) to run the live re-key.")
 
-    before_keys = _count("course_id=in.(" + ",".join(
-        urllib.parse.quote(o) for o in list(pairs)[:1]) + ")") if pairs else 0
     print(f"re-keying {len(pairs)} self-keyed rows + their merge_into pointers …")
     n_self = n_ptr = 0
     for i, (old, new) in enumerate(sorted(pairs.items()), 1):
@@ -120,13 +115,30 @@ def main():
             print(f"  … {i}/{len(pairs)}")
     print(f"PATCHed {n_self} self-key filters + {n_ptr} merge_into filters.")
 
-    # verify: 0 old keys remain on the re-key surface
-    left_keys = _count("course_id=like.UC-CUR-*")
-    left_ptrs = _count("field=eq.merge_into&value=like.UC-CUR-*")
-    print(f"VERIFY — UC-CUR self-keys left: {left_keys} | UC-CUR merge_into left: {left_ptrs}")
+    # verify: 0 of the alias map's OLD keys remain on the re-key surface — generic
+    # since 2026-09-03 (the authority recode + Z-band retirement receipts); the
+    # first receipt's `UC-CUR-*` shape was a special case of this.
+    left_keys, left_ptrs = _count_old_keys(list(pairs))
+    print(f"VERIFY — old self-keys left: {left_keys} | old merge_into pointers left: {left_ptrs}")
     if left_keys or left_ptrs:
-        sys.exit(f"ABORT — {left_keys + left_ptrs} UC-CUR rows remain after re-key.")
-    print("✓ Supabase kb_curation re-keyed — 0 UC-CUR rows remain on the re-key surface.")
+        sys.exit(f"ABORT — {left_keys + left_ptrs} rows still carry an old key after the re-key.")
+    print(f"✓ Supabase kb_curation re-keyed — none of the {len(pairs)} old keys remain on the re-key surface.")
+
+
+def _in_list(keys):
+    """PostgREST `in.(...)` list: each key double-quoted (they carry spaces),
+    then URL-encoded."""
+    return "in.(" + ",".join(urllib.parse.quote('"' + k.replace('"', '\\"') + '"', safe="") for k in keys) + ")"
+
+
+def _count_old_keys(old_keys, chunk=200):
+    """(self-keyed rows, merge_into pointers) still on any of the old keys."""
+    keys = ptrs = 0
+    for i in range(0, len(old_keys), chunk):
+        part = old_keys[i:i + chunk]
+        keys += _count("course_id=" + _in_list(part))
+        ptrs += _count("field=eq.merge_into&value=" + _in_list(part))
+    return keys, ptrs
 
 
 if __name__ == "__main__":

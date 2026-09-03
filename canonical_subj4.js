@@ -362,8 +362,18 @@
   // ATHL intercollegiate athletics).
   var UMBRELLA_EXTRA_SUBJ4 = { "Kinesiology": ["KINE", "ATHL"] };
 
+  // The spans an umbrella legitimately covers: the fixed table above plus the
+  // codes the seed declares on the entry (`is_umbrella` + `umbrella_codes` —
+  // Agriculture and Agricultural Production carry the C-ID family codes
+  // AGAB/AGAS/AGPS/AGEH/AGMA since the 2026-09-03 recode, item 14).
+  function umbrellaSpans(entry) {
+    var fixed = UMBRELLA_EXTRA_SUBJ4[entry.discipline] || [];
+    var seeded = (entry.is_umbrella && Array.isArray(entry.umbrella_codes)) ? entry.umbrella_codes : [];
+    return fixed.concat(seeded);
+  }
+
   function isUmbrellaEntry(entry) {
-    return !!(splitFor(entry) || UMBRELLA_EXTRA_SUBJ4[entry.discipline]);
+    return !!(splitFor(entry) || umbrellaSpans(entry).length);
   }
 
   // Codes that are LEGITIMATE on this discipline's CCR rows: the canonical
@@ -372,7 +382,7 @@
     var ok = {};
     if (entry.canonical_subj4) ok[entry.canonical_subj4] = true;
     (splitFor(entry) || []).forEach(function (x) { ok[x.code] = true; });
-    (UMBRELLA_EXTRA_SUBJ4[entry.discipline] || []).forEach(function (c) { ok[c] = true; });
+    umbrellaSpans(entry).forEach(function (c) { ok[c] = true; });
     return ok;
   }
 
@@ -400,7 +410,7 @@
       (splitFor(e) || []).forEach(function (x) {
         (owners[x.code] = owners[x.code] || []).push({ d: e.discipline, why: "split (" + x.lang + ")" });
       });
-      (UMBRELLA_EXTRA_SUBJ4[e.discipline] || []).forEach(function (s) {
+      umbrellaSpans(e).forEach(function (s) {
         if (s !== c) (owners[s] = owners[s] || []).push({ d: e.discipline, why: "umbrella span" });
       });
       var vo = e.variants_observed || {};

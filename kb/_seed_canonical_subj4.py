@@ -306,7 +306,8 @@ def main():
                        "validated_at", "validated_by",
                        "ccn_subject_code", "cid_subject_codes", "canonical_source",
                        "authority_chips", "authority_flag", "authority_note",
-                       "is_umbrella", "umbrella_codes", "_umbrella_note"):
+                       "is_umbrella", "umbrella_codes", "_umbrella_note",
+                       "umbrella_group", "fan_in_with", "_fan_in_note"):
                 if k in prev:
                     entry[k] = prev[k]
             if prev.get("canonical_subj4"):

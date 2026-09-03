@@ -127,7 +127,7 @@ DISC_MAP_PATH = os.path.join(REF, "subject_discipline_map.json")
 CANON_PATH = os.path.join(HERE, "discipline_canonical_subj4.json")
 # Umbrella disciplines mint per-subject/per-language — never collapse to one
 # code (kb/_row_audit.py UMBRELLA_DISCIPLINES; Sessions 37/50 scopes).
-UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology", "Agriculture", "Agricultural Production"}
 
 
 def load_canonical_map():

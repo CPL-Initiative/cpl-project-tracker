@@ -80,6 +80,14 @@ def _bulk_update_sql(pairs, set_col, where_clause):
 
 
 def main():
+    # The Z band retired 2026-09-03 (items 20-21; kb/_zband_retire_apply.py):
+    # machine clusters are M-ID records now. This one-shot re-mint must never
+    # mint another Z id, so it refuses to run on a retired counter file.
+    if os.path.exists(COUNTER):
+        with open(COUNTER, encoding="utf-8") as f:
+            if json.load(f).get("_retired_at"):
+                sys.exit("REFUSED — kb/uc_cur_zseq.json is retired (the Z band ended 2026-09-03); "
+                         "machine clusters mint M ids now. See kb/_zband_retire_apply.py.")
     check_only = "--check" in sys.argv
 
     with open(CURATION, encoding="utf-8") as f:

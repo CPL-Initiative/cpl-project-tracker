@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 406,
+  "file_datasets": 407,
   "external_services": 137,
-  "consumers": 309,
+  "consumers": 311,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -930,7 +930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4243,
+     "line": 4245,
      "tabs": [
       "unified-courses"
      ]
@@ -957,7 +957,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3433,
+     "line": 3435,
      "tabs": [
       "unified-courses"
      ]
@@ -2665,14 +2665,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 675
+     "line": 692
     },
     {
      "id": "script:kb/_zband_retire_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 373
     }
    ],
    "served": false,
@@ -6072,7 +6072,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 634
+     "line": 651
     }
    ],
    "served": true,
@@ -6085,7 +6085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 629
+     "line": 646
     }
    ],
    "served": true,
@@ -6098,14 +6098,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 639
+     "line": 656
     },
     {
      "id": "script:kb/_zband_retire_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 106
+     "line": 115
     }
    ],
    "served": true,
@@ -6685,7 +6685,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1324
+     "line": 1326
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -7059,7 +7059,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1303
+     "line": 1305
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -7414,7 +7414,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1359
+     "line": 1361
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -7464,6 +7464,13 @@
      "direction": "read",
      "how": "literal",
      "line": 124
+    },
+    {
+     "id": "script:kb/_zband_retire_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
     }
    ],
    "producers": [
@@ -7734,7 +7741,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1304
+     "line": 1306
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -8079,7 +8086,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1310
+     "line": 1312
     },
     {
      "id": "script:kb/_seed_coci_minted_mids.py",
@@ -8670,11 +8677,18 @@
      "line": 308
     },
     {
+     "id": "script:kb/_zband_retire_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
+    },
+    {
      "id": "script:kb/_zband_retire_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 441
+     "line": 457
     }
    ],
    "served": true,
@@ -8697,7 +8711,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3107,
+     "line": 3109,
      "tabs": [
       "unified-courses"
      ]
@@ -8930,7 +8944,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1329
+     "line": 1331
     }
    ],
    "served": true,
@@ -10087,7 +10101,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1320
+     "line": 1322
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -10234,7 +10248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1314
+     "line": 1316
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -11014,7 +11028,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 611
+     "line": 622
     }
    ],
    "served": true,
@@ -11128,7 +11142,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1343
+     "line": 1345
     }
    ],
    "served": true,
@@ -11256,6 +11270,13 @@
   "file:kb/uc_cur_zseq.json": {
    "consumers": [
     {
+     "id": "script:kb/_authority_recode_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
+    },
+    {
      "id": "script:kb/_pols_remint.py",
      "kind": "script",
      "direction": "read",
@@ -11282,6 +11303,13 @@
      "direction": "write",
      "how": "literal",
      "line": 52
+    },
+    {
+     "id": "script:kb/_zband_retire_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     }
    ],
    "served": true,
@@ -11655,7 +11683,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 315
+     "line": 331
     }
    ],
    "served": true,
@@ -11668,7 +11696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 319
+     "line": 335
     }
    ],
    "served": true,
@@ -12310,6 +12338,19 @@
    "main_committers": [
     "workflow:weekly-reflections-summary.yml"
    ]
+  },
+  "file:remint_series_readings_rulings_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:report_generator.js": {
    "consumers": [
@@ -15577,7 +15618,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 114
+     "line": 109
     },
     {
      "id": "script:kb/_subj4_apply_supabase.py",
