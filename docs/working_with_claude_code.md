@@ -274,6 +274,16 @@ know our rules exist. The fix is a one-time install on your machine —
 user-level Claude memory, so even a bare session asks about the repos before
 doing CPL work. Run it once per machine; any session can walk you through it.
 
+## 13. If you type while I am working
+
+Enter queues your message. I do not see it until my current turn ends, and I do
+not draft an answer early. Escape (Stop, on the web) interrupts the turn and your
+message lands at once; the Up arrow pulls a queued message back for editing. So if
+what you are typing changes the work I am doing, press Escape. Interrupting
+mid-step is safe: git operations are atomic and I re-read state when I resume. The
+cost is the in-flight step, not the work. (Sam asked, 2026-09-03. Claude Code's
+docs say Enter interrupts; the tracked behavior is queuing, issue #36326.)
+
 ## For Sam — a note on agents
 
 You floated *"maybe need some established agents who are mindful of these

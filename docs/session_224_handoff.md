@@ -103,10 +103,20 @@ selection** read an 850-course card as empty.
    behind the map since S192; the shard publish path is the template.
 4. **The queue** (NEXT ②): a drag that leaves the destination's SUBJ4 inconsistent
    queues a re-mint candidate, proposes never auto-adds.
-5. **Funding carry-overs** unchanged: the day Pedro says `CollegeID2` landed
+5. **A description signal for the rim** (Sam, 2026-09-03; NEXT ⑦). The probe
+   numbers are in the lane file and in `cpl_memory`
+   (`sam-rim-loners-should-orbit-on-title-and-description`): build it as a
+   gap-filler that never outvotes a title match, boilerplate stripped, the
+   shared terms shown as the reason.
+6. **Dropdown labels on the CCR tab** (NEXT ⑧): Subject `CODE — title —
+   discipline`, Discipline `Discipline — Common SUBJ(s)`, SkyView's kind word
+   "subject" → "discipline". Sam's FLNG example is the test case: `FLSP —
+   Spanish (Foreign Languages)`. The invariant is in
+   `reference-common-vs-local-subj-and-discipline-cardinality`.
+7. **Funding carry-overs** unchanged: the day Pedro says `CollegeID2` landed
    (probe, `ppa` cutover, earn diagnostic); the dials are Sam's to set through
    the tab; NEEDS SAM ③④⑤ await his reactions.
-6. Done, not open: the probe's stale `BUILDER_SWEEP` copy (it lacked
+8. Done, not open: the probe's stale `BUILDER_SWEEP` copy (it lacked
    `Counselor_Verified`) was fixed and pinned equal to the builder's tuple in
    #1442, merged 2026-09-03 — the next probe run's verdict line is trustworthy.
 

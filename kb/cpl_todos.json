@@ -69,6 +69,18 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Work the 73 course control numbers that name two genuinely different courses, 93 of them at San Jose City College. SkyView refuses to move those courses because the write key cannot say which one; the fix is upstream in COCI or a wider key."
+    },
+    {
+      "id": "s223-fable-rim-by-description",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Give the 2,073 rim courses in SkyView a third signal: the catalog description. Measured on 2026-09-03: 1,600 of them have one; a description match places about 130 well inside their own subject area and agrees with the title-based parent only 20% of the time, so it fills the gap when the title says nothing and never outvotes a title match. Strip college boilerplate first, hold cross-island matches to a higher bar, show the shared terms as the reason, and say orbit by description in words. Sam asked for this on 2026-09-03."
+    },
+    {
+      "id": "s223-fable-ccr-dropdown-labels",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "On the Common Course Reference tab, make the Subject dropdown read the code, its full title and its discipline (for example CRIM, Administration of Justice; FLSP, Spanish, Foreign Languages) and the Discipline dropdown read the discipline and its Common SUBJ codes, moving the local college codes to the hover text. Rename SkyView's search kind word from subject to discipline. Sam asked on 2026-09-03; each Common SUBJ belongs to exactly one discipline, so the full title is the discipline's name except for the umbrella codes."
     }
   ]
 }

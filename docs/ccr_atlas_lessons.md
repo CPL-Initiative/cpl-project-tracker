@@ -957,3 +957,32 @@ search.
    until then.
 3. Decision packs per discipline on demand; the queue for SUBJ4 breakage.
 4. Whether the daily run should rebuild the layout too (NEEDS SAM ②).
+
+### Later the same day — Sam's three questions, measured (2026-09-03)
+
+Sam read the orbit story and sent three things at once. **The loners.** He wants
+the rim courses to orbit on a signal that also reads title and description. A
+scratch probe on the committed payload: 2,073 rim courses, 1,600 with a catalog
+description, only 20 with generic titles — the loners are real CTE titles with no
+identity in their island using the same words. A TF-IDF cosine against each
+identity's member descriptions places 130 well inside the home island (≥ 0.40)
+and 346 plausibly (≥ 0.30); below 0.30 the matches read wrong. Where the
+title-based parent is known, the description's top choice agrees with it 20% of
+the time (39% within three), so the description is a gap-filler and never a
+tie-breaker over a title. Corpus-wide scoring inflates by chance — college
+boilerplate ("competently, directed, repetition") matched Snowshoeing to
+Snowboarding — so boilerplate must be stripped and a cross-island match held
+higher. The rim concentrates in CTE islands (Industrial Technology 103, Health
+94, Dietetics 86, Public Safety 65, Kinesiology 63); a loner with no parent at
+any signal is often the seed of a NEW identity, a mint decision the map should
+present as one. **Subject vs Discipline.** He believed one subject can carry
+several disciplines; the methodology says the reverse (each Common SUBJ belongs
+to exactly one discipline; a discipline may carry several subjects, the
+umbrellas), measured again at the canonical layer: 146 disciplines, 146 distinct
+codes, none shared. His example — "FLNG with Spanish, French, etc." — sits on
+the seam between two uses of the word: C-ID calls SPAN a discipline, the MQ list
+has only Foreign Languages, and all 265 FL* identities sit under it as subjects.
+The cure is labels that name the grain (NEXT ⑧). **Queued messages.** He does
+not get read early: Enter queues, the turn's end delivers, Escape interrupts.
+Captured verbatim in the vault (CPLBrain #84, #85) and as four `cpl_memory`
+rows; two to-dos filed.
