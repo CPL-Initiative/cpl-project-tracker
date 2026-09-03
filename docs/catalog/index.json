@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 367,
+   "count": 368,
    "docs": [
     {
      "created": "2026-08-14",
@@ -155,6 +155,26 @@
      "title": "ADR \u2014 Per-college funding-priority metric counts in the public dashboard (aggregate + suppression)",
      "type": "adr",
      "updated": "2026-06-11"
+    },
+    {
+     "created": "2026-09-03",
+     "governs": [
+      "funding/_build_funding_performance.py",
+      "cpl_funding.js"
+     ],
+     "path": "docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "privacy",
+      "pii",
+      "funding",
+      "implementation-funding",
+      "sec-10"
+     ],
+     "title": "ADR \u2014 Public funding figures mask student counts under 10; units carry the money; dollars coarsen on the public page",
+     "type": "adr",
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-08",
@@ -14932,5 +14952,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 759
+ "total": 760
 }

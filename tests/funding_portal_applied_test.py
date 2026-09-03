@@ -111,16 +111,24 @@ def main():
 
     check("the test student is excluded from ppa",
           abs(st.get("ppa_u", 0) - 60) < 1e-6)
-    check("per-college ppa matches statewide for a single-college fixture",
-          col.get("ppa") == 3 and abs(col.get("ppa_u", 0) - 60) < 1e-6)
+    check("per-college ppa_u matches statewide for a single-college fixture "
+          "(the count itself masks under 10; the units carry the money)",
+          col.get("ppa") is None and col.get("ppa_suppressed") is True
+          and abs(col.get("ppa_u", 0) - 60) < 1e-6,
+          f"ppa={col.get('ppa')!r} ppa_u={col.get('ppa_u')!r}")
 
-    # Suppression: ppa rides with pp, so a small portal cohort still earns.
+    # Suppression (Sam, 2026-09-03): the COUNT masks under 10 like every other
+    # count — no portal carve-out — but the UNITS bake raw, and units are what
+    # the tab prices, so a small portal cohort still earns.
     small = [row("s1", ecr=0, acr=4, tcr=0, potential="Yes")]
     p2 = run_builder(small)
     c2 = p2["colleges"][FUNDING_NAME]
-    check("a 1-student ppa cell is NOT <5-suppressed (it would read as $0 earned)",
-          c2.get("ppa") == 1 and not c2.get("ppa_suppressed"),
+    check("a 1-student ppa COUNT is masked (null + flag)",
+          c2.get("ppa") is None and c2.get("ppa_suppressed") is True,
           f"got {c2.get('ppa')} suppressed={c2.get('ppa_suppressed')}")
+    check("...while its ppa_u (the earning input) is kept, so the college still earns",
+          abs((c2.get("ppa_u") or 0) - 4) < 1e-6 and not c2.get("ppa_u_suppressed"),
+          f"got ppa_u={c2.get('ppa_u')!r}")
 
     # OMIT, DON'T ZERO — the rule pa already follows.
     cols = [c for c in COLUMNS if c != "Applied Credits"]

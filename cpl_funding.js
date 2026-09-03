@@ -791,6 +791,40 @@
     if (a >= 1e3) return "$" + parseFloat((v / 1e3).toFixed(1)) + "K";
     return "$" + Math.round(v);
   }
+  // PUBLIC-VIEW DOLLARS (Sam, 2026-09-03). Student COUNTS mask under 10 on the
+  // public page while the money computes on the true numbers, so a college's
+  // EARNED figures — the ones derived from measured units — are floored at
+  // "<$1,000" and rounded to the nearest $1,000 above it, the row's total
+  // included: subtracting visible measures then cannot recover a masked one.
+  // Units, FTES and dollars describe credit, never people; the coarsening is
+  // belt to the mask's suspenders. $0 stays $0 — "posted nothing" is a state
+  // the college needs to see, not a small amount. Caps, max awards, the base
+  // and the cap are size allocations, not measures, and stay exact. The
+  // curator view keeps exact dollars: this is a formatting rule (dollars are
+  // computed on the page), unlike the count mask, which is baked into the
+  // published artifact and applies wherever the artifact is read.
+  // The label is built from the constant, never typed: tests/suppression_floor
+  // fails on a quoted "<N" so a mask can never drift from its threshold.
+  var PUBLIC_MONEY_FLOOR = 1000;
+  function coarseDollars(v) { return Math.round(v / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR; }
+  function earnedMoney(v) {
+    if (v == null) return "—";
+    if (!publicMode()) return fmtMoney(v);
+    var a = Math.abs(Number(v) || 0);
+    if (a < 0.5) return "$0";
+    if (a < PUBLIC_MONEY_FLOOR) return "<" + fmtMoney(PUBLIC_MONEY_FLOOR);
+    return fmtMoney(coarseDollars(v));
+  }
+  // The CSV twin: a number, or the same label, so the export never carries a
+  // figure the screen withholds (scope, not shape).
+  function earnedCsv(v) {
+    if (v == null) return "";
+    if (!publicMode()) return Math.round(v);
+    var a = Math.abs(Number(v) || 0);
+    if (a < 0.5) return 0;
+    if (a < PUBLIC_MONEY_FLOOR) return "<" + PUBLIC_MONEY_FLOOR;
+    return coarseDollars(v);
+  }
   // NONCREDIT targets are order 1–25 CPL FTES, and at that scale fmtCountK's
   // integer rounding stops being a compaction and becomes a misstatement: 1.4
   // renders "1" (−29%) and 0.4 renders "0" — an ABSENT-looking zero on a row
@@ -3226,7 +3260,9 @@
     var earnHead = ["Earned " + windowLabel(), "% of max award", "Withheld (baseline not met)"];
     function earnCells(row) {
       var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
-      return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_withheld || 0)];
+      // Earned figures follow the public-view dollar rule (earnedCsv): the
+      // export never carries a figure the screen withholds.
+      return [earnedCsv(row.earned_total || 0), pct, earnedCsv(row.earned_withheld || 0)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -5445,8 +5481,10 @@
     };
     if (!rec || rec[meas.src] == null) {
       // Feed published, no value for this college: it has posted nothing → $0
-      // earned (this is the incentive). A privacy suppression (<5) is flagged
-      // separately and also not blind-credited.
+      // earned (this is the incentive). A privacy mask (a count under the
+      // floor) is flagged separately; since 2026-09-03 the UNIT sources it
+      // prices are never masked, so this branch is reached only when the
+      // source itself is absent.
       var supp = rec && rec[meas.src + "_suppressed"];
       return { f: 0, status: supp ? "suppressed" : "none", target: target, meas: meas };
     }
@@ -6400,7 +6438,7 @@
       // being shown "held $0", which would claim a withholding that isn't real.
       var showFig = due && held > 0.5;
       var tip = due
-        ? (held > 0.5 ? fmtMoney(held) + " held in reserve — " : "Nothing is withheld yet — ") +
+        ? (held > 0.5 ? earnedMoney(held) + " held in reserve — " : "Nothing is withheld yet — ") +
           "baseline participation was due " + participationDeadline() +
           " and is not met. The allocation cap is unchanged and the dollars roll forward, so qualifying " +
           "now still lets this college draw."
@@ -6408,19 +6446,19 @@
           ". Once this college opts in and has a CPL Coordinator on file in MAP, it starts earning against " +
           "its cap. The dollars roll forward either way.";
       return '<span class="sub cf-withheld" title="' + esc(tip) + '">' +
-        (showFig ? "held " + fmtMoney(held) : "confirm participation to start earning") + "</span>";
+        (showFig ? "held " + earnedMoney(held) : "confirm participation to start earning") + "</span>";
     }
     var pct = earned / cap;
     // Sam, 2026-08-27: "earning", not "earned" — the money is not a done deal
     // until the college qualifies, and the past tense read like a settled award.
     // The adv chip retired 2026-09-01 (Sam: no mention of the advance concept
     // on any rendered surface; the earning arithmetic is unchanged).
-    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + "</span>";
+    return '<span class="sub">earning ' + earnedMoney(earned) + " &middot; " + fmtPctTrim(pct) + "</span>";
   }
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
     // meas/adv accepted for call-site stability; neither renders (2026-09-01).
-    var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + fmtMoney(earned)];
-    if (held > 0.5) bits.push(fmtMoney(held) + " held in reserve — baseline participation not met; it rolls forward");
+    var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + earnedMoney(earned)];
+    if (held > 0.5) bits.push(earnedMoney(held) + " held in reserve — baseline participation not met; it rolls forward");
     return bits.join(" · ");
   }
   // ── the CR award / NC award cells (one row per institution — R6) ──────
@@ -6531,7 +6569,7 @@
       prio = '<div class="cplfund-ncorigin"><strong>Earns by origination</strong> &mdash; CPL originating from this ' +
         "institution and transcribed at a credit college " + scopeWords +
         ". Current Total: <strong>" +
-        fmtMoney(c.earned_total || 0) + "</strong> &middot; Total Possible: <strong>" + fmtMoney(c.total || 0) +
+        earnedMoney(c.earned_total || 0) + "</strong> &middot; Total Possible: <strong>" + fmtMoney(c.total || 0) +
         "</strong>, its max award." +
         (c.feeder && c.feeder.noncredit_ftes_placeholder
           ? ' <span class="dk">Its ' + fmtInt(c.feeder.noncredit_ftes_placeholder) +
@@ -6571,19 +6609,19 @@
           toGo = short <= 0
             ? '<span class="dk">target met</span>'
             : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu") +
-              '<span class="sub">' + fmtMoney(crM * (1 - fr.f)) + " still to earn</span>";
+              '<span class="sub">' + earnedMoney(crM * (1 - fr.f)) + " still to earn</span>";
         } else toGo = '<span class="dk">&mdash;</span>';
         return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(crM) +
           "</td><td>" + fmtMoney(ncM) + "</td><td>" + (isF ? fmtNum1(target) + " FTES" : fmtInt(target) + " stu") +
-          "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + fmtMoney(earnedP) +
+          "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + earnedMoney(earnedP) +
           "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
       }).join("");
       prio = '<div class="cplfund-dtl-tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
         '<table class="cplfund-dtl-table"><caption class="dk">' +
         "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
-        "is still to earn. Current Total: " + fmtMoney(c.earned_total || 0) +
+        "is still to earn. Current Total: " + earnedMoney(c.earned_total || 0) +
         (c.gate_blocked
-          ? " &middot; " + (c.earned_withheld > 0.5 ? fmtMoney(c.earned_withheld) + " held in reserve" : "earnings held in reserve") +
+          ? " &middot; " + (c.earned_withheld > 0.5 ? earnedMoney(c.earned_withheld) + " held in reserve" : "earnings held in reserve") +
             " until baseline participation is met"
           : "") +
         " &middot; Total Possible: " + fmtMoney(c.total || 0) + " &mdash; its max award</caption>" +

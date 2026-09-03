@@ -182,14 +182,16 @@ function openDetail(window, doc, name) {
   // string, so it went red when Sam changed "opt in" to "confirm participation"
   // (2026-08-27) — a rename that says nothing about whether the figure is
   // conditional, which is what this assertion exists for. The words are guarded
-  // where they are RENDERED, by cpl_funding_gate_ledger_public S5.
+  // where they are RENDERED, by cpl_funding_gate_ledger_public S5. The
+  // formatter is earnedMoney() since 2026-09-03 (public dollars coarsen to
+  // "<$1,000" / the nearest $1,000); either formatter satisfies the BRANCH.
   check("the figure renders only when there IS one to hold",
     /var showFig = due && held > 0\.5;/.test(src) &&
-    /showFig \? "held " \+ fmtMoney\(held\) : "[^"]+"/.test(src));
+    /showFig \? "held " \+ (?:fmtMoney|earnedMoney)\(held\) : "[^"]+"/.test(src));
   // The old unconditional wording would have printed "held $0" after the
   // deadline for exactly the colleges this change is for.
   check("no branch can emit a bare `held $0`",
-    !/due \? "held " \+ fmtMoney\(held\)/.test(src));
+    !/due \? "held " \+ (?:fmtMoney|earnedMoney)\(held\)/.test(src));
 }
 
 finish();

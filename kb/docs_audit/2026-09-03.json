@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 773,
-    "bytes": 8213392,
+    "files": 774,
+    "bytes": 8222217,
     "over_budget": 4,
     "handoff_max": 222,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 103,
-        "bytes": 2497825,
+        "bytes": 2498065,
         "over": 2
       },
       "index": {
@@ -36,17 +36,17 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1911037,
+        "bytes": 1913797,
         "over": 1
       },
       "kb_note": {
-        "files": 369,
-        "bytes": 1927914,
+        "files": 370,
+        "bytes": 1932780,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 153550,
+        "bytes": 154509,
         "over": 1
       },
       "handoff": {
@@ -61,10 +61,10 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2486,
-      "bytes": 1279191690,
-      "heavy_bytes": 600963039,
-      "heavy_share": 0.47,
+      "files": 2492,
+      "bytes": 1286705112,
+      "heavy_bytes": 601260798,
+      "heavy_share": 0.467,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -325,13 +325,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 35765,
+        "bytes": 36724,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 23765,
-        "ratio": 2.98
+        "over_by": 24724,
+        "ratio": 3.06
       },
-      "message": "35,765 B is 3.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "36,724 B is 3.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
@@ -444,10 +444,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 16661447,
+        "bytes": 16950845,
         "kind": "dir"
       },
-      "message": "directory totals 16,661,447 B inside the vault"
+      "message": "directory totals 16,950,845 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -624,10 +624,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9280888,
+        "bytes": 9289250,
         "kind": "file"
       },
-      "message": "9,280,888 B single file inside the vault"
+      "message": "9,289,250 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -704,10 +704,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267512,
+        "bytes": 6267511,
         "kind": "file"
       },
-      "message": "6,267,512 B single file inside the vault"
+      "message": "6,267,511 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

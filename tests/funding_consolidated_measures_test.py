@@ -113,6 +113,45 @@ def main():
     check("a test student is excluded from ppe as it is from pe",
           st.get("ppe") == 3 and st.get("pe") == 3)
 
+    # COUNTS MASK, UNITS CARRY THE MONEY (Sam, 2026-09-03). Three portal
+    # students and three documented ones are both under the floor of 10, so
+    # both counts bake as null + flag — every metric alike, no portal carve-out
+    # — while both unit sums bake raw, because units are what the tab prices.
+    # (A null ppe beside a raw ppa had read as "applied but no eligible" on
+    # 2026-09-02; no such rows exist at either grain.)
+    col = p["colleges"][FUNDING_NAME]
+    check("ppe (3 students) is masked at the college level like every other count",
+          col.get("ppe") is None and col.get("ppe_suppressed") is True, repr(col.get("ppe")))
+    check("ppe_u bakes RAW beside the masked count (10+20+30)",
+          abs((col.get("ppe_u") or 0) - 60) < 1e-6, repr(col.get("ppe_u")))
+    check("pe (3 students) is masked, and pe_u is kept (1+2+3)",
+          col.get("pe") is None and col.get("pe_suppressed") is True
+          and abs((col.get("pe_u") or 0) - 6) < 1e-6,
+          f"pe={col.get('pe')!r} pe_u={col.get('pe_u')!r}")
+    check("no unit key is ever nulled or flagged",
+          not any(k.endswith("_u_suppressed") for k in col) and
+          all(col.get(k) is not None for k in col if k.endswith("_u")), repr(sorted(col)))
+
+    # ── part D: COMPLEMENTARY masking across colleges ──────────────────────
+    # Exactly one masked college for a metric is recoverable from the statewide
+    # figure minus the visible ones, so the smallest visible college is masked
+    # too (counts only; its units stay). Three colleges: 15, 12 and 3 students.
+    def crow(college, sid, ecr):
+        return [college, "2025-2026", "0", str(ecr), "0", sid, "", ""]
+    rows_c = ([crow("Bakersfield College", f"b{i}", 10) for i in range(15)] +
+              [crow("Cerritos College", f"c{i}", 10) for i in range(12)] +
+              [crow("Cuesta College", f"q{i}", 10) for i in range(3)])
+    pc = run_builder(rows_c, BASE_COLUMNS)
+    cc = pc["colleges"]
+    check("the 3-student college is masked",
+          cc["Cuesta"].get("pe") is None and cc["Cuesta"].get("pe_suppressed") is True)
+    check("the smallest VISIBLE college (12) is masked too, flagged complementary",
+          cc["Cerritos"].get("pe") is None and cc["Cerritos"].get("pe_complementary") is True,
+          repr(cc.get("Cerritos")))
+    check("the largest college stays visible (15)", cc["Bakersfield"].get("pe") == 15)
+    check("units stay on every masked college",
+          abs((cc["Cuesta"].get("pe_u") or 0) - 30) < 1e-6 and abs((cc["Cerritos"].get("pe_u") or 0) - 120) < 1e-6)
+
     # The absent-keys contract, which is what lets the tab say "undelivered".
     check("pac is OMITTED — not zeroed — when the pull has no attestation column",
           "pac" not in st, f"got {st.get('pac')!r}")

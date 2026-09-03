@@ -94,23 +94,27 @@ def main():
           "origin_values" not in p0)
 
     # ── 2. The column is present ─────────────────────────────────────────
-    # Five NOCE-originated students transcribed at Cypress (in NOCE's district
+    # Ten NOCE-originated students transcribed at Cypress (in NOCE's district
     # scope), one NOCE-originated student transcribed at Bakersfield (OUT of
-    # scope — counts in the matrix, not in_scope), five Calbright-originated
+    # scope — counts in the matrix, not in_scope), ten Calbright-originated
     # students at Bakersfield (statewide scope — all in scope), two SDCCE
-    # students at San Diego Mesa (a <5 cell — suppressed in the matrix, still
-    # inside in_scope arithmetic when large enough; here it suppresses there
-    # too), one unknown LocID2, one documented student with no origin.
+    # students at San Diego Mesa and three at San Diego City (cells under the
+    # floor of 10 — masked in the matrix, still inside in_scope arithmetic when
+    # large enough; two small cells so neither is a lone masked one), one
+    # unknown LocID2, one documented student with no origin. Counts sit at
+    # 10/11 because the floor rose 5 -> 10 on 2026-09-03.
     rows = []
-    for i in range(5):
+    for i in range(10):
         rows.append(row("Cypress College", f"n{i}", tcr=6, origin="Landing Page",
                         loc2="NOCE", potential="Yes"))
     rows.append(row("Bakersfield College", "nb", tcr=9, loc2="NOCE"))
-    for i in range(5):
+    for i in range(10):
         rows.append(row("Bakersfield College", f"c{i}", tcr=3, acr=2,
                         loc2="Calbright College"))
     for i in range(2):
         rows.append(row("San Diego Mesa College", f"s{i}", tcr=4, loc2="SD Cont. Ed"))
+    for i in range(3):
+        rows.append(row("San Diego City College", f"t{i}", tcr=4, loc2="SD Cont. Ed"))
     rows.append(row("Bakersfield College", "u1", tcr=7, loc2="999"))
     rows.append(row("Bakersfield College", "d1", ecr=10, tcr=5))
     p = run_builder(rows)
@@ -120,49 +124,53 @@ def main():
     check("statewide carries nc_pt (the feed now CARRIES the measure)",
           "nc_pt" in st and "nc_pt_u" in st,
           f"got {[k for k in st if k.startswith('nc_')]}")
-    check("statewide nc_pt counts every resolved-origin transcribed student (5+1+5+2)",
-          st.get("nc_pt") == 13, f"got {st.get('nc_pt')}")
+    check("statewide nc_pt counts every resolved-origin transcribed student (10+1+10+2+3)",
+          st.get("nc_pt") == 26, f"got {st.get('nc_pt')}")
     # u1 (unknown LocID2) and d1 (no origin) are ordinary documented students —
-    # p3 counts them (10 documented transcribed here) while nc_pt must not.
+    # p3 counts them (18 documented transcribed here) while nc_pt must not.
     check("the unknown-LocID2 and no-origin students are in p3 but NOT nc_pt",
-          st.get("nc_pt") == 13 and st.get("p3") == 10,
+          st.get("nc_pt") == 26 and st.get("p3") == 18,
           f"nc_pt={st.get('nc_pt')} p3={st.get('p3')}")
     check("nc hits ignore Potential Student (Origin/LocID2 replace the flag)",
-          p["colleges"]["Cypress"].get("nc_pt") == 5,
+          p["colleges"]["Cypress"].get("nc_pt") == 10,
           f"got {p['colleges']['Cypress'].get('nc_pt')}")
-    check("per-college nc_pt_u sums the receiving college's originated units (5x6)",
-          abs((p["colleges"]["Cypress"].get("nc_pt_u") or 0) - 30) < 1e-6,
+    check("per-college nc_pt_u sums the receiving college's originated units (10x6)",
+          abs((p["colleges"]["Cypress"].get("nc_pt_u") or 0) - 60) < 1e-6,
           f"got {p['colleges']['Cypress'].get('nc_pt_u')}")
-    check("a <5 per-college nc cell is suppressed like the credit rungs",
+    check("a per-college nc COUNT under the floor is masked like the credit rungs",
           p["colleges"]["San Diego Mesa"].get("nc_pt") is None and
           p["colleges"]["San Diego Mesa"].get("nc_pt_suppressed") is True)
+    check("...while its nc_pt_u is KEPT — units carry the money (2x4)",
+          abs((p["colleges"]["San Diego Mesa"].get("nc_pt_u") or 0) - 8) < 1e-6 and
+          not p["colleges"]["San Diego Mesa"].get("nc_pt_u_suppressed"),
+          f"got {p['colleges']['San Diego Mesa']!r}")
 
     # Scope: NOCE in_scope counts Cypress only; the Bakersfield landing sits in
     # the matrix but never in the scoped figure the earn-out reads.
     noce = (og.get("in_scope") or {}).get("NOCE") or {}
-    check("NOCE in_scope nc_pt counts its district's colleges only (5, not 6)",
-          noce.get("nc_pt") == 5, f"got {noce.get('nc_pt')}")
-    check("NOCE in_scope nc_pt_u carries the district units only (30, not 39)",
-          abs((noce.get("nc_pt_u") or 0) - 30) < 1e-6, f"got {noce.get('nc_pt_u')}")
+    check("NOCE in_scope nc_pt counts its district's colleges only (10, not 11)",
+          noce.get("nc_pt") == 10, f"got {noce.get('nc_pt')}")
+    check("NOCE in_scope nc_pt_u carries the district units only (60, not 69)",
+          abs((noce.get("nc_pt_u") or 0) - 60) < 1e-6, f"got {noce.get('nc_pt_u')}")
     m_noce = (og.get("by_origin") or {}).get("NOCE") or {}
     check("the matrix still shows the out-of-district landing (Bakersfield row)",
           "Bakersfield" in m_noce and "Cypress" in m_noce,
           f"got {sorted(m_noce.keys())}")
     cal = (og.get("in_scope") or {}).get("Calbright") or {}
-    check("Calbright's scope is statewide — its Bakersfield landings count (5)",
-          cal.get("nc_pt") == 5, f"got {cal.get('nc_pt')}")
+    check("Calbright's scope is statewide — its Bakersfield landings count (10)",
+          cal.get("nc_pt") == 10, f"got {cal.get('nc_pt')}")
     check("scopes name Calbright statewide and NOCE's district colleges",
           (og.get("scopes", {}).get("Calbright", {}).get("scope") == "statewide" and
            "Cypress" in (og.get("scopes", {}).get("NOCE", {}).get("colleges") or [])))
 
     check("the unknown LocID2 value surfaces in unmatched_origins, masked",
-          og.get("unmatched_origins", {}).get("999") == "<5",
+          og.get("unmatched_origins", {}).get("999") == "<10",
           f"got {og.get('unmatched_origins')}")
     check("Origin histogram emitted for verification",
-          p.get("origin_values", {}).get("Landing Page") == 5,
+          p.get("origin_values", {}).get("Landing Page") == 10,
           f"got {p.get('origin_values')}")
     check("ppa still rides Potential Student — the cutover has NOT happened",
-          st.get("ppa") == 0 and st.get("pp") == 5,
+          st.get("ppa") == 0 and st.get("pp") == 10,
           f"ppa={st.get('ppa')} pp={st.get('pp')}")
     check("the published basis names the NC_* rungs and the origination block",
           "NC_PE" in p["basis"] and "origination" in p["basis"].lower())

@@ -123,12 +123,20 @@ Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
   - aggregate per-college counts only; the student grain never leaves the
     runner; MAP Internal StudentID is used solely as a distinct-count set key
     (the _compute_college_military_students pattern in excel_to_dashboard.py)
-  - pe/p2/p3 per-college counts 1..SUPPRESS_BELOW-1 bake as null + "<5" flag;
-    `pp` is the one exception (shown raw, Sam 2026-07-27) — its privacy gate is
-    the Test Student field, not <5 suppression (see NO_SUPPRESS below)
-  - statewide counts are computed independently from the student grain
-    (distinct across colleges), so they are NOT the sum of per-college cells —
-    which also defeats recovering a suppressed cell by subtraction
+  - per-college STUDENT COUNTS 1..SUPPRESS_BELOW-1 bake as null + "<10" flag,
+    every metric alike (Sam, 2026-09-03: the public view masks under 10; the
+    2026-07-27 `pp` carve-out and its `ppa` extension are retired — a public
+    rule keeps no exception for one group of students). Exact zero stays 0.
+  - per-college UNIT sums are NEVER masked (Sam, 2026-09-03: "compute the
+    numbers in the FTES total and funding"). Units, FTES and dollars describe
+    credit, not people; and a masked count that earned nothing had priced 54
+    small-portal colleges at $0 on Access. The public page coarsens DOLLARS
+    instead (cpl_funding.js: "<$1,000" floor, nearest $1,000 above it).
+  - complementary masking: when exactly ONE college is masked for a metric,
+    the smallest visible college is masked too, so the hidden count cannot be
+    read off the statewide figure by subtraction. Statewide counts are
+    cross-college distinct, so the residual would be a bound rather than an
+    equality — the cheap safeguard is taken anyway (as it is for types).
   - Test Student rows and the MAP test colleges are excluded; Potential Student
     rows are routed to `pp` (not counted in pe/p2/p3)
 
@@ -156,7 +164,9 @@ SHORT_NAMES = os.path.join(ROOT, "kb", "college_short_names.json")
 FUNDING_DATA = os.path.join(ROOT, "cpl_funding_data.js")
 VETERAN_JST = os.path.join(ROOT, "veteran_jst.json")  # daily Vets/JST + Veteran Star
 VIEW = "View_StudentAggregatedValues_APIDataset"
-SUPPRESS_BELOW = 5
+SUPPRESS_BELOW = 10  # raised 5 -> 10 (Sam, 2026-09-03: "to conform with ferpa practices often
+                     # used"); the CR-backlog artifact moved on 2026-08-10. One floor for every
+                     # public student count. COUNTS mask; UNITS never do (see suppress()).
 P2_MIN_UNITS = 6.0
 
 TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City College",
@@ -760,7 +770,7 @@ def main():
         # Origination matrix + scoped totals (funding colleges only — the
         # receiving side of an originated record is a credit college). The
         # SCOPED totals are computed here at the student grain, deduped per
-        # (origin, student, rung), so a <5-suppressed matrix cell never
+        # (origin, student, rung), so a masked matrix cell never
         # subtracts from the figure the trio's earn-out reads.
         if nc_origin is not None and fname:
             _sk = sid if sid else f"row{rowno}"
@@ -811,18 +821,13 @@ def main():
                         state_type_seen.add(stk)
                         srec[metric] += 1
 
-    # `pp` (portal-origin) is shown RAW, not <5-suppressed (Sam, 2026-07-27):
-    # the privacy gate for it is the Test Student field (Test = Yes already
-    # excluded above), and the small portal count itself IS the signal to
-    # surface per college. pe/p2/p3 keep the ratified <5 suppression (real
-    # students — adr-funding-priority-metrics-privacy.md).
-    # `ppa` joins `pp` because it describes the SAME PEOPLE (Potential Student =
-    # Yes) at a different rung — a college's portal cohort is already visible
-    # through `pp`, so suppressing `ppa` would hide nothing that is not already
-    # shown while costing small-portal colleges their Access money (a suppressed
-    # cell reads to earnFraction() as "not yet credited", f=0). Consistency here
-    # is both the privacy-neutral and the funding-correct choice.
-    NO_SUPPRESS = {"pp", "ppa"}
+    # No count is exempt from the mask (Sam, 2026-09-03). The 2026-07-27 `pp`
+    # carve-out, its 2026-08-27 `ppa` extension and the 2026-09-03 `ppe` fix
+    # all existed because a masked count EARNED NOTHING in the tab; the unit
+    # sums now carry the money regardless of the mask, so the carve-out's
+    # reason is gone, and a public "under 10" rule keeps no exception for one
+    # group of students. The set stays as the seam, empty.
+    NO_SUPPRESS = set()
 
     def suppress(bucket, ubucket=None):
         outb = {}
@@ -837,19 +842,31 @@ def main():
                     o[metric + "_suppressed"] = True
                 else:
                     o[metric] = n
-                # A unit sum is suppressed by its STUDENT COUNT, never by its own
-                # magnitude: privacy is about how many people a cell describes,
-                # and 40 units held by 2 students is exactly the cell the <5 rule
-                # exists to hide. Keying off the units would both leak that cell
-                # and needlessly hide a large-cohort one.
+                # UNIT sums are never masked (Sam, 2026-09-03: "compute the
+                # numbers in the FTES total and funding"). They describe credit,
+                # not people, and they are what earnFraction() prices — a masked
+                # count that earned nothing had left 54 small-portal colleges at
+                # $0 on Access. The public page coarsens the DOLLARS instead.
                 uk = metric + "_u"
                 if uk in urec:
-                    if hide:
-                        o[uk] = None
-                        o[uk + "_suppressed"] = True
-                    else:
-                        o[uk] = round(urec[uk], 2)
+                    o[uk] = round(urec[uk], 2)
             outb[name] = o
+        # COMPLEMENTARY masking (the subtraction threat, as suppress_type_map
+        # does for types): exactly one masked college for a metric would be
+        # recoverable from the statewide figure minus the visible ones, so the
+        # smallest visible college is masked too. Counts only; units stay.
+        for metric in metrics:
+            hidden = [n for n, o in outb.items() if o.get(metric + "_suppressed")]
+            if len(hidden) != 1:
+                continue
+            visible = [(o[metric], n) for n, o in outb.items()
+                       if isinstance(o.get(metric), (int, float)) and o[metric] > 0]
+            if not visible:
+                continue
+            _, n2 = min(visible)
+            outb[n2][metric] = None
+            outb[n2][metric + "_suppressed"] = True
+            outb[n2][metric + "_complementary"] = True
         return outb
 
     def suppress_feeders(bucket):
@@ -969,9 +986,7 @@ def main():
                     o[bk + "_suppressed"] = True
                 uk = bk + "_u"
                 if uk in rec:
-                    o[uk] = None if hide else round(rec[uk], 2)
-                    if hide:
-                        o[uk + "_suppressed"] = True
+                    o[uk] = round(rec[uk], 2)   # units never mask (2026-09-03)
             return o
 
         payload["origination"] = {
