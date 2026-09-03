@@ -1754,7 +1754,7 @@
       "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): official CCN prefix CDEV has nominal adoption (2 official rows); field is fragmented (ECE/CD/CDEV/CHLD, no CS1-valid modal); discipline name supports ECED; re-mint would touch 1,349 M-IDs. Keep ECED; revisit if CCN CDEV adoption grows. Ref: kb/csr_out/2026-07-10 CSR0013. | Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": "CDEV",
       "cid_subject_codes": [
         "ECE",
@@ -2025,7 +2025,7 @@
       "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix ITIS has zero COCI adoption; CSIS is the established canonical. Revisit if CCN ITIS lands. Ref: CSR0013 sibling. | Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "ITIS"
@@ -2106,11 +2106,11 @@
       "cte_unknown_n": 118,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:31:34.900799+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
+      "reviewed_by": "authority-recode-s224@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "COMP"
@@ -3136,7 +3136,7 @@
       "reviewed_by": "map@rccd.edu",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "THEA deliberately shared with alias 'Theater Arts' — fan-in convergence (Session 38). Reverted from DRAM 2026-06-12 per Sam (the DRAM re-code was curing a sweep false positive, fixed in #402). | Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "THTR"
@@ -4510,11 +4510,11 @@
       "cte_unknown_n": 59,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:34:59.258685+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
+      "reviewed_by": "authority-recode-s224@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "FTVE"
@@ -6800,11 +6800,11 @@
       "cte_unknown_n": 2,
       "cip_code": null,
       "needs_review": false,
-      "reviewed_at": "2026-05-23T17:39:58.022414+00:00",
-      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-09-03T20:34:21.060362+00:00",
+      "reviewed_by": "authority-recode-s224@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "FTVE"
@@ -7369,7 +7369,7 @@
       "reviewed_by": "csr-doctrine-s111@bot",
       "validated_at": null,
       "validated_by": null,
-      "_notes": "CS4 divergence recorded (Sam, 2026-07-10): anchor-official prefix BSOT has zero COCI adoption; OTEC is the established canonical. Revisit if CCN BSOT lands. Ref: CSR0013 sibling. | Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; readings ruled yes to all the same day); kb/_authority_recode_apply.py 2026-09-03, receipt kb/authority_recode_out/2026-09-03.",
+      "_notes": "Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.",
       "ccn_subject_code": null,
       "cid_subject_codes": [
         "BSOT"
@@ -9631,5 +9631,7 @@
       "no_canonical": 0,
       "with_chips": 23
     }
-  }
+  },
+  "_synced_at": "2026-09-03T21:55:03Z",
+  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
 }

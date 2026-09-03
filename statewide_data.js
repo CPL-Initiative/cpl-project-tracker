@@ -301441,6 +301441,39 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0
     },
     {
+      "exhibit_id": "MAPCXS-ASL3-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ASL3-1-001"
+      ],
+      "title": "American Sign Language",
+      "unified_title": "American Sign Language",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "American Sign Language"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
+    },
+    {
       "exhibit_id": "MAPCXO-SFSM-1-001",
       "exhibit_ids": [
         "MAPCXO-SFSM-1-001"
@@ -302446,8 +302479,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5725,
-        "exhibits": 1919,
+        "credit_recs": 5726,
+        "exhibits": 1920,
         "courses": 312,
         "colleges": 85,
         "ccc_collaborative": 25,
@@ -302669,8 +302702,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2069,
-        "exhibits": 1601,
+        "credit_recs": 2070,
+        "exhibits": 1602,
         "colleges": 59,
         "pct": 15.6
       },
@@ -302699,8 +302732,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8245,
-        "exhibits": 3295,
+        "credit_recs": 8246,
+        "exhibits": 3296,
         "colleges": 90,
         "pct": 62.3
       },
@@ -302771,8 +302804,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11670,
-        "exhibits": 5198,
+        "credit_recs": 11671,
+        "exhibits": 5199,
         "colleges": 96,
         "disciplines": 23,
         "pct": 88.2
@@ -303197,6 +303230,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-03T16:32:04",
-  "total_credit_recs": 13232
+  "generated_at": "2026-09-03T21:53:42",
+  "total_credit_recs": 13233
 };

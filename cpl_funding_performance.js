@@ -8,20 +8,20 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43103,
-  "pa": 39041,
+  "pe": 43127,
+  "pa": 39064,
   "ppa": 105,
-  "p2": 3069,
-  "p3": 14453,
+  "p2": 3072,
+  "p3": 14456,
   "pp": 5,
   "ppe": 115,
   "pac": 2820,
-  "pe_u": 1389801.45,
-  "pa_u": 216350.65,
+  "pe_u": 1390877.45,
+  "pa_u": 216532.65,
   "ppa_u": 652.5,
   "ppe_u": 6605.5,
   "pac_u": 24698.95,
-  "p3_u": 72637.95,
+  "p3_u": 72725.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -846,8 +846,8 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 81.0
   },
   "LA Pierce": {
-   "pe": 345,
-   "pe_u": 6081.0,
+   "pe": 346,
+   "pe_u": 6169.0,
    "pa": 309,
    "pa_u": 1269.0,
    "ppa": null,
@@ -1164,16 +1164,16 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2456,
-   "pe_u": 52507.0,
-   "pa": 2127,
-   "pa_u": 12560.5,
+   "pe": 2459,
+   "pe_u": 52595.0,
+   "pa": 2130,
+   "pa_u": 12648.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 445,
-   "p3": 2008,
-   "p3_u": 11659.0,
+   "p2": 448,
+   "p3": 2011,
+   "p3_u": 11747.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -1473,10 +1473,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 835.0
   },
   "San Diego City": {
-   "pe": 4319,
-   "pe_u": 97140.5,
-   "pa": 4318,
-   "pa_u": 15198.0,
+   "pe": 4323,
+   "pe_u": 97374.5,
+   "pa": 4322,
+   "pa_u": 15214.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 8.0,
@@ -1492,10 +1492,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "San Diego Mesa": {
-   "pe": 4693,
-   "pe_u": 105505.5,
-   "pa": 4693,
-   "pa_u": 15933.5,
+   "pe": 4696,
+   "pe_u": 105714.5,
+   "pa": 4696,
+   "pa_u": 15945.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -1511,10 +1511,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "San Diego Miramar": {
-   "pe": 3141,
-   "pe_u": 95938.2,
-   "pa": 3141,
-   "pa_u": 12872.7,
+   "pe": 3147,
+   "pe_u": 96153.2,
+   "pa": 3147,
+   "pa_u": 12896.7,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 8.0,
@@ -1715,10 +1715,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Shasta": {
-   "pe": 179,
-   "pe_u": 7715.0,
-   "pa": 179,
-   "pa_u": 1089.0,
+   "pe": 186,
+   "pe_u": 7957.0,
+   "pa": 186,
+   "pa_u": 1131.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 6.0,
@@ -2930,9 +2930,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 893
    },
    "Standardized Assessment": {
-    "pe": 229,
-    "pa": 229,
-    "p3": 228
+    "pe": 232,
+    "pa": 232,
+    "p3": 231
    }
   },
   "Mt San Antonio": {
@@ -3221,8 +3221,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1472,
-    "pa": 1472,
+    "pe": 1476,
+    "pa": 1476,
     "p3": 0
    },
    "Standardized Assessment": {
@@ -3283,8 +3283,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 29
    },
    "Military": {
-    "pe": 1624,
-    "pa": 1624,
+    "pe": 1630,
+    "pa": 1630,
     "p3": 0
    }
   },
@@ -3452,8 +3452,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Shasta": {
    "Military": {
-    "pe": 179,
-    "pa": 179,
+    "pe": 186,
+    "pa": 186,
     "p3": 0
    }
   },
@@ -3706,8 +3706,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27036,
-   "pa": 24881,
+   "pe": 27057,
+   "pa": 24901,
    "p3": 2487
   },
   "Military | Portfolio Review": {
@@ -3747,9 +3747,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4393,
-   "pa": 3038,
-   "p3": 1893
+   "pe": 4396,
+   "pa": 3041,
+   "p3": 1896
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -3757,14 +3757,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1389324.95,
-   "pa_u": 216350.65,
-   "p3_u": 72637.95
+   "pe_u": 1390400.95,
+   "pa_u": 216532.65,
+   "p3_u": 72725.95
   },
   "map": {
-   "pe_u": 1395930.45,
-   "pa_u": 217003.15,
-   "p3_u": 72662.95
+   "pe_u": 1397006.45,
+   "pa_u": 217185.15,
+   "p3_u": 72750.95
   },
   "ratio": {
    "pe_u": 1.0048,
@@ -3808,9 +3808,9 @@ window.CPL_FUNDING_PERF = {
   "Glendale": true,
   "LA Trade": true,
   "Clovis": true,
+  "Shasta": false,
   "Antelope Valley": true,
   "Solano": false,
-  "Shasta": false,
   "Fullerton": true,
   "Victor Valley": true,
   "LA Pierce": false,
