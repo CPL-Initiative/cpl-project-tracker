@@ -1,7 +1,7 @@
 ---
 title: "TOP is a last-in-line signal, never a gatekeeper"
 created: 2026-07-16
-updated: 2026-07-16
+updated: 2026-09-03
 tags: [methodology, top-code, discipline, subj4, identity, data-quality, cip]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -152,3 +152,20 @@ TOP never determines the identity key.
 
 *Authoring check: durable (every future discipline/identity decision), reusable,
 distilled (the three-role rule + the identity-boundary ruling), self-contained.*
+
+## Worked instance — SkyView orbit placement (2026-09-03, SkyOrbit S223)
+
+The same rule governs a **placement suggestion**, not only an identity
+determination. SkyView places every stand-alone course in orbit around the
+identity it is most aligned to, scored on a shared local subject code, title
+words in common, and then TOP, units and credit type. The first weighting let
+TOP + units + credit (1.5 points together) outvote a title gap of 0.68 Dice, and
+"Swim Training for Competition" orbited "Aerobic Weight Training" instead of a
+swimming identity. Inside one discipline every row shares the SUBJ4 and half
+share a TOP code, so those signals are cheap to satisfy and decide nothing on
+their own. The fix in `kb/_build_ccr_universe.py` is the doctrine made
+numeric: TOP, units and credit add nothing unless a subject or title signal
+already fired (the two-signals gate), and their whole stack (2.2) is worth less
+than a 0.28 Dice title gap. `tests/ccr_universe_orbits_test.py` pins that a
+stand-alone sharing only TOP, units and credit with an identity earns **no**
+orbit at all.

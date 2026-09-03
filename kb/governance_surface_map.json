@@ -48,7 +48,9 @@
   "table:cpl_funding_participation": "DR-09",
   "table:cpl_adoption_interest": "DR-23",
   "tab:chatbot": "CA-06",
-  "tab:college-briefing": "DR-09"
+  "tab:college-briefing": "DR-09",
+  "workflow:skyview-desc-shards.yml": "CA-01",
+  "bucket:ccr-desc": "CA-01"
  },
  "dismissed": {
   "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",

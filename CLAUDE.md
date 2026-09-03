@@ -437,13 +437,19 @@ first day.** Do the remembering for them.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
-- **Sign off with your MONIKER and the NEXT HANDOFF NUMBER (Sam, 2026-08-13).**
-  At the end of a session — or anything that looks like the end (a checkpoint, a
-  "thanks, that's it", a long quiet) — close with both, e.g. *"SkyRef signing
-  off. Next is Session 151 — `docs/session_151_handoff.md`."* Sam pastes that
-  number into the next session's first message, so leaving him to scroll for it
-  taxes every single handover. Cheap for you, and it also catches the stale-number
-  failure Rule 9 warns about, since you have to look at the file to say it.
+- **SIGN OFF WITH THE EXACT OPENING LINE SAM PASTES INTO THE NEXT SESSION (Sam,
+  2026-08-13; the template is his, ruled 2026-09-03).** At the end of a session —
+  or anything that looks like the end (a checkpoint, a "thanks, that's it", a long
+  quiet) — close with this line, filled in, on its own:
+  > *Greetings, you are Sky**Next** (Session N+1), see Sky**You**'s handoff —
+  > `docs/session_<N+1>_handoff.md` (link) — let's keep rolling with our queue.*
+  You **assign** the next moniker (one name, not a menu) and it must be the one the
+  handoff names. *"I just copy and paste the whole thing in the new session. If I
+  need to change direction, I just add the new direction to the opening note"* —
+  so the line must stand alone, and nothing may follow it but the sign-off. The
+  path and the number are both there on purpose: the path is what the new session
+  reads, and writing the number means looking at the file, which is how the
+  stale-number failure Rule 9 warns about gets caught at the greeting.
 
 ## Branch policy
 
@@ -750,6 +756,22 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyOrbit S223 — the whole universe, full screen, every stand-alone in orbit (2026-09-03)
+
+**One PR (#1441).** Sam's five SkyView goals shipped: the map fills the first
+screen (a **Full screen** word-button; the panes one scroll below); the header
+box jumps to a subject, an identity, a stand-alone OR a college course by code or
+control number; hover is a quick look, click an inspector over the map with the
+catalog description on a course number, and labels grow with zoom (number →
+title → units · system); **every stand-alone course orbits the identity it is
+most aligned to** — 31,350 of 33,423, 1,521 of them across a discipline line on
+his Business / Vocational example, 2,073 on the rim — as a suggestion, never a
+decision (**Move here** accepts one as the `CN:` row a drag writes). Descriptions
+live in the public storage bucket `ccr-desc` (empty until the workflow's first
+dispatch). ⭐ Corroborators must not outvote the primary signal; a side table keyed
+by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
+`session_224_handoff`.
+
 ### SkyCheck S222 — the lifecycle checks are on the API, and under 10 is the mask (2026-09-02 → 03)
 
 **Three PRs (#1437, #1438, #1439).** Pedro's six CPL lifecycle checks were found
@@ -765,21 +787,6 @@ nearest $1,000, the curator view exact (ADR ratified); 57 colleges earn on Acces
 now. `CollegeID2`, the NC FTES origination key, has not landed. ⭐ A floor lives
 in fixtures as well as code — four jsdom suites pinned the old number. Story:
 `map_custom_reports_lessons` + `cpl_funding_lessons`; handoff `session_223_handoff`.
-
-### SkyLead S221 — lead with the table; the explainer is the public view (2026-09-02)
-
-**One PR (#1436).** Sam's seven asks: the institution table is the FIRST section after
-the introduction on the tab and the explainer (*"most won't care about the
-details, just their funding"*); every section is closed on open except those
-two — per VISIT now, the per-browser fold store retired; the Summary sits
-inside the introduction's box (R11 re-aimed to its requirement: never hidden on
-open); the priority cards are a fixed two-column pair; the card's "Combined
-funding" line is gone (it restated the band head, the Target line and the
-price line). ⭐ The explainer hosts the tab's OWN college section in a new embed
-mode instead of painting a second table from the payload — the hidden engine
-mount was an embed waiting to happen — and paints the timing milestones and
-each priority's strategies from the engine. Story: `cpl_funding_lessons`;
-handoff `session_222_handoff`.
 
 ## Troubleshooting
 

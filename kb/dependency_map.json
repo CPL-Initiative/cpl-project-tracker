@@ -4,10 +4,10 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 395,
+  "file_datasets": 398,
   "external_services": 137,
-  "consumers": 305,
-  "workflows": 32,
+  "consumers": 306,
+  "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
  },
@@ -930,7 +930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4225,
+     "line": 4230,
      "tabs": [
       "unified-courses"
      ]
@@ -957,7 +957,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3415,
+     "line": 3420,
      "tabs": [
       "unified-courses"
      ]
@@ -1064,14 +1064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1085
-    },
-    {
-     "id": "script:kb/_build_ccr_universe.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 80
+     "line": 1255
     }
    ],
    "main_committers": []
@@ -5521,6 +5514,26 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_ccr_universe.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:skyview-desc-shards.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_college_courses.py": {
    "consumers": [
     {
@@ -8493,7 +8506,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3093,
+     "line": 3098,
      "tabs": [
       "unified-courses"
      ]
@@ -8711,7 +8724,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 428,
+     "line": 433,
      "tabs": [
       "unified-courses"
      ]
@@ -10591,7 +10604,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 779,
+     "line": 784,
      "tabs": [
       "unified-courses"
      ]
@@ -11848,7 +11861,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 669
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -11875,7 +11888,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 189
+     "line": 670
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12055,6 +12068,26 @@
       "college-briefing",
       "implementation-funding"
      ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/publish_skyview_desc_shards.sh": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:skyview-desc-shards.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": true,
@@ -12381,6 +12414,19 @@
    "main_committers": []
   },
   "file:tests/ccr_universe_members_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_universe_orbits_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -12840,7 +12886,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 741,
+     "line": 746,
      "tabs": [
       "unified-courses"
      ]
@@ -12882,7 +12928,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 217,
+     "line": 222,
      "tabs": [
       "unified-courses"
      ]
@@ -12913,7 +12959,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 195
+     "line": 681
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
@@ -12963,7 +13009,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 709,
+     "line": 714,
      "tabs": [
       "unified-courses"
      ]
@@ -13008,7 +13054,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 689,
+     "line": 694,
      "tabs": [
       "unified-courses"
      ]
@@ -13071,7 +13117,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 902,
+     "line": 907,
      "tabs": [
       "unified-courses"
      ]
@@ -13095,7 +13141,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 86
+     "line": 707
     }
    ],
    "producers": [
@@ -13120,7 +13166,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 725,
+     "line": 730,
      "tabs": [
       "unified-courses"
      ]
@@ -13151,7 +13197,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 682
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13197,7 +13243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1025,
+     "line": 1030,
      "tabs": [
       "unified-courses"
      ]
@@ -13221,7 +13267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 210
+     "line": 698
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13278,7 +13324,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 757,
+     "line": 762,
      "tabs": [
       "unified-courses"
      ]
@@ -14056,6 +14102,18 @@
      "tabs": [
       "tmc-builder"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "storage:ccr-desc": {
+   "consumers": [
+    {
+     "id": "page:prototype/skyview.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     }
    ],
    "main_committers": []
@@ -15101,7 +15159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 308,
+     "line": 313,
      "tabs": [
       "unified-courses"
      ]
@@ -15111,7 +15169,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 350,
+     "line": 355,
      "tabs": [
       "unified-courses"
      ]
@@ -15667,7 +15725,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 434,
+     "line": 439,
      "tabs": [
       "unified-courses"
      ]
@@ -16644,7 +16702,9 @@
     "kb/_audit_exhibits.py",
     "kb/_suggest_unclassified.py",
     "kb/_cred_rename_dryrun.py",
-    "fact-sheet/_build_statewide_recs.py"
+    "fact-sheet/_build_statewide_recs.py",
+    "kb/_build_ccr_universe.py",
+    "scripts/publish_skyview_desc_shards.sh"
    ],
    "adds": [
     "index.html",
@@ -16752,6 +16812,7 @@
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
     "tests/ccr_universe_members_test.py",
+    "tests/ccr_universe_orbits_test.py",
     "tests/docs_audit_test.py",
     "tests/docs_index_build_test.py",
     "tests/american_spelling_test.py",
@@ -16959,6 +17020,19 @@
    "crons": [],
    "scripts": [
     "chatbox/preflight_bgca.sh"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "skyview-desc-shards.yml": {
+   "name": "Publish SkyView description shards",
+   "crons": [],
+   "scripts": [
+    "kb/_build_ccr_universe.py",
+    "scripts/publish_skyview_desc_shards.sh"
    ],
    "adds": [],
    "push": null,

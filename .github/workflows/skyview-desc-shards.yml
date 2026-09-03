@@ -1,0 +1,41 @@
+# SkyView course-description shards → the public Supabase Storage bucket.
+#
+# Why: SkyView shows a course's catalog description when a curator clicks its
+# number (Sam, 2026-09-03). The descriptions are 50 MB of derived text — too
+# large to inline, too large to fetch whole, and deliberately not committed —
+# so kb/_build_ccr_universe.py writes one JSON shard per subject area and this
+# publishes them to the `ccr-desc` bucket, which the deployed page reads
+# (prototype/ccr_universe.js, DESC_BASES). Sam's lean, 2026-08-24: "I expect
+# we'll put the shards on supabase."
+#
+# A session cannot run this: its sandbox has no route to *.supabase.co. The
+# Actions runner has, and holds SUPABASE_SERVICE_KEY. Commits nothing.
+#
+# Run it: Actions → "Publish SkyView description shards" → Run workflow.
+# The daily dashboard workflow runs the same two steps after it rebuilds the
+# unified-courses artifacts, so the shards follow the corpus.
+name: Publish SkyView description shards
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      # --shards-only: the layout payloads (prototype/ccr_universe*.json) stay
+      # as committed; only prototype/ccr_desc/*.json is (re)written, from the
+      # committed unified_courses_member_desc.js + unified_courses_members.js.
+      - name: Build the shards
+        run: python3 kb/_build_ccr_universe.py --shards-only
+      - name: Publish to the ccr-desc bucket
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: bash scripts/publish_skyview_desc_shards.sh

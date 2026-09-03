@@ -468,7 +468,9 @@ function serve() {
         return !!b && /shared key/i.test(b.closest("li").textContent);
       }, row));
     const before = await page.evaluate(() => window.__ccrUniverseState().moves.length);
-    await page.locator(row).click();
+    // A collided key can put BOTH of its courses on one card (KIN 62C and
+    // KINES 62C at Santa Rosa, 2026-09-03), so the selector may match twice.
+    await page.locator(row).first().click();
     await page.waitForTimeout(200);
     const hint = await page.locator("#u-hint").textContent();
     ok("pressing Drag… explains the refusal instead of picking the course up",
@@ -497,60 +499,193 @@ function serve() {
       gate.others >= 2);
   }
 
-  console.log("\n══ course descriptions load on demand");
+  console.log("\n══ course descriptions load on demand (shards keyed by control number)");
   // Served over http here, which is the whole point: under file:// these fetches are
   // blocked and the page must SAY so rather than render an empty pane, because "no
   // description loaded" and "this course has none" look identical to a curator.
+  // Shard shape since 2026-09-03: { "<control number digits>": [desc, title, units] }.
   const withDesc = await page.evaluate(async () => {
     const U = window.CPL_CCR_UNIVERSE, M = window.CPL_CCR_UNIVERSE_MEMBERS;
+    // Courses this harness already moved elsewhere are no longer on their
+    // original card, so they cannot be the course whose button we click.
+    const moved = new Set(window.__ccrUniverseState().moves.map((m) => m.cn));
+    const cnOf = (m) => "CCC" + String(m[0]).padStart(9, "0");
     for (const isl of U.islands) {
       if (!isl.sh) continue;
       const r = await fetch("ccr_desc/" + encodeURIComponent(isl.sh) + ".json").catch(() => null);
       if (!r || !r.ok) continue;
       const j = await r.json();
-      const id = Object.keys(j).find((k) => (j[k] || []).some(Boolean) && (M.m[k] || []).length);
-      if (id) {
-        const nd = isl.p.find((p) => p.i === id);
-        if (nd) return { shard: isl.sh, id, x: nd.x, y: nd.y, n: Object.keys(j).length };
+      for (const nd of isl.p) {
+        if (nd.a) continue;
+        const list = (M.m[nd.i] || []).filter((m) => !moved.has(cnOf(m)));
+        if (!list.length || list.length > 40) continue;
+        const rec = (m) => j[String(m[0])];
+        const hit = list.find((m) => rec(m) && rec(m)[0]);
+        const none = list.find((m) => rec(m) && !rec(m)[0]);
+        if (hit) return { shard: isl.sh, id: nd.i, x: nd.x, y: nd.y, n: Object.keys(j).length,
+                          cn: "CCC" + String(hit[0]).padStart(9, "0"),
+                          noneCn: none ? "CCC" + String(none[0]).padStart(9, "0") : null,
+                          title: rec(hit)[1] || "" };
       }
     }
     return null;
   });
   ok("every island names a description shard",
     await page.evaluate(() => window.CPL_CCR_UNIVERSE.islands.every((i) => !!i.sh)));
-  ok("a shard fetches and holds descriptions" +
-     (withDesc ? ` (${withDesc.shard}, ${withDesc.n} identities)` : ""), !!withDesc);
+  ok("a shard fetches and holds courses keyed by control number" +
+     (withDesc ? ` (${withDesc.shard}, ${withDesc.n} courses)` : ""), !!withDesc);
   if (withDesc) {
     await flyClick(withDesc, withDesc.id);
-    await page.waitForTimeout(700);
-    const shown = await page.locator("#u-detail .mdesc").count();
+    await page.waitForTimeout(800);
+    ok("the shard's course titles appear beside the codes",
+      !withDesc.title || (await page.locator("#u-detail .mlist").textContent()).includes(withDesc.title));
+    // Sam: "course descriptions on click of a course title". The code is the button.
+    await page.locator(`#u-detail .cd[data-desc="${withDesc.cn}"]`).click();
+    await page.waitForTimeout(250);
     const real = await page.locator("#u-detail .mdesc:not(.none)").count();
-    ok(`descriptions render under the courses (${real} with text, ${shown} slots)`, real > 0);
-    // A course with no description must say so, not render blank — the honest half.
-    ok("a course with none says so rather than showing nothing",
-      await page.evaluate(() => {
-        const n = document.querySelector("#u-detail .mdesc.none");
-        return !n || /no catalog description/i.test(n.textContent);
-      }));
+    ok(`⭐ clicking a course number opens its catalog description (${real})`, real === 1);
+    if (withDesc.noneCn) {
+      await page.locator(`#u-detail .cd[data-desc="${withDesc.noneCn}"]`).click();
+      await page.waitForTimeout(250);
+      // A course with no description must say so, not render blank — the honest half.
+      ok("a course with none says so rather than showing nothing",
+        /no catalog description/i.test(await page.locator("#u-detail .mdesc.none").first().textContent()));
+    } else ok("no undescribed course on this card to exercise — skipped", true);
   }
 
-  console.log("\n══ stand-alones are reachable and marked");
+  console.log("\n══ ⭐ stand-alones orbit the identity they are most aligned to");
+  // Sam, 2026-09-03: "have unassigned course individually in orbit around the
+  // cluster they are most aligned to (rather than having them all sit in a huge
+  // cluster as they are now)". The "· stand-alone" twin islands are gone; every
+  // stand-alone is a hollow point inside its discipline, tethered to a parent.
   const sa = await page.evaluate(() => {
     const U = window.CPL_CCR_UNIVERSE;
-    const isl = U.islands.find((i) => i.a && i.p.length);
-    if (!isl) return null;
-    return { d: isl.d, n: isl.n, id: isl.p[0].i, x: isl.p[0].x, y: isl.p[0].y,
-             flagged: isl.p.every((p) => p.a === 1),
-             islands: U.islands.filter((i) => i.a).length,
-             total: U.islands.reduce((s, i) => s + (i.a ? i.n : 0), 0) };
+    let orbiting = 0, rim = 0, twins = 0, stray = 0, ex = null;
+    for (const isl of U.islands) {
+      if (isl.a || /stand-alone$/.test(isl.d)) twins++;
+      const here = new Set(isl.p.map((p) => p.i));
+      for (const p of isl.p) {
+        if (!p.a) continue;
+        if (p.o) {
+          orbiting++;
+          if (!here.has(p.o)) stray++;
+          if (!ex && isl.p.length < 500) ex = { d: isl.d, id: p.i, x: p.x, y: p.y, o: p.o };
+        } else rim++;
+      }
+    }
+    return { orbiting, rim, twins, stray, ex, total: U.counts.stand_alone };
   });
-  ok("stand-alones are present as their own islands" +
-     (sa ? ` (${sa.islands} islands, ${sa.total} courses)` : ""), !!sa && sa.total > 1000);
-  if (sa) {
-    ok("every point in a stand-alone island is flagged as one", sa.flagged);
-    await flyClick(sa, sa.id);
-    ok("and the pane says what a stand-alone is",
-      /stand-alone/i.test(await page.locator("#u-detail").textContent()));
+  ok(`no stand-alone island survives (${sa.twins})`, sa.twins === 0);
+  ok(`most stand-alones orbit an identity (${sa.orbiting} of ${sa.total}; ${sa.rim} on the rim)`,
+    sa.orbiting > 0.7 * sa.total);
+  ok("every orbit names an identity in the same island", sa.stray === 0);
+  if (sa.ex) {
+    await flyClick(sa.ex, sa.ex.id);
+    const pane = await page.locator("#u-detail").textContent();
+    ok("the pane says which identity it orbits and why",
+      /In orbit around/.test(pane) && pane.includes(sa.ex.o) && /because the two share/.test(pane));
+    ok("and says it is a suggestion, not a decision", /suggestion only/i.test(pane));
+    ok("and offers the accept verb (or names why it cannot)",
+      (await page.locator("#u-accept").count()) === 1 || /shared key/.test(pane));
+    const par = await page.evaluate((id) => {
+      for (const isl of window.CPL_CCR_UNIVERSE.islands) {
+        const nd = isl.p.find((p) => p.i === id);
+        if (nd) return { x: nd.x, y: nd.y, id: nd.i, k: nd.k || 0 };
+      }
+      return null;
+    }, sa.ex.o);
+    await flyClick(par, par.id);
+    ok(`the parent's pane lists its orbiting courses (${par.k}) with Move here`,
+      (await page.locator("#u-detail .orbits li").count()) > 0 &&
+      (await page.locator("#u-detail .orbits [data-accept]").count()) > 0);
+    // The quick look: hover the parent at the canvas centre.
+    const bb = await page.locator("#u-cvs").boundingBox();
+    await page.mouse.move(bb.x + bb.width / 2 + 60, bb.y + bb.height / 2 + 60);
+    await page.mouse.move(bb.x + bb.width / 2, bb.y + bb.height / 2);
+    await page.waitForTimeout(150);
+    const tip = page.locator("#u-tip");
+    const tipText = (await tip.isVisible()) ? await tip.textContent() : "";
+    ok(`⭐ hovering shows the quick look with the number, units and system (${tipText.slice(0, 60)}…)`,
+      tipText.includes(par.id) && /unit/.test(tipText) && /M-ID|C-ID|CCN|unified/.test(tipText));
+    ok("…and how many courses orbit it", /in orbit/.test(tipText));
+  }
+
+  // Sam's example, 2026-09-03: a vocational business course should orbit Business
+  // or Small Business — in ANOTHER discipline's island — and say where it is filed.
+  const xo = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE; let n = 0, ex = null;
+    for (const isl of U.islands) for (const p of isl.p) if (p.a && p.h) { n++; if (!ex && p.h === "Vocational" && isl.p.length < 700) ex = { d: isl.d, id: p.i, x: p.x, y: p.y, h: p.h }; }
+    return { n, ex };
+  });
+  ok(`⭐ orbits cross disciplines (${xo.n} satellites drawn in another subject's island)`, xo.n > 0);
+  if (xo.ex) {
+    await flyClick(xo.ex, xo.ex.id);
+    const pane = await page.locator("#u-detail .orbit").textContent();
+    ok(`a Vocational course orbiting in ${xo.ex.d} says it is filed under Vocational`,
+      /filed under Vocational/.test(pane) && pane.includes(xo.ex.d));
+  }
+
+  console.log("\n══ ⭐ the map fills the first screen; the panes are below it");
+  // Sam, 2026-09-03: "have SkyView open full screen so users have more work
+  // space and allow scroll down to see the other info you provide now".
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => window.dispatchEvent(new Event("resize")));
+  await page.waitForTimeout(150);
+  const geo = await page.evaluate(() => {
+    const w = document.getElementById("u-wrap").getBoundingClientRect();
+    const below = document.getElementById("u-below").getBoundingClientRect();
+    return { bottom: w.top + w.height, vh: window.innerHeight, belowTop: below.top,
+             width: w.width, vw: document.documentElement.clientWidth,
+             insp: !!document.querySelector("#u-full #u-inspector #u-detail"),
+             fs: document.getElementById("u-fs").textContent,
+             cells: document.querySelectorAll("#u-more .cell").length,
+             // The inspector's own "filter these courses" box is a list filter,
+             // not a keyword search; only page-level search fields count here.
+             fields: document.querySelectorAll("input[type=search]:not(#u-mfilter)").length };
+  });
+  ok(`the canvas reaches the bottom of the viewport (${Math.round(geo.bottom)} vs ${geo.vh})`,
+    Math.abs(geo.bottom - geo.vh) < 4);
+  ok(`the canvas spans the full width (${Math.round(geo.width)} of ${geo.vw})`, geo.width >= geo.vw - 2);
+  ok("the panes start under the fold", geo.belowTop >= geo.vh - 4);
+  ok("the details panel floats over the map", geo.insp);
+  ok("the full-screen control is a word", /^Full screen$/.test(geo.fs.trim()));
+  ok(`the forest is embedded below the map (${geo.cells} cells)`, geo.cells > 100);
+  ok(`the map screen still carries exactly one search field (${geo.fields})`, geo.fields === 1);
+
+  console.log("\n══ ⭐ labels grow with zoom: number, then title, then units and system");
+  const bands = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE;
+    const isl = U.islands.find((i) => i.n > 20 && i.n < 400) || U.islands[0];
+    const nd = isl.p.find((p) => !p.a && p.u != null) || isl.p[0];
+    const z = window.__ccrUniverseState().labelZooms, out = { z };
+    window.__ccrUniverseFly(nd.x, nd.y, z.id + 0.2);   out.id = { ...window.__ccrUniverseState().labelStats };
+    window.__ccrUniverseFly(nd.x, nd.y, z.title + 0.2); out.title = { ...window.__ccrUniverseState().labelStats };
+    window.__ccrUniverseFly(nd.x, nd.y, z.full + 0.3);  out.full = { ...window.__ccrUniverseState().labelStats };
+    return out;
+  });
+  ok("the bands are ordered (nodes < number < title < full)",
+    nodeZoom < bands.z.id && bands.z.id < bands.z.title && bands.z.title < bands.z.full);
+  ok(`past the first band only numbers are drawn (${JSON.stringify(bands.id)})`,
+    bands.id.ids > 0 && bands.id.titles === 0 && bands.id.full === 0);
+  ok(`the second band adds titles (${JSON.stringify(bands.title)})`, bands.title.titles > 0 && bands.title.full === 0);
+  ok(`the third band draws units and the identity system (${JSON.stringify(bands.full)})`, bands.full.full > 0);
+
+  console.log("\n══ ⭐ a college course code finds the identity that carries it");
+  const mc = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, seen = {};
+    for (const id of Object.keys(M.m)) for (const [, n] of M.m[id]) (seen[n] = seen[n] || new Set()).add(id);
+    for (const id of Object.keys(M.m)) for (const [, n] of M.m[id])
+      if (n && n.length > 6 && seen[n].size === 1) return { code: n, id };
+    return null;
+  });
+  ok("a uniquely numbered college course exists to search for", !!mc);
+  if (mc) {
+    await runSearch(mc.code);
+    const got = await page.evaluate(() => window.__ccrUniverseState().sel);
+    ok(`searching "${mc.code}" selects the identity carrying it (${got})`, got === mc.id);
+    ok("the suggestion list offers it as a college course, in words",
+      await page.evaluate((code) => window.__ccrSuggest(code, 8)
+        .some((s) => s.kind === "member" && s.code === code && s.kindWord === "college course"), mc.code));
   }
 
   console.log("\n══ a long member list is capped, and says so");

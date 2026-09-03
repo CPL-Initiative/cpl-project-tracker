@@ -173,6 +173,14 @@ jobs:
       # in npm test. Pure-stdlib python; same non-required check.
       - name: SkyView member payload lint (kb/_build_ccr_universe.py)
         run: python3 tests/ccr_universe_members_test.py
+      # SkyView orbit layout (Session 223) — every stand-alone course sits in
+      # orbit around the identity it is most aligned to. Guards the alignment
+      # floor (TOP + units + credit never earn an orbit alone; the title carries
+      # the weight), the ring geometry (no overlaps, everything inside its
+      # island) and the description shards being keyed by control number.
+      # Pure-stdlib python; same non-required check.
+      - name: SkyView orbit layout lint (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_universe_orbits_test.py
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
       # a button pointing at something that is not deployed: the self-contained

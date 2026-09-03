@@ -164,7 +164,7 @@
       "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
       "#tab-unified-courses .uc-vnote{font-size:.82rem;color:#5a6478;}" +
       "#tab-unified-courses #uc-map-pane{margin:0 0 8px;}" +
-      "#tab-unified-courses .uc-map-frame{width:100%;height:calc(100vh - 260px);min-height:520px;" +
+      "#tab-unified-courses .uc-map-frame{width:100%;height:calc(100vh - 200px);min-height:560px;" +
       "border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:10px;background:#fff;display:block;}" +
       "#tab-unified-courses .uc-map-note{font-size:.84rem;color:#5a6478;margin:0 0 8px;}" +
       "@media (max-width:700px){#tab-unified-courses .uc-map-frame{height:70vh;}}";
@@ -207,6 +207,11 @@
     f.src = "prototype/skyview.html";
     f.title = "SkyView \u2014 every course identity in the Common Course Reference, as a map";
     f.loading = "lazy";
+    // The map's own "Full screen" button calls requestFullscreen() inside this
+    // frame; without the permission the call is refused and the button can only
+    // apologize (Sam, 2026-09-03: "have SkyView open full screen").
+    f.setAttribute("allow", "fullscreen");
+    f.allowFullscreen = true;
     host.appendChild(f);
   }
 
