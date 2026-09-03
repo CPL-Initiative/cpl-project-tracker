@@ -1038,3 +1038,37 @@ cannot be compared until they are known to share a suppression rule.
 `cpl_memory: a-masked-key-beside-a-raw-one-reads-as-a-data-anomaly`. The probe
 counts applied-without-eligible on the aggregated view every run, so a real
 instance would surface with its colleges.
+
+### (h) The under-10 package
+
+Sam's ruling on the masking question, verbatim: *"On the public view, the
+student count for low numbers should actually be changed to <10 to conform
+with ferpa practices often used. That said, I would still like to compute the
+numbers in the FTES total and funding. I think this is sufficiently buried to
+protect privacy."* He floated hiding the rate and the explanations; the
+session's view was to keep them — dollars deconstruct to units, never to
+students, the rate is derivable from figures public by statute, and the
+explainer exists to explain — and to coarsen public dollars instead. He asked
+whether *"the total as <1000"* would work; yes, as a floor on top of rounding
+to the nearest $1,000, or larger amounts stay exact. *"Yes, go for it!"*
+
+What shipped (PR #1439): the builder's floor is 10, every metric alike, the
+portal carve-outs retired; unit sums are never masked; a lone masked college
+gets a complementary mask; the tab's `earnedMoney` / `earnedCsv` floor and
+round a college's earned figures on the public page while caps, dials and
+the curator view stay exact. The 2026-06-11 ADR is superseded in part by
+`adr-funding-counts-mask-under-10-units-carry-the-money`. ⭐ The lesson under
+the lesson: a privacy mask that also zeroes a payment is a funding error
+wearing a privacy badge — separate what is hidden from what is computed.
+
+**What the floor change touched that the builder suites did not.** Raising the
+floor from 5 to 10 broke four jsdom suites the Python suites never see:
+`cpl_funding_applied` and `cpl_funding_performance` carried fixtures sized 5
+to 8 students (visible under the old floor, masked under the new one, and one
+lone masked college then pulled the smallest visible one down by complementary
+masking, which is the builder working as ruled); `cpl_funding_row_legibility`
+pinned the formatter's NAME in a source regex that guards a branch; and the
+`suppression_floor` lint caught the typed `"<1000"` in the CSV rule, exactly the
+drift it exists for, so the label is built from `PUBLIC_MONEY_FLOOR` now. The
+check-floor ledger records the new suite and the two raised counts. A floor is
+a number that lives in fixtures as well as in code.

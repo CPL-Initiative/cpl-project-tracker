@@ -18,6 +18,13 @@ artifacts:
 > **Status: RATIFIED** (Sam, 2026-06-11 — "Yes on forks": defaults accepted
 > as written, including the `Potential Student` exclusion; implemented the
 > same day in `funding/_build_funding_performance.py`).
+>
+> **Superseded in part, 2026-09-03:** decision 2's floor of 5 and the practice
+> of masking unit sums with their counts are replaced by
+> [[adr-funding-counts-mask-under-10-units-carry-the-money]] — counts mask
+> under 10, units are never masked (the money computes on true numbers), a lone
+> masked college gets a complementary mask, and public dollars coarsen. The
+> other decisions here stand.
 
 ## Context
 

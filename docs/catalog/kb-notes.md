@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-367 document(s).
+368 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -24,6 +24,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADR — Obsidian sync via vault-side clone (not edge function)](../kb-notes/adr-obsidian-vault-via-clone.md) | adr | published | 2026-05-27 | 2026-05-27 |
 | [ADR — Official C-ID/CCN ids are the common course reference; M-IDs only where none exists](../kb-notes/adr-official-ids-as-common-course-reference.md) | adr | published | 2026-06-10 | 2026-06-10 |
 | [ADR — Per-college funding-priority metric counts in the public dashboard (aggregate + suppression)](../kb-notes/adr-funding-priority-metrics-privacy.md) | adr | published | 2026-06-11 | 2026-06-11 |
+| [ADR — Public funding figures mask student counts under 10; units carry the money; dollars coarsen on the public page](../kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md) | adr | published | 2026-09-03 | 2026-09-03 |
 | [ADR — Student-detail aggregates: k=10, published grain, and the reviewer/published split](../kb-notes/adr-student-detail-aggregate-disclosure-control.md) | adr | published | 2026-08-08 | 2026-08-11 |
 | [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](../kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 |
 | [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
