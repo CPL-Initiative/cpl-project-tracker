@@ -113,6 +113,20 @@ def main():
     check("a test student is excluded from ppe as it is from pe",
           st.get("ppe") == 3 and st.get("pe") == 3)
 
+    # Suppression is a rule per KEY, and the portal-origin family shares one:
+    # ppe bakes RAW at the college level like pp and ppa (three portal students
+    # here — below the <5 line), while pe keeps the ratified <5 suppression on
+    # the same college. A null ppe beside a raw ppa read as "applied but no
+    # eligible" on 2026-09-02; no such rows exist at either grain.
+    col = p["colleges"][FUNDING_NAME]
+    check("ppe is NOT <5-suppressed at the college level (portal-origin family)",
+          col.get("ppe") == 3 and not col.get("ppe_suppressed"), repr(col.get("ppe")))
+    check("ppe_u bakes raw alongside it (10+20+30)",
+          abs((col.get("ppe_u") or 0) - 60) < 1e-6, repr(col.get("ppe_u")))
+    check("pe on the same college keeps the <5 suppression (scope of the rule)",
+          col.get("pe") is None and col.get("pe_suppressed") is True,
+          f"pe={col.get('pe')!r} suppressed={col.get('pe_suppressed')!r}")
+
     # The absent-keys contract, which is what lets the tab say "undelivered".
     check("pac is OMITTED — not zeroed — when the pull has no attestation column",
           "pac" not in st, f"got {st.get('pac')!r}")

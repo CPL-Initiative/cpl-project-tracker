@@ -822,7 +822,17 @@ def main():
     # shown while costing small-portal colleges their Access money (a suppressed
     # cell reads to earnFraction() as "not yet credited", f=0). Consistency here
     # is both the privacy-neutral and the funding-correct choice.
-    NO_SUPPRESS = {"pp", "ppa"}
+    #
+    # `ppe` joins them (2026-09-03). The Access band is SCORED on it (Sam,
+    # 2026-09-01: "filter now"), and earnFraction() reads a suppressed source
+    # as f=0 — so the reasoning above applies verbatim, and without it 54
+    # colleges with one to four portal-origin students earned nothing on
+    # Access while their raw `ppa` sat beside a null `ppe`. That pairing was
+    # reported as "applied units but no eligible units" until both grains
+    # were measured: ZERO such rows exist (cpl_memory:
+    # a-masked-key-beside-a-raw-one-reads-as-a-data-anomaly). Same people,
+    # same rung family, same rule.
+    NO_SUPPRESS = {"pp", "ppa", "ppe"}
 
     def suppress(bucket, ubucket=None):
         outb = {}

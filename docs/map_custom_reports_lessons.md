@@ -1016,3 +1016,25 @@ lane predicted — `Counselor_Verified` leads the builder's sweep — plus a tes
 that pins the real spelling, the `'0'`/`'1'` rendering, and that
 `Student_Verified` beside it never counts. `pac`/`pac_u` emit from the first
 daily run after the merge, and the Accepted priority prices on them.
+
+### (g) The anomaly that was ours
+
+Sam asked for a worklist Malone and Pedro could use to hunt down "the records
+that have applied units but no apparent eligible units" — a shape reported
+earlier the same evening as 47 colleges of public-upload students. Measured
+before writing a word of it: **zero such rows at the CR-row grain** (94,041
+applied rows in `map_student_credit`) and **zero on the aggregated view**
+(53,267 rows, run 33699032028, test students excluded). Nothing to hunt.
+
+The shape was the funding artifact. `pp` and `ppa` bake raw by ruling (Sam,
+2026-07-27; the small portal count is the signal), but `ppe` — added
+2026-09-01 as the Access band's measure — was never added to `NO_SUPPRESS`, so
+a college with one to four portal-origin students carried `ppa = 3` beside
+`ppe = null`. Read side by side, that is "applied but no eligible". And because
+`earnFraction()` reads a suppressed source as f=0, 54 colleges earned nothing
+on Access for the same reason. `ppe` now bakes raw with the other two (test
+pinned, `pe` on the same college still masked). ⭐ Two keys of one artifact
+cannot be compared until they are known to share a suppression rule.
+`cpl_memory: a-masked-key-beside-a-raw-one-reads-as-a-data-anomaly`. The probe
+counts applied-without-eligible on the aggregated view every run, so a real
+instance would surface with its colleges.
