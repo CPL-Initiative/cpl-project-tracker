@@ -189,6 +189,21 @@ def standalone_code(n):
     return f"{d}{LETTERS[l1]}{LETTERS[l2]}"
 
 
+def continuation_bands(band):
+    """The band digits a corroborated bucket may spill into, in order.
+
+    Sam, 2026-09-03 (readings sheet, card 11): when a CREDIT bucket's 999
+    numbers are taken, minting continues into the next band digit — KINE M2001
+    follows KINE M1999 — the digit carrying no transferability meaning today
+    (pipeline reference §10) and no existing id changing. Credit runs 1 -> 2
+    -> ... -> 8; noncredit (9) was not ruled and stays a single band.
+    """
+    band = str(band)
+    if band == "9":
+        return ["9"]
+    return [str(b) for b in range(int(band), 9)]
+
+
 def ntitle(t):
     t = re.sub(r"[^a-z0-9 ]+", " ", (t or "").lower())
     return " ".join(sorted(x for x in t.split() if x and x not in TITLE_STOP))
@@ -382,15 +397,17 @@ class Allocator:
             return candidate, "kept number"
         # gap-fill
         if kind in ("corr", "z"):
-            reserved = self.reservations.get((new_prefix, band), set()) if kind == "corr" else set()
-            seq = 1
-            while seq <= 999:
-                k = f"{new_prefix} {letter}{band}{seq:03d}"
-                if seq not in reserved and self.free(k):
-                    self.taken.add(k)
-                    self.gapfilled.append({"old_id": old_id, "wanted": candidate, "new_id": k, "why": reason})
-                    return k, "gap-filled"
-                seq += 1
+            for b in continuation_bands(band):
+                reserved = self.reservations.get((new_prefix, b), set()) if kind == "corr" else set()
+                seq = 1
+                while seq <= 999:
+                    k = f"{new_prefix} {letter}{b}{seq:03d}"
+                    if seq not in reserved and self.free(k):
+                        self.taken.add(k)
+                        self.gapfilled.append({"old_id": old_id, "wanted": candidate, "new_id": k,
+                                               "why": reason + (f" (continuation band {b})" if b != band else "")})
+                        return k, "gap-filled"
+                    seq += 1
             return None, "overflow"
         idx = 0
         while idx < 10 * 26 * 26:

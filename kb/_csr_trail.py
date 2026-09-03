@@ -56,7 +56,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 OUT_DIR = os.path.join(HERE, "csr_out", str(date.today()))
 
-UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology"}  # kb/_row_audit.py
+UMBRELLA_DISCIPLINES = {"Foreign Languages", "Kinesiology", "Agriculture", "Agricultural Production"}  # kb/_row_audit.py
 
 STOP = {"and", "of", "the", "for", "in", "to", "a", "an", "&", "/", "studies", "study",
         "science", "sciences", "technology", "general"}

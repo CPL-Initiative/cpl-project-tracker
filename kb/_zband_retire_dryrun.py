@@ -89,6 +89,15 @@ def standalone_code(n):
     return f"{d}{LETTERS[l1]}{LETTERS[l2]}"
 
 
+def continuation_bands(band):
+    """Band digits a corroborated bucket may spill into, in order (Sam,
+    2026-09-03, readings card 11): credit 1 -> 2 -> ... -> 8; noncredit stays 9."""
+    band = str(band)
+    if band == "9":
+        return ["9"]
+    return [str(b) for b in range(int(band), 9)]
+
+
 def load_id_reservations():
     spec = importlib.util.spec_from_file_location("s4dry", os.path.join(HERE, "_subj4_dryrun.py"))
     mod = importlib.util.module_from_spec(spec)
@@ -160,17 +169,24 @@ class Buckets:
         self.used_before = {b: len(s) for b, s in self.corr.items()}
         self.added = Counter()
         self.overflow = []
+        self.continued = []          # (old_id, full bucket, id taken in the next band)
 
     def next_corr(self, subj, band, old_id):
-        b = (subj, band)
-        reserved = self.reservations.get(b, set())
-        seq = 1
-        while seq <= 999:
-            if seq not in self.corr[b] and seq not in reserved:
-                self.corr[b].add(seq)
-                self.added[b] += 1
-                return f"{subj} M{band}{seq:03d}"
-            seq += 1
+        # Sam, 2026-09-03 (readings card 11): a full CREDIT bucket continues
+        # into the next band digit (KINE M2001 follows KINE M1999); noncredit
+        # (9) stays a single band. The band digit is non-semantic today.
+        for bd in continuation_bands(band):
+            b = (subj, bd)
+            reserved = self.reservations.get(b, set())
+            seq = 1
+            while seq <= 999:
+                if seq not in self.corr[b] and seq not in reserved:
+                    self.corr[b].add(seq)
+                    self.added[b] += 1
+                    if bd != str(band):
+                        self.continued.append((old_id, f"{subj} M{band}", f"{subj} M{bd}{seq:03d}"))
+                    return f"{subj} M{bd}{seq:03d}"
+                seq += 1
         self.overflow.append((old_id, f"{subj} M{band}"))
         return None
 

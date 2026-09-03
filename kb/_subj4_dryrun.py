@@ -71,6 +71,17 @@ def load_umbrella_allowances():
         codes = {v.get("subj4") for v in (fl.get("languages") or {}).values() if v.get("subj4")}
         codes.add("FLNG")  # the umbrella's own nominal canonical
         allow[fl.get("discipline") or "Foreign Languages"] = codes
+    # Seed-declared umbrellas (is_umbrella + umbrella_codes): Agriculture and
+    # Agricultural Production since the 2026-09-03 authority recode (item 14 —
+    # the C-ID family codes AGAB/AGAS/AGPS/AGEH/AGMA beside each residual).
+    if os.path.exists(CANONICAL):
+        with open(CANONICAL, encoding="utf-8") as f:
+            seed = json.load(f)
+        for d, e in (seed.get("disciplines") or {}).items():
+            if (e or {}).get("is_umbrella") and e.get("umbrella_codes"):
+                allow.setdefault(d, set()).update(e["umbrella_codes"])
+                if e.get("canonical_subj4"):
+                    allow[d].add(e["canonical_subj4"])
     return allow
 
 SUBJ4_RE = re.compile(r"^[A-Z]{4}$")

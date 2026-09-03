@@ -1,18 +1,18 @@
-// Guards the UC-CUR → Z-scheme consumer recognition (2026-06-15 re-mint).
-// applyMergeLocal infers a merge target's kind/id_system from its id shape. A
-// synthetic Unified target now arrives as `SUBJ Z<band><seq>` (the re-minted
-// form) instead of `UC-CUR-*`. Before the fix, a Z id fell through the C-ID/CCN/
-// M-ID branches to the `else` and was mis-classified as **C-ID** (and then
-// title-firewalled as an official anchor — uncuratable). This test replays a
-// live merge into a Z target NOT present in the payload and asserts it renders
-// as a curatable Unified row. The discriminator is the KIND cell (which
-// directly reflects the id_system classification):
-//   - id_system "Unified"   → Kind cell shows "Unified"
-//   - id_system "C-ID" (bug) → Kind cell shows "Course" (mis-classified official)
-// (The Subject/Common-SUBJ cell was the original discriminator, but it now
-// renders "—" for these blank-discipline synthetic targets — Common SUBJ is a
-// FUNCTION of discipline, S113 — so it no longer distinguishes the branches.)
-// A C-ID control target (ENGL 110) confirms the Z regex doesn't over-match.
+// Guards applyMergeLocal's id-shape recognition of a merge target that is NOT
+// in the payload. Since the Z band retired (2026-09-03, items 20-21 of Sam's
+// rulings) every machine cluster is a real M-ID record, so a row-less
+// `SUBJ M####` target is an M-ID Course: curatable (it takes the live
+// unified_title) and never title-firewalled like an official anchor, never a
+// "Unified" row (that shape is the transient `UC-CUR-*` client mint only).
+// Before the 2026-06-15 fix a synthetic target fell through to the `else` and
+// was mis-classified as **C-ID** (title-firewalled, uncuratable); this replays a
+// live merge into a row-less M target and asserts the Course / M-ID branch.
+// The discriminator is the KIND cell (which reflects the id_system):
+//   - id_system "M-ID"      → Kind cell shows "Course", title curatable
+//   - id_system "Unified"   → Kind cell shows "Unified" (wrong for an M shape)
+// (The Subject/Common-SUBJ cell renders "—" for a blank-discipline target —
+// Common SUBJ is a FUNCTION of discipline, S113 — so it does not discriminate.)
+// A C-ID control target (ENGL 110) confirms the M regex doesn't over-match.
 //
 // Run from repo root: `npm test` (or `node tests/uc_zscheme_recognition.test.js`).
 const fs = require("fs");
@@ -33,7 +33,7 @@ const mkRow = (id, title, subj, extra) => Object.assign({
 }, extra || {});
 
 const rows = [
-  // ZB — live merge member, distinctive subject ZOOL, folds into a Z target.
+  // ZB — live merge member, distinctive subject ZOOL, folds into a row-less M-ID target.
   mkRow("ZOOL M1002", "Marine Biology", ["ZOOL"], { st: 700, eu: 1500 }),
   // EC — live merge member, folds into a C-ID control target.
   mkRow("ENGW M1004", "College Writing", ["ENGW"]),
@@ -53,13 +53,13 @@ const html = `<!DOCTYPE html><html><head></head><body>
 </script>
 </body></html>`;
 
-// Live overlay: ZOOL M1002 → "BIOL Z9001" (synthetic Z target, not in payload);
-// ENGW M1004 → "ENGL 110" (official C-ID control). Both targets are synthesized
-// by applyMergeLocal from the id shape.
+// Live overlay: ZOOL M1002 → "BIOL M1009" (a row-less M-ID target, not in the
+// payload); ENGW M1004 → "ENGL 110" (official C-ID control). Both targets are
+// synthesized by applyMergeLocal from the id shape.
 const OVERLAY = [
-  { course_id: "ZOOL M1002", field: "merge_into", value: "BIOL Z9001",
+  { course_id: "ZOOL M1002", field: "merge_into", value: "BIOL M1009",
     reviewer_email: "sam@rccd.edu", reviewed_at: "2026-06-15T01:00:00Z" },
-  { course_id: "BIOL Z9001", field: "unified_title", value: "Marine Biology (Unified)",
+  { course_id: "BIOL M1009", field: "unified_title", value: "Marine Biology (Unified)",
     reviewer_email: "sam@rccd.edu", reviewed_at: "2026-06-15T01:00:00Z" },
   { course_id: "ENGW M1004", field: "merge_into", value: "ENGL 110",
     reviewer_email: "sam@rccd.edu", reviewed_at: "2026-06-15T01:00:00Z" },
@@ -86,23 +86,24 @@ check("init does not throw", !threw);
     .find((tr) => txt(tr.querySelectorAll("td")[1]).indexOf(id) >= 0);
   const cell = (tr, i) => txt(tr && tr.querySelectorAll("td")[i]);
 
-  // member folds away; Z target is synthesized and renders.
+  // member folds away; the row-less M-ID target is synthesized and renders.
   check("merge member ZOOL M1002 folds away on load", !rowFor("ZOOL M1002"));
-  const z = rowFor("BIOL Z9001");
-  check("Z merge target renders", !!z);
-  // THE failure-mode guard: a correctly-recognized Z target's Kind cell reads
-  // "Unified"; a C-ID misclassification would read "Course". (Its Common SUBJ
-  // is "—" — blank-discipline synthetic target — so we key on Kind, not Subject.)
-  check("Z target is classified Unified (Kind cell 'Unified', not 'Course')",
-    cell(z, 0).indexOf("Unified") >= 0);
-  check("Z target's Common SUBJ is blank (no discipline → no canonical subject)",
+  const z = rowFor("BIOL M1009");
+  check("row-less M-ID merge target renders", !!z);
+  // THE failure-mode guard: a correctly-recognized M target's Kind cell reads
+  // "Course" (id_system M-ID); a "Unified" reading would mean the retired Z
+  // branch is back. (Its Common SUBJ is "—" — blank-discipline target — so we
+  // key on Kind, not Subject.)
+  check("row-less M-ID target is classified Course / M-ID (Kind cell 'Course', not 'Unified')",
+    cell(z, 0).indexOf("Course") >= 0 && cell(z, 0).indexOf("Unified") < 0);
+  check("M-ID target's Common SUBJ is blank (no discipline → no canonical subject)",
     cell(z, 3) === "—");
-  // Unified targets are NOT title-firewalled → they take the live unified_title.
-  check("Z target takes the live unified_title (not firewalled like an official)",
+  // M-ID targets are NOT title-firewalled → they take the live unified_title.
+  check("M-ID target takes the live unified_title (not firewalled like an official)",
     cell(z, 2) === "Marine Biology (Unified)");
 
   // C-ID control: a real C-ID target is still treated as official (Subject =
-  // id-prefix "ENGL"), proving the Z regex doesn't over-match.
+  // id-prefix "ENGL"), proving the M regex doesn't over-match.
   check("ENGW M1004 folds away on load", !rowFor("ENGW M1004"));
   const cid = rowFor("ENGL 110");
   check("C-ID control target renders", !!cid);
