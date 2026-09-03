@@ -162,6 +162,29 @@ ov = fo["_overlaps"][("Counselor Step", "Student_Verified")]
 check("profile: pairwise overlap counts (both 10, A-only 9, B-only 0, B within A)",
       ov == (10, 9, 0, "B within A"), repr(ov))
 
+# Funnel consistency on the aggregated view: applied > 0 with eligible = 0 is
+# counted by rows and colleges, test students excluded, and an identifier the
+# block groups by never reaches the log.
+rcols_a = ["College", "Catalog Year", "CPL Type Description", "Potential Student", "Test Student",
+           "Applied Credits", "Eligible Credits", "Transcribed Credits", "Counselor_Verified",
+           "MAP Internal StudentID"]
+rows_a = [
+    ["Alpha", "2025-2026", "Military", "No", "", "3", "0", "0", "1", "s-9001"],    # counted
+    ["Alpha", "2025-2026", "Military", "Yes", "", "3", "", "0", "0", "s-9002"],    # counted (blank eligible)
+    ["Beta", "2025-2026", "Industry", "No", "", "3", "6", "0", "0", "s-9003"],     # eligible present: not counted
+    ["Beta", "2025-2026", "Industry", "No", "Yes", "3", "0", "0", "0", "s-9004"],  # test student: excluded
+    ["Gamma", "2024-2025", "Military", "No", "", "0", "0", "0", "0", "s-9005"],    # no applied: not counted
+]
+buf_a = io.StringIO()
+with contextlib.redirect_stdout(buf_a):
+    fa = P.profile_rows(P.STUDENT_AGG, rcols_a, rows_a, ["Counselor_Verified"],
+                        group_key="MAP Internal StudentID")
+out_a = buf_a.getvalue()
+check("aggregated view: applied-without-eligible counts 2 rows in 1 college",
+      fa["_applied_without_eligible"] == {"rows": 2, "colleges": 1}, repr(fa.get("_applied_without_eligible")))
+check("aggregated view: the split by Potential Student is printed", "Potential Student = Yes: 1" in out_a)
+check("aggregated view: no MAP Internal StudentID value reaches the log", "s-900" not in out_a)
+
 # JSON bools on the wire are the case the builder cannot survive — the probe
 # must report the type so the verdict can say so.
 rows_b = [[r[0], r[1], r[2], r[3], r[4], r[5], (r[6] == "True"), r[7], r[8]] for r in rows]

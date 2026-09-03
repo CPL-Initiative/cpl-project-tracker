@@ -84,13 +84,13 @@ PROFILE_KEYS = {
                      "AppliedCredits", "TranscribedCredits"],
     STUDENT_AGG: ["College", "Catalog Year", "CPL Type Description",
                   "Potential Student", "Test Student", "Applied Credits",
-                  "Transcribed Credits"],
+                  "Eligible Credits", "Transcribed Credits"],
     STUDENT_PIT: ["College", "Catalog Year", "Applied Credits", "Transcribed Credits"],
     CATALOG_YEAR: ["CollegeID", "Catalog Year", "CPLStatusPlan", "Student Count",
                    "Applied Credits", "Transcribed Credits"],
 }
 # In-memory grouping key for the constant-within-student test (see docstring).
-GROUP_KEY = {STUDENT_DETAIL: "StudentMAPID"}
+GROUP_KEY = {STUDENT_DETAIL: "StudentMAPID", STUDENT_AGG: "MAP Internal StudentID"}
 # A column known to exist on each view — the bisect's anchor.
 ANCHOR = {STUDENT_DETAIL: "CollegeID", STUDENT_AGG: "College",
           STUDENT_PIT: "College", CATALOG_YEAR: "CollegeID"}
@@ -519,6 +519,45 @@ def profile_rows(view, rcols, rows, new_cols, group_key=None):
                   f"({fmt_pct(const, len(by))}) — 100% means a PLAN-level flag "
                   f"repeated per CR row; less means a per-row check")
             f["constant_within_student"] = (const, len(by))
+    # Funnel consistency at this grain: APPLIED units with NO eligible units.
+    # Sam, 2026-09-02: hand Malone and Pedro the records to hunt down. Counts
+    # only — never an identifier — by Potential Student, college, type and
+    # year. The CR-row view (map_student_credit) holds ZERO such rows across
+    # 94,041 applied rows, so any count here is a difference between the two
+    # views' eligible figures, not a bad CR row.
+    ecr_s, acr_s = col("Eligible Credits"), col("Applied Credits")
+    if ecr_s is not None and acr_s is not None and college is not None:
+        def num(v):
+            try:
+                return float(str(v or "0").strip() or 0)
+            except ValueError:
+                return 0.0
+        idx = [i for i in range(n) if num(acr_s[i]) > 0 and num(ecr_s[i]) <= 0
+               and not (test_student is not None and norm(test_student[i]) == "yes")]
+        print(f"\n    applied > 0 with eligible = 0 (test students excluded): "
+              f"{len(idx):,} of {n:,} rows")
+        print(f"      eligible is BLANK rather than '0' on {sum(1 for i in idx if blank(ecr_s[i])):,}")
+        if potential is not None:
+            yes = sum(1 for i in idx if norm(potential[i]) == "yes")
+            print(f"      Potential Student = Yes: {yes:,} · No/blank: {len(idx) - yes:,}")
+        if group:
+            print(f"      distinct students: {len({group[i] for i in idx if not blank(group[i])}):,}")
+        by_col = Counter(str(college[i]).strip() for i in idx)
+        print(f"      colleges: {len(by_col):,}; by rows:")
+        for c, k in by_col.most_common(60):
+            print(f"        {c[:40]:<42} {k:>6,}")
+        ctype = col("CPL Type Description")
+        if ctype is not None:
+            print("      by CPL Type Description:")
+            for v, k in Counter(str(ctype[i] or "").strip() or "(blank)" for i in idx).most_common(8):
+                print(f"        {v[:40]:<42} {k:>6,}")
+        cy = col("Catalog Year")
+        if cy is not None:
+            print("      by Catalog Year:")
+            for v, k in sorted(Counter(str(cy[i] or "").strip() or "(blank)" for i in idx).items()):
+                print(f"        {v:<14} {k:>6,}")
+        facts["_applied_without_eligible"] = {"rows": len(idx), "colleges": len(by_col)}
+
     # Pairwise overlap among the boolean-shaped new columns: does one check
     # nest inside another (a workflow step order), or do they move together
     # (one attestation setting several flags)? This is what decides whether
