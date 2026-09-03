@@ -38153,6 +38153,150 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-RWFL-1-001",
+      "exhibit_ids": [
+        "MAPICI-RWFL-1-001"
+      ],
+      "title": "Report Writing for Law Enforcement",
+      "unified_title": "Report Writing for Law Enforcement",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Report Writing for Law Enforcement"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Fullerton College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "AJ 151 F",
+          "credit": "3 hours in Police Report Writing"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Fullerton College": 3.0
+      },
+      "adopter_lines": {
+        "Fullerton College": 1
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPPRA-A2OJ-1-001|MAPPRS-A1+-1-001",
       "exhibit_ids": [
         "MAPPRA-A2OJ-1-001",
@@ -90339,6 +90483,131 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
+      "exhibit_id": "MAPCXI-CBEI-1-001",
+      "exhibit_ids": [
+        "MAPCXI-CBEI-1-001"
+      ],
+      "title": "Credit by Exam: Introduction to Criminal Justice",
+      "unified_title": "Credit by Exam: Introduction to Criminal Justice",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam: Introduction to Criminal Justice"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Lemoore College"
+      ],
+      "potential": 80,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 81,
+      "credit_recs": [
+        {
+          "course": "AOJ 001",
+          "credit": "3 hours in Introduction to Criminology"
+        }
+      ],
+      "authoritative_recs": [],
+      "adopter_units": {
+        "Lemoore College": 3.0
+      },
+      "adopter_lines": {
+        "Lemoore College": 1
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPOA-SAHS-1-001",
       "exhibit_ids": [
         "MAPOA-SAHS-1-001"
@@ -128385,6 +128654,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Introduction to Policing (Elective Course)"
         },
         {
+          "course": "AJ 278 F",
+          "credit": "3 hours in Community Relations"
+        },
+        {
           "course": "CRIM B21",
           "credit": "3 hours in Introduction to Corrections"
         },
@@ -129023,7 +129296,7 @@ window.CPL_STATEWIDE = {
         "College of San Mateo": 21.0,
         "College of the Desert": 24.0,
         "Copper Mountain College": 21.0,
-        "Fullerton College": 22.0,
+        "Fullerton College": 25.0,
         "Glendale Community College": 18.0,
         "Grossmont College": 24.0,
         "Lake Tahoe Community College": 18.0,
@@ -129060,7 +129333,7 @@ window.CPL_STATEWIDE = {
         "College of San Mateo": 7,
         "College of the Desert": 8,
         "Copper Mountain College": 7,
-        "Fullerton College": 8,
+        "Fullerton College": 9,
         "Glendale Community College": 6,
         "Grossmont College": 8,
         "Lake Tahoe Community College": 6,
@@ -129085,9 +129358,9 @@ window.CPL_STATEWIDE = {
         "Solano Community College": 7,
         "Woodland Community College": 9
       },
-      "peer_units_median": 22.0,
+      "peer_units_median": 24.0,
       "peer_units_max": 30.0,
-      "rec_units_total": 560.0
+      "rec_units_total": 563.0
     },
     {
       "exhibit_id": "MAPICI-MCAA1-1-001",
@@ -301649,8 +301922,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Lemoore College",
-        "credit_recs": 96,
-        "exhibits": 85,
+        "credit_recs": 97,
+        "exhibits": 86,
         "disciplines": 13,
         "ccc_collaborative": 14,
         "industry_certs": 22,
@@ -302000,11 +302273,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Fullerton College",
-        "credit_recs": 38,
-        "exhibits": 26,
+        "credit_recs": 40,
+        "exhibits": 27,
         "disciplines": 5,
-        "ccc_collaborative": 15,
-        "industry_certs": 30,
+        "ccc_collaborative": 16,
+        "industry_certs": 32,
         "pct": 0.3
       },
       {
@@ -302137,11 +302410,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1432,
-        "exhibits": 481,
-        "courses": 604,
+        "credit_recs": 1435,
+        "exhibits": 483,
+        "courses": 606,
         "colleges": 51,
-        "ccc_collaborative": 541,
+        "ccc_collaborative": 542,
         "pct": 10.8
       },
       {
@@ -302335,15 +302608,15 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3633,
-        "exhibits": 1111,
+        "credit_recs": 3635,
+        "exhibits": 1112,
         "colleges": 79,
         "pct": 27.5
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2068,
-        "exhibits": 1600,
+        "credit_recs": 2069,
+        "exhibits": 1601,
         "colleges": 59,
         "pct": 15.6
       },
@@ -302379,8 +302652,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2751,
-        "exhibits": 1057,
+        "credit_recs": 2754,
+        "exhibits": 1059,
         "colleges": 76,
         "pct": 20.8
       },
@@ -302444,15 +302717,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11668,
-        "exhibits": 5196,
+        "credit_recs": 11670,
+        "exhibits": 5198,
         "colleges": 96,
         "disciplines": 23,
         "pct": 88.2
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1334,
+        "credit_recs": 1335,
         "exhibits": 167,
         "colleges": 63,
         "disciplines": 11,
@@ -302526,8 +302799,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-        "credit_recs": 129,
-        "courses": 115,
+        "credit_recs": 130,
+        "courses": 116,
         "colleges": 22,
         "cpl_type": "Industry Certification",
         "discipline": "Public and Protective Services"
@@ -302870,6 +303143,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-02T16:41:53",
-  "total_credit_recs": 13227
+  "generated_at": "2026-09-03T00:14:32",
+  "total_credit_recs": 13230
 };

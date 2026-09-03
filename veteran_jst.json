@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-02T16:43:08.332523+00:00",
+  "scraped_at": "2026-09-03T00:15:38.215567+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27583,
+    "jst": 27590,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -42,7 +42,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1330,
+      "jst": 1333,
       "star": true
     },
     "Bakersfield College": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 514,
+      "jst": 515,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -212,7 +212,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 133,
+      "jst": 134,
       "star": false
     },
     "Ventura College": {
@@ -227,7 +227,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 150,
+      "jst": 151,
       "star": true
     },
     "College of the Sequoias": {
@@ -307,7 +307,7 @@
     },
     "Los Angeles Harbor College": {
       "vets": 109,
-      "jst": 135,
+      "jst": 136,
       "star": true
     },
     "Irvine Valley College": {

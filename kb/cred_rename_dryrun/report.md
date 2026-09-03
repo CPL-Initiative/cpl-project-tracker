@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-09-02
+# Credential Rename Dry-Run — 2026-09-03
 
-Generated: `2026-09-02T16:45:44Z`
+Generated: `2026-09-03T00:17:59Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
