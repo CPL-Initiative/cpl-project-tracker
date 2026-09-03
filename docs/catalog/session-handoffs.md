@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-196 document(s).
+197 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 223 | [the counselor step is on the API, under 10 is the mask, and CollegeID2 is the key still to land](../session_223_handoff.md) | 2026-09-03 |
 | 222 | [the table leads, the explainer is the public view, and one page is waiting to be retired](../session_222_handoff.md) | 2026-09-02 |
 | 221 | [the tab is calm; the dials are still Sam's to set](../session_221_handoff.md) | 2026-09-02 |
 | 220 | [the tab is consolidated; the dials are still Sam's to set](../session_220_handoff.md) | 2026-09-01 |

@@ -750,6 +750,22 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyCheck S222 — the lifecycle checks are on the API, and under 10 is the mask (2026-09-02 → 03)
+
+**Three PRs (#1437, #1438, #1439).** Pedro's six CPL lifecycle checks were found
+as booleans on the student aggregated view by a runner-side probe (the sandbox
+cannot reach MAP; `columnName: []` now 500s, `["*"]` enumerates). Sam ruled the
+funding attestation is `Counselor_Verified` alone, and `pac` publishes from the
+2026-09-03 run (2,820 students · 24,699 units · 18 colleges). His "applied but
+no eligible" worklist for Malone and Pedro had zero rows at either grain: the
+shape was our artifact's own inconsistent suppression, which left 54 small-portal
+colleges earning nothing on Access. Ruled the same day: counts mask under 10
+(FERPA practice), units carry the money, public dollars read "<$1,000" or the
+nearest $1,000, the curator view exact (ADR ratified); 57 colleges earn on Access
+now. `CollegeID2`, the NC FTES origination key, has not landed. ⭐ A floor lives
+in fixtures as well as code — four jsdom suites pinned the old number. Story:
+`map_custom_reports_lessons` + `cpl_funding_lessons`; handoff `session_223_handoff`.
+
 ### SkyLead S221 — lead with the table; the explainer is the public view (2026-09-02)
 
 **One PR (#1436).** Sam's seven asks: the institution table is the FIRST section after
@@ -764,19 +780,6 @@ mode instead of painting a second table from the payload — the hidden engine
 mount was an embed waiting to happen — and paints the timing milestones and
 each priority's strategies from the engine. Story: `cpl_funding_lessons`;
 handoff `session_222_handoff`.
-
-### SkyCalm S220 — the calm pass, and the text a test does not see (2026-09-02)
-
-**One PR.** Sam's brief: *"get rid of any cheesy glyphs (per our rules) … I want
-folks to feel calm when they open this model."* Every rendered glyph on the
-funding tab is a word or gone (the row toggle is the institution's NAME; the
-sort mark is the one ghosted survivor), the chrome lost its fills, stripes and
-red, the "pools" subtitle left both HTMLs, and **five prose blocks are editable
-in curate** (`text.<key>` overrides, Edit → Save · Cancel · Restore). His
-mid-turn call moved the held-in-reserve figure into the gate sentence and ahead
-of Total Possible. ⭐ `textContent` has no seams and no tooltips — a word sweep
-must read the markup (KB note). Story: `cpl_funding_lessons`; handoff
-`session_221_handoff`.
 
 ## Troubleshooting
 

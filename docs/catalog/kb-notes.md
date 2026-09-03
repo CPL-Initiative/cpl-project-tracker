@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-368 document(s).
+369 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -68,6 +68,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
 | [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
+| [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |

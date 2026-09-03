@@ -45,8 +45,8 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [CPL Assistant (in-dashboard RAG chatbot) — lessons](../cpl_assistant_lessons.md) | `cpl_assistant_lessons.md` | 2026-06-01 |  |
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |
-| [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-08-23)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-01 |
-| [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-09-01 |
+| [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-08-27)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-03 |
+| [CPL Implementation Funding tab — workstream lessons](../cpl_funding_lessons.md) | `cpl_funding_lessons.md` | 2026-06-11 | 2026-09-03 |
 | [CPL News lane — lessons](../cpl_news_lessons.md) | `cpl_news_lessons.md` | 2026-06-21 |  |
 | [CPL Pathways tab — apprenticeship-to-baccalaureate course maps (lessons)](../cpl_pathways_lessons.md) | `cpl_pathways_lessons.md` | 2026-07-10 |  |
 | [CPL Student Portal "Credit for Being You" video — audio restoration & accessibility lessons](../cpl_portal_video_lessons.md) | `cpl_portal_video_lessons.md` | 2026-07-23 |  |
