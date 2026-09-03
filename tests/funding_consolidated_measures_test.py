@@ -166,6 +166,32 @@ def main():
     check("an unrecognized attestation value reads False, never truthy",
           p3["statewide"].get("pac", 0) == 0, f"got {p3['statewide'].get('pac')}")
 
+    # ── part C: the REAL column, as MAP serves it (2026-09-02) ─────────────
+    # Sam ruled the funding measure reads `Counselor_Verified`, which the API
+    # renders as '0'/'1' strings on View_StudentAggregatedValues_APIDataset.
+    # Pin the spelling and the rendering: a renamed sweep or a stricter truthy
+    # set would drop the measure silently, and `Student_Verified` beside it
+    # must never be mistaken for the attestation (Counselor ALONE is the ruling).
+    cols_real = BASE_COLUMNS + ["Student_Verified", "Counselor_Verified"]
+
+    def row_real(sid, acr, student, counselor):
+        return row(sid, ecr=10, acr=acr, tcr=0) + [student, counselor]
+
+    p4 = run_builder([
+        row_real("r1", 11, "1", "1"),   # both checks: counted
+        row_real("r2", 13, "0", "1"),   # counselor only: counted
+        row_real("r3", 17, "1", "0"),   # student only: NOT counted
+        row_real("r4", 19, "0", "0"),
+        row_real("r5", 0, "1", "1"),    # attested, no applied credit: NOT counted
+    ], cols_real)
+    st4 = p4["statewide"]
+    check("Counselor_Verified is recognized as the attestation column ('0'/'1' strings)",
+          "pac" in st4 and st4.get("pac") == 2, f"got {st4.get('pac')!r}")
+    check("pac_u sums the counselor-verified students' applied units only (11+13)",
+          abs(st4.get("pac_u", 0) - 24) < 1e-6, f"got {st4.get('pac_u')}")
+    check("Student_Verified alone does not count — Counselor alone is the ruling",
+          st4.get("pac") == 2 and abs(st4.get("pac_u", 0) - 24) < 1e-6)
+
     print()
     print(f"{checks[0] - len(failures)}/{checks[0]} checks passed")
     return 1 if failures else 0
