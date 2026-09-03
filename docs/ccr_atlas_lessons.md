@@ -801,3 +801,112 @@ contract change belongs in the guard that encoded the old contract.
 holds descriptions"` fails because `prototype/ccr_desc/` is gitignored and
 absent. Confirmed by stashing the diff, rebuilding, and getting the identical
 failure on the unmodified prototype.
+
+---
+
+## 2026-09-03 — SkyOrbit (Session 223): the five goals, the orbits, and the shards on Supabase
+
+Sam opened with the funding queue and, finding nothing a session could act on
+(dials unset, `CollegeID2` absent on all four views by a fresh probe, only
+dependabot PRs open), pivoted: *"the CCR SkyView, which is not yet working as
+intended."* Five goals, verbatim: see the whole CCR universe · keyword to jump
+to any cluster or course or subject area · course and cluster details on click
+or hover, *"including course descriptions on click of a course title … we need
+the full number and title and units and if it is a MID, CID, CCN showing on the
+course info as you zoom in"* · *"have unassigned course individually in orbit
+around the cluster they are most aligned to (rather than having them all sit in
+a huge cluster as they are now)"* · *"have SkyView open full screen so users have
+more work space and allow scroll down to see the other info you provide now."*
+
+### ⭐ The blob was our own design
+
+Every discipline had a second "· stand-alone" island — Kinesiology's held 2,400
+points in one disc. That IS the huge cluster he described, and it was a choice
+made for a good reason (a stand-alone asserts no equivalence, so mixing 33k of
+them into the clustered islands would bury the 16k identities the merge queue is
+about). The orbit keeps the reason and drops the blob: a stand-alone stays a
+hollow point, but it sits on a ring around the identity it is most aligned to,
+tethered, with the inspector saying WHY. **30,274 of 33,423 found a parent;
+3,149 sit on the rim; 327 no-discipline courses matched corpus-wide.**
+
+### ⭐ Corroborators must not outvote the primary signal
+
+The first weighting gave a shared local subject code 3.0, TOP 1.0, units 0.3 and
+credit 0.2 beside title 4 × Dice — and *"Swim Training for Competition"* landed
+on *"Aerobic Weight Training"* over a swimming identity, because the stack of
+cheap agreements (1.5 points) beat a title gap of 0.68. Rule 7's TOP doctrine
+generalizes: **a signal that is cheap to satisfy inside one discipline (every
+KINE row shares KINE; half share a TOP code) must corroborate, never decide.**
+Rebalanced to title 8 × Dice, subject 1.5, TOP 0.5, units 0.15, credit 0.05 —
+a full stack is 2.2, which a title gap of 0.28 Dice overturns. ⚠️ **The test had
+to pin BOTH directions**: a clearly better title wins, and a marginal gap (0.40
+vs 0.33) legitimately yields to shared subject + TOP + units. A guard on one side
+lets the pendulum swing past the middle unnoticed.
+
+### ⭐ Key a side table by the write key, never by position
+
+The description shards were `{identity: [text per member, by position]}`, and
+the members payload DROPS a member with no control number (2 do). Every later
+description on that identity shifts onto the wrong course, silently — the
+drill-down looks fine. Re-keyed to `{control number digits: [description, title,
+units]}`: the key the write uses is the key the lookup uses, a drop is harmless,
+and a layout rebuild cannot invalidate a shard. Titles and units ride along, so
+the member record stays `[cn, code, college]` (the 3.1 MB measurement still
+holds) and the inspector still shows a course's full name once its shard loads.
+KB note: [`methodology-key-a-side-table-by-the-write-key-not-by-position`](kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md).
+
+### The shards went to Supabase Storage
+
+Sam's lean of 2026-08-24 (*"I expect we'll put the shards on supabase"*) is
+delivered as the public bucket `ccr-desc`: 159 shards, 50 MB, published by
+`scripts/publish_skyview_desc_shards.sh` from a manual workflow and from the
+daily run when the unified-courses artifacts changed. Why not commit them: the
+48 MB `unified_courses_member_desc.js` already changes in every daily commit, so
+committed shards would add 50 MB of churn a day to the repo and every vault
+clone. The client tries `./ccr_desc/` first and the bucket second, and the jsdom
+suite asserts that order with a mocked 404. ⚠️ **The bucket is empty until the
+first dispatch after the merge.**
+
+### ⚠️ Things the harnesses caught, in order
+
+- **A filter that outlived its selection.** A college-course search sets the
+  inspector's filter to the code; a later canvas click on an 850-course identity
+  kept it, and the card read *"Showing 0 of 0 matching (850 carried)"*. The
+  browser harness's cap check went red on `.mv` = 0. `showNode()` now resets the
+  filter unless the caller that set it says to keep it.
+- **The harness's own sequencing.** Its description check picked the first
+  described member on a card — the very course its cross-area-move section had
+  moved away three sections earlier. And its shared-key click matched two
+  buttons because a collided key can put BOTH its courses on one card (KIN 62C /
+  KINES 62C at Santa Rosa). Neither was a page defect; both were the harness
+  assuming a state it had itself changed.
+- **Two objects, one fixture.** The jsdom suite handed the page nodes from the
+  TEST's copy of the fixture, and `selNode === nd` inside the client could never
+  hold. The page parses its own copy; the suite now reads it back.
+- **Boot is asynchronous in jsdom.** The template boots on DOMContentLoaded,
+  which fires after the constructor returns — half the suite ran against a page
+  that had not booted, then the boot re-rendered the map under the other half.
+- **Two identity ids appear twice in the export** (`ENGL 100`, `ITIS 160`, both
+  CCNs), which drew three extra points. The builder keeps the first and names
+  the duplicates in its log.
+
+### Verification
+
+`tests/ccr_universe_orbits_test.py` (38 checks: the alignment floor, both
+weight directions, ring geometry with no overlaps, shard keying, the committed
+payload) · `tests/ccr_skyview_universe.test.js` (66 checks, the REAL template
+and client over a six-point fixture: full bleed, one search field, all four
+suggestion kinds, member-code jump, orbit card and accept, parent's orbit list,
+shard base order, description toggle, rim, shared-key refusal, carry and Escape,
+the three label bands, tooltip, hollow-point drag, full screen, inspector fold)
+· `prototype/check_ccr_atlas.js` in Chromium, extended for the orbits, the
+quick look, the first-screen geometry, the label bands and the member-code
+search.
+
+### Next
+
+1. **Sam drives it** — density, inspector width, label bands, the rim.
+2. Dispatch `skyview-desc-shards.yml` once the PR merges; the bucket is empty
+   until then.
+3. Decision packs per discipline on demand; the queue for SUBJ4 breakage.
+4. Whether the daily run should rebuild the layout too (NEEDS SAM ②).

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-369 document(s).
+370 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -205,6 +205,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Infer required-core coursework from embedded-certificate structure when the catalog flag is missing](../kb-notes/methodology-embedded-cert-required-core-inference.md) | methodology | published | 2026-07-16 | 2026-07-16 |
 | [Join loose institutional datasets on the coded key, not freehand text](../kb-notes/methodology-coded-key-over-freehand-text-join.md) | methodology | published | 2026-06-18 | 2026-06-18 |
 | [Judge a detector by what it prints — filters are only observable in their output](../kb-notes/methodology-judge-a-detector-by-what-it-prints.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [Key a side table by the write key, never by list position](../kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |
@@ -301,7 +302,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The text a reader sees is not the text a test reads](../kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [The unit of curation work is the component, not the suggestion](../kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
-| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-07-16 |
+| [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-03 |
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [User-vocabulary category maps — curated JSON + anchored-pattern fallback](../kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Validate a derived metric against the expert's ranking before publishing it](../kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md) | methodology | published | 2026-08-06 | 2026-08-06 |

@@ -705,32 +705,46 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
   same schema the future batch pass 2 plans in), `calibration_review.md`
   (the human review doc Sam reacts to).
 
-## SkyView universe payloads (2026-08-24, Session 189)
+## SkyView universe payloads (2026-08-24, Session 189 · orbits and shards 2026-09-03, Session 223)
 
-The prototype graph view (`prototype/ccr_atlas_v1.html`) is fed by two generated payloads. They
-are separate on purpose: the layout is what every reader needs, the members are what only the
-drag needs, and keeping the 2.5 MB visible stops it becoming a silent doubling of a file nobody
-re-measures.
+The graph view (`prototype/skyview.html`, assembled by `prototype/build_ccr_atlas.py` from
+`prototype/ccr_atlas_v1.html` + `prototype/ccr_universe.js`) is fed by two committed payloads and
+one set of shards that is published rather than committed. They are separate on purpose: the
+layout is what every reader needs, the members are what only the drag needs, and the descriptions
+are what only an opened identity needs.
 
 | File | What |
 |---|---|
-| `kb/_build_ccr_universe.py` | READ-ONLY. Emits **both** payloads from `unified_courses_data.js` + `unified_courses_members.js`. |
-| `prototype/ccr_universe.json` | Precomputed island layout — 16,484 identities in 158 discipline islands, ~1.7 MB. Coordinates only; the browser draws, it does not solve a layout. |
-| `prototype/ccr_universe_members.json` | The **draggable** member college courses — 101,063 over 16,240 identities, ~2.5 MB. Record is `[control_number, course code, college index]`. |
-| `tests/ccr_universe_members_test.py` | Payload invariants; wired into `js-tests.yml`. |
+| `kb/_build_ccr_universe.py` | READ-ONLY, ~20 s. Emits the layout, the members and the description shards from `unified_courses_data.js` + `unified_courses_standalone.js` + `unified_courses_members.js` + `unified_courses_member_desc.js`. `--shards-only` rewrites only the shards (what the publisher runs). |
+| `prototype/ccr_universe.json` | Precomputed island layout — 16,482 identities + 33,423 stand-alone courses in 159 discipline islands, ~6.7 MB. **Every stand-alone is a hollow point in orbit around the identity it is most aligned to** (`o` parent · `q` score · `w` why-bits; a point with `a` and no `o` sits on the island's rim). Coordinates only; the browser draws, it does not solve a layout. |
+| `prototype/ccr_universe_members.json` | The **draggable** member college courses — 134,483 over 49,650 identities, ~3.8 MB. Record is `[control_number, course code, college index]`. |
+| `prototype/ccr_desc/<subject>.json` | **Gitignored; published to the PUBLIC Supabase Storage bucket `ccr-desc`** by `scripts/publish_skyview_desc_shards.sh` (`.github/workflows/skyview-desc-shards.yml`, and the daily run's Step 4d when the unified-courses artifacts changed). `{ "<cn digits>": [description, title, units] }` — 159 shards, 50 MB. Schema of record: `kb/supabase_ccr_desc_bucket.sql`. |
+| `tests/ccr_universe_members_test.py` · `tests/ccr_universe_orbits_test.py` | Payload invariants, and the orbit layout (alignment floor, both weight directions, ring geometry, shard keying, the committed payload); both wired into `js-tests.yml`. |
+| `tests/ccr_skyview_universe.test.js` | jsdom over the REAL template + client with a six-point fixture (66 checks). Under `npm test`. |
 | `prototype/check_ccr_atlas.js` | Chromium behavior harness (on demand, **not** `npm test`) — a drag needs a layout engine. |
 
-⚠️ **No title is carried on a member record.** Measured: 9.9 MB as full dicts · 5.5 MB with the
-title · **2.5 MB without**, and the drag list renders code + college. Adding one back buys
-3.1 MB to show nothing.
+⭐ **An orbit is a placement suggestion, never a curation decision.** The alignment scores a
+shared local subject code (1.5), title words in common (8 × Dice over stemmed tokens) and — only
+after one of those fired — TOP (0.5), units (0.15) and credit type (0.05): Rule 7's two-signals
+gate, made numeric. Floor: Dice ≥ 0.25, or a shared local subject with any title overlap. A
+stand-alone that clears no floor sits on the rim, individually. Nothing is written from the page.
+
+⚠️ **No title is carried on a member record** (measured: 9.9 MB as full dicts · 5.5 MB with the
+title · 2.5 MB without). Titles and units travel in the description shards instead, keyed by
+control number, so they appear once an identity's shard loads.
 
 ⚠️ **A member with no usable control number is DROPPED and counted** (2 today). The write key is
 `CN:<control_number>`; coercing a blank to zero would ship a course that writes against
-`CCC000000000`.
+`CCC000000000`. Keying the shards by control number is what keeps that drop from shifting every
+later description onto the wrong course.
 
-⚠️ **1,122 control numbers sit under more than one identity** — the forward join surfaces an
+⚠️ **1,165 control numbers sit under more than one identity** — the forward join surfaces an
 over-merged course on every card claiming it. The write is one row per control number, so a
-re-home is a **global** statement and the course must leave every card it was showing on.
+re-home is a **global** statement and the course must leave every card it was showing on. A
+further 1,761 keys name more than one COURSE (3,634 draggable rows); those moves are refused.
+
+⚠️ `unified_courses_data.js` carries two identity ids twice (`ENGL 100`, `ITIS 160`); the builder
+keeps the first and names the duplicates in its log.
 
 Merge chains need no handling here: `unified_courses_members.js` is built after
 `flatten_merge_chains()` and honors `CN:`, so a merged-away identity's members already sit on

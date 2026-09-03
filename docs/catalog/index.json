@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 369,
+   "count": 370,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3775,6 +3775,26 @@
      "updated": "2026-08-07"
     },
     {
+     "created": "2026-09-03",
+     "governs": [
+      "kb/_build_ccr_universe.py",
+      "prototype/ccr_universe.js",
+      "tests/ccr_universe_orbits_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "data-shape",
+      "skyview",
+      "ccr",
+      "testing"
+     ],
+     "title": "Key a side table by the write key, never by list position",
+     "type": "methodology",
+     "updated": "2026-09-03"
+    },
+    {
      "created": "2026-06-09",
      "governs": [
       "tabs.js",
@@ -5733,7 +5753,7 @@
      ],
      "title": "TOP is a last-in-line signal, never a gatekeeper",
      "type": "methodology",
-     "updated": "2026-07-16"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-24",
@@ -11343,7 +11363,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-03"
     },
     {
      "created": "2026-08-28",
@@ -14988,5 +15008,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 762
+ "total": 763
 }

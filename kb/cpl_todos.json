@@ -1,80 +1,68 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-03",
-  "_session": "SkyCheck, Session 222 — the counselor step is on the API, and under 10 is the mask",
-  "_status": "Pedro's six CPL lifecycle checks are live on the student aggregated MAP report and in the daily fetch, and the Implementation Funding tab's Accepted priority now reads the counselor-verified step (2,820 students with applied units on a counselor-verified plan today, at 18 colleges). The records with applied units but no eligible units that were going to Malone and Pedro do not exist; the shape came from the funding artifact masking one figure while showing another, which also left 54 small-portal colleges earning nothing on Access. Sam ruled the fix: on the public view any student count under 10 reads <10, the funding still computes on the true numbers, and a college's earned dollars read <$1,000 or the nearest $1,000 in public while curators see exact figures. That is published; 57 colleges earn on Access now. CollegeID2, the field that will drive the noncredit FTES calculation, has not landed in MAP yet.",
+  "_session": "SkyOrbit, Session 223 — SkyView meets the five goals: full screen, jump to anything, details on hover and click, every stand-alone in orbit",
+  "_status": "SkyView, the graph view of the Common Course Reference, now does what Sam asked for on 2026-09-03. It fills the first screen with the whole reference (16,482 course identities and 33,423 stand-alone courses in 159 subject areas) and the other panes sit one scroll below; a Full screen button uses the browser's own mode. The search box at the top jumps to a subject, a course identity, a stand-alone course, or a college course typed by its code or control number. Hovering a point shows its number, title, units and identity system; clicking opens a details panel over the map where each college course's number opens its catalog description. Every stand-alone course now sits in orbit around the identity it is most aligned to (30,274 of 33,423; the 3,149 that share nothing with any identity in their subject sit on the subject's rim) as a suggestion the curator can accept with one drag or a Move here button. Nothing on the page writes to the database. The course descriptions are published to a public Supabase storage bucket by a workflow; that bucket is empty until the workflow's first run after the merge. The funding queue was measured first: the dials are still Sam's to set, CollegeID2 has still not landed in MAP, and nothing there needed a session.",
   "items": [
+    {
+      "id": "s223-sam-drive-skyview",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Open the Common Course Reference tab and drive SkyView for ten minutes, then react by number: (1) are the orbiting stand-alone courses readable or too dense around the big identities, (2) is the details panel the right width and in the right place, (3) do the labels appear at the right zoom (number first, then title, then units and system), (4) should a course that shares nothing with any identity in its subject stay on the subject's rim or orbit the biggest identity with its subject code anyway. Each answer is a one-line change."
+    },
+    {
+      "id": "s223-sam-daily-rebuild",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Decide whether the daily dashboard run should rebuild SkyView's map layout too. Today the layout is rebuilt by hand and committed, so the map shows the reference as of the last rebuild while the course descriptions follow the daily artifacts. A daily rebuild keeps the map current at the cost of two files of about 5 MB changing in the repository every day and subject islands shifting position as counts change."
+    },
     {
       "id": "s222-sam-collegeid2-when",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Tell the next session the day Pedro says CollegeID2 has landed, and whether it will be on both student reports the daily pull reads. It is the field that identifies where a student originated before the credit college and the one the noncredit FTES calculation will use; until then the public-upload Yes/No (Potential Student) stands in. The probe that confirms it is one click (Actions, Discover MAP datasets)."
+      "text": "Tell the next session the day Pedro says CollegeID2 has landed, and whether it will be on both student reports the daily pull reads. A fresh probe on 2026-09-03 found it on none of the four MAP views. It is the field that identifies where a student originated before the credit college and the one the noncredit FTES calculation will use; until then the public-upload Yes/No (Potential Student) stands in. The probe is one click (Actions, Discover MAP datasets)."
     },
     {
-      "id": "s222-sam-cobi-under-10",
+      "id": "s218-sam-set-dials",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Say whether the internal COBI tab should keep showing <10 for small student counts. The funding artifact is one public file, so the mask you ruled for the public view shows inside COBI too until the public/private split gives the internal view its own ungated copy. If you want that sooner, it is a small build."
+      "text": "Set the Accepted priority's dials through the Implementation Funding tab (your ruling of 2026-09-01: Accepted at a 25% share and factor 1.0; the starting set Eligible 40%, Accepted 25%, Transcribed 35%). The saved configuration on 2026-09-02 still carries the three original priorities at 33/33/34, so the counselor-verified measure is published but not yet priced."
     },
     {
-      "id": "s221-sam-explainer-is-the-public-view",
+      "id": "s221-sam-funding-reactions",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Confirm the explainer (How this funding model works) as the one public page, and whether the old public page (cpl_funding_public.html) should become a redirect to it so there is a single public link. Then react by letter to this run's calls: (a) the explainer's steps fold closed on open like the tab's sections; (b) its own four-column table is retired in favor of the tab's rows; (c) the table's footnote sits under the table; (d) section folds are no longer remembered across visits; (e) the embedded table sits in the explainer's narrower column, where its toolbar wraps to two lines. Reply keep, edit, or revert per letter."
+      "text": "React by letter to the calm pass and the lead-with-the-table changes on the Implementation Funding tab, confirm the explainer as the one public view (the old public page would become a redirect), and say whether the internal tab should keep showing <10 until the public/private split gives it its own copy. These are NEEDS SAM ③, ④ and ⑤ in the funding lane file."
     },
     {
-      "id": "s220-sam-calm-pass-calls",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "React to the calm pass's judgment calls on the Implementation Funding tab, by letter: (a) the subtitle under the title is gone; (b) the college's name is what opens its detail, no caret; (c) the sort arrow is the one mark kept, ghosted; (d) the CPL area word stays as muted text by the project picker; (e) a scenario with edits reads (edited) in the picker; (f) the held-in-reserve amount reads inside the eligibility sentence and again ahead of Total Possible; (g) the eligibility introduction is prose with an Edit word for reviewers. Reply keep, edit, or revert per letter."
+      "id": "s223-fable-publish-shards",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Confirm the SkyView description shards are in the ccr-desc storage bucket: run the workflow named Publish SkyView description shards once the pull request has merged, read its log (it prints how many shards it published), then open the deployed SkyView, click a course number, and see a catalog description rather than a message that descriptions did not load."
     },
     {
-      "id": "s220-sam-more-editable-text",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Say whether more of the tab's text should be editable in place. Five sections are today (the introduction, Reading the funding, the eligibility introduction, the noncredit earning rules, the table introduction). Any other paragraph is one registry entry away."
+      "id": "s223-fable-decision-packs",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Build the grouped decision view for every subject area, fetched on demand the way the description shards are, so the Open the work surface button on a subject stops saying it exists for five subjects out of 159. This has been the bottleneck behind every SkyView improvement since Session 192."
     },
     {
-      "id": "s219-sam-set-dials",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Set the funding dials on this tab: Accepted at 25% share and factor 1.0, with the starting set Eligible 40% / Accepted 25% / Transcribed 35%. These are yours to save here rather than something a session writes into the database for you. Once they are in, the earning diagnostic is worth re-running — it is what showed that 84% of everything earned came from the one measure almost every college already meets, and it will read differently now."
+      "id": "s223-fable-remint-queue",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "When a SkyView move leaves the destination identity's subject code inconsistent with its corroborated discipline, queue a re-mint candidate for the batch playbook rather than doing nothing or minting on the spot. Propose, never auto-add; a person dismisses with a reason."
     },
     {
-      "id": "s219-sam-annual-earning-percent",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Decide whether the Annual view should keep showing earning above 100%. An award cell can read \"earning $140,476 · 191%\" there, because earning is a window quantity measured against a per-year figure. That is deliberate, but two readers have now read it as over-earning. Keep it as is, or compute the percent against the window figure."
-    },
-    {
-      "id": "s219-sam-refresh-explainer-snapshot",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Say whether the shareable copy of How this funding model works should be refreshed. Its two illustration figures were computed on the old sizing basis, so one card disagrees with the table beside it. Refreshing is a single command, but it needs the live settings pulled from the database, so it is worth doing deliberately rather than in passing. The public page is already correct."
-    },
-    {
-      "id": "s222-fable-ppa-cutover-on-collegeid2",
+      "id": "s223-fable-probe-sweep-parity",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "When CollegeID2 lands: re-run the MAP dataset probe, confirm the spelling and the views, switch the Access measures from the Potential Student stand-in to the origination feed, and re-run the earning diagnostic. One request to Pedro still carries the rest: completions need a new MAP view (the student report has no award column and the programs report is a catalog)."
+      "text": "The MAP probe's copy of the funding builder's column sweep is stale: it lacks Counselor_Verified, so the probe's verdict says the builder does not match a spelling the builder already reads. Add the spelling and a test that fails when the two lists differ. One small pull request."
     },
     {
-      "id": "s221-fable-retire-old-public-page",
+      "id": "s192-fable-two-course-keys",
       "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Once Sam confirms: make cpl_funding_public.html a redirect to funding-model/ (keep the URL alive), repoint the ledger note's public-page link, re-aim the public/private test onto the explainer, and re-label the tab's Internal · Public preview for what it now previews."
-    },
-    {
-      "id": "s221-fable-layout-harness-explainer",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Add the explainer to the on-demand layout harness (scripts/check_public_page_layout.js measures Sierra alone today) so its folds, the embedded scrolling table, the tap-target sizes and every contrast pair are measured in a real browser rather than claimed."
-    },
-    {
-      "id": "s219-fable-cleanup-explainer-check-and-dead-css",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Two cleanups: repair the explainer's browser check (it waits for an element id retired long ago and pins a dollar figure and a college count that have both moved; it sits outside the main test run, so nothing reports it), and cut the dead CSS left by the retired row shapes — about fifteen rules plus a stale selector in the frozen-header code."
+      "tab": "unified-courses",
+      "text": "Work the 73 course control numbers that name two genuinely different courses, 93 of them at San Jose City College. SkyView refuses to move those courses because the write key cannot say which one; the fix is upstream in COCI or a wider key."
     }
   ]
 }
