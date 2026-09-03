@@ -187539,11 +187539,11 @@ window.CPL_STATEWIDE = {
       "total_addressable": 48,
       "credit_recs": [
         {
-          "course": "CNST 010",
+          "course": "CNST 69",
           "credit": "1-3 hours in Introduction to Construction Safety"
         },
         {
-          "course": "CNST 69",
+          "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
         }
       ],
@@ -187644,11 +187644,11 @@ window.CPL_STATEWIDE = {
       "total_addressable": 48,
       "credit_recs": [
         {
-          "course": "CNST 010",
+          "course": "CNST 77",
           "credit": "1-3 hours in Introduction to Construction Safety"
         },
         {
-          "course": "CNST 77",
+          "course": "CNST 010",
           "credit": "1-3 hours in Introduction to Construction Safety"
         }
       ],
@@ -303197,6 +303197,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-03T01:40:44",
+  "generated_at": "2026-09-03T11:19:32",
   "total_credit_recs": 13232
 };
