@@ -72,7 +72,8 @@ the canonical code must be exactly four letters, and a code must not read as a C
 claim. Twenty of the sixty-two C-ID codes in our corpus are not four letters, so most
 of the divergence follows from the first rule. This sheet proposes a rule for the seed
 and lists every discipline where the rule changes a code, with what would re-key.
-Nothing is re-minted until you rule.</p>
+Items 20 and 21 carry your second question of the day: retiring the Z band so that
+everything that is not a C-ID or CCN is an M-ID. Nothing is re-minted until you rule.</p>
 
 <div class="howto">
   <p><strong>How to rule:</strong> reply in chat by number. <code>yes</code> accepts a
@@ -85,6 +86,7 @@ Nothing is re-minted until you rule.</p>
 
 <ul class="tally">
   <li><b>4</b> rules to set</li>
+  <li><b>2</b> namespace items (the Z band, the legacy ids)</li>
   <li><b>11</b> code changes proposed</li>
   <li><b>3</b> judgment calls</li>
   <li><b>2</b> dismissals (noise)</li>
@@ -327,10 +329,59 @@ Nothing is re-minted until you rule.</p>
   </dl>
 </section>
 
+<h2 class="kicker">One namespace: everything that is not a C-ID or CCN is an M-ID</h2>
+
+<section class="card">
+  <header><span class="num">20</span> <span class="tname">Retire the Z band</span>
+  <span class="chip change">SUBJ Z#### → SUBJ M#### · 4,024 identities</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The Z ids are not the loners. They are the 4,024 identities the June 15 re-mint
+    (Session 56) keyed from the machine-built <code>UC-CUR-AUTO*</code> variant clusters
+    to <code>SUBJ Z&lt;band&gt;&lt;seq&gt;</code>: 3,556 in the credit band, 468 noncredit,
+    two members in the typical case, 22 at most, none single-member. The letter carried
+    lineage: an identity born from consolidation rather than from the shared-course
+    re-mint. The loners are the letter-suffixed <code>SUBJ M##XX</code> singletons
+    (33,423 on the map), already in the M namespace.</dd>
+    <dt>Measured</dt>
+    <dd>The M numbers run <code>M&lt;band&gt;&lt;seq:03d&gt;</code>, 999 per subject per band.
+    The Z ids fit by filling gaps in every subject; Kinesiology's credit band is the
+    tight one (619 numbers used, highest sequence 930, 193 to add). Live surface:
+    4,083 curation rows keyed by a Z id (35 of them written by people) and 10,704
+    merge targets pointing at one, all re-keyable by the alias-map path Session 56
+    built (<code>kb/_rekey_kb_curation_supabase.py</code> and the
+    <code>supabase-rekey.yml</code> workflow). Four test suites and three scripts
+    recognize the Z shape and change with it; SkyView labels these identities as a
+    fourth system today and would read M-ID.</dd>
+    <dt>Proposed</dt>
+    <dd>Yes. The identity system says who owns the number: ASCCC for C-ID, the
+    Chancellor's Office for CCN, MAP for M-ID. Where an identity came from is a row
+    attribute, kept as <code>origin: machine cluster</code>, not a letter in the id.
+    Keep the band digit (1 credit, 9 noncredit). Fold the re-key into the same
+    re-mint series as items 5 to 16: one alias map, one cron window.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">21</span> <span class="tname">Fold the legacy ids the same way</span>
+  <span class="chip change">"M-ID SUBJ ###" → SUBJ M#### · 221 rows</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>221 identity rows still carry the pre-May form <code>M-ID SUBJ ###</code>
+    (210 of them single-member), which the KB README already calls dead. The live
+    curation placeholders <code>UC-CUR-*</code> are gone from the database (0 rows).</dd>
+    <dt>Proposed</dt>
+    <dd>Same rule, same re-mint: they become <code>SUBJ M####</code> or
+    <code>SUBJ M##XX</code> by their member count, through the existing alias map.
+    After this and item 20, every identity that is not a C-ID or CCN reads M-ID, and
+    the id parsers have one shape to know.</dd>
+  </dl>
+</section>
+
 <h2 class="kicker">Mechanics</h2>
 
 <section class="card">
-  <header><span class="num">19</span> <span class="tname">One scoped re-mint, now rather than later</span>
+  <header><span class="num">22</span> <span class="tname">One scoped re-mint, now rather than later</span>
   <span class="chip rule">Timing</span></header>
   <dl>
     <dt>What it is</dt>
@@ -341,7 +392,8 @@ Nothing is re-minted until you rule.</p>
     change with items 3 and 10; SkyView and the CCR tab re-key at the next hand
     rebuild.</dd>
     <dt>Measured</dt>
-    <dd>Items 5 to 16 as proposed re-key about 14,000 M-IDs. The M-ID layer is in its
+    <dd>Items 5 to 16 as proposed re-key about 14,000 M-IDs; items 20 and 21 add 4,245
+    identities and their curation rows. The M-ID layer is in its
     staging phase, where re-mints are permitted under the playbook; at faculty
     publication Rule 7 re-locks to stable identifiers.</dd>
     <dt>Proposed</dt>

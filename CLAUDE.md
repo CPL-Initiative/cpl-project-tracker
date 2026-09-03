@@ -381,7 +381,8 @@ first day.** Do the remembering for them.
   handle all my current and future decisions this way."* When judgments only
   Sam can make accumulate — in one lane or across many — build ONE numbered
   sheet (a First Light artifact, committed to `docs/visuals/` with a dated
-  slug): per item, what it is in plain words, the measured context (from the
+  slug, handed over as a Claude artifact LINK — Pages prunes `docs/`, so a
+  github.io URL to it 404s): per item, what it is in plain words, the measured context (from the
   maps and feeds, never guessed), a PROPOSED disposition with its draft
   reason, and reply-by-number verdicts (`yes · edit: … · fold: … ·
   dismiss: …`). The session executes the verdicts and commits the reasons.

@@ -986,3 +986,17 @@ The cure is labels that name the grain (NEXT ⑧). **Queued messages.** He does
 not get read early: Enter queues, the turn's end delivers, Escape interrupts.
 Captured verbatim in the vault (CPLBrain #84, #85) and as four `cpl_memory`
 rows; two to-dos filed.
+
+Two more from Sam the same afternoon. **"Go with the established CID and CCN subject
+codes rather than minting new ones for CSR"** — the CSR minted its own for two June
+rulings (the four-letter shape, which 20 of the 62 C-ID codes fail; the not-a-CCN-claim
+stance on the language codes), and 122 of 146 canonical codes are overrides for that
+reason. **"Retire the use of Z codes… Everything that isn't a CID or CCN should be a
+MID"** — the 4,024 Z ids are the machine-built variant clusters Session 56 re-keyed
+from `UC-CUR-AUTO*`, not the loners; they fit the M number space by gap-filling and
+re-key 4,083 curation rows plus 10,704 merge targets through the alias-map path that
+already exists. Both went onto one decision sheet (22 items,
+`docs/visuals/2026-09-03-csr-authority-codes.html`). ⚠️ **The sheet's github.io link
+returned a 404**: `pages.yml` prunes `docs/` from the deployed site, so a decision sheet
+is handed over as a Claude artifact link; the committed file is the record, not the
+page.

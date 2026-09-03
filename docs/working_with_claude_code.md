@@ -254,6 +254,10 @@ Scattered questions across a chat, or a to-do list that just names the
 decision without preparing it, are what this replaces. If someone asks you to
 decide something without the preparation, ask for the sheet.
 
+The sheet is committed to `docs/visuals/` and handed to you as a Claude artifact
+link. The public site does not serve `docs/`, so a github.io link to a sheet will
+not open; the artifact link is the one to use.
+
 ## 12. Start every session with all three repos
 
 Sam's standing practice, ruled enforced 2026-08-30: a CPL session gets all
