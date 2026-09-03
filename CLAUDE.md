@@ -767,8 +767,8 @@ title → units · system); **every stand-alone course orbits the identity it is
 most aligned to** — 31,350 of 33,423, 1,521 of them across a discipline line on
 his Business / Vocational example, 2,073 on the rim — as a suggestion, never a
 decision (**Move here** accepts one as the `CN:` row a drag writes). Descriptions
-live in the public storage bucket `ccr-desc` (empty until the workflow's first
-dispatch). ⭐ Corroborators must not outvote the primary signal; a side table keyed
+live in the public storage bucket `ccr-desc` (filled by the workflow's first
+dispatch, 2026-09-03). ⭐ Corroborators must not outvote the primary signal; a side table keyed
 by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
 `session_224_handoff`.
 
