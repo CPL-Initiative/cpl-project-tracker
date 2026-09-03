@@ -47,6 +47,13 @@ function serve() {
   const { srv, port } = await serve();
   const browser = await chromium.launch({ executablePath: chromiumPath() });
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+  // On the map the crumbs row is hidden (the strip above the canvas carries
+  // "All disciplines" since 2026-09-03); elsewhere the crumbs still lead back.
+  const backToForest = async () => {
+    if (await page.locator("#u-nav-forest").count()) await page.locator("#u-nav-forest").click();
+    else await page.locator(".crumbs button").first().click();
+    await page.waitForTimeout(150);
+  };
   // Font/favicon fetches are blocked in the sandbox and 404 locally; neither is
   // a page defect, and neither can mask one — the page has full font fallbacks.
   const NOISE = /favicon|fonts\.(googleapis|gstatic)|ERR_CONNECTION_RESET|Failed to load resource/i;
@@ -172,7 +179,7 @@ function serve() {
   await page.waitForTimeout(400);
   ok("first discipline cell reaches real decisions, not a 'no sample data' note",
     (await page.locator(".deck").count()) > 0);
-  await page.locator(".crumbs button").first().click();
+  await backToForest();
   await page.waitForTimeout(400);
 
   console.log("\n══ the universe view");
@@ -204,8 +211,10 @@ function serve() {
   await page.waitForTimeout(400);
   const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
-  ok("and reports where the matches are",
-    /match/i.test(await page.locator("#u-hint").textContent()));
+  // "welding" names a subject, so the report is the subject (no rings since
+  // 2026-09-03); a term naming no subject still reports its matches.
+  ok("and reports where it landed",
+    /^\s*Subject\b.*Welding|match/i.test(await page.locator("#u-hint").textContent()));
   await page.fill("#gq", "zzzznotathing");
   await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(300);
@@ -267,7 +276,11 @@ function serve() {
 
   // Sam's exact term. Scattered on purpose — this is the case that failed.
   const scattered = await runSearch("english as a second");
-  ok(`"english as a second" finds matches (${scattered.hits})`, scattered.hits > 0);
+  // Since 2026-09-03 a term that names a subject goes to the subject and rings
+  // NOTHING (the rings were 408 red names on the Welding island); the landing
+  // is the subject itself, which is drawn at the zoom it flies to.
+  ok(`"english as a second" lands on its subject (${scattered.hits} rings)`,
+    /^\s*Subject\b/i.test(scattered.hint) && scattered.hits === 0);
   ok(`and lands where nodes are drawn (zoom ${scattered.k.toFixed(3)} > ${nodeZoom})`,
     scattered.k > nodeZoom);
   // The invariant, stated as itself: claiming rings and drawing none is the bug.
@@ -633,21 +646,29 @@ function serve() {
   await page.waitForTimeout(150);
   const geo = await page.evaluate(() => {
     const w = document.getElementById("u-wrap").getBoundingClientRect();
+    const full = document.getElementById("u-full").getBoundingClientRect();
     const below = document.getElementById("u-below").getBoundingClientRect();
-    return { bottom: w.top + w.height, vh: window.innerHeight, belowTop: below.top,
-             width: w.width, vw: document.documentElement.clientWidth,
-             insp: !!document.querySelector("#u-full #u-inspector #u-detail"),
+    return { bottom: full.top + full.height, vh: window.innerHeight, belowTop: below.top,
+             width: full.width, vw: document.documentElement.clientWidth, canvasW: w.width,
+             insp: !!document.querySelector("#u-stage #u-inspector #u-detail"),
+             overlay: !!document.querySelector("#u-wrap #u-bar, #u-wrap #u-inspector, #u-wrap .u-legend"),
+             modes: [...document.querySelectorAll("#u-top .u-modes .btn")].map((b) => b.textContent.trim()).join("/"),
+             nav: !!document.querySelector("#u-full #u-nav-forest"),
+             prov: (document.getElementById("prov") || {}).title || "",
              fs: document.getElementById("u-fs").textContent,
              cells: document.querySelectorAll("#u-more .cell").length,
              // The inspector's own "filter these courses" box is a list filter,
              // not a keyword search; only page-level search fields count here.
              fields: document.querySelectorAll("input[type=search]:not(#u-mfilter)").length };
   });
-  ok(`the canvas reaches the bottom of the viewport (${Math.round(geo.bottom)} vs ${geo.vh})`,
+  ok(`the map section (controls, canvas, legend) reaches the bottom of the viewport (${Math.round(geo.bottom)} vs ${geo.vh})`,
     Math.abs(geo.bottom - geo.vh) < 4);
-  ok(`the canvas spans the full width (${Math.round(geo.width)} of ${geo.vw})`, geo.width >= geo.vw - 2);
+  ok(`the section spans the full width (${Math.round(geo.width)} of ${geo.vw})`, geo.width >= geo.vw - 2);
   ok("the panes start under the fold", geo.belowTop >= geo.vh - 4);
-  ok("the details panel floats over the map", geo.insp);
+  ok("the details panel is docked beside the map, and nothing floats over the canvas", geo.insp && !geo.overlay);
+  ok(`Pan and Move are word chips above the map (${geo.modes})`, geo.modes === "Pan/Move");
+  ok("the other views are linked inside the full-screen element", geo.nav);
+  ok("the provenance line is a hover on the title", /no writes/.test(geo.prov));
   ok("the full-screen control is a word", /^Full screen$/.test(geo.fs.trim()));
   ok(`the forest is embedded below the map (${geo.cells} cells)`, geo.cells > 100);
   ok(`the map screen still carries exactly one search field (${geo.fields})`, geo.fields === 1);
@@ -663,11 +684,11 @@ function serve() {
     window.__ccrUniverseFly(nd.x, nd.y, z.full + 0.3);  out.full = { ...window.__ccrUniverseState().labelStats };
     return out;
   });
-  ok("the bands are ordered (nodes < number < title < full)",
+  ok("the bands are ordered (nodes < brief < titled < full)",
     nodeZoom < bands.z.id && bands.z.id < bands.z.title && bands.z.title < bands.z.full);
-  ok(`past the first band only numbers are drawn (${JSON.stringify(bands.id)})`,
-    bands.id.ids > 0 && bands.id.titles === 0 && bands.id.full === 0);
-  ok(`the second band adds titles (${JSON.stringify(bands.title)})`, bands.title.titles > 0 && bands.title.full === 0);
+  ok(`past the first band a label is the title and units, with a leader line (${JSON.stringify(bands.id)})`,
+    bands.id.brief > 0 && bands.id.titled === 0 && bands.id.full === 0 && bands.id.leaders === bands.id.brief);
+  ok(`the second band lengthens the title (${JSON.stringify(bands.title)})`, bands.title.titled > 0 && bands.title.full === 0);
   ok(`the third band draws units and the identity system (${JSON.stringify(bands.full)})`, bands.full.full > 0);
 
   console.log("\n══ ⭐ a college course code finds the identity that carries it");
@@ -725,7 +746,7 @@ function serve() {
   ok("an island carries a movable offset", dragged);
 
   console.log("\n══ the ESL packaging proposal");
-  await page.locator(".crumbs button").first().click();
+  await backToForest();
   await page.waitForTimeout(400);
   ok("the banner offers it", (await page.locator("#go-esl").count()) === 1);
   await page.locator("#go-esl").click();
@@ -761,7 +782,7 @@ function serve() {
     /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));
   ok("the list says it is a sample, with its denominator",
     /Showing .* of /.test(await page.locator(".empty").last().textContent()));
-  await page.locator(".crumbs button").first().click();
+  await backToForest();
   await page.waitForTimeout(400);
 
   console.log("\n══ search + filter");
