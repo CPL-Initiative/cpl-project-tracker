@@ -1,0 +1,39 @@
+{
+  "_about": "Sam's rulings on the re-mint series readings sheet (docs/visuals/2026-09-03-remint-series-readings.html), the fourteen readings the two measure-first dry runs raised (kb/authority_recode_out/2026-09-03, kb/zband_retire_out/2026-09-03). This file is the PLAN the two applies consume beside kb/csr_authority_codes_rulings_2026-09-03.json; nothing here is applied by itself.",
+  "_ruled_by": "Sam Lee, chat, 2026-09-03: \"Yes to all\"",
+  "_recorded_by": "session-224-skytune",
+  "_status": "RULED - the applies follow under docs/coursecontrolnumber_remint.md, one cron window, recode first.",
+  "_sheet": "https://claude.ai/code/artifact/5674d4c3-9f77-4c16-bdc7-40c5fd10bfbb",
+  "readings": [
+    {"card": 1, "item": 8, "verdict": "yes", "disposition": "Administration of Justice keeps CRIM; the chip reads C-ID AJ (live in #1447). LPPS waits for identity-level chips."},
+    {"card": 2, "item": 13, "verdict": "yes", "disposition": "Media Production shares FTVE with Film and Media Studies as a fan-in pair; Film keeps its numbers, Media Production's 202 rows gap-fill after them in title order; the pair recorded in kb/discipline_aliases.json like Theater."},
+    {"card": 3, "item": 14, "verdict": "yes", "disposition": "The agriculture families take the hyphen-stripped codes AGAB, AGAS, AGPS, AGEH, AGMA by two agreeing signals (TOP never alone); the 235 one-signal rows are a curator's worklist after the fold, each carrying the family the one signal proposes."},
+    {"card": 4, "verdict": "yes", "disposition": "Agriculture's residual is AGRI, Agricultural Production's is AGPR; both disciplines carry the five family codes."},
+    {"card": 5, "verdict": "yes", "disposition": "Viticulture and enology (TOP 0104; VWT, VEN, WINE, VIT) stay residual on the discipline's own code until C-ID names a family."},
+    {"card": 6, "verdict": "yes", "disposition": "Ornamental Horticulture keeps HORT with the C-ID AG-EH chip; inside the umbrella AGEH takes the Agriculture rows that classify as horticulture."},
+    {"card": 7, "item": 10, "verdict": "yes", "disposition": "Arabic takes ARAB as ruled (measured ARBC 30 / ARAB 28)."},
+    {"card": 8, "item": 10, "verdict": "yes", "disposition": "Korean FLKO, Tagalog FLTA, Hebrew FLHE, Persian FLPE, Punjabi FLPU, Hmong FLHM, Greek FLGR and Nahuatl FLNA keep their CSR codes, flagged; a language may not take another language's code."},
+    {"card": 9, "verdict": "yes", "disposition": "Armenian enters kb/foreign_language_subj4.json with ARME as its code and ARMN folded into it; ARAM, HUPA, KHME, FL, HIER, LING, NAL, TURK and YUR keep their keys until the file names them."},
+    {"card": 10, "item": 17, "verdict": "yes", "disposition": "The item-17 dismissal is reversed for the one pair (PH, Health): Health shows C-ID PH beside C-ID PHS. Every other item-17 pair stays dismissed."},
+    {"card": 11, "verdict": "yes", "disposition": "When a corroborated bucket fills, credit continues into the next band digit: KINE M2001 follows KINE M1999. The band digit carries no transferability meaning; no existing id changes."},
+    {"card": 12, "verdict": "yes", "disposition": "The retired Z identities are materialized into the minted catalog at the apply: each becomes a real M-ID record (title, discipline, members) with origin 'machine cluster'."},
+    {"card": 13, "item": 21, "verdict": "yes", "disposition": "The three anchors without a seed discipline (M-ID HOSP 100, 102, 104) wait for a curator to give them an MQ discipline; the 122 duplicates become a merge worklist on the CCR tab after the fold, not merged by the apply."},
+    {"card": 14, "item": 22, "verdict": "yes", "disposition": "The two applies are built from the dry runs' compute_plan (apply equals spec) and land in one cron window, recode first then the retirement, kb_curation re-keyed from the receipts, the post-apply chain run once at the end."}
+  ],
+  "plan": {
+    "fl_additions": {"Armenian": {"subj4": "ARME", "subjects": ["ARME", "ARMN", "ARMENIAN"], "title": ["armenian"]}},
+    "fl_keep_csr": ["Korean", "Tagalog", "Hebrew", "Persian", "Punjabi", "Hmong", "Greek", "Nahuatl"],
+    "fl_strays_keep_keys": ["ARAM", "HUPA", "KHME", "FL", "HIER", "LING", "NAL", "TURK", "YUR"],
+    "arabic": "ARAB",
+    "ag_residual": {"Agriculture": "AGRI", "Agricultural Production": "AGPR"},
+    "viticulture": "residual",
+    "ornamental_horticulture": "HORT with the C-ID AG-EH chip, outside the umbrella",
+    "dismissal_reversals": [["PH", "Health"]],
+    "continuation_band": {"credit": "1 -> 2 -> 3 ... when M<band>999 is taken", "noncredit": "not ruled; no noncredit bucket is near its ceiling"},
+    "materialize_retired_identities": true,
+    "legacy_anchors": {"unresolved_wait": ["M-ID HOSP 100", "M-ID HOSP 102", "M-ID HOSP 104"], "duplicates": "merge worklist on the CCR tab after the fold; the apply does not merge them"},
+    "order": ["authority recode apply", "Supabase kb_curation re-key from its receipt", "Z-band retirement apply", "its re-key", "_CANON_SUBJ4:: picks", "kb/_post_apply_chain.py once"],
+    "window": "one cron window, before 06:17 UTC"
+  },
+  "receipts_rerun": ["kb/authority_recode_out (Armenian added; PH reversal)", "kb/zband_retire_out (--after-recode the fresh receipt)"]
+}

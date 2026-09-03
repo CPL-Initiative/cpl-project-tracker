@@ -21,8 +21,8 @@ related:
 
 ## TL;DR
 
-- **10,292** ids move (8,126 plain prefix re-keys, 202 Media Production rows into FTVE, 1,424 Foreign Languages rows, 540 agriculture rows); **539** of them are Z-band identities moving with their namespace.
-- **10,039** keep their number; **253** gap-fill because the key was taken (see collisions.json).
+- **10,296** ids move (8,126 plain prefix re-keys, 202 Media Production rows into FTVE, 1,428 Foreign Languages rows, 540 agriculture rows); **539** of them are Z-band identities moving with their namespace.
+- **10,041** keep their number; **255** gap-fill because the key was taken (see collisions.json).
 - Validation: **7/7** gates pass. Articulation identities-map ghosts healed by the move: 54; old keys the apply must also re-key in that map: 13.
 - Why not `kb/_subj4_dryrun.py`: measured the same day with the committed seed, the June allocator would move 62,638 of 70,946 ids to change nothing (titles were normalized after the June fold), so a code change is a prefix re-key that keeps the number — the POLS pattern.
 
@@ -30,7 +30,7 @@ related:
 
 | gate | pass | detail |
 |---|---|---|
-| V1_conservation | ✅ | {"moves": 10292, "aliased": 10292} |
+| V1_conservation | ✅ | {"moves": 10296, "aliased": 10296} |
 | V2_new_ids_unique | ✅ | {"duplicates": []} |
 | V3_new_ids_disjoint_from_untouched | ✅ | {"collisions": []} |
 | V4_discipline_unchanged | ✅ | {"note": "a recode never changes a row's discipline; the apply gate re-checks it"} |
@@ -45,7 +45,7 @@ related:
 | Computer Information Systems | 2,620 | 2,620 | 0 |
 | Drama/Theater Arts | 1,770 | 1,770 | 0 |
 | Child Development/Early Childhood Education | 1,431 | 1,431 | 0 |
-| Foreign Languages | 1,424 | 1,379 | 45 |
+| Foreign Languages | 1,428 | 1,381 | 47 |
 | Office Technologies | 1,058 | 1,058 | 0 |
 | Computer Science | 722 | 722 | 0 |
 | Film and Media Studies | 525 | 520 | 5 |
@@ -71,6 +71,7 @@ Rule as ruled: SPAN on C-ID's authority; a language the ruling names takes the c
 | Korean | FLKO | **FLKO** ⚠️ | ruled: keeps the CSR code, flagged | KOREAN (22) | KORE (9) | 1 |
 | Tagalog | FLTA | **FLTA** ⚠️ | flagged: no dominant four-letter local code, keeps the CSR code | PIL (10) | TAGA (9) | 12 |
 | Portuguese | FLPO | **PORT** | ruled | PORT (21) | PORT (21) | 14 |
+| Armenian | ARME | **ARME** ⚠️ | flagged: no dominant four-letter local code, keeps the CSR code | ARMEN (17) | ARMN (2) | 2 |
 | Latin | FLLA | **LATN** | dominant local code is four letters | LATN (12) | LATN (12) | 0 |
 | Hebrew | FLHE | **FLHE** ⚠️ | flagged: no dominant four-letter local code, keeps the CSR code | HEBREW (8) | HEBR (4) | 0 |
 | Persian | FLPE | **FLPE** ⚠️ | flagged: the local codes tie (PRSN and PERSIN), keeps the CSR code | PRSN (3) | PRSN (3) | 0 |
@@ -82,9 +83,7 @@ Rule as ruled: SPAN on C-ID's authority; a language the ruling names takes the c
 
 Strays keyed under a code the file does not know — kept as they are, a reading for Sam (add the language to `kb/foreign_language_subj4.json` with this code, or say which):
 
-- `ARME` · 18 rows
 - `ARAM` · 3 rows
-- `ARMN` · 2 rows
 - `HUPA` · 2 rows
 - `KHME` · 1 row
 - `FL` · 1 row
@@ -94,7 +93,7 @@ Strays keyed under a code the file does not know — kept as they are, a reading
 - `TURK` · 1 row
 - `YUR` · 1 row
 
-FLNG residual after the recode: 2 rows (language-agnostic courses).
+FLNG residual after the recode: 4 rows (language-agnostic courses).
 
 Strays the classifier places in a language (TOP, title or local subject — the signal is on each row in fl_classification.json):
 
@@ -106,6 +105,7 @@ Strays the classifier places in a language (TOP, title or local subject — the 
 | FILI | FLTA | 4 |
 | JAPA | JAPN | 3 |
 | PIL | FLTA | 2 |
+| ARMN | ARME | 2 |
 | GREE | FLGR | 2 |
 | ASIA | CHIN | 1 |
 | ARB | ARAB | 1 |

@@ -88,11 +88,14 @@ check("canonical: C-ID ARTH attaches to Art History (its canonical) and not to A
       homes("c-id", "ARTH") == {"Art History": "canonical"})
 check("canonical: CCN ARTH attaches to Art History too",
       homes("ccn", "ARTH") == {"Art History": "canonical"})
-# 3. dismissed pairs never attach, even with strong evidence (a reading for Sam)
-check("dismissed: PH under Health (30 rows) stays unhomed under item 17",
-      homes("c-id", "PH") == {} and
-      table[("c-id", "PH")]["dismissed"] == [{"discipline": "Health", "rows": 30},
-                                             {"discipline": "Kinesiology", "rows": 2}])
+# 3. dismissed pairs never attach, even with strong evidence — and a reversed
+#    pair attaches like any other: Sam reversed (PH, Health) on 2026-09-03
+#    (readings sheet card 10), so PH homes to Health by majority while
+#    (PH, Kinesiology) stays dismissed
+check("reversed: PH attaches to Health by majority (30 rows) after card 10",
+      homes("c-id", "PH") == {"Health": "majority"})
+check("dismissed: PH under Kinesiology (2 rows) stays dismissed",
+      table[("c-id", "PH")]["dismissed"] == [{"discipline": "Kinesiology", "rows": 2}])
 # 4. majority above the floor, with the dismissed pair excluded
 check("majority: KIN attaches to Kinesiology (4 rows, the floor)",
       homes("c-id", "KIN") == {"Kinesiology": "majority"})

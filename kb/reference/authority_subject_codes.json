@@ -11,7 +11,6 @@
       "COMM under Humanities",
       "GLST under Social Science",
       "KIN under Health",
-      "PH under Health",
       "PH under Kinesiology",
       "PHYS under Physical Sciences",
       "POLS under Ethnic Studies",
@@ -68,15 +67,14 @@
   },
   "counts": {
     "codes": 79,
-    "attributed": 72,
-    "unhomed": 7
+    "attributed": 73,
+    "unhomed": 6
   },
   "unhomed": [
     "c-id ADS",
     "c-id ENVS",
     "c-id GLST",
     "c-id MIS",
-    "c-id PH",
     "c-id SJS",
     "c-id SWHS"
   ],
@@ -1216,12 +1214,16 @@
         "Psychology": 1,
         "Respiratory Technologies": 1
       },
-      "attributed": [],
-      "dismissed": [
+      "attributed": [
         {
           "discipline": "Health",
-          "rows": 30
-        },
+          "basis": "majority",
+          "rows": 30,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
         {
           "discipline": "Kinesiology",
           "rows": 2

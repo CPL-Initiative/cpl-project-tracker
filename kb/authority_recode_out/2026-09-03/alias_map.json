@@ -3,7 +3,7 @@
   "_generated_by": "kb/_authority_recode_dryrun.py",
   "_generated_at": "2026-09-03",
   "_rule": "keep the number, gap-fill only where the new key exists; Z ids move with their namespace",
-  "count": 10292,
+  "count": 10296,
   "aliases": {
     "AGPR M1003": {
       "new_id": "AGPS M1003",
@@ -4855,6 +4855,42 @@
       "basis": "Arabic: ruled",
       "how": "kept number",
       "language": "Arabic"
+    },
+    "ARME M10AJ": {
+      "new_id": "FLNG M10AJ",
+      "discipline": "Foreign Languages",
+      "kind": "fl",
+      "item": 10,
+      "basis": "no language signal: residual",
+      "how": "kept number",
+      "language": null
+    },
+    "ARME M10AK": {
+      "new_id": "FLNG M10AK",
+      "discipline": "Foreign Languages",
+      "kind": "fl",
+      "item": 10,
+      "basis": "no language signal: residual",
+      "how": "kept number",
+      "language": null
+    },
+    "ARMN M10AA": {
+      "new_id": "ARME M10AJ",
+      "discipline": "Foreign Languages",
+      "kind": "fl",
+      "item": 10,
+      "basis": "Armenian: flagged: no dominant four-letter local code, keeps the CSR code",
+      "how": "gap-filled",
+      "language": "Armenian"
+    },
+    "ARMN M10AB": {
+      "new_id": "ARME M10AK",
+      "discipline": "Foreign Languages",
+      "kind": "fl",
+      "item": 10,
+      "basis": "Armenian: flagged: no dominant four-letter local code, keeps the CSR code",
+      "how": "gap-filled",
+      "language": "Armenian"
     },
     "ASIA M1005": {
       "new_id": "CHIN M1005",

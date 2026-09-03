@@ -5115,17 +5115,22 @@
       "_notes": null,
       "ccn_subject_code": null,
       "cid_subject_codes": [
+        "PH",
         "PHS"
       ],
       "canonical_source": "csr",
       "authority_chips": [
         {
           "system": "C-ID",
+          "code": "PH"
+        },
+        {
+          "system": "C-ID",
           "code": "PHS"
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ HLTH is the CSR's four-letter code; the authority says C-ID PHS (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ HLTH is the CSR's four-letter code; the authority says C-ID PH, C-ID PHS (rule 3: four letters, verbatim code on the chip)."
     },
     "Health Care Ancillaries": {
       "canonical_subj4": "HTEC",

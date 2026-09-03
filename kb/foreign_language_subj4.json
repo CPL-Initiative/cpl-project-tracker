@@ -29,6 +29,7 @@
     "Korean":     {"subj4": "FLKO", "top": ["1117.30"], "subjects": ["KOR", "KOREAN", "KORE"], "title": ["korean"]},
     "Portuguese": {"subj4": "FLPO", "top": ["1119.00"], "subjects": ["PORT", "PORTUGUESE"], "title": ["portuguese"]},
     "Latin":      {"subj4": "FLLA", "top": [], "subjects": ["LATN", "LATIN"], "title": ["latin"]},
+    "Armenian":   {"subj4": "ARME", "top": [], "subjects": ["ARME", "ARMN", "ARMENIAN"], "title": ["armenian"]},
     "Greek":      {"subj4": "FLGR", "top": [], "subjects": ["GREK", "GREEK"], "title": ["greek"]},
     "Hindi":      {"subj4": "FLHI", "top": [], "subjects": ["HIND", "HINDI"], "title": ["hindi"]},
     "Punjabi":    {"subj4": "FLPU", "top": [], "subjects": ["PUNJ", "PUNJABI", "PANJ"], "title": ["punjabi"]},

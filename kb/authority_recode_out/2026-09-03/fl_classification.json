@@ -133,6 +133,18 @@
         "rows": 54
       }
     },
+    "Armenian": {
+      "code": "ARME",
+      "basis": "flagged: no dominant four-letter local code, keeps the CSR code",
+      "current": "ARME",
+      "measured": {
+        "dominant_local": "ARMEN",
+        "dominant_local_rows": 17,
+        "dominant_four_letter": "ARMN",
+        "dominant_four_letter_rows": 2,
+        "rows": 19
+      }
+    },
     "Greek": {
       "code": "FLGR",
       "basis": "flagged: no dominant four-letter local code, keeps the CSR code",
@@ -243,10 +255,8 @@
     }
   },
   "unlisted_prefixes": {
-    "ARME": 18,
     "KHME": 1,
     "ARAM": 3,
-    "ARMN": 2,
     "FL": 1,
     "HIER": 1,
     "HUPA": 2,
@@ -295,124 +305,140 @@
       "code": "ARAB"
     },
     "ARME M1001": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AA": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AB": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AC": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AD": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AE": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AF": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AG": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AH": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AI": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AJ": {
       "language": null,
       "signal": "residual",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "FLNG"
     },
     "ARME M10AK": {
       "language": null,
       "signal": "residual",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "FLNG"
     },
     "ARME M10AL": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AM": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AN": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AO": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AP": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARME M10AQ": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARME",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME",
+      "fate": "already on the language code"
     },
     "ARMN M10AA": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARMN",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME"
     },
     "ARMN M10AB": {
-      "language": null,
-      "signal": "residual",
+      "language": "Armenian",
+      "signal": "title",
       "prefix": "ARMN",
-      "fate": "kept: language not in kb/foreign_language_subj4.json"
+      "code": "ARME"
     },
     "ASIA M1005": {
       "language": "Chinese",
