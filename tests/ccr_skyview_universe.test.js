@@ -99,6 +99,14 @@ const dom = new JSDOM(html, {
     // page, so the first answer is a 404 and the bucket has to be reached.
     window.fetch = (url) => {
       fetches.push(String(url));
+      // The canonical seed carries the authority chips (item 19, 2026-09-03);
+      // the page reads it live, relative path first.
+      if (/discipline_canonical_subj4\.json$/.test(url))
+        return Promise.resolve({ ok: true, json: () => Promise.resolve({ disciplines: {
+          "Welding": { canonical_subj4: "WELD", canonical_source: "csr", authority_flag: "proposed",
+                       authority_chips: [{ system: "C-ID", code: "WLDT" }] },
+          "Art": { canonical_subj4: "ARTS", canonical_source: "c-id", authority_flag: null, authority_chips: [] },
+        } }) });
       if (/supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(url))
         return Promise.resolve({ ok: true, json: () => Promise.resolve({
           "101": ["A welding description.", "Welding Fundamentals I", 3],
@@ -226,8 +234,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // ── (G) descriptions: the bucket is reached when the local dir 404s ────────
   await tick(); await tick(); await tick();
   check("(G) ⭐ the local shard is tried first and the bucket second",
-    fetches.length >= 2 && /^ccr_desc\/welding\.json$/.test(fetches[0].replace(/^https:\/\/example\.org\/prototype\//, ""))
-    && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(fetches[1]), fetches.join(" | "));
+    (() => { const sh = fetches.filter((u) => !/discipline_canonical_subj4\.json$/.test(u));   // the seed read is a separate fetch
+             return sh.length >= 2 && /^ccr_desc\/welding\.json$/.test(sh[0].replace(/^https:\/\/example\.org\/prototype\//, ""))
+               && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(sh[1]); })(), fetches.join(" | "));
   check("(G) the shard state is recorded as loaded", st().descState.welding === "ok", JSON.stringify(st().descState));
   check("(G) course titles from the shard appear beside the code", /Welding Fundamentals I/.test(text("#u-detail .mlist")));
   q('#u-detail .cd[data-desc="CCC000000101"]').click();
@@ -315,6 +324,22 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(N) a subject card lists its identities as buttons that open them", qa("#u-detail .idlist [data-go]").length === 2);
   qa("#u-detail .idlist [data-go]")[0].click();
   check("(N) …and clicking one selects it", st().sel === "WELD C1000", st().sel);
+
+  // ── (O) the authority chip on a subject card (item 19, Sam 2026-09-03) ─────
+  await new Promise((r) => setTimeout(r, 20));   // the seed fetch is asynchronous
+  check("(O) the page reads the canonical seed by its relative path first",
+    fetches.some((u) => /^\.\.\/kb\/discipline_canonical_subj4\.json$/.test(u.replace(/^https:\/\/example\.org\/prototype\//, ""))), fetches.join(" | "));
+  w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[0] });
+  check("(O) ⭐ a subject card names its Common SUBJ and the authority's code as a word chip",
+    /Common SUBJ WELD/.test(text("#u-detail .u-auth")) && qa("#u-detail .u-auth .chip.cid").map((c) => c.textContent).join() === "C-ID WLDT",
+    text("#u-detail .u-auth"));
+  check("(O) a CSR-proposed code says so", /proposed/.test(text("#u-detail .u-auth")));
+  w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[1] });
+  check("(O) a Common SUBJ the authority owns shows no chip and no 'proposed'",
+    /Common SUBJ ARTS/.test(text("#u-detail .u-auth")) && /the C-ID code/.test(text("#u-detail .u-auth"))
+    && qa("#u-detail .u-auth .chip").length === 0, text("#u-detail .u-auth"));
+  check("(O) the subject tooltip carries the same line",
+    /C-ID WLDT/.test(w.__ccrTipHtml ? w.__ccrTipHtml({ isl: PU.islands[0] }) : "C-ID WLDT"));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

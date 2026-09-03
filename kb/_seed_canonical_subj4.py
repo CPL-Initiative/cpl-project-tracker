@@ -179,7 +179,8 @@ def main():
             with open(OUT, "r", encoding="utf-8") as f:
                 prev = json.load(f)
             for d, e in (prev.get("disciplines") or {}).items():
-                if (e or {}).get("reviewed_at") or (e or {}).get("validated_at"):
+                if ((e or {}).get("reviewed_at") or (e or {}).get("validated_at")
+                        or (e or {}).get("canonical_source")):
                     existing_reviewed[d] = e
         except (OSError, json.JSONDecodeError):
             pass
@@ -297,9 +298,15 @@ def main():
         # the latest snapshot.
         prev = existing_reviewed.get(d)
         if prev:
+            # The authority-code fields (kb/_seed_authority_codes.py, item 19 of
+            # the 2026-09-03 rulings) and the umbrella flag ride along too: a
+            # re-seed must not strip what the chip displays read.
             for k in ("canonical_subj4", "source", "_notes",
                        "reviewed_at", "reviewed_by",
-                       "validated_at", "validated_by"):
+                       "validated_at", "validated_by",
+                       "ccn_subject_code", "cid_subject_codes", "canonical_source",
+                       "authority_chips", "authority_flag", "authority_note",
+                       "is_umbrella", "umbrella_codes", "_umbrella_note"):
                 if k in prev:
                     entry[k] = prev[k]
             if prev.get("canonical_subj4"):
