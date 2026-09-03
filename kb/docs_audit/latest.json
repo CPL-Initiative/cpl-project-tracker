@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 778,
-    "bytes": 8258512,
+    "bytes": 8258609,
     "over_budget": 3,
     "handoff_max": 224,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 58409,
+    "always_loaded_bytes": 58506,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 58409,
+        "bytes": 58506,
         "over": 0
       },
       "other": {
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 2662,
-      "bytes": 1352506317,
+      "bytes": 1352506414,
       "heavy_bytes": 666916805,
       "heavy_share": 0.493,
       "ignore_filters": [
