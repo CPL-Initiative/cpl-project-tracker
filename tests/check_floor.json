@@ -16,6 +16,7 @@
     "card_updates.test.js": 23,
     "ccr_skyview_button.test.js": null,
     "ccr_skyview_first.test.js": 26,
+    "ccr_skyview_universe.test.js": 66,
     "ccr_subject_groups.test.js": 17,
     "cer.test.js": 18,
     "cer_arts_width.test.js": 8,

@@ -175,6 +175,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
+| `ccr-desc` | pages: `prototype/skyview.html` | — |
 | `factsheet-images` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 
 ## Generated JS data artifacts
@@ -347,6 +348,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_apply_curation.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_apply_unclassified_triage.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_audit_exhibits.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_build_ccr_universe.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_college_courses.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_build_cpl_pathway_ccr.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_cpl_pathway_membership.py` | workflows: `daily-dashboard.yml` | — |
@@ -659,7 +661,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `launchapprenticeship.org` | tabs: `map-queue`, `map-users` |
 | `localhost` | `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `localhost:3000` | `edgefn:cpl-chat` |
-| `localhost:8000` | modules: `prototype/ccr_universe.js` · scripts: `kb/_build_ccr_universe.py` · `edgefn:cpl-chat` |
+| `localhost:8000` | modules: `prototype/ccr_universe.js` · `edgefn:cpl-chat` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.rccd.edu` | tabs: `college-briefing`, `implementation-funding` · scripts: `kb/_seed_statewide_categories.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
@@ -773,5 +775,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 395 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 396 file
 datasets · 137 external services · 305 consumers · 32 workflows · 37 tabs.

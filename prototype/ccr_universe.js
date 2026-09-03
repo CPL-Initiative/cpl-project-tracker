@@ -1,21 +1,33 @@
-/* CCR Universe — the whole corpus on one canvas, with cross-area repair.
+/* CCR Universe — SkyView, the graph view: the whole corpus on one canvas, with
+ * cross-area repair. (Sam, 2026-08-24: "SkyView" names THIS canvas, not the
+ * informational panes around it.)
  *
- * Sam's brief: "seeing the whole universe initially with a keyword zoom might be
- * better. Sometimes courses are mismatched in the wrong subject area and may need
- * to be dragged to a course in another area. If users could pull an area over
- * closer to the clusters in another area, they could easily drag and drop the
- * misplaced course to the right parent course."
+ * Sam's brief (2026-08-24): "seeing the whole universe initially with a keyword
+ * zoom might be better. Sometimes courses are mismatched in the wrong subject
+ * area and may need to be dragged to a course in another area. If users could
+ * pull an area over closer to the clusters in another area, they could easily
+ * drag and drop the misplaced course to the right parent course."
  *
- * Three things follow from that, and each is a design constraint:
+ * And the five goals of 2026-09-03: see the whole universe · keyword-jump to any
+ * cluster, course or subject · details on hover/click, with the catalog
+ * description on a course title, and the number · title · units · identity
+ * system on a course as you zoom in · every unassigned course individually in
+ * orbit around the identity it is most aligned to · the map full screen, with
+ * the other panes reached by scrolling down.
  *
- *  1. CANVAS, NOT SVG. 17,321 nodes is ~70k DOM elements as SVG. Canvas draws it
- *     in one pass and stays smooth under pan/zoom.
+ * Design constraints that follow, each load-bearing:
+ *
+ *  1. CANVAS, NOT SVG. ~50,000 points is ~200k DOM elements as SVG. Canvas draws
+ *     it in one pass and stays smooth under pan/zoom.
  *  2. THE LAYOUT IS PRECOMPUTED AND STABLE. A layout that re-solves on load is
  *     unnavigable — you cannot learn where anything is. Coordinates ship from
- *     kb/_build_ccr_universe.py.
+ *     kb/_build_ccr_universe.py, orbits included.
  *  3. ISLANDS MOVE. Dragging a discipline is not decoration: it is how a curator
  *     brings two distant subjects side by side to move a course between them.
  *     Positions are per-browser and never leave the page.
+ *  4. AN ORBIT IS A SUGGESTION. A stand-alone course orbits the identity the
+ *     builder found most aligned; it is drawn hollow, tethered, and the inspector
+ *     says WHY. Nothing is curated until a person moves the course.
  *
  * A move writes nothing. It records the `CN:<control number>` curation row the
  * live tab would write — the member re-home path that already exists.
@@ -27,14 +39,22 @@ var U=null, A=null;          // universe payload, atlas detail payload
 var cvs, ctx, DPR=1;
 var view={x:0,y:0,k:0.12};   // world→screen: screen = (world+pan)*k
 var hoverIsl=null, hoverNode=null, selIsl=null, selNode=null;
-var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, memberSource="";
+var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, orbitIdx=null;
+var memIndex=null, memberSource="";
 var cnCourses=null;           // cn -> [{n:code, c:college}] — EVERY course the key names
-var MEMBER_PAGE=200, memFilter="";
-var descCache={}, descState={};      // island shard -> {cn/index: text} · shard -> "loading"|"ok"|"blocked"|"missing"
-var DESC_DIR="ccr_desc";
-var drag=null;               // {kind:'pan'|'island'|'course', ...}
+var MEMBER_PAGE=200, memFilter="", openDesc={};
+var descCache={}, descState={};      // shard -> {cn: [desc, title, units]} · shard -> "loading"|"ok"|"blocked"|"missing"
+/* Where the per-discipline description shards live, tried in order. The relative
+ * directory serves a local `python3 -m http.server`; the public Supabase Storage
+ * bucket `ccr-desc` serves the deployed page (Sam, 2026-08-24: "I expect we'll
+ * put the shards on supabase"). The shards are 50 MB of derived text and are
+ * NOT committed, so a page on GitHub Pages has only the bucket. */
+var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
+  ["ccr_desc", "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc"];
+var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
-var placedBoxes=[], titlesQueued=0;   // last frame's placed text, for the harness
+var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
+var inspOpen=true;
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
  * a module constant because doSearch has to honour it: a search that flies to
  * "fit all the hits" picks a zoom below it whenever the hits are spread out,
@@ -42,86 +62,94 @@ var placedBoxes=[], titlesQueued=0;   // last frame's placed text, for the harne
  * Reported from a browser by Sam, 2026-08-25: 19 hits across 9 subjects, zoom
  * 12%, no rings. One constant read by both is what stops them disagreeing. */
 var NODE_ZOOM=0.20;
+/* Progressive labels (Sam, 2026-09-03: "the full number and title and units and
+ * if it is a MID, CID, CCN showing on the course info as you zoom in"). Three
+ * bands, each a constant so the harness can assert the order: the identity's
+ * number first, then number and title, then the full line with units and the
+ * identity system. Every label still competes for space — a name that would
+ * land on another is dropped, never stacked. */
+var ID_ZOOM=0.95, TITLE_ZOOM=1.7, FULL_ZOOM=2.7;
+var SAT_R=2.6;               // a stand-alone's world radius — the builder's SAT_R
 
-var SYS=[["#F1EAFC","#6D28D9","✽","M-ID"],
-         ["#E7EEF9","#0047AB","★","C-ID"],
-         ["#FBF1D8","#8B6800","◆","CCN"],
-         ["#EFEFEC","#5C5C55","○","unified"]];
+var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
+         ["#E7EEF9","#0047AB","C-ID","official statewide"],
+         ["#FBF1D8","#8B6800","CCN","official statewide"],
+         ["#EFEFEC","#5C5C55","unified","synthetic course"]];
+/* why-bits on an orbiting point — mirrors kb/_build_ccr_universe.py */
+var WHY=[[1,"the same local subject code"],[4,"words in common in the title"],
+         [2,"the same SUBJ4"],[8,"the same TOP code"],[16,"the same units"],
+         [32,"the same credit type"]];
 
-function ensureDescCss(){
-  if(document.getElementById("u-desc-css")) return;
-  var st=document.createElement("style"); st.id="u-desc-css";
-  st.textContent=".mlist .mdesc{display:block;margin:.35em 0 .1em;font-size:.84rem;"+
-    "line-height:1.45;color:var(--text-body,#3A3A36);max-width:var(--cpl-measure,none)}"+
-    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}"+
-    // Glyph-free on purpose: the chip's own words carry the state, so the color
-    // is reinforcement and greyscale loses nothing.
-    ".mlist .chip.warn{background:var(--accent-warn-tint,#FBF1D8);"+
-    "color:var(--accent-warn-ink,#6B4E00);border:1px solid var(--accent-warn,#8B6800)}"+
-    ".mlist li.shared .cd{text-decoration:underline dotted}";
-  document.head.appendChild(st);
-}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function num(n){return (n==null?0:n).toLocaleString("en-US");}
-function w2s(x,y){return [(x+view.x)*view.k + cvs.clientWidth/2,
-                          (y+view.y)*view.k + cvs.clientHeight/2];}
-function s2w(px,py){return [(px-cvs.clientWidth/2)/view.k - view.x,
-                            (py-cvs.clientHeight/2)/view.k - view.y];}
+function cw(){ return (cvs&&cvs.clientWidth)||960; }
+function ch(){ return (cvs&&cvs.clientHeight)||600; }
+function w2s(x,y){return [(x+view.x)*view.k + cw()/2, (y+view.y)*view.k + ch()/2];}
+function s2w(px,py){return [(px-cw()/2)/view.k - view.x, (py-ch()/2)/view.k - view.y];}
+function trunc(s,n){ s=String(s==null?"":s); return s.length>n?s.slice(0,n-1)+"…":s; }
+function unitsWord(u){
+  if(u==null) return "units not given";
+  if(u===0) return "0 units";
+  return u+" unit"+(u===1?"":"s");
+}
+function sysWord(nd){ var s=SYS[nd.s]||SYS[3]; return s[2]; }
+function whyWords(w){
+  var out=[]; WHY.forEach(function(p){ if(w&p[0]) out.push(p[1]); });
+  return out.length?out.join(", "):"no shared signal";
+}
+function nodeRad(nd){
+  return nd.a ? Math.max(1.3, SAT_R*view.k)
+              : Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*view.k);
+}
 
 /* ── member lookup ────────────────────────────────────────────────────────
  * roster[identity] = [{cn, n:course code, c:college name}] — every college
  * course the identity carries, which is what a curator drags.
  *
- * The full universe payload (ccr_universe_members.json) covers all 16,240
- * identities that carry members. The older per-discipline sample inside
+ * The full universe payload (ccr_universe_members.json) covers every identity
+ * that carries members. The older per-discipline sample inside
  * ccr_atlas_data.json is kept as a FALLBACK so the page still does something
  * useful if the big payload is absent — and memberSource records which one is
  * live, because "no courses here" and "no courses shipped" look identical on
  * screen and mean opposite things.
  *
- * TWO different things make a control number non-unique here, and only the
- * first was ever handled:
+ * TWO different things make a control number non-unique here:
  *
- *  1. A control number can appear under MORE THAN ONE IDENTITY (1,165 do — the
- *     forward join surfaces an over-merged course on every card that claims it).
- *     The write is one `CN:` row per control number, so a move is a single
- *     global statement: movedTo[cn] is the ONLY home that counts once a curator
- *     has moved a course, and the course leaves every other card it showed on.
+ *  1. A control number can appear under MORE THAN ONE IDENTITY (the forward
+ *     join surfaces an over-merged course on every card that claims it). The
+ *     write is one `CN:` row per control number, so a move is a single global
+ *     statement: movedTo[cn] is the ONLY home that counts once a curator has
+ *     moved a course, and the course leaves every other card it showed on.
  *
- *  2. A control number can name MORE THAN ONE COURSE. 1,761 in this payload do
- *     — 3,634 draggable rows. Measured by kb/_audit_control_number_claims.py:
- *     most are one course written two ways (a CCN alongside its local code, an
- *     institution entered under two roster names), but 73 are genuinely two
- *     different courses filed under one number, and the key cannot tell any of
- *     them apart.
+ *  2. A control number can name MORE THAN ONE COURSE. Measured by
+ *     kb/_audit_control_number_claims.py: most are one course written two ways,
+ *     but 73 are genuinely two different courses filed under one number, and
+ *     the key cannot tell any of them apart.
  *
- * (2) is why cnCourses exists. byCn keeps the first record seen, which is fine
- * for reporting where a course came from and WRONG as the thing to render on a
- * destination: a curator who drags the second of two collided courses would
- * watch the first one arrive. A move whose key names several courses cannot be
+ * (2) is why cnCourses exists. A move whose key names several courses cannot be
  * expressed by `CN:<cn>` at all, so it is REFUSED rather than written wrong —
  * see canMove().
  */
 function noteCourse(cn, rec){
-  // Distinct (code, college) only: the same course legitimately appears on
-  // several identities, and counting those would flag every over-merge as an
-  // ambiguous KEY, which is a different fault with a different repair.
   var l=cnCourses[cn]||(cnCourses[cn]=[]);
   for(var i=0;i<l.length;i++) if(l[i].n===rec.n && l[i].c===rec.c) return;
   l.push({n:rec.n, c:rec.c});
 }
 function buildMemberIndex(){
-  roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource="";
+  roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource=""; memIndex=[];
   var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
   if(MEM && MEM.m){
     var cols=MEM.colleges||[];
     Object.keys(MEM.m).forEach(function(id){
       roster[id]=MEM.m[id].map(function(r){
-        var cn="CCC"+String(r[0]).padStart(9,"0");
-        var rec={cn:cn, n:r[1]||"", c:cols[r[2]]||"—"};
+        var digits=String(r[0]);
+        var cn="CCC"+digits.padStart(9,"0");
+        var rec={cn:cn, d:digits, n:r[1]||"", c:cols[r[2]]||"—"};
         noteCourse(cn, rec);
         if(!(cn in byCn)){ byCn[cn]=rec; cnHome[cn]=id; }
+        // The search index: every college course by code and by control number.
+        memIndex.push({id:id, cn:cn, d:digits, code:rec.n, lc:rec.n.toLowerCase(), c:rec.c});
         return rec;
       });
     });
@@ -133,10 +161,14 @@ function buildMemberIndex(){
     A.detail[dn].forEach(function(pack){
       pack.nodes.forEach(function(nd){
         if(!nd.m||!nd.m.length) return;
-        roster[nd.id]=nd.m;
-        nd.m.forEach(function(m){
+        roster[nd.id]=nd.m.map(function(m){
+          var hit=/^CCC(\d{9})$/.exec(m.cn||"");
+          return {cn:m.cn, d:hit?String(parseInt(hit[1],10)):"", n:m.n, c:m.c};
+        });
+        roster[nd.id].forEach(function(m){
           noteCourse(m.cn, m);
           if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; }
+          memIndex.push({id:nd.id, cn:m.cn, d:m.d, code:m.n, lc:(m.n||"").toLowerCase(), c:m.c});
         });
       });
     });
@@ -147,15 +179,7 @@ function buildMemberIndex(){
  * several honest answers; the FIRST is recorded only so the move receipt can say
  * where it came from — the move itself is global and leaves all of them. */
 function originOf(cn){ return (cnHome&&cnHome[cn])||null; }
-/* Every course the write key names. More than one means the key is ambiguous. */
 function coursesOn(cn){ return (cnCourses&&cnCourses[cn])||[]; }
-/* Can this course be re-homed at all?  `CN:<control number>` carries no way to
- * say WHICH course, and the receiving end picks the first one it finds — the
- * live generator through cn_rows[cn][0], this page through byCn[cn]. So for an
- * ambiguous key a move is not merely risky, it is INEXPRESSIBLE: whatever the
- * curator dragged, the number moves whichever course happens to be indexed
- * first, and takes the others out of their own cards on the way past.
- * Refusing is the honest answer. Widening the key is a schema decision. */
 /* One sentence, used by the chip and by the refusal, so the warning a curator
  * reads before clicking and the message they get after cannot disagree. */
 function sharedKeyReason(cn, code, others){
@@ -168,53 +192,58 @@ function sharedKeyReason(cn, code, others){
     "the move would land whichever course is indexed first. Fix the duplicate "+
     "control number upstream in COCI, or widen the write key.";
 }
+/* Can this course be re-homed at all? `CN:<control number>` carries no way to
+ * say WHICH course, and the receiving end picks the first one it finds. So for
+ * an ambiguous key a move is not merely risky, it is INEXPRESSIBLE. Refusing is
+ * the honest answer. Widening the key is a schema decision. */
 function canMove(cn){
   var l=coursesOn(cn);
   if(l.length<2) return {ok:true};
   return {ok:false, others:l};
 }
+
 /* ── course descriptions, fetched per discipline on demand ────────────────
- * Measured 2026-08-24: descriptions are 34.8 MB stored, 11.6 MB even cut to 120
- * characters, against a page already at 9.7 MB. There is no truncation that is
- * both inlinable and worth reading, so Sam chose on-demand loading knowing it
- * means serving the page rather than opening the file.
+ * Shard shape: { "<control number digits>": [description|null, title, units] }.
+ * Keyed by control number, so the members payload can drop a keyless course
+ * without shifting every later description onto the wrong row.
  *
  * ⚠️ Under file:// every fetch fails on CORS. That is REPORTED, never swallowed:
  * a drill-down that silently shows nothing is indistinguishable from a course
- * that genuinely has no description, and the second is a real and common state
- * (127,523 of the corpus have one, so plenty do not).
+ * that genuinely has no description, and the second is a real and common state.
  */
 function loadDesc(isl, then){
   var sh=isl&&isl.sh; if(!sh) return then&&then();
-  if(descState[sh]==="ok"||descState[sh]==="blocked"||descState[sh]==="missing") return then&&then();
-  if(descState[sh]==="loading") return;
+  var st=descState[sh];
+  if(st==="ok"||st==="blocked"||st==="missing") return then&&then();
+  if(st==="loading") return;
+  if(typeof fetch!=="function"){ descState[sh]="missing"; return then&&then(); }
   descState[sh]="loading";
-  var url=DESC_DIR+"/"+encodeURIComponent(sh)+".json";
-  fetch(url).then(function(r){
-    if(!r.ok) throw new Error("http "+r.status);
-    return r.json();
-  }).then(function(j){
-    descCache[sh]=j; descState[sh]="ok"; then&&then();
-  }).catch(function(e){
-    // file:// gives a TypeError with no status; a served page gives an http code.
-    descState[sh]=(location.protocol==="file:")?"blocked":"missing";
-    then&&then();
-  });
+  var bases=DESC_BASES.slice();
+  function tryNext(){
+    var base=bases.shift();
+    if(base==null){
+      descState[sh]=(location.protocol==="file:")?"blocked":"missing";
+      return then&&then();
+    }
+    var url=base.replace(/\/$/,"")+"/"+encodeURIComponent(sh)+".json";
+    fetch(url).then(function(r){
+      if(!r.ok) throw new Error("http "+r.status);
+      return r.json();
+    }).then(function(j){
+      descCache[sh]=j; descState[sh]="ok"; then&&then();
+    }).catch(function(){ tryNext(); });
+  }
+  tryNext();
 }
-function descFor(isl, id, idx){
-  var sh=isl&&isl.sh; if(!sh) return null;
-  var d=descCache[sh]&&descCache[sh][id];
-  return (d&&d[idx])||null;
+function courseInfo(isl, m){
+  var sh=isl&&isl.sh; if(!sh||!descCache[sh]) return null;
+  var rec=descCache[sh][m.d]; if(!rec) return null;
+  return {desc:rec[0]||null, title:rec[1]||"", units:rec[2]};
 }
-/* The record a curator actually picked up, for a course that has been moved.
- * byCn[cn] is the FIRST record indexed for that key, which is a different
- * course whenever the key names several — so a destination built from byCn
- * shows the wrong one. Moves are refused for ambiguous keys (canMove), so the
- * two agree today; reading the move is what keeps them agreeing if that ever
- * changes. */
+/* The record a curator actually picked up, for a course that has been moved. */
 function movedRecord(cn){
   for(var i=0;i<moves.length;i++)
-    if(moves[i].cn===cn) return {cn:cn, n:moves[i].code, c:moves[i].college};
+    if(moves[i].cn===cn) return {cn:cn, d:moves[i].d, n:moves[i].code, c:moves[i].college};
   return byCn&&byCn[cn]||null;
 }
 function membersOf(id){
@@ -229,28 +258,40 @@ function membersOf(id){
   });
   return out;
 }
-function nodeById(id){
-  if(!nodeIdx){
-    nodeIdx={};
-    U.islands.forEach(function(isl){
-      isl.p.forEach(function(nd){ nodeIdx[nd.i]={isl:isl,nd:nd}; });
+function indexNodes(){
+  nodeIdx={}; orbitIdx={};
+  U.islands.forEach(function(isl){
+    isl.p.forEach(function(nd){
+      nodeIdx[nd.i]={isl:isl,nd:nd};
+      if(nd.a && nd.o) (orbitIdx[nd.o]||(orbitIdx[nd.o]=[])).push(nd);
     });
-  }
-  return nodeIdx[id]||null;
+  });
+  Object.keys(orbitIdx).forEach(function(k){
+    orbitIdx[k].sort(function(a,b){ return (b.q||0)-(a.q||0) || String(a.i).localeCompare(String(b.i)); });
+  });
+}
+function nodeById(id){ if(!nodeIdx) indexNodes(); return nodeIdx[id]||null; }
+function orbitsOf(id){ if(!orbitIdx) indexNodes(); return orbitIdx[id]||[]; }
+/* A stand-alone whose one course has been moved away is an emptied shell. */
+function emptied(nd){
+  if(!nd.a) return false;
+  var m=(roster&&roster[nd.i]||[])[0];
+  return !!(m && (m.cn in movedTo) && movedTo[m.cn]!==nd.i);
 }
 
 /* ── draw ───────────────────────────────────────────────────────────────── */
 function draw(){
-  var W=cvs.clientWidth, H=cvs.clientHeight;
+  if(!ctx||!U) return;
+  var W=cw(), H=ch();
   ctx.setTransform(DPR,0,0,DPR,0,0);
   ctx.clearRect(0,0,W,H);
   ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--surface-opaque")||"#fff";
   ctx.fillRect(0,0,W,H);
 
   var k=view.k;
-  var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTitles = k>1.35;
+  var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
-  var labelQueue=[], titleQueue=[];
+  var labelQueue=[], nodeQueue=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -265,20 +306,39 @@ function draw(){
     ctx.stroke();
 
     if(showNodes){
+      // Tethers first, under the points: a faint line from each orbiting course
+      // to the identity it orbits, so the suggestion reads as a relationship and
+      // never as membership.
+      if(showTethers){
+        ctx.save(); ctx.setLineDash([2,3]); ctx.lineWidth=1; ctx.strokeStyle="rgba(109,40,217,.28)";
+        ctx.beginPath();
+        isl.p.forEach(function(nd){
+          if(!nd.a||!nd.o) return;
+          var par=nodeById(nd.o); if(!par) return;
+          var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
+          var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0));
+          ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]);
+        });
+        ctx.stroke(); ctx.restore();
+      }
       isl.p.forEach(function(nd){
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-        var rad=Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*k);
+        var rad=nodeRad(nd);
         var s=SYS[nd.s]||SYS[3];
         ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
         if(nd.a){
           // Stand-alone: one college, no equivalence asserted yet. Drawn HOLLOW so it
           // reads as "nothing claimed here", never as a weaker version of a claim.
+          // Once its course has been moved it is an emptied shell: dotted and grey.
+          var gone=emptied(nd);
           ctx.fillStyle="#fff"; ctx.fill();
-          ctx.lineWidth=Math.max(1,rad*0.34); ctx.strokeStyle=s[1]; ctx.stroke();
+          ctx.lineWidth=Math.max(1,rad*0.34);
+          if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle="#87877F"; ctx.stroke(); ctx.restore(); }
+          else { ctx.strokeStyle=s[1]; ctx.stroke(); }
         } else {
           ctx.fillStyle=s[0]; ctx.fill();
+          if(rad>2){ ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1]; ctx.stroke(); }
         }
-        if(rad>2){ ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1]; ctx.stroke(); }
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle="#920000"; ctx.stroke();
@@ -287,29 +347,28 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle="#0047AB"; ctx.stroke();
         }
-        // Titles are QUEUED, not drawn here, for the same reason island names
-        // are: a dense island stacks dozens of them into an unreadable pile.
-        // The file already calls that "the exact failure of a global graph
-        // view" for islands — it is no less true one grain down, and it shows
-        // up the moment a search flies you into a crowded subject.
-        if(showTitles && nd.n>1 && rad>5)
-          titleQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad,
-                           force:(nd===selNode||hitSet[nd.i])});
+        // Labels are QUEUED, not drawn here: a dense island stacks dozens of them
+        // into an unreadable pile, which is the exact failure of a global graph
+        // view. Stand-alones earn a label one band later than identities — they
+        // are the small points, and their number alone reads as noise.
+        var lines=labelLines(nd, k);
+        if(lines && (nd.a ? k>TITLE_ZOOM : rad>3))
+          nodeQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad, lines:lines,
+                          force:(nd===selNode||!!hitSet[nd.i])});
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
     // big island's name is never buried under a small neighbor's — and so
-    // overlapping labels can be rejected rather than stacked. An unreadable
-    // pile of overlapping names is the exact failure of a global graph view.
+    // overlapping labels can be rejected rather than stacked.
     labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
                      force:(isl===hoverIsl||isl===selIsl)});
   });
 
   // Islands first: they are the navigational anchors, and a course name buried
-  // under its own subject's name helps nobody. Course titles then fill the gaps
-  // left over, and a title that cannot find one is dropped rather than stacked.
-  titlesQueued=titleQueue.length;
-  placedBoxes=placeTitles(titleQueue, placeLabels(labelQueue, showLabels));
+  // under its own subject's name helps nobody. Course labels then fill the gaps
+  // left over, and a label that cannot find one is dropped rather than stacked.
+  titlesQueued=nodeQueue.length;
+  placedBoxes=placeNodeLabels(nodeQueue, placeLabels(labelQueue, showLabels));
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -321,6 +380,15 @@ function draw(){
   }
   var z=document.getElementById("u-zoom");
   if(z) z.textContent = Math.round(view.k*100)+"%";
+}
+/* What a course label says at this zoom. Null below the first band. */
+function labelLines(nd, k){
+  if(k>FULL_ZOOM)
+    return [nd.i+" · "+trunc(nd.t||"",40),
+            unitsWord(nd.u)+" · "+sysWord(nd)+(nd.a?" · stand-alone":"")];
+  if(k>TITLE_ZOOM) return [nd.i+" · "+trunc(nd.t||"",30)];
+  if(k>ID_ZOOM) return [nd.i];
+  return null;
 }
 
 /* Biggest first, reject anything that would overlap an already-placed label.
@@ -336,10 +404,10 @@ function placeLabels(queue, showAll){
     if(!q.force && !showAll && q.r<26) return;          // too small to earn a name
     var size=Math.max(11,Math.min(19,q.r*0.17));
     ctx.font=(q.force?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
-    var lab=q.isl.d+" ("+q.isl.n+")";
+    var lab=q.isl.d+" ("+num(q.isl.n)+")";
     var w=ctx.measureText(lab).width, h=size*1.25;
     var box=[q.cx-w/2-3, q.cy-h, q.cx+w/2+3, q.cy+4];
-    if(box[2]<0||box[0]>cvs.clientWidth||box[3]<0||box[1]>cvs.clientHeight) return;
+    if(box[2]<0||box[0]>cw()||box[3]<0||box[1]>ch()) return;
     var clash=false;
     for(var i=0;i<boxes.length;i++){
       var b=boxes[i];
@@ -352,38 +420,44 @@ function placeLabels(queue, showAll){
     ctx.fillStyle=q.force?"#0047AB":"#1C1C1A";
     ctx.fillText(lab,q.cx,q.cy);
   });
-  return boxes;   // course titles are placed into the gaps these leave
+  return boxes;   // course labels are placed into the gaps these leave
 }
 
-/* Course titles, same rule one grain down: biggest first, search hits and the
+/* Course labels, same rule one grain down: biggest first, search hits and the
    selection ahead of everything, and anything that will not fit is DROPPED.
    Strictly dropped, including a hit — two names on top of each other are worth
    less than one name and a bare ring, and the ring is still there to be
-   followed. Sorting hits first is what gets them the slots. */
-function placeTitles(queue, boxes){
-  var placed=[];
+   followed. A two-line label (the full band) is one box, so it is placed or
+   dropped whole. */
+function placeNodeLabels(queue, boxes){
+  var placed=[]; labelStats={ids:0,titles:0,full:0};
   if(!queue.length) return placed;
   queue.sort(function(a,b){
     if(a.force!==b.force) return a.force?-1:1;
     return b.rad-a.rad;
   });
   ctx.textAlign="center"; ctx.textBaseline="alphabetic";
-  var W=cvs.clientWidth, H=cvs.clientHeight;
+  var W=cw(), H=ch();
   queue.forEach(function(q){
     ctx.font=(q.force?"600 ":"")+"11px 'Source Sans 3',system-ui,sans-serif";
-    var t=q.nd.t.length>26?q.nd.t.slice(0,25)+"\u2026":q.nd.t;
-    var w=ctx.measureText(t).width;
-    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy+3];
+    var w=0; q.lines.forEach(function(t){ w=Math.max(w, ctx.measureText(t).width); });
+    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy-11+q.lines.length*12+2];
     if(box[2]<0||box[0]>W||box[3]<0||box[1]>H) return;
     for(var i=0;i<boxes.length;i++){
       var b=boxes[i];
       if(box[0]<b[2]&&box[2]>b[0]&&box[1]<b[3]&&box[3]>b[1]) return;
     }
     boxes.push(box); placed.push(box);
-    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
-    ctx.strokeText(t,q.cx,q.cy);
-    ctx.fillStyle=q.force?"#920000":"#3A3A36";
-    ctx.fillText(t,q.cx,q.cy);
+    if(q.lines.length>1) labelStats.full++;
+    else if(q.lines[0].indexOf(" · ")>=0) labelStats.titles++;
+    else labelStats.ids++;
+    q.lines.forEach(function(t,li){
+      var y=q.cy+li*12;
+      ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
+      ctx.strokeText(t,q.cx,y);
+      ctx.fillStyle=q.force?"#920000":(li?"#5C5C55":"#3A3A36");
+      ctx.fillText(t,q.cx,y);
+    });
   });
   return placed;
 }
@@ -396,77 +470,142 @@ function pick(px,py){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
     var r=isl.r*view.k;
     if(Math.hypot(px-c[0],py-c[1])>r+12) continue;
-    if(view.k>0.20){
+    if(view.k>NODE_ZOOM){
+      var found=null, fd=1e9;
       for(var j=0;j<isl.p.length;j++){
         var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-        var rad=Math.max(3.2,(2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*view.k);
-        if(Math.hypot(px-p[0],py-p[1])<=rad+3) return {isl:isl,nd:nd};
+        var rad=Math.max(3.2,nodeRad(nd));
+        var d=Math.hypot(px-p[0],py-p[1]);
+        if(d<=rad+3 && d<fd){ found=nd; fd=d; }
       }
+      if(found) return {isl:isl,nd:found};
     }
     best=best||{isl:isl,nd:null};
   }
   return best;
 }
+
+/* ── the view ─────────────────────────────────────────────────────────────── */
 window.__ccrUniverse = function(){
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
+  nodeIdx=null; orbitIdx=null;
   window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"SkyView"}]);
+  // Full bleed: the map takes the whole width; the panes below keep the measure.
+  var main=document.getElementById("main"); if(main) main.classList.add("u-fullbleed");
+  var C=U.counts||{};
 
   view_el.innerHTML =
-    '<h1>The whole Common Course Reference</h1>'+
-    '<p>'+num(U.counts.identities)+' course identities across '+U.counts.disciplines+
-    ' subject areas. Search to fly to one. <strong>Drag a subject</strong> to pull it '+
-    'next to another, then drag a course between them — that is how a course filed under '+
-    'the wrong subject gets moved to its real parent.</p>'+
-    '<div class="u-bar">'+
-      // No search box here. The page header already carries one, and two search
-      // fields on one screen that behave differently is a question about which
-      // one you are supposed to use — Sam hit exactly that. The header box
-      // drives this map whenever the map is open; see __ccrUniverseSearch.
-      '<button class="btn" type="button" id="u-out">−</button>'+
-      '<button class="btn" type="button" id="u-in">+</button>'+
-      '<button class="btn" type="button" id="u-reset">Reset view</button>'+
-      // A real focusable control, not a gesture: this is the route to the
-      // subject list now that the map is the landing view, and it is also the
-      // route a keyboard reader takes to the parts of the tab the canvas does
-      // not carry.
-      '<button class="btn" type="button" id="u-list">Browse subjects as a list</button>'+
-      '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
-    '</div>'+
-    '<div class="u-wrap"><canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
-      'A map of every course identity, grouped into one island per subject area. '+
-      'Use the search box at the top of the page to jump to a subject, or Tab to '+
-      'step through them from the keyboard; the panel below lists what you '+
-      'select."></canvas>'+
-      '<div class="u-hint" id="u-hint">Drag the background to pan · scroll to zoom · '+
-      'drag a subject to move it · click a course to open it. '+
-      'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> '+
-      'goes into one, <kbd>Esc</kbd> comes back out.</div></div>'+
-    '<div class="stage" style="margin-top:14px">'+
-      '<div class="panel" id="u-detail"><h3>Nothing selected</h3>'+
-      '<p class="empty">Click a subject or a course on the map.</p></div>'+
-      '<div class="panel"><h3>What this would write</h3><div id="u-writes">'+
-      '<p class="empty">No moves yet.</p></div>'+
-      '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
-      'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
+    '<section class="u-full" id="u-full" aria-label="SkyView — the Common Course Reference as a map">'+
+      '<div class="u-wrap" id="u-wrap">'+
+        '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
+          'A map of every course identity, grouped into one island per subject area, with '+
+          'each stand-alone course in orbit around the identity it is most aligned to. '+
+          'Use the search box at the top of the page to jump to a subject, an identity or a '+
+          'college course, or Tab to step through subjects from the keyboard; the details '+
+          'panel describes what you select."></canvas>'+
+        '<div class="u-bar u-ov u-ov-tl" role="toolbar" aria-label="Map controls">'+
+          // No search box here. The page header already carries one, and two search
+          // fields on one screen that behave differently is a question about which
+          // one you are supposed to use — Sam hit exactly that.
+          '<button class="btn" type="button" id="u-out">Zoom out</button>'+
+          '<button class="btn" type="button" id="u-in">Zoom in</button>'+
+          '<button class="btn" type="button" id="u-reset">Reset view</button>'+
+          '<button class="btn" type="button" id="u-list">Browse subjects as a list</button>'+
+          '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
+          '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
+        '</div>'+
+        '<div class="u-legend u-ov u-ov-bl" aria-label="How to read the map">'+
+          '<span><i class="u-sw" style="background:#F1EAFC;border-color:#6D28D9"></i>M-ID, our working label</span>'+
+          '<span><i class="u-sw" style="background:#E7EEF9;border-color:#0047AB"></i>C-ID, official</span>'+
+          '<span><i class="u-sw" style="background:#FBF1D8;border-color:#8B6800"></i>CCN, official</span>'+
+          '<span><i class="u-sw" style="background:#EFEFEC;border-color:#5C5C55"></i>unified</span>'+
+          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+
+        '</div>'+
+        '<div class="u-hint u-ov u-ov-b" id="u-hint">Hover for a quick look; click a subject or a course '+
+          'for details. Drag the background to pan, scroll to zoom, drag a subject to move it. '+
+          'Drag a hollow course onto the identity it belongs to, or drag from the details panel. '+
+          'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> goes into one, '+
+          '<kbd>Esc</kbd> comes back out.</div>'+
+        '<div class="u-tip" id="u-tip" role="tooltip" hidden></div>'+
+      '</div>'+
+      '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
+        '<div class="u-insp-bar"><span class="u-insp-t">Details</span>'+
+          '<button class="btn small" type="button" id="u-insp-toggle" aria-expanded="true" '+
+          'aria-controls="u-detail">Hide</button></div>'+
+        '<div id="u-detail" class="u-insp-body"><h3>Nothing selected</h3>'+
+          '<p class="empty">Hover a point for a quick look. Click a subject or a course and its '+
+          'details land here — the college courses underneath, their catalog descriptions, '+
+          'and the stand-alone courses in orbit around it.</p></div>'+
+      '</aside>'+
+    '</section>'+
+    '<div class="wrap u-below" id="u-below">'+
+      '<h1>The whole Common Course Reference</h1>'+
+      '<p>'+num(C.identities)+' course identities and '+num(C.stand_alone)+' stand-alone courses across '+
+        num(C.disciplines)+' subject areas. '+num(C.orbiting)+' of the stand-alones orbit the identity '+
+        'they are most aligned to; '+num(C.rim)+' share no subject code or title words with anything in '+
+        'their subject and sit on its rim. Search to fly to a subject, an identity or a college course. '+
+        '<strong>Drag a subject</strong> to pull it next to another, then drag a course between them — '+
+        'that is how a course filed under the wrong subject gets moved to its real parent.</p>'+
+      '<div class="stage">'+
+        '<div class="panel"><h3>What this would write</h3><div id="u-writes">'+
+        '<p class="empty">No moves yet.</p></div>'+
+        '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
+        'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
+        '<div class="panel"><h3>How the map is arranged</h3>'+
+        '<p>One island per subject area, biggest at the centre. Inside an island the identities '+
+        'with the most courses sit at the centre. A hollow point is a stand-alone course — one '+
+        'college, clustered with nothing yet — placed in orbit around the identity whose title '+
+        'words and subject code it shares. The orbit is a suggestion, not a decision: the details '+
+        'panel says what the two have in common, and nothing changes until you move the course. '+
+        'A hollow point on the outer rim shares nothing with any identity in its subject.</p>'+
+        '<p>Colors name the identity system: an M-ID is our working label, a C-ID or CCN is an '+
+        'official statewide number nobody here may re-key, a unified row is a synthetic course. '+
+        'Zoom in and each course shows its number, then its title, then its units and system.</p>'+
+        '</div>'+
+      '</div>'+
+      '<div id="u-more"></div>'+
     '</div>';
 
-  ensureDescCss();
-  cvs=document.getElementById("u-cvs"); ctx=cvs.getContext("2d");
-  buildMemberIndex();
-  sizeCanvas(); resetView(); wire(); draw();
+  cvs=document.getElementById("u-cvs");
+  ctx=cvs.getContext?cvs.getContext("2d"):null;
+  buildMemberIndex(); indexNodes();
+  fitCanvas(); resetView(); wire(); draw();
+  if(typeof window.__ccrForestInto==="function")
+    window.__ccrForestInto(document.getElementById("u-more"));
 };
 
+/* The map fills the first screen (Sam, 2026-09-03: "open full screen so users
+ * have more work space and allow scroll down to see the other info"). Height is
+ * the viewport minus what sits above the canvas, so the panes below are one
+ * scroll away rather than sharing the screen. Narrow screens keep the canvas to
+ * 62% and dock the details panel underneath instead of over it. */
+function fitCanvas(){
+  var wrap=document.getElementById("u-wrap"), full=document.getElementById("u-full");
+  if(!wrap||!full) return;
+  var h;
+  if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight;
+  else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
+  else {
+    // Whatever sits above the section (the masthead, the crumbs) is measured,
+    // not assumed: the section's own document offset is the one number that
+    // stays right when either of them changes height.
+    var rect=full.getBoundingClientRect();
+    var top=rect.top+(window.scrollY||window.pageYOffset||0);
+    h=Math.max(420, window.innerHeight-top);
+  }
+  wrap.style.height=h+"px";
+  sizeCanvas();
+}
 function sizeCanvas(){
   DPR=Math.min(2, window.devicePixelRatio||1);
-  var w=cvs.clientWidth, h=Math.max(380, Math.round(window.innerHeight*0.58));
-  cvs.style.height=h+"px";
+  var w=cw(), h=ch();
   cvs.width=Math.round(w*DPR); cvs.height=Math.round(h*DPR);
 }
 function resetView(){
-  var b=U.bounds, W=cvs.clientWidth, H=cvs.clientHeight;
+  var b=U.bounds, W=cw(), H=ch();
   var pad=60;
-  view.k=Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0));
+  view.k=Math.max(0.03, Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0)));
   view.x=-(b.x0+b.x1)/2; view.y=-(b.y0+b.y1)/2;
 }
 function zoomAt(px,py,factor){
@@ -486,60 +625,86 @@ window.__ccrUniverseSearch = doSearch;
 
 /* ── suggestions ────────────────────────────────────────────────────────────
  * Sam, 2026-08-25: "The keyword search should start to show likely matches
- * based on key entries — like a Google search does."
+ * based on key entries — like a Google search does." And 2026-09-03: "use
+ * keyword to jump to any cluster or course or subject area."
  *
- * This is also the REAL answer to a term that names several subjects. doSearch
- * has to pick one when the curator presses Enter; here they pick for
- * themselves, before any ranking rule gets a vote. Subjects first, because
- * "take me to a subject" is the dominant intent on a map — a course identity
- * you can reach once you are in the right neighborhood.
- *
- * Returns plain objects, no DOM: the header owns the dropdown (it lives in the
- * masthead, outside every view this module renders) and this owns the corpus.
+ * Three kinds, each labelled with a WORD so the reader knows where they are
+ * about to be sent: a subject (an island), a course identity (a point — a
+ * stand-alone says so), and a college course (a member, found by its code or
+ * its control number, which flies to the identity carrying it and filters the
+ * list down to it). Subjects first, because "take me to a subject" is the
+ * dominant intent on a map. Returns plain objects, no DOM: the header owns the
+ * dropdown and this owns the corpus.
  */
 function suggest(raw, limit){
   var term=String(raw==null?"":raw).trim().toLowerCase();
   var out=[];
   if(!U || term.length<2) return out;
   limit=limit||8;
-  var base=function(I){ return I.d.replace(" \u00b7 stand-alone",""); };
-  var seen={}, subs=[];
+  var subs=[];
   U.islands.forEach(function(I){
-    var n=base(I).toLowerCase();
+    var n=I.d.toLowerCase();
     var t=(n===term)?0:(n.indexOf(term)===0?1:(n.indexOf(term)>=0?2:-1));
     if(t<0) return;
-    var key=base(I);
-    // ONE ROW PER SUBJECT NAME. Two rows differing only by "· stand-alone" is a
-    // choice nobody wants to make from a dropdown, and the clustered side is
-    // where curation happens — so that is the one the row carries. The counts
-    // are summed rather than picked, because the row stands for the name.
-    if(seen[key]){ seen[key].n+=(I.n||0); if(!I.a && seen[key].isl.a) seen[key].isl=I; return; }
-    seen[key]={kind:"subject", label:key, tier:t, n:(I.n||0), isl:I};
-    subs.push(seen[key]);
+    subs.push({kind:"subject", kindWord:"subject", label:I.d, tier:t, n:(I.n||0), isl:I});
   });
   subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
   // Subjects never take the whole list: a term that matches many subjects would
-  // otherwise hide the course identity the curator was actually typing.
-  out=subs.slice(0, Math.max(1, limit-3));
+  // otherwise hide the course the curator was actually typing.
+  out=subs.slice(0, Math.max(1, limit-4));
   var room=limit-out.length;
-  for(var i=0;i<U.islands.length && room>0;i++){
+  // Course identities and stand-alones by title or number; identities first.
+  var pts=[];
+  for(var i=0;i<U.islands.length;i++){
     var I2=U.islands[i];
-    for(var j=0;j<I2.p.length && room>0;j++){
+    for(var j=0;j<I2.p.length;j++){
       var nd=I2.p[j];
-      if(nd.t.toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0){
-        out.push({kind:"course", label:nd.t, sub:nd.i+" \u00b7 "+base(I2), isl:I2, nd:nd});
-        room--;
-      }
+      var lt=(nd.t||"").toLowerCase(), li=nd.i.toLowerCase();
+      var tier=(li===term||lt===term)?0:(li.indexOf(term)===0||lt.indexOf(term)===0)?1:
+               (lt.indexOf(term)>=0||li.indexOf(term)>=0)?2:-1;
+      if(tier<0) continue;
+      pts.push({tier:tier+(nd.a?0.5:0), n:nd.n||0, isl:I2, nd:nd});
+      if(pts.length>400) break;
     }
+  }
+  pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
+  var take=Math.min(room-1, pts.length, Math.max(1, room-2));
+  pts.slice(0, Math.max(0,take)).forEach(function(p){
+    out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity", label:p.nd.t||p.nd.i,
+              sub:p.nd.i+" · "+p.isl.d, isl:p.isl, nd:p.nd});
+  });
+  room=limit-out.length;
+  // College courses, by code (prefix wins) or by control number.
+  if(room>0 && memIndex && memIndex.length){
+    var digits=/^(ccc)?0*(\d{3,})$/.exec(term);
+    var wanted=digits?String(parseInt(digits[2],10)):null;
+    var pre=[], inn=[];
+    for(var m=0;m<memIndex.length && (pre.length<room);m++){
+      var r=memIndex[m];
+      if(wanted){ if(r.d===wanted) pre.push(r); continue; }
+      if(r.lc.indexOf(term)===0) pre.push(r);
+      else if(inn.length<room && r.lc.indexOf(term)>=0) inn.push(r);
+    }
+    pre.concat(inn).slice(0,room).forEach(function(r){
+      var h=nodeById(r.id); if(!h) return;
+      out.push({kind:"member", kindWord:"college course", label:r.code+" · "+r.c,
+                sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
+    });
   }
   return out;
 }
 window.__ccrSuggest = suggest;
 
+function openInspector(){ if(!inspOpen) setInspector(true); }
+function setInspector(open){
+  inspOpen=!!open;
+  var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
+  if(a) a.classList.toggle("closed", !inspOpen);
+  if(b){ b.textContent=inspOpen?"Hide":"Show details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+}
+
 /* Act on a chosen suggestion. Flying is this module's job, so the header hands
- * back the object it was given rather than re-deriving anything from the label
- * — a label is not a key, and two subjects can share the visible text once
- * "· stand-alone" is folded away. */
+ * back the object it was given rather than re-deriving anything from the label. */
 window.__ccrGoSuggestion = function(s){
   if(!s || !U) return false;
   if(!document.getElementById("u-cvs")) window.__ccrUniverse();
@@ -547,8 +712,8 @@ window.__ccrGoSuggestion = function(s){
     var I=s.isl;
     searchHits=[]; searchTerm="";
     flyTo(I.x+(I.dx||0), I.y+(I.dy||0), Math.min(3.2, 190/I.r));
-    selIsl=I; showIsland(I);
-    setHint("Subject <strong>"+esc(I.d)+"</strong> \u2014 "+num(I.n)+" identities.");
+    selIsl=I; selNode=null; showIsland(I);
+    setHint("Subject <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses.");
     draw(); return true;
   }
   var isl=s.isl, nd=s.nd;
@@ -556,21 +721,19 @@ window.__ccrGoSuggestion = function(s){
   searchTerm=String(s.label||"").toLowerCase();
   // Well above NODE_ZOOM: a single identity flown to at a zoom that draws no
   // nodes is a ring nobody can see.
-  flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(NODE_ZOOM*3, 1.6));
-  selNode=nd; selIsl=isl; showNode(nd, isl);
-  setHint("<strong>"+esc(nd.t)+"</strong> \u2014 "+esc(nd.i)+" in "+esc(isl.d)+".");
+  flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(NODE_ZOOM*3, 1.8));
+  selNode=nd; selIsl=isl;
+  memFilter = s.kind==="member" ? String(s.code||"") : "";
+  showNode(nd, isl, s.kind==="member");
+  setHint(s.kind==="member"
+    ? "<strong>"+esc(s.code)+"</strong> sits under <strong>"+esc(nd.t||nd.i)+"</strong> ("+esc(nd.i)+") in "+esc(isl.d)+"."
+    : "<strong>"+esc(nd.t)+"</strong> — "+esc(nd.i)+" in "+esc(isl.d)+".");
   draw(); return true;
 };
 
 /* ── the subject list ───────────────────────────────────────────────────────
  * Sam, 2026-08-25: "The Browse by Subjects button takes me unexpectedly to the
- * package view. Seems I'm already browsing by subject" — and of that view: it
- * "doesn't allow me to filter for a subject area and doesn't have any bearing
- * on the keyword search I initially entered."
- *
- * Both are the same defect: the button promised a subject list and delivered
- * the work-packaging page, which is a different question (how the corpus
- * decomposes into sittings) wearing the same words. So the button now opens an
+ * package view. Seems I'm already browsing by subject." So the button opens an
  * actual list of subjects — filterable, seeded with whatever was typed, and
  * every row flies the map to that subject. The packaging view keeps its own,
  * differently-named door at the bottom.
@@ -581,58 +744,47 @@ window.__ccrSubjectList = function(seed){
   window.__crumbs([{label:"All disciplines", go:window.__ccrForest},
                    {label:"SkyView", go:function(){ window.__ccrUniverse(); }},
                    {label:"Subjects"}]);
-  var base=function(I){ return I.d.replace(" \u00b7 stand-alone",""); };
-  // One row per subject NAME — the stand-alone twin is the same subject, and a
-  // list that shows it twice reads as two places to go when there is one.
-  var byName={};
-  U.islands.forEach(function(I){
-    var k=base(I);
-    if(!byName[k]) byName[k]={name:k, n:0, isl:I, alone:0};
-    byName[k].n+=(I.n||0);
-    if(I.a) byName[k].alone+=(I.n||0); else if(byName[k].isl.a) byName[k].isl=I;
-  });
-  var rows=Object.keys(byName).map(function(k){ return byName[k]; })
+  var rows=U.islands.map(function(I){ return {name:I.d, n:(I.n||0), alone:(I.sa||0), isl:I}; })
     .sort(function(a,b){ return b.n-a.n || a.name.localeCompare(b.name); });
 
   host.innerHTML=
     '<h1>Every subject area</h1>'+
     '<p>'+num(rows.length)+' subject areas across '+num(U.counts.identities)+
-    ' course identities. Filter, then pick one \u2014 the map opens on it.</p>'+
+    ' course identities. Filter, then pick one — the map opens on it.</p>'+
     '<div class="u-bar">'+
       '<label class="sr" for="sl-q">Filter subjects</label>'+
-      '<input id="sl-q" type="search" placeholder="Filter subjects \u2014 e.g. english, welding, nursing" '+
+      '<input id="sl-q" type="search" placeholder="Filter subjects — e.g. english, welding, nursing" '+
         'style="flex:1 1 260px;min-width:0;padding:.45em .6em;font:inherit;'+
         'border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:8px">'+
-      '<button class="btn" type="button" id="sl-map">\u2190 Back to the map</button>'+
+      '<button class="btn" type="button" id="sl-map">Back to the map</button>'+
     '</div>'+
     '<p class="tag" id="sl-count" aria-live="polite"></p>'+
     '<div class="panel" style="margin-top:10px"><ul class="sl-list" id="sl-rows"></ul></div>'+
     '<p style="margin:1.1em 0 0;font-size:.86rem;color:var(--text-muted,#5C5C55)">'+
-      'Looking for the corpus split into sittings instead \u2014 which subjects carry '+
+      'Looking for the corpus split into sittings instead — which subjects carry '+
       'how many decisions? <button class="btn" type="button" id="sl-pack">'+
       'See the work packaged by discipline</button></p>';
 
-  ensureSubjectListCss();
   var qEl=document.getElementById("sl-q"), rowsEl=document.getElementById("sl-rows"),
       cEl=document.getElementById("sl-count");
   function paint(){
     var q=String(qEl.value||"").trim().toLowerCase();
     var hit=rows.filter(function(r){ return !q || r.name.toLowerCase().indexOf(q)>=0; });
     cEl.textContent=q
-      ? num(hit.length)+" of "+num(rows.length)+" subjects match \u201c"+q+"\u201d"
+      ? num(hit.length)+" of "+num(rows.length)+" subjects match “"+q+"”"
       : num(rows.length)+" subjects";
     if(!hit.length){
-      rowsEl.innerHTML='<li class="empty">Nothing matches \u201c'+esc(q)+'\u201d. '+
-        'The map still holds every subject \u2014 clear the filter to see them all.</li>';
+      rowsEl.innerHTML='<li class="empty">Nothing matches “'+esc(q)+'”. '+
+        'The map still holds every subject — clear the filter to see them all.</li>';
       return;
     }
     rowsEl.innerHTML=hit.slice(0,400).map(function(r,i){
       return '<li><button type="button" data-i="'+i+'"><span class="sl-n">'+esc(r.name)+
         '</span><span class="sl-c">'+num(r.n)+' identit'+(r.n===1?"y":"ies")+
-        (r.alone? ' \u00b7 '+num(r.alone)+' stand-alone':'')+'</span></button></li>';
+        (r.alone? ' · '+num(r.alone)+' stand-alone':'')+'</span></button></li>';
     }).join("")+(hit.length>400
       ? '<li class="empty">Showing the first 400 of '+num(hit.length)+
-        ' \u2014 narrow the filter to see the rest.</li>' : "");
+        ' — narrow the filter to see the rest.</li>' : "");
     Array.prototype.forEach.call(rowsEl.querySelectorAll("button"), function(b){
       b.onclick=function(){
         var r=hit[+b.dataset.i];
@@ -648,78 +800,115 @@ window.__ccrSubjectList = function(seed){
   paint();
   qEl.focus();
 };
-function ensureSubjectListCss(){
-  if(document.getElementById("u-sl-css")) return;
-  var st=document.createElement("style"); st.id="u-sl-css";
-  st.textContent=
-    ".sl-list{list-style:none;margin:0;padding:0}"+
-    ".sl-list li{border-top:1px solid var(--border,rgba(28,28,26,.14))}"+
-    ".sl-list li:first-child{border-top:none}"+
-    ".sl-list li.empty{padding:.7em .2em;color:var(--text-muted,#5C5C55);font-style:italic}"+
-    ".sl-list button{display:flex;width:100%;gap:1em;align-items:baseline;justify-content:space-between;"+
-    "background:none;border:0;font:inherit;text-align:left;cursor:pointer;padding:.5em .3em;color:inherit}"+
-    ".sl-list button:hover{background:var(--surface-subtle,#F7F5F1)}"+
-    ".sl-list button:focus-visible{outline:2px solid var(--accent-link,#0047AB);outline-offset:-2px}"+
-    ".sl-n{font-weight:600}"+
-    ".sl-c{flex:none;font-size:.82rem;color:var(--text-muted,#5C5C55);white-space:nowrap}";
-  document.head.appendChild(st);
-}
 
 window.__ccrUniverseState = function(){
   // `sel` is here so a test that clicks the canvas can assert which identity it
-  // actually landed on — a click check with no such assertion passes happily
-  // against the previous selection.
-  // sharedKeys is here so a test can assert the guard is live on real data
-  // rather than on a fixture: a payload that stops carrying collided control
-  // numbers would silently turn the check into a no-op.
+  // actually landed on. sharedKeys is here so a test can assert the guard is
+  // live on real data rather than on a fixture. The zoom bands and label counts
+  // are here because canvas text cannot be queried from the DOM.
   var shared=0;
   if(cnCourses) for(var k in cnCourses) if(cnCourses[k].length>1) shared++;
+  var orbiting=0, rim=0;
+  if(U) U.islands.forEach(function(I){ I.p.forEach(function(p){ if(p.a){ if(p.o) orbiting++; else rim++; } }); });
   return {view:view, moves:moves, sel:selNode?selNode.i:null,
           members:roster?Object.keys(roster).length:0, memberSource:memberSource,
+          memberIndex:memIndex?memIndex.length:0,
           sharedKeys:shared, canMove:canMove,
-          // Exported so a test asserts against the SAME threshold draw() uses.
-          // Hard-coding 0.20 in the harness would pass happily the day the
-          // renderer's threshold moved and the search stopped clearing it.
-          nodeZoom:NODE_ZOOM, hits:searchHits.length,
-          // Canvas text cannot be queried from the DOM, so the placed boxes are
-          // published for the harness to check for overlap directly. Counting
-          // drawn-vs-queued alone would pass a renderer that dropped every
-          // second title at random.
+          nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
+          labelStats:labelStats, hits:searchHits.length,
+          orbiting:orbiting, rim:rim, inspectorOpen:inspOpen,
+          carrying:(drag&&drag.kind==="course")?drag.code:null,
+          descBases:DESC_BASES.slice(), descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued};
 };
 
+/* ── tooltip ────────────────────────────────────────────────────────────────
+ * The quick look (Sam: "see course and cluster details on click or hover"). A
+ * tooltip follows the pointer; the inspector holds the full card on click. */
+function tipHtml(hit){
+  if(hit.nd){
+    var nd=hit.nd, isl=hit.isl;
+    var carried=(roster&&roster[nd.i]||[]).length;
+    var h='<b>'+esc(nd.i)+'</b> '+esc(nd.t||"")+
+      '<br><span class="sub">'+esc(unitsWord(nd.u))+' · '+esc(sysWord(nd))+' · '+
+      num(carried)+' college course'+(carried===1?'':'s')+' · '+esc(isl.d)+'</span>';
+    if(nd.a){
+      var par=nd.o?nodeById(nd.o):null;
+      h+='<br><span class="sub">Stand-alone'+(par
+        ? ' — orbits '+esc(par.nd.i)+' '+esc(trunc(par.nd.t,40))+': '+esc(whyWords(nd.w))
+        : ' — nothing in this subject shares a subject code or title words with it')+'</span>';
+    } else if(nd.k){
+      h+='<br><span class="sub">'+num(nd.k)+' stand-alone course'+(nd.k===1?'':'s')+' in orbit</span>';
+    }
+    return h;
+  }
+  return '<b>'+esc(hit.isl.d)+'</b><br><span class="sub">'+num(hit.isl.n)+' identities · '+
+         num(hit.isl.sa||0)+' stand-alone courses</span>';
+}
+function showTip(hit, px, py){
+  var tip=document.getElementById("u-tip"); if(!tip) return;
+  tip.innerHTML=tipHtml(hit); tip.hidden=false;
+  var W=cw(), H=ch(), tw=tip.offsetWidth||220, th=tip.offsetHeight||40;
+  var x=px+14, y=py+14;
+  if(x+tw>W-8) x=Math.max(8, px-tw-14);
+  if(y+th>H-8) y=Math.max(8, py-th-14);
+  tip.style.left=x+"px"; tip.style.top=y+"px";
+}
+function hideTip(){ var tip=document.getElementById("u-tip"); if(tip) tip.hidden=true; }
+
 function wire(){
-  window.addEventListener("resize", function(){ sizeCanvas(); draw(); });
+  window.addEventListener("resize", function(){ if(document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
   cvs.addEventListener("wheel", function(e){
     e.preventDefault();
     var r=cvs.getBoundingClientRect();
     zoomAt(e.clientX-r.left, e.clientY-r.top, e.deltaY<0?1.16:1/1.16);
   }, {passive:false});
-  document.getElementById("u-in").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1.4); };
-  document.getElementById("u-out").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1/1.4); };
+  document.getElementById("u-in").onclick=function(){ zoomAt(cw()/2,ch()/2,1.4); };
+  document.getElementById("u-out").onclick=function(){ zoomAt(cw()/2,ch()/2,1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
   var lb=document.getElementById("u-list");
-  // The SUBJECT list, not the work-packaging view. The button said "browse
-  // subjects" and opened a page about how the corpus splits into sittings —
-  // a different question wearing the same words (Sam, 2026-08-25). It carries
-  // whatever is in the search box across, because a filter that ignores what
-  // you just typed makes you type it twice.
   // Seed from WHAT IS IN THE BOX, not from the last term that was submitted.
-  // Typing and then clicking the button without pressing Enter is the ordinary
-  // case, and a filter that ignores visible text makes you type it twice.
   if(lb) lb.onclick=function(){
     var box=document.getElementById("gq");
     window.__ccrSubjectList((box && box.value) || searchTerm);
   };
+  var tg=document.getElementById("u-insp-toggle");
+  if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
+
+  /* Full screen is the browser's own, on the map section. Inside COBI the map is
+   * an iframe, which needs `allow="fullscreen"` on the frame — unified_courses.js
+   * sets it; a frame that refuses is reported, never left silent. */
+  var fs=document.getElementById("u-fs");
+  if(fs){
+    fs.onclick=function(){
+      var full=document.getElementById("u-full");
+      if(document.fullscreenElement){ if(document.exitFullscreen) document.exitFullscreen(); return; }
+      if(!full || !full.requestFullscreen){
+        setHint("This browser does not offer full screen here. The map already fills the window; "+
+                "scroll down for the panes."); return;
+      }
+      var p=full.requestFullscreen();
+      if(p && p.catch) p.catch(function(){
+        setHint("Full screen was not allowed in this frame — open SkyView in its own tab "+
+                "(the link above the map) and try again.");
+      });
+    };
+    document.addEventListener("fullscreenchange", function(){
+      var on=!!document.fullscreenElement;
+      fs.textContent=on?"Exit full screen":"Full screen";
+      fs.setAttribute("aria-pressed", on?"true":"false");
+      fitCanvas(); draw();
+    });
+  }
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
-    cvs.setPointerCapture(e.pointerId);
+    if(cvs.setPointerCapture && e.pointerId!=null){ try{ cvs.setPointerCapture(e.pointerId); }catch(err){} }
+    hideTip();
     // A course already picked up survives the press. Without this the pointerdown
     // replaced `drag` with a fresh node/island/pan grab before pointerup could
     // read it, so pressing "Drag…" and then clicking the destination — the only
     // route the hint text describes — selected the destination and moved nothing.
-    // The verb this whole view exists for could not be completed with a mouse.
     if(drag && drag.kind==="course"){ drag.px=px; drag.py=py; return; }
     var hit=pick(px,py);
     if(hit && hit.nd)      drag={kind:"node", isl:hit.isl, nd:hit.nd, x0:px, y0:py, moved:false};
@@ -734,6 +923,7 @@ function wire(){
       var ni=hit?hit.isl:null, nn=hit?hit.nd:null;
       if(ni!==hoverIsl||nn!==hoverNode){ hoverIsl=ni; hoverNode=nn; draw();
         cvs.style.cursor = nn?"pointer":ni?"grab":"default"; }
+      if(hit) showTip(hit, px, py); else hideTip();
       return;
     }
     if(drag.kind==="pan"){
@@ -746,14 +936,34 @@ function wire(){
     } else if(drag.kind==="course"){
       drag.px=px; drag.py=py; draw();
     } else if(drag.kind==="node"){
-      if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>4) drag.moved=true;
+      if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
+        drag.moved=true;
+        /* Dragging a hollow point IS picking its course up (Sam: "a visual drag
+         * and drop interface"). A stand-alone carries exactly one course, so the
+         * gesture is unambiguous; a clustered identity carries many, so its
+         * courses are dragged from the details panel instead. */
+        if(drag.nd.a){
+          var m=(roster&&roster[drag.nd.i]||[])[0];
+          if(m && !emptied(drag.nd)){
+            var gate=canMove(m.cn);
+            if(!gate.ok){ setHint(sharedKeyReason(m.cn, m.n, gate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y}; return; }
+            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd};
+            setHint("Carrying <strong>"+esc(m.n)+"</strong> ("+esc(m.c)+") — drop it on the identity it belongs to.");
+            draw();
+          }
+        }
+      }
     }
   });
   cvs.addEventListener("pointerup", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
     if(drag && drag.kind==="course"){
       var hit=pick(px,py);
-      if(hit && hit.nd) applyMove(drag.cn, drag.code, drag.college, hit.nd.i);
+      if(hit && hit.nd && drag.fromNode && hit.nd===drag.fromNode){
+        // Released where it started: a click on the hollow point, not a move.
+        selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); drag=null; draw(); return;
+      }
+      if(hit && hit.nd) applyMove(drag.cn, drag.code, drag.college, hit.nd.i, drag.d);
       else setHint("Dropped on empty space — nothing moved.");
       drag=null; draw(); return;
     }
@@ -761,34 +971,26 @@ function wire(){
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
     drag=null; draw();
   });
+  cvs.addEventListener("pointerleave", function(){ hideTip(); });
   /* The accelerator for the button in the panel. It follows the button rather
-   * than replacing it: a double-click is undiscoverable, is not reachable from
-   * a keyboard, and on 154 of the 159 subjects here there is nothing to open —
-   * so on its own it would be a gesture that usually appears to do nothing. */
+   * than replacing it: a double-click is undiscoverable and not reachable from a
+   * keyboard, and on most subjects there is nothing to open yet. */
   cvs.addEventListener("dblclick", function(e){
     var r=cvs.getBoundingClientRect();
     var hit=pick(e.clientX-r.left, e.clientY-r.top);
     if(!hit) return;
     var d=hasWorkSurface(hit.isl);
     if(d){ window.__ccrDiscipline(d); return; }
-    // Say so. Silence here is indistinguishable from a broken page.
     selIsl=hit.isl; selNode=null; showIsland(hit.isl);
-    setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet \u2014 the "+
+    setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet — the "+
             "grouped decision view covers "+
             (A&&A.detail?num(Object.keys(A.detail).length):"a few")+" subjects so far.");
     draw();
   });
-  /* Keyboard operation of the map itself, not just the frame.
-   *
-   * Arrows panned and +/- zoomed, and there was NO key that reached a subject or
-   * an identity — so everything the view exists for (select it, read its panel,
-   * pick a course up) needed a mouse. That was survivable while the DOM list was
-   * the way in; it is not survivable now the map is the landing view, because
-   * the tab's front door would be the one surface a keyboard cannot operate.
-   *
-   * Tab/Shift-Tab step through subjects, Enter opens the selected one, and once
-   * inside a subject Tab steps through its identities. Escape steps back out.
-   * Arrows keep panning — a reader who wants the frame moved still can. */
+  /* Keyboard operation of the map itself, not just the frame. Tab/Shift-Tab step
+   * through subjects, Enter opens the selected one, and once inside a subject Tab
+   * steps through its identities. Escape steps back out (or drops a carried
+   * course). Arrows pan, +/- zoom. */
   var kbIsl=-1, kbNode=-1, kbInside=false;
   function kbSubject(dir){
     kbIsl=(kbIsl+dir+U.islands.length)%U.islands.length;
@@ -797,7 +999,7 @@ function wire(){
     selIsl=isl; selNode=null;
     flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
     showIsland(isl);
-    setHint("Subject <strong>"+esc(isl.d)+"</strong> \u2014 "+num(isl.n)+
+    setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+num(isl.n)+
             " identities. <kbd>Enter</kbd> to step into it, <kbd>Tab</kbd> for the next subject.");
   }
   function kbIdentity(dir){
@@ -808,19 +1010,16 @@ function wire(){
     // is not drawn at all — the same floor the search has to clear.
     flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(view.k, NODE_ZOOM*3));
     showNode(nd, isl);
-    setHint("<strong>"+esc(nd.t||nd.i)+"</strong> \u2014 "+esc(nd.i)+
+    setHint("<strong>"+esc(nd.t||nd.i)+"</strong> — "+esc(nd.i)+
             " ("+num(kbNode+1)+" of "+num(isl.p.length)+" in "+esc(isl.d)+
             "). <kbd>Esc</kbd> to leave this subject.");
   }
   /* Two levels, and which one Tab moves in is held EXPLICITLY. Deriving it from
-     "have we got a node yet" made Enter unable to enter: at island level there
-     is no node by definition, so the same test that meant "step between
-     subjects" also swallowed the keypress meant to go inside one. */
+     "have we got a node yet" made Enter unable to enter. */
   function kbStep(dir){
     if(kbIsl<0 || !kbInside) kbSubject(dir);
     else kbIdentity(dir);
   }
-
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
     if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
@@ -829,6 +1028,7 @@ function wire(){
       return;
     }
     if(e.key==="Escape"){
+      if(drag && drag.kind==="course"){ drag=null; setHint("Put the course back — nothing moved."); draw(); e.preventDefault(); return; }
       if(kbInside){
         kbInside=false; kbNode=-1; selNode=null;
         var isl=U.islands[kbIsl];
@@ -842,108 +1042,109 @@ function wire(){
     if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowDown"){ view.y-=step; draw(); e.preventDefault(); }
-    if(e.key==="+"||e.key==="="){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1.4); e.preventDefault(); }
-    if(e.key==="-"){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1/1.4); e.preventDefault(); }
+    if(e.key==="+"||e.key==="="){ zoomAt(cw()/2,ch()/2,1.4); e.preventDefault(); }
+    if(e.key==="-"){ zoomAt(cw()/2,ch()/2,1/1.4); e.preventDefault(); }
   });
 }
 function setHint(t){ var el=document.getElementById("u-hint"); if(el) el.innerHTML=t; }
 
 /* ── keyword zoom ────────────────────────────────────────────────────────── */
+function memberHits(term){
+  if(!memIndex) return [];
+  var digits=/^(ccc)?0*(\d{3,})$/.exec(term);
+  var wanted=digits?String(parseInt(digits[2],10)):null;
+  var out=[], seen={};
+  for(var m=0;m<memIndex.length;m++){
+    var r=memIndex[m];
+    var ok = wanted ? r.d===wanted : (r.lc===term || r.lc.indexOf(term)===0 || (r.lc.indexOf(term)>=0 && term.length>=4));
+    if(!ok) continue;
+    var h=nodeById(r.id); if(!h || seen[r.id]) continue;
+    seen[r.id]=1;
+    out.push({id:r.id, x:h.nd.x+(h.isl.dx||0), y:h.nd.y+(h.isl.dy||0), isl:h.isl, nd:h.nd, code:r.code});
+    if(out.length>=300) break;
+  }
+  return out;
+}
 function doSearch(raw){
   var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
   U.islands.forEach(function(I){
     I.p.forEach(function(nd){
-      if(nd.t.toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
+      if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         searchHits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
     });
   });
   /* A SUBJECT NAME WINS, AND IT WINS BEFORE COURSE TITLES DO. Typing part of a
-   * subject's name means "take me there".
-   *
-   * The old rule flew to a subject only when the matches collapsed to ONE base
-   * name, and otherwise fell through to the course-title hits. That is how
-   * "english as a second" landed on INTERDISCIPLINARY STUDIES (Sam, 2026-08-25):
-   * the term prefixes three real spellings of one subject — "English as a Second
-   * Language", "… (ESL)", "… Noncredit 53412" — so the one-base test failed, and
-   * the fallback then picked whichever subject happened to carry the most
-   * incidental title matches. Landing on a subject the term never named is worse
-   * than landing on the wrong one of three subjects it did.
-   *
-   * So: rank the subject matches into tiers, keep the best non-empty tier, and
-   * fly WITHIN it. Course titles now decide the destination only when NO subject
-   * name matches at all. */
-  var base=function(I){ return I.d.replace(" \u00b7 stand-alone",""); };
-  var lcb=function(I){ return base(I).toLowerCase(); };
+   * subject's name means "take me there". Tiers decide: exact → prefix →
+   * contains, best non-empty tier wins, and course titles choose the destination
+   * only when no subject name matches at all. */
+  var lcb=function(I){ return I.d.toLowerCase(); };
   var named=U.islands.filter(function(I){ return lcb(I).indexOf(term)>=0; });
   var tierOf=function(I){ var n=lcb(I); return n===term?0 : n.indexOf(term)===0?1 : 2; };
   if(named.length){
     var bestTier=named.reduce(function(m,I){ return Math.min(m,tierOf(I)); }, 9);
     named=named.filter(function(I){ return tierOf(I)===bestTier; });
-    var bases={}; named.forEach(function(I){ bases[base(I)]=1; });
-    var bnames=Object.keys(bases);
+    var bnames=named.map(function(I){ return I.d; });
     /* VARIANTS OF ONE SUBJECT ARE ONE SUBJECT. The corpus carries near-identical
-     * spellings that EXTEND one another (the three ESL names above), and for a
-     * term prefixing all of them the SHORTEST is the one the others qualify.
+     * spellings that EXTEND one another (three ESL names), and for a term
+     * prefixing all of them the SHORTEST is the one the others qualify.
      * "Biology" vs "Biological Sciences" is NOT this — neither extends the other
      * — so that stays an honest ambiguity and takes the branch below. */
     var shortest=bnames.slice().sort(function(a,b){ return a.length-b.length; })[0];
     var family=bnames.every(function(n){ return n.toLowerCase().indexOf(shortest.toLowerCase())===0; });
     var pick;
     if(bnames.length===1 || family){
-      // Prefer the clustered island over its stand-alone twin: the stand-alone
-      // side asserts no equivalence, so it is not where curation happens.
-      pick=named.filter(function(I){ return base(I)===shortest && !I.a; })[0]
-        || named.filter(function(I){ return base(I)===shortest; })[0]
-        || named.filter(function(I){ return !I.a; })[0] || named[0];
+      pick=named.filter(function(I){ return I.d===shortest; })[0] || named[0];
     } else {
       /* GENUINELY SEVERAL SUBJECTS ("art" → Art, Culinary Arts, Theater Arts).
-       * Picking one for the curator is a guess — but the old fallback guessed
-       * too, and guessed a subject the term had not named at all. Go to the
-       * biggest and NAME the others, so the guess is visible and correctable.
-       * The suggestion list is the real answer here: it lets the curator choose
-       * BEFORE pressing Enter, and this branch is only what happens if they
-       * don't. */
+       * Go to the biggest and NAME the others, so the guess is visible and
+       * correctable. The suggestion list is the real answer here. */
       pick=named.slice().sort(function(a,b){ return (b.n||0)-(a.n||0); })[0];
     }
     var k=Math.min(3.2, 190/pick.r);
     flyTo(pick.x+(pick.dx||0), pick.y+(pick.dy||0), k);
-    selIsl=pick; showIsland(pick);
-    var others=bnames.filter(function(n){ return n!==base(pick); });
-    // Only claim rings the renderer will actually draw. Below NODE_ZOOM draw()
-    // renders no nodes at all, and "ringed in red" over a canvas with nothing
-    // on it is the report that sent Sam looking for a rendering bug.
+    selIsl=pick; selNode=null; showIsland(pick);
+    var others=bnames.filter(function(n){ return n!==pick.d; });
+    // Only claim rings the renderer will actually draw.
     var ringed=searchHits.length && view.k>=NODE_ZOOM;
     setHint("Subject <strong>"+esc(pick.d)+"</strong> — "+num(pick.n)+" identities."+
-      (others.length ? " Also matching: <strong>"+others.slice(0,3).map(esc).join("</strong> \u00b7 <strong>")+
-        "</strong>"+(others.length>3?" \u00b7 …":"")+" — pick one from the search suggestions." : "")+
+      (others.length ? " Also matching: <strong>"+others.slice(0,3).map(esc).join("</strong> · <strong>")+
+        "</strong>"+(others.length>3?" · …":"")+" — pick one from the search suggestions." : "")+
       (ringed ? " <strong>"+num(searchHits.length)+"</strong> course"+
-        (searchHits.length===1?"":"s")+" here also match \u201c"+esc(term)+"\u201d by name, ringed in red." : ""));
+        (searchHits.length===1?"":"s")+" here also match “"+esc(term)+"” by name, ringed in red." : ""));
     draw();
     return;
+  }
+  /* No subject named. A college course's code or control number is the other
+   * thing a curator types — "MATH 110", "CCC000123456". Its hits ring the
+   * identities that carry it. */
+  var mh=memberHits(term), mcode=null;
+  if(mh.length){
+    var have={}; searchHits.forEach(function(h){ have[h.id]=1; });
+    mh.forEach(function(h){ if(!have[h.id]){ searchHits.push(h); have[h.id]=1; } });
+    mcode=mh[0].code;
   }
   if(!searchHits.length){ setHint("Nothing matches “"+esc(term)+"”."); draw(); return; }
   var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
   var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
   var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
     "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
-    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" \u00b7 ")+
-    (names.length>4?" \u00b7 …":"")+".";
+    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
+    (names.length>4?" · …":"")+"."+
+    (mh.length?" "+num(mh.length)+" of them carry a college course numbered like that.":"");
   var xs=searchHits.map(function(h){return h.x;}), ys=searchHits.map(function(h){return h.y;});
   var cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/2;
   var cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/2;
   var spread=Math.max(90, Math.max(Math.max.apply(null,xs)-Math.min.apply(null,xs),
                                    Math.max.apply(null,ys)-Math.min.apply(null,ys)));
-  var fit=Math.min(3.2, (cvs.clientWidth*0.62)/spread);
+  var fit=Math.min(3.2, (cw()*0.62)/spread);
   if(fit>NODE_ZOOM){
     flyTo(cx,cy,fit);
     setHint(head+" Ringed in red.");
   } else {
     /* The hits do not fit in one view at any zoom that draws them. Go to the
-     * densest subject rather than framing them all invisibly, and say which —
-     * "ringed in red" over a canvas with no nodes on it is the report that
-     * sent Sam looking for a rendering bug. */
+     * densest subject rather than framing them all invisibly, and say which. */
     var top=searchHits.filter(function(h){return h.isl.d===names[0];});
     var tx=top.reduce(function(a,h){return a+h.x;},0)/top.length;
     var ty=top.reduce(function(a,h){return a+h.y;},0)/top.length;
@@ -951,49 +1152,54 @@ function doSearch(raw){
     setHint(head+" They are too far apart to ring in one view — showing <strong>"+
       esc(names[0])+"</strong>. Search a subject name to go straight to it.");
   }
-  if(searchHits.length===1){ selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
-                             showNode(selNode, selIsl); }
+  if(searchHits.length===1){
+    selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
+    memFilter = mcode && mh.length===1 ? mcode : "";
+    showNode(selNode, selIsl, !!memFilter);
+    flyTo(selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0), Math.max(view.k, NODE_ZOOM*3));
+  }
   draw();
 }
 
 /* ── panels ─────────────────────────────────────────────────────────────── */
+function chipFor(nd){
+  var s=SYS[nd.s]||SYS[3];
+  return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
+}
+function goNode(id){
+  var h=nodeById(id); if(!h) return;
+  selNode=h.nd; selIsl=h.isl; memFilter="";
+  flyTo(h.nd.x+(h.isl.dx||0), h.nd.y+(h.isl.dy||0), Math.max(view.k, NODE_ZOOM*3, 1.8));
+  showNode(h.nd, h.isl);
+}
 function showIsland(isl){
+  openInspector();
   var el=document.getElementById("u-detail");
-  var top=isl.p.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
+  var idents=isl.p.filter(function(p){ return !p.a; });
+  var top=idents.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
   el.innerHTML="<h3>"+esc(isl.d)+"</h3>"+
-    "<p>"+num(isl.n)+(isl.a?" stand-alone courses — one college each, clustered with nothing "+
-      "yet. Drag one onto the identity it belongs with.":" course identities.")+
-      " Biggest first:</p>"+
-    '<ul class="idlist">'+top.map(function(nd){
-      var s=SYS[nd.s]||SYS[3];
-      return '<li><span class="ttl">'+esc(nd.t||nd.i)+"</span> "+
-        '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span>"+
-        '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+"</div></li>";
-    }).join("")+"</ul>"+
+    "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
+      ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
+      num((isl.sa||0)-(isl.al||0))+" on the rim)":"")+".</p>"+
+    (top.length?'<p class="sub">Biggest first — pick one to open it:</p><ul class="idlist">'+top.map(function(nd){
+      return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
+        chipFor(nd)+
+        '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+
+        (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+"</div></li>";
+    }).join("")+"</ul>":'<p class="empty">No clustered identity in this subject yet — every course here is a stand-alone.</p>')+
     workSurfaceOffer(isl)+
     '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
     'beside another, then drag a course across.</p>';
-  var b=document.getElementById("u-open-work");
-  if(b) b.addEventListener("click", function(){
-    window.__ccrDiscipline(b.dataset.d);
+  Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
+    b.addEventListener("click", function(){ goNode(b.dataset.go); });
   });
+  var b=document.getElementById("u-open-work");
+  if(b) b.addEventListener("click", function(){ window.__ccrDiscipline(b.dataset.d); });
 }
-/* Sam: "double-click on a cluster in graph view to open the work surface … could
- * also have a button on graph view that does the same."
- *
- * The button leads and the double-click follows it, because the work surface
- * exists for FIVE of the 159 subjects on this map — 593 identities of 49,907.
- * The decision packs in ccr_atlas_data.json were built as a demo sample while
- * the map was built over the whole corpus. A double-click that silently does
- * nothing on 97% of the map reads as a broken page; a button can say why there
- * is nothing to open, which is the only honest thing to render here.
- *
- * Building packs for all 159 is ~39 MB inline — but that is the same shape as
- * the course descriptions, which already ship one file per discipline fetched
- * on demand. The path is known; it just has not been walked.
- */
+/* The work surface (the grouped decision view) exists for a few subjects only.
+ * The button says so rather than doing nothing. */
 function hasWorkSurface(isl){
-  var d=isl.d.replace(" \u00b7 stand-alone","");
+  var d=isl.d;
   var has = A && A.detail && A.detail[d] && A.detail[d].length &&
             typeof window.__ccrDiscipline === "function";
   return has ? d : null;
@@ -1005,30 +1211,63 @@ function workSurfaceOffer(isl){
     ' <span class="sub">'+num(A.detail[d].length)+' decision'+
     (A.detail[d].length===1?"":"s")+' to work through.</span></p>';
   return '<p class="empty" style="margin-top:.6em">No work surface for this subject yet '+
-    '\u2014 the grouped decision view is built for '+
+    '— the grouped decision view is built for '+
     (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' subjects so far, not all '+
     num(U.counts.disciplines)+'.</p>';
 }
-function showNode(nd, isl){
-  selNode=nd; selIsl=isl; memFilter="";
+/* `keepFilter`: only a jump that SET the filter (a college-course search) keeps
+ * it. A canvas click on another identity starts clean — the harness caught an
+ * 850-course card reading as empty because the previous search's code was
+ * still filtering it. */
+function showNode(nd, isl, keepFilter){
+  selNode=nd; selIsl=isl;
+  if(!keepFilter) memFilter="";
+  openInspector();
   renderNode();
   loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
 }
+function memberRow(m, isl, nd, moved){
+  var info=courseInfo(isl, m);
+  var st=descState[isl&&isl.sh];
+  var shared=coursesOn(m.cn).length>1;
+  var open=!!openDesc[m.cn];
+  var cls=(moved?"moved ":"")+(shared?"shared":"");
+  var h='<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+' data-cn="'+esc(m.cn)+'">'+
+    // The code is a button: click it for the catalog description (Sam: "course
+    // descriptions on click of a course title").
+    '<button type="button" class="cd" data-desc="'+esc(m.cn)+'" aria-expanded="'+(open?"true":"false")+
+      '" title="Show the catalog description">'+esc(m.n)+"</button>"+
+    (info&&info.title?'<span class="mt">'+esc(info.title)+"</span>":"")+
+    '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
+    (info&&info.units!=null?'<span class="un">'+esc(unitsWord(info.units))+"</span>":"")+
+    (moved?' <span class="chip ok">moved here</span>':"")+
+    (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
+      ' names '+coursesOn(m.cn).length+' different courses, so the '+
+      'CN: write key cannot say which one to move.">shared key</span>':"")+
+    '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-d="'+esc(m.d||"")+'" data-code="'+esc(m.n)+
+    '" data-col="'+esc(m.c)+'"'+(shared?' data-shared="1"':"")+' title="Pick this course up and drop it on the identity it belongs to">Drag…</button>';
+  if(open){
+    if(info && info.desc) h+='<div class="mdesc">'+esc(info.desc)+"</div>";
+    else if(st==="ok") h+='<div class="mdesc none">No catalog description for this course.</div>';
+    else if(st==="loading") h+='<div class="mdesc none">Loading the catalog description…</div>';
+    else if(st==="blocked") h+='<div class="mdesc none">Catalog descriptions need the page SERVED, not opened '+
+      'from a file. Run <code>python3 -m http.server 8000</code> in the repo root and open '+
+      '<code>http://localhost:8000/prototype/skyview.html</code>.</div>';
+    else h+='<div class="mdesc none">The descriptions for this subject did not load from any of the '+
+      'places they are published ('+esc(DESC_BASES.join(", "))+').</div>';
+  }
+  return h+"</li>";
+}
 /* The identity's own `n` is NOT a college count — it comes from whichever field
- * minted the row (corroboration members, a cluster's member_count, a C-ID
- * anchor's source college count), and it disagrees with the members actually
- * carried on 3,399 of 16,242 identities. Both are shown and neither is
- * silently preferred: `n` is what the rest of COBI reports for this row, and
- * the carried list is what a curator can actually pick up and move. */
+ * minted the row, and it disagrees with the members actually carried on a fifth
+ * of identities. Both are shown and neither is silently preferred. */
 function renderNode(){
   var nd=selNode, isl=selIsl;
   var el=document.getElementById("u-detail");
-  var s=SYS[nd.s]||SYS[3];
   var mine=membersOf(nd.i), total=mine.length;
   var h="<h3>"+esc(nd.t||nd.i)+"</h3>"+
-    '<p><span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span> "+
-    '<span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+num(total)+
-    " college course"+(total===1?"":"s")+" carried"+
+    "<p>"+chipFor(nd)+' <span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+
+    esc(unitsWord(nd.u))+" · "+num(total)+" college course"+(total===1?"":"s")+" carried"+
     (nd.a?' · <span class="chip mut" title="A single college\'s course that has not been '+
       'clustered with anything yet. It asserts no equivalence, so it cannot be over-merged '+
       '— it can only be dragged onto the identity it belongs with.">stand-alone</span>':"")+
@@ -1036,57 +1275,82 @@ function renderNode(){
       'elsewhere in COBI, from the field that minted it. The carried list is the forward '+
       'join onto the raw COCI course list, which cannot always place every seeded member.">'+
       "row count "+num(nd.n)+"</span>" : "")+"</p>";
+  // The orbit: where a stand-alone sits and WHY, with the accept verb beside it.
+  if(nd.a){
+    var par=nd.o?nodeById(nd.o):null;
+    if(par){
+      var m0=mine[0];
+      h+='<div class="orbit"><p>In orbit around <strong>'+esc(par.nd.t||par.nd.i)+'</strong> '+
+        '<span class="sub">('+esc(par.nd.i)+")</span> because the two share "+esc(whyWords(nd.w))+"."+
+        (nd.b?" This course carries no discipline of its own; the match was found across the whole reference.":"")+
+        ' A suggestion only — nothing is written until you move it.</p>'+
+        '<p class="row">'+(m0 && !emptied(nd)
+          ? '<button class="btn small primary" type="button" id="u-accept" data-cn="'+esc(m0.cn)+'" data-d="'+esc(m0.d||"")+
+            '" data-code="'+esc(m0.n)+'" data-col="'+esc(m0.c)+'" data-to="'+esc(par.nd.i)+'">Move '+esc(m0.n)+' into '+esc(par.nd.i)+'</button> '
+          : "")+
+        '<button class="btn small" type="button" data-go="'+esc(par.nd.i)+'">Show '+esc(par.nd.i)+'</button></p></div>';
+    } else {
+      h+='<div class="orbit rim"><p>On the rim of <strong>'+esc(isl.d)+'</strong>: no identity in this '+
+        'subject shares a local subject code or title words with it. Drag it onto the identity it '+
+        'belongs with — in this subject or, after pulling another subject alongside, in that one.</p></div>';
+    }
+  }
   if(!roster || !Object.keys(roster).length){
     h+='<p class="empty">No member payload loaded — ccr_universe_members.json is missing, '+
        'so no course can be dragged. This is not the same as an identity having no courses.</p>';
   } else if(!total){
     h+='<p class="empty">No college courses are carried for this identity'+
-       (memberSource==="sample"?' in the prototype sample. Try Welding, Automotive Technology, '+
-        'Nursing, Business or English.':'.')+'</p>';
+       (memberSource==="sample"?' in the prototype sample.':'.')+
+       (nd.a&&emptied(nd)?' Its one course was moved — see the write below the map.':'')+'</p>';
   } else {
     var q=memFilter.trim().toLowerCase();
     var shown=q ? mine.filter(function(m){
-      return (m.n+" "+m.c).toLowerCase().indexOf(q)>=0; }) : mine;
+      var info=courseInfo(isl,m);
+      return (m.n+" "+m.c+" "+(info?info.title:"")).toLowerCase().indexOf(q)>=0; }) : mine;
     var capped=shown.slice(0, MEMBER_PAGE);
-    h+='<p><input type="search" id="u-mfilter" placeholder="Filter these courses — code or college"'+
-       ' value="'+esc(memFilter)+'" style="width:100%;max-width:22em"></p>';
+    if(total>6)
+      h+='<p><input type="search" id="u-mfilter" placeholder="Filter these courses — code, title or college"'+
+         ' value="'+esc(memFilter)+'" style="width:100%;max-width:22em"></p>';
+    else if(q) h+='<p class="sub">Filtered to “'+esc(memFilter)+'”. '+
+         '<button type="button" class="linkish" id="u-mclear">Show all '+num(total)+'</button></p>';
     // A capped list must never read as a census — say what is off the end.
     if(capped.length<shown.length || shown.length<total){
       h+='<p class="sub">Showing '+num(capped.length)+' of '+num(shown.length)+
          (shown.length<total?' matching ('+num(total)+' carried)':'')+
          '. Filter to reach the rest.</p>';
     }
+    h+='<p class="sub">Click a course number for its catalog description. Drag a course onto '+
+       'a circle on the map, or press <strong>Drag…</strong> and then click the destination.</p>';
+    h+='<ul class="mlist">'+capped.map(function(m){ return memberRow(m, isl, nd, movedTo[m.cn]===nd.i); }).join("")+"</ul>";
     var st=descState[isl&&isl.sh];
-    h+='<ul class="mlist">'+capped.map(function(m){
-      var moved=movedTo[m.cn]===nd.i;
-      var d=descFor(isl, nd.i, mine.indexOf(m));
-      // Say it BEFORE the click, not only after. A curator who picks a course
-      // up, hunts for the destination and is refused on arrival has done the
-      // hard part of the work for nothing.
-      var shared=coursesOn(m.cn).length>1;
-      var cls=(moved?"moved ":"")+(shared?"shared":"");
-      return '<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+'>'+
-        '<span class="cd">'+esc(m.n)+"</span>"+
-        '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
-        (moved?' <span class="chip ok">✓ moved here</span>':"")+
-        (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
-          ' names '+coursesOn(m.cn).length+' different courses, so the '+
-          'CN: write key cannot say which one to move.">shared key</span>':"")+
-        '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-code="'+esc(m.n)+
-        '" data-col="'+esc(m.c)+'"'+(shared?' data-shared="1"':"")+'>Drag\u2026</button>'+
-        (d?'<div class="mdesc">'+esc(d)+"</div>"
-          :st==="ok"?'<div class="mdesc none">No catalog description for this course.</div>':"")+
-        "</li>";
-    }).join("")+"</ul>"+
-    (st==="loading"?'<p class="empty">Loading catalog descriptions…</p>':"")+
-    (st==="blocked"?'<p class="empty">Catalog descriptions need the page SERVED, not opened '+
-      'from a file — they are 45.7 MB and load per subject on demand. Run '+
-      '<code>python3 -m http.server 8000</code> in the repo root and open '+
-      '<code>http://localhost:8000/prototype/ccr_atlas_v1.built.html</code>.</p>':"")+
-    (st==="missing"?'<p class="empty">Catalog descriptions for this subject did not load. '+
-      'Re-run <code>python3 kb/_build_ccr_universe.py</code> to regenerate them.</p>':"")+
-    '<p class="empty" style="margin-top:.5em">Press <strong>Drag…</strong>, then click any '+
-    'course anywhere on the map — including in another subject.</p>';
+    if(st==="loading") h+='<p class="empty">Loading course titles and descriptions…</p>';
+  }
+  // The stand-alone courses in orbit around this identity: the map's suggestions,
+  // each with the verb that accepts it.
+  var orbs=nd.a?[]:orbitsOf(nd.i);
+  if(orbs.length){
+    var cap=40;
+    h+='<h4 style="margin:.9em 0 .3em">Stand-alone courses in orbit ('+num(orbs.length)+')</h4>'+
+      '<p class="sub">Each shares something with this identity; none is a member yet. '+
+      '<strong>Move here</strong> accepts the suggestion for that one course.</p>'+
+      '<ul class="orbits">'+orbs.slice(0,cap).map(function(s){
+        var m=(roster&&roster[s.i]||[])[0];
+        var gone=emptied(s);
+        var info=m?courseInfo(isl,m):null;
+        var shared=m&&coursesOn(m.cn).length>1;
+        return '<li'+(gone?' class="moved"':"")+'>'+
+          '<button type="button" class="cd" data-go="'+esc(s.i)+'" title="Open this course">'+esc(m?m.n:s.i)+"</button>"+
+          '<span class="mt">'+esc(s.t||(info&&info.title)||"")+"</span>"+
+          (m?'<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>":"")+
+          '<span class="un">'+esc(unitsWord(s.u))+"</span>"+
+          '<span class="why">'+esc(whyWords(s.w))+"</span>"+
+          (gone?' <span class="chip ok">moved</span>':
+           m?(shared?'<span class="chip warn" title="'+esc(sharedKeyReason(m.cn,m.n).replace(/<[^>]+>/g,""))+'">shared key</span>':
+             '<button class="btn small accept" type="button" data-accept="1" data-cn="'+esc(m.cn)+'" data-d="'+esc(m.d||"")+
+             '" data-code="'+esc(m.n)+'" data-col="'+esc(m.c)+'" data-to="'+esc(nd.i)+'">Move here</button>'):"")+
+          "</li>";
+      }).join("")+"</ul>"+
+      (orbs.length>cap?'<p class="sub">Showing '+cap+' of '+num(orbs.length)+' — zoom in on the map for the rest.</p>':"");
   }
   el.innerHTML=h;
   var f=document.getElementById("u-mfilter");
@@ -1095,36 +1359,66 @@ function renderNode(){
     var g=document.getElementById("u-mfilter");
     if(g){ g.focus(); g.setSelectionRange(g.value.length, g.value.length); }
   });
-  Array.prototype.forEach.call(el.querySelectorAll(".mv"), function(b){
+  var mc=document.getElementById("u-mclear");
+  if(mc) mc.addEventListener("click", function(){ memFilter=""; renderNode(); });
+  Array.prototype.forEach.call(el.querySelectorAll("[data-desc]"), function(b){
     b.addEventListener("click", function(){
-      if(b.dataset.shared){
-        setHint(sharedKeyReason(b.dataset.cn, b.dataset.code, coursesOn(b.dataset.cn)));
-        return;
-      }
-      drag={kind:"course", cn:b.dataset.cn, code:b.dataset.code, college:b.dataset.col,
-            px:cvs.clientWidth/2, py:cvs.clientHeight/2};
-      setHint("Carrying <strong>"+esc(b.dataset.code)+"</strong> — click the course it belongs to. "+
-              "Drag a subject first if it is far away.");
-      cvs.focus(); draw();
+      var cn=b.dataset.desc;
+      openDesc[cn]=!openDesc[cn];
+      if(openDesc[cn]) loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
+      renderNode();
     });
   });
+  Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
+    b.addEventListener("click", function(){ goNode(b.dataset.go); });
+  });
+  Array.prototype.forEach.call(el.querySelectorAll("[data-accept], #u-accept"), function(b){
+    b.addEventListener("click", function(){
+      applyMove(b.dataset.cn, b.dataset.code, b.dataset.col, b.dataset.to, b.dataset.d);
+    });
+  });
+  Array.prototype.forEach.call(el.querySelectorAll(".mv:not([data-accept])"), function(b){
+    function pickUp(){
+      if(b.dataset.shared){
+        setHint(sharedKeyReason(b.dataset.cn, b.dataset.code, coursesOn(b.dataset.cn)));
+        return false;
+      }
+      drag={kind:"course", cn:b.dataset.cn, d:b.dataset.d, code:b.dataset.code, college:b.dataset.col,
+            px:cw()/2, py:ch()/2};
+      setHint("Carrying <strong>"+esc(b.dataset.code)+"</strong> — drop it on the identity it "+
+              "belongs to, or click that identity. <kbd>Esc</kbd> puts it back. Drag a subject first if it is far away.");
+      draw();
+      return true;
+    }
+    /* A real drag from the panel onto the map: press, move across the canvas,
+     * release on a circle. The pointer leaves the panel and the canvas's own
+     * pointermove/pointerup take over. Keyboard users press the button (click)
+     * and then choose the destination — the same carry, completed by a click. */
+    b.addEventListener("pointerdown", function(e){
+      if(e.button!==0) return;
+      if(pickUp()) { e.preventDefault(); }
+    });
+    b.addEventListener("click", function(){ if(!(drag&&drag.kind==="course")) { if(pickUp()) cvs.focus(); } });
+    b.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); if(pickUp()) cvs.focus(); } });
+  });
 }
-function applyMove(cn, code, college, toId){
+function applyMove(cn, code, college, toId, d){
   var gate=canMove(cn);
   if(!gate.ok){ setHint(sharedKeyReason(cn, code, gate.others)); return; }
   var from=movedTo[cn]||originOf(cn);
   if(from===toId){ setHint("That course is already there."); return; }
   movedTo[cn]=toId;
   moves=moves.filter(function(m){return m.cn!==cn;});
-  moves.push({cn:cn, code:code, college:college, to:toId, from:from});
+  moves.push({cn:cn, d:d||(byCn[cn]&&byCn[cn].d)||"", code:code, college:college, to:toId, from:from});
   var t=nodeById(toId);
   setHint("Moved <strong>"+esc(code)+"</strong> ("+esc(college)+") to <strong>"+
-          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". ✓");
+          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". Recorded below the map.");
   drawWrites();
   if(selNode) renderNode();
+  draw();
 }
 function drawWrites(){
-  var el=document.getElementById("u-writes");
+  var el=document.getElementById("u-writes"); if(!el) return;
   if(!moves.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
   el.innerHTML='<div class="writes">'+moves.map(function(m){
     return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";

@@ -280,6 +280,25 @@ jobs:
       - name: Build statewide credit recs (Fact Sheet)
         run: python3 fact-sheet/_build_statewide_recs.py || echo "statewide recs build failed (non-fatal; prior artifact kept)"
 
+      # ── Step 4d: SkyView description shards → Supabase Storage ───
+      # SkyView shows a course's catalog description on click, from one JSON
+      # shard per subject area in the PUBLIC bucket `ccr-desc` (50 MB of
+      # derived text, gitignored — see kb/supabase_ccr_desc_bucket.sql and
+      # scripts/publish_skyview_desc_shards.sh). Republished whenever this run
+      # changed the artifacts the shards are cut from; skipped otherwise, and
+      # never fatal — a stale description is not a broken dashboard.
+      - name: Publish SkyView description shards (when the corpus changed)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "SUPABASE_SERVICE_KEY not set — SkyView shards left as published."; exit 0; fi
+          if git diff --quiet HEAD -- unified_courses_member_desc.js unified_courses_members.js \
+                                     unified_courses_data.js unified_courses_standalone.js; then
+            echo "Unified-courses artifacts unchanged — SkyView shards left as published."; exit 0; fi
+          ( python3 kb/_build_ccr_universe.py --shards-only && bash scripts/publish_skyview_desc_shards.sh ) \
+            || echo "::warning title=SkyView shards not published::kb/_build_ccr_universe.py --shards-only or the storage upload failed — SkyView course descriptions may lag the corpus until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
