@@ -5,6 +5,12 @@
   "_status": "SkyView, the graph view of the Common Course Reference, now does what Sam asked for on 2026-09-03. It fills the first screen with the whole reference (16,482 course identities and 33,423 stand-alone courses in 159 subject areas) and the other panes sit one scroll below; a Full screen button uses the browser's own mode. The search box at the top jumps to a subject, a course identity, a stand-alone course, or a college course typed by its code or control number. Hovering a point shows its number, title, units and identity system; clicking opens a details panel over the map where each college course's number opens its catalog description. Every stand-alone course now sits in orbit around the identity it is most aligned to (30,274 of 33,423; the 3,149 that share nothing with any identity in their subject sit on the subject's rim) as a suggestion the curator can accept with one drag or a Move here button. Nothing on the page writes to the database. The course descriptions are published to a public Supabase storage bucket by a workflow; the workflow's first run after the merge filled that bucket on 2026-09-03 (160 objects, 52.7 MB). The funding queue was measured first: the dials are still Sam's to set, CollegeID2 has still not landed in MAP, and nothing there needed a session. Also filed today: Sam wants a banner on COBI while he is working with a session so team members can drop in and observe (a to-do below), and his Business / Vocational example turned into a rule: an orbit may cross disciplines when the course is filed under a grab bag like Vocational or when nothing in its own subject fits.",
   "items": [
     {
+      "id": "s223-sam-csr-authority-codes-sheet",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Rule on the authority-codes decision sheet, 22 numbered items: whether the CSR's canonical Common SUBJ comes from C-ID and CCN, the precedence between them, the four-letter shape rule, retiring the Z band so everything that is not a C-ID or CCN is an M-ID, and the eleven disciplines whose code would change. Open it at https://claude.ai/code/artifact/589e20cd-e6ed-4c07-ba44-514e92572278 (the committed copy is docs/visuals/2026-09-03-csr-authority-codes.html; the public site does not serve docs, so a github.io link to it will not open). Reply by number: yes, edit, fold or dismiss."
+    },
+    {
       "id": "s223-sam-drive-skyview",
       "for": "Sam",
       "tab": "unified-courses",

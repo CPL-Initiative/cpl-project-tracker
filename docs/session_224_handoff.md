@@ -64,7 +64,11 @@ daily run's Step 4d. Shards are `{cn digits: [description, title, units]}`.
 4. **He wants a live-session banner on COBI** so team members can drop in and
    observe — filed as a to-do with a proposed shape, not built (NEEDS SAM ④ asks
    which link observers should follow).
-5. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
+5. **Retire the Z band** (2026-09-03): *"Everything that isn't a CID or CCN should
+   be a MID."* And his lean on the CSR: adopt the C-ID and CCN subject codes rather
+   than mint. Both are on the authority-codes decision sheet (22 items; artifact
+   link in the To-Do feed and NEEDS SAM ⑤); nothing is re-keyed until he rules.
+6. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
    re-homes membership only; SUBJ4 breakage QUEUES a re-mint; the shards belong
    on Supabase (his lean, now delivered).
 
@@ -142,3 +146,6 @@ selection** read an 850-course card as empty.
 - Never force-push `main`; the stop-hook's post-merge nag is a false positive.
 - Artifact policy: the universe payloads are hand-built and committed (the daily
   run does not rebuild them); `unified_courses_*.js` stay runner-owned.
+- **The Pages deploy prunes `docs/`** (`pages.yml`, "Assemble lean site"), so a
+  `docs/visuals/` decision sheet is handed over as a Claude artifact link, never a
+  github.io URL — the first link given today returned a 404.
