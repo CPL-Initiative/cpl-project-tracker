@@ -727,7 +727,11 @@ are what only an opened identity needs.
 shared local subject code (1.5), title words in common (8 × Dice over stemmed tokens) and — only
 after one of those fired — TOP (0.5), units (0.15) and credit type (0.05): Rule 7's two-signals
 gate, made numeric. Floor: Dice ≥ 0.25, or a shared local subject with any title overlap. A
-stand-alone that clears no floor sits on the rim, individually. Nothing is written from the page.
+stand-alone that clears no floor sits on the rim, individually. **Orbits may cross disciplines** (Sam,
+2026-09-03): a course filed under a grab bag (`GRAB_BAG` = Vocational, the no-discipline pile) is
+scored against the whole reference with a bonus for staying home (`HOME_BONUS`); any other course
+crosses only when nothing at home fits and the title match is strong (`CROSS_MIN_DICE`); such a
+point carries `h`, the discipline it is filed under. Nothing is written from the page.
 
 ⚠️ **No title is carried on a member record** (measured: 9.9 MB as full dicts · 5.5 MB with the
 title · 2.5 MB without). Titles and units travel in the description shards instead, keyed by

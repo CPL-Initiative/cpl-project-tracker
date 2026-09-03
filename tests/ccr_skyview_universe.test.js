@@ -35,16 +35,16 @@ const done = () => {
 // ── fixture: two subjects, three identities, three stand-alones ─────────────
 const U = {
   _generated_from: "fixture",
-  counts: { identities: 3, stand_alone: 3, points: 6, orbiting: 2, rim: 1, disciplines: 2,
+  counts: { identities: 3, stand_alone: 3, points: 6, orbiting: 2, orbiting_cross: 1, rim: 1, disciplines: 2,
             member_rows: 11, member_rows_all_identities: 11, described_courses: 1 },
   why_bits: { subject: 1, subj4: 2, title: 4, top: 8, units: 16, credit: 32 },
   bounds: { x0: -300, x1: 300, y0: -200, y1: 200 },
   islands: [
-    { d: "Welding", sh: "welding", x: -120, y: 0, r: 60, n: 2, sa: 2, al: 2, p: [
+    { d: "Welding", sh: "welding", x: -120, y: 0, r: 60, n: 2, sa: 2, al: 2, xin: 1, p: [
       { i: "WELD M1001", x: -120, y: 0,  t: "Welding Fundamentals",     n: 4, s: 0, f: 0, r: 0, u: 3, k: 2 },
       { i: "WELD C1000", x: -90,  y: 20, t: "Introduction to Welding",  n: 6, s: 1, f: 0, r: 1, u: 3 },
       { i: "WELD M10AA", x: -112, y: -9, t: "Welding Fundamentals Lab", n: 1, s: 0, f: 0, r: 0, u: 1, a: 1, o: "WELD M1001", q: 5.1, w: 5 },
-      { i: "WELD M10AB", x: -128, y: 9,  t: "Pipe Welding",             n: 1, s: 0, f: 0, r: 0, u: 2, a: 1, o: "WELD M1001", q: 2.2, w: 4 },
+      { i: "WELD M10AB", x: -128, y: 9,  t: "Pipe Welding",             n: 1, s: 0, f: 0, r: 0, u: 2, a: 1, o: "WELD M1001", q: 2.2, w: 4, h: "Vocational" },
     ] },
     { d: "Art", sh: "art", x: 150, y: 0, r: 50, n: 1, sa: 1, al: 0, p: [
       { i: "ARTS M1001", x: 150, y: 0,  t: "Drawing",       n: 3, s: 0, f: 0, r: 0, u: 3 },
@@ -145,8 +145,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     /Reset view/.test(text("#u-reset")) && /Browse subjects/.test(text("#u-list")));
   check("(A) the legend explains the hollow point in words",
     /stand-alone course, in orbit/.test(text(".u-legend")));
-  check("(A) the intro states orbiting and rim counts from the payload",
-    /2 of the stand-alones orbit/.test(text("#u-below")) && /1 share no subject code/.test(text("#u-below")));
+  check("(A) the intro states orbiting, cross and rim counts from the payload",
+    /2 of the stand-alones orbit/.test(text("#u-below")) && /1 of them in another subject/.test(text("#u-below"))
+    && /1 share nothing with any identity/.test(text("#u-below")), text("#u-below").slice(0, 400));
   const s0 = st();
   check("(A) the member index covers every college course", s0.memberIndex === 11, String(s0.memberIndex));
   check("(A) orbiting and rim are counted from the points", s0.orbiting === 2 && s0.rim === 1);
@@ -202,6 +203,13 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     st().moves.length === 1 && st().moves[0].cn === "CCC000000301" && st().moves[0].to === "WELD M1001"
     && /CN:CCC000000301\s+merge_into\s+WELD M1001/.test(text("#u-writes")), text("#u-writes"));
   check("(E) the emptied stand-alone says its course was moved", /moved/.test(text("#u-detail")));
+
+  // ── (E2) a satellite filed under another subject says so ──────────────────
+  w.__ccrGoSuggestion({ kind: "course", isl: PU.islands[0], nd: PU.islands[0].p[3], label: "x" });
+  check("(E2) ⭐ a cross-discipline orbit says which subject the course is filed under",
+    /filed under Vocational/.test(text("#u-detail .orbit")) && /closest match in the whole reference is here, in Welding/.test(text("#u-detail .orbit")),
+    text("#u-detail .orbit").slice(0, 200));
+  check("(E2) the state counts it as a cross orbit", st().crossOrbits === 1, String(st().crossOrbits));
 
   // ── (F) the parent lists its orbiting courses, each with 'Move here' ───────
   w.__ccrGoSuggestion({ kind: "course", isl: PU.islands[0], nd: PU.islands[0].p[0], label: "x" });
@@ -269,6 +277,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(K) …and how many stand-alones orbit it", /2 stand-alone courses in orbit/.test(tip.textContent));
   pointer("pointermove", 480 + (-128 + 120) * 3, 300 + 9 * 3);   // the satellite WELD M10AB
   check("(K) hovering a stand-alone names its parent and the reason", /Stand-alone/.test(tip.textContent) && /orbits WELD M1001/.test(tip.textContent) && /words in common/.test(tip.textContent), tip.textContent);
+  check("(K) …and the subject it is filed under when that is elsewhere", /filed under Vocational/.test(tip.textContent), tip.textContent);
   pointer("pointermove", 5, 5);
   check("(K) leaving the points hides the tooltip", tip.hidden);
 

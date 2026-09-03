@@ -4,10 +4,10 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 396,
+  "file_datasets": 398,
   "external_services": 137,
-  "consumers": 305,
-  "workflows": 32,
+  "consumers": 306,
+  "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
  },
@@ -1064,7 +1064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1250
+     "line": 1255
     }
    ],
    "main_committers": []
@@ -5518,6 +5518,13 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:skyview-desc-shards.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11854,7 +11861,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 616
+     "line": 669
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -11881,7 +11888,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 617
+     "line": 670
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12061,6 +12068,26 @@
       "college-briefing",
       "implementation-funding"
      ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/publish_skyview_desc_shards.sh": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:skyview-desc-shards.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": true,
@@ -12387,6 +12414,19 @@
    "main_committers": []
   },
   "file:tests/ccr_universe_members_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_universe_orbits_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -12919,7 +12959,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 628
+     "line": 681
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
@@ -13101,7 +13141,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 654
+     "line": 707
     }
    ],
    "producers": [
@@ -13157,7 +13197,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 629
+     "line": 682
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13227,7 +13267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 645
+     "line": 698
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -16772,6 +16812,7 @@
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
     "tests/ccr_universe_members_test.py",
+    "tests/ccr_universe_orbits_test.py",
     "tests/docs_audit_test.py",
     "tests/docs_index_build_test.py",
     "tests/american_spelling_test.py",
@@ -16979,6 +17020,19 @@
    "crons": [],
    "scripts": [
     "chatbox/preflight_bgca.sh"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "skyview-desc-shards.yml": {
+   "name": "Publish SkyView description shards",
+   "crons": [],
+   "scripts": [
+    "kb/_build_ccr_universe.py",
+    "scripts/publish_skyview_desc_shards.sh"
    ],
    "adds": [],
    "push": null,

@@ -61,6 +61,8 @@ check("stemming folds swimming/swim and studies/study",
 check("title tokens drop stopwords and bare level numbers",
       B.toks("Introduction to Swimming Conditioning 4") == {"swim", "condition"},
       str(B.toks("Introduction to Swimming Conditioning 4")))
+check("a lone letter is noise, not a word (3-D / 2-D)",
+      B.toks("3-D Design & Fabrication") == {"design", "fabrication"}, str(B.toks("3-D Design & Fabrication")))
 
 idents = [
     row("WELD M1001", "Welding Fundamentals", ["WELD"], members=6),
@@ -108,6 +110,66 @@ marginal = row("KINE M1003", "Swimming for Fitness", ["PE"], members=4, top="083
 h3 = B.align_standalones([marginal, weak], [sa])
 check("a marginal title gap (0.40 vs 0.33 Dice) yields to shared subject, TOP and units",
       h3["KINE M10ZZ"][0] == "KINE M1002", str(h3))
+
+# ── 1b. orbits may cross disciplines ─────────────────────────────────────────
+# Sam, 2026-09-03: Business courses sit under Business while others sit under
+# Vocational (a noncredit practice); a vocational business course should orbit
+# Business or Small Business. "vocational is a big grab bag of noncredit courses
+# and many need to stay there and some need to be moved to a MID course in
+# another discipline." Two rules, both asserted: a grab-bag course is scored
+# against the whole reference with a bonus for staying home; any other course
+# leaves its subject only when nothing at home fits AND a strong title match
+# exists elsewhere.
+print("\n1b. orbits may cross disciplines (a grab bag looks everywhere; others only when home has nothing)")
+rows2 = [
+    row("BUSI M1001", "Starting a New Business", ["BUS"], members=5, disc="Business", top="0506.40", units=3.0),
+    row("VOCE M9001", "Vocational Skills Lab", ["VOC"], members=2, disc="Vocational", top="4930.00", units=0.0, credit="Noncredit"),
+    row("VOCE M9002", "Home-Based Business Basics", ["VOC"], members=2, disc="Vocational", top="4930.00", units=0.0, credit="Noncredit"),
+    row("ENGL M1001", "Composition and Rhetoric", ["ENGL"], members=9, disc="English"),
+    row("READ M1001", "Reading Skills Development", ["READ"], members=4, disc="Reading"),
+]
+sas2 = [
+    row("VOCE M90AA", "Entrepreneur Start-Up and Business Registration", ["VOC ED"], members=1, disc="Vocational",
+        top="4930.00", units=0.0, credit="Noncredit", kind="Stand-Alone"),
+    row("VOCE M90AB", "Vocational Skills Workshop", ["VOC ED"], members=1, disc="Vocational",
+        top="4930.00", units=0.0, credit="Noncredit", kind="Stand-Alone"),
+    row("VOCE M90AC", "Business Basics for the Trades", ["VOC ED"], members=1, disc="Vocational",
+        top="4930.00", units=0.0, credit="Noncredit", kind="Stand-Alone"),
+    row("ENGL M10AA", "Reading Skills Development Lab", ["ENGL"], members=1, disc="English", kind="Stand-Alone"),
+    row("ENGL M10AB", "Development of the Novel", ["ENGL"], members=1, disc="English", kind="Stand-Alone"),
+    # One shared word on a two-word title is Dice 0.5 — not enough to leave your subject.
+    row("ENGL M10AC", "Mediation Skills", ["ENGL"], members=1, disc="English", kind="Stand-Alone"),
+    # …but an identical title elsewhere is (the whole title agrees).
+    row("ENGL M10AD", "Reading Skills Development", ["ENGL"], members=1, disc="English", kind="Stand-Alone"),
+]
+_o, _bd, _sd, sats2, rim2, _di, stats2 = B.group_corpus(rows2, sas2)
+def parent_of(sid):
+    for pid, lst in sats2.items():
+        for item in lst:
+            if item[0]["id"] == sid:
+                return pid, (item[2] if len(item) > 2 else None)
+    return None, None
+check("⭐ a vocational business course orbits the Business identity, and says it is filed under Vocational",
+      parent_of("VOCE M90AA") == ("BUSI M1001", "Vocational"), str(parent_of("VOCE M90AA")))
+check("a vocational course that fits at home stays home (no cross flag)",
+      parent_of("VOCE M90AB") == ("VOCE M9001", None), str(parent_of("VOCE M90AB")))
+check("⭐ a tie between home and away stays home — the home bonus (\"many need to stay there\")",
+      parent_of("VOCE M90AC") == ("VOCE M9002", None), str(parent_of("VOCE M90AC")))
+check("⭐ a course with nothing at home and a STRONG title match elsewhere orbits there, flagged",
+      parent_of("ENGL M10AA") == ("READ M1001", "English"), str(parent_of("ENGL M10AA")))
+check("a course with nothing at home and only a weak match elsewhere stays on its rim",
+      parent_of("ENGL M10AB") == (None, None) and any(r["id"] == "ENGL M10AB" for r in rim2["English"]),
+      str(parent_of("ENGL M10AB")))
+check("⭐ one shared word on a two-word title does not carry a course across (Mediation Skills stays)",
+      parent_of("ENGL M10AC") == (None, None) and any(r["id"] == "ENGL M10AC" for r in rim2["English"]),
+      str(parent_of("ENGL M10AC")))
+check("an identical title elsewhere does (whole-title agreement)",
+      parent_of("ENGL M10AD") == ("READ M1001", "English"), str(parent_of("ENGL M10AD")))
+check("the cross count is three", stats2["aligned_cross"] == 3, str(stats2["aligned_cross"]))
+pts2, _r2 = B.layout_island([rows2[0]], sats2, [])
+cross_pt = [p for p in pts2 if p["i"] == "VOCE M90AA"]
+check("the cross-discipline satellite is drawn in the parent's island carrying h",
+      len(cross_pt) == 1 and cross_pt[0].get("h") == "Vocational" and cross_pt[0].get("o") == "BUSI M1001")
 
 # ── 2. the geometry ──────────────────────────────────────────────────────────
 print("\n2. geometry — rings, footprints and the rim never overlap")
@@ -220,6 +282,16 @@ else:
               for k, a in enumerate(islands) for b in islands[k + 1:]))
     check("the why-bits table ships with the payload for the client to decode",
           U.get("why_bits", {}).get("title") == B.W_TITLE)
+    cross = [(i["d"], p) for i in islands for p in i["p"] if p.get("h")]
+    check(f"cross-discipline orbits exist and are counted ({len(cross):,})",
+          len(cross) > 0 and c.get("orbiting_cross") == len(cross), f"counts say {c.get('orbiting_cross')}")
+    check("a cross-discipline satellite is never drawn in the island it is filed under",
+          all(d != p["h"] for d, p in cross))
+    check("every island's xin matches its cross-filed satellites",
+          all(i.get("xin", 0) == sum(1 for p in i["p"] if p.get("h")) for i in islands))
+    voc = [p for d, p in cross if p["h"] == "Vocational"]
+    check(f"Vocational courses orbit identities in other disciplines ({len(voc):,}) — Sam's example",
+          len(voc) > 50)
 
 print()
 if FAILURES:

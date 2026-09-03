@@ -610,6 +610,21 @@ function serve() {
     ok("…and how many courses orbit it", /in orbit/.test(tipText));
   }
 
+  // Sam's example, 2026-09-03: a vocational business course should orbit Business
+  // or Small Business — in ANOTHER discipline's island — and say where it is filed.
+  const xo = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE; let n = 0, ex = null;
+    for (const isl of U.islands) for (const p of isl.p) if (p.a && p.h) { n++; if (!ex && p.h === "Vocational" && isl.p.length < 700) ex = { d: isl.d, id: p.i, x: p.x, y: p.y, h: p.h }; }
+    return { n, ex };
+  });
+  ok(`⭐ orbits cross disciplines (${xo.n} satellites drawn in another subject's island)`, xo.n > 0);
+  if (xo.ex) {
+    await flyClick(xo.ex, xo.ex.id);
+    const pane = await page.locator("#u-detail .orbit").textContent();
+    ok(`a Vocational course orbiting in ${xo.ex.d} says it is filed under Vocational`,
+      /filed under Vocational/.test(pane) && pane.includes(xo.ex.d));
+  }
+
   console.log("\n══ ⭐ the map fills the first screen; the panes are below it");
   // Sam, 2026-09-03: "have SkyView open full screen so users have more work
   // space and allow scroll down to see the other info you provide now".

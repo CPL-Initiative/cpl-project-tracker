@@ -890,11 +890,58 @@ first dispatch after the merge.**
   CCNs), which drew three extra points. The builder keeps the first and names
   the duplicates in its log.
 
+### ⭐ Sam's example turned into a rule: orbits cross disciplines
+
+Sam, the same afternoon: *"We have in our CCR queue Business courses that are
+assigned to the Business subject while others are assigned to Vocational subject
+(a noncredit practice), but there is a small business discipline MQ that would
+probably be a better fit for the vocational business courses--so I would want
+them to orbit around business or small business (if there are any). Note that
+vocational is a big grab bag of noncredit courses and many need to stay there
+and some need to be moved to a MID course in another discipline."*
+
+The first build could not do that: a stand-alone was scored only against the
+identities of its OWN island (corpus-wide only for the no-discipline pile).
+Measured before changing anything: *Small Business Development* is a real MQ
+discipline (25 identities, 71 stand-alones); of Vocational's 381 stand-alones,
+**264 had a clearly better parent in another discipline** ("Entrepreneur
+Start-Up and Business Registration" → a Business identity, "Entertainment
+Business – Contracts" → "The Business of Entertainment", "Basic Excel 2" →
+Office Technologies' "Beginning Excel"); and **1,882 of the 3,149 rim courses**
+had a strong title match somewhere else.
+
+Two rules, both pinned in the builder test. A course filed under a **grab bag**
+(`GRAB_BAG` = Vocational, the no-discipline pile) is scored against the whole
+reference with a bonus of 0.4 for staying home — his *"many need to stay there"*
+— so it leaves only for a clearly better parent. Any other course looks outside
+its subject only when nothing at home qualified, and then needs a title Dice of
+0.5 or more AND at least two shared title words, because leaving your own subject
+on a weak match is how a map starts lying — the first cut let one word carry a
+course across ("Mediation Skills" onto "Study Skills Lab"; the `D` of "3-D"
+matching any title with a `D`), so one-character tokens are dropped too. A cross-discipline satellite is drawn in its parent's island carrying `h`,
+the discipline it is filed under, and both the tooltip and the inspector say so.
+Result: **31,350 of 33,423 orbit (1,521 across a discipline line); the rim fell
+from 3,149 to 2,073.** Which other disciplines are grab bags is Sam's call
+(Interdisciplinary Studies is the obvious candidate) — one line each.
+
+### Also captured, on the fly
+
+- Sam wants **a banner on COBI while he is working with a session** — *"so they
+  can drop in and observe and learn how we are working together on COBI."* Filed
+  as a to-do with a proposed shape: one presence row a session writes through
+  the MCP at start and clears at sign-off, read by every COBI page; a new write
+  surface, so it routes through the governance map first.
+- Sam's **sign-off template**: the outgoing session writes the exact line he
+  pastes into the next session — *"Greetings, you are Sky[next], see Sky[you]
+  handoff [link], let's keep rolling with our queue"* — and assigns the next
+  moniker. Encoded in `CLAUDE.md`; two additions offered for his veto (the
+  session number beside the moniker, the repo path beside the link).
+
 ### Verification
 
-`tests/ccr_universe_orbits_test.py` (38 checks: the alignment floor, both
+`tests/ccr_universe_orbits_test.py` (49 checks: the alignment floor, both
 weight directions, ring geometry with no overlaps, shard keying, the committed
-payload) · `tests/ccr_skyview_universe.test.js` (66 checks, the REAL template
+payload) · `tests/ccr_skyview_universe.test.js` (69 checks, the REAL template
 and client over a six-point fixture: full bleed, one search field, all four
 suggestion kinds, member-code jump, orbit card and accept, parent's orbit list,
 shard base order, description toggle, rim, shared-key refusal, carry and Escape,

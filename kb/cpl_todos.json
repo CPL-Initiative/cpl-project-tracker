@@ -2,13 +2,19 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-03",
   "_session": "SkyOrbit, Session 223 — SkyView meets the five goals: full screen, jump to anything, details on hover and click, every stand-alone in orbit",
-  "_status": "SkyView, the graph view of the Common Course Reference, now does what Sam asked for on 2026-09-03. It fills the first screen with the whole reference (16,482 course identities and 33,423 stand-alone courses in 159 subject areas) and the other panes sit one scroll below; a Full screen button uses the browser's own mode. The search box at the top jumps to a subject, a course identity, a stand-alone course, or a college course typed by its code or control number. Hovering a point shows its number, title, units and identity system; clicking opens a details panel over the map where each college course's number opens its catalog description. Every stand-alone course now sits in orbit around the identity it is most aligned to (30,274 of 33,423; the 3,149 that share nothing with any identity in their subject sit on the subject's rim) as a suggestion the curator can accept with one drag or a Move here button. Nothing on the page writes to the database. The course descriptions are published to a public Supabase storage bucket by a workflow; that bucket is empty until the workflow's first run after the merge. The funding queue was measured first: the dials are still Sam's to set, CollegeID2 has still not landed in MAP, and nothing there needed a session.",
+  "_status": "SkyView, the graph view of the Common Course Reference, now does what Sam asked for on 2026-09-03. It fills the first screen with the whole reference (16,482 course identities and 33,423 stand-alone courses in 159 subject areas) and the other panes sit one scroll below; a Full screen button uses the browser's own mode. The search box at the top jumps to a subject, a course identity, a stand-alone course, or a college course typed by its code or control number. Hovering a point shows its number, title, units and identity system; clicking opens a details panel over the map where each college course's number opens its catalog description. Every stand-alone course now sits in orbit around the identity it is most aligned to (30,274 of 33,423; the 3,149 that share nothing with any identity in their subject sit on the subject's rim) as a suggestion the curator can accept with one drag or a Move here button. Nothing on the page writes to the database. The course descriptions are published to a public Supabase storage bucket by a workflow; that bucket is empty until the workflow's first run after the merge. The funding queue was measured first: the dials are still Sam's to set, CollegeID2 has still not landed in MAP, and nothing there needed a session. Also filed today: Sam wants a banner on COBI while he is working with a session so team members can drop in and observe (a to-do below), and his Business / Vocational example turned into a rule: an orbit may cross disciplines when the course is filed under a grab bag like Vocational or when nothing in its own subject fits.",
   "items": [
     {
       "id": "s223-sam-drive-skyview",
       "for": "Sam",
       "tab": "unified-courses",
       "text": "Open the Common Course Reference tab and drive SkyView for ten minutes, then react by number: (1) are the orbiting stand-alone courses readable or too dense around the big identities, (2) is the details panel the right width and in the right place, (3) do the labels appear at the right zoom (number first, then title, then units and system), (4) should a course that shares nothing with any identity in its subject stay on the subject's rim or orbit the biggest identity with its subject code anyway. Each answer is a one-line change."
+    },
+    {
+      "id": "s223-sam-live-banner-link",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "For the live-session banner you asked for (a banner on COBI while you are working with a session, so team members can drop in and observe): decide what link the banner should offer observers — a shared view of the Claude Code session, a Teams call, or the pull request being worked — and whether it shows on every COBI tab or only the ones the session names."
     },
     {
       "id": "s223-sam-daily-rebuild",
@@ -41,6 +47,12 @@
       "text": "Confirm the SkyView description shards are in the ccr-desc storage bucket: run the workflow named Publish SkyView description shards once the pull request has merged, read its log (it prints how many shards it published), then open the deployed SkyView, click a course number, and see a catalog description rather than a message that descriptions did not load."
     },
     {
+      "id": "s223-fable-live-session-banner",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "Build the live-session banner Sam asked for on 2026-09-03: a small Supabase table holding one presence row (who is driving, the session moniker, the lane, a link for observers, started-at and a heartbeat) that a session writes through the MCP when it starts and clears when it signs off; every COBI page reads it on load and every few minutes and shows a slim banner — for example 'Sam is working with SkyTune on SkyView now — drop in' — until the heartbeat is twenty minutes old. It is a new write surface: map it in the governance file before it ships, and keep it internal to COBI."
+    },
+    {
       "id": "s223-fable-decision-packs",
       "for": "Fable",
       "tab": "unified-courses",
@@ -51,12 +63,6 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "When a SkyView move leaves the destination identity's subject code inconsistent with its corroborated discipline, queue a re-mint candidate for the batch playbook rather than doing nothing or minting on the spot. Propose, never auto-add; a person dismisses with a reason."
-    },
-    {
-      "id": "s223-fable-probe-sweep-parity",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "The MAP probe's copy of the funding builder's column sweep is stale: it lacks Counselor_Verified, so the probe's verdict says the builder does not match a spelling the builder already reads. Add the spelling and a test that fails when the two lists differ. One small pull request."
     },
     {
       "id": "s192-fable-two-course-keys",

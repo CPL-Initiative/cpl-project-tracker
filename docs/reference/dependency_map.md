@@ -348,7 +348,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_apply_curation.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_apply_unclassified_triage.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_audit_exhibits.py` | workflows: `daily-dashboard.yml` | — |
-| `kb/_build_ccr_universe.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_build_ccr_universe.py` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `kb/_build_college_courses.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_build_cpl_pathway_ccr.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_cpl_pathway_membership.py` | workflows: `daily-dashboard.yml` | — |
@@ -569,6 +569,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `reports/CPL_Master_Report.docx` | none found | committed by: `daily-dashboard.yml` |
 | `reports/projects/*.docx` | none found | committed by: `daily-dashboard.yml` |
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html` | — |
+| `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
@@ -580,6 +581,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
@@ -775,5 +777,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 396 file
-datasets · 137 external services · 305 consumers · 32 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 398 file
+datasets · 137 external services · 306 consumers · 33 workflows · 37 tabs.

@@ -44,10 +44,13 @@ does. The signals, in the order they count:
                                 with no gatekeeper and must never lead)
 
 A stand-alone with no title overlap and no shared local subject has no honest
-parent; it is placed on the island's OUTER RIM, individually, and the inspector
-says so. A stand-alone with NO discipline at all is matched corpus-wide on its
-subject codes and title; when that finds a parent it orbits it in that
-discipline's island (marked `b`), otherwise it stays in the no-discipline island.
+parent at home. ORBITS MAY CROSS DISCIPLINES (Sam, 2026-09-03; see GRAB_BAG
+below): a course filed under a grab-bag discipline (Vocational, the no-discipline
+pile) is scored against the whole reference with a small bonus for staying home;
+any other course looks outside its subject only when nothing at home qualified,
+and then only for a strong title match. A cross-discipline satellite is drawn in
+its parent's island and carries `h`, the discipline it is filed under. What is
+left sits on its island's OUTER RIM, individually, and the inspector says so.
 
 Positions are in an abstract world space; the client maps to screen.
 
@@ -93,6 +96,31 @@ W_SUBJ, W_SUBJ4, W_TITLE, W_TOP, W_UNITS, W_CREDIT = 1, 2, 4, 8, 16, 32
 # shares it, so it would attach every stray to the biggest identity for no reason.
 ALIGN_MIN_DICE = 0.25
 
+# ORBITS MAY CROSS DISCIPLINES (Sam, 2026-09-03). "We have in our CCR queue
+# Business courses that are assigned to the Business subject while others are
+# assigned to Vocational subject (a noncredit practice), but there is a small
+# business discipline MQ that would probably be a better fit for the vocational
+# business courses--so I would want them to orbit around business or small
+# business… vocational is a big grab bag of noncredit courses and many need to
+# stay there and some need to be moved to a MID course in another discipline."
+#
+# Two rules follow. A course filed under a GRAB-BAG discipline is scored against
+# the whole reference, with a small bonus for staying home ("many need to stay
+# there") so it leaves only for a clearly better parent. A course filed under
+# any other discipline is scored at home first, and only when nothing at home
+# qualifies does it look across the reference — and then it needs a STRONG title
+# match, because leaving your own subject on a weak one is how a map starts
+# lying. Either way the point is drawn in the parent's island and carries `h`,
+# the discipline it is filed under, so the inspector can say so.
+GRAB_BAG = {"Vocational", BLANK}
+HOME_BONUS = 0.4
+CROSS_MIN_DICE = 0.5
+# …and at least two title words in common (or the whole title), because on a
+# two-word title one shared word is Dice 0.5: "Mediation Skills" would have
+# crossed to "Study Skills Lab", "Shop Steward" to "Machine Shop". Measured on the
+# first cross build, 2026-09-03.
+CROSS_MIN_SHARED = 2
+
 STOP = {
     "the", "a", "an", "and", "of", "to", "in", "for", "on", "with", "or", "at",
     "by", "from", "into", "its", "i", "ii", "iii", "iv", "v", "vi", "vii", "viii",
@@ -127,7 +155,8 @@ def toks(title):
     and 'Conditioning 3' are the same family, and a level digit is not a topic."""
     out = set()
     for w in WORD_RE.findall((title or "").lower()):
-        if w in STOP or NUM_RE.match(w):
+        # bare numbers are level markers; a lone letter ("3-D", "2-D") is noise
+        if w in STOP or NUM_RE.match(w) or len(w) < 2:
             continue
         out.add(stem(w))
     return out
@@ -186,13 +215,19 @@ def qualifies(why, d):
     return bool(why & W_SUBJ) and d > 0
 
 
-def align_standalones(idents, sas):
+def align_standalones(idents, sas, home_disc=None, home_bonus=0.0, min_dice=0.0, min_shared=0):
     """Score every stand-alone in `sas` against the identities in `idents`.
 
     Returns {stand_alone_id: (parent_id, score, why_bits)} for those that clear
     the floor; the rest are absent (the caller puts them on the rim). Candidate
     identities are found through inverted indexes on title tokens and subject
     codes, so an island of 1,000 identities is not 1,000 comparisons per course.
+
+    `home_disc` + `home_bonus`: candidates in the stand-alone's own discipline
+    score the bonus, so a grab-bag course stays home unless another discipline
+    is clearly better. `min_dice` / `min_shared`: a stricter title floor (Dice,
+    and words in common unless the titles are identical), used when a course is
+    allowed to look outside its own subject at all.
     """
     by_tok, by_subj, id_toks = defaultdict(list), defaultdict(list), []
     for k, r in enumerate(idents):
@@ -214,8 +249,12 @@ def align_standalones(idents, sas):
         for k in cand:
             r = idents[k]
             sc, why, d = score_pair(s, r, st, id_toks[k])
-            if not qualifies(why, d):
+            if not qualifies(why, d) or d < min_dice:
                 continue
+            if min_shared and d < 0.99 and len(st & id_toks[k]) < min_shared:
+                continue
+            if home_disc is not None and (r.get("disc") or BLANK) == home_disc:
+                sc += home_bonus
             key = (sc, int(r.get("members") or 0), r["id"])
             if best is None or key > best[0]:
                 best = (key, r["id"], sc, why)
@@ -302,8 +341,10 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
 
     Returns (points, radius). Points carry island-relative coordinates; the
     caller adds the island centre. Identity points: i,x,y,t,n,s,f,r,u[,k].
-    Satellite points add a:1 and o (parent id) / q (score) / w (why) — or, on
-    the rim, a:1 with no `o`.
+    Satellite points add a:1 and o (parent id) / q (score) / w (why) — plus h
+    (the discipline the course is filed under) when that is not this island —
+    or, on the rim, a:1 with no `o`. `sats_by_parent` values are
+    (row, (score, why)) or (row, (score, why), home) tuples.
     """
     plans = []
     for r in idents:
@@ -324,14 +365,15 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
         ph = phase_of(r["id"])
         for R, slots in rings:
             for (x, y) in ring_positions(cx, cy, R, slots, ph):
-                s, (score, why) = sats[si]
+                item = sats[si]
+                s, (score, why) = item[0], item[1]
+                home = item[2] if len(item) > 2 else None
                 sp = point_of(s, x, y)
                 sp.update({"a": 1, "o": r["id"], "q": score, "w": why})
-                if not s.get("disc"):
-                    sp["b"] = 1                     # carries no discipline of its own
+                if home is not None:
+                    sp["h"] = home                  # filed under another discipline
                 pts.append(sp)
                 si += 1
-                ph += 0.0
     # the rim: unaligned stand-alones on rings outside the identity pack
     R = core_r + sat_r + 4.0 if plans else 0.0
     left = list(rim_sats)
@@ -536,27 +578,37 @@ def group_corpus(rows, sa_rows):
     for r in sa_rows:
         sa_by_disc[r.get("disc") or BLANK].append(r)
 
-    sats_by_parent = defaultdict(list)          # parent id -> [(sa row, (score, why))]
+    sats_by_parent = defaultdict(list)          # parent id -> [(sa row, (score, why), home|None)]
     rim_by_disc = defaultdict(list)             # disc -> [sa row]
     disc_of_ident = {r["id"]: (r.get("disc") or BLANK) for r in rows}
-    stats = {"aligned": 0, "aligned_cross": 0, "rim": 0, "why": defaultdict(int)}
+    stats = {"aligned": 0, "aligned_cross": 0, "aligned_from_blank": 0, "rim": 0,
+             "why": defaultdict(int)}
 
     for disc, sas in sa_by_disc.items():
         idents = by_disc.get(disc, [])
-        if disc == BLANK:
-            # No discipline of its own: ask the whole corpus, but only accept a
-            # parent it shares a subject code or real title overlap with.
-            hits = align_standalones(rows, sas)
+        if disc in GRAB_BAG:
+            # A grab bag: ask the whole reference, with a bonus for staying home.
+            hits = align_standalones(rows, sas, home_disc=disc, home_bonus=HOME_BONUS)
         else:
             hits = align_standalones(idents, sas) if idents else {}
+            # Nothing at home qualified: a STRONG title match elsewhere may still
+            # give the course a parent; anything weaker stays on this island's rim.
+            left = [x for x in sas if x["id"] not in hits]
+            if left:
+                hits.update(align_standalones(rows, left, min_dice=CROSS_MIN_DICE,
+                                              min_shared=CROSS_MIN_SHARED))
         for s in sas:
             hit = hits.get(s["id"])
             if hit:
                 parent, score, why = hit
-                sats_by_parent[parent].append((s, (score, why)))
+                pdisc = disc_of_ident.get(parent, BLANK)
+                home = disc if pdisc != disc else None
+                sats_by_parent[parent].append((s, (score, why), home))
                 stats["aligned"] += 1
-                if disc == BLANK:
+                if home is not None:
                     stats["aligned_cross"] += 1
+                if disc == BLANK:
+                    stats["aligned_from_blank"] += 1
                 for bit in (W_SUBJ, W_SUBJ4, W_TITLE, W_TOP, W_UNITS, W_CREDIT):
                     if why & bit:
                         stats["why"][bit] += 1
@@ -601,6 +653,7 @@ def build_islands(order, by_disc, sa_by_disc, sats_by_parent, rim_by_disc):
             "x": round(cx, 1), "y": round(cy, 1), "r": round(r_isl, 1),
             "n": len(idents), "sa": n_sa,
             "al": sum(1 for p in pts if p.get("a") and p.get("o")),
+            "xin": sum(1 for p in pts if p.get("h")),   # drawn here, filed under another subject
             "p": pts,
         })
     xs = [p[0] for p in placed]; ys = [p[1] for p in placed]; rs = [p[2] for p in placed]
@@ -670,7 +723,8 @@ def main():
             "stand_alone": len(sa_rows),
             "points": n_ident + len(sa_rows),
             "orbiting": stats["aligned"],
-            "orbiting_from_no_discipline": stats["aligned_cross"],
+            "orbiting_cross": stats["aligned_cross"],
+            "orbiting_from_no_discipline": stats["aligned_from_blank"],
             "rim": stats["rim"],
             "disciplines": len(islands),
             "member_rows": sum(len(mem.get(i, ())) for i in placed_ids),
@@ -691,8 +745,9 @@ def main():
     c = out["counts"]
     print(f"  {c['identities']:,} identities + {c['stand_alone']:,} stand-alone courses "
           f"in {len(islands)} islands")
-    print(f"  orbiting: {c['orbiting']:,} ({c['orbiting_from_no_discipline']:,} from the "
-          f"no-discipline pile) · on the rim: {c['rim']:,}")
+    print(f"  orbiting: {c['orbiting']:,} ({c['orbiting_cross']:,} in another discipline's island, "
+          f"{c['orbiting_from_no_discipline']:,} of those from the no-discipline pile) · "
+          f"on the rim: {c['rim']:,}")
     names = {W_SUBJ: "local subject", W_SUBJ4: "subj4", W_TITLE: "title",
              W_TOP: "top", W_UNITS: "units", W_CREDIT: "credit"}
     print("  why (an orbit may carry several): " +

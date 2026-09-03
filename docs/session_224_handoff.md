@@ -8,9 +8,10 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are Session 224
 
-Suggested moniker: **SkyPack** if you build the on-demand decision packs,
-**SkyTune** if Sam's browser reactions to the orbits are the day's work.
-Predecessors: SkyLead S221 → SkyCheck S222 → **SkyOrbit S223**.
+Your moniker is **SkyTune** (assigned by SkyOrbit at sign-off, per Sam's
+2026-09-03 template): the day's work is tuning the orbits to Sam's browser
+reactions and his Business / Vocational example. Predecessors: SkyLead S221 →
+SkyCheck S222 → **SkyOrbit S223**.
 
 ## What S223 did
 
@@ -18,7 +19,7 @@ Sam's opening ask was the funding queue; it was measured empty for a session
 (dials unset in `cpl_funding_config`, `CollegeID2` on none of the four MAP views
 by probe run 33767273456, only dependabot PRs open) and he pivoted to SkyView
 with five goals, verbatim in `cpl_memory` (`sam-skyview-five-goals-2026-09-03`).
-One PR on `cpl-project-tracker` (#1441) shipped all five:
+One PR on `cpl-project-tracker` — #1441, which grew the cross-discipline orbits the same day — shipped all five:
 
 1. **The whole universe, first screen.** The canvas is full width and
    viewport-high, a **Full screen** word-button uses the browser's own mode (the
@@ -33,9 +34,12 @@ One PR on `cpl-project-tracker` (#1441) shipped all five:
    description; canvas labels grow with zoom (number > 0.95, title > 1.7, units
    and system > 2.7), collision-rejected.
 4. **Orbits.** Every stand-alone course is a hollow point on a ring around the
-   identity it is most aligned to: 30,274 of 33,423, 327 of them matched
-   corpus-wide from the no-discipline pile; 3,149 with no shared signal sit on
-   the island's rim. The "· stand-alone" twin islands are gone.
+   identity it is most aligned to: 31,350 of 33,423, and **1,521 of them in
+   another discipline's island** (Sam's Business / Vocational example — a
+   grab-bag course looks across the whole reference with a bonus for staying
+   home; any other course crosses only for a strong title match when nothing at
+   home fits; the point carries `h`, the discipline it is filed under); 2,073
+   with no shared signal sit on their island's rim. The twin islands are gone.
 5. **Drag and drop.** A hollow point drags onto its destination; a row drags
    from the inspector; **Move here** on a parent's card accepts one orbiting
    course; Escape puts a carry back. Nothing is written — the same `CN:` rows.
@@ -47,9 +51,20 @@ daily run's Step 4d. Shards are `{cn digits: [description, title, units]}`.
 
 ## Sam's decisions this run (record, don't re-derive)
 
-1. The five goals above are his words — the spec. No other ruling was made; he
-   did not drive the result in a browser during the session.
-2. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
+1. The five goals above are his words — the spec. He did not drive the result
+   in a browser during the session.
+2. **Orbits cross disciplines** (his Business / Vocational example): *"vocational
+   is a big grab bag of noncredit courses and many need to stay there and some
+   need to be moved to a MID course in another discipline."* Shipped the same
+   day; `GRAB_BAG` membership beyond Vocational is his to extend (NEEDS SAM ③).
+3. **The sign-off template is his** — the outgoing session writes the exact
+   opening line he pastes into the next session and assigns the next moniker.
+   Encoded in `CLAUDE.md`; two additions (session number, repo path) offered for
+   veto.
+4. **He wants a live-session banner on COBI** so team members can drop in and
+   observe — filed as a to-do with a proposed shape, not built (NEEDS SAM ④ asks
+   which link observers should follow).
+5. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
    re-homes membership only; SUBJ4 breakage QUEUES a re-mint; the shards belong
    on Supabase (his lean, now delivered).
 
@@ -91,10 +106,9 @@ selection** read an 850-course card as empty.
 5. **Funding carry-overs** unchanged: the day Pedro says `CollegeID2` landed
    (probe, `ppa` cutover, earn diagnostic); the dials are Sam's to set through
    the tab; NEEDS SAM ③④⑤ await his reactions.
-6. Small hygiene: `kb/_probe_lifecycle_checks.py::BUILDER_SWEEP` is a stale
-   verbatim copy — it lacks `Counselor_Verified`, so the probe's verdict says the
-   builder does not match a spelling the builder already matches. One line plus
-   a parity test; sibling branch.
+6. Done, not open: the probe's stale `BUILDER_SWEEP` copy (it lacked
+   `Counselor_Verified`) was fixed and pinned equal to the builder's tuple in
+   #1442, merged 2026-09-03 — the next probe run's verdict line is trustworthy.
 
 ## Patterns that worked
 

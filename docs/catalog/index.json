@@ -11565,8 +11565,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 197,
+   "count": 198,
    "docs": [
+    {
+     "created": "2026-09-03",
+     "governs": [],
+     "n": 224,
+     "path": "docs/session_224_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "SkyView meets the five goals; every stand-alone orbits, the shards are on Supabase, and Sam has not driven it yet",
+     "type": null,
+     "updated": "2026-09-03"
+    },
     {
      "created": "2026-09-03",
      "governs": [],
@@ -15008,5 +15021,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 763
+ "total": 764
 }

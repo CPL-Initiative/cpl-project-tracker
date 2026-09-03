@@ -543,8 +543,8 @@ window.__ccrUniverse = function(){
       '<h1>The whole Common Course Reference</h1>'+
       '<p>'+num(C.identities)+' course identities and '+num(C.stand_alone)+' stand-alone courses across '+
         num(C.disciplines)+' subject areas. '+num(C.orbiting)+' of the stand-alones orbit the identity '+
-        'they are most aligned to; '+num(C.rim)+' share no subject code or title words with anything in '+
-        'their subject and sit on its rim. Search to fly to a subject, an identity or a college course. '+
+        'they are most aligned to'+(C.orbiting_cross?' ('+num(C.orbiting_cross)+' of them in another subject\u2019s island, drawn where their closest match is)':'')+
+        '; '+num(C.rim)+' share nothing with any identity and sit on their subject\u2019s rim. Search to fly to a subject, an identity or a college course. '+
         '<strong>Drag a subject</strong> to pull it next to another, then drag a course between them — '+
         'that is how a course filed under the wrong subject gets moved to its real parent.</p>'+
       '<div class="stage">'+
@@ -808,15 +808,15 @@ window.__ccrUniverseState = function(){
   // are here because canvas text cannot be queried from the DOM.
   var shared=0;
   if(cnCourses) for(var k in cnCourses) if(cnCourses[k].length>1) shared++;
-  var orbiting=0, rim=0;
-  if(U) U.islands.forEach(function(I){ I.p.forEach(function(p){ if(p.a){ if(p.o) orbiting++; else rim++; } }); });
+  var orbiting=0, rim=0, cross=0;
+  if(U) U.islands.forEach(function(I){ I.p.forEach(function(p){ if(p.a){ if(p.o){ orbiting++; if(p.h) cross++; } else rim++; } }); });
   return {view:view, moves:moves, sel:selNode?selNode.i:null,
           members:roster?Object.keys(roster).length:0, memberSource:memberSource,
           memberIndex:memIndex?memIndex.length:0,
           sharedKeys:shared, canMove:canMove,
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
           labelStats:labelStats, hits:searchHits.length,
-          orbiting:orbiting, rim:rim, inspectorOpen:inspOpen,
+          orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           descBases:DESC_BASES.slice(), descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued};
@@ -834,7 +834,7 @@ function tipHtml(hit){
       num(carried)+' college course'+(carried===1?'':'s')+' · '+esc(isl.d)+'</span>';
     if(nd.a){
       var par=nd.o?nodeById(nd.o):null;
-      h+='<br><span class="sub">Stand-alone'+(par
+      h+='<br><span class="sub">Stand-alone'+(nd.h?' filed under '+esc(nd.h):'')+(par
         ? ' — orbits '+esc(par.nd.i)+' '+esc(trunc(par.nd.t,40))+': '+esc(whyWords(nd.w))
         : ' — nothing in this subject shares a subject code or title words with it')+'</span>';
     } else if(nd.k){
@@ -1180,7 +1180,7 @@ function showIsland(isl){
   el.innerHTML="<h3>"+esc(isl.d)+"</h3>"+
     "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
       ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
-      num((isl.sa||0)-(isl.al||0))+" on the rim)":"")+".</p>"+
+      num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another subject":"")+")":"")+".</p>"+
     (top.length?'<p class="sub">Biggest first — pick one to open it:</p><ul class="idlist">'+top.map(function(nd){
       return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
         chipFor(nd)+
@@ -1282,7 +1282,10 @@ function renderNode(){
       var m0=mine[0];
       h+='<div class="orbit"><p>In orbit around <strong>'+esc(par.nd.t||par.nd.i)+'</strong> '+
         '<span class="sub">('+esc(par.nd.i)+")</span> because the two share "+esc(whyWords(nd.w))+"."+
-        (nd.b?" This course carries no discipline of its own; the match was found across the whole reference.":"")+
+        (nd.h?(nd.h==="(no discipline yet)"
+          ? " This course carries no discipline of its own; the closest match in the whole reference is here."
+          : " This course is filed under <strong>"+esc(nd.h)+"</strong>; the closest match in the whole reference is here, in "+esc(isl.d)+".")
+          :"")+
         ' A suggestion only — nothing is written until you move it.</p>'+
         '<p class="row">'+(m0 && !emptied(nd)
           ? '<button class="btn small primary" type="button" id="u-accept" data-cn="'+esc(m0.cn)+'" data-d="'+esc(m0.d||"")+
