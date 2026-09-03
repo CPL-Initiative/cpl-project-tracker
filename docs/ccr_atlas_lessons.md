@@ -1155,6 +1155,18 @@ records sit on the June prefix their members' discipline no longer owns
 History). Materializing made a latent inconsistency visible; the next
 keep-number prefix re-key is its fix.
 
+### The Supabase re-key's pace, measured
+
+`supabase-rekey.yml` patches one pair at a time (two PostgREST requests per
+pair). Measured on 2026-09-03 against the database's own clock: about two pairs
+a second, so the recode's 10,296 pairs take about 85 minutes and the
+retirement's 4,271 about 36, run back to back under the workflow's concurrency
+group. Read the clock from the database (`select now()`) before judging a
+run's pace; a wall-clock guess from the session ran twenty minutes fast and
+briefly made the run look ten times slower than it was. A bulk path (a
+Postgres function taking the pairs as JSON, called in chunks) would make a
+re-key a matter of minutes; it is a NEXT, not a need.
+
 ### Verification
 
 `tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`
