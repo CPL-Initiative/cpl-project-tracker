@@ -1,6 +1,6 @@
 {
   "_about": "keep-number candidates that were taken (a stray already under the new code, or the fan-in pair) and the free key they were gap-filled to; plus the articulation identities-map ghosts (keys that exist only there) the recode heals or vacates",
-  "count": 253,
+  "count": 255,
   "gapfilled": [
     {
       "old_id": "FIMS M10AD",
@@ -31,6 +31,18 @@
       "wanted": "FTVE M10AQ",
       "new_id": "FTVE M10PC",
       "why": "FIMS->FTVE"
+    },
+    {
+      "old_id": "ARMN M10AA",
+      "wanted": "ARME M10AA",
+      "new_id": "ARME M10AJ",
+      "why": "Armenian: flagged: no dominant four-letter local code, keeps the CSR code"
+    },
+    {
+      "old_id": "ARMN M10AB",
+      "wanted": "ARME M10AB",
+      "new_id": "ARME M10AK",
+      "why": "Armenian: flagged: no dominant four-letter local code, keeps the CSR code"
     },
     {
       "old_id": "CHNE M10AA",

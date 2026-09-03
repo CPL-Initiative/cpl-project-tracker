@@ -1079,6 +1079,14 @@ update public.kb_curation set course_id = 'AGMA Z9004' where course_id = 'AGRI Z
 update public.kb_curation set value = 'AGMA Z9004' where field = 'merge_into' and value = 'AGRI Z9004';
 update public.kb_curation set course_id = 'ARAB M10AA' where course_id = 'ARB M10AA';
 update public.kb_curation set value = 'ARAB M10AA' where field = 'merge_into' and value = 'ARB M10AA';
+update public.kb_curation set course_id = 'FLNG M10AJ' where course_id = 'ARME M10AJ';
+update public.kb_curation set value = 'FLNG M10AJ' where field = 'merge_into' and value = 'ARME M10AJ';
+update public.kb_curation set course_id = 'FLNG M10AK' where course_id = 'ARME M10AK';
+update public.kb_curation set value = 'FLNG M10AK' where field = 'merge_into' and value = 'ARME M10AK';
+update public.kb_curation set course_id = 'ARME M10AJ' where course_id = 'ARMN M10AA';
+update public.kb_curation set value = 'ARME M10AJ' where field = 'merge_into' and value = 'ARMN M10AA';
+update public.kb_curation set course_id = 'ARME M10AK' where course_id = 'ARMN M10AB';
+update public.kb_curation set value = 'ARME M10AK' where field = 'merge_into' and value = 'ARMN M10AB';
 update public.kb_curation set course_id = 'CHIN M1005' where course_id = 'ASIA M1005';
 update public.kb_curation set value = 'CHIN M1005' where field = 'merge_into' and value = 'ASIA M1005';
 update public.kb_curation set course_id = 'JAPN M10AF' where course_id = 'ASIA M10AF';

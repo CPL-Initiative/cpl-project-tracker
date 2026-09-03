@@ -77,8 +77,12 @@ MAJORITY_FLOOR = 4
 
 # Item 17 (ruled 2026-09-03, "dismissed as inference cleanup"): these codes were
 # seen under these disciplines on mis-filed rows. They never attach here.
+# (PH, Health) left this set the same day: card 10 of the readings sheet
+# (kb/remint_series_readings_rulings_2026-09-03.json) reversed the dismissal for
+# that one pair — 30 Health identities align to C-ID PH — so PH attaches to
+# Health by majority like any other code.
 DISMISSED = {
-    ("PH", "Kinesiology"), ("PH", "Health"), ("KIN", "Health"),
+    ("PH", "Kinesiology"), ("KIN", "Health"),
     ("BIOL", "Interdisciplinary Studies"), ("POLS", "Ethnic Studies"),
     ("COMM", "Humanities"), ("ADS", "Counseling"), ("SWHS", "Counseling"),
     ("ARTS", "Photography"), ("PHYS", "Physical Sciences"),

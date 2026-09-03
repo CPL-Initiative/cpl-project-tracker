@@ -55,6 +55,7 @@
   .card dl { margin: 8px 0 0; }
   .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; color: var(--text-muted); margin-top: 10px; }
   .card dd { margin: 2px 0 0; }
+  .card dd.ruled { color: var(--text-strong); border-left: 3px solid var(--cobalt); padding-left: 10px; }
   .card dd.proposed { color: var(--text-strong); border-left: 3px solid var(--cobalt); padding-left: 10px; }
   .tablewrap { overflow-x: auto; margin: 12px 0 4px; }
   table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .95rem; }
@@ -68,7 +69,7 @@
 <main class="wrap">
 <p class="kicker" style="margin-top:28px">Common Course Reference · the re-mint series · readings from the dry runs · 2026-09-03</p>
 <h1>Re-mint Series Readings</h1>
-<p class="lede">You ruled the authority-codes sheet this morning, all twenty-two items. The session
+<p class="lede"><strong>Ruled 2026-09-03.</strong> Sam replied <q>Yes to all</q>; each card carries the verdict, recorded in <code>kb/remint_series_readings_rulings_2026-09-03.json</code>. The two applies follow in one cron window. You ruled the authority-codes sheet this morning, all twenty-two items. The session
 built the chip, then ran the two measure-first dry runs the playbook asks for before any
 apply: the recode of the eleven code changes, and the retirement of the Z band. Nothing
 is applied. The dry runs raised fourteen readings, three of them carried over from the
@@ -92,7 +93,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
   <li><b>10,292</b> ids in the recode, 10,039 keeping their number</li>
   <li><b>4,053</b> Z identities and <b>218</b> legacy anchors in the retirement</li>
   <li><b>29</b> disciplines showing a chip today</li>
-  <li><b>0</b> applied</li>
+  <li><b>14</b> ruled yes, 2026-09-03</li>
+    <li><b>0</b> applied</li>
 </ul>
 
 <div id="sheet">
@@ -112,6 +114,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     identity-level chips you scoped for later.</dd>
     <dt>Proposed</dt>
     <dd class="proposed">Yes.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -129,6 +133,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Yes: FTVE for both, Film keeps its numbers, Media Production renumbers after them,
     the pair recorded in <code>kb/discipline_aliases.json</code> like Theater.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -159,6 +165,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Yes. The 235 one-signal rows are a curator's worklist after the fold, each with the
     family the one signal proposes.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -178,6 +186,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Agriculture's residual is <code>AGRI</code>, Agricultural Production's is <code>AGPR</code>;
     both disciplines carry the five family codes. Say <code>edit: AGRI for both</code> to make the pair a fan-in instead.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -194,6 +204,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Residual, on the discipline's own code, until C-ID names a family. Say <code>edit: AGPS</code>
     to file them under plant science.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -212,6 +224,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Ornamental Horticulture keeps <code>HORT</code> and the chip. Say <code>edit: umbrella</code>
     to move it into the agriculture umbrella on <code>AGEH</code>.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -226,6 +240,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <code>ARABIC</code> 11 more. 56 rows move either way.</dd>
     <dt>Proposed</dt>
     <dd class="proposed"><code>ARAB</code>, as ruled. Say <code>edit: ARBC</code> for the measured code.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -258,6 +274,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Yes, as flagged. To hand one a four-letter code anyway, say for instance
     <code>edit: Tagalog TAGA</code>.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -274,6 +292,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Add Armenian to the file with <code>ARME</code> as its code and fold <code>ARMN</code> into it;
     the rest keep their keys until the file names them. Say <code>dismiss</code> to leave all eleven as they are.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -292,6 +312,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dt>Proposed</dt>
     <dd class="proposed">Reverse the dismissal for this one pair: Health shows <code>C-ID PH</code> beside
     <code>C-ID PHS</code>. The other item-17 pairs stay dismissed.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -310,6 +332,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dd class="proposed">A continuation band digit for credit when a bucket fills — <code>KINE M2001</code> follows
     <code>KINE M1999</code>. The band digit carries no transferability meaning today (§10 of the pipeline
     reference), the parsers accept any digit, and no id changes. Say <code>edit</code> for another shape.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -329,6 +353,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     members) with <code>origin: machine cluster</code>, so the generator, the auditor and SkyView carry it
     like any other. This is the honest end state of your ruling and the bigger apply. Say
     <code>edit: stay curation-only</code> for the smaller one.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -348,6 +374,8 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     <dd class="proposed">A curator gives the three one of the 146 MQ disciplines on the CSR tab (the next run
     folds them); the 122 become a merge worklist on the CCR tab after the fold. Say
     <code>edit: fold the 122 into their twins</code> to have the apply merge them.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
@@ -366,11 +394,12 @@ sheet; each card says what was measured and what the session proposes. Reply by 
     (<code>compute_plan</code> shared, apply equals spec), brings each back as a pull request, and lands both
     in one cron window — recode first, then the retirement — with <code>kb_curation</code> re-keyed from
     the receipts and the post-apply chain run once at the end.</dd>
+    <dt>Ruled 2026-09-03</dt>
+    <dd class="ruled">Yes.</dd>
   </dl>
 </section>
 
 </div>
 
-<p class="close">That is the whole set. Nothing moves until you reply. The three earlier readings (items 8, 13
-and 14 of the morning's sheet) are cards 1 to 3 here, so one reply covers both sheets.</p>
+<p class="close">That is the whole set, ruled yes on 2026-09-03. The three earlier readings (items 8, 13 and 14 of the morning's sheet) are cards 1 to 3 here, so the one reply covered both sheets. The two applies land in one cron window, recode first.</p>
 </main>
