@@ -496,7 +496,7 @@
           "discipline": "Office Technologies",
           "basis": "ruled",
           "rows": 15,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -509,11 +509,11 @@
       "evidence": {
         "Business": 19,
         "Computer Information Systems": 9,
+        "Office Technologies": 1,
         "Computer Science": 1,
         "English": 1,
         "Interdisciplinary Studies": 1,
-        "Management": 1,
-        "Office Technologies": 1
+        "Management": 1
       },
       "attributed": [
         {
@@ -539,9 +539,9 @@
       "attributed": [
         {
           "discipline": "Child Development/Early Childhood Education",
-          "basis": "majority",
+          "basis": "canonical",
           "rows": 7,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -654,15 +654,15 @@
         "Computer Science": 37,
         "Computer Information Systems": 35,
         "Mathematics": 2,
-        "Industrial Technology": 1,
-        "Office Technologies": 1
+        "Office Technologies": 1,
+        "Industrial Technology": 1
       },
       "attributed": [
         {
           "discipline": "Computer Science",
           "basis": "ruled",
           "rows": 37,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -897,14 +897,14 @@
           "discipline": "Film and Media Studies",
           "basis": "ruled",
           "rows": 16,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         },
         {
           "discipline": "Media Production",
           "basis": "ruled",
           "rows": 3,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -1041,17 +1041,17 @@
       "evidence": {
         "Computer Information Systems": 55,
         "Computer Science": 5,
+        "Office Technologies": 1,
         "Business": 1,
         "Administration of Justice": 1,
-        "Electronic Technology": 1,
-        "Office Technologies": 1
+        "Electronic Technology": 1
       },
       "attributed": [
         {
           "discipline": "Computer Information Systems",
           "basis": "ruled",
           "rows": 55,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -1327,8 +1327,8 @@
       "evidence": {
         "Psychology": 54,
         "Sociology": 2,
-        "Counseling": 1,
         "Child Development/Early Childhood Education": 1,
+        "Counseling": 1,
         "Education": 1
       },
       "attributed": [
@@ -1442,7 +1442,7 @@
           "discipline": "Drama/Theater Arts",
           "basis": "ruled",
           "rows": 125,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],
@@ -1569,7 +1569,7 @@
           "discipline": "Child Development/Early Childhood Education",
           "basis": "ruled",
           "rows": 1,
-          "chip": true,
+          "chip": false,
           "chip_primary": true
         }
       ],

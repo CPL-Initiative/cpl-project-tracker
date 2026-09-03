@@ -1,5 +1,5 @@
 {
-  "_status": "DRY-RUN — authority recode (items 7, 9, 10, 11, 12, 13, 14, 16 of 2026-09-03); no kb files mutated, no Supabase writes, the seed untouched.",
+  "_status": "APPLIED 2026-09-03T20:19:16Z — authority recode (items 7, 9, 10, 11, 12, 13, 14, 16 of 2026-09-03; the fourteen readings ruled yes to all). The alias map is the receipt of record and the rollback handle (read right-to-left). Per-row ground truth: _authority_recode_from stamps on minted courses + singletons.",
   "_generated_by": "kb/_authority_recode_dryrun.py",
   "_generated_at": "2026-09-03",
   "_rule": "keep the number, gap-fill only where the new key exists; Z ids move with their namespace",
@@ -84341,5 +84341,8 @@
       "how": "kept number",
       "family": "MA"
     }
-  }
+  },
+  "_applied_at": "2026-09-03T20:19:16Z",
+  "_applied_by": "kb/_authority_recode_apply.py",
+  "_plan_source": "recomputed via _authority_recode_dryrun.compute_plan at apply time; verified equal to this frozen receipt (P1)"
 }

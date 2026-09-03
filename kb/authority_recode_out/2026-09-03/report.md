@@ -2,7 +2,7 @@
 title: Authority recode — DRY-RUN (items 7, 9, 10, 11, 12, 13, 14, 16 of 2026-09-03)
 date: 2026-09-03
 session: 224 (SkyTune)
-status: DRY-RUN — nothing mutated; awaiting Sam's review of the readings below before any apply
+status: APPLIED 2026-09-03T20:19:16Z — see validation.md; Sam ruled the fourteen readings yes to all on 2026-09-03
 tags: [remint, dry-run, csr, subj4, authority-codes, rule-7]
 artifacts:
   - kb/authority_recode_out/2026-09-03/alias_map.json
