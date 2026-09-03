@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 398,
+  "file_datasets": 400,
   "external_services": 137,
-  "consumers": 306,
+  "consumers": 307,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -4653,6 +4653,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:csr_authority_codes_rulings_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:dashboard_filters.js": {
    "consumers": [
     {
@@ -6581,6 +6594,13 @@
      "line": 1324
     },
     {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
      "id": "script:kb/_subj4_apply.py",
      "kind": "script",
      "direction": "read",
@@ -6932,6 +6952,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1303
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -7579,6 +7606,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1304
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -8580,6 +8614,20 @@
      "direction": "write",
      "how": "literal",
      "line": 207
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 62
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -9686,6 +9734,13 @@
      "line": 292
     },
     {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_title_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -9711,6 +9766,26 @@
      "direction": "read",
      "how": "literal",
      "line": 83
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/authority_subject_codes.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 70
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 70
     }
    ],
    "served": true,
@@ -9828,6 +9903,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1320
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
     },
     {
      "id": "script:kb/_seed_coci_courses.py",
@@ -9968,6 +10050,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1314
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     },
     {
      "id": "script:kb/_seed_coci_courses.py",
