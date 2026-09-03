@@ -51,6 +51,14 @@ var descCache={}, descState={};      // shard -> {cn: [desc, title, units]} · s
  * NOT committed, so a page on GitHub Pages has only the bucket. */
 var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
   ["ccr_desc", "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc"];
+/* The canonical seed (kb/discipline_canonical_subj4.json) carries, per
+ * discipline, the Common SUBJ and the authority chips of item 19 (Sam,
+ * 2026-09-03): the verbatim C-ID / CCN code where it differs from ours, and a
+ * "proposed" flag where no authority names the discipline (item 18). Read live
+ * so the map never lags the seed; fail-soft when the file is not reachable. */
+var SEED_URLS = window.CPL_SKYVIEW_SEED_URLS ||
+  ["../kb/discipline_canonical_subj4.json", "kb/discipline_canonical_subj4.json"];
+var authority=null;          // {discipline: {cs, chips:[{system,code}], source, flag}}
 var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
@@ -94,6 +102,41 @@ function unitsWord(u){
   return u+" unit"+(u===1?"":"s");
 }
 function sysWord(nd){ var s=SYS[nd.s]||SYS[3]; return s[2]; }
+function loadAuthority(){
+  var urls=SEED_URLS.slice();
+  (function next(){
+    var url=urls.shift(); if(!url) return;
+    var p; try{ p=fetch(url); }catch(e){ p=Promise.reject(e); }
+    p.then(function(r){ if(!r.ok) throw new Error(String(r.status)); return r.json(); })
+     .then(function(seed){
+        var out={}, ds=(seed&&seed.disciplines)||{};
+        Object.keys(ds).forEach(function(d){
+          var e=ds[d]||{};
+          if(!e.canonical_subj4) return;
+          out[d]={cs:e.canonical_subj4, chips:(e.authority_chips||[]).slice(),
+                  source:e.canonical_source||null, flag:e.authority_flag||null};
+        });
+        authority=out;
+        // A subject card already open gets its line without a second click.
+        if(selIsl && !selNode) showIsland(selIsl);
+     })
+     .catch(function(){ next(); });
+  })();
+}
+/* One line on a subject card and its tooltip: the Common SUBJ, then the
+ * authority's code as a word chip where it differs ("C-ID AJ" beside CRIM), or
+ * the word "proposed" where the CSR minted the code itself. */
+function authorityWords(isl){
+  var a=authority&&authority[isl.d]; if(!a) return "";
+  var h='Common SUBJ <strong>'+esc(a.cs)+'</strong>';
+  if(a.chips.length) h+=' · '+a.chips.map(function(c){
+    return '<span class="chip cid" title="The '+esc(c.system)+' subject code for these courses; the Common SUBJ stays four letters (rule 3, 2026-09-03)">'+esc(c.system+" "+c.code)+'</span>';
+  }).join(' ');
+  else if(a.source==="ccn") h+=' <span class="sub">(the CCN code)</span>';
+  else if(a.source==="c-id") h+=' <span class="sub">(the C-ID code)</span>';
+  if(a.flag==="proposed") h+=' <span class="chip mut" title="No C-ID or CCN code names this discipline yet; the CSR proposes this one (item 18, 2026-09-03)">proposed</span>';
+  return h;
+}
 function whyWords(w){
   var out=[]; WHY.forEach(function(p){ if(w&p[0]) out.push(p[1]); });
   return out.length?out.join(", "):"no shared signal";
@@ -490,6 +533,7 @@ window.__ccrUniverse = function(){
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
   nodeIdx=null; orbitIdx=null;
+  if(!authority) loadAuthority();
   window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"SkyView"}]);
   // Full bleed: the map takes the whole width; the panes below keep the measure.
   var main=document.getElementById("main"); if(main) main.classList.add("u-fullbleed");
@@ -694,6 +738,7 @@ function suggest(raw, limit){
   return out;
 }
 window.__ccrSuggest = suggest;
+window.__ccrTipHtml = tipHtml;
 
 function openInspector(){ if(!inspOpen) setInspector(true); }
 function setInspector(open){
@@ -842,8 +887,10 @@ function tipHtml(hit){
     }
     return h;
   }
+  var auth=authorityWords(hit.isl);
   return '<b>'+esc(hit.isl.d)+'</b><br><span class="sub">'+num(hit.isl.n)+' identities · '+
-         num(hit.isl.sa||0)+' stand-alone courses</span>';
+         num(hit.isl.sa||0)+' stand-alone courses</span>'+
+         (auth?'<br><span class="sub">'+auth+'</span>':'');
 }
 function showTip(hit, px, py){
   var tip=document.getElementById("u-tip"); if(!tip) return;
@@ -1177,7 +1224,9 @@ function showIsland(isl){
   var el=document.getElementById("u-detail");
   var idents=isl.p.filter(function(p){ return !p.a; });
   var top=idents.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
+  var authLine=authorityWords(isl);
   el.innerHTML="<h3>"+esc(isl.d)+"</h3>"+
+    (authLine?'<p class="sub u-auth">'+authLine+"</p>":"")+
     "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
       ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
       num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another subject":"")+")":"")+".</p>"+
