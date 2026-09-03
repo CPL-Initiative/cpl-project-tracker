@@ -106,6 +106,13 @@ jobs:
         run: |
           python3 tests/authority_recode_apply_test.py
           python3 tests/zband_retire_apply_test.py
+      # Prefix fold dry run (Session 224) — the keep-number re-key for rows off
+      # their discipline's canonical code: a span (KINE/ATHL) must not move, a
+      # TOP-only discipline is held (Rule 7), a taken number gap-fills instead of
+      # cascading, a swap is a cycle and never a chain, --scope reports rather
+      # than drops. Pure-stdlib python, no network.
+      - name: Prefix fold dry-run guard (kb/_prefix_fold_dryrun.py)
+        run: python3 tests/prefix_fold_dryrun_test.py
       # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
       # nights reporting a name mismatch while MAP was plainly answering
       # 400 "View_StudentDetailsCredits_APIDataset is not Valid" in a field

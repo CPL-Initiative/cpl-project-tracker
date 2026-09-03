@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 413,
+  "file_datasets": 415,
   "external_services": 137,
-  "consumers": 311,
+  "consumers": 312,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -9743,6 +9743,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/prefix_fold_out/2026-09-03/held.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_prefix_fold_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 239
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/preseed_out/2026-07-07/live_values.json": {
    "consumers": [
     {
@@ -13009,6 +13022,19 @@
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/prefix_fold_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -17232,6 +17258,7 @@
     "tests/rekey_kb_curation_chain_test.py",
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
+    "tests/prefix_fold_dryrun_test.py",
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",

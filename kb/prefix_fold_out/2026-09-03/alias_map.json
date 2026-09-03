@@ -1,0 +1,3248 @@
+{
+  "_status": "DRY-RUN — prefix fold (scope all); no kb files mutated, no Supabase writes.",
+  "_generated_by": "kb/_prefix_fold_dryrun.py",
+  "_generated_at": "2026-09-03",
+  "_rule": "keep the number, gap-fill only where the new key exists (continuation band when the band is full); a row whose discipline rests on TOP alone is held",
+  "count": 278,
+  "scope": "all",
+  "aliases": {
+    "AGRI M1039": {
+      "new_id": "AGEQ M1039",
+      "discipline": "Equine Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "AGRI->AGEQ: Equine Science owns AGEQ",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "top_division"
+      ]
+    },
+    "AGRI M1062": {
+      "new_id": "HORT M1115",
+      "discipline": "Ornamental Horticulture",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "AGRI->HORT: Ornamental Horticulture owns HORT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ANTH M1099": {
+      "new_id": "SOCI M1099",
+      "discipline": "Sociology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ANTH->SOCI: Sociology owns SOCI",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARCH M1020": {
+      "new_id": "DRAF M1088",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARCH->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARCH M1106": {
+      "new_id": "CNSM M1106",
+      "discipline": "Construction Management",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARCH->CNSM: Construction Management owns CNSM",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARCH M1120": {
+      "new_id": "INTD M1120",
+      "discipline": "Interior Design",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARCH->INTD: Interior Design owns INTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARCH M1123": {
+      "new_id": "ARTS M1043",
+      "discipline": "Art",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARCH->ARTS: Art owns ARTS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "ARTD M1009": {
+      "new_id": "PHOT M1141",
+      "discipline": "Photography",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTD->PHOT: Photography owns PHOT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1043": {
+      "new_id": "PHOT M1142",
+      "discipline": "Photography",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->PHOT: Photography owns PHOT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ARTS M1065": {
+      "new_id": "ARTH M1065",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1073": {
+      "new_id": "ARTH M1073",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1102": {
+      "new_id": "ARTH M1102",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1103": {
+      "new_id": "ARTH M1103",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1112": {
+      "new_id": "ARTH M1112",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1114": {
+      "new_id": "ARTH M1114",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1139": {
+      "new_id": "ARTH M1139",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1142": {
+      "new_id": "ARTH M1142",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1151": {
+      "new_id": "ARTH M1151",
+      "discipline": "Art History",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1166": {
+      "new_id": "MULT M1174",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ARTS M1172": {
+      "new_id": "HUMA M1172",
+      "discipline": "Humanities",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->HUMA: Humanities owns HUMA",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1187": {
+      "new_id": "PHOT M1187",
+      "discipline": "Photography",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->PHOT: Photography owns PHOT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1208": {
+      "new_id": "PHOT M1208",
+      "discipline": "Photography",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->PHOT: Photography owns PHOT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1300": {
+      "new_id": "GRAF M1300",
+      "discipline": "Graphic Arts",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ARTS M1306": {
+      "new_id": "GRAF M1306",
+      "discipline": "Graphic Arts",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1327": {
+      "new_id": "GRAF M1327",
+      "discipline": "Graphic Arts",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1329": {
+      "new_id": "GRAF M1329",
+      "discipline": "Graphic Arts",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1408": {
+      "new_id": "MULT M1408",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->MULT: Multimedia owns MULT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1471": {
+      "new_id": "GRAF M1471",
+      "discipline": "Graphic Arts",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ARTS M1498": {
+      "new_id": "INTD M1498",
+      "discipline": "Interior Design",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->INTD: Interior Design owns INTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "ARTS M1519": {
+      "new_id": "ARTD M1519",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified",
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1521": {
+      "new_id": "ARTH M1521",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1555": {
+      "new_id": "ARTH M1555",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1569": {
+      "new_id": "ARTD M1569",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1571": {
+      "new_id": "ARTH M1571",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1582": {
+      "new_id": "ARTH M1582",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1584": {
+      "new_id": "ARTH M1584",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1620": {
+      "new_id": "ARTH M1620",
+      "discipline": "Art History",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTH: Art History owns ARTH",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified",
+        "classified",
+        "top_code"
+      ]
+    },
+    "ARTS M1635": {
+      "new_id": "ARTD M1635",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1636": {
+      "new_id": "ARTD M1636",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1648": {
+      "new_id": "ARTD M1648",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1652": {
+      "new_id": "ARTD M1652",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M1657": {
+      "new_id": "ARTD M1657",
+      "discipline": "Commercial Art",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ARTS->ARTD: Commercial Art owns ARTD",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ARTS M9006": {
+      "new_id": "OLAD M9063",
+      "discipline": "Older Adults: Noncredit",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ARTS->OLAD: Older Adults: Noncredit owns OLAD",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "AUTO M1295": {
+      "new_id": "AUTD M1295",
+      "discipline": "Diesel Mechanics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "AUTO->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "description"
+      ]
+    },
+    "AUTO M1296": {
+      "new_id": "AUTD M1296",
+      "discipline": "Diesel Mechanics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "AUTO->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "top_code",
+        "description",
+        "description"
+      ]
+    },
+    "AUTO M1315": {
+      "new_id": "AUTD M1315",
+      "discipline": "Diesel Mechanics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "AUTO->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "top_code",
+        "description",
+        "classified",
+        "top_division"
+      ]
+    },
+    "AVIA M1022": {
+      "new_id": "AUTO M1295",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "AVIA->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "BIOL M1232": {
+      "new_id": "HTEC M1232",
+      "discipline": "Health Care Ancillaries",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BIOL->HTEC: Health Care Ancillaries owns HTEC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BIOL M1243": {
+      "new_id": "FDNT M1243",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BIOL->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1096": {
+      "new_id": "BSOT M1261",
+      "discipline": "Office Technologies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1099": {
+      "new_id": "MRKT M1099",
+      "discipline": "Marketing",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->MRKT: Marketing owns MRKT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1108": {
+      "new_id": "MATH M1194",
+      "discipline": "Mathematics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->MATH: Mathematics owns MATH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "BUSI M1139": {
+      "new_id": "MRKT M1139",
+      "discipline": "Marketing",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->MRKT: Marketing owns MRKT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1288": {
+      "new_id": "REAL M1288",
+      "discipline": "Real Estate",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->REAL: Real Estate owns REAL",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1289": {
+      "new_id": "BSOT M1289",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "BUSI M1333": {
+      "new_id": "BSOT M1333",
+      "discipline": "Office Technologies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1337": {
+      "new_id": "BSOT M1337",
+      "discipline": "Office Technologies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1357": {
+      "new_id": "BSOT M1262",
+      "discipline": "Office Technologies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1363": {
+      "new_id": "MRKT M1363",
+      "discipline": "Marketing",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->MRKT: Marketing owns MRKT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1371": {
+      "new_id": "MRKT M1371",
+      "discipline": "Marketing",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "BUSI->MRKT: Marketing owns MRKT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "BUSI M1445": {
+      "new_id": "BSOT M1445",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "BUSI M1449": {
+      "new_id": "BSOT M1449",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "BUSI M1469": {
+      "new_id": "BSOT M1469",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_division",
+        "description"
+      ]
+    },
+    "BUSI M1477": {
+      "new_id": "BSOT M1477",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "subject_map"
+      ]
+    },
+    "BUSI M1490": {
+      "new_id": "BSOT M1490",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "BUSI M1495": {
+      "new_id": "BSOT M1495",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "BUSI M1499": {
+      "new_id": "BSOT M1499",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "BUSI M9174": {
+      "new_id": "BSOT M9174",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "BUSI->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "CISC M1020": {
+      "new_id": "ITIS M1209",
+      "discipline": "Computer Information Systems",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CISC->ITIS: Computer Information Systems owns ITIS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CISC M1066": {
+      "new_id": "MATH M1357",
+      "discipline": "Mathematics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CISC->MATH: Mathematics owns MATH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "CISC M1073": {
+      "new_id": "MULT M1175",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CISC->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CISC M1090": {
+      "new_id": "ITIS M1490",
+      "discipline": "Computer Information Systems",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CISC->ITIS: Computer Information Systems owns ITIS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CISC M1092": {
+      "new_id": "MULT M1176",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CISC->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "CNSC M10AK": {
+      "new_id": "CARP M10ER",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10AR": {
+      "new_id": "CARP M10ES",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10AS": {
+      "new_id": "CARP M10ET",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10AV": {
+      "new_id": "CARP M10EU",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10BN": {
+      "new_id": "CARP M10EV",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10BS": {
+      "new_id": "CARP M10EW",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10BX": {
+      "new_id": "CARP M10EX",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10BY": {
+      "new_id": "CARP M10EY",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSC M10CA": {
+      "new_id": "CARP M10EZ",
+      "discipline": "Carpentry",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "CNSR M1017": {
+      "new_id": "CNSM M1041",
+      "discipline": "Construction Management",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "CNSR->CNSM: Construction Management owns CNSM",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "CNSR M1018": {
+      "new_id": "BSOT M1259",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "CNSR->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "COMM M1069": {
+      "new_id": "MULT M1177",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "COMM->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "COMM M1071": {
+      "new_id": "MULT M1178",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "COMM->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "COMM M1089": {
+      "new_id": "JOUR M1106",
+      "discipline": "Journalism",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "COMM->JOUR: Journalism owns JOUR",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "COMM M1098": {
+      "new_id": "FTVE M1165",
+      "discipline": "Media Production",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "COMM->FTVE: Media Production owns FTVE",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "COMP M9075": {
+      "new_id": "BSOT M9125",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "COMP->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "COUN M9021": {
+      "new_id": "PARN M9064",
+      "discipline": "Parent Education: Noncredit",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "COUN->PARN: Parent Education: Noncredit owns PARN",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CRIM M1183": {
+      "new_id": "PLGL M1183",
+      "discipline": "Legal Assisting",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CRIM->PLGL: Legal Assisting owns PLGL",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CRIM M1379": {
+      "new_id": "COUN M1379",
+      "discipline": "Counseling",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "CRIM->COUN: Counseling owns COUN",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "classified"
+      ]
+    },
+    "CRIM M1413": {
+      "new_id": "BUSI M1096",
+      "discipline": "Business",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "CRIM->BUSI: Business owns BUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "CSIS M1312": {
+      "new_id": "MULT M1312",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CSIS->MULT: Multimedia owns MULT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CSIS M1313": {
+      "new_id": "MULT M1313",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CSIS->MULT: Multimedia owns MULT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CSIS M1337": {
+      "new_id": "FTVE M1337",
+      "discipline": "Media Production",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CSIS->FTVE: Media Production owns FTVE",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CULN M1054": {
+      "new_id": "RMGT M1054",
+      "discipline": "Restaurant Management",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CULN->RMGT: Restaurant Management owns RMGT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "CULN M1104": {
+      "new_id": "MATH M1361",
+      "discipline": "Mathematics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "CULN->MATH: Mathematics owns MATH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "DANC M1144": {
+      "new_id": "MUSI M1651",
+      "discipline": "Music",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "DANC->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "DSPS M1007": {
+      "new_id": "ENGL M1085",
+      "discipline": "English",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "DSPS->ENGL: English owns ENGL",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "ELEC M1055": {
+      "new_id": "ELCT M1055",
+      "discipline": "Electronic Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ELEC->ELCT: Electronic Technology owns ELCT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_code"
+      ]
+    },
+    "ELEC M1057": {
+      "new_id": "ELCT M1057",
+      "discipline": "Electronic Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ELEC->ELCT: Electronic Technology owns ELCT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_code",
+        "classified"
+      ]
+    },
+    "ELEC M1059": {
+      "new_id": "ELCT M1059",
+      "discipline": "Electronic Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ELEC->ELCT: Electronic Technology owns ELCT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "ELET M1054": {
+      "new_id": "ELEC M1055",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ELET->ELEC: Electricity owns ELEC",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ELET M1074": {
+      "new_id": "CNST M1137",
+      "discipline": "Construction Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ELET->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ENGL M1085": {
+      "new_id": "READ M1085",
+      "discipline": "Reading",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ENGL->READ: Reading owns READ",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "ENGL M1158": {
+      "new_id": "READ M1158",
+      "discipline": "Reading",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ENGL->READ: Reading owns READ",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "ENGL M1320": {
+      "new_id": "FTVE M1320",
+      "discipline": "Film and Media Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ENGL->FTVE: Film and Media Studies owns FTVE",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ENGL M1329": {
+      "new_id": "FTVE M1329",
+      "discipline": "Film and Media Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ENGL->FTVE: Film and Media Studies owns FTVE",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "ESCI M1001": {
+      "new_id": "CNST M1138",
+      "discipline": "Construction Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ESCI->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ESOL M9274": {
+      "new_id": "ESLN M9274",
+      "discipline": "English as a Second Language Noncredit 53412",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ESOL->ESLN: English as a Second Language Noncredit 53412 owns ESLN",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified",
+        "top_division"
+      ]
+    },
+    "ETHS M1069": {
+      "new_id": "POLS M1002",
+      "discipline": "Political Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "ETHS->POLS: Political Science owns POLS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "FCSH M1002": {
+      "new_id": "FASH M1134",
+      "discipline": "Fashion and Related Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "FCSH->FASH: Fashion and Related Technologies owns FASH",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "FCSH M1019": {
+      "new_id": "CDEV M1290",
+      "discipline": "Child Development/Early Childhood Education",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FCSH->CDEV: Child Development/Early Childhood Education owns CDEV",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "FCSH M1045": {
+      "new_id": "FASH M1135",
+      "discipline": "Fashion and Related Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "FCSH->FASH: Fashion and Related Technologies owns FASH",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "FCSH M9076": {
+      "new_id": "PARN M9076",
+      "discipline": "Parent Education: Noncredit",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FCSH->PARN: Parent Education: Noncredit owns PARN",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "FIMS M1031": {
+      "new_id": "FTVE M1166",
+      "discipline": "Media Production",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FIMS->FTVE: Media Production owns FTVE",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "FIMS M1032": {
+      "new_id": "FTVE M1167",
+      "discipline": "Media Production",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FIMS->FTVE: Media Production owns FTVE",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "FIMS M1039": {
+      "new_id": "BCST M1057",
+      "discipline": "Broadcasting Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FIMS->BCST: Broadcasting Technology owns BCST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "FIMS M1098": {
+      "new_id": "MULT M1179",
+      "discipline": "Multimedia",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "FIMS->MULT: Multimedia owns MULT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "GEOL M1075": {
+      "new_id": "ESCI M1001",
+      "discipline": "Environmental Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "GEOL->ESCI: Environmental Technologies owns ESCI",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "HLTH M1020": {
+      "new_id": "HTEC M1088",
+      "discipline": "Health Care Ancillaries",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HLTH->HTEC: Health Care Ancillaries owns HTEC",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "HLTH M1061": {
+      "new_id": "BUSI M1099",
+      "discipline": "Business",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HLTH->BUSI: Business owns BUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HLTH M9036": {
+      "new_id": "ARTS M9006",
+      "discipline": "Art",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HLTH->ARTS: Art owns ARTS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "HTEC M1088": {
+      "new_id": "HEIT M1088",
+      "discipline": "Health Information Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HTEC->HEIT: Health Information Technology owns HEIT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "HTEC M1089": {
+      "new_id": "HEIT M1089",
+      "discipline": "Health Information Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HTEC->HEIT: Health Information Technology owns HEIT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "HTEC M1099": {
+      "new_id": "BSOT M1260",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HTEC->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "HUMA M1109": {
+      "new_id": "JOUR M1109",
+      "discipline": "Journalism",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HUMA->JOUR: Journalism owns JOUR",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "HVAC M1009": {
+      "new_id": "AUTD M1042",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M1015": {
+      "new_id": "AUTO M1296",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M1032": {
+      "new_id": "AUTO M1315",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M1038": {
+      "new_id": "CNST M1139",
+      "discipline": "Construction Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "HVAC M1039": {
+      "new_id": "CNST M1140",
+      "discipline": "Construction Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "HVAC M1056": {
+      "new_id": "MATH M1362",
+      "discipline": "Mathematics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->MATH: Mathematics owns MATH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M1076": {
+      "new_id": "AUTB M1076",
+      "discipline": "Auto Body Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTB: Auto Body Technology owns AUTB",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "HVAC M1079": {
+      "new_id": "CNST M1130",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "description"
+      ]
+    },
+    "HVAC M1083": {
+      "new_id": "ELCT M1083",
+      "discipline": "Electronic Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELCT: Electronic Technology owns ELCT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_code",
+        "description",
+        "top_division"
+      ]
+    },
+    "HVAC M1087": {
+      "new_id": "CNSM M1087",
+      "discipline": "Construction Management",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNSM: Construction Management owns CNSM",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "HVAC M1088": {
+      "new_id": "ELEC M1088",
+      "discipline": "Electricity",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified",
+        "classified",
+        "top_code",
+        "classified",
+        "classified",
+        "top_code"
+      ]
+    },
+    "HVAC M1089": {
+      "new_id": "CNST M1131",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "HVAC M1091": {
+      "new_id": "CNST M1132",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "classified",
+        "top_code",
+        "classified",
+        "classified"
+      ]
+    },
+    "HVAC M1097": {
+      "new_id": "ELEC M1097",
+      "discipline": "Electricity",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "title_keyword",
+        "top_code"
+      ]
+    },
+    "HVAC M1098": {
+      "new_id": "ELEC M1098",
+      "discipline": "Electricity",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "title_keyword",
+        "title_keyword",
+        "title_keyword",
+        "title_keyword",
+        "title_keyword",
+        "top_code",
+        "top_code",
+        "top_code"
+      ]
+    },
+    "HVAC M1099": {
+      "new_id": "ELEC M1099",
+      "discipline": "Electricity",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "title_keyword",
+        "top_code"
+      ]
+    },
+    "HVAC M10BZ": {
+      "new_id": "ELEC M10HI",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10FQ": {
+      "new_id": "AUTD M10FX",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10FR": {
+      "new_id": "AUTD M10FY",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10FU": {
+      "new_id": "AUTO M11PC",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10FV": {
+      "new_id": "ELEC M10HJ",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10GJ": {
+      "new_id": "AUTO M11PD",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10GL": {
+      "new_id": "AUTD M10GL",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10HH": {
+      "new_id": "AUTO M11PE",
+      "discipline": "Automotive Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTO: Automotive Technology owns AUTO",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10IK": {
+      "new_id": "ELEC M10IK",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10JA": {
+      "new_id": "AUTD M10JA",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10KO": {
+      "new_id": "INTD M10KO",
+      "discipline": "Interior Design",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->INTD: Interior Design owns INTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10LF": {
+      "new_id": "ESCI M10RD",
+      "discipline": "Environmental Technologies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ESCI: Environmental Technologies owns ESCI",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10LH": {
+      "new_id": "INTD M10LH",
+      "discipline": "Interior Design",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->INTD: Interior Design owns INTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10MA": {
+      "new_id": "ITIS M12NA",
+      "discipline": "Computer Information Systems",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ITIS: Computer Information Systems owns ITIS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10PR": {
+      "new_id": "AUTD M10PR",
+      "discipline": "Diesel Mechanics",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->AUTD: Diesel Mechanics owns AUTD",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10QP": {
+      "new_id": "ELEC M10QP",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10QZ": {
+      "new_id": "ELEC M10QZ",
+      "discipline": "Electricity",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELEC: Electricity owns ELEC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10RO": {
+      "new_id": "PLMB M10RO",
+      "discipline": "Plumbing",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->PLMB: Plumbing owns PLMB",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10SB": {
+      "new_id": "MANU M10SB",
+      "discipline": "Manufacturing Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->MANU: Manufacturing Technology owns MANU",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10SR": {
+      "new_id": "CNSM M10SR",
+      "discipline": "Construction Management",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNSM: Construction Management owns CNSM",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M10TY": {
+      "new_id": "MANU M10TY",
+      "discipline": "Manufacturing Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "HVAC->MANU: Manufacturing Technology owns MANU",
+      "how": "kept number",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "HVAC M1100": {
+      "new_id": "ELET M1100",
+      "discipline": "Electronics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELET: Electronics owns ELET",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified",
+        "description"
+      ]
+    },
+    "HVAC M1103": {
+      "new_id": "CNST M1133",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "subject_map"
+      ]
+    },
+    "HVAC M1105": {
+      "new_id": "ARCH M1020",
+      "discipline": "Architecture",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ARCH: Architecture owns ARCH",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_code",
+        "top_code",
+        "subject_map"
+      ]
+    },
+    "HVAC M1109": {
+      "new_id": "CNST M1134",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified",
+        "classified"
+      ]
+    },
+    "HVAC M1112": {
+      "new_id": "DRAF M1112",
+      "discipline": "Drafting/CADD",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->DRAF: Drafting/CADD owns DRAF",
+      "how": "kept number",
+      "evidence": [
+        "description",
+        "subject_map"
+      ]
+    },
+    "HVAC M1113": {
+      "new_id": "ENGT M1113",
+      "discipline": "Engineering Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ENGT: Engineering Technology owns ENGT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "subject_map"
+      ]
+    },
+    "HVAC M1115": {
+      "new_id": "CNST M1135",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "classified",
+        "top_code",
+        "top_code",
+        "description",
+        "top_code",
+        "subject_map",
+        "subject_map",
+        "subject_map",
+        "classified"
+      ]
+    },
+    "HVAC M1117": {
+      "new_id": "ELET M1117",
+      "discipline": "Electronics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->ELET: Electronics owns ELET",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "subject_map"
+      ]
+    },
+    "HVAC M1123": {
+      "new_id": "CNST M1136",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "subject_map"
+      ]
+    },
+    "HVAC M9010": {
+      "new_id": "CNST M9041",
+      "discipline": "Construction Technology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "HVAC->CNST: Construction Technology owns CNST",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "description"
+      ]
+    },
+    "IDST M1060": {
+      "new_id": "COUN M1209",
+      "discipline": "Counseling",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "IDST->COUN: Counseling owns COUN",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "IDST M9252": {
+      "new_id": "BSKL M9252",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "IDST->BSKL: Interdisciplinary-Basic Skills: Noncredit 53412 owns BSKL",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "IDST M9330": {
+      "new_id": "BSKL M9330",
+      "discipline": "Interdisciplinary-Basic Skills: Noncredit 53412",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "IDST->BSKL: Interdisciplinary-Basic Skills: Noncredit 53412 owns BSKL",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "IDST M9349": {
+      "new_id": "BSOT M9349",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "IDST->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "top_division"
+      ]
+    },
+    "INDT M10FZ": {
+      "new_id": "AUTB M10FZ",
+      "discipline": "Auto Body Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "INDT->AUTB: Auto Body Technology owns AUTB",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "INDT M10RV": {
+      "new_id": "ENGT M10RV",
+      "discipline": "Engineering Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "INDT->ENGT: Engineering Technology owns ENGT",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "ITIS M1209": {
+      "new_id": "COMP M1209",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1490": {
+      "new_id": "COMP M1490",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "ITIS M1491": {
+      "new_id": "COMP M1491",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1499": {
+      "new_id": "COMP M1499",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "subject_map"
+      ]
+    },
+    "ITIS M1510": {
+      "new_id": "COMP M1510",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1515": {
+      "new_id": "COMP M1515",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1516": {
+      "new_id": "COMP M1516",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1518": {
+      "new_id": "COMP M1518",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "ITIS M1532": {
+      "new_id": "COMP M1532",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1536": {
+      "new_id": "BSOT M1536",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "title_keyword",
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1537": {
+      "new_id": "COMP M1537",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1541": {
+      "new_id": "BSOT M1541",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1542": {
+      "new_id": "COMP M1542",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1543": {
+      "new_id": "COMP M1543",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1545": {
+      "new_id": "COMP M1545",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "ITIS M1551": {
+      "new_id": "COMP M1551",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1554": {
+      "new_id": "COMP M1554",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1556": {
+      "new_id": "COMP M1556",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1568": {
+      "new_id": "COMP M1568",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "ITIS M1582": {
+      "new_id": "BSOT M1582",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1583": {
+      "new_id": "COMP M1583",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1597": {
+      "new_id": "COMP M1597",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1598": {
+      "new_id": "GRAF M1598",
+      "discipline": "Graphic Arts",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->GRAF: Graphic Arts owns GRAF",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1611": {
+      "new_id": "COMP M1611",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M1612": {
+      "new_id": "COMP M1612",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "subject_map"
+      ]
+    },
+    "ITIS M1613": {
+      "new_id": "GEOG M1613",
+      "discipline": "Geography",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->GEOG: Geography owns GEOG",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1620": {
+      "new_id": "COMP M1620",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1624": {
+      "new_id": "EDUC M1624",
+      "discipline": "Education",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->EDUC: Education owns EDUC",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1625": {
+      "new_id": "COMP M1625",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "ITIS M1626": {
+      "new_id": "COMP M1626",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "ITIS M1627": {
+      "new_id": "BSOT M1627",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "ITIS M1633": {
+      "new_id": "COMP M1633",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "ITIS M9050": {
+      "new_id": "COMP M9075",
+      "discipline": "Computer Science",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->COMP: Computer Science owns COMP",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "title_keyword"
+      ]
+    },
+    "ITIS M9055": {
+      "new_id": "BSOT M9126",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "subject_map"
+      ]
+    },
+    "ITIS M9057": {
+      "new_id": "BSOT M9127",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "classified"
+      ]
+    },
+    "ITIS M9058": {
+      "new_id": "BSOT M9128",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "classified"
+      ]
+    },
+    "ITIS M9059": {
+      "new_id": "BSOT M9129",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "how": "gap-filled",
+      "evidence": [
+        "subject_map",
+        "classified"
+      ]
+    },
+    "KINE M1040": {
+      "new_id": "LSKL M1040",
+      "discipline": "Learning Assistance or Learning Skills",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "KINE->LSKL: Learning Assistance or Learning Skills owns LSKL",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "LIBS M1001": {
+      "new_id": "LIBR M1045",
+      "discipline": "Library Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "LIBS->LIBR: Library Science owns LIBR",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "LIBS M1003": {
+      "new_id": "LIBR M1046",
+      "discipline": "Library Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "LIBS->LIBR: Library Science owns LIBR",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MAKR M9010": {
+      "new_id": "ELET M9027",
+      "discipline": "Electronics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "MAKR->ELET: Electronics owns ELET",
+      "how": "gap-filled",
+      "evidence": [
+        "top_code",
+        "classified",
+        "title_keyword"
+      ]
+    },
+    "MANU M1008": {
+      "new_id": "DRAF M1089",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MANU M1009": {
+      "new_id": "DRAF M1090",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MANU M1012": {
+      "new_id": "DRAF M1091",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MANU M1017": {
+      "new_id": "DRAF M1092",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MANU M1028": {
+      "new_id": "MACH M1081",
+      "discipline": "Machine Tool Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->MACH: Machine Tool Technology owns MACH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "MANU M1037": {
+      "new_id": "DRAF M1093",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MANU M1063": {
+      "new_id": "DRAF M1094",
+      "discipline": "Drafting/CADD",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MANU->DRAF: Drafting/CADD owns DRAF",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MATH M1194": {
+      "new_id": "IDST M1060",
+      "discipline": "Interdisciplinary Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MATH->IDST: Interdisciplinary Studies owns IDST",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MATH M1357": {
+      "new_id": "BSOT M1357",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "MATH->BSOT: Office Technologies owns BSOT",
+      "how": "kept number",
+      "evidence": [
+        "subject_map",
+        "classified"
+      ]
+    },
+    "MUSC M1033": {
+      "new_id": "ELET M1054",
+      "discipline": "Electronics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "MUSC->ELET: Electronics owns ELET",
+      "how": "gap-filled",
+      "evidence": [
+        "title_keyword",
+        "top_code"
+      ]
+    },
+    "MUSI M1081": {
+      "new_id": "MUSC M1081",
+      "discipline": "Commercial Music",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MUSI->MUSC: Commercial Music owns MUSC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MUSI M1512": {
+      "new_id": "MUSC M1512",
+      "discipline": "Commercial Music",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MUSI->MUSC: Commercial Music owns MUSC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "MUSI M1542": {
+      "new_id": "MUSC M1542",
+      "discipline": "Commercial Music",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "MUSI->MUSC: Commercial Music owns MUSC",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "NRSV M1019": {
+      "new_id": "NRSR M1290",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1020": {
+      "new_id": "NRSR M1291",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1022": {
+      "new_id": "NRSR M1292",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1023": {
+      "new_id": "NRSR M1293",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1024": {
+      "new_id": "NRSR M1294",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1025": {
+      "new_id": "NRSR M1295",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NRSV M1028": {
+      "new_id": "NRSR M1296",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "NRSV M1029": {
+      "new_id": "NRSR M1297",
+      "discipline": "Nursing",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NRSV->NRSR: Nursing owns NRSR",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "NUTR M1042": {
+      "new_id": "FASH M1136",
+      "discipline": "Fashion and Related Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FASH: Fashion and Related Technologies owns FASH",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NUTR M1043": {
+      "new_id": "FDNT M1043",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "NUTR M1044": {
+      "new_id": "FDNT M1044",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "NUTR M1045": {
+      "new_id": "FDNT M1045",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "NUTR M1046": {
+      "new_id": "FDNT M1046",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "NUTR M1047": {
+      "new_id": "HLTH M1020",
+      "discipline": "Health",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->HLTH: Health owns HLTH",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "NUTR M1048": {
+      "new_id": "FDNT M1048",
+      "discipline": "Nutritional Science/Dietetics",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "NUTR->FDNT: Nutritional Science/Dietetics owns FDNT",
+      "how": "kept number",
+      "evidence": [
+        "title_keyword",
+        "classified"
+      ]
+    },
+    "PHSC M1002": {
+      "new_id": "ASTR M1053",
+      "discipline": "Astronomy",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PHSC->ASTR: Astronomy owns ASTR",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "PHSC M1012": {
+      "new_id": "GEOL M1075",
+      "discipline": "Earth Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PHSC->GEOL: Earth Science owns GEOL",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "PHSC M1038": {
+      "new_id": "GEOL M1087",
+      "discipline": "Earth Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PHSC->GEOL: Earth Science owns GEOL",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "PHSC M1039": {
+      "new_id": "GEOL M1088",
+      "discipline": "Earth Science",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PHSC->GEOL: Earth Science owns GEOL",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "POLS M1002": {
+      "new_id": "CRIM M1183",
+      "discipline": "Administration of Justice",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "POLS->CRIM: Administration of Justice owns CRIM",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "PSYC M1024": {
+      "new_id": "ETHS M1069",
+      "discipline": "Ethnic Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PSYC->ETHS: Ethnic Studies owns ETHS",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "PTAS M1002": {
+      "new_id": "RADT M1085",
+      "discipline": "Radiological Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "PTAS->RADT: Radiological Technology owns RADT",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:mismint-s113@bot"
+      ]
+    },
+    "SOCI M1069": {
+      "new_id": "WMST M1069",
+      "discipline": "Women’s Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "SOCI->WMST: Women’s Studies owns WMST",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "SOCS M1014": {
+      "new_id": "ANTH M1099",
+      "discipline": "Anthropology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "SOCS->ANTH: Anthropology owns ANTH",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "SOCS M1050": {
+      "new_id": "FTVE M1164",
+      "discipline": "Film and Media Studies",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "SOCS->FTVE: Film and Media Studies owns FTVE",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "SOCS M1054": {
+      "new_id": "GERO M1054",
+      "discipline": "Gerontology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "SOCS->GERO: Gerontology owns GERO",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "SOCS M1073": {
+      "new_id": "SOCI M1069",
+      "discipline": "Sociology",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "SOCS->SOCI: Sociology owns SOCI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_division"
+      ]
+    },
+    "SONO M1009": {
+      "new_id": "PTAS M1002",
+      "discipline": "Physical Therapy Assisting",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "SONO->PTAS: Physical Therapy Assisting owns PTAS",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "SONO M1010": {
+      "new_id": "HLTH M1034",
+      "discipline": "Health",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "SONO->HLTH: Health owns HLTH",
+      "how": "gap-filled",
+      "evidence": [
+        "top_division",
+        "description"
+      ]
+    },
+    "SONO M1015": {
+      "new_id": "EMST M1106",
+      "discipline": "Emergency Medical Technologies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "SONO->EMST: Emergency Medical Technologies owns EMST",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THEA M1087": {
+      "new_id": "THES M1087",
+      "discipline": "Stagecraft",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "THEA->THES: Stagecraft owns THES",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    },
+    "THEA M1295": {
+      "new_id": "THES M1295",
+      "discipline": "Stagecraft",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "THEA->THES: Stagecraft owns THES",
+      "how": "kept number",
+      "evidence": [
+        "overlay:trailcrew-ccr3-s112@bot"
+      ]
+    },
+    "THTR M1302": {
+      "new_id": "FTVE M1302",
+      "discipline": "Film and Media Studies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->FTVE: Film and Media Studies owns FTVE",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1309": {
+      "new_id": "THES M1309",
+      "discipline": "Stagecraft",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->THES: Stagecraft owns THES",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "THTR M1314": {
+      "new_id": "MUSI M1081",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1340": {
+      "new_id": "MUSI M1512",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "top_code"
+      ]
+    },
+    "THTR M1345": {
+      "new_id": "MUSI M1542",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1346": {
+      "new_id": "MUSI M1648",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1359": {
+      "new_id": "THES M1359",
+      "discipline": "Stagecraft",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->THES: Stagecraft owns THES",
+      "how": "kept number",
+      "evidence": [
+        "top_code",
+        "classified"
+      ]
+    },
+    "THTR M1361": {
+      "new_id": "FTVE M1361",
+      "discipline": "Film and Media Studies",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->FTVE: Film and Media Studies owns FTVE",
+      "how": "kept number",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1366": {
+      "new_id": "MUSI M1649",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "THTR M1372": {
+      "new_id": "MUSI M1650",
+      "discipline": "Music",
+      "kind": "materialized",
+      "item": "fold-worklist",
+      "basis": "THTR->MUSI: Music owns MUSI",
+      "how": "gap-filled",
+      "evidence": [
+        "classified",
+        "classified"
+      ]
+    },
+    "WELD M10FI": {
+      "new_id": "AUTB M10FN",
+      "discipline": "Auto Body Technology",
+      "kind": "legacy",
+      "item": "fold-worklist",
+      "basis": "WELD->AUTB: Auto Body Technology owns AUTB",
+      "how": "gap-filled",
+      "evidence": [
+        "overlay:trailcrew-ccr1-s111@bot"
+      ]
+    }
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "_about": "candidates NOT in the alias map: held (discipline on TOP alone) or outside --scope",
+  "held": {
+    "CNSC M1004": {
+      "old_id": "CNSC M1004",
+      "new_prefix": "CARP",
+      "discipline": "Carpentry",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_code"
+      ],
+      "title": "Hand and Power Tool Application",
+      "basis": "CNSC->CARP: Carpentry owns CARP",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "COMP M9074": {
+      "old_id": "COMP M9074",
+      "new_prefix": "BSOT",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_code"
+      ],
+      "title": "Introduction to iOS Application Development",
+      "basis": "COMP->BSOT: Office Technologies owns BSOT",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "FCSH M1042": {
+      "old_id": "FCSH M1042",
+      "new_prefix": "FASH",
+      "discipline": "Fashion and Related Technologies",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_division"
+      ],
+      "title": "Apparel and Textiles",
+      "basis": "FCSH->FASH: Fashion and Related Technologies owns FASH",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "FCSH M9084": {
+      "old_id": "FCSH M9084",
+      "new_prefix": "FASH",
+      "discipline": "Fashion and Related Technologies",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_division"
+      ],
+      "title": "Quilting and Patchwork (Ei)",
+      "basis": "FCSH->FASH: Fashion and Related Technologies owns FASH",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "HLTH M1222": {
+      "old_id": "HLTH M1222",
+      "new_prefix": "HEIT",
+      "discipline": "Health Information Technology",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_division"
+      ],
+      "title": "Introduction to Pathology",
+      "basis": "HLTH->HEIT: Health Information Technology owns HEIT",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "ITIS M9056": {
+      "old_id": "ITIS M9056",
+      "new_prefix": "BSOT",
+      "discipline": "Office Technologies",
+      "kind": "materialized",
+      "evidence": [
+        "top_code",
+        "top_division"
+      ],
+      "title": "Computer Keyboarding Basics",
+      "basis": "ITIS->BSOT: Office Technologies owns BSOT",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    },
+    "OSHA M1014": {
+      "old_id": "OSHA M1014",
+      "new_prefix": "INDT",
+      "discipline": "Industrial Technology",
+      "kind": "materialized",
+      "evidence": [
+        "top_division",
+        "top_code"
+      ],
+      "title": "Foreman Training and Ironworkers Union History",
+      "basis": "OSHA->INDT: Industrial Technology owns INDT",
+      "why_held": "discipline rests on TOP alone (Rule 7: never a primary determination)"
+    }
+  },
+  "out_of_scope": {},
+  "fates": {
+    "no_change": 74775,
+    "re_key": 285,
+    "skip_no_discipline": 591,
+    "skip_unknown_disc": 43,
+    "skip_umbrella_offcode": 30
+  }
+}
