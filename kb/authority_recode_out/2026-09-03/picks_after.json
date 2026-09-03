@@ -1,0 +1,19 @@
+{
+  "_about": "After-values of the _CANON_SUBJ4:: pick rows, read via the MCP lane right after the receipted supabase_ops.json SQL ran at 2026-09-03 ~20:34 UTC (one transaction). Pair with picks_before.json for the rollback. The three disciplines that had no notes row before (Computer Science, Film and Media Studies, Media Production) gained one under reviewer_email authority-recode-s224@bot; the four existing notes rows kept their reviewer and took the new text.",
+  "rows": [
+    {"course_id": "_CANON_SUBJ4::Child Development/Early Childhood Education", "field": "canonical_subj4", "value": "CDEV", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Child Development/Early Childhood Education", "field": "canonical_subj4_notes", "value": "Recoded ECED -> CDEV (Sam, 2026-09-03 rulings, item 9; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "csr-doctrine-s111@bot"},
+    {"course_id": "_CANON_SUBJ4::Computer Information Systems", "field": "canonical_subj4", "value": "ITIS", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Computer Information Systems", "field": "canonical_subj4_notes", "value": "Recoded CSIS -> ITIS (Sam, 2026-09-03 rulings, item 11; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "csr-doctrine-s111@bot"},
+    {"course_id": "_CANON_SUBJ4::Computer Science", "field": "canonical_subj4", "value": "COMP", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Computer Science", "field": "canonical_subj4_notes", "value": "Recoded CISC -> COMP (Sam, 2026-09-03 rulings, item 16; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "authority-recode-s224@bot"},
+    {"course_id": "_CANON_SUBJ4::Drama/Theater Arts", "field": "canonical_subj4", "value": "THTR", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Drama/Theater Arts", "field": "canonical_subj4_notes", "value": "Recoded THEA -> THTR (Sam, 2026-09-03 rulings, item 7; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Film and Media Studies", "field": "canonical_subj4", "value": "FTVE", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Film and Media Studies", "field": "canonical_subj4_notes", "value": "Recoded FIMS -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "authority-recode-s224@bot"},
+    {"course_id": "_CANON_SUBJ4::Media Production", "field": "canonical_subj4", "value": "FTVE", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Media Production", "field": "canonical_subj4_notes", "value": "Recoded FIMP -> FTVE (Sam, 2026-09-03 rulings, item 13; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "authority-recode-s224@bot"},
+    {"course_id": "_CANON_SUBJ4::Office Technologies", "field": "canonical_subj4", "value": "BSOT", "reviewer_email": "map@rccd.edu"},
+    {"course_id": "_CANON_SUBJ4::Office Technologies", "field": "canonical_subj4_notes", "value": "Recoded OTEC -> BSOT (Sam, 2026-09-03 rulings, item 12; the fourteen readings ruled yes to all the same day). Applied 2026-09-03 by kb/_authority_recode_apply.py; receipt kb/authority_recode_out/2026-09-03.", "reviewer_email": "csr-doctrine-s111@bot"}
+  ]
+}

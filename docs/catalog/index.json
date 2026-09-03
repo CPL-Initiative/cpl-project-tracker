@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 371,
+   "count": 372,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3815,6 +3815,29 @@
       "testing"
      ],
      "title": "Key a side table by the write key, never by list position",
+     "type": "methodology",
+     "updated": "2026-09-03"
+    },
+    {
+     "created": "2026-09-03",
+     "governs": [
+      "kb/_authority_recode_apply.py",
+      "kb/_zband_retire_apply.py",
+      "kb/_apply_curation.py"
+     ],
+     "path": "docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "remint",
+      "rule-7",
+      "rule-10",
+      "supabase",
+      "curation",
+      "ccr",
+      "identity"
+     ],
+     "title": "Land a re-mint by rehearsal and a fresh read, then read the numbers it moves",
      "type": "methodology",
      "updated": "2026-09-03"
     },
@@ -11600,7 +11623,7 @@
      "tags": [
       "handoff"
      ],
-     "title": "the chip is live, both re-mint dry runs are receipts, and fourteen readings wait on Sam",
+     "title": "the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced",
      "type": null,
      "updated": "2026-09-03"
     },
@@ -15058,5 +15081,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 766
+ "total": 767
 }

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-371 document(s).
+372 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -207,6 +207,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Join loose institutional datasets on the coded key, not freehand text](../kb-notes/methodology-coded-key-over-freehand-text-join.md) | methodology | published | 2026-06-18 | 2026-06-18 |
 | [Judge a detector by what it prints — filters are only observable in their output](../kb-notes/methodology-judge-a-detector-by-what-it-prints.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [Key a side table by the write key, never by list position](../kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md) | methodology | published | 2026-09-03 | 2026-09-03 |
+| [Land a re-mint by rehearsal and a fresh read, then read the numbers it moves](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [Lazy-load heavy per-tab data behind tab activation](../kb-notes/methodology-lazy-load-heavy-tab-data.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [Lead with the steps, not the rationale](../kb-notes/methodology-lead-with-the-steps-not-the-rationale.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [Measure the distribution before you pick a parallel strategy](../kb-notes/methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md) | methodology | published | 2026-08-28 | 2026-08-28 |

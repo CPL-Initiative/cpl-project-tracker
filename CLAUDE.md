@@ -773,9 +773,9 @@ dispatch, 2026-09-03). ⭐ Corroborators must not outvote the primary signal; a 
 by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
 `session_224_handoff`.
 
-### SkyTune S224 — the chip is live, both re-mint dry runs are receipts, nothing applied (2026-09-03)
+### SkyTune S224 — the chip, the two dry runs, then Sam's yes to all and the land (2026-09-03)
 
-**Three PRs, all merged (#1447; #1448 and #1449 the two dry runs).** Item 19's C-ID
+**Eight PRs, all merged (#1447 the chip; #1448, #1449 the dry runs; #1452 the rulings; #1453 the applies; #1454 the land).** Item 19's C-ID
 chip shipped: `kb/_seed_authority_codes.py` writes the authority fields into the
 seed from the promotions evidence plus the rulings, and the CSR tab, the CCR
 Subject list and SkyView show `C-ID AJ` beside `CRIM` (12 disciplines on a CCN
@@ -783,8 +783,12 @@ code, 14 on a C-ID code, 120 proposed, 29 with a chip). The ruled code changes
 were dry-run as a **keep-number prefix re-key** (10,292 ids, 10,039 keeping their
 number) after a scratch run showed the June allocator would renumber 62,638 ids
 to change nothing; the Z-band retirement was dry-run after it (4,053 Z identities,
-218 legacy anchors; **Kinesiology credit at 996 of 999**). Fourteen readings for
-Sam on one sheet. Story: `ccr_atlas_lessons`; handoff `session_225_handoff`.
+218 legacy anchors; **Kinesiology credit at 996 of 999**). Sam ruled the fourteen
+readings yes to all and the series was applied the same day: 10,296 ids recoded,
+4,053 machine clusters materialized as M-ID records, the Z band retired, Supabase
+re-keyed from the receipts. ⭐ 137 materialized records sit on a prefix their
+discipline no longer owns — the fold planner's next worklist. Story:
+`ccr_atlas_lessons`; handoff `session_225_handoff`.
 
 ## Troubleshooting
 
