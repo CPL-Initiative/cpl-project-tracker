@@ -930,7 +930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4230,
+     "line": 4243,
      "tabs": [
       "unified-courses"
      ]
@@ -957,7 +957,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3420,
+     "line": 3433,
      "tabs": [
       "unified-courses"
      ]
@@ -1064,7 +1064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1255
+     "line": 1304
     }
    ],
    "main_committers": []
@@ -8506,7 +8506,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3098,
+     "line": 3107,
      "tabs": [
       "unified-courses"
      ]
@@ -9782,7 +9782,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 241,
+     "line": 254,
      "tabs": [
       "canonical-subj4"
      ]
@@ -9915,7 +9915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 238,
+     "line": 251,
      "tabs": [
       "canonical-subj4"
      ]

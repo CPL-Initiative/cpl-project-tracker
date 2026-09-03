@@ -1,0 +1,1742 @@
+{
+  "_about": "Every C-ID / CCN subject code in kb/reference, the disciplines its rows sit under in kb/promotions.json (evidence), and where it is attributed (basis: ruled | canonical | majority | name); dismissed pairs are item 17 of the 2026-09-03 rulings. Built by kb/_seed_authority_codes.py.",
+  "_built_at": "2026-09-03",
+  "_rules": {
+    "majority_floor": 4,
+    "dismissed_pairs": [
+      "ADS under Counseling",
+      "ARTS under Photography",
+      "ASTR under Physical Sciences",
+      "BIOL under Interdisciplinary Studies",
+      "COMM under Humanities",
+      "GLST under Social Science",
+      "KIN under Health",
+      "PH under Health",
+      "PH under Kinesiology",
+      "PHYS under Physical Sciences",
+      "POLS under Ethnic Studies",
+      "SJS under Social Science",
+      "SWHS under Counseling"
+    ],
+    "name_homes": {
+      "AFS": [
+        "Ethnic Studies"
+      ],
+      "AG-EH": [
+        "Ornamental Horticulture"
+      ],
+      "AINA": [
+        "Ethnic Studies"
+      ],
+      "ALTF": [
+        "Automotive Technology"
+      ],
+      "ASAM": [
+        "Ethnic Studies"
+      ],
+      "CHS": [
+        "Ethnic Studies",
+        "Chicano Studies"
+      ],
+      "CMUS": [
+        "Commercial Music"
+      ],
+      "DENA": [
+        "Dental Technology"
+      ],
+      "DMGR": [
+        "Multimedia"
+      ],
+      "EET": [
+        "Electronics"
+      ],
+      "EMS": [
+        "Emergency Medical Technologies"
+      ],
+      "STAT": [
+        "Mathematics"
+      ],
+      "WWTR": [
+        "Environmental Technologies"
+      ]
+    },
+    "umbrella_ruled": [
+      "Agricultural Production",
+      "Agriculture",
+      "Foreign Languages"
+    ]
+  },
+  "counts": {
+    "codes": 79,
+    "attributed": 72,
+    "unhomed": 7
+  },
+  "unhomed": [
+    "c-id ADS",
+    "c-id ENVS",
+    "c-id GLST",
+    "c-id MIS",
+    "c-id PH",
+    "c-id SJS",
+    "c-id SWHS"
+  ],
+  "codes": {
+    "c-id ACCT": {
+      "system": "c-id",
+      "code": "ACCT",
+      "evidence": {
+        "Business": 12,
+        "Accounting": 3
+      },
+      "attributed": [
+        {
+          "discipline": "Business",
+          "basis": "ruled",
+          "rows": 12,
+          "chip": true,
+          "chip_primary": false
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ADS": {
+      "system": "c-id",
+      "code": "ADS",
+      "evidence": {
+        "Counseling": 6,
+        "Addiction Paraprofessional Training": 3,
+        "Health": 1
+      },
+      "attributed": [],
+      "dismissed": [
+        {
+          "discipline": "Counseling",
+          "rows": 6
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id AFS": {
+      "system": "c-id",
+      "code": "AFS",
+      "evidence": {},
+      "attributed": [
+        {
+          "discipline": "Ethnic Studies",
+          "basis": "name",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Africana Studies (one of Ethnic Studies' four codes)"
+    },
+    "c-id AG-AB": {
+      "system": "c-id",
+      "code": "AG-AB",
+      "evidence": {
+        "Agriculture": 8,
+        "Business": 1,
+        "Economics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Agriculture",
+          "basis": "ruled",
+          "rows": 8,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Agricultural Production",
+          "basis": "ruled",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id AG-AS": {
+      "system": "c-id",
+      "code": "AG-AS",
+      "evidence": {
+        "Agriculture": 12,
+        "Nutritional Science/Dietetics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Agriculture",
+          "basis": "ruled",
+          "rows": 12,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Agricultural Production",
+          "basis": "ruled",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id AG-EH": {
+      "system": "c-id",
+      "code": "AG-EH",
+      "evidence": {
+        "Ornamental Horticulture": 7,
+        "Agricultural Production": 3,
+        "Environmental Technologies": 2,
+        "Agriculture": 1,
+        "Architecture": 1,
+        "Political Science": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Agriculture",
+          "basis": "ruled",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Agricultural Production",
+          "basis": "ruled",
+          "rows": 3,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Ornamental Horticulture",
+          "basis": "name",
+          "rows": 7,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Environmental Horticulture — 7 of its 12 corpus rows sit under Ornamental Horticulture, a discipline the 2026-09-03 sheet did not list (item 14 reading to confirm)"
+    },
+    "c-id AG-MA": {
+      "system": "c-id",
+      "code": "AG-MA",
+      "evidence": {
+        "Agriculture": 2,
+        "Agricultural Production": 1,
+        "Vocational": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Agriculture",
+          "basis": "ruled",
+          "rows": 2,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Agricultural Production",
+          "basis": "ruled",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id AG-PS": {
+      "system": "c-id",
+      "code": "AG-PS",
+      "evidence": {
+        "Agricultural Production": 7,
+        "Ornamental Horticulture": 5,
+        "Agriculture": 4,
+        "Biological Sciences": 2,
+        "Environmental Technologies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Agriculture",
+          "basis": "ruled",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Agricultural Production",
+          "basis": "ruled",
+          "rows": 7,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id AINA": {
+      "system": "c-id",
+      "code": "AINA",
+      "evidence": {},
+      "attributed": [
+        {
+          "discipline": "Ethnic Studies",
+          "basis": "name",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID American Indian / Native American Studies"
+    },
+    "c-id AJ": {
+      "system": "c-id",
+      "code": "AJ",
+      "evidence": {
+        "Administration of Justice": 42,
+        "Sociology": 4,
+        "Law": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Administration of Justice",
+          "basis": "ruled",
+          "rows": 42,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ALTF": {
+      "system": "c-id",
+      "code": "ALTF",
+      "evidence": {
+        "Automotive Technology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Automotive Technology",
+          "basis": "name",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Alternative Fuels"
+    },
+    "c-id ANTH": {
+      "system": "c-id",
+      "code": "ANTH",
+      "evidence": {
+        "Anthropology": 37,
+        "English": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Anthropology",
+          "basis": "canonical",
+          "rows": 37,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ARTH": {
+      "system": "c-id",
+      "code": "ARTH",
+      "evidence": {
+        "Art": 25,
+        "Art History": 14,
+        "(blank)": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Art History",
+          "basis": "canonical",
+          "rows": 14,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ARTS": {
+      "system": "c-id",
+      "code": "ARTS",
+      "evidence": {
+        "Art": 76,
+        "Graphic Arts": 4,
+        "Photography": 3,
+        "Architecture": 2,
+        "Multimedia": 2,
+        "Commercial Art": 1,
+        "Interior Design": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Art",
+          "basis": "canonical",
+          "rows": 76,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Photography",
+          "rows": 3
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id ASAM": {
+      "system": "c-id",
+      "code": "ASAM",
+      "evidence": {},
+      "attributed": [
+        {
+          "discipline": "Ethnic Studies",
+          "basis": "name",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Asian American Studies"
+    },
+    "c-id AUTO": {
+      "system": "c-id",
+      "code": "AUTO",
+      "evidence": {
+        "Automotive Technology": 10
+      },
+      "attributed": [
+        {
+          "discipline": "Automotive Technology",
+          "basis": "canonical",
+          "rows": 10,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id BIOL": {
+      "system": "c-id",
+      "code": "BIOL",
+      "evidence": {
+        "Biological Sciences": 62,
+        "Dental Technology": 1,
+        "Interdisciplinary Studies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Biological Sciences",
+          "basis": "canonical",
+          "rows": 62,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Interdisciplinary Studies",
+          "rows": 1
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id BIOT": {
+      "system": "c-id",
+      "code": "BIOT",
+      "evidence": {
+        "Biological Sciences": 7
+      },
+      "attributed": [
+        {
+          "discipline": "Biotechnology",
+          "basis": "canonical",
+          "rows": 0,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id BSOT": {
+      "system": "c-id",
+      "code": "BSOT",
+      "evidence": {
+        "Office Technologies": 15,
+        "Computer Information Systems": 8,
+        "Business": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Business",
+          "basis": "ruled",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": false
+        },
+        {
+          "discipline": "Office Technologies",
+          "basis": "ruled",
+          "rows": 15,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id BUS": {
+      "system": "c-id",
+      "code": "BUS",
+      "evidence": {
+        "Business": 19,
+        "Computer Information Systems": 9,
+        "Computer Science": 1,
+        "English": 1,
+        "Interdisciplinary Studies": 1,
+        "Management": 1,
+        "Office Technologies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Business",
+          "basis": "ruled",
+          "rows": 19,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id CDEV": {
+      "system": "c-id",
+      "code": "CDEV",
+      "evidence": {
+        "Child Development/Early Childhood Education": 7,
+        "Psychology": 2,
+        "Education": 1,
+        "Family and Consumer Studies/ Home Economics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Child Development/Early Childhood Education",
+          "basis": "majority",
+          "rows": 7,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id CHEM": {
+      "system": "c-id",
+      "code": "CHEM",
+      "evidence": {
+        "Chemistry": 60,
+        "Physical Sciences": 9,
+        "Dental Technology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Chemistry",
+          "basis": "canonical",
+          "rows": 60,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id CHS": {
+      "system": "c-id",
+      "code": "CHS",
+      "evidence": {
+        "Chicano Studies": 3
+      },
+      "attributed": [
+        {
+          "discipline": "Ethnic Studies",
+          "basis": "name",
+          "rows": 0,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Chicano Studies",
+          "basis": "name",
+          "rows": 3,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Chicana and Chicano Studies"
+    },
+    "c-id CMUS": {
+      "system": "c-id",
+      "code": "CMUS",
+      "evidence": {
+        "Music": 21,
+        "Commercial Music": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Music",
+          "basis": "ruled",
+          "rows": 21,
+          "chip": true,
+          "chip_primary": false
+        },
+        {
+          "discipline": "Commercial Music",
+          "basis": "name",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Commercial Music"
+    },
+    "c-id COMM": {
+      "system": "c-id",
+      "code": "COMM",
+      "evidence": {
+        "Communication Studies": 35,
+        "Humanities": 4,
+        "English as a Second Language": 1,
+        "(blank)": 1,
+        "Music": 1,
+        "Philosophy": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Communication Studies",
+          "basis": "canonical",
+          "rows": 35,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Humanities",
+          "rows": 4
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id COMP": {
+      "system": "c-id",
+      "code": "COMP",
+      "evidence": {
+        "Computer Science": 37,
+        "Computer Information Systems": 35,
+        "Mathematics": 2,
+        "Industrial Technology": 1,
+        "Office Technologies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Computer Science",
+          "basis": "ruled",
+          "rows": 37,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id DENA": {
+      "system": "c-id",
+      "code": "DENA",
+      "evidence": {
+        "Dental Technology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Dental Technology",
+          "basis": "name",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Dental Assisting"
+    },
+    "c-id DMGR": {
+      "system": "c-id",
+      "code": "DMGR",
+      "evidence": {
+        "Multimedia": 3,
+        "Graphic Arts": 1,
+        "Art": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Multimedia",
+          "basis": "name",
+          "rows": 3,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Digital Media / Graphics"
+    },
+    "c-id ECE": {
+      "system": "c-id",
+      "code": "ECE",
+      "evidence": {
+        "Child Development/Early Childhood Education": 31
+      },
+      "attributed": [
+        {
+          "discipline": "Child Development/Early Childhood Education",
+          "basis": "ruled",
+          "rows": 31,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ECON": {
+      "system": "c-id",
+      "code": "ECON",
+      "evidence": {
+        "Economics": 5,
+        "Business": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Economics",
+          "basis": "canonical",
+          "rows": 5,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id EDUC": {
+      "system": "c-id",
+      "code": "EDUC",
+      "evidence": {
+        "Education": 9,
+        "Child Development/Early Childhood Education": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Education",
+          "basis": "canonical",
+          "rows": 9,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id EET": {
+      "system": "c-id",
+      "code": "EET",
+      "evidence": {
+        "Manufacturing Technology": 2,
+        "Electronics": 1,
+        "Engineering Technology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Electronics",
+          "basis": "name",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Electronics and Electrical Technology"
+    },
+    "c-id EMS": {
+      "system": "c-id",
+      "code": "EMS",
+      "evidence": {
+        "Emergency Medical Technologies": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Emergency Medical Technologies",
+          "basis": "majority",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Emergency Medical Services"
+    },
+    "c-id ENGL": {
+      "system": "c-id",
+      "code": "ENGL",
+      "evidence": {
+        "English": 86,
+        "English as a Second Language": 5,
+        "Humanities": 4,
+        "Philosophy": 3,
+        "Psychology": 1,
+        "Sociology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "English",
+          "basis": "canonical",
+          "rows": 86,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ENGR": {
+      "system": "c-id",
+      "code": "ENGR",
+      "evidence": {
+        "Engineering": 39,
+        "Industrial Technology": 11,
+        "Drafting/CADD": 2,
+        "Construction Technology": 1,
+        "Mathematics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Engineering",
+          "basis": "canonical",
+          "rows": 39,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ENVS": {
+      "system": "c-id",
+      "code": "ENVS",
+      "evidence": {
+        "Biological Sciences": 3,
+        "Agriculture": 1,
+        "Environmental Technologies": 1,
+        "Social Science": 1
+      },
+      "attributed": [],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id FIRE": {
+      "system": "c-id",
+      "code": "FIRE",
+      "evidence": {
+        "Fire Technology": 20
+      },
+      "attributed": [
+        {
+          "discipline": "Fire Technology",
+          "basis": "canonical",
+          "rows": 20,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id FTVE": {
+      "system": "c-id",
+      "code": "FTVE",
+      "evidence": {
+        "Film and Media Studies": 16,
+        "Broadcasting Technology": 5,
+        "Media Production": 3,
+        "(blank)": 3,
+        "Music": 3,
+        "Art": 2,
+        "English": 1,
+        "Journalism": 1,
+        "Photography": 1,
+        "Drama/Theater Arts": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Film and Media Studies",
+          "basis": "ruled",
+          "rows": 16,
+          "chip": true,
+          "chip_primary": true
+        },
+        {
+          "discipline": "Media Production",
+          "basis": "ruled",
+          "rows": 3,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id GEOG": {
+      "system": "c-id",
+      "code": "GEOG",
+      "evidence": {
+        "Geography": 50,
+        "Aviation": 1,
+        "Earth Science": 1,
+        "Physical Sciences": 1,
+        "Social Science": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Geography",
+          "basis": "canonical",
+          "rows": 50,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id GEOL": {
+      "system": "c-id",
+      "code": "GEOL",
+      "evidence": {
+        "Earth Science": 38,
+        "Physical Sciences": 6,
+        "Art": 2,
+        "Geography": 2
+      },
+      "attributed": [
+        {
+          "discipline": "Earth Science",
+          "basis": "canonical",
+          "rows": 38,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id GLST": {
+      "system": "c-id",
+      "code": "GLST",
+      "evidence": {
+        "Social Science": 5,
+        "Political Science": 2,
+        "Geography": 1
+      },
+      "attributed": [],
+      "dismissed": [
+        {
+          "discipline": "Social Science",
+          "rows": 5
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id HIST": {
+      "system": "c-id",
+      "code": "HIST",
+      "evidence": {
+        "History": 56,
+        "Health": 1,
+        "Social Science": 1
+      },
+      "attributed": [
+        {
+          "discipline": "History",
+          "basis": "canonical",
+          "rows": 56,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id HIT": {
+      "system": "c-id",
+      "code": "HIT",
+      "evidence": {
+        "Health Information Technology": 4,
+        "Nursing": 2,
+        "Biological Sciences": 1,
+        "Dental Technology": 1,
+        "Health Care Ancillaries": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Health Information Technology",
+          "basis": "ruled",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id HOSP": {
+      "system": "c-id",
+      "code": "HOSP",
+      "evidence": {
+        "Culinary Arts/Food Technology": 20,
+        "Family and Consumer Studies/ Home Economics": 5,
+        "Restaurant Management": 3,
+        "Hotel and Motel Services": 3,
+        "Business": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Culinary Arts/Food Technology",
+          "basis": "majority",
+          "rows": 20,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id ITIS": {
+      "system": "c-id",
+      "code": "ITIS",
+      "evidence": {
+        "Computer Information Systems": 55,
+        "Computer Science": 5,
+        "Business": 1,
+        "Administration of Justice": 1,
+        "Electronic Technology": 1,
+        "Office Technologies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Computer Information Systems",
+          "basis": "ruled",
+          "rows": 55,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id JOUR": {
+      "system": "c-id",
+      "code": "JOUR",
+      "evidence": {
+        "Journalism": 40,
+        "(blank)": 5,
+        "Communication Studies": 4,
+        "Multimedia": 2,
+        "Architecture": 1,
+        "Photography": 1,
+        "Sociology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Journalism",
+          "basis": "canonical",
+          "rows": 40,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id KIN": {
+      "system": "c-id",
+      "code": "KIN",
+      "evidence": {
+        "Kinesiology": 4,
+        "Health": 3,
+        "Administration of Justice": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Kinesiology",
+          "basis": "majority",
+          "rows": 4,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Health",
+          "rows": 3
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id LPPS": {
+      "system": "c-id",
+      "code": "LPPS",
+      "evidence": {
+        "Administration of Justice": 2,
+        "Law": 2,
+        "Political Science": 2,
+        "Business": 1,
+        "Philosophy": 1,
+        "Legal Assisting": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Administration of Justice",
+          "basis": "ruled",
+          "rows": 2,
+          "chip": true,
+          "chip_primary": false
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id MATH": {
+      "system": "c-id",
+      "code": "MATH",
+      "evidence": {
+        "Mathematics": 114,
+        "Psychology": 4,
+        "Business": 3,
+        "Computer Science": 2,
+        "Sociology": 2,
+        "Biological Sciences": 1,
+        "Chemistry": 1,
+        "Economics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Mathematics",
+          "basis": "canonical",
+          "rows": 114,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id MIS": {
+      "system": "c-id",
+      "code": "MIS",
+      "evidence": {},
+      "attributed": [],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id MUS": {
+      "system": "c-id",
+      "code": "MUS",
+      "evidence": {
+        "Music": 257
+      },
+      "attributed": [
+        {
+          "discipline": "Music",
+          "basis": "ruled",
+          "rows": 257,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id NUTR": {
+      "system": "c-id",
+      "code": "NUTR",
+      "evidence": {
+        "Dietetics/Nutritional Science": 7,
+        "Culinary Arts/Food Technology": 4,
+        "Biological Sciences": 2,
+        "Agriculture": 1,
+        "Child Development/Early Childhood Education": 1,
+        "Nutritional Science/Dietetics": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Dietetics/Nutritional Science",
+          "basis": "canonical",
+          "rows": 7,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id PH": {
+      "system": "c-id",
+      "code": "PH",
+      "evidence": {
+        "Health": 30,
+        "Kinesiology": 2,
+        "Counseling": 1,
+        "Psychology": 1,
+        "Respiratory Technologies": 1
+      },
+      "attributed": [],
+      "dismissed": [
+        {
+          "discipline": "Health",
+          "rows": 30
+        },
+        {
+          "discipline": "Kinesiology",
+          "rows": 2
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id PHIL": {
+      "system": "c-id",
+      "code": "PHIL",
+      "evidence": {
+        "Philosophy": 36,
+        "Humanities": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Philosophy",
+          "basis": "canonical",
+          "rows": 36,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id PHS": {
+      "system": "c-id",
+      "code": "PHS",
+      "evidence": {
+        "Health": 9,
+        "Administration of Justice": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Health",
+          "basis": "majority",
+          "rows": 9,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id PHYS": {
+      "system": "c-id",
+      "code": "PHYS",
+      "evidence": {
+        "Physics/Astronomy": 76,
+        "Physical Sciences": 17,
+        "Chemistry": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Physics/Astronomy",
+          "basis": "canonical",
+          "rows": 76,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Physical Sciences",
+          "rows": 17
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id POLS": {
+      "system": "c-id",
+      "code": "POLS",
+      "evidence": {
+        "Political Science": 25,
+        "Philosophy": 4,
+        "Ethnic Studies": 1,
+        "Interdisciplinary Studies": 1,
+        "Sociology": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Political Science",
+          "basis": "canonical",
+          "rows": 25,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [
+        {
+          "discipline": "Ethnic Studies",
+          "rows": 1
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id PSY": {
+      "system": "c-id",
+      "code": "PSY",
+      "evidence": {
+        "Psychology": 54,
+        "Sociology": 2,
+        "Counseling": 1,
+        "Child Development/Early Childhood Education": 1,
+        "Education": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Psychology",
+          "basis": "ruled",
+          "rows": 54,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id SJS": {
+      "system": "c-id",
+      "code": "SJS",
+      "evidence": {
+        "Social Science": 6,
+        "Sociology": 5,
+        "Ethnic Studies": 5,
+        "Chicano Studies": 1,
+        "Humanities": 1,
+        "Women’s Studies": 1
+      },
+      "attributed": [],
+      "dismissed": [
+        {
+          "discipline": "Social Science",
+          "rows": 6
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id SOCI": {
+      "system": "c-id",
+      "code": "SOCI",
+      "evidence": {
+        "Sociology": 46,
+        "Psychology": 6,
+        "Ethnic Studies": 5,
+        "Administration of Justice": 4,
+        "Social Science": 2,
+        "Anthropology": 1,
+        "Child Development/Early Childhood Education": 1,
+        "English": 1,
+        "Humanities": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Sociology",
+          "basis": "canonical",
+          "rows": 46,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id SPAN": {
+      "system": "c-id",
+      "code": "SPAN",
+      "evidence": {
+        "Foreign Languages": 51
+      },
+      "attributed": [
+        {
+          "discipline": "Foreign Languages",
+          "basis": "ruled",
+          "rows": 51,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id SWHS": {
+      "system": "c-id",
+      "code": "SWHS",
+      "evidence": {
+        "Counseling": 3,
+        "Sociology": 2
+      },
+      "attributed": [],
+      "dismissed": [
+        {
+          "discipline": "Counseling",
+          "rows": 3
+        }
+      ],
+      "name_home_reason": null
+    },
+    "c-id THTR": {
+      "system": "c-id",
+      "code": "THTR",
+      "evidence": {
+        "Drama/Theater Arts": 125,
+        "Stagecraft": 6,
+        "Music": 3,
+        "Dance": 1,
+        "English": 1,
+        "Media Production": 1,
+        "History": 1,
+        "Multimedia": 1,
+        "(blank)": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Drama/Theater Arts",
+          "basis": "ruled",
+          "rows": 125,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id WELD": {
+      "system": "c-id",
+      "code": "WELD",
+      "evidence": {
+        "Welding": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Welding",
+          "basis": "canonical",
+          "rows": 4,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "c-id WWTR": {
+      "system": "c-id",
+      "code": "WWTR",
+      "evidence": {
+        "Environmental Technologies": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Environmental Technologies",
+          "basis": "name",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "C-ID Water and Wastewater Technology"
+    },
+    "ccn ANTH": {
+      "system": "ccn",
+      "code": "ANTH",
+      "evidence": {
+        "Anthropology": 2
+      },
+      "attributed": [
+        {
+          "discipline": "Anthropology",
+          "basis": "canonical",
+          "rows": 2,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn ARTH": {
+      "system": "ccn",
+      "code": "ARTH",
+      "evidence": {
+        "Art": 2,
+        "Art History": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Art History",
+          "basis": "canonical",
+          "rows": 1,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn ASTR": {
+      "system": "ccn",
+      "code": "ASTR",
+      "evidence": {
+        "Astronomy": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Astronomy",
+          "basis": "canonical",
+          "rows": 4,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn BIOL": {
+      "system": "ccn",
+      "code": "BIOL",
+      "evidence": {
+        "Biological Sciences": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Biological Sciences",
+          "basis": "canonical",
+          "rows": 4,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn CDEV": {
+      "system": "ccn",
+      "code": "CDEV",
+      "evidence": {
+        "Child Development/Early Childhood Education": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Child Development/Early Childhood Education",
+          "basis": "ruled",
+          "rows": 1,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn COMM": {
+      "system": "ccn",
+      "code": "COMM",
+      "evidence": {
+        "Communication Studies": 3
+      },
+      "attributed": [
+        {
+          "discipline": "Communication Studies",
+          "basis": "canonical",
+          "rows": 3,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn ECON": {
+      "system": "ccn",
+      "code": "ECON",
+      "evidence": {
+        "Economics": 3,
+        "Business": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Economics",
+          "basis": "canonical",
+          "rows": 3,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn ENGL": {
+      "system": "ccn",
+      "code": "ENGL",
+      "evidence": {
+        "English": 7,
+        "Philosophy": 2
+      },
+      "attributed": [
+        {
+          "discipline": "English",
+          "basis": "canonical",
+          "rows": 7,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn HIST": {
+      "system": "ccn",
+      "code": "HIST",
+      "evidence": {
+        "History": 5
+      },
+      "attributed": [
+        {
+          "discipline": "History",
+          "basis": "canonical",
+          "rows": 5,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn MATH": {
+      "system": "ccn",
+      "code": "MATH",
+      "evidence": {
+        "Mathematics": 4
+      },
+      "attributed": [
+        {
+          "discipline": "Mathematics",
+          "basis": "canonical",
+          "rows": 4,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn POLS": {
+      "system": "ccn",
+      "code": "POLS",
+      "evidence": {
+        "Political Science": 1
+      },
+      "attributed": [
+        {
+          "discipline": "Political Science",
+          "basis": "canonical",
+          "rows": 1,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn PSYC": {
+      "system": "ccn",
+      "code": "PSYC",
+      "evidence": {
+        "Psychology": 2
+      },
+      "attributed": [
+        {
+          "discipline": "Psychology",
+          "basis": "ruled",
+          "rows": 2,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn SOCI": {
+      "system": "ccn",
+      "code": "SOCI",
+      "evidence": {
+        "Sociology": 2
+      },
+      "attributed": [
+        {
+          "discipline": "Sociology",
+          "basis": "canonical",
+          "rows": 2,
+          "chip": false,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": null
+    },
+    "ccn STAT": {
+      "system": "ccn",
+      "code": "STAT",
+      "evidence": {
+        "Mathematics": 2
+      },
+      "attributed": [
+        {
+          "discipline": "Mathematics",
+          "basis": "name",
+          "rows": 2,
+          "chip": true,
+          "chip_primary": true
+        }
+      ],
+      "dismissed": [],
+      "name_home_reason": "CCN Statistics (AB 1111) — the second CCN code under Mathematics"
+    }
+  }
+}
