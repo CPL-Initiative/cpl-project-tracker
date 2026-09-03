@@ -461,18 +461,25 @@ def main():
     i_origin = cm.get("Origin")
     # The CPL lifecycle attestation (Sam -> Pedro, 2026-09-01): boolean fields
     # for the lifecycle steps, upload through transcribe. The one the funding
-    # model reads is the counselor/accepted step — "either the student or the
-    # counselor/coordinator/initiator could check the counseling step done, and
-    # by doing so attesting that the student accepted the CPL on the plan."
+    # model reads is the counselor step.
     #
-    # ⚠️ THE SPELLING IS NOT CONFIRMED YET, so candidates are SWEPT rather than
-    # assumed — the same posture the Origin cutover takes, and for the same
-    # reason: a guessed column name resolves to None and silently omits the
-    # measure, which is indistinguishable from the feed simply not carrying it.
-    # Sweeping and printing which one matched makes the cutover verifiable.
-    i_accept = next((cm[k] for k in ("Counselor Step", "Counselor", "CPL Plan Accepted",
-                                     "Plan Accepted", "Accepted", "Counseling Step")
-                     if k in cm), None)
+    # ✅ CONFIRMED 2026-09-02. MAP serves it as `Counselor_Verified` on
+    # View_StudentAggregatedValues_APIDataset — '0'/'1' strings, enumerated
+    # from the API itself (kb/_probe_lifecycle_checks.py, PR #1437) and ruled
+    # by Sam the same day: "the one we are focused on for the funding is
+    # counselor verified, which shows us that they met with a counselor and
+    # discussed their options." Counselor ALONE: `Student_Verified` is a
+    # separate check that usually travels with it (3,072 rows shared, 357 /
+    # 221 apart on 2026-09-02) and is NOT read here.
+    #
+    # The older candidate spellings stay behind the real one so a renamed feed
+    # still resolves, and the match is printed so the cutover is verifiable in
+    # the run log rather than inferred from a number.
+    ACCEPT_CANDIDATES = ("Counselor_Verified", "Counselor Step", "Counselor",
+                         "CPL Plan Accepted", "Plan Accepted", "Accepted",
+                         "Counseling Step")
+    accept_col = next((k for k in ACCEPT_CANDIDATES if k in cm), None)
+    i_accept = cm[accept_col] if accept_col is not None else None
     if i_tcr is None or i_sid is None:
         print("funding-performance: required columns missing — exiting 0 without changes.")
         return
@@ -527,10 +534,13 @@ def main():
     has_accept = i_accept is not None
     if has_accept:
         metrics = metrics + ("pac",)
+        print(f"funding-performance: attestation column {accept_col!r} is in this pull — "
+              "emitting pac/pac_u (applied units on a counselor-verified plan).")
     else:
         print("funding-performance: NOTE — no CPL lifecycle attestation column in this pull; "
-              "pac/pac_u omitted (not zeroed). Awaiting the counselor-step boolean "
-              "(Sam -> Pedro, 2026-09-01); srcDelivered() reads the absence as undelivered.")
+              "pac/pac_u omitted (not zeroed). Expected `Counselor_Verified` on "
+              "View_StudentAggregatedValues_APIDataset (fetched daily since 2026-09-02); "
+              "srcDelivered() reads the absence as undelivered.")
     # ── ORIGINATION (2026-08-31, the N2 b gate) ──────────────────────────
     # The nc_* keys exist only when the pull carries `LocID2` — the same
     # OMITTED-not-zeroed shape as `pa`: srcDelivered() in cpl_funding.js asks

@@ -1005,3 +1005,14 @@ Accepted earning on that flag — so the meaning is confirmed with Pedro first
 (funding lane NEEDS SAM ⑤). Nine `cpl_memory` rows under
 `author = 'session-222-skycheck'`; braindump in the vault
 (`braindump-2026-09-02-2319-lifecycle-booleans-and-collegeid2`).
+
+### (f) The ruling, the same evening
+
+Sam confirmed `Potential Student` (YES/NO) as the public-upload flag and ruled
+the funding attestation: *"the one we are focused on for the funding is
+counselor verified, which shows us that they met with a counselor and
+discussed their options."* Counselor alone. The cutover is the one line the
+lane predicted — `Counselor_Verified` leads the builder's sweep — plus a test
+that pins the real spelling, the `'0'`/`'1'` rendering, and that
+`Student_Verified` beside it never counts. `pac`/`pac_u` emit from the first
+daily run after the merge, and the Accepted priority prices on them.
