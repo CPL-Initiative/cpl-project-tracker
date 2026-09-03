@@ -1,0 +1,358 @@
+<title>Authority Codes for the CSR</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Single-theme by design: First Light is a light identity with no dark page
+     palette, so every surface and color is painted explicitly. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --cobalt: #0047AB;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper); color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif; font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; max-width: 66ch; }
+  .howto { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px; }
+  .howto p { margin: 6px 0; }
+  code { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 5px; padding: 1px 6px; font-size: .92em; }
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px; padding: 5px 14px; font-size: .9rem; color: var(--text-body); }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0; }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .num { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.6em; }
+  .tname { font-weight: 700; color: var(--text-strong); font-size: 1.05rem; }
+  .chip { margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em; border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap; }
+  .chip.rule    { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.change  { color: var(--hunter);       border-color: var(--hunter);       background: var(--surface-opaque); }
+  .chip.judge   { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .chip.dismiss { color: var(--text-muted);   border-color: var(--border-strong); background: var(--surface-subtle); }
+  .card dl { margin: 8px 0 0; }
+  .card dt { text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700; color: var(--text-muted); margin-top: 10px; }
+  .card dd { margin: 2px 0 0; }
+  .tablewrap { overflow-x: auto; margin: 12px 0 4px; }
+  table { border-collapse: collapse; width: 100%; table-layout: fixed; font-size: .95rem; }
+  th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+  th { color: var(--text-muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; }
+  td.n { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  @media (max-width: 560px) { .card header { gap: 8px; } .chip { margin-left: 0; } }
+</style>
+
+<a class="skip" href="#sheet">Skip to the sheet</a>
+<div class="wrap">
+
+<p class="kicker">Common Course Reference · the CSR's canonical Common SUBJ · decision sheet · 2026-09-03</p>
+<h1>Authority Codes for the CSR</h1>
+<p class="lede">Sam asked whether the CSR should carry the C-ID and CCN subject codes
+rather than mint its own. The CSR minted its own for two reasons ruled in June 2026:
+the canonical code must be exactly four letters, and a code must not read as a CCN
+claim. Twenty of the sixty-two C-ID codes in our corpus are not four letters, so most
+of the divergence follows from the first rule. This sheet proposes a rule for the seed
+and lists every discipline where the rule changes a code, with what would re-key.
+Nothing is re-minted until you rule.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> reply in chat by number. <code>yes</code> accepts a
+  proposal as written; or override with <code>edit: your wording</code>,
+  <code>fold: N</code> (treat with item N), or <code>dismiss</code>.</p>
+  <p>Example: <code>1–4 yes · 8 edit: keep CRIM · 12 dismiss</code></p>
+  <p>A session then writes the rulings into the seed's notes, runs the measure-first
+  dry run under the re-mint playbook, and brings the apply back as its own pull request.</p>
+</div>
+
+<ul class="tally">
+  <li><b>4</b> rules to set</li>
+  <li><b>11</b> code changes proposed</li>
+  <li><b>3</b> judgment calls</li>
+  <li><b>2</b> dismissals (noise)</li>
+  <li><b>23</b> disciplines already on an authority code</li>
+  <li><b>95</b> disciplines with no authority code, where the CSR keeps minting</li>
+</ul>
+
+<div id="sheet">
+
+<h2 class="kicker">The rule</h2>
+
+<section class="card">
+  <header><span class="num">1</span> <span class="tname">Seed from the authorities</span>
+  <span class="chip rule">Rule</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Where CCN or C-ID publishes a subject code for a discipline's courses, the
+    canonical Common SUBJ is that code. The CSR mints its own only where neither
+    authority has one.</dd>
+    <dt>Measured</dt>
+    <dd>Of 146 disciplines, 23 already sit on an authority code, 28 differ from one
+    (31,467 M-IDs, part of it inference noise, see 17 and 18), and 95 have no C-ID or
+    CCN code at all (25,083 M-IDs, the CTE and noncredit bulk). The CSR keeps minting
+    for most of the reference either way; the authority codes cover the transfer core,
+    which is where faculty recognition matters most.</dd>
+    <dt>Proposed</dt>
+    <dd>Yes. Record the source of every canonical code in the seed (<code>ccn</code>,
+    <code>c-id</code>, <code>csr</code>) so the provenance is visible on the CSR tab.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">2</span> <span class="tname">Precedence: CCN, then C-ID, then ours</span>
+  <span class="chip rule">Rule</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The two authorities disagree with each other in places: CCN says
+    <code>PSYC</code> where C-ID says <code>PSY</code>; CCN says <code>CDEV</code>
+    where C-ID says <code>ECE</code>. A precedence rule decides without a meeting.</dd>
+    <dt>Measured</dt>
+    <dd>All 14 CCN codes in the corpus are four letters; CCN is statute (AB 1111) and
+    covers the transfer general-education core. C-ID covers 65 subject codes in our
+    reference, 20 of them not four letters.</dd>
+    <dt>Proposed</dt>
+    <dd>CCN first, C-ID second, the CSR's own code last. Under this rule Psychology
+    stays <code>PSYC</code> (item 15) and Child Development moves to <code>CDEV</code>
+    (item 9).</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">3</span> <span class="tname">The shape rule: four letters, or the authority's code verbatim</span>
+  <span class="chip rule">Rule · decides most of the list</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>The seed's invariant is <code>^[A-Z]{4}$</code>. The C-ID codes that fail it:
+    <code>AJ</code>, <code>PH</code>, <code>BUS</code>, <code>MUS</code>, <code>KIN</code>,
+    <code>ECE</code>, <code>PSY</code>, <code>ADS</code>, <code>CHS</code>, <code>EET</code>,
+    <code>EMS</code>, <code>HIT</code>, <code>MIS</code>, <code>PHS</code>, <code>SJS</code>
+    and the five hyphenated agriculture families <code>AG-AB</code>, <code>AG-AS</code>,
+    <code>AG-EH</code>, <code>AG-MA</code>, <code>AG-PS</code>. This rule is why 122 of the
+    146 canonical codes are June overrides (<code>CRIM</code> over <code>AJ</code>,
+    <code>BUSI</code> over <code>BUS</code>, <code>MUSI</code> over <code>MUS</code>).</dd>
+    <dt>Options</dt>
+    <dd>(a) Accept the authority's code verbatim, two to five characters with a hyphen
+    allowed. The id parsers already split on the first space, so <code>AJ M1001</code>
+    and <code>AG-AB M1001</code> read correctly today; the seed's invariant, the fold,
+    and the tests that pin four letters change. (b) Keep four letters and diverge by
+    design for those twenty.</dd>
+    <dt>Proposed</dt>
+    <dd>(a). A code the faculty already use beats a code that is tidy. If you choose
+    (b), items 5, 6, 8, 12 and 14 fold to "no change".</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">4</span> <span class="tname">Retire "not a CCN claim"</span>
+  <span class="chip rule">Rule</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Your 2026-06-09 rule for the language codes: our codes are synthetic so that a
+    code never reads as a claim of CCN or C-ID alignment. It is the second reason the
+    CSR minted its own.</dd>
+    <dt>Measured</dt>
+    <dd>The M-ID number band already carries the staging status: <code>M1019</code> and
+    <code>Z9001</code> are ours, <code>100</code> is C-ID's, <code>C1000</code> is CCN's.
+    A shared subject code claims recognition of the subject, not approval of the course;
+    C-ID's own codes are labels, not approvals.</dd>
+    <dt>Proposed</dt>
+    <dd>Retire it. The number carries the claim status; the subject code carries
+    recognition. If you keep the rule, this whole sheet folds to "dismiss" and the CSR
+    stays as it is.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Where the rule changes a code</h2>
+<p class="cluster-note">Counts are the discipline's M-IDs today, all of which re-key at the fold. The authority column is what C-ID or CCN rows in our corpus carry under that discipline.</p>
+
+<section class="card">
+  <header><span class="num">5</span> <span class="tname">Music</span>
+  <span class="chip change">MUSI → MUS · 2,586 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>MUS</code> on 14 rows; <code>CMUS</code> (commercial music) on 5.</dd>
+    <dt>Proposed</dt><dd><code>MUS</code> as the canonical code; <code>CMUS</code> as a second subject under the umbrella rule if the commercial-music identities are classified, otherwise folded into <code>MUS</code>. Depends on item 3.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">6</span> <span class="tname">Business</span>
+  <span class="chip change">BUSI → BUS · 2,073 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>BUS</code>; C-ID also has <code>ACCT</code> and <code>BSOT</code> under the Business MQ discipline, the same shape as Ethnic Studies' four codes.</dd>
+    <dt>Proposed</dt><dd><code>BUS</code> as the canonical code; <code>ACCT</code> as a sibling subject for the accounting identities (Accounting is its own MQ discipline where the colleges file it so, and stays there). Depends on item 3.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">7</span> <span class="tname">Drama / Theater Arts</span>
+  <span class="chip change">THEA → THTR · 1,687 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>THTR</code> on 10 rows. Four letters; no shape question.</dd>
+    <dt>Proposed</dt><dd><code>THTR</code>. The alias family (Drama/Theater Arts and Theater Arts, two MQ names for one discipline) keeps sharing the one code, as it does today.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">8</span> <span class="tname">Administration of Justice</span>
+  <span class="chip change">CRIM → AJ · 1,564 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>AJ</code> on 8 rows; <code>LPPS</code> (public safety) on a few. Your June override chose <code>CRIM</code> over the local modal <code>AJ</code>, almost certainly for the four-letter rule.</dd>
+    <dt>Proposed</dt><dd><code>AJ</code>. Depends on item 3; under (b) it stays <code>CRIM</code>.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">9</span> <span class="tname">Child Development / Early Childhood Education</span>
+  <span class="chip change">ECED → CDEV · 1,349 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>CCN <code>CDEV</code>; C-ID <code>ECE</code>. The first case the precedence rule decides.</dd>
+    <dt>Proposed</dt><dd><code>CDEV</code> under item 2. Four letters; no shape question.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">10</span> <span class="tname">Foreign Languages</span>
+  <span class="chip change">FLxx → the language codes · 1,492 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>SPAN</code> is the only language code in our C-ID reference (6 rows). For the other languages the colleges' own dominant codes are four letters and match C-ID's discipline names in practice (from the June scope: <code>FREN</code> 219, <code>CHIN</code> 196, <code>ITAL</code> 189, <code>JAPN</code> 128, <code>GERM</code> 83, <code>RUSS</code> 53, <code>ARAB</code> 58, <code>VIET</code> 39, <code>PORT</code> 21).</dd>
+    <dt>Proposed</dt><dd><code>FLSP</code> → <code>SPAN</code> on C-ID's authority; the other <code>FLxx</code> codes → the language's dominant local code, recorded as source <code>csr</code> until C-ID or CCN publishes one; <code>FLNG</code> stays the residual for language-agnostic courses. The discipline stays Foreign Languages throughout. This is your FLNG example, resolved in the codes themselves: the Subject dropdown would read <code>SPAN — Spanish (Foreign Languages)</code>.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">11</span> <span class="tname">Computer Information Systems</span>
+  <span class="chip change">CSIS → ITIS · 2,456 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>ITIS</code> on 13 rows; <code>COMP</code> (Computer Science) on 3, which belong to the Computer Science discipline (item 16).</dd>
+    <dt>Proposed</dt><dd><code>ITIS</code>. Four letters; no shape question.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">12</span> <span class="tname">Office Technologies</span>
+  <span class="chip change">OTEC → BSOT · 1,031 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>BSOT</code> (business and office technology) on 3 rows.</dd>
+    <dt>Proposed</dt><dd><code>BSOT</code>. Thin evidence (3 rows) but the right code by name; four letters.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">13</span> <span class="tname">Film and Media Studies, and Media Production</span>
+  <span class="chip change">FIMS → FTVE · 499 M-IDs (+ 191 if folded)</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>FTVE</code> (film, television, electronic media) on 4 rows under Film and Media Studies and on Media Production's rows too.</dd>
+    <dt>Proposed</dt><dd><code>FTVE</code> for Film and Media Studies. Media Production (<code>FIMP</code>, 191 M-IDs) either shares it as a fan-in pair (the Theater precedent) or keeps its own code; say which.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">14</span> <span class="tname">Agriculture</span>
+  <span class="chip judge">AGRI → the AG- families? · 803 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID's agriculture codes are hyphenated sub-disciplines: <code>AG-AB</code> (business), <code>AG-AS</code> (animal science), <code>AG-PS</code> (plant science), <code>AG-EH</code> (environmental horticulture), <code>AG-MA</code> (mechanics). Agriculture is an umbrella exactly like Foreign Languages: one MQ discipline, several subjects a student actually enrolls in.</dd>
+    <dt>Proposed</dt><dd>Treat it as the second umbrella: classify the 803 identities into the AG- families by title and TOP the way the languages were, keep <code>AGRI</code> as the residual. Depends on item 3 (hyphens). Agricultural Production (<code>AGPR</code>, 210 M-IDs) folds into the same classification.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">15</span> <span class="tname">Psychology</span>
+  <span class="chip judge">PSYC stays · 432 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>CCN <code>PSYC</code>; C-ID <code>PSY</code> on 7 rows.</dd>
+    <dt>Proposed</dt><dd>No change: CCN wins under item 2. Listed so the precedence rule is seen working.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">16</span> <span class="tname">Computer Science, and Health Information Technology</span>
+  <span class="chip judge">CISC → COMP · 708 M-IDs; HEIT → HIT · 157 M-IDs</span></header>
+  <dl>
+    <dt>Authority</dt><dd>C-ID <code>COMP</code> for Computer Science; C-ID <code>HIT</code> (three letters) for Health Information Technology.</dd>
+    <dt>Proposed</dt><dd><code>COMP</code> yes. <code>HIT</code> depends on item 3.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Noise, not decisions</h2>
+
+<section class="card">
+  <header><span class="num">17</span> <span class="tname">Authority codes that arrived on mis-filed rows</span>
+  <span class="chip dismiss">Dismiss, with reason</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Kinesiology shows <code>PH</code>, Health shows <code>PH</code> and <code>KIN</code>,
+    Interdisciplinary Studies shows <code>BIOL</code>, Ethnic Studies shows <code>POLS</code>,
+    Humanities shows <code>COMM</code>, Counseling shows <code>ADS</code> and <code>SWHS</code>,
+    Photography shows <code>ARTS</code>, Physical Sciences shows <code>PHYS</code> and
+    <code>ASTR</code>, Social Science shows <code>GLST</code> and <code>SJS</code>.</dd>
+    <dt>Proposed dismissal</dt>
+    <dd>These are one to three C-ID or CCN rows whose machine-inferred discipline is
+    wrong (a public-health descriptor filed under Kinesiology, a physics descriptor
+    under Physical Sciences). They say nothing about the discipline's code and are
+    cleanup for the discipline inference, not code decisions. <code>KINE</code>,
+    <code>HLTH</code>, <code>IDST</code>, <code>ETHS</code>, <code>HUMA</code>,
+    <code>COUN</code>, <code>PHOT</code>, <code>PHSC</code> and <code>SOCS</code> stay.</dd>
+  </dl>
+</section>
+
+<section class="card">
+  <header><span class="num">18</span> <span class="tname">Disciplines the authorities do not name</span>
+  <span class="chip dismiss">No change · 95 disciplines</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>ESL (2,300 M-IDs), Dance (1,639), Nursing (1,432), Multimedia (898), Welding
+    (804), Construction Technology (695), Fashion (678), HVAC (672), Architecture (602)
+    and 86 more carry no C-ID or CCN code in our corpus.</dd>
+    <dt>Proposed</dt>
+    <dd>The CSR keeps its codes there, marked source <code>csr</code>. When CCN
+    publishes a code for one of them, item 1 applies at the next fold.</dd>
+  </dl>
+</section>
+
+<h2 class="kicker">Mechanics</h2>
+
+<section class="card">
+  <header><span class="num">19</span> <span class="tname">One scoped re-mint, now rather than later</span>
+  <span class="chip rule">Timing</span></header>
+  <dl>
+    <dt>What it is</dt>
+    <dd>Every accepted item is a canonical-code change for a whole discipline, so the
+    apply is the same fold the CSR ran in July: measure-first dry run, alias map from
+    old id to new, the promotions file re-keyed, landed atomically in one cron
+    window, under the re-mint playbook. The seed's invariant and the umbrella file
+    change with items 3 and 10; SkyView and the CCR tab re-key at the next hand
+    rebuild.</dd>
+    <dt>Measured</dt>
+    <dd>Items 5 to 16 as proposed re-key about 14,000 M-IDs. The M-ID layer is in its
+    staging phase, where re-mints are permitted under the playbook; at faculty
+    publication Rule 7 re-locks to stable identifiers.</dd>
+    <dt>Proposed</dt>
+    <dd>Yes, after the rulings, as its own pull request series with the dry run
+    reviewed first. Doing it before faculty publication is the cheap moment.</dd>
+  </dl>
+</section>
+
+</div>
+
+<p class="lede" style="margin-top:34px">That is the whole question. Nothing is re-keyed,
+and the seed is not edited, until you rule. Reply by number.</p>
+
+</div>
