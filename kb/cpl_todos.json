@@ -41,12 +41,6 @@
       "text": "React by letter to the calm pass and the lead-with-the-table changes on the Implementation Funding tab, confirm the explainer as the one public view (the old public page would become a redirect), and say whether the internal tab should keep showing <10 until the public/private split gives it its own copy. These are NEEDS SAM ③, ④ and ⑤ in the funding lane file."
     },
     {
-      "id": "s223-fable-publish-shards",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Confirm the SkyView description shards are in the ccr-desc storage bucket: run the workflow named Publish SkyView description shards once the pull request has merged, read its log (it prints how many shards it published), then open the deployed SkyView, click a course number, and see a catalog description rather than a message that descriptions did not load."
-    },
-    {
       "id": "s223-fable-live-session-banner",
       "for": "Fable",
       "tab": "admin",

@@ -93,9 +93,10 @@ selection** read an 850-course card as empty.
 
 ## Priority work, in order
 
-1. **Is the bucket populated?** The first `skyview-desc-shards.yml` dispatch after
-   the merge fills it; if the deployed SkyView says descriptions did not load,
-   dispatch it (Actions → Publish SkyView description shards) and read the log.
+1. **The bucket is populated.** The first `skyview-desc-shards.yml` dispatch ran
+   after the merge (2026-09-03 16:25 UTC): 160 objects, 52.7 MB, `_manifest.json`
+   plus 159 shards, verified by counting `storage.objects`. If the deployed
+   SkyView ever says descriptions did not load, dispatch it again and read the log.
 2. **Sam drives it** — put the visual calls to him by number (NEEDS SAM ①):
    orbit density, inspector width, label bands, the rim, the daily-rebuild
    question (②). Each weight is one line in the builder; rebuild, commit, done.
