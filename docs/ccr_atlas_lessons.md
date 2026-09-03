@@ -1000,3 +1000,14 @@ already exists. Both went onto one decision sheet (22 items,
 returned a 404**: `pages.yml` prunes `docs/` from the deployed site, so a decision sheet
 is handed over as a Claude artifact link; the committed file is the record, not the
 page.
+
+**Ruled the same evening.** Sam replied by number on all 22 items of the authority-codes
+sheet. The sticky one was the shape rule, and his version is better than the one
+proposed: *"use CCN if available; if not, stay with 4-characters and add a CID chip with
+the verbatim CID code showing; eliminate hyphens."* It keeps the invariant, the parsers,
+the fold and the tests exactly as they are, and moves the authority's code to where a
+reader looks for it — a chip beside ours — instead of into the identifier. Eleven code
+changes, the Z band retired, the legacy ids folded, one re-mint series to run; the plan
+is `kb/csr_authority_codes_rulings_2026-09-03.json`. ⭐ **A decision sheet that returns
+verdicts the same day is the fastest curation loop this repo has had** — the measured
+context was already on the card, so each verdict took him one line.

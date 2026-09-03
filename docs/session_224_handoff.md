@@ -68,7 +68,13 @@ daily run's Step 4d. Shards are `{cn digits: [description, title, units]}`.
    be a MID."* And his lean on the CSR: adopt the C-ID and CCN subject codes rather
    than mint. Both are on the authority-codes decision sheet (22 items; artifact
    link in the To-Do feed and NEEDS SAM ⑤); nothing is re-keyed until he rules.
-6. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
+6. **The authority-codes sheet is RULED** (2026-09-03, all 22 items, record
+   `kb/csr_authority_codes_rulings_2026-09-03.json`). Rule 3 as he shaped it: *"use
+   CCN if available; if not, stay with 4-characters and add a CID chip with the
+   verbatim CID code showing; eliminate hyphens."* The Z band is retired; eleven
+   code changes are ruled; three readings (8, 13, 14) await his confirmation.
+   Nothing is applied until the dry run of item 22 is reviewed.
+7. Standing from earlier and unchanged: SkyView means the GRAPH view; a drag
    re-homes membership only; SUBJ4 breakage QUEUES a re-mint; the shards belong
    on Supabase (his lean, now delivered).
 
@@ -97,6 +103,15 @@ selection** read an 850-course card as empty.
 
 ## Priority work, in order
 
+0. **The re-mint series Sam ruled (item 22)** — read `kb/csr_authority_codes_rulings_2026-09-03.json`
+   first, then: (a) confirm the three readings with him; (b) the C-ID chip fields
+   in the seed and their display on the CSR, CCR and SkyView; (c) the canonical fold
+   dry run for the ruled changes (`kb/_subj4_dryrun.py` reads the seed; run it on a
+   scratch copy first); (d) a Z-to-M dry run, the reverse of
+   `kb/_uc_cur_zscheme_dryrun.py`, with the 221 legacy ids; (e) the apply pull
+   requests under `docs/coursecontrolnumber_remint.md`, one cron window, `kb_curation`
+   re-keyed from the alias map. Measured: about 14,700 ids, 10 number collisions if
+   numbers were kept, the Z ids fit by gap-filling everywhere.
 1. **The bucket is populated.** The first `skyview-desc-shards.yml` dispatch ran
    after the merge (2026-09-03 16:25 UTC): 160 objects, 52.7 MB, `_manifest.json`
    plus 159 shards, verified by counting `storage.objects`. If the deployed
