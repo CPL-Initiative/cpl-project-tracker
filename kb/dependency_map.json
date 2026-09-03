@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 400,
+  "file_datasets": 404,
   "external_services": 137,
-  "consumers": 307,
+  "consumers": 308,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -2658,6 +2658,19 @@
    ],
    "main_committers": []
   },
+  "file:  - kb/csr_authority_codes_rulings_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 675
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:*.full.json": {
    "consumers": [
     {
@@ -4656,6 +4669,13 @@
   "file:csr_authority_codes_rulings_<date>.json": {
    "consumers": [
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
+    },
+    {
      "id": "script:kb/_seed_authority_codes.py",
      "kind": "script",
      "direction": "read",
@@ -6038,6 +6058,45 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/authority_recode_out/2026-09-03/ag_classification.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 634
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/authority_recode_out/2026-09-03/fl_classification.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 629
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/authority_recode_out/2026-09-03/seed_edits.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 639
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/budget_snapshot.json": {
    "consumers": [
     {
@@ -6171,6 +6230,13 @@
      "direction": "read",
      "how": "literal",
      "line": 189
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 83
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -6324,7 +6390,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 45
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -6466,6 +6532,13 @@
      "direction": "write",
      "how": "literal",
      "line": 267
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -6612,7 +6685,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 38
+     "line": 43
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -6777,6 +6850,13 @@
      "direction": "read",
      "how": "literal",
      "line": 200
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -7148,6 +7228,13 @@
      "line": 202
     },
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 82
+    },
+    {
      "id": "script:kb/_build_coci_lookup.py",
      "kind": "script",
      "direction": "read",
@@ -7327,7 +7414,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 39
+     "line": 44
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -7424,6 +7511,13 @@
      "direction": "read",
      "how": "literal",
      "line": 201
+    },
+    {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
     },
     {
      "id": "script:kb/_build_coci_lookup.py",
@@ -7827,7 +7921,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 46
     }
    ],
    "producers": [
@@ -8581,6 +8675,13 @@
      "line": 173
     },
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 85
+    },
+    {
      "id": "script:kb/_csr_trail.py",
      "kind": "script",
      "direction": "read",
@@ -8662,7 +8763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 42
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -9063,6 +9164,13 @@
      ]
     },
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    },
+    {
      "id": "script:kb/_fl_subj4_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -9074,7 +9182,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 49
     }
    ],
    "served": true,
@@ -9930,7 +10038,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 47
     },
     {
      "id": "script:kb/_suggest_unclassified.py",
@@ -10077,7 +10185,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 48
     },
     {
      "id": "script:kb/_suggest_unclassified.py",
@@ -10615,6 +10723,13 @@
   "file:kb/reference/top_categories.json": {
    "consumers": [
     {
+     "id": "script:kb/_authority_recode_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    },
+    {
      "id": "script:kb/_join_cte_from_top.py",
      "kind": "script",
      "direction": "read",
@@ -10822,7 +10937,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 606
+     "line": 611
     }
    ],
    "served": true,
