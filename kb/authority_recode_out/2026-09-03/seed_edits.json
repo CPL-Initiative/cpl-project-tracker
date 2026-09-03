@@ -1,0 +1,179 @@
+{
+  "canonical": {
+    "Drama/Theater Arts": {
+      "from": "THEA",
+      "to": "THTR",
+      "item": 7,
+      "note": null
+    },
+    "Child Development/Early Childhood Education": {
+      "from": "ECED",
+      "to": "CDEV",
+      "item": 9,
+      "note": null
+    },
+    "Computer Information Systems": {
+      "from": "CSIS",
+      "to": "ITIS",
+      "item": 11,
+      "note": null
+    },
+    "Office Technologies": {
+      "from": "OTEC",
+      "to": "BSOT",
+      "item": 12,
+      "note": null
+    },
+    "Film and Media Studies": {
+      "from": "FIMS",
+      "to": "FTVE",
+      "item": 13,
+      "note": null
+    },
+    "Computer Science": {
+      "from": "CISC",
+      "to": "COMP",
+      "item": 16,
+      "note": null
+    },
+    "Media Production": {
+      "from": "FIMP",
+      "to": "FTVE",
+      "item": 13,
+      "note": "reading to confirm: Media Production shares FTVE with Film and Media Studies as a fan-in pair"
+    }
+  },
+  "umbrella": {
+    "Foreign Languages": {
+      "is_umbrella": true,
+      "umbrella_codes": [
+        "ARAB",
+        "CHIN",
+        "FLGR",
+        "FLHE",
+        "FLHM",
+        "FLKO",
+        "FLNA",
+        "FLNG",
+        "FLPE",
+        "FLPU",
+        "FLTA",
+        "FREN",
+        "GERM",
+        "HNDI",
+        "ITAL",
+        "JAPN",
+        "LATN",
+        "PORT",
+        "RUSS",
+        "SPAN",
+        "VIET"
+      ],
+      "canonical_subj4": "FLNG",
+      "item": 10
+    },
+    "Agriculture": {
+      "is_umbrella": true,
+      "umbrella_group": "agriculture",
+      "umbrella_codes": [
+        "AGAB",
+        "AGAS",
+        "AGEH",
+        "AGMA",
+        "AGPS",
+        "AGRI"
+      ],
+      "canonical_subj4": "AGRI",
+      "item": 14
+    },
+    "Agricultural Production": {
+      "is_umbrella": true,
+      "umbrella_group": "agriculture",
+      "umbrella_codes": [
+        "AGAB",
+        "AGAS",
+        "AGEH",
+        "AGMA",
+        "AGPR",
+        "AGPS"
+      ],
+      "canonical_subj4": "AGPR",
+      "item": 14
+    }
+  },
+  "foreign_language_subj4": {
+    "Arabic": {
+      "from": "FLAR",
+      "to": "ARAB",
+      "basis": "ruled"
+    },
+    "Chinese": {
+      "from": "FLCH",
+      "to": "CHIN",
+      "basis": "ruled"
+    },
+    "French": {
+      "from": "FLFR",
+      "to": "FREN",
+      "basis": "ruled"
+    },
+    "German": {
+      "from": "FLGE",
+      "to": "GERM",
+      "basis": "ruled"
+    },
+    "Italian": {
+      "from": "FLIT",
+      "to": "ITAL",
+      "basis": "ruled"
+    },
+    "Japanese": {
+      "from": "FLJA",
+      "to": "JAPN",
+      "basis": "ruled"
+    },
+    "Portuguese": {
+      "from": "FLPO",
+      "to": "PORT",
+      "basis": "ruled"
+    },
+    "Russian": {
+      "from": "FLRU",
+      "to": "RUSS",
+      "basis": "ruled"
+    },
+    "Spanish": {
+      "from": "FLSP",
+      "to": "SPAN",
+      "basis": "ruled (C-ID SPAN)"
+    },
+    "Vietnamese": {
+      "from": "FLVI",
+      "to": "VIET",
+      "basis": "ruled"
+    },
+    "Hindi": {
+      "from": "FLHI",
+      "to": "HNDI",
+      "basis": "dominant local code is four letters (thin: 3 rows)"
+    },
+    "Latin": {
+      "from": "FLLA",
+      "to": "LATN",
+      "basis": "dominant local code is four letters"
+    }
+  },
+  "code_touch_points": [
+    "kb/_row_audit.py UMBRELLA_DISCIPLINES (+ Agriculture, Agricultural Production)",
+    "kb/_seed_coci_minted_mids.py UMBRELLA_DISCIPLINES (same)",
+    "kb/_csr_trail.py UMBRELLA_DISCIPLINES (same)",
+    "kb/_subj4_dryrun.py load_umbrella_allowances (+ the agriculture family codes)",
+    "kb/_uc_cur_zscheme_dryrun.py UMBRELLA_DISCIPLINES (same)",
+    "canonical_subj4.js UMBRELLA_EXTRA_SUBJ4 (+ the agriculture family codes)",
+    "kb/foreign_language_subj4.json per-language subj4 (the FL codes above)",
+    "kb/uc_cur_zseq.json counters: old prefix -> new prefix (the POLS pattern)",
+    "Supabase _CANON_SUBJ4::<discipline> picks for the recoded disciplines (MCP, same window)",
+    "kb/_rekey_promotions.py ALIAS_MAPS: register the apply receipt",
+    "kb/_seed_authority_codes.py: re-run (canonical_source flips to c-id where the code now matches)"
+  ]
+}

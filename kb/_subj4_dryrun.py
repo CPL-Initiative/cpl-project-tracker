@@ -34,7 +34,12 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
-CANONICAL = os.path.join(HERE, "discipline_canonical_subj4.json")
+# SUBJ4_CANONICAL_PATH points the allocator at a SCRATCH copy of the seed —
+# the 2026-09-03 rulings are dry-run against a copy carrying the ruled codes
+# (THTR, CDEV, ITIS, BSOT, FTVE, COMP) while the committed seed keeps the codes
+# the catalog is actually keyed under until the apply lands. Same seam pattern
+# as SUBJ4_DRYRUN_OUT.
+CANONICAL = os.environ.get("SUBJ4_CANONICAL_PATH") or os.path.join(HERE, "discipline_canonical_subj4.json")
 CURATION = os.path.join(HERE, "coci_curation.json")
 MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
