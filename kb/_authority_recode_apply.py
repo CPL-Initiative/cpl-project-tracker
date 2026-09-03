@@ -80,8 +80,15 @@ RECEIPT_DIR = (os.environ.get("AUTHORITY_RECODE_RECEIPT")
                or os.path.join(HERE, "authority_recode_out", "2026-09-03"))
 STAMP = "_authority_recode_from"
 APPLIED = "_authority_recode_applied_at"
-OVERLAY_FIELDS = {"discipline", "merge_into", "unified_title", "description",
-                  "cross_listed_disciplines"}
+# The overlay's field whitelist is kb/_apply_curation.py's FIELDS — imported so
+# P3 counts the same rows the daily sync folds (the June apply's five-field
+# copy missed merge_dismissed and merge_note and read six fresh entries as
+# drift on 2026-09-03).
+try:
+    from _apply_curation import FIELDS as OVERLAY_FIELDS  # noqa: E402
+except Exception:  # pragma: no cover — the sync module is always beside this one
+    OVERLAY_FIELDS = {"discipline", "merge_into", "unified_title", "description",
+                      "cross_listed_disciplines", "merge_dismissed", "merge_note"}
 PICK_PREFIX = "_CANON_SUBJ4::"
 PICK_REVIEWER = "authority-recode-s224@bot"
 MZ_RE = re.compile(r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}$")
