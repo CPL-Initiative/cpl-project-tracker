@@ -560,7 +560,11 @@ Media Studies with Media Production on FTVE, the Theater precedent). Read the po
 fold-verify and audit deltas as worklists (137 materialized records sit on a prefix
 their discipline no longer owns):
 [KB note](../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md);
-lane state in `docs/reference/lanes/skyview-ccr-interface.md`.
+lane state in `docs/reference/lanes/skyview-ccr-interface.md`. Supabase `kb_curation` was re-keyed from both receipts by `supabase-rekey.yml` in the same
+window (about 2 pairs a second). ⚠️ **An alias map can CHAIN** — one pair's old key is another
+pair's new key (`ARME M10AJ → FLNG M10AJ` beside `ARMN M10AJ → ARME M10AJ`): the re-key
+vacates the shared key before filling it and keeps it off the verify surface, or the run goes
+red with nothing wrong (#1455).
 
 Previous instance, superseded by the retirement above: the **UC-CUR → Z-scheme re-mint** (Session 56, 2026-06-15 —
 the 4,053 synthetic `UC-CUR-AUTO*` unified-course ids → `SUBJ Z<band><seq:03d>`,

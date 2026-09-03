@@ -1167,6 +1167,27 @@ briefly made the run look ten times slower than it was. A bulk path (a
 Postgres function taking the pairs as JSON, called in chunks) would make a
 re-key a matter of minutes; it is a NEXT, not a need.
 
+### ⚠️ An alias map can chain, and a naive verify reads the chain as a leftover
+
+The recode re-key (run 33802936877) PATCHed all 10,296 pairs and then failed its
+own verify: *old self-keys left: 2*. Nothing was wrong. The map carried
+`ARME M10AJ → FLNG M10AJ` (a residual Foreign Languages record that sat on the
+ARME prefix since June) beside `ARMN M10AJ → ARME M10AJ` (an Armenian record
+moving onto the ruled code). Sorted order applied the first before the second,
+so every row landed where the map put it; the verify then counted rows on the
+old keys and found two on `ARME M10AJ`, which is also a new key. Two readings had
+to be separated to see it: after both runs, 35 of the recode's old keys were
+still present on `kb_curation`, and 33 of them were numbers the Z-band
+retirement minted after the recode freed them (`AGRI M1001` was `AGRI Z1001`;
+the landed overlay carries the same keys, 30,694 in both places). The other two
+were the chain. `kb/_rekey_kb_curation_supabase.py` now applies a map
+vacate-first (`order_pairs`; a swap aborts) and verifies over the old keys that
+are not also new keys (`verify_surface`); `tests/rekey_kb_curation_chain_test.py`
+pins it, and that PR also wires the two apply guards from #1453 into CI, where
+they had run nowhere (#1455). **A verify has to be written against the shape of
+the map, not against the assumption that old and new keys are disjoint** — the
+collision surface forbids a target that exists, but the same map can vacate one.
+
 ### Verification
 
 `tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`

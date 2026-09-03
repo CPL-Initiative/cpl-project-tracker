@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 781,
-    "bytes": 8295926,
+    "bytes": 8299231,
     "over_budget": 3,
     "handoff_max": 225,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 103,
-        "bytes": 2527513,
+        "bytes": 2528209,
         "over": 2
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1928899,
+        "bytes": 1931093,
         "over": 1
       },
       "kb_note": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 199,
-        "bytes": 1672014,
+        "bytes": 1672429,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2535,
-      "bytes": 1321613234,
-      "heavy_bytes": 631251373,
-      "heavy_share": 0.478,
+      "files": 2543,
+      "bytes": 1330205616,
+      "heavy_bytes": 638941926,
+      "heavy_share": 0.48,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -84,8 +84,8 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
-        "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/row_audit/latest.json",
+        "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/kb/cid_articulation_joins.json",
@@ -413,10 +413,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 79816120,
+        "bytes": 79816129,
         "kind": "dir"
       },
-      "message": "directory totals 79,816,120 B inside the vault"
+      "message": "directory totals 79,816,129 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -473,20 +473,20 @@
       "fixable": false,
       "path": "kb/coci_minted_singletons.json",
       "detail": {
-        "bytes": 36697728,
+        "bytes": 37046818,
         "kind": "file"
       },
-      "message": "36,697,728 B single file inside the vault"
+      "message": "37,046,818 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/coci_minted_courses.json",
       "detail": {
-        "bytes": 27602843,
+        "bytes": 34299627,
         "kind": "file"
       },
-      "message": "27,602,843 B single file inside the vault"
+      "message": "34,299,627 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -543,10 +543,10 @@
       "fixable": false,
       "path": "kb/coci_minted_memberships.json",
       "detail": {
-        "bytes": 17743455,
+        "bytes": 17743519,
         "kind": "file"
       },
-      "message": "17,743,455 B single file inside the vault"
+      "message": "17,743,519 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -591,22 +591,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/row_audit/latest.json",
+      "detail": {
+        "bytes": 10476547,
+        "kind": "file"
+      },
+      "message": "10,476,547 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
         "bytes": 9909947,
         "kind": "file"
       },
       "message": "9,909,947 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/row_audit/latest.json",
-      "detail": {
-        "bytes": 9831813,
-        "kind": "file"
-      },
-      "message": "9,831,813 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -663,10 +663,10 @@
       "fixable": false,
       "path": "kb/coci_articulations.json",
       "detail": {
-        "bytes": 7495463,
+        "bytes": 7494878,
         "kind": "file"
       },
-      "message": "7,495,463 B single file inside the vault"
+      "message": "7,494,878 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -713,10 +713,10 @@
       "fixable": false,
       "path": "kb/coci_curation.json",
       "detail": {
-        "bytes": 5329102,
+        "bytes": 5329167,
         "kind": "file"
       },
-      "message": "5,329,102 B single file inside the vault"
+      "message": "5,329,167 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -863,10 +863,10 @@
       "fixable": false,
       "path": "kb/authority_recode_out/2026-09-03/alias_map.json",
       "detail": {
-        "bytes": 2162410,
+        "bytes": 2162802,
         "kind": "file"
       },
-      "message": "2,162,410 B single file inside the vault"
+      "message": "2,162,802 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

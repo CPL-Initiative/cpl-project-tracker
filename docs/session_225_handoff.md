@@ -43,6 +43,10 @@ Then Sam replied *"Yes to all"* and the afternoon half applied the whole series:
    in order, the `_CANON_SUBJ4::` picks updated (before-values in
    `kb/authority_recode_out/2026-09-03/picks_before.json`), then
    `daily-dashboard.yml` for the artifacts and a hand rebuild of SkyView.
+5. **#1455 — the re-key verify.** An alias map can chain (`ARME M10AJ →
+   FLNG M10AJ` beside `ARMN M10AJ → ARME M10AJ`); the re-key now applies
+   vacate-first and keeps chained keys off its verify surface, and the two
+   apply guards from #1453 run in CI.
 
 ## Sam's decisions this run (record, don't re-derive)
 
@@ -84,7 +88,9 @@ numbers now (0 placeholders today).
    (Supabase carries the new keys), the audit's `latest.json` should show
    `subject_collision_signal` 153, and SkyView's islands should read the new
    codes. If the sync reverted a key, the re-key did not complete: re-dispatch
-   `supabase-rekey.yml` with that receipt (it is idempotent).
+   `supabase-rekey.yml` with that receipt (it is idempotent). Both re-keys
+   completed on 2026-09-03 (0 Z keys, 0 true leftovers); the recode run's
+   red verify was a chained-key false positive, fixed in #1455.
 1. **The fold worklist:** a keep-number prefix re-key for the 137 materialized
    records off their discipline's canonical code, planned with the recode
    allocator's pattern (dry run, receipt, Sam's yes, apply in one window).
