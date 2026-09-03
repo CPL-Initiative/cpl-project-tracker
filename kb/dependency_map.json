@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 405,
+  "file_datasets": 406,
   "external_services": 137,
-  "consumers": 308,
+  "consumers": 309,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -930,7 +930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4230,
+     "line": 4243,
      "tabs": [
       "unified-courses"
      ]
@@ -957,7 +957,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3420,
+     "line": 3433,
      "tabs": [
       "unified-courses"
      ]
@@ -1064,7 +1064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1255
+     "line": 1304
     }
    ],
    "main_committers": []
@@ -4681,6 +4681,13 @@
      "direction": "read",
      "how": "literal",
      "line": 87
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
     }
    ],
    "served": false,
@@ -6681,6 +6688,13 @@
      "line": 1324
     },
     {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
+    },
+    {
      "id": "script:kb/_subj4_apply.py",
      "kind": "script",
      "direction": "read",
@@ -7046,6 +7060,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1303
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -7714,6 +7735,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1304
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -8669,7 +8697,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3098,
+     "line": 3107,
      "tabs": [
       "unified-courses"
      ]
@@ -8750,6 +8778,20 @@
      "direction": "write",
      "how": "literal",
      "line": 207
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 62
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -9877,6 +9919,13 @@
      "line": 292
     },
     {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_title_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -9902,6 +9951,26 @@
      "direction": "read",
      "how": "literal",
      "line": 83
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/authority_subject_codes.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 70
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 70
     }
    ],
    "served": true,
@@ -9973,7 +10042,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 241,
+     "line": 254,
      "tabs": [
       "canonical-subj4"
      ]
@@ -10019,6 +10088,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1320
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
     },
     {
      "id": "script:kb/_seed_coci_courses.py",
@@ -10106,7 +10182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 238,
+     "line": 251,
      "tabs": [
       "canonical-subj4"
      ]
@@ -10159,6 +10235,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1314
+    },
+    {
+     "id": "script:kb/_seed_authority_codes.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     },
     {
      "id": "script:kb/_seed_coci_courses.py",

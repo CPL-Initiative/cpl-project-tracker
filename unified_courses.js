@@ -3060,6 +3060,15 @@
     // Used for the worklist's "will mint under …" preview. Built from the loaded
     // M-ID rows (their subj4Of IS the Common SUBJ); blank ⇒ no existing M-ID, so
     // the build assigns a fresh one. (FL/KIN umbrellas resolve to their plurality.)
+    // Authority chips (item 19, Sam 2026-09-03) from the canonical seed: per
+    // Common SUBJ, the C-ID / CCN code the authority uses where it differs
+    // ("C-ID AJ" beside CRIM), and "proposed" where the CSR minted the code
+    // itself (item 18). Filled by regroupSubjFilter once the seed loads; the
+    // Subject dropdown labels and the Common SUBJ cell's hover read them.
+    var SUBJ_AUTHORITY = {}, DISC_AUTHORITY = {};
+    function subjOptLabel(c) {
+      return SUBJ_AUTHORITY[c] ? c + " — " + SUBJ_AUTHORITY[c].join(" · ") : c;
+    }
     var DISC_COMMON_SUBJ = (function () {
       var tally = {};
       rows.forEach(function (r) {
@@ -3104,10 +3113,14 @@
           // canonical_subj4 — so the forward-looking Common SUBJ (commonSubjOf) and
           // the mint preview can't be skewed by a wave of re-disciplined-but-not-
           // yet-folded rows tallying their stale prefix under the new discipline.
-          var canonChanged = false;
+          var canonChanged = false, authLoaded = false;
           Object.keys(seed.disciplines).forEach(function (d) {
-            var cs = (seed.disciplines[d] || {}).canonical_subj4;
+            var rec = seed.disciplines[d] || {}, cs = rec.canonical_subj4;
             if (cs && DISC_COMMON_SUBJ[d] !== cs) { DISC_COMMON_SUBJ[d] = cs; canonChanged = true; }
+            if (!cs) return;
+            var words = (rec.authority_chips || []).map(function (c) { return c.system + " " + c.code; });
+            if (rec.authority_flag === "proposed") words.push("proposed");
+            if (words.length) { SUBJ_AUTHORITY[cs] = words; DISC_AUTHORITY[d] = words; authLoaded = true; }
           });
           var known = {};
           Object.keys(seed.disciplines).forEach(function (d) {
@@ -3134,14 +3147,14 @@
           [["Common subjects ✓", g1], ["Official C-ID & CCN", g2], ["Local-derived (awaiting fold)", g3]]
             .forEach(function (pair) {
               var og = el("optgroup", { label: pair[0] });
-              pair[1].forEach(function (c) { og.appendChild(el("option", { value: c }, [c])); });
+              pair[1].forEach(function (c) { og.appendChild(el("option", { value: c }, [subjOptLabel(c)])); });
               fSubj.appendChild(og);
             });
           fSubj.value = cur;   // preserve the selection across the rebuild
           // If the authoritative canonical moved any DISC_COMMON_SUBJ entry, re-render
           // so the forward-looking Common SUBJ column reflects it (render() does not
           // re-run this regroup, so there's no loop).
-          if (canonChanged) render();
+          if (canonChanged || authLoaded) render();
         })
         .catch(function () { /* fail-soft: the flat list stays */ });
     }
@@ -4316,7 +4329,12 @@
         // letters still read the old prefix — a ⟲ pending marker flags that lag.
         var hasDisc = hasDiscipline(r);
         var csv = hasDisc ? commonSubjOf(r) : "—", csPend = hasDisc && commonSubjPending(r);
+        var authWords = hasDisc && DISC_AUTHORITY[r.disc] ? DISC_AUTHORITY[r.disc] : null;
         var csTitle = "Local SUBJ code(s): " + (localCodes || "—") + (subjTitle ? "\n" + subjTitle : "")
+          + (authWords ? "\nAuthority: " + authWords.join(" · ")
+              + (authWords.indexOf("proposed") >= 0
+                  ? " (no C-ID or CCN code names this discipline yet; the CSR proposes this Common SUBJ)"
+                  : " (the authority's subject code; the Common SUBJ stays four letters, rule 3, 2026-09-03)") : "")
           + (csPend ? "\nM-ID still keyed " + subj4Of(r) + " — re-keys to " + csv + " at the next canonical-SUBJ4 fold (discipline already set)." : "")
           + (!hasDisc ? "\nNo discipline yet — Common SUBJ is a function of discipline, so it stays blank until one is assigned (provisional local prefix: " + (subj4Of(r) || "—") + ")." : "");
         var csTd = el("td", { title: csTitle }, [csv]);

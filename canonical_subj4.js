@@ -218,6 +218,19 @@
     return (entry && entry.discipline && state.aliases && state.aliases[entry.discipline]) || null;
   }
   // Lowercase alternate-name haystack for search matching.
+  // Authority chips (item 19, Sam 2026-09-03): the C-ID / CCN code the
+  // authority uses where it differs from the Common SUBJ, from
+  // kb/_seed_authority_codes.py. Searchable so "AJ" finds Administration of
+  // Justice and "proposed" finds the CSR-minted codes (item 18).
+  function authorityChips(entry) {
+    return (entry && entry.authority_chips) || [];
+  }
+  function authoritySearchText(entry) {
+    var words = authorityChips(entry).map(function (c) { return c.system + " " + c.code + " " + c.code; });
+    if (entry && entry.canonical_source) words.push(entry.canonical_source);
+    if (entry && entry.authority_flag === "proposed") words.push("proposed");
+    return words.join(" ").toLowerCase();
+  }
   function aliasSearchText(entry) {
     var a = aliasesFor(entry);
     return a ? a.join(" ").toLowerCase() : "";
@@ -623,6 +636,17 @@
       "#tab-canonical-subj4 .cs-check-fix:hover{background:var(--gold-accent);color:#fff;}" +
       "#tab-canonical-subj4 .cs-check-note{color:var(--text-muted);font-size:.78rem;margin:4px 0 10px;text-align:left;}" +
       "#tab-canonical-subj4 .cs-check-ok{color:var(--green-progress);font-size:.95rem;margin:10px 0;}"
+    ]));
+  }
+
+  // Authority chip + proposed flag: muted CO blue on white for a chip that
+  // earns its place (the glyph rule), a dashed muted word for "proposed".
+  function ensureAuthorityCss() {
+    if (document.getElementById("cs-auth-css")) return;
+    document.head.appendChild(el("style", { id: "cs-auth-css" }, [
+      "#tab-canonical-subj4 .cs-badge.auth{color:var(--seal-blue);border-color:var(--cobalt-on-dark);" +
+        "background:var(--surface-opaque);font-family:ui-monospace,Menlo,monospace;font-weight:600;}" +
+      "#tab-canonical-subj4 .cs-badge.proposed{color:var(--text-muted);border-style:dashed;font-weight:500;}"
     ]));
   }
 
@@ -1078,6 +1102,10 @@
       ["reviewed", "Initiated (awaiting validation)"],
       ["validated", "Validated (faculty-confirmed)"],
       ["invalid", "Invalid (saved value not 4 letters)"],
+      ["ccn", "Common SUBJ is the CCN code"],
+      ["cid", "Common SUBJ is the C-ID code"],
+      ["chip", "Shows a C-ID or CCN chip (code differs)"],
+      ["proposed", "CSR code, proposed (no authority code yet)"],
     ].forEach(function (opt) {
       var o = el("option", { value: opt[0] }, [opt[1]]);
       if (opt[0] === state.filter) o.selected = true;
@@ -1293,6 +1321,10 @@
     if (state.filter === "reviewed" && s.label !== "initiated") return false;
     if (state.filter === "validated" && s.label !== "validated") return false;
     if (state.filter === "invalid" && s.label !== "invalid") return false;
+    if (state.filter === "ccn" && entry.canonical_source !== "ccn") return false;
+    if (state.filter === "cid" && entry.canonical_source !== "c-id") return false;
+    if (state.filter === "chip" && !authorityChips(entry).length) return false;
+    if (state.filter === "proposed" && entry.authority_flag !== "proposed") return false;
     if (state.topFilter !== "all" && entry.top_category_2digit !== state.topFilter) return false;
     return true;
   }
@@ -1305,11 +1337,20 @@
       var s = status(e);
       counts[s.label] = (counts[s.label] || 0) + 1;
     });
+    var src = { ccn: 0, "c-id": 0, csr: 0, chips: 0 };
+    rows.forEach(function (e) {
+      if (e.canonical_source && src.hasOwnProperty(e.canonical_source)) src[e.canonical_source]++;
+      if (authorityChips(e).length) src.chips++;
+    });
     sum.innerHTML = "<strong>" + rows.length + "</strong> disciplines · "
       + counts.initiated + " initiated · "
       + counts["pre-seeded"] + " pre-seeded · "
       + counts["needs review"] + " need review"
-      + (counts.invalid ? " · <span style='color:#991b1b'>" + counts.invalid + " invalid</span>" : "");
+      + (counts.invalid ? " · <span style='color:#991b1b'>" + counts.invalid + " invalid</span>" : "")
+      + ((src.ccn + src["c-id"] + src.csr)
+          ? " · on a CCN code " + src.ccn + " · on a C-ID code " + src["c-id"]
+            + " · CSR proposed " + src.csr + " · with a chip " + src.chips
+          : "");
   }
 
   // Re-render the table body + summary. Does NOT touch the toolbar — that's
@@ -1333,13 +1374,15 @@
       // discipline's alternate names ("Physical Education" → Kinesiology).
       if (state.search && e.discipline.toLowerCase().indexOf(state.search) < 0
           && splitSearchText(e).indexOf(state.search) < 0
-          && aliasSearchText(e).indexOf(state.search) < 0) return false;
+          && aliasSearchText(e).indexOf(state.search) < 0
+          && authoritySearchText(e).indexOf(state.search) < 0) return false;
       if (state.subj) {
         var sq = state.subj.toUpperCase();
         var subjHit = (e.canonical_subj4 || "").toUpperCase().indexOf(sq) >= 0
           || (e.data_modal || "").toUpperCase().indexOf(sq) >= 0
           || Object.keys(variantsFor(e)).some(function (s) { return s.toUpperCase().indexOf(sq) >= 0; })
-          || (splitFor(e) || []).some(function (x) { return x.code.toUpperCase().indexOf(sq) >= 0; });
+          || (splitFor(e) || []).some(function (x) { return x.code.toUpperCase().indexOf(sq) >= 0; })
+          || authorityChips(e).some(function (c) { return c.code.toUpperCase().indexOf(sq) >= 0; });
         if (!subjHit) return false;
       }
       // SUBJ dropdown pick (exact code): the discipline's canonical IS the
@@ -1620,6 +1663,35 @@
         style: "font-size:.68rem;color:#6b7280;margin-top:3px;line-height:1.3;",
       }, [splitArr.map(function (x) { return x.code; }).join(" · ")]);
       tdCanon.appendChild(codesLine);
+    }
+    // Authority chip (item 19, Sam 2026-09-03: "stay with 4-characters and add
+    // a CID chip with the verbatim CID code showing"). Where the Common SUBJ
+    // differs from the code C-ID or CCN uses for these courses, the code is a
+    // word chip beside ours — "C-ID AJ" next to CRIM — so faculty see both.
+    // A CSR-minted code no authority names yet reads "proposed" (item 18).
+    // Data: authority_chips / authority_flag on the seed entry, built by
+    // kb/_seed_authority_codes.py from the promotions evidence + the rulings.
+    ensureAuthorityCss();
+    authorityChips(entry).forEach(function (c) {
+      var authChip = el("span", {
+        class: "cs-badge auth",
+        title: c.system + " uses the subject code " + c.code + " for these courses; the Common SUBJ "
+          + "stays " + (entry.canonical_subj4 || "four letters") + " under rule 3 (four letters, no hyphens). "
+          + (entry.authority_note || ""),
+      }, [c.system + " " + c.code]);
+      authChip.style.marginLeft = "6px";
+      authChip.style.cursor = "help";
+      tdCanon.appendChild(authChip);
+    });
+    if (entry.authority_flag === "proposed") {
+      var propChip = el("span", {
+        class: "cs-badge proposed",
+        title: "No C-ID or CCN subject code names this discipline's courses yet, so the CSR proposes "
+          + "this one (item 18, 2026-09-03). When an authority publishes a code, rule 1 applies at the next fold.",
+      }, ["proposed"]);
+      propChip.style.marginLeft = "6px";
+      propChip.style.cursor = "help";
+      tdCanon.appendChild(propChip);
     }
     // CID / CCN match badges — count official identifiers whose subject
     // equals the canonical SUBJ4 (or, if no canonical set yet, the data
