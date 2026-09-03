@@ -203,6 +203,28 @@ with contextlib.redirect_stdout(io.StringIO()):
 check("profile: a tie is reported as a tie", len(ft["Counselor Step"]["tied_tokens"]) >= 2,
       repr(ft["Counselor Step"].get("tied_tokens")))
 
+# ── 6. parity: the probe's copy of the builder's sweep IS the builder's sweep ──
+# The verdict line "the funding builder's sweep DOES NOT match this spelling" is
+# only true if BUILDER_SWEEP is the builder's ACCEPT_CANDIDATES. It was a
+# verbatim copy, and on 2026-09-03 it lagged the builder by the one spelling
+# that mattered (Counselor_Verified, added by PR #1438), so the probe told the
+# reader to add a column the builder already read. Read the builder's literal
+# and compare — a drift is a red check, not a wrong verdict in a run log.
+import ast
+import re
+
+_builder_src = open(os.path.join(ROOT, "funding", "_build_funding_performance.py"),
+                    encoding="utf-8").read()
+_m = re.search(r"ACCEPT_CANDIDATES\s*=\s*(\([^)]*\))", _builder_src, re.S)
+check("parity: the builder still declares ACCEPT_CANDIDATES as a literal tuple", bool(_m))
+if _m:
+    _builder = tuple(ast.literal_eval(_m.group(1)))
+    check("parity: the probe's BUILDER_SWEEP is the builder's ACCEPT_CANDIDATES, verbatim",
+          tuple(P.BUILDER_SWEEP) == _builder,
+          f"probe={P.BUILDER_SWEEP} builder={_builder}")
+    check("parity: the counselor attestation's live spelling leads both",
+          _builder[0] == "Counselor_Verified" and P.BUILDER_SWEEP[0] == "Counselor_Verified")
+
 print()
 if failures:
     print(f"FAILED {len(failures)} of {checks[0]} checks:")

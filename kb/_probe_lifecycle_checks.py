@@ -157,9 +157,15 @@ TRUTHY = ("true", "yes", "y", "1", "t")
 FALSY = ("false", "no", "n", "0", "f")
 
 # The builder's sweep list, verbatim, so the verdict can say whether today's
-# builder would have found the column without an edit.
-BUILDER_SWEEP = ("Counselor Step", "Counselor", "CPL Plan Accepted",
-                 "Plan Accepted", "Accepted", "Counseling Step")
+# builder would have found the column without an edit. ⚠️ A verbatim copy goes
+# stale the day the original moves: on 2026-09-03 (run 33767273456) the verdict
+# said the builder "DOES NOT match" Counselor_Verified — the very spelling
+# PR #1438 had put at the head of the builder's ACCEPT_CANDIDATES. Keep this in
+# step with funding/_build_funding_performance.py; tests/probe_lifecycle_checks_test.py
+# pins the two tuples equal, so a drift is a red check rather than a wrong verdict.
+BUILDER_SWEEP = ("Counselor_Verified", "Counselor Step", "Counselor",
+                 "CPL Plan Accepted", "Plan Accepted", "Accepted",
+                 "Counseling Step")
 
 
 # ── pure helpers (tested hermetically in tests/probe_lifecycle_checks_test.py) ──
