@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 404,
+  "file_datasets": 406,
   "external_services": 137,
-  "consumers": 308,
+  "consumers": 309,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -2666,6 +2666,13 @@
      "direction": "read",
      "how": "literal",
      "line": 675
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 357
     }
    ],
    "served": false,
@@ -6092,6 +6099,13 @@
      "direction": "read",
      "how": "literal",
      "line": 639
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 106
     }
    ],
    "served": true,
@@ -6412,6 +6426,13 @@
      "direction": "read",
      "how": "literal",
      "line": 15
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     }
    ],
    "producers": [
@@ -6714,6 +6735,13 @@
      "direction": "read",
      "how": "literal",
      "line": 68
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     }
    ],
    "producers": [
@@ -7130,6 +7158,13 @@
      "direction": "read",
      "how": "literal",
      "line": 69
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
     }
    ],
    "producers": [
@@ -7791,6 +7826,13 @@
      "direction": "read",
      "how": "literal",
      "line": 70
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
     }
    ],
    "producers": [
@@ -8052,6 +8094,13 @@
      "direction": "write",
      "how": "literal",
      "line": 463
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     }
    ],
    "served": true,
@@ -8143,6 +8192,13 @@
      "direction": "write",
      "how": "literal",
      "line": 466
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
     }
    ],
    "served": true,
@@ -8612,6 +8668,13 @@
      "direction": "read",
      "how": "literal",
      "line": 308
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 441
     }
    ],
    "served": true,
@@ -8771,6 +8834,13 @@
      "direction": "read",
      "how": "literal",
      "line": 71
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     }
    ],
    "producers": [
@@ -9183,6 +9253,13 @@
      "direction": "read",
      "how": "literal",
      "line": 49
+    },
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
     }
    ],
    "served": true,
@@ -11570,6 +11647,32 @@
    "main_committers": [
     "workflow:workplan-goals-seed-apply.yml"
    ]
+  },
+  "file:kb/zband_retire_out/2026-09-03/capacity.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 315
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/zband_retire_out/2026-09-03/duplicates.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_zband_retire_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 319
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kpi_cards.js": {
    "consumers": [
