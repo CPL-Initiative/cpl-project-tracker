@@ -592,6 +592,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrase_header.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
+| `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
@@ -609,7 +610,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
+| `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
+| `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
 | `tools/first_light_candidates.json` | none found | committed by: `first-light-art.yml` |
@@ -789,5 +792,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 410 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 413 file
 datasets · 137 external services · 311 consumers · 33 workflows · 37 tabs.

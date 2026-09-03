@@ -17,7 +17,10 @@ GitHub Actions secrets (SUPABASE_SERVICE_KEY). Run via .github/workflows/
 supabase-rekey.yml (workflow_dispatch).
 
 Two rewrite classes, both idempotent (re-run only touches rows still on the old
-key — a clean bijection, so re-running is a safe no-op):
+key — a clean bijection, so re-running is a safe no-op). A CHAINED map (one
+pair's old key is another pair's new key) is applied in `order_pairs` order —
+the pair vacating the shared key first — and that key is excluded from the
+verify, since rows legitimately sit on it afterwards (2026-09-03).
   1. self-keyed rows:  course_id  old → new
   2. merge_into ptrs:  value      old → new   (field = 'merge_into')
 
@@ -55,6 +58,39 @@ def load_alias(path):
         if new and new != old:
             pairs[old] = new
     return pairs
+
+
+def order_pairs(pairs):
+    """The apply order for a CHAINED alias map. When one pair's OLD key is another
+    pair's NEW key (2026-09-03: `ARME M10AJ -> FLNG M10AJ` beside
+    `ARMN M10AJ -> ARME M10AJ`), the pair that vacates the shared key must run
+    first, or the rows arriving on it get rewritten a second time and land on
+    the wrong key. Rank = hops downstream; ascending rank vacates before it
+    fills. A cycle (a swap) has no safe order without a temporary key: abort."""
+    rank = {}
+
+    def _rank(old, trail=()):
+        if old in rank:
+            return rank[old]
+        if old in trail:
+            raise SystemExit(f"ABORT — the alias map cycles through {old!r}; a swap needs a temporary key.")
+        new = pairs[old]
+        rank[old] = (_rank(new, trail + (old,)) + 1) if new in pairs else 0
+        return rank[old]
+
+    for old in pairs:
+        _rank(old)
+    return sorted(pairs.items(), key=lambda kv: (rank[kv[0]], kv[0]))
+
+
+def verify_surface(pairs):
+    """(old keys that must be EMPTY after the re-key, chained keys). An old key
+    that is also some pair's new key legitimately carries rows afterwards —
+    counting it as a leftover is the false positive that failed run
+    33802936877 (2026-09-03) with '2 rows still carry an old key' when every
+    row was where the map put it."""
+    new_keys = set(pairs.values())
+    return [k for k in pairs if k not in new_keys], sorted(k for k in pairs if k in new_keys)
 
 
 def _req(method, qs, body=None):
@@ -95,15 +131,20 @@ def main():
         sys.exit("usage: python3 kb/_rekey_kb_curation_supabase.py <alias_map.json> [--check]")
     pairs = load_alias(args[0])
     print(f"alias map: {len(pairs)} old→new pairs from {args[0]}")
+    old_only, chained = verify_surface(pairs)
+    if chained:
+        print(f"chained keys (old AND new — rows legitimately remain on them): {', '.join(chained)}")
     if check:
-        print("--check: alias map loads OK; no Supabase writes.")
+        ordered = order_pairs(pairs)
+        print(f"--check: alias map loads OK; {len(ordered)} pairs in apply order, "
+              f"{len(old_only)} old keys on the verify surface; no Supabase writes.")
         return
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) to run the live re-key.")
 
     print(f"re-keying {len(pairs)} self-keyed rows + their merge_into pointers …")
     n_self = n_ptr = 0
-    for i, (old, new) in enumerate(sorted(pairs.items()), 1):
+    for i, (old, new) in enumerate(order_pairs(pairs), 1):
         o = urllib.parse.quote(old, safe="")
         # 1. self-keyed rows: course_id old → new
         _req("PATCH", f"course_id=eq.{o}", {"course_id": new})
@@ -118,11 +159,12 @@ def main():
     # verify: 0 of the alias map's OLD keys remain on the re-key surface — generic
     # since 2026-09-03 (the authority recode + Z-band retirement receipts); the
     # first receipt's `UC-CUR-*` shape was a special case of this.
-    left_keys, left_ptrs = _count_old_keys(list(pairs))
-    print(f"VERIFY — old self-keys left: {left_keys} | old merge_into pointers left: {left_ptrs}")
+    left_keys, left_ptrs = _count_old_keys(old_only)
+    print(f"VERIFY — old self-keys left: {left_keys} | old merge_into pointers left: {left_ptrs}"
+          + (f" (over {len(old_only)} old keys; {len(chained)} chained keys excluded)" if chained else ""))
     if left_keys or left_ptrs:
         sys.exit(f"ABORT — {left_keys + left_ptrs} rows still carry an old key after the re-key.")
-    print(f"✓ Supabase kb_curation re-keyed — none of the {len(pairs)} old keys remain on the re-key surface.")
+    print(f"✓ Supabase kb_curation re-keyed — none of the {len(old_only)} old keys remain on the re-key surface.")
 
 
 def _in_list(keys):

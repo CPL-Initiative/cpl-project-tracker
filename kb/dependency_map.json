@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 410,
+  "file_datasets": 413,
   "external_services": 137,
   "consumers": 311,
   "workflows": 33,
@@ -12800,6 +12800,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/authority_recode_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/ccr_universe_members_test.py": {
    "consumers": [
     {
@@ -13021,7 +13034,33 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/rekey_kb_curation_chain_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/supabase_function_grants_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/zband_retire_apply_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -15650,14 +15689,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 48
     },
     {
      "id": "script:kb/_rekey_kb_curation_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 109
+     "line": 150
     },
     {
      "id": "script:kb/_subj4_apply_supabase.py",
@@ -17190,6 +17229,9 @@
     "tests/governance_docs_panel.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
+    "tests/rekey_kb_curation_chain_test.py",
+    "tests/authority_recode_apply_test.py",
+    "tests/zband_retire_apply_test.py",
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",

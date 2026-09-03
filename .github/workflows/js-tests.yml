@@ -89,6 +89,23 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # Re-key chain guard (Session 224) — a re-mint alias map can CHAIN (one
+      # pair's old key is another pair's new key: `ARME M10AJ -> FLNG M10AJ`
+      # beside `ARMN M10AJ -> ARME M10AJ`). The Supabase re-key must vacate the
+      # shared key before filling it and must not count it as a leftover; the
+      # 2026-09-03 recode run went red on exactly that false positive. Pure-stdlib
+      # python, no network.
+      - name: Supabase re-key chain guard (kb/_rekey_kb_curation_supabase.py)
+        run: python3 tests/rekey_kb_curation_chain_test.py
+      # The two re-mint applies (Session 224, #1453) — apply == spec, gated
+      # against the frozen receipt: a moved row without its stamp, a ghost key
+      # not healed, a pointer left on a Z id, a materialized record with a
+      # membership entry of its own. 37 fixture checks that ran nowhere until
+      # this step. Pure-stdlib python, no network.
+      - name: Re-mint apply guards (kb/_authority_recode_apply.py, kb/_zband_retire_apply.py)
+        run: |
+          python3 tests/authority_recode_apply_test.py
+          python3 tests/zband_retire_apply_test.py
       # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
       # nights reporting a name mismatch while MAP was plainly answering
       # 400 "View_StudentDetailsCredits_APIDataset is not Valid" in a field
