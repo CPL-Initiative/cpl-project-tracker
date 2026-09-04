@@ -85,6 +85,19 @@
    playwright + a Chromium; in the sandbox that is the newest chromium build
    under /opt/pw-browsers (PLAYWRIGHT_CHROMIUM overrides). If playwright is not
    in the project tree, NODE_PATH can point at an out-of-tree install.
+
+   ⚠️ PLAYWRIGHT *IS* IN package.json, PINNED EXACTLY, AND THE PIN IS LOAD-
+   BEARING. An earlier version of this header (carried over from the script this
+   replaced) said it was "deliberately NOT a package.json dependency" — that was
+   never true of this repo, and the correction matters because of how it broke:
+   `package-lock.json` is GITIGNORED here, so CI's `npm install` resolves ranges
+   against the registry at run time. On 2026-09-04 playwright 1.63.0 published
+   with a 404 tarball, `^1.62.1` resolved to it, and every CI run on every branch
+   died at install — three seconds in, before a single test body ran. With only
+   two direct dependencies and no lockfile, an EXACT pin on each is what makes
+   `npm install` deterministic. The workflow sets
+   PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so the package costs CI a download of the
+   driver and no browser. Bump a pin deliberately; never widen one to a range.
    =========================================================================== */
 const path = require("path");
 const fs = require("fs");

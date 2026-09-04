@@ -106,6 +106,35 @@ git ls-remote --heads origin <branch> | wc -l         # 0 = auto-deleted at merg
 the next merge. ⚠️ Wrap any networked git call in `timeout` — `git fetch --prune`
 hung for the full 2-minute limit in this sandbox at least once.
 
+### CI dies at `npm install` with a 404 on a package tarball
+
+**Symptom.** Every workflow on every branch fails three seconds in, at
+`Run npm install`, before a single test body runs:
+
+```
+npm error 404 Not Found - GET https://registry.npmjs.org/playwright/-/playwright-1.63.0.tgz
+```
+
+**Cause — and it is not the branch you are on.** `package-lock.json` is
+**gitignored** in this repo (`.gitignore:20`), so CI has no lockfile and
+`npm install` resolves every RANGE against the registry *at run time*. A caret
+(`^1.62.1`) therefore means "whatever npm calls latest this minute". On
+2026-09-04 playwright published 1.63.0 with a tarball that 404s, and every run
+after that moment died — including runs whose diff touched nothing near it. The
+run half an hour earlier on the same branch had passed.
+
+**Fix.** Pin each direct dependency EXACTLY in `package.json` — there are only
+two, so a lockfile would add nothing a pin does not. Verify the way CI does:
+
+```bash
+rm -rf node_modules && npm install
+```
+
+Bump a pin deliberately when you want a newer version; never widen one back to a
+range while the lockfile stays ignored. ⚠️ **A red run whose failure names a
+package rather than a test is almost never the PR's** — check whether the base
+branch fails the same way before debugging your own diff.
+
 ### docx library errors
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:
