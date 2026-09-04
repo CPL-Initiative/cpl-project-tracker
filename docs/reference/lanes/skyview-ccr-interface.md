@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-03
+updated: 2026-09-04
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes

@@ -3823,7 +3823,8 @@
      "governs": [
       "kb/_authority_recode_apply.py",
       "kb/_zband_retire_apply.py",
-      "kb/_apply_curation.py"
+      "kb/_apply_curation.py",
+      "kb/_rekey_kb_curation_supabase.py"
      ],
      "path": "docs/kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md",
      "status": "published",
@@ -3839,7 +3840,7 @@
      ],
      "title": "Land a re-mint by rehearsal and a fresh read, then read the numbers it moves",
      "type": "methodology",
-     "updated": "2026-09-03"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-06-09",
@@ -11410,7 +11411,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-03"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-08-28",
@@ -11625,7 +11626,7 @@
      ],
      "title": "the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced",
      "type": null,
-     "updated": "2026-09-03"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-09-03",

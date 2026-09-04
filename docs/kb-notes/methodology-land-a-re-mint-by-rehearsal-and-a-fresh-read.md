@@ -1,7 +1,7 @@
 ---
 title: Land a re-mint by rehearsal and a fresh read, then read the numbers it moves
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-04
 tags: [methodology, remint, rule-7, rule-10, supabase, curation, ccr, identity]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -13,6 +13,7 @@ artifacts:
   - kb/_authority_recode_apply.py
   - kb/_zband_retire_apply.py
   - kb/_apply_curation.py
+  - kb/_rekey_kb_curation_supabase.py
 ---
 
 # Land a re-mint by rehearsal and a fresh read, then read the numbers it moves
@@ -66,6 +67,27 @@ A design choice sits underneath: a materialized record carries the members'
 aggregate (title, discipline, units, colleges) but **no membership entry of its
 own**, so no college course is counted twice; the members keep their records
 and their `merge_into` pointers.
+
+## 4. The verify must know the shape of the map
+
+An alias map can CHAIN: one pair's old key is another pair's new key. The
+2026-09-03 recode carried `ARME M10AJ → FLNG M10AJ` (a residual Foreign
+Languages record on the ARME prefix since June) beside `ARMN M10AJ → ARME M10AJ`
+(an Armenian record moving onto the ruled code). The collision surface forbids a
+target that already exists, but the same map can vacate one, so old and new
+keys are not disjoint. The Supabase re-key applied every pair, then failed its
+own verify with "2 old keys left" — the two chained keys, carrying exactly the
+rows the map had put there. Two rules follow. Apply a chained map
+**vacate-first** (the pair that empties the shared key runs before the pair that
+fills it; a swap has no safe order without a temporary key, so abort). Verify
+over the old keys that are **not also new keys**, and name the chained ones.
+`kb/_rekey_kb_curation_supabase.py` does both since #1455, and
+`kb/_prefix_fold_dryrun.py`'s V9 fails only on a swap cycle. Reading the
+leftover count also needed the second receipt in hand: after both re-keys, 33
+more "old" keys were present on the table — numbers the Z-band retirement had
+minted after the recode freed them — and the landed overlay carried the same
+keys. A verify is written against the shape of the maps it follows, not
+against the assumption that keys move once.
 
 ## Where it lives
 
