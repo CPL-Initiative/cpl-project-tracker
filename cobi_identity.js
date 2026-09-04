@@ -210,10 +210,14 @@
     s.id = CSS_ID;
     s.textContent = [
       ".cobi-ident{position:relative;order:0;}",
+      // ⚠️ --text-muted, NOT --text-faint: measured at 3.53:1 on faint against
+      // the 4.5:1 floor, on the label that names who you are signed in as.
+      // min-height 24px is WCAG 2.2 SC 2.5.8 (this button rendered 60x19).
       ".cobi-ident-btn{font-family:'Source Sans 3',Arial,sans-serif!important;font-size:.74rem!important;",
       "font-weight:600!important;background:none!important;border:none!important;cursor:pointer;",
-      "padding:.15rem .3rem!important;display:inline-flex!important;align-items:center;gap:.3rem;",
-      "white-space:nowrap;transition:color .15s;color:var(--text-faint,#87877F)!important;}",
+      "padding:.25rem .3rem!important;min-height:24px;box-sizing:border-box;",
+      "display:inline-flex!important;align-items:center;gap:.3rem;",
+      "white-space:nowrap;transition:color .15s;color:var(--text-muted,#5C5C55)!important;}",
       ".cobi-ident-btn:hover{color:var(--cobalt,#0047AB)!important;}",
       ".cobi-ident-btn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}",
       // State is carried by the WORD in the label; the tint only reinforces it.
@@ -231,12 +235,14 @@
       // The two ways in, named. Sam's own words for them — a reader who has
       // been sent a magic link should find the phrase "magic link" here.
       ".cobi-ident-lbl{font-family:'Source Sans 3',sans-serif;font-size:.68rem;letter-spacing:.06em;",
-      "text-transform:uppercase;color:var(--text-faint,#87877F);margin:0 0 .2rem;font-weight:700;}",
+      "text-transform:uppercase;color:var(--text-muted,#5C5C55);margin:0 0 .2rem;font-weight:700;}",
       ".cobi-ident-act{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;",
       "color:var(--cobalt,#0047AB);background:none;border:none;text-align:left;cursor:pointer;padding:.25rem 0;}",
       ".cobi-ident-act:hover{text-decoration:underline;}",
       ".cobi-ident-act:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}",
-      ".cobi-ident-note{font-size:.72rem;color:var(--text-faint,#87877F);margin:.45rem 0 0;line-height:1.4;",
+      // The note is what stops the pane over-claiming what a credential opens —
+      // essential text, so the muted token, not faint (measured 3.62:1 on faint).
+      ".cobi-ident-note{font-size:.72rem;color:var(--text-muted,#5C5C55);margin:.45rem 0 0;line-height:1.4;",
       "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.4rem;}",
       ".cobi-ident-host{margin:.35rem 0 0;}",
       "@media (max-width:560px){.cobi-ident-pane{width:min(290px,86vw);}}",

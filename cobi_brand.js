@@ -98,10 +98,16 @@
       // ── utility cluster (right) ──
       ".cobi-utility{grid-column:3;justify-self:end;display:flex;align-items:center;justify-content:flex-end;",
       "flex-wrap:wrap;gap:.1rem .55rem;min-width:0;}",
+      // ⚠️ --text-muted, NOT --text-faint. Measured on the rendered page, faint
+      // gave these 3.53:1 against the 4.5:1 small-text floor — a genuine AA
+      // failure on a CONTROL LABEL, and the token table already says faint is
+      // "decorative only — never essential text". min-height 24px meets WCAG
+      // 2.2 SC 2.5.8 (target size); these were 19px tall.
       ".cobi-util-link,.header #refreshBtn{font-family:'Source Sans 3',Arial,sans-serif!important;",
-      "font-size:.74rem!important;font-weight:600!important;color:var(--text-faint,#87877F)!important;",
+      "font-size:.74rem!important;font-weight:600!important;color:var(--text-muted,#5C5C55)!important;",
       "background:none!important;border:none!important;cursor:pointer;text-decoration:none!important;",
-      "padding:.15rem .3rem!important;display:inline-flex!important;align-items:center;gap:.25rem;",
+      "padding:.25rem .3rem!important;min-height:24px;box-sizing:border-box;",
+      "display:inline-flex!important;align-items:center;gap:.25rem;",
       "transition:color .15s;white-space:nowrap;letter-spacing:0!important;border-radius:0!important;}",
       ".cobi-util-link:hover,.header #refreshBtn:hover{color:var(--cobalt,#0047AB)!important;background:none!important;}",
       ".cobi-about{position:relative;order:1;}",
@@ -112,8 +118,10 @@
       "font-size:.82rem!important;font-weight:600!important;color:var(--cobalt,#0047AB)!important;",
       "padding:.3rem 0!important;}",
       ".cobi-about-panel #refreshBtn:hover{text-decoration:underline;}",
+      // The stamp says how fresh the figures are — that is data a reader acts
+      // on, so it takes the muted TEXT token too (was 3.53:1 on faint).
       ".cobi-utility .last-updated{order:9;flex-basis:100%;text-align:right;font-size:.7rem!important;",
-      "color:var(--text-faint,#87877F)!important;margin:.05rem 0 0!important;font-weight:400;}",
+      "color:var(--text-muted,#5C5C55)!important;margin:.05rem 0 0!important;font-weight:400;}",
       // ── About popover ──
       ".cobi-about-panel{position:absolute;right:0;top:calc(100% + .4rem);z-index:300;width:320px;",
       "background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));",

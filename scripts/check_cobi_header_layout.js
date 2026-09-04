@@ -32,6 +32,18 @@
    zoom range — 2560 covers zooming out on a wide display, 360 covers zooming
    well in.
 
+   IT ALSO ASSERTS ACCESSIBILITY, for the same reason: contrast and target
+   size are GEOMETRY AND PAINT, so jsdom cannot see them either. Sam asked for
+   the masthead to be accessible and mobile friendly (2026-09-04) and the audit
+   found seven real AA failures that every existing test passed straight over —
+   six of them a control label or a data stamp painted in --text-faint, the
+   token the palette itself marks "decorative only - never essential text", at
+   3.53-3.62:1 against the 4.5:1 floor; the seventh a 19px-tall button under
+   WCAG 2.2 SC 2.5.8's 24px. Three were in code written that same day, one of
+   them immediately after a comment saying not to do it. Hence: measured, not
+   asserted, with the panes OPEN and a credential held, because a closed pane
+   hides most of the text in this header.
+
    WHAT IT ASSERTS: the three masthead clusters never intersect, the header
    never scrolls sideways, and the alpha notice stays on its own full-width
    row. It deliberately does NOT assert on document-level horizontal overflow:
@@ -111,6 +123,86 @@ function overlap(a, b) {
         Math.round(m.note.width) + "px wide");
     }
   }
+
+  // ── accessibility, measured on the painted page ──────────────────────────
+  // Panes OPEN and a team phrase held: most of this header's text and every
+  // one of its forms live inside a popover, and a closed popover is a check
+  // that passes by not looking.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto("file://" + PAGE, { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => { try { localStorage.setItem("cpl_team_pass", "x"); } catch (e) {} });
+  await page.reload({ waitUntil: "domcontentloaded" });
+  await page.waitForTimeout(500);
+  await page.evaluate(() => { var b = document.querySelector(".cobi-ident-btn"); if (b) b.click(); });
+  await page.waitForTimeout(150);
+  await page.evaluate(() => { var b = document.getElementById("cobiAboutBtn"); if (b) b.click(); });
+  await page.waitForTimeout(250);
+
+  const a11y = await page.evaluate(() => {
+    function parse(s) {
+      var m = String(s).match(/rgba?\(([\d.]+),\s*([\d.]+),\s*([\d.]+)(?:,\s*([\d.]+))?\)/);
+      return m ? [+m[1], +m[2], +m[3], m[4] === undefined ? 1 : +m[4]] : null;
+    }
+    // Composite the real stack: the masthead is glass over the page ground, so
+    // treating its declared background as opaque overstates the contrast.
+    function ground(el) {
+      var st = [], e = el;
+      while (e) { var c = parse(getComputedStyle(e).backgroundColor); if (c && c[3] > 0) st.push(c); e = e.parentElement; }
+      st.push([255, 255, 255, 1]);
+      var out = st[st.length - 1].slice(0, 3);
+      for (var i = st.length - 2; i >= 0; i--) {
+        var s = st[i], a = s[3];
+        out = [0, 1, 2].map(function (k) { return s[k] * a + out[k] * (1 - a); });
+      }
+      return out;
+    }
+    var hdr = document.querySelector(".header"), text = [], ctrls = [];
+    Array.prototype.forEach.call(hdr.querySelectorAll("*"), function (el) {
+      var cs = getComputedStyle(el);
+      if (cs.display === "none" || cs.visibility === "hidden" || !el.getClientRects().length) return;
+      var direct = Array.prototype.some.call(el.childNodes, function (n) { return n.nodeType === 3 && n.textContent.trim(); });
+      if (direct) text.push({ sel: el.tagName.toLowerCase() + "." + String(el.className || "").slice(0, 26),
+        fg: parse(cs.color).slice(0, 3), bg: ground(el),
+        px: parseFloat(cs.fontSize), weight: parseInt(cs.fontWeight, 10),
+        sample: (el.textContent || "").trim().slice(0, 30) });
+      if (/^(button|a|select|input)$/.test(el.tagName.toLowerCase())) {
+        var bb = el.getBoundingClientRect();
+        var lbl = el.id && document.querySelector('label[for="' + el.id + '"]');
+        var name = (el.getAttribute("aria-label") || (lbl && lbl.textContent) ||
+          (el.closest("label") && el.closest("label").textContent) || el.textContent ||
+          el.getAttribute("title") || "").trim();
+        ctrls.push({ sel: el.tagName.toLowerCase() + (el.id ? "#" + el.id : "") + "." + String(el.className || "").slice(0, 26),
+          name: name, w: Math.round(bb.width), h: Math.round(bb.height) });
+      }
+    });
+    var focusRules = 0;
+    for (var i = 0; i < document.styleSheets.length; i++) {
+      var rules; try { rules = document.styleSheets[i].cssRules; } catch (e) { continue; }
+      for (var j = 0; rules && j < rules.length; j++) if (/focus-visible/.test(rules[j].cssText || "")) focusRules++;
+    }
+    return { text: text, ctrls: ctrls, focusRules: focusRules, h1: document.querySelectorAll("h1").length };
+  });
+
+  function lum(c) { var f = c.map(function (v) { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * f[0] + 0.7152 * f[1] + 0.0722 * f[2]; }
+  function ratio(a, b) { var L1 = lum(a), L2 = lum(b); return (Math.max(L1, L2) + 0.05) / (Math.min(L1, L2) + 0.05); }
+
+  check("a11y — the audit actually saw the open panes", a11y.text.length >= 25 && a11y.ctrls.length >= 10,
+    a11y.text.length + " text nodes, " + a11y.ctrls.length + " controls");
+  a11y.text.forEach(function (t) {
+    var cr = ratio(t.fg, t.bg);
+    var large = t.px >= 24 || (t.px >= 18.66 && t.weight >= 700);
+    var need = large ? 3.0 : 4.5;
+    check("a11y contrast — " + t.sel + ' "' + t.sample + '"', cr >= need,
+      cr.toFixed(2) + ":1, needs " + need + ":1 at " + t.px + "px/" + t.weight);
+  });
+  a11y.ctrls.forEach(function (c) {
+    check("a11y name — " + c.sel, !!c.name, "no accessible name");
+    // WCAG 2.2 AA SC 2.5.8: 24x24 CSS px minimum target.
+    check("a11y target — " + c.sel, c.w >= 24 && c.h >= 24, c.w + "x" + c.h);
+  });
+  check("a11y — :focus-visible is styled", a11y.focusRules > 0);
+  check("a11y — exactly one <h1> on the page", a11y.h1 === 1, String(a11y.h1));
 
   await browser.close();
 

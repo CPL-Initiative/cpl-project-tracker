@@ -112,8 +112,10 @@
       ".cobi-tph-go{padding:4px 10px;border:1px solid var(--seal-blue,#00356B);border-radius:4px;" +
         "background:var(--seal-blue,#00356B);color:#fff;font-size:.78rem;font-weight:700;cursor:pointer;font-family:inherit;}" +
       ".cobi-tph-go:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
+      // min-height 24px is WCAG 2.2 SC 2.5.8 (target size); measured 65x22.
       ".cobi-tph-lock{font-family:inherit;font-size:.78rem;font-weight:600;color:var(--cobalt,#0047AB);" +
-        "background:none;border:none;text-align:left;cursor:pointer;padding:.25rem 0;}" +
+        "background:none;border:none;text-align:left;cursor:pointer;padding:.25rem 0;" +
+        "min-height:24px;display:inline-flex;align-items:center;}" +
       ".cobi-tph-lock:hover{text-decoration:underline;}" +
       ".cobi-tph-lock:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
       ".cobi-tph-msg{font-size:.72rem;margin-top:6px;min-height:1em;}" +
