@@ -1,9 +1,39 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-04",
-  "_session": "226 (SkyLand) — the curated-anchor duplicates are a worklist lane; the twenty were never missing",
-  "_status": "2026-09-04 SkyLand, Session 226 — the 130 curated common-course anchors from May 2026 that duplicate a catalog course are now a lane of the CCR tab's Suggested-merges worklist (PR #1465), recomputed every build: the catalog course is listed first so it survives and the anchor folds into it; where the only match is a single-college course the anchor survives and gains it. Nothing is merged by a script — each pair is one Confirm. 129 of the 130 receipt pairs surface; the one that does not sits behind a bot-written discipline (Stagecraft) on its twin, which is itself a finding. Also measured: the 20 folded identities the export seemed to lose are folded into C-ID descriptor rows by design, not an export gap. The first scheduled cron after the fold (06:17 UTC) is checked at 06:45 UTC. Also built, before the first one appears: the promote step that turns a client's or the bot's transient placeholder into a real M-ID record (nothing to promote today). The identities map's 1,597 stale keys are measured and planned (a dry run with a receipt: re-key 1,369, drop 228); the five-item sheet for Sam comes next, then curated disciplines outside the MQ list.",
+  "_session": "227 (SkyMint) — the COBI masthead shipped; accessibility turns out to need a lint, and one palette ruling unblocks the rest",
+  "_status": "The COBI masthead is done and merged (#1469): the tagline, the CPL superscript and the org tags are gone, Manually Refresh moved into the About menu, the team phrase now sits beside the magic-link sign-in in one pane, the site dropdown spells out each org, and the alpha line is rewritten and quiet. The reason it looked broken when you zoomed was that three CSS defaults each stop a row from shrinking, so it overflowed and painted over itself instead of wrapping; that is fixed and now checked across 17 widths in a real browser. Measuring the painted page also found seven genuine accessibility failures in the masthead alone — three of them written the same day, minutes after a comment saying not to. That is the real lesson: a written rule states the standard but cannot detect a breach, so accessibility needs a check that runs by itself rather than a rule someone has to remember. A first sweep across all 38 views shows the failures are not scattered: they cluster on a small set of raw colors that never went through First Light, the worst of them appearing 4,827 times from just 32 lines in two files. One decision from you unblocks the fix.",
   "items": [
+    {
+      "id": "s227-sam-absence-color",
+      "for": "Sam",
+      "tab": "credential-reference",
+      "text": "One colour decision unblocks an accessibility fix across the whole suite. Roughly four thousand “no value here” markers (the italic “— no articulations” in the grids) are currently too faint to read — 2.34:1 against a 4.5:1 standard. Making them the normal muted grey would fix it but make absence the loudest thing on a dense screen, which is backwards. The proposal is a new quiet grey (#6B6B66) that just clears the standard and stays the quietest thing in the row. Say yes, or say use the normal muted grey."
+    },
+    {
+      "id": "s227-fable-a11y-sweep",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "Fix the accessibility sweep harness before trusting its totals — scope it to the active pane (the nav rail was re-measured on all 38 tabs) and encode WCAG 2.2's inline-target exception. Then reconcile the raw-hex palette (#94a3b8, #64748b, #6b7280, #cbd5e1) into First Light tokens once Sam rules the absence colour, and chase the 338 controls that have no accessible name."
+    },
+    {
+      "id": "s227-fable-skyview-six",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "SkyView's six changes. Item 1 is not a bigger zoom number: node radius scales linearly with zoom and so does orbit spacing, so the ratio never changes and zooming has never helped pick one course out of a crowd. Taper the radius above a knee and the gap opens 85px → 374px at 40×. Items 4 and 6 need a data change first — the map payload carries no credit/noncredit field, though the source rows do (three states, not two, plus 73 blanks)."
+    },
+    {
+      "id": "s227-fable-config-to-tables",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "Sam approved moving baked-in configuration into tables. Two to start: the list of sites in cobi_orgs.js (adding or renaming a site is currently a code deploy) and the alpha banner's wording. public.cobi_nav is the precedent for the first, the sierra_guidance row for the second."
+    },
+    {
+      "id": "s227-fable-depmap-linenumbers",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "The dependency map failed CI this run having changed nothing but line numbers, which shifted by three when a comment was deleted. Rule 2 already says line numbers rot. Drop them from the compared artifact so the check fires on real dependency changes only."
+    },
     {
       "id": "s226-sam-drive-the-anchor-lane",
       "for": "Sam",
@@ -14,7 +44,7 @@
       "id": "s224-sam-drive-skyview-again",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "Drive SkyView again after #1460 shipped your eight notes: the zoom buttons keep the searched subject in place, nothing floats over the map, labels sit on leader lines and lead with the title and units (3u), Pan and Move are chips, the other views are links in full screen, and clicking an identity opens it to show its college courses named by code and college. Visual calls left for you: the white halo, how far the ring spreads, the 48-square cap, and the zoom (4.2x) past which every identity opens."
+      "text": "Drive SkyView again — the six changes you asked for on 2026-09-04 are queued (zoom past 900% so one course can be isolated with its neighbours still visible, a toggle to mute non-essential labels, a resizable/pop-out detail box, noncredit courses drawn differently with a CR/NC toggle, SkyView as its own full-window tab, and CR kept apart from NC in the keyword search). Tell the next session which matter most."
     },
     {
       "id": "s224-sam-hosp-anchors",
@@ -23,22 +53,10 @@
       "text": "Give the three legacy anchors that carry no seed discipline one of the 146 MQ disciplines on the CSR tab: M-ID HOSP 100 and M-ID HOSP 104 (Travel Services), M-ID HOSP 102 (Hotel and Motel Services). The Z-band retirement folded the other 218; the next pass folds these once they have a discipline."
     },
     {
-      "id": "s226-fable-identities-map-and-held-rows",
+      "id": "s226-fable-curation-followups",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The promote step for client placeholders is built (kb/_uc_cur_promote.py; zero placeholders today; run its dry run the day one appears). The identities-map dry run is built and its receipt cut (kb/identities_rekey_out/2026-09-04: re-key 1,369 stale keys onto their live ids, drop 44 that collide with a live entry, 9 that lose a convergence, 175 that nothing names again) — build Sam's five-item decision sheet from its report, record his verdicts, then apply with the ruling. The seven held rows move when a curator's discipline row or a ruling gives them a second signal."
-    },
-    {
-      "id": "s226-fable-disciplines-outside-mq",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Measure how many curated discipline values in kb_curation sit outside the 146 MQ disciplines. One is known: the trailcrew-ccr1-s111 bot cohort wrote 'Stagecraft' on THES M1087 on 2026-07-10, which is why that identity no longer pairs with its May anchor THTR M1377 on the new lane. Propose the fix on a decision sheet for Sam — a bot-written discipline is not a human ruling, but it is also not ours to rewrite silently."
-    },
-    {
-      "id": "s223-sam-drive-skyview",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Open the Common Course Reference tab and drive SkyView for ten minutes, then react by number: (1) are the orbiting stand-alone courses readable or too dense around the big identities, (2) is the details panel the right width and in the right place, (3) do the labels appear at the right zoom (number first, then title, then units and system), (4) should a course that shares nothing with any identity in its subject stay on the subject's rim or orbit the biggest identity with its subject code anyway. Each answer is a one-line change."
+      "text": "Two curation follow-ups now that the promote step and the identities-map dry run are built: put the identities map's 1,597 stale keys to Sam as a numbered sheet (re-key 1,369, drop 228) before applying, and measure how many curated discipline values sit outside the official list — a bot cohort wrote a made-up one on a live row in July."
     },
     {
       "id": "s223-sam-live-banner-link",
@@ -77,34 +95,16 @@
       "text": "Build the live-session banner Sam asked for on 2026-09-03: a small Supabase table holding one presence row (who is driving, the session moniker, the lane, a link for observers, started-at and a heartbeat) that a session writes through the MCP when it starts and clears when it signs off; every COBI page reads it on load and every few minutes and shows a slim banner — for example 'Sam is working with SkyTune on SkyView now — drop in' — until the heartbeat is twenty minutes old. It is a new write surface: map it in the governance file before it ships, and keep it internal to COBI."
     },
     {
-      "id": "s223-fable-decision-packs",
+      "id": "s223-fable-ccr-backlog",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Build the grouped decision view for every subject area, fetched on demand the way the description shards are, so the Open the work surface button on a subject stops saying it exists for five subjects out of 159. This has been the bottleneck behind every SkyView improvement since Session 192."
-    },
-    {
-      "id": "s223-fable-remint-queue",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "When a SkyView move leaves the destination identity's subject code inconsistent with its corroborated discipline, queue a re-mint candidate for the batch playbook rather than doing nothing or minting on the spot. Propose, never auto-add; a person dismisses with a reason."
+      "text": "The standing Common Course Reference backlog, in priority order: build the grouped decision view per subject area fetched on demand (the bottleneck behind every other CCR improvement); give the 2,073 rim courses a third signal from their catalog description, as a gap-filler that never outvotes a title; make the Subject and Discipline dropdowns name their grain; and queue a re-mint candidate when a SkyView move leaves a destination's subject code inconsistent — proposing, never auto-adding."
     },
     {
       "id": "s192-fable-two-course-keys",
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Work the 73 course control numbers that name two genuinely different courses, 93 of them at San Jose City College. SkyView refuses to move those courses because the write key cannot say which one; the fix is upstream in COCI or a wider key."
-    },
-    {
-      "id": "s223-fable-rim-by-description",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Give the 2,073 rim courses in SkyView a third signal: the catalog description. Measured on 2026-09-03: 1,600 of them have one; a description match places about 130 well inside their own subject area and agrees with the title-based parent only 20% of the time, so it fills the gap when the title says nothing and never outvotes a title match. Strip college boilerplate first, hold cross-island matches to a higher bar, show the shared terms as the reason, and say orbit by description in words. Sam asked for this on 2026-09-03."
-    },
-    {
-      "id": "s223-fable-ccr-dropdown-labels",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "On the Common Course Reference tab, make the Subject dropdown read the code, its full title and its discipline (for example CRIM, Administration of Justice; FLSP, Spanish, Foreign Languages) and the Discipline dropdown read the discipline and its Common SUBJ codes, moving the local college codes to the hover text. Rename SkyView's search kind word from subject to discipline. Sam asked on 2026-09-03; each Common SUBJ belongs to exactly one discipline, so the full title is the discipline's name except for the umbrella codes."
     }
   ]
 }

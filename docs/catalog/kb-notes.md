@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-374 document(s).
+376 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -84,6 +84,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
 | [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -113,7 +114,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
-| [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-08-21 |
+| [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
@@ -170,6 +171,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Assert that an argument arrives, not that it is last](../kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [Assert what retrieval RETURNS, not that the answer reads better](../kb-notes/methodology-assert-what-retrieval-returns.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [Assert what the reader sees, not what the source says](../kb-notes/methodology-assert-what-the-reader-sees.md) | methodology | published | 2026-08-11 | 2026-08-12 |
+| [Audit by rendered value, not by file — thousands of failures collapse to a few source lines](../kb-notes/methodology-audit-by-rendered-value-not-by-file.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [Auto-layout tables silently park columns off-pane: diagnose with the inspector, defend with fixed layout](../kb-notes/methodology-fixed-table-layout-off-pane-columns.md) | methodology | published | 2026-06-11 |  |
 | [Before repairing a field, check whether the record already holds a better signal](../kb-notes/methodology-the-record-may-already-hold-a-better-signal-than-the-field-you-are-repairing.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [Bucket military and non-military credit recommendations before you total them](../kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md) | methodology | published | 2026-08-13 | 2026-08-13 |

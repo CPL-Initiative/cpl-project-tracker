@@ -34,7 +34,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [COBI Memory tab + MAP Data Quality register — lessons](../cobi_memory_tab_lessons.md) | `cobi_memory_tab_lessons.md` | 2026-07-26 |  |
 | [COBI org layer — the C&I subsite pilot + Our Process tab (lessons)](../co_platform_orglayer_lessons.md) | `co_platform_orglayer_lessons.md` | 2026-07-14 |  |
 | [COBI summary-data tools — lessons & roadmap](../cobi_summary_tools_lessons.md) | `cobi_summary_tools_lessons.md` | 2026-08-03 | 2026-08-03 |
-| [COBI — the masthead rename and the Mamba brand layer](../cobi_lessons.md) | `cobi_lessons.md` | 2026-06-19 | 2026-08-18 |
+| [COBI — the masthead rename and the Mamba brand layer](../cobi_lessons.md) | `cobi_lessons.md` | 2026-06-19 | 2026-09-04 |
 | [College & district identity — lessons](../college_identity_lessons.md) | `college_identity_lessons.md` | 2026-08-12 | 2026-08-12 |
 | [College action page & MAP-team queue — lessons](../college_action_page_lessons.md) | `college_action_page_lessons.md` | 2026-08-09 | 2026-08-21 |
 | [College CPL landing-page link sync — lessons](../cpl_landing_pages_lessons.md) | `cpl_landing_pages_lessons.md` | 2026-06-25 |  |
@@ -74,7 +74,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Obsidian vault hygiene — lessons](../obsidian_vault_hygiene_lessons.md) | `obsidian_vault_hygiene_lessons.md` | 2026-08-28 | 2026-08-28 |
 | [Partner occupation → CPL crosswalk — lessons](../partner_crosswalk_lessons.md) | `partner_crosswalk_lessons.md` | 2026-08-05 |  |
 | [Project lifecycle — Table / Archive a project (soft-delete) lessons](../project_lifecycle_lessons.md) | `project_lifecycle_lessons.md` | 2026-06-29 |  |
-| [Public standalone pages — accessibility and mobile lessons](../public_pages_a11y_lessons.md) | `public_pages_a11y_lessons.md` | 2026-08-20 | 2026-08-20 |
+| [Public standalone pages — accessibility and mobile lessons](../public_pages_a11y_lessons.md) | `public_pages_a11y_lessons.md` | 2026-08-20 | 2026-09-04 |
 | [Quick-start Chat — Workstream Lessons](../quickstart_chat_lessons.md) | `quickstart_chat_lessons.md` | 2026-05-26 |  |
 | [Session 26 — codebase audit + remediation lessons](../session_26_audit_lessons.md) | `session_26_audit_lessons.md` | 2026-06-01 |  |
 | [Session credentials — what "signed in" means across 26 modules](../session_credentials_lessons.md) | `session_credentials_lessons.md` | 2026-08-15 |  |

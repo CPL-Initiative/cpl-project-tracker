@@ -1,7 +1,12 @@
 # COBI — Chancellor's Office Business Intelligence
 
-> The CPL Project Tracker, renamed. The masthead carries a light Kobe homage —
-> a rotating *Mamba Mentality* subtitle and an 8→24 wink (`cobi_brand.js`).
+> The CPL Project Tracker, renamed. The masthead (`cobi_brand.js`) is a single
+> row: the seal and the COBI wordmark with its Alpha chip, the site switcher,
+> the "Where To?" search, and a utility cluster carrying your access and the
+> ℹ About menu — with a quiet line beneath saying COBI is in alpha and what it
+> answers from. (The Kobe homage — a rotating *Mamba Mentality* subtitle and an
+> 8→24 wink — was retired 2026-06-22; the gold CPL superscript and the per-site
+> org tag followed on 2026-09-04.)
 
 A live dashboard, data pipeline, and curation workbench for the
 **California Community Colleges Credit for Prior Learning Initiative** —

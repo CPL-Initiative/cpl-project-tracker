@@ -1,8 +1,8 @@
 ---
 title: A rule you wrote down is not a rule you applied
 created: 2026-08-21
-updated: 2026-08-21
-tags: [methodology, governance, process, testing, doctrine]
+updated: 2026-09-04
+tags: [methodology, governance, process, testing, doctrine, accessibility, lint]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -10,7 +10,9 @@ related:
   - "[[docs/kb-notes/methodology-a-capped-list-must-never-read-as-a-census]]"
   - "[[docs/kb-notes/methodology-a-manager-must-show-everything-it-manages]]"
   - "[[docs/kb-notes/methodology-hiding-a-control-also-hides-the-way-in]]"
+  - "[[docs/public_pages_a11y_lessons]]"
 artifacts:
+  - scripts/check_cobi_header_layout.js
   - chatbox/supabase/functions/cpl-chat/index.ts
   - tests/team_phrase_affordance.test.js
   - cobi_admin_surface.js
@@ -94,3 +96,46 @@ diagnosis fast once the defect was known. It is an argument that **a note's job
 is only half done until something executes it.** When a new rule is authored, the
 next question is: *what would fail if this were violated?* If the answer is
 "nothing", it will be violated.
+
+---
+
+## Update 2026-09-04 — the sharpest instance yet, and the test that picks the remedy
+
+**A rule authored MINUTES earlier, by the same author, in the same session, was
+still violated.** While reworking the COBI masthead (PR #1469) a comment was
+written into `cobi_brand.js` saying in as many words that `--text-faint` must
+never be used for essential text — and `--text-faint` was then used for a new
+essential row label in `cobi_identity.js` a few edits later. There was no stale
+corpus and no failure of recall: the rule had just been *written*. That rules
+out the "nobody re-reads it" explanation for this class and leaves a harder one.
+
+**Why it happened: a rule states a standard, but only a measurement detects a
+violation.** "Never use faint for essential text" is a *goal*. It cannot tell
+you that `--text-faint` composites to 3.53:1 on the masthead's glass — nothing
+can, except computing it. Consulting the rule and complying with it are
+different acts whenever compliance is a computable property the author cannot
+see. The same session's second proof: **299 jsdom test files were green while
+the header visibly overlapped itself and six of its text styles failed AA**,
+because jsdom has no layout engine and paints nothing.
+
+**So the note's "turn it into a test or a consumer" gains a selection test.**
+Ask whether the rule's predicate is *computable*:
+
+- **Computable** — contrast ratios, target sizes, file sizes, naming patterns,
+  spelling, generated-artifact freshness, no-raw-hex. Wording is not the lever
+  here and never was; **add the lint**. Rewriting a rule that is already correct
+  and already loaded treats a detection failure as an attention failure.
+- **Not computable** — whether a glyph earns its place, whether prose is in
+  house voice, whether absence should be de-emphasized. A check can surface a
+  candidate; the standard itself stays doctrine and its enforcement stays human.
+
+**And the trigger is a third, separate thing.** A check nobody runs is worth
+exactly what a rule nobody applies is worth. Detection, firing and remediation
+fail independently: the checker detects, a hook or CI step fires it, and a
+playbook says how to fix. Sam's framing of the same gap, 2026-09-04: *"I can't
+seem to get claude.md or memory to reliably enforce this when we are building
+day to day and I often forget to remind you."*
+
+Evidence: `scripts/check_cobi_header_layout.js` found seven real AA failures and
+19 layout failures on `main` in one header — none prevented by any rule, all of
+them present while the suite was green.
