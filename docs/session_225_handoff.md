@@ -1,7 +1,7 @@
 ---
 title: "Session 225 handoff — the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced"
 created: 2026-09-03
-updated: 2026-09-03
+updated: 2026-09-04
 tags: [handoff]
 obsidian-folder: cpl-project-tracker/handoffs
 ---
@@ -43,17 +43,17 @@ Then Sam replied *"Yes to all"* and the afternoon half applied the whole series:
    in order, the `_CANON_SUBJ4::` picks updated (before-values in
    `kb/authority_recode_out/2026-09-03/picks_before.json`), then
    `daily-dashboard.yml` for the artifacts and a hand rebuild of SkyView.
-6. **#1458 — the fold worklist, planned.** `kb/_prefix_fold_dryrun.py` plans a
+5. **#1458 — the fold worklist, planned.** `kb/_prefix_fold_dryrun.py` plans a
    keep-number prefix re-key for every row fold-verify names (278: 132
    materialized, 146 legacy strays; 7 held on TOP alone; V8 parity), receipt
    `kb/prefix_fold_out/2026-09-03/`, and the seven-item sheet for Sam:
    https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b
-7. **#1460 — SkyView after Sam's drive.** Eight notes, all shipped: zoom about
+6. **#1460 — SkyView after Sam's drive.** Eight notes, all shipped: zoom about
    the subject, controls and the details panel off the canvas, leader-line
    labels, Pan and Move, the provenance hover, links in full screen,
    title-first labels, and an identity that opens to show its college
    courses (the faculty view). He drives it again next (NEEDS SAM ①).
-5. **#1455 — the re-key verify.** An alias map can chain (`ARME M10AJ →
+7. **#1455 — the re-key verify.** An alias map can chain (`ARME M10AJ →
    FLNG M10AJ` beside `ARMN M10AJ → ARME M10AJ`); the re-key now applies
    vacate-first and keeps chained keys off its verify surface, and the two
    apply guards from #1453 run in CI.
@@ -80,6 +80,16 @@ the fold planner's next worklist, not a defect
 mint still creates a `UC-CUR-*` placeholder and the promote step must mint M
 numbers now (0 placeholders today).
 
+## Where the checkpoint left things (2026-09-04 00:30 UTC)
+
+Every pull request of the day is merged: #1447, #1448, #1449, #1450, #1451,
+#1452, #1453, #1454, #1455, #1456, #1457, #1458, #1459, #1460 and the
+checkpoint after it. Nothing is in flight. Two things wait on Sam: the
+prefix-fold sheet (seven items, NEEDS SAM ⑥ of the SkyView lane) and another
+drive of SkyView (NEEDS SAM ①). `cpl_memory` carries this run under author
+`session-224-skytune` (query it first, Rule 8). The Pages deploy follows
+`main`; `prototype/skyview.html` is rebuilt by hand and was rebuilt in #1460.
+
 ## Read in order
 
 1. `docs/reference/lanes/skyview-ccr-interface.md` — current truth, NEEDS SAM
@@ -94,7 +104,7 @@ numbers now (0 placeholders today).
 ## Priority work, in order
 
 0. **Check the morning cron ran clean on the applied state** (the 06:17 UTC
-   run): the overlay sync must reproduce the committed `kb/coci_curation.json`
+   run of 2026-09-04; the 21:52 UTC dispatch of 2026-09-03 already reproduced it): the overlay sync must reproduce the committed `kb/coci_curation.json`
    (Supabase carries the new keys), the audit's `latest.json` should show
    `subject_collision_signal` 153, and SkyView's islands should read the new
    codes. If the sync reverted a key, the re-key did not complete: re-dispatch
