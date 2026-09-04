@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 419,
+  "file_datasets": 421,
   "external_services": 137,
-  "consumers": 313,
+  "consumers": 315,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -6336,6 +6336,13 @@
      "line": 85
     },
     {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
      "id": "script:kb/_kin_pe_pass2.py",
      "kind": "script",
      "direction": "read",
@@ -6956,6 +6963,13 @@
      "line": 52
     },
     {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    },
+    {
      "id": "script:kb/_infer_disciplines.py",
      "kind": "script",
      "direction": "write",
@@ -7479,6 +7493,13 @@
      "line": 170
     },
     {
+     "id": "script:kb/_uc_cur_promote.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
      "id": "script:kb/_verify_prescriptive_join.py",
      "kind": "script",
      "direction": "read",
@@ -7636,6 +7657,13 @@
      "direction": "read",
      "how": "literal",
      "line": 52
+    },
+    {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -8709,6 +8737,13 @@
      "direction": "read",
      "how": "literal",
      "line": 308
+    },
+    {
+     "id": "script:kb/_uc_cur_promote.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
     },
     {
      "id": "script:kb/_zband_retire_apply.py",
@@ -11765,6 +11800,13 @@
   "file:kb/zband_retire_out/2026-09-03/materialized.json": {
    "consumers": [
     {
+     "id": "script:kb/_uc_cur_promote.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 491
+    },
+    {
      "id": "script:kb/_zband_retire_apply.py",
      "kind": "script",
      "direction": "read",
@@ -13029,6 +13071,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/identities_rekey_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/js_suite_gate_test.py": {
    "consumers": [
     {
@@ -13147,6 +13202,19 @@
    "main_committers": []
   },
   "file:tests/supabase_function_grants_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/uc_cur_promote_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -17331,6 +17399,8 @@
     "tests/rekey_kb_curation_chain_test.py",
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
+    "tests/uc_cur_promote_test.py",
+    "tests/identities_rekey_test.py",
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",
     "tests/rekey_crnc_mirrors_test.py",

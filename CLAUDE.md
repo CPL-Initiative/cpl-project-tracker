@@ -777,16 +777,17 @@ handoff `session_226_handoff`.
 
 ### SkyLand S226 — the duplicates become a lane; the twenty were never missing (2026-09-04)
 
-**One PR (#1465).** The 130 May anchors that duplicate a catalog identity are a
-lane of the CCR tab's Suggested-merges worklist, recomputed live by the generator
-(`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so the
-worklist's survivor rule folds the anchor into the course that carries the college
-courses (31 stand-alone-only pairs go the other way); a curator confirms each, a
-script merges none. 129 of the receipt's 130 pairs surface; the 130th hides behind
-a bot's `Stagecraft` re-discipline on its twin — a signal, not a miss. Measured
-first: the 20 folded identities "missing" from the members export are Phase B
-folds into C-ID descriptor rows (`consolidated_from`), not an export gap. Story:
-`ccr_atlas_lessons`; handoff `session_227_handoff`.
+**Two PRs (#1465 + the promote step).** The 130 May anchors that duplicate a
+catalog identity are a lane of the Suggested-merges worklist, recomputed live
+(`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so
+the survivor rule folds the anchor into the course carrying the college courses;
+a curator confirms each, a script merges none. 129 of 130 receipt pairs surface;
+the 130th hides behind a bot's `Stagecraft` re-discipline — a signal, not a miss.
+Measured first: the 20 "missing" folded identities are Phase B folds into C-ID
+descriptor rows (`consolidated_from`), not an export gap. Built before the first
+one appears: `kb/_uc_cur_promote.py` (a `UC-CUR-*` target → a real M-ID record)
+and the identities map re-key dry run (1,597 ghosts: re-key 1,369, drop 228;
+sheet for Sam next). Story: `ccr_atlas_lessons`; handoff `session_227_handoff`.
 
 ## Troubleshooting
 

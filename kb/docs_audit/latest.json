@@ -11,32 +11,32 @@
   },
   "summary": {
     "files": 785,
-    "bytes": 8352720,
+    "bytes": 8359358,
     "over_budget": 3,
     "handoff_max": 227,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 58392,
+    "always_loaded_bytes": 58486,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 58392,
+        "bytes": 58486,
         "over": 0
       },
       "other": {
         "files": 103,
-        "bytes": 2538556,
+        "bytes": 2540400,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 19080,
+        "bytes": 19459,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1947486,
+        "bytes": 1950339,
         "over": 1
       },
       "kb_note": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 201,
-        "bytes": 1690023,
+        "bytes": 1691491,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2570,
-      "bytes": 1312434888,
+      "files": 2577,
+      "bytes": 1312660714,
       "heavy_bytes": 613581943,
-      "heavy_share": 0.468,
+      "heavy_share": 0.467,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",

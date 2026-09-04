@@ -1457,3 +1457,47 @@ anchored lane). All 27 existing worklist and CCR jsdom files green.
    `Stagecraft` row is one); the audit may already tag them.
 3. Sam drives the new lane: the first 130 groups of Suggested merges are his
    May anchors; his confirms drain it.
+
+### The promote step, built before the first placeholder
+
+The Z-band retirement left one door open: a client mint on the CCR tab
+(`doConsolidate`) and the auto-merge bot both still write a transient
+`UC-CUR-*` target into kb_curation, and the Z scheme that used to number them
+is retired. `kb/_uc_cur_promote.py` closes it in the retirement's own shape:
+a placeholder becomes a real M-ID record (Sam, card 12), the discipline's
+canonical SUBJ4 (an umbrella keeps the members' split code), band 9 noncredit
+or 1 credit, the lowest free number with every id ever minted reserved —
+courses, singletons, curation keys, identities, the anchors, every id any
+ALIAS_MAPS receipt ever named, the CCN and C-ID reservations — and the
+continuation band when a bucket is full (card 11). The record is the
+retirement's aggregate re-stamped (`_promoted_from`; origin `curator mint`, or
+`machine cluster` for a `UC-CUR-AUTO` target; a client mint keeps its curator
+as `reviewed_by`), with no membership entry of its own. What it will not do is
+guess: one pointer (a mint is a merge), no discipline on the row or the
+members, no four-letter code, no readable band — each is held and reported.
+Dry run by default with a receipt; `--apply` needs the receipt and a fresh
+read, and the same P0 · P1 · P3 gates plus eight post-mutation gates the
+retirement used. Thirty-two fixture checks, including the 004-taken-by-an-
+alias-map case and the full WELD bucket continuing to `M2001`. Zero
+placeholders exist today; the tool exits saying so.
+
+### The identities map, planned
+
+The third build of the session is the dry run the handoff asked for:
+`kb/_identities_rekey_dryrun.py` resolves each of the 1,597 ghost keys in
+`kb/coci_articulations.json`'s `identities` map through the full ALIAS_MAPS
+chain with `_rekey_promotions.resolve` (one lookup per map, in order) and
+dispositions every one: 1,369 re-key onto a live id that has no entry; 44 land
+on a live id that already carries one and drop (the live entry was computed on
+the current catalog); 16 converge on 7 targets, where the ghost whose title
+agrees with the catalog wins, then the one with more colleges, then the
+alphabetical first (9 drop); 175 nothing names again, and nothing can display
+them. Titles agree on 1,217 of the 1,369; the 152 that differ are "I" versus
+"1" and their kin, which the catalog overrides anyway. The apply exists in the
+same file and needs the receipt and a ruling; the receipt is committed
+(`kb/identities_rekey_out/2026-09-04/`) and its report carries the five-item
+sheet Sam will see. It is not an ALIAS_MAPS receipt: it re-keys a side table
+and mints nothing. Twenty-three fixture checks, including the chained
+resolution and the three tie-breaks — the first cut recorded the first
+criterion the winner satisfied rather than the one that decided, and the test
+caught it.
