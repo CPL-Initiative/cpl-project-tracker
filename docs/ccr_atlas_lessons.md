@@ -1518,3 +1518,70 @@ Pacific day ends is the Rule 3 fallback if the schedule never fires. The
 fold's proof is the invariants, which a scheduled run reproduces by the same
 steps a dispatch does.
 
+
+## 2026-09-04 — SkyMint (Session 227): item 2 was a grain error, not a missing link
+
+Sam's SkyView queue item ② read *"Add CCR List View link + clarify existing
+labels."* Both halves turned out to be about the same confusion.
+
+### "CCR list view" names a view that is not in this prototype
+
+The candidates inside SkyView were `__ccrDiscipline` (the discipline card) and
+`__ccrSubjectList` (the list) — and neither is the CCR *list view*. That is
+**COBI's Common Course Reference tab**, which is the page this map is embedded
+in: `unified_courses.js` mounts `prototype/skyview.html` as an iframe beside the
+list. So the link is a link **out** (`../index.html#unified-courses`, new tab),
+and it has to disappear when framed:
+
+```js
+var cl=document.getElementById("u-ccr-list");
+if(cl && window.top!==window.self) cl.remove();   // the list is already the page around this frame
+```
+
+⚠️ Same rule as the ESL link's `ne.remove()`, one step further: **never offer a
+door onto nothing — and never offer one onto the room you are standing in.**
+Inside the CCR tab the link would open a second copy of the page the reader is
+already looking at, which is worse than absent because it looks like it worked.
+
+### "Subjects as a list" listed disciplines
+
+`__ccrSubjectList` maps `U.islands` and reads `I.d` — the **discipline** name.
+So the two links differed only in FORM: "All disciplines" showed the same things
+as cards. And the word was already spent elsewhere: COBI's **Common Subjects
+Reference** tab is about SUBJ4 codes (`ENGL`, `WELD`), a different grain
+entirely, so a curator reading "subjects" in SkyView had every reason to expect
+codes and got disciplines.
+
+Every rendered use is now "discipline" — the nav link, the view's heading and
+filter, the legend, the hint, the keyboard announcements, the details panel, the
+suggestion rows. Two things deliberately did NOT change:
+
+- **`kind:"subject"` stays** as the internal branch key (`s.kind==="subject"` has
+  readers); only `kindWord`, which is what a reader sees, became "discipline".
+  The test asserts both, so the two cannot drift into one another.
+- **"subject code" stays** wherever it means SUBJ4 — the C-ID chip title, the
+  orbit reason, the rim explanation. Sweeping a word is not the same as
+  sweeping a sense, and this file's own rule about `american_spelling` applies:
+  scan prose, never blind-replace.
+
+This closes the SkyView half of the lane's queued NEXT ⑧; the CCR tab's dropdown
+labels (Subject as `CODE — title — discipline`) are still open.
+
+### The sweep caught the link I had just added
+
+`npm run a11y` reported all four `.linkish` controls in the top row at
+**21.3px** against WCAG 2.2 SC 2.5.8's 24px floor — including `#u-ccr-list`,
+written minutes earlier. The inline-target exception covers a link inside a
+sentence; a nav row of view switchers is not one. `display:inline-flex` is what
+lets a `min-height` apply to an inline-level control at all.
+
+It also reported an `h1 → h3` skip: the two panels below the map are headed
+`<h3>` under the page's `<h1>`, with no `<h2>` between. Fixed as `<h2>` with the
+size pinned to what the `h3` measured (18.4px/700), so the correction is to the
+outline a screen reader walks and not to the page. SkyView now passes the sweep
+clean at every width.
+
+⚠️ **Both were found by running the instrument on my own change, in the same
+session that shipped it.** That is the second time in two days
+([`public_pages_a11y_lessons`](public_pages_a11y_lessons.md)) — which is the
+argument for the command being cheap rather than for anyone being more careful.

@@ -778,8 +778,22 @@ window.__ccrUniverse = function(){
       '<div class="u-top" id="u-top">'+
         '<nav class="u-nav" aria-label="Other views">'+
           '<button class="linkish" type="button" id="u-nav-forest">All disciplines</button>'+
-          '<button class="linkish" type="button" id="u-list">Subjects as a list</button>'+
+          /* "Subjects as a list" until 2026-09-04, and the word was wrong: this
+           * view maps U.islands and reads I.d, the DISCIPLINE name — so it listed
+           * the same things "All disciplines" shows as cards, differing only in
+           * form. Worse, COBI already has a "Common Subjects Reference" tab where
+           * a subject is a SUBJ4 code (ENGL, WELD), which is a different grain
+           * entirely. One word, and the two links stop looking like two grains. */
+          '<button class="linkish" type="button" id="u-list">Disciplines as a list</button>'+
           '<button class="linkish" type="button" id="u-nav-esl">ESL packaging</button>'+
+          /* Sam, 2026-09-04, item 2: a link to the CCR LIST VIEW. That view is not
+           * in this prototype at all — it is COBI's Common Course Reference tab,
+           * which is the page this map is embedded IN when it runs inside COBI.
+           * So it is a link out, and it is removed when framed (below): offering
+           * a door onto the page you are already standing on is the same mistake
+           * as offering one onto nothing. */
+          '<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses" '+
+            'target="_blank" rel="noopener">CCR list view \u2197</a>'+
         '</nav>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
           '<span class="u-modes" role="group" aria-label="What a drag does">'+
@@ -804,17 +818,17 @@ window.__ccrUniverse = function(){
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
           '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
-            'A map of every course identity, grouped into one island per subject area, with '+
+            'A map of every course identity, grouped into one island per discipline, with '+
             'each stand-alone course in orbit around the identity it is most aligned to. '+
-            'Use the search box at the top of the page to jump to a subject, an identity or a '+
-            'college course, or Tab to step through subjects from the keyboard; the details '+
+            'Use the search box at the top of the page to jump to a discipline, an identity or a '+
+            'college course, or Tab to step through disciplines from the keyboard; the details '+
             'panel describes what you select."></canvas>'+
           '<div class="u-tip" id="u-tip" role="tooltip" hidden></div>'+
         '</div>'+
         '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
           '<div class="u-insp-bar"><span class="u-insp-t">Details</span></div>'+
           '<div id="u-detail" class="u-insp-body"><h3>Nothing selected</h3>'+
-            '<p class="empty">Hover a point for a quick look. Click a subject or a course and its '+
+            '<p class="empty">Hover a point for a quick look. Click a discipline or a course and its '+
             'details land here — the college courses underneath, their catalog descriptions, '+
             'and the stand-alone courses in orbit around it.</p></div>'+
         '</aside>'+
@@ -828,34 +842,34 @@ window.__ccrUniverse = function(){
           '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+'<span><i class="u-sw nc"></i>noncredit — a broken ring, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
-        '<div class="u-hint" id="u-hint">Hover for a quick look; click a subject or a course for details. '+
+        '<div class="u-hint" id="u-hint">Hover for a quick look; click a discipline or a course for details. '+
           '<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to, '+
-          'drag a subject to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
+          'drag a discipline to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
           'anywhere to move the view. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
-          'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> goes into one, '+
+          'From the keyboard: <kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> goes into one, '+
           '<kbd>Esc</kbd> comes back out, arrows pan.</div>'+
       '</div>'+
     '</section>'+
     '<div class="wrap u-below" id="u-below">'+
       '<h1>The whole Common Course Reference</h1>'+
       '<p>'+num(C.identities)+' course identities and '+num(C.stand_alone)+' stand-alone courses across '+
-        num(C.disciplines)+' subject areas. '+num(C.orbiting)+' of the stand-alones orbit the identity '+
-        'they are most aligned to'+(C.orbiting_cross?' ('+num(C.orbiting_cross)+' of them in another subject\u2019s island, drawn where their closest match is)':'')+
-        '; '+num(C.rim)+' share nothing with any identity and sit on their subject\u2019s rim. Search to fly to a subject, an identity or a college course. '+
-        '<strong>Drag a subject</strong> to pull it next to another, then drag a course between them — '+
-        'that is how a course filed under the wrong subject gets moved to its real parent.</p>'+
+        num(C.disciplines)+' disciplines. '+num(C.orbiting)+' of the stand-alones orbit the identity '+
+        'they are most aligned to'+(C.orbiting_cross?' ('+num(C.orbiting_cross)+' of them in another discipline\u2019s island, drawn where their closest match is)':'')+
+        '; '+num(C.rim)+' share nothing with any identity and sit on their discipline\u2019s rim. Search to fly to a discipline, an identity or a college course. '+
+        '<strong>Drag a discipline</strong> to pull it next to another, then drag a course between them — '+
+        'that is how a course filed under the wrong discipline gets moved to its real parent.</p>'+
       '<div class="stage">'+
-        '<div class="panel"><h3>What this would write</h3><div id="u-writes">'+
+        '<div class="panel"><h2>What this would write</h2><div id="u-writes">'+
         '<p class="empty">No moves yet.</p></div>'+
         '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
         'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
-        '<div class="panel"><h3>How the map is arranged</h3>'+
-        '<p>One island per subject area, biggest at the centre. Inside an island the identities '+
+        '<div class="panel"><h2>How the map is arranged</h2>'+
+        '<p>One island per discipline, biggest at the centre. Inside an island the identities '+
         'with the most courses sit at the centre. A hollow point is a stand-alone course — one '+
         'college, clustered with nothing yet — placed in orbit around the identity whose title '+
         'words and subject code it shares. The orbit is a suggestion, not a decision: the details '+
         'panel says what the two have in common, and nothing changes until you move the course. '+
-        'A hollow point on the outer rim shares nothing with any identity in its subject.</p>'+
+        'A hollow point on the outer rim shares nothing with any identity in its discipline.</p>'+
         '<p>Colors name the identity system: an M-ID is our working label, a C-ID or CCN is an '+
         'official statewide number nobody here may re-key, a unified row is a synthetic course. '+
         'Zoom in and each course shows its title and units, then its number and system; zoom in '+
@@ -963,7 +977,11 @@ function suggest(raw, limit){
     var n=I.d.toLowerCase();
     var t=(n===term)?0:(n.indexOf(term)===0?1:(n.indexOf(term)>=0?2:-1));
     if(t<0) return;
-    subs.push({kind:"subject", kindWord:"subject", label:I.d, tier:t, n:(I.n||0), isl:I});
+    /* `kind` is the internal branch key (see the s.kind==="subject" reader below);
+     * `kindWord` is what a reader SEES in a suggestion row and the details panel.
+     * Only the second one changed — an island is a discipline, and COBI already
+     * spends "subject" on SUBJ4 codes. */
+    subs.push({kind:"subject", kindWord:"discipline", label:I.d, tier:t, n:(I.n||0), isl:I});
   });
   subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
   // Subjects never take the whole list: a term that matches many subjects would
@@ -1086,17 +1104,17 @@ window.__ccrSubjectList = function(seed){
   if(!host || !U) return;
   window.__crumbs([{label:"All disciplines", go:window.__ccrForest},
                    {label:"SkyView", go:function(){ window.__ccrUniverse(); }},
-                   {label:"Subjects"}]);
+                   {label:"Disciplines"}]);
   var rows=U.islands.map(function(I){ return {name:I.d, n:(I.n||0), alone:(I.sa||0), isl:I}; })
     .sort(function(a,b){ return b.n-a.n || a.name.localeCompare(b.name); });
 
   host.innerHTML=
-    '<h1>Every subject area</h1>'+
-    '<p>'+num(rows.length)+' subject areas across '+num(U.counts.identities)+
+    '<h1>Every discipline</h1>'+
+    '<p>'+num(rows.length)+' disciplines across '+num(U.counts.identities)+
     ' course identities. Filter, then pick one — the map opens on it.</p>'+
     '<div class="u-bar">'+
-      '<label class="sr" for="sl-q">Filter subjects</label>'+
-      '<input id="sl-q" type="search" placeholder="Filter subjects — e.g. english, welding, nursing" '+
+      '<label class="sr" for="sl-q">Filter disciplines</label>'+
+      '<input id="sl-q" type="search" placeholder="Filter disciplines — e.g. english, welding, nursing" '+
         'style="flex:1 1 260px;min-width:0;padding:.45em .6em;font:inherit;'+
         'border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:8px">'+
       '<button class="btn" type="button" id="sl-map">Back to the map</button>'+
@@ -1104,7 +1122,7 @@ window.__ccrSubjectList = function(seed){
     '<p class="tag" id="sl-count" aria-live="polite"></p>'+
     '<div class="panel" style="margin-top:10px"><ul class="sl-list" id="sl-rows"></ul></div>'+
     '<p style="margin:1.1em 0 0;font-size:.86rem;color:var(--text-muted,#5C5C55)">'+
-      'Looking for the corpus split into sittings instead — which subjects carry '+
+      'Looking for the corpus split into sittings instead — which disciplines carry '+
       'how many decisions? <button class="btn" type="button" id="sl-pack">'+
       'See the work packaged by discipline</button></p>';
 
@@ -1114,11 +1132,11 @@ window.__ccrSubjectList = function(seed){
     var q=String(qEl.value||"").trim().toLowerCase();
     var hit=rows.filter(function(r){ return !q || r.name.toLowerCase().indexOf(q)>=0; });
     cEl.textContent=q
-      ? num(hit.length)+" of "+num(rows.length)+" subjects match “"+q+"”"
-      : num(rows.length)+" subjects";
+      ? num(hit.length)+" of "+num(rows.length)+" disciplines match “"+q+"”"
+      : num(rows.length)+" disciplines";
     if(!hit.length){
       rowsEl.innerHTML='<li class="empty">Nothing matches “'+esc(q)+'”. '+
-        'The map still holds every subject — clear the filter to see them all.</li>';
+        'The map still holds every discipline — clear the filter to see them all.</li>';
       return;
     }
     rowsEl.innerHTML=hit.slice(0,400).map(function(r,i){
@@ -1199,7 +1217,7 @@ function tipHtml(hit){
       var par=nd.o?nodeById(nd.o):null;
       h+='<br><span class="sub">Stand-alone'+(nd.h?' filed under '+esc(nd.h):'')+(par
         ? ' — orbits '+esc(par.nd.i)+' '+esc(trunc(par.nd.t,40))+': '+esc(whyWords(nd.w))
-        : ' — nothing in this subject shares a subject code or title words with it')+'</span>';
+        : ' — nothing in this discipline shares a subject code or title words with it')+'</span>';
     } else if(nd.k){
       h+='<br><span class="sub">'+num(nd.k)+' stand-alone course'+(nd.k===1?'':'s')+' in orbit</span>';
     }
@@ -1239,7 +1257,7 @@ function wire(){
     cvs.style.cursor = mode==="pan"?"grab":"default";
     setHint(mode==="pan"
       ? "<strong>Pan</strong>: drag anywhere to move the view; a click still selects. Switch to <strong>Move</strong> to carry a course."
-      : "<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to; drag a subject to pull it next to another; drag the background to pan.");
+      : "<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to; drag a discipline to pull it next to another; drag the background to pan.");
   }
   var mpan=document.getElementById("u-mode-pan"), mmove=document.getElementById("u-mode-move");
   if(mpan) mpan.onclick=function(){ setMode("pan"); };
@@ -1252,6 +1270,8 @@ function wire(){
     if(window.CPL_ATLAS_ESL && typeof window.__ccrEsl==="function") ne.onclick=function(){ window.__ccrEsl(); };
     else ne.remove();   // never offer a door that opens on nothing
   }
+  var cl=document.getElementById("u-ccr-list");
+  if(cl && window.top!==window.self) cl.remove();   // the list is already the page around this frame
   var lb=document.getElementById("u-list");
   // Seed from WHAT IS IN THE BOX, not from the last term that was submitted.
   if(lb) lb.onclick=function(){
@@ -1498,7 +1518,7 @@ function wire(){
     flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
     showIsland(isl);
     setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+num(isl.n)+
-            " identities. <kbd>Enter</kbd> to step into it, <kbd>Tab</kbd> for the next subject.");
+            " identities. <kbd>Enter</kbd> to step into it, <kbd>Tab</kbd> for the next discipline.");
   }
   function kbIdentity(dir){
     var isl=U.islands[kbIsl]; if(!isl || !isl.p.length) return;
@@ -1510,7 +1530,7 @@ function wire(){
     showNode(nd, isl);
     setHint("<strong>"+esc(nd.t||nd.i)+"</strong> — "+esc(nd.i)+
             " ("+num(kbNode+1)+" of "+num(isl.p.length)+" in "+esc(isl.d)+
-            "). <kbd>Esc</kbd> to leave this subject.");
+            "). <kbd>Esc</kbd> to leave this discipline.");
   }
   /* Two levels, and which one Tab moves in is held EXPLICITLY. Deriving it from
      "have we got a node yet" made Enter unable to enter. */
@@ -1531,7 +1551,7 @@ function wire(){
         kbInside=false; kbNode=-1; selNode=null;
         var isl=U.islands[kbIsl];
         if(isl){ showIsland(isl); setHint("Back to <strong>"+esc(isl.d)+
-          "</strong>. <kbd>Tab</kbd> for the next subject."); }
+          "</strong>. <kbd>Tab</kbd> for the next discipline."); }
         draw();
       }
       e.preventDefault(); return;
@@ -1629,7 +1649,7 @@ function doSearch(raw){
   var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
   var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
   var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
-    "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
+    "” across <strong>"+names.length+"</strong> discipline"+(names.length===1?"":"s")+
     ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
     (names.length>4?" · …":"")+"."+
     (mh.length?" "+num(mh.length)+" of them carry a college course numbered like that.":"");
@@ -1650,7 +1670,7 @@ function doSearch(raw){
     var ty=top.reduce(function(a,h){return a+h.y;},0)/top.length;
     flyTo(tx,ty,Math.max(NODE_ZOOM*1.6, Math.min(3.2, 190/top[0].isl.r)));
     setHint(head+" They are too far apart to ring in one view — showing <strong>"+
-      esc(names[0])+"</strong>. Search a subject name to go straight to it.");
+      esc(names[0])+"</strong>. Search a discipline name to go straight to it.");
   }
   if(searchHits.length===1){
     selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
@@ -1682,15 +1702,15 @@ function showIsland(isl){
     (authLine?'<p class="sub u-auth">'+authLine+"</p>":"")+
     "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
       ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
-      num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another subject":"")+")":"")+".</p>"+
+      num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another discipline":"")+")":"")+".</p>"+
     (top.length?'<p class="sub">Biggest first — pick one to open it:</p><ul class="idlist">'+top.map(function(nd){
       return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
         chipFor(nd)+
         '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+
         (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+"</div></li>";
-    }).join("")+"</ul>":'<p class="empty">No clustered identity in this subject yet — every course here is a stand-alone.</p>')+
+    }).join("")+"</ul>":'<p class="empty">No clustered identity in this discipline yet — every course here is a stand-alone.</p>')+
     workSurfaceOffer(isl)+
-    '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
+    '<p class="empty" style="margin-top:.5em">Drag this discipline on the map to bring it '+
     'beside another, then drag a course across.</p>';
   Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
     b.addEventListener("click", function(){ goNode(b.dataset.go); });
@@ -1712,9 +1732,9 @@ function workSurfaceOffer(isl){
     'id="u-open-work" data-d="'+esc(d)+'">Open the work surface for '+esc(d)+'</button>'+
     ' <span class="sub">'+num(A.detail[d].length)+' decision'+
     (A.detail[d].length===1?"":"s")+' to work through.</span></p>';
-  return '<p class="empty" style="margin-top:.6em">No work surface for this subject yet '+
+  return '<p class="empty" style="margin-top:.6em">No work surface for this discipline yet '+
     '— the grouped decision view is built for '+
-    (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' subjects so far, not all '+
+    (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' disciplines so far, not all '+
     num(U.counts.disciplines)+'.</p>';
 }
 /* `keepFilter`: only a jump that SET the filter (a college-course search) keeps
@@ -1755,7 +1775,7 @@ function memberRow(m, isl, nd, moved){
     else if(st==="blocked") h+='<div class="mdesc none">Catalog descriptions need the page SERVED, not opened '+
       'from a file. Run <code>python3 -m http.server 8000</code> in the repo root and open '+
       '<code>http://localhost:8000/prototype/skyview.html</code>.</div>';
-    else h+='<div class="mdesc none">The descriptions for this subject did not load from any of the '+
+    else h+='<div class="mdesc none">The descriptions for this discipline did not load from any of the '+
       'places they are published ('+esc(DESC_BASES.join(", "))+').</div>';
   }
   return h+"</li>";
@@ -1800,8 +1820,8 @@ function renderNode(){
         '<button class="btn small" type="button" data-go="'+esc(par.nd.i)+'">Show '+esc(par.nd.i)+'</button></p></div>';
     } else {
       h+='<div class="orbit rim"><p>On the rim of <strong>'+esc(isl.d)+'</strong>: no identity in this '+
-        'subject shares a local subject code or title words with it. Drag it onto the identity it '+
-        'belongs with — in this subject or, after pulling another subject alongside, in that one.</p></div>';
+        'discipline shares a local subject code or title words with it. Drag it onto the identity it '+
+        'belongs with — in this discipline or, after pulling another discipline alongside, in that one.</p></div>';
     }
   }
   if(!roster || !Object.keys(roster).length){
@@ -1895,7 +1915,7 @@ function renderNode(){
       drag={kind:"course", cn:b.dataset.cn, d:b.dataset.d, code:b.dataset.code, college:b.dataset.col,
             px:cw()/2, py:ch()/2};
       setHint("Carrying <strong>"+esc(b.dataset.code)+"</strong> — drop it on the identity it "+
-              "belongs to, or click that identity. <kbd>Esc</kbd> puts it back. Drag a subject first if it is far away.");
+              "belongs to, or click that identity. <kbd>Esc</kbd> puts it back. Drag a discipline first if it is far away.");
       draw();
       return true;
     }

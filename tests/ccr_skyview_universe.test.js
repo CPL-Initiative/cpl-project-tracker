@@ -145,7 +145,30 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(A) ⭐ the controls sit above the canvas and the legend and hint below it — nothing floats over the map",
     !!q("#u-top #u-bar") && !q("#u-wrap #u-bar") && !!q("#u-foot .u-legend") && !!q("#u-foot #u-hint") && !q("#u-wrap .u-legend"));
   check("(A) ⭐ the other views are one click away inside the full-screen element",
-    !!q("#u-full #u-nav-forest") && /All disciplines/.test(text("#u-nav-forest")) && /Subjects as a list/.test(text("#u-list")));
+    !!q("#u-full #u-nav-forest") && /All disciplines/.test(text("#u-nav-forest")) && /Disciplines as a list/.test(text("#u-list")));
+  /* Sam, 2026-09-04, item 2: "I meant CCR List View." That view is COBI's Common
+     Course Reference tab, not anything in this prototype — so it is a link OUT,
+     and it must be an anchor with a real href rather than a button that would
+     need script this page does not have. */
+  check("(A) ⭐ the CCR list view is one click away, as a real link out to COBI's tab",
+    !!q("#u-full #u-ccr-list") && q("#u-ccr-list").tagName === "A" &&
+    /index\.html#unified-courses/.test(q("#u-ccr-list").getAttribute("href")) &&
+    q("#u-ccr-list").getAttribute("target") === "_blank" &&
+    /noopener/.test(q("#u-ccr-list").getAttribute("rel") || "") &&
+    /CCR list view/.test(text("#u-ccr-list")),
+    q("#u-ccr-list") ? q("#u-ccr-list").outerHTML.slice(0, 120) : "∅");
+  /* ⚠️ Inside COBI the CCR tab IS the page this map is framed in, so the link
+     would open the page the reader is already on. jsdom cannot frame the page,
+     so the guard is asserted at the source — deleting it is the failure mode,
+     and the same `remove()` pattern already governs the ESL link. */
+  check("(A) ⭐ the CCR link removes itself when this map is the iframe inside that very tab",
+    /window\.top!==window\.self\) cl\.remove\(\)/.test(ujs));
+  /* One word, and it stops looking like a different grain: the list view maps
+     U.islands and reads I.d — the DISCIPLINE name — while COBI spends "subject"
+     on SUBJ4 codes in its own Common Subjects Reference tab. */
+  check("(A) ⭐ the list view calls its rows disciplines, not subjects",
+    !/id="u-list">Subjects as a list/.test(ujs) && !/<h1>Every subject area<\/h1>/.test(ujs) &&
+    /<h1>Every discipline<\/h1>/.test(ujs) && /kindWord:"discipline"/.test(ujs));
   check("(A) ⭐ Pan and Move are word chips, Move pressed by default",
     /^Pan$/.test(text("#u-mode-pan").trim()) && /^Move$/.test(text("#u-mode-move").trim())
     && q("#u-mode-move").getAttribute("aria-pressed") === "true" && st().mode === "move");
@@ -320,7 +343,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(A) the legend explains the hollow point in words",
     /stand-alone course, in orbit/.test(text(".u-legend")));
   check("(A) the intro states orbiting, cross and rim counts from the payload",
-    /2 of the stand-alones orbit/.test(text("#u-below")) && /1 of them in another subject/.test(text("#u-below"))
+    /2 of the stand-alones orbit/.test(text("#u-below")) && /1 of them in another discipline/.test(text("#u-below"))
     && /1 share nothing with any identity/.test(text("#u-below")), text("#u-below").slice(0, 400));
   const s0 = st();
   check("(A) the member index covers every college course", s0.memberIndex === 11, String(s0.memberIndex));
@@ -339,7 +362,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   // ── (C) suggestions: subject · identity · stand-alone · college course ─────
   const sug = w.__ccrSuggest("weld", 8);
-  check("(C) a subject is offered first, labelled with the word", sug[0].kind === "subject" && sug[0].kindWord === "subject" && sug[0].label === "Welding");
+  // ⚠️ `kind` is the internal branch key and stays "subject"; `kindWord` is what a
+// reader SEES, and an island is a discipline. Asserting both keeps the two from
+// silently drifting into one another.
+  check("(C) a discipline is offered first, labelled with the word the reader sees",
+    sug[0].kind === "subject" && sug[0].kindWord === "discipline" && sug[0].label === "Welding");
   check("(C) course identities follow", sug.some((s) => s.kind === "course" && s.kindWord === "course identity" && s.nd.i === "WELD C1000"));
   check("(C) a stand-alone says it is one", w.__ccrSuggest("pipe", 8).some((s) => s.kindWord === "stand-alone course" && s.nd.i === "WELD M10AB"));
   const byCode = w.__ccrSuggest("WELD 150", 8);

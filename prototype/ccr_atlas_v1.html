@@ -181,7 +181,12 @@ a{color:var(--cobalt)}
 .sdot{width:9px;height:9px;border-radius:50%;display:inline-block}
 .side{display:flex;flex-direction:column;gap:12px}
 .panel{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;padding:13px 14px}
+/* The two panels below the map are h2 because they sit directly under the
+   page's h1 and `npm run a11y` reported the skip (h1 -> h3). Their SIZE is
+   pinned to what the h3 measured (18.4px/700) so the fix is to the outline
+   a screen reader walks, not to the page. */
 .panel h3{margin-bottom:8px}
+.panel h2{font-size:18.4px;font-weight:700;margin:0 0 8px}
 .idlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
 .idlist>li{border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:var(--surface-subtle)}
 .idlist .ttl{font-weight:600;color:var(--text-strong);font-size:.9rem}
@@ -230,7 +235,12 @@ main.u-fullbleed .crumbs{display:none}
 .u-top{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;
        padding:6px clamp(12px,2vw,24px);border-bottom:1px solid var(--border);background:var(--surface-subtle)}
 .u-nav{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:center;font-size:.86rem}
-.u-nav .linkish{font-size:.86rem}
+/* ⚠️ min-height is WCAG 2.2 SC 2.5.8, not styling. `npm run a11y` measured
+   these four at 21.3px — including the CCR link added the same session.
+   The inline-target exception covers a link inside a SENTENCE; a nav row
+   of view switchers is not one. display:inline-flex is what lets a
+   min-height apply to an inline-level control at all. */
+.u-nav .linkish{font-size:.86rem;display:inline-flex;align-items:center;min-height:24px}
 /* .u-modes is specifically "what a drag does" (Pan / Move) and a harness check
    depends on that meaning, so the CR/NC filter takes .u-seg and they share only
    the segmented LOOK. */
