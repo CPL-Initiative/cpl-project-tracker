@@ -805,7 +805,9 @@ Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
 the site is stale after a merge (dispatch a FRESH `pages.yml` run — never
 `rerun_failed_jobs`) · the **scrape returns errors** · KPI values are stale but
 the date moved · **duplicate sections / HTML growing** on every run ·
-`kpi_history.json` shows a stale 1d delta · **docx library errors**.
+`kpi_history.json` shows a stale 1d delta · **CI dies at `npm install` with a
+404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
+**docx library errors**.
 
 ⚠️ **Stop-hook nags in REMOTE sessions are FALSE POSITIVES — do not amend and do
 not push.** Both variants ("Unverified `noreply@github.com`" after a squash-merge,

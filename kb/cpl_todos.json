@@ -20,7 +20,7 @@
       "id": "s227-fable-skyview-six",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "SkyView's six changes. Item 1 is not a bigger zoom number: node radius scales linearly with zoom and so does orbit spacing, so the ratio never changes and zooming has never helped pick one course out of a crowd. Taper the radius above a knee and the gap opens 85px → 374px at 40×. Items 4 and 6 need a data change first — the map payload carries no credit/noncredit field, though the source rows do (three states, not two, plus 73 blanks)."
+      "text": "SkyView's queue is done except two: a toggle to mute non-essential labels, and a detail box you can resize or pop out. Everything else has shipped — the side menu opens the full window, noncredit courses are drawn as broken rings with a credit/noncredit filter, the zoom isolates one course while its neighbours stay visible, labels say which circle is theirs, the top is one row, the legend folds away, the detail panel starts hidden, the keyword search keeps credit apart from noncredit, and the top row now links to the CCR list view in COBI. One wording change came with it: what the map called a “subject” is a discipline, and COBI already uses “subject” for the four-letter codes — so every label in SkyView now says discipline."
     },
     {
       "id": "s227-fable-config-to-tables",

@@ -72,7 +72,7 @@ function serve() {
   // detailed tab should be a button on SkyView … I think SkyView is more
   // manageable and less intimidating."
   ok("the map is on screen with no clicks", (await page.locator("#u-cvs").count()) === 1);
-  ok("and the subject list is a real focusable button on it, not a gesture",
+  ok("and the discipline list is a real focusable button on it, not a gesture",
     (await page.locator("button#u-list").count()) === 1);
 
   console.log("\n══ \u26a0 the landing view can be operated from a keyboard");
@@ -84,7 +84,7 @@ function serve() {
   await page.keyboard.press("Tab");
   await page.waitForTimeout(340);
   const kSub = await page.locator("#u-detail h3").textContent();
-  ok(`Tab reaches a subject (${(kSub || "").slice(0, 28)})`, !!kSub);
+  ok(`Tab reaches a discipline (${(kSub || "").slice(0, 28)})`, !!kSub);
   await page.keyboard.press("Enter");
   await page.waitForTimeout(420);
   const k1 = await page.evaluate(() => window.__ccrUniverseState());
@@ -99,10 +99,10 @@ function serve() {
   ok(`Tab inside moves to a different identity (${k2.sel})`, !!k2.sel && k2.sel !== k1.sel);
   await page.keyboard.press("Escape");
   await page.waitForTimeout(320);
-  ok("Escape comes back out to the subject",
+  ok("Escape comes back out to the discipline",
     (await page.locator("#u-detail h3").textContent()) === kSub);
 
-  console.log("\n\u2550\u2550 the subject list (the map's own button)");
+  console.log("\n\u2550\u2550 the discipline list (the map's own button)");
   // Sam, 2026-08-25: "The Browse by Subjects button takes me unexpectedly to the
   // package view. Seems I'm already browsing by subject." It now opens an actual
   // list of subjects, filterable and seeded from the search box; the packaging
@@ -112,19 +112,19 @@ function serve() {
   await page.locator("button#u-list").click();
   await page.waitForTimeout(400);
   ok("the button opens a SUBJECT list, not the packaging view",
-    /Every subject area/.test(await page.locator("h1").first().textContent()));
+    /Every discipline/.test(await page.locator("h1").first().textContent()));
   ok("it carries the search term across as the filter",
     (await page.locator("#sl-q").inputValue()) === "english as a second");
   const seeded = await page.locator("#sl-rows button").count();
-  ok(`the seeded filter narrows to the ESL subjects (${seeded})`, seeded > 0 && seeded < 30);
+  ok(`the seeded filter narrows to the ESL disciplines (${seeded})`, seeded > 0 && seeded < 30);
   ok("it says how many of how many matched",
-    /of\s[\d,]+\ssubjects match/.test(await page.locator("#sl-count").textContent()));
+    /of\s[\d,]+\sdisciplines match/.test(await page.locator("#sl-count").textContent()));
   await page.locator("#sl-q").fill("");
   await page.waitForTimeout(200);
-  ok(`clearing the filter shows every subject (${await page.locator("#sl-count").textContent()})`,
-    /^[\d,]+ subjects$/.test((await page.locator("#sl-count").textContent()).trim()));
+  ok(`clearing the filter shows every discipline (${await page.locator("#sl-count").textContent()})`,
+    /^[\d,]+ disciplines$/.test((await page.locator("#sl-count").textContent()).trim()));
   // A filter that matches nothing must say so rather than render an empty panel
-  // that is indistinguishable from a corpus with no subjects in it.
+  // that is indistinguishable from a corpus with no disciplines in it.
   await page.locator("#sl-q").fill("zzzznotasubject");
   await page.waitForTimeout(200);
   ok("an empty filter result says so",
@@ -133,7 +133,7 @@ function serve() {
   await page.waitForTimeout(200);
   await page.locator("#sl-rows button").first().click();
   await page.waitForTimeout(500);
-  ok("picking a subject returns to the MAP, opened on it",
+  ok("picking a discipline returns to the MAP, opened on it",
     (await page.locator("#u-cvs").count()) === 1 &&
     /Welding/i.test(await page.locator("#u-detail h3").textContent()));
 
