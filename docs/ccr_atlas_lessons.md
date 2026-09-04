@@ -1501,3 +1501,16 @@ and mints nothing. Twenty-three fixture checks, including the chained
 resolution and the three tie-breaks — the first cut recorded the first
 criterion the winner satisfied rather than the one that decided, and the test
 caught it.
+
+### The check-in, 06:46 UTC
+
+Run 446 (the dispatch after #1465 merged) rebuilt the overlay from Supabase
+and every fold invariant held on its main: 278 fold keys, 0 old ids, 0
+pointers on an old id, the audit at 113, all 2,836 mirror keys live, SkyView on
+the new codes, members 247 — and `legacy_count` 130 in the published
+suggestions payload, the lane's first publication. The 06:17 UTC rung of the
+cron ladder had not fired by 06:46; the ladder's later rungs exist for exactly
+that, and run 446 had already written today's `kpi_history.json` entry. The
+fold's proof is the invariants, which a scheduled run reproduces by the same
+steps a dispatch does.
+

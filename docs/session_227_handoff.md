@@ -81,9 +81,18 @@ was a pre-recode count**; the receipt and the lane both say 130.
 
 ## Where the checkpoint left things
 
-#1465 (the lane) and the promote-step PR were merged by S226 once `test` was
-green on each head; `daily-dashboard.yml` dispatched so the lane publishes.
-Nothing else in flight. The 06:45
+#1465 (the lane) and #1466 (the two tools) were merged by S226 once `test`
+was green on each head; `daily-dashboard.yml` run 446 (the dispatch after
+#1465, 04:33 UTC) published the lane. **Measured at 06:46 UTC on run 446's
+main:** 278 fold ids in the overlay, 0 old ids, 0 pointers on an old id,
+`subject_collision_signal` 113, all 2,836 mirror keys live, SkyView on the new
+codes, members 247, `legacy_count` 130. The 06:17 UTC rung of the cron ladder
+had NOT fired by 06:46 (GitHub schedules slip; the 09:17 and 12:17 rungs exist
+for this; today's `kpi_history.json` entry was written by run 446, so Rule 3
+holds). A second check-in was armed for 10:15 UTC (this repo's rungs land one to four hours late). If no scheduled run appears
+by the 12:17 rung, that is a workflow question for the Troubleshooting page,
+not a fold question — the invariants above are the fold's proof. Nothing else
+in flight. The 06:45
 UTC check-in belongs to S226's session; its result is not recorded here.
 
 ## Read in order
