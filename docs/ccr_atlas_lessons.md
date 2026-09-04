@@ -1327,10 +1327,41 @@ mismatches, the receipt on disk) · `tests/prefix_fold_dryrun_test.py` (22) ·
 `tests/rekey_crnc_mirrors_test.py` (16, the committed file included) — all
 wired into `js-tests.yml`.
 
+### The land (2026-09-04, 01:56–02:30 UTC)
+
+Sam replied *"Yes to all recommendations"* — the seven items as proposed, so
+the frozen receipt applied unchanged (scope all, nothing ruled held;
+`kb/prefix_fold_rulings_2026-09-04.json`, the sheet stamped Ruled). The
+window, in order: the MCP count query (30,694 entries, newest 2026-08-24
+18:27:59, equal to the committed overlay); the apply with `--ruling` (P1 ✓,
+13 of 13 gates, the same ripple as the rehearsal to the row); the receipt into
+`ALIAS_MAPS`; the chain once (promotions 24, **crnc mirrors 29** — the step
+added that morning, doing its first real work — no chip or canonical code
+changes, audit 153 → 113, fold-verify `re_key` 7); #1463 merged at 02:17;
+`supabase-rekey.yml` in 65 seconds (278 self-key and 278 pointer filters
+patched, the 30 chained keys applied vacate-first and named, 0 old keys left
+over the 248); `daily-dashboard.yml` for the artifacts; SkyView rebuilt on
+them. One tool defect surfaced by running the chain twice in a day: the crnc
+re-key wrote its receipt to a per-day path, so the evening run would have
+overwritten the morning's 398-key receipt — it suffixes now
+(`rekey_receipt_2.json`) and the first receipt was restored from main.
+
+Two measurements rode the CI waits. The identities map's 1,597 ghost keys
+resolve best from the FIRST map in the chain, the May re-mint: 1,422 land on
+live rows (titles agree on 1,254; the rest are normalization variants such as
+"Academy I" / "Academy 1"), 175 are dead, 7 converge, 44 land on keys that
+already have an entry — so the cleanup is a rebuild-from-baseline re-key with
+its own receipt, not a chain step. And `kb/_join_cid_articulations.py`
+reproduces the committed dispositions exactly (21,108 joins: 10,741 already
+claimed, 9,676 new authority, 615 compatible, 76 conflicts), so a regeneration
+changes no routing and only refreshes the unread `current_home`; it was
+regenerated on the folded catalog in the follow-up.
+
 ### Next
 
-1. Sam's reply by number on the fold sheet → one window; the apply's NEXT
-   print is the order.
-2. The identities map carries 1,605 pre-fold ghost keys (68% of its entries);
-   a chain-aware re-key of that map is a cleanup of its own.
-3. The `current_home` regeneration decision above.
+1. The 122 legacy-anchor duplicates as a merge worklist on the CCR tab; the
+   promote step for `UC-CUR-*` placeholders; the seven held rows when a second
+   signal arrives.
+2. The identities map's rebuild-from-baseline re-key (measured above), with a
+   dry run and a receipt.
+3. Sam's second drive of SkyView; the three HOSP anchors.

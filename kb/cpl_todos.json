@@ -1,15 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-04",
-  "_session": "225 (SkyFold) — the fold apply built and rehearsed; the land waits on Sam’s reply by number",
-  "_status": "2026-09-04 SkyFold, Session 225 — the fold apply is built and rehearsed; nothing is applied until Sam replies by number on the seven-item sheet. The apply recomputes the dry run's plan under the receipt's own flags (a hold on item 2, a fold-them on item 3), refuses any other receipt, reads kb_curation fresh at write-time and passes thirteen conservation gates; on a scratch copy it moved 278 ids, re-keyed 24 promotion records, dropped the collision signal from 153 to 113 and left fold-verify reading exactly the seven held rows. Along the way the session found that the dashboard's credit/noncredit mirror file had 398 keys on ids the 2026-09-03 recode retired, because that file was never in the post-apply chain; it is re-keyed and in the chain now. When Sam rules the sheet, the land is one cron window.",
+  "_session": "225 (SkyFold) — the prefix fold landed on Sam’s yes to all; the crnc mirror file back in the chain",
+  "_status": "2026-09-04 SkyFold, Session 225 — the prefix fold is APPLIED. Sam replied \"Yes to all recommendations\" on the seven-item sheet, and the apply built that morning landed it the same night in one cron window: 278 wrongly-prefixed identities moved to the code their discipline owns (thirteen conservation gates, the plan checked against the receipt he reviewed, kb_curation read fresh at write-time), the receipt registered in the alias chain, the post-apply chain run once (collision signal 153 to 113; the verifier now reads exactly the seven records held on TOP alone), Supabase re-keyed (278 pairs, 30 chained keys, 0 left), the artifacts regenerated and SkyView rebuilt. Also this session: the dashboard's credit/noncredit mirror file had 398 keys on ids the 2026-09-03 recode retired because it was never in the post-apply chain; it is re-keyed and in the chain now. Next: the 122 legacy-anchor duplicates as a merge worklist, the promote step for client placeholders, the identities map's stale keys (measured: 1,422 of 1,597 resolve cleanly).",
   "items": [
-    {
-      "id": "s224-sam-prefix-fold-sheet",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Rule the prefix fold worklist sheet, seven items, reply by number: https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b — 278 rows would move to the code their discipline owns (132 of yesterday's materialized records, 146 strays re-disciplined in July); the seven held on TOP alone, the seventeen records without a discipline and Kinesiology's ATHL span are your calls. Nothing is applied until you reply; the apply is built and rehearsed, so your reply lands it in one cron window."
-    },
     {
       "id": "s224-sam-drive-skyview-again",
       "for": "Sam",
@@ -23,10 +17,10 @@
       "text": "Give the three legacy anchors that carry no seed discipline one of the 146 MQ disciplines on the CSR tab: M-ID HOSP 100 and M-ID HOSP 104 (Travel Services), M-ID HOSP 102 (Hotel and Motel Services). The Z-band retirement folded the other 218; the next pass folds these once they have a discipline."
     },
     {
-      "id": "s225-fable-fold-land",
+      "id": "s225-fable-after-the-fold",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "When Sam replies by number on the prefix fold sheet, land it in one cron window: a fresh read of kb_curation through the MCP, then kb/_prefix_fold_apply.py with --ruling (all yes: the 2026-09-03 receipt; '2 edit: hold': re-run the dry run --scope materialized into a new receipt; '3 edit: fold them': re-run it --ruled-held with his words; '4 edit' naming disciplines: curation rows under his name first), register the receipt in ALIAS_MAPS in the same commit, run the post-apply chain (fold-verify must read the seven held rows; the chain now re-keys the credit/noncredit mirror file too), merge, dispatch supabase-rekey.yml with the alias map, dispatch daily-dashboard.yml, rebuild SkyView and commit it. Rehearsed 2026-09-04: 278 moves, thirteen gates, collision signal 153 to 113. Then the 122 legacy-anchor duplicates (kb/zband_retire_out/2026-09-03/duplicates.json) as a merge worklist, and two cleanups the scan found: the articulation identities map carries 1,605 pre-fold ghost keys, and cid_articulation_joins.json's current_home field carries 1,068 stale ids that nothing reads."
+      "text": "The prefix fold is applied (2026-09-04, #1463): 278 ids moved, the seven TOP-only records held by design, Supabase re-keyed, artifacts regenerated, SkyView rebuilt. Next in this lane: the 122 legacy-anchor duplicates (kb/zband_retire_out/2026-09-03/duplicates.json) as a merge worklist on the CCR tab; the promote step for UC-CUR-* client placeholders, which must mint M numbers now (zero exist today; kb/_zband_retire_dryrun.py's Buckets is the allocator); the seven held rows when a curator's discipline row or a ruling gives them a second signal (a new dry run with --ruled-held); and the articulation identities map's 1,597 stale keys — 1,422 resolve cleanly from the May re-mint map — as a rebuild-from-baseline re-key with its own dry run and receipt."
     },
     {
       "id": "s224-fable-promote-placeholders-to-m",

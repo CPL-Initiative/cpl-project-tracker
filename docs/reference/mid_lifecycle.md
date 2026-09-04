@@ -536,7 +536,17 @@ instance of this playbook in production. Old `M-ID SUBJ NNN` keys are
 dead — those aliases preserved in `kb/remint_out/alias_map.json`. Full
 decisions + validation methodology:
 [`docs/coursecontrolnumber_remint.md`](docs/coursecontrolnumber_remint.md).
-**Latest instance (2026-09-03, SkyTune S224): the authority-codes re-mint series, APPLIED.**
+**Latest instance (2026-09-04, SkyFold S225): the prefix fold, APPLIED.** Sam ruled the
+seven-item worklist sheet "Yes to all recommendations" (`kb/prefix_fold_rulings_2026-09-04.json`)
+and `kb/_prefix_fold_apply.py` landed the frozen receipt `kb/prefix_fold_out/2026-09-03/` in one
+cron window (#1463): 278 ids re-keyed onto their discipline's code (132 materialized machine
+clusters, 146 legacy strays; 153 keeping their number, 125 gap-filling), the seven rows held on
+TOP alone left in place (fold-verify reads 7 by design), `_prefix_fold_from` stamps, the receipt in
+`ALIAS_MAPS`, the chain once (promotions 24, crnc mirrors 29, `subject_collision_signal` 153 → 113),
+`kb_curation` re-keyed (30 chained keys vacate-first, 0 left). The verdicts were the dry run's
+flags (`--scope`, `--ruled-held`) and the apply refuses a receipt cut under others.
+
+**The instance before it (2026-09-03, SkyTune S224): the authority-codes re-mint series, APPLIED.**
 Sam's 22 rulings (`kb/csr_authority_codes_rulings_2026-09-03.json`) plus his yes to all
 fourteen readings (`kb/remint_series_readings_rulings_2026-09-03.json`) landed in one
 cron window as two receipted applies (#1454): the **authority recode**
