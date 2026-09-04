@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 785,
-    "bytes": 8359358,
+    "bytes": 8360699,
     "over_budget": 3,
     "handoff_max": 227,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1950339,
+        "bytes": 1951000,
         "over": 1
       },
       "kb_note": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 201,
-        "bytes": 1691491,
+        "bytes": 1692171,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 2577,
-      "bytes": 1312660714,
-      "heavy_bytes": 613581943,
+      "bytes": 1312719242,
+      "heavy_bytes": 613639156,
       "heavy_share": 0.467,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -762,20 +762,20 @@
       "fixable": false,
       "path": "unified_courses_suggestions.js",
       "detail": {
-        "bytes": 3432663,
+        "bytes": 3489836,
         "kind": "file"
       },
-      "message": "3,432,663 B single file inside the vault"
+      "message": "3,489,836 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007219,
+        "bytes": 3007221,
         "kind": "file"
       },
-      "message": "3,007,219 B single file inside the vault"
+      "message": "3,007,221 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -832,10 +832,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354159,
+        "bytes": 2354197,
         "kind": "file"
       },
-      "message": "2,354,159 B single file inside the vault"
+      "message": "2,354,197 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
