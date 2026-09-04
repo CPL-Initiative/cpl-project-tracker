@@ -89,7 +89,7 @@ main:** 278 fold ids in the overlay, 0 old ids, 0 pointers on an old id,
 codes, members 247, `legacy_count` 130. The 06:17 UTC rung of the cron ladder
 had NOT fired by 06:46 (GitHub schedules slip; the 09:17 and 12:17 rungs exist
 for this; today's `kpi_history.json` entry was written by run 446, so Rule 3
-holds). A second check-in was armed for 09:45 UTC. If no scheduled run appears
+holds). A second check-in was armed for 10:15 UTC (this repo's rungs land one to four hours late). If no scheduled run appears
 by the 12:17 rung, that is a workflow question for the Troubleshooting page,
 not a fold question — the invariants above are the fold's proof. Nothing else
 in flight. The 06:45
