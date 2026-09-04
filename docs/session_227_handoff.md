@@ -87,10 +87,16 @@ was green on each head; `daily-dashboard.yml` run 446 (the dispatch after
 main:** 278 fold ids in the overlay, 0 old ids, 0 pointers on an old id,
 `subject_collision_signal` 113, all 2,836 mirror keys live, SkyView on the new
 codes, members 247, `legacy_count` 130. The 06:17 UTC rung of the cron ladder
-had NOT fired by 06:46 (GitHub schedules slip; the 09:17 and 12:17 rungs exist
-for this; today's `kpi_history.json` entry was written by run 446, so Rule 3
-holds). A second check-in was armed for 10:15 UTC (this repo's rungs land one to four hours late). If no scheduled run appears
-by the 12:17 rung, that is a workflow question for the Troubleshooting page,
+had NOT fired by 06:46, and none had by 10:17 (GitHub slipped every rung by
+four to five hours on 2026-09-03: 11:17, 13:35, 16:30 UTC). ⚠️ **Rule 3:**
+`kpi_history.json` is keyed by PACIFIC date (`_now_pt()` in
+`log_daily_snapshot`), so run 446 at 21:42 PDT on the 3rd refreshed the
+2026-09-03 entry; the 2026-09-04 entry arrives with the first run after 07:00
+UTC. A check-in armed for 17:45 UTC dispatches `daily-dashboard.yml` if no
+scheduled run has written it by then (a real run, never an interpolated
+backfill, while the day is still open). **Your first act: confirm the newest
+`kpi_history.json` date is 2026-09-04** — if not, dispatch the workflow. A
+schedule that never fires is a workflow question for the Troubleshooting page,
 not a fold question — the invariants above are the fold's proof. Nothing else
 in flight. The 06:45
 UTC check-in belongs to S226's session; its result is not recorded here.

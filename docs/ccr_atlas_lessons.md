@@ -1509,8 +1509,12 @@ and every fold invariant held on its main: 278 fold keys, 0 old ids, 0
 pointers on an old id, the audit at 113, all 2,836 mirror keys live, SkyView on
 the new codes, members 247 — and `legacy_count` 130 in the published
 suggestions payload, the lane's first publication. The 06:17 UTC rung of the
-cron ladder had not fired by 06:46; the ladder's later rungs exist for exactly
-that, and run 446 had already written today's `kpi_history.json` entry. The
+cron ladder had not fired by 06:46, nor had any rung by 10:17; the day before,
+GitHub had slipped all three by four to five hours. One correction to the
+first draft of this note: `kpi_history.json` is keyed by Pacific date, so run
+446 (21:42 PDT on the 3rd) refreshed the 3rd's entry rather than writing the
+4th's — today's entry needs a run after 07:00 UTC, and a dispatch before the
+Pacific day ends is the Rule 3 fallback if the schedule never fires. The
 fold's proof is the invariants, which a scheduled run reproduces by the same
 steps a dispatch does.
 
