@@ -241,19 +241,50 @@ main.u-fullbleed .crumbs{display:none}
 .u-foot .u-hint{flex:1 1 320px}
 .u-foot .u-legend{flex:0 1 auto}
 .u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:#fff}
-.u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:70vh;overflow:hidden;background:var(--surface-opaque)}
+.u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:78vh;overflow:hidden;background:var(--surface-opaque)}
 .u-wrap canvas{display:block;width:100%;height:100%;touch-action:none;cursor:default}
 .u-wrap canvas:focus-visible{outline:3px solid var(--focus-ring);outline-offset:-3px}
 .u-ov{position:absolute;z-index:3;margin:0}
 .u-ov-tl{top:10px;left:12px;max-width:calc(100% - 24px)}
 .u-ov-bl{left:12px;bottom:58px}
 .u-ov-b{left:12px;bottom:10px;max-width:min(640px,calc(100% - 24px))}
-.u-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 12px}
+.u-bar{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0}
+/* ── item 8 (Sam, 2026-09-04): the controls ride the masthead's title row ──
+   The bar is MOVED there by ccr_universe.js, not copied, and moved back
+   inside #u-full for full screen (the browser paints only that element).
+   min-width:0 so it can shrink beside the search rather than push it. */
+
+/* ⚠️ THE MASTHEAD IS STICKY (z-index 20), so anything scrolled to the top of the
+   viewport lands UNDERNEATH it. That was survivable while the controls sat on a
+   second row well down the page; consolidating to one row and giving the map
+   more height put them right at the boundary, and Chromium reported every link
+   in this row unclickable — the masthead was intercepting the pointer. Reserve
+   the header's height when scrolling anything in this row into view. */
+.u-top,.u-top .linkish,.u-top .btn{scroll-margin-top:96px}
+/* One row: title | links | controls, with the controls pushed right. The row
+   only wraps when it genuinely cannot fit, and min-width:0 lets it try. */
+.u-top{flex-wrap:nowrap;gap:6px 14px}
+.u-top .u-nav{min-width:0;flex:0 1 auto}
+.u-top .u-bar{margin-left:auto;min-width:0;flex:0 1 auto}
+.u-top .u-bar .btn{font-size:.76rem;padding:5px 8px}
+.u-top .u-bar .u-z{font-size:.76rem}
+@media (max-width:1100px){ .u-top{flex-wrap:wrap} .u-top .u-bar{margin-left:0} }
+/* ── item 6: the legend folds away and the canvas takes the space ── */
+.u-foot.u-foot-hidden{display:none}
+@media (max-width:900px){
+  /* Below the masthead's own stacking breakpoint the lift would make a
+     third cramped row, so let it wrap normally instead. */
+  .u-bar.u-bar-mast{margin-left:0;flex-basis:100%}
+}
 .u-bar .btn{font-size:.8rem;padding:6px 10px;background:var(--surface);backdrop-filter:blur(4px)}
 .u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
   padding:8px 11px;border:1px solid var(--border-strong);border-radius:7px;
   background:var(--surface-opaque);color:var(--text-body)}
 .u-z{font-size:.8rem;color:var(--text-muted);background:var(--surface);padding:4px 8px;border-radius:6px}
+/* The zoom group's own label carries what Out/In/Reset act on, so the
+   buttons could shorten to one word each without becoming glyphs. */
+.u-zgroup{display:inline-flex;align-items:center;gap:4px}
+.u-zlbl{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase}
 .u-z b{color:var(--text-strong);font-variant-numeric:tabular-nums}
 .u-hint{font-size:.8rem;color:var(--text-muted);padding:8px 12px;line-height:1.4;
         border:1px solid var(--border);border-radius:8px;background:var(--surface);backdrop-filter:blur(4px)}
@@ -424,6 +455,25 @@ function closeSug(){
   sugEl.hidden = true; sugEl.innerHTML = "";
   if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
 }
+/* ⚠️ CLOSE ON A CLICK OUTSIDE THE SEARCH. Nothing did this before: the
+ * suggestion list stayed open until you picked an item or submitted, and it is
+ * absolutely positioned over whatever the page put beneath the masthead. That
+ * was survivable while SkyView's controls sat on a SECOND row, far enough down
+ * to clear it. Consolidating the top to one row (Sam, 2026-09-04: "I want all
+ * the real estate for the universe view") moved the view links up under the open
+ * list, and Chromium reported them unclickable — the dropdown was intercepting
+ * every pointer event aimed at them.
+ *
+ * Containment at the boundary, not a handler per control: the pane grows new
+ * controls and every one of them would otherwise have to remember. pointerdown
+ * rather than click, for the reason the item handler below already documents. */
+document.addEventListener("pointerdown", function(e){
+  if (!sugEl || sugEl.hidden) return;
+  var t = e.target;
+  if (t && typeof t.closest === "function" && t.closest(".msearch")) return;
+  closeSug();
+}, true);
+
 function markSug(){
   if (!sugEl) return;
   Array.prototype.forEach.call(sugEl.children, function(li,i){
