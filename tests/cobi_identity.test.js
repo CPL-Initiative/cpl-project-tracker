@@ -88,7 +88,18 @@ function boot(opts) {
     };
   }
   if (opts.lockStub !== false) {
-    window.CPL_TEAM_PHRASE_HEADER = { open: () => { window.__lockOpened = true; } };
+    // The phrase box is MOUNTED into the pane now (Sam, 2026-09-04), the same
+    // shape as the sign-in stub above — not a button that opens a control
+    // somewhere else.
+    window.CPL_TEAM_PHRASE_HEADER = {
+      mountInto: (host) => {
+        window.__lockMounted = (window.__lockMounted || 0) + 1;
+        const b = window.document.createElement("input");
+        b.className = "cobi-tph-in";
+        b.placeholder = "team phrase…";
+        host.appendChild(b);
+      },
+    };
   }
   window.eval(src);
   window.eval(tabsSrc);
@@ -124,8 +135,13 @@ function railText(win) {
   check("(A) ⭐ tabs.js listens for the keeper's own event name",
     /addEventListener\('cpl-session-changed'/.test(tabsSrc));
   check("(A) …and for a team-phrase unlock", /addEventListener\('cpl-team-pass-unlocked'/.test(tabsSrc));
-  check("(A) the masthead lock exposes a real open(), not a test seam",
-    /^\s*function open\(\) \{ openPane = true; render\(\); \}/m.test(tphSrc) && /open: open,/.test(tphSrc));
+  // ⭐ The phrase control no longer has chrome of its own: it exposes
+  // mountInto(), the same seam reviewer_signin.js uses, so this pane can hold
+  // BOTH credentials (Sam, 2026-09-04).
+  check("(A) the phrase module exposes mountInto(), the shared mount seam",
+    /function mountInto\(host\)/.test(tphSrc) && /mountInto: mountInto,/.test(tphSrc));
+  check("(A) ⭐ and no longer paints a control into the masthead brand",
+    !/cobi-tph-btn/.test(tphSrc) && !/\.header \.cobi-brand/.test(tphSrc));
   check("(A) the script tag is in index.html", /<script src="cobi_identity\.js"><\/script>/.test(indexHtml));
   check("(A) ⭐ Rule 4 — and in CPL_Dashboard.html", /<script src="cobi_identity\.js"><\/script>/.test(dashHtml));
   check("(A) it loads after the modules it delegates to",
@@ -171,7 +187,11 @@ function railText(win) {
   {
     const w = boot({});
     const g = w.COBI_IDENTITY.greeting();
-    check("(B) neither → says so plainly", g.tone === "none" && /Not unlocked/.test(g.text), g.text);
+    check("(B) neither → says so plainly", g.tone === "none" &&
+      /Not signed in, and no team phrase held/.test(g.text), g.text);
+    // The chip is the only door to either credential now, so its label names
+    // the door rather than restating the state.
+    check("(B) ⭐ …and the chip label is a door, not a state", g.short === "Sign in", g.short);
     check("(B) the rail says where to go, and it is a place that exists",
       /top right/.test(railText(w)), railText(w));
   }
@@ -217,11 +237,22 @@ function railText(win) {
     const w = boot({});
     const pane = openPane(w);
     check("(E) the pane opens from the chip", !!pane && /open/.test(pane.className));
+    check("(E) ⭐ the chip carries no status dot — the word carries the state",
+      !w.document.querySelector(".cobi-ident-dot"));
     check("(E) ⭐ signed out → the SHARED sign-in box is mounted right here",
       !!pane && /Email me a link/.test(pane.textContent), pane ? pane.textContent.slice(0, 120) : "");
-    const unlock = pane && [...pane.querySelectorAll("button")].find((b) => /Unlock with a team phrase/.test(b.textContent));
-    check("(E) ⭐ …and an unlock control is offered too", !!unlock);
-    if (unlock) { unlock.click(); check("(E) ⭐ unlock DELEGATES to the one site-scoped lock", w.__lockOpened === true); }
+    // ⭐ THE MOVE. The phrase box is mounted in the SAME pane as the sign-in
+    // box — not linked to from it. Sam, 2026-09-04: "move the team phrase stuff
+    // in proximity to the magic link login stuff".
+    check("(E) ⭐ …and the phrase box is MOUNTED right beside it, not linked to",
+      !!pane && !!pane.querySelector(".cobi-tph-in") && w.__lockMounted === 1);
+    check("(E) ⭐ both credentials are named, so neither is guessed at",
+      !!pane && /Magic link/.test(pane.textContent) && /Team phrase/.test(pane.textContent));
+    // Sam: "no need for the cheesy unlock glyph if we note that the CPL team is
+    // logged in with the phrase." No lock glyph, and no status marks either —
+    // every state here is carried by its own sentence.
+    check("(E) ⭐ no lock glyph and no status marks anywhere in the pane",
+      !!pane && !/🔒|🔓|✓/.test(pane.textContent));
   }
   {
     const w = boot({ reviewer: true });
@@ -234,9 +265,14 @@ function railText(win) {
     // The delegation targets are absent — the pane must degrade, not throw.
     const w = boot({ signinStub: false, lockStub: false });
     const pane = openPane(w);
-    check("(E) with the shared modules absent, the pane still renders and says where to go",
-      !!pane && /About menu/.test(pane.textContent) && /🔒/.test(pane.textContent),
+    // ⭐ NEVER AN INSTRUCTION WITH NO DOOR. The pane used to point at "the 🔒
+    // control beside the COBI title" — which no longer exists. With the modules
+    // absent it must say something the reader can actually act on.
+    check("(E) with the shared modules absent, the pane still renders and stays honest",
+      !!pane && /About menu/.test(pane.textContent) && /reload COBI/.test(pane.textContent),
       pane ? pane.textContent.slice(0, 200) : "no pane");
+    check("(E) ⭐ …and never points at the retired 🔒 control",
+      !!pane && !/🔒/.test(pane.textContent) && !/beside the COBI title/.test(pane.textContent));
   }
 
   // ── (F) the honesty line ─────────────────────────────────────────────────
@@ -294,7 +330,7 @@ function railText(win) {
     check("(I) …first in the strip, before About",
       w.document.querySelector(".header .cobi-utility").firstElementChild.className === "cobi-ident");
     check("(I) it renders a state even with no credential at all",
-      !!chip && /Not unlocked/.test(chip.textContent), chip ? chip.textContent : "");
+      !!chip && /Sign in/.test(chip.textContent), chip ? chip.textContent : "");
   }
 
   // ── (J) the pane must not close when you click INSIDE it ──────────────────

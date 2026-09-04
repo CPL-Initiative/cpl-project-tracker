@@ -12074,16 +12074,13 @@ def main():
         # Replace <title> tag + masthead <h1> with the COBI brand. Decoupled
         # from proj_title (which still names the Word reports) so the dashboard
         # masthead reads "COBI" while the project keeps its own title elsewhere.
-        # The rotating "Mamba" subtitle + 8→24 wink are layered on at runtime by
-        # cobi_brand.js (static, regen-proof).
-        # "ᶜᴾᴸ" = Unicode modifier-letter superscripts (U+1D9C/U+1D3E/U+1D38) —
-        # they survive plain-text link unfurls (Teams/Slack read <title>/og:title),
-        # matching the gold superscript CPL in the on-page brand mark.
+        # cobi_brand.js layers the runtime brand touches (the Alpha chip + the
+        # alpha-testing notice) on top of this, static and regen-proof.
         import re
         # "(Alpha)" rides in the <title>/og:title on purpose: a COBI link
         # pasted into Teams/Slack unfurls as its title, so the "still in
         # testing" signal has to travel WITH the link, not only on-page.
-        COBI_TITLE = "COBI ᶜᴾᴸ (Alpha) — Chancellor's Office Business Intelligence"
+        COBI_TITLE = "COBI (Alpha)"
         html = re.sub(r'<title>[^<]*</title>', "<title>" + COBI_TITLE + "</title>", html)
         html = re.sub(r'<meta property="og:title" content="[^"]*"',
                       '<meta property="og:title" content="' + COBI_TITLE + '"', html)
