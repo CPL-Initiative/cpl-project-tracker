@@ -1,0 +1,6632 @@
+{
+  "_status": "DRY-RUN 2026-09-04 — identities map rebuild-from-baseline re-key. NOT applied.",
+  "_generated_by": "kb/_identities_rekey_dryrun.py",
+  "_generated_at": "2026-09-04",
+  "_rule": "resolve each ghost key through the full ALIAS_MAPS chain; move the entry onto its live id when that id has none; keep the live entry on a collision; the title-agreeing ghost wins a convergence; drop what nothing names again",
+  "_note": "this map is NOT an ALIAS_MAPS receipt: it re-keys a side table whose keys the chain already knows; it must not be registered in kb/_rekey_promotions.py ALIAS_MAPS",
+  "count": 1597,
+  "counts": {
+    "rekey": 1369,
+    "drop_collision": 44,
+    "drop_converged": 9,
+    "drop_dead": 175
+  },
+  "aliases": {
+    "ANSC M10BN": {
+      "new_id": "AGAS M10FY",
+      "action": "rekey"
+    },
+    "ANSC M10BE": {
+      "new_id": "AGAS M10JA",
+      "action": "rekey"
+    },
+    "ANSC M10BO": {
+      "new_id": "AGAS M10JB",
+      "action": "rekey"
+    },
+    "ANSC M10AK": {
+      "new_id": "AGAS M10NN",
+      "action": "rekey"
+    },
+    "ANSC M10BQ": {
+      "new_id": "AGAS M10QX",
+      "action": "rekey"
+    },
+    "ANSC M10BR": {
+      "new_id": "AGAS M10VK",
+      "action": "rekey"
+    },
+    "ANSC M10BD": {
+      "new_id": "AGAS M10WQ",
+      "action": "rekey"
+    },
+    "VT M1003": {
+      "new_id": "AGAS M1118",
+      "action": "rekey"
+    },
+    "ANSC M1010": {
+      "new_id": "AGAS M1129",
+      "action": "rekey"
+    },
+    "RF M1001": {
+      "new_id": "AGEH M1004",
+      "action": "rekey"
+    },
+    "AGR M1002": {
+      "new_id": "AGEQ M1002",
+      "action": "rekey"
+    },
+    "AGM M10AO": {
+      "new_id": "AGMA M10AB",
+      "action": "rekey"
+    },
+    "AGM M10AP": {
+      "new_id": "AGMA M10AE",
+      "action": "rekey"
+    },
+    "AGM M10AB": {
+      "new_id": "AGMA M10AW",
+      "action": "rekey"
+    },
+    "AG M10DH": {
+      "new_id": "AGMA M10EH",
+      "action": "rekey"
+    },
+    "AGM M10AH": {
+      "new_id": "AGMA M10MP",
+      "action": "rekey"
+    },
+    "AGM M10AF": {
+      "new_id": "AGMA M10NY",
+      "action": "rekey"
+    },
+    "AGM M10AM": {
+      "new_id": "AGMA M10OL",
+      "action": "rekey"
+    },
+    "AGM M10AI": {
+      "new_id": "AGMA M10PL",
+      "action": "rekey"
+    },
+    "AGM M10AS": {
+      "new_id": "AGMA M10PU",
+      "action": "rekey"
+    },
+    "AGM M10AG": {
+      "new_id": "AGMA M10RF",
+      "action": "rekey"
+    },
+    "AGM M10AQ": {
+      "new_id": "AGMA M10UB",
+      "action": "rekey"
+    },
+    "AGM M10AJ": {
+      "new_id": "AGMA M10UC",
+      "action": "rekey"
+    },
+    "AGM M10AL": {
+      "new_id": "AGMA M10UK",
+      "action": "rekey"
+    },
+    "AGM M10AK": {
+      "new_id": "AGMA M10VS",
+      "action": "rekey"
+    },
+    "AGM M10AN": {
+      "new_id": "AGMA M10VX",
+      "action": "rekey"
+    },
+    "AGM M10AT": {
+      "new_id": "AGMA M10WS",
+      "action": "rekey"
+    },
+    "AGM M10AR": {
+      "new_id": "AGMA M10WW",
+      "action": "rekey"
+    },
+    "CRPS M1001": {
+      "new_id": "AGPS M1005",
+      "action": "rekey"
+    },
+    "PLNT M10AE": {
+      "new_id": "AGPS M10FG",
+      "action": "rekey"
+    },
+    "AG M1019": {
+      "new_id": "AGRI M1067",
+      "action": "rekey"
+    },
+    "AGGE M10AA": {
+      "new_id": "AGRI M10CQ",
+      "action": "rekey"
+    },
+    "AG M10CQ": {
+      "new_id": "AGRI M10DQ",
+      "action": "rekey"
+    },
+    "AGGE M10AB": {
+      "new_id": "AGRI M10WU",
+      "action": "rekey"
+    },
+    "AG M1011": {
+      "new_id": "AGRI M1115",
+      "action": "rekey"
+    },
+    "PRSI M1001": {
+      "new_id": "ARAB M1012",
+      "action": "rekey"
+    },
+    "MFG M1001": {
+      "new_id": "ARCH M1005",
+      "action": "rekey"
+    },
+    "ARC M1018": {
+      "new_id": "ARCH M1016",
+      "action": "rekey"
+    },
+    "ARC M1002": {
+      "new_id": "ARCH M1039",
+      "action": "rekey"
+    },
+    "ARC M10AD": {
+      "new_id": "ARCH M10BR",
+      "action": "rekey"
+    },
+    "ARC M10AE": {
+      "new_id": "ARCH M10CJ",
+      "action": "rekey"
+    },
+    "ARC M10AL": {
+      "new_id": "ARCH M10IC",
+      "action": "rekey"
+    },
+    "AHS M1002": {
+      "new_id": "ARTS M1083",
+      "action": "rekey"
+    },
+    "ART M1058": {
+      "new_id": "ARTS M1093",
+      "action": "rekey"
+    },
+    "ART M11BQ": {
+      "new_id": "ARTS M10PY",
+      "action": "rekey"
+    },
+    "ART M11BP": {
+      "new_id": "ARTS M10UK",
+      "action": "rekey"
+    },
+    "ARTA M10AG": {
+      "new_id": "ARTS M10UQ",
+      "action": "rekey"
+    },
+    "ARTA M10AH": {
+      "new_id": "ARTS M10VH",
+      "action": "rekey"
+    },
+    "AHS M1003": {
+      "new_id": "ARTS M1116",
+      "action": "rekey"
+    },
+    "ART M1456": {
+      "new_id": "ARTS M1135",
+      "action": "rekey"
+    },
+    "ART M1102": {
+      "new_id": "ARTS M1184",
+      "action": "rekey"
+    },
+    "ART M1103": {
+      "new_id": "ARTS M1185",
+      "action": "rekey"
+    },
+    "ART M1081": {
+      "new_id": "ARTS M1188",
+      "action": "rekey"
+    },
+    "ART M1465": {
+      "new_id": "ARTS M1288",
+      "action": "rekey"
+    },
+    "ART M1467": {
+      "new_id": "ARTS M1289",
+      "action": "rekey"
+    },
+    "ART M1490": {
+      "new_id": "ARTS M1334",
+      "action": "rekey"
+    },
+    "ART M1170": {
+      "new_id": "ARTS M1340",
+      "action": "rekey"
+    },
+    "ART M1177": {
+      "new_id": "ARTS M1354",
+      "action": "rekey"
+    },
+    "ART M1189": {
+      "new_id": "ARTS M1367",
+      "action": "rekey"
+    },
+    "ART M1319": {
+      "new_id": "ARTS M1376",
+      "action": "rekey"
+    },
+    "DM M1008": {
+      "new_id": "ARTS M1410",
+      "action": "rekey"
+    },
+    "ART M1331": {
+      "new_id": "ARTS M1468",
+      "action": "rekey"
+    },
+    "ART M1391": {
+      "new_id": "ARTS M1482",
+      "action": "rekey"
+    },
+    "ART M1470": {
+      "new_id": "ARTS M1507",
+      "action": "rekey"
+    },
+    "ART M9004": {
+      "new_id": "ARTS M9014",
+      "action": "rekey"
+    },
+    "ART M9014": {
+      "new_id": "ARTS M9015",
+      "action": "rekey"
+    },
+    "AUBD M10AA": {
+      "new_id": "AUTB M10AB",
+      "action": "rekey"
+    },
+    "DIES M1004": {
+      "new_id": "AUTD M1007",
+      "action": "rekey"
+    },
+    "DESL M1001": {
+      "new_id": "AUTD M1009",
+      "action": "rekey"
+    },
+    "DIES M1003": {
+      "new_id": "AUTD M1011",
+      "action": "rekey"
+    },
+    "AGM M1002": {
+      "new_id": "AUTD M1012",
+      "action": "rekey"
+    },
+    "AUTE M1005": {
+      "new_id": "AUTD M1014",
+      "action": "rekey"
+    },
+    "DIES M1005": {
+      "new_id": "AUTD M1020",
+      "action": "rekey"
+    },
+    "DETT M1001": {
+      "new_id": "AUTD M1026",
+      "action": "rekey"
+    },
+    "DIES M10BJ": {
+      "new_id": "AUTD M10BN",
+      "action": "rekey"
+    },
+    "DIES M10AT": {
+      "new_id": "AUTD M10CY",
+      "action": "rekey"
+    },
+    "AGM M10AE": {
+      "new_id": "AUTD M10DB",
+      "action": "rekey"
+    },
+    "DIES M10AJ": {
+      "new_id": "AUTD M10EH",
+      "action": "rekey"
+    },
+    "DIES M10BA": {
+      "new_id": "AUTD M10ER",
+      "action": "rekey"
+    },
+    "DIES M10BC": {
+      "new_id": "AUTD M10ET",
+      "action": "rekey"
+    },
+    "DIES M10BF": {
+      "new_id": "AUTD M10EU",
+      "action": "rekey"
+    },
+    "DIES M10BI": {
+      "new_id": "AUTD M10EX",
+      "action": "rekey"
+    },
+    "DIES M10AW": {
+      "new_id": "AUTD M10FI",
+      "action": "rekey"
+    },
+    "DIES M10BE": {
+      "new_id": "AUTD M10FY",
+      "action": "rekey"
+    },
+    "ATEC M1008": {
+      "new_id": "AUTO M1030",
+      "action": "rekey"
+    },
+    "AUT M1005": {
+      "new_id": "AUTO M1038",
+      "action": "rekey"
+    },
+    "AUT M1003": {
+      "new_id": "AUTO M1062",
+      "action": "rekey"
+    },
+    "ATEC M1010": {
+      "new_id": "AUTO M1085",
+      "action": "rekey"
+    },
+    "ATEC M1006": {
+      "new_id": "AUTO M1092",
+      "action": "rekey"
+    },
+    "AUT M10AL": {
+      "new_id": "AUTO M10AK",
+      "action": "rekey"
+    },
+    "AUT M10AS": {
+      "new_id": "AUTO M10AL",
+      "action": "rekey"
+    },
+    "AUT M10AT": {
+      "new_id": "AUTO M10BE",
+      "action": "rekey"
+    },
+    "AST M10AA": {
+      "new_id": "AUTO M10FB",
+      "action": "rekey"
+    },
+    "AUT M10AH": {
+      "new_id": "AUTO M10GX",
+      "action": "rekey"
+    },
+    "DIES M10BQ": {
+      "new_id": "AUTO M10IS",
+      "action": "rekey"
+    },
+    "AUT M10AI": {
+      "new_id": "AUTO M10ND",
+      "action": "rekey"
+    },
+    "AUTE M10AL": {
+      "new_id": "AUTO M10PJ",
+      "action": "rekey"
+    },
+    "AUSE M10AD": {
+      "new_id": "AUTO M10SQ",
+      "action": "rekey"
+    },
+    "AUT M10AZ": {
+      "new_id": "AUTO M10SS",
+      "action": "rekey"
+    },
+    "AUT M10AU": {
+      "new_id": "AUTO M10UD",
+      "action": "rekey"
+    },
+    "AUT M10AV": {
+      "new_id": "AUTO M10UG",
+      "action": "rekey"
+    },
+    "AUT M10BA": {
+      "new_id": "AUTO M10XY",
+      "action": "rekey"
+    },
+    "AT M10EI": {
+      "new_id": "AUTO M10ZI",
+      "action": "rekey"
+    },
+    "AT M10CP": {
+      "new_id": "AUTO M10ZY",
+      "action": "rekey"
+    },
+    "AUTE M1003": {
+      "new_id": "AUTO M1134",
+      "action": "rekey"
+    },
+    "AT M1018": {
+      "new_id": "AUTO M1190",
+      "action": "rekey"
+    },
+    "ATEC M1015": {
+      "new_id": "AUTO M1192",
+      "action": "rekey"
+    },
+    "AT M1017": {
+      "new_id": "AUTO M1198",
+      "action": "rekey"
+    },
+    "AT M10CV": {
+      "new_id": "AUTO M11AJ",
+      "action": "rekey"
+    },
+    "AT M10EG": {
+      "new_id": "AUTO M11HI",
+      "action": "rekey"
+    },
+    "AUSE M10AH": {
+      "new_id": "AUTO M11IG",
+      "action": "rekey"
+    },
+    "AUSE M10AG": {
+      "new_id": "AUTO M11LI",
+      "action": "rekey"
+    },
+    "AUT M1006": {
+      "new_id": "AUTO M1202",
+      "action": "rekey"
+    },
+    "AUT M1008": {
+      "new_id": "AUTO M1212",
+      "action": "rekey"
+    },
+    "AT M1037": {
+      "new_id": "AUTO M1216",
+      "action": "rekey"
+    },
+    "AT M1038": {
+      "new_id": "AUTO M1219",
+      "action": "rekey"
+    },
+    "AUTE M1001": {
+      "new_id": "AUTO M1295",
+      "action": "rekey"
+    },
+    "NAUT M9001": {
+      "new_id": "AUTO M9040",
+      "action": "rekey"
+    },
+    "AVIM M1001": {
+      "new_id": "AVIA M1005",
+      "action": "rekey"
+    },
+    "FLGH M1001": {
+      "new_id": "AVIA M1010",
+      "action": "rekey"
+    },
+    "AMT M1006": {
+      "new_id": "AVIA M1024",
+      "action": "rekey"
+    },
+    "AERO M1006": {
+      "new_id": "AVIA M1036",
+      "action": "rekey"
+    },
+    "APT M1002": {
+      "new_id": "AVIA M1037",
+      "action": "rekey"
+    },
+    "AERO M1008": {
+      "new_id": "AVIA M1038",
+      "action": "rekey"
+    },
+    "APT M1003": {
+      "new_id": "AVIA M1039",
+      "action": "rekey"
+    },
+    "APT M1006": {
+      "new_id": "AVIA M1040",
+      "action": "rekey"
+    },
+    "AT M1022": {
+      "new_id": "AVIA M1042",
+      "action": "rekey"
+    },
+    "AERO M1010": {
+      "new_id": "AVIA M1043",
+      "action": "rekey"
+    },
+    "AERO M1012": {
+      "new_id": "AVIA M1044",
+      "action": "rekey"
+    },
+    "FLTE M1003": {
+      "new_id": "AVIA M1045",
+      "action": "rekey"
+    },
+    "FLGH M10AL": {
+      "new_id": "AVIA M10AG",
+      "action": "rekey"
+    },
+    "FLGH M10AM": {
+      "new_id": "AVIA M10AH",
+      "action": "rekey"
+    },
+    "FLGH M10AN": {
+      "new_id": "AVIA M10AI",
+      "action": "rekey"
+    },
+    "FLGH M10AO": {
+      "new_id": "AVIA M10AO",
+      "action": "rekey"
+    },
+    "FLGH M10AP": {
+      "new_id": "AVIA M10AP",
+      "action": "rekey"
+    },
+    "FLGH M10AQ": {
+      "new_id": "AVIA M10AQ",
+      "action": "rekey"
+    },
+    "AVIM M10AM": {
+      "new_id": "AVIA M10DS",
+      "action": "rekey"
+    },
+    "AVIM M10AR": {
+      "new_id": "AVIA M10DT",
+      "action": "rekey"
+    },
+    "AVIM M10AO": {
+      "new_id": "AVIA M10DU",
+      "action": "rekey"
+    },
+    "AVIM M10AN": {
+      "new_id": "AVIA M10DV",
+      "action": "rekey"
+    },
+    "AVIM M10AP": {
+      "new_id": "AVIA M10DW",
+      "action": "rekey"
+    },
+    "AVIM M10AE": {
+      "new_id": "AVIA M10EA",
+      "action": "rekey"
+    },
+    "AVIM M10AK": {
+      "new_id": "AVIA M10ER",
+      "action": "rekey"
+    },
+    "AVIM M10AF": {
+      "new_id": "AVIA M10ES",
+      "action": "rekey"
+    },
+    "AMT M10CN": {
+      "new_id": "AVIA M10EW",
+      "action": "rekey"
+    },
+    "AMT M10CM": {
+      "new_id": "AVIA M10EX",
+      "action": "rekey"
+    },
+    "AVIM M10AH": {
+      "new_id": "AVIA M10FG",
+      "action": "rekey"
+    },
+    "AVIM M10AG": {
+      "new_id": "AVIA M10FL",
+      "action": "rekey"
+    },
+    "AVIM M10AI": {
+      "new_id": "AVIA M10GG",
+      "action": "rekey"
+    },
+    "AVIM M10AS": {
+      "new_id": "AVIA M10GO",
+      "action": "rekey"
+    },
+    "AMT M10AR": {
+      "new_id": "AVIA M10GQ",
+      "action": "rekey"
+    },
+    "AMT M10AS": {
+      "new_id": "AVIA M10GR",
+      "action": "rekey"
+    },
+    "AMT M10AQ": {
+      "new_id": "AVIA M10GY",
+      "action": "rekey"
+    },
+    "AERO M10BY": {
+      "new_id": "AVIA M10HB",
+      "action": "rekey"
+    },
+    "AERO M10BX": {
+      "new_id": "AVIA M10HC",
+      "action": "rekey"
+    },
+    "AERO M10AS": {
+      "new_id": "AVIA M10HG",
+      "action": "rekey"
+    },
+    "AERO M10AU": {
+      "new_id": "AVIA M10HH",
+      "action": "rekey"
+    },
+    "AVIM M10AL": {
+      "new_id": "AVIA M10HN",
+      "action": "rekey"
+    },
+    "AERO M10BZ": {
+      "new_id": "AVIA M10HU",
+      "action": "rekey"
+    },
+    "AERO M10CA": {
+      "new_id": "AVIA M10HV",
+      "action": "rekey"
+    },
+    "AMT M10AK": {
+      "new_id": "AVIA M10HX",
+      "action": "rekey"
+    },
+    "AERO M10AR": {
+      "new_id": "AVIA M10HY",
+      "action": "rekey"
+    },
+    "AERO M10AT": {
+      "new_id": "AVIA M10HZ",
+      "action": "rekey"
+    },
+    "AVIM M10AV": {
+      "new_id": "AVIA M10JA",
+      "action": "rekey"
+    },
+    "AVIM M10BA": {
+      "new_id": "AVIA M10JB",
+      "action": "rekey"
+    },
+    "AVIM M10AU": {
+      "new_id": "AVIA M10JC",
+      "action": "rekey"
+    },
+    "AMT M10AU": {
+      "new_id": "AVIA M10JZ",
+      "action": "rekey"
+    },
+    "AMT M10AW": {
+      "new_id": "AVIA M10KA",
+      "action": "rekey"
+    },
+    "AMT M10AX": {
+      "new_id": "AVIA M10KD",
+      "action": "rekey"
+    },
+    "AVIM M10BC": {
+      "new_id": "AVIA M10KV",
+      "action": "rekey"
+    },
+    "AVIM M10BE": {
+      "new_id": "AVIA M10KW",
+      "action": "rekey"
+    },
+    "AVIM M10BD": {
+      "new_id": "AVIA M10LA",
+      "action": "rekey"
+    },
+    "AVIM M10BF": {
+      "new_id": "AVIA M10LB",
+      "action": "rekey"
+    },
+    "AMT M10AT": {
+      "new_id": "AVIA M10LE",
+      "action": "rekey"
+    },
+    "AMT M10AV": {
+      "new_id": "AVIA M10LQ",
+      "action": "rekey"
+    },
+    "AVIM M10BH": {
+      "new_id": "AVIA M10NH",
+      "action": "rekey"
+    },
+    "AVIM M10BI": {
+      "new_id": "AVIA M10NP",
+      "action": "rekey"
+    },
+    "AERO M10CN": {
+      "new_id": "AVIA M10NV",
+      "action": "rekey"
+    },
+    "AERO M10CO": {
+      "new_id": "AVIA M10NW",
+      "action": "rekey"
+    },
+    "AVIM M10BL": {
+      "new_id": "AVIA M10NZ",
+      "action": "rekey"
+    },
+    "FLGH M10AI": {
+      "new_id": "AVIA M10OM",
+      "action": "rekey"
+    },
+    "AVIM M10BG": {
+      "new_id": "AVIA M10PB",
+      "action": "rekey"
+    },
+    "AVIM M10BJ": {
+      "new_id": "AVIA M10PK",
+      "action": "rekey"
+    },
+    "FLGH M10AJ": {
+      "new_id": "AVIA M10PM",
+      "action": "rekey"
+    },
+    "BIOL M1040": {
+      "new_id": "BIOL M1075",
+      "action": "rekey"
+    },
+    "ALDH M10AB": {
+      "new_id": "BIOL M10CR",
+      "action": "rekey"
+    },
+    "EMTP M10AZ": {
+      "new_id": "BIOL M10FE",
+      "action": "rekey"
+    },
+    "CBTE M1001": {
+      "new_id": "BSOT M1010",
+      "action": "rekey"
+    },
+    "CABT M1005": {
+      "new_id": "BSOT M1023",
+      "action": "rekey"
+    },
+    "CABT M1006": {
+      "new_id": "BSOT M1024",
+      "action": "rekey"
+    },
+    "BUST M1005": {
+      "new_id": "BSOT M1027",
+      "action": "rekey"
+    },
+    "CAT M1001": {
+      "new_id": "BSOT M1036",
+      "action": "rekey"
+    },
+    "BIT M1001": {
+      "new_id": "BSOT M1037",
+      "action": "rekey"
+    },
+    "CAT M1005": {
+      "new_id": "BSOT M1046",
+      "action": "rekey"
+    },
+    "CABT M1002": {
+      "new_id": "BSOT M1066",
+      "action": "rekey"
+    },
+    "CABT M1004": {
+      "new_id": "BSOT M1067",
+      "action": "rekey"
+    },
+    "CABT M1003": {
+      "new_id": "BSOT M1068",
+      "action": "rekey"
+    },
+    "CAT M1002": {
+      "new_id": "BSOT M1074",
+      "action": "rekey"
+    },
+    "CIM M1005": {
+      "new_id": "BSOT M1075",
+      "action": "rekey"
+    },
+    "CBTE M1002": {
+      "new_id": "BSOT M1077",
+      "action": "rekey"
+    },
+    "CBTE M1003": {
+      "new_id": "BSOT M1078",
+      "action": "rekey"
+    },
+    "CISA M1001": {
+      "new_id": "BSOT M1079",
+      "action": "rekey"
+    },
+    "BUST M10AT": {
+      "new_id": "BSOT M10CB",
+      "action": "rekey"
+    },
+    "BUAA M10AA": {
+      "new_id": "BSOT M10DB",
+      "action": "rekey"
+    },
+    "COSA M10AB": {
+      "new_id": "BSOT M10EY",
+      "action": "rekey"
+    },
+    "BUST M10AJ": {
+      "new_id": "BSOT M10IA",
+      "action": "rekey"
+    },
+    "BUST M10AU": {
+      "new_id": "BSOT M10KB",
+      "action": "rekey"
+    },
+    "BUST M10BB": {
+      "new_id": "BSOT M10MD",
+      "action": "rekey"
+    },
+    "BUST M10AX": {
+      "new_id": "BSOT M10MX",
+      "action": "rekey"
+    },
+    "BUST M10AV": {
+      "new_id": "BSOT M10PF",
+      "action": "rekey"
+    },
+    "BUST M10AW": {
+      "new_id": "BSOT M10PG",
+      "action": "rekey"
+    },
+    "BUST M10AY": {
+      "new_id": "BSOT M10PI",
+      "action": "rekey"
+    },
+    "CAP M10AD": {
+      "new_id": "BSOT M10PN",
+      "action": "rekey"
+    },
+    "OT M1002": {
+      "new_id": "BSOT M1134",
+      "action": "rekey"
+    },
+    "CIS M1136": {
+      "new_id": "BSOT M1167",
+      "action": "rekey"
+    },
+    "CIMA M1003": {
+      "new_id": "BSOT M1171",
+      "action": "rekey"
+    },
+    "IS M1015": {
+      "new_id": "BSOT M1175",
+      "action": "rekey"
+    },
+    "CAT M1012": {
+      "new_id": "BSOT M1222",
+      "action": "rekey"
+    },
+    "CABT M1009": {
+      "new_id": "BSOT M1225",
+      "action": "rekey"
+    },
+    "BOSS M9001": {
+      "new_id": "BSOT M9059",
+      "action": "rekey"
+    },
+    "NCVO M9002": {
+      "new_id": "BSOT M9091",
+      "action": "rekey"
+    },
+    "ACCT M1089": {
+      "new_id": "BUSI M1005",
+      "action": "rekey"
+    },
+    "ACC M1002": {
+      "new_id": "BUSI M1014",
+      "action": "rekey"
+    },
+    "ACCT M1076": {
+      "new_id": "BUSI M1020",
+      "action": "rekey"
+    },
+    "ACCT M1088": {
+      "new_id": "BUSI M1023",
+      "action": "rekey"
+    },
+    "ACCT M1098": {
+      "new_id": "BUSI M1024",
+      "action": "rekey"
+    },
+    "ACCT M1024": {
+      "new_id": "BUSI M1027",
+      "action": "rekey"
+    },
+    "BUS M1068": {
+      "new_id": "BUSI M1054",
+      "action": "rekey"
+    },
+    "BUAC M1002": {
+      "new_id": "BUSI M1063",
+      "action": "rekey"
+    },
+    "ACCT M1075": {
+      "new_id": "BUSI M1077",
+      "action": "rekey"
+    },
+    "ACCT M1086": {
+      "new_id": "BUSI M1082",
+      "action": "rekey"
+    },
+    "ACC M1006": {
+      "new_id": "BUSI M1088",
+      "action": "rekey"
+    },
+    "ACCT M10FX": {
+      "new_id": "BUSI M10DF",
+      "action": "rekey"
+    },
+    "BUAC M10AD": {
+      "new_id": "BUSI M10DT",
+      "action": "rekey"
+    },
+    "RLE M10AA": {
+      "new_id": "BUSI M10MH",
+      "action": "rekey"
+    },
+    "RLES M10AB": {
+      "new_id": "BUSI M10NJ",
+      "action": "rekey"
+    },
+    "ACC M10AB": {
+      "new_id": "BUSI M10SY",
+      "action": "rekey"
+    },
+    "BUS M1010": {
+      "new_id": "BUSI M1137",
+      "action": "rekey"
+    },
+    "ACCT M1015": {
+      "new_id": "BUSI M1143",
+      "action": "rekey"
+    },
+    "ACCT M1107": {
+      "new_id": "BUSI M1166",
+      "action": "rekey"
+    },
+    "BUS M1066": {
+      "new_id": "BUSI M1177",
+      "action": "rekey"
+    },
+    "BUS M1096": {
+      "new_id": "BUSI M1191",
+      "action": "rekey"
+    },
+    "LOGS M10AA": {
+      "new_id": "BUSI M11AG",
+      "action": "rekey"
+    },
+    "ACC M10AE": {
+      "new_id": "BUSI M11HL",
+      "action": "rekey"
+    },
+    "BUSM M10AQ": {
+      "new_id": "BUSI M11LJ",
+      "action": "rekey"
+    },
+    "BUSM M10AG": {
+      "new_id": "BUSI M11NY",
+      "action": "rekey"
+    },
+    "LOGS M10AB": {
+      "new_id": "BUSI M11OB",
+      "action": "rekey"
+    },
+    "BUSM M10AK": {
+      "new_id": "BUSI M11QO",
+      "action": "rekey"
+    },
+    "ACC M10AG": {
+      "new_id": "BUSI M11SN",
+      "action": "rekey"
+    },
+    "ACC M1007": {
+      "new_id": "BUSI M1219",
+      "action": "rekey"
+    },
+    "BUS M1116": {
+      "new_id": "BUSI M1227",
+      "action": "rekey"
+    },
+    "BUS M1188": {
+      "new_id": "BUSI M1228",
+      "action": "rekey"
+    },
+    "BUS M1129": {
+      "new_id": "BUSI M1244",
+      "action": "rekey"
+    },
+    "BUSE M1004": {
+      "new_id": "BUSI M1259",
+      "action": "rekey"
+    },
+    "BUS M1102": {
+      "new_id": "BUSI M1286",
+      "action": "rekey"
+    },
+    "BUS M1062": {
+      "new_id": "BUSI M1303",
+      "action": "rekey"
+    },
+    "BUS M1149": {
+      "new_id": "BUSI M1308",
+      "action": "rekey"
+    },
+    "BUS M1191": {
+      "new_id": "BUSI M1350",
+      "action": "rekey"
+    },
+    "BUS M1110": {
+      "new_id": "BUSI M1368",
+      "action": "rekey"
+    },
+    "LOGS M1002": {
+      "new_id": "BUSI M1369",
+      "action": "rekey"
+    },
+    "BUS M1111": {
+      "new_id": "BUSI M1370",
+      "action": "rekey"
+    },
+    "BUS M1178": {
+      "new_id": "BUSI M1410",
+      "action": "rekey"
+    },
+    "BSAD M1007": {
+      "new_id": "BUSI M1415",
+      "action": "rekey"
+    },
+    "BUS M1132": {
+      "new_id": "BUSI M1417",
+      "action": "rekey"
+    },
+    "BUS M1133": {
+      "new_id": "BUSI M1420",
+      "action": "rekey"
+    },
+    "BUS M1137": {
+      "new_id": "BUSI M1423",
+      "action": "rekey"
+    },
+    "BUS M1165": {
+      "new_id": "BUSI M1433",
+      "action": "rekey"
+    },
+    "BUS M1172": {
+      "new_id": "BUSI M1439",
+      "action": "rekey"
+    },
+    "ACCT M1109": {
+      "new_id": "BUSI M1440",
+      "action": "rekey"
+    },
+    "BUS M9001": {
+      "new_id": "BUSI M9027",
+      "action": "rekey"
+    },
+    "BUS M9011": {
+      "new_id": "BUSI M9067",
+      "action": "rekey"
+    },
+    "BUS M9010": {
+      "new_id": "BUSI M9079",
+      "action": "rekey"
+    },
+    "CRP M1004": {
+      "new_id": "CARP M1002",
+      "action": "rekey"
+    },
+    "CRP M1005": {
+      "new_id": "CARP M1003",
+      "action": "rekey"
+    },
+    "CRP M1025": {
+      "new_id": "CARP M1015",
+      "action": "rekey"
+    },
+    "CRP M1014": {
+      "new_id": "CARP M1017",
+      "action": "rekey"
+    },
+    "CRP M1017": {
+      "new_id": "CARP M1018",
+      "action": "rekey"
+    },
+    "CRP M1018": {
+      "new_id": "CARP M1019",
+      "action": "rekey"
+    },
+    "CRP M1020": {
+      "new_id": "CARP M1020",
+      "action": "rekey"
+    },
+    "CRP M1019": {
+      "new_id": "CARP M1021",
+      "action": "rekey"
+    },
+    "CRP M1021": {
+      "new_id": "CARP M1022",
+      "action": "rekey"
+    },
+    "CRP M1022": {
+      "new_id": "CARP M1025",
+      "action": "rekey"
+    },
+    "CRP M1023": {
+      "new_id": "CARP M1026",
+      "action": "rekey"
+    },
+    "CRP M1074": {
+      "new_id": "CARP M1027",
+      "action": "rekey"
+    },
+    "CRP M1024": {
+      "new_id": "CARP M1028",
+      "action": "rekey"
+    },
+    "CRP M1060": {
+      "new_id": "CARP M1030",
+      "action": "rekey"
+    },
+    "CRP M1043": {
+      "new_id": "CARP M1031",
+      "action": "rekey"
+    },
+    "CRP M1027": {
+      "new_id": "CARP M1032",
+      "action": "rekey"
+    },
+    "CRP M1028": {
+      "new_id": "CARP M1034",
+      "action": "rekey"
+    },
+    "CRP M1071": {
+      "new_id": "CARP M1038",
+      "action": "rekey"
+    },
+    "CRP M1061": {
+      "new_id": "CARP M1039",
+      "action": "rekey"
+    },
+    "CRP M1036": {
+      "new_id": "CARP M1040",
+      "action": "rekey"
+    },
+    "CRP M1035": {
+      "new_id": "CARP M1041",
+      "action": "rekey"
+    },
+    "CRP M1033": {
+      "new_id": "CARP M1042",
+      "action": "rekey"
+    },
+    "CRP M1062": {
+      "new_id": "CARP M1044",
+      "action": "rekey"
+    },
+    "CRP M1076": {
+      "new_id": "CARP M1045",
+      "action": "rekey"
+    },
+    "CRP M1038": {
+      "new_id": "CARP M1046",
+      "action": "rekey"
+    },
+    "CRP M1067": {
+      "new_id": "CARP M1047",
+      "action": "rekey"
+    },
+    "CRP M1075": {
+      "new_id": "CARP M1048",
+      "action": "rekey"
+    },
+    "CRP M1052": {
+      "new_id": "CARP M1049",
+      "action": "rekey"
+    },
+    "CRP M1065": {
+      "new_id": "CARP M1050",
+      "action": "rekey"
+    },
+    "CRP M1070": {
+      "new_id": "CARP M1053",
+      "action": "rekey"
+    },
+    "CRP M1051": {
+      "new_id": "CARP M1054",
+      "action": "rekey"
+    },
+    "CRP M1073": {
+      "new_id": "CARP M1055",
+      "action": "rekey"
+    },
+    "CRP M1049": {
+      "new_id": "CARP M1056",
+      "action": "rekey"
+    },
+    "CRP M1050": {
+      "new_id": "CARP M1057",
+      "action": "rekey"
+    },
+    "CRP M1064": {
+      "new_id": "CARP M1060",
+      "action": "rekey"
+    },
+    "CRP M1066": {
+      "new_id": "CARP M1061",
+      "action": "rekey"
+    },
+    "CRP M10AF": {
+      "new_id": "CARP M10AD",
+      "action": "rekey"
+    },
+    "CRP M10AS": {
+      "new_id": "CARP M10AR",
+      "action": "rekey"
+    },
+    "CRP M10AQ": {
+      "new_id": "CARP M10CP",
+      "action": "rekey"
+    },
+    "CRP M10AL": {
+      "new_id": "CARP M10EL",
+      "action": "rekey"
+    },
+    "CRP M10AO": {
+      "new_id": "CARP M10EN",
+      "action": "rekey"
+    },
+    "AMW M10AM": {
+      "new_id": "CARP M10ER",
+      "action": "rekey"
+    },
+    "AMW M10AL": {
+      "new_id": "CARP M10ES",
+      "action": "rekey"
+    },
+    "AMW M10AP": {
+      "new_id": "CARP M10ET",
+      "action": "rekey"
+    },
+    "AMW M10AG": {
+      "new_id": "CARP M10EU",
+      "action": "rekey"
+    },
+    "AMW M10AE": {
+      "new_id": "CARP M10EV",
+      "action": "rekey"
+    },
+    "AMW M10AU": {
+      "new_id": "CARP M10EW",
+      "action": "rekey"
+    },
+    "AMW M10AH": {
+      "new_id": "CARP M10EX",
+      "action": "rekey"
+    },
+    "AMW M10AI": {
+      "new_id": "CARP M10EY",
+      "action": "rekey"
+    },
+    "AMW M10AR": {
+      "new_id": "CARP M10EZ",
+      "action": "rekey"
+    },
+    "CHIL M1013": {
+      "new_id": "CDEV M1061",
+      "action": "rekey"
+    },
+    "CHIL M1017": {
+      "new_id": "CDEV M1092",
+      "action": "rekey"
+    },
+    "CHIL M1014": {
+      "new_id": "CDEV M1105",
+      "action": "rekey"
+    },
+    "ECE M1032": {
+      "new_id": "CDEV M1185",
+      "action": "rekey"
+    },
+    "ECE M1062": {
+      "new_id": "CDEV M1186",
+      "action": "rekey"
+    },
+    "ECE M1063": {
+      "new_id": "CDEV M1187",
+      "action": "rekey"
+    },
+    "AMW M10AF": {
+      "new_id": "CNSC M10AZ",
+      "action": "rekey"
+    },
+    "AMW M10AK": {
+      "new_id": "CNSC M10BR",
+      "action": "rekey"
+    },
+    "AMW M10AQ": {
+      "new_id": "CNSC M10CH",
+      "action": "rekey"
+    },
+    "CEM M10AB": {
+      "new_id": "CNSM M10AG",
+      "action": "rekey"
+    },
+    "CEM M10AC": {
+      "new_id": "CNSM M10AH",
+      "action": "rekey"
+    },
+    "CEM M10AI": {
+      "new_id": "CNSM M10BM",
+      "action": "rekey"
+    },
+    "AMW M10AC": {
+      "new_id": "CNSM M10CZ",
+      "action": "rekey"
+    },
+    "CEM M10AU": {
+      "new_id": "CNSM M10DL",
+      "action": "rekey"
+    },
+    "CEM M10AK": {
+      "new_id": "CNSM M10FK",
+      "action": "rekey"
+    },
+    "INSP M1001": {
+      "new_id": "CNSR M1001",
+      "action": "rekey"
+    },
+    "INSP M1004": {
+      "new_id": "CNSR M1004",
+      "action": "rekey"
+    },
+    "INSP M1005": {
+      "new_id": "CNSR M1005",
+      "action": "rekey"
+    },
+    "INSP M1009": {
+      "new_id": "CNSR M1006",
+      "action": "rekey"
+    },
+    "INSP M1008": {
+      "new_id": "CNSR M1008",
+      "action": "rekey"
+    },
+    "INSP M1006": {
+      "new_id": "CNSR M1009",
+      "action": "rekey"
+    },
+    "INSP M1011": {
+      "new_id": "CNSR M1014",
+      "action": "rekey"
+    },
+    "INSP M1012": {
+      "new_id": "CNSR M1015",
+      "action": "rekey"
+    },
+    "INSP M1013": {
+      "new_id": "CNSR M1016",
+      "action": "rekey"
+    },
+    "BIT M10AA": {
+      "new_id": "CNSR M10AA",
+      "action": "rekey"
+    },
+    "BIT M10BB": {
+      "new_id": "CNSR M10AE",
+      "action": "rekey"
+    },
+    "BIT M10AC": {
+      "new_id": "CNSR M10AH",
+      "action": "rekey"
+    },
+    "IT M9001": {
+      "new_id": "CNSR M9001",
+      "action": "rekey"
+    },
+    "ACA M1001": {
+      "new_id": "CNST M1008",
+      "action": "rekey"
+    },
+    "CTEC M1002": {
+      "new_id": "CNST M1039",
+      "action": "rekey"
+    },
+    "PUB M1005": {
+      "new_id": "CNST M1054",
+      "action": "rekey"
+    },
+    "APC M1010": {
+      "new_id": "CNST M1059",
+      "action": "rekey"
+    },
+    "ACT M1003": {
+      "new_id": "CNST M1062",
+      "action": "rekey"
+    },
+    "ACT M1004": {
+      "new_id": "CNST M1065",
+      "action": "rekey"
+    },
+    "ACT M1007": {
+      "new_id": "CNST M1077",
+      "action": "rekey"
+    },
+    "ACA M1004": {
+      "new_id": "CNST M1078",
+      "action": "rekey"
+    },
+    "ACT M1009": {
+      "new_id": "CNST M1085",
+      "action": "rekey"
+    },
+    "ACA M1002": {
+      "new_id": "CNST M1089",
+      "action": "rekey"
+    },
+    "APCL M10AH": {
+      "new_id": "CNST M10AJ",
+      "action": "rekey"
+    },
+    "APCL M10AI": {
+      "new_id": "CNST M10AW",
+      "action": "rekey"
+    },
+    "CARP M10FJ": {
+      "new_id": "CNST M10AY",
+      "action": "rekey"
+    },
+    "ELEV M10AA": {
+      "new_id": "CNST M10CK",
+      "action": "rekey"
+    },
+    "CARP M10FG": {
+      "new_id": "CNST M10CN",
+      "action": "rekey"
+    },
+    "APCL M10AA": {
+      "new_id": "CNST M10CU",
+      "action": "rekey"
+    },
+    "ACA M10AB": {
+      "new_id": "CNST M10CZ",
+      "action": "rekey"
+    },
+    "ELEV M10AC": {
+      "new_id": "CNST M10DE",
+      "action": "rekey"
+    },
+    "ACA M10AL": {
+      "new_id": "CNST M10EM",
+      "action": "rekey"
+    },
+    "ACA M10AK": {
+      "new_id": "CNST M10EN",
+      "action": "rekey"
+    },
+    "APCL M10AC": {
+      "new_id": "CNST M10ER",
+      "action": "rekey"
+    },
+    "ACA M10AJ": {
+      "new_id": "CNST M10FP",
+      "action": "rekey"
+    },
+    "APCL M10AE": {
+      "new_id": "CNST M10II",
+      "action": "rekey"
+    },
+    "APCL M10AK": {
+      "new_id": "CNST M10IL",
+      "action": "rekey"
+    },
+    "CARP M10FB": {
+      "new_id": "CNST M10IO",
+      "action": "rekey"
+    },
+    "CARP M10FL": {
+      "new_id": "CNST M10NO",
+      "action": "rekey"
+    },
+    "ELEV M10AB": {
+      "new_id": "CNST M10OA",
+      "action": "rekey"
+    },
+    "ELEV M10AF": {
+      "new_id": "CNST M10OG",
+      "action": "rekey"
+    },
+    "ELEV M10AD": {
+      "new_id": "CNST M10OH",
+      "action": "rekey"
+    },
+    "ELEV M10AE": {
+      "new_id": "CNST M10OI",
+      "action": "rekey"
+    },
+    "ELEV M10AG": {
+      "new_id": "CNST M10OJ",
+      "action": "rekey"
+    },
+    "ELEV M10AI": {
+      "new_id": "CNST M10OK",
+      "action": "rekey"
+    },
+    "CARP M10FH": {
+      "new_id": "CNST M10PE",
+      "action": "rekey"
+    },
+    "CARP M10FI": {
+      "new_id": "CNST M10PF",
+      "action": "rekey"
+    },
+    "CARP M10FD": {
+      "new_id": "CNST M10PL",
+      "action": "rekey"
+    },
+    "CARP M10FA": {
+      "new_id": "CNST M10PO",
+      "action": "rekey"
+    },
+    "APCL M10AF": {
+      "new_id": "CNST M10PP",
+      "action": "rekey"
+    },
+    "APCL M10AG": {
+      "new_id": "CNST M10QH",
+      "action": "rekey"
+    },
+    "CARP M10FF": {
+      "new_id": "CNST M10QK",
+      "action": "rekey"
+    },
+    "APCL M10AL": {
+      "new_id": "CNST M10QQ",
+      "action": "rekey"
+    },
+    "CARP M10FK": {
+      "new_id": "CNST M10RR",
+      "action": "rekey"
+    },
+    "APCL M10AJ": {
+      "new_id": "CNST M10SG",
+      "action": "rekey"
+    },
+    "CARP M10FC": {
+      "new_id": "CNST M10SS",
+      "action": "rekey"
+    },
+    "CRP M1063": {
+      "new_id": "CNST M1138",
+      "action": "rekey"
+    },
+    "CEM M1002": {
+      "new_id": "CNST M1139",
+      "action": "rekey"
+    },
+    "CEM M1001": {
+      "new_id": "CNST M1140",
+      "action": "rekey"
+    },
+    "ACT M9001": {
+      "new_id": "CNST M9022",
+      "action": "rekey"
+    },
+    "ACT M9002": {
+      "new_id": "CNST M9029",
+      "action": "rekey"
+    },
+    "CS M1036": {
+      "new_id": "COMP M1054",
+      "action": "rekey"
+    },
+    "CMPR M1002": {
+      "new_id": "COMP M1058",
+      "action": "rekey"
+    },
+    "CS M1047": {
+      "new_id": "COMP M1094",
+      "action": "rekey"
+    },
+    "CSCI M10BC": {
+      "new_id": "COMP M10BP",
+      "action": "rekey"
+    },
+    "CSCI M10CN": {
+      "new_id": "COMP M10HH",
+      "action": "rekey"
+    },
+    "CS M10DE": {
+      "new_id": "COMP M10KC",
+      "action": "rekey"
+    },
+    "CSCI M10BF": {
+      "new_id": "COMP M10KZ",
+      "action": "rekey"
+    },
+    "CSCI M10CS": {
+      "new_id": "COMP M10LP",
+      "action": "rekey"
+    },
+    "CS M10DL": {
+      "new_id": "COMP M10LX",
+      "action": "rekey"
+    },
+    "CSCI M10BB": {
+      "new_id": "COMP M10NU",
+      "action": "rekey"
+    },
+    "CSCI M10BD": {
+      "new_id": "COMP M10PE",
+      "action": "rekey"
+    },
+    "CS M10KI": {
+      "new_id": "COMP M10PZ",
+      "action": "rekey"
+    },
+    "CS M10JQ": {
+      "new_id": "COMP M10RS",
+      "action": "rekey"
+    },
+    "CSCI M10CU": {
+      "new_id": "COMP M10SB",
+      "action": "rekey"
+    },
+    "CS M10IT": {
+      "new_id": "COMP M10SH",
+      "action": "rekey"
+    },
+    "CSCI M10DC": {
+      "new_id": "COMP M10SO",
+      "action": "rekey"
+    },
+    "CS M1064": {
+      "new_id": "COMP M1101",
+      "action": "rekey"
+    },
+    "HS M1008": {
+      "new_id": "COUN M1091",
+      "action": "rekey"
+    },
+    "HS M10AA": {
+      "new_id": "COUN M10CU",
+      "action": "rekey"
+    },
+    "HS M10AK": {
+      "new_id": "COUN M10EH",
+      "action": "rekey"
+    },
+    "HUMS M10AD": {
+      "new_id": "COUN M10KM",
+      "action": "rekey"
+    },
+    "ASHS M10AA": {
+      "new_id": "COUN M10OC",
+      "action": "rekey"
+    },
+    "HS M10AZ": {
+      "new_id": "COUN M10TD",
+      "action": "rekey"
+    },
+    "HUMS M10AL": {
+      "new_id": "COUN M10TW",
+      "action": "rekey"
+    },
+    "HUMS M10AS": {
+      "new_id": "COUN M10UE",
+      "action": "rekey"
+    },
+    "SOSC M1005": {
+      "new_id": "COUN M1122",
+      "action": "rekey"
+    },
+    "HUS M1001": {
+      "new_id": "COUN M1126",
+      "action": "rekey"
+    },
+    "SWHS M1005": {
+      "new_id": "COUN M1133",
+      "action": "rekey"
+    },
+    "ADJU M1019": {
+      "new_id": "CRIM M1016",
+      "action": "rekey"
+    },
+    "ADMJ M1025": {
+      "new_id": "CRIM M1043",
+      "action": "rekey"
+    },
+    "ADMJ M1046": {
+      "new_id": "CRIM M1046",
+      "action": "rekey"
+    },
+    "HEED M1002": {
+      "new_id": "CRIM M1063",
+      "action": "rekey"
+    },
+    "ADMJ M1039": {
+      "new_id": "CRIM M1067",
+      "action": "rekey"
+    },
+    "ADJ M1017": {
+      "new_id": "CRIM M1076",
+      "action": "rekey"
+    },
+    "ADMJ M1038": {
+      "new_id": "CRIM M1077",
+      "action": "rekey"
+    },
+    "ADMJ M10DE": {
+      "new_id": "CRIM M10CB",
+      "action": "rekey"
+    },
+    "ADJ M10AB": {
+      "new_id": "CRIM M10EG",
+      "action": "rekey"
+    },
+    "ADJU M10CM": {
+      "new_id": "CRIM M10FP",
+      "action": "rekey"
+    },
+    "ACAD M10AH": {
+      "new_id": "CRIM M10GN",
+      "action": "rekey"
+    },
+    "ACAD M10AI": {
+      "new_id": "CRIM M10GP",
+      "action": "rekey"
+    },
+    "ADJU M10AF": {
+      "new_id": "CRIM M10JJ",
+      "action": "rekey"
+    },
+    "AJ M10HH": {
+      "new_id": "CRIM M10LG",
+      "action": "rekey"
+    },
+    "CJ M10CQ": {
+      "new_id": "CRIM M10MD",
+      "action": "rekey"
+    },
+    "ADMJ M10BE": {
+      "new_id": "CRIM M10NX",
+      "action": "rekey"
+    },
+    "ADJU M10CT": {
+      "new_id": "CRIM M10TE",
+      "action": "rekey"
+    },
+    "ADJU M10AO": {
+      "new_id": "CRIM M10VU",
+      "action": "rekey"
+    },
+    "CJ M10AS": {
+      "new_id": "CRIM M10VV",
+      "action": "rekey"
+    },
+    "ADJU M10AS": {
+      "new_id": "CRIM M10WI",
+      "action": "rekey"
+    },
+    "ADJU M10AY": {
+      "new_id": "CRIM M10ZH",
+      "action": "rekey"
+    },
+    "ADMJ M1006": {
+      "new_id": "CRIM M1120",
+      "action": "rekey"
+    },
+    "CNIT M1002": {
+      "new_id": "CRIM M1121",
+      "action": "rekey"
+    },
+    "AJ M1010": {
+      "new_id": "CRIM M1123",
+      "action": "rekey"
+    },
+    "ADJ M1003": {
+      "new_id": "CRIM M1135",
+      "action": "rekey"
+    },
+    "AJ M1065": {
+      "new_id": "CRIM M1139",
+      "action": "rekey"
+    },
+    "CJ M1001": {
+      "new_id": "CRIM M1147",
+      "action": "rekey"
+    },
+    "AJ M1042": {
+      "new_id": "CRIM M1149",
+      "action": "rekey"
+    },
+    "ADMJ M1010": {
+      "new_id": "CRIM M1154",
+      "action": "rekey"
+    },
+    "CJ M1006": {
+      "new_id": "CRIM M1175",
+      "action": "rekey"
+    },
+    "ADMJ M1030": {
+      "new_id": "CRIM M1176",
+      "action": "rekey"
+    },
+    "AJ M1019": {
+      "new_id": "CRIM M1177",
+      "action": "rekey"
+    },
+    "AJ M1020": {
+      "new_id": "CRIM M1182",
+      "action": "rekey"
+    },
+    "CJ M1011": {
+      "new_id": "CRIM M1195",
+      "action": "rekey"
+    },
+    "CJ M10AR": {
+      "new_id": "CRIM M11BL",
+      "action": "rekey"
+    },
+    "ADJU M10AZ": {
+      "new_id": "CRIM M11BO",
+      "action": "rekey"
+    },
+    "ADMJ M10BC": {
+      "new_id": "CRIM M11BP",
+      "action": "rekey"
+    },
+    "ADMJ M10BD": {
+      "new_id": "CRIM M11BQ",
+      "action": "rekey"
+    },
+    "CJ M10BD": {
+      "new_id": "CRIM M11BS",
+      "action": "rekey"
+    },
+    "ADJU M10BZ": {
+      "new_id": "CRIM M11BT",
+      "action": "rekey"
+    },
+    "CJ M10CI": {
+      "new_id": "CRIM M11DA",
+      "action": "rekey"
+    },
+    "ADMJ M10BJ": {
+      "new_id": "CRIM M11DU",
+      "action": "rekey"
+    },
+    "ADJU M10BG": {
+      "new_id": "CRIM M11EN",
+      "action": "rekey"
+    },
+    "ADMJ M10CG": {
+      "new_id": "CRIM M11IO",
+      "action": "rekey"
+    },
+    "AJ M10HK": {
+      "new_id": "CRIM M11LC",
+      "action": "rekey"
+    },
+    "ADJU M10BS": {
+      "new_id": "CRIM M11MO",
+      "action": "rekey"
+    },
+    "AJ M1045": {
+      "new_id": "CRIM M1213",
+      "action": "rekey"
+    },
+    "AJ M1046": {
+      "new_id": "CRIM M1229",
+      "action": "rekey"
+    },
+    "ADMJ M1045": {
+      "new_id": "CRIM M1236",
+      "action": "rekey"
+    },
+    "ADJ M1012": {
+      "new_id": "CRIM M1265",
+      "action": "rekey"
+    },
+    "AJ M1050": {
+      "new_id": "CRIM M1266",
+      "action": "rekey"
+    },
+    "AJ M1052": {
+      "new_id": "CRIM M1267",
+      "action": "rekey"
+    },
+    "ADJ M1014": {
+      "new_id": "CRIM M1268",
+      "action": "rekey"
+    },
+    "ADJU M1014": {
+      "new_id": "CRIM M1273",
+      "action": "rekey"
+    },
+    "ADMJ M1033": {
+      "new_id": "CRIM M1275",
+      "action": "rekey"
+    },
+    "ADJU M1013": {
+      "new_id": "CRIM M1281",
+      "action": "rekey"
+    },
+    "AJ M1059": {
+      "new_id": "CRIM M1283",
+      "action": "rekey"
+    },
+    "AJ M1060": {
+      "new_id": "CRIM M1284",
+      "action": "rekey"
+    },
+    "AJ M1073": {
+      "new_id": "CRIM M1294",
+      "action": "rekey"
+    },
+    "ADMJ M1043": {
+      "new_id": "CRIM M1298",
+      "action": "rekey"
+    },
+    "ADJU M1016": {
+      "new_id": "CRIM M1302",
+      "action": "rekey"
+    },
+    "ADJU M1015": {
+      "new_id": "CRIM M1307",
+      "action": "rekey"
+    },
+    "CUL M1011": {
+      "new_id": "CULN M1027",
+      "action": "rekey"
+    },
+    "NCCU M1001": {
+      "new_id": "CULN M1039",
+      "action": "rekey"
+    },
+    "HCTM M1001": {
+      "new_id": "CULN M1044",
+      "action": "rekey"
+    },
+    "CUL M1004": {
+      "new_id": "CULN M1045",
+      "action": "rekey"
+    },
+    "CAHM M1002": {
+      "new_id": "CULN M1050",
+      "action": "rekey"
+    },
+    "CAHM M1003": {
+      "new_id": "CULN M1051",
+      "action": "rekey"
+    },
+    "CAHM M1005": {
+      "new_id": "CULN M1067",
+      "action": "rekey"
+    },
+    "CULA M10AA": {
+      "new_id": "CULN M10BO",
+      "action": "rekey"
+    },
+    "CACM M10AD": {
+      "new_id": "CULN M10GH",
+      "action": "rekey"
+    },
+    "CART M10AB": {
+      "new_id": "CULN M10GS",
+      "action": "rekey"
+    },
+    "CULA M10BD": {
+      "new_id": "CULN M10HF",
+      "action": "rekey"
+    },
+    "CAHM M10AN": {
+      "new_id": "CULN M10IB",
+      "action": "rekey"
+    },
+    "CART M10AD": {
+      "new_id": "CULN M10LI",
+      "action": "rekey"
+    },
+    "CULA M10BT": {
+      "new_id": "CULN M10LV",
+      "action": "rekey"
+    },
+    "CULA M10BU": {
+      "new_id": "CULN M10LY",
+      "action": "rekey"
+    },
+    "HCTM M10AA": {
+      "new_id": "CULN M10OK",
+      "action": "rekey"
+    },
+    "HOSP M10BB": {
+      "new_id": "CULN M10SN",
+      "action": "rekey"
+    },
+    "CULA M10AN": {
+      "new_id": "CULN M10SW",
+      "action": "rekey"
+    },
+    "CLNA M10AK": {
+      "new_id": "CULN M10TD",
+      "action": "rekey"
+    },
+    "HOSP M10BA": {
+      "new_id": "CULN M10TU",
+      "action": "rekey"
+    },
+    "CAHM M10AO": {
+      "new_id": "CULN M10UG",
+      "action": "rekey"
+    },
+    "CACM M10AO": {
+      "new_id": "CULN M10VK",
+      "action": "rekey"
+    },
+    "CACM M10AU": {
+      "new_id": "CULN M10VO",
+      "action": "rekey"
+    },
+    "CACM M10AG": {
+      "new_id": "CULN M10WK",
+      "action": "rekey"
+    },
+    "HOSP M10AS": {
+      "new_id": "CULN M10WQ",
+      "action": "rekey"
+    },
+    "HOSP M10BC": {
+      "new_id": "CULN M10WZ",
+      "action": "rekey"
+    },
+    "CACM M10AQ": {
+      "new_id": "CULN M10ZD",
+      "action": "rekey"
+    },
+    "CART M1003": {
+      "new_id": "CULN M1106",
+      "action": "rekey"
+    },
+    "CAHM M1010": {
+      "new_id": "CULN M1117",
+      "action": "rekey"
+    },
+    "CUL M1018": {
+      "new_id": "CULN M1130",
+      "action": "rekey"
+    },
+    "CAHM M1008": {
+      "new_id": "CULN M1133",
+      "action": "rekey"
+    },
+    "CAHM M1009": {
+      "new_id": "CULN M1144",
+      "action": "rekey"
+    },
+    "HRC M1003": {
+      "new_id": "CULN M1148",
+      "action": "rekey"
+    },
+    "HOSP M1021": {
+      "new_id": "CULN M1156",
+      "action": "rekey"
+    },
+    "CAHM M1012": {
+      "new_id": "CULN M1160",
+      "action": "rekey"
+    },
+    "CAHM M1011": {
+      "new_id": "CULN M1161",
+      "action": "rekey"
+    },
+    "CAHM M1013": {
+      "new_id": "CULN M1162",
+      "action": "rekey"
+    },
+    "SPED M9002": {
+      "new_id": "CULN M9035",
+      "action": "rekey"
+    },
+    "DA M1018": {
+      "new_id": "DENT M1025",
+      "action": "rekey"
+    },
+    "DA M1014": {
+      "new_id": "DENT M1059",
+      "action": "rekey"
+    },
+    "DE M1001": {
+      "new_id": "DENT M1075",
+      "action": "rekey"
+    },
+    "DENA M10AA": {
+      "new_id": "DENT M10BV",
+      "action": "rekey"
+    },
+    "DENA M10AB": {
+      "new_id": "DENT M10CC",
+      "action": "rekey"
+    },
+    "DENA M10AP": {
+      "new_id": "DENT M10DX",
+      "action": "rekey"
+    },
+    "DENA M10AJ": {
+      "new_id": "DENT M10DZ",
+      "action": "rekey"
+    },
+    "DENA M10AS": {
+      "new_id": "DENT M10EQ",
+      "action": "rekey"
+    },
+    "DENA M10AH": {
+      "new_id": "DENT M10FC",
+      "action": "rekey"
+    },
+    "DENH M10AF": {
+      "new_id": "DENT M10HK",
+      "action": "rekey"
+    },
+    "DH M1039": {
+      "new_id": "DENT M1105",
+      "action": "rekey"
+    },
+    "DFT M1007": {
+      "new_id": "DRAF M1001",
+      "action": "rekey"
+    },
+    "DR M1001": {
+      "new_id": "DRAF M1023",
+      "action": "rekey"
+    },
+    "DRLT M1001": {
+      "new_id": "DRAF M1029",
+      "action": "rekey"
+    },
+    "DRLT M1002": {
+      "new_id": "DRAF M1030",
+      "action": "rekey"
+    },
+    "EH M1005": {
+      "new_id": "DRAF M1038",
+      "action": "rekey"
+    },
+    "CADD M10AC": {
+      "new_id": "DRAF M10AO",
+      "action": "rekey"
+    },
+    "CADD M10AL": {
+      "new_id": "DRAF M10CL",
+      "action": "rekey"
+    },
+    "CADD M10BJ": {
+      "new_id": "DRAF M10DW",
+      "action": "rekey"
+    },
+    "CADD M10BD": {
+      "new_id": "DRAF M10DZ",
+      "action": "rekey"
+    },
+    "ETEC M10AF": {
+      "new_id": "DRAF M10FE",
+      "action": "rekey"
+    },
+    "ETEC M10AG": {
+      "new_id": "DRAF M10FG",
+      "action": "rekey"
+    },
+    "ETEC M10BP": {
+      "new_id": "DRAF M10HG",
+      "action": "rekey"
+    },
+    "ETEC M10BM": {
+      "new_id": "DRAF M10HW",
+      "action": "rekey"
+    },
+    "ETEC M10BO": {
+      "new_id": "DRAF M10HX",
+      "action": "rekey"
+    },
+    "EGTE M10AC": {
+      "new_id": "DRAF M10IH",
+      "action": "rekey"
+    },
+    "DR M10AF": {
+      "new_id": "DRAF M10IQ",
+      "action": "rekey"
+    },
+    "DR M10AH": {
+      "new_id": "DRAF M10IY",
+      "action": "rekey"
+    },
+    "DDGT M10AG": {
+      "new_id": "DRAF M10KK",
+      "action": "rekey"
+    },
+    "DR M10AD": {
+      "new_id": "DRAF M10KT",
+      "action": "rekey"
+    },
+    "ECON M10DF": {
+      "new_id": "ECON M10CD",
+      "action": "rekey"
+    },
+    "ECON M10DI": {
+      "new_id": "ECON M10CF",
+      "action": "rekey"
+    },
+    "EET M10AB": {
+      "new_id": "ELCT M10AJ",
+      "action": "rekey"
+    },
+    "ELC M1001": {
+      "new_id": "ELEC M1002",
+      "action": "rekey"
+    },
+    "ELC M1006": {
+      "new_id": "ELEC M1003",
+      "action": "rekey"
+    },
+    "ELC M1014": {
+      "new_id": "ELEC M1004",
+      "action": "rekey"
+    },
+    "ELC M1009": {
+      "new_id": "ELEC M1009",
+      "action": "rekey"
+    },
+    "ELC M1004": {
+      "new_id": "ELEC M1010",
+      "action": "rekey"
+    },
+    "ELC M1016": {
+      "new_id": "ELEC M1014",
+      "action": "rekey"
+    },
+    "ELC M1021": {
+      "new_id": "ELEC M1019",
+      "action": "rekey"
+    },
+    "ELC M1017": {
+      "new_id": "ELEC M1022",
+      "action": "rekey"
+    },
+    "ELC M1018": {
+      "new_id": "ELEC M1023",
+      "action": "rekey"
+    },
+    "ELC M1007": {
+      "new_id": "ELEC M1026",
+      "action": "rekey"
+    },
+    "ELC M1015": {
+      "new_id": "ELEC M1027",
+      "action": "rekey"
+    },
+    "ELC M1010": {
+      "new_id": "ELEC M1039",
+      "action": "rekey"
+    },
+    "ELC M1022": {
+      "new_id": "ELEC M1040",
+      "action": "rekey"
+    },
+    "ELC M1024": {
+      "new_id": "ELEC M1043",
+      "action": "rekey"
+    },
+    "IW M1003": {
+      "new_id": "ELEC M1045",
+      "action": "rekey"
+    },
+    "IET M10AG": {
+      "new_id": "ELEC M10EH",
+      "action": "rekey"
+    },
+    "IET M10AC": {
+      "new_id": "ELEC M10FS",
+      "action": "rekey"
+    },
+    "IET M10AD": {
+      "new_id": "ELEC M10FT",
+      "action": "rekey"
+    },
+    "ELTE M10AF": {
+      "new_id": "ELEC M10GD",
+      "action": "rekey"
+    },
+    "ELTE M10AW": {
+      "new_id": "ELEC M10GZ",
+      "action": "rekey"
+    },
+    "AED M9025": {
+      "new_id": "ELEC M9011",
+      "action": "rekey"
+    },
+    "AED M9009": {
+      "new_id": "ELEC M9046",
+      "action": "rekey"
+    },
+    "ELE M1009": {
+      "new_id": "ELET M1005",
+      "action": "rekey"
+    },
+    "EST M1007": {
+      "new_id": "ELET M1047",
+      "action": "rekey"
+    },
+    "ELE M1012": {
+      "new_id": "ELET M1063",
+      "action": "rekey"
+    },
+    "ET M1006": {
+      "new_id": "ELET M1067",
+      "action": "rekey"
+    },
+    "ETNT M10AE": {
+      "new_id": "ELET M10DQ",
+      "action": "rekey"
+    },
+    "AVIM M10AT": {
+      "new_id": "ELET M10DV",
+      "action": "rekey"
+    },
+    "ELTE M10AO": {
+      "new_id": "ELET M10EH",
+      "action": "rekey"
+    },
+    "AVIM M10BB": {
+      "new_id": "ELET M10EO",
+      "action": "rekey"
+    },
+    "ELDT M10AD": {
+      "new_id": "ELET M10ER",
+      "action": "rekey"
+    },
+    "ELDT M10AE": {
+      "new_id": "ELET M10ES",
+      "action": "rekey"
+    },
+    "ETNT M10AN": {
+      "new_id": "ELET M10FN",
+      "action": "rekey"
+    },
+    "ELTE M10AD": {
+      "new_id": "ELET M10GP",
+      "action": "rekey"
+    },
+    "ELTE M10AC": {
+      "new_id": "ELET M10HI",
+      "action": "rekey"
+    },
+    "ELTE M10AS": {
+      "new_id": "ELET M10JH",
+      "action": "rekey"
+    },
+    "MICR M10AH": {
+      "new_id": "ELET M10JO",
+      "action": "rekey"
+    },
+    "ELTE M10AL": {
+      "new_id": "ELET M10JZ",
+      "action": "rekey"
+    },
+    "ELDT M10AQ": {
+      "new_id": "ELET M10KA",
+      "action": "rekey"
+    },
+    "ELTE M10AI": {
+      "new_id": "ELET M10KZ",
+      "action": "rekey"
+    },
+    "ELEV M10AH": {
+      "new_id": "ELET M10LL",
+      "action": "rekey"
+    },
+    "ETNT M10AQ": {
+      "new_id": "ELET M10OD",
+      "action": "rekey"
+    },
+    "ELTE M10AX": {
+      "new_id": "ELET M10OR",
+      "action": "rekey"
+    },
+    "EMMS M1002": {
+      "new_id": "EMST M1001",
+      "action": "rekey"
+    },
+    "EMTC M1001": {
+      "new_id": "EMST M1002",
+      "action": "rekey"
+    },
+    "EMTC M1002": {
+      "new_id": "EMST M1006",
+      "action": "rekey"
+    },
+    "EMTC M1003": {
+      "new_id": "EMST M1008",
+      "action": "rekey"
+    },
+    "EMTC M1004": {
+      "new_id": "EMST M1009",
+      "action": "rekey"
+    },
+    "EMS M1008": {
+      "new_id": "EMST M1010",
+      "action": "rekey"
+    },
+    "EMS M1022": {
+      "new_id": "EMST M1017",
+      "action": "rekey"
+    },
+    "EMT M1007": {
+      "new_id": "EMST M1020",
+      "action": "rekey"
+    },
+    "EMT M1008": {
+      "new_id": "EMST M1022",
+      "action": "rekey"
+    },
+    "ALDH M1003": {
+      "new_id": "EMST M1023",
+      "action": "rekey"
+    },
+    "EMT M1002": {
+      "new_id": "EMST M1024",
+      "action": "rekey"
+    },
+    "EMS M1003": {
+      "new_id": "EMST M1025",
+      "action": "rekey"
+    },
+    "EMTP M1001": {
+      "new_id": "EMST M1026",
+      "action": "rekey"
+    },
+    "EMT M1003": {
+      "new_id": "EMST M1027",
+      "action": "rekey"
+    },
+    "EMS M1010": {
+      "new_id": "EMST M1034",
+      "action": "rekey"
+    },
+    "EMTC M1005": {
+      "new_id": "EMST M1036",
+      "action": "rekey"
+    },
+    "EMS M1021": {
+      "new_id": "EMST M1037",
+      "action": "rekey"
+    },
+    "EMS M1005": {
+      "new_id": "EMST M1042",
+      "action": "rekey"
+    },
+    "PUBS M1018": {
+      "new_id": "EMST M1044",
+      "action": "rekey"
+    },
+    "EMS M1019": {
+      "new_id": "EMST M1045",
+      "action": "rekey"
+    },
+    "EMT M1018": {
+      "new_id": "EMST M1046",
+      "action": "rekey"
+    },
+    "FT M1005": {
+      "new_id": "EMST M1050",
+      "action": "rekey"
+    },
+    "EMT M1012": {
+      "new_id": "EMST M1053",
+      "action": "rekey"
+    },
+    "EMS M1012": {
+      "new_id": "EMST M1055",
+      "action": "rekey"
+    },
+    "EMT M1005": {
+      "new_id": "EMST M1056",
+      "action": "rekey"
+    },
+    "EMT M1006": {
+      "new_id": "EMST M1058",
+      "action": "rekey"
+    },
+    "EMT M1016": {
+      "new_id": "EMST M1062",
+      "action": "rekey"
+    },
+    "EMT M1017": {
+      "new_id": "EMST M1063",
+      "action": "rekey"
+    },
+    "EMS M1016": {
+      "new_id": "EMST M1066",
+      "action": "rekey"
+    },
+    "EMT M1020": {
+      "new_id": "EMST M1068",
+      "action": "rekey"
+    },
+    "EMT M1019": {
+      "new_id": "EMST M1070",
+      "action": "rekey"
+    },
+    "EMED M1003": {
+      "new_id": "EMST M1071",
+      "action": "rekey"
+    },
+    "EMED M1004": {
+      "new_id": "EMST M1073",
+      "action": "rekey"
+    },
+    "EMTP M1002": {
+      "new_id": "EMST M1074",
+      "action": "rekey"
+    },
+    "EMT M1021": {
+      "new_id": "EMST M1075",
+      "action": "rekey"
+    },
+    "EMER M10AE": {
+      "new_id": "EMST M10AC",
+      "action": "rekey"
+    },
+    "EMS M10CC": {
+      "new_id": "EMST M10AF",
+      "action": "rekey"
+    },
+    "EMER M10AD": {
+      "new_id": "EMST M10AG",
+      "action": "rekey"
+    },
+    "EMTC M10AF": {
+      "new_id": "EMST M10AK",
+      "action": "rekey"
+    },
+    "EMTC M10AG": {
+      "new_id": "EMST M10CY",
+      "action": "rekey"
+    },
+    "FIT M10AB": {
+      "new_id": "EMST M10EE",
+      "action": "rekey"
+    },
+    "EMER M10AI": {
+      "new_id": "EMST M10EI",
+      "action": "rekey"
+    },
+    "EMGM M10AE": {
+      "new_id": "EMST M10EJ",
+      "action": "rekey"
+    },
+    "EMER M10AB": {
+      "new_id": "EMST M10FC",
+      "action": "rekey"
+    },
+    "EMER M10AA": {
+      "new_id": "EMST M10FJ",
+      "action": "rekey"
+    },
+    "EMTP M10BA": {
+      "new_id": "EMST M10GI",
+      "action": "rekey"
+    },
+    "EMS M10AI": {
+      "new_id": "EMST M10GT",
+      "action": "rekey"
+    },
+    "EMS M10AL": {
+      "new_id": "EMST M10HF",
+      "action": "rekey"
+    },
+    "EMS M10BM": {
+      "new_id": "EMST M10HH",
+      "action": "rekey"
+    },
+    "ALDH M10AH": {
+      "new_id": "EMST M10HO",
+      "action": "rekey"
+    },
+    "ALDH M10AG": {
+      "new_id": "EMST M10IC",
+      "action": "rekey"
+    },
+    "EMTP M10BB": {
+      "new_id": "EMST M10IM",
+      "action": "rekey"
+    },
+    "EMT M10AF": {
+      "new_id": "EMST M10IP",
+      "action": "rekey"
+    },
+    "EMS M10AT": {
+      "new_id": "EMST M10IT",
+      "action": "rekey"
+    },
+    "EMTP M10AI": {
+      "new_id": "EMST M10IU",
+      "action": "rekey"
+    },
+    "EMS M10AU": {
+      "new_id": "EMST M10IW",
+      "action": "rekey"
+    },
+    "EMS M10BH": {
+      "new_id": "EMST M10JM",
+      "action": "rekey"
+    },
+    "EMS M10BG": {
+      "new_id": "EMST M10JN",
+      "action": "rekey"
+    },
+    "ALDH M10AI": {
+      "new_id": "EMST M10JP",
+      "action": "rekey"
+    },
+    "EMS M10CF": {
+      "new_id": "EMST M10JX",
+      "action": "rekey"
+    },
+    "EMTP M10BN": {
+      "new_id": "EMST M10KI",
+      "action": "rekey"
+    },
+    "EMTP M10BC": {
+      "new_id": "EMST M10KK",
+      "action": "rekey"
+    },
+    "EMS M10CO": {
+      "new_id": "EMST M10KO",
+      "action": "rekey"
+    },
+    "EMGM M10AA": {
+      "new_id": "EMST M10LH",
+      "action": "rekey"
+    },
+    "EMS M10BO": {
+      "new_id": "EMST M10LQ",
+      "action": "rekey"
+    },
+    "EMS M10BX": {
+      "new_id": "EMST M10LT",
+      "action": "rekey"
+    },
+    "EMS M10CT": {
+      "new_id": "EMST M10NU",
+      "action": "rekey"
+    },
+    "EMS M10ER": {
+      "new_id": "EMST M10OJ",
+      "action": "rekey"
+    },
+    "EMTP M10BE": {
+      "new_id": "EMST M10OM",
+      "action": "rekey"
+    },
+    "EMS M10DX": {
+      "new_id": "EMST M10OT",
+      "action": "rekey"
+    },
+    "EMTP M10BF": {
+      "new_id": "EMST M10OV",
+      "action": "rekey"
+    },
+    "EMS M10EP": {
+      "new_id": "EMST M10OY",
+      "action": "rekey"
+    },
+    "EGTE M10AD": {
+      "new_id": "ENGT M10RV",
+      "action": "rekey"
+    },
+    "BUSM M10AN": {
+      "new_id": "ENTR M10BD",
+      "action": "rekey"
+    },
+    "CEM M1005": {
+      "new_id": "ESCI M1023",
+      "action": "rekey"
+    },
+    "WTEC M1003": {
+      "new_id": "ESCI M1026",
+      "action": "rekey"
+    },
+    "WST M1007": {
+      "new_id": "ESCI M1029",
+      "action": "rekey"
+    },
+    "WST M1008": {
+      "new_id": "ESCI M1030",
+      "action": "rekey"
+    },
+    "WDTO M1001": {
+      "new_id": "ESCI M1045",
+      "action": "rekey"
+    },
+    "ENVS M1007": {
+      "new_id": "ESCI M1063",
+      "action": "rekey"
+    },
+    "ENVS M1006": {
+      "new_id": "ESCI M1064",
+      "action": "rekey"
+    },
+    "WATR M1005": {
+      "new_id": "ESCI M1073",
+      "action": "rekey"
+    },
+    "WATR M1006": {
+      "new_id": "ESCI M1075",
+      "action": "rekey"
+    },
+    "FST M10BO": {
+      "new_id": "ESCI M10HH",
+      "action": "rekey"
+    },
+    "CEM M10AY": {
+      "new_id": "ESCI M10HS",
+      "action": "rekey"
+    },
+    "WST M10AA": {
+      "new_id": "ESCI M10ON",
+      "action": "rekey"
+    },
+    "ESL M1140": {
+      "new_id": "ESOL M1177",
+      "action": "rekey"
+    },
+    "ESL M1060": {
+      "new_id": "ESOL M1180",
+      "action": "rekey"
+    },
+    "ESL M1142": {
+      "new_id": "ESOL M1183",
+      "action": "rekey"
+    },
+    "ESL M1152": {
+      "new_id": "ESOL M1298",
+      "action": "rekey"
+    },
+    "ESL M1174": {
+      "new_id": "ESOL M1306",
+      "action": "rekey"
+    },
+    "ESL M1154": {
+      "new_id": "ESOL M1320",
+      "action": "rekey"
+    },
+    "ESL M1188": {
+      "new_id": "ESOL M1350",
+      "action": "rekey"
+    },
+    "ESL M9017": {
+      "new_id": "ESOL M9168",
+      "action": "rekey"
+    },
+    "PE M1044": {
+      "new_id": "ETHS M1138",
+      "action": "rekey"
+    },
+    "EARL M10AF": {
+      "new_id": "FCSH M10DF",
+      "action": "rekey"
+    },
+    "HS M1009": {
+      "new_id": "FDNT M1016",
+      "action": "rekey"
+    },
+    "DENH M10AX": {
+      "new_id": "FDNT M10BC",
+      "action": "rekey"
+    },
+    "HE M10AH": {
+      "new_id": "FDNT M10BL",
+      "action": "rekey"
+    },
+    "FSC M1002": {
+      "new_id": "FIRE M1027",
+      "action": "rekey"
+    },
+    "FSC M1003": {
+      "new_id": "FIRE M1044",
+      "action": "rekey"
+    },
+    "FSC M1004": {
+      "new_id": "FIRE M1056",
+      "action": "rekey"
+    },
+    "FAC M10AT": {
+      "new_id": "FIRE M10AD",
+      "action": "rekey"
+    },
+    "FTEC M10AA": {
+      "new_id": "FIRE M10AJ",
+      "action": "rekey"
+    },
+    "FTEC M10BR": {
+      "new_id": "FIRE M10AV",
+      "action": "rekey"
+    },
+    "FST M10AY": {
+      "new_id": "FIRE M10BH",
+      "action": "rekey"
+    },
+    "FTEC M10AX": {
+      "new_id": "FIRE M10BM",
+      "action": "rekey"
+    },
+    "FIR M10BC": {
+      "new_id": "FIRE M10CK",
+      "action": "rekey"
+    },
+    "FIPT M10AN": {
+      "new_id": "FIRE M10DN",
+      "action": "rekey"
+    },
+    "FOT M10AQ": {
+      "new_id": "FIRE M10EQ",
+      "action": "rekey"
+    },
+    "FAC M10AS": {
+      "new_id": "FIRE M10ER",
+      "action": "rekey"
+    },
+    "FOT M10AR": {
+      "new_id": "FIRE M10FT",
+      "action": "rekey"
+    },
+    "FST M10CC": {
+      "new_id": "FIRE M10GS",
+      "action": "rekey"
+    },
+    "FST M10BV": {
+      "new_id": "FIRE M10HP",
+      "action": "rekey"
+    },
+    "FST M10AJ": {
+      "new_id": "FIRE M10KA",
+      "action": "rekey"
+    },
+    "FSC M10AC": {
+      "new_id": "FIRE M10KF",
+      "action": "rekey"
+    },
+    "FST M10AK": {
+      "new_id": "FIRE M10KO",
+      "action": "rekey"
+    },
+    "FIPT M10AE": {
+      "new_id": "FIRE M10LC",
+      "action": "rekey"
+    },
+    "FST M10AM": {
+      "new_id": "FIRE M10LK",
+      "action": "rekey"
+    },
+    "FST M10AN": {
+      "new_id": "FIRE M10LS",
+      "action": "rekey"
+    },
+    "FOT M10AE": {
+      "new_id": "FIRE M10LU",
+      "action": "rekey"
+    },
+    "FOT M10BB": {
+      "new_id": "FIRE M10MO",
+      "action": "rekey"
+    },
+    "FST M10AU": {
+      "new_id": "FIRE M10OP",
+      "action": "rekey"
+    },
+    "FOT M10BC": {
+      "new_id": "FIRE M10PF",
+      "action": "rekey"
+    },
+    "FAC M10AG": {
+      "new_id": "FIRE M10RO",
+      "action": "rekey"
+    },
+    "FIR M10AU": {
+      "new_id": "FIRE M10RY",
+      "action": "rekey"
+    },
+    "FIPT M10BA": {
+      "new_id": "FIRE M10RZ",
+      "action": "rekey"
+    },
+    "FIR M10AT": {
+      "new_id": "FIRE M10SN",
+      "action": "rekey"
+    },
+    "FST M10CA": {
+      "new_id": "FIRE M10TU",
+      "action": "rekey"
+    },
+    "FTEC M10BH": {
+      "new_id": "FIRE M10UE",
+      "action": "rekey"
+    },
+    "FST M10CF": {
+      "new_id": "FIRE M10VS",
+      "action": "rekey"
+    },
+    "FTC M10AA": {
+      "new_id": "FIRE M10WX",
+      "action": "rekey"
+    },
+    "FT M1014": {
+      "new_id": "FIRE M1100",
+      "action": "rekey"
+    },
+    "FT M1016": {
+      "new_id": "FIRE M1121",
+      "action": "rekey"
+    },
+    "FT M1017": {
+      "new_id": "FIRE M1129",
+      "action": "rekey"
+    },
+    "FT M1018": {
+      "new_id": "FIRE M1135",
+      "action": "rekey"
+    },
+    "FIR M1001": {
+      "new_id": "FIRE M1164",
+      "action": "rekey"
+    },
+    "FTEC M10BE": {
+      "new_id": "FIRE M11AC",
+      "action": "rekey"
+    },
+    "FTEC M10BI": {
+      "new_id": "FIRE M11BR",
+      "action": "rekey"
+    },
+    "FAC M10BL": {
+      "new_id": "FIRE M11CO",
+      "action": "rekey"
+    },
+    "FT M10EU": {
+      "new_id": "FIRE M11DA",
+      "action": "rekey"
+    },
+    "FIPT M10AM": {
+      "new_id": "FIRE M11DY",
+      "action": "rekey"
+    },
+    "FIPT M10AG": {
+      "new_id": "FIRE M11EQ",
+      "action": "rekey"
+    },
+    "FIPT M10AI": {
+      "new_id": "FIRE M11FI",
+      "action": "rekey"
+    },
+    "FTEC M10BJ": {
+      "new_id": "FIRE M11GF",
+      "action": "rekey"
+    },
+    "FSC M10AN": {
+      "new_id": "FIRE M11JE",
+      "action": "rekey"
+    },
+    "FTEC M10BL": {
+      "new_id": "FIRE M11JW",
+      "action": "rekey"
+    },
+    "FTEC M10BK": {
+      "new_id": "FIRE M11JX",
+      "action": "rekey"
+    },
+    "FTEC M10BF": {
+      "new_id": "FIRE M11KI",
+      "action": "rekey"
+    },
+    "FST M10CE": {
+      "new_id": "FIRE M11MG",
+      "action": "rekey"
+    },
+    "FSC M10AJ": {
+      "new_id": "FIRE M11NC",
+      "action": "rekey"
+    },
+    "JFT M1005": {
+      "new_id": "FIRE M1210",
+      "action": "rekey"
+    },
+    "FIPT M1009": {
+      "new_id": "FIRE M1221",
+      "action": "rekey"
+    },
+    "FIPT M1004": {
+      "new_id": "FIRE M1229",
+      "action": "rekey"
+    },
+    "FT M1046": {
+      "new_id": "FIRE M1251",
+      "action": "rekey"
+    },
+    "FST M1001": {
+      "new_id": "FIRE M1254",
+      "action": "rekey"
+    },
+    "NCLF M1001": {
+      "new_id": "FIRE M1265",
+      "action": "rekey"
+    },
+    "FIPT M1005": {
+      "new_id": "FIRE M1267",
+      "action": "rekey"
+    },
+    "FT M1049": {
+      "new_id": "FIRE M1308",
+      "action": "rekey"
+    },
+    "FSC M1005": {
+      "new_id": "FIRE M1315",
+      "action": "rekey"
+    },
+    "FT M1044": {
+      "new_id": "FIRE M1327",
+      "action": "rekey"
+    },
+    "FT M1039": {
+      "new_id": "FIRE M1334",
+      "action": "rekey"
+    },
+    "FIPT M1006": {
+      "new_id": "FIRE M1339",
+      "action": "rekey"
+    },
+    "FSC M1011": {
+      "new_id": "FIRE M1340",
+      "action": "rekey"
+    },
+    "FS M1003": {
+      "new_id": "FIRE M1358",
+      "action": "rekey"
+    },
+    "FTEC M1005": {
+      "new_id": "FIRE M1363",
+      "action": "rekey"
+    },
+    "HEBR M1001": {
+      "new_id": "FLHE M1001",
+      "action": "rekey"
+    },
+    "HMNG M10AA": {
+      "new_id": "FLHM M10AE",
+      "action": "rekey"
+    },
+    "HMNG M10AB": {
+      "new_id": "FLHM M10AF",
+      "action": "rekey"
+    },
+    "KORE M1004": {
+      "new_id": "FLKO M1008",
+      "action": "rekey"
+    },
+    "KOR M1003": {
+      "new_id": "FLKO M1010",
+      "action": "rekey"
+    },
+    "PRSN M1001": {
+      "new_id": "FLPE M1001",
+      "action": "rekey"
+    },
+    "CINE M10AL": {
+      "new_id": "FTVE M10FK",
+      "action": "rekey"
+    },
+    "RTVF M10AV": {
+      "new_id": "FTVE M10KS",
+      "action": "rekey"
+    },
+    "RTVF M10CG": {
+      "new_id": "FTVE M10LM",
+      "action": "rekey"
+    },
+    "MEDI M1011": {
+      "new_id": "FTVE M1113",
+      "action": "rekey"
+    },
+    "GISG M1002": {
+      "new_id": "GEOG M1067",
+      "action": "rekey"
+    },
+    "GISG M1001": {
+      "new_id": "GEOG M1069",
+      "action": "rekey"
+    },
+    "GEOG M1030": {
+      "new_id": "GEOG M1073",
+      "action": "rekey"
+    },
+    "GRMN M1003": {
+      "new_id": "GERM M1014",
+      "action": "rekey"
+    },
+    "GDS M1005": {
+      "new_id": "GRAF M1007",
+      "action": "rekey"
+    },
+    "GRC M1003": {
+      "new_id": "GRAF M1044",
+      "action": "rekey"
+    },
+    "GDS M1010": {
+      "new_id": "GRAF M1052",
+      "action": "rekey"
+    },
+    "GD M10AU": {
+      "new_id": "GRAF M10FY",
+      "action": "rekey"
+    },
+    "ART M1239": {
+      "new_id": "GRAF M1300",
+      "action": "rekey"
+    },
+    "HIS M1011": {
+      "new_id": "HIST M1038",
+      "action": "rekey"
+    },
+    "HIS M10AX": {
+      "new_id": "HIST M10BM",
+      "action": "rekey"
+    },
+    "HIS M10AD": {
+      "new_id": "HIST M10SM",
+      "action": "rekey"
+    },
+    "EMT M1015": {
+      "new_id": "HLTH M1011",
+      "action": "rekey"
+    },
+    "HS M1013": {
+      "new_id": "HLTH M1081",
+      "action": "rekey"
+    },
+    "HS M1005": {
+      "new_id": "HLTH M1084",
+      "action": "rekey"
+    },
+    "EMTP M10AY": {
+      "new_id": "HLTH M10GE",
+      "action": "rekey"
+    },
+    "HS M10AF": {
+      "new_id": "HLTH M10IH",
+      "action": "rekey"
+    },
+    "NURA M10AA": {
+      "new_id": "HLTH M10KL",
+      "action": "rekey"
+    },
+    "EMTP M10AX": {
+      "new_id": "HLTH M10WI",
+      "action": "rekey"
+    },
+    "EMTP M10BH": {
+      "new_id": "HLTH M10WL",
+      "action": "rekey"
+    },
+    "HE M10AI": {
+      "new_id": "HLTH M10XH",
+      "action": "rekey"
+    },
+    "HED M1005": {
+      "new_id": "HLTH M1143",
+      "action": "rekey"
+    },
+    "HEED M1003": {
+      "new_id": "HLTH M1148",
+      "action": "rekey"
+    },
+    "HEAL M1015": {
+      "new_id": "HLTH M1152",
+      "action": "rekey"
+    },
+    "EHS M10AD": {
+      "new_id": "HORT M10CH",
+      "action": "rekey"
+    },
+    "PLNT M10AC": {
+      "new_id": "HORT M10GZ",
+      "action": "rekey"
+    },
+    "PLNT M10AN": {
+      "new_id": "HORT M10LG",
+      "action": "rekey"
+    },
+    "PLNT M10AM": {
+      "new_id": "HORT M10MS",
+      "action": "rekey"
+    },
+    "MOA M1002": {
+      "new_id": "HTEC M1034",
+      "action": "rekey"
+    },
+    "MDAS M10AB": {
+      "new_id": "HTEC M10BB",
+      "action": "rekey"
+    },
+    "MEDA M10AW": {
+      "new_id": "HTEC M10CD",
+      "action": "rekey"
+    },
+    "MDAS M10AC": {
+      "new_id": "HTEC M10DT",
+      "action": "rekey"
+    },
+    "MDAS M10AD": {
+      "new_id": "HTEC M10EL",
+      "action": "rekey"
+    },
+    "MOA M10AN": {
+      "new_id": "HTEC M10FE",
+      "action": "rekey"
+    },
+    "MDAS M10AA": {
+      "new_id": "HTEC M10HI",
+      "action": "rekey"
+    },
+    "COMS M1005": {
+      "new_id": "HUMA M1057",
+      "action": "rekey"
+    },
+    "HUM M1026": {
+      "new_id": "HUMA M1088",
+      "action": "rekey"
+    },
+    "IET M1003": {
+      "new_id": "HVAC M1052",
+      "action": "rekey"
+    },
+    "CEM M10AW": {
+      "new_id": "HVAC M10AE",
+      "action": "rekey"
+    },
+    "AIRE M10AC": {
+      "new_id": "HVAC M10DM",
+      "action": "rekey"
+    },
+    "AIRE M10AD": {
+      "new_id": "HVAC M10DN",
+      "action": "rekey"
+    },
+    "AIRC M10AO": {
+      "new_id": "HVAC M10GR",
+      "action": "rekey"
+    },
+    "AIRC M10AD": {
+      "new_id": "HVAC M10HA",
+      "action": "rekey"
+    },
+    "AIRC M10AN": {
+      "new_id": "HVAC M10HN",
+      "action": "rekey"
+    },
+    "AIRC M10AU": {
+      "new_id": "HVAC M10MF",
+      "action": "rekey"
+    },
+    "AIRC M10AV": {
+      "new_id": "HVAC M10VA",
+      "action": "rekey"
+    },
+    "COLS M10AA": {
+      "new_id": "IDST M10LZ",
+      "action": "rekey"
+    },
+    "TECH M1003": {
+      "new_id": "IMNT M1005",
+      "action": "rekey"
+    },
+    "FMT M10AB": {
+      "new_id": "IMNT M10CL",
+      "action": "rekey"
+    },
+    "CRP M1002": {
+      "new_id": "INDT M1007",
+      "action": "rekey"
+    },
+    "APAC M1002": {
+      "new_id": "INDT M1008",
+      "action": "rekey"
+    },
+    "CRP M1068": {
+      "new_id": "INDT M1009",
+      "action": "rekey"
+    },
+    "CRP M1003": {
+      "new_id": "INDT M1010",
+      "action": "rekey"
+    },
+    "CRP M1006": {
+      "new_id": "INDT M1011",
+      "action": "rekey"
+    },
+    "CRP M1008": {
+      "new_id": "INDT M1012",
+      "action": "rekey"
+    },
+    "CRP M1010": {
+      "new_id": "INDT M1013",
+      "action": "rekey"
+    },
+    "CRP M1009": {
+      "new_id": "INDT M1015",
+      "action": "rekey"
+    },
+    "CRP M1040": {
+      "new_id": "INDT M1027",
+      "action": "rekey"
+    },
+    "CRP M1013": {
+      "new_id": "INDT M1030",
+      "action": "rekey"
+    },
+    "CRP M1057": {
+      "new_id": "INDT M1031",
+      "action": "rekey"
+    },
+    "IW M1001": {
+      "new_id": "INDT M1032",
+      "action": "rekey"
+    },
+    "CRP M1015": {
+      "new_id": "INDT M1033",
+      "action": "rekey"
+    },
+    "CRP M1016": {
+      "new_id": "INDT M1034",
+      "action": "rekey"
+    },
+    "IW M1002": {
+      "new_id": "INDT M1040",
+      "action": "rekey"
+    },
+    "CRP M1026": {
+      "new_id": "INDT M1042",
+      "action": "rekey"
+    },
+    "CRP M1039": {
+      "new_id": "INDT M1043",
+      "action": "rekey"
+    },
+    "CRP M1041": {
+      "new_id": "INDT M1044",
+      "action": "rekey"
+    },
+    "CRP M1069": {
+      "new_id": "INDT M1045",
+      "action": "rekey"
+    },
+    "CRP M1029": {
+      "new_id": "INDT M1055",
+      "action": "rekey"
+    },
+    "CRP M1031": {
+      "new_id": "INDT M1062",
+      "action": "rekey"
+    },
+    "ENGN M1001": {
+      "new_id": "INDT M1064",
+      "action": "rekey"
+    },
+    "CRP M1032": {
+      "new_id": "INDT M1066",
+      "action": "rekey"
+    },
+    "CRP M1034": {
+      "new_id": "INDT M1071",
+      "action": "rekey"
+    },
+    "CRP M1077": {
+      "new_id": "INDT M1085",
+      "action": "rekey"
+    },
+    "CRP M1042": {
+      "new_id": "INDT M1089",
+      "action": "rekey"
+    },
+    "IETE M1001": {
+      "new_id": "INDT M1090",
+      "action": "rekey"
+    },
+    "IW M1004": {
+      "new_id": "INDT M1094",
+      "action": "rekey"
+    },
+    "SM M10AA": {
+      "new_id": "INDT M10AM",
+      "action": "rekey"
+    },
+    "APMT M10AA": {
+      "new_id": "INDT M10AV",
+      "action": "rekey"
+    },
+    "APMT M10AB": {
+      "new_id": "INDT M10AW",
+      "action": "rekey"
+    },
+    "APMT M10AC": {
+      "new_id": "INDT M10AX",
+      "action": "rekey"
+    },
+    "IW M10AF": {
+      "new_id": "INDT M10CB",
+      "action": "rekey"
+    },
+    "MICR M10AA": {
+      "new_id": "INDT M10CY",
+      "action": "rekey"
+    },
+    "MICR M10AB": {
+      "new_id": "INDT M10CZ",
+      "action": "rekey"
+    },
+    "MICR M10AC": {
+      "new_id": "INDT M10DA",
+      "action": "rekey"
+    },
+    "MICR M10AD": {
+      "new_id": "INDT M10DB",
+      "action": "rekey"
+    },
+    "CRP M10AA": {
+      "new_id": "INDT M10DR",
+      "action": "rekey"
+    },
+    "DRLT M10AB": {
+      "new_id": "INDT M10DS",
+      "action": "rekey"
+    },
+    "DRLT M10AA": {
+      "new_id": "INDT M10DX",
+      "action": "rekey"
+    },
+    "DRLT M10AI": {
+      "new_id": "INDT M10DY",
+      "action": "rekey"
+    },
+    "CRP M10AC": {
+      "new_id": "INDT M10FH",
+      "action": "rekey"
+    },
+    "MICR M10AE": {
+      "new_id": "INDT M10FX",
+      "action": "rekey"
+    },
+    "DRLT M10AC": {
+      "new_id": "INDT M10GB",
+      "action": "rekey"
+    },
+    "AVIM M10AW": {
+      "new_id": "INDT M10GK",
+      "action": "rekey"
+    },
+    "AVIM M10AY": {
+      "new_id": "INDT M10GL",
+      "action": "rekey"
+    },
+    "AVIM M10AZ": {
+      "new_id": "INDT M10GM",
+      "action": "rekey"
+    },
+    "AVIM M10AX": {
+      "new_id": "INDT M10GO",
+      "action": "rekey"
+    },
+    "SMTE M10AA": {
+      "new_id": "INDT M10GU",
+      "action": "rekey"
+    },
+    "IW M10AB": {
+      "new_id": "INDT M10HD",
+      "action": "rekey"
+    },
+    "IW M10AC": {
+      "new_id": "INDT M10HE",
+      "action": "rekey"
+    },
+    "ETEC M10AH": {
+      "new_id": "INDT M10HH",
+      "action": "rekey"
+    },
+    "ETEC M10AI": {
+      "new_id": "INDT M10IY",
+      "action": "rekey"
+    },
+    "DRLT M10AD": {
+      "new_id": "INDT M10JH",
+      "action": "rekey"
+    },
+    "DRLT M10AG": {
+      "new_id": "INDT M10JS",
+      "action": "rekey"
+    },
+    "ETNT M10AK": {
+      "new_id": "INDT M10JY",
+      "action": "rekey"
+    },
+    "DRLT M10AF": {
+      "new_id": "INDT M10KL",
+      "action": "rekey"
+    },
+    "MICR M10AG": {
+      "new_id": "INDT M10MD",
+      "action": "rekey"
+    },
+    "IETE M10AA": {
+      "new_id": "INDT M10NE",
+      "action": "rekey"
+    },
+    "IETE M10AB": {
+      "new_id": "INDT M10NF",
+      "action": "rekey"
+    },
+    "DRLT M10AK": {
+      "new_id": "INDT M10NL",
+      "action": "rekey"
+    },
+    "IWAP M10AC": {
+      "new_id": "INDT M10OD",
+      "action": "rekey"
+    },
+    "IWAP M10AD": {
+      "new_id": "INDT M10OW",
+      "action": "rekey"
+    },
+    "DRLT M10AL": {
+      "new_id": "INDT M10PZ",
+      "action": "rekey"
+    },
+    "DRLT M10AH": {
+      "new_id": "INDT M10QA",
+      "action": "rekey"
+    },
+    "AVIM M10BK": {
+      "new_id": "INDT M10SC",
+      "action": "rekey"
+    },
+    "AVIM M10BM": {
+      "new_id": "INDT M10SD",
+      "action": "rekey"
+    },
+    "MICR M10AF": {
+      "new_id": "INDT M10SX",
+      "action": "rekey"
+    },
+    "DRLT M10AJ": {
+      "new_id": "INDT M10TB",
+      "action": "rekey"
+    },
+    "IWAP M10AO": {
+      "new_id": "INDT M10TW",
+      "action": "rekey"
+    },
+    "DRLT M10AM": {
+      "new_id": "INDT M10UA",
+      "action": "rekey"
+    },
+    "IETE M10AC": {
+      "new_id": "INDT M10UG",
+      "action": "rekey"
+    },
+    "IW M10AD": {
+      "new_id": "INDT M10UT",
+      "action": "rekey"
+    },
+    "IW M10AI": {
+      "new_id": "INDT M10UW",
+      "action": "rekey"
+    },
+    "IW M10AE": {
+      "new_id": "INDT M10UX",
+      "action": "rekey"
+    },
+    "IWAP M10AF": {
+      "new_id": "INDT M10WO",
+      "action": "rekey"
+    },
+    "IWAP M10AI": {
+      "new_id": "INDT M10WP",
+      "action": "rekey"
+    },
+    "IWAP M10AG": {
+      "new_id": "INDT M10WR",
+      "action": "rekey"
+    },
+    "IWAP M10AR": {
+      "new_id": "INDT M10XN",
+      "action": "rekey"
+    },
+    "AIRC M10AW": {
+      "new_id": "INDT M10YF",
+      "action": "rekey"
+    },
+    "CRP M1048": {
+      "new_id": "INDT M1105",
+      "action": "rekey"
+    },
+    "CRP M1054": {
+      "new_id": "INDT M1107",
+      "action": "rekey"
+    },
+    "APAC M1003": {
+      "new_id": "INDT M1111",
+      "action": "rekey"
+    },
+    "ID M1008": {
+      "new_id": "INTD M1002",
+      "action": "rekey"
+    },
+    "ID M1009": {
+      "new_id": "INTD M1003",
+      "action": "rekey"
+    },
+    "ID M1010": {
+      "new_id": "INTD M1010",
+      "action": "rekey"
+    },
+    "ID M1001": {
+      "new_id": "INTD M1013",
+      "action": "rekey"
+    },
+    "IDES M1004": {
+      "new_id": "INTD M1018",
+      "action": "rekey"
+    },
+    "ID M1015": {
+      "new_id": "INTD M1022",
+      "action": "rekey"
+    },
+    "ID M1004": {
+      "new_id": "INTD M1032",
+      "action": "rekey"
+    },
+    "ID M10AB": {
+      "new_id": "INTD M10BE",
+      "action": "rekey"
+    },
+    "ID M10AF": {
+      "new_id": "INTD M10BS",
+      "action": "rekey"
+    },
+    "ID M10AK": {
+      "new_id": "INTD M10CO",
+      "action": "rekey"
+    },
+    "ID M10BD": {
+      "new_id": "INTD M10EB",
+      "action": "rekey"
+    },
+    "ID M10BS": {
+      "new_id": "INTD M10EX",
+      "action": "rekey"
+    },
+    "ID M10CS": {
+      "new_id": "INTD M10FJ",
+      "action": "rekey"
+    },
+    "IARC M10AI": {
+      "new_id": "INTD M10FY",
+      "action": "rekey"
+    },
+    "ID M10BF": {
+      "new_id": "INTD M10GG",
+      "action": "rekey"
+    },
+    "CIS M1147": {
+      "new_id": "ITIS M1002",
+      "action": "rekey"
+    },
+    "CIS M1055": {
+      "new_id": "ITIS M1008",
+      "action": "rekey"
+    },
+    "CIS M1056": {
+      "new_id": "ITIS M1009",
+      "action": "rekey"
+    },
+    "CIS M1241": {
+      "new_id": "ITIS M1010",
+      "action": "rekey"
+    },
+    "CIS M1058": {
+      "new_id": "ITIS M1015",
+      "action": "rekey"
+    },
+    "CIS M1086": {
+      "new_id": "ITIS M1016",
+      "action": "rekey"
+    },
+    "CIS M1059": {
+      "new_id": "ITIS M1021",
+      "action": "rekey"
+    },
+    "CIS M1060": {
+      "new_id": "ITIS M1022",
+      "action": "rekey"
+    },
+    "CSNT M1001": {
+      "new_id": "ITIS M1025",
+      "action": "rekey"
+    },
+    "CNT M1002": {
+      "new_id": "ITIS M1044",
+      "action": "rekey"
+    },
+    "CIS M1245": {
+      "new_id": "ITIS M1054",
+      "action": "rekey"
+    },
+    "CIS M1021": {
+      "new_id": "ITIS M1058",
+      "action": "rekey"
+    },
+    "CIS M1112": {
+      "new_id": "ITIS M1063",
+      "action": "rekey"
+    },
+    "CIS M1173": {
+      "new_id": "ITIS M1079",
+      "action": "rekey"
+    },
+    "CIS M1037": {
+      "new_id": "ITIS M1089",
+      "action": "rekey"
+    },
+    "CIS M1070": {
+      "new_id": "ITIS M1091",
+      "action": "rekey"
+    },
+    "CIS M1024": {
+      "new_id": "ITIS M1092",
+      "action": "rekey"
+    },
+    "CIM M1001": {
+      "new_id": "ITIS M1093",
+      "action": "rekey"
+    },
+    "CIS M1215": {
+      "new_id": "ITIS M1095",
+      "action": "rekey"
+    },
+    "CIS M1243": {
+      "new_id": "ITIS M1099",
+      "action": "rekey"
+    },
+    "CNT M10AE": {
+      "new_id": "ITIS M10AC",
+      "action": "rekey"
+    },
+    "CMPE M10AJ": {
+      "new_id": "ITIS M10BF",
+      "action": "rekey"
+    },
+    "CMPE M10AN": {
+      "new_id": "ITIS M10BK",
+      "action": "rekey"
+    },
+    "CIS M10TE": {
+      "new_id": "ITIS M10BL",
+      "action": "rekey"
+    },
+    "CIS M10FF": {
+      "new_id": "ITIS M10BX",
+      "action": "rekey"
+    },
+    "CIS M10FG": {
+      "new_id": "ITIS M10BY",
+      "action": "rekey"
+    },
+    "CIS M10FH": {
+      "new_id": "ITIS M10BZ",
+      "action": "rekey"
+    },
+    "CMPE M10AK": {
+      "new_id": "ITIS M10CU",
+      "action": "rekey"
+    },
+    "CNT M10AC": {
+      "new_id": "ITIS M10DK",
+      "action": "rekey"
+    },
+    "CNT M10AD": {
+      "new_id": "ITIS M10DL",
+      "action": "rekey"
+    },
+    "CMPE M10AL": {
+      "new_id": "ITIS M10DN",
+      "action": "rekey"
+    },
+    "CMPE M10AM": {
+      "new_id": "ITIS M10EG",
+      "action": "rekey"
+    },
+    "CIS M10IL": {
+      "new_id": "ITIS M10FS",
+      "action": "rekey"
+    },
+    "CNIT M10AQ": {
+      "new_id": "ITIS M10GW",
+      "action": "rekey"
+    },
+    "CIS M10SC": {
+      "new_id": "ITIS M10IX",
+      "action": "rekey"
+    },
+    "CIS M11AW": {
+      "new_id": "ITIS M10JM",
+      "action": "rekey"
+    },
+    "CTIS M10AB": {
+      "new_id": "ITIS M10OA",
+      "action": "rekey"
+    },
+    "COSN M10AB": {
+      "new_id": "ITIS M10OT",
+      "action": "rekey"
+    },
+    "CMPE M10AE": {
+      "new_id": "ITIS M10PS",
+      "action": "rekey"
+    },
+    "CIS M10ZL": {
+      "new_id": "ITIS M10QY",
+      "action": "rekey"
+    },
+    "CIS M10GP": {
+      "new_id": "ITIS M10TT",
+      "action": "rekey"
+    },
+    "CMPE M10AA": {
+      "new_id": "ITIS M10UP",
+      "action": "rekey"
+    },
+    "CIS M10SG": {
+      "new_id": "ITIS M10UW",
+      "action": "rekey"
+    },
+    "CMPE M10AC": {
+      "new_id": "ITIS M10VX",
+      "action": "rekey"
+    },
+    "CIS M10JP": {
+      "new_id": "ITIS M10XF",
+      "action": "rekey"
+    },
+    "WEBD M10AB": {
+      "new_id": "ITIS M10YW",
+      "action": "rekey"
+    },
+    "CIS M1017": {
+      "new_id": "ITIS M1125",
+      "action": "rekey"
+    },
+    "IS M1009": {
+      "new_id": "ITIS M1140",
+      "action": "rekey"
+    },
+    "CS M1071": {
+      "new_id": "ITIS M1145",
+      "action": "rekey"
+    },
+    "CIS M1250": {
+      "new_id": "ITIS M1154",
+      "action": "rekey"
+    },
+    "CIS M1218": {
+      "new_id": "ITIS M1161",
+      "action": "rekey"
+    },
+    "CIS M1219": {
+      "new_id": "ITIS M1162",
+      "action": "rekey"
+    },
+    "CIS M1027": {
+      "new_id": "ITIS M1171",
+      "action": "rekey"
+    },
+    "CIS M1028": {
+      "new_id": "ITIS M1178",
+      "action": "rekey"
+    },
+    "WEBD M1001": {
+      "new_id": "ITIS M1179",
+      "action": "rekey"
+    },
+    "CIMN M1001": {
+      "new_id": "ITIS M1182",
+      "action": "rekey"
+    },
+    "CIMN M1002": {
+      "new_id": "ITIS M1183",
+      "action": "rekey"
+    },
+    "CIS M1001": {
+      "new_id": "ITIS M1184",
+      "action": "rekey"
+    },
+    "CIS M1234": {
+      "new_id": "ITIS M1188",
+      "action": "rekey"
+    },
+    "CIS M1002": {
+      "new_id": "ITIS M1190",
+      "action": "rekey"
+    },
+    "CS M1010": {
+      "new_id": "ITIS M1191",
+      "action": "rekey"
+    },
+    "CIS M1094": {
+      "new_id": "ITIS M1196",
+      "action": "rekey"
+    },
+    "CIS M1117": {
+      "new_id": "ITIS M1197",
+      "action": "rekey"
+    },
+    "WEBD M10AE": {
+      "new_id": "ITIS M11BZ",
+      "action": "rekey"
+    },
+    "CIMN M10AA": {
+      "new_id": "ITIS M11CF",
+      "action": "rekey"
+    },
+    "CMPE M10AI": {
+      "new_id": "ITIS M11DI",
+      "action": "rekey"
+    },
+    "CMPE M10AB": {
+      "new_id": "ITIS M11DM",
+      "action": "rekey"
+    },
+    "INWT M10AB": {
+      "new_id": "ITIS M11DT",
+      "action": "rekey"
+    },
+    "CMPE M10AF": {
+      "new_id": "ITIS M11DX",
+      "action": "rekey"
+    },
+    "CMPE M10AG": {
+      "new_id": "ITIS M11DY",
+      "action": "rekey"
+    },
+    "CNSE M10AD": {
+      "new_id": "ITIS M11EX",
+      "action": "rekey"
+    },
+    "CNIT M10BL": {
+      "new_id": "ITIS M11FF",
+      "action": "rekey"
+    },
+    "CIS M10SL": {
+      "new_id": "ITIS M11GZ",
+      "action": "rekey"
+    },
+    "CIS M10ME": {
+      "new_id": "ITIS M11HY",
+      "action": "rekey"
+    },
+    "IS M10AE": {
+      "new_id": "ITIS M11HZ",
+      "action": "rekey"
+    },
+    "CIT M10AR": {
+      "new_id": "ITIS M11ID",
+      "action": "rekey"
+    },
+    "CIT M10BV": {
+      "new_id": "ITIS M11IO",
+      "action": "rekey"
+    },
+    "CMPR M10AF": {
+      "new_id": "ITIS M11IT",
+      "action": "rekey"
+    },
+    "CMPR M10AG": {
+      "new_id": "ITIS M11IU",
+      "action": "rekey"
+    },
+    "CIMS M10AB": {
+      "new_id": "ITIS M11IV",
+      "action": "rekey"
+    },
+    "CIS M10PK": {
+      "new_id": "ITIS M11IW",
+      "action": "rekey"
+    },
+    "CIMN M10AE": {
+      "new_id": "ITIS M11IX",
+      "action": "rekey"
+    },
+    "CNT M10AN": {
+      "new_id": "ITIS M11IY",
+      "action": "rekey"
+    },
+    "CIMN M10AB": {
+      "new_id": "ITIS M11LA",
+      "action": "rekey"
+    },
+    "INWT M10AC": {
+      "new_id": "ITIS M11MF",
+      "action": "rekey"
+    },
+    "WEBD M10AJ": {
+      "new_id": "ITIS M11NV",
+      "action": "rekey"
+    },
+    "COSS M10AA": {
+      "new_id": "ITIS M11OG",
+      "action": "rekey"
+    },
+    "CIS M10RL": {
+      "new_id": "ITIS M11OJ",
+      "action": "rekey"
+    },
+    "CIMN M10AF": {
+      "new_id": "ITIS M11QQ",
+      "action": "rekey"
+    },
+    "CIS M10NP": {
+      "new_id": "ITIS M11QS",
+      "action": "rekey"
+    },
+    "CMPR M10AN": {
+      "new_id": "ITIS M11QW",
+      "action": "rekey"
+    },
+    "CIS M10MJ": {
+      "new_id": "ITIS M11SY",
+      "action": "rekey"
+    },
+    "CMPR M10AQ": {
+      "new_id": "ITIS M11VV",
+      "action": "rekey"
+    },
+    "WEBD M10AF": {
+      "new_id": "ITIS M11WN",
+      "action": "rekey"
+    },
+    "CMPR M10AA": {
+      "new_id": "ITIS M11ZQ",
+      "action": "rekey"
+    },
+    "CIS M1235": {
+      "new_id": "ITIS M1204",
+      "action": "rekey"
+    },
+    "CIS M1104": {
+      "new_id": "ITIS M1208",
+      "action": "rekey"
+    },
+    "NETE M1005": {
+      "new_id": "ITIS M1218",
+      "action": "rekey"
+    },
+    "CIS M1041": {
+      "new_id": "ITIS M1230",
+      "action": "rekey"
+    },
+    "CIS M1047": {
+      "new_id": "ITIS M1235",
+      "action": "rekey"
+    },
+    "IS M1005": {
+      "new_id": "ITIS M1240",
+      "action": "rekey"
+    },
+    "IS M1006": {
+      "new_id": "ITIS M1241",
+      "action": "rekey"
+    },
+    "CIS M1120": {
+      "new_id": "ITIS M1245",
+      "action": "rekey"
+    },
+    "CIS M1121": {
+      "new_id": "ITIS M1249",
+      "action": "rekey"
+    },
+    "CIS M1212": {
+      "new_id": "ITIS M1253",
+      "action": "rekey"
+    },
+    "CIS M1123": {
+      "new_id": "ITIS M1263",
+      "action": "rekey"
+    },
+    "TECH M1002": {
+      "new_id": "ITIS M1272",
+      "action": "rekey"
+    },
+    "INWT M1002": {
+      "new_id": "ITIS M1273",
+      "action": "rekey"
+    },
+    "IS M1007": {
+      "new_id": "ITIS M1278",
+      "action": "rekey"
+    },
+    "IS M1011": {
+      "new_id": "ITIS M1282",
+      "action": "rekey"
+    },
+    "CIS M1125": {
+      "new_id": "ITIS M1286",
+      "action": "rekey"
+    },
+    "CIS M1073": {
+      "new_id": "ITIS M1299",
+      "action": "rekey"
+    },
+    "CIS M10KT": {
+      "new_id": "ITIS M12AE",
+      "action": "rekey"
+    },
+    "COSN M10AH": {
+      "new_id": "ITIS M12BU",
+      "action": "rekey"
+    },
+    "INWT M10AI": {
+      "new_id": "ITIS M12BX",
+      "action": "rekey"
+    },
+    "INWT M10AJ": {
+      "new_id": "ITIS M12CC",
+      "action": "rekey"
+    },
+    "CISH M10AA": {
+      "new_id": "ITIS M12CY",
+      "action": "rekey"
+    },
+    "CNT M10AO": {
+      "new_id": "ITIS M12ED",
+      "action": "rekey"
+    },
+    "CMPR M10AR": {
+      "new_id": "ITIS M12JO",
+      "action": "rekey"
+    },
+    "CMPR M10BB": {
+      "new_id": "ITIS M12LO",
+      "action": "rekey"
+    },
+    "MART M1007": {
+      "new_id": "ITIS M1310",
+      "action": "rekey"
+    },
+    "CA M1004": {
+      "new_id": "ITIS M1333",
+      "action": "rekey"
+    },
+    "CIS M1231": {
+      "new_id": "ITIS M1349",
+      "action": "rekey"
+    },
+    "CMPR M1001": {
+      "new_id": "ITIS M1351",
+      "action": "rekey"
+    },
+    "CIS M1090": {
+      "new_id": "ITIS M1352",
+      "action": "rekey"
+    },
+    "INWT M1001": {
+      "new_id": "ITIS M1354",
+      "action": "rekey"
+    },
+    "CIS M1091": {
+      "new_id": "ITIS M1355",
+      "action": "rekey"
+    },
+    "CIS M1198": {
+      "new_id": "ITIS M1368",
+      "action": "rekey"
+    },
+    "CIS M1202": {
+      "new_id": "ITIS M1369",
+      "action": "rekey"
+    },
+    "CIS M1247": {
+      "new_id": "ITIS M1371",
+      "action": "rekey"
+    },
+    "CSCI M1020": {
+      "new_id": "ITIS M1379",
+      "action": "rekey"
+    },
+    "CIS M1138": {
+      "new_id": "ITIS M1388",
+      "action": "rekey"
+    },
+    "CIS M1105": {
+      "new_id": "ITIS M1395",
+      "action": "rekey"
+    },
+    "CIS M1142": {
+      "new_id": "ITIS M1415",
+      "action": "rekey"
+    },
+    "CIS M1165": {
+      "new_id": "ITIS M1416",
+      "action": "rekey"
+    },
+    "CIS M1156": {
+      "new_id": "ITIS M1417",
+      "action": "rekey"
+    },
+    "CIS M1145": {
+      "new_id": "ITIS M1419",
+      "action": "rekey"
+    },
+    "CNET M1010": {
+      "new_id": "ITIS M1420",
+      "action": "rekey"
+    },
+    "IS M1013": {
+      "new_id": "ITIS M1422",
+      "action": "rekey"
+    },
+    "CIS M1149": {
+      "new_id": "ITIS M1423",
+      "action": "rekey"
+    },
+    "CIS M1152": {
+      "new_id": "ITIS M1426",
+      "action": "rekey"
+    },
+    "CIS M1158": {
+      "new_id": "ITIS M1429",
+      "action": "rekey"
+    },
+    "CIS M1159": {
+      "new_id": "ITIS M1436",
+      "action": "rekey"
+    },
+    "CIS M1210": {
+      "new_id": "ITIS M1454",
+      "action": "rekey"
+    },
+    "CIS M1192": {
+      "new_id": "ITIS M1458",
+      "action": "rekey"
+    },
+    "CIS M1225": {
+      "new_id": "ITIS M1477",
+      "action": "rekey"
+    },
+    "CSCI M1016": {
+      "new_id": "ITIS M1486",
+      "action": "rekey"
+    },
+    "CA M1007": {
+      "new_id": "ITIS M1490",
+      "action": "rekey"
+    },
+    "CIS M9009": {
+      "new_id": "ITIS M9010",
+      "action": "rekey"
+    },
+    "CIST M9007": {
+      "new_id": "ITIS M9015",
+      "action": "rekey"
+    },
+    "IS M9003": {
+      "new_id": "ITIS M9036",
+      "action": "rekey"
+    },
+    "IS M9002": {
+      "new_id": "ITIS M9041",
+      "action": "rekey"
+    },
+    "CIS M90AL": {
+      "new_id": "ITIS M90AC",
+      "action": "rekey"
+    },
+    "JAPA M1005": {
+      "new_id": "JAPN M1017",
+      "action": "rekey"
+    },
+    "JAPA M1009": {
+      "new_id": "JAPN M1028",
+      "action": "rekey"
+    },
+    "JAPA M10AC": {
+      "new_id": "JAPN M10BB",
+      "action": "rekey"
+    },
+    "JAPA M10AD": {
+      "new_id": "JAPN M10BC",
+      "action": "rekey"
+    },
+    "PE M1190": {
+      "new_id": "KINE M1013",
+      "action": "rekey"
+    },
+    "KINS M1003": {
+      "new_id": "KINE M1100",
+      "action": "rekey"
+    },
+    "KIN M1104": {
+      "new_id": "KINE M1142",
+      "action": "rekey"
+    },
+    "EXSC M1006": {
+      "new_id": "KINE M1154",
+      "action": "rekey"
+    },
+    "EXSC M1007": {
+      "new_id": "KINE M1156",
+      "action": "rekey"
+    },
+    "PE M10LA": {
+      "new_id": "KINE M11CA",
+      "action": "rekey"
+    },
+    "PEX M10AW": {
+      "new_id": "KINE M11QM",
+      "action": "rekey"
+    },
+    "PE M10DP": {
+      "new_id": "KINE M11SF",
+      "action": "rekey"
+    },
+    "KINS M10AU": {
+      "new_id": "KINE M11TX",
+      "action": "rekey"
+    },
+    "KIN M1089": {
+      "new_id": "KINE M1202",
+      "action": "rekey"
+    },
+    "PE M1037": {
+      "new_id": "KINE M1287",
+      "action": "rekey"
+    },
+    "KIN M1080": {
+      "new_id": "KINE M1292",
+      "action": "rekey"
+    },
+    "KINA M10BX": {
+      "new_id": "KINE M12BA",
+      "action": "rekey"
+    },
+    "PEX M10BG": {
+      "new_id": "KINE M12FI",
+      "action": "rekey"
+    },
+    "PEX M10BI": {
+      "new_id": "KINE M12GT",
+      "action": "rekey"
+    },
+    "KINS M10CA": {
+      "new_id": "KINE M12MA",
+      "action": "rekey"
+    },
+    "KIN M10ZG": {
+      "new_id": "KINE M12NQ",
+      "action": "rekey"
+    },
+    "PEC M10AD": {
+      "new_id": "KINE M12ZG",
+      "action": "rekey"
+    },
+    "FITN M1008": {
+      "new_id": "KINE M1362",
+      "action": "rekey"
+    },
+    "EXSC M1020": {
+      "new_id": "KINE M1363",
+      "action": "rekey"
+    },
+    "KIN M1081": {
+      "new_id": "KINE M1393",
+      "action": "rekey"
+    },
+    "PE M10GO": {
+      "new_id": "KINE M13FH",
+      "action": "rekey"
+    },
+    "PE M10GP": {
+      "new_id": "KINE M13FT",
+      "action": "rekey"
+    },
+    "ESA M10DC": {
+      "new_id": "KINE M13IM",
+      "action": "rekey"
+    },
+    "KIN M1307": {
+      "new_id": "KINE M1455",
+      "action": "rekey"
+    },
+    "KIN M1199": {
+      "new_id": "KINE M1501",
+      "action": "rekey"
+    },
+    "EXSC M1102": {
+      "new_id": "KINE M1526",
+      "action": "rekey"
+    },
+    "KINS M1012": {
+      "new_id": "KINE M1580",
+      "action": "rekey"
+    },
+    "EXSC M1036": {
+      "new_id": "KINE M1591",
+      "action": "rekey"
+    },
+    "KIN M1297": {
+      "new_id": "KINE M1606",
+      "action": "rekey"
+    },
+    "KINA M1011": {
+      "new_id": "KINE M1607",
+      "action": "rekey"
+    },
+    "KIN M1142": {
+      "new_id": "KINE M1761",
+      "action": "rekey"
+    },
+    "KIN M1245": {
+      "new_id": "KINE M1879",
+      "action": "rekey"
+    },
+    "EXSC M1103": {
+      "new_id": "KINE M1885",
+      "action": "rekey"
+    },
+    "KIN M1319": {
+      "new_id": "KINE M1894",
+      "action": "rekey"
+    },
+    "PLEG M1002": {
+      "new_id": "LEGL M1009",
+      "action": "rekey"
+    },
+    "LAW M1008": {
+      "new_id": "LEGL M1018",
+      "action": "rekey"
+    },
+    "MSCN M1001": {
+      "new_id": "MACH M1014",
+      "action": "rekey"
+    },
+    "MAN M1004": {
+      "new_id": "MACH M1037",
+      "action": "rekey"
+    },
+    "MSCN M1002": {
+      "new_id": "MACH M1081",
+      "action": "rekey"
+    },
+    "MSCN M10AM": {
+      "new_id": "MACH M10CV",
+      "action": "rekey"
+    },
+    "MSCN M10AO": {
+      "new_id": "MACH M10CZ",
+      "action": "rekey"
+    },
+    "MSCN M10AP": {
+      "new_id": "MACH M10DA",
+      "action": "rekey"
+    },
+    "MSCN M10AQ": {
+      "new_id": "MACH M10DB",
+      "action": "rekey"
+    },
+    "MSCN M10AB": {
+      "new_id": "MACH M10DL",
+      "action": "rekey"
+    },
+    "MSCN M10AF": {
+      "new_id": "MACH M10DM",
+      "action": "rekey"
+    },
+    "MNFG M10AF": {
+      "new_id": "MACH M10EL",
+      "action": "rekey"
+    },
+    "AT M10DK": {
+      "new_id": "MACH M10ET",
+      "action": "rekey"
+    },
+    "MFG M10AG": {
+      "new_id": "MACH M10FL",
+      "action": "rekey"
+    },
+    "MSCN M10AI": {
+      "new_id": "MACH M10JD",
+      "action": "rekey"
+    },
+    "MSCN M10AJ": {
+      "new_id": "MACH M10JL",
+      "action": "rekey"
+    },
+    "MACT M10AI": {
+      "new_id": "MACH M10LA",
+      "action": "rekey"
+    },
+    "MAN M1003": {
+      "new_id": "MANU M1015",
+      "action": "rekey"
+    },
+    "MAN M1001": {
+      "new_id": "MANU M1031",
+      "action": "rekey"
+    },
+    "MAN M1002": {
+      "new_id": "MANU M1032",
+      "action": "rekey"
+    },
+    "ETEC M1020": {
+      "new_id": "MANU M1035",
+      "action": "rekey"
+    },
+    "MFET M10AE": {
+      "new_id": "MANU M10HK",
+      "action": "rekey"
+    },
+    "IWAP M10AE": {
+      "new_id": "MANU M10HZ",
+      "action": "rekey"
+    },
+    "IWAP M10AJ": {
+      "new_id": "MANU M10IE",
+      "action": "rekey"
+    },
+    "IWAP M10AM": {
+      "new_id": "MANU M10IH",
+      "action": "rekey"
+    },
+    "MFG M10AR": {
+      "new_id": "MANU M10JF",
+      "action": "rekey"
+    },
+    "STAT M10AB": {
+      "new_id": "MATH M10LD",
+      "action": "rekey"
+    },
+    "MAT M1006": {
+      "new_id": "MATH M1124",
+      "action": "rekey"
+    },
+    "MATH M1040": {
+      "new_id": "MATH M1142",
+      "action": "rekey"
+    },
+    "MATH M1030": {
+      "new_id": "MATH M1162",
+      "action": "rekey"
+    },
+    "SUPV M1001": {
+      "new_id": "MGMT M1017",
+      "action": "rekey"
+    },
+    "MAG M1008": {
+      "new_id": "MGMT M1023",
+      "action": "rekey"
+    },
+    "MAG M1009": {
+      "new_id": "MGMT M1025",
+      "action": "rekey"
+    },
+    "MKTG M1004": {
+      "new_id": "MRKT M1011",
+      "action": "rekey"
+    },
+    "GD M1002": {
+      "new_id": "MULT M1011",
+      "action": "rekey"
+    },
+    "ANIM M1014": {
+      "new_id": "MULT M1014",
+      "action": "rekey"
+    },
+    "DM M1005": {
+      "new_id": "MULT M1065",
+      "action": "rekey"
+    },
+    "DM M1007": {
+      "new_id": "MULT M1066",
+      "action": "rekey"
+    },
+    "DM M1006": {
+      "new_id": "MULT M1085",
+      "action": "rekey"
+    },
+    "CMPG M10AD": {
+      "new_id": "MULT M10OQ",
+      "action": "rekey"
+    },
+    "DM M10BX": {
+      "new_id": "MULT M10SG",
+      "action": "rekey"
+    },
+    "DM M10AT": {
+      "new_id": "MULT M10SI",
+      "action": "rekey"
+    },
+    "DM M10BC": {
+      "new_id": "MULT M10VK",
+      "action": "rekey"
+    },
+    "DMA M1006": {
+      "new_id": "MULT M1174",
+      "action": "rekey"
+    },
+    "DIG M9004": {
+      "new_id": "MULT M9006",
+      "action": "rekey"
+    },
+    "DM M9002": {
+      "new_id": "MULT M9019",
+      "action": "rekey"
+    },
+    "DM M9001": {
+      "new_id": "MULT M9028",
+      "action": "rekey"
+    },
+    "MUFH M1001": {
+      "new_id": "MUSI M1114",
+      "action": "rekey"
+    },
+    "MUS M1280": {
+      "new_id": "MUSI M1144",
+      "action": "rekey"
+    },
+    "MUS M11HL": {
+      "new_id": "MUSI M11QX",
+      "action": "rekey"
+    },
+    "MUS M11HM": {
+      "new_id": "MUSI M11QY",
+      "action": "rekey"
+    },
+    "MUS M1105": {
+      "new_id": "MUSI M1263",
+      "action": "rekey"
+    },
+    "MUS M11GE": {
+      "new_id": "MUSI M12DZ",
+      "action": "rekey"
+    },
+    "MUS M11HN": {
+      "new_id": "MUSI M12EM",
+      "action": "rekey"
+    },
+    "MUS M11HO": {
+      "new_id": "MUSI M12HC",
+      "action": "rekey"
+    },
+    "MUS M11FP": {
+      "new_id": "MUSI M12KL",
+      "action": "rekey"
+    },
+    "MUS M10TQ": {
+      "new_id": "MUSI M12LZ",
+      "action": "rekey"
+    },
+    "MUS M1114": {
+      "new_id": "MUSI M1338",
+      "action": "rekey"
+    },
+    "MUS M1120": {
+      "new_id": "MUSI M1344",
+      "action": "rekey"
+    },
+    "MUS M1121": {
+      "new_id": "MUSI M1347",
+      "action": "rekey"
+    },
+    "MUS M1122": {
+      "new_id": "MUSI M1350",
+      "action": "rekey"
+    },
+    "MUS M1123": {
+      "new_id": "MUSI M1353",
+      "action": "rekey"
+    },
+    "MUS M1219": {
+      "new_id": "MUSI M1391",
+      "action": "rekey"
+    },
+    "MUS M1220": {
+      "new_id": "MUSI M1397",
+      "action": "rekey"
+    },
+    "MUS M1221": {
+      "new_id": "MUSI M1429",
+      "action": "rekey"
+    },
+    "MUS M1222": {
+      "new_id": "MUSI M1453",
+      "action": "rekey"
+    },
+    "MUS M1155": {
+      "new_id": "MUSI M1476",
+      "action": "rekey"
+    },
+    "MUS M1167": {
+      "new_id": "MUSI M1485",
+      "action": "rekey"
+    },
+    "MUS M1223": {
+      "new_id": "MUSI M1498",
+      "action": "rekey"
+    },
+    "MUS M1230": {
+      "new_id": "MUSI M1499",
+      "action": "rekey"
+    },
+    "MUS M9010": {
+      "new_id": "MUSI M9019",
+      "action": "rekey"
+    },
+    "MUS M9011": {
+      "new_id": "MUSI M9020",
+      "action": "rekey"
+    },
+    "MUS M9016": {
+      "new_id": "MUSI M9025",
+      "action": "rekey"
+    },
+    "MUS M9017": {
+      "new_id": "MUSI M9044",
+      "action": "rekey"
+    },
+    "NURS M1078": {
+      "new_id": "NRSR M1001",
+      "action": "rekey"
+    },
+    "NURA M1004": {
+      "new_id": "NRSR M1008",
+      "action": "rekey"
+    },
+    "NURA M1005": {
+      "new_id": "NRSR M1009",
+      "action": "rekey"
+    },
+    "NURS M1004": {
+      "new_id": "NRSR M1023",
+      "action": "rekey"
+    },
+    "NURS M1012": {
+      "new_id": "NRSR M1043",
+      "action": "rekey"
+    },
+    "NURA M1002": {
+      "new_id": "NRSR M1055",
+      "action": "rekey"
+    },
+    "NRN M1002": {
+      "new_id": "NRSR M1060",
+      "action": "rekey"
+    },
+    "NURA M1001": {
+      "new_id": "NRSR M1067",
+      "action": "rekey"
+    },
+    "NURS M1028": {
+      "new_id": "NRSR M1099",
+      "action": "rekey"
+    },
+    "NS M10BS": {
+      "new_id": "NRSR M10DA",
+      "action": "rekey"
+    },
+    "NS M10BU": {
+      "new_id": "NRSR M10DB",
+      "action": "rekey"
+    },
+    "NURV M10AA": {
+      "new_id": "NRSR M10FG",
+      "action": "rekey"
+    },
+    "NURS M10AG": {
+      "new_id": "NRSR M10HK",
+      "action": "rekey"
+    },
+    "NURS M10AH": {
+      "new_id": "NRSR M10HL",
+      "action": "rekey"
+    },
+    "NURS M10AI": {
+      "new_id": "NRSR M10HM",
+      "action": "rekey"
+    },
+    "NURS M10AJ": {
+      "new_id": "NRSR M10HN",
+      "action": "rekey"
+    },
+    "NURV M10AC": {
+      "new_id": "NRSR M10JA",
+      "action": "rekey"
+    },
+    "NURV M10AB": {
+      "new_id": "NRSR M10KE",
+      "action": "rekey"
+    },
+    "NRN M10AX": {
+      "new_id": "NRSR M10LG",
+      "action": "rekey"
+    },
+    "NRN M10AW": {
+      "new_id": "NRSR M10LH",
+      "action": "rekey"
+    },
+    "NRN M10AI": {
+      "new_id": "NRSR M10LI",
+      "action": "rekey"
+    },
+    "NURS M10RZ": {
+      "new_id": "NRSR M10MW",
+      "action": "rekey"
+    },
+    "NURV M10AE": {
+      "new_id": "NRSR M10PD",
+      "action": "rekey"
+    },
+    "NURV M10AD": {
+      "new_id": "NRSR M10PN",
+      "action": "rekey"
+    },
+    "NS M10BQ": {
+      "new_id": "NRSR M10QS",
+      "action": "rekey"
+    },
+    "NS M10BR": {
+      "new_id": "NRSR M10QT",
+      "action": "rekey"
+    },
+    "NS M10BT": {
+      "new_id": "NRSR M10QU",
+      "action": "rekey"
+    },
+    "NURS M10MK": {
+      "new_id": "NRSR M10QW",
+      "action": "rekey"
+    },
+    "NURS M10MG": {
+      "new_id": "NRSR M10RC",
+      "action": "rekey"
+    },
+    "NURS M10DR": {
+      "new_id": "NRSR M10RU",
+      "action": "rekey"
+    },
+    "NURS M10GR": {
+      "new_id": "NRSR M10SM",
+      "action": "rekey"
+    },
+    "NURS M10KC": {
+      "new_id": "NRSR M10SO",
+      "action": "rekey"
+    },
+    "NURS M10QC": {
+      "new_id": "NRSR M10SS",
+      "action": "rekey"
+    },
+    "NURS M10RR": {
+      "new_id": "NRSR M10ST",
+      "action": "rekey"
+    },
+    "NURS M10KF": {
+      "new_id": "NRSR M10TF",
+      "action": "rekey"
+    },
+    "NURS M10QD": {
+      "new_id": "NRSR M10TI",
+      "action": "rekey"
+    },
+    "NURV M10AP": {
+      "new_id": "NRSR M10UK",
+      "action": "rekey"
+    },
+    "NURV M10AO": {
+      "new_id": "NRSR M10UM",
+      "action": "rekey"
+    },
+    "NURS M10OM": {
+      "new_id": "NRSR M10UT",
+      "action": "rekey"
+    },
+    "NRN M10AZ": {
+      "new_id": "NRSR M10VF",
+      "action": "rekey"
+    },
+    "NRN M10BB": {
+      "new_id": "NRSR M10VG",
+      "action": "rekey"
+    },
+    "NRN M10BS": {
+      "new_id": "NRSR M10VN",
+      "action": "rekey"
+    },
+    "NRN M10CK": {
+      "new_id": "NRSR M10WC",
+      "action": "rekey"
+    },
+    "NURV M10AL": {
+      "new_id": "NRSR M10WV",
+      "action": "rekey"
+    },
+    "NRN M10AY": {
+      "new_id": "NRSR M10ZJ",
+      "action": "rekey"
+    },
+    "NRN M10BA": {
+      "new_id": "NRSR M10ZS",
+      "action": "rekey"
+    },
+    "NURS M1029": {
+      "new_id": "NRSR M1100",
+      "action": "rekey"
+    },
+    "NURS M1075": {
+      "new_id": "NRSR M1101",
+      "action": "rekey"
+    },
+    "VNUR M1001": {
+      "new_id": "NRSR M1102",
+      "action": "rekey"
+    },
+    "NURS M1069": {
+      "new_id": "NRSR M1113",
+      "action": "rekey"
+    },
+    "NURS M1098": {
+      "new_id": "NRSR M1116",
+      "action": "rekey"
+    },
+    "NURS M1045": {
+      "new_id": "NRSR M1120",
+      "action": "rekey"
+    },
+    "MEOC M1001": {
+      "new_id": "NRSR M1128",
+      "action": "rekey"
+    },
+    "NURS M1092": {
+      "new_id": "NRSR M1136",
+      "action": "rekey"
+    },
+    "NURS M1036": {
+      "new_id": "NRSR M1147",
+      "action": "rekey"
+    },
+    "NURS M1055": {
+      "new_id": "NRSR M1168",
+      "action": "rekey"
+    },
+    "NURS M1066": {
+      "new_id": "NRSR M1171",
+      "action": "rekey"
+    },
+    "NURS M1091": {
+      "new_id": "NRSR M1180",
+      "action": "rekey"
+    },
+    "NURS M1077": {
+      "new_id": "NRSR M1183",
+      "action": "rekey"
+    },
+    "NURV M10AF": {
+      "new_id": "NRSR M11BS",
+      "action": "rekey"
+    },
+    "NURV M10AG": {
+      "new_id": "NRSR M11BT",
+      "action": "rekey"
+    },
+    "NRN M10BR": {
+      "new_id": "NRSR M11DC",
+      "action": "rekey"
+    },
+    "NURV M10AH": {
+      "new_id": "NRSR M11EN",
+      "action": "rekey"
+    },
+    "NURS M10OK": {
+      "new_id": "NRSR M11EV",
+      "action": "rekey"
+    },
+    "NURS M10OL": {
+      "new_id": "NRSR M11FI",
+      "action": "rekey"
+    },
+    "NURS M10OO": {
+      "new_id": "NRSR M11GL",
+      "action": "rekey"
+    },
+    "NRN M10CJ": {
+      "new_id": "NRSR M11GX",
+      "action": "rekey"
+    },
+    "NURS M10HH": {
+      "new_id": "NRSR M11HC",
+      "action": "rekey"
+    },
+    "NURV M10AK": {
+      "new_id": "NRSR M11LA",
+      "action": "rekey"
+    },
+    "NURS M10IO": {
+      "new_id": "NRSR M11LQ",
+      "action": "rekey"
+    },
+    "NURA M10AD": {
+      "new_id": "NRSR M11NN",
+      "action": "rekey"
+    },
+    "NURS M10TU": {
+      "new_id": "NRSR M11PN",
+      "action": "rekey"
+    },
+    "NURS M10OP": {
+      "new_id": "NRSR M11QF",
+      "action": "rekey"
+    },
+    "NURA M10AC": {
+      "new_id": "NRSR M11RW",
+      "action": "rekey"
+    },
+    "NURS M10SM": {
+      "new_id": "NRSR M11SJ",
+      "action": "rekey"
+    },
+    "NURV M10AI": {
+      "new_id": "NRSV M10BW",
+      "action": "rekey"
+    },
+    "NURV M10AN": {
+      "new_id": "NRSV M10DM",
+      "action": "rekey"
+    },
+    "NURV M10AM": {
+      "new_id": "NRSV M10DP",
+      "action": "rekey"
+    },
+    "FN M10AH": {
+      "new_id": "NUTR M10BK",
+      "action": "rekey"
+    },
+    "FN M10AL": {
+      "new_id": "NUTR M10DG",
+      "action": "rekey"
+    },
+    "OTA M1002": {
+      "new_id": "OCTA M1002",
+      "action": "rekey"
+    },
+    "OTA M10BH": {
+      "new_id": "OCTA M10AA",
+      "action": "rekey"
+    },
+    "OTA M10AV": {
+      "new_id": "OCTA M10AC",
+      "action": "rekey"
+    },
+    "OTA M10BN": {
+      "new_id": "OCTA M10AN",
+      "action": "rekey"
+    },
+    "OTA M10CD": {
+      "new_id": "OCTA M10BC",
+      "action": "rekey"
+    },
+    "OTA M10CH": {
+      "new_id": "OCTA M10BD",
+      "action": "rekey"
+    },
+    "OTA M10AM": {
+      "new_id": "OCTA M10BK",
+      "action": "rekey"
+    },
+    "OTA M10BG": {
+      "new_id": "OCTA M10BP",
+      "action": "rekey"
+    },
+    "OTA M10CM": {
+      "new_id": "OCTA M10BR",
+      "action": "rekey"
+    },
+    "OTA M10CG": {
+      "new_id": "OCTA M10BX",
+      "action": "rekey"
+    },
+    "OTA M10CI": {
+      "new_id": "OCTA M10BY",
+      "action": "rekey"
+    },
+    "OTA M10AW": {
+      "new_id": "OCTA M10CH",
+      "action": "rekey"
+    },
+    "AGM M10AD": {
+      "new_id": "OSHA M10AM",
+      "action": "rekey"
+    },
+    "IET M10AK": {
+      "new_id": "OSHA M10CC",
+      "action": "rekey"
+    },
+    "PHRM M1006": {
+      "new_id": "PHMT M1002",
+      "action": "rekey"
+    },
+    "PHRM M1005": {
+      "new_id": "PHMT M1008",
+      "action": "rekey"
+    },
+    "PHT M10AR": {
+      "new_id": "PHMT M10AX",
+      "action": "rekey"
+    },
+    "PHT M10AT": {
+      "new_id": "PHMT M10BP",
+      "action": "rekey"
+    },
+    "PHT M10AU": {
+      "new_id": "PHMT M10BT",
+      "action": "rekey"
+    },
+    "PHTG M1001": {
+      "new_id": "PHOT M1026",
+      "action": "rekey"
+    },
+    "AP M1006": {
+      "new_id": "PHOT M1119",
+      "action": "rekey"
+    },
+    "ART M1019": {
+      "new_id": "PHOT M1142",
+      "action": "rekey"
+    },
+    "AP M9002": {
+      "new_id": "PHOT M9009",
+      "action": "rekey"
+    },
+    "AP M9003": {
+      "new_id": "PHOT M9010",
+      "action": "rekey"
+    },
+    "AP M9004": {
+      "new_id": "PHOT M9011",
+      "action": "rekey"
+    },
+    "PHYS M1066": {
+      "new_id": "PHYS M1014",
+      "action": "rekey"
+    },
+    "PHY M1002": {
+      "new_id": "PHYS M1049",
+      "action": "rekey"
+    },
+    "PHYS M10HA": {
+      "new_id": "PHYS M10FT",
+      "action": "rekey"
+    },
+    "PHYS M10GZ": {
+      "new_id": "PHYS M10FU",
+      "action": "rekey"
+    },
+    "NURV M10AJ": {
+      "new_id": "PSYC M10AZ",
+      "action": "rekey"
+    },
+    "PSY M1016": {
+      "new_id": "PSYC M1119",
+      "action": "rekey"
+    },
+    "BFFA M10AB": {
+      "new_id": "PUBS M10AC",
+      "action": "rekey"
+    },
+    "BFFA M10AC": {
+      "new_id": "PUBS M10BG",
+      "action": "rekey"
+    },
+    "FST M10BR": {
+      "new_id": "PUBS M10CE",
+      "action": "rekey"
+    },
+    "FIT M10AP": {
+      "new_id": "PUBS M10CR",
+      "action": "rekey"
+    },
+    "HLS M10AB": {
+      "new_id": "PUBS M10MX",
+      "action": "rekey"
+    },
+    "HLS M10AC": {
+      "new_id": "PUBS M10MY",
+      "action": "rekey"
+    },
+    "HLS M10AD": {
+      "new_id": "PUBS M10MZ",
+      "action": "rekey"
+    },
+    "HLS M10AA": {
+      "new_id": "PUBS M10PL",
+      "action": "rekey"
+    },
+    "RT M1006": {
+      "new_id": "RADT M1039",
+      "action": "rekey"
+    },
+    "RT M10CI": {
+      "new_id": "RADT M10FA",
+      "action": "rekey"
+    },
+    "RT M10CS": {
+      "new_id": "RADT M10OU",
+      "action": "rekey"
+    },
+    "RE M1015": {
+      "new_id": "REAL M1014",
+      "action": "rekey"
+    },
+    "RE M1004": {
+      "new_id": "REAL M1017",
+      "action": "rekey"
+    },
+    "RE M1022": {
+      "new_id": "REAL M1022",
+      "action": "rekey"
+    },
+    "RE M1025": {
+      "new_id": "REAL M1032",
+      "action": "rekey"
+    },
+    "RE M1033": {
+      "new_id": "REAL M1036",
+      "action": "rekey"
+    },
+    "RE M1030": {
+      "new_id": "REAL M1038",
+      "action": "rekey"
+    },
+    "RE M1032": {
+      "new_id": "REAL M1040",
+      "action": "rekey"
+    },
+    "RE M10BH": {
+      "new_id": "REAL M10DT",
+      "action": "rekey"
+    },
+    "CULA M10BY": {
+      "new_id": "RMGT M10AI",
+      "action": "rekey"
+    },
+    "NF M10AH": {
+      "new_id": "RMGT M10BN",
+      "action": "rekey"
+    },
+    "CULA M10BQ": {
+      "new_id": "RMGT M10CJ",
+      "action": "rekey"
+    },
+    "RCP M1012": {
+      "new_id": "RSPT M1038",
+      "action": "rekey"
+    },
+    "ASL M1029": {
+      "new_id": "SLNA M1017",
+      "action": "rekey"
+    },
+    "ASL M1030": {
+      "new_id": "SLNA M1018",
+      "action": "rekey"
+    },
+    "ASL M1041": {
+      "new_id": "SLNA M1024",
+      "action": "rekey"
+    },
+    "ASL M1042": {
+      "new_id": "SLNA M1029",
+      "action": "rekey"
+    },
+    "ASL M10BY": {
+      "new_id": "SLNA M10GT",
+      "action": "rekey"
+    },
+    "ASL M10CW": {
+      "new_id": "SLNA M10IR",
+      "action": "rekey"
+    },
+    "SOC M1004": {
+      "new_id": "SOCI M1019",
+      "action": "rekey"
+    },
+    "SOC M1043": {
+      "new_id": "SOCI M1038",
+      "action": "rekey"
+    },
+    "SOC M1027": {
+      "new_id": "SOCI M1072",
+      "action": "rekey"
+    },
+    "SOC M1065": {
+      "new_id": "SOCI M1080",
+      "action": "rekey"
+    },
+    "ECON M10DH": {
+      "new_id": "SOCS M10HI",
+      "action": "rekey"
+    },
+    "ECON M10DW": {
+      "new_id": "SOCS M10HQ",
+      "action": "rekey"
+    },
+    "SPA M1003": {
+      "new_id": "SPAN M1001",
+      "action": "rekey"
+    },
+    "SPA M1004": {
+      "new_id": "SPAN M1003",
+      "action": "rekey"
+    },
+    "SPA M1005": {
+      "new_id": "SPAN M1004",
+      "action": "rekey"
+    },
+    "TECT M1002": {
+      "new_id": "THES M1013",
+      "action": "rekey"
+    },
+    "DRAM M1005": {
+      "new_id": "THES M1087",
+      "action": "rekey"
+    },
+    "THAR M1007": {
+      "new_id": "THTR M1287",
+      "action": "rekey"
+    },
+    "TD M1001": {
+      "new_id": "TRNS M1001",
+      "action": "rekey"
+    },
+    "BOAP M10AE": {
+      "new_id": "TRNS M10BI",
+      "action": "rekey"
+    },
+    "BOAP M10AA": {
+      "new_id": "TRNS M10CJ",
+      "action": "rekey"
+    },
+    "BOAP M10AC": {
+      "new_id": "TRNS M10CL",
+      "action": "rekey"
+    },
+    "BOAP M10AB": {
+      "new_id": "TRNS M10CM",
+      "action": "rekey"
+    },
+    "BOAP M10AD": {
+      "new_id": "TRNS M10CV",
+      "action": "rekey"
+    },
+    "VIE M10AA": {
+      "new_id": "VIET M10BE",
+      "action": "rekey"
+    },
+    "WT M1001": {
+      "new_id": "WELD M1051",
+      "action": "rekey"
+    },
+    "CRP M1046": {
+      "new_id": "WELD M1065",
+      "action": "rekey"
+    },
+    "ACPD M1004": {
+      "new_id": "WELD M1066",
+      "action": "rekey"
+    },
+    "W M1002": {
+      "new_id": "WELD M1088",
+      "action": "rekey"
+    },
+    "CRP M1047": {
+      "new_id": "WELD M1092",
+      "action": "rekey"
+    },
+    "IW M1005": {
+      "new_id": "WELD M1097",
+      "action": "rekey"
+    },
+    "AGM M10AA": {
+      "new_id": "WELD M10DB",
+      "action": "rekey"
+    },
+    "AVIM M10AQ": {
+      "new_id": "WELD M10FF",
+      "action": "rekey"
+    },
+    "AVIM M10AJ": {
+      "new_id": "WELD M10FG",
+      "action": "rekey"
+    },
+    "WEL M10AC": {
+      "new_id": "WELD M10FP",
+      "action": "rekey"
+    },
+    "WEL M10AD": {
+      "new_id": "WELD M10FQ",
+      "action": "rekey"
+    },
+    "WEL M10AK": {
+      "new_id": "WELD M10HL",
+      "action": "rekey"
+    },
+    "SHME M10AA": {
+      "new_id": "WELD M10UF",
+      "action": "rekey"
+    },
+    "IW M10AG": {
+      "new_id": "WELD M10UI",
+      "action": "rekey"
+    },
+    "SHME M10AB": {
+      "new_id": "WELD M10UM",
+      "action": "rekey"
+    },
+    "IW M10AH": {
+      "new_id": "WELD M10UP",
+      "action": "rekey"
+    },
+    "IWAP M10AH": {
+      "new_id": "WELD M10WF",
+      "action": "rekey"
+    },
+    "IWAP M10AT": {
+      "new_id": "WELD M10WT",
+      "action": "rekey"
+    },
+    "ACPD M1003": {
+      "new_id": "WELD M1121",
+      "action": "rekey"
+    },
+    "ETEC M1012": {
+      "new_id": "ARCH M1072",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ATEC M1003": {
+      "new_id": "AUTO M1015",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ATEC M1004": {
+      "new_id": "AUTO M1033",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AT M1008": {
+      "new_id": "AUTO M1063",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AT M1011": {
+      "new_id": "AUTO M1099",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ATEC M1009": {
+      "new_id": "AUTO M1124",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AT M1027": {
+      "new_id": "AUTO M1138",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ATEC M1011": {
+      "new_id": "AUTO M1146",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AERO M10CM": {
+      "new_id": "AVIA M10AY",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AERO M10CL": {
+      "new_id": "AVIA M10AZ",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M1001": {
+      "new_id": "CARP M1001",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M1007": {
+      "new_id": "CARP M1004",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M1011": {
+      "new_id": "CARP M1005",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M1012": {
+      "new_id": "CARP M1007",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AB": {
+      "new_id": "CARP M10AH",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AP": {
+      "new_id": "CARP M10AN",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AH": {
+      "new_id": "CARP M10AP",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AR": {
+      "new_id": "CARP M10AQ",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AI": {
+      "new_id": "CARP M10AX",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AD": {
+      "new_id": "CARP M10DF",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AK": {
+      "new_id": "CARP M10DX",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CRP M10AN": {
+      "new_id": "CARP M10EM",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ACA M1005": {
+      "new_id": "CNST M1009",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ELC M1002": {
+      "new_id": "ELEC M1001",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ELC M1020": {
+      "new_id": "ELEC M1006",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FST M1005": {
+      "new_id": "FIRE M1029",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FIR M1002": {
+      "new_id": "FIRE M1040",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FFS M1007": {
+      "new_id": "FIRE M1095",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FTEC M10AI": {
+      "new_id": "FIRE M10AN",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FAC M10AD": {
+      "new_id": "FIRE M10CW",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FSC M10AD": {
+      "new_id": "FIRE M10KD",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FST M10AL": {
+      "new_id": "FIRE M10KZ",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FOT M10AS": {
+      "new_id": "FIRE M10LG",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CSFM M1002": {
+      "new_id": "FIRE M1107",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FT M1015": {
+      "new_id": "FIRE M1110",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "JFT M1001": {
+      "new_id": "FIRE M1173",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FR M1001": {
+      "new_id": "FREN M1014",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "FR M1002": {
+      "new_id": "FREN M1016",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "HS M1017": {
+      "new_id": "HLTH M1033",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "CIS M1057": {
+      "new_id": "ITIS M1014",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "PHY M1003": {
+      "new_id": "PHYS M1057",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "RE M1020": {
+      "new_id": "REAL M1012",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "AGM M1001": {
+      "new_id": "WELD M1026",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "IWAP M10AQ": {
+      "new_id": "WELD M10CA",
+      "action": "drop_collision",
+      "why": "the live id already carries an entry"
+    },
+    "ADJ M1015": {
+      "new_id": "CRIM M1043",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "EMT M1010": {
+      "new_id": "EMST M1022",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "EMS M1013": {
+      "new_id": "EMST M1022",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "EMMS M1001": {
+      "new_id": "EMST M1022",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "EMT M1009": {
+      "new_id": "EMST M1058",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "KIN M1310": {
+      "new_id": "KINE M1013",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (more colleges offering)"
+    },
+    "PE M1030": {
+      "new_id": "KINE M1501",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "PE M1079": {
+      "new_id": "KINE M1606",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "CRP M1045": {
+      "new_id": "WELD M1065",
+      "action": "drop_converged",
+      "why": "another ghost won the entry (title agrees with the catalog)"
+    },
+    "ACCT 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ACCT 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ADS 140 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-AB 104": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-AB 108 108": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-AB 124": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-AS 104": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-EH 116 L": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AG-PS 128 128 L": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 122": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 124": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 150": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 200": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AJ 220": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ANTH 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ANTH 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ANTH 150": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTH 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTH 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTH 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTH 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTH 145": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 101": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 210": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 250": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ARTS 260": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AUTO 120 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AUTO 140 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "AUTO 150 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BIOL 110 B": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BIOL 120 B": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BIOL 190": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BIOT 101 B X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 105 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 110 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 111 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 112 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 113 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 114 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 121 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BSOT 122 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BUS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BUS 115": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BUS 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BUS 125": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "BUS 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "CDEV 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "CDEV 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "CHEM 101": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "CHEM 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "CHEM 120 S": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMM 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMM 115": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMM 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMM 170": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMP 112": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMP 122": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMP 132": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMP 142": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "COMP 152": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "DENA 100 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ECE 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ECE 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ECON 201": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ECON 202": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "EMS 100 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "EMS 101 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "EMS 102 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "EMS 103 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ENGL 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ENGL 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ENVS 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 100 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 110 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 120 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 130 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 140 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 150 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FIRE 160 X": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "FTVE 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOG 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOG 111": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOG 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOG 125": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOG 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GEOL 111": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "GLST 102": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 150": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 170": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HIST 180": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "HOSP 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 150": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 151": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 155": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "ITIS 166": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "JOUR 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "JOUR 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "JOUR 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "KIN 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "KIN 101": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 140": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 150": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 151": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 155": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 210": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 211": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 220": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 221": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 230": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 240": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 250": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MATH 955": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 125": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 145": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 170": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 171": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "MUS 172": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "NULL": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "NUTR 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "NUTR 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PH 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHIL 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 100 S": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 105": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 200 S": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 205": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PHYS 210": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "POLS 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "POLS 120": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "POLS 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PSY 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PSY 130": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "PSY 180": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SOCI 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SOCI 160": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 100": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 110": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 200": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 210": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 220": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SPAN 230": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "SWHS 120A": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 111": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 113": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 171": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 174": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 175": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 191": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    },
+    "THTR 192": {
+      "new_id": null,
+      "action": "drop_dead",
+      "why": "no alias map names it again, or it lands on a non-live id"
+    }
+  }
+}
