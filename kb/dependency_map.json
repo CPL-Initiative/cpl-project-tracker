@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 415,
+  "file_datasets": 417,
   "external_services": 137,
-  "consumers": 312,
+  "consumers": 313,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -7402,6 +7402,13 @@
      "line": 204
     },
     {
+     "id": "script:kb/_rekey_crnc_mirrors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    },
+    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
@@ -8602,6 +8609,13 @@
      "direction": "read",
      "how": "literal",
      "line": 162
+    },
+    {
+     "id": "script:kb/_rekey_crnc_mirrors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
     }
    ],
    "served": true,
@@ -9750,7 +9764,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 239
+     "line": 256
     }
    ],
    "served": true,
@@ -13034,6 +13048,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/prefix_fold_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/prefix_fold_dryrun_test.py": {
    "consumers": [
     {
@@ -13048,6 +13075,19 @@
    "main_committers": []
   },
   "file:tests/probe_lifecycle_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/rekey_crnc_mirrors_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -17259,6 +17299,8 @@
     "tests/authority_recode_apply_test.py",
     "tests/zband_retire_apply_test.py",
     "tests/prefix_fold_dryrun_test.py",
+    "tests/prefix_fold_apply_test.py",
+    "tests/rekey_crnc_mirrors_test.py",
     "tests/custom_report_response_test.py",
     "tests/probe_lifecycle_checks_test.py",
     "tests/funding_origination_test.py",

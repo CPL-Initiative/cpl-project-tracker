@@ -1243,3 +1243,94 @@ its card.
 `tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`
 (16) · the dry-run tests re-run · `tests/uc_zscheme_recognition.test.js` (9,
 now pinning the row-less M-ID shape) · the rehearsal on the scratch copy.
+
+## 2026-09-04 — SkyFold (Session 225): the fold apply, rehearsed, and the sixth id-keyed class
+
+The queue's head was the fold worklist the land surfaced (#1458, seven items on
+Sam's sheet, unruled at session start), so the session built the apply a reply
+by number lands, and rehearsed it end to end on a scratch copy of `kb/`.
+
+### The verdicts are the dry run's flags
+
+Item 2's "hold" is `--scope materialized`; item 3's "fold them" is
+`--ruled-held "<who, when: what>"`, which moves the TOP-only rows with the
+ruling appended to each row's evidence as the second signal (a row with NO
+evidence stays held under any ruling). `kb/_prefix_fold_apply.py` recomputes
+the plan under the same flags and P1 refuses a receipt cut under different
+ones; `--apply` needs `--ruling`. P0 is per receipt (the receipt's own stamp
+plus an era list `_prefix_fold_applied` on each doc) because the held rows are
+the NEXT fold's worklist — the recode's never-twice P0 would have locked the
+door on the second fold.
+
+### What a fold touches that the recode did not
+
+The materialized records' `_machine_cluster_members` lists (one today:
+`AUTD M1040` lists `HVAC M10PR`) — gate G11. The articulation doc's
+`identities` map: none of the 278 old ids is a key there, but eight of the new
+keys are S110 ghosts (`CARP M10ET` still says "Structural Framing" while
+`CNSC M10AS`, "Millwright General Skills - B", arrives). The catalog already
+overrides identities-sourced metadata in `excel_to_dashboard.py`'s
+`course_meta`, so a ghost is inert for display, but `over_merged` is read
+from it — so a ghost on a landing key is dropped and counted, G12. The stamp
+is `_prefix_fold_from`, beside the earlier ones: a row can carry
+`_authority_recode_from` from the day before, and reusing the recode's stamp
+(the planner's first draft said to) would have overwritten provenance.
+
+### ⚠️ A leftover sweep must know a chained key
+
+G13 ("no old id left on any keyed surface") failed on the real tree at the
+first verify: 30 keys are vacated and refilled in the same plan
+(`ANTH M1099 → SOCI M1099` beside `SOCS M1014 → ANTH M1099`), so `ANTH M1099`
+is legitimately live afterward, occupied by the arriving row. The sweep now
+covers the old ids that are not also new ids, and G4–G6 (exact permutation,
+articulation multiset, overlay keys and pointers) prove the chained ones. The
+Supabase verify learned the same thing in #1455, one layer up.
+
+### The rehearsal (scratch copy of `kb/` and `tests/`, 2026-09-04 01:04 UTC)
+
+Apply: 278 aliases, P1 ✓ against #1458's frozen receipt (a fresh dry run on
+today's tree reproduces it with zero drift despite the cron's seed edits),
+13 of 13 gates; ripple minted 245 · singletons 33 · memberships 113 ·
+articulations 54 · curation keys 278 · pointers 404 · member lists 1 · ghosts
+dropped 8. Chain: promotions 24 re-keyed (V1–V5 pass), csr-seed, authority
+(no chip or canonical code changes — the receipt is byte-identical apart from
+stamps), audit `subject_collision_signal` 153 → 113, fold-verify `re_key` 7 =
+the held rows, which is what a fold leaves by design; the apply prints that
+number so the chain's line is checkable. The planner re-run on the copy plans
+0 moves and holds 7. The real land needs only the MCP fresh read and the
+ruling text.
+
+### ⭐ The sixth id-keyed artifact class was outside the chain
+
+Scanning every file that names one of the 278 old ids turned up
+`kb/crnc_mirrors.json` — 2,836 identity-keyed CR/NC mirror classes, read by
+`excel_to_dashboard.py`'s `flags_of()` for the D-3 suppression — with 398 keys
+on ids the 2026-09-03 recode retired: the suppression had silently stopped for
+those identities. It cannot be regenerated (eleven curated cross-college
+mirrors were folded in on 2026-07-12), so `kb/_rekey_crnc_mirrors.py` re-keys
+it through the alias chain with `_rekey_promotions.py`'s semantics (one lookup
+per map, chronological, `_rekeyed_through` era list, `--baseline-through` on a
+first run), gated V1 count conserved · V2 every key live in memberships · V3
+idempotent, and runs as step `crnc-mirrors` of the chain. Measured: 398 moved,
+one hop each, none converging, none dead afterward; on the rehearsal copy with
+the fold pending, 427. Seen and NOT changed: `kb/cid_articulation_joins.json`'s
+`current_home` carries 1,068 recode-old ids — nothing reads that field (the
+routing uses disposition, control number and cid), and regenerating would
+re-derive dispositions from a raw list that has moved since June, which is a
+routing decision rather than hygiene. Filed as a to-do.
+
+### Verification
+
+`tests/prefix_fold_apply_test.py` (41 checks: a chained pair, the ruled-held
+path, a G11 and a G13 leftover caught, P0 twice, P1 scope and ruling
+mismatches, the receipt on disk) · `tests/prefix_fold_dryrun_test.py` (22) ·
+`tests/rekey_crnc_mirrors_test.py` (16, the committed file included) — all
+wired into `js-tests.yml`.
+
+### Next
+
+1. Sam's reply by number on the fold sheet → one window; the apply's NEXT
+   print is the order.
+2. The identities map carries 1,605 pre-fold ghost keys (68% of its entries);
+   a chain-aware re-key of that map is a cleanup of its own.
+3. The `current_home` regeneration decision above.

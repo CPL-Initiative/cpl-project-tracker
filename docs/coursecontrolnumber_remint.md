@@ -269,7 +269,7 @@ regression. Lead with the C-ID rows that now correctly anchor the table.
 |---|---|
 | Authoritative old → new alias | `kb/remint_out/alias_map.json` |
 | Split manifest (Phase A/B input) | `kb/promotions.json` (and copy at `kb/remint_out/promotions.json`) |
-| Split-manifest re-key (run after EVERY later re-mint) | `kb/_rekey_promotions.py` — `kb/promotions.json` is id-keyed and Phase A/B looks ids up exactly, so any re-key that skips it silently severs the official-ID fold evidence (Session-40 root cause, `docs/official_id_fold_scope.md`; receipts under `kb/promotions_rekey_out/`). The id-keyed artifact classes that must move together at every re-key: memberships · articulations · curation + its Supabase mirror · **promotions** |
+| Split-manifest re-key (run after EVERY later re-mint) | `kb/_rekey_promotions.py` — `kb/promotions.json` is id-keyed and Phase A/B looks ids up exactly, so any re-key that skips it silently severs the official-ID fold evidence (Session-40 root cause, `docs/official_id_fold_scope.md`; receipts under `kb/promotions_rekey_out/`). The id-keyed artifact classes that must move together at every re-key: memberships · articulations · curation + its Supabase mirror · **promotions** · **CR/NC mirrors** (`kb/_rekey_crnc_mirrors.py`, step `crnc-mirrors` of `kb/_post_apply_chain.py` since 2026-09-04 — the class the chain was missing when the 2026-09-03 recode left 398 of its keys on retired ids) |
 | Validation diff report | `kb/remint_out/VALIDATION_1c.md` |
 | Patch artifact (1c-ii export change) | `kb/remint_out/export_1cii.patch` |
 | Re-mint generator (minted + memberships + singletons + alias + promotions) | `kb/_remint_apply.py` |
@@ -313,6 +313,19 @@ PRs:
 
 ## Lessons / patterns to reuse
 
+- **The verdicts are the dry run's flags; a fold's proof is its held count; a
+  leftover sweep must know a chained key** (2026-09-04). A decision sheet's
+  per-item verdicts map onto the planner's own flags (`--scope` for "hold this
+  cohort", `--ruled-held` for "fold them anyway, on my ruling"), so a per-verdict
+  receipt is one re-run and the apply refuses a receipt cut under other flags
+  (`kb/_prefix_fold_apply.py`, P1). After a fold lands, fold-verify reads the
+  rows the receipt HELD, not 0 — a row held on TOP alone stays counted until a
+  second signal or a ruling arrives — so the apply prints the number the chain
+  must match. A key vacated and refilled in one plan is live afterward by
+  design, so the "no old id left" sweep excludes chained keys and leaves them
+  to the permutation gates. And every id-keyed artifact class belongs in the
+  post-apply chain: `kb/crnc_mirrors.json` was not, and the recode left 398 of
+  its 2,836 keys on retired ids until the next session measured it.
 - **A code change is a prefix re-key that keeps the number** (2026-09-03). The
   June fold allocator (`kb/_subj4_dryrun.py`) numbers every bucket by title and
   would renumber the whole catalog for a rename; a canonical-code change uses
