@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-201 document(s).
+202 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 228 | [the masthead shipped; the accessibility sweep is a lint waiting on one palette ruling](../session_228_handoff.md) | 2026-09-04 |
 | 227 | [the duplicates are a lane; the promote step and the identities map are next](../session_227_handoff.md) | 2026-09-04 |
 | 226 | [the prefix fold is landed; the duplicates worklist, the promote step and the identities map are next](../session_226_handoff.md) | 2026-09-04 |
 | 225 | [the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced](../session_225_handoff.md) | 2026-09-03 |

@@ -1,7 +1,7 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-08-18
+updated: 2026-09-04
 tags: [lessons, cobi, branding, masthead, ui, easter-egg, kpi-cards]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -724,3 +724,56 @@ from `--mustard-fill` / `--mustard-text` (the caution grades) — no raw hex.
 the Sierra assistant page) carry their own headers and were left alone; Sam's
 ask named the COBI header. If those should carry it too, that is a separate,
 larger call, since they are the pages actually pointed at colleges.
+
+---
+
+## 2026-09-04 — SkyMint S227: the masthead decluttered, both credentials in one pane, and the zoom overlap root-caused (PR #1469)
+
+Sam, opening the session: *"See the header is all a mess when I zoom in or out,
+it gets messed up and ugly"*, with six asks.
+
+**The zoom bug was geometry, not styling — and three defaults each caused it.**
+Measured on `main` at a 768px viewport: `.cobi-brand` drew **580px of content
+inside a 322px grid track**, painting 240px straight across the utility cluster.
+The floor came from `.cobi-orgswitch`, a flex item whose default
+`min-width:auto` would not yield — the outer container already carried
+`min-width:0` and it made no difference. Two more defaults reproduce the same
+symptom alone: a bare `1fr` is `minmax(auto,1fr)`, and a non-stretch
+`justify-self` sizes an item to its own content. All three are now cleared. Full
+claim: [`methodology-a-grid-item-sized-to-its-content-overflows-its-track`](kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md).
+
+**The six asks.** ① The tagline left the masthead *and* the `<title>`/`og:title`
+it also rode in — via `COBI_TITLE` in the generator, which is the source of
+truth for the title (Rule 1). ② The gold CPL superscript and the per-site org
+tag are gone; `cobi_brand.js` now **sweeps** any `.cobi-num` rather than
+declining to add one, so a cached `cobi_orgs.js` cannot put it back. ③ Refresh
+moved into About **at runtime**, not in the markup — `excel_to_dashboard.py`
+re-injects that button after `.last-updated` on every daily run, so an HTML edit
+would be undone by the next cron. ④ The team phrase gave up its 🔒 masthead
+button for `mountInto()`, the seam `reviewer_signin.js` already used, so
+`cobi_identity.js` now holds both credentials in one pane. ⑤ Site options read
+`<code> — <full title>`, derived from `ORGS`. ⑥ The alpha banner, below.
+
+⭐ **`cobi_identity.js` argued against ④ in its own docstring** — the phrase is
+site-scoped, a sign-in is not, and nesting one in the other implies an isolation
+the database does not enforce. The objection was about the **copy**, not the
+container: the mounted box now states its scope on every render (*"Opens the
+Finance tabs, plus every shared team tab"*) instead of implying it by which
+cluster it sat in. Position implied it; words state it. Worth honoring the
+pattern — a docstring that argues against a future change is doing its job, and
+the resolution is to answer the argument, not to delete it.
+
+⭐ **Sam corrected the alpha banner as FALSE.** It had said *"please don't cite
+or share them outside the team"* — but COBI's figures are shared outward by
+design, through Sierra and the CPL Fact Sheet. *"Maybe rather than saying 'don't
+cite...' we should say something like, 'always doublecheck and revise outputs as
+needed...'"* A banner that forbids what the product does daily teaches readers
+to ignore the banner. It now asks the reader to verify, and names what COBI
+answers from and how it is governed. Then, on the treatment: *"remove the
+formatting around the text and shrink the font and make it unbold so it's just a
+low-key part of the header"* — reversing his own 2026-08-18 bordered/italic/gold
+treatment a step larger than everything else.
+
+**Accessibility, measured not asserted** — see
+[`public_pages_a11y_lessons`](public_pages_a11y_lessons.md) for the seven AA
+failures this found in the masthead alone, three of them written the same day.

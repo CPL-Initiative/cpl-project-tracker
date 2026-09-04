@@ -757,24 +757,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyFold S225 — the fold apply, rehearsed, then landed on Sam's yes to all; the sixth id-keyed class (2026-09-04)
-
-**Two PRs (#1462, #1463) plus the follow-up.** Sam had not yet ruled the
-prefix-fold sheet when the session opened, so it built what a reply by number
-lands: `kb/_prefix_fold_apply.py`, apply == spec under the receipt's own flags
-(`--scope` for item 2's hold, `--ruled-held` for item 3's override; any other
-receipt refused), one run per receipt, a fresh read at write-time, thirteen
-gates, rehearsed on a scratch copy. Sam replied *"Yes to all recommendations"*
-and the same night the frozen receipt landed in one cron window: 278 ids onto
-their discipline's code, promotions 24, `subject_collision_signal` 153 → 113,
-fold-verify `re_key` 7 = the held rows (a fold's residual by design), Supabase
-re-keyed (30 chained keys vacate-first, 0 left), artifacts and SkyView rebuilt.
-⭐ Scanning every file that names an old id found `kb/crnc_mirrors.json` — the
-sixth id-keyed artifact class, outside the chain — with 398 keys the recode had
-retired; re-keyed (never regenerated: it carries curated mirrors) and in the
-chain, where it took the fold's 29 the same night. Story: `ccr_atlas_lessons`;
-handoff `session_226_handoff`.
-
 ### SkyLand S226 — the duplicates become a lane; the twenty were never missing (2026-09-04)
 
 **Two PRs (#1465 + the promote step).** The 130 May anchors that duplicate a
@@ -788,6 +770,25 @@ descriptor rows (`consolidated_from`), not an export gap. Built before the first
 one appears: `kb/_uc_cur_promote.py` (a `UC-CUR-*` target → a real M-ID record)
 and the identities map re-key dry run (1,597 ghosts: re-key 1,369, drop 228;
 sheet for Sam next). Story: `ccr_atlas_lessons`; handoff `session_227_handoff`.
+
+### SkyMint S227 — the masthead decluttered, and the accessibility gap turns out to be a lint (2026-09-04)
+
+**One PR (#1469).** Sam's six masthead asks, plus the root cause of the zoom
+mess: three CSS defaults each impose a floor a layout cannot shrink past — a
+bare `1fr` is `minmax(auto,1fr)`, a flex item defaults to `min-width:auto`, and
+a non-stretch `justify-self` sizes to content. Measured: `.cobi-brand` drew
+580px inside a 322px track at 768px, painting 240px over its neighbour; `main`
+failed 19/136 Chromium checks, this passes 196/196.
+⭐ **Sam struck the alpha banner's "don't cite or share outside the team" as
+FALSE** — COBI's figures ship outward through Sierra and the Fact Sheet — so it
+now asks the reader to verify. ⭐ **Seven real AA failures in the masthead
+alone, three written that same session**, one minutes after a comment saying not
+to. That is the finding: doctrine states a standard, only a measurement detects
+a violation — so accessibility wants a lint, and the enforcement splits three
+ways (detect · fire · fix). A 38-view sweep then showed the failures cluster on
+an **unreconciled raw-hex palette** (`#94a3b8`, 4,827 renders from 32 lines),
+not on token misuse; its totals were retracted as harness-inflated the same day.
+Stories: `cobi_lessons`, `public_pages_a11y_lessons`; handoff `session_228_handoff`.
 
 ## Troubleshooting
 

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 374,
+   "count": 376,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1372,6 +1372,27 @@
      "updated": "2026-08-06"
     },
     {
+     "created": "2026-09-04",
+     "governs": [
+      "cobi_brand.js",
+      "cobi_orgs.js",
+      "scripts/check_cobi_header_layout.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "css",
+      "layout",
+      "accessibility",
+      "first-light"
+     ],
+     "title": "A layout that cannot shrink does not wrap \u2014 it overflows and paints over its neighbour",
+     "type": "methodology",
+     "updated": "2026-09-04"
+    },
+    {
      "created": "2026-08-12",
      "governs": [
       "sierra_training.js",
@@ -1928,6 +1949,7 @@
     {
      "created": "2026-08-21",
      "governs": [
+      "scripts/check_cobi_header_layout.js",
       "chatbox/supabase/functions/cpl-chat/index.ts",
       "tests/team_phrase_affordance.test.js",
       "cobi_admin_surface.js"
@@ -1939,11 +1961,13 @@
       "governance",
       "process",
       "testing",
-      "doctrine"
+      "doctrine",
+      "accessibility",
+      "lint"
      ],
      "title": "A rule you wrote down is not a rule you applied",
      "type": "methodology",
-     "updated": "2026-08-21"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-08-11",
@@ -3048,6 +3072,24 @@
      "title": "Assert what the reader sees, not what the source says",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-09-04",
+     "governs": [
+      "scripts/check_cobi_header_layout.js"
+     ],
+     "path": "docs/kb-notes/methodology-audit-by-rendered-value-not-by-file.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "audit",
+      "ui",
+      "tooling"
+     ],
+     "title": "Audit by rendered value, not by file \u2014 thousands of failures collapse to a few source lines",
+     "type": "methodology",
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-06-11",
@@ -8067,7 +8109,7 @@
      ],
      "title": "COBI \u2014 the masthead rename and the Mamba brand layer",
      "type": null,
-     "updated": "2026-08-18"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-08-12",
@@ -9047,11 +9089,12 @@
       "sierra",
       "veteran-sprint-map",
       "fact-sheet",
-      "public-surface"
+      "public-surface",
+      "cobi"
      ],
      "title": "Public standalone pages \u2014 accessibility and mobile lessons",
      "type": null,
-     "updated": "2026-08-20"
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-05-26",
@@ -11657,8 +11700,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 201,
+   "count": 202,
    "docs": [
+    {
+     "created": "2026-09-04",
+     "governs": [],
+     "n": 228,
+     "path": "docs/session_228_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the masthead shipped; the accessibility sweep is a lint waiting on one palette ruling",
+     "type": null,
+     "updated": "2026-09-04"
+    },
     {
      "created": "2026-09-04",
      "governs": [],
@@ -15152,5 +15208,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 771
+ "total": 774
 }

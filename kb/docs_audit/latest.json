@@ -10,38 +10,38 @@
     "other": 150000
   },
   "summary": {
-    "files": 785,
-    "bytes": 8361437,
+    "files": 788,
+    "bytes": 8390573,
     "over_budget": 3,
-    "handoff_max": 227,
+    "handoff_max": 228,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 58486,
+    "always_loaded_bytes": 58593,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 58486,
+        "bytes": 58593,
         "over": 0
       },
       "other": {
         "files": 103,
-        "bytes": 2540400,
+        "bytes": 2542664,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 19459,
+        "bytes": 20210,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1951305,
+        "bytes": 1960313,
         "over": 1
       },
       "kb_note": {
-        "files": 376,
-        "bytes": 1960505,
+        "files": 378,
+        "bytes": 1971071,
         "over": 0
       },
       "roadmap_lane": {
@@ -50,8 +50,8 @@
         "over": 0
       },
       "handoff": {
-        "files": 201,
-        "bytes": 1692604,
+        "files": 202,
+        "bytes": 1699044,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2577,
-      "bytes": 1312719980,
-      "heavy_bytes": 613639156,
+      "files": 2581,
+      "bytes": 1312786118,
+      "heavy_bytes": 613639119,
       "heavy_share": 0.467,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -326,13 +326,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 558567,
+        "bytes": 559890,
         "limit": 150000,
         "lane": "other",
-        "over_by": 408567,
-        "ratio": 3.72
+        "over_by": 409890,
+        "ratio": 3.73
       },
-      "message": "558,567 B is 3.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "559,890 B is 3.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -692,10 +692,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6660897,
+        "bytes": 6660898,
         "kind": "file"
       },
-      "message": "6,660,897 B single file inside the vault"
+      "message": "6,660,898 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -832,10 +832,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354197,
+        "bytes": 2354159,
         "kind": "file"
       },
-      "message": "2,354,197 B single file inside the vault"
+      "message": "2,354,159 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
