@@ -787,7 +787,7 @@ to change nothing; the Z-band retirement was dry-run after it (4,053 Z identitie
 readings yes to all and the series was applied the same day: 10,296 ids recoded,
 4,053 machine clusters materialized as M-ID records, the Z band retired, Supabase
 re-keyed from the receipts. ⭐ 139 materialized records sit on a prefix their
-discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Story:
+discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Sam then drove SkyView and wrote eight notes; all eight shipped (#1460), including an identity that opens to show its college courses — the faculty view. Story:
 `ccr_atlas_lessons`; handoff `session_225_handoff`.
 
 ## Troubleshooting

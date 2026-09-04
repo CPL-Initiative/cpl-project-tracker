@@ -1210,6 +1210,34 @@ continuation band, and 30 keys are vacated and taken in the same plan, which
 #1455's vacate-first order makes safe. The sheet for Sam is generated from the
 receipt, so no number on it is typed by hand.
 
+### Eight notes from Sam's drive, and the faculty view
+
+Sam drove the deployed SkyView the same evening and wrote eight notes as he
+went (verbatim in the lane file's NEEDS SAM ①); all eight shipped in #1460.
+Three of them changed how the map thinks, not just how it looks. First, the
+zoom buttons zoom ABOUT an anchor — the searched subject, the selection, the
+last fly — and bring it back to the centre if it drifted off the canvas, so
+"search, then zoom" no longer loses the subject. Second, the label leads with
+the title and the units in his short form (`Advanced Welding · 3u`); the
+number waits for the full band and the hover. That made the search rings a
+problem of their own: a subject search had always ringed every course whose
+title carried the word, and with titles leading, a Welding search painted 408
+red names. A term that names a subject now rings nothing; the term is the
+subject. Third, his vision — *"zoom in on a single CCR and see the local
+courses that belong to it … so they can feel confident that we associated
+their course with the correct CCR course"* — is a fourth kind of point: an
+identity OPENS when selected or hovered, its college courses ring it as
+squares on spokes over a white halo, each named by code and college radiating
+outward, and a square drags like a hollow point does. Opening every identity
+at once in a dense island put a neighbor's ring over the identity you meant
+to click, so below 4.2× only the selected and the hovered one open, and a
+pointer inside the nearest circle always means that circle. The served page
+had not been rebuilt since #1441, so the deployed SkyView had been missing
+the chip code from #1447 for a day; the harness caught one more gap on the
+way — a course just moved onto `MUS 180` (850 courses) landed after the
+200-row page cap, on a page nobody opens — so a moved-in course now leads
+its card.
+
 ### Verification
 
 `tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`

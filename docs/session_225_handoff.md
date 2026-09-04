@@ -48,6 +48,11 @@ Then Sam replied *"Yes to all"* and the afternoon half applied the whole series:
    materialized, 146 legacy strays; 7 held on TOP alone; V8 parity), receipt
    `kb/prefix_fold_out/2026-09-03/`, and the seven-item sheet for Sam:
    https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b
+7. **#1460 — SkyView after Sam's drive.** Eight notes, all shipped: zoom about
+   the subject, controls and the details panel off the canvas, leader-line
+   labels, Pan and Move, the provenance hover, links in full screen,
+   title-first labels, and an identity that opens to show its college
+   courses (the faculty view). He drives it again next (NEEDS SAM ①).
 5. **#1455 — the re-key verify.** An alias map can chain (`ARME M10AJ →
    FLNG M10AJ` beside `ARMN M10AJ → ARME M10AJ`); the re-key now applies
    vacate-first and keeps chained keys off its verify surface, and the two
@@ -107,9 +112,10 @@ numbers now (0 placeholders today).
    anchors** once Sam gives them a discipline (NEEDS SAM ⑤).
 3. **The promote step for `UC-CUR-*` placeholders**, minting M numbers from
    `kb/_zband_retire_dryrun.py`'s `Buckets` (continuation band when full).
-4. **SkyView carry-overs** unchanged: Sam drives it (NEEDS SAM ①), decision packs
-   per discipline (NEXT ①), the queue (②), the rim by description (⑦), the
-   dropdown labels (⑧).
+4. **SkyView:** Sam drives it again after #1460 (NEEDS SAM ①: the halo, the
+   ring spread, the 48-square cap, the open-all zoom are one line each); then
+   decision packs per discipline (NEXT ①), the queue (②), the rim by
+   description (⑦), the dropdown labels (⑧).
 5. **Funding carry-overs** unchanged: `CollegeID2`, the dials, NEEDS SAM ③④⑤ of
    that lane.
 

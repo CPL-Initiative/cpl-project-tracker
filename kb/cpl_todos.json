@@ -1,6 +1,6 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-03",
+  "_as_of": "2026-09-04",
   "_session": "224 (SkyTune) — the re-mint series applied",
   "_status": "2026-09-03 SkyTune, Session 224 — the re-mint series is APPLIED and the next worklist is on Sam's sheet. Sam ruled the fourteen readings yes to all; the same day the authority recode re-keyed 10,296 ids onto the ruled codes (10,041 keeping their number), the 4,053 machine clusters became real M-ID records, the Z band retired, kb_curation was re-keyed from the receipts and the seven canonical picks updated. The land let the planners see the machine clusters for the first time: fold-verify now names 285 rows whose prefix is not their discipline's code (132 of the new records, 146 older strays the July cohorts re-disciplined). A keep-number dry run plans them (#1458, 278 moves, 7 held on TOP alone); the seven-item decision sheet is with Sam and the apply follows his verdicts in one cron window.",
   "items": [
@@ -9,6 +9,12 @@
       "for": "Sam",
       "tab": "unified-courses",
       "text": "Rule the prefix fold worklist sheet, seven items, reply by number: https://claude.ai/code/artifact/dba12303-8b14-44e2-a21b-bba933a1803b — 278 rows would move to the code their discipline owns (132 of yesterday's materialized records, 146 strays re-disciplined in July); the seven held on TOP alone, the seventeen records without a discipline and Kinesiology's ATHL span are your calls. Nothing is applied until you reply."
+    },
+    {
+      "id": "s224-sam-drive-skyview-again",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Drive SkyView again after #1460 shipped your eight notes: the zoom buttons keep the searched subject in place, nothing floats over the map, labels sit on leader lines and lead with the title and units (3u), Pan and Move are chips, the other views are links in full screen, and clicking an identity opens it to show its college courses named by code and college. Visual calls left for you: the white halo, how far the ring spreads, the 48-square cap, and the zoom (4.2x) past which every identity opens."
     },
     {
       "id": "s224-sam-hosp-anchors",
