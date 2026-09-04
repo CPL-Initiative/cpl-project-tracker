@@ -282,6 +282,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cip_fitcheck/*.json` | tabs: `cip-crosswalk` | — |
 | `cip_fitcheck_colleges.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_cip_fitcheck.py` | scripts: `kb/_build_cip_fitcheck.py` |
 | `cip_status_counts.json` | tabs: `cip-crosswalk` | — |
+| `cobi_a11y.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_brand.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_orgs.js` | pages: `CPL_Dashboard.html` | — |
@@ -642,7 +643,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | Service | Called by |
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `scripts/check_memory_briefing_layout.js`, `scripts/check_public_page_layout.js` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
@@ -800,5 +801,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 421 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 422 file
 datasets · 137 external services · 315 consumers · 33 workflows · 37 tabs.

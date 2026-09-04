@@ -10,7 +10,10 @@ related:
   - "[[docs/fact_sheet_lessons]]"
   - "[[docs/kb-notes/methodology-the-measuring-browser-can-hide-the-defect]]"
 artifacts:
-  - scripts/check_public_page_layout.js
+  - scripts/a11y.js
+  - a11y.config.js
+  - cobi_a11y.js
+  - tests/cobi_a11y_baseline.test.js
   - tests/public_pages_a11y.test.js
   - sierra/sierra.css
   - veteran-sprint-map/build_selfcontained.py
@@ -236,12 +239,124 @@ neutral clearing 4.5:1 is **`#6B6B66`** (4.89:1 worst-case) — an earlier
 `#75756D` figure was computed against a single ground and only reaches 4.24:1 on
 the zebra. **Measure against the worst ground in use, never one sample.**
 
-### The standing shape Sam agreed for enforcement
+### Enforcement: Sam ruled it down to one command
 
-Detection (generalize `scripts/check_cobi_header_layout.js`) · firing (a Stop
-hook, not a memory — hooks are per-machine, so they need the
-`install-three-repo-check.ps1` installer pattern) · remediation (a skill holding
-the playbook). ⚠️ **Never auto-remediate to `main`**: Rule 6 (two schedulers
-racing, 2026-04-19), and because picking a replacement color is a design
-decision — the masthead fix turned on whether each element was essential text or
-decoration. The scheduled run reports; a session fixes with context.
+A three-mechanism shape was proposed here — detection, a Stop hook to fire it, a
+skill holding the remediation playbook. Sam, 2026-09-04: *"For accessibility, use
+the simplest approach that sets us up for continued long term use on all
+projects."* What shipped is the first third and nothing else: **`npm run a11y`**.
+
+The hook and the skill were the parts that would have to be installed per
+machine, kept in step with the checker, and remembered by a teammate on their
+first day — three ways to be half-installed, guarding a check that already runs
+in 100 seconds. A command anyone can type, that a session can run unprompted
+before it ships a view, is the whole mechanism. ⚠️ **Never auto-remediate to
+`main`** still stands, and now has nothing to attach to: Rule 6 (two schedulers
+racing, 2026-04-19), and because picking a replacement color is a design decision
+— the masthead fix turned on whether each element was essential text or
+decoration. A run reports; a session fixes with context.
+
+## 2026-09-04 — SkyMint S227 (continued): one command, and the harness gets audited first
+
+Sam: *"For accessibility, use the simplest approach that sets us up for continued
+long term use on all projects."* That ruling is what shipped, and it is smaller
+than what was proposed the same morning.
+
+### `npm run a11y` — 42 views, ~100 seconds
+
+`scripts/check_public_page_layout.js` became **`scripts/a11y.js`**. The rename is
+not tidiness: "public page layout" would have told every future session that
+COBI's own views were somebody else's problem, which is exactly the belief the
+sweep exists to end. Its page list moved out to **`a11y.config.js`** — the only
+file another project rewrites — so the engine is now project-agnostic and the
+command is the same everywhere.
+
+The part that keeps it honest as the app grows is **`discover`**: COBI's entry
+names no routes at all. The engine loads `index.html`, reads
+`nav.cpl-tabs .cpl-tab[data-tab]` out of the running page (the same query
+`tabs.js` uses to derive its own `VALID_TABS`), and measures every one. ⚠️ **A
+hand-maintained list of 37 tabs is a list that silently stops being 37, and the
+tab it stops at is the new one nobody has audited.** A discovery that returns
+nothing is a hard FAIL, not a quiet zero-route sweep — the repo has recorded "a
+check that never registers can never fail" three times now.
+
+Cost, measured: 42 routes in 1m41s. COBI's 38 run at two widths (390 and 1440)
+rather than nine; nine widths on a 38-route target is a ten-minute run nobody
+starts, and a breakpoint that breaks, breaks on a phone. Contrast, headings and
+the focus ring are properties of what is painted rather than of the width, so
+they are measured once per route inside the widest pass instead of in a second
+page load.
+
+### Six of the first run's loudest findings were the instrument
+
+This is the finding worth carrying forward, and it has its own note:
+[`methodology-the-first-run-of-a-new-instrument-measures-the-instrument`](kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md).
+In short: text under an `opacity:0` scroll-reveal scored 1:1 (30 phantom findings
+on `our-process` alone); a `<textarea>` was reported as an unreachable scroll
+region (29 more); `23.95px` printed as `24` against a 24px floor; the two halves
+of the reduced-motion check disagreed at `> 0` vs `> 0.01`, so the *correct*
+stand-down read as "still animating"; and a Google Fonts sheet failed forever on
+a CORS rule nothing in this repo can change (now declared in the config, with its
+reason — anything undeclared still fails).
+
+⚠️ **The sixth would have caused a regression.** The target-size check
+substituted an associated `<label>`'s box for its control's. That is right for a
+label that WRAPS the control — a 13px checkbox is pressed by the whole label —
+and wrong for a `label[for]` sitting beside it: the harness reported the masthead
+search box as 91×21 **after** it had been fixed to 32px tall, because the "Where
+To?" label next to it is 21.7px. The obvious next move was to enlarge a control
+that was already passing. Either box clearing the floor is now enough.
+
+### The chrome-wide fixes: five source lines, about 200 findings
+
+Every one of these appeared on all 38 COBI routes, because they live in the
+chrome every route paints — so each was one defect wearing 38 hats:
+
+| What | Was | Now |
+|---|---|---|
+| `.cpl-nav-group-head` ("Workplan", "Funding") | `#8a8a86` — 3.38:1, and 23.9px tall | `var(--text-muted)` + `min-height:24px` |
+| `.cpl-nav-caret` ▼ | inherited the same 3.38:1 | inherits the fix |
+| `.cpl-rail-auth-off` ("— not unlocked") | `#888` — 3.33:1 | `var(--text-muted)` |
+| `.cpl-sidebar-brand a` | 21.7px tall | `min-height:24px` |
+| `.qs-input` (Where To?) | 21.7px tall | `min-height:24px` |
+| `.cplfl-imgfallback` | white-on-gradient, 3.08:1 | gradient darkened; text full white |
+| five animations | `prefers-reduced-motion` honored in **none** | stood down app-wide |
+
+Two of those deserve a note of their own. `#8a8a86` was a raw hex sitting on
+`--text-faint`, whose own token comment reserves it for *"decorative only — never
+essential text"* — and a group heading is the word that says what the tabs under
+it are. And the First Light fallback could not be fixed by removing the text's
+`.88` alpha: **pure white over `#a8842f` is 3.50:1**, so the gradient itself had
+to come down. That panel paints exactly when the network is poor.
+
+`prefers-reduced-motion` now lives in **`cobi_a11y.js`**, a runtime-injected
+sheet rather than an edit to both HTMLs. Two reasons, and the second is
+load-bearing: Rule 4 makes every CSS edit two edits, and a runtime sheet lands
+after every static one, so it wins on cascade order without an `!important` arms
+race and without sitting downstream of a generator that rewrites whole sections
+(Rule 1). ⚠️ It sweeps `*` rather than naming today's five animations — a named
+list goes stale the first time someone adds a sixth, and nobody adding one thinks
+about that file — and it uses `0.001ms`, never `animation: none`, so handlers
+waiting on `animationend` still fire.
+
+### What the sweep still reports, named rather than hidden
+
+38 of COBI's 38 routes still have findings. Sierra and the veteran map pass
+clean. The backlog, clustered:
+
+- **5 routes scroll sideways on a 390px phone** — `dashboard` by 887px, `raci`
+  392, `budget` 218, `memory` 203, `activities-projects` 179. This is the
+  presentation rule ("the body never scrolls sideways") failing outright, and it
+  is the highest-value lane of the three.
+- **18 routes carry 86 sub-AA text pairs** — worst `dashboard` (15), `raci` (11),
+  `pipeline` (10), `canonical-subj4` (9), `implementation-funding` (8). Several
+  sit in sections the daily generator owns, so the fix is in
+  `excel_to_dashboard.py`, not the HTML (Rule 1).
+- **4,042 sub-24px targets — which are 54 selectors.** `button.cr-title-toggle`
+  alone accounts for 2,200 renders. The remediation list is 54 lines long.
+- **21 scroll regions with no keyboard route**, across 5 routes; most are
+  `div.exhibit-card-body`.
+
+⚠️ **Shipping a red sweep is the correct state, not a failure to finish.** The
+alternative — quietly narrowing what it measures until it prints green — is the
+one outcome that would make it useless.

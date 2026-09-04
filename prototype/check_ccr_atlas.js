@@ -3,7 +3,7 @@
  * Deliberately NOT part of `npm test` — jsdom has no layout engine, so the
  * defects this catches (a graph that renders zero nodes, a page that scrolls
  * sideways on a phone, a move that writes nothing) are invisible to the suite.
- * Same split as scripts/check_public_page_layout.js.
+ * Same split as scripts/a11y.js.
  *
  * Serves over http:// on purpose: under file:// `sheet.cssRules` throws, and a
  * check that cannot read the stylesheet passes silently.

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 376,
+   "count": 377,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3076,7 +3076,8 @@
     {
      "created": "2026-09-04",
      "governs": [
-      "scripts/check_cobi_header_layout.js"
+      "scripts/check_cobi_header_layout.js",
+      "scripts/a11y.js"
      ],
      "path": "docs/kb-notes/methodology-audit-by-rendered-value-not-by-file.md",
      "status": "published",
@@ -5719,6 +5720,25 @@
      "title": "The feedback queue already knew \u2014 collection is not the bottleneck, triage is",
      "type": "methodology",
      "updated": "2026-08-07"
+    },
+    {
+     "created": "2026-09-04",
+     "governs": [
+      "scripts/a11y.js",
+      "a11y.config.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "tooling",
+      "accessibility",
+      "audit",
+      "testing"
+     ],
+     "title": "The first run of a new instrument measures the instrument",
+     "type": "methodology",
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-08-29",
@@ -9075,7 +9095,10 @@
     {
      "created": "2026-08-20",
      "governs": [
-      "scripts/check_public_page_layout.js",
+      "scripts/a11y.js",
+      "a11y.config.js",
+      "cobi_a11y.js",
+      "tests/cobi_a11y_baseline.test.js",
       "tests/public_pages_a11y.test.js",
       "sierra/sierra.css",
       "veteran-sprint-map/build_selfcontained.py"
@@ -15208,5 +15231,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 774
+ "total": 775
 }

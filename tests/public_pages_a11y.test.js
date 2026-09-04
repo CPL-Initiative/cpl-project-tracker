@@ -8,7 +8,7 @@
 // SPLIT BY INSTRUMENT, exactly as fact-sheet/check_mobile_layout.js established:
 // jsdom has no layout engine, so GEOMETRY (overflow at nine viewports, computed
 // contrast, target sizes, whether a breakpoint drops a whole panel) is measured
-// by scripts/check_public_page_layout.js in Chromium, on demand. What lives HERE
+// by scripts/a11y.js in Chromium, on demand. What lives HERE
 // is the structure that suite cannot re-derive and that CI can check for free.
 //
 // What each group is protecting — every one of these was a real defect on

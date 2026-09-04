@@ -2,7 +2,7 @@
    Implementation Funding — the Option A NONCREDIT row: real-layout check
    ---------------------------------------------------------------------------
    Chromium, on demand. NOT in tests/ and NOT run by `npm test`, for the reason
-   scripts/check_public_page_layout.js and check_memory_briefing_layout.js
+   scripts/a11y.js and check_memory_briefing_layout.js
    already established: CI has jsdom only, jsdom has no layout engine, and
    adding playwright to package.json would make CI download a browser for a
    check it never runs.

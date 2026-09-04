@@ -84,10 +84,20 @@
     st.id = 'cpl-nav-groups-css';
     st.textContent =
       '.cpl-nav-group{margin:0.15rem 0;}' +
+      /* ⚠️ color and min-height are BOTH accessibility fixes, both found by
+       * `npm run a11y` on 2026-09-04 and both invisible to jsdom. The label read
+       * #8a8a86 — a raw hex sitting on --text-faint, which the token's own
+       * comment reserves for "decorative only, never essential text" — and
+       * composited to 3.38:1 on the glass rail against AA's 4.5. A group heading
+       * is the opposite of decorative: it is the word that says what the tabs
+       * under it are. The box was 23.9px tall against WCAG 2.2 SC 2.5.8's 24px
+       * floor, and 23.9 is not a rounding error a curator can be asked to live
+       * with on six controls. Both were true on every one of COBI's 38 views. */
       '.cpl-nav-group-head{display:flex;align-items:center;justify-content:space-between;width:100%;' +
         'background:none;border:none;cursor:pointer;padding:0.45rem 0.9rem 0.3rem 0.85rem;' +
+        'min-height:24px;' +
         'font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;' +
-        'color:#8a8a86;font-family:inherit;transition:color 0.12s;}' +
+        'color:var(--text-muted,#5C5C55);font-family:inherit;transition:color 0.12s;}' +
       '.cpl-nav-group-head:hover{color:var(--text-strong,#333);}' +
       '.cpl-nav-group-head .cpl-nav-caret{font-size:0.62rem;transition:transform 0.15s;}' +
       '.cpl-nav-group.collapsed .cpl-nav-caret{transform:rotate(-90deg);}' +

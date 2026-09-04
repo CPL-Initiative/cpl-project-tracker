@@ -535,6 +535,13 @@ and one was carried out of this file entirely by a relocation.
   never the only signal.** `th scope` on every header cell, an `aria-label`led
   region around any scrolling table, a skip link, `:focus-visible`, and
   `prefers-reduced-motion`.
+  ⚠️ **VERIFY WITH `npm run a11y`** (Sam, 2026-09-04: *"the simplest approach
+  that sets us up for continued long term use on all projects"*). One command,
+  ~100s, every view we ship — COBI's 38 tabs discovered from its own nav, plus
+  Sierra, the Fact Sheet, the veteran map, SkyView. **`npm test` passing proves
+  NOTHING here**: jsdom returns zeroes for every rectangle, so 299 green suites
+  sat beside a masthead painting 240px of one cluster over another. Run it
+  before you ship a view; add a view in `a11y.config.js`, not a new script.
 - **MOBILE-FRIENDLY, ALWAYS.** Single column below ~560px, `clamp()` type, no
   fixed widths, and wide tables scroll **inside their own container** so the body
   never scrolls sideways.

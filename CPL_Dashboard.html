@@ -507,6 +507,7 @@
         .qs-input {
             flex: 1 1 auto;
             min-width: 0;
+            min-height: 24px;          /* WCAG 2.2 SC 2.5.8 — measured at 21.7 */
             padding: 0.45rem 0.7rem;
             font-family: 'Source Sans 3', Arial, sans-serif;
             font-size: 0.9rem;
@@ -636,6 +637,7 @@
             color: inherit;
             text-decoration: none;
             display: block;
+            min-height: 24px;          /* WCAG 2.2 SC 2.5.8 — measured at 21.7 */
         }
         .cpl-sidebar-brand a:hover { color: var(--cobalt); }
         .cpl-sidebar .cpl-tabs {
@@ -711,7 +713,7 @@
             background: rgba(28,28,26,0.02);
         }
         .cpl-rail-auth-on { color: var(--hunter); font-weight: 700; font-size: 0.8rem; }
-        .cpl-rail-auth-off { color: #888; font-style: italic; font-size: 0.8rem; }
+        .cpl-rail-auth-off { color: var(--text-muted); font-style: italic; font-size: 0.8rem; }
         .cpl-rail-auth-email {
             display: block;
             font-size: 0.7rem;
@@ -15221,6 +15223,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
     <script src="kpi_reorder.js"></script>
     <script src="kpi_cards.js"></script>
     <script src="first_light.js"></script>
+    <script src="cobi_a11y.js"></script>
     <script src="cobi_brand.js"></script>
     <script src="cobi_orgs.js"></script>
     <script src="cpl_todos.js"></script>
