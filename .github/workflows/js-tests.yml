@@ -106,6 +106,24 @@ jobs:
         run: |
           python3 tests/authority_recode_apply_test.py
           python3 tests/zband_retire_apply_test.py
+      # UC-CUR placeholder promotion (Session 226) — the promote step the Z-band
+      # retirement left open: a client or auto-merge mint's transient UC-CUR
+      # target becomes a real M-ID record. Guards the number allocation (every
+      # id ever minted stays reserved; CCN/C-ID numbers skipped; a full bucket
+      # continues into the next band), the umbrella split code, the held cases
+      # (one pointer, no discipline, no code, no band — never guessed), the
+      # materialized record, P0 twice and P1 drift. Pure-stdlib python, no network.
+      - name: UC-CUR promotion guard (kb/_uc_cur_promote.py)
+        run: python3 tests/uc_cur_promote_test.py
+      # Identities map re-key (Session 226) — the articulation identities map
+      # carried 1,597 keys on ids no longer in the catalog. Guards the chain
+      # resolution (one lookup per map, in order), the collision rule (the live
+      # entry wins), the convergence tie-break (title, colleges, alphabetical),
+      # the dead drop, the stamp, and — against the committed files — that
+      # every ghost is dispositioned and the post-state is all live. Pure-stdlib
+      # python, no network.
+      - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
+        run: python3 tests/identities_rekey_test.py
       # Prefix fold dry run (Session 224) — the keep-number re-key for rows off
       # their discipline's canonical code: a span (KINE/ATHL) must not move, a
       # TOP-only discipline is held (Rule 7), a taken number gap-fills instead of

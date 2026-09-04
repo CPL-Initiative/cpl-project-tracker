@@ -9,8 +9,9 @@ obsidian-folder: cpl-project-tracker/handoffs
 # You are Session 227
 
 Your moniker is **SkyMint** (assigned by SkyLand at sign-off, per Sam's
-2026-09-03 template): the queue's head is the promote step that must mint M
-numbers for client placeholders. Predecessors: SkyTune S224 → SkyFold S225 →
+2026-09-03 template): the promote step that mints M numbers for client
+placeholders was built under you-to-be's name; the identities map is the
+queue's head. Predecessors: SkyTune S224 → SkyFold S225 →
 **SkyLand S226**.
 
 ## What S226 did
@@ -42,11 +43,26 @@ One pull request (#1465) and this checkpoint, on the queue SkyFold left.
    `THES M1087` (trailcrew-ccr1-s111, 2026-07-10). Two suites: 27 python
    checks (in `js-tests.yml`), 21 jsdom. The lane appears in
    `unified_courses_suggestions.js` on the next daily run.
-4. Docs: the lane file (compacted under budget), `ccr_atlas_lessons`
+4. **The promote step is built before the first placeholder** (second PR).
+   `kb/_uc_cur_promote.py`: a client mint's or the auto-merge bot's transient
+   `UC-CUR-*` target becomes a real M-ID record the way the retirement
+   materialized a machine cluster — the discipline's canonical SUBJ4 (an
+   umbrella keeps the members' split code), band 9 noncredit / 1 credit, the
+   lowest free number with every id ever minted reserved (courses, singletons,
+   curation keys, identities, common, every ALIAS_MAPS id, the CCN/C-ID
+   reservations), continuation band when full; origin `curator mint` or
+   `machine cluster`, `_promoted_from`, no membership entry. HELD, never
+   guessed: one pointer, no discipline, no code, no band. Dry run by default
+   with a receipt; `--apply --receipt … --fresh-read …` under P0 · P1 · P3 ·
+   G1-G8. 32 fixture checks in `js-tests.yml`. 0 placeholders today.
+5. **The identities map dry run is built** (`kb/_identities_rekey_dryrun.py`,
+   23 fixture checks in `js-tests.yml`) and its receipt committed; see
+   priority 1 below for what it found.
+6. Docs: the lane file (compacted under budget), `ccr_atlas_lessons`
    §2026-09-04, the KB note
    `methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live`,
-   §11, the To-Do feed, the vault session note, four `cpl_memory` rows under
-   `session-226-skyland`.
+   the playbook's artifacts table, §11, the To-Do feed, the vault session
+   note, four `cpl_memory` rows under `session-226-skyland`.
 
 ## Sam's decisions this run
 
@@ -65,9 +81,9 @@ was a pre-recode count**; the receipt and the lane both say 130.
 
 ## Where the checkpoint left things
 
-#1465 open when this was written — merge it once `test` is green (Rule: the
-`test` check must succeed on the head; then squash), then dispatch
-`daily-dashboard.yml` so the lane publishes. Nothing else in flight. The 06:45
+#1465 (the lane) and the promote-step PR were merged by S226 once `test` was
+green on each head; `daily-dashboard.yml` dispatched so the lane publishes.
+Nothing else in flight. The 06:45
 UTC check-in belongs to S226's session; its result is not recorded here.
 
 ## Read in order
@@ -84,18 +100,23 @@ UTC check-in belongs to S226's session; its result is not recorded here.
 0. **Confirm the morning cron** if S226 did not: green run 446, no key reverted,
    audit 113, SkyView on the new codes; then confirm `legacy_count` is 130 in
    the published `unified_courses_suggestions.js`.
-1. **The promote step for `UC-CUR-*` client placeholders.** A client mint still
-   writes a `UC-CUR-<base36>` target (`doConsolidate`); the generator must
-   promote it to an M number — lowest free in the (SUBJ4, band) bucket,
-   continuation band when full — from `kb/_zband_retire_dryrun.py`'s `Buckets`,
-   with a receipt and the alias registered in `ALIAS_MAPS`. 0 placeholders
-   today: build it before the first one appears. Where the old Z promote lived:
-   grep `UC-CUR` in `excel_to_dashboard.py` and `kb/_auto_merge_worklist.py`.
-2. **The identities map re-key** (`kb/coci_articulations.json` `identities`,
-   1,597 ghost keys; 1,422 resolve from the May map): a dry run with a receipt,
-   then a sheet for Sam.
-3. **Measure curated disciplines outside the MQ list** (the `Stagecraft` row);
+1. **The identities map re-key — the sheet, then the apply.** The dry run is
+   built and its receipt cut (`kb/_identities_rekey_dryrun.py`,
+   `kb/identities_rekey_out/2026-09-04/`): re-key 1,369 ghosts onto the live id
+   the alias chain names, drop 44 whose live id already has an entry, 9 that
+   lose a convergence (title agreement, then colleges), 175 that nothing names
+   again; 152 re-keyed titles are normalization variants the catalog already
+   overrides. Build Sam's five-item decision sheet from the report's "sheet"
+   section (a First Light artifact in `docs/visuals/`, handed over as an
+   artifact link), record his verdicts as data, then
+   `--apply --receipt … --ruling "…"` (P0 · P1 · G1-G5) in one cron window. NOT
+   an ALIAS_MAPS receipt.
+2. **Measure curated disciplines outside the MQ list** (the `Stagecraft` row);
    propose the fix on a sheet, never by script.
+3. **The promote step, when a placeholder appears:** `python3
+   kb/_uc_cur_promote.py` (dry run, receipt), review, then `--apply` with the
+   receipt and a fresh read; register the receipt in `ALIAS_MAPS`; dispatch
+   `supabase-rekey.yml`; the chain; the daily run. Nothing to run today.
 4. **The seven held rows** when a second signal arrives (new dry run,
    `--ruled-held`, new receipt).
 5. **SkyView:** Sam's second drive (NEEDS SAM ①), decision packs (NEXT ①), the
