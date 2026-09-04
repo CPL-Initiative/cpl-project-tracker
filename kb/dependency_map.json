@@ -165,18 +165,18 @@
      "line": 56
     },
     {
+     "id": "module:scripts/a11y.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 574
+    },
+    {
      "id": "module:scripts/check_memory_briefing_layout.js",
      "kind": "module",
      "direction": "read",
      "how": "url",
      "line": 113
-    },
-    {
-     "id": "module:scripts/check_public_page_layout.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "url",
-     "line": 584
     }
    ],
    "main_committers": []
@@ -15315,7 +15315,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1222,
+     "line": 1230,
      "pages": [
       "CPL_Dashboard.html"
      ]

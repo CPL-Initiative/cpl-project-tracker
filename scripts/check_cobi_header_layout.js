@@ -2,7 +2,7 @@
    COBI masthead — real-layout check across the widths browser ZOOM produces
    ---------------------------------------------------------------------------
    Chromium, on demand. NOT in tests/ and NOT run by `npm test`, for the reason
-   scripts/check_public_page_layout.js, check_memory_briefing_layout.js and
+   scripts/a11y.js, check_memory_briefing_layout.js and
    check_funding_nc_row_layout.js already established: CI has jsdom only, jsdom
    has no layout engine, and adding a browser download to CI for a check it
    never runs is a cost with no return.

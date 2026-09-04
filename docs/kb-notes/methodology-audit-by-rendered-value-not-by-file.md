@@ -10,6 +10,7 @@ related:
   - "[[docs/public_pages_a11y_lessons]]"
 artifacts:
   - scripts/check_cobi_header_layout.js
+  - scripts/a11y.js
 ---
 
 # Audit by rendered value, not by file — thousands of failures collapse to a few source lines
@@ -67,10 +68,31 @@ wrong while its *ranking* was sound. Clustering is robust to that kind of
 harness error precisely because the source-site counts come from grep, not from
 the DOM walk. Report the ranking; verify a total before quoting it.
 
+## Confirmed, and now built in (2026-09-04)
+
+A purpose-built sweep (`npm run a11y`, 42 views) re-measured the same surface
+and the ratio held: **4,042 sub-24px targets across COBI collapse to 54
+selectors**, and 2,200 of those renders are ONE button in one dense grid
+(`button.cr-title-toggle`). The remediation list is 54 lines long, not 4,042.
+
+Two refinements the second pass taught:
+
+- **Do the clustering IN the harness, not after it.** The measurement now keys
+  on selector + size and reports "distinct kinds" beside the raw count, because
+  a reader given 4,042 findings does not cluster them — they stop reading. The
+  raw number is kept: it is what says how much of the surface is affected.
+- **Shared chrome is the same insight one level up.** The rail, the search box
+  and the brand link were 41 findings each *because* they paint on every view;
+  fixing five source lines cleared about 200 findings at once. A finding that
+  appears on every route is not 38 problems — it is one, and it is the one to
+  fix first.
+
 ## See also
 
 - `[[docs/public_pages_a11y_lessons]]` — the sweep, its findings and its flaws
-- `[[docs/kb-notes/methodology-a-rule-states-a-standard-a-measurement-detects-a-violation]]`
+- `[[docs/kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument]]`
+  — the other half: how much of a first run is the harness rather than the page
+- `[[docs/kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied]]`
 
 ---
 

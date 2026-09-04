@@ -1,6 +1,6 @@
 {
   "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
-  "_note": "Re-baselined by `npm run test:floor`.",
+  "_note": "Re-baselined by `npm run test:floor`; cobi_a11y_baseline.test.js added by hand (17 checks) — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before.",
   "files": {
     "actions_bar_slim.test.js": 15,
     "activities_sprint_filter.test.js": 9,
@@ -47,6 +47,7 @@
     "cer_worklist_preseed.test.js": 38,
     "check_ledger.test.js": 23,
     "cip_crosswalk.test.js": 354,
+    "cobi_a11y_baseline.test.js": 17,
     "cobi_brand.test.js": 72,
     "cobi_identity.test.js": 62,
     "cobi_orgs.test.js": 56,
