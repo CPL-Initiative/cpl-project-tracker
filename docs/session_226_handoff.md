@@ -79,12 +79,23 @@ re-key with its own receipt.
 
 ## Where the checkpoint left things
 
-#1462 and #1463 merged; the follow-up with SkyView and the joins merged after
-them; nothing in flight. The 06:17 UTC daily run of 2026-09-04 is the first
-cron after the land: a check-in is scheduled for 06:40 UTC (send_later) to
-confirm it reproduced the overlay (no fold key reverted), that the audit
-reads 113, that the crnc file's keys are current, and that SkyView reads the
-new codes. `cpl_memory` carries this run under author `session-225-skyfold`
+#1462 and #1463 merged; #1464 (SkyView rebuilt, the joins, this checkpoint)
+merged after them; nothing in flight. Run 445 of `daily-dashboard.yml` (the
+dispatch at 02:19 UTC, after the Supabase re-key) already reproduced the
+overlay from Supabase with all 278 fold keys, 0 old ids and 0 pointers on an
+old id; the audit read 113; the crnc keys were all live; the rebuilt SkyView
+carries 247 of the 278 folded ids under their new codes. **The other 31 were
+not drawn before the fold either**: they have no entry in
+`unified_courses_members.js` under the old id or the new one (11 are curated
+merge sources, absorbed into their target by design; 20 have members in
+`kb/coci_minted_memberships.json` but the export's member join yields
+nothing for them) — a pre-existing export gap to measure, not a defect of the
+fold. The 06:17 UTC scheduled run is the first CRON after the land: a check-in
+is scheduled for 06:40 UTC (send_later) to confirm it too kept the keys, the
+113, the crnc keys and the codes. ⚠️ The overlay sync rewrites
+`kb/coci_curation.json` from Supabase and drops the apply's era stamp on that
+one doc; P0 still holds through the other four docs and the receipt's
+`_applied_at` — a doc the cron regenerates cannot carry a durable stamp. `cpl_memory` carries this run under author `session-225-skyfold`
 (query it first, Rule 8).
 
 ## Read in order
@@ -102,6 +113,9 @@ new codes. `cpl_memory` carries this run under author `session-225-skyfold`
    `kb/coci_curation.json`; `subject_collision_signal` 113; the crnc keys
    current; SkyView on the new codes. A reverted key means the Supabase re-key
    did not hold: re-dispatch `supabase-rekey.yml` with the fold's receipt.
+   Then the 20 folded identities with members but no export entry (above):
+   find where `_row_ents` in `excel_to_dashboard.py` loses them — a
+   measurement first, on the CCR tab's own terms.
 1. **The 122 legacy-anchor duplicates as a merge worklist on the CCR tab**
    (`kb/zband_retire_out/2026-09-03/duplicates.json`: each legacy anchor whose
    title and discipline already name a catalog identity, one twin each): a
