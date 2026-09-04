@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 781,
-    "bytes": 8304985,
-    "over_budget": 4,
+    "bytes": 8304648,
+    "over_budget": 3,
     "handoff_max": 225,
     "always_loaded_files": 1,
     "always_loaded_bytes": 58779,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 139006,
-        "over": 1
+        "bytes": 138669,
+        "over": 0
       },
       "handoff": {
         "files": 199,
@@ -57,12 +57,12 @@
     },
     "by_rule": {
       "house_voice": 21,
-      "oversized_doc": 4,
+      "oversized_doc": 3,
       "vault_heavy_path": 47
     },
     "vault": {
       "files": 2712,
-      "bytes": 1395282816,
+      "bytes": 1395282479,
       "heavy_bytes": 703740024,
       "heavy_share": 0.504,
       "ignore_filters": [
@@ -322,19 +322,6 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/public_private_repo_split_scope.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 12314,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 314,
-        "ratio": 1.03
-      },
-      "message": "12,314 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "oversized_doc",
