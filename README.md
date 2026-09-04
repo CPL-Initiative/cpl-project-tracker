@@ -179,7 +179,10 @@ The whole ecosystem, end-to-end:
    grouping is **level-collapsing** (Session 57) — "Beginning / Intermediate /
    Advanced X" surface as one family — so curators consolidate aggressively
    (Title 5 §55050 grants credit for *similar* learning), always one
-   confirm at a time. The rules in plain language:
+   confirm at a time. A **curated-anchor duplicates lane** (2026-09-04)
+   leads the queue: the May 2026 curated common courses that carry the same
+   title and discipline as a catalog course, the catalog course proposed as
+   the survivor, recomputed every build — never merged by a script. The rules in plain language:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that

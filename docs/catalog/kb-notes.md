@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-373 document(s).
+374 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -108,6 +108,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A provenance label must say why, not what](../kb-notes/methodology-a-provenance-label-must-say-why-not-what.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance tier must encode what you could NOT check](../kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A published asset with zero uptake is an outreach worklist, not a build backlog](../kb-notes/methodology-dormant-asset-worklist.md) | methodology | published | 2026-08-05 | 2026-08-05 |
+| [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A remembered toggle hides the default from its author](../kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
