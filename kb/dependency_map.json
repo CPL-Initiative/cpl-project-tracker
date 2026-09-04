@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 422,
+  "file_datasets": 423,
   "external_services": 137,
   "consumers": 315,
   "workflows": 33,
@@ -13214,6 +13214,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/supabase_function_grants_test.py": {
    "consumers": [
     {
@@ -17434,7 +17447,8 @@
     "kb/_build_docs_index.py",
     "tests/dependency_map_test.py",
     "kb/_build_dependency_map.py",
-    "tests/js_suite_gate_test.py"
+    "tests/js_suite_gate_test.py",
+    "tests/stop_hook_git_check_test.py"
    ],
    "adds": [],
    "push": null,
