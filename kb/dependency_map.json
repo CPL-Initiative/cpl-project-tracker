@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 421,
+  "file_datasets": 422,
   "external_services": 137,
   "consumers": 315,
   "workflows": 33,
@@ -3449,6 +3449,19 @@
      "tabs": [
       "cip-crosswalk"
      ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:cobi_a11y.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
     }
    ],
    "served": true,
