@@ -30,8 +30,16 @@ Parity: the candidate set is checked against fold-verify's own `re_key` set
 Umbrella spans (KINE/ATHL, the language codes, the agriculture families) are
 fold-verify's allowances and never move here.
 
+The sheet's verdicts arrive as two flags, so a per-verdict receipt is one
+re-run: `--scope materialized` cuts item 2's legacy strays out ("2 edit: hold");
+`--ruled-held "<who, when: what>"` folds the TOP-only held rows on the ruling
+("3 edit: fold them") with the ruling appended to each row's evidence as the
+second signal — a row with NO evidence stays held under any ruling. The apply
+(kb/_prefix_fold_apply.py) recomputes the plan with the same flags and refuses
+a receipt cut under different ones.
+
 Nothing is written outside OUT_DIR (kb/prefix_fold_out/<date>/). Run:
-  python3 kb/_prefix_fold_dryrun.py [--scope all|materialized|legacy] [--no-parity]
+  python3 kb/_prefix_fold_dryrun.py [--scope all|materialized|legacy] [--ruled-held TEXT] [--no-parity]
 """
 import argparse
 import copy
@@ -50,7 +58,7 @@ import _authority_recode_dryrun as rec  # noqa: E402
 OUT_DIR = os.environ.get("PREFIX_FOLD_OUT") or os.path.join(HERE, "prefix_fold_out")
 TOP_ONLY = {"top_code", "top_division"}
 MATERIALIZED_ORIGIN = "machine cluster"
-STAMP = "_authority_recode_from"          # the apply stamps moved rows the way the recode did
+STAMP = "_prefix_fold_from"               # the apply's per-row stamp (each receipt has its own; earlier stamps are kept)
 
 
 def _s4():
@@ -122,8 +130,12 @@ def classify(rows, canon_doc, allowances):
 
 
 def compute_plan(courses, singletons, curations, identities, canon_doc, allowances,
-                 reservations, scope="all"):
-    """Pure allocator. Returns the plan dict the receipts and the apply consume."""
+                 reservations, scope="all", ruled_held=None):
+    """Pure allocator. Returns the plan dict the receipts and the apply consume.
+
+    ruled_held: the human ruling (who, when, what) that folds the TOP-only held
+    rows too — appended to each such row's evidence as the second signal. A row
+    with no evidence at all stays held whatever the ruling says."""
     rows = rec.load_rows(courses, singletons, curations)
     members_of = members_index(curations)
     fates, candidates = classify(rows, canon_doc, allowances)
@@ -137,12 +149,15 @@ def compute_plan(courses, singletons, curations, identities, canon_doc, allowanc
         if not srcs:
             row["why_held"] = "no evidence for the discipline (a materialized record whose members no longer point at it)"
             held[cid] = row
-        elif top_only(srcs):
+        elif top_only(srcs) and not ruled_held:
             row["why_held"] = "discipline rests on TOP alone (Rule 7: never a primary determination)"
             held[cid] = row
         elif scope != "all" and cohort != scope:
             out_of_scope[cid] = row
         else:
+            if top_only(srcs):                       # moves only on the ruling, and says so
+                row["evidence"] = srcs + [f"ruled: {ruled_held}"]
+                row["ruled"] = ruled_held
             moves[cid] = row
 
     real_keys = set(courses) | set(singletons) | set(curations)
@@ -187,7 +202,7 @@ def compute_plan(courses, singletons, curations, identities, canon_doc, allowanc
     }
     return {"moves": moves, "held": held, "out_of_scope": out_of_scope, "fates": dict(fates),
             "order": [m["old_id"] for m in order], "alias": alias, "gapfilled": alloc.gapfilled,
-            "validation": validation, "scope": scope, "rows": rows,
+            "validation": validation, "scope": scope, "ruled_held": ruled_held or None, "rows": rows,
             "identities_ghosts": {"count": len(ghosts), "healed_by_this_fold": ghosts_healed,
                                   "vacated_keys_still_in_identities": ghosts_vacated}}
 
@@ -226,10 +241,12 @@ def write_receipts(plan, out):
         "_generated_by": "kb/_prefix_fold_dryrun.py", "_generated_at": today,
         "_rule": "keep the number, gap-fill only where the new key exists (continuation band when the "
                  "band is full); a row whose discipline rests on TOP alone is held",
-        "count": len(plan["alias"]), "scope": plan["scope"],
-        "aliases": {old: {"new_id": m["new_id"], "discipline": m["discipline"], "kind": m["kind"],
-                          "item": "fold-worklist", "basis": m["basis"], "how": m["how"],
-                          "evidence": m["evidence"]}
+        "count": len(plan["alias"]), "scope": plan["scope"], "ruled_held": plan.get("ruled_held"),
+        "ruled_rows": sorted(old for old, m in moves.items() if m.get("ruled")),
+        "aliases": {old: dict({"new_id": m["new_id"], "discipline": m["discipline"], "kind": m["kind"],
+                               "item": "fold-worklist", "basis": m["basis"], "how": m["how"],
+                               "evidence": m["evidence"]},
+                              **({"ruled": m["ruled"]} if m.get("ruled") else {}))
                     for old, m in sorted(moves.items()) if m.get("new_id")}})
     rec._dump(os.path.join(out, "collisions.json"), {
         "_about": "keep-number candidates that were taken and the free key they were gap-filled to; "
@@ -272,8 +289,10 @@ def render_report(plan, today, out):
          f"machine clusters, {by_kind.get('legacy', 0):,} legacy strays ({n_single:,} of them stand-alone shapes).",
          f"- **{by_how.get('kept number', 0):,}** keep their number; **{by_how.get('gap-filled', 0):,}** gap-fill; "
          f"overflow {by_how.get('overflow', 0):,}.",
-         f"- **{len(plan['held']):,}** candidates HELD (discipline on TOP alone); "
-         f"{len(plan['out_of_scope']):,} outside the scope.",
+         f"- **{len(plan['held']):,}** candidates HELD (discipline on TOP alone, or no evidence); "
+         f"{len(plan['out_of_scope']):,} outside the scope"
+         + (f"; **{sum(1 for m in moves.values() if m.get('ruled')):,}** TOP-only rows fold on the ruling "
+            f"`{plan['ruled_held']}`." if plan.get("ruled_held") else "."),
          f"- fold-verify fates on this tree: " + ", ".join(f"{k} {v:,}" for k, v in sorted(plan["fates"].items())) + ".",
          f"- validation: **{sum(1 for v in val.values() if v['pass'])}/{len(val)}** pass.", "",
          "## Groups (old prefix → canonical, discipline)", "",
@@ -307,6 +326,8 @@ def render_report(plan, today, out):
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--scope", choices=["all", "materialized", "legacy"], default="all")
+    ap.add_argument("--ruled-held", default=None, metavar="TEXT",
+                    help="fold the TOP-only held rows on this ruling (who, when: what) — item 3's override")
     ap.add_argument("--no-parity", action="store_true", help="skip V8 (fold-verify takes ~10 s)")
     args = ap.parse_args(argv)
     courses = rec._load(rec.COURSES)["courses"]
@@ -316,7 +337,8 @@ def main(argv=None):
     canon_doc = rec._load(rec.CANONICAL)
     s4 = _s4()
     plan = compute_plan(courses, singletons, curations, identities, canon_doc,
-                        s4.load_umbrella_allowances(), rec.load_id_reservations(), scope=args.scope)
+                        s4.load_umbrella_allowances(), rec.load_id_reservations(), scope=args.scope,
+                        ruled_held=args.ruled_held)
     if not args.no_parity:
         parity(plan, courses, singletons, curations, canon_doc)
     out = os.path.join(OUT_DIR, date.today().isoformat())
@@ -324,7 +346,8 @@ def main(argv=None):
     val = plan["validation"]
     by_kind = Counter(m["kind"] for m in plan["moves"].values())
     by_how = Counter(m.get("how") for m in plan["moves"].values())
-    print(f"[prefix_fold_dryrun] {date.today().isoformat()} scope={args.scope}")
+    print(f"[prefix_fold_dryrun] {date.today().isoformat()} scope={args.scope}"
+          + (f" ruled-held={args.ruled_held!r}" if args.ruled_held else ""))
     print(f"  moves: {len(plan['alias']):,}  (" + ", ".join(f"{k} {v:,}" for k, v in by_kind.most_common()) + ")"
           f"  · held {len(plan['held']):,} · out of scope {len(plan['out_of_scope']):,}")
     print(f"  kept number {by_how.get('kept number', 0):,} · gap-filled {by_how.get('gap-filled', 0):,} · "

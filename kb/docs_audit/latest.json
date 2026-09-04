@@ -10,71 +10,71 @@
     "other": 150000
   },
   "summary": {
-    "files": 781,
-    "bytes": 8306193,
+    "files": 783,
+    "bytes": 8329278,
     "over_budget": 3,
-    "handoff_max": 225,
+    "handoff_max": 226,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 58779,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 58724,
+    "superseded_files": 3,
+    "superseded_bytes": 27087,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 58779,
+        "bytes": 58724,
         "over": 0
       },
       "other": {
         "files": 103,
-        "bytes": 2528601,
+        "bytes": 2534111,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 19763,
+        "bytes": 18959,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1934497,
+        "bytes": 1939714,
         "over": 1
       },
       "kb_note": {
-        "files": 374,
-        "bytes": 1951748,
+        "files": 375,
+        "bytes": 1956842,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 138669,
+        "bytes": 138663,
         "over": 0
       },
       "handoff": {
-        "files": 199,
-        "bytes": 1674136,
+        "files": 200,
+        "bytes": 1682265,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 21,
       "oversized_doc": 3,
-      "vault_heavy_path": 47
+      "superseded_handoff": 3,
+      "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2712,
-      "bytes": 1395283685,
-      "heavy_bytes": 703740024,
-      "heavy_share": 0.504,
+      "files": 2557,
+      "bytes": 1304912260,
+      "heavy_bytes": 613287537,
+      "heavy_share": 0.47,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
-        "cpl-project-tracker/kb/row_audit/2026-09-03.full.json",
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
@@ -327,13 +327,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 551997,
+        "bytes": 555737,
         "limit": 150000,
         "lane": "other",
-        "over_by": 401997,
-        "ratio": 3.68
+        "over_by": 405737,
+        "ratio": 3.7
       },
-      "message": "551,997 B is 3.7× the other budget (150,000 B) — candidate for compaction",
+      "message": "555,737 B is 3.7× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -347,6 +347,39 @@
       },
       "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 223,
+        "authoritative": 226,
+        "has_frontmatter": true
+      },
+      "message": "handoff 223 is below the authoritative 226 but is not stamped `superseded: true`",
+      "path": "docs/session_223_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 224,
+        "authoritative": 226,
+        "has_frontmatter": true
+      },
+      "message": "handoff 224 is below the authoritative 226 but is not stamped `superseded: true`",
+      "path": "docs/session_224_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 225,
+        "authoritative": 226,
+        "has_frontmatter": true
+      },
+      "message": "handoff 225 is below the authoritative 226 but is not stamped `superseded: true`",
+      "path": "docs/session_225_handoff.md"
     },
     {
       "rule": "house_voice",
@@ -421,16 +454,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 76626038,
-        "kind": "dir"
-      },
-      "message": "directory totals 76,626,038 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
@@ -461,6 +484,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 12452423,
+        "kind": "dir"
+      },
+      "message": "directory totals 12,452,423 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "unified_courses_member_desc.js",
       "detail": {
         "bytes": 47884734,
@@ -487,16 +520,6 @@
         "kind": "file"
       },
       "message": "34,299,627 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/row_audit/2026-09-03.full.json",
-      "detail": {
-        "bytes": 26278872,
-        "kind": "file"
-      },
-      "message": "26,278,872 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

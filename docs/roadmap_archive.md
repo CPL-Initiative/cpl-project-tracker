@@ -5379,3 +5379,24 @@ nearest $1,000, the curator view exact (ADR ratified); 57 colleges earn on Acces
 now. `CollegeID2`, the NC FTES origination key, has not landed. ⭐ A floor lives
 in fixtures as well as code — four jsdom suites pinned the old number. Story:
 `map_custom_reports_lessons` + `cpl_funding_lessons`; handoff `session_223_handoff`.
+
+### SkyOrbit S223 — the whole universe, full screen, every stand-alone in orbit (2026-09-03)
+
+**One PR (#1441).** Sam's five SkyView goals shipped: the map fills the first
+screen (a **Full screen** word-button; the panes one scroll below); the header
+box jumps to a subject, an identity, a stand-alone OR a college course by code or
+control number; hover is a quick look, click an inspector over the map with the
+catalog description on a course number, and labels grow with zoom (number →
+title → units · system); **every stand-alone course orbits the identity it is
+most aligned to** — 31,350 of 33,423, 1,521 of them across a discipline line on
+his Business / Vocational example, 2,073 on the rim — as a suggestion, never a
+decision (**Move here** accepts one as the `CN:` row a drag writes). Descriptions
+live in the public storage bucket `ccr-desc` (filled by the workflow's first
+dispatch, 2026-09-03). ⭐ Corroborators must not outvote the primary signal; a side table keyed
+by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
+`session_224_handoff`.
+
+### `docs/INDEX.md` update-history entries rotated 2026-09-04 (verbatim)
+
+- **2026-09-01 (SkyMeld, S218 — four outcomes fold into three bands)** — **Sam's consolidation shipped** (PR #1429, `724feac`): the Implementation Funding tab carried **two sections describing one allocation** (the priorities and the §78093.2(d)(1) goals, stitched by a superscript) and is now ONE — **(A) Access · (B)+(C) Success · (D) Opportunities**, his fold, with membership **DERIVED** from each metric's milestone (the resolver the earning math uses, so band and dollars cannot disagree), an **orphan band** so nothing vanishes, the goal spine kept as the (d)(2) fold, a new `accepted` milestone → (B)+(C), and two measure sources declared (`ppe`/`ppe_u` live; `pac`/`pac_u` omitted-not-zeroed until the attestation column). ⭐ **The finding that carried it: the model pays 34.0% of the credit slice and 84% of that comes from the one measure 97 of 115 colleges already max out** — an over-target measure is an automatic payment, the mirror of the unmeasurable-metric failure. Sam ruled the dials (Accepted 25% / factor 1.0) — **his to set via the tab**. ⚠️ He also **corrected the session**: the counselor step CAN be batch-loaded, so it is a **policy attestation, not a technical guarantee**. Caught and mutation-pinned a bug the banding introduced (one grid per band silently killed reorder outside the first). 2 KB notes ([`kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing`](kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md), [`kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring`](kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md)), 4 memory rows.
+- **2026-09-01 (SkyDeck, S217 — the 9/02 session deck + the sunshine rule)** — Sam's Taco Tuesday deck rebuilt (8 → 14 slides, in CPLBrain `04-projects/cpl-initiative/`): agenda 30/5/10, the ESS 25-82 $50K review + a reporting-methods slide, THREE Ed Code §78093.2 slides (incl. the statute verbatim), funding at **general principles only — the sunshine rule (Sam, verbatim in the lane file): no new-model specifics outward until CO leadership confirms**. Priorities read from the live config; the deck's stale Oct. 31 opt-in corrected to Nov. 1. Found: two STATIC prose passages in the public explainer still assert the old model (painter fixes numbers, not prose) — lane NEXT ①. PR #1427 confirmed merged. 1 KB note ([`kb-notes/methodology-a-live-painted-page-still-goes-stale-in-its-prose`](kb-notes/methodology-a-live-painted-page-still-goes-stale-in-its-prose.md)), 2 memory rows.

@@ -113,6 +113,22 @@ jobs:
       # than drops. Pure-stdlib python, no network.
       - name: Prefix fold dry-run guard (kb/_prefix_fold_dryrun.py)
         run: python3 tests/prefix_fold_dryrun_test.py
+      # Prefix fold apply (Session 225) — the receipted half: a moved row
+      # without its stamp or with an earlier stamp lost, a materialized
+      # record's member list left on an old id, a stale identities entry left
+      # describing the wrong row, a receipt cut under another scope or ruling
+      # passing P1, a second run of the same receipt, a TOP-only row moving
+      # without the ruling on its evidence. Pure-stdlib python, no network.
+      - name: Prefix fold apply guard (kb/_prefix_fold_apply.py)
+        run: python3 tests/prefix_fold_apply_test.py
+      # crnc_mirrors re-key (Session 225) — the 6th id-keyed artifact class,
+      # missing from the post-apply chain until the recode left 398 of its
+      # keys on retired ids: one lookup per map (never iterated within a map),
+      # cross-map chains followed, two classes converging reported not merged,
+      # a key on a memberless id reported, the era suffix guarded. Reads the
+      # committed file too. Pure-stdlib python, no network.
+      - name: crnc mirrors re-key guard (kb/_rekey_crnc_mirrors.py)
+        run: python3 tests/rekey_crnc_mirrors_test.py
       # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
       # nights reporting a name mismatch while MAP was plainly answering
       # 400 "View_StudentDetailsCredits_APIDataset is not Valid" in a field

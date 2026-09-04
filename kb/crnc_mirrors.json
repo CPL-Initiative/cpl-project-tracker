@@ -1345,7 +1345,7 @@
     ]
    ]
   },
-  "AGRI M1121": {
+  "AGEH M1121": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -1405,7 +1405,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1126": {
+  "AGEH M1126": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -1417,7 +1417,7 @@
     ]
    ]
   },
-  "AGRI M1107": {
+  "AGEH M1107": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -1574,7 +1574,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1202": {
+  "BSOT M1202": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
@@ -1634,7 +1634,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1052": {
+  "AGAS M1052": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -1646,7 +1646,7 @@
     ]
    ]
   },
-  "AGRI M1137": {
+  "AGAS M1137": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -1658,7 +1658,7 @@
     ]
    ]
   },
-  "AGRI M1139": {
+  "AGAS M1139": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2612,7 +2612,7 @@
     ]
    ]
   },
-  "AGRI M1088": {
+  "AGAS M1088": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2624,7 +2624,7 @@
     ]
    ]
   },
-  "AGRI M1136": {
+  "AGAS M1136": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2648,7 +2648,7 @@
     ]
    ]
   },
-  "AGRI M1034": {
+  "AGAS M1034": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2660,7 +2660,7 @@
     ]
    ]
   },
-  "AGRI M1036": {
+  "AGAS M1036": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2672,13 +2672,13 @@
     ]
    ]
   },
-  "AGRI M1045": {
+  "AGAS M1045": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1049": {
+  "AGAS M1049": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2690,7 +2690,7 @@
     ]
    ]
   },
-  "AGRI M1050": {
+  "AGAS M1050": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2702,7 +2702,7 @@
     ]
    ]
   },
-  "AGRI M1056": {
+  "AGAS M1056": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2714,7 +2714,7 @@
     ]
    ]
   },
-  "AGRI M1039": {
+  "AGAS M1039": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2726,7 +2726,7 @@
     ]
    ]
   },
-  "AGRI M1092": {
+  "AGAS M1092": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2738,7 +2738,7 @@
     ]
    ]
   },
-  "AGRI M1054": {
+  "AGAS M1054": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2750,7 +2750,7 @@
     ]
    ]
   },
-  "AGRI M1057": {
+  "AGAS M1057": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2762,7 +2762,7 @@
     ]
    ]
   },
-  "AGRI M1110": {
+  "AGAS M1110": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2774,7 +2774,7 @@
     ]
    ]
   },
-  "AGRI M1111": {
+  "AGAS M1111": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2786,7 +2786,7 @@
     ]
    ]
   },
-  "AGRI M1120": {
+  "AGAS M1120": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2798,7 +2798,7 @@
     ]
    ]
   },
-  "AGRI M1122": {
+  "AGAS M1122": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2810,7 +2810,7 @@
     ]
    ]
   },
-  "AGRI M1125": {
+  "AGAS M1125": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2822,7 +2822,7 @@
     ]
    ]
   },
-  "AGRI M1060": {
+  "AGAS M1060": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -3933,7 +3933,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1039": {
+  "COMP M1039": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -4263,31 +4263,31 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1038": {
+  "BSOT M1038": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1096": {
+  "BSOT M1096": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1104": {
+  "BSOT M1104": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1156": {
+  "ITIS M1156": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1139": {
+  "BSOT M1139": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -4299,7 +4299,7 @@
     ]
    ]
   },
-  "OTEC M1195": {
+  "BSOT M1195": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -4335,7 +4335,7 @@
     ]
    ]
   },
-  "OTEC M1233": {
+  "BSOT M1233": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -4432,19 +4432,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1228": {
+  "BSOT M1228": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1108": {
+  "BSOT M1108": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1198": {
+  "BSOT M1198": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -4456,7 +4456,7 @@
     ]
    ]
   },
-  "OTEC M1193": {
+  "BSOT M1193": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -4468,7 +4468,7 @@
     ]
    ]
   },
-  "OTEC M1037": {
+  "BSOT M1037": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -4498,25 +4498,25 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9059": {
+  "BSOT M9059": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1098": {
+  "BSOT M1098": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1201": {
+  "BSOT M1201": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1232": {
+  "BSOT M1232": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -4570,43 +4570,43 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1082": {
+  "BSOT M1082": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1065": {
+  "BSOT M1065": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1129": {
+  "BSOT M1129": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1120": {
+  "BSOT M1120": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1210": {
+  "BSOT M1210": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1106": {
+  "BSOT M1106": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1008": {
+  "BSOT M1008": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -4618,13 +4618,13 @@
     ]
    ]
   },
-  "OTEC M1178": {
+  "BSOT M1178": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1182": {
+  "BSOT M1182": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -4748,7 +4748,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1132": {
+  "BSOT M1132": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -5314,13 +5314,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1052": {
+  "BSOT M1052": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1057": {
+  "BSOT M1057": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5500,7 +5500,7 @@
     ]
    ]
   },
-  "CSIS M1040": {
+  "ITIS M1040": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5524,43 +5524,43 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1066": {
+  "BSOT M1066": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1068": {
+  "BSOT M1068": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1067": {
+  "BSOT M1067": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1023": {
+  "BSOT M1023": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1024": {
+  "BSOT M1024": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1225": {
+  "BSOT M1225": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9032": {
+  "BSOT M9032": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -5644,7 +5644,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1102": {
+  "BSOT M1102": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5656,32 +5656,32 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1050": {
+  "BSOT M1050": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1045": {
+  "BSOT M1045": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1168": {
+  "BSOT M1168": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": [],
    "_source": "agent_readjudication_2026-07-12"
   },
-  "OTEC M1217": {
+  "BSOT M1217": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1230": {
+  "BSOT M1230": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5729,7 +5729,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1036": {
+  "BSOT M1036": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -5741,31 +5741,31 @@
     ]
    ]
   },
-  "OTEC M1072": {
+  "BSOT M1072": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1033": {
+  "BSOT M1033": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1155": {
+  "ITIS M1155": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1356": {
+  "ITIS M1356": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1030": {
+  "ITIS M1030": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5777,31 +5777,31 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1077": {
+  "BSOT M1077": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1166": {
+  "BSOT M1166": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1121": {
+  "BSOT M1121": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1200": {
+  "BSOT M1200": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1215": {
+  "BSOT M1215": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -5813,25 +5813,25 @@
     ]
    ]
   },
-  "ECED M1205": {
+  "CDEV M1205": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1119": {
+  "CDEV M1119": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1120": {
+  "CDEV M1120": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1123": {
+  "CDEV M1123": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -5843,25 +5843,25 @@
     ]
    ]
   },
-  "ECED M9023": {
+  "CDEV M9023": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1184": {
+  "CDEV M1184": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1082": {
+  "CDEV M1082": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1065": {
+  "CDEV M1065": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5915,26 +5915,26 @@
     ]
    ]
   },
-  "ECED M1099": {
+  "CDEV M1099": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1087": {
+  "CDEV M1087": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1090": {
+  "CDEV M1090": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": [],
    "_source": "agent_readjudication_2026-07-12"
   },
-  "ECED M1143": {
+  "CDEV M1143": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5946,13 +5946,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1113": {
+  "CDEV M1113": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1126": {
+  "BSOT M1126": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5964,13 +5964,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1075": {
+  "BSOT M1075": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1125": {
+  "BSOT M1125": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5988,37 +5988,37 @@
     ]
    ]
   },
-  "OTEC M1211": {
+  "BSOT M1211": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1042": {
+  "BSOT M1042": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1182": {
+  "ITIS M1182": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1183": {
+  "ITIS M1183": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1036": {
+  "ITIS M1036": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1060": {
+  "ITIS M1060": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -6030,7 +6030,7 @@
     ]
    ]
   },
-  "CSIS M1065": {
+  "ITIS M1065": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6042,43 +6042,43 @@
     ]
    ]
   },
-  "CSIS M1080": {
+  "ITIS M1080": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1092": {
+  "ITIS M1092": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1171": {
+  "ITIS M1171": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1246": {
+  "ITIS M1246": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1122": {
+  "BSOT M1122": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1252": {
+  "ITIS M1252": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1259": {
+  "ITIS M1259": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6090,67 +6090,67 @@
     ]
    ]
   },
-  "CSIS M1170": {
+  "ITIS M1170": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1216": {
+  "ITIS M1216": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1008": {
+  "ITIS M1008": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1009": {
+  "ITIS M1009": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1014": {
+  "ITIS M1014": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1015": {
+  "ITIS M1015": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1021": {
+  "ITIS M1021": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1022": {
+  "ITIS M1022": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1293": {
+  "ITIS M1293": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1299": {
+  "ITIS M1299": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1319": {
+  "ITIS M1319": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -6168,7 +6168,7 @@
     ]
    ]
   },
-  "CSIS M1016": {
+  "ITIS M1016": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6180,13 +6180,13 @@
     ]
    ]
   },
-  "CSIS M1355": {
+  "ITIS M1355": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1087": {
+  "ITIS M1087": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6198,19 +6198,19 @@
     ]
    ]
   },
-  "CSIS M1196": {
+  "ITIS M1196": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1309": {
+  "ITIS M1309": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1082": {
+  "ITIS M1082": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6222,13 +6222,13 @@
     ]
    ]
   },
-  "CSIS M1208": {
+  "ITIS M1208": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1063": {
+  "ITIS M1063": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6240,19 +6240,19 @@
     ]
    ]
   },
-  "CSIS M1131": {
+  "ITIS M1131": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1102": {
+  "ITIS M1102": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1197": {
+  "ITIS M1197": {
    "class": "mirror",
    "nc_total": 2,
    "nc_mirrored": 2,
@@ -6269,13 +6269,13 @@
     ]
    ]
   },
-  "CSIS M1249": {
+  "ITIS M1249": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1305": {
+  "ITIS M1305": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6287,13 +6287,13 @@
     ]
    ]
   },
-  "CSIS M1341": {
+  "ITIS M1341": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1167": {
+  "BSOT M1167": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -6305,13 +6305,13 @@
     ]
    ]
   },
-  "CSIS M1389": {
+  "ITIS M1389": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1002": {
+  "ITIS M1002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6323,13 +6323,13 @@
     ]
    ]
   },
-  "CSIS M1426": {
+  "ITIS M1426": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1428": {
+  "ITIS M1428": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6341,13 +6341,13 @@
     ]
    ]
   },
-  "CSIS M1417": {
+  "ITIS M1417": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1344": {
+  "ITIS M1344": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6359,13 +6359,13 @@
     ]
    ]
   },
-  "CSIS M1436": {
+  "ITIS M1436": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1416": {
+  "ITIS M1416": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 2,
@@ -6382,37 +6382,37 @@
     ]
    ]
   },
-  "CSIS M1435": {
+  "ITIS M1435": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1437": {
+  "ITIS M1437": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1347": {
+  "ITIS M1347": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1079": {
+  "ITIS M1079": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1034": {
+  "ITIS M1034": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1358": {
+  "ITIS M1358": {
    "class": "partial_mirror",
    "nc_total": 4,
    "nc_mirrored": 1,
@@ -6424,7 +6424,7 @@
     ]
    ]
   },
-  "CSIS M1458": {
+  "ITIS M1458": {
    "class": "partial_mirror",
    "nc_total": 4,
    "nc_mirrored": 1,
@@ -6436,7 +6436,7 @@
     ]
    ]
   },
-  "CSIS M1459": {
+  "ITIS M1459": {
    "class": "mirror",
    "nc_total": 3,
    "nc_mirrored": 1,
@@ -6449,7 +6449,7 @@
    ],
    "_source": "agent_readjudication_2026-07-12"
   },
-  "CSIS M1462": {
+  "ITIS M1462": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6461,13 +6461,13 @@
     ]
    ]
   },
-  "CSIS M1369": {
+  "ITIS M1369": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1120": {
+  "ITIS M1120": {
    "class": "mirror",
    "nc_total": 2,
    "nc_mirrored": 2,
@@ -6484,19 +6484,19 @@
     ]
    ]
   },
-  "CSIS M1150": {
+  "ITIS M1150": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1149": {
+  "ITIS M1149": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1107": {
+  "ITIS M1107": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6508,7 +6508,7 @@
     ]
    ]
   },
-  "CSIS M1108": {
+  "ITIS M1108": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6520,19 +6520,19 @@
     ]
    ]
   },
-  "CSIS M1116": {
+  "ITIS M1116": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1479": {
+  "ITIS M1479": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1188": {
+  "ITIS M1188": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6544,13 +6544,13 @@
     ]
    ]
   },
-  "CSIS M1088": {
+  "ITIS M1088": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1010": {
+  "ITIS M1010": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6562,13 +6562,13 @@
     ]
    ]
   },
-  "CSIS M1046": {
+  "ITIS M1046": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1054": {
+  "ITIS M1054": {
    "class": "mirror",
    "nc_total": 2,
    "nc_mirrored": 2,
@@ -6585,43 +6585,43 @@
     ]
    ]
   },
-  "CSIS M1371": {
+  "ITIS M1371": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1154": {
+  "ITIS M1154": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1448": {
+  "ITIS M1448": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1469": {
+  "ITIS M1469": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1181": {
+  "BSOT M1181": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1185": {
+  "BSOT M1185": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M9005": {
+  "ITIS M9005": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6633,7 +6633,7 @@
     ]
    ]
   },
-  "CSIS M9033": {
+  "ITIS M9033": {
    "class": "mirror",
    "nc_total": 2,
    "nc_mirrored": 2,
@@ -6650,19 +6650,19 @@
     ]
    ]
   },
-  "CSIS M9010": {
+  "ITIS M9010": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1194": {
+  "BSOT M1194": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1115": {
+  "ITIS M1115": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6674,7 +6674,7 @@
     ]
    ]
   },
-  "CSIS M1117": {
+  "ITIS M1117": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6686,7 +6686,7 @@
     ]
    ]
   },
-  "OTEC M1234": {
+  "BSOT M1234": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6698,13 +6698,13 @@
     ]
    ]
   },
-  "CSIS M1401": {
+  "ITIS M1401": {
    "class": "band_mix",
    "nc_total": 5,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1032": {
+  "ITIS M1032": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6716,7 +6716,7 @@
     ]
    ]
   },
-  "CSIS M1031": {
+  "ITIS M1031": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6728,7 +6728,7 @@
     ]
    ]
   },
-  "CSIS M1415": {
+  "ITIS M1415": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6740,13 +6740,13 @@
     ]
    ]
   },
-  "CSIS M9015": {
+  "ITIS M9015": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1331": {
+  "ITIS M1331": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6806,7 +6806,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1004": {
+  "CDEV M1004": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6884,19 +6884,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1237": {
+  "ITIS M1237": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1081": {
+  "ITIS M1081": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1186": {
+  "ITIS M1186": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6908,7 +6908,7 @@
     ]
    ]
   },
-  "CSIS M1465": {
+  "ITIS M1465": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6920,7 +6920,7 @@
     ]
    ]
   },
-  "CSIS M1472": {
+  "ITIS M1472": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6932,7 +6932,7 @@
     ]
    ]
   },
-  "CSIS M1257": {
+  "ITIS M1257": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6944,13 +6944,13 @@
     ]
    ]
   },
-  "CSIS M1483": {
+  "ITIS M1483": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1189": {
+  "ITIS M1189": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6962,7 +6962,7 @@
     ]
    ]
   },
-  "CSIS M1484": {
+  "ITIS M1484": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -6974,7 +6974,7 @@
     ]
    ]
   },
-  "CSIS M1270": {
+  "ITIS M1270": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -7046,7 +7046,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1009": {
+  "COMP M1009": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -7058,13 +7058,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1054": {
+  "BSOT M1054": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1091": {
+  "COMP M1091": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -7082,73 +7082,73 @@
     ]
    ]
   },
-  "OTEC M1001": {
+  "BSOT M1001": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1004": {
+  "BSOT M1004": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1142": {
+  "ITIS M1142": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1005": {
+  "BSOT M1005": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1006": {
+  "BSOT M1006": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1002": {
+  "BSOT M1002": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1007": {
+  "BSOT M1007": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1067": {
+  "COMP M1067": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1330": {
+  "ITIS M1330": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M9011": {
+  "COMP M9011": {
    "class": "band_mix",
    "nc_total": 6,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M9018": {
+  "ITIS M9018": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M9058": {
+  "COMP M9058": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7160,13 +7160,13 @@
     ]
    ]
   },
-  "OTEC M9099": {
+  "BSOT M9099": {
    "class": "band_mix",
    "nc_total": 6,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M9059": {
+  "COMP M9059": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7178,7 +7178,7 @@
     ]
    ]
   },
-  "CISC M9071": {
+  "COMP M9071": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7190,7 +7190,7 @@
     ]
    ]
   },
-  "CISC M9068": {
+  "COMP M9068": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7274,37 +7274,37 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1110": {
+  "BSOT M1110": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1124": {
+  "BSOT M1124": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1130": {
+  "BSOT M1130": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1041": {
+  "BSOT M1041": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1043": {
+  "BSOT M1043": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1040": {
+  "BSOT M1040": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7316,91 +7316,91 @@
     ]
    ]
   },
-  "OTEC M1131": {
+  "BSOT M1131": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1044": {
+  "BSOT M1044": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1022": {
+  "BSOT M1022": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1169": {
+  "BSOT M1169": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1220": {
+  "BSOT M1220": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1221": {
+  "BSOT M1221": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1218": {
+  "BSOT M1218": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1227": {
+  "BSOT M1227": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1242": {
+  "BSOT M1242": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9058": {
+  "BSOT M9058": {
    "class": "band_mix",
    "nc_total": 8,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9016": {
+  "BSOT M9016": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9081": {
+  "BSOT M9081": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9089": {
+  "BSOT M9089": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1123": {
+  "BSOT M1123": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1146": {
+  "BSOT M1146": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -7526,19 +7526,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1234": {
+  "ITIS M1234": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1103": {
+  "ITIS M1103": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1215": {
+  "ITIS M1215": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -7886,13 +7886,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1012": {
+  "COMP M1012": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1074": {
+  "COMP M1074": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7904,13 +7904,13 @@
     ]
    ]
   },
-  "CISC M1050": {
+  "COMP M1050": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1005": {
+  "COMP M1005": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7934,7 +7934,7 @@
     ]
    ]
   },
-  "CISC M1044": {
+  "COMP M1044": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7946,7 +7946,7 @@
     ]
    ]
   },
-  "CISC M1087": {
+  "COMP M1087": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7958,19 +7958,19 @@
     ]
    ]
   },
-  "CISC M1094": {
+  "COMP M1094": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1007": {
+  "COMP M1007": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1002": {
+  "COMP M1002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7982,7 +7982,7 @@
     ]
    ]
   },
-  "CISC M1001": {
+  "COMP M1001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7994,7 +7994,7 @@
     ]
    ]
   },
-  "CISC M1003": {
+  "COMP M1003": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8006,7 +8006,7 @@
     ]
    ]
   },
-  "CISC M1006": {
+  "COMP M1006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8018,7 +8018,7 @@
     ]
    ]
   },
-  "CSIS M1254": {
+  "ITIS M1254": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8030,13 +8030,13 @@
     ]
    ]
   },
-  "CSIS M1083": {
+  "ITIS M1083": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1080": {
+  "COMP M1080": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8054,7 +8054,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1367": {
+  "ITIS M1367": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8066,7 +8066,7 @@
     ]
    ]
   },
-  "CSIS M9006": {
+  "ITIS M9006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8078,7 +8078,7 @@
     ]
    ]
   },
-  "CSIS M9001": {
+  "ITIS M9001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8090,7 +8090,7 @@
     ]
    ]
   },
-  "CSIS M9002": {
+  "ITIS M9002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8102,7 +8102,7 @@
     ]
    ]
   },
-  "CSIS M9003": {
+  "ITIS M9003": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8114,7 +8114,7 @@
     ]
    ]
   },
-  "CSIS M9007": {
+  "ITIS M9007": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8126,7 +8126,7 @@
     ]
    ]
   },
-  "CSIS M9024": {
+  "ITIS M9024": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8138,7 +8138,7 @@
     ]
    ]
   },
-  "CSIS M9035": {
+  "ITIS M9035": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8150,7 +8150,7 @@
     ]
    ]
   },
-  "CSIS M9022": {
+  "ITIS M9022": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8162,7 +8162,7 @@
     ]
    ]
   },
-  "CSIS M9039": {
+  "ITIS M9039": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8174,7 +8174,7 @@
     ]
    ]
   },
-  "CSIS M9011": {
+  "ITIS M9011": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8186,7 +8186,7 @@
     ]
    ]
   },
-  "CSIS M9032": {
+  "ITIS M9032": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -8204,7 +8204,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1010": {
+  "COMP M1010": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -8856,7 +8856,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M9034": {
+  "ITIS M9034": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -9155,7 +9155,7 @@
     ]
    ]
   },
-  "THEA M9001": {
+  "THTR M9001": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -9167,7 +9167,7 @@
     ]
    ]
   },
-  "THEA M9005": {
+  "THTR M9005": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -9179,7 +9179,7 @@
     ]
    ]
   },
-  "THEA M9003": {
+  "THTR M9003": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -9191,7 +9191,7 @@
     ]
    ]
   },
-  "THEA M9004": {
+  "THTR M9004": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -9334,7 +9334,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1010": {
+  "CDEV M1010": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -9346,25 +9346,25 @@
     ]
    ]
   },
-  "ECED M1103": {
+  "CDEV M1103": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1167": {
+  "CDEV M1167": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1083": {
+  "CDEV M1083": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1194": {
+  "CDEV M1194": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -9376,31 +9376,31 @@
     ]
    ]
   },
-  "ECED M1134": {
+  "CDEV M1134": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1148": {
+  "CDEV M1148": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1186": {
+  "CDEV M1186": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1187": {
+  "CDEV M1187": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M9017": {
+  "CDEV M9017": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
@@ -10071,7 +10071,7 @@
     ]
    ]
   },
-  "CSIS M9021": {
+  "ITIS M9021": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 1,
@@ -11089,7 +11089,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1264": {
+  "ITIS M1264": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -14517,7 +14517,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMS M1053": {
+  "FTVE M1053": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -14529,7 +14529,7 @@
     ]
    ]
   },
-  "FIMS M1074": {
+  "FTVE M1074": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -14541,19 +14541,19 @@
     ]
    ]
   },
-  "FIMS M1041": {
+  "FTVE M1041": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMS M1084": {
+  "FTVE M1084": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMS M1061": {
+  "FTVE M1061": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -14565,7 +14565,7 @@
     ]
    ]
   },
-  "FIMS M1081": {
+  "FTVE M1081": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -16606,7 +16606,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1033": {
+  "CDEV M1033": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -17506,7 +17506,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1390": {
+  "ITIS M1390": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -17842,7 +17842,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1072": {
+  "ITIS M1072": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17854,7 +17854,7 @@
     ]
    ]
   },
-  "CSIS M1220": {
+  "ITIS M1220": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17866,7 +17866,7 @@
     ]
    ]
   },
-  "CSIS M1278": {
+  "ITIS M1278": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17878,7 +17878,7 @@
     ]
    ]
   },
-  "CSIS M1266": {
+  "ITIS M1266": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17890,7 +17890,7 @@
     ]
    ]
   },
-  "CSIS M1140": {
+  "ITIS M1140": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17902,7 +17902,7 @@
     ]
    ]
   },
-  "CSIS M1364": {
+  "ITIS M1364": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17914,7 +17914,7 @@
     ]
    ]
   },
-  "CSIS M1282": {
+  "ITIS M1282": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17926,7 +17926,7 @@
     ]
    ]
   },
-  "CSIS M1422": {
+  "ITIS M1422": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17938,7 +17938,7 @@
     ]
    ]
   },
-  "CSIS M1427": {
+  "ITIS M1427": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17950,7 +17950,7 @@
     ]
    ]
   },
-  "OTEC M1175": {
+  "BSOT M1175": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17962,7 +17962,7 @@
     ]
    ]
   },
-  "CSIS M1475": {
+  "ITIS M1475": {
    "class": "partial_mirror",
    "nc_total": 4,
    "nc_mirrored": 1,
@@ -17974,7 +17974,7 @@
     ]
    ]
   },
-  "CSIS M9020": {
+  "ITIS M9020": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17986,7 +17986,7 @@
     ]
    ]
   },
-  "CSIS M9041": {
+  "ITIS M9041": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -17998,7 +17998,7 @@
     ]
    ]
   },
-  "CSIS M9036": {
+  "ITIS M9036": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18010,7 +18010,7 @@
     ]
    ]
   },
-  "CSIS M9026": {
+  "ITIS M9026": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18022,7 +18022,7 @@
     ]
    ]
   },
-  "CSIS M9030": {
+  "ITIS M9030": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18034,13 +18034,13 @@
     ]
    ]
   },
-  "CSIS M1357": {
+  "ITIS M1357": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1199": {
+  "BSOT M1199": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18520,13 +18520,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1029": {
+  "THTR M1029": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1201": {
+  "CDEV M1201": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18736,7 +18736,7 @@
     ]
    ]
   },
-  "AGRI M1072": {
+  "AGMA M1072": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18748,7 +18748,7 @@
     ]
    ]
   },
-  "AGRI M1105": {
+  "AGMA M1105": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18760,7 +18760,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "AGRI M1009": {
+  "AGMA M1009": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18856,55 +18856,55 @@
     ]
    ]
   },
-  "FLCH M1028": {
+  "CHIN M1028": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1029": {
+  "CHIN M1029": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1031": {
+  "CHIN M1031": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1033": {
+  "CHIN M1033": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1034": {
+  "CHIN M1034": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1036": {
+  "CHIN M1036": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1040": {
+  "CHIN M1040": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1041": {
+  "CHIN M1041": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1042": {
+  "CHIN M1042": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18916,7 +18916,7 @@
     ]
    ]
   },
-  "FLCH M1027": {
+  "CHIN M1027": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18928,7 +18928,7 @@
     ]
    ]
   },
-  "FLCH M1043": {
+  "CHIN M1043": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18940,13 +18940,13 @@
     ]
    ]
   },
-  "FLCH M1037": {
+  "CHIN M1037": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLCH M1038": {
+  "CHIN M1038": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18958,7 +18958,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1310": {
+  "ITIS M1310": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -19480,13 +19480,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMP M1009": {
+  "FTVE M1110": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M9004": {
+  "CDEV M9004": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -19748,7 +19748,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1425": {
+  "ITIS M1425": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -20240,7 +20240,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ECED M1136": {
+  "CDEV M1136": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20293,7 +20293,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9033": {
+  "BSOT M9033": {
    "class": "band_mix",
    "nc_total": 6,
    "nc_mirrored": 0,
@@ -20335,7 +20335,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9031": {
+  "BSOT M9031": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -20395,13 +20395,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9072": {
+  "BSOT M9072": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9069": {
+  "BSOT M9069": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20653,7 +20653,7 @@
     ]
    ]
   },
-  "FLSP M9002": {
+  "SPAN M9002": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -20665,7 +20665,7 @@
     ]
    ]
   },
-  "FLSP M9006": {
+  "SPAN M9006": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -20689,7 +20689,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9091": {
+  "BSOT M9091": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -21015,7 +21015,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9017": {
+  "BSOT M9017": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -21027,13 +21027,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9110": {
+  "BSOT M9110": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9102": {
+  "BSOT M9102": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
@@ -21045,7 +21045,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1133": {
+  "BSOT M1133": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -21057,13 +21057,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1226": {
+  "BSOT M1226": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1244": {
+  "BSOT M1244": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -21081,19 +21081,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMS M1035": {
+  "FTVE M1035": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1237": {
+  "BSOT M1237": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M9009": {
+  "THTR M9009": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -21183,25 +21183,25 @@
     ]
    ]
   },
-  "OTEC M1105": {
+  "BSOT M1105": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1134": {
+  "BSOT M1134": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1140": {
+  "BSOT M1140": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1174": {
+  "BSOT M1174": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21213,7 +21213,7 @@
     ]
    ]
   },
-  "OTEC M1081": {
+  "BSOT M1081": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21225,7 +21225,7 @@
     ]
    ]
   },
-  "OTEC M1203": {
+  "BSOT M1203": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21249,7 +21249,7 @@
     ]
    ]
   },
-  "OTEC M1149": {
+  "BSOT M1149": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21261,7 +21261,7 @@
     ]
    ]
   },
-  "OTEC M1207": {
+  "BSOT M1207": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21273,7 +21273,7 @@
     ]
    ]
   },
-  "OTEC M1017": {
+  "BSOT M1017": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -21285,7 +21285,7 @@
     ]
    ]
   },
-  "OTEC M1159": {
+  "BSOT M1159": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -21297,7 +21297,7 @@
     ]
    ]
   },
-  "OTEC M1196": {
+  "BSOT M1196": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21309,7 +21309,7 @@
     ]
    ]
   },
-  "OTEC M1109": {
+  "BSOT M1109": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21321,13 +21321,13 @@
     ]
    ]
   },
-  "OTEC M1243": {
+  "BSOT M1243": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1239": {
+  "BSOT M1239": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21339,7 +21339,7 @@
     ]
    ]
   },
-  "OTEC M1241": {
+  "BSOT M1241": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21351,7 +21351,7 @@
     ]
    ]
   },
-  "OTEC M9076": {
+  "BSOT M9076": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -21363,7 +21363,7 @@
     ]
    ]
   },
-  "OTEC M9106": {
+  "BSOT M9106": {
    "class": "partial_mirror",
    "nc_total": 3,
    "nc_mirrored": 1,
@@ -21375,13 +21375,13 @@
     ]
    ]
   },
-  "OTEC M1070": {
+  "BSOT M1070": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M9074": {
+  "BSOT M9074": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -21417,7 +21417,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1073": {
+  "BSOT M1073": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -22839,49 +22839,49 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1001": {
+  "SPAN M1001": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1003": {
+  "SPAN M1003": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1004": {
+  "SPAN M1004": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1005": {
+  "SPAN M1005": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1105": {
+  "SPAN M1105": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1055": {
+  "SPAN M1055": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1092": {
+  "SPAN M1092": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FLSP M1104": {
+  "SPAN M1104": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -23079,13 +23079,13 @@
     ]
    ]
   },
-  "THEA M1024": {
+  "THTR M1024": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1026": {
+  "THTR M1026": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -23097,19 +23097,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M9010": {
+  "THTR M9010": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M9008": {
+  "THTR M9008": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1170": {
+  "THTR M1170": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23121,7 +23121,7 @@
     ]
    ]
   },
-  "THEA M1240": {
+  "THTR M1240": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23133,7 +23133,7 @@
     ]
    ]
   },
-  "THEA M1242": {
+  "THTR M1242": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23145,7 +23145,7 @@
     ]
    ]
   },
-  "THEA M1244": {
+  "THTR M1244": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23157,13 +23157,13 @@
     ]
    ]
   },
-  "THEA M1247": {
+  "THTR M1247": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1246": {
+  "THTR M1246": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23175,7 +23175,7 @@
     ]
    ]
   },
-  "THEA M1277": {
+  "THTR M1277": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23187,7 +23187,7 @@
     ]
    ]
   },
-  "THEA M1262": {
+  "THTR M1262": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23199,7 +23199,7 @@
     ]
    ]
   },
-  "THEA M1123": {
+  "THTR M1123": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23223,7 +23223,7 @@
     ]
    ]
   },
-  "THEA M1287": {
+  "THTR M1287": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -23235,19 +23235,19 @@
     ]
    ]
   },
-  "THEA M1044": {
+  "THTR M1044": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1090": {
+  "THTR M1090": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1269": {
+  "THTR M1269": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23259,13 +23259,13 @@
     ]
    ]
   },
-  "THEA M1290": {
+  "THTR M1290": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1280": {
+  "THTR M1280": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -23277,7 +23277,7 @@
     ]
    ]
   },
-  "THEA M9006": {
+  "THTR M9006": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -23439,7 +23439,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "OTEC M1212": {
+  "BSOT M1212": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -23487,7 +23487,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M9045": {
+  "ITIS M9045": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
@@ -24388,5 +24388,23 @@
    ]
   }
  },
- "_overlay_note": "11 cross-college mirrors folded from the 2026-07-12 agent re-adjudication (kb/crnc_out/2026-07-12/)"
+ "_overlay_note": "11 cross-college mirrors folded from the 2026-07-12 agent re-adjudication (kb/crnc_out/2026-07-12/)",
+ "_rekeyed_through": [
+  "kb/subj4_apply/alias_map.json",
+  "kb/crossdisc_out/alias_map.json",
+  "kb/fl_subj4_out/2026-06-09/alias_map.json",
+  "kb/kin_pe_out/2026-06-10/alias_map.json",
+  "kb/drama_theater_out/2026-06-10/alias_map.json",
+  "kb/convergence_singletons_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-10/alias_map.json",
+  "kb/twin_merge_out/2026-06-12/alias_map.json",
+  "kb/subj4_fold_out/2026-06-12/alias_map.json",
+  "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",
+  "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",
+  "kb/pols_remint_out/2026-07-10/alias_map.json",
+  "kb/authority_recode_out/2026-09-03/alias_map.json",
+  "kb/zband_retire_out/2026-09-03/alias_map.json"
+ ],
+ "_rekeyed_at": "2026-09-04",
+ "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"
 }

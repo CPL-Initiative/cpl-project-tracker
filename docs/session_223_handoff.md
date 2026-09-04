@@ -4,6 +4,8 @@ created: 2026-09-03
 updated: 2026-09-03
 tags: [handoff]
 obsidian-folder: cpl-project-tracker/handoffs
+superseded: true
+superseded_by: session_226_handoff.md
 ---
 
 # You are Session 223
