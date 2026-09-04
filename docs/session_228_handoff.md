@@ -78,16 +78,37 @@ Once ruled, roles 2–4 apply without further input.
    pane; encode the SC 2.5.8 inline exception), then reconcile the raw-hex
    palette. **338 controls with no accessible name** is the one control number
    that survived triage.
-2. **SkyView items 1–6.** ⭐ Item 1 is not a bigger number: `nodeRad()` scales
-   radius **linearly with `k`**, and orbit positions scale linearly too, so the
-   size-to-separation ratio is CONSTANT at every zoom — which is why zooming has
-   never helped pick one course from a crowded orbit. Tapering radius above a
-   knee (`4·√(k/4)`) fixes it: measured on `KINE M1750`, at 40× the edge-to-
-   satellite gap goes 85px → 374px while the radius drops 318px → 101px.
-   ⚠️ Items 4 and 6 need a DATA change first — the payload carries no credit
-   field (the builder reads `credit` for scoring but never emits it). Upstream:
-   Credit 85.4% / Noncredit 7.8% / NC Enhanced 6.3% / **73 missing**. Three
-   states, not two.
+2. **SkyView — Sam gave a SECOND list on 2026-09-04 (ten items). Six shipped
+   this session; four remain.**
+
+   ⚠️ **Items 3, 4 and 9 of that list were RE-REPORTS** — he believed the NC
+   rings, the zoom cap and the CR/NC toggle had shipped from his earlier list.
+   They had not (he had asked for the masthead first). If he reports something
+   "not showing up", check whether it was ever built before debugging it.
+
+   **Shipped:** ④ zoom to 6000% *with the radius taper that makes it useful*
+   (raising the cap alone would have made isolation worse — see the commit);
+   ⑥ the legend folds away; ⑦ the detail panel starts hidden; ⑧ the top is one
+   row that no longer wraps; ③ noncredit draws as a **broken ring**; ⑨ the
+   **CR / NC toggle**, three positions because 73 identities have no recorded
+   credit status and either bucket would be a lie.
+
+   **STILL OPEN — his items ①, ②, ⑤, and the search grouping:**
+   - ① the CCR **side-menu** link should open the **full-window** SkyView
+     directly, not the embedded view. The standalone page is
+     `prototype/skyview.html`; today `unified_courses.js:203` offers it as
+     "Open it in its own tab ↗" from inside the tab.
+   - ② add a **CCR table view** link to the three in `#u-top`'s nav
+     (`All disciplines` · `Subjects as a list` · `ESL packaging`) and **clarify
+     those labels** — he finds them unclear. The views available are
+     `__ccrForest`, `__ccrSubjectList`, `__ccrEsl`, `__ccrDiscipline`.
+   - ⑤ **labels should show which circle they belong to** — "Now I need to click
+     on the course circle to see which is which." Leader lines exist (#1460);
+     this is about making the tie visible at a glance.
+   - **keyword search: keep CR courses together, separated from NC** (from his
+     first list). The payload now carries `c`, so this is no longer blocked.
+   - Also still open from the first list: a **mute non-essential labels**
+     toggle, and a **resizable / pop-out** detail panel (⑦ only hid it).
 3. **Config to tables** — Sam approved *"your best recommendations on moving
    config values to table-based in Admin or where they belong"*: the `ORGS` list
    in `cobi_orgs.js` and the alpha-banner copy. `public.cobi_nav` is the

@@ -158,9 +158,120 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     `${qa("#u-more .cell").length} cells`);
   check("(A) the map screen carries exactly ONE search field (the header's)",
     qa("input[type=search]").length === 1, `${qa("input[type=search]").length}`);
-  check("(A) every control is a word, not a glyph",
-    /Zoom out/.test(text("#u-out")) && /Zoom in/.test(text("#u-in")) && /Full screen/.test(text("#u-fs")) &&
-    /Reset view/.test(text("#u-reset")) && /Subjects as a list/.test(text("#u-list")));
+  // ⭐ Asserts the PROPERTY, not the wording. This check used to match the literal
+  // strings "Zoom out" / "Zoom in" / "Reset view", and broke on 2026-09-04 when
+  // they shortened to Out / In / Reset under a "Zoom" group label so the top
+  // could fit ONE row (Sam: "I want all the real estate for the universe view").
+  // Nothing it protects changed — they are still words — so the check now tests
+  // that, the way the repo's own note on position/wording-coupled tests says to.
+  {
+    const ctrls = ["#u-out", "#u-in", "#u-reset", "#u-fs", "#u-list", "#u-insp-toggle", "#u-foot-toggle"];
+    const GLYPH = /[\u2190-\u21FF\u2300-\u27BF\u2B00-\u2BFF\uD800-\uDBFF\uFE0F]/;
+    check("(A) every control is a word, not a glyph",
+      ctrls.every((c) => { const t = text(c).trim(); return t.length > 0 && /[A-Za-z]/.test(t) && !GLYPH.test(t); }),
+      ctrls.map((c) => text(c).trim()).join(" | "));
+    // The shortened words keep their meaning from the group label beside them.
+    check("(A) ⭐ the shortened zoom controls carry a group label that says what they act on",
+      /Zoom/i.test(text(".u-zgroup")) && !!q(".u-zgroup #u-out") && !!q(".u-zgroup #u-in"),
+      text(".u-zgroup").trim());
+  }
+  // ── the 2026-09-04 chrome changes, asserted on a freshly booted page ──────
+  check("(A) ⭐ the details panel starts HIDDEN so the map opens at full width (Sam, 2026-09-04)",
+    q("#u-inspector").classList.contains("closed") && !st().inspectorOpen && /^Details$/.test(text("#u-insp-toggle").trim()),
+    text("#u-insp-toggle"));
+  // ⭐ Sam, 2026-09-04: "consolidate the top … I want all the real estate for the
+  // universe view." #u-top was ALREADY one row (space-between: links left,
+  // controls right) — what he saw was it WRAPPING at his zoom, because the long
+  // control labels would not fit beside the links. So the fix is that it fits.
+  check("(A) ⭐ the links and the controls share ONE row inside #u-top",
+    !!q("#u-top .u-nav") && !!q("#u-top #u-bar")
+    && q("#u-top .u-nav").parentElement === q("#u-top")
+    && q("#u-top #u-bar").parentElement === q("#u-top"));
+  // ⚠️ The controls must NOT be lifted into the page masthead. That was tried and
+  // fails twice: the masthead is outside #u-full (the only element full screen
+  // paints), and it outlives the view, so navigating away and back left two
+  // #u-bar and two #u-fs under one id. The row is achieved inside #u-full.
+  check("(A) ⭐ the controls are NOT lifted into the masthead — full screen would lose them",
+    !q(".mast #u-bar") && !q(".mast .u-bar"));
+  // ⚠️ AND THE VIEW LINKS STAY HARD LEFT. A "SkyView" title was added to this row
+  // and had to come out: the masthead already carries the name, and the title
+  // pushed the links rightward under the search suggestion dropdown, which is
+  // absolutely positioned over whatever sits below the masthead. Chromium
+  // reported #u-list unclickable — on a route Sam asked for by name (type a
+  // term, then open the subject list seeded from the box).
+  check("(A) ⭐ no title crowds the view links out from under the search dropdown",
+    !q("#u-top .u-title") && q("#u-top").firstElementChild === q("#u-top .u-nav"));
+  // ── item 4 (Sam, 2026-09-04): zoom past 900%, and the taper that earns it ──
+  // "it needs to go higher than 900% so I can isolate 1 CCR course while keeping
+  // the other courses visible surrounding it, in case I need to drag one into
+  // the CCR course."
+  {
+    const S = st();
+    check("(A) ⭐ the zoom ceiling is well past the old 9x (900%)", S.kMax > 9, `K_MAX=${S.kMax}`);
+    // ⭐ THE TAPER IS THE POINT, not the bigger number. Radius used to scale
+    // LINEARLY with zoom while orbit positions did too, so the ratio of a
+    // circle's size to the gap between circles was CONSTANT at every zoom —
+    // which is why zooming in never helped pick one course out of a crowd, and
+    // why raising the cap alone would have made it worse (a 100-course identity
+    // at k=40 would draw at a 508px radius and push its neighbours off screen).
+    const f = S.radScaleAt;
+    check("(A) below the knee the radius still tracks zoom exactly",
+      f(1) === 1 && f(S.radKnee) === S.radKnee);
+    check("(A) ⭐ above the knee separation outpaces size, so the orbit spreads out",
+      f(S.kMax) < S.kMax && f(40) < 40 && f(40) > f(9),
+      `radScale(40)=${f(40).toFixed(1)} vs linear 40`);
+    check("(A) …and the taper is monotonic — zooming in never shrinks a circle",
+      [1, 4, 9, 20, 40, S.kMax].every((k, i, a) => i === 0 || f(k) > f(a[i - 1])));
+  }
+  // ── items 3 + 9 (Sam, 2026-09-04): noncredit is visible, and filterable ────
+  // "Need to visually differentiate NC courses — I'm thinking rather than
+  // another color, perhaps a broken line or dotted circle. Also need a CR NC
+  // toggle." Both were blocked until the payload carried the credit status at
+  // all: the builder READ `credit` to score orbits but never emitted it.
+  {
+    const S = st();
+    check("(A) ⭐ the payload now carries credit status per point",
+      S.creditCounts.cr > 0 || S.creditCounts.nc > 0 || S.creditCounts.unrecorded > 0,
+      JSON.stringify(S.creditCounts));
+    check("(A) the filter starts on All, so nothing is hidden until asked",
+      S.creditFilter === "all" && S.creditCounts.shown ===
+        S.creditCounts.cr + S.creditCounts.nc + S.creditCounts.unrecorded);
+    // ⭐ THREE STATES AND A GAP. A two-way toggle would have to file the points
+    // with NO recorded credit status under credit or under noncredit, and either
+    // is a lie — the false-zero shape this repo keeps relearning. They show
+    // under All and nowhere else, and the hint says how many.
+    check("(A) ⭐ the toggle has THREE positions, not two",
+      !!q("#u-cr-all") && !!q("#u-cr-cr") && !!q("#u-cr-nc"));
+    w.__ccrSetCredit("nc");
+    check("(A) Noncredit hides the credit courses", st().creditFilter === "nc" &&
+      st().creditCounts.shown === st().creditCounts.nc, `${st().creditCounts.shown}`);
+    w.__ccrSetCredit("cr");
+    check("(A) ⭐ Credit hides the UNRECORDED too — they are not credit",
+      st().creditCounts.shown === st().creditCounts.cr);
+    w.__ccrSetCredit("all");
+    check("(A) …and All brings the unrecorded back, saying how many",
+      st().creditCounts.shown === st().creditCounts.cr + st().creditCounts.nc + st().creditCounts.unrecorded
+      && /no recorded credit status/i.test(text("#u-hint")));
+    // The mark is a STROKE, not a colour: colour already carries the identity
+    // system, and a second colour scale would make the reader hold two at once.
+    check("(A) ⭐ noncredit is a broken ring whose dash scales with the circle",
+      Array.isArray(S.ncDashAt(8)) && S.ncDashAt(40)[0] > S.ncDashAt(4)[0],
+      `r=4 ${S.ncDashAt(4)[0]} vs r=40 ${S.ncDashAt(40)[0]}`);
+    check("(A) …and the legend explains the broken ring in words",
+      /noncredit/i.test(text(".u-legend")) && /broken ring/i.test(text(".u-legend")));
+  }
+  check("(A) the legend strip can be folded away, and says so in a word",
+    !!q("#u-foot-toggle") && /legend/i.test(text("#u-foot-toggle")));
+  {
+    const foot = q("#u-foot"), btn = q("#u-foot-toggle");
+    btn.click();
+    check("(A) ⭐ hiding the legend folds the strip away (Sam: 'make the footer hidable')",
+      foot.classList.contains("u-foot-hidden") && /^Legend$/.test(text("#u-foot-toggle").trim())
+      && btn.getAttribute("aria-expanded") === "false");
+    btn.click();
+    check("(A) …and it comes back", !foot.classList.contains("u-foot-hidden")
+      && /Hide legend/.test(text("#u-foot-toggle")));
+  }
   check("(A) the legend explains the hollow point in words",
     /stand-alone course, in orbit/.test(text(".u-legend")));
   check("(A) the intro states orbiting, cross and rim counts from the payload",
@@ -333,8 +444,16 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(M) leaving it restores the label", /^Full screen$/.test(text("#u-fs").trim()));
 
   // ── (N) the inspector can be folded away and comes back on a selection ────
+  // ⚠️ The INITIAL state is asserted in (A), right after boot — by the time this
+  // block runs, earlier checks have selected a node and openInspector() has
+  // legitimately opened the panel. Asserting "starts hidden" here would be
+  // asserting it about a page that has been used.
+  if (!st().inspectorOpen) q("#u-insp-toggle").click();      // normalize: open
+  check("(N) an open panel says how to put it away",
+    !q("#u-inspector").classList.contains("closed") && /Hide details/.test(text("#u-insp-toggle")) && st().inspectorOpen);
   q("#u-insp-toggle").click();
-  check("(N) the details panel folds to a word", q("#u-inspector").classList.contains("closed") && /Show details/.test(text("#u-insp-toggle")) && !st().inspectorOpen);
+  check("(N) the details panel folds to a word",
+    q("#u-inspector").classList.contains("closed") && /Details/.test(text("#u-insp-toggle")) && !st().inspectorOpen);
   w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[0] });
   check("(N) selecting something opens it again", !q("#u-inspector").classList.contains("closed") && /Welding/.test(text("#u-detail h3")));
   check("(N) a subject card lists its identities as buttons that open them", qa("#u-detail .idlist [data-go]").length === 2);

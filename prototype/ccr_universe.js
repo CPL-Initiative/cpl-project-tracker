@@ -62,7 +62,11 @@ var authority=null;          // {discipline: {cs, chips:[{system,code}], source,
 var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
-var inspOpen=true;
+/* Starts CLOSED (Sam, 2026-09-04: "Open SkyView with the detail panel default
+ * hidden") — the map gets the width until you actually select something.
+ * openInspector() still opens it on the first click of a node, so selecting a
+ * course shows its details exactly as before; only the INITIAL state changed. */
+var inspOpen=false;
 /* What a drag does (Sam, 2026-09-03: "need chips or icons to choose whether to
  * move an item or reposition the focus — when zoom, I couldn't see how to move
  * the screen to keep the subject in view"). "move" carries a course or a
@@ -92,6 +96,28 @@ var memberPts=[];            // the member squares drawn this frame — {x,y,m,n
  * Reported from a browser by Sam, 2026-08-25: 19 hits across 9 subjects, zoom
  * 12%, no rings. One constant read by both is what stops them disagreeing. */
 var NODE_ZOOM=0.20;
+/* ── Zoom ceiling, and why the radius has to taper with it (Sam, 2026-09-04) ──
+ * "it needs to go higher than 900% so I can isolate 1 CCR course while keeping
+ * the other courses visible surrounding it, in case I need to drag one into the
+ * CCR course."
+ *
+ * ⚠️ RAISING THE CAP ALONE MAKES THAT HARDER, NOT EASIER. nodeRad() scaled
+ * radius LINEARLY with view.k, and orbit positions are world coordinates so
+ * their screen separation scales linearly too — the ratio of a circle's SIZE to
+ * the GAP between circles was therefore constant at every zoom, which is why
+ * zooming in never helped pick one course out of a crowded orbit. Worse, a
+ * 100-course identity at k=40 would draw at a 508px radius and push the very
+ * neighbours he wants to drag from off the screen.
+ *
+ * So above RAD_KNEE the radius grows with the SQUARE ROOT of the zoom while
+ * positions keep scaling linearly: the courses spread apart relative to their
+ * own size, which is what "isolate one, keep the others visible around it"
+ * means geometrically. Measured on KINE M1750 (30 members, 22 orbiting): at 40x
+ * the edge-to-satellite gap goes 85px -> 374px while the radius falls
+ * 318px -> 101px. */
+var K_MIN=0.03, K_MAX=60, RAD_KNEE=4;
+function radScale(k){ return k<=RAD_KNEE ? k : RAD_KNEE*Math.sqrt(k/RAD_KNEE); }
+function clampK(k){ return Math.max(K_MIN, Math.min(K_MAX, k)); }
 /* Progressive labels (Sam, 2026-09-03: "the full number and title and units and
  * if it is a MID, CID, CCN showing on the course info as you zoom in"). Three
  * bands, each a constant so the harness can assert the order: the identity's
@@ -169,9 +195,28 @@ function whyWords(w){
   var out=[]; WHY.forEach(function(p){ if(w&p[0]) out.push(p[1]); });
   return out.length?out.join(", "):"no shared signal";
 }
+/* ── Credit status (payload field `c`) ────────────────────────────────────
+ * 0 credit · 1 noncredit · 2 noncredit enhanced · ABSENT = not recorded.
+ * ⚠️ Absent is its own state, not credit. 73 identities carry no value, and
+ * folding them into "credit" would be the false zero this repo keeps relearning.
+ * The filter therefore has three positions and "All" is the only one that shows
+ * an unrecorded course — never silently dropped, and the chip says how many. */
+var CR_ALL="all", CR_CREDIT="cr", CR_NC="nc";
+var creditFilter=CR_ALL;
+function isNC(nd){ return nd.c===1 || nd.c===2; }
+function isCR(nd){ return nd.c===0; }
+function creditShown(nd){
+  if(creditFilter===CR_ALL) return true;
+  return creditFilter===CR_CREDIT ? isCR(nd) : isNC(nd);
+}
+/* Dash length tracks the radius so the break stays visible as you zoom: a fixed
+ * pattern turns into a solid ring on a big circle and vanishes on a small one. */
+function ncDash(rad){ var d=Math.max(2, Math.min(9, rad*0.55)); return [d, d*0.72]; }
+
 function nodeRad(nd){
-  return nd.a ? Math.max(1.3, SAT_R*view.k)
-              : Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*view.k);
+  var rs=radScale(view.k);   // tapered above RAD_KNEE — see the note by K_MAX
+  return nd.a ? Math.max(1.3, SAT_R*rs)
+              : Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*rs);
 }
 
 /* ── member lookup ────────────────────────────────────────────────────────
@@ -394,6 +439,7 @@ function draw(){
         ctx.stroke(); ctx.restore();
       }
       isl.p.forEach(function(nd){
+        if(!creditShown(nd)) return;              // the CR / NC filter (item 9)
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
         var rad=nodeRad(nd);
         var s=SYS[nd.s]||SYS[3];
@@ -406,10 +452,23 @@ function draw(){
           ctx.fillStyle="#fff"; ctx.fill();
           ctx.lineWidth=Math.max(1,rad*0.34);
           if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle="#87877F"; ctx.stroke(); ctx.restore(); }
+          else if(isNC(nd)){ ctx.save(); ctx.strokeStyle=s[1]; ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
           else { ctx.strokeStyle=s[1]; ctx.stroke(); }
         } else {
           ctx.fillStyle=s[0]; ctx.fill();
-          if(rad>2){ ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1]; ctx.stroke(); }
+          if(rad>2){
+            ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1];
+            // ── item 3: noncredit reads as a BROKEN ring (Sam, 2026-09-04:
+            // "rather than another color, perhaps a broken line or dotted
+            // circle"). Stroke pattern is a free channel: colour already spends
+            // itself on the identity SYSTEM (M-ID / C-ID / CCN / unified), so a
+            // second colour scale would make the reader hold two at once. It
+            // also satisfies "colour is never the only signal" for free.
+            // Dashes, not dots: at low zoom a dotted 1px ring aliases into a
+            // solid one and the distinction silently disappears.
+            if(isNC(nd)){ ctx.save(); ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
+            else ctx.stroke();
+          }
         }
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
@@ -699,10 +758,17 @@ window.__ccrUniverse = function(){
             '<button class="btn mode" type="button" id="u-mode-pan" aria-pressed="false">Pan</button>'+
             '<button class="btn mode" type="button" id="u-mode-move" aria-pressed="true">Move</button>'+
           '</span>'+
-          '<button class="btn" type="button" id="u-out">Zoom out</button>'+
-          '<button class="btn" type="button" id="u-in">Zoom in</button>'+
-          '<button class="btn" type="button" id="u-reset">Reset view</button>'+
-          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="true" aria-controls="u-detail">Hide details</button>'+
+          '<span class="u-zgroup" role="group" aria-label="Zoom">'+
+            '<span class="u-zlbl">Zoom</span>'+
+            '<button class="btn" type="button" id="u-out" title="Zoom out">Out</button>'+
+          '<button class="btn" type="button" id="u-in" title="Zoom in">In</button>'+
+            '<button class="btn" type="button" id="u-reset" title="Reset the view">Reset</button>'+
+          '</span>'+
+          '<span class="u-seg u-crnc" role="group" aria-label="Show credit or noncredit courses">'+
+            '<button class="btn mode" type="button" id="u-cr-all" aria-pressed="true">All</button>'+
+            '<button class="btn mode" type="button" id="u-cr-cr" aria-pressed="false">Credit</button>'+
+            '<button class="btn mode" type="button" id="u-cr-nc" aria-pressed="false">Noncredit</button>'+
+          '</span>'+          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="false" aria-controls="u-detail">Details</button>'+'<button class="btn" type="button" id="u-foot-toggle" aria-expanded="true" aria-controls="u-foot">Hide legend</button>'+
           '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
           '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
         '</div>'+
@@ -731,7 +797,7 @@ window.__ccrUniverse = function(){
           '<span><i class="u-sw" style="background:#E7EEF9;border-color:#0047AB"></i>C-ID, official</span>'+
           '<span><i class="u-sw" style="background:#FBF1D8;border-color:#8B6800"></i>CCN, official</span>'+
           '<span><i class="u-sw" style="background:#EFEFEC;border-color:#5C5C55"></i>unified</span>'+
-          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+
+          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+'<span><i class="u-sw nc"></i>noncredit — a broken ring, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
         '<div class="u-hint" id="u-hint">Hover for a quick look; click a subject or a course for details. '+
@@ -814,19 +880,19 @@ function resetView(){
   anchor=null;
   var b=U.bounds, W=cw(), H=ch();
   var pad=60;
-  view.k=Math.max(0.03, Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0)));
+  view.k=Math.max(K_MIN, Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0)));
   view.x=-(b.x0+b.x1)/2; view.y=-(b.y0+b.y1)/2;
 }
 function zoomAt(px,py,factor){
   var before=s2w(px,py);
-  view.k=Math.max(0.03, Math.min(9, view.k*factor));
+  view.k=clampK(view.k*factor);
   var after=s2w(px,py);
   view.x+=after[0]-before[0]; view.y+=after[1]-before[1];
   draw();
 }
 function flyTo(x,y,k){
   anchor={x:x, y:y};
-  view.x=-x; view.y=-y; view.k=Math.max(0.03, Math.min(9, k)); draw();
+  view.x=-x; view.y=-y; view.k=clampK(k); draw();
 }
 /* Where the zoom buttons zoom ABOUT: the selection, else the last fly — and if
  * that point has drifted off the canvas it is brought back to the centre first,
@@ -924,7 +990,7 @@ function setInspector(open){
   inspOpen=!!open;
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
   if(a) a.classList.toggle("closed", !inspOpen);
-  if(b){ b.textContent=inspOpen?"Hide details":"Show details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+  if(b){ b.textContent=inspOpen?"Hide details":"Details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
   // The panel is docked beside the canvas, so showing or hiding it changes the
   // canvas's width: refit, or the map draws at the old size.
   if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
@@ -1047,6 +1113,16 @@ window.__ccrUniverseState = function(){
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           descBases:DESC_BASES.slice(), descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
+          // The zoom ceiling and the radius taper are here because a canvas
+          // radius cannot be queried from the DOM, and the taper is the half of
+          // "zoom past 900%" that actually makes one course pickable.
+          kMax:K_MAX, radKnee:RAD_KNEE, radScaleAt:radScale,
+          creditFilter:creditFilter, ncDashAt:ncDash,
+          creditCounts:(function(){ var o={cr:0,nc:0,unrecorded:0,shown:0};
+            if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
+              if(nd.c==null) o.unrecorded++; else if(nd.c===0) o.cr++; else o.nc++;
+              if(creditShown(nd)) o.shown++; }); });
+            return o; })(),
           mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL, memberPoints:memberPts.length,
           memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
           hover:hoverNode?hoverNode.i:null};
@@ -1132,8 +1208,97 @@ function wire(){
     var box=document.getElementById("gq");
     window.__ccrSubjectList((box && box.value) || searchTerm);
   };
+  /* ── item 9: the CR / NC filter ───────────────────────────────────────────
+   * Sam, 2026-09-04: "Also need a CR NC toggle". Three positions, not two — a
+   * two-way toggle would have to put the 73 identities with NO recorded credit
+   * status somewhere, and either bucket is a lie. They appear under All, and the
+   * count says how many are unrecorded so their absence is never silent. */
+  function setCredit(v){
+    creditFilter=v;
+    [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
+      var b=document.getElementById(pair[0]);
+      if(b) b.setAttribute("aria-pressed", creditFilter===pair[1] ? "true" : "false");
+    });
+    var n=0, hidden=0, unrec=0;
+    if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
+      if(nd.c==null) unrec++;
+      if(creditShown(nd)) n++; else hidden++;
+    }); });
+    setHint(v===CR_ALL
+      ? "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
+        "they appear here and nowhere else."
+      : "Showing <strong>"+num(n)+"</strong> "+(v===CR_CREDIT?"credit":"noncredit")+
+        " course"+(n===1?"":"s")+"; "+num(hidden)+" hidden. Noncredit is drawn with a broken ring.");
+    draw();
+  }
+  [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
+    var b=document.getElementById(pair[0]);
+    if(b) b.onclick=function(){ setCredit(pair[1]); };
+  });
+  window.__ccrSetCredit=setCredit;
+
   var tg=document.getElementById("u-insp-toggle");
   if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
+  /* ⚠️ PAINT THE STATE, NEVER HARDCODE IT IN THE MARKUP. `inspOpen` is module
+   * memory and survives a re-render; the markup is rebuilt from scratch. Writing
+   * `class="u-inspector closed"` into the template desynchronized the two the
+   * moment you navigated away and came back with the panel open: the DOM said
+   * closed, `inspOpen` said open, and openInspector() — which is a no-op when it
+   * believes the panel is already open — could never reopen it again. Selecting a
+   * course silently showed nothing. One call keeps them agreeing. */
+  setInspector(inspOpen);
+
+  /* ── ITEM 6: the legend strip folds away ──────────────────────────────────
+   * Sam, 2026-09-04: "Make the footer hidable". It is a reference strip, not a
+   * control, so it earns its space only while you are still learning the map. */
+  var ft=document.getElementById("u-foot-toggle");
+  if(ft) ft.onclick=function(){
+    var f=document.getElementById("u-foot");
+    if(!f) return;
+    var hide=!f.classList.contains("u-foot-hidden");
+    f.classList.toggle("u-foot-hidden", hide);
+    ft.textContent=hide?"Legend":"Hide legend";
+    ft.setAttribute("aria-expanded", hide?"false":"true");
+    fitCanvas(); draw();          // the canvas grows into the space it vacated
+  };
+
+  /* ── ITEM 8: the controls sit on the TITLE's row ──────────────────────────
+   * Sam, 2026-09-04: "Try to consolidate the top of Sky view by moving the chips
+   * up to the header and all on the same row as the title. I want all the real
+   * estate for the universe view."
+   *
+   * ⚠️ THEY CANNOT SIMPLY LIVE THERE. Full screen paints ONE element — #u-full —
+   * so a control parked in the page masthead vanishes the moment you enter it,
+   * which is the failure Sam's own 2026-09-03 note asked us to avoid ("will need
+   * links on full screen to navigate to the other views"). So the bar MOVES: up
+   * to the masthead for the normal view, back inside #u-full while full screen
+   * is on. One element, two homes, never a second copy that can drift.
+   *
+   * Embedded in COBI there is no masthead, so it stays where it was rendered. */
+  /* ── ITEM 8: ONE ROW at the top, and the map gets the rest ────────────────
+   * Sam, 2026-09-04: "Try to consolidate the top of Sky view by moving the chips
+   * up to the header and all on the same row as the title. I want all the real
+   * estate for the universe view."
+   *
+   * ⭐ #u-top was ALREADY one row — `justify-content:space-between` puts the view
+   * links left and the controls right. What Sam saw was that row WRAPPING at his
+   * zoom, because "Zoom out / Zoom in / Reset view / Hide details / Full screen"
+   * do not fit beside the links. So the fix is to make it fit, not to move
+   * anything: shorter words under a "Zoom" group label, and nowrap until a real
+   * breakpoint. The map then starts a row higher at every zoom he works at.
+   *
+   * ⚠️ TWO THINGS THAT WERE TRIED AND ARE WRONG, recorded so they are not retried:
+   *   · Lifting #u-bar into the page masthead. The masthead sits OUTSIDE #u-full,
+   *     the only element the browser paints in full screen, so the controls
+   *     vanish exactly where Sam asked for them on 2026-09-03 — and it outlives
+   *     the view, so navigating away stranded them over a table and coming back
+   *     put two #u-bar and two #u-fs under one id (Chromium: {bars:2, fsBtns:2}).
+   *   · Adding a "SkyView" title to this row. The masthead already carries the
+   *     name, and the title pushed the view links rightward INTO the search
+   *     suggestion dropdown, which is absolutely positioned over whatever sits
+   *     below the masthead. Chromium reported #u-list unclickable — and that is
+   *     a route Sam asked for by name (type a term, then open the subject list
+   *     seeded from the box). The links belong hard left, clear of the dropdown. */
 
   /* Full screen is the browser's own, on the map section. Inside COBI the map is
    * an iframe, which needs `allow="fullscreen"` on the frame — unified_courses.js
