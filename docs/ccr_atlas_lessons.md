@@ -1365,3 +1365,95 @@ regenerated on the folded catalog in the follow-up.
 2. The identities map's rebuild-from-baseline re-key (measured above), with a
    dry run and a receipt.
 3. Sam's second drive of SkyView; the three HOSP anchors.
+
+## 2026-09-04 — SkyLand (Session 226): the duplicates become a lane, and the twenty were never missing
+
+The queue's head was the fold's aftermath: a check that the first scheduled
+cron kept the fold (baseline read on main at 03:50 UTC — 278 fold keys in the
+overlay, 0 old ids, 0 pointers on an old id, the audit at 113, SkyView on the
+new codes; a check-in armed for 06:45 UTC), the twenty "missing" identities to
+measure, and the 130 legacy-anchor duplicates to turn into a worklist.
+
+### The twenty were never missing
+
+The handoff read 31 of the 278 folded ids with no entry in
+`unified_courses_members.js` and called 20 of them an export gap to measure.
+Measured: all 31 have memberships or a curated `merge_into`; 19 of the 20 are
+not rows in `unified_courses_data.js` at all, and every one of them appears in
+some C-ID descriptor row's `consolidated_from` — `ARTH M1151` (Modern Art)
+under `ARTH 150`, `WMST M1069` under `SJS 120`, `THES M1295` (Stagecraft) under
+`THTR 171`. They are Phase B folds: the export's auto-fold consumes an M-ID
+whose promotions evidence names one official id and lists it under the
+descriptor row, so the members table is keyed by the descriptor and the M-ID
+has none of its own. The twentieth, `THES M1087`, is a row whose three member
+control numbers all route to descriptors (`_routed_live`), so its member table
+is empty by the routing rule. Nothing to fix; `_row_ents` loses nothing.
+SkyView draws the export's rows, so the 31 it does not draw are these.
+
+### A receipt measures a worklist once; a lane recomputes it every build
+
+`duplicates.json` was a JSON file the retirement wrote at dry-run time. The
+anchors it names render on the CCR tab as locked, read-only rows beside their
+twins, and no suggestion lane could pair them: the anchored lane's grouping
+skips locked rows on purpose. So the worklist became a lane of its own
+(`legacy_anchor_duplicate_groups`, #1465), recomputed from the live catalog on
+every build. One group per M-ID anchor of `kb/common_courses.json`, the live
+twin(s) first and the anchor last; the match is a STRICT title key (case,
+punctuation and whitespace only — the worklist's level-safe signature would
+pair Accounting I with Accounting II, which is exactly what a duplicate is
+not) on the discipline the tab displays, with a trailing parenthetical dropped
+and `kb/discipline_aliases.json` resolving spellings, as the dry run did. A
+twin merged away resolves through the flattened `merge_into` map (the lane runs
+after Phase B and the routing folds) to the row that displays; a twin that
+resolves to the anchor is dropped; an anchor carrying `merge_into` leaves.
+
+The receipt and the live lane disagree on exactly one anchor, and the
+disagreement is the point. `THTR M1377` (Beginning Stagecraft) matched
+`THEA M1087` in the receipt on the record's own discipline; the fold re-keyed
+that twin to `THES M1087`, and the trailcrew-ccr1-s111 bot cohort had written
+`discipline: Stagecraft` on it in July — a name outside the MQ list — so the
+tab shows the two under different disciplines and the lane, which follows the
+tab, does not pair them. The receipt was right about the record; the lane is
+right about the display; the bot row is the thing to look at. One pair the
+receipt lacked (`PHOT M10RG`) surfaces from the live catalog. 130 groups today
+either way; the "122" in two handoffs was a count from before the recode.
+
+### The direction is the survivor rule the worklist already has
+
+Which side survives was the design question. The catalog twin carries the
+memberships, articulations, promotions evidence and mirror classes, all keyed
+by its id; the anchor carries Sam's May review and no college courses. Folding
+the anchor into the twin leaves every keyed artifact untouched and retires a
+memberless duplicate row — and the generator already honors it: the anchor
+loop skips an anchor with `merge_into`, and the anchor becomes a title variant
+on the twin. The tab's `targetMemberOf` picks the first non-Stand-Alone member
+by CCN > C-ID > M-ID, so listing the twin first makes it the star with no new
+rule. When the only twin is a single-college Stand-Alone (31 of 130) the same
+rule makes the anchor the survivor: the stand-alone folds in, the anchor gains
+its first college course, and the merge-target loop synthesizes the row from
+the anchor file (`_member_v` reads `cc`). The curator can flip the star. The
+lane is exempt from the cohesion slider — an exact duplicate is not a
+similarity score — and its badge is words on First Light tokens.
+
+### Verification
+
+`tests/legacy_anchor_duplicates_test.py` (27 checks: the strict key, the
+discipline gate, the alias and parenthetical resolution, the live-target
+chain, the member order that IS the merge direction, and the committed files —
+every receipt anchor offered, merged, or explained by a curated discipline)
+runs in `js-tests.yml` beside the merge-chain lint; `tests/uc_worklist_legacy_anchor_lane.test.js`
+(21: the lane leads, the words-only badge, the star on the twin, Confirm
+writing `merge_into` on the anchor and never the twin, the stand-alone case
+writing on the stand-alone, the slider exemption, the hand-off into the
+anchored lane). All 27 existing worklist and CCR jsdom files green.
+
+### Next
+
+1. The promote step for `UC-CUR-*` placeholders (mint M numbers from
+   `Buckets`; 0 exist today); the identities map's rebuild-from-baseline re-key
+   as a dry run with a receipt; the seven held rows when a second signal
+   arrives.
+2. Measure how many curated `discipline` values sit outside the MQ list (the
+   `Stagecraft` row is one); the audit may already tag them.
+3. Sam drives the new lane: the first 130 groups of Suggested merges are his
+   May anchors; his confirms drain it.

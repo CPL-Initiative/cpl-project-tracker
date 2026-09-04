@@ -757,23 +757,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyTune S224 — the chip, the two dry runs, then Sam's yes to all and the land (2026-09-03)
-
-**Eight PRs, all merged (#1447 the chip; #1448, #1449 the dry runs; #1452 the rulings; #1453 the applies; #1454 the land).** Item 19's C-ID
-chip shipped: `kb/_seed_authority_codes.py` writes the authority fields into the
-seed from the promotions evidence plus the rulings, and the CSR tab, the CCR
-Subject list and SkyView show `C-ID AJ` beside `CRIM` (12 disciplines on a CCN
-code, 14 on a C-ID code, 120 proposed, 29 with a chip). The ruled code changes
-were dry-run as a **keep-number prefix re-key** (10,292 ids, 10,039 keeping their
-number) after a scratch run showed the June allocator would renumber 62,638 ids
-to change nothing; the Z-band retirement was dry-run after it (4,053 Z identities,
-218 legacy anchors; **Kinesiology credit at 996 of 999**). Sam ruled the fourteen
-readings yes to all and the series was applied the same day: 10,296 ids recoded,
-4,053 machine clusters materialized as M-ID records, the Z band retired, Supabase
-re-keyed from the receipts. ⭐ 139 materialized records sit on a prefix their
-discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Sam then drove SkyView and wrote eight notes; all eight shipped (#1460), including an identity that opens to show its college courses — the faculty view. Story:
-`ccr_atlas_lessons`; handoff `session_225_handoff`.
-
 ### SkyFold S225 — the fold apply, rehearsed, then landed on Sam's yes to all; the sixth id-keyed class (2026-09-04)
 
 **Two PRs (#1462, #1463) plus the follow-up.** Sam had not yet ruled the
@@ -791,6 +774,19 @@ sixth id-keyed artifact class, outside the chain — with 398 keys the recode ha
 retired; re-keyed (never regenerated: it carries curated mirrors) and in the
 chain, where it took the fold's 29 the same night. Story: `ccr_atlas_lessons`;
 handoff `session_226_handoff`.
+
+### SkyLand S226 — the duplicates become a lane; the twenty were never missing (2026-09-04)
+
+**One PR (#1465).** The 130 May anchors that duplicate a catalog identity are a
+lane of the CCR tab's Suggested-merges worklist, recomputed live by the generator
+(`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so the
+worklist's survivor rule folds the anchor into the course that carries the college
+courses (31 stand-alone-only pairs go the other way); a curator confirms each, a
+script merges none. 129 of the receipt's 130 pairs surface; the 130th hides behind
+a bot's `Stagecraft` re-discipline on its twin — a signal, not a miss. Measured
+first: the 20 folded identities "missing" from the members export are Phase B
+folds into C-ID descriptor rows (`consolidated_from`), not an export gap. Story:
+`ccr_atlas_lessons`; handoff `session_227_handoff`.
 
 ## Troubleshooting
 

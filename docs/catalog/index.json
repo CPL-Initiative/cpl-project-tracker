@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 373,
+   "count": 374,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1827,6 +1827,27 @@
      "title": "A published asset with zero uptake is an outreach worklist, not a build backlog",
      "type": "methodology",
      "updated": "2026-08-05"
+    },
+    {
+     "created": "2026-09-04",
+     "governs": [
+      "excel_to_dashboard.py",
+      "unified_courses.js",
+      "kb/zband_retire_out/2026-09-03/duplicates.json",
+      "tests/legacy_anchor_duplicates_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "worklist",
+      "receipts",
+      "ccr"
+     ],
+     "title": "A receipt measures a worklist once; a lane recomputes it every build",
+     "type": "methodology",
+     "updated": "2026-09-04"
     },
     {
      "created": "2026-09-02",
@@ -11636,8 +11657,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 200,
+   "count": 201,
    "docs": [
+    {
+     "created": "2026-09-04",
+     "governs": [],
+     "n": 227,
+     "path": "docs/session_227_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the duplicates are a lane; the promote step and the identities map are next",
+     "type": null,
+     "updated": "2026-09-04"
+    },
     {
      "created": "2026-09-04",
      "governs": [],
@@ -15118,5 +15152,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 769
+ "total": 771
 }
