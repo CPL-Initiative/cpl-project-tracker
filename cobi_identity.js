@@ -25,15 +25,32 @@
  * So the split is: THIS CHIP SAYS WHO YOU ARE AND HOW. EACH TAB SAYS WHAT THAT
  * BUYS THERE. The chip never asserts a capability.
  *
- * WHY THE UTILITY STRIP AND NOT THE 🔒 LOCK. reviewer_signin.js's own docstring
- * settles this: the masthead lock is SITE-SCOPED (it re-labels Team ⇄ GR ⇄
- * Finance as you switch sites) and a reviewer sign-in is a personal identity
- * that is not site-scoped in any way — nesting one in the other would imply an
- * isolation the database does not enforce. This is a SIBLING control in
- * .cobi-utility, beside About, which is already the home for account-shaped
- * meta actions. It DELEGATES: the phrase's control is still
- * CPL_TEAM_PHRASE_HEADER, the sign-in box is still CPL_REVIEWER_SIGNIN. A
- * second copy of either is a second thing that can drift.
+ * ⚠️ BOTH CREDENTIALS NOW LIVE IN THIS ONE PANE (Sam, 2026-09-04: "move the
+ * team phrase stuff in proximity to the magic link login stuff and see if you
+ * can simplify and clarify the ui"). Until then the phrase had its own 🔒
+ * button over in .cobi-brand and this pane merely LINKED to it — two doors to
+ * the same room, a cluster apart, one of them a glyph.
+ *
+ * THE OBJECTION THAT USED TO STAND HERE, AND WHY IT NO LONGER DOES. This
+ * docstring argued the lock must stay out of the identity chip because the
+ * phrase is SITE-SCOPED (it re-labels Team ⇄ GR ⇄ Finance as you switch sites)
+ * while a reviewer sign-in is personal, so nesting one in the other would imply
+ * an isolation the database does not enforce. That objection is about the COPY,
+ * not the container: the mounted phrase box states its own scope on every
+ * render ("Opens the Finance tabs, plus every shared team tab"), so the scoping
+ * is now said where the phrase is typed instead of being inferred from which
+ * cluster the button sat in. Position implied it; words state it.
+ *
+ * It still DELEGATES, and that part is unchanged: the phrase box is
+ * CPL_TEAM_PHRASE_HEADER.mountInto(), the sign-in box is
+ * CPL_REVIEWER_SIGNIN.mountInto(). A second copy of either is a second thing
+ * that can drift.
+ *
+ * NO STATUS GLYPHS. The chip carried a ● dot and each row a ✓ / — mark. Every
+ * one of them restated what its own sentence already said, which is the test
+ * the presentation rules apply: if you cannot say what a reader would
+ * misunderstand without the mark, delete it. "Hi CPL team" and "Not signed in
+ * as yourself" carry their states in words.
  *
  * WHAT IT FIXES ALONG THE WAY.
  *
@@ -169,7 +186,10 @@
       return { tone: "phrase", short: "Hi CPL team",
         text: "Hi CPL team — unlocked by " + phraseWord + "." };
     }
-    return { tone: "none", short: "Not unlocked", text: "Not unlocked." };
+    // "Sign in", not "Not unlocked": this chip is the only way into either
+    // credential now, so the label has to name the door. The pane says which
+    // two doors they are.
+    return { tone: "none", short: "Sign in", text: "Not signed in, and no team phrase held." };
   }
   // Remaining life, said plainly. An unknown expiry says so; it must not read
   // as "no expiry", because that is the belief that costs a curator their edit.
@@ -190,16 +210,19 @@
     s.id = CSS_ID;
     s.textContent = [
       ".cobi-ident{position:relative;order:0;}",
+      // ⚠️ --text-muted, NOT --text-faint: measured at 3.53:1 on faint against
+      // the 4.5:1 floor, on the label that names who you are signed in as.
+      // min-height 24px is WCAG 2.2 SC 2.5.8 (this button rendered 60x19).
       ".cobi-ident-btn{font-family:'Source Sans 3',Arial,sans-serif!important;font-size:.74rem!important;",
       "font-weight:600!important;background:none!important;border:none!important;cursor:pointer;",
-      "padding:.15rem .3rem!important;display:inline-flex!important;align-items:center;gap:.3rem;",
-      "white-space:nowrap;transition:color .15s;color:var(--text-faint,#87877F)!important;}",
+      "padding:.25rem .3rem!important;min-height:24px;box-sizing:border-box;",
+      "display:inline-flex!important;align-items:center;gap:.3rem;",
+      "white-space:nowrap;transition:color .15s;color:var(--text-muted,#5C5C55)!important;}",
       ".cobi-ident-btn:hover{color:var(--cobalt,#0047AB)!important;}",
       ".cobi-ident-btn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}",
       // State is carried by the WORD in the label; the tint only reinforces it.
       ".cobi-ident-btn.is-on{color:var(--hunter,#2C601A)!important;}",
-      ".cobi-ident-dot{width:.5rem;height:.5rem;border-radius:50%;background:currentColor;flex:none;}",
-      ".cobi-ident-pane{position:absolute;right:0;top:calc(100% + .4rem);z-index:300;width:290px;",
+      ".cobi-ident-pane{position:absolute;right:0;top:calc(100% + .4rem);z-index:300;width:320px;",
       "background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));",
       "border-radius:8px;box-shadow:0 10px 30px rgba(20,20,30,.16);padding:.8rem .9rem;display:none;text-align:left;}",
       ".cobi-ident-pane.open{display:block;}",
@@ -207,15 +230,19 @@
       "text-transform:uppercase;color:var(--text-muted,#5C5C55);margin:0 0 .35rem;}",
       ".cobi-ident-say{font-size:.86rem;font-weight:700;color:var(--text-strong,#1C1C1A);margin:0 0 .3rem;line-height:1.35;}",
       ".cobi-ident-sub{font-size:.75rem;color:var(--text-muted,#5C5C55);margin:0 0 .5rem;line-height:1.4;}",
-      ".cobi-ident-row{display:flex;align-items:flex-start;gap:.4rem;font-size:.78rem;line-height:1.4;",
-      "color:var(--text-body,#3A3A36);padding:.25rem 0;border-top:1px solid var(--border,rgba(28,28,26,.14));}",
-      ".cobi-ident-row:first-of-type{border-top:none;}",
-      ".cobi-ident-mark{flex:none;font-weight:700;}",
+      ".cobi-ident-row{display:block;font-size:.78rem;line-height:1.4;",
+      "color:var(--text-body,#3A3A36);padding:.45rem 0 .3rem;border-top:1px solid var(--border,rgba(28,28,26,.14));}",
+      // The two ways in, named. Sam's own words for them — a reader who has
+      // been sent a magic link should find the phrase "magic link" here.
+      ".cobi-ident-lbl{font-family:'Source Sans 3',sans-serif;font-size:.68rem;letter-spacing:.06em;",
+      "text-transform:uppercase;color:var(--text-muted,#5C5C55);margin:0 0 .2rem;font-weight:700;}",
       ".cobi-ident-act{font-family:'Source Sans 3',sans-serif;font-size:.78rem;font-weight:600;",
       "color:var(--cobalt,#0047AB);background:none;border:none;text-align:left;cursor:pointer;padding:.25rem 0;}",
       ".cobi-ident-act:hover{text-decoration:underline;}",
       ".cobi-ident-act:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}",
-      ".cobi-ident-note{font-size:.72rem;color:var(--text-faint,#87877F);margin:.45rem 0 0;line-height:1.4;",
+      // The note is what stops the pane over-claiming what a credential opens —
+      // essential text, so the muted token, not faint (measured 3.62:1 on faint).
+      ".cobi-ident-note{font-size:.72rem;color:var(--text-muted,#5C5C55);margin:.45rem 0 0;line-height:1.4;",
       "border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.4rem;}",
       ".cobi-ident-host{margin:.35rem 0 0;}",
       "@media (max-width:560px){.cobi-ident-pane{width:min(290px,86vw);}}",
@@ -240,7 +267,6 @@
     btn.type = "button";
     btn.setAttribute("aria-haspopup", "true");
     btn.setAttribute("aria-expanded", openPane ? "true" : "false");
-    btn.appendChild(el("span", "cobi-ident-dot"));
     btn.appendChild(el("span", null, g.short));
     btn.appendChild(el("span", null, "▾"));
     btn.title = g.text;
@@ -252,16 +278,15 @@
     pane.appendChild(el("div", "cobi-ident-h", "Your access"));
     pane.appendChild(el("p", "cobi-ident-say", g.text));
 
-    // ── the reviewer row ──
+    // ── the magic-link row ──
     var rRow = el("div", "cobi-ident-row");
-    rRow.appendChild(el("span", "cobi-ident-mark", st.reviewer ? "✓" : "—"));
-    var rBody = el("div");
-    rBody.appendChild(el("div", null, st.reviewer
+    rRow.appendChild(el("p", "cobi-ident-lbl", "Magic link"));
+    rRow.appendChild(el("div", null, st.reviewer
       ? "Signed in as " + (st.reviewer.email || "a reviewer") + "."
       : "Not signed in as yourself."));
     if (st.reviewer) {
       var xl = expiryLine(st.reviewer);
-      if (xl) rBody.appendChild(el("div", "cobi-ident-sub", xl));
+      if (xl) rRow.appendChild(el("div", "cobi-ident-sub", xl));
       var out = el("button", "cobi-ident-act", "Sign out");
       out.type = "button";
       out.onclick = function () {
@@ -270,41 +295,42 @@
         else if (window.CPL_SESSION && window.CPL_SESSION.signOut) window.CPL_SESSION.signOut();
         openPane = false; renderAll();
       };
-      rBody.appendChild(out);
+      rRow.appendChild(out);
     } else {
       // THE SHARED IMPLEMENTATION, mounted where the reader is. A second copy
       // of a sign-in box is a second thing that can drift, and "sign in on
       // another tab" is the bounce this chip exists to end.
       var signHost = el("div", "cobi-ident-host");
-      rBody.appendChild(signHost);
+      rRow.appendChild(signHost);
       var R2 = window.CPL_REVIEWER_SIGNIN;
-      if (R2 && R2.mountInto) { try { R2.mountInto(signHost); } catch (e) { /* leave the row honest */ } }
-      if (!signHost.firstChild) rBody.appendChild(el("div", "cobi-ident-sub", "The sign-in box is in the ℹ About menu."));
+      if (R2 && R2.mountInto) {
+        try { R2.mountInto(signHost, { title: "Send me a link" }); } catch (e) { /* leave the row honest */ }
+      }
+      if (!signHost.firstChild) rRow.appendChild(el("div", "cobi-ident-sub", "The sign-in box is in the ℹ About menu."));
     }
-    rRow.appendChild(rBody);
     pane.appendChild(rRow);
 
-    // ── the phrase row ──
+    // ── the team-phrase row, its box mounted RIGHT HERE ──
+    // This is the move: the phrase used to be a 🔒 button in another cluster
+    // that this row merely linked to. Mounting the real control beside the
+    // sign-in box puts both credentials in one pane, and the box states its own
+    // site scope, which is what the old separation was protecting.
     var pRow = el("div", "cobi-ident-row");
-    pRow.appendChild(el("span", "cobi-ident-mark", st.phrase ? "✓" : "—"));
-    var pBody = el("div");
-    pBody.appendChild(el("div", null, st.phrase
-      ? "Team phrase held" + (st.phrase.shared ? "." : " (" + st.phrase.slot + ").")
-      : "No team phrase."));
+    pRow.appendChild(el("p", "cobi-ident-lbl", "Team phrase"));
+    pRow.appendChild(el("div", null, st.phrase
+      ? "Held on this browser" + (st.phrase.shared ? "." : " (" + st.phrase.slot + ").")
+      : "Not held on this browser."));
+    var phraseHost = el("div", "cobi-ident-host");
+    pRow.appendChild(phraseHost);
     var TPH = window.CPL_TEAM_PHRASE_HEADER;
-    if (!st.phrase && TPH && TPH.open) {
-      // DELEGATE to the one real control. It is site-scoped — it offers the
-      // active site's phrase when that site has one — and reproducing that here
-      // would mean two implementations of a rule that is easy to get subtly
-      // wrong. Opening it puts the reader in front of the genuine box.
-      var unlock = el("button", "cobi-ident-act", "Unlock with a team phrase");
-      unlock.type = "button";
-      unlock.onclick = function () { openPane = false; render(); TPH.open(); };
-      pBody.appendChild(unlock);
-    } else if (!st.phrase) {
-      pBody.appendChild(el("div", "cobi-ident-sub", "Use the 🔒 control beside the COBI title."));
+    if (TPH && TPH.mountInto) {
+      try { TPH.mountInto(phraseHost); } catch (e) { /* leave the row honest */ }
     }
-    pRow.appendChild(pBody);
+    if (!phraseHost.firstChild) {
+      // Honest fallback: never print an instruction with no door behind it.
+      pRow.appendChild(el("div", "cobi-ident-sub",
+        "The unlock box could not load; reload COBI and try again."));
+    }
     pane.appendChild(pRow);
 
     // THE LINE THAT KEEPS THIS HONEST. What a credential opens is decided per

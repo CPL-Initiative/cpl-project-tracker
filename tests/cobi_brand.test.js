@@ -1,14 +1,15 @@
 // COBI masthead (cobi_brand.js + quickstart.js slot) — the consolidated header.
 //
 // Guards: (a) Rule 4 (both HTMLs identical) + the script tag + the masthead
-// markup (seal, COBI wordmark, "…Business Intelligence" tagline with NO
-// "for CPL", the ℹ About popover holding the generator-injected Project
-// Description / Attachments + the static Today's painting link, the center
-// search slot, the "Manually Refresh COBI" button, and the alpha-testing
-// notice); (b) the gold CPL
-// superscript injects at runtime; (c) the About popover toggles; (d) the
-// painting link calls First Light; (e) quickstart mounts "Where To?" into the
-// center slot.
+// markup (seal, bare COBI wordmark, the ℹ About popover holding the
+// generator-injected Project Description / Attachments + the static Today's
+// painting link, the center search slot, and the alpha-testing notice);
+// (b) the wordmark stays BARE — no tagline, no CPL superscript, no org tag
+// (Sam, 2026-09-04); (c) the About popover toggles; (d) the painting link
+// calls First Light; (e) quickstart mounts "Where To?" into the center slot;
+// (f) "Manually Refresh COBI" is MOVED into the About panel at runtime;
+// (g) every masthead grid track can shrink, which is what stopped the
+// clusters overlapping under zoom.
 //
 // Run from repo root: `npm test` (or `node tests/cobi_brand.test.js`).
 const fs = require("fs");
@@ -24,8 +25,14 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 const tag = '<script src="cobi_brand.js"></script>';
 check("cobi_brand.js script tag present exactly once", cpl.split(tag).length === 2);
 check("masthead wordmark is COBI", /<h1>COBI<\/h1>/.test(cpl));
-check("tagline present without 'for CPL' suffix",
-  /class="cobi-tagline">Chancellor(&#39;|')s Office Business Intelligence<\/div>/.test(cpl));
+// Sam, 2026-09-04: "Delete 'Chancellor's Office Business Intelligence' label".
+// Asserted on BOTH the visible masthead and the <title>/og:title, because the
+// same string rode along in the link unfurl.
+check("tagline is gone from the masthead", !/cobi-tagline/.test(cpl));
+check("tagline is gone from the title + og:title", !/Business Intelligence/.test(cpl));
+check("<title> is the bare COBI (Alpha)", /<title>COBI \(Alpha\)<\/title>/.test(cpl));
+check("og:title matches the <title>",
+  /<meta property="og:title" content="COBI \(Alpha\)">/.test(cpl));
 check("the Mamba/8→24 wink is retired (no rotating subtitle text)",
   !/Mamba Mentality/.test(cpl) && !/Black Mambanator/.test(cpl));
 check("hidden #cobi-mamba anchor kept for the generator PROJ-INFO inject", /id="cobi-mamba"/.test(cpl));
@@ -48,6 +55,12 @@ const gen = fs.readFileSync("excel_to_dashboard.py", "utf8");
 check("generator emits the 'Manually Refresh COBI' button as a subtle cobi-util-link",
   /Manually Refresh COBI<\/button>/.test(gen) && /id="refreshBtn" class="cobi-util-link"/.test(gen));
 check("generator no longer emits 'Refresh Today's Data'", !/Refresh Today&#39;s Data/.test(gen));
+// The generator is the source of truth for <title>/og:title (Rule 1), so the
+// removal has to hold THERE or the next cron run puts the tagline back.
+check("generator's COBI_TITLE is the bare COBI (Alpha)",
+  /COBI_TITLE = "COBI \(Alpha\)"/.test(gen));
+check("generator no longer emits the tagline or the CPL superscript in the title",
+  !/COBI_TITLE = .*Business Intelligence/.test(gen) && !/COBI_TITLE = .*\u1d9c\u1d3e\u1d38/.test(gen));
 check("generator strips the refresh button by id (regen-safe, idempotent)",
   gen.includes('<button id="refreshBtn".*?</button>'));
 
@@ -55,8 +68,7 @@ check("generator strips the refresh button by id (regen-safe, idempotent)",
 const MAST =
   '<div class="header">' +
   '<div class="cobi-brand"><img class="cobi-seal" src="cccco_seal.png" onerror="this.style.display=\'none\'">' +
-  '<div class="cobi-brandtext"><h1>COBI</h1>' +
-  '<div class="cobi-tagline">Chancellor&#39;s Office Business Intelligence</div></div></div>' +
+  '<div class="cobi-brandtext"><h1>COBI</h1></div></div>' +
   '<div class="cobi-qs-slot" id="cobiQsSlot"></div>' +
   '<div class="cobi-utility"><span class="cobi-about">' +
   '<button type="button" id="cobiAboutBtn" aria-expanded="false">About</button>' +
@@ -65,7 +77,9 @@ const MAST =
   '<details class="project-description"><summary>Project Description</summary></details>' +
   '<div class="cobi-about-links"><button class="cobi-about-link" id="cobiPaintingLink">Today’s painting</button></div>' +
   '</div></span>' +
-  '<div class="last-updated">Last Updated: today</div></div></div>';
+  '<div class="last-updated">Last Updated: today</div>' +
+  '<button id="refreshBtn" class="cobi-util-link">&#x21bb; Manually Refresh COBI</button>' +
+  '</div></div>';
 
 const BRAND_SRC = fs.readFileSync("cobi_brand.js", "utf8");
 const QS_SRC = fs.readFileSync("quickstart.js", "utf8");
@@ -75,18 +89,27 @@ function dom() {
     { runScripts: "outside-only", url: "https://example.org/" });
 }
 
-// (b) gold CPL superscript injected at runtime
+// (b) the wordmark stays BARE — no superscript, no org tag
 {
   const d = dom();
   d.window.eval(BRAND_SRC);
   d.window.COBI_BRAND.init();
-  const num = d.window.document.querySelector(".header h1 .cobi-num");
-  check("CPL superscript injected onto the wordmark", !!num && num.textContent === "CPL");
+  const h1 = d.window.document.querySelector(".header h1");
+  check("wordmark carries no .cobi-num tag", !h1.querySelector(".cobi-num"));
+  check("wordmark text is COBI plus the Alpha chip only",
+    /^COBI\s*Alpha$/.test((h1.textContent || "").trim()));
   check("#cobi-mamba stays empty (no phrase)", d.window.document.getElementById("cobi-mamba").textContent === "");
-  // idempotent — a second init doesn't double the superscript
-  d.window.COBI_BRAND.init();
-  check("superscript not duplicated on re-init",
-    d.window.document.querySelectorAll(".header h1 .cobi-num").length === 1);
+
+  // ⭐ THE REGRESSION THAT MATTERS. cobi_orgs.js wrote the same .cobi-num span,
+  // so a CACHED copy of it can put the tag back after this module has run.
+  // dropWordmarkTags() must SWEEP, not merely decline to add.
+  const stray = d.window.document.createElement("span");
+  stray.className = "cobi-num";
+  stray.textContent = "C&I";
+  h1.appendChild(stray);
+  d.window.COBI_BRAND.dropWordmarkTags();
+  check("a stray org tag from a cached cobi_orgs.js is swept off the wordmark",
+    !h1.querySelector(".cobi-num"));
 }
 
 // (c) About popover toggles open/closed
@@ -165,11 +188,22 @@ check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\
   const note = doc.querySelector(".header .cobi-alpha-note");
   check("alpha notice row injected into the header", !!note);
   const txt = note ? note.textContent : "";
-  check("notice names COBI as experimental and in Alpha development",
-    /COBI is an experimental data suite in Alpha development phase/i.test(txt));
+  check("notice says COBI is in alpha", /alpha/i.test(txt));
   check("notice warns the figures may be wrong", /incomplete or wrong/i.test(txt));
-  check("notice says not to cite or share outside the team",
-    /cite or share/i.test(txt) && /outside the team/i.test(txt));
+  // ⭐ THE CORRECTION. Until 2026-09-04 this line told readers not to cite or
+  // share COBI's figures outside the team — which Sam flagged as FALSE: they
+  // are shared outward by design, through Sierra and the CPL Fact Sheet. A
+  // banner that forbids what the product does every day trains readers to stop
+  // reading the banner, so the caution is now about VERIFYING, not withholding.
+  check("notice asks the reader to verify, not to withhold",
+    /double-check/i.test(txt) && /revise/i.test(txt));
+  check("⭐ notice no longer forbids citing or sharing outside the team",
+    !/cite or share/i.test(txt) && !/outside the team/i.test(txt));
+  // Sam's second ask: say what COBI answers FROM, and that it is governed.
+  check("notice names the curated knowledge base it answers from",
+    /curated knowledge base/i.test(txt));
+  check("notice states the two governing rules (no PII in, no outside sources)",
+    /no personal information/i.test(txt) && /no outside data sources/i.test(txt));
   // idempotent — the daily regen + a second init must not stack two notices
   d.window.COBI_BRAND.init();
   d.window.COBI_BRAND.addAlphaNotice();
@@ -184,18 +218,94 @@ check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\
   const headCss = Array.from(doc.querySelectorAll("head style")).map(s => s.textContent).join("");
   check("notice spans the whole header row (grid-column 1 / -1)",
     /\.cobi-alpha-note\{[^}]*grid-column:1 \/ -1/.test(headCss));
-  // Sam, 2026-08-18: centered, italic, a step larger than the tagline (.8rem).
   check("notice is centered", /\.cobi-alpha-note\{[^}]*text-align:center/.test(headCss));
-  check("notice is italic", /\.cobi-alpha-note\{[^}]*font-style:italic/.test(headCss));
+  // ⭐ LOW-KEY (Sam, 2026-09-04: "remove the formatting around the text and
+  // shrink the font and make it unbold so it's just a low-key part of the
+  // header"). This REVERSES his 2026-08-18 treatment — bordered, italic, bold,
+  // gold, a step larger — and the reversal is asserted rather than merely
+  // applied, because a later pass reading the old note in git would otherwise
+  // "restore" it.
+  const noteCss = /\.cobi-alpha-note\{([^}]*)\}/.exec(headCss);
+  check("notice CSS is declared", !!noteCss);
+  check("notice has no rule above it any more", !!noteCss && !/border-top/.test(noteCss[1]));
+  check("notice is not italic", !!noteCss && !/font-style:italic/.test(noteCss[1]));
+  check("notice is not bold", !!noteCss && /font-weight:400/.test(noteCss[1]));
   {
-    const m = /\.cobi-alpha-note\{[^}]*font-size:([\d.]+)rem/.exec(headCss);
-    check("notice font-size is larger than the tagline's .8rem",
-      !!m && parseFloat(m[1]) > 0.8);
+    const m = noteCss && /font-size:([\d.]+)rem/.exec(noteCss[1]);
+    check("notice font-size is SMALLER than .8rem now", !!m && parseFloat(m[1]) < 0.8,
+      m ? m[1] + "rem" : "no font-size");
   }
+  // ⚠️ --text-muted, never --text-faint: the token table marks faint
+  // "decorative only — never essential text", and an accuracy caution the
+  // reader is meant to act on is essential however quiet it looks. Measured on
+  // the rendered page at 6.58:1 (glass composited) against the 4.5:1 floor.
+  check("notice uses the muted TEXT token, not the decorative-only faint one",
+    !!noteCss && /var\(--text-muted/.test(noteCss[1]) && !/var\(--text-faint/.test(noteCss[1]));
   check("notice/chip use brand tokens, not raw hex",
-    /\.cobi-alpha-note\{[^}]*var\(--mustard-text/.test(headCss) &&
     /\.cobi-alpha\{[^}]*var\(--mustard-fill/.test(headCss));
 }
+
+// (f) ⭐ "Manually Refresh COBI" is MOVED into the About panel (Sam, 2026-09-04).
+// A MOVE, not a re-home in the markup: excel_to_dashboard.py re-injects this
+// button after .last-updated on every daily run, so an HTML edit would be undone
+// by the next cron while a runtime move survives it.
+{
+  const d = dom();
+  const doc = d.window.document;
+  check("fixture starts with Refresh in the utility strip, where the generator puts it",
+    !!doc.querySelector(".cobi-utility > #refreshBtn"));
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const btn = doc.getElementById("refreshBtn");
+  check("Refresh still exists after the move (moved, never dropped)", !!btn);
+  check("Refresh now sits inside the About panel", !!btn && !!btn.closest("#cobiAboutPanel"));
+  check("Refresh is no longer a direct child of the utility strip",
+    !doc.querySelector(".cobi-utility > #refreshBtn"));
+  check("exactly one Refresh button exists (moved, not copied)",
+    doc.querySelectorAll("#refreshBtn").length === 1);
+
+  // Idempotent: the daily regen re-runs init, and a second pass must not throw
+  // or re-parent anything.
+  d.window.COBI_BRAND.relocateRefresh();
+  check("relocation is idempotent", doc.querySelectorAll("#refreshBtn").length === 1 &&
+    !!doc.getElementById("refreshBtn").closest("#cobiAboutPanel"));
+}
+
+// (g) ⭐ THE ZOOM BUG. Sam, 2026-09-04: "the header is all a mess when I zoom in
+// or out, it gets messed up and ugly" — the site switcher and the lock were
+// painting over the "Where To?" box.
+//
+// The cause is not decoration: a bare `1fr` is minmax(AUTO,1fr), so the track
+// refuses to shrink below its content, and a row of nowrap clusters OVERFLOWS
+// instead of wrapping. Zoom changes the CSS-pixel width, which is why it showed
+// up there first. Assert the shrinkable form directly — a future edit that
+// re-introduces a bare 1fr brings the overlap back with it.
+{
+  const d = dom();
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const css = Array.from(d.window.document.querySelectorAll("head style"))
+    .map(x => x.textContent).join("");
+  const headerRule = /\.header\{([^}]*)\}/.exec(css);
+  check("masthead declares its grid tracks", !!headerRule);
+  check("the flexible track is minmax(0,1fr), never a bare 1fr",
+    !!headerRule && /grid-template-columns:auto minmax\(0,1fr\) auto/.test(headerRule[1]));
+  check("no bare `1fr` track survives anywhere in the masthead CSS",
+    !/grid-template-columns:[^;}]*(^|[ :])1fr/.test(css.replace(/minmax\(0,1fr\)/g, "OK")));
+  // Each nowrap cluster must be allowed to shrink, or it pushes the row wide
+  // however elastic the middle track is.
+  for (const sel of ["cobi-brand", "cobi-qs-slot", "cobi-utility"]) {
+    const m = new RegExp("\\." + sel + "\\{([^}]*)\\}").exec(css);
+    check(sel + " can shrink (min-width:0)", !!m && /min-width:0/.test(m[1]));
+  }
+  check("the search slot is capped, not fixed-width (so it follows its track down)",
+    /\.cobi-qs-slot\{[^}]*max-width:360px/.test(css) &&
+    !/\.cobi-qs-slot\{[^}]*width:min\(/.test(css));
+  // Presentation rule: single column below ~560px.
+  check("a single-column mobile breakpoint exists",
+    /@media \(max-width:560px\)/.test(css));
+}
+
 
 let failed = 0;
 for (const [name, ok] of results) {
