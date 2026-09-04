@@ -260,6 +260,51 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(A) …and the legend explains the broken ring in words",
       /noncredit/i.test(text(".u-legend")) && /broken ring/i.test(text(".u-legend")));
   }
+  // ── item 1 (Sam, 2026-09-04): the side menu opens the FULL WINDOW ──────────
+  // "open Skyview from CCR side menu link directly to the full window version of
+  // SkyView, not another view." Inside the CCR tab SkyView is an iframe beside
+  // the list — right there, wrong when the map is the whole job.
+  {
+    const html = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+    const dash = fs.readFileSync(path.join(ROOT, "CPL_Dashboard.html"), "utf8");
+    check("(A) ⭐ a keyed SkyView launcher opens the standalone page in its own tab",
+      /data-nav-link="skyview"[^>]*href="prototype\/skyview\.html"/.test(html.replace(/\s+/g, " ")) ||
+      /href="prototype\/skyview\.html"[^>]*data-nav-link="skyview"/.test(html.replace(/\s+/g, " ")));
+    check("(A) …it is NOT a tab, so tabs.js never tries to render a pane for it",
+      !/data-nav-link="skyview"[^>]*data-tab=/.test(html.replace(/\s+/g, " ")));
+    check("(A) Rule 4 — the launcher is mirrored in both HTMLs",
+      html.includes('data-nav-link="skyview"') && dash.includes('data-nav-link="skyview"'));
+    // ⚠️ Unlisted, a keyed launcher falls to the Share group by nav_groups.js's
+    // catch-all — beside the PUBLIC Fact Sheet and Sierra. SkyView is an
+    // internal curation tool, and Share would put the map a whole group away
+    // from the reference it is a view of.
+    const nav = fs.readFileSync(path.join(ROOT, "nav_groups.js"), "utf8");
+    check("(A) ⭐ SkyView is grouped with the Common Course Reference, not with Share",
+      /id: 'reference'[^}]*'unified-courses', 'skyview'/.test(nav) &&
+      !/id: 'share'[^}]*'skyview'/.test(nav));
+  }
+
+  // ── the keyword search keeps credit and noncredit apart (Sam's first list) ──
+  {
+    const hits = w.__ccrSuggest("weld", 8) || [];
+    const courses = hits.filter((h) => h.kind === "course");
+    check("(A) course suggestions carry their credit status in words",
+      courses.length === 0 || courses.every((c) => /credit|not recorded/i.test(c.credit || "")),
+      courses.map((c) => c.credit).join(" | "));
+    // ⭐ A STABLE partition after the relevance sort — credit block, then
+    // noncredit, then unrecorded — so the best match still leads inside each
+    // block. Sorting BY credit would have thrown the relevance order away.
+    const rank = (c) => /not recorded/.test(c.credit) ? 2 : /^noncredit/.test(c.credit) ? 1 : 0;
+    check("(A) ⭐ credit courses group ahead of noncredit, unrecorded last",
+      courses.every((c, i) => i === 0 || rank(courses[i - 1]) <= rank(c)),
+      courses.map((c) => rank(c)).join(","));
+    // ⚠️ No header row between the blocks on purpose: this is a listbox whose
+    // keyboard nav indexes sugItems directly, so a non-selectable entry would
+    // desync every arrow key after it. Each row names its own status instead.
+    check("(A) …and every suggestion stays selectable (no header rows injected)",
+      hits.every((h) => h.kind === "subject" || h.kind === "course" || h.kind === "member"),
+      hits.map((h) => h.kind).join(","));
+  }
   check("(A) the legend strip can be folded away, and says so in a word",
     !!q("#u-foot-toggle") && /legend/i.test(text("#u-foot-toggle")));
   {

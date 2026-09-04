@@ -3639,6 +3639,15 @@
             <button class="cpl-tab" data-tab="college-identity" role="tab" aria-selected="false">College Identity</button>
             <button class="cpl-tab" data-tab="annual-report" role="tab" aria-selected="false">Annual Report</button>
             <button class="cpl-tab" data-tab="unified-courses" role="tab" aria-selected="false">Common Course Reference</button>
+            <!-- External launch: SkyView in its own FULL WINDOW (Sam, 2026-09-04: "open Skyview from CCR
+                 side menu link directly to the full window version of SkyView, not another view"). Inside the
+                 Common Course Reference tab SkyView is an IFRAME beside the list, which is the right shape
+                 there and the wrong one when the map is the whole job. NOT a tab (no data-tab) so tabs.js
+                 ignores it; keyed by data-nav-link so cobi_orgs.js and the Admin overlay can govern it like
+                 any other entry. Mirror this block in the sibling HTML (Rule 4). -->
+            <a class="cpl-tab cpl-tab-external" data-nav-link="skyview" href="prototype/skyview.html" target="_blank" rel="noopener"
+               style="text-decoration:none;display:block"
+               title="Open SkyView — the whole Common Course Reference as a map — full window in a new tab">SkyView ↗</a>
             <button class="cpl-tab" data-tab="canonical-subj4" role="tab" aria-selected="false">Common Subjects Reference</button>
             <button class="cpl-tab" data-tab="cr-reference" role="tab" aria-selected="false">Common CR Reference</button>
             <button class="cpl-tab" data-tab="coci-lookup" role="tab" aria-selected="false">COCI Lookup</button>

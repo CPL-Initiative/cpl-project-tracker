@@ -36,7 +36,15 @@
     // view and appears only under the FIN site — where it leads this group.
     { id: 'funding', label: 'Funding', tabs: ['contracts', 'budget', 'implementation-funding'] },
     { id: 'strategy', label: 'Strategy & Impact', tabs: ['vision-2030', 'military-partnerships', 'cpl-news'] },
-    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'canonical-subj4', 'coci-lookup', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
+    /* ⚠️ 'skyview' is an external launcher that belongs HERE, not in Share.
+     * Sam, 2026-09-04: "open Skyview from CCR side menu link directly to the
+     * full window version of SkyView". Left unlisted it falls to Share by the
+     * catch-all below — beside the public Fact Sheet and Sierra, which is wrong
+     * twice: Share is where PUBLIC, shareable pages live, and SkyView is an
+     * internal curation tool; and it put the map a whole group away from the
+     * Common Course Reference it is a view OF. Listing it here is the only thing
+     * that keeps the two together. */
+    { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'skyview', 'canonical-subj4', 'coci-lookup', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
     { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'team-phrases', 'knowledge-base', 'letters'] },
     /* Share — the external launchers, and a REAL group since 2026-08-15.
      *

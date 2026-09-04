@@ -1805,6 +1805,12 @@ function whyWords(w){
 var CR_ALL="all", CR_CREDIT="cr", CR_NC="nc";
 var creditFilter=CR_ALL;
 function isNC(nd){ return nd.c===1 || nd.c===2; }
+/* The word a reader sees. `Noncredit enhanced` is the CDCP distinction and is
+ * kept — it is a different thing from plain noncredit, and the list has room. */
+function creditWord(nd){
+  return nd.c===0 ? "credit" : nd.c===1 ? "noncredit"
+       : nd.c===2 ? "noncredit enhanced" : "credit status not recorded";
+}
 function isCR(nd){ return nd.c===0; }
 function creditShown(nd){
   if(creditFilter===CR_ALL) return true;
@@ -2279,9 +2285,31 @@ function placeNodeLabels(queue, boxes){
     if(!box) return;
     boxes.push(box); placed.push(box);
     labelStats[mem?"members":q.band]++;
+    /* ── item 5 (Sam, 2026-09-04): "Try and make the labels show the circle they
+     * connect to clearer. Now I need to click on the course circle to see which
+     * is which."
+     *
+     * The leader line already existed (his 2026-09-03 ask) and was not doing the
+     * job, for two reasons the drawing makes obvious once you look at a crowded
+     * island: it was a faint 1px hairline at 35% that vanishes among its
+     * neighbours, and it STOPPED IN SPACE at the label's corner, so the eye had
+     * to guess which of several nearby lines belonged to which text.
+     *
+     * Three cheap changes, no new colour: a DOT where the leader meets its
+     * circle, so ownership is stated at the circle end rather than inferred; an
+     * ELBOW that carries the line horizontally INTO the first line of the label,
+     * so it terminates on the text it names; and a little more weight. Still the
+     * quietest mark in the frame — this is a tie, not a decoration. */
+    var ex=q.px+at.sx*q.rad*0.71, ey=q.py+at.sy*q.rad*0.71;
+    var midY=at.y0+lh-2-lh*0.28;                 // the first line's optical middle
+    var stubX=at.sx>0 ? at.x0 : at.x0+w;         // the label edge nearest the circle
+    ctx.strokeStyle=q.force?"rgba(146,0,0,.75)":"rgba(28,28,26,.55)";
     ctx.beginPath();
-    ctx.moveTo(q.px+at.sx*q.rad*0.71, q.py+at.sy*q.rad*0.71); ctx.lineTo(at.ax, at.ay);
-    ctx.lineWidth=1; ctx.strokeStyle=q.force?"rgba(146,0,0,.6)":"rgba(28,28,26,.35)"; ctx.stroke();
+    ctx.moveTo(ex, ey); ctx.lineTo(at.ax, at.ay); ctx.lineTo(stubX, midY);
+    ctx.lineWidth=1.1; ctx.stroke();
+    // The dot says WHICH circle, at the end where the ambiguity is.
+    ctx.beginPath(); ctx.arc(ex, ey, Math.min(2.2, Math.max(1.2, q.rad*0.16)), 0, 6.2832);
+    ctx.fillStyle=q.force?"rgba(146,0,0,.85)":"rgba(28,28,26,.62)"; ctx.fill();
     labelStats.leaders++;
     q.lines.forEach(function(t,li){
       var y=at.y0+lh*(li+1)-2;
@@ -2558,10 +2586,32 @@ function suggest(raw, limit){
     }
   }
   pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
+  /* ── item 6 of Sam's first list (2026-09-04): "In the Keyword Search, keep CR
+   * courses together separated from NC courses."
+   *
+   * A STABLE partition, applied AFTER the relevance sort, so credit courses come
+   * first as a block, then noncredit, then the ones with no recorded status —
+   * and inside each block the best match is still first. Sorting BY credit as a
+   * primary key would have thrown away the relevance order the curator is
+   * actually searching on; partitioning keeps both.
+   *
+   * ⚠️ The unrecorded are their own third block, never folded into credit. It is
+   * the same reason the CR/NC filter has three positions: 73 identities carry no
+   * value, and calling them credit would be inventing one.
+   *
+   * The blocks are not separated by a HEADER ROW on purpose — the suggestion
+   * list is a listbox whose keyboard navigation indexes sugItems directly, so a
+   * non-selectable <li> between groups would desync every arrow key after it.
+   * Each row instead names its own status, which is what makes the block
+   * boundary legible. */
+  var byCredit=[[],[],[]];
+  pts.forEach(function(p){ byCredit[p.nd.c==null ? 2 : (p.nd.c===0 ? 0 : 1)].push(p); });
+  pts=byCredit[0].concat(byCredit[1], byCredit[2]);
   var take=Math.min(room-1, pts.length, Math.max(1, room-2));
   pts.slice(0, Math.max(0,take)).forEach(function(p){
     out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity", label:p.nd.t||p.nd.i,
-              sub:p.nd.i+" · "+p.isl.d, isl:p.isl, nd:p.nd});
+              sub:p.nd.i+" · "+p.isl.d+" · "+creditWord(p.nd), credit:creditWord(p.nd),
+              isl:p.isl, nd:p.nd});
   });
   room=limit-out.length;
   // College courses, by code (prefix wins) or by control number.
