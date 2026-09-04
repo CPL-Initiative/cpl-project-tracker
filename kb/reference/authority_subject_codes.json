@@ -1,6 +1,6 @@
 {
   "_about": "Every C-ID / CCN subject code in kb/reference, the disciplines its rows sit under in kb/promotions.json (evidence), and where it is attributed (basis: ruled | canonical | majority | name); dismissed pairs are item 17 of the 2026-09-03 rulings. Built by kb/_seed_authority_codes.py.",
-  "_built_at": "2026-09-03",
+  "_built_at": "2026-09-04",
   "_rules": {
     "majority_floor": 4,
     "dismissed_pairs": [
@@ -692,8 +692,8 @@
       "code": "DMGR",
       "evidence": {
         "Multimedia": 3,
-        "Graphic Arts": 1,
-        "Art": 1
+        "Art": 1,
+        "Graphic Arts": 1
       },
       "attributed": [
         {
@@ -1019,8 +1019,8 @@
       "evidence": {
         "Culinary Arts/Food Technology": 20,
         "Family and Consumer Studies/ Home Economics": 5,
-        "Restaurant Management": 3,
         "Hotel and Motel Services": 3,
+        "Restaurant Management": 3,
         "Business": 1
       },
       "attributed": [
@@ -1348,8 +1348,8 @@
       "code": "SJS",
       "evidence": {
         "Social Science": 6,
-        "Sociology": 5,
         "Ethnic Studies": 5,
+        "Sociology": 5,
         "Chicano Studies": 1,
         "Humanities": 1,
         "Women’s Studies": 1

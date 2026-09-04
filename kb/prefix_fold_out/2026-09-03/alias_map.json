@@ -1,5 +1,5 @@
 {
-  "_status": "DRY-RUN — prefix fold (scope all); no kb files mutated, no Supabase writes.",
+  "_status": "APPLIED 2026-09-04T01:57:31Z — prefix fold (scope all). Ruling: Sam, 2026-09-04: \"Yes to all recommendations\" — the seven items of the prefix fold sheet as proposed (1, 2, 5, 7 fold; 3 held; 4 no fold; 6 the span stays); kb/prefix_fold_rulings_2026-09-04.json. The alias map is the receipt of record and the rollback handle (read right-to-left). Per-row ground truth: _prefix_fold_from stamps on minted courses + singletons.",
   "_generated_by": "kb/_prefix_fold_dryrun.py",
   "_generated_at": "2026-09-03",
   "_rule": "keep the number, gap-fill only where the new key exists (continuation band when the band is full); a row whose discipline rests on TOP alone is held",
@@ -3244,5 +3244,9 @@
         "overlay:trailcrew-ccr1-s111@bot"
       ]
     }
-  }
+  },
+  "_applied_at": "2026-09-04T01:57:31Z",
+  "_applied_by": "kb/_prefix_fold_apply.py",
+  "_ruling": "Sam, 2026-09-04: \"Yes to all recommendations\" — the seven items of the prefix fold sheet as proposed (1, 2, 5, 7 fold; 3 held; 4 no fold; 6 the span stays); kb/prefix_fold_rulings_2026-09-04.json",
+  "_plan_source": "recomputed via _prefix_fold_dryrun.compute_plan at apply time; verified equal to this frozen receipt (P1)"
 }

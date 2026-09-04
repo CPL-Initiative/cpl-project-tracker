@@ -37,7 +37,8 @@ Usage (from repo root):
   python3 kb/_rekey_crnc_mirrors.py                                  # dry-run
   python3 kb/_rekey_crnc_mirrors.py --baseline-through <map> --apply # first run
   python3 kb/_rekey_crnc_mirrors.py --apply                          # later runs (the chain)
-Receipt: kb/crnc_rekey_out/<date>/rekey_receipt.json (the moved pairs).
+Receipt: kb/crnc_rekey_out/<date>/rekey_receipt.json (the moved pairs; a second run the
+same day writes rekey_receipt_2.json, never over the first).
 """
 from __future__ import annotations
 
@@ -74,6 +75,19 @@ def pending_maps(applied_already, baseline_through=None, chain=None):
     if chain[k:] != pending or not all(p in applied_already for p in chain[:k]):
         raise SystemExit(f"ERA FAIL: _rekeyed_through {applied_already} is not a prefix of ALIAS_MAPS")
     return pending, chain[:k] + pending
+
+
+def receipt_path(out_dir):
+    """rekey_receipt.json, then rekey_receipt_2.json, _3 ... — two runs on one day
+    (2026-09-04: the recode's 398 keys in the morning, the fold's 29 that night)
+    must both keep their receipt."""
+    n = 1
+    while True:
+        name = "rekey_receipt.json" if n == 1 else f"rekey_receipt_{n}.json"
+        path = os.path.join(out_dir, name)
+        if not os.path.exists(path):
+            return path
+        n += 1
 
 
 def rekey(mirrors, maps, live_keys):
@@ -137,13 +151,14 @@ def main():
     os.replace(tmp, MIRRORS)
     out_dir = os.path.join(OUT_DIR, today)
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "rekey_receipt.json"), "w", encoding="utf-8") as f:
+    receipt = receipt_path(out_dir)
+    with open(receipt, "w", encoding="utf-8") as f:
         json.dump({"_about": "kb/crnc_mirrors.json re-keyed through the applied alias chain (old -> new)",
                    "_at": today, "maps_applied": pending, "rekeyed_through": through,
                    "count": len(moved), "moved": dict(sorted(moved.items()))}, f, indent=1, ensure_ascii=False)
         f.write("\n")
     print(f"\nAPPLIED: kb/crnc_mirrors.json re-keyed ({len(moved)} keys); receipt at "
-          f"{os.path.relpath(out_dir, ROOT)}/rekey_receipt.json")
+          f"{os.path.relpath(receipt, ROOT)}")
     return 0
 
 

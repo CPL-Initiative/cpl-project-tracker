@@ -16156,125 +16156,6 @@
       ],
       "colleges_offering_count": 1
     },
-    "CARP M10ET": {
-      "identity_system": "M-ID",
-      "title": "Structural Framing",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EU": {
-      "identity_system": "M-ID",
-      "title": "Suspended Framing Ceiling Systems",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EV": {
-      "identity_system": "M-ID",
-      "title": "Suspended Scaffolds and Shoring Systems",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EW": {
-      "identity_system": "M-ID",
-      "title": "System Scaffold",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EX": {
-      "identity_system": "M-ID",
-      "title": "The Acoustical Apprentice, Safety, and the Trade",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EY": {
-      "identity_system": "M-ID",
-      "title": "The Mill Cabinet Apprentice and the Trade",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
-    "CARP M10EZ": {
-      "identity_system": "M-ID",
-      "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
-      "discipline": "Construction Technology",
-      "confidence": null,
-      "subject_spread": 1,
-      "over_merged": false,
-      "is_singleton": true,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": false,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "American River College"
-      ],
-      "colleges_offering_count": 1
-    },
     "CARP M10FA": {
       "identity_system": "M-ID",
       "title": "Tools of the Trade and Installation of Hardwood Floors",
@@ -35780,24 +35661,6 @@
       "colleges_offering": [
         "Woodland Community College",
         "Yuba College"
-      ],
-      "colleges_offering_count": 2
-    },
-    "HLTH M1034": {
-      "identity_system": "M-ID",
-      "title": "Personal and Community Health",
-      "discipline": "Health",
-      "confidence": 0.68,
-      "subject_spread": 2,
-      "over_merged": false,
-      "is_singleton": false,
-      "credit_status": "Credit",
-      "credit_status_mixed": false,
-      "top_code_mixed": true,
-      "noncredit_category_mixed": false,
-      "colleges_offering": [
-        "City College of San Francisco",
-        "Copper Mountain College"
       ],
       "colleges_offering_count": 2
     },
@@ -74373,7 +74236,7 @@
       "_remint_from": "M-ID AMW 108"
     },
     {
-      "course_id": "CNSC M10BN",
+      "course_id": "CARP M10EV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74403,7 +74266,7 @@
       "_remint_from": "M-ID AMW 112"
     },
     {
-      "course_id": "CNSC M10BN",
+      "course_id": "CARP M10EV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74493,7 +74356,7 @@
       "_remint_from": "M-ID AMW 114"
     },
     {
-      "course_id": "CNSC M10AV",
+      "course_id": "CARP M10EU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74523,7 +74386,7 @@
       "_remint_from": "M-ID AMW 116"
     },
     {
-      "course_id": "CNSC M10AV",
+      "course_id": "CARP M10EU",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74553,7 +74416,7 @@
       "_remint_from": "M-ID AMW 116"
     },
     {
-      "course_id": "CNSC M10BX",
+      "course_id": "CARP M10EX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74583,7 +74446,7 @@
       "_remint_from": "M-ID AMW 118"
     },
     {
-      "course_id": "CNSC M10BX",
+      "course_id": "CARP M10EX",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74613,7 +74476,7 @@
       "_remint_from": "M-ID AMW 118"
     },
     {
-      "course_id": "CNSC M10BY",
+      "course_id": "CARP M10EY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74643,7 +74506,7 @@
       "_remint_from": "M-ID AMW 120"
     },
     {
-      "course_id": "CNSC M10BY",
+      "course_id": "CARP M10EY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74733,7 +74596,7 @@
       "_remint_from": "M-ID AMW 124"
     },
     {
-      "course_id": "CNSC M10AR",
+      "course_id": "CARP M10ES",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74763,7 +74626,7 @@
       "_remint_from": "M-ID AMW 126"
     },
     {
-      "course_id": "CNSC M10AR",
+      "course_id": "CARP M10ES",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74793,7 +74656,7 @@
       "_remint_from": "M-ID AMW 126"
     },
     {
-      "course_id": "CNSC M10AK",
+      "course_id": "CARP M10ER",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74823,7 +74686,7 @@
       "_remint_from": "M-ID AMW 128"
     },
     {
-      "course_id": "CNSC M10AK",
+      "course_id": "CARP M10ER",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74853,7 +74716,7 @@
       "_remint_from": "M-ID AMW 128"
     },
     {
-      "course_id": "CNSC M10AS",
+      "course_id": "CARP M10ET",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74883,7 +74746,7 @@
       "_remint_from": "M-ID AMW 134"
     },
     {
-      "course_id": "CNSC M10AS",
+      "course_id": "CARP M10ET",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -74973,7 +74836,7 @@
       "_remint_from": "M-ID AMW 136"
     },
     {
-      "course_id": "CNSC M10CA",
+      "course_id": "CARP M10EZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75003,7 +74866,7 @@
       "_remint_from": "M-ID AMW 138"
     },
     {
-      "course_id": "CNSC M10CA",
+      "course_id": "CARP M10EZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75033,7 +74896,7 @@
       "_remint_from": "M-ID AMW 138"
     },
     {
-      "course_id": "CNSC M10BS",
+      "course_id": "CARP M10EW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -75063,7 +74926,7 @@
       "_remint_from": "M-ID AMW 144"
     },
     {
-      "course_id": "CNSC M10BS",
+      "course_id": "CARP M10EW",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -78018,7 +77881,7 @@
       "_remint_from": "M-ID ARCH 946"
     },
     {
-      "course_id": "ARTS M1043",
+      "course_id": "PHOT M1142",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -78062,7 +77925,7 @@
       "_remint_from": "M-ID ART 146"
     },
     {
-      "course_id": "ARTS M1043",
+      "course_id": "PHOT M1142",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -78608,7 +78471,7 @@
       "_remint_from": "M-ID ART 2718"
     },
     {
-      "course_id": "ARTS M1300",
+      "course_id": "GRAF M1300",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -78662,7 +78525,7 @@
       "_remint_from": "M-ID ART 622"
     },
     {
-      "course_id": "ARTS M1300",
+      "course_id": "GRAF M1300",
       "identity_system": "M-ID",
       "over_merged": true,
       "identity_confidence": 0.72,
@@ -84501,7 +84364,7 @@
       "_remint_from": "M-ID AUT 192"
     },
     {
-      "course_id": "AVIA M1022",
+      "course_id": "AUTO M1295",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -84536,7 +84399,7 @@
       "_remint_from": "M-ID AMT 110"
     },
     {
-      "course_id": "AVIA M1022",
+      "course_id": "AUTO M1295",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -91701,7 +91564,7 @@
       "_remint_from": "M-ID AUTO 1556"
     },
     {
-      "course_id": "INDT M10FZ",
+      "course_id": "AUTB M10FZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -91731,7 +91594,7 @@
       "_remint_from": "M-ID AUTOCOR 116"
     },
     {
-      "course_id": "INDT M10FZ",
+      "course_id": "AUTB M10FZ",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -93918,7 +93781,7 @@
       "_remint_from": "M-ID AUTO 418"
     },
     {
-      "course_id": "WELD M10FI",
+      "course_id": "AUTB M10FN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -93948,7 +93811,7 @@
       "_remint_from": "M-ID AUTOCOR 118"
     },
     {
-      "course_id": "WELD M10FI",
+      "course_id": "AUTB M10FN",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -103715,7 +103578,7 @@
       "_remint_from": "M-ID CA 118"
     },
     {
-      "course_id": "CISC M1090",
+      "course_id": "ITIS M1490",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -103752,7 +103615,7 @@
       "_remint_from": "M-ID CS 190"
     },
     {
-      "course_id": "CISC M1090",
+      "course_id": "ITIS M1490",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -110064,7 +109927,7 @@
       "adoption_leverage_count": 58
     },
     {
-      "course_id": "HVAC M1039",
+      "course_id": "CNST M1140",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -110094,7 +109957,7 @@
       "_remint_from": "M-ID CEM 102"
     },
     {
-      "course_id": "HVAC M1039",
+      "course_id": "CNST M1140",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -110124,7 +109987,7 @@
       "_remint_from": "M-ID CEM 102"
     },
     {
-      "course_id": "HVAC M1038",
+      "course_id": "CNST M1139",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -110154,7 +110017,7 @@
       "_remint_from": "M-ID CEM 104"
     },
     {
-      "course_id": "HVAC M1038",
+      "course_id": "CNST M1139",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -130742,7 +130605,7 @@
       "_remint_from": "M-ID ACA 236"
     },
     {
-      "course_id": "ESCI M1001",
+      "course_id": "CNST M1138",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -130776,7 +130639,7 @@
       "_remint_from": "M-ID ACA 238"
     },
     {
-      "course_id": "ESCI M1001",
+      "course_id": "CNST M1138",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -130810,7 +130673,7 @@
       "_remint_from": "M-ID ACA 238"
     },
     {
-      "course_id": "ESCI M1001",
+      "course_id": "CNST M1138",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -136055,7 +135918,7 @@
       "_remint_from": "M-ID DIESLTK 116"
     },
     {
-      "course_id": "HVAC M10FR",
+      "course_id": "AUTD M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136085,7 +135948,7 @@
       "_remint_from": "M-ID DIESLTK 120"
     },
     {
-      "course_id": "HVAC M10FR",
+      "course_id": "AUTD M10FY",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -136739,7 +136602,7 @@
       "_remint_from": "M-ID DM 118"
     },
     {
-      "course_id": "ARTS M1166",
+      "course_id": "MULT M1174",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -136775,7 +136638,7 @@
       "_remint_from": "M-ID ART 798"
     },
     {
-      "course_id": "ARTS M1166",
+      "course_id": "MULT M1174",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -136811,7 +136674,7 @@
       "_remint_from": "M-ID ART 798"
     },
     {
-      "course_id": "ARTS M1166",
+      "course_id": "MULT M1174",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -136847,7 +136710,7 @@
       "_remint_from": "M-ID ART 798"
     },
     {
-      "course_id": "ARTS M1166",
+      "course_id": "MULT M1174",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -137165,7 +137028,7 @@
       "_remint_from": "M-ID DRAFT 110"
     },
     {
-      "course_id": "THEA M1087",
+      "course_id": "THES M1087",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -137198,7 +137061,7 @@
       "_remint_from": "M-ID DRAM 104"
     },
     {
-      "course_id": "THEA M1087",
+      "course_id": "THES M1087",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -140731,7 +140594,7 @@
       "_remint_from": "M-ID EGTECH 106"
     },
     {
-      "course_id": "INDT M10RV",
+      "course_id": "ENGT M10RV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -140761,7 +140624,7 @@
       "_remint_from": "M-ID EGTECH 108"
     },
     {
-      "course_id": "INDT M10RV",
+      "course_id": "ENGT M10RV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -140791,7 +140654,7 @@
       "_remint_from": "M-ID EGTECH 108"
     },
     {
-      "course_id": "INDT M10RV",
+      "course_id": "ENGT M10RV",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": null,
@@ -142342,7 +142205,7 @@
       "_remint_from": "M-ID CTV 100"
     },
     {
-      "course_id": "ELET M1074",
+      "course_id": "CNST M1137",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -142378,7 +142241,7 @@
       "_remint_from": "M-ID ELEC 152"
     },
     {
-      "course_id": "ELET M1074",
+      "course_id": "CNST M1137",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.72,
@@ -203203,7 +203066,7 @@
       "_remint_from": "M-ID MSCNC 100"
     },
     {
-      "course_id": "MANU M1028",
+      "course_id": "MACH M1081",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -203235,7 +203098,7 @@
       "_remint_from": "M-ID MSCNC 102"
     },
     {
-      "course_id": "MANU M1028",
+      "course_id": "MACH M1081",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -203267,7 +203130,7 @@
       "_remint_from": "M-ID MSCNC 102"
     },
     {
-      "course_id": "MANU M1028",
+      "course_id": "MACH M1081",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -203299,7 +203162,7 @@
       "_remint_from": "M-ID MSCNC 102"
     },
     {
-      "course_id": "MANU M1028",
+      "course_id": "MACH M1081",
       "identity_system": "M-ID",
       "over_merged": false,
       "identity_confidence": 0.68,
@@ -242932,5 +242795,11 @@
   ],
   "_subj4_remint_applied_at": "2026-05-23T19:22:06Z",
   "_subj4_fold_applied_at": "2026-06-12T18:11:26Z",
-  "_authority_recode_applied_at": "2026-09-03T20:19:16Z"
+  "_authority_recode_applied_at": "2026-09-03T20:19:16Z",
+  "_prefix_fold_applied": [
+    {
+      "receipt": "kb/prefix_fold_out/2026-09-03",
+      "at": "2026-09-04T01:57:31Z"
+    }
+  ]
 }

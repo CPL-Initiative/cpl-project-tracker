@@ -468,6 +468,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/plan.json` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/pols_remint_out/<date>/alias_map.json` | scripts: `kb/_rekey_promotions.py` | — |
 | `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
+| `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_rekey_promotions.py` | — |
 | `kb/preseed_out/2026-07-07/live_values.json` | scripts: `kb/_preseed_unclassified.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
@@ -796,5 +797,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 417 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 418 file
 datasets · 137 external services · 313 consumers · 33 workflows · 37 tabs.

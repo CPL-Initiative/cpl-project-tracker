@@ -1,11 +1,11 @@
 {
   "_about": "Curator-confirmed canonical SUBJ4 per M-ID discipline. Consumed by the Phase 1e re-mint (kb/_subj4_dryrun.py / kb/_subj4_apply.py) to fold same-discipline SUBJ4 variants. Every canonical_subj4 MUST be exactly 4 letters [A-Z]{4}. Seeded from data-modal where the modal is 4 letters and comprises ≥60% of the discipline's M-IDs; otherwise blank pending curator review. Edited via the Canonical SUBJ4 tab (Supabase kb_curation, course_id namespace '_CANON_SUBJ4::<discipline>'); kb/_apply_canonical_subj4.py folds Supabase edits back into this file.",
-  "_seeded_at": "2026-09-03",
+  "_seeded_at": "2026-09-04",
   "_seeded_by": "kb/_seed_canonical_subj4.py",
   "_invariant": "every canonical_subj4 must match ^[A-Z]{4}$",
   "_counts": {
     "total_disciplines": 147,
-    "multi_subj4_disciplines": 44,
+    "multi_subj4_disciplines": 40,
     "needs_review": 0,
     "seeded_default": 147
   },
@@ -17,7 +17,8 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.256,
       "variants_observed": {
-        "CRIM": 1469
+        "CRIM": 1468,
+        "PLGL": 1
       },
       "total_mids": 1469,
       "local_subject_variants": {
@@ -246,12 +247,13 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.296,
       "variants_observed": {
-        "AGRI": 217,
+        "AGRI": 216,
         "AGAS": 167,
         "AGPS": 20,
         "AGEH": 16,
         "AGAB": 12,
-        "AGMA": 8
+        "AGMA": 8,
+        "HORT": 1
       },
       "total_mids": 440,
       "local_subject_variants": {
@@ -369,7 +371,18 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.127,
       "variants_observed": {
-        "HVAC": 650
+        "HVAC": 623,
+        "AUTD": 6,
+        "AUTO": 5,
+        "ELEC": 5,
+        "CNST": 2,
+        "INTD": 2,
+        "MANU": 2,
+        "CNSM": 1,
+        "ESCI": 1,
+        "ITIS": 1,
+        "MATH": 1,
+        "PLMB": 1
       },
       "total_mids": 650,
       "local_subject_variants": {
@@ -449,7 +462,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.635,
       "variants_observed": {
-        "ANTH": 405
+        "ANTH": 404,
+        "SOCI": 1
       },
       "total_mids": 405,
       "local_subject_variants": {
@@ -531,8 +545,11 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.631,
       "variants_observed": {
-        "ARCH": 592,
-        "HVAC": 1
+        "ARCH": 589,
+        "ARTS": 1,
+        "CNSM": 1,
+        "DRAF": 1,
+        "INTD": 1
       },
       "total_mids": 593,
       "local_subject_variants": {
@@ -612,7 +629,14 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.787,
       "variants_observed": {
-        "ARTS": 2295
+        "ARTS": 2274,
+        "ARTH": 9,
+        "GRAF": 4,
+        "PHOT": 3,
+        "MULT": 2,
+        "HUMA": 1,
+        "INTD": 1,
+        "OLAD": 1
       },
       "total_mids": 2295,
       "local_subject_variants": {
@@ -694,8 +718,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.537,
       "variants_observed": {
-        "ARTH": 124,
-        "ARTS": 6
+        "ARTH": 130
       },
       "total_mids": 130,
       "local_subject_variants": {
@@ -877,9 +900,8 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.279,
       "variants_observed": {
-        "AUTB": 219,
-        "AGRI": 1,
-        "HVAC": 1
+        "AUTB": 220,
+        "AGRI": 1
       },
       "total_mids": 221,
       "local_subject_variants": {
@@ -1036,7 +1058,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.199,
       "variants_observed": {
-        "AVIA": 518
+        "AVIA": 517,
+        "AUTO": 1
       },
       "total_mids": 518,
       "local_subject_variants": {
@@ -1161,7 +1184,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.56,
       "variants_observed": {
-        "BIOL": 994
+        "BIOL": 992,
+        "FDNT": 1,
+        "HTEC": 1
       },
       "total_mids": 994,
       "local_subject_variants": {
@@ -1379,8 +1404,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.403,
       "variants_observed": {
-        "BUSI": 1577,
-        "CRIM": 1
+        "BUSI": 1571,
+        "BSOT": 4,
+        "MRKT": 2,
+        "MATH": 1
       },
       "total_mids": 1578,
       "local_subject_variants": {
@@ -1777,8 +1804,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.897,
       "variants_observed": {
-        "ARTD": 72,
-        "ARTS": 7
+        "ARTD": 79
       },
       "total_mids": 79,
       "local_subject_variants": {
@@ -1876,7 +1902,10 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.69,
       "variants_observed": {
-        "COMM": 343
+        "COMM": 339,
+        "MULT": 2,
+        "FTVE": 1,
+        "JOUR": 1
       },
       "total_mids": 343,
       "local_subject_variants": {
@@ -1959,8 +1988,9 @@
       "data_modal_share": 0.52,
       "variants_observed": {
         "ITIS": 1873,
-        "CSIS": 3,
-        "BUSI": 1
+        "MULT": 2,
+        "BUSI": 1,
+        "FTVE": 1
       },
       "total_mids": 1877,
       "local_subject_variants": {
@@ -2042,10 +2072,11 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.485,
       "variants_observed": {
-        "COMP": 666,
-        "ITIS": 26,
-        "CISC": 5,
-        "BUSI": 1
+        "COMP": 692,
+        "ITIS": 2,
+        "MULT": 2,
+        "BUSI": 1,
+        "MATH": 1
       },
       "total_mids": 698,
       "local_subject_variants": {
@@ -2125,17 +2156,13 @@
       "source": "curator_override",
       "data_modal": "CNSM",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.909,
+      "data_modal_share": 1.0,
       "variants_observed": {
-        "CNSM": 20,
-        "CNSR": 1,
-        "HVAC": 1
+        "CNSM": 22
       },
       "total_mids": 22,
       "local_subject_variants": {
-        "CNSM": 20,
-        "CNSR": 1,
-        "HVAC": 1
+        "CNSM": 22
       },
       "local_subject_variants_truncated": 0,
       "local_subject_total": 22,
@@ -2172,8 +2199,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.169,
       "variants_observed": {
-        "CNST": 605,
-        "HVAC": 8
+        "CNST": 613
       },
       "total_mids": 613,
       "local_subject_variants": {
@@ -2306,7 +2332,7 @@
       "data_modal_share": 0.366,
       "variants_observed": {
         "COUN": 638,
-        "CRIM": 1
+        "PARN": 1
       },
       "total_mids": 639,
       "local_subject_variants": {
@@ -2431,7 +2457,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.236,
       "variants_observed": {
-        "CULN": 752
+        "CULN": 750,
+        "MATH": 1,
+        "RMGT": 1
       },
       "total_mids": 752,
       "local_subject_variants": {
@@ -2518,7 +2546,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.459,
       "variants_observed": {
-        "DANC": 1756
+        "DANC": 1755,
+        "MUSI": 1
       },
       "total_mids": 1756,
       "local_subject_variants": {
@@ -2739,8 +2768,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.207,
       "variants_observed": {
-        "AUTD": 100,
-        "AUTO": 3
+        "AUTD": 103
       },
       "total_mids": 103,
       "local_subject_variants": {
@@ -2939,7 +2967,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.951,
       "variants_observed": {
-        "DSPS": 139
+        "DSPS": 138,
+        "ENGL": 1
       },
       "total_mids": 139,
       "local_subject_variants": {
@@ -2989,8 +3018,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.153,
       "variants_observed": {
-        "DRAF": 271,
-        "HVAC": 1
+        "DRAF": 272
       },
       "total_mids": 272,
       "local_subject_variants": {
@@ -3071,7 +3099,7 @@
       "data_modal_share": 0.284,
       "variants_observed": {
         "THTR": 1595,
-        "THEA": 2
+        "THES": 2
       },
       "total_mids": 1597,
       "local_subject_variants": {
@@ -3312,8 +3340,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.743,
       "variants_observed": {
-        "EDUC": 216,
-        "ITIS": 1
+        "EDUC": 217
       },
       "total_mids": 217,
       "local_subject_variants": {
@@ -3389,8 +3416,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.496,
       "variants_observed": {
-        "ELEC": 191,
-        "HVAC": 4
+        "ELEC": 195
       },
       "total_mids": 195,
       "local_subject_variants": {
@@ -3500,9 +3526,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.628,
       "variants_observed": {
-        "ELCT": 142,
-        "ELEC": 3,
-        "HVAC": 1
+        "ELCT": 146
       },
       "total_mids": 146,
       "local_subject_variants": {
@@ -3556,10 +3580,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.413,
       "variants_observed": {
-        "ELET": 328,
-        "HVAC": 2,
-        "MAKR": 1,
-        "MUSC": 1
+        "ELET": 330,
+        "CNST": 1,
+        "ELEC": 1
       },
       "total_mids": 332,
       "local_subject_variants": {
@@ -3646,8 +3669,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.315,
       "variants_observed": {
-        "EMST": 507,
-        "SONO": 1
+        "EMST": 508
       },
       "total_mids": 508,
       "local_subject_variants": {
@@ -3816,8 +3838,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.341,
       "variants_observed": {
-        "ENGT": 163,
-        "HVAC": 1
+        "ENGT": 164
       },
       "total_mids": 164,
       "local_subject_variants": {
@@ -3877,7 +3898,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.696,
       "variants_observed": {
-        "ENGL": 1451
+        "ENGL": 1447,
+        "FTVE": 2,
+        "READ": 2
       },
       "total_mids": 1451,
       "local_subject_variants": {
@@ -4039,8 +4062,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.778,
       "variants_observed": {
-        "ESLN": 68,
-        "ESOL": 1
+        "ESLN": 69
       },
       "total_mids": 69,
       "local_subject_variants": {
@@ -4096,7 +4118,7 @@
       "data_modal_share": 0.164,
       "variants_observed": {
         "ESCI": 275,
-        "GEOL": 1
+        "CNST": 1
       },
       "total_mids": 276,
       "local_subject_variants": {
@@ -4183,8 +4205,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.81,
       "variants_observed": {
-        "AGEQ": 58,
-        "AGRI": 1
+        "AGEQ": 59
       },
       "total_mids": 59,
       "local_subject_variants": {
@@ -4230,7 +4251,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.201,
       "variants_observed": {
-        "ETHS": 578
+        "ETHS": 577,
+        "POLS": 1
       },
       "total_mids": 578,
       "local_subject_variants": {
@@ -4373,9 +4395,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.642,
       "variants_observed": {
-        "FASH": 596,
-        "FCSH": 4,
-        "NUTR": 1
+        "FASH": 599,
+        "FCSH": 2
       },
       "total_mids": 601,
       "local_subject_variants": {
@@ -4447,9 +4468,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.318,
       "variants_observed": {
-        "FTVE": 525,
-        "FIMS": 4,
-        "THTR": 2
+        "FTVE": 529,
+        "BCST": 1,
+        "MULT": 1
       },
       "total_mids": 531,
       "local_subject_variants": {
@@ -4851,8 +4872,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.674,
       "variants_observed": {
-        "GEOG": 307,
-        "ITIS": 1
+        "GEOG": 308
       },
       "total_mids": 308,
       "local_subject_variants": {
@@ -4975,8 +4995,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.331,
       "variants_observed": {
-        "GRAF": 83,
-        "ITIS": 1
+        "GRAF": 84
       },
       "total_mids": 84,
       "local_subject_variants": {
@@ -5077,8 +5096,8 @@
       "data_modal_share": 0.446,
       "variants_observed": {
         "HLTH": 391,
-        "NUTR": 1,
-        "SONO": 1
+        "ARTS": 1,
+        "BUSI": 1
       },
       "total_mids": 393,
       "local_subject_variants": {
@@ -5250,8 +5269,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.634,
       "variants_observed": {
-        "HEIT": 107,
-        "HTEC": 2,
+        "HEIT": 109,
         "HLTH": 1
       },
       "total_mids": 110,
@@ -5774,8 +5792,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.894,
       "variants_observed": {
-        "BSKL": 120,
-        "IDST": 1
+        "BSKL": 121
       },
       "total_mids": 121,
       "local_subject_variants": {
@@ -5966,9 +5983,10 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.214,
       "variants_observed": {
-        "KINE": 3430,
+        "KINE": 3429,
         "ATHL": 1468,
-        "HLTH": 2
+        "HLTH": 2,
+        "LSKL": 1
       },
       "total_mids": 4900,
       "local_subject_variants": {
@@ -6527,7 +6545,8 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.472,
       "variants_observed": {
-        "MANU": 162
+        "MANU": 156,
+        "DRAF": 6
       },
       "total_mids": 162,
       "local_subject_variants": {
@@ -6957,8 +6976,8 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.464,
       "variants_observed": {
-        "MUSI": 2625,
-        "THTR": 6
+        "MUSI": 2629,
+        "MUSC": 2
       },
       "total_mids": 2631,
       "local_subject_variants": {
@@ -7094,8 +7113,7 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.358,
       "variants_observed": {
-        "NRSR": 1403,
-        "NRSV": 8
+        "NRSR": 1411
       },
       "total_mids": 1411,
       "local_subject_variants": {
@@ -7175,8 +7193,7 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.067,
       "variants_observed": {
-        "FDNT": 99,
-        "NUTR": 5
+        "FDNT": 104
       },
       "total_mids": 104,
       "local_subject_variants": {
@@ -7297,14 +7314,9 @@
       "data_modal_is_4letter": false,
       "data_modal_share": 0.145,
       "variants_observed": {
-        "BSOT": 600,
-        "BUSI": 9,
-        "ITIS": 9,
-        "COMP": 2,
-        "CNSR": 1,
-        "HTEC": 1,
-        "IDST": 1,
-        "MATH": 1
+        "BSOT": 622,
+        "COMP": 1,
+        "ITIS": 1
       },
       "total_mids": 624,
       "local_subject_variants": {
@@ -7920,7 +7932,7 @@
       "data_modal_share": 0.899,
       "variants_observed": {
         "PTAS": 127,
-        "SONO": 1
+        "RADT": 1
       },
       "total_mids": 128,
       "local_subject_variants": {
@@ -8105,7 +8117,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.519,
       "variants_observed": {
-        "POLS": 232
+        "POLS": 231,
+        "CRIM": 1
       },
       "total_mids": 232,
       "local_subject_variants": {
@@ -8215,7 +8228,8 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.53,
       "variants_observed": {
-        "PSYC": 419
+        "PSYC": 418,
+        "ETHS": 1
       },
       "total_mids": 419,
       "local_subject_variants": {
@@ -9010,7 +9024,7 @@
       "data_modal_share": 0.615,
       "variants_observed": {
         "SOCI": 243,
-        "SOCS": 1
+        "WMST": 1
       },
       "total_mids": 244,
       "local_subject_variants": {
@@ -9135,15 +9149,13 @@
       "source": "curator_override",
       "data_modal": "THES",
       "data_modal_is_4letter": true,
-      "data_modal_share": 0.8,
+      "data_modal_share": 1.0,
       "variants_observed": {
-        "THES": 8,
-        "THTR": 2
+        "THES": 10
       },
       "total_mids": 10,
       "local_subject_variants": {
-        "THES": 8,
-        "THTR": 2
+        "THES": 10
       },
       "local_subject_variants_truncated": 0,
       "local_subject_total": 10,
@@ -9421,8 +9433,9 @@
       "data_modal_is_4letter": true,
       "data_modal_share": 0.566,
       "variants_observed": {
-        "WELD": 859,
-        "AGMA": 2
+        "WELD": 858,
+        "AGMA": 2,
+        "AUTB": 1
       },
       "total_mids": 861,
       "local_subject_variants": {
@@ -9623,7 +9636,7 @@
   },
   "_authority_codes": {
     "_about": "Item 19 of kb/csr_authority_codes_rulings_2026-09-03.json: per discipline, the CCN / C-ID subject codes attributed from kb/promotions.json evidence plus the rulings; canonical_source says who owns the canonical code; authority_chips is what the CSR, CCR and SkyView show. Rebuilt by kb/_seed_authority_codes.py; the attribution table with its evidence is kb/reference/authority_subject_codes.json.",
-    "_built_at": "2026-09-03",
+    "_built_at": "2026-09-04",
     "counts": {
       "ccn": 13,
       "c-id": 20,
@@ -9631,7 +9644,5 @@
       "no_canonical": 0,
       "with_chips": 23
     }
-  },
-  "_synced_at": "2026-09-03T21:55:03Z",
-  "_synced_from": "Supabase project (kb_curation, course_id like '_CANON_SUBJ4::%')"
+  }
 }

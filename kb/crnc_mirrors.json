@@ -1447,7 +1447,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "HLTH M9036": {
+  "ARTS M9006": {
    "class": "partial_mirror",
    "nc_total": 7,
    "nc_mirrored": 6,
@@ -2102,7 +2102,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ARTS M1043": {
+  "PHOT M1142": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -2204,7 +2204,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ARTS M1208": {
+  "PHOT M1208": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -2294,7 +2294,7 @@
     ]
    ]
   },
-  "ARTS M1300": {
+  "GRAF M1300": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -2378,7 +2378,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "ARTS M1306": {
+  "GRAF M1306": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -4898,7 +4898,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "BUSI M1357": {
+  "BSOT M1262": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -5050,7 +5050,7 @@
     ]
    ]
   },
-  "BUSI M1096": {
+  "BSOT M1261": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -5867,13 +5867,13 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "HVAC M1039": {
+  "CNST M1140": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "HVAC M1038": {
+  "CNST M1139": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -6156,7 +6156,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CSIS M1337": {
+  "FTVE M1337": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -7028,19 +7028,19 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "COMM M1071": {
+  "MULT M1178": {
    "class": "band_mix",
    "nc_total": 3,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "COMM M1069": {
+  "MULT M1177": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
    "pairs": []
   },
-  "COMM M1098": {
+  "FTVE M1165": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -7826,7 +7826,7 @@
     ]
    ]
   },
-  "COUN M9021": {
+  "PARN M9064": {
    "class": "band_mix",
    "nc_total": 4,
    "nc_mirrored": 0,
@@ -7922,7 +7922,7 @@
     ]
    ]
   },
-  "CISC M1073": {
+  "MULT M1175": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -8420,7 +8420,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CISC M1092": {
+  "MULT M1176": {
    "class": "partial_mirror",
    "nc_total": 2,
    "nc_mirrored": 1,
@@ -8993,7 +8993,7 @@
     ]
    ]
   },
-  "ARTS M1166": {
+  "MULT M1174": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -14511,7 +14511,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "FIMS M1032": {
+  "FTVE M1167": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -16258,7 +16258,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "SOCS M1054": {
+  "GERO M1054": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -17056,7 +17056,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CULN M1054": {
+  "RMGT M1054": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18130,7 +18130,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "COMM M1089": {
+  "JOUR M1106": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -18472,7 +18472,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "LIBS M1001": {
+  "LIBR M1045": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -18484,7 +18484,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "LIBS M1003": {
+  "LIBR M1046": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -19114,7 +19114,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "CULN M1104": {
+  "MATH M1361": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -20785,7 +20785,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "HLTH M1020": {
+  "HTEC M1088": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -21725,7 +21725,7 @@
     ]
    ]
   },
-  "ARTS M1187": {
+  "PHOT M1187": {
    "class": "band_mix",
    "nc_total": 1,
    "nc_mirrored": 0,
@@ -22294,7 +22294,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "POLS M1002": {
+  "CRIM M1183": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -22935,7 +22935,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "MATH M1194": {
+  "IDST M1060": {
    "class": "mirror",
    "nc_total": 1,
    "nc_mirrored": 1,
@@ -23091,7 +23091,7 @@
    "nc_mirrored": 0,
    "pairs": []
   },
-  "THEA M1295": {
+  "THES M1295": {
    "class": "band_mix",
    "nc_total": 2,
    "nc_mirrored": 0,
@@ -24403,7 +24403,8 @@
   "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",
   "kb/pols_remint_out/2026-07-10/alias_map.json",
   "kb/authority_recode_out/2026-09-03/alias_map.json",
-  "kb/zband_retire_out/2026-09-03/alias_map.json"
+  "kb/zband_retire_out/2026-09-03/alias_map.json",
+  "kb/prefix_fold_out/2026-09-03/alias_map.json"
  ],
  "_rekeyed_at": "2026-09-04",
  "_rekeyed_by": "kb/_rekey_crnc_mirrors.py"

@@ -70,6 +70,15 @@ for bad_args, why in ((([], None, chain), "no baseline on a first run"),
         ok = True
     check(f"refused: {why}", ok)
 
+# a second run on the same day keeps the first receipt
+import tempfile
+with tempfile.TemporaryDirectory() as td:
+    first = rk.receipt_path(td)
+    open(first, "w").write("{}")
+    second = rk.receipt_path(td)
+    check("a second receipt on the same day gets a suffix instead of overwriting the first",
+          first.endswith("rekey_receipt.json") and second.endswith("rekey_receipt_2.json") and first != second)
+
 # the committed file, through the real chain (skipped when the kb files are absent)
 mir_path = os.path.join(ROOT, "kb", "crnc_mirrors.json")
 mem_path = os.path.join(ROOT, "kb", "coci_minted_memberships.json")

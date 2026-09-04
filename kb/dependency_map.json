@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 417,
+  "file_datasets": 418,
   "external_services": 137,
   "consumers": 313,
   "workflows": 33,
@@ -7044,7 +7044,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 243
+     "line": 244
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7406,14 +7406,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 57
     },
     {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 247
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7733,7 +7733,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 245
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -8615,7 +8615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 56
     }
    ],
    "served": true,
@@ -9770,6 +9770,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/prefix_fold_out/<date>/alias_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_rekey_promotions.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 103
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/preseed_out/2026-07-07/live_values.json": {
    "consumers": [
     {
@@ -9956,14 +9969,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 226
+     "line": 227
     },
     {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 336
+     "line": 337
     },
     {
      "id": "script:kb/_remint_apply.py",
