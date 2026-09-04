@@ -774,21 +774,23 @@ re-keyed from the receipts. ⭐ 139 materialized records sit on a prefix their
 discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Sam then drove SkyView and wrote eight notes; all eight shipped (#1460), including an identity that opens to show its college courses — the faculty view. Story:
 `ccr_atlas_lessons`; handoff `session_225_handoff`.
 
-### SkyFold S225 — the fold apply, rehearsed; the sixth id-keyed class (2026-09-04)
+### SkyFold S225 — the fold apply, rehearsed, then landed on Sam's yes to all; the sixth id-keyed class (2026-09-04)
 
-**One PR (#1462).** Sam had not yet ruled the prefix-fold sheet, so the session
-built what a reply by number lands: `kb/_prefix_fold_apply.py`, apply == spec
-under the receipt's own flags (`--scope` for item 2's hold, `--ruled-held` for
-item 3's override; any other receipt refused), one run per receipt, a fresh read
-at write-time, thirteen gates, `_prefix_fold_from` beside the earlier stamps.
-Rehearsed on a scratch copy: 278 aliases, 13/13 gates, promotions 24,
-`subject_collision_signal` 153 → 113, fold-verify `re_key` 7 = the held rows (a
-fold's residual by design), no chip or code changes. ⭐ Scanning every file that
-names an old id found `kb/crnc_mirrors.json` — the sixth id-keyed artifact
-class, outside the chain — with 398 keys the recode had retired; re-keyed (never
-regenerated: it carries curated mirrors) and added to the chain. Nothing
-applied; the land waits on Sam. Story: `ccr_atlas_lessons`; handoff
-`session_226_handoff`.
+**Two PRs (#1462, #1463) plus the follow-up.** Sam had not yet ruled the
+prefix-fold sheet when the session opened, so it built what a reply by number
+lands: `kb/_prefix_fold_apply.py`, apply == spec under the receipt's own flags
+(`--scope` for item 2's hold, `--ruled-held` for item 3's override; any other
+receipt refused), one run per receipt, a fresh read at write-time, thirteen
+gates, rehearsed on a scratch copy. Sam replied *"Yes to all recommendations"*
+and the same night the frozen receipt landed in one cron window: 278 ids onto
+their discipline's code, promotions 24, `subject_collision_signal` 153 → 113,
+fold-verify `re_key` 7 = the held rows (a fold's residual by design), Supabase
+re-keyed (30 chained keys vacate-first, 0 left), artifacts and SkyView rebuilt.
+⭐ Scanning every file that names an old id found `kb/crnc_mirrors.json` — the
+sixth id-keyed artifact class, outside the chain — with 398 keys the recode had
+retired; re-keyed (never regenerated: it carries curated mirrors) and in the
+chain, where it took the fold's 29 the same night. Story: `ccr_atlas_lessons`;
+handoff `session_226_handoff`.
 
 ## Troubleshooting
 

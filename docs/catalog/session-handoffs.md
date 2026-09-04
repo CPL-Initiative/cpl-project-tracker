@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 226 | [the fold apply is built and rehearsed; the land waits on Sam's reply by number](../session_226_handoff.md) | 2026-09-04 |
+| 226 | [the prefix fold is landed; the duplicates worklist, the promote step and the identities map are next](../session_226_handoff.md) | 2026-09-04 |
 | 225 | [the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced](../session_225_handoff.md) | 2026-09-03 |
 | 224 | [SkyView meets the five goals; every stand-alone orbits, the shards are on Supabase, and Sam has not driven it yet](../session_224_handoff.md) | 2026-09-03 |
 | 223 | [the counselor step is on the API, under 10 is the mask, and CollegeID2 is the key still to land](../session_223_handoff.md) | 2026-09-03 |
