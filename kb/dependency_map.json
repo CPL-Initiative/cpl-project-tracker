@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 418,
+  "file_datasets": 419,
   "external_services": 137,
   "consumers": 313,
   "workflows": 33,
@@ -930,7 +930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4276,
+     "line": 4281,
      "tabs": [
       "unified-courses"
      ]
@@ -957,7 +957,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3466,
+     "line": 3471,
      "tabs": [
       "unified-courses"
      ]
@@ -8745,7 +8745,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3140,
+     "line": 3145,
      "tabs": [
       "unified-courses"
      ]
@@ -13030,6 +13030,19 @@
    "main_committers": []
   },
   "file:tests/js_suite_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/legacy_anchor_duplicates_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
