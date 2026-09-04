@@ -182,6 +182,16 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/merge_chain_flatten_test.py
+      # Curated-anchor duplicates lane (Session 226) — the May 2026 curated
+      # common-course anchors whose title and discipline exactly match a
+      # catalog identity, offered to the curator as a worklist lane (never
+      # merged by a script). Guards the strict title key (Accounting I is not
+      # Accounting II), the discipline gate, the live-target resolution, the
+      # member order that IS the merge direction, and — against the committed
+      # files — that every receipt anchor is offered or already merged. Imports
+      # the generator, so it runs in the openpyxl step above.
+      - name: Curated-anchor duplicates lane guard (legacy_anchor_duplicate_groups)
+        run: python3 tests/legacy_anchor_duplicates_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the

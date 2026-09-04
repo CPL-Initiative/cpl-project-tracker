@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-04",
-  "_session": "225 (SkyFold) — the prefix fold landed on Sam’s yes to all; the crnc mirror file back in the chain",
-  "_status": "2026-09-04 SkyFold, Session 225 — the prefix fold is APPLIED. Sam replied \"Yes to all recommendations\" on the seven-item sheet, and the apply built that morning landed it the same night in one cron window: 278 wrongly-prefixed identities moved to the code their discipline owns (thirteen conservation gates, the plan checked against the receipt he reviewed, kb_curation read fresh at write-time), the receipt registered in the alias chain, the post-apply chain run once (collision signal 153 to 113; the verifier now reads exactly the seven records held on TOP alone), Supabase re-keyed (278 pairs, 30 chained keys, 0 left), the artifacts regenerated and SkyView rebuilt. Also this session: the dashboard's credit/noncredit mirror file had 398 keys on ids the 2026-09-03 recode retired because it was never in the post-apply chain; it is re-keyed and in the chain now. Next: the 122 legacy-anchor duplicates as a merge worklist, the promote step for client placeholders, the identities map's stale keys (measured: 1,422 of 1,597 resolve cleanly).",
+  "_session": "226 (SkyLand) — the curated-anchor duplicates are a worklist lane; the twenty were never missing",
+  "_status": "2026-09-04 SkyLand, Session 226 — the 130 curated common-course anchors from May 2026 that duplicate a catalog course are now a lane of the CCR tab's Suggested-merges worklist (PR #1465), recomputed every build: the catalog course is listed first so it survives and the anchor folds into it; where the only match is a single-college course the anchor survives and gains it. Nothing is merged by a script — each pair is one Confirm. 129 of the 130 receipt pairs surface; the one that does not sits behind a bot-written discipline (Stagecraft) on its twin, which is itself a finding. Also measured: the 20 folded identities the export seemed to lose are folded into C-ID descriptor rows by design, not an export gap. The first scheduled cron after the fold (06:17 UTC) is checked at 06:45 UTC. Next: the promote step for client placeholders, the identities map's stale keys as a dry run, curated disciplines outside the MQ list.",
   "items": [
+    {
+      "id": "s226-sam-drive-the-anchor-lane",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Open the Common Course Reference tab, sign in, and open Suggested merges: the first 130 groups are your May 2026 curated common courses that carry the same title and discipline as a course already in the catalog. Each group proposes folding your anchor into the catalog course (the one with the college courses); where the only match is a single-college course, your anchor survives and gains it. Confirm the ones that are the same course, Keep as-is the ones that are not. Nothing moves until you confirm. The lane appears after the next daily run publishes."
+    },
     {
       "id": "s224-sam-drive-skyview-again",
       "for": "Sam",
@@ -17,16 +23,16 @@
       "text": "Give the three legacy anchors that carry no seed discipline one of the 146 MQ disciplines on the CSR tab: M-ID HOSP 100 and M-ID HOSP 104 (Travel Services), M-ID HOSP 102 (Hotel and Motel Services). The Z-band retirement folded the other 218; the next pass folds these once they have a discipline."
     },
     {
-      "id": "s225-fable-after-the-fold",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "The prefix fold is applied (2026-09-04, #1463): 278 ids moved, the seven TOP-only records held by design, Supabase re-keyed, artifacts regenerated, SkyView rebuilt. Next in this lane: the 122 legacy-anchor duplicates (kb/zband_retire_out/2026-09-03/duplicates.json) as a merge worklist on the CCR tab; the promote step for UC-CUR-* client placeholders, which must mint M numbers now (zero exist today; kb/_zband_retire_dryrun.py's Buckets is the allocator); the seven held rows when a curator's discipline row or a ruling gives them a second signal (a new dry run with --ruled-held); and the articulation identities map's 1,597 stale keys — 1,422 resolve cleanly from the May re-mint map — as a rebuild-from-baseline re-key with its own dry run and receipt."
-    },
-    {
       "id": "s224-fable-promote-placeholders-to-m",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The Z band is retired: every machine cluster is a catalog record with origin machine cluster. A client mint still creates a UC-CUR-* placeholder, so the promote step must mint M numbers now (lowest free in the bucket, continuation band when full) from kb/_zband_retire_dryrun.py's Buckets. Zero placeholders exist today; build it before the first one appears."
+      "text": "The Z band is retired: every machine cluster is a catalog record. A client mint still creates a UC-CUR-* placeholder, so the promote step must mint M numbers now (lowest free in the bucket, continuation band when full) from kb/_zband_retire_dryrun.py's Buckets, with a receipt registered in the alias chain. Zero placeholders exist today; build it before the first one appears. Then the articulation identities map's 1,597 stale keys (1,422 resolve cleanly from the May re-mint map) as a dry run with a receipt, and the seven held rows when a second signal arrives."
+    },
+    {
+      "id": "s226-fable-disciplines-outside-mq",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Measure how many curated discipline values in kb_curation sit outside the 146 MQ disciplines. One is known: the trailcrew-ccr1-s111 bot cohort wrote 'Stagecraft' on THES M1087 on 2026-07-10, which is why that identity no longer pairs with its May anchor THTR M1377 on the new lane. Propose the fix on a decision sheet for Sam — a bot-written discipline is not a human ruling, but it is also not ours to rewrite silently."
     },
     {
       "id": "s223-sam-drive-skyview",

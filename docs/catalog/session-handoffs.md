@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-200 document(s).
+201 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 227 | [the duplicates are a lane; the promote step and the identities map are next](../session_227_handoff.md) | 2026-09-04 |
 | 226 | [the prefix fold is landed; the duplicates worklist, the promote step and the identities map are next](../session_226_handoff.md) | 2026-09-04 |
 | 225 | [the re-mint series is applied: the codes, the materialized machine clusters, and the worklist the land surfaced](../session_225_handoff.md) | 2026-09-03 |
 | 224 | [SkyView meets the five goals; every stand-alone orbits, the shards are on Supabase, and Sam has not driven it yet](../session_224_handoff.md) | 2026-09-03 |
