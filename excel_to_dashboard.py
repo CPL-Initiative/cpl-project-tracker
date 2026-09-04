@@ -7422,6 +7422,146 @@ def flatten_merge_chains(merge_into):
     return merge_into
 
 
+def _legacy_title_key(t):
+    """Strict title key for the curated-anchor duplicates lane: lowercase,
+    punctuation and whitespace collapsed. Deliberately NOT _sug_sig — that
+    signature drops level words and digits so variants converge; a duplicate here
+    must be the SAME title (the Z-band retirement's duplicates.json rule)."""
+    return re.sub(r"[^a-z0-9]+", " ", str(t or "").lower()).strip()
+
+
+def _legacy_disc_key(d, alias_rev):
+    """Discipline key for the curated-anchor duplicates lane. The May anchors
+    spell a few disciplines their own way ("English as a Second Language (ESL)",
+    "Theater Arts"): strip a trailing parenthetical, then resolve through
+    kb/discipline_aliases.json (alias -> canonical) — the same resolution the
+    Z-band retirement dry run applied when it wrote duplicates.json."""
+    d = str(d or "").strip()
+    bare = re.sub(r"\s*\([^)]*\)\s*$", "", d).strip()
+    return alias_rev.get(d) or alias_rev.get(bare) or bare or d
+
+
+def legacy_anchor_duplicate_groups(cc, cat, sg, merge_into, rows, disc_of=None, disc_aliases=None):
+    """The curated common-course anchors' duplicates, as a worklist lane.
+
+    kb/common_courses.json carries the May 2026 curated common-course draft —
+    218 M-ID anchors (re-keyed by the 2026-09-03 Z-band retirement, each stamped
+    `_zband_retired_from`) that render as locked, read-only rows on the CCR tab.
+    130 of them (the retirement receipt's duplicates.json) carry exactly the
+    title and discipline of an identity already in the minted catalog. The
+    retirement did not merge them — "a curator's merge worklist after the fold,
+    not folded by it" — so this lane offers each pair to the curator, one group
+    per anchor:
+
+        members = the live catalog twin(s) FIRST, the anchor LAST
+
+    The worklist's own survivor rule then sets the direction (targetMemberOf in
+    unified_courses.js: the first non-Stand-Alone member, CCN > C-ID > M-ID). A
+    multi-college catalog course keeps its identity and the anchor folds into
+    it — the memberships, articulations, promotions and mirror classes keyed by
+    the twin stay untouched and a memberless duplicate row retires. When the
+    only twin is a single-college Stand-Alone, the anchor is the survivor and
+    gains that course as its member. Nothing here writes: a Confirm is the same
+    merge_into row every other lane writes, and the curator can flip the star.
+
+    Recomputed on every build from the live catalog, so the lane shrinks as the
+    curator confirms and never names a dead id: an anchor already carrying
+    merge_into is skipped; a twin that was merged away resolves through the
+    flattened merge_into map (Phase B and routing folds included when this runs
+    after them) to its live target; a twin resolving to the anchor itself is
+    dropped (already merged in); a C-ID anchor in the file is not this lane's
+    (an identity duplicating an official id is the evidence lane's job).
+
+    Args: cc — the anchor file; cat / sg — the minted courses / singletons
+    ('courses' dicts); merge_into — flattened source -> target; rows — the live
+    payload rows (a displayed twin's title, discipline, units and member count
+    come from its row); disc_of(id, base) — the curated-discipline resolver
+    (default: the record's own discipline); disc_aliases — kb/discipline_aliases
+    .json's {canonical: [alias, ...]} (spelling variants on either side resolve
+    to the canonical name before matching; a trailing parenthetical is dropped).
+    """
+    disc_of = disc_of or (lambda cid, base: base)
+    alias_rev = {a: canon for canon, alts in (disc_aliases or {}).items() for a in (alts or [])}
+    nt = _legacy_title_key
+    dk = lambda d: _legacy_disc_key(d, alias_rev)
+    tindex = {}
+    for src in (cat, sg):
+        for cid, v in src.items():
+            key = (dk(disc_of(cid, v.get("discipline"))), nt(v.get("common_title")))
+            if key[0] and key[1]:
+                tindex.setdefault(key, []).append(cid)
+    row_by_id = {r["id"]: r for r in rows}
+    k_pri = {"CCN-ID": 0, "C-ID": 1, "M-ID": 2, "Unified": 3}
+
+    def live(i):
+        seen = set()
+        while i in merge_into and i not in seen:
+            seen.add(i)
+            i = merge_into[i]
+        return i
+
+    def member_of(i):
+        r = row_by_id.get(i)
+        if r is not None:
+            return {"id": i, "t": r.get("title"), "s": ";".join(r.get("subj") or []),
+                    "u": r.get("units"), "k": r.get("id_system") or "M-ID",
+                    "d": r.get("disc"), "n": r.get("members")}
+        v = sg.get(i)
+        if v is not None:
+            return {"id": i, "t": v.get("common_title"), "s": v.get("subject") or "",
+                    "u": v.get("typical_units"), "k": "Stand-Alone", "g": 1,
+                    "d": disc_of(i, v.get("discipline")), "n": 1}
+        v = cat.get(i) or {}
+        # A row-less live target (a descriptor id no row carries): infer the
+        # system from the id shape, the way applyMergeLocal does client-side.
+        if re.search(r"\sC\d{4}", i):
+            k = "CCN-ID"
+        elif re.search(r"\sM[0-9A-Z]{4}\b", i):
+            k = "M-ID"
+        else:
+            k = "C-ID"
+        return {"id": i, "t": v.get("common_title") or i, "s": v.get("subject") or "",
+                "u": v.get("typical_units"), "k": k, "d": disc_of(i, v.get("discipline")),
+                "n": v.get("corroboration_members")}
+
+    groups = []
+    for aid, v in cc.items():
+        if v.get("id_system") != "M-ID" or aid in merge_into:
+            continue
+        key = (dk(v.get("discipline")), nt(v.get("common_title")))
+        twins = []
+        for t in tindex.get(key, []):
+            if t == aid:
+                continue
+            lt = live(t)
+            if lt == aid or lt in twins:
+                continue
+            twins.append(lt)
+        if not twins:
+            continue
+        mems = [member_of(t) for t in twins]
+        mems.sort(key=lambda m: (k_pri.get(m["k"], 9), -(m.get("n") or 0), m["id"]))
+        anchor = {"id": aid, "t": v.get("common_title"), "s": v.get("subject") or "",
+                  "u": v.get("typical_units"), "k": "M-ID", "d": v.get("discipline"),
+                  "anchor": 1}
+        g = {"sig": v.get("common_title") or aid, "n": len(mems) + 1, "score": 1.0,
+             "anchor": aid, "origin": v.get("origin"), "members": mems + [anchor]}
+        if v.get("reviewed_by"):
+            g["reviewed_by"] = v["reviewed_by"]
+        if v.get("reviewed_at"):
+            g["reviewed_at"] = str(v["reviewed_at"])[:10]
+        if v.get("_notes"):
+            g["note"] = v["_notes"]
+        if v.get("source_college_count"):
+            g["n_src"] = v["source_college_count"]
+        groups.append(g)
+    # A multi-college catalog twin first (the twin keeps its identity), the
+    # single-college twins after (the anchor survives); then discipline, title.
+    groups.sort(key=lambda g: (g["members"][0]["k"] == "Stand-Alone",
+                               g["members"][-1].get("d") or "", g["sig"]))
+    return groups
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -9166,6 +9306,16 @@ def export_unified_courses():
         title_groups.sort(key=lambda x: (x["same_college"], -(x["score"] or 0),
                                          x["sig"]))
 
+    # ── Curated-anchor duplicates lane (SkyLand S226, 2026-09-04) ─────────────
+    # The May 2026 curated common-course anchors whose title and discipline
+    # exactly match a catalog identity — the Z-band retirement's duplicates.json
+    # (130 at the land), recomputed live so it shrinks as the curator confirms.
+    # Runs AFTER Phase B and the routing folds so a twin merged away resolves
+    # to the row that actually displays. HUMAN-CONFIRMED, NEVER auto-applied.
+    legacy_groups = legacy_anchor_duplicate_groups(
+        cc, cat, sg, merge_into, rows, disc_of,
+        (_load("discipline_aliases.json") or {}).get("aliases") or {})
+
     out_sug = os.path.join(odir, "unified_courses_suggestions.js")
     _sc_flagged = sum(1 for g in singleton_groups if g["same_college"])
     sug_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"),
@@ -9179,7 +9329,9 @@ def export_unified_courses():
                    "title_count": len(title_groups),
                    "title_groups": title_groups,
                    "evidence_count": len(evidence_groups),
-                   "evidence_groups": evidence_groups}
+                   "evidence_groups": evidence_groups,
+                   "legacy_count": len(legacy_groups),
+                   "legacy_groups": legacy_groups}
     with open(out_sug, "w", encoding="utf-8") as f:
         f.write("/* Unified Courses suggested-merge worklist — lazy-loaded. groups = "
                 "identity-anchored same-title merges; singleton_groups = NEW unified "
@@ -9195,12 +9347,18 @@ def export_unified_courses():
                 "unit packaging by college; see kb/_title_consolidation_dryrun.py); "
                 "evidence_groups = COCI-evidence "
                 "folds into official C-ID/CCN ids (witness counts per member; x=1 members "
-                "are contested and pre-unchecked). HUMAN-CONFIRMED, NEVER auto-applied. */\n"
+                "are contested and pre-unchecked); legacy_groups = the May 2026 curated "
+                "common-course anchors (kb/common_courses.json, locked rows) whose title and "
+                "discipline exactly match a catalog identity — the live twin(s) first, the "
+                "anchor last, so the worklist's survivor rule folds the anchor into the "
+                "catalog course (see legacy_anchor_duplicate_groups). HUMAN-CONFIRMED, NEVER "
+                "auto-applied. */\n"
                 "window.CPL_UC_SUGGESTIONS = " + json.dumps(sug_payload, ensure_ascii=False, separators=(",", ":")) + ";\n")
     print(f"  Unified Courses: wrote {out_sug} ({len(sug_groups)} anchored + "
           f"{len(singleton_groups)} singleton-only + {len(family_groups)} co-articulation-family + "
           f"{len(desc_groups)} description-evidence + {len(title_groups)} title-evidence + "
-          f"{len(evidence_groups)} evidence groups [{_sc_flagged} same-college flagged])")
+          f"{len(evidence_groups)} evidence + {len(legacy_groups)} curated-anchor-duplicate groups "
+          f"[{_sc_flagged} same-college flagged])")
 
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,

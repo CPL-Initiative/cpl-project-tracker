@@ -2379,6 +2379,18 @@
       Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
         var data = res[0], dismissed = res[1];
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
+        // Curated-anchor duplicates lane (2026-09-04): the May 2026 curated
+        // common-course anchors — the locked, read-only rows — whose title and
+        // discipline exactly match a catalog identity (the Z-band retirement's
+        // duplicates.json, 130 at the land, recomputed live by the generator so
+        // it shrinks as the curator confirms). It LEADS the queue: an exact
+        // match on two signals with a human-curated anchor is the strongest
+        // evidence any lane carries. The generator lists the catalog twin first
+        // and the anchor last, so the ★ survivor rule (targetMemberOf) keeps the
+        // catalog course and folds the anchor into it; when the only twin is a
+        // Stand-Alone the anchor is the survivor and gains that course. The
+        // curator can flip the star. Nothing is applied until Confirm.
+        var legacy = (data.legacy_groups || []).map(function (g) { g._kind = "legacy"; return g; });
         // Co-articulation family groups (2026-06-04): near-duplicate M-IDs the
         // level-safe signature misses, surfaced because they co-articulate to one
         // credential AND share the ordinal-rule family key (e.g. EMT's 9 "Academy"/
@@ -2408,10 +2420,10 @@
         // target) start UNCHECKED.
         var evidence = (data.evidence_groups || []).map(function (g) { g._kind = "evidence"; return g; });
         var singles = (data.singleton_groups || []).map(function (g) { g._kind = "singleton"; return g; });
-        var groups = anchored.concat(family).concat(desc).concat(titleEv).concat(evidence).concat(singles);
+        var groups = legacy.concat(anchored).concat(family).concat(desc).concat(titleEv).concat(evidence).concat(singles);
         if (!groups.length) { alert("No suggested merges available in this build."); return; }
         // Singleton (new-mint) section starts after anchored + family + desc + title + evidence.
-        var nNonSingleton = anchored.length + family.length + desc.length + titleEv.length + evidence.length;
+        var nNonSingleton = legacy.length + anchored.length + family.length + desc.length + titleEv.length + evidence.length;
         var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
         // liveMergePending covers members with no in-payload row (e.g. a
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
@@ -2534,6 +2546,7 @@
         var cohesionFloor = DEFAULT_FLOOR;
         function groupAggrScore(g) {
           if (g._kind === "evidence") return null;            // witness count → never slider-gated
+          if (g._kind === "legacy") return null;              // an exact duplicate is not a similarity score
           return (typeof g.score === "number") ? g.score : null;   // null = ungated, always shows
         }
         function passesAggr(g) { var s = groupAggrScore(g); return s == null || s >= cohesionFloor; }
@@ -2766,9 +2779,21 @@
           var isEvidence = g._kind === "evidence";
           var isDesc = g._kind === "desc";
           var isTitle = g._kind === "title";
+          var isLegacy = g._kind === "legacy";
+          // The legacy lane's copy needs the twin's size and which side survives.
+          var legacyTwin = isLegacy ? mems.filter(function (m) { return !m.anchor; })[0] : null;
+          var legacyAnchorSurvives = isLegacy && mems.every(function (m) { return m.anchor || m.k === "Stand-Alone"; });
+          // Seven anchors are ALSO catalog records (unlocked rows with members);
+          // only the locked, firewalled anchor is the memberless one.
+          var legacyAnchorRow = isLegacy ? byId[g.anchor] : null;
+          var legacyAnchorLocked = !legacyAnchorRow || !!legacyAnchorRow.locked;
           // Section badge so the curator knows whether this merges into an
           // existing identity or mints a brand-new unified course.
-          var badge = isSingleton
+          var badge = isLegacy
+            // Words, not a glyph (Sam, 2026-08-29); ghosted CO blue on white.
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--surface-opaque);border:1px solid var(--cobalt-on-dark);color:var(--seal-blue);margin:0 0 8px;" },
+                ["Curated common course · same title and discipline as a catalog course"])
+            : isSingleton
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
                 ["✨ New unified course · stand-alone matches (" + (i - nNonSingleton + 1) + " of " + (groups.length - nNonSingleton) + ")"])
             : isFamily
@@ -2788,7 +2813,18 @@
                       // its meaning leads the paragraph below instead.
           if (badge) box.appendChild(badge);
           box.appendChild(el("p", { style: "margin:0 0 10px;color:#6b7280;" },
-            [isSingleton
+            [isLegacy
+              ? "“" + (g.sig || "This course") + "” is a curated common course from the May 2026 draft"
+                + (g.reviewed_by ? " (reviewed by " + g.reviewed_by + (g.reviewed_at ? " on " + g.reviewed_at : "") + ")" : "")
+                + (legacyAnchorLocked ? ", a read-only anchor that carries no college courses of its own." : ", carried today as a catalog record.")
+                + " A catalog identity carries the same title in the same discipline"
+                + (legacyTwin && legacyTwin.n ? " with " + legacyTwin.n + " college course" + (legacyTwin.n === 1 ? "" : "s") : "") + "."
+                + (legacyAnchorSurvives
+                    ? " The only match is a single-college course, so the anchor is the ★ survivor here and gains that course as its member."
+                    : " Confirming folds the anchor into the ★ catalog course, which keeps that course's college courses, articulations and evidence under one identity.")
+                + " If the two are genuinely different courses, use Keep as-is. Nothing is applied until you confirm."
+                + (g.note ? " Curation note on the anchor: " + g.note : "")
+              : isSingleton
               ? "Single-college courses that share a title but match no existing identity (confidence score " + g.score + "). Check the ones that are the same course, then Confirm to create a NEW unified course from them — or Skip."
               : isFamily
               ? "These identities co-articulate to “" + (g.credential || "the same credential") + "” and share a course family the level-safe worklist skips (level/format title drift — e.g. “Academy” / “Basic” / “I” / “Training”). Confirming MERGES the checked members into one identity. Uncheck any genuinely different course, then Confirm — or Skip."
