@@ -1,6 +1,6 @@
 {
  "_generated_by": "kb/_desc_consolidation_dryrun.py",
- "_generated_at": "2026-09-03",
+ "_generated_at": "2026-09-04",
  "_status": "DRY-RUN — measurement receipt; nothing applied",
  "_params": {
   "cosine_min": 0.6,
@@ -51,8 +51,8 @@
    "cos_max": 1.0,
    "cross_college": true,
    "shared_terms": [
-    "advocated",
     "bureaucratic",
+    "advocated",
     "debated",
     "reducing",
     "degradation",
@@ -144,8 +144,8 @@
     "recognized",
     "simulated",
     "driver",
-    "inspections",
     "positioning",
+    "inspections",
     "apparatus"
    ]
   },
@@ -399,8 +399,8 @@
    "cos_max": 0.894,
    "cross_college": true,
    "shared_terms": [
-    "ifsac",
     "reciprocity",
+    "ifsac",
     "congress",
     "pro",
     "firefighter",
@@ -899,8 +899,8 @@
    "shared_terms": [
     "responded",
     "geog",
-    "segregation",
     "exclusion",
+    "segregation",
     "intersections",
     "groups"
    ]
@@ -1275,8 +1275,8 @@
    "cos_max": 0.635,
    "cross_college": true,
    "shared_terms": [
-    "baselines",
     "intrusion",
+    "baselines",
     "messaging",
     "cryptography",
     "infrastructure",
@@ -1430,8 +1430,8 @@
     "formula",
     "detail",
     "interview",
-    "existing",
-    "disciplines"
+    "disciplines",
+    "existing"
    ]
   },
   {
@@ -1482,8 +1482,8 @@
     "formula",
     "detail",
     "interview",
-    "existing",
-    "disciplines"
+    "disciplines",
+    "existing"
    ]
   },
   {
@@ -1613,11 +1613,11 @@
    "cos_max": 1.0,
    "cross_college": false,
    "shared_terms": [
-    "skim",
-    "spotters",
     "bazooka",
-    "coat",
+    "spotters",
+    "skim",
     "butt",
+    "coat",
     "boxes"
    ]
   },
@@ -1771,8 +1771,8 @@
     "mos",
     "similar",
     "thorough",
-    "examinations",
     "coverage",
+    "examinations",
     "specialist"
    ]
   },
@@ -1995,8 +1995,8 @@
     "mos",
     "similar",
     "thorough",
-    "examinations",
     "coverage",
+    "examinations",
     "specialist"
    ]
   },
@@ -2651,8 +2651,8 @@
    "shared_terms": [
     "dermatology",
     "dictation",
-    "transcription",
     "htec",
+    "transcription",
     "speech",
     "recognition"
    ]
@@ -2786,8 +2786,8 @@
    "cos_max": 0.907,
    "cross_college": false,
    "shared_terms": [
-    "ferrous",
     "wants",
+    "ferrous",
     "electrode",
     "electric",
     "arc",
@@ -2885,8 +2885,8 @@
    "cross_college": false,
    "shared_terms": [
     "producer",
-    "freelance",
     "contributing",
+    "freelance",
     "run",
     "publication",
     "offers"
@@ -3035,10 +3035,10 @@
    "cross_college": false,
    "shared_terms": [
     "stay",
-    "overnight",
     "observed",
-    "landscapes",
+    "overnight",
     "geographical",
+    "landscapes",
     "possible"
    ]
   },
@@ -3106,8 +3106,8 @@
    "shared_terms": [
     "memorizing",
     "expectations",
-    "rehearsal",
     "concert",
+    "rehearsal",
     "choreography",
     "stage"
    ]
@@ -3233,8 +3233,8 @@
     "cadd",
     "operator",
     "orthographic",
-    "latest",
-    "illustration"
+    "illustration",
+    "latest"
    ]
   },
   {
@@ -3468,9 +3468,9 @@
    "cos_max": 0.864,
    "cross_college": false,
    "shared_terms": [
-    "perceived",
-    "relied",
     "consequential",
+    "relied",
+    "perceived",
     "interacted",
     "impacted",
     "technological"
@@ -3504,10 +3504,10 @@
    "cos_max": 0.863,
    "cross_college": false,
    "shared_terms": [
-    "brn",
     "provision",
-    "put",
+    "brn",
     "attributes",
+    "put",
     "inform",
     "adn"
    ]
@@ -3546,8 +3546,8 @@
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "master",
+    "concert",
     "department"
    ]
   },
@@ -3633,8 +3633,8 @@
    "cos_max": 0.853,
    "cross_college": false,
    "shared_terms": [
-    "raster",
     "spatially",
+    "raster",
     "arcgis",
     "esri",
     "smart",
@@ -3863,8 +3863,8 @@
     "sponsored",
     "attend",
     "produced",
-    "concert",
     "master",
+    "concert",
     "department"
    ]
   },
@@ -3953,8 +3953,8 @@
    "cross_college": false,
    "shared_terms": [
     "fabrications",
-    "conditionals",
     "parsing",
+    "conditionals",
     "iteration",
     "outputs",
     "programming"
@@ -4069,10 +4069,10 @@
    "cos_max": 0.827,
    "cross_college": false,
    "shared_terms": [
+    "pepperwood",
     "uneven",
     "steward",
     "erths",
-    "pepperwood",
     "preserve",
     "hiking"
    ]
@@ -4265,8 +4265,8 @@
     "maneuvers",
     "aeronautical",
     "contained",
-    "pilot",
     "faa",
+    "pilot",
     "attain"
    ]
   },
@@ -4505,8 +4505,8 @@
    "shared_terms": [
     "interpreters",
     "translation",
-    "strongly",
     "fluency",
+    "strongly",
     "spanish",
     "government"
    ]
@@ -4610,8 +4610,8 @@
    "shared_terms": [
     "counting",
     "listing",
-    "clarity",
     "phrasing",
+    "clarity",
     "sense",
     "musicality"
    ]
@@ -4875,8 +4875,8 @@
    "cos_max": 0.738,
    "cross_college": false,
    "shared_terms": [
-    "frequent",
     "indicate",
+    "frequent",
     "reinforces",
     "feedback",
     "additional",
@@ -4909,8 +4909,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "revival",
     "roughly",
+    "revival",
     "decorative",
     "classical",
     "relates",
@@ -4945,8 +4945,8 @@
    "cos_max": 0.733,
    "cross_college": false,
    "shared_terms": [
-    "miramar",
     "articulated",
+    "miramar",
     "malfunctions",
     "repairing",
     "natef",
@@ -5197,8 +5197,8 @@
    "cos_max": 0.712,
    "cross_college": false,
    "shared_terms": [
-    "mdia",
     "humn",
+    "mdia",
     "overarching",
     "esll",
     "placement",
@@ -5435,8 +5435,8 @@
    "cos_max": 0.693,
    "cross_college": false,
    "shared_terms": [
-    "mixture",
     "manufacturer",
+    "mixture",
     "coating",
     "consistency",
     "finishing"
@@ -6081,8 +6081,8 @@
     "clubs",
     "shared",
     "governance",
-    "advocacy",
-    "meetings"
+    "meetings",
+    "advocacy"
    ]
   },
   {
@@ -6153,8 +6153,8 @@
    "cos_max": 0.639,
    "cross_college": false,
    "shared_terms": [
-    "fitters",
     "welders",
+    "fitters",
     "plumbers",
     "union"
    ]
@@ -6529,9 +6529,9 @@
    "shared_terms": [
     "nine",
     "campuses",
-    "holistic",
-    "transformative",
     "fund",
+    "transformative",
+    "holistic",
     "education"
    ]
   },
@@ -6889,9 +6889,9 @@
    "cross_college": false,
    "shared_terms": [
     "icc",
-    "petition",
-    "council",
     "admissions",
+    "council",
+    "petition",
     "published",
     "repeat"
    ]

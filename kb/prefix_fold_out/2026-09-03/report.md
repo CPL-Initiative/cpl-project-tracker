@@ -2,7 +2,7 @@
 title: Prefix fold — DRY-RUN (the worklist the 2026-09-03 land surfaced)
 date: 2026-09-03
 session: 224 (SkyTune)
-status: DRY-RUN — nothing mutated; awaiting Sam's verdicts on the decision sheet before any apply
+status: APPLIED 2026-09-04T01:57:31Z — see validation.md; ruling: Sam, 2026-09-04: "Yes to all recommendations" — the seven items of the prefix fold sheet as proposed (1, 2, 5, 7 fold; 3 held; 4 no fold; 6 the span stays); kb/prefix_fold_rulings_2026-09-04.json
 tags: [remint, dry-run, csr, subj4, prefix-fold, rule-7]
 artifacts:
   - kb/prefix_fold_out/2026-09-03/alias_map.json

@@ -1,0 +1,42 @@
+{
+  "_about": "The Supabase half of the fold, same cron window: kb_curation self-keys + merge_into pointers. Dispatch .github/workflows/supabase-rekey.yml with alias_map_path = this receipt's alias_map.json (a clean bijection, idempotent; chained keys are applied vacate-first and excluded from the verify, #1455). A fold changes no canonical code, so there are no _CANON_SUBJ4:: picks.",
+  "_emitted_at": "2026-09-04T01:57:31Z",
+  "rekey": {
+    "workflow": ".github/workflows/supabase-rekey.yml",
+    "alias_map_path": "kb/prefix_fold_out/2026-09-03/alias_map.json",
+    "pairs": 278,
+    "chained_keys": [
+      "ANTH M1099",
+      "ARCH M1020",
+      "ARTS M1043",
+      "ARTS M9006",
+      "AUTO M1295",
+      "AUTO M1296",
+      "AUTO M1315",
+      "BUSI M1096",
+      "BUSI M1099",
+      "COMP M9075",
+      "CRIM M1183",
+      "ELEC M1055",
+      "ELET M1054",
+      "ENGL M1085",
+      "ESCI M1001",
+      "ETHS M1069",
+      "GEOL M1075",
+      "HLTH M1020",
+      "HTEC M1088",
+      "IDST M1060",
+      "ITIS M1209",
+      "ITIS M1490",
+      "MATH M1194",
+      "MATH M1357",
+      "MUSI M1081",
+      "MUSI M1512",
+      "MUSI M1542",
+      "POLS M1002",
+      "PTAS M1002",
+      "SOCI M1069"
+    ]
+  },
+  "picks": []
+}
