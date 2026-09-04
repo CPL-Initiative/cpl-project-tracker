@@ -50,7 +50,11 @@ function serve() {
   // On the map the crumbs row is hidden (the strip above the canvas carries
   // "All disciplines" since 2026-09-03); elsewhere the crumbs still lead back.
   const backToForest = async () => {
-    if (await page.locator("#u-nav-forest").count()) await page.locator("#u-nav-forest").click();
+    if (await page.locator("#u-nav-forest").count()) {
+      // The view links live behind the Views menu now — open it first.
+      if (await page.locator("#u-views").count()) await page.locator("#u-views > summary").click();
+      await page.locator("#u-nav-forest").click();
+    }
     else await page.locator(".crumbs button").first().click();
     await page.waitForTimeout(150);
   };
@@ -73,7 +77,7 @@ function serve() {
   // manageable and less intimidating."
   ok("the map is on screen with no clicks", (await page.locator("#u-cvs").count()) === 1);
   ok("and the discipline list is a real focusable button on it, not a gesture",
-    (await page.locator("button#u-list").count()) === 1);
+    (await page.locator("#u-views-menu button#u-list").count()) === 1);
 
   console.log("\n══ \u26a0 the landing view can be operated from a keyboard");
   // This is the condition the flip was made under. Before it, the canvas keydown
@@ -109,6 +113,10 @@ function serve() {
   // view keeps its own door at the bottom of that list. This section walks that
   // route, because the route IS the fix.
   await page.locator("#gq").fill("english as a second");
+  // The view links moved into a <details> menu (Sam, item 2, 2026-09-04), and a
+  // closed <details> is display:none — so the menu opens before the link is
+  // reachable. That is the point of the check: it clicks the way a person does.
+  await page.locator("#u-views > summary").click();
   await page.locator("button#u-list").click();
   await page.waitForTimeout(400);
   ok("the button opens a SUBJECT list, not the packaging view",
@@ -138,6 +146,10 @@ function serve() {
     /Welding/i.test(await page.locator("#u-detail h3").textContent()));
 
   console.log("\n\u2550\u2550 forest (its own door, at the bottom of the subject list)");
+  // The view links moved into a <details> menu (Sam, item 2, 2026-09-04), and a
+  // closed <details> is display:none — so the menu opens before the link is
+  // reachable. That is the point of the check: it clicks the way a person does.
+  await page.locator("#u-views > summary").click();
   await page.locator("button#u-list").click();
   await page.waitForTimeout(350);
   await page.locator("button#sl-pack").click();
@@ -821,6 +833,90 @@ function serve() {
   const wt = await page.locator(".writes").textContent().catch(() => "");
   ok("write is `CN:<control#> merge_into <identity>`", /CN:\S+\s+merge_into\s+\S+/.test(wt));
   ok("moved course is marked in the list", (await page.locator(".chip.ok").count()) > 0);
+
+  /* ── Sam's top-row items 1-5, 10 and 11 (2026-09-04) ───────────────────────
+     Everything here is geometry or a real pointer, which is why it is in this
+     file and not in tests/: jsdom has no layout, so "one row" and "the search
+     is clickable" are both unfalsifiable there. Item 11 in particular — "the
+     keyword search in full SkyView has a bug and doesn't allow me to click into
+     it" — was the page's ONE search box living in the masthead, which browser
+     full screen does not paint at all. */
+  console.log("\n══ the top row (items 1-5, 10, 11)");
+  await page.setViewportSize({ width: 1600, height: 950 });
+  await page.evaluate(() => window.__ccrUniverse());
+  await page.waitForTimeout(700);
+  ok("item 1: SkyView is the leftmost thing in the row",
+    await page.evaluate(() => (document.querySelector("#u-top").firstElementChild || {}).id === "u-title"));
+  ok("item 11: a real pointer click reaches the search box",
+    await page.locator("#gq").click({ timeout: 4000 }).then(() => true).catch(() => false));
+  // ⚠️ Clear first. Earlier blocks in this file leave a term in the box, and
+  // typing onto it searched "eslwelding" — which found nothing and looked like
+  // a broken suggestion list rather than a dirty fixture.
+  await page.locator("#gq").fill("");
+  await page.keyboard.type("welding");
+  await page.waitForTimeout(500);
+  const sugRows = await page.locator("#sug li").evaluateAll((ls) =>
+    ls.map((l) => l.textContent.trim().replace(/\s+/g, " ")));
+  ok(`typing opens suggestions (${sugRows.length})`, sugRows.length > 0);
+  {
+    // BY KIND, not by position: the first row for "welding" is the discipline,
+    // so a first()-click silently tested the wrong half of item 10.
+    const ci = sugRows.findIndex((t) => /identity|stand-alone|college course/i.test(t));
+    const di = sugRows.findIndex((t) => /discipline/i.test(t));
+    if (ci >= 0) {
+      await page.locator("#sug li").nth(ci).click(); await page.waitForTimeout(700);
+      const z = (await page.locator("#u-zoom").textContent()).trim();
+      ok(`item 10: a course flies to 1000% (${z})`, z === "1000%");
+    } else ok("a course appears among the suggestions", false);
+    await page.locator("#gq").fill(""); await page.locator("#gq").type("welding");
+    await page.waitForTimeout(500);
+    if (di >= 0) {
+      await page.locator("#sug li").nth(di).click(); await page.waitForTimeout(700);
+      const z = (await page.locator("#u-zoom").textContent()).trim();
+      ok(`item 10: a discipline flies to 150% (${z})`, z === "150%");
+    } else ok("a discipline appears among the suggestions", false);
+  }
+  ok("item 2: the Views menu opens, carries every other view, and closes on an outside click",
+    await page.evaluate(async () => {
+      const d = document.getElementById("u-views");
+      if (!d || d.open) return false;
+      d.querySelector("summary").click();
+      if (!d.open || d.querySelectorAll(".u-views-menu .linkish").length < 3) return false;
+      document.getElementById("u-cvs").dispatchEvent(new PointerEvent("pointerdown", { bubbles: true }));
+      return !d.open;
+    }));
+  ok("item 5: close sits at the right edge and clears the 24px target floor",
+    await page.evaluate(() => {
+      const b = document.getElementById("u-close");
+      if (!b) return false;
+      const r = b.getBoundingClientRect();
+      return window.innerWidth - r.right < 40 && r.width >= 24 && r.height >= 24 &&
+             /close/i.test(b.getAttribute("aria-label") || "");
+    }));
+  /* Item 4: "keep it all on one row for a typical PC view." A row is a SPAN,
+     not a bucket — flex items of different heights sit at different y. */
+  for (const w of [1900, 1600, 1440]) {
+    await page.setViewportSize({ width: w, height: 950 });
+    await page.waitForTimeout(300);
+    const spread = await page.evaluate(() => {
+      const ys = [...document.querySelectorAll("#u-top > *")].map((e) => e.getBoundingClientRect().y);
+      return Math.round(Math.max(...ys) - Math.min(...ys));
+    });
+    ok(`item 4: one row at ${w}px (${spread}px of vertical spread)`, spread <= 12);
+  }
+  /* The map BORROWS the page's one search form. Every other view replaces #view
+     wholesale, which would take the borrowed form down with it — `innerHTML =`
+     detaches rather than destroys, and a node nobody references is gone. */
+  await page.evaluate(() => window.__ccrForest());
+  await page.waitForTimeout(500);
+  ok("leaving the map returns the search form to the masthead, intact",
+    await page.evaluate(() => !!document.querySelector(".mast #msearch") &&
+      document.querySelectorAll("#msearch").length === 1 &&
+      document.querySelector('.mast label[for="gq"]').classList.contains("sr")));
+  await page.evaluate(() => window.__ccrUniverse());
+  await page.waitForTimeout(700);
+  ok("returning to the map borrows it back",
+    await page.evaluate(() => !!document.querySelector("#u-top #msearch")));
 
   console.log("\n══ mobile");
   for (const w of [360, 414, 768]) {

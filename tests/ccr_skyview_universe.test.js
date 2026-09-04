@@ -155,7 +155,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     /index\.html#unified-courses/.test(q("#u-ccr-list").getAttribute("href")) &&
     q("#u-ccr-list").getAttribute("target") === "_blank" &&
     /noopener/.test(q("#u-ccr-list").getAttribute("rel") || "") &&
-    /CCR list view/.test(text("#u-ccr-list")),
+    /CCR table view/.test(text("#u-ccr-list")),
     q("#u-ccr-list") ? q("#u-ccr-list").outerHTML.slice(0, 120) : "∅");
   /* ⚠️ Inside COBI the CCR tab IS the page this map is framed in, so the link
      would open the page the reader is already on. jsdom cannot frame the page,
@@ -206,10 +206,16 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // universe view." #u-top was ALREADY one row (space-between: links left,
   // controls right) — what he saw was it WRAPPING at his zoom, because the long
   // control labels would not fit beside the links. So the fix is that it fits.
-  check("(A) ⭐ the links and the controls share ONE row inside #u-top",
-    !!q("#u-top .u-nav") && !!q("#u-top #u-bar")
-    && q("#u-top .u-nav").parentElement === q("#u-top")
-    && q("#u-top #u-bar").parentElement === q("#u-top"));
+  // Sam's items 1-5 (2026-09-04) rebuilt this row: title · Views menu · search ·
+  // controls · close. The four inline view links became ONE <details> menu
+  // because a title, a search and nine controls do not share a row with them.
+  check("(A) ⭐ title, menu, search, controls and close share ONE row inside #u-top",
+    ["u-title","u-views","u-search-slot","u-bar","u-close"].every((id) =>
+      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")),
+    [...q("#u-top").children].map((e) => e.id).join(" | "));
+  check("(A) ⭐ the view links live in the menu, not loose in the row",
+    !q("#u-top > .linkish") && qa("#u-views-menu .linkish").length >= 3,
+    `${qa("#u-views-menu .linkish").length} in the menu`);
   // ⚠️ The controls must NOT be lifted into the page masthead. That was tried and
   // fails twice: the masthead is outside #u-full (the only element full screen
   // paints), and it outlives the view, so navigating away and back left two
@@ -222,8 +228,30 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // absolutely positioned over whatever sits below the masthead. Chromium
   // reported #u-list unclickable — on a route Sam asked for by name (type a
   // term, then open the subject list seeded from the box).
-  check("(A) ⭐ no title crowds the view links out from under the search dropdown",
-    !q("#u-top .u-title") && q("#u-top").firstElementChild === q("#u-top .u-nav"));
+  /* ⚠️ A title in this row was tried on 2026-09-03 and REMOVED: it pushed the
+     view links rightward under the MASTHEAD's absolutely-positioned suggestion
+     list, and Chromium reported them unclickable. It is back now only because
+     the same edit moved the search INTO this row — the dropdown it opens is
+     positioned by .sugwrap inside #u-top, so there is nothing above the links
+     to hide under. That pairing is the invariant, not the title's absence. */
+  check("(A) ⭐ item 1: SkyView is the leftmost thing in the row",
+    q("#u-top").firstElementChild === q("#u-top #u-title") &&
+    /^SkyView$/.test(text("#u-title").trim()), text("#u-title"));
+  check("(A) ⭐ …and the search that made room for it moved into the row with it",
+    !!q("#u-top #u-search-slot #msearch") && !q(".mast #msearch") &&
+    !!q("#u-top #u-search-slot .sugwrap #gq"));
+  check("(A) ⭐ item 11: the one search field is inside #u-full, so full screen keeps it",
+    !!q("#u-full #msearch") && qa("#msearch").length === 1);
+  check("(A) ⭐ item 5: close is a control with a WORD for a name",
+    !!q("#u-close") && /close/i.test(q("#u-close").getAttribute("aria-label") || ""),
+    q("#u-close") ? q("#u-close").getAttribute("aria-label") : "∅");
+  // Item 10: exact figures, read straight off the zoom readout (view.k * 100).
+  {
+    const S = st();
+    check("(A) ⭐ item 10: a course flies to 1000%, a discipline to 150%",
+      S.courseZoom === 10 && S.subjectZoom === 1.5,
+      `course=${S.courseZoom} subject=${S.subjectZoom}`);
+  }
   // ── item 4 (Sam, 2026-09-04): zoom past 900%, and the taper that earns it ──
   // "it needs to go higher than 900% so I can isolate 1 CCR course while keeping
   // the other courses visible surrounding it, in case I need to drag one into
