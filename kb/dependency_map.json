@@ -155,7 +155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 60
+     "line": 67
     },
     {
      "id": "module:prototype/check_funding_explainer.js",
@@ -1064,7 +1064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1304
+     "line": 1542
     }
    ],
    "main_committers": []

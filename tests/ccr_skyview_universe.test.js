@@ -82,11 +82,12 @@ check("(0) the template still carries every placeholder the builder fills",
     .every((k) => tpl.includes(k)));
 
 // The recorder context: enough of CanvasRenderingContext2D for draw() to run.
+const texts = [];   // every string fillText() drew, so a label's WORDS can be asserted
 function fakeCtx() {
   const noop = () => {};
   return { setTransform: noop, clearRect: noop, fillRect: noop, beginPath: noop, arc: noop, fill: noop,
            stroke: noop, moveTo: noop, lineTo: noop, save: noop, restore: noop, setLineDash: noop,
-           strokeText: noop, fillText: noop, measureText: (t) => ({ width: String(t).length * 6 }),
+           strokeText: noop, fillText: (t) => texts.push(String(t)), measureText: (t) => ({ width: String(t).length * 6 }),
            fillStyle: "", strokeStyle: "", lineWidth: 1, font: "", textAlign: "", textBaseline: "" };
 }
 const fetches = [];
@@ -139,8 +140,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(A) ⭐ the page boots straight onto the map", !!q("#u-cvs"));
   check("(A) ⭐ the map section takes the full width (main is full-bleed)",
     q("#main").classList.contains("u-fullbleed"));
-  check("(A) the details panel is an inspector OVER the map, holding #u-detail",
-    !!q("#u-inspector #u-detail") && !!q("#u-full #u-inspector"));
+  check("(A) ⭐ the details panel is DOCKED beside the map, holding #u-detail, never over the canvas",
+    !!q("#u-stage #u-inspector #u-detail") && !!q("#u-full #u-inspector") && !q("#u-wrap #u-inspector"));
+  check("(A) ⭐ the controls sit above the canvas and the legend and hint below it — nothing floats over the map",
+    !!q("#u-top #u-bar") && !q("#u-wrap #u-bar") && !!q("#u-foot .u-legend") && !!q("#u-foot #u-hint") && !q("#u-wrap .u-legend"));
+  check("(A) ⭐ the other views are one click away inside the full-screen element",
+    !!q("#u-full #u-nav-forest") && /All disciplines/.test(text("#u-nav-forest")) && /Subjects as a list/.test(text("#u-list")));
+  check("(A) ⭐ Pan and Move are word chips, Move pressed by default",
+    /^Pan$/.test(text("#u-mode-pan").trim()) && /^Move$/.test(text("#u-mode-move").trim())
+    && q("#u-mode-move").getAttribute("aria-pressed") === "true" && st().mode === "move");
+  check("(A) ⭐ the provenance line is a hover on the title, not a line of its own",
+    /no writes/.test(q("#prov").title) && !/CCR artifacts generated/.test(q("header").textContent), q("#prov").title);
   check("(A) the write panel and the 'how to read it' pane sit BELOW the map",
     !!q("#u-below #u-writes") && /How the map is arranged/.test(text("#u-below")));
   check("(A) ⭐ the forest is embedded under the map — the same view, not a copy",
@@ -150,7 +160,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     qa("input[type=search]").length === 1, `${qa("input[type=search]").length}`);
   check("(A) every control is a word, not a glyph",
     /Zoom out/.test(text("#u-out")) && /Zoom in/.test(text("#u-in")) && /Full screen/.test(text("#u-fs")) &&
-    /Reset view/.test(text("#u-reset")) && /Browse subjects/.test(text("#u-list")));
+    /Reset view/.test(text("#u-reset")) && /Subjects as a list/.test(text("#u-list")));
   check("(A) the legend explains the hollow point in words",
     /stand-alone course, in orbit/.test(text(".u-legend")));
   check("(A) the intro states orbiting, cross and rim counts from the payload",
@@ -260,18 +270,24 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   q("#u-cvs").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   check("(I) Escape puts it back", st().carrying === null && /nothing moved/i.test(text("#u-hint")));
 
-  // ── (J) the labels: number → number · title → full line, by zoom band ──────
+  // ── (J) the labels: title · units → the longer title → + number · system, by zoom band ──
+  // Sam, 2026-09-03: "more important to see the title than the course number on
+  // the initial course label … Course title and units (3u)"; the number is on hover.
   const z = st().labelZooms;
-  check("(J) the zoom bands are ordered (nodes < id < title < full)", st().nodeZoom < z.id && z.id < z.title && z.title < z.full);
-  w.__ccrUniverseFly(-120, 0, 1.2);
-  const l1 = { ...st().labelStats };
-  w.__ccrUniverseFly(-120, 0, 2.0);
-  const l2 = { ...st().labelStats };
-  w.__ccrUniverseFly(-120, 0, 3.2);
-  const l3 = { ...st().labelStats };
-  check("(J) ⭐ just past the first band only numbers are drawn", l1.ids > 0 && l1.titles === 0 && l1.full === 0, JSON.stringify(l1));
-  check("(J) ⭐ the second band adds the title", l2.titles > 0 && l2.full === 0, JSON.stringify(l2));
-  check("(J) ⭐ the third band draws the full line with units and system", l3.full > 0, JSON.stringify(l3));
+  check("(J) the zoom bands are ordered (nodes < brief < titled < full)", st().nodeZoom < z.id && z.id < z.title && z.title < z.full);
+  texts.length = 0; w.__ccrUniverseFly(-120, 0, 1.2);
+  const l1 = { ...st().labelStats }, t1 = texts.slice();
+  texts.length = 0; w.__ccrUniverseFly(-120, 0, 2.0);
+  const l2 = { ...st().labelStats }, t2 = texts.slice();
+  texts.length = 0; w.__ccrUniverseFly(-120, 0, 3.2);
+  const l3 = { ...st().labelStats }, t3 = texts.slice();
+  check("(J) ⭐ just past the first band a course label is its TITLE and units, never its number",
+    l1.brief > 0 && l1.titled === 0 && l1.full === 0 && t1.some((t) => t === "Welding Fundamentals · 3u") && !t1.some((t) => /^WELD M1001/.test(t)),
+    JSON.stringify(l1) + " " + t1.join("|"));
+  check("(J) ⭐ the second band lengthens the title", l2.titled > 0 && l2.full === 0 && t2.some((t) => t === "Introduction to Welding · 3u"), JSON.stringify(l2));
+  check("(J) ⭐ the third band adds the number and the system on a second line",
+    l3.full > 0 && t3.some((t) => t === "WELD M1001 · M-ID"), JSON.stringify(l3) + " " + t3.join("|"));
+  check("(J) ⭐ every placed course label has a leader line to its circle", l1.leaders === l1.brief && l3.leaders >= l3.full, JSON.stringify(l3));
   check("(J) placed labels never overlap", (() => {
     const b = st().placedBoxes; let o = 0;
     for (let i = 0; i < b.length; i++) for (let j = i + 1; j < b.length; j++)
@@ -340,6 +356,90 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     && qa("#u-detail .u-auth .chip").length === 0, text("#u-detail .u-auth"));
   check("(O) the subject tooltip carries the same line",
     /C-ID WLDT/.test(w.__ccrTipHtml ? w.__ccrTipHtml({ isl: PU.islands[0] }) : "C-ID WLDT"));
+
+  // ── (P) the zoom buttons zoom about what you searched for ───────────────────
+  // Sam, 2026-09-03: "when I use the keyword search and then zoom, I lose focus
+  // on the searched subject".
+  w.__ccrUniverseSearch("welding");
+  const v0 = { ...st().view }, CW = 960, CH = 600;
+  const sx0 = (-120 + v0.x) * v0.k + CW / 2, sy0 = (0 + v0.y) * v0.k + CH / 2;
+  q("#u-in").click(); q("#u-in").click();
+  const v1 = { ...st().view };
+  const sx1 = (-120 + v1.x) * v1.k + CW / 2, sy1 = (0 + v1.y) * v1.k + CH / 2;
+  check("(P) ⭐ zooming in twice keeps the searched subject exactly where it was on screen",
+    v1.k > v0.k * 1.9 && Math.abs(sx1 - sx0) < 0.5 && Math.abs(sy1 - sy0) < 0.5, `${sx0},${sy0} → ${sx1},${sy1} (k ${v0.k} → ${v1.k})`);
+  st().view.x = 5000;                       // pan it far off the canvas
+  q("#u-out").click();
+  const v2 = st().view, sx2 = (-120 + v2.x) * v2.k + CW / 2;
+  check("(P) ⭐ a subject that drifted off the canvas is brought back to the centre before the zoom", Math.abs(sx2 - CW / 2) < 0.5, String(sx2));
+
+  // ── (Q) Pan and Move ───────────────────────────────────────────────────────
+  // Sam, 2026-09-03: "need chips or icons to choose whether to move an item or
+  // reposition the focus".
+  w.__ccrUniverseFly(-120, 0, 3.0);
+  w.__ccrSetMode("pan");
+  check("(Q) ⭐ the Pan chip presses and the hint says what a drag now does",
+    st().mode === "pan" && q("#u-mode-pan").getAttribute("aria-pressed") === "true"
+    && q("#u-mode-move").getAttribute("aria-pressed") === "false" && /Pan/.test(text("#u-hint")));
+  const vx0 = st().view.x, mv0 = st().moves.length;
+  pointer("pointerdown", 480, 300); pointer("pointermove", 540, 330); pointer("pointerup", 540, 330);
+  check("(Q) ⭐ in Pan mode a drag that starts on an identity moves the VIEW and carries nothing",
+    st().view.x !== vx0 && st().moves.length === mv0 && st().carrying === null, `${vx0} → ${st().view.x}`);
+  w.__ccrUniverseFly(-120, 0, 3.0);
+  pointer("pointerdown", 480, 300); pointer("pointerup", 480, 300);
+  check("(Q) …and a click in Pan mode still selects", st().sel === "WELD M1001", st().sel);
+  w.__ccrSetMode("move");
+  check("(Q) Move presses back", st().mode === "move" && q("#u-mode-move").getAttribute("aria-pressed") === "true");
+
+  // ── (R) an identity OPENS: the college courses under it ring it ───────────
+  // Sam, 2026-09-03: "I envision being able to zoom in on a single CCR and see
+  // the local courses that belong to it. That's the view faculty will need".
+  // Where every college course sits NOW: its fixture home, overridden by the
+  // moves the earlier sections wrote — so the expected count follows the state
+  // rather than a number typed by hand.
+  const origin = { 101: "WELD M1001", 102: "WELD M1001", 103: "WELD M1001", 201: "WELD C1000", 202: "WELD C1000",
+                   301: "WELD M10AA", 401: "WELD M10AB", 501: "ARTS M1001", 777: "ARTS M1001", 601: "ARTS M10ZZ" };
+  const cnKey = (cn) => String(cn).replace(/\D/g, "").replace(/^0+/, "");
+  const under = (ids) => { const home = { ...origin }; st().moves.forEach((m) => { home[cnKey(m.cn)] = m.to; });
+    return Object.values(home).filter((id) => ids.includes(id)).length; };
+  w.__ccrUniverseSearch("welding");          // selects the subject, no identity
+  w.__ccrUniverseFly(-120, 0, 3.0);
+  check("(R) with nothing selected and nothing hovered an identity stays closed below the open-all band",
+    st().memberPoints === 0 && st().memberZoom < st().memberZoomAll, String(st().memberPoints));
+  pointer("pointerdown", 480, 300); pointer("pointerup", 480, 300);      // select WELD M1001 (Move mode)
+  check("(R) ⭐ selecting an identity opens it — every college course under WELD M1001 is a square",
+    st().sel === "WELD M1001" && st().memberPoints === under(["WELD M1001"]), `${st().sel} ${st().memberPoints} vs ${under(["WELD M1001"])}`);
+  const radM = (2.2 + Math.sqrt(4) * 1.05) * 3.0;      // nodeRad(WELD M1001) at k=3
+  // An OPEN ring spreads with its count so the names can radiate: R0 = rad + 16 + min(70, n * 1.7).
+  const R0 = radM + 16 + Math.min(70, under(["WELD M1001"]) * 1.7);
+  pointer("pointermove", 480, 300 - R0);                 // the first square, straight above
+  check("(R) ⭐ hovering a square names the college course, its college and the identity it sits under",
+    !tip.hidden && /WELD 100/.test(tip.textContent) && /Alpha College/.test(tip.textContent) && /under WELD M1001/.test(tip.textContent), tip.textContent);
+  texts.length = 0; w.__ccrUniverseFly(-120, 0, 3.0);
+  check("(R) ⭐ each square is labelled by its code and college", st().labelStats.members > 0 && texts.some((t) => t === "WELD 100 · Alpha College"), texts.join("|"));
+  const mvb = st().moves.length;
+  pointer("pointerdown", 480, 300 - R0); pointer("pointermove", 500, 340);
+  check("(R) ⭐ dragging a square picks its course up", st().carrying === "WELD 100", String(st().carrying));
+  pointer("pointerup", 480 + 30 * 3, 300 + 20 * 3);      // WELD C1000
+  check("(R) ⭐ dropping it on another identity writes the same CN: move the panel would",
+    st().moves.length === mvb + 1 && st().moves[st().moves.length - 1].to === "WELD C1000", JSON.stringify(st().moves.slice(-1)));
+  w.__ccrUniverseFly(-120, 0, 4.5);                      // past the open-all band
+  check("(R) ⭐ zoomed far enough that identities stand apart, every one in view opens — and the moved course rings its new identity",
+    st().memberPoints === under(["WELD M1001", "WELD C1000"]) && st().memberPoints >= 5, `${st().memberPoints} vs ${under(["WELD M1001", "WELD C1000"])}`);
+  pointer("pointermove", 480, 300 + 200 * 4.5);          // off every point: nothing hovered
+  w.__ccrUniverseFly(-120, 0, 3.0);
+  pointer("pointermove", 480 + 30 * 3, 300 + 20 * 3);   // hover WELD C1000
+  check("(R) hovering an identity below that band opens it beside the selected one, and nothing else",
+    st().hover === "WELD C1000" && Object.keys(st().memberOwners).sort().join() === ["WELD C1000", "WELD M1001"].join()
+    && st().memberOwners["WELD C1000"] === under(["WELD C1000"]),
+    `hover=${st().hover} sel=${st().sel} owners=${JSON.stringify(st().memberOwners)}`);
+
+  // ── (T) the links in the strip reach the other views ──────────────────────
+  // Sam, 2026-09-03: "will need links on full screen to navigate to the other views".
+  q("#u-nav-forest").click();
+  check("(T) ⭐ 'All disciplines' in the strip leaves the map for the forest", !q("#u-cvs") && !!q("#go-universe"));
+  w.__ccrUniverse();
+  check("(T) the ESL door is removed when there is no ESL payload (never a door onto nothing)", !q("#u-nav-esl") && !!q("#u-nav-forest"));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

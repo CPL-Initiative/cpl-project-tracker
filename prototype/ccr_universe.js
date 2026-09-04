@@ -63,6 +63,28 @@ var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
 var inspOpen=true;
+/* What a drag does (Sam, 2026-09-03: "need chips or icons to choose whether to
+ * move an item or reposition the focus — when zoom, I couldn't see how to move
+ * the screen to keep the subject in view"). "move" carries a course or a
+ * subject; "pan" moves the view whatever is under the pointer. */
+var mode="move";
+/* The world point the zoom BUTTONS zoom about: the searched subject, the
+ * selection, or the last fly (Sam, 2026-09-03: "when I use the keyword search
+ * and then zoom, I lose focus on the searched subject"). The wheel still zooms
+ * at the pointer, because that is what a wheel means. */
+var anchor=null;
+/* Past this zoom an identity OPENS: the college courses it carries ring it as
+ * small squares, each named by its code and college (Sam, 2026-09-03: "I
+ * envision being able to zoom in on a single CCR and see the local courses
+ * that belong to it. That's the view faculty will need to be able to see so
+ * they can feel confident that we associated their course with the correct
+ * CCR course."). The selected identity opens one band earlier. */
+var MEMBER_ZOOM=2.7;
+/* Past THIS zoom every identity in view opens at once; below it only the one you
+ * selected or are hovering does, because in a dense island a neighbor's ring
+ * of squares would otherwise sit over the identity you meant to click. */
+var MEMBER_ZOOM_ALL=4.2;
+var memberPts=[];            // the member squares drawn this frame — {x,y,m,nd,isl} — for hit-testing
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
  * a module constant because doSearch has to honour it: a search that flies to
  * "fit all the hits" picks a zoom below it whenever the hits are spread out,
@@ -102,6 +124,12 @@ function unitsWord(u){
   return u+" unit"+(u===1?"":"s");
 }
 function sysWord(nd){ var s=SYS[nd.s]||SYS[3]; return s[2]; }
+/* "3u" — the units the way Sam wrote them (2026-09-03: "Course title and units (3u)"). */
+function unitsShort(u){
+  if(u==null) return "";
+  var n=Math.round(u*10)/10;
+  return String(n)+"u";
+}
 function loadAuthority(){
   var urls=SEED_URLS.slice();
   (function next(){
@@ -334,7 +362,8 @@ function draw(){
   var k=view.k;
   var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
-  var labelQueue=[], nodeQueue=[];
+  var labelQueue=[], nodeQueue=[], openList=[];
+  memberPts=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -394,10 +423,14 @@ function draw(){
         // into an unreadable pile, which is the exact failure of a global graph
         // view. Stand-alones earn a label one band later than identities — they
         // are the small points, and their number alone reads as noise.
-        var lines=labelLines(nd, k);
-        if(lines && (nd.a ? k>TITLE_ZOOM : rad>3))
-          nodeQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad, lines:lines,
+        var lab=labelLines(nd, k);
+        if(lab && (nd.a ? k>TITLE_ZOOM : rad>3))
+          nodeQueue.push({nd:nd, px:p[0], py:p[1], rad:rad, lines:lab.lines, band:lab.band,
                           force:(nd===selNode||!!hitSet[nd.i])});
+        // An identity OPENS past MEMBER_ZOOM (the selected one a band earlier):
+        // the college courses it carries ring it, each a square on a spoke.
+        if(!nd.a && (k>MEMBER_ZOOM_ALL || (k>MEMBER_ZOOM && nd===hoverNode) || (nd===selNode && k>TITLE_ZOOM)))
+          openList.push({nd:nd, isl:isl, p:p, rad:rad});
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
@@ -406,6 +439,12 @@ function draw(){
     labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
                      force:(isl===hoverIsl||isl===selIsl)});
   });
+
+  // The open identities are drawn LAST, over their neighbors, with a halo that
+  // lifts the ring out of a dense island: the faculty view has to be readable
+  // exactly where the map is busiest. Their squares' labels are queued forced,
+  // so they are placed before any neighbor's name can take the space.
+  openList.forEach(function(o){ drawMembers(o.nd, o.isl, o.p, o.rad, k, nodeQueue, k<=MEMBER_ZOOM_ALL); });
 
   // Islands first: they are the navigational anchors, and a course name buried
   // under its own subject's name helps nobody. Course labels then fill the gaps
@@ -424,14 +463,77 @@ function draw(){
   var z=document.getElementById("u-zoom");
   if(z) z.textContent = Math.round(view.k*100)+"%";
 }
-/* What a course label says at this zoom. Null below the first band. */
+/* The college courses under an identity, drawn around it when it is open. Each
+ * is a small SQUARE on a spoke — a college course, not an identity (a filled
+ * circle) and not a stand-alone (a hollow one) — so a faculty member zooming in
+ * on one CCR course sees their own course sitting under it, named by its code
+ * and college; the title, units and description are one hover or click away.
+ * Rings of up to perRing squares, outward as the count grows. */
+var MEMBER_CAP=48;           // squares drawn for one identity; the rest are a count and the panel's list
+function drawMembers(nd, isl, p, rad, k, queue, focus){
+  var all=membersOf(nd.i); if(!all.length) return;
+  // A filtered or carried course is always among the drawn ones.
+  var ms=all.slice(0, MEMBER_CAP), rest=all.length-ms.length;
+  if(rest>0) all.slice(MEMBER_CAP).forEach(function(m){
+    if((memFilter && m.n===memFilter) || (drag && drag.kind==="course" && drag.cn===m.cn)){ ms[ms.length-1]=m; }
+  });
+  var n=ms.length;
+  // Open for reading (selected or hovered), the ring spreads so the names can
+  // radiate from it; at the open-all zoom the identities are far apart already.
+  var spread=focus?Math.min(70, n*1.7):0;
+  var R0=rad+16+spread, perRing=Math.max(8, Math.round(2*Math.PI*R0/(focus?15:13)));
+  var sys=SYS[nd.s]||SYS[3];
+  var rings=Math.ceil(n/perRing);
+  if(focus){
+    ctx.beginPath(); ctx.arc(p[0],p[1],R0+(rings-1)*15+10,0,6.2832);
+    ctx.fillStyle="rgba(255,255,255,.8)"; ctx.fill();
+    ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
+    ctx.fillStyle=sys[0]; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=sys[1]; ctx.stroke();
+  }
+  for(var i=0;i<n;i++){
+    var m=ms[i];
+    var ring=Math.floor(i/perRing), inRing=Math.min(perRing, n-ring*perRing), j=i-ring*perRing;
+    var R=R0+ring*15;
+    var a=-Math.PI/2 + j*2*Math.PI/inRing + ring*0.35;
+    var x=p[0]+R*Math.cos(a), y=p[1]+R*Math.sin(a);
+    var movedHere=(m.cn in movedTo) && movedTo[m.cn]===nd.i;
+    var carried=drag && drag.kind==="course" && drag.cn===m.cn;
+    ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
+    ctx.lineWidth=1; ctx.strokeStyle="rgba(28,28,26,.22)"; ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x-3.5,y-3.5); ctx.lineTo(x+3.5,y-3.5); ctx.lineTo(x+3.5,y+3.5);
+    ctx.lineTo(x-3.5,y+3.5); ctx.lineTo(x-3.5,y-3.5);
+    ctx.fillStyle=movedHere?"#EAF1E6":carried?"#E7EEF9":"#fff"; ctx.fill();
+    ctx.lineWidth=1.4; ctx.strokeStyle=movedHere?"#2C601A":sys[1]; ctx.stroke();
+    memberPts.push({x:x, y:y, m:m, nd:nd, isl:isl});
+    if(k>MEMBER_ZOOM || focus)
+      queue.push({mem:m, nd:nd, px:x, py:y, rad:4, lines:[m.n+" · "+trunc(m.c,26)], band:"member",
+                  out:[Math.cos(a), Math.sin(a)],
+                  force:!!focus || !!(memFilter && m.n===memFilter) || carried});
+  }
+  if(rest>0){
+    var ry=p[1]+R0+(rings-1)*15+14;
+    ctx.font="600 10px 'Source Sans 3',system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+    var more="and "+num(rest)+" more college course"+(rest===1?"":"s")+" — see the details panel";
+    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)"; ctx.strokeText(more,p[0],ry);
+    ctx.fillStyle="#5C5C55"; ctx.fillText(more,p[0],ry);
+  }
+}
+
+/* What a course label says at this zoom. Null below the first band.
+ * The TITLE leads, with the units in Sam's short form, and the number waits for
+ * the full band and the hover (Sam, 2026-09-03: "more important to see the
+ * title than the course number on the initial course label, which would save
+ * valuable real estate. Hover over to see the details, including the course
+ * number" — "Course title and units (3u)"). Three bands: brief (a short title),
+ * titled (the longer title), full (a second line with the number and system). */
 function labelLines(nd, k){
+  if(k<=ID_ZOOM) return null;
+  var u=unitsShort(nd.u);
+  var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"");
   if(k>FULL_ZOOM)
-    return [nd.i+" · "+trunc(nd.t||"",40),
-            unitsWord(nd.u)+" · "+sysWord(nd)+(nd.a?" · stand-alone":"")];
-  if(k>TITLE_ZOOM) return [nd.i+" · "+trunc(nd.t||"",30)];
-  if(k>ID_ZOOM) return [nd.i];
-  return null;
+    return {band:"full", lines:[head, nd.i+" · "+sysWord(nd)+(nd.a?" · stand-alone":"")]};
+  if(k>TITLE_ZOOM) return {band:"titled", lines:[head]};
+  return {band:"brief", lines:[head]};
 }
 
 /* Biggest first, reject anything that would overlap an already-placed label.
@@ -473,33 +575,60 @@ function placeLabels(queue, showAll){
    followed. A two-line label (the full band) is one box, so it is placed or
    dropped whole. */
 function placeNodeLabels(queue, boxes){
-  var placed=[]; labelStats={ids:0,titles:0,full:0};
+  var placed=[]; labelStats={brief:0,titled:0,full:0,members:0,leaders:0};
   if(!queue.length) return placed;
+  // The names around an OPEN identity come first — that ring is what the
+  // reader is looking at — then everything else the reader asked for (a hit,
+  // the selection), then the rest, biggest first.
+  var rank=function(q){ return (q.nd===selNode&&!q.mem) ? 0 : (q.band==="member"&&q.force) ? 0 : q.force ? 1 : 2; };
   queue.sort(function(a,b){
-    if(a.force!==b.force) return a.force?-1:1;
+    var ra=rank(a), rb=rank(b);
+    if(ra!==rb) return ra-rb;
     return b.rad-a.rad;
   });
-  ctx.textAlign="center"; ctx.textBaseline="alphabetic";
-  var W=cw(), H=ch();
+  ctx.textBaseline="alphabetic"; ctx.textAlign="left";
+  var W=cw(), H=ch(), LEAD=12;
   queue.forEach(function(q){
-    ctx.font=(q.force?"600 ":"")+"11px 'Source Sans 3',system-ui,sans-serif";
+    var mem=q.band==="member", lh=mem?11:12;
+    ctx.font=(q.force?"600 ":"")+(mem?"10px":"11px")+" 'Source Sans 3',system-ui,sans-serif";
     var w=0; q.lines.forEach(function(t){ w=Math.max(w, ctx.measureText(t).width); });
-    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy-11+q.lines.length*12+2];
-    if(box[2]<0||box[0]>W||box[3]<0||box[1]>H) return;
-    for(var i=0;i<boxes.length;i++){
-      var b=boxes[i];
-      if(box[0]<b[2]&&box[2]>b[0]&&box[1]<b[3]&&box[3]>b[1]) return;
+    var h=q.lines.length*lh+2;
+    /* The label sits AWAY from the circle and a thin line joins the two (Sam,
+       2026-09-03: "have the course labels away from the course circle and have
+       a thin line to connect to the circle so users can be clear on what they
+       might drag and drop"). Four corners are tried, up-right first; the first
+       that fits wins, and a label that fits nowhere is dropped, never stacked. */
+    var cands=[[1,-1],[-1,-1],[1,1],[-1,1]], box=null, at=null;
+    if(q.out){   // a square's name radiates OUTWARD from its identity, so a ring reads as spokes
+      var ox=q.out[0]>=0?1:-1, oy=q.out[1]>=0?1:-1;
+      cands=[[ox,oy],[ox,-oy],[-ox,oy],[-ox,-oy]];
     }
+    for(var ci=0; ci<cands.length && !box; ci++){
+      var sx=cands[ci][0], sy=cands[ci][1];
+      var ax=q.px+sx*(q.rad+LEAD), ay=q.py+sy*(q.rad+LEAD);
+      var x0=sx>0?ax:ax-w, y0=sy>0?ay:ay-h;
+      var cand=[x0-2, y0, x0+w+2, y0+h];
+      if(cand[2]<0||cand[0]>W||cand[3]<0||cand[1]>H) continue;
+      var clash=false;
+      for(var i=0;i<boxes.length;i++){
+        var b=boxes[i];
+        if(cand[0]<b[2]&&cand[2]>b[0]&&cand[1]<b[3]&&cand[3]>b[1]){ clash=true; break; }
+      }
+      if(!clash){ box=cand; at={sx:sx, sy:sy, ax:ax, ay:ay, x0:x0, y0:y0}; }
+    }
+    if(!box) return;
     boxes.push(box); placed.push(box);
-    if(q.lines.length>1) labelStats.full++;
-    else if(q.lines[0].indexOf(" · ")>=0) labelStats.titles++;
-    else labelStats.ids++;
+    labelStats[mem?"members":q.band]++;
+    ctx.beginPath();
+    ctx.moveTo(q.px+at.sx*q.rad*0.71, q.py+at.sy*q.rad*0.71); ctx.lineTo(at.ax, at.ay);
+    ctx.lineWidth=1; ctx.strokeStyle=q.force?"rgba(146,0,0,.6)":"rgba(28,28,26,.35)"; ctx.stroke();
+    labelStats.leaders++;
     q.lines.forEach(function(t,li){
-      var y=q.cy+li*12;
+      var y=at.y0+lh*(li+1)-2;
       ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
-      ctx.strokeText(t,q.cx,y);
-      ctx.fillStyle=q.force?"#920000":(li?"#5C5C55":"#3A3A36");
-      ctx.fillText(t,q.cx,y);
+      ctx.strokeText(t,at.x0,y);
+      ctx.fillStyle=q.force?"#920000":(mem?"#3A3A36":(li?"#5C5C55":"#1C1C1A"));
+      ctx.fillText(t,at.x0,y);
     });
   });
   return placed;
@@ -514,18 +643,30 @@ function pick(px,py){
     var r=isl.r*view.k;
     if(Math.hypot(px-c[0],py-c[1])>r+12) continue;
     if(view.k>NODE_ZOOM){
-      var found=null, fd=1e9;
+      var found=null, fd=1e9, inside=false;
       for(var j=0;j<isl.p.length;j++){
         var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
         var rad=Math.max(3.2,nodeRad(nd));
         var d=Math.hypot(px-p[0],py-p[1]);
-        if(d<=rad+3 && d<fd){ found=nd; fd=d; }
+        if(d<=rad+3 && d<fd){ found=nd; fd=d; inside=d<=rad; }
       }
+      // A pointer INSIDE the nearest identity's circle means that identity, even
+      // where a neighbor's ring of squares crosses it; a square wins in the open.
+      if(found && inside) return {isl:isl,nd:found};
+      var mem=pickMember(px,py);
+      if(mem) return mem;
       if(found) return {isl:isl,nd:found};
     }
     best=best||{isl:isl,nd:null};
   }
-  return best;
+  return pickMember(px,py)||best;
+}
+function pickMember(px,py){
+  for(var mi=memberPts.length-1; mi>=0; mi--){
+    var mp=memberPts[mi];
+    if(Math.abs(px-mp.x)<=6 && Math.abs(py-mp.y)<=6) return {isl:mp.isl, nd:mp.nd, mem:mp.m};
+  }
+  return null;
 }
 
 /* ── the view ─────────────────────────────────────────────────────────────── */
@@ -541,47 +682,65 @@ window.__ccrUniverse = function(){
 
   view_el.innerHTML =
     '<section class="u-full" id="u-full" aria-label="SkyView — the Common Course Reference as a map">'+
-      '<div class="u-wrap" id="u-wrap">'+
-        '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
-          'A map of every course identity, grouped into one island per subject area, with '+
-          'each stand-alone course in orbit around the identity it is most aligned to. '+
-          'Use the search box at the top of the page to jump to a subject, an identity or a '+
-          'college course, or Tab to step through subjects from the keyboard; the details '+
-          'panel describes what you select."></canvas>'+
-        '<div class="u-bar u-ov u-ov-tl" role="toolbar" aria-label="Map controls">'+
-          // No search box here. The page header already carries one, and two search
-          // fields on one screen that behave differently is a question about which
-          // one you are supposed to use — Sam hit exactly that.
+      /* Controls ABOVE the canvas and the legend and hint BELOW it, all inside the
+       * full-screen element, so nothing floats over the map (Sam, 2026-09-03:
+       * "move the zoom and other buttons and popups outside the SkyView window so
+       * users can work more freely") and the other views stay one click away in
+       * full screen ("will need links on full screen to navigate to the other
+       * views"). Every control is a word. */
+      '<div class="u-top" id="u-top">'+
+        '<nav class="u-nav" aria-label="Other views">'+
+          '<button class="linkish" type="button" id="u-nav-forest">All disciplines</button>'+
+          '<button class="linkish" type="button" id="u-list">Subjects as a list</button>'+
+          '<button class="linkish" type="button" id="u-nav-esl">ESL packaging</button>'+
+        '</nav>'+
+        '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
+          '<span class="u-modes" role="group" aria-label="What a drag does">'+
+            '<button class="btn mode" type="button" id="u-mode-pan" aria-pressed="false">Pan</button>'+
+            '<button class="btn mode" type="button" id="u-mode-move" aria-pressed="true">Move</button>'+
+          '</span>'+
           '<button class="btn" type="button" id="u-out">Zoom out</button>'+
           '<button class="btn" type="button" id="u-in">Zoom in</button>'+
           '<button class="btn" type="button" id="u-reset">Reset view</button>'+
-          '<button class="btn" type="button" id="u-list">Browse subjects as a list</button>'+
+          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="true" aria-controls="u-detail">Hide details</button>'+
           '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
           '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
         '</div>'+
-        '<div class="u-legend u-ov u-ov-bl" aria-label="How to read the map">'+
+      '</div>'+
+      '<div class="u-stage" id="u-stage">'+
+        '<div class="u-wrap" id="u-wrap">'+
+          '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
+            'A map of every course identity, grouped into one island per subject area, with '+
+            'each stand-alone course in orbit around the identity it is most aligned to. '+
+            'Use the search box at the top of the page to jump to a subject, an identity or a '+
+            'college course, or Tab to step through subjects from the keyboard; the details '+
+            'panel describes what you select."></canvas>'+
+          '<div class="u-tip" id="u-tip" role="tooltip" hidden></div>'+
+        '</div>'+
+        '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
+          '<div class="u-insp-bar"><span class="u-insp-t">Details</span></div>'+
+          '<div id="u-detail" class="u-insp-body"><h3>Nothing selected</h3>'+
+            '<p class="empty">Hover a point for a quick look. Click a subject or a course and its '+
+            'details land here — the college courses underneath, their catalog descriptions, '+
+            'and the stand-alone courses in orbit around it.</p></div>'+
+        '</aside>'+
+      '</div>'+
+      '<div class="u-foot" id="u-foot">'+
+        '<div class="u-legend" aria-label="How to read the map">'+
           '<span><i class="u-sw" style="background:#F1EAFC;border-color:#6D28D9"></i>M-ID, our working label</span>'+
           '<span><i class="u-sw" style="background:#E7EEF9;border-color:#0047AB"></i>C-ID, official</span>'+
           '<span><i class="u-sw" style="background:#FBF1D8;border-color:#8B6800"></i>CCN, official</span>'+
           '<span><i class="u-sw" style="background:#EFEFEC;border-color:#5C5C55"></i>unified</span>'+
           '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+
+          '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
-        '<div class="u-hint u-ov u-ov-b" id="u-hint">Hover for a quick look; click a subject or a course '+
-          'for details. Drag the background to pan, scroll to zoom, drag a subject to move it. '+
-          'Drag a hollow course onto the identity it belongs to, or drag from the details panel. '+
+        '<div class="u-hint" id="u-hint">Hover for a quick look; click a subject or a course for details. '+
+          '<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to, '+
+          'drag a subject to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
+          'anywhere to move the view. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
           'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> goes into one, '+
-          '<kbd>Esc</kbd> comes back out.</div>'+
-        '<div class="u-tip" id="u-tip" role="tooltip" hidden></div>'+
+          '<kbd>Esc</kbd> comes back out, arrows pan.</div>'+
       '</div>'+
-      '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
-        '<div class="u-insp-bar"><span class="u-insp-t">Details</span>'+
-          '<button class="btn small" type="button" id="u-insp-toggle" aria-expanded="true" '+
-          'aria-controls="u-detail">Hide</button></div>'+
-        '<div id="u-detail" class="u-insp-body"><h3>Nothing selected</h3>'+
-          '<p class="empty">Hover a point for a quick look. Click a subject or a course and its '+
-          'details land here — the college courses underneath, their catalog descriptions, '+
-          'and the stand-alone courses in orbit around it.</p></div>'+
-      '</aside>'+
     '</section>'+
     '<div class="wrap u-below" id="u-below">'+
       '<h1>The whole Common Course Reference</h1>'+
@@ -605,7 +764,9 @@ window.__ccrUniverse = function(){
         'A hollow point on the outer rim shares nothing with any identity in its subject.</p>'+
         '<p>Colors name the identity system: an M-ID is our working label, a C-ID or CCN is an '+
         'official statewide number nobody here may re-key, a unified row is a synthetic course. '+
-        'Zoom in and each course shows its number, then its title, then its units and system.</p>'+
+        'Zoom in and each course shows its title and units, then its number and system; zoom in '+
+        'further and an identity opens to show the college courses under it, each named by its code '+
+        'and college — the view a faculty member needs to see their own course under the right CCR course.</p>'+
         '</div>'+
       '</div>'+
       '<div id="u-more"></div>'+
@@ -627,18 +788,21 @@ window.__ccrUniverse = function(){
 function fitCanvas(){
   var wrap=document.getElementById("u-wrap"), full=document.getElementById("u-full");
   if(!wrap||!full) return;
-  var h;
-  if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight;
+  var stage=document.getElementById("u-stage")||full;
+  var topEl=document.getElementById("u-top"), footEl=document.getElementById("u-foot");
+  var th=topEl?topEl.offsetHeight:0, fh=footEl?footEl.offsetHeight:0, h;
+  if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight-th-fh;
   else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
   else {
-    // Whatever sits above the section (the masthead, the crumbs) is measured,
-    // not assumed: the section's own document offset is the one number that
-    // stays right when either of them changes height.
-    var rect=full.getBoundingClientRect();
+    // Whatever sits above the canvas (the masthead, the crumbs, the control
+    // strip) is measured, not assumed, and the legend strip below it is left
+    // its room, so the whole section fits the first screen exactly.
+    var rect=stage.getBoundingClientRect();
     var top=rect.top+(window.scrollY||window.pageYOffset||0);
-    h=Math.max(420, window.innerHeight-top);
+    h=Math.max(420, window.innerHeight-top-fh);
   }
   wrap.style.height=h+"px";
+  if(stage!==full && window.innerWidth>=700) stage.style.height=h+"px"; else if(stage!==full) stage.style.height="";
   sizeCanvas();
 }
 function sizeCanvas(){
@@ -647,6 +811,7 @@ function sizeCanvas(){
   cvs.width=Math.round(w*DPR); cvs.height=Math.round(h*DPR);
 }
 function resetView(){
+  anchor=null;
   var b=U.bounds, W=cw(), H=ch();
   var pad=60;
   view.k=Math.max(0.03, Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0)));
@@ -660,8 +825,22 @@ function zoomAt(px,py,factor){
   draw();
 }
 function flyTo(x,y,k){
-  view.k=Math.max(0.03,Math.min(9,k)); view.x=-x; view.y=-y; draw();
+  anchor={x:x, y:y};
+  view.x=-x; view.y=-y; view.k=Math.max(0.03, Math.min(9, k)); draw();
 }
+/* Where the zoom buttons zoom ABOUT: the selection, else the last fly — and if
+ * that point has drifted off the canvas it is brought back to the centre first,
+ * so zooming never loses the subject the reader searched for. */
+function anchorScreen(){
+  var a = selNode&&selIsl ? [selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0)]
+        : selIsl ? [selIsl.x+(selIsl.dx||0), selIsl.y+(selIsl.dy||0)]
+        : anchor ? [anchor.x, anchor.y] : null;
+  if(!a) return null;
+  var p=w2s(a[0],a[1]);
+  if(p[0]<0||p[0]>cw()||p[1]<0||p[1]>ch()){ view.x=-a[0]; view.y=-a[1]; p=[cw()/2, ch()/2]; }
+  return p;
+}
+function zoomStep(factor){ var p=anchorScreen()||[cw()/2,ch()/2]; zoomAt(p[0],p[1],factor); }
 window.__ccrUniverseFly = flyTo;
 /* The header's search box calls this when the map is on screen, so one field
  * serves both the map and the text views instead of the page carrying two. */
@@ -745,7 +924,10 @@ function setInspector(open){
   inspOpen=!!open;
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
   if(a) a.classList.toggle("closed", !inspOpen);
-  if(b){ b.textContent=inspOpen?"Hide":"Show details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+  if(b){ b.textContent=inspOpen?"Hide details":"Show details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+  // The panel is docked beside the canvas, so showing or hiding it changes the
+  // canvas's width: refit, or the map draws at the old size.
+  if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
 }
 
 /* Act on a chosen suggestion. Flying is this module's job, so the header hands
@@ -864,13 +1046,23 @@ window.__ccrUniverseState = function(){
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           descBases:DESC_BASES.slice(), descState:descState,
-          placedBoxes:placedBoxes, titlesQueued:titlesQueued};
+          placedBoxes:placedBoxes, titlesQueued:titlesQueued,
+          mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL, memberPoints:memberPts.length,
+          memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
+          hover:hoverNode?hoverNode.i:null};
 };
 
 /* ── tooltip ────────────────────────────────────────────────────────────────
  * The quick look (Sam: "see course and cluster details on click or hover"). A
  * tooltip follows the pointer; the inspector holds the full card on click. */
 function tipHtml(hit){
+  if(hit.mem){
+    var m=hit.mem, info=courseInfo(hit.isl, m);
+    return '<b>'+esc(m.n)+'</b> '+esc(m.c)+
+      (info&&info.title?'<br>'+esc(info.title):'')+
+      '<br><span class="sub">'+(info&&info.units!=null?esc(unitsWord(info.units))+' · ':'')+
+      'college course under '+esc(hit.nd.i)+' '+esc(trunc(hit.nd.t||"",36))+'</span>';
+  }
   if(hit.nd){
     var nd=hit.nd, isl=hit.isl;
     var carried=(roster&&roster[nd.i]||[]).length;
@@ -910,9 +1102,30 @@ function wire(){
     var r=cvs.getBoundingClientRect();
     zoomAt(e.clientX-r.left, e.clientY-r.top, e.deltaY<0?1.16:1/1.16);
   }, {passive:false});
-  document.getElementById("u-in").onclick=function(){ zoomAt(cw()/2,ch()/2,1.4); };
-  document.getElementById("u-out").onclick=function(){ zoomAt(cw()/2,ch()/2,1/1.4); };
+  document.getElementById("u-in").onclick=function(){ zoomStep(1.4); };
+  document.getElementById("u-out").onclick=function(){ zoomStep(1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
+  function setMode(m){
+    mode=m==="pan"?"pan":"move";
+    ["pan","move"].forEach(function(x){
+      var b=document.getElementById("u-mode-"+x); if(b) b.setAttribute("aria-pressed", x===mode?"true":"false");
+    });
+    cvs.style.cursor = mode==="pan"?"grab":"default";
+    setHint(mode==="pan"
+      ? "<strong>Pan</strong>: drag anywhere to move the view; a click still selects. Switch to <strong>Move</strong> to carry a course."
+      : "<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to; drag a subject to pull it next to another; drag the background to pan.");
+  }
+  var mpan=document.getElementById("u-mode-pan"), mmove=document.getElementById("u-mode-move");
+  if(mpan) mpan.onclick=function(){ setMode("pan"); };
+  if(mmove) mmove.onclick=function(){ setMode("move"); };
+  window.__ccrSetMode=setMode;
+  var nf=document.getElementById("u-nav-forest");
+  if(nf) nf.onclick=function(){ if(typeof window.__ccrForest==="function") window.__ccrForest(); };
+  var ne=document.getElementById("u-nav-esl");
+  if(ne){
+    if(window.CPL_ATLAS_ESL && typeof window.__ccrEsl==="function") ne.onclick=function(){ window.__ccrEsl(); };
+    else ne.remove();   // never offer a door that opens on nothing
+  }
   var lb=document.getElementById("u-list");
   // Seed from WHAT IS IN THE BOX, not from the last term that was submitted.
   if(lb) lb.onclick=function(){
@@ -958,23 +1171,39 @@ function wire(){
     // route the hint text describes — selected the destination and moved nothing.
     if(drag && drag.kind==="course"){ drag.px=px; drag.py=py; return; }
     var hit=pick(px,py);
-    if(hit && hit.nd)      drag={kind:"node", isl:hit.isl, nd:hit.nd, x0:px, y0:py, moved:false};
+    // Pan mode: the drag moves the view whatever is under the pointer; the
+    // click it started with still selects on release.
+    if(mode==="pan"){ drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, hit:hit, moved:false}; return; }
+    if(hit && hit.mem)     drag={kind:"member", isl:hit.isl, nd:hit.nd, mem:hit.mem, x0:px, y0:py, moved:false};
+    else if(hit && hit.nd) drag={kind:"node", isl:hit.isl, nd:hit.nd, x0:px, y0:py, moved:false};
     else if(hit && e.shiftKey===false && hit.isl) drag={kind:"island", isl:hit.isl, x0:px, y0:py,
                                                         ox:hit.isl.dx||0, oy:hit.isl.dy||0, moved:false};
-    else drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y};
+    else drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, hit:hit, moved:false};
   });
   cvs.addEventListener("pointermove", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
     if(!drag){
       var hit=pick(px,py);
       var ni=hit?hit.isl:null, nn=hit?hit.nd:null;
-      if(ni!==hoverIsl||nn!==hoverNode){ hoverIsl=ni; hoverNode=nn; draw();
-        cvs.style.cursor = nn?"pointer":ni?"grab":"default"; }
+      if(ni!==hoverIsl||nn!==hoverNode){ hoverIsl=ni; hoverNode=nn; draw(); }
+      cvs.style.cursor = mode==="pan" ? "grab" : (nn||(hit&&hit.mem)) ? "pointer" : ni ? "grab" : "default";
       if(hit) showTip(hit, px, py); else hideTip();
       return;
     }
     if(drag.kind==="pan"){
+      if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>3) drag.moved=true;
       view.x=drag.vx+(px-drag.x0)/view.k; view.y=drag.vy+(py-drag.y0)/view.k; draw();
+    } else if(drag.kind==="member"){
+      /* Dragging a member square picks its course up — the same carry a hollow
+       * point starts and the panel's Drag… button starts; the CN: row it would
+       * write is the same one. */
+      if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
+        var mem=drag.mem, mgate=canMove(mem.cn);
+        if(!mgate.ok){ setHint(sharedKeyReason(mem.cn, mem.n, mgate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, moved:true}; return; }
+        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd};
+        setHint("Carrying <strong>"+esc(mem.n)+"</strong> ("+esc(mem.c)+") — drop it on the identity it belongs to.");
+        draw();
+      }
     } else if(drag.kind==="island"){
       drag.isl.dx=drag.ox+(px-drag.x0)/view.k;
       drag.isl.dy=drag.oy+(py-drag.y0)/view.k;
@@ -1014,7 +1243,14 @@ function wire(){
       else setHint("Dropped on empty space — nothing moved.");
       drag=null; draw(); return;
     }
-    if(drag && drag.kind==="node" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; showNode(drag.nd, drag.isl); }
+    if(drag && drag.kind==="pan" && !drag.moved && drag.hit){          // a click, in Pan mode
+      var ph=drag.hit;
+      if(ph.mem){ selNode=ph.nd; selIsl=ph.isl; memFilter=ph.mem.n; showNode(ph.nd, ph.isl, true); }
+      else if(ph.nd){ selNode=ph.nd; selIsl=ph.isl; showNode(ph.nd, ph.isl); }
+      else if(ph.isl){ selIsl=ph.isl; selNode=null; showIsland(ph.isl); }
+    }
+    else if(drag && drag.kind==="member" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; memFilter=drag.mem.n; showNode(drag.nd, drag.isl, true); }
+    else if(drag && drag.kind==="node" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; showNode(drag.nd, drag.isl); }
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
     drag=null; draw();
   });
@@ -1089,8 +1325,8 @@ function wire(){
     if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowDown"){ view.y-=step; draw(); e.preventDefault(); }
-    if(e.key==="+"||e.key==="="){ zoomAt(cw()/2,ch()/2,1.4); e.preventDefault(); }
-    if(e.key==="-"){ zoomAt(cw()/2,ch()/2,1/1.4); e.preventDefault(); }
+    if(e.key==="+"||e.key==="="){ zoomStep(1.4); e.preventDefault(); }
+    if(e.key==="-"){ zoomStep(1/1.4); e.preventDefault(); }
   });
 }
 function setHint(t){ var el=document.getElementById("u-hint"); if(el) el.innerHTML=t; }
@@ -1153,13 +1389,15 @@ function doSearch(raw){
     flyTo(pick.x+(pick.dx||0), pick.y+(pick.dy||0), k);
     selIsl=pick; selNode=null; showIsland(pick);
     var others=bnames.filter(function(n){ return n!==pick.d; });
-    // Only claim rings the renderer will actually draw.
-    var ringed=searchHits.length && view.k>=NODE_ZOOM;
+    /* The term is the subject's own name, so every course title carrying that
+     * word is not a find — it is the subject. No rings: a Welding island with
+     * 408 red rings and red names (measured 2026-09-03) reads as an alarm, and
+     * the labels now lead with the title, which made every one of them red. */
+    searchHits=[];
     setHint("Subject <strong>"+esc(pick.d)+"</strong> — "+num(pick.n)+" identities."+
       (others.length ? " Also matching: <strong>"+others.slice(0,3).map(esc).join("</strong> · <strong>")+
         "</strong>"+(others.length>3?" · …":"")+" — pick one from the search suggestions." : "")+
-      (ringed ? " <strong>"+num(searchHits.length)+"</strong> course"+
-        (searchHits.length===1?"":"s")+" here also match “"+esc(term)+"” by name, ringed in red." : ""));
+      " Click an identity to open it and see the college courses under it.");
     draw();
     return;
   }
@@ -1314,6 +1552,10 @@ function renderNode(){
   var nd=selNode, isl=selIsl;
   var el=document.getElementById("u-detail");
   var mine=membersOf(nd.i), total=mine.length;
+  // A course a curator just moved here is the row they are looking for: it
+  // leads the list, ahead of the page cap (MUS 180 carries 850 courses; a row
+  // appended at the end of that would be on a page nobody opens).
+  mine.sort(function(a,b){ return ((movedTo[a.cn]===nd.i)?0:1) - ((movedTo[b.cn]===nd.i)?0:1); });
   var h="<h3>"+esc(nd.t||nd.i)+"</h3>"+
     "<p>"+chipFor(nd)+' <span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+
     esc(unitsWord(nd.u))+" · "+num(total)+" college course"+(total===1?"":"s")+" carried"+

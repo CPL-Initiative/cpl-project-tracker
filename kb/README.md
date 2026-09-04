@@ -713,6 +713,14 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
 
 ## SkyView universe payloads (2026-08-24, Session 189 · orbits and shards 2026-09-03, Session 223)
 
+Since #1460 (Session 224, Sam's eight drive notes) the view reads the members payload on the canvas too: a
+selected or hovered identity (all of them past 4.2×) **opens**, ringing the college courses it carries as
+squares on spokes, each named by code and college, hover for the title and units, drag one for the same
+`CN:` move the panel writes. Controls sit above the canvas, the legend and hint below, the details panel
+docked beside it; labels sit on leader lines and lead with the title and units; Pan and Move are chips;
+the zoom buttons zoom about the searched subject. `prototype/skyview.html` is rebuilt by
+`python3 prototype/build_ccr_atlas.py` — the daily run does not rebuild it.
+
 The graph view (`prototype/skyview.html`, assembled by `prototype/build_ccr_atlas.py` from
 `prototype/ccr_atlas_v1.html` + `prototype/ccr_universe.js`) is fed by two committed payloads and
 one set of shards that is published rather than committed. They are separate on purpose: the
