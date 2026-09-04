@@ -398,6 +398,11 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
     return pts, radius
 
 
+# 0 credit · 1 noncredit · 2 noncredit enhanced. Absent = not recorded, and it
+# stays absent rather than defaulting — see the note in point_of().
+CREDIT_CODE = {"Credit": 0, "Noncredit": 1, "Noncredit Enhanced": 2}
+
+
 def point_of(row, x, y):
     fl = row.get("flags") or {}
     pt = {
@@ -411,6 +416,21 @@ def point_of(row, x, y):
     }
     if row.get("units") is not None:
         pt["u"] = row["units"]
+    # ── credit status, so the map can draw and filter on it ───────────────────
+    # Sam, 2026-09-04: "Need to visually differentiate NC courses … Also need a
+    # CR NC toggle", and "In the Keyword Search, keep CR courses together
+    # separated from NC courses". The scorer already READ `credit` as a
+    # corroborator (W_CREDIT) but nothing ever emitted it, so the client could
+    # not draw what it never received.
+    #
+    # ⚠️ THREE STATES AND A GAP, not two. "Noncredit" and "Noncredit Enhanced"
+    # are different things (the Enhanced/CDCP distinction), and 73 identities
+    # carry no value at all. A field that collapsed this to a boolean would make
+    # those 73 silently credit — the false-zero shape this repo has been bitten
+    # by before. Absent stays absent: `c` is simply not emitted.
+    c = CREDIT_CODE.get((row.get("credit") or "").strip())
+    if c is not None:
+        pt["c"] = c
     return pt
 
 

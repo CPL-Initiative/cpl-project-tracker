@@ -195,6 +195,24 @@ function whyWords(w){
   var out=[]; WHY.forEach(function(p){ if(w&p[0]) out.push(p[1]); });
   return out.length?out.join(", "):"no shared signal";
 }
+/* ── Credit status (payload field `c`) ────────────────────────────────────
+ * 0 credit · 1 noncredit · 2 noncredit enhanced · ABSENT = not recorded.
+ * ⚠️ Absent is its own state, not credit. 73 identities carry no value, and
+ * folding them into "credit" would be the false zero this repo keeps relearning.
+ * The filter therefore has three positions and "All" is the only one that shows
+ * an unrecorded course — never silently dropped, and the chip says how many. */
+var CR_ALL="all", CR_CREDIT="cr", CR_NC="nc";
+var creditFilter=CR_ALL;
+function isNC(nd){ return nd.c===1 || nd.c===2; }
+function isCR(nd){ return nd.c===0; }
+function creditShown(nd){
+  if(creditFilter===CR_ALL) return true;
+  return creditFilter===CR_CREDIT ? isCR(nd) : isNC(nd);
+}
+/* Dash length tracks the radius so the break stays visible as you zoom: a fixed
+ * pattern turns into a solid ring on a big circle and vanishes on a small one. */
+function ncDash(rad){ var d=Math.max(2, Math.min(9, rad*0.55)); return [d, d*0.72]; }
+
 function nodeRad(nd){
   var rs=radScale(view.k);   // tapered above RAD_KNEE — see the note by K_MAX
   return nd.a ? Math.max(1.3, SAT_R*rs)
@@ -421,6 +439,7 @@ function draw(){
         ctx.stroke(); ctx.restore();
       }
       isl.p.forEach(function(nd){
+        if(!creditShown(nd)) return;              // the CR / NC filter (item 9)
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
         var rad=nodeRad(nd);
         var s=SYS[nd.s]||SYS[3];
@@ -433,10 +452,23 @@ function draw(){
           ctx.fillStyle="#fff"; ctx.fill();
           ctx.lineWidth=Math.max(1,rad*0.34);
           if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle="#87877F"; ctx.stroke(); ctx.restore(); }
+          else if(isNC(nd)){ ctx.save(); ctx.strokeStyle=s[1]; ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
           else { ctx.strokeStyle=s[1]; ctx.stroke(); }
         } else {
           ctx.fillStyle=s[0]; ctx.fill();
-          if(rad>2){ ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1]; ctx.stroke(); }
+          if(rad>2){
+            ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1];
+            // ── item 3: noncredit reads as a BROKEN ring (Sam, 2026-09-04:
+            // "rather than another color, perhaps a broken line or dotted
+            // circle"). Stroke pattern is a free channel: colour already spends
+            // itself on the identity SYSTEM (M-ID / C-ID / CCN / unified), so a
+            // second colour scale would make the reader hold two at once. It
+            // also satisfies "colour is never the only signal" for free.
+            // Dashes, not dots: at low zoom a dotted 1px ring aliases into a
+            // solid one and the distinction silently disappears.
+            if(isNC(nd)){ ctx.save(); ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
+            else ctx.stroke();
+          }
         }
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
@@ -732,7 +764,11 @@ window.__ccrUniverse = function(){
           '<button class="btn" type="button" id="u-in" title="Zoom in">In</button>'+
             '<button class="btn" type="button" id="u-reset" title="Reset the view">Reset</button>'+
           '</span>'+
-          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="false" aria-controls="u-detail">Details</button>'+'<button class="btn" type="button" id="u-foot-toggle" aria-expanded="true" aria-controls="u-foot">Hide legend</button>'+
+          '<span class="u-seg u-crnc" role="group" aria-label="Show credit or noncredit courses">'+
+            '<button class="btn mode" type="button" id="u-cr-all" aria-pressed="true">All</button>'+
+            '<button class="btn mode" type="button" id="u-cr-cr" aria-pressed="false">Credit</button>'+
+            '<button class="btn mode" type="button" id="u-cr-nc" aria-pressed="false">Noncredit</button>'+
+          '</span>'+          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="false" aria-controls="u-detail">Details</button>'+'<button class="btn" type="button" id="u-foot-toggle" aria-expanded="true" aria-controls="u-foot">Hide legend</button>'+
           '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
           '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
         '</div>'+
@@ -761,7 +797,7 @@ window.__ccrUniverse = function(){
           '<span><i class="u-sw" style="background:#E7EEF9;border-color:#0047AB"></i>C-ID, official</span>'+
           '<span><i class="u-sw" style="background:#FBF1D8;border-color:#8B6800"></i>CCN, official</span>'+
           '<span><i class="u-sw" style="background:#EFEFEC;border-color:#5C5C55"></i>unified</span>'+
-          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+
+          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+'<span><i class="u-sw nc"></i>noncredit — a broken ring, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
         '<div class="u-hint" id="u-hint">Hover for a quick look; click a subject or a course for details. '+
@@ -1081,6 +1117,12 @@ window.__ccrUniverseState = function(){
           // radius cannot be queried from the DOM, and the taper is the half of
           // "zoom past 900%" that actually makes one course pickable.
           kMax:K_MAX, radKnee:RAD_KNEE, radScaleAt:radScale,
+          creditFilter:creditFilter, ncDashAt:ncDash,
+          creditCounts:(function(){ var o={cr:0,nc:0,unrecorded:0,shown:0};
+            if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
+              if(nd.c==null) o.unrecorded++; else if(nd.c===0) o.cr++; else o.nc++;
+              if(creditShown(nd)) o.shown++; }); });
+            return o; })(),
           mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL, memberPoints:memberPts.length,
           memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
           hover:hoverNode?hoverNode.i:null};
@@ -1166,6 +1208,35 @@ function wire(){
     var box=document.getElementById("gq");
     window.__ccrSubjectList((box && box.value) || searchTerm);
   };
+  /* ── item 9: the CR / NC filter ───────────────────────────────────────────
+   * Sam, 2026-09-04: "Also need a CR NC toggle". Three positions, not two — a
+   * two-way toggle would have to put the 73 identities with NO recorded credit
+   * status somewhere, and either bucket is a lie. They appear under All, and the
+   * count says how many are unrecorded so their absence is never silent. */
+  function setCredit(v){
+    creditFilter=v;
+    [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
+      var b=document.getElementById(pair[0]);
+      if(b) b.setAttribute("aria-pressed", creditFilter===pair[1] ? "true" : "false");
+    });
+    var n=0, hidden=0, unrec=0;
+    if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
+      if(nd.c==null) unrec++;
+      if(creditShown(nd)) n++; else hidden++;
+    }); });
+    setHint(v===CR_ALL
+      ? "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
+        "they appear here and nowhere else."
+      : "Showing <strong>"+num(n)+"</strong> "+(v===CR_CREDIT?"credit":"noncredit")+
+        " course"+(n===1?"":"s")+"; "+num(hidden)+" hidden. Noncredit is drawn with a broken ring.");
+    draw();
+  }
+  [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
+    var b=document.getElementById(pair[0]);
+    if(b) b.onclick=function(){ setCredit(pair[1]); };
+  });
+  window.__ccrSetCredit=setCredit;
+
   var tg=document.getElementById("u-insp-toggle");
   if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
   /* ⚠️ PAINT THE STATE, NEVER HARDCODE IT IN THE MARKUP. `inspOpen` is module

@@ -223,6 +223,43 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(A) …and the taper is monotonic — zooming in never shrinks a circle",
       [1, 4, 9, 20, 40, S.kMax].every((k, i, a) => i === 0 || f(k) > f(a[i - 1])));
   }
+  // ── items 3 + 9 (Sam, 2026-09-04): noncredit is visible, and filterable ────
+  // "Need to visually differentiate NC courses — I'm thinking rather than
+  // another color, perhaps a broken line or dotted circle. Also need a CR NC
+  // toggle." Both were blocked until the payload carried the credit status at
+  // all: the builder READ `credit` to score orbits but never emitted it.
+  {
+    const S = st();
+    check("(A) ⭐ the payload now carries credit status per point",
+      S.creditCounts.cr > 0 || S.creditCounts.nc > 0 || S.creditCounts.unrecorded > 0,
+      JSON.stringify(S.creditCounts));
+    check("(A) the filter starts on All, so nothing is hidden until asked",
+      S.creditFilter === "all" && S.creditCounts.shown ===
+        S.creditCounts.cr + S.creditCounts.nc + S.creditCounts.unrecorded);
+    // ⭐ THREE STATES AND A GAP. A two-way toggle would have to file the points
+    // with NO recorded credit status under credit or under noncredit, and either
+    // is a lie — the false-zero shape this repo keeps relearning. They show
+    // under All and nowhere else, and the hint says how many.
+    check("(A) ⭐ the toggle has THREE positions, not two",
+      !!q("#u-cr-all") && !!q("#u-cr-cr") && !!q("#u-cr-nc"));
+    w.__ccrSetCredit("nc");
+    check("(A) Noncredit hides the credit courses", st().creditFilter === "nc" &&
+      st().creditCounts.shown === st().creditCounts.nc, `${st().creditCounts.shown}`);
+    w.__ccrSetCredit("cr");
+    check("(A) ⭐ Credit hides the UNRECORDED too — they are not credit",
+      st().creditCounts.shown === st().creditCounts.cr);
+    w.__ccrSetCredit("all");
+    check("(A) …and All brings the unrecorded back, saying how many",
+      st().creditCounts.shown === st().creditCounts.cr + st().creditCounts.nc + st().creditCounts.unrecorded
+      && /no recorded credit status/i.test(text("#u-hint")));
+    // The mark is a STROKE, not a colour: colour already carries the identity
+    // system, and a second colour scale would make the reader hold two at once.
+    check("(A) ⭐ noncredit is a broken ring whose dash scales with the circle",
+      Array.isArray(S.ncDashAt(8)) && S.ncDashAt(40)[0] > S.ncDashAt(4)[0],
+      `r=4 ${S.ncDashAt(4)[0]} vs r=40 ${S.ncDashAt(40)[0]}`);
+    check("(A) …and the legend explains the broken ring in words",
+      /noncredit/i.test(text(".u-legend")) && /broken ring/i.test(text(".u-legend")));
+  }
   check("(A) the legend strip can be folded away, and says so in a word",
     !!q("#u-foot-toggle") && /legend/i.test(text("#u-foot-toggle")));
   {
