@@ -10,6 +10,7 @@ related:
   - "[[docs/coursecontrolnumber_remint]]"
   - "[[docs/kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence]]"
 artifacts:
+  - kb/_prefix_fold_apply.py
   - kb/_authority_recode_apply.py
   - kb/_zband_retire_apply.py
   - kb/_apply_curation.py
@@ -89,10 +90,26 @@ minted after the recode freed them — and the landed overlay carried the same
 keys. A verify is written against the shape of the maps it follows, not
 against the assumption that keys move once.
 
+## 5. The verdicts are the dry run's flags, and a fold's proof is its held count
+
+A decision sheet's per-item verdicts map onto the planner's own flags —
+`--scope` for "hold this cohort", `--ruled-held "<who, when: what>"` for "fold
+them anyway, on my ruling" (the ruling appended to each row's evidence as the
+second signal) — so a per-verdict receipt is one re-run, and the apply
+(`kb/_prefix_fold_apply.py`) recomputes the plan under the same flags and
+refuses a receipt cut under others. Two consequences follow for a FOLD as
+opposed to a recode. Its "not applied twice" gate is per receipt, not per
+tree: the rows one fold holds are the next fold's worklist. And its
+post-state proof is not 0: fold-verify reads exactly the rows the receipt held
+(7 on 2026-09-04), so the apply prints that number and the chain's line is
+checked against it. One more gate learned on the real tree: a "no old id left"
+sweep must exclude chained keys — 30 keys were vacated and refilled in that
+one plan, live afterward by design — and leave them to the permutation gates.
+
 ## Where it lives
 
-`kb/_authority_recode_apply.py` and `kb/_zband_retire_apply.py` (P1 fidelity,
-P3 freshness, the conservation gates); `kb/authority_recode_out/2026-09-03/`
+`kb/_authority_recode_apply.py`, `kb/_zband_retire_apply.py` and
+`kb/_prefix_fold_apply.py` (P1 fidelity, P3 freshness, the conservation gates); `kb/authority_recode_out/2026-09-03/`
 and `kb/zband_retire_out/2026-09-03/` (the receipts, `validation.md`,
 `materialized.json`, `picks_before.json`); `docs/ccr_atlas_lessons.md`
 §2026-09-03 for the story.

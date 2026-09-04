@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 372,
+   "count": 373,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3434,6 +3434,28 @@
      "updated": "2026-08-10"
     },
     {
+     "created": "2026-09-04",
+     "governs": [
+      "kb/_rekey_crnc_mirrors.py",
+      "kb/_rekey_promotions.py",
+      "kb/_post_apply_chain.py",
+      "kb/crnc_rekey_out/2026-09-04/rekey_receipt.json"
+     ],
+     "path": "docs/kb-notes/methodology-every-id-keyed-artifact-class-belongs-in-the-post-apply-chain.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "remint",
+      "rule-7",
+      "identity",
+      "kb",
+      "pitfall"
+     ],
+     "title": "Every id-keyed artifact class belongs in the post-apply chain",
+     "type": "methodology",
+     "updated": "2026-09-04"
+    },
+    {
      "created": "2026-07-02",
      "governs": [
       "chatbox/supabase_search_exhibits_by_topic.sql",
@@ -3821,6 +3843,7 @@
     {
      "created": "2026-09-03",
      "governs": [
+      "kb/_prefix_fold_apply.py",
       "kb/_authority_recode_apply.py",
       "kb/_zband_retire_apply.py",
       "kb/_apply_curation.py",
@@ -11613,8 +11636,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 199,
+   "count": 200,
    "docs": [
+    {
+     "created": "2026-09-04",
+     "governs": [],
+     "n": 226,
+     "path": "docs/session_226_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the fold apply is built and rehearsed; the land waits on Sam's reply by number",
+     "type": null,
+     "updated": "2026-09-04"
+    },
     {
      "created": "2026-09-03",
      "governs": [],
@@ -15082,5 +15118,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 767
+ "total": 769
 }

@@ -757,22 +757,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyOrbit S223 — the whole universe, full screen, every stand-alone in orbit (2026-09-03)
-
-**One PR (#1441).** Sam's five SkyView goals shipped: the map fills the first
-screen (a **Full screen** word-button; the panes one scroll below); the header
-box jumps to a subject, an identity, a stand-alone OR a college course by code or
-control number; hover is a quick look, click an inspector over the map with the
-catalog description on a course number, and labels grow with zoom (number →
-title → units · system); **every stand-alone course orbits the identity it is
-most aligned to** — 31,350 of 33,423, 1,521 of them across a discipline line on
-his Business / Vocational example, 2,073 on the rim — as a suggestion, never a
-decision (**Move here** accepts one as the `CN:` row a drag writes). Descriptions
-live in the public storage bucket `ccr-desc` (filled by the workflow's first
-dispatch, 2026-09-03). ⭐ Corroborators must not outvote the primary signal; a side table keyed
-by position breaks when the list drops one. Story: `ccr_atlas_lessons`; handoff
-`session_224_handoff`.
-
 ### SkyTune S224 — the chip, the two dry runs, then Sam's yes to all and the land (2026-09-03)
 
 **Eight PRs, all merged (#1447 the chip; #1448, #1449 the dry runs; #1452 the rulings; #1453 the applies; #1454 the land).** Item 19's C-ID
@@ -789,6 +773,22 @@ readings yes to all and the series was applied the same day: 10,296 ids recoded,
 re-keyed from the receipts. ⭐ 139 materialized records sit on a prefix their
 discipline no longer owns; the fold is planned (#1458, 278 rows) and on Sam's sheet. Sam then drove SkyView and wrote eight notes; all eight shipped (#1460), including an identity that opens to show its college courses — the faculty view. Story:
 `ccr_atlas_lessons`; handoff `session_225_handoff`.
+
+### SkyFold S225 — the fold apply, rehearsed; the sixth id-keyed class (2026-09-04)
+
+**One PR (#1462).** Sam had not yet ruled the prefix-fold sheet, so the session
+built what a reply by number lands: `kb/_prefix_fold_apply.py`, apply == spec
+under the receipt's own flags (`--scope` for item 2's hold, `--ruled-held` for
+item 3's override; any other receipt refused), one run per receipt, a fresh read
+at write-time, thirteen gates, `_prefix_fold_from` beside the earlier stamps.
+Rehearsed on a scratch copy: 278 aliases, 13/13 gates, promotions 24,
+`subject_collision_signal` 153 → 113, fold-verify `re_key` 7 = the held rows (a
+fold's residual by design), no chip or code changes. ⭐ Scanning every file that
+names an old id found `kb/crnc_mirrors.json` — the sixth id-keyed artifact
+class, outside the chain — with 398 keys the recode had retired; re-keyed (never
+regenerated: it carries curated mirrors) and added to the chain. Nothing
+applied; the land waits on Sam. Story: `ccr_atlas_lessons`; handoff
+`session_226_handoff`.
 
 ## Troubleshooting
 
