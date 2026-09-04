@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-03T21:54:53.618706+00:00",
+  "scraped_at": "2026-09-04T02:22:31.931062+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27611,
+    "jst": 27610,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 347,
+      "jst": 346,
       "star": true
     },
     "San Diego Mesa College": {

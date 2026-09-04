@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-03T21:54:53.068Z",
+  "scraped_at": "2026-09-04T02:22:31.399Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -123,17 +123,17 @@
         },
         {
           "college": "Chaffey College",
-          "students": 3678,
-          "units": 18604,
-          "avgUnits": 5.058183795541055,
+          "students": 3677,
+          "units": 18601,
+          "avgUnits": 5.058743540930106,
           "transcriptionRate": 1.6,
-          "avgTranscribed": 0.08292550299075585,
+          "avgTranscribed": 0.08294805548001088,
           "criteriaMetCount": 3,
-          "militaryStudents": 347,
+          "militaryStudents": 346,
           "nonMilitaryStudents": 3332,
           "apprenticeStudents": 12,
-          "savings": 19006270,
-          "yearImpact": 90175506,
+          "savings": 19001080,
+          "yearImpact": 90157305,
           "transcribedUnits": 305
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,996",
+      "value": "50,995",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,611"
+          "value": "27,610"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50996,
-    "Units": 217185.15000000002,
+    "Students": 50995,
+    "Units": 217182.15000000002,
     "TranscribedUnits": 72750.95000000001,
-    "Savings": 324838630.25,
-    "YearImpact": 1288652277.4,
-    "MilitaryStudents": 27611,
+    "Savings": 324833440.25,
+    "YearImpact": 1288634076.4,
+    "MilitaryStudents": 27610,
     "NonMilitaryStudents": 23471,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.258866381676995,
-    "TranscribedAverage": 1.426601105969096
+    "AverageUnits": 4.25889106775174,
+    "TranscribedAverage": 1.426629081282479
   }
 }
