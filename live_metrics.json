@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-04T02:22:31.399Z",
+  "scraped_at": "2026-09-04T04:36:16.517Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -139,17 +139,17 @@
         {
           "college": "San Diego Miramar College",
           "students": 3558,
-          "units": 12904.700000000003,
-          "avgUnits": 3.626953344575605,
+          "units": 12904.7,
+          "avgUnits": 3.6269533445756044,
           "transcriptionRate": 48.7,
-          "avgTranscribed": 1.7680438448566618,
+          "avgTranscribed": 1.7680438448566613,
           "criteriaMetCount": 3,
           "militaryStudents": 1640,
           "nonMilitaryStudents": 1922,
           "apprenticeStudents": 14,
           "savings": 17962595.5,
-          "yearImpact": 72302889.79999998,
-          "transcribedUnits": 6290.700000000003
+          "yearImpact": 72302889.8,
+          "transcribedUnits": 6290.700000000001
         },
         {
           "college": "Merced College",
@@ -429,8 +429,8 @@
         {
           "college": "Santa Ana College",
           "students": 510,
-          "units": 2037.2,
-          "avgUnits": 3.9945098039215687,
+          "units": 2037.1999999999998,
+          "avgUnits": 3.9945098039215683,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
@@ -438,7 +438,7 @@
           "nonMilitaryStudents": 134,
           "apprenticeStudents": 10,
           "savings": 3175893.5,
-          "yearImpact": 11904211.600000001,
+          "yearImpact": 11904211.6,
           "transcribedUnits": 0
         },
         {
@@ -1879,13 +1879,13 @@
   "raw": {
     "Students": 50995,
     "Units": 217182.15000000002,
-    "TranscribedUnits": 72750.95000000001,
+    "TranscribedUnits": 72750.95,
     "Savings": 324833440.25,
     "YearImpact": 1288634076.4,
     "MilitaryStudents": 27610,
     "NonMilitaryStudents": 23471,
     "AprenticeStudents": 851,
     "AverageUnits": 4.25889106775174,
-    "TranscribedAverage": 1.426629081282479
+    "TranscribedAverage": 1.4266290812824787
   }
 }
