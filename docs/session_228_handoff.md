@@ -93,22 +93,29 @@ Once ruled, roles 2–4 apply without further input.
    **CR / NC toggle**, three positions because 73 identities have no recorded
    credit status and either bucket would be a lie.
 
-   **STILL OPEN — his items ①, ②, ⑤, and the search grouping:**
-   - ① the CCR **side-menu** link should open the **full-window** SkyView
-     directly, not the embedded view. The standalone page is
-     `prototype/skyview.html`; today `unified_courses.js:203` offers it as
-     "Open it in its own tab ↗" from inside the tab.
-   - ② add a **CCR table view** link to the three in `#u-top`'s nav
-     (`All disciplines` · `Subjects as a list` · `ESL packaging`) and **clarify
-     those labels** — he finds them unclear. The views available are
-     `__ccrForest`, `__ccrSubjectList`, `__ccrEsl`, `__ccrDiscipline`.
-   - ⑤ **labels should show which circle they belong to** — "Now I need to click
-     on the course circle to see which is which." Leader lines exist (#1460);
-     this is about making the tie visible at a glance.
-   - **keyword search: keep CR courses together, separated from NC** (from his
-     first list). The payload now carries `c`, so this is no longer blocked.
-   - Also still open from the first list: a **mute non-essential labels**
-     toggle, and a **resizable / pop-out** detail panel (⑦ only hid it).
+   **ALSO SHIPPED (second PR):** ① the side menu opens the **full window** — a
+   keyed `data-nav-link="skyview"` launcher, grouped with the Common Course
+   Reference (⚠️ unlisted it falls to **Share**, beside the public Fact Sheet
+   and Sierra, which is both wrong in kind and a group away from the reference
+   it is a view of); ⑤ leader lines now carry a **dot at the circle** and an
+   **elbow into the label's first line**; and the keyword search **separates
+   credit from noncredit** as a stable partition after the relevance sort.
+
+   ⚠️ **STILL OPEN — item ②, and it is a QUESTION, not work.** *"Add CCR table
+   view link to the 3 links on the full window SkyView and clarify the labels
+   for the existing links."* Both halves need Sam:
+   - **Which table?** The standalone prototype has no all-courses table. The
+     candidates are `__ccrDiscipline` (one discipline's courses) or a link back
+     to COBI's Common Course Reference tab. Different destinations, so guessing
+     wastes his time.
+   - **The labels are a naming call he already has queued.** The three are
+     `All disciplines` · `Subjects as a list` · `ESL packaging`, and the lane's
+     own NEXT ⑧ already asks for *"SkyView's 'subject' kind word → 'discipline'"*
+     — the same subject-vs-discipline distinction. Settle ⑧ and ② together
+     rather than renaming twice.
+
+   **Also still open from the first list:** a **mute non-essential labels**
+   toggle, and a **resizable / pop-out** detail panel (⑦ only hid it).
 3. **Config to tables** — Sam approved *"your best recommendations on moving
    config values to table-based in Admin or where they belong"*: the `ORGS` list
    in `cobi_orgs.js` and the alpha-banner copy. `public.cobi_nav` is the
