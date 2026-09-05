@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 799,
-    "bytes": 8536410,
+    "bytes": 8544320,
     "over_budget": 4,
     "handoff_max": 231,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 2006610,
+        "bytes": 2011913,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 146675,
+        "bytes": 149282,
         "over": 1
       },
       "handoff": {
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 2633,
-      "bytes": 1335762204,
-      "heavy_bytes": 626391666,
+      "bytes": 1335778758,
+      "heavy_bytes": 626398087,
       "heavy_share": 0.469,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -326,13 +326,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 16206,
+        "bytes": 18813,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 4206,
-        "ratio": 1.35
+        "over_by": 6813,
+        "ratio": 1.57
       },
-      "message": "16,206 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "18,813 B is 1.6× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -445,10 +445,10 @@
       "fixable": false,
       "path": "prototype",
       "detail": {
-        "bytes": 24905687,
+        "bytes": 24912108,
         "kind": "dir"
       },
-      "message": "directory totals 24,905,687 B inside the vault"
+      "message": "directory totals 24,912,108 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
