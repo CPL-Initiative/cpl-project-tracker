@@ -786,19 +786,20 @@ SUBJ4 grain, 344 codes read off the identity ids)** · ESL packaging, one Views 
 ⭐ **The harness found a latent bug one click in** (a forest cell destroyed the borrowed search
 box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
 
-### SkyKeep S230 — the sheet takes replies; SkyView's second list and the full window (2026-09-05)
+### SkyKeep S230 — the sheet takes replies; SkyView's second and third lists (2026-09-05)
 
-**Two PRs (#1481 + the same-day reply fix) and the republished sheet.** ⭐ **Decision sheets take
+**Three PRs (#1481, #1482, the round-three PR) and the republished sheet.** ⭐ **Decision sheets take
 replies on the page** — chips, a *Follow up* toggle and a note per item and per listed memory, saved to
 the artifact's own store and read by the next session with `read_db` (`kb/_decision_sheet_replies.py`;
-⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). SkyView's second
-list, all of it: one chip vocabulary, the header in the style of Claude's own (ghosted icons, a title
-field, one More menu), the Show menu, the legend folding from its corner, *How SkyView works*, the OS
-window controls, a ☰ for COBI's rail, the search as a selection of chips, a dark canvas on `--sky-*`
-tokens. ⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`); a class toggle is not a
-re-render. ⚠️ **The store's echo is FROZEN** — a page that adopts it as state loses every later click,
-silently — and a Yes under a claim-shaped title reads both ways: the chips under a memory say Verify
-or Retire. Stories: `ccr_atlas_lessons`, `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
+⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). ⚠️ **The store's
+echo is FROZEN** — a page that adopts it as state loses every later click, silently — and a Yes under a
+claim-shaped title reads both ways: the chips under a memory say Verify or Retire. SkyView took Sam's
+second list (the header in the style of Claude's own, the Show menu, *How SkyView works*, a dark
+canvas) and, the same afternoon, his third with Obsidian's graph as the reference: **dots in the
+legend's colors inside the packed footprint, the islands spread ×1.22 at load, the click highlight,
+checkbox picks, a sidebar grip, no Search button.**
+⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`). Stories: `ccr_atlas_lessons`,
+`cobi_memory_tab_lessons`; handoff `session_231_handoff`.
 
 ## Troubleshooting
 

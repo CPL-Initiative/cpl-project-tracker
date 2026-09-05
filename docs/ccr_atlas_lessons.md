@@ -1875,3 +1875,70 @@ returned the menu, and the comprehensive view rendered the entire forest inside
 it. The check that caught it was "the details panel starts hidden", failing
 with *no element* — the sidebar row had been overwritten. A new element takes a
 new id, and a grep for the id before minting it is cheaper than the debugging.
+
+## 2026-09-05 — SkyKeep (Session 230), the same afternoon: the third list, and Obsidian as the reference
+
+Sam drove the second cut within the hour and sent a third list, then two
+screenshots of Obsidian's graph view: *"See how obsidian uses dots for item,
+which we could do since we don't put info in the course circles, and see how
+it spreads more"* · *"color-coded dots to match our legend"* · *"Note how when
+you click on an entity, it shows the connections in contrast to unclicked."*
+
+### What "Show: 1 of 12" was
+
+His first screenshot read "Show: 1 of 12" in the row: eleven switches off,
+which is exactly the state in which an identity's hub and its spokes draw and
+no course does. A drive of the same pick landed with every switch on, and the
+menu's clicks, keyboard, "Show everything" and a row re-render all behaved;
+how his got there is not known. What changed: a pick now switches on what it
+needs to be seen (the point's credit status, its system, its kind; for an
+identity the college courses and the orbit) and the hint says which, and the
+row's tooltip names what is hidden. A pick that lands on a hidden point was a
+ring around nothing.
+
+### The rest of the list, in one pass
+
+- The sidebar hides from its own bar (*Hide*) and resizes from a grip on its
+  edge — dragged, or nudged with the arrow keys, Home resets — remembered per
+  browser as a custom property the CSS reads for the flex basis.
+- Every suggestion row carries a checkbox, the list is `aria-multiselectable`,
+  a pick from the list toggles, and the list stays open with the term still in
+  the box, so a second pick is one more click. ⚠️ The toggle belongs to the
+  LIST only: `__ccrGoSuggestion` is what the workspace and the sidebar call to
+  go somewhere, and making it toggle broke five tests that open a discipline
+  twice. Two entry points now: `__ccrToggleSuggestion` for the rows.
+- *Clear* looked like a large underlined link because `.linkish`, defined
+  later in the stylesheet at the same specificity, overrode the chip rule.
+  *Clear* and *Fit all* are `.u-tokens .u-tok-act` chips at the tokens' size.
+- The title is a word, not a box. The Search button is gone; the one field
+  submits on Enter, and the harness presses Enter where it clicked.
+- The newest pick gets the focus (the single-pick fly and details) and every
+  pick stays ringed; *Fit all* is the word for the union. Fitting all three of
+  his picks had landed at 26%, three unmarked circles on a whole map.
+- Rings are thin at every zoom (`ringWidth`).
+
+### Dots, spread, and the click highlight
+
+The builder packs every point with a footprint (`nodeRad`); the mark drawn is
+now a DOT inside it (`dotRad`: 0.66 of the footprint for an identity, 0.62
+for a stand-alone), so nothing moves and the air between points is the
+difference. Identities are solid dots in their system's color; stand-alones
+are smaller, lighter dots (alpha 0.6); noncredit keeps its broken ring, drawn
+just outside the dot. The islands spread apart once at load (`spreadUniverse`,
+×1.22 about the map's center; radii unchanged, nodes translated with their
+island, bounds rescaled) — in the client rather than the builder because the
+layout payload is a committed 7 MB file no workflow regenerates, and a factor
+in the client is a knob. ⚠️ The jsdom tests flew to typed fixture coordinates
+(`-120, 0`); they now READ positions from the page's copy (`AT(id)`,
+`AT_I(discipline)`), because a coordinate in a fixture is where a point was
+packed, not where it is drawn.
+
+The click highlight is Obsidian's: a selected identity lights its orbit ties
+solid in the selection color and every other point fades to 0.3; a selected
+stand-alone lights its identity; a click on empty ground drops it and keeps
+the panel. Our edges are the orbit ties and the college courses under an
+identity — Sam's own reading of Obsidian's (*"it uses the generated tags from
+our .md artifacts"*) maps onto them.
+
+Verified: jsdom 210 checks, the Chromium harness, `npm run a11y -- skyview`
+(six routes, three widths), and a drive of the pick, the grip and Hide.

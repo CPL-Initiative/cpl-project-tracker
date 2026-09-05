@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 383,
+   "count": 384,
    "docs": [
     {
      "created": "2026-08-14",
@@ -5836,6 +5836,25 @@
      "title": "The instrument may not live inside the system under test",
      "type": "methodology",
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_universe.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-mark-is-not-the-footprint.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "skyview",
+      "layout",
+      "canvas",
+      "testing"
+     ],
+     "title": "The mark is not the footprint \u2014 draw inside what you packed, and spread at load",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-20",
@@ -15387,5 +15406,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 784
+ "total": 785
 }

@@ -68,40 +68,46 @@ found a latent bug one click in**: a forest cell under the comprehensive map rep
 sending the borrowed search box home; `setCrumbs`, the one call every view makes, is now the choke point.
 Verified in jsdom (131 → 157, 26 → 37), the Chromium harness and `npm run a11y`.
 
-✅ **SAM'S SECOND LIST SHIPPED (SkyKeep S230, 2026-09-05, #1481), THEN THE HEADER'S SECOND CUT.** Sam,
-from screenshots of Obsidian's canvas chrome and Claude's own header (*"further simplify and complete
-SkyView header components by incorporating features like your own header"*): the row is **menu (framed)
-· More · SkyView (a title field) · search · Pan|Move · − % + ↺ · Show · step down · expand · close** —
-the actions are ghosted 30px icons, each named by words for a screen reader and a tooltip; the text
-controls stay words in 6px boxes; the "Search" label is the box's placeholder; the Full screen and Hide
-legend chips are gone. **More** holds *Go to* (every other view, flat: `viewsMenuInto` renders flat
-inside a `data-flat` host and a details menu in every crumbs row), *Show or hide* (Sidebar · Legend ·
-Dark canvas, each a row with an on/off word) and the doors out. ⚠️ The menu's id is `u-more-menu`:
-`#u-more` is the forest's host under the map, and a second element with that id put the whole forest
-inside the menu. ⭐ **The window is three states and two
-steps** — the page (or COBI) around the map · the map alone · the browser's own full screen — with the
-OS trio at the row's right end (step down · step up · close) and a **menu control (☰) at the far left,
-framed only, that opens COBI's side bar** (Sam: *"should be default collapsed on open"*). ⭐ **The CCR
-click opens the full window**: `body.cpl-skyview-solo` hides COBI's header, rail, hamburger and To-Do
-button and gives the frame the viewport; the rail is the ≤900px slide-over at every width, opened by
-the frame's ☰ through `postMessage`; *dock* brings the chrome back without leaving the map; leaving the
-tab takes the class off. **Show** is a menu of twelve switches (CR · NC · NCE · not recorded; M-ID ·
-C-ID · CCN · unified; identities · orphans in orbit · orphans on the rim; college courses): a point is
-drawn when every switch that describes it is on, and "not recorded" stays a switch of its own. **The
-legend folds from its own corner** (the word, unbold, with a fold mark) and from the More menu. *Go to*
-carries **How SkyView works** (`#how`), an explainer for faculty reviewers with three drawn figures, in
-the voice Sam asked for (plain, active, verbs over adjectives, no asides).
-⭐ **The search is a selection**: a pick from the list ADDS a chip beside the box (DISC · CRSE IDENTITY
-· STAND-ALONE CRSE · COLLEGE CRSE; credit as CR / NC / NCE), the map rings every course and outlines
-every discipline chosen and fits them all; a typed search REPLACES the selection (a search still means a
-search); Backspace in an empty box drops the last chip; the dropdown is wider, wraps whole titles and
-uses one font size. ⭐ **A dark canvas** (the *Dark* chip, remembered per browser): the map's palette is
-`--sky-*` tokens read at draw time (`readPal`), `body.u-dark` redefines them, every text pair measured
-≥4.5:1 — the one workspace that earns a dark ground; First Light stays light everywhere else. Verified
-in jsdom (157 → 190), COBI's suite (37 → 51), the Chromium harness and `npm run a11y` (six routes, three
-widths). Story: `ccr_atlas_lessons`.
+✅ **SAM'S SECOND LIST SHIPPED (SkyKeep S230, 2026-09-05, #1481), THEN THE HEADER'S SECOND CUT.** From
+Obsidian's canvas chrome and Claude's own header (*"further simplify and complete SkyView header
+components by incorporating features like your own header"*): the row is **menu (framed) · More ·
+SkyView · search · Pan|Move · − % + ↺ · Show · step down · expand · close**; the actions are ghosted
+30px icons named by words for a screen reader and a tooltip, the text controls words in 6px boxes.
+**More** holds *Go to* (every other view, flat), *Show or hide* (Sidebar · Legend · Dark canvas, each
+with an on/off word) and the doors out. ⚠️ Its id is `u-more-menu`: `#u-more` is the forest's host
+under the map. ⭐ **The window is three states and two steps** (the page or COBI around the map · the
+map alone · the browser's full screen) with the OS trio at the right and a **☰ at the far left, framed
+only, that opens COBI's side bar** (*"default collapsed on open"*). ⭐ **The CCR click opens the full
+window**: `body.cpl-skyview-solo` hides COBI's chrome and gives the frame the viewport; the rail is a
+slide-over at every width, opened by the frame's ☰ through `postMessage`; *dock* brings the chrome
+back; leaving the tab takes the class off. **Show** is twelve switches (credit status · identity
+system · kind of point · college courses); a point draws when every switch describing it is on, and
+"not recorded" is a switch of its own. **The legend folds from its own corner.** *Go to* carries **How
+SkyView works** (`#how`), an explainer for faculty reviewers in the voice Sam asked for. ⭐ **The
+search is a selection**: a pick from the list adds a chip (DISC · CRSE IDENTITY · STAND-ALONE CRSE ·
+COLLEGE CRSE; credit as CR / NC / NCE); a typed search replaces the selection; Backspace in an empty
+box drops the last chip; the dropdown wraps whole titles at one size. ⭐ **A dark canvas** (remembered
+per browser): the palette is `--sky-*` tokens read at draw time, `body.u-dark` redefines them, every
+text pair ≥4.5:1 — the one workspace that earns a dark ground. Story: `ccr_atlas_lessons`.
 
-**NEXT:** ⓪ **Sam drives the second list and the header's second cut** — the icon row, the More menu,
+✅ **THE THIRD LIST, THE SAME AFTERNOON, WITH OBSIDIAN'S GRAPH AS THE REFERENCE (SkyKeep S230, 2026-09-05).**
+Sam: *"See how obsidian uses dots for item, which we could do since we don't put info in the course
+circles, and see how it spreads more"* · *"color-coded dots to match our legend"* · *"when you click on
+an entity, it shows the connections in contrast to unclicked."* Now: courses are **dots** in the
+legend's system colors drawn inside the packed footprint (`dotRad` 0.66 / 0.62; a stand-alone is
+smaller and lighter; noncredit's broken ring sits just outside the dot); the islands **spread ×1.22 at
+load** (`spreadUniverse`, client-side — the layout payload is a committed file no workflow rebuilds);
+the **click highlight** lights a selected identity's orbit ties solid and fades the rest to 0.3, a click
+on empty ground drops it; rings are thin; the sidebar has **Hide** in its bar and a **resize grip** on
+its edge (arrow keys nudge, Home resets, width remembered); suggestion rows carry **checkboxes** and a
+pick from the list toggles with the list left open (`__ccrToggleSuggestion`; `__ccrGoSuggestion` still
+means go there); **Clear** and **Fit all** are chips; the title is unboxed; the Search button is gone
+(Enter); **the newest pick gets the focus** and every pick stays ringed; a pick **switches on the Show
+switches it needs** and says so (his screenshot read "Show: 1 of 12"; the cause was not found, the
+consequence is gone). Knobs: `SPREAD_ISLANDS`, `DOT_IDENT`/`DOT_ORPHAN`, `DIM_ALPHA`.
+
+**NEXT:** ⓪ **Sam drives the third list** — the dot sizes, the spread factor, the highlight's fade —
+then the second list and the header's second cut — the icon row, the More menu,
 the window controls and the ☰ from the CCR menu, the Show menu, the chips, the dark canvas, the
 explainer's voice. **Open from his Obsidian screenshot
 (2026-09-05):** a right-edge vertical rail of glyphs (zoom in · reset · fit · zoom out · undo · redo ·

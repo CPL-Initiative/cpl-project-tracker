@@ -136,6 +136,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // The page parsed its OWN copy of the fixture; identity comparisons inside the
   // client (selNode === nd) only hold for objects from that copy.
   const PU = w.CPL_CCR_UNIVERSE;
+  // Positions are READ from the page's copy, never typed: the map spreads the
+  // islands apart once at load (2026-09-05), so a fixture coordinate is only
+  // where a point was packed, not where it is drawn.
+  const AT = (id) => { for (const I of PU.islands) for (const nd of I.p) if (nd.i === id) return [nd.x + (I.dx || 0), nd.y + (I.dy || 0)]; return [0, 0]; };
+  const AT_I = (dn) => { const I = PU.islands.find((x) => x.d === dn); return [I.x + (I.dx || 0), I.y + (I.dy || 0)]; };
   // ── (A) the landing view: full bleed, inspector over the map, panes below ──
   check("(A) ⭐ the page boots straight onto the map", !!q("#u-cvs"));
   check("(A) ⭐ the map section takes the full width (main is full-bleed)",
@@ -417,8 +422,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     btn.click();
     check("(A) …and it comes back", !foot.classList.contains("u-foot-hidden") && st().legendOpen);
   }
-  check("(A) the legend explains the hollow point in words",
-    /stand-alone course, in orbit/.test(text(".u-legend")));
+  check("(A) the legend explains the stand-alone dot in words",
+    /stand-alone course — a smaller, lighter dot in orbit/.test(text(".u-legend")));
   check("(A) the intro states orbiting, cross and rim counts from the payload",
     /2 of the stand-alones orbit/.test(text("#u-below")) && /1 of them in another discipline/.test(text("#u-below"))
     && /1 share nothing with any identity/.test(text("#u-below")), text("#u-below").slice(0, 400));
@@ -540,11 +545,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // the initial course label … Course title and units (3u)"; the number is on hover.
   const z = st().labelZooms;
   check("(J) the zoom bands are ordered (nodes < brief < titled < full)", st().nodeZoom < z.id && z.id < z.title && z.title < z.full);
-  texts.length = 0; w.__ccrUniverseFly(-120, 0, 1.2);
+  texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 1.2);
   const l1 = { ...st().labelStats }, t1 = texts.slice();
-  texts.length = 0; w.__ccrUniverseFly(-120, 0, 2.0);
+  texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 2.0);
   const l2 = { ...st().labelStats }, t2 = texts.slice();
-  texts.length = 0; w.__ccrUniverseFly(-120, 0, 3.2);
+  texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.2);
   const l3 = { ...st().labelStats }, t3 = texts.slice();
   check("(J) ⭐ just past the first band a course label is its TITLE and units, never its number",
     l1.brief > 0 && l1.titled === 0 && l1.full === 0 && t1.some((t) => t === "Welding Fundamentals · 3u") && !t1.some((t) => /^WELD M1001/.test(t)),
@@ -560,7 +565,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     return o === 0; })());
 
   // ── (K) hover: the quick look ──────────────────────────────────────────────
-  w.__ccrUniverseFly(-120, 0, 3.0);          // WELD M1001 is now at the canvas centre (480, 300)
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);          // WELD M1001 is now at the canvas centre (480, 300)
   pointer("pointermove", 480, 300);
   const tip = q("#u-tip");
   check("(K) ⭐ hovering a point shows number, title, units and system", !tip.hidden && /WELD M1001/.test(tip.textContent) && /Welding Fundamentals/.test(tip.textContent) && /3 units/.test(tip.textContent) && /M-ID/.test(tip.textContent), tip.textContent);
@@ -574,7 +579,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // ── (L) dragging a hollow point drops its course on the destination ────────
   // Fresh view: Art's stand-alone has not been moved yet. Fly so ARTS M10ZZ is
   // at the centre; ARTS M1001 sits 40 world units above it = 120 px at k=3.
-  w.__ccrUniverseFly(150, 40, 3.0);
+  w.__ccrUniverseFly(AT("ARTS M10ZZ")[0], AT("ARTS M10ZZ")[1], 3.0);
   const before = st().moves.length;
   pointer("pointerdown", 480, 300);
   pointer("pointermove", 480, 250);
@@ -648,21 +653,22 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // on the searched subject".
   w.__ccrUniverseSearch("welding");
   const v0 = { ...st().view }, CW = 960, CH = 600;
-  const sx0 = (-120 + v0.x) * v0.k + CW / 2, sy0 = (0 + v0.y) * v0.k + CH / 2;
+  const WX = AT_I("Welding")[0], WY = AT_I("Welding")[1];
+  const sx0 = (WX + v0.x) * v0.k + CW / 2, sy0 = (WY + v0.y) * v0.k + CH / 2;
   q("#u-in").click(); q("#u-in").click();
   const v1 = { ...st().view };
-  const sx1 = (-120 + v1.x) * v1.k + CW / 2, sy1 = (0 + v1.y) * v1.k + CH / 2;
+  const sx1 = (WX + v1.x) * v1.k + CW / 2, sy1 = (WY + v1.y) * v1.k + CH / 2;
   check("(P) ⭐ zooming in twice keeps the searched subject exactly where it was on screen",
     v1.k > v0.k * 1.9 && Math.abs(sx1 - sx0) < 0.5 && Math.abs(sy1 - sy0) < 0.5, `${sx0},${sy0} → ${sx1},${sy1} (k ${v0.k} → ${v1.k})`);
   st().view.x = 5000;                       // pan it far off the canvas
   q("#u-out").click();
-  const v2 = st().view, sx2 = (-120 + v2.x) * v2.k + CW / 2;
+  const v2 = st().view, sx2 = (WX + v2.x) * v2.k + CW / 2;
   check("(P) ⭐ a subject that drifted off the canvas is brought back to the centre before the zoom", Math.abs(sx2 - CW / 2) < 0.5, String(sx2));
 
   // ── (Q) Pan and Move ───────────────────────────────────────────────────────
   // Sam, 2026-09-03: "need chips or icons to choose whether to move an item or
   // reposition the focus".
-  w.__ccrUniverseFly(-120, 0, 3.0);
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
   w.__ccrSetMode("pan");
   check("(Q) ⭐ the Pan chip presses and the hint says what a drag now does",
     st().mode === "pan" && q("#u-mode-pan").getAttribute("aria-pressed") === "true"
@@ -671,7 +677,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   pointer("pointerdown", 480, 300); pointer("pointermove", 540, 330); pointer("pointerup", 540, 330);
   check("(Q) ⭐ in Pan mode a drag that starts on an identity moves the VIEW and carries nothing",
     st().view.x !== vx0 && st().moves.length === mv0 && st().carrying === null, `${vx0} → ${st().view.x}`);
-  w.__ccrUniverseFly(-120, 0, 3.0);
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
   pointer("pointerdown", 480, 300); pointer("pointerup", 480, 300);
   check("(Q) …and a click in Pan mode still selects", st().sel === "WELD M1001", st().sel);
   w.__ccrSetMode("move");
@@ -689,7 +695,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const under = (ids) => { const home = { ...origin }; st().moves.forEach((m) => { home[cnKey(m.cn)] = m.to; });
     return Object.values(home).filter((id) => ids.includes(id)).length; };
   w.__ccrUniverseSearch("welding");          // selects the subject, no identity
-  w.__ccrUniverseFly(-120, 0, 3.0);
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
   check("(R) with nothing selected and nothing hovered an identity stays closed below the open-all band",
     st().memberPoints === 0 && st().memberZoom < st().memberZoomAll, String(st().memberPoints));
   pointer("pointerdown", 480, 300); pointer("pointerup", 480, 300);      // select WELD M1001 (Move mode)
@@ -701,7 +707,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   pointer("pointermove", 480, 300 - R0);                 // the first square, straight above
   check("(R) ⭐ hovering a square names the college course, its college and the identity it sits under",
     !tip.hidden && /WELD 100/.test(tip.textContent) && /Alpha College/.test(tip.textContent) && /under WELD M1001/.test(tip.textContent), tip.textContent);
-  texts.length = 0; w.__ccrUniverseFly(-120, 0, 3.0);
+  texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
   check("(R) ⭐ each square is labelled by its code and college", st().labelStats.members > 0 && texts.some((t) => t === "WELD 100 · Alpha College"), texts.join("|"));
   const mvb = st().moves.length;
   pointer("pointerdown", 480, 300 - R0); pointer("pointermove", 500, 340);
@@ -709,11 +715,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   pointer("pointerup", 480 + 30 * 3, 300 + 20 * 3);      // WELD C1000
   check("(R) ⭐ dropping it on another identity writes the same CN: move the panel would",
     st().moves.length === mvb + 1 && st().moves[st().moves.length - 1].to === "WELD C1000", JSON.stringify(st().moves.slice(-1)));
-  w.__ccrUniverseFly(-120, 0, 4.5);                      // past the open-all band
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 4.5);                      // past the open-all band
   check("(R) ⭐ zoomed far enough that identities stand apart, every one in view opens — and the moved course rings its new identity",
     st().memberPoints === under(["WELD M1001", "WELD C1000"]) && st().memberPoints >= 5, `${st().memberPoints} vs ${under(["WELD M1001", "WELD C1000"])}`);
   pointer("pointermove", 480, 300 + 200 * 4.5);          // off every point: nothing hovered
-  w.__ccrUniverseFly(-120, 0, 3.0);
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
   pointer("pointermove", 480 + 30 * 3, 300 + 20 * 3);   // hover WELD C1000
   check("(R) hovering an identity below that band opens it beside the selected one, and nothing else",
     st().hover === "WELD C1000" && Object.keys(st().memberOwners).sort().join() === ["WELD C1000", "WELD M1001"].join()
@@ -837,9 +843,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     `${JSON.stringify(st().tokens)} hits=${st().hits} · ${text("#u-hint").slice(0, 90)}`);
   check("(X) the chips name their kind in the short words", qa("#u-tokens .u-tok-k").map((e) => e.textContent).join("|") === "SEARCH|CRSE IDENTITY",
     qa("#u-tokens .u-tok-k").map((e) => e.textContent).join("|"));
-  check("(X) the box is emptied after a pick so the next term starts clean", q("#gq").value === "");
+  check("(X) the box keeps its term after a pick, so the list can stay open with the tick (2026-09-05, item 3)", q("#gq").value.length > 0 || st().tokens.length > 0);
   qa("#u-tokens .u-tok-x")[1].click();
-  check("(X) removing a chip narrows the selection back to the single behavior", st().tokens.length === 1 && st().hits === 0 && /^\s*Discipline/.test(text("#u-hint")));
+  check("(X) removing a chip narrows the selection back to the single behavior", st().tokens.length === 1 && st().hits === 0 && /^\s*Discipline/.test(text("#u-hint")),
+    `tokens=${JSON.stringify(st().tokens)} hits=${st().hits} · ${text("#u-hint").slice(0, 90)}`);
+  q("#gq").value = "";   // the box keeps its term after a pick now; Backspace drops a chip only from an EMPTY box
   q("#gq").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Backspace", bubbles: true }));
   check("(X) Backspace in an empty box drops the last chip", st().tokens.length === 0 && /cleared/i.test(text("#u-hint")), text("#u-hint"));
   w.__ccrGoSuggestion(pick); w.__ccrGoSuggestion(w.__ccrSuggest("weld", 8)[0]);
@@ -858,7 +866,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     d.body.classList.contains("u-dark") && st().dark && q("#u-dark").getAttribute("aria-pressed") === "true" && w.localStorage.getItem("skyview:theme") === "dark");
   check("(Y) ⭐ the canvas palette is CSS tokens the dark body redefines, read at draw time with the light values as the fallback",
     /--sky-ground:#FFFFFF/.test(tpl) && /body\.u-dark\{/.test(tpl) && /--sky-ground:#1E1E1C/.test(tpl) && /pal=readPal\(\);/.test(ujs) &&
-    /\.u-sw\.s0\{background:var\(--sky-sys0-fill\)/.test(tpl) && !/style="background:#F1EAFC/.test(ujs));
+    /\.u-sw\.s0\{background:var\(--sky-sys0-stroke\)/.test(tpl) && !/style="background:#F1EAFC/.test(ujs));
   check("(Y) pressed chips take their text color from a token, so the dark accent stays readable", /color:var\(--on-accent,#fff\)/.test(tpl));
   q("#u-dark").click();
   check("(Y) …and back to the light canvas", !d.body.classList.contains("u-dark") && w.localStorage.getItem("skyview:theme") === "light");
@@ -869,7 +877,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     !!q("#how-h1") && /How SkyView works/.test(text("#how-h1")) && qa(".how-fig svg").length === 3 && w.location.hash === "#how" && st().curView === "how",
     `${w.location.hash} figs=${qa(".how-fig svg").length}`);
   check("(Z) it explains the shapes and the move in words a reviewer can act on",
-    /filled circle/.test(text(".how")) && /hollow circle/.test(text(".how")) && /broken ring/.test(text(".how")) && /small square/.test(text(".how")) &&
+    /large dot/.test(text(".how")) && /smaller, lighter dot/.test(text(".how")) && /broken ring/.test(text(".how")) && /small square/.test(text(".how")) &&
     /What a reviewer checks/.test(text(".how")) && /Move/.test(text(".how")));
   check("(Z) every figure carries a description for a screen reader", qa(".how-fig svg").every((s) => /[A-Za-z]/.test(s.getAttribute("aria-label") || "") && s.getAttribute("role") === "img"));
   check("(Z) the borrowed search box went home for it, and the Go To menu rides the crumbs row", !!q(".mast #msearch") && !!q("#crumbs-views #u-views"));
@@ -877,6 +885,82 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(Z) Open SkyView returns to the map alone", !!q("#u-cvs") && d.body.classList.contains("u-solo"));
   w.history.replaceState(null, "", "#how"); w.__ccrRoute();
   check("(Z) #how routes to the explainer", !!q("#how-h1"));
+
+  // ── (R3) Sam's third list (2026-09-05, afternoon) ─────────────────────────
+  w.__ccrUniverse({ solo: true });
+  w.__ccrClearSelection();
+  const allOn = {}; ["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members"].forEach((k) => { allOn[k] = true; });
+  w.__ccrSetShow(allOn, true);
+  // 5 · the title is a word, not a box
+  check("(R3) the title has no border or box", /\.u-top \.u-title\{border:0;background:transparent/.test(tpl) && /^SkyView$/.test(text("#u-title").trim()));
+  // 7 · no Search button; Enter submits the one field
+  check("(R3) ⭐ the search form has no button — Enter is the search", !q("#msearch button[type=submit]") && !!q("#u-search-slot #gq"));
+  // 4 · Clear is a chip of the tokens' size, never the link style; 6 · the newest pick has the focus
+  const r1 = w.__ccrSuggest("weld", 8).find((s) => s.kind === "course");
+  const r2 = w.__ccrSuggest("drawing", 8).find((s) => s.kind === "course");
+  w.__ccrGoSuggestion(r1); w.__ccrGoSuggestion(r2);
+  check("(R3) Clear and Fit all are chips beside the tokens, not links",
+    !!q("#u-tok-clear") && q("#u-tok-clear").classList.contains("u-tok-act") && !q("#u-tok-clear").classList.contains("linkish") && !!q("#u-tok-fit") &&
+    /\.u-tokens \.u-tok-act\{[^}]*font-size:\.78rem/.test(tpl) && !/\.u-tok-clear\{/.test(tpl));
+  check("(R3) ⭐ the newest pick gets the focus: the map sits at the course zoom on it, and both stay ringed",
+    Math.abs(st().view.k - st().courseZoom) < 1e-9 && st().sel === r2.nd.i && st().hits === 2 && /Focused on/.test(text("#u-hint")) && /2 selections/.test(text("#u-hint")),
+    `k=${st().view.k} sel=${st().sel} hits=${st().hits} · ${text("#u-hint").slice(0, 80)}`);
+  q("#u-tok-fit").click();
+  check("(R3) Fit all fits both picks into view", st().view.k < st().courseZoom && /Fitted 2/.test(text("#u-hint")), `k=${st().view.k}`);
+  // 3 · a ticked row unticks on a second pick; the rows carry checkboxes and the pick state; the list stays open
+  w.__ccrToggleSuggestion(r2);
+  check("(R3) ⭐ picking a picked row unpicks it (the list's toggle; the go-there entry point only refocuses)", st().tokens.length === 1 && st().tokens[0] === (r1.nd.t || r1.nd.i), JSON.stringify(st().tokens));
+  q("#gq").value = "weld"; q("#gq").dispatchEvent(new w.Event("input", { bubbles: true }));
+  const rows = qa("#sug li");
+  check("(R3) ⭐ every suggestion row carries a checkbox, the list is multi-select, and the picked row is ticked",
+    rows.length > 1 && rows.every((li) => li.querySelector(".sg-cb")) && q("#sug").getAttribute("aria-multiselectable") === "true" &&
+    rows.some((li) => li.classList.contains("picked") && li.getAttribute("aria-selected") === "true"),
+    `rows=${rows.length} picked=${rows.filter((li) => li.classList.contains("picked")).length}`);
+  const other = rows.find((li) => !li.classList.contains("picked"));
+  other.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+  check("(R3) a pick from the list keeps the list open, with the new tick and the term still in the box",
+    !q("#sug").hidden && qa("#sug li.picked").length === 2 && q("#gq").value === "weld" && st().tokens.length === 2,
+    `hidden=${q("#sug").hidden} picked=${qa("#sug li.picked").length} box=${q("#gq").value} tokens=${st().tokens.length}`);
+  q("#gq").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  w.__ccrClearSelection();
+  // 1 · a pick switches on what it needs under Show, and the row's tooltip names what is hidden
+  w.__ccrSetShow({ members: false, orbit: false, ident: false }, true);
+  check("(R3) the Show row's tooltip names what is hidden", /Hidden: .*Identities.*Orphans in orbit.*College courses/.test(q("#u-show-sum").title), q("#u-show-sum").title);
+  const ident = PU.islands[0].p.find((nd) => !nd.a);
+  w.__ccrGoSuggestion({ kind: "course", isl: PU.islands[0], nd: ident, label: ident.t || ident.i });
+  check("(R3) ⭐ a pick that lands on a hidden point switches its Show switches on and says so",
+    st().show.ident && st().show.members && st().show.orbit && /Switched on/.test(text("#u-hint")) && /College courses/.test(text("#u-hint")) && st().showHealed.length === 3,
+    `${JSON.stringify(st().showHealed)} · ${text("#u-hint").slice(-160)}`);
+  check("(R3) the Show menu's words come from the one table the hint uses", /SHOW_WORDS/.test(ujs) && qa("#u-show-menu label span").map((e) => e.textContent).includes("College courses"));
+  w.__ccrClearSelection();
+  // 2 · the panel hides from its own bar and resizes from its edge
+  check("(R3) the details panel has Hide in its bar and a grip on its edge",
+    !!q("#u-inspector #u-insp-hide") && !!q("#u-insp-grip") && q("#u-insp-grip").getAttribute("role") === "separator" && q("#u-insp-grip").tabIndex === 0);
+  if (!st().inspectorOpen) q("#u-insp-toggle").click();
+  q("#u-insp-hide").click();
+  check("(R3) ⭐ Hide closes it, and the More menu's Sidebar row reads off", !st().inspectorOpen && q("#u-inspector").classList.contains("closed") && /off/.test(text("#u-insp-toggle .u-state")));
+  q("#u-insp-grip").dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true }));
+  q("#u-insp-grip").dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowLeft", bubbles: true }));
+  check("(R3) ⭐ the arrow keys widen the panel, the width is a property the CSS reads, and it is remembered",
+    st().inspectorWidth === 280 && q("#u-inspector").style.getPropertyValue("--u-insp-w") === "280px" && w.localStorage.getItem("skyview:sidebar-w") === "280" &&
+    /flex:0 0 var\(--u-insp-w,min\(400px,36%\)\)/.test(tpl), `${st().inspectorWidth} ${q("#u-inspector").style.getPropertyValue("--u-insp-w")}`);
+  q("#u-insp-grip").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Home", bubbles: true }));
+  check("(R3) Home resets the width", st().inspectorWidth === 0 && !q("#u-inspector").style.getPropertyValue("--u-insp-w") && !w.localStorage.getItem("skyview:sidebar-w"));
+  // 9 · dots, drawn inside their packed footprint and colored by system; the islands spread apart at load
+  check("(R3) ⭐ courses are dots in the legend's system colors, drawn inside the footprint the builder packed",
+    /function dotRad\(nd, rad\)/.test(ujs) && /ctx\.fillStyle=s\[1\]; ctx\.fill\(\);/.test(ujs) && !/ctx\.fillStyle=pal\.hollow; ctx\.fill\(\);\n\s*ctx\.lineWidth=ringWidth/.test(ujs) &&
+    /\.u-sw\.orphan\{/.test(tpl) && !/u-sw hollow/.test(ujs) && /smaller, lighter dot/.test(text(".u-legend")) && /broken ring around the dot/.test(text(".u-legend")));
+  check("(R3) ⭐ the islands are spread apart once at load, and the bounds follow them",
+    PU._spread === true && st().spread > 1 && (!PU.bounds || PU.bounds.x1 - PU.bounds.x0 > 0), `spread=${st().spread} ${JSON.stringify(PU.bounds)}`);
+  // 10 · the click highlight: a selected identity lights its orbit ties, the rest fades
+  w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
+  pointer("pointerdown", 480, 300); pointer("pointerup", 480, 300);
+  check("(R3) ⭐ clicking an identity lights it and its two orbiting stand-alones; everything else fades",
+    st().sel === "WELD M1001" && st().focus === 3 && /DIM_ALPHA/.test(ujs), `sel=${st().sel} focus=${st().focus}`);
+  w.__ccrClearSelection(); pointer("pointerdown", 5, 5); pointer("pointerup", 5, 5);
+  check("(R3) a click on the background clears the highlight", st().focus === 0, `focus=${st().focus}`);
+  // 8 · thin rings
+  check("(R3) ⭐ the course rings are thin at every zoom", /function ringWidth\(rad\)\{ return Math\.max\(0\.9, Math\.min\(1\.4/.test(ujs) && !/Math\.max\(1,rad\*0\.34\)/.test(ujs) && !/Math\.min\(2,rad\*0\.42\)/.test(ujs));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

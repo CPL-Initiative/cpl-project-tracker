@@ -38,6 +38,16 @@ Two asks, one PR (#1481) and a republished sheet.
    (`body.cpl-skyview-solo`). Verified in jsdom (188 + 51), the Chromium
    harness, `npm run a11y -- skyview`, and a Chromium drive of COBI's tab.
 
+2b. **SkyView's third list, the same afternoon** (the round-three PR, after
+   #1482): courses are dots in the legend's colors inside the packed
+   footprint, the islands spread ×1.22 at load, a click lights an identity's
+   orbit ties and fades the rest (Obsidian's graph was his reference), the
+   sidebar hides from its bar and resizes from a grip, the search list has
+   checkboxes and toggles, Clear and Fit all are chips, the title is unboxed,
+   the Search button is gone, the newest pick gets the focus, and a pick
+   switches on the Show switches it needs. `docs/ccr_atlas_lessons.md`, last
+   section, has the story; the lane file names the knobs.
+
 ⭐ **Sam's words this run (verbatim in the vault braindump and `cpl_memory`):**
 the explainer's voice — plain English, active voice, action verbs over
 adjectives, no asides, nothing that over-explains; *"These are nice controls
@@ -100,7 +110,11 @@ for it. Then execute, exactly as S229's handoff laid out:
 
 ## Carryover, with status
 
-- **SkyView** — Sam has not yet driven the second list; his reactions decide
+- **SkyView** — Sam drove the second list within the hour and the third list
+  shipped the same afternoon (dots, spread, the click highlight, the sidebar
+  grip); his reactions to THOSE come next, and three constants are the knobs:
+  `SPREAD_ISLANDS` (1.22), `DOT_IDENT`/`DOT_ORPHAN` (0.66/0.62), `DIM_ALPHA`
+  (0.3). Before that he had not driven the second list; his reactions decide
   the next cut. Open from his Obsidian screenshot: whether the row's zoom
   words become a right-edge glyph rail (his call). NEXT ① in the lane is
   decision packs per discipline.

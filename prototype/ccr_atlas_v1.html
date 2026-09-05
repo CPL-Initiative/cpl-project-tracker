@@ -295,7 +295,8 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 /* Noncredit reads as a BROKEN ring on the map, so the legend swatch shows the
    same break rather than describing it. Stroke, not colour: colour is already
    spent on the identity system. */
-.u-sw.nc{background:var(--sky-hollow,#fff);border-style:dashed;border-color:var(--text-muted)}
+.u-sw.nc{width:13px;height:13px;border:1.5px dashed var(--text-muted);
+  background:radial-gradient(circle,var(--text-muted) 0 2.6px,transparent 3.2px)}
 .u-crnc{margin-left:2px}
 .u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:78vh;overflow:hidden;background:var(--surface-opaque)}
 .u-wrap canvas{display:block;width:100%;height:100%;touch-action:none;cursor:default}
@@ -408,11 +409,12 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
           border-radius:8px;max-width:min(640px,calc(100% - 24px))}
 .u-legend span{display:flex;gap:5px;align-items:center}
 .u-sw{width:10px;height:10px;border-radius:50%;border:2px solid var(--text-muted);display:inline-block;flex:none}
-.u-sw.hollow{background:var(--sky-hollow,#fff);border-color:var(--violet)}
-.u-sw.s0{background:var(--sky-sys0-fill);border-color:var(--sky-sys0-stroke)}
-.u-sw.s1{background:var(--sky-sys1-fill);border-color:var(--sky-sys1-stroke)}
-.u-sw.s2{background:var(--sky-sys2-fill);border-color:var(--sky-sys2-stroke)}
-.u-sw.s3{background:var(--sky-sys3-fill);border-color:var(--sky-sys3-stroke)}
+/* the marks are dots now (2026-09-05): a solid dot per system, a smaller lighter dot for a stand-alone */
+.u-sw.s0{background:var(--sky-sys0-stroke);border-color:var(--sky-sys0-stroke)}
+.u-sw.s1{background:var(--sky-sys1-stroke);border-color:var(--sky-sys1-stroke)}
+.u-sw.s2{background:var(--sky-sys2-stroke);border-color:var(--sky-sys2-stroke)}
+.u-sw.s3{background:var(--sky-sys3-stroke);border-color:var(--sky-sys3-stroke)}
+.u-sw.orphan{width:7px;height:7px;border:0;background:var(--sky-sys0-stroke);opacity:.6;margin:0 1.5px}
 .u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
        box-shadow:0 6px 18px rgba(20,20,30,.22)}
@@ -510,7 +512,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-show-menu input{width:16px;height:16px;margin:0;accent-color:var(--cobalt);flex:none}
 .u-show-all .linkish{font-size:.84rem;min-height:24px;display:inline-flex;align-items:center}
 /* the token search (2.1): chips before the box, a wider dropdown whose rows wrap (2.2, 2.4) */
-.u-search-slot .sugwrap{flex-wrap:wrap;gap:4px;align-items:center}
+.u-search-slot .sugwrap{flex-wrap:wrap;gap:6px;align-items:center}
 .u-tokens{display:contents}
 .u-tok{display:inline-flex;align-items:center;gap:5px;height:var(--u-chip-h);padding:0 3px 0 8px;
   border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
@@ -520,9 +522,10 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-tok-x{border:0;background:none;color:var(--text-muted);cursor:pointer;font-size:1rem;line-height:1;
   width:24px;height:24px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;padding:0}
 .u-tok-x:hover{background:var(--surface-muted);color:var(--text-strong)}
-.u-tok-clear{font-size:.78rem;height:var(--u-chip-h);display:inline-flex;align-items:center;padding:0 8px;
-  text-decoration:none;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--u-chip-r);background:var(--surface-opaque)}
-.u-tok-clear:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-tokens .u-tok-act{font:inherit;font-size:.78rem;font-weight:600;height:var(--u-chip-h);display:inline-flex;align-items:center;
+  padding:0 9px;margin-right:2px;text-decoration:none;color:var(--text-body);border:1px solid var(--border-strong);
+  border-radius:var(--u-chip-r);background:var(--surface-opaque);cursor:pointer;line-height:1}
+.u-tokens .u-tok-act:hover{color:var(--text-strong);background:var(--surface-subtle)}
 .u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
   color:var(--text-body);border:1px solid var(--border-strong)}
 .sug{right:auto;min-width:100%;width:min(760px,calc(100vw - 24px))}
@@ -530,6 +533,13 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .sg-k,.sg-l,.sg-r{font-size:.84rem}
 .sg-k{min-width:7.4em;padding-top:.05em;letter-spacing:.04em}
 .sg-l{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+/* every row carries a checkbox, so the list reads as the multi-select it is (item 3, 2026-09-05) */
+.sg-cb{flex:none;width:15px;height:15px;margin-top:.12em;border:1.5px solid var(--border-strong);border-radius:3px;
+  background:var(--surface-opaque);position:relative;box-sizing:border-box}
+.sug li.picked .sg-cb{background:var(--cobalt);border-color:var(--cobalt)}
+.sug li.picked .sg-cb::after{content:"";position:absolute;left:4px;top:0px;width:4px;height:8px;
+  border:solid var(--on-accent,#fff);border-width:0 2px 2px 0;transform:rotate(45deg)}
+.sug li.picked .sg-l{color:var(--text-strong)}
 .sg-r{white-space:normal;flex:0 1 auto;text-align:right;max-width:44%;overflow-wrap:anywhere}
 /* the legend folds from the map's own corner (item 5) */
 .u-legend-toggle{position:absolute;z-index:4;right:10px;bottom:8px;display:inline-flex;align-items:center;gap:6px;
@@ -559,8 +569,8 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-top .u-ico:hover{background:var(--surface-subtle);color:var(--text-strong);border-color:var(--border)}
 .u-top .u-ico[hidden]{display:none}
 .u-top .u-ico::-webkit-details-marker{display:none}
-.u-top .u-title{border:1px solid var(--border-strong);border-radius:var(--u-chip-r);height:var(--u-chip-h);padding:0 10px;
-  display:inline-flex;align-items:center;font-size:.85rem;background:var(--surface-opaque);color:var(--text-strong)}
+.u-top .u-title{border:0;background:transparent;height:var(--u-chip-h);padding:0 6px;
+  display:inline-flex;align-items:center;font-size:.92rem;color:var(--text-strong)}
 .u-top .u-zgroup{gap:0;border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-opaque);height:var(--u-chip-h);align-items:center;padding:0 2px}
 .u-top .u-zgroup .u-ico{border-color:transparent;height:calc(var(--u-chip-h) - 4px);width:26px}
 .u-zread{font-size:.74rem;color:var(--text-strong);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;padding:0 2px}
@@ -578,21 +588,27 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-more-t:hover{background:var(--surface-subtle)}
 .u-more-t .u-state{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted)}
 .u-more-t[aria-pressed=true] .u-state{color:var(--cobalt);font-weight:700}
-/* the search field and its button read as one control */
+/* one field, no button: Enter searches (item 7, 2026-09-05) */
 .u-search-slot .msearch{gap:0}
-.u-search-slot .msearch input{border-radius:var(--u-chip-r) 0 0 var(--u-chip-r)}
-.u-search-slot .msearch .u-search-go{border-radius:0 var(--u-chip-r) var(--u-chip-r) 0;margin-left:-1px}
+.u-search-slot .msearch input{border-radius:var(--u-chip-r)}
+.msearch .u-search-go,.msearch button[type=submit]{display:none}
 .u-top .u-bar{gap:4px}
 /* The details panel is DOCKED beside the map, never over it (Sam, 2026-09-03:
    "move the zoom and other buttons and popups outside the SkyView window so
    users can work more freely"); a course still drags from it onto a circle. On
    a narrow screen it docks underneath instead. */
-.u-inspector{position:static;flex:0 0 min(400px,36%);display:flex;flex-direction:column;min-width:0;height:100%;
-             background:var(--surface-opaque);border-left:1px solid var(--border-strong);overflow:hidden}
+.u-inspector{position:relative;flex:0 0 var(--u-insp-w,min(400px,36%));display:flex;flex-direction:column;min-width:0;height:100%;
+             background:var(--surface-opaque);border-left:1px solid var(--border-strong);overflow:visible}
+.u-insp-grip{position:absolute;left:-5px;top:0;bottom:0;width:10px;cursor:col-resize;z-index:3;background:transparent;touch-action:none}
+.u-insp-grip::after{content:"";position:absolute;left:4px;top:0;bottom:0;width:2px;background:transparent}
+.u-insp-grip:hover::after,.u-insp-grip:focus-visible::after,.u-insp-grip.dragging::after{background:var(--cobalt)}
+.u-insp-grip:focus-visible{outline:2px solid var(--cobalt);outline-offset:-2px}
+.u-insp-bar .u-insp-hide{font-size:.8rem;text-decoration:none;color:var(--text-muted);padding:2px 7px;border-radius:4px;min-height:24px}
+.u-insp-bar .u-insp-hide:hover{background:var(--surface-muted);color:var(--text-strong)}
 .u-insp-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;
             border-bottom:1px solid var(--border);background:var(--surface-subtle);flex:none}
 .u-insp-t{font-weight:600;font-size:.85rem;color:var(--text-strong)}
-.u-insp-body{overflow:auto;padding:12px 14px;min-height:0}
+.u-insp-body{overflow:auto;padding:12px 14px;min-height:0;flex:1 1 auto}
 .u-inspector.closed{display:none}
 .u-inspector.closed .u-insp-body{display:none}
 .u-inspector.closed .u-insp-bar{border-bottom:0}
@@ -624,6 +640,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
   .u-full{height:auto}
   .u-stage{flex-direction:column}
   .u-inspector{flex-basis:auto;width:auto;height:auto;max-height:50vh;border-left:0;border-top:1px solid var(--border-strong)}
+  .u-insp-grip{display:none}
   .u-bar .btn{padding:5px 8px}
 }
 .tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:9px;background:var(--surface-opaque)}
@@ -661,9 +678,8 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
       <input type="search" id="gq" autocomplete="off" role="combobox" aria-expanded="false"
              aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
              placeholder="Search a course, code or discipline">
-      <ul class="sug" id="sug" role="listbox" aria-label="Search suggestions" hidden></ul>
+      <ul class="sug" id="sug" role="listbox" aria-multiselectable="true" aria-label="Search suggestions" hidden></ul>
     </div>
-    <button class="btn primary" type="submit">Search</button>
   </form>
 </div>
 </header>
@@ -761,10 +777,10 @@ document.addEventListener("pointerdown", function(e){
 
 function markSug(){
   if (!sugEl) return;
+  // The cursor is a class and aria-activedescendant; aria-selected is the PICK
+  // (the listbox is multi-select, and the checkbox on each row shows it).
   Array.prototype.forEach.call(sugEl.children, function(li,i){
-    var on = i === sugAt;
-    li.setAttribute("aria-selected", on ? "true" : "false");
-    li.className = on ? "on" : "";
+    li.classList.toggle("on", i === sugAt);
   });
   if (gqEl){
     if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
@@ -773,16 +789,21 @@ function markSug(){
 }
 function takeHighlighted(){
   if (sugAt < 0 || !sugItems[sugAt]) return false;
-  var it = sugItems[sugAt];
-  closeSug();
-  if (typeof window.__ccrGoSuggestion === "function") return !!window.__ccrGoSuggestion(it);
-  return false;
+  var it = sugItems[sugAt], at = sugAt;
+  var go = window.__ccrToggleSuggestion || window.__ccrGoSuggestion;
+  var ok = (typeof go === "function") ? !!go(it) : false;
+  // The list stays open with the pick ticked, so a second pick is one more click
+  // (Sam, 2026-09-05: the rows "should have checkboxes to clarify" multi-select).
+  if (gqEl && gqEl.value.trim().length >= 2){ openSug(gqEl.value); sugAt = Math.min(at, sugItems.length - 1); markSug(); }
+  else closeSug();
+  return ok;
 }
 function openSug(term){
   if (!sugEl || typeof window.__ccrSuggest !== "function") return;
   sugItems = window.__ccrSuggest(term, 8) || [];
   sugAt = -1;
   if (!sugItems.length){ closeSug(); return; }
+  var picked = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
   sugEl.innerHTML = sugItems.map(function(it,i){
     // The KIND is a word, not a color or an icon: "subject" and "course" are
     // different destinations and the reader has to be able to tell which one
@@ -790,7 +811,10 @@ function openSug(term){
     var right = it.kind === "subject"
       ? num(it.n) + " identit" + (it.n === 1 ? "y" : "ies")
       : esc(it.sub || "");
-    return '<li id="sug-'+i+'" role="option" aria-selected="false" data-i="'+i+'">'+
+    var key = (typeof window.__ccrTokenKey === "function") ? window.__ccrTokenKey(it) : "";
+    var on = !!key && picked.indexOf(key) >= 0;
+    return '<li id="sug-'+i+'" role="option" aria-selected="'+(on ? "true" : "false")+'" data-i="'+i+'"'+(on ? ' class="picked"' : '')+'>'+
+      '<span class="sg-cb" aria-hidden="true"></span>'+
       '<span class="sg-k">'+esc(it.kindShort || it.kindWord || (it.kind === "subject" ? "DISC" : "CRSE"))+'</span>'+
       '<span class="sg-l">'+esc(it.label)+'</span>'+
       '<span class="sg-r">'+right+'</span></li>';
