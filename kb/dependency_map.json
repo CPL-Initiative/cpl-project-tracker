@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 429,
+  "file_datasets": 431,
   "external_services": 137,
-  "consumers": 318,
+  "consumers": 319,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -6397,6 +6397,13 @@
      "line": 345
     },
     {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
+    },
+    {
      "id": "script:kb/_merge_credentials.py",
      "kind": "script",
      "direction": "read",
@@ -9645,6 +9652,19 @@
      "direction": "read",
      "how": "literal",
      "line": 13
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/merge_candidates/2026-09-05/queue.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 216
     }
    ],
    "served": true,
@@ -13207,6 +13227,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/merge_candidate_queue_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/merge_chain_flatten_test.py": {
    "consumers": [
     {
@@ -13659,6 +13692,13 @@
      "line": 170
     },
     {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
+    },
+    {
      "id": "script:kb/_morphological_variant_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -13979,6 +14019,13 @@
      "direction": "read",
      "how": "literal",
      "line": 115
+    },
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
