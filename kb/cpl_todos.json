@@ -8,7 +8,7 @@
       "id": "s229-sam-memory-sheet",
       "for": "Sam",
       "tab": "memory",
-      "text": "The memory audit sheet is ready, in plain English and oldest first: docs/visuals/2026-09-05-memory-audit-verdicts.html. Item 1 asks whether to mark the 352 entries that passed with evidence as verified; then come your own earlier rulings that later rulings replaced (mostly the funding model), and the open questions and wishes only you can close. Reply by number; yes takes the recommendation."
+      "text": "The memory audit sheet is ready, in plain English and oldest first: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217 (kept in the repo as docs/visuals/2026-09-05-memory-audit-verdicts.html). Forty-three items: item 1 asks whether to mark the 352 entries that passed with evidence as verified; item 2 gathers your own earlier rulings that still hold; then the earlier rulings that later rulings replaced (mostly the funding model), the open questions and wishes, five class rulings, and the recent ones folded away. Reply by number; yes takes the recommendation."
     },
     {
       "id": "s229-fable-execute-verdicts",
