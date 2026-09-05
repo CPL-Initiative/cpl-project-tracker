@@ -197,5 +197,35 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(2) ⭐ what is not drawn cannot be picked either",
     /if\(!islandPass\(isl\)\) continue;/.test(ujs) && /if\(!creditShown\(nd\)\) continue;/.test(ujs));
 
+  /* ── (3) a pick must land somewhere you can SEE ───────────────────────────
+     Dropping an empty discipline from the map created a second-order problem
+     the Chromium sweep caught: picking that discipline from the search list now
+     lands on nothing at all. healShow answered it for a COURSE pick (2026-09-05,
+     "Courses are no longer visible when I filter for welding subject"); the
+     discipline branch called healShow(null), which turns on `ident` and nothing
+     else, and a typed search never healed at all. */
+  w.__ccrSetShow({ cr: false, nc: false, nce: false, unrec: false, mid: false, cid: false,
+                   ccn: false, uni: false, ident: false, orbit: false, rim: false, members: false });
+  check("(3) with every switch off there is nothing on the map", st().islandsShown === 0);
+  const disc = w.__ccrSuggest("welding", 60).find((x) => x.kind === "subject");
+  w.__ccrGoSuggestion(disc);
+  check("(3) ⭐ picking a discipline whose every course is switched off switches back what it needs",
+    st().islandsShown > 0 && st().showHealed.length > 0,
+    `islands=${st().islandsShown} healed=${JSON.stringify(st().showHealed)}`);
+  check("(3) and the hint names the switches it turned on rather than doing it silently",
+    /Switched on/.test(q("#u-hint").innerHTML), q("#u-hint").textContent.slice(0, 120));
+  /* ⚠️ The other half of the rule: a filter that is WORKING must not be healed.
+     Noncredit off still leaves Welding its 120 credit courses, so picking it
+     must change nothing about the switches. */
+  w.__ccrSetShow({ nc: false, nce: false });
+  const before = JSON.stringify(st().show);
+  w.__ccrGoSuggestion(w.__ccrSuggest("welding", 60).find((x) => x.kind === "subject"));
+  check("(3) ⭐ a filter that still leaves something to look at is left alone",
+    JSON.stringify(st().show) === before && st().showHealed.length === 0,
+    `healed=${JSON.stringify(st().showHealed)}`);
+  check("(3) a typed search heals on the same terms, from both of its branches",
+    /healIsland\(pick\);/.test(ujs) && /healHits\(searchHits\);/.test(ujs) &&
+    /healIsland\(I\);/.test(ujs) && !/healShow\(null\);/.test(ujs));
+
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

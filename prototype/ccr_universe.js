@@ -371,6 +371,39 @@ function healShow(nd){
   if(turned.length && typeof window.__ccrSetShow==="function") window.__ccrSetShow(patch, true);
   return turned;
 }
+/* ── the same courtesy for a DISCIPLINE pick and for a set of search hits ────
+ * healShow answers "the point you picked is switched off"; these answer "every
+ * point behind what you picked is switched off", which had no answer at all:
+ * the discipline branch called healShow(null), which turns on `ident` and
+ * nothing else, so with the credit switches off the island the reader had just
+ * chosen still held nothing they could see. Now that a discipline with nothing
+ * switched on is not DRAWN, that gap became a pick that lands on empty ground.
+ *
+ * ⚠️ Heal only when NOTHING passes. A filter the reader set stands as long as it
+ * still leaves them something to look at — healing a filter that is working is
+ * how a control starts fighting the person holding it. */
+function healUnion(nodes){
+  showHealed=[];
+  if(!nodes || !nodes.length) return [];
+  var need={}, i, k;
+  for(i=0;i<nodes.length;i++){ var n=showNeeds(nodes[i]); for(k in n) need[k]=true; }
+  var patch={}, turned=[];
+  SHOW_KEYS.forEach(function(key){ if(need[key] && !show[key]){ patch[key]=true; turned.push(key); } });
+  showHealed=turned;
+  if(turned.length && typeof window.__ccrSetShow==="function") window.__ccrSetShow(patch, true);
+  return turned;
+}
+function healIsland(isl){
+  showHealed=[];
+  if(!isl || islandPass(isl)>0) return [];
+  return healUnion(isl.p);
+}
+function healHits(hits){
+  showHealed=[];
+  if(!hits || !hits.length) return [];
+  for(var i=0;i<hits.length;i++) if(creditShown(hits[i].nd)) return [];   // one is enough
+  return healUnion(hits.map(function(h){ return h.nd; }));
+}
 function healWords(){
   if(!showHealed.length) return "";
   return " Switched on "+showHealed.map(function(k){ return "<strong>"+esc(SHOW_WORDS[k])+"</strong>"; }).join(", ")+" under Show so this is visible.";
@@ -1444,7 +1477,7 @@ function goSuggestionSingle(s){
      * island, so the same gesture landed at a different magnification on every
      * discipline and the number in the corner never meant anything. flyTo
      * centres the point and sets the anchor, so the zoom buttons keep it there. */
-    healShow(null);
+    healIsland(I);
     flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
     selIsl=I; selNode=null; showIsland(I);
     setHint("Discipline <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses."+healWords());
@@ -2052,6 +2085,7 @@ function searchOne(raw){
        * correctable. The suggestion list is the real answer here. */
       pick=named.slice().sort(function(a,b){ return (b.n||0)-(a.n||0); })[0];
     }
+    healIsland(pick);
     var k=Math.min(3.2, 190/pick.r);
     flyTo(pick.x+(pick.dx||0), pick.y+(pick.dy||0), k);
     selIsl=pick; selNode=null; showIsland(pick);
@@ -2064,7 +2098,7 @@ function searchOne(raw){
     setHint("Discipline <strong>"+esc(pick.d)+"</strong> — "+num(pick.n)+" identities."+
       (others.length ? " Also matching: <strong>"+others.slice(0,3).map(esc).join("</strong> · <strong>")+
         "</strong>"+(others.length>3?" · …":"")+" — pick one from the search suggestions." : "")+
-      " Click an identity to open it and see the college courses under it.");
+      " Click an identity to open it and see the college courses under it."+healWords());
     draw();
     return;
   }
@@ -2078,6 +2112,8 @@ function searchOne(raw){
     mcode=mh[0].code;
   }
   if(!searchHits.length){ setHint("Nothing matches “"+esc(term)+"”."); draw(); return; }
+  // Ringing courses the switches have hidden draws rings around nothing.
+  healHits(searchHits);
   var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
   var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
   var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
@@ -2093,7 +2129,7 @@ function searchOne(raw){
   var fit=Math.min(3.2, (cw()*0.62)/spread);
   if(fit>NODE_ZOOM){
     flyTo(cx,cy,fit);
-    setHint(head+" Ringed in red.");
+    setHint(head+" Ringed in red."+healWords());
   } else {
     /* The hits do not fit in one view at any zoom that draws them. Go to the
      * densest subject rather than framing them all invisibly, and say which. */
@@ -2102,7 +2138,7 @@ function searchOne(raw){
     var ty=top.reduce(function(a,h){return a+h.y;},0)/top.length;
     flyTo(tx,ty,Math.max(NODE_ZOOM*1.6, Math.min(3.2, 190/top[0].isl.r)));
     setHint(head+" They are too far apart to ring in one view — showing <strong>"+
-      esc(names[0])+"</strong>. Search a discipline name to go straight to it.");
+      esc(names[0])+"</strong>. Search a discipline name to go straight to it."+healWords());
   }
   if(searchHits.length===1){
     selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
