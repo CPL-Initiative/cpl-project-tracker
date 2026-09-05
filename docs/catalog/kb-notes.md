@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-384 document(s).
+387 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -54,6 +54,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A conversation is scoped state — what you send must never exceed what you show](../kb-notes/methodology-a-conversation-is-scoped-state.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A copy detector must read the rendered string, not the lines the author typed](../kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md) | methodology | published | 2026-08-14 | 2026-08-14 |
 | [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -269,6 +270,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
 | [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
 | [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
+| [Provenance is the spine of a generated document, not a footnote on it](../kb-notes/methodology-provenance-is-the-spine-of-a-generated-document.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Publish the denominator with the number, as a column](../kb-notes/methodology-publish-the-denominator-with-the-number.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [Push what a session cannot know to ask for; pull everything else](../kb-notes/methodology-push-what-cannot-be-asked-for-pull-everything-else.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Re-arm a success-disabled Save button the moment its inputs change](../kb-notes/methodology-rearm-disabled-save-on-edit.md) | methodology | published | 2026-07-08 | 2026-07-08 |
@@ -393,6 +395,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
 | [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-06-28 |
 | [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-09-01 |
+| [The CPL guiding question, and why sufficiency is not equivalence](../kb-notes/reference-the-cpl-guiding-question.md) | reference | published | 2026-09-05 | 2026-09-05 |
 | [The workplan Activity↔Project linking model — home field vs the N-to-N association table](../kb-notes/reference-workplan-activity-project-linking-model.md) | reference | published | 2026-07-27 | 2026-07-27 |
 | [TMC confidence score & near-auto-approval — what data we hold vs still need](../kb-notes/reference-tmc-confidence-data-requirements.md) | reference | published | 2026-07-01 |  |
 | [CPL Assistant — CCR/CER-grounded recommendations, real-time benchmark & landing-site demand signal](../kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md) | scope | published | 2026-06-19 |  |

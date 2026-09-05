@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 384,
+   "count": 387,
    "docs": [
     {
      "created": "2026-08-14",
@@ -771,6 +771,24 @@
      "title": "A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_search_show.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "debugging",
+      "skyview"
+     ],
+     "title": "A control reported as broken may be live on a surface that draws nothing",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-22",
@@ -5069,6 +5087,24 @@
      "updated": "2026-06-15"
     },
     {
+     "created": "2026-09-05",
+     "governs": [
+      "prototype/ccr_universe.js"
+     ],
+     "path": "docs/kb-notes/methodology-provenance-is-the-spine-of-a-generated-document.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "provenance",
+      "ccr",
+      "ai-generated"
+     ],
+     "title": "Provenance is the spine of a generated document, not a footnote on it",
+     "type": "methodology",
+     "updated": "2026-09-05"
+    },
+    {
      "created": "2026-08-11",
      "governs": [
       "kb/supabase_credential_volume.sql",
@@ -7618,6 +7654,22 @@
      "updated": "2026-09-01"
     },
     {
+     "created": "2026-09-05",
+     "governs": [],
+     "path": "docs/kb-notes/reference-the-cpl-guiding-question.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "cpl",
+      "ccr",
+      "doctrine",
+      "faculty-review"
+     ],
+     "title": "The CPL guiding question, and why sufficiency is not equivalence",
+     "type": "reference",
+     "updated": "2026-09-05"
+    },
+    {
      "created": "2026-07-27",
      "governs": [
       "excel_to_dashboard.py",
@@ -7877,7 +7929,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 75,
+   "count": 76,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9437,6 +9489,21 @@
      "title": "Sierra rules as data \u2014 lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "path": "docs/ccr_atlas_lessons_archive.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "ccr",
+      "skyview"
+     ],
+     "title": "SkyView / CCR Atlas lessons \u2014 archive",
+     "type": null,
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-06-11",
@@ -11859,8 +11926,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 205,
+   "count": 206,
    "docs": [
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "n": 232,
+     "path": "docs/session_232_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "build the course outline, and find the agency skills",
+     "type": null,
+     "updated": "2026-09-05"
+    },
     {
      "created": "2026-09-05",
      "governs": [],
@@ -15406,5 +15486,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 785
+ "total": 790
 }
