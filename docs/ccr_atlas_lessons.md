@@ -1942,3 +1942,13 @@ our .md artifacts"*) maps onto them.
 
 Verified: jsdom 210 checks, the Chromium harness, `npm run a11y -- skyview`
 (six routes, three widths), and a drive of the pick, the grip and Hide.
+
+### Two more, at the session's end
+
+Sam, signing off: *"need to add a Deselect All option on the Show:All drop
+down AND need to be able to zoom to 7k — needed when working on a single
+course."* Both shipped before the session closed: **Deselect all** beside
+Show everything (every switch off, then tick the one or two wanted; the row
+reads "0 of 12" and the hint counts what is hidden), and `K_MAX` 60 → 70. The
+radius taper above `RAD_KNEE` is what makes 7,000% usable: the dot stays a
+dot while the positions keep spreading.

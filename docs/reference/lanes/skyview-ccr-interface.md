@@ -104,7 +104,9 @@ pick from the list toggles with the list left open (`__ccrToggleSuggestion`; `__
 means go there); **Clear** and **Fit all** are chips; the title is unboxed; the Search button is gone
 (Enter); **the newest pick gets the focus** and every pick stays ringed; a pick **switches on the Show
 switches it needs** and says so (his screenshot read "Show: 1 of 12"; the cause was not found, the
-consequence is gone). Knobs: `SPREAD_ISLANDS`, `DOT_IDENT`/`DOT_ORPHAN`, `DIM_ALPHA`.
+consequence is gone). Knobs: `SPREAD_ISLANDS`, `DOT_IDENT`/`DOT_ORPHAN`, `DIM_ALPHA`. At the session's end Sam added two: the Show menu has
+**Deselect all** beside Show everything (clear every switch, then tick the one you want), and the zoom ceiling is
+**7,000%** (`K_MAX` 70; *"needed when working on a single course"*).
 
 **NEXT:** ⓪ **Sam drives the third list** — the dot sizes, the spread factor, the highlight's fade —
 then the second list and the header's second cut — the icon row, the More menu,

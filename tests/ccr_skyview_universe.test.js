@@ -295,6 +295,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   {
     const S = st();
     check("(A) ⭐ the zoom ceiling is well past the old 9x (900%)", S.kMax > 9, `K_MAX=${S.kMax}`);
+    // Sam, 2026-09-05 (end of session): "need to be able to zoom to 7k — needed when working on a single course"
+    check("(A) ⭐ the zoom ceiling is 7,000%", S.kMax === 70, `K_MAX=${S.kMax}`);
     // ⭐ THE TAPER IS THE POINT, not the bigger number. Radius used to scale
     // LINEARLY with zoom while orbit positions did too, so the ratio of a
     // circle's size to the gap between circles was CONSTANT at every zoom —
@@ -353,6 +355,13 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
         `shown=${st().creditCounts.shown} of ${total} · ${text("#u-show-word")}`);
       q("#u-show-every").click();
       check("(A) Show everything brings them all back", st().creditCounts.shown === total && /^All$/.test(text("#u-show-word").trim()));
+      // Sam, 2026-09-05 (end of session): "need to add a Deselect All option on the Show:All drop down"
+      q("#u-show-none").click();
+      check("(A) ⭐ Deselect all clears every switch, draws nothing, and the row says 0 of 12",
+        st().creditCounts.shown === 0 && /^0 of 12$/.test(text("#u-show-word").trim()) && Object.values(st().show).every((v) => v === false),
+        `${st().creditCounts.shown} · ${text("#u-show-word")}`);
+      q("#u-show-every").click();
+      check("(A) …and Show everything restores them", st().creditCounts.shown === total);
       w.__ccrSetShow({ members: false });
       check("(A) the college-course squares have a switch of their own", st().show.members === false && /college courses under an identity are not drawn/.test(text("#u-hint")));
       w.__ccrSetShow({ members: true });

@@ -46,7 +46,8 @@ Two asks, one PR (#1481) and a republished sheet.
    checkboxes and toggles, Clear and Fit all are chips, the title is unboxed,
    the Search button is gone, the newest pick gets the focus, and a pick
    switches on the Show switches it needs. `docs/ccr_atlas_lessons.md`, last
-   section, has the story; the lane file names the knobs.
+   section, has the story; the lane file names the knobs. At the session's
+   end: the Show menu has Deselect all, and the zoom ceiling is 7,000%.
 
 ⭐ **Sam's words this run (verbatim in the vault braindump and `cpl_memory`):**
 the explainer's voice — plain English, active voice, action verbs over
