@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-387 document(s).
+388 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -27,6 +27,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADR — Public funding figures mask student counts under 10; units carry the money; dollars coarsen on the public page](../kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md) | adr | published | 2026-09-03 | 2026-09-03 |
 | [ADR — Student-detail aggregates: k=10, published grain, and the reviewer/published split](../kb-notes/adr-student-detail-aggregate-disclosure-control.md) | adr | published | 2026-08-08 | 2026-08-11 |
 | [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](../kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 |
+| [ADR — The re-mint approval queue: a queue, never a fire button, and where its decision right sits](../kb-notes/adr-remint-approval-queue-decision-rights.md) | adr | published | 2026-09-05 | 2026-09-05 |
 | [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
 | [Level-collapsing consolidation — over-merge beats under-merge for CPL](../kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
 | [Pull from the source rather than accept a push](../kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md) | adr | published | 2026-08-19 | 2026-08-19 |

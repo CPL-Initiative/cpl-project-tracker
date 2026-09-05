@@ -51,6 +51,22 @@ inspector says which discipline the course is filed under). ⑤ Drag and drop is
 ✅ **THE SEARCH SORTS BY NAME, AND THE MAP READS AS A SKY (SkyReply S231, 2026-09-05, #1488).** Sam, on "weld": *"I probs would have spotted that earlier if the dropdown in SkyView showed all the welding courses in order — would have seen 2 named similarly or the same."* ⭐ **The depth was not the problem; the SORT was.** After the relevance tier the list orders by member count descending, so a small identity is buried BY CONSTRUCTION — and a duplicate of a well-adopted course is, almost by definition, the less-adopted twin ("weld" matches 591 points; Introduction to Welding, 24 colleges, ranks 1st; Introduction to the Welding Processes, 2 colleges, ranks 132nd). ⚠️ **The window must be CENTERED on the anchor**: sorting the whole match set by name and taking the first N returns the titles beginning with "A" — rank by relevance to find the anchor, re-sort by name, then slide a window with the anchor a third of the way down. It surfaced a THIRD near-duplicate and two identities carrying the identical title *Introduction to Shielded Metal Arc Welding (SMAW)*, one with no discipline.
 ⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. Also his, in order: members as muted stars; a darker, grayer canvas (14.81:1 strong ink, 7.77:1 muted); short college names throughout, canonical kept on `title`; the catalog description on a member's hover card; the parent's name INSIDE the big circle when it fits (an open identity's middle is the emptiest space on screen) with no leader, because position is the tie; otherwise the leader lands ON the edge (`q.rad*0.98`), not at 0.71; the disc and the title wearing the identity system's color (5.15–8.44:1 light, 6.76–9.23:1 dark), a stand-alone keeping muted ink; and **no label transecting a disc** — `discBoxes` are seeded as occupied boxes before any label is placed. Verified: 55 checks in `tests/ccr_skyview_search_show.test.js`, 302 test files, `npm run a11y -- skyview` across 6 routes, a Chromium drive per change.
 
+⭐ **THE RE-MINT ADMIN VIEW IS ROUTED, NOT BUILT (Sam's ruling 2, 2026-09-05).** He asked
+for a view that fires a re-mint and accepted the counter-proposal: a **queue, never a fire
+button** — candidates with reasons, he approves, the approved set lands through Rule 7's
+playbook on the next cron window. He also ruled it routes through Governance and the
+privacy ADRs **first** (Rule 10 a3), and that routing is
+[`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md).
+The deciding asymmetry is **reversibility**: an INSERT-only cohort reverts by
+`reviewer_email`, a re-mint that has rippled through the alias chain has no undo, only a
+compensating permutation. ⚠️ **The privacy check CLEARS** — the queue's rows are course
+identities, no student appears, so the student-detail boundary is not engaged; college
+counts count institutions, not students, so `k=10` does not apply *unless a future column
+carries a student count*, and the note says so. Open before it ships: a register row owning
+the approval, the surface mapped in `kb/governance_surface_map.json` at the moment of the
+first write (not after), an INSERT-only rollback, and a test asserting the view writes
+approvals and nothing else. **Next: build it.**
+
 ⭐ **MERGE CANDIDATES ARE A QUEUE, AND THE MERGE WAITS FOR A FACULTY REVIEWER (Sam's
 ruling 6, 2026-09-05).** `kb/_merge_candidate_queue.py` assembles the evidence and stops —
 it is deliberately **not** `kb/_auto_merge_worklist.py`, which plans `merge_into` rows.

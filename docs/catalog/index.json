@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 387,
+   "count": 388,
    "docs": [
     {
      "created": "2026-08-14",
@@ -217,6 +217,29 @@
      "title": "ADR \u2014 Student-impact counts in the public CER (aggregate + small-cell suppression)",
      "type": "adr",
      "updated": "2026-06-04"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/governance_surface_map.json",
+      "kb/_merge_candidate_queue.py",
+      "kb/_identities_rekey_dryrun.py",
+      "docs/coursecontrolnumber_remint.md"
+     ],
+     "path": "docs/kb-notes/adr-remint-approval-queue-decision-rights.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "governance",
+      "mid-lifecycle",
+      "remint",
+      "decision-rights",
+      "write-surface",
+      "privacy"
+     ],
+     "title": "ADR \u2014 The re-mint approval queue: a queue, never a fire button, and where its decision right sits",
+     "type": "adr",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-07-14",
@@ -15486,5 +15509,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 790
+ "total": 791
 }
