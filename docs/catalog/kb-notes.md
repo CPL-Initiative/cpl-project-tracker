@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-379 document(s).
+380 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -94,6 +94,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A materialized view cannot carry RLS — its suppression has no backstop](../kb-notes/methodology-a-materialized-view-cannot-carry-rls.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A measure everyone already clears incentivizes nothing — the same failure as one nobody can measure](../kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [A mechanism that looks redundant may be carrying a second job the table cannot show](../kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A memory table goes stale in its claims, not its links — lint the structure, read the claims](../kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A metric matched by its prose mis-measures the moment a second lane exists](../kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |

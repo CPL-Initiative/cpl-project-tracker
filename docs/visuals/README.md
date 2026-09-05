@@ -1,7 +1,7 @@
 ---
 title: Visuals — the decision briefs and mock-ups, kept
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-09-05
 tags: [index, visuals, artifacts, decisions, design]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/visuals
@@ -56,6 +56,7 @@ a number in passing is not a deliverable.
 | 2026-08-31 | [`2026-08-31-if-tab-simplified.html`](2026-08-31-if-tab-simplified.html) | The whole Implementation Funding tab rebuilt simply, one-pool, for reaction. Three reaction rounds ran against it. | 🔨 Mostly ported — the **flat Funding Breakdown ledger** had not reached the tab as of 2026-09-01; it is decision 2 of the sheet below |
 | 2026-09-01 | [`2026-09-01-if-tab-two-consolidations.html`](2026-09-01-if-tab-two-consolidations.html) | Two consolidations on the funding tab: folding the Ed. Code goal cards into the priority bands, and porting the flat funding ledger. Numbered for reply. | ✅ **All three ruled and shipped 2026-09-01** — consolidate (1), port the ledger with editability and folds intact (2), keep the three money columns (3) |
 | 2026-09-03 | [`2026-09-03-csr-authority-codes.html`](2026-09-03-csr-authority-codes.html) | Authority codes for the CSR: should the canonical Common SUBJ follow the C-ID and CCN subject codes? Twenty-two items — the rule, eleven code changes, the Z band, the mechanics. | ✅ **All 22 ruled 2026-09-03** — CCN first, four letters kept with a C-ID chip, no hyphens (`kb/csr_authority_codes_rulings_2026-09-03.json`) |
+| 2026-09-05 | [`2026-09-05-memory-audit-verdicts.html`](2026-09-05-memory-audit-verdicts.html) | The shared memory table tested end to end: what only Sam can settle, in plain English, oldest first — the 352 entries that passed with evidence (item 1), his own earlier rulings that later rulings replaced, the open questions and wishes, five class rulings, and the 31 entries already retired, listed for veto. | 🔨 Awaiting Sam's replies — 31 retired under a receipt, nothing else written |
 | 2026-09-03 | [`2026-09-03-remint-series-readings.html`](2026-09-03-remint-series-readings.html) | Fourteen readings the two re-mint dry runs raised (the recode of the ruled codes, the Z-band retirement): the three carried from the morning's sheet, the residual and viticulture calls, AG-EH's home, the flagged languages, PH under Health, Kinesiology's three free numbers, materialize or recognize-by-shape, the legacy anchors, the apply window. Numbered for reply. | 🔨 Awaiting Sam's replies — nothing applied |
 
 ## Not this folder

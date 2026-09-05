@@ -1,0 +1,1581 @@
+{
+  "part": "funding-2",
+  "expected_rows": 55,
+  "coverage": {
+    "rows_read": 55,
+    "rows_judged": 55,
+    "note": "All 55 rows (partition rn 56-110 of the funding bucket, bn=110) read and judged. Note for the applier: offset paging over `order by created_at` is unstable on this bucket (many rows share a created_at), so the 8-row pages returned one duplicate and skipped a-lane-that-cannot-be-measured-must-not-advance; the part was re-listed in one execution with an id tiebreak and the missing row fetched by id. The boundary row between funding-1 and funding-2 (rn 55/56, both created 2026-08-23 22:06:39) could land in either part on another execution."
+  },
+  "counts": {
+    "confirmed": 47,
+    "stale": 1,
+    "superseded_by_row": 6,
+    "snapshot": 1,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "ca8d3272-920a-4625-9948-13110b10446b",
+      "slug": "a-total-that-balances-is-not-a-total-that-is-right",
+      "kind": "pitfall",
+      "title": "A migrated model leaves its re-derivers behind, and a balancing total hides it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lesson stands and its fix is on disk: memoModel() now calls the model (instSplit per institution) instead of re-deriving; KB note exists; #1307 on main. The 33-institution / $1.8M carve-out it narrates is history (one-pool since 2026-08-31).",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:7169",
+          "quote": "ONE POOL (2026-08-31): the memo is the EXPORTED document … Same standing rule as ever: call the model, never re-derive."
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md",
+          "quote": "file exists on disk"
+        },
+        {
+          "source": "git log HEAD",
+          "quote": "77c7de54 The funding tab was migrated; the document it exports was not (#1307)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "80f0c3b3-c901-444e-b37e-f8f010bf299e",
+      "slug": "an-opt-in-prompt-must-key-on-the-gate-not-the-amount",
+      "kind": "pitfall",
+      "title": "A prompt tied to the size of a figure vanishes for the very people it is for",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The prompt is gate-driven on disk: earnedSubHtml() branches on `held > 0.5 || gated` and its comment records the 2026-08-23 fix. The label has since been reworded 'confirm participation to start earning' (Sam's opt-in ruling), so the quoted wording is dated.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:6410",
+          "quote": "THE PROMPT IS DRIVEN BY THE GATE, NOT BY THE SIZE OF THE WITHHELD FIGURE"
+        },
+        {
+          "source": "cpl_funding.js:6437",
+          "quote": "if (held > 0.5 || gated) {"
+        },
+        {
+          "source": "cpl_funding.js:6449",
+          "quote": "(showFig ? \"held \" + earnedMoney(held) : \"confirm participation to start earning\")"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e0aee2b8-2ffe-47a8-8ed2-5cac04699942",
+      "slug": "p1-measures-applied-units-by-origin-p3-is-transcribed",
+      "kind": "question",
+      "title": "The priority definitions live on the funding tab - never quote them from memory",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Config location verified live: cpl_funding_config.default -> projects.cpl-implementation.scenarios.'Scenario 1'.yearPriorities (sparse overlay); priorityOrder [2,0,1] is a separate permutation; priorities(slot) merges. The don't-split-P1 advice stands (Access is origin-FILTERED, not split).",
+      "evidence": [
+        {
+          "source": "sql: select jsonb_pretty(config) from cpl_funding_config where id='default'",
+          "quote": "projects.cpl-implementation.scenarios.Scenario 1.yearPriorities.1.{0,1,2}; priorityOrder [2,0,1]; updated_by slee@cccco.edu 2026-09-02"
+        },
+        {
+          "source": "cpl_funding.js:2026",
+          "quote": "function priorities(slot) { … var src = prioSrcList(prioSlot(slot)); return priorityOrder(slot).map("
+        },
+        {
+          "source": "cpl_funding.js:2293",
+          "quote": "return v == null ? (DEFAULT_PRIORITY_TITLES[srcIdx(prioSlot(slot), i)] || \"\") : v;"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": "procedure",
+      "link_fixes": []
+    },
+    {
+      "id": "1ecea407-abf3-4dad-adbc-39dad74f5a36",
+      "slug": "sb135-is-wider-than-article-9",
+      "kind": "fact",
+      "title": "The new prior-learning law reaches further than the article everyone is reading",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Statute text on disk: ec_75013_online_college.txt carries the 2027-07-01 and 2028-10-01 duties; the statute README records Sec. 14 vs Sec. 16 of the same chapter and (b) opening 'As part of the Credit for Prior Learning Initiative'; the t5 lane and a verified row corroborate.",
+      "evidence": [
+        {
+          "source": "docs/reference/statute/README.md:23",
+          "quote": "Same bill as Article 9 (Stats. 2026, Ch. 79 — Sec. 14 vs Sec. 16)"
+        },
+        {
+          "source": "docs/reference/statute/ec_75013_online_college.txt:39",
+          "quote": "or before July 1, 2027, the chancellor's office shall submit, pursuant to Section 9795"
+        },
+        {
+          "source": "docs/reference/statute/ec_75013_online_college.txt:27",
+          "quote": "October 1, 2028, the chancellor's office shall submit, pursuant to Section 9795 of the"
+        },
+        {
+          "source": "slug:sam-ruled-75013-seat-with-gr-fin-dof",
+          "quote": "the §75013 workgroup (the CBE-to-FTES funding measure reporting to the Department of Finance by 2028-10-01)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7f393d6f-f85e-48e6-bbbd-2c6e2f0de48a",
+      "slug": "a-saved-setting-is-not-the-effective-value",
+      "kind": "pitfall",
+      "title": "A saved setting is what someone typed, not what the model uses — ask the model",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Still exactly true: live config has mirrorYears true, disbursement frontload, priorityOrder [2,0,1], Year-2 factor 1 vs Year-1 0.5; prioSlot() returns '1' under mirrorYears; scripts/funding_effective.js cites this slug; the lane says never read the config. Only ncModel() is retired.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1980",
+          "quote": "function prioSlot(slot) { return mirrorYears() ? \"1\" : String(slot); }"
+        },
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "mirrorYears: true, disbursement: \"frontload\", priorityOrder [2,0,1]; yearPriorities.1.*.factor 0.5; yearPriorities.2.*.factor 1"
+        },
+        {
+          "source": "scripts/funding_effective.js:19",
+          "quote": "See cpl_memory: a-saved-setting-is-not-the-effective-value."
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:20",
+          "quote": "NEVER READ THE CONFIG — CALL _effective() / _alloc() / _prios() / _ncPrios() / _ncAward()"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "5ef010ee-ff49-4af4-a44c-b79381eb089d",
+      "slug": "a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists",
+      "kind": "pitfall",
+      "title": "A metric is matched to its data by reading its wording, which breaks the moment a second lane exists",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "measurability() still resolves by prose (the MEASURES regex loop) and the fix the row asks for exists: measureOf() gives an explicit metric_src pin precedence and ncPriorities() always pins. The comment block at 5172-5210 restates this finding.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:5166",
+          "quote": "function measurability(metric) { … for (var i = 0; i < MEASURES.length; i++) { if (MEASURES[i].test(m)) return MEASURES[i]; }"
+        },
+        {
+          "source": "cpl_funding.js:5384",
+          "quote": "Explicit pin wins; otherwise fall back to reading the prose."
+        },
+        {
+          "source": "cpl_funding.js:1263",
+          "quote": "Every priority this function returns therefore carries an explicit metric_src"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "59620e1d-9c13-42fd-829b-8c069a2737cc",
+      "slug": "sam-nc-lane-earns-like-credit",
+      "kind": "decision",
+      "title": "Sam: the noncredit lane EARNS like credit, it is not just allocated and displayed",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The ruling still governs and is implemented: ncPriorities() re-points credit's three at the nc_* origin measures (same formula, clamp and ladder; a different pool and measure). What changed under one-pool (2026-08-31): the pot is the NC share of ONE combined award, not a separate NC cap/carve-out.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1245",
+          "quote": "Sam ruled 2026-08-26 that it must also EARN, exactly the way credit does — \"a cap earned against the CR three, origin-filtered\""
+        },
+        {
+          "source": "cpl_funding.js:1239",
+          "quote": "ncModel() — the carve-out solved as a second bounded allocation — was retired with one-pool adoption (2026-08-31)"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:20",
+          "quote": "the NC share restricted to the noncredit measures · the noncredit trio earn by ORIGINATION, no advances (N2 b)"
+        },
+        {
+          "source": "slug:one-pool-model-adopted",
+          "quote": "The two-lane carve-out model is superseded as design of record."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "083b5162-2d38-40c9-9bf5-df9a9d70d8c3",
+      "slug": "sam-nc-keeps-credit-factor-0point5",
+      "kind": "decision",
+      "title": "Sam: noncredit keeps the SAME funding factor as credit — 0.5, not a softer bar",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The parity ruling holds: the ncPriorities override layer is empty in the live config (strategies only), so NC inherits credit's Year-1 factor 0.5. Its figures are from the retired two-lane model: no $50K/$100K NC floor/cap exists (one-pool: $150K/$400K combined) and the baked rate is $5,649.63.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1283",
+          "quote": "Today it is empty and NC inherits credit's share and factor, which is Sam's ruling"
+        },
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "ncPriorities.1.{0,1,2} carry only strategies; yearPriorities.1.*.factor = 0.5"
+        },
+        {
+          "source": "cpl_funding_data.js:134",
+          "quote": "\"ftes_rate_2026_27\": 5649.63,"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:20",
+          "quote": "$150,000 base / $400,000 cap on the COMBINED award"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "266265f4-843e-4a8b-8271-48cd47ebf4cd",
+      "slug": "sam-draft-model-missing-data-is-not-a-flaw",
+      "kind": "decision",
+      "title": "Sam: the funding model is a DRAFT — a missing data field is not a design flaw, build anyway",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Draft posture and build-with-$0 are current: the lane's sunshine rule says the model is 'still in draft form' and NC reads $0 until the origination feed reports. Caveat: detail clause (2) — an unwired metric paying full cap as a LABELED advance — was overturned 2026-09-01 (no advances; N2b).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:30",
+          "quote": "New funding is still in draft form that I need to confirm with CO leadership before sunshining details."
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:26",
+          "quote": "$0 earned until the origination feed reports (srcDelivered() reads an undelivered key as $0, never a cap)"
+        },
+        {
+          "source": "slug:no-advances-no-unshipped-feed-copy",
+          "quote": "There should be no mention of the concept of advances"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6f798d8f-0c7a-475d-85b0-8a3ee3c7c468",
+      "slug": "sam-nc-row-shows-zero-earned-not-an-advance",
+      "kind": "decision",
+      "title": "Sam: the noncredit row shows its target and potential, with current earnings at ZERO — not an advance",
+      "verdict": "superseded_by_row",
+      "confidence": "medium",
+      "reason": "The substance (zero, never an advance) is implemented — earnFraction() returns f=0/'undelivered' for the nc lane — but the display it specifies (a second NC row under the CR row) became CR/NC cells on one row; Sam's verified F1 ruling (2026-08-31) restates it under one-pool.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:5447",
+          "quote": "if (meas.lane === \"nc\") return { f: 0, status: \"undelivered\", target: prioTarget(c, p), meas: meas };"
+        },
+        {
+          "source": "slug:f1-resolved-and-never-design-for-missing-feeds",
+          "quote": "NC shares list from day one and read $0 earned until the NC feeds report — no hold-vs-label interim"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:33",
+          "quote": "dead CSS for retired row shapes (.cplfund-ncrow / .cplfund-ncsysrow / …)"
+        }
+      ],
+      "superseded_by": "f1-resolved-and-never-design-for-missing-feeds",
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "32473c81-4acf-4013-a9d5-9f488aabf933",
+      "slug": "funding-model-reads-the-artifact-not-supabase",
+      "kind": "pitfall",
+      "title": "The funding model reads a static artifact, not Supabase — a NULL column there wires nothing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "perf() is window.CPL_FUNDING_PERF loaded from cpl_funding_performance.js; nc_pa_u etc. are declared in METRIC_SOURCES and the builder still omits nc_* until MAP ships origination; srcDelivered() asks the artifact. Supabase is touched only for config, notes and participation.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:3407",
+          "quote": "function perf() { return window.CPL_FUNDING_PERF || null; }"
+        },
+        {
+          "source": "cpl_funding.js:5335",
+          "quote": "nc_pa_u: { unit: \"units\", lane: \"nc\", milestone: \"applied\","
+        },
+        {
+          "source": "funding/_build_funding_performance.py:568",
+          "quote": "origination measures and the origination block are omitted (not zeroed). They appear the day MAP ships the origination fields."
+        },
+        {
+          "source": "cpl_funding.js:5379",
+          "quote": "function srcDelivered(src) { var pf = perf(); return !!(pf && pf.statewide && Object.prototype.hasOwnProperty.call(pf.statewide, src)); }"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "12f27914-243b-4d1e-ac88-39966d6a900d",
+      "slug": "access-metric-scored-on-transcribed-every-college-reads-zero",
+      "kind": "risk",
+      "title": "The biggest funding priority is scored on the wrong measure, and every college reads $0",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Event and fix on disk: #1363/#1364 on main; the live config pins 'Access: Statewide' to metric_src ppa_u; measurability() still prose-matches so the lesson stands. As a risk it is resolved — reads better as a pitfall. (Access share is 0.34 in the live config, as stated.)",
+      "evidence": [
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "yearPriorities.1.2: title \"Access: Statewide\", share 0.34, metric_src \"ppa_u\""
+        },
+        {
+          "source": "git log HEAD",
+          "quote": "2fa7b3c0 Pin a priority's measure — and the same defect is already live on the biggest priority (#1363)"
+        },
+        {
+          "source": "cpl_funding.js:5166",
+          "quote": "function measurability(metric) { var m = String(metric || \"\").toLowerCase(); for (var i = 0; i < MEASURES.length; i++)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": "pitfall",
+      "link_fixes": []
+    },
+    {
+      "id": "5d1074f3-5903-4c77-9ca5-e176caf17bbb",
+      "slug": "pa-and-ppa-are-disjoint-cohorts-not-a-subset",
+      "kind": "pitfall",
+      "title": "The applied-units measure EXCLUDES portal students — it is the complement of what the Access metric wants, not a superset",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Builder on disk: pe/pa/p3 carry `and not is_potential`; pp/ppa/ppe hit only when is_potential; tests/funding_portal_applied_test.py exists; the lane repeats DISJOINT. Sam's quoted Potential-Student rule is itself a verified row.",
+      "evidence": [
+        {
+          "source": "funding/_build_funding_performance.py:717",
+          "quote": "(\"pe\", ecr > 0 and not is_potential), … (\"pa\", acr > 0 and not is_potential), … (\"ppa\", acr > 0 and is_potential),"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:26",
+          "quote": "ppa/ppa_u applied units among portal-origin students — DISJOINT from pe/pa, riding Potential Student"
+        },
+        {
+          "source": "slug:sam-potential-student-is-the-temporary-origin-filter",
+          "quote": "count every instance of Yes as meeting these metrics"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8f988f9e-8564-4cab-b359-5a088288af93",
+      "slug": "a-pin-in-a-stale-defaults-file-lands-on-the-wrong-metric",
+      "kind": "pitfall",
+      "title": "A per-priority pin belongs with the metric it was chosen for, not in the stale defaults file",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both mechanisms on disk: measureOf() treats metric_src \"\" as the un-pin (firstDefined skips null); metric_src rides prioField's scenario->shared->baked layering; the live pin sits in the overlay (ppa_u on slot 2); funding_effective.js calls the baked file stale by design.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:5391",
+          "quote": "An empty string CLEARS a pin. firstDefined() deliberately skips null and undefined, so without a sentinel an override layer could ADD a pin but never REMOVE one"
+        },
+        {
+          "source": "cpl_funding.js:2043",
+          "quote": "metric_src: prioField(slot, i, \"metric_src\"),"
+        },
+        {
+          "source": "scripts/funding_effective.js:56",
+          "quote": "The baked defaults in cpl_funding_data.js are STALE BY DESIGN — the live model is the Supabase overlay."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9cc5e79d-2bc9-40c2-b0db-4ba32af69d04",
+      "slug": "a-compact-formatter-is-calibrated-to-a-magnitude",
+      "kind": "pitfall",
+      "title": "A number format that suits big figures quietly misstates small ones",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "fmtFtesSmall() (one decimal below 100, fmtCountK above) and fmtCountK() (whole numbers below 10K) are on disk; the KB note exists.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:834",
+          "quote": "function fmtFtesSmall(v) { if (v == null) return \"—\"; return Math.abs(v) < 100 ? fmtNum1(v) : fmtCountK(v); }"
+        },
+        {
+          "source": "cpl_funding.js:841",
+          "quote": "function fmtCountK(v) { … if (a >= 1e4) return parseFloat((v / 1e3).toFixed(1)) + \"K\"; return fmtInt(v);"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md",
+          "quote": "file exists on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "000bee8a-2432-4d21-bcfe-ad2fafabbb50",
+      "slug": "sam-nc-shares-match-credit",
+      "kind": "decision",
+      "title": "Sam: the noncredit lane uses the same priority shares as credit",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Inheritance with an override layer is on disk (ncPrioOverride: 'Today it is empty and NC inherits credit's share and factor'); the live config's ncPriorities carries strategies only, so NC shares equal credit's 0.33/0.33/0.34.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1283",
+          "quote": "Today it is empty and NC inherits credit's share and factor, which is Sam's ruling; the layer exists so diverging them later is one field"
+        },
+        {
+          "source": "cpl_funding.js:1250",
+          "quote": "and 2026-08-27 that its three shares are credit's (Access 0.34 / Outreach 0.33 / Success 0.33)"
+        },
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "ncPriorities.1.{0,1,2} hold only strategies; yearPriorities.1 shares 0.33 / 0.33 / 0.34"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a5179f72-272c-43c3-9ab1-d19591118b32",
+      "slug": "an-inherited-lane-must-pin-its-own-measure",
+      "kind": "pitfall",
+      "title": "When a second lane borrows the first lane's wording, it must name its own data source",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "ncPriorities() always emits metric_src, mapped by milestone out of METRIC_SOURCES, with 'nc_unmapped' as the deliberately unknown key; F9/F10 are in tests/cpl_funding_nc_lane.test.js.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1311",
+          "quote": "var src = (ms && byMs[ms]) || \"nc_unmapped\";"
+        },
+        {
+          "source": "tests/cpl_funding_nc_lane.test.js:368",
+          "quote": "F9: un-pinning the CREDIT metric moves its NONCREDIT counterpart too — the lanes share one milestone by design"
+        },
+        {
+          "source": "tests/cpl_funding_nc_lane.test.js:370",
+          "quote": "F10: and that collapses two NC priorities onto one source, which is why the credit pin is load-bearing for BOTH lanes"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1e4ec310-049d-44e9-819a-b3e0dcd14c16",
+      "slug": "a-lane-that-cannot-be-measured-must-not-advance",
+      "kind": "risk",
+      "title": "The noncredit lane must show zero, never pay out while it waits for data",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane guard is on disk in earnFraction(): the feed-not-loaded branch returns f=0/'undelivered' for meas.lane === 'nc' before the credit advance, as described. The $1.8M carve-out is retired (one-pool) but the mechanism and lesson stand; as a risk it is mitigated — a pitfall now.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:5440",
+          "quote": "Feed not loaded → advance (transient) … but NEVER for a lane whose measures the feed has never carried at all."
+        },
+        {
+          "source": "cpl_funding.js:5447",
+          "quote": "if (meas.lane === \"nc\") return { f: 0, status: \"undelivered\", target: prioTarget(c, p), meas: meas };"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:20",
+          "quote": "the noncredit trio earn by ORIGINATION, no advances (N2 b)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": "pitfall",
+      "link_fixes": []
+    },
+    {
+      "id": "8679f2c8-3769-4aa8-bd96-c0d6f53b6494",
+      "slug": "nc-threshold-cannot-go-below-400-at-the-50k-floor",
+      "kind": "fact",
+      "title": "The noncredit entry threshold and the minimum award are one decision, not two",
+      "verdict": "stale",
+      "confidence": "high",
+      "reason": "The model it sweeps no longer exists: one-pool adoption (2026-08-31) retired the NC entry threshold, the $1.8M carve-out and the $50K/$100K NC floor/cap (R3–R5). The fields linger in the config unread; cpl_funding_effective.test.js 3f asserts no retired dial is reported; --nc-sweep is retired.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:20",
+          "quote": "THE ONE-POOL MODEL IS LIVE (adopted 2026-08-31 …) $150,000 base / $400,000 cap on the COMBINED award"
+        },
+        {
+          "source": "tests/cpl_funding_effective.test.js:137",
+          "quote": "3f: no _effective().nc block, and no retired dial is reported (R3–R5)"
+        },
+        {
+          "source": "scripts/funding_effective.js:149",
+          "quote": "(--nc-sweep is retired with the carve-out lane; this flag replaces it.)"
+        },
+        {
+          "source": "slug:one-pool-model-adopted",
+          "quote": "The two-lane carve-out model is superseded as design of record."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6ee19956-4e83-49f7-91ba-3fcb8976960c",
+      "slug": "sam-confirm-participation-not-opt-in",
+      "kind": "decision",
+      "title": "Sam: the funding step is \"Confirm participation\", never \"opt in\"",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live config partLabel is 'Participation confirmed by'; the button reads 'Confirm participation'; the row sub-line says 'confirm participation to start earning'. No rendered 'opt in' remains (only a code comment quoting Sam).",
+      "evidence": [
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "Scenario 1.partLabel = \"Participation confirmed by\""
+        },
+        {
+          "source": "cpl_funding.js:3126",
+          "quote": "(ui.submitting ? \"Submitting…\" : \"Confirm participation\") + \"</button>\""
+        },
+        {
+          "source": "cpl_funding.js:6449",
+          "quote": "\"confirm participation to start earning\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1bda7830-91c9-4a15-8e9c-5605ed41dcc2",
+      "slug": "a-test-coupled-to-position-or-wording-breaks-on-correct-work",
+      "kind": "pitfall",
+      "title": "A test tied to where something sits, or exactly how it is worded, fails when neither matters",
+      "verdict": "superseded_by_row",
+      "confidence": "medium",
+      "reason": "The contract it names is gone — .cf-prio/.cf-t/.cf-a survive only as dead CSS (lane NEXT ③); cards are addressed by data-priocard — and the later row records this lesson's recurrence and the better rule (change what the test is coupled TO: header-keyed reads).",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:552",
+          "quote": ".cplfund-table td.cf-prio { line-height: 1.28; }  (CSS only; no render line emits cf-prio)"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:33",
+          "quote": "dead CSS for retired row shapes (.cplfund-ncrow / .cplfund-ncsysrow / .cf-lanechip / .cplfund-awardrow / .cf-prio, ~15 rules)"
+        },
+        {
+          "source": "slug:read-a-tables-cells-by-header-not-by-position",
+          "quote": "Second occurrence of the pattern recorded 2026-08-27 as a-test-coupled-to-position-or-wording-breaks-on-correct-work."
+        }
+      ],
+      "superseded_by": "read-a-tables-cells-by-header-not-by-position",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "91400046-71a9-4663-a0d8-e5eeb7e6108d",
+      "slug": "a-client-gate-must-mirror-its-own-rls-policy",
+      "kind": "pitfall",
+      "title": "A page that checks permission more strictly than the database does loses work without saying so",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lesson and fix on disk: applyWriteAuth() is the one credential helper; unlocked() = reviewerSession(). The quoted policy text is dated — #1372 narrowed all three tables to is_allowed_reviewer() alone the same day, as the live RLS shows — but the gate still mirrors the policy.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:937",
+          "quote": "The RLS policies on all three funding tables were narrowed the same day to is_allowed_reviewer() alone, so this gate mirrors them again"
+        },
+        {
+          "source": "sql: pg_policy on cpl_funding_*",
+          "quote": "cfc_update using/check is_allowed_reviewer(); cfn_insert/update check is_allowed_reviewer(); cfp_update is_allowed_reviewer() (no team_pass_ok anywhere)"
+        },
+        {
+          "source": "cpl_funding.js:2574",
+          "quote": "function applyWriteAuth(headers) {"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2c479c6c-8589-44ca-9750-f6d31513d6cc",
+      "slug": "two-credentials-one-signed-in-indicator",
+      "kind": "fact",
+      "title": "COBI has two sign-in mechanisms and one word for both, so the indicator can be true about the wrong one",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Two mechanisms still exist (reviewer_signin.js prints 'Signed in' for the reviewer session; team_phrase.js gates phrase tabs) and the funding tab now gates on the reviewer only (#1372). Partly mitigated since: cobi_identity.js composes a masthead greeting that names both credentials.",
+      "evidence": [
+        {
+          "source": "reviewer_signin.js:157",
+          "quote": "ttl.textContent = sess ? \"Signed in\" : (m.title || \"Admin sign-in\");"
+        },
+        {
+          "source": "cobi_identity.js:174",
+          "quote": "return { tone: \"both\", short: named ? \"Hi \" + named : \"Signed in\", … \"Signed in as \" + addr + \", and \" + phraseWord + \" is unlocked.\""
+        },
+        {
+          "source": "cpl_funding.js:944",
+          "quote": "function unlocked() { return !!reviewerSession(); }"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "bd14b1ee-cb60-4f6c-b618-1d791bf1dc62",
+      "slug": "sam-career-attainment-sits-with-the-project-pool",
+      "kind": "decision",
+      "title": "Sam: career attainment is carried by the project funding, reported qualitatively, with no invented metric",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "Sam's later verified ruling (2026-08-30, item 12) is more precise — goal (C) DEMONSTRATED, 'not measurable at this time, and may never be', evidenced by stories + funded projects — where this row says 'measurable later via the CA Career Passport'; the tab implements the later wording.",
+      "evidence": [
+        {
+          "source": "slug:sam-ruled-goal-c-demonstrated-equity-in-3yr-reports",
+          "quote": "career attainment (goal C) is DEMONSTRATED, never directly measured ('not measurable at this time, and may never be')"
+        },
+        {
+          "source": "tests/cpl_funding_statutory_goals.test.js:138",
+          "quote": "goal (C) carries Sam's demonstrated-not-measured ruling in words (items 3 + 12)"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:30",
+          "quote": "FUNDED and MEASURED are two axes — goal (C) is funded with no campus measure, honestly"
+        }
+      ],
+      "superseded_by": "sam-ruled-goal-c-demonstrated-equity-in-3yr-reports",
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "311bbccb-e4ae-4dea-a4cd-56a9b3b7782a",
+      "slug": "the-cpl-story-corpus-evidences-education-not-career",
+      "kind": "risk",
+      "title": "The CPL stories document degrees, not jobs — so they cannot yet evidence career attainment",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: fact-sheet/cpl_stories.js still holds 36 stories, and the tab now counts destination type at load (storyEvidence()) so the claim can go stale out loud. The intake fix the row asks for was ruled (sam-ruled-story-intake-question, 2026-08-30) and is not yet reflected in the corpus.",
+      "evidence": [
+        {
+          "source": "node: window.CPL_STORIES.stories.length",
+          "quote": "36"
+        },
+        {
+          "source": "cpl_funding.js:4423",
+          "quote": "the destination is overwhelmingly a CREDENTIAL — which makes the corpus evidence for (B), not for (C). Absent corpus → no claim at all, never a zero."
+        },
+        {
+          "source": "slug:sam-ruled-story-intake-question",
+          "quote": "every CPL story collection now asks \"What changed in your work or career path?\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "cbb81b18-253b-44c7-8e1e-40e4565d2c17",
+      "slug": "a-bound-is-tested-by-value-not-the-clamp-count",
+      "kind": "pitfall",
+      "title": "How many were HELD at the cap and how many RECEIVE the cap are different numbers",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "KB note exists and the Santa Ana case is still recorded in code; ncModel() is retired but the one-pool solver still exposes floored/capped maps (funding_effective.js prints their counts), so the count-vs-value distinction applies unchanged.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:4673",
+          "quote": "Santa Ana's unclamped proportional noncredit award solves to $100,000.00"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md",
+          "quote": "file exists on disk"
+        },
+        {
+          "source": "scripts/funding_effective.js:162",
+          "quote": "String(Object.keys(m.floored).length).padStart(8) + String(Object.keys(m.capped).length).padStart(9)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7f5b0fd4-9b3f-4905-b36e-6c4bf4bff4bf",
+      "slug": "sam-do-not-hand-apply-his-data-the-tab-must-save-it",
+      "kind": "decision",
+      "title": "Sam: do not fix his data by hand — the tab has to be the thing that saves it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The quote is in the lessons doc and the lane restates it (dated there 2026-09-01, vs this row's 2026-08-28 — possibly said twice); Sam's verified 2026-09-01 ruling repeats it: the dials are his to enter through the tab, never session SQL.",
+      "evidence": [
+        {
+          "source": "docs/cpl_funding_lessons.md:637",
+          "quote": "\"I don't want you to fix it; I want the tab to save it.\" He was right — my write would have masked the very thing under test."
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:32",
+          "quote": "SET THE DIALS THROUGH THE TAB — ruled 2026-09-01 (\"I don't want you to fix it; I want the tab to save it\")"
+        },
+        {
+          "source": "slug:sam-ruled-three-bands-and-the-accepted-dials",
+          "quote": "The dials are HIS to enter through the tab, never session SQL."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "120ec35c-901b-46f7-8582-8cfc49071688",
+      "slug": "fixing-who-may-write-does-not-rescue-what-was-already-written",
+      "kind": "pitfall",
+      "title": "Granting write access does not move the work already sitting in a local fallback",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "promoteScenarioToShared() (its comment records the 2026-08-28 losses), the standing 'This browser holds changes nobody else can see.' notice and the Publish button are on disk; KB note exists.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:2546",
+          "quote": "function promoteScenarioToShared() { if (!hasLocalOnlyEdits()) { render(); return; }"
+        },
+        {
+          "source": "cpl_funding.js:3604",
+          "quote": "This browser holds changes nobody else can see."
+        },
+        {
+          "source": "cpl_funding.js:3613",
+          "quote": "Publish this browser's changes</button>"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e4c6b0ad-f5c2-4ab5-9b72-47e0f5f3fbaf",
+      "slug": "a-screen-and-its-export-share-a-scope-not-a-shape",
+      "kind": "pitfall",
+      "title": "Deleting a spreadsheet column to match the screen can throw away the number",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The divergence is commented at the export site ('scope, not shape') and the KB note exists; under one-pool the CSV still carries the NC award column beside the CR award.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:3255",
+          "quote": "export keeps every fact the screen holds (scope, not shape): FTES pair,"
+        },
+        {
+          "source": "cpl_funding.js:5883",
+          "quote": "{ key: \"nc_award\", label: \"NC award\", cls: \"\","
+        },
+        {
+          "source": "docs/kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md",
+          "quote": "file exists on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2488be56-b53b-4f4d-9eab-38f9a49d06be",
+      "slug": "a-conflicted-pr-cannot-produce-a-ci-run",
+      "kind": "pitfall",
+      "title": "A pull request with a merge conflict cannot run its checks at all",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The KB note is on disk and the claim is standard GitHub behavior (pull_request workflows run on the merge commit); nothing in the repo contradicts it. Not re-testable live from the sandbox, hence medium.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md",
+          "quote": "file exists on disk"
+        },
+        {
+          "source": "CLAUDE.md (Branch policy)",
+          "quote": "Only `blocked`, `dirty` (conflict) or `behind` gate beyond that."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "46785276-d135-433e-89fd-db4f85dd999f",
+      "slug": "when-two-implementations-agree-on-live-data-a-test-proves-nothing",
+      "kind": "pitfall",
+      "title": "A test written against real data can pass for both the right approach and the wrong one",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The mutation-proof guard is on disk: cpl_funding_statutory_goals.test.js renames the transcribed priority 'Access: renamed by a curator' and asserts it still funds (B); the KB note exists.",
+      "evidence": [
+        {
+          "source": "tests/cpl_funding_statutory_goals.test.js:114",
+          "quote": "commit(win, target, \"Access: renamed by a curator\");"
+        },
+        {
+          "source": "tests/cpl_funding_statutory_goals.test.js:119",
+          "quote": "/Access: renamed by a curator/.test(bAfter) && !/renamed by a curator/.test(aAfter));"
+        },
+        {
+          "source": "docs/kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md",
+          "quote": "file exists on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9f62a59d-bd67-40b9-8df1-6289454f6f68",
+      "slug": "sam-workplan-goals-are-not-a-rival-vocabulary-to-78093",
+      "kind": "decision",
+      "title": "Sam: the Workplan's goals are not a rival to the new law — they are how its outcomes get delivered",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The correction is in the lessons doc and the code carries it as the design of registerProjects()/projectGoals(): the statutory-goal tag is an explicit, additive curator tag whose absence is never treated as a register fault.",
+      "evidence": [
+        {
+          "source": "docs/cpl_funding_lessons.md:728",
+          "quote": "The Workplan register's goals are not a rival vocabulary. … They were set before §78093.2 existed, align with the CPL Workplan and Vision 2030"
+        },
+        {
+          "source": "cpl_funding.js:4401",
+          "quote": "a project's contribution to a statutory goal is a judgment about what the work DELIVERS, so it is an explicit curator tag rather than a string match"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "eb310260-0984-4a8d-b2bd-56d46878fd5e",
+      "slug": "sam-a-no-noncredit-row-is-a-data-quality-instrument",
+      "kind": "decision",
+      "title": "Sam: show a row even for colleges with no noncredit program, so they can tell us we are wrong",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The instrument survives in the one-pool table as the NC award CELL, not a second row: ncAwardCellHtml() renders '$0 none on record' with a report-a-data-error hover quoting Sam's rationale. The three NC row shapes and the seven-college list are dated (rows retired with one-pool).",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:6490",
+          "quote": "Sam's data-quality instrument (2026-08-28): a zero row is a CHECKABLE claim — \"if they disagree and say, Yes, we have NC, we can find the error and fix it.\""
+        },
+        {
+          "source": "cpl_funding.js:6495",
+          "quote": "'<span class=\"sub\">none on record</span></td>';"
+        },
+        {
+          "source": "docs/cpl_funding_lessons.md:732",
+          "quote": "The no-NC row is a data-quality instrument, not a layout nicety"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "568eecf5-6c26-4c24-8263-251fa662e0b4",
+      "slug": "the-funding-curator-round-trip-is-proven",
+      "kind": "milestone",
+      "title": "A curator's edit on the Funding tab does reach the database — settled, stop re-checking",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Milestone on main (#1372) and the live config still shows the published state: Year-1 titles 'Access: Outreach' (0), 'Completion' (1), 'Access: Statewide' (2), priorityOrder [2,0,1], last written by slee@cccco.edu on 2026-09-02.",
+      "evidence": [
+        {
+          "source": "git log HEAD",
+          "quote": "38e5e4fd Curating funding requires a magic-link reviewer, not the team phrase (#1372)"
+        },
+        {
+          "source": "sql: cpl_funding_config.default",
+          "quote": "yearPriorities.1 titles: \"Access: Outreach\" / \"Completion\" / \"Access: Statewide\"; priorityOrder [2,0,1]; updated_by slee@cccco.edu, updated_at 2026-09-02"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "768f8f78-3ba2-4d68-b9f1-d8d9c3c978c2",
+      "slug": "same-basis-rule-includes-the-lane-slice",
+      "kind": "pitfall",
+      "title": "Cap and target must share the lane slice",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "prioTarget()'s students path routes laneShareOf(c).nc/.cr; laneShareOf() is on disk; the basis and cap suites reference it and check_floor.json pins them at 38 and 53 checks.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:1657",
+          "quote": "if (c) laneFrac = (p && p.lane === \"nc\") ? laneShareOf(c).nc : laneShareOf(c).cr;"
+        },
+        {
+          "source": "cpl_funding.js:1497",
+          "quote": "function laneShareOf(c) {"
+        },
+        {
+          "source": "tests/check_floor.json",
+          "quote": "\"cpl_funding_basis.test.js\": 38, … \"cpl_funding_cap.test.js\": 53"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "09d882b0-db04-4570-8b59-eef0b365ab21",
+      "slug": "key-migration-writers-fail-silently",
+      "kind": "pitfall",
+      "title": "Key migrations: find every writer",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both guards on disk: U5 (?college= opens the drill-in, highlights the row, survives re-render) in gate_ledger_public; F1b (the chip opens the attestation form) in optin.",
+      "evidence": [
+        {
+          "source": "tests/cpl_funding_gate_ledger_public.test.js:304",
+          "quote": "U5: ?college= opens that college's drill-in"
+        },
+        {
+          "source": "tests/cpl_funding_optin.test.js:231",
+          "quote": "F1b: clicking the chip opens that row's attestation form (name field present)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d45b3af5-2f1d-4104-acb6-4c86c58a5f65",
+      "slug": "explainer-static-prose-stale-after-live-painting",
+      "kind": "pitfall",
+      "title": "The live-painted explainer still asserts the old model in two static prose passages",
+      "verdict": "superseded_by_row",
+      "confidence": "medium",
+      "reason": "Fixed in #1434 (both passages now paint from the payload; the factor sentence is conditional on the live factors) and the later row corrects this row's diagnosis: the factor claim was a consumer default, not static prose. The lesson itself survives in the KB note.",
+      "evidence": [
+        {
+          "source": "git log HEAD",
+          "quote": "64f9012f Rewrite the explainer's prose, and fix the four claims it was getting wrong (#1434)"
+        },
+        {
+          "source": "funding-model/index.html:722",
+          "quote": "? \"All three factors are currently set to 1.0, so each priority is priced at the state rate and \""
+        },
+        {
+          "source": "tests/funding_model_page.test.js:266",
+          "quote": "changing the funding factors moves the figure the page prints"
+        },
+        {
+          "source": "slug:a-defaulted-field-looks-computed-and-never-moves",
+          "quote": "Diagnosed at S217 as stale static prose; the real cause was that _prios() never emitted `factor`"
+        }
+      ],
+      "superseded_by": "a-defaulted-field-looks-computed-and-never-moves",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6dacfbec-daa1-44ed-9774-eccda48a7c77",
+      "slug": "grouping-a-flat-list-breaks-single-container-wiring",
+      "kind": "pitfall",
+      "title": "Regrouping a flat list into containers silently kills every querySelector that assumed one",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The fix is on disk (the reorder wiring spans every grid via querySelectorAll) and cards are addressed by data-priocard; the bands suite and the KB note exist. `related` names a lane, not a slug.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:8448",
+          "quote": "document.querySelectorAll(\"#cplFundingMount .cplfund-prio\"));"
+        },
+        {
+          "source": "tests/cpl_funding_statutory_bands.test.js:39",
+          "quote": "const cardsIn = (el) => Array.from(el.querySelectorAll(\"[data-priocard]\"));"
+        },
+        {
+          "source": "docs/kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md",
+          "quote": "file exists on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "implementation-funding",
+          "to": "docs/reference/lanes/implementation-funding.md"
+        }
+      ]
+    },
+    {
+      "id": "3e6454d1-b064-4719-bc48-edb9151815cb",
+      "slug": "a-measure-everyone-clears-pays-automatically",
+      "kind": "fact",
+      "title": "The funding model pays 34% of its cap, and 84% of that is an automatic payment",
+      "verdict": "snapshot",
+      "confidence": "medium",
+      "reason": "A measurement the lane repeats as of 2026-09-01 with 're-run it after the dials move'; the 2026-09-03 under-10 re-bake already moved Access (57 masked-count colleges now earn where 54 earned nothing), so the figures have drifted. Re-measuring needs the live config plus a custom engine boot.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:26",
+          "quote": "the credit slice paid 34.0% of its cap and 84% of everything earned came from Access: Outreach, which 97 of 115 colleges max out"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:28",
+          "quote": "57 small-portal colleges earn on Access where 54 had earned nothing"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-measure-everyone-clears-incentivizes-nothing.md",
+          "quote": "file exists on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "implementation-funding",
+          "to": "docs/reference/lanes/implementation-funding.md"
+        }
+      ]
+    },
+    {
+      "id": "4b574766-fd5a-4e0a-9e9f-58e8d69e5fe4",
+      "slug": "read-a-tables-cells-by-header-not-by-position",
+      "kind": "pitfall",
+      "title": "The positional-cell lesson recurred, so the read is header-keyed now",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "tests/cpl_funding_metric_pin.test.js builds a header-to-key map from the table's own <th> row and throws on an unmapped column; detail_trim shares the reader.",
+      "evidence": [
+        {
+          "source": "tests/cpl_funding_metric_pin.test.js:79",
+          "quote": "if (!k) throw new Error(\"unmapped detail column: \" + th.textContent.trim());"
+        },
+        {
+          "source": "tests/cpl_funding_metric_pin.test.js:51",
+          "quote": "P1, P2, P3 in document order. Their CELLS are read by HEADER NAME, not by"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9ba97891-34de-4834-a669-8d84e36d4c02",
+      "slug": "a-grid-item-table-scrolls-its-own-columns-out-of-view",
+      "kind": "pitfall",
+      "title": "A table nobody read was laid out into a 240px column, not missing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The span rule is in the injected CSS and T1e/T1e2/T1e3 guard the parentage and the rule; the KB note exists under the name methodology-a-grid-item-sized-to-its-content-overflows-its-track.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:426",
+          "quote": ".cplfund-detail-grid > .cplfund-dtl-tscroll, .cplfund-detail-grid > .cplfund-optin, .cplfund-detail-grid > .cplfund-notewrap { grid-column: 1 / -1; }"
+        },
+        {
+          "source": "tests/cpl_funding_detail_trim.test.js:92",
+          "quote": "T1e: the priority table is a DIRECT child of the detail grid"
+        },
+        {
+          "source": "tests/cpl_funding_detail_trim.test.js:94",
+          "quote": "T1e2: …and the injected CSS spans it across every grid column"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ffb3654e-7c75-404e-964c-82fb855b5683",
+      "slug": "two-funding-tab-consolidations-await-sams-verdict",
+      "kind": "question",
+      "title": "Two funding-tab consolidations are waiting on Sam, with the redundancy measured",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "Ruled the same day ('Yes, consolidate as you recommend'; 'Incorporate flat ledger while preserving a way to click into details') and shipped in #1433; the lane lists both as live.",
+      "evidence": [
+        {
+          "source": "slug:sam-ruled-both-funding-tab-consolidations",
+          "quote": "(1) \"Yes, consolidate as you recommend\" — the goal spine folds into the priority bands. (2) \"Incorporate flat ledger while preserving a way to click into details.\""
+        },
+        {
+          "source": "git log HEAD",
+          "quote": "8416b3d0 Fold the goal spine into the bands, and flatten the funding ledger (#1433)"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:22",
+          "quote": "the (d)(2) goal spine is a fold one click down … Flat ledger with every dial still editable"
+        }
+      ],
+      "superseded_by": "sam-ruled-both-funding-tab-consolidations",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9379913b-6e3a-431f-9234-9f47b7a1f6dc",
+      "slug": "one-resolver-for-two-surfaces-that-describe-the-same-thing",
+      "kind": "pitfall",
+      "title": "Two surfaces describing one goal need one function, or they drift",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "goalEvidence()/goalLimitHtml()/goalFundsHtml() exist and the statutory-goals suite asserts goal (C) reads the same on its band and in the (d)(2) account.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:4484",
+          "quote": "function goalEvidence(f) {"
+        },
+        {
+          "source": "cpl_funding.js:4513",
+          "quote": "function goalLimitHtml(gkey) {"
+        },
+        {
+          "source": "tests/cpl_funding_statutory_goals.test.js:133",
+          "quote": "goal (C) reports NO performance measure … :137 goal (C) has an evidence line on its band"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f3e27852-2516-4fa5-82d1-0d1f5ee00eee",
+      "slug": "a-control-surface-can-look-like-a-display",
+      "kind": "pitfall",
+      "title": "A control surface can look like a display, and flattening it prints the values",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The class-vocabulary defense is commented in the CSS ('.cplfund-card names a ROLE') and cpl_funding_ledger_editable.test.js (floor 26 checks) guards that every dial is still an input; the lane confirms the ledger is editable.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:190",
+          "quote": "ROLE (a labelled figure), not a shape — so every editor, control, fold"
+        },
+        {
+          "source": "tests/check_floor.json",
+          "quote": "\"cpl_funding_ledger_editable.test.js\": 26"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:22",
+          "quote": "Flat ledger with every dial still editable (cpl_funding_ledger_editable.test.js)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "68ded1b7-225e-4fe4-a357-24f24d5561fd",
+      "slug": "a-money-only-guard-misses-non-currency-figures",
+      "kind": "pitfall",
+      "title": "A guard scoped to dollar signs misses every figure that is not currency",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The extended guard is on disk: funding_model_page.test.js fails on any unpainted thousands-separated number in the prose and checks the factors via a dial change.",
+      "evidence": [
+        {
+          "source": "tests/funding_model_page.test.js:56",
+          "quote": "A thousands-separated number (1,069,182) not already inside an id-bearing tag."
+        },
+        {
+          "source": "tests/funding_model_page.test.js:63",
+          "quote": "check(\"no unpainted thousands-figure in the prose\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "935141a9-0a09-4d27-a370-ae08715d48a9",
+      "slug": "a-defaulted-field-looks-computed-and-never-moves",
+      "kind": "pitfall",
+      "title": "A field defaulted in the consumer looks computed and never moves",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "_prios() now emits factor (its comment records the 2026-09-01 gap); the payload's `p.factor == null ? 1 : p.factor` default remains but is fed; the dial-change guard is in funding_model_page.test.js; the lane says _prios() emits factor.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:8896",
+          "quote": "THE FACTOR WAS MISSING FROM THIS PROJECTION until 2026-09-01, and its absence was invisible because every consumer defaulted it to 1."
+        },
+        {
+          "source": "funding_model_payload.js:88",
+          "quote": "factor: p.factor == null ? 1 : p.factor,"
+        },
+        {
+          "source": "tests/funding_model_page.test.js:266",
+          "quote": "changing the funding factors moves the figure the page prints"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ead67e20-5f18-4f6f-8417-eb08ed02a11d",
+      "slug": "the-explainer-inherits-the-browsers-what-if-overlay",
+      "kind": "fact",
+      "title": "The explainer shows a curator's unpublished what-if in their own browser",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Keys and hooks on disk: WHATIF_KEY cpl_funding_whatif_v3 / SELECTION_KEY cpl_funding_selection_v1; onModelChange exported; funding-model/index.html boots the same engine (embed mode) and subscribes to it.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:890",
+          "quote": "var WHATIF_KEY = \"cpl_funding_whatif_v3\"; … var SELECTION_KEY = \"cpl_funding_selection_v1\";"
+        },
+        {
+          "source": "cpl_funding.js:8845",
+          "quote": "onModelChange: function (fn) {"
+        },
+        {
+          "source": "funding-model/index.html:811",
+          "quote": "onModelChange is the same … :819 window.CPL_FUNDING_EMBED = \"college\";"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "586e7aca-e549-43a9-9a52-a63f3fbed020",
+      "slug": "a-remembered-toggle-hides-the-default-from-its-author",
+      "kind": "pitfall",
+      "title": "A remembered toggle hides the default from its author",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "SEC_STATE lives in memory, SEC_STORE_RETIRED 'cplfund_sections_v2' is cleared on load, saveSectionState writes no localStorage; L2 seeds the retired store before boot; the KB note exists. Its `related` slug does not exist in cpl_memory.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:5921",
+          "quote": "var SEC_STORE_RETIRED = \"cplfund_sections_v2\";"
+        },
+        {
+          "source": "cpl_funding.js:5929",
+          "quote": "function saveSectionState(id, open) { SEC_STATE[id] = !!open; }"
+        },
+        {
+          "source": "tests/cpl_funding_lead_with_the_table.test.js:85",
+          "quote": "L2: an open-state saved by an earlier visit does NOT reopen anything — the v2 store is retired"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "the-text-a-reader-sees-is-not-the-text-a-test-reads",
+          "to": "docs/kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md"
+        }
+      ]
+    },
+    {
+      "id": "b7e7a82e-b581-4c02-b026-6b7433a72af4",
+      "slug": "show-the-engines-rendering-not-a-copy-of-its-rows",
+      "kind": "procedure",
+      "title": "When a page already runs the engine, embed its rendering instead of repainting a copy",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "embedMode() is on disk; funding-model/index.html sets CPL_FUNDING_EMBED = 'college'; L7 in lead_with_the_table drives the flag; the lane says the explainer hosts the tab's own college section in embed mode.",
+      "evidence": [
+        {
+          "source": "cpl_funding.js:2488",
+          "quote": "function embedMode() { … return window.CPL_FUNDING_EMBED === \"college\";"
+        },
+        {
+          "source": "funding-model/index.html:819",
+          "quote": "window.CPL_FUNDING_EMBED = \"college\";"
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:24",
+          "quote": "it hosts the tab's own college section in embed mode (window.CPL_FUNDING_EMBED = \"college\")"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "60ec9984-3fd0-496c-a754-fd5e04c38b58",
+      "slug": "the-old-public-funding-page-awaits-retirement",
+      "kind": "question",
+      "title": "Should cpl_funding_public.html become a redirect to the explainer?",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Still open: the lane (updated 2026-09-03) carries it as NEEDS SAM ④ and cpl_funding_public.html is still the tab in public mode (CPL_FUNDING_PUBLIC = true, loads cpl_funding.js), not a redirect.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:32",
+          "quote": "④ Confirm the explainer as the one public view … retire cpl_funding_public.html to a redirect to funding-model/ (recommendation: yes)"
+        },
+        {
+          "source": "cpl_funding_public.html:182",
+          "quote": "window.CPL_FUNDING_PUBLIC = true;"
+        },
+        {
+          "source": "cpl_funding_public.html:199",
+          "quote": "<script src=\"cpl_funding.js\"></script>"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8318c897-115e-4ed5-bb88-3215ae1d06e3",
+      "slug": "lifecycle-booleans-live-on-student-aggregated-view",
+      "kind": "fact",
+      "title": "The six CPL lifecycle checks are boolean columns on View_StudentAggregatedValues_APIDataset",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Structure holds: fetch_custom_report.py pulls the view with the six booleans daily (#1437 on main). Counts are a 2026-09-02 snapshot. The detail's 'no consumer reads the six yet' is outdated: the builder reads Counselor_Verified for pac since #1438 (live 2026-09-03).",
+      "evidence": [
+        {
+          "source": "fetch_custom_report.py:79",
+          "quote": "\"viewName\": \"View_StudentAggregatedValues_APIDataset\","
+        },
+        {
+          "source": "fetch_custom_report.py:112",
+          "quote": "\"Counselor_Verified\", \"Student_Verified\", \"Transcribed\"]"
+        },
+        {
+          "source": "funding/_build_funding_performance.py:488",
+          "quote": "ACCEPT_CANDIDATES = (\"Counselor_Verified\", \"Counselor Step\", \"Counselor\","
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:26",
+          "quote": "pac/pac_u = applied units on a counselor-verified plan — LIVE and PUBLISHED since the 2026-09-03 run"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1ec5929d-e5b4-4ce1-914f-e0becdbadb6f",
+      "slug": "what-sets-student-verified-vs-counselor-verified",
+      "kind": "question",
+      "title": "What sets Student_Verified versus Counselor_Verified on the student aggregated view?",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "Resolved the same day by Sam's verified ruling: Counselor_Verified alone is the accepted step pac reads; the builder implements it (#1438) and the lane records it live since 2026-09-03. What sets Student_Verified is still unread, but no consumer waits on it.",
+      "evidence": [
+        {
+          "source": "slug:sam-confirmed-counselor-verified-is-the-funding-attestation",
+          "quote": "Confirms Counselor_Verified … as the accepted step the pac measure reads, Counselor alone (not Counselor and Student together)."
+        },
+        {
+          "source": "funding/_build_funding_performance.py:481",
+          "quote": "Counselor ALONE: `Student_Verified` is a"
+        },
+        {
+          "source": "git log HEAD",
+          "quote": "dc21e6e2 Read the counselor step: Counselor_Verified leads the funding builder's sweep (#1438)"
+        }
+      ],
+      "superseded_by": "sam-confirmed-counselor-verified-is-the-funding-attestation",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ad8edc2c-19c1-4457-a908-eaaf13f48306",
+      "slug": "transcribed-check-vs-units-fork-at-student-grain",
+      "kind": "pitfall",
+      "title": "The Transcribed boolean on the student aggregated view exceeds rows with transcribed units by 2,887",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The ruling it rests on is a verified row (transcribed-means-units-not-the-tick, Sam Lee, 2026-08-19) and the builder scores p3 on units (tcr > 0), never the boolean; of the six booleans only Counselor_Verified is read. The 17,342 / 14,455 counts are a dated measurement.",
+      "evidence": [
+        {
+          "source": "slug:transcribed-means-units-not-the-tick",
+          "quote": "RULING: transcribed is counted from UNITS only. The plan tick is student-level context and is ignored for counting"
+        },
+        {
+          "source": "funding/_build_funding_performance.py:721",
+          "quote": "(\"p3\", tcr > 0 and not is_potential),"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "31772125-80a4-4537-abf8-7624f8fa190d",
+      "slug": "a-masked-key-beside-a-raw-one-reads-as-a-data-anomaly",
+      "kind": "pitfall",
+      "title": "A suppressed per-college key beside an unsuppressed one reads as a data anomaly that does not exist",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane confirms the event and outcome (masked ppe scored as f=0; 54 colleges earned nothing; zero true rows at either grain) and the probe now counts applied-without-eligible every run. The causing mechanism was then changed by #1439 (NO_SUPPRESS retired, units never masked).",
+      "evidence": [
+        {
+          "source": "kb/_probe_lifecycle_checks.py:528",
+          "quote": "Funnel consistency at this grain: APPLIED units with NO eligible units."
+        },
+        {
+          "source": "docs/reference/lanes/implementation-funding.md:28",
+          "quote": "57 small-portal colleges earn on Access where 54 had earned nothing (their masked ppe scored as f=0 … zero such rows exist at either grain)"
+        },
+        {
+          "source": "funding/_build_funding_performance.py:830",
+          "quote": "NO_SUPPRESS = set()"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b44c3941-b59f-4331-a1b2-494082b1fe2c",
+      "slug": "a-suppression-floor-lives-in-test-fixtures-as-well-as-code",
+      "kind": "pitfall",
+      "title": "A suppression floor lives in test fixtures as well as in code",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "SUPPRESS_BELOW = 10 with Sam's 2026-09-03 rationale in the builder; NO_SUPPRESS retired; public-dollar labels built from PUBLIC_MONEY_FLOOR; check_floor.json carries 24 (applied), 25 (performance) and 10 (public_dollars); #1439 on main.",
+      "evidence": [
+        {
+          "source": "funding/_build_funding_performance.py:167",
+          "quote": "SUPPRESS_BELOW = 10  # raised 5 -> 10 (Sam, 2026-09-03: \"to conform with ferpa practices often"
+        },
+        {
+          "source": "cpl_funding.js:808",
+          "quote": "var PUBLIC_MONEY_FLOOR = 1000;"
+        },
+        {
+          "source": "tests/check_floor.json",
+          "quote": "\"cpl_funding_applied.test.js\": 24, \"cpl_funding_performance.test.js\": 25, \"cpl_funding_public_dollars.test.js\": 10"
+        },
+        {
+          "source": "git log HEAD",
+          "quote": "8914374a Funding counts mask under 10, units carry the money, public dollars coarsen (#1439)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

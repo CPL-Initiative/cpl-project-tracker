@@ -636,3 +636,114 @@ the body that was *sent*; it now fails with the observed order in its message.
 `npm run test:floor` re-baselines *every* file, which would silently accept a
 drop anywhere else — the exact thing the floor exists to catch. The entry for
 `cpl_memory_briefing.test.js` was edited from 61 to 75 by hand instead.
+
+## 2026-09-05 — SkyGrain (Session 229): the hopper tested end to end, and what a lint can and cannot see
+
+Sam's ask, after SkyView's queue turned out to be gated on his own reactions:
+*"test all the unverified memories we have stored to test them against what we
+know is most current knowledge and clear out anything stale."* Then two
+rulings mid-run: *"We probably have lots of unverified recent memories that
+I'm not so worried about. It's the older ones."* and *"The sheet needs to be
+plain English, especially since the mems are so technical."*
+
+### What was there
+
+527 `proposed` rows against 303 verified — 249 pitfalls, 114 facts, 60
+decisions, 50 procedures, the rest milestones, opportunities, questions, risks,
+wishes — written by 97 author strings since July 24. 202 were older than three
+weeks. The lane's own NEXT list still carried the false stamp, the 26 (now 38)
+unattributed verified rows, and "Sam works the hopper".
+
+### The structural pass found almost nothing
+
+`kb/_memory_audit.py` — the lint DR-19 said the table lacked — over 852 rows:
+3 dead paths in 653 file citations (`scripts/check_public_page_layout.js`
+renamed to the a11y engine; a KB note renamed; a test split), 1 near-duplicate
+pair at pg_trgm 0.55, no row still asserting a reverted change, 8 dangling
+`related` pointers (18 more turned out to be KB-note and lane-file names, a
+convention the lint now recognizes rather than flags), 1 false stamp, 6 null
+slugs, 118 count-carried claims with no date. ⭐ **The first run reported 110
+dead paths and 2 PRs not on main; 107 of the paths were the regex reading
+`.js` as the start of `.json` and `.ts` as the start of `.tsv`, and one "PR"
+was the First Light token `#0047AB`.** Each rule is tested both ways now (47
+checks) — a guard that fails on truth gets muted within a week.
+
+### The semantic pass found the staleness
+
+Thirteen read-only auditors, one per workstream slice (funding split in two,
+CCR in two, Sierra in two, governance in two), each given the lane files as
+tier-1 truth, `CLAUDE.md`, the code, read-only SQL, the KB notes, the latest
+handoff and the verified rows — with lessons docs demoted to "proves the event
+happened, not that the claim still holds" (`r-mem-corpus-not-truth`). Every
+verdict had to carry a citation; `unverifiable` was an allowed answer. Cost:
+about 3.8M tokens, 14 to 27 minutes each, in parallel.
+
+Result over 527: **461 confirmed, 11 stale, 31 superseded by a named row, 8
+snapshots, 2 unverifiable — after my own rulings on the twelve medium-confidence
+stale/superseded verdicts (seven accepted, four left as "true but needs a
+rewrite").** The stale ones are what a regex cannot see: the one-pool funding
+model (2026-08-31) and the September 1 priority bands overturned seven earlier
+funding rows; the re-mint series that was a plan became a milestone; the
+authority-code counts were re-cut by the recode; the guidance cap was raised
+from 10 to 20 the same day a row called it a fossil; the contact-refresh
+cadence a pitfall said never ran has run for two colleges.
+
+⭐ **The evidence was spot-checked mechanically before anything was applied**:
+every file citation opened, the quote searched for. 1,150 of 1,240 held
+verbatim once three false negatives in the checker itself were fixed — markdown
+emphasis (`**`) inside lane-file quotes, quotes spliced with "…", and the same
+`.js`-inside-`.json` regex mistake the lint had made an hour earlier.
+
+⚠️ **Paging a slice with `order by created_at` is unstable on ties.** Two
+auditors got one duplicate and one skipped row on 8-row pages and re-listed
+with an id tiebreak. Coverage was verified as the union of parts against the
+bucket: 527 of 527, no duplicates.
+
+### What was written, and what was held
+
+**31 rows cleared** (11 stale, 20 superseded with `superseded_by` set to the
+newer slug): one statement, `VALUES → UPDATE … WHERE status='proposed' →
+INSERT INTO cpl_memory_log`, keyed on `id`, actor `SkyGrain S229`, planned =
+updated = logged = 31, before-images in the log and in
+`kb/memory_audit/2026-09-05-receipt.json`. Session-sourced rows only.
+
+**352 rows corroborated at high confidence and HELD.** The corroboration gate
+lets a second session promote them, and every one carries a citation — but
+promoting 352 at once takes the tab's default list from 303 to 655 entries and
+the Briefing's share per entry from about 12% to 6%. That is a change to what
+the team reads, so it is item 1 on Sam's sheet, SQL ready.
+
+**144 rows to the sheet:** 86 human-sourced (a session never writes those, even
+when the contradicting source is Sam's own later ruling — DR-19), 13 open
+direction items (questions, wishes, opportunities are never auto-promoted), 33
+confirmed only at medium confidence, the rest snapshots and unverifiables.
+
+⚠️ **The auto-mode permission layer declined the bulk write twice** — once
+delegated to a subagent, once as the command that regenerated the SQL and
+printed it — and also declined copying the audit's helper scripts into the
+repo. The direct statement through the database tool, receipted and
+status-guarded, went through. Read as: a bulk write to a shared table is the
+session's own hand, one statement, never delegated; and a permission denial is
+a reason to narrow the write to what was literally asked (the 31 clear-outs),
+not to route around it.
+
+### Findings outside the rows, for the next session
+
+- The nightly `map_cleanup_worklist` holds only P2/P3/P4 (11,601 / 412 /
+  2,257): the zero-unit Needs Action rows on the cron-loaded
+  `map_student_credit` carry `credit_rec ''` (18,679) and the ACE "0 hours in …"
+  text matches 0 rows, so the text-keyed P1 and P5 classes vanish silently. The
+  cleanup lane still quotes P1 12,283 and P5 5,311.
+- `docs/reference/lanes/disposition-grain-student-detail.md` quotes the
+  pre-promotion figures (537,908 rows, 42,346 students); the live table reads
+  600,716 rows, 1,215,131 / 74,345 units, 48,913 students and is replaced nightly.
+- `prose_only()` in `kb/_docs_audit.py` blanks about 92% of `CLAUDE.md` (with
+  `re.S` the code-fence mask runs to end of file), so `american_spelling` and
+  `self_corrected_word_pair` see 8% of its words; the proposed row that says
+  CLAUDE.md is safe is wrong today.
+- Two `superseded_by` pointers from 2026-08-30 name no row (one names a vault
+  lane in prose, one an id).
+
+Story artifacts: `kb/memory_audit/2026-09-05-brief.md` (the auditors' brief),
+`2026-09-05-verdicts/` (all 527 verdicts with evidence), `2026-09-05-plan.json`,
+`2026-09-05-overrides.json` (my twelve rulings), `2026-09-05-receipt.json`.

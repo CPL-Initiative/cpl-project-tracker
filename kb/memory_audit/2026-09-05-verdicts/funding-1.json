@@ -1,0 +1,1550 @@
+{
+ "part": "funding-1",
+ "expected_rows": 55,
+ "coverage": {
+  "rows_read": 55,
+  "rows_judged": 55,
+  "note": "All 55 rows read and judged. The brief's offset paging duplicated one row across pages 2-3 (created_at ties), so the slice was re-listed with a deterministic order (created_at, id) to recover the 55th row (raising-the-ftes-rate-lowers-the-target). DB access was read-only SELECTs; no repo file edited."
+ },
+ "counts": {
+  "confirmed": 41,
+  "stale": 6,
+  "superseded_by_row": 8,
+  "snapshot": 0,
+  "unverifiable": 0
+ },
+ "verdicts": [
+  {
+   "id": "3f4211cf-e23d-4d96-8019-5c11de99682d",
+   "slug": "sweep-every-site-when-decoupling-a-computed-value",
+   "kind": "pitfall",
+   "title": "If the same number is worked out in several places, changing one leaves the others wrong",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Lesson (sweep every call site of a duplicated formula; grep the formula) still stands. The worked example's rural allowance was retired 2026-08-22, but the event and the catch are on record: PR #925 on main, the third-earned-site catch in the archive lessons.",
+   "evidence": [
+    {
+     "source": "git log origin/main (#925)",
+     "quote": "df4ef823 Implementation Funding PR4: combine the floor with the rural bump (guaranteed floor-fill) (#925)"
+    },
+    {
+     "source": "docs/cpl_funding_lessons_archive.md:1344",
+     "quote": "The adversarial review earned its keep — it caught a THIRD earned site I missed. 475 green tests +"
+    },
+    {
+     "source": "cpl_funding.js:1162",
+     "quote": "RURAL CARVE-OUT RETIRED 2026-08-22 (Sam). ruralCarve/ruralPerCollege/"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7799440d-6530-43f6-8dac-a645e707f5d7",
+   "slug": "funding-rural-allowance-guaranteed-floor-first",
+   "kind": "decision",
+   "title": "The rural allowance is guaranteed and funds the rural college's floor first",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "Overturned: the $1M rural carve-out was retired 2026-08-22 (#1297) and folded into the pool; the one-pool model (2026-08-31) has no rural mechanism at all. Only the rural flag survives, as federal context that moves no funding.",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:64",
+     "quote": "2026-08-22 — THE RURAL CARVE-OUT IS RETIRED (Sam). It was a $1,000,000 guaranteed earmark split 13 ways ($76,923 each)"
+    },
+    {
+     "source": "cpl_funding.js:1162-1165",
+     "quote": "RURAL CARVE-OUT RETIRED 2026-08-22 (Sam). ruralCarve/ruralPerCollege/ruralPoolDistributed/ruralAlloc/ruralWindow, the Rural section, the 🌲 chip"
+    },
+    {
+     "source": "git log origin/main (#1297)",
+     "quote": "789cec2b Retire the rural carve-out; raise the minimum to $175,000 (#1297)"
+    },
+    {
+     "source": "slug:one-pool-model-adopted",
+     "quote": "$25.24M to 118 institutions sized by credit+noncredit FTES, floor $150K / cap $400K per institution combined"
+    }
+   ],
+   "superseded_by": "rural-allowance-was-the-pools-only-unconditional-money",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c53003f7-001e-490b-b1e2-858325189662",
+   "slug": "funding-35m-apportionment",
+   "kind": "fact",
+   "title": "The 2026-27 $35M CPL apportionment breakdown",
+   "verdict": "stale",
+   "confidence": "high",
+   "reason": "Contradicted: ledger, data file and lane tie to the BOG amendment — $25,240,308 to institutions, $800,000 CO staff, $8,959,692 CPL Projects; no $1.2M admin, no $6,559,693 P&I, no separate $1M NC line. The award range (avg $228,177 / max $694,273) predates every later model.",
+   "evidence": [
+    {
+     "source": "sql: select id,name,total from budget_funding where section='use_35m'",
+     "quote": "id 9 College Implementation Awards total 25240308; id 8 CO Staff — 2.0 FTE 800000; id 7 CPL Projects — $35M share 8959692"
+    },
+    {
+     "source": "cpl_funding_data.js:57",
+     "quote": "= $25,240,308  TO INSTITUTIONS                    ← amendment, ties to the penny"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "$25,240,308 · $150,000 base / $400,000 cap on the COMBINED award"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a8947204-bc8c-49f6-8835-23431102dfcf",
+   "slug": "ess-25-82-outcome-signals",
+   "kind": "procedure",
+   "title": "How each ESS 25-82 priority outcome is measured per college",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The three signals still run: vet_star for outcome 1, the statewide-adopter sidecar for outcome 2 (as_of 2026-09-04, 71 adopters), pe for outcome 3; the $50k x 118 receipt is in the ledger and 118+1 declined is pinned by a test. The 2026-07-29 counts (51/70/94) are dated.",
+   "evidence": [
+    {
+     "source": "funding/_build_funding_ess.py:8-10",
+     "quote": "Outcome 1 (JSTs) -> `vet_star` (>= 75% of enrolled veterans have a ... Outcome 3 (Proactive CPL) -> `pe`"
+    },
+    {
+     "source": "cpl_funding_ess.js:7-10",
+     "quote": "\"as_of\": \"2026-09-04\", ... \"n_statewide_credentials\": 84, \"n_adopters\": 71"
+    },
+    {
+     "source": "cpl_funding.js:7540",
+     "quote": "(as ESS 25-82 specifies) &mdash; they are not a compliance determination."
+    },
+    {
+     "source": "sql: budget_funding id 12",
+     "quote": "Implementation grants — $50,000 × 118 institutions, total 5900000"
+    },
+    {
+     "source": "tests/cpl_funding_pool.test.js:145",
+     "quote": "check(\"Q2: 118 recipients + 1 declined row\","
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "48dff45b-e7f1-4c3a-b39b-4c1a510de8bb",
+   "slug": "cpl-funding-plan-2026-29-bog-amendment",
+   "kind": "fact",
+   "title": "The 2026-29 CPL funding plan (Sept 2026 BOG amendment)",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "Line items match budget_funding, but the headline '$74M total' is the documented double-count ($71M true for the window; the ledger's sources now sum to $85M with the 2030-31 extension) and the 'differs from the tab' warning was resolved by #937. The line items live in the ledger.",
+   "evidence": [
+    {
+     "source": "sql: budget_funding sources",
+     "quote": "id 4 $15M (y25 15000000); id 6 $35M (total 35000000); id 5 $7M Operations 7000000 x 5 yrs total 35000000; uses tie: 25240308+800000+8959692 = 35M"
+    },
+    {
+     "source": "budget_ledger.js:18",
+     "quote": "Summing parents + children is exactly the shape of the Sept-2026 BOG"
+    },
+    {
+     "source": "git log origin/main (#937)",
+     "quote": "ab8002df Implementation Funding: the Sept-2026 BOG amendment becomes the pool authority (#937)"
+    },
+    {
+     "source": "slug:parent-child-ledger-totals",
+     "quote": "True total $71,000,000 ... +8,959,692 double-counted − 5,959,692 omitted = +3,000,000 exactly"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ec72735b-fd7e-4ded-9fea-ac9bd761f296",
+   "slug": "parent-child-ledger-totals",
+   "kind": "pitfall",
+   "title": "In a parent/child ledger, totals must sum PARENT rows only",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Enforced in the ledger renderer (parents-only totals) and documented as a published KB note; the live ledger nests project children under parent_id 13/15 whose parents sum to exactly $18,000,000.",
+   "evidence": [
+    {
+     "source": "budget_ledger.js:87-91",
+     "quote": "function isParent(r) { return r.parent_id == null; } ... function totalOf(rows) {   // rule (a) again: parents only"
+    },
+    {
+     "source": "docs/kb-notes/methodology-parent-child-ledger-totals.md",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "sql: budget_funding section='pool'",
+     "quote": "id 13 RCCD Projects 10556650 + id 15 CO/TBA 7443350 = 18,000,000; children carry parent_id 13 / 15"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "28a7eee8-4877-4742-b7ee-d4fa054b9e6e",
+   "slug": "bog-amendment-is-funding-authority",
+   "kind": "decision",
+   "title": "The Sept-2026 BOG amendment is the CPL funding authority",
+   "verdict": "superseded_by_row",
+   "confidence": "medium",
+   "reason": "The authority claim holds ($25,240,308 to institutions ties to the ledger and the data file), but the summary's carve-outs ($1M NC + $1M rural inside it, $23,240,308 main pool over 115) were overturned: rural retired 2026-08-22, one pool over 118 institutions adopted 2026-08-31.",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:88-93",
+     "quote": "the $25,240,308 to institutions is ONE pool over every institution — the 115 ... The noncredit carve-out and the three NC dials ... are RETIRED"
+    },
+    {
+     "source": "sql: budget_funding id 9",
+     "quote": "College Implementation Awards — 115 colleges & 4 noncredit: 12620154 + 12620154 = 25240308"
+    },
+    {
+     "source": "slug:one-pool-model-adopted",
+     "quote": "The two-lane carve-out model is superseded as design of record"
+    }
+   ],
+   "superseded_by": "one-pool-model-adopted",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "25ac96e9-c05b-4b74-9ec7-8dc8d69716a2",
+   "slug": "computed-total-as-detector",
+   "kind": "procedure",
+   "title": "Computing a total from its own years is a defect detector",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The ledger renders total = sum of years read-only wherever a row has years and editable only where it does not; the $15M source row now carries the appropriation once (out-years 0).",
+   "evidence": [
+    {
+     "source": "budget_ledger.js:25-26",
+     "quote": "total: computed or editable, decided by the data ... Where a row HAS a year breakdown, `total` is computed as Σ years and shown"
+    },
+    {
+     "source": "budget_ledger.js:86",
+     "quote": "function rowTotal(r) { return hasYears(r) ? sumYears(r) : num(r.total); }"
+    },
+    {
+     "source": "sql: budget_funding id 4",
+     "quote": "CPL Infrastructure & Scaling — $15M Prop 98: yr_2025_26 15000000, later years 0, total 15000000"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "1b44484c-145b-41fd-a71e-c2437686ab4c",
+   "slug": "two-installment-funding-story",
+   "kind": "fact",
+   "title": "Both original CPL asks were funded in two installments",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The ledger carries exactly this story: $15M (2025-26) + $35M (2026-27) one-time; $5M 2025-26 operations archived and $7M ongoing from 2026-27; the $59,692 N2N line and the $9,040,308 project share of the $15M. The verified m3 row corroborates.",
+   "evidence": [
+    {
+     "source": "sql: budget_funding",
+     "quote": "id 4 $15M Prop 98 2025-26; id 6 $35M Prop 98 2026-27/27-28; id 3 $5M Operations 2025-26 archived=true; id 5 $7M Operations from 2026-27"
+    },
+    {
+     "source": "sql: budget_funding section='use_15m'",
+     "quote": "id 10 N2N Lightleap — partial funding 59692; id 11 CPL Projects — $15M share 9040308; id 12 grants 5900000"
+    },
+    {
+     "source": "slug:m3 (verified)",
+     "quote": "2026–27 CPL funding secured: $7M ongoing + $35M one-time"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "dc4c9db2-2328-4b7c-8d0c-997f2ab686d7",
+   "slug": "default-payout-masks-the-gap",
+   "kind": "pitfall",
+   "title": "A default payout masks the data gap beneath it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lesson is a published KB note, both PRs landed, and current doctrine goes further: no advances anywhere, an unmeasured metric reads 'no data yet' and srcDelivered() reads an undelivered key as $0 — the default-pay path this pitfall warned about no longer exists.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "git log origin/main (#956, #957)",
+     "quote": "056cdb37 ... front-load earns the whole window against Year-1 targets (#956); 8ecb66d7 Funding actuals: join the colleges MAP spells with a different suffix (#957)"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:26",
+     "quote": "$0 earned until the origination feed reports (`srcDelivered()` reads an undelivered key as $0, never a cap)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "65f5f5db-301f-4206-8d57-0958b695b5ba",
+   "slug": "funding-baked-defaults-drift",
+   "kind": "pitfall",
+   "title": "The funding tab's built-in default settings have no way to stay current and can only go stale",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still true and now doctrine: the lane and a verified row say the baked defaults are stale by design; prioMetricSource() and metricDiagnosticHtml() are still in the code and the wiring test still exists.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "Baked defaults are stale by design; `mirrorYears` makes the stored Year-2 block inert (`cpl_funding_effective.test.js` guards the retired fields)"
+    },
+    {
+     "source": "slug:sam-live-funding-dials-2026-08-23 (verified)",
+     "quote": "The baked values in cpl_funding_data.js are stale BY DESIGN. Read the live config for any figure"
+    },
+    {
+     "source": "cpl_funding.js:1594, 3772",
+     "quote": "function prioMetricSource(slot, idx) ... function metricDiagnosticHtml()"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c09a6b58-fc6b-4f62-a384-a1c2ba7e9265",
+   "slug": "collision-checked-fuzzy-join",
+   "kind": "procedure",
+   "title": "Loose name matching is safe as long as you check that nothing matches twice",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The builder still stems a trailing institutional suffix only and keeps a stem only when exactly one entity reaches it; unresolved names go to an `unmatched` bucket.",
+   "evidence": [
+    {
+     "source": "funding/_build_funding_performance.py:145-146",
+     "quote": "then a collision-checked \"College\"/\"Community College\" STEM fallback (see _stem); unresolved colleges are emitted under \"unmatched\" for visibility"
+    },
+    {
+     "source": "funding/_build_funding_performance.py:323-330",
+     "quote": "Suffix-tolerant fallback, COLLISION-CHECKED: a stem is usable only when ... by_stem = {s: next(iter(t)) for s, t in stems.items() if len(t) == 1 and s}"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7848526b-4cb3-44fb-b410-39413342c3f1",
+   "slug": "ship-the-oracle-with-the-assumption",
+   "kind": "procedure",
+   "title": "When you cannot verify an assumption, ship the way to check it alongside",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The cross-check against MAP's own per-college credit totals is still in the daily builder and the note is published.",
+   "evidence": [
+    {
+     "source": "funding/_build_funding_performance.py:230-234",
+     "quote": "CREDIT_DIST_VIEW = \"View_CreditDistributionByCollege_APIDataset\" ... MAP's OWN per-college credit totals, used purely as a CROSS-CHECK."
+    },
+    {
+     "source": "funding/_build_funding_performance.py:1022",
+     "quote": "Cross-check our per-student unit sums against MAP's OWN published per-college"
+    },
+    {
+     "source": "docs/kb-notes/methodology-ship-the-oracle-with-the-assumption.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "49d1c46f-1c53-459d-b49b-e22e5320c58d",
+   "slug": "cpl-apportionment-value-2026-07-31",
+   "kind": "fact",
+   "title": "CPL is worth ~$19.4M/yr transcribed and ~$255M eligible at the 2026-27 credit rate",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "Re-measured on cpl_funding_performance.js (as_of 2026-09-04): statewide p3_u = 72,745.95 transcribed units ≈ 2,425 FTES ≈ $13.7M at $5,649.63 — not 103,139 units / $19.4M (−30%); pe_u = 1,391,077 ≈ $262M (row: $255M). The feed-not-CER lesson survives in the lessons doc.",
+   "evidence": [
+    {
+     "source": "cpl_funding_performance.js:7",
+     "quote": "\"as_of\": \"2026-09-04\""
+    },
+    {
+     "source": "cpl_funding_performance.js:18-23",
+     "quote": "\"pe_u\": 1391077.45, \"pa_u\": 216577.65, \"ppa_u\": 652.5, \"ppe_u\": 6605.5, \"pac_u\": 24698.95, \"p3_u\": 72745.95"
+    },
+    {
+     "source": "cpl_funding_data.js:134",
+     "quote": "\"ftes_rate_2026_27\": 5649.63"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c4234161-672a-4b0f-9b9d-bc1c4ef4567e",
+   "slug": "p1-scores-applied-not-eligible",
+   "kind": "decision",
+   "title": "Priority 1 scores APPLIED CPL units, not eligible",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "Overturned by Sam's 2026-09-01 ruling: priorities are Eligible 40% / Accepted (counselor-verified, pac) 25% / Transcribed 35% — no Applied priority. The live config (slee@, 2026-09-02) already scores 'Eligible CPL Units' on slot 0 and portal-origin applied (ppa_u) on Access.",
+   "evidence": [
+    {
+     "source": "sql: cpl_funding_config Scenario 1 yearPriorities.1",
+     "quote": "slot 0 title 'Access: Outreach', metric 'Eligible CPL Units measured in FTES'; slot 2 metric 'Applied units ... originating from either CPL Portal ...', metric_src 'ppa_u'"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:32",
+     "quote": "Accepted at 25% share / factor 1.0, starting set Eligible 40% · Accepted 25% · Transcribed 35%"
+    },
+    {
+     "source": "slug:sam-ruled-three-bands-and-the-accepted-dials (verified)",
+     "quote": "fold the four statutory outcomes into three bands, and set Accepted at 25% / factor 1.0"
+    }
+   ],
+   "superseded_by": "sam-ruled-three-bands-and-the-accepted-dials",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d7c0e687-30b5-4929-984f-7e22480b6845",
+   "slug": "omit-dont-zero-an-absent-measure",
+   "kind": "pitfall",
+   "title": "Omit, do not zero, a measure the source did not supply",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still the builder's rule (pac omitted, not zeroed, when the column is absent) and the lane's doctrine (absent-not-zeroed, NULL-never-defaulted); the KB note is published.",
+   "evidence": [
+    {
+     "source": "funding/_build_funding_performance.py:551",
+     "quote": "pac/pac_u omitted (not zeroed). Expected `Counselor_Verified` on"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:26",
+     "quote": "absent-not-zeroed; NULL-never-defaulted; `funding_origination_test.py`"
+    },
+    {
+     "source": "docs/kb-notes/methodology-omit-dont-zero-an-absent-measure.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a9ab7ebb-d5d1-42f6-871c-8ae71dbc4d51",
+   "slug": "quarter-colleges-use-1167-tlm",
+   "kind": "decision",
+   "title": "Colleges on quarters need 45 units per full-time student, not 30",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The code still applies TLM 11.67 to the two `quarter: true` colleges and 17.5 to the rest, deriving 45 vs 30 units per FTES; the ruling is cited in the code.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1671-1680",
+     "quote": "Term-length multiplier is per CALENDAR, Sam's ruling (2026-07-31): 17.5 for everyone except the quarter-system colleges, which use 11.67 ... 525/17.5 = 30, 525/11.67 = 45"
+    },
+    {
+     "source": "cpl_funding_data.js:1526, 1553",
+     "quote": "\"quarter\": true (two college rows)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cb348d63-57c1-4e1d-a8e4-3d68af26a3c4",
+   "slug": "three-kinds-of-zero",
+   "kind": "pitfall",
+   "title": "Three kinds of zero: absent, withheld, and measured",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "The WITHHELD state this pitfall centers on (measured but masked → pays $0) was designed out by ADR #1439 (2026-09-03): counts mask under 10, units are never masked, funding computes on true numbers; the <5 floor is gone. The 'enumerate what suppression costs' lesson survives in the ADR.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md",
+     "quote": "Unit sums are never masked; the money computes on the true numbers ... a masked count that earned nothing was a funding error dressed as a privacy measure"
+    },
+    {
+     "source": "docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md",
+     "quote": "Supersedes decision 2 (the floor of 5) and the units-follow-count practice"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:28",
+     "quote": "COUNTS MASK UNDER 10; UNITS CARRY THE MONEY; PUBLIC DOLLARS COARSEN (Sam, 2026-09-03, PR #1439"
+    },
+    {
+     "source": "slug:sam-public-view-masks-under-10-but-funding-computes-on-true-numbers (verified)",
+     "quote": "the public view masks student counts under 10; the FTES total and funding still compute on the true numbers"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "fd03f005-b847-4aa7-b075-5a863755cb09",
+   "slug": "no-feed-colleges-implementation-gap",
+   "kind": "fact",
+   "title": "The 9 no-feed funding colleges are an implementation gap, not a join failure",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Re-measured on cpl_funding_performance.js as_of 2026-09-04: all nine named colleges (Lake Tahoe, Imperial, LA Southwest, Rio Hondo, Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba) still have no college block; Barstow is present (pe 137). Sam's ruling stands.",
+   "evidence": [
+    {
+     "source": "cpl_funding_performance.js (grep -c '\"<short>\": {')",
+     "quote": "0 rows for each of Lake Tahoe, Imperial, Rio Hondo, Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba, LA Southwest; as_of 2026-09-04"
+    },
+    {
+     "source": "cpl_funding_performance.js:119-121",
+     "quote": "\"Barstow\": { \"pe\": 137, \"pe_u\": 4865.0, \"pa\": 137,"
+    },
+    {
+     "source": "funding/_build_funding_performance.py:146",
+     "quote": "unresolved colleges are emitted under \"unmatched\" for visibility"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7243d7e7-8e14-44c4-b950-ff1dc6b6016e",
+   "slug": "per-priority-price-factor-replaces-multiplier",
+   "kind": "decision",
+   "title": "Per-priority price factor replaces the global target multiplier",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still governs: prioTarget divides by the per-priority factor (the price premium) and no global multiplier remains in the code; the dial now displays as 'Funding factor'. The 08-04 starting values (0.5/1.0/2.0) have drifted — live Scenario 1 carries 0.5 on all three.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1649-1654",
+     "quote": "target = pot ÷ price, price = factor × rate ... dividing by the factor is the price premium (higher factor ⇒ fewer FTES)"
+    },
+    {
+     "source": "cpl_funding.js (grep)",
+     "quote": "target_multiplier / targetMultiplier: 0 hits; 'Funding factor': 2 hits; function prioPrice: 1"
+    },
+    {
+     "source": "sql: cpl_funding_config Scenario 1",
+     "quote": "factor 0.5 on slots 0, 1 and 2; updated_by slee@cccco.edu 2026-09-02"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam, Malone",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "570f68f4-6190-4303-b272-b1d12f833878",
+   "slug": "behavior-neutral-dial-migration-post-deploy",
+   "kind": "procedure",
+   "title": "Replace one global setting with several per-item ones without changing behavior, then switch it on afterwards",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Published KB note; the structural nYears fold it describes is still in prioTarget with factor 1 as the exact identity.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "cpl_funding.js:1649-1650",
+     "quote": "The × nYears() makes it the CUMULATIVE window target (factor 1 ⇒ the old ×2 on a 2-yr window, exactly)"
+    },
+    {
+     "source": "git log origin/main (#971)",
+     "quote": "b9bfaa72 Rule 8 checkpoint: SkyUnit — the per-priority price factor is live (#971) (#972)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d25f1180-d3e0-40a4-94b9-8c275ddedcf4",
+   "slug": "funding-live-config-2026-08-04",
+   "kind": "fact",
+   "title": "Live Implementation Funding config after the price-factor activation (2026-08-04)",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "A dated dial snapshot; re-read live (slee@, 2026-09-02): shares .33/.33/.34, factors 0.5 each, floor $150,000, cap $400,000, mirrorYears true, one pool — nothing of the 08-04 set holds. The verified 08-23 row says to read the config, never quote a row.",
+   "evidence": [
+    {
+     "source": "sql: cpl_funding_config",
+     "quote": "Scenario 1: share 0.33/0.33/0.34, factor 0.5 x3, pool.floor_window 150000, mirrorYears true, priorityOrder [2,0,1]; updated 2026-09-02"
+    },
+    {
+     "source": "slug:sam-live-funding-dials-2026-08-23 (verified)",
+     "quote": "The funding model is the Supabase overlay, not the baked defaults — read it, do not quote it from here"
+    }
+   ],
+   "superseded_by": "sam-live-funding-dials-2026-08-23",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "473ca9d5-969d-4466-97d4-03ea43958009",
+   "slug": "nc-funding-targeted-plus-advisory-column",
+   "kind": "decision",
+   "title": "Noncredit funding: keep the $1M with the four standalone campuses and add an advisory column, do not dilute it",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "Overturned twice: 2026-08-23 the NC lane widened to every institution ≥500 NC FTES, then 2026-08-31 the one-pool model retired the $1M carve-out entirely — noncredit is carried inside every combined award over 118 institutions, and the advisory NC-FTES column became the NC share.",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:91-93",
+     "quote": "The noncredit carve-out and the three NC dials (feeder_carveout / nc_threshold_ftes / nc_floor_window / nc_cap_window) are RETIRED"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "one solve over 118 institutions ... every award decomposes into credit and noncredit shares by FTES share, the NC share restricted to the noncredit measures"
+    },
+    {
+     "source": "slug:one-pool-model-adopted (verified)",
+     "quote": "The two-lane carve-out model is superseded as design of record"
+    }
+   ],
+   "superseded_by": "one-pool-model-adopted",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "dad1ded3-5ae9-412f-8617-82e3c21b7984",
+   "slug": "whitelisting-map-drops-new-datafile-fields",
+   "kind": "pitfall",
+   "title": "Code that copies rows field by field silently drops any new field the data gains",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "rowsFiltered() still projects each college into a new object with an explicit field list (noncredit_ftes is now on it), so the mechanism and the lesson both stand.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:6356",
+     "quote": "credit_ftes: c.credit_ftes, noncredit_ftes: c.nco ? c.ftes : c.noncredit_ftes,"
+    },
+    {
+     "source": "cpl_funding.js:6361",
+     "quote": "rural: !!c.rural, nco: !!c.nco, feeder: c.feeder || null, ftes: c.ftes"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c93e6f7d-9b72-4bbb-85a9-46c0cd758dcd",
+   "slug": "admin-optin-capture-at-optin-plus-co-confirm",
+   "kind": "procedure",
+   "title": "Administrator opt-in: capture the current admin AT opt-in + CO-confirm, not against a stale roster",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Built as `cpl_funding_participation` (attestor_name/title/email, status, source, confirmed_at/by, revoked_at — the v1 schema under a different table name) with baselineGate reading it; the 'queued' tag is outdated. The table holds 0 rows today; v2 (magic-link auto-confirm) is not built.",
+   "evidence": [
+    {
+     "source": "sql: information_schema.columns cpl_funding_participation",
+     "quote": "college, requested_at, noted_by, attestor_name, attestor_title, attestor_email, status, source, confirmed_at, confirmed_by, revoked_at"
+    },
+    {
+     "source": "sql: select status, source, count(*) from cpl_funding_participation group by 1,2",
+     "quote": "0 rows"
+    },
+    {
+     "source": "cpl_funding.js:2648, 2836",
+     "quote": "② Participation request by the deadline — cpl_funding_participation ... function baselineGate(college)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "044378d6-26df-4339-aa32-8e0e9a9bd3a7",
+   "slug": "workbook-figures-verify-not-copy",
+   "kind": "fact",
+   "title": "Verify figures in a hand-written document against our own model, never copy them across",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lesson stands (published KB note; #1002 on main) and matches lane doctrine (call the engine, never read figures). Its own figures are dated: the model is now one pool over 118 at $150k/$400k, so the $522,239 max no longer holds — recompute from the engine, as the row says.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "NEVER READ THE CONFIG — CALL `_effective()` / `_alloc()` / `_prios()` / `_ncPrios()` / `_ncAward()`"
+    },
+    {
+     "source": "git log origin/main (#1002)",
+     "quote": "9695b1ff Budget ledger: extend ongoing operations through 2030-31; archive the $5M (#1002)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": "procedure",
+   "link_fixes": []
+  },
+  {
+   "id": "43fa9b36-b976-423e-9d9b-add047b7bf12",
+   "slug": "cobi-ongoing-extended-2030-31",
+   "kind": "milestone",
+   "title": "The budget ledger now runs through 2030-31; the $5M line is archived",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Observable in the live ledger and the code: the $7M ongoing row carries 7,000,000 in yr_2030_31 (total 35,000,000), the $5M 2025-26 row is archived, and YEAR_COLS/USE_YEARS reach 2030-31.",
+   "evidence": [
+    {
+     "source": "sql: budget_funding id 5",
+     "quote": "CPL Initiative Operations — $7M Prop 98: yr_2026_27..yr_2030_31 = 7000000 each, total 35000000; id 3 ($5M, 2025-26) archived = true"
+    },
+    {
+     "source": "budget_ledger.js:42-49",
+     "quote": "YEAR_COLS = [\"yr_2025_26_budget\", \"yr_2026_27\", \"yr_2027_28\", \"yr_2028_29\", \"yr_2029_30\", \"yr_2030_31\"] ... USE_YEARS = [1, 2, 3, 4, 5]"
+    },
+    {
+     "source": "git log origin/main (#1002)",
+     "quote": "9695b1ff Budget ledger: extend ongoing operations through 2030-31; archive the $5M (#1002)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "da1f564e-b317-4fe3-bcd6-cc40c4457fdc",
+   "slug": "nc-equalization-floor-plus-factor",
+   "kind": "decision",
+   "title": "Noncredit equalization: a minimum payment plus an optional factor; the headcount question is deferred",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "Overturned: the separate NC feeder allocation this floor/factor was to equalize no longer exists — the one-pool model (2026-08-31) sizes every institution's combined award by credit+noncredit FTES under one $150k base / $400k cap; the NC dials remain only as retired config-shape fields.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1178-1179",
+     "quote": "Their stored config fields (`nc_threshold_ftes`, `nc_floor_window`, `nc_cap_window`, `feeder_carveout`) remain in the"
+    },
+    {
+     "source": "cpl_funding_data.js:91-93",
+     "quote": "The noncredit carve-out and the three NC dials ... are RETIRED — the fields remain below for config-shape"
+    },
+    {
+     "source": "slug:one-pool-model-adopted (verified)",
+     "quote": "$25.24M to 118 institutions sized by credit+noncredit FTES, floor $150K / cap $400K per institution combined"
+    }
+   ],
+   "superseded_by": "one-pool-model-adopted",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "2c9f6061-3d4e-48b5-985b-aaf059d3899c",
+   "slug": "metric-label-was-a-policy-switch",
+   "kind": "pitfall",
+   "title": "A metric label that selects an algorithm is a policy switch",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The explicit, layer-aware unit field is still how the unit resolves; the label sniff survives only as the legacy fallback the row describes. KB note published.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1754-1756",
+     "quote": "function prioIsFtes(p) { if (p && (p.unit === \"ftes\" || p.unit === \"headcount\")) return p.unit === \"ftes\"; return measureOf(p).unit === \"units\";   // legacy rows: sniff the label"
+    },
+    {
+     "source": "cpl_funding.js:1731-1741",
+     "quote": "function prioUnit(slot, i, metric) ... var layers = [sc, sh, bp]; ... if (L.unit === \"ftes\" || L.unit === \"headcount\") return L.unit;"
+    },
+    {
+     "source": "docs/kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "f55dfd63-7094-4bf3-a527-73d0bee5c0e3",
+   "slug": "veteran-star-teaches-upload-is-the-finish-line",
+   "kind": "pitfall",
+   "title": "The Veteran Star is achievable without articulating a single credit recommendation",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Restated as a build rule in the ESS 25-82 lane file and published as a KB note.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/ess-25-82-tab.md:24",
+     "quote": "every step a FRACTION not a check (the Veteran Star taught colleges that uploading is the finish line — applied ≈ JSTs at ratio 1.00); reframe the Star as a starting line"
+    },
+    {
+     "source": "docs/kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "a89254d3-eb0a-492c-b29d-0d64a783057d",
+   "slug": "cr-backlog-two-free-wins",
+   "kind": "opportunity",
+   "title": "Two free wins in the CR backlog: 11,495 unarticulable rows and 20 exhibits carrying 40%",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Both wins are carried verbatim in the ESS 25-82 lane file as current state; the rework that would act on them is still not built (lane: 'GROUNDWORK DONE, REWORK NOT BUILT').",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/ess-25-82-tab.md:24",
+     "quote": "top 20 exhibits = ~40% of the backlog; 11,495 rows are \"Credit Is Not Recommended\" = a free auto-N/A win"
+    },
+    {
+     "source": "git log origin/main (#1014)",
+     "quote": "c007b74d Funding: per-college CR backlog + the disposition rate (#1014)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "8413e776-921b-4631-95a9-ccecfbd4093e",
+   "slug": "disposition-rate-is-the-50k-measure",
+   "kind": "fact",
+   "title": "The disposition rate is the $50k tab's measure of CPL practice",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The ESS 25-82 lane file states the same measure, median and ranking as current truth; the validation note is published.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/ess-25-82-tab.md:24",
+     "quote": "The measure is the DISPOSITION RATE — share of a college's credit recommendations carrying any disposition (Applied / Not Applicable / In Process). Median 4.7%; MVC 3rd · Bakersfield 6th"
+    },
+    {
+     "source": "docs/kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "87053df8-67ce-432c-9341-496ea8735888",
+   "slug": "nc-split-ftes-floor-does-the-equity",
+   "kind": "decision",
+   "title": "The noncredit split now uses teaching size, but it is the minimum payment that delivers fairness",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The $1M feeder split by feederBasis() was retired with the one-pool model (2026-08-31): NOCE / SD Cont. Ed / Calbright are ordinary rows sized by FTES under the combined $150k/$400k bounds; Calbright's 1,000-FTES stand-in survives only as a never-disbursing placeholder (N3 a).",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:91-93",
+     "quote": "The noncredit carve-out and the three NC dials ... are RETIRED"
+    },
+    {
+     "source": "cpl_funding.js:1515",
+     "quote": "feederBasis(); nothing publishes or disburses on a placeholder (N3 a)."
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:30",
+     "quote": "N3 a: Calbright's 1,000-FTES stand-in never publishes or disburses"
+    },
+    {
+     "source": "slug:one-pool-model-adopted (verified)",
+     "quote": "$25.24M to 118 institutions sized by credit+noncredit FTES"
+    }
+   ],
+   "superseded_by": "one-pool-model-adopted",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "158130a3-544a-4c9a-9f36-bfae05945e97",
+   "slug": "suppression-must-survive-subtraction",
+   "kind": "pitfall",
+   "title": "Small-cell suppression must survive subtraction",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Complementary suppression is in the backlog builder, the same rule now runs on the funding artifact (a lone masked college gets a complementary mask), and the note is published.",
+   "evidence": [
+    {
+     "source": "funding/_build_cr_backlog.py:148-155",
+     "quote": "def _suppression_plan(c): ... COMPLEMENTARY suppression is the part that was missing, and without it the primary suppression is decoration."
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:28",
+     "quote": "a lone masked college gets a complementary mask"
+    },
+    {
+     "source": "docs/kb-notes/methodology-small-cell-suppression-must-survive-subtraction.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "99364434-6ba0-41f3-b350-46087ff88c30",
+   "slug": "college-short-name-resolver-could-not-round-trip",
+   "kind": "pitfall",
+   "title": "The helper that shortens a college name could not handle its own output (fixed 11 August)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The JS resolver now indexes canonical + aliases + short + short_caps, matching its Python twin; the seed script exists and #1117 is on main.",
+   "evidence": [
+    {
+     "source": "college_short_names.js:43",
+     "quote": "var spellings = [r.canonical].concat(r.aliases || [], [r.short, r.short_caps]);"
+    },
+    {
+     "source": "college_short_names.js:37",
+     "quote": "funding/_build_funding_performance.py (canonical + short + short_caps +"
+    },
+    {
+     "source": "git log origin/main (#1117)",
+     "quote": "c992b971 My College — the funding box, a district picker, and Ask Sierra (#1117)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7e4579fc-9138-4d57-8db0-9e27d4d81eeb",
+   "slug": "allocation-floor-waterfall-not-proportional",
+   "kind": "pitfall",
+   "title": "A college's award is not its share of the pot - ask the model for it, never multiply",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "The lesson (call _alloc(); bisect both bounds) is current, but the row states as shipped constants that changed 2026-08-31: floor $175,000 → $150,000 base, 115 colleges → 118 institutions, $24,240,308 → $25,240,308; '69 of 115 at the minimum' is unmeasured now. Re-file without the constants.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "one solve over 118 institutions ... $25,240,308 · $150,000 base / $400,000 cap on the COMBINED award"
+    },
+    {
+     "source": "cpl_funding_data.js:119-126",
+     "quote": "\"college_funding_before_feeder\": 25240308.0 ... \"floor_window\": 150000.0 ... \"cap_window\": 400000.0"
+    },
+    {
+     "source": "cpl_funding.js:8835",
+     "quote": "_alloc: function (name) { var c = rosterRow(name); return c ? collegeAlloc(c) : null; },"
+    },
+    {
+     "source": "slug:a-second-bound-breaks-a-pin-as-you-go-solver",
+     "quote": "allocModel() now bisects lambda in W(c) = clamp(lambda*size(c), floorFor(c), capFor(c))"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "94b73522-14fa-445a-b7e1-e3eb82a1efff",
+   "slug": "cte-noncredit-is-funding-bearing",
+   "kind": "risk",
+   "title": "CTE is the funding line for noncredit, so category must be confirmed BEFORE CTE is concluded (Sam)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The noncredit-CIP lane file carries the same rule, the same deliberately-unshipped TOP-49 flag and the same open questions for Jenni and Sam as current state.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+     "quote": "CTE IS FUNDING-BEARING (CTE noncredit qualifies, non-CTE does not) → category confirmed BEFORE CTE concluded; the \"noncredit TOP must start with 49\" flag is deliberately unshipped"
+    },
+    {
+     "source": "docs/reference/lanes/noncredit-cip-categories.md:24",
+     "quote": "BLOCKED ON JENNI ... can non-CDCP categories be CTE at all (~1,300). BLOCKED ON SAM: where a confirmed category persists"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e913b782-6e9a-460b-a4fa-7e7c02791ef8",
+   "slug": "reorder-by-permutation-not-by-rewriting-config",
+   "kind": "pitfall",
+   "title": "Store the new ORDER, never rewrite the items being reordered",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "priorityOrder is stored as a permutation beside the config (live: [2,0,1]) and the prioField / setPrio / prioSlot seam is still the one display→source translation; KB note published. Both `related` slugs exist.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1580, 1929, 2226, 1980",
+     "quote": "function prioField(slot, idx, field) ... function setPriorityOrder(list) ... function setPrio(slot, idx, field, value) ... function prioSlot(slot)"
+    },
+    {
+     "source": "sql: cpl_funding_config Scenario 1",
+     "quote": "\"priorityOrder\": [2, 0, 1] stored beside yearPriorities"
+    },
+    {
+     "source": "docs/kb-notes/methodology-reorder-by-permutation-not-by-rewriting-the-config.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "dcabf174-1b67-48fd-8243-83eefc6711e7",
+   "slug": "a-count-gate-cannot-see-a-reorder",
+   "kind": "pitfall",
+   "title": "Checking that two lists are the same length cannot catch a reorder - the money got attached to the wrong advice",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "college_briefing.js keeps the length check as the outer gate and resolves every priority by its source index (identity first, position only as fallback for a module that reports no src).",
+   "evidence": [
+    {
+     "source": "college_briefing.js:985-994",
+     "quote": "function prioritiesAlign(prios, program) ... A reorder makes POSITION the wrong join (both lists still hold three entries, so the count gate cannot see it)"
+    },
+    {
+     "source": "college_briefing.js:998-1001",
+     "quote": "IDENTITY FIRST: `p.src` is the funding module's source index and `key` is the same index as the config stores it, so they join exactly whatever order the cards are shown in"
+    },
+    {
+     "source": "docs/kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4900cac0-aaf6-4943-baaf-e67f19304721",
+   "slug": "funding-factor-is-the-label-for-the-price-factor",
+   "kind": "decision",
+   "title": "Sam renamed the per-priority \"Price factor\" to \"Funding factor\" (label only)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The rendered label is 'Funding factor' (no 'Price factor' string remains); the storage field `factor`, the edit key `priofactor` and prioPrice() keep their names, exactly as the row says.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js (grep counts)",
+     "quote": "'Funding factor': 2; 'Price factor': 0; 'priofactor': 2; 'function prioPrice': 1"
+    },
+    {
+     "source": "git log origin/main (#1268)",
+     "quote": "ef133eae Implementation Funding: drag-to-reorder the priorities, \"funding factor\", Year-2 mirror (#1268)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "5228b100-f302-434e-8c8a-18e3948e2a0b",
+   "slug": "year2-sync-is-a-mirror-not-a-copy-on-frontload",
+   "kind": "decision",
+   "title": "Sam asked for Year 2 to copy Year 1 automatically; a reversible mirror shipped instead, off by default",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "mirrorYears() resolves later years from Year 1 through the prioSlot seam and an explicit, confirmed 'Copy Year 1 to Year 2' exists. The row's open question is answered by the live config: Scenario 1 carries mirrorYears: true, which the lane says makes the stored Year-2 block inert.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1975-1980",
+     "quote": "function mirrorYears() { return !!firstDefined(SCENARIO.mirrorYears, SHARED.mirrorYears, base().mirror_years); } ... function prioSlot(slot) { return mirrorYears() ? \"1\" : String(slot); }"
+    },
+    {
+     "source": "cpl_funding.js:4862, 8521",
+     "quote": "<button ... id=\"cplFundCopyYear1\">Copy Year 1 to Year 2</button> ... confirm(\"Copy Year 1’s priorities over every later year?"
+    },
+    {
+     "source": "sql: cpl_funding_config Scenario 1",
+     "quote": "\"mirrorYears\": true"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "`mirrorYears` makes the stored Year-2 block inert"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "1cef5d4d-1b86-4a9d-b701-327a3d0b0921",
+   "slug": "the-floor-makes-the-effective-ftes-rate-uneven",
+   "kind": "fact",
+   "title": "The floor makes the per-FTES rate uneven",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Mechanism still holds: targets ride the pre-bounds proportional entitlement while the award is brought up to the base from the same funding, so the effective rate differs above and at the base. The figures (~$5,060, Lassen ~$23,900, 50 of 115) are a 2026-08-21 measurement on the two-lane model.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1758-1760",
+     "quote": "The PRE-BOUNDS proportional per-year entitlement behind one priority. The target must ride THIS, never the brought-up-to-base cap: the base raises a college's funding, not its targets"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "targets ride the pre-bounds entitlement's lane slice"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ba44565d-b0ca-4bfd-844d-3a1582852e02",
+   "slug": "an-explainer-for-a-new-audience-is-a-new-document",
+   "kind": "procedure",
+   "title": "A new audience means a new document",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The lesson stands and the explainer is its own document; 'read the saved config first / generate from the engine' matches doctrine. One detail reversed: since #1304 funding-model/index.html paints from the live engine, so it is no longer 'deliberately a snapshot'.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:24",
+     "quote": "THE EXPLAINER IS THE PUBLIC VIEW (`funding-model/index.html`, S221 PR #1436) ... paints the timing milestones and each priority's strategies from the engine"
+    },
+    {
+     "source": "git log origin/main (#1304)",
+     "quote": "33dd1463 The funding explainer becomes a live page instead of a snapshot nobody rebuilt (#1304)"
+    },
+    {
+     "source": "ls prototype/",
+     "quote": "funding_model_explainer.html 48584 bytes (2026-09-05); build_funding_model_explainer.js present"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "0c7879be-b2e7-465d-8af9-2669e78c5330",
+   "slug": "retiring-a-surface-can-delete-its-sole-display-of-a-figure",
+   "kind": "pitfall",
+   "title": "Deleting a section removed the only place a figure still appeared",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "#1288 landed and the $800,000 CO-staff figure is still displayed on the live explainer and carried in the ledger, so the split it protected survives.",
+   "evidence": [
+    {
+     "source": "git log origin/main (#1288)",
+     "quote": "d714501b Funding explainer: retire Step one, its content becomes boxes in the intro (#1288)"
+    },
+    {
+     "source": "funding-model/index.html:251",
+     "quote": "800,000"
+    },
+    {
+     "source": "sql: budget_funding id 8",
+     "quote": "CO Staff — 2.0 FTE: 400000 + 400000 = total 800000"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "615fc1cf-5e19-4cfe-957d-6807b45641d9",
+   "slug": "funding-ceiling-400k-is-near-a-no-op-for-equity",
+   "kind": "fact",
+   "title": "A $400,000 cap moves about 1% of the pot and gives the smallest colleges nothing - the minimum is the real lever",
+   "verdict": "stale",
+   "confidence": "medium",
+   "reason": "Measured on a model that no longer exists (115 colleges, $175,000 floor, separate NC lane). Under one pool ($150k/$400k on the COMBINED award over 118) the cap binds differently — Mt San Antonio trimmed $500K→$400K, Pasadena/Santa Ana rise to the cap. Re-measure before citing.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "$150,000 base / $400,000 cap on the COMBINED award"
+    },
+    {
+     "source": "docs/cpl_funding_lessons.md:838-841",
+     "quote": "The cap is per institution (Mt San Antonio's pair trims $500K→$400K; Pasadena and Santa Ana — big-NC colleges — rise to the cap"
+    },
+    {
+     "source": "cpl_funding_data.js:123-125",
+     "quote": "\"floor_window\": 150000.0 ... \"cap_window\": 400000.0"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cf074fff-f73a-45eb-9a0a-5f2fb0a6482a",
+   "slug": "a-bound-on-the-money-is-a-bound-on-the-bar",
+   "kind": "pitfall",
+   "title": "Capping a college's money without lowering its target asks it to do more work per dollar",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "capScale() is still applied on both target paths (FTES priorities and student-unit priorities) and Part H of the basis test still pins cap/target to one rate above the minimum.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1788, 1658, 1822",
+     "quote": "function capScale(c) ... sizeOf(c) * capScale(c) * laneFrac ... sizePct(c) * capScale(c) * laneFrac"
+    },
+    {
+     "source": "tests/cpl_funding_basis.test.js:289",
+     "quote": "// Part H — cap and target must ride the SAME basis (and now the same LANE SLICE)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "45096086-cea6-4c66-8369-d153b941b22b",
+   "slug": "a-second-bound-breaks-a-pin-as-you-go-solver",
+   "kind": "pitfall",
+   "title": "A minimum behaves predictably and a maximum does not - awards with both have to be solved all at once",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "allocModel() still bisects lambda to find the bound sets and recomputes the free rows exactly; the degenerate cases are surfaced (floorInfeasible). KB note published.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:6099-6105",
+     "quote": "if (totalAt(mid) < net) lo = mid; else hi = mid; } lam = (lo + hi) / 2; // The bisection's job is done: it identified WHICH colleges are bound. Recompute the free rows exactly"
+    },
+    {
+     "source": "cpl_funding.js:4024, 4255",
+     "quote": "if (m.floorInfeasible) { ... function floorInfeasibleWarn(m, noun) {"
+    },
+    {
+     "source": "docs/kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "61a04121-e61c-4ef3-8900-aed0bf45127b",
+   "slug": "noncredit-is-111-institutions-not-4",
+   "kind": "fact",
+   "title": "Noncredit is 111 institutions, not 4",
+   "verdict": "superseded_by_row",
+   "confidence": "medium",
+   "reason": "The count re-measures true (108 of 115 colleges carry noncredit_ftes > 0, plus 3 standalone with Mt. SAC NC deduped = 111), but the NC lane the row calls BUILT (NC≥500 threshold, $25k floor, $100k cap, $1M carve-out) was retired 2026-08-31; noncredit rides inside every combined award.",
+   "evidence": [
+    {
+     "source": "node re-measure of cpl_funding_data.js",
+     "quote": "colleges: 115, with noncredit_ftes>0: 108; feeders: 4 incl. 'Mt. San Antonio College — Noncredit' nc_ftes_on_credit_row=Mt San Antonio"
+    },
+    {
+     "source": "cpl_funding_data.js:91-93",
+     "quote": "The noncredit carve-out and the three NC dials (feeder_carveout / nc_threshold_ftes / nc_floor_window / nc_cap_window) are RETIRED"
+    },
+    {
+     "source": "slug:one-pool-model-adopted (verified)",
+     "quote": "$25.24M to 118 institutions sized by credit+noncredit FTES, floor $150K / cap $400K per institution combined"
+    }
+   ],
+   "superseded_by": "one-pool-model-adopted",
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "65d75273-11d5-4b6f-ac3a-b2b28ce09067",
+   "slug": "rural-allowance-was-the-pools-only-unconditional-money",
+   "kind": "fact",
+   "title": "The rural allowance was the pool's only unconditional money",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The retirement and its pairing with the $175,000 floor happened (#1297; data-file note); the rural flag survives as context only. Since then the base returned to $150,000 under one pool (2026-08-31) and advances are banned outright, so 'nothing unconditional' now holds by doctrine.",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:64-72",
+     "quote": "THE RURAL CARVE-OUT IS RETIRED (Sam) ... retired together with a floor raise to $175,000 — under which the 13 rural colleges receive $2,275,000 between them ... The per-college `rural` flags"
+    },
+    {
+     "source": "cpl_funding.js:2829",
+     "quote": "rural allowance retired (2026-08-22) nothing in the college pool is"
+    },
+    {
+     "source": "git log origin/main (#1297)",
+     "quote": "789cec2b Retire the rural carve-out; raise the minimum to $175,000 (#1297)"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20, CLAUDE.md funding vocabulary",
+     "quote": "$150,000 base / $400,000 cap on the COMBINED award ... NEVER the concept of ADVANCES"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "41210451-5a8b-4c78-9bc4-f3404a252131",
+   "slug": "js-filled-figures-still-ship-stale-static-defaults",
+   "kind": "pitfall",
+   "title": "A page that fills in its own figures still ships the old hand-typed ones underneath",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "lintStaticDefaults() is still at the tail of the snapshot builder; the snapshot twin is now secondary to the live explainer but the lint and the lesson stand.",
+   "evidence": [
+    {
+     "source": "prototype/build_funding_model_explainer.js:72",
+     "quote": "(function lintStaticDefaults() {"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:33",
+     "quote": "the snapshot twin `prototype/funding_model_explainer.html` needs `node prototype/build_funding_model_explainer.js <config.json>` with an md5-verified config"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "fa367b88-0820-493b-a453-c8894af9191b",
+   "slug": "a-deduplication-has-a-scope",
+   "kind": "pitfall",
+   "title": "A de-duplication has a scope - remove the duplicated measure, keep the record",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Mt. SAC Noncredit still carries nc_ftes_on_credit_row, the code zeroes its size rather than dropping the row, the lane says it rides the Mt. San Antonio row, and the 118+1 receipt test still holds.",
+   "evidence": [
+    {
+     "source": "cpl_funding_data.js:241",
+     "quote": "\"nc_ftes_on_credit_row\": \"Mt San Antonio\","
+    },
+    {
+     "source": "cpl_funding.js:1513, 1524",
+     "quote": "(`nc_ftes_on_credit_row`), so it gets no row of its own ... if (f.nc_ftes_on_credit_row) return;"
+    },
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:20",
+     "quote": "Mt. SAC NC rides the Mt. San Antonio row"
+    },
+    {
+     "source": "tests/cpl_funding_pool.test.js:145",
+     "quote": "check(\"Q2: 118 recipients + 1 declined row\","
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "36b0a587-4054-4db0-ab87-51aee2879d05",
+   "slug": "a-too-wide-row-in-a-csv-is-invisible-in-the-browser",
+   "kind": "pitfall",
+   "title": "A row with too many cells in a spreadsheet export is invisible on screen",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The field-count guard over every CSV line against the header is in the scenarios test.",
+   "evidence": [
+    {
+     "source": "tests/cpl_funding_scenarios.test.js:393",
+     "quote": "// EVERY line must have exactly as many fields as the header. This is here"
+    },
+    {
+     "source": "tests/cpl_funding_scenarios.test.js:417-421",
+     "quote": "const head = fields(lines[0]).length; return { head: head, bad: lines.filter((l) => fields(l).length !== head).length ... check(\"CSV: every institution line matches the header's field count\""
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b9f69041-67be-45aa-ab85-1208029e1aef",
+   "slug": "a-degenerate-branch-that-pays-less-than-the-dial-must-say-so",
+   "kind": "pitfall",
+   "title": "When the pot cannot pay the minimum, the page has to say so",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "solveBounded's floorInfeasible / floorDemanded reporting is still in the code and rendered; the NC lane it also covered is retired, so only the one combined solve reports it now.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:4024, 4255, 4284",
+     "quote": "if (m.floorInfeasible) { ... function floorInfeasibleWarn(m, noun) { ... if (m.floorInfeasible) {"
+    },
+    {
+     "source": "cpl_funding.js (grep)",
+     "quote": "floorInfeasible: 9 hits; floorDemanded: 4 hits"
+    },
+    {
+     "source": "git log origin/main (#1302)",
+     "quote": "e0838f91 A floor the pool cannot honor must say so, not report itself as honored (#1302)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "09c4c907-24c0-4337-a0e0-71cc524a7fe4",
+   "slug": "a-snapshot-of-a-live-model-is-a-claim-that-decays",
+   "kind": "pitfall",
+   "title": "A snapshot of a live model is a claim that decays",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The explainer is the live public view painting from the engine, with one shared payload builder; the lane names the same mechanism.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/implementation-funding.md:24",
+     "quote": "THE EXPLAINER IS THE PUBLIC VIEW (`funding-model/index.html`, S221 PR #1436) ... paints the timing milestones and each priority's strategies from the engine (`_timing()`, `_prios().strategies`)"
+    },
+    {
+     "source": "funding-model/index.html (grep)",
+     "quote": "ensureLoaded|onModelChange: 3 hits; funding_model_payload.js present (11801 bytes)"
+    },
+    {
+     "source": "git log origin/main (#1304)",
+     "quote": "33dd1463 The funding explainer becomes a live page instead of a snapshot nobody rebuilt (#1304)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "2f0be8e9-ca0c-4ce8-819e-c3b316fea4e9",
+   "slug": "raising-the-ftes-rate-lowers-the-target",
+   "kind": "fact",
+   "title": "Raising the CPL FTES rate LOWERS every target",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "Direction holds in code: target = (entitlement / rate) × (nYears / factor), so a higher rate lowers every target; the rate is still $5,649.63 and curator-editable (#965). Dated phrases: the 'target multiplier' became the per-priority factor (#971); the yearly tranche is now $12,620,154.",
+   "evidence": [
+    {
+     "source": "cpl_funding.js:1654",
+     "quote": "return (r > 0 && fac > 0) ? (prioEntitlement(c, p) / r) * (nYears() / fac) : 0;   // target in CPL FTES"
+    },
+    {
+     "source": "cpl_funding_data.js:134",
+     "quote": "\"ftes_rate_2026_27\": 5649.63,"
+    },
+    {
+     "source": "git log origin/main (#965)",
+     "quote": "0f376f23 Implementation Funding: make the CPL FTES reimbursement rate curator-editable (#965)"
+    },
+    {
+     "source": "sql: budget_funding id 9",
+     "quote": "yr_2026_27 12620154, yr_2027_28 12620154"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam",
+   "kind_check": null,
+   "link_fixes": []
+  }
+ ]
+}

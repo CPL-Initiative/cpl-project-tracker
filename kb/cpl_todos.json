@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-05",
-  "_session": "228 (SkyQuiet) — SkyView is the map alone, the CCR menu opens it that way, and the workspace has two grains",
-  "_status": "SkyView is what Sam said it was: the map alone, filling the window, and that is what the Common Course Reference menu button opens now, both on COBI's tab and on the page's own address. The map with its explanatory panes is one menu click away as the comprehensive view and never the default. The four separate views are one tab called Disciplines and subjects, with a toggle between the discipline grain, the subject grain (the four-letter Common SUBJ codes, read off the map and checked against the seed) and the ESL packaging proposal, and every view reaches every other from one Views menu. Along the way the Chromium harness found that one click on a discipline cell under the comprehensive map had been destroying the page's only search box; that is fixed at the one place every view passes through. Accessibility on SkyView is green on all five routes. Sam has not driven any of it yet; his numbered reactions are the next session's queue.",
+  "_session": "229 (SkyGrain) — the memory hopper tested end to end: 31 entries cleared, 352 corroborated and held for Sam, the rest on a plain-English sheet",
+  "_status": "The shared memory table has been tested end to end for the first time. All 527 unverified entries were read against what the project currently holds to be true, one workstream at a time, with a citation behind every verdict. Thirty-one entries turned out to be out of date or replaced by a later ruling and have been retired, each with its previous state saved so the change can be undone. Three hundred and fifty-two held up with evidence and are ready to be marked verified the moment Sam says yes; that one word doubles the tab's default list, so it is his call. The remaining 144 sit on a plain-English decision sheet, oldest first: mostly his own earlier rulings that his later rulings replaced, plus the open questions and wishes only he can close. The table also has a lint now, run the same way the docs lint runs. SkyView is unchanged and still waits on Sam's reactions.",
   "items": [
+    {
+      "id": "s229-sam-memory-sheet",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "The memory audit sheet is ready, in plain English and oldest first: docs/visuals/2026-09-05-memory-audit-verdicts.html. Item 1 asks whether to mark the 352 entries that passed with evidence as verified; then come your own earlier rulings that later rulings replaced (mostly the funding model), and the open questions and wishes only you can close. Reply by number; yes takes the recommendation."
+    },
+    {
+      "id": "s229-fable-execute-verdicts",
+      "for": "Fable",
+      "tab": "memory",
+      "text": "When Sam replies to the memory sheet, execute his verdicts from kb/memory_audit/2026-09-05-receipt.json: the held promotions first, then the human-sourced rows he rules on, then the hygiene fixes. One guarded statement per batch, keyed on id, one log row per change, never delegated. Then re-run the memory lint and update the lane file's counts."
+    },
+    {
+      "id": "s229-fable-audit-side-findings",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Three things the audit noticed outside the memory rows need a look: the nightly cleanup worklist has silently lost its P1 and P5 classes because the text they key on matches nothing on the nightly-loaded table; the student-detail lane file still quotes the figures from before the nightly load replaced the table; and the spelling lint sees only about 8% of CLAUDE.md because its code-fence mask runs to the end of the file."
+    },
     {
       "id": "s228-sam-drive-skyview",
       "for": "Sam",
