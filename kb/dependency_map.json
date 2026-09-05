@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 426,
+  "file_datasets": 427,
   "external_services": 137,
-  "consumers": 317,
+  "consumers": 318,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -6154,11 +6154,11 @@
   "file:kb/authority_recode_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 101
+     "line": 80
     }
    ],
    "served": false,
@@ -6535,7 +6535,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 180
+     "line": 136
     },
     {
      "id": "script:kb/_apply_convergence_singletons.py",
@@ -6860,7 +6860,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 105
+     "line": 61
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -7098,7 +7098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 160
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7264,7 +7264,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 64
     },
     {
      "id": "script:kb/_apply_crossdisc_remint.py",
@@ -7460,14 +7460,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 59
     },
     {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 247
+     "line": 163
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -7584,7 +7584,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 106
+     "line": 62
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -7801,7 +7801,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 245
+     "line": 161
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -8204,18 +8204,11 @@
   "file:kb/convergence_singletons_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 94
+     "line": 73
     }
    ],
    "served": false,
@@ -8683,7 +8676,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 58
     }
    ],
    "served": true,
@@ -8692,18 +8685,11 @@
   "file:kb/crossdisc_out/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 90
+     "line": 69
     }
    ],
    "served": true,
@@ -9078,18 +9064,11 @@
   "file:kb/drama_theater_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 93
+     "line": 72
     }
    ],
    "served": false,
@@ -9327,18 +9306,11 @@
   "file:kb/fl_subj4_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 91
+     "line": 70
     }
    ],
    "served": false,
@@ -9507,18 +9479,11 @@
   "file:kb/kin_pe_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 92
+     "line": 71
     }
    ],
    "served": false,
@@ -9613,11 +9578,11 @@
   "file:kb/kin_pe_pass2_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 78
     }
    ],
    "served": false,
@@ -9842,11 +9807,11 @@
   "file:kb/pols_remint_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 100
+     "line": 79
     }
    ],
    "served": false,
@@ -9868,11 +9833,11 @@
   "file:kb/prefix_fold_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 82
     }
    ],
    "served": false,
@@ -10036,7 +10001,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 47
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -10064,14 +10029,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 227
+     "line": 143
     },
     {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 337
+     "line": 253
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -11121,18 +11086,18 @@
   "file:kb/subj4_apply/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 42
-    },
-    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 171
+    },
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     }
    ],
    "served": true,
@@ -11202,7 +11167,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 97
+     "line": 173
+    },
+    {
+     "id": "script:kb/alias_chain.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
     }
    ],
    "served": false,
@@ -11372,11 +11344,11 @@
   "file:kb/twin_merge_out/<date>-postfold/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 77
     }
    ],
    "served": false,
@@ -11385,18 +11357,11 @@
   "file:kb/twin_merge_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_analyze_official_fold_evidence.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
-    },
-    {
-     "id": "script:kb/_rekey_promotions.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 95
+     "line": 74
     }
    ],
    "served": false,
@@ -11873,11 +11838,11 @@
   "file:kb/zband_retire_out/<date>/alias_map.json": {
    "consumers": [
     {
-     "id": "script:kb/_rekey_promotions.py",
+     "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 102
+     "line": 81
     }
    ],
    "served": false,
@@ -12923,6 +12888,19 @@
      "kind": "page",
      "direction": "read",
      "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/alias_chain_single_source_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
      "line": 0
     }
    ],
@@ -17509,6 +17487,7 @@
     "tests/dependency_map_test.py",
     "kb/_build_dependency_map.py",
     "tests/js_suite_gate_test.py",
+    "tests/alias_chain_single_source_test.py",
     "tests/stop_hook_git_check_test.py"
    ],
    "adds": [],
