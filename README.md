@@ -192,10 +192,13 @@ The whole ecosystem, end-to-end:
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
    the tab is a *reference faculty consult*, not an authority replacing them).
-   **It opens on SkyView** — the whole reference as one map, filling the tab on
-   its own (2026-09-05); the map's Views menu reaches the comprehensive view,
-   the *Disciplines and subjects* workspace and the table, and
-   `#unified-courses/list` opens the table directly —
+   **It opens on SkyView** — the whole reference as one map, filling the
+   window on its own (2026-09-05): COBI's header and side menu fold away and
+   the ☰ at the map's top left brings the menu back, while the window controls
+   at the row's right step between the map inside COBI, the map alone and the
+   browser's full screen; the map's Go To menu reaches the comprehensive view,
+   the *Disciplines and subjects* workspace, *How SkyView works* and the table,
+   and `#unified-courses/list` opens the table directly —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the

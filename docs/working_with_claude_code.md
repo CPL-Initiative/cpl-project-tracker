@@ -258,6 +258,15 @@ The sheet is committed to `docs/visuals/` and handed to you as a Claude artifact
 link. The public site does not serve `docs/`, so a github.io link to a sheet will
 not open; the artifact link is the one to use.
 
+Since September 5 you can also reply on the sheet itself. Under every item there
+is a row of reply chips (Yes takes the recommendation; the other words are the
+ones the sheet's how-to box lists), a *Follow up* toggle for anything you want
+the session to come back to whatever the verdict, and a note for what a word
+cannot carry. On the artifact your replies save to the sheet and the next
+session reads them from there; if you open the sheet from the repo instead,
+they stay in your browser and *Copy replies* at the foot of the page builds the
+numbered line for you to paste.
+
 ## 12. Start every session with all three repos
 
 Sam's standing practice, ruled enforced 2026-08-30: a CPL session gets all

@@ -208,7 +208,10 @@ function setDark(on){
 }
 function paintDark(){
   var b=document.getElementById("u-dark");
-  if(b){ b.setAttribute("aria-pressed", dark?"true":"false"); b.title = dark ? "Back to the light canvas" : "Dark canvas"; }
+  if(b){
+    b.setAttribute("aria-pressed", dark?"true":"false"); b.title = dark ? "Back to the light canvas" : "Dark canvas";
+    var sw=b.querySelector(".u-state"); if(sw) sw.textContent=dark?"on":"off";
+  }
 }
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
          ["#E7EEF9","#0047AB","C-ID","official statewide"],
@@ -893,27 +896,36 @@ window.__ccrUniverse = function(opts){
        * full screen ("will need links on full screen to navigate to the other
        * views"). Every control is a word. */
       '<div class="u-top" id="u-top">'+
-        /* ── the 2026-09-05 row (Sam's list, items 1-10 of "the opening screen") ──
-         *   menu · SkyView · Go To · search · Pan|Move · Zoom/% Out In Reset ·
-         *   Show · Sidebar · window controls
-         * Every chip is the same height, size and 6px corner (item 7); the zoom
-         * label stacks over its percentage in that same height (item 8); the
-         * "Search" label lives inside the box as its placeholder (item 9);
-         * "Details" reads "Sidebar" (item 10); the Full screen chip is gone
-         * (item 4) because the window controls carry it; the legend's toggle
-         * sits at the map's lower right (item 5). Glyphs here are HIS explicit
-         * asks — the OS window controls and the menu — and each carries its
-         * words as the accessible name and tooltip, exactly like the close.
-         *
-         * ⚠️ The title and the borrowed search share this row on purpose: see
-         * tests/ccr_skyview_universe.test.js — the search dropdown belongs to
-         * this row, so nothing sits under it to be blocked. */
+        /* ── the 2026-09-05 row, second cut, in the style of Claude's own header
+         * (Sam: "further simplify and complete SkyView header components by
+         * incorporating features like your own header"): small ghosted icon
+         * actions, a title field, ONE More menu for the secondary items, and
+         * expand + close at the right. Left to right:
+         *   menu (framed) · More · SkyView · search · Pan|Move · − % + ↺ ·
+         *   Show · step down · step up · close
+         * The icons here are his explicit asks (the OS window controls, the
+         * menu, and now the header's own vocabulary), each named by words for a
+         * screen reader and a tooltip; the text controls stay words in boxes.
+         * The More panel holds Go to (every other view), Show or hide (the
+         * sidebar, the legend, the dark canvas) and the doors out. */
         (framed()
-          ? '<button class="u-win u-menu" type="button" id="u-menu" aria-expanded="false" '+
+          ? '<button class="u-ico u-menu" type="button" id="u-menu" aria-expanded="false" '+
               'aria-label="Open the COBI menu" title="Open the COBI menu">\u2630</button>'
           : '')+
+        /* ⚠️ Not id="u-more": that is the forest's host under the map, and a
+         * second element with the id put the whole forest INSIDE this menu. */
+        '<details class="u-more" id="u-more-menu">'+
+          '<summary class="u-ico" id="u-more-sum" aria-label="More" title="More: other views, show or hide, doors out">\u22EE</summary>'+
+          '<div class="u-more-panel" id="u-more-panel" role="group" aria-label="More">'+
+            '<div class="u-more-h">Go to</div>'+
+            '<span class="u-views-slot" id="u-views-slot" data-flat="1"></span>'+
+            '<div class="u-more-h">Show or hide</div>'+
+            '<button class="u-more-t" type="button" id="u-insp-toggle" aria-pressed="false" aria-controls="u-detail">Sidebar<span class="u-state">off</span></button>'+
+            '<button class="u-more-t" type="button" id="u-legend-menu" aria-pressed="true" aria-controls="u-foot">Legend<span class="u-state">on</span></button>'+
+            '<button class="u-more-t" type="button" id="u-dark" aria-pressed="false" title="Dark canvas">Dark canvas<span class="u-state">off</span></button>'+
+          '</div>'+
+        '</details>'+
         '<h1 class="u-title" id="u-title">SkyView</h1>'+
-        '<span class="u-views-slot" id="u-views-slot"></span>'+
         '<div class="u-search-slot" id="u-search-slot"></div>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
           '<span class="u-modes" role="group" aria-label="What a drag does">'+
@@ -921,25 +933,18 @@ window.__ccrUniverse = function(opts){
             '<button class="btn mode" type="button" id="u-mode-move" aria-pressed="true">Move</button>'+
           '</span>'+
           '<span class="u-zgroup" role="group" aria-label="Zoom">'+
-            '<span class="u-zstack" title="The current magnification"><span class="u-zlbl">Zoom</span><b id="u-zoom">12%</b></span>'+
-            '<button class="btn" type="button" id="u-out" title="Zoom out">Out</button>'+
-            '<button class="btn" type="button" id="u-in" title="Zoom in">In</button>'+
-            '<button class="btn" type="button" id="u-reset" title="Reset the view">Reset</button>'+
+            '<button class="u-ico" type="button" id="u-out" aria-label="Zoom out" title="Zoom out">\u2212</button>'+
+            '<b class="u-zread" id="u-zoom" title="The current magnification">12%</b>'+
+            '<button class="u-ico" type="button" id="u-in" aria-label="Zoom in" title="Zoom in">+</button>'+
+            '<button class="u-ico" type="button" id="u-reset" aria-label="Reset the view" title="Reset the view">\u21BA</button>'+
           '</span>'+
           showMenuHtml()+
-          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="false" aria-controls="u-detail">Sidebar</button>'+
-          '<button class="btn" type="button" id="u-dark" aria-pressed="false" title="Dark canvas">Dark</button>'+
         '</div>'+
-        /* The window controls (Sam, 2026-09-05, from a screenshot of the OS's own
-         * three): step DOWN, step UP, close. Three states — the map docked inside
-         * the page or COBI's chrome (0), the map alone filling the window (1, the
-         * default), the browser's own full screen (2). The left control steps
-         * down a state, the middle steps up; paintWins() writes the words. */
         '<span class="u-wins" role="group" aria-label="Window">'+
-          '<button class="u-win" type="button" id="u-win-down" aria-label="Show the page around the map" '+
+          '<button class="u-ico u-win" type="button" id="u-win-down" aria-label="Show the page around the map" '+
             'title="Show the page around the map">\u2014</button>'+
-          '<button class="u-win" type="button" id="u-win-up" aria-label="Full screen" title="Full screen">\u25A1</button>'+
-          '<button class="u-win u-close" type="button" id="u-close" aria-label="Close SkyView" '+
+          '<button class="u-ico u-win" type="button" id="u-win-up" aria-label="Full screen" title="Full screen">\u2922</button>'+
+          '<button class="u-ico u-win u-close" type="button" id="u-close" aria-label="Close SkyView" '+
             'title="Close SkyView \u2014 leaves full screen, or returns to the Common Course Reference">'+
             '\u2715</button>'+
         '</span>'+
@@ -1199,7 +1204,7 @@ function setInspector(open){
   inspOpen=!!open;
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
   if(a) a.classList.toggle("closed", !inspOpen);
-  if(b){ b.textContent=inspOpen?"Hide sidebar":"Sidebar"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+  if(b){ b.setAttribute("aria-pressed", inspOpen?"true":"false"); var sw=b.querySelector(".u-state"); if(sw) sw.textContent=inspOpen?"on":"off"; }
   // The panel is docked beside the canvas, so showing or hiding it changes the
   // canvas's width: refit, or the map draws at the old size.
   if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
@@ -1476,8 +1481,12 @@ function wire(){
       lt.title = legendOpen ? "Hide the legend" : "Show the legend";
       var m=lt.querySelector(".u-fold"); if(m) m.textContent = legendOpen ? "\u25BE" : "\u25B4";
     }
+    var lm=document.getElementById("u-legend-menu");
+    if(lm){ lm.setAttribute("aria-pressed", legendOpen?"true":"false"); var sw=lm.querySelector(".u-state"); if(sw) sw.textContent=legendOpen?"on":"off"; }
   }
-  if(lt) lt.onclick=function(){ legendOpen=!legendOpen; paintLegend(); fitCanvas(); draw(); };
+  function toggleLegend(){ legendOpen=!legendOpen; paintLegend(); fitCanvas(); draw(); }
+  if(lt) lt.onclick=toggleLegend;
+  var lmb=document.getElementById("u-legend-menu"); if(lmb) lmb.onclick=toggleLegend;
   paintLegend();
 
   /* ── ITEM 8: the controls sit on the TITLE's row ──────────────────────────
@@ -1884,6 +1893,7 @@ function clearTokens(quiet){
   if(quiet) return;
   searchHits=[]; searchTerm=""; draw();
 }
+window.__ccrClearSelection=function(){ clearTokens(); };
 window.__ccrTokenBack=function(){ if(tokens.length){ removeToken(tokens[tokens.length-1].key); return true; } return false; };
 /* One token: the single behaviors. Several: the union, fitted. */
 function applyTokens(last){
@@ -1972,7 +1982,7 @@ function paintWins(){
     d.setAttribute("aria-label", dw); d.title=dw;
   }
   if(u){
-    u.textContent = st===2 ? "\u2750" : "\u25A1";
+    u.textContent = st===2 ? "\u2921" : "\u2922";
     var uw = st===0 ? "Fill the window" : st===1 ? "Full screen" : "Leave full screen";
     u.setAttribute("aria-label", uw); u.title=uw;
   }
@@ -2357,19 +2367,28 @@ function viewsMenuInto(host){
     items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
       'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view ↗</a>');
   }
-  host.innerHTML='<details class="u-views" id="u-views">'+
-    '<summary class="linkish" aria-controls="u-views-menu">Go To</summary>'+
-    '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
-    '</details>';
+  /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
+   * the panel's own "Go to" heading — a menu inside a menu is a door behind a
+   * door. Every other view's crumbs row keeps the Go To details menu. */
+  var flat = !!(host.dataset && host.dataset.flat);
+  host.innerHTML = flat
+    ? '<div class="u-views u-views-flat" id="u-views">'+
+        '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
+      '</div>'
+    : '<details class="u-views" id="u-views">'+
+        '<summary class="linkish" aria-controls="u-views-menu">Go To</summary>'+
+        '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
+      '</details>';
   var vw=host.querySelector("#u-views");
+  var closeAll=function(){ vw.open=false; var mo=document.getElementById("u-more-menu"); if(mo) mo.open=false; };
   Array.prototype.forEach.call(vw.querySelectorAll("[data-view]"), function(b){
     var v=VIEWS.filter(function(x){ return x.key===b.getAttribute("data-view"); })[0];
-    b.addEventListener("click", function(){ vw.open=false; if(v) v.go(); });
+    b.addEventListener("click", function(){ closeAll(); if(v) v.go(); });
   });
   var cl=vw.querySelector("#u-ccr-list");
-  if(cl && cl.tagName==="BUTTON") cl.addEventListener("click", function(){ vw.open=false; tellParent("list"); });
+  if(cl && cl.tagName==="BUTTON") cl.addEventListener("click", function(){ closeAll(); tellParent("list"); });
   Array.prototype.forEach.call(vw.querySelectorAll("a.linkish"), function(a){
-    a.addEventListener("click", function(){ vw.open=false; });
+    a.addEventListener("click", function(){ closeAll(); });
   });
 }
 window.__ccrViewsMenu = viewsMenuInto;
@@ -2377,7 +2396,7 @@ window.__ccrViewsMenu = viewsMenuInto;
  * once, because the menu is rebuilt on every render and a listener per build
  * would pile up. A menu left standing over the map is why menus feel broken. */
 document.addEventListener("pointerdown", function(e){
-  Array.prototype.forEach.call(document.querySelectorAll(".u-views[open]"), function(vw){
+  Array.prototype.forEach.call(document.querySelectorAll(".u-views[open], .u-more[open], .u-show[open]"), function(vw){
     if(!vw.contains(e.target)) vw.open=false;
   });
 });

@@ -234,6 +234,16 @@ First run: 3 dead paths in 653 citations and 1 near-duplicate pair — structura
 rot is rare; the staleness is semantic. Guarded by `tests/memory_audit_test.py`
 (47 checks, each rule both ways). Run: `python3 kb/_memory_audit.py --from-json <export>`.
 
+**Decision-sheet replies (2026-09-05, `kb/_decision_sheet_replies.py`)** — the
+reply controls every decision sheet carries: a verdict chip per item (Yes takes
+the recommendation), a *Follow up* toggle, a note; saved to the artifact's own
+store (published with `capabilities: {db: {}}`, read back with the Artifact
+tool's `read_db`, collection `replies`) or, off the artifact, kept in the
+browser with a *Copy replies* line. `--inject <sheet.html>` adds them to a
+finished sheet idempotently (marker-guarded); `replies_block()` is for a builder
+that wants them at source. Playbook:
+`docs/kb-notes/playbook-decision-sheet-replies.md`.
+
 **Docs-corpus auditor (2026-08-09, `kb/_docs_audit.py`)** — the PROSE
 counterpart to `_row_audit.py`, and deliberately the same shape: READ-ONLY by
 default, dated JSON + markdown receipts under `kb/docs_audit/`, one narrowly

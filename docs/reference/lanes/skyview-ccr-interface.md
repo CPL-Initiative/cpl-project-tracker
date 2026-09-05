@@ -68,7 +68,34 @@ found a latent bug one click in**: a forest cell under the comprehensive map rep
 sending the borrowed search box home; `setCrumbs`, the one call every view makes, is now the choke point.
 Verified in jsdom (131 → 157, 26 → 37), the Chromium harness and `npm run a11y`.
 
-**NEXT:** ⓪ **Sam drives the three shipped asks** — the CCR menu, SkyView alone, the workspace's two
-grains; the subject table's standing column is the first SUBJ4 view a curator has had, and his
-reaction to it decides the next cut. The CCR tab's only sweep finding is First Light's 15px greeting
-opt-out checkbox (`first_light.js`), a chrome-wide fix that belongs to the a11y backlog. ① **decision packs per discipline, fetched on demand** — the bottleneck behind every UI tweak; the shards' publish path is the template. ② **The QUEUE**: a drag that leaves the destination's SUBJ4 inconsistent with its corroborated discipline queues a re-mint candidate — proposes, never auto-adds. ③ The 73 two-real-course control numbers (93 rows at San Jose City College). ④ The member-roster fold at source (`CaÃ±ada College` ×678). ⑤ Accept-all-orbits-above-a-score as a batch verb, once Sam has seen single accepts behave. ⑥ The 67 `ESOL Z####` rows, `FIMS M1018` (needs an un-merge verb), a tool for the 3,001. ⑦ **A description signal for the rim** (Sam, 2026-09-03): 1,600 of the 2,073 rim courses have a catalog description; a TF-IDF match places about 130 well and agrees with the title-based parent only 20% of the time — a gap-filler that never outvotes a title, boilerplate stripped, the shared terms shown as the reason. ⑧ **Dropdown labels that name the grain** on the CCR tab: Subject as `CODE — title — discipline`, Discipline as `Discipline — Common SUBJ(s)` (SkyView's own wording is DONE — S227 swept every rendered use to "discipline", S228 caught the two hints that still said "Subject", and the SUBJ4 sense now has its own By subject view.) ⑨ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`, S226 — run it the day a `UC-CUR-*` target appears, then ALIAS_MAPS, the Supabase re-key, the chain); the seven held rows move when a second signal arrives (`--ruled-held`); the identities map's 1,597 ghost keys have a dry run and a cut receipt (`kb/identities_rekey_out/2026-09-04/`: re-key 1,369, drop 228) awaiting Sam's sheet, then `--apply --ruling`; and measure how many curated `discipline` values sit outside the MQ list. ⑩ **Identity-level chips** once members are classified: CMUS on commercial-music identities, ACCT and BSOT under Business, LPPS under Administration of Justice. Story: [docs/ccr_atlas_lessons.md](docs/ccr_atlas_lessons.md).
+✅ **SAM'S SECOND LIST SHIPPED (SkyKeep S230, 2026-09-05, #1481).** The top row is ONE chip vocabulary
+(30px, one size, 6px corners, the search box and its button included); the zoom label stacks over its
+percentage beside Out · In · Reset; "Details" reads **Sidebar**; the "Search" label is the box's
+placeholder; the Full screen and Hide legend chips are gone. ⭐ **The window is three states and two
+steps** — the page (or COBI) around the map · the map alone · the browser's own full screen — with the
+OS trio at the row's right end (step down · step up · close) and a **menu control (☰) at the far left,
+framed only, that opens COBI's side bar** (Sam: *"should be default collapsed on open"*). ⭐ **The CCR
+click opens the full window**: `body.cpl-skyview-solo` hides COBI's header, rail, hamburger and To-Do
+button and gives the frame the viewport; the rail is the ≤900px slide-over at every width, opened by
+the frame's ☰ through `postMessage`; *dock* brings the chrome back without leaving the map; leaving the
+tab takes the class off. **Show** is a menu of twelve switches (CR · NC · NCE · not recorded; M-ID ·
+C-ID · CCN · unified; identities · orphans in orbit · orphans on the rim; college courses): a point is
+drawn when every switch that describes it is on, and "not recorded" stays a switch of its own. **The
+legend folds from its own corner** (the word, unbold, with a fold mark). **Go To** replaces Views and
+carries **How SkyView works** (`#how`), an explainer for faculty reviewers with three drawn figures.
+⭐ **The search is a selection**: a pick from the list ADDS a chip beside the box (DISC · CRSE IDENTITY
+· STAND-ALONE CRSE · COLLEGE CRSE; credit as CR / NC / NCE), the map rings every course and outlines
+every discipline chosen and fits them all; a typed search REPLACES the selection (a search still means a
+search); Backspace in an empty box drops the last chip; the dropdown is wider, wraps whole titles and
+uses one font size. ⭐ **A dark canvas** (the *Dark* chip, remembered per browser): the map's palette is
+`--sky-*` tokens read at draw time (`readPal`), `body.u-dark` redefines them, every text pair measured
+≥4.5:1 — the one workspace that earns a dark ground; First Light stays light everywhere else. Verified
+in jsdom (157 → 188), COBI's suite (37 → 51), the Chromium harness and `npm run a11y` (six routes, three
+widths). Story: `ccr_atlas_lessons`.
+
+**NEXT:** ⓪ **Sam drives the second list** — the row, the window controls and the ☰ from the CCR menu,
+the Show menu, the chips, the dark canvas, the explainer's voice. **Open from his Obsidian screenshot
+(2026-09-05):** a right-edge vertical rail of glyphs (zoom in · reset · fit · zoom out · undo · redo ·
+help) in place of the row's zoom words — glyph-only, so his call under his own glyph rule. The CCR
+tab's only sweep finding is still First Light's 15px greeting opt-out checkbox (`first_light.js`), a
+chrome-wide fix in the a11y backlog. ① **decision packs per discipline, fetched on demand** — the bottleneck behind every UI tweak; the shards' publish path is the template. ② **The QUEUE**: a drag that leaves the destination's SUBJ4 inconsistent with its corroborated discipline queues a re-mint candidate — proposes, never auto-adds. ③ The 73 two-real-course control numbers (93 rows at San Jose City College). ④ The member-roster fold at source (`CaÃ±ada College` ×678). ⑤ Accept-all-orbits-above-a-score as a batch verb, once Sam has seen single accepts behave. ⑥ The 67 `ESOL Z####` rows, `FIMS M1018` (needs an un-merge verb), a tool for the 3,001. ⑦ **A description signal for the rim** (Sam, 2026-09-03): 1,600 of the 2,073 rim courses have a catalog description; a TF-IDF match places about 130 well and agrees with the title-based parent only 20% of the time — a gap-filler that never outvotes a title, boilerplate stripped, the shared terms shown as the reason. ⑧ **Dropdown labels that name the grain** on the CCR tab: Subject as `CODE — title — discipline`, Discipline as `Discipline — Common SUBJ(s)` (SkyView's own wording is DONE — S227 swept every rendered use to "discipline", S228 caught the two hints that still said "Subject", and the SUBJ4 sense now has its own By subject view.) ⑨ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`, S226 — run it the day a `UC-CUR-*` target appears, then ALIAS_MAPS, the Supabase re-key, the chain); the seven held rows move when a second signal arrives (`--ruled-held`); the identities map's 1,597 ghost keys have a dry run and a cut receipt (`kb/identities_rekey_out/2026-09-04/`: re-key 1,369, drop 228) awaiting Sam's sheet, then `--apply --ruling`; and measure how many curated `discipline` values sit outside the MQ list. ⑩ **Identity-level chips** once members are classified: CMUS on commercial-music identities, ACCT and BSOT under Business, LPPS under Administration of Justice. Story: [docs/ccr_atlas_lessons.md](docs/ccr_atlas_lessons.md).

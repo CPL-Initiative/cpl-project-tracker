@@ -195,20 +195,28 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // Nothing it protects changed — they are still words — so the check now tests
   // that, the way the repo's own note on position/wording-coupled tests says to.
   {
-    const ctrls = ["#u-out", "#u-in", "#u-reset", "#u-insp-toggle", "#u-dark", "#u-show-sum", "#u-mode-pan", "#u-mode-move"];
+    // Since 2026-09-05 (Sam, from a screenshot of Claude's own header) the
+    // header's ACTIONS are ghosted icons — each named by words for a screen
+    // reader — and the text controls stay words in boxes.
+    const words = ["#u-insp-toggle", "#u-dark", "#u-legend-menu", "#u-show-sum", "#u-mode-pan", "#u-mode-move"];
+    const icons = ["#u-out", "#u-in", "#u-reset", "#u-win-down", "#u-win-up", "#u-close", "#u-more-sum"];
     const GLYPH = /[\u2190-\u21FF\u2300-\u27BF\u2B00-\u2BFF\uD800-\uDBFF\uFE0F]/;
-    check("(A) every control is a word, not a glyph",
-      ctrls.every((c) => { const t = text(c).trim(); return t.length > 0 && /[A-Za-z]/.test(t) && !GLYPH.test(t); }),
-      ctrls.map((c) => text(c).trim()).join(" | "));
+    check("(A) the text controls are words, not glyphs",
+      words.every((c) => { const t = text(c).trim(); return t.length > 0 && /[A-Za-z]/.test(t) && !GLYPH.test(t); }),
+      words.map((c) => text(c).trim()).join(" | "));
+    check("(A) ⭐ the icon actions each carry words as their accessible name and tooltip",
+      icons.every((c) => q(c) && /[A-Za-z]/.test(q(c).getAttribute("aria-label") || "") && /[A-Za-z]/.test(q(c).getAttribute("title") || "")),
+      icons.map((c) => (q(c) ? q(c).getAttribute("aria-label") : "∅")).join(" | "));
     // The shortened words keep their meaning from the group label beside them.
-    check("(A) ⭐ the shortened zoom controls carry a group label that says what they act on",
-      /Zoom/i.test(text(".u-zgroup")) && !!q(".u-zgroup #u-out") && !!q(".u-zgroup #u-in"),
-      text(".u-zgroup").trim());
+    check("(A) ⭐ the zoom group is named for a screen reader and holds out, the readout, in and reset in that order",
+      q(".u-zgroup").getAttribute("aria-label") === "Zoom" &&
+      [...q(".u-zgroup").children].map((e) => e.id).join(",") === "u-out,u-zoom,u-in,u-reset",
+      [...q(".u-zgroup").children].map((e) => e.id).join(","));
     // Sam, 2026-09-05, item 8: the label and the percentage stack in one chip
     // height beside Out/In, and "zoom" is not repeated anywhere in the row.
-    check("(A) ⭐ the zoom label stacks over its percentage, once, beside Out and In",
-      !!q(".u-zgroup .u-zstack .u-zlbl") && !!q(".u-zgroup .u-zstack #u-zoom") && !q(".u-z") &&
-      (text("#u-top").match(/zoom/gi) || []).length === 1, (text("#u-top").match(/zoom/gi) || []).join(","));
+    check("(A) ⭐ the readout is the only zoom figure in the row, and the word is not repeated",
+      !!q(".u-zgroup > #u-zoom") && !q(".u-z") && !q(".u-zstack") && (text("#u-top").match(/zoom/gi) || []).length === 0,
+      (text("#u-top").match(/zoom/gi) || []).join(","));
     // The window controls and the menu are glyphs by Sam's explicit ask (a
     // screenshot of the OS's own three); each carries its words as its name.
     check("(A) ⭐ the window controls carry words as their accessible names, and the Full screen chip is gone",
@@ -219,7 +227,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   }
   // ── the 2026-09-04 chrome changes, asserted on a freshly booted page ──────
   check("(A) ⭐ the details panel starts HIDDEN so the map opens at full width (Sam, 2026-09-04)",
-    q("#u-inspector").classList.contains("closed") && !st().inspectorOpen && /^Sidebar$/.test(text("#u-insp-toggle").trim()),
+    q("#u-inspector").classList.contains("closed") && !st().inspectorOpen && /^Sidebar/.test(text("#u-insp-toggle").trim()) && q("#u-insp-toggle").getAttribute("aria-pressed") === "false",
     text("#u-insp-toggle"));
   // ⭐ Sam, 2026-09-04: "consolidate the top … I want all the real estate for the
   // universe view." #u-top was ALREADY one row (space-between: links left,
@@ -229,8 +237,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // controls · close. The four inline view links became ONE <details> menu
   // because a title, a search and nine controls do not share a row with them.
   check("(A) ⭐ title, menu, search, controls and close share ONE row inside #u-top",
-    ["u-title","u-views-slot","u-search-slot","u-bar"].every((id) =>
-      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")) && !!q("#u-views-slot > #u-views")
+    ["u-more-menu","u-title","u-search-slot","u-bar"].every((id) =>
+      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")) && !!q("#u-more-menu #u-views-slot > #u-views")
       && !!q("#u-top > .u-wins > #u-close"),
     [...q("#u-top").children].map((e) => e.id).join(" | "));
   check("(A) ⭐ the view links live in the menu, not loose in the row",
@@ -254,9 +262,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
      the same edit moved the search INTO this row — the dropdown it opens is
      positioned by .sugwrap inside #u-top, so there is nothing above the links
      to hide under. That pairing is the invariant, not the title's absence. */
-  check("(A) ⭐ item 1: SkyView is the leftmost thing in the row",
-    q("#u-top").firstElementChild === q("#u-top #u-title") &&
-    /^SkyView$/.test(text("#u-title").trim()), text("#u-title"));
+  // Item 1 (2026-09-04) put SkyView leftmost; the header's own vocabulary
+  // (2026-09-05, from Claude's header) puts the icon actions before the title
+  // field, so the title is the first thing in the row that is not an icon.
+  check("(A) ⭐ the title field is the first thing in the row after the icon actions, and reads SkyView",
+    [...q("#u-top").children].find((e) => !e.classList.contains("u-ico") && !e.classList.contains("u-more")) === q("#u-top #u-title") &&
+    /^SkyView$/.test(text("#u-title").trim()), [...q("#u-top").children].map((e) => e.id || e.className).join(" | "));
   check("(A) ⭐ …and the search that made room for it moved into the row with it",
     !!q("#u-top #u-search-slot #msearch") && !q(".mast #msearch") &&
     !!q("#u-top #u-search-slot .sugwrap #gq"));
@@ -606,10 +617,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // asserting it about a page that has been used.
   if (!st().inspectorOpen) q("#u-insp-toggle").click();      // normalize: open
   check("(N) an open panel says how to put it away",
-    !q("#u-inspector").classList.contains("closed") && /Hide sidebar/.test(text("#u-insp-toggle")) && st().inspectorOpen);
+    !q("#u-inspector").classList.contains("closed") && q("#u-insp-toggle").getAttribute("aria-pressed") === "true" && /on/.test(text("#u-insp-toggle .u-state")) && st().inspectorOpen);
   q("#u-insp-toggle").click();
   check("(N) the details panel folds to a word",
-    q("#u-inspector").classList.contains("closed") && /Sidebar/.test(text("#u-insp-toggle")) && !st().inspectorOpen);
+    q("#u-inspector").classList.contains("closed") && q("#u-insp-toggle").getAttribute("aria-pressed") === "false" && !st().inspectorOpen);
   w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[0] });
   check("(N) selecting something opens it again", !q("#u-inspector").classList.contains("closed") && /Welding/.test(text("#u-detail h3")));
   check("(N) a subject card lists its identities as buttons that open them", qa("#u-detail .idlist [data-go]").length === 2);
@@ -728,9 +739,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(U) ⭐ the menu names the view you are on and offers the others",
     /SkyView/.test(text("#u-views-menu .u-views-here")) && !q("#u-nav-sky") && !!q("#u-nav-comp") &&
     !!q("#u-nav-forest") && !!q("#u-nav-subject"), text("#u-views-menu"));
-  check("(U) ⭐ the menu is Go To (Sam, 2026-09-05) and offers How SkyView works",
-    text("#u-views > summary").trim() === "Go To" && !!q("#u-nav-how") && /How SkyView works/.test(text("#u-nav-how")),
-    text("#u-views > summary"));
+  check("(U) ⭐ on the map the views sit FLAT under 'Go to' inside the More menu, How SkyView works among them",
+    !!q("#u-more-menu #u-views.u-views-flat") && !q("#u-more-menu #u-views > summary") && /Go to/.test(text("#u-more-panel .u-more-h")) &&
+    !!q("#u-nav-how") && /How SkyView works/.test(text("#u-nav-how")), text("#u-more-panel").slice(0, 80));
+  check("(U) the More menu also holds the sidebar, the legend and the dark canvas as rows with a state word",
+    ["#u-insp-toggle", "#u-legend-menu", "#u-dark"].every((id) => q("#u-more-panel " + id) && /^(on|off)$/.test(text(id + " .u-state").trim())));
   check("(U) the CSS takes the masthead, the crumbs, the panes and the footer out of the solo frame",
     /body\.u-solo \.mast,body\.u-solo \.crumbrow,body\.u-solo #u-below,body\.u-solo main>footer\{display:none\}/.test(tpl));
   const cvsBefore = q("#u-cvs"), movesBefore = st().moves.length;

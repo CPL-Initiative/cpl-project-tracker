@@ -348,7 +348,7 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    works. display:none is what actually takes them out of the layout and the
    tab order, and it is the difference between a hidden menu and a hidden
    keyboard trap. */
-.u-views:not([open]) .u-views-menu{display:none}
+details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in the More panel has no [open] and must show */
 .u-views-menu{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:210px;
               display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:6px;
               background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));
@@ -514,7 +514,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-tokens{display:contents}
 .u-tok{display:inline-flex;align-items:center;gap:5px;height:var(--u-chip-h);padding:0 3px 0 8px;
   border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
-  font-size:.78rem;max-width:180px;color:var(--text-body)}
+  font-size:.78rem;max-width:150px;color:var(--text-body)}
 .u-tok-k{font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
 .u-tok-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
 .u-tok-x{border:0;background:none;color:var(--text-muted);cursor:pointer;font-size:1rem;line-height:1;
@@ -523,7 +523,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-tok-clear{font-size:.78rem;height:var(--u-chip-h);display:inline-flex;align-items:center;padding:0 8px;
   text-decoration:none;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--u-chip-r);background:var(--surface-opaque)}
 .u-tok-clear:hover{color:var(--text-strong);background:var(--surface-subtle)}
-.u-search-slot .msearch input{flex:1 1 100px;min-width:88px;font-weight:400;background:var(--surface-opaque);
+.u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
   color:var(--text-body);border:1px solid var(--border-strong)}
 .sug{right:auto;min-width:100%;width:min(760px,calc(100vw - 24px))}
 .sug li{align-items:flex-start;white-space:normal}
@@ -551,6 +551,38 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .how-steps li{margin:0 0 6px}
 .how kbd{font-family:inherit;font-size:.9em;border:1px solid var(--border-strong);border-radius:4px;padding:0 5px;background:var(--surface-subtle)}
 @media (max-width:1100px){ .u-wins{margin-left:auto} }
+/* ── the header's own vocabulary (Sam, 2026-09-05, from a screenshot of Claude's
+   header): ghosted icon actions, a title field, one More menu, expand + close ── */
+.u-top .u-ico{box-sizing:border-box;width:var(--u-chip-h);height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0;margin:0;
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--u-chip-r);
+  background:transparent;color:var(--text-muted);font:inherit;font-size:1rem;line-height:1;cursor:pointer;list-style:none}
+.u-top .u-ico:hover{background:var(--surface-subtle);color:var(--text-strong);border-color:var(--border)}
+.u-top .u-ico[hidden]{display:none}
+.u-top .u-ico::-webkit-details-marker{display:none}
+.u-top .u-title{border:1px solid var(--border-strong);border-radius:var(--u-chip-r);height:var(--u-chip-h);padding:0 10px;
+  display:inline-flex;align-items:center;font-size:.85rem;background:var(--surface-opaque);color:var(--text-strong)}
+.u-top .u-zgroup{gap:0;border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-opaque);height:var(--u-chip-h);align-items:center;padding:0 2px}
+.u-top .u-zgroup .u-ico{border-color:transparent;height:calc(var(--u-chip-h) - 4px);width:26px}
+.u-zread{font-size:.74rem;color:var(--text-strong);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;padding:0 2px}
+.u-more{position:relative;flex:0 0 auto}
+.u-more>summary{list-style:none;cursor:pointer}
+.u-more:not([open]) .u-more-panel{display:none}
+.u-more-panel{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:240px;display:flex;flex-direction:column;
+  gap:2px;padding:8px;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;
+  box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-more-h{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:6px 8px 2px}
+.u-more-h+.u-more-h{margin-top:6px}
+.u-views-flat .u-views-menu{position:static;min-width:0;padding:0;border:0;box-shadow:none;background:none}
+.u-more-t{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px;padding:2px 8px;border:0;
+  border-radius:6px;background:none;font:inherit;font-size:.86rem;color:var(--text-body);cursor:pointer;text-align:left;width:100%}
+.u-more-t:hover{background:var(--surface-subtle)}
+.u-more-t .u-state{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted)}
+.u-more-t[aria-pressed=true] .u-state{color:var(--cobalt);font-weight:700}
+/* the search field and its button read as one control */
+.u-search-slot .msearch{gap:0}
+.u-search-slot .msearch input{border-radius:var(--u-chip-r) 0 0 var(--u-chip-r)}
+.u-search-slot .msearch .u-search-go{border-radius:0 var(--u-chip-r) var(--u-chip-r) 0;margin-left:-1px}
+.u-top .u-bar{gap:4px}
 /* The details panel is DOCKED beside the map, never over it (Sam, 2026-09-03:
    "move the zoom and other buttons and popups outside the SkyView window so
    users can work more freely"); a course still drags from it onto a circle. On

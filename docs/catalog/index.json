@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 380,
+   "count": 382,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1133,6 +1133,25 @@
      "title": "A gate cannot protect the step that fills it",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/memory_audit/2026-09-05-sheet_builder.py",
+      "kb/_decision_sheet_replies.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generators",
+      "provenance",
+      "decision-sheet",
+      "memory"
+     ],
+     "title": "A generator committed behind its output is a trap, not a convenience",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-10",
@@ -6256,6 +6275,25 @@
      "title": "Witness-kinship gate: historical receipts need a present-tense validity check",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/_decision_sheet_replies.py",
+      "docs/visuals/2026-09-05-memory-audit-verdicts.html"
+     ],
+     "path": "docs/kb-notes/playbook-decision-sheet-replies.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "decision-sheet",
+      "governance",
+      "artifacts",
+      "memory"
+     ],
+     "title": "A decision sheet takes its replies on the page, and the session reads them from the store",
+     "type": "playbook",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-06-28",
@@ -11782,8 +11820,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 204,
+   "count": 205,
    "docs": [
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "n": 231,
+     "path": "docs/session_231_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "read Sam's replies from the sheet's store, then drive his SkyView reactions",
+     "type": null,
+     "updated": "2026-09-05"
+    },
     {
      "created": "2026-09-05",
      "governs": [],
@@ -15316,5 +15367,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 780
+ "total": 783
 }

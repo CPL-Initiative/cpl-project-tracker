@@ -33,10 +33,19 @@ CHIPS_GROUP = ["Yes", "Keep", "Later"]
 CHIPS_DONE = ["Undo"]
 
 
-def replies_block(item, ref="", chips=None, title="", compact=False):
+CHIPS_ENTRY_VERIFY = ["Yes", "Hold out", "Rewrite", "Later"]
+CHIPS_ENTRY_RETIRE = ["Yes", "Keep", "Later"]
+
+
+def replies_block(item, ref="", chips=None, title="", compact=False, kind="item", parent=""):
     """The reply controls for one item. `item` is the number a reply names
-    ("3", "D7"); `ref` is what the session needs to act (a slug, an id, a class
-    key); `chips` are the verdict words offered, Yes first."""
+    ("3", "D7", or "2.o3" for one memory inside item 2); `ref` is what the
+    session needs to act (a slug, an id, a class key); `chips` are the verdict
+    words offered, Yes first; `kind` is item / entry / done, `parent` the item
+    an entry belongs to. Sam, 2026-09-05: "I need the response controls on each
+    memory, not just on the whole batch" — an entry block sits under every
+    memory a batch item lists, and Yes there means the batch's recommendation
+    for that one memory."""
     chips = list(chips or CHIPS_DEFAULT)
     n = str(item)
     btns = "".join(
@@ -45,7 +54,8 @@ def replies_block(item, ref="", chips=None, title="", compact=False):
     ph = ("Why, or what to do instead" if compact
           else "A condition, a rewrite, a name to hold out, what to follow up on")
     return (
-        f'<div class="reply{" reply-compact" if compact else ""}" data-item="{E(n)}" data-ref="{E(ref)}" data-title="{E(title)}">'
+        f'<div class="reply{" reply-compact" if compact else ""}" data-item="{E(n)}" data-ref="{E(ref)}" '
+        f'data-title="{E(title)}" data-kind="{E(kind)}" data-parent="{E(parent)}">'
         f'<div class="reply-row" role="group" aria-label="Your reply to item {E(n)}">'
         f'<span class="reply-lbl">Your reply</span>{btns}'
         f'<button type="button" class="reply-chip reply-fu" aria-pressed="false" '
@@ -58,7 +68,8 @@ def replies_block(item, ref="", chips=None, title="", compact=False):
 
 
 REPLIES_HOWTO = (
-    '<p><strong>Or click your reply under each item.</strong> Yes takes the recommendation; '
+    '<p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation '
+    '(on a single memory, the batch\'s recommendation for that one); Hold out and Rewrite keep a memory back from a batch verdict; '
     'Follow up marks an item the session should come back to whatever the verdict; the note '
     'is for anything a word cannot carry. On the artifact your replies save to the sheet itself '
     'and the session reads them from there. Opened anywhere else they stay in this browser, and '
@@ -92,6 +103,10 @@ REPLIES_CSS = r"""
     color: var(--text-body); resize: vertical; min-height: 34px; }
   .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
   .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
   .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
   .reply-compact .reply-note { margin-top: 6px; }
   ol.done li { position: relative; }
@@ -178,10 +193,18 @@ def replies_js(sheet_id):
     return parts.length ? parts.join(" · ") : "No replies yet.";
   }
   function bar(){
-    var n = 0, fu = 0;
-    els.forEach(function(el){ var r = state[el.getAttribute("data-item")]; if (!empty(r)) n++; if (r && r.fu) fu++; });
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+    });
+    var parts = [];
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
     var c = document.getElementById("reply-count");
-    if (c) c.textContent = n + " of " + els.length + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
     var w = document.getElementById("reply-where");
     if (w) w.textContent = where === "db"
       ? "Replies save to this sheet; the session reads them from here."
@@ -285,6 +308,19 @@ def _text(fragment):
     return _re.sub(r'\s+', ' ', _re.sub(r'<.*?>', '', fragment or '')).strip()
 
 
+_ENTRY = _re.compile(r'(<li>)(<span class="gt">(.*?)</span>.*?<span class="ref">reference: (.*?)</span>)(</li>)', _re.S)
+
+
+def entry_chips(card_html):
+    """What one memory inside a batch can be told, read off the batch's ask."""
+    ask = _text((_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S) or [None, ''])[1]).lower()
+    if 'verified' in ask:
+        return CHIPS_ENTRY_VERIFY
+    if 'retire' in ask:
+        return CHIPS_ENTRY_RETIRE
+    return CHIPS_DEFAULT
+
+
 def chips_for(section_title, card_html):
     """Which words a card offers, by the section it sits in and its shape."""
     t = (section_title or '').lower()
@@ -320,7 +356,18 @@ def inject(html_text, sheet_id):
         title = _text((_re.search(r'<h3[^>]*>(.*?)</h3>', body, _re.S) or [None, ''])[1])
         ref = (_re.search(r'<p class="ref">reference: (.*?)</p>', body, _re.S) or [None, ''])[1]
         ref = _text(ref) or title
-        block = replies_block(n, ref, chips_for(section_at(m.start()), body), title)
+        block = replies_block(n, ref, chips_for(section_at(m.start()), body), title, kind="item")
+        # Every memory the batch lists gets its own compact block (Sam,
+        # 2026-09-05: "the response controls on each memory, not just on the
+        # whole batch"); its id is <item>.<reference>, so the reply line and
+        # the store both say which memory under which item.
+        ech = entry_chips(body)
+        def entry_sub(em):
+            e_title = _text(em.group(3)); e_ref = _text(em.group(4))
+            e_item = n + "." + _re.sub(r'[^A-Za-z0-9_\-.~:@+]', '-', e_ref)
+            e_block = replies_block(e_item, e_ref, ech, e_title, compact=True, kind="entry", parent=n)
+            return em.group(1) + em.group(2) + MARK_S + e_block + MARK_E + em.group(5)
+        body = _ENTRY.sub(entry_sub, body)
         return open_tag + body + MARK_S + block + MARK_E + close
 
     def done_sub(m):
@@ -328,7 +375,7 @@ def inject(html_text, sheet_id):
         n = 'D' + did[1:]
         title = _text((_re.search(r'<span class="gt">(.*?)</span>', body, _re.S) or [None, ''])[1])
         ref = _text((_re.search(r'<span class="ref">reference: (.*?)</span>', body, _re.S) or [None, ''])[1]) or title
-        block = replies_block(n, ref, CHIPS_DONE, title, compact=True)
+        block = replies_block(n, ref, CHIPS_DONE, title, compact=True, kind="done")
         return open_tag + body + MARK_S + block + MARK_E + close
 
     html_text = _CARD.sub(card_sub, html_text)

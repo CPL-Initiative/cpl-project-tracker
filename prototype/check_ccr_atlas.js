@@ -52,11 +52,19 @@ function serve() {
   const backToForest = async () => {
     if (await page.locator("#u-nav-forest").count()) {
       // The view links live behind the Views menu now — open it first.
-      if (await page.locator("#u-views").count()) await page.locator("#u-views > summary").click();
+      if (await page.locator("#u-more-sum").count()) await page.locator("#u-more-sum").click();
+      else if (await page.locator("#u-views").count()) await page.locator("#u-views > summary").click();
       await page.locator("#u-nav-forest").click();
     }
     else await page.locator(".crumbs button").first().click();
     await page.waitForTimeout(150);
+  };
+  // The other views sit behind the map's More menu since 2026-09-05 (flat,
+  // under "Go to"); every other view keeps the Go To details menu.
+  const openGoTo = async () => {
+    if (await page.locator("#u-more-sum").count()) await page.locator("#u-more-sum").click();
+    else await page.locator("#u-views > summary").click();
+    await page.waitForTimeout(120);
   };
   // Font/favicon fetches are blocked in the sandbox and 404 locally; neither is
   // a page defect, and neither can mask one — the page has full font fallbacks.
@@ -122,7 +130,7 @@ function serve() {
   // The view links live in a <details> menu (Sam, item 2, 2026-09-04), and a
   // closed <details> is display:none — so the menu opens before the link is
   // reachable. That is the point of the check: it clicks the way a person does.
-  await page.locator("#u-views > summary").click();
+  await openGoTo();
   await page.locator("button#u-nav-forest").click();
   await page.waitForTimeout(400);
   ok("the menu opens the workspace on By discipline, not the packaging view",
@@ -182,7 +190,7 @@ function serve() {
     (await page.locator("#u-zoom").textContent()).trim() === "150%");
   ok("and the hint names the subject and its count in words",
     /Subject/.test(await page.locator("#u-hint").textContent()) && /KINE/.test(await page.locator("#u-hint").textContent()));
-  await page.locator("#u-views > summary").click();
+  await openGoTo();
   await page.locator("button#u-nav-forest").click();
   await page.waitForTimeout(300);
   await page.locator("#ws-q").fill("welding");
@@ -196,7 +204,7 @@ function serve() {
   console.log("\n\u2550\u2550 the comprehensive view (the map with the panes below)");
   // Sam, 2026-09-05: "an option to navigate to the comprehensive SkyView (the
   // current one), but I don't want it to open by default."
-  await page.locator("#u-views > summary").click();
+  await openGoTo();
   await page.locator("button#u-nav-comp").click();
   await page.waitForTimeout(500);
   ok("the same canvas, the solo frame off, the panes painted",
@@ -741,10 +749,12 @@ function serve() {
              nav: !!document.querySelector("#u-full #u-nav-forest"),
              prov: (document.getElementById("prov") || {}).title || "",
              wins: [...document.querySelectorAll("#u-top .u-wins .u-win")].map((b) => b.getAttribute("aria-label") || ""),
-             chipHeights: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-win:not([hidden]), #u-top .u-views > summary, #u-top .u-show > summary, #u-search-slot input, #u-search-slot .u-search-go")]
+             chipHeights: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-wins .u-win:not([hidden]), #u-top .u-more > summary, #u-top .u-menu, #u-top .u-title, #u-top .u-zgroup, #u-top .u-show > summary, #u-search-slot input, #u-search-slot .u-search-go")]
                .map((b) => Math.round(b.getBoundingClientRect().height)),
-             chipRadius: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-win:not([hidden]), #u-search-slot input")]
-               .map((b) => getComputedStyle(b).borderTopLeftRadius),
+             // The search field and its button are joined (6px on the outer corners,
+             // 0 on the shared edge), so the outer corner is what is measured.
+             chipRadius: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-wins .u-win:not([hidden]), #u-search-slot input")]
+               .map((b) => { const cs = getComputedStyle(b); return [cs.borderTopLeftRadius, cs.borderTopRightRadius].sort().pop(); }),
              legendToggle: !!document.querySelector("#u-wrap #u-legend-toggle"),
              cells: document.querySelectorAll("#u-more .cell").length,
              // The inspector's own "filter these courses" box is a list filter,
@@ -940,8 +950,15 @@ function serve() {
   await page.setViewportSize({ width: 1600, height: 950 });
   await page.evaluate(() => window.__ccrUniverse());
   await page.waitForTimeout(700);
-  ok("item 1: SkyView is the leftmost thing in the row",
-    await page.evaluate(() => (document.querySelector("#u-top").firstElementChild || {}).id === "u-title"));
+  // Item 1 (2026-09-04) put SkyView leftmost; the header's own vocabulary
+  // (2026-09-05, from Claude's header) puts the icon actions before the title
+  // field, so the title is the first thing in the row that is not an icon.
+  ok("item 1: the title field is the first thing in the row after the icon actions",
+    await page.evaluate(() => {
+      const first = [...document.querySelector("#u-top").children]
+        .find((e) => !e.classList.contains("u-ico") && !e.classList.contains("u-more"));
+      return !!first && first.id === "u-title" && first.textContent.trim() === "SkyView";
+    }));
   ok("item 11: a real pointer click reaches the search box",
     await page.locator("#gq").click({ timeout: 4000 }).then(() => true).catch(() => false));
   // ⚠️ Clear first. Earlier blocks in this file leave a term in the box, and
@@ -965,6 +982,9 @@ function serve() {
       const z = (await page.locator("#u-zoom").textContent()).trim();
       ok(`item 10: a course flies to 1000% (${z})`, z === "1000%");
     } else ok("a course appears among the suggestions", false);
+    // A second pick would JOIN the first (the map fits both — 2026-09-05's
+    // selection chips); item 10 is about one pick, so clear the first.
+    await page.evaluate(() => window.__ccrClearSelection && window.__ccrClearSelection());
     await page.locator("#gq").fill(""); await page.locator("#gq").type("welding");
     await page.waitForTimeout(500);
     if (di >= 0) {
@@ -975,7 +995,7 @@ function serve() {
   }
   ok("item 2: the Views menu opens, carries every other view, and closes on an outside click",
     await page.evaluate(async () => {
-      const d = document.getElementById("u-views");
+      const d = document.getElementById("u-more-menu") || document.getElementById("u-views");
       if (!d || d.open) return false;
       d.querySelector("summary").click();
       if (!d.open || d.querySelectorAll(".u-views-menu .linkish").length < 3) return false;
