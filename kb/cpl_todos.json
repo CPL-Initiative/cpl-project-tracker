@@ -1,14 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-05",
-  "_session": "227 (SkyMint) — accessibility became one command, and SkyView's top row landed",
-  "_status": "The COBI masthead is done and merged. Accessibility now has an instrument rather than a rule: one command, `npm run a11y`, checks every view we ship — all 38 COBI tabs plus Sierra, the Fact Sheet, the veteran map and SkyView — in about a hundred seconds, and it finds COBI's tabs from the side menu itself so a new tab is checked the day it ships. The faults every view shared are fixed in five lines: the side-menu headings and the signed-out line were too faint to read, three controls were under the minimum tap size, the painting fallback failed on its own background, and nothing in COBI respected a reader's request to stop moving things. What is left is per-tab and written down rather than quietly dropped. SkyView's top row is rebuilt to your list: the name at the left, the view links folded into one menu, the search moved in beside the controls and widened, a close button, and search results that land at a fixed magnification. The search box you could not click in full screen was never broken — it lived in the page header, which full screen does not draw at all.",
+  "_session": "228 (SkyQuiet) — SkyView is the map alone, the CCR menu opens it that way, and the workspace has two grains",
+  "_status": "SkyView is what Sam said it was: the map alone, filling the window, and that is what the Common Course Reference menu button opens now, both on COBI's tab and on the page's own address. The map with its explanatory panes is one menu click away as the comprehensive view and never the default. The four separate views are one tab called Disciplines and subjects, with a toggle between the discipline grain, the subject grain (the four-letter Common SUBJ codes, read off the map and checked against the seed) and the ESL packaging proposal, and every view reaches every other from one Views menu. Along the way the Chromium harness found that one click on a discipline cell under the comprehensive map had been destroying the page's only search box; that is fixed at the one place every view passes through. Accessibility on SkyView is green on all five routes. Sam has not driven any of it yet; his numbered reactions are the next session's queue.",
   "items": [
     {
-      "id": "s227-fable-skyview-consolidate",
+      "id": "s228-sam-drive-skyview",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Your three asks of September 5 shipped in one pull request (#1479). Open the Common Course Reference from the side menu: SkyView now fills the window on its own, with nothing above or below it. The Views menu on its top row reaches the comprehensive view (the map with the panes under it), By discipline, By subject and ESL packaging, which are now one tab with a toggle and a Back to SkyView button. By subject is the four-letter Common SUBJ grain, read off the map, with a column saying whether each code is its discipline's Common SUBJ, an umbrella code, or not its discipline's code at all. React by number, as you did on September 4."
+    },
+    {
+      "id": "s228-fable-standing-column",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Your items 6 to 9 — one tab instead of four. Combine the discipline cards, the discipline list, the ESL packaging view and the map into a single tab, with a toggle to look at the corpus by subject or by discipline and a line explaining the difference, and make every view reachable from every other. One thing to settle first: when you say “subject” you mean the four-letter code (ENGL, WELD), which is a different grain from a discipline — today both views show disciplines, so this adds a way of looking rather than renaming one."
+      "text": "Watch Sam's reaction to the By subject table's standing column. Every row that reads “not X’s code” is either a stray the prefix fold missed or an umbrella code the seed does not know about; if he wants it as a worklist, fold-verify is the planner of record, not a new one."
     },
     {
       "id": "s227-fable-a11y-scroll",

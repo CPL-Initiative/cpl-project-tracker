@@ -360,3 +360,22 @@ clean. The backlog, clustered:
 ⚠️ **Shipping a red sweep is the correct state, not a failure to finish.** The
 alternative — quietly narrowing what it measures until it prints green — is the
 one outcome that would make it useless.
+
+## 2026-09-05 — SkyQuiet S228: the new default had no heading, and the CCR tab's one finding is chrome
+
+SkyView's default became the map alone (`body.u-solo`), and the first sweep of
+it said *headings start at h—(none)*: the page's only h1 lived in the panes
+the solo view does not paint. The row's "SkyView" title is the h1 now, sized
+to the row, with the panes' headings stepped down beneath it. `a11y.config.js`
+sweeps SkyView's five routes (`#skyview` · `#comprehensive` · `#disciplines` ·
+`#subjects` · `#esl`) and all five pass at 390, 768 and 1440.
+
+COBI's Common Course Reference tab, swept in its new map mode, reports exactly
+one target under 24px: First Light's greeting opt-out checkbox
+(`.cplfl-optout input`, 15px, `first_light.js`). It is chrome on every tab,
+not the tab's, and it joins the 54-selector backlog rather than this lane.
+
+⚠️ Same lesson as 2026-09-04, from the other side: a view that changes its
+DEFAULT must be swept again as the default. The masthead-less page had passed
+before because the masthead was there.
+

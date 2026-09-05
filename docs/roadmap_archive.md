@@ -5440,3 +5440,21 @@ sixth id-keyed artifact class, outside the chain — with 398 keys the recode ha
 retired; re-keyed (never regenerated: it carries curated mirrors) and in the
 chain, where it took the fold's 29 the same night. Story: `ccr_atlas_lessons`;
 handoff `session_226_handoff`.
+
+---
+
+## Moved from CLAUDE.md §11 at the S228 checkpoint (2026-09-05)
+
+### SkyLand S226 — the duplicates become a lane; the twenty were never missing (2026-09-04)
+
+**Two PRs (#1465 + the promote step).** The 130 May anchors that duplicate a
+catalog identity are a lane of the Suggested-merges worklist, recomputed live
+(`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so
+the survivor rule folds the anchor into the course carrying the college courses;
+a curator confirms each, a script merges none. 129 of 130 receipt pairs surface;
+the 130th hides behind a bot's `Stagecraft` re-discipline — a signal, not a miss.
+Measured first: the 20 "missing" folded identities are Phase B folds into C-ID
+descriptor rows (`consolidated_from`), not an export gap. Built before the first
+one appears: `kb/_uc_cur_promote.py` (a `UC-CUR-*` target → a real M-ID record)
+and the identities map re-key dry run (1,597 ghosts: re-key 1,369, drop 228;
+sheet for Sam next). Story: `ccr_atlas_lessons`; handoff `session_227_handoff`.

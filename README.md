@@ -191,7 +191,11 @@ The whole ecosystem, end-to-end:
    [`docs/ccr_rules_brief.md`](docs/ccr_rules_brief.md).
 4. **The Common Course Reference curation tab** (formerly "Unified Courses" —
    renamed to avoid UC/University-of-California confusion and to signal that
-   the tab is a *reference faculty consult*, not an authority replacing them) —
+   the tab is a *reference faculty consult*, not an authority replacing them).
+   **It opens on SkyView** — the whole reference as one map, filling the tab on
+   its own (2026-09-05); the map's Views menu reaches the comprehensive view,
+   the *Disciplines and subjects* workspace and the table, and
+   `#unified-courses/list` opens the table directly —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the

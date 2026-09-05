@@ -1630,3 +1630,128 @@ only because the same edit moves the search into the row — the dropdown now
 belongs to this row, so there is nothing above the links to hide under. The test
 pins **that pairing**, not the title's absence: a guard written against the old
 symptom would have blocked the fix.
+
+
+## 2026-09-05 — SkyQuiet (Session 228): what he saw, not what we changed
+
+Sam opened with three asks, and the first carried a verdict on three sessions
+of work: *"Make sure the CCR menu button opens the full screen SkyView, not the
+version it currently opens to. I've made several requests for this so far and
+none of them have worked."*
+
+### Three attempts, three mechanisms, one unchanged screen
+
+He was right, and the pattern is worth naming. 2026-08-25, "SkyView should be
+the initial CCR tab": Session 192 made the iframe the tab's landing view.
+2026-09-03, "have SkyView open full screen": `allow="fullscreen"` on the frame,
+so the map's own button stopped being refused. 2026-09-04, "open Skyview from
+CCR side menu link directly to the full window version of SkyView, not another
+view": a separate side-menu link to the page. Each was a real change and each
+was plausible from inside the code. What the tab SHOWED when he clicked it never
+moved: a boxed frame under a beta banner, a heading with a launcher, a toggle
+row and a note, and inside the frame a masthead, then the map, then panes.
+Nothing in that picture is "full screen".
+
+The third ask supplied the definition the first two attempts lacked: *"The full
+screen SkyView (which I would like to henceforth refer to as SkyView, but I
+haven't because it keeps apparently getting confused with the original
+SkyView)."* Full screen, to him, is what the Full screen button paints: `#u-full`
+and nothing else. "The original SkyView" (masthead, map, panes) is now **the
+comprehensive view**, reachable from the Views menu and never the default.
+
+⚠️ The lesson generalizes, and it is in `CLAUDE.md`'s naming section and its
+own KB note: when an ask comes back a third time with "none of them worked",
+diff what the reader SEES against what they asked for, not what the code does.
+Three sessions verified mechanisms; one screenshot would have failed all three.
+
+### Solo is a class, not a second render
+
+`body.u-solo` hides the masthead, the crumbs row, `#u-below` and the footer; the
+canvas takes `innerHeight` minus the top row and the legend strip, the same
+arithmetic `fitCanvas` already used for browser full screen. The comprehensive
+view is the SAME render with the class off, and that is the point: switching
+keeps the zoom, the selection and the moves, because nothing is rebuilt. A
+`__ccrUniverse({solo})` call on a page already showing the map only toggles the
+class; a bare `__ccrUniverse()` keeps the frame you were in, so the list's row
+click and the suggestion jump come back where you left. Narrow screens keep
+scrolling (the details panel docks under the canvas there and needs the room);
+`overflow:hidden` applies from 700px up.
+
+### One menu builder, and the item that is not offered
+
+Item 9, every view reachable from every other, was two menus in two files until
+it was one function. `viewsMenuInto(host)` renders the same `<details>` into the
+map's top row and into the crumbs row of every other view; the view you are on
+is a muted name with `aria-current="page"`, not a button, because a menu item
+that leads where you already are is a control that appears to do nothing.
+Framed inside COBI, the "CCR table view" item becomes a button that posts to
+the page around the frame, and an "Open in its own tab" link appears.
+Stand-alone, the link out points at `#unified-courses/list`: the tab itself now
+lands on the map, so a link to the bare tab would have opened a second map.
+
+### "Subject" is the SUBJ4 grain, and now it has a view
+
+SkyMint's handoff carried the constraint that made item 6 more than a rename:
+"All disciplines" and "Disciplines as a list" both listed disciplines, and his
+"view by subject" is the four-letter Common SUBJ code an identity is keyed by.
+After the 2026-09-03 recode those codes ARE the identity ids' prefixes, so the
+subject rows are read off the map itself, 344 codes across 159 islands, and
+joined to the seed for the standing column: *the Common SUBJ of Business* (with
+its C-ID chip), *an umbrella code under Foreign Languages*, or *not Business's
+code (its Common SUBJ is BUSI)*. TOP plays no part (Rule 7). The three legacy
+anchors read `M-ID HOSP 102` and take the second token. *On the map* flies to
+the discipline that carries most of the code at 150% and rings its identities
+up to 150; past that the count in the hint says more than the rings would,
+which is the 408-red-rings lesson of 2026-09-03 applied to a second grain.
+
+### The harness found the search box dying, one click in
+
+The moment the harness reached a discipline cell under the comprehensive map,
+`#gq` was gone. The embedded forest's cells call the template's own
+`discipline()`, not the wrapped `window.__ccrDiscipline`, so the view was
+replaced without the borrowed search form going home, and `innerHTML =`
+detaches, so the page's one search field simply ceased to exist. Latent since
+the box moved into the top row on 2026-09-04; never seen because the harness
+had only ever reached those cells from the stand-alone forest. The fix is not
+another wrapper: `setCrumbs()` is the one call every view makes before it
+renders, so it now sends the box home and names the view being entered. The
+wrapper stays as the belt to that brace.
+
+### The solo view had no heading
+
+`npm run a11y -- skyview` on the new default: *headings start at h—(none)*. The
+page's h1 lived in `#u-below`, which solo does not paint. The row's "SkyView"
+title is the h1 now, sized to the row; the panes' headings step down under it
+(h2, h3), and the embedded forest's hero heading steps down with them. Five
+routes swept, all green.
+
+### COBI's tab, and what the frame is allowed to be
+
+Map mode adds `uc-map-on` to the pane: the beta banner, the heading with its
+launcher and the toggle row hide, the container's padding and 1400px cap lift,
+and the frame takes `innerHeight` minus its own top. Measured, not assumed,
+because the COBI header's height is not the tab's to know, and measured AGAIN
+after the frame and the fonts load, because the first measurement caught the
+header before it settled and the frame ended 142px short until it did. Close
+and "CCR table view" arrive as `postMessage` from the frame and are honored
+only when `e.source` is our frame's window. The list keeps its toggle and
+launcher, and `#unified-courses/list` is the hash that lands on it.
+
+### Verification
+
+`tests/ccr_skyview_universe.test.js` 131 → 157 (solo and its hash, the menu's
+current marker, routing, the workspace on both grains, the subject index, the
+rings); `tests/ccr_skyview_first.test.js` 26 → 37 (the map-mode chrome, the
+message hand-off honoring only our frame, the `/list` hash both ways);
+`npm test` 300 files green; `prototype/check_ccr_atlas.js` rewritten for the
+workspace, the comprehensive view and solo geometry, every check green in
+Chromium with the shards built locally (`--shards-only`, 24 s, gitignored);
+`npm run a11y -- skyview` green on all five routes. The CCR tab's only sweep
+finding is First Light's 15px greeting opt-out checkbox, chrome-wide and in
+the backlog. PR #1479.
+
+### Next
+
+Sam drives the three asks. His reaction to the standing column is the thing to
+watch: it is the first SUBJ4 view a curator has had, and every "not X's code"
+row is either a stray the fold missed or an umbrella the seed does not know.
