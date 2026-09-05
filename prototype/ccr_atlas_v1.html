@@ -51,9 +51,15 @@ a{color:var(--cobalt)}
 .sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:4px 0;
   list-style:none;background:var(--surface-opaque,#fff);border-radius:9px;
   border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
-  max-height:min(58vh,420px);overflow-y:auto}
+  max-height:min(70vh,620px);overflow-y:auto;overscroll-behavior:contain}
 .sug li{display:flex;gap:.55em;align-items:baseline;padding:.42em .7em;cursor:pointer}
 .sug li.on{background:var(--surface-subtle,#F7F5F1)}
+/* The footer is a note, not a destination: no pointer, no hover, and it sticks
+   to the bottom edge so the count stays readable while the list scrolls. */
+.sug li.sug-more{position:sticky;bottom:0;cursor:default;display:block;
+  padding:.5em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-top:1px solid var(--border,rgba(28,28,26,.16))}
+.sug li.sug-more:hover{background:var(--surface-subtle,#F7F5F1)}
 /* The kind is a WORD. Two different destinations must not be told apart by a
    color or an icon alone. */
 .sg-k{flex:none;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;
@@ -783,6 +789,12 @@ function markSug(){
   Array.prototype.forEach.call(sugEl.children, function(li,i){
     li.classList.toggle("on", i === sugAt);
   });
+  /* A list of sixty is a list you scroll, so the arrow keys have to CARRY the
+   * viewport with them. Without this the cursor walked off the bottom edge and
+   * the reader watched a still list, which reads exactly like a list that has
+   * stopped responding — the same complaint, one layer down. */
+  var cur = sugAt >= 0 ? sugEl.children[sugAt] : null;
+  if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
   if (gqEl){
     if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
     else gqEl.removeAttribute("aria-activedescendant");
@@ -799,11 +811,28 @@ function takeHighlighted(){
   else closeSug();
   return ok;
 }
+/* How many matches the list is built from. It was EIGHT, and eight is what Sam
+ * saw: "Search box only delivers a short set of options and should show all or
+ * at least allow scroll to show others" (2026-09-05). The list was already
+ * scrollable — `.sug` has carried `overflow-y:auto` since it was written — so
+ * nothing was wrong with the box; there was simply never anything below the
+ * fold to scroll to. The corpus routinely holds hundreds of matches for a term
+ * like "art", and __ccrSuggest was being asked for eight of them.
+ *
+ * ⚠️ NOT "all". A common term matches thousands, and a dropdown of thousands is
+ * a worse answer than a dropdown of eight — it just fails more slowly. Sixty is
+ * the closest sixty by the module's own ranking, deep enough that the thing you
+ * meant is in the list, shallow enough to scroll through; the footer says
+ * plainly when there are more, so the reader knows to keep typing rather than
+ * assuming the corpus is empty past the edge. */
+var SUG_LIMIT = 60;
+
 function openSug(term){
   if (!sugEl || typeof window.__ccrSuggest !== "function") return;
-  sugItems = window.__ccrSuggest(term, 8) || [];
+  sugItems = window.__ccrSuggest(term, SUG_LIMIT) || [];
   sugAt = -1;
   if (!sugItems.length){ closeSug(); return; }
+  var more = sugItems.more || 0;
   var picked = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
   sugEl.innerHTML = sugItems.map(function(it,i){
     // The KIND is a word, not a color or an icon: "subject" and "course" are
@@ -820,9 +849,28 @@ function openSug(term){
       '<span class="sg-l">'+esc(it.label)+'</span>'+
       '<span class="sg-r">'+right+'</span></li>';
   }).join("");
+  /* The footer says there is more below the fold, and it is the LAST child, never
+   * a row between groups: sugItems indexes sugEl.children directly, so anything
+   * unselectable in the middle desyncs every arrow key after it. role=presentation
+   * keeps it out of the listbox's options; the same words go on the listbox's own
+   * label, which is what a screen reader hears on entry. */
+  var label = "Search suggestions";
+  if (more > 0){
+    sugEl.insertAdjacentHTML("beforeend",
+      '<li class="sug-more" role="presentation">Showing the closest '+sugItems.length+
+      ' \u2014 keep typing to narrow.</li>');
+    label += " \u2014 showing the closest " + sugItems.length + ", more available";
+  } else {
+    label += " \u2014 " + sugItems.length + (sugItems.length === 1 ? " match" : " matches");
+  }
+  sugEl.setAttribute("aria-label", label);
   sugEl.hidden = false;
+  sugEl.scrollTop = 0;
   if (gqEl) gqEl.setAttribute("aria-expanded","true");
   Array.prototype.forEach.call(sugEl.children, function(li){
+    // The footer carries no data-i and is not a destination — skip it, or its
+    // mousedown would set sugAt to NaN and swallow the press.
+    if (li.dataset.i == null) return;
     // mousedown, not click: the input's blur fires first on a click and would
     // close the list out from under the pointer.
     li.addEventListener("mousedown", function(ev){

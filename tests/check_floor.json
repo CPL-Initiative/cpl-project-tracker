@@ -1,6 +1,6 @@
 {
   "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
-  "_note": "Re-baselined by `npm run test:floor`; cobi_a11y_baseline.test.js added by hand (17 checks) — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before.",
+  "_note": "Re-baselined by `npm run test:floor` (2026-09-05); cobi_a11y_baseline.test.js was added by hand at 17 and the run now floors it itself — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before, so diff this file for LOWERED numbers before committing.",
   "files": {
     "actions_bar_slim.test.js": 15,
     "activities_sprint_filter.test.js": 9,
@@ -15,8 +15,9 @@
     "card_raci.test.js": 23,
     "card_updates.test.js": 23,
     "ccr_skyview_button.test.js": null,
-    "ccr_skyview_first.test.js": 26,
-    "ccr_skyview_universe.test.js": 123,
+    "ccr_skyview_first.test.js": 51,
+    "ccr_skyview_search_show.test.js": 22,
+    "ccr_skyview_universe.test.js": 213,
     "ccr_subject_authority_label.test.js": 10,
     "ccr_subject_groups.test.js": 17,
     "cer.test.js": 18,
@@ -121,6 +122,7 @@
     "csr_fl_split.test.js": 9,
     "csr_subj_check.test.js": 33,
     "csr_ui_tweaks.test.js": 27,
+    "decision_sheet_replies.test.js": 25,
     "eacr_a11y.test.js": 45,
     "eacr_common_titles.test.js": 6,
     "eacr_filters.test.js": 23,

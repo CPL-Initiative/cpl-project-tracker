@@ -319,6 +319,35 @@ function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; 
 /* Drawn when every switch that describes the point is on. The name survives
  * from the three-position filter it grew out of; the tests read it. */
 function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd); }
+/* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
+ * does not respond when making changes") ─────────────────────────────────────
+ *
+ * ⚠️ THE SWITCHES WERE NEVER INERT — THE MAP WAS. Individual courses are only
+ * drawn past NODE_ZOOM (0.20); SkyView opens at k = 0.100, three zoom steps
+ * below it, because at 10% fifty thousand dots are a smear and the disciplines
+ * are the thing worth reading. So every switch changed the label, changed the
+ * count in the hint, and changed nothing whatever on the canvas — which is
+ * indistinguishable from a control that is broken, and is what Sam reported.
+ *
+ * The fix is not to draw the dots (they would still be a smear); it is to let
+ * the filter reach WHAT IS DRAWN. At every zoom, a discipline holding no course
+ * that passes the switches is not drawn. Deselect all now empties the map at
+ * 10%, "NC only" drops the disciplines that teach no noncredit, and the control
+ * answers wherever the reader happens to be standing.
+ *
+ * Memoized on a signature of the switches: draw() runs on every pan and zoom
+ * frame, and re-counting 49,896 courses per frame is exactly the kind of cost
+ * that turns a filter into a stutter. */
+function showSig(){ var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0"; return t; }
+function islandPass(isl){
+  var sig=showSig();
+  if(isl._passSig!==sig){
+    var n=0;
+    for(var i=0;i<isl.p.length;i++) if(creditShown(isl.p[i])) n++;
+    isl._pass=n; isl._passSig=sig;
+  }
+  return isl._pass;
+}
 /* ── a pick switches on what it needs to be seen (Sam, 2026-09-05, with
  * "Show: 1 of 12" in the row: "Courses are no longer visible when I filter for
  * welding subject"). A pick that lands on a hidden point is a ring around
@@ -606,6 +635,9 @@ function draw(){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
     var r=isl.r*k;
     if(c[0]+r<-60||c[0]-r>W+60||c[1]+r<-60||c[1]-r>H+60) return;   // cull
+    // Every course in this discipline is switched off — so is the discipline.
+    // This is the line that makes Show answer below NODE_ZOOM (see islandPass).
+    if(!islandPass(isl)) return;
 
     ctx.beginPath(); ctx.arc(c[0],c[1],r,0,6.2832);
     ctx.fillStyle = isl===selIsl ? pal.islandSel : isl===hoverIsl ? pal.islandHover : pal.island;
@@ -935,10 +967,16 @@ function pick(px,py){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
     var r=isl.r*view.k;
     if(Math.hypot(px-c[0],py-c[1])>r+12) continue;
+    // What is not drawn cannot be picked. Without this, filtering to noncredit
+    // and clicking where a credit course used to sit opened the inspector on an
+    // invisible point — the filter would have been honored by the eye and not by
+    // the hand, which is worse than no filter at all.
+    if(!islandPass(isl)) continue;
     if(view.k>NODE_ZOOM){
       var found=null, fd=1e9, inside=false;
       for(var j=0;j<isl.p.length;j++){
         var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
+        if(!creditShown(nd)) continue;
         var rad=Math.max(3.2,nodeRad(nd));
         var d=Math.hypot(px-p[0],py-p[1]);
         if(d<=rad+3 && d<fd){ found=nd; fd=d; inside=d<=rad; }
@@ -1233,10 +1271,6 @@ function suggest(raw, limit){
     subs.push({kind:"subject", kindWord:"discipline", kindShort:"DISC", label:I.d, tier:t, n:(I.n||0), isl:I});
   });
   subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
-  // Subjects never take the whole list: a term that matches many subjects would
-  // otherwise hide the course the curator was actually typing.
-  out=subs.slice(0, Math.max(1, limit-4));
-  var room=limit-out.length;
   // Course identities and stand-alones by title or number; identities first.
   var pts=[];
   for(var i=0;i<U.islands.length;i++){
@@ -1248,7 +1282,13 @@ function suggest(raw, limit){
                (lt.indexOf(term)>=0||li.indexOf(term)>=0)?2:-1;
       if(tier<0) continue;
       pts.push({tier:tier+(nd.a?0.5:0), n:nd.n||0, isl:I2, nd:nd});
-      if(pts.length>400) break;
+      /* The pool the relevance sort below ranks. It was 400, which is fine for a
+       * list of 8 and starves a list of 60: the cap truncates by ISLAND ORDER,
+       * not by relevance, so anything past it never reaches the sort. Raising it
+       * costs nothing in the common case — a term that matches little walks the
+       * whole corpus either way, and the break only fires when matches are
+       * plentiful, which is exactly when the ranking has to be trusted. */
+      if(pts.length>3000) break;
     }
   }
   pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
@@ -1273,31 +1313,69 @@ function suggest(raw, limit){
   var byCredit=[[],[],[]];
   pts.forEach(function(p){ byCredit[p.nd.c==null ? 2 : (p.nd.c===0 ? 0 : 1)].push(p); });
   pts=byCredit[0].concat(byCredit[1], byCredit[2]);
-  var take=Math.min(room-1, pts.length, Math.max(1, room-2));
-  pts.slice(0, Math.max(0,take)).forEach(function(p){
+
+  // College courses, by code (prefix wins) or by control number.
+  var mems=[];
+  if(memIndex && memIndex.length){
+    var digits=/^(ccc)?0*(\d{3,})$/.exec(term);
+    var wanted=digits?String(parseInt(digits[2],10)):null;
+    var pre=[], inn=[];
+    for(var m=0;m<memIndex.length && (pre.length<limit);m++){
+      var r=memIndex[m];
+      if(wanted){ if(r.d===wanted) pre.push(r); continue; }
+      if(r.lc.indexOf(term)===0) pre.push(r);
+      else if(inn.length<limit && r.lc.indexOf(term)>=0) inn.push(r);
+    }
+    pre.concat(inn).slice(0,limit).forEach(function(r){
+      var h=nodeById(r.id); if(!h) return;
+      mems.push({kind:"member", kindWord:"college course", kindShort:"COLLEGE CRSE", label:r.code+" · "+r.c,
+                 sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
+    });
+  }
+
+  /* ── the budget (Sam, 2026-09-05: the search box "only delivers a short set of
+   * options and should show all or at least allow scroll to show others").
+   *
+   * The old split was written for a list of EIGHT — disciplines took all but
+   * four, courses all but two of what was left, and college courses whatever
+   * survived. Read at a larger limit it starves the tail: a term matching many
+   * disciplines pushed every course off the end, and the reader had no way to
+   * scroll to what was cut because it was never built.
+   *
+   * ⚠️ THE BUDGET'S JOB CHANGED. The list scrolls, so it is no longer there to
+   * keep the dropdown short; it is there to stop any ONE kind from crowding the
+   * other two out of the TOP of it, where the reader looks first. So each kind
+   * gets a share with a floor, and — this is the part that makes "show all"
+   * true — whatever a kind cannot fill FLOWS to the others rather than
+   * shortening the list. A term with no college courses now returns 60
+   * disciplines and courses, not 45 and a gap. */
+  var have=[subs.length, pts.length, mems.length];
+  var want=[Math.max(4, Math.round(limit*0.30)),      // disciplines
+            Math.max(6, Math.round(limit*0.45)),      // course identities + stand-alones
+            Math.max(4, Math.round(limit*0.25))];     // college courses
+  // Trim to what each kind actually has, then hand the slack round-robin to the
+  // kinds that still have more — two passes is enough for three buckets.
+  for(var pass=0; pass<2; pass++){
+    var spare=limit;
+    for(var b=0;b<3;b++){ want[b]=Math.min(want[b], have[b]); spare-=want[b]; }
+    if(spare<=0) break;
+    for(var b2=0;b2<3 && spare>0;b2++){
+      var add=Math.min(spare, have[b2]-want[b2]);
+      if(add>0){ want[b2]+=add; spare-=add; }
+    }
+  }
+  out=subs.slice(0, want[0]);
+  pts.slice(0, want[1]).forEach(function(p){
     out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity",
               kindShort:kindShort("course", p.nd), label:p.nd.t||p.nd.i,
               sub:p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd), credit:creditWord(p.nd),
               isl:p.isl, nd:p.nd});
   });
-  room=limit-out.length;
-  // College courses, by code (prefix wins) or by control number.
-  if(room>0 && memIndex && memIndex.length){
-    var digits=/^(ccc)?0*(\d{3,})$/.exec(term);
-    var wanted=digits?String(parseInt(digits[2],10)):null;
-    var pre=[], inn=[];
-    for(var m=0;m<memIndex.length && (pre.length<room);m++){
-      var r=memIndex[m];
-      if(wanted){ if(r.d===wanted) pre.push(r); continue; }
-      if(r.lc.indexOf(term)===0) pre.push(r);
-      else if(inn.length<room && r.lc.indexOf(term)>=0) inn.push(r);
-    }
-    pre.concat(inn).slice(0,room).forEach(function(r){
-      var h=nodeById(r.id); if(!h) return;
-      out.push({kind:"member", kindWord:"college course", kindShort:"COLLEGE CRSE", label:r.code+" · "+r.c,
-                sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
-    });
-  }
+  mems.slice(0, want[2]).forEach(function(o){ out.push(o); });
+  /* What the dropdown's footer needs to say "there are more". `pts` and `mems`
+   * are themselves capped, so this is a floor on the true count, never a
+   * claim of exactness — the footer words it that way. */
+  out.more = (subs.length-want[0]) + (pts.length-want[1]) + (mems.length-want[2]);
   return out;
 }
 window.__ccrSuggest = suggest;
@@ -1439,6 +1517,13 @@ window.__ccrUniverseState = function(){
           labelStats:labelStats, hits:searchHits.length,
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen, inspectorWidth:inspW, showHealed:showHealed.slice(),
           spread:SPREAD_ISLANDS, dotRadAt:dotRad, focus:lastFocus?Object.keys(lastFocus).length:0,
+          /* How many disciplines the Show switches leave standing, and how many
+           * courses inside them. Canvas draws nothing the DOM can be asked
+           * about, so this is the only way a test can see that a switch reached
+           * the map — which is the failure Sam reported on 2026-09-05. */
+          islandsShown:U?U.islands.filter(function(I){ return islandPass(I)>0; }).length:0,
+          islandsTotal:U?U.islands.length:0,
+          coursesShown:(function(){ var n=0; if(U) U.islands.forEach(function(I){ n+=islandPass(I); }); return n; })(),
           solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,
           tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
@@ -1600,13 +1685,22 @@ function wire(){
       if(creditShown(nd)) n++; else hidden++;
     }); });
     var off=SHOW_KEYS.filter(function(k){ return !show[k]; });
+    /* Below NODE_ZOOM the canvas draws disciplines, not courses. Say so, in the
+     * same breath as the count — otherwise a reader who filters at the zoom the
+     * map OPENS on watches a number change beside a picture that does not, and
+     * reasonably concludes the switch is broken. Islands do drop out when they
+     * empty (islandPass), so the control is never silent; this sentence explains
+     * why a partial filter moves so little. */
+    var wide = view.k<=NODE_ZOOM ? " At this magnification the map draws <strong>disciplines</strong>, "+
+                 "not individual courses \u2014 a discipline disappears when nothing in it is shown. "+
+                 "Zoom in to see the courses themselves." : "";
     setHint(off.length===0
       ? "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
-        "they appear here and nowhere else."
+        "they appear here and nowhere else."+wide
       : "Showing <strong>"+num(n)+"</strong> of "+num(n+hidden)+" courses; "+num(hidden)+" hidden"+
         (unrecHidden?" ("+num(unrecHidden)+" with no recorded credit status)":"")+
         (show.members?"":"; the college courses under an identity are not drawn")+
-        ". Noncredit is drawn with a broken ring.");
+        ". Noncredit is drawn with a broken ring."+wide);
     draw();
   }
   function setShow(patch, quiet){
