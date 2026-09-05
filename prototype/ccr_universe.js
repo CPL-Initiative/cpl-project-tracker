@@ -72,6 +72,18 @@ var inspOpen=false;
  * the screen to keep the subject in view"). "move" carries a course or a
  * subject; "pan" moves the view whatever is under the pointer. */
 var mode="move";
+/* SkyView ALONE is the default (Sam, 2026-09-05: "The full screen SkyView …
+ * I would like to henceforth refer to as SkyView"): body.u-solo paints the map
+ * section and nothing else. `solo` is module memory so a bare __ccrUniverse()
+ * — the list's row click, the suggestion jump — comes back to the frame you
+ * were in. `curView` names the view on screen for the Views menu and the hash. */
+var solo=true, curView="skyview";
+/* A subject's identities are ringed on the map only up to this many: 408 red
+ * rings on one island read as an alarm (Sam, 2026-09-03), and past this the
+ * count in the hint says more than the rings would. */
+var RING_MAX=150;
+var subjIdx=null;            // code -> {code, n, sa, disc:{name:{n,sa,isl}}, home, homeIsl, others}
+var wsPaint=null;            // repaints the open workspace table when the seed arrives
 /* The world point the zoom BUTTONS zoom about: the searched subject, the
  * selection, or the last fly (Sam, 2026-09-03: "when I use the keyword search
  * and then zoom, I lose focus on the searched subject"). The wheel still zooms
@@ -171,9 +183,11 @@ function loadAuthority(){
           var e=ds[d]||{};
           if(!e.canonical_subj4) return;
           out[d]={cs:e.canonical_subj4, chips:(e.authority_chips||[]).slice(),
-                  source:e.canonical_source||null, flag:e.authority_flag||null};
+                  source:e.canonical_source||null, flag:e.authority_flag||null,
+                  umbrella:(e.umbrella_codes||[]).slice(), fanIn:(e.fan_in_with||[]).slice()};
         });
         authority=out;
+        if(wsPaint) wsPaint();
         // A subject card already open gets its line without a second click.
         if(selIsl && !selNode) showIsland(selIsl);
      })
@@ -760,12 +774,21 @@ function pickMember(px,py){
 }
 
 /* ── the view ─────────────────────────────────────────────────────────────── */
-window.__ccrUniverse = function(){
+window.__ccrUniverse = function(opts){
+  opts=opts||{};
+  var wantSolo = opts.solo==null ? solo : !!opts.solo;
+  /* Already on the map: switch the frame and keep the render. SkyView alone and
+   * the comprehensive view are ONE canvas — the second merely shows the panes
+   * below it — so switching between them keeps the zoom, the selection and the
+   * moves. Re-rendering would have thrown all three away. */
+  if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){ setSolo(wantSolo); return; }
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
-  nodeIdx=null; orbitIdx=null;
+  nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null;
   if(!authority) loadAuthority();
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"SkyView"}]);
+  solo=wantSolo;
+  window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"SkyView"}],
+                  {menu:false, view: solo?"skyview":"comprehensive"});
   // Full bleed: the map takes the whole width; the panes below keep the measure.
   var main=document.getElementById("main"); if(main) main.classList.add("u-fullbleed");
   var C=U.counts||{};
@@ -786,35 +809,23 @@ window.__ccrUniverse = function(){
          * It comes back now only because the same edit moves the search INTO
          * this row (item 3), so the dropdown it opens belongs to this row and
          * has nothing above it to hide under. */
-        '<span class="u-title" id="u-title">SkyView</span>'+
+        /* An h1, not a span: alone in the window this row is the whole page,
+         * and `npm run a11y` reported the solo view starting at no heading at
+         * all — the page's h1 sat in the panes below, which solo does not
+         * paint. The panes are demoted under it (h2, h3) so the outline a
+         * screen reader walks reads SkyView › the panes › their sections. */
+        '<h1 class="u-title" id="u-title">SkyView</h1>'+
         /* Item 2: the view links collapse from four inline buttons into ONE
          * menu. Four links plus a title plus a search plus nine controls do not
          * fit a row, and item 4 asks for one row on a normal screen — so the
          * set that changes least often is the set that folds. <details> is the
          * whole mechanism: it opens on click and on Enter, closes on Escape,
-         * and needs no script to be usable if the script fails. */
-        '<details class="u-views" id="u-views">'+
-          '<summary class="linkish" aria-controls="u-views-menu">Views</summary>'+
-          '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+
-            '<button class="linkish" type="button" id="u-nav-forest">All disciplines</button>'+
-            /* "Subjects as a list" until 2026-09-04, and the word was wrong: this
-             * view maps U.islands and reads I.d, the DISCIPLINE name — so it listed
-             * the same things "All disciplines" shows as cards, differing only in
-             * form. Worse, COBI already has a "Common Subjects Reference" tab where
-             * a subject is a SUBJ4 code (ENGL, WELD), which is a different grain
-             * entirely. One word, and the two links stop looking like two grains. */
-            '<button class="linkish" type="button" id="u-list">Disciplines as a list</button>'+
-            '<button class="linkish" type="button" id="u-nav-esl">ESL packaging</button>'+
-            /* Sam, 2026-09-04, item 2: a link to the CCR TABLE VIEW. That view is
-             * not in this prototype at all — it is COBI's Common Course Reference
-             * tab, which is the page this map is embedded IN when it runs inside
-             * COBI. So it is a link out, and it is removed when framed (below):
-             * offering a door onto the page you are already standing on is the
-             * same mistake as offering one onto nothing. */
-            '<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses" '+
-              'target="_blank" rel="noopener">CCR table view \u2197</a>'+
-          '</div>'+
-        '</details>'+
+         * and needs no script to be usable if the script fails.
+         *
+         * Since 2026-09-05 the menu is BUILT by viewsMenuInto(), the one builder
+         * every view shares (item 9: every view reachable from every other), so
+         * this row only reserves its place. */
+        '<span class="u-views-slot" id="u-views-slot"></span>'+
         /* Item 3: the search moves LEFT OF THE CHIPS and gets wider, and item 11
          * is why it had to move at all — in browser full screen the page masthead
          * is not painted (only #u-full is), so the one search box on the page was
@@ -891,7 +902,7 @@ window.__ccrUniverse = function(){
       '</div>'+
     '</section>'+
     '<div class="wrap u-below" id="u-below">'+
-      '<h1>The whole Common Course Reference</h1>'+
+      '<h2>The whole Common Course Reference</h2>'+
       '<p>'+num(C.identities)+' course identities and '+num(C.stand_alone)+' stand-alone courses across '+
         num(C.disciplines)+' disciplines. '+num(C.orbiting)+' of the stand-alones orbit the identity '+
         'they are most aligned to'+(C.orbiting_cross?' ('+num(C.orbiting_cross)+' of them in another discipline\u2019s island, drawn where their closest match is)':'')+
@@ -899,11 +910,11 @@ window.__ccrUniverse = function(){
         '<strong>Drag a discipline</strong> to pull it next to another, then drag a course between them — '+
         'that is how a course filed under the wrong discipline gets moved to its real parent.</p>'+
       '<div class="stage">'+
-        '<div class="panel"><h2>What this would write</h2><div id="u-writes">'+
+        '<div class="panel"><h3>What this would write</h3><div id="u-writes">'+
         '<p class="empty">No moves yet.</p></div>'+
         '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
         'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
-        '<div class="panel"><h2>How the map is arranged</h2>'+
+        '<div class="panel"><h3>How the map is arranged</h3>'+
         '<p>One island per discipline, biggest at the centre. Inside an island the identities '+
         'with the most courses sit at the centre. A hollow point is a stand-alone course — one '+
         'college, clustered with nothing yet — placed in orbit around the identity whose title '+
@@ -923,6 +934,8 @@ window.__ccrUniverse = function(){
   cvs=document.getElementById("u-cvs");
   ctx=cvs.getContext?cvs.getContext("2d"):null;
   buildMemberIndex(); indexNodes();
+  viewsMenuInto(document.getElementById("u-views-slot"));
+  setSolo(solo, true);          // the body class must be on before fitCanvas measures
   fitCanvas(); resetView(); wire(); draw();
   if(typeof window.__ccrForestInto==="function")
     window.__ccrForestInto(document.getElementById("u-more"));
@@ -941,6 +954,10 @@ function fitCanvas(){
   var th=topEl?topEl.offsetHeight:0, fh=footEl?footEl.offsetHeight:0, h;
   if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight-th-fh;
   else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
+  /* SkyView alone: nothing is painted above or below the section, so the canvas
+   * takes the viewport minus the top row and the legend strip — the same
+   * arithmetic as browser full screen, which is what it looks like. */
+  else if(solo && document.body.classList.contains("u-solo")) h=Math.max(320, window.innerHeight-th-fh);
   else {
     // Whatever sits above the canvas (the masthead, the crumbs, the control
     // strip) is measured, not assumed, and the legend strip below it is left
@@ -1120,7 +1137,7 @@ window.__ccrGoSuggestion = function(s){
      * centres the point and sets the anchor, so the zoom buttons keep it there. */
     flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
     selIsl=I; selNode=null; showIsland(I);
-    setHint("Subject <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses.");
+    setHint("Discipline <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses.");
     draw(); return true;
   }
   var isl=s.isl, nd=s.nd;
@@ -1142,75 +1159,11 @@ window.__ccrGoSuggestion = function(s){
   draw(); return true;
 };
 
-/* ── the subject list ───────────────────────────────────────────────────────
- * Sam, 2026-08-25: "The Browse by Subjects button takes me unexpectedly to the
- * package view. Seems I'm already browsing by subject." So the button opens an
- * actual list of subjects — filterable, seeded with whatever was typed, and
- * every row flies the map to that subject. The packaging view keeps its own,
- * differently-named door at the bottom.
- */
-window.__ccrSubjectList = function(seed){
-  var host=document.getElementById("view");
-  if(!host || !U) return;
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},
-                   {label:"SkyView", go:function(){ window.__ccrUniverse(); }},
-                   {label:"Disciplines"}]);
-  var rows=U.islands.map(function(I){ return {name:I.d, n:(I.n||0), alone:(I.sa||0), isl:I}; })
-    .sort(function(a,b){ return b.n-a.n || a.name.localeCompare(b.name); });
-
-  host.innerHTML=
-    '<h1>Every discipline</h1>'+
-    '<p>'+num(rows.length)+' disciplines across '+num(U.counts.identities)+
-    ' course identities. Filter, then pick one — the map opens on it.</p>'+
-    '<div class="u-bar">'+
-      '<label class="sr" for="sl-q">Filter disciplines</label>'+
-      '<input id="sl-q" type="search" placeholder="Filter disciplines — e.g. english, welding, nursing" '+
-        'style="flex:1 1 260px;min-width:0;padding:.45em .6em;font:inherit;'+
-        'border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:8px">'+
-      '<button class="btn" type="button" id="sl-map">Back to the map</button>'+
-    '</div>'+
-    '<p class="tag" id="sl-count" aria-live="polite"></p>'+
-    '<div class="panel" style="margin-top:10px"><ul class="sl-list" id="sl-rows"></ul></div>'+
-    '<p style="margin:1.1em 0 0;font-size:.86rem;color:var(--text-muted,#5C5C55)">'+
-      'Looking for the corpus split into sittings instead — which disciplines carry '+
-      'how many decisions? <button class="btn" type="button" id="sl-pack">'+
-      'See the work packaged by discipline</button></p>';
-
-  var qEl=document.getElementById("sl-q"), rowsEl=document.getElementById("sl-rows"),
-      cEl=document.getElementById("sl-count");
-  function paint(){
-    var q=String(qEl.value||"").trim().toLowerCase();
-    var hit=rows.filter(function(r){ return !q || r.name.toLowerCase().indexOf(q)>=0; });
-    cEl.textContent=q
-      ? num(hit.length)+" of "+num(rows.length)+" disciplines match “"+q+"”"
-      : num(rows.length)+" disciplines";
-    if(!hit.length){
-      rowsEl.innerHTML='<li class="empty">Nothing matches “'+esc(q)+'”. '+
-        'The map still holds every discipline — clear the filter to see them all.</li>';
-      return;
-    }
-    rowsEl.innerHTML=hit.slice(0,400).map(function(r,i){
-      return '<li><button type="button" data-i="'+i+'"><span class="sl-n">'+esc(r.name)+
-        '</span><span class="sl-c">'+num(r.n)+' identit'+(r.n===1?"y":"ies")+
-        (r.alone? ' · '+num(r.alone)+' stand-alone':'')+'</span></button></li>';
-    }).join("")+(hit.length>400
-      ? '<li class="empty">Showing the first 400 of '+num(hit.length)+
-        ' — narrow the filter to see the rest.</li>' : "");
-    Array.prototype.forEach.call(rowsEl.querySelectorAll("button"), function(b){
-      b.onclick=function(){
-        var r=hit[+b.dataset.i];
-        window.__ccrUniverse();
-        window.__ccrGoSuggestion({kind:"subject", isl:r.isl});
-      };
-    });
-  }
-  qEl.value=String(seed==null?"":seed);
-  qEl.oninput=paint;
-  document.getElementById("sl-map").onclick=function(){ window.__ccrUniverse(); };
-  document.getElementById("sl-pack").onclick=function(){ window.__ccrForest(); };
-  paint();
-  qEl.focus();
-};
+/* ── "Disciplines as a list" (Sam, 2026-08-25) is the workspace's By discipline
+ * view since 2026-09-05: same rows, same filter seeded from the search box,
+ * same fly to the map — beside the subject grain and ESL packaging. Kept as a
+ * name so an older caller still lands somewhere. */
+window.__ccrSubjectList = function(seed){ window.__ccrWorkspace("discipline", {q:seed}); };
 
 window.__ccrUniverseState = function(){
   // `sel` is here so a test that clicks the canvas can assert which identity it
@@ -1228,6 +1181,7 @@ window.__ccrUniverseState = function(){
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
           labelStats:labelStats, hits:searchHits.length,
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen,
+          solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           descBases:DESC_BASES.slice(), descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
@@ -1314,35 +1268,8 @@ function wire(){
   if(mpan) mpan.onclick=function(){ setMode("pan"); };
   if(mmove) mmove.onclick=function(){ setMode("move"); };
   window.__ccrSetMode=setMode;
-  var nf=document.getElementById("u-nav-forest");
-  if(nf) nf.onclick=function(){ if(typeof window.__ccrForest==="function") window.__ccrForest(); };
-  var ne=document.getElementById("u-nav-esl");
-  if(ne){
-    if(window.CPL_ATLAS_ESL && typeof window.__ccrEsl==="function") ne.onclick=function(){ window.__ccrEsl(); };
-    else ne.remove();   // never offer a door that opens on nothing
-  }
-  var cl=document.getElementById("u-ccr-list");
-  if(cl && window.top!==window.self) cl.remove();   // the list is already the page around this frame
-  var lb=document.getElementById("u-list");
-  // Seed from WHAT IS IN THE BOX, not from the last term that was submitted.
-  if(lb) lb.onclick=function(){
-    var box=document.getElementById("gq");
-    window.__ccrSubjectList((box && box.value) || searchTerm);
-  };
-
-  /* ── item 2: the Views menu closes itself ────────────────────────────────
-   * <details> gives open/close, Enter and Escape for free; what it does NOT do
-   * is close when you pick something or click away, and a menu left standing
-   * over the map is the reason menus feel broken. Both are three lines. */
-  var vw=document.getElementById("u-views");
-  if(vw){
-    vw.querySelectorAll(".linkish").forEach(function(el){
-      el.addEventListener("click", function(){ vw.open=false; });
-    });
-    document.addEventListener("pointerdown", function(e){
-      if(vw.open && !vw.contains(e.target)) vw.open=false;
-    });
-  }
+  /* The Views menu is built and wired by viewsMenuInto() — one builder for
+   * the map's row and for every other view's crumbs row (item 9). */
 
   /* ── item 3 + item 11: the search moves into this row ─────────────────────
    * MOVED, never copied — the page keeps exactly one search field. In browser
@@ -1385,9 +1312,11 @@ function wire(){
   var xb=document.getElementById("u-close");
   if(xb) xb.onclick=function(){
     if(document.fullscreenElement){ if(document.exitFullscreen) document.exitFullscreen(); return; }
+    /* Inside COBI's Common Course Reference tab the page around this frame
+     * owns the list; it listens for this and swaps the frame for the table. */
+    if(framed()){ tellParent("close"); return; }
     if(window.opener && !window.opener.closed){ window.close(); return; }
-    if(window.top!==window.self){ setHint("This map is embedded in the Common Course Reference tab \u2014 close it from there."); return; }
-    location.href="../index.html#unified-courses";
+    location.href="../index.html#unified-courses/list";
   };
   /* ── item 9: the CR / NC filter ───────────────────────────────────────────
    * Sam, 2026-09-04: "Also need a CR NC toggle". Three positions, not two — a
@@ -1496,7 +1425,7 @@ function wire(){
       var p=full.requestFullscreen();
       if(p && p.catch) p.catch(function(){
         setHint("Full screen was not allowed in this frame — open SkyView in its own tab "+
-                "(the link above the map) and try again.");
+                "(Views menu) and try again.");
       });
     };
     document.addEventListener("fullscreenchange", function(){
@@ -1740,7 +1669,7 @@ function doSearch(raw){
      * 408 red rings and red names (measured 2026-09-03) reads as an alarm, and
      * the labels now lead with the title, which made every one of them red. */
     searchHits=[];
-    setHint("Subject <strong>"+esc(pick.d)+"</strong> — "+num(pick.n)+" identities."+
+    setHint("Discipline <strong>"+esc(pick.d)+"</strong> — "+num(pick.n)+" identities."+
       (others.length ? " Also matching: <strong>"+others.slice(0,3).map(esc).join("</strong> · <strong>")+
         "</strong>"+(others.length>3?" · …":"")+" — pick one from the search suggestions." : "")+
       " Click an identity to open it and see the college courses under it.");
@@ -2065,6 +1994,368 @@ function drawWrites(){
   }).join("")+"</div>";
 }
 
+/* ══ the views, one menu for all of them ═══════════════════════════════════
+ * Sam, 2026-09-05: "The full screen SkyView (which I would like to henceforth
+ * refer to as SkyView …). I'd like to have an option to navigate to the
+ * comprehensive SkyView (the current one), but I don't want it to open by
+ * default." And item 9 (2026-09-04): every view reachable from every other.
+ *
+ * Five views, ONE menu builder. SkyView is the map alone, filling the window
+ * (body.u-solo); the comprehensive view is the same render with the panes
+ * below it shown; the other three are the workspace's toggles. The map's top
+ * row and every other view's crumbs row render the menu from this function, so
+ * a view added here is reachable everywhere at once. The view you are on is
+ * NAMED in the list rather than offered: a menu item that leads where you
+ * already are is a control that appears to do nothing. */
+var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl"};
+var VIEWS=[
+  {key:"skyview", id:"u-nav-sky", label:"SkyView",
+   title:"The map alone, filling the window",
+   go:function(){ window.__ccrUniverse({solo:true}); }},
+  {key:"comprehensive", id:"u-nav-comp", label:"Comprehensive view",
+   title:"The map with the explanatory panes and the work grid below it",
+   go:function(){ window.__ccrUniverse({solo:false}); }},
+  {key:"disciplines", id:"u-nav-forest", label:"By discipline",
+   title:"Every discipline as a list — identities, stand-alone courses, decisions",
+   go:function(){ window.__ccrWorkspace("discipline", {q:boxValue()}); }},
+  {key:"subjects", id:"u-nav-subject", label:"By subject",
+   title:"Every four-letter Common SUBJ code, and the discipline it belongs to",
+   go:function(){ window.__ccrWorkspace("subject", {q:boxValue()}); }},
+  {key:"esl", id:"u-nav-esl", label:"ESL packaging",
+   title:"The first packaging fold, drawn against today’s data",
+   when:eslAvailable,
+   go:function(){ window.__ccrWorkspace("esl"); }}
+];
+function eslAvailable(){ return !!window.CPL_ATLAS_ESL && typeof window.__ccrEslInto==="function"; }
+function boxValue(){ var b=document.getElementById("gq"); return b ? b.value : ""; }
+function framed(){ try{ return window.top!==window.self; }catch(e){ return true; } }
+function ownUrl(){ return String(location.href).replace(/#.*$/,""); }
+/* Framed inside COBI's Common Course Reference tab, the page around this frame
+ * listens for these (unified_courses.js) and swaps the frame for the list. */
+function tellParent(action){
+  try{ window.parent.postMessage({type:"skyview", action:action}, "*"); }catch(e){}
+}
+function viewsMenuInto(host){
+  if(!host) return;
+  var items=VIEWS.filter(function(v){ return !v.when || v.when(); }).map(function(v){
+    if(v.key===curView)
+      return '<span class="u-views-here" aria-current="page" title="'+esc(v.title)+'">'+esc(v.label)+'</span>';
+    return '<button class="linkish" type="button" id="'+v.id+'" data-view="'+v.key+'" title="'+esc(v.title)+'">'+esc(v.label)+'</button>';
+  });
+  /* The CCR TABLE VIEW is COBI's Common Course Reference tab, not a view of this
+   * page (item 2, 2026-09-04). Stand-alone it is a link out to that tab's LIST —
+   * the tab itself lands on this map, which would be a door onto the room you
+   * are in. Framed inside that tab it is a message to the page around the
+   * frame, which swaps the frame for the list; and a way to open this page in
+   * its own tab, to keep it beside the list. */
+  if(framed()){
+    items.push('<button class="linkish" type="button" id="u-ccr-list" '+
+      'title="Show the Common Course Reference table in this tab">CCR table view</button>');
+    items.push('<a class="linkish" id="u-own-tab" href="'+esc(ownUrl())+'" target="_blank" rel="noopener" '+
+      'title="Open SkyView in its own browser tab, to keep it beside the list">Open in its own tab ↗</a>');
+  } else {
+    items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
+      'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view ↗</a>');
+  }
+  host.innerHTML='<details class="u-views" id="u-views">'+
+    '<summary class="linkish" aria-controls="u-views-menu">Views</summary>'+
+    '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
+    '</details>';
+  var vw=host.querySelector("#u-views");
+  Array.prototype.forEach.call(vw.querySelectorAll("[data-view]"), function(b){
+    var v=VIEWS.filter(function(x){ return x.key===b.getAttribute("data-view"); })[0];
+    b.addEventListener("click", function(){ vw.open=false; if(v) v.go(); });
+  });
+  var cl=vw.querySelector("#u-ccr-list");
+  if(cl && cl.tagName==="BUTTON") cl.addEventListener("click", function(){ vw.open=false; tellParent("list"); });
+  Array.prototype.forEach.call(vw.querySelectorAll("a.linkish"), function(a){
+    a.addEventListener("click", function(){ vw.open=false; });
+  });
+}
+window.__ccrViewsMenu = viewsMenuInto;
+/* One listener closes ANY open Views menu on a click elsewhere — registered
+ * once, because the menu is rebuilt on every render and a listener per build
+ * would pile up. A menu left standing over the map is why menus feel broken. */
+document.addEventListener("pointerdown", function(e){
+  Array.prototype.forEach.call(document.querySelectorAll(".u-views[open]"), function(vw){
+    if(!vw.contains(e.target)) vw.open=false;
+  });
+});
+
+/* ── the hash names the view ───────────────────────────────────────────────
+ * #skyview (the default) · #comprehensive · #disciplines · #subjects · #esl, so a
+ * view can be linked to and a reload comes back to it. replaceState, never a
+ * hash assignment: an assignment fires hashchange and adds a history entry —
+ * inside COBI's frame that is an entry on COBI's own back button. */
+function syncHash(){
+  if(!curView || !HASH_OF[curView]) return;
+  try{ if(window.history && history.replaceState) history.replaceState(null, "", "#"+HASH_OF[curView]); }catch(e){}
+}
+function routeKey(){
+  var h=String(location.hash||"").replace(/^#/,"").toLowerCase().split(/[\/?]/)[0];
+  return HASH_OF[h] ? h : "skyview";
+}
+window.__ccrRoute=function(){
+  if(!window.CPL_CCR_UNIVERSE){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
+  var k=routeKey();
+  if(k==="comprehensive") window.__ccrUniverse({solo:false});
+  else if(k==="disciplines") window.__ccrWorkspace("discipline");
+  else if(k==="subjects") window.__ccrWorkspace("subject");
+  else if(k==="esl") window.__ccrWorkspace("esl");
+  else window.__ccrUniverse({solo:true});
+};
+window.addEventListener("hashchange", function(){ if(routeKey()!==curView) window.__ccrRoute(); });
+
+function setSolo(on, quiet){
+  solo=!!on; curView=solo?"skyview":"comprehensive";
+  document.body.classList.toggle("u-solo", solo);
+  syncHash();
+  var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot);
+  if(quiet) return;
+  // Entering the frame from halfway down the panes would leave the map scrolled
+  // out of a window that no longer scrolls.
+  if(solo && (window.scrollY||window.pageYOffset)){ try{ window.scrollTo(0,0); }catch(e){} }
+  if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
+}
+
+/* ══ the workspace: disciplines, subjects and ESL packaging on ONE tab ═══════
+ * Sam, items 6-9 (2026-09-04), restated 2026-09-05: "consolidate the all
+ * discipline, subject, and ESL workspaces into one tab with toggles to switch
+ * views and a link back to full screen skyview."
+ *
+ * ⚠️ HIS "SUBJECT" IS THE SUBJ4 GRAIN. "All disciplines" and "Disciplines as a
+ * list" both listed disciplines and differed only in form, so consolidating
+ * them was not the whole ask: "view by subject" is the four-letter Common SUBJ
+ * code an identity is keyed by (KINE, ATHL, SPAN) — the grain of COBI's Common
+ * Subjects Reference tab — which no view here carried. The subject rows are
+ * read off the identity ids on the map, which after the 2026-09-03 recode ARE
+ * the canonical codes, and joined to the seed for the umbrella codes and the
+ * authority chips. TOP plays no part (Rule 7). */
+var WS_MODES={discipline:"By discipline", subject:"By subject", esl:"ESL packaging"};
+function wsKey(mode){ return mode==="subject"?"subjects":mode==="esl"?"esl":"disciplines"; }
+function wsFilterValue(){ var q=document.getElementById("ws-q"); return q ? q.value : ""; }
+window.__ccrWorkspace=function(mode, opts){
+  opts=opts||{};
+  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; }
+  if(!U){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
+  mode = WS_MODES[mode] ? mode : "discipline";
+  if(mode==="esl" && !eslAvailable()) mode="discipline";
+  if(!authority) loadAuthority();
+  window.__crumbs([{label:"Disciplines and subjects"}], {view: wsKey(mode)});
+  syncHash();
+  var host=document.getElementById("view"); if(!host) return;
+  host.innerHTML=
+    '<div class="ws-head"><h1>Disciplines and subjects</h1>'+
+      '<button class="btn primary" type="button" id="ws-sky" title="Back to the map, filling the window">Back to SkyView</button></div>'+
+    /* Item 6: "a line explaining the difference." */
+    '<p class="ws-lede">A <strong>discipline</strong> is the faculty area an island on the map is drawn for '+
+      '— Kinesiology, Foreign Languages, Administration of Justice. A <strong>subject</strong> is the '+
+      'four-letter Common SUBJ code that keys each course identity — KINE, SPAN, CRIM. Every subject '+
+      'belongs to exactly one discipline; a discipline usually has one subject and may carry several.</p>'+
+    '<div class="ws-bar"><span class="u-seg ws-seg" role="group" aria-label="Choose a view">'+
+      Object.keys(WS_MODES).filter(function(m){ return m!=="esl" || eslAvailable(); }).map(function(m){
+        return '<button class="btn mode" type="button" id="ws-'+m+'" data-mode="'+m+'" aria-pressed="'+
+          (m===mode?"true":"false")+'">'+WS_MODES[m]+'</button>';
+      }).join("")+'</span></div>'+
+    '<div id="ws-body"></div>';
+  document.getElementById("ws-sky").onclick=function(){ window.__ccrUniverse({solo:true}); };
+  Array.prototype.forEach.call(host.querySelectorAll(".ws-seg [data-mode]"), function(b){
+    b.onclick=function(){
+      var m=b.getAttribute("data-mode");
+      if(m!==mode) window.__ccrWorkspace(m, {q:wsFilterValue()});
+    };
+  });
+  var body=document.getElementById("ws-body");
+  wsPaint=null;
+  if(mode==="esl") window.__ccrEslInto(body, {embedded:true});
+  else wsTable(body, mode, opts.q);
+};
+
+function wsTable(body, mode, seed){
+  var isS = mode==="subject";
+  var rows = isS ? subjectRows() : disciplineRows();
+  body.innerHTML=
+    '<div class="ws-tools"><label for="ws-q">Filter</label>'+
+      '<input id="ws-q" type="search" placeholder="'+(isS
+        ? 'Filter subjects — e.g. KINE, span, weld'
+        : 'Filter disciplines — e.g. english, welding, nursing')+'"></div>'+
+    '<p class="tag" id="ws-count" aria-live="polite"></p>'+
+    '<div class="tblwrap" tabindex="0" role="region" aria-label="'+(isS?'Subjects':'Disciplines')+'">'+
+    '<table class="uc-like ws-table"><colgroup>'+(isS
+      ? '<col style="width:11%"><col style="width:27%"><col style="width:9%"><col style="width:10%"><col style="width:26%"><col style="width:17%">'
+      : '<col style="width:29%"><col style="width:22%"><col style="width:9%"><col style="width:10%"><col style="width:9%"><col style="width:21%">')+
+    '</colgroup><thead><tr>'+(isS
+      ? '<th scope="col">Subject</th><th scope="col">Discipline</th><th scope="col" class="n">Identities</th>'+
+        '<th scope="col" class="n">Stand-alone</th><th scope="col">Code standing</th><th scope="col">Open</th>'
+      : '<th scope="col">Discipline</th><th scope="col">Common SUBJ</th><th scope="col" class="n">Identities</th>'+
+        '<th scope="col" class="n">Stand-alone</th><th scope="col" class="n">Decisions</th><th scope="col">Open</th>')+
+    '</tr></thead><tbody id="ws-rows"></tbody></table></div>'+
+    '<p class="ws-note">'+(isS
+      ? 'Subjects are read off the identity ids on the map. A code under a discipline whose Common SUBJ is '+
+        'another code is either an umbrella code (Foreign Languages carries one per language) or a row minted '+
+        'under the wrong prefix; the standing column says which. COBI’s Common Subjects Reference tab is '+
+        'the authority; this list is the map’s view of it.'
+      : 'Identities and stand-alone courses are counted on the map; decisions are the grouped decision '+
+        'view’s count, and that view is built for a few disciplines so far.')+'</p>';
+  var qEl=document.getElementById("ws-q"), rowsEl=document.getElementById("ws-rows"),
+      cEl=document.getElementById("ws-count"), CAP=400, noun=isS?"subject":"discipline";
+  function paint(){
+    var q=String(qEl.value||"").trim().toLowerCase();
+    var hit=rows.filter(function(r){ return !q || r.key.indexOf(q)>=0; });
+    cEl.textContent = q
+      ? num(hit.length)+" of "+num(rows.length)+" "+noun+"s match “"+q+"”"
+      : num(rows.length)+" "+noun+"s · "+num(U.counts.identities)+" identities · "+
+        num(U.counts.stand_alone)+" stand-alone courses";
+    if(!hit.length){
+      rowsEl.innerHTML='<tr><td colspan="6" class="empty">Nothing matches “'+esc(q)+'”. The map still '+
+        'holds every '+noun+' — clear the filter to see them all.</td></tr>';
+      return;
+    }
+    rowsEl.innerHTML=hit.slice(0,CAP).map(isS?subjectRowHtml:disciplineRowHtml).join("")+
+      (hit.length>CAP ? '<tr><td colspan="6" class="empty">Showing the first '+CAP+' of '+num(hit.length)+
+        ' — narrow the filter to see the rest.</td></tr>' : "");
+    Array.prototype.forEach.call(rowsEl.querySelectorAll("[data-map]"), function(b){
+      b.onclick=function(){
+        var I=U.islands[+b.getAttribute("data-map")]; if(!I) return;
+        window.__ccrUniverse();
+        window.__ccrGoSuggestion({kind:"subject", isl:I});
+      };
+    });
+    Array.prototype.forEach.call(rowsEl.querySelectorAll("[data-work]"), function(b){
+      b.onclick=function(){ window.__ccrDiscipline(b.getAttribute("data-work")); };
+    });
+    Array.prototype.forEach.call(rowsEl.querySelectorAll("[data-subj]"), function(b){
+      b.onclick=function(){ window.__ccrShowSubject(b.getAttribute("data-subj")); };
+    });
+  }
+  // The seed arrives after the first paint on a cold page; the standing and
+  // Common SUBJ columns fill in when it does, if this table is still on screen.
+  wsPaint=function(){ if(document.getElementById("ws-rows")===rowsEl) paint(); };
+  qEl.value=String(seed==null?"":seed);
+  qEl.oninput=paint;
+  paint();
+  qEl.focus();
+}
+function noDiscipline(name){ return /no discipline yet/i.test(String(name||"")); }
+function chipsHtml(a){
+  if(a.chips.length) return a.chips.map(function(c){
+    return '<span class="chip cid" title="The '+esc(c.system)+' subject code for these courses; the Common SUBJ stays four letters (rule 3, 2026-09-03)">'+esc(c.system+" "+c.code)+'</span>';
+  }).join(" ");
+  if(a.source==="ccn") return '<span class="ws-note">the CCN code</span>';
+  if(a.source==="c-id") return '<span class="ws-note">the C-ID code</span>';
+  return "";
+}
+function proposedHtml(a){
+  return a.flag==="proposed"
+    ? ' <span class="chip mut" title="No C-ID or CCN code names this discipline yet; the CSR proposes this one (item 18, 2026-09-03)">proposed</span>' : "";
+}
+function disciplineRows(){
+  var meta={}; if(A && A.disciplines) A.disciplines.forEach(function(d){ meta[d.name]=d; });
+  return U.islands.map(function(I, i){
+    var m=meta[I.d]||null, a=authority&&authority[I.d];
+    return {key:(I.d+" "+(a?a.cs:"")).toLowerCase(), name:I.d, i:i, n:I.n||0, sa:I.sa||0,
+            dec:m?m.decisions:null, work:hasWorkSurface(I)};
+  }).sort(function(a,b){ return b.n-a.n || a.name.localeCompare(b.name); });
+}
+function disciplineRowHtml(r){
+  var a=authority&&authority[r.name], cs;
+  if(noDiscipline(r.name)) cs='<span class="ws-note">needs a discipline first</span>';
+  else if(!authority) cs='<span class="ws-note">loading…</span>';
+  else if(!a) cs='<span class="ws-note">no seed entry</span>';
+  else cs='<strong>'+esc(a.cs)+'</strong> '+chipsHtml(a)+proposedHtml(a);
+  return '<tr><td>'+esc(r.name)+'</td><td>'+cs+'</td>'+
+    '<td class="n">'+num(r.n)+'</td><td class="n">'+num(r.sa)+'</td>'+
+    '<td class="n">'+(r.dec==null?'':num(r.dec))+'</td>'+
+    '<td><button class="btn small" type="button" data-map="'+r.i+'">On the map</button>'+
+      (r.work ? ' <button class="btn small" type="button" data-work="'+esc(r.name)+'">Decisions</button>' : '')+
+    '</td></tr>';
+}
+/* ── the subject grain ──────────────────────────────────────────────────────
+ * An identity's id leads with its Common SUBJ ("KINE M1750", "ENGL C1000",
+ * "AJ 120"); the three legacy anchors read "M-ID HOSP 102" and take the second
+ * token. Every point on the map is counted, stand-alones under their own code. */
+function subjCode(id){
+  var t=String(id||"").trim().split(/\s+/), c=t[0]||"";
+  if((c==="M-ID"||c==="C-ID"||c==="CCN") && t.length>1) c=t[1];
+  return c.toUpperCase();
+}
+function subjectIndex(){
+  if(subjIdx) return subjIdx;
+  var by={};
+  U.islands.forEach(function(I){
+    I.p.forEach(function(p){
+      var c=subjCode(p.i); if(!c) return;
+      var r=by[c]||(by[c]={code:c, n:0, sa:0, disc:{}});
+      var d=r.disc[I.d]||(r.disc[I.d]={n:0, sa:0, isl:I});
+      if(p.a){ r.sa++; d.sa++; } else { r.n++; d.n++; }
+    });
+  });
+  Object.keys(by).forEach(function(c){
+    var r=by[c];
+    var names=Object.keys(r.disc).sort(function(a,b){
+      return (r.disc[b].n+r.disc[b].sa)-(r.disc[a].n+r.disc[a].sa) || a.localeCompare(b);
+    });
+    r.home=names[0]; r.homeIsl=r.disc[r.home].isl; r.others=names.slice(1);
+  });
+  subjIdx=by;
+  return by;
+}
+window.__ccrSubjectIndex = subjectIndex;
+function subjectRows(){
+  var by=subjectIndex();
+  return Object.keys(by).map(function(c){
+    var r=by[c];
+    return {key:(c+" "+r.home).toLowerCase(), code:c, n:r.n, sa:r.sa, home:r.home, others:r.others, rec:r};
+  }).sort(function(a,b){ return b.n-a.n || b.sa-a.sa || a.code.localeCompare(b.code); });
+}
+function standingHtml(r){
+  if(noDiscipline(r.home)) return 'no discipline yet';
+  if(!authority) return '<span class="ws-note">loading…</span>';
+  var a=authority[r.home];
+  if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>';
+  if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a);
+  if(a.umbrella.indexOf(r.code)>=0)
+    return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>';
+  return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>';
+}
+function subjectRowHtml(r){
+  var others=r.others.length
+    ? ' <span class="ws-note">also '+r.others.slice(0,3).map(function(n){
+        return esc(n)+' ('+num(r.rec.disc[n].n+r.rec.disc[n].sa)+')';
+      }).join(", ")+(r.others.length>3?' and '+(r.others.length-3)+' more':'')+'</span>'
+    : '';
+  return '<tr><td><strong>'+esc(r.code)+'</strong></td><td>'+esc(r.home)+others+'</td>'+
+    '<td class="n">'+num(r.n)+'</td><td class="n">'+num(r.sa)+'</td>'+
+    '<td>'+standingHtml(r)+'</td>'+
+    '<td><button class="btn small" type="button" data-subj="'+esc(r.code)+'">On the map</button></td></tr>';
+}
+/* A subject on the map: fly to the discipline that carries most of it and ring
+ * its identities — up to RING_MAX, past which the hint's count says more than
+ * the rings would. The rings are the same searchHits a search draws. */
+window.__ccrShowSubject=function(code){
+  if(!U) return false;
+  var r=subjectIndex()[String(code||"").trim().toUpperCase()]; if(!r) return false;
+  window.__ccrUniverse();
+  var home=r.homeIsl;
+  searchHits=[]; searchTerm=r.code.toLowerCase();
+  U.islands.forEach(function(I){ I.p.forEach(function(p){
+    if(!p.a && subjCode(p.i)===r.code) searchHits.push({id:p.i, x:p.x+(I.dx||0), y:p.y+(I.dy||0), isl:I, nd:p});
+  }); });
+  var ringed=searchHits.length>0 && searchHits.length<=RING_MAX;
+  if(!ringed) searchHits=[];
+  flyTo(home.x+(home.dx||0), home.y+(home.dy||0), SUBJECT_ZOOM);
+  selIsl=home; selNode=null; showIsland(home);
+  var where=r.others.length
+    ? ", most of them under <strong>"+esc(r.home)+"</strong>; also "+r.others.slice(0,3).map(function(n){
+        return esc(n)+" ("+num(r.disc[n].n+r.disc[n].sa)+")"; }).join(", ")
+    : " under <strong>"+esc(r.home)+"</strong>";
+  setHint("Subject <strong>"+esc(r.code)+"</strong> — "+num(r.n)+" identit"+(r.n===1?"y":"ies")+
+    " and "+num(r.sa)+" stand-alone course"+(r.sa===1?"":"s")+where+"."+
+    (ringed ? " The identities are ringed in red." : r.n ? " Too many to ring; search a title or number to find one." : ""));
+  draw();
+  return true;
+};
+
 /* ── the search box goes home when the map does ─────────────────────────────
  * The map's top row BORROWS the page's one search form (item 3 / item 11).
  * Every other view replaces #view wholesale, which would take the borrowed form
@@ -2094,7 +2385,15 @@ function homeSearch(){
   if(go) go.classList.remove("u-search-go");
 }
 window.__ccrHomeSearch = homeSearch;
-["__ccrForest","__ccrDiscipline","__ccrSearch","__ccrEsl","__ccrSubjectList"].forEach(function(n){
+/* Called by the template's setCrumbs() — the one place every view passes
+ * through before it renders: the search box goes home, and the view being
+ * entered is named (null for the sub-pages, so their menu offers all five). */
+window.__ccrLeaveView = function(view){ homeSearch(); curView = view || null; };
+/* Belt to setCrumbs()'s braces: an entry point that renders before it calls
+ * __crumbs — or never calls it — still sends the box home here. __ccrDecision
+ * is in the list because the comprehensive view embeds the forest, whose
+ * "Open this one" reaches it straight from the map. */
+["__ccrForest","__ccrDiscipline","__ccrSearch","__ccrEsl","__ccrSubjectList","__ccrDecision"].forEach(function(n){
   var f=window[n];
   if(typeof f!=="function" || f.__homesSearch) return;
   var g=function(){ homeSearch(); return f.apply(this, arguments); };

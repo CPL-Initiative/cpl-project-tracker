@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-378 document(s).
+379 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -315,6 +315,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [User-vocabulary category maps — curated JSON + anchored-pattern fallback](../kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Validate a derived metric against the expert's ranking before publishing it](../kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [Validate a supplied code column by its structural invariant, not by spot-checking values](../kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md) | methodology | published | 2026-08-12 | 2026-08-14 |
+| [Verify an ask against what the reader sees, not what the code does](../kb-notes/methodology-verify-an-ask-against-what-the-reader-sees.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Verify the consumer graph before migrating a data class — a dead reader means delete, not migrate](../kb-notes/methodology-verify-consumer-before-migrating.md) | methodology | published | 2026-05-31 | 2026-06-01 |
 | [Verify the last hop of a resolution chain](../kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [Verify with the instrument that can see the defect](../kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-24 |

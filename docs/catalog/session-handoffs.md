@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-202 document(s).
+203 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 229 | [SkyView is the map alone, the CCR menu opens it, the workspace has two grains; Sam's reactions are next](../session_229_handoff.md) | 2026-09-05 |
 | 228 | [accessibility is one command now; SkyView's top row landed; items 6-9 are next](../session_228_handoff.md) | 2026-09-04 |
 | 227 | [the duplicates are a lane; the promote step and the identities map are next](../session_227_handoff.md) | 2026-09-04 |
 | 226 | [the prefix fold is landed; the duplicates worklist, the promote step and the identities map are next](../session_226_handoff.md) | 2026-09-04 |

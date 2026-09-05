@@ -77,7 +77,13 @@ function serve() {
   // manageable and less intimidating."
   ok("the map is on screen with no clicks", (await page.locator("#u-cvs").count()) === 1);
   ok("and the discipline list is a real focusable button on it, not a gesture",
-    (await page.locator("#u-views-menu button#u-list").count()) === 1);
+    (await page.locator("#u-views-menu button#u-nav-forest").count()) === 1);
+  // Sam, 2026-09-05: "the full screen SkyView … I would like to henceforth refer
+  // to as SkyView" — the page opens on the map ALONE, and nothing else paints.
+  ok("\u2b50 it opens ALONE: the masthead, the crumbs and the panes below are not painted",
+    await page.evaluate(() => document.body.classList.contains("u-solo") &&
+      document.querySelector(".mast").getBoundingClientRect().height === 0 &&
+      document.getElementById("u-below").getBoundingClientRect().height === 0));
 
   console.log("\n══ \u26a0 the landing view can be operated from a keyboard");
   // This is the condition the flip was made under. Before it, the canvas keydown
@@ -106,58 +112,100 @@ function serve() {
   ok("Escape comes back out to the discipline",
     (await page.locator("#u-detail h3").textContent()) === kSub);
 
-  console.log("\n\u2550\u2550 the discipline list (the map's own button)");
+  console.log("\n\u2550\u2550 the workspace: By discipline (the map's own menu)");
   // Sam, 2026-08-25: "The Browse by Subjects button takes me unexpectedly to the
-  // package view. Seems I'm already browsing by subject." It now opens an actual
-  // list of subjects, filterable and seeded from the search box; the packaging
-  // view keeps its own door at the bottom of that list. This section walks that
+  // package view. Seems I'm already browsing by subject." Since 2026-09-05 the
+  // list is the workspace's By discipline view (items 6-9: one tab, toggles, a
+  // way back to SkyView), still seeded from the search box; this walks the
   // route, because the route IS the fix.
   await page.locator("#gq").fill("english as a second");
-  // The view links moved into a <details> menu (Sam, item 2, 2026-09-04), and a
+  // The view links live in a <details> menu (Sam, item 2, 2026-09-04), and a
   // closed <details> is display:none — so the menu opens before the link is
   // reachable. That is the point of the check: it clicks the way a person does.
   await page.locator("#u-views > summary").click();
-  await page.locator("button#u-list").click();
+  await page.locator("button#u-nav-forest").click();
   await page.waitForTimeout(400);
-  ok("the button opens a SUBJECT list, not the packaging view",
-    /Every discipline/.test(await page.locator("h1").first().textContent()));
+  ok("the menu opens the workspace on By discipline, not the packaging view",
+    /Disciplines and subjects/.test(await page.locator("h1").first().textContent()) &&
+    (await page.locator("#ws-discipline[aria-pressed=true]").count()) === 1);
+  ok("the solo frame comes down with it (the masthead paints again)",
+    await page.evaluate(() => !document.body.classList.contains("u-solo") &&
+      document.querySelector(".mast").getBoundingClientRect().height > 0));
   ok("it carries the search term across as the filter",
-    (await page.locator("#sl-q").inputValue()) === "english as a second");
-  const seeded = await page.locator("#sl-rows button").count();
+    (await page.locator("#ws-q").inputValue()) === "english as a second");
+  const seeded = await page.locator("#ws-rows tr").count();
   ok(`the seeded filter narrows to the ESL disciplines (${seeded})`, seeded > 0 && seeded < 30);
   ok("it says how many of how many matched",
-    /of\s[\d,]+\sdisciplines match/.test(await page.locator("#sl-count").textContent()));
-  await page.locator("#sl-q").fill("");
+    /of\s[\d,]+\sdisciplines match/.test(await page.locator("#ws-count").textContent()));
+  await page.locator("#ws-q").fill("");
   await page.waitForTimeout(200);
-  ok(`clearing the filter shows every discipline (${await page.locator("#sl-count").textContent()})`,
-    /^[\d,]+ disciplines$/.test((await page.locator("#sl-count").textContent()).trim()));
+  ok(`clearing the filter shows every discipline (${(await page.locator("#ws-count").textContent()).slice(0, 40)})`,
+    /^[\d,]+ disciplines ·/.test((await page.locator("#ws-count").textContent()).trim()));
+  ok("the table is a labeled scrolling region with a scope on every header",
+    (await page.locator(".tblwrap[tabindex='0'][role=region] table.ws-table").count()) === 1 &&
+    (await page.locator("table.ws-table th[scope=col]").count()) === (await page.locator("table.ws-table th").count()));
+  ok("a line explains the two grains, in words",
+    /discipline/.test(await page.locator(".ws-lede").textContent()) && /four-letter Common SUBJ/.test(await page.locator(".ws-lede").textContent()));
   // A filter that matches nothing must say so rather than render an empty panel
   // that is indistinguishable from a corpus with no disciplines in it.
-  await page.locator("#sl-q").fill("zzzznotasubject");
+  await page.locator("#ws-q").fill("zzzznotasubject");
   await page.waitForTimeout(200);
   ok("an empty filter result says so",
-    /Nothing matches/.test(await page.locator("#sl-rows").textContent()));
-  await page.locator("#sl-q").fill("welding");
+    /Nothing matches/.test(await page.locator("#ws-rows").textContent()));
+
+  console.log("\n\u2550\u2550 the workspace: By subject (the SUBJ4 grain)");
+  // Sam's item 6: "view by subject" — his subject is the four-letter Common
+  // SUBJ code, a grain no view carried before 2026-09-05.
+  await page.locator("#ws-subject").click();
+  await page.waitForTimeout(300);
+  ok("the toggle switches the grain", (await page.locator("#ws-subject[aria-pressed=true]").count()) === 1);
+  await page.locator("#ws-q").fill("");
   await page.waitForTimeout(200);
-  await page.locator("#sl-rows button").first().click();
+  const subjRows = await page.locator("#ws-rows tr").count();
+  ok(`subjects are read off the ids (${subjRows} codes, against ${await page.evaluate(() => window.CPL_CCR_UNIVERSE.islands.length)} disciplines)`,
+    subjRows > 150 && subjRows < 400);
+  ok("the first row is a code with the discipline it belongs to",
+    /^[A-Z]{2,4}$/.test((await page.locator("#ws-rows tr").first().locator("td").first().textContent()).trim()));
+  ok("a standing column says, in words, how a code relates to its discipline's Common SUBJ",
+    /Common SUBJ of|umbrella code|not .*code/.test(await page.locator("#ws-rows tr").first().locator("td").nth(4).textContent()));
+  await page.locator("#ws-q").fill("SPAN");
+  await page.waitForTimeout(200);
+  ok("SPAN is an umbrella code under Foreign Languages",
+    /umbrella code under Foreign Languages/.test(await page.locator("#ws-rows").textContent()));
+  await page.locator("#ws-q").fill("kine");
+  await page.waitForTimeout(200);
+  await page.locator("#ws-rows [data-subj]").first().click();
+  await page.waitForTimeout(500);
+  ok("picking a subject opens the MAP on its discipline, at 150%",
+    (await page.locator("#u-cvs").count()) === 1 &&
+    /Kinesiology/i.test(await page.locator("#u-detail h3").textContent()) &&
+    (await page.locator("#u-zoom").textContent()).trim() === "150%");
+  ok("and the hint names the subject and its count in words",
+    /Subject/.test(await page.locator("#u-hint").textContent()) && /KINE/.test(await page.locator("#u-hint").textContent()));
+  await page.locator("#u-views > summary").click();
+  await page.locator("button#u-nav-forest").click();
+  await page.waitForTimeout(300);
+  await page.locator("#ws-q").fill("welding");
+  await page.waitForTimeout(200);
+  await page.locator("#ws-rows [data-map]").first().click();
   await page.waitForTimeout(500);
   ok("picking a discipline returns to the MAP, opened on it",
     (await page.locator("#u-cvs").count()) === 1 &&
     /Welding/i.test(await page.locator("#u-detail h3").textContent()));
 
-  console.log("\n\u2550\u2550 forest (its own door, at the bottom of the subject list)");
-  // The view links moved into a <details> menu (Sam, item 2, 2026-09-04), and a
-  // closed <details> is display:none — so the menu opens before the link is
-  // reachable. That is the point of the check: it clicks the way a person does.
+  console.log("\n\u2550\u2550 the comprehensive view (the map with the panes below)");
+  // Sam, 2026-09-05: "an option to navigate to the comprehensive SkyView (the
+  // current one), but I don't want it to open by default."
   await page.locator("#u-views > summary").click();
-  await page.locator("button#u-list").click();
-  await page.waitForTimeout(350);
-  await page.locator("button#sl-pack").click();
+  await page.locator("button#u-nav-comp").click();
   await page.waitForTimeout(500);
-  ok("heading rendered", (await page.locator("h1").first().textContent()).includes("Common Course Reference"));
-  const cells = await page.locator(".cell").count();
-  ok(`discipline cells (${cells})`, cells > 100);
-  ok("stat strip has 4 tiles", (await page.locator(".stat").count()) === 4);
+  ok("the same canvas, the solo frame off, the panes painted",
+    await page.evaluate(() => !document.body.classList.contains("u-solo") &&
+      document.getElementById("u-cvs") !== null &&
+      document.getElementById("u-below").getBoundingClientRect().height > 100));
+  const cells = await page.locator("#u-more .cell").count();
+  ok(`the forest is embedded below the map (${cells} cells)`, cells > 100);
+  ok("stat strip has 4 tiles", (await page.locator("#u-more .stat").count()) === 4);
   // Read OUR sheet, not styleSheets[0] — that is the cross-origin Google Fonts
   // link, whose cssRules always throws. A check aimed at it reports the sandbox's
   // network policy, never the page.
@@ -191,13 +239,16 @@ function serve() {
   await page.waitForTimeout(400);
   ok("first discipline cell reaches real decisions, not a 'no sample data' note",
     (await page.locator(".deck").count()) > 0);
+  ok("the crumbs row carries the Views menu here too (every view reachable from every other)",
+    (await page.locator("#crumbs-views #u-views").count()) === 1 &&
+    (await page.locator("#crumbs-views #u-nav-sky").count()) === 1);
   await backToForest();
   await page.waitForTimeout(400);
 
   console.log("\n══ the universe view");
-  ok("the list still offers the way back to the map",
-    (await page.locator("#go-universe").count()) === 1);
-  await page.locator("#go-universe").click();
+  ok("the workspace offers the way back to SkyView, as a word",
+    (await page.locator("#ws-sky").count()) === 1 && /Back to SkyView/.test(await page.locator("#ws-sky").textContent()));
+  await page.locator("#ws-sky").click();
   await page.waitForTimeout(600);
   ok("canvas is present and sized", await page.evaluate(() => {
     const c = document.getElementById("u-cvs");
@@ -223,10 +274,11 @@ function serve() {
   await page.waitForTimeout(400);
   const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
-  // "welding" names a subject, so the report is the subject (no rings since
-  // 2026-09-03); a term naming no subject still reports its matches.
+  // "welding" names a discipline, so the report is the discipline (no rings
+  // since 2026-09-03, and the WORD since 2026-09-05 — "subject" is the SUBJ4
+  // grain now); a term naming no discipline still reports its matches.
   ok("and reports where it landed",
-    /^\s*Subject\b.*Welding|match/i.test(await page.locator("#u-hint").textContent()));
+    /^\s*Discipline\b.*Welding|match/i.test(await page.locator("#u-hint").textContent()));
   await page.fill("#gq", "zzzznotathing");
   await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(300);
@@ -292,7 +344,7 @@ function serve() {
   // NOTHING (the rings were 408 red names on the Welding island); the landing
   // is the subject itself, which is drawn at the zoom it flies to.
   ok(`"english as a second" lands on its subject (${scattered.hits} rings)`,
-    /^\s*Subject\b/i.test(scattered.hint) && scattered.hits === 0);
+    /^\s*Discipline\b/i.test(scattered.hint) && scattered.hits === 0);
   ok(`and lands where nodes are drawn (zoom ${scattered.k.toFixed(3)} > ${nodeZoom})`,
     scattered.k > nodeZoom);
   // The invariant, stated as itself: claiming rings and drawing none is the bug.
@@ -304,7 +356,7 @@ function serve() {
   const subj = await runSearch("english as a second language");
   // textContent strips the markup, so assert on the words that survive it.
   ok("a subject name goes to that subject",
-    /^\s*Subject\b/i.test(subj.hint) && /English as a Second Language/i.test(subj.hint));
+    /^\s*Discipline\b/i.test(subj.hint) && /English as a Second Language/i.test(subj.hint));
   ok(`and zooms in to it (zoom ${subj.k.toFixed(3)})`, subj.k > nodeZoom);
 
   // A word that is a substring of several DIFFERENT disciplines and an exact
@@ -321,7 +373,7 @@ function serve() {
   // correctable — with the suggestion list as the way to not guess at all.
   const many = await runSearch("tech");
   ok("a word matching several different subjects still goes to a subject",
-    /^\s*Subject\b/i.test(many.hint));
+    /^\s*Discipline\b/i.test(many.hint));
   ok("\u2b50 \u2026and NAMES the others rather than choosing silently",
     /Also matching/i.test(many.hint));
   ok("and still lands where its hits can be seen",
@@ -335,7 +387,7 @@ function serve() {
   // subject; the shortest is the one the others qualify.
   const esl = await runSearch("english as a second");
   ok("\u2b50 a prefix of one subject's several spellings goes to THAT subject",
-    /^\s*Subject\b/i.test(esl.hint) && /English as a Second Language/i.test(esl.hint));
+    /^\s*Discipline\b/i.test(esl.hint) && /English as a Second Language/i.test(esl.hint));
   ok("\u2b50 \u2026and not to a subject matched only by course titles",
     !/Interdisciplinary/i.test(esl.hint));
   ok(`and zooms in to it (zoom ${esl.k.toFixed(3)})`, esl.k > nodeZoom);
@@ -650,9 +702,30 @@ function serve() {
       /filed under Vocational/.test(pane) && pane.includes(xo.ex.d));
   }
 
-  console.log("\n══ ⭐ the map fills the first screen; the panes are below it");
-  // Sam, 2026-09-03: "have SkyView open full screen so users have more work
-  // space and allow scroll down to see the other info you provide now".
+  console.log("\n══ ⭐ SkyView alone fills the window; the comprehensive view puts the panes below it");
+  // Sam, 2026-09-05: SkyView is the map alone. The comprehensive view is Sam's
+  // 2026-09-03 shape — "open full screen so users have more work space and
+  // allow scroll down to see the other info you provide now" — one click away.
+  await page.evaluate(() => window.__ccrUniverse({ solo: true }));
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.evaluate(() => window.dispatchEvent(new Event("resize")));
+  await page.waitForTimeout(150);
+  const solo = await page.evaluate(() => {
+    const full = document.getElementById("u-full").getBoundingClientRect();
+    return { on: document.body.classList.contains("u-solo"), top: full.top, bottom: full.top + full.height,
+             vh: window.innerHeight, width: full.width, vw: document.documentElement.clientWidth,
+             mast: document.querySelector(".mast").getBoundingClientRect().height,
+             below: document.getElementById("u-below").getBoundingClientRect().height,
+             scroll: document.documentElement.scrollHeight - window.innerHeight,
+             hash: location.hash };
+  });
+  ok(`⭐ alone, the map section starts at the top of the window and ends at its bottom (${Math.round(solo.top)} → ${Math.round(solo.bottom)} of ${solo.vh})`,
+    solo.on && solo.top <= 1 && Math.abs(solo.bottom - solo.vh) < 4);
+  ok("nothing else is painted: no masthead, no panes, and the window does not scroll",
+    solo.mast === 0 && solo.below === 0 && solo.scroll <= 1);
+  ok(`the section spans the full width (${Math.round(solo.width)} of ${solo.vw})`, solo.width >= solo.vw - 2);
+  ok(`the hash names the view (${solo.hash})`, solo.hash === "#skyview");
+  await page.evaluate(() => window.__ccrUniverse({ solo: false }));
   await page.evaluate(() => window.scrollTo(0, 0));
   await page.evaluate(() => window.dispatchEvent(new Event("resize")));
   await page.waitForTimeout(150);
@@ -684,6 +757,8 @@ function serve() {
   ok("the full-screen control is a word", /^Full screen$/.test(geo.fs.trim()));
   ok(`the forest is embedded below the map (${geo.cells} cells)`, geo.cells > 100);
   ok(`the map screen still carries exactly one search field (${geo.fields})`, geo.fields === 1);
+  await page.evaluate(() => window.__ccrUniverse({ solo: true }));
+  await page.waitForTimeout(150);
 
   console.log("\n══ ⭐ labels grow with zoom: number, then title, then units and system");
   const bands = await page.evaluate(() => {
@@ -757,14 +832,16 @@ function serve() {
   });
   ok("an island carries a movable offset", dragged);
 
-  console.log("\n══ the ESL packaging proposal");
+  console.log("\n══ the ESL packaging proposal (a toggle of the workspace)");
+  // Sam's item 7: fold ESL packaging into the one tab rather than leaving it a door.
   await backToForest();
   await page.waitForTimeout(400);
-  ok("the banner offers it", (await page.locator("#go-esl").count()) === 1);
-  await page.locator("#go-esl").click();
+  ok("the workspace offers it as its third toggle", (await page.locator("#ws-esl").count()) === 1);
+  await page.locator("#ws-esl").click();
   await page.waitForTimeout(500);
-  ok("proposal heading", /What packaging ESL would actually do/
-      .test(await page.locator("h1").first().textContent()));
+  ok("proposal heading, one level under the tab's h1", /What packaging ESL would actually do/
+      .test(await page.locator("h2").first().textContent()) &&
+    /Disciplines and subjects/.test(await page.locator("h1").first().textContent()));
   ok(`three comprehensives drawn (${await page.locator("#esl-gfx circle").count()})`,
     (await page.locator("#esl-gfx circle").count()) === 3);
   // The medium-confidence wedge is the honest half of this picture; a preview
@@ -794,18 +871,27 @@ function serve() {
     /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));
   ok("the list says it is a sample, with its denominator",
     /Showing .* of /.test(await page.locator(".empty").last().textContent()));
-  await backToForest();
+  ok("a bucket page leads back to the proposal with a word, inside the same tab",
+    (await page.locator("#esl-back").count()) === 1 && (await page.locator("#ws-esl[aria-pressed=true]").count()) === 1);
+  await page.locator("#esl-back").click();
+  await page.waitForTimeout(300);
+  ok("…and it comes back", (await page.locator("#esl-decks .deck").count()) === 3);
+  await page.locator("#ws-discipline").click();
   await page.waitForTimeout(400);
 
   console.log("\n══ search + filter");
-  await page.fill("#q", "weld");
+  const allRows = await page.locator("#ws-rows tr").count();
+  await page.fill("#ws-q", "weld");
   await page.waitForTimeout(200);
-  ok("search narrows the grid", (await page.locator(".cell").count()) < cells);
-  await page.fill("#q", "");
+  ok("the filter narrows the table", (await page.locator("#ws-rows tr").count()) < allRows);
+  await page.fill("#ws-q", "");
   await page.waitForTimeout(200);
 
   console.log("\n══ discipline → decision");
-  await page.locator(".cell").first().click();
+  // Only a row with a decision view offers the door — never a door onto nothing.
+  ok("a few rows offer Decisions; most do not", (await page.locator("#ws-rows [data-work]").count()) > 0 &&
+    (await page.locator("#ws-rows [data-work]").count()) < 20);
+  await page.locator("#ws-rows [data-work]").first().click();
   await page.waitForTimeout(300);
   const decks = await page.locator(".deck").count();
   ok(`decision cards (${decks})`, decks > 0);

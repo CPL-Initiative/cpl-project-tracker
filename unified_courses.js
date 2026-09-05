@@ -85,6 +85,21 @@
    * agreed to flip the view so it opens first and there is a button on SkyView
    * to go to the CCR List View."
    *
+   * ⭐ AND SINCE 2026-09-05 IT LEADS AS THE WHOLE TAB. Sam: "Make sure the CCR
+   * menu button opens the full screen SkyView, not the version it currently
+   * opens to. I've made several requests for this so far and none of them
+   * have worked." Three earlier attempts each landed a different thing — the
+   * iframe as the landing view (S192), `allow="fullscreen"` on it (S223), a
+   * separate side-menu link to the page (S227) — and none of them changed what
+   * this tab SHOWED: a boxed frame under a banner, a heading, a toggle row and
+   * a note. In map mode the pane now hides all of that (`uc-map-on`), drops
+   * the container's padding, and sizes the frame to what the viewport has
+   * left, so the map is the tab. SkyView's own top row carries the title, the
+   * Views menu, the search and a close; close and "CCR table view" post a
+   * message to this page, which swaps the frame for the list. The list keeps
+   * its toggle and its corner launcher, and `#unified-courses/list` is the
+   * hash that lands on it directly.
+   *
    * He is right and the earlier flip missed him: Session 192 made SkyView the
    * landing view INSIDE the prototype page, while the COBI tab kept opening on
    * the table with a launcher in the corner. Two different surfaces, one
@@ -140,7 +155,6 @@
 
     var mapWrap = document.createElement("div");
     mapWrap.id = "uc-map-pane";
-    mapWrap.innerHTML = '<div class="uc-map-note" id="uc-map-note"></div>';
     host.insertBefore(mapWrap, listWrap);
 
     ensureCcrShellCss();
@@ -163,11 +177,15 @@
       "color:#fff;border-color:var(--seal-blue,#0b3d61);}" +
       "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
       "#tab-unified-courses .uc-vnote{font-size:.82rem;color:#5a6478;}" +
-      "#tab-unified-courses #uc-map-pane{margin:0 0 8px;}" +
-      "#tab-unified-courses .uc-map-frame{width:100%;height:calc(100vh - 200px);min-height:560px;" +
-      "border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:10px;background:#fff;display:block;}" +
-      "#tab-unified-courses .uc-map-note{font-size:.84rem;color:#5a6478;margin:0 0 8px;}" +
-      "@media (max-width:700px){#tab-unified-courses .uc-map-frame{height:70vh;}}";
+      "#tab-unified-courses #uc-map-pane{margin:0;}" +
+      "#tab-unified-courses .uc-map-frame{display:block;width:100%;height:calc(100vh - 80px);min-height:480px;" +
+      "border:0;background:#fff;}" +
+      /* Map mode: SkyView is the whole tab. The banner, the heading with its
+         launcher and the toggle row go; the container's padding and width cap
+         go with them so the frame reaches the column's edges. */
+      "#tab-unified-courses.uc-map-on > .main-container{max-width:none;padding:0;}" +
+      "#tab-unified-courses.uc-map-on .uc-beta-banner,#tab-unified-courses.uc-map-on .uc-head," +
+      "#tab-unified-courses.uc-map-on .uc-viewseg{display:none;}";
     document.head.appendChild(st);
   }
 
@@ -175,6 +193,7 @@
     if (!ensureCcrShell()) return;
     ccrView = (v === VIEW_LIST) ? VIEW_LIST : VIEW_SKYVIEW;
     var pane = ccrPane();
+    pane.classList.toggle("uc-map-on", ccrView === VIEW_SKYVIEW);
     var mapPane = pane.querySelector("#uc-map-pane");
     var listPane = pane.querySelector("#uc-list-pane");
     Array.prototype.forEach.call(pane.querySelectorAll(".uc-vbtn"), function (b) {
@@ -191,17 +210,39 @@
     // nothing, so it belongs to the list view.
     var launch = pane.querySelector(".uc-skyview");
     if (launch) launch.style.display = ccrView === VIEW_LIST ? "" : "none";
-    if (ccrView === VIEW_SKYVIEW) mountMapFrame();
+    if (ccrView === VIEW_SKYVIEW) {
+      mountMapFrame();
+      // The frame starts at the top of the pane; a reader who toggled from
+      // halfway down the list would otherwise see its lower half.
+      if (isCcrCurrent() && (window.scrollY || window.pageYOffset)) { try { window.scrollTo(0, 0); } catch (e) {} }
+      sizeMapFrame();
+      // Measured too early the frame keeps a stale height: the header above it
+      // moves as fonts and the seal arrive. Measure again once layout settles.
+      if (window.requestAnimationFrame) requestAnimationFrame(sizeMapFrame);
+      setTimeout(sizeMapFrame, 400);
+    }
     else bootList();
+    syncCcrHash();
+  }
+
+  function isCcrCurrent() {
+    return !!(window.CPL_TABS && CPL_TABS.current && CPL_TABS.current() === "unified-courses");
+  }
+  /* `#unified-courses` is the map (what the side menu opens); `#unified-courses/list`
+   * is the list, so a reload — and SkyView's own "CCR table view" link out —
+   * lands on the table rather than on another copy of the map. replaceState,
+   * never a hash assignment: an assignment fires hashchange and tabs.js would
+   * re-activate the tab under us. */
+  function syncCcrHash() {
+    if (!isCcrCurrent() || !/^#unified-courses(\/|$)/.test(location.hash || "")) return;
+    var want = ccrView === VIEW_LIST ? "#unified-courses/list" : "#unified-courses";
+    if (location.hash === want) return;
+    try { history.replaceState(null, "", location.pathname + location.search + want); } catch (e) {}
   }
 
   function mountMapFrame() {
     var host = ccrPane() && ccrPane().querySelector("#uc-map-pane");
     if (!host || host.querySelector("iframe")) return;
-    var note = host.querySelector("#uc-map-note");
-    if (note) note.innerHTML = 'SkyView \u2014 the whole reference as a map. ' +
-      '<a href="prototype/skyview.html" target="_blank" rel="noopener">Open it in its own tab \u2197</a> ' +
-      'to keep it beside the list.';
     var f = document.createElement("iframe");
     f.className = "uc-map-frame";
     f.src = "prototype/skyview.html";
@@ -212,8 +253,35 @@
     // apologize (Sam, 2026-09-03: "have SkyView open full screen").
     f.setAttribute("allow", "fullscreen");
     f.allowFullscreen = true;
+    f.addEventListener("load", sizeMapFrame);
     host.appendChild(f);
   }
+  /* The frame takes what the viewport has left below where it starts — the
+   * COBI header at scroll 0 — so the map fills the screen the way its own
+   * window does and the legend strip at its foot stays on screen. Measured,
+   * not assumed: the header's height is not this file's to know. */
+  function sizeMapFrame() {
+    var f = ccrPane() && ccrPane().querySelector("#uc-map-pane iframe");
+    if (!f || ccrView !== VIEW_SKYVIEW) return;
+    var top = 0;
+    try { top = Math.max(0, f.getBoundingClientRect().top); } catch (e) {}
+    var h = Math.max(480, Math.round((window.innerHeight || 0) - top));
+    if (window.innerHeight && f.style.height !== h + "px") f.style.height = h + "px";
+  }
+  window.addEventListener("resize", sizeMapFrame);
+  window.addEventListener("load", sizeMapFrame);
+  try { if (document.fonts && document.fonts.ready) document.fonts.ready.then(sizeMapFrame); } catch (e) {}
+  /* The frame's own controls hand off to this page: SkyView's close (item 5)
+   * and its "CCR table view" menu item post a message rather than navigating,
+   * because the page around the frame is the one that owns the list. Only a
+   * message from OUR frame is honored. */
+  window.addEventListener("message", function (e) {
+    var m = e && e.data;
+    if (!m || m.type !== "skyview") return;
+    var f = ccrPane() && ccrPane().querySelector("#uc-map-pane iframe");
+    if (!f || !f.contentWindow || e.source !== f.contentWindow) return;
+    if (m.action === "close" || m.action === "list") setCcrView(VIEW_LIST);
+  });
 
   function bootList() {
     if (listBooted) return;
@@ -223,10 +291,12 @@
     else init();
   }
 
-  /* The tab's entry point. SkyView unless a returning curator asked for the pen. */
+  /* The tab's entry point. SkyView unless a returning curator asked for the
+   * pen, or the hash names the list outright. */
   function openCcr() {
     if (!ensureCcrShell()) return;
-    setCcrView(authReturn ? VIEW_LIST : VIEW_SKYVIEW);
+    var wantList = authReturn || /^#unified-courses\/list(\/|$)/i.test(location.hash || "");
+    setCcrView(wantList ? VIEW_LIST : VIEW_SKYVIEW);
     authReturn = false;
   }
   // Exposed so the harness can drive the flip without a browser, and so a future
@@ -234,6 +304,7 @@
   window.CPL_CCR_VIEW = {
     open: openCcr, set: setCcrView, current: function () { return ccrView; },
     _listBooted: function () { return listBooted; },
+    _size: sizeMapFrame,
     _setAuthReturn: function (v) { authReturn = !!v; },
   };
 

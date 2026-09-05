@@ -282,12 +282,16 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
-- **SkyView, not "Atlas" (Sam, 2026-08-24).** The CCR curation prototype is **SkyView**.
-  ⚠️ **When Sam says "SkyView" he means the GRAPH VIEW specifically** — the canvas of
-  identities you pan, search and drag on — **not** the surrounding informational elements
-  (discipline cells, the ESL packaging card, the decision list). Those are panes *on* the
-  SkyView page; only the graph is SkyView. Files still carry `ccr_atlas_*` paths; the
-  user-facing name is what changed.
+- **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
+  prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
+  window** — the canvas of identities you pan, search and drag on, with its one row of
+  controls and nothing else painted (Sam, 2026-09-05: *"The full screen SkyView (which I
+  would like to henceforth refer to as SkyView…)"*). The map with the panes below it is
+  **the comprehensive view**, one Views-menu click away and never the default; the
+  discipline table, the subject table and the ESL packaging card are the **workspace**
+  (the *Disciplines and subjects* tab). Verify such an ask against the SCREEN, not the
+  code (KB note `methodology-verify-an-ask-against-what-the-reader-sees`). Files still
+  carry `ccr_atlas_*` paths; the user-facing name is what changed.
 - **FUNDING VOCABULARY — CCC NORMS, NOT BUSINESS NORMS (Sam, 2026-08-31).** Say
   **funding**, never "money," on any funding surface. Prefer sector terms:
   *allocated / fully allocated* (not "spent"/"apportioned" for this program's
@@ -766,20 +770,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyLand S226 — the duplicates become a lane; the twenty were never missing (2026-09-04)
-
-**Two PRs (#1465 + the promote step).** The 130 May anchors that duplicate a
-catalog identity are a lane of the Suggested-merges worklist, recomputed live
-(`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so
-the survivor rule folds the anchor into the course carrying the college courses;
-a curator confirms each, a script merges none. 129 of 130 receipt pairs surface;
-the 130th hides behind a bot's `Stagecraft` re-discipline — a signal, not a miss.
-Measured first: the 20 "missing" folded identities are Phase B folds into C-ID
-descriptor rows (`consolidated_from`), not an export gap. Built before the first
-one appears: `kb/_uc_cur_promote.py` (a `UC-CUR-*` target → a real M-ID record)
-and the identities map re-key dry run (1,597 ghosts: re-key 1,369, drop 228;
-sheet for Sam next). Story: `ccr_atlas_lessons`; handoff `session_227_handoff`.
-
 ### SkyMint S227 — the masthead, one command for accessibility, and SkyView's top row (2026-09-04/05)
 
 **Four PRs (#1469, #1473, #1474, #1476).** The masthead zoom mess was three CSS
@@ -802,6 +792,17 @@ row of title · Views menu · search · controls · close — ⭐ **item 11 was
 structural**: the one search box lived in the masthead, which full screen does
 not paint. Stories: `cobi_lessons`, `public_pages_a11y_lessons`,
 `ccr_atlas_lessons`; handoff `session_228_handoff`.
+
+### SkyQuiet S228 — SkyView is the map alone, and the CCR menu opens it that way (2026-09-05)
+
+**One PR (#1479).** Each earlier attempt at "open SkyView full screen" changed a MECHANISM and
+none changed what the tab SHOWED. Now `body.u-solo` paints
+`#u-full` and nothing else, the comprehensive view is the same render with the panes shown, and
+COBI's CCR tab hides its chrome and fills the column; close posts back to the tab.
+⭐ **Items 6-9 landed as ONE tab**, *Disciplines and subjects*: By discipline · **By subject (the
+SUBJ4 grain, 344 codes read off the identity ids)** · ESL packaging, one Views menu on every view.
+⭐ **The harness found a latent bug one click in** (a forest cell destroyed the borrowed search
+box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
 
 ## Troubleshooting
 

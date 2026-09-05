@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 378,
+   "count": 379,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6004,6 +6004,26 @@
      "updated": "2026-08-14"
     },
     {
+     "created": "2026-09-05",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "unified_courses.js",
+      "docs/ccr_atlas_lessons.md"
+     ],
+     "path": "docs/kb-notes/methodology-verify-an-ask-against-what-the-reader-sees.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "verification",
+      "skyview",
+      "requests"
+     ],
+     "title": "Verify an ask against what the reader sees, not what the code does",
+     "type": "methodology",
+     "updated": "2026-09-05"
+    },
+    {
      "created": "2026-05-31",
      "governs": [
       "excel_to_dashboard.py",
@@ -11540,7 +11560,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-04"
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-28",
@@ -11742,8 +11762,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 202,
+   "count": 203,
    "docs": [
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "n": 229,
+     "path": "docs/session_229_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "SkyView is the map alone, the CCR menu opens it, the workspace has two grains; Sam's reactions are next",
+     "type": null,
+     "updated": "2026-09-05"
+    },
     {
      "created": "2026-09-04",
      "governs": [],
@@ -15250,5 +15283,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 776
+ "total": 778
 }
