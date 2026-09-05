@@ -153,7 +153,10 @@ var NODE_ZOOM=0.20;
  * means geometrically. Measured on KINE M1750 (30 members, 22 orbiting): at 40x
  * the edge-to-satellite gap goes 85px -> 374px while the radius falls
  * 318px -> 101px. */
-var K_MIN=0.03, K_MAX=60, RAD_KNEE=4;
+/* 7,000%: Sam, 2026-09-05, at the end of the session — "need to be able to zoom
+ * to 7k — needed when working on a single course". The taper below keeps a dot
+ * a dot up there; the positions keep spreading. */
+var K_MIN=0.03, K_MAX=70, RAD_KNEE=4;
 /* What a search result flies to, read straight off the zoom readout
  * (view.k * 100 is the percentage the corner shows). Sam, 2026-09-04. */
 var COURSE_ZOOM=10, SUBJECT_ZOOM=1.5;
@@ -1618,6 +1621,8 @@ function wire(){
   });
   var every=document.getElementById("u-show-every");
   if(every) every.onclick=function(){ var p={}; SHOW_KEYS.forEach(function(k){ p[k]=true; }); setShow(p); };
+  var none=document.getElementById("u-show-none");
+  if(none) none.onclick=function(){ var p={}; SHOW_KEYS.forEach(function(k){ p[k]=false; }); setShow(p); };
   window.__ccrSetCredit=setCredit;
   window.__ccrSetShow=setShow;
   paintShow(); syncCreditWord();
@@ -2214,7 +2219,10 @@ function showMenuHtml(){
   return '<details class="u-show" id="u-show">'+
     '<summary class="btn u-show-sum" id="u-show-sum" aria-controls="u-show-menu">Show: <b id="u-show-word">All</b></summary>'+
     '<div class="u-show-menu" id="u-show-menu" role="group" aria-label="What the map shows">'+
-      '<div class="u-show-all"><button class="linkish" type="button" id="u-show-every">Show everything</button></div>'+
+      '<div class="u-show-all"><button class="linkish" type="button" id="u-show-every">Show everything</button>'+
+        /* Sam, 2026-09-05: "need to add a Deselect All option on the Show:All
+         * drop down" — clear every switch, then tick the one or two you want. */
+        '<button class="linkish" type="button" id="u-show-none">Deselect all</button></div>'+
       groups.map(function(g){
         return '<fieldset><legend>'+esc(g[0])+'</legend>'+g[1].map(function(o){
           return '<label><input type="checkbox" data-show="'+o[0]+'"'+(show[o[0]]?' checked':'')+'> <span>'+esc(o[1])+'</span></label>';
