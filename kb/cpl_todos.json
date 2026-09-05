@@ -1,92 +1,50 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-05",
-  "_session": "231 (SkyReply) — two SkyView controls that were never broken, then the course outline planned on real welding data",
-  "_status": "SkyView now sorts the search by name, which is what let you see the duplicate welding intro courses, and the map reads as a sky: a course colleges have joined emits light, a stand-alone does not, so the settled identities are visible at a glance. Then you asked five more things and one hard question, and they are all on one sheet with reply chips rather than scattered through chat. Two measurements underneath them matter: the courses carrying the articulation weight are almost all one-college identities, which the map currently draws as its dimmest points, and a fifth of the articulation records point at identities that no longer exist because two files have not been re-keyed since the September re-mints. Nothing is blocked on engineering; eleven things are waiting on you.",
+  "_session": "232 (SkyOutline) — all eight queued rulings executed; the alias chain declared once, and a plan that would have deleted 172 live identities caught before it ran",
+  "_status": "Sam ruled eleven items on 2026-09-05 and this run executed the eight that were queued, across two PRs. The alias chain — the list of applied re-mint receipts every stored id must be resolved through — now lives in exactly one file with a CI guard; it had been copy-pasted, and the copy was eight applies behind under a comment promising it would stay in step. Measuring with that shared resolver overturned most of what the re-key ruling assumed: the credit-recommendation worklist is rebuilt every morning so it cannot go stale, and re-keying it would have moved 1,197 live course ids off their rows. One surface genuinely was stale and is now fixed. The important catch is that the plan we inherited would have deleted 172 live course identities carrying 662 articulation records — it judged C-ID courses against a catalog that can only hold M-IDs, so they all came out 'dead' automatically, and every safety check still passed because those checks confirm the result is tidy, not that the plan made sense. SkyView also gained articulation counts, three interface fixes Sam asked for, and a merge-candidate queue that deliberately writes nothing. Next: build the course outline.",
   "items": [
     {
-      "id": "s231-sam-eleven-rulings",
+      "id": "s232-sam-outline-sources",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "You ruled all eleven on the decision sheet — ten as proposed and one edited: agency skill statements come from all three sources (published agency standards, ACE exhibits, and entered by the MAP team), which unblocks the course outline. The sheet stays live at https://claude.ai/code/artifact/fdd4d6a0-609b-4cb3-b0b9-b9e2a5f02761 if you want to change an answer or add a note; the next session reads it before it starts. One thing you flagged for follow-up and it is a real question: when the three skill sources disagree about the same credential, which one wins?"
+      "text": "You ruled 'All three' on where agency skill statements come from — published agency standards, ACE exhibits, and entered by the MAP team — and flagged it for follow-up. The open question is what wins when the three disagree about the same certification. That answer shapes the course outline's comparison panel, so the next session will need it early."
     },
     {
-      "id": "s231-fable-alias-rekey",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Re-key the credit-recommendation worklist and the articulations file through the alias chain before building anything on either: 19 of 70 welding recommendation course ids and 504 of 2,319 articulated identities name nothing that still exists, and the second group carries 875 articulation records. Check ids through the 15 applied maps, never directly — a direct lookup overstates the damage by half. Then fold the chain into one shared module with a CI guard, because the two copies in the repo have already drifted apart under a comment saying they must not."
-    },
-    {
-      "id": "s231-fable-articulation-map",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Put the articulation count on each course identity in SkyView, after the re-key — Sam ruled yes. The join is direct on identity id in kb/coci_articulations.json. It matters because the signal runs opposite to adoption: in welding the articulation weight sits on one-college identities (one carries 21) while Introduction to Welding, taught at 24 colleges, carries 7 and Introduction to SMAW carries none — so the map currently draws the articulated courses as its dimmest, unlit points."
-    },
-    {
-      "id": "s231-sam-outline-prototype",
+      "id": "s232-sam-welding-merges",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "The course outline prototype is here, drawn on the real Introduction to Welding record (24 colleges teach it): https://claude.ai/code/artifact/f04e8f30-8cf5-4731-9da7-849335d7102f — the title and description you can edit, fifteen skills each carrying how many of the 24 colleges' own catalog text supports it, what the colleges report to the Chancellor's Office with the spread shown (their units run from 0 to 5), the thirteen outline slots nothing we hold can fill, and a panel putting the academic skills beside the agency side. Everything the platform wrote carries your label, MAP-Generated for faculty consideration and revision before use. React to the shape and the wording; nothing is built into SkyView yet."
+      "text": "Three welding merge candidates are queued for a faculty reviewer, not for a session: Introduction to Welding (24 colleges) absorbing Introduction to the Welding Processes (2) and Intro-Welding Processes (1), and the Intermediate Shielded Metal Arc Welding pair behind it. A fourth pair shares a title but is flagged as NOT mergeable — one is credit and one is noncredit, which makes them different courses. kb/merge_candidates/2026-09-05/report.md."
     },
     {
-      "id": "s231-sam-agency-skills-source",
+      "id": "s232-sam-remint-queue",
+      "for": "Sam",
+      "tab": "governance",
+      "text": "The re-mint approval view is designed and routed through Governance, not built. You approve candidates and the cron applies them; there is no fire button, because a re-mint cannot be undone the way an ordinary correction can. Worth a read before it is built — it names what each candidate must show you, including what the plan was checked against, which is exactly the thing that was missing this week."
+    },
+    {
+      "id": "s232-sam-numbers-corrected",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "The one thing the outline cannot be built without: where agency skill statements come from. For welding we hold 64 classified credentials — American Welding Society 18, Carpenters Training Committee for Northern California 15, the colleges themselves 12, ASME 7, LA Building and Safety 4, NCCER 4, Iron Workers 3 — and 57 published credit recommendations against them. Not one of them says what a holder can DO; they say where credit lands. So the agency half of the comparison has to come from the standards themselves. Published standards, ACE exhibits, or someone keying them in? And which certification should be the first one examined end to end — the unit of work is one certification, not one discipline."
+      "text": "Two figures from the last session were wrong and are corrected: welding credit-recommendation ids are not 27% dead, they are 0% dead, and articulation ids are 7.5% dead rather than 22%. Both were measured against the map's browser view, which carries 16,480 of 76,008 courses, so anything not drawn read as retired. Nothing was lost — the data was fine all along."
     },
     {
-      "id": "s231-fable-build-outline",
+      "id": "s232-fable-build-outline",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Build the outline into SkyView as a layered panel (exhibits and military credit recommendations are the next layers). Edits go to kb_curation, which already carries unified_title, discipline and canonical_subj4; validated_at and validated_by exist there and have never been used on any of the 34,000 rows, so this is their first real use. A subject change re-keys the identity, so it queues and waits for verification plus admin release. Double-click is currently taken by the discipline work surface — split it, a course opens the outline and empty ground keeps today's behavior. Add a Beginning/Intermediate/Advanced level to the course and to each skill, seeded where the text already says so and left for a curator where it does not; keep course level and skill level as separate fields."
+      "text": "Build the course outline on double-click: a layered panel with the MAP-Generated label on every synthetic field, proficiency levels on the course and on each skill, thin skills kept with a confidence chip, and a certification-first way in beside the course-first one. Double-click currently opens the discipline work surface, so split it — a course opens the outline, empty ground keeps today's behavior."
     },
     {
-      "id": "s231-fable-certification-first",
+      "id": "s232-fable-remint-queue-build",
+      "for": "Fable",
+      "tab": "governance",
+      "text": "Build the re-mint approval queue against the four-item checklist in its decision record: a register row owning the approval, the surface mapped the moment the first write lands, an insert-only rollback, and a test asserting the view writes approvals and nothing else."
+    },
+    {
+      "id": "s232-fable-roadmap-archive",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The evaluation runs certification to courses, not the other way round: one certification examined for which course or courses it aligns with ENOUGH for credit. The outline as prototyped is course-first, which makes it the destination of an evaluation rather than its entry point — a certification-first view is a first-class screen, not a later convenience. The test every screen has to pass is Sam's: would a faculty member want this person to have to take their class when they already know this stuff."
-    },
-    {
-      "id": "s229-sam-memory-sheet",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "The memory audit sheet takes your replies on the page now: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217 (kept in the repo as docs/visuals/2026-09-05-memory-audit-verdicts.html). Under each of the 43 items, each of the 76 memories listed inside items 2 and 3, and the 31 retired rows: a row of reply chips (Yes takes the recommendation; under a memory the first chip names the action, Verify or Retire), a Follow up toggle for anything you want the session to come back to whatever the verdict, and a note for what a word cannot carry. The line under each reply says what was saved. Your replies save to the sheet itself; the next session reads them from there. Item 1 is the one large call, the 352 entries that passed with evidence."
-    },
-    {
-      "id": "s229-fable-execute-verdicts",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "Read Sam's replies from the sheet's store first (Artifact read_db, collection replies: item, ref, verdict, note, follow-up; a verdict of yes on a memory, saved before the relabel, is the batch's recommendation for it, and Sam's in-chat replies of 2026-09-05 on the Board amendment and the $1 million noncredit memories count too), then execute them from kb/memory_audit/2026-09-05-receipt.json: the held promotions first, then the human-sourced rows he rules on, then the hygiene fixes; every item flagged Follow up goes on this feed with his note. One guarded statement per batch, keyed on id, one log row per change, never delegated. Then re-run the memory lint and update the lane file's counts."
-    },
-    {
-      "id": "s229-fable-audit-side-findings",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Three things the audit noticed outside the memory rows need a look: the nightly cleanup worklist has silently lost its P1 and P5 classes because the text they key on matches nothing on the nightly-loaded table; the student-detail lane file still quotes the figures from before the nightly load replaced the table; and the spelling lint sees only about 8% of CLAUDE.md because its code-fence mask runs to the end of the file."
-    },
-    {
-      "id": "s228-fable-standing-column",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Watch Sam's reaction to the By subject table's standing column. Every row that reads “not X’s code” is either a stray the prefix fold missed or an umbrella code the seed does not know about; if he wants it as a worklist, fold-verify is the planner of record, not a new one."
-    },
-    {
-      "id": "s227-fable-a11y-scroll",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "Five COBI tabs still scroll sideways on a phone — the Dashboard worst, by 887 pixels, then RACI, Budget, Memory and Activities. That is the plainest of the accessibility findings and the one a person actually feels. Several sit in sections the daily rebuild owns, so the fix is in the generator, not the page."
-    },
-    {
-      "id": "s227-sam-absence-color",
-      "for": "Sam",
-      "tab": "credential-reference",
-      "text": "One colour decision unblocks an accessibility fix across the whole suite. Roughly four thousand “no value here” markers (the italic “— no articulations” in the grids) are currently too faint to read — 2.34:1 against a 4.5:1 standard. Making them the normal muted grey would fix it but make absence the loudest thing on a dense screen, which is backwards. The proposal is a new quiet grey (#6B6B66) that just clears the standard and stays the quietest thing in the row. Say yes, or say use the normal muted grey."
-    },
-    {
-      "id": "s227-fable-a11y-sweep",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "The accessibility sweep now runs as one command — `npm run a11y` — over all 42 views in about 100 seconds, and COBI's 38 tabs are found from the side menu itself, so a new tab is checked the day it ships. The problems shared by every view are fixed: the side menu group headings and the signed-out line were too faint to read, three controls were under the minimum tap size, the painting fallback panel failed on its own background, and nothing in COBI respected a reader's request to stop moving things. What is left is per-tab and named: five tabs still scroll sideways on a phone (the Dashboard worst, by 887 pixels), eighteen carry text below the contrast standard, and four thousand small tap targets come from just fifty-four rules — one button in the Credential Reference grid accounts for over two thousand of them. Start with the sideways scroll."
+      "text": "docs/roadmap_archive.md is 575 KB against a 150 KB budget — the largest thing the docs lint flags, and pure history. It is a safe compaction whenever a session has spare room."
     }
   ]
 }

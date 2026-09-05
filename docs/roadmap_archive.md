@@ -5495,3 +5495,28 @@ not paint. Stories: `cobi_lessons`, `public_pages_a11y_lessons`,
 - **2026-09-03 (SkyCheck, S222 — the lifecycle checks are on the API, and under 10 is the mask)** — Three PRs. **#1437**: a runner-side probe found Pedro's six CPL lifecycle checks as `'0'`/`'1'` columns on the student aggregated view (the sandbox cannot reach MAP; `columnName: []` now 500s, `["*"]` enumerates) and wired them into the daily fetch. **#1438**: Sam ruled the funding attestation is `Counselor_Verified` alone; `pac` publishes from the 2026-09-03 run (2,820 students · 24,699 units · 18 colleges). **#1439**: the "applied but no eligible" worklist he asked for had zero rows at either grain — the shape was the artifact's own inconsistent suppression (54 small-portal colleges at $0 on Access) — and his ruling shipped as the under-10 package: counts mask under 10, units carry the money, public dollars read "<$1,000" or the nearest $1,000, curator exact (ADR `adr-funding-counts-mask-under-10-units-carry-the-money`); 57 colleges earn on Access now. The funding lane file compacted from 36.7 KB to budget; KB note `methodology-a-floor-lives-in-fixtures-as-well-as-code`.
 - **2026-09-02 (SkyLead, S221 — the table leads; the explainer is the public view)** — One PR (#1436) from Sam's seven asks: the institution table is the FIRST section after the introduction on the Implementation Funding tab and on the public explainer (*"most won't care about the details, just their funding"*); every other section is folded on open, **per visit** (the per-browser fold store retired); the Summary sits inside the introduction's box (R11 re-aimed to its requirement — never hidden on open); the priority cards are a fixed two-column pair; the card's "Combined funding" line is gone (it restated the band head's Total Possible, the Target line and the price line). ⭐ **The explainer hosts the tab's OWN college section in a new embed mode** instead of painting a second table from the payload — the hidden engine mount was an embed waiting to happen — and paints the timing milestones and each priority's strategies from the engine. The recommendation to Sam: the explainer is the public view; the old public page should become a redirect (lane NEEDS SAM ④). 1 KB note ([`kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author`](kb-notes/methodology-a-remembered-toggle-hides-the-default-from-its-author.md)), 4 memory rows, new suite `cpl_funding_lead_with_the_table.test.js` (29 checks, twelve mutations caught by name).
 - **2026-09-02 (SkyCalm, S220 — the calm pass)** — One PR on the Implementation Funding tab, on Sam's brief (*"get rid of any cheesy glyphs … I want folks to feel calm when they open this model"*): every rendered glyph is a word or gone (the row toggle is the institution's NAME; the sort mark is the one ghosted survivor), the chrome lost its fills, stripes and red, the "pools" subtitle left both HTMLs, and **five prose blocks are editable in curate** (plain-text overrides under `text.<key>`, Edit → Save · Cancel · Restore, public page included). His mid-turn call moved the held-in-reserve figure into the gate sentence and ahead of Total Possible. ⭐ **`textContent` has no seams and no tooltips** — a word sweep must read the markup with a space per tag, which is how a `\bpool\b` guard passed "poolRemove" and missed two arrows in `title`s and an `&rarr;`. 1 KB note ([`kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads`](kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md)), 5 memory rows.
+### SkyQuiet S228 — SkyView is the map alone, and the CCR menu opens it that way (2026-09-05)
+
+**One PR (#1479).** Each earlier attempt at "open SkyView full screen" changed a MECHANISM and
+none changed what the tab SHOWED. Now `body.u-solo` paints
+`#u-full` and nothing else, the comprehensive view is the same render with the panes shown, and
+COBI's CCR tab hides its chrome and fills the column; close posts back to the tab.
+⭐ **Items 6-9 landed as ONE tab**, *Disciplines and subjects*: By discipline · **By subject (the
+SUBJ4 grain, 344 codes read off the identity ids)** · ESL packaging, one Views menu on every view.
+⭐ **The harness found a latent bug one click in** (a forest cell destroyed the borrowed search
+box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
+
+### SkyKeep S230 — the sheet takes replies; SkyView's second and third lists (2026-09-05)
+
+**Three PRs (#1481, #1482, #1483) and the republished sheet.** ⭐ **Decision sheets take
+replies on the page** — chips, a *Follow up* toggle and a note per item and per listed memory, saved to
+the artifact's own store and read by the next session with `read_db` (`kb/_decision_sheet_replies.py`;
+⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). ⚠️ **The store's
+echo is FROZEN** — a page that adopts it as state loses every later click, silently — and a Yes under a
+claim-shaped title reads both ways: the chips under a memory say Verify or Retire. SkyView took Sam's
+second list (the header in the style of Claude's own, the Show menu, *How SkyView works*, a dark
+canvas) and, the same afternoon, his third with Obsidian's graph as the reference: **dots in the
+legend's colors inside the packed footprint, the islands spread ×1.22 at load, the click highlight,
+checkbox picks, a sidebar grip, no Search button.**
+⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`). Stories: `ccr_atlas_lessons`,
+`cobi_memory_tab_lessons`; handoff `session_231_handoff`.

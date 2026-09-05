@@ -1524,3 +1524,67 @@ it is the evidence of what was nearly applied.
 user's state, not a convenient one (the C-ID bug is invisible unless you look at
 *which* ids are dead, not how many); and hash the rendered output, not the control
 — here, the plan's counts, not the fact that the script ran.
+
+### The S231 look, moved here verbatim from the lane (2026-09-05, S232 compaction)
+
+The lane states current truth; this is the detail behind the glow ruling, kept once:
+
+> ⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. Also his, in order: members as muted stars; a darker, grayer canvas (14.81:1 strong ink, 7.77:1 muted); short college names throughout, canonical kept on `title`; the catalog description on a member's hover card; the parent's name INSIDE the big circle when it fits (an open identity's middle is the emptiest space on screen) with no leader, because position is the tie; otherwise the leader lands ON the edge (`q.rad*0.98`), not at 0.71; the disc and the title wearing the identity system's color (5.15–8.44:1 light, 6.76–9.23:1 dark), a stand-alone keeping muted ink; and **no label transecting a disc** — `discBoxes` are seeded as occupied boxes before any label is placed. Verified: 55 checks in `tests/ccr_skyview_search_show.test.js`, 302 test files, `npm run a11y -- skyview` across 6 routes, a Chromium drive per change.
+
+## 2026-09-05 (late night) — SkyOutline S232: the other six rulings
+
+Rulings 11, 3, 1, 6 and 2, after 8/4/5 earlier the same night. Two of them taught
+something worth keeping.
+
+⭐ **A TEST THAT PASSES WITHOUT THE FIX IS TELLING YOU THE FIX IS WRONG.** Sam's
+ruling 3 said *"focus jumps back to the search bar on every selection when
+picking multiple courses and should stay put."* I read "focus stays put" as *put
+focus back* and made the pick re-focus the search box — which is the complaint
+restated as a feature. The suite then passed **just as well with that code
+deleted**, and that is the whole signal: an assertion that holds either way is
+asserting a half that was never in doubt. What actually moved was the SCROLL —
+`openSug()` rebuilds the list with `scrollTop = 0`, so after S231 took the
+dropdown from 8 rows to 60, every tick threw the reader back to the top. Focus
+never moved at all: the row's `mousedown` already calls `preventDefault()`.
+⚠️ The lesson is not "read the ask more carefully" — it is that **perturbation is
+what distinguishes a guard from a decoration**, and it costs one minute.
+
+⭐ **THE FLAGGED CANDIDATE IS THE ONE THAT JUSTIFIES THE TOOL.** Ruling 6's merge
+queue returns three Welding groups, and the third is `WELD M1009` / `WELD M90AI`
+— identical titles ("Advanced Welding Applications"), and any title-keyed rule
+would propose the merge. They cross the **band**: 1xxx credit against 9xxx
+noncredit, different courses for funding and for the student. A queue that only
+ever surfaced the easy merges would have been a slower way to do what the auto
+lane already does; surfacing the one you must NOT do is the value.
+
+⭐ **ARTICULATION IS ITS OWN SIGNAL AND THE MAP COULD NOT IMPLY IT.** SkyView
+sizes a point by adoption, and articulation runs opposite: `WELD M1061` is taught
+at 4 colleges and carries 12 articulations, `M1109` at 24 and carries 7, `M1057`
+at 7 and carries none. So the most-articulated identities were the map's dimmest
+points and nothing said so. ⚠️ `ar` is **absent, never 0** — "no articulation
+recorded" and "we did not look" are the same on this feed, and a `0` would assert
+the first. ⚠️ The join must **not** re-resolve through the alias chain; those ids
+are already current-era.
+
+⭐ **`doctrine.py --read` exists because `--changed` fires too late.** The diff
+mode is silent while you are still READING, which is where this session's worst
+finding was made. The read-side mode takes the files the session actually opened,
+from the live transcript. ⚠️ It has to parse **Bash command text**, not just
+`Read` calls — an auto-mode session opens forty files with zero `Read` calls
+(this one: 86 Bash, 0 Read). And it must strip **heredoc bodies**, or a session
+that writes documentation reports every path it wrote *about*; the first live run
+named `cpl_chat.js`, which appears only inside the docstring that run added.
+
+**Ruling 2 was routed, not built** — an ADR
+([`adr-remint-approval-queue-decision-rights`](kb-notes/adr-remint-approval-queue-decision-rights.md))
+because Sam ruled it goes through Governance and the privacy ADRs first. The
+argument that settled the shape is **reversibility**: an INSERT-only cohort
+reverts by `reviewer_email`; a re-mint that has rippled through the alias chain
+has no undo. And this session is its worked example — five post-state gates all
+passed on a plan that was one `--apply` from deleting 172 live identities.
+**Gates check that the post-state is consistent, not that the plan was sane.**
+
+**Housekeeping:** the SkyView lane was compacted (the eleven rulings, the five
+asks, the "map shows only adoption" claim that #1491 made false, and the S231
+look narrative, which is above). It is still ~2.6× its 12 KB budget; what is left
+is live design content for an active lane, and cutting further would delete it.
