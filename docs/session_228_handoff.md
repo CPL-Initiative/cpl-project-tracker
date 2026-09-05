@@ -104,6 +104,13 @@ more than a coding one — stay single-threaded:
   are pinned exactly; never widen one back to a range.
 - ⚠️ **A red run whose failure names a PACKAGE rather than a test is almost never
   the PR's** — check the base branch before debugging your own diff.
+- ⚠️ **Three sources report your context and they disagree; only one is the
+  instrument.** On 2026-09-05 the control plane's `context_usage` read 776,304
+  used and was FROZEN (identical to the digit across three reads while
+  `updated_at` moved); Sam's UI showed ~449k; `python3 kb/_context_budget.py`,
+  which Rule 9a names as the source of truth because it reads the transcript on
+  disk, said **598,686 used / 187,603 left**. Act on the instrument. A frozen
+  API field failing in the alarming direction cost a mid-session scramble.
 
 ## Next concrete step
 
