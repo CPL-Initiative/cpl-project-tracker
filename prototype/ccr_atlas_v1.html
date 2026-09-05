@@ -819,7 +819,25 @@ function takeHighlighted(){
   var ok = (typeof go === "function") ? !!go(it) : false;
   // The list stays open with the pick ticked, so a second pick is one more click
   // (Sam, 2026-09-05: the rows "should have checkboxes to clarify" multi-select).
-  if (gqEl && gqEl.value.trim().length >= 2){ openSug(gqEl.value); sugAt = Math.min(at, sugItems.length - 1); markSug(); }
+  //
+  // ⚠️ THE LIST MUST STAY WHERE IT WAS (Sam's ruling 3, 2026-09-05: "focus jumps
+  // back to the search bar on every selection when picking multiple courses and
+  // should stay put"). openSug() rebuilds the list and sets `scrollTop = 0`, so
+  // after S231 took the dropdown from 8 rows to 60 every tick threw the reader
+  // back to the top and they had to scroll down again to reach the next course.
+  // markSug()'s scrollIntoView does not undo it: from a scrollTop of 0 a row far
+  // down is "nearest" at the BOTTOM edge, so the row lands somewhere it never
+  // was. Restoring the exact offset AFTER markSug is what makes it sit still.
+  //
+  // ⚠️ Do NOT "fix" this by focusing the search box — that IS the complaint. The
+  // mousedown handler already calls preventDefault(), so the input never loses
+  // focus and the keyboard keeps working; a jsdom check confirmed focus is on
+  // #gq after a pick with no help at all.
+  var keepScroll = sugEl ? sugEl.scrollTop : 0;
+  if (gqEl && gqEl.value.trim().length >= 2){
+    openSug(gqEl.value); sugAt = Math.min(at, sugItems.length - 1); markSug();
+    if (sugEl) sugEl.scrollTop = keepScroll;
+  }
   else closeSug();
   return ok;
 }

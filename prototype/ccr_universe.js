@@ -2465,7 +2465,9 @@ function applyTokens(last){
    * landed at 26% with three picks in two disciplines, three unmarked circles
    * on a whole map (Sam, 2026-09-05: "When I filter for courses, the focus does
    * not go to them"). Fit all is a word beside Clear for when the whole
-   * selection is the point; removing a chip fits what is left. */
+   * selection is the point; removing a chip fits what is left. With ONE pick
+   * the same button reads Recenter and goes back to it — ↺ resets to the whole
+   * universe, which is what ↺ is for (Sam's ruling 3, 2026-09-05). */
   if(last){
     if(last.kind==="term") searchOne(last.term); else goSuggestionSingle(last.s);
   } else {
@@ -2477,7 +2479,9 @@ function applyTokens(last){
     "Showing "+tokens.length+" selections: "+words.join(" · ")+". "+
     (hits.length ? num(hits.length)+" course"+(hits.length===1?"":"s")+" ringed in red" : "")+
     (isls.length ? (hits.length?"; ":"")+num(isls.length)+" discipline"+(isls.length===1?"":"s")+" outlined in blue" : "")+
-    ". <em>Fit all</em> beside the search box shows them together; remove a chip to narrow it."+healWords());
+    (tokens.length>1
+      ? ". <em>Fit all</em> beside the search box shows them together; remove a chip to narrow it."
+      : ". <em>Recenter</em> beside the search box returns to it.")+healWords());
   draw();
 }
 function selectionUnion(){
@@ -2504,7 +2508,8 @@ function fitSelection(hits, isls){
 window.__ccrFitSelection=function(){
   if(!U || !tokens.length) return false;
   var u=selectionUnion(), ok=fitSelection(u.hits, u.isls);
-  if(ok) setHint("Fitted "+tokens.length+" selection"+(tokens.length===1?"":"s")+" into view.");
+  if(ok) setHint(tokens.length===1 ? "Recentered on the selection."
+                                  : "Fitted "+tokens.length+" selections into view.");
   draw(); return ok;
 };
 /* The chips live inside the search form's wrapper, before the box, so the
@@ -2520,12 +2525,25 @@ function renderTokens(){
   var host=ensureTokenHost();
   if(!host){ var stray=document.getElementById("u-tokens"); if(stray) stray.innerHTML=""; return; }
   host.innerHTML=tokens.map(function(t){
-    return '<span class="u-tok" data-key="'+esc(t.key)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
-      '<span class="u-tok-l" title="'+esc(t.label)+'">'+esc(t.label)+'</span>'+
+    /* The title sits on the WHOLE chip (Sam's ruling 3, 2026-09-05: "full title
+     * on hover"). `.u-tok-l` is `text-overflow:ellipsis`, so a long name is
+     * clipped and the tooltip is the only way to read it — but the title used to
+     * hang on that span alone, so hovering the kind, the padding or the × showed
+     * nothing, which is most of the chip's surface. Kind included, because the
+     * clipped word is often the half that says WHICH "Introduction to…" this is. */
+    var full=tokenShort(t)+" · "+t.label;
+    return '<span class="u-tok" data-key="'+esc(t.key)+'" title="'+esc(full)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
+      '<span class="u-tok-l">'+esc(t.label)+'</span>'+
       '<button type="button" class="u-tok-x" aria-label="Remove '+esc(t.label)+' from the selection" title="Remove">\u00d7</button></span>';
-  }).join("")+(tokens.length>1
-    ? '<button type="button" class="u-tok-act" id="u-tok-fit" title="Fit every pick into view">Fit all</button>'+
-      '<button type="button" class="u-tok-act" id="u-tok-clear" title="Drop every pick">Clear</button>'
+  }).join("")+(tokens.length
+    /* ⚠️ ONE pick needs this button too (Sam's ruling 3). It used to render only
+     * at tokens.length>1, so with a single selection the only view control was
+     * ↺ — and ↺ resets to the whole universe, which is what it is FOR. You could
+     * pick a course and have no way back to it. */
+    ? '<button type="button" class="u-tok-act" id="u-tok-fit" title="'+
+        (tokens.length>1 ? 'Fit every pick into view' : 'Recenter the map on this pick')+'">'+
+        (tokens.length>1 ? 'Fit all' : 'Recenter')+'</button>'+
+      (tokens.length>1 ? '<button type="button" class="u-tok-act" id="u-tok-clear" title="Drop every pick">Clear</button>' : '')
     : '');
   Array.prototype.forEach.call(host.querySelectorAll(".u-tok-x"), function(b){
     b.addEventListener("click", function(){ removeToken(b.parentNode.getAttribute("data-key")); });

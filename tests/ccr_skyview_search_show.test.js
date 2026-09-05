@@ -388,5 +388,99 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(10) a stand-alone keeps the muted ink — a moon claims no membership",
     /if\(!nd \|\| nd\.a\) return pal\.ink;/.test(ujs));
 
+  /* ── (11) Sam's ruling 3 (2026-09-05): the three interface fixes ──────────
+     Driven on the real page, not asserted against the source — a regex would
+     confirm the control exists, which was never the half in doubt.
+     ⚠️ Earlier sections leave picks behind, so this section picks only rows the
+     list reports as UNSELECTED: a pick on a selected row TOGGLES IT OFF, and the
+     first draft of this block spent its first click removing a token and then
+     asserted the count had gone up. */
+  const unpicked = () => qa("#sug li[role=option]").find((li) => li.getAttribute("aria-selected") !== "true");
+  const gq11 = q("#gq");
+  gq11.value = "welding";
+  gq11.dispatchEvent(new w.Event("input", { bubbles: true }));
+  await tick();
+  gq11.focus();
+  const nBefore = w.__ccrTokenKeys().length;
+
+  // 11a — THE LIST STAYS WHERE IT WAS ON MULTI-SELECT. Sam: "focus jumps back
+  // to the search bar on every selection when picking multiple courses and
+  // should stay put." openSug() rebuilds the list with `scrollTop = 0`, so with
+  // S231's 60-row dropdown every tick threw the reader back to the top.
+  // ⚠️ The first draft of this fix FORCED focus onto the search box, which is
+  // the complaint restated as a feature — and this suite caught it by passing
+  // just as well without it (jsdom: the mousedown preventDefault means focus
+  // never leaves #gq). What was actually moving was the scroll.
+  const row11 = unpicked();
+  check("(11a) the list offers an unpicked row", !!row11);
+  const sug11 = q("#sug");
+  // jsdom reports 0 for every layout box, so give the element a real scroll
+  // extent to move: without this the assertion passes on 0 === 0 and proves
+  // nothing, which is the failure mode this whole section exists to avoid.
+  Object.defineProperty(sug11, "scrollHeight", { value: 4000, configurable: true });
+  Object.defineProperty(sug11, "clientHeight", { value: 300, configurable: true });
+  let scrollNow = 900;
+  Object.defineProperty(sug11, "scrollTop", {
+    configurable: true,
+    get(){ return scrollNow; },
+    set(v){ scrollNow = v; },
+  });
+  row11 && row11.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+  await tick();
+  check("(11a) ⭐ the pick lands", w.__ccrTokenKeys().length === nBefore + 1,
+    `${nBefore} -> ${w.__ccrTokenKeys().length}`);
+  check("(11a) ⭐ the list is still where the reader left it, not snapped back to the top",
+    scrollNow === 900, `scrollTop = ${scrollNow}`);
+  check("(11a) focus never left the search box, so the keyboard still works",
+    d.activeElement === gq11 || d.activeElement === d.body,
+    `activeElement = ${d.activeElement && (d.activeElement.id || d.activeElement.tagName)}`);
+  const second11 = unpicked();
+  second11 && second11.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+  await tick();
+  check("(11a) a second pick lands, and the list still has not moved",
+    w.__ccrTokenKeys().length === nBefore + 2 && scrollNow === 900,
+    `n=${w.__ccrTokenKeys().length} scrollTop=${scrollNow}`);
+  delete sug11.scrollTop;
+
+  // 11b — FULL TITLE ON HOVER FOR THE FILTER CHIPS. `.u-tok-l` is
+  // text-overflow:ellipsis, so the tooltip is the only way to read a clipped
+  // name; it used to hang on that span alone, leaving the kind, the padding and
+  // the × — most of the chip — with no tooltip at all.
+  const chips11 = qa("#u-tokens .u-tok");
+  check("(11b) the picks render as chips", chips11.length >= 2, `${chips11.length} chips`);
+  check("(11b) ⭐ the WHOLE chip carries a title, not just the clipped label",
+    chips11.length > 0 && chips11.every((c) => (c.getAttribute("title") || "").length > 0),
+    JSON.stringify(chips11.map((c) => c.getAttribute("title"))));
+  check("(11b) the title carries the full label, so the clipped half is readable",
+    chips11.every((c) => {
+      const lab = c.querySelector(".u-tok-l");
+      return lab && (c.getAttribute("title") || "").indexOf(lab.textContent) >= 0;
+    }));
+  check("(11b) one tooltip, not two — the label no longer carries its own",
+    chips11.every((c) => { const l = c.querySelector(".u-tok-l"); return l && !l.hasAttribute("title"); }));
+
+  // 11c — RECENTER ON THE CURRENT SELECTION. ↺ resets to the whole universe,
+  // which is what ↺ is for; with ONE pick there was no way back to the pick.
+  check("(11c) with several picks the button is Fit all, beside Clear",
+    !!q("#u-tok-fit") && /Fit all/.test(q("#u-tok-fit").textContent) && !!q("#u-tok-clear"));
+  let guard = 0;
+  while (w.__ccrTokenKeys().length > 1 && guard++ < 20) {
+    const xs = qa("#u-tokens .u-tok .u-tok-x");
+    xs[xs.length - 1].dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    await tick();
+  }
+  check("(11c) ⭐ ONE pick still gets a recenter control (it used to render only above 1)",
+    w.__ccrTokenKeys().length === 1 && !!q("#u-tok-fit"),
+    `n=${w.__ccrTokenKeys().length} fit=${!!q("#u-tok-fit")}`);
+  check("(11c) and it reads Recenter, because there is nothing to fit together",
+    q("#u-tok-fit") && /Recenter/.test(q("#u-tok-fit").textContent),
+    q("#u-tok-fit") && q("#u-tok-fit").textContent);
+  check("(11c) Clear is gone with one pick — the × on the chip already is Clear",
+    !q("#u-tok-clear"));
+  check("(11c) ↺ is left alone — resetting to the whole universe is what it is for",
+    /id="u-reset"/.test(ujs) && /searchHits=\[\]; resetView\(\);/.test(ujs));
+  check("(11c) it actually recenters rather than no-opping on a single pick",
+    w.__ccrFitSelection() === true);
+
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });
