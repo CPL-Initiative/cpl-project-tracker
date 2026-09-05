@@ -120,6 +120,10 @@
    */
   var VIEW_SKYVIEW = "map", VIEW_LIST = "list";
   var ccrView = null, listBooted = false, authReturn = false;
+  /* Full window is the default every time the map opens; the map's own "show
+   * COBI around the map" control (a postMessage "dock") turns it off until the
+   * next open. The body class is on only while the map is the CURRENT tab. */
+  var soloWanted = true;
 
   function ccrPane() { return document.getElementById("tab-unified-courses"); }
 
@@ -185,7 +189,23 @@
          go with them so the frame reaches the column's edges. */
       "#tab-unified-courses.uc-map-on > .main-container{max-width:none;padding:0;}" +
       "#tab-unified-courses.uc-map-on .uc-beta-banner,#tab-unified-courses.uc-map-on .uc-head," +
-      "#tab-unified-courses.uc-map-on .uc-viewseg{display:none;}";
+      "#tab-unified-courses.uc-map-on .uc-viewseg{display:none;}" +
+      /* FULL WINDOW (Sam, 2026-09-05: "I want the Full Window (without the COBI
+         header) to open on the side menu CCR click"; and "add a hamburger menu
+         glyph in upper left that can open the COBI side bar — should be default
+         collapsed on open"). While the map is the tab, COBI's own header, rail,
+         hamburger and To-Do button are not painted and the frame is the whole
+         viewport. The rail becomes the same slide-over it already is below
+         900px, opened from the map's own menu control through postMessage. */
+      "body.cpl-skyview-solo > .header,body.cpl-skyview-solo #cpl-hamburger,body.cpl-skyview-solo .cpl-todo-btn," +
+      "body.cpl-skyview-solo .cpl-todo-panel{display:none !important;}" +
+      "body.cpl-skyview-solo .cpl-layout{grid-template-columns:1fr;}" +
+      "body.cpl-skyview-solo .cpl-sidebar{position:fixed;top:0;bottom:0;left:0;width:240px;max-height:100vh;" +
+      "transform:translateX(-100%);transition:transform .2s ease;z-index:200;box-shadow:2px 0 12px rgba(0,0,0,.15);}" +
+      "body.cpl-skyview-solo.cpl-rail-open .cpl-sidebar{transform:translateX(0);}" +
+      "body.cpl-skyview-solo.cpl-rail-open::before{content:\"\";position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:199;}" +
+      "@media (prefers-reduced-motion:reduce){body.cpl-skyview-solo .cpl-sidebar{transition:none;}}" +
+      "body.cpl-skyview-solo #tab-unified-courses.uc-map-on .uc-map-frame{height:100vh;min-height:100vh;}";
     document.head.appendChild(st);
   }
 
@@ -201,6 +221,8 @@
     });
     if (mapPane) mapPane.style.display = ccrView === VIEW_SKYVIEW ? "" : "none";
     if (listPane) listPane.style.display = ccrView === VIEW_LIST ? "" : "none";
+    if (ccrView === VIEW_SKYVIEW) soloWanted = true;   // every open of the map is full window
+    paintSolo();
     var note = pane.querySelector("#uc-vnote");
     if (note) note.textContent = ccrView === VIEW_SKYVIEW
       ? "Every course identity on one canvas. The list has the filters, the flags and the Merge actions."
@@ -228,6 +250,41 @@
   function isCcrCurrent() {
     return !!(window.CPL_TABS && CPL_TABS.current && CPL_TABS.current() === "unified-courses");
   }
+  function railOpen() { return document.body.classList.contains("cpl-rail-open"); }
+  function closeRail() {
+    if (window.CPL_TABS && CPL_TABS.closeRail) CPL_TABS.closeRail();
+    else document.body.classList.remove("cpl-rail-open");
+  }
+  /* The body class that takes COBI's chrome away: on only while the map is the
+   * tab on screen and nobody has docked it. Leaving the tab takes it off. */
+  function paintSolo() {
+    var on = soloWanted && ccrView === VIEW_SKYVIEW && isCcrCurrent();
+    var was = document.body.classList.contains("cpl-skyview-solo");
+    document.body.classList.toggle("cpl-skyview-solo", on);
+    if (!on && was) closeRail();
+    if (on !== was) { sizeMapFrame(); if (window.requestAnimationFrame) requestAnimationFrame(sizeMapFrame); }
+    postHostState();
+  }
+  function mapFrame() { return ccrPane() && ccrPane().querySelector("#uc-map-pane iframe"); }
+  /* The frame's window controls paint themselves from this: whether COBI has
+   * docked the map inside its chrome, and whether the rail is open. */
+  function postHostState() {
+    var f = mapFrame();
+    if (!f || !f.contentWindow) return;
+    try {
+      f.contentWindow.postMessage({ type: "skyview-host",
+        docked: !document.body.classList.contains("cpl-skyview-solo"), menu: railOpen() }, "*");
+    } catch (e) {}
+  }
+  window.addEventListener("cpl-tab-activated", function () { paintSolo(); });
+  // The rail can open or close from COBI's own side (its hamburger, a click
+  // outside, Escape); the frame's menu control keeps in step through this.
+  if (window.MutationObserver) {
+    try {
+      new MutationObserver(function () { postHostState(); })
+        .observe(document.body, { attributes: true, attributeFilter: ["class"] });
+    } catch (e) {}
+  }
   /* `#unified-courses` is the map (what the side menu opens); `#unified-courses/list`
    * is the list, so a reload — and SkyView's own "CCR table view" link out —
    * lands on the table rather than on another copy of the map. replaceState,
@@ -253,7 +310,7 @@
     // apologize (Sam, 2026-09-03: "have SkyView open full screen").
     f.setAttribute("allow", "fullscreen");
     f.allowFullscreen = true;
-    f.addEventListener("load", sizeMapFrame);
+    f.addEventListener("load", function () { sizeMapFrame(); postHostState(); });
     host.appendChild(f);
   }
   /* The frame takes what the viewport has left below where it starts — the
@@ -280,7 +337,12 @@
     if (!m || m.type !== "skyview") return;
     var f = ccrPane() && ccrPane().querySelector("#uc-map-pane iframe");
     if (!f || !f.contentWindow || e.source !== f.contentWindow) return;
-    if (m.action === "close" || m.action === "list") setCcrView(VIEW_LIST);
+    if (m.action === "close" || m.action === "list") { soloWanted = true; setCcrView(VIEW_LIST); return; }
+    // The map's own menu, dock and undock controls (Sam, 2026-09-05).
+    if (m.action === "menu") { document.body.classList.toggle("cpl-rail-open"); postHostState(); return; }
+    if (m.action === "dock") { soloWanted = false; paintSolo(); return; }
+    if (m.action === "undock") { soloWanted = true; paintSolo(); return; }
+    if (m.action === "ready") { postHostState(); return; }
   });
 
   function bootList() {
@@ -306,6 +368,8 @@
     _listBooted: function () { return listBooted; },
     _size: sizeMapFrame,
     _setAuthReturn: function (v) { authReturn = !!v; },
+    _solo: function () { return document.body.classList.contains("cpl-skyview-solo"); },
+    _hostState: postHostState,
   };
 
   function consumeAuthHash() {

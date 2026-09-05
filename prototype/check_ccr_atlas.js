@@ -740,7 +740,12 @@ function serve() {
              modes: [...document.querySelectorAll("#u-top .u-modes .btn")].map((b) => b.textContent.trim()).join("/"),
              nav: !!document.querySelector("#u-full #u-nav-forest"),
              prov: (document.getElementById("prov") || {}).title || "",
-             fs: document.getElementById("u-fs").textContent,
+             wins: [...document.querySelectorAll("#u-top .u-wins .u-win")].map((b) => b.getAttribute("aria-label") || ""),
+             chipHeights: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-win:not([hidden]), #u-top .u-views > summary, #u-top .u-show > summary, #u-search-slot input, #u-search-slot .u-search-go")]
+               .map((b) => Math.round(b.getBoundingClientRect().height)),
+             chipRadius: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-win:not([hidden]), #u-search-slot input")]
+               .map((b) => getComputedStyle(b).borderTopLeftRadius),
+             legendToggle: !!document.querySelector("#u-wrap #u-legend-toggle"),
              cells: document.querySelectorAll("#u-more .cell").length,
              // The inspector's own "filter these courses" box is a list filter,
              // not a keyword search; only page-level search fields count here.
@@ -754,7 +759,11 @@ function serve() {
   ok(`Pan and Move are word chips above the map (${geo.modes})`, geo.modes === "Pan/Move");
   ok("the other views are linked inside the full-screen element", geo.nav);
   ok("the provenance line is a hover on the title", /no writes/.test(geo.prov));
-  ok("the full-screen control is a word", /^Full screen$/.test(geo.fs.trim()));
+  ok(`the three window controls carry words as their names (${geo.wins.join(" / ")})`,
+    geo.wins.length === 3 && geo.wins.every((w) => /[A-Za-z]/.test(w)));
+  ok(`every chip in the row is one height (${[...new Set(geo.chipHeights)].join(",")}px) with 6px corners`,
+    new Set(geo.chipHeights).size === 1 && geo.chipRadius.every((r) => r === "6px"));
+  ok("the legend's fold sits in the map's own corner", geo.legendToggle);
   ok(`the forest is embedded below the map (${geo.cells} cells)`, geo.cells > 100);
   ok(`the map screen still carries exactly one search field (${geo.fields})`, geo.fields === 1);
   await page.evaluate(() => window.__ccrUniverse({ solo: true }));
@@ -947,8 +956,10 @@ function serve() {
   {
     // BY KIND, not by position: the first row for "welding" is the discipline,
     // so a first()-click silently tested the wrong half of item 10.
-    const ci = sugRows.findIndex((t) => /identity|stand-alone|college course/i.test(t));
-    const di = sugRows.findIndex((t) => /discipline/i.test(t));
+    // The rows read the short words since 2026-09-05 (DISC · CRSE IDENTITY ·
+    // STAND-ALONE CRSE · COLLEGE CRSE), so the match is on those.
+    const ci = sugRows.findIndex((t) => /identity|stand-alone|college crse|college course/i.test(t));
+    const di = sugRows.findIndex((t) => /^\s*DISC(?:[A-Z\s]|$)|discipline/.test(t));
     if (ci >= 0) {
       await page.locator("#sug li").nth(ci).click(); await page.waitForTimeout(700);
       const z = (await page.locator("#u-zoom").textContent()).trim();
