@@ -278,7 +278,7 @@ function serve() {
   console.log("\n══ keyword zoom");
   const z0 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   await page.fill("#gq", "welding");
-  await page.locator("#msearch button[type=submit]").click();
+  await page.locator("#gq").press("Enter");   // no Search button since 2026-09-05 (item 7): Enter submits the one field
   await page.waitForTimeout(400);
   const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
@@ -288,7 +288,7 @@ function serve() {
   ok("and reports where it landed",
     /^\s*Discipline\b.*Welding|match/i.test(await page.locator("#u-hint").textContent()));
   await page.fill("#gq", "zzzznotathing");
-  await page.locator("#msearch button[type=submit]").click();
+  await page.locator("#gq").press("Enter");   // no Search button since 2026-09-05 (item 7): Enter submits the one field
   await page.waitForTimeout(300);
   ok("a miss says so rather than flying somewhere arbitrary",
     /Nothing matches/i.test(await page.locator("#u-hint").textContent()));
@@ -340,7 +340,7 @@ function serve() {
   // header stopped reaching the map.
   const runSearch = async (term) => {
     await page.fill("#gq", term);
-    await page.locator("#msearch button[type=submit]").click();
+    await page.locator("#gq").press("Enter");   // no Search button since 2026-09-05 (item 7): Enter submits the one field
     await page.waitForTimeout(420);
     const st = await page.evaluate(() => window.__ccrUniverseState());
     return { k: st.view.k, hits: st.hits, hint: await page.locator("#u-hint").textContent() };
@@ -749,7 +749,7 @@ function serve() {
              nav: !!document.querySelector("#u-full #u-nav-forest"),
              prov: (document.getElementById("prov") || {}).title || "",
              wins: [...document.querySelectorAll("#u-top .u-wins .u-win")].map((b) => b.getAttribute("aria-label") || ""),
-             chipHeights: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-wins .u-win:not([hidden]), #u-top .u-more > summary, #u-top .u-menu, #u-top .u-title, #u-top .u-zgroup, #u-top .u-show > summary, #u-search-slot input, #u-search-slot .u-search-go")]
+             chipHeights: [...document.querySelectorAll("#u-top .btn:not(.mode), #u-top .u-wins .u-win:not([hidden]), #u-top .u-more > summary, #u-top .u-menu, #u-top .u-title, #u-top .u-zgroup, #u-top .u-show > summary, #u-search-slot input")]
                .map((b) => Math.round(b.getBoundingClientRect().height)),
              // The search field and its button are joined (6px on the outer corners,
              // 0 on the shared edge), so the outer corner is what is measured.

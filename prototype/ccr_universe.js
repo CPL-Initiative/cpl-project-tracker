@@ -88,6 +88,9 @@ var solo=true, curView="skyview";
  * into; the map is quieter with it off. */
 var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members"];
 var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
+/* The word each switch shows in the menu, the hint and the row's tooltip. */
+var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014 noncredit enhanced", unrec:"Credit status not recorded",
+  mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses"};
 /* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
  * Each pick from the suggestion list becomes a TOKEN beside the search box; the
  * map rings every token and fits them all in view. One token behaves exactly as
@@ -313,6 +316,33 @@ function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; 
 /* Drawn when every switch that describes the point is on. The name survives
  * from the three-position filter it grew out of; the tests read it. */
 function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd); }
+/* ── a pick switches on what it needs to be seen (Sam, 2026-09-05, with
+ * "Show: 1 of 12" in the row: "Courses are no longer visible when I filter for
+ * welding subject"). A pick that lands on a hidden point is a ring around
+ * nothing, so the switches the point needs — its credit status, its identity
+ * system, its kind, and for an identity the college courses it opens into and
+ * the stand-alones in orbit — come on, and the hint says which. Nothing else
+ * changes: a switch the reader set stays set unless the pick needs it. */
+var showHealed=[];
+function showNeeds(nd){
+  var need={};
+  need[nd.c===0?"cr":nd.c===1?"nc":nd.c===2?"nce":"unrec"]=true;
+  need[nd.s===0?"mid":nd.s===1?"cid":nd.s===2?"ccn":"uni"]=true;
+  need[nd.a?(nd.o?"orbit":"rim"):"ident"]=true;
+  if(!nd.a){ need.members=true; need.orbit=true; }
+  return need;
+}
+function healShow(nd){
+  var need=nd?showNeeds(nd):{ident:true}, patch={}, turned=[];
+  SHOW_KEYS.forEach(function(k){ if(need[k] && !show[k]){ patch[k]=true; turned.push(k); } });
+  showHealed=turned;
+  if(turned.length && typeof window.__ccrSetShow==="function") window.__ccrSetShow(patch, true);
+  return turned;
+}
+function healWords(){
+  if(!showHealed.length) return "";
+  return " Switched on "+showHealed.map(function(k){ return "<strong>"+esc(SHOW_WORDS[k])+"</strong>"; }).join(", ")+" under Show so this is visible.";
+}
 /* The short words the search list shows (Sam, 2026-09-05: "abbreviate
  * Discipline to DISC; Course to CRSE; Credit to CR"). */
 function creditShort(nd){ return nd.c===0 ? "CR" : nd.c===1 ? "NC" : nd.c===2 ? "NCE" : "CR status not recorded"; }
@@ -324,6 +354,38 @@ function kindShort(kind, nd){
  * pattern turns into a solid ring on a big circle and vanishes on a small one. */
 function ncDash(rad){ var d=Math.max(2, Math.min(9, rad*0.55)); return [d, d*0.72]; }
 
+/* Ring stroke: thin at every zoom (Sam, 2026-09-05: "Make the course circle
+ * outlines thin for readability"). A width that grew with the radius put a
+ * 6px band around every course at 1000%, which is where the map is read most
+ * closely; the fill and the dash carry the meaning, the stroke only closes it. */
+function ringWidth(rad){ return Math.max(0.9, Math.min(1.4, rad*0.18)); }
+/* ── dots (Sam, 2026-09-05, with Obsidian's graph open: "See how obsidian uses
+ * dots for item, which we could do since we don't put info in the course
+ * circles, and see how it spreads more" · "color-coded dots to match our
+ * legend"). The builder packs every point with a footprint (nodeRad); the mark
+ * drawn is a DOT inside it, so the positions do not move and the air between
+ * points comes from the difference. An identity is a solid dot in its system's
+ * color, sized by its members; a stand-alone is a smaller, lighter dot; a
+ * noncredit course keeps its broken ring, drawn just outside the dot. */
+var DOT_IDENT=0.66, DOT_ORPHAN=0.62, ORPHAN_ALPHA=0.6;
+var DIM_ALPHA=0.3, lastFocus=null;   // the click highlight: what fades when something is selected
+function dotRad(nd, rad){ return nd.a ? Math.max(1.2, rad*DOT_ORPHAN) : Math.max(1.6, rad*DOT_IDENT); }
+/* The islands themselves sit closer than a reader wants ("spread out the disc
+ * and course circles more for readability"): their centers move apart once, at
+ * load, about the map's center; their radii and everything inside keep their
+ * shape, so the gap between neighbors is what grows. */
+var SPREAD_ISLANDS=1.22;
+function spreadUniverse(u){
+  if(!u || !u.islands || u._spread) return; u._spread=true;
+  var G=SPREAD_ISLANDS; if(G===1) return;
+  var b=u.bounds||null, cx=b?(b.x0+b.x1)/2:0, cy=b?(b.y0+b.y1)/2:0;
+  u.islands.forEach(function(I){
+    var nx=cx+(I.x-cx)*G, ny=cy+(I.y-cy)*G, ddx=nx-I.x, ddy=ny-I.y;
+    I.x=nx; I.y=ny;
+    (I.p||[]).forEach(function(nd){ nd.x+=ddx; nd.y+=ddy; });
+  });
+  if(b) u.bounds={x0:cx+(b.x0-cx)*G, y0:cy+(b.y0-cy)*G, x1:cx+(b.x1-cx)*G, y1:cy+(b.y1-cy)*G};
+}
 function nodeRad(nd){
   var rs=radScale(view.k);   // tapered above RAD_KNEE — see the note by K_MAX
   return nd.a ? Math.max(1.3, SAT_R*rs)
@@ -520,6 +582,20 @@ function draw(){
   var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
   var tokenIsl={}; tokens.forEach(function(t){ (t.isls||[]).forEach(function(I){ tokenIsl[I.d]=1; }); });
+  /* ── the click highlight (Sam, 2026-09-05, with Obsidian's graph open: "when
+   * you click on an entity, it shows the connections in contrast to unclicked").
+   * Our edges are the orbit ties: a selected identity lights the stand-alones
+   * tied to it, a selected stand-alone lights its identity. The lit ties draw
+   * solid in the selection color and every other point fades, so the
+   * neighborhood reads at a glance; the college courses under the identity
+   * open as they did. */
+  var focus=null;
+  if(selNode){
+    focus={}; focus[selNode.i]=1;
+    if(selNode.a){ if(selNode.o) focus[selNode.o]=1; }
+    else orbitsOf(selNode.i).forEach(function(o){ focus[o.i]=1; });
+  }
+  lastFocus=focus;
   var labelQueue=[], nodeQueue=[], openList=[];
   memberPts=[];
 
@@ -545,56 +621,72 @@ function draw(){
       // never as membership.
       if(showTethers){
         ctx.save(); ctx.setLineDash([2,3]); ctx.lineWidth=1; ctx.strokeStyle=pal.tether;
+        if(focus) ctx.globalAlpha=ctx.globalAlpha*DIM_ALPHA;
         ctx.beginPath();
         isl.p.forEach(function(nd){
           if(!nd.a||!nd.o) return;
+          if(focus && focus[nd.i] && focus[nd.o]) return;   // a lit tie, drawn below
           var par=nodeById(nd.o); if(!par) return;
           var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
           var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0));
           ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]);
         });
         ctx.stroke(); ctx.restore();
+        if(focus){
+          ctx.save(); ctx.setLineDash([]); ctx.lineWidth=1.4; ctx.strokeStyle=pal.ringSel;
+          ctx.beginPath();
+          isl.p.forEach(function(nd){
+            if(!nd.a||!nd.o||!(focus[nd.i]&&focus[nd.o])) return;
+            var par=nodeById(nd.o); if(!par) return;
+            var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
+            var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0));
+            ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]);
+          });
+          ctx.stroke(); ctx.restore();
+        }
       }
       isl.p.forEach(function(nd){
         if(!creditShown(nd)) return;              // the CR / NC filter (item 9)
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-        var rad=nodeRad(nd);
+        var rad=nodeRad(nd), dr=dotRad(nd, rad);
+        var dimmed = !!(focus && !focus[nd.i]);   // outside the clicked neighborhood
+        if(dimmed){ ctx.save(); ctx.globalAlpha=ctx.globalAlpha*DIM_ALPHA; }
         var s=sysPal(nd);
-        ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
+        ctx.beginPath(); ctx.arc(p[0],p[1],dr,0,6.2832);
         if(nd.a){
-          // Stand-alone: one college, no equivalence asserted yet. Drawn HOLLOW so it
-          // reads as "nothing claimed here", never as a weaker version of a claim.
-          // Once its course has been moved it is an emptied shell: dotted and grey.
+          // Stand-alone: one college, no equivalence asserted yet — a smaller,
+          // lighter dot, so it never reads as a weaker version of a claim. Once
+          // its course has been moved it is an emptied shell: dotted and grey.
           var gone=emptied(nd);
-          ctx.fillStyle=pal.hollow; ctx.fill();
-          ctx.lineWidth=Math.max(1,rad*0.34);
-          if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle=pal.gone; ctx.stroke(); ctx.restore(); }
-          else if(isNC(nd)){ ctx.save(); ctx.strokeStyle=s[1]; ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
-          else { ctx.strokeStyle=s[1]; ctx.stroke(); }
-        } else {
-          ctx.fillStyle=s[0]; ctx.fill();
-          if(rad>2){
-            ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1];
-            // ── item 3: noncredit reads as a BROKEN ring (Sam, 2026-09-04:
-            // "rather than another color, perhaps a broken line or dotted
-            // circle"). Stroke pattern is a free channel: colour already spends
-            // itself on the identity SYSTEM (M-ID / C-ID / CCN / unified), so a
-            // second colour scale would make the reader hold two at once. It
-            // also satisfies "colour is never the only signal" for free.
-            // Dashes, not dots: at low zoom a dotted 1px ring aliases into a
-            // solid one and the distinction silently disappears.
-            if(isNC(nd)){ ctx.save(); ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
-            else ctx.stroke();
+          if(gone){
+            ctx.fillStyle=pal.hollow; ctx.fill();
+            ctx.save(); ctx.setLineDash([2,2]); ctx.lineWidth=ringWidth(dr); ctx.strokeStyle=pal.gone; ctx.stroke(); ctx.restore();
+          } else {
+            ctx.save(); ctx.globalAlpha=ctx.globalAlpha*ORPHAN_ALPHA; ctx.fillStyle=s[1]; ctx.fill(); ctx.restore();
           }
+        } else {
+          ctx.fillStyle=s[1]; ctx.fill();
+        }
+        // ── item 3 (2026-09-04): noncredit reads as a BROKEN ring (Sam: "rather
+        // than another color, perhaps a broken line or dotted circle"), drawn
+        // just outside the dot. Stroke pattern is a free channel: colour already
+        // spends itself on the identity SYSTEM, and a pattern satisfies "colour
+        // is never the only signal" for free. Dashes, not dots: at low zoom a
+        // dotted 1px ring aliases into a solid one. Below ~2px it is skipped —
+        // it would only smudge the dot.
+        if(isNC(nd) && dr>1.8 && !(nd.a&&emptied(nd))){
+          ctx.beginPath(); ctx.arc(p[0],p[1],dr+2.2,0,6.2832);
+          ctx.save(); ctx.setLineDash(ncDash(dr+2.2)); ctx.lineWidth=1; ctx.strokeStyle=s[1]; ctx.stroke(); ctx.restore();
         }
         if(hitSet[nd.i]){                                  // search match ring
-          ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
+          ctx.beginPath(); ctx.arc(p[0],p[1],dr+4.5,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSearch; ctx.stroke();
         }
         if(nd===selNode){
-          ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
+          ctx.beginPath(); ctx.arc(p[0],p[1],dr+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSel; ctx.stroke();
         }
+        if(dimmed) ctx.restore();
         // Labels are QUEUED, not drawn here: a dense island stacks dozens of them
         // into an unreadable pile, which is the exact failure of a global graph
         // view. Stand-alones earn a label one band later than identities — they
@@ -878,6 +970,7 @@ window.__ccrUniverse = function(opts){
   if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){ setSolo(wantSolo); return; }
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
+  spreadUniverse(U);
   nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null;
   if(!authority) loadAuthority();
   solo=wantSolo;
@@ -964,7 +1057,14 @@ window.__ccrUniverse = function(opts){
             'aria-controls="u-foot" title="Hide the legend">Legend <span class="u-fold" aria-hidden="true">\u25BE</span></button>'+
         '</div>'+
         '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
-          '<div class="u-insp-bar"><span class="u-insp-t">Details</span></div>'+
+          /* Item 2 (2026-09-05): "Details menu is not adjustable horizontally nor
+           * hidable" — a grip on the panel's edge, dragged or nudged with the
+           * arrow keys, and Hide as a word in its bar (the More menu's Sidebar
+           * row still brings it back). */
+          '<div class="u-insp-grip" id="u-insp-grip" role="separator" aria-orientation="vertical" tabindex="0" '+
+            'aria-label="Resize the details panel" title="Drag to resize; arrow keys nudge, Home resets"></div>'+
+          '<div class="u-insp-bar"><span class="u-insp-t">Details</span>'+
+            '<button type="button" class="linkish u-insp-hide" id="u-insp-hide" title="Hide the details panel">Hide</button></div>'+
           '<div id="u-detail" class="u-insp-body"><h3>Nothing selected</h3>'+
             '<p class="empty">Hover a point for a quick look. Click a discipline or a course and its '+
             'details land here — the college courses underneath, their catalog descriptions, '+
@@ -977,11 +1077,12 @@ window.__ccrUniverse = function(opts){
           '<span><i class="u-sw s1"></i>C-ID, official</span>'+
           '<span><i class="u-sw s2"></i>CCN, official</span>'+
           '<span><i class="u-sw s3"></i>unified</span>'+
-          '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+'<span><i class="u-sw nc"></i>noncredit — a broken ring, whatever the identity system</span>'+
+          '<span><i class="u-sw orphan"></i>stand-alone course — a smaller, lighter dot in orbit around its closest match</span>'+
+          '<span><i class="u-sw nc"></i>noncredit — a broken ring around the dot, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
         '<div class="u-hint" id="u-hint">Hover for a quick look; click a discipline or a course for details. '+
-          '<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to, '+
+          '<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to, '+
           'drag a discipline to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
           'anywhere to move the view. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
           'From the keyboard: <kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> goes into one, '+
@@ -1003,11 +1104,11 @@ window.__ccrUniverse = function(opts){
         'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
         '<div class="panel"><h3>How the map is arranged</h3>'+
         '<p>One island per discipline, biggest at the centre. Inside an island the identities '+
-        'with the most courses sit at the centre. A hollow point is a stand-alone course — one '+
+        'with the most courses sit at the centre. A smaller, lighter dot is a stand-alone course — one '+
         'college, clustered with nothing yet — placed in orbit around the identity whose title '+
         'words and subject code it shares. The orbit is a suggestion, not a decision: the details '+
         'panel says what the two have in common, and nothing changes until you move the course. '+
-        'A hollow point on the outer rim shares nothing with any identity in its discipline.</p>'+
+        'A lighter dot on the outer rim shares nothing with any identity in its discipline.</p>'+
         '<p>Colors name the identity system: an M-ID is our working label, a C-ID or CCN is an '+
         'official statewide number nobody here may re-key, a unified row is a synthetic course. '+
         'Zoom in and each course shows its title and units, then its number and system; zoom in '+
@@ -1200,6 +1301,44 @@ window.__ccrSuggest = suggest;
 window.__ccrTipHtml = tipHtml;
 
 function openInspector(){ if(!inspOpen) setInspector(true); }
+/* The panel's width: remembered per browser, clamped to what the stage can
+ * spare, applied as a custom property the CSS reads for the flex basis. */
+var inspW=0; try{ inspW=parseInt(localStorage.getItem("skyview:sidebar-w")||"0",10)||0; }catch(e){}
+function inspBounds(){
+  var stage=document.getElementById("u-stage");
+  var W=(stage&&stage.clientWidth)||window.innerWidth||1200;
+  return [260, Math.max(260, Math.floor(W*0.6))];
+}
+function paintInspWidth(){
+  var a=document.getElementById("u-inspector"); if(!a) return;
+  if(inspW>0) a.style.setProperty("--u-insp-w", inspW+"px"); else a.style.removeProperty("--u-insp-w");
+}
+function setInspWidth(px){
+  var b=inspBounds();
+  inspW = px>0 ? Math.max(b[0], Math.min(b[1], Math.round(px))) : 0;
+  try{ if(inspW>0) localStorage.setItem("skyview:sidebar-w", String(inspW)); else localStorage.removeItem("skyview:sidebar-w"); }catch(e){}
+  paintInspWidth();
+  if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
+}
+function wireInspGrip(){
+  var g=document.getElementById("u-insp-grip"), a=document.getElementById("u-inspector"); if(!g||!a) return;
+  g.addEventListener("pointerdown", function(e){
+    if(e.button!==0 && e.button!==undefined) return;
+    e.preventDefault();
+    if(g.setPointerCapture){ try{ g.setPointerCapture(e.pointerId); }catch(x){} }
+    g.classList.add("dragging");
+    var move=function(ev){ var r=a.getBoundingClientRect(); setInspWidth(r.right-ev.clientX); };
+    var up=function(){ g.classList.remove("dragging"); g.removeEventListener("pointermove", move); g.removeEventListener("pointerup", up); g.removeEventListener("pointercancel", up); };
+    g.addEventListener("pointermove", move); g.addEventListener("pointerup", up); g.addEventListener("pointercancel", up);
+  });
+  g.addEventListener("keydown", function(e){
+    var cur = inspW>0 ? inspW : (a.getBoundingClientRect().width||0);
+    if(e.key==="ArrowLeft"){ e.preventDefault(); setInspWidth(cur+20); }
+    else if(e.key==="ArrowRight"){ e.preventDefault(); setInspWidth(cur-20); }
+    else if(e.key==="Home"){ e.preventDefault(); setInspWidth(0); }
+  });
+}
+window.__ccrSetSidebarWidth=setInspWidth;
 function setInspector(open){
   inspOpen=!!open;
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
@@ -1224,9 +1363,10 @@ function goSuggestionSingle(s){
      * island, so the same gesture landed at a different magnification on every
      * discipline and the number in the corner never meant anything. flyTo
      * centres the point and sets the anchor, so the zoom buttons keep it there. */
+    healShow(null);
     flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
     selIsl=I; selNode=null; showIsland(I);
-    setHint("Discipline <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses.");
+    setHint("Discipline <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses."+healWords());
     draw(); return true;
   }
   var isl=s.isl, nd=s.nd;
@@ -1238,13 +1378,14 @@ function goSuggestionSingle(s){
    * stay on screen to drag it between — the reason the zoom cap was raised past
    * 900% in the first place. Well above NODE_ZOOM either way: a single identity
    * flown to at a zoom that draws no nodes is a ring nobody can see. */
+  healShow(nd);
   flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), COURSE_ZOOM);
   selNode=nd; selIsl=isl;
   memFilter = s.kind==="member" ? String(s.code||"") : "";
   showNode(nd, isl, s.kind==="member");
-  setHint(s.kind==="member"
+  setHint((s.kind==="member"
     ? "<strong>"+esc(s.code)+"</strong> sits under <strong>"+esc(nd.t||nd.i)+"</strong> ("+esc(nd.i)+") in "+esc(isl.d)+"."
-    : "<strong>"+esc(nd.t)+"</strong> — "+esc(nd.i)+" in "+esc(isl.d)+".");
+    : "<strong>"+esc(nd.t)+"</strong> — "+esc(nd.i)+" in "+esc(isl.d)+".")+healWords());
   draw(); return true;
 }
 /* A pick from the list ADDS to the selection (Sam, 2026-09-05: "make it
@@ -1252,8 +1393,25 @@ function goSuggestionSingle(s){
 window.__ccrGoSuggestion = function(s){
   if(!s || !U) return false;
   if(!document.getElementById("u-cvs")) window.__ccrUniverse();
-  return addToken(tokenFromSuggestion(s));
+  var t=tokenFromSuggestion(s);
+  // Already picked: focus it again rather than doubling it (the workspace and
+  // the sidebar send a discipline here to open it, however often).
+  var had=tokens.filter(function(x){ return x.key===t.key; })[0];
+  if(had){ applyTokens(had); return true; }
+  return addToken(t);
 };
+/* The list's rows carry checkboxes (Sam, 2026-09-05: "should have checkboxes
+ * to clarify" multi-select), so a pick from the LIST toggles: a ticked row
+ * unticks. Only the list calls this; every other caller means "go there". */
+window.__ccrToggleSuggestion = function(s){
+  if(!s || !U) return false;
+  if(!document.getElementById("u-cvs")) window.__ccrUniverse();
+  var t=tokenFromSuggestion(s);
+  if(tokens.some(function(x){ return x.key===t.key; })){ removeToken(t.key); return true; }
+  return addToken(t);
+};
+window.__ccrTokenKey = function(s){ return s ? tokenFromSuggestion(s).key : ""; };
+window.__ccrTokenKeys = function(){ return tokens.map(function(t){ return t.key; }); };
 
 /* ── "Disciplines as a list" (Sam, 2026-08-25) is the workspace's By discipline
  * view since 2026-09-05: same rows, same filter seeded from the search box,
@@ -1276,7 +1434,8 @@ window.__ccrUniverseState = function(){
           sharedKeys:shared, canMove:canMove,
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
           labelStats:labelStats, hits:searchHits.length,
-          orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen,
+          orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen, inspectorWidth:inspW, showHealed:showHealed.slice(),
+          spread:SPREAD_ISLANDS, dotRadAt:dotRad, focus:lastFocus?Object.keys(lastFocus).length:0,
           solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,
           tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
@@ -1360,7 +1519,7 @@ function wire(){
     cvs.style.cursor = mode==="pan"?"grab":"default";
     setHint(mode==="pan"
       ? "<strong>Pan</strong>: drag anywhere to move the view; a click still selects. Switch to <strong>Move</strong> to carry a course."
-      : "<strong>Move</strong>: drag a hollow course or a college course onto the identity it belongs to; drag a discipline to pull it next to another; drag the background to pan.");
+      : "<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to; drag a discipline to pull it next to another; drag the background to pan.");
   }
   var mpan=document.getElementById("u-mode-pan"), mmove=document.getElementById("u-mode-move");
   if(mpan) mpan.onclick=function(){ setMode("pan"); };
@@ -1392,8 +1551,11 @@ function wire(){
     var box=ms.querySelector("#gq");
     if(box) box.setAttribute("placeholder", "Search a course, code or discipline");
     ensureTokenHost();
+    /* Item 7 (2026-09-05): "Search chip is not needed as users are accustomed
+     * to using Enter" — the template no longer prints one; a page that still
+     * does gets it hidden, and the one field submits on Enter by itself. */
     var go=ms.querySelector('button[type="submit"]');
-    if(go) go.classList.add("u-search-go");
+    if(go){ go.classList.add("u-search-go"); go.hidden=true; }
   }
 
   /* ── item 5: close ───────────────────────────────────────────────────────
@@ -1417,8 +1579,11 @@ function wire(){
    * caller that still thinks in the three words. */
   function paintShow(){
     var on=0; SHOW_KEYS.forEach(function(k){ if(show[k]) on++; });
-    var w=document.getElementById("u-show-word");
+    var w=document.getElementById("u-show-word"), sm=document.getElementById("u-show-sum");
     if(w) w.textContent = on===SHOW_KEYS.length ? "All" : (on+" of "+SHOW_KEYS.length);
+    // The count alone says nothing about WHAT is off; the tooltip names it.
+    var offWords=SHOW_KEYS.filter(function(k){ return !show[k]; }).map(function(k){ return SHOW_WORDS[k].replace(/ \u2014 .*$/, ""); });
+    if(sm) sm.title = offWords.length ? "Hidden: "+offWords.join(", ") : "Everything is drawn";
     Array.prototype.forEach.call(document.querySelectorAll("#u-show-menu input[data-show]"), function(i){
       i.checked=!!show[i.getAttribute("data-show")];
     });
@@ -1459,6 +1624,9 @@ function wire(){
 
   var tg=document.getElementById("u-insp-toggle");
   if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
+  var hb=document.getElementById("u-insp-hide");
+  if(hb) hb.onclick=function(){ setInspector(false); };
+  wireInspGrip(); paintInspWidth();
   /* ⚠️ PAINT THE STATE, NEVER HARDCODE IT IN THE MARKUP. `inspOpen` is module
    * memory and survives a re-render; the markup is rebuilt from scratch. Writing
    * `class="u-inspector closed"` into the template desynchronized the two the
@@ -1649,6 +1817,9 @@ function wire(){
     else if(drag && drag.kind==="member" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; memFilter=drag.mem.n; showNode(drag.nd, drag.isl, true); }
     else if(drag && drag.kind==="node" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; showNode(drag.nd, drag.isl); }
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
+    /* A click on empty ground drops the selected point and with it the click
+     * highlight (Obsidian does the same); the panel keeps what it was showing. */
+    else if(drag && drag.kind==="pan" && !drag.moved && !drag.hit && selNode){ selNode=null; }
     drag=null; draw();
   });
   cvs.addEventListener("pointerleave", function(){ hideTip(); });
@@ -1879,7 +2050,8 @@ function tokenHits(t){
 function addToken(t){
   if(!t || !U) return false;
   if(!tokens.some(function(x){ return x.key===t.key; })) tokens.push(t);
-  var box=document.getElementById("gq"); if(box && t.kind!=="term") box.value="";
+  // The box keeps its term: the list stays open with the pick ticked, so the
+  // next pick is one more click rather than a retype.
   renderTokens(); applyTokens(t); return true;
 }
 function removeToken(key){
@@ -1905,34 +2077,54 @@ function applyTokens(last){
     t.isls = (t.kind==="term") ? tokenHits(t).isls : (t.kind==="subject" ? [t.isl] : []);
     draw(); return;
   }
+  var u=selectionUnion(), hits=u.hits, isls=u.isls;
+  /* THE NEWEST PICK GETS THE FOCUS — it flies there at the single-pick zoom and
+   * its details open — and every pick stays ringed. Fitting them all instead
+   * landed at 26% with three picks in two disciplines, three unmarked circles
+   * on a whole map (Sam, 2026-09-05: "When I filter for courses, the focus does
+   * not go to them"). Fit all is a word beside Clear for when the whole
+   * selection is the point; removing a chip fits what is left. */
+  if(last){
+    if(last.kind==="term") searchOne(last.term); else goSuggestionSingle(last.s);
+  } else {
+    fitSelection(hits, isls);
+  }
+  searchHits=hits; searchTerm="";
+  var words=tokens.map(function(t){ return "<strong>"+esc(t.label)+"</strong>"; });
+  setHint((last ? "Focused on <strong>"+esc(last.label)+"</strong>. " : "")+
+    "Showing "+tokens.length+" selections: "+words.join(" · ")+". "+
+    (hits.length ? num(hits.length)+" course"+(hits.length===1?"":"s")+" ringed in red" : "")+
+    (isls.length ? (hits.length?"; ":"")+num(isls.length)+" discipline"+(isls.length===1?"":"s")+" outlined in blue" : "")+
+    ". <em>Fit all</em> beside the search box shows them together; remove a chip to narrow it."+healWords());
+  draw();
+}
+function selectionUnion(){
   var hits=[], seen={}, isls=[], seenI={};
   tokens.forEach(function(t){
     var h=tokenHits(t); t.isls=h.isls;
     h.hits.forEach(function(x){ if(!seen[x.id]){ seen[x.id]=1; hits.push(x); } });
     h.isls.forEach(function(I){ if(!seenI[I.d]){ seenI[I.d]=1; isls.push(I); } });
   });
-  searchHits=hits; searchTerm="";
+  return {hits:hits, isls:isls};
+}
+function fitSelection(hits, isls){
   var xs=[], ys=[];
   hits.forEach(function(h){ xs.push(h.x); ys.push(h.y); });
   isls.forEach(function(I){ var cx=I.x+(I.dx||0), cy=I.y+(I.dy||0); xs.push(cx-I.r, cx+I.r); ys.push(cy-I.r, cy+I.r); });
-  if(xs.length){
-    var x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs), y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
-    var spanX=Math.max(60, x1-x0), spanY=Math.max(60, y1-y0);
-    var fit=Math.min((cw()*0.78)/spanX, (ch()*0.78)/spanY);
-    fit=clampK(Math.max(NODE_ZOOM*1.3, Math.min(COURSE_ZOOM, fit)));
-    flyTo((x0+x1)/2, (y0+y1)/2, fit);
-  }
-  if(last && last.kind!=="term"){
-    if(last.kind==="subject"){ selIsl=last.isl; selNode=null; showIsland(last.isl); }
-    else { selNode=last.nd; selIsl=last.isl; memFilter=last.kind==="member"?String(last.code||""):""; showNode(last.nd, last.isl, last.kind==="member"); }
-  }
-  var words=tokens.map(function(t){ return "<strong>"+esc(t.label)+"</strong>"; });
-  setHint("Showing "+tokens.length+" selections: "+words.join(" · ")+". "+
-    (hits.length ? num(hits.length)+" course"+(hits.length===1?"":"s")+" ringed in red" : "")+
-    (isls.length ? (hits.length?"; ":"")+num(isls.length)+" discipline"+(isls.length===1?"":"s")+" outlined in blue" : "")+
-    ". Remove a chip beside the search box to narrow it.");
-  draw();
+  if(!xs.length) return false;
+  var x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs), y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+  var spanX=Math.max(60, x1-x0), spanY=Math.max(60, y1-y0);
+  var fit=Math.min((cw()*0.78)/spanX, (ch()*0.78)/spanY);
+  fit=clampK(Math.max(NODE_ZOOM*1.3, Math.min(COURSE_ZOOM, fit)));
+  flyTo((x0+x1)/2, (y0+y1)/2, fit);
+  return true;
 }
+window.__ccrFitSelection=function(){
+  if(!U || !tokens.length) return false;
+  var u=selectionUnion(), ok=fitSelection(u.hits, u.isls);
+  if(ok) setHint("Fitted "+tokens.length+" selection"+(tokens.length===1?"":"s")+" into view.");
+  draw(); return ok;
+};
 /* The chips live inside the search form's wrapper, before the box, so the
  * suggestion list still hangs under both. Only while the form is borrowed into
  * the map's row: homeSearch() clears them on the way out. */
@@ -1949,11 +2141,15 @@ function renderTokens(){
     return '<span class="u-tok" data-key="'+esc(t.key)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
       '<span class="u-tok-l" title="'+esc(t.label)+'">'+esc(t.label)+'</span>'+
       '<button type="button" class="u-tok-x" aria-label="Remove '+esc(t.label)+' from the selection" title="Remove">\u00d7</button></span>';
-  }).join("")+(tokens.length>1 ? '<button type="button" class="linkish u-tok-clear" id="u-tok-clear">Clear</button>' : '');
+  }).join("")+(tokens.length>1
+    ? '<button type="button" class="u-tok-act" id="u-tok-fit" title="Fit every pick into view">Fit all</button>'+
+      '<button type="button" class="u-tok-act" id="u-tok-clear" title="Drop every pick">Clear</button>'
+    : '');
   Array.prototype.forEach.call(host.querySelectorAll(".u-tok-x"), function(b){
     b.addEventListener("click", function(){ removeToken(b.parentNode.getAttribute("data-key")); });
   });
   var cl=host.querySelector("#u-tok-clear"); if(cl) cl.addEventListener("click", function(){ clearTokens(); setHint("Selection cleared."); });
+  var ft=host.querySelector("#u-tok-fit"); if(ft) ft.addEventListener("click", function(){ window.__ccrFitSelection(); });
 }
 
 /* ── the window: three states, two steps ─────────────────────────────────── */
@@ -2008,11 +2204,12 @@ window.addEventListener("message", function(e){
 
 /* ── Show menu markup ─────────────────────────────────────────────────────── */
 function showMenuHtml(){
+  var W=function(k){ return [k, SHOW_WORDS[k]]; };
   var groups=[
-    ["Credit status", [["cr","CR \u2014 credit"],["nc","NC \u2014 noncredit"],["nce","NCE \u2014 noncredit enhanced"],["unrec","Credit status not recorded"]]],
-    ["Identity system", [["mid","M-ID"],["cid","C-ID"],["ccn","CCN"],["uni","Unified"]]],
-    ["Kind of point", [["ident","Identities"],["orbit","Orphans in orbit"],["rim","Orphans on the rim"]]],
-    ["Under an identity", [["members","College courses"]]]
+    ["Credit status", ["cr","nc","nce","unrec"].map(W)],
+    ["Identity system", ["mid","cid","ccn","uni"].map(W)],
+    ["Kind of point", ["ident","orbit","rim"].map(W)],
+    ["Under an identity", ["members"].map(W)]
   ];
   return '<details class="u-show" id="u-show">'+
     '<summary class="btn u-show-sum" id="u-show-sum" aria-controls="u-show-menu">Show: <b id="u-show-word">All</b></summary>'+
@@ -2034,6 +2231,7 @@ function chipFor(nd){
 function goNode(id){
   var h=nodeById(id); if(!h) return;
   selNode=h.nd; selIsl=h.isl; memFilter="";
+  healShow(h.nd);
   flyTo(h.nd.x+(h.isl.dx||0), h.nd.y+(h.isl.dy||0), Math.max(view.k, NODE_ZOOM*3, 1.8));
   showNode(h.nd, h.isl);
 }
@@ -2457,7 +2655,7 @@ function wsKey(mode){ return mode==="subject"?"subjects":mode==="esl"?"esl":"dis
 function wsFilterValue(){ var q=document.getElementById("ws-q"); return q ? q.value : ""; }
 window.__ccrWorkspace=function(mode, opts){
   opts=opts||{};
-  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; }
+  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; spreadUniverse(U); }
   if(!U){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   mode = WS_MODES[mode] ? mode : "discipline";
   if(mode==="esl" && !eslAvailable()) mode="discipline";
@@ -2713,13 +2911,13 @@ window.__ccrHomeSearch = homeSearch;
  * SYS colors the map uses, so a change to the palette changes the guide. */
 function howFig(kind){
   var M=SYS[0], C=SYS[1], N=SYS[2], G=SYS[3];
-  function circ(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+s[0]+'" stroke="'+s[1]+'" stroke-width="2"'+(extra||'')+'/>'; }
-  function hollow(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#fff" stroke="'+s[1]+'" stroke-width="2"'+(extra||'')+'/>'; }
+  function circ(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+s[1]+'"'+(extra||'')+'/>'; }
+  function hollow(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+(r*0.8)+'" fill="'+s[1]+'" fill-opacity="0.6"'+(extra||'')+'/>'; }
   function sq(x,y){ return '<rect x="'+(x-4)+'" y="'+(y-4)+'" width="8" height="8" fill="#fff" stroke="#0047AB" stroke-width="1.6"/>'; }
   function tether(x1,y1,x2,y2){ return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="rgba(109,40,217,.5)" stroke-width="1.2" stroke-dasharray="2 3"/>'; }
   function label(x,y,t){ return '<text x="'+x+'" y="'+y+'" text-anchor="middle" font-size="11" fill="#3A3A36" font-family="Source Sans 3, system-ui, sans-serif">'+esc(t)+'</text>'; }
   if(kind==="island"){
-    return '<svg viewBox="0 0 360 200" role="img" aria-label="One island: a large light disc holding filled circles of several sizes and colours, hollow circles tied to them by dotted lines, and one hollow circle alone at the edge.">'+
+    return '<svg viewBox="0 0 360 200" role="img" aria-label="One island: a large light disc holding dots of several sizes and colours, smaller lighter dots tied to them by dotted lines, and one lighter dot alone at the edge.">'+
       '<circle cx="180" cy="100" r="88" fill="#F7F5F1" stroke="rgba(28,28,26,.18)"/>'+
       circ(180,100,22,M)+circ(140,72,12,C)+circ(220,68,10,M)+circ(150,130,14,N)+circ(224,128,9,G)+circ(210,150,6,M)+
       tether(180,100,120,104)+hollow(120,104,4,M)+tether(180,100,204,112)+hollow(204,112,4,M)+tether(140,72,124,52)+hollow(124,52,4,C)+
@@ -2728,16 +2926,16 @@ function howFig(kind){
       '</svg>';
   }
   if(kind==="marks"){
-    return '<svg viewBox="0 0 640 96" role="img" aria-label="Six marks side by side: a purple filled circle, a blue filled circle, a gold filled circle, a hollow circle on a dotted line, a circle drawn with a broken ring, and a small square.">'+
+    return '<svg viewBox="0 0 640 96" role="img" aria-label="Six marks side by side: a purple dot, a blue dot, a gold dot, a smaller lighter dot on a dotted line, a dot inside a broken ring, and a small square.">'+
       circ(56,36,14,M)+label(56,74,"M-ID")+label(56,88,"our working label")+
       circ(160,36,14,C)+label(160,74,"C-ID")+label(160,88,"official")+
       circ(250,36,14,N)+label(250,74,"CCN")+label(250,88,"official")+
       tether(338,36,372,36)+hollow(338,36,8,M)+circ(378,36,8,M)+label(358,74,"stand-alone")+label(358,88,"in orbit")+
-      circ(460,36,14,M,' stroke-dasharray="5 4"')+label(460,74,"noncredit")+label(460,88,"a broken ring")+
+      circ(460,36,9,M)+'<circle cx="460" cy="36" r="14" fill="none" stroke="'+M[1]+'" stroke-width="1.5" stroke-dasharray="5 4"/>'+label(460,74,"noncredit")+label(460,88,"a broken ring")+
       sq(570,36)+label(570,74,"college course")+label(570,88,"under an identity")+
       '</svg>';
   }
-  return '<svg viewBox="0 0 360 110" role="img" aria-label="A hollow circle with an arrow pointing to a filled circle.">'+
+  return '<svg viewBox="0 0 360 110" role="img" aria-label="A small dot with an arrow pointing to a large dot.">'+
     hollow(70,50,10,M)+'<path d="M92 50 H228" stroke="#0047AB" stroke-width="2" fill="none" marker-end="url(#arr)"/>'+
     '<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0047AB"/></marker></defs>'+
     circ(270,50,20,M)+label(70,84,"the course")+label(270,92,"the identity it belongs to")+
@@ -2754,9 +2952,9 @@ function howHtml(){
     '<h2>What the shapes mean</h2>'+
     '<figure class="how-fig">'+howFig("marks")+'</figure>'+
     '<ul class="how-list">'+
-      '<li>A <strong>filled circle</strong> is a course identity. Its color says who issued the number: purple for an M-ID, our working label; blue for a C-ID and gold for a CCN, both official statewide numbers; gray for a unified row.</li>'+
-      '<li>A <strong>hollow circle</strong> is a stand-alone course: one college teaches it and no identity claims it yet. It orbits the identity it most resembles, tied to it by a dotted line. The orbit is a suggestion. Nothing changes until someone moves the course.</li>'+
-      '<li>A <strong>broken ring</strong> marks a noncredit course, whatever its color.</li>'+
+      '<li>A <strong>large dot</strong> is a course identity. Its color says who issued the number: purple for an M-ID, our working label; blue for a C-ID and gold for a CCN, both official statewide numbers; gray for a unified row. The biggest dots carry the most college courses.</li>'+
+      '<li>A <strong>smaller, lighter dot</strong> is a stand-alone course: one college teaches it and no identity claims it yet. It orbits the identity it most resembles, tied to it by a dotted line. The orbit is a suggestion. Nothing changes until someone moves the course.</li>'+
+      '<li>A <strong>broken ring</strong> around a dot marks a noncredit course, whatever its color.</li>'+
       '<li>A <strong>small square</strong> is a college course under an identity. Squares appear when you zoom in past 270 percent, and the sidebar lists them at any zoom.</li>'+
     '</ul>'+
     '<h2>Find your course</h2>'+
@@ -2767,7 +2965,7 @@ function howHtml(){
       'The sidebar answers one question: does my course belong here?</p>'+
     '<h2>Move a course</h2>'+
     '<figure class="how-fig">'+howFig("move")+'</figure>'+
-    '<p>Choose <strong>Move</strong> at the top, then drag a hollow circle or a square onto the identity it belongs to. Drag an island to pull it next to another when a course belongs across the border. '+
+    '<p>Choose <strong>Move</strong> at the top, then drag a small dot or a square onto the identity it belongs to. Drag an island to pull it next to another when a course belongs across the border. '+
       'Drag the background to pan, or choose <strong>Pan</strong> to drag from anywhere. Each move becomes one line in the comprehensive view\u2019s <em>What this would write</em> panel; the map itself writes nothing to the shared record, and a curator can delete any line.</p>'+
     '<h2>Choose what you see</h2>'+
     '<p><strong>Show</strong> narrows the map by credit status, by identity system, by kind of point, and by whether the college courses under an identity are drawn. '+

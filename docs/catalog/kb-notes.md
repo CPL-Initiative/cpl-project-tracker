@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-383 document(s).
+384 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -307,6 +307,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The feedback queue already knew — collection is not the bottleneck, triage is](../kb-notes/methodology-the-feedback-queue-already-knew.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [The first run of a new instrument measures the instrument](../kb-notes/methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [The instrument may not live inside the system under test](../kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) | methodology | published | 2026-08-29 | 2026-08-30 |
+| [The mark is not the footprint — draw inside what you packed, and spread at load](../kb-notes/methodology-the-mark-is-not-the-footprint.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
