@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 424,
+  "file_datasets": 426,
   "external_services": 137,
-  "consumers": 316,
+  "consumers": 317,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -835,6 +835,13 @@
      "direction": "read",
      "how": "url",
      "line": 478
+    },
+    {
+     "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 209
     }
    ],
    "main_committers": []
@@ -4908,6 +4915,26 @@
      "direction": "read",
      "how": "literal",
      "line": 281
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/visuals/<date>-memory-audit-verdicts.html": {
+   "consumers": [
+    {
+     "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 295
+    },
+    {
+     "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 295
     }
    ],
    "served": false,
@@ -9607,6 +9634,19 @@
      "pages": [
       "CPL_Dashboard.html"
      ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/memory_audit/latest.json": {
+   "consumers": [
+    {
+     "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 13
     }
    ],
    "served": true,

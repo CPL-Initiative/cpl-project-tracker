@@ -321,6 +321,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/research_workexp_crossdisc_remint_scope.md` | scripts: `kb/_crossdisc_dryrun.py` | — |
 | `docs/roadmap_archive.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `docs/session_<N>_handoff.md` | scripts: `kb/_build_docs_index.py` | — |
+| `docs/visuals/<date>-memory-audit-verdicts.html` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `implementation-funding` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
@@ -455,6 +456,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/kin_pe_pass2_out/2026-06-12/supabase_merge_ops.json` | scripts: `kb/_athl_fitness_merge_curation.py` | scripts: `kb/_athl_fitness_merge_curation.py` |
 | `kb/kin_pe_pass2_out/<date>/alias_map.json` | scripts: `kb/_rekey_promotions.py` | — |
 | `kb/liftoff_plan.json` | pages: `CPL_Dashboard.html` | — |
+| `kb/memory_audit/latest.json` | scripts: `kb/memory_audit/2026-09-05-sheet_builder.py` | — |
 | `kb/morph_variant_out/2026-06-24/dryrun.json` | none found | scripts: `kb/_morphological_variant_dryrun.py` |
 | `kb/nc_learning_partners.json` | tabs: `nc-learning-partners` | — |
 | `kb/noncredit_cip_categories.json` | scripts: `kb/_build_noncredit_cip_categories.py`, `kb/_classify_noncredit_programs.py` | scripts: `kb/_build_noncredit_cip_categories.py` |
@@ -675,7 +677,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `esm.sh` | pages: `kb-portal/index.html` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py` |
+| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/memory_audit/2026-09-05-sheet_builder.py` |
 | `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
@@ -803,5 +805,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 424 file
-datasets · 137 external services · 316 consumers · 33 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 426 file
+datasets · 137 external services · 317 consumers · 33 workflows · 37 tabs.
