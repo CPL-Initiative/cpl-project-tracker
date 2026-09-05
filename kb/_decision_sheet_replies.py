@@ -31,6 +31,9 @@ CHIPS_DEFAULT = ["Yes", "Keep", "Retire", "Edit", "Later"]
 CHIPS_CLASS = ["Yes", "No", "Later"]
 CHIPS_GROUP = ["Yes", "Keep", "Later"]
 CHIPS_DONE = ["Undo"]
+# A sheet that asks what to BUILD, not what a memory row is worth. Keep/Retire
+# read as verdicts on a claim; a plan is accepted, reshaped, deferred or dropped.
+CHIPS_BUILD = ["Yes", "Edit", "Later", "Dismiss"]
 
 
 # Under a single memory the first chip NAMES the batch's action instead of
@@ -372,6 +375,9 @@ def chips_for(section_title, card_html):
     ask = _text((_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S) or [None, ''])[1]).lower()
     if 'older only' in ask:
         return ["Yes", "Older only", "No", "Later"]
+    if t.startswith(('what to build', 'the data underneath',
+                     'how a rule fires', 'still open')):
+        return CHIPS_BUILD
     if t.startswith('rulings that cover') or t.startswith('your own earlier rulings'):
         return CHIPS_CLASS
     if _re.search(r'entries replaced by one newer ruling', h3, _re.I):

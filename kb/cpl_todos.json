@@ -2,8 +2,26 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-05",
   "_session": "231 (SkyReply) — two SkyView controls that were never broken, then the course outline planned on real welding data",
-  "_status": "Two things you reported turned out to be working controls with nothing to show. The search box always could scroll; it was only ever asked for eight suggestions out of hundreds, so there was nothing below the fold — it now offers sixty, says when there are more, and the arrow keys carry the list with them. The Show menu was changing its label and its count while the map drew nothing, because individual courses are only drawn once you have zoomed in and SkyView opens further out than that; now a discipline with nothing switched on disappears, so Deselect all empties the map at the view it opens on. Testing the rest of the map afterwards found two more things nobody had reported: the published copy of SkyView was one edit out of date, and the fix itself had made a search pick able to land on a discipline that had just been filtered away. Then the course outline: on a double-click a course would open a panel with what the colleges report, a description and a list of skills the platform drafts from the member catalogs, all editable and waiting on a faculty reviewer. It is drawn as a working prototype on real data for Introduction to Welding and nothing is built into SkyView yet — you asked to see the plan first, and the prototype is where reacting is cheap.",
+  "_status": "SkyView now sorts the search by name, which is what let you see the duplicate welding intro courses, and the map reads as a sky: a course colleges have joined emits light, a stand-alone does not, so the settled identities are visible at a glance. Then you asked five more things and one hard question, and they are all on one sheet with reply chips rather than scattered through chat. Two measurements underneath them matter: the courses carrying the articulation weight are almost all one-college identities, which the map currently draws as its dimmest points, and a fifth of the articulation records point at identities that no longer exist because two files have not been re-keyed since the September re-mints. Nothing is blocked on engineering; eleven things are waiting on you.",
   "items": [
+    {
+      "id": "s231-sam-eleven-rulings",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "You ruled all eleven on the decision sheet — ten as proposed and one edited: agency skill statements come from all three sources (published agency standards, ACE exhibits, and entered by the MAP team), which unblocks the course outline. The sheet stays live at https://claude.ai/code/artifact/fdd4d6a0-609b-4cb3-b0b9-b9e2a5f02761 if you want to change an answer or add a note; the next session reads it before it starts. One thing you flagged for follow-up and it is a real question: when the three skill sources disagree about the same credential, which one wins?"
+    },
+    {
+      "id": "s231-fable-alias-rekey",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Re-key the credit-recommendation worklist and the articulations file through the alias chain before building anything on either: 19 of 70 welding recommendation course ids and 504 of 2,319 articulated identities name nothing that still exists, and the second group carries 875 articulation records. Check ids through the 15 applied maps, never directly — a direct lookup overstates the damage by half. Then fold the chain into one shared module with a CI guard, because the two copies in the repo have already drifted apart under a comment saying they must not."
+    },
+    {
+      "id": "s231-fable-articulation-map",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Put the articulation count on each course identity in SkyView, after the re-key — Sam ruled yes. The join is direct on identity id in kb/coci_articulations.json. It matters because the signal runs opposite to adoption: in welding the articulation weight sits on one-college identities (one carries 21) while Introduction to Welding, taught at 24 colleges, carries 7 and Introduction to SMAW carries none — so the map currently draws the articulated courses as its dimmest, unlit points."
+    },
     {
       "id": "s231-sam-outline-prototype",
       "for": "Sam",
@@ -69,12 +87,6 @@
       "for": "Fable",
       "tab": "dashboard",
       "text": "The accessibility sweep now runs as one command — `npm run a11y` — over all 42 views in about 100 seconds, and COBI's 38 tabs are found from the side menu itself, so a new tab is checked the day it ships. The problems shared by every view are fixed: the side menu group headings and the signed-out line were too faint to read, three controls were under the minimum tap size, the painting fallback panel failed on its own background, and nothing in COBI respected a reader's request to stop moving things. What is left is per-tab and named: five tabs still scroll sideways on a phone (the Dashboard worst, by 887 pixels), eighteen carry text below the contrast standard, and four thousand small tap targets come from just fifty-four rules — one button in the Credential Reference grid accounts for over two thousand of them. Start with the sideways scroll."
-    },
-    {
-      "id": "s227-fable-config-to-tables",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "Sam approved moving baked-in configuration into tables. Two to start: the list of sites in cobi_orgs.js (adding or renaming a site is currently a code deploy) and the alpha banner's wording. public.cobi_nav is the precedent for the first, the sierra_guidance row for the second."
     }
   ]
 }
