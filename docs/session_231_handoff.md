@@ -38,7 +38,7 @@ Two asks, one PR (#1481) and a republished sheet.
    (`body.cpl-skyview-solo`). Verified in jsdom (188 + 51), the Chromium
    harness, `npm run a11y -- skyview`, and a Chromium drive of COBI's tab.
 
-2b. **SkyView's third list, the same afternoon** (the round-three PR, after
+2b. **SkyView's third list, the same afternoon** (#1483, after
    #1482): courses are dots in the legend's colors inside the packed
    footprint, the islands spread ×1.22 at load, a click lights an identity's
    orbit ties and fades the rest (Obsidian's graph was his reference), the

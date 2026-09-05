@@ -788,7 +788,7 @@ box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
 
 ### SkyKeep S230 — the sheet takes replies; SkyView's second and third lists (2026-09-05)
 
-**Three PRs (#1481, #1482, the round-three PR) and the republished sheet.** ⭐ **Decision sheets take
+**Three PRs (#1481, #1482, #1483) and the republished sheet.** ⭐ **Decision sheets take
 replies on the page** — chips, a *Follow up* toggle and a note per item and per listed memory, saved to
 the artifact's own store and read by the next session with `read_db` (`kb/_decision_sheet_replies.py`;
 ⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). ⚠️ **The store's

@@ -90,7 +90,7 @@ box drops the last chip; the dropdown wraps whole titles at one size. ⭐ **A da
 per browser): the palette is `--sky-*` tokens read at draw time, `body.u-dark` redefines them, every
 text pair ≥4.5:1 — the one workspace that earns a dark ground. Story: `ccr_atlas_lessons`.
 
-✅ **THE THIRD LIST, THE SAME AFTERNOON, WITH OBSIDIAN'S GRAPH AS THE REFERENCE (SkyKeep S230, 2026-09-05).**
+✅ **THE THIRD LIST, THE SAME AFTERNOON, WITH OBSIDIAN'S GRAPH AS THE REFERENCE (SkyKeep S230, 2026-09-05, #1483).**
 Sam: *"See how obsidian uses dots for item, which we could do since we don't put info in the course
 circles, and see how it spreads more"* · *"color-coded dots to match our legend"* · *"when you click on
 an entity, it shows the connections in contrast to unclicked."* Now: courses are **dots** in the
