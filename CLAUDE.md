@@ -599,8 +599,10 @@ Read that before a UI rework, a First Light artifact, or a table layout.
   covers both HTMLs without a Rule-4 mirror. Only `:root` tokens need the mirror.
 - **Prototype UI in a fast-feedback canvas, then port.** Iterate the look in a
   Claude artifact, lock it with Sam, then implement into the monolith.
-- **Stop-hook:** install `scripts/stop-hook-git-check.sh` to `~/.claude/`. It
-  ignores GitHub's own squash-merge commits, which must NOT be amended (Rule 5).
+- **Stop-hook:** a SessionStart hook runs `scripts/patch_stop_hook.py`, which
+  patches the HARNESS's `~/.claude/stop-hook-git-check.sh` in place — installing
+  our copy over it never worked remotely (the harness re-provisions it). Local
+  machines still `cp scripts/stop-hook-git-check.sh ~/.claude/`.
 
 ## Deployed site
 
@@ -813,8 +815,9 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-⚠️ **Stop-hook nags in REMOTE sessions are FALSE POSITIVES — do not amend and do
-not push.** Both variants ("Unverified `noreply@github.com`" after a squash-merge,
-and "N unpushed commits on `claude/...`" after the branch auto-deletes) are
-covered there with the four confirming commands. Amending would rewrite `main`
-(Rule 5).
+⚠️ **The "N unpushed commits on `claude/...`" nag is FIXED (Session 228)** — the
+SessionStart patch makes the hook count commits on NO remote ref, which is what
+"unpushed" means. If it returns, the patch did not run:
+`python3 scripts/patch_stop_hook.py`. The "Unverified `noreply@github.com`"
+variant is still a false positive — **do not amend, do not push**; amending
+rewrites `main` (Rule 5). Both are covered there with the confirming commands.

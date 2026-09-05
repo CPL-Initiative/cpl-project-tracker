@@ -289,3 +289,15 @@ jobs:
       # file. Pure-stdlib python; always-on like every other lint here.
       - name: JS-suite gate lint (scripts/js_suite_gate.sh)
         run: python3 tests/js_suite_gate_test.py
+      # Stop-hook unpushed check (Session 228) — the hook nagged "There are 1
+      # unpushed commit(s)" at the end of nearly every remote session, on
+      # branches holding nothing of ours, until sessions learned to ignore it.
+      # A hook people ignore is worse than none, because the one time it is
+      # right nobody looks. Guards BOTH directions against a vendor-shaped hook
+      # (the copy that actually runs in the cloud): the false positive goes
+      # quiet, and one real local commit still fires. ⚠️ It must NOT be tested
+      # against scripts/stop-hook-git-check.sh — that copy's Session-32
+      # ancestor guard masks the case, so such a test passes with or without
+      # the fix. Pure-stdlib python, no network.
+      - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
+        run: python3 tests/stop_hook_git_check_test.py

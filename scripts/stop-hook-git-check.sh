@@ -102,7 +102,8 @@ if [[ -n "$current_branch" ]]; then
     fi
   fi
 
-  unpushed=$(git rev-list "$upstream..HEAD" --count 2>/dev/null) || unpushed=0
+  # cpl-patch: unpushed = commits on NO remote ref (see scripts/patch_stop_hook.py)
+  unpushed=$(git rev-list HEAD --not --remotes --count 2>/dev/null) || unpushed=0
   if [[ "$unpushed" -gt 0 ]]; then
     if [[ "$upstream" == "origin/$current_branch" ]]; then
       echo "There are $unpushed unpushed commit(s) on branch '$current_branch'. Please push these changes to the remote repository." >&2
