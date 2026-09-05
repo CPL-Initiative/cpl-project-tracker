@@ -1585,3 +1585,48 @@ clean at every width.
 session that shipped it.** That is the second time in two days
 ([`public_pages_a11y_lessons`](public_pages_a11y_lessons.md)) — which is the
 argument for the command being cheap rather than for anyone being more careful.
+
+### The top row, and the search that was never broken (same session, later)
+
+Sam's items 1-5, 10 and 11 (PR #1476). Item 11 read like a bug report about a
+widget — *"the keyword search in full SkyView has a bug and doesn't allow me to
+click into it"* — and the widget was fine. **The page's one search field lived in
+the masthead, and browser full screen paints only the element you asked it to
+paint.** `#u-full` is the map section, so in full SkyView the box was not hard to
+reach; it did not exist. Its own note:
+[`methodology-ask-which-container-before-you-debug-the-control`](kb-notes/methodology-ask-which-container-before-you-debug-the-control.md).
+
+Three things worth carrying:
+
+- **`innerHTML =` detaches, it does not destroy.** The map now BORROWS the
+  page's one search form so the page still carries exactly one. Every other view
+  replaces `#view` wholesale, which would take the borrowed form with it — and a
+  detached node nobody references is gone, listeners and all. `homeSearch()`
+  returns it first, and it is wrapped **centrally** around the five view entry
+  points rather than called from each: they live in three files, and a missed
+  call site is invisible until someone navigates.
+- **A closed `<details>` still LAYS OUT its contents in Chromium.** It declines
+  to paint them; it does not remove them from layout or from a forced `focus()`.
+  `npm run a11y` measured all four menu items escaping the viewport at 390px and
+  reported them as focusables with no ring. `display:none` on
+  `.u-views:not([open]) .u-views-menu` is the difference between a hidden menu
+  and a hidden keyboard trap.
+- **A fitted zoom makes its own readout meaningless.** The old subject fly used
+  `Math.min(3.2, 190/I.r)`, so the same gesture landed at a different
+  magnification on every discipline and the percentage in the corner told the
+  reader nothing. Item 10 asks for exact figures — 1000% for a course, 150% for
+  a discipline — and exact is what makes the number worth showing.
+
+⚠️ **Reverted within the hour: hiding the search's submit button** as "redundant
+beside a live suggestion list". The row has slack at every width that fits one
+row, Sam never asked for it gone, and a control present in the DOM but invisible
+at desktop widths is one a harness clicks and a person cannot. The harness caught
+it in the same run that introduced it.
+
+⚠️ **And the title came back.** A title in this row was tried on 2026-09-03 and
+removed, because it pushed the view links under the MASTHEAD's absolutely
+positioned suggestion list and Chromium reported them unclickable. It returns
+only because the same edit moves the search into the row — the dropdown now
+belongs to this row, so there is nothing above the links to hide under. The test
+pins **that pairing**, not the title's absence: a guard written against the old
+symptom would have blocked the fix.

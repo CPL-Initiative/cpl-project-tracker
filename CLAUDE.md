@@ -778,24 +778,28 @@ one appears: `kb/_uc_cur_promote.py` (a `UC-CUR-*` target → a real M-ID record
 and the identities map re-key dry run (1,597 ghosts: re-key 1,369, drop 228;
 sheet for Sam next). Story: `ccr_atlas_lessons`; handoff `session_227_handoff`.
 
-### SkyMint S227 — the masthead decluttered, and the accessibility gap turns out to be a lint (2026-09-04)
+### SkyMint S227 — the masthead, one command for accessibility, and SkyView's top row (2026-09-04/05)
 
-**One PR (#1469).** Sam's six masthead asks, plus the root cause of the zoom
-mess: three CSS defaults each impose a floor a layout cannot shrink past — a
-bare `1fr` is `minmax(auto,1fr)`, a flex item defaults to `min-width:auto`, and
-a non-stretch `justify-self` sizes to content. Measured: `.cobi-brand` drew
-580px inside a 322px track at 768px, painting 240px over its neighbour; `main`
-failed 19/136 Chromium checks, this passes 196/196.
-⭐ **Sam struck the alpha banner's "don't cite or share outside the team" as
-FALSE** — COBI's figures ship outward through Sierra and the Fact Sheet — so it
-now asks the reader to verify. ⭐ **Seven real AA failures in the masthead
-alone, three written that same session**, one minutes after a comment saying not
-to. That is the finding: doctrine states a standard, only a measurement detects
-a violation — so accessibility wants a lint, and the enforcement splits three
-ways (detect · fire · fix). A 38-view sweep then showed the failures cluster on
-an **unreconciled raw-hex palette** (`#94a3b8`, 4,827 renders from 32 lines),
-not on token misuse; its totals were retracted as harness-inflated the same day.
-Stories: `cobi_lessons`, `public_pages_a11y_lessons`; handoff `session_228_handoff`.
+**Four PRs (#1469, #1473, #1474, #1476).** The masthead zoom mess was three CSS
+defaults, each imposing a floor a layout cannot shrink past. ⭐ **Accessibility
+became ONE COMMAND**: `npm run a11y` — 42 views in ~100s, COBI's 38 tabs
+**discovered from its own nav** so a new tab is measured the day it ships;
+`a11y.config.js` is the only file another project rewrites. Sam ruled the
+three-mechanism plan (checker · hook · skill) down to its first third. ⭐ **Six
+of the first run's loudest findings were the harness**, one of which reported a
+control as broken *after* it was fixed. Five chrome-wide source lines cleared
+~200 findings across all 38 views (nav headings 3.38:1 and 23.9px, the rail's
+signed-out line, two 21.7px controls, a 3.08:1 gradient, and
+`prefers-reduced-motion`, honored in **none** of five animations). Still red and
+named: 5 tabs scroll sideways at 390px, 18 carry 86 sub-AA pairs, 4,042 small
+targets = **54 selectors**. ⭐ **CI was red repo-wide for ~40 minutes and it was
+not our code**: `package-lock.json` is gitignored, so `npm install` resolves
+ranges live; playwright shipped a 404 tarball. Both deps pinned exactly. SkyView
+gained the CCR table-view link, "discipline" everywhere it meant one, and a top
+row of title · Views menu · search · controls · close — ⭐ **item 11 was
+structural**: the one search box lived in the masthead, which full screen does
+not paint. Stories: `cobi_lessons`, `public_pages_a11y_lessons`,
+`ccr_atlas_lessons`; handoff `session_228_handoff`.
 
 ## Troubleshooting
 

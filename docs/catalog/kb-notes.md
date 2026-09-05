@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-377 document(s).
+378 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -168,6 +168,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Answer "eligible students & credits by program area × statewide/local" from the Credential Reference data](../kb-notes/methodology-area-eligibility-rollup-from-cer.md) | methodology | published | 2026-07-20 | 2026-07-20 |
 | [Answering "which programs at <college> have CPL for apprentices?" — the three-artifact join](../kb-notes/methodology-college-apprenticeship-cpl-roster.md) | methodology | published | 2026-08-03 | 2026-08-03 |
 | [Ask whether the list can contain what you are counting](../kb-notes/methodology-ask-whether-the-list-can-contain-what-you-are-counting.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Ask which container the control is in before you debug the control](../kb-notes/methodology-ask-which-container-before-you-debug-the-control.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Assert that an argument arrives, not that it is last](../kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [Assert what retrieval RETURNS, not that the answer reads better](../kb-notes/methodology-assert-what-retrieval-returns.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [Assert what the reader sees, not what the source says](../kb-notes/methodology-assert-what-the-reader-sees.md) | methodology | published | 2026-08-11 | 2026-08-12 |
