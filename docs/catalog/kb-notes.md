@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-382 document(s).
+383 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -134,6 +134,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A store's freshness tracks whether its update is unconditional](../kb-notes/methodology-freshness-tracks-conditionality-not-intent.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
 | [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |

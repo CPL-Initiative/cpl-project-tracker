@@ -259,10 +259,14 @@ link. The public site does not serve `docs/`, so a github.io link to a sheet wil
 not open; the artifact link is the one to use.
 
 Since September 5 you can also reply on the sheet itself. Under every item, and
-under every memory a batch item lists, there is a row of reply chips (Yes takes the recommendation; the other words are the
-ones the sheet's how-to box lists), a *Follow up* toggle for anything you want
-the session to come back to whatever the verdict, and a note for what a word
-cannot carry. On the artifact your replies save to the sheet and the next
+under every memory a batch item lists, there is a row of reply chips (Yes takes
+the recommendation; under a single memory the first chip names what the batch
+would do to it, *Verify* or *Retire*, so the word says what happens; the other
+words are the ones the sheet's how-to box lists), a *Follow up* toggle for
+anything you want the session to come back to whatever the verdict, and a note
+for what a word cannot carry. The line under each reply says what was saved,
+in words — *Saved to the sheet: Retire, follow up.* — so you can trust a click
+landed without reading a color. On the artifact your replies save to the sheet and the next
 session reads them from there; if you open the sheet from the repo instead,
 they stay in your browser and *Copy replies* at the foot of the page builds the
 numbered line for you to paste.

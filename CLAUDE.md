@@ -788,18 +788,17 @@ box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
 
 ### SkyKeep S230 — the sheet takes replies; SkyView's second list and the full window (2026-09-05)
 
-**One PR (#1481) + the republished sheet.** ⭐ **Decision sheets take replies on the page**: chips, a
-*Follow up* toggle and a note per item, saved to the artifact's own store and read by the next session
-with `read_db` (`kb/_decision_sheet_replies.py`); ⚠️ the sheet's committed builder predates the sheet, so
-the controls went on as an idempotent pass (KB note). SkyView's second list, all of it: one chip
-vocabulary, then the header's second cut in the style of Claude's own (ghosted icon actions, a title
-field, one More menu holding *Go to*, Sidebar, Legend and Dark canvas), the Show menu of twelve
-switches, the legend folding from its own corner, *How SkyView works*, the OS window controls (three
-states, two steps), a ☰ that opens COBI's rail (collapsed by default), the search as a selection of
-chips (a pick adds, Enter replaces), and a dark canvas on `--sky-*` tokens. Replies also sit under
-every memory a batch item lists. ⭐ **The CCR click opens the full window**
-(`body.cpl-skyview-solo`). ⭐ A class toggle is not a re-render: `setSolo` paints the controls now.
-Stories: `ccr_atlas_lessons`, `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
+**Two PRs (#1481 + the same-day reply fix) and the republished sheet.** ⭐ **Decision sheets take
+replies on the page** — chips, a *Follow up* toggle and a note per item and per listed memory, saved to
+the artifact's own store and read by the next session with `read_db` (`kb/_decision_sheet_replies.py`;
+⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). SkyView's second
+list, all of it: one chip vocabulary, the header in the style of Claude's own (ghosted icons, a title
+field, one More menu), the Show menu, the legend folding from its corner, *How SkyView works*, the OS
+window controls, a ☰ for COBI's rail, the search as a selection of chips, a dark canvas on `--sky-*`
+tokens. ⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`); a class toggle is not a
+re-render. ⚠️ **The store's echo is FROZEN** — a page that adopts it as state loses every later click,
+silently — and a Yes under a claim-shaped title reads both ways: the chips under a memory say Verify
+or Retire. Stories: `ccr_atlas_lessons`, `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
 
 ## Troubleshooting
 

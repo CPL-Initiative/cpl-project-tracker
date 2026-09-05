@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 382,
+   "count": 383,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2343,6 +2343,25 @@
      "title": "A status lane must link to the remedy lane, or \"done\" measures attention",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/_decision_sheet_replies.py",
+      "tests/decision_sheet_replies.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-stores-echo-is-not-your-state.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "artifacts",
+      "db",
+      "pitfall",
+      "testing"
+     ],
+     "title": "A store's echo is not your state \u2014 clone what a snapshot delivers",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-29",
@@ -6280,6 +6299,7 @@
      "created": "2026-09-05",
      "governs": [
       "kb/_decision_sheet_replies.py",
+      "tests/decision_sheet_replies.test.js",
       "docs/visuals/2026-09-05-memory-audit-verdicts.html"
      ],
      "path": "docs/kb-notes/playbook-decision-sheet-replies.md",
@@ -15367,5 +15387,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 783
+ "total": 784
 }
