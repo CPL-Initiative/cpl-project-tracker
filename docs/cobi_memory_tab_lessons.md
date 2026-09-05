@@ -808,8 +808,48 @@ response controls on each memory, not just on the whole batch."* Items 2 (73
 memories) and 3 (three) list their memories as rows with a reference each; the
 injector now puts a compact block under every such row — id `<item>.<reference>`
 (`2.o3`, `3.bog-amendment-is-funding-authority`), kind `entry`, parent the item
-— with chips read off the batch's own ask: Yes · Hold out · Rewrite · Later
-under a verify batch, Yes · Keep · Later under a retire batch. The bar counts by
+— with chips read off the batch's own ask: Verify · Hold out · Rewrite · Later
+under a verify batch, Retire · Keep · Later under a retire batch. The bar counts by
 kind (*2 of 43 items · 2 of 76 memories · 1 of 31 retired rows replied*), and an
 entry reply in the store overrides its batch for that one memory. 150 blocks
 now; the second pass still changes nothing.
+
+### The hour after: the frozen echo, and the Yes that read both ways
+
+Sam, an hour in, with a screenshot of item 3: *"On Board memory I clicked Yes
+but also wanted to Follow up, but I click Follow Up and it doesn't turn blue but
+does give say response was saved--unsure if it really saved."* The store
+answered before the code did: `3.bog-amendment-is-funding-authority` sat at
+version 1, `v: "yes"`, `fu: false` — and five memories under item 2 sat at
+versions 2 to 6 with ONE `t` each, every later write carrying the first
+write's timestamp. That is the signature of a write that changed nothing.
+
+The cause was one clause of the store's contract, unread: *"delivered
+snapshots and their `data()` are frozen … clone a body before editing it for a
+write."* The script had done `state[item] = d.data()` on every echo and then
+`r[k] = patch[k]` on every click. Outside strict mode an assignment into a
+frozen object is silently ignored, so from an item's first save on, nothing
+painted and the unchanged body went back up, resolved, and said *Saved*. The
+follow-up flags Sam set on memories with no verdict all saved, because no echo
+had replaced those items yet — which is why the bug looked like "Follow up
+after Yes" and not "everything".
+
+Fixed by copying in both directions, `"use strict"` so the same mistake throws
+next time, and a state line in words — *Saved to the sheet: Retire, follow up.*
+The guard, `tests/decision_sheet_replies.test.js`, runs the COMMITTED sheet in
+jsdom against a store stub that `Object.freeze`s what it delivers: save once,
+let the echo land, click again, expect a pressed control and a second, newer
+write. The Chromium drive that shipped the feature had pressed one chip and
+reloaded; it never edited an item twice. Durable form:
+`methodology-a-stores-echo-is-not-your-state`.
+
+His second report was about words: *"On Keep $1M, I said Yes, but unclear if I
+am saying Yes to Keep $1M NC funding...Or...Yes that it is no longer true. Yes
+to mean means that I agree it is no longer true."* Under a retire batch the
+chips read Yes · Keep · Later beneath a title that is itself an imperative
+claim. Now the first chip under a memory names the batch's action — Retire, or
+Verify under a verify batch — and Yes stays only at item level, where the ask
+sits right above it. Replies saved before the relabel carry `v: "yes"` on an
+entry and mean the batch's recommendation for that memory; his in-chat replies
+count as replies: the Board memory is retire + follow up, the $1 million memory
+is retire. Both fixes went out as one same-day PR and one republish.

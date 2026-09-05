@@ -67,7 +67,19 @@ sheet number ("1" … "43", "D1" … "D31", or "2.o3" for one memory inside item
 `note` his words, `fu` the follow-up flag; an entry reply overrides its batch
 for that one memory. He may also
 paste the *Copy replies* line in chat; the store and the line say the same
-thing. Then execute, exactly as S229's handoff laid out:
+thing.
+
+⚠️ **Read `v` this way.** Under a memory (`2.…`, `3.…`) the chips say
+**Verify** or **Retire** since the same-day fix; a reply saved before it carries
+`v: "yes"` on an entry and means the batch's recommendation for that memory
+(verify under item 2, retire under item 3). And Sam replied in chat as well as
+on the sheet on 2026-09-05: `3.bog-amendment-is-funding-authority` is **retire
++ follow up** (his Follow up click was lost to the frozen-echo bug — see the
+lane file — and he may press it again on the fixed sheet), and his Yes on
+`3.nc-funding-targeted-plus-advisory-column` is **retire** (*"Yes to mean means
+that I agree it is no longer true"*). He held
+`3.nc-equalization-floor-plus-factor` until that was clarified; read the store
+for it. Then execute, exactly as S229's handoff laid out:
 
 - **Item 1 (the 352 promotions):** yes → `UPDATE cpl_memory SET
   status='verified', verified_by=<verified_by_if_promoted>, verified_at=now()

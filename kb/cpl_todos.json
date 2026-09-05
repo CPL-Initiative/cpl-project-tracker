@@ -8,13 +8,13 @@
       "id": "s229-sam-memory-sheet",
       "for": "Sam",
       "tab": "memory",
-      "text": "The memory audit sheet takes your replies on the page now: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217 (kept in the repo as docs/visuals/2026-09-05-memory-audit-verdicts.html). Under each of the 43 items, each of the 76 memories listed inside items 2 and 3, and the 31 retired rows: a row of reply chips (Yes takes the recommendation), a Follow up toggle for anything you want the session to come back to whatever the verdict, and a note for what a word cannot carry. Your replies save to the sheet itself; the next session reads them from there. Item 1 is the one large call, the 352 entries that passed with evidence."
+      "text": "The memory audit sheet takes your replies on the page now: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217 (kept in the repo as docs/visuals/2026-09-05-memory-audit-verdicts.html). Under each of the 43 items, each of the 76 memories listed inside items 2 and 3, and the 31 retired rows: a row of reply chips (Yes takes the recommendation; under a memory the first chip names the action, Verify or Retire), a Follow up toggle for anything you want the session to come back to whatever the verdict, and a note for what a word cannot carry. The line under each reply says what was saved. Your replies save to the sheet itself; the next session reads them from there. Item 1 is the one large call, the 352 entries that passed with evidence."
     },
     {
       "id": "s229-fable-execute-verdicts",
       "for": "Fable",
       "tab": "memory",
-      "text": "Read Sam's replies from the sheet's store first (Artifact read_db, collection replies: item, ref, verdict, note, follow-up), then execute them from kb/memory_audit/2026-09-05-receipt.json: the held promotions first, then the human-sourced rows he rules on, then the hygiene fixes; every item flagged Follow up goes on this feed with his note. One guarded statement per batch, keyed on id, one log row per change, never delegated. Then re-run the memory lint and update the lane file's counts."
+      "text": "Read Sam's replies from the sheet's store first (Artifact read_db, collection replies: item, ref, verdict, note, follow-up; a verdict of yes on a memory, saved before the relabel, is the batch's recommendation for it, and Sam's in-chat replies of 2026-09-05 on the Board amendment and the $1 million noncredit memories count too), then execute them from kb/memory_audit/2026-09-05-receipt.json: the held promotions first, then the human-sourced rows he rules on, then the hygiene fixes; every item flagged Follow up goes on this feed with his note. One guarded statement per batch, keyed on id, one log row per change, never delegated. Then re-run the memory lint and update the lane file's counts."
     },
     {
       "id": "s230-sam-drive-skyview",

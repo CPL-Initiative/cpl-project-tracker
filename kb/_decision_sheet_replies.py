@@ -33,8 +33,15 @@ CHIPS_GROUP = ["Yes", "Keep", "Later"]
 CHIPS_DONE = ["Undo"]
 
 
-CHIPS_ENTRY_VERIFY = ["Yes", "Hold out", "Rewrite", "Later"]
-CHIPS_ENTRY_RETIRE = ["Yes", "Keep", "Later"]
+# Under a single memory the first chip NAMES the batch's action instead of
+# saying Yes. Sam, 2026-09-05, on "Keep the $1 million noncredit funding…"
+# under a retire batch: "unclear if I am saying Yes to Keep $1M NC funding…
+# Or… Yes that it is no longer true." A memory's title is often itself a
+# claim, so a Yes beneath it reads both ways; Verify and Retire read one way.
+# (Replies saved before this change carry v="yes": on an entry that is the
+# batch's recommendation for that memory, exactly as Verify or Retire now say.)
+CHIPS_ENTRY_VERIFY = ["Verify", "Hold out", "Rewrite", "Later"]
+CHIPS_ENTRY_RETIRE = ["Retire", "Keep", "Later"]
 
 
 def replies_block(item, ref="", chips=None, title="", compact=False, kind="item", parent=""):
@@ -44,8 +51,8 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
     words offered, Yes first; `kind` is item / entry / done, `parent` the item
     an entry belongs to. Sam, 2026-09-05: "I need the response controls on each
     memory, not just on the whole batch" — an entry block sits under every
-    memory a batch item lists, and Yes there means the batch's recommendation
-    for that one memory."""
+    memory a batch item lists, and its first chip names the batch's action for
+    that one memory (Verify, Retire) rather than saying Yes."""
     chips = list(chips or CHIPS_DEFAULT)
     n = str(item)
     btns = "".join(
@@ -68,10 +75,11 @@ def replies_block(item, ref="", chips=None, title="", compact=False, kind="item"
 
 
 REPLIES_HOWTO = (
-    '<p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation '
-    '(on a single memory, the batch\'s recommendation for that one); Hold out and Rewrite keep a memory back from a batch verdict; '
+    '<p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. '
+    'Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word '
+    'says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. '
     'Follow up marks an item the session should come back to whatever the verdict; the note '
-    'is for anything a word cannot carry. On the artifact your replies save to the sheet itself '
+    'is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself '
     'and the session reads them from there. Opened anywhere else they stay in this browser, and '
     '<em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p>')
 
@@ -129,29 +137,54 @@ def replies_js(sheet_id):
     return r"""
 <script>
 (function(){
+  "use strict";
   var SHEET = %s;
   var LS = "sheet-replies:" + SHEET;
   var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
   if (!els.length) return;
-  var state = {};        // item -> {item, ref, title, v, note, fu, t}
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
   var col = null;        // the artifact's shared store, once this view can reach it
   var where = "local";   // "db" once the store answers
-  var pending = {};
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
 
   function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
   function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
   function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
   function rec(item){
-    if (state[item]) return state[item];
+    if (state[item]) return copy(state[item]);
     var el = byItem(item);
     return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
   }
   function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
-  function stateWords(item, r){
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
     if (empty(r)) return "";
     if (pending[item] === "saving") return "Saving…";
     if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
-    return where === "db" ? "Saved to the sheet." : "Saved in this browser only — use Copy replies to send it.";
+    var w = words(el, r);
+    return where === "db" ? "Saved to the sheet: " + w + "." : "Saved in this browser only: " + w + ". Use Copy replies to send it.";
   }
   function paint(el){
     if (!el) return;
@@ -162,11 +195,11 @@ def replies_js(sheet_id):
     var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
     var note = el.querySelector(".reply-note");
     if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
-    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(item, r);
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
   }
   function paintAll(){ els.forEach(paint); bar(); }
   function set(item, patch){
-    var r = rec(item); for (var k in patch) r[k] = patch[k];
+    var r = rec(item); for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
     r.t = new Date().toISOString();
     state[item] = r; keep();
     paint(byItem(item)); bar(); push(item);
@@ -174,9 +207,13 @@ def replies_js(sheet_id):
   function push(item){
     if (!col) return;
     var r = state[item]; if (!r) return;
+    var t = r.t;
     pending[item] = "saving"; paint(byItem(item));
-    col.doc(item).set(r).then(function(){ pending[item] = ""; paint(byItem(item)); bar(); },
-                          function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
   }
 
   /* ── the bar: how many, where they are, the line to paste ── */
@@ -211,11 +248,11 @@ def replies_js(sheet_id):
       : "Replies stay in this browser until you copy them into the session.";
     var t = document.getElementById("reply-line"); if (t) t.value = line();
   }
-  var copy = document.getElementById("reply-copy");
-  if (copy) copy.addEventListener("click", function(){
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
     var text = line(), done = function(ok){
-      copy.textContent = ok ? "Copied" : "Select the line below and copy it";
-      setTimeout(function(){ copy.textContent = "Copy replies"; }, 2200);
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
       if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
     };
     try {
@@ -257,10 +294,17 @@ def replies_js(sheet_id):
           var r = d.data(); if (!r || !r.item) return;
           seen[r.item] = 1;
           var cur = state[r.item];
-          if (!cur || String(r.t || "") >= String(cur.t || "")) state[r.item] = r;
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
         });
-        // Anything this browser holds that the sheet does not: send it up once.
-        Object.keys(state).forEach(function(item){ if (!seen[item] && !pending[item] && !empty(state[item])) push(item); });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
         keep(); paintAll();
       }, function(){ where = "local"; col = null; paintAll(); });
       paintAll();

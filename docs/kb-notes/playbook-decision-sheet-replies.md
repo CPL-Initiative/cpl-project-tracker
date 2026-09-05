@@ -9,8 +9,10 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_memory_tab_lessons]]"
   - "[[docs/kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap]]"
+  - "[[docs/kb-notes/methodology-a-stores-echo-is-not-your-state]]"
 artifacts:
   - kb/_decision_sheet_replies.py
+  - tests/decision_sheet_replies.test.js
   - docs/visuals/2026-09-05-memory-audit-verdicts.html
 ---
 
@@ -39,15 +41,28 @@ re-deriving it.
    independent of the verdict, and a free-text note. A pressed chip clears on
    a second press. Every control is a word. A memory inside a batch gets a
    compact block of its own, id `<item>.<reference>`, with chips read off the
-   batch's ask (Hold out and Rewrite keep one memory back from a verify
-   batch); an entry reply overrides the batch for that one memory.
+   batch's ask, and there the first chip NAMES the batch's action — **Verify**
+   under a verify batch, **Retire** under a retire batch — never Yes: a
+   memory's title is often itself a claim (*Keep the $1 million noncredit
+   funding…*), and a Yes beneath it reads both ways (Sam, 2026-09-05: *"unclear
+   if I am saying Yes to Keep $1M NC funding… Or… Yes that it is no longer
+   true"*). Hold out and Rewrite keep one memory back from a verify batch,
+   Keep holds one back from a retire batch; an entry reply overrides the batch
+   for that one memory. A reply saved before the relabel carries `v: "yes"`
+   on an entry: read it as the batch's recommendation for that memory.
 2. **The store is the artifact's own.** Publish with `capabilities: {db: {}}`.
    The page writes `replies/<item>` documents — `{item, ref, v, note, fu, t,
    kind, parent}` — where `ref` is what the session needs to act (a slug, an
    id, a class key), `kind` is item / entry / done, `parent` the batch an entry
    belongs to, and `t` the write time (last write wins). The session reads them with
    the Artifact tool: `read_db`, `db_op: list`, collection `replies`. Sessions
-   read; they never write a reply.
+   read; they never write a reply. ⚠️ **The page never keeps the store's
+   object.** A snapshot body is frozen, so the script copies it before it
+   becomes state and copies its own state before a write
+   ([[docs/kb-notes/methodology-a-stores-echo-is-not-your-state]]); the line
+   under each reply names what was saved, in words — *Saved to the sheet:
+   Retire, follow up.* — so a click that did not land is visible as words,
+   not only as a color.
 3. **No store, no loss.** Opened from the repo or the vault (`docs/visuals/` is
    pruned from the public site), the replies stay in that browser and the bar
    at the foot builds the numbered line — `3 yes · 4 keep, follow up — "…"` —
@@ -70,6 +85,16 @@ and nothing scrolls sideways on a phone. `read_db` on the freshly published
 artifact answered empty, which is the store existing. The artifact service
 refused the session's wake subscription (a session credential is required), so
 a reply wakes nobody: the next session reads the store on arrival, first.
+
+An hour after the sheet went out, Sam's clicks found two things the drive had
+not. A Follow up pressed after a verdict did not turn blue yet the page said
+it was saved: the store had echoed the first write back as a frozen body, the
+script had adopted that body as state, and every later assignment into it was
+silently ignored — the store showed memories with two to six writes all
+carrying the first write's timestamp. And under *Keep the $1 million
+noncredit funding…* a Yes could mean either the sentence or the verdict on it.
+Both were fixed the same day; the guard, `tests/decision_sheet_replies.test.js`,
+runs the committed sheet against a store stub that freezes what it delivers.
 
 ## When this applies (and when it doesn't)
 
