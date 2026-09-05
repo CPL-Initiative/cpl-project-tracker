@@ -20,11 +20,24 @@ function num(n){return (n==null?0:n).toLocaleString("en-US");}
 
 var FOLD=["Beginning ESL","Intermediate ESL","Advanced ESL"];
 
+/* Since 2026-09-05 the proposal is a toggle of the workspace (Sam's item 7:
+ * fold ESL packaging into the one tab rather than leaving it a door), so it
+ * renders INTO a host the workspace owns. Embedded, its headings step down one
+ * level under the workspace's h1 and the bucket pages come back to it with a
+ * button rather than a crumb. Stand-alone rendering is kept for a build with no
+ * universe payload, where there is no workspace to embed in. */
 window.__ccrEsl = function(){
+  if(typeof window.__ccrWorkspace==="function" && window.CPL_CCR_UNIVERSE) return window.__ccrWorkspace("esl");
+  return window.__ccrEslInto(document.getElementById("view"), {});
+};
+window.__ccrEslInto = function(view, opts){
+  opts=opts||{};
   var D = window.CPL_ATLAS_ESL;
-  var view = document.getElementById("view");
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},
-                   {label:"ESL packaging proposal"}]);
+  if(!D || !view) return;
+  var embedded=!!opts.embedded;
+  var H1=embedded?"h2":"h1", H2=embedded?"h3":"h2";
+  if(!embedded) window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},
+                                 {label:"ESL packaging proposal"}]);
 
   var t=D.totals, B=D.buckets;
   var foldTotal = FOLD.reduce(function(a,b){return a+B[b].would_fold;},0);
@@ -32,7 +45,7 @@ window.__ccrEsl = function(){
   var medTotal  = FOLD.reduce(function(a,b){return a+(B[b].confidence.medium||0);},0);
 
   var h=[];
-  h.push("<h1>What packaging ESL would actually do</h1>");
+  h.push("<"+H1+">What packaging ESL would actually do</"+H1+">");
   h.push('<div class="lede"><p><strong>'+num(foldTotal)+' course identities</strong> — carrying <strong>'+
     num(localTotal)+' local college courses</strong> — would fold into <strong>three</strong>. '+
     'That is the packaging move, and it is the only mechanism that reaches a 2,500-course catalog: '+
@@ -53,10 +66,10 @@ window.__ccrEsl = function(){
          '<div class="hint">Circle area = local college courses landing there. '+
          'The wedge is the share that arrived on a <strong>medium-confidence</strong> signal.</div></div>');
 
-  h.push('<h2 style="margin-top:24px">The three comprehensives</h2>');
+  h.push('<'+H2+' style="margin-top:24px">The three comprehensives</'+H2+'>');
   h.push('<div class="decks" id="esl-decks"></div>');
 
-  h.push('<h2 style="margin-top:24px">The carve-outs — what escapes the fold</h2>');
+  h.push('<'+H2+' style="margin-top:24px">The carve-outs — what escapes the fold</'+H2+'>');
   h.push('<p>These keep their own identity. The transfer-level bucket is the one to look at: '+
          'the plan flagged it for individual confirmation because it awards <em>real transferable '+
          'credit</em>, and most of it was folded by automation before anyone reviewed it.</p>');
@@ -90,7 +103,7 @@ window.__ccrEsl = function(){
   }).join("");
 
   Array.prototype.forEach.call(view.querySelectorAll(".deck"), function(btn){
-    btn.addEventListener("click", function(){ bucket(btn.dataset.b); });
+    btn.addEventListener("click", function(){ bucket(btn.dataset.b, view, embedded); });
   });
 };
 
@@ -137,13 +150,17 @@ function drawFold(B, foldTotal){
 }
 
 /* one bucket — the spot-check list, medium confidence first */
-function bucket(name){
-  var D=window.CPL_ATLAS_ESL, v=D.buckets[name], view=document.getElementById("view");
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},
-                   {label:"ESL packaging proposal", go:window.__ccrEsl},
-                   {label:name}]);
+function bucket(name, host, embedded){
+  var D=window.CPL_ATLAS_ESL, v=D.buckets[name], view=host||document.getElementById("view");
+  if(!embedded) window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},
+                                 {label:"ESL packaging proposal", go:window.__ccrEsl},
+                                 {label:name}]);
+  var H1=embedded?"h2":"h1";
   var med=v.confidence.medium||0;
-  var h=["<h1>"+esc(name)+"</h1>"];
+  var h=[];
+  // Embedded there is no crumb to lead back, so the way back is a button.
+  if(embedded) h.push('<p><button class="btn" type="button" id="esl-back">Back to the proposal</button></p>');
+  h.push("<"+H1+">"+esc(name)+"</"+H1+">");
   if(v.is_carveout){
     h.push("<p><strong>"+num(v.still_standing)+" of "+num(v.planned)+
       "</strong> still stand as their own identity. "+num(v.already_curated)+
@@ -174,6 +191,8 @@ function bucket(name){
   h.push('<p class="empty">Showing '+num(shown)+" of "+num(tot)+
          " — medium confidence first. The full list is in the committed receipt.</p>");
   view.innerHTML=h.join("");
+  var back=document.getElementById("esl-back");
+  if(back) back.onclick=function(){ window.__ccrEslInto(view, {embedded:true}); };
 }
 function sigWord(s){
   return ({"word":"a level word in the title",

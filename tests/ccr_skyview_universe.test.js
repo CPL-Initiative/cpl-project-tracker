@@ -145,30 +145,37 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(A) ⭐ the controls sit above the canvas and the legend and hint below it — nothing floats over the map",
     !!q("#u-top #u-bar") && !q("#u-wrap #u-bar") && !!q("#u-foot .u-legend") && !!q("#u-foot #u-hint") && !q("#u-wrap .u-legend"));
   check("(A) ⭐ the other views are one click away inside the full-screen element",
-    !!q("#u-full #u-nav-forest") && /All disciplines/.test(text("#u-nav-forest")) && /Disciplines as a list/.test(text("#u-list")));
+    !!q("#u-full #u-nav-forest") && /By discipline/.test(text("#u-nav-forest")) &&
+    !!q("#u-full #u-nav-subject") && /By subject/.test(text("#u-nav-subject")) &&
+    !!q("#u-full #u-nav-comp") && /Comprehensive view/.test(text("#u-nav-comp")),
+    qa("#u-views-menu .linkish, #u-views-menu .u-views-here").map((e) => e.textContent).join(" | "));
   /* Sam, 2026-09-04, item 2: "I meant CCR List View." That view is COBI's Common
      Course Reference tab, not anything in this prototype — so it is a link OUT,
      and it must be an anchor with a real href rather than a button that would
      need script this page does not have. */
-  check("(A) ⭐ the CCR list view is one click away, as a real link out to COBI's tab",
+  check("(A) ⭐ the CCR list view is one click away, as a real link out to COBI's tab — to its LIST, since the tab lands on this map",
     !!q("#u-full #u-ccr-list") && q("#u-ccr-list").tagName === "A" &&
-    /index\.html#unified-courses/.test(q("#u-ccr-list").getAttribute("href")) &&
+    /index\.html#unified-courses\/list$/.test(q("#u-ccr-list").getAttribute("href")) &&
     q("#u-ccr-list").getAttribute("target") === "_blank" &&
     /noopener/.test(q("#u-ccr-list").getAttribute("rel") || "") &&
     /CCR table view/.test(text("#u-ccr-list")),
     q("#u-ccr-list") ? q("#u-ccr-list").outerHTML.slice(0, 120) : "∅");
-  /* ⚠️ Inside COBI the CCR tab IS the page this map is framed in, so the link
-     would open the page the reader is already on. jsdom cannot frame the page,
-     so the guard is asserted at the source — deleting it is the failure mode,
-     and the same `remove()` pattern already governs the ESL link. */
-  check("(A) ⭐ the CCR link removes itself when this map is the iframe inside that very tab",
-    /window\.top!==window\.self\) cl\.remove\(\)/.test(ujs));
-  /* One word, and it stops looking like a different grain: the list view maps
-     U.islands and reads I.d — the DISCIPLINE name — while COBI spends "subject"
-     on SUBJ4 codes in its own Common Subjects Reference tab. */
-  check("(A) ⭐ the list view calls its rows disciplines, not subjects",
+  /* ⚠️ Inside COBI the CCR tab IS the page this map is framed in, so a link out
+     would open the page the reader is already on. Framed, the item is a BUTTON
+     that posts to the page around the frame (unified_courses.js listens and
+     swaps the frame for the list), and the close does the same. jsdom cannot
+     frame the page, so the mechanism is asserted at the source — deleting
+     either branch is the failure mode. */
+  check("(A) ⭐ framed inside that very tab, the CCR item and the close hand off to the page around the frame",
+    /if\(framed\(\)\)\{[\s\S]{0,240}id="u-ccr-list"/.test(ujs) && /tellParent\("list"\)/.test(ujs) &&
+    /tellParent\("close"\)/.test(ujs) && /postMessage\(\{type:"skyview", action:action\}/.test(ujs));
+  /* One word, and it stops looking like a different grain: an island is a
+     DISCIPLINE, while COBI spends "subject" on SUBJ4 codes in its Common
+     Subjects Reference tab — the grain the workspace's By subject view now
+     carries. So nothing rendered may call an island a subject any more. */
+  check("(A) ⭐ nothing rendered calls a discipline a subject",
     !/id="u-list">Subjects as a list/.test(ujs) && !/<h1>Every subject area<\/h1>/.test(ujs) &&
-    /<h1>Every discipline<\/h1>/.test(ujs) && /kindWord:"discipline"/.test(ujs));
+    !/setHint\("Subject <strong>"\+esc\((I|pick)\.d\)/.test(ujs) && /kindWord:"discipline"/.test(ujs));
   check("(A) ⭐ Pan and Move are word chips, Move pressed by default",
     /^Pan$/.test(text("#u-mode-pan").trim()) && /^Move$/.test(text("#u-mode-move").trim())
     && q("#u-mode-move").getAttribute("aria-pressed") === "true" && st().mode === "move");
@@ -210,8 +217,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // controls · close. The four inline view links became ONE <details> menu
   // because a title, a search and nine controls do not share a row with them.
   check("(A) ⭐ title, menu, search, controls and close share ONE row inside #u-top",
-    ["u-title","u-views","u-search-slot","u-bar","u-close"].every((id) =>
-      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")),
+    ["u-title","u-views-slot","u-search-slot","u-bar","u-close"].every((id) =>
+      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")) && !!q("#u-views-slot > #u-views"),
     [...q("#u-top").children].map((e) => e.id).join(" | "));
   check("(A) ⭐ the view links live in the menu, not loose in the row",
     !q("#u-top > .linkish") && qa("#u-views-menu .linkish").length >= 3,
@@ -383,8 +390,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // ── (B) leaving and returning takes the full-bleed frame down and back up ──
   w.__ccrForest();
   check("(B) another view removes the full-bleed frame", !q("#main.u-fullbleed") && !q("#u-cvs"));
-  check("(B) the stand-alone forest keeps its own 'Open the map' door and its filter",
-    !!q("#go-universe") && !!q("#q"));
+  check("(B) ⭐ 'All disciplines' is the workspace now: By discipline pressed, a filter, a way back to SkyView, and the solo frame down",
+    !!q("#ws-sky") && !!q("#ws-q") && q("#ws-discipline").getAttribute("aria-pressed") === "true" && !d.body.classList.contains("u-solo"));
   w.__ccrUniverse();
   check("(B) coming back restores the map and the frame", !!q("#u-cvs") && !!q("#main.u-fullbleed"));
 
@@ -418,7 +425,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(D) ⭐ searching a college course code from the header box finds its identity",
     st().sel === "WELD C1000" && st().hits === 1, `sel=${st().sel} hits=${st().hits}`);
   w.__ccrUniverseSearch("welding");
-  check("(D) a subject name still wins over course titles", /^\s*Subject/.test(text("#u-hint")) && /Welding/.test(text("#u-hint")));
+  check("(D) a discipline's name still wins over course titles — and the hint calls it a discipline", /^\s*Discipline/.test(text("#u-hint")) && /Welding/.test(text("#u-hint")));
 
   // ── (E) the inspector on a stand-alone: the orbit, the why, the verb ───────
   w.__ccrGoSuggestion({ kind: "course", isl: PU.islands[0], nd: PU.islands[0].p[2], label: "x" });
@@ -655,10 +662,100 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   // ── (T) the links in the strip reach the other views ──────────────────────
   // Sam, 2026-09-03: "will need links on full screen to navigate to the other views".
+  q("#gq").value = "weld";
   q("#u-nav-forest").click();
-  check("(T) ⭐ 'All disciplines' in the strip leaves the map for the forest", !q("#u-cvs") && !!q("#go-universe"));
+  check("(T) ⭐ 'By discipline' in the menu leaves the map for the workspace, seeded from the search box",
+    !q("#u-cvs") && !!q("#ws-rows") && st().curView === "disciplines" && q("#ws-q").value === "weld", q("#ws-q") ? q("#ws-q").value : "∅");
+  check("(T) the ESL toggle is absent when there is no ESL payload (never a door onto nothing)", !q("#ws-esl") && !q("#crumbs-views #u-nav-esl"));
   w.__ccrUniverse();
-  check("(T) the ESL door is removed when there is no ESL payload (never a door onto nothing)", !q("#u-nav-esl") && !!q("#u-nav-forest"));
+  check("(T) …and so is the ESL menu item on the map", !q("#u-nav-esl") && !!q("#u-nav-forest"));
+
+  // ── (U) SkyView alone by default; the comprehensive view one click away ────
+  // Sam, 2026-09-05: "The full screen SkyView … I would like to henceforth refer
+  // to as SkyView … I'd like to have an option to navigate to the comprehensive
+  // SkyView (the current one), but I don't want it to open by default."
+  check("(U) ⭐ the map opens ALONE: body.u-solo is on and the hash says so",
+    d.body.classList.contains("u-solo") && st().solo && w.location.hash === "#skyview", w.location.hash);
+  check("(U) ⭐ the menu names the view you are on and offers the others",
+    /SkyView/.test(text("#u-views-menu .u-views-here")) && !q("#u-nav-sky") && !!q("#u-nav-comp") &&
+    !!q("#u-nav-forest") && !!q("#u-nav-subject"), text("#u-views-menu"));
+  check("(U) the CSS takes the masthead, the crumbs, the panes and the footer out of the solo frame",
+    /body\.u-solo \.mast,body\.u-solo \.crumbrow,body\.u-solo #u-below,body\.u-solo main>footer\{display:none\}/.test(tpl));
+  const cvsBefore = q("#u-cvs"), movesBefore = st().moves.length;
+  q("#u-nav-comp").click();
+  check("(U) ⭐ the comprehensive view is the SAME canvas with the panes shown — no re-render, the moves kept",
+    q("#u-cvs") === cvsBefore && !d.body.classList.contains("u-solo") && st().curView === "comprehensive" &&
+    st().moves.length === movesBefore && w.location.hash === "#comprehensive", `${w.location.hash} moves=${st().moves.length}/${movesBefore}`);
+  check("(U) …and now the menu offers SkyView instead",
+    !!q("#u-nav-sky") && !q("#u-nav-comp") && /Comprehensive view/.test(text("#u-views-menu .u-views-here")));
+  q("#u-nav-sky").click();
+  check("(U) SkyView comes back alone, on the same canvas",
+    d.body.classList.contains("u-solo") && q("#u-cvs") === cvsBefore && w.location.hash === "#skyview");
+  w.__ccrUniverse();
+  check("(U) a bare __ccrUniverse() keeps the frame you were in", st().solo === true && q("#u-cvs") === cvsBefore);
+
+  // ── (V) the hash names the view; a reload comes back to it ────────────────
+  w.history.replaceState(null, "", "#subjects"); w.__ccrRoute();
+  check("(V) ⭐ #subjects routes to the workspace on the subject grain",
+    !!q("#ws-rows") && q("#ws-subject").getAttribute("aria-pressed") === "true" && st().curView === "subjects");
+  w.history.replaceState(null, "", "#comprehensive"); w.__ccrRoute();
+  check("(V) #comprehensive routes to the map with the panes", !!q("#u-cvs") && !d.body.classList.contains("u-solo"));
+  w.history.replaceState(null, "", "#nonsense"); w.__ccrRoute();
+  check("(V) anything else is SkyView alone, and the hash is corrected",
+    !!q("#u-cvs") && d.body.classList.contains("u-solo") && w.location.hash === "#skyview", w.location.hash);
+
+  // ── (W) the workspace: disciplines, subjects and ESL packaging on ONE tab ──
+  // Sam's items 6-9 (2026-09-04), restated 2026-09-05: "one tab with toggles to
+  // switch views and a link back to full screen skyview." His "subject" is the
+  // SUBJ4 grain — WELD, ARTS — not the island.
+  w.__ccrWorkspace("discipline");
+  const td = (row, i) => qa("#ws-rows tr")[row] ? qa("#ws-rows tr")[row].children[i].textContent.trim() : "∅";
+  check("(W) ⭐ one tab: one h1, a line explaining the two grains, a toggle with the ESL door this fixture lacks left out",
+    text("h1").trim() === "Disciplines and subjects" && /four-letter Common SUBJ/.test(text(".ws-lede")) &&
+    qa(".ws-seg .btn").map((b) => b.textContent).join("|") === "By discipline|By subject" && !q("#ws-esl"),
+    qa(".ws-seg .btn").map((b) => b.textContent).join("|"));
+  check("(W) ⭐ the borrowed search goes home when the workspace opens — one field, in the masthead",
+    !!q(".mast #msearch") && qa("input[type=search]#gq").length === 1);
+  check("(W) the Views menu rides the crumbs row here, naming By discipline as the view you are on",
+    !!q("#crumbs-views #u-views") && /By discipline/.test(text("#crumbs-views .u-views-here")) && !!q("#crumbs-views #u-nav-sky"));
+  check("(W) ⭐ By discipline lists every island, biggest first, with the map's counts and the atlas's decision count",
+    qa("#ws-rows tr").length === 2 && td(0, 0) === "Welding" && td(0, 2) === "2" && td(0, 3) === "2" && td(0, 4) === "1" &&
+    td(1, 0) === "Art" && td(1, 4) === "0", text("#ws-rows"));
+  check("(W) ⭐ the Common SUBJ column carries the seed: the code, the authority chip and 'proposed'",
+    /WELD/.test(td(0, 1)) && /C-ID WLDT/.test(td(0, 1)) && /proposed/.test(td(0, 1)) && /ARTS/.test(td(1, 1)) && /the C-ID code/.test(td(1, 1)), td(0, 1) + " | " + td(1, 1));
+  check("(W) every row can open on the map, and no row offers decisions this fixture does not have",
+    qa("#ws-rows [data-map]").length === 2 && qa("#ws-rows [data-work]").length === 0);
+  q("#ws-q").value = "art"; q("#ws-q").dispatchEvent(new w.Event("input", { bubbles: true }));
+  check("(W) the filter narrows the rows and says how many of how many", qa("#ws-rows tr").length === 1 && /1 of 2 disciplines match/.test(text("#ws-count")), text("#ws-count"));
+  q("#ws-q").value = "zzz"; q("#ws-q").dispatchEvent(new w.Event("input", { bubbles: true }));
+  check("(W) an empty result says so rather than showing an empty table", /Nothing matches/.test(text("#ws-rows")));
+  q("#ws-q").value = ""; q("#ws-q").dispatchEvent(new w.Event("input", { bubbles: true }));
+  qa("#ws-rows [data-map]")[0].click();
+  check("(W) ⭐ 'On the map' opens SkyView on that discipline at 150%",
+    !!q("#u-cvs") && /Welding/.test(text("#u-detail h3")) && Math.abs(st().view.k - 1.5) < 1e-9, `k=${st().view.k}`);
+  w.__ccrWorkspace("subject");
+  check("(W) ⭐ By subject is the SUBJ4 grain read off the ids: WELD (2 identities, 2 stand-alones) then ARTS (1, 1)",
+    qa("#ws-rows tr").length === 2 && td(0, 0) === "WELD" && td(0, 2) === "2" && td(0, 3) === "2" && td(1, 0) === "ARTS" && td(1, 2) === "1" && td(1, 3) === "1",
+    text("#ws-rows"));
+  check("(W) ⭐ a subject names its discipline and its standing — WELD is Welding's Common SUBJ, chip and all",
+    /Welding/.test(td(0, 1)) && /the Common SUBJ of Welding/.test(td(0, 4)) && /C-ID WLDT/.test(td(0, 4)), td(0, 4));
+  check("(W) the subject index is exported and agrees", (() => {
+    const ix = w.__ccrSubjectIndex();
+    return ix.WELD && ix.WELD.n === 2 && ix.WELD.sa === 2 && ix.WELD.home === "Welding" && ix.ARTS && ix.ARTS.home === "Art";
+  })());
+  q("#ws-q").value = "weld"; q("#ws-q").dispatchEvent(new w.Event("input", { bubbles: true }));
+  q("#ws-discipline").click();
+  check("(W) the toggle switches the grain and carries the filter across",
+    q("#ws-discipline").getAttribute("aria-pressed") === "true" && q("#ws-q").value === "weld" && qa("#ws-rows tr").length === 1 && w.location.hash === "#disciplines",
+    `${q("#ws-q") && q("#ws-q").value} rows=${qa("#ws-rows tr").length} ${w.location.hash}`);
+  w.__ccrWorkspace("subject");
+  qa("#ws-rows [data-subj]")[0].click();
+  check("(W) ⭐ 'On the map' for a subject flies to its discipline at 150% and rings its identities",
+    !!q("#u-cvs") && /Welding/.test(text("#u-detail h3")) && st().hits === 2 && Math.abs(st().view.k - 1.5) < 1e-9 &&
+    /Subject <strong>WELD/.test(q("#u-hint").innerHTML) && /ringed/.test(text("#u-hint")), `hits=${st().hits} k=${st().view.k} ${text("#u-hint")}`);
+  w.__ccrWorkspace("discipline");
+  check("(W) 'Back to SkyView' is a word, and lands on the map alone",
+    q("#ws-sky").textContent.trim() === "Back to SkyView" && (q("#ws-sky").click(), d.body.classList.contains("u-solo") && !!q("#u-cvs")));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

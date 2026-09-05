@@ -260,6 +260,15 @@ module.exports = {
   skyview: {
     file: "prototype/skyview.html",
     title: "SkyView — the Common Course Reference as a map",
+    /* The hash names the view (ccr_universe.js __ccrRoute): the map alone,
+       the map with its panes, and the workspace's three toggles. */
+    routes: [
+      { hash: "skyview", name: "skyview" },
+      { hash: "comprehensive", name: "comprehensive" },
+      { hash: "disciplines", name: "disciplines" },
+      { hash: "subjects", name: "subjects" },
+      { hash: "esl", name: "esl" },
+    ],
     widths: [390, 768, 1440],
     mayHideBelow: [
       // The detail panel opens hidden by design (Sam, 2026-09-04: "I want all

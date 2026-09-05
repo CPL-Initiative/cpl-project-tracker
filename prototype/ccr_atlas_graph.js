@@ -164,7 +164,7 @@ window.__ccrDecision = function(discName, i){
   }
 
   window.__crumbs([
-    {label:"All disciplines", go:window.__ccrForest},
+    {label:"Disciplines and subjects", go:window.__ccrForest},
     {label:discName, go:function(){ window.__ccrDiscipline(discName); }},
     {label:"Decision "+(i+1)}
   ]);

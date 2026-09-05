@@ -52,7 +52,7 @@ function paneHtml() {
 function boot(opts) {
   opts = opts || {};
   const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body>${paneHtml()}</div></body></html>`,
-    { runScripts: "outside-only", url: "https://example.org/" });
+    { runScripts: "outside-only", url: "https://example.org/" + (opts.hash || "") });
   const { window } = dom;
   const loaded = [];
   window.CPL_TABS = {
@@ -152,6 +152,57 @@ const attr = (w, sel, a) => { const e = q(w, sel); return e ? (e.getAttribute(a)
     check("(F) re-activating the tab does not stack shells",
       w.document.querySelectorAll(".uc-viewseg").length === 1);
     check("(F) …nor stack iframes", w.document.querySelectorAll("#uc-map-pane iframe").length === 1);
+  }
+
+  // ── (G) map mode is the whole tab ────────────────────────────────────────
+  // Sam, 2026-09-05: "Make sure the CCR menu button opens the full screen
+  // SkyView, not the version it currently opens to. I've made several requests
+  // for this so far and none of them have worked." What the tab SHOWED never
+  // changed across those attempts: a boxed frame under a banner, a heading, a
+  // toggle row and a note. Map mode now hides that chrome and sizes the frame
+  // to the viewport; the frame's own close and "CCR table view" post back.
+  {
+    const w = boot();
+    w.__activate();
+    const pane = q(w, "#tab-unified-courses");
+    check("(G) ⭐ map mode marks the pane, so the CSS can take the tab's chrome away", pane.classList.contains("uc-map-on"));
+    // Read the INJECTED sheet, not the source: the rule is assembled from
+    // several strings, and the sheet is what the browser applies.
+    const css = (q(w, "#uc-viewseg-css") || {}).textContent || "";
+    check("(G) ⭐ the CSS hides the banner, the heading and the toggle row, and lifts the container's padding and width cap",
+      /#tab-unified-courses\.uc-map-on > \.main-container\{max-width:none;padding:0;\}/.test(css) &&
+      /#tab-unified-courses\.uc-map-on \.uc-beta-banner,#tab-unified-courses\.uc-map-on \.uc-head,#tab-unified-courses\.uc-map-on \.uc-viewseg\{display:none;\}/.test(css),
+      css.slice(0, 200));
+    check("(G) the frame is sized to what the viewport has left, not boxed at calc(100vh - 200px)",
+      !/calc\(100vh - 200px\)/.test(src) && /function sizeMapFrame/.test(src) && /border:0/.test(src));
+    check("(G) the note above the frame is gone", !q(w, "#uc-map-note") && !/uc-map-note/.test(src));
+    w.CPL_CCR_VIEW.set("list");
+    check("(G) the list takes the chrome back", !pane.classList.contains("uc-map-on"));
+    w.CPL_CCR_VIEW.set("map");
+    const f = q(w, "#uc-map-pane iframe");
+    if (f && f.contentWindow) {
+      w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: "close" }, source: f.contentWindow }));
+      check("(G) ⭐ SkyView's close, posted from the frame, swaps the frame for the list", w.CPL_CCR_VIEW.current() === "list");
+      w.CPL_CCR_VIEW.set("map");
+      w.dispatchEvent(new w.MessageEvent("message", { data: { type: "skyview", action: "list" }, source: w }));
+      check("(G) …and the same message from anywhere else is ignored", w.CPL_CCR_VIEW.current() === "map");
+    } else {
+      check("(G) the frame has a window to post from in this harness", false, "no contentWindow — the source check cannot be exercised");
+    }
+    check("(G) the listener honors only our frame, at the source", /e\.source !== f\.contentWindow\) return;/.test(src));
+  }
+
+  // ── (H) #unified-courses/list lands on the list ──────────────────────────
+  // SkyView's "CCR table view" link out points here: the tab itself lands on
+  // the map, so a link to the bare tab would open another copy of the map.
+  {
+    const w = boot({ hash: "#unified-courses/list" });
+    w.__activate();
+    check("(H) ⭐ the /list hash opens the table", w.CPL_CCR_VIEW.current() === "list");
+    w.CPL_CCR_VIEW.set("map");
+    check("(H) …and switching to the map drops the /list from the hash", w.location.hash === "#unified-courses", w.location.hash);
+    w.CPL_CCR_VIEW.set("list");
+    check("(H) …and the list puts it back", w.location.hash === "#unified-courses/list", w.location.hash);
   }
 
   let pass = 0;
