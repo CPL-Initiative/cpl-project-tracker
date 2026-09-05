@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-75 document(s).
+76 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -83,6 +83,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Sierra credential naming & the route map — lessons](../sierra_credential_naming_lessons.md) | `sierra_credential_naming_lessons.md` | 2026-08-10 | 2026-08-10 |
 | [Sierra credit recommendations & false absences — workstream lessons](../sierra_credit_recs_lessons.md) | `sierra_credit_recs_lessons.md` | 2026-08-13 | 2026-08-13 |
 | [Sierra rules as data — lessons](../sierra_rules_lessons.md) | `sierra_rules_lessons.md` | 2026-08-14 |  |
+| [SkyView / CCR Atlas lessons — archive](../ccr_atlas_lessons_archive.md) | `ccr_atlas_lessons_archive.md` | 2026-09-05 | 2026-09-05 |
 | [Statewide Exhibits KPI card + KPI grid UX — lessons](../statewide_kpi_lessons.md) | `statewide_kpi_lessons.md` | 2026-06-11 |  |
 | [Student-detail load — lessons](../student_detail_load_lessons.md) | `student_detail_load_lessons.md` | 2026-08-08 |  |
 | [SUBJ4 Canonicalization Re-Mint — Decisions & Lessons (Phase 1e)](../subj4_canonicalization_remint_lessons.md) | `subj4_canonicalization_remint_lessons.md` | 2026-05-23 |  |

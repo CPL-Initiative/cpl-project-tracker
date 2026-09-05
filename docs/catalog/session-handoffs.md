@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-205 document(s).
+206 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 232 | [build the course outline, and find the agency skills](../session_232_handoff.md) | 2026-09-05 |
 | 231 | [read Sam's replies from the sheet's store, then drive his SkyView reactions](../session_231_handoff.md) | 2026-09-05 |
 | 230 | [the memory hopper was tested end to end; Sam's sheet replies are the queue](../session_230_handoff.md) | 2026-09-05 |
 | 229 | [SkyView is the map alone, the CCR menu opens it, the workspace has two grains; Sam's reactions are next](../session_229_handoff.md) | 2026-09-05 |
