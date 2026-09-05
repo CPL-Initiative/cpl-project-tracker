@@ -1,0 +1,61 @@
+{
+  "_status": "APPLIED 2026-09-05T22:42:45Z",
+  "_generated_by": "kb/_identities_rekey_dryrun.py",
+  "_rule": "Sam's ruling 5, 2026-09-05: the genuinely dead remainder is a worklist, never a silent drop.",
+  "_note": "These identities were REMOVED from kb/coci_articulations.json's identities map. Their articulation records are untouched and still name them, so nothing is lost: restoring one means fixing its key at the seed (kb/_seed_coci_articulations.py) and rebuilding.",
+  "count": 3,
+  "rows": [
+    {
+      "identity": "AG-AB 108 108",
+      "identity_system": "C-ID",
+      "title": null,
+      "discipline": null,
+      "colleges_offering": 19,
+      "articulation_records": 1,
+      "exhibits": [
+        "MAPCXS-A2CA-1-001"
+      ],
+      "credentials": [
+        "Agricultural Computer Applications"
+      ],
+      "why": "no alias map names it again and it is in no live catalog (minted courses, singletons, or the C-ID/CCN reference)",
+      "looks_malformed": true
+    },
+    {
+      "identity": "AG-PS 128 128 L",
+      "identity_system": "C-ID",
+      "title": null,
+      "discipline": null,
+      "colleges_offering": 25,
+      "articulation_records": 2,
+      "exhibits": [
+        "MAPCBES-CBEA2-1-001",
+        "MAPICN-BFFY-1-001"
+      ],
+      "credentials": [
+        "Biodynamic Farmer Foundation Year Certificate",
+        "Credit by Exam"
+      ],
+      "why": "no alias map names it again and it is in no live catalog (minted courses, singletons, or the C-ID/CCN reference)",
+      "looks_malformed": true
+    },
+    {
+      "identity": "NULL",
+      "identity_system": "C-ID",
+      "title": null,
+      "discipline": null,
+      "colleges_offering": 76,
+      "articulation_records": 2,
+      "exhibits": [
+        "MAPICI-C2CC-1-001",
+        "MAPPRI-WSTP-1-001"
+      ],
+      "credentials": [
+        "Cisco Networking Academy — Networking Essentials",
+        "Water Supply Technology"
+      ],
+      "why": "no alias map names it again and it is in no live catalog (minted courses, singletons, or the C-ID/CCN reference)",
+      "looks_malformed": true
+    }
+  ]
+}

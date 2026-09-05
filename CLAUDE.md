@@ -39,10 +39,12 @@ kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · `lanes/` (see the stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, triggered by their own
-`description` rather than by a pointer: **exhibit-canonicalization** (collapsing
-freehand MAP exhibit titles into unified credential names) and
-**obsidian-markdown**. They are named here because a store nobody names is a
-store nobody finds — `unreferenced_offload` flags any that stop being.
+`description` rather than by a pointer: **consult-doctrine** (what has this repo
+already decided about the files I am reading — the answer to a rule that only
+fires when remembered), **exhibit-canonicalization** (collapsing freehand MAP
+exhibit titles into unified credential names) and **obsidian-markdown**. They are
+named here because a store nobody names is a store nobody finds —
+`unreferenced_offload` flags any that stop being.
 
 ---
 
@@ -100,6 +102,18 @@ store nobody finds — `unreferenced_offload` flags any that stop being.
    one cron window) and every past re-mint are **PULL** — you read them when you
    are re-minting, which you already know you are doing:
    [`docs/reference/mid_lifecycle.md`](docs/reference/mid_lifecycle.md).
+
+   ⚠️ **RESOLVE A STORED ID THROUGH `kb/alias_chain.py` BEFORE YOU COMPARE IT TO
+   THE LIVE SET — and never restate the chain (Sam's ruling 8, 2026-09-05).**
+   PUSH because it fires *before* you know you need it: an id-keyed file read
+   with a direct lookup does not error, it just reports dead rows that are
+   alive. Measured 2026-09-05 — welding CR ids read 44% dead directly and **27%**
+   through the chain; articulation identities 36% vs **22%**. `kb/alias_chain.py`
+   holds the one `ALIAS_MAPS`, the one `resolve` (a map is a *simultaneous
+   permutation*: one lookup per map, in order, never iterated within a map) and
+   the one era guard; import them, never copy them. The chain was copy-pasted
+   once and the copy drifted to 7 maps against 15 under a comment promising
+   lockstep — `tests/alias_chain_single_source_test.py` fails that now.
 
    **TOP caveat — standing rule (2026-07-16).** TOP codes are faculty-entered
    in COCI during local curriculum approval with **no data-entry gatekeeper**,

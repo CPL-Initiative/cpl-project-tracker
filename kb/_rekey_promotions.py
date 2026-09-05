@@ -2,41 +2,13 @@
 """R1 of docs/official_id_fold_scope.md — re-key kb/promotions.json through the
 applied alias chain so Phase A/B official-ID fold evidence speaks CURRENT ids.
 
-RESOLUTION SEMANTICS (corrected 2026-06-11, Session 42 — read before editing):
+RESOLUTION SEMANTICS: kb/alias_chain.py is the single source for the chain,
+the resolver and the era guard — read ITS docstring before editing anything
+here. Summarized, because getting it wrong mis-keyed 1,066 of 2,083 records:
 
-An alias map is the receipt of ONE apply — a *simultaneous permutation* of the
-id space, NOT a digraph to walk. Two consequences the first version of this
-script got wrong (the "slot-reuse telescoping" defect, receipt
-kb/promotions_rekey_out/2026-06-11/ — 1,066 of 2,083 records mis-keyed):
-
-  1. NEVER iterate within a map. The SUBJ4 canonicalization re-sequenced whole
-     (SUBJ4, band) buckets, so a retired slot is routinely re-occupied by a
-     DIFFERENT row in the same apply ("ECON M1001" -> "ECON M1005" while
-     "AGR M1001" -> "ECON M1001"). Following A->B then B->C tracks the
-     *slot-occupancy history*, not the row: B->C is the move of the unrelated
-     row that previously held B. Each map is applied by ONE lookup.
-  2. NEVER skip a key because it is live today. Under slot reuse, a baseline
-     key being live means only that the SLOT is occupied — possibly by a
-     different family ("ANTH M1023" stayed live while its family moved to
-     "ANTH M1035"). Every key resolves through every pending map; "unchanged"
-     is a RESULT (resolve(k) == k), not a precondition.
-
-Maps are applied in chronological order, each at most once. Cross-map chains
-are correct (subj4 moves K->B, the FL split moves B->C, the twin merge C->W):
-at each map, the carried id IS the row's id at that apply's moment.
-
-ONLY APPLY-CONFIRMED maps belong in the chain. Status headers can lie:
-  * kb/subj4_apply/alias_map.json said "DRY-RUN" for 19 days — it is the
-    frozen copy of the dry-run plan that kb/subj4_apply/report.md confirms
-    was APPLIED verbatim 2026-05-23 (65,311 moves, including fate:"no_change"
-    rows whose SUBJ4 stayed but whose number re-sequenced). The per-row
-    `_subj4_remint_from` stamps on minted courses + singletons are the ground
-    truth and confirm every move.
-  * kb/overmerge_out/2026-05-29/alias_map.json is EXCLUDED: that plan is
-    STAGED, never dispatched (Sam gates the apply — docs/roadmap_archive.md,
-    Session 18). 1,259 of its 1,299 "retired" old ids are still live and 0
-    apply receipts exist. If/when Sam dispatches the over-merge apply, append
-    its map HERE (after the maps below, keeping chronology) and re-run.
+an alias map is a SIMULTANEOUS PERMUTATION, not a digraph: one lookup per map,
+in chronological order, never iterated within a map and never short-circuited
+because a key is live today.
 
 ERA STAMPING: after an apply, the doc carries `_rekeyed_through` (the list of
 maps already folded into its keys). A later run applies only maps NOT yet in
@@ -82,76 +54,20 @@ import sys
 from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Apply-confirmed re-mints only, chronological. See the module docstring for
-# why kb/overmerge_out/2026-05-29/alias_map.json is NOT here.
-ALIAS_MAPS = [
-    "kb/subj4_apply/alias_map.json",                      # 2026-05-23 (stamps confirm)
-    "kb/crossdisc_out/alias_map.json",                    # 2026-06-09
-    "kb/fl_subj4_out/2026-06-09/alias_map.json",          # 2026-06-09
-    "kb/kin_pe_out/2026-06-10/alias_map.json",            # 2026-06-10
-    "kb/drama_theater_out/2026-06-10/alias_map.json",     # 2026-06-10
-    "kb/convergence_singletons_out/2026-06-10/alias_map.json",  # 2026-06-10
-    "kb/twin_merge_out/2026-06-10/alias_map.json",        # 2026-06-10
-    "kb/twin_merge_out/2026-06-12/alias_map.json",        # 2026-06-12 (statewide twins, Session 46)
-    "kb/subj4_fold_out/2026-06-12/alias_map.json",        # 2026-06-12 (the canonical SUBJ4 fold, Session 50 — stamps: _subj4_fold_from)
-    "kb/twin_merge_out/2026-06-12-postfold/alias_map.json",  # 2026-06-12 (post-fold statewide twins, Session 50)
-    "kb/kin_pe_pass2_out/2026-06-12/alias_map.json",      # 2026-06-12 (KIN/PE pass 2, Session 51 — stamps: _kin_pe_pass2_from; no V5 stamp-era hookup needed: applied after the fold map was already folded in)
-    "kb/pols_remint_out/2026-07-10/alias_map.json",     # 2026-07-10 (POSC->POLS CCN convergence, Session 111 — CSR pass CSR0006)
-    "kb/authority_recode_out/2026-09-03/alias_map.json",   # 2026-09-03 (the authority recode, items 7-16, Session 224 — stamps: _authority_recode_from)
-    "kb/zband_retire_out/2026-09-03/alias_map.json",       # 2026-09-03 (the Z-band retirement, items 20-21, Session 224 — stamps: _zband_retired_from; materialized records carry no earlier id)
-    "kb/prefix_fold_out/2026-09-03/alias_map.json",        # 2026-09-04 (the prefix fold, Session 225 — stamps: _prefix_fold_from; scope all, nothing ruled held; Sam's yes to all 2026-09-04)
-]
+# THE chain, the resolver, the era guard and the semantics self-test all live in
+# kb/alias_chain.py — this module holds none of its own (Sam's ruling 8,
+# 2026-09-05). The names below are re-exported because five scripts and three
+# tests import them from here.
+from alias_chain import (  # noqa: E402
+    ALIAS_MAPS, load_alias as _load_alias, resolve, selftest as _selftest,
+)
 
 
 def _load(rel):
     with open(os.path.join(ROOT, rel), encoding="utf-8") as f:
         return json.load(f)
-
-
-def _load_alias(rel):
-    m = _load(rel)
-    for k in ("alias", "aliases", "alias_map"):
-        if isinstance(m, dict) and k in m:
-            return m[k]
-    return m
-
-
-def _step(v):
-    if isinstance(v, str):
-        return v
-    if isinstance(v, dict):
-        if v.get("new_id"):
-            return v["new_id"]
-        if v.get("splits"):
-            pl = [s for s in v["splits"] if s.get("is_plurality")]
-            return (pl or v["splits"])[0]["new_id"]
-    return None
-
-
-def resolve(old, maps):
-    """Chronological single-step resolution: each map applied AT MOST ONCE,
-    in order, no within-map iteration, no liveness shortcut (see module
-    docstring — both were the telescoping defect)."""
-    cur, hops = old, []
-    for m in maps:
-        if cur in m:
-            nxt = _step(m[cur])
-            if nxt and nxt != cur:
-                hops.append(nxt)
-                cur = nxt
-    return cur, hops
-
-
-def _selftest():
-    """The two failure modes the corrected semantics must hold against."""
-    slot_reuse = {"A": "B", "B": "C"}   # one apply re-sequencing: A->B, B->C
-    later = {"C": "D"}                  # a later apply
-    maps = [slot_reuse, later]
-    assert resolve("A", maps)[0] == "B", "within-map telescoping regression"
-    assert resolve("B", maps)[0] == "D", "cross-map chaining broken"
-    assert resolve("C", maps)[0] == "D", "single-map resolution broken"
-    assert resolve("Z", maps)[0] == "Z", "untouched key must be identity"
 
 
 def rekey(promos, maps, live_minted, live_single, memberships,
