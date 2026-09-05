@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 804,
-    "bytes": 8600665,
+    "bytes": 8602147,
     "over_budget": 5,
     "handoff_max": 232,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 104,
-        "bytes": 2610775,
+        "bytes": 2610804,
         "over": 2
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 160681,
+        "bytes": 162134,
         "over": 1
       },
       "handoff": {
@@ -61,14 +61,14 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2647,
-      "bytes": 1336147053,
-      "heavy_bytes": 626485150,
-      "heavy_share": 0.469,
+      "files": 2806,
+      "bytes": 1388875798,
+      "heavy_bytes": 679206632,
+      "heavy_share": 0.489,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/prototype",
+        "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/unified_courses_member_desc.js",
@@ -339,13 +339,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 30212,
+        "bytes": 31665,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 18212,
-        "ratio": 2.52
+        "over_by": 19665,
+        "ratio": 2.64
       },
-      "message": "30,212 B is 2.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "31,665 B is 2.6× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -446,22 +446,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 77690287,
+        "kind": "dir"
+      },
+      "message": "directory totals 77,690,287 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
         "kind": "dir"
       },
       "message": "directory totals 51,991,148 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 24968805,
-        "kind": "dir"
-      },
-      "message": "directory totals 24,968,805 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

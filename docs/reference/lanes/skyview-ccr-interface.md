@@ -51,6 +51,24 @@ inspector says which discipline the course is filed under). ⑤ Drag and drop is
 ✅ **THE SEARCH SORTS BY NAME, AND THE MAP READS AS A SKY (SkyReply S231, 2026-09-05, #1488).** Sam, on "weld": *"I probs would have spotted that earlier if the dropdown in SkyView showed all the welding courses in order — would have seen 2 named similarly or the same."* ⭐ **The depth was not the problem; the SORT was.** After the relevance tier the list orders by member count descending, so a small identity is buried BY CONSTRUCTION — and a duplicate of a well-adopted course is, almost by definition, the less-adopted twin ("weld" matches 591 points; Introduction to Welding, 24 colleges, ranks 1st; Introduction to the Welding Processes, 2 colleges, ranks 132nd). ⚠️ **The window must be CENTERED on the anchor**: sorting the whole match set by name and taking the first N returns the titles beginning with "A" — rank by relevance to find the anchor, re-sort by name, then slide a window with the anchor a third of the way down. It surfaced a THIRD near-duplicate and two identities carrying the identical title *Introduction to Shielded Metal Arc Welding (SMAW)*, one with no discipline.
 ⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. Also his, in order: members as muted stars; a darker, grayer canvas (14.81:1 strong ink, 7.77:1 muted); short college names throughout, canonical kept on `title`; the catalog description on a member's hover card; the parent's name INSIDE the big circle when it fits (an open identity's middle is the emptiest space on screen) with no leader, because position is the tie; otherwise the leader lands ON the edge (`q.rad*0.98`), not at 0.71; the disc and the title wearing the identity system's color (5.15–8.44:1 light, 6.76–9.23:1 dark), a stand-alone keeping muted ink; and **no label transecting a disc** — `discBoxes` are seeded as occupied boxes before any label is placed. Verified: 55 checks in `tests/ccr_skyview_search_show.test.js`, 302 test files, `npm run a11y -- skyview` across 6 routes, a Chromium drive per change.
 
+⭐ **ARTICULATION COUNTS ARE ON THE MAP (Sam's ruling 1, 2026-09-05), and they are a
+SIGNAL THE MAP COULD NOT ALREADY IMPLY.** The map sizes a point by how many colleges teach
+it, and articulation runs OPPOSITE to adoption: `WELD M1061` is taught at 4 colleges and
+carries 12 articulations, `WELD M1109` at 24 and carries 7, `WELD M1057` at 7 and carries
+none — so the most-articulated identities are routinely the map's smallest points, and
+nothing on screen said so. `kb/_build_ccr_universe.py` joins the count off
+`coci_articulations.json`'s `articulations[].course_id` and emits `ar` (1,490 points,
+3,124 records, max 25 in the universe payload); the identity's panel and the discipline
+card's rows spell it as a word, per the glyph rule. ⚠️ **`ar` is ABSENT, never 0** — "no
+articulation recorded" and "we did not look" are the same thing on this feed, and a 0 badge
+would assert the first. ⚠️ **The join must NOT resolve through the alias chain**: those
+course_ids are already current-era (Session 232), so resolving them again is a
+double-applied permutation. The Show menu gains a group of TWO switches — *Has
+articulations* / *No articulation recorded* — because one box that starts ticked can only
+ever mean "hide the rest"; the switch count in the menu is now **14**, which
+`tests/ccr_skyview_universe.test.js` pins. Verified: `ccr_skyview_search_show` §12 (80
+checks, perturbation-tested), 302 files, 162 Chromium checks.
+
 ⭐ **THE THREE FRICTIONS SAM HIT WHILE USING IT, FIXED (his ruling 3, 2026-09-05).**
 (a) **The list stays where you left it.** `openSug()` rebuilds the dropdown with
 `scrollTop = 0`, so once S231 took it from 8 rows to 60, every tick threw the reader back

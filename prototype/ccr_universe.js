@@ -86,11 +86,12 @@ var solo=true, curView="skyview";
  * state, and so does this: `unrec` is a switch of its own, never folded into
  * credit. `members` is the ring of college-course squares an identity opens
  * into; the map is quieter with it off. */
-var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members"];
+var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
 var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
 /* The word each switch shows in the menu, the hint and the row's tooltip. */
 var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014 noncredit enhanced", unrec:"Credit status not recorded",
-  mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses"};
+  mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses",
+  arty:"Has articulations", noart:"No articulation recorded"};
 /* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
  * Each pick from the suggestion list becomes a TOKEN beside the search box; the
  * map rings every token and fits them all in view. One token behaves exactly as
@@ -336,7 +337,19 @@ function systemOK(nd){ var x=nd.s; return x===0 ? show.mid : x===1 ? show.cid : 
 function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; }
 /* Drawn when every switch that describes the point is on. The name survives
  * from the three-position filter it grew out of; the tests read it. */
-function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd); }
+/* ── articulations as a category of their own (Sam's ruling 1, 2026-09-05) ───
+ * TWO switches, not one, matching how every other group here works: a point
+ * passes when its credit status AND its identity system AND its kind AND its
+ * articulation state are all switched on. One switch called "has articulations"
+ * could only ever mean "hide the rest", which is not what a box that starts
+ * ticked says. Untick "No articulation recorded" and the map keeps only the
+ * points somebody has actually articulated against.
+ *
+ * ⚠️ `ar` is ABSENT rather than 0 on a point with none — "no articulation
+ * recorded" and "we did not look" are the same thing on this feed, so the
+ * payload does not assert the first. */
+function artOK(nd){ return (nd.ar > 0) ? !!show.arty : !!show.noart; }
+function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd); }
 /* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
  * does not respond when making changes") ─────────────────────────────────────
  *
@@ -2609,6 +2622,7 @@ function showMenuHtml(){
     ["Credit status", ["cr","nc","nce","unrec"].map(W)],
     ["Identity system", ["mid","cid","ccn","uni"].map(W)],
     ["Kind of point", ["ident","orbit","rim"].map(W)],
+    ["Articulations", ["arty","noart"].map(W)],
     ["Under an identity", ["members"].map(W)]
   ];
   return '<details class="u-show" id="u-show">'+
@@ -2653,7 +2667,8 @@ function showIsland(isl){
       return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
         chipFor(nd)+
         '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+
-        (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+"</div></li>";
+        (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+
+        (nd.ar?" · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):"")+"</div></li>";
     }).join("")+"</ul>":'<p class="empty">No clustered identity in this discipline yet — every course here is a stand-alone.</p>')+
     workSurfaceOffer(isl)+
     '<p class="empty" style="margin-top:.5em">Drag this discipline on the map to bring it '+
@@ -2746,7 +2761,15 @@ function renderNode(){
     (nd.n && nd.n!==total ? ' · <span class="sub" title="The count this row reports '+
       'elsewhere in COBI, from the field that minted it. The carried list is the forward '+
       'join onto the raw COCI course list, which cannot always place every seeded member.">'+
-      "row count "+num(nd.n)+"</span>" : "")+"</p>";
+      "row count "+num(nd.n)+"</span>" : "")+
+    /* ⭐ ARTICULATION IS ITS OWN SIGNAL, NOT A FUNCTION OF ADOPTION (Sam's
+     * ruling 1, 2026-09-05). The map sizes a point by how many colleges teach
+     * it, and the two run OPPOSITE: WELD M1061 is taught at 4 colleges and
+     * carries 12 articulations; WELD M1109 is taught at 24 and carries 7. So
+     * the most-articulated identities are routinely the map's smallest points,
+     * and nothing on screen said so. A word, not a badge — the count is the
+     * whole message. */
+    (nd.ar ? " · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s") : "")+"</p>";
   // The orbit: where a stand-alone sits and WHY, with the accept verb beside it.
   if(nd.a){
     var par=nd.o?nodeById(nd.o):null;

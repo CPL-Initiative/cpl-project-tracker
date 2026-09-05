@@ -50,8 +50,12 @@ const done = () => {
 function ident(prefix, n, credit, x, y) {
   const p = [];
   for (let i = 0; i < n; i++)
-    p.push({ i: `${prefix} M${1000 + i}`, x: x + (i % 10) * 2, y: y + Math.floor(i / 10) * 2,
-             t: `Welding Practice ${i}`, n: 3, s: 0, f: 0, r: 0, u: 3, c: credit });
+    p.push(Object.assign({ i: `${prefix} M${1000 + i}`, x: x + (i % 10) * 2, y: y + Math.floor(i / 10) * 2,
+             t: `Welding Practice ${i}`, n: 3, s: 0, f: 0, r: 0, u: 3, c: credit },
+             // Every third identity carries articulations, so the switch has both
+             // sides to act on. `ar` is ABSENT on the rest, never 0 — that is the
+             // payload's own contract (Session 232).
+             i % 3 === 0 ? { ar: i + 1 } : {}));
   return p;
 }
 const U = {
@@ -195,7 +199,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     st().islandsShown === 0 && st().coursesShown === 0,
     `${st().islandsShown} islands / ${st().coursesShown} courses`);
   check("(2) the summary word agrees with the switches",
-    q("#u-show-word").textContent === "0 of 12", q("#u-show-word").textContent);
+    q("#u-show-word").textContent === "0 of 14", q("#u-show-word").textContent);
   q("#u-show-every").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
   check("(2) Show everything restores every discipline",
     st().islandsShown === 3 && q("#u-show-word").textContent === "All");
@@ -481,6 +485,59 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     /id="u-reset"/.test(ujs) && /searchHits=\[\]; resetView\(\);/.test(ujs));
   check("(11c) it actually recenters rather than no-opping on a single pick",
     w.__ccrFitSelection() === true);
+
+  /* ── (12) Sam's ruling 1 (2026-09-05): articulation counts on the map ─────
+     ⭐ Articulation runs OPPOSITE to adoption — the map sizes a point by how
+     many colleges teach it, and the most-articulated identities are routinely
+     its smallest. So this is a signal the map could not already imply. */
+  const withAr = U.islands[0].p.filter((nd) => nd.ar > 0).length;
+  const noAr = U.islands[0].p.length - withAr;
+  check("(12) the fixture has both kinds to filter", withAr > 0 && noAr > 0, `${withAr}/${noAr}`);
+  check("(12) `ar` is absent, not 0, on an identity with none — 'none recorded' is not a measurement",
+    U.islands[0].p.every((nd) => nd.ar === undefined || nd.ar > 0));
+
+  // the Show switches: two, like every other group here
+  const setShow = (key, on) => {
+    const cb = q(`#u-show-menu input[data-show="${key}"]`);
+    if (!cb) return false;
+    if (cb.checked !== on) cb.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    return true;
+  };
+  check("(12) both switches exist in the Show menu, as their own group",
+    !!q('#u-show-menu input[data-show="arty"]') && !!q('#u-show-menu input[data-show="noart"]'));
+  setShow("noart", false);
+  const only = w.__ccrUniverseState();
+  check("(12) ⭐ unticking 'No articulation recorded' leaves only the articulated points",
+    only.coursesShown === U.islands.reduce((a, I) => a + I.p.filter((nd) => nd.ar > 0).length, 0),
+    `shown ${only.coursesShown}`);
+  setShow("noart", true); setShow("arty", false);
+  const inverse = w.__ccrUniverseState();
+  check("(12) and unticking 'Has articulations' leaves exactly the complement",
+    inverse.coursesShown === U.islands.reduce((a, I) => a + I.p.filter((nd) => !(nd.ar > 0)).length, 0),
+    `shown ${inverse.coursesShown}`);
+  check("(12) the two together still cover every point (no point is filtered by both)",
+    only.coursesShown + inverse.coursesShown ===
+      U.islands.reduce((a, I) => a + I.p.length, 0));
+  setShow("arty", true);
+  check("(12) both back on restores the whole map",
+    w.__ccrUniverseState().coursesShown === U.islands.reduce((a, I) => a + I.p.length, 0));
+
+  // the count reaches the reader as a WORD on the identity, not a glyph
+  // Use a REAL suggestion object rather than a hand-built one: the token
+  // machinery reads fields a literal does not carry, and a hand-built stub
+  // would be testing the stub.
+  const artNode = U.islands[0].p.find((nd) => nd.ar > 0);
+  const artSug = w.__ccrSuggest(artNode.t, 60).find((x) => x.kind === "course" && x.nd && x.nd.i === artNode.i)
+              || w.__ccrSuggest(artNode.i, 60).find((x) => x.kind === "course");
+  check("(12) the articulated identity is reachable from the search", !!artSug, artNode && artNode.i);
+  artSug && w.__ccrGoSuggestion(artSug);
+  await tick();
+  const panel = d.body.innerHTML;
+  check("(12) ⭐ the count is on the identity, spelled as a word",
+    new RegExp(`${artNode.ar}\\s*articulations?`).test(panel),
+    `looking for "${artNode.ar} articulations"`);
+  check("(12) it is a word, not an emoji or an icon (the glyph rule)",
+    !/[\u{1F300}-\u{1FAFF}]\s*\d+\s*articulation/u.test(panel));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

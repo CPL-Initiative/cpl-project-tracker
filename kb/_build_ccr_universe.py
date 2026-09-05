@@ -403,6 +403,38 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
 CREDIT_CODE = {"Credit": 0, "Noncredit": 1, "Noncredit Enhanced": 2}
 
 
+# ── articulation counts (Sam's ruling 1, 2026-09-05) ────────────────────────
+# ⭐ ARTICULATION RUNS OPPOSITE TO ADOPTION, so the map cannot infer one from the
+# other. In Welding, WELD M1061 is taught at 4 colleges and carries 12
+# articulations; WELD M1109 is taught at 24 and carries 7; WELD M1057 is taught
+# at 7 and carries none. The map draws size from adoption, so the most-articulated
+# identities are routinely its smallest points — it was showing adoption and
+# hiding articulation, which is why this had to become its own signal.
+#
+# ⚠️ The join is on kb/coci_articulations.json's `articulations[].course_id`,
+# which is the CURRENT-era id (2,299 of 2,319 equal a resolved identity key —
+# Session 232). Do NOT resolve it through the alias chain again: that is a
+# double-applied permutation and it moves live ids onto unrelated rows.
+_ARTS = None
+
+
+def articulation_counts():
+    """{identity id: how many articulation records name it}. Cached; fail-soft,
+    because a missing file must cost the map a badge, never the whole build."""
+    global _ARTS
+    if _ARTS is None:
+        _ARTS = {}
+        try:
+            with open(os.path.join(ROOT, "kb", "coci_articulations.json"), encoding="utf-8") as fh:
+                for rec in (json.load(fh).get("articulations") or []):
+                    cid = rec.get("course_id")
+                    if cid:
+                        _ARTS[cid] = _ARTS.get(cid, 0) + 1
+        except (OSError, ValueError):
+            _ARTS = {}
+    return _ARTS
+
+
 def point_of(row, x, y):
     fl = row.get("flags") or {}
     pt = {
@@ -431,6 +463,11 @@ def point_of(row, x, y):
     c = CREDIT_CODE.get((row.get("credit") or "").strip())
     if c is not None:
         pt["c"] = c
+    # Absent, not zero: "no articulation recorded" and "we did not look" are the
+    # same on this feed today, and a 0 badge would assert the first.
+    ar = articulation_counts().get(row["id"], 0)
+    if ar:
+        pt["ar"] = ar
     return pt
 
 
