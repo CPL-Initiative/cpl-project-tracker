@@ -68,10 +68,17 @@ found a latent bug one click in**: a forest cell under the comprehensive map rep
 sending the borrowed search box home; `setCrumbs`, the one call every view makes, is now the choke point.
 Verified in jsdom (131 → 157, 26 → 37), the Chromium harness and `npm run a11y`.
 
-✅ **SAM'S SECOND LIST SHIPPED (SkyKeep S230, 2026-09-05, #1481).** The top row is ONE chip vocabulary
-(30px, one size, 6px corners, the search box and its button included); the zoom label stacks over its
-percentage beside Out · In · Reset; "Details" reads **Sidebar**; the "Search" label is the box's
-placeholder; the Full screen and Hide legend chips are gone. ⭐ **The window is three states and two
+✅ **SAM'S SECOND LIST SHIPPED (SkyKeep S230, 2026-09-05, #1481), THEN THE HEADER'S SECOND CUT.** Sam,
+from screenshots of Obsidian's canvas chrome and Claude's own header (*"further simplify and complete
+SkyView header components by incorporating features like your own header"*): the row is **menu (framed)
+· More · SkyView (a title field) · search · Pan|Move · − % + ↺ · Show · step down · expand · close** —
+the actions are ghosted 30px icons, each named by words for a screen reader and a tooltip; the text
+controls stay words in 6px boxes; the "Search" label is the box's placeholder; the Full screen and Hide
+legend chips are gone. **More** holds *Go to* (every other view, flat: `viewsMenuInto` renders flat
+inside a `data-flat` host and a details menu in every crumbs row), *Show or hide* (Sidebar · Legend ·
+Dark canvas, each a row with an on/off word) and the doors out. ⚠️ The menu's id is `u-more-menu`:
+`#u-more` is the forest's host under the map, and a second element with that id put the whole forest
+inside the menu. ⭐ **The window is three states and two
 steps** — the page (or COBI) around the map · the map alone · the browser's own full screen — with the
 OS trio at the row's right end (step down · step up · close) and a **menu control (☰) at the far left,
 framed only, that opens COBI's side bar** (Sam: *"should be default collapsed on open"*). ⭐ **The CCR
@@ -81,8 +88,9 @@ the frame's ☰ through `postMessage`; *dock* brings the chrome back without lea
 tab takes the class off. **Show** is a menu of twelve switches (CR · NC · NCE · not recorded; M-ID ·
 C-ID · CCN · unified; identities · orphans in orbit · orphans on the rim; college courses): a point is
 drawn when every switch that describes it is on, and "not recorded" stays a switch of its own. **The
-legend folds from its own corner** (the word, unbold, with a fold mark). **Go To** replaces Views and
-carries **How SkyView works** (`#how`), an explainer for faculty reviewers with three drawn figures.
+legend folds from its own corner** (the word, unbold, with a fold mark) and from the More menu. *Go to*
+carries **How SkyView works** (`#how`), an explainer for faculty reviewers with three drawn figures, in
+the voice Sam asked for (plain, active, verbs over adjectives, no asides).
 ⭐ **The search is a selection**: a pick from the list ADDS a chip beside the box (DISC · CRSE IDENTITY
 · STAND-ALONE CRSE · COLLEGE CRSE; credit as CR / NC / NCE), the map rings every course and outlines
 every discipline chosen and fits them all; a typed search REPLACES the selection (a search still means a
@@ -90,11 +98,12 @@ search); Backspace in an empty box drops the last chip; the dropdown is wider, w
 uses one font size. ⭐ **A dark canvas** (the *Dark* chip, remembered per browser): the map's palette is
 `--sky-*` tokens read at draw time (`readPal`), `body.u-dark` redefines them, every text pair measured
 ≥4.5:1 — the one workspace that earns a dark ground; First Light stays light everywhere else. Verified
-in jsdom (157 → 188), COBI's suite (37 → 51), the Chromium harness and `npm run a11y` (six routes, three
+in jsdom (157 → 190), COBI's suite (37 → 51), the Chromium harness and `npm run a11y` (six routes, three
 widths). Story: `ccr_atlas_lessons`.
 
-**NEXT:** ⓪ **Sam drives the second list** — the row, the window controls and the ☰ from the CCR menu,
-the Show menu, the chips, the dark canvas, the explainer's voice. **Open from his Obsidian screenshot
+**NEXT:** ⓪ **Sam drives the second list and the header's second cut** — the icon row, the More menu,
+the window controls and the ☰ from the CCR menu, the Show menu, the chips, the dark canvas, the
+explainer's voice. **Open from his Obsidian screenshot
 (2026-09-05):** a right-edge vertical rail of glyphs (zoom in · reset · fit · zoom out · undo · redo ·
 help) in place of the row's zoom words — glyph-only, so his call under his own glyph rule. The CCR
 tab's only sweep finding is still First Light's 15px greeting opt-out checkbox (`first_light.js`), a

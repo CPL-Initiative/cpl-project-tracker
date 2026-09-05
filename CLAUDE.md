@@ -792,10 +792,12 @@ box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
 *Follow up* toggle and a note per item, saved to the artifact's own store and read by the next session
 with `read_db` (`kb/_decision_sheet_replies.py`); ⚠️ the sheet's committed builder predates the sheet, so
 the controls went on as an idempotent pass (KB note). SkyView's second list, all of it: one chip
-vocabulary, the zoom stack, Sidebar, the placeholder label, the Show menu of twelve switches, the legend
-folding from its own corner, Go To with *How SkyView works*, the OS window controls (three states, two
-steps), a ☰ that opens COBI's rail (collapsed by default), the search as a selection of chips (a pick
-adds, Enter replaces), and a dark canvas on `--sky-*` tokens. ⭐ **The CCR click opens the full window**
+vocabulary, then the header's second cut in the style of Claude's own (ghosted icon actions, a title
+field, one More menu holding *Go to*, Sidebar, Legend and Dark canvas), the Show menu of twelve
+switches, the legend folding from its own corner, *How SkyView works*, the OS window controls (three
+states, two steps), a ☰ that opens COBI's rail (collapsed by default), the search as a selection of
+chips (a pick adds, Enter replaces), and a dark canvas on `--sky-*` tokens. Replies also sit under
+every memory a batch item lists. ⭐ **The CCR click opens the full window**
 (`body.cpl-skyview-solo`). ⭐ A class toggle is not a re-render: `setSolo` paints the controls now.
 Stories: `ccr_atlas_lessons`, `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
 

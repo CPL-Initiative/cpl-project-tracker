@@ -196,7 +196,7 @@ The whole ecosystem, end-to-end:
    window on its own (2026-09-05): COBI's header and side menu fold away and
    the ☰ at the map's top left brings the menu back, while the window controls
    at the row's right step between the map inside COBI, the map alone and the
-   browser's full screen; the map's Go To menu reaches the comprehensive view,
+   browser's full screen; the map's More menu reaches the comprehensive view,
    the *Disciplines and subjects* workspace, *How SkyView works* and the table,
    and `#unified-courses/list` opens the table directly —
    authenticated reviewers (Supabase

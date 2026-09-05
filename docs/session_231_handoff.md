@@ -21,14 +21,18 @@ Two asks, one PR (#1481) and a republished sheet.
    `docs/visuals/2026-09-05-memory-audit-verdicts.html` carries chips (Yes takes
    the recommendation; Keep · Retire · Edit · Later; item 1 *Older only*; the
    class rulings Yes · No; the 31 retired rows *Undo*), a **Follow up** toggle
-   and a note. On the artifact they save to its store (`replies/<item>`); the
+   and a note — and every memory listed inside items 2 and 3 has its own
+   compact block (`2.o3`: Yes · Hold out · Rewrite · Later). On the artifact
+   they save to its store (`replies/<item>`); the
    session reads them with the Artifact tool's `read_db`. Added by
    `kb/_decision_sheet_replies.py --inject` — ⚠️ the committed sheet builder
    predates the sheet (KB note); never re-run it over the committed file.
 2. **SkyView's second list, all of it** — one chip vocabulary, the zoom stack,
-   Sidebar, the placeholder label, the Show menu (twelve switches), the legend
-   folding from its corner, Go To + *How SkyView works*, the OS window controls
-   (three states, two steps), the ☰ that opens COBI's rail (collapsed on open),
+   the placeholder label, the Show menu (twelve switches), the legend folding
+   from its corner, *How SkyView works*, the OS window controls (three states,
+   two steps), the ☰ that opens COBI's rail (collapsed on open), then the
+   header's second cut in the style of Claude's own header (ghosted icon
+   actions, a title field, one More menu with *Go to* and *Show or hide*),
    the search as a selection of chips (a pick adds, Enter replaces), the dark
    canvas — and **the CCR click opens the full window**
    (`body.cpl-skyview-solo`). Verified in jsdom (188 + 51), the Chromium
@@ -57,9 +61,11 @@ Artifact  action: read_db  db_op: list  collection: replies
 url: https://claude.ai/code/artifact/a233dd0c-d5ad-40e9-b85a-bae8f9f05217
 ```
 
-Each document is `{item, ref, v, note, fu, t}` — `item` is the sheet number
-("1" … "43", "D1" … "D31"), `ref` the slug / id / class key the session needs,
-`v` the verdict word, `note` his words, `fu` the follow-up flag. He may also
+Each document is `{item, ref, v, note, fu, t, kind, parent}` — `item` is the
+sheet number ("1" … "43", "D1" … "D31", or "2.o3" for one memory inside item
+2), `ref` the slug / id / class key the session needs, `v` the verdict word,
+`note` his words, `fu` the follow-up flag; an entry reply overrides its batch
+for that one memory. He may also
 paste the *Copy replies* line in chat; the store and the line say the same
 thing. Then execute, exactly as S229's handoff laid out:
 

@@ -31,16 +31,21 @@ re-deriving it.
 
 ## The claim
 
-1. **Every item gets the same three things.** A verdict chip (Yes always means
-   *take the recommendation*; the other words are the ones the sheet's how-to
-   box accepts — Keep · Retire · Edit · Later — plus any item-specific option
-   the ask names, such as *Older only* or *Undo*), a **Follow up** toggle
-   that is independent of the verdict, and a free-text note. A pressed chip
-   clears on a second press. Every control is a word.
+1. **Every item gets the same three things — and so does every memory a
+   batch item lists.** A verdict chip (Yes always means *take the
+   recommendation*; the other words are the ones the sheet's how-to box
+   accepts — Keep · Retire · Edit · Later — plus any item-specific option the
+   ask names, such as *Older only* or *Undo*), a **Follow up** toggle that is
+   independent of the verdict, and a free-text note. A pressed chip clears on
+   a second press. Every control is a word. A memory inside a batch gets a
+   compact block of its own, id `<item>.<reference>`, with chips read off the
+   batch's ask (Hold out and Rewrite keep one memory back from a verify
+   batch); an entry reply overrides the batch for that one memory.
 2. **The store is the artifact's own.** Publish with `capabilities: {db: {}}`.
-   The page writes `replies/<item>` documents — `{item, ref, v, note, fu, t}`
-   — where `ref` is what the session needs to act (a slug, an id, a class key)
-   and `t` is the write time (last write wins). The session reads them with
+   The page writes `replies/<item>` documents — `{item, ref, v, note, fu, t,
+   kind, parent}` — where `ref` is what the session needs to act (a slug, an
+   id, a class key), `kind` is item / entry / done, `parent` the batch an entry
+   belongs to, and `t` the write time (last write wins). The session reads them with
    the Artifact tool: `read_db`, `db_op: list`, collection `replies`. Sessions
    read; they never write a reply.
 3. **No store, no loss.** Opened from the repo or the vault (`docs/visuals/` is

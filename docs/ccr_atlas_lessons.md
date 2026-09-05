@@ -1852,3 +1852,26 @@ the menu / dock / undock / ready messages, the source check, leaving the tab);
 (`--shards-only`); `npm run a11y -- skyview` green on six routes at three
 widths; a Chromium drive of `index.html#unified-courses` confirmed the full
 window, the rail from ☰, the outside click, dock, undock and close.
+
+### The header's second cut: the header's own vocabulary
+
+Mid-run Sam sent a screenshot of Claude's own header — small ghosted icons at
+the left, a title in a rounded field, expand and close at the right — with
+*"If you can further simplify and complete SkyView header components by
+incorporating features like your own header, please do it."* So the row lost
+three word chips (Go To, Sidebar, Dark) to ONE More menu that holds *Go to*
+(every other view, rendered flat under a heading rather than as a menu inside a
+menu), *Show or hide* (Sidebar, Legend, Dark canvas, each a row with an on/off
+word) and the doors out; Out / In / Reset became − % + ↺ in one bordered
+group; the title became a field; expand (⤢, ⤡ in full screen) took the middle
+window control. Every icon carries words as its accessible name and tooltip,
+and the text controls stay words in boxes — the icons are his ask, twice over
+(the OS trio on 2026-09-05 morning, the header that afternoon), which is what
+the glyph rule requires: a mark that proves its worth.
+
+⚠️ **One id collision cost twenty minutes.** The menu was `id="u-more"`, and
+`#u-more` already existed: the forest's host under the map. `getElementById`
+returned the menu, and the comprehensive view rendered the entire forest inside
+it. The check that caught it was "the details panel starts hidden", failing
+with *no element* — the sidebar row had been overwritten. A new element takes a
+new id, and a grep for the id before minting it is cheaper than the debugging.

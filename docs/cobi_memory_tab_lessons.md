@@ -800,3 +800,16 @@ holds, a note survives a reload, the bar reads "2 of 74 replied · 1 to follow
 up", the reply line reads as the how-to box says, and nothing scrolls sideways
 at 390px. Published to the same artifact URL with `capabilities: {db: {}}`;
 `read_db` on `replies` answered empty, which is the store existing.
+
+### Replies on each memory, not just the batch
+
+Sam, after the first republish: *"Decision sheet is almost there, but I need the
+response controls on each memory, not just on the whole batch."* Items 2 (73
+memories) and 3 (three) list their memories as rows with a reference each; the
+injector now puts a compact block under every such row — id `<item>.<reference>`
+(`2.o3`, `3.bog-amendment-is-funding-authority`), kind `entry`, parent the item
+— with chips read off the batch's own ask: Yes · Hold out · Rewrite · Later
+under a verify batch, Yes · Keep · Later under a retire batch. The bar counts by
+kind (*2 of 43 items · 2 of 76 memories · 1 of 31 retired rows replied*), and an
+entry reply in the store overrides its batch for that one memory. 150 blocks
+now; the second pass still changes nothing.
