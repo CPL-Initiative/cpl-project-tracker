@@ -81,6 +81,24 @@ more than a coding one — stay single-threaded:
   resizable/pop-out detail panel (Sam's earlier SkyView list); config-to-tables
   (`ORGS` in `cobi_orgs.js`, the alpha-banner copy); the dependency map's
   line-number churn.
+- **LANDED FROM A PARALLEL SESSION — #1475, the stop-hook nag is fixed.** Sam
+  teleported a second session into the cloud on 2026-09-04; it shipped this one
+  while S227 was finishing above, so it appears in no S227 narrative. **The
+  "There are N unpushed commit(s) on branch `claude/...`" nag is gone**, and
+  CLAUDE.md's troubleshooting stanza now says *fixed* rather than *ignore this*.
+  Two faults, both measured: the environment manager creates a LOCAL
+  `refs/remotes/origin/claude/<slug>` pinned at the session's STARTING commit for
+  a branch that never existed on GitHub, so `origin/<branch>..HEAD` counted 1
+  where `HEAD --not --remotes` correctly counts 0; and ⭐ **the Session-32 guard
+  that already handled this had never once run in a remote session**, because the
+  harness provisions its own `~/.claude/stop-hook-git-check.sh` over ours. So a
+  SessionStart hook now PATCHES the installed file
+  (`scripts/patch_stop_hook.py`) rather than overwriting it — theirs carries
+  SSH-signature detection ours lacks. ⚠️ **Do not test this against
+  `scripts/stop-hook-git-check.sh`**: that copy's ancestor guard masks the case,
+  so such a test passes with or without the fix. `tests/stop_hook_git_check_test.py`
+  uses a vendor-shaped hook and is wired as its own step in `js-tests.yml`. Full
+  mechanism: `docs/reference/troubleshooting.md`.
 
 ## Patterns that worked
 
