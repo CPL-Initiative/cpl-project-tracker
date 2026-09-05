@@ -1388,3 +1388,73 @@ Sam's six statements are captured verbatim in the `CPLBrain` vault
 Career Passport destination, the equity framing, and *"with foreknowledge"* —
 which inverts the whole transaction from *will you count this?* to *this
 already counts, and here is what for.*
+
+## 2026-09-05 (late) — SkyReply S231: the sort, the sky, and a rule that never fired
+
+**#1488 shipped after the checkpoint**, so the lane, the handoff and the feed were
+one PR behind until this pass. Worth naming on its own: *a checkpoint is a
+snapshot, and work that lands after it is invisible to the next session unless
+someone goes back.* The fix is cheap; noticing is the hard part.
+
+### The sort, not the depth
+
+Sam saw a duplicate he had missed and blamed the list length. The list was
+already sixty deep. What buried the twin was the **order**: after the relevance
+tier the list sorts by member count descending, and a duplicate of a
+well-adopted course is almost by definition the *less*-adopted one. So the
+ranking hides precisely the thing the reader is hunting.
+
+⚠️ **The first fix was wrong and the harness caught it.** Sorting the whole match
+set by name and taking the first N returns the titles beginning with "A" — both
+welding intro courses vanished. The window has to be **centered on the anchor**:
+rank by relevance, take the best match, re-sort by name, then slide a window
+with the anchor about a third of the way down.
+
+### The glow is a claim, not a decoration
+
+Sam's two sentences did the design work: members become muted stars, every
+circle gets a gentle glow, and *"leave all the loners and nonmembers without the
+halo effect — haven't earned their wings yet and are still moons."* That last
+clause turns an ornament into an assertion — **a lit point is one colleges have
+agreed on** — so a reader who never learns the rule still sees the settled
+identities as the bright ones.
+
+### A rule at the best possible address that was untrue the day it was written
+
+Checking whether a stored id still names a live course, I compared ids directly
+against the identity set and reported 44% and 36% dead. Through the 15 applied
+alias maps the real figures are **27%** and **22%**. Rule 7 documents the
+resolution semantics — on the PULL side, triggered by *"you read them when you
+are re-minting, which you already know you are doing."* **I was not re-minting.**
+That is the whole failure: the trigger assumed a self-awareness the task did not
+produce.
+
+Then the same shape again, one layer down. The chain is copy-pasted into two
+files — 15 maps in `kb/_rekey_promotions.py`, **7** in
+`kb/_analyze_official_fold_evidence.py`, which carries the comment *"Must stay in
+lockstep with kb/_rekey_promotions.py ALIAS_MAPS"*. That comment was added
+2026-09-03 **to a list that already omitted the 2026-06-12 and 2026-07-10 maps**,
+and `kb/README.md` calls the script a "read-only drift detector". The drift
+detector has drifted.
+
+⭐ **The lesson is about mechanism, not diligence.** A written instruction sat at
+the strongest address available — inside the file, at the point of use — and was
+false on arrival. In the same session CI's dependency-map check caught me
+**twice**, unread and unasked. What fires is code and CI; what needs a decision
+to invoke does not fire in the case that matters, because the failure mode is
+**confidence, not doubt**. `kb/doctrine.py` already reaches for this and says so
+in its own docstring; it would still have missed here, because it reads the
+*diff* and this error was in analysis — files read, none written.
+
+### Believe the curator over the inference
+
+I reported that the statewide "Introduction to Welding" recommendation pointed at
+a 2-college identity rather than the 24-college one. Sam corrected the premise:
+statewide CRs are titled from C-ID or CCN where one exists and neutrally where
+none does, *precisely so no local college title wins*; local CRs match local
+titles. The worklist is built from `chatbox_peer_articulations`, so a group's
+`courses` list is **uptake** — who articulated against the recommendation — not
+the recommendation naming a course. `introduction welding` reads 3 rows at 1
+college: one college's uptake. Confirmed alongside it that all **512** Welding
+identities are M-IDs, no C-ID and no CCN, which makes welding exactly the case
+his rule exists for. The merge candidate survives, on the titles alone.

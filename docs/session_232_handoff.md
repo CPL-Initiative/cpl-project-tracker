@@ -13,8 +13,8 @@ SkyKeep S230 → **SkyReply S231**.
 
 ## What S231 did
 
-**One PR (#1486)**, then a long design conversation that shipped no code on
-purpose.
+**Two PRs (#1486, #1488)** plus the checkpoint (#1487), with a long design
+conversation in the middle that shipped no code on purpose.
 
 1. **Two SkyView reports, and neither control was broken.** The search dropdown
    had carried `overflow-y:auto` since it was written — it was asked for
@@ -32,6 +32,74 @@ purpose.
    it), and a second-order gap the fix itself created: a discipline pick landing
    on ground the filter had just cleared. `healIsland` / `healHits` close it,
    **and only when nothing passes** — a filter that is working is left alone.
+
+3. **The search sorts by name, and the map reads as a sky (#1488, after the
+   checkpoint).** Sam drove both from the live page. The dropdown's depth was
+   never the problem — the **sort** was: after the relevance tier it orders by
+   member count, so a duplicate of a well-adopted course is buried by
+   construction. ⚠️ The window must be **centered on the anchor** (sort the whole
+   set by name and take the first N and you get the titles starting with "A").
+   And ⭐ **the glow is the membership signal, not decoration** — a point
+   colleges have joined emits light, a stand-alone reflects it, so the map
+   answers *has anyone agreed this is the same course?* without a word. Plus
+   short college names throughout, the parent's name inside the big circle, no
+   label transecting a disc, system-colored titles and a darker canvas.
+
+## ⚠️ Read the eleven open rulings BEFORE anything else
+
+**Sam ruled all eleven on 2026-09-05 (21:50–21:54).** Sheet:
+`docs/visuals/2026-09-05-ten-open-rulings.html` · artifact
+<https://claude.ai/code/artifact/fdd4d6a0-609b-4cb3-b0b9-b9e2a5f02761>
+(re-read the `replies` collection with the Artifact tool's `read_db` before you
+start, in case he added notes after this was written). **This is your execution
+plan — do not re-ask what he has already answered.**
+
+| # | Ruling | What you do |
+|---|---|---|
+| 4 | yes | **Start here.** Re-key `kb/cr_reference_worklist.json` and `kb/coci_articulations.json` through the 15 applied alias maps. Everything else waits on it. |
+| 5 | yes | Then the genuinely dead remainder — 19 CR ids, 504 identities carrying 875 records — as a **worklist, never a silent drop**. Follows 4, not concurrent with it. |
+| 8 | yes, **including (c)** | One shared `kb/alias_chain.py`; a CI guard failing any file that declares its own `ALIAS_MAPS`; **one PUSH line in `CLAUDE.md`** (he did not take the offered veto); a `cpl_memory` row as the weakest layer. |
+| 11 | yes | Write the skill (fires on its *description*, so it triggers without being remembered) **and** give `kb/doctrine.py` a read-side mode — it reads the diff today, so it misses errors made in analysis. |
+| 3 | yes | The three interface fixes, as one small PR: focus stays put on multi-select; full title on hover for the filter chips; **recenter on the current selection** (`↺` and Fit all already go to the whole universe — that is the point). |
+| 1 | yes | Articulation counts on the map, **after 4**: the count on the identity plus a Show switch for "has articulations". |
+| 6 | yes | Queue `WELD M1109` (24) · `M1106` (2) · `M10VQ` (1) as merge candidates with **M1109 surviving**, the identical-titled SMAW pair behind them. ⚠️ The merge itself waits for a faculty reviewer — sufficiency is a curriculum judgment. |
+| 2 | yes | The admin re-mint view is a **queue, never a fire button**: candidates with reasons, he approves, the approved set lands through Rule 7's playbook on the next cron window. Route it through Governance + the privacy ADRs first (Rule 10 a3). |
+| 7 | yes | Premise accepted: written memory is advisory; anything that must not be got wrong belongs in code or CI. |
+| 9 | **edit: "All three"** · follow up | Agency skill statements come from published agency standards **and** ACE exhibits **and** team-entered by the MAP team — not a single source. This unblocks the outline. He flagged it for follow-up, so come back to him on how the three are reconciled when they disagree. |
+| 10 | yes | An **AWS welding certification** is the pilot — one certification, not one discipline. |
+
+**Order (Sam, 2026-09-05 — "leave at top for SkyOutline to worry about"):**
+**8 → 4 → 5 → 11 → 3 → 1 → 6 → 2**, with 9 and 10 feeding the outline build in
+parallel once 4 is in.
+
+⚠️ **8 comes before 4 on purpose.** The shared `kb/alias_chain.py` is the tool
+the re-key should be performed *with*, not a tidy-up afterwards — writing the
+resolver once and then using it is how the re-key gets done right the first
+time. Do not hand-roll a chain walk inside the re-key script; that is the exact
+duplication ruling 8 exists to end.
+
+## Two things S231 measured that change how you read the data
+
+- ⚠️ **Resolve a stored id through the alias chain before comparing it to the
+  live set.** Direct lookups say welding CR ids are 44% dead and articulation
+  identities 36%; through the 15 applied maps (158,470 pairs) it is **19 of 70
+  (27%)** and **504 of 2,319 (22%)**. Neither `kb/cr_reference_worklist.json`
+  nor `kb/coci_articulations.json` has been re-keyed since September. The chain
+  is copy-pasted into two files that have already drifted (15 maps vs 7), under
+  a comment saying they must not.
+- ⭐ **Articulation runs opposite to adoption.** `coci_articulations.json` joins
+  on identity id; in Welding the weight sits on one-college identities
+  (`M10AN` 21 articulations on 1 college) while `M1109` (24 colleges) carries 7
+  and `M1057` (7 colleges) carries 0. The map draws the articulated courses as
+  its dimmest points.
+
+**Sam's correction to honor (2026-09-05):** a statewide CR is titled from C-ID or
+CCN where one exists and neutrally where none does, *so no local college title
+wins*; local CRs match their local title and number. A worklist group's
+`courses` list is therefore **uptake** — the local courses colleges articulated
+that recommendation against — never the recommendation naming an identity. All
+512 Welding identities are M-IDs, no C-ID and no CCN, so welding is exactly the
+case the rule exists for.
 
 ## Your priority: build the course outline
 
