@@ -1,0 +1,128 @@
+{
+  "_status": "QUEUE 2026-09-05 — candidates for a faculty reviewer. NOTHING APPLIED.",
+  "_generated_by": "kb/_merge_candidate_queue.py",
+  "_rule": "Sam's ruling 6, 2026-09-05: queue the candidates; the merge waits for a faculty reviewer, because sufficiency is a curriculum judgment.",
+  "_writes": "none — this tool never touches kb_curation or any live table",
+  "discipline": "Welding",
+  "count": 3,
+  "groups": [
+    {
+      "lane": "seeded",
+      "members": [
+        {
+          "id": "WELD M1109",
+          "title": "Introduction to Welding",
+          "kind": "Course",
+          "discipline": "Welding",
+          "colleges": 24,
+          "articulations": 7,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "WELD M1106",
+          "title": "Introduction to the Welding Processes",
+          "kind": "Course",
+          "discipline": "Welding",
+          "colleges": 2,
+          "articulations": 3,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "WELD M10VQ",
+          "title": "Intro-Welding Processes",
+          "kind": "Stand-Alone",
+          "discipline": "Welding",
+          "colleges": 1,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        }
+      ],
+      "survivor": "WELD M1109",
+      "survivor_basis": "named by a human",
+      "why": "the three intro-welding identities say the same thing three ways",
+      "source": "Sam, 2026-09-05, decision sheet 2026-09-05-ten-open-rulings item 6",
+      "flags": [],
+      "proposable": true,
+      "colleges_total": 27,
+      "articulations_total": 10
+    },
+    {
+      "lane": "same_title",
+      "members": [
+        {
+          "id": "WELD M1052",
+          "title": "Intermediate Shielded Metal Arc Welding (Stick Welding)",
+          "kind": "Course",
+          "discipline": "Welding",
+          "colleges": 5,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "WELD M1054",
+          "title": "Intermediate Shielded Metal Arc Welding (Stick Welding)",
+          "kind": "Course",
+          "discipline": "Welding",
+          "colleges": 3,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        }
+      ],
+      "survivor": "WELD M1052",
+      "survivor_basis": "taught at more colleges",
+      "why": "identical titles once normalized",
+      "source": null,
+      "flags": [],
+      "proposable": true,
+      "colleges_total": 8,
+      "articulations_total": 0
+    },
+    {
+      "lane": "same_title",
+      "members": [
+        {
+          "id": "WELD M1009",
+          "title": "Advanced Welding Applications",
+          "kind": "Course",
+          "discipline": "Welding",
+          "colleges": 2,
+          "articulations": 0,
+          "credit": "Credit",
+          "band": "1",
+          "in_catalog": true
+        },
+        {
+          "id": "WELD M90AI",
+          "title": "Advanced Welding Applications",
+          "kind": "Stand-Alone",
+          "discipline": "Welding",
+          "colleges": 1,
+          "articulations": 0,
+          "credit": "Noncredit Enhanced",
+          "band": "9",
+          "in_catalog": true
+        }
+      ],
+      "survivor": "WELD M1009",
+      "survivor_basis": "taught at more colleges",
+      "why": "identical titles once normalized",
+      "source": null,
+      "flags": [
+        "bands cross (credit 1xxx vs noncredit 9xxx) — not mergeable on a title"
+      ],
+      "proposable": false,
+      "colleges_total": 3,
+      "articulations_total": 0
+    }
+  ]
+}

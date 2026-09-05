@@ -51,6 +51,22 @@ inspector says which discipline the course is filed under). ⑤ Drag and drop is
 ✅ **THE SEARCH SORTS BY NAME, AND THE MAP READS AS A SKY (SkyReply S231, 2026-09-05, #1488).** Sam, on "weld": *"I probs would have spotted that earlier if the dropdown in SkyView showed all the welding courses in order — would have seen 2 named similarly or the same."* ⭐ **The depth was not the problem; the SORT was.** After the relevance tier the list orders by member count descending, so a small identity is buried BY CONSTRUCTION — and a duplicate of a well-adopted course is, almost by definition, the less-adopted twin ("weld" matches 591 points; Introduction to Welding, 24 colleges, ranks 1st; Introduction to the Welding Processes, 2 colleges, ranks 132nd). ⚠️ **The window must be CENTERED on the anchor**: sorting the whole match set by name and taking the first N returns the titles beginning with "A" — rank by relevance to find the anchor, re-sort by name, then slide a window with the anchor a third of the way down. It surfaced a THIRD near-duplicate and two identities carrying the identical title *Introduction to Shielded Metal Arc Welding (SMAW)*, one with no discipline.
 ⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. Also his, in order: members as muted stars; a darker, grayer canvas (14.81:1 strong ink, 7.77:1 muted); short college names throughout, canonical kept on `title`; the catalog description on a member's hover card; the parent's name INSIDE the big circle when it fits (an open identity's middle is the emptiest space on screen) with no leader, because position is the tie; otherwise the leader lands ON the edge (`q.rad*0.98`), not at 0.71; the disc and the title wearing the identity system's color (5.15–8.44:1 light, 6.76–9.23:1 dark), a stand-alone keeping muted ink; and **no label transecting a disc** — `discBoxes` are seeded as occupied boxes before any label is placed. Verified: 55 checks in `tests/ccr_skyview_search_show.test.js`, 302 test files, `npm run a11y -- skyview` across 6 routes, a Chromium drive per change.
 
+⭐ **MERGE CANDIDATES ARE A QUEUE, AND THE MERGE WAITS FOR A FACULTY REVIEWER (Sam's
+ruling 6, 2026-09-05).** `kb/_merge_candidate_queue.py` assembles the evidence and stops —
+it is deliberately **not** `kb/_auto_merge_worklist.py`, which plans `merge_into` rows.
+*"Sufficiency is a curriculum judgment."* Receipt: `kb/merge_candidates/<date>/`. Welding
+returns 3 groups: Sam's seeded intro trio (**`WELD M1109` surviving**, 24 colleges · 7
+articulations; `M1106` 2 · 3; `M10VQ` a stand-alone, 1 · 0) recorded as HIS with the date,
+then the identical-titled SMAW pair (`M1052` / `M1054`, *Intermediate Shielded Metal Arc
+Welding*). ⚠️ **The third is flagged, not proposed: `M1009` / `M90AI` share the title
+*Advanced Welding Applications* but cross the band** — 1xxx credit against 9xxx noncredit,
+different courses for funding and for the student, so they must never merge on a title.
+⚠️ **The survivor is a proposal and the report prints BOTH counts**, because articulation
+runs opposite to adoption here; the basis names the rule that actually *decided* (more
+colleges → more articulations → alphabetical), never the first one the winner satisfied.
+Guarded by `tests/merge_candidate_queue_test.py` (20 checks), whose first assertion is that
+the module contains no write path at all.
+
 ⭐ **ARTICULATION COUNTS ARE ON THE MAP (Sam's ruling 1, 2026-09-05), and they are a
 SIGNAL THE MAP COULD NOT ALREADY IMPLY.** The map sizes a point by how many colleges teach
 it, and articulation runs OPPOSITE to adoption: `WELD M1061` is taught at 4 colleges and
