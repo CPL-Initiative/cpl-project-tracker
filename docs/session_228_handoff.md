@@ -1,7 +1,7 @@
 ---
-title: "Session 228 handoff — the masthead shipped; the accessibility sweep is a lint waiting on one palette ruling"
+title: "Session 228 handoff — accessibility is one command now; SkyView's top row landed; items 6-9 are next"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-05
 tags: [handoff]
 obsidian-folder: cpl-project-tracker/handoffs
 ---
@@ -11,136 +11,110 @@ obsidian-folder: cpl-project-tracker/handoffs
 Your moniker is **SkyQuiet** (assigned by SkyMint at sign-off, per Sam's
 2026-09-03 template): the ruling you are most likely to land is `--text-quiet`,
 the token that lets four thousand "no value here" markers be legible without
-making absence the loudest thing on the screen. Predecessors: SkyFold S225 →
+making absence the loudest thing on a dense grid. Predecessors: SkyFold S225 →
 SkyLand S226 → **SkyMint S227**.
 
-## What S227 did
+## What S227 shipped
 
-One PR (#1469, merged) and this checkpoint.
+Four PRs, all merged except the last, which was green and waiting when this was
+written: **#1469** (the COBI masthead), **#1473** (`npm run a11y`), **#1474**
+(SkyView's CCR link + the "discipline" sweep + an npm pin that unbroke CI), and
+**#1476** (SkyView's top row).
 
-1. **The COBI masthead, six asks from Sam.** Tagline gone (from the `<title>`
-   and `og:title` too, via `COBI_TITLE` in the generator — Rule 1); the CPL
-   superscript and per-site org tag gone, with `cobi_brand.js` now **sweeping**
-   any `.cobi-num` so a cached `cobi_orgs.js` cannot restore it; Refresh moved
-   into About **at runtime** (the generator re-injects it after `.last-updated`
-   every cron run, so markup edits get undone); the team phrase folded into the
-   identity chip via `mountInto()`; site options read `<code> — <full title>`;
-   the alpha banner rewritten and made low-key.
+**Accessibility is one command.** `npm run a11y` — 42 views in ~100 seconds in
+Chromium. `scripts/a11y.js` is a project-agnostic engine; `a11y.config.js` is the
+only file another project rewrites. COBI's entry names **no routes**: `discover`
+reads them out of the running side menu, so the next tab is measured the day it
+ships, and a discovery that returns nothing FAILS rather than printing a clean
+bill. Sam ruled the three-mechanism proposal (checker · Stop hook · skill) down
+to its first third: *"use the simplest approach that sets us up for continued
+long term use on all projects."*
 
-2. **The zoom mess was three CSS defaults, not styling.** A bare `1fr` is
-   `minmax(auto,1fr)`; a flex item defaults to `min-width:auto`; a non-stretch
-   `justify-self` sizes to content. Each alone reproduces the overlap.
-   Measured: `.cobi-brand` drew 580px in a 322px track at 768px. `main` fails
-   19/136 Chromium checks; head passes 196/196.
+**Five chrome-wide source lines cleared ~200 findings** across all 38 COBI
+views — the side-menu group headings (`#8a8a86`, 3.38:1, and 23.9px tall), the
+rail's signed-out line, the brand link and search box (21.7px), the First Light
+image fallback (3.08:1 — plain white would NOT have fixed it, the gradient had
+to come down), and `prefers-reduced-motion`, which COBI honored in **none** of
+its five animations (now stood down app-wide by `cobi_a11y.js`).
 
-3. **Seven real AA failures in the masthead, three written that same session** —
-   one minutes after a comment saying not to use `--text-faint` for essential
-   text. `scripts/check_cobi_header_layout.js` now audits contrast (glass
-   composited), accessible names, 24px targets and focus, **with the panes open
-   and a credential held** — a closed popover is a check that passes by not
-   looking.
+**SkyView's top row** is title · Views menu · search · controls · close, one row
+at 1900/1600/1440. Search results fly to exact figures: **1000%** for a course,
+**150%** for a discipline.
 
-4. **A 38-view sweep sized the problem, and its totals were retracted the same
-   day.** The ranking is sound; the absolute counts are not (shared chrome
-   re-measured on every tab; SC 2.5.8's inline-target exception unencoded).
+## Read these, in this order
 
-## Read these, in order
+1. `docs/reference/lanes/skyview-ccr-interface.md` — the lane you are picking up.
+2. `docs/public_pages_a11y_lessons.md`, last two sections — the sweep, its
+   backlog, and why six of its first findings were the harness.
+3. `docs/ccr_atlas_lessons.md`, last two sections — SkyView's item 2 and the top
+   row.
+4. `scripts/a11y.js`'s header — it is the instrument's contract.
 
-1. `docs/public_pages_a11y_lessons.md` — the sweep, the four roles of
-   `#94a3b8`, the two harness defects, and the enforcement shape Sam agreed.
-2. `docs/cobi_lessons.md` — the masthead rework and Sam's banner correction.
-3. `docs/kb-notes/methodology-audit-by-rendered-value-not-by-file.md` — why
-   7,000 renders are ~270 source lines.
-4. `docs/kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md` —
-   updated this run with the sharpest instance yet.
+## Your priority: Sam's SkyView items 6-9
 
-## THE ONE THING WAITING ON SAM
+These are one job, not four, and they are an information-architecture decision
+more than a coding one — stay single-threaded:
 
-**`#94a3b8` is four roles and he has ruled none of them.** Roles 2–4 need no
-input (leave disabled controls — WCAG 1.4.3 exempts them; leave decorative
-borders; `--text-muted` for supplementary text). Role 1 is the judgment:
-~4,000+ "no value here" markers (`.cr-null` *"— no articulations"*,
-`.uc-member-empty`, `.cr-chip-none`, "No matches", "Loading…").
+- **6.** Consolidate "All disciplines" and "Disciplines as a list" into ONE tab
+  with a toggle for **view by subject** vs **view by discipline**, and a line
+  explaining the difference. ⚠️ **His "subject" is the SUBJ4 grain** (`ENGL`,
+  `WELD` — COBI's Common Subjects Reference tab), not the island. Today both
+  views show disciplines, so this ADDS a grain rather than renaming one.
+- **7.** Fold **ESL packaging** into that view rather than leaving it a door.
+- **8.** Put the **map** on the same tab, "so there are fewer places to click
+  around and get confused."
+- **9.** Every view reachable from every other — the `Views` menu shipped in
+  #1476 exists only on the map; it needs to ride all of them.
 
-- Proposed: a new **`--text-quiet` at `#6B6B66`** (4.89:1 worst-case).
-- ⚠️ Measure against the **worst ground in use**, never one sample: across white
-  rows, `#F1F5F9` chips/zebra and the page ground, `#75756D` only reaches
-  4.24:1. An earlier `#75756D` figure in chat was wrong for this reason.
-- The tension he must resolve: at full `--text-muted` (6.15:1) absence becomes
-  the loudest thing on a dense grid, which is backwards.
+## Carryover, with status
 
-Once ruled, roles 2–4 apply without further input.
+- **BLOCKED on Sam — the absence color.** A new `--text-quiet` at `#6B6B66`
+  (4.89:1 worst-case, measured against the worst ground in use) versus plain
+  `--text-muted`. It unblocks ~4,000 renders. It is in the To-Do feed.
+- **The a11y backlog, named rather than hidden:** 5 COBI tabs scroll sideways at
+  390px (Dashboard by 887px, then `raci` 392, `budget` 218, `memory` 203,
+  `activities-projects` 179); 18 tabs carry 86 sub-AA pairs; 4,042 sub-24px
+  targets are **54 selectors**, 2,200 of them `button.cr-title-toggle` alone.
+  Several sit in sections the daily generator owns — fix `excel_to_dashboard.py`,
+  not the HTML (Rule 1). **Start with the sideways scroll.**
+- **Queued, unstarted:** the mute-non-essential-labels toggle and the
+  resizable/pop-out detail panel (Sam's earlier SkyView list); config-to-tables
+  (`ORGS` in `cobi_orgs.js`, the alpha-banner copy); the dependency map's
+  line-number churn.
 
-## The queue, in Sam's order
+## Patterns that worked
 
-1. **The a11y sweep** (he said: *"Put the sweep behind the current PR"* — the PR
-   is merged, so this is now live). Fix the harness first (scope to the active
-   pane; encode the SC 2.5.8 inline exception), then reconcile the raw-hex
-   palette. **338 controls with no accessible name** is the one control number
-   that survived triage.
-2. **SkyView — Sam gave a SECOND list on 2026-09-04 (ten items). Six shipped
-   this session; four remain.**
+- **Run the instrument on your own change, in the same session.** It caught a
+  21.3px control written minutes earlier, twice in two days.
+- **Cluster findings by rendered VALUE, not by file.** 4,042 → 54.
+- **Fix one real defect early and re-run.** A finding that does not clear when
+  its cause is removed is a harness defect — cheaper to catch on purpose than to
+  discover by "fixing" a passing control.
 
-   ⚠️ **Items 3, 4 and 9 of that list were RE-REPORTS** — he believed the NC
-   rings, the zoom cap and the CR/NC toggle had shipped from his earlier list.
-   They had not (he had asked for the masthead first). If he reports something
-   "not showing up", check whether it was ever built before debugging it.
+## Safety patterns to honor
 
-   **Shipped:** ④ zoom to 6000% *with the radius taper that makes it useful*
-   (raising the cap alone would have made isolation worse — see the commit);
-   ⑥ the legend folds away; ⑦ the detail panel starts hidden; ⑧ the top is one
-   row that no longer wraps; ③ noncredit draws as a **broken ring**; ⑨ the
-   **CR / NC toggle**, three positions because 73 identities have no recorded
-   credit status and either bucket would be a lie.
+- ⚠️ **Regenerate the dependency map AFTER `git add`.** It enumerates with
+  `git ls-files`, so an untracked new module is silently omitted and the check
+  fires on the NEXT run as an unexplained stale map.
+- ⚠️ **`docs/INDEX.md` and `docs/catalog/` are GENERATED.** Hand-editing them is
+  a red check; run `python3 kb/_build_docs_index.py`.
+- ⚠️ **Never background `npm run test:floor`** — it writes the floor whenever it
+  finishes, including partway through. Add a single entry by hand instead.
+- ⚠️ **`package-lock.json` is gitignored**, so CI resolves ranges live. Both deps
+  are pinned exactly; never widen one back to a range.
+- ⚠️ **A red run whose failure names a PACKAGE rather than a test is almost never
+  the PR's** — check the base branch before debugging your own diff.
+- ⚠️ **Three sources report your context and they disagree; only one is the
+  instrument.** On 2026-09-05 the control plane's `context_usage` read 776,304
+  used and was FROZEN (identical to the digit across three reads while
+  `updated_at` moved); Sam's UI showed ~449k; `python3 kb/_context_budget.py`,
+  which Rule 9a names as the source of truth because it reads the transcript on
+  disk, said **598,686 used / 187,603 left**. Act on the instrument. A frozen
+  API field failing in the alarming direction cost a mid-session scramble.
 
-   **ALSO SHIPPED (second PR):** ① the side menu opens the **full window** — a
-   keyed `data-nav-link="skyview"` launcher, grouped with the Common Course
-   Reference (⚠️ unlisted it falls to **Share**, beside the public Fact Sheet
-   and Sierra, which is both wrong in kind and a group away from the reference
-   it is a view of); ⑤ leader lines now carry a **dot at the circle** and an
-   **elbow into the label's first line**; and the keyword search **separates
-   credit from noncredit** as a stable partition after the relevance sort.
+## Next concrete step
 
-   ⚠️ **STILL OPEN — item ②, and it is a QUESTION, not work.** *"Add CCR table
-   view link to the 3 links on the full window SkyView and clarify the labels
-   for the existing links."* Both halves need Sam:
-   - **Which table?** The standalone prototype has no all-courses table. The
-     candidates are `__ccrDiscipline` (one discipline's courses) or a link back
-     to COBI's Common Course Reference tab. Different destinations, so guessing
-     wastes his time.
-   - **The labels are a naming call he already has queued.** The three are
-     `All disciplines` · `Subjects as a list` · `ESL packaging`, and the lane's
-     own NEXT ⑧ already asks for *"SkyView's 'subject' kind word → 'discipline'"*
-     — the same subject-vs-discipline distinction. Settle ⑧ and ② together
-     rather than renaming twice.
-
-   **Also still open from the first list:** a **mute non-essential labels**
-   toggle, and a **resizable / pop-out** detail panel (⑦ only hid it).
-3. **Config to tables** — Sam approved *"your best recommendations on moving
-   config values to table-based in Admin or where they belong"*: the `ORGS` list
-   in `cobi_orgs.js` and the alpha-banner copy. `public.cobi_nav` is the
-   precedent; the `sierra_guidance` row `cb226a48` is the precedent for copy.
-4. **Strip line numbers from `kb/dependency_map.json`'s compared artifact.** It
-   went stale this run on nothing but line numbers shifting by three. Rule 2
-   already says line numbers rot. Sibling branch.
-5. Optionally: teach `stop-hook-git-check.sh` to skip when `@{u}` names a remote
-   branch that no longer exists — it false-positived twice this session on a
-   correct state, which trains people to ignore the hook.
-
-## Patterns that earned their place
-
-- **Measure the painted page.** jsdom returns zeroes for every rectangle; 299
-  green test files coexisted with a visibly broken header.
-- **Composite the glass** before quoting a contrast figure (6.74 → 6.58).
-- **Open the panes** before auditing — most COBI text lives in popovers.
-- **Cluster failures by value, not by file.** 4,827 renders → 32 source lines.
-- **Check the corpus before authoring a KB note.** A note drafted this run was a
-  near-duplicate of one written the same morning; it became an update instead.
-- **Verify the stop-hook nag** rather than pushing: `git log @{u}..HEAD`.
-
-## Safety to honor
-
-Rule 4 (both HTMLs byte-identical) · Rule 1 (change the generator, not the
-HTML) · Rule 5 (never force-push `main`) · never auto-remediate accessibility to
-`main` — picking a replacement color is a design decision, and Rule 6 warns
-about a second scheduler racing the cron.
+Open `prototype/ccr_universe.js` and `prototype/ccr_atlas_v1.html`, and sketch
+items 6-9 as ONE view with a subject ⇄ discipline toggle before writing any of
+it — the grain question (SUBJ4 vs discipline) decides the whole shape, and
+getting it wrong costs the rebuild twice.

@@ -286,7 +286,67 @@ main.u-fullbleed .crumbs{display:none}
 .u-top .u-bar{margin-left:auto;min-width:0;flex:0 1 auto}
 .u-top .u-bar .btn{font-size:.76rem;padding:5px 8px}
 .u-top .u-bar .u-z{font-size:.76rem}
-@media (max-width:1100px){ .u-top{flex-wrap:wrap} .u-top .u-bar{margin-left:0} }
+/* ── the 2026-09-04 top row: title · views · search · controls · close ──────
+   Sam's items 1-5. The order IS the ask: "SkyView label top left most",
+   the view links folded into "a single drop down", the search "to the left of
+   the chips … wider", the controls, and "a X to close in top right". */
+.u-title{font-family:var(--serif);font-weight:700;font-size:.95rem;color:var(--text-strong);
+         white-space:nowrap;flex:0 0 auto}
+/* Views menu. <details> carries open/close, Enter and Escape with no script;
+   the summary is styled as the same link the four buttons used to be, so the
+   row reads as one vocabulary. list-style:none + ::-webkit-details-marker kills
+   the disclosure triangle in every engine — the word carries it. */
+.u-views{position:relative;flex:0 0 auto}
+.u-views>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;
+                 gap:4px;min-height:24px;font-size:.86rem}
+.u-views>summary::-webkit-details-marker{display:none}
+.u-views>summary::after{content:"\25BE";font-size:.7em;color:var(--text-muted)}
+/* ⚠️ A closed <details> still LAYS OUT its contents in Chromium — it skips
+   painting them, not sizing them. `npm run a11y` measured all four menu items
+   escaping the viewport at 390px and reported them as focusables with no ring,
+   because forcing focus on a node the engine merely declines to paint still
+   works. display:none is what actually takes them out of the layout and the
+   tab order, and it is the difference between a hidden menu and a hidden
+   keyboard trap. */
+.u-views:not([open]) .u-views-menu{display:none}
+.u-views-menu{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:210px;
+              display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:6px;
+              background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));
+              border-radius:9px;box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-views-menu .linkish{display:flex;align-items:center;min-height:28px;padding:2px 8px;
+                       border-radius:6px;text-align:left;font-size:.86rem}
+.u-views-menu .linkish:hover{background:var(--surface-subtle,#F7F5F1)}
+/* The search is BORROWED from the masthead (ccr_universe.js moves the form
+   here), so it needs no markup of its own — only room. It takes the row's slack
+   so it is the thing that grows, which is item 3's "make it wider". */
+.u-search-slot{flex:1 1 240px;min-width:0;display:flex}
+.u-search-slot .msearch{flex:1 1 auto;max-width:none;gap:6px}
+.u-search-slot .msearch input{padding:5px 9px;font-size:.82rem}
+.u-search-slot .msearch label{font-size:.82rem;color:var(--text-muted);white-space:nowrap}
+/* ⚠️ The submit button STAYS VISIBLE. Hiding it as "redundant beside a live
+   suggestion list" was tried and reverted the same hour: the row has slack at
+   every width that fits one row, Sam never asked for it gone, and a control
+   present in the DOM but invisible at desktop widths is the kind of thing a
+   harness clicks and a person cannot. It only shrinks. */
+.u-search-slot .msearch .u-search-go{padding:5px 10px;font-size:.8rem}
+.u-close{flex:0 0 auto;margin-left:2px;background:none;border:1px solid var(--border-strong,rgba(28,28,26,.30));
+         border-radius:8px;min-width:28px;min-height:28px;line-height:1;cursor:pointer;
+         color:var(--text-muted);font-size:.9rem}
+.u-close:hover{color:var(--text-strong);background:var(--surface-subtle,#F7F5F1)}
+/* Item 4: "keep it all on one row for a typical PC view — it's fine if it wraps
+   for narrower views." Nine controls plus a title plus a menu plus a search is
+   only one row if the controls are compact, so they tighten between 1100 and
+   1500 rather than wrapping. */
+@media (max-width:1500px){
+  .u-top .u-bar .btn{font-size:.72rem;padding:4px 6px}
+  .u-top .u-bar{gap:4px}
+  .u-search-slot{flex-basis:180px}
+}
+@media (max-width:1100px){
+  .u-top{flex-wrap:wrap}
+  .u-top .u-bar{margin-left:0}
+  .u-search-slot{flex:1 1 100%;order:5}
+}
 /* ── item 6: the legend folds away and the canvas takes the space ── */
 .u-foot.u-foot-hidden{display:none}
 @media (max-width:900px){

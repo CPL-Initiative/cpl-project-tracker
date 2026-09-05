@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-04",
-  "_session": "227 (SkyMint) — the COBI masthead shipped; accessibility turns out to need a lint, and one palette ruling unblocks the rest",
-  "_status": "The COBI masthead is done and merged (#1469): the tagline, the CPL superscript and the org tags are gone, Manually Refresh moved into the About menu, the team phrase now sits beside the magic-link sign-in in one pane, the site dropdown spells out each org, and the alpha line is rewritten and quiet. The reason it looked broken when you zoomed was that three CSS defaults each stop a row from shrinking, so it overflowed and painted over itself instead of wrapping; that is fixed and now checked across 17 widths in a real browser. Measuring the painted page also found seven genuine accessibility failures in the masthead alone — three of them written the same day, minutes after a comment saying not to. That is the real lesson: a written rule states the standard but cannot detect a breach, so accessibility needs a check that runs by itself rather than a rule someone has to remember. A first sweep across all 38 views shows the failures are not scattered: they cluster on a small set of raw colors that never went through First Light, the worst of them appearing 4,827 times from just 32 lines in two files. One decision from you unblocks the fix. Since then: accessibility got its instrument — one command, `npm run a11y`, checking every view we ship in about 100 seconds, with COBI's tabs read from the side menu so nothing new escapes it. The faults every view shared are fixed; the per-tab list is written down rather than quietly dropped.",
+  "_as_of": "2026-09-05",
+  "_session": "227 (SkyMint) — accessibility became one command, and SkyView's top row landed",
+  "_status": "The COBI masthead is done and merged. Accessibility now has an instrument rather than a rule: one command, `npm run a11y`, checks every view we ship — all 38 COBI tabs plus Sierra, the Fact Sheet, the veteran map and SkyView — in about a hundred seconds, and it finds COBI's tabs from the side menu itself so a new tab is checked the day it ships. The faults every view shared are fixed in five lines: the side-menu headings and the signed-out line were too faint to read, three controls were under the minimum tap size, the painting fallback failed on its own background, and nothing in COBI respected a reader's request to stop moving things. What is left is per-tab and written down rather than quietly dropped. SkyView's top row is rebuilt to your list: the name at the left, the view links folded into one menu, the search moved in beside the controls and widened, a close button, and search results that land at a fixed magnification. The search box you could not click in full screen was never broken — it lived in the page header, which full screen does not draw at all.",
   "items": [
+    {
+      "id": "s227-fable-skyview-consolidate",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Your items 6 to 9 — one tab instead of four. Combine the discipline cards, the discipline list, the ESL packaging view and the map into a single tab, with a toggle to look at the corpus by subject or by discipline and a line explaining the difference, and make every view reachable from every other. One thing to settle first: when you say “subject” you mean the four-letter code (ENGL, WELD), which is a different grain from a discipline — today both views show disciplines, so this adds a way of looking rather than renaming one."
+    },
+    {
+      "id": "s227-fable-a11y-scroll",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "Five COBI tabs still scroll sideways on a phone — the Dashboard worst, by 887 pixels, then RACI, Budget, Memory and Activities. That is the plainest of the accessibility findings and the one a person actually feels. Several sit in sections the daily rebuild owns, so the fix is in the generator, not the page."
+    },
     {
       "id": "s227-sam-absence-color",
       "for": "Sam",
@@ -15,12 +27,6 @@
       "for": "Fable",
       "tab": "dashboard",
       "text": "The accessibility sweep now runs as one command — `npm run a11y` — over all 42 views in about 100 seconds, and COBI's 38 tabs are found from the side menu itself, so a new tab is checked the day it ships. The problems shared by every view are fixed: the side menu group headings and the signed-out line were too faint to read, three controls were under the minimum tap size, the painting fallback panel failed on its own background, and nothing in COBI respected a reader's request to stop moving things. What is left is per-tab and named: five tabs still scroll sideways on a phone (the Dashboard worst, by 887 pixels), eighteen carry text below the contrast standard, and four thousand small tap targets come from just fifty-four rules — one button in the Credential Reference grid accounts for over two thousand of them. Start with the sideways scroll."
-    },
-    {
-      "id": "s227-fable-skyview-six",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "SkyView's queue is done except two: a toggle to mute non-essential labels, and a detail box you can resize or pop out. Everything else has shipped — the side menu opens the full window, noncredit courses are drawn as broken rings with a credit/noncredit filter, the zoom isolates one course while its neighbours stay visible, labels say which circle is theirs, the top is one row, the legend folds away, the detail panel starts hidden, the keyword search keeps credit apart from noncredit, and the top row now links to the CCR list view in COBI. One wording change came with it: what the map called a “subject” is a discipline, and COBI already uses “subject” for the four-letter codes — so every label in SkyView now says discipline."
     },
     {
       "id": "s227-fable-config-to-tables",
@@ -39,12 +45,6 @@
       "for": "Sam",
       "tab": "unified-courses",
       "text": "Open the Common Course Reference tab, sign in, and open Suggested merges: the first 130 groups are your May 2026 curated common courses that carry the same title and discipline as a course already in the catalog. Each group proposes folding your anchor into the catalog course (the one with the college courses); where the only match is a single-college course, your anchor survives and gains it. Confirm the ones that are the same course, Keep as-is the ones that are not. Nothing moves until you confirm. The lane appears after the next daily run publishes."
-    },
-    {
-      "id": "s224-sam-drive-skyview-again",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Drive SkyView again — the six changes you asked for on 2026-09-04 are queued (zoom past 900% so one course can be isolated with its neighbours still visible, a toggle to mute non-essential labels, a resizable/pop-out detail box, noncredit courses drawn differently with a CR/NC toggle, SkyView as its own full-window tab, and CR kept apart from NC in the keyword search). Tell the next session which matter most."
     },
     {
       "id": "s224-sam-hosp-anchors",

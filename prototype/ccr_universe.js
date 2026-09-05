@@ -116,6 +116,9 @@ var NODE_ZOOM=0.20;
  * the edge-to-satellite gap goes 85px -> 374px while the radius falls
  * 318px -> 101px. */
 var K_MIN=0.03, K_MAX=60, RAD_KNEE=4;
+/* What a search result flies to, read straight off the zoom readout
+ * (view.k * 100 is the percentage the corner shows). Sam, 2026-09-04. */
+var COURSE_ZOOM=10, SUBJECT_ZOOM=1.5;
 function radScale(k){ return k<=RAD_KNEE ? k : RAD_KNEE*Math.sqrt(k/RAD_KNEE); }
 function clampK(k){ return Math.max(K_MIN, Math.min(K_MAX, k)); }
 /* Progressive labels (Sam, 2026-09-03: "the full number and title and units and
@@ -776,25 +779,49 @@ window.__ccrUniverse = function(){
        * full screen ("will need links on full screen to navigate to the other
        * views"). Every control is a word. */
       '<div class="u-top" id="u-top">'+
-        '<nav class="u-nav" aria-label="Other views">'+
-          '<button class="linkish" type="button" id="u-nav-forest">All disciplines</button>'+
-          /* "Subjects as a list" until 2026-09-04, and the word was wrong: this
-           * view maps U.islands and reads I.d, the DISCIPLINE name — so it listed
-           * the same things "All disciplines" shows as cards, differing only in
-           * form. Worse, COBI already has a "Common Subjects Reference" tab where
-           * a subject is a SUBJ4 code (ENGL, WELD), which is a different grain
-           * entirely. One word, and the two links stop looking like two grains. */
-          '<button class="linkish" type="button" id="u-list">Disciplines as a list</button>'+
-          '<button class="linkish" type="button" id="u-nav-esl">ESL packaging</button>'+
-          /* Sam, 2026-09-04, item 2: a link to the CCR LIST VIEW. That view is not
-           * in this prototype at all — it is COBI's Common Course Reference tab,
-           * which is the page this map is embedded IN when it runs inside COBI.
-           * So it is a link out, and it is removed when framed (below): offering
-           * a door onto the page you are already standing on is the same mistake
-           * as offering one onto nothing. */
-          '<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses" '+
-            'target="_blank" rel="noopener">CCR list view \u2197</a>'+
-        '</nav>'+
+        /* Sam, 2026-09-04, item 1: "Add SkyView label top left most position."
+         * ⚠️ A title in this row was tried on 2026-09-03 and REMOVED, because it
+         * pushed the view links rightward under the masthead's absolutely
+         * positioned suggestion list and Chromium reported them unclickable.
+         * It comes back now only because the same edit moves the search INTO
+         * this row (item 3), so the dropdown it opens belongs to this row and
+         * has nothing above it to hide under. */
+        '<span class="u-title" id="u-title">SkyView</span>'+
+        /* Item 2: the view links collapse from four inline buttons into ONE
+         * menu. Four links plus a title plus a search plus nine controls do not
+         * fit a row, and item 4 asks for one row on a normal screen — so the
+         * set that changes least often is the set that folds. <details> is the
+         * whole mechanism: it opens on click and on Enter, closes on Escape,
+         * and needs no script to be usable if the script fails. */
+        '<details class="u-views" id="u-views">'+
+          '<summary class="linkish" aria-controls="u-views-menu">Views</summary>'+
+          '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+
+            '<button class="linkish" type="button" id="u-nav-forest">All disciplines</button>'+
+            /* "Subjects as a list" until 2026-09-04, and the word was wrong: this
+             * view maps U.islands and reads I.d, the DISCIPLINE name — so it listed
+             * the same things "All disciplines" shows as cards, differing only in
+             * form. Worse, COBI already has a "Common Subjects Reference" tab where
+             * a subject is a SUBJ4 code (ENGL, WELD), which is a different grain
+             * entirely. One word, and the two links stop looking like two grains. */
+            '<button class="linkish" type="button" id="u-list">Disciplines as a list</button>'+
+            '<button class="linkish" type="button" id="u-nav-esl">ESL packaging</button>'+
+            /* Sam, 2026-09-04, item 2: a link to the CCR TABLE VIEW. That view is
+             * not in this prototype at all — it is COBI's Common Course Reference
+             * tab, which is the page this map is embedded IN when it runs inside
+             * COBI. So it is a link out, and it is removed when framed (below):
+             * offering a door onto the page you are already standing on is the
+             * same mistake as offering one onto nothing. */
+            '<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses" '+
+              'target="_blank" rel="noopener">CCR table view \u2197</a>'+
+          '</div>'+
+        '</details>'+
+        /* Item 3: the search moves LEFT OF THE CHIPS and gets wider, and item 11
+         * is why it had to move at all — in browser full screen the page masthead
+         * is not painted (only #u-full is), so the one search box on the page was
+         * simply absent and Sam had nothing to click. It is MOVED here, not
+         * copied: this page keeps exactly one search field, which is the
+         * invariant tests/ccr_skyview_universe.test.js pins. */
+        '<div class="u-search-slot" id="u-search-slot"></div>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
           '<span class="u-modes" role="group" aria-label="What a drag does">'+
             '<button class="btn mode" type="button" id="u-mode-pan" aria-pressed="false">Pan</button>'+
@@ -814,6 +841,19 @@ window.__ccrUniverse = function(){
           '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
           '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
         '</div>'+
+        /* Item 5: "Add a X to close in top right." ⚠️ The glyph is Sam's explicit
+         * ask, and the presentation rule it bends ("every control is a word") is
+         * satisfied the other way: the accessible name and the tooltip are words,
+         * so a screen reader hears "Close SkyView" and never a character.
+         *
+         * What it CLOSES depends on how you arrived, and guessing wrong strands
+         * the reader, so it walks down: leave full screen if we are in it; close
+         * the tab if this page was opened by another one (the CCR tab's launcher
+         * does exactly that, and window.close() only works for such a tab); else
+         * go back to the CCR tab. The last branch is why it is never inert. */
+        '<button class="u-close" type="button" id="u-close" aria-label="Close SkyView" '+
+          'title="Close SkyView \u2014 leaves full screen, or returns to the Common Course Reference">'+
+          '\u2715</button>'+
       '</div>'+
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
@@ -1072,7 +1112,13 @@ window.__ccrGoSuggestion = function(s){
   if(s.kind==="subject"){
     var I=s.isl;
     searchHits=[]; searchTerm="";
-    flyTo(I.x+(I.dx||0), I.y+(I.dy||0), Math.min(3.2, 190/I.r));
+    /* Item 10 (Sam, 2026-09-04): "When choosing a subject, zoom to 150% and
+     * maintain focus on the subject in the centre." An exact figure, not a
+     * fitted one — the previous `Math.min(3.2, 190/I.r)` sized the zoom to the
+     * island, so the same gesture landed at a different magnification on every
+     * discipline and the number in the corner never meant anything. flyTo
+     * centres the point and sets the anchor, so the zoom buttons keep it there. */
+    flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
     selIsl=I; selNode=null; showIsland(I);
     setHint("Subject <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses.");
     draw(); return true;
@@ -1080,9 +1126,13 @@ window.__ccrGoSuggestion = function(s){
   var isl=s.isl, nd=s.nd;
   searchHits=[{id:nd.i, x:nd.x+(isl.dx||0), y:nd.y+(isl.dy||0), isl:isl, nd:nd}];
   searchTerm=String(s.label||"").toLowerCase();
-  // Well above NODE_ZOOM: a single identity flown to at a zoom that draws no
-  // nodes is a ring nobody can see.
-  flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(NODE_ZOOM*3, 1.8));
+  /* Item 10: "When you do keyword search and select a Course, zoom to 1000% and
+   * maintain focus on the course in the centre of the universe." That is the
+   * magnification where one course stands clear of its neighbours while they
+   * stay on screen to drag it between — the reason the zoom cap was raised past
+   * 900% in the first place. Well above NODE_ZOOM either way: a single identity
+   * flown to at a zoom that draws no nodes is a ring nobody can see. */
+  flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), COURSE_ZOOM);
   selNode=nd; selIsl=isl;
   memFilter = s.kind==="member" ? String(s.code||"") : "";
   showNode(nd, isl, s.kind==="member");
@@ -1185,6 +1235,7 @@ window.__ccrUniverseState = function(){
           // radius cannot be queried from the DOM, and the taper is the half of
           // "zoom past 900%" that actually makes one course pickable.
           kMax:K_MAX, radKnee:RAD_KNEE, radScaleAt:radScale,
+          courseZoom:COURSE_ZOOM, subjectZoom:SUBJECT_ZOOM,
           creditFilter:creditFilter, ncDashAt:ncDash,
           creditCounts:(function(){ var o={cr:0,nc:0,unrecorded:0,shown:0};
             if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
@@ -1277,6 +1328,66 @@ function wire(){
   if(lb) lb.onclick=function(){
     var box=document.getElementById("gq");
     window.__ccrSubjectList((box && box.value) || searchTerm);
+  };
+
+  /* ── item 2: the Views menu closes itself ────────────────────────────────
+   * <details> gives open/close, Enter and Escape for free; what it does NOT do
+   * is close when you pick something or click away, and a menu left standing
+   * over the map is the reason menus feel broken. Both are three lines. */
+  var vw=document.getElementById("u-views");
+  if(vw){
+    vw.querySelectorAll(".linkish").forEach(function(el){
+      el.addEventListener("click", function(){ vw.open=false; });
+    });
+    document.addEventListener("pointerdown", function(e){
+      if(vw.open && !vw.contains(e.target)) vw.open=false;
+    });
+  }
+
+  /* ── item 3 + item 11: the search moves into this row ─────────────────────
+   * MOVED, never copied — the page keeps exactly one search field. In browser
+   * full screen only #u-full is painted, so a box living in the page masthead
+   * is not merely hard to reach, it is absent; Sam: "The keyword search in full
+   * SkyView has a bug and doesn't allow me to click into it."
+   *
+   * ⚠️ #u-top is REBUILT on every render of this view, so a form parked inside
+   * it is destroyed with it. homeSearch() puts the form back in the masthead
+   * and every other view calls it on entry — the same orphaning that made an
+   * earlier attempt to lift #u-bar into the masthead produce two of everything.
+   * The visible label is item 3's ("add 'Search' as a label"); the screen-reader
+   * label the form already carried stays, so nothing is announced twice. */
+  var slot=document.getElementById("u-search-slot"), ms=document.getElementById("msearch");
+  if(slot && ms){
+    slot.appendChild(ms);
+    var lab=ms.querySelector('label[for="gq"]');
+    var box=ms.querySelector("#gq");
+    if(lab && box){
+      /* Item 3 asks for the word "Search" beside the box. The label the form
+       * already carried ("Search courses, colleges and disciplines") is the
+       * right thing for a screen reader and far too long to print in a toolbar,
+       * so the long form moves to aria-label and the short one becomes visible.
+       * ⚠️ WCAG 2.5.3 (Label in Name) is why it is "Search" and not "Find": the
+       * accessible name must CONTAIN the visible words, or speech control
+       * ("click Search") stops matching the control the user can see. */
+      if(!lab.dataset.longLabel) lab.dataset.longLabel=lab.textContent;
+      box.setAttribute("aria-label", lab.dataset.longLabel);
+      lab.textContent="Search";
+      lab.classList.remove("sr");
+    }
+    var go=ms.querySelector('button[type="submit"]');
+    if(go) go.classList.add("u-search-go");
+  }
+
+  /* ── item 5: close ───────────────────────────────────────────────────────
+   * Walks down until something is true, so it is never a control that does
+   * nothing: leave full screen · close a tab that another page opened · fall
+   * back to the Common Course Reference. */
+  var xb=document.getElementById("u-close");
+  if(xb) xb.onclick=function(){
+    if(document.fullscreenElement){ if(document.exitFullscreen) document.exitFullscreen(); return; }
+    if(window.opener && !window.opener.closed){ window.close(); return; }
+    if(window.top!==window.self){ setHint("This map is embedded in the Common Course Reference tab \u2014 close it from there."); return; }
+    location.href="../index.html#unified-courses";
   };
   /* ── item 9: the CR / NC filter ───────────────────────────────────────────
    * Sam, 2026-09-04: "Also need a CR NC toggle". Three positions, not two — a
@@ -1953,4 +2064,41 @@ function drawWrites(){
     return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
   }).join("")+"</div>";
 }
+
+/* ── the search box goes home when the map does ─────────────────────────────
+ * The map's top row BORROWS the page's one search form (item 3 / item 11).
+ * Every other view replaces #view wholesale, which would take the borrowed form
+ * down with it — and `innerHTML =` DETACHES rather than destroys, so a node
+ * nobody still references is simply gone, listeners and all. Putting it back
+ * before the replacement is therefore not tidiness; it is the difference
+ * between a search box and no search box on four other views.
+ *
+ * ⚠️ Wrapped centrally rather than called from each view, and that is the whole
+ * point: the five entry points live in three files, one of which is a separate
+ * module, and the failure mode of a missed call site is invisible until someone
+ * navigates. This file is the LAST script the page loads (see boot()), so every
+ * global it wraps is already defined. */
+function homeSearch(){
+  var ms=document.getElementById("msearch");
+  if(!ms) return;
+  var wrap=document.querySelector(".mast .wrap");
+  if(!wrap || ms.parentNode===wrap) return;
+  wrap.appendChild(ms);
+  var lab=ms.querySelector('label[for="gq"]'), box=ms.querySelector("#gq");
+  if(lab){
+    if(lab.dataset.longLabel) lab.textContent=lab.dataset.longLabel;
+    lab.classList.add("sr");                // back to screen-reader-only in the masthead
+  }
+  if(box) box.removeAttribute("aria-label"); // the visible label is the name again
+  var go=ms.querySelector('button[type="submit"]');
+  if(go) go.classList.remove("u-search-go");
+}
+window.__ccrHomeSearch = homeSearch;
+["__ccrForest","__ccrDiscipline","__ccrSearch","__ccrEsl","__ccrSubjectList"].forEach(function(n){
+  var f=window[n];
+  if(typeof f!=="function" || f.__homesSearch) return;
+  var g=function(){ homeSearch(); return f.apply(this, arguments); };
+  g.__homesSearch=true;
+  window[n]=g;
+});
 })();

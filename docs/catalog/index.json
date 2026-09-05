@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 377,
+   "count": 378,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3014,6 +3014,25 @@
      "title": "Ask whether the list can contain what you are counting",
      "type": "methodology",
      "updated": "2026-08-24"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "prototype/check_ccr_atlas.js"
+     ],
+     "path": "docs/kb-notes/methodology-ask-which-container-before-you-debug-the-control.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "debugging",
+      "accessibility",
+      "fullscreen"
+     ],
+     "title": "Ask which container the control is in before you debug the control",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-22",
@@ -11734,9 +11753,9 @@
      "tags": [
       "handoff"
      ],
-     "title": "the masthead shipped; the accessibility sweep is a lint waiting on one palette ruling",
+     "title": "accessibility is one command now; SkyView's top row landed; items 6-9 are next",
      "type": null,
-     "updated": "2026-09-04"
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-09-04",
@@ -15231,5 +15250,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 775
+ "total": 776
 }
