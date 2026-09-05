@@ -61,6 +61,7 @@ from _authority_recode_apply import _atomic_dump, _trailing_nl  # noqa: E402
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 SINGLETONS = os.path.join(HERE, "coci_minted_singletons.json")
+CID_REFERENCE = os.path.join(HERE, "reference", "coci_courses.json")
 OUT_DIR = os.environ.get("IDENTITIES_REKEY_OUT") or os.path.join(HERE, "identities_rekey_out")
 STAMP = "_identities_rekeyed_from"
 ERA = "_identities_rekeyed"
@@ -163,6 +164,67 @@ def post_gates(orig, new_ident, plan, live):
     return g
 
 
+def write_dead_worklist(plan, identities, records, out, today, applied=None):
+    """Sam's ruling 5 (2026-09-05): the genuinely dead remainder is a WORKLIST,
+    never a silent drop. Every entry the re-key removes for deadness is written
+    here with what was on it and what still points at it, so a curator can act
+    on it instead of discovering the loss later.
+
+    A dead identity is not automatically garbage: after the C-ID liveness fix
+    the remainder is 3 MALFORMED keys (a doubled course number, a literal
+    "NULL"), which is a data-quality lead in the seed, not a retirement."""
+    by_course = defaultdict(list)
+    for r in records:
+        if r.get("course_id"):
+            by_course[r["course_id"]].append(r)
+    rows = []
+    for g in plan["drop_dead"]:
+        e = identities.get(g) or {}
+        recs = by_course.get(g, [])
+        rows.append({
+            "identity": g,
+            "identity_system": e.get("identity_system"),
+            "title": e.get("title"),
+            "discipline": e.get("discipline"),
+            "colleges_offering": len(e.get("colleges_offering") or []),
+            "articulation_records": len(recs),
+            "exhibits": sorted({r.get("exhibit_id") for r in recs if r.get("exhibit_id")})[:10],
+            "credentials": sorted({r.get("unified_title") for r in recs if r.get("unified_title")})[:10],
+            "why": "no alias map names it again and it is in no live catalog "
+                   "(minted courses, singletons, or the C-ID/CCN reference)",
+            "looks_malformed": bool(g == "NULL" or re.search(r"\b(\d+)\s+\1\b", g)),
+        })
+    doc = {
+        "_status": ("APPLIED " + applied) if applied else f"DRY-RUN {today}",
+        "_generated_by": "kb/_identities_rekey_dryrun.py",
+        "_rule": ("Sam's ruling 5, 2026-09-05: the genuinely dead remainder is a worklist, "
+                  "never a silent drop."),
+        "_note": ("These identities were REMOVED from kb/coci_articulations.json's identities map. "
+                  "Their articulation records are untouched and still name them, so nothing is lost: "
+                  "restoring one means fixing its key at the seed "
+                  "(kb/_seed_coci_articulations.py) and rebuilding."),
+        "count": len(rows), "rows": rows,
+    }
+    _atomic_dump(os.path.join(out, "dead_worklist.json"), doc, True)
+    L = [f"# Identities re-key — the dead remainder ({len(rows)})", "",
+         doc["_status"], "", doc["_rule"], "", doc["_note"], "",
+         "| identity | system | records | colleges | malformed | credentials |",
+         "|---|---|---|---|---|---|"]
+    for r in rows:
+        L.append(f"| `{r['identity']}` | {r['identity_system'] or '—'} | {r['articulation_records']} | "
+                 f"{r['colleges_offering']} | {'yes' if r['looks_malformed'] else 'no'} | "
+                 f"{', '.join(r['credentials'][:2]) or '—'} |")
+    L += ["", "## What a curator does with this", "",
+          "1. A malformed key (a doubled course number, `NULL`) is a SEED defect — fix the",
+          "   join in `kb/_seed_coci_articulations.py` so the row resolves, then rebuild.",
+          "2. A well-formed key that nothing names again is a genuine retirement: confirm",
+          "   against `kb/reference/coci_courses.json` and the alias receipts before",
+          "   accepting the loss of its articulation records.", ""]
+    with open(os.path.join(out, "dead_worklist.md"), "w", encoding="utf-8") as f:
+        f.write("\n".join(L))
+    return len(rows)
+
+
 def write_receipts(plan, out, today):
     os.makedirs(out, exist_ok=True)
     aliases = {}
@@ -225,8 +287,18 @@ def main():
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     art = _load(ARTICULATIONS)
     courses, singles = _load(COURSES)["courses"], _load(SINGLETONS)["courses"]
-    live = set(courses) | set(singles)
-    title_of = lambda i: (courses.get(i) or singles.get(i) or {}).get("common_title")
+    # ⚠️ The identities map is NOT M-ID only — 175 of its 2,346 entries are
+    # `identity_system: C-ID`, keyed by the C-ID/CCN code itself ("ACCT 110"),
+    # and those ids can never appear in the minted catalog. Leaving them out of
+    # the liveness set made every one of them a ghost that no alias map names
+    # again, i.e. `drop_dead` BY CONSTRUCTION: the 2026-09-04 plan would have
+    # deleted 172 live C-ID identities carrying 662 articulation records.
+    # kb/reference/coci_courses.json is the same C-ID/CCN reference the seed
+    # builder resolves them against (kb/_seed_coci_articulations.py), so it is
+    # the authority for whether one is live. (Session 232)
+    cid_ref = _load(CID_REFERENCE)["courses"]
+    live = set(courses) | set(singles) | set(cid_ref)
+    title_of = lambda i: ((courses.get(i) or singles.get(i) or cid_ref.get(i) or {}).get("common_title"))
     identities = art.get("identities") or {}
     plan = compute_plan(identities, live, load_maps(), title_of)
     print(f"identities {plan['entries_before']:,} · ghosts {plan['ghosts']:,} · re-key {len(plan['rekey']):,} "
@@ -238,7 +310,8 @@ def main():
     if not args.apply:
         out = args.out or os.path.join(OUT_DIR, today)
         write_receipts(plan, out, today)
-        print(f"DRY RUN — receipt → {os.path.relpath(out, ROOT)}/")
+        n = write_dead_worklist(plan, identities, art.get("articulations") or [], out, today)
+        print(f"DRY RUN — receipt → {os.path.relpath(out, ROOT)}/ (dead worklist: {n})")
         return 0
     if not args.receipt or not args.ruling:
         sys.exit("ABORT: --apply needs --receipt <dir> and --ruling \"<who, when: what>\".")
@@ -268,6 +341,11 @@ def main():
         print(f"  {'PASS' if ok else 'FAIL'}  {gname}")
     if not all(gates.values()):
         sys.exit("✗ gate failure — NOTHING written.")
+    # ruling 5: record the dead BEFORE the map loses them
+    n_dead = write_dead_worklist(plan, identities, art.get("articulations") or [],
+                                 args.receipt, today, applied=now)
+    print(f"  dead worklist: {n_dead} entr{'y' if n_dead == 1 else 'ies'} → "
+          f"{os.path.relpath(args.receipt, ROOT)}/dead_worklist.md")
     art["identities"] = new_ident
     art.setdefault(ERA, []).append({"at": now, "receipt": os.path.relpath(args.receipt, ROOT), "ruling": args.ruling})
     _atomic_dump(ARTICULATIONS, art, _trailing_nl(ARTICULATIONS))

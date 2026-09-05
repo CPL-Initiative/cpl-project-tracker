@@ -102,8 +102,9 @@ def load(rel):
 art = load("kb/coci_articulations.json")
 courses = load("kb/coci_minted_courses.json")["courses"]
 singles = load("kb/coci_minted_singletons.json")["courses"]
-rlive = set(courses) | set(singles)
-rtitle = lambda i: (courses.get(i) or singles.get(i) or {}).get("common_title")
+cid_ref = load("kb/reference/coci_courses.json")["courses"]
+rlive = set(courses) | set(singles) | set(cid_ref)
+rtitle = lambda i: (courses.get(i) or singles.get(i) or cid_ref.get(i) or {}).get("common_title")
 ident = art.get("identities") or {}
 rplan = idr.compute_plan(ident, rlive, idr.load_maps(), rtitle)
 check("committed files: every ghost dispositioned (%d ghosts)" % rplan["ghosts"], rplan["validation"]["V1_every_ghost_dispositioned"]["pass"])
@@ -118,9 +119,70 @@ check("committed files: the receipt on disk (if present) matches the recomputed 
                 **{g: ("drop_converged", n) for g, n in rplan["drop_converged"].items()},
                 **{g: ("drop_dead", None) for g in rplan["drop_dead"]}))(load(os.path.join("kb/identities_rekey_out", d, "alias_map.json")))
           for d in os.listdir(os.path.join(ROOT, "kb/identities_rekey_out"))
-          if os.path.exists(os.path.join(ROOT, "kb/identities_rekey_out", d, "alias_map.json"))))
+          if os.path.exists(os.path.join(ROOT, "kb/identities_rekey_out", d, "alias_map.json"))
+          and not str(load(os.path.join("kb/identities_rekey_out", d, "alias_map.json"))
+                      .get("_status", "")).startswith(("SUPERSEDED", "APPLIED"))))
 print("  committed: re-key %d · collision %d · converged %d · dead %d · after %d" % (
     len(rplan["rekey"]), len(rplan["drop_collision"]), len(rplan["drop_converged"]), len(rplan["drop_dead"]), len(rnew)))
+
+# An APPLIED receipt is checked against the file it produced, not against a plan
+# recomputed on the post-state (which is empty by construction — that is what
+# "applied" means). Every re-key it claims must be stamped and live.
+for _d in sorted(os.listdir(os.path.join(ROOT, "kb/identities_rekey_out"))):
+    _p = os.path.join("kb/identities_rekey_out", _d, "alias_map.json")
+    if not os.path.exists(os.path.join(ROOT, _p)):
+        continue
+    _r = load(_p)
+    if not str(_r.get("_status", "")).startswith("APPLIED"):
+        continue
+    _rekeys = {g: v["new_id"] for g, v in _r["aliases"].items() if v["action"] == "rekey"}
+    _drops = [g for g, v in _r["aliases"].items() if v["action"] != "rekey"]
+    check("applied receipt %s: every re-keyed entry sits on its new id, stamped" % _d,
+          all(ident.get(n, {}).get(idr.STAMP) == g for g, n in _rekeys.items()))
+    check("applied receipt %s: no dropped or old key survives" % _d,
+          not [g for g in list(_rekeys) + _drops if g in ident])
+    check("applied receipt %s: the ruling is recorded on the file" % _d,
+          any(e.get("receipt", "").endswith(_d) and e.get("ruling")
+              for e in (art.get(idr.ERA) or [])))
+    check("applied receipt %s: its dead worklist is beside it" % _d,
+          os.path.exists(os.path.join(ROOT, "kb/identities_rekey_out", _d, "dead_worklist.json")))
+
+# ── the C-ID liveness regression (Session 232) ───────────────────────────────
+# The identities map is NOT M-ID only: 175 of its entries are identity_system
+# C-ID, keyed by the C-ID code itself. They can never appear in the minted
+# catalog, so an M-ID-only liveness set made every one of them a ghost that no
+# alias map names again — drop_dead BY CONSTRUCTION. The 2026-09-04 plan would
+# have deleted 172 live C-ID identities carrying 662 articulation records.
+cid_entries = [k for k, v in ident.items() if (v or {}).get("identity_system") == "C-ID"]
+check("the identities map really does carry C-ID entries (%d)" % len(cid_entries), len(cid_entries) > 0)
+check("every C-ID entry resolves as live against the C-ID/CCN reference, not the minted catalog",
+      sum(1 for k in cid_entries if k in cid_ref) >= len(cid_entries) - 5)
+check("none of the live C-ID entries is dispositioned dead",
+      not [k for k in cid_entries if k in cid_ref and k in set(rplan["drop_dead"])])
+
+# the bug, reproduced: drop the C-ID reference from the liveness set
+mid_only = idr.compute_plan(ident, set(courses) | set(singles), idr.load_maps(),
+                            lambda i: (courses.get(i) or singles.get(i) or {}).get("common_title"))
+check("an M-ID-only liveness set condemns every C-ID entry (the bug this guards)",
+      len(mid_only["drop_dead"]) > len(rplan["drop_dead"]) + 100)
+check("the corrected liveness set keeps them (dead falls from %d to %d)"
+      % (len(mid_only["drop_dead"]), len(rplan["drop_dead"])),
+      len(rplan["drop_dead"]) < 10)
+
+# ── ruling 5: the dead are a worklist, never a silent drop ────────────────────
+import tempfile
+with tempfile.TemporaryDirectory() as td:
+    n = idr.write_dead_worklist(rplan, ident, art.get("articulations") or [], td, "test")
+    wl = load(os.path.join(td, "dead_worklist.json")) if os.path.isabs(td) is False else json.load(
+        open(os.path.join(td, "dead_worklist.json"), encoding="utf-8"))
+    check("every dropped-dead identity is written to the worklist", n == len(rplan["drop_dead"])
+          and len(wl["rows"]) == len(rplan["drop_dead"]))
+    check("the worklist carries what was on each entry (records, colleges, credentials)",
+          all(set(r) >= {"identity", "articulation_records", "colleges_offering", "credentials", "why"}
+              for r in wl["rows"]))
+    check("a doubled course number or a NULL key is flagged malformed",
+          all(r["looks_malformed"] for r in wl["rows"]))
+    check("the worklist markdown is written beside it", os.path.exists(os.path.join(td, "dead_worklist.md")))
 
 passed = sum(1 for _, ok in results if ok)
 print("\n%d/%d assertions passed" % (passed, len(results)))

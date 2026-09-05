@@ -493,7 +493,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/cip_cte_certified_260715.json` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/cip_searchable_260715.xlsx` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/coci_course_list.xlsx` | scripts: `chatbox/build_coci_offerings.py`, `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_apply_crossdisc_remint.py`, `kb/_audit_control_number_claims.py`, `kb/_audit_subject_map.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_cip_fitcheck.py`, `kb/_build_coci_lookup.py`, `kb/_build_college_courses.py`, `kb/_build_course_top_consensus.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_build_program_course_graph.py`, `kb/_crossdisc_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_overmerge_dryrun.py`, `kb/_remint_apply.py`, `kb/_remint_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_build_college_courses.py` | — |
-| `kb/reference/coci_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_seed_coci_articulations.py`, `kb/_seed_coci_courses.py` | scripts: `kb/_seed_coci_courses.py` |
+| `kb/reference/coci_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_identities_rekey_dryrun.py`, `kb/_seed_coci_articulations.py`, `kb/_seed_coci_courses.py` | scripts: `kb/_seed_coci_courses.py` |
 | `kb/reference/coci_program_course_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/coci_program_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/college_identity_rulings.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |

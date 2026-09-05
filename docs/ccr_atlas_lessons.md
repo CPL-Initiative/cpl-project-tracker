@@ -1458,3 +1458,69 @@ the recommendation naming a course. `introduction welding` reads 3 rows at 1
 college: one college's uptake. Confirmed alongside it that all **512** Welding
 identities are M-IDs, no C-ID and no CCN, which makes welding exactly the case
 his rule exists for. The merge candidate survives, on the titles alone.
+
+## 2026-09-05 (night) — SkyOutline S232: one chain, and the re-key that mostly should not happen
+
+Sam's rulings 8, 4 and 5, in his order. Ruling 8 first because the shared resolver
+is the tool the re-key is performed *with*, and that turned out to matter more
+than expected: writing the resolver forced the question *what is the live set*,
+and the answer overturned most of ruling 4.
+
+**The chain is declared once now.** `kb/alias_chain.py` holds the one
+`ALIAS_MAPS`, the one `resolve`, the one era guard. It had been copy-pasted into
+`kb/_analyze_official_fold_evidence.py` under a comment reading *"Must stay in
+lockstep with kb/_rekey_promotions.py ALIAS_MAPS"* while carrying seven maps
+against the real fifteen — eight applies behind, for months, failing nothing.
+⭐ **A comment promising lockstep is not a mechanism, and it fails silently in
+the one direction nobody checks.** `tests/alias_chain_single_source_test.py`
+now fails a second declaration under that name or any other, a copied resolver
+in a chain-aware file, and a chain that is duplicated, missing or out of order —
+all four perturbation-tested, because a guard nobody has seen fail is a guess.
+
+**Then ruling 4 mostly evaporated, and executing it literally would have done
+damage.** The instruction was to re-key `kb/cr_reference_worklist.json` and
+`kb/coci_articulations.json` through the fifteen maps. Measured:
+
+| surface | what the ruling assumed | what it is |
+|---|---|---|
+| `cr_reference_worklist.json` (2,006 M-IDs) | stale since September | **0 dead** — `daily-dashboard.yml` rebuilds it every morning from `coci_articulations.json`, so it cannot go stale. Re-keying would have **moved 1,197 live ids** off their rows. |
+| `articulations[].course_id` (2,319) | stale | **already current-era**: 2,299 of them equal a *resolved* identity key. Re-resolving is a double-applied permutation. |
+| `identities` side map (2,346) | — | **the one stale surface**: 1,597 ghost keys, 1,369 re-keyed, 2,290 entries now all live. |
+
+⭐ **The tell for which era a stored id is in is the DIRECTION the number moves.**
+Resolving an old-era key *heals* it (dead falls: identities went 1,597 → 175);
+resolving a current-era key *moves* it onto a live but unrelated row (dead rises:
+welding course ids went 44% → 50%). One file held both eras at once, which is
+exactly the state `alias_chain`'s docstring calls unrecoverable in place — except
+here the two eras were in two different fields, so each was recoverable alone.
+
+⚠️ **S231's death figures were an artifact of the measuring stick.**
+`unified_courses_data.js` declares `count_total: 76,008` and ships
+`count_inbrowser: 16,480`, so "not in the browser payload" read as "dead" and
+over-reported it about fourfold. Welding CR ids: 19 of 70 reported, **0 of 70**
+against the real catalog. **A display payload is not a catalog** — and the number
+was reproduced exactly (44%) before it was corrected, which is what made the
+correction safe to assert.
+
+⭐ **The near-miss worth remembering: a liveness set narrower than the identity
+space condemns an entire identity system.** 175 of the identities are
+`identity_system: C-ID`, keyed by the C-ID code itself (`ACCT 110`), which can
+never appear in an M-ID minted catalog. S229's dry run tested against minted ∪
+singletons, so every one of them came out `drop_dead` **by construction** — 172
+live identities carrying 662 articulation records, one `--apply` away, and all
+five of its gates would still have passed, because the gates check that the
+*post-state* is consistent, not that the *plan* was sane. Sam's ruling 5 ("a
+worklist, never a silent drop") is what turned a silent deletion into a thing
+that had to be written down and therefore looked at.
+
+The liveness set now includes `kb/reference/coci_courses.json` — the same C-ID/CCN
+reference the seed builder resolves them against. Dead remainder: **175 → 3**, and
+those three are malformed keys (`AG-AB 108 108`, `AG-PS 128 128 L`, `NULL`) — a
+seed-join defect, not a retirement. They land in `dead_worklist.md` beside the
+receipt. The 2026-09-04 receipt is marked `SUPERSEDED` rather than deleted, since
+it is the evidence of what was nearly applied.
+
+**Patterns that carried over from S231 and earned it again:** reproduce at the
+user's state, not a convenient one (the C-ID bug is invisible unless you look at
+*which* ids are dead, not how many); and hash the rendered output, not the control
+— here, the plan's counts, not the fact that the script ran.

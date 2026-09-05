@@ -10598,6 +10598,13 @@
      "line": 9390
     },
     {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_seed_coci_articulations.py",
      "kind": "script",
      "direction": "read",
