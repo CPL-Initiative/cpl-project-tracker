@@ -288,6 +288,53 @@ mid-step is safe: git operations are atomic and I re-read state when I resume. T
 cost is the in-flight step, not the work. (Sam asked, 2026-09-03. Claude Code's
 docs say Enter interrupts; the tracked behavior is queuing, issue #36326.)
 
+## 14. Where you run me — terminal, desktop, web
+
+Sam asked, 2026-09-05, after a session told him not to build in the desktop app
+because I "won't be able to follow the rules and memory and CLAUDE.md." That is
+mostly wrong, and the confusion is worth clearing up once, because "desktop"
+names three different things.
+
+The Claude Desktop app has three tabs: **Chat**, **Cowork**, and **Code**. Only
+the Code tab is Claude Code. Anthropic's own documentation is direct about it:
+Desktop *"runs the same underlying engine with a graphical interface… they share
+configuration and project memory via CLAUDE.md files."* So the Code tab reads
+our three CLAUDE.md files, our hooks and our skills exactly as a web session
+does. The rules travel with the repos, not with the window.
+
+**Computer use — where Claude clicks around your screen — is not a separate
+mode.** It is one tool inside a Code session, off until you turn it on in
+Settings, and it is the last thing I reach for: a connector first, then a shell
+command, then the browser, and only then your screen. Turning it on removes
+nothing. Two things are worth knowing anyway. It runs on your real desktop
+rather than in the sandbox, so the safety boundary is genuinely different from
+everything else I do. And work done by clicking is not work done in the repo —
+nothing checks it, because the checks are all things like tests, diffs and pull
+requests. That is the real argument for building in the repo, and it has nothing
+to do with whether I can read your instructions.
+
+**Cowork is the one with a genuine catch**, and it is the one you will actually
+hit: a Cowork session starts with no folders attached, and a session with no
+repo attached loads *none* of this. That is what "it ignored my rules" nearly
+always turns out to be — see §12.
+
+**The test, in any window: type `/context` and look under "Memory files."** If
+the three CLAUDE.md files are listed, they loaded. That settles it in five
+seconds, and it beats arguing about it.
+
+Two differences that are real and easy to miss:
+
+- **What I learn on my own does not travel.** Notes I keep for myself are stored
+  on the machine that made them and are not shared with other machines or with
+  cloud sessions. Anything that must survive belongs in a file we commit — which
+  is the whole reason for the checkpoint in §7.
+- **A cloud session cannot reach some things a local one can** — our database
+  and GitHub's API among them, which I get to by other means. Local sessions
+  reach them directly.
+
+You don't have to work this out either. Tell me where you are if it seems to
+matter, and I will say what is different.
+
 ## For Sam — a note on agents
 
 You floated *"maybe need some established agents who are mindful of these
