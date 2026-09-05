@@ -1952,3 +1952,96 @@ Show everything (every switch off, then tick the one or two wanted; the row
 reads "0 of 12" and the hint counts what is hidden), and `K_MAX` 60 → 70. The
 radius taper above `RAD_KNEE` is what makes 7,000% usable: the dot stays a
 dot while the positions keep spreading.
+
+## 2026-09-05 — SkyReply S231: two reports, and neither control was broken
+
+Sam, opening the session: *"1. Search box only delivers a short set of options
+and should show all or at least allow scroll to show others. 2. Show:All box
+does not respond when making changes. 3. Test other functionality to make sure
+everything works."*
+
+**Both were true, and neither was the control's fault.** That is the reusable
+part: a control reported as broken is worth ten minutes in a real browser
+before it is worth a line of code, because the two cases below would each have
+attracted a plausible fix that changed nothing.
+
+### The search box was already scrollable
+
+`.sug` has carried `max-height` + `overflow-y:auto` since it was written. The
+fault was one number in the caller: `__ccrSuggest(term, 8)`. Measured in
+Chromium, "art" rendered **8 rows against 200+ matches** — there was never
+anything below the fold to scroll to, so the box Sam was asking for already
+existed and had nothing to show him.
+
+⚠️ **Raising the limit alone would have half-fixed it.** The budget inside
+`suggest()` was written for a list of eight — disciplines took `limit-4`,
+courses `limit-2` of the rest — and read at sixty it starves the tail: a term
+matching many disciplines pushes every course off the end. The budget's JOB
+changed when the list became scrollable. It is no longer there to keep the
+dropdown short; it is there to stop any one kind from crowding the other two
+out of the TOP of it. So each kind gets a share with a floor and **whatever a
+kind cannot fill flows to the others** — otherwise a term with no college
+courses returns 45 rows and a gap, which is the original complaint again.
+
+Two more that only appear at depth: the candidate pool (`pts`) was capped at
+400 and that cap **truncates by island order, not by relevance**, so at a limit
+of 8 it never mattered and at 60 it decides the list — raised to 3,000, which
+costs nothing because a term matching little walks the whole corpus either way.
+And the arrow keys had to start carrying the viewport (`scrollIntoView({block:
+"nearest"})`): a cursor walking off the bottom edge of a still list reads
+exactly like a list that has stopped responding.
+
+### The Show switches were never inert — the map was
+
+Courses are only drawn past `NODE_ZOOM` (0.20). **SkyView opens at k = 0.100**,
+three zoom steps below it, because 49,896 dots at 10% are a smear and the
+disciplines are what is worth reading there. So every switch changed its label,
+changed the count in the hint, and moved **nothing whatever** on the canvas.
+Measured, stepping the zoom up from the opening view:
+
+| k | 0.100 | 0.141 | 0.197 | 0.276 | 0.386 |
+|---|---|---|---|---|---|
+| a filter change alters the canvas | ✗ | ✗ | ✗ | ✓ | ✓ |
+
+⭐ **The fix is not to draw the dots — it is to let the filter reach what IS
+drawn.** A discipline holding no course that passes the switches is no longer
+drawn (`islandPass`, memoized on a signature of the twelve switches, because
+`draw()` runs every pan and zoom frame). Deselect all now empties the map at
+the zoom it opens on. `pick()` honors the same filter — filtering to noncredit
+and clicking where a credit course sat was opening the inspector on an
+invisible point, the filter honored by the eye and not by the hand.
+
+⚠️ **And that created a second-order problem the sweep caught, not a test.**
+Dropping an empty discipline means picking that discipline from the search list
+lands on nothing at all. `healShow` had answered this for a COURSE pick; the
+discipline branch called `healShow(null)`, which turns on `ident` and nothing
+else, and a typed search never healed from either of its branches.
+`healIsland` / `healHits` close it — **and only when NOTHING passes.** A filter
+the reader set stands as long as it still leaves them something to look at;
+healing a filter that is working is how a control starts fighting the person
+holding it. Pinned in both directions in the test.
+
+### What testing everything else was actually worth
+
+The sweep — 32 checks driving the real page, 14 more inside COBI's CCR tab —
+found two things a green suite did not:
+
+1. **`skyview.html` shipped one edit stale.** The built page is an artifact
+   assembled by `build_ccr_atlas.py`; the jsdom tests read `ccr_universe.js`
+   directly and passed, while the served page had never seen the last edit.
+   **The build is part of the change, not a step after it.**
+2. The heal gap above.
+
+And two that looked like bugs and are not, recorded so nobody "fixes" them:
+**Clear and Fit all only render past ONE chip** (with one, its own × is the
+clear), and **the side rail closes on a click outside it**, not on a second
+press of ☰ — it is a slide-over with a full-viewport scrim, so the second press
+lands on the scrim and closes it anyway. A harness that clicks through frames
+has to drive both from the parent page.
+
+⚠️ One thing found and NOT fixed: in COBI's CCR tab the First Light greeting
+(`.cplfl-overlay.open`, `z-index:12000`) covers the whole SkyView frame until
+dismissed. It is a modal greeting with a working close button and it greets a
+browser once a day, so it is behaving as designed — but a harness meets it on
+every fresh profile, and a click on anything in the map times out until it is
+cleared.

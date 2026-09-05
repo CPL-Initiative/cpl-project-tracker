@@ -108,10 +108,17 @@ consequence is gone). Knobs: `SPREAD_ISLANDS`, `DOT_IDENT`/`DOT_ORPHAN`, `DIM_AL
 **Deselect all** beside Show everything (clear every switch, then tick the one you want), and the zoom ceiling is
 **7,000%** (`K_MAX` 70; *"needed when working on a single course"*).
 
+✅ **TWO REPORTS, AND NEITHER CONTROL WAS BROKEN (SkyReply S231, 2026-09-05, #1486).** Sam: *"1. Search box only delivers a short set of options and should show all or at least allow scroll to show others. 2. Show:All box does not respond when making changes. 3. Test other functionality to make sure everything works."*
+⭐ **The search list was already scrollable** — `.sug` has carried `overflow-y:auto` since it was written; the caller asked for **8** suggestions out of 200+ matches, so there was nothing below the fold. Now **60** (`SUG_LIMIT`), a sticky footer saying when there are more, the listbox label carrying the same count, and arrow keys that carry the viewport. ⚠️ **The budget had to be rewritten with it**: written for a list of eight (disciplines `limit-4`), at sixty it starves the tail — each kind now has a share with a floor and unfilled room **flows** to the others. The candidate pool went 400 → 3,000 because that cap truncates by island order, not relevance.
+⭐ **The Show switches were never inert — the map was.** Courses draw only past `NODE_ZOOM` (0.20) and SkyView **opens at k = 0.100**, so every switch moved a label and a count and nothing on the canvas (measured: a filter change altered the canvas at 0.276 and above, never at or below 0.197). The fix is not to draw 50k dots at 10%: a discipline holding no course that passes the switches **is no longer drawn** (`islandPass`, memoized on a signature of the twelve switches), `pick()` honors the same filter, and the hint names the zoom fact. ⚠️ **That made a discipline pick land on empty ground**, so `healIsland` / `healHits` now heal a discipline pick and a typed search the way `healShow` already healed a course pick — **and only when NOTHING passes**, so a filter that is working is left alone.
+⭐ **The sweep is what found the rest**: `skyview.html` had shipped one edit stale (the build is part of the change, not a step after it), and the heal gap. Two things that look like bugs and are not: Clear and Fit all render only past ONE chip, and the side rail closes on a click outside it (a slide-over with a full-viewport scrim). Verified: 27 jsdom checks (`tests/ccr_skyview_search_show.test.js`), 302 test files, a 32-check Chromium drive of the page and 14 more inside COBI's CCR tab, and `npm run a11y -- skyview`. Story: [docs/ccr_atlas_lessons.md](docs/ccr_atlas_lessons.md).
+
 **NEXT:** ⓪ **Sam drives the third list** — the dot sizes, the spread factor, the highlight's fade —
 then the second list and the header's second cut — the icon row, the More menu,
-the window controls and the ☰ from the CCR menu, the Show menu, the chips, the dark canvas, the
-explainer's voice. **Open from his Obsidian screenshot
+the window controls and the ☰ from the CCR menu, the chips, the dark canvas, the
+explainer's voice. (The **search list** and the **Show menu** he has now driven: both were reported
+and both are answered above; what is open there is whether 60 is the right depth and whether an
+emptied discipline should vanish or ghost.) **Open from his Obsidian screenshot
 (2026-09-05):** a right-edge vertical rail of glyphs (zoom in · reset · fit · zoom out · undo · redo ·
 help) in place of the row's zoom words — glyph-only, so his call under his own glyph rule. The CCR
 tab's only sweep finding is still First Light's 15px greeting opt-out checkbox (`first_light.js`), a
