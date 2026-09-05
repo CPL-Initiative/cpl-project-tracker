@@ -209,8 +209,11 @@ def s_sweeper_corrupts_its_own_rule():
         "- **AMERICAN SPELLING, ALWAYS.** Use while (not while) and among (not among).")}
 
 def s_memory_row_contradicts_doctrine():
-    """NOT YET A GUARD. cpl_memory has no lint at all. A row can assert the
-    opposite of the always-loaded file and nothing compares them."""
+    """STILL NOT A GUARD for the contradiction itself. Since 2026-09-05
+    `kb/_memory_audit.py` lints the table's STRUCTURE (dead paths, dangling
+    pointers, stale stamps, PRs not on main, duplicates), but a row can still
+    assert the opposite of the always-loaded file and nothing compares them —
+    that check is a session's read against the lane files, under a receipt."""
     return {"CLAUDE.md": "# CLAUDE\n\n" + BASE_RULES + BASE_CRITICAL + "\nNever force-push `main`.\n"}
 
 def s_checkpoint_never_ran():

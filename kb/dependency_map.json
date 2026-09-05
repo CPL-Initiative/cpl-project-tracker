@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 423,
+  "file_datasets": 424,
   "external_services": 137,
-  "consumers": 315,
+  "consumers": 316,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -2705,7 +2705,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 326
     }
    ],
    "served": true,
@@ -4822,7 +4822,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 306
     }
    ],
    "served": false,
@@ -13136,6 +13136,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/memory_audit_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/merge_chain_flatten_test.py": {
    "consumers": [
     {
@@ -15237,6 +15250,13 @@
      "tabs": [
       "memory"
      ]
+    },
+    {
+     "id": "script:kb/_memory_audit.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 178
     }
    ],
    "main_committers": []
@@ -17427,6 +17447,7 @@
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
     "tests/identities_rekey_test.py",
+    "tests/memory_audit_test.py",
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",
     "tests/rekey_crnc_mirrors_test.py",

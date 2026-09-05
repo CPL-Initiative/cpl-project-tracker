@@ -342,7 +342,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Playbook — a live Edge Function 502 is often a RETIRED model id (diagnose via logs, fix via model swap)](../kb-notes/playbook-edge-function-502-retired-model.md) | playbook | published | 2026-06-19 | 2026-06-19 |
 | [Playbook — a standalone public page on the COBI Pages site (sits alone, live data, prints to PDF)](../kb-notes/playbook-standalone-public-page.md) | playbook | published | 2026-06-25 | 2026-06-25 |
 | [Playbook — Auto-sync vault-side repo clones via Windows Task Scheduler](../kb-notes/playbook-vault-sync-setup.md) | playbook | published | 2026-05-27 | 2026-05-29 |
-| [Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)](../kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md) | playbook | published | 2026-07-24 | 2026-07-24 |
+| [Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)](../kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md) | playbook | published | 2026-07-24 | 2026-09-05 |
 | [Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template](../kb-notes/playbook-building-cpl-executive-presentations.md) | playbook | published | 2026-07-20 | 2026-08-10 |
 | [Playbook — loading a Microsoft Access export into Supabase](../kb-notes/playbook-access-export-to-supabase.md) | playbook | published | 2026-08-08 | 2026-08-08 |
 | [Playbook — Merging two existing CER credentials (existing→existing fold)](../kb-notes/playbook-cer-credential-merge.md) | playbook | published | 2026-06-04 | 2026-06-04 |

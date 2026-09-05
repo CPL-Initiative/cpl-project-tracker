@@ -196,7 +196,7 @@
    "decides": "Sam, through the Memory pane's verify / stale / supersede controls. Sessions PROPOSE only: inserts land status='proposed' with the plain-language field filled, and become trusted (verified) only through the corroboration gate — a committed source, a second session, or Sam's check. A session may correct its OWN rows with a logged reason, and supersede-with-pointer, never delete. A human-sourced row is never silently superseded by a session's inference: disagree by filing a NEW row and flagging the conflict. Autogenerate drafts are human-reviewed before save. Every write logs to cpl_memory_log under the actor's moniker. (Sam's clarification, 2026-08-30.)",
    "maintained_in": "public.cpl_memory + public.cpl_memory_log via the Memory tab and the checkpoint auto-write (Supabase MCP)",
    "owner": null,
-   "when_empty": "These rules are written, not enforced — the memory table has no lint (one of the two known uncaught doctrine scenarios). The cross-store checker queued for Session 211 is the enforcement half; this row is its spec."
+   "when_empty": "The STRUCTURAL half is linted since 2026-09-05 (kb/_memory_audit.py: dead paths, dangling pointers, a stale row wearing a stamp, PRs not on main, null slugs, near-duplicates; receipts under kb/memory_audit/). The SEMANTIC half — a row contradicting a later ruling — is still a read against the lane files, done by a session under a receipt with every write logged (kb/memory_audit/2026-09-05-receipt.json is the worked example). The cross-store checker remains this row's enforcement spec."
   },
   {
    "id": "DR-20",

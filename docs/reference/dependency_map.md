@@ -72,7 +72,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_config` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_funding_notes` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
 | `cpl_funding_participation` | tabs: `college-briefing`, `implementation-funding` | tabs: `college-briefing`, `implementation-funding` |
-| `cpl_memory` | tabs: `memory` | tabs: `memory` |
+| `cpl_memory` | tabs: `memory` · scripts: `kb/_memory_audit.py` | tabs: `memory` |
 | `cpl_memory_log` | none found | tabs: `memory` |
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
@@ -613,6 +613,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
@@ -802,5 +803,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 423 file
-datasets · 137 external services · 315 consumers · 33 workflows · 37 tabs.
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 424 file
+datasets · 137 external services · 316 consumers · 33 workflows · 37 tabs.

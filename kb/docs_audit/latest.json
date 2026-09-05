@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 792,
-    "bytes": 8451694,
+    "bytes": 8452401,
     "over_budget": 3,
     "handoff_max": 229,
     "always_loaded_files": 1,
@@ -41,7 +41,7 @@
       },
       "kb_note": {
         "files": 381,
-        "bytes": 1986686,
+        "bytes": 1987374,
         "over": 0
       },
       "roadmap_lane": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 203,
-        "bytes": 1707717,
+        "bytes": 1707736,
         "over": 0
       }
     },
@@ -61,16 +61,16 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2750,
-      "bytes": 1377891538,
-      "heavy_bytes": 678597665,
-      "heavy_share": 0.492,
+      "files": 2594,
+      "bytes": 1313552036,
+      "heavy_bytes": 614067994,
+      "heavy_share": 0.467,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -420,16 +420,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 77409757,
-        "kind": "dir"
-      },
-      "message": "directory totals 77,409,757 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
@@ -456,6 +446,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 12880086,
+        "kind": "dir"
+      },
+      "message": "directory totals 12,880,086 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

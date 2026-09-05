@@ -124,6 +124,16 @@ jobs:
       # python, no network.
       - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
         run: python3 tests/identities_rekey_test.py
+      # Memory-table lint (Session 229) — the structural half of "is this memory
+      # row still true": dead paths, dangling pointers, a stale row wearing a
+      # verification stamp, PRs not on main, null slugs, near-duplicates. Each
+      # rule is tested both ways (fires on the defect, silent on truth — the
+      # first run reported 110 phantom dead paths because `.js` matched the
+      # start of `.json`), and the trigram similarity is pinned to pg_trgm's
+      # definition so the 0.55 cut means what Session 190 measured. Pure-stdlib
+      # python, no network.
+      - name: Memory-table lint guard (kb/_memory_audit.py)
+        run: python3 tests/memory_audit_test.py
       # Prefix fold dry run (Session 224) — the keep-number re-key for rows off
       # their discipline's canonical code: a span (KINE/ATHL) must not move, a
       # TOP-only discipline is held (Rule 7), a taken number gap-fills instead of

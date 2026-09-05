@@ -1,0 +1,1840 @@
+{
+ "generated": "2026-09-05",
+ "generated_at": "2026-09-05T03:37:32",
+ "roots": [
+  "/home/user/cpl-project-tracker",
+  "/home/user/CPLBrain",
+  "/home/user/cpl-knowledge-base"
+ ],
+ "summary": {
+  "rows": 852,
+  "counts": {
+   "dead_path": 9,
+   "related_names_doc": 18,
+   "dangling_related": 8,
+   "related_to_retired": 7,
+   "unattributed_verified": 38,
+   "stale_stamp": 1,
+   "proposed_with_session_verifier": 2,
+   "pr_reverted": 1,
+   "near_duplicate": 1,
+   "null_slug": 6,
+   "author_alias": 6,
+   "proposed_with_human_verifier": 28,
+   "question_resolved": 4,
+   "snapshot_claim": 118
+  },
+  "hopper": {
+   "by_status": {
+    "verified": 303,
+    "proposed": 527,
+    "superseded": 19,
+    "stale": 3
+   },
+   "proposed_by_kind": {
+    "opportunity": 12,
+    "wishlist": 7,
+    "question": 12,
+    "decision": 60,
+    "fact": 114,
+    "pitfall": 249,
+    "procedure": 50,
+    "milestone": 13,
+    "risk": 10
+   },
+   "proposed_age": {
+    "0-7d": 87,
+    "8-30d": 386,
+    "31-60d": 54,
+    "61d+": 0,
+    "undated": 0
+   }
+  },
+  "defects": 24
+ },
+ "findings": [
+  {
+   "rule": "dead_path",
+   "row": "grain-invariance-is-not-a-virtue",
+   "status": "proposed",
+   "path": "college_goal2.js",
+   "kind": "basename"
+  },
+  {
+   "rule": "dead_path",
+   "row": "course-share-100pct-reads-as-done",
+   "status": "proposed",
+   "path": "college_goal2.js",
+   "kind": "basename"
+  },
+  {
+   "rule": "dead_path",
+   "row": "re-measure-an-inherited-blocker-against-what-shipped",
+   "status": "verified",
+   "path": "docs/kb-notes/methodology-re-measure-an-inherited-blocker-against-the-artifact-that-shipped.md",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "the-measuring-browser-can-hide-the-defect",
+   "status": "proposed",
+   "path": "scripts/check_public_page_layout.js",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "a-target-size-exemption-must-name-and-verify-its-equivalent",
+   "status": "proposed",
+   "path": "scripts/check_public_page_layout.js",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "a-test-file-is-a-memory-budget",
+   "status": "verified",
+   "path": "tests/cpl_funding.test.js",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "split-the-experimenter-from-the-subject",
+   "status": "proposed",
+   "path": "docs/scenarios/rubric.md",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "p4-is-the-first-valid-doctrine-probe-result",
+   "status": "proposed",
+   "path": "CPLBrain/04-projects/cpl-initiative/doctrine-probes/rubric.md",
+   "kind": "path"
+  },
+  {
+   "rule": "dead_path",
+   "row": "jsdom-passes-while-the-page-is-visibly-broken",
+   "status": "proposed",
+   "path": "scripts/check_public_page_layout.js",
+   "kind": "path"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "coci-program-course-file-partial-lower-bound",
+   "related": "methodology-college-apprenticeship-cpl-roster",
+   "note": "docs/kb-notes/methodology-college-apprenticeship-cpl-roster.md"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:9fd23f78-a69a-4c26-a336-6e8905d962a8",
+   "related": "CLAUDE.md naming"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:5e1ed10a-48c2-449d-82db-2fbda53de5a0",
+   "related": "training_agency"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:1cc9527f-7e8f-43e5-ada7-da467918e4a4",
+   "related": "SB 361"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:1cc9527f-7e8f-43e5-ada7-da467918e4a4",
+   "related": "CDCP"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:e52b467d-a3f3-4c60-937e-4ceaa81869be",
+   "related": "training_agency field"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:4371d4d8-7910-4b0e-a6b6-959be871d83f",
+   "related": "credit by exam"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "id:4205ac9a-186f-4e85-a901-118856184c73",
+   "related": "nc-learning-partners tab"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "aed-synonym-fix-became-the-outage",
+   "related": "methodology-assert-what-retrieval-returns",
+   "note": "docs/kb-notes/methodology-assert-what-retrieval-returns.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "plausible-cause-is-not-the-measured-one",
+   "related": "guard-that-fails-on-truth-gets-muted",
+   "note": "docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "obsidian-exclusion-is-relevance-not-performance",
+   "related": "knowledge-base-needs-a-lint-pass",
+   "note": "docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "funding-years-are-mirrored-two-year-project",
+   "related": "funding-overlay-holds-the-live-priorities",
+   "target_status": "stale",
+   "follow": null
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "transcribed-credit-is-recording-practice",
+   "related": "applied-measure-fork-55-percent",
+   "target_status": "superseded",
+   "follow": "applied-credits-mirrors-articulated-on-needs-action-rows"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "a-rollup-over-k-anonymised-rows-sums-unsuppressed-only",
+   "related": "adr-student-detail-aggregate-disclosure-control",
+   "note": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md"
+  },
+  {
+   "rule": "dangling_related",
+   "row": "the-repo-concern-is-ip-proliferation-not-privacy",
+   "related": "LICENSE"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "map-student-ids-are-salt-hashed",
+   "related": "three-new-map-custom-reports-awaiting-wiring",
+   "target_status": "superseded",
+   "follow": "three-map-custom-reports-served-and-wired"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "three-map-custom-reports-served-and-wired",
+   "related": "three-new-map-custom-reports-awaiting-wiring",
+   "target_status": "superseded",
+   "follow": "three-map-custom-reports-served-and-wired"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "catalog-year-was-never-missing",
+   "related": "three-new-map-custom-reports-awaiting-wiring",
+   "target_status": "superseded",
+   "follow": "three-map-custom-reports-served-and-wired"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "reorder-by-permutation-not-by-rewriting-config",
+   "related": "funding-overlay-holds-the-live-priorities",
+   "target_status": "stale",
+   "follow": null
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "sam-credit-noncredit-entity-ruling",
+   "related": "a-curator-ruling-must-be-attributed-data",
+   "note": "docs/kb-notes/methodology-a-curator-ruling-must-be-attributed-data.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "name-matching-cannot-reach-four-districts",
+   "related": "a-crosswalks-value-is-the-lint-not-the-mapping",
+   "note": "docs/kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "a-spelling-stem-flagged-430-correct-words",
+   "related": "a-guard-that-fails-on-truth-gets-muted",
+   "note": "docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "the-tables-we-build-drop-maps-college-id",
+   "related": "a-crosswalks-value-is-the-lint-not-the-mapping",
+   "note": "docs/kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "students-awarded-is-a-wrong-label-not-a-preference",
+   "related": "a-provenance-label-must-say-why-not-what",
+   "note": "docs/kb-notes/methodology-a-provenance-label-must-say-why-not-what.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "the-guidance-row-cap-is-a-fossil",
+   "related": "a-capped-instruction-list-is-a-zero-sum-budget",
+   "note": "docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "calibrate-a-signal-before-you-rank-the-queue",
+   "related": "measure-your-mechanism-ceiling-before-working-the-queue",
+   "note": "docs/kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md"
+  },
+  {
+   "rule": "related_to_retired",
+   "row": "sam-cleared-the-sierra-training-queue",
+   "related": "sierra-feedback-25-untriaged-2026-08-11",
+   "target_status": "superseded",
+   "follow": "sam-cleared-the-sierra-training-queue"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "grouping-a-flat-list-breaks-single-container-wiring",
+   "related": "implementation-funding",
+   "note": "docs/reference/lanes/implementation-funding.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "sam-ruled-three-bands-and-the-accepted-dials",
+   "related": "implementation-funding",
+   "note": "docs/reference/lanes/implementation-funding.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "a-measure-everyone-clears-pays-automatically",
+   "related": "implementation-funding",
+   "note": "docs/reference/lanes/implementation-funding.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "counselor-step-is-an-attestation-not-batch-proof",
+   "related": "implementation-funding",
+   "note": "docs/reference/lanes/implementation-funding.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "sam-adopted-the-cccco-house-voice",
+   "related": "governance-team-enablement",
+   "note": "docs/reference/lanes/governance-team-enablement.md"
+  },
+  {
+   "rule": "related_names_doc",
+   "row": "a-remembered-toggle-hides-the-default-from-its-author",
+   "related": "the-text-a-reader-sees-is-not-the-text-a-test-reads",
+   "note": "docs/kb-notes/methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "workplan-single-source-editor",
+   "author": "skyelemental@bot",
+   "event_date": "2026-07-27"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "de-hardcode-join-key-pitfall",
+   "author": "skyelemental@bot",
+   "event_date": "2026-07-27"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "workplan-activity-project-links",
+   "author": "skyelemental@bot",
+   "event_date": "2026-07-27"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "annual-goals-path-a-entity-overlay",
+   "author": "skyelemental@bot",
+   "event_date": "2026-07-27"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "workplan-rekey-872-incomplete",
+   "author": "skyelemental@bot",
+   "event_date": "2026-07-27"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "utility-line-work-has-no-cpl",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "statewide-is-138-not-84",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "persist-the-judgment-not-the-run",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "split-college-cpl-academic-vs-career",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "absence-is-a-phrase-in-a-partner-sheet",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "coci-articulations-is-a-stale-preview",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "exhibit-attribution-via-cpl-type-groups",
+   "author": "SkyWalker S121",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "sprint-goal-2-is-the-course-type-suffix",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "kb-curation-is-world-readable",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "supabase-csv-importer-duplicates-silently",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "non-college-entities-are-at-zero-awarded",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "dormant-credit-is-1052531-units",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "stage-to-capture-pk-to-detect",
+   "author": "SkyNaut (128)",
+   "event_date": "2026-08-08"
+  },
+  {
+   "rule": "stale_stamp",
+   "row": "funding-overlay-holds-the-live-priorities",
+   "status": "stale",
+   "verified_by": "measured live + merged PR",
+   "verified_at": "2026-08-09T20:16:45.557449+00:00"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "flattened-diagram-clips-its-own-table",
+   "author": "SkyDeck134",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "pre-apprenticeship-cpl-three-mechanisms",
+   "author": "SkyDeck134",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "cx-not-articulation-for-csu-transfer",
+   "author": "SkyDeck134",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "contacts-and-staff-are-not-pii",
+   "author": "Session 143 (SkyPro)",
+   "event_date": "2026-08-12"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "cr-reference-scope-is-global-with-split",
+   "author": "unknown",
+   "event_date": "2026-08-13"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "ccrr-naming-cascade-ccn-cid-mid",
+   "author": "unknown",
+   "event_date": "2026-08-13"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "an-opportunity-figure-must-be-what-peers-achieved",
+   "author": "sky163",
+   "event_date": "2026-08-17"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "ashley-scoped-the-crosswalk-to-one-college",
+   "author": "session169-skydelta@bot",
+   "event_date": "2026-08-19"
+  },
+  {
+   "rule": "proposed_with_session_verifier",
+   "row": "the-cpl-story-corpus-evidences-education-not-career",
+   "verified_by": "SkyLens S202",
+   "kind": "risk",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_session_verifier",
+   "row": "a-bound-is-tested-by-value-not-the-clamp-count",
+   "verified_by": "SkyLens S202",
+   "kind": "pitfall",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "sam-cut-rule-9-and-rule-7-to-their-push-halves",
+   "author": "SkyThread (Session 208)",
+   "event_date": "2026-08-29"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "workflow-edits-are-dependency-map-inputs",
+   "author": "SkyLedgerS210",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "rule-number-drift-fixed-and-linted",
+   "author": "SkyLedgerS210",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "a-harness-must-verify-its-own-healthy-fixture",
+   "author": "SkyLedgerS210",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "all-six-doctrine-remediations-built",
+   "author": "SkyLedgerS210",
+   "event_date": null
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "gr-memos-live-on-tab",
+   "author": "SkyLedgerS210",
+   "event_date": "2026-08-31"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "one-pool-nc-only-rulings",
+   "author": "SkyLedgerS210",
+   "event_date": "2026-08-31"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "one-pool-model-adopted",
+   "author": "SkyLedgerS210",
+   "event_date": "2026-08-31"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "sam-the-drill-in-carries-this-colleges-own-figures",
+   "author": "session-219-skytrim",
+   "event_date": "2026-09-01"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "sam-ruled-both-funding-tab-consolidations",
+   "author": "session-219-skytrim",
+   "event_date": "2026-09-01"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "editing-cpl-funding-js-stales-the-dependency-map",
+   "author": "session-219-skytrim",
+   "event_date": "2026-09-01"
+  },
+  {
+   "rule": "unattributed_verified",
+   "row": "sam-explainer-prose-names-its-instruments",
+   "author": "session-219-skytrim",
+   "event_date": "2026-09-02"
+  },
+  {
+   "rule": "pr_reverted",
+   "row": "noncredit-32-0111-is-short-term-vocational-only",
+   "pr": 1192,
+   "reverted_by": 1194
+  },
+  {
+   "rule": "near_duplicate",
+   "a": "esl-rollback-not-recommended-catalogs-disagree",
+   "b": "sam-do-not-roll-back-the-32-esl-relevels",
+   "a_status": "proposed",
+   "b_status": "verified",
+   "similarity": 0.56
+  },
+  {
+   "rule": "null_slug",
+   "id": "9fd23f78-a69a-4c26-a336-6e8905d962a8",
+   "status": "proposed",
+   "title": "Terminology: \"Learning Partners\", and answering never closes"
+  },
+  {
+   "rule": "null_slug",
+   "id": "5e1ed10a-48c2-449d-82db-2fbda53de5a0",
+   "status": "proposed",
+   "title": "Reading the top of a sorted list is not an audit"
+  },
+  {
+   "rule": "null_slug",
+   "id": "1cc9527f-7e8f-43e5-ada7-da467918e4a4",
+   "status": "stale",
+   "title": "Noncredit CPL waivers are an apportionment problem, not a curriculum one"
+  },
+  {
+   "rule": "null_slug",
+   "id": "e52b467d-a3f3-4c60-937e-4ceaa81869be",
+   "status": "proposed",
+   "title": "The four standalone noncredit institutions are at zero in MAP"
+  },
+  {
+   "rule": "null_slug",
+   "id": "4371d4d8-7910-4b0e-a6b6-959be871d83f",
+   "status": "verified",
+   "title": "CSU recognizes credit-by-exam (Cx) but not HS CTE articulated courses"
+  },
+  {
+   "rule": "null_slug",
+   "id": "4205ac9a-186f-4e85-a901-118856184c73",
+   "status": "stale",
+   "title": "Most statewide CPL exhibits have never converted a unit"
+  },
+  {
+   "rule": "author_alias",
+   "session": "123",
+   "authors": [
+    "skyhunter-s123@bot",
+    "skyrecall-s123@bot"
+   ]
+  },
+  {
+   "rule": "author_alias",
+   "session": "134",
+   "authors": [
+    "SkyDeck134",
+    "skyline-s134@bot"
+   ]
+  },
+  {
+   "rule": "author_alias",
+   "session": "187",
+   "authors": [
+    "SkyView (Session 187)",
+    "session-187-skyview"
+   ]
+  },
+  {
+   "rule": "author_alias",
+   "session": "190",
+   "authors": [
+    "SkyRead (Session 190)",
+    "session-190",
+    "session-190-skyalign"
+   ]
+  },
+  {
+   "rule": "author_alias",
+   "session": "196",
+   "authors": [
+    "sky196",
+    "sky196@bot"
+   ]
+  },
+  {
+   "rule": "author_alias",
+   "session": "209",
+   "authors": [
+    "Session 209 (SkyGov)",
+    "Session 209 (SkyMap)"
+   ]
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "ferpa-report-fewer-than-ten",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-10"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "k10-revisit-costs-breadth-not-volume",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-10"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "course-share-100pct-reads-as-done",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-10"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "reviewer-signin-lives-in-about",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "an-instruction-naming-another-surface-is-unenforced",
+   "verified_by": "Sam",
+   "kind": "pitfall",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "noncredit-32-0111-is-short-term-vocational-only",
+   "verified_by": "Jenni",
+   "kind": "decision",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "cte-noncredit-is-funding-bearing",
+   "verified_by": "Sam",
+   "kind": "risk",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-roles-not-groups-keep-the-phrase",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sessionstorage-is-per-browser-tab",
+   "verified_by": "Sam Lee",
+   "kind": "fact",
+   "event_date": "2026-08-14"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-retire-guidance-prose-that-code-now-enforces",
+   "verified_by": "Sam Lee (slee@cccco.edu), 2026-08-21",
+   "kind": "decision",
+   "event_date": "2026-08-21"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-briefing-plain-language-and-numbered-citations",
+   "verified_by": "Sam Lee (in session, 2026-08-24)",
+   "kind": "decision",
+   "event_date": "2026-08-24"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-email-in-the-signin-chip-is-enough",
+   "verified_by": "Sam Lee (in session, 2026-08-25)",
+   "kind": "decision",
+   "event_date": "2026-08-25"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-nc-lane-earns-like-credit",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-26"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-nc-keeps-credit-factor-0point5",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-27"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-draft-model-missing-data-is-not-a-flaw",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-27"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-nc-row-shows-zero-earned-not-an-advance",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-27"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-nc-shares-match-credit",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-27"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-confirm-participation-not-opt-in",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-27"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "a-client-gate-must-mirror-its-own-rls-policy",
+   "verified_by": "Sam (screenshot, 2026-08-28)",
+   "kind": "pitfall",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-career-attainment-sits-with-the-project-pool",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "two-credentials-one-signed-in-indicator",
+   "verified_by": "Sam (screenshot, 2026-08-28)",
+   "kind": "fact",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-do-not-hand-apply-his-data-the-tab-must-save-it",
+   "verified_by": "Sam",
+   "kind": "decision",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "fixing-who-may-write-does-not-rescue-what-was-already-written",
+   "verified_by": "Sam (reported 3x, 2026-08-28)",
+   "kind": "pitfall",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "when-the-workaround-is-the-keyboard-suspect-the-event-model",
+   "verified_by": "Sam (reported 2026-08-28)",
+   "kind": "pitfall",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-a-no-noncredit-row-is-a-data-quality-instrument",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "sam-workplan-goals-are-not-a-rival-vocabulary-to-78093",
+   "verified_by": "Sam Lee",
+   "kind": "decision",
+   "event_date": "2026-08-28"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "a11y-one-command-npm-run-a11y",
+   "verified_by": "Sam Lee (2026-09-04)",
+   "kind": "decision",
+   "event_date": "2026-09-04"
+  },
+  {
+   "rule": "proposed_with_human_verifier",
+   "row": "skyview-fullscreen-container-defines-existence",
+   "verified_by": "Sam Lee (2026-09-05)",
+   "kind": "pitfall",
+   "event_date": "2026-09-05"
+  },
+  {
+   "rule": "question_resolved",
+   "row": "p1-measures-applied-units-by-origin-p3-is-transcribed",
+   "kind": "question",
+   "decisions": [
+    "p3-portal-routing-is-standard-practice"
+   ]
+  },
+  {
+   "rule": "question_resolved",
+   "row": "two-funding-tab-consolidations-await-sams-verdict",
+   "kind": "question",
+   "decisions": [
+    "sam-ruled-both-funding-tab-consolidations",
+    "sam-ruled-goal-c-demonstrated-equity-in-3yr-reports",
+    "sam-ruled-three-bands-and-the-accepted-dials"
+   ]
+  },
+  {
+   "rule": "question_resolved",
+   "row": "the-old-public-funding-page-awaits-retirement",
+   "kind": "question",
+   "decisions": [
+    "sam-seven-asks-lead-with-the-table"
+   ]
+  },
+  {
+   "rule": "question_resolved",
+   "row": "what-sets-student-verified-vs-counselor-verified",
+   "kind": "question",
+   "decisions": [
+    "sam-confirmed-counselor-verified-is-the-funding-attestation",
+    "sam-counselor-stage-means-met-and-accepted"
+   ]
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cpl-funding-plan-2026-29-bog-amendment",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-07-29",
+   "summary": "Sam's 2.5-yr amendment to the 2025 CO-to-RCCD MAP CPL grant (Sept 2026 BOG / Oct 2026 RCCD agenda, 1/1/27-6/30/29) sets the full plan: $35M 2026 one-time + $15M"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "test-the-relationship-not-each-side",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": "2026-07-31",
+   "summary": "The Implementation Funding cap moved to an FTES basis while its target stayed on headcount; 72 of 115 colleges got a target sized for a different college. Tests"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "map-25-colleges-no-student-contact",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-05",
+   "summary": "MAP routes student CPL requests to a college's Primary Contact email; 25 of 123 colleges had none on file, 24 of them with a live landing page."
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "contact-refresh-cadence-never-run",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-05",
+   "summary": "map_college_nudges holds 0 rows. The nudge instrument, recipient picker and last-nudged log were all built in Session 87 and the semester cadence was decided th"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "fifteen-colleges-no-counseling-route",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-05",
+   "summary": "All 71 colleges without a CPL Assistant were looked up: 56 have a counseling address, 15 publish nothing usable."
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "disposition-rate-is-the-50k-measure",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-06",
+   "summary": "Share of a college's credit recommendations carrying any disposition (Applied / Not Applicable / In Process) rather than sitting at Needs Action. Median 4.7%; M"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cr-backlog-two-free-wins",
+   "kind": "opportunity",
+   "status": "proposed",
+   "event_date": "2026-08-06",
+   "summary": "11,495 rows read \"Credit Is Not Recommended\" (ACE stating no credit exists) yet sit as Needs Action in every college queue; and the top 20 exhibits account for "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sierra-home-college-detection-was-nondeterministic",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-07",
+   "summary": "The home college was never detected: the word loop returned on the first ambiguous match (\"angeles\" = 9 colleges) and never reached \"harbor\" (= 1), and .limit(3"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "test-that-writes-to-the-queue-it-monitors",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-07",
+   "summary": "An end-to-end test that exercises a write path lands rows in the same table a human reads for signal. sierra_feedback reached 28 CI rows of 53 (53%), every one "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "supabase-csv-importer-duplicates-silently",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": "2026-08-08",
+   "summary": "Loading a 220,588-row Access export via the Supabase dashboard CSV importer landed 222,646 rows -- 2,058 groups duplicated exactly twice. Access wrote and re-re"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "non-college-entities-are-at-zero-awarded",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-08-08",
+   "summary": "MAP CollegeID 1-118 are the CCC colleges alphabetically (117 Woodland, 118 Yuba). Above that sit continuing-education institutions (119, 121), agency partners ("
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cpl-contacts-fallback-not-in-map",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-09",
+   "summary": "map_users.js FALLBACK_CONTACTS holds all 71 looked-up colleges (56 with a contact, 15 blank-with-a-finding) as a DISPLAY-LAYER fallback. MAP is read-only for us"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "map-team-backlog-corrected-2026-08-09",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-08-09",
+   "summary": "Governance owners 17/17 ASSIGNED (not unset); Sierra feedback 23 real open (not 6); contact proposals awaiting a MAP-team decision 14 (not 56); unroutable colle"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "obsidian-exclusion-is-relevance-not-performance",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-09",
+   "summary": "Obsidian Files & Links > Excluded files (userIgnoreFilters) is a RELEVANCE filter: it drops paths from search, graph and link autocomplete. It does NOT stop the"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ps1-non-ascii-breaks-powershell-5-1",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-09",
+   "summary": "A .ps1 with no UTF-8 BOM is read by Windows PowerShell 5.1 as ANSI. An em dash (UTF-8 E2 80 94) reads back as three Windows-1252 chars, and 0x94 is RIGHT DOUBLE"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "k-anonymity-is-not-a-type-filter",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": "2026-08-09",
+   "summary": "Suppression protects small cells; it does NOT exclude entity types. In map_college_credit_summary, 4 of 5 non-college entities were excluded only because they w"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cpl-status-plan-is-in-hand-only-freshness-is-blocked",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-08-09",
+   "summary": "CPLStatusPlan is 100% populated in map_college_cr_unit: 204,714 rows, ZERO nulls — Needs Action 182,941 / Not Applicable 15,272 / Applied to CPL Plan 4,572 / In"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "map-has-no-apprenticeship-cpl-type",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-10",
+   "summary": "cpl_types across 1,987 credentials: Credit By Exam 798, Industry Certification 671, Portfolio Review 238, Standardized Assessment 125, Military 43, Other 22."
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "transcribed-credit-is-recording-practice",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-08-10",
+   "summary": "Colleges batch-upload lists where credit was already transcribed (AP, IB, CLEP, Credit by Exam); MAP encourages it so all awarded CPL is accounted for. Sam: \"SD"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "default-area-sentinel-was-synthesised",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-10",
+   "summary": "The exhibit_id sentinel \"Default Area\" has 0 rows in the raw TblSOURCE extract — a prior load invented it for 18,127 rows where ExhibitID was null. \"Default Cre"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "map-student-credit-reloaded-tblsource",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-10",
+   "summary": "map_student_credit is now 537,908 rows / 16 columns, re-loaded from the raw MAP extract TblSOURCE, carrying credit amounts and cpl_status_plan at student grain."
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "grain-invariance-is-not-a-virtue",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-10",
+   "summary": "Re-basing a metric that moved on a measure that cannot move is often wrong. The Goal 2 COURSE share on distinct students is provably grain-invariant (96 of 96 c"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "two-average-applied-figures-differ",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-11",
+   "summary": "Bakersfield: 582 CPL students, but only 262 have any applied credit and 28 have transcribed credit. Average applied is 4.78 units across all CPL students and 10"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "suppression-must-model-the-attack",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-11",
+   "summary": "Row-level suppression passed its assertion while every hidden cell stayed recoverable by subtraction. Units SUM, so statewide minus published siblings returned "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "credential-naming-coverage-4-percent",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-11",
+   "summary": "22,606 of 537,908 rows resolve to a canonical credential (436 credentials, 36 colleges) via the map_exhibit_credential bridge; 1,886 of 2,050 exhibit ids fold. "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "allocation-floor-waterfall-not-proportional",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-22",
+   "summary": "The $35M allocation solves BOTH bounds at once: bisect lambda in clamp(lambda*size, floor, cap) — not a pin-as-you-go waterfall, which is wrong once a ceiling e"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "articulated-waiting-is-basic-military-service",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-11",
+   "summary": "Of the 64,074 units already articulated and sitting at Needs Action, 98.8% is Credit for Basic Military Service. 65 of the 73 colleges with any are at 100%; the"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "percentage-must-not-round-up-into-a-claim",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-11",
+   "summary": "Math.round() turns 99.76% into \"100%\", and 100% is not a rounded number — it is a claim of TOTALITY the page may be visibly contradicting three lines above. Shi"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "partners-have-a-college-id-but-are-not-colleges",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-12",
+   "summary": "Futuro Health is college_id 133 and Launch Apprenticeship is 132, both entity_kind=partner in map_colleges. The identity crosswalk filters to entity_kind=colleg"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "statewide-credit-recs-live-in-authoritative-recs",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-08-13",
+   "summary": "chatbox_credentials.ccc_rec is a SINGLE string and Sierra treated it as the whole recommendation. POST Basic Academy ccc_rec = \"3 hours in Criminal Investigatio"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "conditional-key-breaks-a-bulk-upsert",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "PostgREST rejects a bulk payload whose objects do not all carry the same keys (PGRST102 \"All object keys must match\"). kb/_build_credential_recs.py emitted cid_"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "adoption-leverage-is-a-narrower-question",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "adoption_leverage means \"peer colleges teaching the same course IDENTITY (M-ID cluster) that have not earned the articulation\". For ASME BPVC Section IX FCAW it"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "unadopted-shelf-collapses-to-32-courses",
+   "kind": "opportunity",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "Across the 36 never-adopted statewide credentials carrying published recs: 75 recommendation lines but only 32 DISTINCT courses. 18 courses serve 2+ credentials"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ccc-rec-was-a-retrieval-gate",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "search_statewide_recommendations required `ccc_rec is not null`. ccc_rec is derived from ADOPTIONS, so a statewide exhibit no college has adopted yet has none a"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "peer-attribution-is-per-course-57-percent",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "Of 366 articulations with >1 local course, 208 (57%) list DIFFERING college sets per course (real attribution); 158 (43%) repeat ONE identical set onto every co"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "use-the-identity-key-before-scoring-strings",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "The alignment scorer never read the `cid` column, so Sierra told faculty to \"look for an AJ 101 or equivalent\" while AJ 101 sat in chatbox_college_courses carry"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "map-contact-fields-hold-several-people-and-bad-addresses",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "22 of 115 routable colleges carry MULTIPLE people in one contact field, separated by semicolons, commas OR embedded newlines. Cypress College's cpl_coordinator_"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "credit-recs-resist-mechanical-normalisation",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "The 2,344 distinct credit_rec strings fit \"<units> <unit-word> in <topic>\" at 2,323/2,344 (99.1%); the 21 misses are range units (3-4 hours) so with range parsi"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "units-are-not-part-of-cr-identity",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "CCR row SPAN 100 folds \"Elementary Spanish I\", \"Spanish I\", \"BEGINNING SPANISH I\" and \"Spanish 1\" — written at 4, 4.5 and 5 units by different colleges. The sam"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "normalisation-and-its-screens-must-see-same-text",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "A group key folded abbreviations (Intro->Introduction, Adv->Advanced) while the safety screens judged the RAW topic. So \"Intro to Administration of Justice\" rea"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "divergent-official-title-is-offered-not-applied",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "Applying the C-ID title wherever one resolves would have renamed \"3 hours in Physical Training and Health Education\" to \"AJ 110 - Introduction to Criminal Justi"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "rank-cr-worklist-by-collapse-value-not-spread",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-13",
+   "summary": "Handoff 152 said the top CR strings \"span up to 61 credentials, and that is where the value is.\" Backwards. The 61-credential string is \"3 hours in Elective Cou"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ace-not-a-topic-class-is-6663-rows",
+   "kind": "opportunity",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "Credit Is Not Recommended is 32 distinct strings / 3,892 rows across 102 colleges; \"Credit may be granted on the basis of an individualized assessment\" is 15 st"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ace-cascade-names-by-ace-own-published-text",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "The CCN>C-ID>M-ID rungs of Sam's CCRR cascade fire on almost nothing in the military lane: college_course is populated on 2.6% of ACE rows against 94.0% of MAP-"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "evidence-fields-empty-on-military-by-design",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "EvidenceDescription / EvidenceTypeID / SubmissionGuidelines fill on only ~2.5% of the catalog's 271,783 rows. That is not sparse data awaiting correction: non-m"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "five-blind-spots-that-make-a-static-scan-report-nothing-to-protect",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "Building the Admin tab surface scan: (1) 13 of 35 tabs load eagerly, not via the boot dispatch; (2) the boot regex captured only the FIRST loadScript, so chain-"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "phrase-affordance-coverage-2026-08-14",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "Of 18 tabs touching a phrase-gated table, EIGHT had neither an input nor a mention of the header control. Where the gate is on the READ the tab does not look lo"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "the-existing-cip-outranks-the-top-for-noncredit-category",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "The 1,796 noncredit programs sitting on a \"wrong\" credit CIP are not errors: that code IS the secondary CIP the Short-Term Vocational rule requires. 1,789 of 1,"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "half-the-tabs-never-check-token-expiry",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-14",
+   "summary": "A Supabase access token lives ~1h. cpl_sb carries exp (ms) and a refresh_token, but 13 of the 26 modules reading it check only the token SHAPE - three dot-separ"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "label-every-case-or-silence-is-ambiguous",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-15",
+   "summary": "The Admin protection chip rendered only for public-read/view tabs, so a properly protected tab showed NOTHING — indistinguishable from one nobody had examined. "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-check-that-never-registers-can-never-fail",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-15",
+   "summary": "admin_tab.test.js summarised from a fixed setTimeout(1400) while async blocks were still running: three runs on IDENTICAL source reported 116, 122 and 123 check"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "never-registers-trap-recurred-in-a-second-harness",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-15",
+   "summary": "Verifying the Share work pre-fix, both runs printed ZERO failures: an unguarded deref threw and killed the file before any check registered. Identical to the ad"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sandbox-college-inflates-a-public-statewide-card",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-17",
+   "summary": "CA MAP INITIATIVE COLLEGE (map_colleges id 120, entity_kind='test') appears in adopter_names on the statewide card \"California Real Estate Broker License\", whic"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "peer-articulations-is-a-lossy-reconstruction",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-17",
+   "summary": "It holds 2,653 of the 8,155 (unified_title, college) adoption pairs and 82 of 122 colleges, because kb/_build_peer_articulations.py JOINS two half-sources: coci"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "matrix-row-grain-is-the-title-not-the-credential-key",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-17",
+   "summary": "The EACR adoption matrix row grain is the unified TITLE, not credentialKey(). Grouping by the neighbouring Credentials view key (title + issuer) yields 431 rows"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "my-college-read-a-storage-key-nothing-writes",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-17",
+   "summary": "college_briefing.js getSession() read localStorage.cpl_team_session — a string occurring EXACTLY ONCE in the repo, as that read. It returned null for every visi"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "college-geo-region-is-a-proximity-map-not-swp-or-asccc",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-17",
+   "summary": "college_geo.region (120 colleges, 10 regions) is hand-authored for Sierra's \"colleges NEAR me\" ranking — _seed_college_geo.py says so in its docstring. Strong W"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "delta-has-zero-cpl-on-the-sjcoe-list",
+   "kind": "opportunity",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "San Joaquin Delta has adopted no CPL exhibit for any occupation on the SJCOE list. Its only career/technical CPL is POST Basic Academy; the other 68 exhibits it"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "catalog-year-was-never-missing",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "CLAUDE.md §11 and handoff 170 both said 'CATALOG YEAR is the genuinely new dimension — nothing we hold carries it'. map_student_credit.catalog_year is 100% fill"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-load-must-reproduce-its-source-not-improve-it",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "The session-171 loader mapped the empty string to None. Live map_college_cr_unit STORES it: 414 catalog_year, 348 exhibit_id, 196,044 college_course, 619 source"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "compute-the-canonical-pair-not-a-plausible-neighbour",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "Reported the MAP promotion as moving the headline +6.9%; that was the STUDENT grain. The published headline comes from map_college_cr_unit scoped entity_kind=co"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "three-layers-of-needs-action-and-the-approval-queue-is-tiny",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "Sam asked whether CR disposition, articulation approval and student CPL plans are different things needing action. They are, and the data separates them cleanly"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cpl-plan-status-is-a-student-attribute-not-a-row-fact",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "cpl_plan_status is constant within (college_id, student_key) for 100.0% of students, 47,804 of 47,804. So a Transcribed tick on a Not Applicable row does NOT me"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ace-zero-hour-recs-include-deferrals-not-just-refusals",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-19",
+   "summary": "5,311 Needs Action rows at 101 colleges carry a ZERO-hour ACE recommendation whose text says credit MAY be granted after the college's own individualized assess"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "agreement-is-not-corroboration-when-behaviour-is-systematic",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-20",
+   "summary": "A >=2-college floor was meant to keep idiosyncratic mappings out of the Cx guidance list. It shipped a tier 1 where 11 of 14 exhibits pointed at MAG-51 Elements"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-test-file-is-a-memory-budget",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": null,
+   "summary": "A BOOTED jsdom window retains ~44 MB and is never released for the life of its process; an UNBOOTED one costs nothing (15 = 57 MB total). window.close(), nullin"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "the-floor-makes-the-effective-ftes-rate-uneven",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": null,
+   "summary": "A priority's FTES target rides the RAW proportional entitlement while its dollar cap is the FLOOR-ADJUSTED one, so the effective rate is uneven: above the $150k"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sierra-guidance-is-a-zero-sum-budget-at-ten-rows",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-21",
+   "summary": "fetchTeamGuidance() limits to GUIDANCE_MAX_RULES=10, ordered created_at desc. An 11th active row does not error or truncate - it silently EVICTS THE OLDEST, whi"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sierra-cannot-compute-a-per-college-comparator",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-21",
+   "summary": "shapeCreditStatus() gives her per-college figures plus statewide TOTALS and a college count - no median. A statewide total is not a benchmark, and the derivable"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "noce-and-sdcce-have-real-mis-identities",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-21",
+   "summary": "North Orange Continuing Education is NORTH ORANGE ADULT, college 863 under district 860; San Diego College of Continuing Education is SAN DIEGO ADULT, 076 under"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "the-test-runner-could-not-see-a-shrinking-suite",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-21",
+   "summary": "A missing check is an ABSENCE, not a failure: it subtracts from BOTH sides of the ratio, so the file prints \"N/N passed\" and exits 0. Demonstrated on real code "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "make-the-visible-cap-the-binding-one",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-21",
+   "summary": "sierra_guidance has a VISIBLE character budget (a meter in the Training tab) and an INVISIBLE row cap that silently evicts the oldest active rule. Whichever is "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-second-bound-breaks-a-pin-as-you-go-solver",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-22",
+   "summary": "Pinning at a FLOOR pushes every free row DOWN, so a pin is safe forever and an iterative loop is correct. A CEILING pushes them UP and lifts colleges back OFF t"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "funding-ceiling-400k-is-near-a-no-op-for-equity",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-22",
+   "summary": "A ceiling cannot lift a college already pinned to the floor, so it is a weak equity lever. At the $150,000 floor a $400,000 cap held 6 colleges and moved $262,2"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "js-filled-figures-still-ship-stale-static-defaults",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-22",
+   "summary": "The funding explainer fills seven figures from its payload at render time, so the static text inside those elements is invisible in a browser — and six still sa"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-cache-breakpoint-must-lead-the-prompt",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": "2026-08-23",
+   "summary": "Caching is a PREFIX match, so stable material must come FIRST or nothing caches — and below ~1024 tokens a breakpoint is accepted and silently caches NOTHING. c"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sierra-model-and-price-baseline-2026-08",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-23",
+   "summary": "Sam asked whether Sierra could run on \"Haiku 4.6\" to cut cost. No such model. Current Haiku is claude-haiku-4-5: $1/$5 per MTok against Sonnet 4.6's $3/$15 — a "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-green-check-you-did-not-scope-is-not-evidence",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-23",
+   "summary": "Three greens in one afternoon, none evidence, and the third put main red. (1) Merged twice on the REQUIRED check — a secret scanner — while the suite covering t"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-degenerate-branch-that-pays-less-than-the-dial-must-say-so",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-23",
+   "summary": "A floor the pool could not honor was reported as honored: 33 institutions x a $50,000 minimum is $1,650,000 against a $1,000,000 pool, so the degenerate branch "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-total-that-balances-is-not-a-total-that-is-right",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-23",
+   "summary": "The noncredit lane became a bounded allocation over 33 institutions. The tab migrated; the EXPORTED memo did not — memoModel() kept the retired flat FTES split,"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ccr-is-6056-decisions-not-17321-rows",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "7,605 presented suggestions resolve to 6,056 connected-component decisions. Modal size is 2. 144 disciplines carry work at a median of 12 decisions; 118 of 144 "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "ask-whether-the-list-can-contain-what-you-count",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "Fired three times in one session: the ESL carve-out card reported \"22 of 22 standing\" (true: 8) by reading a FOLD-scoped skip list; a survivor check read Vocati"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "on-conflict-do-nothing-silently-drops-renames",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "The ESL apply planned 1,997 rows and landed 1,994. The merges all succeeded; three unified_title rows were refused because the survivor already carried one, so "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "s187-cross-discipline-merge-is-ambiguous",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "2,731 of 10,170 judgeable merges cross a discipline (26.9%), but that is a ceiling, not a defect count. The top pairs are overwhelmingly sibling disciplines — a"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "s187-packaging-hides-pre-existing-over-merges",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "Folding many identities into one comprehensive dilutes the evidence for any bad member already on the survivor. FIMS M1018 \"Film and American Culture\" (film stu"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-local-course-number-is-not-a-level-ordinal",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "A calibrated number ladder was built and REJECTED. Santa Rosa EMLS anchors land at 30 = Advanced, 371/372 = Intermediate, 701/702 = Beginning, because the 700s "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "directional-error-beats-aggregate-error",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "The ESL numeric lane is 49.2% wrong, which reads as \"unreliable\". Split by direction it is 85 under-claims and 9 over-claims, which reads as \"systematically con"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "widening-a-number-reader-needs-guards",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "Extending the ESL level reader from single-digit 1-7 to Sam's 0-10 range misfires on live data. Three guards: a level WORD beats a number (ESOL M90WL \"Beginning"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-canonical-standard-scored-against-local-records-looks-wrong",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "Sam's ESL bands disagree with the colleges' own catalogs MORE than the rule they replace (54.5% vs 49.2% of checkable rows), because 16 Level-5 courses are loca"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-row-member-count-is-not-a-college-count",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "row[\"members\"] comes from whichever field minted the row — corroboration_members (M-ID), member_count (cluster), source_college_count (C-ID anchor), len(all_mem"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "never-assert-an-elapsed-time-you-did-not-measure",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-24",
+   "summary": "A CI job was reported as running \"25+ minutes\" and then \"35 minutes\" when it had been running under 3, by subtracting started_at from an ASSUMED present. It act"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-view-must-not-fly-where-it-cannot-draw",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-25",
+   "summary": "SkyView search said \"19 match … Ringed in red\" and drew nothing, at zoom 12%: draw() renders nodes only above k=0.20 and doSearch flew to fit all hits, which ac"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-control-number-is-not-a-unique-course-key",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-25",
+   "summary": "Of 139,834 control numbers, 1,814 resolve to >1 course as the artifacts build them; 462 do in the source once the declared institution fold is applied. SkyView'"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-guard-on-a-function-passes-with-the-wiring-deleted",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-26",
+   "summary": "Perturbing each new guard separately: band order reversed → 4 FAIL, unknown kind first → 5 FAIL, briefRow reverted to summary → 2 FAIL, envelope line removed → "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-deleted-conjunction-orphans-its-punctuation",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-26",
+   "summary": "Deleting a conjunction in a tracked change orphans the punctuation it was carrying. The 55050 NOTE struck \" and\" to add a citation and accepting the change read"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "an-amendment-inherits-every-cross-reference-into-it",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-26",
+   "summary": "Adopted 55051(d) reads \"as defined in section 55050(i)\" -- the same 2026 rulemaking strikes 55753 and inserts that cross-reference. Re-lettering 55050 would bre"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sb135-is-wider-than-article-9",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-26",
+   "summary": "SB 135 is wider than Article 9. EC 75013 is Sec. 14 of the SAME chapter that added Article 9 (Sec. 16), and its (b) opens \"As part of the Credit for Prior Learn"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-saved-setting-is-not-the-effective-value",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-26",
+   "summary": "cpl_funding.js: the Supabase config is an INPUT to the model, not its output. mirrorYears=true makes prioSlot() return \"1\" for EVERY year, so stored yearPriorit"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "one-ranked-list-cannot-answer-two-questions",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-27",
+   "summary": "Confidence was 0.55 word fit + 0.25 peer precedent + 0.20 how widely held. Because the widely-held ACE recommendations are the 3-hour ones, a 1- or 2-unit cours"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "peer-corpus-is-thin-where-trade-colleges-teach",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-27",
+   "summary": "map_college_cr_unit holds 200,364 ACE rows; just 5,442 (2.7%) name a college course. After dropping \"CPL-N Elective Course Credits\" placeholders, 15 colleges su"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "nc-threshold-cannot-go-below-400-at-the-50k-floor",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-27",
+   "summary": "The noncredit entry threshold cannot go below 400 FTES at the $50,000 floor. Swept through the model: 400 admits 35 institutions demanding $1.75M against the $1"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-bound-is-tested-by-value-not-the-clamp-count",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-28",
+   "summary": "A bounded solve can converge with an unclamped row sitting exactly on the bound. Santa Ana's unclamped noncredit award solves to exactly $100,000.00, so ncModel"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "derive-a-listing-from-the-things-it-lists",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-28",
+   "summary": "docs/INDEX.md reached 273,616 B — 6.84x its 40,000 B budget — over 15 months of checkpoint appends, and half was link TEXT: a note's whole thesis pasted into a "
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-checker-and-its-fixer-reporting-different-counts-read-different-text",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-28",
+   "summary": "The american_spelling rule scanned raw text; the sweeper applying it scanned prose only. After a full sweep the lint still reported 25 findings the fixer struct"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "measure-the-distribution-before-picking-a-parallel-strategy",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-29",
+   "summary": "npm test: 280 files / 1,245s, of which cpl_funding_* is 28 files and 967s (78%). \"Serialize the heavy family, parallelize the rest\" is therefore bounded at 967s"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "sam-runs-powershell-5-1-and-agents-cannot-execute-it",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": "2026-08-29",
+   "summary": "Tooling that shells out must target Windows PowerShell 5.1, not 7, and cannot be executed for testing from a session. Three 5.1-only traps found by reading (not"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-score-that-improves-is-when-to-check-the-fixtures",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-08-29",
+   "summary": "After adding critical_rule_doctrine the scenario harness reported \"11 of 11 caught\". False: every fixture was a stub CLAUDE.md with no Critical Rules section, s"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "doctrine-confirmed-by-matched-pair-and-the-effect-is-mechanical",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-08-29",
+   "summary": "Four of Sam's six scenarios run as MATCHED PAIRS (same prompt, same model, one arm with CLAUDE.md and one with it removed): S1 8/8 vs 3/8, S2 8.5/9 vs 1.5/9, S6"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-harness-must-verify-its-own-healthy-fixture",
+   "kind": "pitfall",
+   "status": "verified",
+   "event_date": null,
+   "summary": "When CRITICAL_RULE_DOCTRINE grew by 3 claims, the scenario harness reported a false 12 of 12: BASE_CRITICAL no longer satisfied the registry, so critical_rule_d"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "explainer-static-prose-stale-after-live-painting",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-01",
+   "summary": "funding-model/index.html: two STATIC prose passages survived the one-pool port — step one sizes \"by credit FTES … all 115 … 1,069,182\" (one-pool sizes on COMBIN"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-money-only-guard-misses-non-currency-figures",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-02",
+   "summary": "tests/funding_model_page.test.js already required every hard-coded MONEY figure in the explainer prose to carry an id so the painter could reach it. Both claims"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-suppression-floor-lives-in-test-fixtures-as-well-as-code",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-03",
+   "summary": "Raising the funding floor 5->10 passed every Python builder suite and broke four jsdom suites: two carried fixtures of 5-8 students (visible under 5, masked und"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-filter-that-outlives-its-selection-reads-a-full-card-as-empty",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-03",
+   "summary": "SkyView's inspector filters an identity's courses to a code after a college-course search. A later canvas click on an 850-course identity kept the filter and th"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "corroborators-must-not-outvote-the-primary-signal",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-03",
+   "summary": "First weights (subject 3.0, TOP 1.0, units 0.3, credit 0.2 vs title 4 x Dice) let \"Swim Training for Competition\" orbit \"Aerobic Weight Training\": 1.5 points of"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a-folds-post-apply-proof-is-its-held-count-not-zero",
+   "kind": "fact",
+   "status": "verified",
+   "event_date": "2026-09-04",
+   "summary": "After a keep-number prefix fold lands, fold-verify's re_key equals the rows the receipt HELD plus those outside its scope (7 today, all TOP-only), never 0: a he"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "cobi-carries-an-unreconciled-raw-hex-palette",
+   "kind": "fact",
+   "status": "proposed",
+   "event_date": "2026-09-04",
+   "summary": "A sweep across all 38 COBI views clustered its contrast failures by text colour: the top five values account for ~97% of them, and they are a Tailwind-family sl"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "gitignored-lockfile-makes-ranges-live",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-04",
+   "summary": "package-lock.json is gitignored (.gitignore:20), so CI has no lockfile and npm install resolves ranges at run time. playwright shipped 1.63.0 with a 404 tarball"
+  },
+  {
+   "rule": "snapshot_claim",
+   "row": "a11y-first-run-measures-the-instrument",
+   "kind": "pitfall",
+   "status": "proposed",
+   "event_date": "2026-09-04",
+   "summary": "Six of the a11y sweep's loudest first findings were harness defects: ancestor opacity:0 scored 1:1 (30 phantom on one tab), a textarea called an unreachable scr"
+  }
+ ]
+}
