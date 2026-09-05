@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-04T16:29:50.535401+00:00",
+  "scraped_at": "2026-09-05T10:41:03.689352+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27617,
+    "jst": 27648,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -37,7 +37,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1013,
+      "jst": 1014,
       "star": true
     },
     "City College of San Francisco": {
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 568,
+      "jst": 570,
       "star": true
     },
     "Merced College": {
@@ -97,7 +97,7 @@
     },
     "Southwestern College": {
       "vets": 584,
-      "jst": 722,
+      "jst": 723,
       "star": true
     },
     "San Bernardino Valley College": {
@@ -125,6 +125,11 @@
       "jst": 376,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 618,
+      "star": true
+    },
     "Barstow Community College": {
       "vets": 106,
       "jst": 139,
@@ -138,11 +143,6 @@
     "Santa Rosa Junior College": {
       "vets": 523,
       "jst": 443,
-      "star": true
-    },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 592,
       "star": true
     },
     "Sierra College": {
@@ -227,7 +227,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 151,
+      "jst": 152,
       "star": true
     },
     "College of the Sequoias": {
