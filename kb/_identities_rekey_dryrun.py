@@ -55,7 +55,7 @@ from datetime import date, datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-import _rekey_promotions as rp  # noqa: E402
+import alias_chain as rp  # noqa: E402  (the ONE chain — Sam's ruling 8)
 from _authority_recode_apply import _atomic_dump, _trailing_nl  # noqa: E402
 
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
@@ -76,7 +76,7 @@ def _nt(t):
 
 
 def load_maps():
-    return [rp._load_alias(rel) for rel in rp.ALIAS_MAPS if os.path.exists(os.path.join(ROOT, rel))]
+    return [rp.load_alias(rel) for rel in rp.ALIAS_MAPS if os.path.exists(os.path.join(ROOT, rel))]
 
 
 def compute_plan(identities, live, maps, title_of):

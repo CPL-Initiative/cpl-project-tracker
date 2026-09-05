@@ -11,18 +11,18 @@
   },
   "summary": {
     "files": 804,
-    "bytes": 8591870,
-    "over_budget": 4,
+    "bytes": 8593155,
+    "over_budget": 5,
     "handoff_max": 232,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59978,
+    "always_loaded_bytes": 60846,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59978,
-        "over": 0
+        "bytes": 60846,
+        "over": 1
       },
       "other": {
         "files": 104,
@@ -51,26 +51,26 @@
       },
       "handoff": {
         "files": 206,
-        "bytes": 1739939,
+        "bytes": 1740356,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 5,
       "house_voice": 21,
-      "oversized_doc": 4,
       "vault_heavy_path": 46
     },
     "vault": {
       "files": 2639,
-      "bytes": 1335935337,
-      "heavy_bytes": 626447749,
-      "heavy_share": 0.469,
+      "bytes": 1324010522,
+      "heavy_bytes": 614532177,
+      "heavy_share": 0.464,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -116,6 +116,19 @@
     }
   },
   "findings": [
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60846,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 846,
+        "ratio": 1.01
+      },
+      "message": "60,846 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -443,16 +456,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 24961770,
-        "kind": "dir"
-      },
-      "message": "directory totals 24,961,770 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
         "bytes": 17529641,
@@ -469,6 +472,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 13046198,
+        "kind": "dir"
+      },
+      "message": "directory totals 13,046,198 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

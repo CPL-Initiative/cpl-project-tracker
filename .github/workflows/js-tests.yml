@@ -309,5 +309,15 @@ jobs:
       # against scripts/stop-hook-git-check.sh — that copy's Session-32
       # ancestor guard masks the case, so such a test passes with or without
       # the fix. Pure-stdlib python, no network.
+      # Alias chain single source (Session 232, Sam's ruling 8) — the chain of
+      # applied re-mint receipts is declared ONCE, in kb/alias_chain.py. It used
+      # to be copy-pasted, and the copy in kb/_analyze_official_fold_evidence.py
+      # sat under a comment promising lockstep while carrying 7 maps against the
+      # real 15 — eight applies behind, for months, failing nothing. A comment is
+      # not a mechanism. Fails a second declaration under that name or any other,
+      # a copied resolver in a chain-aware file, and a chain that is duplicated,
+      # missing on disk or out of chronological order. Pure-stdlib python.
+      - name: Alias chain single source (kb/alias_chain.py)
+        run: python3 tests/alias_chain_single_source_test.py
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
         run: python3 tests/stop_hook_git_check_test.py

@@ -122,21 +122,21 @@ def reserved_alias_ids():
     """Every old and new id named by any registered alias map — an id ever
     minted stays reserved (Sam, 2026-09-03, card 11)."""
     try:
-        import _rekey_promotions as rp
+        import alias_chain as ac
     except Exception:
         return set()
     ids = set()
-    for rel in rp.ALIAS_MAPS:
+    for rel in ac.ALIAS_MAPS:
         path = os.path.join(ROOT, rel)
         if not os.path.exists(path):
             continue
         try:
-            m = rp._load_alias(rel)
+            m = ac.load_alias(rel)
         except Exception:
             continue
         for old, v in (m or {}).items():
             ids.add(old)
-            new = rp._step(v)
+            new = ac.step(v)
             if new:
                 ids.add(new)
     return ids

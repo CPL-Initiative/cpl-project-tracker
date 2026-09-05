@@ -51,30 +51,13 @@ from datetime import date
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
-from _rekey_promotions import ALIAS_MAPS, _load_alias, resolve  # noqa: E402
+from alias_chain import (  # noqa: E402
+    ALIAS_MAPS, load_alias as _load_alias, resolve, pending_maps,
+)
 
 MIRRORS = os.path.join(HERE, "crnc_mirrors.json")
 MEMBERSHIPS = os.path.join(HERE, "coci_minted_memberships.json")
 OUT_DIR = os.path.join(HERE, "crnc_rekey_out")
-
-
-def pending_maps(applied_already, baseline_through=None, chain=None):
-    """The maps still to fold in, as (paths, applied_after). A doc with no era
-    list needs the baseline map named; the pending set must be a chronological
-    suffix of the chain."""
-    chain = list(chain if chain is not None else ALIAS_MAPS)
-    if not applied_already:
-        if not baseline_through:
-            raise SystemExit("ABORT: crnc_mirrors.json carries no _rekeyed_through — pass "
-                             "--baseline-through <the last map already reflected in its keys>.")
-        if baseline_through not in chain:
-            raise SystemExit(f"ABORT: --baseline-through {baseline_through} is not in ALIAS_MAPS.")
-        applied_already = chain[:chain.index(baseline_through) + 1]
-    pending = [p for p in chain if p not in applied_already]
-    k = len(chain) - len(pending)
-    if chain[k:] != pending or not all(p in applied_already for p in chain[:k]):
-        raise SystemExit(f"ERA FAIL: _rekeyed_through {applied_already} is not a prefix of ALIAS_MAPS")
-    return pending, chain[:k] + pending
 
 
 def receipt_path(out_dir):
