@@ -69,6 +69,34 @@ Three rules that follow:
   evidence file — the label is what stands between a useful draft and a
   fabricated record.
 
+## Write it as breadth, never as a standard
+
+A description synthesized across many sources is describing **what the field
+looks like**, not what any one contributor should have done. The wording has to
+carry that, or the artifact quietly becomes an audit.
+
+The welding description drafted from 24 college catalogs ends:
+
+> Colleges commonly add brazing and soldering, plasma cutting, welding symbols,
+> and basic metallurgy.
+
+Sam, on reading it: *"I love the way you noted in the description, 'Colleges
+commonly...' — takes the bite out of it for colleges who don't cover all those
+things."*
+
+Six of the twelve elements were named by a minority — 25% down to 12.5%. Stated
+flatly ("the course covers brazing, plasma cutting, welding symbols and basic
+metallurgy") the same sentence would tell three quarters of the contributing
+colleges they had fallen short of a standard nobody set. **The majority core and
+the minority additions are different claims and must read differently.**
+
+⚠️ This is the same failure the gap panel had to be rescued from: a
+one-directional comparison reads as an audit of colleges and invites
+defensiveness from the people whose cooperation the work needs. A generated
+document assembled *from* a community's contributions is in a poor position to
+grade that community. Describe the distribution; let the reader locate
+themselves in it.
+
 ## Counter-signals
 
 Provenance chips become noise when everything on a page shares one tier: a
