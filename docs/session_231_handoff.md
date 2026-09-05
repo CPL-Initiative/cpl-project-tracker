@@ -108,6 +108,102 @@ for it. Then execute, exactly as S229's handoff laid out:
 - Then re-export, `python3 kb/_memory_audit.py --from-json <export>`, commit
   the dated report, update the lane file's counts.
 
+## Sam's 118 replies, read and interpreted (SkyKeep, 2026-09-05, 16:40 UTC)
+
+He finished the sheet late in the afternoon; the store holds **118 replies**
+(41 items, 76 memories under items 2 and 3, 1 retired row; 26 follow-ups; no
+notes), and I read every one against the live table. **Nothing has been
+written yet** — Sam signed off and left the execution to you (*"SkyReply
+will have its own cross to bear"*). Rule 10 at write time: a fresh read of
+`updated_at` per row, `WHERE status='proposed'` (or the status the action
+expects) in every statement, one `cpl_memory_log` row per change with the
+before-image in `before` (jsonb), actor `SkyReply S231`, batches of ~60, the
+direct statement through the database tool (never delegated). Do the
+supersedes before the promotions: three rows appear in both.
+
+**Promote (status verified).**
+- **Item 1, Yes:** the 352 rows in `kb/memory_audit/2026-09-05-receipt.json`
+  → `held_for_sam.rows`; `verified_by` = each row's `verified_by_if_promoted`,
+  `verified_at=now()`, log action `verify`. Hold out a row whose `updated_at`
+  moved after the receipt and say so.
+- **Item 2, 68 memories** (67 Verify plus
+  `finance-phrase-opens-far-more-than-finance`, a Yes saved before the
+  relabel): `verified_by='Sam Lee (sheet, 2026-09-05)'`, `verified_at=now()`,
+  log `verify`. Five stay proposed (no verdict, flagged for follow-up):
+  `a-public-shopfront-and-a-context-store-are-two-jobs`,
+  `a11y-one-command-npm-run-a11y`,
+  `four-thousand-students-marked-transcribed-with-no-units`,
+  `sam-no-temporary-mis-codes`, `the-tables-we-build-drop-maps-college-id`.
+- **Item 26, Yes:** the proposed rows that already carry a `verified_by`
+  (28 at audit time; fewer after items 2 and 3) → status verified, name kept,
+  `verified_at=coalesce(verified_at, now())`.
+- **Item 27, Yes:** the 38 verified rows with `verified_by is null` →
+  `verified_by = author` (an attribution repair; log `update`).
+
+**Retire by supersede** (status superseded, `superseded_by` = the slug; log
+`supersede`). Successors marked ✓ were read live; the others come from the
+audit's item file and want one `select` before the write.
+
+| Item | Row | superseded_by |
+|---|---|---|
+| 3 | `bog-amendment-is-funding-authority` (Yes + Follow up) · `nc-funding-targeted-plus-advisory-column` · `nc-equalization-floor-plus-factor` | `one-pool-model-adopted` ✓ |
+| 7 | `q1` | `sam-roles-not-groups-keep-the-phrase` ✓ |
+| 11 | `funding-rural-allowance-guaranteed-floor-first` | `rural-allowance-was-the-pools-only-unconditional-money` ✓ |
+| 14 | `p1-scores-applied-not-eligible` | `sam-ruled-three-bands-and-the-accepted-dials` |
+| 15 | `three-kinds-of-zero` | `sam-public-view-masks-under-10-but-funding-computes-on-true-numbers` ✓ |
+| 23 | `a-manager-ui-must-not-be-able-to-hide-itself` | `guard-belongs-on-the-narrowest-axis` |
+| 24 | `cobi-nav-manager-wishlist` | `the-cobi-side-menu-is-data-now-cobi-nav` ✓ |
+| 25 | `cobi-nav-manager-lives-in-an-admin-tab` | `nav-visibility-is-a-display-control-not-a-security-control` |
+| 33 | `noncredit-is-111-institutions-not-4` | `one-pool-model-adopted` ✓ |
+| 35 | `member-rehome-cn-verb-exists-and-is-unused` | `sam-drag-rehomes-membership-remints-stay-batched` |
+| 37 | `sam-nc-row-shows-zero-earned-not-an-advance` | `f1-resolved-and-never-design-for-missing-feeds` ✓ |
+| 38 | `sam-career-attainment-sits-with-the-project-pool` | `sam-ruled-goal-c-demonstrated-equity-in-3yr-reports` ✓ |
+
+Items 37 and 38 carry Sam's own name as verifier: the sheet is his word, so
+the supersede is his, not a session's (DR-19 satisfied; say so in the note).
+
+**Retire as stale** (status stale, stamps cleared, log `stale`): items 5
+`w2` · 12 `funding-35m-apportionment` · 13
+`cpl-funding-plan-2026-29-bog-amendment` · 18
+`cpr-aed-family-is-42pct-of-cpl-students` · 20
+`allocation-floor-waterfall-not-proportional` (then re-file the lesson as a
+NEW pitfall row without the old constants, as the ask says) · 36
+`never-assert-an-elapsed-time-you-did-not-measure` · 39
+`a-measure-everyone-clears-pays-automatically` · 42
+`common-subj-to-discipline-is-many-to-one-not-the-reverse` (he chose Retire
+over the rewrite).
+
+**Keep as they are (no write):** items 4 `o2` · 6 `o1` · 8 · 9 · 10 · 16 ·
+17 · 19 · 21 · 22 · 31 · 32 · 34 · 41 · 43; item 30 (no verdict, flagged).
+
+**Item 28, Yes:** clear `verified_by` and `verified_at` on
+`funding-overlay-holds-the-live-priorities` (stale, still stamped); the two
+nameless August 5 rows are already stale and have no slug — `retire` there
+means keep them stale and key any pointer on `id`; never delete (the lint's
+`2026-09-05.json` names them). **Item 29, Yes:** fix the 9 dead file paths
+and 8 dangling `related` pointers on session-written rows (each listed in
+`kb/memory_audit/2026-09-05.json`; find a moved file by `git log --follow`
+or its basename); leave the two August 30 `superseded_by` pointers.
+**Item 40, Yes:** Sam approved the redirect — `cpl_funding_public.html`
+sends readers to the explainer. A PUBLIC page: a small PR of its own (a meta
+refresh and a visible link), then supersede the question row with a new
+decision row recording his approval. **D3:** `ace-not-a-topic-class-is-6663-rows`
+stays retired; he flagged it for follow-up.
+
+**Follow-ups → the To-Do feed (26, one item each, pointing at the memory
+and the sheet; he left no notes):** items 8, 9, 10, 16, 17, 19, 21, 30, 31,
+41, 43; memories `finance-phrase-opens-far-more-than-finance`,
+`pa-and-ppa-are-disjoint-cohorts-not-a-subset`,
+`per-org-admin-is-a-filter-not-an-authority`,
+`post-pdf-says-physical-training-has-no-cid`,
+`reviewer-signin-lives-in-about`, `sam-email-in-the-signin-chip-is-enough`,
+`sam-roles-not-groups-keep-the-phrase`,
+`sam-workplan-goals-are-not-a-rival-vocabulary-to-78093`, the five
+unverdicted rows above, `bog-amendment-is-funding-authority`, and D3.
+
+Then re-export, run `python3 kb/_memory_audit.py --from-json <export>`,
+commit the dated report, and update the lane file's counts from the export.
+
 ## Carryover, with status
 
 - **SkyView** — Sam drove the second list within the hour and the third list
