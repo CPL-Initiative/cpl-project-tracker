@@ -68,8 +68,15 @@ plan — do not re-ask what he has already answered.**
 | 9 | **edit: "All three"** · follow up | Agency skill statements come from published agency standards **and** ACE exhibits **and** team-entered by the MAP team — not a single source. This unblocks the outline. He flagged it for follow-up, so come back to him on how the three are reconciled when they disagree. |
 | 10 | yes | An **AWS welding certification** is the pilot — one certification, not one discipline. |
 
-**Suggested order:** 4 → 5 → 8 → 11 → 3 → 1 → 6 → 2, with 9 and 10 feeding the
-outline build in parallel once 4 is in.
+**Order (Sam, 2026-09-05 — "leave at top for SkyOutline to worry about"):**
+**8 → 4 → 5 → 11 → 3 → 1 → 6 → 2**, with 9 and 10 feeding the outline build in
+parallel once 4 is in.
+
+⚠️ **8 comes before 4 on purpose.** The shared `kb/alias_chain.py` is the tool
+the re-key should be performed *with*, not a tidy-up afterwards — writing the
+resolver once and then using it is how the re-key gets done right the first
+time. Do not hand-roll a chain walk inside the re-key script; that is the exact
+duplication ruling 8 exists to end.
 
 ## Two things S231 measured that change how you read the data
 
