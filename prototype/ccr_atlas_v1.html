@@ -56,9 +56,15 @@ a{color:var(--cobalt)}
 .sug li.on{background:var(--surface-subtle,#F7F5F1)}
 /* The footer is a note, not a destination: no pointer, no hover, and it sticks
    to the bottom edge so the count stays readable while the list scrolls. */
-.sug li.sug-more{position:sticky;bottom:0;cursor:default;display:block;
-  padding:.5em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+.sug li.sug-more{position:sticky;bottom:0;cursor:default;display:flex;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
   background:var(--surface-subtle,#F7F5F1);border-top:1px solid var(--border,rgba(28,28,26,.16))}
+.sug .sug-sort{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:5px;
+  padding:.28em .7em;min-height:24px}
+.sug .sug-sort:hover{background:var(--surface-muted,#ECE9E2)}
 .sug li.sug-more:hover{background:var(--surface-subtle,#F7F5F1)}
 /* The kind is a WORD. Two different destinations must not be told apart by a
    color or an icon alone. */
@@ -297,7 +303,9 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 .u-foot .u-legend,.u-foot .u-hint{background:none;border:0;backdrop-filter:none;padding:0;max-width:none;border-radius:0}
 .u-foot .u-hint{flex:1 1 320px}
 .u-foot .u-legend{flex:0 1 auto}
-.u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:var(--sky-hollow,#fff)}
+.u-sw.member{border:0;background:var(--cobalt);
+  /* the same five-pointed mark the canvas draws, so the legend matches the map */
+  clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
 /* Noncredit reads as a BROKEN ring on the map, so the legend swatch shows the
    same break rather than describing it. Stroke, not colour: colour is already
    spent on the identity system. */
@@ -424,6 +432,7 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
        box-shadow:0 6px 18px rgba(20,20,30,.22)}
+.u-tip .tip-desc{display:block;margin-top:5px;line-height:1.42;max-width:34em}
 .u-tip .sub{color:var(--tip-sub,#D6D6D0)}
 /* ══ 2026-09-05 — Sam's second SkyView list: one chip vocabulary (item 7),
    the zoom stack (8), the Show menu (3), the window controls and menu (1),
@@ -456,9 +465,12 @@ body.u-dark{
   --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.32);
   --cobalt:#7DA1D4; --seal-blue:#7DA1D4; --focus-ring:#7DA1D4; --violet:#B28DEB; --hunter:#89A67F;
   --crimson:#CF8F8F; --mustard-text:#E3B341; --on-accent:#141413; --tip-sub:#5C5C55;
-  --sky-ground:#1E1E1C; --sky-island:#2A2A28; --sky-island-hover:#313130; --sky-island-sel:#34294A;
-  --sky-island-stroke:rgba(255,255,255,.14); --sky-tether:rgba(178,141,235,.42); --sky-hollow:#1E1E1C;
-  --sky-halo:rgba(30,30,28,.94); --sky-halo-fill:rgba(30,30,28,.8);
+  /* Sam, 2026-09-05: "make the background darker and a bit grayer--a bit calmer
+     on the eyes". Down from #1E1E1C and off the warm axis: a neutral slate the
+     lit points read against without the ground itself glowing back. */
+  --sky-ground:#15171A; --sky-island:#21242A; --sky-island-hover:#282C33; --sky-island-sel:#2E2A44;
+  --sky-island-stroke:rgba(255,255,255,.14); --sky-tether:rgba(178,141,235,.42); --sky-hollow:#15171A;
+  --sky-halo:rgba(21,23,26,.94); --sky-halo-fill:rgba(21,23,26,.8);
   --sky-ink:#ECE9E2; --sky-ink-body:#D6D6D0; --sky-ink-muted:#ABABA3; --sky-ink-force:#7DA1D4; --sky-ink-alert:#CF8F8F;
   --sky-ring-search:#CF8F8F; --sky-ring-sel:#7DA1D4; --sky-ring-token:#7DA1D4;
   --sky-leader:rgba(236,233,226,.55); --sky-leader-dot:rgba(236,233,226,.62);
@@ -833,6 +845,7 @@ function openSug(term){
   sugAt = -1;
   if (!sugItems.length){ closeSug(); return; }
   var more = sugItems.more || 0;
+  var byName = (typeof window.__ccrSuggestOrder === "function") && window.__ccrSuggestOrder() === "name";
   var picked = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
   sugEl.innerHTML = sugItems.map(function(it,i){
     // The KIND is a word, not a color or an icon: "subject" and "course" are
@@ -854,22 +867,29 @@ function openSug(term){
    * unselectable in the middle desyncs every arrow key after it. role=presentation
    * keeps it out of the listbox's options; the same words go on the listbox's own
    * label, which is what a screen reader hears on entry. */
+  /* The footer already carried the count; it now carries the ORDER too, because
+   * that is where a reader who has just read "showing the closest 60" is
+   * looking when they wonder what the other matches were (Sam, 2026-09-05:
+   * "would have seen 2 named similarly or the same"). Sorting by name puts
+   * near-identical titles next to each other, which popularity-ranking cannot. */
   var label = "Search suggestions";
-  if (more > 0){
-    sugEl.insertAdjacentHTML("beforeend",
-      '<li class="sug-more" role="presentation">Showing the closest '+sugItems.length+
-      ' \u2014 keep typing to narrow.</li>');
-    label += " \u2014 showing the closest " + sugItems.length + ", more available";
-  } else {
-    label += " \u2014 " + sugItems.length + (sugItems.length === 1 ? " match" : " matches");
-  }
+  var count = byName
+    ? "Sorted by name \u2014 " + sugItems.length + (more > 0 ? " of many" : "")
+    : (more > 0 ? "Showing the closest " + sugItems.length : sugItems.length +
+       (sugItems.length === 1 ? " match" : " matches"));
+  sugEl.insertAdjacentHTML("beforeend",
+    '<li class="sug-more" role="presentation"><span>'+count+'</span>'+
+    '<button type="button" class="sug-sort" data-order="'+(byName ? "relevance" : "name")+'">'+
+    (byName ? "Sort by best match" : "Sort by name")+'</button></li>');
+  label += " \u2014 " + count + (byName ? "" : ", sorted by best match");
   sugEl.setAttribute("aria-label", label);
   sugEl.hidden = false;
   sugEl.scrollTop = 0;
   if (gqEl) gqEl.setAttribute("aria-expanded","true");
   Array.prototype.forEach.call(sugEl.children, function(li){
     // The footer carries no data-i and is not a destination — skip it, or its
-    // mousedown would set sugAt to NaN and swallow the press.
+    // mousedown would set sugAt to NaN and swallow the press. Its one control
+    // is wired below, on mousedown for the same blur reason the rows use.
     if (li.dataset.i == null) return;
     // mousedown, not click: the input's blur fires first on a click and would
     // close the list out from under the pointer.
@@ -877,6 +897,14 @@ function openSug(term){
       ev.preventDefault(); sugAt = +li.dataset.i; takeHighlighted();
     });
     li.addEventListener("mouseenter", function(){ sugAt = +li.dataset.i; markSug(); });
+  });
+  var sortBtn = sugEl.querySelector(".sug-sort");
+  if (sortBtn) sortBtn.addEventListener("mousedown", function(ev){
+    ev.preventDefault();
+    if (typeof window.__ccrSuggestOrder === "function")
+      window.__ccrSuggestOrder(sortBtn.dataset.order);
+    openSug(gqEl ? gqEl.value : term);
+    if (gqEl) gqEl.focus();
   });
 }
 if (gqEl){

@@ -126,7 +126,9 @@ var MEMBER_ZOOM=2.7;
  * selected or are hovering does, because in a dense island a neighbor's ring
  * of squares would otherwise sit over the identity you meant to click. */
 var MEMBER_ZOOM_ALL=4.2;
-var memberPts=[];            // the member squares drawn this frame — {x,y,m,nd,isl} — for hit-testing
+var memberPts=[];
+/* The pale discs of the open identities — reserved ground for label placement. */
+var discBoxes=[];            // the member squares drawn this frame — {x,y,m,nd,isl} — for hit-testing
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
  * a module constant because doSearch has to honour it: a search that flies to
  * "fit all the hits" picks a zoom below it whenever the hits are spread out,
@@ -197,6 +199,22 @@ function readPal(){
     out[k]=v||PAL_LIGHT[k];
   });
   return out;
+}
+/* ── the label wears its identity system's color (Sam, 2026-09-05) ─────────
+ * *"The label color should correspond with the MID,CID,CCN color."* The dot
+ * already carries the system; the name beside it did not, so at any zoom where
+ * the dots are small the legend's one distinction was unreadable exactly where
+ * the reader is looking. Only the FIRST line takes it — the title. The id line
+ * below stays muted, or two colored lines start competing with each other.
+ *
+ * ⚠️ Verified in both themes before it shipped: the system strokes measure
+ * 5.15–8.44:1 on white and 6.76–9.23:1 on the dark ground, all clear of AA. A
+ * stand-alone keeps the muted ink — it is a moon, and coloring it would claim a
+ * membership it does not have. */
+function labelInk(nd){
+  if(!nd || nd.a) return pal.ink;
+  var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3;
+  return pal["sys"+i+"Stroke"] || pal.ink;
 }
 function sysPal(nd){
   var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3, w=SYS[i];
@@ -662,7 +680,7 @@ function draw(){
   }
   lastFocus=focus;
   var labelQueue=[], nodeQueue=[], openList=[];
-  memberPts=[];
+  memberPts=[]; discBoxes=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -720,6 +738,8 @@ function draw(){
         var dimmed = !!(focus && !focus[nd.i]);   // outside the clicked neighborhood
         if(dimmed){ ctx.save(); ctx.globalAlpha=ctx.globalAlpha*DIM_ALPHA; }
         var s=sysPal(nd);
+        // Membership emits light; a loner reflects it (see emitsLight).
+        if(emitsLight(nd) && !dimmed) haloAround(p[0], p[1], dr, s[1]);
         ctx.beginPath(); ctx.arc(p[0],p[1],dr,0,6.2832);
         if(nd.a){
           // Stand-alone: one college, no equivalence asserted yet — a smaller,
@@ -760,8 +780,16 @@ function draw(){
         // view. Stand-alones earn a label one band later than identities — they
         // are the small points, and their number alone reads as noise.
         var lab=labelLines(nd, k);
+        /* Is this identity about to OPEN — drawn with its college courses ringing
+         * it behind a pale disc? The same condition openList uses below. An open
+         * identity has a large empty middle, which is where its own name belongs
+         * (Sam, 2026-09-05: "Is there a reason the parent course isn't in the
+         * middle of the big circle?"). */
+        var willOpen = !nd.a && (k>MEMBER_ZOOM_ALL || (k>MEMBER_ZOOM && nd===hoverNode) ||
+                                 (nd===selNode && k>TITLE_ZOOM));
         if(lab && (nd.a ? k>TITLE_ZOOM : rad>3))
           nodeQueue.push({nd:nd, px:p[0], py:p[1], rad:rad, lines:lab.lines, band:lab.band,
+                          open:willOpen && show.members,
                           force:(nd===selNode||!!hitSet[nd.i])});
         // An identity OPENS past MEMBER_ZOOM (the selected one a band earlier):
         // the college courses it carries ring it, each a square on a spoke.
@@ -786,7 +814,10 @@ function draw(){
   // under its own subject's name helps nobody. Course labels then fill the gaps
   // left over, and a label that cannot find one is dropped rather than stacked.
   titlesQueued=nodeQueue.length;
-  placedBoxes=placeNodeLabels(nodeQueue, placeLabels(labelQueue, showLabels));
+  /* ⚠️ The discs go in BEFORE the island names, so nothing lands on one. An open
+   * identity's own label is exempt — it is placed at the disc's centre by the
+   * `inside` branch, which runs before any box is consulted. */
+  placedBoxes=placeNodeLabels(nodeQueue, placeLabels(labelQueue, showLabels).concat(discBoxes));
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -806,6 +837,49 @@ function draw(){
  * and college; the title, units and description are one hover or click away.
  * Rings of up to perRing squares, outward as the count grows. */
 var MEMBER_CAP=48;           // squares drawn for one identity; the rest are a count and the panel's list
+/* ── the sky metaphor, made literal (Sam, 2026-09-05) ─────────────────────
+ * *"instead of a square we make each local member course a muted star--feel
+ * good visual. Could add a gentle glow to all circles as if they were light
+ * emitting stars"* and then the rule that gives it meaning: *"leave all the
+ * loners and nonmembers without the halo effect--haven't earned their wings
+ * yet and are still moons."*
+ *
+ * ⭐ THE GLOW IS NOT DECORATION, IT IS THE MEMBERSHIP SIGNAL. An identity that
+ * colleges have joined emits light; a stand-alone that no college has joined to
+ * reflects it. So the halo answers the map's central question — has anyone
+ * agreed this is the same course? — without a word, and it agrees with the
+ * legend rather than competing with it. A reader who never learns the rule
+ * still sees the lit points as the settled ones.
+ *
+ * Kept quiet on purpose: one soft pass at low alpha, radius-proportional, and
+ * skipped entirely below the zoom where a halo would smear neighbors together. */
+function starPath(cx, cy, r, points){
+  points = points || 5;
+  var inner = r * 0.42, step = Math.PI / points;
+  ctx.beginPath();
+  for(var i=0;i<points*2;i++){
+    var rad = (i % 2 === 0) ? r : inner, a = -Math.PI/2 + i*step;
+    var x = cx + rad*Math.cos(a), y = cy + rad*Math.sin(a);
+    if(i===0) ctx.moveTo(x,y); else ctx.lineTo(x,y);
+  }
+  ctx.closePath();
+}
+/* A halo belongs to a point that COLLEGES HAVE JOINED. A stand-alone has one
+ * college and no agreement, so it stays a moon however big it is drawn. */
+function emitsLight(nd){ return !!nd && !nd.a && (nd.n||0) > 1; }
+function haloAround(cx, cy, r, color){
+  if(r < 2.2) return;                        // below this it is a smudge, not a glow
+  var g;
+  try{ g = ctx.createRadialGradient(cx, cy, r*0.6, cx, cy, r*2.6); }catch(e){ return; }
+  g.addColorStop(0, color);
+  g.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.save();
+  ctx.globalAlpha = ctx.globalAlpha * 0.30;
+  ctx.beginPath(); ctx.arc(cx, cy, r*2.6, 0, 6.2832);
+  ctx.fillStyle = g; ctx.fill();
+  ctx.restore();
+}
+
 function drawMembers(nd, isl, p, rad, k, queue, focus){
   var all=membersOf(nd.i); if(!all.length) return;
   // A filtered or carried course is always among the drawn ones.
@@ -821,8 +895,26 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   var sys=sysPal(nd);
   var rings=Math.ceil(n/perRing);
   if(focus){
+    /* Sam, 2026-09-05: "probably no labels should transect the CCR circle."
+     * The disc is the one thing on screen the reader is studying, and a
+     * neighbour's name laid across it is read as belonging to it. Recording the
+     * disc as an OCCUPIED BOX before any label is placed makes the placer treat
+     * it like another label — it will try its other corners, and drop rather
+     * than stack, which is the behavior it already has for every real clash. */
+    discBoxes.push([p[0]-(R0+(rings-1)*15+10), p[1]-(R0+(rings-1)*15+10),
+                    p[0]+(R0+(rings-1)*15+10), p[1]+(R0+(rings-1)*15+10)]);
+    /* Sam, 2026-09-05: "perhaps the circle should show the color of the CCR
+     * (MID, CID, or CCN)". The disc behind the ring is the biggest thing on the
+     * screen when an identity opens, and it was neutral — so the one moment the
+     * reader is looking hardest at a single course said nothing about which
+     * system names it. Tinted at low alpha: enough to read as M-ID violet,
+     * C-ID blue or CCN mustard, never enough to fight the stars on top of it. */
     ctx.beginPath(); ctx.arc(p[0],p[1],R0+(rings-1)*15+10,0,6.2832);
     ctx.fillStyle=pal.haloFill; ctx.fill();
+    ctx.save(); ctx.globalAlpha=ctx.globalAlpha*0.13;
+    ctx.fillStyle=sys[1]; ctx.fill(); ctx.restore();
+    ctx.lineWidth=1; ctx.strokeStyle=sys[1]; ctx.globalAlpha=ctx.globalAlpha*0.5;
+    ctx.stroke(); ctx.globalAlpha=ctx.globalAlpha/0.5;
     ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
     ctx.fillStyle=sys[0]; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=sys[1]; ctx.stroke();
   }
@@ -836,13 +928,17 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     var carried=drag && drag.kind==="course" && drag.cn===m.cn;
     ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
     ctx.lineWidth=1; ctx.strokeStyle=pal.ringFaint; ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(x-3.5,y-3.5); ctx.lineTo(x+3.5,y-3.5); ctx.lineTo(x+3.5,y+3.5);
-    ctx.lineTo(x-3.5,y+3.5); ctx.lineTo(x-3.5,y-3.5);
+    /* A college's own course is a small star on its spoke. Muted: it is evidence
+     * for the identity at the centre, never a competitor for attention. */
+    starPath(x, y, 5.2);
     ctx.fillStyle=movedHere?pal.sqMoved:carried?pal.sqCarried:pal.hollow; ctx.fill();
-    ctx.lineWidth=1.4; ctx.strokeStyle=movedHere?pal.sqMovedStroke:sys[1]; ctx.stroke();
+    ctx.lineWidth=1.2; ctx.strokeStyle=movedHere?pal.sqMovedStroke:sys[1]; ctx.stroke();
     memberPts.push({x:x, y:y, m:m, nd:nd, isl:isl});
     if(k>MEMBER_ZOOM || focus)
-      queue.push({mem:m, nd:nd, px:x, py:y, rad:4, lines:[m.n+" · "+trunc(m.c,26)], band:"member",
+      // Short college names on the map (Sam, 2026-09-05: "Could use the short
+      // names on the colleges throughout") — a ring of 24 spokes is where the
+      // repeated word "College" costs the most and says the least.
+      queue.push({mem:m, nd:nd, px:x, py:y, rad:4, lines:[m.n+" · "+trunc(shortCollege(m.c),26)], band:"member",
                   out:[Math.cos(a), Math.sin(a)],
                   force:!!focus || !!(memFilter && m.n===memFilter) || carried});
   }
@@ -862,12 +958,46 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
  * valuable real estate. Hover over to see the details, including the course
  * number" — "Course title and units (3u)"). Three bands: brief (a short title),
  * titled (the longer title), full (a second line with the number and system). */
+/* ── the college on a loner (Sam, 2026-09-05) ─────────────────────────────
+ * *"it would be helpful to have the short college on the loners."* A
+ * stand-alone course IS one college's course — that is the whole definition —
+ * so naming the college is what identifies it on a map where three neighbors
+ * can read `Introduction to Welding & Safety`. A clustered identity has many
+ * colleges and no single one to name, so this is a stand-alone affordance only.
+ *
+ * Short form, not canonical: `American River` rather than `American River
+ * College`, because these are map labels competing for space with their
+ * neighbors. The map falls back to trimming the suffix when the seed has no
+ * entry, so a college missing from the lookup still reads short. */
+function shortCollege(name){
+  if(!name) return "";
+  /* COBI's own resolver when the map is framed inside it (college_short_names.js
+   * is generated from the curator-provided seed, MAP@rccd.edu). SkyView served
+   * stand-alone does not load it, so the fallback has to be good on its own —
+   * trimming the suffix gives `American River`, `Mt. San Antonio`, `Long Beach
+   * City`, which is what the seed says anyway for all but a handful. */
+  var f = window.cplCollegeShort;
+  if(typeof f === "function"){ var r = f(name); if(r) return r; }
+  return name.replace(/\s+(Community\s+)?College$/i,"")
+             .replace(/\s+Center$/i,"").trim() || name;
+}
+/* The one college a stand-alone belongs to, or "" for anything else. */
+function loneCollege(nd){
+  if(!nd || !nd.a) return "";
+  var m=(roster && roster[nd.i] || [])[0];
+  return m ? shortCollege(m.c) : "";
+}
+window.__ccrLoneCollege = loneCollege;
+
 function labelLines(nd, k){
   if(k<=ID_ZOOM) return null;
   var u=unitsShort(nd.u);
   var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"");
-  if(k>FULL_ZOOM)
-    return {band:"full", lines:[head, nd.i+" · "+sysWord(nd)+(nd.a?" · stand-alone":"")]};
+  if(k>FULL_ZOOM){
+    var col=loneCollege(nd);
+    return {band:"full", lines:[head,
+      nd.i+" · "+sysWord(nd)+(nd.a?" · stand-alone":"")+(col?" · "+col:"")]};
+  }
   if(k>TITLE_ZOOM) return {band:"titled", lines:[head]};
   return {band:"brief", lines:[head]};
 }
@@ -934,6 +1064,43 @@ function placeNodeLabels(queue, boxes){
        a thin line to connect to the circle so users can be clear on what they
        might drag and drop"). Four corners are tried, up-right first; the first
        that fits wins, and a label that fits nowhere is dropped, never stacked. */
+    /* ⭐ A CIRCLE BIG ENOUGH TO HOLD ITS OWN NAME KEEPS IT (Sam, 2026-09-05:
+     * "Is there a reason the parent course isn't in the middle of the big
+     * circle? Seems it should be").
+     *
+     * ⚠️ There WAS a reason, and it was Sam's own (2026-09-03): "have the course
+     * labels away from the course circle and have a thin line to connect to the
+     * circle so users can be clear on what they might drag and drop." That rule
+     * is right for the small circles it was written about — a name inside a
+     * 12px dot is unreadable and says nothing about which dot it belongs to.
+     * It over-applies to an OPEN identity, which is drawn large, ringed by its
+     * college courses, and is the one thing on screen the reader is looking at:
+     * there the leader line points from the middle of the view to a corner,
+     * and the circle it names sits empty.
+     *
+     * So the leader stays the default and the inside is the exception, taken
+     * only when the text genuinely fits with room to breathe. No leader is
+     * drawn in that case — the label IS the circle's label by position. */
+    /* The room is either the circle itself (a big one) or the pale disc an OPEN
+     * identity is drawn on — the ring of college stars is pushed out to its
+     * edge, so the middle is the emptiest space on the screen. */
+    var inside = !mem && (q.open || (q.rad >= 34 && h + 8 <= q.rad * 1.15))
+                 && w + 10 <= (q.open ? 270 : q.rad * 1.55);
+    if(inside){
+      var ix=q.px-w/2, iy=q.py-h/2-2;
+      var ibox=[ix-2, iy, ix+w+2, iy+h];
+      boxes.push(ibox); placed.push(ibox);
+      labelStats[q.band]++;
+      // No leader: the label IS this circle's, by sitting in it.
+      q.lines.forEach(function(t,li){
+        var y=iy+lh*(li+1)-2;
+        ctx.lineWidth=3; ctx.strokeStyle=pal.halo;
+        ctx.strokeText(t,ix,y);
+        ctx.fillStyle=q.force?pal.inkAlert:(li?pal.inkMuted:labelInk(q.nd));
+        ctx.fillText(t,ix,y);
+      });
+      return;
+    }
     var cands=[[1,-1],[-1,-1],[1,1],[-1,1]], box=null, at=null;
     if(q.out){   // a square's name radiates OUTWARD from its identity, so a ring reads as spokes
       var ox=q.out[0]>=0?1:-1, oy=q.out[1]>=0?1:-1;
@@ -970,7 +1137,11 @@ function placeNodeLabels(queue, boxes){
      * ELBOW that carries the line horizontally INTO the first line of the label,
      * so it terminates on the text it names; and a little more weight. Still the
      * quietest mark in the frame — this is a tie, not a decoration. */
-    var ex=q.px+at.sx*q.rad*0.71, ey=q.py+at.sy*q.rad*0.71;
+    /* Sam, 2026-09-05: "If the label doesn't fit, at least the pointer should go
+     * to the circle." The leader ended at 0.71 of the radius — inside the fill,
+     * which on a big circle reads as pointing at nothing in particular. It now
+     * lands ON the edge, where the eye can see it meet something. */
+    var ex=q.px+at.sx*q.rad*0.98, ey=q.py+at.sy*q.rad*0.98;
     var midY=at.y0+lh-2-lh*0.28;                 // the first line's optical middle
     var stubX=at.sx>0 ? at.x0 : at.x0+w;         // the label edge nearest the circle
     ctx.strokeStyle=q.force?pal.leaderForce:pal.leader;
@@ -985,7 +1156,7 @@ function placeNodeLabels(queue, boxes){
       var y=at.y0+lh*(li+1)-2;
       ctx.lineWidth=3; ctx.strokeStyle=pal.halo;
       ctx.strokeText(t,at.x0,y);
-      ctx.fillStyle=q.force?pal.inkAlert:(mem?pal.inkBody:(li?pal.inkMuted:pal.ink));
+      ctx.fillStyle=q.force?pal.inkAlert:(mem?pal.inkBody:(li?pal.inkMuted:labelInk(q.nd)));
       ctx.fillText(t,at.x0,y);
     });
   });
@@ -1153,7 +1324,7 @@ window.__ccrUniverse = function(opts){
           '<span><i class="u-sw s3"></i>unified</span>'+
           '<span><i class="u-sw orphan"></i>stand-alone course — a smaller, lighter dot in orbit around its closest match</span>'+
           '<span><i class="u-sw nc"></i>noncredit — a broken ring around the dot, whatever the identity system</span>'+
-          '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
+          '<span><i class="u-sw member"></i>college course under an identity — a small star; click or hover an identity to open it</span>'+
         '</div>'+
         '<div class="u-hint" id="u-hint">Hover for a quick look; click a discipline or a course for details. '+
           '<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to, '+
@@ -1287,7 +1458,33 @@ window.__ccrUniverseSearch = doSearch;
  * dominant intent on a map. Returns plain objects, no DOM: the header owns the
  * dropdown and this owns the corpus.
  */
-function suggest(raw, limit){
+/* ── ordering (Sam, 2026-09-05) ───────────────────────────────────────────
+ * Sam, looking at the live list for "weld": *"I probs would have spotted that
+ * earlier if the dropdown in SkyView showed all the welding courses in
+ * order--would have seen 2 named similarly or the same."*
+ *
+ * ⚠️ THE DEPTH WAS NOT THE PROBLEM; THE SORT WAS. After the relevance tier the
+ * list orders by MEMBER COUNT DESCENDING, so a small identity is buried by
+ * construction — and a duplicate of a well-adopted course is, almost by
+ * definition, the less-adopted twin. Measured on the live corpus: "weld"
+ * matches 591 points; `Introduction to Welding` (WELD M1109, 24 colleges)
+ * ranks 1st and `Introduction to the Welding Processes` (WELD M1106, 3
+ * colleges) ranks 132nd — outside any list a reader will scroll. Sorted by
+ * NAME the two sit two rows apart, with `Intro-Welding Processes` (WELD M10VQ,
+ * 1 college) beside them: three near-identical identities, visible at a glance.
+ *
+ * So the two orderings answer different questions and neither replaces the
+ * other. Relevance is "take me to the course I mean" and stays the default.
+ * By name is "show me what is near-identical", which is the curation question,
+ * and popularity-ranking actively defeats it. */
+var SUG_ORDER = "relevance";
+window.__ccrSuggestOrder = function(mode){
+  if(mode==="relevance" || mode==="name") SUG_ORDER = mode;
+  return SUG_ORDER;
+};
+
+function suggest(raw, limit, order){
+  var ord = (order==="name"||order==="relevance") ? order : SUG_ORDER;
   var term=String(raw==null?"":raw).trim().toLowerCase();
   var out=[];
   if(!U || term.length<2) return out;
@@ -1303,7 +1500,8 @@ function suggest(raw, limit){
      * spends "subject" on SUBJ4 codes. */
     subs.push({kind:"subject", kindWord:"discipline", kindShort:"DISC", label:I.d, tier:t, n:(I.n||0), isl:I});
   });
-  subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
+  if(ord==="name") subs.sort(function(a,b){ return a.label.toLowerCase()<b.label.toLowerCase() ? -1 : 1; });
+  else subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
   // Course identities and stand-alones by title or number; identities first.
   var pts=[];
   for(var i=0;i<U.islands.length;i++){
@@ -1324,7 +1522,18 @@ function suggest(raw, limit){
       if(pts.length>3000) break;
     }
   }
+  /* ⚠️ SORTING THE WHOLE MATCH SET BY NAME AND TAKING THE FIRST N GIVES YOU THE
+   * COURSES BEGINNING WITH "A". That was the first attempt and the harness
+   * caught it: for "weld" it returned neither intro course, because 591 matches
+   * sorted alphabetically never reach the I's inside a budget of about thirty.
+   *
+   * What the reader wants is the alphabetical NEIGHBORHOOD of the thing they
+   * meant — near-identical titles sit next to each other, so the window has to
+   * be CENTERED ON THE BEST MATCH rather than taken from the start. Rank by
+   * relevance first to find that anchor, then re-sort by name and slide a
+   * window around it. */
   pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
+  var anchor = pts.length ? pts[0] : null;
   /* ── item 6 of Sam's first list (2026-09-04): "In the Keyword Search, keep CR
    * courses together separated from NC courses."
    *
@@ -1343,9 +1552,15 @@ function suggest(raw, limit){
    * non-selectable <li> between groups would desync every arrow key after it.
    * Each row instead names its own status, which is what makes the block
    * boundary legible. */
-  var byCredit=[[],[],[]];
-  pts.forEach(function(p){ byCredit[p.nd.c==null ? 2 : (p.nd.c===0 ? 0 : 1)].push(p); });
-  pts=byCredit[0].concat(byCredit[1], byCredit[2]);
+  /* ⚠️ The credit partition is a RELEVANCE-mode device: it keeps credit courses
+   * together at the top of a ranked list. Applied to a by-name list it would
+   * split the alphabet into three, which is exactly the clustering the reader
+   * asked for being taken away again. */
+  if(ord!=="name"){
+    var byCredit=[[],[],[]];
+    pts.forEach(function(p){ byCredit[p.nd.c==null ? 2 : (p.nd.c===0 ? 0 : 1)].push(p); });
+    pts=byCredit[0].concat(byCredit[1], byCredit[2]);
+  }
 
   // College courses, by code (prefix wins) or by control number.
   var mems=[];
@@ -1398,13 +1613,31 @@ function suggest(raw, limit){
     }
   }
   out=subs.slice(0, want[0]);
-  pts.slice(0, want[1]).forEach(function(p){
+  var shown;
+  if(ord==="name" && anchor){
+    var byName=pts.slice().sort(function(a,b){
+      var at=(a.nd.t||a.nd.i).toLowerCase(), bt=(b.nd.t||b.nd.i).toLowerCase();
+      return at<bt ? -1 : at>bt ? 1 : (a.nd.i<b.nd.i ? -1 : 1);
+    });
+    var at=byName.indexOf(anchor);
+    // A window that keeps the anchor a third of the way down, so most of what
+    // the reader sees is what FOLLOWS it alphabetically — where a longer
+    // variant of the same title lands ("… Processes" after "…").
+    var before=Math.floor(want[1]/3);
+    var start=Math.max(0, Math.min(at-before, byName.length-want[1]));
+    shown=byName.slice(start, start+want[1]);
+  } else {
+    shown=pts.slice(0, want[1]);
+  }
+  shown.forEach(function(p){
     out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity",
               kindShort:kindShort("course", p.nd), label:p.nd.t||p.nd.i,
               sub:p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd), credit:creditWord(p.nd),
               isl:p.isl, nd:p.nd});
   });
-  mems.slice(0, want[2]).forEach(function(o){ out.push(o); });
+  var takeM = mems.slice(0, want[2]);
+  if(ord==="name") takeM.sort(function(a,b){ return a.label.toLowerCase()<b.label.toLowerCase() ? -1 : 1; });
+  takeM.forEach(function(o){ out.push(o); });
   /* What the dropdown's footer needs to say "there are more". `pts` and `mems`
    * are themselves capped, so this is a floor on the true count, never a
    * claim of exactness — the footer words it that way. */
@@ -1584,18 +1817,32 @@ window.__ccrUniverseState = function(){
  * tooltip follows the pointer; the inspector holds the full card on click. */
 function tipHtml(hit){
   if(hit.mem){
+    /* Sam, 2026-09-05: "The course title and description should show on the
+     * explainer card for member local courses." The description is the whole
+     * reason to hover a college's course — it is the evidence the identity was
+     * built from, and reading it is how a reviewer decides whether the merge is
+     * sound. Trimmed, because a hover card is not a reading surface: the panel
+     * carries the full text on a click. */
     var m=hit.mem, info=courseInfo(hit.isl, m);
-    return '<b>'+esc(m.n)+'</b> '+esc(m.c)+
+    var st=descState[hit.isl && hit.isl.sh];
+    var body = info && info.desc ? esc(trunc(info.desc, 260))
+             : st==="loading" ? "Loading the catalog description…"
+             : st==="ok" ? "No catalog description for this course."
+             : "";
+    return '<b>'+esc(m.n)+'</b> '+esc(shortCollege(m.c))+
       (info&&info.title?'<br>'+esc(info.title):'')+
       '<br><span class="sub">'+(info&&info.units!=null?esc(unitsWord(info.units))+' · ':'')+
-      'college course under '+esc(hit.nd.i)+' '+esc(trunc(hit.nd.t||"",36))+'</span>';
+      'college course under '+esc(hit.nd.i)+' '+esc(trunc(hit.nd.t||"",36))+'</span>'+
+      (body?'<br><span class="sub tip-desc">'+body+'</span>':'');
   }
   if(hit.nd){
     var nd=hit.nd, isl=hit.isl;
     var carried=(roster&&roster[nd.i]||[]).length;
     var h='<b>'+esc(nd.i)+'</b> '+esc(nd.t||"")+
       '<br><span class="sub">'+esc(unitsWord(nd.u))+' · '+esc(sysWord(nd))+' · '+
-      num(carried)+' college course'+(carried===1?'':'s')+' · '+esc(isl.d)+'</span>';
+      num(carried)+' college course'+(carried===1?'':'s')+' · '+esc(isl.d)+
+      // A loner's one college names it; the hover is where a reader asks "whose?"
+      (loneCollege(nd)?' · '+esc(loneCollege(nd)):'')+'</span>';
     if(nd.a){
       var par=nd.o?nodeById(nd.o):null;
       h+='<br><span class="sub">Stand-alone'+(nd.h?' filed under '+esc(nd.h):'')+(par
@@ -2441,7 +2688,7 @@ function memberRow(m, isl, nd, moved){
     '<button type="button" class="cd" data-desc="'+esc(m.cn)+'" aria-expanded="'+(open?"true":"false")+
       '" title="Show the catalog description">'+esc(m.n)+"</button>"+
     (info&&info.title?'<span class="mt">'+esc(info.title)+"</span>":"")+
-    '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
+    '<span class="co" title="'+esc(m.c)+'">'+esc(shortCollege(m.c))+"</span>"+
     (info&&info.units!=null?'<span class="un">'+esc(unitsWord(info.units))+"</span>":"")+
     (moved?' <span class="chip ok">moved here</span>':"")+
     (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
@@ -2551,7 +2798,7 @@ function renderNode(){
         return '<li'+(gone?' class="moved"':"")+'>'+
           '<button type="button" class="cd" data-go="'+esc(s.i)+'" title="Open this course">'+esc(m?m.n:s.i)+"</button>"+
           '<span class="mt">'+esc(s.t||(info&&info.title)||"")+"</span>"+
-          (m?'<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>":"")+
+          (m?'<span class="co" title="'+esc(m.c)+'">'+esc(shortCollege(m.c))+"</span>":"")+
           '<span class="un">'+esc(unitsWord(s.u))+"</span>"+
           '<span class="why">'+esc(whyWords(s.w))+"</span>"+
           (gone?' <span class="chip ok">moved</span>':
@@ -3091,9 +3338,10 @@ function howHtml(){
     '<figure class="how-fig">'+howFig("marks")+'</figure>'+
     '<ul class="how-list">'+
       '<li>A <strong>large dot</strong> is a course identity. Its color says who issued the number: purple for an M-ID, our working label; blue for a C-ID and gold for a CCN, both official statewide numbers; gray for a unified row. The biggest dots carry the most college courses.</li>'+
-      '<li>A <strong>smaller, lighter dot</strong> is a stand-alone course: one college teaches it and no identity claims it yet. It orbits the identity it most resembles, tied to it by a dotted line. The orbit is a suggestion. Nothing changes until someone moves the course.</li>'+
+      '<li>A point that <strong>glows</strong> is a course more than one college teaches. The light is the agreement: colleges have joined it. A stand-alone course does not glow — nobody has joined it yet.</li>'+
+    '<li>A <strong>smaller, lighter dot</strong> is a stand-alone course: one college teaches it and no identity claims it yet. It orbits the identity it most resembles, tied to it by a dotted line. The orbit is a suggestion. Nothing changes until someone moves the course.</li>'+
       '<li>A <strong>broken ring</strong> around a dot marks a noncredit course, whatever its color.</li>'+
-      '<li>A <strong>small square</strong> is a college course under an identity. Squares appear when you zoom in past 270 percent, and the sidebar lists them at any zoom.</li>'+
+      '<li>A <strong>small star</strong> is a college course under an identity. Stars appear when you zoom in past 270 percent, and the sidebar lists them at any zoom.</li>'+
     '</ul>'+
     '<h2>Find your course</h2>'+
     '<p>Type a course number, a title or a discipline in the search box. Pick a result and the map flies to it: a discipline lands at 150 percent, a course at 1,000 percent. '+

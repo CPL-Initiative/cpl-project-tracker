@@ -86,6 +86,8 @@ const texts = [];   // every string fillText() drew, so a label's WORDS can be a
 function fakeCtx() {
   const noop = () => {};
   return { setTransform: noop, clearRect: noop, fillRect: noop, beginPath: noop, arc: noop, fill: noop,
+           // starPath() closes its path; the membership halo asks for a gradient.
+           closePath: noop, createRadialGradient: () => ({ addColorStop: noop }),
            stroke: noop, moveTo: noop, lineTo: noop, save: noop, restore: noop, setLineDash: noop,
            strokeText: noop, fillText: (t) => texts.push(String(t)), measureText: (t) => ({ width: String(t).length * 6 }),
            fillStyle: "", strokeStyle: "", lineWidth: 1, font: "", textAlign: "", textBaseline: "" };
@@ -714,10 +716,15 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // An OPEN ring spreads with its count so the names can radiate: R0 = rad + 16 + min(70, n * 1.7).
   const R0 = radM + 16 + Math.min(70, under(["WELD M1001"]) * 1.7);
   pointer("pointermove", 480, 300 - R0);                 // the first square, straight above
-  check("(R) ⭐ hovering a square names the college course, its college and the identity it sits under",
-    !tip.hidden && /WELD 100/.test(tip.textContent) && /Alpha College/.test(tip.textContent) && /under WELD M1001/.test(tip.textContent), tip.textContent);
+  /* The college reads SHORT here and canonical in the sidebar's title attribute
+     (Sam, 2026-09-05), and the card now carries the catalog description — the
+     evidence the identity was built from, which is the reason to hover at all. */
+  check("(R) ⭐ hovering a star names the college course, its college, the identity it sits under, and its catalog description",
+    !tip.hidden && /WELD 100/.test(tip.textContent) && /Alpha/.test(tip.textContent) &&
+    !/Alpha College/.test(tip.textContent) && /under WELD M1001/.test(tip.textContent) &&
+    /A welding description\./.test(tip.textContent), tip.textContent);
   texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.0);
-  check("(R) ⭐ each square is labelled by its code and college", st().labelStats.members > 0 && texts.some((t) => t === "WELD 100 · Alpha College"), texts.join("|"));
+  check("(R) ⭐ each square is labelled by its code and college", st().labelStats.members > 0 && texts.some((t) => t === "WELD 100 · Alpha"), texts.join("|"));
   const mvb = st().moves.length;
   pointer("pointerdown", 480, 300 - R0); pointer("pointermove", 500, 340);
   check("(R) ⭐ dragging a square picks its course up", st().carrying === "WELD 100", String(st().carrying));
@@ -874,7 +881,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(Y) ⭐ Dark flips the body class, the chip and the remembered choice",
     d.body.classList.contains("u-dark") && st().dark && q("#u-dark").getAttribute("aria-pressed") === "true" && w.localStorage.getItem("skyview:theme") === "dark");
   check("(Y) ⭐ the canvas palette is CSS tokens the dark body redefines, read at draw time with the light values as the fallback",
-    /--sky-ground:#FFFFFF/.test(tpl) && /body\.u-dark\{/.test(tpl) && /--sky-ground:#1E1E1C/.test(tpl) && /pal=readPal\(\);/.test(ujs) &&
+    /--sky-ground:#FFFFFF/.test(tpl) && /body\.u-dark\{/.test(tpl) &&
+    /body\.u-dark\{[\s\S]*?--sky-ground:#[0-9A-Fa-f]{6}/.test(tpl) && /pal=readPal\(\);/.test(ujs) &&
     /\.u-sw\.s0\{background:var\(--sky-sys0-stroke\)/.test(tpl) && !/style="background:#F1EAFC/.test(ujs));
   check("(Y) pressed chips take their text color from a token, so the dark accent stays readable", /color:var\(--on-accent,#fff\)/.test(tpl));
   q("#u-dark").click();
@@ -886,7 +894,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     !!q("#how-h1") && /How SkyView works/.test(text("#how-h1")) && qa(".how-fig svg").length === 3 && w.location.hash === "#how" && st().curView === "how",
     `${w.location.hash} figs=${qa(".how-fig svg").length}`);
   check("(Z) it explains the shapes and the move in words a reviewer can act on",
-    /large dot/.test(text(".how")) && /smaller, lighter dot/.test(text(".how")) && /broken ring/.test(text(".how")) && /small square/.test(text(".how")) &&
+    /large dot/.test(text(".how")) && /smaller, lighter dot/.test(text(".how")) && /broken ring/.test(text(".how")) &&
+    /small star/.test(text(".how")) && /glows/.test(text(".how")) &&
     /What a reviewer checks/.test(text(".how")) && /Move/.test(text(".how")));
   check("(Z) every figure carries a description for a screen reader", qa(".how-fig svg").every((s) => /[A-Za-z]/.test(s.getAttribute("aria-label") || "") && s.getAttribute("role") === "img"));
   check("(Z) the borrowed search box went home for it, and the Go To menu rides the crumbs row", !!q(".mast #msearch") && !!q("#crumbs-views #u-views"));
@@ -920,7 +929,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   w.__ccrToggleSuggestion(r2);
   check("(R3) ⭐ picking a picked row unpicks it (the list's toggle; the go-there entry point only refocuses)", st().tokens.length === 1 && st().tokens[0] === (r1.nd.t || r1.nd.i), JSON.stringify(st().tokens));
   q("#gq").value = "weld"; q("#gq").dispatchEvent(new w.Event("input", { bubbles: true }));
-  const rows = qa("#sug li");
+  /* Rows are the OPTIONS. The footer (role=presentation) carries the match count
+     and the sort control and is deliberately not a row — scoping to options is
+     what this check always meant. */
+  const rows = qa("#sug li[role=option]");
   check("(R3) ⭐ every suggestion row carries a checkbox, the list is multi-select, and the picked row is ticked",
     rows.length > 1 && rows.every((li) => li.querySelector(".sg-cb")) && q("#sug").getAttribute("aria-multiselectable") === "true" &&
     rows.some((li) => li.classList.contains("picked") && li.getAttribute("aria-selected") === "true"),
