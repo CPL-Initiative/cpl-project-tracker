@@ -116,9 +116,9 @@ a{color:var(--cobalt)}
      border:1px solid var(--border-strong);background:var(--surface-opaque);
      color:var(--text-strong);cursor:pointer}
 .btn:hover{background:var(--surface-muted)}
-.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
 .btn.primary:hover{background:#003a8c}
-.btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
 
 /* ── forest grid ── */
 .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
@@ -284,18 +284,18 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    the segmented LOOK. */
 .u-modes,.u-seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;margin-right:4px}
 .u-modes .btn.mode,.u-seg .btn.mode{border:0;border-radius:0;background:var(--surface-opaque);color:var(--text-body);backdrop-filter:none}
-.u-modes .btn.mode[aria-pressed=true],.u-seg .btn.mode[aria-pressed=true]{background:var(--seal-blue,#002F6D);color:#fff}
+.u-modes .btn.mode[aria-pressed=true],.u-seg .btn.mode[aria-pressed=true]{background:var(--seal-blue,#002F6D);color:var(--on-accent,#fff)}
 .u-stage{display:flex;align-items:stretch;min-width:0}
 .u-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:flex-start;
         padding:6px clamp(12px,2vw,24px);border-top:1px solid var(--border);background:var(--surface-subtle)}
 .u-foot .u-legend,.u-foot .u-hint{background:none;border:0;backdrop-filter:none;padding:0;max-width:none;border-radius:0}
 .u-foot .u-hint{flex:1 1 320px}
 .u-foot .u-legend{flex:0 1 auto}
-.u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:#fff}
+.u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:var(--sky-hollow,#fff)}
 /* Noncredit reads as a BROKEN ring on the map, so the legend swatch shows the
    same break rather than describing it. Stroke, not colour: colour is already
    spent on the identity system. */
-.u-sw.nc{background:#fff;border-style:dashed;border-color:var(--text-muted)}
+.u-sw.nc{background:var(--sky-hollow,#fff);border-style:dashed;border-color:var(--text-muted)}
 .u-crnc{margin-left:2px}
 .u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:78vh;overflow:hidden;background:var(--surface-opaque)}
 .u-wrap canvas{display:block;width:100%;height:100%;touch-action:none;cursor:default}
@@ -322,8 +322,8 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 .u-top{flex-wrap:nowrap;gap:6px 14px}
 .u-top .u-nav{min-width:0;flex:0 1 auto}
 .u-top .u-bar{margin-left:auto;min-width:0;flex:0 1 auto}
-.u-top .u-bar .btn{font-size:.76rem;padding:5px 8px}
-.u-top .u-bar .u-z{font-size:.76rem}
+/* One chip size at every width since 2026-09-05 (item 7) — see the block
+   further down; the row wraps below 1100px instead of shrinking. */
 /* ── the 2026-09-04 top row: title · views · search · controls · close ──────
    Sam's items 1-5. The order IS the ask: "SkyView label top left most",
    the view links folded into "a single drop down", the search "to the left of
@@ -348,7 +348,7 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    works. display:none is what actually takes them out of the layout and the
    tab order, and it is the difference between a hidden menu and a hidden
    keyboard trap. */
-.u-views:not([open]) .u-views-menu{display:none}
+details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in the More panel has no [open] and must show */
 .u-views-menu{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:210px;
               display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:6px;
               background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));
@@ -378,7 +378,6 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    only one row if the controls are compact, so they tighten between 1100 and
    1500 rather than wrapping. */
 @media (max-width:1500px){
-  .u-top .u-bar .btn{font-size:.72rem;padding:4px 6px}
   .u-top .u-bar{gap:4px}
   .u-search-slot{flex-basis:180px}
 }
@@ -398,12 +397,10 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 .u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
   padding:8px 11px;border:1px solid var(--border-strong);border-radius:7px;
   background:var(--surface-opaque);color:var(--text-body)}
-.u-z{font-size:.8rem;color:var(--text-muted);background:var(--surface);padding:4px 8px;border-radius:6px}
 /* The zoom group's own label carries what Out/In/Reset act on, so the
    buttons could shorten to one word each without becoming glyphs. */
 .u-zgroup{display:inline-flex;align-items:center;gap:4px}
 .u-zlbl{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase}
-.u-z b{color:var(--text-strong);font-variant-numeric:tabular-nums}
 .u-hint{font-size:.8rem;color:var(--text-muted);padding:8px 12px;line-height:1.4;
         border:1px solid var(--border);border-radius:8px;background:var(--surface);backdrop-filter:blur(4px)}
 .u-legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.74rem;color:var(--text-muted);
@@ -411,11 +408,181 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
           border-radius:8px;max-width:min(640px,calc(100% - 24px))}
 .u-legend span{display:flex;gap:5px;align-items:center}
 .u-sw{width:10px;height:10px;border-radius:50%;border:2px solid var(--text-muted);display:inline-block;flex:none}
-.u-sw.hollow{background:#fff;border-color:var(--violet)}
-.u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:#fff;
+.u-sw.hollow{background:var(--sky-hollow,#fff);border-color:var(--violet)}
+.u-sw.s0{background:var(--sky-sys0-fill);border-color:var(--sky-sys0-stroke)}
+.u-sw.s1{background:var(--sky-sys1-fill);border-color:var(--sky-sys1-stroke)}
+.u-sw.s2{background:var(--sky-sys2-fill);border-color:var(--sky-sys2-stroke)}
+.u-sw.s3{background:var(--sky-sys3-fill);border-color:var(--sky-sys3-stroke)}
+.u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
        box-shadow:0 6px 18px rgba(20,20,30,.22)}
-.u-tip .sub{color:#D6D6D0}
+.u-tip .sub{color:var(--tip-sub,#D6D6D0)}
+/* ══ 2026-09-05 — Sam's second SkyView list: one chip vocabulary (item 7),
+   the zoom stack (8), the Show menu (3), the window controls and menu (1),
+   the token search (2.1), the legend's own corner (5), the explainer (6) and
+   the dark canvas (2). ══ */
+:root{
+  --u-chip-h:30px; --u-chip-fs:.8rem; --u-chip-r:6px;
+  --on-accent:#fff; --tip-sub:#D6D6D0;
+  /* the map's palette — the canvas reads these at draw time (ccr_universe.js readPal) */
+  --sky-ground:#FFFFFF; --sky-island:#F7F5F1; --sky-island-hover:#F3F1EC; --sky-island-sel:#EDE7F8;
+  --sky-island-stroke:rgba(28,28,26,.18); --sky-tether:rgba(109,40,217,.28); --sky-hollow:#FFFFFF;
+  --sky-halo:rgba(255,255,255,.94); --sky-halo-fill:rgba(255,255,255,.8);
+  --sky-ink:#1C1C1A; --sky-ink-body:#3A3A36; --sky-ink-muted:#5C5C55; --sky-ink-force:#0047AB; --sky-ink-alert:#920000;
+  --sky-ring-search:#920000; --sky-ring-sel:#0047AB; --sky-ring-token:#0047AB;
+  --sky-leader:rgba(28,28,26,.55); --sky-leader-dot:rgba(28,28,26,.62);
+  --sky-leader-force:rgba(146,0,0,.75); --sky-leader-dot-force:rgba(146,0,0,.85);
+  --sky-ring-faint:rgba(28,28,26,.22); --sky-gone:#87877F; --sky-sq-moved:#EAF1E6; --sky-sq-carried:#E7EEF9;
+  --sky-sq-moved-stroke:#2C601A; --sky-drag:#0047AB;
+  --sky-sys0-fill:#F1EAFC; --sky-sys0-stroke:#6D28D9; --sky-sys1-fill:#E7EEF9; --sky-sys1-stroke:#0047AB;
+  --sky-sys2-fill:#FBF1D8; --sky-sys2-stroke:#8B6800; --sky-sys3-fill:#EFEFEC; --sky-sys3-stroke:#5C5C55;
+}
+/* The dark canvas (Sam, 2026-09-05: "Dark mode selector"). Opt-in and remembered
+   per browser; First Light stays a light identity, and this is the one
+   workspace that earns a dark ground — a map you stare at for an hour. Every
+   text pair on #1E1E1C is measured: ink 13.9:1, body 11.0, muted 6.9, the
+   on-dark cobalt 6.5, the on-dark mustard 7.7 (prototype/check_contrast.py). */
+body.u-dark{
+  --paper:#151514; --surface-opaque:#1E1E1C; --surface-subtle:#262624; --surface-muted:#30302E;
+  --surface:rgba(30,30,28,.86); --text-strong:#ECE9E2; --text-body:#D6D6D0; --text-muted:#ABABA3; --text-faint:#7A7A74;
+  --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.32);
+  --cobalt:#7DA1D4; --seal-blue:#7DA1D4; --focus-ring:#7DA1D4; --violet:#B28DEB; --hunter:#89A67F;
+  --crimson:#CF8F8F; --mustard-text:#E3B341; --on-accent:#141413; --tip-sub:#5C5C55;
+  --sky-ground:#1E1E1C; --sky-island:#2A2A28; --sky-island-hover:#313130; --sky-island-sel:#34294A;
+  --sky-island-stroke:rgba(255,255,255,.14); --sky-tether:rgba(178,141,235,.42); --sky-hollow:#1E1E1C;
+  --sky-halo:rgba(30,30,28,.94); --sky-halo-fill:rgba(30,30,28,.8);
+  --sky-ink:#ECE9E2; --sky-ink-body:#D6D6D0; --sky-ink-muted:#ABABA3; --sky-ink-force:#7DA1D4; --sky-ink-alert:#CF8F8F;
+  --sky-ring-search:#CF8F8F; --sky-ring-sel:#7DA1D4; --sky-ring-token:#7DA1D4;
+  --sky-leader:rgba(236,233,226,.55); --sky-leader-dot:rgba(236,233,226,.62);
+  --sky-leader-force:rgba(207,143,143,.8); --sky-leader-dot-force:rgba(207,143,143,.9);
+  --sky-ring-faint:rgba(255,255,255,.22); --sky-gone:#6B6B66; --sky-sq-moved:#1F3320; --sky-sq-carried:#1C2A44;
+  --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
+  --sky-sys0-fill:#2B2140; --sky-sys0-stroke:#B28DEB; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
+  --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
+  color-scheme:dark;
+}
+body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
+body.u-dark .chip.gen{background:#2B2140;border-color:#4C3A72}
+body.u-dark .chip.ok{background:#1F3320;border-color:#3A5A38}
+body.u-dark .chip.flag{background:#3A1A1A;border-color:#6A3030}
+body.u-dark table.uc-like th{background:#30302E;color:var(--mustard-text)}
+body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0 12px 30px rgba(0,0,0,.5)}
+/* one chip vocabulary: the same height, size and corner on every control in the row */
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary,.u-top .u-win,
+.u-search-slot .msearch input,.u-search-slot .msearch .u-search-go{
+  box-sizing:border-box;height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0 10px;margin:0;
+  font-size:var(--u-chip-fs);font-weight:600;line-height:1;border-radius:var(--u-chip-r);
+  display:inline-flex;align-items:center;gap:4px;backdrop-filter:none}
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary{
+  background:var(--surface-opaque);border:1px solid var(--border-strong);color:var(--text-body);
+  text-decoration:none;cursor:pointer}
+.u-top .btn:hover,.u-top .u-views>summary:hover,.u-top .u-show>summary:hover{background:var(--surface-subtle)}
+.u-top .btn[aria-pressed=true]{background:var(--seal-blue);border-color:var(--seal-blue);color:var(--on-accent)}
+.u-top .u-modes,.u-top .u-seg{border-radius:var(--u-chip-r);height:var(--u-chip-h);align-items:stretch;margin:0}
+.u-top .u-modes .btn.mode{height:calc(var(--u-chip-h) - 2px);min-height:0;border-radius:0;border:0}
+.u-top .u-bar{gap:6px}
+.u-top .u-win{width:var(--u-chip-h);padding:0;justify-content:center;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);color:var(--text-muted);font-size:.9rem;font-weight:400;cursor:pointer}
+.u-top .u-win:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-top .u-win[hidden]{display:none}
+.u-wins{display:inline-flex;gap:4px;flex:0 0 auto;margin-left:2px}
+.u-top .u-menu{font-size:1rem;margin-right:2px}
+/* the zoom label and its figure stack inside one chip height (item 8) */
+.u-zgroup{gap:4px}
+.u-zstack{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
+  height:var(--u-chip-h);line-height:1;padding:0 4px 0 2px;gap:2px}
+.u-zstack .u-zlbl{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.u-zstack b{font-size:.7rem;color:var(--text-strong);font-variant-numeric:tabular-nums}
+/* the Show menu (item 3) */
+.u-show{position:relative;flex:0 0 auto}
+.u-show>summary{list-style:none}
+.u-show>summary::-webkit-details-marker{display:none}
+.u-show>summary::after{content:"\25BE";font-size:.7em;color:var(--text-muted)}
+.u-show>summary b{font-weight:700;color:var(--text-strong)}
+.u-show:not([open]) .u-show-menu{display:none}
+.u-show-menu{position:absolute;z-index:70;top:calc(100% + 6px);right:0;min-width:260px;
+  display:flex;flex-direction:column;gap:8px;padding:10px 12px;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);border-radius:9px;box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-show-menu fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:0;min-width:0}
+.u-show-menu legend{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);
+  padding:0;margin:0 0 2px;font-weight:700}
+.u-show-menu label{display:flex;align-items:center;gap:7px;font-size:.84rem;min-height:26px;cursor:pointer;color:var(--text-body)}
+.u-show-menu input{width:16px;height:16px;margin:0;accent-color:var(--cobalt);flex:none}
+.u-show-all .linkish{font-size:.84rem;min-height:24px;display:inline-flex;align-items:center}
+/* the token search (2.1): chips before the box, a wider dropdown whose rows wrap (2.2, 2.4) */
+.u-search-slot .sugwrap{flex-wrap:wrap;gap:4px;align-items:center}
+.u-tokens{display:contents}
+.u-tok{display:inline-flex;align-items:center;gap:5px;height:var(--u-chip-h);padding:0 3px 0 8px;
+  border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
+  font-size:.78rem;max-width:150px;color:var(--text-body)}
+.u-tok-k{font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.u-tok-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.u-tok-x{border:0;background:none;color:var(--text-muted);cursor:pointer;font-size:1rem;line-height:1;
+  width:24px;height:24px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.u-tok-x:hover{background:var(--surface-muted);color:var(--text-strong)}
+.u-tok-clear{font-size:.78rem;height:var(--u-chip-h);display:inline-flex;align-items:center;padding:0 8px;
+  text-decoration:none;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--u-chip-r);background:var(--surface-opaque)}
+.u-tok-clear:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
+  color:var(--text-body);border:1px solid var(--border-strong)}
+.sug{right:auto;min-width:100%;width:min(760px,calc(100vw - 24px))}
+.sug li{align-items:flex-start;white-space:normal}
+.sg-k,.sg-l,.sg-r{font-size:.84rem}
+.sg-k{min-width:7.4em;padding-top:.05em;letter-spacing:.04em}
+.sg-l{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+.sg-r{white-space:normal;flex:0 1 auto;text-align:right;max-width:44%;overflow-wrap:anywhere}
+/* the legend folds from the map's own corner (item 5) */
+.u-legend-toggle{position:absolute;z-index:4;right:10px;bottom:8px;display:inline-flex;align-items:center;gap:6px;
+  min-height:26px;padding:2px 9px;font:inherit;font-size:.76rem;font-weight:400;color:var(--text-muted);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--u-chip-r);cursor:pointer;backdrop-filter:blur(4px)}
+.u-legend-toggle:hover{color:var(--text-strong);background:var(--surface-opaque)}
+.u-legend-toggle .u-fold{font-size:.7em;color:var(--text-muted)}
+/* How SkyView works (item 6) */
+.how{max-width:var(--cpl-measure,none)}
+.how-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin:0 0 8px}
+.how-head h1{margin:0}
+.how-lede{font-size:1.05rem}
+.how h2{margin:22px 0 8px}
+.how-fig{margin:10px 0 14px;max-width:560px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:9px;padding:10px 12px}
+.how-fig svg{width:100%;height:auto;display:block}
+.how-list{margin:0 0 .8em;padding-left:20px}
+.how-list li{margin:0 0 6px}
+.how-steps{margin:0;padding-left:22px}
+.how-steps li{margin:0 0 6px}
+.how kbd{font-family:inherit;font-size:.9em;border:1px solid var(--border-strong);border-radius:4px;padding:0 5px;background:var(--surface-subtle)}
+@media (max-width:1100px){ .u-wins{margin-left:auto} }
+/* ── the header's own vocabulary (Sam, 2026-09-05, from a screenshot of Claude's
+   header): ghosted icon actions, a title field, one More menu, expand + close ── */
+.u-top .u-ico{box-sizing:border-box;width:var(--u-chip-h);height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0;margin:0;
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--u-chip-r);
+  background:transparent;color:var(--text-muted);font:inherit;font-size:1rem;line-height:1;cursor:pointer;list-style:none}
+.u-top .u-ico:hover{background:var(--surface-subtle);color:var(--text-strong);border-color:var(--border)}
+.u-top .u-ico[hidden]{display:none}
+.u-top .u-ico::-webkit-details-marker{display:none}
+.u-top .u-title{border:1px solid var(--border-strong);border-radius:var(--u-chip-r);height:var(--u-chip-h);padding:0 10px;
+  display:inline-flex;align-items:center;font-size:.85rem;background:var(--surface-opaque);color:var(--text-strong)}
+.u-top .u-zgroup{gap:0;border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-opaque);height:var(--u-chip-h);align-items:center;padding:0 2px}
+.u-top .u-zgroup .u-ico{border-color:transparent;height:calc(var(--u-chip-h) - 4px);width:26px}
+.u-zread{font-size:.74rem;color:var(--text-strong);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;padding:0 2px}
+.u-more{position:relative;flex:0 0 auto}
+.u-more>summary{list-style:none;cursor:pointer}
+.u-more:not([open]) .u-more-panel{display:none}
+.u-more-panel{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:240px;display:flex;flex-direction:column;
+  gap:2px;padding:8px;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;
+  box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-more-h{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:6px 8px 2px}
+.u-more-h+.u-more-h{margin-top:6px}
+.u-views-flat .u-views-menu{position:static;min-width:0;padding:0;border:0;box-shadow:none;background:none}
+.u-more-t{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px;padding:2px 8px;border:0;
+  border-radius:6px;background:none;font:inherit;font-size:.86rem;color:var(--text-body);cursor:pointer;text-align:left;width:100%}
+.u-more-t:hover{background:var(--surface-subtle)}
+.u-more-t .u-state{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted)}
+.u-more-t[aria-pressed=true] .u-state{color:var(--cobalt);font-weight:700}
+/* the search field and its button read as one control */
+.u-search-slot .msearch{gap:0}
+.u-search-slot .msearch input{border-radius:var(--u-chip-r) 0 0 var(--u-chip-r)}
+.u-search-slot .msearch .u-search-go{border-radius:0 var(--u-chip-r) var(--u-chip-r) 0;margin-left:-1px}
+.u-top .u-bar{gap:4px}
 /* The details panel is DOCKED beside the map, never over it (Sam, 2026-09-03:
    "move the zoom and other buttons and popups outside the SkyView window so
    users can work more freely"); a course still drags from it onto a circle. On
@@ -493,7 +660,7 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
     <div class="sugwrap">
       <input type="search" id="gq" autocomplete="off" role="combobox" aria-expanded="false"
              aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
-             placeholder="Search a course, code or discipline — e.g. welding, MATH 110, phlebotomy">
+             placeholder="Search a course, code or discipline">
       <ul class="sug" id="sug" role="listbox" aria-label="Search suggestions" hidden></ul>
     </div>
     <button class="btn primary" type="submit">Search</button>
@@ -624,7 +791,7 @@ function openSug(term){
       ? num(it.n) + " identit" + (it.n === 1 ? "y" : "ies")
       : esc(it.sub || "");
     return '<li id="sug-'+i+'" role="option" aria-selected="false" data-i="'+i+'">'+
-      '<span class="sg-k">'+esc(it.kindWord || (it.kind === "subject" ? "subject" : "course"))+'</span>'+
+      '<span class="sg-k">'+esc(it.kindShort || it.kindWord || (it.kind === "subject" ? "DISC" : "CRSE"))+'</span>'+
       '<span class="sg-l">'+esc(it.label)+'</span>'+
       '<span class="sg-r">'+right+'</span></li>';
   }).join("");
@@ -643,6 +810,11 @@ if (gqEl){
   gqEl.addEventListener("input", function(){ openSug(gqEl.value); });
   gqEl.addEventListener("keydown", function(ev){
     if (ev.key === "Escape"){ closeSug(); return; }
+    // An empty box and Backspace drops the last chip of the selection (2026-09-05).
+    if (ev.key === "Backspace" && !gqEl.value && typeof window.__ccrTokenBack === "function"){
+      if (window.__ccrTokenBack()) ev.preventDefault();
+      return;
+    }
     if (!sugItems.length) return;
     if (ev.key === "ArrowDown"){ ev.preventDefault(); sugAt = (sugAt+1) % sugItems.length; markSug(); }
     else if (ev.key === "ArrowUp"){ ev.preventDefault(); sugAt = (sugAt<=0?sugItems.length:sugAt)-1; markSug(); }
@@ -1844,6 +2016,29 @@ var mode="move";
  * — the list's row click, the suggestion jump — comes back to the frame you
  * were in. `curView` names the view on screen for the Views menu and the hash. */
 var solo=true, curView="skyview";
+/* ── Show: what the map draws (Sam, 2026-09-05: "drop down to multi-choose show
+ * All, CR, NC, NCE, C-ID, CCN, M-ID, Orphans (and any other category you think
+ * might help)"). One set of switches, every key on by default; a point is drawn
+ * when its credit status, its identity system and its kind are all switched on.
+ * The three-position CR/NC control this replaces kept "not recorded" as its own
+ * state, and so does this: `unrec` is a switch of its own, never folded into
+ * credit. `members` is the ring of college-course squares an identity opens
+ * into; the map is quieter with it off. */
+var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members"];
+var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
+/* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
+ * Each pick from the suggestion list becomes a TOKEN beside the search box; the
+ * map rings every token and fits them all in view. One token behaves exactly as
+ * a single pick always did (a discipline at 150%, a course at 1,000%). Typing a
+ * term and pressing Enter is a fresh search: it replaces the selection with one
+ * term token, so the keyword search keeps its old meaning. */
+var tokens=[];
+/* What the page around the frame says about the window (COBI, via postMessage):
+ * whether it has docked the map back inside its own chrome, and whether its
+ * side menu is open. Stand-alone both stay false and the page is the window. */
+var hostDocked=false, hostMenu=false;
+/* The legend strip under the map folds away; the fold survives a re-render. */
+var legendOpen=true;
 /* A subject's identities are ringed on the map only up to this many: 408 red
  * rings on one island read as an alarm (Sam, 2026-09-03), and past this the
  * count in the hint says more than the rings would. */
@@ -1908,6 +2103,54 @@ function clampK(k){ return Math.max(K_MIN, Math.min(K_MAX, k)); }
 var ID_ZOOM=0.95, TITLE_ZOOM=1.7, FULL_ZOOM=2.7;
 var SAT_R=2.6;               // a stand-alone's world radius — the builder's SAT_R
 
+/* ── the map's palette is CSS tokens (--sky-*), read at draw time ──────────
+ * First Light says var(--token), never a raw hex; the canvas cannot read CSS
+ * by itself, so readPal() asks the body's computed style for each token and
+ * falls back to these light values when a token is absent (jsdom answers ""
+ * for every custom property). body.u-dark redefines the tokens — the DARK
+ * CANVAS Sam asked for on 2026-09-05 ("Dark mode selector") — so one rule
+ * set colors the chrome, the legend swatches and the canvas alike. */
+var PAL_LIGHT={ground:"#FFFFFF", island:"#F7F5F1", islandHover:"#F3F1EC", islandSel:"#EDE7F8",
+  islandStroke:"rgba(28,28,26,.18)", tether:"rgba(109,40,217,.28)", hollow:"#FFFFFF",
+  halo:"rgba(255,255,255,.94)", haloFill:"rgba(255,255,255,.8)",
+  ink:"#1C1C1A", inkBody:"#3A3A36", inkMuted:"#5C5C55", inkForce:"#0047AB", inkAlert:"#920000",
+  ringSearch:"#920000", ringSel:"#0047AB", ringToken:"#0047AB",
+  leader:"rgba(28,28,26,.55)", leaderDot:"rgba(28,28,26,.62)", leaderForce:"rgba(146,0,0,.75)", leaderDotForce:"rgba(146,0,0,.85)",
+  ringFaint:"rgba(28,28,26,.22)", gone:"#87877F", sqMoved:"#EAF1E6", sqCarried:"#E7EEF9", sqMovedStroke:"#2C601A", drag:"#0047AB",
+  sys0Fill:"#F1EAFC", sys0Stroke:"#6D28D9", sys1Fill:"#E7EEF9", sys1Stroke:"#0047AB",
+  sys2Fill:"#FBF1D8", sys2Stroke:"#8B6800", sys3Fill:"#EFEFEC", sys3Stroke:"#5C5C55"};
+var pal=PAL_LIGHT;
+function cssName(k){ return "--sky-"+k.replace(/([A-Z])/g, function(m){ return "-"+m.toLowerCase(); }); }
+function readPal(){
+  var cs=null; try{ cs=getComputedStyle(document.body); }catch(e){}
+  var out={};
+  Object.keys(PAL_LIGHT).forEach(function(k){
+    var v=cs ? String(cs.getPropertyValue(cssName(k))||"").trim() : "";
+    out[k]=v||PAL_LIGHT[k];
+  });
+  return out;
+}
+function sysPal(nd){
+  var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3, w=SYS[i];
+  return [pal["sys"+i+"Fill"], pal["sys"+i+"Stroke"], w[2], w[3]];
+}
+var dark=false;
+try{ dark = localStorage.getItem("skyview:theme")==="dark"; }catch(e){}
+if(dark && document.body) document.body.classList.add("u-dark");
+function setDark(on){
+  dark=!!on;
+  document.body.classList.toggle("u-dark", dark);
+  try{ localStorage.setItem("skyview:theme", dark?"dark":"light"); }catch(e){}
+  paintDark();
+  if(cvs && document.getElementById("u-cvs")===cvs) draw();
+}
+function paintDark(){
+  var b=document.getElementById("u-dark");
+  if(b){
+    b.setAttribute("aria-pressed", dark?"true":"false"); b.title = dark ? "Back to the light canvas" : "Dark canvas";
+    var sw=b.querySelector(".u-state"); if(sw) sw.textContent=dark?"on":"off";
+  }
+}
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
          ["#E7EEF9","#0047AB","C-ID","official statewide"],
          ["#FBF1D8","#8B6800","CCN","official statewide"],
@@ -1985,7 +2228,15 @@ function whyWords(w){
  * The filter therefore has three positions and "All" is the only one that shows
  * an unrecorded course — never silently dropped, and the chip says how many. */
 var CR_ALL="all", CR_CREDIT="cr", CR_NC="nc";
+/* `creditFilter` is DERIVED from the show switches now (see creditShown): "all",
+ * "cr", "nc", or "custom" when the switches say something the three words
+ * cannot. Kept as a name because the harness and the state export read it. */
 var creditFilter=CR_ALL;
+function syncCreditWord(){
+  creditFilter = (show.cr&&show.nc&&show.nce&&show.unrec) ? CR_ALL
+               : (show.cr&&!show.nc&&!show.nce&&!show.unrec) ? CR_CREDIT
+               : (!show.cr&&(show.nc||show.nce)&&!show.unrec) ? CR_NC : "custom";
+}
 function isNC(nd){ return nd.c===1 || nd.c===2; }
 /* The word a reader sees. `Noncredit enhanced` is the CDCP distinction and is
  * kept — it is a different thing from plain noncredit, and the list has room. */
@@ -1994,9 +2245,18 @@ function creditWord(nd){
        : nd.c===2 ? "noncredit enhanced" : "credit status not recorded";
 }
 function isCR(nd){ return nd.c===0; }
-function creditShown(nd){
-  if(creditFilter===CR_ALL) return true;
-  return creditFilter===CR_CREDIT ? isCR(nd) : isNC(nd);
+function creditOK(nd){ return nd.c===0 ? show.cr : nd.c===1 ? show.nc : nd.c===2 ? show.nce : show.unrec; }
+function systemOK(nd){ var x=nd.s; return x===0 ? show.mid : x===1 ? show.cid : x===2 ? show.ccn : show.uni; }
+function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; }
+/* Drawn when every switch that describes the point is on. The name survives
+ * from the three-position filter it grew out of; the tests read it. */
+function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd); }
+/* The short words the search list shows (Sam, 2026-09-05: "abbreviate
+ * Discipline to DISC; Course to CRSE; Credit to CR"). */
+function creditShort(nd){ return nd.c===0 ? "CR" : nd.c===1 ? "NC" : nd.c===2 ? "NCE" : "CR status not recorded"; }
+function kindShort(kind, nd){
+  return kind==="subject" ? "DISC" : kind==="member" ? "COLLEGE CRSE"
+       : kind==="term" ? "SEARCH" : (nd&&nd.a) ? "STAND-ALONE CRSE" : "CRSE IDENTITY";
 }
 /* Dash length tracks the radius so the break stays visible as you zoom: a fixed
  * pattern turns into a solid ring on a big circle and vanishes on a small one. */
@@ -2190,12 +2450,14 @@ function draw(){
   var W=cw(), H=ch();
   ctx.setTransform(DPR,0,0,DPR,0,0);
   ctx.clearRect(0,0,W,H);
-  ctx.fillStyle=getComputedStyle(document.body).getPropertyValue("--surface-opaque")||"#fff";
+  pal=readPal();
+  ctx.fillStyle=pal.ground;
   ctx.fillRect(0,0,W,H);
 
   var k=view.k;
   var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
+  var tokenIsl={}; tokens.forEach(function(t){ (t.isls||[]).forEach(function(I){ tokenIsl[I.d]=1; }); });
   var labelQueue=[], nodeQueue=[], openList=[];
   memberPts=[];
 
@@ -2205,18 +2467,22 @@ function draw(){
     if(c[0]+r<-60||c[0]-r>W+60||c[1]+r<-60||c[1]-r>H+60) return;   // cull
 
     ctx.beginPath(); ctx.arc(c[0],c[1],r,0,6.2832);
-    ctx.fillStyle = isl===selIsl ? "#EDE7F8" : isl===hoverIsl ? "#F3F1EC" : "#F7F5F1";
+    ctx.fillStyle = isl===selIsl ? pal.islandSel : isl===hoverIsl ? pal.islandHover : pal.island;
     ctx.fill();
     ctx.lineWidth = isl===selIsl?2:1;
-    ctx.strokeStyle = isl===selIsl ? "#6D28D9" : "rgba(28,28,26,.18)";
+    ctx.strokeStyle = isl===selIsl ? pal.sys0Stroke : pal.islandStroke;
     ctx.stroke();
+    if(tokenIsl[isl.d]){                                   // a discipline in the selection
+      ctx.beginPath(); ctx.arc(c[0],c[1],r+4,0,6.2832);
+      ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringToken; ctx.stroke();
+    }
 
     if(showNodes){
       // Tethers first, under the points: a faint line from each orbiting course
       // to the identity it orbits, so the suggestion reads as a relationship and
       // never as membership.
       if(showTethers){
-        ctx.save(); ctx.setLineDash([2,3]); ctx.lineWidth=1; ctx.strokeStyle="rgba(109,40,217,.28)";
+        ctx.save(); ctx.setLineDash([2,3]); ctx.lineWidth=1; ctx.strokeStyle=pal.tether;
         ctx.beginPath();
         isl.p.forEach(function(nd){
           if(!nd.a||!nd.o) return;
@@ -2231,16 +2497,16 @@ function draw(){
         if(!creditShown(nd)) return;              // the CR / NC filter (item 9)
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
         var rad=nodeRad(nd);
-        var s=SYS[nd.s]||SYS[3];
+        var s=sysPal(nd);
         ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
         if(nd.a){
           // Stand-alone: one college, no equivalence asserted yet. Drawn HOLLOW so it
           // reads as "nothing claimed here", never as a weaker version of a claim.
           // Once its course has been moved it is an emptied shell: dotted and grey.
           var gone=emptied(nd);
-          ctx.fillStyle="#fff"; ctx.fill();
+          ctx.fillStyle=pal.hollow; ctx.fill();
           ctx.lineWidth=Math.max(1,rad*0.34);
-          if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle="#87877F"; ctx.stroke(); ctx.restore(); }
+          if(gone){ ctx.save(); ctx.setLineDash([2,2]); ctx.strokeStyle=pal.gone; ctx.stroke(); ctx.restore(); }
           else if(isNC(nd)){ ctx.save(); ctx.strokeStyle=s[1]; ctx.setLineDash(ncDash(rad)); ctx.stroke(); ctx.restore(); }
           else { ctx.strokeStyle=s[1]; ctx.stroke(); }
         } else {
@@ -2261,11 +2527,11 @@ function draw(){
         }
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
-          ctx.lineWidth=2.4; ctx.strokeStyle="#920000"; ctx.stroke();
+          ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSearch; ctx.stroke();
         }
         if(nd===selNode){
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
-          ctx.lineWidth=2.4; ctx.strokeStyle="#0047AB"; ctx.stroke();
+          ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSel; ctx.stroke();
         }
         // Labels are QUEUED, not drawn here: a dense island stacks dozens of them
         // into an unreadable pile, which is the exact failure of a global graph
@@ -2292,7 +2558,7 @@ function draw(){
   // lifts the ring out of a dense island: the faculty view has to be readable
   // exactly where the map is busiest. Their squares' labels are queued forced,
   // so they are placed before any neighbor's name can take the space.
-  openList.forEach(function(o){ drawMembers(o.nd, o.isl, o.p, o.rad, k, nodeQueue, k<=MEMBER_ZOOM_ALL); });
+  if(show.members) openList.forEach(function(o){ drawMembers(o.nd, o.isl, o.p, o.rad, k, nodeQueue, k<=MEMBER_ZOOM_ALL); });
 
   // Islands first: they are the navigational anchors, and a course name buried
   // under its own subject's name helps nobody. Course labels then fill the gaps
@@ -2302,11 +2568,11 @@ function draw(){
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
-    ctx.fillStyle="#0047AB"; ctx.fill();
+    ctx.fillStyle=pal.drag; ctx.fill();
     ctx.font="600 12px 'Source Sans 3',system-ui,sans-serif";
-    ctx.textAlign="left"; ctx.lineWidth=3.5; ctx.strokeStyle="rgba(255,255,255,.92)";
+    ctx.textAlign="left"; ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
     ctx.strokeText(drag.code,drag.px+12,drag.py+4);
-    ctx.fillStyle="#0047AB"; ctx.fillText(drag.code,drag.px+12,drag.py+4);
+    ctx.fillStyle=pal.drag; ctx.fillText(drag.code,drag.px+12,drag.py+4);
   }
   var z=document.getElementById("u-zoom");
   if(z) z.textContent = Math.round(view.k*100)+"%";
@@ -2330,11 +2596,11 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   // radiate from it; at the open-all zoom the identities are far apart already.
   var spread=focus?Math.min(70, n*1.7):0;
   var R0=rad+16+spread, perRing=Math.max(8, Math.round(2*Math.PI*R0/(focus?15:13)));
-  var sys=SYS[nd.s]||SYS[3];
+  var sys=sysPal(nd);
   var rings=Math.ceil(n/perRing);
   if(focus){
     ctx.beginPath(); ctx.arc(p[0],p[1],R0+(rings-1)*15+10,0,6.2832);
-    ctx.fillStyle="rgba(255,255,255,.8)"; ctx.fill();
+    ctx.fillStyle=pal.haloFill; ctx.fill();
     ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
     ctx.fillStyle=sys[0]; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle=sys[1]; ctx.stroke();
   }
@@ -2347,11 +2613,11 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     var movedHere=(m.cn in movedTo) && movedTo[m.cn]===nd.i;
     var carried=drag && drag.kind==="course" && drag.cn===m.cn;
     ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
-    ctx.lineWidth=1; ctx.strokeStyle="rgba(28,28,26,.22)"; ctx.stroke();
+    ctx.lineWidth=1; ctx.strokeStyle=pal.ringFaint; ctx.stroke();
     ctx.beginPath(); ctx.moveTo(x-3.5,y-3.5); ctx.lineTo(x+3.5,y-3.5); ctx.lineTo(x+3.5,y+3.5);
     ctx.lineTo(x-3.5,y+3.5); ctx.lineTo(x-3.5,y-3.5);
-    ctx.fillStyle=movedHere?"#EAF1E6":carried?"#E7EEF9":"#fff"; ctx.fill();
-    ctx.lineWidth=1.4; ctx.strokeStyle=movedHere?"#2C601A":sys[1]; ctx.stroke();
+    ctx.fillStyle=movedHere?pal.sqMoved:carried?pal.sqCarried:pal.hollow; ctx.fill();
+    ctx.lineWidth=1.4; ctx.strokeStyle=movedHere?pal.sqMovedStroke:sys[1]; ctx.stroke();
     memberPts.push({x:x, y:y, m:m, nd:nd, isl:isl});
     if(k>MEMBER_ZOOM || focus)
       queue.push({mem:m, nd:nd, px:x, py:y, rad:4, lines:[m.n+" · "+trunc(m.c,26)], band:"member",
@@ -2362,8 +2628,8 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     var ry=p[1]+R0+(rings-1)*15+14;
     ctx.font="600 10px 'Source Sans 3',system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
     var more="and "+num(rest)+" more college course"+(rest===1?"":"s")+" — see the details panel";
-    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)"; ctx.strokeText(more,p[0],ry);
-    ctx.fillStyle="#5C5C55"; ctx.fillText(more,p[0],ry);
+    ctx.lineWidth=3; ctx.strokeStyle=pal.halo; ctx.strokeText(more,p[0],ry);
+    ctx.fillStyle=pal.inkMuted; ctx.fillText(more,p[0],ry);
   }
 }
 
@@ -2408,9 +2674,9 @@ function placeLabels(queue, showAll){
     }
     if(clash && !q.force) return;
     boxes.push(box);
-    ctx.lineWidth=3.5; ctx.strokeStyle="rgba(255,255,255,.94)";
+    ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
     ctx.strokeText(lab,q.cx,q.cy);
-    ctx.fillStyle=q.force?"#0047AB":"#1C1C1A";
+    ctx.fillStyle=q.force?pal.inkForce:pal.ink;
     ctx.fillText(lab,q.cx,q.cy);
   });
   return boxes;   // course labels are placed into the gaps these leave
@@ -2485,19 +2751,19 @@ function placeNodeLabels(queue, boxes){
     var ex=q.px+at.sx*q.rad*0.71, ey=q.py+at.sy*q.rad*0.71;
     var midY=at.y0+lh-2-lh*0.28;                 // the first line's optical middle
     var stubX=at.sx>0 ? at.x0 : at.x0+w;         // the label edge nearest the circle
-    ctx.strokeStyle=q.force?"rgba(146,0,0,.75)":"rgba(28,28,26,.55)";
+    ctx.strokeStyle=q.force?pal.leaderForce:pal.leader;
     ctx.beginPath();
     ctx.moveTo(ex, ey); ctx.lineTo(at.ax, at.ay); ctx.lineTo(stubX, midY);
     ctx.lineWidth=1.1; ctx.stroke();
     // The dot says WHICH circle, at the end where the ambiguity is.
     ctx.beginPath(); ctx.arc(ex, ey, Math.min(2.2, Math.max(1.2, q.rad*0.16)), 0, 6.2832);
-    ctx.fillStyle=q.force?"rgba(146,0,0,.85)":"rgba(28,28,26,.62)"; ctx.fill();
+    ctx.fillStyle=q.force?pal.leaderDotForce:pal.leaderDot; ctx.fill();
     labelStats.leaders++;
     q.lines.forEach(function(t,li){
       var y=at.y0+lh*(li+1)-2;
-      ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
+      ctx.lineWidth=3; ctx.strokeStyle=pal.halo;
       ctx.strokeText(t,at.x0,y);
-      ctx.fillStyle=q.force?"#920000":(mem?"#3A3A36":(li?"#5C5C55":"#1C1C1A"));
+      ctx.fillStyle=q.force?pal.inkAlert:(mem?pal.inkBody:(li?pal.inkMuted:pal.ink));
       ctx.fillText(t,at.x0,y);
     });
   });
@@ -2568,36 +2834,36 @@ window.__ccrUniverse = function(opts){
        * full screen ("will need links on full screen to navigate to the other
        * views"). Every control is a word. */
       '<div class="u-top" id="u-top">'+
-        /* Sam, 2026-09-04, item 1: "Add SkyView label top left most position."
-         * ⚠️ A title in this row was tried on 2026-09-03 and REMOVED, because it
-         * pushed the view links rightward under the masthead's absolutely
-         * positioned suggestion list and Chromium reported them unclickable.
-         * It comes back now only because the same edit moves the search INTO
-         * this row (item 3), so the dropdown it opens belongs to this row and
-         * has nothing above it to hide under. */
-        /* An h1, not a span: alone in the window this row is the whole page,
-         * and `npm run a11y` reported the solo view starting at no heading at
-         * all — the page's h1 sat in the panes below, which solo does not
-         * paint. The panes are demoted under it (h2, h3) so the outline a
-         * screen reader walks reads SkyView › the panes › their sections. */
+        /* ── the 2026-09-05 row, second cut, in the style of Claude's own header
+         * (Sam: "further simplify and complete SkyView header components by
+         * incorporating features like your own header"): small ghosted icon
+         * actions, a title field, ONE More menu for the secondary items, and
+         * expand + close at the right. Left to right:
+         *   menu (framed) · More · SkyView · search · Pan|Move · − % + ↺ ·
+         *   Show · step down · step up · close
+         * The icons here are his explicit asks (the OS window controls, the
+         * menu, and now the header's own vocabulary), each named by words for a
+         * screen reader and a tooltip; the text controls stay words in boxes.
+         * The More panel holds Go to (every other view), Show or hide (the
+         * sidebar, the legend, the dark canvas) and the doors out. */
+        (framed()
+          ? '<button class="u-ico u-menu" type="button" id="u-menu" aria-expanded="false" '+
+              'aria-label="Open the COBI menu" title="Open the COBI menu">\u2630</button>'
+          : '')+
+        /* ⚠️ Not id="u-more": that is the forest's host under the map, and a
+         * second element with the id put the whole forest INSIDE this menu. */
+        '<details class="u-more" id="u-more-menu">'+
+          '<summary class="u-ico" id="u-more-sum" aria-label="More" title="More: other views, show or hide, doors out">\u22EE</summary>'+
+          '<div class="u-more-panel" id="u-more-panel" role="group" aria-label="More">'+
+            '<div class="u-more-h">Go to</div>'+
+            '<span class="u-views-slot" id="u-views-slot" data-flat="1"></span>'+
+            '<div class="u-more-h">Show or hide</div>'+
+            '<button class="u-more-t" type="button" id="u-insp-toggle" aria-pressed="false" aria-controls="u-detail">Sidebar<span class="u-state">off</span></button>'+
+            '<button class="u-more-t" type="button" id="u-legend-menu" aria-pressed="true" aria-controls="u-foot">Legend<span class="u-state">on</span></button>'+
+            '<button class="u-more-t" type="button" id="u-dark" aria-pressed="false" title="Dark canvas">Dark canvas<span class="u-state">off</span></button>'+
+          '</div>'+
+        '</details>'+
         '<h1 class="u-title" id="u-title">SkyView</h1>'+
-        /* Item 2: the view links collapse from four inline buttons into ONE
-         * menu. Four links plus a title plus a search plus nine controls do not
-         * fit a row, and item 4 asks for one row on a normal screen — so the
-         * set that changes least often is the set that folds. <details> is the
-         * whole mechanism: it opens on click and on Enter, closes on Escape,
-         * and needs no script to be usable if the script fails.
-         *
-         * Since 2026-09-05 the menu is BUILT by viewsMenuInto(), the one builder
-         * every view shares (item 9: every view reachable from every other), so
-         * this row only reserves its place. */
-        '<span class="u-views-slot" id="u-views-slot"></span>'+
-        /* Item 3: the search moves LEFT OF THE CHIPS and gets wider, and item 11
-         * is why it had to move at all — in browser full screen the page masthead
-         * is not painted (only #u-full is), so the one search box on the page was
-         * simply absent and Sam had nothing to click. It is MOVED here, not
-         * copied: this page keeps exactly one search field, which is the
-         * invariant tests/ccr_skyview_universe.test.js pins. */
         '<div class="u-search-slot" id="u-search-slot"></div>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
           '<span class="u-modes" role="group" aria-label="What a drag does">'+
@@ -2605,32 +2871,21 @@ window.__ccrUniverse = function(opts){
             '<button class="btn mode" type="button" id="u-mode-move" aria-pressed="true">Move</button>'+
           '</span>'+
           '<span class="u-zgroup" role="group" aria-label="Zoom">'+
-            '<span class="u-zlbl">Zoom</span>'+
-            '<button class="btn" type="button" id="u-out" title="Zoom out">Out</button>'+
-          '<button class="btn" type="button" id="u-in" title="Zoom in">In</button>'+
-            '<button class="btn" type="button" id="u-reset" title="Reset the view">Reset</button>'+
+            '<button class="u-ico" type="button" id="u-out" aria-label="Zoom out" title="Zoom out">\u2212</button>'+
+            '<b class="u-zread" id="u-zoom" title="The current magnification">12%</b>'+
+            '<button class="u-ico" type="button" id="u-in" aria-label="Zoom in" title="Zoom in">+</button>'+
+            '<button class="u-ico" type="button" id="u-reset" aria-label="Reset the view" title="Reset the view">\u21BA</button>'+
           '</span>'+
-          '<span class="u-seg u-crnc" role="group" aria-label="Show credit or noncredit courses">'+
-            '<button class="btn mode" type="button" id="u-cr-all" aria-pressed="true">All</button>'+
-            '<button class="btn mode" type="button" id="u-cr-cr" aria-pressed="false">Credit</button>'+
-            '<button class="btn mode" type="button" id="u-cr-nc" aria-pressed="false">Noncredit</button>'+
-          '</span>'+          '<button class="btn" type="button" id="u-insp-toggle" aria-expanded="false" aria-controls="u-detail">Details</button>'+'<button class="btn" type="button" id="u-foot-toggle" aria-expanded="true" aria-controls="u-foot">Hide legend</button>'+
-          '<button class="btn" type="button" id="u-fs" aria-pressed="false">Full screen</button>'+
-          '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
+          showMenuHtml()+
         '</div>'+
-        /* Item 5: "Add a X to close in top right." ⚠️ The glyph is Sam's explicit
-         * ask, and the presentation rule it bends ("every control is a word") is
-         * satisfied the other way: the accessible name and the tooltip are words,
-         * so a screen reader hears "Close SkyView" and never a character.
-         *
-         * What it CLOSES depends on how you arrived, and guessing wrong strands
-         * the reader, so it walks down: leave full screen if we are in it; close
-         * the tab if this page was opened by another one (the CCR tab's launcher
-         * does exactly that, and window.close() only works for such a tab); else
-         * go back to the CCR tab. The last branch is why it is never inert. */
-        '<button class="u-close" type="button" id="u-close" aria-label="Close SkyView" '+
-          'title="Close SkyView \u2014 leaves full screen, or returns to the Common Course Reference">'+
-          '\u2715</button>'+
+        '<span class="u-wins" role="group" aria-label="Window">'+
+          '<button class="u-ico u-win" type="button" id="u-win-down" aria-label="Show the page around the map" '+
+            'title="Show the page around the map">\u2014</button>'+
+          '<button class="u-ico u-win" type="button" id="u-win-up" aria-label="Full screen" title="Full screen">\u2922</button>'+
+          '<button class="u-ico u-win u-close" type="button" id="u-close" aria-label="Close SkyView" '+
+            'title="Close SkyView \u2014 leaves full screen, or returns to the Common Course Reference">'+
+            '\u2715</button>'+
+        '</span>'+
       '</div>'+
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
@@ -2641,6 +2896,10 @@ window.__ccrUniverse = function(opts){
             'college course, or Tab to step through disciplines from the keyboard; the details '+
             'panel describes what you select."></canvas>'+
           '<div class="u-tip" id="u-tip" role="tooltip" hidden></div>'+
+          /* Item 5 (2026-09-05): the legend folds from its own corner — the word,
+           * unbold, and a fold mark — instead of a "Hide legend" chip in the row. */
+          '<button class="u-legend-toggle" type="button" id="u-legend-toggle" aria-expanded="true" '+
+            'aria-controls="u-foot" title="Hide the legend">Legend <span class="u-fold" aria-hidden="true">\u25BE</span></button>'+
         '</div>'+
         '<aside class="u-inspector" id="u-inspector" aria-label="Details of what you selected">'+
           '<div class="u-insp-bar"><span class="u-insp-t">Details</span></div>'+
@@ -2652,10 +2911,10 @@ window.__ccrUniverse = function(opts){
       '</div>'+
       '<div class="u-foot" id="u-foot">'+
         '<div class="u-legend" aria-label="How to read the map">'+
-          '<span><i class="u-sw" style="background:#F1EAFC;border-color:#6D28D9"></i>M-ID, our working label</span>'+
-          '<span><i class="u-sw" style="background:#E7EEF9;border-color:#0047AB"></i>C-ID, official</span>'+
-          '<span><i class="u-sw" style="background:#FBF1D8;border-color:#8B6800"></i>CCN, official</span>'+
-          '<span><i class="u-sw" style="background:#EFEFEC;border-color:#5C5C55"></i>unified</span>'+
+          '<span><i class="u-sw s0"></i>M-ID, our working label</span>'+
+          '<span><i class="u-sw s1"></i>C-ID, official</span>'+
+          '<span><i class="u-sw s2"></i>CCN, official</span>'+
+          '<span><i class="u-sw s3"></i>unified</span>'+
           '<span><i class="u-sw hollow"></i>stand-alone course, in orbit around its closest match</span>'+'<span><i class="u-sw nc"></i>noncredit — a broken ring, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — click or hover an identity to open it</span>'+
         '</div>'+
@@ -2703,6 +2962,7 @@ window.__ccrUniverse = function(opts){
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
   fitCanvas(); resetView(); wire(); draw();
+  tellParent("ready");          // the page around the frame answers with its state
   if(typeof window.__ccrForestInto==="function")
     window.__ccrForestInto(document.getElementById("u-more"));
 };
@@ -2804,7 +3064,7 @@ function suggest(raw, limit){
      * `kindWord` is what a reader SEES in a suggestion row and the details panel.
      * Only the second one changed — an island is a discipline, and COBI already
      * spends "subject" on SUBJ4 codes. */
-    subs.push({kind:"subject", kindWord:"discipline", label:I.d, tier:t, n:(I.n||0), isl:I});
+    subs.push({kind:"subject", kindWord:"discipline", kindShort:"DISC", label:I.d, tier:t, n:(I.n||0), isl:I});
   });
   subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
   // Subjects never take the whole list: a term that matches many subjects would
@@ -2849,8 +3109,9 @@ function suggest(raw, limit){
   pts=byCredit[0].concat(byCredit[1], byCredit[2]);
   var take=Math.min(room-1, pts.length, Math.max(1, room-2));
   pts.slice(0, Math.max(0,take)).forEach(function(p){
-    out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity", label:p.nd.t||p.nd.i,
-              sub:p.nd.i+" · "+p.isl.d+" · "+creditWord(p.nd), credit:creditWord(p.nd),
+    out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity",
+              kindShort:kindShort("course", p.nd), label:p.nd.t||p.nd.i,
+              sub:p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd), credit:creditWord(p.nd),
               isl:p.isl, nd:p.nd});
   });
   room=limit-out.length;
@@ -2867,7 +3128,7 @@ function suggest(raw, limit){
     }
     pre.concat(inn).slice(0,room).forEach(function(r){
       var h=nodeById(r.id); if(!h) return;
-      out.push({kind:"member", kindWord:"college course", label:r.code+" · "+r.c,
+      out.push({kind:"member", kindWord:"college course", kindShort:"COLLEGE CRSE", label:r.code+" · "+r.c,
                 sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
     });
   }
@@ -2881,7 +3142,7 @@ function setInspector(open){
   inspOpen=!!open;
   var a=document.getElementById("u-inspector"), b=document.getElementById("u-insp-toggle");
   if(a) a.classList.toggle("closed", !inspOpen);
-  if(b){ b.textContent=inspOpen?"Hide details":"Details"; b.setAttribute("aria-expanded", inspOpen?"true":"false"); }
+  if(b){ b.setAttribute("aria-pressed", inspOpen?"true":"false"); var sw=b.querySelector(".u-state"); if(sw) sw.textContent=inspOpen?"on":"off"; }
   // The panel is docked beside the canvas, so showing or hiding it changes the
   // canvas's width: refit, or the map draws at the old size.
   if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
@@ -2889,7 +3150,7 @@ function setInspector(open){
 
 /* Act on a chosen suggestion. Flying is this module's job, so the header hands
  * back the object it was given rather than re-deriving anything from the label. */
-window.__ccrGoSuggestion = function(s){
+function goSuggestionSingle(s){
   if(!s || !U) return false;
   if(!document.getElementById("u-cvs")) window.__ccrUniverse();
   if(s.kind==="subject"){
@@ -2923,6 +3184,13 @@ window.__ccrGoSuggestion = function(s){
     ? "<strong>"+esc(s.code)+"</strong> sits under <strong>"+esc(nd.t||nd.i)+"</strong> ("+esc(nd.i)+") in "+esc(isl.d)+"."
     : "<strong>"+esc(nd.t)+"</strong> — "+esc(nd.i)+" in "+esc(isl.d)+".");
   draw(); return true;
+}
+/* A pick from the list ADDS to the selection (Sam, 2026-09-05: "make it
+ * multi-select capable"); one pick still behaves exactly as it always did. */
+window.__ccrGoSuggestion = function(s){
+  if(!s || !U) return false;
+  if(!document.getElementById("u-cvs")) window.__ccrUniverse();
+  return addToken(tokenFromSuggestion(s));
 };
 
 /* ── "Disciplines as a list" (Sam, 2026-08-25) is the workspace's By discipline
@@ -2948,6 +3216,8 @@ window.__ccrUniverseState = function(){
           labelStats:labelStats, hits:searchHits.length,
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen,
           solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,
+          tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
+          winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           descBases:DESC_BASES.slice(), descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
@@ -3052,21 +3322,14 @@ function wire(){
   var slot=document.getElementById("u-search-slot"), ms=document.getElementById("msearch");
   if(slot && ms){
     slot.appendChild(ms);
-    var lab=ms.querySelector('label[for="gq"]');
+    /* Item 9 (2026-09-05): "Move 'Search' label inside the search box so it
+     * disappears when text is entered" — the placeholder is that label. The
+     * form's screen-reader label stays as it was written (the accessible name
+     * must still CONTAIN the visible word "Search", WCAG 2.5.3), and no visible
+     * label is printed in the row any more. */
     var box=ms.querySelector("#gq");
-    if(lab && box){
-      /* Item 3 asks for the word "Search" beside the box. The label the form
-       * already carried ("Search courses, colleges and disciplines") is the
-       * right thing for a screen reader and far too long to print in a toolbar,
-       * so the long form moves to aria-label and the short one becomes visible.
-       * ⚠️ WCAG 2.5.3 (Label in Name) is why it is "Search" and not "Find": the
-       * accessible name must CONTAIN the visible words, or speech control
-       * ("click Search") stops matching the control the user can see. */
-      if(!lab.dataset.longLabel) lab.dataset.longLabel=lab.textContent;
-      box.setAttribute("aria-label", lab.dataset.longLabel);
-      lab.textContent="Search";
-      lab.classList.remove("sr");
-    }
+    if(box) box.setAttribute("placeholder", "Search a course, code or discipline");
+    ensureTokenHost();
     var go=ms.querySelector('button[type="submit"]');
     if(go) go.classList.add("u-search-go");
   }
@@ -3084,34 +3347,53 @@ function wire(){
     if(window.opener && !window.opener.closed){ window.close(); return; }
     location.href="../index.html#unified-courses/list";
   };
-  /* ── item 9: the CR / NC filter ───────────────────────────────────────────
-   * Sam, 2026-09-04: "Also need a CR NC toggle". Three positions, not two — a
-   * two-way toggle would have to put the 73 identities with NO recorded credit
-   * status somewhere, and either bucket is a lie. They appear under All, and the
-   * count says how many are unrecorded so their absence is never silent. */
-  function setCredit(v){
-    creditFilter=v;
-    [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
-      var b=document.getElementById(pair[0]);
-      if(b) b.setAttribute("aria-pressed", creditFilter===pair[1] ? "true" : "false");
+  /* ── Show (2026-09-05): what the map draws, as switches ───────────────────
+   * The 2026-09-04 CR / NC toggle had three positions because 73 identities
+   * carry no credit status and either bucket would be a lie; that state is a
+   * switch of its own here, and so are the identity systems and the kinds of
+   * point. `__ccrSetCredit` survives as a shim for the harness and for any
+   * caller that still thinks in the three words. */
+  function paintShow(){
+    var on=0; SHOW_KEYS.forEach(function(k){ if(show[k]) on++; });
+    var w=document.getElementById("u-show-word");
+    if(w) w.textContent = on===SHOW_KEYS.length ? "All" : (on+" of "+SHOW_KEYS.length);
+    Array.prototype.forEach.call(document.querySelectorAll("#u-show-menu input[data-show]"), function(i){
+      i.checked=!!show[i.getAttribute("data-show")];
     });
-    var n=0, hidden=0, unrec=0;
+  }
+  function applyShow(quiet){
+    syncCreditWord(); paintShow();
+    if(quiet){ draw(); return; }
+    var n=0, hidden=0, unrec=0, unrecHidden=0;
     if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){
-      if(nd.c==null) unrec++;
+      if(nd.c==null){ unrec++; if(!creditShown(nd)) unrecHidden++; }
       if(creditShown(nd)) n++; else hidden++;
     }); });
-    setHint(v===CR_ALL
+    var off=SHOW_KEYS.filter(function(k){ return !show[k]; });
+    setHint(off.length===0
       ? "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
         "they appear here and nowhere else."
-      : "Showing <strong>"+num(n)+"</strong> "+(v===CR_CREDIT?"credit":"noncredit")+
-        " course"+(n===1?"":"s")+"; "+num(hidden)+" hidden. Noncredit is drawn with a broken ring.");
+      : "Showing <strong>"+num(n)+"</strong> of "+num(n+hidden)+" courses; "+num(hidden)+" hidden"+
+        (unrecHidden?" ("+num(unrecHidden)+" with no recorded credit status)":"")+
+        (show.members?"":"; the college courses under an identity are not drawn")+
+        ". Noncredit is drawn with a broken ring.");
     draw();
   }
-  [["u-cr-all",CR_ALL],["u-cr-cr",CR_CREDIT],["u-cr-nc",CR_NC]].forEach(function(pair){
-    var b=document.getElementById(pair[0]);
-    if(b) b.onclick=function(){ setCredit(pair[1]); };
+  function setShow(patch, quiet){
+    Object.keys(patch||{}).forEach(function(k){ if(SHOW_KEYS.indexOf(k)>=0) show[k]=!!patch[k]; });
+    applyShow(quiet);
+  }
+  function setCredit(v){
+    setShow({cr:v!==CR_NC, nc:v!==CR_CREDIT, nce:v!==CR_CREDIT, unrec:v===CR_ALL});
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("#u-show-menu input[data-show]"), function(i){
+    i.addEventListener("change", function(){ var p={}; p[i.getAttribute("data-show")]=i.checked; setShow(p); });
   });
+  var every=document.getElementById("u-show-every");
+  if(every) every.onclick=function(){ var p={}; SHOW_KEYS.forEach(function(k){ p[k]=true; }); setShow(p); };
   window.__ccrSetCredit=setCredit;
+  window.__ccrSetShow=setShow;
+  paintShow(); syncCreditWord();
 
   var tg=document.getElementById("u-insp-toggle");
   if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
@@ -3124,19 +3406,26 @@ function wire(){
    * course silently showed nothing. One call keeps them agreeing. */
   setInspector(inspOpen);
 
-  /* ── ITEM 6: the legend strip folds away ──────────────────────────────────
-   * Sam, 2026-09-04: "Make the footer hidable". It is a reference strip, not a
-   * control, so it earns its space only while you are still learning the map. */
-  var ft=document.getElementById("u-foot-toggle");
-  if(ft) ft.onclick=function(){
+  /* ── the legend folds from the map's lower right (Sam, 2026-09-05, item 5:
+   * "Rather than Hide Legend, save space by adding a expand/collapse glyph next
+   * to the unbold text 'Legend' in the lower right corner of the main window
+   * control"). The state is module memory, so a re-render keeps the fold. */
+  var lt=document.getElementById("u-legend-toggle");
+  function paintLegend(){
     var f=document.getElementById("u-foot");
-    if(!f) return;
-    var hide=!f.classList.contains("u-foot-hidden");
-    f.classList.toggle("u-foot-hidden", hide);
-    ft.textContent=hide?"Legend":"Hide legend";
-    ft.setAttribute("aria-expanded", hide?"false":"true");
-    fitCanvas(); draw();          // the canvas grows into the space it vacated
-  };
+    if(f) f.classList.toggle("u-foot-hidden", !legendOpen);
+    if(lt){
+      lt.setAttribute("aria-expanded", legendOpen?"true":"false");
+      lt.title = legendOpen ? "Hide the legend" : "Show the legend";
+      var m=lt.querySelector(".u-fold"); if(m) m.textContent = legendOpen ? "\u25BE" : "\u25B4";
+    }
+    var lm=document.getElementById("u-legend-menu");
+    if(lm){ lm.setAttribute("aria-pressed", legendOpen?"true":"false"); var sw=lm.querySelector(".u-state"); if(sw) sw.textContent=legendOpen?"on":"off"; }
+  }
+  function toggleLegend(){ legendOpen=!legendOpen; paintLegend(); fitCanvas(); draw(); }
+  if(lt) lt.onclick=toggleLegend;
+  var lmb=document.getElementById("u-legend-menu"); if(lmb) lmb.onclick=toggleLegend;
+  paintLegend();
 
   /* ── ITEM 8: the controls sit on the TITLE's row ──────────────────────────
    * Sam, 2026-09-04: "Try to consolidate the top of Sky view by moving the chips
@@ -3176,31 +3465,36 @@ function wire(){
    *     a route Sam asked for by name (type a term, then open the subject list
    *     seeded from the box). The links belong hard left, clear of the dropdown. */
 
-  /* Full screen is the browser's own, on the map section. Inside COBI the map is
-   * an iframe, which needs `allow="fullscreen"` on the frame — unified_courses.js
-   * sets it; a frame that refuses is reported, never left silent. */
-  var fs=document.getElementById("u-fs");
-  if(fs){
-    fs.onclick=function(){
-      var full=document.getElementById("u-full");
-      if(document.fullscreenElement){ if(document.exitFullscreen) document.exitFullscreen(); return; }
-      if(!full || !full.requestFullscreen){
-        setHint("This browser does not offer full screen here. The map already fills the window; "+
-                "scroll down for the panes."); return;
-      }
-      var p=full.requestFullscreen();
-      if(p && p.catch) p.catch(function(){
-        setHint("Full screen was not allowed in this frame — open SkyView in its own tab "+
-                "(Views menu) and try again.");
-      });
-    };
-    document.addEventListener("fullscreenchange", function(){
-      var on=!!document.fullscreenElement;
-      fs.textContent=on?"Exit full screen":"Full screen";
-      fs.setAttribute("aria-pressed", on?"true":"false");
-      fitCanvas(); draw();
+  /* ── the window controls (Sam, 2026-09-05) ───────────────────────────────
+   * Browser full screen is still the browser's own, on the map section; inside
+   * COBI the frame carries allow="fullscreen" (unified_courses.js). The chip
+   * that used to ask for it is gone: the middle control steps UP from the map
+   * alone into full screen, the left one steps DOWN — into COBI's chrome when
+   * framed (the page around the frame docks the map), into the comprehensive
+   * view stand-alone. The menu control opens COBI's side bar, collapsed by
+   * default on open (Sam: "should be default collapsed on open"). */
+  function goFullscreen(){
+    var full=document.getElementById("u-full");
+    if(document.fullscreenElement){ if(document.exitFullscreen) document.exitFullscreen(); return; }
+    if(!full || !full.requestFullscreen){
+      setHint("This browser does not offer full screen here. The map already fills the window."); return;
+    }
+    var p=full.requestFullscreen();
+    if(p && p.catch) p.catch(function(){
+      setHint("Full screen was not allowed in this frame \u2014 open SkyView in its own tab "+
+              "(Go To menu) and try again.");
     });
   }
+  var wd=document.getElementById("u-win-down"), wu=document.getElementById("u-win-up"), wm=document.getElementById("u-menu");
+  if(wd) wd.onclick=function(){ stepWindow(-1); };
+  if(wu) wu.onclick=function(){ stepWindow(+1); };
+  if(wm) wm.onclick=function(){ tellParent("menu"); };
+  window.__ccrGoFullscreen=goFullscreen;
+  paintWins();
+  var dk=document.getElementById("u-dark");
+  if(dk) dk.onclick=function(){ setDark(!dark); };
+  window.__ccrSetDark=setDark;
+  paintDark();
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -3389,7 +3683,7 @@ function memberHits(term){
   }
   return out;
 }
-function doSearch(raw){
+function searchOne(raw){
   var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
@@ -3485,6 +3779,189 @@ function doSearch(raw){
     flyTo(selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0), Math.max(view.k, NODE_ZOOM*3));
   }
   draw();
+}
+
+/* ── the selection: tokens beside the search box (Sam, 2026-09-05) ─────────
+ * Typing a term and pressing Enter REPLACES the selection with one term token
+ * (a search means a search); a pick from the suggestion list ADDS a token.
+ * With one token the map behaves exactly as a single pick or search always
+ * did; with more it rings every token and fits them all in view. */
+function doSearch(raw){
+  var t=String(raw==null?"":raw).trim();
+  if(t.length<2){ setHint("Type at least two characters."); draw(); return; }
+  tokens=[]; addToken({kind:"term", key:"term:"+t.toLowerCase(), label:t, term:t});
+}
+function tokenFromSuggestion(s){
+  if(s.kind==="subject") return {kind:"subject", key:"disc:"+s.isl.d, label:s.label, isl:s.isl, s:s};
+  if(s.kind==="member") return {kind:"member", key:"mem:"+s.code+"@"+s.nd.i, label:s.code, isl:s.isl, nd:s.nd, code:s.code, s:s};
+  return {kind:"course", key:"crs:"+s.nd.i, label:s.nd.t||s.nd.i, isl:s.isl, nd:s.nd, s:s};
+}
+function tokenShort(t){ return kindShort(t.kind, t.nd); }
+/* What a token contributes to the map: node hits to ring, islands to outline. */
+function tokenHits(t){
+  var out={hits:[], isls:[]};
+  if(t.kind==="subject"){ out.isls.push(t.isl); return out; }
+  if(t.kind==="course"||t.kind==="member"){
+    out.hits.push({id:t.nd.i, x:t.nd.x+(t.isl.dx||0), y:t.nd.y+(t.isl.dy||0), isl:t.isl, nd:t.nd}); return out;
+  }
+  var term=String(t.term||"").toLowerCase();
+  var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
+  if(named.length){ out.isls=named; return out; }
+  U.islands.forEach(function(I){ I.p.forEach(function(nd){
+    if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
+      out.hits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
+  }); });
+  memberHits(term).forEach(function(h){ out.hits.push(h); });
+  return out;
+}
+function addToken(t){
+  if(!t || !U) return false;
+  if(!tokens.some(function(x){ return x.key===t.key; })) tokens.push(t);
+  var box=document.getElementById("gq"); if(box && t.kind!=="term") box.value="";
+  renderTokens(); applyTokens(t); return true;
+}
+function removeToken(key){
+  tokens=tokens.filter(function(x){ return x.key!==key; });
+  renderTokens();
+  if(!tokens.length){ searchHits=[]; searchTerm=""; setHint("Selection cleared."); draw(); return; }
+  applyTokens(null);
+}
+function clearTokens(quiet){
+  tokens=[]; renderTokens();
+  if(quiet) return;
+  searchHits=[]; searchTerm=""; draw();
+}
+window.__ccrClearSelection=function(){ clearTokens(); };
+window.__ccrTokenBack=function(){ if(tokens.length){ removeToken(tokens[tokens.length-1].key); return true; } return false; };
+/* One token: the single behaviors. Several: the union, fitted. */
+function applyTokens(last){
+  if(!U) return;
+  if(tokens.length===1){
+    var t=tokens[0];
+    if(t.kind==="term"){ searchOne(t.term); }
+    else { goSuggestionSingle(t.s); }
+    t.isls = (t.kind==="term") ? tokenHits(t).isls : (t.kind==="subject" ? [t.isl] : []);
+    draw(); return;
+  }
+  var hits=[], seen={}, isls=[], seenI={};
+  tokens.forEach(function(t){
+    var h=tokenHits(t); t.isls=h.isls;
+    h.hits.forEach(function(x){ if(!seen[x.id]){ seen[x.id]=1; hits.push(x); } });
+    h.isls.forEach(function(I){ if(!seenI[I.d]){ seenI[I.d]=1; isls.push(I); } });
+  });
+  searchHits=hits; searchTerm="";
+  var xs=[], ys=[];
+  hits.forEach(function(h){ xs.push(h.x); ys.push(h.y); });
+  isls.forEach(function(I){ var cx=I.x+(I.dx||0), cy=I.y+(I.dy||0); xs.push(cx-I.r, cx+I.r); ys.push(cy-I.r, cy+I.r); });
+  if(xs.length){
+    var x0=Math.min.apply(null,xs), x1=Math.max.apply(null,xs), y0=Math.min.apply(null,ys), y1=Math.max.apply(null,ys);
+    var spanX=Math.max(60, x1-x0), spanY=Math.max(60, y1-y0);
+    var fit=Math.min((cw()*0.78)/spanX, (ch()*0.78)/spanY);
+    fit=clampK(Math.max(NODE_ZOOM*1.3, Math.min(COURSE_ZOOM, fit)));
+    flyTo((x0+x1)/2, (y0+y1)/2, fit);
+  }
+  if(last && last.kind!=="term"){
+    if(last.kind==="subject"){ selIsl=last.isl; selNode=null; showIsland(last.isl); }
+    else { selNode=last.nd; selIsl=last.isl; memFilter=last.kind==="member"?String(last.code||""):""; showNode(last.nd, last.isl, last.kind==="member"); }
+  }
+  var words=tokens.map(function(t){ return "<strong>"+esc(t.label)+"</strong>"; });
+  setHint("Showing "+tokens.length+" selections: "+words.join(" · ")+". "+
+    (hits.length ? num(hits.length)+" course"+(hits.length===1?"":"s")+" ringed in red" : "")+
+    (isls.length ? (hits.length?"; ":"")+num(isls.length)+" discipline"+(isls.length===1?"":"s")+" outlined in blue" : "")+
+    ". Remove a chip beside the search box to narrow it.");
+  draw();
+}
+/* The chips live inside the search form's wrapper, before the box, so the
+ * suggestion list still hangs under both. Only while the form is borrowed into
+ * the map's row: homeSearch() clears them on the way out. */
+function ensureTokenHost(){
+  var wrap=document.querySelector("#u-search-slot .sugwrap"); if(!wrap) return null;
+  var host=wrap.querySelector("#u-tokens");
+  if(!host){ host=document.createElement("span"); host.id="u-tokens"; host.className="u-tokens"; wrap.insertBefore(host, wrap.firstChild); }
+  return host;
+}
+function renderTokens(){
+  var host=ensureTokenHost();
+  if(!host){ var stray=document.getElementById("u-tokens"); if(stray) stray.innerHTML=""; return; }
+  host.innerHTML=tokens.map(function(t){
+    return '<span class="u-tok" data-key="'+esc(t.key)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
+      '<span class="u-tok-l" title="'+esc(t.label)+'">'+esc(t.label)+'</span>'+
+      '<button type="button" class="u-tok-x" aria-label="Remove '+esc(t.label)+' from the selection" title="Remove">\u00d7</button></span>';
+  }).join("")+(tokens.length>1 ? '<button type="button" class="linkish u-tok-clear" id="u-tok-clear">Clear</button>' : '');
+  Array.prototype.forEach.call(host.querySelectorAll(".u-tok-x"), function(b){
+    b.addEventListener("click", function(){ removeToken(b.parentNode.getAttribute("data-key")); });
+  });
+  var cl=host.querySelector("#u-tok-clear"); if(cl) cl.addEventListener("click", function(){ clearTokens(); setHint("Selection cleared."); });
+}
+
+/* ── the window: three states, two steps ─────────────────────────────────── */
+function winState(){
+  if(document.fullscreenElement) return 2;
+  if(framed()) return hostDocked ? 0 : 1;
+  return solo ? 1 : 0;
+}
+function stepWindow(dir){
+  var st=winState();
+  if(dir<0){
+    if(st===2){ if(document.exitFullscreen) document.exitFullscreen(); return; }
+    if(st===1){ if(framed()) tellParent("dock"); else window.__ccrUniverse({solo:false}); }
+    return;
+  }
+  if(st===0){ if(framed()) tellParent("undock"); else window.__ccrUniverse({solo:true}); return; }
+  if(st===1){ if(window.__ccrGoFullscreen) window.__ccrGoFullscreen(); return; }
+  if(document.exitFullscreen) document.exitFullscreen();
+}
+function paintWins(){
+  var st=winState();
+  var d=document.getElementById("u-win-down"), u=document.getElementById("u-win-up"), m=document.getElementById("u-menu");
+  if(d){
+    d.hidden = st===0;               // nothing to step down to: not dimmed, not painted
+    var dw = st===2 ? "Leave full screen" : framed() ? "Show COBI around the map" : "Show the page around the map";
+    d.setAttribute("aria-label", dw); d.title=dw;
+  }
+  if(u){
+    u.textContent = st===2 ? "\u2921" : "\u2922";
+    var uw = st===0 ? "Fill the window" : st===1 ? "Full screen" : "Leave full screen";
+    u.setAttribute("aria-label", uw); u.title=uw;
+  }
+  if(m){
+    m.hidden = hostDocked;           // docked, COBI's own rail is on screen already
+    m.setAttribute("aria-expanded", hostMenu?"true":"false");
+    m.title = hostMenu ? "Close the COBI menu" : "Open the COBI menu"; m.setAttribute("aria-label", m.title);
+  }
+}
+document.addEventListener("fullscreenchange", function(){
+  paintWins();
+  if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
+});
+/* The page around the frame reports its state (unified_courses.js): docked or
+ * not, menu open or not. Only the parent window is believed. */
+window.addEventListener("message", function(e){
+  var m=e&&e.data; if(!m || m.type!=="skyview-host") return;
+  if(!framed() || e.source!==window.parent) return;
+  hostDocked=!!m.docked; hostMenu=!!m.menu;
+  paintWins();
+  if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
+});
+
+/* ── Show menu markup ─────────────────────────────────────────────────────── */
+function showMenuHtml(){
+  var groups=[
+    ["Credit status", [["cr","CR \u2014 credit"],["nc","NC \u2014 noncredit"],["nce","NCE \u2014 noncredit enhanced"],["unrec","Credit status not recorded"]]],
+    ["Identity system", [["mid","M-ID"],["cid","C-ID"],["ccn","CCN"],["uni","Unified"]]],
+    ["Kind of point", [["ident","Identities"],["orbit","Orphans in orbit"],["rim","Orphans on the rim"]]],
+    ["Under an identity", [["members","College courses"]]]
+  ];
+  return '<details class="u-show" id="u-show">'+
+    '<summary class="btn u-show-sum" id="u-show-sum" aria-controls="u-show-menu">Show: <b id="u-show-word">All</b></summary>'+
+    '<div class="u-show-menu" id="u-show-menu" role="group" aria-label="What the map shows">'+
+      '<div class="u-show-all"><button class="linkish" type="button" id="u-show-every">Show everything</button></div>'+
+      groups.map(function(g){
+        return '<fieldset><legend>'+esc(g[0])+'</legend>'+g[1].map(function(o){
+          return '<label><input type="checkbox" data-show="'+o[0]+'"'+(show[o[0]]?' checked':'')+'> <span>'+esc(o[1])+'</span></label>';
+        }).join('')+'</fieldset>';
+      }).join('')+
+    '</div></details>';
 }
 
 /* ── panels ─────────────────────────────────────────────────────────────── */
@@ -3773,7 +4250,7 @@ function drawWrites(){
  * a view added here is reachable everywhere at once. The view you are on is
  * NAMED in the list rather than offered: a menu item that leads where you
  * already are is a control that appears to do nothing. */
-var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl"};
+var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl", how:"how"};
 var VIEWS=[
   {key:"skyview", id:"u-nav-sky", label:"SkyView",
    title:"The map alone, filling the window",
@@ -3790,7 +4267,12 @@ var VIEWS=[
   {key:"esl", id:"u-nav-esl", label:"ESL packaging",
    title:"The first packaging fold, drawn against today’s data",
    when:eslAvailable,
-   go:function(){ window.__ccrWorkspace("esl"); }}
+   go:function(){ window.__ccrWorkspace("esl"); }},
+  /* Sam, 2026-09-05: "Add a 'How SkyView Works' item in Plain English with
+   * visuals aimed at future faculty reviewers". */
+  {key:"how", id:"u-nav-how", label:"How SkyView works",
+   title:"A short guide for faculty reviewers: what the shapes mean, how to find your course, how to move one",
+   go:function(){ window.__ccrHow(); }}
 ];
 function eslAvailable(){ return !!window.CPL_ATLAS_ESL && typeof window.__ccrEslInto==="function"; }
 function boxValue(){ var b=document.getElementById("gq"); return b ? b.value : ""; }
@@ -3823,19 +4305,28 @@ function viewsMenuInto(host){
     items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
       'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view ↗</a>');
   }
-  host.innerHTML='<details class="u-views" id="u-views">'+
-    '<summary class="linkish" aria-controls="u-views-menu">Views</summary>'+
-    '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
-    '</details>';
+  /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
+   * the panel's own "Go to" heading — a menu inside a menu is a door behind a
+   * door. Every other view's crumbs row keeps the Go To details menu. */
+  var flat = !!(host.dataset && host.dataset.flat);
+  host.innerHTML = flat
+    ? '<div class="u-views u-views-flat" id="u-views">'+
+        '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
+      '</div>'
+    : '<details class="u-views" id="u-views">'+
+        '<summary class="linkish" aria-controls="u-views-menu">Go To</summary>'+
+        '<div class="u-views-menu" id="u-views-menu" role="group" aria-label="Other views">'+items.join("")+'</div>'+
+      '</details>';
   var vw=host.querySelector("#u-views");
+  var closeAll=function(){ vw.open=false; var mo=document.getElementById("u-more-menu"); if(mo) mo.open=false; };
   Array.prototype.forEach.call(vw.querySelectorAll("[data-view]"), function(b){
     var v=VIEWS.filter(function(x){ return x.key===b.getAttribute("data-view"); })[0];
-    b.addEventListener("click", function(){ vw.open=false; if(v) v.go(); });
+    b.addEventListener("click", function(){ closeAll(); if(v) v.go(); });
   });
   var cl=vw.querySelector("#u-ccr-list");
-  if(cl && cl.tagName==="BUTTON") cl.addEventListener("click", function(){ vw.open=false; tellParent("list"); });
+  if(cl && cl.tagName==="BUTTON") cl.addEventListener("click", function(){ closeAll(); tellParent("list"); });
   Array.prototype.forEach.call(vw.querySelectorAll("a.linkish"), function(a){
-    a.addEventListener("click", function(){ vw.open=false; });
+    a.addEventListener("click", function(){ closeAll(); });
   });
 }
 window.__ccrViewsMenu = viewsMenuInto;
@@ -3843,7 +4334,7 @@ window.__ccrViewsMenu = viewsMenuInto;
  * once, because the menu is rebuilt on every render and a listener per build
  * would pile up. A menu left standing over the map is why menus feel broken. */
 document.addEventListener("pointerdown", function(e){
-  Array.prototype.forEach.call(document.querySelectorAll(".u-views[open]"), function(vw){
+  Array.prototype.forEach.call(document.querySelectorAll(".u-views[open], .u-more[open], .u-show[open]"), function(vw){
     if(!vw.contains(e.target)) vw.open=false;
   });
 });
@@ -3868,6 +4359,7 @@ window.__ccrRoute=function(){
   else if(k==="disciplines") window.__ccrWorkspace("discipline");
   else if(k==="subjects") window.__ccrWorkspace("subject");
   else if(k==="esl") window.__ccrWorkspace("esl");
+  else if(k==="how") window.__ccrHow();
   else window.__ccrUniverse({solo:true});
 };
 window.addEventListener("hashchange", function(){ if(routeKey()!==curView) window.__ccrRoute(); });
@@ -3877,6 +4369,7 @@ function setSolo(on, quiet){
   document.body.classList.toggle("u-solo", solo);
   syncHash();
   var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot);
+  paintWins();                   // the window controls read `solo` (a class toggle is not a re-render)
   if(quiet) return;
   // Entering the frame from halfway down the panes would leave the map scrolled
   // out of a window that no longer scrolls.
@@ -4141,6 +4634,7 @@ function homeSearch(){
   var wrap=document.querySelector(".mast .wrap");
   if(!wrap || ms.parentNode===wrap) return;
   wrap.appendChild(ms);
+  clearTokens(true);                       // the selection belongs to the map
   var lab=ms.querySelector('label[for="gq"]'), box=ms.querySelector("#gq");
   if(lab){
     if(lab.dataset.longLabel) lab.textContent=lab.dataset.longLabel;
@@ -4151,6 +4645,91 @@ function homeSearch(){
   if(go) go.classList.remove("u-search-go");
 }
 window.__ccrHomeSearch = homeSearch;
+
+/* ══ How SkyView works — the explainer for faculty reviewers (Sam, 2026-09-05) ══
+ * Plain words, active voice, no asides. The figures are drawn from the same
+ * SYS colors the map uses, so a change to the palette changes the guide. */
+function howFig(kind){
+  var M=SYS[0], C=SYS[1], N=SYS[2], G=SYS[3];
+  function circ(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="'+s[0]+'" stroke="'+s[1]+'" stroke-width="2"'+(extra||'')+'/>'; }
+  function hollow(x,y,r,s,extra){ return '<circle cx="'+x+'" cy="'+y+'" r="'+r+'" fill="#fff" stroke="'+s[1]+'" stroke-width="2"'+(extra||'')+'/>'; }
+  function sq(x,y){ return '<rect x="'+(x-4)+'" y="'+(y-4)+'" width="8" height="8" fill="#fff" stroke="#0047AB" stroke-width="1.6"/>'; }
+  function tether(x1,y1,x2,y2){ return '<line x1="'+x1+'" y1="'+y1+'" x2="'+x2+'" y2="'+y2+'" stroke="rgba(109,40,217,.5)" stroke-width="1.2" stroke-dasharray="2 3"/>'; }
+  function label(x,y,t){ return '<text x="'+x+'" y="'+y+'" text-anchor="middle" font-size="11" fill="#3A3A36" font-family="Source Sans 3, system-ui, sans-serif">'+esc(t)+'</text>'; }
+  if(kind==="island"){
+    return '<svg viewBox="0 0 360 200" role="img" aria-label="One island: a large light disc holding filled circles of several sizes and colours, hollow circles tied to them by dotted lines, and one hollow circle alone at the edge.">'+
+      '<circle cx="180" cy="100" r="88" fill="#F7F5F1" stroke="rgba(28,28,26,.18)"/>'+
+      circ(180,100,22,M)+circ(140,72,12,C)+circ(220,68,10,M)+circ(150,130,14,N)+circ(224,128,9,G)+circ(210,150,6,M)+
+      tether(180,100,120,104)+hollow(120,104,4,M)+tether(180,100,204,112)+hollow(204,112,4,M)+tether(140,72,124,52)+hollow(124,52,4,C)+
+      hollow(256,160,4,M)+
+      label(180,20,"an island is a discipline")+label(180,190,"the biggest circles carry the most college courses")+
+      '</svg>';
+  }
+  if(kind==="marks"){
+    return '<svg viewBox="0 0 640 96" role="img" aria-label="Six marks side by side: a purple filled circle, a blue filled circle, a gold filled circle, a hollow circle on a dotted line, a circle drawn with a broken ring, and a small square.">'+
+      circ(56,36,14,M)+label(56,74,"M-ID")+label(56,88,"our working label")+
+      circ(160,36,14,C)+label(160,74,"C-ID")+label(160,88,"official")+
+      circ(250,36,14,N)+label(250,74,"CCN")+label(250,88,"official")+
+      tether(338,36,372,36)+hollow(338,36,8,M)+circ(378,36,8,M)+label(358,74,"stand-alone")+label(358,88,"in orbit")+
+      circ(460,36,14,M,' stroke-dasharray="5 4"')+label(460,74,"noncredit")+label(460,88,"a broken ring")+
+      sq(570,36)+label(570,74,"college course")+label(570,88,"under an identity")+
+      '</svg>';
+  }
+  return '<svg viewBox="0 0 360 110" role="img" aria-label="A hollow circle with an arrow pointing to a filled circle.">'+
+    hollow(70,50,10,M)+'<path d="M92 50 H228" stroke="#0047AB" stroke-width="2" fill="none" marker-end="url(#arr)"/>'+
+    '<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#0047AB"/></marker></defs>'+
+    circ(270,50,20,M)+label(70,84,"the course")+label(270,92,"the identity it belongs to")+
+    '</svg>';
+}
+function howHtml(){
+  return '<section class="how" aria-labelledby="how-h1">'+
+    '<div class="how-head"><h1 id="how-h1">How SkyView works</h1>'+
+      '<button class="btn primary" type="button" id="how-open">Open SkyView</button></div>'+
+    '<p class="how-lede">SkyView draws the whole Common Course Reference as one map. Each island is a discipline. '+
+      'Each circle inside an island is a course identity: one course that several colleges teach under their own numbers. '+
+      'Your course sits under one of those circles. SkyView exists so you can find it, see what sits beside it, and move it if it sits under the wrong one.</p>'+
+    '<figure class="how-fig">'+howFig("island")+'</figure>'+
+    '<h2>What the shapes mean</h2>'+
+    '<figure class="how-fig">'+howFig("marks")+'</figure>'+
+    '<ul class="how-list">'+
+      '<li>A <strong>filled circle</strong> is a course identity. Its color says who issued the number: purple for an M-ID, our working label; blue for a C-ID and gold for a CCN, both official statewide numbers; gray for a unified row.</li>'+
+      '<li>A <strong>hollow circle</strong> is a stand-alone course: one college teaches it and no identity claims it yet. It orbits the identity it most resembles, tied to it by a dotted line. The orbit is a suggestion. Nothing changes until someone moves the course.</li>'+
+      '<li>A <strong>broken ring</strong> marks a noncredit course, whatever its color.</li>'+
+      '<li>A <strong>small square</strong> is a college course under an identity. Squares appear when you zoom in past 270 percent, and the sidebar lists them at any zoom.</li>'+
+    '</ul>'+
+    '<h2>Find your course</h2>'+
+    '<p>Type a course number, a title or a discipline in the search box. Pick a result and the map flies to it: a discipline lands at 150 percent, a course at 1,000 percent. '+
+      'Pick more than one and the map fits them all in view, with each course ringed in red and each discipline outlined in blue. Each pick becomes a chip beside the box; remove a chip to narrow the selection.</p>'+
+    '<h2>Read a course</h2>'+
+    '<p>Hover a circle for a quick look. Click it and the sidebar opens with the identity\u2019s title, units and number, the college courses under it with their catalog descriptions, and the stand-alone courses in orbit around it. '+
+      'The sidebar answers one question: does my course belong here?</p>'+
+    '<h2>Move a course</h2>'+
+    '<figure class="how-fig">'+howFig("move")+'</figure>'+
+    '<p>Choose <strong>Move</strong> at the top, then drag a hollow circle or a square onto the identity it belongs to. Drag an island to pull it next to another when a course belongs across the border. '+
+      'Drag the background to pan, or choose <strong>Pan</strong> to drag from anywhere. Each move becomes one line in the comprehensive view\u2019s <em>What this would write</em> panel; the map itself writes nothing to the shared record, and a curator can delete any line.</p>'+
+    '<h2>Choose what you see</h2>'+
+    '<p><strong>Show</strong> narrows the map by credit status, by identity system, by kind of point, and by whether the college courses under an identity are drawn. '+
+      'Scroll to zoom, or use <strong>Out</strong> and <strong>In</strong>; the buttons zoom on what you searched for or selected. <strong>Reset</strong> returns to the whole map. '+
+      '<strong>Sidebar</strong> shows or hides the details panel. <strong>Legend</strong>, at the lower right of the map, folds the key away.</p>'+
+    '<h2>From the keyboard</h2>'+
+    '<p><kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> opens one, <kbd>Esc</kbd> steps back out, the arrow keys pan, <kbd>+</kbd> and <kbd>-</kbd> zoom.</p>'+
+    '<h2>What a reviewer checks</h2>'+
+    '<ol class="how-steps">'+
+      '<li>Find your course.</li>'+
+      '<li>Read the identity it sits under and the other colleges\u2019 courses beside it.</li>'+
+      '<li>If it belongs there, you are done.</li>'+
+      '<li>If it does not, move it to the identity it matches, or note the course number for the curator.</li>'+
+    '</ol>'+
+  '</section>';
+}
+window.__ccrHow=function(){
+  window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"How SkyView works"}], {view:"how"});
+  var v=document.getElementById("view"); if(!v) return;
+  v.innerHTML=howHtml();
+  var b=document.getElementById("how-open"); if(b) b.onclick=function(){ window.__ccrUniverse({solo:true}); };
+  syncHash();
+  if(window.scrollY||window.pageYOffset){ try{ window.scrollTo(0,0); }catch(e){} }
+};
 /* Called by the template's setCrumbs() — the one place every view passes
  * through before it renders: the search box goes home, and the view being
  * entered is named (null for the sub-pages, so their menu offers all five). */

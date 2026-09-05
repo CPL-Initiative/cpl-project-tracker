@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-380 document(s).
+382 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -72,6 +72,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -328,6 +329,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
 | [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
 | [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |
+| [A decision sheet takes its replies on the page, and the session reads them from the store](../kb-notes/playbook-decision-sheet-replies.md) | playbook | published | 2026-09-05 | 2026-09-05 |
 | [Curate-editable overlay for a standalone static page](../kb-notes/playbook-curate-editable-standalone-page.md) | playbook | published | 2026-06-28 | 2026-06-28 |
 | [Deploy a Supabase Edge Function from the runner, not by hand](../kb-notes/playbook-deploy-an-edge-function-from-the-runner.md) | playbook | published | 2026-08-07 | 2026-08-07 |
 | [Diagnose a stalled GitHub Actions repo — check runner_id before anything else](../kb-notes/playbook-diagnose-a-starved-actions-runner.md) | playbook | published | 2026-08-06 | 2026-08-06 |

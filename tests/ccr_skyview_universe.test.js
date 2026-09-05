@@ -195,19 +195,39 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // Nothing it protects changed — they are still words — so the check now tests
   // that, the way the repo's own note on position/wording-coupled tests says to.
   {
-    const ctrls = ["#u-out", "#u-in", "#u-reset", "#u-fs", "#u-list", "#u-insp-toggle", "#u-foot-toggle"];
+    // Since 2026-09-05 (Sam, from a screenshot of Claude's own header) the
+    // header's ACTIONS are ghosted icons — each named by words for a screen
+    // reader — and the text controls stay words in boxes.
+    const words = ["#u-insp-toggle", "#u-dark", "#u-legend-menu", "#u-show-sum", "#u-mode-pan", "#u-mode-move"];
+    const icons = ["#u-out", "#u-in", "#u-reset", "#u-win-down", "#u-win-up", "#u-close", "#u-more-sum"];
     const GLYPH = /[\u2190-\u21FF\u2300-\u27BF\u2B00-\u2BFF\uD800-\uDBFF\uFE0F]/;
-    check("(A) every control is a word, not a glyph",
-      ctrls.every((c) => { const t = text(c).trim(); return t.length > 0 && /[A-Za-z]/.test(t) && !GLYPH.test(t); }),
-      ctrls.map((c) => text(c).trim()).join(" | "));
+    check("(A) the text controls are words, not glyphs",
+      words.every((c) => { const t = text(c).trim(); return t.length > 0 && /[A-Za-z]/.test(t) && !GLYPH.test(t); }),
+      words.map((c) => text(c).trim()).join(" | "));
+    check("(A) ⭐ the icon actions each carry words as their accessible name and tooltip",
+      icons.every((c) => q(c) && /[A-Za-z]/.test(q(c).getAttribute("aria-label") || "") && /[A-Za-z]/.test(q(c).getAttribute("title") || "")),
+      icons.map((c) => (q(c) ? q(c).getAttribute("aria-label") : "∅")).join(" | "));
     // The shortened words keep their meaning from the group label beside them.
-    check("(A) ⭐ the shortened zoom controls carry a group label that says what they act on",
-      /Zoom/i.test(text(".u-zgroup")) && !!q(".u-zgroup #u-out") && !!q(".u-zgroup #u-in"),
-      text(".u-zgroup").trim());
+    check("(A) ⭐ the zoom group is named for a screen reader and holds out, the readout, in and reset in that order",
+      q(".u-zgroup").getAttribute("aria-label") === "Zoom" &&
+      [...q(".u-zgroup").children].map((e) => e.id).join(",") === "u-out,u-zoom,u-in,u-reset",
+      [...q(".u-zgroup").children].map((e) => e.id).join(","));
+    // Sam, 2026-09-05, item 8: the label and the percentage stack in one chip
+    // height beside Out/In, and "zoom" is not repeated anywhere in the row.
+    check("(A) ⭐ the readout is the only zoom figure in the row, and the word is not repeated",
+      !!q(".u-zgroup > #u-zoom") && !q(".u-z") && !q(".u-zstack") && (text("#u-top").match(/zoom/gi) || []).length === 0,
+      (text("#u-top").match(/zoom/gi) || []).join(","));
+    // The window controls and the menu are glyphs by Sam's explicit ask (a
+    // screenshot of the OS's own three); each carries its words as its name.
+    check("(A) ⭐ the window controls carry words as their accessible names, and the Full screen chip is gone",
+      ["#u-win-down", "#u-win-up", "#u-close"].every((id) => q("#u-top .u-wins " + id) && /[A-Za-z]/.test(q(id).getAttribute("aria-label") || ""))
+      && !q("#u-fs") && !q("#u-foot-toggle"),
+      ["#u-win-down", "#u-win-up", "#u-close"].map((id) => q(id) ? q(id).getAttribute("aria-label") : "∅").join(" | "));
+    check("(A) stand-alone there is no COBI menu control — there is no COBI to open", !q("#u-menu"));
   }
   // ── the 2026-09-04 chrome changes, asserted on a freshly booted page ──────
   check("(A) ⭐ the details panel starts HIDDEN so the map opens at full width (Sam, 2026-09-04)",
-    q("#u-inspector").classList.contains("closed") && !st().inspectorOpen && /^Details$/.test(text("#u-insp-toggle").trim()),
+    q("#u-inspector").classList.contains("closed") && !st().inspectorOpen && /^Sidebar/.test(text("#u-insp-toggle").trim()) && q("#u-insp-toggle").getAttribute("aria-pressed") === "false",
     text("#u-insp-toggle"));
   // ⭐ Sam, 2026-09-04: "consolidate the top … I want all the real estate for the
   // universe view." #u-top was ALREADY one row (space-between: links left,
@@ -217,8 +237,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // controls · close. The four inline view links became ONE <details> menu
   // because a title, a search and nine controls do not share a row with them.
   check("(A) ⭐ title, menu, search, controls and close share ONE row inside #u-top",
-    ["u-title","u-views-slot","u-search-slot","u-bar","u-close"].every((id) =>
-      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")) && !!q("#u-views-slot > #u-views"),
+    ["u-more-menu","u-title","u-search-slot","u-bar"].every((id) =>
+      q("#u-top #" + id) && q("#u-top #" + id).parentElement === q("#u-top")) && !!q("#u-more-menu #u-views-slot > #u-views")
+      && !!q("#u-top > .u-wins > #u-close"),
     [...q("#u-top").children].map((e) => e.id).join(" | "));
   check("(A) ⭐ the view links live in the menu, not loose in the row",
     !q("#u-top > .linkish") && qa("#u-views-menu .linkish").length >= 3,
@@ -241,9 +262,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
      the same edit moved the search INTO this row — the dropdown it opens is
      positioned by .sugwrap inside #u-top, so there is nothing above the links
      to hide under. That pairing is the invariant, not the title's absence. */
-  check("(A) ⭐ item 1: SkyView is the leftmost thing in the row",
-    q("#u-top").firstElementChild === q("#u-top #u-title") &&
-    /^SkyView$/.test(text("#u-title").trim()), text("#u-title"));
+  // Item 1 (2026-09-04) put SkyView leftmost; the header's own vocabulary
+  // (2026-09-05, from Claude's header) puts the icon actions before the title
+  // field, so the title is the first thing in the row that is not an icon.
+  check("(A) ⭐ the title field is the first thing in the row after the icon actions, and reads SkyView",
+    [...q("#u-top").children].find((e) => !e.classList.contains("u-ico") && !e.classList.contains("u-more")) === q("#u-top #u-title") &&
+    /^SkyView$/.test(text("#u-title").trim()), [...q("#u-top").children].map((e) => e.id || e.className).join(" | "));
   check("(A) ⭐ …and the search that made room for it moved into the row with it",
     !!q("#u-top #u-search-slot #msearch") && !q(".mast #msearch") &&
     !!q("#u-top #u-search-slot .sugwrap #gq"));
@@ -298,8 +322,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     // with NO recorded credit status under credit or under noncredit, and either
     // is a lie — the false-zero shape this repo keeps relearning. They show
     // under All and nowhere else, and the hint says how many.
-    check("(A) ⭐ the toggle has THREE positions, not two",
-      !!q("#u-cr-all") && !!q("#u-cr-cr") && !!q("#u-cr-nc"));
+    // Since 2026-09-05 the three positions are SWITCHES in the Show menu, one
+    // of them "not recorded", beside the identity systems and the kinds of point.
+    check("(A) ⭐ Show is a menu of switches: credit status (with 'not recorded'), identity system, kind of point, college courses",
+      !!q("#u-show") && qa("#u-show-menu input[data-show]").length === 12 && !!q('#u-show-menu input[data-show="unrec"]') &&
+      /Show/.test(text("#u-show-sum")) && /^All$/.test(text("#u-show-word").trim()) && !q("#u-cr-all"),
+      qa("#u-show-menu input[data-show]").map((i) => i.getAttribute("data-show")).join(","));
     w.__ccrSetCredit("nc");
     check("(A) Noncredit hides the credit courses", st().creditFilter === "nc" &&
       st().creditCounts.shown === st().creditCounts.nc, `${st().creditCounts.shown}`);
@@ -310,6 +338,20 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(A) …and All brings the unrecorded back, saying how many",
       st().creditCounts.shown === st().creditCounts.cr + st().creditCounts.nc + st().creditCounts.unrecorded
       && /no recorded credit status/i.test(text("#u-hint")));
+    {
+      const total = S.creditCounts.cr + S.creditCounts.nc + S.creditCounts.unrecorded;
+      const mid = q('#u-show-menu input[data-show="mid"]');
+      mid.checked = false; mid.dispatchEvent(new w.Event("change", { bubbles: true }));
+      check("(A) ⭐ switching M-ID off hides the M-ID points; the chip counts the switches and the hint the hidden",
+        st().show.mid === false && st().creditCounts.shown === 1 && st().creditFilter === "all" &&
+        /11 of 12/.test(text("#u-show-word")) && /hidden/.test(text("#u-hint")),
+        `shown=${st().creditCounts.shown} of ${total} · ${text("#u-show-word")}`);
+      q("#u-show-every").click();
+      check("(A) Show everything brings them all back", st().creditCounts.shown === total && /^All$/.test(text("#u-show-word").trim()));
+      w.__ccrSetShow({ members: false });
+      check("(A) the college-course squares have a switch of their own", st().show.members === false && /college courses under an identity are not drawn/.test(text("#u-hint")));
+      w.__ccrSetShow({ members: true });
+    }
     // The mark is a STROKE, not a colour: colour already carries the identity
     // system, and a second colour scale would make the reader hold two at once.
     check("(A) ⭐ noncredit is a broken ring whose dash scales with the circle",
@@ -363,17 +405,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       hits.every((h) => h.kind === "subject" || h.kind === "course" || h.kind === "member"),
       hits.map((h) => h.kind).join(","));
   }
-  check("(A) the legend strip can be folded away, and says so in a word",
-    !!q("#u-foot-toggle") && /legend/i.test(text("#u-foot-toggle")));
+  // Sam, 2026-09-05, item 5: the fold lives at the map's lower right — the
+  // word "Legend", unbold, with a fold mark — not a "Hide legend" chip in the row.
+  check("(A) the legend folds from its own corner of the map, named by the word",
+    !!q("#u-wrap #u-legend-toggle") && /Legend/.test(text("#u-legend-toggle")) && q("#u-legend-toggle").getAttribute("aria-controls") === "u-foot");
   {
-    const foot = q("#u-foot"), btn = q("#u-foot-toggle");
+    const foot = q("#u-foot"), btn = q("#u-legend-toggle");
     btn.click();
-    check("(A) ⭐ hiding the legend folds the strip away (Sam: 'make the footer hidable')",
-      foot.classList.contains("u-foot-hidden") && /^Legend$/.test(text("#u-foot-toggle").trim())
-      && btn.getAttribute("aria-expanded") === "false");
+    check("(A) ⭐ folding hides the strip, the mark turns, and the state is remembered",
+      foot.classList.contains("u-foot-hidden") && btn.getAttribute("aria-expanded") === "false" && !st().legendOpen);
     btn.click();
-    check("(A) …and it comes back", !foot.classList.contains("u-foot-hidden")
-      && /Hide legend/.test(text("#u-foot-toggle")));
+    check("(A) …and it comes back", !foot.classList.contains("u-foot-hidden") && st().legendOpen);
   }
   check("(A) the legend explains the hollow point in words",
     /stand-alone course, in orbit/.test(text(".u-legend")));
@@ -412,7 +454,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     && w.__ccrSuggest("401", 8).some((s) => s.kind === "member" && s.code === "WELD 150"));
   check("(C) the header renders the kind as a word",
     (() => { const gq = q("#gq"); gq.value = "weld 150"; gq.dispatchEvent(new w.Event("input", { bubbles: true }));
-             return qa("#sug .sg-k").some((el) => el.textContent === "college course"); })());
+             return qa("#sug .sg-k").some((el) => el.textContent === "COLLEGE CRSE"); })());
+  // Sam, 2026-09-05: "abbreviate Discipline to DISC; Course to CRSE; Credit to CR".
+  check("(C) ⭐ the list uses the short words — DISC, CRSE IDENTITY, STAND-ALONE CRSE, COLLEGE CRSE — and CR/NC for credit",
+    sug[0].kindShort === "DISC" && sug.some((s) => s.kindShort === "CRSE IDENTITY" && /· (CR|NC|NCE|CR status not recorded)$/.test(s.sub)) &&
+    w.__ccrSuggest("pipe", 8).some((s) => s.kindShort === "STAND-ALONE CRSE") && byCode.some((s) => s.kindShort === "COLLEGE CRSE"),
+    sug.map((s) => s.kindShort + ":" + s.sub).join(" | "));
 
   // ── (D) jumping to a college course selects the identity and filters to it ─
   const row = w.__ccrSuggest("WLD 1", 8).find((s) => s.kind === "member");
@@ -536,19 +583,32 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(L) ⭐ releasing on an identity writes the move", st().moves.length === before + 1 && st().moves[st().moves.length - 1].to === "ARTS M1001",
     JSON.stringify(st().moves.slice(-1)));
 
-  // ── (M) full screen ────────────────────────────────────────────────────────
-  q("#u-fs").click();
-  check("(M) without the API the button explains instead of failing silently", /full screen/i.test(text("#u-hint")));
+  // ── (M) the window controls: three states, step down, step up (2026-09-05) ─
+  // 0 = the page (or COBI) around the map · 1 = the map alone · 2 = the
+  // browser's own full screen. The Full screen chip is gone; the middle control
+  // steps up and the left one steps down, and each says so in words.
+  w.__ccrUniverse({ solo: true });
+  check("(M) alone in the window the map is state 1, and the down control offers the page around it",
+    st().winState === 1 && !q("#u-win-down").hidden && /page around the map/.test(q("#u-win-down").getAttribute("aria-label")),
+    `${st().winState} ${q("#u-win-down").getAttribute("aria-label")}`);
+  q("#u-win-up").click();
+  check("(M) without the API the up control explains instead of failing silently", /full screen/i.test(text("#u-hint")));
   let fsEl = null;
   Object.defineProperty(d, "fullscreenElement", { get: () => fsEl, configurable: true });
   w.HTMLElement.prototype.requestFullscreen = function () { fsEl = this; return Promise.resolve(); };
-  q("#u-fs").click();
+  q("#u-win-up").click();
   d.dispatchEvent(new w.Event("fullscreenchange"));
-  check("(M) ⭐ entering full screen relabels the button and fills the window",
-    /Exit full screen/.test(text("#u-fs")) && q("#u-fs").getAttribute("aria-pressed") === "true"
-    && q("#u-wrap").style.height === w.innerHeight + "px", `${text("#u-fs")} / ${q("#u-wrap").style.height}`);
+  check("(M) ⭐ entering full screen renames the up control and fills the window",
+    st().winState === 2 && /Leave full screen/.test(q("#u-win-up").getAttribute("aria-label"))
+    && q("#u-wrap").style.height === w.innerHeight + "px", `${q("#u-win-up").getAttribute("aria-label")} / ${q("#u-wrap").style.height}`);
   fsEl = null; d.dispatchEvent(new w.Event("fullscreenchange"));
-  check("(M) leaving it restores the label", /^Full screen$/.test(text("#u-fs").trim()));
+  check("(M) leaving it restores the words", st().winState === 1 && /^Full screen$/.test(q("#u-win-up").getAttribute("aria-label")));
+  q("#u-win-down").click();
+  check("(M) ⭐ stepping down from the map alone shows the page around it, and the down control is not painted (nothing to step down to)",
+    !d.body.classList.contains("u-solo") && st().winState === 0 && q("#u-win-down").hidden,
+    `state=${st().winState} solo=${d.body.classList.contains("u-solo")} hidden=${q("#u-win-down") && q("#u-win-down").hidden}`);
+  q("#u-win-up").click();
+  check("(M) ⭐ stepping up from there fills the window again", d.body.classList.contains("u-solo") && st().winState === 1);
 
   // ── (N) the inspector can be folded away and comes back on a selection ────
   // ⚠️ The INITIAL state is asserted in (A), right after boot — by the time this
@@ -557,10 +617,10 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // asserting it about a page that has been used.
   if (!st().inspectorOpen) q("#u-insp-toggle").click();      // normalize: open
   check("(N) an open panel says how to put it away",
-    !q("#u-inspector").classList.contains("closed") && /Hide details/.test(text("#u-insp-toggle")) && st().inspectorOpen);
+    !q("#u-inspector").classList.contains("closed") && q("#u-insp-toggle").getAttribute("aria-pressed") === "true" && /on/.test(text("#u-insp-toggle .u-state")) && st().inspectorOpen);
   q("#u-insp-toggle").click();
   check("(N) the details panel folds to a word",
-    q("#u-inspector").classList.contains("closed") && /Details/.test(text("#u-insp-toggle")) && !st().inspectorOpen);
+    q("#u-inspector").classList.contains("closed") && q("#u-insp-toggle").getAttribute("aria-pressed") === "false" && !st().inspectorOpen);
   w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[0] });
   check("(N) selecting something opens it again", !q("#u-inspector").classList.contains("closed") && /Welding/.test(text("#u-detail h3")));
   check("(N) a subject card lists its identities as buttons that open them", qa("#u-detail .idlist [data-go]").length === 2);
@@ -679,6 +739,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(U) ⭐ the menu names the view you are on and offers the others",
     /SkyView/.test(text("#u-views-menu .u-views-here")) && !q("#u-nav-sky") && !!q("#u-nav-comp") &&
     !!q("#u-nav-forest") && !!q("#u-nav-subject"), text("#u-views-menu"));
+  check("(U) ⭐ on the map the views sit FLAT under 'Go to' inside the More menu, How SkyView works among them",
+    !!q("#u-more-menu #u-views.u-views-flat") && !q("#u-more-menu #u-views > summary") && /Go to/.test(text("#u-more-panel .u-more-h")) &&
+    !!q("#u-nav-how") && /How SkyView works/.test(text("#u-nav-how")), text("#u-more-panel").slice(0, 80));
+  check("(U) the More menu also holds the sidebar, the legend and the dark canvas as rows with a state word",
+    ["#u-insp-toggle", "#u-legend-menu", "#u-dark"].every((id) => q("#u-more-panel " + id) && /^(on|off)$/.test(text(id + " .u-state").trim())));
   check("(U) the CSS takes the masthead, the crumbs, the panes and the footer out of the solo frame",
     /body\.u-solo \.mast,body\.u-solo \.crumbrow,body\.u-solo #u-below,body\.u-solo main>footer\{display:none\}/.test(tpl));
   const cvsBefore = q("#u-cvs"), movesBefore = st().moves.length;
@@ -756,6 +821,62 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   w.__ccrWorkspace("discipline");
   check("(W) 'Back to SkyView' is a word, and lands on the map alone",
     q("#ws-sky").textContent.trim() === "Back to SkyView" && (q("#ws-sky").click(), d.body.classList.contains("u-solo") && !!q("#u-cvs")));
+
+  // ── (X) the selection: a pick ADDS a token, a typed search REPLACES them ─
+  // Sam, 2026-09-05: "make it multi-select capable". One token behaves exactly
+  // as a single pick or search always did; several ring and fit them all.
+  w.__ccrUniverse({ solo: true });
+  w.__ccrUniverseSearch("welding");
+  check("(X) a typed search is one term token, and the map behaves as before",
+    st().tokens.length === 1 && st().tokens[0] === "welding" && /^\s*Discipline/.test(text("#u-hint")) && qa("#u-tokens .u-tok").length === 1,
+    `${JSON.stringify(st().tokens)} · ${text("#u-hint").slice(0, 60)}`);
+  const pick = w.__ccrSuggest("drawing", 8).find((s) => s.kind === "course");
+  w.__ccrGoSuggestion(pick);
+  check("(X) ⭐ a pick ADDS a token; two selections fit one view, the course ringed and the discipline outlined",
+    st().tokens.length === 2 && qa("#u-tokens .u-tok").length === 2 && st().hits === 1 && /2 selections/.test(text("#u-hint")) && !!q("#u-tok-clear"),
+    `${JSON.stringify(st().tokens)} hits=${st().hits} · ${text("#u-hint").slice(0, 90)}`);
+  check("(X) the chips name their kind in the short words", qa("#u-tokens .u-tok-k").map((e) => e.textContent).join("|") === "SEARCH|CRSE IDENTITY",
+    qa("#u-tokens .u-tok-k").map((e) => e.textContent).join("|"));
+  check("(X) the box is emptied after a pick so the next term starts clean", q("#gq").value === "");
+  qa("#u-tokens .u-tok-x")[1].click();
+  check("(X) removing a chip narrows the selection back to the single behavior", st().tokens.length === 1 && st().hits === 0 && /^\s*Discipline/.test(text("#u-hint")));
+  q("#gq").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Backspace", bubbles: true }));
+  check("(X) Backspace in an empty box drops the last chip", st().tokens.length === 0 && /cleared/i.test(text("#u-hint")), text("#u-hint"));
+  w.__ccrGoSuggestion(pick); w.__ccrGoSuggestion(w.__ccrSuggest("weld", 8)[0]);
+  check("(X) a discipline pick joins the selection", st().tokens.length === 2 && qa("#u-tokens .u-tok-k").some((e) => e.textContent === "DISC"));
+  w.__ccrUniverseSearch("pipe");
+  check("(X) ⭐ a typed search replaces the selection with one term — a search still means a search", st().tokens.length === 1 && st().tokens[0] === "pipe");
+  w.__ccrForest();
+  check("(X) leaving the map clears the selection along with the borrowed box", st().tokens.length === 0 && !!q(".mast #msearch") && !q("#u-tokens .u-tok"));
+
+  // ── (Y) the dark canvas (Sam, 2026-09-05: "Dark mode selector") ──────────
+  w.__ccrUniverse({ solo: true });
+  check("(Y) the dark canvas is a word chip, off by default",
+    !!q("#u-dark") && q("#u-dark").getAttribute("aria-pressed") === "false" && !d.body.classList.contains("u-dark") && !st().dark);
+  q("#u-dark").click();
+  check("(Y) ⭐ Dark flips the body class, the chip and the remembered choice",
+    d.body.classList.contains("u-dark") && st().dark && q("#u-dark").getAttribute("aria-pressed") === "true" && w.localStorage.getItem("skyview:theme") === "dark");
+  check("(Y) ⭐ the canvas palette is CSS tokens the dark body redefines, read at draw time with the light values as the fallback",
+    /--sky-ground:#FFFFFF/.test(tpl) && /body\.u-dark\{/.test(tpl) && /--sky-ground:#1E1E1C/.test(tpl) && /pal=readPal\(\);/.test(ujs) &&
+    /\.u-sw\.s0\{background:var\(--sky-sys0-fill\)/.test(tpl) && !/style="background:#F1EAFC/.test(ujs));
+  check("(Y) pressed chips take their text color from a token, so the dark accent stays readable", /color:var\(--on-accent,#fff\)/.test(tpl));
+  q("#u-dark").click();
+  check("(Y) …and back to the light canvas", !d.body.classList.contains("u-dark") && w.localStorage.getItem("skyview:theme") === "light");
+
+  // ── (Z) How SkyView works (Sam, 2026-09-05, item 6) ──────────────────────
+  q("#u-nav-how").click();
+  check("(Z) ⭐ the explainer renders with its three figures, and the hash names it",
+    !!q("#how-h1") && /How SkyView works/.test(text("#how-h1")) && qa(".how-fig svg").length === 3 && w.location.hash === "#how" && st().curView === "how",
+    `${w.location.hash} figs=${qa(".how-fig svg").length}`);
+  check("(Z) it explains the shapes and the move in words a reviewer can act on",
+    /filled circle/.test(text(".how")) && /hollow circle/.test(text(".how")) && /broken ring/.test(text(".how")) && /small square/.test(text(".how")) &&
+    /What a reviewer checks/.test(text(".how")) && /Move/.test(text(".how")));
+  check("(Z) every figure carries a description for a screen reader", qa(".how-fig svg").every((s) => /[A-Za-z]/.test(s.getAttribute("aria-label") || "") && s.getAttribute("role") === "img"));
+  check("(Z) the borrowed search box went home for it, and the Go To menu rides the crumbs row", !!q(".mast #msearch") && !!q("#crumbs-views #u-views"));
+  q("#how-open").click();
+  check("(Z) Open SkyView returns to the map alone", !!q("#u-cvs") && d.body.classList.contains("u-solo"));
+  w.history.replaceState(null, "", "#how"); w.__ccrRoute();
+  check("(Z) #how routes to the explainer", !!q("#how-h1"));
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

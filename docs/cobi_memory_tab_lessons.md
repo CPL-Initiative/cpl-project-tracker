@@ -747,3 +747,69 @@ not to route around it.
 Story artifacts: `kb/memory_audit/2026-09-05-brief.md` (the auditors' brief),
 `2026-09-05-verdicts/` (all 527 verdicts with evidence), `2026-09-05-plan.json`,
 `2026-09-05-overrides.json` (my twelve rulings), `2026-09-05-receipt.json`.
+
+
+## 2026-09-05 — SkyKeep (Session 230): the sheet takes replies
+
+Sam, opening the session: *"add decision chips on each memory decision sheet
+item so I can record my responses for you and add any clarifying notes needed.
+Some of the unfinished memories are important to follow up on and I don't want
+to leave them hanging while I'm in the decision flow."*
+
+### What a reply is
+
+Three parts, under every numbered item and every retired row: a verdict chip
+(Yes takes the recommendation, then the words the how-to box already accepts —
+Keep · Retire · Edit · Later; item 1 adds *Older only*; the class rulings offer
+Yes · No; the retired rows offer *Undo*), a **Follow up** toggle that is
+independent of the verdict (his "don't leave them hanging"), and a note. A
+pressed chip clears on a second press. The bar at the foot counts replies and
+follow-ups and builds the numbered line (`3 yes · 4 keep, follow up — "…"`)
+for a paste.
+
+### Where a reply goes
+
+On the artifact, the page asks for its own store (`claude.use("db")`) and
+writes one document per item under `replies/<item>` — verdict, note,
+follow-up, the reference the session needs, and a timestamp; the store is
+organization-internal and the session reads it with the Artifact tool's
+`read_db`. Opened from the repo or the vault there is no store, so the replies
+stay in `localStorage` and *Copy replies* is the way out. The words are the
+same either way. The artifact service refused this session's wake
+subscription ("subscribing requires a session credential"), so a reply does
+not wake anyone: the next session reads the store when it arrives.
+
+### The builder was older than the sheet
+
+The committed `kb/memory_audit/2026-09-05-sheet_builder.py` cannot produce
+the committed sheet: the sheet has item 2 (the 73 human-sourced rows that still
+hold) and a section order the builder never emits, and its input export is
+not on disk. S229 evolved the builder in-session and committed an earlier
+version. So "change the generator, not the HTML" (Rule 1) would have REGRESSED
+the sheet. The reply controls are therefore added by a pass over the finished
+HTML — `kb/_decision_sheet_replies.py --inject`, marker-guarded so a second
+run replaces the first (the same shape as Rule 2's CSS guard) — and the module
+also exposes `replies_block()` for a builder that wants them at source. The
+durable lesson is its own KB note: a generator committed without the output
+it produced is a trap, not a convenience.
+
+### Checked before publishing
+
+A Chromium drive of the file: a chip presses and clears, the follow-up toggle
+holds, a note survives a reload, the bar reads "2 of 74 replied · 1 to follow
+up", the reply line reads as the how-to box says, and nothing scrolls sideways
+at 390px. Published to the same artifact URL with `capabilities: {db: {}}`;
+`read_db` on `replies` answered empty, which is the store existing.
+
+### Replies on each memory, not just the batch
+
+Sam, after the first republish: *"Decision sheet is almost there, but I need the
+response controls on each memory, not just on the whole batch."* Items 2 (73
+memories) and 3 (three) list their memories as rows with a reference each; the
+injector now puts a compact block under every such row — id `<item>.<reference>`
+(`2.o3`, `3.bog-amendment-is-funding-authority`), kind `entry`, parent the item
+— with chips read off the batch's own ask: Yes · Hold out · Rewrite · Later
+under a verify batch, Yes · Keep · Later under a retire batch. The bar counts by
+kind (*2 of 43 items · 2 of 76 memories · 1 of 31 retired rows replied*), and an
+entry reply in the store overrides its batch for that one memory. 150 blocks
+now; the second pass still changes nothing.

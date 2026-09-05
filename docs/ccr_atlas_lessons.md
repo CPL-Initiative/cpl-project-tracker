@@ -1755,3 +1755,123 @@ the backlog. PR #1479.
 Sam drives the three asks. His reaction to the standing column is the thing to
 watch: it is the first SUBJ4 view a curator has had, and every "not X's code"
 row is either a stray the fold missed or an umbrella the seed does not know.
+
+
+## 2026-09-05 — SkyKeep (Session 230): the second list, and a class toggle is not a re-render
+
+Sam's second SkyView list arrived with two screenshots marked YES (the map
+alone, no COBI header) and NO (the map inside COBI's chrome), then a third of
+the OS window controls, then a fourth of Obsidian's canvas controls with the
+note *"These are nice controls from obsidian"*, and mid-run: *"add a hamburger
+menu glyph in upper left that can open the COBI side bar — should be default
+collapsed on open."* One PR (#1481).
+
+### What shipped, in his order
+
+The full window on the CCR click: `body.cpl-skyview-solo` takes COBI's header,
+rail, hamburger and To-Do button out and gives the frame the viewport; the rail
+becomes the slide-over it already was below 900px, at every width, and opens
+from the frame's ☰ by `postMessage` (menu · dock · undock · ready, answered
+with `skyview-host {docked, menu}`). The window controls are three states and
+two steps: 0 the page or COBI around the map, 1 the map alone, 2 the browser's
+full screen; the left control steps down, the middle steps up, the close is the
+same close. The Full screen chip went; the Hide legend chip went (the legend
+folds from the map's own corner, the word unbold with a fold mark); Details
+reads Sidebar; the Search label is the placeholder; the zoom label stacks over
+its percentage; every chip in the row is 30px with a 6px corner, the search box
+and its button included. Show is a menu of twelve switches. Views is Go To and
+carries How SkyView works. The search became a selection of chips. And a dark
+canvas.
+
+### A class toggle is not a re-render
+
+The window controls painted their state in `wire()`, once per render. But
+`__ccrUniverse({solo:false})` on a page already showing the map does not
+re-render: it toggles `body.u-solo` through `setSolo()`, keeping the zoom, the
+selection and the moves (S228's design). So stepping down left the old
+control's state on screen — the jsdom check saw state 0, `u-solo` off, and a
+down control still enabled. The fix is one line: `setSolo()` calls
+`paintWins()`. The rule underneath is the 2026-09-04 one ("paint the state,
+never hardcode it in the markup") with its second half: paint it from EVERY
+path that changes the state, and a class toggle is such a path.
+
+### A dimmed inert control fails the sweep twice
+
+The first cut disabled the down control at state 0 with `opacity:.45`.
+`npm run a11y` failed the comprehensive route on it twice over: 2.04:1 for the
+glyph, and "focusable with no ring", because the checker reasons from the tag.
+Not painting it at all (`hidden`) passes both and is what Sam's glyph rule asks
+for anyway: a mark that cannot say what it is for should not be there. And the
+`hidden` attribute needs its own CSS line when the element's display is set by
+a class — `.u-top .u-win{display:inline-flex}` overrides the user agent's
+`[hidden]{display:none}`.
+
+### A search means a search
+
+"Make it multi-select capable" had one design question: what does Enter do
+once picks accumulate? A pick from the list ADDS a chip; Enter REPLACES the
+selection with one term chip. One chip behaves exactly as a single pick or
+search always did — the 157 existing checks kept passing untouched — and
+several chips ring every course, outline every discipline and fit them all.
+Backspace in an empty box drops the last chip, the token-input convention.
+
+### The canvas palette is CSS tokens
+
+First Light says `var(--token)`, never a raw hex; a canvas cannot read CSS. So
+`readPal()` asks the body's computed style for each `--sky-*` token at draw
+time, `body.u-dark` redefines the set, and the legend swatches moved from
+inline colors to classes on the same tokens — one rule set colors the chrome,
+the legend and the canvas. jsdom answers "" for every custom property, so the
+light values are the fallback and every existing check kept its colors. The
+dark ground is opt-in and remembered per browser; every text pair on `#1E1E1C`
+is measured (ink 13.9:1, body 11.0, muted 6.9, the on-dark cobalt 6.5).
+
+### The harness met COBI's greeting
+
+The first Chromium drive of the framed page timed out clicking ☰: First
+Light's first-visit greeting dialog (`.cplfl-overlay`) sat over the frame and
+intercepted the pointer. A harness that drives COBI has to do what a
+first-time visitor does — dismiss the greeting — before it can reach anything.
+Recorded because it will meet the next harness too.
+
+### What the Obsidian screenshot gave, and what it did not
+
+Taken: the trio of window controls in the title row, a sidebar toggle at the
+top left, a dark ground. Left: the right-edge vertical rail of glyphs (zoom in,
+reset, fit, zoom out, undo, redo, help). The row already carries those as
+words, and a second copy as glyphs is exactly the noise his glyph rule names;
+whether the words should BECOME the rail is his call, and the lane file asks.
+
+### Verification
+
+`tests/ccr_skyview_universe.test.js` 157 → 188 (the row, the Show switches,
+the legend fold, the window states, the tokens, the dark canvas, the
+explainer); `tests/ccr_skyview_first.test.js` 37 → 51 (the full-window class,
+the menu / dock / undock / ready messages, the source check, leaving the tab);
+`npm test` green; `prototype/check_ccr_atlas.js` green with the shards built
+(`--shards-only`); `npm run a11y -- skyview` green on six routes at three
+widths; a Chromium drive of `index.html#unified-courses` confirmed the full
+window, the rail from ☰, the outside click, dock, undock and close.
+
+### The header's second cut: the header's own vocabulary
+
+Mid-run Sam sent a screenshot of Claude's own header — small ghosted icons at
+the left, a title in a rounded field, expand and close at the right — with
+*"If you can further simplify and complete SkyView header components by
+incorporating features like your own header, please do it."* So the row lost
+three word chips (Go To, Sidebar, Dark) to ONE More menu that holds *Go to*
+(every other view, rendered flat under a heading rather than as a menu inside a
+menu), *Show or hide* (Sidebar, Legend, Dark canvas, each a row with an on/off
+word) and the doors out; Out / In / Reset became − % + ↺ in one bordered
+group; the title became a field; expand (⤢, ⤡ in full screen) took the middle
+window control. Every icon carries words as its accessible name and tooltip,
+and the text controls stay words in boxes — the icons are his ask, twice over
+(the OS trio on 2026-09-05 morning, the header that afternoon), which is what
+the glyph rule requires: a mark that proves its worth.
+
+⚠️ **One id collision cost twenty minutes.** The menu was `id="u-more"`, and
+`#u-more` already existed: the forest's host under the map. `getElementById`
+returned the menu, and the comprehensive view rendered the entire forest inside
+it. The check that caught it was "the details panel starts hidden", failing
+with *no element* — the sidebar row had been overwritten. A new element takes a
+new id, and a grep for the id before minting it is cheaper than the debugging.

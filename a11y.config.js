@@ -268,6 +268,7 @@ module.exports = {
       { hash: "disciplines", name: "disciplines" },
       { hash: "subjects", name: "subjects" },
       { hash: "esl", name: "esl" },
+      { hash: "how", name: "how" },
     ],
     widths: [390, 768, 1440],
     mayHideBelow: [

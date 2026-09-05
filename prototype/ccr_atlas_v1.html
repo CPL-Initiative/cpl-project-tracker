@@ -116,9 +116,9 @@ a{color:var(--cobalt)}
      border:1px solid var(--border-strong);background:var(--surface-opaque);
      color:var(--text-strong);cursor:pointer}
 .btn:hover{background:var(--surface-muted)}
-.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
 .btn.primary:hover{background:#003a8c}
-.btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:#fff}
+.btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
 
 /* ── forest grid ── */
 .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(215px,1fr))}
@@ -284,18 +284,18 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    the segmented LOOK. */
 .u-modes,.u-seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:999px;overflow:hidden;margin-right:4px}
 .u-modes .btn.mode,.u-seg .btn.mode{border:0;border-radius:0;background:var(--surface-opaque);color:var(--text-body);backdrop-filter:none}
-.u-modes .btn.mode[aria-pressed=true],.u-seg .btn.mode[aria-pressed=true]{background:var(--seal-blue,#002F6D);color:#fff}
+.u-modes .btn.mode[aria-pressed=true],.u-seg .btn.mode[aria-pressed=true]{background:var(--seal-blue,#002F6D);color:var(--on-accent,#fff)}
 .u-stage{display:flex;align-items:stretch;min-width:0}
 .u-foot{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:flex-start;
         padding:6px clamp(12px,2vw,24px);border-top:1px solid var(--border);background:var(--surface-subtle)}
 .u-foot .u-legend,.u-foot .u-hint{background:none;border:0;backdrop-filter:none;padding:0;max-width:none;border-radius:0}
 .u-foot .u-hint{flex:1 1 320px}
 .u-foot .u-legend{flex:0 1 auto}
-.u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:#fff}
+.u-sw.member{border-radius:1px;border-width:1.5px;border-color:var(--cobalt);background:var(--sky-hollow,#fff)}
 /* Noncredit reads as a BROKEN ring on the map, so the legend swatch shows the
    same break rather than describing it. Stroke, not colour: colour is already
    spent on the identity system. */
-.u-sw.nc{background:#fff;border-style:dashed;border-color:var(--text-muted)}
+.u-sw.nc{background:var(--sky-hollow,#fff);border-style:dashed;border-color:var(--text-muted)}
 .u-crnc{margin-left:2px}
 .u-wrap{position:relative;flex:1 1 auto;min-width:0;width:auto;height:78vh;overflow:hidden;background:var(--surface-opaque)}
 .u-wrap canvas{display:block;width:100%;height:100%;touch-action:none;cursor:default}
@@ -322,8 +322,8 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 .u-top{flex-wrap:nowrap;gap:6px 14px}
 .u-top .u-nav{min-width:0;flex:0 1 auto}
 .u-top .u-bar{margin-left:auto;min-width:0;flex:0 1 auto}
-.u-top .u-bar .btn{font-size:.76rem;padding:5px 8px}
-.u-top .u-bar .u-z{font-size:.76rem}
+/* One chip size at every width since 2026-09-05 (item 7) — see the block
+   further down; the row wraps below 1100px instead of shrinking. */
 /* ── the 2026-09-04 top row: title · views · search · controls · close ──────
    Sam's items 1-5. The order IS the ask: "SkyView label top left most",
    the view links folded into "a single drop down", the search "to the left of
@@ -348,7 +348,7 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    works. display:none is what actually takes them out of the layout and the
    tab order, and it is the difference between a hidden menu and a hidden
    keyboard trap. */
-.u-views:not([open]) .u-views-menu{display:none}
+details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in the More panel has no [open] and must show */
 .u-views-menu{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:210px;
               display:flex;flex-direction:column;align-items:stretch;gap:2px;padding:6px;
               background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));
@@ -378,7 +378,6 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
    only one row if the controls are compact, so they tighten between 1100 and
    1500 rather than wrapping. */
 @media (max-width:1500px){
-  .u-top .u-bar .btn{font-size:.72rem;padding:4px 6px}
   .u-top .u-bar{gap:4px}
   .u-search-slot{flex-basis:180px}
 }
@@ -398,12 +397,10 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
 .u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
   padding:8px 11px;border:1px solid var(--border-strong);border-radius:7px;
   background:var(--surface-opaque);color:var(--text-body)}
-.u-z{font-size:.8rem;color:var(--text-muted);background:var(--surface);padding:4px 8px;border-radius:6px}
 /* The zoom group's own label carries what Out/In/Reset act on, so the
    buttons could shorten to one word each without becoming glyphs. */
 .u-zgroup{display:inline-flex;align-items:center;gap:4px}
 .u-zlbl{font-size:.74rem;color:var(--text-muted);letter-spacing:.04em;text-transform:uppercase}
-.u-z b{color:var(--text-strong);font-variant-numeric:tabular-nums}
 .u-hint{font-size:.8rem;color:var(--text-muted);padding:8px 12px;line-height:1.4;
         border:1px solid var(--border);border-radius:8px;background:var(--surface);backdrop-filter:blur(4px)}
 .u-legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:.74rem;color:var(--text-muted);
@@ -411,11 +408,181 @@ p.ws-note{margin:.8em 0 0;max-width:var(--cpl-measure,none)}
           border-radius:8px;max-width:min(640px,calc(100% - 24px))}
 .u-legend span{display:flex;gap:5px;align-items:center}
 .u-sw{width:10px;height:10px;border-radius:50%;border:2px solid var(--text-muted);display:inline-block;flex:none}
-.u-sw.hollow{background:#fff;border-color:var(--violet)}
-.u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:#fff;
+.u-sw.hollow{background:var(--sky-hollow,#fff);border-color:var(--violet)}
+.u-sw.s0{background:var(--sky-sys0-fill);border-color:var(--sky-sys0-stroke)}
+.u-sw.s1{background:var(--sky-sys1-fill);border-color:var(--sky-sys1-stroke)}
+.u-sw.s2{background:var(--sky-sys2-fill);border-color:var(--sky-sys2-stroke)}
+.u-sw.s3{background:var(--sky-sys3-fill);border-color:var(--sky-sys3-stroke)}
+.u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
        box-shadow:0 6px 18px rgba(20,20,30,.22)}
-.u-tip .sub{color:#D6D6D0}
+.u-tip .sub{color:var(--tip-sub,#D6D6D0)}
+/* ══ 2026-09-05 — Sam's second SkyView list: one chip vocabulary (item 7),
+   the zoom stack (8), the Show menu (3), the window controls and menu (1),
+   the token search (2.1), the legend's own corner (5), the explainer (6) and
+   the dark canvas (2). ══ */
+:root{
+  --u-chip-h:30px; --u-chip-fs:.8rem; --u-chip-r:6px;
+  --on-accent:#fff; --tip-sub:#D6D6D0;
+  /* the map's palette — the canvas reads these at draw time (ccr_universe.js readPal) */
+  --sky-ground:#FFFFFF; --sky-island:#F7F5F1; --sky-island-hover:#F3F1EC; --sky-island-sel:#EDE7F8;
+  --sky-island-stroke:rgba(28,28,26,.18); --sky-tether:rgba(109,40,217,.28); --sky-hollow:#FFFFFF;
+  --sky-halo:rgba(255,255,255,.94); --sky-halo-fill:rgba(255,255,255,.8);
+  --sky-ink:#1C1C1A; --sky-ink-body:#3A3A36; --sky-ink-muted:#5C5C55; --sky-ink-force:#0047AB; --sky-ink-alert:#920000;
+  --sky-ring-search:#920000; --sky-ring-sel:#0047AB; --sky-ring-token:#0047AB;
+  --sky-leader:rgba(28,28,26,.55); --sky-leader-dot:rgba(28,28,26,.62);
+  --sky-leader-force:rgba(146,0,0,.75); --sky-leader-dot-force:rgba(146,0,0,.85);
+  --sky-ring-faint:rgba(28,28,26,.22); --sky-gone:#87877F; --sky-sq-moved:#EAF1E6; --sky-sq-carried:#E7EEF9;
+  --sky-sq-moved-stroke:#2C601A; --sky-drag:#0047AB;
+  --sky-sys0-fill:#F1EAFC; --sky-sys0-stroke:#6D28D9; --sky-sys1-fill:#E7EEF9; --sky-sys1-stroke:#0047AB;
+  --sky-sys2-fill:#FBF1D8; --sky-sys2-stroke:#8B6800; --sky-sys3-fill:#EFEFEC; --sky-sys3-stroke:#5C5C55;
+}
+/* The dark canvas (Sam, 2026-09-05: "Dark mode selector"). Opt-in and remembered
+   per browser; First Light stays a light identity, and this is the one
+   workspace that earns a dark ground — a map you stare at for an hour. Every
+   text pair on #1E1E1C is measured: ink 13.9:1, body 11.0, muted 6.9, the
+   on-dark cobalt 6.5, the on-dark mustard 7.7 (prototype/check_contrast.py). */
+body.u-dark{
+  --paper:#151514; --surface-opaque:#1E1E1C; --surface-subtle:#262624; --surface-muted:#30302E;
+  --surface:rgba(30,30,28,.86); --text-strong:#ECE9E2; --text-body:#D6D6D0; --text-muted:#ABABA3; --text-faint:#7A7A74;
+  --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.32);
+  --cobalt:#7DA1D4; --seal-blue:#7DA1D4; --focus-ring:#7DA1D4; --violet:#B28DEB; --hunter:#89A67F;
+  --crimson:#CF8F8F; --mustard-text:#E3B341; --on-accent:#141413; --tip-sub:#5C5C55;
+  --sky-ground:#1E1E1C; --sky-island:#2A2A28; --sky-island-hover:#313130; --sky-island-sel:#34294A;
+  --sky-island-stroke:rgba(255,255,255,.14); --sky-tether:rgba(178,141,235,.42); --sky-hollow:#1E1E1C;
+  --sky-halo:rgba(30,30,28,.94); --sky-halo-fill:rgba(30,30,28,.8);
+  --sky-ink:#ECE9E2; --sky-ink-body:#D6D6D0; --sky-ink-muted:#ABABA3; --sky-ink-force:#7DA1D4; --sky-ink-alert:#CF8F8F;
+  --sky-ring-search:#CF8F8F; --sky-ring-sel:#7DA1D4; --sky-ring-token:#7DA1D4;
+  --sky-leader:rgba(236,233,226,.55); --sky-leader-dot:rgba(236,233,226,.62);
+  --sky-leader-force:rgba(207,143,143,.8); --sky-leader-dot-force:rgba(207,143,143,.9);
+  --sky-ring-faint:rgba(255,255,255,.22); --sky-gone:#6B6B66; --sky-sq-moved:#1F3320; --sky-sq-carried:#1C2A44;
+  --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
+  --sky-sys0-fill:#2B2140; --sky-sys0-stroke:#B28DEB; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
+  --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
+  color-scheme:dark;
+}
+body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
+body.u-dark .chip.gen{background:#2B2140;border-color:#4C3A72}
+body.u-dark .chip.ok{background:#1F3320;border-color:#3A5A38}
+body.u-dark .chip.flag{background:#3A1A1A;border-color:#6A3030}
+body.u-dark table.uc-like th{background:#30302E;color:var(--mustard-text)}
+body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0 12px 30px rgba(0,0,0,.5)}
+/* one chip vocabulary: the same height, size and corner on every control in the row */
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary,.u-top .u-win,
+.u-search-slot .msearch input,.u-search-slot .msearch .u-search-go{
+  box-sizing:border-box;height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0 10px;margin:0;
+  font-size:var(--u-chip-fs);font-weight:600;line-height:1;border-radius:var(--u-chip-r);
+  display:inline-flex;align-items:center;gap:4px;backdrop-filter:none}
+.u-top .btn,.u-top .u-bar .btn,.u-top .u-views>summary,.u-top .u-show>summary{
+  background:var(--surface-opaque);border:1px solid var(--border-strong);color:var(--text-body);
+  text-decoration:none;cursor:pointer}
+.u-top .btn:hover,.u-top .u-views>summary:hover,.u-top .u-show>summary:hover{background:var(--surface-subtle)}
+.u-top .btn[aria-pressed=true]{background:var(--seal-blue);border-color:var(--seal-blue);color:var(--on-accent)}
+.u-top .u-modes,.u-top .u-seg{border-radius:var(--u-chip-r);height:var(--u-chip-h);align-items:stretch;margin:0}
+.u-top .u-modes .btn.mode{height:calc(var(--u-chip-h) - 2px);min-height:0;border-radius:0;border:0}
+.u-top .u-bar{gap:6px}
+.u-top .u-win{width:var(--u-chip-h);padding:0;justify-content:center;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);color:var(--text-muted);font-size:.9rem;font-weight:400;cursor:pointer}
+.u-top .u-win:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-top .u-win[hidden]{display:none}
+.u-wins{display:inline-flex;gap:4px;flex:0 0 auto;margin-left:2px}
+.u-top .u-menu{font-size:1rem;margin-right:2px}
+/* the zoom label and its figure stack inside one chip height (item 8) */
+.u-zgroup{gap:4px}
+.u-zstack{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;
+  height:var(--u-chip-h);line-height:1;padding:0 4px 0 2px;gap:2px}
+.u-zstack .u-zlbl{font-size:.58rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted)}
+.u-zstack b{font-size:.7rem;color:var(--text-strong);font-variant-numeric:tabular-nums}
+/* the Show menu (item 3) */
+.u-show{position:relative;flex:0 0 auto}
+.u-show>summary{list-style:none}
+.u-show>summary::-webkit-details-marker{display:none}
+.u-show>summary::after{content:"\25BE";font-size:.7em;color:var(--text-muted)}
+.u-show>summary b{font-weight:700;color:var(--text-strong)}
+.u-show:not([open]) .u-show-menu{display:none}
+.u-show-menu{position:absolute;z-index:70;top:calc(100% + 6px);right:0;min-width:260px;
+  display:flex;flex-direction:column;gap:8px;padding:10px 12px;background:var(--surface-opaque);
+  border:1px solid var(--border-strong);border-radius:9px;box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-show-menu fieldset{border:0;margin:0;padding:0;display:flex;flex-direction:column;gap:0;min-width:0}
+.u-show-menu legend{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);
+  padding:0;margin:0 0 2px;font-weight:700}
+.u-show-menu label{display:flex;align-items:center;gap:7px;font-size:.84rem;min-height:26px;cursor:pointer;color:var(--text-body)}
+.u-show-menu input{width:16px;height:16px;margin:0;accent-color:var(--cobalt);flex:none}
+.u-show-all .linkish{font-size:.84rem;min-height:24px;display:inline-flex;align-items:center}
+/* the token search (2.1): chips before the box, a wider dropdown whose rows wrap (2.2, 2.4) */
+.u-search-slot .sugwrap{flex-wrap:wrap;gap:4px;align-items:center}
+.u-tokens{display:contents}
+.u-tok{display:inline-flex;align-items:center;gap:5px;height:var(--u-chip-h);padding:0 3px 0 8px;
+  border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
+  font-size:.78rem;max-width:150px;color:var(--text-body)}
+.u-tok-k{font-size:.6rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted);white-space:nowrap}
+.u-tok-l{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.u-tok-x{border:0;background:none;color:var(--text-muted);cursor:pointer;font-size:1rem;line-height:1;
+  width:24px;height:24px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;padding:0}
+.u-tok-x:hover{background:var(--surface-muted);color:var(--text-strong)}
+.u-tok-clear{font-size:.78rem;height:var(--u-chip-h);display:inline-flex;align-items:center;padding:0 8px;
+  text-decoration:none;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--u-chip-r);background:var(--surface-opaque)}
+.u-tok-clear:hover{color:var(--text-strong);background:var(--surface-subtle)}
+.u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
+  color:var(--text-body);border:1px solid var(--border-strong)}
+.sug{right:auto;min-width:100%;width:min(760px,calc(100vw - 24px))}
+.sug li{align-items:flex-start;white-space:normal}
+.sg-k,.sg-l,.sg-r{font-size:.84rem}
+.sg-k{min-width:7.4em;padding-top:.05em;letter-spacing:.04em}
+.sg-l{white-space:normal;overflow:visible;text-overflow:clip;overflow-wrap:anywhere}
+.sg-r{white-space:normal;flex:0 1 auto;text-align:right;max-width:44%;overflow-wrap:anywhere}
+/* the legend folds from the map's own corner (item 5) */
+.u-legend-toggle{position:absolute;z-index:4;right:10px;bottom:8px;display:inline-flex;align-items:center;gap:6px;
+  min-height:26px;padding:2px 9px;font:inherit;font-size:.76rem;font-weight:400;color:var(--text-muted);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--u-chip-r);cursor:pointer;backdrop-filter:blur(4px)}
+.u-legend-toggle:hover{color:var(--text-strong);background:var(--surface-opaque)}
+.u-legend-toggle .u-fold{font-size:.7em;color:var(--text-muted)}
+/* How SkyView works (item 6) */
+.how{max-width:var(--cpl-measure,none)}
+.how-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin:0 0 8px}
+.how-head h1{margin:0}
+.how-lede{font-size:1.05rem}
+.how h2{margin:22px 0 8px}
+.how-fig{margin:10px 0 14px;max-width:560px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:9px;padding:10px 12px}
+.how-fig svg{width:100%;height:auto;display:block}
+.how-list{margin:0 0 .8em;padding-left:20px}
+.how-list li{margin:0 0 6px}
+.how-steps{margin:0;padding-left:22px}
+.how-steps li{margin:0 0 6px}
+.how kbd{font-family:inherit;font-size:.9em;border:1px solid var(--border-strong);border-radius:4px;padding:0 5px;background:var(--surface-subtle)}
+@media (max-width:1100px){ .u-wins{margin-left:auto} }
+/* ── the header's own vocabulary (Sam, 2026-09-05, from a screenshot of Claude's
+   header): ghosted icon actions, a title field, one More menu, expand + close ── */
+.u-top .u-ico{box-sizing:border-box;width:var(--u-chip-h);height:var(--u-chip-h);min-height:var(--u-chip-h);padding:0;margin:0;
+  display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;border-radius:var(--u-chip-r);
+  background:transparent;color:var(--text-muted);font:inherit;font-size:1rem;line-height:1;cursor:pointer;list-style:none}
+.u-top .u-ico:hover{background:var(--surface-subtle);color:var(--text-strong);border-color:var(--border)}
+.u-top .u-ico[hidden]{display:none}
+.u-top .u-ico::-webkit-details-marker{display:none}
+.u-top .u-title{border:1px solid var(--border-strong);border-radius:var(--u-chip-r);height:var(--u-chip-h);padding:0 10px;
+  display:inline-flex;align-items:center;font-size:.85rem;background:var(--surface-opaque);color:var(--text-strong)}
+.u-top .u-zgroup{gap:0;border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-opaque);height:var(--u-chip-h);align-items:center;padding:0 2px}
+.u-top .u-zgroup .u-ico{border-color:transparent;height:calc(var(--u-chip-h) - 4px);width:26px}
+.u-zread{font-size:.74rem;color:var(--text-strong);font-variant-numeric:tabular-nums;min-width:3.2em;text-align:center;padding:0 2px}
+.u-more{position:relative;flex:0 0 auto}
+.u-more>summary{list-style:none;cursor:pointer}
+.u-more:not([open]) .u-more-panel{display:none}
+.u-more-panel{position:absolute;z-index:70;top:calc(100% + 6px);left:0;min-width:240px;display:flex;flex-direction:column;
+  gap:2px;padding:8px;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;
+  box-shadow:0 12px 30px rgba(20,20,30,.17)}
+.u-more-h{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700;padding:6px 8px 2px}
+.u-more-h+.u-more-h{margin-top:6px}
+.u-views-flat .u-views-menu{position:static;min-width:0;padding:0;border:0;box-shadow:none;background:none}
+.u-more-t{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px;padding:2px 8px;border:0;
+  border-radius:6px;background:none;font:inherit;font-size:.86rem;color:var(--text-body);cursor:pointer;text-align:left;width:100%}
+.u-more-t:hover{background:var(--surface-subtle)}
+.u-more-t .u-state{font-size:.7rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-muted)}
+.u-more-t[aria-pressed=true] .u-state{color:var(--cobalt);font-weight:700}
+/* the search field and its button read as one control */
+.u-search-slot .msearch{gap:0}
+.u-search-slot .msearch input{border-radius:var(--u-chip-r) 0 0 var(--u-chip-r)}
+.u-search-slot .msearch .u-search-go{border-radius:0 var(--u-chip-r) var(--u-chip-r) 0;margin-left:-1px}
+.u-top .u-bar{gap:4px}
 /* The details panel is DOCKED beside the map, never over it (Sam, 2026-09-03:
    "move the zoom and other buttons and popups outside the SkyView window so
    users can work more freely"); a course still drags from it onto a circle. On
@@ -493,7 +660,7 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
     <div class="sugwrap">
       <input type="search" id="gq" autocomplete="off" role="combobox" aria-expanded="false"
              aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
-             placeholder="Search a course, code or discipline — e.g. welding, MATH 110, phlebotomy">
+             placeholder="Search a course, code or discipline">
       <ul class="sug" id="sug" role="listbox" aria-label="Search suggestions" hidden></ul>
     </div>
     <button class="btn primary" type="submit">Search</button>
@@ -624,7 +791,7 @@ function openSug(term){
       ? num(it.n) + " identit" + (it.n === 1 ? "y" : "ies")
       : esc(it.sub || "");
     return '<li id="sug-'+i+'" role="option" aria-selected="false" data-i="'+i+'">'+
-      '<span class="sg-k">'+esc(it.kindWord || (it.kind === "subject" ? "subject" : "course"))+'</span>'+
+      '<span class="sg-k">'+esc(it.kindShort || it.kindWord || (it.kind === "subject" ? "DISC" : "CRSE"))+'</span>'+
       '<span class="sg-l">'+esc(it.label)+'</span>'+
       '<span class="sg-r">'+right+'</span></li>';
   }).join("");
@@ -643,6 +810,11 @@ if (gqEl){
   gqEl.addEventListener("input", function(){ openSug(gqEl.value); });
   gqEl.addEventListener("keydown", function(ev){
     if (ev.key === "Escape"){ closeSug(); return; }
+    // An empty box and Backspace drops the last chip of the selection (2026-09-05).
+    if (ev.key === "Backspace" && !gqEl.value && typeof window.__ccrTokenBack === "function"){
+      if (window.__ccrTokenBack()) ev.preventDefault();
+      return;
+    }
     if (!sugItems.length) return;
     if (ev.key === "ArrowDown"){ ev.preventDefault(); sugAt = (sugAt+1) % sugItems.length; markSug(); }
     else if (ev.key === "ArrowUp"){ ev.preventDefault(); sugAt = (sugAt<=0?sugItems.length:sugAt)-1; markSug(); }

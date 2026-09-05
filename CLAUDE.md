@@ -389,7 +389,12 @@ first day.** Do the remembering for them.
   github.io URL to it 404s): per item, what it is in plain words, the measured context (from the
   maps and feeds, never guessed), a PROPOSED disposition with its draft
   reason, and reply-by-number verdicts (`yes · edit: … · fold: … ·
-  dismiss: …`). The session executes the verdicts and commits the reasons.
+  dismiss: …`). **Every sheet carries reply chips** (S230:
+  `python3 kb/_decision_sheet_replies.py --inject <sheet.html>`) — a verdict,
+  a *Follow up* toggle and a note per item, saved to the artifact's own store
+  (publish with `capabilities: {db: {}}`) which the session reads FIRST with the
+  Artifact tool's `read_db` (collection `replies`); off the artifact, *Copy
+  replies* builds the line. The session executes the verdicts and commits the reasons.
   This replaces asks scattered through chat and feed items parked for weeks;
   the To-Do feed POINTS at the live sheet, never substitutes for it. Worked
   example: `docs/visuals/2026-08-30-governance-fifteen-tables.html` —
@@ -770,29 +775,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyMint S227 — the masthead, one command for accessibility, and SkyView's top row (2026-09-04/05)
-
-**Four PRs (#1469, #1473, #1474, #1476).** The masthead zoom mess was three CSS
-defaults, each imposing a floor a layout cannot shrink past. ⭐ **Accessibility
-became ONE COMMAND**: `npm run a11y` — 42 views in ~100s, COBI's 38 tabs
-**discovered from its own nav** so a new tab is measured the day it ships;
-`a11y.config.js` is the only file another project rewrites. Sam ruled the
-three-mechanism plan (checker · hook · skill) down to its first third. ⭐ **Six
-of the first run's loudest findings were the harness**, one of which reported a
-control as broken *after* it was fixed. Five chrome-wide source lines cleared
-~200 findings across all 38 views (nav headings 3.38:1 and 23.9px, the rail's
-signed-out line, two 21.7px controls, a 3.08:1 gradient, and
-`prefers-reduced-motion`, honored in **none** of five animations). Still red and
-named: 5 tabs scroll sideways at 390px, 18 carry 86 sub-AA pairs, 4,042 small
-targets = **54 selectors**. ⭐ **CI was red repo-wide for ~40 minutes and it was
-not our code**: `package-lock.json` is gitignored, so `npm install` resolves
-ranges live; playwright shipped a 404 tarball. Both deps pinned exactly. SkyView
-gained the CCR table-view link, "discipline" everywhere it meant one, and a top
-row of title · Views menu · search · controls · close — ⭐ **item 11 was
-structural**: the one search box lived in the masthead, which full screen does
-not paint. Stories: `cobi_lessons`, `public_pages_a11y_lessons`,
-`ccr_atlas_lessons`; handoff `session_228_handoff`.
-
 ### SkyQuiet S228 — SkyView is the map alone, and the CCR menu opens it that way (2026-09-05)
 
 **One PR (#1479).** Each earlier attempt at "open SkyView full screen" changed a MECHANISM and
@@ -803,6 +785,21 @@ COBI's CCR tab hides its chrome and fills the column; close posts back to the ta
 SUBJ4 grain, 344 codes read off the identity ids)** · ESL packaging, one Views menu on every view.
 ⭐ **The harness found a latent bug one click in** (a forest cell destroyed the borrowed search
 box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
+
+### SkyKeep S230 — the sheet takes replies; SkyView's second list and the full window (2026-09-05)
+
+**One PR (#1481) + the republished sheet.** ⭐ **Decision sheets take replies on the page**: chips, a
+*Follow up* toggle and a note per item, saved to the artifact's own store and read by the next session
+with `read_db` (`kb/_decision_sheet_replies.py`); ⚠️ the sheet's committed builder predates the sheet, so
+the controls went on as an idempotent pass (KB note). SkyView's second list, all of it: one chip
+vocabulary, then the header's second cut in the style of Claude's own (ghosted icon actions, a title
+field, one More menu holding *Go to*, Sidebar, Legend and Dark canvas), the Show menu of twelve
+switches, the legend folding from its own corner, *How SkyView works*, the OS window controls (three
+states, two steps), a ☰ that opens COBI's rail (collapsed by default), the search as a selection of
+chips (a pick adds, Enter replaces), and a dark canvas on `--sky-*` tokens. Replies also sit under
+every memory a batch item lists. ⭐ **The CCR click opens the full window**
+(`body.cpl-skyview-solo`). ⭐ A class toggle is not a re-render: `setSolo` paints the controls now.
+Stories: `ccr_atlas_lessons`, `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
 
 ## Troubleshooting
 
