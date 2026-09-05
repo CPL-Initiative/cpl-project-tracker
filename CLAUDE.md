@@ -39,10 +39,12 @@ kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
 finished_workstreams · `lanes/` (see the stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, triggered by their own
-`description` rather than by a pointer: **exhibit-canonicalization** (collapsing
-freehand MAP exhibit titles into unified credential names) and
-**obsidian-markdown**. They are named here because a store nobody names is a
-store nobody finds — `unreferenced_offload` flags any that stop being.
+`description` rather than by a pointer: **consult-doctrine** (what has this repo
+already decided about the files I am reading — the answer to a rule that only
+fires when remembered), **exhibit-canonicalization** (collapsing freehand MAP
+exhibit titles into unified credential names) and **obsidian-markdown**. They are
+named here because a store nobody names is a store nobody finds —
+`unreferenced_offload` flags any that stop being.
 
 ---
 

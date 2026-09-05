@@ -25,15 +25,34 @@ a title that states the rule, and **indexed to the exact file**. What was
 missing was a way to ask. Recall does not scale past a few dozen notes; lookup
 does.
 
-    python3 kb/doctrine.py --changed              # ⭐ the one to use
+    python3 kb/doctrine.py --changed              # ⭐ before you WRITE
+    python3 kb/doctrine.py --read                 # ⭐ before you CONCLUDE
     python3 kb/doctrine.py cpl_chat.js tests/x.js
     python3 kb/doctrine.py --topic caps
 
+--read: THE ANALYSIS SIDE (Sam's ruling 11, 2026-09-05)
+------------------------------------------------------
+`--changed` reads the DIFF, so it only ever fires once you are already writing.
+The expensive mistakes are made earlier, while READING: a number measured
+against the wrong set, a file believed stale that is rebuilt nightly, a
+conclusion drawn before the doctrine that governs it was consulted. No diff
+exists yet, so `--changed` is silent on exactly the errors that go on to be
+written down as findings.
+
+`--read` closes that: it takes the files THIS SESSION HAS ACTUALLY OPENED —
+from the live transcript, the same source `kb/_context_budget.py` measures — and
+asks the same question of them. Worked example, Session 232: welding ids were
+reported 44% dead against `unified_courses_data.js`, a payload that ships 16,480
+of 76,008 rows. No line of code was wrong. The reading was.
+
 ⚠ HONEST LIMIT — this still has to be INVOKED, which is the same weakness as any
-rule that lives in prose. It is a smaller weakness only because `--changed`
-needs no knowledge of WHICH note matters: it reads the diff. The mechanism that
-needs no invocation is a test (see `tests/lib/check_ledger.js`), and where a
-rule can be made into one, it should be. This is for the majority that cannot.
+rule that lives in prose. It is a smaller weakness only because neither mode
+needs knowledge of WHICH note matters: `--changed` reads the diff and `--read`
+reads the transcript. The mechanism that needs no invocation is a test (see
+`tests/lib/check_ledger.js`), and where a rule can be made into one, it should
+be — this is for the majority that cannot. The skill
+`.claude/skills/consult-doctrine/` is the other half of ruling 11: it fires on
+its own description, so the tool gets reached for without being remembered.
 
 Pure stdlib. Read-only — it never writes a file.
 """
@@ -219,6 +238,76 @@ def changed_files(base=None):
     return sorted(f for f in out if not f.startswith("docs/kb-notes/"))
 
 
+# Tools whose input names a file directly. Bash is handled separately — in an
+# auto-mode session EVERY read is a shell command, so a transcript can carry
+# zero Read calls and still have opened forty files.
+_PATH_TOOLS = {"Read": "file_path", "Edit": "file_path", "Write": "file_path",
+               "NotebookEdit": "notebook_path", "Glob": "path", "Grep": "path"}
+# A heredoc BODY is content being written, not a file being read — and a session
+# that authors documentation mentions dozens of paths it never opened. Strip the
+# body before matching or `--read` reports what you wrote about, not what you
+# read. (Caught on its own first run: the docstring below names cpl_chat.js.)
+_HEREDOC_RE = re.compile(r"<<-?\s*'?\"?(\w+)'?\"?[^\n]*\n.*?^\1\b", re.S | re.M)
+# Paths as they appear inside a shell command: an argument that looks like a
+# repo file. Anchored on the extension so a bare word or a flag never matches.
+_SH_PATH_RE = re.compile(
+    r"""(?<![\w/.-])((?:[\w.-]+/)*[\w.-]+\.(?:py|js|mjs|cjs|ts|tsx|json|md|html|css|yml|yaml|sql|sh|ps1|txt|csv))""")
+
+
+def _transcript_path():
+    """Newest .jsonl under ~/.claude/projects/ — the live session writes
+    continuously, so mtime selects it. Same discovery kb/_context_budget.py
+    uses; kept local so neither module imports the other."""
+    import glob as _glob
+    found = _glob.glob(os.path.join(os.path.expanduser("~"), ".claude",
+                                    "projects", "*", "*.jsonl"))
+    return max(found, key=os.path.getmtime) if found else None
+
+
+def read_files(transcript=None):
+    """Every repo file this session has opened, newest first.
+
+    Read-only and fail-soft: no transcript, an unreadable one or a half-written
+    final line must return [] rather than raise — this is a helper you reach for
+    when you are already unsure, and it must never be the thing that breaks."""
+    import json as _json
+    path = transcript or _transcript_path()
+    if not path or not os.path.exists(path):
+        return []
+    seen, order = set(), []
+    def add(cand):
+        if not cand or cand.startswith("-"):
+            return
+        rel = _norm(cand)
+        if rel in seen or not os.path.exists(os.path.join(ROOT, rel)):
+            return
+        seen.add(rel)
+        order.append(rel)
+    try:
+        with open(path, errors="replace") as fh:
+            for line in fh:
+                if '"tool_use"' not in line:
+                    continue
+                try:
+                    rec = _json.loads(line)
+                except (ValueError, TypeError):
+                    continue
+                for b in (rec.get("message") or {}).get("content") or []:
+                    if not isinstance(b, dict) or b.get("type") != "tool_use":
+                        continue
+                    inp = b.get("input") or {}
+                    key = _PATH_TOOLS.get(b.get("name"))
+                    if key:
+                        add(inp.get(key))
+                    elif b.get("name") == "Bash":
+                        cmd = _HEREDOC_RE.sub(" ", str(inp.get("command") or ""))
+                        for m in _SH_PATH_RE.finditer(cmd):
+                            add(m.group(1))
+    except OSError:
+        return []
+    return list(reversed(order))
+
+
 def rank(hits, prescriptive_only=True):
     """Dedupe by slug, best tier wins, rules before reference material."""
     best = {}
@@ -250,7 +339,11 @@ def main(argv=None):
         description="What has this repo already decided about these files?")
     ap.add_argument("paths", nargs="*", help="files you are about to change")
     ap.add_argument("--changed", action="store_true",
-                    help="read the files from the working diff (the usual way in)")
+                    help="take the files from the working diff (before you WRITE)")
+    ap.add_argument("--read", action="store_true",
+                    help="take the files this session has OPENED, from the live "
+                         "transcript (before you CONCLUDE — the analysis side)")
+    ap.add_argument("--transcript", help="explicit transcript path for --read")
     ap.add_argument("--base", default=None,
                     help="also include everything changed since this ref (e.g. origin/main). "
                          "OFF by default — a stale remote ref makes the answer unreadably long.")
@@ -278,7 +371,15 @@ def main(argv=None):
         return 0
 
     targets = list(args.paths)
-    if args.changed or not targets:
+    if args.read:
+        opened = read_files(args.transcript)
+        if not opened:
+            print("No transcript found (or nothing read yet) — `--read` needs a live "
+                  "session under ~/.claude/projects/.", file=sys.stderr)
+        # newest first, and capped: the tail of a long session is what the
+        # current conclusion actually rests on.
+        targets.extend(f for f in opened[:40] if f not in targets)
+    if args.changed or (not targets and not args.read):
         found = changed_files(args.base)
         if not found and not targets:
             print("Nothing changed, and no paths given. Try:\n"
@@ -286,6 +387,9 @@ def main(argv=None):
             return 0
         targets.extend(f for f in found if f not in targets)
 
+    if not targets:
+        print("Nothing to look up.")
+        return 0
     print("\n═══ Doctrine for {} file(s) — `*` = the note names this file explicitly"
           .format(len(targets)))
     total = 0

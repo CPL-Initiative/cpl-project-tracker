@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 427,
+  "file_datasets": 429,
   "external_services": 137,
   "consumers": 318,
   "workflows": 33,
@@ -2766,7 +2766,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 86
     }
    ],
    "served": true,
@@ -3013,7 +3013,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 86
     }
    ],
    "served": true,
@@ -4780,7 +4780,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 86
     }
    ],
    "served": false,
@@ -9413,6 +9413,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 208
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/identities_rekey_out/2026-09-05/dead_worklist.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_identities_rekey_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 223
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/insert.sql": {
    "consumers": [
     {
@@ -12179,7 +12205,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 86
     }
    ],
    "served": true,

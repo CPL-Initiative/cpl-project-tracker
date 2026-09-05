@@ -445,6 +445,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/futuro_hth_map_reference.json` | scripts: `kb/_build_futuro_hth_crosswalk.py` | — |
 | `kb/governance_candidates.json` | tabs: `governance` | committed by: `daily-dashboard.yml` |
 | `kb/governance_register.json` | tabs: `governance` | — |
+| `kb/identities_rekey_out/2026-09-05/dead_worklist.json` | scripts: `kb/_identities_rekey_dryrun.py` | — |
+| `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/issuer_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_null_issuers.py`, `kb/_verify_issuer_preseed.py` | scripts: `kb/_preseed_null_issuers.py` |
 | `kb/kb/reference/coci_program_course_file.csv.gz` | modules: `kb/_college_apprenticeship_cpl_roster.js` | — |
@@ -806,5 +808,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 427 file
+Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 429 file
 datasets · 137 external services · 318 consumers · 33 workflows · 37 tabs.
