@@ -1,7 +1,7 @@
 ---
 title: Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)
 created: 2026-07-24
-updated: 2026-07-24
+updated: 2026-09-05
 tags: [playbook, memory, supabase, checkpoint, governance, obsidian-target]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -134,6 +134,15 @@ from public.cpl_memory m where m.slug in ('<slug1>','<slug2>');
   *trickle* of what this run genuinely learned.
 - **Never** write secrets/PII; sessions only ever set `visibility='internal'`
   (public promotion is curation-gated, `r1`).
+- **Lint it when the hopper is worked (added 2026-09-05).** `kb/_memory_audit.py`
+  is the table's structural lint — dead paths, dangling `related` pointers, a
+  stale row still wearing a stamp, PRs not on `main`, null slugs, near-duplicates
+  — READ-ONLY, over an export (`--from-json`; the query is in its docstring).
+  Run it before a hopper sweep and after one; its `snapshot_claim` list is the
+  set of rows whose numbers will drift. The semantic test — is the claim still
+  true against `docs/reference/lanes/`? — stays a session's read, applied under
+  a committed receipt with one `cpl_memory_log` row per write
+  (`kb/memory_audit/2026-09-05-receipt.json`, Session 229).
 - **Optionally** regenerate the Obsidian mirror `docs/memory/cpl_memory.md` from
   the live table at checkpoint (keeps the vault copy fresh) — nice-to-have, not
   required.

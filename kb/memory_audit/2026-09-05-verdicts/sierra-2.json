@@ -1,0 +1,1046 @@
+{
+  "part": "sierra-2",
+  "expected_rows": 36,
+  "coverage": {
+    "rows_read": 36,
+    "rows_judged": 36,
+    "note": "All 36 rows judged. Partition orders by created_at, so this slice runs 2026-08-13 to 2026-08-28 (the first 16 rows predate the brief's rough 08-19 start). Sierra's live prose cannot be exercised from the sandbox (egress-blocked from *.supabase.co), so behavioral claims were tested against code, tests, lane files, live tables and Sam-verified rows only."
+  },
+  "counts": {
+    "confirmed": 34,
+    "stale": 0,
+    "superseded_by_row": 2,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "58d6e10b-fd01-4957-87fa-1f28fc40e7f6",
+      "slug": "map-contact-fields-hold-several-people-and-bad-addresses",
+      "kind": "pitfall",
+      "title": "One MAP contact field can hold several people, and one address has no domain ending at all",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live 2026-09-05: Cypress still holds three addresses in cpl_coordinator_email (comma + newline separated) with jrangel@cypresscollege lacking a TLD; cpl-chat validates with EMAIL_RE. The trailing-space college names are gone (0 rows), so that sub-finding is cleaned; the lesson stands.",
+      "evidence": [
+        {
+          "source": "sql: select cpl_coordinator_email from map_college_contacts where college ilike 'Cypress%'",
+          "quote": "jgarcia@cypresscollege.edu, jrangel@cypresscollege,\\njgrande@cypresscollege.edu"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2197-2202",
+          "quote": "const EMAIL_RE = /^[^@\\s]+@[^@\\s]+\\.[A-Za-z]{2,}$/; ... if (v && v.toUpperCase() !== \"NA\" && EMAIL_RE.test(v)) return v;"
+        },
+        {
+          "source": "sql: select college from map_college_contacts where college <> btrim(college)",
+          "quote": "0 rows (123 total; max synced_at 2026-09-04)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d52b6bb0-e0ec-4ccb-9bb5-7f715a0bddaa",
+      "slug": "attribution-per-course-does-not-prove-a-real-pairing",
+      "kind": "pitfall",
+      "title": "A field that looks like it pairs a course with a recommendation does not prove the pairing is real",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live counts match exactly (8,809 per_course / 604 group_wide = 9,413) and the scope doc plus the alignment lane file carry the same lesson: per_course does not catch the AJ 110 cross-join.",
+      "evidence": [
+        {
+          "source": "sql: select attribution, count(*) from chatbox_peer_articulations group by 1",
+          "quote": "per_course 8809 · group_wide 604"
+        },
+        {
+          "source": "docs/common_cr_reference_scope.md:130",
+          "quote": "`attribution = 'per_course'` does NOT catch this — every one of those `AJ 110` rows is labeled `per_course`."
+        },
+        {
+          "source": "docs/reference/lanes/local-course-cr-alignment.md:24",
+          "quote": "`attribution`: 8,809 `per_course`, 604 `group_wide` — name group-wide peers as a GROUP, never pair a college to a course."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7f79fbf8-d4d2-4f83-915e-33e74e396546",
+      "slug": "sierra-cannot-see-map-evidence-fields",
+      "kind": "fact",
+      "title": "Sierra has no access or awareness of the Exhibit CRs Catalog evidence fields",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Headline still true: no public-schema column matches evidence/submission/guideline and cpl-chat reads no such field. The summary's third proof is dated: fetch_custom_report.py HAS requested the three evidence fields since #1177 (2026-08-14); they land in no Supabase table.",
+      "evidence": [
+        {
+          "source": "sql: information_schema.columns where column_name ilike '%evidence%' or '%submission%' or '%guideline%'",
+          "quote": "NONE"
+        },
+        {
+          "source": "fetch_custom_report.py:264-265 (git blame ecc3ee8c 2026-08-14, #1177)",
+          "quote": "\"EvidenceDescription\", \"EvidenceTypeID\", \"SubmissionGuidelines\", \"AceID\", \"CPLTypeCode\"]"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts (grep -i evidence)",
+          "quote": "no field reference — the word appears only in prose/comments (lines 1169, 1310, 1495, 2517)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "92fd73c7-2ebe-4f6e-81a8-d42aeb7e1718",
+      "slug": "evidence-fields-empty-on-military-by-design",
+      "kind": "fact",
+      "title": "The Exhibit CRs Catalog evidence fields are empty on military rows BY DESIGN, not by defect",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The published KB field census states the same finding with the same numbers (271,783 rows; 8,811 non-military; 6,705 carrying evidence; 2.5% fill).",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:89",
+          "quote": "## ⭐ The evidence fields are empty on military rows BY DESIGN"
+        },
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:96-97",
+          "quote": "Non-military rows total **8,811** (`IC`+`SA`+`Cx`+`PR`+`O`), and 6,705 carry evidence"
+        },
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:48",
+          "quote": "`EvidenceDescription` | **2.5%** | 146 | max 349 chars, **not truncated**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "48fa6bb8-6988-4579-9ef6-7686ca16b20b",
+      "slug": "sierra-builtin-rules-outrank-team-guidance",
+      "kind": "pitfall",
+      "title": "Sierra's built-in prompt rules outrank team guidance in practice, though the prompt promises otherwise",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Mechanism unchanged: guidance is still appended last under the same 'team guidance wins' sentence, and the lane file (08-28) still says built-ins win in practice. Detail is dated: #1186 put the rules in sierra_rules with sort_order and #1190 made them visible/editable.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3355",
+          "quote": "TEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins)"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2661",
+          "quote": "guidance wins\" is a SENTENCE, NOT A MECHANISM — a specific prohibition earlier"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "It will NOT deliver behavior contradicting a BUILT-IN rule (built-ins win in practice); that needs the rule registry to become surface-aware."
+        },
+        {
+          "source": "chatbox/supabase_sierra_rules.sql (header)",
+          "quote": "sort_order — precedence. Judgment, and the whole point: precedence has to be DATA, because as a sentence it did not hold."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "96e0e262-4db4-405b-a34d-57362b1665e4",
+      "slug": "judgment-in-tables-mechanism-in-code",
+      "kind": "decision",
+      "title": "COBI design principle (Sam): move instructional variables to curatable tables - judgment in tables, mechanism in code",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Sam's ruling is recorded verbatim in a published ADR note and implemented by the live sierra_rules table (#1186), whose header states the principle; still governs.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md:22-25",
+          "quote": "\"Seems this should be a design principle for COBI — to move as much as possible instructional variables to curatable tables...\" — Sam, 2026-08-14"
+        },
+        {
+          "source": "chatbox/supabase_sierra_rules.sql (header)",
+          "quote": "Judgment in tables, mechanism in code. So: body — the rule TEXT. Judgment. Curatable."
+        },
+        {
+          "source": "sql: information_schema.columns for sierra_rules",
+          "quote": "key, title, body, applies_when, sort_order, active, memory_slug, updated_by, updated_at, created_at"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "158c9eea-4cdb-4fa4-9367-b2711ea91743",
+      "slug": "sierra-adopter-names-never-reached-the-prompt",
+      "kind": "pitfall",
+      "title": "Sierra could not name the adopting colleges because every lookup returns only a count",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The fix named in the row is on disk and merged: fetchCredentialAdopters() is a batched lookup keyed on matched titles, the guard test exists, and #1178 landed on main.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1418",
+          "quote": "async function fetchCredentialAdopters(titles: string[], sb: any): Promise<Map<string, AdopterRef[]>> {"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3718",
+          "quote": "// fetchCredentialAdopters for why this is a lookup, not a second matcher."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "e67706f8 Sierra: give her the adopter NAMES, not just the count (#1178); tests/sierra_adopter_names.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e22e9253-2a6d-4b63-b9f5-6037eeed6a0c",
+      "slug": "measure-a-join-match-rate-before-building-on-it",
+      "kind": "procedure",
+      "title": "Measure a name join's match rate BEFORE building on it — it tells you WHICH join you need",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live: 86 distinct adopter names, 86 exact matches in chatbox_college_profiles — the zero gap still holds, the exact .in() join is still the right one, and the fail-safe it relies on is still in the function. All three related slugs exist.",
+      "evidence": [
+        {
+          "source": "sql: distinct unnest(adopter_colleges) from chatbox_credentials vs chatbox_college_profiles.college exact",
+          "quote": "86 names · 86 exact matches"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:1447",
+          "quote": "page on file\" — the fail-safe the STATEWIDE_RULE already mandates"
+        },
+        {
+          "source": "tests/sierra_adopter_landing_pages.test.js",
+          "quote": "file exists; slug:normalise-both-sides-of-a-join (verified), slug:collision-checked-fuzzy-join, slug:de-hardcode-join-key-pitfall (verified) all exist"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1db92865-9619-4edb-8404-5a1dc4a4c9de",
+      "slug": "d11-answer-covered-1-of-9-curated-credentials",
+      "kind": "pitfall",
+      "title": "Asked about a welding certification, Sierra named one of the nine we hold and missed two colleges entirely",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Fragmentation is live: chatbox_credentials holds exactly 9 D1.1 titles today (Riverside SMAW/FCAW, Lemoore, Barstow, 5 LA City). Handoffs 156-158 carried it as 'still not diagnosed'; no later handoff, lane file, smoke mode or memory row records a diagnosis — presumed still open.",
+      "evidence": [
+        {
+          "source": "sql: select count(*) from chatbox_credentials where unified_title ilike '%D1.1%'",
+          "quote": "9 — AWS D1.1 FCAW/SMAW Qualified Welder, Structural Welder Qualification, Structural Welding Certification F/S, D1.1/D1.3/D17.1, 3 LA City variants"
+        },
+        {
+          "source": "docs/session_158_handoff.md:125",
+          "quote": "Sierra named 1 of 9 D1.1 credentials — still not diagnosed."
+        },
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24 + chatbox/smoke_test.sh (grep D1.1)",
+          "quote": "no D1.1 entry in the lane (open items: 12 adoption-file titles; Cerritos welding); no smoke mode names D1.1"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7fdcaca9-13df-463b-8319-333ddfc2f796",
+      "slug": "cpl-assistant-tab-is-the-same-assistant-but-carries-two-dependencies",
+      "kind": "fact",
+      "title": "The CPL Assistant tab and the My College assistant are the same widget - but hiding that tab breaks two other things",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "#1187 merged; the data-org-hidden fallback is in sierra_training.js and set by cobi_orgs.js; the #chatbot pane still holds the bare .cplchat-mount. Minor: 'Sierra is TWO codebases' has since become three (fact-sheet/factsheet_sierra.js).",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "6d4a7f1c Sierra Training hand-off survives CPL Assistant being suppressed (#1187)"
+        },
+        {
+          "source": "sierra_training.js:265",
+          "quote": "var suppressed = !pane || (btn && btn.getAttribute(\"data-org-hidden\") === \"1\");"
+        },
+        {
+          "source": "cobi_orgs.js:216",
+          "quote": "b.setAttribute(\"data-org-hidden\", show ? \"0\" : \"1\");"
+        },
+        {
+          "source": "CPL_Dashboard.html:9425",
+          "quote": "<div class=\"cplchat-mount\"></div>"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e938a453-fa9f-44a1-9e50-af74b8c95462",
+      "slug": "sierra-rules-overlay-is-live",
+      "kind": "milestone",
+      "title": "Sierra's built-in rules are now editable data, laid over the defaults in the code",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "#1186 is on main; the live table has sort_order/applies_when/active with the applies_when CHECK, it is still empty (seeded empty by design), and chat_interactions carries rules_fired/rules_overridden.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "710f26c6 sierra_rules: the built-in prompt rules become curatable data (#1186)"
+        },
+        {
+          "source": "sql: pg_constraint sierra_rules_applies_when",
+          "quote": "CHECK ((applies_when = ANY (ARRAY['always','credential','credential_or_volume','alignment','volume','credit'])))"
+        },
+        {
+          "source": "sql: select count(*) from sierra_rules; information_schema.columns for chat_interactions",
+          "quote": "sierra_rules 0 rows; chat_interactions cols include rules_fired, rules_overridden"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1c7e3a8d-ab63-4c64-8b04-a697ed01b5c6",
+      "slug": "confirm-a-write-on-res-ok-not-on-having-sent-it",
+      "kind": "pitfall",
+      "title": "A fire-and-forget write that reports success is worse than one that reports nothing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both Sierra clients resolve sendFeedback on res.ok only, exactly as the row says; #1185 merged and the send-note test exists.",
+      "evidence": [
+        {
+          "source": "cpl_chat.js:578",
+          "quote": "}).then(function (res) { return !!(res && res.ok); },"
+        },
+        {
+          "source": "sierra/sierra.js:224",
+          "quote": "}).then(function (res) { return !!(res && res.ok); },"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "f9b0fb4d Send note: confirm at the button, and only when it actually saved (#1185); tests/sierra_send_note.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a0c92540-094d-4aea-9983-89ac5882f86b",
+      "slug": "prove-a-display-mirror-equals-the-real-implementation",
+      "kind": "procedure",
+      "title": "A UI that mirrors server logic should be proven equal to it by lifting the real function, not asserted",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The test lifts the real assembleRules out of index.ts as described; the generator, the generated mirror files and #1190 are all on main.",
+      "evidence": [
+        {
+          "source": "tests/sierra_rule_defaults.test.js:15",
+          "quote": "So this test LIFTS THE REAL assembleRules OUT OF index.ts and"
+        },
+        {
+          "source": "tests/sierra_rule_defaults.test.js:57",
+          "quote": "// ── (1) equivalence with the REAL assembleRules"
+        },
+        {
+          "source": "git log origin/main; ls",
+          "quote": "de016817 (#1190); kb/_build_sierra_rule_defaults.py, sierra_rule_defaults.js, cobi_admin_surface.js exist"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b8b78a09-cd4c-4ee8-9b68-95087ef44dfc",
+      "slug": "an-empty-read-means-the-opposite-on-a-deliberately-empty-table",
+      "kind": "pitfall",
+      "title": "An empty answer proves nothing unless you already know the table has rows in it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The probe is in the code (team_access select=id&limit=1) and the premise still holds live: team_access has 4 rows, sierra_rules has 0.",
+      "evidence": [
+        {
+          "source": "sierra_training.js:889",
+          "quote": "return fetch(REST + \"/team_access?select=id&limit=1\", { headers: authHeaders() })"
+        },
+        {
+          "source": "sql: select count(*) from team_access; select count(*) from sierra_rules",
+          "quote": "team_access 4 · sierra_rules 0"
+        },
+        {
+          "source": "tests/admin_tab.test.js",
+          "quote": "file exists (#1193 merged: 279fc019 Admin tab: the side menu, beside what actually protects each tab)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c7de949a-dbff-48be-bebc-19d218cbe15f",
+      "slug": "a-negative-assertion-pinned-to-live-data-goes-vacuous",
+      "kind": "pitfall",
+      "title": "A test asserting something must NOT appear stops testing anything once it leaves the data",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The smoke suite carries the fix and the story in its own comments (14a/14b anchored on an sdccd.edu mailbox); #1206 merged; the KB note and the related slug exist.",
+      "evidence": [
+        {
+          "source": "chatbox/smoke_test.sh:314",
+          "quote": "# The worse half was silent: 14b asserted the answer did NOT contain \"romero\","
+        },
+        {
+          "source": "chatbox/smoke_test.sh:324",
+          "quote": "answer_must_match -i \"[a-z0-9._%+-]+@sdccd\\.edu\" \"14a default surfaces the CPL contact\""
+        },
+        {
+          "source": "git log origin/main; ls",
+          "quote": "2ab94abb Smoke: the contact-suppression guard could no longer fail (#1206); docs/kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "46b3127d-7b00-40c9-9d0d-c2f493e25f7f",
+      "slug": "one-surface-three-files-drifts-unless-a-test-compares-them",
+      "kind": "pitfall",
+      "title": "Sierra is mounted by three standalone files; only a cross-file test keeps them aligned",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "All three mount files exist, the cross-file alignment test exists, #1232 merged with that title, and the KB note is published; the related slug exists.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "1b8a44ea My College: a session key nothing writes (every college blank) + Sierra aligned across all three surfaces (#1232)"
+        },
+        {
+          "source": "ls",
+          "quote": "tests/sierra_surfaces_aligned.test.js, fact-sheet/factsheet_sierra.js, docs/kb-notes/methodology-one-assistant-three-files-is-a-drift-machine.md all exist"
+        },
+        {
+          "source": "slug:a-recorded-rule-is-not-an-applied-rule",
+          "quote": "exists (proposed)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "cf78a104-cb10-457c-aa5c-f69cf2797a2f",
+      "slug": "the-measuring-browser-can-hide-the-defect",
+      "kind": "pitfall",
+      "title": "The browser we measure in fixes the fault itself, so the accessibility check could never fail",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lesson lives on in the new one-command harness (a11y.config.js asserts the tabindex ATTRIBUTE and documents Chromium 127+'s implicit focusability) and the KB note; the row's source script was deleted in #1473 when the harness was rebuilt.",
+      "evidence": [
+        {
+          "source": "a11y.config.js:73-74",
+          "quote": "Chromium 127+ ships \"keyboard-focusable scrollers\": a div that ACTUALLY OVERFLOWS is focusable with no tabindex at all (measured here on 141"
+        },
+        {
+          "source": "a11y.config.js:65",
+          "quote": "ok: log.scrollHeight > log.clientHeight + 1 && log.getAttribute(\"tabindex\") === \"0\","
+        },
+        {
+          "source": "git log origin/main --diff-filter=D -- scripts/check_public_page_layout.js",
+          "quote": "92c60ee2 Accessibility gets one command: npm run a11y, over every view we ship (#1473)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "scripts/check_public_page_layout.js (source)",
+          "to": "a11y.config.js (the script was deleted in #1473; the lesson is at a11y.config.js:57-74)"
+        }
+      ]
+    },
+    {
+      "id": "f75332ca-f4d4-47c1-9c89-d1b9cc65c5d6",
+      "slug": "sierra-log-reachability-fell-as-content-grew",
+      "kind": "pitfall",
+      "title": "Sierra's conversation log was keyboard-reachable only while it was empty",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "syncScrollRegions() with its MutationObserver is in sierra.js, and the a11y harness seed removes #s-suggest so the steady state is what gets measured — both exactly as the row describes.",
+      "evidence": [
+        {
+          "source": "sierra/sierra.js:651,710",
+          "quote": "function syncScrollRegions() { ... var mo = new MutationObserver(function () { syncScrollRegions(); });"
+        },
+        {
+          "source": "a11y.config.js:146",
+          "quote": "const sug = document.getElementById(\"s-suggest\");"
+        },
+        {
+          "source": "a11y.config.js:57",
+          "quote": "The log is made focusable by sierra.js only while it overflows."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "bba3a261-a575-4a15-98cc-c576fc7e1db3",
+      "slug": "sierra-guidance-is-a-zero-sum-budget-at-ten-rows",
+      "kind": "pitfall",
+      "title": "Sierra receives only her ten newest standing instructions, and adding an eleventh silently drops the oldest",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "The cap is no longer 10: GUIDANCE_MAX_RULES=20 (#1283, same day), deliberately above what the 9,000-char meter carries so the visible limit binds first. The eviction mechanism and the four-step procedure survive in the KB note; make-the-visible-cap-the-binding-one states the current state.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3242-3243",
+          "quote": "const GUIDANCE_MAX_RULES = 20; const GUIDANCE_MAX_CHARS = 9000;"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md:67-80",
+          "quote": "2. **Write it `active = false` first.** ... 3. **Retire prose that CODE now enforces.** ... 4. **Read the neighbours before you write.**"
+        },
+        {
+          "source": "sql: sierra_guidance",
+          "quote": "ACTIVE=7 INACTIVE=6 CHARS_ACTIVE=4149 (was 10 active on 2026-08-21)"
+        }
+      ],
+      "superseded_by": "make-the-visible-cap-the-binding-one",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b413ba68-39de-4e52-9274-6901d1640e4b",
+      "slug": "sam-retire-guidance-prose-that-code-now-enforces",
+      "kind": "decision",
+      "title": "Sam: retire the two 2026-08-12 Sierra instructions that retrieval now handles structurally",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both rows Sam chose are inactive in the live table (not deleted) and the naming rule cb226a48 is still active; #1274 merged. The '9 active' figure is a snapshot (7 active today).",
+      "evidence": [
+        {
+          "source": "sql: sierra_guidance by id prefix",
+          "quote": "23a5cd2a active=false (created 2026-08-12) · 346612d9 active=false (created 2026-08-12) · cb226a48 active=true"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "8349bd1c My College: prompt for a location, one question cluster, and Sierra's new intro (#1274)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b5450cd0-8fdf-4c87-9885-46ebded91edc",
+      "slug": "sierra-cannot-compute-a-per-college-comparator",
+      "kind": "fact",
+      "title": "Sierra must not compare a college with a statewide average - the average is two to three times the typical college",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Guidance row 7d8641be is live, active and scoped to my-college; shapeCreditStatus ships no median (the word does not occur in cpl-chat). The specific avg/median figures are a dated measurement, but the standing claim holds.",
+      "evidence": [
+        {
+          "source": "sql: sierra_guidance where id like '7d8641be%'",
+          "quote": "active=true kind=directive surface=my-college len=1029: \"When you show a college's CPL snapshot (the \"Where <College> Is Today\" table), keep it to\""
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:998 (+ grep median)",
+          "quote": "function shapeCreditStatus( ... — 'median' appears nowhere in index.ts"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2cf1d061-cf8e-4eac-a5ab-b2c72efced00",
+      "slug": "a-capped-list-must-never-read-as-a-census",
+      "kind": "pitfall",
+      "title": "Sierra reported three of nine Los Angeles colleges - and raising the limit would have made the error harder to spot",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "CANDIDATE_MAX is the single shared bound, the census guard test exists and the lane file records the same lesson. The detail's 'state that a district cannot be enumerated' was retired hours later by #1280 (caveat survives only on the name-match path) — lesson intact.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:242",
+          "quote": "const CANDIDATE_MAX = 12;"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24",
+          "quote": "Raising the cap is NOT the fix — it yields \"Nine colleges…\", still false and harder to spot; the load-bearing half is the disclosure"
+        },
+        {
+          "source": "git log origin/main; ls",
+          "quote": "070fb5a2 Sierra: a name-match candidate list must never read as a census (#1277); tests/sierra_candidate_census.test.js exists; slug:a-rule-you-wrote-is-not-a-rule-you-applied exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a11d3419-2531-4682-b507-11e5cd6b3737",
+      "slug": "name-matching-cannot-reach-four-districts",
+      "kind": "fact",
+      "title": "Four multi-college districts have ZERO colleges named after them, so a name match returns nothing for any of them",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured live on map_colleges: Kern 3, Los Rios 4, Peralta 4, State Center 4 colleges, none carrying the district's name; 118 of 128 rows carry a district; LACCD still 9 / MIS 740. The related slug is a KB note name, not a memory row.",
+      "evidence": [
+        {
+          "source": "sql: map_colleges grouped by district for Los Rios/Peralta/State Center/Kern",
+          "quote": "Kern 3 · Los Rios 4 · Peralta 4 · State Center 4 — named_after_district = 0 for all four"
+        },
+        {
+          "source": "sql: map_colleges",
+          "quote": "district filled 118 of 128; Los Angeles Community College District = 9 colleges, mis_district_code 740"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: a-crosswalks-value-is-the-lint-not-the-mapping",
+          "to": "docs/kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md (no cpl_memory row with this slug)"
+        }
+      ]
+    },
+    {
+      "id": "82fffb29-c5e7-43c7-842a-7961f5e4ce74",
+      "slug": "students-awarded-is-a-wrong-label-not-a-preference",
+      "kind": "pitfall",
+      "title": "The \"Students Awarded\" column counts students with a CPL record, not students given credit — and Sierra stated it to a district as fact",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "cpl-chat now states the figure as 'Students in MAP' with Sam's definition. The detail's 'public dashboard label is UNCHANGED' is out of date: 'Students Awarded' no longer appears in CPL_Dashboard.html or any consumer JS, only as the source-column key in excel_to_dashboard.py.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2301-2302",
+          "quote": "College | Needs Action Units | Applied Units | Transcribed Units | Students in MAP | CPL Contact. ⚠ The student count is \"Students in MAP\" — students with a CPL record in the MAP platform."
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2281",
+          "quote": "\"Students in MAP\" (2026-08-21), and the arithmetic agrees with him."
+        },
+        {
+          "source": "excel_to_dashboard.py:4815 + grep CPL_Dashboard.html/*.js",
+          "quote": "i_students = cm.get(\"Students Awarded\", 8) — the only remaining occurrence; 0 hits in CPL_Dashboard.html and non-test JS"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: a-provenance-label-must-say-why-not-what",
+          "to": "docs/kb-notes/methodology-a-provenance-label-must-say-why-not-what.md (no cpl_memory row with this slug)"
+        }
+      ]
+    },
+    {
+      "id": "fd02b97f-01b3-480d-8f6f-4b4723f7f2e5",
+      "slug": "the-guidance-row-cap-is-a-fossil",
+      "kind": "fact",
+      "title": "Sierra's ten-instruction limit is left over from an earlier setup - the length budget would carry about seventeen",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "No longer a fact: the row cap was raised 10 -> 20 by #1283 the same day, in both places the row names (edge function + sierra_training.js). make-the-visible-cap-the-binding-one records the current state and why 20. The 'deactivating frees the slot' sub-finding survives.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3242",
+          "quote": "const GUIDANCE_MAX_RULES = 20;"
+        },
+        {
+          "source": "sierra_training.js:219",
+          "quote": "var GUIDANCE_SENT_CAP = 20;"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "3bdb20b2 Guidance: a kind column and an honest row cap; identity: the college's own short name (#1283)"
+        }
+      ],
+      "superseded_by": "make-the-visible-cap-the-binding-one",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: a-capped-instruction-list-is-a-zero-sum-budget",
+          "to": "docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md (no cpl_memory row with this slug)"
+        }
+      ]
+    },
+    {
+      "id": "57b39a51-10b5-46c7-b227-5ad5bdf5e5aa",
+      "slug": "make-the-visible-cap-the-binding-one",
+      "kind": "pitfall",
+      "title": "When two limits bound one thing, the invisible one must never be the one that bites first",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both halves of the pair are as stated (20 rows / 9,000 chars in the edge function, 20 in sierra_training.js) and tests/sierra_guidance.test.js sizes from the constant rather than a literal; #1283 merged.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3242-3243",
+          "quote": "const GUIDANCE_MAX_RULES = 20; const GUIDANCE_MAX_CHARS = 9000;"
+        },
+        {
+          "source": "tests/sierra_guidance.test.js:118,206",
+          "quote": "SIZED FROM api.GUIDANCE_SENT_CAP, NOT FROM A LITERAL ... /GUIDANCE_MAX_RULES = \\d+/.test(fn)"
+        },
+        {
+          "source": "sierra_training.js:219",
+          "quote": "var GUIDANCE_SENT_CAP = 20;"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b9dca0c3-56e3-458b-b8cd-346cea8c2b4d",
+      "slug": "assert-that-an-argument-arrives-not-that-it-is-last",
+      "kind": "procedure",
+      "title": "A test anchored on where a line ends breaks when anything is added, and blames the wrong thing",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The exact regex shape the row prescribes is in the overlay test with the lesson in its comment; the KB note exists; #1291 merged.",
+      "evidence": [
+        {
+          "source": "tests/sierra_rules_overlay.test.js:193",
+          "quote": "/buildSystemPrompt\\([^;]*\\brulesOverlay\\b[^;]*\\bruleReport\\b[^;]*\\)/.test(src));"
+        },
+        {
+          "source": "tests/sierra_rules_overlay.test.js:183",
+          "quote": "match `rulesOverlay, ruleReport\\)` — anchored on the CLOSING PAREN — so it"
+        },
+        {
+          "source": "git log origin/main; ls",
+          "quote": "39e44e29 (#1291); docs/kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "cdcac490-2866-4c4c-ada3-1048cf9df955",
+      "slug": "sierra-can-enumerate-a-district-from-the-roster",
+      "kind": "fact",
+      "title": "Sierra can now list a district's colleges from the college table - this replaces the earlier note saying she could not",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "resolveDistrict() is in cpl-chat, map_colleges carries district/mis_district_code on 118 of 128 rows, LACCD resolves to 9 / MIS 740 live, the roster test exists and the lane file records ④ the same way.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:291",
+          "quote": "async function resolveDistrict(query: string, sb: any): Promise<DistrictHit | null> {"
+        },
+        {
+          "source": "sql: map_colleges",
+          "quote": "Los Angeles Community College District = 9 colleges, mis_district_code 740; district filled 118 of 128"
+        },
+        {
+          "source": "docs/reference/lanes/sierra-false-absences.md:24",
+          "quote": "④ The district roster (SkyApply, #1280) ... `resolveDistrict()` now answers a district question from the roster (LACCD = 9, MIS 740)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "4e6e3c1e-5b22-4830-bf71-eaa2cd2d762f",
+      "slug": "a-liveness-check-must-be-able-to-say-no",
+      "kind": "procedure",
+      "title": "A monitor that says \"fine\" whenever it cannot tell turns an outage into a green tick",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The workflow runs every 3 hours, makes two attempts 60s apart, and raises/reuses/closes one issue per outage — all as the row states; the probe script and its test exist. Corroborated by the Sam-verified outage row.",
+      "evidence": [
+        {
+          "source": ".github/workflows/cpl-chat-health.yml:42,69",
+          "quote": "- cron: '7 */3 * * *' ... # TWO attempts, 60s apart, before declaring an outage."
+        },
+        {
+          "source": ".github/workflows/cpl-chat-health.yml:81,103",
+          "quote": "- name: Raise or update the outage issue ... # Reuse the open issue if there is one, so an outage is ONE thread"
+        },
+        {
+          "source": "ls; slug:sierra-credit-outages-recurred-twice-and-are-now-monitored",
+          "quote": "chatbox/health_check.sh + tests/sierra_health_probe.test.js exist; verified row (Sam Lee, 2026-08-23)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ce454521-00d2-428e-9d80-ce1cb47b94dd",
+      "slug": "sierra-model-and-price-baseline-2026-08",
+      "kind": "fact",
+      "title": "There is no Haiku 4.6 - the cheaper model is Haiku 4.5, a third the price but it holds much less at once",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Pricing/context match the claude-api skill model table (cached 2026-06-24; no Haiku 4.6 listed); MAX_TOKENS=2048 in cpl-chat. Sierra has since moved to Haiku 4.5 with Sam's browser check and explicit acceptance of the one caveat gap — per this row's advice. Medium: table is a cache, not a live read.",
+      "evidence": [
+        {
+          "source": "claude-api skill SKILL.md, Current Models (cached 2026-06-24)",
+          "quote": "Claude Haiku 4.5 | `claude-haiku-4-5` | 200K | $1.00 | $5.00 ; Claude Sonnet 4.6 | `claude-sonnet-4-6` | 1M | $3.00 | $15.00"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:19,55",
+          "quote": "const MAX_TOKENS = 2048; ... const MODEL = Deno.env.get(\"CPL_CHAT_MODEL\") || \"claude-haiku-4-5-20251001\";"
+        },
+        {
+          "source": "slug:sam-verified-sierra-on-haiku; slug:sam-accepts-the-haiku-caveat-gap",
+          "quote": "verified rows, Sam Lee 2026-08-25"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "5a0036f6-aceb-43b2-8f84-b68766c9e349",
+      "slug": "an-assertion-pinned-to-one-member-cannot-see-the-set-grow",
+      "kind": "pitfall",
+      "title": "A test that names a list but only checks one item on it cannot fail when the list grows",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "tests/sierra_memory_isolation.test.js enumerates the consumers and counts them, as the row says; the old exclusivity wording survives in sierra_surface.test.js only as a comment describing the defect.",
+      "evidence": [
+        {
+          "source": "tests/sierra_memory_isolation.test.js:92,102-103",
+          "quote": "The honest version of sierra_surface (6). Four consumers today; the count is ... const consumers = [ [\"the input cap\", /const trimmedQuery = query\\.trim\\(\\)\\.slice\\(0, queryCapFor\\("
+        },
+        {
+          "source": "tests/sierra_surface.test.js:168",
+          "quote": "* reaches ONLY the guidance layer so far\" while testing only that (comment)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f748d337-ebdd-4fc1-a7ab-30bba99463b2",
+      "slug": "sierra-district-figures-came-from-a-june-snapshot",
+      "kind": "pitfall",
+      "title": "Sierra answered district questions from a two-month-old copy - she said Moreno Valley had no students when it has nearly 2,900",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane file records the same cause and fix (#1325: credit_distribution no longer read by anyone); the profiles table is still last written 2026-06-25, so the one-source fix is what keeps her right; the guard test exists. Observation supplied by Sam via screenshot.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/sierra-retrieval-corpus.md:24",
+          "quote": "its `credit_distribution` column is no longer read by anyone — it was Sierra's per-college credit source until 2026-08-24 and had drifted two months (#1325"
+        },
+        {
+          "source": "sql: select max(updated_at), count(*) from chatbox_college_profiles",
+          "quote": "2026-06-25 22:10:56+00 · 127 rows"
+        },
+        {
+          "source": "git log origin/main; ls",
+          "quote": "9e435cca One deploy: the memory work goes live, Sierra stops reporting a June snapshot, and an A/B rig to judge both (#1325); tests/sierra_district_credit_figures.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a5e1bf2b-6dd6-4dc4-887d-6b31c6773247",
+      "slug": "surface-vocabulary-is-five-places-not-three",
+      "kind": "procedure",
+      "title": "Letting the assistant work on a new screen takes five separate edits, and no one document listed them all",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "gr-analysis is present in all five places today — KNOWN_SURFACES, DRAFTING_SURFACES, SURFACE_QUERY_CAPS, the sierra_training.js picker and the live CHECK constraint (file and DB) — and the three-places row it supersedes is already status=superseded.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2942,2970,3016",
+          "quote": "\"memory-briefing\", \"gr-analysis\", ... DRAFTING_SURFACES = new Set([\"memory-autogen\", \"memory-briefing\", \"gr-analysis\"]); ... \"gr-analysis\": QUERY_CAP_GR_ANALYSIS,"
+        },
+        {
+          "source": "sql: pg_get_constraintdef sierra_guidance_surface_ck",
+          "quote": "surface = ANY (ARRAY['my-college','cobi-assistant','public','fact-sheet','memory-autogen','memory-briefing','gr-analysis'])"
+        },
+        {
+          "source": "sierra_training.js:678; chatbox/supabase_sierra_guidance.sql:103",
+          "quote": "{ k: \"gr-analysis\", label: \"Only when re-analyzing a regulation priority\" } ; 'gr-analysis' -- gr_priorities.js re-analyzing one regulation priority"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "be8aa01e-dab5-42a1-b7ab-5bb4d3a48a2c",
+      "slug": "a-client-cannot-see-the-cap-the-server-enforces",
+      "kind": "pitfall",
+      "title": "A page cannot tell whether the service behind it has been updated yet, so the gap between them is silently wrong",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note is published and the third defense is in place: gr_deep_analysis.test.js pins the client budget to SURFACE_QUERY_CAPS in the edge function, which gr_priorities.js itself documents.",
+      "evidence": [
+        {
+          "source": "tests/gr_deep_analysis.test.js:256",
+          "quote": "const caps = /const SURFACE_QUERY_CAPS[^{]*\\{([\\s\\S]*?)\\n\\};/.exec(TS);"
+        },
+        {
+          "source": "gr_priorities.js:1383",
+          "quote": "tests/gr_deep_analysis.test.js pins this equal to QUERY_CAP_GR_ANALYSIS in"
+        },
+        {
+          "source": "ls",
+          "quote": "docs/kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6e5a5244-608f-4a6d-8f84-ef82946ad989",
+      "slug": "haiku-drops-a-say-this-whenever-caveat",
+      "kind": "pitfall",
+      "title": "On the smaller model, Sierra drops the caution that the credit backlog is a ceiling, not a debt",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Mode 15a still asserts the Not-Applicable ceiling caveat, Sierra's default model is Haiku 4.5, and Sam saw the failing assertion and ruled the gap accepted for now (verified) — so the row's RECOMMENDED FIX is deliberately on hold, not to be applied unprompted.",
+      "evidence": [
+        {
+          "source": "chatbox/smoke_test.sh:347-354",
+          "quote": "run \"15a credit disposition statewide\" ... \"15a carries the Not-Applicable ceiling caveat\""
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:55",
+          "quote": "const MODEL = Deno.env.get(\"CPL_CHAT_MODEL\") || \"claude-haiku-4-5-20251001\";"
+        },
+        {
+          "source": "slug:sam-accepts-the-haiku-caveat-gap (verified, Sam Lee 2026-08-25)",
+          "quote": "\"I can live with that Haiku limitation for now.\" So the designed fix (attach the ceiling caveat..."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0864b5ad Sierra on Haiku 4.5 (temporary), plus the Rule 8/9 checkpoint (#1336)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d14ed72c-99f0-4d02-8898-9b5b0fae1ce8",
+      "slug": "a-public-shopfront-and-a-context-store-are-two-jobs",
+      "kind": "decision",
+      "title": "The public KB and a store the tools query are two jobs with opposite requirements",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both CLAUDE.md files carry the separation as standing doctrine since 2026-06-19 (public KB reached only via curation; checkpoint never writes there); cpl-chat reads no public-KB source; kb-portal exists. The open half — 'everything we know, public' vs the private split — is Sam's to decide.",
+      "evidence": [
+        {
+          "source": "/home/user/CPLBrain/CLAUDE.md:126,139",
+          "quote": "Three knowledge stores, and where each is written: ... `/checkpoint` never writes to the public KB."
+        },
+        {
+          "source": "/home/user/cpl-project-tracker/CLAUDE.md:637",
+          "quote": "**Checkpoint scope — vault, never the public KB.**"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts (grep knowledge-base|kb-notes)",
+          "quote": "only comment pointers to docs/kb-notes (lines 2667, 3257); no read of cpl-knowledge-base"
+        },
+        {
+          "source": "slug:the-public-kb-cannot-go-stale-by-discipline-it-has-no-candidate-queue",
+          "quote": "related row exists (proposed)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

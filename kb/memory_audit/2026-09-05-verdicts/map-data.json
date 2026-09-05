@@ -1,0 +1,1458 @@
+{
+  "part": "map-data",
+  "expected_rows": 48,
+  "coverage": {
+    "rows_read": 48,
+    "rows_judged": 48,
+    "note": "All 48 rows judged. The brief's offset pagination is unstable on created_at ties: page 1 and page 2 both returned map-student-credit-reloaded-tblsource and the 48th row (default-area-sentinel-was-synthesised) never appeared until the partition was re-listed ordered by (created_at, id). Two live findings beyond the verdicts, for the caller: (1) map_cleanup_worklist today holds only P2–P4 (11,601 / 412 / 2,257 rows) — zero P1/P5 rows — although rebuild_map_cleanup_worklist() still contains the P1/P5 logic; the cause is upstream: on the cron-loaded map_student_credit the zero-unit Needs Action rows carry credit_rec '' (18,679) and the ACE '0 hours in… / Credit Is Not Recommended' text matches 0 rows, so the text-keyed classes vanish silently. (2) docs/reference/lanes/disposition-grain-student-detail.md still quotes the pre-promotion figures (537,908 rows, 1,051,870 / 63,991 units, 42,346 students); the live DB reads 600,716 rows, 1,215,131 / 74,345 units, 48,913 students and the custom-reports lane says the table is replaced nightly — a lane-file staleness a checkpoint should fix. The two wishlists (w3, w4) are marked confirmed in the sense 'still valid and still unbuilt' (register live, feature absent); no decision row resolves them."
+  },
+  "counts": {
+    "confirmed": 44,
+    "stale": 3,
+    "superseded_by_row": 1,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "4b111bbf-54dd-41ab-bb7e-e550c3f02742",
+      "slug": "w4",
+      "kind": "wishlist",
+      "title": "Follow-up nudge on stale MAP-DQ issues",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Tested whether the overdue follow-up flag exists: map_data_quality.js only renders 'follow up <date>' (no overdue logic) and nudges/ never reads map_data_quality; the register and its followup_on column are still live (f9 verified). The wish stands, unbuilt.",
+      "evidence": [
+        {
+          "source": "map_data_quality.js:268",
+          "quote": "if (d.followup_on) footBits.push(\"follow up \" + String(d.followup_on).slice(0, 10));"
+        },
+        {
+          "source": "kb/supabase_map_data_quality.sql:37",
+          "quote": "followup_on    date,"
+        },
+        {
+          "source": "grep -rn map_data_quality nudges/",
+          "quote": "no matches — the To-Do feed does not read the register"
+        },
+        {
+          "source": "slug:f9",
+          "quote": "tracked in the map_data_quality register — the 🩺 MAP Data Quality tab — with category/severity/status + follow-up"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "413b2d27-8c7c-4736-89d2-9534326614ce",
+      "slug": "w3",
+      "kind": "wishlist",
+      "title": "Auto-generate MAP data-quality findings",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "excel_to_dashboard.py has no map_data_quality reference and no DQ scan of View_StudentAggregatedValues; the only Python mention (funding build, line 27) cites a hand-logged register row. The register remains manual (f9 verified). The wish stands, unbuilt.",
+      "evidence": [
+        {
+          "source": "grep -n map_data_quality excel_to_dashboard.py",
+          "quote": "no matches"
+        },
+        {
+          "source": "funding/_build_funding_performance.py:27",
+          "quote": "(map_data_quality 10ad9e0a, high/open — MAP's parser"
+        },
+        {
+          "source": "slug:f9",
+          "quote": "MAP platform data-quality defects (esp. from the Custom Report Generator / View_StudentAggregatedValues) are tracked in the map_data_quality register"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "cda9e575-903a-4fc2-93e0-e9199b37b6df",
+      "slug": "map-headline-counts-test-colleges",
+      "kind": "pitfall",
+      "title": "The public MAP user and college counts were overstated - test entries were being counted",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "map_college_kind() and map_users_summary() exist live and in map/supabase_map_contact_gaps.sql (label, do not filter); map_colleges tags 8 rows entity_kind='test' incl. CA MAP INITIATIVE COLLEGE (id 120); map_users.js:189 documents the pipe delimiter. Lesson and mechanism intact.",
+      "evidence": [
+        {
+          "source": "map/supabase_map_contact_gaps.sql:111",
+          "quote": "create or replace function public.map_college_kind(p_college text)"
+        },
+        {
+          "source": "sql: pg_proc + map_colleges",
+          "quote": "map_college_kind present (1); map_users_summary() present; 8 rows entity_kind='test'; id 120 CA MAP INITIATIVE COLLEGE entity_kind=test"
+        },
+        {
+          "source": "map_users.js:189",
+          "quote": "DELIMITER: MAP writes these PIPE-separated (\"MATH | ENGL | BIOL\"), not"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "03538980-d95c-4a35-8d37-214792911a1f",
+      "slug": "map-25-colleges-no-student-contact",
+      "kind": "fact",
+      "title": "Student CPL requests reached nobody at 25 of 123 colleges",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured today: 25 of 123 map_college_contacts rows have no primary_contact_email — unchanged; the lane states 25 of 123 with 17 resolving from MAP designations, 5 leadership-only, 3 no-MAP-presence (the 8 needing a human).",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select count(*), count(*) filter (where primary_contact_email is null or btrim(primary_contact_email)='') from map_college_contacts → 123 / 25"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "25 of 123 colleges have no `primary_contact_email`: 17 resolve from the college's own MAP designations (coordinator→assistant→counselor→AO→initiator→faculty), 5 leadership-only, 3 no-MAP-presence"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6d42ba70-bc81-45c0-94d5-37f5917ba44e",
+      "slug": "map-contacts-view-24-fields",
+      "kind": "fact",
+      "title": "MAP already holds far more college contacts than we were pulling in",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "map/sync_map_users.py:86-99 carries the asymmetry (no 'CPL Assistant' name column; 'Veteran School Certifying Official Email') and wires the named columns; map_college_contacts holds them live. Fill counts drift: cpl_assistant_email 56/123 today (was 52), counselor 65 unchanged.",
+      "evidence": [
+        {
+          "source": "map/sync_map_users.py:86",
+          "quote": "\"CPL Assistant\" (a name column) does NOT exist — only the Email."
+        },
+        {
+          "source": "map/sync_map_users.py:87-88",
+          "quote": "the School Certifying Official's email column is spelled \"Veteran School Certifying Official Email\"."
+        },
+        {
+          "source": "sql",
+          "quote": "map_college_contacts: cpl_assistant_email non-blank 56, cpl_counselor_email non-blank 65 (of 123); columns present for AO, faculty lead, lead initiator, senate president, certifying official"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fab16e38-5a37-474e-99f4-33dab0a0094e",
+      "slug": "fifteen-colleges-no-counseling-route",
+      "kind": "fact",
+      "title": "15 of 71 colleges publish no usable counseling route",
+      "verdict": "stale",
+      "confidence": "medium",
+      "reason": "71/56/15 no longer holds: lane + map_users.js now carry 78 FALLBACK_CONTACTS (61 with an address, 17 blank-with-a-finding, 3 curator, 7 via:search); 67 colleges now lack a CPL Assistant. The named findings (Contra Costa / LA Harbor mental-health-only) persist in the lane.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "`FALLBACK_CONTACTS` is a **DISPLAY-LAYER** fallback over **78** colleges (61 with an address, 17 blank-with-a-finding, 3 curator-supplied by Jessica)"
+        },
+        {
+          "source": "map_users.js:261",
+          "quote": "var FALLBACK_CONTACTS = { … 78 entry keys counted; 7 via: \"search\", 3 via: \"curator\""
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "**2 colleges publish only a mental-health inbox — DELIBERATELY DECLINED** for CPL routing."
+        },
+        {
+          "source": "sql",
+          "quote": "map_college_contacts: cpl_assistant_email non-blank 56 of 123 → 67 without a CPL Assistant today"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "984f2ee7-de34-4d12-9074-91393a5c6b7d",
+      "slug": "cpl-contacts-fallback-not-in-map",
+      "kind": "fact",
+      "title": "The CPL contact fallbacks were never written to MAP and cannot be",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Standing claim holds: the lane says MAP is read-only for us and FALLBACK_CONTACTS is a display-layer fallback; Sam's 'Proposed for MAP' column became the gated map_contact_proposals table (live); Gavilan's curator entry by Jessica is in code. Counts drifted (71→78 entries).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "MAP IS READ-ONLY FOR US — the nulls cannot be filled by us. `map_users.js` `FALLBACK_CONTACTS` is a **DISPLAY-LAYER** fallback over **78** colleges"
+        },
+        {
+          "source": "map_users.js:262-263",
+          "quote": "\"Gavilan College\": { via: \"curator\", by: \"Jessica\", on: \"2026-08-05\","
+        },
+        {
+          "source": "sql: information_schema.tables",
+          "quote": "map_contact_proposals BASE TABLE (college, proposed_name, proposed_email, note, status, updated_by, updated_at)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee; Jessica",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6ab53e09-4a44-44dd-8aa2-6205f62052ea",
+      "slug": "map-student-credit-reloaded-tblsource",
+      "kind": "fact",
+      "title": "The student-level table was reloaded from the raw MAP extract - 537,908 records, with credit amounts",
+      "verdict": "stale",
+      "confidence": "high",
+      "reason": "Reload happened (2026-08-10) but the cron replaces the table nightly since #1246–#1258: live map_student_credit is 600,716 rows / 18 cols, 48,913 students, 439 apprenticeship students; Sam retired the 18,889 'applied' figure 2026-08-19. Reviewer-only RLS, no write policies and _prev still hold.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_student_credit: count 600,716; distinct student_key 48,913; apprenticeship_credits>0 → 439 students / 12 colleges; 18 columns (status, cpl_plan_status added)"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "LIVE ON THE CRON, NO HUMAN IN THE LOOP (#1246–#1258). Daily **13:40 UTC**: fetch → staging → `map_promote_custom_reports()` → live, **ONE transaction**"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "✅ **The 55% applied fork is RETIRED** (Sam, 2026-08-19)"
+        },
+        {
+          "source": "sql: pg_policy / information_schema",
+          "quote": "map_student_credit_select (SELECT) USING is_allowed_reviewer() is the only policy; map_student_credit_prev still present (5 columns)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": "milestone",
+      "link_fixes": []
+    },
+    {
+      "id": "5c30af5b-0d40-4f2f-8b00-3c1c9c72db19",
+      "slug": "grain-invariance-is-not-a-virtue",
+      "kind": "pitfall",
+      "title": "A grain-invariant measure can still be the wrong one",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The published KB note states the finding; kb/supabase_map_college_goal2.sql still emits rows_n beside distinct students per dest and map_college_goal2 carries rows_n live. 'affects' names college_goal2.js, which does not exist — consumers are college_briefing.js and cobi_admin_surface.js.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md:37",
+          "quote": "`count(distinct student_key)` is **provably grain-invariant — 96 of 96 colleges"
+        },
+        {
+          "source": "kb/supabase_map_college_goal2.sql:55-56",
+          "quote": "count(distinct student_key)::int as students, count(*)::int as rows_n"
+        },
+        {
+          "source": "sql: information_schema.columns",
+          "quote": "map_college_goal2: college_id, dest, students, rows_n, suppressed, reason"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "affects: college_goal2.js (no such file)",
+          "to": "college_briefing.js (the map_college_goal2 consumer)"
+        }
+      ]
+    },
+    {
+      "id": "385cdd26-75ef-4970-b6b0-1a55b78ba788",
+      "slug": "k10-revisit-costs-breadth-not-volume",
+      "kind": "decision",
+      "title": "The k=10 floor costs breadth, not volume — Sam wants it revisited",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "ADR (published) carries the exact measurement and lists the revisit as an open question; no later ruling changed k=10 for student-detail surfaces (the 2026-09-03 under-10 package extended a floor of 10 to funding counts). Still open — reads as a question, not a decision.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:213-215",
+          "quote": "suppression hides **320 of 436 credentials — but only 5.1% of students and 5.4% of units.** It is a long tail."
+        },
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:134-136",
+          "quote": "Do the existing k=5 surfaces move to 10? Consistency argues yes; it is a separate change with its own blast radius"
+        },
+        {
+          "source": "docs/kb-notes/adr-funding-counts-mask-under-10-units-carry-the-money.md:45",
+          "quote": "Counts mask under 10, every metric alike."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": "question",
+      "link_fixes": []
+    },
+    {
+      "id": "0316b2d8-e144-4b45-9ac9-dae5dd69c489",
+      "slug": "two-average-applied-figures-differ",
+      "kind": "fact",
+      "title": "Average applied credit differs 2.2x depending on the denominator",
+      "verdict": "stale",
+      "confidence": "medium",
+      "reason": "Re-measured Bakersfield (college_id 20) on the cron-loaded table: 607 CPL students, 600 with applied units on Applied rows, 51 transcribed; avg applied 8.22 (all) vs 8.32 (recipients) — the 2.2x gap is gone; the '55%' reference was retired by Sam 2026-08-19. Principle survives, figures do not.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_student_credit college_id=20 → cpl_students 607, applied_recipients 600, transcribed_recipients 51, avg_applied_all 8.22, avg_applied_recipients 8.32, avg_transcribed_recipients 20.28"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "✅ **The 55% applied fork is RETIRED** (Sam, 2026-08-19) — the ruling *publish both and name the gap* stands, the figure does not"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d8f82cd5-4a5e-40ea-9ae3-16b8cd4b97a4",
+      "slug": "articulated-waiting-is-basic-military-service",
+      "kind": "fact",
+      "title": "The articulated-and-waiting backlog is 98.8% Credit for Basic Military Service",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured on map_college_cr_unit scoped entity_kind=college: basic military 73,544 of 74,428 articulated-and-waiting units = 98.8%, unchanged; totals drifted as the row itself predicts (64,074→74,428 units, 592→620 rows, 33 of 106→28 of 107 with none waiting). My College lane states the same lead.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "Needs Action and sum_articulated_credits>0, colleges only: basic-mil 73,544 units / 287 rows / 71 colleges; other 884 units / 333 rows / 10 colleges"
+        },
+        {
+          "source": "sql",
+          "quote": "map_college_credit_summary join map_colleges entity_kind=college: none_waiting 28, some_waiting 69, suppressed 10 (107 colleges)"
+        },
+        {
+          "source": "docs/reference/lanes/my-college-action-page.md:24",
+          "quote": "The lead figure is **ONE decision, not 300** — 98.8% of the 64,074 waiting units is Credit for Basic Military Service."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1039d07e-2cb4-4da9-9ea3-5b93885c6faa",
+      "slug": "percentage-must-not-round-up-into-a-claim",
+      "kind": "pitfall",
+      "title": "A percentage must never round UP into a claim it cannot support",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "safePct() is live in college_briefing.js and used at the military-share and course-share lines; the KB note is committed; PR #1121 on main.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:1197",
+          "quote": "function safePct(x, dp) {"
+        },
+        {
+          "source": "college_briefing.js:2174",
+          "quote": "var p = safePct(g.share, 1);"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "99296afe My College: what the waiting credit IS, the funding split, resources, and the tier criteria (#1121)"
+        },
+        {
+          "source": "ls",
+          "quote": "docs/kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md present"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "aa07a13e-11b9-472d-badf-6231bdefc65f",
+      "slug": "absence-must-not-render-as-achievement",
+      "kind": "pitfall",
+      "title": "An absent measurement rendering as an ACHIEVEMENT — the worse half of \"absence is not zero\"",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "waitingBreakdown() returns a distinct unmeasured state and the renderer branches on it; the lane carries the invariant; PR #1128 on main; KB note committed.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:1214",
+          "quote": "if (!summary) return { unmeasured: true };"
+        },
+        {
+          "source": "college_briefing.js:2202",
+          "quote": "} else if (wb && wb.unmeasured) {"
+        },
+        {
+          "source": "docs/reference/lanes/my-college-action-page.md:24",
+          "quote": "⚠️ an ABSENT measurement must never render as an ACHIEVEMENT"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "64526824 My College: Sierra AI leads, everything below folds down, strategies move to their funding priority (#1128)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ddaf6a89-a16e-48c4-bacb-0803689efce5",
+      "slug": "a-collapsed-section-must-still-inform",
+      "kind": "procedure",
+      "title": "A closed section must still carry a figure, or collapsing is hiding rather than minimising",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Open state lives in state.open (not the DOM) and every section renders through it; tests/college_briefing.test.js (1,406 lines) and the KB note are committed; PR #1128 on main.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:945",
+          "quote": "'<details class=\"cb-sec\" data-sec=\"' + esc(id) + '\"' + (state.open[id] ? \" open\" : \"\") + \">\""
+        },
+        {
+          "source": "tests/college_briefing.test.js",
+          "quote": "present, 1,406 lines"
+        },
+        {
+          "source": "ls",
+          "quote": "docs/kb-notes/methodology-a-collapsed-section-must-still-inform.md present"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "376c1cae-2f14-4b41-a6a8-3b3eb4d1ad1b",
+      "slug": "futuro-health-in-map-with-zero-exhibits",
+      "kind": "fact",
+      "title": "Futuro Health is in MAP already, with nothing loaded against it",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Re-measured: map_colleges id 133 'Futuro Health' entity_kind=partner; 0 rows for college_id 133 in map_college_cr_unit and map_student_credit; 'Futuro' and 'Human Touch' absent from statewide_data.js and credential_reference_data.js; chatbox profile total_exhibits 0. Still nothing loaded.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_colleges college_id 133 'Futuro Health' entity_kind=partner; map_college_cr_unit rows for 133: 0; map_student_credit rows: 0; chatbox_college_profiles total_exhibits 0, total_credit_recs 0"
+        },
+        {
+          "source": "grep -c -i futuro statewide_data.js credential_reference_data.js",
+          "quote": "0 and 0; 'human touch' 0 and 0"
+        },
+        {
+          "source": "docs/futuro_hth_crosswalk_lessons.md:114-115",
+          "quote": "Futuro Health is already a MAP partner entity (ID 133) with a live landing page and ZERO exhibits / ZERO credit"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7e293fec-f4b0-4105-b249-ed21e7593fd9",
+      "slug": "map-users-wiring-audited-sound-2026-08-13",
+      "kind": "fact",
+      "title": "MAP Users contact wiring audited SOUND; the defects are content, not joins",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Counts and mechanisms match the code today (78 FALLBACK_CONTACTS / 16 CPL_PAGES / 1 CPL_LIAISONS; both-sides normalisation in fallbackFor); the Mission College flag and the trailing-space names are in the lane and in map_colleges.variants; #1151 on main.",
+      "evidence": [
+        {
+          "source": "map_users.js:261/712/795",
+          "quote": "FALLBACK_CONTACTS 78 keys · CPL_PAGES 16 keys · CPL_LIAISONS 1 key (counted)"
+        },
+        {
+          "source": "map_users.js:606",
+          "quote": "return String(s == null ? \"\" : s).normalize(\"NFC\").replace(/\\s+/g, \" \").trim().toLowerCase();"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "⚠️ **Mission College's proposal is a free-mail address** — MAP's own `cpl_coordinator_email`, first in the cascade; **FLAGGED, never filtered**."
+        },
+        {
+          "source": "sql",
+          "quote": "map_colleges.variants include 'Cypress College ' and 'San Jose City College ' (trailing space)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a5abce50-0a97-47f0-9ffb-bccbc9335e96",
+      "slug": "inert-cr-backlog-is-98-percent-military",
+      "kind": "fact",
+      "title": "The inert CR backlog is 98.8% military — the non-military part is small and tractable",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Doctrine, classifier and lane figures hold; re-running the row's classifier today: military 453,316 CRs / 1,087,693 units (97.3% of units, 98.0% of CRs) vs non-military 8,685 / 27,744 (2,788 students, 29 colleges), unclassified 750. Non-military grew ~2.6x since 08-13; the shape is the claim.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "Needs Action by the row's classifier: military 453,316 / 1,087,693.00 / 26,822 students / 110 colleges; non-military 8,685 / 27,744.50 / 2,788 / 29; unclassified 750 / 2,271 / 118 / 34"
+        },
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "military **432,693 CRs / 1,040,447 units** (17.4/student) vs non-military **3,305 / 10,698** (3.8/student, 868 students, 28 colleges)"
+        },
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "⚠️ **No military flag exists** — `military_credits` is an applied AMOUNT, zero on 84% of rows."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "44a61f19-02ed-42a4-a8f0-1de3e22e37d9",
+      "slug": "the-classifier-existed-and-the-consumer-never-asked",
+      "kind": "pitfall",
+      "title": "Three defects in one day were all \"the right value existed and the consumer never read it\"",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The neq.test read is live in college_briefing.js; the lane carries the lookup-table asymmetry (map_colleges is never rewritten); 8 sandbox rows are tagged today; #1171 on main.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:3131",
+          "quote": "jget(REST + \"/map_colleges?select=college_id,college_name,variants&entity_kind=neq.test&order=college_name\")"
+        },
+        {
+          "source": "docs/reference/lanes/map-users-student-contact.md:24",
+          "quote": "⚠️ **`map_colleges` is a lookup table nothing rewrites** — the user/contact tables self-clean on the cron, it does not."
+        },
+        {
+          "source": "sql",
+          "quote": "map_colleges: 8 rows entity_kind='test'"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0b19f1d5 Sierra Training: the gap list was 83% robot, and the sandbox orgs were already flagged (#1171)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f9167b6c-1e52-4127-93c8-a4ec5d07dc1c",
+      "slug": "map-api-echoes-requested-columns",
+      "kind": "pitfall",
+      "title": "MAP's data service repeats your requested field names back even when the request was invalid",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The probe encodes the lesson (rows-come-back is the only test; known-good baseline first) and the fetcher now reads responseCode per dataset (#1358), the same mechanism; #1177 on main.",
+      "evidence": [
+        {
+          "source": "kb/_probe_exhibit_evidence_fields.py:29",
+          "quote": "Never validate against ds[\"columnName\"]. It is a mirror."
+        },
+        {
+          "source": "kb/_probe_exhibit_evidence_fields.py:131",
+          "quote": "Valid IFF rows come back. The echoed columnName is a mirror — ignore it."
+        },
+        {
+          "source": "kb/_probe_exhibit_evidence_fields.py:32",
+          "quote": "1. Confirm a known-good baseline returns rows (guards against the API simply"
+        },
+        {
+          "source": "fetch_custom_report.py:348",
+          "quote": "`dataCount` is MAP's CLAIM, not a measurement."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "4e85accf-f7d2-4467-906b-9433f33c8a59",
+      "slug": "exhibit-crs-catalog-has-27-fields",
+      "kind": "fact",
+      "title": "The Exhibit CRs Catalog exposes 27 fields; we now fetch 14, and six are redundant encodings",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "fetch_custom_report.py requests exactly 14 columns for View_ExhibitCRsCatalog_Dataset (9 + the 5 added 2026-08-14) and documents the six redundant encodings and CriteriaID; the KB census carries the 27-field measurement. One sub-claim aged: enumeration by empty columnName now 500s — use [\"*\"].",
+      "evidence": [
+        {
+          "source": "fetch_custom_report.py:262-265",
+          "quote": "14 names: ExhibitID, SkillLevel, CreditRecommendation, Title, five Total*ForCR, EvidenceDescription, EvidenceTypeID, SubmissionGuidelines, AceID, CPLTypeCode"
+        },
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:18-19",
+          "quote": "`View_ExhibitCRsCatalog_Dataset` exposes 27 fields over 271,783 rows; we fetched 9, three of the unfetched ones carry the required-evidence text"
+        },
+        {
+          "source": "fetch_custom_report.py:256-259",
+          "quote": "NOT added, deliberately: LearningModeID / ModeofLearningCode / CPLModeofLearningDescription are three encodings of ONE field … CriteriaID is 270,765 distinct over 271,783 rows"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **`columnName: []` now answers HTTP 500 on EVERY view, the control included; `[\"*\"]` enumerates**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ce912868-3f7a-46c1-b91d-60b35b4f9cd9",
+      "slug": "evidence-description-is-not-truncated",
+      "kind": "fact",
+      "title": "The description field is not cut off at the source - it was the viewer clipping it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The published KB note and the fetcher's inline census state the same measurements (EvidenceDescription max 349, no cap; SubmissionGuidelines max 1,230 with 43 values at exactly 100).",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:48",
+          "quote": "`EvidenceDescription` | **2.5%** | 146 | max 349 chars, **not truncated**"
+        },
+        {
+          "source": "docs/kb-notes/reference-exhibit-crs-catalog-field-census.md:50",
+          "quote": "`SubmissionGuidelines` | **2.1%** | 1,187 | max 1,230 chars; ⚠️ 43 values at exactly 100"
+        },
+        {
+          "source": "fetch_custom_report.py:238-239",
+          "quote": "EvidenceDescription   2.5% fill, 146 distinct, max 349 chars, NOT truncated"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "575f776a-6504-4b42-85a9-a607c9ca50dc",
+      "slug": "college-geo-region-is-a-proximity-map-not-swp-or-asccc",
+      "kind": "pitfall",
+      "title": "Our regional grouping of colleges is not the Strong Workforce or Academic Senate one - do not label it as either",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "tests/my_college_scope.test.js pins the two region scopes disabled and names college_geo.region as a third scheme; the lane states it; college_geo (college, region, county) is live; the related verified row corroborates.",
+      "evidence": [
+        {
+          "source": "tests/my_college_scope.test.js:9-11",
+          "quote": "Strong Workforce region and Academic Senate region do not exist anywhere in this repo. The region data we DO hold (`college_geo.region`) is a third, unrelated scheme"
+        },
+        {
+          "source": "tests/my_college_scope.test.js:94",
+          "quote": "check(\"⭐ the two region scopes render, disabled\", off.length === 2);"
+        },
+        {
+          "source": "docs/reference/lanes/my-college-action-page.md:24",
+          "quote": "⚠️ **TWO OF FIVE SCOPES SHIP DISABLED WITH THEIR REASON** (SWP and ASCCC regions exist nowhere here; `college_geo.region` is a THIRD scheme)"
+        },
+        {
+          "source": "slug:swp-and-asccc-regions-are-on-the-map-dashboard-not-in-our-exports",
+          "quote": "verified (Sam, 2026-08-17): the groupings are on the MAP Dashboard; confirmed absent from map_colleges and the funding roster"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "deb31a71-d892-49d9-9735-4f04cda79ec7",
+      "slug": "a-rollup-over-k-anonymised-rows-sums-unsuppressed-only",
+      "kind": "procedure",
+      "title": "A district total must add up only the colleges it can actually show",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lane carries the invariant ('a ROLL-UP sums UNSUPPRESSED rows only'); ADR decision 5 requires complementary suppression; live map_college_credit_summary suppresses 10 college cells today (row said 13). 'related' names the ADR, which is a KB note, not a memory slug.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/my-college-action-page.md:24",
+          "quote": "⭐ a ROLL-UP sums UNSUPPRESSED rows only"
+        },
+        {
+          "source": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md:93-94",
+          "quote": "Complementary suppression at every level that publishes a total. Hiding one cell of a set that sums to a published total hides nothing."
+        },
+        {
+          "source": "sql",
+          "quote": "map_college_credit_summary join map_colleges entity_kind=college: suppressed 10 of 107 today"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: adr-student-detail-aggregate-disclosure-control (no cpl_memory row with that slug)",
+          "to": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md, or related → k10-revisit-costs-breadth-not-volume"
+        }
+      ]
+    },
+    {
+      "id": "477467be-703b-4fc1-8be7-47027455e43b",
+      "slug": "catalog-year-was-never-missing",
+      "kind": "pitfall",
+      "title": "Corrects our own notes: catalog year is filled on every record - it was never the missing piece",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured on today's 600,716-row table: catalog_year present on 99.9% of rows across 8 academic years 2019-2020…2026-2027; the 557 blanks are the source's own empty strings preserved since #1252. The corrected premise holds; the current lane no longer claims catalog year is unheld.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "catalog_year on map_student_credit: blank 557 of 600,716; 2019-2020 68 · 2020-2021 477 · 2021-2022 577 · 2022-2023 12,767 · 2023-2024 45,488 · 2024-2025 171,520 · 2025-2026 308,768 · 2026-2027 60,494"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **CATALOG YEAR ROLLS FORWARD, so the axis is MUTABLE.**"
+        },
+        {
+          "source": "slug:three-new-map-custom-reports-awaiting-wiring",
+          "quote": "related target exists with status superseded — expected, it is the row this one corrected"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f769d426-6150-4136-b91a-ea8edb118a99",
+      "slug": "the-three-reports-are-our-own-spec-implemented",
+      "kind": "fact",
+      "title": "The three new MAP reports are the specification we sent them two weeks earlier",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The Malone spec (Dataset A, 13 columns, 204,714 rows) is committed and the by-catalog-year view it matches is the one the fetcher pulls; the one-day deltas were a snapshot, the structural claim stands; #1246 on main.",
+      "evidence": [
+        {
+          "source": "docs/map_dataset_sql_for_malone.md:53",
+          "quote": "| **A — credit funnel** | college × exhibit × recommendation × disposition × catalog year × course type | **204,714** | No — aggregate only |"
+        },
+        {
+          "source": "docs/map_dataset_sql_for_malone.md:136-147",
+          "quote": "Column table: CollegeID, SourceCode, ExhibitID, CreditRecommendation, CollegeCourse, CPLStatusPlan, CatalogYear, CourseType, PotentialCredits, CreditsInReview, AppliedCredits, TranscribedCredits …"
+        },
+        {
+          "source": "fetch_custom_report.py:133",
+          "quote": "\"viewName\": \"View_CollegeExhibitCRByCatalogYear_APIDataset\","
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "7e473c13 All three new MAP Custom Reports are on the API we already pull — wire the by-catalog-year one (#1246)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2015c2ec-ae5b-49f2-bc20-22d6b5229cce",
+      "slug": "three-map-custom-reports-served-and-wired",
+      "kind": "milestone",
+      "title": "All three new MAP reports come through the connection our nightly job already uses",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "All three PRs landed on main; the fetcher carries the 13-column and student-detail views and deliberately omits the 11-column one; the verified row we-already-pull-from-map-do-not-accept-a-push corroborates the declinable push.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "7e473c13 (#1246) · ac10d8c8 Wire the student-detail view, and guard the payload as the PII boundary (#1247) · d93075f8 Record Pedro's salt confirmation at the call site (#1248)"
+        },
+        {
+          "source": "fetch_custom_report.py:126",
+          "quote": "⚠️ Take THIS one, not View_CollegeExhibitCR_APIDataset (below, 11"
+        },
+        {
+          "source": "fetch_custom_report.py:206",
+          "quote": "\"viewName\": \"View_StudentDetailsCredits_APIDataset\","
+        },
+        {
+          "source": "slug:we-already-pull-from-map-do-not-accept-a-push",
+          "quote": "verified: Adding three more reports is three entries in REQUEST_PAYLOAD - a config change, not a new integration."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b5eff7e1-3fb0-4730-bb4f-0897bad10f63",
+      "slug": "status-is-91-percent-null-and-implementation-dominates",
+      "kind": "fact",
+      "title": "The articulation approval stage is blank on 91% of records, so it cannot break down the backlog",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured today: status blank on 540,834 of 600,716 rows (90.0%), then Implementation 53,165 · Faculty 3,360 · Initiator 2,968 · AO 389 — same four values, same order; blanks are '' rather than NULL since #1252 preserved the empty string. Lane states 91.2% blank, top value Implementation.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "status on map_student_credit today: '' 540,834 (90.0% of 600,716) · Implementation 53,165 · Faculty 3,360 · Initiator 2,968 · Articulation Officer 389"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **`Status` is 91.2% BLANK**, top value `Implementation` — **it cannot facet the backlog**."
+        },
+        {
+          "source": "slug:student-detail-view-has-three-status-fields",
+          "quote": "verified (Sam, 2026-08-19): Status = the ARTICULATION APPROVAL STAGE the row sits at"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d8a7c761-2205-48da-96cf-1e631784da17",
+      "slug": "moreno-valley-went-down-while-the-total-went-up",
+      "kind": "pitfall",
+      "title": "The reconciliation is NOT uniformly our staleness resolving — Moreno Valley LOST 192 rows while the total gained 6,291",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "The row's open question ('candidate explanations, none confirmed') was resolved the same evening by the catalog-year roll-forward row, which explains MVC's -192 as benign re-keying and restates the standing rule (reconcile per college); the runbook carries the per-college wrong-way SQL.",
+      "evidence": [
+        {
+          "source": "slug:catalog-year-rolls-forward-so-the-axis-is-mutable",
+          "quote": "This RESOLVES the anomaly that looked alarming at first read … Only 2 of 112 colleges net down (both RCCD: id 2 at -493, Moreno Valley -192)"
+        },
+        {
+          "source": "docs/map_custom_report_load.md:135",
+          "quote": "-- Per college, worst disagreement first. THE COLLEGES MOVING THE WRONG WAY ARE"
+        }
+      ],
+      "superseded_by": "catalog-year-rolls-forward-so-the-axis-is-mutable",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a3bd2d70-a5ef-41ae-b2c3-e3a0b30450df",
+      "slug": "transcribed-check-is-3x-the-transcribed-units",
+      "kind": "pitfall",
+      "title": "The \"transcribed\" tick sits on three times more records than actually have transcribed units",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: tick on 86,432 rows vs units on 27,837, both 27,837, none with units and no tick — strict superset holds (3.1x). The NEEDS SAM is answered by the verified ruling transcribed-means-units-not-the-tick (Sam, 2026-08-19); the lane states it and the six-check/41-combination finding.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_student_credit today: cpl_plan_status ticked Transcribed 86,432 rows; transcribed_credits>0 27,837; both 27,837; units without the tick 0"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "✅ **TRANSCRIBED = UNITS, NEVER THE TICK** (Sam, 2026-08-19; no code change needed — every published figure already sums units)."
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **`CPLPlanStatus` holds SIX checks / 41 combinations**, delimiting inconsistent — split-and-strip, stored verbatim."
+        },
+        {
+          "source": "slug:transcribed-means-units-not-the-tick",
+          "quote": "verified: Only when transcribed units are present we count those as transcribed and the others are ignored."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: [] (NEEDS SAM left open in the text)",
+          "to": "add related → transcribed-means-units-not-the-tick"
+        }
+      ]
+    },
+    {
+      "id": "8cc4f4ed-7368-42cd-ad65-d33cc860175d",
+      "slug": "catalog-year-rolls-forward-so-the-axis-is-mutable",
+      "kind": "fact",
+      "title": "Catalog years move forward between data refreshes, so they cannot carry a time series",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lane states the principle verbatim; PR #1252 on main; today's catalog-year distribution shows the roll continuing (2026-2027 at 60,494 rows). The per-college deltas were a one-day snapshot; the mechanism is the claim.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **CATALOG YEAR ROLLS FORWARD, so the axis is MUTABLE.**"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "c85bbae8 A load must reproduce its source, not improve it — preserve the empty string (#1252)"
+        },
+        {
+          "source": "sql",
+          "quote": "map_student_credit today: 2026-2027 60,494 rows, 2025-2026 308,768 (the 2026-08-19 pull had just added +3,978 to 2026-27)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c399e9b9-eb83-472e-8d0d-76e05d2e4230",
+      "slug": "a-load-must-reproduce-its-source-not-improve-it",
+      "kind": "pitfall",
+      "title": "A load must reproduce its source, not improve it — the empty string is not a null",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The loader preserves the empty string and zero-fills per table; live tables show '' not NULL (exhibit_id '' on 27,941 rows, NULL on 0); the lane states the rule; #1252 on main.",
+      "evidence": [
+        {
+          "source": "kb/_sync_map_custom_reports.py:303",
+          "quote": "Trim, and otherwise pass the value through — INCLUDING the empty string."
+        },
+        {
+          "source": "kb/_sync_map_custom_reports.py:314",
+          "quote": "2. THE LIVE TABLE IS THE CONTRACT. map_college_cr_unit stores \"\" today:"
+        },
+        {
+          "source": "kb/_sync_map_custom_reports.py:161",
+          "quote": "# ── Blank numerics: zero-fill ONLY where the LIVE table says NOT NULL"
+        },
+        {
+          "source": "sql",
+          "quote": "map_student_credit: exhibit_id = '' on 27,941 rows, NULL on 0; catalog_year '' on 557"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **A LOAD MUST REPRODUCE ITS SOURCE, NOT IMPROVE IT** — the gate caught `\"\"`→NULL on ~200k rows, then a NOT NULL mismatch; **zero-fill is PER TABLE**."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b269051c-2451-4ebb-99b1-ebe33499227c",
+      "slug": "compute-the-canonical-pair-not-a-plausible-neighbour",
+      "kind": "pitfall",
+      "title": "A \"+6.9%\" headline was measured on the wrong thing - the real figure was 12.5%",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured the canonical pair as the row defines it (summary table, entity_kind=college): dormant 1,215,131 / waiting 74,345 / students 48,780, grown past 1,183,569 / 72,501 / 47,804 with nightly loads. Lesson stands; the disposition lane still quotes the pre-promotion 1,051,870/63,991.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_college_credit_summary join map_colleges entity_kind='college': sum(dormant_credits) 1,215,131 · sum(articulated_waiting) 74,345 · sum(students) 48,780 (107 colleges)"
+        },
+        {
+          "source": "docs/reference/lanes/disposition-grain-student-detail.md:24",
+          "quote": "published 1,051,870/63,991, unsuppressed 1,052,531/64,074, **both scoped `entity_kind='college'` (106 entities)**; **never change one half alone**"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "a4a92269 Rule 8 checkpoint: it is live, it runs itself, and one number was wrong (#1255)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6396c84e-2d76-4f26-865c-2ef659a7b1eb",
+      "slug": "four-thousand-students-marked-transcribed-with-no-units",
+      "kind": "pitfall",
+      "title": "REAL defect: 4,196 students at 8 colleges are ticked Transcribed with zero transcribed units anywhere",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Live worklist P2 today: 4,197 students at 9 colleges, split batch (3,628 at 4 colleges: LA Pierce 1,840, Merced 1,785) vs full-workflow (569; Moreno Valley 530) — the two disjoint mechanisms hold; runbook and lane carry 14,348 rows / 4,196 students. Row-count drift only (11,601 rows today).",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_cleanup_worklist P2 today: batch 3,628 students / 10,829 rows at 4 colleges (LA Pierce 1,840, Merced 1,785); workflow 569 / 772 at 8 (Moreno Valley 530); total 4,197 students / 9 colleges"
+        },
+        {
+          "source": "docs/map_cleanup_worklist.md:135",
+          "quote": "### Priority 2 · Plan says Transcribed, no units recorded — **14,348 rows, 4,196 students**"
+        },
+        {
+          "source": "docs/reference/lanes/cpl-cleanup-worklist.md:24",
+          "quote": "**P2 Transcribed-no-units 14,348** (94% LA Pierce + Merced, an **ingest gap**)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "49f1f7cf-ad1f-4fb5-9d99-a95ac38bc4ec",
+      "slug": "cpl-plan-status-is-a-student-attribute-not-a-row-fact",
+      "kind": "fact",
+      "title": "The CPL plan status describes the student, not the record - it is stamped identically on every one of their rows",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured on today's table: cpl_plan_status is constant within (college_id, student_key) for all 48,913 students (0 varying). Sam confirmed the grain finding directly (verified transcribed-means-units-not-the-tick).",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "count(distinct coalesce(cpl_plan_status,'')) per (college_id, student_key) on map_student_credit → 48,913 students, 0 with more than one value"
+        },
+        {
+          "source": "slug:transcribed-means-units-not-the-tick",
+          "quote": "Transcribed refers to the whole student record even though it is stamped on CR rows … He also confirmed the grain finding directly."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "102c7def-eb66-44cd-a8d0-f9921600f783",
+      "slug": "applied-credits-mirrors-articulated-on-needs-action-rows",
+      "kind": "pitfall",
+      "title": "The field we read as \"credit was awarded\" is identical to \"credit exists\" on all 462,355 waiting records",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: applied_credits = articulated_credits on all 462,751 Needs Action rows today (0 mismatches). The NEEDS SAM is closed — the lane records Sam retiring the 55% figure on 2026-08-19 with the publish-both ruling standing, and applied-measure-fork-55-percent is now status superseded.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_student_credit: Needs Action rows 462,751; applied_credits IS DISTINCT FROM articulated_credits on 0 of them"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "✅ **The 55% applied fork is RETIRED** (Sam, 2026-08-19) — the ruling *publish both and name the gap* stands, the figure does not: `applied_credits` is **identical to `articulated_credits`**"
+        },
+        {
+          "source": "slug:applied-measure-fork-55-percent",
+          "quote": "status now 'superseded' (verified_by Sam (MAP@rccd.edu) — ruling)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e890309f-c46b-4f0c-bd2a-065dede22118",
+      "slug": "rank-a-cleanup-list-by-decisions-not-rows",
+      "kind": "procedure",
+      "title": "A clean-up list is ranked by DECISIONS and grouped by WHO fixes it — the biggest class by rows was two phone calls",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Procedure holds (lane, runbook and SQL carry effort_shape and the P-list; P1 split into P1 12,283 + P5 5,311 the same day). Anomaly, not a verdict change: the live table has no P1/P5 rows today — the cron-loaded credit_rec no longer carries the ACE '0 hours in…' text (zero-unit rows are blank).",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/cpl-cleanup-worklist.md:24",
+          "quote": "⭐ **RANKED BY DECISIONS, NOT ROWS** (`effort_shape` per class) … **P1 cannot yield credit 12,283** · **P2 Transcribed-no-units 14,348** … **P5 Credit by Exam 5,311**"
+        },
+        {
+          "source": "kb/supabase_map_cleanup_worklist.sql:13",
+          "quote": "-- So `effort_shape` is the ranking axis:"
+        },
+        {
+          "source": "sql",
+          "quote": "map_cleanup_worklist today: only priorities 2/3/4 present (11,601 / 412 / 2,257 rows); 0 rows with priority in (1,5); rebuild_map_cleanup_worklist() still contains the P1/P5 markers"
+        },
+        {
+          "source": "sql",
+          "quote": "map_student_credit at Needs Action: credit_rec ~* 'credit is not recommen' 0 rows, zero-hour pattern 0; zero-unit rows now carry credit_rec '' (18,679)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "52951a30-47f2-45e2-a831-7be93d343653",
+      "slug": "a-gate-cannot-protect-the-step-that-fills-it",
+      "kind": "pitfall",
+      "title": "Gates do not protect the loading step",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The no-argument truncate function exists live and is the sync script's clear call; lane, runbook and KB note state the lesson; #1262 on main.",
+      "evidence": [
+        {
+          "source": "sql: pg_proc",
+          "quote": "map_clear_custom_report_staging() — no arguments, SECURITY DEFINER"
+        },
+        {
+          "source": "kb/_sync_map_custom_reports.py:510",
+          "quote": "CLEAR_STAGING_RPC = \"rpc/map_clear_custom_report_staging\""
+        },
+        {
+          "source": "docs/map_custom_report_load.md:62",
+          "quote": "### Clearing staging is a TRUNCATE, and it is not a gate"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "Now `map_clear_custom_report_staging()`, a no-argument TRUNCATE, **5.3 s**."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b7be59a2-3234-4f22-b842-88e8f83a4ad2",
+      "slug": "ace-zero-hour-recs-include-deferrals-not-just-refusals",
+      "kind": "pitfall",
+      "title": "Zero units can mean ACE deferred, not refused",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Finding (5,311 deferrals split from refusals) is in the committed SQL, runbook and lane; the embedded question is answered by the verified ruling ace-deferrals-are-credit-by-exam-opportunities (Sam, 2026-08-20). Same live anomaly as the worklist row: no P5 rows now (credit_rec text changed).",
+      "evidence": [
+        {
+          "source": "kb/supabase_map_cleanup_worklist.sql:91-93",
+          "quote": "-- ACE defers to the college. NOT a refusal. Split by whether the recommendation NAMES A SUBJECT"
+        },
+        {
+          "source": "docs/map_cleanup_worklist.md:281",
+          "quote": "### Priority 5 · Credit by Exam opportunities — **5,311 rows, 101 colleges, 3,898 students**"
+        },
+        {
+          "source": "slug:ace-deferrals-are-credit-by-exam-opportunities",
+          "quote": "RULING (Sam, 2026-08-20): the 5,311 ACE recommendations … are to be PRESENTED TO STUDENTS AS CREDIT BY EXAM OPTIONS - not ruled out by college staff."
+        },
+        {
+          "source": "sql",
+          "quote": "map_cleanup_worklist: 0 rows priority 5 today; the deferral text patterns match 1 Needs Action row on the cron-loaded map_student_credit"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: []",
+          "to": "add related → ace-deferrals-are-credit-by-exam-opportunities"
+        }
+      ]
+    },
+    {
+      "id": "b1a3d61d-bc33-4abb-8773-d1f33a022651",
+      "slug": "ace-exhibit-titles-were-fetched-daily-and-dropped",
+      "kind": "fact",
+      "title": "ACE exhibit titles now load - 97.3%",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Table live and growing (26,065 pairs today vs 25,794), rows_of() is the single row-key site in the sync script, the lane carries 219 of 225 resolving; #1264 on main.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select count(*) from map_ace_exhibit_titles → 26,065 (rebuilds nightly)"
+        },
+        {
+          "source": "kb/_sync_map_custom_reports.py:257-261",
+          "quote": "def rows_of(ds): The MAP API returns rows under `columnValue`, NOT `data` … `ace_titles()` shipped reading `ds.get(\"data\")`"
+        },
+        {
+          "source": "docs/reference/lanes/cpl-cleanup-worklist.md:24",
+          "quote": "⭐ **`map_ace_exhibit_titles` (25,794) + `map_cx_exhibit_guidance` (225 exhibits) now say what each blank exhibit IS and where peers put it** — 219 of 225 resolve"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "a00791b0 Sam's Cx ruling, scoped to the 1,310 that name a course — plus the exhibit titles and a guidance list (#1264)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "dffd2139-d636-4064-9bce-837a15bcd0e2",
+      "slug": "an-inline-placeholder-style-outranks-injected-css",
+      "kind": "pitfall",
+      "title": "A tab's built-in \"loading\" styling overrules the styling the tab applies afterwards",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "shedPlaceholder() is live in college_briefing.js; the KB note is committed; #1274 on main.",
+      "evidence": [
+        {
+          "source": "college_briefing.js:777",
+          "quote": "function shedPlaceholder(root) {"
+        },
+        {
+          "source": "ls",
+          "quote": "docs/kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md present"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "8349bd1c My College: prompt for a location, one question cluster, and Sierra's new intro (#1274)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "12f290d4-97bb-4efc-919b-8d632553f86d",
+      "slug": "trailing-space-in-contact-names-hid-two-colleges",
+      "kind": "pitfall",
+      "title": "Two college names end with an invisible space, so Cypress and San Jose City looked like they had no CPL contact",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both trailing-space spellings are live in map_colleges.variants and college_briefing.js resolves through variants; the lane carries the join-not-table rule and the no-shadowing guard; #1278 on main.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_colleges 46 Cypress College variants ['CYPRESS','Cypress','Cypress College ']; 100 San Jose City College variants ['SAN JOSE CITY','San Jose City','San Jose City College ']"
+        },
+        {
+          "source": "college_briefing.js:3181",
+          "quote": "(r.variants || []).forEach(function (v) {"
+        },
+        {
+          "source": "docs/reference/lanes/college-district-identity.md:24",
+          "quote": "⚠️ fix the **JOIN**, never the table (`map_college_contacts` rebuilds from MAP nightly, so trimming its two trailing-space names puts them back tomorrow); a variant must never shadow a canonical name"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "86e433f3 College identity: land the crosswalk, include noncredit + partners, lint it, and surface it as a tab (#1278)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "48203c75-9832-4502-80a1-0b17256a9b63",
+      "slug": "read-the-per-item-verdict-not-just-the-envelope",
+      "kind": "pitfall",
+      "title": "A batch data feed reports a failure per item, and we were only reading the envelope",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "summarize_response(), the duplicate-viewName fatal, the columnValue count over dataCount and the opt-in --strict are all in the fetcher; the lane states it; #1358 on main.",
+      "evidence": [
+        {
+          "source": "fetch_custom_report.py:326",
+          "quote": "def summarize_response(data, requested=None):"
+        },
+        {
+          "source": "fetch_custom_report.py:345",
+          "quote": "`responseCode` — an ABSENT code is normal on a healthy dataset, so only a"
+        },
+        {
+          "source": "fetch_custom_report.py:388",
+          "quote": "problems.append(f\"{view}: returned {seen[view]}x — viewName cannot identify a dataset\")"
+        },
+        {
+          "source": "fetch_custom_report.py:472",
+          "quote": "result = fetch_report(output, strict=\"--strict\" in sys.argv)"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **`dataCount` is MAP's CLAIM, not a row count** … ⚠️ **PRINTING IS UNCONDITIONAL, FAILING IS OPT-IN (`--strict`)**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e042ee8b-0aac-4969-ad0e-fbb36dad38e2",
+      "slug": "map-api-empty-column-list-now-500s-star-enumerates",
+      "kind": "pitfall",
+      "title": "The MAP CustomReport API now answers HTTP 500 to columnName: [] on every view; [\"*\"] enumerates the schema",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The probe tries all three request forms with a known-good control first; the older probes still document [] as the method (as the row says); the lane states the same.",
+      "evidence": [
+        {
+          "source": "kb/_probe_lifecycle_checks.py:310-312",
+          "quote": "(\"columnName: []\", …), (\"columnName omitted\", …), ('columnName: [\"*\"]', …)"
+        },
+        {
+          "source": "kb/_probe_lifecycle_checks.py:287",
+          "quote": "print(\"[0] CONTROL — does `columnName: []` still enumerate a KNOWN-GOOD view?\")"
+        },
+        {
+          "source": "kb/_probe_new_custom_reports.py:35",
+          "quote": "The way out is to **request nothing**: with `columnName: []` there is no"
+        },
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "⚠️ **`columnName: []` now answers HTTP 500 on EVERY view, the control included; `[\"*\"]` enumerates**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b9ebdb5a-c4c8-4abe-8a9e-2bd578024a11",
+      "slug": "reccreatedon-is-a-view-refresh-stamp",
+      "kind": "fact",
+      "title": "RecCreatedOn on the catalog-year view is one refresh timestamp repeated on every row, not a record date",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lane states it verbatim; the fetcher does not request RecCreatedOn on any view.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "The catalog-year view gained `RecCreatedOn`, one refresh stamp repeated on every row — freshness, not a record date."
+        },
+        {
+          "source": "grep -n RecCreatedOn fetch_custom_report.py",
+          "quote": "no matches — not fetched"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6dc7ecaf-0587-400d-98a1-29407b0a24c0",
+      "slug": "student-aggregated-view-carries-no-identity-columns-now",
+      "kind": "fact",
+      "title": "The four identity columns the fetcher holds by name are not on the live student aggregated view",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lane states the 25 = 19 + 6 finding; the fetcher still carries the hold comment as posture and requests the six booleans (#1437); the sibling proposed row lifecycle-booleans-live-on-student-aggregated-view records the same run.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/map-custom-reports.md:24",
+          "quote": "The four identity columns the fetcher holds by name are no longer on the live aggregated view (25 = our 19 + the 6)."
+        },
+        {
+          "source": "fetch_custom_report.py:80",
+          "quote": "# Student-identity columns (BirthDate, FirstName, LastName, StudentID)"
+        },
+        {
+          "source": "fetch_custom_report.py:112",
+          "quote": "\"Counselor_Verified\", \"Student_Verified\", \"Transcribed\"]"
+        },
+        {
+          "source": "slug:lifecycle-booleans-live-on-student-aggregated-view",
+          "quote": "proposed, 2026-09-02, run 33693966335: the six CPLPlanStatus checks split out; fetched daily since PR #1437"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "87a66fe3-3098-44dd-ba57-44101a5d82f8",
+      "slug": "wiring-a-column-silences-the-probes-diff",
+      "kind": "pitfall",
+      "title": "A probe that diffs the live schema against the request stops seeing a column the moment it is wired",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The WATCH list exists and is merged into every profile run; #1437 on main.",
+      "evidence": [
+        {
+          "source": "kb/_probe_lifecycle_checks.py:139",
+          "quote": "WATCH = {"
+        },
+        {
+          "source": "kb/_probe_lifecycle_checks.py:686",
+          "quote": "cols += [w for w in WATCH.get(view, []) if w not in cols]"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "67d33763 Probe the student views for Pedro's CPL lifecycle booleans and CollegeID2 (#1437)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "78ec25c2-d341-4fdb-b388-61fcc035cbd3",
+      "slug": "default-area-sentinel-was-synthesised",
+      "kind": "pitfall",
+      "title": "\"Default Area\" never came from MAP - an earlier load invented it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured on today's cron-loaded table: 'Default Area' 0 rows, 'Default Credit' 28,045, blanks preserved as '' (27,941; NULL 0) — the nightly load keeps raw values. Code hits for 'Default Area' remain only the unrelated 'Default Area Credits' field; the lessons doc records the finding.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "map_student_credit today: exhibit_id = 'Default Area' 0 rows; 'Default Credit' 28,045; '' 27,941; NULL 0"
+        },
+        {
+          "source": "fetch_custom_report.py:60",
+          "quote": "\"Course Credits\", \"Default Area Credits\", \"Elective Credits\","
+        },
+        {
+          "source": "docs/student_detail_load_lessons.md:350-351",
+          "quote": "`Default Area` does **not exist** in the raw extract — 0 rows. The prior load synthesised it for 18,127 rows where `ExhibitID` was null. `Default Credit` is genuine MAP data (24,556)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

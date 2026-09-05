@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 379,
+   "count": 380,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1559,6 +1559,26 @@
      "title": "A mechanism that looks redundant may be carrying a second job the table cannot show",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/_memory_audit.py",
+      "kb/memory_audit/2026-09-05-receipt.json",
+      "docs/reference/lanes/memory-tab.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "memory",
+      "audit",
+      "governance",
+      "supabase"
+     ],
+     "title": "A memory table goes stale in its claims, not its links \u2014 lint the structure, read the claims",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-26",
@@ -6559,7 +6579,7 @@
      ],
      "title": "Playbook \u2014 auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)",
      "type": "playbook",
-     "updated": "2026-07-24"
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-07-20",
@@ -11403,7 +11423,7 @@
      ],
      "title": "Memory tab / Autogenerate + the Briefing \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-28",
@@ -11762,8 +11782,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 203,
+   "count": 204,
    "docs": [
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "n": 230,
+     "path": "docs/session_230_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the memory hopper was tested end to end; Sam's sheet replies are the queue",
+     "type": null,
+     "updated": "2026-09-05"
+    },
     {
      "created": "2026-09-05",
      "governs": [],
@@ -15283,5 +15316,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 778
+ "total": 780
 }

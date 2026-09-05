@@ -1,0 +1,619 @@
+{
+  "part": "memory",
+  "expected_rows": 19,
+  "coverage": {
+    "rows_read": 19,
+    "rows_judged": 19,
+    "note": "All 19 rows read (pages at offset 0/8/16; offset 16 returned 3). Live re-measures were read-only SELECTs."
+  },
+  "counts": {
+    "confirmed": 18,
+    "stale": 0,
+    "superseded_by_row": 1,
+    "snapshot": 0,
+    "unverifiable": 0
+  },
+  "verdicts": [
+    {
+      "id": "67fee6c7-5730-4471-a18f-d0a8b6db1a12",
+      "slug": "q-mem-measure-pain",
+      "kind": "question",
+      "title": "Measure orientation pain first",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Tested whether the Phase-4 audit was built or the question closed. ADR still lists it open, the playbook calls the audit deferred, DR-19 says the table has no lint, and no decision row resolves it. A first measurement exists: learnings-die-with-the-session (2026-08-10).",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/adr-unified-memory-table.md:305-306",
+          "quote": "6. **Measure before Phase 4.** Gate the \"Everything We Know\" audit on measured orientation pain (`q-mem-measure-pain`, open)."
+        },
+        {
+          "source": "docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md:131",
+          "quote": "**Does NOT mean bulk-import the corpus.** That's the *deferred* Phase-4 audit —"
+        },
+        {
+          "source": "kb/governance_register.json DR-19 when_empty",
+          "quote": "These rules are written, not enforced — the memory table has no lint (one of the two known uncaught doctrine scenarios)."
+        },
+        {
+          "source": "slug:learnings-die-with-the-session",
+          "quote": "Session 134 re-derived, at cost: ... Sam supplied all three from memory. (the first measured orientation-pain event, 2026-08-10)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6f4ce439-7e13-42c6-aebf-56ac3521828a",
+      "slug": "d-mem-report-plain",
+      "kind": "decision",
+      "title": "The Report reads a separate plain-English field, so entries can stay precise and still read plainly",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Schema of record carries the `plain` column with the fallback rule, and cpl_memory.js reportProse() prefers plain and composes summary(+detail) when it is empty, exactly as decided. The Briefing now reads plain too (line 1088), extending rather than overturning the decision.",
+      "evidence": [
+        {
+          "source": "kb/supabase_cpl_memory.sql:51",
+          "quote": "plain text check (char_length(plain) <= 2000), -- reader/briefing text for the 📄 Report view; NULL falls back to summary(+detail)."
+        },
+        {
+          "source": "cpl_memory.js:117-125",
+          "quote": "function reportProse(d) { var p = (d.plain || \"\").trim(); if (p) return p; var s = (d.summary || d.id || \"\").trim(); var det = (d.detail || \"\").trim(); ..."
+        },
+        {
+          "source": "cpl_memory.js:1088",
+          "quote": "var body = (d.plain || \"\").trim() || String(d.summary || \"\").trim();"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ccb128c4-1fb5-4516-8f2a-fa89b4702908",
+      "slug": "learnings-die-with-the-session",
+      "kind": "risk",
+      "title": "Three things were re-derived in one session that a prior session already knew",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Rule 8 in CLAUDE.md was rewritten around this exact event (three settled facts re-derived 2026-08-10 with the answers unread in cpl_memory), and the reload runbook carries the privacy tripwire the row says replaced the warning. The mitigation is standing doctrine now.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md:133",
+          "quote": "⚠️ **This exists because a session re-derived THREE settled facts in one run (2026-08-10) while the answers sat in `cpl_memory` unread**"
+        },
+        {
+          "source": "docs/map_student_credit_reload.md:37",
+          "quote": "⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` = **42,346** (confirmed 2026-08-10)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e33f6f6a-6496-4b9a-abb2-0c0934783d55",
+      "slug": "sierra-rules-stay-separate-from-cpl-memory",
+      "kind": "decision",
+      "title": "Sierra's instructions get their own home, not the memory table - three clashes, one of them a safety hole",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Storage is still separate: cpl-chat/index.ts never reads the cpl_memory table (its 3 mentions are comments about cpl_memory.js); the 9,000-char guidance cap stands; and the recommended link was built — sierra_rules carries memory_slug and Sierra Training reads it.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts (grep cpl_memory)",
+          "quote": "3 hits, lines 2954/2967/2976, all comment lines naming cpl_memory.js; no query against the cpl_memory table"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3243",
+          "quote": "const GUIDANCE_MAX_CHARS = 9000;"
+        },
+        {
+          "source": "sql",
+          "quote": "select column_name from information_schema.columns where table_name='sierra_rules' → key, memory_slug"
+        },
+        {
+          "source": "sierra_training.js:898",
+          "quote": "fetch(REST + \"/sierra_rules?select=key,body,applies_when,sort_order,active,memory_slug,updated_by,updated_at\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8ee44bf7-48c6-445b-a7e8-6738f1d8d2fa",
+      "slug": "a-silent-input-cap-is-a-content-swap",
+      "kind": "pitfall",
+      "title": "A shared service silently cut the request short, so the draft came back about a different subject",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The caps and queryCapFor() exist in the edge function exactly as stated (1,000 chat / 6,000 drafting / 20,000 briefing; unknown surface → chat cap), the autogen test reads QUERY_CAP_DRAFTING out of index.ts, the KB note is on disk, and PR #1320 is on main.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2974-2981",
+          "quote": "const QUERY_CAP_CHAT = 1000; const QUERY_CAP_DRAFTING = 6000; ... const QUERY_CAP_BRIEFING = 20000;"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3018-3019",
+          "quote": "function queryCapFor(surface: string | null): number { return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT; }"
+        },
+        {
+          "source": "tests/cpl_memory_autogen.test.js:87-97",
+          "quote": "const SRV = fs.readFileSync(\"chatbox/supabase/functions/cpl-chat/index.ts\", \"utf8\"); ... const CAP = SURF.QUERY_CAP_DRAFTING;"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "68196b10 Memory Autogenerate: the note never reached the model, and the doctrine filled the vacuum (#1320)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "372dc440-290f-49c0-a7d8-b208916b4a77",
+      "slug": "sierra-does-not-read-cpl-memory",
+      "kind": "fact",
+      "title": "Sierra has never read the team memory table - it is written for Claude, not for her",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-checked today: cpl-chat/index.ts contains no read of the cpl_memory table (its only three mentions are comments about the cpl_memory.js client), and the Briefing panel still labels itself an agent read-back, not a Sierra answer.",
+      "evidence": [
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2954,2967,2976",
+          "quote": "' * cpl_memory.js's envelope alone measured 984 of those 1,000 characters' / '/* ⚠ THE BRIEFING SENDS A CORPUS, NOT A QUESTION. cpl_memory.js's Briefing hands' — comments only"
+        },
+        {
+          "source": "cpl_memory.js:972",
+          "quote": "// ⭐ IT IS A READ-BACK BY AN AGENT, NOT A SIERRA ANSWER, and the label says so."
+        },
+        {
+          "source": "cpl_memory.js:1377-1379",
+          "quote": "\"A read-back of the entries below, in my words, with the knowledge base checked against them. ... This is how an agent reads\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e4d34891-6ba7-452d-98a2-d3a5f0c547e7",
+      "slug": "sam-briefing-plain-language-and-numbered-citations",
+      "kind": "decision",
+      "title": "Sam: the briefing reads back in PLAIN LANGUAGE, cites with superscript numbers, and a click opens the row to edit",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "All three of Sam's asks are implemented and pinned by the briefing test (plain language as a stated requirement in the prompt, superscript-number citation, click opens that row's edit form); PR #1321 is on main. Advisory — human-sourced.",
+      "evidence": [
+        {
+          "source": "tests/cpl_memory_briefing.test.js:144-145",
+          "quote": "check(\"(3) ⭐ plain language is stated as a requirement, not a style note\", /PLAIN LANGUAGE\\. This is the requirement/.test(q3)"
+        },
+        {
+          "source": "tests/cpl_memory_briefing.test.js:245",
+          "quote": "check(\"(7h) the citation is a superscript number\", cite && cite.textContent === \"1\");"
+        },
+        {
+          "source": "tests/cpl_memory_briefing.test.js:315",
+          "quote": "check(\"(7c) ⭐ the click opens the edit form for that row\","
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "999de825 Memory: a briefing button that reads the entries back, with every claim cited (#1321)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam Lee",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7863d813-30d0-4e52-8ea5-43b066640419",
+      "slug": "sierra-guidance-surface-check-missing-memory-briefing",
+      "kind": "pitfall",
+      "title": "A curator cannot aim a rule at the briefing screen, and the natural way out of the failure sends it everywhere",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lesson (schema file vs live DB drift; a failed save pushes a curator to blank = everywhere) stands. The defect itself is closed: the live CHECK now allows memory-briefing and gr-analysis and matches the SQL file and KNOWN_SURFACES. The summary's 'still allows only…' is 2026-08-24 state.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select pg_get_constraintdef(oid) from pg_constraint where conname='sierra_guidance_surface_ck' → ... 'fact-sheet', 'memory-autogen', 'memory-briefing', 'gr-analysis'"
+        },
+        {
+          "source": "chatbox/supabase_sierra_guidance.sql:96-104",
+          "quote": "constraint sierra_guidance_surface_ck check (surface is null or surface in ( 'my-college', 'cobi-assistant', 'public', 'fact-sheet', 'memory-autogen', 'memory-briefing', 'gr-analysis' ))"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:2940-2943",
+          "quote": "const KNOWN_SURFACES = new Set([ \"my-college\", \"cobi-assistant\", \"public\", \"fact-sheet\", \"memory-autogen\", \"memory-briefing\", \"gr-analysis\", ]);"
+        },
+        {
+          "source": "tests/sierra_surface.test.js",
+          "quote": "file present (10,754 B) — the file-vs-file pin the row describes"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "df3e4ee7-af77-4f47-99a8-d9bf327e5259",
+      "slug": "drafting-calls-pollute-the-sierra-training-gap-miner",
+      "kind": "fact",
+      "title": "Our own internal drafting requests were filed as though students had asked Sierra",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: the 3 cobi-memory-autogen rows are still in chat_interactions (plus 1 cobi-memory-briefing row), none newer than 2026-08-24. The v58 `if (!drafting)` guard is in code and v58 deployed 2026-08-25 (later v60/v61), so new pollution stopped; clearing the 3 is still pending.",
+      "evidence": [
+        {
+          "source": "sql",
+          "quote": "select session_id, count(*), min/max(created_at) from chat_interactions where session_id in ('cobi-memory-autogen','cobi-memory-briefing') → autogen 3 rows 2026-08-15..08-24; briefing 1 row 2026-08-24"
+        },
+        {
+          "source": "chatbox/supabase/functions/cpl-chat/index.ts:3899",
+          "quote": "if (!drafting) await sb.from(\"chat_interactions\").insert({"
+        },
+        {
+          "source": "docs/session_192_handoff.md:30",
+          "quote": "**`cpl-chat` is at v58 and it is LIVE** — deployed 2026-08-25"
+        },
+        {
+          "source": "docs/session_195_handoff.md:197",
+          "quote": "| Second cpl-chat deploy | ✅ **v60 byte-verified** against `origin/main` (sha `5f817014`, cap 40,000) |"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "11847afd-75cd-496f-817d-b891b319eddc",
+      "slug": "a-write-key-can-name-nothing-and-look-like-auth",
+      "kind": "pitfall",
+      "title": "A save aimed at a row that does not exist looks exactly like being signed out",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Writes key on id and a keyless row is refused with a reason (writeKey/refuseKeyless), pinned by the curate-actions test; PR #1330 on main; KB note on disk. Live: 6 rows still carry a NULL slug, so the condition the lesson guards against is still present.",
+      "evidence": [
+        {
+          "source": "cpl_memory.js:1560-1562",
+          "quote": "function writeKey(d) { if (d && d._uuid) return \"id=eq.\" + encodeURIComponent(d._uuid); return null; }"
+        },
+        {
+          "source": "cpl_memory.js:1566-1568",
+          "quote": "function refuseKeyless(d) { writeErrMsg = \"this entry has no database key, so it can't be changed from here — reload the tab, and tell a curator if it persists\";"
+        },
+        {
+          "source": "tests/cpl_memory_curate_actions.test.js:148-149",
+          "quote": "check(\"(A) writes are keyed through one helper\", ...); check(\"(A) a keyless row is refused rather than written blind\", /function refuseKeyless\\s*\\(/.test(src));"
+        },
+        {
+          "source": "sql",
+          "quote": "select count(*) from cpl_memory where slug is null → 6"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "9ca82c7c Memory: write by the primary key — and one masthead chip for both credentials (#1330)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9cd4ac0e-df22-4487-90bf-6979b1a29ee1",
+      "slug": "a-status-cycle-writes-what-it-passes-through",
+      "kind": "pitfall",
+      "title": "A button that cycles through states saves every state it passes through",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The menu replaced the cycle and setStatus clears verified_at/verified_by whenever the new status is not verified (code + test); the gr_priorities parallel (editing citations clears verification) is also in code; PR #1331 is on main.",
+      "evidence": [
+        {
+          "source": "cpl_memory.js:1641-1656",
+          "quote": "function setStatus(d, next) { ... if (next === \"verified\") { body.verified_at = nowIso(); ... } else { body.verified_at = null; body.verified_by = null; }"
+        },
+        {
+          "source": "cpl_memory.js:1665-1670",
+          "quote": "var STATUS_CHOICES = [ { s: \"verified\", ... }, { s: \"proposed\", label: \"Proposed\", why: \"Written but not yet corroborated.\" }, { s: \"stale\", ... }, { s: \"superseded\", label: \"Inactive\", ... } ];"
+        },
+        {
+          "source": "tests/cpl_memory_curate_actions.test.js:199-202",
+          "quote": "check(\"(C) ⭐ the chip opens a menu of every status, not a cycle\", menu.length === 5 && ..."
+        },
+        {
+          "source": "gr_priorities.js:903",
+          "quote": "if (citesChanged && r.verified_at) { rec.verified_at = null; rec.verified_by = null; rec.verified_note = null; }"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "cacfaec4 SkyView, the status menu, and where a magic link brings you back (#1331)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7cc5e88e-2f4c-406a-a4e0-305684e22bd3",
+      "slug": "the-briefing-read-summary-not-plain",
+      "kind": "pitfall",
+      "title": "The Briefing sent the curator's summary while the Report rendered the plain text",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "briefRow() now sends plain with summary as the fallback (line 1088), the lane file records the defect and fix, and it landed as PR #1338. The row's source names only a branch; the merged PR is #1338.",
+      "evidence": [
+        {
+          "source": "cpl_memory.js:1088",
+          "quote": "var body = (d.plain || \"\").trim() || String(d.summary || \"\").trim();"
+        },
+        {
+          "source": "docs/reference/lanes/memory-tab.md:24",
+          "quote": "`plain` AND `title` ARE READER-FACING (Sam, 2026-08-26) and `briefRow()` was sending `summary`, so screen and model read DIFFERENT words"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "b16f33f1 Memory: plain language everywhere, and the briefing was reading 34 of 188 (#1338)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "PR from branch claude/memory-items-plain-language-jrawe9",
+          "to": "PR #1338"
+        }
+      ]
+    },
+    {
+      "id": "22a2e1b6-1b42-4b06-82ad-f5641a4e267e",
+      "slug": "a-guard-on-a-function-passes-with-the-wiring-deleted",
+      "kind": "pitfall",
+      "title": "Guards on the ordering FUNCTION all passed with the call to it deleted",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The replacement guard the row describes exists: the briefing test drives the real panel through the fetch stub and reads the body that was sent, failing with the observed order. The lane file states the same lesson; PR #1338 is on main.",
+      "evidence": [
+        {
+          "source": "tests/cpl_memory_briefing.test.js:430-433",
+          "quote": "// ⚠ AND THE PANEL MUST ACTUALLY APPLY IT. Asserting briefOrder() in isolation ... So this one goes through the panel and reads the body that was SENT."
+        },
+        {
+          "source": "tests/cpl_memory_briefing.test.js:451",
+          "quote": "check(\"(10) ⚠ the PANEL sends them in reading order — not just briefOrder() in isolation\","
+        },
+        {
+          "source": "docs/reference/lanes/memory-tab.md:24",
+          "quote": "⚠️ **GUARDS ON THE ORDERING FUNCTION ALL PASSED WITH THE WIRING DELETED** — the guard that works drives the real panel and reads the body SENT."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f61e73b4-d47a-42f0-bb15-25fd87ad7268",
+      "slug": "a-truncated-corpus-order-is-its-selection",
+      "kind": "pitfall",
+      "title": "When a corpus does not fit the model's budget, its ORDER is the selection",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Proportional-share ordering, the 20,000 cap minus a measured envelope, and the 1/(2n) guarantee are all in code and test, and the lane file states the same. The 188-row / 83,058-char figures are a 2026-08-26 snapshot (303 verified rows today); the lesson is unchanged.",
+      "evidence": [
+        {
+          "source": "cpl_memory.js:999",
+          "quote": "var BRIEF_QUERY_MAX = 20000;       // must not exceed QUERY_CAP_BRIEFING"
+        },
+        {
+          "source": "cpl_memory.js:1006",
+          "quote": "// verified entries digest to ~83,000 characters against a 17,951-character"
+        },
+        {
+          "source": "cpl_memory.js:1104-1105",
+          "quote": "var probe = briefQuery(\"\", { used: 999999, total: 999999, scope: \"x\".repeat(120) }); return Math.max(1000, BRIEF_QUERY_MAX - probe.length);"
+        },
+        {
+          "source": "tests/cpl_memory_briefing.test.js:402-403,418",
+          "quote": "rows first appears at position 1/(2n), so at a 20% prefix every band with **3 or more rows** is guaranteed present ... check(\"(10) ⚠ at the LIVE truncation ratio every band of 3+ rows"
+        },
+        {
+          "source": "docs/reference/lanes/memory-tab.md:24",
+          "quote": "⭐ **THE LADDER ORDERS, A PROPORTIONAL SHARE SELECTS** — each row carries `(j+0.5)/bandSize` ... Live: **49 entries, all seven kinds**."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "49bc41d5-7d51-4594-989e-161679b2e932",
+      "slug": "memory-title-is-reader-facing",
+      "kind": "procedure",
+      "title": "The `title` field is reader-facing — the Report renders it above every paragraph",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Sam's ruling and the 202-row receipt are on disk and the lane file states the convention; PR #1338 on main. The '0 rows without plain text' figure is a 2026-08-26 snapshot: today 94 of 833 non-superseded rows lack plain (rows added since). The procedure still governs. Advisory.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/memory-tab.md:24",
+          "quote": "⭐ **`plain` AND `title` ARE READER-FACING** (Sam, 2026-08-26) ... 202 rows rewritten: **0 without plain text, 0 with developer jargon, 0 British spellings**."
+        },
+        {
+          "source": "kb/cpl_memory_plain_seed_2026-08-26.json",
+          "quote": "receipt present (41,416 B)"
+        },
+        {
+          "source": "sql",
+          "quote": "select count(*) from cpl_memory where status<>'superseded' and (plain is null or plain='') → 94"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "b16f33f1 Memory: plain language everywhere, and the briefing was reading 34 of 188 (#1338)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "31ffdaaa-b574-4abd-a06a-afc2c7009778",
+      "slug": "push-what-cannot-be-asked-for-pull-everything-else",
+      "kind": "decision",
+      "title": "Push what a session cannot know to ask for; pull everything else",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The rule is the opening section of CLAUDE.md with both constraints the row names (doctrine never into cpl_memory; the pointer is the safety mechanism); PRs #1381/#1382 on main; the lane files exist. CLAUDE.md is 60,000 B today (58,006 B was day-of; still at budget). Advisory — Sam's rule.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md:9",
+          "quote": "> **PUSH what a session cannot know to ask for. PULL everything else.**"
+        },
+        {
+          "source": "CLAUDE.md:26-27",
+          "quote": "⚠️ **Doctrine must never be relocated into `cpl_memory`.** Its briefing budget is 17,951 chars against ~85,500 of verified rows — **about 21% fits**"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "fde74d67 Write Sam's assignment rule into CLAUDE.md, and apply it (#1382); cffe0e6b Consolidate CLAUDE.md §11: lane state moves to docs/reference/lanes/ (#1381)"
+        },
+        {
+          "source": "wc -c CLAUDE.md",
+          "quote": "60000"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": true,
+      "human_name": "Sam",
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1b245d80-ea32-4cf7-982d-ee5195d91915",
+      "slug": "cpl-memory-scope-is-a-topic-tag-not-an-applicability-axis",
+      "kind": "fact",
+      "title": "The memory table's scope column is being used as a second topic tag, so it cannot answer \"does this apply everywhere?\"",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "The row's recommendation was ruled and executed 2026-08-30: live scope now holds only 'general' (22) and 'workstream-specific' (68), 762 null — the uncontrolled vocabulary it measured no longer exists. The verified decision row and the playbook's rule 8 state the current truth.",
+      "evidence": [
+        {
+          "source": "slug:sam-ruled-memory-scope-two-values-migrated",
+          "quote": "Sam, 2026-08-30 (item 13): cpl_memory.scope is a TWO-VALUE vocabulary - \"general\" | \"workstream-specific\" - tags keep the topic. Migration EXECUTED same day (status verified, verified_by Sam)"
+        },
+        {
+          "source": "sql",
+          "quote": "select scope, count(*) from cpl_memory group by scope → general 22, workstream-specific 68, null 762"
+        },
+        {
+          "source": "docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md:90-91",
+          "quote": "8. **`scope` is a TWO-VALUE vocabulary (Sam's ruling, 2026-08-30, Open Verdicts item 13): `general` | `workstream-specific`** — tags keep the topic."
+        }
+      ],
+      "superseded_by": "sam-ruled-memory-scope-two-values-migrated",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b2436e87-e571-402c-9e89-85ef427da1d2",
+      "slug": "a-presentation-rule-is-the-purest-push-case",
+      "kind": "pitfall",
+      "title": "A formatting rule only works if it is in front of you before you type",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The presentation rules live in the always-loaded file with a lint that fails if they leave — the escalation the row prescribes — and the approved-emoji exceptions are named there. KB note on disk, PR #1383 on main, related slug resolves to a verified row.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md:518",
+          "quote": "## Presentation rules — EVERY view we ship (non-negotiable)"
+        },
+        {
+          "source": "CLAUDE.md:528",
+          "quote": "`presentation_doctrine` in `kb/_docs_audit.py` fails if any of them leaves."
+        },
+        {
+          "source": "kb/_docs_audit.py:733",
+          "quote": "# WHY (2026-08-29, Session 208): `presentation_doctrine` guards one section"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0b616272 Checkpoint (Session 206, SkyCrush): the consolidation, and the guards it moved (#1383)"
+        },
+        {
+          "source": "slug:sam-formatting-rules-must-be-preserved-and-prioritized",
+          "quote": "decision, verified — 'Sam: the formatting preferences must be preserved and properly prioritized'"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "795b9ddf-191f-4644-9ea7-175c0fbb0fad",
+      "slug": "a-probe-must-not-write-to-the-memory-it-is-testing",
+      "kind": "risk",
+      "title": "A test session that fully passes our probe would write durable memory about work nobody did",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The rule and the P5 blocker are recorded as the dated addendum in the KB note, PRs #1390/#1391 are on main, and DR-19 confirms second-session corroboration is a promotion path, so the verified-fiction route is real. `plain` is NULL on this row — worth filling.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md:136",
+          "quote": "**2. A probe must not be able to write to the memory it is testing.** The P5"
+        },
+        {
+          "source": "docs/kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md:144,154",
+          "quote": "TRUE at its commit, or run it with memory writes disabled. ... Recorded as a dated addendum beside the rubric, **not** as an edit to 5.5."
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "afaba1b7 Record P5 as VOID: the probe corpus leaks through the repo under test (#1390); 47219387 Close the leak the post-mortem reopened ... (#1391)"
+        },
+        {
+          "source": "kb/governance_register.json DR-19 decides",
+          "quote": "become trusted (verified) only through the corroboration gate — a committed source, a second session, or Sam's check"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

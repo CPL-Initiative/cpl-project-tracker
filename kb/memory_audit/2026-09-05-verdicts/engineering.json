@@ -1,0 +1,1478 @@
+{
+  "part": "engineering",
+  "expected_rows": 54,
+  "coverage": {
+    "rows_read": 54,
+    "rows_judged": 54,
+    "note": "All 7 pages (offsets 0-48) read; every row judged. Partition query returned 8,8,8,8,8,8,6 = 54, matching the expected count."
+  },
+  "counts": {
+    "confirmed": 50,
+    "stale": 0,
+    "superseded_by_row": 1,
+    "snapshot": 1,
+    "unverifiable": 2
+  },
+  "verdicts": [
+    {
+      "id": "96fd1952-3cd7-4a9a-afaa-6b9c214e19fa",
+      "slug": "habits-in-standing-instructions-not-agents",
+      "kind": "decision",
+      "title": "Team habits go in standing instructions, not agents",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #998 on main; docs/working_with_claude_code.md carries the 'note on agents' section and CLAUDE.md 'Working with the MAP team' the obligations. Sam's later a11y ask (2026-09-04) produced a CHECK, not an agent, so the decision still governs. Sam floated agents; the recommendation is the session's.",
+      "evidence": [
+        {
+          "source": "docs/working_with_claude_code.md:338",
+          "quote": "## For Sam — a note on agents / You floated \"maybe need some established agents who are mindful of these"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "e89bcbc6 Team enablement: a guide for the MAP team, and session-side rules so they don't have to remember it (#998)"
+        },
+        {
+          "source": "slug:sam-wants-a-standing-a11y-check-because-doctrine-does-not-fire",
+          "quote": "verified 2026-09-04; a11y.config.js:229 'A rule states a standard; only a measurement detects a violation' — a check, not an agent"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a75bcb3e-3131-4ad6-a579-f5e6b77d8c10",
+      "slug": "supabase-403-is-not-401-check-credential-type",
+      "kind": "procedure",
+      "title": "A \"forbidden\" from the database means the identity was refused, not that the key was wrong",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The playbook states the 401/403 distinction and the sbp_/eyJ/sb_secret_ table verbatim, and the deploy workflow implements the prefix check. Related slug cpr-retrieval-fix-live-v29 exists.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/playbook-deploy-an-edge-function-from-the-runner.md:80",
+          "quote": "**401 = bad token. 403 = credential accepted, identity refused.** That distinction is the whole diagnosis."
+        },
+        {
+          "source": "docs/kb-notes/playbook-deploy-an-edge-function-from-the-runner.md:88",
+          "quote": "`sbp_…` **Personal Access Token** | **Account** → Access Tokens | ✅"
+        },
+        {
+          "source": ".github/workflows/cpl-chat-deploy.yml:92",
+          "quote": "sbp_*) echo \"✓ Credential is a Personal Access Token (sbp_) — the correct type.\" … eyJ*) … sb_secret_*|sb_publishable_*) echo \"::error::That is a project API key\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "02353e55-74d7-4232-9cce-000a140ac629",
+      "slug": "cpr-aed-family-is-42pct-of-cpl-students",
+      "kind": "fact",
+      "title": "CPR/AED touches 4 in 10 CPL students",
+      "verdict": "snapshot",
+      "confidence": "medium",
+      "reason": "PR #1043 is on main, so the measurement happened. The figures come from a local 537,908-row PII export processed by funding/_student_detail_local.py, which is not in the repo, so re-measuring is not cheap; the row itself says re-measure rather than cite.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "145f790e Sum the credit funnel — the columns Sam actually asked about (#1043)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "452d40d7-efb7-4fec-b871-70a927952f09",
+      "slug": "plausible-cause-is-not-the-measured-one",
+      "kind": "pitfall",
+      "title": "The plausible cause is not the measured one",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The published KB note of the same name exists and states the lesson. The related slug is dangling: the row it means is 'guard-that-fails-on-truth'.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-the-plausible-cause-is-not-the-measured-one.md exists (kb-notes listing)"
+        },
+        {
+          "source": "sql",
+          "quote": "slug ilike '%guard-that-fails-on-truth%' returns only 'guard-that-fails-on-truth' (pitfall, proposed, 2026-08-09)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: guard-that-fails-on-truth-gets-muted",
+          "to": "guard-that-fails-on-truth"
+        }
+      ]
+    },
+    {
+      "id": "6189cbe6-545a-4a59-a8c0-2b245c2a6b66",
+      "slug": "obsidian-exclusion-is-relevance-not-performance",
+      "kind": "fact",
+      "title": "An Obsidian exclusion list does not reduce load; only removing files does",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The vault-wiring reference states the same claim and the sparse-checkout fix (its figures 1,766 files/1,072 MB → 447/11 MB differ slightly from the row's, same finding). Playbook KB note exists. Related slug 'knowledge-base-needs-a-lint-pass' does not exist in cpl_memory; the KB note does.",
+      "evidence": [
+        {
+          "source": "docs/reference/obsidian_vault_wiring.md:53",
+          "quote": "⚠️ **Exclusion is a relevance filter, not a performance one.** It drops paths"
+        },
+        {
+          "source": "docs/reference/obsidian_vault_wiring.md:58",
+          "quote": "The fix is a docs-only sparse checkout of the vault clone (`scripts/sparse-vault-clone.ps1`): 1,766 files / 1,072 MB → 447 files / 11 MB"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "playbook-keep-build-artifacts-out-of-the-vault.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "related: knowledge-base-needs-a-lint-pass",
+          "to": "docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md (no memory row by that slug)"
+        }
+      ]
+    },
+    {
+      "id": "15c431d3-3288-46e0-a8af-cd631ce859f4",
+      "slug": "retire-skills-that-cannot-run-not-merely-unused",
+      "kind": "decision",
+      "title": "Retire skills that CANNOT run; keep ones that merely go unused",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "CPLBrain/.claude/skills holds 16 skills: none for Linear/Slack/GitHub Issues/Confluence/Notion/PostHog; daily-brief, weekly-checkin and onboarding kept (14 + the two Obsidian skills added the same session). MY-INTEGRATIONS lists those six as Disabled. The cog-update.sh caveat still holds.",
+      "evidence": [
+        {
+          "source": "ls /home/user/CPLBrain/.claude/skills/",
+          "quote": "16 skills incl. daily-brief, weekly-checkin, onboarding, obsidian-bases, obsidian-markdown; none for linear/slack/github-issues/confluence/notion/posthog (full listing read 2026-09-05)"
+        },
+        {
+          "source": "/home/user/CPLBrain/00-inbox/MY-INTEGRATIONS.md:15",
+          "quote": "## Disabled … Linear … Slack … GitHub Issues … Confluence … Notion … PostHog"
+        },
+        {
+          "source": "/home/user/CPLBrain/cog-update.sh:49",
+          "quote": "\".claude/skills/publish-to-confluence/SKILL.md\" (still on the allowlist)"
+        },
+        {
+          "source": "ls /home/user/CPLBrain/07-session-notes/",
+          "quote": "2026-08-09-skills-audit-and-obsidian-skills.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ff0b8e4a-98cd-4218-8ac2-03f12d08a30f",
+      "slug": "ps1-non-ascii-breaks-powershell-5-1",
+      "kind": "pitfall",
+      "title": "One fancy character in a Windows script breaks the whole script, far from where it sits",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The guard test exists and the PowerShell gotchas reference states the ANSI/BOM/em-dash mechanism. Sibling verified row sam-runs-powershell-5-1-and-agents-cannot-execute-it covers the 5.1-only traps, not this one.",
+      "evidence": [
+        {
+          "source": "ls tests/",
+          "quote": "tests/powershell_ascii_test.py exists"
+        },
+        {
+          "source": "docs/kb-notes/reference-windows-powershell-gotchas.md:50",
+          "quote": "encoding when reading script files unless the file has a UTF-8 BOM."
+        },
+        {
+          "source": "docs/kb-notes/reference-windows-powershell-gotchas.md:55",
+          "quote": "Common offenders: em dash `—` (U+2014), en dash `–` (U+2013), curly"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "40ac3a71-da78-43b4-9db8-e393805a89c3",
+      "slug": "assert-what-the-reader-sees",
+      "kind": "pitfall",
+      "title": "Searching the code for a phrase is unreliable in both directions - check what the reader actually sees",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note of the same name exists, the affected test exists, and both PRs are on main.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-assert-what-the-reader-sees.md exists"
+        },
+        {
+          "source": "ls tests/",
+          "quote": "tests/college_briefing.test.js exists"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "99296afe … the tier criteria (#1121); 34cabea5 My College: suggested questions send in one click, and the tier block reads as prose (#1123)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d528ae82-5980-4baf-81e3-e118cb1c82ea",
+      "slug": "never-pin-an-assertion-to-a-daily-refreshed-value",
+      "kind": "pitfall",
+      "title": "A test pinned to a figure that refreshes overnight is a scheduled false alarm",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "PR #1128 is on main and two published KB notes carry the lesson (the folded assert-what-the-reader-sees note and a dedicated 'assertion pinned to a mutable value' note).",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "64526824 My College: Sierra AI leads, everything below folds down, strategies move to their funding priority (#1128)"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md and methodology-assert-what-the-reader-sees.md exist"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c34e76b4-742c-460f-94e5-90a96df52b87",
+      "slug": "conditional-key-breaks-a-bulk-upsert",
+      "kind": "pitfall",
+      "title": "When sending many records at once, one record missing a field breaks the lot - and the table still looks full",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both layers of the fix are on disk: the builder always emits cid_repeats (None when empty) and the sync scripts normalize to the union of keys; #1148 is on main; the KB note exists.",
+      "evidence": [
+        {
+          "source": "kb/_build_credential_recs.py:234",
+          "quote": "# keys (PGRST102 \"All object keys must match\"), and an optional key … \"cid_repeats\": repeats or None,"
+        },
+        {
+          "source": "kb/_sync_credential_recs.py:39",
+          "quote": "PostgREST rejects a bulk payload whose objects differ in shape — PGRST102, \"All object keys must match\" — and the failure is POSITIONAL"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "acccc22f Fix the PGRST102 that left the recs table two-thirds loaded (#1148)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6fa0b466-6195-48b1-a55c-5f76b9d1b2b1",
+      "slug": "a-module-level-element-ref-goes-stale-on-a-second-mount",
+      "kind": "pitfall",
+      "title": "A widget that remembers its own place on the page breaks the second time it appears",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "cpl_chat.js documents the exact trap and fix in place (delivery-time resolution; removeItem only after delivery), the two-mount test exists, and #1166 is on main.",
+      "evidence": [
+        {
+          "source": "cpl_chat.js:1155",
+          "quote": "build() re-points the module-level `inputEl` at THAT pane's input. mount() then early-returns on the data-cplchat-mounted flag … so the handoff typed the question into an invisible box."
+        },
+        {
+          "source": "cpl_chat.js:1203",
+          "quote": "handoff now survives until it is actually delivered. … sessionStorage.removeItem(TEST_Q_KEY)"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "001ed32f Sierra Training: the \"Try it on Sierra\" hand-off was typing into a hidden box (#1166); tests/sierra_test_handoff.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9c5b1971-f4d4-4e7c-95e2-8804954152ff",
+      "slug": "the-sierra-gap-pane-was-83-percent-ci-smoke-test",
+      "kind": "pitfall",
+      "title": "The \"questions Sierra struggled with\" list was 83% automated test traffic",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The mechanism the lesson produced is live: sierra_training.js excludes CI rows from the queue and stats, bulk triage refuses them even when shown; #1171 is on main; the test exists. The 83% figure is a dated measurement, the lesson is current.",
+      "evidence": [
+        {
+          "source": "sierra_training.js:600",
+          "quote": "bulkTriage — the list is small once the CI rows are excluded (13 real rows … CI rows are skipped even when the toggle is showing them"
+        },
+        {
+          "source": "sierra_training.js:1572",
+          "quote": "Stats follow the same rule as the queue: CI rows are excluded unless the"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0b19f1d5 Sierra Training: the gap list was 83% robot, and the sandbox orgs were already flagged (#1171); tests/sierra_turn_review.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e9b46521-459a-4eb1-9c60-3351cf6a392a",
+      "slug": "a-test-bound-rots-when-the-code-legitimately-changes",
+      "kind": "procedure",
+      "title": "Four failing checks were stale test limits, not real faults",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The three PRs are on main and each touched Sierra test files; the fixed assertions are visible (Promise.all comment citing #1150; a 'call site' check). No KB note states the lesson (0 hits for 'character window'/'call sites' in kb-notes), so corroboration is the code only.",
+      "evidence": [
+        {
+          "source": "git show --stat 9b9c0006 f9b0fb4d 710f26c6",
+          "quote": "tests/sierra_adopter_names.test.js, tests/sierra_college_credentials.test.js, tests/sierra_credential_recs.test.js, tests/sierra_guidance.test.js … changed"
+        },
+        {
+          "source": "tests/sierra_college_credentials.test.js:283",
+          "quote": "// moved inside Promise.all (#1150, so the credential and volume route groups"
+        },
+        {
+          "source": "tests/sierra_adopter_names.test.js:86",
+          "quote": "\"the call site passes adopters through\","
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f671a27b-7b83-4c85-b6f9-496a7644e361",
+      "slug": "a-copy-detector-must-read-the-rendered-string",
+      "kind": "pitfall",
+      "title": "A check on wording must read what the screen shows, not the lines the author typed",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note exists and the affordance guard carries the reasoned ALLOW_LIST the row describes.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-copy-detector-must-read-the-rendered-string.md exists"
+        },
+        {
+          "source": "tests/team_phrase_affordance.test.js:31",
+          "quote": "// Judge a detector by what it prints — so ALLOW_LIST below records each … const ALLOW_LIST = {"
+        },
+        {
+          "source": "tests/team_phrase_affordance.test.js:187",
+          "quote": "+ Object.keys(ALLOW_LIST).length + \" exempt with a reason.\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "1961d19c-0004-4cd4-acf7-f56afb0145ec",
+      "slug": "w5",
+      "kind": "wishlist",
+      "title": "Adding MAP User Recent Activity Entries",
+      "verdict": "unverifiable",
+      "confidence": "medium",
+      "reason": "Nothing builds or resolves it: 0 hits for activity-log/last_login in map_users.js, the MAP Users lane file and kb-notes, and no decision row mentions an activity log. Author unknown, no source; the plain text reads like Sam's voice but is unattributed. Tag 'MAP activity-log' looks mistyped.",
+      "evidence": [
+        {
+          "source": "grep -rli 'recent activity|activity log|last_activity|last_login' docs/reference/lanes/ docs/kb-notes/ map_users.js",
+          "quote": "0 files"
+        },
+        {
+          "source": "sql",
+          "quote": "title/summary ilike '%activity log%' or '%recent activity%' over cpl_memory (status<>superseded) returned only w5"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fcbf5213-8a20-4a6d-8e1b-5ff332395036",
+      "slug": "a-live-rename-must-be-order-proof",
+      "kind": "procedure",
+      "title": "A live rename needs a legacy alias — the database write and the deploy cannot be simultaneous",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The legacy alias is in the code, the KB note exists, and #1214 is on main.",
+      "evidence": [
+        {
+          "source": "team_phrases.js:48",
+          "quote": "{ id: \"team\", legacy: \"raci\", label: \"Shared team phrase\", slot: \"cpl_team_pass\","
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-live-rename-must-be-order-proof.md exists"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "3d47db6b An unmatched link lands on YOUR site's home, and the shared phrase is 'team' (#1214)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c5dbf42d-0082-47a7-aeeb-c2143b18073e",
+      "slug": "val-guards-the-check-the-driver-is-the-other-half",
+      "kind": "procedure",
+      "title": "A safety wrapper protects the checks in a test, not the steps that drive it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note's 2026-08-16 update states this exact lesson and the named test exists.",
+      "evidence": [
+        {
+          "source": "docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md:93",
+          "quote": "## Update 2026-08-16 — `val()` guards the CHECK; the DRIVER is the other half"
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md:118",
+          "quote": "**Every element a test DRIVES must be null-safe, not just every value it reads.**"
+        },
+        {
+          "source": "ls tests/",
+          "quote": "tests/eacr_a11y.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d049e87e-b8cd-4d14-8567-142dabeead8d",
+      "slug": "a-filter-its-column-and-its-exports-share-one-scope",
+      "kind": "procedure",
+      "title": "A filter, the column that justifies it, and the exports must derive from one scope",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both PRs are on main, the KB note and the scope test exist, and the related slug exists.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "9341dc11 EACR: the College filter matched leads, not adoptions — 93.6% of hits were not real (#1221); f1d743dd EACR: the exports still emitted the broad lead list, whatever the screen showed (#1222)"
+        },
+        {
+          "source": "ls docs/kb-notes/ tests/",
+          "quote": "methodology-a-filter-and-what-justifies-it-must-share-one-source.md and tests/eacr_scope.test.js exist"
+        },
+        {
+          "source": "sql",
+          "quote": "slug eacr-college-filter-was-93pct-leads exists (pitfall, proposed, 2026-08-16)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "410a2993-f6bc-46b0-8c2e-6a1ecc4c1796",
+      "slug": "a-report-must-read-the-screen-not-recompute-it",
+      "kind": "procedure",
+      "title": "An export should read the rendered view, not re-derive its figures",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note exists, #1234 is on main, college_briefing.js exists, and the related decision row is verified.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-report-must-read-the-screen-not-recompute-it.md exists"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "a8096cee My College briefing → Word document, + Rule 8 checkpoint (Session 167) (#1234)"
+        },
+        {
+          "source": "slug:sam-my-college-briefing-must-be-docx",
+          "quote": "verified decision 2026-08-17: the My College briefing is a Word document"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "5db4a766-76e1-4d54-86e5-2ca06855f21b",
+      "slug": "the-tracker-licence-is-already-all-rights-reserved",
+      "kind": "fact",
+      "title": "The tracker is already licensed All Rights Reserved, with an explicit no-copy clause",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Both LICENSE files read as quoted, and the public/private-split lane states the same two conclusions (legal half done; CC BY 4.0 question still BLOCKED ON SAM).",
+      "evidence": [
+        {
+          "source": "LICENSE:1",
+          "quote": "All rights reserved. … proprietary property … made viewable for transparency and collaboration only. No permission is granted to any person or entity to copy, reproduce, modify, adapt"
+        },
+        {
+          "source": "/home/user/cpl-knowledge-base/LICENSE:1",
+          "quote": "Creative Commons Attribution 4.0 International (CC BY 4.0) … Adapt — remix, transform, and build upon the material"
+        },
+        {
+          "source": "docs/reference/lanes/public-private-repo-split.md:24",
+          "quote": "**The legal half is already done** — `LICENSE` is All Rights Reserved with an explicit no-copy clause … BLOCKED ON SAM: ① should `cpl-knowledge-base` stay **CC BY 4.0**"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "451e5e39-d94c-438c-b84f-973f256d48bd",
+      "slug": "a-tag-scan-cannot-see-a-fetch",
+      "kind": "pitfall",
+      "title": "Reading a page's links cannot see what it loads while running - the Fact Sheet only looked self-contained",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The runtime fetches are in factsheet.js, the lane file states the finding verbatim, the KB note exists, and #1242 is on main.",
+      "evidence": [
+        {
+          "source": "fact-sheet/factsheet.js:20",
+          "quote": "var METRICS_URL = '../live_metrics.json'; … var SNAPSHOT_URL = '../fact_sheet_metrics.json'; (fetched at :145 and :290)"
+        },
+        {
+          "source": "docs/reference/lanes/public-private-repo-split.md:24",
+          "quote": "⚠️ **`fact-sheet/` is NOT self-contained** … `factsheet.js` fetches `../fact_sheet_metrics.json` + `../live_metrics.json` at RUNTIME. **A tag scan cannot see a `fetch()`.**"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-tag-scan-cannot-see-a-fetch.md exists; docs/public_private_repo_split_scope.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8133ac1b-59a0-435a-b2f1-61b1fb81f95a",
+      "slug": "move-the-half-whose-url-matters-least",
+      "kind": "fact",
+      "title": "If we split the project in two, move the half whose web address matters least",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The lane file carries the same reasoning as current truth (move COBI; ~10 bookmarks; Cloudflare gates on origin). The split itself is SCOPED, NOT BUILT and blocked on Sam for other items, which does not contradict this row.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/public-private-repo-split.md:24",
+          "quote": "MOVE COBI, NOT THE PUBLIC STUFF — the URL path IS the repo name, so whatever moves gets a new address; moving COBI keeps Sierra + Fact Sheet on the links already sent … breaks only ~10 team bookmarks."
+        },
+        {
+          "source": "docs/reference/lanes/public-private-repo-split.md:24",
+          "quote": "⭐ **Cloudflare needs ZERO changes** — `ALLOWED_ORIGINS` exact-matches the ORIGIN (`https://cpl-initiative.github.io`), never a path"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "8b9e3de6-625b-4e08-8482-85c935fd2a63",
+      "slug": "a-negative-result-needs-a-positive-control",
+      "kind": "pitfall",
+      "title": "A probe reported \"NONE exposed\" for all three reports — its instrument had silently stopped working",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The probe script runs its control first exactly as described, the KB note exists, #1247 is on main, and the related slug exists.",
+      "evidence": [
+        {
+          "source": "kb/_probe_new_custom_reports.py:390",
+          "quote": "def control(): … A negative is only as good as the control … [0] CONTROL — does `columnName: []` still enumerate a KNOWN-GOOD view? … instrument_ok = control()"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-negative-result-needs-a-positive-control.md exists"
+        },
+        {
+          "source": "sql",
+          "quote": "slug map-api-echoes-requested-columns exists (pitfall, proposed, 2026-08-14)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "6cddada4-bac0-42c6-a3b6-70417cfb3beb",
+      "slug": "hiding-a-control-also-hides-the-way-in",
+      "kind": "pitfall",
+      "title": "Hiding a control from people without access also hides how they GET access",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note and the named test exist, and #1269 is on main.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/ tests/",
+          "quote": "methodology-hiding-a-control-also-hides-the-way-in.md and tests/factsheet_edit_curate_visibility.test.js exist"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "d14d2f26 Fact Sheet: hide Curate from the public, and fix four accessibility/mobile defects (#1269)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c1deab54-a027-4055-a89b-2f662eca868e",
+      "slug": "jsdom-cannot-see-a-layout-defect",
+      "kind": "pitfall",
+      "title": "Our page tests never draw the page, so they cannot see a layout fault - and a clipped column looks complete",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Lesson is doctrine (CLAUDE.md); artifacts exist. Outdated detail: 'Do NOT add playwright to package.json' — now a pinned devDependency (CI skips browser download, #1384/#1474); harness is npm run a11y. Sibling jsdom-passes-while-the-page-is-visibly-broken is a second incident, not a supersession.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md (Presentation rules, a11y bullet)",
+          "quote": "`npm test` passing proves NOTHING here: jsdom returns zeroes for every rectangle, so 299 green suites sat beside a masthead painting 240px of one cluster over another"
+        },
+        {
+          "source": "ls",
+          "quote": "fact-sheet/check_mobile_layout.js, tests/factsheet_a11y.test.js, docs/kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md exist; #1269 on main"
+        },
+        {
+          "source": "package.json:12 / .github/workflows/js-tests.yml:34",
+          "quote": "\"playwright\": \"1.62.1\" / PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "3f7a4484-88d5-415c-9017-5346b238bd74",
+      "slug": "factsheet-curate-both-doors-verified-in-a-browser",
+      "kind": "milestone",
+      "title": "The Fact Sheet Curate reveal was exercised end to end in a real browser — both doors work",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The event happened: #1271 is on main and the mobile harness it names exists.",
+      "evidence": [
+        {
+          "source": "git log origin/main",
+          "quote": "c267ce61 Sierra + Veteran map: accessibility and mobile audit, and close handoff 174's two open items (#1271)"
+        },
+        {
+          "source": "ls",
+          "quote": "fact-sheet/check_mobile_layout.js and fact-sheet/factsheet_edit.js exist"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2a7fda5a-7a1f-48ea-b09d-f6e738230278",
+      "slug": "a-target-size-exemption-must-name-and-verify-its-equivalent",
+      "kind": "procedure",
+      "title": "An accessibility exemption should name the equivalent way in, and the check should verify it still exists",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The exemption-with-equivalent pattern now lives in a11y.config.js (the veteran-map entry names the pins and the two directory lists behind their tabs). The source file the row names, scripts/check_public_page_layout.js, was replaced by scripts/a11y.js + a11y.config.js in #1473 and no longer exists.",
+      "evidence": [
+        {
+          "source": "a11y.config.js:28",
+          "quote": "targetSizeExempt  a documented WCAG 2.2 SC 2.5.8 exception. Never a skip: the `equivalent` route must exist and clear 24px itself, so deleting it turns the exemption back into a failure."
+        },
+        {
+          "source": "a11y.config.js:166",
+          "quote": "selector: \"#g-colleges .mk, #g-bases .mk\" … equivalent: [{ sel: \"#list-col li\", revealBy: '.tab[data-tab=\"colleges\"]' …}, { sel: \"#list-base li\" …}]"
+        },
+        {
+          "source": "git log origin/main -- scripts/check_public_page_layout.js",
+          "quote": "92c60ee2 Accessibility gets one command: npm run a11y, over every view we ship (#1473); file MISSING on disk"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "source: scripts/check_public_page_layout.js targetSizeExempt",
+          "to": "a11y.config.js (veteran-map targetSizeExempt) + scripts/a11y.js"
+        }
+      ]
+    },
+    {
+      "id": "b3f0ccd2-45c7-4eb4-aa52-2690a4c9bfcb",
+      "slug": "a-breakpoint-that-hides-a-panel-looks-like-a-design-choice",
+      "kind": "pitfall",
+      "title": "The Veteran map deleted its entire side panel on every phone and nothing looked broken",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The builder documents the old display:none rule and the 52/48 stacking fix, and the a11y harness reports any element a breakpoint hides unless declared in mayHideBelow — the rule the row asks for.",
+      "evidence": [
+        {
+          "source": "veteran-sprint-map/build_selfcontained.py:225",
+          "quote": "/* ⚠️ This breakpoint used to read `#side{flex-basis:0;display:none}` — on any … Below 760px the two panes STACK instead. The map keeps the top 52%%"
+        },
+        {
+          "source": "veteran-sprint-map/build_selfcontained.py:240",
+          "quote": "#side{flex:1 1 48%%;max-width:none;min-height:150px;"
+        },
+        {
+          "source": "a11y.config.js:23",
+          "quote": "mayHideBelow    selectors ALLOWED to vanish at narrow widths. Everything else a breakpoint hides is REPORTED"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "a83ec446-66d0-4e3f-9e1a-dccb4d94c5f8",
+      "slug": "a-cap-under-55ch-is-layout-not-a-reading-measure",
+      "kind": "pitfall",
+      "title": "Not every narrow column of text is a reading width - 26 of 60 are layout, and a blanket sweep would wreck them",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The 55ch rule is in CLAUDE.md and the engineering reference (including the px caveat), and the pinning test exists.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md:555",
+          "quote": "A cap below ~55ch is LAYOUT, not a measure, and must NOT be swept (`tests/cobi_prose_measure.test.js` pins a sample so a blanket sweep fails). Grep **px too**."
+        },
+        {
+          "source": "docs/reference/engineering_ui_practices.md:83",
+          "quote": "⚠️ **A cap below ~55ch is LAYOUT, not a measure** (cell truncation, a raw-value column, a badge, a short hero lede) and must NOT be swept"
+        },
+        {
+          "source": "ls tests/",
+          "quote": "tests/cobi_prose_measure.test.js exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "12651681-a814-4852-90f9-28dbd79b4e06",
+      "slug": "a-date-stamped-artifact-breaks-byte-for-byte-tests",
+      "kind": "pitfall",
+      "title": "A file that records its own build date breaks a character-for-character test at midnight",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The test normalizes only the generated-date field and pins that the stamp still exists; #1310 is on main.",
+      "evidence": [
+        {
+          "source": "tests/college_identity_lint_guard.test.js:119",
+          "quote": "// Compare everything EXCEPT the embedded generation date. The artifact stamps the day it was built, so a literal byte-for-byte assertion goes"
+        },
+        {
+          "source": "tests/college_identity_lint_guard.test.js:131",
+          "quote": "check(\"(2) ⚠ …and the only tolerated difference IS the date\" … the stamp is ever renamed this check fails instead of silently widening"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "aabf6cce Lead with the graph, color by identity system — and fix a test that goes red at midnight (#1310)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "3d1aaafd-f923-4d01-b26e-56a20b362451",
+      "slug": "ask-whether-the-list-can-contain-what-you-count",
+      "kind": "pitfall",
+      "title": "A count read from a scope-limited list reports a clean bill of health for a question the data cannot answer",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note of the same name exists and both PRs are on main.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-ask-whether-the-list-can-contain-what-you-are-counting.md exists"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "0819927f The universe view, and the ESL fold applied — seven comprehensives, 1,997 rows (#1311); 552d4d49 Flatten merge chains — 340 folded identities were still rendering as rows (#1312)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d57b7ff5-52f2-4c9c-922b-6efb5fbf0859",
+      "slug": "never-assert-an-elapsed-time-you-did-not-measure",
+      "kind": "pitfall",
+      "title": "Never state how long something took unless you read it off a clock",
+      "verdict": "unverifiable",
+      "confidence": "medium",
+      "reason": "Plausible, but no tier 1–7 source states the read-the-clock rule: 0 hits in CLAUDE.md, the team guide, docs/reference and docs/kb-notes (the one docs/ hit, ccr_atlas_lessons.md:1164, is about a database clock). The adjacent superseded-head_sha trap the row distinguishes IS documented.",
+      "evidence": [
+        {
+          "source": "grep -rli 'read the clock|do not state a duration|off a clock' CLAUDE.md docs/working_with_claude_code.md docs/reference docs/kb-notes",
+          "quote": "0 files"
+        },
+        {
+          "source": "docs/reference/branch_policy.md:90",
+          "quote": "⚠️ **A `check_suite.completed` wake is NOT a green light** — it names a `head_sha`, and on this repo it is routinely a SUPERSEDED one"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "2e9c6faa-3f0d-462c-b35f-11ca410ae379",
+      "slug": "restart-the-branch-after-every-squash-merge",
+      "kind": "pitfall",
+      "title": "Start a fresh working branch after every merge, not just the first time",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "Mechanism and symptom are documented: CLAUDE.md Rule 5 names the post-squash reset as the normal flow, and a KB note records a dirty PR with no checks across five pushes cured by merging the base. The 'checkout -B as the last step of merging' prescription appears in no doc (0 hits).",
+      "evidence": [
+        {
+          "source": "CLAUDE.md (Rule 5)",
+          "quote": "Feature branches (`claude/*`) may `--force-with-lease` freely — that's the normal post-squash flow."
+        },
+        {
+          "source": "docs/kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md:23",
+          "quote": "On 2026-08-28 a PR sat with no checks at all across **five consecutive pushes**. … \"dirty\"`. Merging the base branch in resolved the conflict, and CI appeared"
+        },
+        {
+          "source": "grep -rn 'checkout -B' CLAUDE.md docs/",
+          "quote": "0 hits"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ea888e30-a708-42ba-affb-879f5b4aecab",
+      "slug": "an-exemption-is-a-claim-so-assert-it",
+      "kind": "pitfall",
+      "title": "An accessibility exemption rests on a claim about the page - check the claim, or it quietly becomes an excuse",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The layout script asserts the exemption itself exactly as described, and #1321 is on main.",
+      "evidence": [
+        {
+          "source": "scripts/check_memory_briefing_layout.js:184",
+          "quote": "SC 2.5.8 exempts a target whose position is determined by the flow of the sentence … exempt only because the numbered source list underneath repeats every one of them at full size"
+        },
+        {
+          "source": "scripts/check_memory_briefing_layout.js:192",
+          "quote": "check(\"(4) …and the inline-citation exemption is EARNED — every citation is repeated at full size in the source list\", listRows >= cites - 2,"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "999de825 Memory: a briefing button that reads the entries back, with every claim cited (#1321)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "241fe139-71e8-40f7-ab45-397732599255",
+      "slug": "a-crashing-test-leaves-later-checks-unreported",
+      "kind": "pitfall",
+      "title": "A test that stops on a missing item never reports the checks below it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note of the same name exists, and the GR deep-analysis test applies the rule (report() in finally).",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-test-must-report-a-missing-thing-not-dereference-it.md exists"
+        },
+        {
+          "source": "tests/gr_deep_analysis.test.js:312",
+          "quote": "// ⚠️ THE WHOLE ASYNC TAIL IS WRAPPED, AND report() RUNS IN `finally`. Session"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "7422f652-88ec-406c-bb6d-6a0501f8cceb",
+      "slug": "a-substring-match-cannot-fail-on-a-typo",
+      "kind": "pitfall",
+      "title": "A check that looks for a name inside a longer text cannot catch a typo in that name",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The test itself documents the indexOf trap and the finally rule; no indexOf(\"gr-analysis\") remains under tests/ and the briefing test compares the exact sorted key set; #1333 is on main.",
+      "evidence": [
+        {
+          "source": "tests/gr_deep_analysis.test.js:316",
+          "quote": "A bare `indexOf(\"gr-analysis\")` matches inside `\"gr-analysis-typo\"` — so the"
+        },
+        {
+          "source": "grep -rn 'indexOf(\"gr-analysis\")' tests/*.js",
+          "quote": "0 hits; tests/cpl_memory_briefing.test.js:102 compares JSON.stringify(Object.keys(SURF.SURFACE_QUERY_CAPS).sort())"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "70b2ff80 GR: the deep re-analysis, artifacts as evidence, and the keeper's cross-tab rotation bug (#1333)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "3e8ce9bc-d541-4221-8b7d-ef8567d12f7b",
+      "slug": "ci-tests-the-merge-not-your-branch",
+      "kind": "pitfall",
+      "title": "CI tests your branch MERGED INTO main, so passing on either side separately proves nothing",
+      "verdict": "confirmed",
+      "confidence": "medium",
+      "reason": "The mechanism is on disk: js-tests.yml runs on pull_request with a bare actions/checkout (no ref:), which checks out the PR merge ref — the branch merged into current main. #1365 is on main. No KB note states the lesson and the PR comment was not opened, so this rests on the workflow shape.",
+      "evidence": [
+        {
+          "source": ".github/workflows/js-tests.yml:18",
+          "quote": "on: pull_request: push: branches: [main]"
+        },
+        {
+          "source": ".github/workflows/js-tests.yml:36",
+          "quote": "- uses: actions/checkout@v7 (no ref: override → refs/pull/N/merge on pull_request events)"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "57b8aa30 Find a credit recommendation for a course a college already approved (LATTC military CPL) (#1365)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "e502494d-881b-4778-97b0-80ffd12d02ee",
+      "slug": "a-checker-and-its-fixer-reporting-different-counts-read-different-text",
+      "kind": "pitfall",
+      "title": "If the tool that reports the work and the tool that does it disagree on the count, they are reading different text",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The fixer imports prose_only from the auditor, CI now runs tests/docs_audit_test.py and the docs-index --check, the KB note exists, #1373 is on main, and both related slugs exist.",
+      "evidence": [
+        {
+          "source": "kb/_fix_american_spelling.py:44",
+          "quote": "from _docs_audit import (BRITISH_FORMS, _IS_PATTERN, collect, prose_only,  # noqa: E402"
+        },
+        {
+          "source": ".github/workflows/js-tests.yml:260",
+          "quote": "# tests/docs_audit_test.py's 67 assertions executed NOWHERE. … python3 tests/docs_audit_test.py … python3 kb/_build_docs_index.py --check"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "febbb7d4 Obsidian lane: canonical note properties, a generated docs index, and the American-spelling sweep (#1373)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "9e86899e-5140-4a9f-a3f1-b839e9317916",
+      "slug": "nothing-under-tests-requires-playwright",
+      "kind": "fact",
+      "title": "CI was downloading three browsers on every run for tests that never open one",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured: 0 of 300 tests/*.test.js (and tests/run.js) reference playwright; the workflow sets PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1; playwright is now a pinned devDependency (1.62.1) consumed only by scripts/a11y.js outside npm test.",
+      "evidence": [
+        {
+          "source": "grep -l playwright tests/*.test.js tests/run.js",
+          "quote": "0 files"
+        },
+        {
+          "source": ".github/workflows/js-tests.yml:34",
+          "quote": "PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'"
+        },
+        {
+          "source": "package.json:10",
+          "quote": "\"devDependencies\": { \"jsdom\": \"29.1.1\", \"playwright\": \"1.62.1\" } ; scripts: \"a11y\": \"node scripts/a11y.js\""
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fb03cae8-4878-44c3-914c-ff76699afaa5",
+      "slug": "measure-the-distribution-before-picking-a-parallel-strategy",
+      "kind": "pitfall",
+      "title": "Before speeding something up, measure which parts are actually slow",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The runner's header carries the measured memory model and the retracted N×worst-file model verbatim; the KB note exists; #1384 is on main. The 280-file/1,245 s figures are dated (now 300 files, ~20 min locally per handoff 229).",
+      "evidence": [
+        {
+          "source": "tests/run.js:13",
+          "quote": "cpl_funding_render 3,825 MB <- a single outlier … The first model here was `N x worst-file`, which said 3 concurrent needed 11.5 GB and forced the cap down to 2. That was wrong"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-measure-the-distribution-before-you-pick-a-parallel-strategy.md exists"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "c7c18525 Run the test suite concurrently, and stop CI downloading three browsers (#1384)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "59ecfed1-d62c-4fd1-b9c6-a350115f4a09",
+      "slug": "console-log-to-a-pipe-is-lost-on-process-exit",
+      "kind": "pitfall",
+      "title": "Output sent to a pipe is thrown away if the program exits immediately after printing it",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The runner writes each child's output to a temp file through a file descriptor, the pinning test exists, and the related slug exists.",
+      "evidence": [
+        {
+          "source": "tests/run.js:161",
+          "quote": "const tmpdir = fs.mkdtempSync(path.join(os.tmpdir(), \"cpl-tests-\")); … const fd = fs.openSync(logPath, \"w\"); … { stdio: [\"ignore\", fd, fd] }"
+        },
+        {
+          "source": "ls tests/",
+          "quote": "tests/runner_capture.test.js exists"
+        },
+        {
+          "source": "sql",
+          "quote": "slug a-guard-keyed-to-a-path-stops-guarding-when-content-moves exists (pitfall, proposed, 2026-08-28)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "d94069b9-b9b6-49a3-9f62-9464acf69cd0",
+      "slug": "one-dependency-derivation-many-projections",
+      "kind": "fact",
+      "title": "One dependency derivation, many projections — parallel scanners drift silently and each under-reports differently",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The map and its builder exist, CLAUDE.md points every session at them and CI --checks the artifact, the KB note exists, and #1396–#1398 are on main. Reads as a decision (ruling A's structural remedy) rather than a fact.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md (Working with the MAP team)",
+          "quote": "**COMPUTE the impacts, don't guess:** docs/reference/dependency_map.md maps every dataset … derived from the code (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it)"
+        },
+        {
+          "source": "ls",
+          "quote": "kb/dependency_map.json, kb/_build_dependency_map.py, docs/kb-notes/methodology-one-dependency-derivation-many-projections.md exist"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "2e37d36d Build the dependency map … (ruling A) (#1396); 3dfbc20a … (#1397); f0262068 Admin tab surface map projects from the dependency map (#1398)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": "decision",
+      "link_fixes": []
+    },
+    {
+      "id": "ed8cd40e-d4f1-4c33-b45d-9eac1c4d757c",
+      "slug": "checkout-b-upstream-is-the-base",
+      "kind": "pitfall",
+      "title": "checkout -B sets upstream to the base",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Reproduced in a scratch repo under git defaults (push.default/branch.autoSetupMerge unset in this clone): checkout -B from origin/main set the upstream to origin/main and a bare git push refused with the upstream-name mismatch error, pushing nothing. No repo doc states it (0 hits for 'checkout -B').",
+      "evidence": [
+        {
+          "source": "scratch git experiment (scratchpad/gitexp)",
+          "quote": "checkout -B feature origin/main → feature@{u} = origin/main; bare `git push` → fatal: The upstream branch of your current branch does not match the name of your current branch (nothing pushed)"
+        },
+        {
+          "source": "git config (tracker clone)",
+          "quote": "push.default=unset autoSetupMerge=unset (git defaults: simple / true)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "c5ad2e97-fd69-44c3-a311-94eec03db061",
+      "slug": "register-reanalysis-sheet-built-awaiting-verdicts",
+      "kind": "fact",
+      "title": "The register re-analysis sheet is BUILT and awaits Sam's by-number verdicts",
+      "verdict": "superseded_by_row",
+      "confidence": "high",
+      "reason": "No longer awaiting: the lane says Sam ruled all 22 items the same night and the verdicts were executed as receipted gr_revisions edits (#1417); the verified milestone records it. The row's sequencing note was overtaken too — the lane says the Sierra sweep did NOT run before execution.",
+      "evidence": [
+        {
+          "source": "docs/reference/lanes/gr-register.md:24",
+          "quote": "⭐ **THE SHEET IS RULED 22/22 AND EXECUTED** (#1413 built it 2026-08-30; Sam ruled every item reply-by-number the same night; verdicts executed as receipted `gr_revisions` edits"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "b2e7e735 Register Re-analysis: 22/22 ruled and executed — sheet stamped, receipts, lanes, feed, handoff (#1417)"
+        },
+        {
+          "source": "slug:register-reanalysis-ruled-22-of-22",
+          "quote": "verified milestone 2026-08-30 (Sam, verbatim rulings in chat)"
+        }
+      ],
+      "superseded_by": "register-reanalysis-ruled-22-of-22",
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f10130f1-9954-4e74-b06c-560cf47fc3e5",
+      "slug": "a-phrase-sweep-misses-what-a-line-break-splits",
+      "kind": "pitfall",
+      "title": "A phrase sweep misses what a line break splits",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The published KB note of the same name exists.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-a-phrase-sweep-misses-what-a-line-break-splits.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "48885610-9de7-4b53-a8e7-bb34f7f6e8dc",
+      "slug": "textcontent-has-no-seams-a-word-sweep-must-add-them",
+      "kind": "pitfall",
+      "title": "textContent joins elements with nothing, so a word-boundary sweep misses words at an edge",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "mountWords() is in the named test and the KB note exists. event_date is null; the S220 run was 2026-09-02 (created date).",
+      "evidence": [
+        {
+          "source": "tests/cpl_funding_calm.test.js:82",
+          "quote": "function mountWords(doc) { (used at :355 and :363)"
+        },
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-the-text-a-reader-sees-is-not-the-text-a-test-reads.md exists"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ce9e7ce6-9ae3-4f6c-a48c-c20655e56d97",
+      "slug": "queued-chat-messages-land-when-the-turn-ends-escape-to-interrupt",
+      "kind": "procedure",
+      "title": "A message typed while the session works is queued and read only when the turn ends; Escape interrupts and delivers it at once",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The team guide states the same behavior, with the Claude Code issue number. Sam asked the question; the claim is the session's observation, so not human-sourced.",
+      "evidence": [
+        {
+          "source": "docs/working_with_claude_code.md:283",
+          "quote": "Enter queues your message. I do not see it until my current turn ends, and I do not draft an answer early. Escape (Stop, on the web) interrupts the turn and your message lands at once"
+        },
+        {
+          "source": "docs/working_with_claude_code.md:289",
+          "quote": "docs say Enter interrupts; the tracked behavior is queuing, issue #36326.)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "ecd977cd-2315-4250-aac4-6b5258060bc3",
+      "slug": "the-dependency-map-builder-scans-git-ls-files",
+      "kind": "pitfall",
+      "title": "kb/_build_dependency_map.py scans git ls-files, so a map regenerated before git add lacks the new files' edges and CI's --check goes red",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The builder enumerates with git ls-files and the latest handoff repeats the rule. Verified siblings (editing-cpl-funding-js-stales-the-dependency-map, workflow-edits-are-dependency-map-inputs) cover other staleness causes, not this one.",
+      "evidence": [
+        {
+          "source": "kb/_build_dependency_map.py:197",
+          "quote": "out = subprocess.run([\"git\", \"ls-files\"], cwd=ROOT, capture_output=True,"
+        },
+        {
+          "source": "docs/session_229_handoff.md:113",
+          "quote": "⚠️ **Regenerate the dependency map AFTER `git add`** (it enumerates with `git ls-files`); it went stale this run on line numbers alone."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "f66a23c6-af4e-4098-8dfd-b5b0fdf255c5",
+      "slug": "measure-contrast-against-the-worst-ground-in-use",
+      "kind": "procedure",
+      "title": "A contrast threshold computed against one background is wrong for every other background on the page",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Doctrine (engineering_ui_practices.md). Recomputed: #75756D = 4.64 white / 4.24 #F1F5F9 / 4.53 glass / 4.15 bare --paper; #6B6B66 = 5.36 / 4.89 / 4.79 — #6B6B66 clears 4.5 on every ground, #75756D does not. Row's 'page ground' = glass composite, not bare paper; conclusion holds. BLOCKED on Sam.",
+      "evidence": [
+        {
+          "source": "docs/reference/engineering_ui_practices.md:64",
+          "quote": "compute every fg-on-bg pair actually used (including zebra rows and glass composites) against AA 4.5:1 / 3:1 — `prototype/check_contrast.py` holds the maths"
+        },
+        {
+          "source": "python WCAG recomputation",
+          "quote": "#75756D: white 4.64, #F1F5F9 4.24, #F4F2ED 4.15; #6B6B66: white 5.36, #F1F5F9 4.89, #F4F2ED 4.79; index.html:42 --paper: #F4F2ED"
+        },
+        {
+          "source": "docs/session_229_handoff.md:79",
+          "quote": "**BLOCKED on Sam: the absence color** (`--text-quiet` at `#6B6B66` versus plain `--text-muted`); ~4,000 renders wait on it."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "dc8c4059-bfb0-4320-bc6f-db288a749409",
+      "slug": "jsdom-passes-while-the-page-is-visibly-broken",
+      "kind": "pitfall",
+      "title": "jsdom returns zeroes for every rectangle, so geometry and paint defects are invisible to the whole suite",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "CLAUDE.md states the same finding and the header script exists; #1469 is on main. Of the four scripts the detail names, check_public_page_layout.js was replaced by scripts/a11y.js in #1473; the other three exist.",
+      "evidence": [
+        {
+          "source": "CLAUDE.md (Presentation rules, a11y bullet)",
+          "quote": "**`npm test` passing proves NOTHING here**: jsdom returns zeroes for every rectangle, so 299 green suites sat beside a masthead painting 240px of one cluster over another."
+        },
+        {
+          "source": "ls scripts/",
+          "quote": "check_cobi_header_layout.js, check_memory_briefing_layout.js, check_funding_nc_row_layout.js, a11y.js exist; check_public_page_layout.js MISSING"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "7fc8aa26 COBI masthead: … the grid made shrinkable so zoom stops overlapping the clusters (#1469)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": [
+        {
+          "from": "detail: scripts/check_public_page_layout.js",
+          "to": "scripts/a11y.js + a11y.config.js (replaced in #1473)"
+        }
+      ]
+    },
+    {
+      "id": "1a127485-580c-46cf-89da-b27b88d48b65",
+      "slug": "cobi-carries-an-unreconciled-raw-hex-palette",
+      "kind": "fact",
+      "title": "COBI's worst contrast failures are a raw-hex slate/grey palette that never went through First Light",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "Re-measured and it still holds exactly: #94a3b8 occurs 32 times in the same 4 files (credential_reference.js 4, unified_courses.js 14, CPL_Dashboard.html 7, index.html 7). The handoff confirms the absence-color fix is still blocked on Sam and 18 tabs still carry sub-AA pairs.",
+      "evidence": [
+        {
+          "source": "grep -o -i '#94a3b8' credential_reference.js unified_courses.js CPL_Dashboard.html index.html",
+          "quote": "4 + 14 + 7 + 7 = 32 occurrences; repo-wide files containing it: 4"
+        },
+        {
+          "source": "docs/session_229_handoff.md:79",
+          "quote": "BLOCKED on Sam: the absence color … ~4,000 renders wait on it … 18 tabs carry 86 sub-AA pairs, 4,042 sub-24px targets are 54 selectors"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "054c23cd-7011-419b-be8a-4f6a74bfae07",
+      "slug": "a-layout-that-cannot-shrink-overflows-and-paints-over-its-neighbour",
+      "kind": "pitfall",
+      "title": "Three CSS defaults each stop a row shrinking, and the symptom is overlap, not clipping",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note the row names and the header layout script both exist, and #1469 is on main.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/ scripts/",
+          "quote": "methodology-a-grid-item-sized-to-its-content-overflows-its-track.md and scripts/check_cobi_header_layout.js exist"
+        },
+        {
+          "source": "git log origin/main",
+          "quote": "7fc8aa26 COBI masthead: the clutter removed, both credentials in one pane, and the grid made shrinkable so zoom stops overlapping the clusters (#1469)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "fe1da5b2-7909-41f8-ad9b-18f192860267",
+      "slug": "gitignored-lockfile-makes-ranges-live",
+      "kind": "pitfall",
+      "title": "A gitignored package-lock makes every version range a live registry dependency",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": ".gitignore line 20 is package-lock.json, the troubleshooting reference states the mechanism and fix, both deps are pinned exactly, and #1474 is on main.",
+      "evidence": [
+        {
+          "source": ".gitignore:20",
+          "quote": "package-lock.json"
+        },
+        {
+          "source": "docs/reference/troubleshooting.md:145",
+          "quote": "`package-lock.json` is **gitignored** in this repo (`.gitignore:20`), so CI has no lockfile and `npm install` resolves every RANGE against the registry *at run time*."
+        },
+        {
+          "source": "package.json:11",
+          "quote": "\"jsdom\": \"29.1.1\", \"playwright\": \"1.62.1\"; git log: 125d699f … plus the npm pin that unbreaks CI (#1474)"
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    },
+    {
+      "id": "b1d3380d-df17-4d4a-b0a5-8735068fed13",
+      "slug": "a11y-first-run-measures-the-instrument",
+      "kind": "pitfall",
+      "title": "A new measuring harness's first run is mostly the harness",
+      "verdict": "confirmed",
+      "confidence": "high",
+      "reason": "The KB note the row names exists, the config documents a harness-side false result in place, and the S227 narrative in CLAUDE.md says the same.",
+      "evidence": [
+        {
+          "source": "ls docs/kb-notes/",
+          "quote": "methodology-the-first-run-of-a-new-instrument-measures-the-instrument.md exists"
+        },
+        {
+          "source": "a11y.config.js:70",
+          "quote": "/* ⚠️ REGRESSION GUARD, NOT PROOF OF THE FIX … THE MEASURING BROWSER HIDES THE DEFECT."
+        },
+        {
+          "source": "CLAUDE.md (§11 SkyMint S227)",
+          "quote": "⭐ **Six of the first run's loudest findings were the harness**, one of which reported a control as broken *after* it was fixed."
+        }
+      ],
+      "superseded_by": null,
+      "human_sourced": false,
+      "human_name": null,
+      "kind_check": null,
+      "link_fixes": []
+    }
+  ]
+}

@@ -209,6 +209,31 @@ before build). Conflicts stay safely surfaced via the "C-ID conflict" badge;
 Phase B clean consolidation is the automatic stopping point. See CLAUDE.md
 "Crosswalk re-key initiative" for the full diagnosis.
 
+**Memory-table auditor (2026-09-05, `kb/_memory_audit.py`)** — the third
+lint, over the shared team memory `cpl_memory`. `_row_audit.py` keeps the DATA
+honest and `_docs_audit.py` the PROSE; governance row DR-19 had recorded that
+"the memory table has no lint". Same shape as the other two: READ-ONLY, never
+writes to the database, dated JSON + markdown receipts under `kb/memory_audit/`.
+It reads an EXPORT (the sandbox cannot reach Supabase — `--from-json` on the
+`json_agg` result of the query in its docstring, or `--fetch` where
+`SUPABASE_SERVICE_KEY` exists). Twelve rules, the structural half of "is this
+row still true": `dead_path` (a cited file that no longer exists in any of the
+three repos), `dangling_related` (a `related` slug naming no row; KB-note and
+lane-file names are recognized as a convention, not a typo), `related_to_retired`,
+`stale_stamp` (a stale row still wearing `verified_by`), `unattributed_verified`,
+`pr_not_on_main` / `pr_reverted` (against `git log`), `near_duplicate` (a pure-
+Python port of pg_trgm similarity at Session 190's 0.55 cut), `snapshot_claim`
+(a count-carried fact with no date — memory should hold the ruling, not the
+value), `null_slug`, `author_alias`, `proposed_with_human_verifier` (real
+attribution, never swept — Sam's to promote), `question_resolved`. The
+SEMANTIC half — a claim overturned by a later ruling — is still a read against
+`docs/reference/lanes/`, done by a session under a receipt
+(`kb/memory_audit/2026-09-05-receipt.json` is the worked example: 527 proposed
+rows tested, every write logged to `cpl_memory_log` with its before-image).
+First run: 3 dead paths in 653 citations and 1 near-duplicate pair — structural
+rot is rare; the staleness is semantic. Guarded by `tests/memory_audit_test.py`
+(47 checks, each rule both ways). Run: `python3 kb/_memory_audit.py --from-json <export>`.
+
 **Docs-corpus auditor (2026-08-09, `kb/_docs_audit.py`)** — the PROSE
 counterpart to `_row_audit.py`, and deliberately the same shape: READ-ONLY by
 default, dated JSON + markdown receipts under `kb/docs_audit/`, one narrowly

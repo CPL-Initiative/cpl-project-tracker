@@ -1,0 +1,1184 @@
+{
+ "part": "ccr-1",
+ "expected_rows": 43,
+ "coverage": {
+  "rows_read": 43,
+  "rows_judged": 43,
+  "note": "All 43 rows judged. Cross-slice finding worth relaying: the '0 hours in Credit Is Not Recommended / individualized assessment' strings are absent from map_college_cr_unit AND map_student_credit today, and the nightly map_cleanup_worklist carries only P2/P3/P4 (no P1, no P5) — the cleanup-worklist lane's P1 12,283 and P5 5,311 figures look stale (that lane is outside this part)."
+ },
+ "counts": {
+  "confirmed": 35,
+  "stale": 1,
+  "superseded_by_row": 4,
+  "snapshot": 3,
+  "unverifiable": 0
+ },
+ "verdicts": [
+  {
+   "id": "8796936d-cc85-471f-80fe-d36c3bbcfc15",
+   "slug": "w1",
+   "kind": "wishlist",
+   "title": "Apply the ESL packaging",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The apply it asks for ran 2026-08-24 (#1311, cohort package-esl-s187@bot) and the milestone row records it. Shape changed: 2,300 identities to 27 via seven survivors, not 2,364 with Citizenship/VESL/Transfer carve-outs.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "APPLIED, PUBLISHED AND SPOT-CHECKED — ESL went 2,300 identities → 27 (SkyView #1311/#1312; spot-check Sky188 #1315). Cohort package-esl-s187@bot, 1,997 rows"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "0819927f The universe view, and the ESL fold applied — seven comprehensives, 1,997 rows (#1311)"
+    },
+    {
+     "source": "slug:s187-esl-fold-published-2300-to-27",
+     "quote": "ESL collapsed from 2,300 identities to 27 surviving, via seven comprehensives, 1,997 curation rows under cohort package-esl-s187@bot"
+    }
+   ],
+   "superseded_by": "s187-esl-fold-published-2300-to-27",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "kb/esl_package_out/2026-07-15/",
+     "to": "kb/esl_package_out/2026-08-24/ (the applied receipt; the 07-15 dry run still exists on disk)"
+    }
+   ]
+  },
+  {
+   "id": "d70cb31f-151e-436a-85a8-f5dff165b459",
+   "slug": "o2",
+   "kind": "opportunity",
+   "title": "CIP: the exit from TOP",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Standing doctrine in CLAUDE.md Rule 7 states the same claim verbatim: the TOP→CIP cutover (fall 2026) is the systemic exit from TOP and CIP gets the corroborate-don't-gate posture until it earns trust.",
+   "evidence": [
+    {
+     "source": "CLAUDE.md:119-120",
+     "quote": "The CO's TOP→CIP cutover (fall 2026) is the systemic exit from TOP — apply the same \"corroborate, don't gate\" posture to CIP until it earns trust."
+    },
+    {
+     "source": "docs/kb-notes/methodology-top-is-a-last-in-line-signal.md:6",
+     "quote": "kb-status: published"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ab5d39fd-3e78-436e-b93a-8e05c8f699a5",
+   "slug": "w2",
+   "kind": "wishlist",
+   "title": "Wave-4 adjudication",
+   "verdict": "snapshot",
+   "confidence": "low",
+   "reason": "Staged artifact still matches the row (wave 4, multi stratum, ranks from 2001, 2,000 ids, 50 batches) and nothing records it running; but no lane file, the S229 handoff or any later row names wave 4, and the mechanism moved to SkyView + packaging. Sam should say whether it is still wanted.",
+   "evidence": [
+    {
+     "source": "kb/ccr_out/2026-07-14/wave4_manifest.json",
+     "quote": "_wave=4 _stratum=multi _rank_start=2001 wave_size=2000 batches=50 (parsed 2026-09-05)"
+    },
+    {
+     "source": "docs/ccr_convergence_lessons.md:276",
+     "quote": "Wave 4 (multi-college ranks 2,001–4,000) is staged and independent — its per-wave lanes don't need the gate"
+    },
+    {
+     "source": "grep -rn adjudicat|fan-out docs/reference/lanes/*.md docs/session_229_handoff.md",
+     "quote": "no matches — no current lane or the latest handoff mentions the wave-4 fan-out"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:43",
+     "quote": "grinding the whole merge queue perfectly lands at 35,937, 14.4× short of 2,500, so packaging is the only mechanism with the right shape"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b1b83a62-497c-4011-9a47-f8b23871c713",
+   "slug": "o1",
+   "kind": "opportunity",
+   "title": "Stale-articulation signal",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The published KB note still states the opportunity in the same words, and the generator does not implement it: CPL_COCI_COURSE_KEYS is consumed only by the CPL Pathways tab (cpl_pathways.js), never by excel_to_dashboard.py, so the systemwide signal remains unbuilt and open.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-filter-live-counts-against-current-catalog.md:87-89",
+     "quote": "The same intersection is the root fix for a systemwide stale-articulation ... signal in the CER/CCR generator: flag any articulation whose (college, subj, num) is absent from the current catalog"
+    },
+    {
+     "source": "docs/kb-notes/methodology-filter-live-counts-against-current-catalog.md:6",
+     "quote": "kb-status: published"
+    },
+    {
+     "source": "grep -n CPL_COCI_COURSE_KEYS excel_to_dashboard.py *.js",
+     "quote": "only cpl_coci_course_keys.js:1 and cpl_pathways.js:537-1719 reference it; excel_to_dashboard.py does not"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e223afeb-99de-477e-84c2-9bef03799e85",
+   "slug": "hth-cannot-articulate-into-the-cna-course",
+   "kind": "fact",
+   "title": "HTH maps to the course beside CNA, never to CNA itself",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "PR #1134 landed; the lessons doc records the CDPH 160-hour (60/100) reasoning and the adjacent-course mapping; a published KB note corroborates CDPH approval of CNA programs; the partner-crosswalks lane still cites the deliverable. The 160-hour figure is restated in no tier 1-7 source, hence medium.",
+   "evidence": [
+    {
+     "source": "git log origin/main",
+     "quote": "085abbed Futuro Health HTH → CCC CNA statewide crosswalk (Ashley) (#1134)"
+    },
+    {
+     "source": "docs/futuro_hth_crosswalk_lessons.md:45-48",
+     "quote": "CDPH-approved 160-hour course (60 theory / 100 clinical) with hours and content ... therefore pointing at the adjacent receiving course — interpersonal"
+    },
+    {
+     "source": "docs/kb-notes/reference-course-level-mis-beats-program-level-coci.md:66",
+     "quote": "training programs are approved by CDPH, not by the Chancellor's Office, so the true roster of approved CNA providers lives with CDPH"
+    },
+    {
+     "source": "docs/reference/lanes/partner-crosswalks.md:24",
+     "quote": "see also Futuro/HTH (#1134), where one course × one program type had no vocabulary to reconcile and a simpler generator was right"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7bb3c8d1-ab70-47d1-b6f4-2308aeac3ef7",
+   "slug": "partners-have-a-college-id-but-are-not-colleges",
+   "kind": "pitfall",
+   "title": "Futuro Health and Launch Apprenticeship sit in MAP's college table but are marked as partners, not colleges",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured live: map_colleges has exactly 2 entity_kind=partner rows, 132 Launch Apprenticeship and 133 Futuro Health, and 116 entity_kind=college; the safe-fallback trap in cplCollegeShort() is still in the code. (NOCE/SDCCE have since gained entity_kind=continuing_education.)",
+   "evidence": [
+    {
+     "source": "sql: select entity_kind, count(*), string_agg(...) from map_colleges group by 1",
+     "quote": "college 116 | continuing_education 2 (119 SDCCE, 121 NOCE) | partner 2 (132:Launch Apprenticeship, 133:Futuro Health) | test 8"
+    },
+    {
+     "source": "college_short_names.js:54",
+     "quote": "if (!r) return name;                       // safe fallback: original name"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "baabbac1-237f-47bc-8e2b-db84d7bc6136",
+   "slug": "college-district-identity-crosswalk-built",
+   "kind": "fact",
+   "title": "One master list of colleges and districts now exists - 116 colleges, 73 districts, keyed on MAP's own identifier",
+   "verdict": "stale",
+   "confidence": "high",
+   "reason": "State superseded: 'Dry run only — NOT yet written' was overtaken by #1278 (2026-08-21): district/MIS codes are live columns, variants on 118 of 128 rows, and Sam ruled NOCE/SDCCE one entity each. Only 'own districts table vs columns' stays open. The build event stands; re-file as a milestone.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/college-district-identity.md:24",
+     "quote": "LIVE IN SUPABASE AND SURFACED AS A TAB (#1131–#1133, #1278). map_colleges carries district · mis_district_code · mis_college_code · district_type; variants populated on 118 of 128 rows"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "86e433f3 College identity: land the crosswalk, include noncredit + partners, lint it, and surface it as a tab (#1278)"
+    },
+    {
+     "source": "sql: information_schema.columns for map_colleges",
+     "quote": "college_id, college_name, variants, is_test, entity_kind, district, mis_district_code, mis_college_code, district_type, mis_absent_why"
+    },
+    {
+     "source": "docs/reference/lanes/college-district-identity.md:24",
+     "quote": "Sam's ruling (2026-08-21) — Calbright and LAUNCH are two entities each, San Diego and North Orange one ... NEXT: ... district columns (done) vs its own districts table"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": "milestone",
+   "link_fixes": []
+  },
+  {
+   "id": "56777fe0-0e22-459b-919d-2aae3ed65f94",
+   "slug": "validate-a-code-column-by-its-structural-invariant",
+   "kind": "pitfall",
+   "title": "A supplied code column can be real, plausible and attached to the wrong rows",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The published KB note the row cites exists and carries the lesson; PR #1132's merge title records the LocationID finding.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md",
+     "quote": "exists; kb-status: published"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "e6155eb9 Sam's 2025 roster completes the crosswalk — and its LocationID column is scrambled (#1132)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b73c804e-14f9-43c5-a14e-9cea4df1f4fb",
+   "slug": "units-are-not-part-of-cr-identity",
+   "kind": "fact",
+   "title": "Units are an attribute of a credit recommendation, not part of its identity",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane file states the same rule with the same SPAN 100 example (screen on rung 4 only, spread always displayed), and Sam's verified ACE ruling extends it to unit variants.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "Units are NOT identity (SPAN 100 at 4/4.5/5) — a screen on rung 4 ONLY; rung 1/2/3 override it, so Engine Performance correctly merges 2/3-4/4/5 units and the spread is always displayed"
+    },
+    {
+     "source": "slug:ace-unit-variants-are-one-ccrr",
+     "quote": "(verified, Sam) Orienteering at 1, 2 and 3 hours; that is one CCRR, units displayed as a spread"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cb586cf7-352e-4b7a-bed4-8a37c1ce8b5b",
+   "slug": "credit-recs-resist-mechanical-normalisation",
+   "kind": "fact",
+   "title": "Credit recommendations resist mechanical tidying - only 6.9% collapse, so this is curation work",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Scope doc and lane carry the same figures: 2,344 raw strings, 2,183 after aggressive normalization (−6.9%), ~160 mechanical twins; the lane frames it as a curation workbench.",
+   "evidence": [
+    {
+     "source": "docs/common_cr_reference_scope.md:59-61",
+     "quote": "Raw credit_rec 2,344 ... Topic only, aggressively normalized — units discarded entirely, lowercased ... 2,183 (−6.9%)"
+    },
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "only ~17% of the 2,344 strings carry a C-ID at all ... rung 4 mechanical twin ~160 · rung 5 similarity suggests, never merges"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "5a5925b2-a530-4f9f-adfa-d64385541819",
+   "slug": "cr-reference-is-a-curation-workbench-not-a-merge-engine",
+   "kind": "fact",
+   "title": "The Common CR Reference is a curation workbench, not a merge engine — automation reaches ~10%",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane file states the identical ladder and figures.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 · rung 3 CCR identity 40 strings · rung 4 ~160"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "4ae35f23-f135-4ed6-a2c9-8fca5aed2095",
+   "slug": "cr-curation-is-head-heavy-work-the-head",
+   "kind": "opportunity",
+   "title": "You do not have to boil the ocean — 50 curation decisions cover half the CR corpus",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane restates the head-heavy figure (top 50 = 49.4%) and the work-the-head strategy; the open question in the detail (is the CCR the same shape) was since answered — 97.1% of CCR decisions involve ≤12 identities.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "156 of 2,159 groups carry a decision; top 50 strings = 49.4% of all articulations — an afternoon, not an ocean"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:43",
+     "quote": "~5,700 decisions, 97.1% ≤ 12 identities; 3,001 carry NO discipline"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "59742464-891a-4154-ad5e-308e0978e5fd",
+   "slug": "ace-lane-is-88pct-of-the-map-cr-vocabulary",
+   "kind": "fact",
+   "title": "The military lane is 88% of MAP's CR vocabulary, and the cascade has nothing to bite on there",
+   "verdict": "snapshot",
+   "confidence": "medium",
+   "reason": "Structure holds (ACE ≈98% of rows, subject-area recs) but the counts drifted: today 206,451 rows / 8,700 distinct strings, ACE 201,909 (97.8%) / 7,386 (84.9%), MAP 3,424 / 1,220 — distinct strings fell 24% and the two '0 hours in …' strings the detail names are no longer in the table at all.",
+   "evidence": [
+    {
+     "source": "sql: select source_code, count(*), count(distinct credit_rec) from map_college_cr_unit group by 1",
+     "quote": "ALL 206451/8700 · ACE 201909/7386 · MAP 3424/1220 · '' 1118/100 (2026-09-05)"
+    },
+    {
+     "source": "sql: map_college_cr_unit where credit_rec ilike '%not recommended%' or ilike '%individual%'",
+     "quote": "0 and 1 rows — the not-a-topic strings are gone from the live table"
+    },
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:20",
+     "quote": "the 98% of MAP's CR rows that come from ACE-reviewed military training"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "266da909-6ffb-4e52-b483-0be7ea2fe1e4",
+   "slug": "rank-cr-worklist-by-collapse-value-not-spread",
+   "kind": "pitfall",
+   "title": "Rank a curation worklist by collapse value, never by how widely a string spreads",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The builder implements collapse value as the ranking rule and the lane records the same placeholder example and head. Scope caveat already captured by a-ranking-rule-must-be-rederived-per-corpus: the ACE lane ranks by rows instead.",
+   "evidence": [
+    {
+     "source": "kb/_build_cr_reference.py:467",
+     "quote": "# COLLAPSE VALUE — the ranking rule. (wordings − 1) × colleges touched."
+    },
+    {
+     "source": "kb/_build_cr_reference.py:521",
+     "quote": "groups.sort(key=lambda g: (-g[\"collapse_value\"], -g[\"rows\"], g[\"canonical\"]))"
+    },
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED — the widest-spreading string is 3 hours in Elective Course Credits: 61 credentials, 1 college, a placeholder ... #174"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e9ad4a45-7695-4562-98ae-7c012f25788e",
+   "slug": "normalisation-and-its-screens-must-see-same-text",
+   "kind": "pitfall",
+   "title": "A tidying step and the checks that judge it must run on the same text",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The published KB note exists at the cited path and the lane restates the failure and the emit-the-profile fix.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md",
+     "quote": "exists; kb-status: published"
+    },
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "A normalization and the screens that judge it MUST see the same text — screen_profile() ran on the raw topic while the key ran on the folded one ... Fixed by EMITTING the profile, not re-deriving it"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "18ea37d8-c10e-4ff3-8fa0-d765d1d580b3",
+   "slug": "divergent-official-title-is-offered-not-applied",
+   "kind": "pitfall",
+   "title": "An official title that shares no word with the data is OFFERED, never auto-applied",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Tests A19-A22 pin the Physical Training case by name and the builder carries the offered-not-applied rule.",
+   "evidence": [
+    {
+     "source": "tests/cr_reference.test.js:123-129",
+     "quote": "check(\"A19 the Physical Training group exists and is reached by AJ 110\" ... \"A20 ...and the divergent official title was NOT applied to it\""
+    },
+    {
+     "source": "kb/_build_cr_reference.py:435",
+     "quote": "# ⚠️ A DIVERGENT OFFICIAL TITLE IS OFFERED, NOT APPLIED."
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "aa759bf8-a185-4ce0-9d6f-1e17c5761f04",
+   "slug": "ccr-identity-gate-mechanism-was-corrected",
+   "kind": "decision",
+   "title": "Conflict flag: the safeguard named in an earlier entry does not actually work",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The builder's rung 3 comment states the course-count gate and why the cartesian/line-fraction gate fails; the lane says the same. Reads as a pitfall/fact (a mechanism correction), not a decision.",
+   "evidence": [
+    {
+     "source": "kb/_build_cr_reference.py:286-291",
+     "quote": "Scope §3: the usable gate is the credential's COURSE COUNT, not the ... cartesian/line-fraction gate was built, measured (43 pairs) and does NOT ... Physical Training still merges into Intro"
+    },
+    {
+     "source": "docs/reference/lanes/common-cr-reference.md:24",
+     "quote": "Two gates DON'T work ... a line-fraction/cartesian test (AJ 110 hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's COURSE count."
+    },
+    {
+     "source": "slug:ccr-course-identity-is-a-gated-cr-reference-factor",
+     "quote": "(verified, Sam) the ruling this row corrects the mechanism of — still verified, intent unchanged"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": "pitfall",
+   "link_fixes": []
+  },
+  {
+   "id": "de4f7e00-339c-4d30-b2d9-b29b1bd2e0d5",
+   "slug": "ace-not-a-topic-class-is-6663-rows",
+   "kind": "opportunity",
+   "title": "The not-a-topic class in the ACE lane is 47 strings / 6,663 rows — bigger than previously cited",
+   "verdict": "superseded_by_row",
+   "confidence": "high",
+   "reason": "The 'free auto-N/A win' was overruled: Sam ruled the class gets canonical CRs (scope §10 Q4) and the deferrals are Cx offers, never bulk-closed (verified, 2026-08-20). The class no longer reproduces: 0 '%not recommended%' rows in map_college_cr_unit today and the nightly worklist has no P5.",
+   "evidence": [
+    {
+     "source": "slug:ace-deferrals-are-credit-by-exam-opportunities",
+     "quote": "(verified, Sam 2026-08-20) the 5,311 ACE recommendations that say credit MAY be granted after ... are to be PRESENTED TO STUDENTS AS CREDIT BY EXAM OPTIONS - not ruled out"
+    },
+    {
+     "source": "docs/military_cr_reference_scope.md:302-316",
+     "quote": "Open questions for Sam — ALL FOUR ANSWERED 2026-08-14 ... The not-a-topic class is CANONICALISED, NOT EXCLUDED"
+    },
+    {
+     "source": "docs/reference/lanes/cpl-cleanup-worklist.md:24",
+     "quote": "P5 RULED (Sam, 2026-08-20): present to STUDENTS as Cx options, never bulk-close"
+    },
+    {
+     "source": "sql: map_college_cr_unit not-recommended/individual counts; map_cleanup_worklist group by priority",
+     "quote": "0 rows / 1 row; worklist classes today are P2, P3, P4 only (98 rows) — no P1, no P5"
+    }
+   ],
+   "superseded_by": "ace-deferrals-are-credit-by-exam-opportunities",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "432cd065-4e66-401c-a368-16056df6a5cf",
+   "slug": "usmc-rank-tokens-leak-into-cr-text",
+   "kind": "fact",
+   "title": "Marine Corps rank abbreviations are buried in the recommendation text, splitting 482 topics",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane and scope doc carry the same counts and the same strip-list caveat; the f8 row it cites exists (verified).",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:24",
+     "quote": "USMC skill-level tokens leaked into the topic text (ssgt gysgt supervision): 482 topics / 12,157 rows / 181 exhibits / 94 colleges, and stripping the rank lands 306 topics / 10,550 rows"
+    },
+    {
+     "source": "docs/military_cr_reference_scope.md:137",
+     "quote": "Strip the rank → lands on an EXISTING base topic | 306 topics / 10,550 rows"
+    },
+    {
+     "source": "slug:f8",
+     "quote": "exists, status verified (Marine JSTs repeat CRs at every skill level)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "d26438f8-7a0f-4dc0-b866-0e6a231164c0",
+   "slug": "a-ranking-rule-must-be-rederived-per-corpus",
+   "kind": "pitfall",
+   "title": "A ranking rule encodes an assumption about where variance lives — re-derive it per corpus",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane states the same finding and the same replacement rule (rank by rows) with the same top-200 average.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:24",
+     "quote": "THE FREEHAND RANKING RULE DOES NOT TRANSFER — every head topic already sits at ~80–100 of 108 colleges (top 200 average 78), so collapse value ... ranks nothing. Rank by ROWS"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e9bd3fc4-e602-4f47-88a8-29e5c2921bb4",
+   "slug": "ace-is-already-a-controlled-vocabulary",
+   "kind": "fact",
+   "title": "ACE is already a controlled vocabulary — the military lane is mechanically EASIER, not harder",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane and scope doc restate 93.4%, the 6.6% residue, 33.5% and the 10,117→6,725 ladder. Note the live table now holds 7,386 distinct ACE strings (the raw 10,117 has moved); the structural claim is what the row carries.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:24",
+     "quote": "ACE IS ALREADY A CONTROLLED VOCABULARY: 93.4% of (exhibit_id, units, topic) groups hold exactly ONE text; the 6.6% residue is case and punctuation ... 33.5% ... 10,117 raw → 7,106 → 6,749 → 6,725"
+    },
+    {
+     "source": "docs/military_cr_reference_scope.md:61-65",
+     "quote": "...holding exactly one text | 22,487 (93.4%) ... 93.4% of the lane is already textually canonical"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cfd513f0-7a1f-43fa-ae46-e9e1e1ce2859",
+   "slug": "ace-cascade-names-by-ace-own-published-text",
+   "kind": "fact",
+   "title": "The ACE lane needs no new naming ruling — ACE's own text IS the published line",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane states the same conclusion and the 134 of 7,106 / 5.9% overlap; the cascade itself is a verified Sam row.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:24",
+     "quote": "the cascade already ends in published line, and ACE's own text IS that line, so no new naming ruling is needed. The two lanes share only 134 of 7,106 topics (5.9% of ACE rows)"
+    },
+    {
+     "source": "docs/military_cr_reference_scope.md:190-192",
+     "quote": "ACE rows those cover | 11,778 (5.9%) ... the Common CR Reference already built covers 5.9% of the military lane"
+    },
+    {
+     "source": "slug:ccrr-naming-cascade-ccn-cid-mid",
+     "quote": "(verified) The CCRR name comes from a cascade: CCN > C-ID > M-ID > published line > modal wording (Sam)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "61b0d798-172e-4955-860a-0665fe519436",
+   "slug": "post-pdf-says-physical-training-has-no-cid",
+   "kind": "question",
+   "title": "The authoritative POST statewide exhibit PDF says Physical Training has NO C-ID — our data claims AJ 110",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Still an open question: chatbox_credential_recs today carries cid AJ 110 on POST's Physical Training line (9 C-ID lines, cid_repeats [AJ 110]) and no later row or doc records a ruling. The PDF itself is not in the repo. Advisory: Sam supplied the document and is the one to decide.",
+   "evidence": [
+    {
+     "source": "sql: chatbox_credential_recs where unified_title ilike '%POST%' and rec ilike '%Physical Training%'",
+     "quote": "POST Basic Academy · n_recs 10 · n_cid_lines 9 · cid_repeats [\"AJ 110\"] · {cid: AJ 110, title: Physical Training and Health Education (CSU GE Area E)}"
+    },
+    {
+     "source": "sql: cpl_memory keyword search 'Physical Training' / 'AJ 110'",
+     "quote": "newest matching row is this one (2026-08-14); no decision row resolves it"
+    },
+    {
+     "source": "ls docs/ kb/reference/ | grep -i post",
+     "quote": "no POST exhibit PDF committed"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee (supplied the POST PDF; the reading is session 153's)",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "355fb32d-f0e2-49e9-929c-773bd721badc",
+   "slug": "ace-not-a-topic-gets-canonical-crs",
+   "kind": "decision",
+   "title": "The ACE not-a-topic class gets CANONICAL CRs, it is not excluded from the vocabulary (Sam)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The scope doc records Sam's answer (Q4, 2026-08-14) with the same three canonical CRs and the §8 rung-0 correction. Worth Sam knowing: today the live feed carries none of those strings (0 rows in map_college_cr_unit and map_student_credit), so the canonical CRs currently have nothing to attach to.",
+   "evidence": [
+    {
+     "source": "docs/military_cr_reference_scope.md:302-322",
+     "quote": "ALL FOUR ANSWERED 2026-08-14 ... The not-a-topic class is CANONICALISED, NOT EXCLUDED — and this CORRECTS §8 rung 0 ... four meanings that fold to THREE canonical CRs"
+    },
+    {
+     "source": "sql: map_college_cr_unit / map_student_credit where credit_rec ilike '%not recommended%' or '%individualized%'",
+     "quote": "0 rows in both tables (2026-09-05)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "8c7b7b09-36bd-47c3-b9f3-7b3019767304",
+   "slug": "ace-individualized-assessment-never-granted",
+   "kind": "opportunity",
+   "title": "ACE's individualized-assessment class has never been granted anywhere - 2,730 rows, 95 colleges, ZERO applied",
+   "verdict": "superseded_by_row",
+   "confidence": "medium",
+   "reason": "Sam's verified 2026-08-20 ruling states the disposition for this class (Cx options, never bulk-close), resolving the opportunity. The 2,730-row measurement no longer reproduces: 0 '%individualized%' rows in either live table today, and the nightly worklist has no P5 class.",
+   "evidence": [
+    {
+     "source": "slug:ace-deferrals-are-credit-by-exam-opportunities",
+     "quote": "(verified, Sam) ACE recommendations that say credit MAY be granted after the college's own individualized assessment ... PRESENTED TO STUDENTS AS CREDIT BY EXAM OPTIONS"
+    },
+    {
+     "source": "docs/military_cr_reference_scope.md:322-336",
+     "quote": "③ Individualized assessment | 10 | 2,730 | 95 | 0 ... Class ③ IS NOT A \"NO\" AND MUST NEVER BE AUTO-N/A'd"
+    },
+    {
+     "source": "sql: map_student_credit where credit_rec ilike '%individualized%'",
+     "quote": "0 rows, 0 colleges (2026-09-05); map_cleanup_worklist priorities present: 2, 3, 4 only"
+    }
+   ],
+   "superseded_by": "ace-deferrals-are-credit-by-exam-opportunities",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ed66ec98-6b2a-4b5b-9b70-a28da9c3ee4c",
+   "slug": "ace-unit-variants-are-one-ccrr",
+   "kind": "decision",
+   "title": "Where military training is offered at different credit hours, that is ONE recommendation with a range (Sam)",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The scope doc records the answer (Q1, 2026-08-14) exactly as the row states, plus the suggestion-only granularity ruling. Doc inconsistency: the military lane file (updated 2026-08-28) still lists this as NEEDS SAM ① — the lane lags the scope doc and this row.",
+   "evidence": [
+    {
+     "source": "docs/military_cr_reference_scope.md:302-311",
+     "quote": "ALL FOUR ANSWERED 2026-08-14 ... 1. ACE unit variants are ONE recommendation, units displayed as a spread. Unblocks rung 2 — 2,244 strings, 22.2% ... 3. Subject-area granularity is SUGGESTION-ONLY"
+    },
+    {
+     "source": "docs/reference/lanes/military-ace-cr-reference.md:24",
+     "quote": "NEEDS SAM (4 questions, §10 of the scope): ① are ACE unit variants one recommendation? — stale relative to the scope doc"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": true,
+   "human_name": "Sam Lee",
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "7c34a1ab-c5ae-43da-9587-ff7bd14be09c",
+   "slug": "eacr-prescriptive-layer-drove-no-filter",
+   "kind": "fact",
+   "title": "We already held a far better \"could adopt\" answer and no filter could reach it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The EACR tab now indexes CPL_STATEWIDE_PRESCRIPTIVE and uses it as the middle of three college scopes; #1221 landed. The 739/4,972 counts were not re-measured.",
+   "evidence": [
+    {
+     "source": "statewide_interactive.js:183",
+     "quote": "var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};  // Index the prescriptive layer by unified_title → college → courses"
+    },
+    {
+     "source": "statewide_interactive.js:206",
+     "quote": "Three scopes, not a binary, because the middle one is a genuinely different"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "9341dc11 EACR: the College filter matched leads, not adoptions — 93.6% of hits were not real (#1221)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "31893a5f-9bb4-4191-8167-dae42b44b930",
+   "slug": "a-blank-issuer-is-unknown-not-different",
+   "kind": "procedure",
+   "title": "When folding identity records, a BLANK attribute means unknown — it folds; two NAMED values never do",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The asymmetric fold rule is in the shipped code with the Firefighter I example.",
+   "evidence": [
+    {
+     "source": "statewide_interactive.js:666-672",
+     "quote": "A blank issuer means UNKNOWN, not DIFFERENT, so it folds into the title's named issuer. Two genuinely different NAMED issuers on one title stay"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "9341dc11 ... (#1221)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b8835a65-550c-4878-b2c1-168b05942355",
+   "slug": "a-fold-at-the-label-layer-is-not-a-fold",
+   "kind": "pitfall",
+   "title": "Cleaning up a name only where it is displayed hides the duplicate instead of resolving it",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "KB note published; the explicit Cañada fold sits in the roster rules and tests/eacr_matrix.test.js asserts it; the upstream mojibake at source is still open per the SkyView lane (CaÃ±ada College ×678).",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md",
+     "quote": "exists; kb-status: published"
+    },
+    {
+     "source": "kb/reference/map_college_roster_rules.json:30",
+     "quote": "\"CaÃ±ada College\": \"Cañada College\""
+    },
+    {
+     "source": "tests/eacr_matrix.test.js:46-47,425-427",
+     "quote": "const CANADA_MOJI = \"Ca\\u00c3\\u00b1ada College\" ... rosterRules.fold.map[CANADA_MOJI] === CANADA"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:71",
+     "quote": "④ The member-roster fold at source (CaÃ±ada College ×678)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "b591b017-68e9-446c-9b26-8e659f9f858e",
+   "slug": "matrix-row-grain-is-the-title-not-the-credential-key",
+   "kind": "fact",
+   "title": "Each row of the adoption grid is one credential NAME, not the key the neighboring view splits on",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The shipped code carries the 431-vs-434 comment and the matrix test exists with per-row peer fixtures; #1229 landed; the related Sam ruling row exists (verified).",
+   "evidence": [
+    {
+     "source": "statewide_interactive.js:815",
+     "quote": "carrying two NAMED issuers and yields 431 rows against this grain's 434."
+    },
+    {
+     "source": "tests/eacr_matrix.test.js:75-99",
+     "quote": "peer_units_median: 4, peer_units_max: 12, rec_units_total: 36 ... (fixtures)"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "781e63ba EACR: build the CER Adoption Matrix, and fold the Cañada column that was there twice (#1229)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "5572dd7c-cb55-45f1-b086-c707b29dd6e4",
+   "slug": "three-layers-of-needs-action-and-the-approval-queue-is-tiny",
+   "kind": "fact",
+   "title": "There are THREE distinct \"needs action\" queues, and the articulation-approval one is only ~2,225 items",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Re-measured live: the structure holds exactly (Needs Action 462,751, all blank status; In Process 3,995, all filled). Counts drift a few percent nightly: AO 142 / Initiator 1,036 (10 colleges) / Faculty 1,113 (47) / Implementation 3,391 — waiting on a person = 2,291 vs the row's 2,225.",
+   "evidence": [
+    {
+     "source": "sql: select cpl_status_plan, coalesce(status,'')='' , count(*) from map_student_credit group by 1,2",
+     "quote": "Applied 42,008 filled + 28,045 blank · In Process 3,995 filled only · Needs Action 462,751 blank only · Not Applicable 13,879 + 50,038"
+    },
+    {
+     "source": "sql: select status, count(distinct (college_id,exhibit_id,credit_rec)) from map_student_credit where status<>'' group by 1",
+     "quote": "Articulation Officer 142 (22 colleges) · Initiator 1,036 (10) · Faculty 1,113 (47) · Implementation 3,391 (49)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ebeb79aa-4a1b-4ccd-b990-e5907a88e2ff",
+   "slug": "ccr-is-6056-decisions-not-17321-rows",
+   "kind": "fact",
+   "title": "The CCR is 6,056 decisions, 97% of them 12 identities or fewer",
+   "verdict": "snapshot",
+   "confidence": "medium",
+   "reason": "The unit-of-work finding holds and is in a published KB note, but the headline count is a dated measurement: the SkyView lane now says ~5,700 decisions after the ESL fold, the 2026-09-03 recode and the prefix fold; 97.1% ≤12 and the 3,001 no-discipline components are restated unchanged.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion.md:41-42,66",
+     "quote": "actual decisions | 6,056 ... involving ≤12 identities | 97.1% ... 3,001 of the 6,056 (8,065 identities)"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:43",
+     "quote": "~5,700 decisions, 97.1% ≤ 12 identities; 3,001 carry NO discipline; decision packs exist for 5 of 159 disciplines"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "454eebba-4a32-421d-9e6b-ec86d7337a1d",
+   "slug": "one-college-many-numbers-is-an-over-merge",
+   "kind": "pitfall",
+   "title": "Members all from ONE college but carrying DIFFERENT course numbers means an over-merge",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The published KB note carries the lesson including 'flag, never auto-unmerge'; no such rule exists yet in kb/_row_audit.py (grep), consistent with the row's 'belongs in the auditor' ask. The example id has since been re-keyed (ESOL Z9023 → ESOL M9023 under the Z retirement); the lesson is unchanged.",
+   "evidence": [
+    {
+     "source": "docs/kb-notes/methodology-one-college-many-course-numbers-is-an-over-merge-signal.md:74",
+     "quote": "exactly why this belongs in the auditor as a flag and must not be an [auto-unmerge]; kb-status: published"
+    },
+    {
+     "source": "grep -n one_college|many_numbers|number_spread kb/_row_audit.py",
+     "quote": "no matches — the auditor rule is still unbuilt"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "Survivors: ... Vocational ESOL M9023"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "e347844e-a116-495f-84af-efd6f0c4f35c",
+   "slug": "member-rehome-cn-verb-exists-and-is-unused",
+   "kind": "opportunity",
+   "title": "The tool for moving a course into the right group shipped a year ago and has never once been used",
+   "verdict": "superseded_by_row",
+   "confidence": "medium",
+   "reason": "The UI gap the row names (search box only) was closed by Sam's 2026-08-24 decision and SkyView's drag / Move verbs, which produce exactly the CN: row. Count still zero (0 of 34,442 kb_curation rows start with CN:) because SkyView records a move rather than writing it; a curator accept remains.",
+   "evidence": [
+    {
+     "source": "slug:sam-drag-rehomes-membership-remints-stay-batched",
+     "quote": "(verified, Sam 2026-08-24) SkyView drag moves a LOCAL COURSE between M-IDs via CN: — membership, never a re-mint"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:29",
+     "quote": "Move <code> into <parent> and Move here accept ONE course at a time as the same CN:<control number> merge_into <identity> row a drag writes. Nothing is written from the page."
+    },
+    {
+     "source": "sql: select count(*) filter (where course_id like 'CN:%'), count(*) from kb_curation",
+     "quote": "cn_rows 0 · total_rows 34,442 (2026-09-05)"
+    },
+    {
+     "source": "tests/uc_member_rehome.test.js",
+     "quote": "exists"
+    }
+   ],
+   "superseded_by": "sam-drag-rehomes-membership-remints-stay-batched",
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "95fbf56c-6aa4-43ad-b54f-668a11699e89",
+   "slug": "merge-queue-ceiling-misses-the-ccr-target",
+   "kind": "fact",
+   "title": "Working the entire CCR merge queue perfectly still lands 14.4x short of 2,500",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane's durable-facts line and the published KB note carry the same 35,937 / 14.4× ceiling; the 2,500 target is a verified Sam row.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:43",
+     "quote": "grinding the whole merge queue perfectly lands at 35,937, 14.4× short of 2,500, so packaging is the only mechanism with the right shape (ESL proved it at 85:1)"
+    },
+    {
+     "source": "docs/kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md:45-47",
+     "quote": "catalog after grinding the entire queue | 35,937 ... short by | 14.4×"
+    },
+    {
+     "source": "slug:sam-ccr-target-2000-2500-nationwide",
+     "quote": "(verified) I want to cluster 142k local courses down to 2k-2.5k common courses"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "2a702c5d-c96d-40a4-9ebc-ed60e5720504",
+   "slug": "s187-packaging-hides-pre-existing-over-merges",
+   "kind": "pitfall",
+   "title": "Folding a thousand courses into one hides any mistake already inside it - check before folding",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The FIMS M1018 stray inside ESOL M1152 is still named as open work in two lane files, so both the lesson and its motivating case stand.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "Survivor-member audit clean — 1 non-ESL (FIMS M1018); the four big level survivors at zero"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:71",
+     "quote": "⑥ The 67 ESOL Z#### rows, FIMS M1018 (needs an un-merge verb), a tool for the 3,001"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "3686e999-55be-40e5-b873-3b35b8d420bf",
+   "slug": "s187-cross-discipline-merge-is-ambiguous",
+   "kind": "pitfall",
+   "title": "A cross-discipline merge is ambiguous between a wrong merge and a wrong label",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The observable parts hold today: kb/discipline_aliases.json holds exactly two pairs and SkyView's verbs are still course moves only (no island-relabel verb). The 2,731/10,170 measurement and the wrong-label reading live only in the lessons doc (no KB note, no auditor rule added), hence medium.",
+   "evidence": [
+    {
+     "source": "kb/discipline_aliases.json",
+     "quote": "aliases: Kinesiology → [Physical Education]; Drama/Theater Arts → [Theater Arts] — 2 pairs"
+    },
+    {
+     "source": "docs/ccr_atlas_lessons.md:262-290",
+     "quote": "Cross-discipline merges: 2,731, and mostly not defects ... The one pair with no parent/child relation was Ethnic Studies↔Kinesiology (73) ... 2. Relabel an island's discipline"
+    },
+    {
+     "source": "docs/reference/lanes/skyview-ccr-interface.md:29",
+     "quote": "Move <code> into <parent> (on the course) and Move here (on the parent's card, one row per orbiting course) accept ONE course at a time"
+    },
+    {
+     "source": "grep -n outvote|island kb/_row_audit.py",
+     "quote": "no matches — the candidate audit rule is unbuilt"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ab4f05e8-7672-4297-8e43-dd7afc4e13ba",
+   "slug": "s187-merge-chains-need-transitive-resolution",
+   "kind": "pitfall",
+   "title": "When A is merged into B and B into C, the display has to follow the chain all the way to C",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "flatten_merge_chains() is in the generator and called before merge_members is built; the test and the published KB note exist; #1312 landed.",
+   "evidence": [
+    {
+     "source": "excel_to_dashboard.py:7391,7688",
+     "quote": "def flatten_merge_chains(merge_into): ... flatten_merge_chains(merge_into)"
+    },
+    {
+     "source": "tests/merge_chain_flatten_test.py",
+     "quote": "exists"
+    },
+    {
+     "source": "docs/kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md",
+     "quote": "exists; kb-status: published"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "552d4d49 Flatten merge chains — 340 folded identities were still rendering as rows (#1312)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "cfd5725b-df17-4f89-b833-6040644c0d79",
+   "slug": "s187-esl-fold-published-2300-to-27",
+   "kind": "milestone",
+   "title": "ESL packaging published: 2,300 identities to 27",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The event happened: #1311 is on main and the lane records 2,300 → 27 with the identical seven survivors. The cohort now counts 1,965 rows in kb_curation (row says 1,997) — the 2026-09-03 re-key chain moved some.",
+   "evidence": [
+    {
+     "source": "git log origin/main",
+     "quote": "0819927f The universe view, and the ESL fold applied — seven comprehensives, 1,997 rows (#1311)"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "ESL went 2,300 identities → 27 ... Survivors: Beginning ESOL M9168 · Intermediate ESOL M9256 · Advanced ESOL M1141 · Vocational ESOL M9023 · Civic ESOL M9177 · Voc—Healthcare ESOL M91IL"
+    },
+    {
+     "source": "sql: kb_curation where reviewer_email='package-esl-s187@bot'",
+     "quote": "1,965 rows (2026-09-05)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "c707ef55-1975-4fcd-94ea-493ac1102cc3",
+   "slug": "directional-error-beats-aggregate-error",
+   "kind": "pitfall",
+   "title": "Directional error beats aggregate error — the small half can be the half that matters",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The lane states the same rule with the same 85/9 split; #1315 landed.",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "DIRECTIONAL ERROR BEATS AGGREGATE — in the numeric lane 85 under-claim vs 9 over-claim, and the small half is the one to work"
+    },
+    {
+     "source": "git log origin/main",
+     "quote": "23ee6fea ESL fold spot-check — the 517 weren't evidence-free, and the numeric lane is a coin flip (#1315)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "268fb7c4-56a3-496c-b535-a095acfb9e90",
+   "slug": "a-local-course-number-is-not-a-level-ordinal",
+   "kind": "pitfall",
+   "title": "A course number is not a level - colleges run two numbering schemes side by side",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "The rejection is recorded in the builder's docstring and emitted in its report, exactly as the row says; the lane restates it.",
+   "evidence": [
+    {
+     "source": "kb/_build_esl_fold_spotcheck.py:56-62",
+     "quote": "371/372 (Intermediate) and 701/702 (Beginning), because the 700s ... Nearest-number would have proposed re-levels for 325 rows on an ordinal that ... means different things per college"
+    },
+    {
+     "source": "kb/_build_esl_fold_spotcheck.py:398-402",
+     "quote": "\"_rejected_signal\": ( ... numbers too, so nearest-anchor placement is not an ordinal. 325 rows would have been proposed on it.)"
+    },
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "A local course NUMBER is not a level ordinal (a ladder was built and rejected at 325 false proposals)"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  },
+  {
+   "id": "ab6e1e75-d145-4d80-b483-41c048f3e028",
+   "slug": "calibrate-a-signal-before-you-rank-the-queue",
+   "kind": "pitfall",
+   "title": "A confidence stamp on a derived signal is a claim — calibrate it before ranking the queue",
+   "verdict": "confirmed",
+   "confidence": "high",
+   "reason": "Lane and the published KB note carry the same calibration figures and the excluded-denominator rule. The related slug measure-your-mechanism-ceiling-before-working-the-queue is not a cpl_memory slug (it is the KB note's name).",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "CALIBRATE THE SIGNAL, DON'T RANK BY INTUITION — measured against the colleges' own catalogs (96% coverage): default-beginning 76.7% wrong · numeric 49.2% · word/high 6.2% ... 1,217 folds are EXCLUDED"
+    },
+    {
+     "source": "docs/kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md",
+     "quote": "exists; kb-status: published"
+    },
+    {
+     "source": "sql: cpl_memory slug lookup",
+     "quote": "measure-your-mechanism-ceiling-before-working-the-queue → no such slug"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": [
+    {
+     "from": "related: measure-your-mechanism-ceiling-before-working-the-queue",
+     "to": "merge-queue-ceiling-misses-the-ccr-target"
+    }
+   ]
+  },
+  {
+   "id": "93710092-55aa-46b9-911c-09dfc07fad56",
+   "slug": "esl-numeric-pinning-fails-on-ladder-length",
+   "kind": "fact",
+   "title": "The ESL numeric level pinning is 49.2% wrong because colleges run ladders of different LENGTHS",
+   "verdict": "confirmed",
+   "confidence": "medium",
+   "reason": "The measurement (49.2%, 85 under / 9 over, differing ladder lengths) is restated in the lane; the row itself flags its doctrine as superseded (0-2/3-5/6-10, then Sam's per-ladder sets, both verified). Outdated: '222 proposals staged; nothing written' — 32 re-levels are LIVE, no rollback (Sam).",
+   "evidence": [
+    {
+     "source": "docs/reference/lanes/esl-packaging.md:24",
+     "quote": "numeric 49.2% ... SAM'S BANDS, TWICE REVISED THE SAME DAY — the absolute 0-2/3-5/6-10 superseded the P-4 pinning (its 32 re-levels are LIVE), then his PER-LADDER sets superseded those"
+    },
+    {
+     "source": "slug:sam-esl-per-ladder-level-sets",
+     "quote": "(verified, Sam) PER-LADDER ESL level sets, superseding his own absolute bands the same day"
+    },
+    {
+     "source": "slug:sam-do-not-roll-back-the-32-esl-relevels",
+     "quote": "(verified, Sam) do NOT roll back the 32 applied ESL re-levels"
+    }
+   ],
+   "superseded_by": null,
+   "human_sourced": false,
+   "human_name": null,
+   "kind_check": null,
+   "link_fixes": []
+  }
+ ]
+}
