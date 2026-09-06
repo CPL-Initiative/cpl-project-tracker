@@ -48,23 +48,34 @@ a{color:var(--cobalt)}
 /* Suggestions. The wrapper is the positioning context so the list hangs under
    the input rather than under the whole form (which includes the button). */
 .sugwrap{position:relative;flex:1 1 auto;min-width:0;display:flex}
-.sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:4px 0;
+.sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:0 0 4px;
   list-style:none;background:var(--surface-opaque,#fff);border-radius:9px;
   border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
   max-height:min(70vh,620px);overflow-y:auto;overscroll-behavior:contain}
 .sug li{display:flex;gap:.55em;align-items:baseline;padding:.42em .7em;cursor:pointer}
 .sug li.on{background:var(--surface-subtle,#F7F5F1)}
-/* The footer is a note, not a destination: no pointer, no hover, and it sticks
-   to the bottom edge so the count stays readable while the list scrolls. */
+/* ⭐ THE SORT CONTROL MOVED TO THE LIST'S TOP RIGHT and an Enter button took its
+   place at the bottom (Sam's ruling 1, 2026-09-06). Both rows are notes rather
+   than destinations: no pointer, no hover, and each sticks to its own edge so
+   the count and the controls stay readable while the list scrolls. */
+.sug li.sug-head{position:sticky;top:0;z-index:1;cursor:default;display:flex;
+  border-radius:9px 9px 0 0;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-bottom:1px solid var(--border,rgba(28,28,26,.16))}
+.sug li.sug-head:hover{background:var(--surface-subtle,#F7F5F1)}
 .sug li.sug-more{position:sticky;bottom:0;cursor:default;display:flex;
   gap:.8em;align-items:center;justify-content:space-between;
   padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
   background:var(--surface-subtle,#F7F5F1);border-top:1px solid var(--border,rgba(28,28,26,.16))}
-.sug .sug-sort{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+.sug .sug-sort,.sug .sug-go{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
   color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);
   border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:5px;
   padding:.28em .7em;min-height:24px}
-.sug .sug-sort:hover{background:var(--surface-muted,#ECE9E2)}
+.sug .sug-sort:hover,.sug .sug-go:hover{background:var(--surface-muted,#ECE9E2)}
+.sug .sug-go{color:var(--on-accent,#fff);background:var(--cobalt,#0047AB);border-color:var(--cobalt,#0047AB)}
+.sug .sug-go:hover{background:var(--seal-blue,#002F6D);border-color:var(--seal-blue,#002F6D);color:var(--on-accent,#fff)}
+.sug .sug-sort:focus-visible,.sug .sug-go:focus-visible{outline:2px solid var(--focus-ring,#0047AB);outline-offset:2px}
 .sug li.sug-more:hover{background:var(--surface-subtle,#F7F5F1)}
 /* The kind is a WORD. Two different destinations must not be told apart by a
    color or an icon alone. */
@@ -540,11 +551,35 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .u-show-all{display:flex;flex-wrap:wrap;gap:4px 14px}
 .u-show-all .linkish{font-size:.84rem;min-height:24px;display:inline-flex;align-items:center}
 /* the token search (2.1): chips before the box, a wider dropdown whose rows wrap (2.2, 2.4) */
-.u-search-slot .sugwrap{flex-wrap:wrap;gap:6px;align-items:center}
+/* ⭐ THE CHIP ROW RESERVES ITS SPACE (Sam's ruling 3, 2026-09-06: "stability
+   wins"). `.u-tokens{display:contents}` makes every chip a flex child of THIS
+   wrapper, so the Nth chip wraps the row, the wrapper grows, and the suggestion
+   list below it moves down by a whole row height while the reader is picking
+   from it — "you see how it jumped and I lost my place… jumping again, driving
+   me nuts."
+
+   ⚠️ MEASURED IN CHROMIUM AT 1440px, AND IT IS THIS ELEMENT, NOT `#u-bar`. The
+   triage named `#u-bar` 30 → 76; walking the real ancestor chain on the fourth
+   pick shows `#u-bar` unchanged and `.sugwrap` going 30 → 66, which pushes
+   `#sug` 40 → 76. A min-height on `#u-bar` would have measured as "fixed" while
+   changing nothing.
+
+   Two rows is 30 + 6 + 30 = 66px, exactly the height the wrap produces, so the
+   reserve costs the map 36px of its top row once and the list never moves
+   again. Reserving only after the first pick would merely move the jump to
+   pick 1, which is the same complaint one pick earlier. */
+.u-search-slot .sugwrap{flex-wrap:wrap;gap:5px;align-items:center;
+  min-height:calc(var(--u-chip-h) * 2 + 5px)}
 .u-tokens{display:contents}
-.u-tok{display:inline-flex;align-items:center;gap:5px;height:var(--u-chip-h);padding:0 3px 0 8px;
+/* ⚠️ ONLY THE HORIZONTAL PADDING, THE GAP AND THE MAX-WIDTH ARE FREE. Sam asked
+   whether the chips could be tighter, and the constraint is NOT contrast — it is
+   target size: `.u-tok-x` is 24×24 and `.u-tok-go` carries min-height:24px, both
+   exactly on the WCAG 2.2 SC 2.5.8 AA floor, so neither may shrink. Tightening
+   fits more chips per row and postpones the wrap; only the reserved row above
+   removes it. */
+.u-tok{display:inline-flex;align-items:center;gap:4px;height:var(--u-chip-h);padding:0 2px 0 6px;
   border:1px solid var(--border-strong);border-radius:var(--u-chip-r);background:var(--surface-subtle);
-  font-size:.78rem;max-width:150px;color:var(--text-body)}
+  font-size:.78rem;max-width:132px;color:var(--text-body)}
 /* The label is a control now (item 2, 2026-09-06): it carries the chip's own
    type and spacing so the chip looks exactly as it did, and only the pointer
    and the focus ring say it can be clicked. min-height keeps the target
@@ -563,7 +598,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
   width:24px;height:24px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;padding:0}
 .u-tok-x:hover{background:var(--surface-muted);color:var(--text-strong)}
 .u-tokens .u-tok-act{font:inherit;font-size:.78rem;font-weight:600;height:var(--u-chip-h);display:inline-flex;align-items:center;
-  padding:0 9px;margin-right:2px;text-decoration:none;color:var(--text-body);border:1px solid var(--border-strong);
+  padding:0 7px;margin-right:2px;text-decoration:none;color:var(--text-body);border:1px solid var(--border-strong);
   border-radius:var(--u-chip-r);background:var(--surface-opaque);cursor:pointer;line-height:1}
 .u-tokens .u-tok-act:hover{color:var(--text-strong);background:var(--surface-subtle)}
 .u-search-slot .msearch input{flex:1 1 100px;min-width:72px;font-weight:400;background:var(--surface-opaque);
@@ -811,17 +846,23 @@ if (provEl){
   provEl.title = provText;
   provEl.setAttribute("aria-label", (provWhen ? "Data " + provWhen + " — " : "") + provText);
 }
-document.getElementById("msearch").addEventListener("submit", function(ev){
-  ev.preventDefault();
-  // A highlighted suggestion IS the answer: pressing Enter on it must go where
-  // the reader is looking, not re-run a ranking rule that may pick differently.
-  if (takeHighlighted()) return;
-  /* ⭐ ENTER NO LONGER HIDES THE ANSWER (Sam, item 6, 2026-09-06). It used to
-   * close the list and fly the map, which is a defensible two-behaviour design
-   * and also the thing that made the intro course look absent: Enter had
-   * dismissed the list showing it. The map search still runs; the list stays up
-   * with its first row highlighted, so the next Enter opens that row. */
-  var term = document.getElementById("gq").value;
+/* ⭐ ENTER RUNS THE SEARCH AND CLOSES THE LIST (Sam's ruling 1, 2026-09-06).
+ *
+ * ⚠️ THIS REVERSES ITEM 6 OF THE SAME MORNING, and he flagged the reversal
+ * himself: "after I click enter, I really think it should close this, even
+ * though we made a prior decision on that." Item 6 had made Enter leave the
+ * list up with its first row highlighted, because an earlier Enter-closes
+ * behaviour was what made an intro course look absent. That reading was right
+ * about the symptom and wrong about the cause — the course was missing from the
+ * RANKING ("weldi" lost it), which was fixed separately, so keeping the list up
+ * was solving a bug that no longer exists at the cost of a panel that would not
+ * go away.
+ *
+ * The button in the list's bottom row and the Enter key are the same call, so
+ * neither can drift from the other. */
+function runSearch(){
+  var box = document.getElementById("gq");
+  var term = box ? box.value : "";
   // One search box, two behaviors, chosen by what is on screen: with the map
   // open it flies and rings; anywhere else it lists results. The canvas being
   // in the DOM is the test rather than a flag we keep in step by hand — every
@@ -830,7 +871,17 @@ document.getElementById("msearch").addEventListener("submit", function(ev){
     window.__ccrUniverseSearch(term);
   else
     search(term);
-  if (sugItems.length && sugEl && !sugEl.hidden){ if (sugAt < 0) sugAt = 0; markSug(); }
+  closeSug();
+}
+document.getElementById("msearch").addEventListener("submit", function(ev){
+  ev.preventDefault();
+  /* A highlighted suggestion IS the answer: pressing Enter on it must go where
+   * the reader is looking, not re-run a ranking rule that may pick differently.
+   * ⚠️ This path is NOT what ruling 1 reversed — it is the multi-select pick,
+   * and ruling 3 of 2026-09-05 requires the list to stay put through it so a
+   * second pick is one more click. Only the run-the-search path closes. */
+  if (takeHighlighted()) return;
+  runSearch();
 });
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -893,14 +944,19 @@ function markSug(){
   if (!sugEl) return;
   // The cursor is a class and aria-activedescendant; aria-selected is the PICK
   // (the listbox is multi-select, and the checkbox on each row shows it).
-  Array.prototype.forEach.call(sugEl.children, function(li,i){
-    li.classList.toggle("on", i === sugAt);
+  /* ⚠️ ADDRESS ROWS BY THEIR OWN id, NOT BY CHILD POSITION. The list now carries
+   * a sticky HEADER as its first child (Sam's ruling 1, 2026-09-06), so
+   * sugEl.children[n] is no longer row n — indexing positionally would put the
+   * cursor one row above where the reader is looking and desync every arrow key
+   * after it. Each row already prints id="sug-<i>". */
+  Array.prototype.forEach.call(sugEl.querySelectorAll("li[data-i]"), function(li){
+    li.classList.toggle("on", +li.dataset.i === sugAt);
   });
   /* A list of sixty is a list you scroll, so the arrow keys have to CARRY the
    * viewport with them. Without this the cursor walked off the bottom edge and
    * the reader watched a still list, which reads exactly like a list that has
    * stopped responding — the same complaint, one layer down. */
-  var cur = sugAt >= 0 ? sugEl.children[sugAt] : null;
+  var cur = sugAt >= 0 ? sugEl.querySelector("#sug-"+sugAt) : null;
   if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
   if (gqEl){
     if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
@@ -1016,10 +1072,20 @@ function renderSug(reset){
           (sugAll.more ? "+" : "") + " \u2014 scroll for more"
         : more > 0 ? "Showing the closest " + sugItems.length
         : sugItems.length + (sugItems.length === 1 ? " match" : " matches"));
-  sugEl.insertAdjacentHTML("beforeend",
-    '<li class="sug-more" role="presentation"><span>'+count+'</span>'+
+  /* ⭐ THE SORT CONTROL SITS AT THE LIST'S TOP RIGHT and the bottom row carries an
+   * ENTER button (Sam's ruling 1, 2026-09-06: "move the sort chip to the top
+   * right of the list and put an enter button where the sort button is now").
+   * Both rows are role="presentation" so neither joins the listbox's options —
+   * the count is repeated on the listbox's own label, which is what a screen
+   * reader hears on entry. */
+  sugEl.insertAdjacentHTML("afterbegin",
+    '<li class="sug-head" role="presentation"><span>'+count+'</span>'+
     '<button type="button" class="sug-sort" data-order="'+(byName ? "relevance" : "name")+'">'+
     (byName ? "Sort by best match" : "Sort by name")+'</button></li>');
+  sugEl.insertAdjacentHTML("beforeend",
+    '<li class="sug-more" role="presentation">'+
+    '<span>Enter runs the search and closes this list.</span>'+
+    '<button type="button" class="sug-go">Enter</button></li>');
   label += " \u2014 " + count + (byName ? "" : ", sorted by best match");
   sugEl.setAttribute("aria-label", label);
   sugEl.hidden = false;
@@ -1037,6 +1103,12 @@ function renderSug(reset){
       ev.preventDefault(); sugAt = +li.dataset.i; takeHighlighted();
     });
     li.addEventListener("mouseenter", function(){ sugAt = +li.dataset.i; markSug(); });
+  });
+  var goBtn = sugEl.querySelector(".sug-go");
+  /* mousedown for the same blur reason the rows use: a click would let the
+   * input's blur close the list out from under the pointer first. */
+  if (goBtn) goBtn.addEventListener("mousedown", function(ev){
+    ev.preventDefault(); runSearch();
   });
   var sortBtn = sugEl.querySelector(".sug-sort");
   if (sortBtn) sortBtn.addEventListener("mousedown", function(ev){

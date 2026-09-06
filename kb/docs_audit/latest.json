@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 817,
-    "bytes": 8705966,
-    "over_budget": 3,
+    "bytes": 8709350,
+    "over_budget": 4,
     "handoff_max": 235,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59935,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 106,
-        "bytes": 2662799,
+        "bytes": 2662905,
         "over": 2
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 73,
-        "bytes": 1995939,
+        "bytes": 1998355,
         "over": 1
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 141820,
-        "over": 0
+        "bytes": 142682,
+        "over": 1
       },
       "handoff": {
         "files": 209,
@@ -57,20 +57,20 @@
     },
     "by_rule": {
       "house_voice": 21,
-      "oversized_doc": 3,
+      "oversized_doc": 4,
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2697,
-      "bytes": 1337921578,
-      "heavy_bytes": 614982415,
-      "heavy_share": 0.46,
+      "files": 2835,
+      "bytes": 1396860833,
+      "heavy_bytes": 679760829,
+      "heavy_share": 0.487,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -326,6 +326,19 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
+        "bytes": 12213,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 213,
+        "ratio": 1.02
+      },
+      "message": "12,213 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/skyview-ccr-interface.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
         "bytes": 584010,
         "limit": 150000,
         "lane": "other",
@@ -420,6 +433,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 77905621,
+        "kind": "dir"
+      },
+      "message": "directory totals 77,905,621 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
@@ -446,16 +469,6 @@
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 13127207,
-        "kind": "dir"
-      },
-      "message": "directory totals 13,127,207 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

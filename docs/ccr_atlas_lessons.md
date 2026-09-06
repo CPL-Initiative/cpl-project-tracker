@@ -1665,3 +1665,46 @@ CUDA whenever a GPU is visible and then dies on `cublas64_12.dll` — the normal
 state of a work laptop. **A Windows-facing example authored on Linux gets no
 check at all**; the helper was mutation-tested, smoke-tested and CI-guarded, and
 none of that touches the copy-pasteable line a human starts from.
+
+---
+
+## S234's triage of the 2026-09-06 recording, as written (moved from the lane, S235)
+
+Kept verbatim because two of its readings were corrected by driving the page:
+the element that wraps is `.sugwrap`, not `#u-bar`, and the picks were destroyed
+leaving the map rather than returning to it.
+
+## Measured 2026-09-06 (S234) — from Sam's screen recording
+
+Two defects found by driving the deployed map and measured in Chromium.
+Full triage: [`skyview_video2_findings`](../../skyview_video2_findings.md).
+
+⭐ **THE DROPDOWN DROPPED A FULL ROW WHEN THE CHIP ROW WRAPPED — FIXED S235.**
+⚠️ **It is `.sugwrap` that grows, NOT `#u-bar`.** S234's triage named `#u-bar`
+30 → 76; walking the real ancestor chain in Chromium on the fourth pick shows
+`#u-bar` **unchanged** and `.u-search-slot .sugwrap` going 30 → 66, which pushes
+`#sug` 40 → 76. A `min-height` on `#u-bar` would have read as a fix and changed
+nothing. Ruling 3 shipped as a two-row reserve on `.sugwrap`
+(`calc(var(--u-chip-h) * 2 + 5px)` = 65px, exactly the wrapped height) plus
+tighter chip padding/gap/max-width. Measured after: `#sug` top holds at 75
+across five picks. ⚠️ Target size, not contrast, is the tightening constraint —
+`.u-tok-x` 24×24 and `.u-tok-go` min-height 24px are on the WCAG 2.2 SC 2.5.8 AA
+floor and were verified still 24 after the change.
+
+⭐ **DOUBLE-CLICK STRANDED THE USER BECAUSE THE HASH NEVER MOVED — FIXED S235.**
+`discipline()` painted over SkyView without calling `syncHash()`. ⚠️ **Measured
+WORSE than triaged:** `homeSearch()` called `clearTokens()` on every view entry,
+so the picks were destroyed **on the way OUT** (`__ccrTokenKeys()` reads `[]` on
+the Welding surface, not on the way back), and Back left the document entirely.
+Now `#work/<discipline>`, a named crumb back to SkyView, and the selection
+**parked** and re-rung by `restoreTokens()` on return. History: `pushState`
+stand-alone, `replaceState` framed — an entry in COBI's frame is an entry on
+COBI's own back button, and that hazard still holds.
+
+⚠️ **Sam RETRACTED a finding on camera.** He reported at length that hover
+returns the identity card rather than the course, then found it working:
+*"My bad. Forget everything I said there. It's not a problem."* That passage is
+S233's hover fix working. **Do not act on the first half of it.**
+
+**Praised, do not break:** Fit all; the panel moving to the selection.
+

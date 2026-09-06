@@ -17,10 +17,8 @@ related:
 > [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
 > [archive](../../ccr_atlas_lessons_archive.md).
 >
-> ⚠️ **Compacted 2026-09-06 (S234)** from 40,693 B to fit the 12,000 B lane
-> budget. Nothing was dropped: the shipped-round narratives moved verbatim to
-> the lessons doc. What stays here is what a session must not violate, what is
-> waiting on Sam, and what is next.
+> ⚠️ **Compacted 2026-09-06 (S234, again S235)** to fit the 12,000 B budget.
+> Nothing dropped — the round narratives are verbatim in the lessons doc.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -36,12 +34,9 @@ SkyView's islands are keyed by.
 ✅ **Built and stable.** Sam's five goals are met: the whole universe on one
 canvas (16,482 identities, 33,423 stand-alone courses, 159 islands); keyword
 jump to anything; hover is a quick look and click the docked inspector; every
-stand-alone orbits its best-matching identity (31,515 placed, 1,908 on the rim,
-1,375 crossing disciplines); drag and drop is real with a keyboard path. The
-interface, the C-ID chip, the re-mint series, the prefix fold, the
-curated-anchor worklist, the articulation counts, the search sort, the
-membership glow, Similar courses, and Sam's six interaction rulings are all
-shipped. Rounds and measurements: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+stand-alone orbits its best-matching identity; drag and drop is real with a
+keyboard path. Since S235 a course also opens its **outline of record**. Rounds
+and measurements: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## Invariants — do not violate these
 
@@ -92,54 +87,69 @@ shape (ESL proved it at 85:1); ~5,700 decisions, 97.1% ≤ 12 identities; 3,001
 carry NO discipline; decision packs exist for 5 of 159 disciplines; `CN:` names
 more than one course on 1,761 keys and those moves are refused with the reason.
 
-## Measured 2026-09-06 (S234) — from Sam's screen recording
+## Measured in a browser — the durable warnings
 
-Two defects found by driving the deployed map and measured in Chromium.
-Full triage: [`skyview_video2_findings`](../../skyview_video2_findings.md).
+Both defects Sam's 2026-09-06 recording surfaced are FIXED (S235). What must not
+be lost is how they were mis-read, not the round-by-round — that is in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
-⭐ **THE DROPDOWN DROPS A FULL ROW WHEN THE CHIP ROW WRAPS — AND RULING 3's FIX
-IS NOT THE ONE THAT COVERS IT.** Picks 1-3 are rock solid; `scrollTop` holds at
-300 exactly as designed. On **pick 4** the toolbar wraps: `#u-bar` 30 → 76,
-`#sug` top 40 → 76, **every row moves down 36px — one row height**, so the row
-under the pointer becomes a different row. `.u-tokens{display:contents}` makes
-each chip a flex child of `#u-bar`. The shipped fix preserves the list's SCROLL
-OFFSET; what moves is its POSITION ON SCREEN. ⚠️ **Guard it by VALUE** — assert
-`#sug`'s `getBoundingClientRect().top` is unchanged across enough picks to force
-the wrap (four at 1440px), never "the bar has one row".
+⚠️ **IT IS `.sugwrap` THAT WRAPS, NOT `#u-bar`.** The triage named `#u-bar`
+30 → 76px; walking the real ancestor chain in Chromium on the fourth pick shows
+`#u-bar` **unchanged** and `.u-search-slot .sugwrap` going 30 → 66, which pushes
+`#sug` 40 → 76. A `min-height` on `#u-bar` would have read as a fix and changed
+nothing. Ruling 3 shipped as a two-row reserve on `.sugwrap`; `#sug` top now
+holds at 75 across five picks. ⚠️ Chip tightening is bounded by **target size,
+not contrast**: `.u-tok-x` 24×24 and `.u-tok-go` min-height 24px sit on the WCAG
+2.2 SC 2.5.8 AA floor, verified still 24 after the change.
 
-⭐ **DOUBLE-CLICK STRANDS BECAUSE THE HASH NEVER CHANGES.** `discipline()`
-paints over SkyView and never calls `syncHash()`: `location.hash` still reads
-`#skyview` while the Welding workspace is on screen, so Back makes no history
-entry, `hashchange` cannot fire, the Views menu disagrees with the screen, and a
-refresh silently discards the work. Returning rebuilds the canvas from scratch,
-losing every pick. ⚠️ **It is NOT a second page** — `skyview.html` hosts every
-view; the masthead's stale "prototype v1" tag (line 714) is what makes a view
-swap read as landing in an old prototype.
+⚠️ **THE PICKS DIED ON THE WAY OUT, NOT ON THE WAY BACK.** `homeSearch()` called
+`clearTokens()` and `setCrumbs()` calls it on every view entry, so
+`__ccrTokenKeys()` already read `[]` on the Welding surface. Diagnosing the
+return path would have fixed nothing. The selection is now parked and re-rung by
+`restoreTokens()`.
 
-⚠️ **Sam RETRACTED a finding on camera.** He reported at length that hover
-returns the identity card rather than the course, then found it working:
-*"My bad. Forget everything I said there. It's not a problem."* That passage is
-S233's hover fix working. **Do not act on the first half of it.**
+⚠️ **Sam RETRACTED a finding on camera** — thirty seconds reporting that hover
+returned the identity card, then *"My bad. Forget everything I said there."*
+That passage is S233's hover fix working. **Read a recording to the end before
+fixing anything.**
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
-## Sam's rulings, 2026-09-06 (S234)
+## Sam's rulings, 2026-09-06 — all three shipped in S235
 
-1. **Enter closes the search panel.** ⚠️ This REVERSES ruling 6 of the same
-   morning ("Enter runs the search AND leaves the list up"), and he flagged the
-   reversal himself: *"I really think it should close this, even though we made
-   a prior decision on that."* With it: **move the sort chip to the list's top
-   right** and **put an Enter button where the sort button is now**; the
-   keyboard Enter and the button must both work.
-2. **Double-click opens the course outline of record work surface** — which
-   confirms rather than changes the plan already in this lane (a course opens
-   the outline, empty island ground keeps today's behavior).
-3. **Reserve the chip row's space** — *"stability wins."* ⚠️ Chip padding may
-   shrink to fit more per row, but **contrast is not the constraint, target size
-   is**: `.u-tok-x` is 24×24 and `.u-tok-go` is `min-height:24px`, both exactly
-   on the WCAG 2.2 SC 2.5.8 AA floor. Only horizontal padding, the 5px gap and
-   `max-width:150px` are free. Tightening postpones the wrap; only the reserved
-   row removes it.
+1. **Enter closes the search panel.** ⚠️ REVERSES ruling 6 of the same morning,
+   a reversal he flagged himself. Shipped with it: the sort control moved to the
+   list's **top right** (a sticky `.sug-head`) and an **Enter** button took its
+   place in the bottom row; key and button are one call (`runSearch`).
+   ⚠️ The header is a child of the listbox, so `markSug` addresses rows by `id`,
+   never by child position — positional indexing would put the cursor one row
+   above where the reader is looking. ⚠️ Ruling 1 did **not** touch
+   `takeHighlighted()`: Enter on a highlighted row is the multi-select pick, and
+   ruling 3 of 09-05 keeps the list up through it.
+2. **Double-click opens the course outline** — split by what is under the
+   pointer: a course opens `#outline/<id>`, empty island ground keeps the
+   discipline accelerator. A panel button carries the same route, because a
+   double-click is undiscoverable and unreachable from a keyboard.
+3. **Reserve the chip row's space** — see the warnings above.
+
+## The outline of record — BUILT (S235)
+
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (23 checks,
+both key guards mutation-tested). **The description is CHOSEN, never written:**
+the medoid of the member catalog descriptions, quoted and attributed — composing
+prose out of several catalogs would read as authoritative while belonging to
+nobody. Sam's MAP-Generated sentence prints verbatim. **Skills are imputed** from
+the colleges' own words (we hold **zero** agency skill statements); confidence is
+agreement BETWEEN colleges; thin skills stay, chipped. **Two level axes, neither
+derived** — the course's off its title, a skill's off its own words.
+
+⚠️ **Two extraction defects were invisible until driven in Chromium**: every
+n-gram length counted per position, so fragments outscored the names containing
+them; and n-grams crossed commas in enumerations ("pain tissue integrity gas").
+Fixed by longest-n-gram-per-position, a containment guard with a ratio
+exception, and segmenting on punctuation first. **94.6% of member courses carry
+a description, but only 30.0% of identities have 2+** — stand-alones carry
+exactly one, so each outline states its own evidence.
 
 ## NEEDS SAM
 
@@ -163,36 +173,43 @@ link, never a github.io URL.
 
 ## NEXT
 
-⓪ **BUILD THE OUTLINE.** Planned twice, cleared twice, built zero times.
-Layered panel, MAP-Generated labels, `kb_curation` for edits, re-mint queued
-behind verified-plus-admin, a certification-first entry beside the course-first
-one. ⚠️ Reuse `courseLevel()` and the Beg/Int/Adv ladder in
-`prototype/ccr_universe.js` rather than re-deriving. **Course level and skill
-level are different axes — carry both, derive neither.** Sources are wildly
-uneven and that is the lane's central constraint: 484 identities carry a C-ID,
-57 a CCN (title and number only), **15,937 are M-IDs with no authority text**.
-All thirteen MC slots are unsourced.
+⓪ **CPL-focused view + show-articulations toggle (Sam, 2026-09-06, unprompted).**
+Two closely-linked asks, both needing a prototype first: (a) a **CPL vs
+Course/Discipline toggle** so *"the CPL exhibits and CRs are the focus more than
+the Courses"*; (b) a **show-articulations toggle on normal SkyView** to *"reveal
+to users where existing artics are and where they differ for the same course
+college to college."* ⚠️ `ar` is ABSENT, never 0 — a toggle that draws "no
+articulations" where we merely did not look would be a lie at scale.
 
-① **The three fixes from the recording** — reserve the chip row (+ tighter
-chips), route `discipline()` so the trip survives, drop "prototype v1".
+① **Text zoom on the SkyView toolbar (Sam, 2026-09-06).** A control to zoom text
+size up or down, *"squeezed somewhere in on the SkyView toolbar."* ⚠️ **It must
+NOT change the current behavior where text does not zoom with the map** — *"it's
+important to keep with all we have going on."* So it scales label type
+independently of `view.k`, which is a separate axis from the map's zoom.
+
+①b **A magic phrase to curate (Sam, 2026-09-06).** Moving courses goes behind a
+phrase login, *"and later shift to a team phrase as things settle."* Sits with
+the `org-phrase-scope-auth` lane; the first write from this page is also a
+Governance surface (Rule 10 a3).
+
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
-not built. A register row owning the approval, the surface mapped in
-`kb/governance_surface_map.json` at the first write, INSERT-only rollback, and a
+not built: a register row owning the approval, the surface mapped in
+`kb/governance_surface_map.json` at the first write, INSERT-only rollback, a
 test asserting it writes approvals and nothing else.
 ③ **Decision packs per discipline, fetched on demand** — the bottleneck behind
 every UI tweak; the shards' publish path is the template.
 ④ The drag that leaves SUBJ4 inconsistent queues a re-mint candidate — proposes,
 never auto-adds.
 ⑤ The 73 two-real-course control numbers · the member-roster fold at source
-(`CaÃ±ada College` ×678) · accept-all-orbits-above-a-score as a batch verb · the
-67 `ESOL Z####` rows and `FIMS M1018` (needs an un-merge verb) · a tool for the
-3,001 with no discipline.
+(`CaÃ±ada College` ×678) · accept-all-orbits-above-a-score · the 67 `ESOL Z####`
+rows and `FIMS M1018` (needs an un-merge verb) · a tool for the 3,001 with no
+discipline.
 ⑥ **A description signal for the rim** — 1,600 of 2,073 rim courses have a
-catalog description; TF-IDF places ~130 well and agrees with the title-based
-parent only 20% of the time. A gap-filler that never outvotes a title.
+description; TF-IDF places ~130 well and agrees with the title-based parent only
+20% of the time. A gap-filler that never outvotes a title.
 ⑦ Dropdown labels that name the grain on the CCR tab.
-⑧ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`); the
-seven held rows move when a second signal arrives; the identities map's ghost
-keys have a dry run and a cut receipt awaiting Sam's sheet.
+⑧ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`); seven
+held rows move on a second signal; the identities map's ghost keys have a dry run
+and a receipt awaiting Sam's sheet.
 ⑨ Identity-level chips once members are classified.
