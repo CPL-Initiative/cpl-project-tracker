@@ -1,6 +1,6 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-09-05T15:22:01.575Z",
+ "_as_of": "2026-09-06T12:55:53.948Z",
  "credit_recommendations": {
   "total": "13,269",
   "ccc": "1,337",
@@ -87,7 +87,7 @@
     "exhibits": 2,
     "credit_recs": 27,
     "adoptions": 41,
-    "could_adopt": 27
+    "could_adopt": 12
    },
    {
     "sector": "World Languages",
@@ -108,17 +108,17 @@
     "exhibits": 1,
     "credit_recs": 23,
     "adoptions": 31,
-    "could_adopt": 56
+    "could_adopt": 40
    },
    {
     "sector": "Other Statewide",
     "exhibits": 7,
     "credit_recs": 27,
     "adoptions": 27,
-    "could_adopt": 12
+    "could_adopt": 0
    }
   ],
-  "could_adopt_total": 116,
+  "could_adopt_total": 114,
   "in_progress": [
    "HVAC — faculty currently meeting"
   ]
