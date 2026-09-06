@@ -261,6 +261,45 @@ function sysPal(nd){
   var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3, w=SYS[i];
   return [pal["sys"+i+"Fill"], pal["sys"+i+"Stroke"], w[2], w[3]];
 }
+/* ⭐ TEXT SIZE IS A SECOND AXIS, NOT A CHANGE TO ZOOM (Sam's ruling 3,
+ * 2026-09-06). He asked for a control that sizes the map's labels up or down
+ * and was explicit that it must not touch today's behavior, where text does NOT
+ * grow with the map: "it's important to keep with all we have going on." Label
+ * size is already independent of view.k, so this scales that, and the map's own
+ * zoom is untouched.
+ *
+ * ⚠️ THREE NAMED STEPS, NOT A SLIDER, AND THE REASON IS THE LABEL PLACER.
+ * placeLabels() drops any island label whose box clashes with one already
+ * placed, and the course labels try four corners and are dropped if none fits.
+ * So past a certain size the map does not crowd — it goes QUIET, and a reader
+ * who asked for bigger text gets fewer labels with nothing to say why. Three
+ * bounded steps stay inside what the placer can honor.
+ *
+ * ⚠️ THE COLLISION BOXES SCALE WITH THE TEXT. Scaling the font alone would
+ * leave the placer measuring the old height, so labels would be accepted that
+ * then overlap — the one failure worse than a dropped label. */
+var TEXT_STEPS=[["Smaller",0.85],["Normal",1],["Larger",1.25]];
+var textStep=1;                                   // index into TEXT_STEPS
+try{
+  var ts=parseInt(localStorage.getItem("skyview:text")||"1",10);
+  if(ts>=0 && ts<TEXT_STEPS.length) textStep=ts;
+}catch(e){}
+function tx(){ return TEXT_STEPS[textStep][1]; }
+/* Rounded, because a fractional px font measures fine and renders soft. */
+function txPx(base){ return Math.round(base*tx()); }
+function setTextStep(i){
+  textStep=Math.max(0, Math.min(TEXT_STEPS.length-1, i|0));
+  try{ localStorage.setItem("skyview:text", String(textStep)); }catch(e){}
+  paintTextStep();
+  if(cvs && document.getElementById("u-cvs")===cvs) draw();
+}
+function paintTextStep(){
+  var b=document.getElementById("u-textsize");
+  if(!b) return;
+  var sw=b.querySelector(".u-state"); if(sw) sw.textContent=TEXT_STEPS[textStep][0].toLowerCase();
+  b.title="Label text: "+TEXT_STEPS[textStep][0]+". Click for the next size.";
+}
+window.__ccrTextStep=function(i){ if(i==null) return textStep; setTextStep(i); };
 var dark=false;
 try{ dark = localStorage.getItem("skyview:theme")==="dark"; }catch(e){}
 if(dark && document.body) document.body.classList.add("u-dark");
@@ -886,7 +925,7 @@ function draw(){
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
     ctx.fillStyle=pal.drag; ctx.fill();
-    ctx.font="600 12px 'Source Sans 3',system-ui,sans-serif";
+    ctx.font="600 "+txPx(12)+"px 'Source Sans 3',system-ui,sans-serif";
     ctx.textAlign="left"; ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
     ctx.strokeText(drag.code,drag.px+12,drag.py+4);
     ctx.fillStyle=pal.drag; ctx.fillText(drag.code,drag.px+12,drag.py+4);
@@ -1035,7 +1074,7 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   }
   if(rest>0){
     var ry=p[1]+R0+(rings-1)*15+14;
-    ctx.font="600 10px 'Source Sans 3',system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+    ctx.font="600 "+txPx(10)+"px 'Source Sans 3',system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
     var more="and "+num(rest)+" more college course"+(rest===1?"":"s")+" — see the details panel";
     ctx.lineWidth=3; ctx.strokeStyle=pal.halo; ctx.strokeText(more,p[0],ry);
     ctx.fillStyle=pal.inkMuted; ctx.fillText(more,p[0],ry);
@@ -1104,7 +1143,7 @@ function placeLabels(queue, showAll){
   ctx.textAlign="center"; ctx.textBaseline="alphabetic";
   queue.forEach(function(q){
     if(!q.force && !showAll && q.r<26) return;          // too small to earn a name
-    var size=Math.max(11,Math.min(19,q.r*0.17));
+    var size=Math.max(11,Math.min(19,q.r*0.17))*tx();
     ctx.font=(q.force?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
     var lab=q.isl.d+" ("+num(q.isl.n)+")";
     var w=ctx.measureText(lab).width, h=size*1.25;
@@ -1146,8 +1185,8 @@ function placeNodeLabels(queue, boxes){
   ctx.textBaseline="alphabetic"; ctx.textAlign="left";
   var W=cw(), H=ch(), LEAD=12;
   queue.forEach(function(q){
-    var mem=q.band==="member", lh=mem?11:12;
-    ctx.font=(q.force?"600 ":"")+(mem?"10px":"11px")+" 'Source Sans 3',system-ui,sans-serif";
+    var mem=q.band==="member", lh=Math.round((mem?11:12)*tx());
+    ctx.font=(q.force?"600 ":"")+txPx(mem?10:11)+"px 'Source Sans 3',system-ui,sans-serif";
     var w=0; q.lines.forEach(function(t){ w=Math.max(w, ctx.measureText(t).width); });
     var h=q.lines.length*lh+2;
     /* The label sits AWAY from the circle and a thin line joins the two (Sam,
@@ -1385,6 +1424,10 @@ window.__ccrUniverse = function(opts){
             '<button class="u-more-t" type="button" id="u-insp-toggle" aria-pressed="false" aria-controls="u-detail">Sidebar<span class="u-state">off</span></button>'+
             '<button class="u-more-t" type="button" id="u-legend-menu" aria-pressed="true" aria-controls="u-foot">Legend<span class="u-state">on</span></button>'+
             '<button class="u-more-t" type="button" id="u-dark" aria-pressed="false" title="Dark canvas">Dark canvas<span class="u-state">off</span></button>'+
+            /* Ruling 3 (2026-09-06): label text sizes independently of the map's
+               zoom. A word for the control and a word for its state, like the
+               switches above it — never a pair of glyphs. */
+            '<button class="u-more-t" type="button" id="u-textsize">Label text<span class="u-state">normal</span></button>'+
           '</div>'+
         '</details>'+
         '<h1 class="u-title" id="u-title">SkyView</h1>'+
@@ -2269,6 +2312,9 @@ function wire(){
   if(dk) dk.onclick=function(){ setDark(!dark); };
   window.__ccrSetDark=setDark;
   paintDark();
+  var tsb=document.getElementById("u-textsize");
+  if(tsb) tsb.onclick=function(){ setTextStep((textStep+1) % TEXT_STEPS.length); };
+  paintTextStep();
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -4032,8 +4078,23 @@ function olPhrases(descs){
  * null for most of them, and "not stated" is the correct answer — inheriting
  * the course's level would fabricate the second axis out of the first. */
 function olSkillLevel(phrase){ return courseLevel(phrase) || null; }
-function olConfWord(n, total){
-  if(total<=1) return {w:"one college", c:"mut", t:"This identity carries one college course, so no second catalog can corroborate the skill."};
+/* ⭐ "ONE COLLEGE" MEANT TWO OPPOSITE THINGS (Sam's ruling 5, 2026-09-06).
+ * On a course taught at twenty colleges, one naming a skill means it is poorly
+ * corroborated. On a course taught at ONE, it means the evidence is complete.
+ * Same two words, opposite readings, and a faculty reader had no way to tell
+ * which they were looking at.
+ *
+ * ⚠️ `total` counts the colleges that PUBLISH A DESCRIPTION, not the colleges
+ * that teach the course — so it cannot answer his condition on its own. A course
+ * taught at five colleges where only one publishes a catalog would have read
+ * "the only college teaching it", which is false. `taught` is the member count,
+ * and the two cases are separated below because they are different facts:
+ * complete evidence, versus the only catalog we can read. */
+function olConfWord(n, total, taught){
+  if(taught===1) return {w:"the only college teaching it", c:"cid",
+    t:"This course is carried by one college, so its catalog is the whole of the evidence — not a thin result."};
+  if(total<=1) return {w:"the only college with a description", c:"mut",
+    t:"This course is taught at "+taught+" colleges, but only one publishes a catalog description, so nothing can corroborate the skill."};
   if(n>=Math.max(3, total*0.5)) return {w:"most colleges", c:"ok", t:n+" of the "+total+" catalog descriptions name it."};
   if(n>=2) return {w:"some colleges", c:"cid", t:n+" of the "+total+" catalog descriptions name it."};
   return {w:"one college", c:"mut", t:"Named in 1 of the "+total+" catalog descriptions. Kept rather than dropped (Sam's ruling, 2026-09-05: thin skills stay, with a confidence chip)."};
@@ -4174,7 +4235,7 @@ function olHtml(nd, isl){
   else if(!descs.length) sbody='<p class="empty">No catalog description to impute from.</p>';
   else {
     function skillRow(x){
-      var sl=olSkillLevel(x.p), cf=olConfWord(x.n, descs.length);
+      var sl=olSkillLevel(x.p), cf=olConfWord(x.n, descs.length, total);
       return '<li><span class="ol-sk">'+esc(x.p)+'</span>'+
         '<span class="chip '+(sl?"cid":"mut")+'" title="'+
           (sl?'Read off this skill’s own words.':'This skill names no level of its own. It does NOT inherit the course’s level — they are separate axes (Sam’s ruling, 2026-09-05).')+

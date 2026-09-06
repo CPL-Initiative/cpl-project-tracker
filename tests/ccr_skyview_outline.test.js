@@ -65,6 +65,8 @@ const DESCS = {
   2002: ["Concepts include infection, thermoregulation, pain, tissue integrity, gas exchange.", "Fundamentals", 4],
   2003: ["The nursing process and infection, thermoregulation, pain, tissue integrity.", "Fundamentals", 4],
   // WELD M1073 — the long name, three times
+  // WELD M10TJ — carried by ONE college: ruling 5's "complete evidence" case
+  4001: ["Basic shielded metal arc welding and shop safety.", "Welding basics", 2],
   3001: ["Introduction to blueprint reading for the welding trade.", "Blueprints", 2],
   3002: ["Blueprint reading for the welding trade, with shop drawings.", "Blueprints", 2],
   3003: ["Blueprint reading for the welding trade and construction drawings.", "Blueprints", 2],
@@ -73,7 +75,8 @@ const U = { counts: { identities: 3, standalone: 0 },
   bounds: { x0: -60, x1: 160, y0: -60, y1: 60 }, islands: [
   { d: "Welding", sh: "welding", x: 0, y: 0, r: 40, p: [
       { i: "WELD M1012", t: "Advanced Gas Tungsten Arc Welding", x: 0, y: 0, s: 0, u: 3, n: 5, ar: 6 },
-      { i: "WELD M1073", t: "Blueprint Reading (Metal Trades)",  x: 6, y: 0, s: 0, u: 2, n: 3 } ] },
+      { i: "WELD M1073", t: "Blueprint Reading (Metal Trades)",  x: 6, y: 0, s: 0, u: 2, n: 3 },
+      { i: "WELD M10TJ", t: "Welding Basics",                    x: 12, y: 0, s: 0, u: 2, n: 1 } ] },
   { d: "Nursing", sh: "nursing", x: 90, y: 0, r: 40, p: [
       { i: "NRSR M1101", t: "Fundamentals of Nursing", x: 90, y: 0, s: 0, u: 4, n: 3 } ] },
 ]};
@@ -81,7 +84,8 @@ const MEM = { colleges: ["Alpha College", "Beta College", "Gamma College", "Delt
   counts: { identities: 3, members: 11, dropped_no_key: 0, cn_on_multiple_identities: 0 },
   m: { "WELD M1012": [[1001,"WELD 60",0],[1002,"WELD 60",1],[1003,"WELD 61",2],[1004,"WELD 62",3],[1005,"WELD 63",4]],
        "NRSR M1101": [[2001,"NURS 10",0],[2002,"NURS 10",1],[2003,"NURS 11",2]],
-       "WELD M1073": [[3001,"WELD 20",0],[3002,"WELD 21",1],[3003,"WELD 22",2]] } };
+       "WELD M1073": [[3001,"WELD 20",0],[3002,"WELD 21",1],[3003,"WELD 22",2]],
+       "WELD M10TJ": [[4001,"WELD 5",0]] } };
 const ATLAS = { _generated_from: "2026-09-06 15:35", totals: { decision_components: 0, identities_inbrowser: 3,
   suggestion_groups: 0, member_rows: 11 }, disciplines: [
   { name: "Welding", decisions: 0, ids: 2, members: 8, flagged: 0, reviewed: 0 },
@@ -254,7 +258,56 @@ const css = tpl;                                  // the stylesheet, as authored
         /\.u-tok-go\{[^}]*min-height:24px/.test(css.replace(/\s*\n\s*/g, "")),
         "same floor");
 
-  // ── (10) the masthead names the data, not a version ───────────────────────
+  // ── (10) ⭐ RULING 5: "one college" meant two opposite things ─────────────
+  /* On a course taught at twenty, one college naming a skill means it is poorly
+   * corroborated; on a course taught at ONE, it means the evidence is complete.
+   * The words must not be the same. ⚠️ The distinction is the MEMBER count, not
+   * the description count — a course taught at five where only one publishes a
+   * catalog is not "the only college teaching it". */
+  w.__ccrOutline("WELD M10TJ");
+  await tick(); await tick();
+  const soloSkills = qa("#ol-skills .ol-skills li").map((li) => li.textContent);
+  check("(10) a course carried by ONE college says the evidence is complete",
+        soloSkills.length > 0 && soloSkills.every((t) => /the only college teaching it/.test(t)),
+        soloSkills.slice(0, 2).join(" | ") || "no skills extracted");
+  check("(10) and never the bare 'one college', which reads as thin",
+        !soloSkills.some((t) => />\s*one college\s*</.test(t)),
+        soloSkills.slice(0, 2).join(" | "));
+  /* The other half of the ruling, guarded by its CODE rather than a fixture:
+   * the two cases must be told apart by the member count. */
+  check("(10) the two cases are separated by the member count, not the catalog count",
+        /function olConfWord\(n, total, taught\)/.test(ujs) &&
+        /taught===1/.test(ujs) && /the only college with a description/.test(ujs),
+        "olConfWord must take `taught` and branch on it");
+
+  // ── (11) ⭐ RULING 3: text size is a SECOND axis ──────────────────────────
+  /* Sam was explicit that this must not change the behavior where text does not
+   * zoom with the map. jsdom cannot measure a rendered glyph, so the guard is on
+   * the contract: three bounded steps, persisted, and the map's own zoom
+   * untouched by a step change. The pixel check ran in Chromium. */
+  const kBefore = w.__ccrUniverseState().view ? w.__ccrUniverseState().view.k : w.__ccrUniverseState().k;
+  w.__ccrUniverse({ solo: true });
+  await tick();
+  check("(11) the text size control is a WORD with a word for its state",
+        !!q("#u-textsize") && /Label text/.test(q("#u-textsize").textContent),
+        (q("#u-textsize") || {}).textContent);
+  w.__ccrTextStep(2);
+  await tick();
+  check("(11) it steps", w.__ccrTextStep() === 2, String(w.__ccrTextStep()));
+  const kAfter = w.__ccrUniverseState().view ? w.__ccrUniverseState().view.k : w.__ccrUniverseState().k;
+  check("(11) ⭐ and the MAP's zoom does not move with it (Sam's constraint)",
+        kAfter === kBefore, `${kBefore} -> ${kAfter}`);
+  /* ⚠️ Scaling the font without the collision box would let the placer accept
+   * labels that then overlap — worse than a dropped label. */
+  check("(11) the collision boxes scale with the text, not just the font",
+        /var size=Math\.max\(11,Math\.min\(19,q\.r\*0\.17\)\)\*tx\(\)/.test(ujs) &&
+        /var mem=q\.band==="member", lh=Math\.round\(\(mem\?11:12\)\*tx\(\)\)/.test(ujs),
+        "both the island label size and the course line-height must read tx()");
+  check("(11) three bounded steps, not a slider the label placer cannot honor",
+        /var TEXT_STEPS=\[\["Smaller",0\.85\],\["Normal",1\],\["Larger",1\.25\]\]/.test(ujs));
+  w.__ccrTextStep(1);
+
+  // ── (12) the masthead names the data, not a version ───────────────────────
   check("the masthead no longer claims 'prototype v1'",
         !/prototype v1/i.test((q(".brand") || {}).textContent || ""),
         `brand read: ${(q(".brand") || {}).textContent}`);
