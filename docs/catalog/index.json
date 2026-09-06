@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 389,
+   "count": 390,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1068,6 +1068,27 @@
      "title": "A field the resolver never reaches can disagree with the record forever",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "docs/skyview_troubleshooting_brief.md",
+      "prototype/ccr_universe.json",
+      "prototype/ccr_atlas_data.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "verification",
+      "measurement",
+      "pitfall",
+      "skyview",
+      "ccr"
+     ],
+     "title": "A figure is only wrong relative to the payload it names",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-18",
@@ -15562,5 +15583,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 794
+ "total": 795
 }
