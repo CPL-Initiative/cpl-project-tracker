@@ -587,6 +587,51 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
   background:var(--surface);border:1px solid var(--border);border-radius:var(--u-chip-r);cursor:pointer;backdrop-filter:blur(4px)}
 .u-legend-toggle:hover{color:var(--text-strong);background:var(--surface-opaque)}
 .u-legend-toggle .u-fold{font-size:.7em;color:var(--text-muted)}
+/* The course outline of record (Sam's ruling, 2026-09-06). Every colour is a
+   First Light token — no raw hex — so the dark canvas and the light page both
+   follow the palette without a second definition here. */
+.ol{max-width:var(--cpl-measure,none)}
+.ol-head{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:flex-start;justify-content:space-between;margin:0 0 6px}
+.ol-head h1{margin:0 0 4px}
+.ol-meta{margin:0;font-size:.88rem;color:var(--text-muted)}
+.ol-meta .sub{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem}
+.ol-lvl{display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+.ol-lvl-k{font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--text-muted);font-weight:700}
+/* Sam's sentence, verbatim and above everything it governs. */
+.ol-gen{margin:0 0 18px;padding:9px 13px;border:1px solid var(--border-strong);border-radius:8px;
+  background:var(--surface-subtle);font-size:.9rem;color:var(--text-body)}
+.ol-layer{margin:0 0 22px;padding:0 0 18px;border-bottom:1px solid var(--border)}
+.ol-layer:last-child{border-bottom:0}
+.ol-lh{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:baseline;margin:0 0 4px}
+.ol-lh h2{margin:0;font-size:1.12rem}
+.ol-src{margin:0 0 10px;font-size:.84rem;color:var(--text-muted)}
+.ol-desc{margin:0 0 6px;padding:10px 14px;border-left:3px solid var(--border-strong);
+  background:var(--surface-subtle);border-radius:0 6px 6px 0;font-size:.95rem;color:var(--text-body)}
+.ol-attr{margin:0 0 4px;font-size:.84rem;color:var(--text-muted)}
+.ol-skills{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ol-skills li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 10px;
+  border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque)}
+.ol-sk{flex:1 1 220px;min-width:0;font-weight:600;font-size:.9rem;color:var(--text-strong)}
+.ol-thin{margin:12px 0 0}
+.ol-thin summary{cursor:pointer;font-size:.86rem;color:var(--text-body);min-height:24px;
+  display:inline-flex;align-items:center}
+.ol-thin summary:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px;border-radius:4px}
+.ol-todo,.ol-mc,.ol-mem{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+.ol-todo li{font-size:.9rem;color:var(--text-body)}
+.ol-mc li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;
+  padding:5px 10px;border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque)}
+.ol-mc-k{font-size:.88rem;color:var(--text-body)}
+.ol-mem li{display:flex;flex-wrap:wrap;gap:5px 10px;align-items:baseline;padding:4px 0;
+  border-bottom:1px solid var(--border);font-size:.86rem}
+.ol-mem-c{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.8rem;
+  color:var(--text-muted);flex:0 0 6.5em}
+.ol-mem-t{flex:1 1 220px;min-width:0;color:var(--text-body)}
+.ol-mem-g{color:var(--text-muted);flex:0 0 auto}
+/* Single column below the narrow breakpoint; nothing here is fixed-width. */
+@media (max-width:560px){
+  .ol-head{flex-direction:column;gap:8px}
+  .ol-mem-c{flex-basis:auto}
+}
 /* How SkyView works (item 6) */
 .how{max-width:var(--cpl-measure,none)}
 .how-head{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;margin:0 0 8px}
@@ -711,7 +756,7 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
 <body>
 <a class="skip" href="#main">Skip to main content</a>
 <header class="mast"><div class="wrap">
-  <span class="brand">SkyView <span class="tag" id="prov" tabindex="0">— prototype v1</span></span>
+  <span class="brand">SkyView <span class="tag" id="prov" tabindex="0"></span></span>
   <form class="msearch" id="msearch" role="search">
     <label for="gq" class="sr">Search courses, colleges and disciplines</label>
     <div class="sugwrap">
@@ -747,11 +792,25 @@ var state = {v:"forest", disc:null, dec:null, q:""};
 // The provenance line is a hover on the title, not a line of its own (Sam,
 // 2026-09-03: "remove prototype intro text and add it as a hover over on the
 // Prototype V1 title. I want to maximize the SkyView window").
-var provText = "Prototype — no writes. CCR artifacts generated " + (DATA._generated_from || "—") +
+/* ⭐ THE TAG NAMES THE DATA, NOT A VERSION (2026-09-06). It read
+ * "— prototype v1", and that label is what made a view swap read to Sam as
+ * landing somewhere old: "It opens this prototype V1. And there's no way for me
+ * to get back now to sky view." Nothing had navigated — discipline() had merely
+ * painted over the map under a masthead that announced a different product. The
+ * provenance it carried is worth keeping, so the tag now says WHEN the artifacts
+ * under the page were generated, which is the one thing about them that goes
+ * stale. SkyView is the name (Sam, 2026-08-24). */
+var provWhen = String(DATA._generated_from || "").split(" ")[0];
+var provText = "No writes — nothing on this page is saved. CCR artifacts generated " +
+  (DATA._generated_from || "—") +
   " · " + DATA.totals.decision_components.toLocaleString("en-US") + " decisions over " +
   DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
 var provEl = document.getElementById("prov");
-if (provEl){ provEl.title = provText; provEl.setAttribute("aria-label", "prototype v1 — " + provText); }
+if (provEl){
+  provEl.textContent = provWhen ? "— data " + provWhen : "";
+  provEl.title = provText;
+  provEl.setAttribute("aria-label", (provWhen ? "Data " + provWhen + " — " : "") + provText);
+}
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
   // A highlighted suggestion IS the answer: pressing Enter on it must go where
@@ -1290,9 +1349,27 @@ function search(term){
 }
 
 /* ══ VIEW 2 — one discipline ══════════════════════════════════════════ */
+/* ⭐ THE WAY BACK IS A CRUMB, AND THE TRIP MOVES THE HASH (2026-09-06). This
+ * view paints over SkyView, and it used to do so without touching the route or
+ * offering a step back to the map: the first crumb went to the forest grid, not
+ * to SkyView, so from here Sam had no control that returned him to what he had
+ * been working on — "I have lost sky view. I am stuck." Two things fix it, and
+ * both are needed: a NAMED crumb (visible, unlike Back) and a route
+ * (#work/<discipline>) so Back, a refresh, the Views menu and a shared link all
+ * agree with the screen. __ccrSyncHash lives in ccr_universe.js with the rest of
+ * the router; guarded because this template also boots without it. */
+function disciplineCrumbs(name){
+  var c=[];
+  if(typeof window.__ccrUniverse==="function")
+    c.push({label:"SkyView", go:function(){ window.__ccrUniverse({solo:true}); }});
+  c.push({label:"Disciplines and subjects", go:forest});
+  c.push({label:name});
+  return c;
+}
 function discipline(name){
   state.v="disc"; state.disc=name; state.dec=null;
-  setCrumbs([{label:"Disciplines and subjects",go:forest},{label:name}]);
+  setCrumbs(disciplineCrumbs(name), {view:"work"});
+  if(typeof window.__ccrSyncHash==="function") window.__ccrSyncHash("work", name);
   var meta = DATA.disciplines.filter(function(d){return d.name===name;})[0]||{};
   var packs = DATA.detail[name];
   var h=[];

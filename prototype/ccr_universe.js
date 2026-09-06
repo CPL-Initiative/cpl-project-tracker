@@ -1494,6 +1494,7 @@ window.__ccrUniverse = function(opts){
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
   fitCanvas(); resetView(); wire(); draw();
+  restoreTokens();              // a selection parked by a trip off the map comes back
   tellParent("ready");          // the page around the frame answers with its state
   if(typeof window.__ccrForestInto==="function")
     window.__ccrForestInto(document.getElementById("u-more"));
@@ -2082,6 +2083,7 @@ function wire(){
     var box=ms.querySelector("#gq");
     if(box) box.setAttribute("placeholder", "Search a course, code or discipline");
     ensureTokenHost();
+    pendingRestore = tokens.length > 0;    // painted after the canvas is sized
     /* Item 7 (2026-09-05): "Search chip is not needed as users are accustomed
      * to using Enter" — the template no longer prints one; a page that still
      * does gets it hidden, and the one field submits on Enter by itself. */
@@ -2372,6 +2374,14 @@ function wire(){
     var r=cvs.getBoundingClientRect();
     var hit=pick(e.clientX-r.left, e.clientY-r.top);
     if(!hit) return;
+    /* ⭐ A COURSE OPENS ITS OUTLINE; EMPTY ISLAND GROUND KEEPS THE OLD BEHAVIOUR
+     * (Sam's ruling, 2026-09-06: "Double click should open the course outline of
+     * record work surface we prototyped last session"). The gesture was already
+     * taken — it was an accelerator for the discipline work surface — so it is
+     * SPLIT by what is under the pointer rather than reassigned wholesale, which
+     * would have cost the only fast way into the decision packs. What he
+     * double-clicked was a course, and a course is what he expected to open. */
+    if(hit.nd){ window.__ccrOutline(hit.nd.i); return; }
     var d=hasWorkSurface(hit.isl);
     if(d){ window.__ccrDiscipline(d); return; }
     selIsl=hit.isl; selNode=null; showIsland(hit.isl);
@@ -2615,6 +2625,20 @@ function removeToken(key){
   renderTokens();
   if(!tokens.length){ searchHits=[]; searchTerm=""; setHint("Selection cleared."); draw(); return; }
   applyTokens(null);
+}
+/* Set when a render finds a parked selection; consumed once the canvas is sized.
+ * applyTokens() flies and fits, and both read the canvas rectangle — called
+ * before fitCanvas() they compute against a zero-sized canvas and land nowhere. */
+var pendingRestore=false;
+function restoreTokens(){
+  if(!pendingRestore) return;
+  pendingRestore=false;
+  if(!tokens.length) return;
+  renderTokens();
+  applyTokens(tokens.length===1 ? tokens[0] : null);
+  setHint(tokens.length===1
+    ? "Back on <strong>"+esc(tokens[0].label)+"</strong>, where you left it."
+    : "Your "+tokens.length+" picks are still selected.");
 }
 function clearTokens(quiet){
   tokens=[]; renderTokens();
@@ -3034,6 +3058,12 @@ function renderNode(){
   var h=(isl?'<p class="sub" style="margin:0 0 .4em"><button type="button" class="linkish" '+
     'id="u-back-isl">Back to '+esc(isl.d)+'</button></p>':"")+
     "<h3>"+esc(nd.t||nd.i)+"</h3>"+
+    /* ⭐ THE OUTLINE HAS A BUTTON, NOT ONLY A DOUBLE-CLICK. Double-click opens
+     * it (Sam's ruling, 2026-09-06), but this file's own dblclick handler says
+     * why that cannot be the only route: "a double-click is undiscoverable and
+     * not reachable from a keyboard". A word, per the glyph rule. */
+    '<p class="row" style="margin:0 0 .5em"><button class="btn small primary" type="button" '+
+      'id="u-open-outline">Open the course outline</button></p>'+
     "<p>"+chipFor(nd)+' <span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+
     esc(unitsWord(nd.u))+" · "+num(total)+" college course"+(total===1?"":"s")+" carried"+
     (nd.a?' · <span class="chip mut" title="A single college\'s course that has not been '+
@@ -3187,6 +3217,8 @@ function renderNode(){
   if(bk) bk.addEventListener("click", function(){
     selNode=null; showIsland(isl); draw();
   });
+  var oo=document.getElementById("u-open-outline");
+  if(oo) oo.addEventListener("click", function(){ window.__ccrOutline(nd.i); });
   var f=document.getElementById("u-mfilter");
   if(f) f.addEventListener("input", function(){
     memFilter=f.value; renderNode();
@@ -3293,7 +3325,9 @@ function drawWrites(){
  * a view added here is reachable everywhere at once. The view you are on is
  * NAMED in the list rather than offered: a menu item that leads where you
  * already are is a control that appears to do nothing. */
-var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl", how:"how"};
+var curArg="";
+var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl", how:"how",
+            work:"work", outline:"outline"};
 var VIEWS=[
   {key:"skyview", id:"u-nav-sky", label:"SkyView",
    title:"The map alone, filling the window",
@@ -3383,32 +3417,70 @@ document.addEventListener("pointerdown", function(e){
 });
 
 /* ── the hash names the view ───────────────────────────────────────────────
- * #skyview (the default) · #comprehensive · #disciplines · #subjects · #esl, so a
- * view can be linked to and a reload comes back to it. replaceState, never a
- * hash assignment: an assignment fires hashchange and adds a history entry —
- * inside COBI's frame that is an entry on COBI's own back button. */
-function syncHash(){
+ * #skyview (the default) · #comprehensive · #disciplines · #subjects · #esl ·
+ * #how, plus two that carry a SUBJECT after the key: #work/<discipline> is one
+ * discipline's decision surface and #outline/<identity id> is a course outline
+ * of record. A view can be linked to and a reload comes back to it.
+ *
+ * ⭐ A VIEW SWAP THAT DOES NOT MOVE THE HASH STRANDS THE USER (measured
+ * 2026-09-06). discipline() painted over SkyView and never called this, so
+ * location.hash still read #skyview with the Welding workspace on screen: Back
+ * made no entry, hashchange could not fire, the Views menu disagreed with the
+ * screen, and a refresh silently discarded the work. Sam: "there's no way for
+ * me to get back now to sky view. I have lost sky view. I am stuck."
+ *
+ * ⚠️ replaceState FRAMED, pushState STAND-ALONE. An assignment or a push adds an
+ * entry to the JOINT session history, which inside COBI's Common Course
+ * Reference tab is an entry on COBI's own back button — the hazard the original
+ * comment here named, and it still holds. Stand-alone there is no host to
+ * confuse and Back is the control he reached for, so a view that carries a
+ * subject pushes. Either way the hash tracks the screen, which is what the
+ * Views menu, a refresh and a shared link actually read. The way back is a
+ * CRUMB in both, because a crumb is visible and Back is not. */
+function syncHash(arg){
   if(!curView || !HASH_OF[curView]) return;
-  try{ if(window.history && history.replaceState) history.replaceState(null, "", "#"+HASH_OF[curView]); }catch(e){}
+  var h="#"+HASH_OF[curView]+(arg ? "/"+encodeURIComponent(arg) : "");
+  if(String(location.hash||"")===h) return;
+  try{
+    if(!window.history) return;
+    if(arg && !framed() && history.pushState) history.pushState(null, "", h);
+    else if(history.replaceState) history.replaceState(null, "", h);
+  }catch(e){}
 }
+/* The template's views live in another file; this is how they move the route. */
+window.__ccrSyncHash=function(view, arg){ curView=view; curArg=arg||""; syncHash(arg); };
 function routeKey(){
   var h=String(location.hash||"").replace(/^#/,"").toLowerCase().split(/[\/?]/)[0];
   return HASH_OF[h] ? h : "skyview";
 }
+/* Everything after the first "/" — the discipline name, or an identity id. */
+function routeArg(){
+  var m=String(location.hash||"").replace(/^#/,"").split("/").slice(1).join("/").split("?")[0];
+  try{ return decodeURIComponent(m); }catch(e){ return m; }
+}
 window.__ccrRoute=function(){
   if(!window.CPL_CCR_UNIVERSE){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
-  var k=routeKey();
+  var k=routeKey(), arg=routeArg();
   if(k==="comprehensive") window.__ccrUniverse({solo:false});
   else if(k==="disciplines") window.__ccrWorkspace("discipline");
   else if(k==="subjects") window.__ccrWorkspace("subject");
   else if(k==="esl") window.__ccrWorkspace("esl");
   else if(k==="how") window.__ccrHow();
+  /* A subject the payload cannot resolve falls back to the map rather than to a
+   * blank view — a hand-typed or stale link is a normal thing to arrive with. */
+  else if(k==="work" && arg && typeof window.__ccrDiscipline==="function") window.__ccrDiscipline(arg);
+  else if(k==="outline" && arg && typeof window.__ccrOutline==="function") window.__ccrOutline(arg);
   else window.__ccrUniverse({solo:true});
 };
-window.addEventListener("hashchange", function(){ if(routeKey()!==curView) window.__ccrRoute(); });
+/* Compare the SUBJECT too, not just the key: #work/Welding and #work/Art are
+ * both key "work", so a Back between two work surfaces would otherwise leave
+ * the screen on the one the reader just left. */
+window.addEventListener("hashchange", function(){
+  if(routeKey()!==curView || routeArg()!==curArg) window.__ccrRoute();
+});
 
 function setSolo(on, quiet){
-  solo=!!on; curView=solo?"skyview":"comprehensive";
+  solo=!!on; curView=solo?"skyview":"comprehensive"; curArg="";
   document.body.classList.toggle("u-solo", solo);
   syncHash();
   var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot);
@@ -3677,7 +3749,18 @@ function homeSearch(){
   var wrap=document.querySelector(".mast .wrap");
   if(!wrap || ms.parentNode===wrap) return;
   wrap.appendChild(ms);
-  clearTokens(true);                       // the selection belongs to the map
+  /* ⭐ THE SELECTION SURVIVES THE TRIP (Sam, 2026-09-06). This line read
+   * `clearTokens(true)` — "the selection belongs to the map" — and setCrumbs()
+   * calls homeSearch() on EVERY view entry, so double-clicking through to a work
+   * surface threw every pick away before he arrived: "when I go to sky view,
+   * it's going to reset sky view… the welding choices I made… I have to start
+   * all over." Measured 2026-09-06: three picks in, __ccrTokenKeys() reads []
+   * on the Welding surface — the picks were gone on the way OUT, not on the way
+   * back. Nothing needed clearing to take the chips off screen: off the map
+   * ensureTokenHost() returns null and renderTokens() empties the stray host by
+   * itself. So the MODEL is parked, and restoreTokens() paints and re-rings it
+   * when the map comes back. */
+  renderTokens();                          // host is null off the map: empties the strip
   var lab=ms.querySelector('label[for="gq"]'), box=ms.querySelector("#gq");
   if(lab){
     if(lab.dataset.longLabel) lab.textContent=lab.dataset.longLabel;
@@ -3766,6 +3849,435 @@ function howHtml(){
     '</ol>'+
   '</section>';
 }
+/* ══ THE COURSE OUTLINE OF RECORD ═══════════════════════════════════════════
+ * Sam's ruling, 2026-09-06: "Double click should open the course outline of
+ * record work surface we prototyped last session — not sure if we ever put it
+ * into production." It was never put into production. Planned three times,
+ * cleared three times, built zero times.
+ *
+ * WHAT IT IS FOR. The guiding question is Sam's (2026-09-05): "would I want
+ * this person to have to take my class when they already know this stuff?" —
+ * SUFFICIENCY, never equivalence. A faculty reviewer opens a course and needs
+ * to see, in one place, what the course actually is across the colleges that
+ * teach it, so they can judge a certification against it. Nothing here scores
+ * that judgment; a percentage overlap answers nothing.
+ *
+ * ⭐ LAYERED FROM THE START (Sam's ruling, 2026-09-05). Every section names its
+ * own source and its own gaps, and the layers we do not hold yet are PRESENT
+ * and empty rather than absent — MAP exhibits and the military credit
+ * recommendations are the next two, and a surface that omits them reads as
+ * finished when it is not.
+ *
+ * ⭐ MAP-GENERATED, IN HIS WORDS. A synthetic description may show "as long as
+ * it is clearly labeled MAP-Generated for faculty consideration and revision
+ * before use". That sentence is printed verbatim on the page, not paraphrased.
+ *
+ * ⚠️ NOTHING IS WRITTEN FROM THIS PAGE — the lane invariant. A reviewer may
+ * rename or re-subject; both STAGE, and a re-mint is queued behind verified +
+ * admin-released (Sam's ruling, 2026-09-05), never fired from here.
+ *
+ * ⚠️ TWO LEVEL AXES, CARRIED, NEITHER DERIVED FROM THE OTHER (his ruling). The
+ * COURSE level is read off the course title by courseLevel() — the existing
+ * Beg/Int/Adv ladder, reused rather than re-derived. A SKILL's level is read off
+ * the skill's OWN words by the same ladder, and where the skill says nothing
+ * about level it reads "not stated". Copying the course's level onto its skills
+ * would manufacture the second axis out of the first, which is the one thing he
+ * ruled against. Most read "not stated" today, and that is the honest state
+ * until agency skill statements arrive.
+ *
+ * ⚠️ WE HOLD ZERO AGENCY SKILL STATEMENTS (measured 2026-09-05: 64 welding
+ * credentials, 57 published credit recommendations, not one skill statement).
+ * So the skills below are IMPUTED from the catalog descriptions the colleges
+ * wrote, and the surface says so in those words. Where they come from when the
+ * three sources disagree — published standards, ACE exhibits, the MAP team, all
+ * three per Sam — is ruling 9's open follow-up and the only thing blocking this
+ * layer. */
+
+/* Function words: a match containing one is a grammatical fragment, not the
+ * name of a thing taught. Measured 2026-09-06 on Welding's Blueprint Reading,
+ * where an ungated pass returned "applied to the welding" and "is placed on
+ * reading" as skills — the kind of output that costs a faculty reader their
+ * trust in the whole surface on the first screen. */
+var OL_FUNC=(function(){
+  var o={}, w=("the a an of in to for and or is are be been being with on at by from as "+
+    "that this these those it its their they them there here will may can shall must not "+
+    "applied place placed placing provide provides provided develop develops developed "+
+    "teach teaches taught include includes included cover covers covered emphasis "+
+    "emphasize emphasized associated associate use uses used using various "+
+    "types kinds skills course courses student students study studies learn learns learned "+
+    "such other others more most some required require requires designed prepare prepares "+
+    "preparation continued continuation further additional related relating relates given "+
+    "gives hold holds operate operates enter entering special multiple also well into out "+
+    "over under between during through each per via upon about above below than then when "+
+    "where while who whom whose what which how why all any both few many several one two "+
+    "three four five first second third new old same different general common focus focuses "+
+    "focused explore explores examine examines introduce introduces topics emphasizes "+
+    /* Catalog boilerplate — the sentences every outline carries about
+     * enrolment and completion, which are not things a learner can do. */
+    "after before seek seeks seeking successful successfully completion completing "+
+    "complete completes completed enrolled enrollment prerequisite corequisite "+
+    "recommended advisory transfer transferable degree certificate program "+
+    "designed offers offered presents present covers taken credit units hours lecture lab").split(" ");
+  for(var i=0;i<w.length;i++) o[w[i]]=1;
+  return o;
+})();
+function olWords(t){ return String(t||"").match(/[A-Za-z][A-Za-z\-']+/g)||[]; }
+/* ⚠️ A NAME NEVER SPANS A COMMA. Catalog descriptions are full of enumerations —
+ * "infection, thermoregulation, pain, tissue integrity, gas exchange" — and a
+ * word-only tokenizer turns one into a continuous stream that a sliding n-gram
+ * walks straight across. Measured in Chromium 2026-09-06: Fundamentals of
+ * Nursing listed "pain tissue integrity gas" as a skill, and Blueprint Reading
+ * listed three overlapping windows of one list of drawing types. Splitting on
+ * punctuation first costs nothing and removes the whole class. */
+function olSegments(t){
+  return String(t||"").split(/[.,;:()\[\]\/"\u2013\u2014]|\s-\s/)
+    .map(olWords).filter(function(w){ return w.length>=2; });
+}
+/* Every college course under this identity that carries a catalog description. */
+function olDescs(nd, isl){
+  var out=[];
+  membersOf(nd.i).forEach(function(m){
+    var info=courseInfo(isl, m);
+    if(info && info.desc) out.push({college:m.c, code:m.n, desc:info.desc, title:info.title, units:info.units});
+  });
+  return out;
+}
+/* Dice over content-word sets — the same shape the orbit scorer uses, so the
+ * page and the layout builder agree about what "similar" means. */
+function olDice(a,b){
+  if(!a.length||!b.length) return 0;
+  var s={}, hit=0, i;
+  for(i=0;i<a.length;i++) s[a[i]]=1;
+  for(i=0;i<b.length;i++) if(s[b[i]]===1){ s[b[i]]=2; hit++; }
+  return 2*hit/(a.length+b.length);
+}
+/* ⭐ THE REPRESENTATIVE DESCRIPTION IS CHOSEN, NOT WRITTEN. Every word a
+ * faculty reader sees here was written by a college and is attributed to it.
+ * The medoid — the description with the highest mean similarity to the others —
+ * is the one that says what the rest say. Composing new prose out of several
+ * catalogs would read as authoritative while belonging to nobody, which is a
+ * worse answer than quoting the college that already said it. The MAP-Generated
+ * label covers the ASSEMBLY: the choosing, and the shared-topic list below it. */
+function olMedoid(descs){
+  if(!descs.length) return null;
+  if(descs.length===1) return {pick:descs[0], score:null};
+  var sets=descs.map(function(d){
+    var seen={}, out=[], w=olWords(d.desc.toLowerCase());
+    for(var i=0;i<w.length;i++){ if(w[i].length<3||OL_FUNC[w[i]]||seen[w[i]]) continue; seen[w[i]]=1; out.push(w[i]); }
+    return out;
+  });
+  var best=-1, at=0;
+  for(var i=0;i<sets.length;i++){
+    var tot=0;
+    for(var j=0;j<sets.length;j++) if(i!==j) tot+=olDice(sets[i], sets[j]);
+    var mean=tot/Math.max(1, sets.length-1);
+    if(mean>best){ best=mean; at=i; }
+  }
+  return {pick:descs[at], score:best};
+}
+/* Recurring 2-4 word content phrases, counted by how many COLLEGES name them.
+ * A phrase is credited once per college however often that college repeats it,
+ * so the count is agreement between institutions rather than verbosity. */
+function olPhrases(descs){
+  var cnt={};
+  descs.forEach(function(d){
+    var seen={};
+    olSegments(d.desc.toLowerCase()).forEach(function(w){
+    for(var i=0;i<w.length;i++){
+      /* ⚠️ LONGEST AT EACH POSITION, NOT EVERY LENGTH AT EACH POSITION. Counting
+       * all of L=4,3,2 here makes every fragment score at least as high as the
+       * phrase containing it, and a count-ordered list then puts the fragment
+       * FIRST — measured in Chromium 2026-09-06 on WELD M1109, which listed
+       * "shielded metal arc", "arc welding" and "shielded metal arc welding" as
+       * three separate skills. Taking the longest valid n-gram and moving past
+       * it keeps a name whole. */
+      for(var L=4;L>=2;L--){
+        if(i+L>w.length) continue;
+        var ok=true, seg=[];
+        for(var k=0;k<L;k++){
+          var x=w[i+k];
+          if(x.length<3 || OL_FUNC[x]){ ok=false; break; }
+          seg.push(x);
+        }
+        if(!ok) continue;
+        var p=seg.join(" ");
+        if(!seen[p]){ seen[p]=1; cnt[p]=(cnt[p]||0)+1; }
+        break;                       // this position is spoken for
+      }
+    }
+    });
+  });
+  var items=Object.keys(cnt).map(function(p){ return {p:p, n:cnt[p]}; });
+  /* ⭐ THE LONGEST NAME WINS ITS FAMILY. "gas tungsten arc welding" and
+   * "tungsten arc welding" are one skill and the shorter is the fragment, so
+   * candidates are considered LONGEST first and a phrase contained in one
+   * already kept is dropped. The ratio guard is the exception that keeps this
+   * honest: a short phrase named by far more colleges than the long one is a
+   * skill in its own right ("shop safety" inside "shop safety practices"), not
+   * a fragment of it. */
+  items.sort(function(a,b){
+    return (b.p.split(" ").length-a.p.split(" ").length) || (b.n-a.n);
+  });
+  var kept=[];
+  items.forEach(function(it){
+    for(var i=0;i<kept.length;i++)
+      if(kept[i].p.indexOf(it.p)>=0 && it.n <= kept[i].n*1.6) return;
+    kept.push(it);
+  });
+  kept.sort(function(a,b){ return (b.n-a.n) || (b.p.split(" ").length-a.p.split(" ").length); });
+  return kept;
+}
+/* ⚠️ A SKILL'S LEVEL COMES FROM THE SKILL'S OWN WORDS. courseLevel() reads the
+ * same Beg/Int/Adv ladder over a title; here it reads the phrase. It returns
+ * null for most of them, and "not stated" is the correct answer — inheriting
+ * the course's level would fabricate the second axis out of the first. */
+function olSkillLevel(phrase){ return courseLevel(phrase) || null; }
+function olConfWord(n, total){
+  if(total<=1) return {w:"one college", c:"mut", t:"This identity carries one college course, so no second catalog can corroborate the skill."};
+  if(n>=Math.max(3, total*0.5)) return {w:"most colleges", c:"ok", t:n+" of the "+total+" catalog descriptions name it."};
+  if(n>=2) return {w:"some colleges", c:"cid", t:n+" of the "+total+" catalog descriptions name it."};
+  return {w:"one college", c:"mut", t:"Named in 1 of the "+total+" catalog descriptions. Kept rather than dropped (Sam's ruling, 2026-09-05: thin skills stay, with a confidence chip)."};
+}
+
+/* The thirteen slots a Course Outline of Record carries that no feed we hold
+ * supplies. The list is kb/_row_audit.py's MC_NOT_YET_CAPTURED, not a new one
+ * invented here: the auditor already scores every identity against exactly
+ * these, so the surface renders the structure the repo already measures. They
+ * are shown EMPTY rather than omitted — an outline that quietly drops the slots
+ * it cannot fill reads as complete, and a reviewer cannot see what is missing.
+ * `transferability` and `degree_applicability` are deliberately absent there
+ * (TMC territory, not an M-ID's claim) and stay absent here. */
+var OL_MC_SLOTS=[
+  ["Student learning outcomes","slos"],
+  ["Course objectives","course_objectives"],
+  ["Content outline","content_outline"],
+  ["Methods of evaluation","methods_of_evaluation"],
+  ["Methods of instruction","methods_of_instruction"],
+  ["Prerequisites","prerequisites"],
+  ["Corequisites","corequisites"],
+  ["Advisories","advisories"],
+  ["Repeatability","repeatability"],
+  ["Lecture hours","lecture_hours"],
+  ["Lab hours","lab_hours"],
+  ["Outside-of-class hours","outside_of_class_hours"],
+  ["Sample textbooks","sample_textbooks"]
+];
+function olLayer(id, title, source, body, opts){
+  opts=opts||{};
+  return '<section class="ol-layer'+(opts.empty?" empty":"")+'" id="ol-'+id+'">'+
+    '<div class="ol-lh"><h2>'+esc(title)+'</h2>'+
+      (opts.tag?'<span class="chip '+esc(opts.tagClass||"mut")+'">'+esc(opts.tag)+'</span>':"")+
+    '</div>'+
+    '<p class="ol-src">'+source+'</p>'+
+    body+'</section>';
+}
+/* The reviewer's own state, per identity, for this browser only. Nothing here
+ * reaches kb_curation: a rename is a PROPOSAL until a curator lands it through
+ * the curation path, and a re-mint waits on verified + admin-released. */
+var olEdits={};
+function olState(id){ return olEdits[id] || (olEdits[id]={}); }
+
+window.__ccrOutline=function(id){
+  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; if(U) spreadUniverse(U); }
+  if(!U){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
+  var hit=nodeById(id);
+  if(!hit){
+    /* A stale or hand-typed link is a normal thing to arrive with. Say what
+     * happened and leave a way on, rather than painting an empty page. */
+    window.__crumbs([{label:"SkyView", go:function(){ window.__ccrUniverse({solo:true}); }},
+                     {label:"Course outline"}], {view:"outline"});
+    var v0=document.getElementById("view");
+    if(v0) v0.innerHTML='<div class="ol"><h1>No course with that id</h1>'+
+      '<p class="note"><strong>'+esc(id)+'</strong> is not in the reference this page loaded. '+
+      'It may have been re-keyed by a re-mint, or the link may predate the current build. '+
+      'Search for the course by name from SkyView.</p></div>';
+    window.__ccrSyncHash("outline", id);
+    return;
+  }
+  window.__crumbs([{label:"SkyView", go:function(){ window.__ccrUniverse({solo:true}); }},
+                   {label:hit.isl.d, go:function(){ window.__ccrDiscipline(hit.isl.d); }},
+                   {label:hit.nd.t||hit.nd.i}], {view:"outline"});
+  window.__ccrSyncHash("outline", id);
+  var v=document.getElementById("view"); if(!v) return;
+  v.innerHTML=olHtml(hit.nd, hit.isl);
+  olWire(hit.nd, hit.isl);
+  if(window.scrollY||window.pageYOffset){ try{ window.scrollTo(0,0); }catch(e){} }
+  /* The descriptions are the whole evidence base for two of the layers, and
+   * they arrive per discipline. Render once without them so the page is never
+   * blank, then again when they land. */
+  loadDesc(hit.isl, function(){
+    if(routeKey()!=="outline" || routeArg()!==id) return;   // the reader moved on
+    var el=document.getElementById("view"); if(!el) return;
+    el.innerHTML=olHtml(hit.nd, hit.isl);
+    olWire(hit.nd, hit.isl);
+  });
+};
+
+function olHtml(nd, isl){
+  var st=olState(nd.i);
+  var title=st.title || nd.t || nd.i;
+  var subject=String(nd.i).split(/\s+/)[0];
+  var mine=membersOf(nd.i), total=mine.length;
+  var descs=olDescs(nd, isl);
+  var lvl=courseLevel(title);
+  var loading=descState[isl.sh]==="loading";
+  var h='<div class="ol">';
+
+  /* ── the band ─────────────────────────────────────────────────────────── */
+  h+='<div class="ol-head">'+
+    '<div><h1 id="ol-title">'+esc(title)+'</h1>'+
+      '<p class="ol-meta">'+chipFor(nd)+' <span class="sub">'+esc(nd.i)+'</span> · '+
+      esc(isl.d)+' · Common SUBJ '+esc(subject)+' · '+esc(unitsWord(nd.u))+' · '+
+      num(total)+' college course'+(total===1?"":"s")+
+      (nd.ar?' · '+num(nd.ar)+' articulation'+(nd.ar===1?"":"s"):"")+
+      (st.title?' · <span class="chip gen" title="A proposed title, staged in this browser only. Nothing is written from this page.">renamed — not saved</span>':"")+
+      '</p></div>'+
+    /* ⚠️ TWO AXES. This one is the COURSE's, read off the title. */
+    '<div class="ol-lvl"><span class="ol-lvl-k">Course level</span>'+
+      '<span class="chip '+(lvl?"cid":"mut")+'" title="'+
+        (lvl ? 'Read off the course title by the same Beginning/Intermediate/Advanced ladder the map uses.'
+             : 'The title names no level. A level is not inferred from the courses underneath — that would be a guess wearing a fact’s clothes.')+
+      '">'+esc(lvl||"Level not stated")+'</span></div>'+
+    '</div>';
+
+  /* Sam's sentence, verbatim, above everything it governs. */
+  h+='<p class="ol-gen"><strong>MAP-Generated</strong> — for faculty consideration '+
+     'and revision before use. This outline is assembled from what the colleges '+
+     'already publish. Nothing on this page is written back.</p>';
+
+  /* ── layer 1: description ─────────────────────────────────────────────── */
+  var med=olMedoid(descs), dbody;
+  if(loading) dbody='<p class="empty">Loading the catalog descriptions for '+esc(isl.d)+'…</p>';
+  else if(!descs.length) dbody='<p class="empty">None of the '+num(total)+' college course'+
+    (total===1?"":"s")+' under this identity carries a catalog description, so there is nothing to draw a description from.</p>';
+  else dbody='<blockquote class="ol-desc">'+esc(med.pick.desc)+'</blockquote>'+
+    '<p class="ol-attr">'+esc(med.pick.college)+' · '+esc(med.pick.code)+
+      (med.score!=null
+        ? ' — the description most typical of the '+descs.length+' colleges that publish one'+
+          ' <span class="sub" title="Mean Dice similarity of this description’s content words to the other '+
+          (descs.length-1)+'. The description that says what the rest say.">('+med.score.toFixed(2)+')</span>'
+        : ' — the only catalog description under this identity')+'</p>';
+  h+=olLayer("desc","Description",
+    (descs.length
+      ? 'Quoted from a college catalog and attributed. MAP chose which one; it did not write it. '+
+        '<strong>'+descs.length+' of '+num(total)+'</strong> college course'+(total===1?"":"s")+
+        ' under this identity publish a description.'
+      : 'Drawn from the catalog descriptions of the colleges carrying this course.'),
+    dbody, {empty: !descs.length && !loading});
+
+  /* ── layer 2: skills ──────────────────────────────────────────────────── */
+  var sk=descs.length?olPhrases(descs):[];
+  var strong=sk.filter(function(x){ return x.n>=2; }).slice(0,12);
+  var thin  =sk.filter(function(x){ return x.n===1; }).slice(0,10);
+  var sbody;
+  if(loading) sbody='<p class="empty">Loading…</p>';
+  else if(!descs.length) sbody='<p class="empty">No catalog description to impute from.</p>';
+  else {
+    function skillRow(x){
+      var sl=olSkillLevel(x.p), cf=olConfWord(x.n, descs.length);
+      return '<li><span class="ol-sk">'+esc(x.p)+'</span>'+
+        '<span class="chip '+(sl?"cid":"mut")+'" title="'+
+          (sl?'Read off this skill’s own words.':'This skill names no level of its own. It does NOT inherit the course’s level — they are separate axes (Sam’s ruling, 2026-09-05).')+
+        '">'+esc(sl||"level not stated")+'</span>'+
+        '<span class="chip '+cf.c+'" title="'+esc(cf.t)+'">'+esc(cf.w)+'</span></li>';
+    }
+    sbody=(strong.length?'<ul class="ol-skills">'+strong.map(skillRow).join("")+'</ul>'
+                        :'<p class="empty">No topic is named by two or more colleges, so nothing here is corroborated.</p>')+
+      (thin.length?'<details class="ol-thin"><summary>Named by a single college ('+thin.length+')</summary>'+
+        '<p class="ol-src">Kept rather than dropped, and chipped so the thinness is visible '+
+        '(Sam’s ruling, 2026-09-05). One catalog is evidence; it is just not agreement.</p>'+
+        '<ul class="ol-skills">'+thin.map(skillRow).join("")+'</ul></details>':"");
+  }
+  h+=olLayer("skills","Skills a learner would carry out of this course",
+    'Imputed from the words the colleges wrote, not supplied by an agency. '+
+    'Faculty write outcomes; industry writes skills — this layer translates, so no faculty member has to rewrite a course '+
+    '(Sam, 2026-09-05). <strong>We hold no agency skill statements at all</strong>: 57 published welding credit '+
+    'recommendations carry agency, title and hours, and not one skill statement.',
+    sbody, {tag:"imputed", tagClass:"gen", empty:!strong.length && !thin.length});
+
+  /* ── layer 3: the next layers, present and empty ──────────────────────── */
+  h+=olLayer("cpl","Credit for prior learning against this course",
+    'The next two layers (Sam’s ruling, 2026-09-05: build it layered from the start). '+
+    'They are shown empty rather than left out — an outline that omits the layers it cannot fill yet reads as finished.',
+    '<ul class="ol-todo">'+
+      '<li><strong>MAP exhibits</strong> — the credentials colleges have already articulated against this course. '+
+        'Not wired to this surface yet.</li>'+
+      '<li><strong>Military credit recommendations</strong> — the ACE-reviewed training that maps here. '+
+        '98% of MAP’s credit-recommendation rows are ACE military; none is joined to an outline yet.</li>'+
+    '</ul>'+
+    '<p class="ol-src">⚠️ Blocked on one ruling: where an agency skill statement comes from when published '+
+    'standards, ACE exhibits and the MAP team disagree. Sam’s answer to <em>which source</em> was '+
+    '"All three", and he raised the reconciliation question himself. Nothing else in this outline waits on anything.</p>',
+    {tag:"not built", empty:true});
+
+  /* ── layer 4: the record's own slots ──────────────────────────────────── */
+  h+=olLayer("mc","The rest of the outline of record",
+    'The thirteen slots <code>kb/_row_audit.py</code> already scores every identity against. '+
+    'No feed we hold supplies any of them, so every row below reads the same — and that is the '+
+    'measurement, not a rendering gap.',
+    '<ul class="ol-mc">'+OL_MC_SLOTS.map(function(s){
+      return '<li><span class="ol-mc-k">'+esc(s[0])+'</span><span class="chip mut" title="'+
+        esc(s[1])+' — state not_yet_captured in the row auditor.">no feed yet</span></li>';
+    }).join("")+'</ul>', {tag:"0 of 13", empty:true});
+
+  /* ── layer 5: what a reviewer may do ──────────────────────────────────── */
+  h+=olLayer("review","What a reviewer may change",
+    'Sam’s ruling, 2026-09-05: reviewers edit titles and re-subject; a re-mint waits until the '+
+    'change is <strong>verified</strong> and <strong>admin-released</strong>. Both controls below stage a '+
+    'proposal in this browser. Nothing is written from this page.',
+    '<p class="row">'+
+      '<button class="btn small" type="button" id="ol-rename">Propose a different title</button> '+
+      '<button class="btn small" type="button" id="ol-resubject">Propose a different subject</button>'+
+      (st.title||st.subject?' <button class="btn small" type="button" id="ol-revert">Drop the proposals</button>':"")+
+    '</p>'+
+    (st.subject?'<p class="ol-attr">Proposed Common SUBJ: <strong>'+esc(st.subject)+'</strong> '+
+      '(was '+esc(subject)+') — staged, not saved.</p>':"")+
+    '<p class="ol-src">A re-mint would change this identity’s id, which other files key by. '+
+    'It is queued for an administrator, never fired from a reading surface '+
+    '(<code>docs/coursecontrolnumber_remint.md</code> is the playbook).</p>');
+
+  /* The colleges, last: the evidence the layers above were drawn from. */
+  h+=olLayer("members","The college courses under this identity",
+    'The rows every layer above was drawn from.',
+    total
+      ? '<ul class="ol-mem">'+mine.slice(0,40).map(function(m){
+          var info=courseInfo(isl,m);
+          return '<li><span class="ol-mem-c">'+esc(m.n)+'</span>'+
+            '<span class="ol-mem-t">'+esc((info&&info.title)||"")+'</span>'+
+            '<span class="ol-mem-g">'+esc(shortCollege(m.c))+'</span>'+
+            (info&&info.desc?'':'<span class="chip mut" title="This college publishes no catalog description for the course.">no description</span>')+
+          '</li>';
+        }).join("")+'</ul>'+(total>40?'<p class="ol-src">Showing 40 of '+num(total)+'.</p>':"")
+      : '<p class="empty">No college course is carried under this identity.</p>');
+
+  return h+'</div>';
+}
+
+function olWire(nd, isl){
+  var st=olState(nd.i);
+  var rn=document.getElementById("ol-rename");
+  if(rn) rn.onclick=function(){
+    var v=window.prompt("Propose a different title for "+nd.i+".\n\nThis stages a proposal in this browser. Nothing is written.", st.title||nd.t||"");
+    if(v==null) return;
+    v=String(v).trim();
+    if(!v){ delete st.title; } else { st.title=v; }
+    window.__ccrOutline(nd.i);
+  };
+  var rs=document.getElementById("ol-resubject");
+  if(rs) rs.onclick=function(){
+    var cur=st.subject||String(nd.i).split(/\s+/)[0];
+    var v=window.prompt("Propose a different Common SUBJ for "+nd.i+".\n\nFour letters, e.g. WELD. This stages a proposal; a real change is a re-mint, which waits for an administrator.", cur);
+    if(v==null) return;
+    v=String(v).trim().toUpperCase();
+    if(!v){ delete st.subject; }
+    else if(!/^[A-Z]{2,4}$/.test(v)){ window.alert("A Common SUBJ is two to four letters."); return; }
+    else st.subject=v;
+    window.__ccrOutline(nd.i);
+  };
+  var rv=document.getElementById("ol-revert");
+  if(rv) rv.onclick=function(){ delete st.title; delete st.subject; window.__ccrOutline(nd.i); };
+}
+
 window.__ccrHow=function(){
   window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"How SkyView works"}], {view:"how"});
   var v=document.getElementById("view"); if(!v) return;
