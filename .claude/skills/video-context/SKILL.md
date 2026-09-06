@@ -11,16 +11,27 @@ then open only the frames the words make interesting.
 
 ## Run it
 
+⚠️ **On Windows the interpreter is `python`, not `python3`.** `python3` hits the
+Microsoft Store app-execution alias and dies with "Python was not found" even
+when Python is installed and on PATH. And the script path is relative, so **run
+from the repo root** — from anywhere else `kb/_video_context.py` does not exist.
+
+```powershell
+cd "C:\Users\samuel.lee\Documents\GitHub\cpl-project-tracker"
+git pull
+pip install imageio-ffmpeg faster-whisper          # one time
+python kb\_video_context.py "C:\Users\samuel.lee\Riverside Community College District\California MAP Initiative - Documents\CCCCO\Claude Prompts\Video Project 2.mp4"
+```
+
+macOS or Linux, same thing:
+
 ```bash
-pip install imageio-ffmpeg faster-whisper        # one time
+cd ~/GitHub/cpl-project-tracker
+pip install imageio-ffmpeg faster-whisper
 python3 kb/_video_context.py "<path to the video>"
 ```
 
-Windows paths with spaces are fine — quote them:
-
-```powershell
-python3 kb/_video_context.py "C:\Users\samuel.lee\Riverside Community College District\California MAP Initiative - Documents\CCCCO\Claude Prompts\Video Project 2.mp4"
-```
+Paths with spaces are fine on either — quote them, as above.
 
 Output lands in `.video-context/<slug>/` (gitignored) unless you pass `--out`:
 
