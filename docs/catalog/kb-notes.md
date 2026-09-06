@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-393 document(s).
+395 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -72,6 +72,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
 | [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
+| [A fix can be right about the complaint and wrong about the axis](../kb-notes/methodology-a-fix-can-be-right-about-the-complaint-and-wrong-about-the-axis.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A fixture too small to reproduce the defect makes the guard a decoration](../kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
@@ -154,6 +155,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A write key must name exactly one thing, and you have to check](../kb-notes/methodology-a-write-key-must-name-exactly-one-thing.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A written backlog decays silently — measure it instead](../kb-notes/methodology-a-written-backlog-decays-silently.md) | methodology | published | 2026-08-09 | 2026-08-09 |

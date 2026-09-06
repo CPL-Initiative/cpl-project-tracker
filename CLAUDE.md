@@ -791,17 +791,16 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyBuild S233 — sixteen findings triaged, then Sam drove it, then seven rulings (2026-09-06)
+### S234 — a screen recording, measured in a browser (2026-09-06)
 
-**PRs #1493 · #1494 · #1495.** Of sixteen logged findings four were real; ⚠️ **two were not defects and the
-one ranked FIRST was the most wrong** — its figure was right for the file it named
-([KB note](docs/kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md)). Sam's five were all
-real, **two not what the report said**. ⭐ **Two guards passed with the fix deleted** — the
-fixture was too small to reproduce either defect
-([KB note](docs/kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md)).
-⚠️ **Measuring the sheet corrected three claims, two of them mine to Sam** — the payloads do *not* disagree
-by 43 on screen; the canvas is 39 tab stops in, not 217; and `ALIAS_MAPS` is a list of **paths**, so an
-unloaded `resolve_id()` resolved nothing and direct and chain agreed EXACTLY — the tell. Stories: `ccr_atlas_lessons`; handoff `session_234_handoff`.
+**PRs #1498-#1501.** The **`video-context` skill** watches a recording entirely on the machine holding it
+(`kb/_video_context.py`; the cloud denies the file's hosts AND Whisper's weights). Sam drove SkyView 6m50s;
+⭐ **two defects measured in Chromium, invisible to jsdom**: the dropdown drops **36px, one row height**, when
+the chip row wraps at pick 4 — ruling 3's `scrollTop` fix holds as designed and the complaint's other axis is
+the list's *position on screen* — and **double-click strands** because `discipline()` never calls
+`syncHash()`, breaking Back, `hashchange`, the Views menu and refresh together. ⚠️ **Sam retracted a finding
+on camera**; that passage is S233's fix working. 2 KB notes. Triage: `skyview_video2_findings`; handoff
+`session_235_handoff`.
 
 ## Troubleshooting
 

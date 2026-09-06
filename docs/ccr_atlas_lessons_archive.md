@@ -782,3 +782,299 @@ absent. Confirmed by stashing the diff, rebuilding, and getting the identical
 failure on the unmodified prototype.
 
 ---
+
+## 2026-09-03 — SkyOrbit (Session 223): the five goals, the orbits, and the shards on Supabase
+
+Sam opened with the funding queue and, finding nothing a session could act on
+(dials unset, `CollegeID2` absent on all four views by a fresh probe, only
+dependabot PRs open), pivoted: *"the CCR SkyView, which is not yet working as
+intended."* Five goals, verbatim: see the whole CCR universe · keyword to jump
+to any cluster or course or subject area · course and cluster details on click
+or hover, *"including course descriptions on click of a course title … we need
+the full number and title and units and if it is a MID, CID, CCN showing on the
+course info as you zoom in"* · *"have unassigned course individually in orbit
+around the cluster they are most aligned to (rather than having them all sit in
+a huge cluster as they are now)"* · *"have SkyView open full screen so users have
+more work space and allow scroll down to see the other info you provide now."*
+
+### ⭐ The blob was our own design
+
+Every discipline had a second "· stand-alone" island — Kinesiology's held 2,400
+points in one disc. That IS the huge cluster he described, and it was a choice
+made for a good reason (a stand-alone asserts no equivalence, so mixing 33k of
+them into the clustered islands would bury the 16k identities the merge queue is
+about). The orbit keeps the reason and drops the blob: a stand-alone stays a
+hollow point, but it sits on a ring around the identity it is most aligned to,
+tethered, with the inspector saying WHY. **30,274 of 33,423 found a parent;
+3,149 sit on the rim; 327 no-discipline courses matched corpus-wide.**
+
+### ⭐ Corroborators must not outvote the primary signal
+
+The first weighting gave a shared local subject code 3.0, TOP 1.0, units 0.3 and
+credit 0.2 beside title 4 × Dice — and *"Swim Training for Competition"* landed
+on *"Aerobic Weight Training"* over a swimming identity, because the stack of
+cheap agreements (1.5 points) beat a title gap of 0.68. Rule 7's TOP doctrine
+generalizes: **a signal that is cheap to satisfy inside one discipline (every
+KINE row shares KINE; half share a TOP code) must corroborate, never decide.**
+Rebalanced to title 8 × Dice, subject 1.5, TOP 0.5, units 0.15, credit 0.05 —
+a full stack is 2.2, which a title gap of 0.28 Dice overturns. ⚠️ **The test had
+to pin BOTH directions**: a clearly better title wins, and a marginal gap (0.40
+vs 0.33) legitimately yields to shared subject + TOP + units. A guard on one side
+lets the pendulum swing past the middle unnoticed.
+
+### ⭐ Key a side table by the write key, never by position
+
+The description shards were `{identity: [text per member, by position]}`, and
+the members payload DROPS a member with no control number (2 do). Every later
+description on that identity shifts onto the wrong course, silently — the
+drill-down looks fine. Re-keyed to `{control number digits: [description, title,
+units]}`: the key the write uses is the key the lookup uses, a drop is harmless,
+and a layout rebuild cannot invalidate a shard. Titles and units ride along, so
+the member record stays `[cn, code, college]` (the 3.1 MB measurement still
+holds) and the inspector still shows a course's full name once its shard loads.
+KB note: [`methodology-key-a-side-table-by-the-write-key-not-by-position`](kb-notes/methodology-key-a-side-table-by-the-write-key-not-by-position.md).
+
+### The shards went to Supabase Storage
+
+Sam's lean of 2026-08-24 (*"I expect we'll put the shards on supabase"*) is
+delivered as the public bucket `ccr-desc`: 159 shards, 50 MB, published by
+`scripts/publish_skyview_desc_shards.sh` from a manual workflow and from the
+daily run when the unified-courses artifacts changed. Why not commit them: the
+48 MB `unified_courses_member_desc.js` already changes in every daily commit, so
+committed shards would add 50 MB of churn a day to the repo and every vault
+clone. The client tries `./ccr_desc/` first and the bucket second, and the jsdom
+suite asserts that order with a mocked 404. ⚠️ **The bucket is empty until the
+first dispatch after the merge.**
+
+### ⚠️ Things the harnesses caught, in order
+
+- **A filter that outlived its selection.** A college-course search sets the
+  inspector's filter to the code; a later canvas click on an 850-course identity
+  kept it, and the card read *"Showing 0 of 0 matching (850 carried)"*. The
+  browser harness's cap check went red on `.mv` = 0. `showNode()` now resets the
+  filter unless the caller that set it says to keep it.
+- **The harness's own sequencing.** Its description check picked the first
+  described member on a card — the very course its cross-area-move section had
+  moved away three sections earlier. And its shared-key click matched two
+  buttons because a collided key can put BOTH its courses on one card (KIN 62C /
+  KINES 62C at Santa Rosa). Neither was a page defect; both were the harness
+  assuming a state it had itself changed.
+- **Two objects, one fixture.** The jsdom suite handed the page nodes from the
+  TEST's copy of the fixture, and `selNode === nd` inside the client could never
+  hold. The page parses its own copy; the suite now reads it back.
+- **Boot is asynchronous in jsdom.** The template boots on DOMContentLoaded,
+  which fires after the constructor returns — half the suite ran against a page
+  that had not booted, then the boot re-rendered the map under the other half.
+- **Two identity ids appear twice in the export** (`ENGL 100`, `ITIS 160`, both
+  CCNs), which drew three extra points. The builder keeps the first and names
+  the duplicates in its log.
+
+### ⭐ Sam's example turned into a rule: orbits cross disciplines
+
+Sam, the same afternoon: *"We have in our CCR queue Business courses that are
+assigned to the Business subject while others are assigned to Vocational subject
+(a noncredit practice), but there is a small business discipline MQ that would
+probably be a better fit for the vocational business courses--so I would want
+them to orbit around business or small business (if there are any). Note that
+vocational is a big grab bag of noncredit courses and many need to stay there
+and some need to be moved to a MID course in another discipline."*
+
+The first build could not do that: a stand-alone was scored only against the
+identities of its OWN island (corpus-wide only for the no-discipline pile).
+Measured before changing anything: *Small Business Development* is a real MQ
+discipline (25 identities, 71 stand-alones); of Vocational's 381 stand-alones,
+**264 had a clearly better parent in another discipline** ("Entrepreneur
+Start-Up and Business Registration" → a Business identity, "Entertainment
+Business – Contracts" → "The Business of Entertainment", "Basic Excel 2" →
+Office Technologies' "Beginning Excel"); and **1,882 of the 3,149 rim courses**
+had a strong title match somewhere else.
+
+Two rules, both pinned in the builder test. A course filed under a **grab bag**
+(`GRAB_BAG` = Vocational, the no-discipline pile) is scored against the whole
+reference with a bonus of 0.4 for staying home — his *"many need to stay there"*
+— so it leaves only for a clearly better parent. Any other course looks outside
+its subject only when nothing at home qualified, and then needs a title Dice of
+0.5 or more AND at least two shared title words, because leaving your own subject
+on a weak match is how a map starts lying — the first cut let one word carry a
+course across ("Mediation Skills" onto "Study Skills Lab"; the `D` of "3-D"
+matching any title with a `D`), so one-character tokens are dropped too. A cross-discipline satellite is drawn in its parent's island carrying `h`,
+the discipline it is filed under, and both the tooltip and the inspector say so.
+Result: **31,350 of 33,423 orbit (1,521 across a discipline line); the rim fell
+from 3,149 to 2,073.** Which other disciplines are grab bags is Sam's call
+(Interdisciplinary Studies is the obvious candidate) — one line each.
+
+### Also captured, on the fly
+
+- Sam wants **a banner on COBI while he is working with a session** — *"so they
+  can drop in and observe and learn how we are working together on COBI."* Filed
+  as a to-do with a proposed shape: one presence row a session writes through
+  the MCP at start and clears at sign-off, read by every COBI page; a new write
+  surface, so it routes through the governance map first.
+- Sam's **sign-off template**: the outgoing session writes the exact line he
+  pastes into the next session — *"Greetings, you are Sky[next], see Sky[you]
+  handoff [link], let's keep rolling with our queue"* — and assigns the next
+  moniker. Encoded in `CLAUDE.md`; two additions offered for his veto (the
+  session number beside the moniker, the repo path beside the link).
+
+### Verification
+
+`tests/ccr_universe_orbits_test.py` (49 checks: the alignment floor, both
+weight directions, ring geometry with no overlaps, shard keying, the committed
+payload) · `tests/ccr_skyview_universe.test.js` (69 checks, the REAL template
+and client over a six-point fixture: full bleed, one search field, all four
+suggestion kinds, member-code jump, orbit card and accept, parent's orbit list,
+shard base order, description toggle, rim, shared-key refusal, carry and Escape,
+the three label bands, tooltip, hollow-point drag, full screen, inspector fold)
+· `prototype/check_ccr_atlas.js` in Chromium, extended for the orbits, the
+quick look, the first-screen geometry, the label bands and the member-code
+search.
+
+### Next
+
+1. **Sam drives it** — density, inspector width, label bands, the rim.
+2. Dispatch `skyview-desc-shards.yml` once the PR merges; the bucket is empty
+   until then.
+3. Decision packs per discipline on demand; the queue for SUBJ4 breakage.
+4. Whether the daily run should rebuild the layout too (NEEDS SAM ②).
+
+### Later the same day — Sam's three questions, measured (2026-09-03)
+
+Sam read the orbit story and sent three things at once. **The loners.** He wants
+the rim courses to orbit on a signal that also reads title and description. A
+scratch probe on the committed payload: 2,073 rim courses, 1,600 with a catalog
+description, only 20 with generic titles — the loners are real CTE titles with no
+identity in their island using the same words. A TF-IDF cosine against each
+identity's member descriptions places 130 well inside the home island (≥ 0.40)
+and 346 plausibly (≥ 0.30); below 0.30 the matches read wrong. Where the
+title-based parent is known, the description's top choice agrees with it 20% of
+the time (39% within three), so the description is a gap-filler and never a
+tie-breaker over a title. Corpus-wide scoring inflates by chance — college
+boilerplate ("competently, directed, repetition") matched Snowshoeing to
+Snowboarding — so boilerplate must be stripped and a cross-island match held
+higher. The rim concentrates in CTE islands (Industrial Technology 103, Health
+94, Dietetics 86, Public Safety 65, Kinesiology 63); a loner with no parent at
+any signal is often the seed of a NEW identity, a mint decision the map should
+present as one. **Subject vs Discipline.** He believed one subject can carry
+several disciplines; the methodology says the reverse (each Common SUBJ belongs
+to exactly one discipline; a discipline may carry several subjects, the
+umbrellas), measured again at the canonical layer: 146 disciplines, 146 distinct
+codes, none shared. His example — "FLNG with Spanish, French, etc." — sits on
+the seam between two uses of the word: C-ID calls SPAN a discipline, the MQ list
+has only Foreign Languages, and all 265 FL* identities sit under it as subjects.
+The cure is labels that name the grain (NEXT ⑧). **Queued messages.** He does
+not get read early: Enter queues, the turn's end delivers, Escape interrupts.
+Captured verbatim in the vault (CPLBrain #84, #85) and as four `cpl_memory`
+rows; two to-dos filed.
+
+Two more from Sam the same afternoon. **"Go with the established CID and CCN subject
+codes rather than minting new ones for CSR"** — the CSR minted its own for two June
+rulings (the four-letter shape, which 20 of the 62 C-ID codes fail; the not-a-CCN-claim
+stance on the language codes), and 122 of 146 canonical codes are overrides for that
+reason. **"Retire the use of Z codes… Everything that isn't a CID or CCN should be a
+MID"** — the 4,024 Z ids are the machine-built variant clusters Session 56 re-keyed
+from `UC-CUR-AUTO*`, not the loners; they fit the M number space by gap-filling and
+re-key 4,083 curation rows plus 10,704 merge targets through the alias-map path that
+already exists. Both went onto one decision sheet (22 items,
+`docs/visuals/2026-09-03-csr-authority-codes.html`). ⚠️ **The sheet's github.io link
+returned a 404**: `pages.yml` prunes `docs/` from the deployed site, so a decision sheet
+is handed over as a Claude artifact link; the committed file is the record, not the
+page.
+
+**Ruled the same evening.** Sam replied by number on all 22 items of the authority-codes
+sheet. The sticky one was the shape rule, and his version is better than the one
+proposed: *"use CCN if available; if not, stay with 4-characters and add a CID chip with
+the verbatim CID code showing; eliminate hyphens."* It keeps the invariant, the parsers,
+the fold and the tests exactly as they are, and moves the authority's code to where a
+reader looks for it — a chip beside ours — instead of into the identifier. Eleven code
+changes, the Z band retired, the legacy ids folded, one re-mint series to run; the plan
+is `kb/csr_authority_codes_rulings_2026-09-03.json`. ⭐ **A decision sheet that returns
+verdicts the same day is the fastest curation loop this repo has had** — the measured
+context was already on the card, so each verdict took him one line.
+## 2026-09-03 — SkyTune (Session 224): the chips, the two dry runs, and the allocator that was the wrong tool
+
+Sam's rulings from the evening before were the queue: eleven code changes, the
+Z band retired, the C-ID chip, one re-mint series. The day produced three pull
+requests and nothing applied — which is the playbook working, not stalling.
+
+### The chip is data plus a display
+
+Rule 3 as Sam shaped it keeps the four-letter invariant and moves the
+authority's code to where a reader looks for it. `kb/_seed_authority_codes.py`
+attributes every C-ID and CCN subject code to a discipline from the promotions
+evidence in precedence order — ruled, then the discipline whose canonical IS the
+code, then the corpus majority above item 17's floor of four rows, then a small
+name-home table — and a code with a ruled or canonical home never spills onto
+the discipline its mis-filed rows sit under (C-ID ARTH's 25 rows under Art stay
+with Art History). Measured: 12 disciplines sit on a CCN code, 14 on a C-ID
+code, 120 are CSR proposals, 29 show a chip. ⚠️ **One pair the rulings and the
+evidence disagree on**: item 17 dismissed `PH` under Health as mis-filed, and the
+promotions file carries 30 `PH` rows there. Kept as ruled, listed as unhomed,
+put to Sam — a human-sourced ruling is not superseded by a session's count
+(Rule 8). The three displays read the same seed fields; SkyView reads the seed
+live so the map never lags it and no layout rebuild was needed.
+
+### ⭐ The June allocator is a re-sequencer, and a rename is not a re-sequence
+
+The first instinct was to point `kb/_subj4_dryrun.py` at a scratch seed carrying
+THTR, CDEV, ITIS, BSOT, FTVE and COMP. Measured first with the seed exactly as
+committed: **62,638 of 70,946 ids would move to change nothing**, all but 148 of
+them fate `no_change`. The allocator numbers every bucket by title order, the
+title-normalization passes since June changed the sort keys, and the catalog is
+no longer at that tool's fixpoint. The rulings' own measured plan had said
+"7,921 plain prefix re-keys" — the POLS pattern of July, letters changed and the
+number kept — and that is what `kb/_authority_recode_dryrun.py` does for the
+whole ruled set: 10,292 ids move, 10,039 keep their number, 253 gap-fill (202 of
+them Media Production entering FTVE after Film keeps its numbers), 539 Z ids move
+with their namespace. KB note:
+[`methodology-a-code-change-is-a-prefix-rekey-not-a-resequence`](kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md).
+
+### ⚠️ Two allocator defects, one run each
+
+- **One pass cascades.** One stray already keyed `COMP M1001` made `CISC M1001`
+  take `M1002`, which was `CISC M1002`'s number, and so on: 554 Computer Science
+  ids shifted from one taken key. Two passes — everyone who can keep a number
+  keeps it, then the rest gap-fill — and the same input gap-fills one row.
+- **Ghosts are not occupants.** The articulation doc's identities map still holds
+  pre-fold keys (the S110 class); counting them as taken gap-filled rows for
+  nothing. They are reported, 54 of them healed by the move.
+
+Both are pinned on a fixture in `tests/authority_recode_dryrun_test.py`.
+
+### The languages and the families, by rule
+
+Item 10 mechanically: a ruled language takes the code the ruling names; any
+other takes its dominant local code when that code is four letters and no other
+language holds it; else it keeps the CSR code, flagged. The rule caught its own
+edge case: Nahuatl's rows carry `SPAN` (taught in Spanish departments) and would
+have taken Spanish's code. Korean, Tagalog, Hebrew, Persian (a tie), Punjabi,
+Hmong, Greek and Nahuatl keep their CSR codes; eleven stray prefixes the file
+does not know (ARME 18 rows, ARAM, ARMN, HUPA …) are listed for Sam. Item 14 by
+two agreeing signals with TOP last in line: 498 rows take a family, 517 stay
+residual with the reason on the row, 121 of them viticulture / enology, which has
+no C-ID family — a reading.
+
+### ⭐ Retiring the Z band is a gap-fill, and Kinesiology credit has three numbers left
+
+Keeping a Z number was never possible: both sequences started at 1, so 3,836 of
+4,053 Z numbers are already M numbers in the same bucket — and the collision
+surface is every catalog key, because a merged-away member keeps its id (its
+curation rows point at it). `kb/_zband_retire_dryrun.py` gap-fills in
+Z-sequence order, composes with the recode receipt (`--after-recode`), folds
+218 of the 221 legacy May anchors (122 of which duplicate a catalog identity: a
+merge worklist), and reports capacity: **KINE M1 lands at 996 of 999**. The
+corroborated shape has no room for the next Kinesiology mint; a continuation
+band digit is proposed, Sam's call. The apply must also settle whether these
+identities stay curation-only or are materialized into the catalog.
+
+### ⚠️ The dependency map scans `git ls-files`
+
+Both code PRs went red on `--check` once: the map was rebuilt before the new
+files were added, so the runner's map had edges the committed one lacked.
+Rebuild after `git add`.
+
+### Verification
+
+`tests/authority_codes_seed_test.py` (17) · `tests/csr_authority_chip.test.js`
+(18) · `tests/ccr_subject_authority_label.test.js` (10) · five checks added to
+`tests/ccr_skyview_universe.test.js` (74) · `tests/authority_recode_dryrun_test.py`
+(20) · `tests/zband_retire_dryrun_test.py` (17).
