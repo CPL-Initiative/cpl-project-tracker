@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-391 document(s).
+392 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -149,6 +149,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
+| [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |

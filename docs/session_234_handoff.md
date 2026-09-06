@@ -101,6 +101,21 @@ you can build everything else first.
 **Ruling 2's queue** (S232) is routed through Governance, not built; the ADR's four-item
 checklist is the spec.
 
+⭐ **A TEST THAT ONLY FAILS UNDER LOAD IS RACING A TIMER THE PRODUCT OWNS.** `test`
+went red on `ccr_skyview_search_show.test.js` while it passed 116/116 standalone,
+in a full local suite, under Node 20, and on CI minutes earlier on identical
+bytes. Every cheap hypothesis was wrong. **Running the file 24× CONCURRENTLY
+reproduced it in one command** (7 failures; `grep ^FAIL | sort | uniq -c` named
+all three) — the missing variable was contention, which a re-run does not vary.
+The cause: the page closes the suggestion list 120ms after the search box blurs
+(deliberate), §15's clicks schedule that close, and `tick()` is ONE macrotask.
+⚠️ **The product was right and the test was wrong** — and the failing checks were
+ruling 6, shipped that same morning. Before 7/24, after 24/24. Also: the CI log
+is not readable here (`get_job_logs` caps at ~the last minute; the log blob is
+egress-blocked), so **reproduce locally under contention rather than trying to
+read the log**.
+[KB note](kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md)
+
 ⚠️ **The `cpl_memory_log` step fails silently.** The 2026-09-06 checkpoint wrote 8 rows,
 its commit body said so, and **not one had a log entry** — the log `insert ... select` is a
 separate statement, so skipping it is invisible from the `cpl_memory` side, and no test can

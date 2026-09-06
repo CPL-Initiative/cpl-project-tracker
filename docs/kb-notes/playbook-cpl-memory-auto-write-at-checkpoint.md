@@ -101,6 +101,14 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    Every row this run wrote must show `creates = 1`. Backfill with the same
    `insert ... select`, guarded by `not exists (... action='create')`, and say in
    the note that the entry is late.
+
+   ⚠️ **Do not fold the log insert into the same statement as the row insert.**
+   A data-modifying CTE's rows are not visible to the rest of that statement's
+   snapshot, so `with ins as (insert ... returning id) insert into
+   cpl_memory_log ... join ins` logs NOTHING and returns an empty set — which
+   looks like success if you are not reading the return. Two statements, then
+   the query above. (Measured 2026-09-06, the same day this step was added; the
+   verification caught it immediately, which is the argument for having it.)
 7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
    on. It's a retrieval surface (query by scope), not an infinite feed.

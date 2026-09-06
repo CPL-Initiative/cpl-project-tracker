@@ -1855,3 +1855,31 @@ log by slug. Backfilled with late-entry notes, and the playbook now carries a
 one-query verification as part of step 6. **A step whose omission produces no error
 and no failing test is not a step; it is a hope.**
 
+⭐ **AND THE ONE THAT CAME BACK TO BITE THE SAME DAY: `test` went red on a file
+this run had not touched, and it was ours.** `ccr_skyview_search_show.test.js`
+exited 1 on CI while passing 116/116 here — standalone, in a full 303-file
+concurrent suite, and on CI forty minutes earlier on byte-identical content.
+Every cheap hypothesis was wrong: not the check-floor raise in the same push
+(`tests/run.js:231` consults the ledger only when the child exited 0, and a floor
+violation prints *"check count fell"*, not `exit 1`), not memory (`exit 134` /
+`SIGABRT`), not dependency drift (jsdom pinned exactly), and **not the Node 20 vs
+22 gap I flagged — I installed Node 20 and it passed 116/116 there too.**
+
+⚠️ **The CI log was unreadable, and the fix for that was not to try harder to read
+it.** `get_job_logs` caps its window at roughly the last minute of a nine-minute
+run, and the full-log blob on `results-receiver.actions.githubusercontent.com` is
+refused by this environment's egress policy. So the failing assertion was never
+visible. **Running the file 24 times CONCURRENTLY reproduced it in one command** —
+7 failures, and `grep ^FAIL | sort | uniq -c` named all three failing checks. The
+missing variable was contention, and a re-run does not vary it.
+
+⭐ **The product was right; the test was racing a deadline the product owns.**
+`gqEl.addEventListener("blur", function(){ setTimeout(closeSug, 120); })` closes
+the suggestion list 120ms after the search box blurs — deliberate, so a click
+elsewhere dismisses it. The test focuses that box at §11; §15 then clicks a row,
+a move control and a destination, each scheduling that close. `tick()` is ONE
+macrotask, so an idle machine finishes inside 120ms and a loaded runner does not.
+All three failures were in §15's Enter block — **ruling 6, shipped that morning.**
+Before: 7 of 24. After: 24 of 24 at 116/116. New KB note:
+[`methodology-a-test-that-only-fails-under-load-is-racing-a-timer`](kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md).
+
