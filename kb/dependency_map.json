@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 431,
+  "file_datasets": 433,
   "external_services": 137,
   "consumers": 319,
   "workflows": 33,
@@ -1071,7 +1071,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2961
+     "line": 3010
     }
    ],
    "main_committers": []
@@ -5582,6 +5582,19 @@
    "main_committers": []
   },
   "file:kb/_audit_exhibits.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_ccr_atlas_extract.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -12290,6 +12303,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:prototype/build_ccr_atlas.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:prototype/ccr_atlas_data.json": {
    "consumers": [
     {
@@ -12307,8 +12333,16 @@
      "line": 20
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:prototype/ccr_atlas_esl.js": {
    "consumers": [
@@ -12472,8 +12506,16 @@
      "line": 17
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:quickstart.js": {
    "consumers": [
@@ -17448,7 +17490,9 @@
     "kb/_cred_rename_dryrun.py",
     "fact-sheet/_build_statewide_recs.py",
     "kb/_build_ccr_universe.py",
-    "scripts/publish_skyview_desc_shards.sh"
+    "scripts/publish_skyview_desc_shards.sh",
+    "kb/_build_ccr_atlas_extract.py",
+    "prototype/build_ccr_atlas.py"
    ],
    "adds": [
     "index.html",
@@ -17477,6 +17521,8 @@
     "exports/unified_courses.xlsx",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
+    "prototype/ccr_atlas_data.json",
+    "prototype/skyview.html",
     "kb/discipline_cpl_rollup.json",
     "kb/credential_review_overlay.json",
     "kb/governance_candidates.json",

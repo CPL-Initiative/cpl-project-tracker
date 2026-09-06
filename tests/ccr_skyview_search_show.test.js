@@ -704,5 +704,84 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       labels.every((t) => t !== (target.t || target.i)), target.t);
   }
 
+  // ── (15) Sam's seven calls of 2026-09-06 ──────────────────────────────────
+  {
+    // 2 · the chip's label is a control, not just a label.
+    // Earlier sections leave picks behind, and the button's wording depends on
+    // how many there are — so this starts from a clean selection.
+    if (typeof w.__ccrClearSelection === "function") w.__ccrClearSelection();
+    else qa(".u-tok .u-tok-x").forEach((x) => x.click());
+    await tick();
+    w.__ccrGoSuggestion({ kind: "subject", isl: U.islands[0], label: U.islands[0].d });
+    await tick();
+    const go = q(".u-tok-go");
+    check("(15) ⭐ a search chip's label is a button that goes back to that pick",
+      !!go && /^Go back to /.test(go.getAttribute("aria-label") || ""),
+      go && go.getAttribute("aria-label"));
+    check("(15) the × keeps its own job beside it",
+      !!q(".u-tok .u-tok-x") && qa(".u-tok")[0].querySelectorAll("button").length === 2,
+      `${qa(".u-tok")[0].querySelectorAll("button").length} buttons in the first chip, ${qa(".u-tok").length} chip(s)`);
+
+    // 5 · the view button names its target
+    const fit = q("#u-tok-fit");
+    check("(15) ⭐ with one pick the button names what it re-centres on",
+      !!fit && /^Recenter on /.test(fit.textContent) && /Welding/.test(fit.textContent),
+      fit && fit.textContent);
+
+    // 3 · the whole row opens the course, and the chip stays inert
+    const row = q("#u-detail ul.idlist > li");
+    const want = row.querySelector("[data-go]").dataset.go;
+    row.querySelector(".sub").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    await tick();
+    check("(15) ⭐ clicking anywhere in a row opens that course", st().sel === want,
+      `${st().sel} vs ${want}`);
+    w.__ccrGoSuggestion({ kind: "subject", isl: U.islands[0] });
+    await tick();
+    const held = st().sel, chip = q("#u-detail ul.idlist > li .chip");
+    if (chip) chip.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+    await tick();
+    check("(15) ⚠️ but the identity chip stays inert, so its tooltip survives",
+      st().sel === held, `${held} -> ${st().sel}`);
+
+    // 4 · a carried course drops on a destination in the panel
+    const target = U.islands[0].p.find((nd) => nd.i === "WELD M1000");
+    w.__ccrGoSuggestion({ kind: "course", isl: U.islands[0], nd: target, label: target.t });
+    await tick();
+    const mv = q("#u-detail .mv"), dest = q("#u-detail .idlist.sim [data-go]");
+    check("(15) the panel holds a draggable course and a destination at once", !!mv && !!dest);
+    const before = st().moves.length;
+    mv.click(); await tick();
+    check("(15) picking one up says so where the destinations are",
+      /Carrying/.test(q("#u-detail").textContent), q("#u-detail").textContent.slice(0, 60));
+    const to = dest.dataset.go;
+    dest.click(); await tick();
+    check("(15) ⭐ clicking a destination MOVES the carried course instead of navigating",
+      st().moves.length === before + 1 && st().moves[st().moves.length - 1].to === to,
+      `moves ${before} -> ${st().moves.length}`);
+
+    // 7 · the skip link, inside the element full screen paints
+    const full = q("#u-full"), skip = q(".u-skip");
+    const FOC = 'a[href],button:not([disabled]),input:not([disabled]),select,textarea,summary,[tabindex]:not([tabindex="-1"])';
+    check("(15) ⭐ a skip link reaches the map, and it is the first stop inside #u-full",
+      !!skip && skip.getAttribute("href") === "#u-cvs" && full.contains(skip) &&
+      [...full.querySelectorAll(FOC)].indexOf(skip) === 0,
+      skip ? "present" : "missing");
+  }
+  // 6 · Enter runs the search and leaves the answer on screen
+  {
+    const gq = q("#gq"), form = q("#msearch");
+    gq.value = "weld";
+    gq.dispatchEvent(new w.Event("input", { bubbles: true }));
+    await tick();
+    check("(15) the list is open before Enter", !q("#sug").hidden);
+    form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+    await tick();
+    check("(15) ⭐ Enter no longer hides the answer — the list stays up",
+      !q("#sug").hidden, q("#sug").hidden ? "closed" : "open");
+    check("(15) …with the first row highlighted, so the next Enter opens it",
+      q("#gq").getAttribute("aria-activedescendant") === "sug-0",
+      q("#gq").getAttribute("aria-activedescendant"));
+  }
+
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });
