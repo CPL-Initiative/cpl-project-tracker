@@ -299,6 +299,27 @@ jobs:
           ( python3 kb/_build_ccr_universe.py --shards-only && bash scripts/publish_skyview_desc_shards.sh ) \
             || echo "::warning title=SkyView shards not published::kb/_build_ccr_universe.py --shards-only or the storage upload failed — SkyView course descriptions may lag the corpus until the next run. Check the step log."
 
+      # ── Step 4d2: SkyView's decision payload ──────────────────────
+      # Sam's ruling, 2026-09-06: rebuild the ATLAS payload nightly, leave the
+      # universe LAYOUT hand-rebuilt. It had not been rebuilt since 2026-08-24,
+      # and by 09-06 89 of the 593 identity ids in its five decision packs (15%)
+      # resolved to nothing through the alias chain — a curator could be offered
+      # a decision about a course that no longer exists under that id.
+      #
+      # ⚠️ prototype/skyview.html is rebuilt with it because the atlas payload is
+      # INLINE in the served page (only the universe and its members are
+      # fetched), so regenerating the JSON alone never reaches the deployed page.
+      # That is NOT a layout rebuild: ccr_universe.json is untouched here and
+      # stays hand-built, which is the half of the ruling that says no.
+      - name: Rebuild SkyView's decision payload (when the corpus changed)
+        run: |
+          if git diff --quiet HEAD -- unified_courses_data.js \
+                                     unified_courses_members.js \
+                                     unified_courses_suggestions.js; then
+            echo "Unified-courses artifacts unchanged — atlas payload left as built."; exit 0; fi
+          ( python3 kb/_build_ccr_atlas_extract.py && python3 prototype/build_ccr_atlas.py ) \
+            || echo "::warning title=SkyView decision payload not rebuilt::kb/_build_ccr_atlas_extract.py or prototype/build_ccr_atlas.py failed — the Decisions column and the decision packs may lag the corpus until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -329,6 +350,10 @@ jobs:
           git add cpl_pathways_membership_data.js 2>/dev/null || true
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+          # SkyView's decision payload + the served page that inlines it (Step
+          # 4d2). ccr_universe.json is deliberately NOT here — the layout is
+          # hand-rebuilt (Sam, 2026-09-06).
+          git add prototype/ccr_atlas_data.json prototype/skyview.html 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay

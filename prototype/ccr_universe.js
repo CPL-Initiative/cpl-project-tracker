@@ -1344,6 +1344,13 @@ window.__ccrUniverse = function(opts){
 
   view_el.innerHTML =
     '<section class="u-full" id="u-full" aria-label="SkyView — the Common Course Reference as a map">'+
+      /* ⭐ THE MAP IS THE FIRST STOP FOR ANYONE WHO WANTS IT (Sam, item 7,
+       * 2026-09-06). The canvas already carries tabindex="0" and sits 39 tab
+       * stops in — reachable, but a long way past the controls for the main
+       * thing on the page. It lives INSIDE #u-full because browser full screen
+       * paints that element and nothing else, so a link in the masthead would
+       * not exist here at all. */
+      '<a class="u-skip" href="#u-cvs">Skip to the map</a>'+
       /* Controls ABOVE the canvas and the legend and hint BELOW it, all inside the
        * full-screen element, so nothing floats over the map (Sam, 2026-09-03:
        * "move the zoom and other buttons and popups outside the SkyView window so
@@ -2699,21 +2706,44 @@ function renderTokens(){
      * nothing, which is most of the chip's surface. Kind included, because the
      * clipped word is often the half that says WHICH "Introduction to…" this is. */
     var full=tokenShort(t)+" · "+t.label;
-    return '<span class="u-tok" data-key="'+esc(t.key)+'" title="'+esc(full)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
-      '<span class="u-tok-l">'+esc(t.label)+'</span>'+
+    /* ⭐ THE LABEL IS A CONTROL (Sam, item 2, 2026-09-06). The chips sit where a
+     * trail of breadcrumbs would sit and read as one, but the only working
+     * control inside a chip was its ×, so the only way back to a pick you had
+     * navigated away from was to search for it again. The label now re-centres
+     * on that pick and opens its panel; the × keeps its own job. */
+    return '<span class="u-tok" data-key="'+esc(t.key)+'" title="'+esc(full)+'">'+
+      '<button type="button" class="u-tok-go" data-key="'+esc(t.key)+
+        '" aria-label="Go back to '+esc(t.label)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
+        '<span class="u-tok-l">'+esc(t.label)+'</span></button>'+
       '<button type="button" class="u-tok-x" aria-label="Remove '+esc(t.label)+' from the selection" title="Remove">\u00d7</button></span>';
   }).join("")+(tokens.length
     /* ⚠️ ONE pick needs this button too (Sam's ruling 3). It used to render only
      * at tokens.length>1, so with a single selection the only view control was
      * ↺ — and ↺ resets to the whole universe, which is what it is FOR. You could
      * pick a course and have no way back to it. */
+    /* ⭐ THE BUTTON NAMES ITS TARGET (Sam, item 5, 2026-09-06). It acts on the
+     * CHIP, not on what the panel is showing, and "Recenter" alone is ambiguous
+     * once the reader has drilled two levels past the pick — "this" is then not
+     * what they are looking at. Naming the pick removes the ambiguity without
+     * adding a control, which is the glyph rule doing its work. */
     ? '<button type="button" class="u-tok-act" id="u-tok-fit" title="'+
-        (tokens.length>1 ? 'Fit every pick into view' : 'Recenter the map on this pick')+'">'+
-        (tokens.length>1 ? 'Fit all' : 'Recenter')+'</button>'+
+        (tokens.length>1 ? 'Fit every pick into view'
+                         : (tokens[0].label ? 'Recenter the map on '+esc(tokens[0].label)
+                                            : 'Recenter the map on this pick'))+'">'+
+        (tokens.length>1 ? 'Fit all'
+                         : (tokens[0].label ? 'Recenter on '+esc(trunc(tokens[0].label, 20))
+                                            : 'Recenter'))+'</button>'+
       (tokens.length>1 ? '<button type="button" class="u-tok-act" id="u-tok-clear" title="Drop every pick">Clear</button>' : '')
     : '');
   Array.prototype.forEach.call(host.querySelectorAll(".u-tok-x"), function(b){
     b.addEventListener("click", function(){ removeToken(b.parentNode.getAttribute("data-key")); });
+  });
+  Array.prototype.forEach.call(host.querySelectorAll(".u-tok-go"), function(b){
+    b.addEventListener("click", function(){
+      var k=b.getAttribute("data-key");
+      var t=tokens.filter(function(x){ return x.key===k; })[0];
+      if(t){ applyTokens(t); setHint("Back on <strong>"+esc(t.label)+"</strong>."); }
+    });
   });
   var cl=host.querySelector("#u-tok-clear"); if(cl) cl.addEventListener("click", function(){ clearTokens(); setHint("Selection cleared."); });
   var ft=host.querySelector("#u-tok-fit"); if(ft) ft.addEventListener("click", function(){ window.__ccrFitSelection(); });
@@ -2864,6 +2894,24 @@ function chipFor(nd){
   return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+
     '" title="'+esc(SYSWHY[nd.s]||SYSWHY[3])+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
 }
+/* ⭐ THE ROW IS THE TARGET (Sam, item 3, 2026-09-06). A course row carries a
+ * title, a code, member counts and a chip, and only the title opened it — one
+ * hit target in a bordered row whose area is mostly not it. The title stays the
+ * accessible name and the keyboard path is unchanged; the rest of the row now
+ * routes to the same button.
+ * ⚠️ The identity-system chip keeps its own tooltip and stays inert, per the
+ * caveat Sam ruled on: a whole-row click would otherwise swallow a hover a
+ * reader may want. Buttons inside the row keep their own jobs. */
+function wireRowClicks(ul){
+  if(!ul) return;
+  ul.addEventListener("click", function(e){
+    var t=e.target;
+    if(t.closest("button, a, input, .chip")) return;   // a real control, or the chip
+    var li=t.closest("li"); if(!li || !ul.contains(li)) return;
+    var go=li.querySelector("[data-go]");
+    if(go) go.click();
+  });
+}
 function goNode(id){
   var h=nodeById(id); if(!h) return;
   selNode=h.nd; selIsl=h.isl; memFilter="";
@@ -2896,6 +2944,7 @@ function showIsland(isl){
   Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
     b.addEventListener("click", function(){ goNode(b.dataset.go); });
   });
+  wireRowClicks(el.querySelector("ul.idlist"));
   var b=document.getElementById("u-open-work");
   if(b) b.addEventListener("click", function(){ window.__ccrDiscipline(b.dataset.d); });
   resetPanelScroll();
@@ -3122,13 +3171,18 @@ function renderNode(){
             (x.nd.ar?" · "+num(x.nd.ar)+" articulation"+(x.nd.ar===1?"":"s"):"")+"</div></li>";
         }).join("");
     });
+    var carrying = drag && drag.kind==="course";
     h+='<h4 style="margin:.9em 0 .3em">Similar courses in '+esc(isl.d)+" ("+num(sims.length)+')</h4>'+
-      '<p class="sub">Courses here whose titles share most of their words with this one, '+
-      'beginning first. A level comes from the title; where the title does not say, it is not guessed.</p>'+
+      '<p class="sub">'+(carrying
+        ? 'Carrying <strong>'+esc(drag.code)+'</strong> — click any course below to move it there. '+
+          '<kbd>Esc</kbd> puts it back.'
+        : 'Courses here whose titles share most of their words with this one, '+
+          'beginning first. A level comes from the title; where the title does not say, it is not guessed.')+'</p>'+
       '<ul class="idlist sim">'+body+"</ul>"+
       (sims.length>shown?'<p class="sub">Showing '+num(shown)+' of '+num(sims.length)+'.</p>':"");
   }
   el.innerHTML=h;
+  wireRowClicks(el.querySelector("ul.idlist.sim"));
   var bk=document.getElementById("u-back-isl");
   if(bk) bk.addEventListener("click", function(){
     selNode=null; showIsland(isl); draw();
@@ -3149,8 +3203,21 @@ function renderNode(){
       renderNode();
     });
   });
+  /* ⭐ A CARRIED COURSE CAN BE DROPPED HERE (Sam, item 4, 2026-09-06). The carry
+   * hint has always said "drop it on the identity it belongs to, or click that
+   * identity", and until the Similar courses list shipped the panel never held a
+   * draggable course and a destination at once — so every move went across the
+   * canvas. The destinations are here now; this is what makes them accept one.
+   * Navigating away mid-carry was the old behavior and it silently abandoned the
+   * move. */
   Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
-    b.addEventListener("click", function(){ goNode(b.dataset.go); });
+    b.addEventListener("click", function(){
+      if(drag && drag.kind==="course" && b.dataset.go!==nd.i){
+        applyMove(drag.cn, drag.code, drag.college, b.dataset.go, drag.d);
+        return;
+      }
+      goNode(b.dataset.go);
+    });
   });
   Array.prototype.forEach.call(el.querySelectorAll("[data-accept], #u-accept"), function(b){
     b.addEventListener("click", function(){
@@ -3178,8 +3245,16 @@ function renderNode(){
       if(e.button!==0) return;
       if(pickUp()) { e.preventDefault(); }
     });
-    b.addEventListener("click", function(){ if(!(drag&&drag.kind==="course")) { if(pickUp()) cvs.focus(); } });
-    b.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); if(pickUp()) cvs.focus(); } });
+    /* ⚠️ THE PANEL HAS TO REPAINT, OR THE DESTINATIONS NEVER SAY THEY ACCEPT ONE.
+     * pickUp() sets `drag`, hints and redraws the CANVAS; the Similar courses
+     * prose that offers the drop is rendered by renderNode(), so without this
+     * the reader is carrying a course and the only list of places to put it
+     * still reads as a list of things to go and look at. Caught by the suite.
+     * ⚠️ Only on the click and keyboard paths: the pointerdown path is starting
+     * a real drag across the canvas, and rebuilding the panel under the pressed
+     * pointer would take the button out from under it. */
+    b.addEventListener("click", function(){ if(!(drag&&drag.kind==="course")) { if(pickUp()){ renderNode(); cvs.focus(); } } });
+    b.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); if(pickUp()){ renderNode(); cvs.focus(); } } });
   });
 }
 function applyMove(cn, code, college, toId, d){
