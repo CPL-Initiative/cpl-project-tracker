@@ -5556,3 +5556,29 @@ fixture was too small to reproduce either defect
 ⚠️ **Measuring the sheet corrected three claims, two of them mine to Sam** — the payloads do *not* disagree
 by 43 on screen; the canvas is 39 tab stops in, not 217; and `ALIAS_MAPS` is a list of **paths**, so an
 unloaded `resolve_id()` resolved nothing and direct and chain agreed EXACTLY — the tell. Stories: `ccr_atlas_lessons`; handoff `session_234_handoff`.
+
+---
+
+## S234 — a screen recording, measured in a browser (2026-09-06)
+
+*Moved verbatim from `CLAUDE.md` §11 by S235 (Rule 9: at most two session narratives inline).*
+
+**PRs #1498-#1501.** The **`video-context` skill** watches a recording entirely on the machine holding it
+(`kb/_video_context.py`; the cloud denies the file's hosts AND Whisper's weights). Sam drove SkyView 6m50s;
+⭐ **two defects measured in Chromium, invisible to jsdom**: the dropdown drops **36px, one row height**, when
+the chip row wraps at pick 4 — ruling 3's `scrollTop` fix holds as designed and the complaint's other axis is
+the list's *position on screen* — and **double-click strands** because `discipline()` never calls
+`syncHash()`, breaking Back, `hashchange`, the Views menu and refresh together. ⚠️ **Sam retracted a finding
+on camera**; that passage is S233's fix working. 2 KB notes. Triage: `skyview_video2_findings`; handoff
+`session_235_handoff`.
+
+### S235 — the outline of record, and the three rulings (2026-09-06)
+
+**PR #1502.** ⭐ **THE COURSE OUTLINE IS BUILT** — planned three times, built zero. `#outline/<id>`, six
+layers, the unfillable ones present and empty. The description is **chosen, never written** (the medoid
+member catalog description, attributed); skills are **imputed** from the colleges' own words because we hold
+**zero** agency skill statements; **two level axes, neither derived**. Sam's three rulings shipped: Enter
+closes the panel, double-click opens the outline, the chip row reserves its space. ⚠️ **A triage can describe
+a defect exactly and name the wrong element** — the 36px drop is `.sugwrap`, not `#u-bar`, and a fix aimed at
+`#u-bar` would have read as correct and changed nothing. ⚠️ **The picks died leaving the map, not returning
+to it.** 4 `cpl_memory` rows (log verified); handoff `session_236_handoff`.
