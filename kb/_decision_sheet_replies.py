@@ -106,7 +106,14 @@ REPLIES_CSS = r"""
     border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
     color: var(--text-body); cursor: pointer; }
   .reply-chip:hover { background: var(--surface-subtle); }
-  .reply-chip[aria-pressed="true"] { background: var(--seal-blue); border-color: var(--seal-blue); color: #fff; }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
   .reply-chip.reply-fu { margin-left: auto; }
   .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
   .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
