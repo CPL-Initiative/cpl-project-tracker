@@ -6779,7 +6779,7 @@
      ],
      "title": "Playbook \u2014 auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)",
      "type": "playbook",
-     "updated": "2026-09-05"
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-07-20",
@@ -12042,7 +12042,7 @@
      "tags": [
       "handoff"
      ],
-     "title": "the outline is still unbuilt, and one payload is twelve days stale",
+     "title": "the outline is still unbuilt, and the queue is clear again",
      "type": null,
      "updated": "2026-09-06"
     },

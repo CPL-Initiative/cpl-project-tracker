@@ -118,14 +118,19 @@ worth **testing hard** — just do not file it as an undiscovered bug.
   wrong. An earlier draft of this brief quoted the COBI pair here, and a session
   that measured the universe payload against it reported the brief as off by
   ~4,000 when both figures were correct for their own file.
-- **The two payloads disagree per discipline, and that is expected.** Universe
-  against atlas: **117 of 158 disciplines differ**, total gap 1,904, net −6,
-  with `(no discipline yet)` 955 *lower* in the universe. They are not two views
-  of one build — they are **two builds twelve days apart** (`_generated_from`
-  says `2026-08-24 15:34` and `2026-09-05 15:22`), spanning the authority
-  recode, the Z-band retirement and the prefix fold. Nothing rebuilds the atlas
-  payload on a schedule. Do not file the 117 as a defect; the staleness itself
-  is the finding, and it is already logged.
+- **The two payloads can disagree per discipline, and that is a build gap, not
+  a defect.** Measured 2026-09-06, before the fix: **117 of 158 disciplines
+  differed**, total gap 1,904, net −6, with `(no discipline yet)` 955 *lower*
+  in the universe — not two views of one build but **two builds twelve days
+  apart** (`_generated_from` said `2026-08-24 15:34` against `2026-09-05
+  15:22`), spanning the authority recode, the Z-band retirement and the prefix
+  fold. **The daily run now rebuilds the atlas payload** (Sam's ruling 1,
+  2026-09-06; `daily-dashboard.yml` step 4d2, which rebuilds `skyview.html`
+  with it because that payload is inlined in the served page). The universe
+  **layout** stays hand-built by design, so the two are no longer twelve days
+  apart but they are still built by different triggers. If you see a
+  per-discipline disagreement, check both `_generated_from` stamps before
+  filing anything.
 - **Course descriptions may not load** if the page is opened from a local file
   instead of the web. The mechanism is not a server flag: the shards are fetched
   **cross-origin from Supabase Storage**, which a `file://` page cannot do

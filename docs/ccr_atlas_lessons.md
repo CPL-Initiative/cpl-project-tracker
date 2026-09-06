@@ -1685,7 +1685,7 @@ written to forbid it, and reverting `DESC_BASES` to the fixed order shows
 `ccr_desc/welding.json` fetched ahead of the bucket in the test's own output.
 That is what the 404 looked like.
 
-### Still open from the log
+### Still open from the log — *all closed the next morning; see the 2026-09-06 (morning after) section*
 
 Logged, not fixed: the token chips read as breadcrumbs but only their `×` is a
 control (**§2.2** — they are a pick list, not a location, and Sam should decide
@@ -1788,3 +1788,70 @@ flows. Levels are read from the title because that is the only place we hold
 them (44% of Welding's 512 titles carry one), and a course whose title does not
 say is listed last rather than guessed at — course level and skill level are
 different axes and neither is derived from the other.
+
+
+## 2026-09-06 (morning after) — SkyBuild S233: seven rulings, and three numbers of mine that were wrong
+
+Sam asked for a decision sheet covering the payload-rebuild question and the five
+SkyView calls left with him, answered all seven `yes` in one sitting with no edits
+and no follow-ups, and they shipped as PR #1494. The engineering is in the commit;
+what belongs here is what **measuring for the sheet** turned up.
+
+⭐ **THREE CLAIMS DID NOT SURVIVE BEING MEASURED, AND TWO OF THEM I HAD ALREADY TOLD
+SAM.** The sheet's rule is that every item carries measured context rather than a
+guess, and applying that rule to my own carryover is what caught them:
+
+- **"The map and the discipline tables can differ by 43 on one screen."** They
+  cannot. `disciplineRows()` takes its identity and stand-alone counts from the
+  **universe** payload; the stale atlas file supplies only the Decisions column, the
+  work-surface offer and a provenance tooltip. The claim had been written into the
+  lane, the handoff, `CLAUDE.md`, the To-Do feed and the brief before anyone read
+  the function. ⚠️ **The staleness was still real and still worth the ruling** — it
+  just cost something else: of the 593 identity ids in the five embedded decision
+  packs, **89 (15%) resolve to nothing** through the alias chain, worst in Fire
+  Technology at 32 of 136. A curator could be offered a decision about a course that
+  no longer exists under that id. The right finding was one function away from the
+  wrong one, and the wrong one was more alarming, which is presumably why it stuck.
+- **"The canvas sits behind 217 tab stops."** 39, and it already carried
+  `tabindex="0"`. Inherited from the observation log and repeated without counting.
+- **"Dropping `fetch-depth: 0` saves ~650 min/month."** Mine, from first principles,
+  and the job log disproved it in one read: TruffleHog was already scanning
+  `base → head`, 45 chunks, 66 KB. The 3 minutes are 75s of `git fetch`, 8s of
+  `docker pull` and 88s of detector startup — none of it scan depth. Narrowing the
+  fetch would have saved ~60s and risked leaving `BASE` unreachable, at which point
+  the scanner covers nothing and still reports green.
+
+⚠️ **`ALIAS_MAPS` IS A LIST OF PATHS, AND PASSING IT UNLOADED FAILS SILENTLY.**
+`resolve_id(id, ALIAS_MAPS)` does not error; it resolves nothing. The tell was in the
+output and nearly went past me: direct and chained liveness agreed **EXACTLY** at 440.
+Two numbers produced by two different code paths do not land on the same integer.
+`load_maps()` first gives 504 live / 89 dead. Rule 7 already says resolve through the
+chain before comparing to the live set; it now also matters *how*.
+
+⭐ **A FILTER MUST BE TESTED IN BOTH DIRECTIONS, AGAINST REAL COMMITS.** The
+`paths-ignore` draft for CodeQL looked obviously right and was wrong twice: it missed
+`reports/**` and `veteran_jst.json`, so it would never have fired on an actual cron
+push and would have saved nothing; and a bare `kb/**` skipped
+`kb/_build_ccr_universe.py` and `kb/alias_chain.py` — real Python source, and a
+genuine coverage regression. Both were found by replaying the globs over the last
+cron pushes AND over a list of files that must still be analyzed. Asserting the
+globs would have caught neither. The same shape as the fixture lesson from the night
+before: a check that only ever runs the case you expect confirms your expectation.
+
+⚠️ **AND THE FAILURE MODE UNDERNEATH ALL OF IT.** Three times in one run I read one
+thing carefully and missed the adjacent field that falsified it — the payload figure
+(right for the file it named), `mergeable_state` (sitting in a PR payload I had
+already fetched twice while diagnosing missing CI as a dropped webhook, when Sam's
+screenshot showed a merge conflict), and the `fetch-depth` theory. The reading was
+careful each time. What was missing was the second look at what sat beside it.
+
+⚠️ **AND ONE PROCEDURAL GAP, FOUND BY CHECKING RATHER THAN BY FAILING.** The
+previous night's checkpoint wrote 8 `cpl_memory` rows, said so in its commit body,
+and logged **none** of them to `cpl_memory_log`. The log is a separate
+`insert ... select`, so skipping it is invisible from the `cpl_memory` side, and no
+test can see it — the sandbox cannot reach `*.supabase.co`, so the suite has no
+view of that table at all. It was found only because this run happened to group the
+log by slug. Backfilled with late-entry notes, and the playbook now carries a
+one-query verification as part of step 6. **A step whose omission produces no error
+and no failing test is not a step; it is a hope.**
+

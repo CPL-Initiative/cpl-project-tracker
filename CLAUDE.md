@@ -789,24 +789,17 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyBuild S233 — the observation log worked, then Sam drove it (2026-09-06)
+### SkyBuild S233 — sixteen findings triaged, then Sam drove it, then seven rulings (2026-09-06)
 
-**PR #1493.** A computer-use session logged **sixteen findings** against S232's brief; **four were
-real** (panel scroll on drill-in; ⭐ *no way back* and *Escape only works from the keyboard* were **one
-defect** — the keyboard cursor was set only by the Tab/Enter path, so the back path existed and was
-unreachable by mouse; a **guaranteed 404 per discipline** from a base that cannot exist on the deployed
-host; the identity chip's missing title). **Two were not defects**, and ⚠️ **the finding ranked first was
-the most wrong** — the brief's figure was right for the file it named and the session had measured a
-different payload ([KB note](docs/kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md)).
-⚠️ **Found while reproducing it: the atlas payload is TWELVE DAYS older than the universe payload and
-nothing rebuilds it** — that is the whole 117-discipline disagreement, and the map and the discipline
-tables can differ by 43 on one screen. **NEEDS SAM.** Then Sam drove it: the hover returned the
-**identity** card on 14 of 30 courses; the purple canvas is the **membership glow** at 983px, not the
-focus disc; `weldi` lost *Introduction to Welding* because tiers tested the string start only; Hide
-died on the next pick; the list is paged; and **Similar courses** ships, ordered Beg → Int → Adv.
-⚠️ **Two guards passed with the fix deleted** — the fixture was too small to reproduce either defect
+**PRs #1493 · #1494 · #1495.** Of sixteen logged findings four were real; ⚠️ **two were not defects and the
+one ranked FIRST was the most wrong** — its figure was right for the file it named
+([KB note](docs/kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md)). Sam's five were all
+real, **two not what the report said**. ⭐ **Two guards passed with the fix deleted** — the
+fixture was too small to reproduce either defect
 ([KB note](docs/kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md)).
-Stories: `ccr_atlas_lessons`; handoff `session_234_handoff`.
+⚠️ **Measuring the sheet corrected three claims, two of them mine to Sam** — the payloads do *not* disagree
+by 43 on screen; the canvas is 39 tab stops in, not 217; and `ALIAS_MAPS` is a list of **paths**, so an
+unloaded `resolve_id()` resolved nothing and direct and chain agreed EXACTLY — the tell. Stories: `ccr_atlas_lessons`; handoff `session_234_handoff`.
 
 ## Troubleshooting
 
