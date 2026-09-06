@@ -46,15 +46,27 @@ what is broken or confusing, and write it down.**
 https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html
 ```
 
-That page has **no write path at all** — verified: two network calls, both
-plain reads. Dragging a course there stages the move in a list on the page and
-it vanishes on reload. **Nothing you do on that URL can change real data.**
+That page has **no write path at all** — verified: every network call is a
+plain GET. Dragging a course there stages the move in a list on the page and it
+vanishes on reload. **Nothing you do on that URL can change real data.**
+
+Load issues **three** fetches — `prototype/ccr_universe.json`,
+`prototype/ccr_universe_members.json` and `kb/discipline_canonical_subj4.json`
+(the third sits outside `prototype/`) — and opening a discipline adds one more
+for its description shard. Counting them is how you check the claim above, so
+the number has to be right.
 
 The same map also appears inside the main dashboard's CCR tab. **That one is
 different: signed in, a drag writes a real row to a shared curation table that
 the whole team sees.** Signed out it cannot write — the database refuses it. So:
 
 - Stay on the `prototype/skyview.html` URL for anything hands-on.
+- ⚠️ **The prototype hands you the door out.** Its `⋮` menu holds a link
+  **"CCR table view ↗"** pointing at COBI's `index.html` — the writable surface,
+  on the **same origin**, so following it raises no prompt and changes only the
+  path. **Do not follow it.** A rule that says "use the prototype URL" does not
+  cover a link the prototype offers you two clicks from anywhere, and this is
+  the likeliest way to cross the boundary by accident.
 - If you look at the dashboard version for comparison, **do not sign in**, and
   do not enter any phrase, code or password you are offered.
 - If you find yourself signed in somehow, **stop dragging courses** and say so
@@ -92,11 +104,33 @@ worth **testing hard** — just do not file it as an undiscovered bug.
 
 ## Known and expected — not bugs
 
-- **The map does not contain every course.** The browser gets about 16,480 of
-  76,008; the rest are deliberately not shipped, because fifty thousand dots are
-  a smear. A course you cannot find is usually this, not a defect.
+- **The map does not contain every course.** SkyView draws **49,896 points —
+  16,478 course identities and 33,418 stand-alone courses — out of 71,959
+  identities** in the reference. The rest are deliberately not shipped, because
+  fifty thousand dots are a smear. A course you cannot find is usually this, not
+  a defect.
+- ⚠️ **THREE PAYLOADS CARRY IDENTITY COUNTS, AND A FIGURE IS ONLY WRONG
+  RELATIVE TO THE ONE IT NAMES.** `CPL_CCR_UNIVERSE.counts` (16,478 identities)
+  is what the map draws; `CPL_ATLAS_DATA.totals` (16,484 in browser, 71,959
+  total) feeds the discipline tables; and COBI's `unified_courses_data.js`
+  carries `count_inbrowser: 16480` / `count_total: 76008` — a fourth surface
+  **SkyView never loads**. Read the payload's name before calling its number
+  wrong. An earlier draft of this brief quoted the COBI pair here, and a session
+  that measured the universe payload against it reported the brief as off by
+  ~4,000 when both figures were correct for their own file.
+- **The two payloads disagree per discipline, and that is expected.** Universe
+  against atlas: **117 of 158 disciplines differ**, total gap 1,904, net −6,
+  with `(no discipline yet)` 955 *lower* in the universe. They are not two views
+  of one build — they are **two builds twelve days apart** (`_generated_from`
+  says `2026-08-24 15:34` and `2026-09-05 15:22`), spanning the authority
+  recode, the Z-band retirement and the prefix fold. Nothing rebuilds the atlas
+  payload on a schedule. Do not file the 117 as a defect; the staleness itself
+  is the finding, and it is already logged.
 - **Course descriptions may not load** if the page is opened from a local file
-  instead of the web. On the URL above they should work.
+  instead of the web. The mechanism is not a server flag: the shards are fetched
+  **cross-origin from Supabase Storage**, which a `file://` page cannot do
+  because its origin is opaque. If they fail on a served page, check bucket
+  reachability and CORS, not your web server.
 - **Some courses have no articulation count** — absent means "none recorded",
   which is not the same as zero, and the page shows nothing rather than a `0`.
 
@@ -146,6 +180,28 @@ and it might be that the two are counting different things. Write both, marked.
 ⚠️ **If you cannot reproduce something, still log it** — with `Reproducible: no`
 and how many times you tried. A one-off is worth knowing about; a one-off
 reported as reliable is not.
+
+⚠️ **REPRODUCE AN INHERITED NUMBER BEFORE YOU CORRECT IT.** If a figure in this
+brief disagrees with what you measure, find the source the brief was quoting and
+read it, then say which surface each number describes. Two figures that
+disagree are usually two different things counted correctly — that has now
+happened twice on this page, which carries three separate identity counts.
+Correcting a correct number sends the next session chasing a shortfall that
+does not exist.
+
+## Two traps in the harness, not in SkyView
+
+Both cost a previous session real time, and both look exactly like defects.
+
+- **Coordinate clicks can land offset.** Clicks aimed at one control have landed
+  on a neighbour ~45px away while `elementFromPoint` confirmed the intended
+  button was topmost at that coordinate. A programmatic `.click()` on the
+  element worked immediately. Prefer DOM-dispatched events; treat anything
+  driven by pixel coordinates as suspect.
+- **Screenshots can return the top-left quadrant magnified** when
+  `devicePixelRatio` is 2. It reads exactly like the map zoomed itself in.
+  **Check the in-page magnification readout before filing a zoom or layout
+  defect** — that readout is what caught it last time.
 
 ## When you are done
 

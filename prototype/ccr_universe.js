@@ -49,8 +49,26 @@ var descCache={}, descState={};      // shard -> {cn: [desc, title, units]} · s
  * bucket `ccr-desc` serves the deployed page (Sam, 2026-08-24: "I expect we'll
  * put the shards on supabase"). The shards are 50 MB of derived text and are
  * NOT committed, so a page on GitHub Pages has only the bucket. */
+/* Named, and exposed on the debug state, so the per-host contract is testable
+ * without standing up a second window just to change the URL. */
+function descBasesFor(hostname){
+  var local  = "ccr_desc";
+  var bucket = "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc";
+  /* ⚠️ ORDER BY WHERE THE PAGE IS SERVED FROM, or the first base can never win.
+   * The shards are NOT committed, so on the deployed site ./ccr_desc cannot
+   * exist and every discipline paid one guaranteed 404 — which downloads a 5 KB
+   * GitHub 404 page — before the fetch that works. Measured 2026-09-06: three
+   * disciplines, three 404s, ~350 ms of pure latency, and a network panel that
+   * reads like a broken page to anyone debugging something else. A working tree
+   * served by `python3 -m http.server` is the ONLY place the directory exists,
+   * so try it there and nowhere else. file:// has no hostname and keeps the
+   * local order — descriptions cannot cross-origin from there anyway. */
+  var h = hostname || "";
+  var isLocal = !h || h === "localhost" || h === "127.0.0.1" || h === "[::1]" || h === "::1";
+  return isLocal ? [local, bucket] : [bucket, local];
+}
 var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
-  ["ccr_desc", "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc"];
+  descBasesFor((window.location && window.location.hostname) || "");
 /* The canonical seed (kb/discipline_canonical_subj4.json) carries, per
  * discipline, the Common SUBJ and the authority chips of item 19 (Sam,
  * 2026-09-03): the verbatim C-ID / CCN code where it differs from ours, and a
@@ -67,6 +85,28 @@ var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
  * openInspector() still opens it on the first click of a node, so selecting a
  * course shows its details exactly as before; only the INITIAL state changed. */
 var inspOpen=false;
+/* The keyboard model's cursor, assigned by wire(). ⚠️ EVERY selection path
+ * routes through it — mouse, search, panel link, keyboard — so Escape backs out
+ * of a selection however it was made. It used to be set ONLY by the Tab/Enter
+ * path, which made two separate reports of the same defect: a mouse user who
+ * pressed Escape (as the footer hint tells them to, unconditionally) got
+ * nothing, because kbInside was still false; and an identity opened by clicking
+ * a title in the discipline panel had no way back to that discipline at all.
+ * Observed 2026-09-06. */
+var kbSync=null;
+/* ⚠️ ENTRY POINTS ONLY — never renderNode(). Opening an identity puts a
+ * document the reader has never seen underneath a scroll offset they chose for
+ * a different one: from 600 the panel landed below the new course's title,
+ * code, units and articulation line (observed 2026-09-06, reproduced 2/2). But
+ * renderNode() also fires on every filter keystroke, description toggle and
+ * staged move, and resetting there would throw the reader to the top mid-task —
+ * which is precisely the friction Sam reported in the search list on
+ * 2026-09-05 (ruling 3a). Reset where the DOCUMENT changes, not where it
+ * repaints. */
+function resetPanelScroll(){
+  var el=document.getElementById("u-detail");
+  if(el) el.scrollTop=0;
+}
 /* What a drag does (Sam, 2026-09-03: "need chips or icons to choose whether to
  * move an item or reposition the focus — when zoom, I couldn't see how to move
  * the screen to keep the subject in view"). "move" carries a course or a
@@ -148,7 +188,7 @@ var NODE_ZOOM=0.20;
  * the GAP between circles was therefore constant at every zoom, which is why
  * zooming in never helped pick one course out of a crowded orbit. Worse, a
  * 100-course identity at k=40 would draw at a 508px radius and push the very
- * neighbours he wants to drag from off the screen.
+ * neighbors he wants to drag from off the screen.
  *
  * So above RAD_KNEE the radius grows with the SQUARE ROOT of the zoom while
  * positions keep scaling linearly: the courses spread apart relative to their
@@ -242,6 +282,17 @@ var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
          ["#E7EEF9","#0047AB","C-ID","official statewide"],
          ["#FBF1D8","#8B6800","CCN","official statewide"],
          ["#EFEFEC","#5C5C55","unified","synthetic course"]];
+/* ⚠️ THE MOST REPEATED CHIP ON THE SURFACE HAD THE LEAST TO SAY. The two chips
+ * beside it — the authority code and "proposed" — cite the ruling and its date;
+ * this one carried no title at all, on 13 of the 16 chips in a typical panel
+ * (observed 2026-09-06). "M-ID — our working label" names the system without
+ * saying what follows from it: who may re-key it, and whether it is a statewide
+ * claim. That is the part a faculty reviewer needs. */
+var SYSWHY=[
+  "Our own working number, minted by the Common Course Reference. We may re-key it — it asserts no statewide equivalence.",
+  "An ASCCC C-ID: an official statewide number. Nobody here may re-key it.",
+  "A Common Course Numbering (CCN) number: an official statewide number. Nobody here may re-key it.",
+  "A synthetic row standing in for a course identity. It carries no minted number of its own."];
 /* why-bits on an orbiting point — mirrors kb/_build_ccr_universe.py */
 var WHY=[[1,"the same local subject code"],[4,"words in common in the title"],
          [2,"the same SUBJ4"],[8,"the same TOP code"],[16,"the same units"],
@@ -882,6 +933,21 @@ function starPath(cx, cy, r, points){
 function emitsLight(nd){ return !!nd && !nd.a && (nd.n||0) > 1; }
 function haloAround(cx, cy, r, color){
   if(r < 2.2) return;                        // below this it is a smudge, not a glow
+  /* ⚠️ A GLOW IS A GLOW UNTIL IT IS THE BACKGROUND. It reaches r*2.6, and r is
+   * the drawn radius, which grows with the zoom — so opening a well-adopted
+   * identity painted its system color across the entire viewport at 30% alpha
+   * and the charcoal canvas simply turned violet. Sam, 2026-09-06: "the
+   * background of SkyView changes to purple (which we recently made darker)
+   * instead of staying the same charcoal as the opening view… changes when a
+   * search item is selected."
+   *
+   * The signal is "colleges have joined this one" (his own rule — a loner has
+   * not earned its wings), and that reads perfectly well from a glow around the
+   * disc. It does not need the whole screen, and past a certain size the reader
+   * stops seeing a glow at all and just sees a tinted page. Capped so the light
+   * always falls off inside the canvas. */
+  var reach=Math.max(24, Math.min(cw(), ch())*0.22);
+  if(r*2.6 > reach) r = reach/2.6;
   var g;
   try{ g = ctx.createRadialGradient(cx, cy, r*0.6, cx, cy, r*2.6); }catch(e){ return; }
   g.addColorStop(0, color);
@@ -910,7 +976,7 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   if(focus){
     /* Sam, 2026-09-05: "probably no labels should transect the CCR circle."
      * The disc is the one thing on screen the reader is studying, and a
-     * neighbour's name laid across it is read as belonging to it. Recording the
+     * neighbor's name laid across it is read as belonging to it. Recording the
      * disc as an OCCUPIED BOX before any label is placed makes the placer treat
      * it like another label — it will try its other corners, and drop rather
      * than stack, which is the behavior it already has for every real clash. */
@@ -922,7 +988,19 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
      * reader is looking hardest at a single course said nothing about which
      * system names it. Tinted at low alpha: enough to read as M-ID violet,
      * C-ID blue or CCN mustard, never enough to fight the stars on top of it. */
-    ctx.beginPath(); ctx.arc(p[0],p[1],R0+(rings-1)*15+10,0,6.2832);
+    /* ⚠️ THE DISC IS A DISC, NOT A BACKGROUND. Its radius grows with the member
+     * count (R0 carries `spread`, and every ring adds 15), so on a well-adopted
+     * course at reading zoom it simply exceeded the viewport and the tint
+     * stopped reading as "this identity is an M-ID" and started reading as "the
+     * canvas is purple now" — Sam, 2026-09-06: "the background of SkyView
+     * changes to purple instead of staying the same charcoal as the opening
+     * view… changes when a search item is selected." Clamped so the canvas
+     * always shows around it: a disc you can see the edge of is a disc, and the
+     * charcoal stays the charcoal. The ring itself is unclamped — a member star
+     * may sit outside the disc, which is honest about there being more of them
+     * than the ground can hold. */
+    var haloR=Math.min(R0+(rings-1)*15+10, Math.max(40, Math.min(cw(), ch())*0.42));
+    ctx.beginPath(); ctx.arc(p[0],p[1],haloR,0,6.2832);
     ctx.fillStyle=pal.haloFill; ctx.fill();
     ctx.save(); ctx.globalAlpha=ctx.globalAlpha*0.13;
     ctx.fillStyle=sys[1]; ctx.fill(); ctx.restore();
@@ -1142,7 +1220,7 @@ function placeNodeLabels(queue, boxes){
      * The leader line already existed (his 2026-09-03 ask) and was not doing the
      * job, for two reasons the drawing makes obvious once you look at a crowded
      * island: it was a faint 1px hairline at 35% that vanishes among its
-     * neighbours, and it STOPPED IN SPACE at the label's corner, so the eye had
+     * neighbors, and it STOPPED IN SPACE at the label's corner, so the eye had
      * to guess which of several nearby lines belonged to which text.
      *
      * Three cheap changes, no new colour: a DOT where the leader meets its
@@ -1198,6 +1276,24 @@ function pick(px,py){
         var d=Math.hypot(px-p[0],py-p[1]);
         if(d<=rad+3 && d<fd){ found=nd; fd=d; inside=d<=rad; }
       }
+      /* ⚠️ THE OPEN IDENTITY'S MEMBERS WIN OVER A NEIGHBOR'S CIRCLE. The rule
+       * below is right on the open map and wrong the moment an identity is
+       * opened for reading: its ring SPREADS (drawMembers, `spread`) out over
+       * its neighbors, so a member star routinely sits inside some other
+       * identity's circle and resolved to that identity instead. Measured
+       * 2026-09-06 with the pointer exactly on each drawn star: **110 of 120
+       * returned an identity card, 10 the member card** — so a reader opening a
+       * course to read its college courses got the same card on nearly every
+       * one of them, which is what Sam reported ("all showed the same
+       * descriptor for the welding discipline instead of course details").
+       * Reading those courses is the entire purpose of the ring, so a focused
+       * identity's own members outrank the circle they happen to overlap.
+       * `lastFocus` is the set draw() just used, so hit-testing and painting
+       * cannot disagree about what is open. */
+      if(lastFocus){
+        var fmem=pickMember(px,py,function(mp){ return !!lastFocus[mp.nd.i]; });
+        if(fmem) return fmem;
+      }
       // A pointer INSIDE the nearest identity's circle means that identity, even
       // where a neighbor's ring of squares crosses it; a square wins in the open.
       if(found && inside) return {isl:isl,nd:found};
@@ -1209,12 +1305,20 @@ function pick(px,py){
   }
   return pickMember(px,py)||best;
 }
-function pickMember(px,py){
+/* NEAREST wins, not first-scanned. Rings overlap where a spread ring crosses a
+ * neighbor's, and returning whichever star happened to be drawn last handed
+ * the reader a course from the identity they were not pointing at. `only`
+ * narrows the search — the open identity's own ring asks for itself, so a
+ * neighbor's star cannot shadow the course the reader is reading. */
+function pickMember(px,py,only){
+  var best=null, bestD=1e9;
   for(var mi=memberPts.length-1; mi>=0; mi--){
     var mp=memberPts[mi];
-    if(Math.abs(px-mp.x)<=6 && Math.abs(py-mp.y)<=6) return {isl:mp.isl, nd:mp.nd, mem:mp.m};
+    if(only && !only(mp)) continue;
+    var dx=Math.abs(px-mp.x), dy=Math.abs(py-mp.y);
+    if(dx<=6 && dy<=6 && dx+dy<bestD){ bestD=dx+dy; best=mp; }
   }
-  return null;
+  return best?{isl:best.isl, nd:best.nd, mem:best.m}:null;
 }
 
 /* ── the view ─────────────────────────────────────────────────────────────── */
@@ -1515,6 +1619,28 @@ function suggest(raw, limit, order){
   });
   if(ord==="name") subs.sort(function(a,b){ return a.label.toLowerCase()<b.label.toLowerCase() ? -1 : 1; });
   else subs.sort(function(a,b){ return a.tier-b.tier || b.n-a.n || a.label.localeCompare(b.label); });
+  /* ⚠️ TYPING MORE OF A WORD MUST NOT DELETE A MATCH THE SHORTER TERM FOUND.
+   * Sam, 2026-09-06: 'Try "weldi" after you initially try "weld" and you'll see
+   * that there is no intro course in the list.' Measured: "weld" returns
+   * Introduction to Welding FIRST, "weldi" returns it nowhere.
+   *
+   * The cause is that the tiers were tested against the STRING start only. For
+   * "weld" every Welding identity is a prefix match on its ID ("weld m1109"),
+   * so all 549 sit in tier 1 and sort by adoption — the 24-college intro course
+   * wins. One more character and the id stops matching: only the 109 titles
+   * beginning "Weldi…" are tier 1, they fill all 60 slots, and the 299 titles
+   * where the word "Welding" appears later — the intro courses among them —
+   * never reach the list at all.
+   *
+   * So a term that begins a WORD ranks with one that begins the string. Both
+   * mean "the reader typed this word"; which word of the title it happens to be
+   * is not a relevance signal, and treating it as one made the ranking unstable
+   * under a keystroke. Adoption still orders within the tier, so the answer for
+   * "weld", "weldi" and "welding" is now the same course. A match inside a word
+   * ("elding") stays tier 2, which is the distinction that was actually wanted. */
+  var wordRe=null;
+  try{ wordRe=new RegExp("\\b"+term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); }catch(e){ wordRe=null; }
+  var startsWord=function(t){ return !!(wordRe && wordRe.test(t)); };
   // Course identities and stand-alones by title or number; identities first.
   var pts=[];
   for(var i=0;i<U.islands.length;i++){
@@ -1522,7 +1648,8 @@ function suggest(raw, limit, order){
     for(var j=0;j<I2.p.length;j++){
       var nd=I2.p[j];
       var lt=(nd.t||"").toLowerCase(), li=nd.i.toLowerCase();
-      var tier=(li===term||lt===term)?0:(li.indexOf(term)===0||lt.indexOf(term)===0)?1:
+      var tier=(li===term||lt===term)?0:
+               (li.indexOf(term)===0||lt.indexOf(term)===0||startsWord(lt)||startsWord(li))?1:
                (lt.indexOf(term)>=0||li.indexOf(term)>=0)?2:-1;
       if(tier<0) continue;
       pts.push({tier:tier+(nd.a?0.5:0), n:nd.n||0, isl:I2, nd:nd});
@@ -1657,10 +1784,26 @@ function suggest(raw, limit, order){
   out.more = (subs.length-want[0]) + (pts.length-want[1]) + (mems.length-want[2]);
   return out;
 }
+/* The drawn stars' screen positions. The hit test is the only way a reader
+ * reaches a college course on the canvas, and it was silently handing back the
+ * wrong card for most of them (2026-09-06); without the coordinates a harness
+ * can only scan blindly and hope. ⚠️ Deliberately NOT part of
+ * __ccrUniverseState(): prototype/check_ccr_atlas.js serializes that whole
+ * object across the CDP bridge several times per run, and this array is one
+ * entry per drawn star. */
+window.__ccrMemberPoints = function(){
+  return memberPts.map(function(mp){ return {x:mp.x, y:mp.y, id:mp.nd.i, code:mp.m.n}; });
+};
 window.__ccrSuggest = suggest;
 window.__ccrTipHtml = tipHtml;
 
-function openInspector(){ if(!inspOpen) setInspector(true); }
+/* ⚠️ A PANEL THE READER HID STAYS HIDDEN. openInspector() fires on every
+ * selection, so pressing Hide and then picking anything put it straight back —
+ * Sam, 2026-09-06: "the side bar unhid (and does so every time I add a course)."
+ * Hide is an instruction about the workspace, not about one course. Cleared the
+ * moment they open it again by any route, so the panel is never stuck shut. */
+var inspHidden=false;
+function openInspector(){ if(!inspOpen && !inspHidden) setInspector(true); }
 /* The panel's width: remembered per browser, clamped to what the stage can
  * spare, applied as a custom property the CSS reads for the flex basis. */
 var inspW=0; try{ inspW=parseInt(localStorage.getItem("skyview:sidebar-w")||"0",10)||0; }catch(e){}
@@ -1734,7 +1877,7 @@ function goSuggestionSingle(s){
   searchTerm=String(s.label||"").toLowerCase();
   /* Item 10: "When you do keyword search and select a Course, zoom to 1000% and
    * maintain focus on the course in the centre of the universe." That is the
-   * magnification where one course stands clear of its neighbours while they
+   * magnification where one course stands clear of its neighbors while they
    * stay on screen to drag it between — the reason the zoom cap was raised past
    * 900% in the first place. Well above NODE_ZOOM either way: a single identity
    * flown to at a zoom that draws no nodes is a ring nobody can see. */
@@ -1807,7 +1950,7 @@ window.__ccrUniverseState = function(){
           tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
-          descBases:DESC_BASES.slice(), descState:descState,
+          descBases:DESC_BASES.slice(), descBasesFor:descBasesFor, descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
           // The zoom ceiling and the radius taper are here because a canvas
           // radius cannot be queried from the DOM, and the taper is the half of
@@ -2015,9 +2158,9 @@ function wire(){
   paintShow(); syncCreditWord();
 
   var tg=document.getElementById("u-insp-toggle");
-  if(tg) tg.onclick=function(){ setInspector(!inspOpen); };
+  if(tg) tg.onclick=function(){ inspHidden=inspOpen; setInspector(!inspOpen); };
   var hb=document.getElementById("u-insp-hide");
-  if(hb) hb.onclick=function(){ setInspector(false); };
+  if(hb) hb.onclick=function(){ inspHidden=true; setInspector(false); };
   wireInspGrip(); paintInspWidth();
   /* ⚠️ PAINT THE STATE, NEVER HARDCODE IT IN THE MARKUP. `inspOpen` is module
    * memory and survives a re-render; the markup is rebuilt from scratch. Writing
@@ -2263,6 +2406,17 @@ function wire(){
     if(kbIsl<0 || !kbInside) kbSubject(dir);
     else kbIdentity(dir);
   }
+  /* Point the cursor at whatever was just selected, however it was selected.
+   * Idempotent for the keyboard path itself: kbSubject/kbIdentity set these and
+   * then call showIsland/showNode, which land back here with the same values. */
+  kbSync=function(isl, nd){
+    if(!U || !isl){ kbIsl=-1; kbNode=-1; kbInside=false; return; }
+    var i=U.islands.indexOf(isl);
+    if(i<0) return;
+    kbIsl=i;
+    if(nd){ kbInside=true; kbNode=isl.p.indexOf(nd); }
+    else   { kbInside=false; kbNode=-1; }
+  };
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
     if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
@@ -2640,10 +2794,75 @@ function showMenuHtml(){
     '</div></details>';
 }
 
+/* ── similar courses, and the level ladder ───────────────────────────────────
+ * Sam, 2026-09-06: "Would be great if the side bar details could show courses
+ * similar to the selected courses in order… all the beg intros followed by int
+ * intros."
+ *
+ * ⚠️ THE LEVEL WORD IS THE LADDER, SO IT MUST NOT DRIVE THE SIMILARITY. If
+ * "Beginning" and "Advanced" counted as title words, the two rungs of one
+ * course would score as LESS alike than two unrelated beginning courses — and
+ * the ladder is the whole point of the section. They are stripped before
+ * scoring and read back afterwards.
+ *
+ * Levels are read from the title because that is the only place we hold them:
+ * 44% of Welding's 512 titles carry one (109 beginning · 61 intermediate · 54
+ * advanced, 288 unmarked). A course with no level word is listed last under a
+ * plain heading rather than guessed at — course level and skill level are
+ * different axes and neither is derived from the other. */
+var LEVEL_ORDER=["Beginning","Intermediate","Advanced"];
+/* Tested most-specific first: an "Advanced" course may still say "basic". */
+var LEVEL_TESTS=[["Advanced",/\badvanced?\b/i],
+                 ["Intermediate",/\bintermediate\b/i],
+                 ["Beginning",/\b(?:beginning|beginner|basics?|elementary)\b/i]];
+function courseLevel(t){
+  var v=String(t==null?"":t);
+  for(var i=0;i<LEVEL_TESTS.length;i++) if(LEVEL_TESTS[i][1].test(v)) return LEVEL_TESTS[i][0];
+  return null;
+}
+var SIM_STOP={to:1,of:1,the:1,and:1,for:1,in:1,on:1,with:1,an:1,its:1,from:1};
+var SIM_LEVEL=/^(?:advanced?|intermediate|beginning|beginner|basics?|elementary)$/;
+function titleTokens(t){
+  var out={}, n=0;
+  String(t==null?"":t).toLowerCase().replace(/[^a-z0-9]+/g," ").split(" ").forEach(function(x){
+    if(x.length<3 || SIM_STOP[x] || SIM_LEVEL.test(x)) return;
+    var k=x.replace(/s$/,"");
+    if(!out[k]){ out[k]=1; n++; }
+  });
+  out.__n=n;
+  return out;
+}
+var simCache={};
+/* Dice over the same lightly stemmed tokens the builder scores orbits with, so
+ * "similar" means here what it means everywhere else on this surface. Cached by
+ * id: renderNode() runs on every keystroke of the member filter, and a
+ * discipline holds up to 1,176 identities. */
+function similarTo(nd, isl){
+  if(!nd || nd.a || !isl) return [];
+  if(simCache[nd.i]) return simCache[nd.i];
+  var mine=titleTokens(nd.t||nd.i), keys=Object.keys(mine), out=[];
+  if(mine.__n){
+    isl.p.forEach(function(o){
+      if(o===nd || o.a || o.i===nd.i) return;
+      var theirs=titleTokens(o.t||o.i);
+      if(!theirs.__n) return;
+      var hit=0;
+      for(var i=0;i<keys.length;i++) if(keys[i]!=="__n" && theirs[keys[i]]) hit++;
+      if(!hit) return;
+      var score=(2*hit)/(mine.__n+theirs.__n);
+      if(score<0.34) return;              // one shared word out of many is not a peer
+      out.push({nd:o, score:score});
+    });
+  }
+  simCache[nd.i]=out;
+  return out;
+}
+
 /* ── panels ─────────────────────────────────────────────────────────────── */
 function chipFor(nd){
   var s=SYS[nd.s]||SYS[3];
-  return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
+  return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+
+    '" title="'+esc(SYSWHY[nd.s]||SYSWHY[3])+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
 }
 function goNode(id){
   var h=nodeById(id); if(!h) return;
@@ -2654,6 +2873,7 @@ function goNode(id){
 }
 function showIsland(isl){
   openInspector();
+  if(kbSync) kbSync(isl, null);
   var el=document.getElementById("u-detail");
   var idents=isl.p.filter(function(p){ return !p.a; });
   var top=idents.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
@@ -2678,6 +2898,7 @@ function showIsland(isl){
   });
   var b=document.getElementById("u-open-work");
   if(b) b.addEventListener("click", function(){ window.__ccrDiscipline(b.dataset.d); });
+  resetPanelScroll();
 }
 /* The work surface (the grouped decision view) exists for a few subjects only.
  * The button says so rather than doing nothing. */
@@ -2706,7 +2927,9 @@ function showNode(nd, isl, keepFilter){
   selNode=nd; selIsl=isl;
   if(!keepFilter) memFilter="";
   openInspector();
+  if(kbSync) kbSync(isl, nd);
   renderNode();
+  resetPanelScroll();
   loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
 }
 function memberRow(m, isl, nd, moved){
@@ -2752,7 +2975,16 @@ function renderNode(){
   // leads the list, ahead of the page cap (MUS 180 carries 850 courses; a row
   // appended at the end of that would be on a page nobody opens).
   mine.sort(function(a,b){ return ((movedTo[a.cn]===nd.i)?0:1) - ((movedTo[b.cn]===nd.i)?0:1); });
-  var h="<h3>"+esc(nd.t||nd.i)+"</h3>"+
+  /* ⭐ THE CLICK PATH BACK. A reader who opened this identity from the
+   * discipline panel had no way to return to it: the token chips look like
+   * breadcrumbs but only their × is a control, and the ⋮ menu's "doors out" are
+   * doors to other VIEWS, not a step up. Re-searching the discipline by name
+   * was the only route (observed 2026-09-06). Escape does it too now that the
+   * cursor is synced, but only while the canvas holds focus — and after a click
+   * in the panel it does not. A word, not a glyph. */
+  var h=(isl?'<p class="sub" style="margin:0 0 .4em"><button type="button" class="linkish" '+
+    'id="u-back-isl">Back to '+esc(isl.d)+'</button></p>':"")+
+    "<h3>"+esc(nd.t||nd.i)+"</h3>"+
     "<p>"+chipFor(nd)+' <span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+
     esc(unitsWord(nd.u))+" · "+num(total)+" college course"+(total===1?"":"s")+" carried"+
     (nd.a?' · <span class="chip mut" title="A single college\'s course that has not been '+
@@ -2850,7 +3082,57 @@ function renderNode(){
       }).join("")+"</ul>"+
       (orbs.length>cap?'<p class="sub">Showing '+cap+' of '+num(orbs.length)+' — zoom in on the map for the rest.</p>':"");
   }
+  /* The level ladder: the same course at beginning, intermediate and advanced,
+   * in that order, with the unmarked last under their own heading. Adoption
+   * orders within a rung, as it does everywhere else on this surface. */
+  var sims=similarTo(nd, isl);
+  if(sims.length){
+    var SIM_CAP=24;
+    var groups={}, order=LEVEL_ORDER.concat(["Level not stated"]);
+    order.forEach(function(L){ groups[L]=[]; });
+    sims.forEach(function(x){ groups[courseLevel(x.nd.t)||"Level not stated"].push(x); });
+    /* ⚠️ EVERY RUNG GETS A SHARE, OR THE LADDER IS ONE RUNG. Filling the cap in
+     * order gave the first level all 24 slots and the reader never saw that an
+     * intermediate or advanced version existed — which is the one thing the
+     * section is for. Same shape as the suggestion budget: a floor each, then
+     * whatever a rung cannot fill flows to the others. */
+    var present=order.filter(function(L){ return groups[L].length; });
+    var quota={}, spare=SIM_CAP;
+    present.forEach(function(L){
+      quota[L]=Math.min(groups[L].length, Math.max(3, Math.floor(SIM_CAP/present.length)));
+      spare-=quota[L];
+    });
+    for(var pass=0; pass<2 && spare>0; pass++)
+      present.forEach(function(L){
+        var add=Math.min(spare, groups[L].length-quota[L]);
+        if(add>0){ quota[L]+=add; spare-=add; }
+      });
+    var shown=0, body="";
+    order.forEach(function(L){
+      var g=groups[L];
+      if(!g.length) return;
+      g.sort(function(a,b){ return (b.nd.n||0)-(a.nd.n||0) || b.score-a.score; });
+      var take=g.slice(0, quota[L]||0); if(!take.length) return; shown+=take.length;
+      body+='<li class="sim-h"><span class="sub">'+esc(L)+'</span></li>'+
+        take.map(function(x){
+          return '<li><button type="button" class="ttl linkish" data-go="'+esc(x.nd.i)+'">'+
+            esc(x.nd.t||x.nd.i)+'</button> '+chipFor(x.nd)+
+            '<div class="sub">'+esc(x.nd.i)+" · "+num(x.nd.n||0)+" member"+((x.nd.n||0)===1?"":"s")+
+            (x.nd.u!=null?" · "+esc(unitsWord(x.nd.u)):"")+
+            (x.nd.ar?" · "+num(x.nd.ar)+" articulation"+(x.nd.ar===1?"":"s"):"")+"</div></li>";
+        }).join("");
+    });
+    h+='<h4 style="margin:.9em 0 .3em">Similar courses in '+esc(isl.d)+" ("+num(sims.length)+')</h4>'+
+      '<p class="sub">Courses here whose titles share most of their words with this one, '+
+      'beginning first. A level comes from the title; where the title does not say, it is not guessed.</p>'+
+      '<ul class="idlist sim">'+body+"</ul>"+
+      (sims.length>shown?'<p class="sub">Showing '+num(shown)+' of '+num(sims.length)+'.</p>':"");
+  }
   el.innerHTML=h;
+  var bk=document.getElementById("u-back-isl");
+  if(bk) bk.addEventListener("click", function(){
+    selNode=null; showIsland(isl); draw();
+  });
   var f=document.getElementById("u-mfilter");
   if(f) f.addEventListener("input", function(){
     memFilter=f.value; renderNode();

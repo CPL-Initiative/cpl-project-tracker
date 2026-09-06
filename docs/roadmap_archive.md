@@ -5520,3 +5520,17 @@ legend's colors inside the packed footprint, the islands spread ×1.22 at load, 
 checkbox picks, a sidebar grip, no Search button.**
 ⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`). Stories: `ccr_atlas_lessons`,
 `cobi_memory_tab_lessons`; handoff `session_231_handoff`.
+
+### SkyOutline S232 — one alias chain, and the eight rulings executed (2026-09-05)
+
+**Two PRs (#1490, #1491)** clearing all eight queued rulings. ⭐ **The chain is declared ONCE now**
+(`kb/alias_chain.py`, a CI guard, a PUSH line under Rule 7): its copy carried **7 maps against 15**
+under a comment promising lockstep. ⚠️ **Ruling 4 mostly evaporated on measurement** — the worklist
+is rebuilt nightly (0 dead; re-keying it would have MOVED 1,197 live ids) and `course_id` was already
+current-era; only the `identities` map was stale (1,369 re-keyed). S231's death figures came from the
+browser payload, which ships 16,480 of 76,008 rows. ⭐ **The near-miss:** 175 identities are C-ID,
+which an M-ID catalog cannot hold, so S229's plan condemned them **by construction** — 172 live, 662
+records, one `--apply` away, all five gates passing. Ruling 5's worklist is what made it visible.
+Also: `doctrine.py --read` + the **consult-doctrine** skill, SkyView's three frictions, articulation
+counts on the map, a merge queue that writes nothing, and ruling 2 routed through Governance.
+Stories: `ccr_atlas_lessons`; handoff `session_233_handoff`.

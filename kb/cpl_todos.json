@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-05",
-  "_session": "232 (SkyOutline) — all eight queued rulings executed; the alias chain declared once, and a plan that would have deleted 172 live identities caught before it ran",
-  "_status": "Sam ruled eleven items on 2026-09-05 and this run executed the eight that were queued, across two PRs. The alias chain — the list of applied re-mint receipts every stored id must be resolved through — now lives in exactly one file with a CI guard; it had been copy-pasted, and the copy was eight applies behind under a comment promising it would stay in step. Measuring with that shared resolver overturned most of what the re-key ruling assumed: the credit-recommendation worklist is rebuilt every morning so it cannot go stale, and re-keying it would have moved 1,197 live course ids off their rows. One surface genuinely was stale and is now fixed. The important catch is that the plan we inherited would have deleted 172 live course identities carrying 662 articulation records — it judged C-ID courses against a catalog that can only hold M-IDs, so they all came out 'dead' automatically, and every safety check still passed because those checks confirm the result is tidy, not that the plan made sense. SkyView also gained articulation counts, three interface fixes Sam asked for, and a merge-candidate queue that deliberately writes nothing. Next: build the course outline.",
+  "_as_of": "2026-09-06",
+  "_session": 233,
+  "_status": "SkyView got two rounds of scrutiny on 2026-09-06 and came out of both with real fixes. A computer-use session logged sixteen findings: four were genuine and are fixed — the details panel no longer drops you into the middle of a course you just opened, there is now a way back from a course to its discipline (Escape only ever worked if you had arrived by keyboard), every discipline stopped paying a wasted failed download before its descriptions load, and the M-ID chip explains what it means. Two of its findings were not defects at all, and the one it ranked most serious was wrong in an instructive way: it 'corrected' a figure that was already right for the file it named, having measured a different one. Chasing that down found something nobody had noticed — one of the two data files behind the map is twelve days older than the other, which is why the discipline tables and the map can disagree, and that needs a decision. Sam then drove SkyView himself and reported five more: hovering a college course showed the same card every time, the background turned purple when you picked something, typing one more letter of 'welding' made the main intro course vanish from the search, the side panel reopened itself after you hid it, and the results list stopped at 60. All five are fixed, and the panel now also lists similar courses in level order, beginning before advanced.",
   "items": [
     {
       "id": "s232-sam-outline-sources",
@@ -23,12 +23,6 @@
       "text": "The re-mint approval view is designed and routed through Governance, not built. You approve candidates and the cron applies them; there is no fire button, because a re-mint cannot be undone the way an ordinary correction can. Worth a read before it is built — it names what each candidate must show you, including what the plan was checked against, which is exactly the thing that was missing this week."
     },
     {
-      "id": "s232-sam-numbers-corrected",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Two figures from the last session were wrong and are corrected: welding credit-recommendation ids are not 27% dead, they are 0% dead, and articulation ids are 7.5% dead rather than 22%. Both were measured against the map's browser view, which carries 16,480 of 76,008 courses, so anything not drawn read as retired. Nothing was lost — the data was fine all along."
-    },
-    {
       "id": "s232-fable-build-outline",
       "for": "Fable",
       "tab": "unified-courses",
@@ -45,6 +39,24 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "docs/roadmap_archive.md is 575 KB against a 150 KB budget — the largest thing the docs lint flags, and pure history. It is a safe compaction whenever a session has spare room."
+    },
+    {
+      "id": "s233-sam-payload-staleness",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Two data files sit behind SkyView and one is twelve days older than the other, so the discipline tables and the map can report different counts for the same discipline — 43 apart on Health. Nothing rebuilds the older one on a schedule. This is your standing question about whether the daily run should rebuild the map's layout, now with a visible cost. Until you decide, we rebuild both together or neither."
+    },
+    {
+      "id": "s233-sam-skyview-design-calls",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Five smaller SkyView items are design calls rather than bugs, so they are yours: the search chips look like a trail you can click back through but only their × does anything; only a course's title is clickable in a list row, not the whole row; a course you have picked up has nowhere to drop it inside the panel, only on the map; Recenter re-centres on the chip rather than on what the panel is showing; and pressing Enter in the search closes the suggestions instead of keeping them open."
+    },
+    {
+      "id": "s233-fable-similar-courses-next",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The panel's new Similar courses list reads levels out of course titles, which is the only place we hold them — 44% of welding titles say beginning, intermediate or advanced and the rest say nothing. When the course outline lands, feed its level field back into this list so the ladder stops depending on the wording of a title."
     }
   ]
 }

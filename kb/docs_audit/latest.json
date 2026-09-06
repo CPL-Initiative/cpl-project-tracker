@@ -10,48 +10,48 @@
     "other": 150000
   },
   "summary": {
-    "files": 808,
-    "bytes": 8635677,
+    "files": 811,
+    "bytes": 8679955,
     "over_budget": 5,
-    "handoff_max": 233,
+    "handoff_max": 234,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60126,
+    "always_loaded_bytes": 60670,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60126,
+        "bytes": 60670,
         "over": 1
       },
       "other": {
         "files": 105,
-        "bytes": 2621061,
+        "bytes": 2626360,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 19312,
+        "bytes": 21938,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1990541,
+        "bytes": 2003946,
         "over": 1
       },
       "kb_note": {
-        "files": 391,
-        "bytes": 2035127,
+        "files": 393,
+        "bytes": 2043907,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 162675,
+        "bytes": 168864,
         "over": 1
       },
       "handoff": {
-        "files": 207,
-        "bytes": 1746835,
+        "files": 208,
+        "bytes": 1754270,
         "over": 0
       }
     },
@@ -61,14 +61,14 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2814,
-      "bytes": 1388934303,
-      "heavy_bytes": 679206632,
-      "heavy_share": 0.489,
+      "files": 2659,
+      "bytes": 1336364654,
+      "heavy_bytes": 626567848,
+      "heavy_share": 0.469,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/unified_courses_member_desc.js",
@@ -120,13 +120,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60126,
+        "bytes": 60670,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 126,
-        "ratio": 1.0
+        "over_by": 670,
+        "ratio": 1.01
       },
-      "message": "60,126 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,670 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -339,26 +339,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 32206,
+        "bytes": 38395,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 20206,
-        "ratio": 2.68
+        "over_by": 26395,
+        "ratio": 3.2
       },
-      "message": "32,206 B is 2.7× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "38,395 B is 3.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 575467,
+        "bytes": 576622,
         "limit": 150000,
         "lane": "other",
-        "over_by": 425467,
+        "over_by": 426622,
         "ratio": 3.84
       },
-      "message": "575,467 B is 3.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "576,622 B is 3.8× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -446,22 +446,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 77690287,
-        "kind": "dir"
-      },
-      "message": "directory totals 77,690,287 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
         "kind": "dir"
       },
       "message": "directory totals 51,991,148 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 25051503,
+        "kind": "dir"
+      },
+      "message": "directory totals 25,051,503 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
