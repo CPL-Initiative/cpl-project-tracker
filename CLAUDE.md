@@ -42,7 +42,9 @@ finished_workstreams · `lanes/` (see the stubs below).
 `description` rather than by a pointer: **consult-doctrine** (what has this repo
 already decided about the files I am reading — the answer to a rule that only
 fires when remembered), **exhibit-canonicalization** (collapsing freehand MAP
-exhibit titles into unified credential names) and **obsidian-markdown**. They are
+exhibit titles into unified credential names), **video-context** (watching a
+screen recording locally — frames plus a transcript that never leaves the
+machine) and **obsidian-markdown**. They are
 named here because a store nobody names is a store nobody finds —
 `unreferenced_offload` flags any that stop being.
 
