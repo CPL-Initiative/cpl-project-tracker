@@ -23,6 +23,51 @@ name: "CodeQL"
 on:
   push:
     branches: [main]
+    # The daily cron pushes to main three times a day and commits only
+    # REGENERATED artifacts — data files that happen to carry a .js extension
+    # (CPL_Data.js, unified_courses_*.js and credential_reference_data.js are
+    # megabyte-scale object literals, not code). CodeQL analysed every one of
+    # those pushes: 66 runs in the five days measured 2026-09-06, 501 minutes,
+    # for diffs that never contain a line a human wrote.
+    #
+    # ⚠️ This costs no coverage, and it is not the `paths:` mistake js-tests.yml
+    # warns about — CodeQL is not a PR check here (its pull_request trigger has
+    # been off since 2026-05-26), so nothing waits on it to report. The weekly
+    # schedule below still analyses the whole tree, secret-scan runs on every
+    # push to main regardless, and paths-ignore skips a push only when EVERY
+    # changed file matches — one real source file and the run happens.
+    paths-ignore:
+      - 'CPL_Dashboard.html'
+      - 'index.html'
+      - 'CPL_Data.js'
+      - 'unified_courses_*.js'
+      - 'credential_reference_data.js'
+      - 'cpl_funding_ess.js'
+      - 'cpl_funding_performance.js'
+      - 'cpl_pathways_membership_data.js'
+      - 'college_activity.js'
+      - 'college_activity_template.html'
+      - 'fact-sheet/statewide_recs.js'
+      - 'statewide_data.js'
+      - 'statewide_prescriptive.js'
+      # ⚠️ NOT a bare 'kb/**': that would skip kb/_build_*.py and the rest of
+      # the Python under kb/, which is real source and exactly what CodeQL is
+      # here for. Only the generated data and receipts under it are ignored.
+      - 'kb/**/*.json'
+      - 'kb/**/*.md'
+      - 'kb/**/*.tsv'
+      - 'kb/**/*.csv'
+      - 'exports/**'
+      - 'reports/**'
+      - 'veteran_jst.json'
+      - 'docs/**'
+      # Named rather than '*.json': a blanket root glob would also skip a
+      # package.json-only push, and a dependency change is exactly the kind
+      # of push worth analysing.
+      - 'live_metrics.json'
+      - 'kpi_history.json'
+      - 'fact_sheet_metrics.json'
+      - 'CustomReport_latest.json'
   schedule:
     # Monday 06:00 UTC. Off-cycle from the daily cron (10:17 UTC) so they
     # don't compete for runners.
