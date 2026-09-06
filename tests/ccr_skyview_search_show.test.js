@@ -769,6 +769,16 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   }
   // 6 · Enter runs the search and leaves the answer on screen
   {
+    // ⚠️ The page closes the suggestion list 120ms after the search box loses
+    // focus (ccr_atlas_v1.html, `gqEl.addEventListener("blur", ...)`) — that is
+    // deliberate, so a click elsewhere dismisses it. Section 15 above clicks
+    // rows and move controls, which blurs the box the test focused at §11 and
+    // schedules that close. `tick()` is ONE macrotask, so on an idle machine the
+    // whole block finishes inside the 120ms and nobody notices; on a loaded
+    // runner the timer lands mid-block and the list is closed for a reason that
+    // has nothing to do with Enter. Measured: 7 of 24 concurrent runs failed
+    // here (113/116 and 114/116) before this wait, 0 of 24 after.
+    await new Promise((r) => setTimeout(r, 200));
     const gq = q("#gq"), form = q("#msearch");
     gq.value = "weld";
     gq.dispatchEvent(new w.Event("input", { bubbles: true }));
