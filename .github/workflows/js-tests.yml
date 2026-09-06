@@ -351,3 +351,13 @@ jobs:
         run: python3 tests/alias_chain_single_source_test.py
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)
         run: python3 tests/stop_hook_git_check_test.py
+      # Video context frame planner (Session 234) — scene detection is right for
+      # a screen capture and fails in opposite directions at both ends, silently:
+      # a read-through of one page emits almost no scene changes (a 20-minute
+      # walkthrough reduced to a title card), while a fade or an embedded video
+      # emits a burst that spends the whole frame budget inside three seconds.
+      # Guards the top-up, the minimum gap, the cap, chronological interleaving
+      # of speech and stills, and the mandatory YYYYMMDD_ deliverable prefix.
+      # Pure-stdlib python, no network, no ffmpeg.
+      - name: Video context frame planner (kb/_video_context.py)
+        run: python3 tests/video_context_test.py

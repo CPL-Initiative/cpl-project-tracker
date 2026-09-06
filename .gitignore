@@ -101,3 +101,6 @@ prototype/ccr_atlas_v1.built.html
 # Obsidian vault clone) for the same reason the built HTML is: it is an output,
 # not a source, and the vault pays for every megabyte on disk.
 prototype/ccr_desc/
+
+# video-context skill: extracted frames/transcripts (local working files)
+.video-context/
