@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-209 document(s).
+210 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 236 | [the outline is built; the next four asks are Sam's own](../session_236_handoff.md) | 2026-09-06 |
 | 235 | [the outline is STILL unbuilt, and now it has a ruling](../session_235_handoff.md) | 2026-09-06 |
 | 234 | [the outline is still unbuilt, and the queue is clear again](../session_234_handoff.md) | 2026-09-06 |
 | 233 | [build the course outline; the queue is clear](../session_233_handoff.md) | 2026-09-05 |
