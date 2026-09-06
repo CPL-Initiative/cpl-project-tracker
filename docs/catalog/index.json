@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 392,
+   "count": 393,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3113,6 +3113,25 @@
      "title": "An unadopted item is a shelf, not an absence \u2014 and it needs its own band",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "kb/_decision_sheet_replies.py",
+      "tests/decision_sheet_replies.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "accessibility",
+      "testing",
+      "first-light"
+     ],
+     "title": "An undefined CSS custom property fails to an invisible state, and no jsdom test can see it",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-07",
@@ -15636,5 +15655,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 798
+ "total": 799
 }

@@ -1,4 +1,4 @@
-<title>Seven Open Calls</title>
+<title>Welding Levels and Orbits</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
 <style>
   /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
@@ -144,206 +144,230 @@
 <div class="wrap">
 
 <p class="kicker">SkyBuild &middot; Session 233 &middot; 6 September 2026</p>
-<h1>Seven Open Calls</h1>
-<p class="lede">One decision about how the map&rsquo;s data is rebuilt, and six about how
-SkyView behaves. Every number below was measured this morning against the committed
-payloads and the built page &mdash; not carried over from last night&rsquo;s notes.</p>
+<h1>Welding Levels and Orbits</h1>
+<p class="lede">Five calls out of the Welding discipline, measured against the
+committed payload this afternoon. Four of them are one question wearing four
+hats: <strong>SkyView does not know what a proficiency level is.</strong></p>
 
 <div class="howto">
-  <p><strong>How to rule:</strong> use the chips on each item, or reply in chat by
-  number. <code>yes</code> accepts the proposal as written; override with
-  <code>edit: your wording</code>, <code>later</code>, or <code>dismiss</code>.</p>
-  <p>Example: <code>1 yes &middot; 3 edit: whole row, but keep the chip clickable &middot; 6 later</code></p>
+<p><strong>How to reply.</strong> Each call has chips — <em>yes</em>, <em>edit</em>,
+<em>fold</em>, <em>dismiss</em> — a note box, and a <em>Follow up</em> toggle.
+Answer by number; I execute the verdicts and commit the reasons.</p>
+<p class="quiet">Every figure below was measured from
+<code>prototype/ccr_universe.json</code> and <code>kb/_build_ccr_universe.py</code>,
+not estimated. Nothing here is drawn from the screen recording — that had not
+reached me when this was written, and its findings will be appended.</p>
 <!-- replies:start --><p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p><!-- replies:end --></div>
 
 <ul class="tally">
-  <li><b>1</b> data decision</li>
-  <li><b>4</b> small builds</li>
-  <li><b>2</b> shape rulings</li>
-  <li><b>2</b> corrections to what I told you</li>
+<li><b>512</b> points in Welding</li>
+<li><b>170</b> clustered identities</li>
+<li><b>342</b> stand-alones in orbit</li>
+<li><b>22%</b> of the state states a level</li>
+<li><b>1,272</b> cross-level orbits</li>
 </ul>
 
-<div id="sheet">
-
-<section class="group">
-<h2>The data decision</h2>
-<p class="subhead">This is the one with a cost attached. The rest are taste.</p>
+<h2 id="sheet">The calls</h2>
 
 <article class="card" id="i1">
-<header><span class="num">1</span><h3>Should the daily run rebuild the map&rsquo;s payloads?</h3><span class="chip ask">your call</span></header>
+<header><span class="num">1</span><h3>Two identities, one title, no relationship between them</h3><span class="chip ask">your call</span></header>
 <dl>
 <dt>What it is</dt>
-<dd>SkyView reads two generated files. One is rebuilt by hand and one has not been
-rebuilt since August, and nothing rebuilds either on a schedule &mdash; the daily
-workflow builds only the course-description shards.</dd>
-<dt>Measured this morning</dt>
+<dd>Two separate clustered identities carry a byte-identical title. Neither
+orbits the other; neither references the other. A curator searching the phrase
+gets both, with no way on the screen to tell why there are two.</dd>
+<dt>Measured</dt>
 <dd>
-<div class="tw" role="region" tabindex="0" aria-label="The two payloads, when each was built, and what each feeds"><table>
-<thead><tr><th scope="col">File</th><th scope="col">Built</th><th scope="col">What it feeds</th></tr></thead>
+<div class="tw" role="region" tabindex="0" aria-label="The two identical-title identity pairs in Welding"><table>
+<thead><tr><th scope="col">Title</th><th scope="col">Identity</th><th scope="col" class="n">Colleges</th></tr></thead>
 <tbody>
-<tr><td><code>ccr_universe.json</code></td><td>2026-09-05 15:22</td><td>the map, and every count on the workspace</td></tr>
-<tr><td><code>ccr_atlas_data.json</code></td><td><strong>2026-08-24 15:34</strong></td><td>the Decisions column and the decision packs</td></tr>
+<tr><td>Intermediate Shielded Metal Arc Welding (Stick Welding)</td><td><code>WELD M1052</code></td><td class="n">5</td></tr>
+<tr><td>Intermediate Shielded Metal Arc Welding (Stick Welding)</td><td><code>WELD M1054</code></td><td class="n">3</td></tr>
+<tr><td>Advanced Welding Applications</td><td><code>WELD M1009</code></td><td class="n">2</td></tr>
+<tr><td>Advanced Welding Applications</td><td><code>WELD M90AI</code></td><td class="n">1</td></tr>
 </tbody></table></div>
-<p>⚠️ <strong>I told you last night this made the map and the discipline tables
-disagree by 43 on Health. That was wrong</strong>, and reading the code this morning is
-what corrected it. The workspace builds its identity and stand-alone counts from
-<em>the universe</em> (<code>disciplineRows()</code> reads <code>I.n</code>); the stale
-file supplies only the <strong>Decisions</strong> column, the work-surface offer, and a
-provenance tooltip. The 117-discipline gap between the two files is real but nothing
-renders it side by side.</p>
-<p>What the staleness <em>does</em> cost, measured through the alias chain against the
-live catalog: the five embedded decision packs carry <strong>593 identity ids, of which
-504 (85%) resolve to something live and 89 (15%) resolve to nothing.</strong></p>
-<div class="tw" role="region" tabindex="0" aria-label="Decision packs and how many of their ids resolve to nothing"><table>
-<thead><tr><th scope="col">Decision pack</th><th scope="col" class="n">Packs</th><th scope="col" class="n">Ids</th><th scope="col" class="n">Resolve to nothing</th></tr></thead>
-<tbody>
-<tr><td>Fire Technology</td><td class="n">58</td><td class="n">136</td><td class="n">32</td></tr>
-<tr><td>Administration of Justice</td><td class="n">57</td><td class="n">106</td><td class="n">18</td></tr>
-<tr><td>Child Development / ECE</td><td class="n">52</td><td class="n">114</td><td class="n">18</td></tr>
-<tr><td>Automotive Technology</td><td class="n">56</td><td class="n">132</td><td class="n">11</td></tr>
-<tr><td>Welding</td><td class="n">35</td><td class="n">111</td><td class="n">11</td></tr>
-</tbody></table></div>
-<p class="quiet">A curator opening one of those packs can be offered a decision about a
-course that no longer exists under that id.</p></dd>
+<p class="quiet">Two groups, four identities, across the whole Welding discipline.
+Both are free-standing — the <code>o</code> field is absent on all four.</p>
+</dd>
 <dt>Proposed</dt>
-<dd class="ask"><strong>Split the answer.</strong> Rebuild <code>ccr_atlas_data.json</code>
-in the daily run &mdash; it is derived, it takes under a second, and 15% of what it
-currently offers a curator is stale. <strong>Leave the universe layout hand-rebuilt</strong>:
-it holds the map&rsquo;s coordinates, and a nightly reflow would move every island under
-curators mid-task without anyone asking for it. That answers your standing question
-&mdash; yes to the data, no to the layout &mdash; with the reason attached.</dd>
+<dd class="ask"><strong>Queue both as merge candidates for a faculty reviewer, and
+add an exact-title collision rule to the auditor.</strong> An identical title inside
+one discipline is not a judgment call about scope — it is either a merge or
+evidence that two genuinely different courses share a name, and a curator should
+be told which. It is cheap to detect and there are only two of them here, so the
+rule earns its place by catching the next one automatically.</dd>
+<dt>What it is not</dt>
+<dd>Not a session decision. Rule 7 and the re-mint playbook put the merge with a
+faculty reviewer; this only puts it in front of one.</dd>
 </dl>
-<!-- replies:start --><div class="reply" data-item="1" data-ref="Should the daily run rebuild the map&amp;rsquo;s payloads?" data-title="Should the daily run rebuild the map&amp;rsquo;s payloads?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
-</section>
-
-<section class="group">
-<h2>Four small builds</h2>
-<p class="subhead">Each is an afternoon at most. I left them because they change how the
-surface behaves, not whether it works.</p>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="Two identities, one title, no relationship between them" data-title="Two identities, one title, no relationship between them" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
 
 <article class="card" id="i2">
-<header><span class="num">2</span><h3>Make the search chips navigable</h3><span class="chip build">build</span></header>
+<header><span class="num">2</span><h3>The map suggests a home without looking at the level</h3><span class="chip ask">your call</span></header>
 <dl>
 <dt>What it is</dt>
-<dd>The chips above the map name what you have picked. They sit where a trail of
-breadcrumbs would sit and they look like one, but the only working control inside a chip
-is its <strong>&times;</strong>.</dd>
-<dt>Measured</dt>
-<dd>One chip renders one button, and that button removes the chip. The chip carries a
-full-title tooltip (your ruling of 5 September) but no click target. So the only way back
-to a pick you have navigated away from is to search for it again.</dd>
+<dd>A stand-alone course is parked in orbit around the identity it is most
+aligned to. That placement is a suggestion, never a curation decision — nothing
+is written and the point stays hollow. But it is the suggestion the reader sees,
+and it is one drag from being accepted. <strong>Proficiency level is not one of
+the signals that produces it.</strong> The scorer weighs the local subject code,
+Dice overlap of title words, and SUBJ4.</dd>
+<dt>Measured, statewide</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="Orbit suggestions where both course and host state a level"><table>
+<thead><tr><th scope="col">Orbit pairs where both sides state a level</th><th scope="col" class="n">Count</th></tr></thead>
+<tbody>
+<tr><td>Same level</td><td class="n">1,604</td></tr>
+<tr><td><strong>Different level</strong></td><td class="n"><strong>1,272 &mdash; 44%</strong></td></tr>
+<tr><td>Of those, two rungs apart (beginning against advanced)</td><td class="n">559</td></tr>
+</tbody></table></div>
+<p>The clearest single case is in Welding. <em>Introduction to Welding</em>
+(<code>WELD M1109</code>) carries <strong>45</strong> orbiting stand-alones, and
+<strong>six of them are Advanced</strong>:</p>
+<div class="tw" role="region" tabindex="0" aria-label="Advanced courses orbiting Introduction to Welding"><table>
+<thead><tr><th scope="col">Course</th><th scope="col">Title</th><th scope="col" class="n">Score</th></tr></thead>
+<tbody>
+<tr><td><code>WELD M10AI</code></td><td>Advanced Welding Level 1</td><td class="n">10.05</td></tr>
+<tr><td><code>WELD M10BF</code></td><td>Advanced Welding Level 2</td><td class="n">10.05</td></tr>
+<tr><td><code>WELD M10BV</code></td><td>Advanced Welding Level 3</td><td class="n">10.05</td></tr>
+<tr><td><code>WELD M10CF</code></td><td>Advanced Welding Level 4</td><td class="n">10.05</td></tr>
+<tr><td><code>WELD M10ES</code></td><td>Advanced Welding Procedures</td><td class="n">7.38</td></tr>
+<tr><td><code>WELD M10EU</code></td><td>Advanced Semiautomatic Welding</td><td class="n">7.38</td></tr>
+</tbody></table></div>
+<p class="quiet">The mechanism is plain: the shared word is <em>welding</em>, and one
+level word cannot outweigh the rest of the title. This is the same failure I fixed
+in the Similar courses ladder this morning by stripping level words before scoring —
+the orbit scorer needs the opposite treatment, where a level <em>mismatch</em> counts
+against the match rather than being invisible to it.</p>
+</dd>
 <dt>Proposed</dt>
-<dd class="ask">Make the chip&rsquo;s label a button that re-centres on that pick and opens
-its panel. The <strong>&times;</strong> keeps its own job. Nothing is removed.</dd>
+<dd class="ask"><strong>Make a level mismatch a penalty in the orbit score, and show
+it on the point.</strong> Not a veto — a course with no level stated must still be
+placeable, and two rungs apart should cost more than one. The reader should be able
+to see that the map knows: a hollow point whose level disagrees with its host says
+so in the inspector, the way the other why-bits already do.</dd>
+<dt>The cheaper half, if you prefer it</dt>
+<dd>Say nothing in the scorer and only <em>display</em> the mismatch. That is the
+"gate identity, keep display" shape you have ruled for TOP codes, and it changes no
+placement — but it also leaves 559 two-rung suggestions on the screen.</dd>
 </dl>
-<!-- replies:start --><div class="reply" data-item="2" data-ref="Make the search chips navigable" data-title="Make the search chips navigable" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="The map suggests a home without looking at the level" data-title="The map suggests a home without looking at the level" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
 
 <article class="card" id="i3">
-<header><span class="num">3</span><h3>Make the whole panel row clickable</h3><span class="chip build">build</span></header>
+<header><span class="num">3</span><h3>The same process at the same level, split three ways</h3><span class="chip ask">your call</span></header>
 <dl>
 <dt>What it is</dt>
-<dd>In a discipline panel each course is a bordered row with a title, a code, member
-counts and a chip. Only the title opens it.</dd>
+<dd>Intermediate arc welding is 13 identities. The pattern under them is one
+adopted identity plus a tail of single-college wording variants — an acronym moved
+into the title, a <em>Laboratory</em> suffix, a <em>Level 2</em>.</dd>
 <dt>Measured</dt>
-<dd>14 rows, 14 buttons &mdash; exactly one hit target per row, and it is the title. The
-rest of the row, which is most of its area, does nothing.</dd>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="Intermediate arc welding identities grouped by process"><table>
+<thead><tr><th scope="col">Process</th><th scope="col">Adopted</th><th scope="col" class="n">Colleges</th><th scope="col">Variants sitting beside it</th></tr></thead>
+<tbody>
+<tr><td>GTAW / TIG</td><td><code>M1046</code> Intermediate Gas Tungsten Arc Welding (GTAW)</td><td class="n">6</td><td><code>M10TT</code> Intermediate GTAW/TIG Welding · <code>M10JH</code> …Laboratory</td></tr>
+<tr><td>GMAW / MIG</td><td><code>M1044</code> Intermediate Gas Metal Arc Welding (GMAW)</td><td class="n">3</td><td><code>M10TM</code> Intermediate GMAW/MIG Welding</td></tr>
+<tr><td>Arc, unqualified</td><td><code>M1055</code> Intermediate Arc Welding</td><td class="n">5</td><td><code>M10KI</code> …Level 2 · <code>M10IN</code> Intermediate Electric Arc Welding</td></tr>
+<tr><td>SMAW / Stick</td><td><code>M1052</code> / <code>M1054</code> — see call 1</td><td class="n">5 + 3</td><td>&mdash;</td></tr>
+</tbody></table></div>
+<p class="quiet">Every variant listed is a single-college stand-alone. None of them
+currently orbits its own process at its own level: <code>M10TT</code> orbits
+<em>Introduction to GTAW/TIG Welding</em>, <code>M10JH</code> orbits
+<em>Fundamentals of Gas Tungsten Arc Welding</em>, <code>M10IN</code> orbits
+<em>Basic Electric Arc Welding</em>. Only <code>M10KI</code> orbits a same-level host.
+Fixing call 2 moves all four.</p>
+</dd>
 <dt>Proposed</dt>
-<dd class="ask">Make the row itself the target, keeping the title as the accessible name so
-the keyboard path is unchanged. ⚠️ One caveat worth your ruling: the row also carries the
-identity-system chip, which now has its own tooltip &mdash; a whole-row click would swallow
-a hover a reader may want. I would keep the chip inert and let the rest of the row open the
-course.</dd>
+<dd class="ask"><strong>Do nothing here yet, and re-measure after call 2 lands.</strong>
+Three of the four misplacements are symptoms of the level-blind scorer, not separate
+decisions. Whether <em>Laboratory</em> and <em>Level 2</em> are the same course as
+the lecture section is a faculty question, and it should be asked once, on a list
+that is already correctly grouped.</dd>
 </dl>
-<!-- replies:start --><div class="reply" data-item="3" data-ref="Make the whole panel row clickable" data-title="Make the whole panel row clickable" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="The same process at the same level, split three ways" data-title="The same process at the same level, split three ways" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
 
 <article class="card" id="i4">
-<header><span class="num">4</span><h3>Let a carried course be dropped inside the panel</h3><span class="chip build">build &mdash; nearly free now</span></header>
+<header><span class="num">4</span><h3>Level is an axis we ruled we would carry, and we hold it for 22% of the state</h3><span class="chip hold">needs you</span></header>
 <dl>
 <dt>What it is</dt>
-<dd>Pick up a course with <strong>Drag&hellip;</strong> and the hint says to drop it on the
-identity it belongs to &ldquo;or click that identity&rdquo;. Until last night the panel never
-showed a draggable course and a droppable identity at the same time, so every move had to
-go across the canvas.</dd>
+<dd>You ruled for the course outline that a proficiency level belongs on the course
+<em>and</em> on each skill — two different axes, carry both, derive neither. Today
+the only place a level exists is the words in the title, and everything that reads
+one reads it from there: the Similar courses ladder, and any level rule we add to
+the orbit scorer under call 2.</dd>
 <dt>Measured</dt>
-<dd>⚠️ <strong>This changed under me.</strong> The Similar courses list I built last night
-put destinations in the panel: an identity now shows <strong>24 draggable courses and 24
-identity links side by side</strong>. But every one of those links calls <code>goNode()</code>
-&mdash; it navigates. Clicking one while carrying a course abandons the carry instead of
-completing it. The destinations became visible; they still do not accept a drop.</dd>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="How much of the corpus states a proficiency level in its title"><table>
+<thead><tr><th scope="col">Scope</th><th scope="col" class="n">Points</th><th scope="col" class="n">State a level</th><th scope="col" class="n">Share</th></tr></thead>
+<tbody>
+<tr><td>Statewide</td><td class="n">49,896</td><td class="n">10,954</td><td class="n">22%</td></tr>
+<tr><td>Welding, all points</td><td class="n">512</td><td class="n">179</td><td class="n">35%</td></tr>
+<tr><td>Welding, clustered identities only</td><td class="n">170</td><td class="n">81</td><td class="n">48%</td></tr>
+</tbody></table></div>
+<p>So a level rule is silent on roughly four points in five, and reading a level out
+of a title is derivation — the thing the ruling says not to do. It works because the
+title is the only holder we have, not because it is right.</p>
+</dd>
 <dt>Proposed</dt>
-<dd class="ask">While a course is carried, a click on a similar-course link applies the move
-instead of navigating, and the row says so. This is the smallest of the four now that the
-list exists.</dd>
+<dd class="ask"><strong>Give the course outline a real level field, and let the title
+be a seed rather than the source.</strong> The outline is the next thing to be built
+and is the natural home; a curator confirms or sets the level once, it is stored, and
+the ladder and the orbit scorer both read the stored value and fall back to the title
+only where nothing is set.</dd>
+<dt>What I need from you</dt>
+<dd>Whether the level vocabulary is exactly <strong>Beginning / Intermediate /
+Advanced</strong>, or whether the four-rung local pattern in this discipline —
+<em>Advanced Welding Level 1</em> through <em>Level 4</em> — has to survive as
+something more than a title. That decides whether the field is a three-value
+enumeration or a level plus an ordinal.</dd>
 </dl>
-<!-- replies:start --><div class="reply" data-item="4" data-ref="Let a carried course be dropped inside the panel" data-title="Let a carried course be dropped inside the panel" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="Level is an axis we ruled we would carry, and we hold it for 22% of the state" data-title="Level is an axis we ruled we would carry, and we hold it for 22% of the state" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
 
 <article class="card" id="i5">
-<header><span class="num">5</span><h3>Say what Recenter re-centres on</h3><span class="chip ask">wording</span></header>
+<header><span class="num">5</span><h3>Two thirds of Welding is a single-college course waiting for a curator</h3><span class="chip ask">your call</span></header>
 <dl>
 <dt>What it is</dt>
-<dd>With one pick the button reads <strong>Recenter</strong>; with more it reads
-<strong>Fit all</strong>. It acts on the <em>chips</em>, not on what the panel is showing.</dd>
+<dd>Of 512 points in Welding, <strong>342 are stand-alones</strong> in orbit —
+courses one college offers that have not been folded into an identity. Accepting a
+placement is one drag, one course at a time.</dd>
 <dt>Measured</dt>
-<dd>With two picks and the panel open on <em>Introduction to Welding</em>, the button reads
-&ldquo;Fit all&rdquo;, titled &ldquo;Fit every pick into view&rdquo;. That is accurate. The
-ambiguity is in the one-pick case: &ldquo;Recenter the map on this pick&rdquo; is honest, but
-after drilling two levels past the pick, &ldquo;this&rdquo; is not what the reader is looking at.</dd>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="Composition of the Welding island"><table>
+<thead><tr><th scope="col">Welding</th><th scope="col" class="n">Count</th><th scope="col" class="n">Share</th></tr></thead>
+<tbody>
+<tr><td>Clustered identities</td><td class="n">170</td><td class="n">33%</td></tr>
+<tr><td>Stand-alones in orbit</td><td class="n">342</td><td class="n">67%</td></tr>
+<tr><td>Points at one college or fewer</td><td class="n">344</td><td class="n">67%</td></tr>
+</tbody></table></div>
+<p class="quiet">Welding carries 1,017 adoptions across those 512 points, so the tail
+is long rather than thin.</p>
+</dd>
 <dt>Proposed</dt>
-<dd class="ask">Name the target in the button: <strong>Recenter on Welding</strong>. It removes
-the ambiguity without adding a control, and it fits the glyph rule &mdash; a word doing the
-work. Say the word if you would rather it followed the panel instead.</dd>
+<dd class="ask"><strong>Before building any bulk-accept control, fix call 2.</strong>
+A control that accepts many suggestions at once is only as good as the suggestions,
+and 44% of the levelled ones currently disagree with their host on level. Once that
+is corrected, the question worth asking is whether a curator should be able to accept
+a whole ring at once with a visible list of what they are accepting — which is a new
+write surface, so it routes through Governance before it ships.</dd>
 </dl>
-<!-- replies:start --><div class="reply" data-item="5" data-ref="Say what Recenter re-centres on" data-title="Say what Recenter re-centres on" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
-</section>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="Two thirds of Welding is a single-college course waiting for a curator" data-title="Two thirds of Welding is a single-college course waiting for a curator" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
 
-<section class="group">
-<h2>Two rulings, and a correction</h2>
+<h2>What is not here</h2>
+<p>Your screen recording of the intermediate arc welding session. It is 485&nbsp;MB,
+the Drive connector refuses anything over 10&nbsp;MB, and the direct download hosts
+are blocked from this environment. Everything above came from the payload instead.
+When the smaller export arrives I will append what it shows as further numbered
+calls rather than revising these — these five stand on their own measurements.</p>
 
-<article class="card" id="i6">
-<header><span class="num">6</span><h3>Should Enter keep the suggestion list open?</h3><span class="chip ask">your call</span></header>
-<dl>
-<dt>What it is</dt>
-<dd>Typing in the search opens a list. Pressing Enter with nothing highlighted closes it and
-flies the map to the term instead.</dd>
-<dt>Measured</dt>
-<dd>The form&rsquo;s submit handler takes a highlighted suggestion if there is one, and
-otherwise closes the list and runs a map search. That is deliberate &mdash; one box, two
-behaviours, chosen by what is on screen. It is also what made you say the intro course
-&ldquo;did not show&rdquo; before you found the real defect: Enter had dismissed the answer.</dd>
-<dt>Proposed</dt>
-<dd class="ask">Leave Enter as it is, but stop it hiding the answer: run the map search
-<em>and keep the list open</em>, with the first row highlighted so the next Enter opens it.
-Nothing is taken away and the list stops vanishing at the moment you look at it.</dd>
-</dl>
-<!-- replies:start --><div class="reply" data-item="6" data-ref="Should Enter keep the suggestion list open?" data-title="Should Enter keep the suggestion list open?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+<p class="quiet">SkyBuild, Session 233 &middot; measured against
+<code>prototype/ccr_universe.json</code> generated 2026-09-05 15:22.</p>
 
-<article class="card" id="i7">
-<header><span class="num">7</span><h3>The canvas is 39 tab stops in, not 217</h3><span class="chip worklist">correction</span></header>
-<dl>
-<dt>What it is</dt>
-<dd>The observation log reported that reaching the map by keyboard took 15 Tab presses past
-217 controls, and I passed that on to you.</dd>
-<dt>Measured</dt>
-<dd>⚠️ <strong>Wrong, and mine to correct.</strong> The page holds <strong>205</strong>
-focusable elements and the canvas sits at index <strong>39</strong> &mdash; it also already
-carries <code>tabindex="0"</code>, so it is reachable. 39 is still a long way in for the
-main thing on the page, but it is not 217 and it is not unreachable.</dd>
-<dt>Proposed</dt>
-<dd class="ask">Add a skip link &mdash; <em>Skip to the map</em> &mdash; as the first focusable
-element, which is what the presentation rules already ask for and costs one line. That makes
-the canvas the first stop for anyone who wants it and leaves the tab order alone for everyone
-else.</dd>
-</dl>
-<!-- replies:start --><div class="reply" data-item="7" data-ref="The canvas is 39 tab stops in, not 217" data-title="The canvas is 39 tab stops in, not 217" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="keep" aria-pressed="false">Keep</button><button type="button" class="reply-chip" data-v="retire" aria-pressed="false">Retire</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
-</section>
-
-</div>
 </div>
 <!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
 <script>
 (function(){
   "use strict";
-  var SHEET = "2026-09-06-seven-open-calls";
+  var SHEET = "2026-09-06-welding-levels-and-orbits";
   var LS = "sheet-replies:" + SHEET;
   var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
   if (!els.length) return;

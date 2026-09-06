@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-392 document(s).
+393 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -173,6 +173,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An opportunity figure must be what peers ACHIEVED, not what the record allows](../kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [An RLS-filtered read is not an error — it is an empty answer](../kb-notes/methodology-an-rls-filtered-read-is-not-an-error.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [An unadopted item is a shelf, not an absence — and it needs its own band](../kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [An undefined CSS custom property fails to an invisible state, and no jsdom test can see it](../kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [An unordered LIMIT is a correctness bug, not a style nit — and it reads as model flake](../kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [Answer "eligible students & credits by program area × statewide/local" from the Credential Reference data](../kb-notes/methodology-area-eligibility-rollup-from-cer.md) | methodology | published | 2026-07-20 | 2026-07-20 |
 | [Answering "which programs at <college> have CPL for apprentices?" — the three-artifact join](../kb-notes/methodology-college-apprenticeship-cpl-roster.md) | methodology | published | 2026-08-03 | 2026-08-03 |
