@@ -20,6 +20,25 @@ on:
   push:
     branches: [main]
 
+# A superseded run is wasted compute: this job is ~10 minutes, and a session
+# that pushes three times to one PR leaves two of them grinding to completion
+# on commits nobody will merge. Measured 2026-09-06 on PR #1494's branch: run
+# 2705 had 5.6 minutes left when 2706 started on a newer commit, and it ran all
+# of them. js-tests + secret-scan were 3,075 of the month's 4,012 Actions
+# minutes and were the only top workflows without a concurrency group; 22 others
+# already had one.
+#
+# ⚠️ THIS IS NOT THE `paths:`/`if:` CHANGE THE HEADER FORBIDS. That warning is
+# about a check that never REPORTS on the head being merged, which blocks a
+# required check forever. Here the group is keyed to the PULL REQUEST, so only
+# runs on SUPERSEDED commits are cancelled and the newest commit always gets its
+# own run that reports normally. A push to main keys on the SHA instead, so each
+# main commit is its own group and can never be cancelled by a later one — main
+# is the permanent record and its run has to finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   test:
     runs-on: ubuntu-latest

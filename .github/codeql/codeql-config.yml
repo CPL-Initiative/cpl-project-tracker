@@ -35,3 +35,20 @@ paths-ignore:
   # size for an unreachable theoretical taint path. Revisit if/when we
   # refactor the dashboard's JS toolbelt across files.
   - 'credential_reference.js'
+  # Generated DATA that happens to end in .js — megabyte-scale object literals
+  # emitted by the pipeline, not code anyone wrote or could fix a finding in.
+  # Analysing them is most of a CodeQL run's time on this repo and can only
+  # produce findings against a generator's output. The generators themselves
+  # (excel_to_dashboard.py, kb/_build_*.py) are Python and stay in scope.
+  # Added 2026-09-06 beside the workflow's push paths-ignore: that one skips the
+  # RUN for a data-only push, this one keeps these files out of the runs that do
+  # happen — including the weekly full-tree scan.
+  - 'CPL_Data.js'
+  - 'unified_courses_*.js'
+  - 'credential_reference_data.js'
+  - 'cpl_pathways_membership_data.js'
+  - 'statewide_data.js'
+  - 'statewide_prescriptive.js'
+  - 'fact-sheet/statewide_recs.js'
+  - 'prototype/skyview.html'
+  - 'prototype/ccr_atlas_v1.built.html'
