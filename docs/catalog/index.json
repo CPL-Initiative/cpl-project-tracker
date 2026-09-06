@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 395,
+   "count": 396,
    "docs": [
     {
      "created": "2026-08-14",
@@ -870,6 +870,21 @@
      "title": "A copy with no refresh path is a fossil",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "measurement",
+      "skyview",
+      "ccr"
+     ],
+     "title": "A correct measurement can name the wrong place \u2014 re-check the attribution, not just the number",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-20",
@@ -12119,8 +12134,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 209,
+   "count": 210,
    "docs": [
+    {
+     "created": "2026-09-06",
+     "governs": [],
+     "n": 236,
+     "path": "docs/session_236_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the outline is built; the next four asks are Sam's own",
+     "type": null,
+     "updated": "2026-09-06"
+    },
     {
      "created": "2026-09-06",
      "governs": [],
@@ -15718,5 +15746,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 803
+ "total": 805
 }

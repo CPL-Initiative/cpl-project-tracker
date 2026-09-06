@@ -222,9 +222,12 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(1) ⭐ revealing a page grows the list past 60", now > 60, `${now} options`);
     check("(1) ⭐ and the rows already on screen do not move (ranked once, not re-cut)",
       qa("#sug li[role=option] .sg-l").slice(0, 10).map((e) => e.textContent).join("|") === firstTen.join("|"));
-    check("(1) the footer counts what is shown against what is ranked",
-      /Showing \d+ of \d+/.test((q("#sug .sug-more")||{}).textContent||""),
-      (q("#sug .sug-more")||{}).textContent||"∅");
+    /* ⚠️ THE COUNT MOVED TO THE HEADER (Sam's ruling 1, 2026-09-06): the sort
+     * control went to the list's top right and took the count with it, and an
+     * Enter button took its place in the bottom row. */
+    check("(1) the header counts what is shown against what is ranked",
+      /Showing \d+ of \d+/.test((q("#sug .sug-head")||{}).textContent||""),
+      (q("#sug .sug-head")||{}).textContent||"∅");
   }
   check("(1) the list is tall enough to be worth scrolling and clips rather than overflowing",
     /max-height:min\(70vh,620px\);overflow-y:auto/.test(tpl));
@@ -786,11 +789,23 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(15) the list is open before Enter", !q("#sug").hidden);
     form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
     await tick();
-    check("(15) ⭐ Enter no longer hides the answer — the list stays up",
-      !q("#sug").hidden, q("#sug").hidden ? "closed" : "open");
-    check("(15) …with the first row highlighted, so the next Enter opens it",
-      q("#gq").getAttribute("aria-activedescendant") === "sug-0",
-      q("#gq").getAttribute("aria-activedescendant"));
+    /* ⭐ REVERSED, BY SAM, THE SAME MORNING (ruling 1, 2026-09-06): "after I
+     * click enter, I really think it should close this, even though we made a
+     * prior decision on that."
+     *
+     * ⚠️ THE ORIGINAL ASSERTION HERE WAS RIGHT ABOUT ITS EVIDENCE AND WRONG
+     * ABOUT ITS FIX, WHICH IS WHY IT IS REPLACED RATHER THAN DELETED. Item 6
+     * made Enter leave the list up because an Enter-closes behavior was what
+     * made an intro course look absent. The course was actually missing from
+     * the RANKING — "weldi" lost it, guarded above at (14) — so once that was
+     * fixed, keeping the panel open was solving a bug that no longer existed at
+     * the cost of a panel that would not go away. */
+    check("(15) ⭐ Enter runs the search and CLOSES the list",
+      q("#sug").hidden, q("#sug").hidden ? "closed" : "still open");
+    /* The button in the list's bottom row is the same call as the key, so the
+     * two cannot drift apart. */
+    check("(15) the Enter button and the Enter key are one behavior",
+      /function runSearch\(\)/.test(tpl) && /goBtn\.addEventListener\("mousedown"/.test(tpl));
   }
 
   done();

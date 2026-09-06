@@ -186,8 +186,17 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(A) ⭐ Pan and Move are word chips, Move pressed by default",
     /^Pan$/.test(text("#u-mode-pan").trim()) && /^Move$/.test(text("#u-mode-move").trim())
     && q("#u-mode-move").getAttribute("aria-pressed") === "true" && st().mode === "move");
+  /* ⭐ AND THE TAG NAMES THE DATA, NOT A VERSION (2026-09-06). It read
+   * "— prototype v1", and that label is what made a view swap read to Sam as
+   * landing in an old prototype: "It opens this prototype V1... I have lost sky
+   * view." Nothing had navigated. The provenance stays a hover; the visible tag
+   * now carries the date the artifacts under the page were generated, which is
+   * the one thing about them that goes stale. */
   check("(A) ⭐ the provenance line is a hover on the title, not a line of its own",
-    /no writes/.test(q("#prov").title) && !/CCR artifacts generated/.test(q("header").textContent), q("#prov").title);
+    /no writes/i.test(q("#prov").title) && !/CCR artifacts generated/.test(q("header").textContent), q("#prov").title);
+  check("(A) ⭐ the masthead tag names the DATA, never a version",
+    !/prototype v1/i.test(text("header")) && /^— data \S/.test(text("#prov").trim()),
+    text("#prov"));
   check("(A) the write panel and the 'how to read it' pane sit BELOW the map",
     !!q("#u-below #u-writes") && /How the map is arranged/.test(text("#u-below")));
   check("(A) ⭐ the forest is embedded under the map — the same view, not a copy",
@@ -905,7 +914,23 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   w.__ccrUniverseSearch("pipe");
   check("(X) ⭐ a typed search replaces the selection with one term — a search still means a search", st().tokens.length === 1 && st().tokens[0] === "pipe");
   w.__ccrForest();
-  check("(X) leaving the map clears the selection along with the borrowed box", st().tokens.length === 0 && !!q(".mast #msearch") && !q("#u-tokens .u-tok"));
+  /* ⭐ REVERSED 2026-09-06: THE SELECTION SURVIVES THE TRIP. This asserted that
+   * leaving the map cleared the picks — "the selection belongs to the map" —
+   * and that is exactly what made double-click destructive: setCrumbs() calls
+   * homeSearch() on EVERY view entry, so Sam's welding picks were gone before
+   * he arrived at the work surface, not on the way back ("the welding choices I
+   * made… I have to start all over"). The CHIPS still leave the screen, which
+   * is the half of the old assertion that was right; the MODEL is parked and
+   * re-rung by restoreTokens() when the map returns. */
+  const parked = st().tokens.length;
+  check("(X) leaving the map sends the borrowed box home and takes the chips off screen",
+    !!q(".mast #msearch") && !q("#u-tokens .u-tok"));
+  check("(X) ⭐ but the selection SURVIVES the trip — the picks are parked, not destroyed",
+    parked === 1, `${parked} token(s) held after leaving the map`);
+  w.__ccrUniverse({ solo: true });
+  check("(X) ⭐ and it is painted and re-rung on the way back",
+    st().tokens.length === 1 && qa("#u-tokens .u-tok").length === 1,
+    `${st().tokens.length} token(s), ${qa("#u-tokens .u-tok").length} chip(s)`);
 
   // ── (Y) the dark canvas (Sam, 2026-09-05: "Dark mode selector") ──────────
   w.__ccrUniverse({ solo: true });

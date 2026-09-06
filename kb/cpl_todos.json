@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-06",
-  "_session": 234,
-  "_status": "Sam recorded himself using SkyView for seven minutes and narrating what went wrong, and a new video-context skill turned that recording into frames and a transcript entirely on his own laptop — nothing left the machine. Two problems were then measured in a real browser rather than guessed at. The search list shifts down by exactly one row when the row of picked-course chips grows onto a second line, so the course you were about to click moves out from under the pointer; the fix shipped the day before preserved the list's scrolling but not its position on screen, which is why the complaint survived it. And double-clicking a course strands you: the page swaps to the discipline workspace without telling the browser, so Back does nothing, the menu disagrees with the screen, and coming back wipes every course you had picked. Sam also retracted one of his own reports on camera once he found the feature working — that retraction is recorded as prominently as the defects, so nobody undoes a good fix. He ruled on three things: Enter should close the search panel, double-click should open the course outline, and the chip row should reserve its space because stability wins. The course outline is still the top priority and has now been planned three times without being built.",
+  "_session": 235,
+  "_status": "The course outline of record is built. Open a course on SkyView — double-click it, or use the new button in the side panel — and you get one page showing what that course actually is across every college that teaches it: a real catalog description quoted from the college that wrote it, the skills a learner would carry out of it, what level the course is and what level each skill is, and plainly which parts we do not hold yet. It is labeled MAP-Generated for faculty consideration and revision before use, and nothing on the page writes anything back. Sam's three calls from the screen recording all shipped too: Enter now closes the search list, the sort control moved to its top right with an Enter button at the bottom, and the search chips reserve their space so the list stops jumping when they wrap. The bug where double-clicking left you stranded with no way back to SkyView is fixed, and your selected courses now survive the trip instead of being thrown away. Next up are Sam's four new asks — a CPL-focused view and a show-articulations toggle first, both to be sketched before they are built.",
   "items": [
     {
       "id": "s234-sam-skill-sources-conflict",
@@ -11,58 +11,46 @@
       "text": "This is the one thing blocking the course outline's skill layer. You ruled that agency skill statements come from all three sources — published agency standards, ACE exhibits and the MAP team. What happens when the three disagree about the same certification? The pilot is an AWS welding certification. Everything else in the outline can be built without this answer."
     },
     {
-      "id": "s234-fable-search-panel",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Sam's ruling: Enter closes the search panel, the sort chip moves to the list's top right, and an Enter button takes the sort button's place — keyboard and button both working. Note this REVERSES ruling 6 from the same morning, which he flagged himself. Ship it with the chip-row fix below, since both are the same panel."
-    },
-    {
-      "id": "s234-fable-chip-row-reflow",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "The search dropdown drops 36 pixels — one row height — when the chip row wraps at the fourth pick, so the row under the pointer becomes a different row. Reserve the chip row's space (Sam: stability wins) and tighten chips horizontally to fit more per row. Contrast is fine; target size is the limit, and the remove button is already at the 24px AA floor. Guard it by asserting the list's screen position across four picks, not by counting bar rows."
-    },
-    {
-      "id": "s234-fable-double-click-stranding",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Double-clicking a course strands you: discipline() repaints over SkyView without updating the address, so Back does nothing, the view menu disagrees with the screen, a refresh silently discards the work, and returning rebuilds the map and loses every pick. Give the discipline view a route, make the round trip keep the picks, and drop the stale 'prototype v1' label from the masthead while you are there."
-    },
-    {
-      "id": "s232-sam-outline-sources",
+      "id": "s235-sam-cpl-focus-prototype",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "You ruled 'All three' on where agency skill statements come from — published agency standards, ACE exhibits, and entered by the MAP team — and flagged it for follow-up. The open question is what wins when the three disagree about the same certification. That answer shapes the course outline's comparison panel, so the next session will need it early."
+      "text": "You asked for a CPL vs Course/Discipline toggle so exhibits and credit recommendations are the focus, and a show-articulations toggle revealing where articulations differ college to college — and said to prototype them first. Next session will bring you a sketch of both together, since you called them closely linked. One question it needs answered by the picture: when we have no articulation recorded for a course, that is not the same as knowing there are none. How should the map show 'we did not look' differently from 'there are none'?"
     },
     {
-      "id": "s232-sam-welding-merges",
+      "id": "s235-sam-curate-phrase",
       "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Three welding merge candidates are queued for a faculty reviewer, not for a session: Introduction to Welding (24 colleges) absorbing Introduction to the Welding Processes (2) and Intro-Welding Processes (1), and the Intermediate Shielded Metal Arc Welding pair behind it. A fourth pair shares a title but is flagged as NOT mergeable — one is credit and one is noncredit, which makes them different courses. kb/merge_candidates/2026-09-05/report.md."
+      "tab": "admin",
+      "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. Say the word and it gets scoped."
     },
     {
-      "id": "s232-sam-remint-queue",
+      "id": "s235-sam-gitattributes",
       "for": "Sam",
-      "tab": "governance",
-      "text": "The re-mint approval view is designed and routed through Governance, not built. You approve candidates and the cron applies them; there is no fire button, because a re-mint cannot be undone the way an ordinary correction can. Worth a read before it is built — it names what each candidate must show you, including what the plan was checked against, which is exactly the thing that was missing this week."
+      "tab": "admin",
+      "text": "Your Windows clone hit a line-endings warning because this repo has no rule telling Git how to handle them across Windows and the cloud machines. Adding one stops it recurring, but it rewrites line endings across the whole repo once when it lands. Your call — say go and it is a small change."
     },
     {
-      "id": "s232-fable-build-outline",
+      "id": "s235-fable-outline-cpl-layer",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Build the course outline on double-click: a layered panel with the MAP-Generated label on every synthetic field, proficiency levels on the course and on each skill, thin skills kept with a confidence chip, and a certification-first way in beside the course-first one. Double-click currently opens the discipline work surface, so split it — a course opens the outline, empty ground keeps today's behavior."
+      "text": "The course outline has an empty layer waiting for credit-for-prior-learning: the MAP exhibits and the military credit recommendations that could award each course. Wiring it is blocked only on Sam's answer about where agency skill statements come from when the three sources disagree."
     },
     {
-      "id": "s232-fable-remint-queue-build",
-      "for": "Fable",
-      "tab": "governance",
-      "text": "Build the re-mint approval queue against the four-item checklist in its decision record: a register row owning the approval, the surface mapped the moment the first write lands, an insert-only rollback, and a test asserting the view writes approvals and nothing else."
-    },
-    {
-      "id": "s233-fable-similar-courses-next",
+      "id": "s235-fable-artics-absence",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The panel's new Similar courses list reads course levels out of titles, which is the only place we hold them — 44% of Welding's 512 titles say Beginning, Intermediate or Advanced and the rest are listed last rather than guessed at. When the course outline ships with a real level field, feed it back here so the ladder stops depending on wording."
+      "text": "Before drawing the articulations toggle, decide what absence looks like. The articulation count is absent rather than zero on this feed, so a view that paints 'none' where we simply did not look would be wrong on a lot of the 16,482 points at once."
+    },
+    {
+      "id": "s235-fable-text-zoom",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Add a text-size control to the SkyView toolbar. It must not change today's behavior where the labels stay the same size as you zoom the map — that is deliberate and Sam wants it kept."
+    },
+    {
+      "id": "s235-fable-decision-packs",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
     }
   ]
 }

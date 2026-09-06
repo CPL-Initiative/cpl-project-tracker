@@ -269,6 +269,13 @@ module.exports = {
       { hash: "subjects", name: "subjects" },
       { hash: "esl", name: "esl" },
       { hash: "how", name: "how" },
+      /* The course outline of record (Sam's ruling, 2026-09-06). A real id, not
+         a placeholder: the layers render from the member roster and the
+         description shards, so a route naming nothing measures an error page. */
+      { hash: "outline/WELD M1109", name: "outline" },
+      /* One discipline's work surface — the view double-click used to strand
+         the reader in, now routable. */
+      { hash: "work/Welding", name: "work" },
     ],
     widths: [390, 768, 1440],
     mayHideBelow: [

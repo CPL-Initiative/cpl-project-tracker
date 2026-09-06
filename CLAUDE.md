@@ -791,17 +791,6 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### S234 — a screen recording, measured in a browser (2026-09-06)
-
-**PRs #1498-#1501.** The **`video-context` skill** watches a recording entirely on the machine holding it
-(`kb/_video_context.py`; the cloud denies the file's hosts AND Whisper's weights). Sam drove SkyView 6m50s;
-⭐ **two defects measured in Chromium, invisible to jsdom**: the dropdown drops **36px, one row height**, when
-the chip row wraps at pick 4 — ruling 3's `scrollTop` fix holds as designed and the complaint's other axis is
-the list's *position on screen* — and **double-click strands** because `discipline()` never calls
-`syncHash()`, breaking Back, `hashchange`, the Views menu and refresh together. ⚠️ **Sam retracted a finding
-on camera**; that passage is S233's fix working. 2 KB notes. Triage: `skyview_video2_findings`; handoff
-`session_235_handoff`.
-
 ## Troubleshooting
 
 **Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — 5,302 bytes of symptom-triggered reference that every session paid for and only a broken run reads).
