@@ -304,7 +304,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     // circle's size to the gap between circles was CONSTANT at every zoom —
     // which is why zooming in never helped pick one course out of a crowd, and
     // why raising the cap alone would have made it worse (a 100-course identity
-    // at k=40 would draw at a 508px radius and push its neighbours off screen).
+    // at k=40 would draw at a 508px radius and push its neighbors off screen).
     const f = S.radScaleAt;
     check("(A) below the knee the radius still tracks zoom exactly",
       f(1) === 1 && f(S.radKnee) === S.radKnee);
@@ -661,7 +661,18 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(N) the details panel folds to a word",
     q("#u-inspector").classList.contains("closed") && q("#u-insp-toggle").getAttribute("aria-pressed") === "false" && !st().inspectorOpen);
   w.__ccrGoSuggestion({ kind: "subject", isl: PU.islands[0] });
-  check("(N) selecting something opens it again", !q("#u-inspector").classList.contains("closed") && /Welding/.test(text("#u-detail h3")));
+  /* ⭐ A PANEL THE READER HID STAYS HIDDEN (Sam, 2026-09-06: "the side bar
+   * unhid (and does so every time I add a course)"). Hide is an instruction
+   * about the workspace, not about one course, and openInspector() fires on
+   * every selection — so this used to assert the opposite. The CONTENT still
+   * follows the selection underneath, so reopening shows the right card. */
+  check("(N) ⭐ selecting something does NOT reopen a panel the reader hid",
+    q("#u-inspector").classList.contains("closed"));
+  check("(N) …but the content follows the selection underneath it",
+    /Welding/.test(text("#u-detail h3")));
+  q("#u-insp-toggle").click();
+  check("(N) the toggle still brings it back, showing the current selection",
+    !q("#u-inspector").classList.contains("closed") && /Welding/.test(text("#u-detail h3")));
   check("(N) a subject card lists its identities as buttons that open them", qa("#u-detail .idlist [data-go]").length === 2);
   qa("#u-detail .idlist [data-go]")[0].click();
   check("(N) …and clicking one selects it", st().sel === "WELD C1000", st().sel);

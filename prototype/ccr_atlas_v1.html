@@ -205,6 +205,10 @@ a{color:var(--cobalt)}
 .idlist>li{border:1px solid var(--border);border-radius:8px;padding:9px 10px;background:var(--surface-subtle)}
 .idlist .ttl{font-weight:600;color:var(--text-strong);font-size:.9rem}
 .idlist .sub{font-size:.76rem;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+/* The level ladder's headings are headings, not cards: the list's card chrome
+   would make "Beginning" read as another course. */
+.idlist .sim-h{border:0;background:none;padding:6px 0 0;margin:0}
+.idlist .sim-h .sub{font-family:inherit;font-size:.78rem;font-weight:600;color:var(--text-strong)}
 .mlist{list-style:none;margin:7px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
 .mlist li{display:flex;gap:7px;align-items:baseline;font-size:.8rem;flex-wrap:wrap;
           background:var(--surface-opaque);border:1px solid var(--border);
@@ -768,9 +772,19 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
 var sugEl = document.getElementById("sug");
 var gqEl = document.getElementById("gq");
 var sugItems = [], sugAt = -1;
+/* One listener, attached once: reaching the bottom reveals the next page. Bound
+ * here rather than in renderSug() because renderSug runs on every keystroke and
+ * every reveal, and re-binding there would stack a listener per render. */
+if (sugEl) sugEl.addEventListener("scroll", function(){
+  if (sugEl.hidden || !sugAll || sugShown >= sugAll.length) return;
+  if (sugEl.scrollTop + sugEl.clientHeight >= sugEl.scrollHeight - 24){
+    sugShown = Math.min(sugShown + SUG_LIMIT, sugAll.length);
+    renderSug(false);
+  }
+});
 
 function closeSug(){
-  sugItems = []; sugAt = -1;
+  sugItems = []; sugAt = -1; sugAll = []; sugShown = 0;
   if (!sugEl) return;
   sugEl.hidden = true; sugEl.innerHTML = "";
   if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
@@ -856,12 +870,34 @@ function takeHighlighted(){
  * plainly when there are more, so the reader knows to keep typing rather than
  * assuming the corpus is empty past the edge. */
 var SUG_LIMIT = 60;
+/* Sam, 2026-09-06: "Can we make the list longer than 60? Maybe with lazy load
+ * if needed?" — so 60 is now the PAGE, not the list. The ranking is computed
+ * once to SUG_MAX and the rows are revealed a page at a time as the reader
+ * scrolls to the bottom.
+ *
+ * ⚠️ IT HAS TO BE RANKED ONCE, NOT RE-RANKED PER PAGE. The budget in suggest()
+ * gives each kind a SHARE OF THE LIMIT (30/45/25), so asking for 120 instead of
+ * 60 does not append — it re-cuts, and row 19 changes from a course to a
+ * discipline under the reader's eyes. Ranking to the ceiling once and slicing
+ * more of the same array is what makes "load more" mean load more. */
+var SUG_MAX = 300;
+var sugAll = [], sugShown = 0;
 
 function openSug(term){
   if (!sugEl || typeof window.__ccrSuggest !== "function") return;
-  sugItems = window.__ccrSuggest(term, SUG_LIMIT) || [];
-  sugAt = -1;
-  if (!sugItems.length){ closeSug(); return; }
+  sugAll = window.__ccrSuggest(term, SUG_MAX) || [];
+  sugShown = Math.min(SUG_LIMIT, sugAll.length);
+  if (!sugAll.length){ sugItems = []; closeSug(); return; }
+  renderSug(true);
+}
+/* `reset` distinguishes a new term (go to the top, drop the highlight) from a
+ * page reveal, which must keep both — the reader is mid-list and scrolling. */
+function renderSug(reset){
+  var keepTop = reset ? 0 : sugEl.scrollTop;
+  var keepAt  = reset ? -1 : sugAt;
+  sugItems = sugAll.slice(0, sugShown);
+  sugItems.more = (sugAll.more || 0) + (sugAll.length - sugShown);
+  sugAt = keepAt;
   var more = sugItems.more || 0;
   var byName = (typeof window.__ccrSuggestOrder === "function") && window.__ccrSuggestOrder() === "name";
   var picked = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
@@ -891,10 +927,14 @@ function openSug(term){
    * "would have seen 2 named similarly or the same"). Sorting by name puts
    * near-identical titles next to each other, which popularity-ranking cannot. */
   var label = "Search suggestions";
+  var restHere = sugAll.length - sugShown;   // ranked, not yet revealed
   var count = byName
     ? "Sorted by name \u2014 " + sugItems.length + (more > 0 ? " of many" : "")
-    : (more > 0 ? "Showing the closest " + sugItems.length : sugItems.length +
-       (sugItems.length === 1 ? " match" : " matches"));
+    : (restHere > 0
+        ? "Showing " + sugItems.length + " of " + sugAll.length +
+          (sugAll.more ? "+" : "") + " \u2014 scroll for more"
+        : more > 0 ? "Showing the closest " + sugItems.length
+        : sugItems.length + (sugItems.length === 1 ? " match" : " matches"));
   sugEl.insertAdjacentHTML("beforeend",
     '<li class="sug-more" role="presentation"><span>'+count+'</span>'+
     '<button type="button" class="sug-sort" data-order="'+(byName ? "relevance" : "name")+'">'+
@@ -902,7 +942,8 @@ function openSug(term){
   label += " \u2014 " + count + (byName ? "" : ", sorted by best match");
   sugEl.setAttribute("aria-label", label);
   sugEl.hidden = false;
-  sugEl.scrollTop = 0;
+  sugEl.scrollTop = keepTop;
+  if (keepAt >= 0) markSug();
   if (gqEl) gqEl.setAttribute("aria-expanded","true");
   Array.prototype.forEach.call(sugEl.children, function(li){
     // The footer carries no data-i and is not a destination — skip it, or its

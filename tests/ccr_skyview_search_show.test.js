@@ -51,7 +51,21 @@ function ident(prefix, n, credit, x, y) {
   const p = [];
   for (let i = 0; i < n; i++)
     p.push(Object.assign({ i: `${prefix} M${1000 + i}`, x: x + (i % 10) * 2, y: y + Math.floor(i / 10) * 2,
-             t: `Welding Practice ${i}`, n: 3, s: 0, f: 0, r: 0, u: 3, c: credit },
+             /* ⭐ ONE identity carries the search word as a LATER word, and is the
+              * most adopted thing in the island — the shape of the real failure
+              * (Sam, 2026-09-06: "weldi" lost Introduction to Welding, which is
+              * taught at 24 colleges). Every other title begins with the word, so
+              * a string-prefix tier hands all 60 slots to them and this one, the
+              * best answer, never reaches the list. */
+             /* A level ladder to order: the same course said three ways, plus
+              * plenty with no level word at all — which is the real corpus
+              * (44% of Welding's titles carry one). */
+             t: i === 7 ? `Introduction to Welding Practice ${i}`
+               : i % 5 === 1 ? `Beginning Welding Practice ${i}`
+               : i % 5 === 2 ? `Intermediate Welding Practice ${i}`
+               : i % 5 === 3 ? `Advanced Welding Practice ${i}`
+               : `Welding Practice ${i}`,
+             n: i === 7 ? 99 : 3, s: 0, f: 0, r: 0, u: 3, c: credit },
              // Every third identity carries articulations, so the switch has both
              // sides to act on. `ar` is ABSENT on the rest, never 0 — that is the
              // payload's own contract (Session 232).
@@ -125,8 +139,18 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await tick();
 
   // ── (1) the search box goes deep enough to be worth scrolling ─────────────
-  check("(1) the template asks __ccrSuggest for 60, not 8",
-    /var SUG_LIMIT = 60;/.test(tpl) && /__ccrSuggest\(term, SUG_LIMIT\)/.test(tpl) && !/__ccrSuggest\(term, 8\)/.test(tpl));
+  /* ⭐ 60 IS THE PAGE, NOT THE LIST (Sam, 2026-09-06: "Can we make the list
+   * longer than 60? Maybe with lazy load if needed?"). The ranking is computed
+   * ONCE to SUG_MAX and revealed a page at a time — asking suggest() for a
+   * bigger limit instead would re-cut the per-kind budget and reorder rows the
+   * reader is already looking at. */
+  check("(1) the template ranks to SUG_MAX and reveals SUG_LIMIT at a time",
+    /var SUG_LIMIT = 60;/.test(tpl) && /var SUG_MAX = 300;/.test(tpl) &&
+    /__ccrSuggest\(term, SUG_MAX\)/.test(tpl) && !/__ccrSuggest\(term, 8\)/.test(tpl));
+  check("(1) reaching the bottom reveals the next page, and the listener is bound once",
+    /sugEl\.addEventListener\("scroll"/.test(tpl) &&
+    /sugShown = Math\.min\(sugShown \+ SUG_LIMIT, sugAll\.length\)/.test(tpl) &&
+    (tpl.match(/sugEl\.addEventListener\("scroll"/g) || []).length === 1);
   const deep = w.__ccrSuggest("weld", 60);
   check("(1) ⭐ a term matching 160 courses returns a full list of 60, not a short set",
     deep.length === 60, `got ${deep.length}`);
@@ -145,6 +169,28 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(1) the ranked pool is deep enough to rank (the 400-candidate cap would have truncated by island order)",
     /if\(pts\.length>3000\) break;/.test(ujs) && wide.length > 8, `n=${wide.length}`);
 
+  /* ── (1b) typing more of a word must not delete a match ───────────────────
+   * Sam, 2026-09-06: "Try 'weldi' after you initially try 'weld' and you'll see
+   * that there is no intro course in the list." Measured on the real payload:
+   * "weld" put Introduction to Welding first, "weldi" returned it nowhere,
+   * because "weld" prefix-matches every Welding identity's ID and one more
+   * character drops to the titles alone. */
+  {
+    const firstCourse = (t) => {
+      const a = w.__ccrSuggest(t, 60) || [];
+      const c = a.find((x) => x.kind === "course");
+      return c ? c.label : "(none)";
+    };
+    check("(1b) ⭐ the answer is stable as the reader keeps typing the same word",
+      firstCourse("weld") === firstCourse("weldi") &&
+      firstCourse("weldi") === firstCourse("welding"),
+      ["weld", "weldi", "welding"].map((t) => t + "=" + firstCourse(t)).join(" | "));
+    check("(1b) ⭐ and the answer is the most-adopted match, not whichever title starts with it",
+      /^Introduction to Welding Practice 7$/.test(firstCourse("weldi")), firstCourse("weldi"));
+    check("(1b) a match INSIDE a word still ranks below a word-start match",
+      firstCourse("elding") !== "(none)");
+  }
+
   // ── the dropdown itself: scrollable, footered, keyboard-carried ───────────
   const gq = q("#gq");
   gq.value = "weld";
@@ -157,9 +203,29 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     q("#sug .sug-more").dataset.i == null && q("#sug .sug-more").getAttribute("role") === "presentation",
     q("#sug").lastElementChild ? q("#sug").lastElementChild.outerHTML.slice(0, 90) : "∅");
   check("(1) the listbox's own label carries the count AND the order for a screen reader",
-    /Showing the closest 60/.test(q("#sug").getAttribute("aria-label") || "") &&
+    /Showing 60 of \d+/.test(q("#sug").getAttribute("aria-label") || "") &&
     /sorted by best match/.test(q("#sug").getAttribute("aria-label") || ""),
     q("#sug").getAttribute("aria-label"));
+  /* ⭐ THE REVEAL, END TO END. jsdom does no layout, so scrollHeight is 0 and a
+   * real scroll cannot be simulated — the reveal is driven directly, which is
+   * what the scroll handler does, and the assertions are about the CONTRACT it
+   * has to keep: more rows, the same rows first (no re-cut), and the reader's
+   * place preserved. */
+  {
+    const firstTen = qa("#sug li[role=option] .sg-l").slice(0, 10).map((e) => e.textContent);
+    // jsdom reports 0 for every rectangle, so the handler's "am I at the
+    // bottom" test (scrollTop + clientHeight >= scrollHeight - 24) is
+    // satisfied by 0 >= -24 — which lets a real scroll event drive the real
+    // listener rather than reaching into the page's scope.
+    q("#sug").dispatchEvent(new w.Event("scroll"));
+    const now = qa("#sug li[role=option]").length;
+    check("(1) ⭐ revealing a page grows the list past 60", now > 60, `${now} options`);
+    check("(1) ⭐ and the rows already on screen do not move (ranked once, not re-cut)",
+      qa("#sug li[role=option] .sg-l").slice(0, 10).map((e) => e.textContent).join("|") === firstTen.join("|"));
+    check("(1) the footer counts what is shown against what is ranked",
+      /Showing \d+ of \d+/.test((q("#sug .sug-more")||{}).textContent||""),
+      (q("#sug .sug-more")||{}).textContent||"∅");
+  }
   check("(1) the list is tall enough to be worth scrolling and clips rather than overflowing",
     /max-height:min\(70vh,620px\);overflow-y:auto/.test(tpl));
   check("(1) ⭐ the arrow keys carry the viewport with the cursor",
@@ -369,7 +435,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   /* ── (9) nothing lays a name across an open identity's disc ───────────────
      Sam, 2026-09-05: "probably no labels should transect the CCR circle." The
-     disc is the thing being studied, and a neighbour's name across it reads as
+     disc is the thing being studied, and a neighbor's name across it reads as
      belonging to it. Recorded as an occupied box before any label is placed, so
      the existing placer treats it like a clash — try another corner, then drop
      rather than stack. The identity's OWN label is exempt: the inside branch
@@ -602,6 +668,41 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(13) ⭐ Escape backs out of a selection made with the MOUSE, not only the keyboard",
     !q("#u-back-isl") && /course identit/.test(detail.textContent),
     detail.textContent.slice(0, 120));
+
+  // ── (14) similar courses, ordered by level ────────────────────────────────
+  /* Sam, 2026-09-06: "Would be great if the side bar details could show courses
+   * similar to the selected courses in order… all the beg intros followed by
+   * int intros." */
+  {
+    const target = U.islands[0].p.find((nd) => nd.i === "WELD M1000");
+    w.__ccrGoSuggestion({ kind: "course", isl: U.islands[0], nd: target, label: target.t });
+    await tick();
+    const heads = qa("#u-detail .idlist.sim .sim-h").map((e) => e.textContent.trim());
+    check("(14) the panel offers similar courses in this discipline",
+      qa("#u-detail .idlist.sim li").length > 0 && /Similar courses in Welding/.test(d.body.textContent),
+      `${qa("#u-detail .idlist.sim li").length} rows`);
+    check("(14) ⭐ the rungs are in order: beginning, then intermediate, then advanced",
+      heads.filter((x) => /^(Beginning|Intermediate|Advanced)$/.test(x)).join(",") ===
+        ["Beginning", "Intermediate", "Advanced"].filter((L) => heads.indexOf(L) >= 0).join(","),
+      heads.join(" | "));
+    check("(14) ⭐ beginning really does come before advanced in the DOM",
+      heads.indexOf("Beginning") >= 0 && heads.indexOf("Advanced") > heads.indexOf("Beginning"),
+      heads.join(" | "));
+    check("(14) a course whose title states no level is listed last, not guessed at",
+      heads.indexOf("Level not stated") === heads.length - 1 || heads.indexOf("Level not stated") < 0,
+      heads.join(" | "));
+    /* ⚠️ THE LEVEL WORD MUST NOT DRIVE THE SIMILARITY, or the two rungs of one
+     * course score as less alike than two unrelated beginning courses — and the
+     * ladder is the point. */
+    const labels = qa("#u-detail .idlist.sim .ttl").map((e) => e.textContent);
+    check("(14) ⭐ the ladder holds every rung of the same course, not one level only",
+      labels.some((t) => /^Beginning /.test(t)) && labels.some((t) => /^Advanced /.test(t)),
+      labels.slice(0, 4).join(" | "));
+    check("(14) every similar course is a link that opens it",
+      qa("#u-detail .idlist.sim [data-go]").length === qa("#u-detail .idlist.sim .ttl").length);
+    check("(14) the selected course does not list itself",
+      labels.every((t) => t !== (target.t || target.i)), target.t);
+  }
 
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

@@ -1699,3 +1699,92 @@ which matches a non-defect S231 already diagnosed. The `⋮` menu's same-origin
 link out to COBI is now named in the brief as a boundary the observer must not
 cross — the single most likely accidental crossing, and the old rule did not
 cover it.
+
+## 2026-09-06 (later) — SkyBuild S233: Sam drove it, and five reports became five fixes
+
+Sam used SkyView while the audit fixes were landing and reported as he went.
+Every one was real, and two of them were **not** what the report said they were —
+which is why each was measured before it was touched.
+
+⭐ **"THE HOVER SHOWED THE SAME DESCRIPTOR FOR THE WELDING DISCIPLINE INSTEAD OF
+COURSE DETAILS."** Not the discipline card — the **identity** card, repeated. An
+opened identity's ring SPREADS (`drawMembers`, `spread` up to 70px), so its own
+college-course stars sit over its neighbors, and `pick()`'s rule that "a
+pointer inside the nearest identity's circle means that identity" took them.
+Measured with the pointer exactly on each drawn star: **16 of 30 gave the course
+card, 14 gave an identity's**. Reading those courses is the entire purpose of
+the ring, so a focused identity's own members now outrank the circle they happen
+to overlap — `lastFocus` is the set `draw()` just used, so hit-testing and
+painting cannot disagree about what is open. ⚠️ `pickMember` also returned the
+FIRST star scanned rather than the NEAREST, so an unrelated neighbor's course
+could shadow the one under the pointer; it takes the nearest now and accepts a
+filter. 30 of 30 after.
+
+⭐ **"THE BACKGROUND CHANGES TO PURPLE… CHANGES WHEN A SEARCH ITEM IS
+SELECTED."** Two mechanisms, and the first one found was the smaller. The focus
+disc is tinted with the identity's system color and grows with the member count;
+capping it was right but did not explain the report, because at the zoom a
+search pick flies to, the disc is not even drawn. **It is the membership glow.**
+`haloAround()` paints a radial gradient out to `r*2.6` where `r` is the DRAWN
+radius, so opening a well-adopted identity threw its system color across the
+whole viewport at 30% alpha — measured at **983px on a 960×600 canvas**. The
+glow is Sam's own signal (*"haven't earned their wings yet"*) and reads fine at
+a fraction of that, so its reach is bounded. ⚠️ **Neither cap was testable on
+the existing fixture** — 6 identities and 11 members never make a ring that
+overlaps or a disc that clamps — and both perturbations passed until a fixture
+built for the purpose replaced them (`tests/ccr_skyview_hover_disc.test.js`,
+120 identities packed two units apart, one carrying 30 college courses). A test
+that survives deleting the code it covers is a decoration.
+
+⭐ **"TRY 'weldi' AFTER YOU INITIALLY TRY 'weld' AND THERE IS NO INTRO COURSE IN
+THE LIST."** Reproduced on the real payload: `weld` returns *Introduction to
+Welding* **first**, `weldi` returns it **nowhere**. The tiers were tested
+against the STRING start only, and `weld` prefix-matches every Welding
+identity's **id** (`weld m1109`) — so all 549 sit in tier 1 and sort by
+adoption, and the 24-college intro course wins. One more character and the id
+stops matching: only the **109** titles beginning "Weldi…" are tier 1, they fill
+all 60 slots, and the **299** titles where the word appears later never reach
+the list. ⭐ **The invariant is that typing more of a word must not delete a
+match the shorter term found**, so a term beginning a WORD now ranks with one
+beginning the string; which word of the title it is was never a relevance
+signal. `weld`, `weldi`, `weldin` and `welding` return the same first course
+now. A match *inside* a word stays tier 2, which is the distinction that was
+actually wanted. ⚠️ Sam withdrew this report mid-session (*"seems to be working
+now, maybe transient"*) and then reproduced it precisely; the first measurement
+had already shown the ranking was sound, which is exactly why the second one was
+worth taking at face value.
+
+⭐ **"THE SIDE BAR UNHID, AND DOES SO EVERY TIME I ADD A COURSE."**
+`openInspector()` fires on every selection, so Hide survived exactly until the
+next pick. Hide is an instruction about the workspace, not about one course. The
+content still follows the selection underneath, so reopening shows the right
+card. ⚠️ A test asserted the OLD behavior (*"selecting something opens it
+again"*) — it now asserts the new contract, because the reader's instruction
+outranks the convenience.
+
+⭐ **"CAN WE MAKE THE LIST LONGER THAN 60? MAYBE WITH LAZY LOAD?"** 60 is the
+PAGE now, not the list: the ranking is computed once to `SUG_MAX` (300) and
+revealed a page at a time as the reader reaches the bottom. ⚠️ **It has to be
+ranked once, not re-ranked per page.** `suggest()` gives each kind a share of
+the LIMIT (30/45/25), so asking for 120 instead of 60 does not append — it
+re-cuts, and row 19 changes from a course to a discipline under the reader's
+eyes. The footer says "Showing 60 of 408 — scroll for more", and the scroll
+position and the highlighted row both survive a reveal.
+
+⭐ **"SHOW COURSES SIMILAR TO THE SELECTED COURSE IN ORDER — ALL THE BEG INTROS
+FOLLOWED BY INT INTROS."** The identity panel gains a **Similar courses**
+section: same discipline, Dice over the same lightly stemmed title tokens the
+builder scores orbits with, grouped into Beginning → Intermediate → Advanced
+with the unmarked last, adoption ordering within a rung. ⚠️ **The level word
+must not drive the similarity** — with "Beginning" and "Advanced" counted as
+title words, the two rungs of one course score as LESS alike than two unrelated
+beginning courses, and the ladder is the whole point; they are stripped before
+scoring and read back after. ⚠️ **And every rung needs a share of the cap.** The
+first cut filled 24 slots in order, the fixture's 24 beginning courses took all
+of them, and the reader never learned an advanced version existed — the same
+"a budget written for eight starves the tail at sixty" failure as the suggestion
+list, three weeks later in a different function. A floor each, then the slack
+flows. Levels are read from the title because that is the only place we hold
+them (44% of Welding's 512 titles carry one), and a course whose title does not
+say is listed last rather than guessed at — course level and skill level are
+different axes and neither is derived from the other.
