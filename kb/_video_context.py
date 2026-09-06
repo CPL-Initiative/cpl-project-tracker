@@ -32,12 +32,12 @@ runs on the machine that already holds the video.
 
 WHAT IT PRODUCES
 ----------------
-    <out>/YYYYMMDD_<slug>_INDEX.md        ← read this one; it points at the rest
+    <out>/YYYYMMDD_<slug>_video-index.md  ← read this one; it points at the rest
     <out>/YYYYMMDD_<slug>_transcript.md   timestamped plain text
     <out>/YYYYMMDD_<slug>_transcript.srt  for players and for re-import
     <out>/frames/frame_0007_t83.20.png    stills, named by their timestamp
 
-The INDEX interleaves speech and stills in time order, so a session reads ONE
+The index interleaves speech and stills in time order, so a session reads ONE
 file and opens only the frames the words make interesting. The date-code prefix
 follows the vault naming convention; frames are working files and skip it.
 
@@ -50,6 +50,13 @@ DESIGN NOTES THAT ARE NOT OBVIOUS
     `metadata=print:file=`. On Windows that filter option swallows the `C:`
     drive colon as a filtergraph separator and the run dies. Reading stderr has
     no path in the filtergraph at all.
+  * The index output is named `_video-index.md` on purpose. A filename
+    literal of the form INDEX-dot-md anywhere in this file registers in
+    kb/_build_dependency_map.py as this script CONSUMING the repo's own
+    top-level docs index, writing a false edge into the map sessions use to
+    compute blast radius. Measured both ways: the rename drops the edge, and
+    restoring the old literal brings it straight back — which is why this note
+    spells the extension out rather than quoting it.
   * Frames are cut one `-ss`-before-`-i` invocation each. A single select pass
     is fewer processes but cannot name a file after the timestamp it landed on,
     and input seek makes each cut a few tens of milliseconds.
@@ -337,7 +344,7 @@ def main(argv=None):
     }
     written = []
     for suffix, text in (
-        (f"{deliverable_name(stamp, slug, 'INDEX.md')}", build_index(segments, frames, meta)),
+        (f"{deliverable_name(stamp, slug, 'video-index.md')}", build_index(segments, frames, meta)),
         (f"{deliverable_name(stamp, slug, 'transcript.md')}",
          build_transcript_md(segments, meta["title"])),
     ):

@@ -25,7 +25,7 @@ python3 kb/_video_context.py "C:\Users\samuel.lee\Riverside Community College Di
 Output lands in `.video-context/<slug>/` (gitignored) unless you pass `--out`:
 
 ```
-20260906_video-project-2_INDEX.md        ← read this first
+20260906_video-project-2_video-index.md  ← read this first
 20260906_video-project-2_transcript.md   timestamped plain text
 20260906_video-project-2_transcript.srt  for players and re-import
 frames/frame_0007_t0083.20.png           stills, named by timestamp
@@ -38,7 +38,7 @@ Useful flags: `--model tiny|base|small|medium|large-v3` (default `small`;
 
 ## Then read it
 
-1. Read the `_INDEX.md`. It is chronological: every spoken line and every frame
+1. Read the `_video-index.md`. It is chronological: every spoken line and every frame
    in the order they happened.
 2. Open frames with Read where the narration turns specific — "this is broken",
    "look at this count", "that should say". Those are the moments the words
@@ -72,7 +72,7 @@ container, and it can Read both markdown and PNGs. Frames are gitignored by
 default, so add them deliberately:
 
 ```bash
-git add -f .video-context/<slug>/20260906_*_INDEX.md \
+git add -f .video-context/<slug>/20260906_*_video-index.md \
            .video-context/<slug>/20260906_*_transcript.md \
            .video-context/<slug>/frames
 ```

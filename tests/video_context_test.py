@@ -100,9 +100,9 @@ def test_index_interleaves_in_time_order():
 
 
 def test_deliverables_carry_the_date_code():
-    name = deliverable_name("20260906", "video-project-2", "INDEX.md")
+    name = deliverable_name("20260906", "video-project-2", "video-index.md")
     check("date-code prefix", name.startswith("20260906_"), name)
-    check("full shape", name == "20260906_video-project-2_INDEX.md", name)
+    check("full shape", name == "20260906_video-project-2_video-index.md", name)
 
 
 if __name__ == "__main__":
