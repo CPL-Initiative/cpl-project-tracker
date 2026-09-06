@@ -9830,7 +9830,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 75,
+   "count": 76,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11054,6 +11054,24 @@
      "title": "Similar-course FAMILY consolidation lane \u2014 scope + measure-first",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "prototype/skyview.html"
+     ],
+     "path": "docs/skyview_troubleshooting_brief.md",
+     "status": null,
+     "tags": [
+      "skyview",
+      "ccr",
+      "troubleshooting",
+      "computer-use",
+      "brief"
+     ],
+     "title": "SkyView troubleshooting brief \u2014 for a Claude Desktop computer-use session (observe and log only)",
+     "type": null,
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-24",
@@ -15544,5 +15562,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 793
+ "total": 794
 }
