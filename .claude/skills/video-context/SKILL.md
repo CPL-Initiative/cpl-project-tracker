@@ -42,7 +42,8 @@ Output lands in `.video-context/<slug>/` (gitignored) unless you pass `--out`:
 frames/frame_0007_t0083.20.png           stills, named by timestamp
 ```
 
-Useful flags: `--model tiny|base|small|medium|large-v3` (default `small`;
+Useful flags: `--device cpu|cuda|auto` (default `cpu` — see the cuBLAS note
+below before reaching for `cuda`), `--model tiny|base|small|medium|large-v3` (default `small`;
 `tiny` is roughly four times faster and noticeably worse on proper nouns),
 `--max-frames N` (default 80), `--no-audio` for frames only,
 `--scene-threshold` (default 0.15 — lower catches subtler cuts).
@@ -117,7 +118,13 @@ or CCCCO folders.
   `--max-frames 120`.
 - **Frames all bunched in a few seconds.** An animation or embedded video is
   emitting scene changes. Raise `--scene-threshold`.
+- **`Library cublas64_12.dll is not found`** (or any cuBLAS/cuDNN load error).
+  A CUDA-capable GPU is present but the CUDA runtime is not installed. The
+  default device is `cpu` precisely so this cannot happen; you only see it if
+  you passed `--device cuda` or `--device auto`. Drop the flag. CPU with `int8`
+  transcribes several times faster than realtime and needs nothing installed.
 - **Transcript empty, `asr` says the model failed.** First run downloads weights
-  from HuggingFace — check the machine can reach it, then re-run.
+  from HuggingFace — check the machine can reach it, then re-run. The
+  unauthenticated-request warning from the Hub is normal and not an error.
 - **`ffmpeg not found`.** `pip install imageio-ffmpeg`. Do not install ffmpeg
   system-wide just for this; the wheel needs no PATH changes.
