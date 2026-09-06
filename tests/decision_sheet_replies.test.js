@@ -181,6 +181,43 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 5));
     JSON.stringify({ r: ls[RETIRE], b: ls[BOARD] }));
   check("no script error on the sheet", errors.length === 0, errors.join(" | "));
 
+  // ── every colour the injected CSS names must actually resolve ─────────────
+  // ⚠️ THE CHECKS ABOVE ALL PASSED WHILE THE SELECTED CHIP WAS INVISIBLE.
+  // They assert aria-pressed is "true" — the ATTRIBUTE — and jsdom computes no
+  // rectangles and no custom properties, so nothing here could see that
+  // `.reply-chip[aria-pressed="true"]` set `background: var(--seal-blue)` against
+  // a token defined in no sheet and no injector. An undefined custom property
+  // makes the declaration invalid at computed-value time: the background fell
+  // back to transparent under `color:#fff`, giving white on the card's white at
+  // 1.00:1. Sam answered seven calls on such a sheet on 2026-09-06 without being
+  // able to see which chip he had picked.
+  //
+  // A rendering test cannot catch this here, so this is a TEXT check on the
+  // shipped sheets: a bare var(--x) must be defined by the sheet that carries it,
+  // or carry a fallback. Cheap, deterministic, and it covers the whole class.
+  {
+    const fs = require("fs"), path = require("path");
+    const dir = path.join(__dirname, "..", "docs", "visuals");
+    const sheets = fs.existsSync(dir)
+      ? fs.readdirSync(dir).filter((f) => f.endsWith(".html"))
+          .filter((f) => fs.readFileSync(path.join(dir, f), "utf8").includes("replies:css:start"))
+      : [];
+    check("there is at least one injected sheet to check", sheets.length > 0, String(sheets.length));
+    const broken = [];
+    for (const f of sheets) {
+      const src = fs.readFileSync(path.join(dir, f), "utf8");
+      const root = new Set();
+      const rootBlock = /:root\s*\{([\s\S]*?)\n\s*\}/.exec(src);
+      if (rootBlock) for (const m of rootBlock[1].matchAll(/(--[a-z0-9-]+)\s*:/g)) root.add(m[1]);
+      // a reference is BARE only when the token name is followed straight by ')'
+      for (const m of src.matchAll(/var\((--[a-z0-9-]+)\)/g)) {
+        if (!root.has(m[1])) broken.push(f + " -> " + m[1]);
+      }
+    }
+    check("every bare var(--token) on a decision sheet resolves in that sheet",
+      broken.length === 0, broken.slice(0, 6).join(" | "));
+  }
+
   let failed = 0;
   for (const [name, ok, why] of results) {
     console.log((ok ? "  ok   " : "  FAIL ") + name + (ok || !why ? "" : "\n         " + why));
