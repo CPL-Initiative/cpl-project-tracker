@@ -1,0 +1,620 @@
+<title>Eight Calls on the Outline</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Deliberately single-theme: First Light is a light identity with no dark
+     page palette, so every surface and color is painted explicitly. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000;
+    --cobalt: #0047AB;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 4px; }
+  h3 { font-family: 'Source Sans 3', Arial, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .subhead { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
+
+  .howto {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px;
+  }
+  .howto p { margin: 6px 0; }
+  .howto code {
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em;
+  }
+
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 30px; padding: 0; list-style: none; }
+  .tally li {
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 14px; font-size: .9rem; color: var(--text-body);
+  }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+  .card {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0;
+  }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 2px; }
+  .num {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.4em;
+  }
+  .chip {
+    margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap;
+  }
+  .chip.build   { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.hold    { color: var(--crimson);      border-color: var(--crimson);      background: var(--surface-opaque); }
+  .chip.worklist{ color: var(--hunter);       border-color: var(--hunter);       background: var(--surface-opaque); }
+  .chip.ask     { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .card dl { margin: 8px 0 0; }
+  .card dt {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 12px;
+  }
+  .card dd { margin: 2px 0 0; }
+  .card dd.ask { font-weight: 600; color: var(--text-strong); }
+
+  .tw { overflow-x: auto; margin-top: 6px; }
+  table { border-collapse: collapse; font-size: .9rem; min-width: 100%; }
+  th, td { text-align: left; padding: 5px 14px 5px 0; border-bottom: 1px solid var(--border); }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); font-weight: 700; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 18px; }
+  code { background: var(--surface-subtle); border: 1px solid var(--border); border-radius: 5px; padding: 1px 5px; font-size: .9em; }
+  .quiet { color: var(--text-muted); font-size: .92rem; }
+  @media (max-width: 560px) {
+    .card header { gap: 8px; }
+    .chip { margin-left: 0; }
+  }
+/* replies:css:start */
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style>
+<a class="skip" href="#sheet">Skip to the calls</a>
+<div class="wrap">
+
+<p class="kicker">SkyOutline II &middot; Session 235 &middot; 6 September 2026</p>
+<h1>Eight Calls on the Outline</h1>
+<p class="lede">The course outline of record is built and on screen. One call below
+is the only thing blocking its last layer; three shape what you asked for this
+afternoon; the rest have been waiting. Every figure was measured today against the
+committed payloads, not carried over.</p>
+
+<div class="howto">
+  <p><strong>How to rule:</strong> use the chips on each item, or reply in chat by
+  number. <code>yes</code> accepts the proposal as written; override with
+  <code>edit: your wording</code>, <code>later</code>, or <code>dismiss</code>.</p>
+  <p>Example: <code>1 yes &middot; 2 edit: draw the absent ones hollow &middot; 5 later</code></p>
+<!-- replies:start --><p><strong>Or click your reply under each item — and under each memory a batch item lists.</strong> Yes takes the recommendation. Under a single memory the first chip names what the batch would do to it — <em>Verify</em> or <em>Retire</em> — so the word says what happens to that memory; Hold out and Rewrite keep one back from a verify batch, Keep holds one back from a retire batch. Follow up marks an item the session should come back to whatever the verdict; the note is for anything a word cannot carry. The line under each reply says what was saved. On the artifact your replies save to the sheet itself and the session reads them from there. Opened anywhere else they stay in this browser, and <em>Copy replies</em> at the foot of the page builds the numbered line for you to paste.</p><!-- replies:end --></div>
+
+<ul class="tally">
+  <li><b>1</b> blocking the outline</li>
+  <li><b>3</b> from your four new asks</li>
+  <li><b>2</b> on the outline as built</li>
+  <li><b>2</b> waiting since last week</li>
+</ul>
+
+<div id="sheet">
+
+<section class="group">
+<h2>What to build: the one blocker</h2>
+<p class="subhead">Everything else in the outline is buildable from data we already hold. This is not.</p>
+
+<article class="card" id="i1">
+<header><span class="num">1</span><h3>When the three sources disagree about a certification, which one wins?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>You ruled that agency skill statements come from published agency standards
+<em>and</em> ACE exhibits <em>and</em> the MAP team &mdash; &ldquo;All three&rdquo; &mdash; and then
+raised the question yourself: what happens when they disagree about the same
+certification? Until that has an answer, the outline&rsquo;s skills layer has no
+authority to draw on and stays imputed from catalog text.</dd>
+<dt>Measured today</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="What the credential files hold for welding"><table>
+<thead><tr><th scope="col">What we hold</th><th scope="col" class="n">Count</th></tr></thead>
+<tbody>
+<tr><td>Credentials classified, all disciplines</td><td class="n">1,987</td></tr>
+<tr><td>Welding credentials among them</td><td class="n">64</td></tr>
+<tr><td>Published welding credit recommendations</td><td class="n">57</td></tr>
+<tr><td><strong>Carrying any skill statement</strong></td><td class="n"><strong>0</strong></td></tr>
+</tbody></table></div>
+<p>The files carry agency, title and hours. Not one carries what a holder can
+<em>do</em>. So this is not a merge problem yet &mdash; it is a sourcing problem, and the
+reconciliation rule decides what we go and fetch.</p>
+</dd>
+<dt>What I propose</dt>
+<dd class="ask">A precedence order, not a merge: <strong>the published agency
+standard is the text of record</strong>; an ACE exhibit fills a gap the standard leaves
+and never overrides it; the MAP team overrides either, attributed and dated, because
+a curator knows things a document does not. Where the standard and ACE genuinely
+conflict on the same skill, the outline shows <strong>both, side by side, each
+named</strong>, rather than picking &mdash; a faculty reader judging sufficiency is better
+served by seeing the disagreement than by a silent winner.</dd>
+<dt>Why</dt>
+<dd>It matches how you already treat curator knowledge everywhere else in MAP
+(attributed, first-class, outranking inference), and it keeps the one case that
+actually matters &mdash; two authorities disagreeing about what a certification proves
+&mdash; visible to the person making the call. Pilot it on an AWS welding certification
+as you suggested; one worked example will show whether &ldquo;show both&rdquo; is
+generous or noisy.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="1" data-ref="When the three sources disagree about a certification, which one wins?" data-title="When the three sources disagree about a certification, which one wins?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 1"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-1">Notes for the session</label><textarea id="note-1" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>What to build: your three new asks</h2>
+<p class="subhead">You asked me to sketch two of these before building. These are the questions the sketch needs answered first.</p>
+
+<article class="card" id="i2">
+<header><span class="num">2</span><h3>What should &ldquo;no articulation recorded&rdquo; look like on the map?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>You want a toggle revealing where articulations exist and where they differ
+college to college. Before it draws anything it has to answer one thing: on this
+feed, <strong>&ldquo;none recorded&rdquo; and &ldquo;we did not look&rdquo; are the same
+value</strong>. The count is absent, not zero.</dd>
+<dt>Measured today</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="How many points on the map carry an articulation count"><table>
+<thead><tr><th scope="col">Points on the map</th><th scope="col" class="n">Count</th><th scope="col" class="n">Share</th></tr></thead>
+<tbody>
+<tr><td>Total</td><td class="n">49,896</td><td class="n">100%</td></tr>
+<tr><td>Carry an articulation count</td><td class="n">1,490</td><td class="n">3.0%</td></tr>
+<tr><td><strong>Count is absent</strong></td><td class="n"><strong>48,406</strong></td><td class="n"><strong>97.0%</strong></td></tr>
+</tbody></table></div>
+<p>A toggle that paints &ldquo;no articulations&rdquo; on absence would be making a
+claim about 48,406 points that the data does not support. The disciplines that do
+carry counts are the ones you would expect: Automotive Technology (110),
+Computer Information Systems (109), Fire Technology (94), Construction Technology (91).</p>
+</dd>
+<dt>What I propose</dt>
+<dd class="ask">The toggle <strong>lights only what has a number</strong> and leaves the
+rest exactly as they are drawn now &mdash; no gray, no hollow, no &ldquo;none&rdquo;
+marker, because each of those reads as a finding. The footer says plainly:
+<em>1,490 of 49,896 course identities carry an articulation count; the rest have none
+recorded, which is not the same as none.</em></dd>
+<dt>Why</dt>
+<dd>The alternative &mdash; marking absence &mdash; turns a gap in our feed into a
+statement about a college&rsquo;s work, on 97% of the map. Lighting only the known
+keeps the view honest and still answers the question you actually asked, which is
+<em>where do articulations differ for the same course</em>. That comparison only
+exists where there are numbers to compare.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="2" data-ref="What should &amp;ldquo;no articulation recorded&amp;rdquo; look like on the map?" data-title="What should &amp;ldquo;no articulation recorded&amp;rdquo; look like on the map?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 2"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-2">Notes for the session</label><textarea id="note-2" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i3">
+<header><span class="num">3</span><h3>How far should the text zoom go?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>You want a control on the SkyView toolbar that sizes label text up or down,
+and you were explicit that it must not change today&rsquo;s behavior where text does
+<em>not</em> zoom with the map &mdash; &ldquo;it&rsquo;s important to keep with all we
+have going on.&rdquo;</dd>
+<dt>What that constrains</dt>
+<dd>Label size is already independent of the map&rsquo;s zoom, so this is a second
+axis rather than a change to the first. The risk is not the control, it is the
+range: labels are placed by a collision-avoidance pass, and past a certain size the
+map stops being able to place them and starts dropping them silently.</dd>
+<dt>What I propose</dt>
+<dd class="ask">Three steps and a reset &mdash; <strong>Smaller &middot; Normal &middot;
+Larger</strong> at roughly 0.85&times;, 1&times;, 1.25&times; &mdash; remembered per
+browser like the dark canvas is. Words, not a slider and not a pair of glyphs.</dd>
+<dt>Why</dt>
+<dd>A slider invites a size the label placer cannot honor, and the failure is
+invisible: labels stop appearing rather than overlapping. Three named steps stay
+inside what the placer can do, and &ldquo;Larger&rdquo; is a promise we can keep at
+every zoom level. If 1.25&times; turns out too timid on your screen, that is a
+number to change, not a design.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="3" data-ref="How far should the text zoom go?" data-title="How far should the text zoom go?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 3"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-3">Notes for the session</label><textarea id="note-3" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i4">
+<header><span class="num">4</span><h3>Does the curate phrase also gate the outline&rsquo;s rename and re-subject?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>You want a magic phrase before someone can move a course, shifting to a team
+phrase later. The outline I built today has two more controls of the same family:
+<em>propose a different title</em> and <em>propose a different subject</em>. Both stage
+a proposal in the browser and write nothing.</dd>
+<dt>What it touches</dt>
+<dd>Today <strong>nothing is written from the map at all</strong> &mdash; that is a
+standing invariant of this lane, not an oversight. The first write from this surface
+is a decision-rights change, so it routes through Governance and the privacy ADRs
+before it ships rather than after.</dd>
+<dt>What I propose</dt>
+<dd class="ask">One phrase, gating <strong>anything that leaves the browser</strong>
+&mdash; the move, and the two proposals if and when they start being saved. Reading
+the outline, the map and every panel stays open to everyone with the link.</dd>
+<dt>Why</dt>
+<dd>Two gates with different scopes is a rule nobody can hold in their head, and
+the honest line is not &ldquo;which control&rdquo; but &ldquo;does this reach anyone
+else.&rdquo; It also keeps the read-only surface genuinely read-only, which is what
+makes it safe to hand to a college.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="4" data-ref="Does the curate phrase also gate the outline&amp;rsquo;s rename and re-subject?" data-title="Does the curate phrase also gate the outline&amp;rsquo;s rename and re-subject?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 4"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-4">Notes for the session</label><textarea id="note-4" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open: the outline as built</h2>
+<p class="subhead">Two calls you can make by looking at the page.</p>
+
+<article class="card" id="i5">
+<header><span class="num">5</span><h3>Is &ldquo;most colleges / some colleges / one college&rdquo; the right way to say how sure we are?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>Each skill on the outline carries a confidence chip. Because we hold no agency
+skill statements, confidence means one thing only: <strong>how many of the colleges
+teaching this course name that skill in their own catalog</strong>. The words on
+screen are <em>most colleges</em>, <em>some colleges</em> and <em>one college</em>.</dd>
+<dt>Measured today</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="How much evidence the corpus offers per course identity"><table>
+<thead><tr><th scope="col">Across the whole reference</th><th scope="col" class="n">Count</th><th scope="col" class="n">Share</th></tr></thead>
+<tbody>
+<tr><td>College courses carrying a catalog description</td><td class="n">127,274</td><td class="n">94.6%</td></tr>
+<tr><td>Course identities with two or more</td><td class="n">14,902</td><td class="n">30.0%</td></tr>
+</tbody></table></div>
+<p>So on seven identities in ten there is only one catalog to read, and every skill
+is a &ldquo;one college&rdquo; skill. That is honest, and it may still read as
+faint praise for a course that is simply taught at one place.</p>
+</dd>
+<dt>What I propose</dt>
+<dd class="ask">Keep the three words, and where a course has only one college
+carrying it, say <strong>&ldquo;the only college teaching it&rdquo;</strong> instead
+of &ldquo;one college&rdquo; &mdash; the same fact, without implying a thin
+result.</dd>
+<dt>Why</dt>
+<dd>&ldquo;One college&rdquo; on a course taught at twenty means the skill is
+poorly corroborated. On a course taught at one, it means the evidence is complete.
+Same words, opposite meanings, and a faculty reader has no way to tell which they
+are looking at.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="5" data-ref="Is &amp;ldquo;most colleges / some colleges / one college&amp;rdquo; the right way to say how sure we are?" data-title="Is &amp;ldquo;most colleges / some colleges / one college&amp;rdquo; the right way to say how sure we are?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 5"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-5">Notes for the session</label><textarea id="note-5" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i6">
+<header><span class="num">6</span><h3>Should the daily run rebuild the map&rsquo;s layout too?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>You ruled last week that the daily run rebuilds SkyView&rsquo;s decision payload
+and leaves the layout hand-built. That is working. The open half is whether the
+layout &mdash; where every island and point sits &mdash; should be rebuilt nightly
+as well.</dd>
+<dt>What it costs either way</dt>
+<dd>The layout takes about twenty seconds to build, so runtime is not the
+argument. The argument is that a nightly rebuild <strong>moves the map under
+people</strong>: an island a curator has learned the position of drifts when the
+corpus changes, and the drag positions they have set are computed against it.</dd>
+<dt>What I propose</dt>
+<dd class="ask"><strong>No</strong> &mdash; keep it hand-built, and rebuild it
+deliberately when the corpus has moved enough to be worth relearning the map.
+Revisit once the curation queue is being worked daily rather than in bursts.</dd>
+<dt>Why</dt>
+<dd>Stability is the whole value of a map. The decision payload going stale
+silently cost us dead decisions, which is why it now rebuilds nightly; the layout
+going stale costs nothing but a slightly out-of-date arrangement, and rebuilding it
+costs the reader their bearings.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="6" data-ref="Should the daily run rebuild the map&amp;rsquo;s layout too?" data-title="Should the daily run rebuild the map&amp;rsquo;s layout too?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 6"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-6">Notes for the session</label><textarea id="note-6" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+<section class="group">
+<h2>Still open: two that have been waiting</h2>
+
+<article class="card" id="i7">
+<header><span class="num">7</span><h3>Add the line-endings rule to the repo?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>Your Windows clone flagged a line-endings change this afternoon. The repo has
+no rule telling Git how to handle them, so a Windows checkout and the cloud
+machines can disagree and produce diffs that are entirely noise.</dd>
+<dt>Measured today &mdash; and it corrects what I told you</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="What a line-endings rule would touch"><table>
+<thead><tr><th scope="col">In scope</th><th scope="col" class="n">Files</th></tr></thead>
+<tbody>
+<tr><td>Text files a rule would govern</td><td class="n">2,486</td></tr>
+<tr><td><strong>Committed with Windows line endings today</strong></td><td class="n"><strong>1</strong></td></tr>
+</tbody></table></div>
+<p>&#9888; I told you earlier this would cause &ldquo;a one-time renormalization
+across the repo&rdquo; and framed it as your call because of that. Having measured
+it: <strong>exactly one committed file would change</strong>. The blast radius I
+warned about is not there.</p>
+</dd>
+<dt>What I propose</dt>
+<dd class="ask"><strong>Yes</strong> &mdash; add it. One file, no meaningful
+renormalization, and it stops the whole class of problem for every machine that
+touches this repo from here on.</dd>
+<dt>Why</dt>
+<dd>You are going to be moving between a Windows clone and cloud sessions
+regularly now. This is the difference between that being invisible and it producing
+a 46-file diff nobody can read.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="7" data-ref="Add the line-endings rule to the repo?" data-title="Add the line-endings rule to the repo?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 7"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-7">Notes for the session</label><textarea id="note-7" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+
+<article class="card" id="i8">
+<header><span class="num">8</span><h3>Which disciplines are grab bags?</h3><span class="chip ask">your call</span></header>
+<dl>
+<dt>What it is</dt>
+<dd>Some islands are real faculty disciplines; some are where courses go when
+nothing else fits. The packaging work treats those two kinds differently, and only
+you can say which is which.</dd>
+<dt>Measured today</dt>
+<dd>
+<div class="tw" role="region" tabindex="0" aria-label="Candidate grab-bag disciplines and their sizes"><table>
+<thead><tr><th scope="col">Island</th><th scope="col" class="n">Identities</th><th scope="col" class="n">Stand-alone courses</th></tr></thead>
+<tbody>
+<tr><td>Interdisciplinary Studies</td><td class="n">525</td><td class="n">1,263</td></tr>
+<tr><td>Vocational</td><td class="n">100</td><td class="n">120</td></tr>
+<tr><td>(no discipline yet)</td><td class="n">&mdash;</td><td class="n">422</td></tr>
+</tbody></table></div>
+<p>Interdisciplinary Studies is the striking one: 1,263 stand-alone courses, more
+than twice its clustered identities, which is the shape of a bucket rather than a
+discipline.</p>
+</dd>
+<dt>What I propose</dt>
+<dd class="ask">Treat <strong>Interdisciplinary Studies</strong> as a grab bag
+alongside Vocational and the no-discipline pile &mdash; meaning its courses are
+candidates to be re-homed elsewhere rather than packaged where they sit. Say if any
+other island belongs on that list; you will know ones I cannot see.</dd>
+<dt>Why</dt>
+<dd>Packaging a grab bag produces a comprehensive course that means nothing,
+because the courses under it were never about one subject. Re-homing first is what
+makes the fold worth doing.</dd>
+</dl>
+<!-- replies:start --><div class="reply" data-item="8" data-ref="Which disciplines are grab bags?" data-title="Which disciplines are grab bags?" data-kind="item" data-parent=""><div class="reply-row" role="group" aria-label="Your reply to item 8"><span class="reply-lbl">Your reply</span><button type="button" class="reply-chip" data-v="yes" aria-pressed="false">Yes</button><button type="button" class="reply-chip" data-v="edit" aria-pressed="false">Edit</button><button type="button" class="reply-chip" data-v="later" aria-pressed="false">Later</button><button type="button" class="reply-chip" data-v="dismiss" aria-pressed="false">Dismiss</button><button type="button" class="reply-chip reply-fu" aria-pressed="false" title="Mark this for the session to follow up on, whatever the verdict">Follow up</button></div><label class="reply-notelbl" for="note-8">Notes for the session</label><textarea id="note-8" class="reply-note" rows="2" placeholder="A condition, a rewrite, a name to hold out, what to follow up on"></textarea><p class="reply-state" aria-live="polite"></p></div><!-- replies:end --></article>
+</section>
+
+</div>
+</div>
+<!-- replies:start --><div class="reply-bar" id="reply-bar" role="region" aria-label="Your replies so far"><span class="reply-count" id="reply-count">0 replied</span><span class="reply-where" id="reply-where"></span><button type="button" class="reply-chip reply-copy" id="reply-copy">Copy replies</button><details class="reply-show"><summary>Show the reply line</summary><textarea id="reply-line" class="reply-line" rows="4" readonly aria-label="The reply line, ready to paste"></textarea></details></div>
+<script>
+(function(){
+  "use strict";
+  var SHEET = "2026-09-06-eight-calls-on-the-outline";
+  var LS = "sheet-replies:" + SHEET;
+  var els = Array.prototype.slice.call(document.querySelectorAll(".reply[data-item]"));
+  if (!els.length) return;
+  var state = {};        // item -> {item, ref, title, v, note, fu, t}; always this page's own objects
+  var col = null;        // the artifact's shared store, once this view can reach it
+  var where = "local";   // "db" once the store answers
+  var pending = {};      // item -> "saving" | "failed" | ""
+  var saved = {};        // item -> the `t` the store is known to hold
+
+  // What a snapshot delivers is FROZEN (the store's contract: "clone a body
+  // before editing it for a write"). The first version adopted the echoed body
+  // as state and assigned into it; outside strict mode the assignment is
+  // silently ignored, so from an item's first save on, every click painted
+  // nothing and wrote the unchanged document back (Sam, 2026-09-05: "I click
+  // Follow Up and it doesn't turn blue but does say response was saved").
+  // copy() means state is never the store's object; strict mode makes any
+  // such write throw instead of pass.
+  function copy(r){ var o = {}; if (r) for (var k in r) if (Object.prototype.hasOwnProperty.call(r, k)) o[k] = r[k]; return o; }
+
+  function read(){ try { var s = JSON.parse(localStorage.getItem(LS) || "{}"); if (s && typeof s === "object") state = s; } catch (e) {} }
+  function keep(){ try { localStorage.setItem(LS, JSON.stringify(state)); } catch (e) {} }
+  function byItem(item){ for (var i = 0; i < els.length; i++) if (els[i].getAttribute("data-item") === item) return els[i]; return null; }
+  function rec(item){
+    if (state[item]) return copy(state[item]);
+    var el = byItem(item);
+    return { item: item, ref: el ? el.getAttribute("data-ref") : "", title: el ? el.getAttribute("data-title") : "", v: "", note: "", fu: false };
+  }
+  function empty(r){ return !r || (!r.v && !r.fu && !r.note); }
+  function chipWord(el, v){
+    var bs = el ? el.querySelectorAll(".reply-chip[data-v]") : [];
+    for (var i = 0; i < bs.length; i++) if (bs[i].getAttribute("data-v") === v) return bs[i].textContent;
+    return v;
+  }
+  function words(el, r){
+    var w = [];
+    if (r.v) w.push(chipWord(el, r.v));
+    if (r.fu) w.push("follow up");
+    if (r.note) w.push("a note");
+    return w.join(", ");
+  }
+  function stateWords(el, item, r){
+    if (empty(r)) return "";
+    if (pending[item] === "saving") return "Saving…";
+    if (pending[item] === "failed") return "Could not save to the sheet; kept in this browser. Use Copy replies.";
+    var w = words(el, r);
+    return where === "db" ? "Saved to the sheet: " + w + "." : "Saved in this browser only: " + w + ". Use Copy replies to send it.";
+  }
+  function paint(el){
+    if (!el) return;
+    var item = el.getAttribute("data-item"), r = state[item] || {};
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.setAttribute("aria-pressed", r.v && r.v === b.getAttribute("data-v") ? "true" : "false");
+    });
+    var fu = el.querySelector(".reply-fu"); if (fu) fu.setAttribute("aria-pressed", r.fu ? "true" : "false");
+    var note = el.querySelector(".reply-note");
+    if (note && document.activeElement !== note && (r.note || "") !== note.value) note.value = r.note || "";
+    var st = el.querySelector(".reply-state"); if (st) st.textContent = stateWords(el, item, r);
+  }
+  function paintAll(){ els.forEach(paint); bar(); }
+  function set(item, patch){
+    var r = rec(item); for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) r[k] = patch[k];
+    r.t = new Date().toISOString();
+    state[item] = r; keep();
+    paint(byItem(item)); bar(); push(item);
+  }
+  function push(item){
+    if (!col) return;
+    var r = state[item]; if (!r) return;
+    var t = r.t;
+    pending[item] = "saving"; paint(byItem(item));
+    col.doc(item).set(copy(r)).then(function(){
+      // A newer change may have gone up meanwhile; its own callbacks settle it.
+      if (state[item] && state[item].t === t) { pending[item] = ""; saved[item] = t; }
+      paint(byItem(item)); bar();
+    }, function(){ pending[item] = "failed"; paint(byItem(item)); bar(); });
+  }
+
+  /* ── the bar: how many, where they are, the line to paste ── */
+  function line(){
+    var parts = [];
+    els.forEach(function(el){
+      var item = el.getAttribute("data-item"), r = state[item];
+      if (empty(r)) return;
+      var s = item + " " + (r.v ? r.v : "(no verdict)");
+      if (r.fu) s += ", follow up";
+      if (r.note) s += " — “" + String(r.note).replace(/\s+/g, " ").trim() + "”";
+      parts.push(s);
+    });
+    return parts.length ? parts.join(" · ") : "No replies yet.";
+  }
+  function bar(){
+    var n = { item: [0, 0], entry: [0, 0], done: [0, 0] }, fu = 0;
+    els.forEach(function(el){
+      var k = el.getAttribute("data-kind") || "item"; if (!n[k]) n[k] = [0, 0];
+      var r = state[el.getAttribute("data-item")];
+      n[k][1]++; if (!empty(r)) n[k][0]++; if (r && r.fu) fu++;
+    });
+    var parts = [];
+    if (n.item[1]) parts.push(n.item[0] + " of " + n.item[1] + " items");
+    if (n.entry[1]) parts.push(n.entry[0] + " of " + n.entry[1] + " memories");
+    if (n.done[1]) parts.push(n.done[0] + " of " + n.done[1] + " retired rows");
+    var c = document.getElementById("reply-count");
+    if (c) c.textContent = parts.join(" · ") + " replied" + (fu ? " · " + fu + " to follow up" : "");
+    var w = document.getElementById("reply-where");
+    if (w) w.textContent = where === "db"
+      ? "Replies save to this sheet; the session reads them from here."
+      : "Replies stay in this browser until you copy them into the session.";
+    var t = document.getElementById("reply-line"); if (t) t.value = line();
+  }
+  var copyBtn = document.getElementById("reply-copy");
+  if (copyBtn) copyBtn.addEventListener("click", function(){
+    var text = line(), done = function(ok){
+      copyBtn.textContent = ok ? "Copied" : "Select the line below and copy it";
+      setTimeout(function(){ copyBtn.textContent = "Copy replies"; }, 2200);
+      if (!ok) { var d = document.querySelector(".reply-show"); if (d) d.open = true; }
+    };
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ── wire each item ── */
+  els.forEach(function(el){
+    var item = el.getAttribute("data-item");
+    Array.prototype.forEach.call(el.querySelectorAll(".reply-chip[data-v]"), function(b){
+      b.addEventListener("click", function(){
+        var v = b.getAttribute("data-v"), cur = state[item] && state[item].v;
+        set(item, { v: cur === v ? "" : v });          // the pressed chip clears on a second click
+      });
+    });
+    var fu = el.querySelector(".reply-fu");
+    if (fu) fu.addEventListener("click", function(){ set(item, { fu: !(state[item] && state[item].fu) }); });
+    var note = el.querySelector(".reply-note"), tm = null;
+    if (note) {
+      note.addEventListener("input", function(){ clearTimeout(tm); tm = setTimeout(function(){ set(item, { note: note.value }); }, 500); });
+      note.addEventListener("blur", function(){ clearTimeout(tm); if ((state[item] ? state[item].note : "") !== note.value) set(item, { note: note.value }); });
+    }
+  });
+
+  /* ── the artifact's store, when this view has one ── */
+  function light(){
+    var C = window.claude;
+    if (!C || typeof C.use !== "function") return;
+    var p; try { p = C.use("db"); } catch (e) { return; }
+    if (!p || typeof p.then !== "function") return;
+    p.then(function(db){
+      if (!db) return;
+      col = db.collection("replies"); where = "db";
+      col.onSnapshot(function(snap){
+        var seen = {};
+        snap.docs.forEach(function(d){
+          var r = d.data(); if (!r || !r.item) return;
+          seen[r.item] = 1;
+          var cur = state[r.item];
+          // The store's copy wins when it is at least as new as this page's;
+          // COPIED, because the delivered body is frozen and stays the store's.
+          if (!cur || String(r.t || "") >= String(cur.t || "")) {
+            state[r.item] = copy(r); saved[r.item] = r.t || "";
+            if (pending[r.item] !== "saving") pending[r.item] = "";
+          }
+        });
+        // Anything this browser holds that the store does not: send it up once.
+        Object.keys(state).forEach(function(item){
+          if (!seen[item] && !pending[item] && !empty(state[item]) && saved[item] !== state[item].t) push(item);
+        });
+        keep(); paintAll();
+      }, function(){ where = "local"; col = null; paintAll(); });
+      paintAll();
+    }, function(){});
+  }
+
+  read(); paintAll(); light();
+})();
+</script>
+<!-- replies:end -->
