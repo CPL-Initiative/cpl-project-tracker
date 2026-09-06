@@ -317,6 +317,17 @@ jobs:
       # not a mechanism. Fails a second declaration under that name or any other,
       # a copied resolver in a chain-aware file, and a chain that is duplicated,
       # missing on disk or out of chronological order. Pure-stdlib python.
+      # Merge candidate queue (Session 232, Sam's ruling 6) — the lane is defined
+      # by what it does NOT do: it assembles the evidence a faculty reviewer
+      # needs and stops, because whether two courses are close enough to be one
+      # is a curriculum judgment, not a rule. The first check asserts the module
+      # holds no write path at all; the rest guard the evidence — bands never
+      # cross (credit 1xxx vs noncredit 9xxx), a cross-discipline pair is
+      # flagged rather than proposed, and the survivor's stated basis is the
+      # rule that actually decided rather than the first one it satisfied.
+      # Pure-stdlib python, no network.
+      - name: Merge candidate queue (kb/_merge_candidate_queue.py)
+        run: python3 tests/merge_candidate_queue_test.py
       - name: Alias chain single source (kb/alias_chain.py)
         run: python3 tests/alias_chain_single_source_test.py
       - name: Stop-hook unpushed check (scripts/patch_stop_hook.py)

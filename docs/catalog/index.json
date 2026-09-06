@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 387,
+   "count": 389,
    "docs": [
     {
      "created": "2026-08-14",
@@ -217,6 +217,29 @@
      "title": "ADR \u2014 Student-impact counts in the public CER (aggregate + small-cell suppression)",
      "type": "adr",
      "updated": "2026-06-04"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/governance_surface_map.json",
+      "kb/_merge_candidate_queue.py",
+      "kb/_identities_rekey_dryrun.py",
+      "docs/coursecontrolnumber_remint.md"
+     ],
+     "path": "docs/kb-notes/adr-remint-approval-queue-decision-rights.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "governance",
+      "mid-lifecycle",
+      "remint",
+      "decision-rights",
+      "write-surface",
+      "privacy"
+     ],
+     "title": "ADR \u2014 The re-mint approval queue: a queue, never a fire button, and where its decision right sits",
+     "type": "adr",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-07-14",
@@ -1505,6 +1528,28 @@
      "title": "A live-painted page still goes stale in its prose",
      "type": "methodology",
      "updated": "2026-09-02"
+    },
+    {
+     "created": "2026-09-05",
+     "governs": [
+      "kb/_identities_rekey_dryrun.py",
+      "kb/reference/coci_courses.json",
+      "unified_courses_data.js",
+      "tests/identities_rekey_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-liveness-set-must-be-able-to-contain-what-it-judges.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "data-quality",
+      "identity",
+      "mid-lifecycle",
+      "measurement",
+      "pitfall"
+     ],
+     "title": "A liveness set must be able to contain what it judges \u2014 or it condemns by construction",
+     "type": "methodology",
+     "updated": "2026-09-05"
     },
     {
      "created": "2026-08-31",
@@ -11926,8 +11971,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 206,
+   "count": 207,
    "docs": [
+    {
+     "created": "2026-09-05",
+     "governs": [],
+     "n": 233,
+     "path": "docs/session_233_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "build the course outline; the queue is clear",
+     "type": null,
+     "updated": "2026-09-05"
+    },
     {
      "created": "2026-09-05",
      "governs": [],
@@ -15486,5 +15544,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 790
+ "total": 793
 }

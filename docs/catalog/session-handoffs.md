@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-206 document(s).
+207 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 233 | [build the course outline; the queue is clear](../session_233_handoff.md) | 2026-09-05 |
 | 232 | [build the course outline, and find the agency skills](../session_232_handoff.md) | 2026-09-05 |
 | 231 | [read Sam's replies from the sheet's store, then drive his SkyView reactions](../session_231_handoff.md) | 2026-09-05 |
 | 230 | [the memory hopper was tested end to end; Sam's sheet replies are the queue](../session_230_handoff.md) | 2026-09-05 |

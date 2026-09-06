@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 429,
+  "file_datasets": 431,
   "external_services": 137,
-  "consumers": 318,
+  "consumers": 319,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -1071,7 +1071,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2705
+     "line": 2738
     }
    ],
    "main_committers": []
@@ -6306,6 +6306,13 @@
      "line": 83
     },
     {
+     "id": "script:kb/_build_ccr_universe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 428
+    },
+    {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
      "kind": "script",
      "direction": "read",
@@ -6388,6 +6395,13 @@
      "direction": "read",
      "how": "literal",
      "line": 345
+    },
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
     },
     {
      "id": "script:kb/_merge_credentials.py",
@@ -9643,6 +9657,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/merge_candidates/2026-09-05/queue.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 216
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/morph_variant_out/2026-06-24/dryrun.json": {
    "consumers": [
     {
@@ -12375,7 +12402,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 689
+     "line": 726
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12402,7 +12429,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 690
+     "line": 727
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -13200,6 +13227,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/merge_candidate_queue_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/merge_chain_flatten_test.py": {
    "consumers": [
     {
@@ -13642,7 +13682,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 701
+     "line": 738
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
@@ -13650,6 +13690,13 @@
      "direction": "read",
      "how": "literal",
      "line": 170
+    },
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 86
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -13824,7 +13871,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 727
+     "line": 764
     }
    ],
    "producers": [
@@ -13880,7 +13927,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 702
+     "line": 739
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13950,7 +13997,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 718
+     "line": 755
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13972,6 +14019,13 @@
      "direction": "read",
      "how": "literal",
      "line": 115
+    },
+    {
+     "id": "script:kb/_merge_candidate_queue.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -17520,6 +17574,7 @@
     "tests/dependency_map_test.py",
     "kb/_build_dependency_map.py",
     "tests/js_suite_gate_test.py",
+    "tests/merge_candidate_queue_test.py",
     "tests/alias_chain_single_source_test.py",
     "tests/stop_hook_git_check_test.py"
    ],

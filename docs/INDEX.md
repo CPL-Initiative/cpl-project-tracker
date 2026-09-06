@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 4 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 387 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 389 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 76 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 75 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 42 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 206 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **790** | |
+| Session handoffs | 207 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **793** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -123,6 +123,12 @@ Authoritative external sources we've cached:
 
 ## Update history
 - **2026-09-05 (SkyReply, S231 — two controls that were never broken, then the course outline)** — Sam's two reports (#1486) both turned out to be working controls acting on empty surfaces: the search dropdown had carried `overflow-y:auto` since it was written and was asked for **8** suggestions out of 200+ matches, and the Show switches moved a label and a count while the map drew nothing, because courses only draw past `NODE_ZOOM` 0.20 and SkyView opens at **k = 0.100**. Fixed by making the filter reach what IS drawn (an emptied discipline stops being drawn) rather than lowering the threshold; `pick()` honors the same filter. ⭐ **The Chromium sweep found what the green suite could not** — a stale built `skyview.html`, and a second-order gap the fix itself created (a discipline pick landing on ground the filter had just cleared). Then Sam asked for a **course outline on double-click** and drove it through six messages into the lane's purpose: prototyped on live WELD M1109 data, **no code shipped** — his rulings are MAP-Generated labelling in his own words, a layered panel, re-mint only when verified and admin-released, and thin skills kept with a confidence chip. ⚠️ Measured and central: **97%** of clustered identities carry no authority text, all **13 MC slots are unsourced**, and for welding we hold **57 credit recommendations and zero agency skill statements**. 3 KB notes (a control live on a surface that draws nothing; provenance as a document's spine; the CPL guiding question).
+
+- **2026-09-05 (S232)** — All eight queued rulings executed. The alias chain declared once in
+  `kb/alias_chain.py` with a CI guard; the articulation identities map re-keyed and a plan that would have
+  deleted 172 live C-ID identities caught first. New: `adr-remint-approval-queue-decision-rights`,
+  `methodology-a-liveness-set-must-be-able-to-contain-what-it-judges`. `CLAUDE.md` back under budget
+  (S228 + S230 narratives archived); the SkyView lane compacted of superseded blocks.
 - **2026-09-05 (SkyKeep, S230 — the sheet takes replies; SkyView's second list; the CCR click opens the full window)** — Sam's two asks in #1481: every item of the memory audit sheet carries reply chips, a Follow up toggle and a note that save to the artifact's own store (`kb/_decision_sheet_replies.py`, read back with `read_db`), and SkyView took the whole second list — a header in the style of Claude's own (icon actions, a title field, one More menu), the Show menu, the legend's corner fold, *How SkyView works*, the OS window controls and a ☰ for COBI's rail, the search as a selection of chips, a dark canvas on `--sky-*` tokens — while the CCR click opens the full window. Two KB notes: the replies playbook, and a generator that lags its output is a trap.
 - **2026-09-05 (SkyGrain, S229 — the memory hopper tested end to end; the table's first lint)** — Sam's ask: test every unverified memory against current truth and clear out anything stale. `kb/_memory_audit.py` (twelve structural rules, receipts under `kb/memory_audit/`, 47-check guard in CI) found almost nothing structural — 3 dead paths in 653 citations, 1 duplicate pair — so the staleness is semantic: thirteen read-only auditors read all 527 proposed rows against the lane files, `CLAUDE.md`, the code and the live tables with a citation per verdict (1,150 of 1,240 file quotes found verbatim by a spot-check). 31 cleared under a receipt (11 stale, 20 superseded with a pointer), 352 corroborated and held for Sam's go, 144 on a plain-English sheet oldest first ([`visuals/2026-09-05-memory-audit-verdicts.html`](visuals/2026-09-05-memory-audit-verdicts.html)). ⭐ Sam's two rulings, on the fly: the older memories are the concern; a sheet reads in plain English. ⚠️ The auto-mode permission layer declined the bulk write when delegated or prepared as a dump and passed the direct guarded statement. 1 KB note ([`kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links`](kb-notes/methodology-a-memory-table-goes-stale-in-its-claims-not-its-links.md)), 7 memory rows, PR #1480.
 - **2026-09-05 (SkyQuiet, S228 — SkyView is the map alone; the workspace tab)** — Sam's three asks shipped in #1479: the CCR menu opens SkyView alone (`body.u-solo`; COBI's tab hides its chrome in map mode), the comprehensive view is one menu click away and never the default, and items 6-9 are one *Disciplines and subjects* tab with a By subject (SUBJ4) grain. The harness found a click that destroyed the page's only search box; `setCrumbs` is the one choke point now. New KB note: `methodology-verify-an-ask-against-what-the-reader-sees`.

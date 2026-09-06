@@ -789,31 +789,19 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyQuiet S228 — SkyView is the map alone, and the CCR menu opens it that way (2026-09-05)
+### SkyOutline S232 — one alias chain, and the eight rulings executed (2026-09-05)
 
-**One PR (#1479).** Each earlier attempt at "open SkyView full screen" changed a MECHANISM and
-none changed what the tab SHOWED. Now `body.u-solo` paints
-`#u-full` and nothing else, the comprehensive view is the same render with the panes shown, and
-COBI's CCR tab hides its chrome and fills the column; close posts back to the tab.
-⭐ **Items 6-9 landed as ONE tab**, *Disciplines and subjects*: By discipline · **By subject (the
-SUBJ4 grain, 344 codes read off the identity ids)** · ESL packaging, one Views menu on every view.
-⭐ **The harness found a latent bug one click in** (a forest cell destroyed the borrowed search
-box); `setCrumbs` is the one choke point now. Story: `ccr_atlas_lessons`.
-
-### SkyKeep S230 — the sheet takes replies; SkyView's second and third lists (2026-09-05)
-
-**Three PRs (#1481, #1482, #1483) and the republished sheet.** ⭐ **Decision sheets take
-replies on the page** — chips, a *Follow up* toggle and a note per item and per listed memory, saved to
-the artifact's own store and read by the next session with `read_db` (`kb/_decision_sheet_replies.py`;
-⚠️ the sheet's builder predates the sheet, so the controls are an idempotent pass). ⚠️ **The store's
-echo is FROZEN** — a page that adopts it as state loses every later click, silently — and a Yes under a
-claim-shaped title reads both ways: the chips under a memory say Verify or Retire. SkyView took Sam's
-second list (the header in the style of Claude's own, the Show menu, *How SkyView works*, a dark
-canvas) and, the same afternoon, his third with Obsidian's graph as the reference: **dots in the
-legend's colors inside the packed footprint, the islands spread ×1.22 at load, the click highlight,
-checkbox picks, a sidebar grip, no Search button.**
-⭐ **The CCR click opens the full window** (`body.cpl-skyview-solo`). Stories: `ccr_atlas_lessons`,
-`cobi_memory_tab_lessons`; handoff `session_231_handoff`.
+**Two PRs (#1490, #1491)** clearing all eight queued rulings. ⭐ **The chain is declared ONCE now**
+(`kb/alias_chain.py`, a CI guard, a PUSH line under Rule 7): its copy carried **7 maps against 15**
+under a comment promising lockstep. ⚠️ **Ruling 4 mostly evaporated on measurement** — the worklist
+is rebuilt nightly (0 dead; re-keying it would have MOVED 1,197 live ids) and `course_id` was already
+current-era; only the `identities` map was stale (1,369 re-keyed). S231's death figures came from the
+browser payload, which ships 16,480 of 76,008 rows. ⭐ **The near-miss:** 175 identities are C-ID,
+which an M-ID catalog cannot hold, so S229's plan condemned them **by construction** — 172 live, 662
+records, one `--apply` away, all five gates passing. Ruling 5's worklist is what made it visible.
+Also: `doctrine.py --read` + the **consult-doctrine** skill, SkyView's three frictions, articulation
+counts on the map, a merge queue that writes nothing, and ruling 2 routed through Governance.
+Stories: `ccr_atlas_lessons`; handoff `session_233_handoff`.
 
 ## Troubleshooting
 
