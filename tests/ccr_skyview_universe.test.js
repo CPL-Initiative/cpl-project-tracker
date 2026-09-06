@@ -446,9 +446,26 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const s0 = st();
   check("(A) the member index covers every college course", s0.memberIndex === 11, String(s0.memberIndex));
   check("(A) orbiting and rim are counted from the points", s0.orbiting === 2 && s0.rim === 1);
-  check("(A) the description bases end at the public Supabase bucket",
-    s0.descBases.length === 2 && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc$/.test(s0.descBases[1]),
+  /* ⭐ THE BASE THAT CAN EXIST ON THIS HOST IS TRIED FIRST. The shards are not
+   * committed, so on a deployed host ./ccr_desc can only 404 — the old fixed
+   * order paid one guaranteed round trip (and a 5 KB GitHub 404 page) per
+   * discipline before the fetch that works. This window is example.org, so the
+   * bucket leads; descBasesFor() carries the rule for every other host. */
+  check("(A) ⭐ on a deployed host the bucket is tried FIRST and the local dir second",
+    s0.descBases.length === 2 &&
+    /supabase\.co\/storage\/v1\/object\/public\/ccr-desc$/.test(s0.descBases[0]) &&
+    s0.descBases[1] === "ccr_desc",
     s0.descBases.join(" | "));
+  {
+    const order = (h) => s0.descBasesFor(h).map((b) => (/supabase\.co/.test(b) ? "bucket" : "local")).join(",");
+    check("(A) a served host puts the bucket first",
+      order("cpl-initiative.github.io") === "bucket,local" && order("example.org") === "bucket,local",
+      order("cpl-initiative.github.io"));
+    check("(A) localhost and file:// keep the local directory first",
+      order("localhost") === "local,bucket" && order("127.0.0.1") === "local,bucket" &&
+      order("[::1]") === "local,bucket" && order("") === "local,bucket",
+      [order("localhost"), order("127.0.0.1"), order("[::1]"), order("")].join(" | "));
+  }
 
   // ── (B) leaving and returning takes the full-bleed frame down and back up ──
   w.__ccrForest();
@@ -529,10 +546,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 
   // ── (G) descriptions: the bucket is reached when the local dir 404s ────────
   await tick(); await tick(); await tick();
-  check("(G) ⭐ the local shard is tried first and the bucket second",
+  check("(G) ⭐ the deployed page reaches the shard in ONE fetch — no guaranteed 404 first",
     (() => { const sh = fetches.filter((u) => !/discipline_canonical_subj4\.json$/.test(u));   // the seed read is a separate fetch
-             return sh.length >= 2 && /^ccr_desc\/welding\.json$/.test(sh[0].replace(/^https:\/\/example\.org\/prototype\//, ""))
-               && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(sh[1]); })(), fetches.join(" | "));
+             return sh.length === 1
+               && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(sh[0])
+               && !sh.some((u) => /\/ccr_desc\/welding\.json$/.test(u)); })(), fetches.join(" | "));
   check("(G) the shard state is recorded as loaded", st().descState.welding === "ok", JSON.stringify(st().descState));
   check("(G) course titles from the shard appear beside the code", /Welding Fundamentals I/.test(text("#u-detail .mlist")));
   q('#u-detail .cd[data-desc="CCC000000101"]').click();

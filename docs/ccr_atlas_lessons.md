@@ -1588,3 +1588,114 @@ passed on a plan that was one `--apply` from deleting 172 live identities.
 asks, the "map shows only adoption" claim that #1491 made false, and the S231
 look narrative, which is above). It is still ~2.6× its 12 KB budget; what is left
 is live design content for an active lane, and cutting further would delete it.
+
+## 2026-09-06 — SkyBuild S233: an observation session's findings, and the two that were wrong
+
+Sam pointed a Claude Desktop computer-use session at the deployed SkyView with
+the brief S232 wrote (#1492), then handed the log over: *"Not sure if
+SkyOutline's audit caught all of them."* Sixteen findings across boundary, data
+layer, navigation, fetch behavior and keyboard model. **Four were real and are
+fixed; two were confidently wrong; one was right about the arithmetic and wrong
+about the mechanism, and the correct mechanism is a defect nobody had noticed.**
+
+⭐ **VERIFY EVERY REPORTED DEFECT AGAINST THE SOURCE — S231's lesson, paid
+again.** Two findings dissolved on a single grep:
+
+- *"`#u-mode-pan` and `#u-mode-move` carry neither `title` nor `aria-label`, and
+  the active mode is conveyed by styling alone with no `aria-pressed`."* Both
+  buttons carry `aria-pressed`, `setMode()` maintains it on every switch, and
+  their visible text ("Pan", "Move") **is** their accessible name — a labelled
+  button needs no `aria-label`. Nothing to fix.
+- *"214 identities show `0 college courses carried` and `row count 3` side by
+  side with no explanation of what `row count` means."* The count carries a
+  `title` that explains exactly that, and says why the two differ. The
+  explanation is there; it is on hover.
+
+⚠️ **THE FINDING RANKED FIRST WAS THE ONE MOST WRONG.** The session reported the
+brief's payload figure as off by ~4,000 and recommended correcting it. Both
+number pairs are correct — they describe different files, and the one the brief
+quoted belongs to a surface SkyView never loads. Applying the recommendation as
+written would have put a number in the brief that described nothing. Full
+worked case, and the rule it yields:
+[`methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names`](kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md).
+
+⭐ **THE 117-DISCIPLINE DISAGREEMENT IS A TWELVE-DAY BUILD GAP, NOT
+CANONICALIZATION.** The session's arithmetic reproduced exactly (117 of 158
+differ, gap 1,904, net −6, `(no discipline yet)` 955 lower in the universe) and
+its proposed mechanism — universe post-canonicalization, atlas pre- — is wrong.
+`_generated_from` reads `2026-08-24 15:34` on the atlas payload and `2026-09-05
+15:22` on the universe: two builds spanning the authority recode, the Z-band
+retirement and the prefix fold. Nothing rebuilds the atlas payload on a
+schedule. So the −6 the session left open as "the only part that warrants
+investigation" needed none — **but the staleness does**: the discipline tables
+read the older payload while the map reads the newer one, so one screen can show
+Health 43 apart. Open for Sam, alongside his standing question ② (should the
+daily run rebuild the universe layout?).
+
+### The four that were real, and what each cost
+
+⭐ **TWO REPORTS, ONE DEFECT — the keyboard model's cursor was never set by the
+mouse.** *"There is no click path from an identity back to its discipline"* and
+*"Escape backs out only if you arrived by keyboard"* are the same bug.
+`kbIsl`/`kbNode`/`kbInside` were set only by the Tab/Enter path, so a mouse user
+pressing Escape — as the footer hint tells them to, unconditionally — hit
+`if(kbInside)` and got nothing. The back path existed the whole time and was
+unreachable by the route almost everyone takes. Fixed with one seam: `kbSync()`,
+assigned by `wire()` and called from `showNode`/`showIsland`, so **every**
+selection path points the cursor. Idempotent for the keyboard path, which sets
+the same values and then calls the same functions. The panel also gains a
+**Back to `<discipline>`** control, because Escape needs canvas focus and a
+click in the panel does not leave it there — a word, per the glyph rule.
+
+⭐ **RESET THE SCROLL WHERE THE DOCUMENT CHANGES, NOT WHERE IT REPAINTS.**
+Opening an identity kept the panel's offset, landing the reader mid-document in
+a course they had never seen, below its title, code, units and articulation line
+(reproduced 2/2: 400→399, 600→627 — the inexact copy is browser scroll
+anchoring, not a deliberate restore). ⚠️ **The obvious fix is a regression.**
+`renderNode()` fires on every filter keystroke, description toggle and staged
+move; resetting there throws the reader to the top mid-task — which is precisely
+the friction Sam reported in the search list the day before (ruling 3a), whose
+first cut had already been wrong once in the same way. So the reset goes in the
+**entry points** — `showNode`, `showIsland` — and a test asserts a re-render
+does *not* touch the scroll. jsdom does no layout, so the property is
+instrumented rather than measured; that is the contract anyway.
+
+⭐ **A BASE THAT CANNOT EXIST ON THIS HOST MUST NOT BE TRIED FIRST.**
+`DESC_BASES` was the fixed pair `["ccr_desc", <bucket>]`. The shards are 50 MB
+of derived text and deliberately uncommitted, so on the deployed page the first
+base **can never succeed** — every discipline paid a guaranteed 404 (which
+downloads a 5 KB GitHub 404 page) before the fetch that works. Measured by the
+session: three disciplines, three 404s, ~350 ms of pure latency, and a network
+panel that reads like a broken page to anyone debugging something else. Now
+ordered by `location.hostname`: localhost and `file://` keep the local directory
+first, every other host leads with the bucket. Extracted as `descBasesFor(host)`
+and exposed on the debug state, so the per-host contract is testable without
+standing up a second 847 KB window just to change the URL.
+
+⭐ **THE MOST REPEATED CHIP ON THE SURFACE HAD THE LEAST TO SAY.** 13 of 16
+chips in a typical panel carried no `title`. The two that did cite their ruling
+and its date; the identity-system chip — the one on every identity — said
+"M-ID — our working label" and nothing more. That names the system without
+saying what follows from it: who may re-key it, and whether it is a statewide
+claim. `SYSWHY` now carries that per system.
+
+**All six fixes perturbation-tested red before green** — including the
+regression direction: moving the scroll reset into `renderNode()` fails the test
+written to forbid it, and reverting `DESC_BASES` to the fixed order shows
+`ccr_desc/welding.json` fetched ahead of the bucket in the test's own output.
+That is what the 404 looked like.
+
+### Still open from the log
+
+Logged, not fixed: the token chips read as breadcrumbs but only their `×` is a
+control (**§2.2** — they are a pick list, not a location, and Sam should decide
+whether they become navigable); only the title is a hit target in a panel row
+(**§2.4**); a carried course has no in-panel destination, so every staged move
+goes through the canvas (**§2.5**); *Recenter* targets the token rather than
+what the panel shows (**§1 ruling 6** — the title says so, the wording is Sam's
+call); the canvas is reachable by Tab but sits behind 217 controls (**§2.3**);
+and a search-box focus loss the session logged as unreproduced (**§6.3**),
+which matches a non-defect S231 already diagnosed. The `⋮` menu's same-origin
+link out to COBI is now named in the brief as a boundary the observer must not
+cross — the single most likely accidental crossing, and the old rule did not
+cover it.

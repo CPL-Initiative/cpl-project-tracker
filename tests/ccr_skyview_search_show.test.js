@@ -539,5 +539,69 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(12) it is a word, not an emoji or an icon (the glyph rule)",
     !/[\u{1F300}-\u{1FAFF}]\s*\d+\s*articulation/u.test(panel));
 
+  // ── (13) coming back out: the scroll, the cursor, and the click path ──────
+  /* Three reports from the 2026-09-06 observation session, and two of them turn
+   * out to be one defect. jsdom does no layout, so scrollTop is always 0 and a
+   * behavioural test is impossible — the property is instrumented instead, which
+   * is the actual contract: reset where the DOCUMENT changes, never where it
+   * repaints. */
+  const detail = q("#u-detail");
+  let scrollWrites = [];
+  Object.defineProperty(detail, "scrollTop", {
+    configurable: true, get: () => 0, set: (v) => { scrollWrites.push(v); },
+  });
+
+  const discSug = w.__ccrSuggest("Welding", 60).find((x) => x.kind === "subject");
+  w.__ccrGoSuggestion(discSug);
+  await tick();
+  check("(13) the discipline panel opens and lands at the top",
+    scrollWrites.length >= 1 && scrollWrites.every((v) => v === 0), JSON.stringify(scrollWrites));
+
+  scrollWrites = [];
+  const firstId = q("#u-detail .idlist .ttl[data-go]");
+  check("(13) the discipline panel lists its identities", !!firstId);
+  firstId.click();
+  await tick();
+  check("(13) ⭐ opening an identity lands at the TOP of content the reader has never seen",
+    scrollWrites.length >= 1 && scrollWrites.every((v) => v === 0), JSON.stringify(scrollWrites));
+
+  check("(13) ⭐ the identity offers the click path back to its discipline — a word, not a glyph",
+    !!q("#u-back-isl") && /^Back to Welding$/.test(q("#u-back-isl").textContent.trim()),
+    q("#u-back-isl") && q("#u-back-isl").textContent);
+
+  const chip = q("#u-detail .chip");
+  check("(13) the identity-system chip says what follows from the system, not just its name",
+    !!chip && /re-key/.test(chip.getAttribute("title") || ""),
+    chip && (chip.getAttribute("title") || "∅ no title"));
+
+  /* ⚠️ THE HALF THAT MUST NOT REGRESS. renderNode() fires on every filter
+   * keystroke, description toggle and staged move; resetting there would throw
+   * the reader to the top mid-task — the friction Sam reported on 2026-09-05
+   * (ruling 3a), restated as a feature. */
+  scrollWrites = [];
+  const desc = q("#u-detail .mlist .cd[data-desc]");
+  check("(13) the identity carries a member row to re-render", !!desc);
+  desc && desc.click();
+  await tick();
+  check("(13) ⚠️ a re-render INSIDE the panel does not touch the scroll",
+    scrollWrites.length === 0, JSON.stringify(scrollWrites));
+
+  q("#u-back-isl").click();
+  await tick();
+  check("(13) Back returns to the discipline panel",
+    !q("#u-back-isl") && /course identit/.test(detail.textContent));
+
+  /* ⭐ THE CRUX. Escape used to work only if you had ARRIVED by keyboard: the
+   * mouse path never set the cursor, so kbInside stayed false and the footer's
+   * unconditional "Esc comes back out" was false for every mouse user. */
+  q("#u-detail .idlist .ttl[data-go]").click();
+  await tick();
+  check("(13) an identity is open again, reached by CLICKING", !!q("#u-back-isl"));
+  q("#u-cvs").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  await tick();
+  check("(13) ⭐ Escape backs out of a selection made with the MOUSE, not only the keyboard",
+    !q("#u-back-isl") && /course identit/.test(detail.textContent),
+    detail.textContent.slice(0, 120));
+
   done();
 })().catch((e) => { console.error("HARNESS ERROR", e); check("the suite ran to the end", false, String(e && e.stack || e)); done(); });

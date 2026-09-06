@@ -2106,8 +2106,26 @@ var descCache={}, descState={};      // shard -> {cn: [desc, title, units]} · s
  * bucket `ccr-desc` serves the deployed page (Sam, 2026-08-24: "I expect we'll
  * put the shards on supabase"). The shards are 50 MB of derived text and are
  * NOT committed, so a page on GitHub Pages has only the bucket. */
+/* Named, and exposed on the debug state, so the per-host contract is testable
+ * without standing up a second window just to change the URL. */
+function descBasesFor(hostname){
+  var local  = "ccr_desc";
+  var bucket = "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc";
+  /* ⚠️ ORDER BY WHERE THE PAGE IS SERVED FROM, or the first base can never win.
+   * The shards are NOT committed, so on the deployed site ./ccr_desc cannot
+   * exist and every discipline paid one guaranteed 404 — which downloads a 5 KB
+   * GitHub 404 page — before the fetch that works. Measured 2026-09-06: three
+   * disciplines, three 404s, ~350 ms of pure latency, and a network panel that
+   * reads like a broken page to anyone debugging something else. A working tree
+   * served by `python3 -m http.server` is the ONLY place the directory exists,
+   * so try it there and nowhere else. file:// has no hostname and keeps the
+   * local order — descriptions cannot cross-origin from there anyway. */
+  var h = hostname || "";
+  var isLocal = !h || h === "localhost" || h === "127.0.0.1" || h === "[::1]" || h === "::1";
+  return isLocal ? [local, bucket] : [bucket, local];
+}
 var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
-  ["ccr_desc", "https://hvuwhnbuahrtptokpqfh.supabase.co/storage/v1/object/public/ccr-desc"];
+  descBasesFor((window.location && window.location.hostname) || "");
 /* The canonical seed (kb/discipline_canonical_subj4.json) carries, per
  * discipline, the Common SUBJ and the authority chips of item 19 (Sam,
  * 2026-09-03): the verbatim C-ID / CCN code where it differs from ours, and a
@@ -2124,6 +2142,28 @@ var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
  * openInspector() still opens it on the first click of a node, so selecting a
  * course shows its details exactly as before; only the INITIAL state changed. */
 var inspOpen=false;
+/* The keyboard model's cursor, assigned by wire(). ⚠️ EVERY selection path
+ * routes through it — mouse, search, panel link, keyboard — so Escape backs out
+ * of a selection however it was made. It used to be set ONLY by the Tab/Enter
+ * path, which made two separate reports of the same defect: a mouse user who
+ * pressed Escape (as the footer hint tells them to, unconditionally) got
+ * nothing, because kbInside was still false; and an identity opened by clicking
+ * a title in the discipline panel had no way back to that discipline at all.
+ * Observed 2026-09-06. */
+var kbSync=null;
+/* ⚠️ ENTRY POINTS ONLY — never renderNode(). Opening an identity puts a
+ * document the reader has never seen underneath a scroll offset they chose for
+ * a different one: from 600 the panel landed below the new course's title,
+ * code, units and articulation line (observed 2026-09-06, reproduced 2/2). But
+ * renderNode() also fires on every filter keystroke, description toggle and
+ * staged move, and resetting there would throw the reader to the top mid-task —
+ * which is precisely the friction Sam reported in the search list on
+ * 2026-09-05 (ruling 3a). Reset where the DOCUMENT changes, not where it
+ * repaints. */
+function resetPanelScroll(){
+  var el=document.getElementById("u-detail");
+  if(el) el.scrollTop=0;
+}
 /* What a drag does (Sam, 2026-09-03: "need chips or icons to choose whether to
  * move an item or reposition the focus — when zoom, I couldn't see how to move
  * the screen to keep the subject in view"). "move" carries a course or a
@@ -2299,6 +2339,17 @@ var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
          ["#E7EEF9","#0047AB","C-ID","official statewide"],
          ["#FBF1D8","#8B6800","CCN","official statewide"],
          ["#EFEFEC","#5C5C55","unified","synthetic course"]];
+/* ⚠️ THE MOST REPEATED CHIP ON THE SURFACE HAD THE LEAST TO SAY. The two chips
+ * beside it — the authority code and "proposed" — cite the ruling and its date;
+ * this one carried no title at all, on 13 of the 16 chips in a typical panel
+ * (observed 2026-09-06). "M-ID — our working label" names the system without
+ * saying what follows from it: who may re-key it, and whether it is a statewide
+ * claim. That is the part a faculty reviewer needs. */
+var SYSWHY=[
+  "Our own working number, minted by the Common Course Reference. We may re-key it — it asserts no statewide equivalence.",
+  "An ASCCC C-ID: an official statewide number. Nobody here may re-key it.",
+  "A Common Course Numbering (CCN) number: an official statewide number. Nobody here may re-key it.",
+  "A synthetic row standing in for a course identity. It carries no minted number of its own."];
 /* why-bits on an orbiting point — mirrors kb/_build_ccr_universe.py */
 var WHY=[[1,"the same local subject code"],[4,"words in common in the title"],
          [2,"the same SUBJ4"],[8,"the same TOP code"],[16,"the same units"],
@@ -3864,7 +3915,7 @@ window.__ccrUniverseState = function(){
           tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
-          descBases:DESC_BASES.slice(), descState:descState,
+          descBases:DESC_BASES.slice(), descBasesFor:descBasesFor, descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
           // The zoom ceiling and the radius taper are here because a canvas
           // radius cannot be queried from the DOM, and the taper is the half of
@@ -4320,6 +4371,17 @@ function wire(){
     if(kbIsl<0 || !kbInside) kbSubject(dir);
     else kbIdentity(dir);
   }
+  /* Point the cursor at whatever was just selected, however it was selected.
+   * Idempotent for the keyboard path itself: kbSubject/kbIdentity set these and
+   * then call showIsland/showNode, which land back here with the same values. */
+  kbSync=function(isl, nd){
+    if(!U || !isl){ kbIsl=-1; kbNode=-1; kbInside=false; return; }
+    var i=U.islands.indexOf(isl);
+    if(i<0) return;
+    kbIsl=i;
+    if(nd){ kbInside=true; kbNode=isl.p.indexOf(nd); }
+    else   { kbInside=false; kbNode=-1; }
+  };
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
     if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
@@ -4700,7 +4762,8 @@ function showMenuHtml(){
 /* ── panels ─────────────────────────────────────────────────────────────── */
 function chipFor(nd){
   var s=SYS[nd.s]||SYS[3];
-  return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
+  return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+
+    '" title="'+esc(SYSWHY[nd.s]||SYSWHY[3])+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
 }
 function goNode(id){
   var h=nodeById(id); if(!h) return;
@@ -4711,6 +4774,7 @@ function goNode(id){
 }
 function showIsland(isl){
   openInspector();
+  if(kbSync) kbSync(isl, null);
   var el=document.getElementById("u-detail");
   var idents=isl.p.filter(function(p){ return !p.a; });
   var top=idents.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
@@ -4735,6 +4799,7 @@ function showIsland(isl){
   });
   var b=document.getElementById("u-open-work");
   if(b) b.addEventListener("click", function(){ window.__ccrDiscipline(b.dataset.d); });
+  resetPanelScroll();
 }
 /* The work surface (the grouped decision view) exists for a few subjects only.
  * The button says so rather than doing nothing. */
@@ -4763,7 +4828,9 @@ function showNode(nd, isl, keepFilter){
   selNode=nd; selIsl=isl;
   if(!keepFilter) memFilter="";
   openInspector();
+  if(kbSync) kbSync(isl, nd);
   renderNode();
+  resetPanelScroll();
   loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
 }
 function memberRow(m, isl, nd, moved){
@@ -4809,7 +4876,16 @@ function renderNode(){
   // leads the list, ahead of the page cap (MUS 180 carries 850 courses; a row
   // appended at the end of that would be on a page nobody opens).
   mine.sort(function(a,b){ return ((movedTo[a.cn]===nd.i)?0:1) - ((movedTo[b.cn]===nd.i)?0:1); });
-  var h="<h3>"+esc(nd.t||nd.i)+"</h3>"+
+  /* ⭐ THE CLICK PATH BACK. A reader who opened this identity from the
+   * discipline panel had no way to return to it: the token chips look like
+   * breadcrumbs but only their × is a control, and the ⋮ menu's "doors out" are
+   * doors to other VIEWS, not a step up. Re-searching the discipline by name
+   * was the only route (observed 2026-09-06). Escape does it too now that the
+   * cursor is synced, but only while the canvas holds focus — and after a click
+   * in the panel it does not. A word, not a glyph. */
+  var h=(isl?'<p class="sub" style="margin:0 0 .4em"><button type="button" class="linkish" '+
+    'id="u-back-isl">Back to '+esc(isl.d)+'</button></p>':"")+
+    "<h3>"+esc(nd.t||nd.i)+"</h3>"+
     "<p>"+chipFor(nd)+' <span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+
     esc(unitsWord(nd.u))+" · "+num(total)+" college course"+(total===1?"":"s")+" carried"+
     (nd.a?' · <span class="chip mut" title="A single college\'s course that has not been '+
@@ -4908,6 +4984,10 @@ function renderNode(){
       (orbs.length>cap?'<p class="sub">Showing '+cap+' of '+num(orbs.length)+' — zoom in on the map for the rest.</p>':"");
   }
   el.innerHTML=h;
+  var bk=document.getElementById("u-back-isl");
+  if(bk) bk.addEventListener("click", function(){
+    selNode=null; showIsland(isl); draw();
+  });
   var f=document.getElementById("u-mfilter");
   if(f) f.addEventListener("input", function(){
     memFilter=f.value; renderNode();
