@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 808,
-    "bytes": 8635677,
+    "files": 809,
+    "bytes": 8665521,
     "over_budget": 5,
     "handoff_max": 233,
     "always_loaded_files": 1,
@@ -26,27 +26,27 @@
       },
       "other": {
         "files": 105,
-        "bytes": 2621061,
+        "bytes": 2624674,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 19312,
+        "bytes": 21733,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1990541,
+        "bytes": 2003946,
         "over": 1
       },
       "kb_note": {
-        "files": 391,
-        "bytes": 2035127,
+        "files": 392,
+        "bytes": 2039343,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 162675,
+        "bytes": 168864,
         "over": 1
       },
       "handoff": {
@@ -61,16 +61,16 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2653,
-      "bytes": 1324287558,
-      "heavy_bytes": 614580864,
-      "heavy_share": 0.464,
+      "files": 2657,
+      "bytes": 1336347558,
+      "heavy_bytes": 626567848,
+      "heavy_share": 0.469,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -339,13 +339,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 32206,
+        "bytes": 38395,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 20206,
-        "ratio": 2.68
+        "over_by": 26395,
+        "ratio": 3.2
       },
-      "message": "32,206 B is 2.7× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "38,395 B is 3.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -456,6 +456,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 25051503,
+        "kind": "dir"
+      },
+      "message": "directory totals 25,051,503 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
         "bytes": 17529641,
@@ -472,16 +482,6 @@
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 13064519,
-        "kind": "dir"
-      },
-      "message": "directory totals 13,064,519 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

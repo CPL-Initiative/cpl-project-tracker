@@ -1604,7 +1604,7 @@ again.** Two findings dissolved on a single grep:
 - *"`#u-mode-pan` and `#u-mode-move` carry neither `title` nor `aria-label`, and
   the active mode is conveyed by styling alone with no `aria-pressed`."* Both
   buttons carry `aria-pressed`, `setMode()` maintains it on every switch, and
-  their visible text ("Pan", "Move") **is** their accessible name — a labelled
+  their visible text ("Pan", "Move") **is** their accessible name — a labeled
   button needs no `aria-label`. Nothing to fix.
 - *"214 identities show `0 college courses carried` and `row count 3` side by
   side with no explanation of what `row count` means."* The count carries a
