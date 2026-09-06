@@ -59,7 +59,7 @@ nothing, because by then there was nothing left to preserve.
 A measurement has two halves — **what happened** and **where it happened** — and
 only the first half is what you observed. The second is an inference drawn at
 write-up time, when the observer is looking at the code and reasoning about
-which element *ought* to be responsible. That inference is unlabelled in the
+which element *ought* to be responsible. That inference is unlabeled in the
 handoff: it reads with exactly the same confidence as the measured number
 beside it.
 

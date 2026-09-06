@@ -795,7 +795,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
      *
      * ⚠️ THE ORIGINAL ASSERTION HERE WAS RIGHT ABOUT ITS EVIDENCE AND WRONG
      * ABOUT ITS FIX, WHICH IS WHY IT IS REPLACED RATHER THAN DELETED. Item 6
-     * made Enter leave the list up because an Enter-closes behaviour was what
+     * made Enter leave the list up because an Enter-closes behavior was what
      * made an intro course look absent. The course was actually missing from
      * the RANKING — "weldi" lost it, guarded above at (14) — so once that was
      * fixed, keeping the panel open was solving a bug that no longer existed at
@@ -804,7 +804,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       q("#sug").hidden, q("#sug").hidden ? "closed" : "still open");
     /* The button in the list's bottom row is the same call as the key, so the
      * two cannot drift apart. */
-    check("(15) the Enter button and the Enter key are one behaviour",
+    check("(15) the Enter button and the Enter key are one behavior",
       /function runSearch\(\)/.test(tpl) && /goBtn\.addEventListener\("mousedown"/.test(tpl));
   }
 

@@ -1,6 +1,7 @@
 {
-  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
   "_note": "Re-baselined by `npm run test:floor` (2026-09-05); cobi_a11y_baseline.test.js was added by hand at 17 and the run now floors it itself — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before, so diff this file for LOWERED numbers before committing.",
+  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
+  "ccr_skyview_outline.test.js": 23,
   "files": {
     "actions_bar_slim.test.js": 15,
     "activities_sprint_filter.test.js": 9,

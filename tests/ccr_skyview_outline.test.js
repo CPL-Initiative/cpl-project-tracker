@@ -134,7 +134,7 @@ const css = tpl;                                  // the stylesheet, as authored
         !!q("#ol-cpl") && q("#ol-cpl").classList.contains("empty"),
         "a surface that omits the layers it cannot fill reads as finished");
 
-  /* ⭐ SAM'S SENTENCE, VERBATIM. He authorised a synthetic description "as long
+  /* ⭐ SAM'S SENTENCE, VERBATIM. He authorized a synthetic description "as long
    * as it is clearly labeled MAP-Generated for faculty consideration and
    * revision before use" — a paraphrase is not the ruling. */
   const gen = (q(".ol-gen") || {}).textContent || "";
