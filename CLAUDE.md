@@ -789,19 +789,24 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyOutline S232 — one alias chain, and the eight rulings executed (2026-09-05)
+### SkyBuild S233 — the observation log worked, then Sam drove it (2026-09-06)
 
-**Two PRs (#1490, #1491)** clearing all eight queued rulings. ⭐ **The chain is declared ONCE now**
-(`kb/alias_chain.py`, a CI guard, a PUSH line under Rule 7): its copy carried **7 maps against 15**
-under a comment promising lockstep. ⚠️ **Ruling 4 mostly evaporated on measurement** — the worklist
-is rebuilt nightly (0 dead; re-keying it would have MOVED 1,197 live ids) and `course_id` was already
-current-era; only the `identities` map was stale (1,369 re-keyed). S231's death figures came from the
-browser payload, which ships 16,480 of 76,008 rows. ⭐ **The near-miss:** 175 identities are C-ID,
-which an M-ID catalog cannot hold, so S229's plan condemned them **by construction** — 172 live, 662
-records, one `--apply` away, all five gates passing. Ruling 5's worklist is what made it visible.
-Also: `doctrine.py --read` + the **consult-doctrine** skill, SkyView's three frictions, articulation
-counts on the map, a merge queue that writes nothing, and ruling 2 routed through Governance.
-Stories: `ccr_atlas_lessons`; handoff `session_233_handoff`.
+**PR #1493.** A computer-use session logged **sixteen findings** against S232's brief; **four were
+real** (panel scroll on drill-in; ⭐ *no way back* and *Escape only works from the keyboard* were **one
+defect** — the keyboard cursor was set only by the Tab/Enter path, so the back path existed and was
+unreachable by mouse; a **guaranteed 404 per discipline** from a base that cannot exist on the deployed
+host; the identity chip's missing title). **Two were not defects**, and ⚠️ **the finding ranked first was
+the most wrong** — the brief's figure was right for the file it named and the session had measured a
+different payload ([KB note](docs/kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md)).
+⚠️ **Found while reproducing it: the atlas payload is TWELVE DAYS older than the universe payload and
+nothing rebuilds it** — that is the whole 117-discipline disagreement, and the map and the discipline
+tables can differ by 43 on one screen. **NEEDS SAM.** Then Sam drove it: the hover returned the
+**identity** card on 14 of 30 courses; the purple canvas is the **membership glow** at 983px, not the
+focus disc; `weldi` lost *Introduction to Welding* because tiers tested the string start only; Hide
+died on the next pick; the list is paged; and **Similar courses** ships, ordered Beg → Int → Adv.
+⚠️ **Two guards passed with the fix deleted** — the fixture was too small to reproduce either defect
+([KB note](docs/kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md)).
+Stories: `ccr_atlas_lessons`; handoff `session_234_handoff`.
 
 ## Troubleshooting
 

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 390,
+   "count": 391,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1130,6 +1130,27 @@
      "title": "A filter, the column that justifies it, and the export must share one source",
      "type": "methodology",
      "updated": "2026-08-16"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "tests/ccr_skyview_hover_disc.test.js",
+      "tests/ccr_skyview_universe.test.js",
+      "prototype/ccr_universe.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "fixtures",
+      "perturbation",
+      "false-green",
+      "skyview"
+     ],
+     "title": "A fixture too small to reproduce the defect makes the guard a decoration",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-09-03",
@@ -12010,8 +12031,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 207,
+   "count": 208,
    "docs": [
+    {
+     "created": "2026-09-06",
+     "governs": [],
+     "n": 234,
+     "path": "docs/session_234_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the outline is still unbuilt, and one payload is twelve days stale",
+     "type": null,
+     "updated": "2026-09-06"
+    },
     {
      "created": "2026-09-05",
      "governs": [],
@@ -15583,5 +15617,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 795
+ "total": 797
 }
