@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-75 document(s).
+76 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -79,6 +79,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Sierra vendor-integration lane — session handoff](../sierra_vendor_lane_handoff.md) | `sierra_vendor_lane_handoff.md` | 2026-07-03 | 2026-07-03 |
 | [Sierra — technical reference (how the CPL assistant is built)](../sierra_technical_reference.md) | `sierra_technical_reference.md` | 2026-07-02 | 2026-07-02 |
 | [Similar-course FAMILY consolidation lane — scope + measure-first](../similar_course_family_scope.md) | `similar_course_family_scope.md` | 2026-06-16 |  |
+| [SkyView troubleshooting brief — for a Claude Desktop computer-use session (observe and log only)](../skyview_troubleshooting_brief.md) | `skyview_troubleshooting_brief.md` | 2026-09-06 | 2026-09-06 |
 | [SkyView — drag any local course, queue the breakage, batch the re-mint](../skyview_drag_rehome_scope.md) | `skyview_drag_rehome_scope.md` | 2026-08-24 | 2026-08-24 |
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
 | [The CPL clean-up worklist — what to fix, in what order, and who fixes it](../map_cleanup_worklist.md) | `map_cleanup_worklist.md` | 2026-08-19 | 2026-08-19 |
