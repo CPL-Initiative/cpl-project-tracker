@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-06",
   "_session": 233,
-  "_status": "SkyView got two rounds of scrutiny on 2026-09-06 and came out of both with real fixes. A computer-use session logged sixteen findings: four were genuine and are fixed — the details panel no longer drops you into the middle of a course you just opened, there is now a way back from a course to its discipline (Escape only ever worked if you had arrived by keyboard), every discipline stopped paying a wasted failed download before its descriptions load, and the M-ID chip explains what it means. Two of its findings were not defects at all, and the one it ranked most serious was wrong in an instructive way: it 'corrected' a figure that was already right for the file it named, having measured a different one. Chasing that down found something nobody had noticed — one of the two data files behind the map is twelve days older than the other, which is why the discipline tables and the map can disagree, and that needs a decision. Sam then drove SkyView himself and reported five more: hovering a college course showed the same card every time, the background turned purple when you picked something, typing one more letter of 'welding' made the main intro course vanish from the search, the side panel reopened itself after you hid it, and the results list stopped at 60. All five are fixed, and the panel now also lists similar courses in level order, beginning before advanced.",
+  "_status": "SkyView got three rounds of scrutiny on 2026-09-06 and came out of all three with real fixes. A computer-use session logged sixteen findings: four were genuine and are fixed — the details panel no longer drops you into the middle of a course you just opened, there is now a way back from a course to its discipline (Escape only ever worked if you had arrived by keyboard), every discipline stopped paying a wasted failed download before its descriptions load, and the M-ID chip explains what it means. Two of its findings were not defects at all, and the one it ranked most serious was wrong in an instructive way: it 'corrected' a figure that was already right for the file it named, having measured a different one. Sam then drove SkyView himself and reported five more: hovering a college course showed the same card every time, the background turned purple when you picked something, typing one more letter of 'welding' made the main intro course vanish from the search, the side panel reopened itself after you hid it, and the results list stopped at 60. All five are fixed, and the panel now also lists similar courses in level order, beginning before advanced. Sam then answered a seven-item decision sheet in one sitting — every one 'yes' — so the search chips are now navigable, the whole panel row opens its course, a carried course can be dropped on a destination in the panel, the view button names what it recentres on, Enter leaves the results list up, there is a skip link to the map, and the daily run rebuilds SkyView's decision data so a curator is never offered a decision about a course that no longer exists. Separately, three GitHub Actions workflows were using 89% of the repo's build minutes and are now trimmed. What is still open: the course outline itself, still unbuilt, and one question only Sam can answer — how three sources of skill statements are reconciled when they disagree.",
   "items": [
     {
       "id": "s232-sam-outline-sources",
@@ -41,22 +41,10 @@
       "text": "docs/roadmap_archive.md is 575 KB against a 150 KB budget — the largest thing the docs lint flags, and pure history. It is a safe compaction whenever a session has spare room."
     },
     {
-      "id": "s233-sam-payload-staleness",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Two data files sit behind SkyView and one is twelve days older than the other, so the discipline tables and the map can report different counts for the same discipline — 43 apart on Health. Nothing rebuilds the older one on a schedule. This is your standing question about whether the daily run should rebuild the map's layout, now with a visible cost. Until you decide, we rebuild both together or neither."
-    },
-    {
-      "id": "s233-sam-skyview-design-calls",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Five smaller SkyView items are design calls rather than bugs, so they are yours: the search chips look like a trail you can click back through but only their × does anything; only a course's title is clickable in a list row, not the whole row; a course you have picked up has nowhere to drop it inside the panel, only on the map; Recenter re-centres on the chip rather than on what the panel is showing; and pressing Enter in the search closes the suggestions instead of keeping them open."
-    },
-    {
       "id": "s233-fable-similar-courses-next",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The panel's new Similar courses list reads levels out of course titles, which is the only place we hold them — 44% of welding titles say beginning, intermediate or advanced and the rest say nothing. When the course outline lands, feed its level field back into this list so the ladder stops depending on the wording of a title."
+      "text": "The panel's new Similar courses list reads course levels out of titles, which is the only place we hold them — 44% of Welding's 512 titles say Beginning, Intermediate or Advanced and the rest are listed last rather than guessed at. When the course outline ships with a real level field, feed it back here so the ladder stops depending on wording."
     }
   ]
 }

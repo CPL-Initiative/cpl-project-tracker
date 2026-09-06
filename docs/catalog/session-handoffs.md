@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 234 | [the outline is still unbuilt, and one payload is twelve days stale](../session_234_handoff.md) | 2026-09-06 |
+| 234 | [the outline is still unbuilt, and the queue is clear again](../session_234_handoff.md) | 2026-09-06 |
 | 233 | [build the course outline; the queue is clear](../session_233_handoff.md) | 2026-09-05 |
 | 232 | [build the course outline, and find the agency skills](../session_232_handoff.md) | 2026-09-05 |
 | 231 | [read Sam's replies from the sheet's store, then drive his SkyView reactions](../session_231_handoff.md) | 2026-09-05 |

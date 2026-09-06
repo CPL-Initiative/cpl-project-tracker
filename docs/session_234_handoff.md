@@ -1,5 +1,5 @@
 ---
-title: "Session 234 handoff — the outline is still unbuilt, and one payload is twelve days stale"
+title: "Session 234 handoff — the outline is still unbuilt, and the queue is clear again"
 created: 2026-09-06
 updated: 2026-09-06
 tags: [handoff]
@@ -42,6 +42,24 @@ its neighbors and `pick()` gave the circle priority); the purple canvas is the
 only; Hide died on the next pick; the list is paged (ranked once to 300,
 revealed 60 at a time). Plus **Similar courses**, ordered Beg → Int → Adv.
 
+**Round 3: a decision sheet, seven rulings, all `yes` (PR #1494).** The five calls S233
+logged-but-did-not-fix plus the payload decision went to Sam as one numbered sheet with
+reply chips; he answered in a sitting with no edits and no follow-ups. All seven are
+shipped and guarded (`ccr_skyview_search_show` §15, 13 checks). The one that changed
+behavior beyond its own control: **the daily run now rebuilds SkyView's decision payload
+and `skyview.html` with it** — the atlas payload is INLINE in the served page, so
+regenerating the JSON alone would never reach the deployed page. `ccr_universe.json` is
+untouched; the layout stays hand-built, which is the half of the ruling that says no.
+
+**Round 4: Actions minutes (PR #1495).** Measured 4,012 min over 2026-09-01→06, of which
+three workflows were 89%. `concurrency` on `js-tests` and `secret-scan` (keyed to the PR,
+`cancel-in-progress` gated to `pull_request`, so only superseded commits are canceled and
+a push to `main` can never be canceled by a later one), and `paths-ignore` on CodeQL's
+**push** trigger so the cron's three-a-day data commits stop being analyzed. ⚠️ **My first
+recommendation was wrong and the job log disproved it** — dropping `fetch-depth: 0` would
+have saved ~60s, not the ~650 min/month I claimed; TruffleHog was already diff-only. The
+reasoning is a comment in the file now so nobody re-proposes it.
+
 ## Read these first, in order
 
 1. [`docs/reference/lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
@@ -72,32 +90,56 @@ the load-bearing parts:
 - ⚠️ We hold **57 published welding credit recommendations and ZERO skill
   statements.** Everything else is buildable from data we already have.
 
-## NEEDS SAM — decide before it bites again
+## What is actually open
 
-⚠️ **The atlas payload is twelve days older than the universe payload.**
-`prototype/ccr_atlas_data.json` says `_generated_from: 2026-08-24 15:34`;
-`prototype/ccr_universe.json` says `2026-09-05 15:22` — a gap spanning the
-authority recode, the Z-band retirement and the prefix fold. That is the WHOLE
-of the 117-of-158 per-discipline disagreement (net −6, `(no discipline yet)` 955
-lower in the universe), so the −6 needs no investigation. **The staleness does:**
-the discipline tables read the older payload while the map reads the newer, so
-one screen can show Health 43 apart. `daily-dashboard.yml` builds only the
-description shards. This folds into his standing question ② — should the daily
-run rebuild the layouts? Until he rules: **rebuild both payloads in one commit
-or neither.**
+⚠️ **Ruling 9's follow-up is still open with Sam** — agency skill statements come from
+published agency standards **and** ACE exhibits **and** the MAP team ("All three"), and he
+flagged it himself: **how are the three reconciled when they disagree?** The pilot is an
+AWS welding certification. You cannot finish the outline's skill layer without this, but
+you can build everything else first.
 
-Also open: **ruling 9's follow-up** (how three skill-statement sources reconcile
-when they disagree) and **ruling 2's queue** (routed through Governance, spec is
-the ADR's four-item checklist, not built).
+**Ruling 2's queue** (S232) is routed through Governance, not built; the ADR's four-item
+checklist is the spec.
 
-## Left deliberately, for Sam not a session
+⭐ **A TEST THAT ONLY FAILS UNDER LOAD IS RACING A TIMER THE PRODUCT OWNS.** `test`
+went red on `ccr_skyview_search_show.test.js` while it passed 116/116 standalone,
+in a full local suite, under Node 20, and on CI minutes earlier on identical
+bytes. Every cheap hypothesis was wrong. **Running the file 24× CONCURRENTLY
+reproduced it in one command** (7 failures; `grep ^FAIL | sort | uniq -c` named
+all three) — the missing variable was contention, which a re-run does not vary.
+The cause: the page closes the suggestion list 120ms after the search box blurs
+(deliberate), §15's clicks schedule that close, and `tick()` is ONE macrotask.
+⚠️ **The product was right and the test was wrong** — and the failing checks were
+ruling 6, shipped that same morning. Before 7/24, after 24/24. Also: the CI log
+is not readable here (`get_job_logs` caps at ~the last minute; the log blob is
+egress-blocked), so **reproduce locally under contention rather than trying to
+read the log**.
+[KB note](kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md)
 
-Logged, not fixed: token chips read as breadcrumbs but only their `×` is a
-control; only the title is a hit target in a panel row; a carried course has no
-in-panel destination; *Recenter* targets the token, not the panel; the canvas
-sits behind 217 tab stops. **Enter still closes the suggestion list** and flies
-the map — the form's documented two-behavior design, and Sam withdrew that
-report before reproducing a narrower one.
+⚠️ **The `cpl_memory_log` step fails silently.** The 2026-09-06 checkpoint wrote 8 rows,
+its commit body said so, and **not one had a log entry** — the log `insert ... select` is a
+separate statement, so skipping it is invisible from the `cpl_memory` side, and no test can
+see it (the sandbox cannot reach `*.supabase.co`). Backfilled, and the playbook now carries
+the one-query verification. **Run it** before you report rows written.
+
+⚠️ **`ALIAS_MAPS` is a list of PATHS.** Call `load_maps()` before `resolve_id(id, maps)`.
+Passed straight in, it resolves nothing and does not error — the tell is that direct and
+chain agree EXACTLY (440 both ways; 504 live / 89 dead after `load_maps()`). This shape
+cost a wrong figure on two consecutive days.
+
+## Corrected this run — do not re-inherit these numbers
+
+Three claims in the S233 record were wrong and are fixed at the source; if you meet them
+in an older doc, these are the measured values:
+
+- The stale atlas payload did **not** make the map and the discipline tables disagree by
+  43 on Health. `disciplineRows()` takes its counts from the **universe** payload; the
+  stale file supplied only the Decisions column, the work-surface offer and a tooltip.
+  What the staleness actually cost was **89 of 593 decision-pack ids (15%) resolving to
+  nothing**, worst in Fire Technology at 32 of 136 — a curator offered a decision about a
+  course that no longer exists under that id.
+- The canvas sits **39** tab stops in, not 217, and already carried `tabindex="0"`.
+- TruffleHog was already diff-only; `fetch-depth: 0` is not the cost.
 
 ## Patterns that worked
 
@@ -109,6 +151,17 @@ report before reproducing a narrower one.
   that could not produce the condition. The assertions were never the problem.
 - ⭐ **Measure which, not how many.** "The hover is wrong" became tractable as
   "16 of 30 stars return the wrong card", and the fix moved it to 30 of 30.
+- ⭐ **A filter must be tested in BOTH directions.** The `paths-ignore` draft skipped
+  what it meant to skip and also skipped `kb/_build_ccr_universe.py` — a real
+  coverage regression — while missing `reports/**`, so it would never have fired
+  on an actual cron push. Running it against real commits caught both; asserting
+  the globs would have caught neither.
+- ⚠️ **The failure mode to watch in yourself: reliable at reading ONE thing
+  carefully, unreliable at noticing the ADJACENT field that falsifies it.** Three
+  times this run — the payload figure, `mergeable_state` (sitting in a payload
+  already fetched twice while I diagnosed missing CI as a dropped webhook), and
+  the `fetch-depth` theory the job log disproved. When you have a confident
+  reading, look at what is next to it before you act.
 - **Reproduce an inherited number against ITS OWN source** before correcting it.
 - **The build is part of the change** — `skyview.html`, the payloads and the
   dependency map rebuild in the same commit. ⚠️ The docs catalogs too:

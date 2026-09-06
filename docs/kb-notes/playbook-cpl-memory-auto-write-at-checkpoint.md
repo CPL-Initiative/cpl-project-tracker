@@ -1,7 +1,7 @@
 ---
 title: Playbook — auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)
 created: 2026-07-24
-updated: 2026-09-05
+updated: 2026-09-06
 tags: [playbook, memory, supabase, checkpoint, governance, obsidian-target]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -83,7 +83,32 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    `summary`/`detail`.) In the dashboard, the **✨ Autogenerate** button on the
    Add/Edit form drafts all of these from a typed topic via the cpl-chat RAG
    function — a curator convenience, still session-reviewed before save.
-6. **Log every write** to `cpl_memory_log` (actor = your session moniker).
+6. **Log every write** to `cpl_memory_log` (actor = your session moniker), then
+   **VERIFY the log actually landed before you say the rows were written.**
+   ⚠️ This step failed silently on 2026-09-06: the checkpoint wrote 8 rows, its
+   commit body said so, and **not one had a `cpl_memory_log` entry** — the log
+   `insert ... select` is a separate statement, so skipping it is invisible from
+   the `cpl_memory` side, and nothing in the suite can see it (the sandbox cannot
+   reach `*.supabase.co`). The check is one query and it belongs in the same call:
+
+   ```sql
+   select m.slug, count(l.id) filter (where l.action='create') as creates
+   from public.cpl_memory m
+   left join public.cpl_memory_log l on l.memory_id = m.id
+   where m.author = '<MonikerSNN>' group by m.slug order by m.slug;
+   ```
+
+   Every row this run wrote must show `creates = 1`. Backfill with the same
+   `insert ... select`, guarded by `not exists (... action='create')`, and say in
+   the note that the entry is late.
+
+   ⚠️ **Do not fold the log insert into the same statement as the row insert.**
+   A data-modifying CTE's rows are not visible to the rest of that statement's
+   snapshot, so `with ins as (insert ... returning id) insert into
+   cpl_memory_log ... join ins` logs NOTHING and returns an empty set — which
+   looks like success if you are not reading the return. Two statements, then
+   the query above. (Measured 2026-09-06, the same day this step was added; the
+   verification caught it immediately, which is the argument for having it.)
 7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
    on. It's a retrieval surface (query by scope), not an infinite feed.

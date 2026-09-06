@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 391,
+   "count": 392,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2640,6 +2640,25 @@
      "title": "A test must report a missing thing, not dereference it",
      "type": "methodology",
      "updated": "2026-08-25"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "tests/ccr_skyview_search_show.test.js",
+      "prototype/ccr_atlas_v1.html"
+     ],
+     "path": "docs/kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "jsdom",
+      "flake",
+      "ci"
+     ],
+     "title": "A test that only fails under load is racing a timer the product owns",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-07",
@@ -6779,7 +6798,7 @@
      ],
      "title": "Playbook \u2014 auto-write cpl_memory at every checkpoint (Phase 3 of the memory loop)",
      "type": "playbook",
-     "updated": "2026-09-05"
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-07-20",
@@ -12042,7 +12061,7 @@
      "tags": [
       "handoff"
      ],
-     "title": "the outline is still unbuilt, and one payload is twelve days stale",
+     "title": "the outline is still unbuilt, and the queue is clear again",
      "type": null,
      "updated": "2026-09-06"
     },
@@ -15617,5 +15636,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 797
+ "total": 798
 }
