@@ -266,22 +266,45 @@ def extract_audio(ffmpeg, path, wav_path) -> bool:
     return res.returncode == 0 and os.path.exists(wav_path)
 
 
-def transcribe(wav_path, model_size):
+def device_plan(device):
+    """Devices to try, in order — always ending on one that cannot need a GPU.
+
+    ⚠️ NOT `auto`. faster-whisper's auto selects CUDA whenever an NVIDIA GPU is
+    visible, then fails at load with "Library cublas64_12.dll is not found"
+    if the CUDA runtime is absent — which is the normal state of a work laptop:
+    the GPU is there, the toolkit is not. So CPU is the default, CUDA is opt-in,
+    and anything other than CPU falls back rather than losing the transcript.
+    """
+    if device == "cpu":
+        return [("cpu", "int8")]
+    return [(device, "float16"), ("cpu", "int8")]
+
+
+def transcribe(wav_path, model_size, device="cpu"):
     """Local faster-whisper. Returns (segments, description-of-what-ran)."""
     try:
         from faster_whisper import WhisperModel
     except ImportError:
         return [], "skipped — faster-whisper not installed (pip install faster-whisper)"
-    try:
-        model = WhisperModel(model_size, device="auto", compute_type="int8")
-        segments, _info = model.transcribe(wav_path, vad_filter=True)
-        out = [
-            {"start": s.start, "end": s.end, "text": s.text}
-            for s in segments if (s.text or "").strip()
-        ]
-        return out, f"faster-whisper {model_size}, local"
-    except Exception as exc:  # model download blocked, bad audio, no memory
-        return [], f"failed — {type(exc).__name__}: {exc}"
+
+    last = ""
+    for dev, compute in device_plan(device):
+        try:
+            model = WhisperModel(model_size, device=dev, compute_type=compute)
+            segments, _info = model.transcribe(wav_path, vad_filter=True)
+            out = [
+                {"start": s.start, "end": s.end, "text": s.text}
+                for s in segments if (s.text or "").strip()
+            ]
+            note = f"faster-whisper {model_size} on {dev}, local"
+            if dev != device:
+                note += f" (fell back from {device} — {last})"
+            return out, note
+        except Exception as exc:  # missing CUDA runtime, bad audio, no memory
+            last = f"{type(exc).__name__}: {exc}"
+            if dev != "cpu":
+                print(f"  {dev} unavailable ({last}); retrying on cpu")
+    return [], f"failed — {last}"
 
 
 # ─────────────────────────────────── main ────────────────────────────────────
@@ -294,6 +317,9 @@ def main(argv=None):
                     help="faster-whisper model: tiny/base/small/medium/large-v3 (default small)")
     ap.add_argument("--max-frames", type=int, default=MAX_FRAMES)
     ap.add_argument("--scene-threshold", type=float, default=SCENE_THRESHOLD)
+    ap.add_argument("--device", default="cpu", choices=["cpu", "cuda", "auto"],
+                    help="transcription device (default cpu; cuda needs the CUDA runtime "
+                         "installed and falls back to cpu if it is missing)")
     ap.add_argument("--no-audio", action="store_true", help="frames only, skip transcription")
     args = ap.parse_args(argv)
 
@@ -328,7 +354,7 @@ def main(argv=None):
         print("extracting audio…")
         if extract_audio(ffmpeg, video, wav):
             print(f"transcribing locally ({args.model})… first run downloads the model")
-            segments, asr = transcribe(wav, args.model)
+            segments, asr = transcribe(wav, args.model, args.device)
             print(f"  {len(segments)} segments — {asr}")
             try:
                 os.remove(wav)

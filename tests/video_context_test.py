@@ -29,7 +29,8 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from kb._video_context import (  # noqa: E402
-    build_index, deliverable_name, frame_filename, plan_frames, srt_timestamp,
+    build_index, deliverable_name, device_plan, frame_filename, plan_frames,
+    srt_timestamp,
 )
 
 FAILURES = []
@@ -97,6 +98,24 @@ def test_index_interleaves_in_time_order():
              ("frame_0001", "welding cluster", "frame_0002", "hide breaks")]
     check("index is chronological", order == sorted(order), str(order))
     check("frames are referenced by path", "frames/frame_0002_t0090.00.png" in md)
+
+
+def test_every_device_plan_ends_somewhere_without_a_gpu():
+    """A GPU-first plan must degrade to CPU, not lose the transcript.
+
+    Sam's first real run died on `Library cublas64_12.dll is not found`:
+    faster-whisper's device="auto" selects CUDA whenever an NVIDIA GPU is
+    visible, and a work laptop normally has the GPU without the CUDA runtime.
+    Frames survived; the narration — the part he said mattered — did not.
+    """
+    for device in ("cpu", "cuda", "auto"):
+        plan = device_plan(device)
+        check(f"{device}: plan is non-empty", len(plan) >= 1)
+        check(f"{device}: ends on cpu", plan[-1][0] == "cpu", str(plan))
+        check(f"{device}: cpu appears once", [d for d, _ in plan].count("cpu") == 1, str(plan))
+    check("cpu does not retry itself", device_plan("cpu") == [("cpu", "int8")])
+    check("cuda is tried before cpu", device_plan("cuda")[0][0] == "cuda")
+    check("auto still falls back", len(device_plan("auto")) == 2)
 
 
 def test_deliverables_carry_the_date_code():
