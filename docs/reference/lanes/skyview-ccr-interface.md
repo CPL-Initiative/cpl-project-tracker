@@ -89,67 +89,75 @@ more than one course on 1,761 keys and those moves are refused with the reason.
 
 ## Measured in a browser — the durable warnings
 
-Both defects Sam's 2026-09-06 recording surfaced are FIXED (S235). What must not
-be lost is how they were mis-read, not the round-by-round — that is in
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+Both defects from Sam's 2026-09-06 recording are FIXED. What must not be lost is
+how they were MIS-READ; the round-by-round is in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and the reusable lesson in
+[`methodology-a-correct-measurement-can-name-the-wrong-place`](../../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md).
 
 ⚠️ **IT IS `.sugwrap` THAT WRAPS, NOT `#u-bar`.** The triage named `#u-bar`
-30 → 76px; walking the real ancestor chain in Chromium on the fourth pick shows
-`#u-bar` **unchanged** and `.u-search-slot .sugwrap` going 30 → 66, which pushes
-`#sug` 40 → 76. A `min-height` on `#u-bar` would have read as a fix and changed
-nothing. Ruling 3 shipped as a two-row reserve on `.sugwrap`; `#sug` top now
-holds at 75 across five picks. ⚠️ Chip tightening is bounded by **target size,
-not contrast**: `.u-tok-x` 24×24 and `.u-tok-go` min-height 24px sit on the WCAG
-2.2 SC 2.5.8 AA floor, verified still 24 after the change.
+30 → 76px; the real ancestor chain shows `#u-bar` **unchanged** and
+`.u-search-slot .sugwrap` going 30 → 66, which pushes `#sug` 40 → 76. A
+`min-height` on `#u-bar` would have read as a fix and changed nothing.
+⚠️ Chip tightening is bounded by **target size, not contrast**: `.u-tok-x` 24×24
+and `.u-tok-go` min-height 24px are on the WCAG 2.2 SC 2.5.8 AA floor.
 
-⚠️ **THE PICKS DIED ON THE WAY OUT, NOT ON THE WAY BACK.** `homeSearch()` called
-`clearTokens()` and `setCrumbs()` calls it on every view entry, so
-`__ccrTokenKeys()` already read `[]` on the Welding surface. Diagnosing the
-return path would have fixed nothing. The selection is now parked and re-rung by
-`restoreTokens()`.
+⚠️ **THE PICKS DIED ON THE WAY OUT.** `homeSearch()` called `clearTokens()` and
+`setCrumbs()` calls it on every view entry, so `__ccrTokenKeys()` already read
+`[]` on the work surface. Diagnosing the return path would have fixed nothing.
 
-⚠️ **Sam RETRACTED a finding on camera** — thirty seconds reporting that hover
-returned the identity card, then *"My bad. Forget everything I said there."*
-That passage is S233's hover fix working. **Read a recording to the end before
-fixing anything.**
+⚠️ **Sam RETRACTED a finding on camera** — that passage is S233's hover fix
+working. **Read a recording to the end before fixing anything.**
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
-## Sam's rulings, 2026-09-06 — all three shipped in S235
+## Sam's eight rulings of 2026-09-06 (decision sheet) — 3 built, 5 recorded
 
-1. **Enter closes the search panel.** ⚠️ REVERSES ruling 6 of the same morning,
-   a reversal he flagged himself. Shipped with it: the sort control moved to the
-   list's **top right** (a sticky `.sug-head`) and an **Enter** button took its
-   place in the bottom row; key and button are one call (`runSearch`).
-   ⚠️ The header is a child of the listbox, so `markSug` addresses rows by `id`,
-   never by child position — positional indexing would put the cursor one row
-   above where the reader is looking. ⚠️ Ruling 1 did **not** touch
-   `takeHighlighted()`: Enter on a highlighted row is the multi-select pick, and
-   ruling 3 of 09-05 keeps the list up through it.
-2. **Double-click opens the course outline** — split by what is under the
-   pointer: a course opens `#outline/<id>`, empty island ground keeps the
-   discipline accelerator. A panel button carries the same route, because a
-   double-click is undiscoverable and unreachable from a keyboard.
-3. **Reserve the chip row's space** — see the warnings above.
+All eight answered **yes**, no edits, no follow-ups
+(`cpl_memory` `sam-eight-rulings-2026-09-06-outline-sheet`). Built in S235:
+**text zoom** (three steps 0.85/1/1.25, per-browser; ⚠️ NOT a slider — the label
+placer drops what it cannot fit, so past a size the map goes quiet rather than
+crowding, and the collision boxes scale WITH the text or the placer accepts
+labels that then overlap; measured, the map's own zoom holds at 0.10043 across
+all three steps); **"the only college teaching it"** where a course is carried by
+one college (⚠️ the MEMBER count, not the description count — `total` in
+`olConfWord` counts colleges that publish a catalog, so the two cases say
+different things); and a **`.gitattributes`** with its ten files renormalized.
+Recorded, not built: the skill-source precedence, the articulations toggle's
+treatment of absence, the curate phrase's scope, **no nightly layout rebuild**,
+and **Interdisciplinary Studies is a grab bag** (525 identities against 1,263
+stand-alones).
+
+## Sam's three earlier rulings, 2026-09-06 — shipped
+
+Enter closes the search panel (a reversal he flagged himself; sort control to
+the list's top right, an Enter button at the bottom, and `markSug` addressing
+rows by `id` because the header is a child of the listbox); double-click opens
+the course outline (split by what is under the pointer, with a panel button
+because a double-click is undiscoverable and unreachable from a keyboard); the
+chip row reserves its space. ⚠️ Ruling 1 did **not** touch `takeHighlighted()` —
+Enter on a highlighted row is the multi-select pick. Detail:
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## The outline of record — BUILT (S235)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (23 checks,
-both key guards mutation-tested). **The description is CHOSEN, never written:**
-the medoid of the member catalog descriptions, quoted and attributed — composing
-prose out of several catalogs would read as authoritative while belonging to
-nobody. Sam's MAP-Generated sentence prints verbatim. **Skills are imputed** from
-the colleges' own words (we hold **zero** agency skill statements); confidence is
-agreement BETWEEN colleges; thin skills stay, chipped. **Two level axes, neither
-derived** — the course's off its title, a skill's off its own words.
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (31 checks,
+key guards mutation-tested). **Invariants, not history:**
 
-⚠️ **Two extraction defects were invisible until driven in Chromium**: every
-n-gram length counted per position, so fragments outscored the names containing
-them; and n-grams crossed commas in enumerations ("pain tissue integrity gas").
-Fixed by longest-n-gram-per-position, a containment guard with a ratio
-exception, and segmenting on punctuation first. **94.6% of member courses carry
-a description, but only 30.0% of identities have 2+** — stand-alones carry
-exactly one, so each outline states its own evidence.
+⭐ **The description is CHOSEN, never written** — the medoid member catalog
+description, quoted and attributed. Composing prose out of several catalogs
+would read as authoritative while belonging to nobody. Sam's MAP-Generated
+sentence prints verbatim.
+⭐ **Two level axes, neither derived** — the course's off its title, a skill's
+off its own words.
+⚠️ **Confidence is agreement BETWEEN colleges**, and "one college" means
+opposite things by context: a course carried by ONE college reads **"the only
+college teaching it"** (complete evidence), one that merely has a single catalog
+reads **"the only college with a description"**. The distinction is the MEMBER
+count, not the description count.
+⚠️ **Skill phrases need punctuation-aware n-grams and longest-name-wins** — the
+defects and their fixes are in the lessons doc. **94.6% of member courses carry
+a description, but only 30.0% of identities have 2+**, so each outline states
+its own evidence.
 
 ## NEEDS SAM
 
@@ -173,24 +181,25 @@ link, never a github.io URL.
 
 ## NEXT
 
-⓪ **CPL-focused view + show-articulations toggle (Sam, 2026-09-06, unprompted).**
-Two closely-linked asks, both needing a prototype first: (a) a **CPL vs
+⓪ **CPL-focused view + show-articulations toggle (Sam, 2026-09-06).** Two
+closely-linked asks, both to be prototyped first: (a) a **CPL vs
 Course/Discipline toggle** so *"the CPL exhibits and CRs are the focus more than
-the Courses"*; (b) a **show-articulations toggle on normal SkyView** to *"reveal
-to users where existing artics are and where they differ for the same course
-college to college."* ⚠️ `ar` is ABSENT, never 0 — a toggle that draws "no
-articulations" where we merely did not look would be a lie at scale.
+the Courses"*; (b) a **show-articulations toggle**. ⭐ **RULED**: the toggle
+**lights only what has a number** and leaves the rest drawn as it is — no gray,
+no hollow, no "none" marker, each of which reads as a finding. ⚠️ Only **1,490
+of 49,896 points (3.0%)** carry an articulation count, so marking absence would
+claim something about 48,406 points the data cannot support.
 
-① **Text zoom on the SkyView toolbar (Sam, 2026-09-06).** A control to zoom text
-size up or down, *"squeezed somewhere in on the SkyView toolbar."* ⚠️ **It must
-NOT change the current behavior where text does not zoom with the map** — *"it's
-important to keep with all we have going on."* So it scales label type
-independently of `view.k`, which is a separate axis from the map's zoom.
+① **The outline's skills layer — UNBLOCKED, now a fetch problem.** Ruling 1
+settles the precedence: **published agency standard is the text of record; an
+ACE exhibit fills a gap it leaves and never overrides it; the MAP team overrides
+either, attributed and dated**; a genuine conflict shows **both, each named**.
+⚠️ We hold none of that text — 1,987 credentials classified, 64 welding, **zero
+carrying a skill field**. Pilot: an AWS welding certification.
 
-①b **A magic phrase to curate (Sam, 2026-09-06).** Moving courses goes behind a
-phrase login, *"and later shift to a team phrase as things settle."* Sits with
-the `org-phrase-scope-auth` lane; the first write from this page is also a
-Governance surface (Rule 10 a3).
+①b **The curate phrase — ruled, not built.** **One phrase gates anything that
+leaves the browser**; reading stays open. ⚠️ First write from this surface, so
+Rule 10 a3 routes it through Governance and the privacy ADRs before it ships.
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),

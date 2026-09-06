@@ -1768,3 +1768,37 @@ to the new rulings with the reason, rather than deleted — including the one th
 asserted leaving the map *clears* the selection, which is exactly what made
 double-click destructive.
 
+### The three rulings of 2026-09-06, as shipped (moved from the lane, S235)
+
+1. **Enter closes the search panel** — ⚠️ REVERSES ruling 6 of the same morning,
+   a reversal he flagged himself. The sort control moved to the list's **top
+   right** (a sticky `.sug-head`); an **Enter** button took its place in the
+   bottom row; key and button are one call (`runSearch`). ⚠️ The header is a
+   child of the listbox, so `markSug` addresses rows by `id`, never by child
+   position. ⚠️ It did **not** touch `takeHighlighted()` — Enter on a
+   highlighted row is the multi-select pick, and ruling 3 of 09-05 keeps the
+   list up through it.
+2. **Double-click opens the course outline** — split by what is under the
+   pointer: a course opens `#outline/<id>`, empty island ground keeps the
+   discipline accelerator. A panel button carries the same route, because a
+   double-click is undiscoverable and unreachable from a keyboard.
+3. **Reserve the chip row's space** — see the warnings above.
+
+### The outline as built, in full (moved from the lane, S235)
+
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (23 checks,
+both key guards mutation-tested). **The description is CHOSEN, never written:**
+the medoid of the member catalog descriptions, quoted and attributed — composing
+prose out of several catalogs would read as authoritative while belonging to
+nobody. Sam's MAP-Generated sentence prints verbatim. **Skills are imputed** from
+the colleges' own words (we hold **zero** agency skill statements); confidence is
+agreement BETWEEN colleges; thin skills stay, chipped. **Two level axes, neither
+derived** — the course's off its title, a skill's off its own words.
+
+⚠️ **Two extraction defects were invisible until driven in Chromium**: every
+n-gram length counted per position, so fragments outscored the names containing
+them; and n-grams crossed commas in enumerations ("pain tissue integrity gas").
+Fixed by longest-n-gram-per-position, a containment guard with a ratio
+exception, and segmenting on punctuation first. **94.6% of member courses carry
+a description, but only 30.0% of identities have 2+** — stand-alones carry
+exactly one, so each outline states its own evidence.
