@@ -1,9 +1,33 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-06",
-  "_session": 233,
-  "_status": "SkyView got three rounds of scrutiny on 2026-09-06 and came out of all three with real fixes. A computer-use session logged sixteen findings: four were genuine and are fixed — the details panel no longer drops you into the middle of a course you just opened, there is now a way back from a course to its discipline (Escape only ever worked if you had arrived by keyboard), every discipline stopped paying a wasted failed download before its descriptions load, and the M-ID chip explains what it means. Two of its findings were not defects at all, and the one it ranked most serious was wrong in an instructive way: it 'corrected' a figure that was already right for the file it named, having measured a different one. Sam then drove SkyView himself and reported five more: hovering a college course showed the same card every time, the background turned purple when you picked something, typing one more letter of 'welding' made the main intro course vanish from the search, the side panel reopened itself after you hid it, and the results list stopped at 60. All five are fixed, and the panel now also lists similar courses in level order, beginning before advanced. Sam then answered a seven-item decision sheet in one sitting — every one 'yes' — so the search chips are now navigable, the whole panel row opens its course, a carried course can be dropped on a destination in the panel, the view button names what it recentres on, Enter leaves the results list up, there is a skip link to the map, and the daily run rebuilds SkyView's decision data so a curator is never offered a decision about a course that no longer exists. Separately, three GitHub Actions workflows were using 89% of the repo's build minutes and are now trimmed. What is still open: the course outline itself, still unbuilt, and one question only Sam can answer — how three sources of skill statements are reconciled when they disagree.",
+  "_session": 234,
+  "_status": "Sam recorded himself using SkyView for seven minutes and narrating what went wrong, and a new video-context skill turned that recording into frames and a transcript entirely on his own laptop — nothing left the machine. Two problems were then measured in a real browser rather than guessed at. The search list shifts down by exactly one row when the row of picked-course chips grows onto a second line, so the course you were about to click moves out from under the pointer; the fix shipped the day before preserved the list's scrolling but not its position on screen, which is why the complaint survived it. And double-clicking a course strands you: the page swaps to the discipline workspace without telling the browser, so Back does nothing, the menu disagrees with the screen, and coming back wipes every course you had picked. Sam also retracted one of his own reports on camera once he found the feature working — that retraction is recorded as prominently as the defects, so nobody undoes a good fix. He ruled on three things: Enter should close the search panel, double-click should open the course outline, and the chip row should reserve its space because stability wins. The course outline is still the top priority and has now been planned three times without being built.",
   "items": [
+    {
+      "id": "s234-sam-skill-sources-conflict",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "This is the one thing blocking the course outline's skill layer. You ruled that agency skill statements come from all three sources — published agency standards, ACE exhibits and the MAP team. What happens when the three disagree about the same certification? The pilot is an AWS welding certification. Everything else in the outline can be built without this answer."
+    },
+    {
+      "id": "s234-fable-search-panel",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Sam's ruling: Enter closes the search panel, the sort chip moves to the list's top right, and an Enter button takes the sort button's place — keyboard and button both working. Note this REVERSES ruling 6 from the same morning, which he flagged himself. Ship it with the chip-row fix below, since both are the same panel."
+    },
+    {
+      "id": "s234-fable-chip-row-reflow",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The search dropdown drops 36 pixels — one row height — when the chip row wraps at the fourth pick, so the row under the pointer becomes a different row. Reserve the chip row's space (Sam: stability wins) and tighten chips horizontally to fit more per row. Contrast is fine; target size is the limit, and the remove button is already at the 24px AA floor. Guard it by asserting the list's screen position across four picks, not by counting bar rows."
+    },
+    {
+      "id": "s234-fable-double-click-stranding",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Double-clicking a course strands you: discipline() repaints over SkyView without updating the address, so Back does nothing, the view menu disagrees with the screen, a refresh silently discards the work, and returning rebuilds the map and loses every pick. Give the discipline view a route, make the round trip keep the picks, and drop the stale 'prototype v1' label from the masthead while you are there."
+    },
     {
       "id": "s232-sam-outline-sources",
       "for": "Sam",
@@ -33,12 +57,6 @@
       "for": "Fable",
       "tab": "governance",
       "text": "Build the re-mint approval queue against the four-item checklist in its decision record: a register row owning the approval, the surface mapped the moment the first write lands, an insert-only rollback, and a test asserting the view writes approvals and nothing else."
-    },
-    {
-      "id": "s232-fable-roadmap-archive",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "docs/roadmap_archive.md is 575 KB against a 150 KB budget — the largest thing the docs lint flags, and pure history. It is a safe compaction whenever a session has spare room."
     },
     {
       "id": "s233-fable-similar-courses-next",

@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 393,
+   "count": 395,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1130,6 +1130,24 @@
      "title": "A filter, the column that justifies it, and the export must share one source",
      "type": "methodology",
      "updated": "2026-08-16"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "prototype/skyview.html",
+      "docs/skyview_video2_findings.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-fix-can-be-right-about-the-complaint-and-wrong-about-the-axis.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "testing",
+      "skyview"
+     ],
+     "title": "A fix can be right about the complaint and wrong about the axis",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-09-06",
@@ -2739,6 +2757,24 @@
      "title": "A view must not fly where it cannot draw",
      "type": "methodology",
      "updated": "2026-08-25"
+    },
+    {
+     "created": "2026-09-06",
+     "governs": [
+      "prototype/skyview.html",
+      "docs/skyview_video2_findings.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "routing",
+      "skyview"
+     ],
+     "title": "A view swap that does not move the hash strands the user",
+     "type": "methodology",
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-25",
@@ -9910,7 +9946,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 76,
+   "count": 77,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11330,6 +11366,20 @@
      "updated": ""
     },
     {
+     "created": "2026-09-06",
+     "governs": [],
+     "path": "docs/skyview_video2_findings.md",
+     "status": null,
+     "tags": [
+      "skyview",
+      "findings",
+      "video"
+     ],
+     "title": "Video Project 2 \u2014 what Sam's screen recording actually shows",
+     "type": null,
+     "updated": "2026-09-06"
+    },
+    {
      "created": "2026-08-05",
      "governs": [],
      "path": "docs/working_with_claude_code.md",
@@ -11867,7 +11917,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-05"
+     "updated": "2026-09-06"
     },
     {
      "created": "2026-08-28",
@@ -12069,8 +12119,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 208,
+   "count": 209,
    "docs": [
+    {
+     "created": "2026-09-06",
+     "governs": [],
+     "n": 235,
+     "path": "docs/session_235_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the outline is STILL unbuilt, and now it has a ruling",
+     "type": null,
+     "updated": "2026-09-06"
+    },
     {
      "created": "2026-09-06",
      "governs": [],
@@ -15655,5 +15718,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 799
+ "total": 803
 }

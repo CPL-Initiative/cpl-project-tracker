@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-05
+updated: 2026-09-06
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -12,150 +12,187 @@ related:
 # SkyView / the CCR curation interface
 
 > **Always-current lane state, not an archive.** Update it at every checkpoint
-> that moves this lane; `CLAUDE.md` keeps the one-line pointer. History lives in
-> [docs/ccr_atlas_lessons.md](docs/ccr_atlas_lessons.md).
+> that moves this lane; `CLAUDE.md` keeps the one-line pointer. The shipped
+> history — every round, every measurement, every wrong reading — lives in
+> [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
+> [archive](../../ccr_atlas_lessons_archive.md).
+>
+> ⚠️ **Compacted 2026-09-06 (S234)** from 40,693 B to fit the 12,000 B lane
+> budget. Nothing was dropped: the shipped-round narratives moved verbatim to
+> the lessons doc. What stays here is what a session must not violate, what is
+> waiting on Sam, and what is next.
 
-**What this lane is:** An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. **"SkyView" is the map ALONE, filling the window** (Sam, 2026-08-24, tightened 2026-09-05: *"the full screen SkyView … I would like to henceforth refer to as SkyView"*); the map with its panes is **the comprehensive view**, and the discipline table, the subject table and the ESL card are the **workspace** (*Disciplines and subjects*), a tab of their own. Since 2026-09-03 the lane also carries the **re-mint series** Sam ruled on the authority-codes sheet — the CSR's codes are what SkyView's islands are keyed by.
+**What this lane is:** An interactive view of the Common Course Reference —
+common courses by discipline, their constituent local courses, and moving a
+course to where it belongs. **"SkyView" is the map ALONE, filling the window**
+(Sam, 2026-08-24, tightened 2026-09-05); the map with its panes is **the
+comprehensive view**, and the discipline table, the subject table and the ESL
+card are the **workspace** (*Disciplines and subjects*), a tab of their own.
+The lane also carries the **re-mint series** — the CSR's codes are what
+SkyView's islands are keyed by.
 
 ## Status
 
-✅ **SAM'S FIVE GOALS ARE MET (SkyOrbit S223, 2026-09-03).** ① The whole universe on one canvas: 16,482
-identities and 33,423 stand-alone courses in 159 discipline islands. ② Keyword jump to any discipline,
-identity, stand-alone or college course (by code or control number). ③ Hover is a quick look, click is the
-docked inspector; an identity OPENS past 2.7× to ring its college courses. ④ Every stand-alone orbits its
-best-matching identity (31,515 of 33,423; 1,908 on the rim); ⭐ **orbits cross disciplines** (1,375; the
-inspector says which discipline the course is filed under). ⑤ Drag and drop is real, keyboard path included.
+✅ **Built and stable.** Sam's five goals are met: the whole universe on one
+canvas (16,482 identities, 33,423 stand-alone courses, 159 islands); keyword
+jump to anything; hover is a quick look and click the docked inspector; every
+stand-alone orbits its best-matching identity (31,515 placed, 1,908 on the rim,
+1,375 crossing disciplines); drag and drop is real with a keyboard path. The
+interface, the C-ID chip, the re-mint series, the prefix fold, the
+curated-anchor worklist, the articulation counts, the search sort, the
+membership glow, Similar courses, and Sam's six interaction rulings are all
+shipped. Rounds and measurements: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
-⭐ **AN ORBIT IS A PLACEMENT SUGGESTION, NEVER A CURATION DECISION.** Hollow, tethered, and the inspector names the shared signals; **Move `<code>` into `<parent>`** (on the course) and **Move here** (on the parent's card, one row per orbiting course) accept ONE course at a time as the same `CN:<control number> merge_into <identity>` row a drag writes. Nothing is written from the page.
+## Invariants — do not violate these
 
-⭐ **THE TITLE CARRIES THE WEIGHT** (`kb/_build_ccr_universe.py`): title 8 × Dice over lightly stemmed tokens; a shared local subject code 1.5; TOP 0.5, units 0.15, credit type 0.05 count only after a subject or title signal fired (Rule 7's two-signals gate); a bare SUBJ4 match 0.3 and never enough alone. `tests/ccr_universe_orbits_test.py` pins both directions — a clear title wins, a marginal gap yields.
+⭐ **AN ORBIT IS A PLACEMENT SUGGESTION, NEVER A CURATION DECISION.** Hollow,
+tethered, reasons named. Moves accept ONE course at a time as a
+`CN:<control number> merge_into <identity>` row. **Nothing is written from the page.**
 
-⭐ **DESCRIPTIONS LIVE IN THE PUBLIC SUPABASE BUCKET `ccr-desc`**: one JSON shard per discipline keyed by control number (159 shards · 50 MB), built by `kb/_build_ccr_universe.py --shards-only`, published by `scripts/publish_skyview_desc_shards.sh`. The client orders the two bases by `location.hostname` (S233): localhost and `file://` try `./ccr_desc/` first, every other host leads with the bucket — the shards are uncommitted, so on the deployed page the local base can only 404.
+⭐ **THE TITLE CARRIES THE WEIGHT** (`kb/_build_ccr_universe.py`): title 8 ×
+Dice over lightly stemmed tokens; shared local subject code 1.5; TOP 0.5, units
+0.15, credit type 0.05 count only after a subject or title signal fired (Rule
+7's two-signals gate); a bare SUBJ4 match 0.3, never enough alone.
+`tests/ccr_universe_orbits_test.py` pins both directions.
 
-✅ **THE C-ID CHIP IS LIVE (SkyTune S224, #1447).** Where a discipline's Common SUBJ differs from the code the authority uses, the CSR tab, the CCR tab's Subject list and SkyView's discipline card show the verbatim code as a word chip — `C-ID AJ` beside `CRIM`, `CCN STAT` beside `MATH`; a CSR-minted code no authority names reads **proposed**. `kb/_seed_authority_codes.py` writes the fields and the precedence (ruled > canonical > majority above four rows > name-home; a ruled or canonical home never spills onto the discipline its mis-filed rows sit under); receipt `kb/reference/authority_subject_codes.json`. 12 disciplines on a CCN code, 14 on a C-ID code, 120 CSR-proposed, 29 with a chip. SkyView reads the seed live, so the chip never lags it.
+⚠️ **`ar` (articulation count) is ABSENT, never 0** — "none recorded" and "we
+did not look" are the same thing on this feed. ⚠️ **The join must NOT resolve
+through the alias chain**: those `course_id`s are already current-era, so
+resolving again is a double-applied permutation.
 
-✅ **THE RE-MINT SERIES IS APPLIED (SkyTune S224, 2026-09-03; Sam ruled the fourteen readings yes to all).** The recode (#1454): 10,296 ids re-keyed, 10,041 keeping their number; the seed carries the ruled codes, the umbrella flags and the FTVE fan-in pair. The retirement: the 4,053 Z identities are real M-ID records with `origin: machine cluster`, 218 legacy anchors folded, the Z counters retired. Both receipts sit in `ALIAS_MAPS`; `kb_curation` was re-keyed. ⭐ A code change is a prefix re-key that keeps the number ([KB note](../../kb-notes/methodology-a-code-change-is-a-prefix-rekey-not-a-resequence.md)); a land's post-state counts are worklists, not defects ([KB note](../../kb-notes/methodology-land-a-re-mint-by-rehearsal-and-a-fresh-read.md)).
+⚠️ **RESOLVE A STORED ID THROUGH `kb/alias_chain.py` BEFORE COMPARING IT TO THE
+LIVE SET — and the live set is the CATALOG, not the browser payload.**
+`unified_courses_data.js` ships 16,480 of 76,008 rows, so "not in the payload"
+read as "dead" over-reported it fourfold. `ALIAS_MAPS` is a list of **paths**:
+call `load_maps()` first or `resolve_id()` resolves nothing and does not error —
+the tell is direct and chain agreeing EXACTLY.
 
-✅ **THE PREFIX FOLD IS APPLIED (SkyFold S225, 2026-09-04; Sam: "Yes to all recommendations").** 278 rows moved onto their discipline's code, `kb_curation` re-keyed, artifacts and SkyView rebuilt (#1463, #1464); `subject_collision_signal` 153 → 113, and the seven rows held on TOP alone are the fold-verify `re_key`. Frozen receipt + every number: `kb/prefix_fold_out/2026-09-03/`.
+⚠️ **Full screen paints ONE element.** A control outside `#u-full` does not
+exist there; the page's single search form is **borrowed** into the map's row
+and sent home by `setCrumbs`. And **state painted at render time goes stale on
+every path that changes it without rendering** (`setSolo` must repaint the
+window controls).
 
-✅ **THE CURATED-ANCHOR DUPLICATES ARE A WORKLIST LANE (S226, #1465).** The 130 May anchors that duplicate a catalog identity lead the Suggested-merges queue, recomputed live (`legacy_anchor_duplicate_groups`): the catalog twin first, the anchor last, so the survivor rule folds the anchor into the course carrying the college courses (31 stand-alone-only pairs go the other way); strict title key, displayed discipline, aliases as the dry run resolved them; never merged by a script. 129 of 130 receipt pairs surface; `THTR M1377` hides behind a bot's `Stagecraft` re-discipline on its twin — a signal. ⭐ The 31 folded ids SkyView does not draw were never missing: 20 Phase B folds into C-ID descriptor rows (`consolidated_from`), 11 curated merge sources.
+⚠️ **The page must be SERVED, not opened** — `file://` blocks the payload fetch.
+The layout is hand-built (`kb/_build_ccr_universe.py`, ~20 s) and committed; the
+harness needs the gitignored shards (`--shards-only`). Descriptions live in the
+public Supabase bucket `ccr-desc`, 159 shards / 50 MB, ordered by
+`location.hostname` so the deployed page never tries the local base.
 
-**Durable facts that carry over:** grinding the whole merge queue perfectly lands at 35,937, 14.4× short of 2,500, so **packaging** is the only mechanism with the right shape (ESL proved it at 85:1); ~5,700 decisions, 97.1% ≤ 12 identities; 3,001 carry NO discipline; decision packs exist for 5 of 159 disciplines; `CN:` names more than one course on 1,761 keys and those moves are refused with the reason; the page must be SERVED, not opened; the layout is rebuilt by hand (`kb/_build_ccr_universe.py`, ~20 s) and committed, and the harness needs the gitignored shards (`--shards-only`).
+⚠️ **The daily run rebuilds the decision payload AND `skyview.html` with it** —
+the atlas payload is INLINE in the served page, so regenerating the JSON alone
+never reaches the deployed page. `ccr_universe.json` is deliberately untouched.
 
-**NEEDS SAM:** ① **Drive it again.** His eight notes of 2026-09-03 all shipped (#1460; verbatim in that evening's vault braindump), and the next three are one line each: the ring spread, the 48-square cap, the open-all zoom (the halo shipped in #1488). ② **Should the daily run rebuild the universe layout too?** ③ **Which disciplines are grab bags besides Vocational and the no-discipline pile?** Interdisciplinary Studies (513 identities) is the obvious candidate. ④ **The live-session banner** he asked for (2026-09-03) — what link should observers follow, and on which tabs? ⑤ **The three legacy anchors without a seed discipline** — `M-ID HOSP 100` and `M-ID HOSP 104` (Travel Services), `M-ID HOSP 102` (Hotel and Motel Services) — need one of the 146 MQ disciplines on the CSR tab; the next retirement pass folds them. And **drive the CCR tab after the land**: the materialized machine clusters render as M-ID Courses, the CSR reads `THTR`, `CDEV`, `ITIS`, `BSOT`, `FTVE`, `COMP` and the language codes. ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact link, never a github.io URL.
+⚠️ **`npm test` proves nothing about layout** — jsdom returns zeroes for every
+rectangle. Run `npm run a11y`, or drive a real browser.
 
-✅ **THE INTERFACE IS BUILT AND STABLE (S227 → S230).** The top row is **menu · More · SkyView · search · Pan|Move · − % + ↺ · Show · step down · expand · close**; **SkyView is the map ALONE** (`body.u-solo` paints `#u-full` and nothing else) and the comprehensive view is the same render with the panes shown, never the default. The **CCR click opens the full window** (`body.cpl-skyview-solo` hides COBI's chrome; the frame's ☰ opens the rail by `postMessage`, and the rail closes on a full-viewport scrim). *Disciplines and subjects* is one tab — By discipline · By subject (the SUBJ4 grain, 344 codes) · ESL packaging — with one Views menu and a hash per view (`#skyview` · `#comprehensive` · `#disciplines` · `#subjects` · `#esl` · `#how`). **Show** is twelve switches; the legend folds from its corner; the search is a **selection of chips**; the canvas can go **dark** (`--sky-*` tokens, remembered per browser); courses are **dots in the legend's colors**, islands spread ×1.22 at load, a click lights an identity's orbit ties and fades the rest, the sidebar hides and resizes, and the zoom ceiling is **7,000%** (`K_MAX` 70). ⚠️ Two invariants that cost real debugging: full screen paints ONE element, so a control outside `#u-full` does not exist there — the page's single search form is **borrowed** into the map's row and sent home by `setCrumbs`, the one call every view makes; and **state painted at render time goes stale on every path that changes it without rendering** (`setSolo` must repaint the window controls). Stories: [docs/ccr_atlas_lessons.md](../../ccr_atlas_lessons.md) and its [archive](../../ccr_atlas_lessons_archive.md).
+**Durable facts:** grinding the whole merge queue perfectly lands at 35,937,
+14.4× short of 2,500, so **packaging** is the only mechanism with the right
+shape (ESL proved it at 85:1); ~5,700 decisions, 97.1% ≤ 12 identities; 3,001
+carry NO discipline; decision packs exist for 5 of 159 disciplines; `CN:` names
+more than one course on 1,761 keys and those moves are refused with the reason.
 
-✅ **TWO REPORTS, AND NEITHER CONTROL WAS BROKEN (SkyReply S231, 2026-09-05, #1486).** Both reports were of controls that worked on a surface that showed nothing. **Durable facts:** `.sug` has always carried `overflow-y:auto` — the caller asked for 8 suggestions out of 200+ matches, so there was nothing below the fold; it is **60** now (`SUG_LIMIT`), each kind holding a share with a floor and unfilled room flowing to the others (a budget written for eight starves the tail at sixty), over a candidate pool of 3,000 because that cap truncates **by island order, not relevance**. Individual courses draw only past `NODE_ZOOM` (0.20) and SkyView opens at **k = 0.100**, so every Show switch moved a label and a count and nothing on the canvas; a discipline holding no passing course is now **not drawn** (`islandPass`, memoized on a signature of the twelve switches) and `pick()` honors the same filter. ⚠️ That made a discipline pick land on empty ground, so `healIsland`/`healHits` heal a discipline pick and a typed search — **and only when NOTHING passes**, so a working filter is left alone. Two things that look like bugs and are not: Clear and Fit all render only past one chip, and the side rail closes on a click outside it. Story: [docs/ccr_atlas_lessons.md](../../ccr_atlas_lessons.md).
+## Measured 2026-09-06 (S234) — from Sam's screen recording
 
-✅ **THE SEARCH SORTS BY NAME, AND THE MAP READS AS A SKY (SkyReply S231, 2026-09-05, #1488).** Sam, on "weld": *"I probs would have spotted that earlier if the dropdown in SkyView showed all the welding courses in order — would have seen 2 named similarly or the same."* ⭐ **The depth was not the problem; the SORT was.** After the relevance tier the list orders by member count descending, so a small identity is buried BY CONSTRUCTION — and a duplicate of a well-adopted course is, almost by definition, the less-adopted twin ("weld" matches 591 points; Introduction to Welding, 24 colleges, ranks 1st; Introduction to the Welding Processes, 2 colleges, ranks 132nd). ⚠️ **The window must be CENTERED on the anchor**: sorting the whole match set by name and taking the first N returns the titles beginning with "A" — rank by relevance to find the anchor, re-sort by name, then slide a window with the anchor a third of the way down. It surfaced a THIRD near-duplicate and two identities carrying the identical title *Introduction to Shielded Metal Arc Welding (SMAW)*, one with no discipline.
-⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. The rest of his 2026-09-05 list — muted stars, the darker canvas, short college names, the parent's name inside the big circle, system-colored titles, no label transecting a disc — shipped in #1488; the detail and the contrast measurements are in [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+Two defects found by driving the deployed map and measured in Chromium.
+Full triage: [`skyview_video2_findings`](../../skyview_video2_findings.md).
 
-⭐ **THE RE-MINT ADMIN VIEW IS ROUTED, NOT BUILT (Sam's ruling 2, 2026-09-05).** He asked
-for a view that fires a re-mint and accepted the counter-proposal: a **queue, never a fire
-button** — candidates with reasons, he approves, the approved set lands through Rule 7's
-playbook on the next cron window. He also ruled it routes through Governance and the
-privacy ADRs **first** (Rule 10 a3), and that routing is
-[`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md).
-The deciding asymmetry is **reversibility**: an INSERT-only cohort reverts by
-`reviewer_email`, a re-mint that has rippled through the alias chain has no undo, only a
-compensating permutation. ⚠️ **The privacy check CLEARS** — the queue's rows are course
-identities, no student appears, so the student-detail boundary is not engaged; college
-counts count institutions, not students, so `k=10` does not apply *unless a future column
-carries a student count*, and the note says so. Open before it ships: a register row owning
-the approval, the surface mapped in `kb/governance_surface_map.json` at the moment of the
-first write (not after), an INSERT-only rollback, and a test asserting the view writes
-approvals and nothing else. **Next: build it.**
+⭐ **THE DROPDOWN DROPS A FULL ROW WHEN THE CHIP ROW WRAPS — AND RULING 3's FIX
+IS NOT THE ONE THAT COVERS IT.** Picks 1-3 are rock solid; `scrollTop` holds at
+300 exactly as designed. On **pick 4** the toolbar wraps: `#u-bar` 30 → 76,
+`#sug` top 40 → 76, **every row moves down 36px — one row height**, so the row
+under the pointer becomes a different row. `.u-tokens{display:contents}` makes
+each chip a flex child of `#u-bar`. The shipped fix preserves the list's SCROLL
+OFFSET; what moves is its POSITION ON SCREEN. ⚠️ **Guard it by VALUE** — assert
+`#sug`'s `getBoundingClientRect().top` is unchanged across enough picks to force
+the wrap (four at 1440px), never "the bar has one row".
 
-⭐ **MERGE CANDIDATES ARE A QUEUE, AND THE MERGE WAITS FOR A FACULTY REVIEWER (Sam's
-ruling 6, 2026-09-05).** `kb/_merge_candidate_queue.py` assembles the evidence and stops —
-it is deliberately **not** `kb/_auto_merge_worklist.py`, which plans `merge_into` rows.
-*"Sufficiency is a curriculum judgment."* Receipt: `kb/merge_candidates/<date>/`. Welding
-returns 3 groups: Sam's seeded intro trio (**`WELD M1109` surviving**, 24 colleges · 7
-articulations; `M1106` 2 · 3; `M10VQ` a stand-alone, 1 · 0) recorded as HIS with the date,
-then the identical-titled SMAW pair (`M1052` / `M1054`, *Intermediate Shielded Metal Arc
-Welding*). ⚠️ **The third is flagged, not proposed: `M1009` / `M90AI` share the title
-*Advanced Welding Applications* but cross the band** — 1xxx credit against 9xxx noncredit,
-different courses for funding and for the student, so they must never merge on a title.
-⚠️ **The survivor is a proposal and the report prints BOTH counts**, because articulation
-runs opposite to adoption here; the basis names the rule that actually *decided* (more
-colleges → more articulations → alphabetical), never the first one the winner satisfied.
-Guarded by `tests/merge_candidate_queue_test.py` (20 checks), whose first assertion is that
-the module contains no write path at all.
+⭐ **DOUBLE-CLICK STRANDS BECAUSE THE HASH NEVER CHANGES.** `discipline()`
+paints over SkyView and never calls `syncHash()`: `location.hash` still reads
+`#skyview` while the Welding workspace is on screen, so Back makes no history
+entry, `hashchange` cannot fire, the Views menu disagrees with the screen, and a
+refresh silently discards the work. Returning rebuilds the canvas from scratch,
+losing every pick. ⚠️ **It is NOT a second page** — `skyview.html` hosts every
+view; the masthead's stale "prototype v1" tag (line 714) is what makes a view
+swap read as landing in an old prototype.
 
-⭐ **ARTICULATION COUNTS ARE ON THE MAP (Sam's ruling 1, 2026-09-05), and they are a
-SIGNAL THE MAP COULD NOT ALREADY IMPLY.** The map sizes a point by how many colleges teach
-it, and articulation runs OPPOSITE to adoption: `WELD M1061` is taught at 4 colleges and
-carries 12 articulations, `WELD M1109` at 24 and carries 7, `WELD M1057` at 7 and carries
-none — so the most-articulated identities are routinely the map's smallest points, and
-nothing on screen said so. `kb/_build_ccr_universe.py` joins the count off
-`coci_articulations.json`'s `articulations[].course_id` and emits `ar` (1,490 points,
-3,124 records, max 25 in the universe payload); the identity's panel and the discipline
-card's rows spell it as a word, per the glyph rule. ⚠️ **`ar` is ABSENT, never 0** — "no
-articulation recorded" and "we did not look" are the same thing on this feed, and a 0 badge
-would assert the first. ⚠️ **The join must NOT resolve through the alias chain**: those
-course_ids are already current-era (Session 232), so resolving them again is a
-double-applied permutation. The Show menu gains a group of TWO switches — *Has
-articulations* / *No articulation recorded* — because one box that starts ticked can only
-ever mean "hide the rest"; the switch count in the menu is now **14**, which
-`tests/ccr_skyview_universe.test.js` pins. Verified: `ccr_skyview_search_show` §12 (80
-checks, perturbation-tested), 302 files, 162 Chromium checks.
+⚠️ **Sam RETRACTED a finding on camera.** He reported at length that hover
+returns the identity card rather than the course, then found it working:
+*"My bad. Forget everything I said there. It's not a problem."* That passage is
+S233's hover fix working. **Do not act on the first half of it.**
 
-⭐ **THE THREE FRICTIONS SAM HIT WHILE USING IT, FIXED (his ruling 3, 2026-09-05).**
-(a) **The list stays where you left it.** `openSug()` rebuilds the dropdown with
-`scrollTop = 0`, so once S231 took it from 8 rows to 60, every tick threw the reader back
-to the top — his words: *"focus jumps back to the search bar on every selection when
-picking multiple courses and should stay put."* `takeHighlighted()` now restores the exact
-offset AFTER `markSug()`; `scrollIntoView({block:"nearest"})` does not undo it, because
-from a `scrollTop` of 0 a row far down is "nearest" at the BOTTOM edge, so it lands
-somewhere it never was. ⚠️ **The first cut of this fix FORCED focus onto the search box —
-the complaint restated as a feature.** The suite caught it by passing just as well without
-it (the row's `mousedown` already calls `preventDefault()`, so focus never leaves `#gq`);
-what was moving was the scroll, not the focus. (b) **The whole chip carries the full
-title**, not the clipped `.u-tok-l` span alone — the kind, the padding and the × are most
-of a chip's surface and had no tooltip at all. (c) **One pick gets a *Recenter* button.**
-It used to render only above one pick, so a single selection's only view control was `↺`,
-which resets to the whole universe — that is what `↺` is for, and it is left alone. Sam
-landed in "mathland" after picking a welding course filed under Mathematics, with no way
-back. Verified in `tests/ccr_skyview_search_show.test.js` §11 (70 checks), each of the
-three perturbation-tested red before green.
+**Praised, do not break:** Fit all; the panel moving to the selection.
 
-✅ **THE OBSERVATION LOG IS WORKED (SkyBuild S233, 2026-09-06).** A computer-use session drove the deployed map against S232's brief and logged sixteen findings. **Four were real and are fixed:** the panel kept its scroll when opening an identity (reset at the ENTRY points only — `renderNode()` fires on every keystroke and toggle, and resetting there restates Sam's ruling 3a friction as a feature); ⭐ **"no way back to the discipline" and "Escape only works if you arrived by keyboard" were ONE defect** — `kbIsl`/`kbNode`/`kbInside` were set only by the Tab/Enter path, so the back path existed and was unreachable by mouse; `kbSync()` now points the cursor from every selection path and the panel carries a **Back to `<discipline>`** word; `DESC_BASES` is ordered by `location.hostname`, because the uncommitted local shard base **can never succeed** on the deployed page and cost one guaranteed 404 per discipline; and the identity-system chip — 13 of 16 chips on a panel — gained the `title` the other two already had. All six perturbation-tested red before green (`ccr_skyview_search_show` §13, `ccr_skyview_universe` (A)/(G)). ⚠️ **Two findings were wrong on inspection** (Pan/Move DO carry `aria-pressed` and their visible text is their accessible name; `row count` DOES carry an explaining title) and ⚠️ **the finding ranked first was the most wrong** — the brief's payload figure was correct for the file it named, and the session had measured a different payload: [`methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names`](../../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md). **The five it logged and did not fix went to Sam as a decision sheet and are all shipped** — see the rulings entry below; the canvas figure it reported (217 tab stops) measured 39. Story: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+## Sam's rulings, 2026-09-06 (S234)
 
-✅ **SAM DROVE IT AND ALL FIVE REPORTS ARE FIXED (SkyBuild S233, 2026-09-06).** Each measured before it was touched, and two were not what the report said. ⭐ **The hover showed the IDENTITY card, not the discipline's**: an opened ring spreads up to 70px over its neighbors, so its own college-course stars sat inside other circles and `pick()`'s "inside a circle means that identity" rule took them — **16 of 30** stars gave the course card. A focused identity's members now outrank the circle they overlap (`lastFocus`, the set `draw()` just used), and `pickMember` takes the NEAREST star rather than the first scanned; 30 of 30. ⭐ **The purple background is the membership GLOW, not the focus disc** — `haloAround()` reaches `r*2.6` on the DRAWN radius, measured at **983px on a 960×600 canvas**; both it and the disc are now bounded to the canvas. ⭐ **`weldi` lost *Introduction to Welding* because tiers tested the STRING start only**: `weld` prefix-matches every Welding **id**, one more character drops to titles alone, and the 109 titles beginning "Weldi…" fill all 60 slots while the 299 carrying the word later never appear. A term beginning a WORD now ranks with one beginning the string — **typing more of a word must not delete a match the shorter term found**. Also: **Hide now survives the next pick** (`openInspector()` fired on every selection), and the **suggestion list is paged** — ranked once to `SUG_MAX` 300, revealed 60 at a time on scroll (⚠️ re-asking `suggest()` for a bigger limit re-cuts the per-kind budget and reorders rows the reader is already reading). ⚠️ **Two of these were untestable on the existing fixtures** — 6 identities and 11 members never make a ring that overlaps or a disc that clamps, and both perturbations passed until `tests/ccr_skyview_hover_disc.test.js` replaced them with a fixture built for the purpose. Story: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+1. **Enter closes the search panel.** ⚠️ This REVERSES ruling 6 of the same
+   morning ("Enter runs the search AND leaves the list up"), and he flagged the
+   reversal himself: *"I really think it should close this, even though we made
+   a prior decision on that."* With it: **move the sort chip to the list's top
+   right** and **put an Enter button where the sort button is now**; the
+   keyboard Enter and the button must both work.
+2. **Double-click opens the course outline of record work surface** — which
+   confirms rather than changes the plan already in this lane (a course opens
+   the outline, empty island ground keeps today's behavior).
+3. **Reserve the chip row's space** — *"stability wins."* ⚠️ Chip padding may
+   shrink to fit more per row, but **contrast is not the constraint, target size
+   is**: `.u-tok-x` is 24×24 and `.u-tok-go` is `min-height:24px`, both exactly
+   on the WCAG 2.2 SC 2.5.8 AA floor. Only horizontal padding, the 5px gap and
+   `max-width:150px` are free. Tightening postpones the wrap; only the reserved
+   row removes it.
 
-⭐ **SIMILAR COURSES, ORDERED BY LEVEL (Sam, 2026-09-06: "all the beg intros followed by int intros").** The identity panel lists same-discipline courses whose titles share most of their words (Dice over the same lightly stemmed tokens the builder scores orbits with), grouped **Beginning → Intermediate → Advanced** with the unmarked last and adoption ordering within a rung. ⚠️ **The level word must not drive the similarity** — counted as a title word, the two rungs of one course score as LESS alike than two unrelated beginning courses, and the ladder is the point; stripped before scoring, read back after. ⚠️ **Every rung gets a share of the cap**: the first cut filled 24 slots in order, one rung took all of them, and the reader never learned an advanced version existed — the same starved-tail failure as the suggestion budget, in a different function. Levels come from the title because that is the only place we hold them (44% of Welding's 512 titles carry one); a title that does not say is listed last, never guessed — course level and skill level are different axes.
+## NEEDS SAM
 
-✅ **THE DAILY RUN REBUILDS SKYVIEW'S DECISION PAYLOAD; THE UNIVERSE LAYOUT STAYS HAND-BUILT (Sam's ruling 1, 2026-09-06).** `prototype/ccr_atlas_data.json` had not been rebuilt since 2026-08-24 while `prototype/ccr_universe.json` was stamped 2026-09-05 — a twelve-day gap spanning the authority recode, the Z-band retirement and the prefix fold, and the whole of the 117-of-158 per-discipline disagreement (gap 1,904, net −6), so the −6 residual the observation log left open needed no investigation. ⚠️ **What the staleness actually cost is NOT a visible count disagreement** — `disciplineRows()` takes its identity and stand-alone counts from the UNIVERSE payload; the stale file supplies only the Decisions column, the work-surface offer and a provenance tooltip. The measured cost was dead decisions: of the 593 identity ids in the five embedded decision packs, **504 (85%) resolved to something live through the alias chain and 89 (15%) resolved to nothing** — worst in Fire Technology, 32 of 136 — so a curator could be offered a decision about a course that no longer exists under that id. `daily-dashboard.yml` step 4d2 now rebuilds the payload, and **rebuilds `prototype/skyview.html` with it**, because the atlas payload is INLINE in the served page — only the universe and its members are fetched, so regenerating the JSON alone would never reach the deployed page. `ccr_universe.json` is deliberately untouched: the layout is hand-built and stays that way.
+① **Where agency skill statements come from when the three sources disagree**
+(ruling 9's follow-up — published standards *and* ACE exhibits *and* the MAP
+team; he said "All three"). Pilot: an AWS welding certification. **This is the
+only thing blocking the outline's skill layer**; everything else is buildable.
+② Should the daily run rebuild the universe layout too?
+③ Which disciplines are grab bags besides Vocational and the no-discipline pile?
+Interdisciplinary Studies (513 identities) is the candidate.
+④ The live-session banner — what link, on which tabs?
+⑤ The three legacy anchors without a seed discipline (`M-ID HOSP 100`, `104`,
+`102`) need one of the 146 MQ disciplines.
+⑥ Whether 60 is the right search depth, and whether an emptied discipline should
+vanish or ghost.
+⑦ The right-edge vertical glyph rail from his Obsidian screenshot — glyph-only,
+so his call under his own glyph rule.
 
-✅ **SAM'S SIX INTERACTION RULINGS ARE SHIPPED (decision sheet 2026-09-06 — all `yes`, no edits, no follow-ups).** **(2)** A search chip's label is a **button** that recenters on that pick and opens its panel; the `×` keeps its own job — the chips sit where breadcrumbs sit and read as breadcrumbs, and the only working control in one was its `×`. **(3)** The **whole panel row** opens its course; the title stays the accessible name so the keyboard path is unchanged, and the identity chip stays inert, because a whole-row click would swallow its tooltip. **(4)** A **carried course drops on a destination in the panel** — Similar courses had put destinations there and they called `goNode()`, silently abandoning the carry. ⚠️ The suite caught a real gap in the first cut: `pickUp()` redraws the CANVAS, so without a `renderNode()` the reader carried a course while the only list of places to put it still read as a list of things to go and look at. Repainted on the click and keyboard paths only — the pointerdown path is starting a real drag, and rebuilding the panel under a pressed pointer takes the button out from under it. **(5)** The view button **names its target** — *Recenter on Welding*; a token with no label falls back to plain *Recenter*. **(6)** **Enter runs the map search AND leaves the list up** with its first row highlighted — closing it is what made the intro course look absent. **(7)** A **skip link reaches the map**, and it lives inside `#u-full` because browser full screen paints that element and nothing else, so a link in the masthead would not exist there at all. The canvas already carried `tabindex="0"` and sat **39** tab stops in, not the 217 the observation log reported. Guarded in `tests/ccr_skyview_search_show.test.js` §15 (13 checks), each reverted and confirmed red before green, the repaint included.
+⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
+link, never a github.io URL.
 
-⚠️ **A STORED ID MUST BE RESOLVED THROUGH THE ALIAS CHAIN BEFORE IT IS COMPARED TO THE LIVE SET — AND THE LIVE SET IS THE CATALOG, NOT THE BROWSER PAYLOAD (S231/S232, 2026-09-05).** The chain now lives once, in [`kb/alias_chain.py`](../../../kb/alias_chain.py), guarded by `tests/alias_chain_single_source_test.py` and a PUSH line under Rule 7 (#1490). ⚠️ **S231's death figures were measured against `unified_courses_data.js`, which ships `count_inbrowser` 16,480 of `count_total` 76,008 rows** — so "not in the payload" read as "dead" and over-reported it about fourfold. Against the real catalog (minted courses ∪ singletons ∪ the C-ID/CCN reference): welding CR course ids are **0 of 70 dead, not 19**; articulation `course_id`s **175 of 2,319, not 504**. ⭐ **`kb/cr_reference_worklist.json` needs no re-key at all** — `daily-dashboard.yml` rebuilds it every morning from `coci_articulations.json`, so it cannot go stale; re-keying its 2,006 M-IDs would have MOVED 1,197 live ones off their rows. Same for `articulations[].course_id`, which is already current-era: 2,299 of 2,319 equal a *resolved* identity key, and resolving them again is a double-applied permutation (measured: it makes them look 50% dead where they were 44%). **The one stale surface was the `identities` side map**, and it is re-keyed as of 2026-09-05 — 1,369 moved, 2,290 entries all live, receipt `kb/identities_rekey_out/2026-09-05/`.
+## NEXT
 
-⚠️ **THE IDENTITIES MAP IS NOT M-ID ONLY, AND THE 2026-09-04 PLAN WOULD HAVE DELETED 172 LIVE IDENTITIES (S232).** 175 of its entries are `identity_system: C-ID`, keyed by the C-ID code itself (`ACCT 110`), which can never appear in a minted-course catalog. S229's dry run tested liveness against minted ∪ singletons only, so every C-ID was `drop_dead` **by construction** — 172 live identities carrying 662 articulation records, one `--apply` away. The liveness set now includes `kb/reference/coci_courses.json` (the same reference the seed builder resolves them against) and the dead remainder falls **175 → 3**. Those 3 are malformed keys — `AG-AB 108 108`, `AG-PS 128 128 L`, `NULL` — a seed-join defect, not a retirement, and per Sam's ruling 5 they land in `dead_worklist.md` beside the receipt rather than vanishing. `tests/identities_rekey_test.py` reproduces the bug and pins the fix (36 checks).
+⓪ **BUILD THE OUTLINE.** Planned twice, cleared twice, built zero times.
+Layered panel, MAP-Generated labels, `kb_curation` for edits, re-mint queued
+behind verified-plus-admin, a certification-first entry beside the course-first
+one. ⚠️ Reuse `courseLevel()` and the Beg/Int/Adv ladder in
+`prototype/ccr_universe.js` rather than re-deriving. **Course level and skill
+level are different axes — carry both, derive neither.** Sources are wildly
+uneven and that is the lane's central constraint: 484 identities carry a C-ID,
+57 a CCN (title and number only), **15,937 are M-IDs with no authority text**.
+All thirteen MC slots are unsourced.
 
-⭐ **A STATEWIDE CR IS TITLED FROM C-ID/CCN WHERE ONE EXISTS AND NEUTRALLY WHERE NONE DOES, SO NO LOCAL COLLEGE TITLE WINS (Sam, 2026-09-05).** Local CRs match their local title and number. ⚠️ **This corrects a session reading.** The worklist is built from `chatbox_peer_articulations`, so a group's `courses` list is the local courses colleges have ARTICULATED that recommendation against — uptake — not the recommendation naming an identity: `introduction welding` reads 3 rows at 1 college, which is one college's uptake, not a statewide CR mis-pointed at a 2-college identity. Confirmed alongside it: **all 512 Welding identities are M-IDs — no C-ID and no CCN anywhere in the discipline** — so welding is exactly the case the neutral-title rule exists for. The intro-welding merge candidate (`WELD M1109` 24 colleges · `M1106` 2 · `M10VQ` 1, among 38 `Introduction to…` identities in Welding) stands on the TITLES alone, and the merge is a faculty judgment, not a session's.
-
-🔨 **THE COURSE OUTLINE IS PLANNED, NOT BUILT (SkyReply S231, 2026-09-05).** Sam: *"I would like the courses on double-click to open a basic course outline with real data you pull from CID, CCD, or the MID data we have plus a synthetic course description you create on the fly … editable and then verifiable by faculty reviewers."* Prototyped on live data for **WELD M1109** (Introduction to Welding, 24 member colleges) and handed over as an artifact; **no code is in SkyView yet** — Sam asked for a plan first and then drove it through six messages. His rulings, all binding: a synthetic description **may** be shown *"as long as it is clearly labeled MAP-Generated for faculty consideration and revision before use"* (his words, used verbatim on the page); the panel is **layered** from the start (*"layered is more manageable and scalable"*) because MAP exhibits and military credit recommendations are coming as further layers; reviewers may **edit titles and re-subject**, but *"only when verified and given admin permission should they be reminted"*; thinly-evidenced skills are **included with a confidence chip**, not dropped (*"More is better as long as we don't stretch too far"*).
-⭐ **THE SOURCES ARE WILDLY UNEVEN, AND THIS IS THE LANE'S CENTRAL CONSTRAINT.** Of 16,478 clustered identities: **484 carry a C-ID** (473 matching an official descriptor — real authority text), **57 carry a CCN** (title and number only; **CCN carries no descriptor prose at all**), and **15,937 are M-IDs** with no authority text. So for **97%** the outline is built entirely from member data plus the CO's course-basic file (`kb/reference/cb_course_basic_fall2025.csv`, joined on `"CCC"+cn.zfill(9)` — 22 of 24 matched on the test course, giving units, TOP, credit status, transfer and SAM with honest spread). Description coverage: 90.4% of identities have ≥2 member descriptions, 46.4% ≥3, 23.5% ≥5; all 33,418 stand-alones have exactly one, so "synthesis" there is tidying one paragraph.
-⭐ **ALL THIRTEEN MC SLOTS ARE UNSOURCED.** SLOs, objectives, content outline, methods, hours, prerequisites — **no feed we hold carries any of them**. The competency list drafted for WELD M1109 (15 items, each traceable to a count across the 24 descriptions) is the first content ever proposed for the SLO slot, and it is **inferred from what courses COVER, not from stated outcomes** — the page says so. This is roadmap Phase 4 reached through the UI, and Phase 4 gates Phase 6 (CIDx).
-⭐ **THE EVALUATION RUNS CERTIFICATION → COURSES** (Sam, 2026-09-05): one certification examined for which course or courses it aligns with **enough** for CPL — a sufficiency test, never equivalence. The guiding question the whole process answers: *"Would I want this person to have to take my class when they already know this stuff?"* Doctrine + the acceptance test it implies: [`reference-the-cpl-guiding-question`](../../kb-notes/reference-the-cpl-guiding-question.md).
-⭐ **THE GAP IS VOCABULARY, NOT KNOWLEDGE (Sam, 2026-09-05) — and this is why the approach is what it is.** *"CTE faculty have strong ties to industry and employers and are most often acutely aware of what's needed for training…but they document that as outcomes, which is a different language than skills, which is industries language. This is attributable to the primarily transfer and GE emphasis on course design in higher ed."* So part of the apparent employer/college gap is a **translation failure, not a curriculum failure**. ⚠️ **The strategic move is a burden shift**: *"WE want to impute the skills to the learners by aligning them with course requirements and thus enable faculty to sidestep a mandate to 'skillify' their courses."* The platform translates; faculty keep writing outcomes as their discipline requires; the skills attach to the **learner**, with the course as evidence. **This is not a workaround for missing SLO data — it is the product**, and the faculty verify step is what makes the translation trustworthy without making it faculty's job to produce. **Measured for welding:** 64 credentials classified in `kb/credentials.json` — AWS 18, Carpenters Training Committee for Northern California 15, the CCCs 12, ASME 7, LA Building and Safety 4, NCCER 4, Iron Workers 3 — against 57 published credit recommendations. The exhibit → credit-recommendation pipeline is real and has run at volume; it has simply never produced a skill statement. The agencies that would carry skill language are **named and few**, which makes this a smaller acquisition problem than "go find industry standards."
-
-⚠️ **THE AGENCY COLUMN HAS NO SOURCE, AND EVERYTHING DOWNSTREAM RUNS THROUGH IT.** For welding we hold **57 published credit recommendations across 129 credential links** (real ASME BPVC Section IX qualifications among them) and **zero agency skill statements** — every field in `kb/credentials.json` and `kb/cr_reference_worklist.json` was checked; they carry the agency, the title and *hours of credit*, never what the holder can do. A recommendation names where credit lands, not what a welder can do. **NEEDS SAM: where agency skill statements come from** — published standards, ACE exhibits, or team-entered. Every other part of the outline can be built from data we already hold.
-⭐ **THE COMPARISON RUNS BOTH WAYS, and the first course tried proved it.** Agencies certify what colleges barely mention (*interpret welding symbols* — 5 of 24 colleges, its own credit recommendation from 3 credentials); colleges teach what no recommendation covers (7 of 15 competencies, including *work safely in a welding shop* at 17 of 24, the joint most-taught). ⚠️ Sam's correction to the session's reading: **CTE programs already teach to industry standards** — *"we have never examined it one certification at a time and have certainly not reported on it or cataloged it for our learners benefit."* So the expected finding is broad correspondence, the deliverable is the **learner-facing catalog** rather than a gap report, and the welding result may be a division of labor (agencies certify the assessable specialty, colleges teach the whole occupational package) rather than misalignment — a question for a faculty reviewer, not for a session.
-
-⭐ **A PROFICIENCY LEVEL ON THE COURSE AND ON EACH SKILL (Sam, 2026-09-05: *"Beg, Int, Adv?"*).** Partly derivable: **70% of the 57 welding credit recommendations carry a level word** (22 Beginning, 11 Advanced, 7 Intermediate, 17 unmarked) and **44% of the 512 Welding course titles** do (109 · 61 · 54, 288 unmarked). Seed from the text, leave the rest to a curator, let the faculty verify step settle it. ⚠️ **Course level and skill level are DIFFERENT AXES** — a beginning course teaches shop safety to full proficiency; an advanced course assumes beginner skills without re-teaching them. Carry both, derive neither from the other. ⚠️ Beg/Int/Adv is relative to a program while a CPL decision eventually needs something closer to absolute (AWS position codes 1G-4G are that shape) — a good first cut, not the standard the Career Passport will need.
-
-**Sam ruled all eleven of the 2026-09-05 sheet** (`docs/visuals/2026-09-05-ten-open-rulings.html`, replies in its `db` store) and **SkyOutline S232 executed all eight that were queued** — 8, 4, 5, 11 in #1490; 3, 1, 6, 2 in #1491. What remains open from that sheet is item **9's follow-up** (how the three skill-statement sources are reconciled when they disagree) and the **build** of item 2's queue, now routed.
-
-**NEXT:** ⓪ **BUILD THE OUTLINE** — layered panel, MAP-Generated labels, `kb_curation` for edits (`unified_title`, `discipline`, `canonical_subj4` all exist; `validated_at`/`validated_by` exist and are **unused across all 34,000 rows** — Sam confirmed *"we have not used this with real faculty yet"*), re-mint queued behind verified-plus-admin, and a **certification-first entry** beside the course-first one. ⚠️ Double-click is currently taken (it opens the discipline work surface); split it — a course opens the outline, empty island ground keeps today's behavior. **This is the priority; the eleven rulings are cleared out of its way.** ① **Sam drives the third list** — the dot sizes, the spread factor, the highlight's fade —
-then the second list and the header's second cut — the icon row, the More menu,
-the window controls and the ☰ from the CCR menu, the chips, the dark canvas, the
-explainer's voice. (The **search list** and the **Show menu** he has now driven: both were reported
-and both are answered above; what is open there is whether 60 is the right depth and whether an
-emptied discipline should vanish or ghost.) **Open from his Obsidian screenshot
-(2026-09-05):** a right-edge vertical rail of glyphs (zoom in · reset · fit · zoom out · undo · redo ·
-help) in place of the row's zoom words — glyph-only, so his call under his own glyph rule. The CCR
-tab's only sweep finding is still First Light's 15px greeting opt-out checkbox (`first_light.js`), a
-chrome-wide fix in the a11y backlog. ① **decision packs per discipline, fetched on demand** — the bottleneck behind every UI tweak; the shards' publish path is the template. ② **The QUEUE**: a drag that leaves the destination's SUBJ4 inconsistent with its corroborated discipline queues a re-mint candidate — proposes, never auto-adds. ③ The 73 two-real-course control numbers (93 rows at San Jose City College). ④ The member-roster fold at source (`CaÃ±ada College` ×678). ⑤ Accept-all-orbits-above-a-score as a batch verb, once Sam has seen single accepts behave. ⑥ The 67 `ESOL Z####` rows, `FIMS M1018` (needs an un-merge verb), a tool for the 3,001. ⑦ **A description signal for the rim** (Sam, 2026-09-03): 1,600 of the 2,073 rim courses have a catalog description; a TF-IDF match places about 130 well and agrees with the title-based parent only 20% of the time — a gap-filler that never outvotes a title, boilerplate stripped, the shared terms shown as the reason. ⑧ **Dropdown labels that name the grain** on the CCR tab: Subject as `CODE — title — discipline`, Discipline as `Discipline — Common SUBJ(s)` (SkyView's own wording is DONE — S227 swept every rendered use to "discipline", S228 caught the two hints that still said "Subject", and the SUBJ4 sense now has its own By subject view.) ⑨ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`, S226 — run it the day a `UC-CUR-*` target appears, then ALIAS_MAPS, the Supabase re-key, the chain); the seven held rows move when a second signal arrives (`--ruled-held`); the identities map's 1,597 ghost keys have a dry run and a cut receipt (`kb/identities_rekey_out/2026-09-04/`: re-key 1,369, drop 228) awaiting Sam's sheet, then `--apply --ruling`; and measure how many curated `discipline` values sit outside the MQ list. ⑩ **Identity-level chips** once members are classified: CMUS on commercial-music identities, ACCT and BSOT under Business, LPPS under Administration of Justice. Story: [docs/ccr_atlas_lessons.md](docs/ccr_atlas_lessons.md).
+① **The three fixes from the recording** — reserve the chip row (+ tighter
+chips), route `discipline()` so the trip survives, drop "prototype v1".
+② **The re-mint approval queue** — routed through Governance
+([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
+not built. A register row owning the approval, the surface mapped in
+`kb/governance_surface_map.json` at the first write, INSERT-only rollback, and a
+test asserting it writes approvals and nothing else.
+③ **Decision packs per discipline, fetched on demand** — the bottleneck behind
+every UI tweak; the shards' publish path is the template.
+④ The drag that leaves SUBJ4 inconsistent queues a re-mint candidate — proposes,
+never auto-adds.
+⑤ The 73 two-real-course control numbers · the member-roster fold at source
+(`CaÃ±ada College` ×678) · accept-all-orbits-above-a-score as a batch verb · the
+67 `ESOL Z####` rows and `FIMS M1018` (needs an un-merge verb) · a tool for the
+3,001 with no discipline.
+⑥ **A description signal for the rim** — 1,600 of 2,073 rim courses have a
+catalog description; TF-IDF places ~130 well and agrees with the title-based
+parent only 20% of the time. A gap-filler that never outvotes a title.
+⑦ Dropdown labels that name the grain on the CCR tab.
+⑧ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`); the
+seven held rows move when a second signal arrives; the identities map's ghost
+keys have a dry run and a cut receipt awaiting Sam's sheet.
+⑨ Identity-level chips once members are classified.

@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-76 document(s).
+77 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -88,6 +88,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [TOP-dethroning side-lane — continuation handoff](../top_dethroning_handoff.md) | `top_dethroning_handoff.md` | 2026-07-16 |  |
 | [UC-CUR → Z-scheme re-mint — scope](../uc_cur_zscheme_remint_scope.md) | `uc_cur_zscheme_remint_scope.md` | 2026-06-15 |  |
 | [Unverified-M-ID renumber re-mint — close the gaps + re-sort](../unverified_mid_renumber_scope.md) | `unverified_mid_renumber_scope.md` | 2026-06-23 |  |
+| [Video Project 2 — what Sam's screen recording actually shows](../skyview_video2_findings.md) | `skyview_video2_findings.md` | 2026-09-06 | 2026-09-06 |
 | [Working with Claude Code — a guide for the MAP team](../working_with_claude_code.md) | `working_with_claude_code.md` | 2026-08-05 |  |
 | [Workplan single-source editor + reflect-all + reorg-rekey completion — workstream handoff](../workplan_single_source_editor_handoff.md) | `workplan_single_source_editor_handoff.md` | 2026-07-27 | 2026-07-27 |
 | [§55050 — draft amendment package implementing Ed. Code Article 9](../t5_55050_amendment_package_draft.md) | `t5_55050_amendment_package_draft.md` | 2026-08-26 | 2026-08-26 |
