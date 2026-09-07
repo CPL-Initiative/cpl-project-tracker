@@ -70,13 +70,22 @@ const DESCS = {
   3001: ["Introduction to blueprint reading for the welding trade.", "Blueprints", 2],
   3002: ["Blueprint reading for the welding trade, with shop drawings.", "Blueprints", 2],
   3003: ["Blueprint reading for the welding trade and construction drawings.", "Blueprints", 2],
+  /* WELD M1041 — the SPELLING case, taken from the corpus. Three colleges write
+     "flux cored" and one writes "flux-cored"; two write a safety document
+     singular and plural. Before the fold each spelling was its own skill, so
+     one card listed the same name twice — what Sam photographed on WELD M1109. */
+  5001: ["Instruction in flux cored arc welding and safety data sheets.", "FCAW I", 3],
+  5002: ["Practice in flux cored arc welding and the safety data sheet.", "FCAW II", 3],
+  5003: ["This course covers flux cored arc welding of carbon steel.", "FCAW III", 3],
+  5004: ["Training in flux-cored arc welding for structural steel.", "FCAW IV", 3],
 };
 const U = { counts: { identities: 3, standalone: 0 },
   bounds: { x0: -60, x1: 160, y0: -60, y1: 60 }, islands: [
   { d: "Welding", sh: "welding", x: 0, y: 0, r: 40, p: [
       { i: "WELD M1012", t: "Advanced Gas Tungsten Arc Welding", x: 0, y: 0, s: 0, u: 3, n: 5, ar: 6 },
       { i: "WELD M1073", t: "Blueprint Reading (Metal Trades)",  x: 6, y: 0, s: 0, u: 2, n: 3 },
-      { i: "WELD M10TJ", t: "Welding Basics",                    x: 12, y: 0, s: 0, u: 2, n: 1 } ] },
+      { i: "WELD M10TJ", t: "Welding Basics",                    x: 12, y: 0, s: 0, u: 2, n: 1 },
+      { i: "WELD M1041", t: "Flux Cored Arc Welding",            x: 18, y: 0, s: 0, u: 3, n: 4 } ] },
   { d: "Nursing", sh: "nursing", x: 90, y: 0, r: 40, p: [
       { i: "NRSR M1101", t: "Fundamentals of Nursing", x: 90, y: 0, s: 0, u: 4, n: 3 } ] },
 ]};
@@ -85,7 +94,8 @@ const MEM = { colleges: ["Alpha College", "Beta College", "Gamma College", "Delt
   m: { "WELD M1012": [[1001,"WELD 60",0],[1002,"WELD 60",1],[1003,"WELD 61",2],[1004,"WELD 62",3],[1005,"WELD 63",4]],
        "NRSR M1101": [[2001,"NURS 10",0],[2002,"NURS 10",1],[2003,"NURS 11",2]],
        "WELD M1073": [[3001,"WELD 20",0],[3002,"WELD 21",1],[3003,"WELD 22",2]],
-       "WELD M10TJ": [[4001,"WELD 5",0]] } };
+       "WELD M10TJ": [[4001,"WELD 5",0]],
+       "WELD M1041": [[5001,"WELD 40",0],[5002,"WELD 41",1],[5003,"WELD 42",2],[5004,"WELD 43",3]] } };
 const ATLAS = { _generated_from: "2026-09-06 15:35", totals: { decision_components: 0, identities_inbrowser: 3,
   suggestion_groups: 0, member_rows: 11 }, disciplines: [
   { name: "Welding", decisions: 0, ids: 2, members: 8, flagged: 0, reviewed: 0 },
@@ -311,6 +321,114 @@ const css = tpl;                                  // the stylesheet, as authored
   check("the masthead no longer claims 'prototype v1'",
         !/prototype v1/i.test((q(".brand") || {}).textContent || ""),
         `brand read: ${(q(".brand") || {}).textContent}`);
+
+  // ── (13) ⭐ ONE SKILL, ONE ROW — the same name spelled two ways ───────────
+  /* Sam, 2026-09-07: "duplicated skills." WELD M1109 listed "flux cored arc
+   * welding" AND "flux-cored arc welding" side by side. olWords() keeps a
+   * hyphen inside a token, so the hyphenated spelling is a three-token phrase
+   * and the spaced one a four-token phrase, and nothing downstream could see
+   * they were one name. Measured over all 46,317 identities carrying a catalog
+   * description: 209 rows differ from another on the same card only by a hyphen
+   * and 835 only by a plural. */
+  w.__ccrOutline("WELD M1041");
+  await tick(); await tick(); await tick();
+  const skRows = qa("#ol-skills .ol-skills li").map((li) => ({
+    name: li.querySelector(".ol-sk").textContent,
+    chips: [...li.querySelectorAll(".chip")].map((c) => c.textContent),
+  }));
+  const names = skRows.map((r) => r.name);
+  const folded = names.map((n) => w.__ccrSkillFold(n));
+  check("(13) ⭐ no skill is listed twice once hyphens and plurals are folded",
+        folded.length === new Set(folded).size,
+        names.join(" | "));
+  const fcaw = skRows.filter((r) => w.__ccrSkillFold(r.name) === "flux cored arc welding");
+  check("(13) ⭐ the two spellings are ONE row",
+        fcaw.length === 1, `${fcaw.length} rows: ${names.join(" | ")}`);
+  /* ⚠️ The count is COLLEGES, so folding has to happen at the counting step:
+   * all four colleges name this skill, three of them spelled one way. Collapsing
+   * finished rows instead would have kept whichever count was already wrong. */
+  check("(13) ⭐ …counted as all four colleges, not three and one",
+        fcaw[0] && /most colleges/.test(fcaw[0].chips.join(" ")),
+        fcaw[0] ? fcaw[0].chips.join(" | ") : "no row");
+  check("(13) the row shows the spelling the most colleges published, not one we invented",
+        fcaw[0] && fcaw[0].name === "flux cored arc welding", fcaw[0] && fcaw[0].name);
+  const sds = names.filter((n) => w.__ccrSkillFold(n) === "safety data sheet");
+  check("(13) a singular and a plural are one skill too", sds.length === 1, sds.join(" | "));
+
+  // ── (14) ⭐ A REVIEWER MAY ADD A SKILL AND TAKE ONE OUT ───────────────────
+  /* Sam, 2026-09-07: "need to be able to add or delete a skill on curate."
+   * Both stage; nothing is written from this page, which is the lane invariant. */
+  check("(14) every imputed skill offers a way to take it out — a WORD, not a glyph",
+        qa("#ol-skills [data-drop]").length === skRows.length &&
+        qa("#ol-skills [data-drop]").every((b) => /^Remove$/.test(b.textContent.trim())),
+        qa("#ol-skills [data-drop]").map((b) => b.textContent).join("|"));
+  check("(14) and the layer offers a way to add one", !!q("#ol-sk-add") && /Add a skill/.test(q("#ol-sk-add").textContent));
+
+  const dropBtn0 = q("#ol-skills [data-drop]");
+  const dropKey = dropBtn0 ? dropBtn0.dataset.drop : "";
+  if (dropBtn0) dropBtn0.click();
+  await tick();
+  const liveAfter = qa("#ol-skills [data-drop]").map((b) => b.dataset.drop);
+  check("(14) Remove takes the skill off the list", !liveAfter.includes(dropKey), liveAfter.join(" | "));
+  /* ⚠️ RECORDED, NEVER DERIVED BY SUBTRACTION. The imputation re-runs every time
+   * a catalog description lands, so a surface that stored "what is left" would
+   * silently delete every skill that arrived after the reviewer last looked —
+   * S236's lesson one layer up. The removed key is named, and it is restorable. */
+  check("(14) ⭐ …and NAMES it as removed rather than letting it vanish",
+        qa("#ol-skills .ol-thin summary").some((x) => /Removed by a reviewer \(1\)/.test(x.textContent)) &&
+        qa("#ol-skills [data-restore]").some((b) => b.dataset.restore === dropKey),
+        qa("#ol-skills .ol-thin summary").map((x) => x.textContent).join(" | "));
+  check("(14) the removal is stored as an explicit key, not as a snapshot of survivors",
+        /skillDrop/.test(ujs) && !/skillKeep/.test(ujs));
+  const restoreBtn = q("#ol-skills [data-restore]");
+  if (restoreBtn) restoreBtn.click();
+  await tick();
+  check("(14) Put back restores it",
+        !!restoreBtn && qa("#ol-skills [data-drop]").map((b) => b.dataset.drop).includes(dropKey),
+        restoreBtn ? "restored" : "there was nothing to put back");
+
+  w.prompt = () => "pipe fit-up and alignment";
+  if (q("#ol-sk-add")) q("#ol-sk-add").click();
+  await tick();
+  const addedLi = qa("#ol-skills .ol-skills li").find((li) => /pipe fit-up and alignment/.test(li.textContent));
+  check("(14) ⭐ Add a skill stages a row the catalogs do not name", !!addedLi,
+        qa("#ol-skills .ol-sk").map((e) => e.textContent).join(" | "));
+  /* A curator's knowledge is a first-class input — attributed, not laundered
+   * into an anonymous row (the MAP-team obligation in CLAUDE.md). */
+  check("(14) …attributed to the reviewer, with the day it was staged",
+        addedLi && /added by a reviewer/.test(addedLi.textContent) &&
+        /Staged in this browser/.test(addedLi.querySelector(".chip.gen").getAttribute("title")) &&
+        /\d{4}-\d{2}-\d{2}/.test(addedLi.querySelector(".chip.gen").getAttribute("title")),
+        addedLi ? addedLi.querySelector(".chip.gen").getAttribute("title") : "");
+  check("(14) the review layer lists what is staged, so its summary is true",
+        /Skills added by a reviewer/.test(q("#ol-review").textContent) &&
+        /pipe fit-up and alignment/.test(q("#ol-review").textContent) &&
+        /staged, not saved/.test(q("#ol-review").textContent));
+  check("(14) …and 'Drop the proposals' appears for a skill edit, not only a rename",
+        !!q("#ol-revert"));
+  if (q("#ol-revert")) q("#ol-revert").click();
+  await tick();
+  check("(14) dropping the proposals clears the skill edits too",
+        !qa("#ol-skills .ol-sk").some((e) => /pipe fit-up/.test(e.textContent)) &&
+        !qa("#ol-skills .ol-thin summary").some((x) => /Removed by a reviewer/.test(x.textContent)));
+  check("(14) nothing on this page writes — the layer says so in the words of the invariant",
+        /Nothing is written from this page/.test(q("#ol-review").textContent) &&
+        /nothing is written/i.test(q("#ol-skills").textContent));
+
+  // ── (15) ⭐ AN OUTLINE OPENED BY ITS OWN LINK STILL HAS ITS COURSES ───────
+  /* buildMemberIndex() ran only inside __ccrUniverse, so a reader arriving on
+   * #outline/<id> — a shared link, or a reload, which is what the hash routing
+   * exists for — got an outline with ZERO college courses: nothing to quote,
+   * nothing to impute, an empty member list. Every layer said "none", which is
+   * not a rendering gap but a false statement about the data. */
+  check("(15) the corpus is built by whichever view is entered first, not only by the map",
+        /function ensureCorpus\(\)/.test(ujs) &&
+        /if\(!roster\) buildMemberIndex\(\);/.test(ujs) &&
+        (ujs.match(/ensureCorpus\(\)/g) || []).length >= 4,
+        "every non-map entry point must call ensureCorpus()");
+  check("(15) …and the outline it renders carries them",
+        w.__ccrUniverseState().members > 0 && qa("#ol-members li").length === 4,
+        `members ${w.__ccrUniverseState().members}, rows ${qa("#ol-members li").length}`);
 
   done();
 })().catch((e) => { console.error(e); process.exit(1); });

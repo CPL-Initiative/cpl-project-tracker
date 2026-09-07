@@ -611,6 +611,22 @@ function noteCourse(cn, rec){
   for(var i=0;i<l.length;i++) if(l[i].n===rec.n && l[i].c===rec.c) return;
   l.push({n:rec.n, c:rec.c});
 }
+/* ⭐ AN ENTRY THAT IS NOT THE MAP STILL NEEDS THE CORPUS. `buildMemberIndex()`
+ * ran only inside __ccrUniverse, so a reader who arrived on `#outline/<id>` —
+ * a shared link, a reload, the thing the hash routing was built for — got an
+ * outline with ZERO college courses under it: no description to quote, no
+ * skills to impute, no member list. Every layer said "none", which is not a
+ * rendering gap but a false statement about the data, and it is
+ * indistinguishable from an identity that genuinely carries nothing. Measured
+ * 2026-09-07: `members: 0, memberSource: ""` on a direct hit to
+ * `#outline/WELD M1109`, an identity carrying 24 courses. */
+function ensureCorpus(){
+  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; if(U) spreadUniverse(U); }
+  if(!U) return false;
+  if(!roster) buildMemberIndex();
+  if(!nodeIdx) indexNodes();
+  return true;
+}
 function buildMemberIndex(){
   roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource=""; memIndex=[];
   var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
@@ -923,12 +939,20 @@ function draw(){
   placedBoxes=placeNodeLabels(nodeQueue, placeLabels(labelQueue, showLabels).concat(discBoxes));
 
   if(drag && drag.kind==="course" && drag.px!=null){
+    // The identity the release would write to, ringed on the map and named in
+    // the label — so "nothing happened" can be seen coming rather than reported.
+    if(drag.over && drag.overIsl){
+      var dp=w2s(drag.over.x+(drag.overIsl.dx||0), drag.over.y+(drag.overIsl.dy||0));
+      ctx.beginPath(); ctx.arc(dp[0],dp[1],Math.max(9,nodeRad(drag.over)+6),0,6.2832);
+      ctx.strokeStyle=pal.drag; ctx.lineWidth=2.5; ctx.stroke();
+    }
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
     ctx.fillStyle=pal.drag; ctx.fill();
     ctx.font="600 "+txPx(12)+"px 'Source Sans 3',system-ui,sans-serif";
     ctx.textAlign="left"; ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
-    ctx.strokeText(drag.code,drag.px+12,drag.py+4);
-    ctx.fillStyle=pal.drag; ctx.fillText(drag.code,drag.px+12,drag.py+4);
+    var lbl=drag.code+(drag.over?" \u2192 "+trunc(drag.over.t||drag.over.i,42):"");
+    ctx.strokeText(lbl,drag.px+12,drag.py+4);
+    ctx.fillStyle=pal.drag; ctx.fillText(lbl,drag.px+12,drag.py+4);
   }
   var z=document.getElementById("u-zoom");
   if(z) z.textContent = Math.round(view.k*100)+"%";
@@ -1294,7 +1318,21 @@ function placeNodeLabels(queue, boxes){
 }
 
 /* ── hit testing ─────────────────────────────────────────────────────────── */
-function pick(px,py){
+/* `forDrop` — a CARRY resolves identity circles ONLY, never a member star.
+ * ⭐ THE RULE BELOW IS RIGHT FOR READING AND WRONG FOR MOVING (Sam, 2026-09-07:
+ * "courses no longer responsive after 2nd drag and drop … tried to drag a
+ * selected [course] into to welding and processes and no go"). While an
+ * identity is open its member ring SPREADS across its neighbors, so the
+ * destination circle a curator aims at is routinely eclipsed by one of the
+ * OPEN identity's own stars. The drop then resolved to the identity the course
+ * is already in, applyMove() refused it as "That course is already there.",
+ * and the refusal printed in a hint at the very bottom of the window — so the
+ * gesture read as a dead map. Measured in Chromium 2026-09-07 with
+ * Introduction to Welding open at 296%: six identity circles inside the
+ * viewport sat under one of its stars, and a drop on each of the first three
+ * moved nothing. The panel's own words are the contract — "Drag a course onto
+ * a CIRCLE on the map" — so that is what a drop is allowed to land on. */
+function pick(px,py,forDrop){
   var best=null;
   for(var i=U.islands.length-1;i>=0;i--){
     var isl=U.islands[i];
@@ -1329,20 +1367,22 @@ function pick(px,py){
        * identity's own members outrank the circle they happen to overlap.
        * `lastFocus` is the set draw() just used, so hit-testing and painting
        * cannot disagree about what is open. */
-      if(lastFocus){
+      if(lastFocus && !forDrop){
         var fmem=pickMember(px,py,function(mp){ return !!lastFocus[mp.nd.i]; });
         if(fmem) return fmem;
       }
       // A pointer INSIDE the nearest identity's circle means that identity, even
       // where a neighbor's ring of squares crosses it; a square wins in the open.
       if(found && inside) return {isl:isl,nd:found};
-      var mem=pickMember(px,py);
-      if(mem) return mem;
+      if(!forDrop){
+        var mem=pickMember(px,py);
+        if(mem) return mem;
+      }
       if(found) return {isl:isl,nd:found};
     }
     best=best||{isl:isl,nd:null};
   }
-  return pickMember(px,py)||best;
+  return (forDrop?null:pickMember(px,py))||best;
 }
 /* NEAREST wins, not first-scanned. Rings overlap where a spread ring crosses a
  * neighbor's, and returning whichever star happened to be drawn last handed
@@ -1533,7 +1573,7 @@ window.__ccrUniverse = function(opts){
 
   cvs=document.getElementById("u-cvs");
   ctx=cvs.getContext?cvs.getContext("2d"):null;
-  buildMemberIndex(); indexNodes();
+  roster=null; nodeIdx=null; ensureCorpus();   // the map re-binds after a payload swap
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
   fitCanvas(); resetView(); wire(); draw();
@@ -2035,6 +2075,11 @@ window.__ccrUniverseState = function(){
           tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
+          // Where the release would write. A ring painted on a canvas cannot be
+          // asked about, and this is the thing that tells a curator a drop will
+          // land at all — the state Sam had no reading of when he reported the
+          // map dead ("no go", 2026-09-07).
+          dropTarget:(drag&&drag.kind==="course"&&drag.over)?drag.over.i:null,
           descBases:DESC_BASES.slice(), descBasesFor:descBasesFor, descState:descState,
           placedBoxes:placedBoxes, titlesQueued:titlesQueued,
           // The zoom ceiling and the radius taper are here because a canvas
@@ -2399,7 +2444,17 @@ function wire(){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>3) drag.moved=true;
       draw();
     } else if(drag.kind==="course"){
-      drag.px=px; drag.py=py; draw();
+      /* ⭐ THE DESTINATION IS NAMED WHILE THE COURSE IS STILL IN THE AIR. A drop
+       * that lands on nothing and a drop that is refused looked identical from
+       * the map, because both leave it exactly as it was; the only account of
+       * either was a line in a hint bar at the foot of the window. Resolving the
+       * target on the way (the same `forDrop` pick the release will use, so the
+       * ring cannot promise a landing the drop will not make) puts the answer
+       * under the pointer, where the hand already is. */
+      drag.px=px; drag.py=py;
+      var t=pick(px,py,true);
+      drag.over=(t&&t.nd)?t.nd:null; drag.overIsl=(t&&t.nd)?t.isl:null;
+      draw();
     } else if(drag.kind==="node"){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
         drag.moved=true;
@@ -2423,7 +2478,7 @@ function wire(){
   cvs.addEventListener("pointerup", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
     if(drag && drag.kind==="course"){
-      var hit=pick(px,py);
+      var hit=pick(px,py,true);
       if(hit && hit.nd && drag.fromNode && hit.nd===drag.fromNode){
         // Released where it started: a click on the hollow point, not a move.
         selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); drag=null; draw(); return;
@@ -3378,8 +3433,17 @@ function applyMove(cn, code, college, toId, d){
   moves=moves.filter(function(m){return m.cn!==cn;});
   moves.push({cn:cn, d:d||(byCn[cn]&&byCn[cn].d)||"", code:code, college:college, to:toId, from:from});
   var t=nodeById(toId);
+  /* ⚠️ "Recorded below the map" NAMED A PLACE THE READER CANNOT SEE. `#u-writes`
+   * lives in `#u-below`, and `body.u-solo` — SkyView, the default — hides that
+   * whole pane. A curator who goes looking for the record and finds no pane at
+   * all has been told their move went somewhere it did not. Say what is true
+   * where they are standing. */
+  var solo=document.body.classList.contains("u-solo");
   setHint("Moved <strong>"+esc(code)+"</strong> ("+esc(college)+") to <strong>"+
-          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". Recorded below the map.");
+          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". "+
+          (solo ? "Staged in this browser, not written \u2014 "+moves.length+" move"+
+                  (moves.length===1?"":"s")+" so far, listed under the map in the comprehensive view."
+                : "Recorded below the map."));
   drawWrites();
   if(selNode) renderNode();
   draw();
@@ -3590,8 +3654,7 @@ function wsKey(mode){ return mode==="subject"?"subjects":mode==="esl"?"esl":"dis
 function wsFilterValue(){ var q=document.getElementById("ws-q"); return q ? q.value : ""; }
 window.__ccrWorkspace=function(mode, opts){
   opts=opts||{};
-  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; spreadUniverse(U); }
-  if(!U){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
+  if(!ensureCorpus()){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   mode = WS_MODES[mode] ? mode : "discipline";
   if(mode==="esl" && !eslAvailable()) mode="discipline";
   if(!authority) loadAuthority();
@@ -4055,13 +4118,47 @@ function olMedoid(descs){
   }
   return {pick:descs[at], score:best};
 }
+/* ⭐ ONE SKILL, ONE ROW — THE KEY IS FOLDED, THE WORDS STAY THE COLLEGES'.
+ * Sam, 2026-09-07: "duplicated skills." WELD M1109 listed "flux cored arc
+ * welding" AND "flux-cored arc welding", one skill written two ways, because
+ * olWords() keeps a hyphen inside a token: the hyphenated spelling is a
+ * three-token phrase and the spaced one a four-token phrase, so nothing
+ * downstream could see they were the same name. Plurals do it too. Measured
+ * 2026-09-07 over all 46,317 identities that carry a catalog description:
+ * 209 shown rows differ from another row on the same card only by a hyphen and
+ * 835 only by a plural; 762 identities (1.6%) show at least one such pair.
+ * With the fold below, the same sweep finds NONE. ⚠️ `sses` is in the -es family
+ * on purpose: without it "processes" stems to "processe" and leaves 19 pairs
+ * standing — process, business, class and discuss are exactly the words a
+ * course description reaches for.
+ *
+ * ⚠️ FOLD AT THE COUNTING STEP, NOT AFTERWARDS. The confidence chip counts
+ * COLLEGES, so a college that writes it both ways must still count once and two
+ * colleges spelling it differently must count twice — collapsing finished rows
+ * would keep whichever count was already wrong. Folding the key first makes
+ * both cases come out right by construction. */
+function olSingular(w){
+  if(w.length<=3 || w.charAt(w.length-1)!=="s") return w;
+  if(/(?:ss|us|is)$/.test(w)) return w;                 // process, status, analysis
+  if(/ies$/.test(w)) return w.slice(0,-3)+"y";          // strategies → strategy
+  if(/(?:sses|ches|shes|xes|zes)$/.test(w)) return w.slice(0,-2);   // processes → process
+  return w.slice(0,-1);
+}
+/* The grouping key. Hyphens and apostrophes become spaces (olWords keeps them
+ * inside a token, and a trailing one is common — "welding-" at a line break),
+ * then each word loses a simple plural. */
+function olFold(p){
+  return String(p||"").toLowerCase().replace(/[-'\u2018\u2019]+/g," ")
+    .replace(/\s+/g," ").trim().split(" ").map(olSingular).join(" ");
+}
+window.__ccrSkillFold = olFold;
 /* Recurring 2-4 word content phrases, counted by how many COLLEGES name them.
  * A phrase is credited once per college however often that college repeats it,
  * so the count is agreement between institutions rather than verbosity. */
 function olPhrases(descs){
-  var cnt={};
+  var cnt={}, surf={};
   descs.forEach(function(d){
-    var seen={};
+    var seen={}, seenS={};
     olSegments(d.desc.toLowerCase()).forEach(function(w){
     for(var i=0;i<w.length;i++){
       /* ⚠️ LONGEST AT EACH POSITION, NOT EVERY LENGTH AT EACH POSITION. Counting
@@ -4080,14 +4177,26 @@ function olPhrases(descs){
           seg.push(x);
         }
         if(!ok) continue;
-        var p=seg.join(" ");
-        if(!seen[p]){ seen[p]=1; cnt[p]=(cnt[p]||0)+1; }
+        var p=seg.join(" "), key=olFold(p);
+        if(key){
+          if(!seen[key]){ seen[key]=1; cnt[key]=(cnt[key]||0)+1; }
+          /* The surface forms are counted per college too, so the row shows the
+           * spelling the most colleges published rather than the first one the
+           * scan happened to reach. Nothing is rewritten into a spelling nobody
+           * wrote. */
+          var sf=surf[key]||(surf[key]={}), sk=key+"\u0000"+p;
+          if(!seenS[sk]){ seenS[sk]=1; sf[p]=(sf[p]||0)+1; }
+        }
         break;                       // this position is spoken for
       }
     }
     });
   });
-  var items=Object.keys(cnt).map(function(p){ return {p:p, n:cnt[p]}; });
+  var items=Object.keys(cnt).map(function(key){
+    var forms=surf[key]||{}, best=null, bn=-1;
+    Object.keys(forms).sort().forEach(function(f){ if(forms[f]>bn){ bn=forms[f]; best=f; } });
+    return {p:best||key, k:key, n:cnt[key]};
+  });
   /* ⭐ THE LONGEST NAME WINS ITS FAMILY. "gas tungsten arc welding" and
    * "tungsten arc welding" are one skill and the shorter is the fragment, so
    * candidates are considered LONGEST first and a phrase contained in one
@@ -4095,16 +4204,19 @@ function olPhrases(descs){
    * honest: a short phrase named by far more colleges than the long one is a
    * skill in its own right ("shop safety" inside "shop safety practices"), not
    * a fragment of it. */
+  // ⚠️ Length and containment read the FOLDED key, not the surface form — the
+  // hyphenated spelling is a word shorter than the spaced one and would have
+  // been ranked as the smaller name it is not.
   items.sort(function(a,b){
-    return (b.p.split(" ").length-a.p.split(" ").length) || (b.n-a.n);
+    return (b.k.split(" ").length-a.k.split(" ").length) || (b.n-a.n);
   });
   var kept=[];
   items.forEach(function(it){
     for(var i=0;i<kept.length;i++)
-      if(kept[i].p.indexOf(it.p)>=0 && it.n <= kept[i].n*1.6) return;
+      if(kept[i].k.indexOf(it.k)>=0 && it.n <= kept[i].n*1.6) return;
     kept.push(it);
   });
-  kept.sort(function(a,b){ return (b.n-a.n) || (b.p.split(" ").length-a.p.split(" ").length); });
+  kept.sort(function(a,b){ return (b.n-a.n) || (b.k.split(" ").length-a.k.split(" ").length); });
   return kept;
 }
 /* ⚠️ A SKILL'S LEVEL COMES FROM THE SKILL'S OWN WORDS. courseLevel() reads the
@@ -4173,8 +4285,7 @@ var olEdits={};
 function olState(id){ return olEdits[id] || (olEdits[id]={}); }
 
 window.__ccrOutline=function(id){
-  if(!U){ U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null; if(U) spreadUniverse(U); }
-  if(!U){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
+  if(!ensureCorpus()){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   var hit=nodeById(id);
   if(!hit){
     /* A stale or hand-typed link is a normal thing to arrive with. Say what
@@ -4261,34 +4372,83 @@ function olHtml(nd, isl){
     dbody, {empty: !descs.length && !loading});
 
   /* ── layer 2: skills ──────────────────────────────────────────────────── */
+  /* ⭐ A REVIEWER MAY ADD ONE AND TAKE ONE OUT (Sam, 2026-09-07: "need to be
+   * able to add or delete a skill on curate"). Both STAGE, like the title and
+   * the subject beside them — nothing is written from this page, which is the
+   * lane invariant.
+   *
+   * ⚠️ A REMOVAL IS RECORDED, NEVER DERIVED. `skillDrop` names the keys the
+   * reviewer struck out, rather than the surface holding a snapshot of what
+   * survived: the imputation re-runs whenever a catalog description lands, so a
+   * "what is left" list would silently delete every skill that arrived after it
+   * was taken. That is the S236 lesson, one layer up —
+   * `methodology-a-snapshot-cannot-be-the-authority-on-intent`. */
+  var dropped=st.skillDrop||{}, addedRows=st.skillAdd||[];
   var sk=descs.length?olPhrases(descs):[];
-  var strong=sk.filter(function(x){ return x.n>=2; }).slice(0,12);
-  var thin  =sk.filter(function(x){ return x.n===1; }).slice(0,10);
+  var live=sk.filter(function(x){ return !dropped[x.k]; });
+  var strong=live.filter(function(x){ return x.n>=2; }).slice(0,12);
+  var thin  =live.filter(function(x){ return x.n===1; }).slice(0,10);
+  var goneNames=sk.filter(function(x){ return dropped[x.k]; });
+  Object.keys(dropped).forEach(function(k){
+    if(!goneNames.some(function(x){ return x.k===k; })) goneNames.push({p:k, k:k, n:0});
+  });
   var sbody;
   if(loading) sbody='<p class="empty">Loading…</p>';
-  else if(!descs.length) sbody='<p class="empty">No catalog description to impute from.</p>';
   else {
+    function dropBtn(x){
+      return ' <button class="btn small ol-sk-act" type="button" data-drop="'+esc(x.k)+'" '+
+        'title="Take this skill off the outline. Staged in this browser — nothing is written.">Remove</button>';
+    }
     function skillRow(x){
       var sl=olSkillLevel(x.p), cf=olConfWord(x.n, descs.length, total);
       return '<li><span class="ol-sk">'+esc(x.p)+'</span>'+
         '<span class="chip '+(sl?"cid":"mut")+'" title="'+
           (sl?'Read off this skill’s own words.':'This skill names no level of its own. It does NOT inherit the course’s level — they are separate axes (Sam’s ruling, 2026-09-05).')+
         '">'+esc(sl||"level not stated")+'</span>'+
-        '<span class="chip '+cf.c+'" title="'+esc(cf.t)+'">'+esc(cf.w)+'</span></li>';
+        '<span class="chip '+cf.c+'" title="'+esc(cf.t)+'">'+esc(cf.w)+'</span>'+dropBtn(x)+'</li>';
     }
-    sbody=(strong.length?'<ul class="ol-skills">'+strong.map(skillRow).join("")+'</ul>'
-                        :'<p class="empty">No topic is named by two or more colleges, so nothing here is corroborated.</p>')+
+    /* A reviewer's own skills lead the list. They came from a person who knows
+     * the trade rather than from a catalog scan, so they are named as such and
+     * carry the day they were staged — a curator's knowledge is an input to
+     * attribute, not one to launder into an anonymous row. */
+    function addedRow(a){
+      var sl=olSkillLevel(a.p);
+      return '<li><span class="ol-sk">'+esc(a.p)+'</span>'+
+        '<span class="chip '+(sl?"cid":"mut")+'" title="'+
+          (sl?'Read off this skill’s own words.':'This skill names no level of its own.')+
+        '">'+esc(sl||"level not stated")+'</span>'+
+        '<span class="chip gen" title="Typed on this page'+(a.at?' on '+esc(a.at):"")+
+        '. Staged in this browser — nothing is written, and no catalog names it.">added by a reviewer</span>'+
+        ' <button class="btn small ol-sk-act" type="button" data-unadd="'+esc(a.k)+'" '+
+        'title="Take this skill back off the outline.">Remove</button></li>';
+    }
+    var listed=(addedRows.length?addedRows.map(addedRow).join(""):"")+
+               (strong.length?strong.map(skillRow).join(""):"");
+    sbody=(listed?'<ul class="ol-skills">'+listed+'</ul>'
+                 :'<p class="empty">'+(descs.length
+                     ? 'No topic is named by two or more colleges, so nothing here is corroborated.'
+                     : 'No catalog description to impute from.')+'</p>')+
       (thin.length?'<details class="ol-thin"><summary>Named by a single college ('+thin.length+')</summary>'+
         '<p class="ol-src">Kept rather than dropped, and chipped so the thinness is visible '+
         '(Sam’s ruling, 2026-09-05). One catalog is evidence; it is just not agreement.</p>'+
-        '<ul class="ol-skills">'+thin.map(skillRow).join("")+'</ul></details>':"");
+        '<ul class="ol-skills">'+thin.map(skillRow).join("")+'</ul></details>':"")+
+      (goneNames.length?'<details class="ol-thin"><summary>Removed by a reviewer ('+goneNames.length+')</summary>'+
+        '<p class="ol-src">Struck out on this page, and named here rather than simply absent — a skill '+
+        'that vanishes without a trace cannot be argued with. Staged in this browser; nothing is written.</p>'+
+        '<ul class="ol-skills">'+goneNames.map(function(x){
+          return '<li><span class="ol-sk">'+esc(x.p)+'</span>'+
+            ' <button class="btn small ol-sk-act" type="button" data-restore="'+esc(x.k)+'">Put back</button></li>';
+        }).join("")+'</ul></details>':"")+
+      '<p class="row" style="margin:.9em 0 0"><button class="btn small" type="button" id="ol-sk-add">Add a skill</button> '+
+        '<span class="sub">A skill no catalog names — what a learner walks out able to do. Staged, not written.</span></p>';
   }
   h+=olLayer("skills","Skills a learner would carry out of this course",
     'Imputed from the words the colleges wrote, not supplied by an agency. '+
     'Faculty write outcomes; industry writes skills — this layer translates, so no faculty member has to rewrite a course '+
     '(Sam, 2026-09-05). <strong>We hold no agency skill statements at all</strong>: 57 published welding credit '+
-    'recommendations carry agency, title and hours, and not one skill statement.',
-    sbody, {tag:"imputed", tagClass:"gen", empty:!strong.length && !thin.length});
+    'recommendations carry agency, title and hours, and not one skill statement. '+
+    'A reviewer may add one the catalogs miss, or take one out; both stage here and nothing is written.',
+    sbody, {tag:"imputed", tagClass:"gen", empty:!addedRows.length && !strong.length && !thin.length});
 
   /* ── layer 3: the next layers, present and empty ──────────────────────── */
   h+=olLayer("cpl","Credit for prior learning against this course",
@@ -4318,15 +4478,21 @@ function olHtml(nd, isl){
   /* ── layer 5: what a reviewer may do ──────────────────────────────────── */
   h+=olLayer("review","What a reviewer may change",
     'Sam’s ruling, 2026-09-05: reviewers edit titles and re-subject; a re-mint waits until the '+
-    'change is <strong>verified</strong> and <strong>admin-released</strong>. Both controls below stage a '+
-    'proposal in this browser. Nothing is written from this page.',
+    'change is <strong>verified</strong> and <strong>admin-released</strong>. The controls below stage a '+
+    'proposal in this browser, as do <strong>Add a skill</strong> and <strong>Remove</strong> in the skills '+
+    'layer above. Nothing is written from this page.',
     '<p class="row">'+
       '<button class="btn small" type="button" id="ol-rename">Propose a different title</button> '+
       '<button class="btn small" type="button" id="ol-resubject">Propose a different subject</button>'+
-      (st.title||st.subject?' <button class="btn small" type="button" id="ol-revert">Drop the proposals</button>':"")+
+      (st.title||st.subject||(st.skillAdd&&st.skillAdd.length)||(st.skillDrop&&Object.keys(st.skillDrop).length)
+        ?' <button class="btn small" type="button" id="ol-revert">Drop the proposals</button>':"")+
     '</p>'+
     (st.subject?'<p class="ol-attr">Proposed Common SUBJ: <strong>'+esc(st.subject)+'</strong> '+
       '(was '+esc(subject)+') — staged, not saved.</p>':"")+
+    ((st.skillAdd&&st.skillAdd.length)?'<p class="ol-attr">Skills added by a reviewer: <strong>'+
+      esc(st.skillAdd.map(function(a){ return a.p; }).join(", "))+'</strong> — staged, not saved.</p>':"")+
+    ((st.skillDrop&&Object.keys(st.skillDrop).length)?'<p class="ol-attr">Skills removed by a reviewer: <strong>'+
+      esc(Object.keys(st.skillDrop).join(", "))+'</strong> — staged, not saved.</p>':"")+
     '<p class="ol-src">A re-mint would change this identity’s id, which other files key by. '+
     'It is queued for an administrator, never fired from a reading surface '+
     '(<code>docs/coursecontrolnumber_remint.md</code> is the playbook).</p>');
@@ -4370,7 +4536,46 @@ function olWire(nd, isl){
     window.__ccrOutline(nd.i);
   };
   var rv=document.getElementById("ol-revert");
-  if(rv) rv.onclick=function(){ delete st.title; delete st.subject; window.__ccrOutline(nd.i); };
+  if(rv) rv.onclick=function(){
+    delete st.title; delete st.subject; delete st.skillAdd; delete st.skillDrop;
+    window.__ccrOutline(nd.i);
+  };
+  /* ── the skills a reviewer adds and strikes out ──────────────────────────
+   * ⚠️ Keyed by the FOLDED phrase, the same key the imputation counts by, so a
+   * reviewer who strikes out "flux-cored arc welding" has struck out "flux
+   * cored arc welding" as well — one skill, however it is spelled. A key taken
+   * off the surface form would come back the next time a catalog landed with
+   * the other spelling. */
+  var sa=document.getElementById("ol-sk-add");
+  if(sa) sa.onclick=function(){
+    var v=window.prompt("Add a skill a learner would carry out of "+(nd.t||nd.i)+".\n\n"+
+      "Name the thing they can do, in the words the trade uses. This stages the skill in this "+
+      "browser; nothing is written.", "");
+    if(v==null) return;
+    v=String(v).replace(/\s+/g," ").trim();
+    if(!v) return;
+    var key=window.__ccrSkillFold(v);
+    if(!key) return;
+    st.skillAdd=(st.skillAdd||[]).filter(function(a){ return a.k!==key; });
+    st.skillAdd.push({p:v, k:key, at:new Date().toISOString().slice(0,10)});
+    if(st.skillDrop) delete st.skillDrop[key];
+    window.__ccrOutline(nd.i);
+  };
+  Array.prototype.forEach.call(document.querySelectorAll("[data-drop]"), function(b){
+    b.onclick=function(){
+      (st.skillDrop||(st.skillDrop={}))[b.dataset.drop]=1;
+      window.__ccrOutline(nd.i);
+    };
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-restore]"), function(b){
+    b.onclick=function(){ if(st.skillDrop) delete st.skillDrop[b.dataset.restore]; window.__ccrOutline(nd.i); };
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("[data-unadd]"), function(b){
+    b.onclick=function(){
+      st.skillAdd=(st.skillAdd||[]).filter(function(a){ return a.k!==b.dataset.unadd; });
+      window.__ccrOutline(nd.i);
+    };
+  });
 }
 
 window.__ccrHow=function(){
