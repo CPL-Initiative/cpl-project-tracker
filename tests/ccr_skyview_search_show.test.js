@@ -479,6 +479,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await tick();
   gq11.focus();
   const nBefore = w.__ccrTokenKeys().length;
+  const keysBefore = w.__ccrTokenKeys();
 
   // 11a — TICKING IS NOT COMMITTING, AND THE LIST DOES NOT MOVE. Sam,
   // 2026-09-06: "Seems the problem is firing the routine to add the filter is
@@ -575,6 +576,22 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(11a) ⭐ Enter applies both ticks, so the selection is now two picks",
     w.__ccrTokenKeys().length === nBefore + 2,
     `${nBefore} -> ${w.__ccrTokenKeys().length}`);
+  /* ⭐ AND IT DESTROYS NOTHING ON THE WAY. This is the assertion the count above
+     could only report as "1 -> 2": the commit was removing an ALREADY-COMMITTED
+     pick that the reader never touched. `pendKeys` is seeded once per session, so
+     a token committed outside that seed is missing from it — and while removals
+     were DERIVED (`have` minus `pendKeys`), that absence read as an untick and
+     Enter silently deleted the chip. Here `disc:Welding` is committed by §10 and
+     is nowhere near the two rows §11a ticks; it must survive them.
+
+     ⚠️ If removals ever go back to being derived by subtraction, the count
+     assertion above still passes the moment someone "fixes" it by expecting
+     nBefore + 1. THIS one names what actually went wrong, so it cannot be
+     satisfied by lowering the expectation. */
+  const keysAfter = w.__ccrTokenKeys();
+  const lost = keysBefore.filter((k) => keysAfter.indexOf(k) < 0);
+  check("(11a) ⭐ …and a pick the reader never touched is NOT removed by the commit",
+    lost.length === 0, lost.length ? `destroyed: ${JSON.stringify(lost)}` : "all survived");
 
   // 11b — FULL TITLE ON HOVER FOR THE FILTER CHIPS. `.u-tok-l` is
   // text-overflow:ellipsis, so the tooltip is the only way to read a clipped

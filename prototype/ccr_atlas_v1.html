@@ -1031,7 +1031,22 @@ function markSug(){
  * hunting. That objection was to Enter GUESSING, not to Enter closing. Once the
  * reader has ticked their own rows there is nothing left to guess, and closing
  * on Enter is just honouring what they picked. */
-var pendKeys = [], pendItem = {}, pendLive = false;
+/* ⚠️ WHAT THE READER DID IS RECORDED, NEVER DERIVED BY SUBTRACTION.
+ * `pendKeys` is what shows ticked; `pendItem` holds the suggestion for each row
+ * the reader ticked THIS session; `pendOff` holds the keys they explicitly
+ * UNticked. Enter commits exactly those two lists and nothing else.
+ *
+ * ⭐ THE FIRST CUT DERIVED THE REMOVALS — `have.filter(k => pendKeys.indexOf(k) < 0)`
+ * — and that is a silent destroyer. `pendKeys` is seeded ONCE per session, so any
+ * token committed after the seed (or before a seed that never ran, because
+ * `pendLive` was already true) is absent from it, and absence read as intent
+ * means Enter REMOVES a chip the reader never touched. Measured on the welding
+ * fixture: `disc:Welding` was committed, the session seeded without it, and
+ * ticking two courses and pressing Enter dropped it — two picks added, one
+ * unrelated pick destroyed, no message anywhere. A snapshot cannot be the
+ * authority on intent, because everything that happens outside it looks like
+ * a decision the reader made. */
+var pendKeys = [], pendItem = {}, pendOff = [], pendLive = false;
 function keyOf(it){
   return (typeof window.__ccrTokenKey === "function") ? window.__ccrTokenKey(it) : "";
 }
@@ -1040,6 +1055,7 @@ function keyOf(it){
 function seedPending(){
   pendKeys = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys().slice() : [];
   pendItem = {};
+  pendOff = [];
   pendLive = true;
 }
 /* ⚠️ A TICK SURVIVES A CHANGE OF TERM (Sam, 2026-09-06, watching it fail: he
@@ -1059,7 +1075,7 @@ function seedPending(){
  * A tick held for a row that the CURRENT term no longer lists stays pending and
  * still commits on Enter (Sam's ruling, same session): `pendItem` keeps the
  * suggestion object, so the commit does not need the row to be on screen. */
-function endPending(){ pendKeys = []; pendItem = {}; pendLive = false; }
+function endPending(){ pendKeys = []; pendItem = {}; pendOff = []; pendLive = false; }
 /* The pending set, for tests. `__ccrTokenKeys()` reports what is COMMITTED;
  * this reports what is merely ticked, and the gap between them is the whole
  * point of deferring the commit — a test that can only see the committed side
@@ -1070,9 +1086,14 @@ function toggleRowAt(i){
   if (!it) return false;
   var key = keyOf(it);
   if (!key) return false;
-  var at = pendKeys.indexOf(key);
-  if (at >= 0) pendKeys.splice(at, 1);
-  else { pendKeys.push(key); pendItem[key] = it; }
+  var at = pendKeys.indexOf(key), off = pendOff.indexOf(key);
+  if (at >= 0){
+    pendKeys.splice(at, 1);
+    if (off < 0) pendOff.push(key);        // an untick is a decision; record it
+  } else {
+    pendKeys.push(key); pendItem[key] = it;
+    if (off >= 0) pendOff.splice(off, 1);  // re-ticked, so no longer a removal
+  }
   // Repaint the ONE row. No render, no re-rank, no reveal — see above.
   var li = sugRow(i);
   if (li){
@@ -1091,9 +1112,8 @@ function toggleRowAt(i){
 function paintPending(){
   var el = sugEl && sugEl.querySelector("#sug-pend");
   if (!el) return;
-  var have = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
-  var add  = pendKeys.filter(function(k){ return have.indexOf(k) < 0; }).length;
-  var drop = have.filter(function(k){ return pendKeys.indexOf(k) < 0; }).length;
+  var edit = pendingEdit();
+  var add = edit.add.length, drop = edit.drop.length;
   var bits = [];
   if (add)  bits.push(add + " to add");
   if (drop) bits.push(drop + " to remove");
@@ -1105,12 +1125,22 @@ function paintPending(){
  * B does not momentarily hold both — applyTokens() fits the view to whatever is
  * in `tokens` when it runs, and fitting an intermediate set is a visible lurch
  * on the way to the right one. */
-function commitPending(){
+/* The one definition of "what Enter is about to do", read by both the footer and
+ * the commit — so the counter can never promise something the commit does not do.
+ * An ADD is a row ticked this session (it has a `pendItem`) that is not already
+ * committed; a DROP is a key explicitly unticked that IS. A seeded key the reader
+ * never touched is inert in both directions, which is the whole point. */
+function pendingEdit(){
   var have = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
-  var drop = have.filter(function(k){ return pendKeys.indexOf(k) < 0; });
-  var add  = pendKeys.filter(function(k){ return have.indexOf(k) < 0; })
-                     .map(function(k){ return pendItem[k]; })
-                     .filter(Boolean);
+  return {
+    have: have,
+    add:  pendKeys.filter(function(k){ return have.indexOf(k) < 0 && pendItem[k]; })
+                  .map(function(k){ return pendItem[k]; }),
+    drop: have.filter(function(k){ return pendOff.indexOf(k) >= 0; })
+  };
+}
+function commitPending(){
+  var edit = pendingEdit(), add = edit.add, drop = edit.drop;
   if (!drop.length && !add.length) return false;
   if (typeof window.__ccrCommitSelection === "function")
     return !!window.__ccrCommitSelection(add, drop);
