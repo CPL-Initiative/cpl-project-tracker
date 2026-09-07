@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-79 document(s).
+80 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -82,6 +82,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [SkyView search: the deferred commit — handoff](../deferred_commit_handoff.md) | `deferred_commit_handoff.md` |  |  |
 | [SkyView troubleshooting brief — for a Claude Desktop computer-use session (observe and log only)](../skyview_troubleshooting_brief.md) | `skyview_troubleshooting_brief.md` | 2026-09-06 | 2026-09-06 |
 | [SkyView — drag any local course, queue the breakage, batch the re-mint](../skyview_drag_rehome_scope.md) | `skyview_drag_rehome_scope.md` | 2026-08-24 | 2026-08-24 |
+| [SkyView — the smaller backlog](../skyview_backlog.md) | `skyview_backlog.md` | 2026-09-07 | 2026-09-07 |
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
 | [The CPL clean-up worklist — what to fix, in what order, and who fixes it](../map_cleanup_worklist.md) | `map_cleanup_worklist.md` | 2026-08-19 | 2026-08-19 |
 | [The §55050 draft against the GR Priorities register — what to change on each side](../t5_55050_vs_gr_register.md) | `t5_55050_vs_gr_register.md` | 2026-08-26 | 2026-08-26 |

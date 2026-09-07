@@ -103,25 +103,44 @@ spellings side by side.
 shifts line numbers in `kb/dependency_map.json`. Run
 `python3 kb/_build_dependency_map.py` before pushing anything that adds a file.
 
-## YOUR PRIORITY — unchanged for three runs
+## YOUR PRIORITY — the sketch is done and RULED. Build it.
 
-② **A CPL vs Course/Discipline toggle** — *"so the CPL exhibits and CRs are the
-focus more than the Courses."*
-③ **A show-articulations toggle on normal SkyView** — *"reveal to users where
-existing artics are and where they differ for the same course college to
-college."*
+Sam answered all eight items of
+[`docs/visuals/2026-09-07-cpl-views-skills-and-curate.html`](visuals/2026-09-07-cpl-views-skills-and-curate.html)
+**yes**, no follow-ups, one note. The two CPL views are no longer a sketch — they
+are a specification. Read the lane's *eight rulings of 2026-09-07* section before
+you start; the whole spec is there.
 
-Sam asked for a **sketch before a build** on both, and called them closely
-linked himself. ⭐ **RULED, so build to it:** the articulations toggle **lights
-only what has a number** and leaves everything else drawn as it is — no gray, no
-hollow, no "none" marker, because each reads as a finding. ⚠️ Only **1,490 of
-49,896 points (3.0%)** carry an articulation count.
+⭐ **THE CEILING IS THE RECEIVING COURSE, NOT THE MAP.** Only **8,979 of 206,702
+rows (4.3%)** of MAP's credit funnel name a receiving college course, and that is
+the sole join from a CPL row to a course identity. **The CPL view states its own
+coverage on the surface**: *"1,490 of 6,388 exhibits reach a course on this map."*
+
+⭐ **THE CPL FACE** leads with the curated credential → **issuing agency AND
+training agency where they differ** → what it earns → the colleges holding it.
+Search switches with the face. Sam's note: *"Will want all this included on the
+COR and credential Exhibit"* — so the agencies go on the **course outline of
+record** and the **credential Exhibit** too, not only the map.
+
+⭐ **THE ARTICULATIONS TOGGLE SHOWS PRESENCE ONLY.** It lights what has a number
+(1,490 of 49,896 points) and leaves the rest drawn as it is — no gray, no hollow,
+no "none". ⚠️ **"Where they differ college to college" is NOT a map layer** — it
+is four cases, in
+[`kb/ccr_articulation_disagreements.json`](../kb/ccr_articulation_disagreements.json),
+and two of those are data-quality defects. Do not rebuild that measurement from
+the crosswalk; it reads ~165 there and the number is wrong.
+
+⭐ **A CURATE EDIT IS PROPOSED, ATTRIBUTED, SECONDED TO PUBLISH** — now
+**DR-24** in the governance register with **Sam as its named owner**, the first
+owned row in it. An added skill carries the reviewer's name and the day it was
+staged and lands `proposed`; a removal is symmetric and an unseconded one stays
+visible with the objection beside it. Nothing writes from the page until DR-24's
+surface ships. ⚠️ The sheet proposed "DR-22"; that id was already the GR register.
 
 Then, still open: the **staged-to-move mark** on a re-homed course (the receipt
 half shipped this run; the course's own mark still says nothing), the legend's
 **`unified`** gloss, the outline's **skills layer** (a fetch problem — we hold
-zero agency skill text), and the **curate phrase** (ruled, not built; Rule 10 a3
-routes it through Governance first).
+zero agency skill text), and the **curate phrase** (ruled, not built).
 
 ## NEEDS SAM
 
@@ -134,12 +153,10 @@ or ghosts.
 own glyph rule.
 ⑤ The three legacy anchors with no seed discipline (`M-ID HOSP 100`, `104`,
 `102`) need one of the 146 MQ disciplines.
-⑥ **New this run:** when curate starts writing, should a reviewer's added skill
-carry their name, and should removing one need a second person? Same governance
-step the curate phrase waits on.
-⑦ **New this run:** the skill fold collapses hyphens and simple plurals. If two
-genuinely different skills now read as one, or a surviving spelling looks wrong
-to a welding instructor, the rule narrows.
+⑥ Whether to hold the **training agency** back until the field is fuller — he
+said incomplete is fine for now, so it ships with the gap visible.
+~~⑦ the curate-write governance question~~ — **answered**: DR-24, owner Sam.
+~~⑧ the skill fold~~ — **answered**: stands as shipped.
 
 ## Housekeeping
 
@@ -164,7 +181,15 @@ to a welding instructor, the rule narrows.
 `a-rule-right-for-reading-can-be-wrong-for-writing` ·
 `sam-three-skyview-defects-2026-09-07` (verified_by Sam) ·
 `fold-a-name-where-you-count-it-not-after` ·
-`a-closed-details-still-measures`
+`a-closed-details-still-measures` ·
+`sam-eight-rulings-2026-09-07-cpl-views-and-curate` (verified_by Sam) ·
+`a-display-payload-is-not-the-root-of-the-data` (verified_by Sam)
+
+⚠️ **SOURCE THE ROOT, NOT THE CONFIG** (Sam, 2026-09-07). The CPL measurements
+were being taken from `kb/coci_articulations.json`, the crosswalk SkyView draws,
+which holds **41%** of the root's exhibits and **29%** of its credit
+recommendations. The root is **`public.map_college_cr_unit`** (206,702 rows).
+Re-measuring changed the answers, not the precision.
 
 KB note added:
 [`methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing`](kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md).
