@@ -85,7 +85,9 @@ click away; Wrapped is gone.
 His close: *"Looks great!!!"*, then *"slow rotation proportionally on zoom"*
 and *"make twinkle a bit gentler/slower"* — built: the turn slows with the zoom
 (the sky drifts at one pace), a slow shallow per-star twinkle while it turns, a
-1.3 px floor under a star. **The generators live in `prototype/globe/`**
+1.3 px floor under a star; then *"rotation should be left to right"* — it now reads
+left to right in both views (the window's right is the globe's left, so the sign
+flips inside). **The generators live in `prototype/globe/`**
 (extract → layout → build; README there), so a fourth round starts from code.
 Still his: is any of it wanted in SkyView itself (a decision sheet, never a
 port).

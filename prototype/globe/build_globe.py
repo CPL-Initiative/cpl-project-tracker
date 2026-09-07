@@ -452,7 +452,8 @@ kbd{font:inherit;font-size:.78rem;padding:0 4px;border:1px solid var(--border);b
     var twinkle = rotating && !dragging && !reduce;
     [LI, LL].forEach(function(L){ L.obj.material.uniforms.time.value = t / 1000; L.obj.material.uniforms.tw.value = twinkle ? 0.5 : 0; });
     // the turn slows in proportion to the zoom, so the sky drifts across the window at one pace at any zoom
-    if(rotating && !dragging){ world.rotation.y += SPIN * dt * (view.inside ? view.half / (Math.PI * 75 / 180) : view.dist / 3.0); dirty = true; }
+    // left to right on the screen in both views: the window's right is the globe's left, so the sign flips inside
+    if(rotating && !dragging){ world.rotation.y += SPIN * dt * (view.inside ? -view.half / (Math.PI * 75 / 180) : view.dist / 3.0); dirty = true; }
     if(dirty){ renderer.render(scene, camera); placeLabels(); dirty = false; }
     requestAnimationFrame(frame);
   }
