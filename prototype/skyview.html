@@ -533,6 +533,7 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
      mustard text tone (5.6:1 on white), the glow its fill at low alpha, and the
      fill is for the receiving college's star. Read by ccr_universe.js readPal. */
   --sky-lit:#8B6800; --sky-lit-glow:rgba(227,179,65,.32); --sky-lit-fill:#FBF1D8;
+  --sky-dot-rim:#002F6D;
 }
 /* The dark canvas (Sam, 2026-09-05: "Dark mode selector"). Opt-in and remembered
    per browser; First Light stays a light identity, and this is the one
@@ -557,9 +558,15 @@ body.u-dark{
   --sky-leader-force:rgba(207,143,143,.8); --sky-leader-dot-force:rgba(207,143,143,.9);
   --sky-ring-faint:rgba(255,255,255,.22); --sky-gone:#6B6B66; --sky-sq-moved:#1F3320; --sky-sq-carried:#1C2A44;
   --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
-  --sky-sys0-fill:#2B2140; --sky-sys0-stroke:#B28DEB; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
+  /* Ruling 8 (2026-09-07): silver is the M-ID color on EVERY dark canvas — the
+     Sky, the Globe and the Map at night — so one legend serves all three (Sam:
+     "Silver MIDs looks the most natural to me"; 49,355 of 49,896 points wear
+     it). 12.3:1 on the night ground. Violet stays the light canvas's, where
+     silver would be 1.46:1. */
+  --sky-sys0-fill:#2A2A28; --sky-sys0-stroke:#D6D6D0; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
   --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
   --sky-lit:#E3B341; --sky-lit-glow:rgba(227,179,65,.28); --sky-lit-fill:#3A2E10;
+  --sky-dot-rim:#002F6D;
   /* ⚠️ A ROW TINT MUST SIT UNDER THE CHIP IT CARRIES, NOT ON TOP OF IT. The
      "moved here" chip is #1F3320 here, so the row goes a step darker — the
      hunter border and the chip stay the signals, and the tint only says which
@@ -573,6 +580,28 @@ body.u-dark{
 body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
 body.u-dark .chip.gen{background:#2B2140;border-color:#4C3A72}
 body.u-dark .chip.ok{background:#1F3320;border-color:#3A5A38}
+/* ── THE DAY SKY (Sam's ruling 3, 2026-09-07) ─────────────────────────────
+   The light state of the Sky and the Globe: a tint of the CO blue with faint
+   clouds, as the prototype drew it. Measured against this ground the silver
+   star is 1.24:1 and the light 1.08:1, so by day every dot carries the
+   seal-blue rim (7.2:1) — drawn on the canvas, and on the legend's swatches
+   here, so the legend never promises a color the ground cannot show. The page
+   chrome stays light either way; body.u-day is set only while the reader stands
+   on the sphere and has not chosen the night. */
+body.u-day{
+  --sky-ground:#A8C3E8; --sky-island:#B9D0EC; --sky-island-hover:#C6D9F0; --sky-island-sel:#D3E1F4;
+  --sky-island-stroke:rgba(0,47,109,.28); --sky-hollow:#DCE7F5;
+  --sky-halo:rgba(168,195,232,.92); --sky-halo-fill:rgba(168,195,232,.8);
+  --sky-sys0-fill:#DCE7F5; --sky-sys0-stroke:#D6D6D0;
+  --sky-ring-faint:rgba(0,47,109,.25);
+}
+body.u-day .u-sw{box-shadow:inset 0 0 0 1.5px var(--sky-dot-rim)}
+body.u-day .u-sw.lone{box-shadow:inset 0 0 0 1px var(--sky-dot-rim)}
+/* Night | Day: two words side by side in the More panel, one control with the
+   Map's Dark canvas row (ruling 3). */
+.u-nd{display:flex;gap:0}
+.u-nd .u-more-t{flex:1 1 50%;justify-content:center}
+.u-nd .u-more-t[aria-pressed="true"]{background:var(--seal-blue,#002F6D);color:#fff}
 body.u-dark .chip.flag{background:#3A1A1A;border-color:#6A3030}
 body.u-dark table.uc-like th{background:#30302E;color:var(--mustard-text)}
 body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0 12px 30px rgba(0,0,0,.5)}
@@ -2738,7 +2767,9 @@ var PAL_LIGHT={ground:"#FFFFFF", island:"#F7F5F1", islandHover:"#F3F1EC", island
   sys2Fill:"#FBF1D8", sys2Stroke:"#8B6800", sys3Fill:"#EFEFEC", sys3Stroke:"#5C5C55",
   /* the articulations light (2026-09-07): the palette's mustard — a gold glow, a
    * thin ring, and a fill for the receiving college's star */
-  lit:"#8B6800", litGlow:"rgba(227,179,65,.32)", litFill:"#FBF1D8"};
+  lit:"#8B6800", litGlow:"rgba(227,179,65,.32)", litFill:"#FBF1D8",
+  /* the day sky's rim on every dot (ruling 3): the seal blue, 7.2:1 on the day ground */
+  dotRim:"#002F6D"};
 var pal=PAL_LIGHT;
 
 /* ══ THE CPL FACE AND THE ARTICULATIONS LIGHT (Sam's rulings 1-3, 2026-09-07) ══
@@ -2776,6 +2807,257 @@ var lit=false;                 // the articulations light
 var CPL=null, cplState="", cplWaiters=[], cplIslCache=null, cplIndexCache=null;
 var CPL_URL = window.CPL_SKYVIEW_CPL_URL || "ccr_cpl.json";
 function bindCpl(j){ CPL=j; cplState="ok"; cplIslCache=null; cplIndexCache=null; }
+
+/* ══ THE SKY — WHERE THE READER STANDS (Sam's eight rulings, 2026-09-07) ═════
+ * Sam asked whether the 2-D sky could become "a 3-d 360 globe that rotates",
+ * saw three rounds of a prototype in one afternoon, and ruled it in: "Looks
+ * great! Let's go with it in next session." The eight design calls the port
+ * raised went on a sheet (docs/visuals/2026-09-07-eight-calls-before-the-sky-
+ * goes-in.html) and he answered yes to all eight. What this block builds:
+ *
+ *   sky    the reader stands at the center and looks out — the night sky
+ *          through a window (a stereographic projection, 4° to 240° across,
+ *          so a round island stays round wherever it sits). THE VIEW THAT OPENS.
+ *   globe  the sphere seen from outside, at a distance you choose (an
+ *          orthographic view; the far half is behind the body).
+ *   map    the flat map, exactly as before — the whole at once, and the view
+ *          every other surface returns to.
+ *
+ * ⭐ THE SPHERE IS THE MAP THROUGH A PROJECTION, NOT A SECOND RENDERER. Each
+ * discipline island is a locally flat disc on the sphere: its center is placed
+ * by kb/_build_ccr_sky.py (prototype/ccr_sky.json — CTE disciplines one side of
+ * the sky, academic the other, the mixed ones along the line between; TOP's one
+ * sanctioned use, as a display arrangement never a classification), and every
+ * point inside it keeps its flat-map offset, mapped through the projection's
+ * Jacobian at the island's center (prepSphere). So the drop that lands on a
+ * circle (S237), the label placer that drops rather than stacks, the member
+ * rings, the keyboard path and the staged-to-move mark all run UNCHANGED on the
+ * sphere — they are re-earned by construction, not re-derived — and the drop
+ * test's fixture holds on the curve. The prototype's own numbers say why this
+ * is enough: a 90-second relaxation put the islands where they are; inside one,
+ * the curvature across a 10° cap is a cosine of 0.985.
+ *
+ * ⚠️ NO THREE.JS. A full Canvas 2D redraw of all 49,896 points measured 18–35 ms
+ * in software rendering (S239), so the turn runs on the map's own canvas and
+ * the public page gains no third-party script.
+ *
+ * ⚠️ THE PAYLOAD IS FETCHED ON DEMAND and the sky never waits for it: until
+ * prototype/ccr_sky.json arrives (or when it cannot), the islands are placed by
+ * the flat map wrapped — x to longitude across 360°, y to latitude across 162°
+ * — which is the prototype's committed placement. By kind takes over the moment
+ * the payload binds. */
+var proj="map";                       // "sky" | "globe" | "map" — where the reader stands. The ROUTE opens the Sky
+                                      // (#skyview → sky, ruling 1); a direct call keeps where the reader already stands.
+/* What #skyview opens. The Sky, by Sam's ruling — and a harness that measures
+ * the flat map says so (window.CPL_SKYVIEW_OPENS="map"), the way one names a
+ * payload URL, rather than every flat-map suite running on the sphere. */
+var OPENS = (window.CPL_SKYVIEW_OPENS==="map"||window.CPL_SKYVIEW_OPENS==="globe") ? window.CPL_SKYVIEW_OPENS : "sky";
+var SKY=null, skyState="", skyWaiters=[];
+var SKY_URL = window.CPL_SKYVIEW_SKY_URL || "ccr_sky.json";
+var sph={yaw:0, pitch:0.15, half:Math.PI*75/180, dist:3.0, spin:0};   // the sphere's view: where you look, how wide, how far, how far it has turned
+var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
+var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
+var SPIN=0.045;                       // radians per second — one turn in about 140 s, slower as you zoom in
+var reduceMotion=false;
+try{ reduceMotion=!!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); }catch(e){}
+var rotating=false, turnRaf=null, turnT=0, twinkleT=0;
+var namesOn=true;                     // discipline names on the sky (More → Show or hide)
+var islSphere=null, skyRegions=null;  // per island: its place on the sphere; the two region names
+function bindSky(j){ SKY=j; skyState="ok"; islSphere=null; }
+function loadSky(then){
+  if(skyState==="ok"||skyState==="missing"||skyState==="blocked") return then&&then();
+  if(window.CPL_CCR_SKY){ bindSky(window.CPL_CCR_SKY); return then&&then(); }
+  if(then) skyWaiters.push(then);
+  if(skyState==="loading") return;
+  var flush=function(){ var w=skyWaiters; skyWaiters=[]; w.forEach(function(f){ try{ f(); }catch(e){} }); };
+  if(typeof fetch!=="function"){ skyState="missing"; flush(); return; }
+  skyState="loading";
+  fetch(SKY_URL).then(function(r){
+    if(!r.ok) throw new Error("http "+r.status);
+    return r.json();
+  }).then(function(j){ bindSky(j); flush(); })
+    .catch(function(){ skyState=(location.protocol==="file:")?"blocked":"missing"; flush(); });
+}
+function sphereOn(){ return proj!=="map"; }
+function dayOn(){ return sphereOn() && !dark; }
+function norm3(v){ var l=Math.sqrt(v[0]*v[0]+v[1]*v[1]+v[2]*v[2])||1; return [v[0]/l, v[1]/l, v[2]/l]; }
+function skyRpu(){
+  if(SKY && SKY.radians_per_unit) return SKY.radians_per_unit;
+  var b=U&&U.bounds; return b ? 0.62*2*Math.PI/((b.x1-b.x0)/SPREAD_ISLANDS) : 0.001;
+}
+function unitOf(lonDeg, latDeg){
+  var lon=lonDeg*Math.PI/180, lat=latDeg*Math.PI/180, cl=Math.cos(lat);
+  return [cl*Math.cos(lon), Math.sin(lat), cl*Math.sin(lon)];
+}
+/* The flat map wrapped by longitude and latitude — the committed placement. */
+function wrapOf(x,y){
+  var b=U.bounds, cx=(b.x0+b.x1)/2, cy=(b.y0+b.y1)/2, W=b.x1-b.x0, H=b.y1-b.y0;
+  var lon=(x-cx)/W*2*Math.PI, lat=-(y-cy)/H*(Math.PI*0.9), cl=Math.cos(lat);
+  return [cl*Math.cos(lon), Math.sin(lat), cl*Math.sin(lon)];
+}
+function frameAt(c){
+  var lon=Math.atan2(c[2],c[0]), lat=Math.asin(Math.max(-1,Math.min(1,c[1])));
+  return {E:[-Math.sin(lon), 0, Math.cos(lon)], N:[-Math.sin(lat)*Math.cos(lon), Math.cos(lat), -Math.sin(lat)*Math.sin(lon)]};
+}
+/* Walk `east` and `north` radians along the surface from an island's center. */
+function expmap(S, east, north){
+  var rho=Math.sqrt(east*east+north*north); if(rho<1e-9) return S.c.slice();
+  var te=east/rho, tn=north/rho, cr=Math.cos(rho), sr=Math.sin(rho);
+  return [cr*S.c[0]+sr*(te*S.E[0]+tn*S.N[0]), cr*S.c[1]+sr*(te*S.E[1]+tn*S.N[1]), cr*S.c[2]+sr*(te*S.E[2]+tn*S.N[2])];
+}
+function buildSphere(){
+  if(!U) return null;
+  var rows={}; if(SKY && SKY.islands) SKY.islands.forEach(function(r){ rows[r.d]=r; });
+  var rpu=skyRpu(), out={}, sums={cte:[0,0,0,0], academic:[0,0,0,0]};
+  U.islands.forEach(function(isl){
+    var r=rows[isl.d], c = (r && r.kind) ? unitOf(r.kind[0], r.kind[1]) : wrapOf(isl.x, isl.y), f=frameAt(c);
+    out[isl.d]={c:c, E:f.E, N:f.N, th:isl.r*rpu, cls:r?r.cls:"mixed"};
+    if(r && sums[r.cls]){ var sm=sums[r.cls]; sm[0]+=c[0]; sm[1]+=c[1]; sm[2]+=c[2]; sm[3]++; }
+  });
+  /* The two region names ride the sky — without them the order is a secret. */
+  skyRegions=[];
+  [["cte","CTE disciplines"],["academic","Academic disciplines"]].forEach(function(q){
+    var sm=sums[q[0]]; if(sm[3]) skyRegions.push({c:norm3([sm[0],sm[1],sm[2]]), text:q[1], p:null});
+  });
+  islSphere=out; return out;
+}
+function spun(c){ var a=sph.spin, ca=Math.cos(a), sa=Math.sin(a); return [c[0]*ca - c[2]*sa, c[1], c[0]*sa + c[2]*ca]; }
+function viewBasis(){
+  var f=[Math.cos(sph.pitch)*Math.sin(sph.yaw), Math.sin(sph.pitch), Math.cos(sph.pitch)*Math.cos(sph.yaw)];
+  var r=[-f[2],0,f[0]], rl=Math.sqrt(r[0]*r[0]+r[2]*r[2])||1; r=[r[0]/rl,0,r[2]/rl];
+  var u=[r[1]*f[2]-r[2]*f[1], r[2]*f[0]-r[0]*f[2], r[0]*f[1]-r[1]*f[0]];
+  return {f:f, r:r, u:u};
+}
+function skyKpx(){ return (cw()/2)/(2*Math.tan(sph.half/2)); }        // pixels per unit of the window's plane
+function globeRpx(){ return 0.42*Math.min(cw(),ch())*(3.0/sph.dist); } // the globe's radius on the screen
+/* A spun direction → its place on the screen, or null when it is out of view
+ * (behind the reader past 175°, or on the far side of the globe). */
+function projectDir(d, B){
+  var x=d[0]*B.r[0]+d[1]*B.r[1]+d[2]*B.r[2], y=d[0]*B.u[0]+d[1]*B.u[1]+d[2]*B.u[2], z=d[0]*B.f[0]+d[1]*B.f[1]+d[2]*B.f[2];
+  if(proj==="globe"){ if(z<0.05) return null; var R=globeRpx(); return [cw()/2 - x*R, ch()/2 - y*R]; }   // outside, facing the center: the sky's left is the screen's right
+  var ang=Math.acos(Math.max(-1,Math.min(1,z))); if(ang>3.05) return null;
+  var rho=2*Math.tan(ang/2), l=Math.sqrt(x*x+y*y)||1, k=skyKpx();
+  return [cw()/2 + (x/l)*rho*k, ch()/2 - (y/l)*rho*k];
+}
+/* A screen point → a spun direction (null off the globe's body). */
+function unprojectDir(px,py,B){
+  var X, Y, z;
+  if(proj==="globe"){ var R=globeRpx(); X=-(px-cw()/2)/R; Y=-(py-ch()/2)/R; var q=X*X+Y*Y; if(q>1) return null; z=Math.sqrt(1-q);
+    return [X*B.r[0]+Y*B.u[0]+z*B.f[0], X*B.r[1]+Y*B.u[1]+z*B.f[1], X*B.r[2]+Y*B.u[2]+z*B.f[2]]; }
+  var k=skyKpx(); X=(px-cw()/2)/k; Y=-(py-ch()/2)/k;
+  var rho=Math.sqrt(X*X+Y*Y), ang=2*Math.atan(rho/2), ca=Math.cos(ang), sa=Math.sin(ang), ux=rho?X/rho:0, uy=rho?Y/rho:0;
+  return [ca*B.f[0]+sa*(ux*B.r[0]+uy*B.u[0]), ca*B.f[1]+sa*(ux*B.r[1]+uy*B.u[1]), ca*B.f[2]+sa*(ux*B.r[2]+uy*B.u[2])];
+}
+/* ⭐ THE FRAME'S PLACES. Each island's center on the screen and the projection's
+ * Jacobian there (screen pixels per world unit east and down), so every point
+ * inside it is placed by ONE multiply-add — the flat map's w2s with a per-island
+ * origin, scale and orientation. Run at the top of draw(); pick() reads the same
+ * cache, so hit-testing and painting cannot disagree about where a thing is. */
+function prepSphere(){
+  if(!islSphere) buildSphere();
+  var B=viewBasis(), rpu=skyRpu(), EPS=1e-3;
+  U.islands.forEach(function(isl){
+    var S=islSphere[isl.d]; if(!S){ isl._s=null; return; }
+    var c=spun(S.c), p=projectDir(c,B);
+    if(!p){ isl._s=null; return; }
+    var pe=projectDir(spun(norm3([S.c[0]+EPS*S.E[0], S.c[1]+EPS*S.E[1], S.c[2]+EPS*S.E[2]])),B);
+    var pn=projectDir(spun(norm3([S.c[0]+EPS*S.N[0], S.c[1]+EPS*S.N[1], S.c[2]+EPS*S.N[2]])),B);
+    if(!pe||!pn){ isl._s=null; return; }
+    var ex=[(pe[0]-p[0])/EPS*rpu, (pe[1]-p[1])/EPS*rpu];     // per world unit east
+    var ey=[-(pn[0]-p[0])/EPS*rpu, -(pn[1]-p[1])/EPS*rpu];   // per world unit down (north is up; world y grows down)
+    var det=Math.abs(ex[0]*ey[1]-ex[1]*ey[0]);
+    if(det<1e-12){ isl._s=null; return; }
+    isl._s={px:p[0], py:p[1], ex:ex, ey:ey, k:Math.sqrt(det), cz:c[0]*B.f[0]+c[1]*B.f[1]+c[2]*B.f[2]};
+  });
+  if(skyRegions) skyRegions.forEach(function(rg){ rg.p=projectDir(spun(rg.c),B); });
+}
+function islandAt(x,y){
+  if(!U) return null;
+  for(var i=0;i<U.islands.length;i++){ var I=U.islands[i], ddx=x-I.x-(I.dx||0), ddy=y-I.y-(I.dy||0); if(ddx*ddx+ddy*ddy <= I.r*I.r*1.0001) return I; }
+  return null;
+}
+function islCenter(isl){
+  if(!sphereOn()) return w2sFlat(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
+  return isl._s ? [isl._s.px, isl._s.py] : null;
+}
+function islScale(isl){ return sphereOn() ? (isl._s ? isl._s.k : 0) : view.k; }
+/* The screen's scale at the window's center, as the map's k: what the zoom
+ * bands, the readout and the fly-to zoom mean on the sphere. */
+function kCenter(){ return skyRpu()*(proj==="globe" ? globeRpx() : skyKpx()); }
+function syncViewK(){ if(sphereOn()) view.k=kCenter(); }
+function setSphereZoom(k){
+  k=clampK(k); var rpu=skyRpu();
+  if(proj==="globe") sph.dist=Math.max(GLOBE_DIST_MIN, Math.min(GLOBE_DIST_MAX, rpu*0.42*Math.min(cw(),ch())*3.0/k));
+  else sph.half=Math.max(SKY_HALF_MIN, Math.min(SKY_HALF_MAX, 2*Math.atan(rpu*cw()/(4*k))));
+  syncViewK();
+}
+/* Face a world point: the direction of its island's center walked by its offset. */
+function faceWorld(x,y){
+  if(!islSphere) buildSphere();
+  var isl=islandAt(x,y), S=isl&&islSphere[isl.d], d;
+  if(S){ var rpu=skyRpu(); d=expmap(S, (x-isl.x-(isl.dx||0))*rpu, -(y-isl.y-(isl.dy||0))*rpu); } else d=wrapOf(x,y);
+  d=spun(d);
+  sph.pitch=Math.asin(Math.max(-1,Math.min(1,d[1]))); sph.yaw=Math.atan2(d[0], d[2]);
+}
+/* ── the turn (ruling 4): the sky turns when it opens and stops at the first
+ * touch — a drag, a click, a key, a search, a carry — until Rotate is pressed
+ * again; the stars twinkle only while it turns; none of it for a reader whose
+ * system asks for reduced motion. The turn slows in proportion to the zoom, so
+ * the sky drifts across the window at one pace. Left to right in both views:
+ * the window's right is the globe's left, so the sign flips inside. */
+function startTurn(){
+  if(reduceMotion || !sphereOn()) return;
+  rotating=true; paintTurn();
+  if(!turnRaf && typeof requestAnimationFrame==="function"){ turnT=0; turnRaf=requestAnimationFrame(turnFrame); }
+}
+function stopTurn(){ if(!rotating) return; rotating=false; paintTurn(); }
+function turnFrame(t){
+  turnRaf=null;
+  if(!rotating || !sphereOn() || !cvs || document.getElementById("u-cvs")!==cvs){ rotating=false; paintTurn(); return; }
+  var dt = turnT ? Math.min(0.1,(t-turnT)/1000) : 0; turnT=t; twinkleT=t/1000;
+  var rate = proj==="globe" ? SPIN*(sph.dist/3.0) : -SPIN*(sph.half/(Math.PI*75/180));
+  if(!(drag && drag.kind==="course")) sph.spin += rate*dt;   // never a moving target under a carried course
+  draw();
+  turnRaf=requestAnimationFrame(turnFrame);
+}
+function paintTurn(){
+  var b=document.getElementById("u-rotate");
+  if(b){ b.setAttribute("aria-pressed", rotating?"true":"false"); b.title = rotating ? "Stop the sky turning" : "Turn the sky slowly on its own; it stops at your first touch"; }
+}
+/* The day sky's clouds: value noise, drawn once, ghosted (Sam: "sky blue and
+ * with ghosted very feint clouds if possible"). */
+var cloudCvs=null;
+function cloudTile(){
+  if(cloudCvs) return cloudCvs;
+  var W=256, H=128, c=document.createElement("canvas"); c.width=W; c.height=H;
+  var g=c.getContext&&c.getContext("2d"); if(!g) return null;
+  var img=g.createImageData ? g.createImageData(W,H) : null; if(!img) return null;
+  function hash(i,j){ var n=Math.sin(i*127.1+j*311.7)*43758.5453; return n-Math.floor(n); }
+  function noise(x,y,per){ var xi=Math.floor(x), yi=Math.floor(y), fx=x-xi, fy=y-yi, sx=fx*fx*(3-2*fx), sy=fy*fy*(3-2*fy);
+    var a=hash(xi%per,yi%per), b=hash((xi+1)%per,yi%per), cc=hash(xi%per,(yi+1)%per), d=hash((xi+1)%per,(yi+1)%per);
+    return (a*(1-sx)+b*sx)*(1-sy)+(cc*(1-sx)+d*sx)*sy; }
+  for(var y=0;y<H;y++) for(var x=0;x<W;x++){
+    var v=0, amp=0.5, per=8;
+    for(var o=0;o<4;o++){ v+=amp*noise(x/W*per, y/H*per, per); amp*=0.5; per*=2; }
+    var a=Math.max(0, Math.min(1, (v-0.45)*2.2)), i=(y*W+x)*4;
+    img.data[i]=255; img.data[i+1]=255; img.data[i+2]=255; img.data[i+3]=Math.round(a*70);
+  }
+  g.putImageData(img,0,0); cloudCvs=c; return c;
+}
+function drawClouds(W,H){
+  var t=cloudTile(); if(!t || !ctx.drawImage) return;
+  ctx.save(); ctx.globalAlpha=0.85;
+  var s=Math.max(W/t.width, H/t.height);
+  var off=((sph.spin*W/(2*Math.PI))%(t.width*s)+t.width*s)%(t.width*s);   // the clouds drift with the turn
+  for(var x=-off; x<W; x+=t.width*s) ctx.drawImage(t, x, 0, t.width*s, t.height*s);
+  ctx.restore();
+}
+/* The twinkle: slow, shallow, each star on its own phase, only while the sky turns. */
+function twinkleOf(nd){
+  if(!rotating || !sphereOn() || (drag&&drag.kind)) return 1;
+  if(nd._ph==null){ var h=0, sId=String(nd.i); for(var i=0;i<sId.length;i++) h=(h*31+sId.charCodeAt(i))>>>0; nd._ph=(h%628)/100; }
+  return 1-0.25*(0.5+0.5*Math.sin(twinkleT*0.55+nd._ph));
+}
 function loadCpl(then){
   if(cplState==="ok"||cplState==="missing"||cplState==="blocked") return then&&then();
   if(window.CPL_CCR_CPL){ bindCpl(window.CPL_CCR_CPL); return then&&then(); }
@@ -2929,14 +3211,29 @@ function paintTextStep(){
   b.title="Label text: "+TEXT_STEPS[textStep][0]+". Click for the next size.";
 }
 window.__ccrTextStep=function(i){ if(i==null) return textStep; setTextStep(i); };
-var dark=false;
-try{ dark = localStorage.getItem("skyview:theme")==="dark"; }catch(e){}
+/* ⭐ ONE CONTROL, ONE MEMORY, TWO DEFAULTS (Sam's ruling 3, 2026-09-07). The
+ * Sky opens at Night — the night sky IS its dark canvas — and the Map opens
+ * light, as it always has; a reader who chooses is remembered everywhere
+ * (localStorage "skyview:theme"), and until they choose, the default follows
+ * where they stand. On the Sky and the Globe the control reads Night | Day; on
+ * the Map it keeps its Dark canvas row. Day keeps the rim on every dot, because
+ * measured against the day ground the silver stars are 1.24:1 and the light
+ * 1.08:1 — by day a dot exists by its edge. */
+var darkChoice=null;
+try{ darkChoice = localStorage.getItem("skyview:theme"); }catch(e){}
+if(darkChoice!=="dark" && darkChoice!=="light") darkChoice=null;
+var dark = darkChoice ? darkChoice==="dark" : false;
 if(dark && document.body) document.body.classList.add("u-dark");
-function setDark(on){
-  dark=!!on;
+function applyDark(){
+  dark = darkChoice ? darkChoice==="dark" : sphereOn();
   document.body.classList.toggle("u-dark", dark);
-  try{ localStorage.setItem("skyview:theme", dark?"dark":"light"); }catch(e){}
+  document.body.classList.toggle("u-day", dayOn());
   paintDark();
+}
+function setDark(on){
+  darkChoice = on ? "dark" : "light";
+  try{ localStorage.setItem("skyview:theme", darkChoice); }catch(e){}
+  applyDark();
   if(cvs && document.getElementById("u-cvs")===cvs) draw();
 }
 function paintDark(){
@@ -2944,8 +3241,47 @@ function paintDark(){
   if(b){
     b.setAttribute("aria-pressed", dark?"true":"false"); b.title = dark ? "Back to the light canvas" : "Dark canvas";
     var sw=b.querySelector(".u-state"); if(sw) sw.textContent=dark?"on":"off";
+    b.hidden = sphereOn();
   }
+  var nd=document.getElementById("u-nd"); if(nd) nd.hidden = !sphereOn();
+  var bn=document.getElementById("u-night"), bd=document.getElementById("u-day");
+  if(bn) bn.setAttribute("aria-pressed", dark?"true":"false");
+  if(bd) bd.setAttribute("aria-pressed", dark?"false":"true");
 }
+/* Where the reader stands — painted from every path that changes it. */
+function paintProj(){
+  ["sky","globe","map"].forEach(function(x){ var b=document.getElementById("u-proj-"+x); if(b) b.setAttribute("aria-pressed", x===proj?"true":"false"); });
+  var tg=document.getElementById("u-turn-grp"); if(tg) tg.hidden = !sphereOn();
+  paintTurn(); paintDark(); paintZoomRead();
+  var nb=document.getElementById("u-names"); if(nb){ nb.setAttribute("aria-pressed", namesOn?"true":"false"); var sw=nb.querySelector(".u-state"); if(sw) sw.textContent=namesOn?"on":"off"; }
+}
+function paintZoomRead(){
+  var z=document.getElementById("u-zoom"); if(!z) return;
+  if(proj==="sky"){ z.textContent=Math.round(sph.half*2*180/Math.PI)+"\u00b0 across"; z.title="How much of the sky the window holds, across"; }
+  else if(proj==="globe"){ z.textContent=(Math.round(sph.dist*10)/10).toFixed(1)+" R"; z.title="Your distance from the globe, in globe radii"; }
+  else { z.textContent=Math.round(view.k*100)+"%"; z.title="The current magnification"; }
+}
+function setProj(p, quiet){
+  p = (p==="globe"||p==="map") ? p : "sky";
+  var was=proj; proj=p;
+  if(sphereOn()){ if(!islSphere) buildSphere(); loadSky(function(){ if(sphereOn() && cvs && document.getElementById("u-cvs")===cvs){ buildSphere(); draw(); } }); syncViewK(); }
+  applyDark(); paintProj();
+  if(curView==="skyview"||curView==="comprehensive") syncHash(curArg||undefined);
+  if(quiet) return;
+  if(was!==proj){
+    /* Keep the subject when the reader changes where they stand. */
+    var a = selNode&&selIsl ? [selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0), Math.max(view.k, NODE_ZOOM*3)]
+          : selIsl ? [selIsl.x+(selIsl.dx||0), selIsl.y+(selIsl.dy||0), SUBJECT_ZOOM]
+          : anchor ? [anchor.x, anchor.y, Math.max(kCenter(), NODE_ZOOM*3)] : null;
+    if(a) flyTo(a[0],a[1],a[2]); else { resetView(); if(cvs && document.getElementById("u-cvs")===cvs) draw(); }
+  }
+  if(typeof window.__ccrSetMode==="function") window.__ccrSetMode(mode);   // the hint says what a drag does here
+  if(sphereOn()) startTurn(); else stopTurn();
+}
+window.__ccrSetProj=function(p){ setProj(p); };
+/* For the harness: the projection by name, both ways. */
+window.__ccrW2S=function(x,y,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return w2s(x,y,I||undefined); };
+window.__ccrS2W=function(px,py,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return s2w(px,py,I||undefined); };
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
          ["#E7EEF9","#0047AB","C-ID","official statewide"],
          ["#FBF1D8","#8B6800","CCN","official statewide"],
@@ -2971,8 +3307,28 @@ function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
 function num(n){return (n==null?0:n).toLocaleString("en-US");}
 function cw(){ return (cvs&&cvs.clientWidth)||960; }
 function ch(){ return (cvs&&cvs.clientHeight)||600; }
-function w2s(x,y){return [(x+view.x)*view.k + cw()/2, (y+view.y)*view.k + ch()/2];}
-function s2w(px,py){return [(px-cw()/2)/view.k - view.x, (py-ch()/2)/view.k - view.y];}
+function w2sFlat(x,y){return [(x+view.x)*view.k + cw()/2, (y+view.y)*view.k + ch()/2];}
+/* World → screen. On the flat map exactly as always. On the sphere a point is
+ * placed from ITS ISLAND's projected center by the island's Jacobian (see
+ * prepSphere) — pass the island when you have it; without one it is looked up
+ * by containment. Returns null when the island is out of view. */
+function w2s(x,y,isl){
+  if(!sphereOn()) return w2sFlat(x,y);
+  isl = isl || islandAt(x,y); if(!isl || !isl._s) return null;
+  var S=isl._s, dx=x-isl.x-(isl.dx||0), dy=y-isl.y-(isl.dy||0);
+  return [S.px + dx*S.ex[0] + dy*S.ey[0], S.py + dx*S.ex[1] + dy*S.ey[1]];
+}
+/* Screen → world, on the flat map; on the sphere only INSIDE a named island
+ * (the inverse of its Jacobian), which is what a test placing one circle under
+ * another's star needs. */
+function s2w(px,py,isl){
+  if(!sphereOn()) return [(px-cw()/2)/view.k - view.x, (py-ch()/2)/view.k - view.y];
+  if(!isl || !isl._s) return null;
+  var S=isl._s, det=S.ex[0]*S.ey[1]-S.ex[1]*S.ey[0]; if(Math.abs(det)<1e-12) return null;
+  var qx=px-S.px, qy=py-S.py;
+  var dx=( qx*S.ey[1]-qy*S.ey[0])/det, dy=(-qx*S.ex[1]+qy*S.ex[0])/det;
+  return [isl.x+(isl.dx||0)+dx, isl.y+(isl.dy||0)+dy];
+}
 function trunc(s,n){ s=String(s==null?"":s); return s.length>n?s.slice(0,n-1)+"…":s; }
 function unitsWord(u){
   if(u==null) return "units not given";
@@ -3201,8 +3557,8 @@ function spreadUniverse(u){
   });
   if(b) u.bounds={x0:cx+(b.x0-cx)*G, y0:cy+(b.y0-cy)*G, x1:cx+(b.x1-cx)*G, y1:cy+(b.y1-cy)*G};
 }
-function nodeRad(nd){
-  var rs=radScale(view.k);   // tapered above RAD_KNEE — see the note by K_MAX
+function nodeRad(nd, kk){
+  var rs=radScale(kk==null?view.k:kk);   // tapered above RAD_KNEE — see the note by K_MAX
   return nd.a ? Math.max(1.3, SAT_R*rs)
               : Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*rs);
 }
@@ -3467,8 +3823,21 @@ function draw(){
   ctx.fillStyle=pal.ground;
   ctx.fillRect(0,0,W,H);
 
-  var k=view.k;
-  var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTethers = k>ID_ZOOM;
+  var kC=view.k;                 // the scale at the window's center — on the sphere each island has its own (islScale)
+  var showLabels = kC>0.55;
+  if(sphereOn()){
+    prepSphere();
+    if(proj==="globe"){
+      var Rg=globeRpx();
+      ctx.save();
+      ctx.beginPath(); ctx.arc(W/2, H/2, Rg, 0, 6.2832);
+      ctx.fillStyle=pal.island; ctx.globalAlpha=ctx.globalAlpha*0.35; ctx.fill(); ctx.globalAlpha=1;
+      if(dayOn()){ ctx.clip(); drawClouds(W,H); }
+      ctx.restore();
+      ctx.beginPath(); ctx.arc(W/2, H/2, Rg, 0, 6.2832); ctx.lineWidth=1; ctx.strokeStyle=pal.islandStroke; ctx.stroke();
+    } else if(dayOn()) drawClouds(W,H);
+  }
+  var day=dayOn();
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
   var tokenIsl={}; tokens.forEach(function(t){ (t.isls||[]).forEach(function(I){ tokenIsl[I.d]=1; }); });
   /* ── the click highlight (Sam, 2026-09-05, with Obsidian's graph open: "when
@@ -3487,9 +3856,37 @@ function draw(){
   lastFocus=focus;
   var labelQueue=[], nodeQueue=[], openList=[];
   memberPts=[]; discBoxes=[];
+  /* ⭐ THE STAR PASS (S239). On the sphere at its opening width every one of
+   * ~35,000 visible points is a star-sized dot, and drawing each with the flat
+   * map's per-node path (an arc, a fill, a save/restore, four filter calls)
+   * measured 117 ms a frame — a turn at 8 frames a second. A plain dot needs
+   * none of that: it is batched into one path per color and alpha bucket and
+   * filled once. Anything decorated — lit, ringed by a search or the selection,
+   * halo-sized, a broken noncredit ring, an emptied shell, a label — keeps the
+   * per-node path, so nothing the reader can see at that size changes. */
+  var starBatches={}, starOrder=[], allShown=SHOW_KEYS.every(function(kk){ return show[kk]; });
+  function starPush(color, alpha, x, y, r){
+    var b=Math.round(alpha*8), key=color+"|"+b, B=starBatches[key];
+    if(!B){ B=starBatches[key]={color:color, alpha:b/8, pts:[]}; starOrder.push(B); }
+    B.pts.push(x, y, r);
+  }
+  function starFlush(){
+    if(!starOrder.length) return;
+    var ga=ctx.globalAlpha;
+    starOrder.forEach(function(B){
+      ctx.globalAlpha=ga*B.alpha; ctx.fillStyle=B.color; ctx.beginPath();
+      var P=B.pts;
+      for(var i=0;i<P.length;i+=3){ var r=P[i+2]; if(r<=1.8){ ctx.rect(P[i]-r, P[i+1]-r, 2*r, 2*r); } else { ctx.moveTo(P[i]+r, P[i+1]); ctx.arc(P[i], P[i+1], r, 0, 6.2832); } }
+      ctx.fill();
+      if(day){ ctx.lineWidth=0.8; ctx.strokeStyle=pal.dotRim; ctx.stroke(); }
+    });
+    ctx.globalAlpha=ga; starBatches={}; starOrder=[];
+  }
 
   U.islands.forEach(function(isl){
-    var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
+    var c=islCenter(isl); if(!c) return;                            // out of view on the sphere
+    var k=islScale(isl); if(!(k>0)) return;
+    var showNodes = k>NODE_ZOOM, showTethers = k>ID_ZOOM;
     var r=isl.r*k;
     if(c[0]+r<-60||c[0]-r>W+60||c[1]+r<-60||c[1]-r>H+60) return;   // cull
     // Every course in this discipline is switched off — so is the discipline.
@@ -3528,8 +3925,9 @@ function draw(){
           if(!nd.a||!nd.o) return;
           if(focus && focus[nd.i] && focus[nd.o]) return;   // a lit tie, drawn below
           var par=nodeById(nd.o); if(!par) return;
-          var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-          var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0));
+          var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
+          var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0), par.isl);
+          if(!p||!q) return;
           ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]);
         });
         ctx.stroke(); ctx.restore();
@@ -3539,19 +3937,30 @@ function draw(){
           isl.p.forEach(function(nd){
             if(!nd.a||!nd.o||!(focus[nd.i]&&focus[nd.o])) return;
             var par=nodeById(nd.o); if(!par) return;
-            var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-            var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0));
+            var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
+            var q=w2s(par.nd.x+(par.isl.dx||0), par.nd.y+(par.isl.dy||0), par.isl);
+            if(!p||!q) return;
             ctx.moveTo(p[0],p[1]); ctx.lineTo(q[0],q[1]);
           });
           ctx.stroke(); ctx.restore();
         }
       }
+      var fast = sphereOn() && k<ID_ZOOM && isl._s;     // star-sized dots, no labels, no rings: batch them
+      var S=isl._s, ox=isl.x+(isl.dx||0), oy=isl.y+(isl.dy||0);
       isl.p.forEach(function(nd){
-        if(!creditShown(nd)) return;              // the CR / NC filter (item 9)
-        var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
-        var rad=nodeRad(nd), dr=dotRad(nd, rad);
+        if(!allShown && !creditShown(nd)) return;  // the CR / NC filter (item 9)
+        var rad=nodeRad(nd, k), dr=dotRad(nd, rad);
         var dimmed = !!(focus && !focus[nd.i]);   // outside the clicked neighborhood
-        if(dimmed){ ctx.save(); ctx.globalAlpha=ctx.globalAlpha*DIM_ALPHA; }
+        var tw=twinkleOf(nd);
+        if(fast && !(lit && nd.ar>0) && !hitSet[nd.i] && nd!==selNode && !(isNC(nd) && dr>1.8) &&
+           !(emitsLight(nd) && dr>=2.2 && !dimmed) && !(nd.a && emptied(nd))){
+          var ddx=nd.x-ox, ddy=nd.y-oy;
+          starPush(pal["sys"+((nd.s===0||nd.s===1||nd.s===2)?nd.s:3)+"Stroke"], (dimmed?DIM_ALPHA:1)*tw*(nd.a?ORPHAN_ALPHA:1),
+                   S.px+ddx*S.ex[0]+ddy*S.ey[0], S.py+ddx*S.ex[1]+ddy*S.ey[1], dr);
+          return;
+        }
+        var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
+        if(dimmed || tw<1){ ctx.save(); ctx.globalAlpha=ctx.globalAlpha*(dimmed?DIM_ALPHA:1)*tw; }
         var s=sysPal(nd);
         // Membership emits light; a loner reflects it (see emitsLight).
         if(emitsLight(nd) && !dimmed) haloAround(p[0], p[1], dr, s[1]);
@@ -3570,6 +3979,10 @@ function draw(){
         } else {
           ctx.fillStyle=s[1]; ctx.fill();
         }
+        /* By day a dot exists by its edge (ruling 3): the seal-blue rim the
+         * prototype drew, on every dot, because the silver star and the gold
+         * light vanish on the day ground without it. */
+        if(day){ ctx.lineWidth=Math.max(0.8, dr*0.34); ctx.strokeStyle=pal.dotRim; ctx.stroke(); }
         // ── item 3 (2026-09-04): noncredit reads as a BROKEN ring (Sam: "rather
         // than another color, perhaps a broken line or dotted circle"), drawn
         // just outside the dot. Stroke pattern is a free channel: colour already
@@ -3590,7 +4003,7 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],dr+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSel; ctx.stroke();
         }
-        if(dimmed) ctx.restore();
+        if(dimmed || tw<1) ctx.restore();
         // Labels are QUEUED, not drawn here: a dense island stacks dozens of them
         // into an unreadable pile, which is the exact failure of a global graph
         // view. Stand-alones earn a label one band later than identities — they
@@ -3610,21 +4023,28 @@ function draw(){
         // An identity OPENS past MEMBER_ZOOM (the selected one a band earlier):
         // the college courses it carries ring it, each a square on a spoke.
         if(!nd.a && (k>MEMBER_ZOOM_ALL || (k>MEMBER_ZOOM && nd===hoverNode) || (nd===selNode && k>TITLE_ZOOM)))
-          openList.push({nd:nd, isl:isl, p:p, rad:rad});
+          openList.push({nd:nd, isl:isl, p:p, rad:rad, k:k});
       });
     }
+    starFlush();
     // Labels are COLLECTED here and placed after every island is drawn, so a
     // big island's name is never buried under a small neighbor's — and so
     // overlapping labels can be rejected rather than stacked.
-    labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
-                     force:(isl===hoverIsl||isl===selIsl)});
+    if(namesOn || isl===hoverIsl || isl===selIsl)
+      labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
+                       force:(isl===hoverIsl||isl===selIsl)});
+  });
+  /* The two region names ride the sky when it is arranged by kind (ruling 6):
+   * without them the order is a secret. They compete for space like any label. */
+  if(sphereOn() && skyRegions && skyState==="ok") skyRegions.forEach(function(rg){
+    if(rg.p) labelQueue.push({isl:null, text:rg.text, cx:rg.p[0], cy:rg.p[1], r:400, force:false, region:true});
   });
 
   // The open identities are drawn LAST, over their neighbors, with a halo that
   // lifts the ring out of a dense island: the faculty view has to be readable
   // exactly where the map is busiest. Their squares' labels are queued forced,
   // so they are placed before any neighbor's name can take the space.
-  if(show.members) openList.forEach(function(o){ drawMembers(o.nd, o.isl, o.p, o.rad, k, nodeQueue, k<=MEMBER_ZOOM_ALL); });
+  if(show.members) openList.forEach(function(o){ drawMembers(o.nd, o.isl, o.p, o.rad, o.k, nodeQueue, o.k<=MEMBER_ZOOM_ALL); });
 
   // Islands first: they are the navigational anchors, and a course name buried
   // under its own subject's name helps nobody. Course labels then fill the gaps
@@ -3639,9 +4059,11 @@ function draw(){
     // The identity the release would write to, ringed on the map and named in
     // the label — so "nothing happened" can be seen coming rather than reported.
     if(drag.over && drag.overIsl){
-      var dp=w2s(drag.over.x+(drag.overIsl.dx||0), drag.over.y+(drag.overIsl.dy||0));
-      ctx.beginPath(); ctx.arc(dp[0],dp[1],Math.max(9,nodeRad(drag.over)+6),0,6.2832);
-      ctx.strokeStyle=pal.drag; ctx.lineWidth=2.5; ctx.stroke();
+      var dp=w2s(drag.over.x+(drag.overIsl.dx||0), drag.over.y+(drag.overIsl.dy||0), drag.overIsl);
+      if(dp){
+        ctx.beginPath(); ctx.arc(dp[0],dp[1],Math.max(9,nodeRad(drag.over, islScale(drag.overIsl))+6),0,6.2832);
+        ctx.strokeStyle=pal.drag; ctx.lineWidth=2.5; ctx.stroke();
+      }
     }
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
     ctx.fillStyle=pal.drag; ctx.fill();
@@ -3651,8 +4073,7 @@ function draw(){
     ctx.strokeText(lbl,drag.px+12,drag.py+4);
     ctx.fillStyle=pal.drag; ctx.fillText(lbl,drag.px+12,drag.py+4);
   }
-  var z=document.getElementById("u-zoom");
-  if(z) z.textContent = Math.round(view.k*100)+"%";
+  paintZoomRead();
 }
 /* The college courses under an identity, drawn around it when it is open. Each
  * is a small SQUARE on a spoke — a college course, not an identity (a filled
@@ -3938,14 +4359,14 @@ function placeLabels(queue, showAll){
   var boxes=[];
   queue.sort(function(a,b){
     if(a.force!==b.force) return a.force?-1:1;
-    return b.isl.n-a.isl.n;
+    return (b.isl?b.isl.n:9e9)-(a.isl?a.isl.n:9e9);
   });
   ctx.textAlign="center"; ctx.textBaseline="alphabetic";
   queue.forEach(function(q){
     if(!q.force && !showAll && q.r<26) return;          // too small to earn a name
-    var size=Math.max(11,Math.min(19,q.r*0.17))*tx();
-    ctx.font=(q.force?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
-    var lab=islandLabel(q.isl);
+    var size=Math.max(11,Math.min(19,q.r*0.17))*tx(); if(q.region) size=15*tx();
+    ctx.font=(q.force||q.region?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
+    var lab=q.text || islandLabel(q.isl);
     var w=ctx.measureText(lab).width, h=size*1.25;
     var box=[q.cx-w/2-3, q.cy-h, q.cx+w/2+3, q.cy+4];
     if(box[2]<0||box[0]>cw()||box[3]<0||box[1]>ch()) return;
@@ -3958,7 +4379,7 @@ function placeLabels(queue, showAll){
     boxes.push(box);
     ctx.lineWidth=3.5; ctx.strokeStyle=pal.halo;
     ctx.strokeText(lab,q.cx,q.cy);
-    ctx.fillStyle=q.force?pal.inkForce:pal.ink;
+    ctx.fillStyle=q.force?pal.inkForce:q.region?pal.inkMuted:pal.ink;
     ctx.fillText(lab,q.cx,q.cy);
   });
   return boxes;   // course labels are placed into the gaps these leave
@@ -4112,20 +4533,21 @@ function pick(px,py,forDrop){
   var best=null;
   for(var i=U.islands.length-1;i>=0;i--){
     var isl=U.islands[i];
-    var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
-    var r=isl.r*view.k;
+    var c=islCenter(isl); if(!c) continue;
+    var kk=islScale(isl); if(!(kk>0)) continue;
+    var r=isl.r*kk;
     if(Math.hypot(px-c[0],py-c[1])>r+12) continue;
     // What is not drawn cannot be picked. Without this, filtering to noncredit
     // and clicking where a credit course used to sit opened the inspector on an
     // invisible point — the filter would have been honored by the eye and not by
     // the hand, which is worse than no filter at all.
     if(!islandPass(isl)) continue;
-    if(view.k>NODE_ZOOM){
+    if(kk>NODE_ZOOM){
       var found=null, fd=1e9, inside=false;
       for(var j=0;j<isl.p.length;j++){
-        var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0));
+        var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
         if(!creditShown(nd)) continue;
-        var rad=Math.max(3.2,nodeRad(nd));
+        var rad=Math.max(3.2,nodeRad(nd, kk));
         var d=Math.hypot(px-p[0],py-p[1]);
         if(d<=rad+3 && d<fd){ found=nd; fd=d; inside=d<=rad; }
       }
@@ -4185,10 +4607,13 @@ window.__ccrUniverse = function(opts){
    * the comprehensive view are ONE canvas — the second merely shows the panes
    * below it — so switching between them keeps the zoom, the selection and the
    * moves. Re-rendering would have thrown all three away. */
+  var wantProj = opts.proj ? ((opts.proj==="globe"||opts.proj==="map") ? opts.proj : "sky") : proj;
   if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){
     if(wantFace!==face) setFace(wantFace, true);
+    if(wantProj!==proj) setProj(wantProj);
     setSolo(wantSolo); return;
   }
+  proj=wantProj;
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
   spreadUniverse(U);
@@ -4244,6 +4669,14 @@ window.__ccrUniverse = function(opts){
             '<button class="u-more-t" type="button" id="u-insp-toggle" aria-pressed="false" aria-controls="u-detail">Sidebar<span class="u-state">off</span></button>'+
             '<button class="u-more-t" type="button" id="u-legend-menu" aria-pressed="true" aria-controls="u-foot">Legend<span class="u-state">on</span></button>'+
             '<button class="u-more-t" type="button" id="u-dark" aria-pressed="false" title="Dark canvas">Dark canvas<span class="u-state">off</span></button>'+
+            /* Ruling 3 (2026-09-07): on the Sky and the Globe the same control
+             * reads Night | Day; one memory with the Map's Dark canvas row. */
+            '<span class="u-nd" id="u-nd" role="group" aria-label="The sky" hidden>'+
+              '<button class="u-more-t" type="button" id="u-night" aria-pressed="true" title="The night sky">Night</button>'+
+              '<button class="u-more-t" type="button" id="u-day" aria-pressed="false" title="The day sky — CO blue with faint clouds">Day</button>'+
+            '</span>'+
+            /* Ruling 7: the prototype's Discipline names switch folds in here. */
+            '<button class="u-more-t" type="button" id="u-names" aria-pressed="true" title="Discipline names on the map">Discipline names<span class="u-state">on</span></button>'+
             /* Ruling 3 (2026-09-06): label text sizes independently of the map's
                zoom. A word for the control and a word for its state, like the
                switches above it — never a pair of glyphs. */
@@ -4253,6 +4686,16 @@ window.__ccrUniverse = function(opts){
         '<h1 class="u-title" id="u-title">SkyView</h1>'+
         '<div class="u-search-slot" id="u-search-slot"></div>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
+          /* ── where the reader stands (Sam's rulings 1, 2 and 7, 2026-09-07):
+           * three words. The Sky opens; the Globe and the Map are one click away. */
+          '<span class="u-modes u-proj" role="group" aria-label="Where you stand">'+
+            '<button class="btn mode" type="button" id="u-proj-sky" aria-pressed="true" title="Stand at the center and look out — the night sky through a window">Sky</button>'+
+            '<button class="btn mode" type="button" id="u-proj-globe" aria-pressed="false" title="The sphere seen from outside">Globe</button>'+
+            '<button class="btn mode" type="button" id="u-proj-map" aria-pressed="false" title="The flat map — the whole at once">Map</button>'+
+          '</span>'+
+          '<span class="u-modes u-turn" role="group" aria-label="Turning" id="u-turn-grp">'+
+            '<button class="btn mode" type="button" id="u-rotate" aria-pressed="false" title="Turn the sky slowly on its own; it stops at your first touch">Rotate</button>'+
+          '</span>'+
           '<span class="u-modes" role="group" aria-label="What a drag does">'+
             '<button class="btn mode" type="button" id="u-mode-pan" aria-pressed="false">Pan</button>'+
             '<button class="btn mode" type="button" id="u-mode-move" aria-pressed="true">Move</button>'+
@@ -4294,6 +4737,7 @@ window.__ccrUniverse = function(opts){
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
           '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
+            'SkyView: the Common Course Reference as a sky you stand inside (Sky), a globe seen from outside (Globe), or a flat map (Map). '+
             'A map of every course identity, grouped into one island per discipline, with '+
             'each stand-alone course in orbit around the identity it is most aligned to. '+
             'Use the search box at the top of the page to jump to a discipline, an identity or a '+
@@ -4334,12 +4778,22 @@ window.__ccrUniverse = function(opts){
           '<span><i class="u-sw nc"></i>noncredit — a broken ring around the dot, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — a small star; click or hover an identity to open it</span>'+
         '</div>'+
+        /* The footer hint takes the sky's words when the reader stands on the
+         * sphere (ruling 7): a drag turns, the arrows turn, and the sky holds
+         * still while a course is carried. */
         '<div class="u-hint" id="u-hint">Hover for a quick look; click a discipline or a course for details. '+
-          '<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to, '+
-          'drag a discipline to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
-          'anywhere to move the view. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
-          'From the keyboard: <kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> goes into one, '+
-          '<kbd>Esc</kbd> comes back out, arrows pan.</div>'+
+          (sphereOn()
+            ? '<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to '+
+              '\u2014 the sky holds still while you carry one; drag the sky itself to turn it. <strong>Pan</strong>: drag '+
+              'anywhere to turn the sky. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
+              'The sky turns on its own until you touch it; <strong>Rotate</strong> starts it again. '+
+              'From the keyboard: <kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> goes into one, '+
+              '<kbd>Esc</kbd> comes back out, arrows turn the sky.'
+            : '<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to, '+
+              'drag a discipline to pull it next to another, drag the background to pan. <strong>Pan</strong>: drag '+
+              'anywhere to move the view. Scroll to zoom; the buttons zoom on what you searched for or selected. '+
+              'From the keyboard: <kbd>Tab</kbd> steps through disciplines, <kbd>Enter</kbd> goes into one, '+
+              '<kbd>Esc</kbd> comes back out, arrows pan.')+'</div>'+
       '</div>'+
     '</section>'+
     '<div class="wrap u-below" id="u-below">'+
@@ -4375,9 +4829,12 @@ window.__ccrUniverse = function(opts){
   cvs=document.getElementById("u-cvs");
   ctx=cvs.getContext?cvs.getContext("2d"):null;
   roster=null; nodeIdx=null; ensureCorpus();   // the map re-binds after a payload swap
+  islSphere=null; U.islands.forEach(function(I){ I._s=null; });
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
+  setProj(proj, true);          // where the reader stands, painted; the sky payload asked for
   fitCanvas(); resetView(); wire(); draw();
+  if(sphereOn()) startTurn();   // the sky turns when it opens (ruling 4)
   restoreTokens();              // a selection parked by a trip off the map comes back
   tellParent("ready");          // the page around the frame answers with its state
   if(typeof window.__ccrForestInto==="function")
@@ -4421,12 +4878,18 @@ function sizeCanvas(){
 }
 function resetView(){
   anchor=null;
+  if(sphereOn()){
+    sph.yaw=0; sph.pitch=0.15;
+    if(proj==="globe") sph.dist=3.0; else sph.half=Math.PI*75/180;   // 150° across: the prototype's opening window
+    syncViewK(); return;
+  }
   var b=U.bounds, W=cw(), H=ch();
   var pad=60;
   view.k=Math.max(K_MIN, Math.min((W-pad)/(b.x1-b.x0), (H-pad)/(b.y1-b.y0)));
   view.x=-(b.x0+b.x1)/2; view.y=-(b.y0+b.y1)/2;
 }
 function zoomAt(px,py,factor){
+  if(sphereOn()){ setSphereZoom(kCenter()*factor); draw(); return; }   // about the window's center: the turn slows with it
   var before=s2w(px,py);
   view.k=clampK(view.k*factor);
   var after=s2w(px,py);
@@ -4435,6 +4898,7 @@ function zoomAt(px,py,factor){
 }
 function flyTo(x,y,k){
   anchor={x:x, y:y};
+  if(sphereOn()){ faceWorld(x,y); setSphereZoom(k); draw(); return; }
   view.x=-x; view.y=-y; view.k=clampK(k); draw();
 }
 /* Where the zoom buttons zoom ABOUT: the selection, else the last fly — and if
@@ -4446,7 +4910,10 @@ function anchorScreen(){
         : anchor ? [anchor.x, anchor.y] : null;
   if(!a) return null;
   var p=w2s(a[0],a[1]);
-  if(p[0]<0||p[0]>cw()||p[1]<0||p[1]>ch()){ view.x=-a[0]; view.y=-a[1]; p=[cw()/2, ch()/2]; }
+  if(!p||p[0]<0||p[0]>cw()||p[1]<0||p[1]>ch()){
+    if(sphereOn()) faceWorld(a[0],a[1]); else { view.x=-a[0]; view.y=-a[1]; }
+    p=[cw()/2, ch()/2];
+  }
   return p;
 }
 function zoomStep(factor){ var p=anchorScreen()||[cw()/2,ch()/2]; zoomAt(p[0],p[1],factor); }
@@ -4965,6 +5432,10 @@ window.__ccrUniverseState = function(){
           memberIndex:memIndex?memIndex.length:0,
           sharedKeys:shared, canMove:canMove,
           staged:{awayFrom:stagedAwayFrom, here:stagedHere, countHere:stagedCountHere, of:stagedMoveOf, words:stagedWords, unstage:unstageMove},
+          proj:proj, sph:{yaw:sph.yaw, pitch:sph.pitch, half:sph.half, dist:sph.dist, spin:sph.spin}, rotating:rotating, reduceMotion:reduceMotion,
+          dark:dark, day:dayOn(), darkChoice:darkChoice, namesOn:namesOn, skyState:skyState,
+          regions:(skyRegions||[]).map(function(r){ return {text:r.text, on:!!r.p}; }),
+          islandScreen:function(name){ var I=null; if(U) U.islands.forEach(function(x){ if(x.d===name) I=x; }); if(!I) return null; var c=islCenter(I); return c ? {x:c[0], y:c[1], k:islScale(I), r:I.r*islScale(I)} : null; },
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
           labelStats:labelStats, hits:searchHits.length,
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen, inspectorWidth:inspW, showHealed:showHealed.slice(),
@@ -5089,7 +5560,7 @@ function showTip(hit, px, py){
 function hideTip(){ var tip=document.getElementById("u-tip"); if(tip) tip.hidden=true; }
 
 function wire(){
-  window.addEventListener("resize", function(){ if(document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
+  window.addEventListener("resize", function(){ if(document.getElementById("u-cvs")===cvs){ fitCanvas(); syncViewK(); draw(); } });
   cvs.addEventListener("wheel", function(e){
     e.preventDefault();
     var r=cvs.getBoundingClientRect();
@@ -5098,6 +5569,12 @@ function wire(){
   document.getElementById("u-in").onclick=function(){ zoomStep(1.4); };
   document.getElementById("u-out").onclick=function(){ zoomStep(1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
+  ["sky","globe","map"].forEach(function(x){ var b=document.getElementById("u-proj-"+x); if(b) b.onclick=function(){ setProj(x); }; });
+  var rb=document.getElementById("u-rotate"); if(rb) rb.onclick=function(){ if(rotating) stopTurn(); else startTurn(); };
+  var bn=document.getElementById("u-night"), bd=document.getElementById("u-day");
+  if(bn) bn.onclick=function(){ setDark(true); };
+  if(bd) bd.onclick=function(){ setDark(false); };
+  var nmb=document.getElementById("u-names"); if(nmb) nmb.onclick=function(){ namesOn=!namesOn; paintProj(); draw(); };
   function setMode(m){
     mode=m==="pan"?"pan":"move";
     ["pan","move"].forEach(function(x){
@@ -5105,8 +5582,12 @@ function wire(){
     });
     cvs.style.cursor = mode==="pan"?"grab":"default";
     setHint(mode==="pan"
-      ? "<strong>Pan</strong>: drag anywhere to move the view; a click still selects. Switch to <strong>Move</strong> to carry a course."
-      : "<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to; drag a discipline to pull it next to another; drag the background to pan.");
+      ? (sphereOn()
+          ? "<strong>Pan</strong>: drag to turn the sky; scroll to zoom; a click still selects. Switch to <strong>Move</strong> to carry a course."
+          : "<strong>Pan</strong>: drag anywhere to move the view; a click still selects. Switch to <strong>Move</strong> to carry a course.")
+      : (sphereOn()
+          ? "<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to \u2014 the sky holds still while you carry one; drag the sky itself to turn it."
+          : "<strong>Move</strong>: drag a stand-alone course or a college course onto the identity it belongs to; drag a discipline to pull it next to another; drag the background to pan."));
   }
   var mpan=document.getElementById("u-mode-pan"), mmove=document.getElementById("u-mode-move");
   if(mpan) mpan.onclick=function(){ setMode("pan"); };
@@ -5339,7 +5820,7 @@ function wire(){
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
     if(cvs.setPointerCapture && e.pointerId!=null){ try{ cvs.setPointerCapture(e.pointerId); }catch(err){} }
-    hideTip();
+    hideTip(); stopTurn();                                  // the first touch stops the turn (ruling 4)
     // A course already picked up survives the press. Without this the pointerdown
     // replaced `drag` with a fresh node/island/pan grab before pointerup could
     // read it, so pressing "Drag…" and then clicking the destination — the only
@@ -5348,12 +5829,15 @@ function wire(){
     var hit=pick(px,py);
     // Pan mode: the drag moves the view whatever is under the pointer; the
     // click it started with still selects on release.
-    if(mode==="pan"){ drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, hit:hit, moved:false}; return; }
+    var panGrab=function(){ return {kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, yaw0:sph.yaw, pitch0:sph.pitch, hit:hit, moved:false}; };
+    if(mode==="pan"){ drag=panGrab(); return; }
     if(hit && hit.mem)     drag={kind:"member", isl:hit.isl, nd:hit.nd, mem:hit.mem, x0:px, y0:py, moved:false};
     else if(hit && hit.nd) drag={kind:"node", isl:hit.isl, nd:hit.nd, x0:px, y0:py, moved:false};
-    else if(hit && e.shiftKey===false && hit.isl) drag={kind:"island", isl:hit.isl, x0:px, y0:py,
+    /* On the sphere a discipline is placed by the daily build, not by a hand:
+     * a drag on an island turns the sky (ruling 5), as the background does. */
+    else if(hit && e.shiftKey===false && hit.isl && !sphereOn()) drag={kind:"island", isl:hit.isl, x0:px, y0:py,
                                                         ox:hit.isl.dx||0, oy:hit.isl.dy||0, moved:false};
-    else drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, hit:hit, moved:false};
+    else drag=panGrab();
   });
   cvs.addEventListener("pointermove", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -5367,6 +5851,14 @@ function wire(){
     }
     if(drag.kind==="pan"){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>3) drag.moved=true;
+      if(sphereOn()){
+        /* Drag to turn: the sky follows the hand. Pixels become radians at the
+         * window's center scale, so a turn feels the same at every zoom. */
+        var pr = proj==="globe" ? globeRpx() : skyKpx(), sg = proj==="globe" ? -1 : 1;
+        sph.yaw = drag.yaw0 + sg*(px-drag.x0)/pr;
+        sph.pitch = Math.max(-Math.PI*80/180, Math.min(Math.PI*80/180, drag.pitch0 + (py-drag.y0)/pr));
+        draw(); return;
+      }
       view.x=drag.vx+(px-drag.x0)/view.k; view.y=drag.vy+(py-drag.y0)/view.k; draw();
     } else if(drag.kind==="member"){
       /* Dragging a member square picks its course up — the same carry a hollow
@@ -5512,6 +6004,7 @@ function wire(){
   };
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
+    stopTurn();                                                   // a key is a touch (ruling 4)
     if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
     if(e.key==="Enter"||e.key===" "){
       if(kbIsl>=0 && !kbInside){ kbInside=true; kbNode=-1; kbIdentity(1); e.preventDefault(); }
@@ -5528,10 +6021,18 @@ function wire(){
       }
       e.preventDefault(); return;
     }
-    if(e.key==="ArrowLeft"){ view.x+=step; draw(); e.preventDefault(); }
-    if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
-    if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
-    if(e.key==="ArrowDown"){ view.y-=step; draw(); e.preventDefault(); }
+    if(sphereOn()){                                               // the arrows turn the sky
+      var turn=Math.PI*5/180, sg=proj==="globe"?-1:1;
+      if(e.key==="ArrowLeft"){ sph.yaw+=sg*turn; draw(); e.preventDefault(); }
+      if(e.key==="ArrowRight"){ sph.yaw-=sg*turn; draw(); e.preventDefault(); }
+      if(e.key==="ArrowUp"){ sph.pitch=Math.min(Math.PI*80/180, sph.pitch+turn); draw(); e.preventDefault(); }
+      if(e.key==="ArrowDown"){ sph.pitch=Math.max(-Math.PI*80/180, sph.pitch-turn); draw(); e.preventDefault(); }
+    } else {
+      if(e.key==="ArrowLeft"){ view.x+=step; draw(); e.preventDefault(); }
+      if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
+      if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
+      if(e.key==="ArrowDown"){ view.y-=step; draw(); e.preventDefault(); }
+    }
     if(e.key==="+"||e.key==="="){ zoomStep(1.4); e.preventDefault(); }
     if(e.key==="-"){ zoomStep(1/1.4); e.preventDefault(); }
   });
@@ -5664,6 +6165,7 @@ function searchOne(raw){
  * With one token the map behaves exactly as a single pick or search always
  * did; with more it rings every token and fits them all in view. */
 function doSearch(raw){
+  stopTurn();                                                     // a search is a touch (ruling 4)
   var t=String(raw==null?"":raw).trim();
   if(t.length<2){ setHint("Type at least two characters."); draw(); return; }
   tokens=[]; addToken({kind:"term", key:"term:"+t.toLowerCase(), label:t, term:t});
@@ -6447,6 +6949,7 @@ function renderNode(){
      * and then choose the destination — the same carry, completed by a click. */
     b.addEventListener("pointerdown", function(e){
       if(e.button!==0) return;
+      stopTurn();                                                 // a carry is a touch (ruling 4)
       if(pickUp()) { e.preventDefault(); }
     });
     /* ⚠️ THE PANEL HAS TO REPAINT, OR THE DESTINATIONS NEVER SAY THEY ACCEPT ONE.
@@ -6507,7 +7010,11 @@ function drawWrites(){
  * already are is a control that appears to do nothing. */
 var curArg="";
 var HASH_OF={skyview:"skyview", comprehensive:"comprehensive", disciplines:"disciplines", subjects:"subjects", esl:"esl", how:"how",
-            work:"work", outline:"outline"};
+            work:"work", outline:"outline", globe:"globe", map:"map"};
+/* `#skyview` is the Sky (the view that opens, ruling 1); `#globe` and `#map` name
+ * the other two places to stand, each with the CPL face one `/cpl` away. */
+function projKeyOf(p){ return p===OPENS ? "skyview" : p==="globe" ? "globe" : p==="map" ? "map" : "skyview"; }
+function projOfKey(k){ return k==="globe" ? "globe" : k==="map" ? "map" : OPENS; }
 var VIEWS=[
   {key:"skyview", id:"u-nav-sky", label:"SkyView",
    title:"The map alone, filling the window",
@@ -6619,7 +7126,8 @@ document.addEventListener("pointerdown", function(e){
  * CRUMB in both, because a crumb is visible and Back is not. */
 function syncHash(arg){
   if(!curView || !HASH_OF[curView]) return;
-  var h="#"+HASH_OF[curView]+(arg ? "/"+encodeURIComponent(arg) : "");
+  var key = curView==="skyview" ? projKeyOf(proj) : HASH_OF[curView];
+  var h="#"+key+(arg ? "/"+encodeURIComponent(arg) : "");
   if(String(location.hash||"")===h) return;
   try{
     if(!window.history) return;
@@ -6652,13 +7160,14 @@ window.__ccrRoute=function(){
    * blank view — a hand-typed or stale link is a normal thing to arrive with. */
   else if(k==="work" && arg && typeof window.__ccrDiscipline==="function") window.__ccrDiscipline(arg);
   else if(k==="outline" && arg && typeof window.__ccrOutline==="function") window.__ccrOutline(arg);
-  else window.__ccrUniverse({solo:true, face:(k==="skyview" && arg==="cpl")?"cpl":"courses"});
+  else window.__ccrUniverse({solo:true, proj:projOfKey(k), face:((k==="skyview"||k==="globe"||k==="map") && arg==="cpl")?"cpl":"courses"});
 };
 /* Compare the SUBJECT too, not just the key: #work/Welding and #work/Art are
  * both key "work", so a Back between two work surfaces would otherwise leave
  * the screen on the one the reader just left. */
 window.addEventListener("hashchange", function(){
-  if(routeKey()!==curView || routeArg()!==curArg) window.__ccrRoute();
+  var k=routeKey(), v=(k==="globe"||k==="map")?"skyview":k;
+  if(v!==curView || routeArg()!==curArg || (v==="skyview" && projOfKey(k)!==proj)) window.__ccrRoute();
 });
 
 /* ── the face and the light: state painted from every path that changes it ─

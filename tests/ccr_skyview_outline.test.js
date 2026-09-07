@@ -120,6 +120,7 @@ const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
   url: "https://example.org/prototype/skyview.html",
   beforeParse(window) {
+    window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
     window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
     // The description shards, served rather than 404'd: two of the six layers
     // have nothing to say without them.

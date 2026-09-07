@@ -97,6 +97,7 @@ const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
   url: "https://example.org/prototype/skyview.html",
   beforeParse(window) {
+    window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
     window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
     // Two bases, tried in order: the local directory is absent on the deployed
     // page, so the first answer is a 404 and the bucket has to be reached.
