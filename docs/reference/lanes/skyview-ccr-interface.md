@@ -246,28 +246,33 @@ vanish or ghost.
 so his call under his own glyph rule.
 ⑦ **The CPL face is on the map — his eye on it.** `#skyview/cpl`: does the
 credential-led label read right at his zoom, and is *Articulations* the word?
-⑧ **The globe prototype — keep or drop, on sight.** His ask of 2026-09-07
-(*"a 3-d 360 globe that rotates"*), built as a throwaway outside the product:
-`docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5. A globe shows a hemisphere at a time, so it adds no
-area; a yes is a decision sheet (planetarium form, gestures on a curve, motion),
-never a port of that file. His reactions (*"I like the globe view!"*, *"Better!
-Tweak:"*, *"Looks great!!!"*) got three rounds in one afternoon — the sky by kind, a
-window inside view, Day and Night; generators in `prototype/globe/`; detail:
-[`skyview_backlog`](../../skyview_backlog.md) ①d. **Is any of it wanted in SkyView
-itself?** That is his, on a sheet.
+⑧ **The sphere's design calls, before the port's code** (Sam ruled the globe in,
+2026-09-07: *"Looks great! Let's go with it in next session"*): which view opens;
+whether the flat map stays; the Day sky against the dark-canvas doctrine; motion
+by default beside reduced motion; curation gestures on a curve; By kind as the
+default. One sheet, reply chips, one sitting — the handoff lists them.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
 ## NEXT
 
-⓪ **The staged-to-move mark on a re-homed course** (v4 item 7, the last open
+⓪ **The sky form into SkyView** — Sam, 2026-09-07: *"Looks great! Let's go with
+it in next session."* Not the prototype page copied in: a Sky view in
+`ccr_universe.js` over the live payload, the by-kind layout
+(`prototype/globe/globe_layout.py`) made a daily artifact with a `--check`, the
+CPL face and the light carried over, and every invariant above re-earned on the
+sphere (the drop hit-test, the label placer, the keyboard path, fixed-size text,
+reduced motion, the a11y route). Design calls first (NEEDS SAM ⑧). The
+prototype: `docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact
+https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5, generators `prototype/globe/`.
+① **The staged-to-move mark on a re-homed course** (v4 item 7, the last open
 item of the governing review): after a move, the course's own dot and its row
 say nothing about being staged rather than saved. The confirmation half shipped
-in S237; this is the mark.
-① **DR-24's write surface** — the curate phrase and the propose/second gate,
-routed through Governance first (Rule 10 a3). ② The skills layer's fetch problem
-(NEEDS SAM ①). ③ The rest of the queue:
+in S237; this is the mark — build it on the model, so it holds on either view.
+② **DR-24's write surface** — the curate phrase and the propose/second gate,
+routed through Governance first (Rule 10 a3). ③ The skills layer's fetch problem
+(NEEDS SAM ①). ④ The rest of the queue:
 [`skyview_backlog`](../../skyview_backlog.md), including the CPL face's smaller
 asks (the 55 stale exhibits, the funnel sidecar refresh, a credentials column in
 the workspace tables).

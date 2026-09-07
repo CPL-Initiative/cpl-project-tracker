@@ -1,5 +1,5 @@
 ---
-title: "Session 239 handoff — the CPL views are built, the globe is Sam's to place; the staged-to-move mark is next"
+title: "Session 239 handoff — the globe goes into SkyView; the staged-to-move mark rides second"
 created: 2026-09-07
 updated: 2026-09-07
 tags: [handoff]
@@ -8,10 +8,11 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are Session 239
 
-Your moniker is **SkyMark**. The name is the priority: the one item of the
-governing review (`docs/skyview_video4_findings.md`, item 7) still open after
-three sessions of defects and one of building — a re-homed course's own mark
-never says *staged, not saved*. Predecessors: SkyOutline S232 → SkyBuild S233 →
+Your moniker is **SkyGlobe**. The name is the priority: at the end of S238 Sam
+ruled on the globe prototype — *"Looks great! Let's go with it in next session"*
+— so the sky form goes into SkyView. The one item of the governing review still
+open (`docs/skyview_video4_findings.md`, item 7, a re-homed course's own mark
+saying *staged, not saved*) rides second. Predecessors: SkyOutline S232 → SkyBuild S233 →
 S234 → SkyOutline II S235 → SkyFacet S236 → SkyFacet II S237 → **SkyFacet III
 S238** (this run).
 
@@ -51,8 +52,9 @@ great!!!"* Generators: `prototype/globe/` (README there). Nothing in
 2. **A globe adds no real estate; the order is the gain.** A hemisphere faces you
    (25,580 of 49,896 points at the opening view); the room is the zoom range.
    What the sphere added was an arrangement with a meaning — by kind — and that
-   would fit the flat map too. **Do not port any of it on your own**: whether it
-   belongs in SkyView is Sam's, on a decision sheet. KB notes:
+   would fit the flat map too. **Sam has now ruled it in** (decision 7 below):
+   port it with the lane's invariants re-earned, and put the first design calls
+   on a sheet before the code. KB notes:
    [`methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range`](kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md),
    [`methodology-answer-a-reaction-with-a-switch-not-a-version`](kb-notes/methodology-answer-a-reaction-with-a-switch-not-a-version.md).
 
@@ -84,8 +86,13 @@ and verbatim in the vault braindump
    feint clouds if possible."*
 5. **On round three:** *"Looks great!!!"*; slow the rotation proportionally on
    zoom; make the twinkle gentler and slower. Both built before this checkpoint.
-6. **Standing:** the globe is an exploration. He has not said it belongs in
-   SkyView; a control decided against leaves the header the same day.
+6. **On the direction:** *"rotation should be left to right..."* — built: left to
+   right in both views.
+7. **The ruling, at the close:** *"Looks great! Let's go with it in next
+   session"* — the globe is adopted for SkyView, and the next session builds it
+   in. This replaces the earlier standing (*keep exploring*); the design calls
+   the port raises (NEEDS SAM ⑧) go on a decision sheet first, per his own
+   practice. A control decided against leaves the header the same day.
 
 ## Verified
 
@@ -99,20 +106,38 @@ published page byte for byte, the docs checks and the dependency map.
 
 ## YOUR PRIORITY
 
-**Build the staged-to-move mark** (v4 item 7). Read
-`docs/skyview_video4_findings.md` §7 first: the confirmation sentence exists
-(frame 17) and S237 already stopped it pointing at a hidden pane. What is
-missing is on the course itself — after `applyMove()`, the moved course's dot on
-the map and its row in the panel should say *staged, not saved*, and the
-receipt should be one click away. `movedTo[cn]` already relocates; nothing
-marks. Verify in Chromium, not jsdom.
+**Bring the sky form into SkyView** (Sam, 2026-09-07: *"Looks great! Let's go
+with it in next session"*). Not a copy of the prototype page into the product:
+the prototype is a separate three.js page over a build-time snapshot. The work
+is a **Sky view inside SkyView** that reads the live payload and re-earns the
+lane's invariants. In this order:
 
-Then, in order: **DR-24's write surface** (the curate phrase and the
-propose/second gate, through Governance first — Rule 10 a3); the skills layer's
-fetch problem (NEEDS SAM ①); the backlog (`docs/skyview_backlog.md`). **The
-globe: nothing unless Sam rules.** If he asks for a fourth round,
-`prototype/globe/README.md` is the three-step build; publish to the same
-artifact URL from the session that owns it, or a new one.
+1. **The design calls on a sheet, first** (NEEDS SAM ⑧ below) — a First Light
+   decision sheet with reply chips, one sitting. Everything below assumes his
+   answers; do not guess them.
+2. **The layout as a daily artifact.** `prototype/globe/globe_layout.py`
+   already computes committed, spread and by-kind placements from
+   `prototype/ccr_universe.json`; make its output a committed payload the daily
+   run rebuilds (Step 4d3 is the pattern), with a `--check` and a test, so the
+   sphere never lags the map.
+3. **A Sky view in `ccr_universe.js`** behind the Views menu: the prototype's
+   renderer (the stereographic window, the star sizing, the twinkle while it
+   turns, the limb fade, Day and Night) reading the live identities, with the
+   CPL face and the Articulations light carried over — they are the same data.
+4. **Re-earn the invariants on the sphere**, each with a test where jsdom can
+   see it and a Chromium drive where it cannot: the drop hit-test (S237's fix
+   was 2-D), the label placer that drops rather than stacks, the keyboard path
+   (Tab through disciplines, Enter, Escape), fixed-size text under zoom,
+   `prefers-reduced-motion` (no turn, no twinkle), and `npm run a11y skyview`
+   with the new route added in `a11y.config.js`.
+5. **The staged-to-move mark** (v4 item 7) rides second — it applies to the
+   flat map and the sphere alike, so build it once on the model, not the view.
+
+Then, as before: **DR-24's write surface** (through Governance first — Rule 10
+a3), the skills layer's fetch problem (NEEDS SAM ①), the backlog
+(`docs/skyview_backlog.md`). `prototype/globe/README.md` is the three-step
+build of the prototype itself; publish any new round to the same artifact URL
+only from the session that owns it, otherwise a new one.
 
 ## NEEDS SAM
 
@@ -126,9 +151,16 @@ or ghosts.
 ⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
 ⑦ **His eye on the CPL face** (`#skyview/cpl`) — does the credential-led label
 read right, and is *Articulations* the word.
-⑧ **The globe in SkyView?** The sky by kind, the window view, the day sky — is
-any of it wanted in the product? A yes is a decision sheet (the form, curation
-gestures on a sphere, motion), never a port.
+⑧ **The port's design calls — one sheet before the code.** Sam has ruled the
+globe in; these are the choices the port raises, none of them guessable: (a)
+which view opens — the window sky, the outside globe, or the flat map with the
+sky one click away; (b) whether the flat map stays as a view at all; (c) the
+Day sky against the dark-canvas doctrine (the page chrome stays light either
+way); (d) motion by default — the turn and the twinkle — beside the
+reduced-motion rule; (e) curation gestures on a sphere: does a drag between
+islands re-home a course, as on the flat map, and what does a drop target look
+like on a curve; (f) By kind as the default arrangement, and whether the
+committed neighborhoods survive inside each side.
 
 ## Housekeeping
 
@@ -171,5 +203,5 @@ from the data, and **query `cpl_memory` before you work** (Rule 8).
 
 ---
 
-*Greetings, you are SkyMark (Session 239), see SkyFacet III's handoff —
+*Greetings, you are SkyGlobe (Session 239), see SkyFacet III's handoff —
 `docs/session_239_handoff.md` — let's keep rolling with our queue.*

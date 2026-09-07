@@ -89,8 +89,9 @@ and *"make twinkle a bit gentler/slower"* — built: the turn slows with the zoo
 left to right in both views (the window's right is the globe's left, so the sign
 flips inside). **The generators live in `prototype/globe/`**
 (extract → layout → build; README there), so a fourth round starts from code.
-Still his: is any of it wanted in SkyView itself (a decision sheet, never a
-port).
+**Ruled, 2026-09-07:** *"Looks great! Let's go with it in next session"* — the sky
+form goes into SkyView. The port is the lane's NEXT ⓪; the design calls it raises
+are NEEDS SAM ⑧, on a sheet before the code.
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),

@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
   "_session": 238,
-  "_status": "The two CPL views you ruled on this morning are built and merged (PR #1508): Courses | CPL switches what each point is named by, Articulations lights the courses that carry one, and the line under the row says the coverage out loud — 1,924 of 5,497 articulated exhibits reach a course on this map (the sheet's 1,490 was a count of courses and its 6,388 was the credit funnel, which shares only 570 exhibits with what reaches the map). The afternoon went to the globe you asked for: three rounds on your reactions, closed with your \"Looks great!!!\" — the sky by kind, a window inside view, silver stars, Day and Night, a turn that slows with zoom, a gentle twinkle. It is a thing to look at, not a change to SkyView; whether any of it belongs there is yours to decide. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved.",
+  "_status": "The two CPL views you ruled on this morning are built and merged (PR #1508): Courses | CPL switches what each point is named by, Articulations lights the courses that carry one, and the line under the row says the coverage out loud — 1,924 of 5,497 articulated exhibits reach a course on this map (the sheet's 1,490 was a count of courses and its 6,388 was the credit funnel, which shares only 570 exhibits with what reaches the map). The afternoon went to the globe you asked for: three rounds on your reactions, closed with your \"Looks great!!!\" — the sky by kind, a window inside view, silver stars, Day and Night, a turn that slows with zoom, a gentle twinkle. You then ruled: go with it in the next session — so the sky form goes into SkyView, with its design calls on a sheet first, and the staged-to-move mark rides second.",
   "items": [
     {
       "id": "s238-sam-cpl-face-look",
@@ -11,10 +11,10 @@
       "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
     },
     {
-      "id": "s238-sam-globe-look",
+      "id": "s238-sam-sky-design-calls",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "You said Looks great on the globe's third round, and the two tweaks after it are in: the turn slows as you zoom in so the sky drifts at one pace, and the twinkle is slower and gentler. Same link. One question stays yours: is any of it wanted in SkyView itself — the sky by kind, the window view, the day sky? A yes becomes a decision sheet about the form and the curation gestures on a sphere, not a port of the prototype."
+      "text": "You ruled the globe in for the next session. Before any code, that session will hand you one sheet with the calls only you can make: which view opens (the window sky, the outside globe, or the flat map with the sky a click away), whether the flat map stays, the day sky against the dark canvas, whether the turn and the twinkle run by default, how a drag between islands works on a sphere, and whether By kind is the default arrangement. Reply by number on the sheet, as usual."
     },
     {
       "id": "s238-sam-coverage-line-corrected",
@@ -38,7 +38,7 @@
       "id": "s237-fable-staged-move-mark",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The last open item from the screen recording. The confirmation sentence is fixed; what is still missing is the mark on the course itself: after you move one, its own dot and its row say nothing about being staged rather than saved. Next session's priority."
+      "text": "The last open item from the screen recording. The confirmation sentence is fixed; what is still missing is the mark on the course itself: after you move one, its own dot and its row say nothing about being staged rather than saved. Rides second behind the sky form now, and should be built on the model so it holds on either view."
     },
     {
       "id": "s238-fable-dr24-surface",
@@ -62,7 +62,7 @@
       "id": "s238-fable-globe-generators",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The globe's generators live in prototype/globe (extract, layout, build, with a README), so a fourth round starts from code rather than from the two-megabyte page. The page's data is a snapshot; nothing rebuilds it daily. Do not port any of it into SkyView on your own: that is a decision sheet for Sam first."
+      "text": "Sam ruled the globe in: bring the sky form into SkyView next session. Not the prototype page copied in — a Sky view over the live payload, the by-kind layout made a daily artifact with a check, the CPL face and the light carried over, and every invariant re-earned on the sphere. Design calls go on a sheet first. The generators live in prototype/globe with a README."
     }
   ]
 }
