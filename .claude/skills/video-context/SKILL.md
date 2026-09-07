@@ -33,6 +33,26 @@ python3 kb/_video_context.py "<path to the video>"
 
 Paths with spaces are fine on either — quote them, as above.
 
+⚠️ **THE OUTPUT PATH IS RELATIVE TO YOUR SHELL, NOT TO THE REPO OR THE VIDEO.**
+`out_dir` is `os.path.join(".video-context", slug)` — resolved against the
+CURRENT WORKING DIRECTORY. So a run started from somewhere other than the repo
+root writes `.video-context/<slug>/` *there*, and the results are not next to the
+.mp4 either. That is the second reason to `cd` to the repo root first, and it is
+the one that bites later: the run succeeds, the index is fine, and weeks on
+nobody can find it. Cost a real hunt on 2026-09-07 — a v4 review was processed
+from an unknown directory, and the only surviving trace was the commit it
+produced. **Pass `--out` if you are not in the repo root.**
+
+⚠️ **The slug is derived, so you can search for it without guessing.** It is the
+video's stem, non-alphanumerics collapsed to `-`, lowercased:
+`Recording 2026-09-06 120139.mp4` → `recording-2026-09-06-120139`. To find a run
+whose location you have lost:
+
+```powershell
+Get-ChildItem "C:\Users\<you>" -Recurse -Directory -Force -ErrorAction SilentlyContinue -Filter ".video-context" |
+  ForEach-Object { Get-ChildItem $_.FullName -Directory | Select-Object FullName, LastWriteTime }
+```
+
 Output lands in `.video-context/<slug>/` (gitignored) unless you pass `--out`:
 
 ```
