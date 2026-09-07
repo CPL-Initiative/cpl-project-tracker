@@ -14,8 +14,7 @@ SkyOutline S232 → SkyBuild S233 → S234 → SkyOutline II S235 → **SkyFacet
 (this run).
 
 ⚠️ **S236 ran TWICE, in two places.** Sam ran a local desktop session first
-(against a **v4** screen recording that is NOT in this repo — see below — and with no
-repo handoff reachable), which pushed
+(against a **v4** screen recording, with no repo handoff reachable), which pushed
 `claude/video-project-2-frames` and left a mid-session note,
 [`docs/deferred_commit_handoff.md`](deferred_commit_handoff.md). This cloud run
 picked that up. **Read the mid-session note as history, not as instructions —
@@ -104,33 +103,46 @@ Then, still open from S235 and untouched here: the outline's **skills layer**
 (ruled, now a fetch problem — we hold zero agency skill text) and the **curate
 phrase** (ruled, not built; Rule 10 a3 routes it through Governance first).
 
-## ⛔ THE GOVERNING REVIEW IS A **v4** RECORDING, AND IT IS NOT IN THIS REPO
+## ✅ v4 IS IN THE REPO NOW — and it is mostly already shipped
 
-**Sam, 2026-09-07: "The local session had a new video v4, not the other."**
+Sam recovered the run and supplied the transcript **and all 21 frames** on
+2026-09-07. Read end to end, the deferred-commit note's *"item 2 only, the
+remaining items have not been worked"* was too pessimistic: **six of the eight
+items shipped in #1502 and #1503.**
 
-The local run watched a **v4 recording**. Nothing from it — no video-context
-directory, no transcript, no findings doc — was ever committed. Verified two
-ways: `git ls-tree -r origin/main` and the branch tree hold only
-`.video-context/video-project-2/`, and the committed v2 transcript contains
-**none** of the rulings the deferred commit was built on — "wait on that step",
-"dismiss the box", "multiple options" and "firing the routine" all return **zero
-hits**. What v2 *does* contain is the earlier, different ruling ("after I click
-enter, I really think it should close this"), which #1502 already shipped.
+Full triage: [`docs/skyview_video4_findings.md`](skyview_video4_findings.md).
 
-⚠️ **So `docs/skyview_video2_findings.md` is NOT your queue.** It is a complete,
-correct review of a DIFFERENT, EARLIER recording. Its items 1–3 are fixed and its
-4–6 are v2's loose ends, not v4's.
+⚠️ **`docs/skyview_video2_findings.md` is a DIFFERENT, EARLIER recording** (6m50s
+vs 6m18s). The committed v2 transcript contains none of v4's rulings. Do not
+merge the two lists.
 
-⚠️ **`docs/deferred_commit_handoff.md` says "this was item 2 only. The remaining
-items have not been worked."** That numbered list is v4's, and **nobody in this
-repo has ever seen it.** Item 2 is what shipped in #1503; items 1 and 3-onward
-are unknown here.
+**What is actually open, and it is two things:**
 
-**FIRST ACTION: ask Sam for the v4 recording or its review.** It lives on his
-machine. Do not infer v4's items from v2's findings — they are different
-recordings of a UI that changed in between, and guessing at a review you have not
-read is how a session ships the wrong fix confidently. The `video-context` skill
-runs locally and needs a mount, so this is a local-session job or a paste.
+⭐ **① A rehome gives the course no staged-to-move state.** *"It didn't really
+change over here… and to change this outline to show it was staged to move."*
+⚠️ **The frames corrected a transcript-only reading of this.** The confirmation
+he asked for ALREADY RENDERS — frame 17 shows *"Moved WELD 098 F (Fullerton
+College) to Introduction to Welding in Welding. Recorded below the map."* What is
+missing is the mark on the course itself; `movedTo[cn]` relocates it but never
+says "staged, not saved". Also: that line says *below the map*, and under
+`body.u-solo` the panes below are hidden, so it names a place the reader cannot
+see.
+
+⭐ **② The legend's `unified` has no gloss, and the ID types have no hover.**
+*"The only one I'm really worried about is this unified. I don't know what that
+quite means."* He offered the cheap fix himself — *"Maybe add a note to Unified
+and that would be fine"* — and the pattern already exists: `stand-alone course`,
+`noncredit` and `college course under an identity` each carry a note; `unified`
+carries nothing and M-ID / C-ID / CCN carry only *"our working label"* /
+*"official"*.
+
+⚠️ **He DECIDED AGAINST hover-on-the-title on camera** — *"but I think I will
+leave it this way… that's much more controllable."* Do not build it.
+
+⚠️ **Verify one thing on the current build:** frames 16 and 21 show the
+disciplines-and-subjects work surface mastheaded **`SkyView — prototype v1`**.
+The masthead fix was v2's item 3 and shipped in #1502; this recording predates
+it, so the frame is not proof it is still wrong — it is where to look.
 
 ## v2's own loose ends — still open, still worth a REPRO
 
@@ -188,8 +200,8 @@ own glyph rule.
 ## Read these first, in order
 
 1. [`docs/reference/lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
-2. [`docs/skyview_video2_findings.md`](skyview_video2_findings.md) — v2's review
-   (read to the end) — but see the v4 warning above: it is NOT the governing one
+2. [`docs/skyview_video4_findings.md`](skyview_video4_findings.md) — the governing
+   review. ⚠️ `skyview_video2_findings.md` is a DIFFERENT, earlier recording
 3. `tests/ccr_skyview_search_show.test.js` §11a and §16 — the model, as assertions
 
 Then run **`python3 kb/doctrine.py --read <files>`** before concluding anything

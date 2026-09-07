@@ -9961,7 +9961,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 78,
+   "count": 79,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11403,6 +11403,20 @@
      "title": "Video Project 2 \u2014 what Sam's screen recording actually shows",
      "type": null,
      "updated": "2026-09-06"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "path": "docs/skyview_video4_findings.md",
+     "status": null,
+     "tags": [
+      "skyview",
+      "video-review",
+      "findings"
+     ],
+     "title": "Video v4 \u2014 SkyView, 6m18s, 2026-09-06: the review the deferred commit came from",
+     "type": null,
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-05",
@@ -15769,5 +15783,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 807
+ "total": 808
 }

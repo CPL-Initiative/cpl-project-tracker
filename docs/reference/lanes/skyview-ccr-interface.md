@@ -108,16 +108,15 @@ cannot be the authority on intent — everything that happens outside it looks l
 a decision the reader made. Guarded by a check that names the destroyed key, not
 a count, so it cannot be satisfied by lowering an expectation.
 
-⛔ **THE v4 RECORDING IS NOT IN THIS REPO, AND IT IS THE GOVERNING REVIEW.**
-Sam, 2026-09-07: *"The local session had a new video v4, not the other."* The
-deferred-commit rulings came from v4; nothing from it was committed — no
-transcript, no findings doc. `docs/skyview_video2_findings.md` reviews a
-**different, earlier** recording, and the committed v2 transcript contains none
-of v4's rulings (`wait on that step`, `dismiss the box`, `multiple options`,
-`firing the routine` — zero hits each). ⚠️ Its numbered list said the shipped
-work was **"item 2 only"**; the rest of that list has never been read here. Ask
-Sam for v4 rather than inferring it from v2 — they are recordings of a UI that
-changed in between.
+⭐ **v4 IS THE GOVERNING REVIEW, AND IT IS NOW IN THE REPO** —
+[`skyview_video4_findings.md`](../../skyview_video4_findings.md). ⚠️
+`skyview_video2_findings.md` is a **different, earlier** recording (6m50s vs
+6m18s) and the two lists must not be merged; the committed v2 transcript contains
+none of v4's rulings. Six of v4's eight items shipped in #1502/#1503. **Open:**
+a rehome gives the course no *staged-to-move* mark (the confirmation line already
+renders — frame 17 — so the fix is the mark, not the message); and the legend's
+`unified` carries no gloss while every other entry does. **Do not build**
+hover-on-the-title — he decided against it on camera.
 
 ## Measured in a browser — the durable warnings
 
