@@ -108,6 +108,17 @@ cannot be the authority on intent — everything that happens outside it looks l
 a decision the reader made. Guarded by a check that names the destroyed key, not
 a count, so it cannot be satisfied by lowering an expectation.
 
+⛔ **THE v4 RECORDING IS NOT IN THIS REPO, AND IT IS THE GOVERNING REVIEW.**
+Sam, 2026-09-07: *"The local session had a new video v4, not the other."* The
+deferred-commit rulings came from v4; nothing from it was committed — no
+transcript, no findings doc. `docs/skyview_video2_findings.md` reviews a
+**different, earlier** recording, and the committed v2 transcript contains none
+of v4's rulings (`wait on that step`, `dismiss the box`, `multiple options`,
+`firing the routine` — zero hits each). ⚠️ Its numbered list said the shipped
+work was **"item 2 only"**; the rest of that list has never been read here. Ask
+Sam for v4 rather than inferring it from v2 — they are recordings of a UI that
+changed in between.
+
 ## Measured in a browser — the durable warnings
 
 Both defects from Sam's 2026-09-06 recording are FIXED. What must not be lost is

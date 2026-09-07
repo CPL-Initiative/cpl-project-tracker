@@ -14,7 +14,8 @@ SkyOutline S232 → SkyBuild S233 → S234 → SkyOutline II S235 → **SkyFacet
 (this run).
 
 ⚠️ **S236 ran TWICE, in two places.** Sam ran a local desktop session first
-(against a screen recording, no repo handoff reachable), which pushed
+(against a **v4** screen recording that is NOT in this repo — see below — and with no
+repo handoff reachable), which pushed
 `claude/video-project-2-frames` and left a mid-session note,
 [`docs/deferred_commit_handoff.md`](deferred_commit_handoff.md). This cloud run
 picked that up. **Read the mid-session note as history, not as instructions —
@@ -103,10 +104,38 @@ Then, still open from S235 and untouched here: the outline's **skills layer**
 (ruled, now a fetch problem — we hold zero agency skill text) and the **curate
 phrase** (ruled, not built; Rule 10 a3 routes it through Governance first).
 
-## Still open from the recording — items 4-6 need a REPRO, not a fix
+## ⛔ THE GOVERNING REVIEW IS A **v4** RECORDING, AND IT IS NOT IN THIS REPO
 
-Items 1, 2 and 3 are all fixed. What is left is reported-but-unreproduced
-([`docs/skyview_video2_findings.md`](skyview_video2_findings.md)):
+**Sam, 2026-09-07: "The local session had a new video v4, not the other."**
+
+The local run watched a **v4 recording**. Nothing from it — no video-context
+directory, no transcript, no findings doc — was ever committed. Verified two
+ways: `git ls-tree -r origin/main` and the branch tree hold only
+`.video-context/video-project-2/`, and the committed v2 transcript contains
+**none** of the rulings the deferred commit was built on — "wait on that step",
+"dismiss the box", "multiple options" and "firing the routine" all return **zero
+hits**. What v2 *does* contain is the earlier, different ruling ("after I click
+enter, I really think it should close this"), which #1502 already shipped.
+
+⚠️ **So `docs/skyview_video2_findings.md` is NOT your queue.** It is a complete,
+correct review of a DIFFERENT, EARLIER recording. Its items 1–3 are fixed and its
+4–6 are v2's loose ends, not v4's.
+
+⚠️ **`docs/deferred_commit_handoff.md` says "this was item 2 only. The remaining
+items have not been worked."** That numbered list is v4's, and **nobody in this
+repo has ever seen it.** Item 2 is what shipped in #1503; items 1 and 3-onward
+are unknown here.
+
+**FIRST ACTION: ask Sam for the v4 recording or its review.** It lives on his
+machine. Do not infer v4's items from v2's findings — they are different
+recordings of a UI that changed in between, and guessing at a review you have not
+read is how a session ships the wrong fix confidently. The `video-context` skill
+runs locally and needs a mount, so this is a local-session job or a paste.
+
+## v2's own loose ends — still open, still worth a REPRO
+
+From [`docs/skyview_video2_findings.md`](skyview_video2_findings.md), items 1-3
+fixed, 4-6 reported but never reproduced:
 
 - **Click-to-expand stops working** — part is understood behavior (standalone
   orbits) and part may not be.
@@ -115,8 +144,8 @@ Items 1, 2 and 3 are all fixed. What is left is reported-but-unreproduced
   `docs/skyview_drag_rehome_scope.md`.
 - **Sort mode is not obvious** — the footer names the order; he was still unsure.
 
-⚠️ **Sam RETRACTED a finding on camera in that recording** (the hover/identity
-card passage). Read a recording to the end before fixing anything.
+⚠️ **Sam RETRACTED a finding on camera in v2** (the hover/identity card passage).
+Read a recording to the end before fixing anything.
 
 ## NEEDS SAM — carried forward from S235, none answered this run
 
@@ -159,7 +188,8 @@ own glyph rule.
 ## Read these first, in order
 
 1. [`docs/reference/lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
-2. [`docs/skyview_video2_findings.md`](skyview_video2_findings.md) — the review, read to the end
+2. [`docs/skyview_video2_findings.md`](skyview_video2_findings.md) — v2's review
+   (read to the end) — but see the v4 warning above: it is NOT the governing one
 3. `tests/ccr_skyview_search_show.test.js` §11a and §16 — the model, as assertions
 
 Then run **`python3 kb/doctrine.py --read <files>`** before concluding anything

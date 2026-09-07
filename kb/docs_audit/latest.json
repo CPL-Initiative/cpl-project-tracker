@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 821,
-    "bytes": 8753660,
+    "bytes": 8756602,
     "over_budget": 4,
     "handoff_max": 237,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 107,
-        "bytes": 2673973,
+        "bytes": 2674470,
         "over": 2
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 144703,
+        "bytes": 145430,
         "over": 1
       },
       "handoff": {
         "files": 211,
-        "bytes": 1784588,
+        "bytes": 1786306,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 2683,
-      "bytes": 1344178283,
+      "bytes": 1344181225,
       "heavy_bytes": 626973408,
       "heavy_share": 0.466,
       "ignore_filters": [
@@ -326,13 +326,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 14234,
+        "bytes": 14961,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 2234,
-        "ratio": 1.19
+        "over_by": 2961,
+        "ratio": 1.25
       },
-      "message": "14,234 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "14,961 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
