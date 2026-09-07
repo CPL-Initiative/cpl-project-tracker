@@ -40,7 +40,7 @@ stand-alone orbits its best-matching identity; drag and drop is real with a
 keyboard path. A course opens its **outline of record** (S235). **Since S238
 the map has two faces and a light:** *Courses | CPL* names each point by its
 course or by the credential that reaches it, *Articulations* lights what
-carries one, and the outline's CPL layer is built. Rounds and measurements:
+carries one, and the outline's CPL layer is built (#1508). Rounds and measurements:
 [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## Invariants — do not violate these

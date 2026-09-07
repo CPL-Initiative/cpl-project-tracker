@@ -19,8 +19,8 @@ S238** (this run).
 
 Sam's eight rulings of 2026-09-07 became a build. SkyView's control row has two
 new words next to Show — **Courses | CPL** and **Articulations** — and the
-course outline of record has its CPL layer. Everything is in one PR (the number
-is in the lane file and the To-Do feed).
+course outline of record has its CPL layer. Everything is in
+[PR #1508](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1508).
 
 - **The payload** — `kb/_build_ccr_cpl.py` writes `prototype/ccr_cpl.json`
   (509 KB, fetched on demand). The join is the articulation crosswalk, the same

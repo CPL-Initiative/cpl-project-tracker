@@ -2,15 +2,55 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
   "_session": 238,
-  "_status": "The two CPL views you ruled on this morning are built. SkyView's control row has two new words next to Show: Courses | CPL switches what each point is named by, and Articulations lights the courses that carry one. On the CPL face a point is named by the credential that reaches it — then the issuing agency and, where it differs, the training agency, then what it earns, then the colleges holding it — and a point no exhibit reaches stays drawn and unlabeled. The line under the row says the coverage out loud, and it corrects the sentence on the sheet: 1,924 of 5,497 articulated exhibits reach a course on this map. The sheet's 1,490 was the count of courses, not exhibits, and its 6,388 was the credit funnel, which turns out to share only 570 exhibits with what reaches the map — the funnel is the military record, the articulations are industry certifications and credit by exam. The course outline of record now carries the same block with both agencies. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved.",
+  "_status": "The two CPL views you ruled on this morning are built (PR #1508). SkyView's control row has two new words next to Show: Courses | CPL switches what each point is named by, and Articulations lights the courses that carry one. On the CPL face a point is named by the credential that reaches it — then the issuing agency and, where it differs, the training agency, then what it earns, then the colleges holding it — and a point no exhibit reaches stays drawn and unlabeled. The line under the row says the coverage out loud, and it corrects the sentence on the sheet: 1,924 of 5,497 articulated exhibits reach a course on this map. The sheet's 1,490 was the count of courses, not exhibits, and its 6,388 was the credit funnel, which turns out to share only 570 exhibits with what reaches the map — the funnel is the military record, the articulations are industry certifications and credit by exam. The course outline of record now carries the same block with both agencies. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved.",
   "items": [
-    {"id": "s238-sam-cpl-face-look", "for": "Sam", "tab": "unified-courses", "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."},
-    {"id": "s238-sam-coverage-line-corrected", "for": "Sam", "tab": "unified-courses", "text": "The coverage sentence on the sheet said 1,490 of 6,388 exhibits. Both numbers were from the wrong bucket: 1,490 is the count of courses that carry an articulation (the exhibits are 1,924), and 6,388 is the credit funnel, which shares only 570 exhibits with the articulated ones — it is the military record, and the articulations are mostly industry certifications and credit by exam. The map says 1,924 of 5,497 articulated exhibits, computed from the data rather than typed in. Say if you would rather it also named how many of those the funnel has acted on (536)."},
-    {"id": "s236-sam-skill-text-fetch", "for": "Sam", "tab": "unified-courses", "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."},
-    {"id": "s235-sam-curate-phrase", "for": "Sam", "tab": "admin", "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."},
-    {"id": "s237-fable-staged-move-mark", "for": "Fable", "tab": "unified-courses", "text": "The last open item from the screen recording. The confirmation sentence is fixed; what is still missing is the mark on the course itself: after you move one, its own dot and its row say nothing about being staged rather than saved. Next session's priority."},
-    {"id": "s238-fable-dr24-surface", "for": "Fable", "tab": "unified-courses", "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."},
-    {"id": "s238-fable-stale-exhibits-and-funnel", "for": "Fable", "tab": "unified-courses", "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."},
-    {"id": "s235-fable-decision-packs", "for": "Fable", "tab": "unified-courses", "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."}
+    {
+      "id": "s238-sam-cpl-face-look",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
+    },
+    {
+      "id": "s238-sam-coverage-line-corrected",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "The coverage sentence on the sheet said 1,490 of 6,388 exhibits. Both numbers were from the wrong bucket: 1,490 is the count of courses that carry an articulation (the exhibits are 1,924), and 6,388 is the credit funnel, which shares only 570 exhibits with the articulated ones — it is the military record, and the articulations are mostly industry certifications and credit by exam. The map says 1,924 of 5,497 articulated exhibits, computed from the data rather than typed in. Say if you would rather it also named how many of those the funnel has acted on (536)."
+    },
+    {
+      "id": "s236-sam-skill-text-fetch",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."
+    },
+    {
+      "id": "s235-sam-curate-phrase",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
+    },
+    {
+      "id": "s237-fable-staged-move-mark",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The last open item from the screen recording. The confirmation sentence is fixed; what is still missing is the mark on the course itself: after you move one, its own dot and its row say nothing about being staged rather than saved. Next session's priority."
+    },
+    {
+      "id": "s238-fable-dr24-surface",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+    },
+    {
+      "id": "s238-fable-stale-exhibits-and-funnel",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+    },
+    {
+      "id": "s235-fable-decision-packs",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
+    }
   ]
 }
