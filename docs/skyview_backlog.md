@@ -65,6 +65,23 @@ pixels, labels as real text that drop rather than stack, hover by angle). Sam's
 own read of the ovals: *"maximizes sky space... but perhaps if you adjust
 downward the relative size of your entities, circles might work. Since we can
 zoom almost infinitely, nothing lost."*
+**Third round (same day).** Sam's second reaction — *"Better! Tweak:"* — asked
+for proximity by CTE versus academic, full use of the blank areas, the inside
+view's finer dots in both views and the inside view filling the window like the
+night sky (*"this may turn out to be the best view!"*), and Silver M-IDs; then
+*"Rotation speed is nicer now"*, *"we don't need the wrapped option"*, and Day
+versus Night with faint clouds. Built: **By kind** — the island centers relaxed
+into two regions of the sphere sized by each kind's share of the cap area (CTE
+101° from its pole), the mixed and unread islands riding the boundary, a
+stronger even-spreading term so no blank patch is left; the kind is read from
+TOP's one sanctioned use, `kb/reference/top_categories.json`'s CTE flag on each
+identity's TOP code, as a share per discipline (0.6 or more CTE, 0.4 or less
+academic: 97 · 50 · 12). **Inside** is a stereographic window (30° to 240°
+across; round islands stay round; the count line tests every point against the
+window). Both views size a dot in pixels. **Day** is a tint of the CO blue with
+value-noise clouds, drawn once, ghosted; on the globe's body by day, over the
+window inside. Two region names ride the sky. Committed and Spread stay one
+click away; Wrapped is gone.
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
