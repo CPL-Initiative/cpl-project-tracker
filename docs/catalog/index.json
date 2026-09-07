@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 397,
+   "count": 398,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2122,6 +2122,25 @@
      "title": "A rotating credential cannot be cached",
      "type": "methodology",
      "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_drop_target.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "hit-testing",
+      "curation",
+      "skyview"
+     ],
+     "title": "A rule that is right for reading can be wrong for writing",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-21",
@@ -9697,7 +9716,7 @@
      ],
      "title": "SkyView / CCR Atlas lessons \u2014 archive",
      "type": null,
-     "updated": "2026-09-05"
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-06-11",
@@ -11974,7 +11993,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-06"
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-28",
@@ -12176,8 +12195,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 211,
+   "count": 212,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 238,
+     "path": "docs/session_238_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "three defects fixed; the two CPL views are STILL unbuilt",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-07",
      "governs": [],
@@ -15801,5 +15833,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 809
+ "total": 811
 }

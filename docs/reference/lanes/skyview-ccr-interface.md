@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-06
+updated: 2026-09-07
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -17,8 +17,12 @@ related:
 > [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
 > [archive](../../ccr_atlas_lessons_archive.md).
 >
-> ⚠️ **Compacted 2026-09-06 (S234, again S235)** to fit the 12,000 B budget.
-> Nothing dropped — the round narratives are verbatim in the lessons doc.
+> ⚠️ **Compacted 2026-09-06 (S234, S235) and again 2026-09-07 (S237).** It is
+> **16.0 KB against the 12,000 B advisory budget** and the excess is invariants,
+> not narrative: S237 added six and moved ~1 KB of shipped history to the lessons
+> doc. A future compaction should take the **NEXT** list (2.7 KB of small
+> backlog items) to its own note, not the invariants — each of those is here
+> because a session already got it wrong once.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -55,12 +59,11 @@ did not look" are the same thing on this feed. ⚠️ **The join must NOT resolv
 through the alias chain**: those `course_id`s are already current-era, so
 resolving again is a double-applied permutation.
 
-⚠️ **RESOLVE A STORED ID THROUGH `kb/alias_chain.py` BEFORE COMPARING IT TO THE
-LIVE SET — and the live set is the CATALOG, not the browser payload.**
-`unified_courses_data.js` ships 16,480 of 76,008 rows, so "not in the payload"
-read as "dead" over-reported it fourfold. `ALIAS_MAPS` is a list of **paths**:
-call `load_maps()` first or `resolve_id()` resolves nothing and does not error —
-the tell is direct and chain agreeing EXACTLY.
+⚠️ **THE LIVE SET IS THE CATALOG, NOT THE BROWSER PAYLOAD** (with Rule 7's alias
+chain). `unified_courses_data.js` ships 16,480 of 76,008 rows, so "not in the
+payload" read as "dead" over-reported it fourfold. `ALIAS_MAPS` is a list of
+paths — call `load_maps()` first, or `resolve_id()` resolves nothing and does not
+error; the tell is direct and chain agreeing EXACTLY.
 
 ⚠️ **Full screen paints ONE element.** A control outside `#u-full` does not
 exist there; the page's single search form is **borrowed** into the map's row
@@ -80,6 +83,39 @@ never reaches the deployed page. `ccr_universe.json` is deliberately untouched.
 
 ⚠️ **`npm test` proves nothing about layout** — jsdom returns zeroes for every
 rectangle. Run `npm run a11y`, or drive a real browser.
+
+⭐ **A DROP LANDS ON A CIRCLE; ONLY A READ LANDS ON A STAR** (S237). An open
+identity's member ring SPREADS over its neighbors and `pick()` gives those stars
+absolute priority — correct for reading, and it eclipses the destination a
+curator aims at. `pick(px,py,forDrop)` resolves circles only while carrying.
+⚠️ Neither rule may be widened onto the other.
+
+⚠️ **A REFUSAL THAT PRINTS OUT OF SIGHT IS A DEAD CONTROL.** `#u-hint` sits at
+the foot of the window; `#u-writes` is inside `#u-below`, which `body.u-solo` —
+the default — never paints. Anything that can say *no* says it where the hand
+is: the carry rings its destination and names it.
+
+⭐ **ONE SKILL, ONE ROW — FOLD THE KEY, KEEP THE COLLEGES' WORDS** (S237).
+`olWords()` keeps a hyphen inside a token, so `flux-cored arc welding` is a
+3-token phrase and `flux cored arc welding` a 4-token one. ⚠️ **Fold at the
+COUNTING step, never by collapsing finished rows** — the chip counts COLLEGES,
+so one college writing it both ways counts once and two spelling it differently
+count twice. Display the spelling the most colleges published. ⚠️ `sses` belongs
+in the `-es` family or *processes* stems to *processe*.
+
+⚠️ **A REVIEWER'S REMOVAL IS RECORDED, NEVER DERIVED.** The imputation re-runs
+whenever a description lands, so storing *what is left* would silently delete
+every skill that arrived since — S236's lesson, one layer up. `skillDrop` names
+the struck keys; each is restorable.
+
+⚠️ **`ensureCorpus()`, NOT `__ccrUniverse` ALONE.** An outline reached by its own
+`#outline/<id>` link had ZERO college courses: every layer read "none", which is
+a false statement about the data, not a rendering gap.
+
+⚠️ **A CLOSED `<details>` STILL MEASURES.** Chromium hides its content with
+content-visibility, not `display:none`, so the rect is real while `focus()` is a
+no-op — ten collapsed buttons read as "focusable with no ring" in `npm run
+a11y`. A `height === 0` guard does not catch it; the script skips them now.
 
 **Durable facts:** grinding the whole merge queue perfectly lands at 35,937,
 14.4× short of 2,500, so **packaging** is the only mechanism with the right
@@ -120,76 +156,61 @@ hover-on-the-title — he decided against it on camera.
 
 ## Measured in a browser — the durable warnings
 
-Both defects from Sam's 2026-09-06 recording are FIXED. What must not be lost is
-how they were MIS-READ; the round-by-round is in
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and the reusable lesson in
-[`methodology-a-correct-measurement-can-name-the-wrong-place`](../../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md).
+⚠️ **jsdom cannot see any of this.** Every finding below came from driving the
+served page; the round-by-round is in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md), the reusable lessons in
+[`methodology-a-correct-measurement-can-name-the-wrong-place`](../../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md)
+and
+[`methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing`](../../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md).
 
-⚠️ **IT IS `.sugwrap` THAT WRAPS, NOT `#u-bar`.** The triage named `#u-bar`
-30 → 76px; the real ancestor chain shows `#u-bar` **unchanged** and
-`.u-search-slot .sugwrap` going 30 → 66, which pushes `#sug` 40 → 76. A
-`min-height` on `#u-bar` would have read as a fix and changed nothing.
-⚠️ Chip tightening is bounded by **target size, not contrast**: `.u-tok-x` 24×24
-and `.u-tok-go` min-height 24px are on the WCAG 2.2 SC 2.5.8 AA floor.
-⭐ **That wrap can no longer fire WHILE THE READER IS PICKING** — deferring the
-commit means no chip exists until Enter, and by then the list is shut. Measured
-in Chromium at 1440px, four consecutive ticks: `#u-bar` 30 → 30, `#sug` top
-75.0 → 75.0, 60 → 60 rows. The layout finding above still holds for chips that
-land; it is the *selection* path that no longer reaches it.
+⚠️ **IT IS `.sugwrap` THAT WRAPS, NOT `#u-bar`** — a `min-height` on `#u-bar`
+would have read as a fix and changed nothing. Chip tightening is bounded by
+**target size, not contrast** (`.u-tok-x` 24×24 is the SC 2.5.8 floor).
+⚠️ **THE PICKS DIED ON THE WAY OUT** — `setCrumbs()` calls `clearTokens()` on
+every view entry, so diagnosing the return path would have fixed nothing.
+⚠️ **Sam RETRACTED a finding on camera.** Read a recording to the end first.
 
-⚠️ **THE PICKS DIED ON THE WAY OUT.** `homeSearch()` called `clearTokens()` and
-`setCrumbs()` calls it on every view entry, so `__ccrTokenKeys()` already read
-`[]` on the work surface. Diagnosing the return path would have fixed nothing.
-
-⚠️ **Sam RETRACTED a finding on camera** — that passage is S233's hover fix
-working. **Read a recording to the end before fixing anything.**
+**S237, at 296% with Introduction to Welding open:** SIX identity circles inside
+the viewport sat under one of that identity's own member stars, and a drop on
+each of the first three moved nothing while the hint said *"That course is
+already there."* Reading is unchanged by the fix — **24 of 24 drawn stars** still
+open the college course. Skill duplicates across the whole corpus: **209 rows by
+a hyphen, 835 by a plural, 762 identities (1.6%)** before; **none** after.
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
 ## Sam's eight rulings of 2026-09-06 (decision sheet) — 3 built, 5 recorded
 
 All eight answered **yes**, no edits, no follow-ups
-(`cpl_memory` `sam-eight-rulings-2026-09-06-outline-sheet`). Built in S235:
-**text zoom** (three steps 0.85/1/1.25, per-browser; ⚠️ NOT a slider — the label
-placer drops what it cannot fit, so past a size the map goes quiet rather than
-crowding, and the collision boxes scale WITH the text or the placer accepts
-labels that then overlap; measured, the map's own zoom holds at 0.10043 across
-all three steps); **"the only college teaching it"** where a course is carried by
-one college (⚠️ the MEMBER count, not the description count — `total` in
-`olConfWord` counts colleges that publish a catalog, so the two cases say
-different things); and a **`.gitattributes`** with its ten files renormalized.
-Recorded, not built: the skill-source precedence, the articulations toggle's
-treatment of absence, the curate phrase's scope, **no nightly layout rebuild**,
-and **Interdisciplinary Studies is a grab bag** (525 identities against 1,263
-stand-alones).
-
-## Sam's three earlier rulings, 2026-09-06 — shipped
-
-Enter closes the search panel; double-click opens the course outline; the chip
-row reserves its space. Sort control at the list's top right, Enter button at
-the bottom, `markSug` addressing rows by `id` because the header is a child of
-the listbox. Detail: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+(`cpl_memory` `sam-eight-rulings-2026-09-06-outline-sheet`). Built in S235: text
+zoom, **"the only college teaching it"**, a `.gitattributes`. **Recorded, not
+built:** the skill-source precedence, the articulations toggle's treatment of
+absence, the curate phrase's scope, **no nightly layout rebuild**, and
+**Interdisciplinary Studies is a grab bag** (525 identities against 1,263
+stand-alones). His three earlier rulings of the same day all shipped. What they
+cost to build, and the two traps inside them, are in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## The outline of record — BUILT (S235)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (31 checks,
-key guards mutation-tested). **Invariants, not history:**
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (50 checks, key
+guards mutation-tested). **Invariants, not history:**
 
 ⭐ **The description is CHOSEN, never written** — the medoid member catalog
-description, quoted and attributed. Composing prose out of several catalogs
-would read as authoritative while belonging to nobody. Sam's MAP-Generated
-sentence prints verbatim.
+description, quoted and attributed. Composing prose out of several catalogs would
+read as authoritative while belonging to nobody. Sam's MAP-Generated sentence
+prints verbatim.
 ⭐ **Two level axes, neither derived** — the course's off its title, a skill's
 off its own words.
-⚠️ **Confidence is agreement BETWEEN colleges**, and "one college" means
-opposite things by context: a course carried by ONE college reads **"the only
-college teaching it"** (complete evidence), one that merely has a single catalog
-reads **"the only college with a description"**. The distinction is the MEMBER
-count, not the description count.
-⚠️ **Skill phrases need punctuation-aware n-grams and longest-name-wins** — the
-defects and their fixes are in the lessons doc. **94.6% of member courses carry
-a description, but only 30.0% of identities have 2+**, so each outline states
-its own evidence.
+⚠️ **Confidence is agreement BETWEEN colleges**, and "one college" means opposite
+things by context: a course carried by ONE college reads **"the only college
+teaching it"** (complete evidence), one that merely has a single catalog reads
+**"the only college with a description"**. The distinction is the MEMBER count.
+⚠️ **Skill phrases need punctuation-aware n-grams, longest-name-wins and the
+fold above.** **94.6% of member courses carry a description, but only 30.0% of
+identities have 2+**, so each outline states its own evidence.
+⭐ **A reviewer may add a skill and take one out** — staged in the browser beside
+the title and subject, nothing written.
 
 ## NEEDS SAM
 
