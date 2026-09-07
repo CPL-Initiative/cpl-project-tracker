@@ -9961,7 +9961,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 77,
+   "count": 78,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11183,6 +11183,16 @@
       "scope"
      ],
      "title": "Similar-course FAMILY consolidation lane \u2014 scope + measure-first",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "",
+     "governs": [],
+     "path": "docs/deferred_commit_handoff.md",
+     "status": null,
+     "tags": [],
+     "title": "SkyView search: the deferred commit \u2014 handoff",
      "type": null,
      "updated": ""
     },
@@ -15746,5 +15756,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 805
+ "total": 806
 }
