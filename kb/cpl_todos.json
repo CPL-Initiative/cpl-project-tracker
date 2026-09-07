@@ -5,22 +5,10 @@
  "_status": "Three things you reported on the map are fixed. The drag that would not take was not about the second drag at all — repeating it eight times in a row all worked. It is about where you aim. When you open a course, the college courses under it fan out as little stars, and those stars drift over the neighbouring circles; the map was reading a drop as a click on the nearest star, which belonged to the course you were dragging FROM, so it answered \"that course is already there\" in a line at the very bottom of the window where nobody looks. Six circles on your screen were covered that way. Now a drop only ever lands on a circle, and while you are carrying a course the map draws a ring around where it will land and writes the name beside it, so you can see it before you let go. The duplicated skills are gone: colleges spell the same skill two ways — flux cored and flux-cored, process and processes — and each spelling was counted as its own skill. Across the whole reference that was 1,044 doubled-up rows; there are none now, and the row shows whichever spelling the most colleges wrote. You can also add a skill or remove one on the outline, staged in your browser like the title and subject beside it — nothing is written from that page. Merged courses no longer show as a white block on the dark map. Two things we found while looking: a course outline opened from a link showed no college courses at all, and the accessibility checker was reporting ten phantom problems inside a collapsed section. Both fixed. Still first in the queue and still unbuilt: the two CPL views you asked for, sketch first.",
  "items": [
   {
-   "id": "s237-sam-skill-fold-check",
+   "id": "s237-sam-decision-sheet",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Worth two minutes of your eye. Skills that were listed twice are now one row, and the row shows whichever spelling the most colleges published — 'flux cored arc welding' rather than 'flux-cored'. The rule folds hyphens and simple plurals. If you spot two skills that are genuinely different but now read as one, or one whose surviving spelling looks wrong to a welding instructor, say which and the rule gets narrowed."
-  },
-  {
-   "id": "s237-sam-curate-skill-scope",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "You asked to be able to add or delete a skill when curating. Both are there now on the course outline, and both stage in your browser only — nothing leaves the page, which is still true of everything on that map. The open question is yours: when this does start writing, should a reviewer's added skill carry their name, and should removing one need a second person to agree? That is the same governance step the curate phrase is waiting on."
-  },
-  {
-   "id": "s235-sam-cpl-focus-prototype",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Still the top of the queue, and still a sketch before a build. You asked for a CPL vs Course/Discipline toggle so exhibits and credit recommendations become the focus, and a show-articulations toggle revealing where articulations differ college to college — and called the two closely linked. The question that was open here is now answered by your own ruling: the toggle lights only what has a number and leaves everything else exactly as drawn, because only 1,490 of 49,896 points carry an articulation count and marking absence would claim something about the other 48,406 that the data cannot support. Next session brings you the picture."
+   "text": "Eight calls are waiting on one page — the CPL views you asked to see sketched, the folded skill list you asked to check, and who signs a curate edit once it starts writing. Reply on the sheet itself; the chips save to it and the next session reads them. https://claude.ai/code/artifact/a7d53d9c-7031-4612-82e3-7905810c060e — and read item 1 before item 2: measuring from MAP's own credit funnel instead of the map's own copy changed the answer. Only 4.3% of MAP's CPL rows name a receiving course, which is the ceiling on anything the map can draw; and 'where they differ college to college' comes to four cases, not the pattern either of us expected."
   },
   {
    "id": "s235-sam-curate-phrase",

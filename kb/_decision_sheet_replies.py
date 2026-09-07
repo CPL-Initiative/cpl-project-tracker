@@ -382,7 +382,10 @@ def chips_for(section_title, card_html):
     ask = _text((_re.search(r'<dd class="ask">(.*?)</dd>', card_html, _re.S) or [None, ''])[1]).lower()
     if 'older only' in ask:
         return ["Yes", "Older only", "No", "Later"]
-    if t.startswith(('what to build', 'the data underneath',
+    # 'what to check' is a REVIEW section — a rule already shipped and the ask is
+    # whether it stays. Keep/Retire read as verdicts on a claim and are wrong
+    # there too: what is on offer is accept, reshape, defer or drop.
+    if t.startswith(('what to build', 'what to check', 'the data underneath',
                      'how a rule fires', 'still open')):
         return CHIPS_BUILD
     if t.startswith('rulings that cover') or t.startswith('your own earlier rulings'):
