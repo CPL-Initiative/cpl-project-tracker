@@ -1,5 +1,5 @@
 ---
-title: "Session 240 handoff — read the sheet's replies, then build the Sky view"
+title: "Session 240 handoff — the Sky is in; his eye on it, then the frame budget"
 created: 2026-09-07
 updated: 2026-09-07
 tags: [handoff]
@@ -8,109 +8,102 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are Session 240
 
-Your moniker is **SkyDome**. The name is the job: the inside window sky — the
-form Sam was drawn to (*"this may turn out to be the best view!"*) — goes into
-SkyView this session, **on the answers he gives to the sheet, never on a
-guess**. Predecessors: SkyOutline S232 → SkyBuild S233 → S234 → SkyOutline II
-S235 → SkyFacet S236 → SkyFacet II S237 → SkyFacet III S238 → **SkyGlobe S239**
-(this run).
+Your moniker is **SkyDome**. The name is the job: the sky is IN — SkyView now
+opens as the inside window onto the night sky — and this session is the one
+that looks at it with Sam, keeps it smooth on his machine, and carries the
+queue behind it. Predecessors: SkyOutline S232 → SkyBuild S233 → S234 →
+SkyOutline II S235 → SkyFacet S236 → SkyFacet II S237 → SkyFacet III S238 →
+**SkyGlobe S239** (this run).
 
-## What this run did ([PR #1513](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1513))
+## What this run did
 
-**The sheet.** Sam had ruled the globe in at the close of S238; his practice
-puts the design calls on one sheet before the code. Eight calls, every figure
-measured, reply chips saved to the sheet's own store:
-`docs/visuals/2026-09-07-eight-calls-before-the-sky-goes-in.html`, artifact
-https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d. The seven
-from the handoff, and an eighth the measurements surfaced: **the M-ID color on
-the dark ground**, where his globe ruling (silver, *"like stars"*) and his
-legend ruling (violet) meet — and 49,355 of 49,896 points (99%) wear it.
+Two PRs. [#1513](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1513)
+in the afternoon: the eight design calls on ONE sheet with reply chips
+(`docs/visuals/2026-09-07-eight-calls-before-the-sky-goes-in.html`, artifact
+https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d), the
+sphere placement as a daily artifact (`kb/_build_ccr_sky.py` →
+`prototype/ccr_sky.json`, fingerprinted, Step 4d4, 32 checks), and the
+staged-to-move mark on the model (v4 item 7 — the governing review is fully
+shipped).
 
-**The sphere placement as a daily artifact** (handoff priority 2).
-`kb/_build_ccr_sky.py` → `prototype/ccr_sky.json` (34 KB): each island's center
-on the sphere three ways (committed · spread · by kind, as longitude/latitude)
-with the CTE share and its base. Fingerprinted, so the daily run relaxes only on
-a change and `--check` runs in half a second (Step 4d4;
-`tests/ccr_sky_payload_test.py`, 32 checks). A side is held across 0.6/0.4 by a
-0.05 margin. The prototype's generator imports the relaxation; the globe page
-rebuilds byte for byte.
-
-**The staged-to-move mark** (v4 item 7 — the governing review is now fully
-shipped). On the model: `stagedHere` / `stagedAwayFrom` / `stagedWords` /
-`unstageMove`; every view asks it. *staged here — not saved* at the
-destination; at the origin the course is still drawn (a dashed ghost star),
-listed under *Staged to move away*, with *Put back*; labels, hovers and the
-outline's band count it. `tests/ccr_skyview_staged_move.test.js` (20 checks);
-driven in Chromium; `npm run a11y skyview` 9 of 9.
+Then Sam answered the sheet — **eight items, eight `yes`, no notes** — and
+#1514 built the Sky the same evening, in `prototype/ccr_universe.js` on the
+map's own canvas: `#skyview` opens the Sky; **Sky · Globe · Map** in the row;
+Night by default, Day keeping the rim; a slow turn that stops at the first
+touch, twinkle only while turning, none of either under reduced motion; drag
+and drop by angle; By kind with its two region names; silver M-IDs on every
+dark canvas; the prototype's controls as tabled (Rotate came; Discipline names
+folded into More → Show or hide; the readout in degrees / radii / percent; the
+Islands switch, the color chips and the count line left). Every invariant
+re-earned on the sphere: the S237 drop fixture passes on the curve, the label
+placer and Tab/Enter/Escape unchanged, fixed-size text, `prefers-reduced-motion`,
+`#globe` and `#map` in `a11y.config.js`.
 
 ## ⭐ THE THINGS TO CARRY FORWARD
 
-1. **The replies come first, from the sheet's store.** Artifact tool,
-   `read_db`, url above, collection `replies`, one document per item (`v` is
-   the verdict — yes · edit · later · dismiss — `fu` the follow-up flag, `note`
-   his words). If the store is empty and Sam replied in chat by number, that
-   line is the same thing. Record his verdicts in `cpl_memory` under his name
-   and the reasons in the commit; then build. **Do not build a call he has not
-   answered.**
-2. **The port needs no three.js.** A full Canvas 2D redraw of 49,896 points
-   measured 18–35 ms in headless software rendering (17.9 ms with a projection
-   and the far half culled). Draw on the map's own canvas; the CSP and the
-   public/private split stay untouched.
-3. **The payload contract.** `prototype/ccr_sky.json` gives each island
-   `committed` / `spread` / `kind` as `[lon°, lat°]`, plus `radians_per_unit`.
-   A point's place is its island's center walked `east = (p.x − isl.x) ·
-   radians_per_unit`, `north = −(p.y − isl.y) · radians_per_unit` along the
-   surface — the prototype's `expmap()` in `prototype/globe/build_globe.py`
-   (search `function expmap`), with `toSphere` for the committed centers.
-   The window projection (stereographic, 30°–240° across), the star sizing in
-   pixels, the limb fade and the twinkle are in the same file; port them.
-4. **The Day sky exists only by its rim.** Silver stars 1.24:1 and the light
-   1.08:1 on the day ground; the prototype gives every dot a seal-blue rim by
-   day (7.2:1). Whatever he rules on item 3, the rim comes with Day, and the
-   legend's swatches must wear it too.
-5. **The docked panel narrows the canvas.** Opening an identity docks the
-   details panel; a screen position computed from the canvas rect before the
-   open is stale after it. Two Chromium drives dropped on empty space this
-   way. Measure after the open; jsdom cannot see it.
-6. **Re-earn every invariant on the sphere with a test where jsdom can see it
-   and a Chromium drive where it cannot** — the drop hit-test by ANGLE on the
-   sphere (the S237 fixture ports as is), the label placer (drop, never
-   stack), Tab/Enter/Escape, fixed-size text under zoom,
-   `prefers-reduced-motion` (no turn, no twinkle), and the a11y route added in
-   `a11y.config.js`.
+1. **The sphere is the map through a projection, not a second renderer.**
+   `prepSphere()` projects each island's center and Jacobian once a frame
+   (`isl._s`); `w2s(x,y,isl)` is one multiply-add from it; `pick()` reads the
+   same cache. Keep it that way — a second hit-test or a second placer is the
+   drift that would make the sphere disagree with the map. KB note:
+   `docs/kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md`.
+2. **The harness declares what opens.** Production opens the Sky; a flat-map
+   suite sets `window.CPL_SKYVIEW_OPENS = "map"` in `beforeParse` (seven do).
+   `tests/ccr_skyview_sky.test.js` (50 checks) is the sphere's suite: the
+   fixture's two islands (Welding CTE, English academic), the eclipse
+   reproduced on the curve, the keyboard path, Day, Globe, Map, reduced motion.
+3. **The frame budget is the open engineering question.** 117 → 42.5 ms a draw
+   after batching the sub-`ID_ZOOM` stars per color|alpha bucket; 13.5 rAF
+   frames a second in headless software rendering. A GPU should do better;
+   nobody has measured it on Sam's machine. If it reads slow, the lever is an
+   offscreen star layer invalidated by view change, or a WebGL point pass
+   behind the same `w2s` — never per-point work. Measure first
+   (`time_draw.js` in this run's scratchpad is the recipe: serve, open, time
+   `draw()` at the opening window).
+4. **The globe is the sky mirrored.** The window's right is the globe's left;
+   `projectDir`/`unprojectDir` flip x outside and the drag and arrow signs
+   flip with it. A test that passes on one and fails on the other is usually
+   this sign.
+5. **A fake canvas needs every method the draw path calls.** The last failing
+   check read *"globe 150% #map"* — a state bug on its face, actually
+   `ctx.clip is not a function` leaving `setProj` half done. One stack trace
+   before any theory.
+6. **The docked panel narrows the canvas** — measure a screen position after
+   the open, never before (two Chromium drives dropped on empty space).
 
 ## Decisions Sam made this run
 
-None — he opened the session with the greeting and had not replied to the
-sheet by the checkpoint. Nothing here presumes an answer.
+**The sheet, all eight `yes` (2026-09-07, 19:59–20:02 UTC; no notes, no
+follow-ups; then "decisions done!")**: (1) the Sky opens, once it passes the
+drop test, the keyboard path and the a11y route in the same PR; (2) Sky ·
+Globe · Map as three words, the Map stays; (3) Night by default, Day keeps the
+rim, one control and one memory; (4) the turn stops at the first touch,
+twinkle only while turning, none under reduced motion; (5) drag and drop by
+angle on the sphere, a Pan drag turns it; (6) By kind with the two region
+names; (7) the prototype's controls' fates as tabled; (8) silver M-IDs on
+every dark canvas. All eight are built; `cpl_memory` holds them under his name.
 
 ## Verified
 
-The sheet: `tests/decision_sheet_replies.test.js` 27/27 (every bare token
-resolves), one rendered look in Chromium, published with `capabilities {db}`.
-The placement: 32/32, `--check` 0.56 s, the prototype's layout and page byte
-for byte from the shared relaxation. The mark: 20/20 new; every SkyView suite
-green (`drop_target` 14, `universe` 222, `search_show` 130, `outline` 50,
-`hover_disc` 10, `first` 51, `cpl_face` 62); a real drag on the served page;
-`npm run a11y skyview` 9 of 9 at three widths; the dependency map with 0
-warnings.
+The Sky: 50/50 new checks; eight SkyView suites green (`universe` 222,
+`search_show` 130, `cpl_face` 62, `outline` 50, `staged_move` 20,
+`drop_target` 14, `hover_disc` 10, `sky` 50); the full suite with check floors
+recorded; `npm run a11y skyview` **11 of 11** routes at three widths on the
+final build; two Chromium drives on the served page (turn, fly, open, a
+real-mouse drag landing on the neighbor's circle, Day, Globe, Map, no page
+errors); the dependency map with 0 warnings.
 
 ## YOUR PRIORITY
 
-1. **Read the replies** (carry-forward 1). Execute each verdict: `yes` builds
-   the proposal as written; `edit` builds his wording; `later` parks it in the
-   lane's NEEDS SAM; `dismiss` records why. Write the verdicts to `cpl_memory`
-   (`verified_by` Sam) and the reasons in the commit body.
-2. **Build the Sky view in `prototype/ccr_universe.js`** behind the Views menu
-   per the answers — the window sky (and the globe, if he keeps it) reading
-   `ccr_sky.json` + `ccr_universe.json`, on the map's own canvas, with the CPL
-   face and the Articulations light carried (same data), and the staged mark
-   read from the same helpers. Rebuild `skyview.html`
-   (`python3 kb/_build_ccr_atlas_extract.py && python3 prototype/build_ccr_atlas.py`)
-   and commit it, as #1508 and #1513 did.
-3. **Re-earn the invariants** (carry-forward 6), then `npm run a11y skyview`
-   with the new route.
-4. Then, as before: **DR-24's write surface** (through Governance first — Rule
+1. **Sam's eye on the Sky** (NEEDS SAM ⑧) — the opening window, the turn's
+   pace, the region names, Day's rim, and above all whether it is smooth on
+   his machine. Ask for a number if he can give one (the readout says what the
+   window holds; a stutter he can describe is enough).
+2. **The frame budget**, only if he says it drags: measure on the served page
+   first (carry-forward 3), then the offscreen layer or the WebGL point pass.
+   The drop test, the keyboard path and `npm run a11y skyview` run again in
+   the same PR — item 1 of the sheet says so.
+3. Then, as before: **DR-24's write surface** (through Governance first — Rule
    10 a3), the skills layer's fetch problem (NEEDS SAM ①), the backlog
    (`docs/skyview_backlog.md`).
 
@@ -126,9 +119,7 @@ or ghosts.
 ⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
 ⑦ **His eye on the CPL face** (`#skyview/cpl`) — does the credential-led label
 read right, and is *Articulations* the word.
-⑧ **The eight calls on the sheet** (artifact above): which view opens; whether
-the flat map stays; the Day sky; motion by default; curation on a curve; By kind
-as the arrangement; the prototype's controls; the M-ID color on the dark ground.
+⑧ **His eye on the Sky as shipped** — and whether it runs smoothly for him.
 
 ## Housekeeping
 
@@ -141,34 +132,41 @@ as the arrangement; the prototype's controls; the M-ID color on the dark ground.
   `/opt/node22/lib/node_modules/playwright/index.js`, `python3 -m http.server
   8777` from the repo root. **Use it** — and run `npm run a11y` from the repo
   root (the shell's cwd resets between calls).
+- Rebuild the served page after touching the JS or the template:
+  `python3 prototype/build_ccr_atlas.py` (add
+  `python3 kb/_build_ccr_atlas_extract.py` first only when the data extract
+  should move — it changes the file's timestamp line every time).
 - `git add` new files BEFORE `python3 kb/_build_dependency_map.py` — the builder
   scans tracked files only.
-- The globe prototype's data is a build-time snapshot; the daily run does not
-  rebuild it, by design. `prototype/globe/README.md` is its three-step build.
-- The artifact service refused a wake subscription for this session's sheet
-  (a session credential is required), so no session is woken by his replies;
-  read the store.
+- The globe prototype (`prototype/globe/`, `docs/visuals/…globe-prototype.html`)
+  is now history: the sky form lives in SkyView. Its generators stay for the
+  relaxation SkyView's daily artifact imports.
 
 ## `cpl_memory` rows written this run
 
-`sky-design-calls-sheet-handed-over-2026-09-07` (question, for Sam) ·
-`silver-and-violet-two-rulings-meet-on-the-dark-ground` (question, for Sam) ·
-`the-day-sky-fails-non-text-contrast-for-three-of-four-legend-colors` (fact) ·
-`skyview-sky-placement-is-a-daily-artifact-2026-09-07` (milestone) ·
-`skyview-staged-to-move-mark-shipped-2026-09-07` (milestone) ·
-`a-staged-state-lives-on-the-model-and-every-view-asks-it` (procedure) ·
-`a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap` (procedure) ·
-`the-docked-panel-narrows-the-canvas-measure-after-the-open` (pitfall).
+Afternoon: `sky-design-calls-sheet-handed-over-2026-09-07` and
+`silver-and-violet-two-rulings-meet-on-the-dark-ground` (questions, now
+superseded by his answers) · `the-day-sky-fails-non-text-contrast-for-three-of-four-legend-colors`
+· `skyview-sky-placement-is-a-daily-artifact-2026-09-07` ·
+`skyview-staged-to-move-mark-shipped-2026-09-07` ·
+`a-staged-state-lives-on-the-model-and-every-view-asks-it` ·
+`a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap` ·
+`the-docked-panel-narrows-the-canvas-measure-after-the-open`.
+Evening: `sam-ruled-the-eight-sky-calls-2026-09-07` (decision, his — written at "decisions done!") ·
+`skyview-opens-as-the-sky-2026-09-07` (milestone) ·
+`the-sphere-is-the-map-through-a-projection` (procedure) ·
+`a-fake-canvas-needs-every-method-the-draw-path-calls` (pitfall) ·
+`the-sky-turn-costs-42-ms-a-frame-in-software-rendering` (fact).
 
 ## Read these first, in order
 
-1. The sheet's replies (`read_db`), then the sheet itself.
-2. [`docs/reference/lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
-3. `prototype/globe/build_globe.py` — the renderer to port (`expmap`, the
-   window projection, the star sizing, the labels).
-4. `tests/ccr_skyview_drop_target.test.js` and
-   `tests/ccr_skyview_staged_move.test.js` — the harness, and the two models
-   the sphere must honor.
+1. [`docs/reference/lanes/skyview-ccr-interface.md`](reference/lanes/skyview-ccr-interface.md)
+   — the invariants now include the sphere's.
+2. `docs/ccr_atlas_lessons.md`, the S239 evening section — what went wrong on
+   the way and the numbers.
+3. `tests/ccr_skyview_sky.test.js` — the sphere's harness and fixture.
+4. `prototype/ccr_universe.js`: `prepSphere`, `w2s`, `projectDir`, `draw()`'s
+   star pass (`starPush`/`starFlush`), `setProj`, `turnFrame`.
 
 Then run **`python3 kb/doctrine.py --read <files>`** before concluding anything
 from the data, and **query `cpl_memory` before you work** (Rule 8).

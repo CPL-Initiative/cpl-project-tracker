@@ -193,7 +193,11 @@ The whole ecosystem, end-to-end:
    renamed to avoid UC/University-of-California confusion and to signal that
    the tab is a *reference faculty consult*, not an authority replacing them).
    **It opens on SkyView** — the whole reference as one map, filling the
-   window on its own (2026-09-05): COBI's header and side menu fold away and
+   window on its own (2026-09-05) — and since 2026-09-07 **as the Sky**: the
+   reference as the night sky seen through a window, with the **Globe** and
+   the flat **Map** one click away on the same canvas (Sky · Globe · Map),
+   Night by default and Day one control away, a slow turn that stops at the
+   first touch, and drag and drop on the curve. COBI's header and side menu fold away and
    the ☰ at the map's top left brings the menu back, while the window controls
    at the row's right step between the map inside COBI, the map alone and the
    browser's full screen; the map's More menu reaches the comprehensive view,

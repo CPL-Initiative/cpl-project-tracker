@@ -97,6 +97,16 @@ https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d — and the
 sphere placement is a daily artifact (`kb/_build_ccr_sky.py` →
 `prototype/ccr_sky.json`, Step 4d4, fingerprinted). The Sky view's code waits on
 the replies; the next session reads them first (`read_db`, collection `replies`).
+**S239, evening (2026-09-07): BUILT.** Sam answered all eight `yes` (no notes;
+*"decisions done!"*) and the Sky went into SkyView the same evening (#1514):
+`#skyview` opens the window sky, **Sky · Globe · Map** in the row, Night by
+default with Day keeping the rim, the turn that stops at the first touch, drag
+and drop by angle, By kind with its two region names, silver M-IDs on every
+dark canvas, the prototype's controls as tabled. Every invariant re-earned on
+the sphere (`tests/ccr_skyview_sky.test.js`, 50 checks; `npm run a11y skyview`
+11 of 11). The prototype page is history; `prototype/globe/` stays for the
+relaxation the daily artifact imports. What remains is his eye on it and the
+frame budget (lane NEEDS SAM ⑧, NEXT ⓪).
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
