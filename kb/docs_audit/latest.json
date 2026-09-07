@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 826,
-    "bytes": 8804840,
+    "files": 828,
+    "bytes": 8823346,
     "over_budget": 4,
-    "handoff_max": 238,
+    "handoff_max": 239,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59087,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 109,
-        "bytes": 2704827,
+        "bytes": 2706326,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 22266,
+        "bytes": 24110,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1996849,
+        "bytes": 2001227,
         "over": 1
       },
       "kb_note": {
-        "files": 400,
-        "bytes": 2073194,
+        "files": 401,
+        "bytes": 2078506,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 148979,
+        "bytes": 147298,
         "over": 1
       },
       "handoff": {
-        "files": 212,
-        "bytes": 1799638,
+        "files": 213,
+        "bytes": 1806792,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2853,
-      "bytes": 1404469585,
-      "heavy_bytes": 680001837,
+      "files": 2860,
+      "bytes": 1405155083,
+      "heavy_bytes": 680618660,
       "heavy_share": 0.484,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -326,13 +326,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 18510,
+        "bytes": 16829,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 6510,
-        "ratio": 1.54
+        "over_by": 4829,
+        "ratio": 1.4
       },
-      "message": "18,510 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "16,829 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -435,10 +435,10 @@
       "fixable": false,
       "path": "prototype",
       "detail": {
-        "bytes": 77997553,
+        "bytes": 78614376,
         "kind": "dir"
       },
-      "message": "directory totals 77,997,553 B inside the vault"
+      "message": "directory totals 78,614,376 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

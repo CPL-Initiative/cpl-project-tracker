@@ -320,6 +320,19 @@ jobs:
           ( python3 kb/_build_ccr_atlas_extract.py && python3 prototype/build_ccr_atlas.py ) \
             || echo "::warning title=SkyView decision payload not rebuilt::kb/_build_ccr_atlas_extract.py or prototype/build_ccr_atlas.py failed — the Decisions column and the decision packs may lag the corpus until the next run. Check the step log."
 
+      # ── Step 4d3: SkyView's CPL payload (Session 238) ─────────────
+      # The CPL face and the articulations light read prototype/ccr_cpl.json:
+      # the articulation crosswalk joined to the curated agencies in
+      # credential_reference_data.js (step 3) and the articulated-exhibit feed in
+      # statewide_data.js — both regenerated above, so the payload is rebuilt
+      # every run (~5 s, local files only). tests/ccr_cpl_payload_test.py fails
+      # CI when the committed file is not a fresh build, which is why this step
+      # runs unconditionally rather than on a corpus-changed guard.
+      - name: Rebuild SkyView's CPL payload
+        run: |
+          python3 kb/_build_ccr_cpl.py --quiet \
+            || echo "::warning title=SkyView CPL payload not rebuilt::kb/_build_ccr_cpl.py failed — the CPL face and the articulations light read the previous build until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -354,6 +367,9 @@ jobs:
           # 4d2). ccr_universe.json is deliberately NOT here — the layout is
           # hand-rebuilt (Sam, 2026-09-06).
           git add prototype/ccr_atlas_data.json prototype/skyview.html 2>/dev/null || true
+          # SkyView's CPL payload (Step 4d3): the crosswalk joined to the curated
+          # agencies and the articulated-exhibit feed, rebuilt every run.
+          git add prototype/ccr_cpl.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay

@@ -1684,3 +1684,72 @@ any rule that paints a raw hex background with no dark-canvas counterpart.
 `npm run a11y skyview` 8/8 routes. The three key guards are mutation-tested:
 reverting each fix reproduces the reported symptom, including the refusal text
 and the two spellings side by side.
+
+## 2026-09-07 — Session 238 (SkyFacet III): the CPL face and the articulations light
+
+The eight rulings of the 2026-09-07 sheet became a build. Two controls sit next
+to Show in SkyView's row — **Courses | CPL** and **Articulations** — and the
+course outline of record gained its CPL layer.
+
+### What was built, and what each thing reads
+
+- **The payload** — `kb/_build_ccr_cpl.py` → `prototype/ccr_cpl.json` (509 KB,
+  fetched on demand, never on first paint). The join is the articulation
+  crosswalk (`kb/coci_articulations.json`), which is the same join the map's
+  `ar` badge is already counted from, so the lit set and the CPL face agree by
+  construction: **1,490 identities both ways**. The agencies come from the
+  curated CER (`credential_reference_data.js`, daily), not from the crosswalk's
+  inlined issuer — measured, the inlined issuer disagreed with the CER on
+  **1,743 of 4,592 records**, mostly a null where the CER had since been curated.
+  The articulated-exhibit universe is `statewide_data.js` (5,413 ids); 55
+  crosswalk exhibits are no longer in today's feed and are **flagged `s:1`,
+  never dropped** (Sam's ruling 5 of 2026-09-05). The daily run rebuilds the
+  payload every morning (Step 4d3) because the CI guard fails on a stale file.
+- **The light** — a gold glow and a thin ring (the palette's mustard, `--sky-lit`)
+  on a point with `ar`; nothing on the rest. Below the course zoom a discipline
+  holding a lit course carries the ring, because a control that answers only
+  past the zoom the map opens on reads as broken (the Show switches, 2026-09-05).
+  The Show menu keeps its articulation *filter*; the light is a different control.
+- **The face** — labels lead with the credential that reaches the point ("+N"
+  for more), the full band adds the issuer and the trainer where it differs, and
+  **a point nothing reaches is unlabeled**. Island labels gain "· N credentials"
+  only where any do. The hover, the panel and the discipline panel lead with the
+  credential; search indexes the credential vocabulary (names, agencies,
+  recommendations, exhibit titles) and rings every course a pick reaches.
+  `#skyview/cpl` is a link to the face.
+- **The outline's CPL layer** — built, uncapped, with both agencies; an empty
+  layer states the ceiling in words rather than reading as finished.
+
+### ⭐ The ruled coverage line carried two wrong numbers
+
+*"1,490 of 6,388 exhibits reach a course on this map."* 1,490 is the count of
+**identities** on the map with an articulation; the exhibits number **1,924**.
+And 6,388 is the credit funnel's exhibit count — a universe that shares only
+**570** ids with those 1,924, because the funnel is ACE-keyed (6,291 of 6,388)
+and the crosswalk is MAP-keyed. The built line reads **"1,924 of 5,497
+articulated exhibits reach a course on this map"**, computed from the payload's
+counts; the fixture's numbers (4 of 777) make a literal fail the suite.
+KB note: `methodology-a-coverage-line-takes-both-numbers-from-one-universe`.
+
+### Verified — Chromium, then jsdom
+
+Driven on the served page: the light at the opening zoom and at 88% in
+Welding; the face switch with its line; the island label *Welding (170) · 46
+credentials*; a vocabulary search ("american welding society" → 18 courses in
+one discipline); the panel and the hover on `WELD M1109` (7 credentials, 7
+exhibits); the outline's layer; the dark canvas; `#skyview/cpl` restoring the
+face. `npm run a11y skyview` passes all 9 routes (the CPL face is a route now)
+at 3 widths. Suites: `ccr_skyview_cpl_face` 62/62 (new), the seven existing
+SkyView suites unchanged, `ccr_cpl_payload_test.py` 13/13. Six mutations each
+fail the suite: the face never relabels (5), an unreached point gets a label (2),
+the light never draws (1), the light marks every point (1), the line quotes a
+literal (1), the trainer is dropped from the outline (2).
+
+### Small facts worth keeping
+
+- `shortCollege("Beta Community College")` is *Beta*: the suffix regex strips
+  "Community College" whole. A test that expected *Beta Community* was wrong.
+- The CER tab already renders **Issuing Agency** and **Trainer** columns (Rule
+  5f), so the "credential Exhibit" half of Sam's note was already true there.
+- Ids in the articulation feed can carry a literal TAB (`MAPCXS-F3\tF-1-001`);
+  a space-split list survives it, a whitespace split does not.

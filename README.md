@@ -198,7 +198,12 @@ The whole ecosystem, end-to-end:
    at the row's right step between the map inside COBI, the map alone and the
    browser's full screen; the map's More menu reaches the comprehensive view,
    the *Disciplines and subjects* workspace, *How SkyView works* and the table,
-   and `#unified-courses/list` opens the table directly —
+   and `#unified-courses/list` opens the table directly. Two words next to
+   *Show* (2026-09-07): **Courses | CPL** names each point by its course or by
+   the credential that reaches it — the curated name, the issuing and training
+   agencies, what it earns, the colleges holding it — and **Articulations**
+   lights the courses that carry one; the face says its own coverage and
+   `#skyview/cpl` links to it —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the

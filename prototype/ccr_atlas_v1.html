@@ -470,6 +470,21 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .u-sw.s2{background:var(--sky-sys2-stroke);border-color:var(--sky-sys2-stroke)}
 .u-sw.s3{background:var(--sky-sys3-stroke);border-color:var(--sky-sys3-stroke)}
 .u-sw.orphan{width:7px;height:7px;border:0;background:var(--sky-sys0-stroke);opacity:.6;margin:0 1.5px}
+/* the articulations light (2026-09-07): the swatch glows the way the point does */
+.u-sw.lit{background:var(--sky-lit-fill);border-color:var(--sky-lit);box-shadow:0 0 0 3px var(--sky-lit-glow)}
+/* the CPL face's coverage line: one sentence under the top row, computed, never quoted */
+.u-face-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;color:var(--text-muted);
+  background:var(--surface-subtle);border-bottom:1px solid var(--border)}
+.u-face-line[hidden]{display:none}
+/* the credentials reaching a course, in the panel and on the outline */
+.cpl-list{list-style:none;margin:.3em 0 0;padding:0}
+.cpl-list li{padding:.5em 0;border-top:1px solid var(--border)}
+.cpl-list .cpl-name{font-weight:600;color:var(--text-strong)}
+.cpl-list .cpl-ex{margin:.3em 0 0 .2em;line-height:1.45}
+.cpl-list .cpl-earn{color:var(--text-body)}
+.cpl-list .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
+.ol .cpl-list li{padding:.65em 0}
+.idlist.cpl-isl li{padding:.35em 0}
 .u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
        box-shadow:0 6px 18px rgba(20,20,30,.22)}
@@ -503,6 +518,10 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
   --sky-sq-moved-stroke:#2C601A; --sky-drag:#0047AB;
   --sky-sys0-fill:#F1EAFC; --sky-sys0-stroke:#6D28D9; --sky-sys1-fill:#E7EEF9; --sky-sys1-stroke:#0047AB;
   --sky-sys2-fill:#FBF1D8; --sky-sys2-stroke:#8B6800; --sky-sys3-fill:#EFEFEC; --sky-sys3-stroke:#5C5C55;
+  /* the articulations light (2026-09-07): the palette's mustard — the ring is the
+     mustard text tone (5.6:1 on white), the glow its fill at low alpha, and the
+     fill is for the receiving college's star. Read by ccr_universe.js readPal. */
+  --sky-lit:#8B6800; --sky-lit-glow:rgba(227,179,65,.32); --sky-lit-fill:#FBF1D8;
 }
 /* The dark canvas (Sam, 2026-09-05: "Dark mode selector"). Opt-in and remembered
    per browser; First Light stays a light identity, and this is the one
@@ -529,6 +548,7 @@ body.u-dark{
   --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
   --sky-sys0-fill:#2B2140; --sky-sys0-stroke:#B28DEB; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
   --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
+  --sky-lit:#E3B341; --sky-lit-glow:rgba(227,179,65,.28); --sky-lit-fill:#3A2E10;
   /* ⚠️ A ROW TINT MUST SIT UNDER THE CHIP IT CARRIES, NOT ON TOP OF IT. The
      "moved here" chip is #1F3320 here, so the row goes a step darker — the
      hunter border and the chip stay the signals, and the tint only says which

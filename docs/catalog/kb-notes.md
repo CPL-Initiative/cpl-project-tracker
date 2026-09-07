@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-398 document(s).
+399 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -61,6 +61,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A copy with no refresh path is a fossil](../kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A correct measurement can name the wrong place — re-check the attribution, not just the number](../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A count gate cannot see a reorder](../kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A coverage line takes both numbers from one universe](../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A crosswalk's value is the lint, not the mapping](../kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A curator ruling must be attributed data, not a code branch](../kb-notes/methodology-a-curator-ruling-must-be-attributed-data.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A deduplication has a scope, and the scope is one measure — not the record](../kb-notes/methodology-a-deduplication-has-a-scope.md) | methodology | published | 2026-08-23 | 2026-08-23 |

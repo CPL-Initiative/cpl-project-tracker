@@ -264,6 +264,10 @@ module.exports = {
        the map with its panes, and the workspace's three toggles. */
     routes: [
       { hash: "skyview", name: "skyview" },
+      /* The CPL face (Sam's rulings, 2026-09-07): the same map, named by the
+         credential that reaches each point, with its coverage line and the
+         two new controls in the row. */
+      { hash: "skyview/cpl", name: "skyview-cpl" },
       { hash: "comprehensive", name: "comprehensive" },
       { hash: "disciplines", name: "disciplines" },
       { hash: "subjects", name: "subjects" },
