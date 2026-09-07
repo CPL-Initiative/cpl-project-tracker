@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 396,
+   "count": 397,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2382,6 +2382,24 @@
      "title": "A similarity threshold can't bridge a zero-overlap synonym \u2014 use a curated synonym map",
      "type": "methodology",
      "updated": "2026-06-18"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "prototype/ccr_atlas_v1.html",
+      "tests/ccr_skyview_search_show.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "state",
+      "data-loss"
+     ],
+     "title": "A snapshot cannot be the authority on intent",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-23",
@@ -15783,5 +15801,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 808
+ "total": 809
 }

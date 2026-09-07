@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-396 document(s).
+397 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -136,6 +136,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
+| [A snapshot cannot be the authority on intent](../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot of a live model is a claim that decays](../kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer](../kb-notes/methodology-layer-scoped-soft-delete-dual-rendered-rows.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
