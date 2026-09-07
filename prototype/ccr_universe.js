@@ -1954,6 +1954,40 @@ window.__ccrGoSuggestion = function(s){
   if(had){ applyTokens(had); return true; }
   return addToken(t);
 };
+/* ⭐ THE WHOLE SELECTION, APPLIED ONCE (Sam, 2026-09-06: wait for Enter). The
+ * dropdown collects ticks without touching the map and hands the finished set
+ * here on Enter.
+ *
+ * ⚠️ ONE applyTokens() FOR THE WHOLE BATCH, NOT ONE PER ROW. addToken() applies
+ * as it adds, so looping it over four picks flies the map four times — three of
+ * them to places the reader never asked to see, each with its own zoom, and the
+ * last one wins. The tokens go in silently and the view is fitted once, at the
+ * end, to what the reader actually chose.
+ *
+ * Removals first: applyTokens() fits to whatever `tokens` holds when it runs,
+ * so a reader who unticks A and ticks B must not be shown the union of both on
+ * the way. Returns false when nothing changed, so Enter can fall through to a
+ * plain term search. */
+window.__ccrCommitSelection = function(add, dropKeys){
+  if(!U) return false;
+  if(!document.getElementById("u-cvs")) window.__ccrUniverse();
+  add = add || []; dropKeys = dropKeys || [];
+  if(!add.length && !dropKeys.length) return false;
+  dropKeys.forEach(function(k){ tokens = tokens.filter(function(x){ return x.key !== k; }); });
+  var last = null;
+  add.forEach(function(s){
+    var t = tokenFromSuggestion(s);
+    if(tokens.some(function(x){ return x.key === t.key; })) return;
+    tokens.push(t); last = t;
+  });
+  renderTokens();
+  if(!tokens.length){ searchHits=[]; searchTerm=""; setHint("Selection cleared."); draw(); return true; }
+  // `last` is the newest ADDITION, which applyTokens() focuses; a commit that
+  // only removed things has none, and passing null is what asks it to fit the
+  // remainder instead of flying to a row nobody just picked.
+  applyTokens(last);
+  return true;
+};
 /* The list's rows carry checkboxes (Sam, 2026-09-05: "should have checkboxes
  * to clarify" multi-select), so a pick from the LIST toggles: a ticked row
  * unticks. Only the list calls this; every other caller means "go there". */

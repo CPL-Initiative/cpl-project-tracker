@@ -998,9 +998,20 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     `rows=${rows.length} picked=${rows.filter((li) => li.classList.contains("picked")).length}`);
   const other = rows.find((li) => !li.classList.contains("picked"));
   other.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
-  check("(R3) a pick from the list keeps the list open, with the new tick and the term still in the box",
-    !q("#sug").hidden && qa("#sug li.picked").length === 2 && q("#gq").value === "weld" && st().tokens.length === 2,
-    `hidden=${q("#sug").hidden} picked=${qa("#sug li.picked").length} box=${q("#gq").value} tokens=${st().tokens.length}`);
+  /* ⭐ A TICK IS NOT A COMMIT (Sam, 2026-09-06: "Why not wait on that step until
+     the user hits enter"). The row ticks and the list stays open with the term
+     still in the box — all as before — but the token count does NOT move,
+     because applying the filter is what rebuilt the list and jumped it under a
+     reader who was still choosing. Enter is what applies it. */
+  check("(R3) a tick keeps the list open and marks the row, with the term still in the box",
+    !q("#sug").hidden && qa("#sug li.picked").length === 2 && q("#gq").value === "weld",
+    `hidden=${q("#sug").hidden} picked=${qa("#sug li.picked").length} box=${q("#gq").value}`);
+  check("(R3) ⭐ …but nothing is applied yet — the map is untouched until Enter",
+    st().tokens.length === 1, `tokens=${st().tokens.length}`);
+  q("#msearch").dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+  check("(R3) ⭐ Enter applies the ticked rows and dismisses the box",
+    st().tokens.length === 2 && q("#sug").hidden === true,
+    `tokens=${st().tokens.length} hidden=${q("#sug").hidden}`);
   q("#gq").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   w.__ccrClearSelection();
   // 1 · a pick switches on what it needs under Show, and the row's tooltip names what is hidden

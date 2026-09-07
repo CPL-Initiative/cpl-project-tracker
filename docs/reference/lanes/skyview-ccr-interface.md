@@ -87,6 +87,37 @@ shape (ESL proved it at 85:1); ~5,700 decisions, 97.1% ≤ 12 identities; 3,001
 carry NO discipline; decision packs exist for 5 of 159 disciplines; `CN:` names
 more than one course on 1,761 keys and those moves are refused with the reason.
 
+⭐ **TICKING COLLECTS; ENTER APPLIES (Sam, 2026-09-06: "why not wait on that step
+until the user hits enter").** A tick writes to a pending set and repaints ONE
+row — nothing re-ranks, rebuilds, reveals or moves, so there is no scroll to
+restore and no page count to keep in step. Enter commits the whole set and
+closes; Escape abandons it. A choosing session spans **every term the reader
+types**, because refining a search is how you hunt for the next thing to add.
+⚠️ Enter closing the list reverses item 6 of the same day, and is safe **only
+because ticking no longer commits**. If ticking is ever made to commit on the
+spot, item 6's protection must come back with it.
+
+⭐ **INTENT IS RECORDED, NEVER DERIVED BY SUBTRACTION.** `pendItem` holds the
+rows the reader ticked, `pendOff` the keys they explicitly unticked, and one
+`pendingEdit()` feeds the footer **and** the commit so the counter cannot promise
+what the commit will not do. ⚠️ The first cut derived removals as
+`have − pendKeys`, and that made Enter **destroy a chip nobody unticked**:
+`pendKeys` is seeded once per session, so anything committed outside that seed is
+absent from the snapshot and absence read as intent is a deletion. A snapshot
+cannot be the authority on intent — everything that happens outside it looks like
+a decision the reader made. Guarded by a check that names the destroyed key, not
+a count, so it cannot be satisfied by lowering an expectation.
+
+⭐ **v4 IS THE GOVERNING REVIEW, AND IT IS NOW IN THE REPO** —
+[`skyview_video4_findings.md`](../../skyview_video4_findings.md). ⚠️
+`skyview_video2_findings.md` is a **different, earlier** recording (6m50s vs
+6m18s) and the two lists must not be merged; the committed v2 transcript contains
+none of v4's rulings. Six of v4's eight items shipped in #1502/#1503. **Open:**
+a rehome gives the course no *staged-to-move* mark (the confirmation line already
+renders — frame 17 — so the fix is the mark, not the message); and the legend's
+`unified` carries no gloss while every other entry does. **Do not build**
+hover-on-the-title — he decided against it on camera.
+
 ## Measured in a browser — the durable warnings
 
 Both defects from Sam's 2026-09-06 recording are FIXED. What must not be lost is
@@ -100,6 +131,11 @@ how they were MIS-READ; the round-by-round is in
 `min-height` on `#u-bar` would have read as a fix and changed nothing.
 ⚠️ Chip tightening is bounded by **target size, not contrast**: `.u-tok-x` 24×24
 and `.u-tok-go` min-height 24px are on the WCAG 2.2 SC 2.5.8 AA floor.
+⭐ **That wrap can no longer fire WHILE THE READER IS PICKING** — deferring the
+commit means no chip exists until Enter, and by then the list is shut. Measured
+in Chromium at 1440px, four consecutive ticks: `#u-bar` 30 → 30, `#sug` top
+75.0 → 75.0, 60 → 60 rows. The layout finding above still holds for chips that
+land; it is the *selection* path that no longer reaches it.
 
 ⚠️ **THE PICKS DIED ON THE WAY OUT.** `homeSearch()` called `clearTokens()` and
 `setCrumbs()` calls it on every view entry, so `__ccrTokenKeys()` already read
@@ -129,14 +165,10 @@ stand-alones).
 
 ## Sam's three earlier rulings, 2026-09-06 — shipped
 
-Enter closes the search panel (a reversal he flagged himself; sort control to
-the list's top right, an Enter button at the bottom, and `markSug` addressing
-rows by `id` because the header is a child of the listbox); double-click opens
-the course outline (split by what is under the pointer, with a panel button
-because a double-click is undiscoverable and unreachable from a keyboard); the
-chip row reserves its space. ⚠️ Ruling 1 did **not** touch `takeHighlighted()` —
-Enter on a highlighted row is the multi-select pick. Detail:
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+Enter closes the search panel; double-click opens the course outline; the chip
+row reserves its space. Sort control at the list's top right, Enter button at
+the bottom, `markSug` addressing rows by `id` because the header is a child of
+the listbox. Detail: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## The outline of record — BUILT (S235)
 

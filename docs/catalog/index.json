@@ -9961,7 +9961,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 77,
+   "count": 79,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11187,6 +11187,16 @@
      "updated": ""
     },
     {
+     "created": "",
+     "governs": [],
+     "path": "docs/deferred_commit_handoff.md",
+     "status": null,
+     "tags": [],
+     "title": "SkyView search: the deferred commit \u2014 handoff",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-09-06",
      "governs": [
       "prototype/skyview.html"
@@ -11393,6 +11403,20 @@
      "title": "Video Project 2 \u2014 what Sam's screen recording actually shows",
      "type": null,
      "updated": "2026-09-06"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "path": "docs/skyview_video4_findings.md",
+     "status": null,
+     "tags": [
+      "skyview",
+      "video-review",
+      "findings"
+     ],
+     "title": "Video v4 \u2014 SkyView, 6m18s, 2026-09-06: the review the deferred commit came from",
+     "type": null,
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-05",
@@ -12134,8 +12158,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 210,
+   "count": 211,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 237,
+     "path": "docs/session_237_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the deferred commit landed; the two CPL views are still unbuilt",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-06",
      "governs": [],
@@ -15746,5 +15783,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 805
+ "total": 808
 }

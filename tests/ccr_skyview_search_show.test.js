@@ -222,12 +222,16 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(1) ⭐ revealing a page grows the list past 60", now > 60, `${now} options`);
     check("(1) ⭐ and the rows already on screen do not move (ranked once, not re-cut)",
       qa("#sug li[role=option] .sg-l").slice(0, 10).map((e) => e.textContent).join("|") === firstTen.join("|"));
-    /* ⚠️ THE COUNT MOVED TO THE HEADER (Sam's ruling 1, 2026-09-06): the sort
-     * control went to the list's top right and took the count with it, and an
-     * Enter button took its place in the bottom row. */
+    /* ⚠️ THE COUNT MOVED TO THE HEADER with the order control (Sam's ruling 1,
+     * 2026-09-06: "I did ask for this sort by name to be moved in the upper
+     * right corner"). The footer is now the way OUT — it carries the Enter
+     * button and the pending counter — so the count is asserted where a reader
+     * now reads it. */
     check("(1) the header counts what is shown against what is ranked",
       /Showing \d+ of \d+/.test((q("#sug .sug-head")||{}).textContent||""),
       (q("#sug .sug-head")||{}).textContent||"∅");
+    check("(1) ⭐ and the header is the FIRST child, so it is what you read first",
+      q("#sug").firstElementChild === q("#sug .sug-head"));
   }
   check("(1) the list is tall enough to be worth scrolling and clips rather than overflowing",
     /max-height:min\(70vh,620px\);overflow-y:auto/.test(tpl));
@@ -475,17 +479,36 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   await tick();
   gq11.focus();
   const nBefore = w.__ccrTokenKeys().length;
+  const keysBefore = w.__ccrTokenKeys();
 
-  // 11a — THE LIST STAYS WHERE IT WAS ON MULTI-SELECT. Sam: "focus jumps back
-  // to the search bar on every selection when picking multiple courses and
-  // should stay put." openSug() rebuilds the list with `scrollTop = 0`, so with
-  // S231's 60-row dropdown every tick threw the reader back to the top.
-  // ⚠️ The first draft of this fix FORCED focus onto the search box, which is
+  // 11a — TICKING IS NOT COMMITTING, AND THE LIST DOES NOT MOVE. Sam,
+  // 2026-09-06: "Seems the problem is firing the routine to add the filter is
+  // the problem. Why not wait on that step until the user hits enter."
+  //
+  // ⚠️ THIS REPLACES THE S233 CONTRACT, WHICH COULD NOT HOLD. That fix kept
+  // committing on every tick and tried to put the scroll offset back after
+  // openSug() rebuilt the list — but openSug() also resets `sugShown` to one
+  // page, so a reader who had revealed 120 rows had the list collapse to 60
+  // underneath them and the restored offset then pointed at a different row.
+  // The scroll assertion below is the same assertion; it now holds because
+  // NOTHING REBUILDS, not because the offset is carefully restored.
+  //
+  // ⚠️ The first draft of the old fix FORCED focus onto the search box, which is
   // the complaint restated as a feature — and this suite caught it by passing
   // just as well without it (jsdom: the mousedown preventDefault means focus
   // never leaves #gq). What was actually moving was the scroll.
-  const row11 = unpicked();
-  check("(11a) the list offers an unpicked row", !!row11);
+  /* ⚠️ TAKE THE LAST UNTICKED ROWS, NOT THE FIRST. The fixture's "weld" ranks
+   * its two DISCIPLINES first, and one of them is already a committed token
+   * from §10 — so `unpicked()` walks into the discipline block and the two
+   * clicks land on rows whose state the earlier sections already own. Verified
+   * in a real browser that two consecutive ticks do register and the footer
+   * reads "2 to add"; this was the harness picking the wrong rows, not the
+   * page. The tail of the list is plain course rows nothing else has touched. */
+  const free11 = qa("#sug li[role=option]").filter((li) => li.getAttribute("aria-selected") !== "true");
+  const row11 = free11[free11.length - 1];
+  const second11pick = free11[free11.length - 2];
+  check("(11a) the list offers two untouched rows to tick",
+    !!row11 && !!second11pick && row11 !== second11pick, `${free11.length} free`);
   const sug11 = q("#sug");
   // jsdom reports 0 for every layout box, so give the element a real scroll
   // extent to move: without this the assertion passes on 0 === 0 and proves
@@ -500,20 +523,75 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   });
   row11 && row11.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
   await tick();
-  check("(11a) ⭐ the pick lands", w.__ccrTokenKeys().length === nBefore + 1,
+  check("(11a) ⭐ a tick does NOT commit — the filter waits for Enter",
+    w.__ccrTokenKeys().length === nBefore,
     `${nBefore} -> ${w.__ccrTokenKeys().length}`);
+  check("(11a) ⭐ but the row shows ticked, so the reader can see what they chose",
+    row11 && row11.getAttribute("aria-selected") === "true");
   check("(11a) ⭐ the list is still where the reader left it, not snapped back to the top",
     scrollNow === 900, `scrollTop = ${scrollNow}`);
   check("(11a) focus never left the search box, so the keyboard still works",
     d.activeElement === gq11 || d.activeElement === d.body,
     `activeElement = ${d.activeElement && (d.activeElement.id || d.activeElement.tagName)}`);
-  const second11 = unpicked();
+  const second11 = second11pick;
   second11 && second11.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
   await tick();
-  check("(11a) a second pick lands, and the list still has not moved",
-    w.__ccrTokenKeys().length === nBefore + 2 && scrollNow === 900,
+  check("(11a) a second tick also waits, and the list still has not moved",
+    w.__ccrTokenKeys().length === nBefore && scrollNow === 900,
     `n=${w.__ccrTokenKeys().length} scrollTop=${scrollNow}`);
+  /* ⭐ 11b — A TICK SURVIVES REFINING THE TERM. Sam, 2026-09-06, watching this
+     fail on screen: he ticked "Introduction to Welding" on `weldi`, typed one
+     more letter, and the tick was gone — the row still listed, still matching,
+     no longer ticked. openSug() re-seeded the pending set on every keystroke,
+     on the theory that a new term is a new choosing session. It is not:
+     refining a search is HOW you hunt for the next thing to add.
+
+     ⚠️ This is the regression guard. If seeding ever moves back into the
+     per-term path, this check fails and the picks are being thrown away again. */
+  const tickedNow = qa("#sug li[role=option].picked").length;
+  check("(11b) two rows are ticked before the term changes", tickedNow === 2, `${tickedNow} ticked`);
+  gq11.value = "weldi";
+  gq11.dispatchEvent(new w.Event("input", { bubbles: true }));
+  await tick();
+  check("(11b) ⭐ refining the term KEEPS the ticks — nothing the reader picked is discarded",
+    qa("#sug li[role=option].picked").length === 2,
+    `${qa("#sug li[role=option].picked").length} still ticked`);
+  check("(11b) …and the footer still counts them, so Enter's promise matches the ticks",
+    /2 to add/.test((q("#sug .sug-pend") || {}).textContent || ""),
+    (q("#sug .sug-pend") || {}).textContent || "∅");
+  /* ⚠️ COMMIT AND ESCAPE ARE ASSERTED AT THE END OF THE SUITE, NOT HERE.
+   * Committing rewrites the token list, and doSearch() on a bare Enter REPLACES
+   * it with a single term token — so running either here silently changed the
+   * state that §11b (chips) and §11c (Fit all) read a few lines further down,
+   * and those two started failing for a reason that had nothing to do with them.
+   * See "(16) the deferred commit" at the foot of this file. */
   delete sug11.scrollTop;
+  /* …but the two ticks above DO have to be applied before §11b and §11c read
+     the chips. Under the old design the ticks were already committed by the
+     time those sections ran; now Enter is what commits, so this stands in for
+     the reader pressing it. Without it §11b sees one chip and fails for a
+     reason that is not about chips at all. */
+  q("#msearch").dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+  await tick();
+  check("(11a) ⭐ Enter applies both ticks, so the selection is now two picks",
+    w.__ccrTokenKeys().length === nBefore + 2,
+    `${nBefore} -> ${w.__ccrTokenKeys().length}`);
+  /* ⭐ AND IT DESTROYS NOTHING ON THE WAY. This is the assertion the count above
+     could only report as "1 -> 2": the commit was removing an ALREADY-COMMITTED
+     pick that the reader never touched. `pendKeys` is seeded once per session, so
+     a token committed outside that seed is missing from it — and while removals
+     were DERIVED (`have` minus `pendKeys`), that absence read as an untick and
+     Enter silently deleted the chip. Here `disc:Welding` is committed by §10 and
+     is nowhere near the two rows §11a ticks; it must survive them.
+
+     ⚠️ If removals ever go back to being derived by subtraction, the count
+     assertion above still passes the moment someone "fixes" it by expecting
+     nBefore + 1. THIS one names what actually went wrong, so it cannot be
+     satisfied by lowering the expectation. */
+  const keysAfter = w.__ccrTokenKeys();
+  const lost = keysBefore.filter((k) => keysAfter.indexOf(k) < 0);
+  check("(11a) ⭐ …and a pick the reader never touched is NOT removed by the commit",
+    lost.length === 0, lost.length ? `destroyed: ${JSON.stringify(lost)}` : "all survived");
 
   // 11b — FULL TITLE ON HOVER FOR THE FILTER CHIPS. `.u-tok-l` is
   // text-overflow:ellipsis, so the tooltip is the only way to read a clipped
@@ -789,23 +867,80 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("(15) the list is open before Enter", !q("#sug").hidden);
     form.dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
     await tick();
-    /* ⭐ REVERSED, BY SAM, THE SAME MORNING (ruling 1, 2026-09-06): "after I
-     * click enter, I really think it should close this, even though we made a
-     * prior decision on that."
+    /* ⭐ ENTER DISMISSES (Sam, 2026-09-06: "Enter should dismiss the box").
      *
-     * ⚠️ THE ORIGINAL ASSERTION HERE WAS RIGHT ABOUT ITS EVIDENCE AND WRONG
-     * ABOUT ITS FIX, WHICH IS WHY IT IS REPLACED RATHER THAN DELETED. Item 6
-     * made Enter leave the list up because an Enter-closes behavior was what
-     * made an intro course look absent. The course was actually missing from
-     * the RANKING — "weldi" lost it, guarded above at (14) — so once that was
-     * fixed, keeping the panel open was solving a bug that no longer existed at
-     * the cost of a panel that would not go away. */
-    check("(15) ⭐ Enter runs the search and CLOSES the list",
-      q("#sug").hidden, q("#sug").hidden ? "closed" : "still open");
+     * ⚠️ THIS REVERSES THE ITEM-6 CONTRACT OF THE SAME DAY, and the reversal is
+     * only safe because ticking no longer commits. Item 6 ("Enter no longer
+     * hides the answer") was aimed at Enter GUESSING: it closed the list and
+     * flew the map on a RANKING, so the intro course Sam was hunting vanished
+     * behind a dismissal he never asked for. Enter now closes on rows the
+     * reader ticked by hand — nothing is guessed, so nothing is lost.
+     *
+     * If ticking is ever made to commit on the spot again, item 6's protection
+     * has to come back with it, or the original bug returns. Here it is asserted
+     * with NOTHING ticked, which is the case item 6 actually cared about: a bare
+     * term search must still dismiss, because the reader typed and pressed Enter
+     * rather than choosing a row. */
+    check("(15) ⭐ Enter dismisses the box, even on a bare term with nothing ticked",
+      q("#sug").hidden === true, q("#sug").hidden ? "closed" : "open");
+    check("(15) …and the map search still ran, so Enter still means 'search'",
+      typeof w.__ccrTokenKeys === "function");
     /* The button in the list's bottom row is the same call as the key, so the
      * two cannot drift apart. */
     check("(15) the Enter button and the Enter key are one behavior",
       /function runSearch\(\)/.test(tpl) && /goBtn\.addEventListener\("mousedown"/.test(tpl));
+  }
+
+  /* ══ 16 · THE DEFERRED COMMIT ═══════════════════════════════════════════════
+   * Sam, 2026-09-06: "Seems the problem is firing the routine to add the filter
+   * is the problem. Why not wait on that step until the user hits enter." And:
+   * "Enter should dismiss the box."
+   *
+   * ⚠️ LAST IN THE FILE ON PURPOSE. Both halves rewrite the token list — a
+   * commit adds to it, and a bare Enter runs doSearch(), which REPLACES it with
+   * one term token. Anywhere earlier and every later section reads a selection
+   * this block invented. */
+  {
+    const gq16 = q("#gq");
+    gq16.value = "welding";
+    gq16.dispatchEvent(new w.Event("input", { bubbles: true }));
+    await tick();
+    gq16.focus();
+    const n16 = w.__ccrTokenKeys().length;
+    const free16 = qa("#sug li[role=option]").filter((li) => li.getAttribute("aria-selected") !== "true");
+    const a16 = free16[free16.length - 1], b16 = free16[free16.length - 2];
+    check("(16) two untouched rows to tick", !!a16 && !!b16 && a16 !== b16);
+    a16.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+    b16.dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+    await tick();
+    check("(16) ⭐ two ticks, and NOTHING is applied yet",
+      w.__ccrTokenKeys().length === n16 && w.__ccrPendKeys().length === n16 + 2,
+      `committed=${w.__ccrTokenKeys().length} pending=${w.__ccrPendKeys().length}`);
+    q("#msearch").dispatchEvent(new w.Event("submit", { bubbles: true, cancelable: true }));
+    await tick();
+    check("(16) ⭐ Enter applies BOTH ticked rows in one go",
+      w.__ccrTokenKeys().length === n16 + 2, `${n16} -> ${w.__ccrTokenKeys().length}`);
+    check("(16) ⭐ and Enter dismisses the box", q("#sug").hidden === true);
+
+    /* Escape abandons. Enter and Escape are the only two ends to a choosing
+       session, so a tick must not survive an Escape and leak into the next
+       hunt — Enter would then apply rows picked minutes ago for something else. */
+    const n16b = w.__ccrTokenKeys().length;
+    gq16.value = "welding";
+    gq16.dispatchEvent(new w.Event("input", { bubbles: true }));
+    await tick();
+    const free16b = qa("#sug li[role=option]").filter((li) => li.getAttribute("aria-selected") !== "true");
+    free16b[free16b.length - 1].dispatchEvent(new w.MouseEvent("mousedown", { bubbles: true, cancelable: true }));
+    await tick();
+    check("(16) a tick is pending before the Escape", w.__ccrPendKeys().length === n16b + 1);
+    gq16.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    await tick();
+    gq16.value = "welding";
+    gq16.dispatchEvent(new w.Event("input", { bubbles: true }));
+    await tick();
+    check("(16) ⭐ Escape abandons the tick — it does not leak into the next session",
+      w.__ccrPendKeys().length === n16b,
+      `pending=${w.__ccrPendKeys().length} committed=${n16b}`);
   }
 
   done();

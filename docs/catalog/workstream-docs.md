@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-77 document(s).
+79 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -79,6 +79,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Sierra vendor-integration lane — session handoff](../sierra_vendor_lane_handoff.md) | `sierra_vendor_lane_handoff.md` | 2026-07-03 | 2026-07-03 |
 | [Sierra — technical reference (how the CPL assistant is built)](../sierra_technical_reference.md) | `sierra_technical_reference.md` | 2026-07-02 | 2026-07-02 |
 | [Similar-course FAMILY consolidation lane — scope + measure-first](../similar_course_family_scope.md) | `similar_course_family_scope.md` | 2026-06-16 |  |
+| [SkyView search: the deferred commit — handoff](../deferred_commit_handoff.md) | `deferred_commit_handoff.md` |  |  |
 | [SkyView troubleshooting brief — for a Claude Desktop computer-use session (observe and log only)](../skyview_troubleshooting_brief.md) | `skyview_troubleshooting_brief.md` | 2026-09-06 | 2026-09-06 |
 | [SkyView — drag any local course, queue the breakage, batch the re-mint](../skyview_drag_rehome_scope.md) | `skyview_drag_rehome_scope.md` | 2026-08-24 | 2026-08-24 |
 | [Team-phrase auth expansion — recommendation + execution plan](../team_phrase_expansion_plan.md) | `team_phrase_expansion_plan.md` | 2026-07-03 |  |
@@ -89,6 +90,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [UC-CUR → Z-scheme re-mint — scope](../uc_cur_zscheme_remint_scope.md) | `uc_cur_zscheme_remint_scope.md` | 2026-06-15 |  |
 | [Unverified-M-ID renumber re-mint — close the gaps + re-sort](../unverified_mid_renumber_scope.md) | `unverified_mid_renumber_scope.md` | 2026-06-23 |  |
 | [Video Project 2 — what Sam's screen recording actually shows](../skyview_video2_findings.md) | `skyview_video2_findings.md` | 2026-09-06 | 2026-09-06 |
+| [Video v4 — SkyView, 6m18s, 2026-09-06: the review the deferred commit came from](../skyview_video4_findings.md) | `skyview_video4_findings.md` | 2026-09-07 | 2026-09-07 |
 | [Working with Claude Code — a guide for the MAP team](../working_with_claude_code.md) | `working_with_claude_code.md` | 2026-08-05 |  |
 | [Workplan single-source editor + reflect-all + reorg-rekey completion — workstream handoff](../workplan_single_source_editor_handoff.md) | `workplan_single_source_editor_handoff.md` | 2026-07-27 | 2026-07-27 |
 | [§55050 — draft amendment package implementing Ed. Code Article 9](../t5_55050_amendment_package_draft.md) | `t5_55050_amendment_package_draft.md` | 2026-08-26 | 2026-08-26 |

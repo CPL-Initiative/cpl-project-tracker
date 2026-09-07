@@ -1802,3 +1802,43 @@ Fixed by longest-n-gram-per-position, a containment guard with a ratio
 exception, and segmenting on punctuation first. **94.6% of member courses carry
 a description, but only 30.0% of identities have 2+** — stand-alones carry
 exactly one, so each outline states its own evidence.
+
+
+## S236 — the deferred commit, and a removal derived instead of recorded
+
+Sam ran this on a local desktop session against the 2026-09-06 recording, pushed
+`claude/video-project-2-frames`, and it sat without a PR while `main` moved two
+PRs ahead. Both sides then changed the same dropdown from the same review.
+
+**The merge was a synthesis, not a pick-a-side.** Main kept: the masthead fix
+(the branch still wrote `"prototype v1 — "` into the aria-label, so taking it
+wholesale would have regressed a shipped fix), `runSearch()` so the button and
+the key stay one call, and `markSug`'s id-addressing. The branch kept: the whole
+deferred-commit model and the footer's pending counter. They turned out to agree
+once combined — with `takeHighlighted()` meaning "commit the pending set", main's
+submit handler already expressed the branch's semantics.
+
+⚠️ **A HANDOFF'S OWN DIAGNOSIS IS A HYPOTHESIS, NOT A FINDING.** The branch's
+handoff named `.filter(Boolean)` in `commitPending()` as the cause of a lost pick
+and `keyOf()` vs `tokenFromSuggestion().key` as the prime suspect. Both were
+wrong, and cheap to disprove: `__ccrTokenKey` **is** `tokenFromSuggestion(s).key`
+— the same call, so they cannot disagree — and one `console.error` in the commit
+showed `add` carrying both items with distinct keys and `.filter(Boolean)`
+dropping nothing. The defect was on the other side of the commit entirely, and it
+was worse than reported: not "a pick is silently lost" but "an already-committed
+pick is silently destroyed". Instrument before you accept an inherited cause.
+
+⚠️ **`.video-context/` IS GITIGNORED, AND MAIN STILL CARRIES TWO FILES FROM IT.**
+#1501 made a per-file decision inside that directory — frames out, transcript in
+(Sam's own words, quoted throughout the findings doc). Removing the directory
+wholesale on the strength of the ignore rule deleted a file main holds, and CI
+caught it. Check what `origin/main` actually holds before removing a path.
+
+⚠️ **The triplication warning in the handoff was wrong.** It said the dropdown is
+maintained by hand in three files. `prototype/skyview.html` is GENERATED —
+`build_ccr_atlas.py` inlines `ccr_universe.js` and the payloads into
+`ccr_atlas_v1.html`. Resolve the sources, then regenerate.
+
+⚠️ **Ruling 1's note that it "did not touch `takeHighlighted()`" is retired.**
+That was true when ticking committed on the spot; `takeHighlighted()` now commits
+the pending set, and there is no immediate multi-select pick to protect.
