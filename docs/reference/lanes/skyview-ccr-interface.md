@@ -40,8 +40,11 @@ stand-alone orbits its best-matching identity; drag and drop is real with a
 keyboard path. A course opens its **outline of record** (S235). **Since S238
 the map has two faces and a light:** *Courses | CPL* names each point by its
 course or by the credential that reaches it, *Articulations* lights what
-carries one, and the outline's CPL layer is built (#1508). Rounds and measurements:
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+carries one, and the outline's CPL layer is built (#1508). **Since S239 a
+staged move is marked on the course itself** (v4 item 7, #1513) and **the
+sphere placement is a daily artifact** (`prototype/ccr_sky.json`). The globe
+is RULED IN; its design calls are on a sheet awaiting Sam (NEEDS SAM ⑧).
+Rounds and measurements: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## Invariants — do not violate these
 
@@ -94,21 +97,47 @@ absolute priority — correct for reading, and it eclipses the destination a
 curator aims at. `pick(px,py,forDrop)` resolves circles only while carrying.
 ⚠️ Neither rule may be widened onto the other.
 
+⭐ **A STAGED MOVE IS MARKED ON THE MODEL, AND EVERY VIEW ASKS IT** (S239, v4
+item 7). `stagedHere` / `stagedAwayFrom` / `stagedWords` are the only way a
+view learns about a staged move; the words are written once (*staged here —
+not saved* · *staged to move to ⟨title⟩ — not saved*). The destination's row
+and star say it; the origin still DRAWS the course as a dashed ghost star and
+lists it under *Staged to move away* with a *Put back*; labels, hovers and the
+outline's band count it. A move record keeps the course's `home`. ⚠️ A view
+that reads `movedTo` directly to decide what to SAY is the drift this exists
+to prevent — the sphere reads the same helpers.
+[`methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it`](../../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md).
+
+⚠️ **THE DOCKED PANEL NARROWS THE CANVAS** (S239, measured in Chromium). Opening
+an identity docks the details panel and the canvas loses its width, so a
+screen position computed from the canvas rect BEFORE the open is stale after
+it — a drive that clicks the center (right either way) and then drops on a
+neighbor computed earlier lands on empty space. Measure after the open. jsdom
+cannot see this (every rect is zero).
+
+⭐ **THE SPHERE PLACEMENT IS A DAILY ARTIFACT** (S239): `kb/_build_ccr_sky.py`
+→ `prototype/ccr_sky.json` (34 KB) — each island's center on the sphere three
+ways (committed · spread · by kind, as longitude/latitude in degrees) with the
+CTE share and its base; points are placed in the browser from their island's
+center and their flat-map offset (`radians_per_unit`, the prototype's
+`expmap`). The builder fingerprints its inputs and relaxes only on a change
+(~90 s); `--check` and `tests/ccr_sky_payload_test.py` run in half a second
+(Step 4d4). A discipline's side is HELD across 0.6/0.4 by a 0.05 margin.
+`prototype/globe/globe_layout.py` IMPORTS the relaxation (single source; the
+globe page rebuilds byte for byte). ⚠️ The kind is TOP's one sanctioned use as
+a display arrangement, never a classification; the reading rests on 24% of
+points, carried as `base` per island.
+
 ⚠️ **A REFUSAL THAT PRINTS OUT OF SIGHT IS A DEAD CONTROL.** `#u-hint` sits at
 the foot of the window; `#u-writes` is inside `#u-below`, which `body.u-solo` —
 the default — never paints. Anything that can say *no* says it where the hand
 is: the carry rings its destination and names it.
 
 ⭐ **ONE SKILL, ONE ROW — FOLD THE KEY, KEEP THE COLLEGES' WORDS** (S237).
-`olWords()` keeps a hyphen inside a token, so `flux-cored arc welding` is a
-3-token phrase and `flux cored arc welding` a 4-token one. ⚠️ **Fold at the
-COUNTING step, never by collapsing finished rows** — the chip counts COLLEGES,
-so one college writing it both ways counts once and two spelling it differently
-count twice. Display the spelling the most colleges published. ⚠️ `sses` belongs
-in the `-es` family or *processes* stems to *processe*. **The fold stands as
-shipped** (Sam, 2026-09-07): all 39 families touching a word whose singular means
-something else pair real variants of one name; a key can be a non-word (*sery
-solution*) and the key is never shown. A bad pair goes on a do-not-fold list.
+Fold at the COUNTING step, never by collapsing finished rows (the chip counts
+COLLEGES); display the spelling the most colleges published; `sses` belongs in
+the `-es` family. **The fold stands as shipped** (Sam, 2026-09-07); a bad pair
+goes on a do-not-fold list. Detail in the lessons doc.
 
 ⚠️ **A REVIEWER'S REMOVAL IS RECORDED, NEVER DERIVED.** The imputation re-runs
 whenever a description lands, so storing *what is left* would silently delete
@@ -158,54 +187,36 @@ shape (ESL proved it at 85:1); ~5,700 decisions, 97.1% ≤ 12 identities; 3,001
 carry NO discipline; decision packs exist for 5 of 159 disciplines; `CN:` names
 more than one course on 1,761 keys and those moves are refused with the reason.
 
-⭐ **TICKING COLLECTS; ENTER APPLIES (Sam, 2026-09-06: "why not wait on that step
-until the user hits enter").** A tick writes to a pending set and repaints ONE
-row — nothing re-ranks, rebuilds, reveals or moves, so there is no scroll to
-restore and no page count to keep in step. Enter commits the whole set and
-closes; Escape abandons it. A choosing session spans **every term the reader
-types**, because refining a search is how you hunt for the next thing to add.
-⚠️ Enter closing the list reverses item 6 of the same day, and is safe **only
-because ticking no longer commits**. If ticking is ever made to commit on the
-spot, item 6's protection must come back with it.
+⭐ **TICKING COLLECTS; ENTER APPLIES** (Sam, 2026-09-06). A tick writes to a
+pending set and repaints ONE row; Enter commits the set and closes; Escape
+abandons; a choosing session spans every term typed. ⚠️ Enter closing the list
+is safe **only because ticking no longer commits**.
 
 ⭐ **INTENT IS RECORDED, NEVER DERIVED BY SUBTRACTION.** `pendItem` holds the
-rows the reader ticked, `pendOff` the keys they explicitly unticked, and one
-`pendingEdit()` feeds the footer **and** the commit so the counter cannot promise
-what the commit will not do. ⚠️ The first cut derived removals as
-`have − pendKeys`, and that made Enter **destroy a chip nobody unticked**:
-`pendKeys` is seeded once per session, so anything committed outside that seed is
-absent from the snapshot and absence read as intent is a deletion. A snapshot
-cannot be the authority on intent — everything that happens outside it looks like
-a decision the reader made. Guarded by a check that names the destroyed key, not
-a count, so it cannot be satisfied by lowering an expectation.
+ticks, `pendOff` the explicit unticks, and one `pendingEdit()` feeds the footer
+**and** the commit. ⚠️ Deriving removals as `have − pendKeys` made Enter destroy
+a chip nobody unticked ([`methodology-a-snapshot-cannot-be-the-authority-on-intent`](../../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md)).
 
 ⭐ **v4 IS THE GOVERNING REVIEW, AND IT IS NOW IN THE REPO** —
 [`skyview_video4_findings.md`](../../skyview_video4_findings.md). ⚠️
 `skyview_video2_findings.md` is a **different, earlier** recording (6m50s vs
 6m18s) and the two lists must not be merged; the committed v2 transcript contains
-none of v4's rulings. Seven of v4's eight items have shipped (#1502/#1503; the
-legend's `unified` gloss and the id hovers in S238). **Open:** a rehome gives the
-course no *staged-to-move* mark (the confirmation line already renders — frame
-17 — so the fix is the mark, not the message). **Do not build**
-hover-on-the-title — he decided against it on camera.
+none of v4's rulings. All eight of v4's items have shipped (#1502/#1503; the legend's `unified`
+gloss and the id hovers in S238; the staged-to-move mark in S239, #1513).
+**Do not build** hover-on-the-title — he decided against it on camera.
 
 ## Measured in a browser — the durable warnings
 
-⚠️ **jsdom cannot see any of this.** Every finding below came from driving the
-served page; the round-by-round is in
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md), the reusable lessons in
-[`methodology-a-correct-measurement-can-name-the-wrong-place`](../../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md)
-and
-[`methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing`](../../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md).
+⚠️ **jsdom cannot see any of this** — every finding came from the served page
+([`ccr_atlas_lessons`](../../ccr_atlas_lessons.md);
+[`methodology-a-correct-measurement-can-name-the-wrong-place`](../../kb-notes/methodology-a-correct-measurement-can-name-the-wrong-place.md),
+[`methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing`](../../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md)).
+⚠️ It is `.sugwrap` that wraps, not `#u-bar`; chip tightening is bounded by
+target size (24×24, SC 2.5.8). ⚠️ The picks died on the way OUT (`setCrumbs()`
+calls `clearTokens()`). ⚠️ Sam retracted a finding on camera — read a recording
+to the end first.
 
-⚠️ **IT IS `.sugwrap` THAT WRAPS, NOT `#u-bar`** — a `min-height` on `#u-bar`
-would have read as a fix and changed nothing. Chip tightening is bounded by
-**target size, not contrast** (`.u-tok-x` 24×24 is the SC 2.5.8 floor).
-⚠️ **THE PICKS DIED ON THE WAY OUT** — `setCrumbs()` calls `clearTokens()` on
-every view entry, so diagnosing the return path would have fixed nothing.
-⚠️ **Sam RETRACTED a finding on camera.** Read a recording to the end first.
-
-The round-by-round of what was driven on the served page (S237's six circles under one star, S238's CPL face and a11y run) is in the lessons doc, dated.
+The round-by-round of every served-page drive (S237–S239) is in the lessons doc, dated.
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
@@ -217,17 +228,13 @@ S238 checkpoint); the ones still open are NEEDS SAM below.
 
 ## The outline of record — BUILT (S235, CPL layer S238)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (50 checks).
-⭐ **The description is CHOSEN, never written** — the medoid member catalog
-description, quoted and attributed. Sam's MAP-Generated sentence prints verbatim.
-⭐ **Two level axes, neither derived** — the course's off its title, a skill's
-off its own words. ⚠️ **Confidence is agreement BETWEEN colleges**: a course
-carried by ONE college reads "the only college teaching it", one with a single
-catalog "the only college with a description". ⚠️ **Skill phrases need
-punctuation-aware n-grams, longest-name-wins and the fold above.** ⭐ **A
-reviewer may add a skill and take one out** — staged, nothing written. **The CPL
-layer** lists every credential reaching the course with both agencies; an empty
-layer states the ceiling in words rather than reading as finished.
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`. ⭐ The
+description is CHOSEN, never written (the medoid member catalog, attributed);
+Sam's MAP-Generated sentence prints verbatim. ⭐ Two level axes, neither
+derived. ⚠️ Confidence is agreement BETWEEN colleges. ⭐ A reviewer may add a
+skill and take one out — staged, nothing written. The CPL layer lists every
+credential reaching the course with both agencies; an empty layer states the
+ceiling in words.
 
 ## NEEDS SAM
 
@@ -246,33 +253,39 @@ vanish or ghost.
 so his call under his own glyph rule.
 ⑦ **The CPL face is on the map — his eye on it.** `#skyview/cpl`: does the
 credential-led label read right at his zoom, and is *Articulations* the word?
-⑧ **The sphere's design calls, before the port's code** (Sam ruled the globe in,
-2026-09-07: *"Looks great! Let's go with it in next session"*): which view opens;
-whether the flat map stays; the Day sky against the dark-canvas doctrine; motion
-by default beside reduced motion; curation gestures on a curve; By kind as the
-default. One sheet, reply chips, one sitting — the handoff lists them.
+⑧ **The sphere's design calls — THE SHEET IS OUT, replies pending** (S239):
+`docs/visuals/2026-09-07-eight-calls-before-the-sky-goes-in.html`, artifact
+https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d (read the
+replies FIRST with the Artifact tool's `read_db`, collection `replies`). Eight
+calls: which view opens; whether the flat map stays; the Day sky against the
+dark-canvas rule (measured: silver stars 1.2:1 and the light 1.1:1 by day, a
+rim is what makes a dot exist); motion by default; curation gestures on a curve;
+By kind as the arrangement (29% of five nearest committed neighbors kept, 49%
+the ceiling); the fate of each prototype control; and **the M-ID color on the
+dark ground** — his globe ruling (silver, "like stars") and his legend ruling
+(violet) meet there, and 49,355 of 49,896 points (99%) wear it. Nothing is
+built on the answers yet.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
 ## NEXT
 
-⓪ **The sky form into SkyView** — Sam, 2026-09-07: *"Looks great! Let's go with
-it in next session."* Not the prototype page copied in: a Sky view in
-`ccr_universe.js` over the live payload, the by-kind layout
-(`prototype/globe/globe_layout.py`) made a daily artifact with a `--check`, the
-CPL face and the light carried over, and every invariant above re-earned on the
-sphere (the drop hit-test, the label placer, the keyboard path, fixed-size text,
-reduced motion, the a11y route). Design calls first (NEEDS SAM ⑧). The
-prototype: `docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact
+⓪ **Execute the sheet's verdicts, then build the Sky view** — Sam, 2026-09-07:
+*"Looks great! Let's go with it in next session."* Not the prototype page copied
+in: a Sky view in `ccr_universe.js` over the live payload (`prototype/ccr_sky.json`
+for the islands, `ccr_universe.json` for the points, the prototype's `expmap`
+for placement), drawn on the map's own Canvas 2D (a full redraw of 49,896
+points measured 18–35 ms in software rendering — no three.js), the CPL face and
+the light carried over, and every invariant above re-earned on the sphere (the
+drop hit-test by angle, the label placer, the keyboard path, fixed-size text,
+reduced motion, the a11y route in `a11y.config.js`). ⚠️ Every design call
+assumes his replies (NEEDS SAM ⑧) — do not guess them. The prototype:
+`docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact
 https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5, generators `prototype/globe/`.
-① **The staged-to-move mark on a re-homed course** (v4 item 7, the last open
-item of the governing review): after a move, the course's own dot and its row
-say nothing about being staged rather than saved. The confirmation half shipped
-in S237; this is the mark — build it on the model, so it holds on either view.
-② **DR-24's write surface** — the curate phrase and the propose/second gate,
-routed through Governance first (Rule 10 a3). ③ The skills layer's fetch problem
-(NEEDS SAM ①). ④ The rest of the queue:
+① **DR-24's write surface** — the curate phrase and the propose/second gate,
+routed through Governance first (Rule 10 a3). ② The skills layer's fetch problem
+(NEEDS SAM ①). ③ The rest of the queue:
 [`skyview_backlog`](../../skyview_backlog.md), including the CPL face's smaller
 asks (the 55 stale exhibits, the funnel sidecar refresh, a credentials column in
 the workspace tables).

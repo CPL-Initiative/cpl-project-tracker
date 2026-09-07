@@ -532,7 +532,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("(E) ⭐ accepting writes the CN: row the live tab would write",
     st().moves.length === 1 && st().moves[0].cn === "CCC000000301" && st().moves[0].to === "WELD M1001"
     && /CN:CCC000000301\s+merge_into\s+WELD M1001/.test(text("#u-writes")), text("#u-writes"));
-  check("(E) the emptied stand-alone says its course was moved", /moved/.test(text("#u-detail")));
+  // v4 item 7 (2026-09-07): the words are the mark's — staged and not saved, with the destination named.
+  check("(E) the emptied stand-alone says its course is staged to move, where to, and that it is not saved",
+    /Its one course is staged to move to Welding Fundamentals — not saved/.test(text("#u-detail")) && /Put back/.test(text("#u-detail")), text("#u-detail").slice(0, 200));
 
   // ── (E2) a satellite filed under another subject says so ──────────────────
   w.__ccrGoSuggestion({ kind: "course", isl: PU.islands[0], nd: PU.islands[0].p[3], label: "x" });
@@ -595,7 +597,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   texts.length = 0; w.__ccrUniverseFly(AT("WELD M1001")[0], AT("WELD M1001")[1], 3.2);
   const l3 = { ...st().labelStats }, t3 = texts.slice();
   check("(J) ⭐ just past the first band a course label is its TITLE and units, never its number",
-    l1.brief > 0 && l1.titled === 0 && l1.full === 0 && t1.some((t) => t === "Welding Fundamentals · 3u") && !t1.some((t) => /^WELD M1001/.test(t)),
+    // A label may carry the staged-to-move mark after a move ("· 2 staged here", v4 item 7) — a state, never the number.
+    l1.brief > 0 && l1.titled === 0 && l1.full === 0 && t1.some((t) => /^Welding Fundamentals · 3u( · \d+ staged (here|to move away))*$/.test(t)) && !t1.some((t) => /^WELD M1001/.test(t)),
     JSON.stringify(l1) + " " + t1.join("|"));
   check("(J) ⭐ the second band lengthens the title", l2.titled > 0 && l2.full === 0 && t2.some((t) => t === "Introduction to Welding · 3u"), JSON.stringify(l2));
   check("(J) ⭐ the third band adds the number and the system on a second line",

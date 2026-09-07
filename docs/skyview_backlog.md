@@ -92,6 +92,11 @@ flips inside). **The generators live in `prototype/globe/`**
 **Ruled, 2026-09-07:** *"Looks great! Let's go with it in next session"* — the sky
 form goes into SkyView. The port is the lane's NEXT ⓪; the design calls it raises
 are NEEDS SAM ⑧, on a sheet before the code.
+**S239 (2026-09-07):** the sheet is out — eight calls, reply chips, artifact
+https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d — and the
+sphere placement is a daily artifact (`kb/_build_ccr_sky.py` →
+`prototype/ccr_sky.json`, Step 4d4, fingerprinted). The Sky view's code waits on
+the replies; the next session reads them first (`read_db`, collection `replies`).
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),

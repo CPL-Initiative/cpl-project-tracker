@@ -434,7 +434,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
      spokes is where the repeated word "College" costs most and says least. The
      canonical name stays on the row's title so nothing is lost. */
   check("(8) the map's member labels use the short form",
-    /lines:\[m\.n\+" · "\+trunc\(shortCollege\(m\.c\),26\)\]/.test(ujs));
+    // (the staged-to-move mark may follow the short name: "· staged here", v4 item 7)
+    /lines:\[m\.n\+" · "\+trunc\(shortCollege\(m\.c\),26\)/.test(ujs));
   check("(8) so does the hover card",
     /return '<b>'\+esc\(m\.n\)\+'<\/b> '\+esc\(shortCollege\(m\.c\)\)/.test(ujs));
   check("(8) and the sidebar rows, with the canonical name kept on hover",

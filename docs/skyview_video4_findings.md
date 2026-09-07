@@ -34,8 +34,11 @@ decided against on camera.
 | 4 | Background switches color — *"it should really stay with that charcoal wash"* | shipped; `haloAround()` quotes this verbatim and clamps the glow |
 | 5 | **Text zoom chip** by the zoom options, *"to enlarge the text if they want to"* | S235 — three steps, 0.85/1/1.25, per browser |
 | 6 | **Double-click should open the course outline of record**, not the disciplines page — *"let's do that in this session if we can"* | #1502 |
+| 7 | **A rehome gives no staged-to-move state on the course itself** — *"to change this outline to show it was staged to move"* | #1513 (S239): the mark on the model — *staged here — not saved* at the destination; at the origin a dashed ghost star, a *Staged to move away* list and *Put back*; the labels, hovers and the outline's band count it |
 
-## ⛔ Open — and item 7 is the substantial one
+## Item 7 — SHIPPED 2026-09-07 (S239, PR #1513); the analysis kept for the record
+
+> Nothing in this review is open any more. The mark is on the model (`stagedHere` / `stagedAwayFrom` / `stagedWords` in `prototype/ccr_universe.js`), every view asks it, and `tests/ccr_skyview_staged_move.test.js` reads each surface after one real move.
 
 **7 · A rehome gives no staged-to-move state on the course itself.** [04:24–04:49]
 
@@ -57,7 +60,7 @@ actually wrong, and only the middle one is cosmetic:
 1. ⭐ **The course's own mark never changes.** Nothing in `applyMove()` or the
    draw path gives a moved course a staged-to-move state. `movedTo[cn]` changes
    which identity `membersOf()` returns it under — it *relocates* — but it never
-   says "staged, not saved." **This is the ask, and it is unbuilt.**
+   says "staged, not saved." **This was the ask; built 2026-09-07 (S239).**
 2. **The confirmation is where he was not looking** — a single line below the
    legend, below the map, while his attention was on the point he had just
    dragged. A true statement in the wrong place reads as no statement.

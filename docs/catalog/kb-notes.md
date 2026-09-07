@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-401 document(s).
+403 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -139,10 +139,12 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
+| [A slow build fingerprints its inputs so the check stays cheap](../kb-notes/methodology-a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot cannot be the authority on intent](../kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A snapshot of a live model is a claim that decays](../kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A soft-delete overlay on dual-rendered rows must be scoped to ONE render layer](../kb-notes/methodology-layer-scoped-soft-delete-dual-rendered-rows.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A source file that abbreviates titles fakes an absence](../kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [A staged state lives on the model, and every view asks it](../kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A static guard should assert the contract, not the argument order](../kb-notes/methodology-assert-the-contract-not-the-argument-order.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |

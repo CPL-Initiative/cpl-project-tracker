@@ -152,6 +152,16 @@ jobs:
       # no network.
       - name: SkyView CPL payload guard (kb/_build_ccr_cpl.py)
         run: python3 tests/ccr_cpl_payload_test.py
+      # SkyView's sky placement (Session 239) — where each discipline island
+      # sits on the sphere, three ways, and the CTE reading behind the third.
+      # Guards that the committed prototype/ccr_sky.json is a build of today's
+      # inputs (by fingerprint — CI never pays the 90 s relaxation), that no
+      # island sits on the wrong side of the by-kind boundary, that a side is
+      # held across a threshold by the margin, that the relaxation is
+      # deterministic, and that the prototype's generator imports it rather
+      # than carrying a copy. Pure-stdlib python, no network.
+      - name: SkyView sky placement guard (kb/_build_ccr_sky.py)
+        run: python3 tests/ccr_sky_payload_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory
       # row still true": dead paths, dangling pointers, a stale row wearing a
       # verification stamp, PRs not on main, null slugs, near-duplicates. Each

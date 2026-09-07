@@ -333,6 +333,21 @@ jobs:
           python3 kb/_build_ccr_cpl.py --quiet \
             || echo "::warning title=SkyView CPL payload not rebuilt::kb/_build_ccr_cpl.py failed — the CPL face and the articulations light read the previous build until the next run. Check the step log."
 
+      # ── Step 4d4: SkyView's sky placement (Session 239) ───────────
+      # The Sky view places the 159 discipline islands on a sphere three ways
+      # (committed · spread · by kind) from prototype/ccr_universe.json and the
+      # CTE share per discipline — TOP's one sanctioned use, the manual's CTE
+      # flag on each identity's TOP code (unified_courses_data.js, regenerated
+      # above, + kb/reference/top_categories.json). The builder fingerprints its
+      # inputs and relaxes only when they changed (~90 s of pure Python then,
+      # ~5 s otherwise, local files only); a discipline's side is held across a
+      # threshold by a 0.05 margin so no island changes sides on a daily rebuild
+      # by a hair. tests/ccr_sky_payload_test.py fails CI on a stale file.
+      - name: Rebuild SkyView's sky placement
+        run: |
+          python3 kb/_build_ccr_sky.py --quiet \
+            || echo "::warning title=SkyView sky placement not rebuilt::kb/_build_ccr_sky.py failed — the Sky view reads the previous placement until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -370,6 +385,8 @@ jobs:
           # SkyView's CPL payload (Step 4d3): the crosswalk joined to the curated
           # agencies and the articulated-exhibit feed, rebuilt every run.
           git add prototype/ccr_cpl.json 2>/dev/null || true
+          # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
+          git add prototype/ccr_sky.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
