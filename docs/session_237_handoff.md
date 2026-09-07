@@ -190,12 +190,27 @@ own glyph rule.
   the prototype. **Use it — the last three rounds of this lane were all decided
   by layout that jsdom cannot see.**
 
+## The checkpoint is complete — all 13 artifacts
+
+⚠️ It was **not** complete when this handoff was first written. A partial
+checkpoint hit 9 of 13 and read as finished — exactly the failure Rule 9 names.
+Sam asking *"need a checkpoint?"* is what caught it. Finished afterwards: the KB
+note, the INDEX update-history bullet, the To-Do feed, and the `cpl_memory_log`
+entries (S234 warned that step fails silently — verified here, all five landed).
+
+⚠️ **The To-Do feed was carrying two stale blockers**, both retired: the
+skill-sources question Sam had already ruled, and the outline layer that claimed
+to be blocked on it. That layer is now blocked on holding the text at all — 1,987
+credentials classified, 64 welding, zero with a skill field.
+
 ## `cpl_memory` rows written this run
 
 `sam-ticking-collects-enter-applies-2026-09-06` (verified_by Sam) ·
 `a-snapshot-cannot-be-the-authority-on-intent` ·
 `an-inherited-handoff-names-a-hypothesis-not-a-finding` ·
 `a-gitignored-directory-can-hold-files-main-keeps`
+
+KB note added: [`methodology-a-snapshot-cannot-be-the-authority-on-intent`](kb-notes/methodology-a-snapshot-cannot-be-the-authority-on-intent.md).
 
 ## Read these first, in order
 

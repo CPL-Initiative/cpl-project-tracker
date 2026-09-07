@@ -1,20 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-06",
-  "_session": 235,
-  "_status": "The course outline of record is built. Open a course on SkyView — double-click it, or use the new button in the side panel — and you get one page showing what that course actually is across every college that teaches it: a real catalog description quoted from the college that wrote it, the skills a learner would carry out of it, what level the course is and what level each skill is, and plainly which parts we do not hold yet. It is labeled MAP-Generated for faculty consideration and revision before use, and nothing on the page writes anything back. Sam's three calls from the screen recording all shipped too: Enter now closes the search list, the sort control moved to its top right with an Enter button at the bottom, and the search chips reserve their space so the list stops jumping when they wrap. The bug where double-clicking left you stranded with no way back to SkyView is fixed, and your selected courses now survive the trip instead of being thrown away. Next up are Sam's four new asks — a CPL-focused view and a show-articulations toggle first, both to be sketched before they are built.",
+  "_as_of": "2026-09-07",
+  "_session": 236,
+  "_status": "Work you did in a local session on your own machine is now merged and live. It had been committed and pushed the whole time — it simply had no pull request, and it had branched before two others landed, so two sessions had rewritten the same search list without knowing about each other. Both versions are now one. Picking courses from that list has changed the way you asked for: ticking a row no longer does anything on its own, so the list stops jumping and losing your place; Enter applies everything you ticked and closes the box; Escape throws it away. Your ticks now survive typing more letters, because narrowing a search is how you hunt for the next thing to add. Underneath it we found something worse than the bug that was reported: pressing Enter could silently delete a course you had picked earlier and never touched. That is fixed, and guarded by a test that names the deleted course rather than just counting. All of it was checked in a real browser, not just in tests, because the complaint was about things moving on screen and tests cannot see that. Your v4 recording was also recovered and read end to end: six of its eight items had already shipped, and the frames showed that one thing we were about to build already works — so what is actually left is smaller than it looked.",
   "items": [
-    {
-      "id": "s234-sam-skill-sources-conflict",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "This is the one thing blocking the course outline's skill layer. You ruled that agency skill statements come from all three sources — published agency standards, ACE exhibits and the MAP team. What happens when the three disagree about the same certification? The pilot is an AWS welding certification. Everything else in the outline can be built without this answer."
-    },
     {
       "id": "s235-sam-cpl-focus-prototype",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "You asked for a CPL vs Course/Discipline toggle so exhibits and credit recommendations are the focus, and a show-articulations toggle revealing where articulations differ college to college — and said to prototype them first. Next session will bring you a sketch of both together, since you called them closely linked. One question it needs answered by the picture: when we have no articulation recorded for a course, that is not the same as knowing there are none. How should the map show 'we did not look' differently from 'there are none'?"
+      "text": "Still the top of the queue, and still a sketch before a build. You asked for a CPL vs Course/Discipline toggle so exhibits and credit recommendations become the focus, and a show-articulations toggle revealing where articulations differ college to college — and called the two closely linked. The question that was open here is now answered by your own ruling: the toggle lights only what has a number and leaves everything else exactly as drawn, because only 1,490 of 49,896 points carry an articulation count and marking absence would claim something about the other 48,406 that the data cannot support. Next session brings you the picture."
     },
     {
       "id": "s235-sam-curate-phrase",
@@ -23,28 +17,34 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. Say the word and it gets scoped."
     },
     {
-      "id": "s235-sam-gitattributes",
+      "id": "s236-sam-skill-text-fetch",
       "for": "Sam",
-      "tab": "admin",
-      "text": "Your Windows clone hit a line-endings warning because this repo has no rule telling Git how to handle them across Windows and the cloud machines. Adding one stops it recurring, but it rewrites line endings across the whole repo once when it lands. Your call — say go and it is a small change."
+      "tab": "unified-courses",
+      "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification was the pilot."
+    },
+    {
+      "id": "s236-fable-staged-move-mark",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "From your v4 recording: when you drag a course to a new home, nothing on the map says it moved. The confirmation sentence you asked for already exists — the frames show it along the bottom of the screen — so what is missing is narrower: the course's own mark never changes to show it is staged rather than saved. Two smaller things go with it: that sentence sits below the legend where your eye was not, and it says 'recorded below the map' while the panel it means is hidden in full-screen SkyView."
+    },
+    {
+      "id": "s236-fable-unified-legend",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The legend's 'unified' is the only entry with no explanation — stand-alone course, noncredit and college course each carry one. You said a note on Unified would be fine, so that is the fix, in the style already there. Hovers explaining M-ID, C-ID and CCN go with it."
+    },
+    {
+      "id": "s236-fable-cpl-views-sketch",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Build the two sketches Sam asked for before any code: the CPL vs Course/Discipline toggle and the show-articulations toggle, together, since he called them linked. The absence rule is already ruled — light only what carries a number, mark nothing else."
     },
     {
       "id": "s235-fable-outline-cpl-layer",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The course outline has an empty layer waiting for credit-for-prior-learning: the MAP exhibits and the military credit recommendations that could award each course. Wiring it is blocked only on Sam's answer about where agency skill statements come from when the three sources disagree."
-    },
-    {
-      "id": "s235-fable-artics-absence",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Before drawing the articulations toggle, decide what absence looks like. The articulation count is absent rather than zero on this feed, so a view that paints 'none' where we simply did not look would be wrong on a lot of the 16,482 points at once."
-    },
-    {
-      "id": "s235-fable-text-zoom",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Add a text-size control to the SkyView toolbar. It must not change today's behavior where the labels stay the same size as you zoom the map — that is deliberate and Sam wants it kept."
+      "text": "The course outline still has an empty layer waiting for credit-for-prior-learning: the MAP exhibits and military credit recommendations that could award each course. It is no longer blocked on a decision — that was answered — it is blocked on holding the text at all."
     },
     {
       "id": "s235-fable-decision-packs",
