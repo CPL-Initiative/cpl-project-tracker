@@ -265,7 +265,8 @@ credential-led label read right at his zoom, and is *Articulations* the word?
 (*"a 3-d 360 globe that rotates"*), built as a throwaway outside the product:
 `docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5. A globe shows a hemisphere at a time, so it adds no
 area; a yes is a decision sheet (planetarium form, gestures on a curve, motion),
-never a port of that file. Detail: [`skyview_backlog`](../../skyview_backlog.md) ①d.
+never a port of that file. His reaction (*"I like the globe view!"*, five asks) got a
+second round the same day; detail: [`skyview_backlog`](../../skyview_backlog.md) ①d.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.

@@ -56,6 +56,17 @@ lane's invariants were re-earned by it. If Sam wants it on sight, the design
 questions (the planetarium form, curation gestures on a curved surface, motion
 for readers who asked for none) go on a decision sheet before any code.
 
+**Second round, the same afternoon.** Sam: *"I like the globe view! Love the
+glow on the articulations"* — then five asks (use the empty sky for separation;
+M-ID white like stars, with a chip to change it; a version with round islands
+rather than ovals; a slower turn; keep the header, add what the new view needs)
+and, from a screenshot, that the inside view looked "globby" and could not zoom
+out to a sky. All built as controls on the same page: Spread | Committed, Round
+| Wrapped, M-ID color chips, a third of the spin, and Inside as an all-sky disc
+(30° to 360°). His verbatim reaction and the reading of it are in the vault
+braindump. The globe is now *keep exploring*, not *keep or drop*; the product
+question (whether any of it belongs in SkyView) is still his, on a sheet.
+
 ## ⭐ THE THING TO CARRY FORWARD
 
 **The ruled coverage line carried two wrong numbers, and the surface computes
@@ -117,9 +128,9 @@ or ghosts.
 ⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
 ⑦ **His eye on the CPL face** (`#skyview/cpl`) — does the credential-led label
 read right, and is *Articulations* the word.
-⑧ **The globe — keep or drop, on sight.** The throwaway he asked for (section
-above). Does turning it earn anything the flat sky's zoom does not? A yes is a
-decision sheet, never a port of that file.
+⑧ **The globe, second round — his eye.** Do the five asks read as answered, and
+does the all-sky Inside look like stars in their groupings? If the globe earns a
+place in the product, that is a decision sheet, never a port of that file.
 
 ## Housekeeping
 
