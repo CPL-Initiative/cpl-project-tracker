@@ -26,6 +26,17 @@ carrying a skill field**. Pilot: an AWS welding certification.
 ①b **The curate phrase — ruled, not built.** **One phrase gates anything that
 leaves the browser**; reading stays open. ⚠️ First write from this surface, so
 Rule 10 a3 routes it through Governance and the privacy ADRs before it ships.
+DR-24 (owner Sam) governs the skills layer's writes.
+
+①c **The CPL face, after S238 — the smaller asks.** The 55 crosswalk exhibits
+not in today's feed (`kb/_build_ccr_cpl.py` prints them; flagged `s:1` on the
+surface) are a worklist for the crosswalk's next re-seed, not a drop. The funnel
+sidecar `kb/ccr_cpl_funnel.json` is a dated hand read — refresh it after the
+next `map-custom-report-load.yml` run (the daily run cannot reach the table).
+"Held by N colleges" on the face is the crosswalk's `earned_by_colleges`; the
+funnel's per-exhibit college count (any course) is a different number and is
+not shown. A CPL face for the **comprehensive view's panes** and the workspace
+tables (a credentials column) is unbuilt.
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),

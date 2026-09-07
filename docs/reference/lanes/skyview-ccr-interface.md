@@ -15,14 +15,12 @@ related:
 > that moves this lane; `CLAUDE.md` keeps the one-line pointer. The shipped
 > history — every round, every measurement, every wrong reading — lives in
 > [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
-> [archive](../../ccr_atlas_lessons_archive.md).
+> [archive](../../ccr_atlas_lessons_archive.md); the queue behind the priority
+> is [`skyview_backlog`](../../skyview_backlog.md).
 >
-> ⚠️ **Compacted 2026-09-06 (S234, S235) and again 2026-09-07 (S237).** It is
-> **16.0 KB against the 12,000 B advisory budget** and the excess is invariants,
-> not narrative: S237 added six and moved ~1 KB of shipped history to the lessons
-> doc. A future compaction should take the **NEXT** list (2.7 KB of small
-> backlog items) to its own note, not the invariants — each of those is here
-> because a session already got it wrong once.
+> ⚠️ **Over the 12,000 B advisory budget, and the excess is invariants** — each
+> is here because a session got it wrong once. Compact the narrative sections
+> before touching them.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -39,8 +37,11 @@ SkyView's islands are keyed by.
 canvas (16,482 identities, 33,423 stand-alone courses, 159 islands); keyword
 jump to anything; hover is a quick look and click the docked inspector; every
 stand-alone orbits its best-matching identity; drag and drop is real with a
-keyboard path. Since S235 a course also opens its **outline of record**. Rounds
-and measurements: [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+keyboard path. A course opens its **outline of record** (S235). **Since S238
+the map has two faces and a light:** *Courses | CPL* names each point by its
+course or by the credential that reaches it, *Articulations* lights what
+carries one, and the outline's CPL layer is built. Rounds and measurements:
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ## Invariants — do not violate these
 
@@ -69,7 +70,7 @@ error; the tell is direct and chain agreeing EXACTLY.
 exist there; the page's single search form is **borrowed** into the map's row
 and sent home by `setCrumbs`. And **state painted at render time goes stale on
 every path that changes it without rendering** (`setSolo` must repaint the
-window controls).
+window controls; `paintFace`/`paintLit` paint the face and the light).
 
 ⚠️ **The page must be SERVED, not opened** — `file://` blocks the payload fetch.
 The layout is hand-built (`kb/_build_ccr_universe.py`, ~20 s) and committed; the
@@ -80,6 +81,9 @@ public Supabase bucket `ccr-desc`, 159 shards / 50 MB, ordered by
 ⚠️ **The daily run rebuilds the decision payload AND `skyview.html` with it** —
 the atlas payload is INLINE in the served page, so regenerating the JSON alone
 never reaches the deployed page. `ccr_universe.json` is deliberately untouched.
+**The CPL payload (`prototype/ccr_cpl.json`) is rebuilt every run too** (Step
+4d3): it joins the crosswalk to the daily CER and statewide artifacts, and
+`tests/ccr_cpl_payload_test.py` fails CI on a stale file.
 
 ⚠️ **`npm test` proves nothing about layout** — jsdom returns zeroes for every
 rectangle. Run `npm run a11y`, or drive a real browser.
@@ -101,7 +105,10 @@ is: the carry rings its destination and names it.
 COUNTING step, never by collapsing finished rows** — the chip counts COLLEGES,
 so one college writing it both ways counts once and two spelling it differently
 count twice. Display the spelling the most colleges published. ⚠️ `sses` belongs
-in the `-es` family or *processes* stems to *processe*.
+in the `-es` family or *processes* stems to *processe*. **The fold stands as
+shipped** (Sam, 2026-09-07): all 39 families touching a word whose singular means
+something else pair real variants of one name; a key can be a non-word (*sery
+solution*) and the key is never shown. A bad pair goes on a do-not-fold list.
 
 ⚠️ **A REVIEWER'S REMOVAL IS RECORDED, NEVER DERIVED.** The imputation re-runs
 whenever a description lands, so storing *what is left* would silently delete
@@ -115,7 +122,35 @@ a false statement about the data, not a rendering gap.
 ⚠️ **A CLOSED `<details>` STILL MEASURES.** Chromium hides its content with
 content-visibility, not `display:none`, so the rect is real while `focus()` is a
 no-op — ten collapsed buttons read as "focusable with no ring" in `npm run
-a11y`. A `height === 0` guard does not catch it; the script skips them now.
+a11y`. A `height === 0` guard does not catch it; the script opens them.
+
+⭐ **THE ARTICULATIONS TOGGLE IS A LIGHT, NOT A FILTER, AND IT SHOWS PRESENCE
+ONLY** (Sam's ruling 2, 2026-09-07). It lights what has a number and leaves the
+rest drawn as it is — no gray, no hollow, no "none", each of which reads as a
+finding the feed cannot support (1,490 of 49,896 points carry `ar`). The Show
+menu keeps the *filter*. Below the course zoom a discipline holding a lit course
+carries the ring, or the control answers only where the reader is not standing.
+⚠️ **"Where they differ college to college" is NOT a map layer** — four cases,
+two of them data defects, in
+[`kb/ccr_articulation_disagreements.json`](../../../kb/ccr_articulation_disagreements.json).
+
+⭐ **THE CPL FACE LEADS WITH THE CREDENTIAL, AND A POINT NOTHING REACHES IS
+UNLABELED** (Sam's ruling 3 + his note). Curated name → issuing agency AND
+training agency where they differ → what it earns → the colleges holding it;
+search switches to the vocabulary; the agencies go on the **outline of record**
+too (and the CER tab already renders both). Agencies come from the curated CER
+artifact, never the crosswalk's inlined issuer (stale on 1,743 of 4,592 records).
+`#skyview/cpl` is the face as a link.
+
+⭐ **THE COVERAGE LINE TAKES BOTH NUMBERS FROM ONE UNIVERSE, AND THE SURFACE
+COMPUTES IT** (S238). The ruled draft, *"1,490 of 6,388 exhibits"*, paired an
+identity count with the credit funnel's exhibit count — a universe that shares
+**570** ids with the 1,924 exhibits that reach the map (the funnel is ACE-keyed,
+the crosswalk MAP-keyed). The line reads **1,924 of 5,497 articulated exhibits**,
+built from `ccr_cpl.json`'s counts; the fixture's 4 of 777 makes a literal fail.
+[`methodology-a-coverage-line-takes-both-numbers-from-one-universe`](../../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md).
+⚠️ The 55 crosswalk exhibits absent from today's feed are flagged `s:1`, never
+dropped (ruling 5, 2026-09-05).
 
 **Durable facts:** grinding the whole merge queue perfectly lands at 35,937,
 14.4× short of 2,500, so **packaging** is the only mechanism with the right
@@ -148,10 +183,10 @@ a count, so it cannot be satisfied by lowering an expectation.
 [`skyview_video4_findings.md`](../../skyview_video4_findings.md). ⚠️
 `skyview_video2_findings.md` is a **different, earlier** recording (6m50s vs
 6m18s) and the two lists must not be merged; the committed v2 transcript contains
-none of v4's rulings. Six of v4's eight items shipped in #1502/#1503. **Open:**
-a rehome gives the course no *staged-to-move* mark (the confirmation line already
-renders — frame 17 — so the fix is the mark, not the message); and the legend's
-`unified` carries no gloss while every other entry does. **Do not build**
+none of v4's rulings. Seven of v4's eight items have shipped (#1502/#1503; the
+legend's `unified` gloss and the id hovers in S238). **Open:** a rehome gives the
+course no *staged-to-move* mark (the confirmation line already renders — frame
+17 — so the fix is the mark, not the message). **Do not build**
 hover-on-the-title — he decided against it on camera.
 
 ## Measured in a browser — the durable warnings
@@ -174,133 +209,71 @@ every view entry, so diagnosing the return path would have fixed nothing.
 the viewport sat under one of that identity's own member stars, and a drop on
 each of the first three moved nothing while the hint said *"That course is
 already there."* Reading is unchanged by the fix — **24 of 24 drawn stars** still
-open the college course. Skill duplicates across the whole corpus: **209 rows by
-a hyphen, 835 by a plural, 762 identities (1.6%)** before; **none** after.
+open the college course. **S238:** the CPL face, the light, the vocabulary search
+and the outline layer were each driven on the served page; `npm run a11y skyview`
+passes all 9 routes at 3 widths.
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
-## Sam's eight rulings of 2026-09-06 (decision sheet) — 3 built, 5 recorded
+## Sam's rulings — where each landed
 
-All eight answered **yes**, no edits, no follow-ups
-(`cpl_memory` `sam-eight-rulings-2026-09-06-outline-sheet`). Built in S235: text
-zoom, **"the only college teaching it"**, a `.gitattributes`. **Recorded, not
-built:** the skill-source precedence, the articulations toggle's treatment of
-absence, the curate phrase's scope, **no nightly layout rebuild**, and
-**Interdisciplinary Studies is a grab bag** (525 identities against 1,263
-stand-alones). His three earlier rulings of the same day all shipped. What they
-cost to build, and the two traps inside them, are in
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+- **2026-09-06, eight (outline sheet):** built — text zoom, "the only college
+  teaching it", `.gitattributes`; recorded — skill-source precedence, the
+  toggle's treatment of absence, the curate phrase's scope, no nightly layout
+  rebuild, Interdisciplinary Studies is a grab bag. Detail in the lessons doc.
+- **2026-09-07, eight (CPL views, folded skills, curate governance):** items 1-3
+  **built in S238** (the invariants above); 4-5 stand as shipped; 6-8 are
+  **DR-24** in the governance register with **Sam as its named owner** — an
+  added skill carries the reviewer's name and the day, lands `proposed`, joins
+  the published outline on a second curator's agreement; a removal is symmetric
+  and an unseconded one stays visible with the objection. Nothing writes from the
+  page until DR-24's surface ships. ⚠️ The sheet proposed "DR-22"; that id was
+  already the GR register.
 
-## The outline of record — BUILT (S235)
+## The outline of record — BUILT (S235, CPL layer S238)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (50 checks, key
-guards mutation-tested). **Invariants, not history:**
-
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js` (50 checks).
 ⭐ **The description is CHOSEN, never written** — the medoid member catalog
-description, quoted and attributed. Composing prose out of several catalogs would
-read as authoritative while belonging to nobody. Sam's MAP-Generated sentence
-prints verbatim.
+description, quoted and attributed. Sam's MAP-Generated sentence prints verbatim.
 ⭐ **Two level axes, neither derived** — the course's off its title, a skill's
-off its own words.
-⚠️ **Confidence is agreement BETWEEN colleges**, and "one college" means opposite
-things by context: a course carried by ONE college reads **"the only college
-teaching it"** (complete evidence), one that merely has a single catalog reads
-**"the only college with a description"**. The distinction is the MEMBER count.
-⚠️ **Skill phrases need punctuation-aware n-grams, longest-name-wins and the
-fold above.** **94.6% of member courses carry a description, but only 30.0% of
-identities have 2+**, so each outline states its own evidence.
-⭐ **A reviewer may add a skill and take one out** — staged in the browser beside
-the title and subject, nothing written.
+off its own words. ⚠️ **Confidence is agreement BETWEEN colleges**: a course
+carried by ONE college reads "the only college teaching it", one with a single
+catalog "the only college with a description". ⚠️ **Skill phrases need
+punctuation-aware n-grams, longest-name-wins and the fold above.** ⭐ **A
+reviewer may add a skill and take one out** — staged, nothing written. **The CPL
+layer** lists every credential reaching the course with both agencies; an empty
+layer states the ceiling in words rather than reading as finished.
 
 ## NEEDS SAM
 
 ① **Where agency skill statements come from when the three sources disagree**
 (ruling 9's follow-up — published standards *and* ACE exhibits *and* the MAP
-team; he said "All three"). Pilot: an AWS welding certification. **This is the
-only thing blocking the outline's skill layer**; everything else is buildable.
-② Should the daily run rebuild the universe layout too?
-③ Which disciplines are grab bags besides Vocational and the no-discipline pile?
+team; he said "All three"). Pilot: an AWS welding certification. **The only
+thing blocking the outline's skill layer**; everything else is buildable.
+② Which disciplines are grab bags besides Vocational and the no-discipline pile?
 Interdisciplinary Studies (513 identities) is the candidate.
-④ The live-session banner — what link, on which tabs?
-⑤ The three legacy anchors without a seed discipline (`M-ID HOSP 100`, `104`,
+③ The live-session banner — what link, on which tabs?
+④ The three legacy anchors without a seed discipline (`M-ID HOSP 100`, `104`,
 `102`) need one of the 146 MQ disciplines.
-⑥ Whether 60 is the right search depth, and whether an emptied discipline should
+⑤ Whether 60 is the right search depth, and whether an emptied discipline should
 vanish or ghost.
-⑦ The right-edge vertical glyph rail from his Obsidian screenshot — glyph-only,
+⑥ The right-edge vertical glyph rail from his Obsidian screenshot — glyph-only,
 so his call under his own glyph rule.
+⑦ **The CPL face is on the map — his eye on it.** `#skyview/cpl`: does the
+credential-led label read right at his zoom, and is *Articulations* the word?
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
-## Sam's eight rulings of 2026-09-07 (decision sheet) — ALL YES, one note
-
-Sheet: `docs/visuals/2026-09-07-cpl-views-skills-and-curate.html`. Every figure on
-it came from **MAP's own credit funnel** (`map_college_cr_unit`), not from the
-resolved crosswalk this map draws — Sam, mid-session: *"make sure you're source
-the root of the data and not config for this work."* The crosswalk holds 41% of
-the root's exhibits and 29% of its credit recommendations.
-
-⭐ **THE CEILING IS THE RECEIVING COURSE, NOT THE MAP.** Only **8,979 of 206,702
-rows (4.3%)** name a receiving college course, and that is the sole join from a
-CPL row to a course identity. 1,490 of 6,388 exhibits reach a point on the shipped
-map. **The CPL view says its own coverage on the surface** — one line, *"1,490 of
-6,388 exhibits reach a course on this map"* — because a view that quietly shows a
-quarter of the record looks like the record.
-
-⭐ **THE ARTICULATIONS TOGGLE SHOWS PRESENCE. "WHERE THEY DIFFER" IS NOT A MAP
-LAYER** (ruling 2). ⚠️ Measured three ways and the first two were wrong: differing
-recommendation TEXT per exhibit gives 2,834 and differing HOURS per exhibit gives
-678, but **both count an exhibit's own tiered menu as a disagreement** — ACE writes
-*3 / 6 / 9 hours in air traffic control* on one exhibit and a single college holds
-all three lines on one course in one catalog year. Presence in the funnel is not a
-decision; `cpl_status_plan` is. Restricted to rows that name a course AND were
-acted on: **four**, and two of those are data-quality defects. They are a receipt,
-not a layer: [`kb/ccr_articulation_disagreements.json`](../../../kb/ccr_articulation_disagreements.json).
-⚠️ NOT written to `map_cleanup_worklist` — that table's grain is per COLLEGE and
-these are per EXHIBIT, and a first write to it is a new write surface.
-
-⭐ **THE CPL FACE LEADS WITH THE CREDENTIAL, THEN THE AGENCIES** (ruling 3 + his
-note). Curated credential name → **issuing agency AND training agency where they
-differ** → what it earns → the colleges holding it. Search switches with the face.
-Points with no exhibit stay drawn and unlabeled, the same rule as the toggle.
-Sam: *"If we can also include the issuing and training agencies, it would be good.
-We know that the data are incomplete now, which is OK for now. Will want all this
-included on the COR and credential Exhibit"* — so the agencies belong in the
-**course outline of record** and on the **credential Exhibit**, not only on the map.
-
-⭐ **THE SKILL FOLD STANDS AS SHIPPED** (rulings 4-5). 2,756 families over 46,317
-identities, 4,360 rows; all 39 families touching a word whose singular means
-something else (*athletics*, *graphics*, *ethics*, *physics*) pair real variants of
-one name, none merged two skills. If a pair ever reads as two things, it goes on a
-short do-not-fold list rather than weakening the stemmer.
-⚠️ **A grouping key can be a non-word and that is not a bug** — *news stories* keys
-as `new story`, *series solutions* as `sery solution`, *mechanics' lien* as
-`mechanic lien`. The key is NEVER shown; the card displays a spelling a college
-published. It would only bite if one card carried both senses of such a word, which
-does not occur today.
-
-⭐ **A CURATE EDIT IS PROPOSED, ATTRIBUTED, AND SECONDED TO PUBLISH** (rulings 6-8),
-now **DR-24** in the governance register with **Sam as its named owner — the first
-owned row in the register**. ⚠️ The sheet proposed "DR-22"; that id was already the
-GR register, so the row landed as DR-24. An added skill carries the reviewer's name
-and the day it was staged and lands `proposed`, visible at once to its author and to
-curators, joining the published outline on a second curator's agreement. A removal
-is symmetric: immediate and reversible in the reviewer's own view, seconded to leave
-the published outline, and an unseconded removal stays visible with the objection
-beside it. Nothing writes from the page until DR-24's surface ships.
-
 ## NEXT
 
-⓪ **CPL-focused view + show-articulations toggle (Sam, 2026-09-06).** Two
-closely-linked asks, both to be prototyped first: (a) a **CPL vs
-Course/Discipline toggle** so *"the CPL exhibits and CRs are the focus more than
-the Courses"*; (b) a **show-articulations toggle**. ⭐ **RULED**: the toggle
-**lights only what has a number** and leaves the rest drawn as it is — no gray,
-no hollow, no "none" marker, each of which reads as a finding. ⚠️ Only **1,490
-of 49,896 points (3.0%)** carry an articulation count, so marking absence would
-claim something about 48,406 points the data cannot support.
-
-⚠️ **The rest of the queue moved out on 2026-09-07** — the skills layer's fetch
-problem, the curate phrase, the re-mint approval queue, decision packs, the
-SUBJ4-inconsistent drag, the shared control numbers, the rim description signal
-and the rest: [`docs/skyview_backlog.md`](../../skyview_backlog.md).
+⓪ **The staged-to-move mark on a re-homed course** (v4 item 7, the last open
+item of the governing review): after a move, the course's own dot and its row
+say nothing about being staged rather than saved. The confirmation half shipped
+in S237; this is the mark.
+① **DR-24's write surface** — the curate phrase and the propose/second gate,
+routed through Governance first (Rule 10 a3). ② The skills layer's fetch problem
+(NEEDS SAM ①). ③ The rest of the queue:
+[`skyview_backlog`](../../skyview_backlog.md), including the CPL face's smaller
+asks (the 55 stale exhibits, the funnel sidecar refresh, a credentials column in
+the workspace tables).

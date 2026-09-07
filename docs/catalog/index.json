@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 398,
+   "count": 399,
    "docs": [
     {
      "created": "2026-08-14",
@@ -904,6 +904,29 @@
      "title": "A count gate cannot see a reorder",
      "type": "methodology",
      "updated": "2026-08-20"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "kb/_build_ccr_cpl.py",
+      "prototype/ccr_cpl.json",
+      "kb/ccr_cpl_funnel.json",
+      "tests/ccr_cpl_payload_test.py",
+      "tests/ccr_skyview_cpl_face.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "measurement",
+      "skyview",
+      "cpl",
+      "map-platform",
+      "decision-sheet"
+     ],
+     "title": "A coverage line takes both numbers from one universe",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-21",
@@ -12210,8 +12233,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 212,
+   "count": 213,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 239,
+     "path": "docs/session_239_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the CPL views are built; the staged-to-move mark is next",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-07",
      "governs": [],
@@ -15848,5 +15884,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 812
+ "total": 814
 }
