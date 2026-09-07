@@ -205,30 +205,15 @@ would have read as a fix and changed nothing. Chip tightening is bounded by
 every view entry, so diagnosing the return path would have fixed nothing.
 ⚠️ **Sam RETRACTED a finding on camera.** Read a recording to the end first.
 
-**S237, at 296% with Introduction to Welding open:** SIX identity circles inside
-the viewport sat under one of that identity's own member stars, and a drop on
-each of the first three moved nothing while the hint said *"That course is
-already there."* Reading is unchanged by the fix — **24 of 24 drawn stars** still
-open the college course. **S238:** the CPL face, the light, the vocabulary search
-and the outline layer were each driven on the served page; `npm run a11y skyview`
-passes all 9 routes at 3 widths.
+The round-by-round of what was driven on the served page (S237's six circles under one star, S238's CPL face and a11y run) is in the lessons doc, dated.
 
 **Praised, do not break:** Fit all; the panel moving to the selection.
 
-## Sam's rulings — where each landed
+## Sam's rulings
 
-- **2026-09-06, eight (outline sheet):** built — text zoom, "the only college
-  teaching it", `.gitattributes`; recorded — skill-source precedence, the
-  toggle's treatment of absence, the curate phrase's scope, no nightly layout
-  rebuild, Interdisciplinary Studies is a grab bag. Detail in the lessons doc.
-- **2026-09-07, eight (CPL views, folded skills, curate governance):** items 1-3
-  **built in S238** (the invariants above); 4-5 stand as shipped; 6-8 are
-  **DR-24** in the governance register with **Sam as its named owner** — an
-  added skill carries the reviewer's name and the day, lands `proposed`, joins
-  the published outline on a second curator's agreement; a removal is symmetric
-  and an unseconded one stays visible with the objection. Nothing writes from the
-  page until DR-24's surface ships. ⚠️ The sheet proposed "DR-22"; that id was
-  already the GR register.
+Where each of the 2026-09-06 and 2026-09-07 rulings landed is recorded once, in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) (archived from this lane at the
+S238 checkpoint); the ones still open are NEEDS SAM below.
 
 ## The outline of record — BUILT (S235, CPL layer S238)
 
@@ -266,8 +251,10 @@ credential-led label read right at his zoom, and is *Articulations* the word?
 `docs/visuals/2026-09-07-skyview-globe-prototype.html`, artifact https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5. A globe shows a hemisphere at a time, so it adds no
 area; a yes is a decision sheet (planetarium form, gestures on a curve, motion),
 never a port of that file. His reactions (*"I like the globe view!"*, *"Better!
-Tweak:"*) got two more rounds the same day — the sky by kind, a window inside view,
-Day and Night; detail: [`skyview_backlog`](../../skyview_backlog.md) ①d.
+Tweak:"*, *"Looks great!!!"*) got three rounds in one afternoon — the sky by kind, a
+window inside view, Day and Night; generators in `prototype/globe/`; detail:
+[`skyview_backlog`](../../skyview_backlog.md) ①d. **Is any of it wanted in SkyView
+itself?** That is his, on a sheet.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.

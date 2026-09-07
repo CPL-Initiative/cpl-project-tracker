@@ -1753,3 +1753,79 @@ literal (1), the trainer is dropped from the outline (2).
   5f), so the "credential Exhibit" half of Sam's note was already true there.
 - Ids in the articulation feed can carry a literal TAB (`MAPCXS-F3\tF-1-001`);
   a space-split list survives it, a whitespace split does not.
+
+## 2026-09-07 (S238, afternoon) — the globe: three rounds and what they taught
+
+Sam asked, unprompted, whether the 2-D sky should become *"a 3-d 360 globe that
+rotates"* to gain real estate, heard the assessment (a globe shows a hemisphere;
+the room is the zoom range) and said *build it!* Three rounds followed in one
+afternoon — #1509, #1510, #1511 — each a reply to his reaction, each built as a
+switch on the same page. His close: *"Looks great!!!"* Generators:
+`prototype/globe/` (extract → layout → build; README there).
+
+### What the sphere taught
+
+- **A hemisphere faces you.** The count line says it: 25,580 of 49,896 points
+  at the opening view outside; 33,781 in a 240° window inside with the far sky
+  squeezed to the edges. Real estate is the zoom range. KB note:
+  `methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range`.
+- **A near-square map wrapped by longitude and latitude is 2.2 to 1 at the
+  equator** (5,569 × 5,566 units onto 360° by 162°), pinched toward the poles —
+  Sam saw the ovals at once. Round caps at that scale would cover 141% of the
+  sphere; at 62% of it they fit with room (the spread relaxation: no overlaps,
+  a mean move of 7°). Smaller and round was his own read: *"Since we can zoom
+  almost infinitely, nothing lost."*
+- **Inside, the disc was wrong and the window was right.** The first inside view
+  sized every dot by distance, and from the center every dot is at the same
+  distance — globs. An all-sky disc (azimuthal equidistant) read as a globe
+  shape; a stereographic window filling the canvas reads as the night sky, keeps
+  the round islands round, and takes 30° to 240° across. Stars are sized in
+  pixels in both views, with a limb fade outside; a floor of 1.3 px stops a star
+  flickering between pixels; the twinkle is a slow, shallow per-star phase that
+  runs only while the sky turns; the turn slows in proportion to the zoom.
+- **The order was the real gain.** Placed **By kind** — CTE one side, academic
+  the other, the mixed and unread ones riding the boundary — the arrangement
+  says something the committed layout does not. The kind is TOP's one sanctioned
+  use (the manual's CTE flag on each identity's TOP code) as a share per
+  discipline: 97 CTE at 0.6 or more, 50 academic at 0.4 or less, 12 between.
+  Music reads CTE on 68 of 589 identities with a TOP code; treat the share as a
+  prototype's reading, not a classification.
+- **Answer a reaction with a switch, not a version.** Round | Wrapped, Committed
+  | Spread | By kind, the color chips: he compared on one page and ruled the
+  same hour (*"Now I don't think we need the wrapped option"*). KB note:
+  `methodology-answer-a-reaction-with-a-switch-not-a-version`.
+
+### Tooling pitfalls worth one line each
+
+- `pkill -f` with a pattern that also appears later in the same shell command
+  kills the shell itself (exit 144); a bracketed pattern only helps when the
+  literal text does not recur in the command.
+- A failing python heredoc does not stop the commands after it unless they are
+  chained with `&&` — the third round's pointers went out in a second commit
+  because the first chain started after the script.
+- The dependency map scans tracked files only; `git add` before regenerating.
+
+### Archived from the lane at the S238 checkpoint (verbatim)
+
+**S237, at 296% with Introduction to Welding open:** SIX identity circles inside
+the viewport sat under one of that identity's own member stars, and a drop on
+each of the first three moved nothing while the hint said *"That course is
+already there."* Reading is unchanged by the fix — **24 of 24 drawn stars** still
+open the college course. **S238:** the CPL face, the light, the vocabulary search
+and the outline layer were each driven on the served page; `npm run a11y skyview`
+passes all 9 routes at 3 widths.
+
+## Sam's rulings — where each landed
+
+- **2026-09-06, eight (outline sheet):** built — text zoom, "the only college
+  teaching it", `.gitattributes`; recorded — skill-source precedence, the
+  toggle's treatment of absence, the curate phrase's scope, no nightly layout
+  rebuild, Interdisciplinary Studies is a grab bag. Detail in the lessons doc.
+- **2026-09-07, eight (CPL views, folded skills, curate governance):** items 1-3
+  **built in S238** (the invariants above); 4-5 stand as shipped; 6-8 are
+  **DR-24** in the governance register with **Sam as its named owner** — an
+  added skill carries the reviewer's name and the day, lands `proposed`, joins
+  the published outline on a second curator's agreement; a removal is symmetric
+  and an unseconded one stays visible with the objection. Nothing writes from the
+  page until DR-24's surface ships. ⚠️ The sheet proposed "DR-22"; that id was
+  already the GR register.

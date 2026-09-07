@@ -81,7 +81,7 @@ kbd{font:inherit;font-size:.78rem;padding:0 4px;border:1px solid var(--border);b
 
   <div class="row" role="toolbar" aria-label="Globe controls">
     <span class="grp" role="group" aria-label="Turning">
-      <button class="btn" type="button" id="b-rot" aria-pressed="true" title="Turn the globe slowly on its own">Rotate</button>
+      <button class="btn" type="button" id="b-rot" aria-pressed="true" title="Turn the globe slowly on its own — slower as you zoom in, so the sky drifts at one pace">Rotate</button>
     </span>
     <span class="grp" role="group" aria-label="Where you stand">
       <button class="btn" type="button" id="b-out" aria-pressed="true" title="Look at the globe from outside">Outside</button>
@@ -145,7 +145,7 @@ kbd{font:inherit;font-size:.78rem;padding:0 4px;border:1px solid var(--border);b
 
   <section class="note">
     <h2>What this is for</h2>
-    <p>Sam asked (2026-09-07) whether turning the 2-D sky into a rotating 3-D globe would give SkyView more real estate to spread things out. This page exists so the idea can be looked at. Nothing here is a product. The third round answers his second reaction: the islands are placed <b>By kind</b> — CTE disciplines on one side of the sky, academic on the other, the mixed ones along the line between, every island in the open (<b>Spread</b> and <b>Committed</b> stay one click away); the dots are star-sized in both views; <b>Inside</b> fills the window like the night sky rather than a disc; the M-ID dots are silver; and the sky is <b>Day</b> or <b>Night</b>.</p>
+    <p>Sam asked (2026-09-07) whether turning the 2-D sky into a rotating 3-D globe would give SkyView more real estate to spread things out. This page exists so the idea can be looked at. Nothing here is a product. The third round answers his second reaction: the islands are placed <b>By kind</b> — CTE disciplines on one side of the sky, academic on the other, the mixed ones along the line between, every island in the open (<b>Spread</b> and <b>Committed</b> stay one click away); the dots are star-sized in both views; <b>Inside</b> fills the window like the night sky rather than a disc; the M-ID dots are silver; the turn slows in proportion to the zoom, and the stars twinkle gently while it turns; and the sky is <b>Day</b> or <b>Night</b>.</p>
     <p id="kind-note"></p>
     <table>
       <tr><th scope="row">Points on the sky</th><td id="t-pts">—</td></tr>
@@ -246,33 +246,34 @@ kbd{font:inherit;font-size:.78rem;padding:0 4px;border:1px solid var(--border);b
    * island stays round wherever it sits; `rad` is the plane radius at the
    * window's left and right edges. Both views size a dot in pixels like a star. */
   var vert = [
-    "attribute float size; attribute vec3 col; varying vec3 vc; varying float vOn; varying float vFade;",
-    "uniform float scale; uniform float mode; uniform vec3 fwd; uniform vec3 rgt; uniform vec3 upv; uniform float rad; uniform float wh; uniform float pxk;",
-    "void main(){ vc = col; vOn = 1.0; vFade = 1.0;",
+    "attribute float size; attribute vec3 col; attribute float phase; varying vec3 vc; varying float vOn; varying float vFade;",
+    "uniform float scale; uniform float mode; uniform vec3 fwd; uniform vec3 rgt; uniform vec3 upv; uniform float rad; uniform float wh; uniform float pxk; uniform float time; uniform float tw;",
+    "void main(){ vc = col; vOn = 1.0; vFade = 1.0 - tw * 0.5 * (0.5 + 0.5 * sin(time * 0.55 + phase));   // the twinkle: slow, shallow, each star on its own phase",
     "  if(mode < 0.5){ vec4 mv = modelViewMatrix * vec4(position, 1.0); vec3 wp = (modelMatrix * vec4(position, 1.0)).xyz;",
-    "    vFade = smoothstep(0.0, 0.35, dot(normalize(wp), normalize(cameraPosition - wp)));   // dots fade toward the limb instead of piling into a rim",
-    "    gl_PointSize = size * scale * pxk * sqrt(3.0 / max(0.05, -mv.z)); gl_Position = projectionMatrix * mv; }",
+    "    vFade *= smoothstep(0.0, 0.35, dot(normalize(wp), normalize(cameraPosition - wp)));   // dots fade toward the limb instead of piling into a rim",
+    "    gl_PointSize = max(1.3, size * scale * pxk * sqrt(3.0 / max(0.05, -mv.z))); gl_Position = projectionMatrix * mv; }",
     "  else { vec3 d = normalize((modelMatrix * vec4(position, 1.0)).xyz);",
     "    float x = dot(d, rgt), y = dot(d, upv), z = dot(d, fwd); float ang = acos(clamp(z, -1.0, 1.0));",
     "    if(ang > 3.05){ gl_Position = vec4(2.0, 2.0, 2.0, 1.0); gl_PointSize = 0.0; vOn = 0.0; }",
     "    else { float rho = 2.0 * tan(ang * 0.5); vec2 xy = vec2(x, y); float l = length(xy); vec2 p = (l > 1e-6 ? xy / l : vec2(0.0)) * rho / rad;",
-    "      gl_Position = vec4(p.x, p.y * wh, 0.0, 1.0); gl_PointSize = size * scale * pxk; } } }"].join("\n");
+    "      gl_Position = vec4(p.x, p.y * wh, 0.0, 1.0); gl_PointSize = max(1.3, size * scale * pxk); } } }"].join("\n");
   var frag = [
     "varying vec3 vc; varying float vOn; varying float vFade; uniform float alpha; uniform vec3 rim; uniform float rimA;",
     "void main(){ if(vOn < 0.5) discard; vec2 d = gl_PointCoord - vec2(0.5); float r = length(d); if(r > 0.5) discard;",
     "  float a = alpha * vFade * smoothstep(0.5, 0.38, r); vec3 c = mix(vc, rim, rimA * smoothstep(0.30, 0.42, r)); gl_FragColor = vec4(c, a); }"].join("\n");
   var MATS = [];
   function layer(rows, sizeOf, alpha, blend, rimmed){
-    var n = rows.length, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), size = new Float32Array(n);
-    for(var i = 0; i < n; i++) size[i] = sizeOf(rows[i]);
+    var n = rows.length, pos = new Float32Array(n * 3), col = new Float32Array(n * 3), size = new Float32Array(n), phase = new Float32Array(n);
+    for(var i = 0; i < n; i++){ size[i] = sizeOf(rows[i]); phase[i] = ((i * 2654435761) % 6283) / 1000; }
     var g = new THREE.BufferGeometry();
     g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
     g.setAttribute("col", new THREE.BufferAttribute(col, 3));
     g.setAttribute("size", new THREE.BufferAttribute(size, 1));
+    g.setAttribute("phase", new THREE.BufferAttribute(phase, 1));
     var mat = new THREE.ShaderMaterial({ uniforms: {
         scale: { value: 1 }, alpha: { value: alpha }, mode: { value: 0 }, fwd: { value: new THREE.Vector3(0, 0, 1) }, rgt: { value: new THREE.Vector3(1, 0, 0) },
         upv: { value: new THREE.Vector3(0, 1, 0) }, rad: { value: 1.5 }, wh: { value: 1.4 }, pxk: { value: 0.5 },
-        rim: { value: new THREE.Vector3(0, 0, 0) }, rimA: { value: 0 } },
+        rim: { value: new THREE.Vector3(0, 0, 0) }, rimA: { value: 0 }, time: { value: 0 }, tw: { value: 0 } },
       vertexShader: vert, fragmentShader: frag, transparent: true, depthWrite: false, blending: blend || THREE.NormalBlending });
     mat.userData.rimmed = !!rimmed; MATS.push(mat);
     return { obj: new THREE.Points(g, mat), rows: rows, col: col, geo: g };
@@ -437,7 +438,10 @@ kbd{font:inherit;font-size:.78rem;padding:0 4px;border:1px solid var(--border);b
   var dirty = true, lastT = 0, SPIN = 0.045;   // radians per second — one turn in about 140 s
   function frame(t){
     var dt = lastT ? Math.min(0.1, (t - lastT) / 1000) : 0; lastT = t;
-    if(rotating && !dragging){ world.rotation.y += SPIN * dt; dirty = true; }
+    var twinkle = rotating && !dragging && !reduce;
+    [LI, LL].forEach(function(L){ L.obj.material.uniforms.time.value = t / 1000; L.obj.material.uniforms.tw.value = twinkle ? 0.5 : 0; });
+    // the turn slows in proportion to the zoom, so the sky drifts across the window at one pace at any zoom
+    if(rotating && !dragging){ world.rotation.y += SPIN * dt * (view.inside ? view.half / (Math.PI * 75 / 180) : view.dist / 3.0); dirty = true; }
     if(dirty){ renderer.render(scene, camera); placeLabels(); dirty = false; }
     requestAnimationFrame(frame);
   }

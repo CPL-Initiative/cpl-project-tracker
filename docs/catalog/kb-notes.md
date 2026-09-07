@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-399 document(s).
+401 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -80,6 +80,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |
+| [A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface](../kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -182,6 +183,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An undefined CSS custom property fails to an invisible state, and no jsdom test can see it](../kb-notes/methodology-an-undefined-css-token-fails-to-an-invisible-state.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [An unordered LIMIT is a correctness bug, not a style nit — and it reads as model flake](../kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [Answer "eligible students & credits by program area × statewide/local" from the Credential Reference data](../kb-notes/methodology-area-eligibility-rollup-from-cer.md) | methodology | published | 2026-07-20 | 2026-07-20 |
+| [Answer a reviewer's \"make a version that…\" with a switch on the same page, not a second page](../kb-notes/methodology-answer-a-reaction-with-a-switch-not-a-version.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [Answering "which programs at <college> have CPL for apprentices?" — the three-artifact join](../kb-notes/methodology-college-apprenticeship-cpl-roster.md) | methodology | published | 2026-08-03 | 2026-08-03 |
 | [Ask whether the list can contain what you are counting](../kb-notes/methodology-ask-whether-the-list-can-contain-what-you-are-counting.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Ask which container the control is in before you debug the control](../kb-notes/methodology-ask-which-container-before-you-debug-the-control.md) | methodology | published | 2026-09-05 | 2026-09-05 |

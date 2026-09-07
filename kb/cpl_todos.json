@@ -2,7 +2,7 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
   "_session": 238,
-  "_status": "The two CPL views you ruled on this morning are built (PR #1508). SkyView's control row has two new words next to Show: Courses | CPL switches what each point is named by, and Articulations lights the courses that carry one. On the CPL face a point is named by the credential that reaches it — then the issuing agency and, where it differs, the training agency, then what it earns, then the colleges holding it — and a point no exhibit reaches stays drawn and unlabeled. The line under the row says the coverage out loud, and it corrects the sentence on the sheet: 1,924 of 5,497 articulated exhibits reach a course on this map. The sheet's 1,490 was the count of courses, not exhibits, and its 6,388 was the credit funnel, which turns out to share only 570 exhibits with what reaches the map — the funnel is the military record, the articulations are industry certifications and credit by exam. The course outline of record now carries the same block with both agencies. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved. After the checkpoint, the globe you asked for was built as a throwaway to look at; the link is in your session and in the lane file.",
+  "_status": "The two CPL views you ruled on this morning are built and merged (PR #1508): Courses | CPL switches what each point is named by, Articulations lights the courses that carry one, and the line under the row says the coverage out loud — 1,924 of 5,497 articulated exhibits reach a course on this map (the sheet's 1,490 was a count of courses and its 6,388 was the credit funnel, which shares only 570 exhibits with what reaches the map). The afternoon went to the globe you asked for: three rounds on your reactions, closed with your \"Looks great!!!\" — the sky by kind, a window inside view, silver stars, Day and Night, a turn that slows with zoom, a gentle twinkle. It is a thing to look at, not a change to SkyView; whether any of it belongs there is yours to decide. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved.",
   "items": [
     {
       "id": "s238-sam-cpl-face-look",
@@ -14,7 +14,7 @@
       "id": "s238-sam-globe-look",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "Your second set of thoughts on the globe is built into the same page, same link. Islands sit By kind: CTE disciplines on one side of the sky, academic on the other, the mixed ones along the line between, and no blank patch left; the kind is read the one way TOP codes are trusted here, the manual's CTE flag, as a share per discipline. Inside fills the window like the night sky, from 30 to 240 degrees across, and the round islands stay round. Both views use the finer dots, Silver is the default, the turn stays slow, Wrapped is gone, and Day beside Night gives a CO-blue sky with faint clouds. What is left is your eye: does the sky by kind read, is the window the view, and is any of it wanted in SkyView itself?"
+      "text": "You said Looks great on the globe's third round, and the two tweaks after it are in: the turn slows as you zoom in so the sky drifts at one pace, and the twinkle is slower and gentler. Same link. One question stays yours: is any of it wanted in SkyView itself — the sky by kind, the window view, the day sky? A yes becomes a decision sheet about the form and the curation gestures on a sphere, not a port of the prototype."
     },
     {
       "id": "s238-sam-coverage-line-corrected",
@@ -57,6 +57,12 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
+    },
+    {
+      "id": "s238-fable-globe-generators",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The globe's generators live in prototype/globe (extract, layout, build, with a README), so a fourth round starts from code rather than from the two-megabyte page. The page's data is a snapshot; nothing rebuilds it daily. Do not port any of it into SkyView on your own: that is a decision sheet for Sam first."
     }
   ]
 }
