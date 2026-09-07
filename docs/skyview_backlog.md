@@ -50,6 +50,21 @@ was touched. What a port would have to re-earn is the lane's invariant list:
 the drop hit-test on a curved surface, the label placer, the keyboard path,
 fixed-size text under zoom, `prefers-reduced-motion`, and the a11y run. NEEDS
 SAM ⑧ decides whether any of that is wanted; artifact https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5.
+**Second round (same day).** Sam's reaction — *"I like the globe view! Love the
+glow on the articulations"* — came with five asks and, from a screenshot of the
+inside view, a sixth: the inside looked "globby" because every dot sat at the
+same distance and got the same size, and the camera stopped at 110°. The build
+answers each as a control on the page: **Spread | Committed** (the islands
+relaxed apart on the sphere in `globe_layout.py`, no overlaps at 60% of the
+first round's scale, a mean move of 7°, the biggest 23°), **Round | Wrapped**
+(a round cap and its courses on the surface, against the flat disc wrapped —
+2.2 to 1 at the equator), **M-ID color** chips (White by default, plus a custom
+picker), a turn a third as fast, and **Inside** as an all-sky projection
+(azimuthal equidistant in the vertex shader, 30° to 360° across, stars sized in
+pixels, labels as real text that drop rather than stack, hover by angle). Sam's
+own read of the ovals: *"maximizes sky space... but perhaps if you adjust
+downward the relative size of your entities, circles might work. Since we can
+zoom almost infinitely, nothing lost."*
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
