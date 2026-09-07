@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-07T15:06:41.111Z",
+  "scraped_at": "2026-09-07T17:48:37.317Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -293,17 +293,17 @@
         },
         {
           "college": "College of the Desert",
-          "students": 427,
-          "units": 2383.5,
-          "avgUnits": 5.581967213114754,
-          "transcriptionRate": 34.9,
-          "avgTranscribed": 1.9473067915690867,
+          "students": 437,
+          "units": 2423.5,
+          "avgUnits": 5.545766590389016,
+          "transcriptionRate": 34.3,
+          "avgTranscribed": 1.902745995423341,
           "criteriaMetCount": 2,
-          "militaryStudents": 391,
+          "militaryStudents": 401,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
-          "savings": 3497972.5,
-          "yearImpact": 13404379,
+          "savings": 3567172.5,
+          "yearImpact": 13647059,
           "transcribedUnits": 831.5
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,047",
+      "value": "51,057",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,648"
+          "value": "27,658"
         },
         {
           "label": "Workforce/Other",
@@ -1775,7 +1775,7 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "217k",
+      "value": "218k",
       "avg": "4.3 avg",
       "breakdowns": [
         {
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51047,
-    "Units": 217487.15000000002,
+    "Students": 51057,
+    "Units": 217527.15000000002,
     "TranscribedUnits": 72824.95000000001,
-    "Savings": 325303715.25,
-    "YearImpact": 1290384536.4,
-    "MilitaryStudents": 27648,
+    "Savings": 325372915.25,
+    "YearImpact": 1290627216.4,
+    "MilitaryStudents": 27658,
     "NonMilitaryStudents": 23485,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.260527553039356,
-    "TranscribedAverage": 1.4266254628087842
+    "AverageUnits": 4.260476526235385,
+    "TranscribedAverage": 1.426346044616801
   }
 }
