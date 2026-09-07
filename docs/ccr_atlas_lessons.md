@@ -1815,6 +1815,97 @@ open the college course. **S238:** the CPL face, the light, the vocabulary searc
 and the outline layer were each driven on the served page; `npm run a11y skyview`
 passes all 9 routes at 3 widths.
 
+## 2026-09-07 — Session 239 (SkyGlobe): the sheet, the sphere as a daily artifact, the staged mark
+
+Sam had ruled the globe in at the close of S238. His own practice puts the
+design calls on one sheet before the code, so the port's code waited on his
+replies and the two answer-independent items shipped (PR #1513).
+
+### The sheet, and what measuring it turned up
+
+`docs/visuals/2026-09-07-eight-calls-before-the-sky-goes-in.html` — artifact
+https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d. Seven calls
+came from the handoff; the eighth came from the measurements:
+
+- **The day sky fails non-text contrast for three of the four legend colors.**
+  Against the prototype's Day ground (#A8C3E8): silver M-IDs 1.24:1, the
+  articulations light 1.08:1, CCN gold 2.85:1; the words clear it (labels 9.5:1,
+  region names 4.9:1). The prototype survives by giving every dot a seal-blue
+  rim by day (7.2:1) — a dot exists by its edge, and the legend's colors stop
+  telling the systems apart. Night: everything at 6.3:1 or better.
+- **Silver and violet are two of Sam's rulings meeting on the dark ground.** The
+  map's dark canvas paints an M-ID violet (`--sky-sys0-stroke:#B28DEB`, his
+  "match our legend" ruling of 2026-09-05); the globe paints it silver (his
+  "Silver MIDs looks the most natural" of 2026-09-07). 49,355 of 49,896 points
+  (99%) wear the M-ID color — every stand-alone is drawn in it too — so this is
+  the color of the sky, not a detail. Silver on the night ground 12.3:1, violet
+  6.8:1; silver on the light canvas 1.46:1 (cannot exist). Item 8.
+- **By kind keeps 29% of each island's five nearest committed neighbors; 49% is
+  the ceiling** (only that share of committed neighbor pairs are on the same
+  side to begin with; of those, 56% survive). Spread keeps 75%. Median move 26°,
+  the largest 117° (Kinesiology, the largest island, academic at 0.08).
+- **The kind reading rests on 24% of the points** (11,862 of 49,896 carry a TOP
+  code the manual knows); the median island's reading on a quarter of its
+  points; Music sits on the CTE side on 68 of its 1,721 points at 0.9. Five
+  disciplines sit within 0.05 of a threshold.
+- **A turning sky needs no three.js.** A full Canvas 2D redraw of 49,896 points
+  measured 34.7 ms as squares, 53.6 ms as circles, 17.9 ms with a projection
+  and the far half culled — in headless software rendering. The port draws on
+  the map's own canvas.
+- **The opening counts, replayed off the layout file:** 27,461 outside (the
+  prototype's Chromium count was 25,580 — the placement replica differs a
+  little), 19,531 in the 150° window (39%), 35,395 in the 240° (the prototype:
+  33,781). The sheet cites the Chromium counts and marks the 150° figure as
+  replayed.
+
+### The sphere placement as a daily artifact
+
+`kb/_build_ccr_sky.py` → `prototype/ccr_sky.json`, 34 KB: each island's
+center on the sphere three ways as longitude/latitude, the class, the share and
+its base. The relaxation is ~90 s of pure Python, so the builder hashes its
+inputs (geometry, classes after the hold, scale, algorithm) and rebuilds only
+on a change; `--check` and the 32-check test run in half a second (Step 4d4;
+KB note `methodology-a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap`).
+A side is held across 0.6/0.4 by a 0.05 margin. `globe_layout.py` now imports
+`relax` and `clearance` from the builder; the globe page rebuilt byte for byte
+from it (layout and page both identical — the alias-chain lesson, applied).
+
+### The staged-to-move mark (v4 item 7) — the governing review is fully shipped
+
+The mark lives on the model — `stagedHere` / `stagedAwayFrom` / `stagedWords`,
+`unstageMove` for *Put back* — and every view asks it: the destination's row
+(*staged here — not saved*, never "moved here") and star; the origin's ring
+(the course still drawn, a hollow dashed ghost on a ring of its own outside the
+members, labeled with where it went), panel (*Staged to move away*, Put back)
+and hover; the identity labels and hovers (a count); the outline's band; the
+hint (*Staged to move …*). A move record keeps `home`. Twenty checks in
+`tests/ccr_skyview_staged_move.test.js`; three older assertions moved with the
+words (the label form allows the suffix; the emptied stand-alone says staged).
+KB note `methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it`.
+
+### Measured in Chromium — the served page
+
+A real drag from the panel's *Drag…* to a neighbor circle staged the move,
+the ghost's hover read *staged to move to Introduction to the Welding Processes
+— not saved (Welding). Was under WELD M1109; Put back in the panel drops the
+staged move*, the destination's first row read *staged here — not saved*, and
+the two outlines' bands read *6 college courses · 1 staged here — not saved* and
+*23 college courses · 1 staged to move away — not saved*. `npm run a11y
+skyview`: 9 of 9 routes at three widths.
+
+⚠️ **The docked panel narrows the canvas.** Two drives dropped on empty space
+because the destination's screen position had been computed from the canvas
+rect before the origin was opened; opening it docks the panel, the canvas
+loses its width, and the center moves. Synthetic events were not the problem
+(the real mouse missed the same way). Measure after the open.
+
+### Tooling pitfalls worth one line each
+
+- A hover probe grid (25 points, 6 px apart) finds a circle faster than
+  reasoning about why a computed point misses.
+- `npm run a11y` from the wrong directory fails on a missing package.json
+  after the shell's cwd resets between calls — run it from the repo root.
+
 ## Sam's rulings — where each landed
 
 - **2026-09-06, eight (outline sheet):** built — text zoom, "the only college

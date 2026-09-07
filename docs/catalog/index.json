@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 401,
+   "count": 403,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2447,6 +2447,27 @@
     {
      "created": "2026-09-07",
      "governs": [
+      "kb/_build_ccr_sky.py",
+      "prototype/ccr_sky.json",
+      "tests/ccr_sky_payload_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-slow-build-fingerprints-its-inputs-so-the-check-stays-cheap.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "pipeline",
+      "ci",
+      "daily-dashboard",
+      "skyview",
+      "testing"
+     ],
+     "title": "A slow build fingerprints its inputs so the check stays cheap",
+     "type": "methodology",
+     "updated": "2026-09-07"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
       "prototype/ccr_atlas_v1.html",
       "tests/ccr_skyview_search_show.test.js"
      ],
@@ -2522,6 +2543,26 @@
      "title": "A source file that abbreviates titles fakes an absence",
      "type": "methodology",
      "updated": "2026-08-12"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_staged_move.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-staged-state-lives-on-the-model-and-every-view-asks-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "skyview",
+      "ccr",
+      "curation",
+      "ui",
+      "testing"
+     ],
+     "title": "A staged state lives on the model, and every view asks it",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-11",
@@ -12270,8 +12311,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 213,
+   "count": 214,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 240,
+     "path": "docs/session_240_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "read the sheet's replies, then build the Sky view",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-07",
      "governs": [],
@@ -15921,5 +15975,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 816
+ "total": 819
 }
