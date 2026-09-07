@@ -38,6 +38,19 @@ funnel's per-exhibit college count (any course) is a different number and is
 not shown. A CPL face for the **comprehensive view's panes** and the workspace
 tables (a credentials column) is unbuilt.
 
+①d **The globe prototype (Sam, 2026-09-07: "build it!").** A throwaway,
+`docs/visuals/2026-09-07-skyview-globe-prototype.html` — three.js r128 from cdnjs, the committed layout wrapped onto a
+sphere (x to longitude, y to latitude, islands as spherical caps), the
+Articulations light, an Outside view and an Inside (planetarium) view, and a
+line counting the points that face the reader: 25,580 of 49,896 at the opening
+view — a hemisphere, which is the whole argument. Its data is a snapshot
+inlined at build time from `prototype/ccr_universe.json`; it reads no live
+payload and the daily run does not rebuild it. Nothing in `ccr_universe.js`
+was touched. What a port would have to re-earn is the lane's invariant list:
+the drop hit-test on a curved surface, the label placer, the keyboard path,
+fixed-size text under zoom, `prefers-reduced-motion`, and the a11y run. NEEDS
+SAM ⑧ decides whether any of that is wanted; artifact https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5.
+
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
 not built: a register row owning the approval, the surface mapped in
