@@ -229,8 +229,131 @@ var PAL_LIGHT={ground:"#FFFFFF", island:"#F7F5F1", islandHover:"#F3F1EC", island
   leader:"rgba(28,28,26,.55)", leaderDot:"rgba(28,28,26,.62)", leaderForce:"rgba(146,0,0,.75)", leaderDotForce:"rgba(146,0,0,.85)",
   ringFaint:"rgba(28,28,26,.22)", gone:"#87877F", sqMoved:"#EAF1E6", sqCarried:"#E7EEF9", sqMovedStroke:"#2C601A", drag:"#0047AB",
   sys0Fill:"#F1EAFC", sys0Stroke:"#6D28D9", sys1Fill:"#E7EEF9", sys1Stroke:"#0047AB",
-  sys2Fill:"#FBF1D8", sys2Stroke:"#8B6800", sys3Fill:"#EFEFEC", sys3Stroke:"#5C5C55"};
+  sys2Fill:"#FBF1D8", sys2Stroke:"#8B6800", sys3Fill:"#EFEFEC", sys3Stroke:"#5C5C55",
+  /* the articulations light (2026-09-07): the palette's mustard — a gold glow, a
+   * thin ring, and a fill for the receiving college's star */
+  lit:"#8B6800", litGlow:"rgba(227,179,65,.32)", litFill:"#FBF1D8"};
 var pal=PAL_LIGHT;
+
+/* ══ THE CPL FACE AND THE ARTICULATIONS LIGHT (Sam's rulings 1-3, 2026-09-07) ══
+ * "So the CPL exhibits and CRs are the focus more than the Courses." Two
+ * controls in the top row, next to Show:
+ *
+ *   · Courses | CPL — what a point is NAMED BY. The map, the zoom and the
+ *     selection do not move; the labels, the hover, the panel and the search
+ *     switch to the credential that reaches the point: the curated name, then
+ *     the issuing agency AND the training agency where they differ, then what
+ *     it earns, then the colleges holding it. ⭐ A POINT NO EXHIBIT REACHES
+ *     STAYS DRAWN AND UNLABELED — no gray, no hollow, no "none", each of which
+ *     would read as a finding the data cannot support.
+ *   · Articulations — a LIGHT, not a filter (the Show menu keeps the filter).
+ *     It lights what has a number and leaves the rest drawn as it is. Only
+ *     1,490 of 49,896 points carry an articulation count, so marking absence
+ *     would claim something about the other 48,406.
+ *
+ * ⭐ THE CEILING IS THE RECEIVING COURSE, NOT THE MAP. A MAP exhibit reaches a
+ * point only through the college course the credit is awarded against, and
+ * the CPL face SAYS ITS OWN COVERAGE on the surface — one line under the top
+ * row, computed from the payload's counts and never quoted, because a view
+ * that quietly shows a fraction of the record looks like the record. ⚠️ Both
+ * numbers in that line come from ONE universe (the articulation feed): the
+ * sheet's draft paired an identity count with the credit funnel's exhibit
+ * count, and the two universes share 570 exhibit ids (kb/_build_ccr_cpl.py).
+ *
+ * ⚠️ THE PAYLOAD IS FETCHED ON DEMAND. prototype/ccr_cpl.json (~0.5 MB) is
+ * asked for the first time the face switches, the light comes on, or a panel
+ * opens a course that carries an articulation — never on the first paint. The
+ * light itself needs nothing: `ar` is already on every point, counted from the
+ * same join, so the lit set and the CPL face never disagree. */
+var face="courses";            // "courses" | "cpl" — what a point is named by
+var lit=false;                 // the articulations light
+var CPL=null, cplState="", cplWaiters=[], cplIslCache=null, cplIndexCache=null;
+var CPL_URL = window.CPL_SKYVIEW_CPL_URL || "ccr_cpl.json";
+function bindCpl(j){ CPL=j; cplState="ok"; cplIslCache=null; cplIndexCache=null; }
+function loadCpl(then){
+  if(cplState==="ok"||cplState==="missing"||cplState==="blocked") return then&&then();
+  if(window.CPL_CCR_CPL){ bindCpl(window.CPL_CCR_CPL); return then&&then(); }
+  if(then) cplWaiters.push(then);
+  if(cplState==="loading") return;
+  var flush=function(){ var w=cplWaiters; cplWaiters=[]; w.forEach(function(f){ try{ f(); }catch(e){} }); };
+  if(typeof fetch!=="function"){ cplState="missing"; flush(); return; }
+  cplState="loading";
+  fetch(CPL_URL).then(function(r){
+    if(!r.ok) throw new Error("http "+r.status);
+    return r.json();
+  }).then(function(j){ bindCpl(j); flush(); })
+    .catch(function(){ cplState=(location.protocol==="file:")?"blocked":"missing"; flush(); });
+}
+/* [[credIdx, [exhibit rows]] …] for a point, or null when no exhibit reaches it.
+ * An exhibit row is [exhibitId, exhibitTitle, typeIdx, [recommendations],
+ * [collegeIdx…], stale?]. */
+function cplOf(nd){ return (CPL && nd && CPL.by && CPL.by[nd.i]) || null; }
+function cplCred(k){ return (CPL && CPL.creds && CPL.creds[k]) || ["", null, null]; }
+function cplType(i){ return (CPL && CPL.types && CPL.types[i]) || ""; }
+function cplCollege(i){ return (CPL && CPL.colleges && CPL.colleges[i]) || ""; }
+function cplCounts(){ return (CPL && CPL.counts) || {}; }
+/* Distinct colleges across a credential's exhibit rows. */
+function cplHeld(rows){ var s={}, n=0; rows.forEach(function(r){ (r[4]||[]).forEach(function(c){ if(!s[c]){ s[c]=1; n++; } }); }); return n; }
+function cplExhibits(b){ var n=0; b.forEach(function(e){ n+=e[1].length; }); return n; }
+/* {college name: [credential names]} — the colleges whose course under this
+ * identity is the RECEIVING course of an articulation. Drawn on their stars. */
+function cplCollegesOf(nd){
+  var b=cplOf(nd); if(!b) return null;
+  var out={}, any=false;
+  b.forEach(function(e){
+    var name=cplCred(e[0])[0];
+    e[1].forEach(function(r){ (r[4]||[]).forEach(function(c){
+      var cn=cplCollege(c); if(!cn) return;
+      if(!out[cn]) out[cn]=[];
+      if(out[cn].indexOf(name)<0) out[cn].push(name);
+      any=true;
+    }); });
+  });
+  return any?out:null;
+}
+/* Per discipline: how many credentials reach it, and how many of its points. */
+function cplIslandCounts(){
+  if(cplIslCache) return cplIslCache;
+  var out={};
+  if(CPL && CPL.by && U) U.islands.forEach(function(I){
+    var creds={}, nc=0, pts=0;
+    I.p.forEach(function(nd){
+      var b=CPL.by[nd.i]; if(!b) return;
+      pts++;
+      b.forEach(function(e){ if(!creds[e[0]]){ creds[e[0]]=1; nc++; } });
+    });
+    if(pts) out[I.d]={creds:nc, points:pts};
+  });
+  cplIslCache=out;
+  return out;
+}
+/* The coverage line, as words. Computed from the payload — never a literal. */
+function cplLineText(){
+  var c=cplCounts();
+  if(cplState==="ok") return num(c.exhibits_on_map||0)+" of "+num(c.exhibits_articulated||0)+
+    " articulated exhibits reach a course on this map. A point is named by the credential that reaches it; "+
+    "a point no exhibit reaches stays drawn and unlabeled.";
+  if(cplState==="loading"||cplState==="") return "Loading MAP\u2019s articulation record\u2026";
+  if(cplState==="blocked") return "MAP\u2019s articulation record cannot be loaded from a file:// page \u2014 serve the page and the points take their credential names.";
+  return "MAP\u2019s articulation record could not be loaded, so the points keep their course names.";
+}
+function cplLineHtml(){
+  var c=cplCounts();
+  if(cplState!=="ok") return esc(cplLineText());
+  return "<strong>"+num(c.exhibits_on_map||0)+"</strong> of "+num(c.exhibits_articulated||0)+
+    " articulated exhibits reach a course on this map. A point is named by the credential that reaches it; "+
+    "a point no exhibit reaches stays drawn and unlabeled.";
+}
+/* Why an empty answer is not evidence of absence — the ceiling, in words, on
+ * the reading surfaces only (never a mark on the map). */
+function cplCeilingWords(){
+  var c=cplCounts(), f=c.funnel||{};
+  var pct = (f.rows && f.rows_naming_course!=null) ? Math.round(1000*f.rows_naming_course/f.rows)/10 : null;
+  return "Absence here is not evidence that no credential applies: only "+num(c.exhibits_on_map||0)+" of "+
+    num(c.exhibits_articulated||0)+" articulated exhibits reach any course on this map"+
+    (pct!=null ? ", and MAP\u2019s credit funnel names a receiving college course on "+pct+"% of its rows" : "")+
+    " \u2014 the missing receiving course is a MAP data item, not a finding about this course.";
+}
 function cssName(k){ return "--sky-"+k.replace(/([A-Z])/g, function(m){ return "-"+m.toLowerCase(); }); }
 function readPal(){
   var cs=null; try{ cs=getComputedStyle(document.body); }catch(e){}
@@ -534,7 +657,7 @@ function healWords(){
 function creditShort(nd){ return nd.c===0 ? "CR" : nd.c===1 ? "NC" : nd.c===2 ? "NCE" : "CR status not recorded"; }
 function kindShort(kind, nd){
   return kind==="subject" ? "DISC" : kind==="member" ? "COLLEGE CRSE"
-       : kind==="term" ? "SEARCH" : (nd&&nd.a) ? "STAND-ALONE CRSE" : "CRSE IDENTITY";
+       : kind==="term" ? "SEARCH" : kind==="cpl" ? "CPL" : (nd&&nd.a) ? "STAND-ALONE CRSE" : "CRSE IDENTITY";
 }
 /* Dash length tracks the radius so the break stays visible as you zoom: a fixed
  * pattern turns into a solid ring on a big circle and vanishes on a small one. */
@@ -819,6 +942,15 @@ function draw(){
       ctx.beginPath(); ctx.arc(c[0],c[1],r+4,0,6.2832);
       ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringToken; ctx.stroke();
     }
+    if(lit && !showNodes && islandLit(isl)){
+      /* Below NODE_ZOOM the map draws disciplines, not courses, and a light that
+       * answers only past the zoom the map opens on is indistinguishable from a
+       * broken control (the Show switches, 2026-09-05). So a discipline holding
+       * a lit course carries the ring at that zoom, and the courses take it over
+       * once they are drawn. Presence only: a discipline with none is untouched. */
+      ctx.beginPath(); ctx.arc(c[0],c[1],r+2.5,0,6.2832);
+      ctx.lineWidth=2; ctx.strokeStyle=pal.lit; ctx.stroke();
+    }
 
     if(showNodes){
       // Tethers first, under the points: a faint line from each orbiting course
@@ -885,6 +1017,7 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],dr+2.2,0,6.2832);
           ctx.save(); ctx.setLineDash(ncDash(dr+2.2)); ctx.lineWidth=1; ctx.strokeStyle=s[1]; ctx.stroke(); ctx.restore();
         }
+        if(lit && nd.ar>0) lightAround(p[0], p[1], dr);   // the articulations light
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],dr+4.5,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle=pal.ringSearch; ctx.stroke();
@@ -1022,6 +1155,29 @@ function haloAround(cx, cy, r, color){
   ctx.restore();
 }
 
+/* ── the articulations light (Sam's ruling 2, 2026-09-07) ──────────────────
+ * "Light only what has a number." A gold glow and a thin ring on a point that
+ * carries an articulation; nothing at all on one that does not. Capped like
+ * haloAround so a lit point never becomes a lit canvas. The legend names the
+ * glow in words, and the panel and the outline carry the count. */
+function lightAround(cx, cy, r){
+  var reach=Math.max(9, Math.min(r*3, Math.min(cw(), ch())*0.12));
+  var g=null;
+  try{ g = ctx.createRadialGradient(cx, cy, Math.max(0.5, r*0.8), cx, cy, reach); }catch(e){ g=null; }
+  if(g){
+    g.addColorStop(0, pal.litGlow); g.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.beginPath(); ctx.arc(cx, cy, reach, 0, 6.2832);
+    ctx.fillStyle=g; ctx.fill();
+  }
+  ctx.beginPath(); ctx.arc(cx, cy, r+3, 0, 6.2832);
+  ctx.lineWidth=1.6; ctx.strokeStyle=pal.lit; ctx.stroke();
+}
+/* Memoized per island: does anything in it carry an articulation? */
+function islandLit(isl){
+  if(isl._lit==null){ var any=false; for(var i=0;i<isl.p.length;i++) if(isl.p[i].ar>0){ any=true; break; } isl._lit=any; }
+  return isl._lit;
+}
+
 function drawMembers(nd, isl, p, rad, k, queue, focus){
   var all=membersOf(nd.i); if(!all.length) return;
   // A filtered or carried course is always among the drawn ones.
@@ -1036,6 +1192,9 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   var R0=rad+16+spread, perRing=Math.max(8, Math.round(2*Math.PI*R0/(focus?15:13)));
   var sys=sysPal(nd);
   var rings=Math.ceil(n/perRing);
+  /* With the light on or the CPL face up, the star of a college whose course
+   * here is the RECEIVING course of an articulation takes the light's fill. */
+  var artSet=(lit||face==="cpl") ? cplCollegesOf(nd) : null;
   if(focus){
     /* Sam, 2026-09-05: "probably no labels should transect the CCR circle."
      * The disc is the one thing on screen the reader is studying, and a
@@ -1084,9 +1243,10 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     ctx.lineWidth=1; ctx.strokeStyle=pal.ringFaint; ctx.stroke();
     /* A college's own course is a small star on its spoke. Muted: it is evidence
      * for the identity at the centre, never a competitor for attention. */
+    var artic=!!(artSet && artSet[m.c]);
     starPath(x, y, 5.2);
-    ctx.fillStyle=movedHere?pal.sqMoved:carried?pal.sqCarried:pal.hollow; ctx.fill();
-    ctx.lineWidth=1.2; ctx.strokeStyle=movedHere?pal.sqMovedStroke:sys[1]; ctx.stroke();
+    ctx.fillStyle=movedHere?pal.sqMoved:carried?pal.sqCarried:artic?pal.litFill:pal.hollow; ctx.fill();
+    ctx.lineWidth=artic?1.6:1.2; ctx.strokeStyle=movedHere?pal.sqMovedStroke:artic?pal.lit:sys[1]; ctx.stroke();
     memberPts.push({x:x, y:y, m:m, nd:nd, isl:isl});
     if(k>MEMBER_ZOOM || focus)
       // Short college names on the map (Sam, 2026-09-05: "Could use the short
@@ -1143,8 +1303,22 @@ function loneCollege(nd){
 }
 window.__ccrLoneCollege = loneCollege;
 
+/* The CPL face's label: the credential that reaches the point leads, and a
+ * point nothing reaches gets NO label (Sam's ruling 3, 2026-09-07). "+N" says
+ * how many more credentials reach it; the full band adds the agencies. */
+function cplLabelLines(nd, k){
+  if(cplState!=="ok") return null;
+  var b=cplOf(nd); if(!b) return null;
+  var lead=cplCred(b[0][0]), n=b.length;
+  var head=trunc(lead[0], k>TITLE_ZOOM?44:28)+(n>1?" +"+(n-1):"");
+  if(k>FULL_ZOOM)
+    return {band:"full", lines:[head, trunc((lead[1]||"issuing agency not recorded")+(lead[2]?" \u00b7 trained by "+lead[2]:""), 64)]};
+  if(k>TITLE_ZOOM) return {band:"titled", lines:[head]};
+  return {band:"brief", lines:[head]};
+}
 function labelLines(nd, k){
   if(k<=ID_ZOOM) return null;
+  if(face==="cpl") return cplLabelLines(nd, k);
   var u=unitsShort(nd.u);
   var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"");
   if(k>FULL_ZOOM){
@@ -1156,6 +1330,18 @@ function labelLines(nd, k){
   return {band:"brief", lines:[head]};
 }
 
+/* The island's name with its identity count — and on the CPL face, how many
+ * credentials reach it. Presence only: a discipline nothing reaches keeps its
+ * plain name rather than gaining a "0", which would claim a measurement the
+ * join cannot make (95.7% of MAP's credit rows name no receiving course). */
+function islandLabel(isl){
+  var s=isl.d+" ("+num(isl.n)+")";
+  if(face==="cpl" && cplState==="ok"){
+    var c=cplIslandCounts()[isl.d];
+    if(c) s+=" \u00b7 "+num(c.creds)+" credential"+(c.creds===1?"":"s");
+  }
+  return s;
+}
 /* Biggest first, reject anything that would overlap an already-placed label.
    Hover/selection always wins a slot — it is the one the reader asked for. */
 function placeLabels(queue, showAll){
@@ -1169,7 +1355,7 @@ function placeLabels(queue, showAll){
     if(!q.force && !showAll && q.r<26) return;          // too small to earn a name
     var size=Math.max(11,Math.min(19,q.r*0.17))*tx();
     ctx.font=(q.force?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
-    var lab=q.isl.d+" ("+num(q.isl.n)+")";
+    var lab=islandLabel(q.isl);
     var w=ctx.measureText(lab).width, h=size*1.25;
     var box=[q.cx-w/2-3, q.cy-h, q.cx+w/2+3, q.cy+4];
     if(box[2]<0||box[0]>cw()||box[3]<0||box[1]>ch()) return;
@@ -1404,17 +1590,21 @@ function pickMember(px,py,only){
 window.__ccrUniverse = function(opts){
   opts=opts||{};
   var wantSolo = opts.solo==null ? solo : !!opts.solo;
+  var wantFace = opts.face ? (opts.face==="cpl"?"cpl":"courses") : face;
   /* Already on the map: switch the frame and keep the render. SkyView alone and
    * the comprehensive view are ONE canvas — the second merely shows the panes
    * below it — so switching between them keeps the zoom, the selection and the
    * moves. Re-rendering would have thrown all three away. */
-  if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){ setSolo(wantSolo); return; }
+  if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){
+    if(wantFace!==face) setFace(wantFace, true);
+    setSolo(wantSolo); return;
+  }
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
   spreadUniverse(U);
   nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null;
   if(!authority) loadAuthority();
-  solo=wantSolo;
+  solo=wantSolo; face=wantFace;
   window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"SkyView"}],
                   {menu:false, view: solo?"skyview":"comprehensive"});
   // Full bleed: the map takes the whole width; the panes below keep the measure.
@@ -1484,6 +1674,20 @@ window.__ccrUniverse = function(opts){
             '<button class="u-ico" type="button" id="u-reset" aria-label="Reset the view" title="Reset the view">\u21BA</button>'+
           '</span>'+
           showMenuHtml()+
+          /* ── the CPL face and the articulations light (Sam, 2026-09-07) ──
+           * Next to Show, as the sheet drew them. Each is a word; the pressed
+           * state is painted from module memory by paintFace/paintLit, never
+           * written into the markup. */
+          '<span class="u-modes u-face" role="group" aria-label="What a point is named by">'+
+            '<button class="btn mode" type="button" id="u-face-courses" aria-pressed="true" '+
+              'title="Name each point by its course">Courses</button>'+
+            '<button class="btn mode" type="button" id="u-face-cpl" aria-pressed="false" '+
+              'title="Name each point by the credential that reaches it">CPL</button>'+
+          '</span>'+
+          '<span class="u-modes u-litgrp" role="group" aria-label="Lights">'+
+            '<button class="btn mode" type="button" id="u-lit" aria-pressed="false" '+
+              'title="Light the courses that carry an articulation">Articulations</button>'+
+          '</span>'+
         '</div>'+
         '<span class="u-wins" role="group" aria-label="Window">'+
           '<button class="u-ico u-win" type="button" id="u-win-down" aria-label="Show the page around the map" '+
@@ -1494,6 +1698,9 @@ window.__ccrUniverse = function(opts){
             '\u2715</button>'+
         '</span>'+
       '</div>'+
+      /* The CPL face says its own coverage, in one line, where the reader is
+       * looking. Inside #u-full so it exists in browser full screen. */
+      '<p class="u-face-line" id="u-face-line" hidden></p>'+
       '<div class="u-stage" id="u-stage">'+
         '<div class="u-wrap" id="u-wrap">'+
           '<canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
@@ -1525,10 +1732,14 @@ window.__ccrUniverse = function(opts){
       '</div>'+
       '<div class="u-foot" id="u-foot">'+
         '<div class="u-legend" aria-label="How to read the map">'+
-          '<span><i class="u-sw s0"></i>M-ID, our working label</span>'+
-          '<span><i class="u-sw s1"></i>C-ID, official</span>'+
-          '<span><i class="u-sw s2"></i>CCN, official</span>'+
-          '<span><i class="u-sw s3"></i>unified</span>'+
+          '<span title="'+esc(SYSWHY[0])+'"><i class="u-sw s0"></i>M-ID, our working label</span>'+
+          '<span title="'+esc(SYSWHY[1])+'"><i class="u-sw s1"></i>C-ID, official</span>'+
+          '<span title="'+esc(SYSWHY[2])+'"><i class="u-sw s2"></i>CCN, official</span>'+
+          /* v4 item 8 (Sam, 2026-09-06): "Maybe add a note to Unified and that
+           * would be fine" — the note in the legend's own style, and the three
+           * id systems carry their SYSWHY as the hover he asked for. */
+          '<span title="'+esc(SYSWHY[3])+'"><i class="u-sw s3"></i>unified \u2014 a synthetic row standing in for a course identity; it carries no minted number of its own</span>'+
+          '<span id="u-lg-lit" hidden><i class="u-sw lit"></i>lit \u2014 a gold glow on a course that carries an articulation; the rest are drawn as they are</span>'+
           '<span><i class="u-sw orphan"></i>stand-alone course — a smaller, lighter dot in orbit around its closest match</span>'+
           '<span><i class="u-sw nc"></i>noncredit — a broken ring around the dot, whatever the identity system</span>'+
           '<span><i class="u-sw member"></i>college course under an identity — a small star; click or hover an identity to open it</span>'+
@@ -1593,7 +1804,8 @@ function fitCanvas(){
   if(!wrap||!full) return;
   var stage=document.getElementById("u-stage")||full;
   var topEl=document.getElementById("u-top"), footEl=document.getElementById("u-foot");
-  var th=topEl?topEl.offsetHeight:0, fh=footEl?footEl.offsetHeight:0, h;
+  var lineEl=document.getElementById("u-face-line");
+  var th=(topEl?topEl.offsetHeight:0)+((lineEl&&!lineEl.hidden)?lineEl.offsetHeight:0), fh=footEl?footEl.offsetHeight:0, h;
   if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight-th-fh;
   else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
   /* SkyView alone: nothing is painted above or below the section, so the canvas
@@ -1763,6 +1975,14 @@ function suggest(raw, limit, order){
    * be CENTERED ON THE BEST MATCH rather than taken from the start. Rank by
    * relevance first to find that anchor, then re-sort by name and slide a
    * window around it. */
+  /* ── the CPL face searches the credential vocabulary (Sam's ruling 3,
+   * 2026-09-07: typing "welding" on the CPL face finds credentials and
+   * recommendations rather than course titles). The course rows give way to
+   * credential, agency, recommendation and exhibit rows; disciplines and
+   * college-course codes keep their places, because both are still how a
+   * reader says "take me there". */
+  var cplRows = (face==="cpl" && cplState==="ok") ? cplSuggestRows(term, startsWord) : null;
+  if(cplRows) pts=[];
   pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
   var anchor = pts.length ? pts[0] : null;
   /* ── item 6 of Sam's first list (2026-09-04): "In the Keyword Search, keep CR
@@ -1828,7 +2048,7 @@ function suggest(raw, limit, order){
    * true — whatever a kind cannot fill FLOWS to the others rather than
    * shortening the list. A term with no college courses now returns 60
    * disciplines and courses, not 45 and a gap. */
-  var have=[subs.length, pts.length, mems.length];
+  var have=[subs.length, cplRows?cplRows.length:pts.length, mems.length];
   var want=[Math.max(4, Math.round(limit*0.30)),      // disciplines
             Math.max(6, Math.round(limit*0.45)),      // course identities + stand-alones
             Math.max(4, Math.round(limit*0.25))];     // college courses
@@ -1860,7 +2080,11 @@ function suggest(raw, limit, order){
   } else {
     shown=pts.slice(0, want[1]);
   }
-  shown.forEach(function(p){
+  if(cplRows){
+    var cr = ord==="name" ? cplRows.slice().sort(function(a,b){ return a.label.toLowerCase()<b.label.toLowerCase()?-1:1; }) : cplRows;
+    cr.slice(0, want[1]).forEach(function(s){ out.push(s); });
+  }
+  else shown.forEach(function(p){
     out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity",
               kindShort:kindShort("course", p.nd), label:p.nd.t||p.nd.i,
               sub:p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd), credit:creditWord(p.nd),
@@ -1872,8 +2096,69 @@ function suggest(raw, limit, order){
   /* What the dropdown's footer needs to say "there are more". `pts` and `mems`
    * are themselves capped, so this is a floor on the true count, never a
    * claim of exactness — the footer words it that way. */
-  out.more = (subs.length-want[0]) + (pts.length-want[1]) + (mems.length-want[2]);
+  out.more = (subs.length-want[0]) + ((cplRows?cplRows.length:pts.length)-want[1]) + (mems.length-want[2]);
   return out;
+}
+/* ── the credential vocabulary as a search index ────────────────────────────
+ * Built once per payload: every credential name, issuing agency, training
+ * agency, credit recommendation and MAP exhibit title, each pointing at the
+ * identities it reaches. The kind is a WORD on the row, never a color. */
+function cplIndex(){
+  if(cplIndexCache) return cplIndexCache;
+  var m={}, out=[];
+  function add(kind, label, id){
+    if(!label) return;
+    var key=kind+"\u0000"+String(label).toLowerCase();
+    var e=m[key]; if(!e){ e=m[key]={kind:kind, label:String(label), lc:String(label).toLowerCase(), ids:[], seen:{}}; out.push(e); }
+    if(!e.seen[id]){ e.seen[id]=1; e.ids.push(id); }
+  }
+  if(CPL && CPL.by) Object.keys(CPL.by).forEach(function(id){
+    CPL.by[id].forEach(function(e){
+      var c=cplCred(e[0]);
+      add("credential", c[0], id); add("agency", c[1], id); add("agency", c[2], id);
+      e[1].forEach(function(r){
+        add("exhibit", r[1], id);
+        (r[3]||[]).forEach(function(x){ add("recommendation", x, id); });
+      });
+    });
+  });
+  out.forEach(function(e){ delete e.seen; });
+  cplIndexCache=out;
+  return out;
+}
+function cplMatches(term, startsWord){
+  var hits=[];
+  cplIndex().forEach(function(e){
+    var t = e.lc===term ? 0 : (e.lc.indexOf(term)===0 || (startsWord && startsWord(e.lc))) ? 1 : e.lc.indexOf(term)>=0 ? 2 : -1;
+    if(t<0) return;
+    hits.push({e:e, tier:t});
+  });
+  hits.sort(function(a,b){ return a.tier-b.tier || b.e.ids.length-a.e.ids.length || a.e.label.localeCompare(b.e.label); });
+  return hits;
+}
+var CPL_KIND_WORD={credential:"credential", agency:"agency", recommendation:"credit recommendation", exhibit:"MAP exhibit"};
+var CPL_KIND_SHORT={credential:"CREDENTIAL", agency:"AGENCY", recommendation:"CREDIT REC", exhibit:"EXHIBIT"};
+function cplSuggestRows(term, startsWord){
+  return cplMatches(term, startsWord).slice(0, 400).map(function(h){
+    var e=h.e, first=nodeById(e.ids[0]);
+    return {kind:"cpl", cplKind:e.kind, kindWord:CPL_KIND_WORD[e.kind], kindShort:CPL_KIND_SHORT[e.kind], label:e.label,
+            sub:"reaches "+num(e.ids.length)+" course"+(e.ids.length===1?"":"s"), ids:e.ids.slice(),
+            isl:first?first.isl:null, nd:first?first.nd:null};
+  });
+}
+function idsToHits(ids){
+  var out=[];
+  (ids||[]).forEach(function(id){ var h=nodeById(id); if(h) out.push({id:id, x:h.nd.x+(h.isl.dx||0), y:h.nd.y+(h.isl.dy||0), isl:h.isl, nd:h.nd}); });
+  return out;
+}
+/* Every identity reached by anything in the vocabulary matching the term. */
+function cplHits(term){
+  var seen={}, ids=[];
+  var wordRe=null; try{ wordRe=new RegExp("\\b"+term.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")); }catch(e){ wordRe=null; }
+  cplMatches(term, function(t){ return !!(wordRe && wordRe.test(t)); }).forEach(function(h){
+    h.e.ids.forEach(function(id){ if(!seen[id]){ seen[id]=1; ids.push(id); } });
+  });
+  return idsToHits(ids.slice(0, 300));
 }
 /* The drawn stars' screen positions. The hit test is the only way a reader
  * reaches a college course on the canvas, and it was silently handing back the
@@ -1887,6 +2172,14 @@ window.__ccrMemberPoints = function(){
 };
 window.__ccrSuggest = suggest;
 window.__ccrTipHtml = tipHtml;
+/* The CPL face and the light, for the harness and for COBI's frame. */
+window.__ccrSetFace = function(f, quiet){ setFace(f, quiet==null ? true : !!quiet); };
+window.__ccrSetLit = function(on, quiet){ setLit(on, quiet==null ? true : !!quiet); };
+window.__ccrLabelLines = labelLines;
+window.__ccrIslandLabel = islandLabel;
+window.__ccrCplOf = function(id){ var h=nodeById(id); return h ? cplOf(h.nd) : null; };
+window.__ccrCplLine = cplLineText;
+window.__ccrCplLoad = loadCpl;
 
 /* ⚠️ A PANEL THE READER HID STAYS HIDDEN. openInspector() fires on every
  * selection, so pressing Hide and then picking anything put it straight back —
@@ -1961,6 +2254,27 @@ function goSuggestionSingle(s){
     flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
     selIsl=I; selNode=null; showIsland(I);
     setHint("Discipline <strong>"+esc(I.d)+"</strong> — "+num(I.n)+" identities, "+num(I.sa||0)+" stand-alone courses."+healWords());
+    draw(); return true;
+  }
+  if(s.kind==="cpl"){
+    /* A credential, an agency, a recommendation or an exhibit: ring every
+     * course it reaches; one course opens as a course pick would. */
+    var chits=idsToHits(s.ids);
+    if(!chits.length){ setHint("Nothing on the map is reached by <strong>"+esc(s.label)+"</strong>."); return false; }
+    healHits(chits);
+    searchHits=chits; searchTerm=String(s.label||"").toLowerCase();
+    var csubj={}; chits.forEach(function(h){ csubj[h.isl.d]=(csubj[h.isl.d]||0)+1; });
+    var cnames=Object.keys(csubj).sort(function(a,b){ return csubj[b]-csubj[a]; });
+    if(chits.length===1){
+      selNode=chits[0].nd; selIsl=chits[0].isl; memFilter="";
+      flyTo(selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0), COURSE_ZOOM);
+      showNode(selNode, selIsl, false);
+    } else {
+      selNode=null; fitSelection(chits, []);
+    }
+    setHint("<strong>"+esc(s.label)+"</strong> ("+esc(s.kindWord||"CPL")+") reaches <strong>"+num(chits.length)+"</strong> course"+(chits.length===1?"":"s")+
+      " across "+cnames.length+" discipline"+(cnames.length===1?"":"s")+": "+cnames.slice(0,4).map(function(n){ return esc(n)+" ("+csubj[n]+")"; }).join(" \u00b7 ")+
+      (cnames.length>4?" \u00b7 \u2026":"")+". Ringed in red."+healWords());
     draw(); return true;
   }
   var isl=s.isl, nd=s.nd;
@@ -2095,13 +2409,30 @@ window.__ccrUniverseState = function(){
             return o; })(),
           mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL, memberPoints:memberPts.length,
           memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
-          hover:hoverNode?hoverNode.i:null};
+          hover:hoverNode?hoverNode.i:null,
+          face:face, lit:lit, cpl:cplState, cplLine:(face==="cpl"?cplLineText():null),
+          cplReached:(CPL&&CPL.by)?Object.keys(CPL.by).length:0};
 };
 
 /* ── tooltip ────────────────────────────────────────────────────────────────
  * The quick look (Sam: "see course and cluster details on click or hover"). A
  * tooltip follows the pointer; the inspector holds the full card on click. */
+/* The hover on the CPL face: the credential leads, then the agencies, then
+ * what it earns and who holds it; the course is the last line. */
+function cplTipHtml(hit){
+  var nd=hit.nd, b=cplOf(nd); if(!b) return null;
+  var lead=cplCred(b[0][0]), rows=b[0][1], ex=rows[0], held=cplHeld(rows);
+  var recs=ex[3]||[];
+  return '<b>'+esc(lead[0])+'</b>'+(lead[1]?' \u00b7 '+esc(lead[1]):'')+
+    (lead[2]?'<br><span class="sub">Training: '+esc(lead[2])+'</span>':'')+
+    '<br><span class="sub">'+esc(cplType(ex[2]))+
+      (recs.length?' \u00b7 earns '+esc(recs.slice(0,2).join("; "))+(recs.length>2?' \u2026':''):'')+
+      ' \u00b7 held by '+num(held)+' college'+(held===1?'':'s')+'</span>'+
+    '<br><span class="sub">'+(b.length>1?num(b.length)+' credentials reach ':'reaches ')+esc(nd.i)+' '+esc(trunc(nd.t||"",36))+
+      (hit.isl?' \u00b7 '+esc(hit.isl.d):'')+'</span>';
+}
 function tipHtml(hit){
+  if(face==="cpl" && hit.nd && !hit.mem && cplState==="ok"){ var ch=cplTipHtml(hit); if(ch) return ch; }
   if(hit.mem){
     /* Sam, 2026-09-05: "The course title and description should show on the
      * explainer card for member local courses." The description is the whole
@@ -2115,11 +2446,13 @@ function tipHtml(hit){
              : st==="loading" ? "Loading the catalog description…"
              : st==="ok" ? "No catalog description for this course."
              : "";
+    var artic=(lit||face==="cpl") ? ((cplCollegesOf(hit.nd)||{})[m.c]||null) : null;
     return '<b>'+esc(m.n)+'</b> '+esc(shortCollege(m.c))+
       (info&&info.title?'<br>'+esc(info.title):'')+
       '<br><span class="sub">'+(info&&info.units!=null?esc(unitsWord(info.units))+' · ':'')+
       'college course under '+esc(hit.nd.i)+' '+esc(trunc(hit.nd.t||"",36))+'</span>'+
-      (body?'<br><span class="sub tip-desc">'+body+'</span>':'');
+      (body?'<br><span class="sub tip-desc">'+body+'</span>':'')+
+      (artic?'<br><span class="sub">The receiving course for '+esc(artic.slice(0,3).join("; "))+(artic.length>3?' \u2026':'')+'</span>':'');
   }
   if(hit.nd){
     var nd=hit.nd, isl=hit.isl;
@@ -2179,6 +2512,14 @@ function wire(){
   if(mpan) mpan.onclick=function(){ setMode("pan"); };
   if(mmove) mmove.onclick=function(){ setMode("move"); };
   window.__ccrSetMode=setMode;
+  /* ── the CPL face and the light ───────────────────────────────────────── */
+  var fc=document.getElementById("u-face-courses"), fp=document.getElementById("u-face-cpl"), lb=document.getElementById("u-lit");
+  if(fc) fc.onclick=function(){ setFace("courses"); };
+  if(fp) fp.onclick=function(){ setFace("cpl"); };
+  if(lb) lb.onclick=function(){ setLit(!lit); };
+  paintFace(); paintLit();
+  if(face==="cpl" && cplState!=="ok")
+    loadCpl(function(){ paintFace(); if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
   /* The Views menu is built and wired by viewsMenuInto() — one builder for
    * the map's row and for every other view's crumbs row (item 9). */
 
@@ -2618,7 +2959,8 @@ function searchOne(raw){
   var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
-  U.islands.forEach(function(I){
+  if(face==="cpl" && cplState==="ok") searchHits=cplHits(term);   // the vocabulary, not the titles
+  else U.islands.forEach(function(I){
     I.p.forEach(function(nd){
       if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         searchHits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
@@ -2682,7 +3024,8 @@ function searchOne(raw){
   healHits(searchHits);
   var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
   var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
-  var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
+  var head="<strong>"+num(searchHits.length)+"</strong>"+
+    (face==="cpl" ? " course"+(searchHits.length===1?"":"s")+" reached by a credential, agency or credit recommendation matching “" : " match “")+esc(term)+
     "” across <strong>"+names.length+"</strong> discipline"+(names.length===1?"":"s")+
     ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
     (names.length>4?" · …":"")+"."+
@@ -2728,19 +3071,22 @@ function doSearch(raw){
 function tokenFromSuggestion(s){
   if(s.kind==="subject") return {kind:"subject", key:"disc:"+s.isl.d, label:s.label, isl:s.isl, s:s};
   if(s.kind==="member") return {kind:"member", key:"mem:"+s.code+"@"+s.nd.i, label:s.code, isl:s.isl, nd:s.nd, code:s.code, s:s};
+  if(s.kind==="cpl") return {kind:"cpl", key:"cpl:"+s.cplKind+":"+String(s.label).toLowerCase(), label:s.label, ids:s.ids, cplKind:s.cplKind, s:s};
   return {kind:"course", key:"crs:"+s.nd.i, label:s.nd.t||s.nd.i, isl:s.isl, nd:s.nd, s:s};
 }
-function tokenShort(t){ return kindShort(t.kind, t.nd); }
+function tokenShort(t){ return t.kind==="cpl" ? (CPL_KIND_SHORT[t.cplKind]||"CPL") : kindShort(t.kind, t.nd); }
 /* What a token contributes to the map: node hits to ring, islands to outline. */
 function tokenHits(t){
   var out={hits:[], isls:[]};
   if(t.kind==="subject"){ out.isls.push(t.isl); return out; }
+  if(t.kind==="cpl"){ out.hits=idsToHits(t.ids); return out; }
   if(t.kind==="course"||t.kind==="member"){
     out.hits.push({id:t.nd.i, x:t.nd.x+(t.isl.dx||0), y:t.nd.y+(t.isl.dy||0), isl:t.isl, nd:t.nd}); return out;
   }
   var term=String(t.term||"").toLowerCase();
   var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
   if(named.length){ out.isls=named; return out; }
+  if(face==="cpl" && cplState==="ok"){ out.hits=cplHits(term); return out; }
   U.islands.forEach(function(I){ I.p.forEach(function(nd){
     if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
       out.hits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
@@ -3090,6 +3436,7 @@ function showIsland(isl){
     "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
       ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
       num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another discipline":"")+")":"")+".</p>"+
+    (face==="cpl" ? cplIslandHtml(isl) : "")+
     (top.length?'<p class="sub">Biggest first — pick one to open it:</p><ul class="idlist">'+top.map(function(nd){
       return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
         chipFor(nd)+
@@ -3175,9 +3522,75 @@ function memberRow(m, isl, nd, moved){
 /* The identity's own `n` is NOT a college count — it comes from whichever field
  * minted the row, and it disagrees with the members actually carried on a fifth
  * of identities. Both are shown and neither is silently preferred. */
+/* ── the CPL block on the reading surfaces (the panel and the outline) ──────
+ * Credential → issuing agency and, where it differs, the training agency →
+ * what it earns → the colleges holding it (Sam's ruling 3 + his note,
+ * 2026-09-07). The MAP exhibit's own title is the last line of each row, so a
+ * college recognizes what it typed. */
+function cplListHtml(b, cap){
+  cap=cap||12;
+  var items=b.slice(0, cap).map(function(e){
+    var c=cplCred(e[0]), rows=e[1], held=cplHeld(rows);
+    return '<li><div class="cpl-name">'+esc(c[0])+
+        ' <span class="sub">\u00b7 held by '+num(held)+' college'+(held===1?'':'s')+'</span></div>'+
+      '<div class="sub">'+(c[1]?'Issued by '+esc(c[1]):'Issuing agency not recorded')+
+        (c[2]?' \u00b7 training by '+esc(c[2]):'')+'</div>'+
+      rows.map(function(r){
+        var recs=r[3]||[], cols=(r[4]||[]).map(function(i){ return shortCollege(cplCollege(i)); });
+        return '<div class="cpl-ex"><span class="chip mut">'+esc(cplType(r[2]))+'</span> '+
+          (recs.length?'<span class="cpl-earn">'+esc(recs.join("; "))+'</span>':'<span class="sub">no credit recommendation recorded</span>')+
+          '<div class="sub">'+(cols.length?esc(cols.join(", ")):'no college named')+
+            ' \u00b7 MAP exhibit: '+esc(r[1]||r[0])+
+            (r[5]?' <span class="chip warn" title="In the articulation crosswalk, but not in today\u2019s MAP feed \u2014 kept and flagged rather than dropped.">not in today\u2019s feed</span>':'')+
+          '</div></div>';
+      }).join("")+'</li>';
+  }).join("");
+  return '<ul class="cpl-list">'+items+'</ul>'+
+    (b.length>cap?'<p class="sub">Showing '+cap+' of '+num(b.length)+' credentials.</p>':'');
+}
+function cplPanelHtml(nd, isl){
+  var b=(cplState==="ok")?cplOf(nd):null;
+  var h='<h4 style="margin:.9em 0 .3em">Credit for prior learning reaching this course'+
+    (b?' ('+num(b.length)+' credential'+(b.length===1?'':'s')+', '+num(cplExhibits(b))+' exhibit'+(cplExhibits(b)===1?'':'s')+')':'')+'</h4>';
+  if(cplState==="loading"||cplState==="") return h+'<p class="empty">Loading MAP\u2019s articulation record\u2026</p>';
+  if(cplState!=="ok") return h+'<p class="empty">'+esc(cplLineText())+'</p>';
+  if(!b) return h+'<p class="empty">No MAP exhibit reaches this course through a receiving college course. '+esc(cplCeilingWords())+'</p>';
+  return h+'<p class="sub">From MAP\u2019s articulation records, joined through the receiving college course \u2014 the only join there is. '+
+    'The name is the curated credential; the agencies come from the credential reference.</p>'+cplListHtml(b, 12);
+}
+/* The discipline panel on the CPL face: what reaches this discipline. */
+function cplIslandHtml(isl){
+  if(cplState!=="ok") return '<p class="sub">'+esc(cplLineText())+'</p>';
+  var c=cplIslandCounts()[isl.d];
+  if(!c) return '<p class="sub">No MAP exhibit reaches a course in this discipline through a receiving college course. '+esc(cplCeilingWords())+'</p>';
+  var by={}, list=[];
+  isl.p.forEach(function(nd){
+    var b=cplOf(nd); if(!b) return;
+    b.forEach(function(e){
+      var k=e[0], x=by[k]; if(!x){ x=by[k]={k:k, held:0, ids:[]}; list.push(x); }
+      x.held+=cplHeld(e[1]); if(x.ids.indexOf(nd.i)<0) x.ids.push(nd.i);
+    });
+  });
+  list.sort(function(a,b){ return b.held-a.held || cplCred(a.k)[0].localeCompare(cplCred(b.k)[0]); });
+  var cap=10;
+  return '<p><strong>'+num(c.creds)+'</strong> credential'+(c.creds===1?'':'s')+' reach'+(c.creds===1?'es':'')+' '+
+      num(c.points)+' course'+(c.points===1?'':'s')+' in this discipline. The most-held first \u2014 pick one to open the course it reaches:</p>'+
+    '<ul class="idlist cpl-isl">'+list.slice(0,cap).map(function(x){
+      var cr=cplCred(x.k), first=x.ids[0], nd0=nodeById(first);
+      return '<li><button type="button" class="ttl linkish" data-go="'+esc(first)+'">'+esc(cr[0])+'</button>'+
+        '<div class="sub">'+(cr[1]?esc(cr[1]):'issuing agency not recorded')+(cr[2]?' \u00b7 training by '+esc(cr[2]):'')+
+        ' \u00b7 reaches '+esc(nd0?(nd0.nd.t||first):first)+(x.ids.length>1?' and '+(x.ids.length-1)+' more':'')+'</div></li>';
+    }).join("")+'</ul>'+(list.length>cap?'<p class="sub">Showing '+cap+' of '+num(list.length)+'.</p>':'');
+}
 function renderNode(){
   var nd=selNode, isl=selIsl;
   var el=document.getElementById("u-detail");
+  /* The panel is the third thing that asks for the CPL payload (after the face
+   * and the light): a course that carries an articulation lists what reaches
+   * it on either face. Only while nothing has been asked yet — a terminal state
+   * calls back at once and would re-render forever. */
+  if((face==="cpl" || nd.ar>0) && (cplState===""||cplState==="loading"))
+    loadCpl(function(){ if(selNode===nd && document.getElementById("u-detail")) renderNode(); });
   var mine=membersOf(nd.i), total=mine.length;
   // A course a curator just moved here is the row they are looking for: it
   // leads the list, ahead of the page cap (MUS 180 carries 850 courses; a row
@@ -3216,6 +3629,9 @@ function renderNode(){
      * and nothing on screen said so. A word, not a badge — the count is the
      * whole message. */
     (nd.ar ? " · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s") : "")+"</p>";
+  // On the CPL face the credentials LEAD; on the Courses face they follow the
+  // college courses (below), and only for a course that carries an articulation.
+  if(face==="cpl") h+=cplPanelHtml(nd, isl);
   // The orbit: where a stand-alone sits and WHY, with the accept verb beside it.
   if(nd.a){
     var par=nd.o?nodeById(nd.o):null;
@@ -3269,6 +3685,7 @@ function renderNode(){
     var st=descState[isl&&isl.sh];
     if(st==="loading") h+='<p class="empty">Loading course titles and descriptions…</p>';
   }
+  if(face!=="cpl" && nd.ar>0) h+=cplPanelHtml(nd, isl);
   // The stand-alone courses in orbit around this identity: the map's suggestions,
   // each with the verb that accepts it.
   var orbs=nd.a?[]:orbitsOf(nd.i);
@@ -3605,7 +4022,9 @@ function routeArg(){
 window.__ccrRoute=function(){
   if(!window.CPL_CCR_UNIVERSE){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   var k=routeKey(), arg=routeArg();
-  if(k==="comprehensive") window.__ccrUniverse({solo:false});
+  /* `#skyview/cpl` opens the map on the CPL face — a face is a lens, but a
+   * lens the reader can send someone a link to. */
+  if(k==="comprehensive") window.__ccrUniverse({solo:false, face:(arg==="cpl")?"cpl":"courses"});
   else if(k==="disciplines") window.__ccrWorkspace("discipline");
   else if(k==="subjects") window.__ccrWorkspace("subject");
   else if(k==="esl") window.__ccrWorkspace("esl");
@@ -3614,7 +4033,7 @@ window.__ccrRoute=function(){
    * blank view — a hand-typed or stale link is a normal thing to arrive with. */
   else if(k==="work" && arg && typeof window.__ccrDiscipline==="function") window.__ccrDiscipline(arg);
   else if(k==="outline" && arg && typeof window.__ccrOutline==="function") window.__ccrOutline(arg);
-  else window.__ccrUniverse({solo:true});
+  else window.__ccrUniverse({solo:true, face:(k==="skyview" && arg==="cpl")?"cpl":"courses"});
 };
 /* Compare the SUBJECT too, not just the key: #work/Welding and #work/Art are
  * both key "work", so a Back between two work surfaces would otherwise leave
@@ -3623,10 +4042,62 @@ window.addEventListener("hashchange", function(){
   if(routeKey()!==curView || routeArg()!==curArg) window.__ccrRoute();
 });
 
+/* ── the face and the light: state painted from every path that changes it ─
+ * (a class toggle is not a re-render — 2026-09-05). */
+function paintFace(){
+  var a=document.getElementById("u-face-courses"), b=document.getElementById("u-face-cpl");
+  if(a) a.setAttribute("aria-pressed", face==="courses"?"true":"false");
+  if(b) b.setAttribute("aria-pressed", face==="cpl"?"true":"false");
+  var full=document.getElementById("u-full"); if(full) full.classList.toggle("u-face-cpl", face==="cpl");
+  var line=document.getElementById("u-face-line");
+  if(line){ line.hidden = face!=="cpl"; if(face==="cpl") line.innerHTML=cplLineHtml(); }
+  paintLegendLit();
+}
+function paintLit(){
+  var b=document.getElementById("u-lit");
+  if(b){ b.setAttribute("aria-pressed", lit?"true":"false"); b.title = lit ? "Put the light out" : "Light the courses that carry an articulation"; }
+  paintLegendLit();
+}
+function paintLegendLit(){ var el=document.getElementById("u-lg-lit"); if(el) el.hidden=!lit; }
+function repaintSelection(){ if(selNode && selIsl) renderNode(); else if(selIsl) showIsland(selIsl); }
+function cplFaceWords(){
+  var c=cplCounts();
+  return "<strong>CPL</strong>: each point is named by the credential that reaches it \u2014 "+
+    num(c.exhibits_on_map||0)+" of "+num(c.exhibits_articulated||0)+" articulated exhibits reach a course on this map. "+
+    "Search finds credentials, agencies and credit recommendations; a point no exhibit reaches stays drawn and unlabeled.";
+}
+function setFace(f, quiet){
+  face = (f==="cpl") ? "cpl" : "courses";
+  if(curView==="skyview"||curView==="comprehensive"){ curArg = face==="cpl" ? "cpl" : ""; syncHash(curArg||undefined); }
+  var after=function(){
+    paintFace(); repaintSelection();
+    if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
+  };
+  if(face==="cpl" && cplState!=="ok"){
+    if(!quiet) setHint("Loading MAP\u2019s articulation record\u2026");
+    loadCpl(function(){ if(!quiet && face==="cpl") setHint(cplState==="ok" ? cplFaceWords() : esc(cplLineText())); after(); });
+    after(); return;
+  }
+  if(!quiet) setHint(face==="cpl" ? cplFaceWords()
+    : "<strong>Courses</strong>: each point is named by its course again. Switch to <strong>CPL</strong> to name it by the credential that reaches it.");
+  after();
+}
+function setLit(on, quiet){
+  lit=!!on; paintLit();
+  if(lit && cplState==="") loadCpl(function(){ if(cvs && document.getElementById("u-cvs")===cvs) draw(); });
+  if(!quiet){
+    var n=0, recs=0; if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){ if(nd.ar>0){ n++; recs+=nd.ar; } }); });
+    var wide = view.k<=NODE_ZOOM ? " At this magnification the map draws <strong>disciplines</strong>: a discipline holding a lit course carries the ring, and the courses take it over as you zoom in." : "";
+    setHint(lit
+      ? "Lighting <strong>"+num(n)+"</strong> courses that carry an articulation ("+num(recs)+" articulation records). The rest are drawn as they are: no mark says \u201cnone\u201d, because a course nobody has looked at and a course nobody has articulated are the same thing on this feed."+wide
+      : "Light out. Every course is drawn as it was.");
+  }
+  if(cvs && document.getElementById("u-cvs")===cvs) draw();
+}
 function setSolo(on, quiet){
-  solo=!!on; curView=solo?"skyview":"comprehensive"; curArg="";
+  solo=!!on; curView=solo?"skyview":"comprehensive"; curArg=(face==="cpl")?"cpl":"";
   document.body.classList.toggle("u-solo", solo);
-  syncHash();
+  syncHash(curArg||undefined);
   var slot=document.getElementById("u-views-slot"); if(slot) viewsMenuInto(slot);
   paintWins();                   // the window controls read `solo` (a class toggle is not a re-render)
   if(quiet) return;
@@ -4317,6 +4788,13 @@ window.__ccrOutline=function(id){
     el.innerHTML=olHtml(hit.nd, hit.isl);
     olWire(hit.nd, hit.isl);
   });
+  /* The CPL layer arrives the same way: render without it, again when it lands. */
+  if(cplState!=="ok") loadCpl(function(){
+    if(routeKey()!=="outline" || routeArg()!==id) return;
+    var el2=document.getElementById("view"); if(!el2) return;
+    el2.innerHTML=olHtml(hit.nd, hit.isl);
+    olWire(hit.nd, hit.isl);
+  });
 };
 
 function olHtml(nd, isl){
@@ -4450,20 +4928,26 @@ function olHtml(nd, isl){
     'A reviewer may add one the catalogs miss, or take one out; both stage here and nothing is written.',
     sbody, {tag:"imputed", tagClass:"gen", empty:!addedRows.length && !strong.length && !thin.length});
 
-  /* ── layer 3: the next layers, present and empty ──────────────────────── */
+  /* ── layer 3: credit for prior learning — BUILT (Sam's rulings, 2026-09-07) ─
+   * "Will want all this included on the COR and credential Exhibit": the
+   * credential, its issuing agency and, where it differs, its training agency,
+   * what it earns and who holds it — the same block the map's panel shows,
+   * uncapped here. The military layer is not separate: an ACE exhibit is a row
+   * of the same record with its type named. */
+  var cb=(cplState==="ok")?cplOf(nd):null;
+  var cbody, ctag, ctagClass="mut", cempty=false;
+  if(cplState===""||cplState==="loading"){ cbody='<p class="empty">Loading MAP\u2019s articulation record\u2026</p>'; ctag="loading"; }
+  else if(cplState!=="ok"){ cbody='<p class="empty">'+esc(cplLineText())+'</p>'; ctag="not loaded"; cempty=true; }
+  else if(!cb){ cbody='<p class="empty">No MAP exhibit reaches this course through a receiving college course. '+esc(cplCeilingWords())+'</p>'; ctag="none reaches it"; cempty=true; }
+  else { cbody=cplListHtml(cb, 200); ctag=num(cb.length)+" credential"+(cb.length===1?"":"s"); ctagClass="cid"; }
+  var cc=cplCounts(), cf=cc.funnel||{};
   h+=olLayer("cpl","Credit for prior learning against this course",
-    'The next two layers (Sam’s ruling, 2026-09-05: build it layered from the start). '+
-    'They are shown empty rather than left out — an outline that omits the layers it cannot fill yet reads as finished.',
-    '<ul class="ol-todo">'+
-      '<li><strong>MAP exhibits</strong> — the credentials colleges have already articulated against this course. '+
-        'Not wired to this surface yet.</li>'+
-      '<li><strong>Military credit recommendations</strong> — the ACE-reviewed training that maps here. '+
-        '98% of MAP’s credit-recommendation rows are ACE military; none is joined to an outline yet.</li>'+
-    '</ul>'+
-    '<p class="ol-src">⚠️ Blocked on one ruling: where an agency skill statement comes from when published '+
-    'standards, ACE exhibits and the MAP team disagree. Sam’s answer to <em>which source</em> was '+
-    '"All three", and he raised the reconciliation question himself. Nothing else in this outline waits on anything.</p>',
-    {tag:"not built", empty:true});
+    'From MAP\u2019s articulation records, joined through the receiving college course \u2014 the only join from a MAP exhibit to a course identity. '+
+    'The name is the curated credential; the issuing agency and, where it differs, the training agency come from the credential reference. '+
+    (cplState==="ok" ? '<strong>'+num(cc.exhibits_on_map||0)+' of '+num(cc.exhibits_articulated||0)+'</strong> articulated exhibits reach a course on the map at all'+
+      (cf.rows ? ', and MAP\u2019s credit funnel names a receiving course on '+(Math.round(1000*(cf.rows_naming_course||0)/cf.rows)/10)+'% of its rows' : '')+
+      ' \u2014 so an empty layer is a gap in the record, not a finding about the course.' : ''),
+    cbody, {tag:ctag, tagClass:ctagClass, empty:cempty});
 
   /* ── layer 4: the record's own slots ──────────────────────────────────── */
   h+=olLayer("mc","The rest of the outline of record",

@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 434,
+  "file_datasets": 435,
   "external_services": 137,
   "consumers": 319,
   "workflows": 33,
@@ -1071,7 +1071,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3169
+     "line": 3516
     }
    ],
    "main_committers": []
@@ -12403,6 +12403,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:prototype/ccr_cpl.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:prototype/ccr_desc/*.json": {
    "consumers": [
     {
@@ -17505,7 +17518,8 @@
     "kb/_build_ccr_universe.py",
     "scripts/publish_skyview_desc_shards.sh",
     "kb/_build_ccr_atlas_extract.py",
-    "prototype/build_ccr_atlas.py"
+    "prototype/build_ccr_atlas.py",
+    "kb/_build_ccr_cpl.py"
    ],
    "adds": [
     "index.html",
@@ -17536,6 +17550,7 @@
     "kb/discipline_canonical_subj4.json",
     "prototype/ccr_atlas_data.json",
     "prototype/skyview.html",
+    "prototype/ccr_cpl.json",
     "kb/discipline_cpl_rollup.json",
     "kb/credential_review_overlay.json",
     "kb/governance_candidates.json",
@@ -17611,6 +17626,7 @@
     "tests/zband_retire_apply_test.py",
     "tests/uc_cur_promote_test.py",
     "tests/identities_rekey_test.py",
+    "tests/ccr_cpl_payload_test.py",
     "tests/memory_audit_test.py",
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",

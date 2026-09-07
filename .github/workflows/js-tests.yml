@@ -143,6 +143,15 @@ jobs:
       # python, no network.
       - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
         run: python3 tests/identities_rekey_test.py
+      # SkyView's CPL payload (Session 238) — the join the CPL face and the
+      # articulations light stand on. Guards that the join reaches exactly the
+      # points carrying `ar`, that the coverage line's two numbers share one
+      # universe, that no student-grain figure enters the payload, that the
+      # trainer is carried only where it differs from the issuer, and that the
+      # committed prototype/ccr_cpl.json is a fresh build. Pure-stdlib python,
+      # no network.
+      - name: SkyView CPL payload guard (kb/_build_ccr_cpl.py)
+        run: python3 tests/ccr_cpl_payload_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory
       # row still true": dead paths, dangling pointers, a stale row wearing a
       # verification stamp, PRs not on main, null slugs, near-duplicates. Each

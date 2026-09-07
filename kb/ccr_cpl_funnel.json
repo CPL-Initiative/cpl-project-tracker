@@ -1,0 +1,17 @@
+{
+  "_about": "MAP's credit funnel (public.map_college_cr_unit) read for SkyView's CPL face. Structural counts only — no student figure is carried. Read through the Supabase MCP on the date below; refresh by hand when the funnel is reloaded (map-custom-report-load.yml), the daily run does not touch it.",
+  "_source": "public.map_college_cr_unit joined by exhibit_id to kb/coci_articulations.json (the articulation crosswalk) restricted to identities on prototype/ccr_universe.json",
+  "_read_at": "2026-09-07",
+  "_funnel_last_load": "2026-08-08",
+  "rows": 206702,
+  "rows_naming_course": 8979,
+  "exhibits": 6388,
+  "exhibits_naming_course": 1817,
+  "exhibits_ace_keyed": 6291,
+  "colleges": 112,
+  "credit_recs": 8700,
+  "onmap_exhibits_in_funnel": 570,
+  "onmap_exhibits_acted_on": 536,
+  "onmap_exhibits_naming_course": 534,
+  "_note": "Only 570 of the 1,924 exhibits that reach the map appear in the funnel at all: the funnel is ACE-keyed (6,291 of its 6,388 exhibit ids are ACE exhibits, the JST military record) and the articulation crosswalk is MAP-keyed (industry certification, credit by exam, assessments). They are nearly disjoint exhibit universes, so a coverage line must take its numerator and denominator from the same one — the articulation feed."
+}
