@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 399,
+   "count": 401,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1291,6 +1291,25 @@
      "title": "A generator committed behind its output is a trap, not a convenience",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "docs/visuals/2026-09-07-skyview-globe-prototype.html",
+      "prototype/globe/globe_layout.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-globe-shows-a-hemisphere-real-estate-is-the-zoom-range.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "skyview",
+      "projection",
+      "design",
+      "prototyping"
+     ],
+     "title": "A globe shows a hemisphere: real estate on a screen is the zoom range, not the surface",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-10",
@@ -3285,6 +3304,24 @@
      "title": "Answer \"eligible students & credits by program area \u00d7 statewide/local\" from the Credential Reference data",
      "type": "methodology",
      "updated": "2026-07-20"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [
+      "docs/visuals/2026-09-07-skyview-globe-prototype.html"
+     ],
+     "path": "docs/kb-notes/methodology-answer-a-reaction-with-a-switch-not-a-version.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "prototyping",
+      "review",
+      "skyview",
+      "design"
+     ],
+     "title": "Answer a reviewer's \\\"make a version that\u2026\\\" with a switch on the same page, not a second page",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-03",
@@ -12244,7 +12281,7 @@
      "tags": [
       "handoff"
      ],
-     "title": "the CPL views are built; the staged-to-move mark is next",
+     "title": "the globe goes into SkyView; the staged-to-move mark rides second",
      "type": null,
      "updated": "2026-09-07"
     },
@@ -15884,5 +15921,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 814
+ "total": 816
 }

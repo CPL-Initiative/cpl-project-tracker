@@ -82,6 +82,16 @@ window). Both views size a dot in pixels. **Day** is a tint of the CO blue with
 value-noise clouds, drawn once, ghosted; on the globe's body by day, over the
 window inside. Two region names ride the sky. Committed and Spread stay one
 click away; Wrapped is gone.
+His close: *"Looks great!!!"*, then *"slow rotation proportionally on zoom"*
+and *"make twinkle a bit gentler/slower"* — built: the turn slows with the zoom
+(the sky drifts at one pace), a slow shallow per-star twinkle while it turns, a
+1.3 px floor under a star; then *"rotation should be left to right"* — it now reads
+left to right in both views (the window's right is the globe's left, so the sign
+flips inside). **The generators live in `prototype/globe/`**
+(extract → layout → build; README there), so a fourth round starts from code.
+**Ruled, 2026-09-07:** *"Looks great! Let's go with it in next session"* — the sky
+form goes into SkyView. The port is the lane's NEXT ⓪; the design calls it raises
+are NEEDS SAM ⑧, on a sheet before the code.
 
 ② **The re-mint approval queue** — routed through Governance
 ([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),

@@ -104,3 +104,5 @@ prototype/ccr_desc/
 
 # video-context skill: extracted frames/transcripts (local working files)
 .video-context/
+# the globe prototype's derived data (prototype/globe/README.md)
+prototype/globe/globe_data*.json

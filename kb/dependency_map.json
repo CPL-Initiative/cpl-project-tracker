@@ -4,9 +4,9 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 438,
-  "external_services": 137,
-  "consumers": 320,
+  "file_datasets": 439,
+  "external_services": 138,
+  "consumers": 323,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -433,6 +433,18 @@
    ],
    "main_committers": []
   },
+  "external:cdnjs.cloudflare.com": {
+   "consumers": [
+    {
+     "id": "script:prototype/globe/build_globe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 174
+    }
+   ],
+   "main_committers": []
+  },
   "external:claude.ai": {
    "consumers": [
     {
@@ -842,6 +854,13 @@
      "direction": "read",
      "how": "url",
      "line": 209
+    },
+    {
+     "id": "script:prototype/globe/build_globe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 14
     }
    ],
    "main_committers": []
@@ -2726,6 +2745,26 @@
      "direction": "read",
      "how": "yaml",
      "line": 75
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>-skyview-globe-prototype.html": {
+   "consumers": [
+    {
+     "id": "script:prototype/globe/build_globe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 10
+    },
+    {
+     "id": "script:prototype/globe/build_globe.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 10
     }
    ],
    "served": false,
@@ -11059,6 +11098,13 @@
      "direction": "read",
      "how": "literal",
      "line": 39
+    },
+    {
+     "id": "script:prototype/globe/globe_layout.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 49
     }
    ],
    "served": true,
@@ -12451,6 +12497,13 @@
      "direction": "read",
      "how": "literal",
      "line": 75
+    },
+    {
+     "id": "script:prototype/globe/extract_globe_data.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 17
     }
    ],
    "producers": [
@@ -12512,6 +12565,20 @@
      "direction": "read",
      "how": "literal",
      "line": 27
+    },
+    {
+     "id": "script:prototype/globe/extract_globe_data.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 8
+    },
+    {
+     "id": "script:prototype/globe/globe_layout.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": true,
@@ -13854,6 +13921,13 @@
      "direction": "read",
      "how": "literal",
      "line": 273
+    },
+    {
+     "id": "script:prototype/globe/globe_layout.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 47
     }
    ],
    "producers": [
