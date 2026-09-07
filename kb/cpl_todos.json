@@ -2,13 +2,19 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
   "_session": 238,
-  "_status": "The two CPL views you ruled on this morning are built (PR #1508). SkyView's control row has two new words next to Show: Courses | CPL switches what each point is named by, and Articulations lights the courses that carry one. On the CPL face a point is named by the credential that reaches it — then the issuing agency and, where it differs, the training agency, then what it earns, then the colleges holding it — and a point no exhibit reaches stays drawn and unlabeled. The line under the row says the coverage out loud, and it corrects the sentence on the sheet: 1,924 of 5,497 articulated exhibits reach a course on this map. The sheet's 1,490 was the count of courses, not exhibits, and its 6,388 was the credit funnel, which turns out to share only 570 exhibits with what reaches the map — the funnel is the military record, the articulations are industry certifications and credit by exam. The course outline of record now carries the same block with both agencies. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved.",
+  "_status": "The two CPL views you ruled on this morning are built (PR #1508). SkyView's control row has two new words next to Show: Courses | CPL switches what each point is named by, and Articulations lights the courses that carry one. On the CPL face a point is named by the credential that reaches it — then the issuing agency and, where it differs, the training agency, then what it earns, then the colleges holding it — and a point no exhibit reaches stays drawn and unlabeled. The line under the row says the coverage out loud, and it corrects the sentence on the sheet: 1,924 of 5,497 articulated exhibits reach a course on this map. The sheet's 1,490 was the count of courses, not exhibits, and its 6,388 was the credit funnel, which turns out to share only 570 exhibits with what reaches the map — the funnel is the military record, the articulations are industry certifications and credit by exam. The course outline of record now carries the same block with both agencies. Next is the one thing left from your screen recording: a moved course's own mark saying staged, not saved. After the checkpoint, the globe you asked for was built as a throwaway to look at; the link is in your session and in the lane file.",
   "items": [
     {
       "id": "s238-sam-cpl-face-look",
       "for": "Sam",
       "tab": "unified-courses",
       "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
+    },
+    {
+      "id": "s238-sam-globe-look",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "You asked for the sky as a rotating globe and said build it, so it exists as a throwaway to look at: the committed layout wrapped onto a sphere, with the Articulations light, an Outside view and an Inside view, and a line that counts how many points face you. Half of them do at any moment, which is the whole trade: a globe hides its back, and the flat sky has none to hide. The link is in your session and in the SkyView lane file. Say keep or drop; a keep becomes a decision sheet about the inside view and the curation gestures, not a port."
     },
     {
       "id": "s238-sam-coverage-line-corrected",

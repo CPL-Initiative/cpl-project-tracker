@@ -37,6 +37,25 @@ course outline of record has its CPL layer. Everything is in
 - **The outline's CPL layer** — built, uncapped, both agencies, and an empty
   layer states the ceiling in words.
 
+## After the checkpoint: the globe (Sam, "build it!")
+
+While #1508 waited on CI Sam asked, unprompted, whether the 2-D sky should
+become *"a 3-d 360 globe that rotates"* to gain real estate. His words are in
+the vault
+(`CPLBrain/03-professional/braindumps/braindump-2026-09-07-1605-skyview-as-a-rotating-globe.md`);
+the assessment there stands — a globe shows a hemisphere at a time, so it adds
+no area, and the map's real estate is its zoom range — and he answered *build
+it!* So a throwaway exists, deliberately outside the product:
+`docs/visuals/2026-09-07-skyview-globe-prototype.html` (three.js from cdnjs, the committed layout wrapped onto a sphere in
+First Light tokens, the Articulations light, an Outside and an Inside view, and
+a line counting the points that face the reader — 25,580 of 49,896 at the
+opening view, which is the whole argument). Artifact: https://claude.ai/code/artifact/51f5249d-1884-406d-889e-259b262b86e5.
+It is for looking at, not porting: nothing in `ccr_universe.js` changed, its
+data is a build-time snapshot the daily run does not refresh, and none of the
+lane's invariants were re-earned by it. If Sam wants it on sight, the design
+questions (the planetarium form, curation gestures on a curved surface, motion
+for readers who asked for none) go on a decision sheet before any code.
+
 ## ⭐ THE THING TO CARRY FORWARD
 
 **The ruled coverage line carried two wrong numbers, and the surface computes
@@ -98,6 +117,9 @@ or ghosts.
 ⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
 ⑦ **His eye on the CPL face** (`#skyview/cpl`) — does the credential-led label
 read right, and is *Articulations* the word.
+⑧ **The globe — keep or drop, on sight.** The throwaway he asked for (section
+above). Does turning it earn anything the flat sky's zoom does not? A yes is a
+decision sheet, never a port of that file.
 
 ## Housekeeping
 
