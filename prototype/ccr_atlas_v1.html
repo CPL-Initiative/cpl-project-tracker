@@ -14,6 +14,10 @@
   --text-faint:#87877F; --surface:rgba(255,255,255,.78); --surface-opaque:#FFFFFF;
   --surface-subtle:#F7F5F1; --surface-muted:#ECE9E2;
   --border:rgba(28,28,26,.14); --border-strong:rgba(28,28,26,.30);
+  /* The dim behind a sheet over the map (the course outline). Dark on the
+     light canvas, darker still on the night sky, so the map reads as set back
+     rather than switched off. */
+  --scrim:rgba(28,28,26,.38);
   --cobalt:#0047AB; --crimson:#920000; --hunter:#2C601A; --violet:#6D28D9;
   --mustard-fill:#E3B341; --mustard-text:#8B6800;
   --seal-blue:#002F6D;
@@ -120,6 +124,12 @@ a{color:var(--cobalt)}
         color:var(--text-muted);margin:0 0 14px;padding:0;list-style:none}
 .crumbs li::after{content:"›";margin-left:6px;color:var(--text-faint)}
 .crumbs li:last-child::after{content:""}
+/* Back is a CONTROL, not a step in the path: with the crumb chevron it would
+   read as "Back › Disciplines and subjects", a place you had been. A rule
+   divides it from the trail instead. */
+.crumbs li.crumb-back::after{content:"";margin-left:0}
+.crumbs li.crumb-back{margin-right:4px;padding-right:10px;border-right:1px solid var(--border)}
+.crumbs li.crumb-back button{font-weight:600}
 .crumbs button{background:none;border:0;color:var(--cobalt);cursor:pointer;
                font:inherit;padding:2px 3px;text-decoration:underline}
 
@@ -544,6 +554,7 @@ body.u-dark{
   --paper:#151514; --surface-opaque:#1E1E1C; --surface-subtle:#262624; --surface-muted:#30302E;
   --surface:rgba(30,30,28,.86); --text-strong:#ECE9E2; --text-body:#D6D6D0; --text-muted:#ABABA3; --text-faint:#7A7A74;
   --border:rgba(255,255,255,.14); --border-strong:rgba(255,255,255,.32);
+  --scrim:rgba(0,0,0,.58);
   --cobalt:#7DA1D4; --seal-blue:#7DA1D4; --focus-ring:#7DA1D4; --violet:#B28DEB; --hunter:#89A67F;
   --crimson:#CF8F8F; --mustard-text:#E3B341; --on-accent:#141413; --tip-sub:#5C5C55;
   /* Sam, 2026-09-05: "make the background darker and a bit grayer--a bit calmer
@@ -832,7 +843,55 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
             border-bottom:1px solid var(--border);background:var(--surface-subtle);flex:none}
 .u-insp-t{font-weight:600;font-size:.85rem;color:var(--text-strong)}
 .u-insp-body{overflow:auto;padding:12px 14px;min-height:0;flex:1 1 auto}
-.u-inspector.closed{display:none}
+/* ⚠️ CLOSED IS ZERO-WIDTH, NOT `display:none` — THE GRIP HAS TO SURVIVE IT.
+   Dragging the border shut is only half an affordance if there is nothing left
+   to drag back out; the panel collapses to nothing and leaves its handle on the
+   stage's edge, so the same gesture reopens it. The handle shows its line at
+   rest when closed (it is the only thing marking the edge), and stays invisible
+   until hover when the panel is open, as before. */
+.u-inspector.closed{flex-basis:0;min-width:0;width:0;border-left:0;background:none;overflow:visible}
+.u-inspector.closed > *:not(.u-insp-grip){display:none}
+/* ⚠️ FLUSH WITH THE EDGE, NOT STRADDLING IT. The open grip straddles the panel's
+   border (left:-5px, width:10px) and that is fine — the border is 400px inside
+   the stage. Closed, the panel is zero-wide AT the stage's right edge, so the
+   same straddle hangs 5px past it and the whole page scrolls sideways: `npm run
+   a11y skyview` failed all 11 routes on exactly that, at every width, because
+   the panel starts closed. The closed grip sits entirely inside instead. */
+.u-inspector.closed .u-insp-grip{left:-14px;width:14px}
+.u-inspector.closed .u-insp-grip::after{left:5px;background:var(--border-strong)}
+.u-inspector.closed .u-insp-grip:hover::after,
+.u-inspector.closed .u-insp-grip:focus-visible::after{background:var(--cobalt);width:3px}
+/* ── the course outline OVER the map, never instead of it ───────────────────
+   Sam, 2026-09-07: "Maybe best way to avoid this is to make the course outline
+   a popup that can be closed and we never have to exit skyview." Opening the
+   outline used to replace #view, so coming back rebuilt SkyView from scratch
+   and the reader lost their camera — the zoom, the place they had panned to,
+   the identity they had open. A sheet over the canvas has no state to restore:
+   the map is still underneath, exactly as they left it.
+   ⚠️ It mounts inside #u-full because BROWSER FULL SCREEN PAINTS ONLY THAT
+   ELEMENT — a sheet anywhere else is invisible precisely where SkyView spends
+   most of its life. */
+.u-sheet{position:absolute;inset:0;z-index:40;display:flex;align-items:stretch;justify-content:flex-end}
+/* The comprehensive view scrolls the page under the stage; a sheet over the map
+   should not let it drift away behind the reader. */
+body.u-sheet-open{overflow:hidden}
+.u-sheet[hidden]{display:none}
+.u-sheet-back{position:absolute;inset:0;background:var(--scrim);border:0;padding:0;margin:0;cursor:pointer}
+.u-sheet-card{position:relative;display:flex;flex-direction:column;min-width:0;
+  width:min(760px,100%);max-width:100%;background:var(--surface-opaque);
+  border-left:1px solid var(--border-strong);box-shadow:-8px 0 24px rgba(0,0,0,.18)}
+.u-sheet-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;
+  border-bottom:1px solid var(--border);background:var(--surface-subtle);flex:none}
+.u-sheet-t{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.u-sheet-body{overflow:auto;overscroll-behavior:contain;padding:14px 18px;min-height:0;flex:1 1 auto}
+/* The outline caps its prose for reading; inside the sheet the sheet is the
+   measure, so the cap would only strand the right half of the card. */
+.u-sheet-body .ol{max-width:none}
+@media (max-width:560px){ .u-sheet-card{width:100%;border-left:0} }
+@media (prefers-reduced-motion:no-preference){
+  .u-sheet-card{animation:u-sheet-in .16s ease-out}
+  @keyframes u-sheet-in{from{transform:translateX(12px);opacity:.6}to{transform:none;opacity:1}}
+}
 .u-inspector.closed .u-insp-body{display:none}
 .u-inspector.closed .u-insp-bar{border-bottom:0}
 .btn.small{font-size:.76rem;padding:4px 9px}
@@ -1424,13 +1483,26 @@ function setCrumbs(items, opts){
   var main = document.getElementById("main");
   if (main) main.classList.remove("u-fullbleed");
   document.body.classList.remove("u-solo");
-  crumbs.innerHTML = items.map(function(it,i){
-    return "<li>" + (it.go
-      ? '<button type="button" data-c="'+i+'">'+esc(it.label)+"</button>"
-      : "<span aria-current=\"page\">"+esc(it.label)+"</span>") + "</li>";
-  }).join("");
+  // ⭐ BACK, ahead of the crumbs (Sam, 2026-09-07: "Would be good to have a back
+  // button on any skyview screen user switches to"). The crumbs say where this
+  // view sits; they do not say how the reader got here, and the workspace's row
+  // is a single dead label — from there the only way back was the Views menu,
+  // which rebuilds the map and loses the camera. The entry comes from
+  // ccr_universe.js, which also parks and restores that camera; it is null on a
+  // first view, so nothing is drawn until there is somewhere to go back to.
+  // ⚠️ It is read AFTER __ccrLeaveView above, not before: that call is what
+  // records the view being left, so the entry is only correct once it has run.
+  var back = (typeof window.__ccrBackEntry === "function") ? window.__ccrBackEntry() : null;
+  crumbs.innerHTML = (back ? '<li class="crumb-back"><button type="button" data-back="1" '+
+      'title="Back to '+esc(back.label)+', where you left it">Back</button></li>' : "") +
+    items.map(function(it,i){
+      return "<li>" + (it.go
+        ? '<button type="button" data-c="'+i+'">'+esc(it.label)+"</button>"
+        : "<span aria-current=\"page\">"+esc(it.label)+"</span>") + "</li>";
+    }).join("");
   Array.prototype.forEach.call(crumbs.querySelectorAll("button"), function(b){
-    b.addEventListener("click", function(){ items[+b.dataset.c].go(); });
+    if (b.dataset.back) b.addEventListener("click", function(){ back.go(); });
+    else b.addEventListener("click", function(){ items[+b.dataset.c].go(); });
   });
   // The Views menu rides the crumbs row on every view but the map, whose own
   // top row carries it (Sam, item 9, 2026-09-04). The map passes {menu:false}

@@ -1,6 +1,6 @@
 {
   "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
-  "_note": "Re-baselined by `npm run test:floor` (2026-09-05; again 2026-09-07 after S239 added ccr_skyview_staged_move.test.js and, the same evening, ccr_skyview_sky.test.js — every SkyView floor rose, none fell); cobi_a11y_baseline.test.js was added by hand at 17 and the run now floors it itself — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before, so diff this file for LOWERED numbers before committing.",
+  "_note": "Re-baselined by `npm run test:floor` (2026-09-05; again 2026-09-07 after S239 added ccr_skyview_staged_move.test.js and, the same evening, ccr_skyview_sky.test.js — every SkyView floor rose, none fell; and S240 added ccr_skyview_carry_release.test.js at 12); cobi_a11y_baseline.test.js was added by hand at 17 and the run now floors it itself — a full re-baseline rewrites every entry from one run, and an interrupted run has written a LOWER floor before, so diff this file for LOWERED numbers before committing.",
   "files": {
     "actions_bar_slim.test.js": 15,
     "activities_sprint_filter.test.js": 9,
@@ -15,6 +15,7 @@
     "card_raci.test.js": 23,
     "card_updates.test.js": 23,
     "ccr_skyview_button.test.js": null,
+    "ccr_skyview_carry_release.test.js": 12,
     "ccr_skyview_cpl_face.test.js": 62,
     "ccr_skyview_drop_target.test.js": 14,
     "ccr_skyview_first.test.js": 51,

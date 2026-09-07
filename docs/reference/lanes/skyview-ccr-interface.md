@@ -115,6 +115,56 @@ MOTION** (Sam, sheet item 4). `startTurn()` returns under
 *Rotate* restarts it; the twinkle runs only while turning. A carried course
 never sees a moving target.
 
+⚠️ **THE TURN'S `dt` CLAMP MUST SIT ABOVE THE REAL FRAME TIME** (`TURN_DT_MAX`,
+S240). It guards ONE case — a backgrounded tab — and is not a frame-rate limiter.
+At 0.1 s it sat *below* the measured frame (133 ms at 240° across, 83–267 ms), so
+`dt` pinned every frame: `sph.spin` advanced a FIXED 7.20e-3 rad while the
+interval swung 192–319 ms (a fixed step at an irregular cadence — the lurch), and
+the turn ran **0.0393 rad/s against an intended 0.0720**. Above the frame time:
+29 step sizes over 139 frames, angular-velocity IQR **0%**.
+
+⭐ **ON THE SPHERE EVERY ZOOM BAND NEEDS HYSTERESIS — A BARE THRESHOLD BLINKS**
+(S240, Sam: *"note how the skyview flickers around"*). On the flat map `k` is
+`view.k`, crossed deliberately and together; on the sphere it is PER ISLAND
+(`sec²(ang/2)` × the center's) and drifts as the sky turns. At 240° across **18
+of 159 islands sit within ±3% of `NODE_ZOOM`** (Dance 0.1998 vs 0.2000); 11
+flipped inside 120 frames, each switching a discipline's whole dot field while
+its disc and name stayed put. `nodesShown()` remembers its side
+(`NODE_ZOOM_KEEP`); ⚠️ **`pick()` reads that memory via `nodesOnScreen()`, never
+re-tests** — else eye and hand disagree. 16 flips → 4, one crossing each.
+
+⭐ **A TINT THAT FILLS THE WINDOW IS NOT A TINT, IT IS THE SKY** (S240, Sam:
+*"after filters applied the sky turns purple and should stay… night"*). The
+selected island's fill reads against the ground AT ITS EDGE; past the zoom where
+that edge leaves the window, `--sky-island-sel` #2E2A44 simply *was* the sky.
+Falls back to `pal.island` when the farthest window corner is inside the disc;
+the stroke, the name and the inspector still say what is selected.
+
+⭐ **THE CARRY ENDS WHERE THE MOVE IS STAGED, BY WHATEVER ROUTE** (S240, Sam:
+*"Staged move seems to clear but I can't drag it to the new home"*). The canvas
+paths cleared `drag`; the PANEL paths (destination click, *Move here*, *Accept*)
+went straight to `applyMove` and left the reader invisibly carrying — and the
+pick-up handlers refuse a second carry, so every *Drag…* became a silent no-op
+for the session. Released in `applyMove` **after** the gates, so a refused move
+keeps the carry. `tests/ccr_skyview_carry_release.test.js`.
+
+⭐ **THE OUTLINE IS A SHEET OVER THE MAP, NOT A VIEW INSTEAD OF IT** (S240, Sam:
+*"make the course outline a popup… we never have to exit skyview"*).
+`__ccrOutline` opens `#u-outline-sheet` when the canvas is mounted and **leaves
+the hash alone** — the reader has not left. ⚠️ Mounts inside `#u-full`: full
+screen paints only that element. The full page stays for arrival on
+`#outline/<id>`. Every other exit parks the camera
+(`parkCamera`/`restoreCamera`), so the crumbs' **Back** returns to the framing,
+not the opening view; a parked SELECTION still re-frames over it, which is
+`restoreTokens`' older and deliberate behavior.
+
+⚠️ **THE CLOSED SIDEBAR IS ZERO-WIDTH, NOT `display:none`** (S240) — it collapses
+below `INSP_COLLAPSE` and leaves its grip on the stage's edge, or there is
+nothing to drag back out. ⚠️ **That grip must sit ENTIRELY INSIDE**: open, it
+straddles the panel border harmlessly 400px in; closed, the same straddle hung
+5px past the stage and `npm run a11y skyview` failed **all 11 routes at every
+width** — the panel starts closed.
+
 ⭐ **NIGHT ON THE SPHERE, LIGHT ON THE MAP, ONE MEMORY; DAY KEEPS THE RIM**
 (items 3, 8). `darkChoice` (`skyview:theme`) is the one stored choice across
 all three; with none stored, `dark = sphereOn()`. By day every dot is rimmed
@@ -231,6 +281,18 @@ target size (24×24, SC 2.5.8). ⚠️ The picks died on the way OUT (`setCrumbs
 calls `clearTokens()`). ⚠️ Sam retracted a finding on camera — read a recording
 to the end first. ⚠️ The Sky's turn ran at 5 fps before the star pass was
 batched (S239); the served page, not the suite, is where a frame rate exists.
+
+⚠️ **THE FRAME BUDGET IS PER-POINT JS, NOT THE CANVAS — S239's carry-forward
+named the wrong lever** (S240, profiled with CDP on the served page in software
+rendering: **12 fps at 150° across, 7.5 fps at 240°**). Drawing is nearly free:
+one batched path of 27,000 rects fills in **5.9 ms**, `clearRect` in 0.02, and
+`readPal()`'s style read is 0.03 ms a frame. The cost is the ~50,000-iteration
+per-node loop and the text: **`measureText` 12.3%** of samples (the same label
+strings re-measured every frame), **`emptied()` 6.7%** (fixed in S240 — it
+allocated a throwaway array per point), `save` 7.4%, `cw()`/`ch()` 2.7% (each a
+`clientWidth` read). So an offscreen star layer or a WebGL point pass — the two
+levers S239 proposed — would buy the 5.9 ms and leave the rest. ⚠️ Measured
+headless with a GPU absent; the ORDER should hold, the absolute numbers will not.
 
 The round-by-round of every served-page drive (S237–S239) is in the lessons doc, dated.
 

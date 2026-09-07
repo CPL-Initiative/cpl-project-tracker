@@ -323,6 +323,23 @@ var sph={yaw:0, pitch:0.15, half:Math.PI*75/180, dist:3.0, spin:0};   // the sph
 var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
 var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
 var SPIN=0.045;                       // radians per second — one turn in about 140 s, slower as you zoom in
+/* ⭐ THE TURN'S TIME STEP MUST CLAMP ABOVE THE REAL FRAME TIME, NEVER BELOW IT
+ * (the flicker Sam reported on 2026-09-07). The clamp exists for ONE case: a
+ * backgrounded tab, where rAF stops and `t` jumps seconds, which would spin the
+ * sky a half turn in a single frame. It is not a frame-rate limiter.
+ *
+ * It was 0.1 s, and the draw at 240° across measures 133 ms a frame (83–267 ms,
+ * 7.5 fps in software rendering) — so `dt` was pinned at the clamp on EVERY
+ * frame. Measured live: `sph.spin` advanced exactly 7.20e-3 rad per frame while
+ * the frame interval swung 192–319 ms. That is a FIXED angular step at an
+ * IRREGULAR cadence — the sky lurches instead of gliding — and it also turns
+ * slow, since only 0.1 s of each 0.27 s frame was ever applied.
+ *
+ * Above the real frame time the motion is time-true again: the step is
+ * proportional to the time it stands for, so the pace holds however the frames
+ * fall. 0.5 s is well clear of the slowest frame measured and still well under
+ * the multi-second gap a backgrounded tab produces. */
+var TURN_DT_MAX=0.5;
 var reduceMotion=false;
 try{ reduceMotion=!!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches); }catch(e){}
 var rotating=false, turnRaf=null, turnT=0, twinkleT=0;
@@ -446,10 +463,61 @@ function islCenter(isl){
   return isl._s ? [isl._s.px, isl._s.py] : null;
 }
 function islScale(isl){ return sphereOn() ? (isl._s ? isl._s.k : 0) : view.k; }
+/* ⭐ ON THE SPHERE THE ZOOM BANDS NEED HYSTERESIS — A BARE THRESHOLD FLICKERS
+ * (Sam, 2026-09-07: "note how the skyview flickers around").
+ *
+ * On the flat map `k` is view.k: ONE number for the whole map that moves only
+ * when the reader zooms, so crossing NODE_ZOOM is a deliberate act and the
+ * whole map crosses together. On the sphere `k` is PER ISLAND — the stereo-
+ * graphic scale at that island's center, sec²(ang/2) times the center's — so it
+ * changes continuously as the sky turns, and every island crosses on its own.
+ *
+ * Measured at 240° across (the zoom in Sam's recording): 18 of 159 islands sit
+ * within ±3% of NODE_ZOOM (Dance 0.1998 against 0.2000), and 11 of them flipped
+ * within 120 frames. Each flip switches that discipline's ENTIRE dot field —
+ * hundreds of points — on or off at once while its disc and its name stay put.
+ * That is the blink: whole constellations coming and going as the sky drifts.
+ *
+ * So the band remembers which side it is on: an island already drawing its
+ * courses keeps drawing them until it falls a clear margin below, which no
+ * amount of drift can cross and re-cross. ⚠️ `pick()` reads the SAME memory
+ * rather than re-testing — what is not drawn cannot be picked, and a second
+ * test would put the eye and the hand back into disagreement. */
+var NODE_ZOOM_KEEP=0.86;
+function nodesShown(isl,k){
+  if(!sphereOn()){ isl._nodesOn=null; return k>NODE_ZOOM; }
+  isl._nodesOn = isl._nodesOn ? k>NODE_ZOOM*NODE_ZOOM_KEEP : k>NODE_ZOOM;
+  return isl._nodesOn;
+}
+/* What the last draw actually put on the screen, for the hit test. */
+function nodesOnScreen(isl,k){ return isl._nodesOn==null ? k>NODE_ZOOM : isl._nodesOn; }
 /* The screen's scale at the window's center, as the map's k: what the zoom
  * bands, the readout and the fly-to zoom mean on the sphere. */
 function kCenter(){ return skyRpu()*(proj==="globe" ? globeRpx() : skyKpx()); }
 function syncViewK(){ if(sphereOn()) view.k=kCenter(); }
+/* ⭐ THE CAMERA SURVIVES A TRIP OFF THE MAP (Sam, 2026-09-07: a back button
+ * "should go back to where my focus was"). __ccrUniverse rebuilds the map and
+ * calls resetView(), so every return — from the Views menu, from a crumb, from
+ * Back — used to land on the opening view. What the reader means by "where I
+ * was" is the camera: which way they are facing, how wide the window is, and on
+ * the flat map where they had panned. Parked on the way out, applied on the way
+ * back in place of the reset. A FIRST open has nothing parked and resets, which
+ * is why the two are written as one either/or rather than a reset plus a fix-up
+ * that would visibly jump. */
+var parkedCam=null;
+function parkCamera(){
+  if(!U) return;
+  parkedCam={ view:{x:view.x, y:view.y, k:view.k},
+              sph:{yaw:sph.yaw, pitch:sph.pitch, half:sph.half, dist:sph.dist, spin:sph.spin} };
+}
+function restoreCamera(){
+  if(!parkedCam) return false;
+  view.x=parkedCam.view.x; view.y=parkedCam.view.y; view.k=parkedCam.view.k;
+  sph.yaw=parkedCam.sph.yaw; sph.pitch=parkedCam.sph.pitch;
+  sph.half=parkedCam.sph.half; sph.dist=parkedCam.sph.dist; sph.spin=parkedCam.sph.spin;
+  syncViewK();
+  return true;
+}
 function setSphereZoom(k){
   k=clampK(k); var rpu=skyRpu();
   if(proj==="globe") sph.dist=Math.max(GLOBE_DIST_MIN, Math.min(GLOBE_DIST_MAX, rpu*0.42*Math.min(cw(),ch())*3.0/k));
@@ -479,7 +547,7 @@ function stopTurn(){ if(!rotating) return; rotating=false; paintTurn(); }
 function turnFrame(t){
   turnRaf=null;
   if(!rotating || !sphereOn() || !cvs || document.getElementById("u-cvs")!==cvs){ rotating=false; paintTurn(); return; }
-  var dt = turnT ? Math.min(0.1,(t-turnT)/1000) : 0; turnT=t; twinkleT=t/1000;
+  var dt = turnT ? Math.min(TURN_DT_MAX,(t-turnT)/1000) : 0; turnT=t; twinkleT=t/1000;
   var rate = proj==="globe" ? SPIN*(sph.dist/3.0) : -SPIN*(sph.half/(Math.PI*75/180));
   if(!(drag && drag.kind==="course")) sph.spin += rate*dt;   // never a moving target under a carried course
   draw();
@@ -1214,9 +1282,14 @@ function indexNodes(){
 function nodeById(id){ if(!nodeIdx) indexNodes(); return nodeIdx[id]||null; }
 function orbitsOf(id){ if(!orbitIdx) indexNodes(); return orbitIdx[id]||[]; }
 /* A stand-alone whose one course has been moved away is an emptied shell. */
+/* ⚠️ ALLOCATION-FREE ON PURPOSE: the draw calls this once per point, ~50,000
+ * times a frame, and the `||[]` it used to carry allocated a throwaway array on
+ * every miss. It measured 6.7% of the profile at 240° across, most of a frame's
+ * garbage with it. Same answer, no array. */
 function emptied(nd){
   if(!nd.a) return false;
-  var m=(roster&&roster[nd.i]||[])[0];
+  var rs=roster&&roster[nd.i]; if(!rs||!rs.length) return false;
+  var m=rs[0];
   return !!(m && (m.cn in movedTo) && movedTo[m.cn]!==nd.i);
 }
 
@@ -1351,7 +1424,7 @@ function draw(){
   U.islands.forEach(function(isl){
     var c=islCenter(isl); if(!c) return;                            // out of view on the sphere
     var k=islScale(isl); if(!(k>0)) return;
-    var showNodes = k>NODE_ZOOM, showTethers = k>ID_ZOOM;
+    var showNodes = nodesShown(isl,k), showTethers = k>ID_ZOOM;
     var r=isl.r*k;
     if(c[0]+r<-60||c[0]-r>W+60||c[1]+r<-60||c[1]-r>H+60) return;   // cull
     // Every course in this discipline is switched off — so is the discipline.
@@ -1359,7 +1432,26 @@ function draw(){
     if(!islandPass(isl)) return;
 
     ctx.beginPath(); ctx.arc(c[0],c[1],r,0,6.2832);
-    ctx.fillStyle = isl===selIsl ? pal.islandSel : isl===hoverIsl ? pal.islandHover : pal.island;
+    /* ⭐ A TINT THAT FILLS THE WINDOW IS NOT A TINT — IT IS THE SKY (Sam,
+     * 2026-09-07: "after filters applied the sky turns purple and should stay
+     * the same as was selected (night) on opening screen").
+     *
+     * The selected island's fill says "this disc, not its neighbors" — it reads
+     * against the ground AT ITS EDGE. Zoom past the point where that edge leaves
+     * the window and there is no disc to distinguish any more: the fill is
+     * simply what the reader is looking at. On the night sky that turned the
+     * whole window #2E2A44, a blue-violet, and the sky read as having changed
+     * color (measured off his recording, and reproduced at 6° across). The
+     * selection is still said by the 2px stroke, by the name, and by the
+     * inspector — none of which need the ground repainted.
+     *
+     * So the tint applies only while some part of the disc's edge is on screen.
+     * The farthest window corner inside the circle means no edge is. */
+    var farX=Math.max(c[0], W-c[0]), farY=Math.max(c[1], H-c[1]);
+    var swallowsWindow = Math.sqrt(farX*farX+farY*farY) <= r;
+    ctx.fillStyle = swallowsWindow ? pal.island
+                  : isl===selIsl ? pal.islandSel
+                  : isl===hoverIsl ? pal.islandHover : pal.island;
     ctx.fill();
     ctx.lineWidth = isl===selIsl?2:1;
     ctx.strokeStyle = isl===selIsl ? pal.sys0Stroke : pal.islandStroke;
@@ -2007,7 +2099,7 @@ function pick(px,py,forDrop){
     // invisible point — the filter would have been honored by the eye and not by
     // the hand, which is worse than no filter at all.
     if(!islandPass(isl)) continue;
-    if(kk>NODE_ZOOM){
+    if(nodesOnScreen(isl,kk)){
       var found=null, fd=1e9, inside=false;
       for(var j=0;j<isl.p.length;j++){
         var nd=isl.p[j], p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
@@ -2298,7 +2390,9 @@ window.__ccrUniverse = function(opts){
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
   setProj(proj, true);          // where the reader stands, painted; the sky payload asked for
-  fitCanvas(); resetView(); wire(); draw();
+  fitCanvas();
+  if(!restoreCamera()) resetView();   // a return keeps the reader's place; a first open opens
+  wire(); draw();
   if(sphereOn()) startTurn();   // the sky turns when it opens (ruling 4)
   restoreTokens();              // a selection parked by a trip off the map comes back
   tellParent("ready");          // the page around the frame answers with its state
@@ -2722,8 +2816,30 @@ function paintInspWidth(){
   var a=document.getElementById("u-inspector"); if(!a) return;
   if(inspW>0) a.style.setProperty("--u-insp-w", inspW+"px"); else a.style.removeProperty("--u-insp-w");
 }
+/* ⭐ DRAGGING THE BORDER SHUT IS THE WAY TO SHUT IT (Sam, 2026-09-07: "Make the
+ * Sidebar vert border able to close further (almost to nothing) so I don't have
+ * to know that the hide/unhide selector is in the 3-dot menu").
+ *
+ * The grip clamped at 260px, so the panel could be made narrow and never
+ * closed: closing lived only behind the ⋮ menu, which is exactly the thing a
+ * reader has no way to guess. A border you can pull shut is self-evident, and
+ * it is where a reader reaches first. Below the collapse point the panel simply
+ * closes — and because the grip stays on the stage's edge when it is closed,
+ * the same drag opens it again.
+ *
+ * 260 is still the narrowest USEFUL width — the panel's own rows stop fitting
+ * below it — so the band between the collapse point and 260 is a dead zone that
+ * snaps one way or the other rather than a size anyone can rest at. */
+var INSP_COLLAPSE=150;
 function setInspWidth(px){
   var b=inspBounds();
+  if(px>0 && px<INSP_COLLAPSE){        // pulled shut
+    inspHidden=true; setInspector(false);
+    return;
+  }
+  if(px>0 && !inspOpen){               // pulled back out
+    inspHidden=false; setInspector(true);
+  }
   inspW = px>0 ? Math.max(b[0], Math.min(b[1], Math.round(px))) : 0;
   try{ if(inspW>0) localStorage.setItem("skyview:sidebar-w", String(inspW)); else localStorage.removeItem("skyview:sidebar-w"); }catch(e){}
   paintInspWidth();
@@ -2741,8 +2857,12 @@ function wireInspGrip(){
     g.addEventListener("pointermove", move); g.addEventListener("pointerup", up); g.addEventListener("pointercancel", up);
   });
   g.addEventListener("keydown", function(e){
-    var cur = inspW>0 ? inspW : (a.getBoundingClientRect().width||0);
-    if(e.key==="ArrowLeft"){ e.preventDefault(); setInspWidth(cur+20); }
+    /* ⚠️ A CLOSED PANEL MEASURES ZERO, so stepping "wider" from it would land
+     * under the collapse point and shut it again — the keyboard could close the
+     * panel and never reopen it. From closed, one step out goes to the narrowest
+     * useful width. */
+    var cur = !inspOpen ? 0 : (inspW>0 ? inspW : (a.getBoundingClientRect().width||0));
+    if(e.key==="ArrowLeft"){ e.preventDefault(); setInspWidth(cur ? cur+20 : inspBounds()[0]); }
     else if(e.key==="ArrowRight"){ e.preventDefault(); setInspWidth(cur-20); }
     else if(e.key==="Home"){ e.preventDefault(); setInspWidth(0); }
   });
@@ -4437,6 +4557,19 @@ function applyMove(cn, code, college, toId, d){
   movedTo[cn]=toId;
   moves=moves.filter(function(m){return m.cn!==cn;});
   moves.push({cn:cn, d:d||(byCn[cn]&&byCn[cn].d)||"", code:code, college:college, to:toId, from:from, home:originOf(cn)||from});
+  /* ⭐ THE CARRY ENDS WHERE THE MOVE IS STAGED, BY WHATEVER ROUTE (Sam,
+   * 2026-09-07: "Staged move seems to clear but I can't drag it to the new
+   * home"). The canvas paths cleared `drag` themselves; the PANEL paths — a
+   * click on a destination, Move here, Accept — went straight to applyMove and
+   * left the reader invisibly carrying the course they had just put down.
+   * Nothing on screen said so, and the pick-up handlers refuse to start a
+   * second carry while one is live, so from then on EVERY Drag button in the
+   * panel was a no-op: the course could be put back but never moved anywhere
+   * again, for the rest of the session. Reproduced end to end and pinned by
+   * `tests/ccr_skyview_carry_release.test.js`. applyMove is the one place all
+   * the routes meet, so the release belongs here — after the gates, which
+   * return with the carry intact so another destination can still be chosen. */
+  if(drag && drag.kind==="course" && drag.cn===cn) drag=null;
   var t=nodeById(toId);
   /* ⚠️ "Recorded below the map" NAMED A PLACE THE READER CANNOT SEE. `#u-writes`
    * lives in `#u-below`, and `body.u-solo` — SkyView, the default — hides that
@@ -4533,6 +4666,14 @@ function viewsMenuInto(host){
   } else {
     items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
       'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view ↗</a>');
+    /* The way back to the rest of the work (Sam, 2026-09-07: "Need a COBI link
+     * on the 3-dot menu"). Stand-alone, SkyView is a page on its own with no
+     * route to COBI but the browser's history — and a reader who arrived on a
+     * shared link has no history to go back through. Only when NOT framed:
+     * inside COBI this would be a door onto the room you are standing in, the
+     * same reason the CCR table view is a message rather than a link there. */
+    items.push('<a class="linkish" id="u-cobi" href="../index.html" target="_blank" rel="noopener" '+
+      'title="COBI — the dashboard SkyView belongs to">COBI ↗</a>');
   }
   /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
    * the panel's own "Go to" heading — a menu inside a menu is a door behind a
@@ -5348,9 +5489,80 @@ function olLayer(id, title, source, body, opts){
 var olEdits={};
 function olState(id){ return olEdits[id] || (olEdits[id]={}); }
 
+/* ── the course outline as a SHEET OVER THE MAP ─────────────────────────────
+ * Sam, 2026-09-07: *"Need a back button from course outline view to the
+ * previous skyview and it should go back to where my focus was. Maybe best way
+ * to avoid this is to make the course outline a popup that can be closed and we
+ * never have to exit skyview."*
+ *
+ * ⭐ THE SECOND SENTENCE IS THE BETTER FIX, AND IT IS WHY THERE IS NO BACK
+ * BUTTON HERE. Opening the outline replaced `#view`; coming back called
+ * `__ccrUniverse()`, which rebuilds the map and calls `resetView()` — so the
+ * reader returned to the opening camera, not to the course they had been
+ * looking at. A Back control could only have restored a snapshot of the camera;
+ * a sheet never disturbs it, because SkyView is still mounted underneath. The
+ * state that is never lost needs no restoring.
+ *
+ * The full-page outline stays for the case it was built for: a reader arriving
+ * cold on `#outline/<id>`, with no map behind them to return to.
+ *
+ * ⚠️ The sheet mounts inside `#u-full` — browser full screen paints only that
+ * element, and SkyView is usually in it. */
+var outlineSheetReturn=null;
+function outlineSheetOpen(){ var s=document.getElementById("u-outline-sheet"); return !!(s && !s.hidden); }
+function closeOutlineSheet(){
+  var s=document.getElementById("u-outline-sheet"); if(!s || s.hidden) return false;
+  s.hidden=true; s.innerHTML="";
+  document.body.classList.remove("u-sheet-open");
+  /* Hand focus back to whatever opened it, or to the canvas — never to the top
+   * of the document, which would lose a keyboard reader's place on the map. */
+  var back=outlineSheetReturn; outlineSheetReturn=null;
+  try{ if(back && back.isConnected && back.focus) back.focus(); else if(cvs && cvs.focus) cvs.focus(); }catch(e){}
+  return true;
+}
+window.__ccrCloseOutlineSheet=closeOutlineSheet;
+function openOutlineSheet(nd, isl){
+  var host=document.getElementById("u-full"); if(!host) return false;
+  var s=document.getElementById("u-outline-sheet");
+  if(!s){
+    s=document.createElement("div");
+    s.id="u-outline-sheet"; s.className="u-sheet"; s.hidden=true;
+    host.appendChild(s);
+  }
+  outlineSheetReturn = (document.activeElement && document.activeElement!==document.body) ? document.activeElement : null;
+  var title=(nd.t||nd.i);
+  s.innerHTML='<button class="u-sheet-back" type="button" id="u-sheet-back" tabindex="-1" aria-hidden="true"></button>'+
+    '<div class="u-sheet-card" role="dialog" aria-modal="true" aria-labelledby="u-sheet-t">'+
+      '<div class="u-sheet-bar">'+
+        '<span class="u-sheet-t" id="u-sheet-t" title="'+esc(title)+'">Course outline — '+esc(title)+'</span>'+
+        '<button class="btn small" type="button" id="u-sheet-close" '+
+          'title="Close the outline and go back to the map, where you left it">Close</button>'+
+      '</div>'+
+      '<div class="u-sheet-body" id="u-sheet-body"></div>'+
+    '</div>';
+  var body=document.getElementById("u-sheet-body");
+  body.innerHTML=olHtml(nd, isl);
+  olWire(nd, isl);
+  s.hidden=false;
+  document.body.classList.add("u-sheet-open");
+  document.getElementById("u-sheet-close").addEventListener("click", closeOutlineSheet);
+  document.getElementById("u-sheet-back").addEventListener("click", closeOutlineSheet);
+  s.addEventListener("keydown", function(e){ if(e.key==="Escape"){ e.stopPropagation(); closeOutlineSheet(); } });
+  try{ document.getElementById("u-sheet-close").focus(); }catch(e){}
+  /* Same two late payloads the full page waits for — repaint in place, and only
+   * while this sheet is still the one on screen. */
+  var still=function(){ return outlineSheetOpen() && document.getElementById("u-sheet-body")===body; };
+  loadDesc(isl, function(){ if(still()){ body.innerHTML=olHtml(nd, isl); olWire(nd, isl); } });
+  if(cplState!=="ok") loadCpl(function(){ if(still()){ body.innerHTML=olHtml(nd, isl); olWire(nd, isl); } });
+  return true;
+}
 window.__ccrOutline=function(id){
   if(!ensureCorpus()){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   var hit=nodeById(id);
+  /* The map is on screen: open over it and leave the camera alone. The hash is
+   * deliberately NOT changed — the reader has not left SkyView, and a hash that
+   * said otherwise would make Back in the browser a trap. */
+  if(hit && cvs && document.getElementById("u-cvs")===cvs && openOutlineSheet(hit.nd, hit.isl)) return;
   if(!hit){
     /* A stale or hand-typed link is a normal thing to arrive with. Say what
      * happened and leave a way on, rather than painting an empty page. */
@@ -5666,7 +5878,36 @@ window.__ccrHow=function(){
 /* Called by the template's setCrumbs() — the one place every view passes
  * through before it renders: the search box goes home, and the view being
  * entered is named (null for the sub-pages, so their menu offers all five). */
-window.__ccrLeaveView = function(view){ homeSearch(); curView = view || null; };
+/* ── BACK — the way out of any view the reader switched to ──────────────────
+ * Sam, 2026-09-07: *"Would be good to have a back button on any skyview screen
+ * user switches to."*
+ *
+ * The crumbs named where you were in the hierarchy, which is not the same
+ * question as how you got here: the workspace's row read "Disciplines and
+ * subjects" and nothing else, so a reader who reached it from the map had no
+ * way back but the Views menu — and the Views menu rebuilds SkyView, which
+ * resets the camera. Back returns to the view you came from, one step, and when
+ * that view is the map it returns to the PLACE you were looking at.
+ *
+ * ⚠️ One step deep on purpose. A full history stack would have to agree with
+ * the hash router, the Views menu and the browser's own Back; one step is the
+ * question a reader actually asks ("put me back where I was") and it cannot
+ * disagree with anything. */
+var viewBack=null;
+function viewEntry(key){ for(var i=0;i<VIEWS.length;i++) if(VIEWS[i].key===key) return VIEWS[i]; return null; }
+window.__ccrBackEntry=function(){
+  var v=viewEntry(viewBack); if(!v) return null;
+  return {label:v.label, go:v.go};
+};
+window.__ccrLeaveView = function(view){
+  homeSearch();
+  var was=curView;
+  if(was && view && was!==view){
+    if(was==="skyview"||was==="comprehensive") parkCamera();
+    if(viewEntry(was)) viewBack=was;
+  }
+  curView = view || null;
+};
 /* Belt to setCrumbs()'s braces: an entry point that renders before it calls
  * __crumbs — or never calls it — still sends the box home here. __ccrDecision
  * is in the list because the comprehensive view embeds the forest, whose
