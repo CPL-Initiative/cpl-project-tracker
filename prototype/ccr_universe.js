@@ -893,6 +893,64 @@ function emptied(nd){
   return !!(m && (m.cn in movedTo) && movedTo[m.cn]!==nd.i);
 }
 
+/* ══ THE STAGED-TO-MOVE STATE — ON THE MODEL, NOT THE VIEW (v4 item 7) ═══════
+ * Sam, 2026-09-06, after dragging a course onto another identity: "It didn't
+ * really change over here, which I would expect it to change and to give me a
+ * confirmation that it was moved and to change this outline to show it was
+ * staged to move." The confirmation half shipped in S237 (the hint names where
+ * the move went and that it is staged). THIS is the mark: the course itself,
+ * wherever it is drawn or listed, says it is staged and not saved — at its
+ * destination ("staged here") AND at the identity it left, where it used to
+ * simply vanish, because membersOf() excludes it (a move is one global
+ * statement) and nothing drew what had left.
+ *
+ * ⭐ ONE MODEL, EVERY VIEW. `moves` is the record; these helpers are the only
+ * way a view asks about it, so the ring, the panel, the outline, the hover, the
+ * label and the hint — and the sphere, when it comes — say the same thing in
+ * the same words. A view that reads movedTo directly to decide what to SAY is
+ * the drift this exists to prevent. `home` on a record is the course's original
+ * identity, so a course moved twice still shows as gone from where it began. */
+function stagedHere(cn, id){ return (cn in movedTo) && movedTo[cn]===id; }
+function stagedMoveOf(cn){ for(var i=0;i<moves.length;i++) if(moves[i].cn===cn) return moves[i]; return null; }
+function stagedAwayFrom(id){
+  return moves.filter(function(m){ return m.from===id || m.home===id; });
+}
+function stagedCountHere(id){ var n=0; for(var i=0;i<moves.length;i++) if(moves[i].to===id) n++; return n; }
+/* The phrase, written once. `at` is "here" (at the destination) or "away" (at
+ * the identity the course left). */
+function stagedWords(m, at){
+  if(at==="here") return "staged here \u2014 not saved";
+  var t=m?nodeById(m.to):null;
+  return "staged to move to "+(t?(t.nd.t||m.to):(m?m.to:"another identity"))+" \u2014 not saved";
+}
+/* Put back: the staged move is dropped and the course is home again. */
+function unstageMove(cn){
+  if(!(cn in movedTo)) return false;
+  var mv=stagedMoveOf(cn);
+  delete movedTo[cn];
+  moves=moves.filter(function(m){ return m.cn!==cn; });
+  setHint("Put back <strong>"+esc(mv?mv.code:cn)+"</strong> \u2014 nothing is staged for it now."+
+          (moves.length?" "+moves.length+" move"+(moves.length===1?"":"s")+" still staged.":""));
+  drawWrites(); if(selNode) renderNode(); draw();
+  return true;
+}
+/* What an identity's label and hover add when a move touches it. */
+function stagedLabelSuffix(nd){
+  var here=stagedCountHere(nd.i), away=stagedAwayFrom(nd.i).length;
+  return (here?" \u00b7 "+here+" staged here":"")+(away?" \u00b7 "+away+" staged to move away":"");
+}
+function stagedTipLine(nd){
+  var here=stagedCountHere(nd.i), away=stagedAwayFrom(nd.i).length;
+  if(!here && !away) return "";
+  return '<br><span class="sub">'+(here?here+' course'+(here===1?'':'s')+' staged here, not saved':'')+
+         (here&&away?' \u00b7 ':'')+(away?away+' course'+(away===1?'':'s')+' staged to move away, not saved':'')+'</span>';
+}
+function stagedBandWords(nd){
+  var here=stagedCountHere(nd.i), away=stagedAwayFrom(nd.i).length, ttl=' title="Staged in this browser only. Nothing is written from this page."';
+  return (here?' \u00b7 <span class="chip ok"'+ttl+'>'+here+' staged here \u2014 not saved</span>':'')+
+         (away?' \u00b7 <span class="chip staged"'+ttl+'>'+away+' staged to move away \u2014 not saved</span>':'');
+}
+
 /* ── draw ───────────────────────────────────────────────────────────────── */
 function draw(){
   if(!ctx||!U) return;
@@ -1252,9 +1310,32 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
       // Short college names on the map (Sam, 2026-09-05: "Could use the short
       // names on the colleges throughout") — a ring of 24 spokes is where the
       // repeated word "College" costs the most and says the least.
-      queue.push({mem:m, nd:nd, px:x, py:y, rad:4, lines:[m.n+" · "+trunc(shortCollege(m.c),26)], band:"member",
+      queue.push({mem:m, nd:nd, px:x, py:y, rad:4,
+                  lines:[m.n+" · "+trunc(shortCollege(m.c),26)+(movedHere?" · staged here":"")], band:"member",
                   out:[Math.cos(a), Math.sin(a)],
-                  force:!!focus || !!(memFilter && m.n===memFilter) || carried});
+                  force:!!focus || !!(memFilter && m.n===memFilter) || carried || movedHere});
+  }
+  /* ⭐ THE MARK AT THE ORIGIN (v4 item 7). A course staged to move away is still
+   * DRAWN here — hollow, dashed, on a ring of its own outside the members, the
+   * words on its label — so the identity it left says what left it and where it
+   * went. membersOf() has already excluded it (one global statement), which is
+   * exactly why the origin used to change nothing: the course simply vanished. */
+  var away=stagedAwayFrom(nd.i);
+  if(away.length){
+    var RA=R0+rings*15, na=away.length;
+    for(var gi=0;gi<na;gi++){
+      var mv=away[gi], ga=-Math.PI/2+gi*2*Math.PI/Math.max(na,6)+0.2, gx=p[0]+RA*Math.cos(ga), gy=p[1]+RA*Math.sin(ga);
+      ctx.save(); ctx.setLineDash([2,2]);
+      ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(ga), p[1]+rad*Math.sin(ga)); ctx.lineTo(gx,gy);
+      ctx.lineWidth=1; ctx.strokeStyle=pal.gone; ctx.stroke();
+      starPath(gx, gy, 5.2); ctx.fillStyle=pal.hollow; ctx.fill(); ctx.lineWidth=1.2; ctx.strokeStyle=pal.gone; ctx.stroke();
+      ctx.restore();
+      memberPts.push({x:gx, y:gy, m:null, ghost:mv, nd:nd, isl:isl});
+      if(k>MEMBER_ZOOM || focus)
+        queue.push({mem:null, ghost:mv, nd:nd, px:gx, py:gy, rad:4,
+                    lines:[mv.code+" · "+trunc(shortCollege(mv.college),26), stagedWords(mv,"away")], band:"member",
+                    out:[Math.cos(ga), Math.sin(ga)], force:true});
+    }
   }
   if(rest>0){
     var ry=p[1]+R0+(rings-1)*15+14;
@@ -1302,6 +1383,9 @@ function loneCollege(nd){
   return m ? shortCollege(m.c) : "";
 }
 window.__ccrLoneCollege = loneCollege;
+/* The outline of record's HTML for an identity — for tests that read its band
+ * (the staged counts, the course count) without opening the view. */
+window.__ccrOutlineHtml = function(id){ var t=nodeById(id); return t ? olHtml(t.nd, t.isl) : null; };
 
 /* The CPL face's label: the credential that reaches the point leads, and a
  * point nothing reaches gets NO label (Sam's ruling 3, 2026-09-07). "+N" says
@@ -1320,7 +1404,7 @@ function labelLines(nd, k){
   if(k<=ID_ZOOM) return null;
   if(face==="cpl") return cplLabelLines(nd, k);
   var u=unitsShort(nd.u);
-  var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"");
+  var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"")+stagedLabelSuffix(nd);
   if(k>FULL_ZOOM){
     var col=loneCollege(nd);
     return {band:"full", lines:[head,
@@ -1583,7 +1667,7 @@ function pickMember(px,py,only){
     var dx=Math.abs(px-mp.x), dy=Math.abs(py-mp.y);
     if(dx<=6 && dy<=6 && dx+dy<bestD){ bestD=dx+dy; best=mp; }
   }
-  return best?{isl:best.isl, nd:best.nd, mem:best.m}:null;
+  return best?{isl:best.isl, nd:best.nd, mem:best.m, ghost:best.ghost||null}:null;
 }
 
 /* ── the view ─────────────────────────────────────────────────────────────── */
@@ -2168,7 +2252,7 @@ function cplHits(term){
  * object across the CDP bridge several times per run, and this array is one
  * entry per drawn star. */
 window.__ccrMemberPoints = function(){
-  return memberPts.map(function(mp){ return {x:mp.x, y:mp.y, id:mp.nd.i, code:mp.m.n}; });
+  return memberPts.map(function(mp){ return {x:mp.x, y:mp.y, id:mp.nd.i, code:mp.m?mp.m.n:mp.ghost.code, ghost:!!mp.ghost}; });
 };
 window.__ccrSuggest = suggest;
 window.__ccrTipHtml = tipHtml;
@@ -2374,6 +2458,7 @@ window.__ccrUniverseState = function(){
           members:roster?Object.keys(roster).length:0, memberSource:memberSource,
           memberIndex:memIndex?memIndex.length:0,
           sharedKeys:shared, canMove:canMove,
+          staged:{awayFrom:stagedAwayFrom, here:stagedHere, countHere:stagedCountHere, of:stagedMoveOf, words:stagedWords, unstage:unstageMove},
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
           labelStats:labelStats, hits:searchHits.length,
           orbiting:orbiting, rim:rim, crossOrbits:cross, inspectorOpen:inspOpen, inspectorWidth:inspW, showHealed:showHealed.slice(),
@@ -2407,7 +2492,9 @@ window.__ccrUniverseState = function(){
               if(nd.c==null) o.unrecorded++; else if(nd.c===0) o.cr++; else o.nc++;
               if(creditShown(nd)) o.shown++; }); });
             return o; })(),
-          mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL, memberPoints:memberPts.length,
+          mode:mode, anchor:anchor, memberZoom:MEMBER_ZOOM, memberZoomAll:MEMBER_ZOOM_ALL,
+          memberPoints:memberPts.filter(function(mp){ return !!mp.m; }).length,
+          ghostPoints:memberPts.filter(function(mp){ return !!mp.ghost; }).length,
           memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
           hover:hoverNode?hoverNode.i:null,
           face:face, lit:lit, cpl:cplState, cplLine:(face==="cpl"?cplLineText():null),
@@ -2433,6 +2520,12 @@ function cplTipHtml(hit){
 }
 function tipHtml(hit){
   if(face==="cpl" && hit.nd && !hit.mem && cplState==="ok"){ var ch=cplTipHtml(hit); if(ch) return ch; }
+  if(hit.ghost){
+    var g=hit.ghost, gt=nodeById(g.to);
+    return '<b>'+esc(g.code)+'</b> '+esc(shortCollege(g.college))+
+      '<br><span class="sub">'+esc(stagedWords(g,"away"))+(gt?' ('+esc(gt.isl.d)+')':'')+
+      '. Was under '+esc(hit.nd.i)+'; Put back in the panel drops the staged move.</span>';
+  }
   if(hit.mem){
     /* Sam, 2026-09-05: "The course title and description should show on the
      * explainer card for member local courses." The description is the whole
@@ -2462,6 +2555,7 @@ function tipHtml(hit){
       num(carried)+' college course'+(carried===1?'':'s')+' · '+esc(isl.d)+
       // A loner's one college names it; the hover is where a reader asks "whose?"
       (loneCollege(nd)?' · '+esc(loneCollege(nd)):'')+'</span>';
+    h+=stagedTipLine(nd);
     if(nd.a){
       var par=nd.o?nodeById(nd.o):null;
       h+='<br><span class="sub">Stand-alone'+(nd.h?' filed under '+esc(nd.h):'')+(par
@@ -3501,7 +3595,7 @@ function memberRow(m, isl, nd, moved){
     (info&&info.title?'<span class="mt">'+esc(info.title)+"</span>":"")+
     '<span class="co" title="'+esc(m.c)+'">'+esc(shortCollege(m.c))+"</span>"+
     (info&&info.units!=null?'<span class="un">'+esc(unitsWord(info.units))+"</span>":"")+
-    (moved?' <span class="chip ok">moved here</span>':"")+
+    (moved?' <span class="chip ok">'+esc(stagedWords(stagedMoveOf(m.cn),"here"))+'</span>':"")+
     (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
       ' names '+coursesOn(m.cn).length+' different courses, so the '+
       'CN: write key cannot say which one to move.">shared key</span>':"")+
@@ -3661,7 +3755,7 @@ function renderNode(){
   } else if(!total){
     h+='<p class="empty">No college courses are carried for this identity'+
        (memberSource==="sample"?' in the prototype sample.':'.')+
-       (nd.a&&emptied(nd)?' Its one course was moved — see the write below the map.':'')+'</p>';
+       (nd.a&&emptied(nd)?' Its one course is '+esc(stagedWords(stagedAwayFrom(nd.i)[0],"away"))+'.':'')+'</p>';
   } else {
     var q=memFilter.trim().toLowerCase();
     var shown=q ? mine.filter(function(m){
@@ -3684,6 +3778,22 @@ function renderNode(){
     h+='<ul class="mlist">'+capped.map(function(m){ return memberRow(m, isl, nd, movedTo[m.cn]===nd.i); }).join("")+"</ul>";
     var st=descState[isl&&isl.sh];
     if(st==="loading") h+='<p class="empty">Loading course titles and descriptions…</p>';
+  }
+  /* ⭐ THE MARK AT THE ORIGIN, IN WORDS (v4 item 7): the courses staged to move
+   * away from this identity, listed here until the move is written, each with
+   * where it went and a Put back. Without this the origin's panel simply lost
+   * a row, and Sam read that as nothing having happened. */
+  var awayList=stagedAwayFrom(nd.i);
+  if(awayList.length){
+    h+='<h4 style="margin:.9em 0 .3em">Staged to move away ('+num(awayList.length)+')</h4>'+
+      '<p class="sub">Listed here until the move is written, so what left this identity is never a silent absence. '+
+      '<strong>Put back</strong> drops the staged move.</p>'+
+      '<ul class="mlist">'+awayList.map(function(mv){
+        return '<li class="away" data-cn="'+esc(mv.cn)+'"><span class="cd">'+esc(mv.code)+'</span>'+
+          '<span class="co" title="'+esc(mv.college)+'">'+esc(shortCollege(mv.college))+'</span>'+
+          ' <span class="chip staged">'+esc(stagedWords(mv,"away"))+'</span>'+
+          '<button class="putback" type="button" data-putback="'+esc(mv.cn)+'" title="Drop the staged move; the course is home again">Put back</button></li>';
+      }).join("")+'</ul>';
   }
   if(face!=="cpl" && nd.ar>0) h+=cplPanelHtml(nd, isl);
   // The stand-alone courses in orbit around this identity: the map's suggestions,
@@ -3794,6 +3904,10 @@ function renderNode(){
    * canvas. The destinations are here now; this is what makes them accept one.
    * Navigating away mid-carry was the old behavior and it silently abandoned the
    * move. */
+  /* Put back (v4 item 7): the staged move is dropped and the course is home again. */
+  Array.prototype.forEach.call(el.querySelectorAll("[data-putback]"), function(b){
+    b.addEventListener("click", function(){ unstageMove(b.dataset.putback); });
+  });
   Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
     b.addEventListener("click", function(){
       if(drag && drag.kind==="course" && b.dataset.go!==nd.i){
@@ -3848,7 +3962,7 @@ function applyMove(cn, code, college, toId, d){
   if(from===toId){ setHint("That course is already there."); return; }
   movedTo[cn]=toId;
   moves=moves.filter(function(m){return m.cn!==cn;});
-  moves.push({cn:cn, d:d||(byCn[cn]&&byCn[cn].d)||"", code:code, college:college, to:toId, from:from});
+  moves.push({cn:cn, d:d||(byCn[cn]&&byCn[cn].d)||"", code:code, college:college, to:toId, from:from, home:originOf(cn)||from});
   var t=nodeById(toId);
   /* ⚠️ "Recorded below the map" NAMED A PLACE THE READER CANNOT SEE. `#u-writes`
    * lives in `#u-below`, and `body.u-solo` — SkyView, the default — hides that
@@ -3856,10 +3970,9 @@ function applyMove(cn, code, college, toId, d){
    * all has been told their move went somewhere it did not. Say what is true
    * where they are standing. */
   var solo=document.body.classList.contains("u-solo");
-  setHint("Moved <strong>"+esc(code)+"</strong> ("+esc(college)+") to <strong>"+
-          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". "+
-          (solo ? "Staged in this browser, not written \u2014 "+moves.length+" move"+
-                  (moves.length===1?"":"s")+" so far, listed under the map in the comprehensive view."
+  setHint("Staged to move <strong>"+esc(code)+"</strong> ("+esc(college)+") to <strong>"+
+          esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+" \u2014 not saved. "+
+          (solo ? moves.length+" move"+(moves.length===1?"":"s")+" staged in this browser, listed under the map in the comprehensive view."
                 : "Recorded below the map."));
   drawWrites();
   if(selNode) renderNode();
@@ -4812,7 +4925,7 @@ function olHtml(nd, isl){
     '<div><h1 id="ol-title">'+esc(title)+'</h1>'+
       '<p class="ol-meta">'+chipFor(nd)+' <span class="sub">'+esc(nd.i)+'</span> · '+
       esc(isl.d)+' · Common SUBJ '+esc(subject)+' · '+esc(unitsWord(nd.u))+' · '+
-      num(total)+' college course'+(total===1?"":"s")+
+      num(total)+' college course'+(total===1?"":"s")+stagedBandWords(nd)+
       (nd.ar?' · '+num(nd.ar)+' articulation'+(nd.ar===1?"":"s"):"")+
       (st.title?' · <span class="chip gen" title="A proposed title, staged in this browser only. Nothing is written from this page.">renamed — not saved</span>':"")+
       '</p></div>'+

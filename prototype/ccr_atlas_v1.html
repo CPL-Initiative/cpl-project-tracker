@@ -260,6 +260,17 @@ a{color:var(--cobalt)}
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:var(--row-moved)}
+/* A course STAGED TO MOVE AWAY from this identity (v4 item 7, Sam: "change this
+   outline to show it was staged to move"). Listed at its origin until the move
+   is written, dashed so the state survives grayscale; the chip carries the
+   words and Put back drops the staged move. No fill, so no dark counterpart
+   is needed: the tokens it uses already have one. */
+.mlist li.away{border:1px dashed var(--sky-gone);opacity:.92}
+.mlist li.away .cd{color:var(--sky-gone);font-weight:600;background:none;border:0;padding:0;font:inherit;font-size:.82rem}
+.chip.staged{background:none;color:var(--text-muted);border:1px dashed var(--sky-gone)}
+.mlist .putback{margin-left:auto;font:inherit;font-size:.72rem;font-weight:600;background:none;
+           border:1px solid var(--border-strong);border-radius:5px;padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
+.mlist .putback:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 /* A card being dragged onto. Outline + tint, never tint alone: the cards
    already carry state colors and one more wash of color reads as noise. */
 #ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
