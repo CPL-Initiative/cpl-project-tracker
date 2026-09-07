@@ -67,6 +67,14 @@ out to a sky. All built as controls on the same page: Spread | Committed, Round
 braindump. The globe is now *keep exploring*, not *keep or drop*; the product
 question (whether any of it belongs in SkyView) is still his, on a sheet.
 
+**Third round, later still.** Sam: *"Better! Tweak:"* — proximity by CTE versus
+academic, full use of the blank areas, the inside view's finer dots in both
+views and the inside view filling the window like the night sky (*"this may
+turn out to be the best view!"*), Silver M-IDs; then a nicer rotation, no
+Wrapped, and Day versus Night with faint clouds. All built (`By kind` reads the
+kind from TOP's one sanctioned use — the manual's CTE flag — as a share per
+discipline; Inside is a stereographic window, 30° to 240° across). Same link.
+
 ## ⭐ THE THING TO CARRY FORWARD
 
 **The ruled coverage line carried two wrong numbers, and the surface computes
@@ -128,9 +136,10 @@ or ghosts.
 ⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
 ⑦ **His eye on the CPL face** (`#skyview/cpl`) — does the credential-led label
 read right, and is *Articulations* the word.
-⑧ **The globe, second round — his eye.** Do the five asks read as answered, and
-does the all-sky Inside look like stars in their groupings? If the globe earns a
-place in the product, that is a decision sheet, never a port of that file.
+⑧ **The globe, third round — his eye.** Does the sky by kind read, is the window
+Inside the view he wants, and is any of it wanted in SkyView itself? A yes is a
+decision sheet (the sky form, curation gestures on a sphere, motion), never a
+port of that file.
 
 ## Housekeeping
 
