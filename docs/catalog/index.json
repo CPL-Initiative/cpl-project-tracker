@@ -9998,7 +9998,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 79,
+   "count": 80,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11272,6 +11272,21 @@
      "title": "SkyView \u2014 drag any local course, queue the breakage, batch the re-mint",
      "type": null,
      "updated": "2026-08-24"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "path": "docs/skyview_backlog.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "skyview",
+      "ccr",
+      "backlog"
+     ],
+     "title": "SkyView \u2014 the smaller backlog",
+     "type": null,
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-07-03",
@@ -15833,5 +15848,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 811
+ "total": 812
 }

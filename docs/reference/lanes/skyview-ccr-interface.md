@@ -232,6 +232,63 @@ so his call under his own glyph rule.
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
+## Sam's eight rulings of 2026-09-07 (decision sheet) — ALL YES, one note
+
+Sheet: `docs/visuals/2026-09-07-cpl-views-skills-and-curate.html`. Every figure on
+it came from **MAP's own credit funnel** (`map_college_cr_unit`), not from the
+resolved crosswalk this map draws — Sam, mid-session: *"make sure you're source
+the root of the data and not config for this work."* The crosswalk holds 41% of
+the root's exhibits and 29% of its credit recommendations.
+
+⭐ **THE CEILING IS THE RECEIVING COURSE, NOT THE MAP.** Only **8,979 of 206,702
+rows (4.3%)** name a receiving college course, and that is the sole join from a
+CPL row to a course identity. 1,490 of 6,388 exhibits reach a point on the shipped
+map. **The CPL view says its own coverage on the surface** — one line, *"1,490 of
+6,388 exhibits reach a course on this map"* — because a view that quietly shows a
+quarter of the record looks like the record.
+
+⭐ **THE ARTICULATIONS TOGGLE SHOWS PRESENCE. "WHERE THEY DIFFER" IS NOT A MAP
+LAYER** (ruling 2). ⚠️ Measured three ways and the first two were wrong: differing
+recommendation TEXT per exhibit gives 2,834 and differing HOURS per exhibit gives
+678, but **both count an exhibit's own tiered menu as a disagreement** — ACE writes
+*3 / 6 / 9 hours in air traffic control* on one exhibit and a single college holds
+all three lines on one course in one catalog year. Presence in the funnel is not a
+decision; `cpl_status_plan` is. Restricted to rows that name a course AND were
+acted on: **four**, and two of those are data-quality defects. They are a receipt,
+not a layer: [`kb/ccr_articulation_disagreements.json`](../../../kb/ccr_articulation_disagreements.json).
+⚠️ NOT written to `map_cleanup_worklist` — that table's grain is per COLLEGE and
+these are per EXHIBIT, and a first write to it is a new write surface.
+
+⭐ **THE CPL FACE LEADS WITH THE CREDENTIAL, THEN THE AGENCIES** (ruling 3 + his
+note). Curated credential name → **issuing agency AND training agency where they
+differ** → what it earns → the colleges holding it. Search switches with the face.
+Points with no exhibit stay drawn and unlabeled, the same rule as the toggle.
+Sam: *"If we can also include the issuing and training agencies, it would be good.
+We know that the data are incomplete now, which is OK for now. Will want all this
+included on the COR and credential Exhibit"* — so the agencies belong in the
+**course outline of record** and on the **credential Exhibit**, not only on the map.
+
+⭐ **THE SKILL FOLD STANDS AS SHIPPED** (rulings 4-5). 2,756 families over 46,317
+identities, 4,360 rows; all 39 families touching a word whose singular means
+something else (*athletics*, *graphics*, *ethics*, *physics*) pair real variants of
+one name, none merged two skills. If a pair ever reads as two things, it goes on a
+short do-not-fold list rather than weakening the stemmer.
+⚠️ **A grouping key can be a non-word and that is not a bug** — *news stories* keys
+as `new story`, *series solutions* as `sery solution`, *mechanics' lien* as
+`mechanic lien`. The key is NEVER shown; the card displays a spelling a college
+published. It would only bite if one card carried both senses of such a word, which
+does not occur today.
+
+⭐ **A CURATE EDIT IS PROPOSED, ATTRIBUTED, AND SECONDED TO PUBLISH** (rulings 6-8),
+now **DR-24** in the governance register with **Sam as its named owner — the first
+owned row in the register**. ⚠️ The sheet proposed "DR-22"; that id was already the
+GR register, so the row landed as DR-24. An added skill carries the reviewer's name
+and the day it was staged and lands `proposed`, visible at once to its author and to
+curators, joining the published outline on a second curator's agreement. A removal
+is symmetric: immediate and reversible in the reviewer's own view, seconded to leave
+the published outline, and an unseconded removal stays visible with the objection
+beside it. Nothing writes from the page until DR-24's surface ships.
+
 ## NEXT
 
 ⓪ **CPL-focused view + show-articulations toggle (Sam, 2026-09-06).** Two
@@ -243,35 +300,7 @@ no hollow, no "none" marker, each of which reads as a finding. ⚠️ Only **1,4
 of 49,896 points (3.0%)** carry an articulation count, so marking absence would
 claim something about 48,406 points the data cannot support.
 
-① **The outline's skills layer — UNBLOCKED, now a fetch problem.** Ruling 1
-settles the precedence: **published agency standard is the text of record; an
-ACE exhibit fills a gap it leaves and never overrides it; the MAP team overrides
-either, attributed and dated**; a genuine conflict shows **both, each named**.
-⚠️ We hold none of that text — 1,987 credentials classified, 64 welding, **zero
-carrying a skill field**. Pilot: an AWS welding certification.
-
-①b **The curate phrase — ruled, not built.** **One phrase gates anything that
-leaves the browser**; reading stays open. ⚠️ First write from this surface, so
-Rule 10 a3 routes it through Governance and the privacy ADRs before it ships.
-
-② **The re-mint approval queue** — routed through Governance
-([`adr-remint-approval-queue-decision-rights`](../../kb-notes/adr-remint-approval-queue-decision-rights.md)),
-not built: a register row owning the approval, the surface mapped in
-`kb/governance_surface_map.json` at the first write, INSERT-only rollback, a
-test asserting it writes approvals and nothing else.
-③ **Decision packs per discipline, fetched on demand** — the bottleneck behind
-every UI tweak; the shards' publish path is the template.
-④ The drag that leaves SUBJ4 inconsistent queues a re-mint candidate — proposes,
-never auto-adds.
-⑤ The 73 two-real-course control numbers · the member-roster fold at source
-(`CaÃ±ada College` ×678) · accept-all-orbits-above-a-score · the 67 `ESOL Z####`
-rows and `FIMS M1018` (needs an un-merge verb) · a tool for the 3,001 with no
-discipline.
-⑥ **A description signal for the rim** — 1,600 of 2,073 rim courses have a
-description; TF-IDF places ~130 well and agrees with the title-based parent only
-20% of the time. A gap-filler that never outvotes a title.
-⑦ Dropdown labels that name the grain on the CCR tab.
-⑧ **After the fold:** the promote step is BUILT (`kb/_uc_cur_promote.py`); seven
-held rows move on a second signal; the identities map's ghost keys have a dry run
-and a receipt awaiting Sam's sheet.
-⑨ Identity-level chips once members are classified.
+⚠️ **The rest of the queue moved out on 2026-09-07** — the skills layer's fetch
+problem, the curate phrase, the re-mint approval queue, decision packs, the
+SUBJ4-inconsistent drag, the shared control numbers, the rim description signal
+and the rest: [`docs/skyview_backlog.md`](../../skyview_backlog.md).
