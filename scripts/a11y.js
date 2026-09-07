@@ -695,6 +695,17 @@ function MOTION(known) {
 
           const noRing = await page.evaluate(() => {
             const out = [];
+            /* ⚠️ A CLOSED <details> STILL MEASURES. Chromium hides its content
+               with content-visibility rather than display:none, so the rect is
+               real while the element cannot take focus at all — el.focus() is a
+               no-op and every control inside reads as "no ring". Measured
+               2026-09-07: ten buttons in one collapsed "Named by a single
+               college" section, every one of them correctly unreachable.
+               Skipping them would cost the coverage instead, so the sections are
+               OPENED for the measurement and put back exactly as they were —
+               a control the reader can reveal still has to show its focus. */
+            const shut = [...document.querySelectorAll("details:not([open])")];
+            shut.forEach((d) => { d.open = true; });
             document.querySelectorAll('a[href],button,input:not([type="hidden"]),select,textarea,[tabindex="0"]').forEach((el) => {
               if (el.getBoundingClientRect().height === 0) return;
               el.focus();
@@ -704,6 +715,7 @@ function MOTION(known) {
               if (!ring) out.push(el.tagName.toLowerCase() + (el.id ? "#" + el.id : "") +
                 (typeof el.className === "string" && el.className.trim() ? "." + el.className.trim().split(/\s+/)[0] : ""));
             });
+            shut.forEach((d) => { d.open = false; });
             if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
             window.scrollTo(0, 0);                    // leave the route as the next measurement expects it
             return out;

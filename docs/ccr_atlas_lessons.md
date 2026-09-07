@@ -38,269 +38,6 @@ curation task and a bit lost in the process."*
 > **on 2026-09-05** when this doc passed its budget. Nothing was edited
 > in the move.
 
-## 2026-09-03 — SkyTune (Session 224), the land
-
-### Sam said yes to all, and the two rules that changed were re-run first
-
-The fourteen readings came back *"Yes to all"* in the afternoon. Two of them
-change a rule rather than confirm one: card 9 puts Armenian into
-`kb/foreign_language_subj4.json` as `ARME` (its `ARMN` rows fold in), card 10
-takes `(PH, Health)` out of the item-17 dismissals. Both dry runs were re-run on
-the ruled state before anything was built on them (#1452): the recode grew by
-four ids to 10,296, the retirement did not move.
-
-### The applies: apply == spec, gated three ways
-
-Each apply recomputes the plan through the dry run's `compute_plan()` and
-refuses to proceed unless it equals the frozen receipt Sam's yes was given
-against (P1), unless the overlay is fresh at write-time (P3), and unless ten
-conservation gates pass after the mutation (counts, untouched rows byte for
-byte, key == course_id, exact keyset permutations, articulation multisets,
-overlay integrity, stamps, disjoint key spaces). The retirement materializes
-each retired identity as an M-ID record from its members' aggregate and gives
-it **no membership entry**, so a college course is never counted twice. Card 2
-said the FTVE pair would go in `kb/discipline_aliases.json`; that file folds an
-alternate name away in every inference pass, and item 13 keeps both names, so
-the pair is recorded on the seed as `fan_in_with` — the deviation is stated in
-#1453.
-
-### ⭐ Rehearse on a scratch copy
-
-A copy of `kb/` under the scratchpad ran the whole land first: recode,
-retirement, promotions, seed, chips, audit, fold-verify. It showed the
-retirement can only verify after the recode is applied (the recode frees
-`AGPR M1003`, which the retirement takes), and it printed the numbers the real
-run then matched line for line.
-
-### ⚠️ A freshness count must use the sync's own field list
-
-The five-field overlay list the June apply carried reads six fresh
-`merge_dismissed`-only entries as deletions (30,688 vs 30,694). A prefix
-drill-down named them (`PARN M9003`, `M9004`, `M9015` among them). The apply
-now imports `FIELDS` from `kb/_apply_curation.py`.
-
-### What the land moved, and what it surfaced
-
-Recode: 10,296 ids (2,170 minted, 7,587 singletons, 539 Z ids), 491
-articulations, 13 identities with one ghost healed, 3,832 overlay keys and
-2,842 pointers, 23 counters, seven codes, three umbrellas, twelve language
-codes. Retirement: 4,053 materialized, 10,704 pointers, 218 anchors, 254
-crosswalk references. Afterwards fold-verify wants 285 re-keys (148 before) and
-the audit tags 153 `subject_collision_signal` rows (0 before): 137 materialized
-records sit on the June prefix their members' discipline no longer owns
-(`ITIS` under Computer Science, `HVAC` under the trades, `ARTS` under Art
-History). Materializing made a latent inconsistency visible; the next
-keep-number prefix re-key is its fix.
-
-### The Supabase re-key's pace, measured
-
-`supabase-rekey.yml` patches one pair at a time (two PostgREST requests per
-pair). Measured on 2026-09-03 against the database's own clock: about two pairs
-a second, so the recode's 10,296 pairs take about 85 minutes and the
-retirement's 4,271 about 36, run back to back under the workflow's concurrency
-group. Read the clock from the database (`select now()`) before judging a
-run's pace; a wall-clock guess from the session ran twenty minutes fast and
-briefly made the run look ten times slower than it was. A bulk path (a
-Postgres function taking the pairs as JSON, called in chunks) would make a
-re-key a matter of minutes; it is a NEXT, not a need.
-
-### ⚠️ An alias map can chain, and a naive verify reads the chain as a leftover
-
-The recode re-key (run 33802936877) PATCHed all 10,296 pairs and then failed its
-own verify: *old self-keys left: 2*. Nothing was wrong. The map carried
-`ARME M10AJ → FLNG M10AJ` (a residual Foreign Languages record that sat on the
-ARME prefix since June) beside `ARMN M10AJ → ARME M10AJ` (an Armenian record
-moving onto the ruled code). Sorted order applied the first before the second,
-so every row landed where the map put it; the verify then counted rows on the
-old keys and found two on `ARME M10AJ`, which is also a new key. Two readings had
-to be separated to see it: after both runs, 35 of the recode's old keys were
-still present on `kb_curation`, and 33 of them were numbers the Z-band
-retirement minted after the recode freed them (`AGRI M1001` was `AGRI Z1001`;
-the landed overlay carries the same keys, 30,694 in both places). The other two
-were the chain. `kb/_rekey_kb_curation_supabase.py` now applies a map
-vacate-first (`order_pairs`; a swap aborts) and verifies over the old keys that
-are not also new keys (`verify_surface`); `tests/rekey_kb_curation_chain_test.py`
-pins it, and that PR also wires the two apply guards from #1453 into CI, where
-they had run nowhere (#1455). **A verify has to be written against the shape of
-the map, not against the assumption that old and new keys are disjoint** — the
-collision surface forbids a target that exists, but the same map can vacate one.
-
-### The fold worklist, measured against the planner of record
-
-The land's "137 materialized records on a prefix their discipline no longer
-owns" was read off the audit. Measured against fold-verify (`kb/_subj4_dryrun.py`),
-the planner of record, the worklist is 285 rows: 139 materialized records and
-146 older strays. Three readings shaped the dry run (`kb/_prefix_fold_dryrun.py`,
-#1458). First, a seed-only measure over-counts: 88 Kinesiology records under
-`ATHL` are inside a documented span (`KINE`/`ATHL`, made in June so KINE's 999
-numbers would not burst), and fold-verify's allowances, not the seed's
-`canonical_subj4` alone, define what is off-code; the dry run imports the same
-allowances and proves parity (V8). Second, the 146 legacy strays are not
-curator rows: their disciplines were set in July by the trail-crew and mismint
-cohorts under reviewed plans, and the prefix never followed — the CCR tab has
-shown one discipline and the id another for two months. Third, Rule 7 has to
-be applied to the evidence, not the row: a materialized record's discipline is
-its members' modal, and for seven of them every member was disciplined from
-TOP alone, so they are held and listed rather than moved. The allocator is the
-recode's, unchanged: 153 of 278 keep their number, 125 gap-fill, none needs a
-continuation band, and 30 keys are vacated and taken in the same plan, which
-#1455's vacate-first order makes safe. The sheet for Sam is generated from the
-receipt, so no number on it is typed by hand.
-
-### Eight notes from Sam's drive, and the faculty view
-
-Sam drove the deployed SkyView the same evening and wrote eight notes as he
-went (verbatim in the lane file's NEEDS SAM ①); all eight shipped in #1460.
-Three of them changed how the map thinks, not just how it looks. First, the
-zoom buttons zoom ABOUT an anchor — the searched subject, the selection, the
-last fly — and bring it back to the centre if it drifted off the canvas, so
-"search, then zoom" no longer loses the subject. Second, the label leads with
-the title and the units in his short form (`Advanced Welding · 3u`); the
-number waits for the full band and the hover. That made the search rings a
-problem of their own: a subject search had always ringed every course whose
-title carried the word, and with titles leading, a Welding search painted 408
-red names. A term that names a subject now rings nothing; the term is the
-subject. Third, his vision — *"zoom in on a single CCR and see the local
-courses that belong to it … so they can feel confident that we associated
-their course with the correct CCR course"* — is a fourth kind of point: an
-identity OPENS when selected or hovered, its college courses ring it as
-squares on spokes over a white halo, each named by code and college radiating
-outward, and a square drags like a hollow point does. Opening every identity
-at once in a dense island put a neighbor's ring over the identity you meant
-to click, so below 4.2× only the selected and the hovered one open, and a
-pointer inside the nearest circle always means that circle. The served page
-had not been rebuilt since #1441, so the deployed SkyView had been missing
-the chip code from #1447 for a day; the harness caught one more gap on the
-way — a course just moved onto `MUS 180` (850 courses) landed after the
-200-row page cap, on a page nobody opens — so a moved-in course now leads
-its card.
-
-### Verification
-
-`tests/authority_recode_apply_test.py` (21) · `tests/zband_retire_apply_test.py`
-(16) · the dry-run tests re-run · `tests/uc_zscheme_recognition.test.js` (9,
-now pinning the row-less M-ID shape) · the rehearsal on the scratch copy.
-## 2026-09-04 — SkyFold (Session 225): the fold apply, rehearsed, and the sixth id-keyed class
-
-The queue's head was the fold worklist the land surfaced (#1458, seven items on
-Sam's sheet, unruled at session start), so the session built the apply a reply
-by number lands, and rehearsed it end to end on a scratch copy of `kb/`.
-
-### The verdicts are the dry run's flags
-
-Item 2's "hold" is `--scope materialized`; item 3's "fold them" is
-`--ruled-held "<who, when: what>"`, which moves the TOP-only rows with the
-ruling appended to each row's evidence as the second signal (a row with NO
-evidence stays held under any ruling). `kb/_prefix_fold_apply.py` recomputes
-the plan under the same flags and P1 refuses a receipt cut under different
-ones; `--apply` needs `--ruling`. P0 is per receipt (the receipt's own stamp
-plus an era list `_prefix_fold_applied` on each doc) because the held rows are
-the NEXT fold's worklist — the recode's never-twice P0 would have locked the
-door on the second fold.
-
-### What a fold touches that the recode did not
-
-The materialized records' `_machine_cluster_members` lists (one today:
-`AUTD M1040` lists `HVAC M10PR`) — gate G11. The articulation doc's
-`identities` map: none of the 278 old ids is a key there, but eight of the new
-keys are S110 ghosts (`CARP M10ET` still says "Structural Framing" while
-`CNSC M10AS`, "Millwright General Skills - B", arrives). The catalog already
-overrides identities-sourced metadata in `excel_to_dashboard.py`'s
-`course_meta`, so a ghost is inert for display, but `over_merged` is read
-from it — so a ghost on a landing key is dropped and counted, G12. The stamp
-is `_prefix_fold_from`, beside the earlier ones: a row can carry
-`_authority_recode_from` from the day before, and reusing the recode's stamp
-(the planner's first draft said to) would have overwritten provenance.
-
-### ⚠️ A leftover sweep must know a chained key
-
-G13 ("no old id left on any keyed surface") failed on the real tree at the
-first verify: 30 keys are vacated and refilled in the same plan
-(`ANTH M1099 → SOCI M1099` beside `SOCS M1014 → ANTH M1099`), so `ANTH M1099`
-is legitimately live afterward, occupied by the arriving row. The sweep now
-covers the old ids that are not also new ids, and G4–G6 (exact permutation,
-articulation multiset, overlay keys and pointers) prove the chained ones. The
-Supabase verify learned the same thing in #1455, one layer up.
-
-### The rehearsal (scratch copy of `kb/` and `tests/`, 2026-09-04 01:04 UTC)
-
-Apply: 278 aliases, P1 ✓ against #1458's frozen receipt (a fresh dry run on
-today's tree reproduces it with zero drift despite the cron's seed edits),
-13 of 13 gates; ripple minted 245 · singletons 33 · memberships 113 ·
-articulations 54 · curation keys 278 · pointers 404 · member lists 1 · ghosts
-dropped 8. Chain: promotions 24 re-keyed (V1–V5 pass), csr-seed, authority
-(no chip or canonical code changes — the receipt is byte-identical apart from
-stamps), audit `subject_collision_signal` 153 → 113, fold-verify `re_key` 7 =
-the held rows, which is what a fold leaves by design; the apply prints that
-number so the chain's line is checkable. The planner re-run on the copy plans
-0 moves and holds 7. The real land needs only the MCP fresh read and the
-ruling text.
-
-### ⭐ The sixth id-keyed artifact class was outside the chain
-
-Scanning every file that names one of the 278 old ids turned up
-`kb/crnc_mirrors.json` — 2,836 identity-keyed CR/NC mirror classes, read by
-`excel_to_dashboard.py`'s `flags_of()` for the D-3 suppression — with 398 keys
-on ids the 2026-09-03 recode retired: the suppression had silently stopped for
-those identities. It cannot be regenerated (eleven curated cross-college
-mirrors were folded in on 2026-07-12), so `kb/_rekey_crnc_mirrors.py` re-keys
-it through the alias chain with `_rekey_promotions.py`'s semantics (one lookup
-per map, chronological, `_rekeyed_through` era list, `--baseline-through` on a
-first run), gated V1 count conserved · V2 every key live in memberships · V3
-idempotent, and runs as step `crnc-mirrors` of the chain. Measured: 398 moved,
-one hop each, none converging, none dead afterward; on the rehearsal copy with
-the fold pending, 427. Seen and NOT changed: `kb/cid_articulation_joins.json`'s
-`current_home` carries 1,068 recode-old ids — nothing reads that field (the
-routing uses disposition, control number and cid), and regenerating would
-re-derive dispositions from a raw list that has moved since June, which is a
-routing decision rather than hygiene. Filed as a to-do.
-
-### Verification
-
-`tests/prefix_fold_apply_test.py` (41 checks: a chained pair, the ruled-held
-path, a G11 and a G13 leftover caught, P0 twice, P1 scope and ruling
-mismatches, the receipt on disk) · `tests/prefix_fold_dryrun_test.py` (22) ·
-`tests/rekey_crnc_mirrors_test.py` (16, the committed file included) — all
-wired into `js-tests.yml`.
-
-### The land (2026-09-04, 01:56–02:30 UTC)
-
-Sam replied *"Yes to all recommendations"* — the seven items as proposed, so
-the frozen receipt applied unchanged (scope all, nothing ruled held;
-`kb/prefix_fold_rulings_2026-09-04.json`, the sheet stamped Ruled). The
-window, in order: the MCP count query (30,694 entries, newest 2026-08-24
-18:27:59, equal to the committed overlay); the apply with `--ruling` (P1 ✓,
-13 of 13 gates, the same ripple as the rehearsal to the row); the receipt into
-`ALIAS_MAPS`; the chain once (promotions 24, **crnc mirrors 29** — the step
-added that morning, doing its first real work — no chip or canonical code
-changes, audit 153 → 113, fold-verify `re_key` 7); #1463 merged at 02:17;
-`supabase-rekey.yml` in 65 seconds (278 self-key and 278 pointer filters
-patched, the 30 chained keys applied vacate-first and named, 0 old keys left
-over the 248); `daily-dashboard.yml` for the artifacts; SkyView rebuilt on
-them. One tool defect surfaced by running the chain twice in a day: the crnc
-re-key wrote its receipt to a per-day path, so the evening run would have
-overwritten the morning's 398-key receipt — it suffixes now
-(`rekey_receipt_2.json`) and the first receipt was restored from main.
-
-Two measurements rode the CI waits. The identities map's 1,597 ghost keys
-resolve best from the FIRST map in the chain, the May re-mint: 1,422 land on
-live rows (titles agree on 1,254; the rest are normalization variants such as
-"Academy I" / "Academy 1"), 175 are dead, 7 converge, 44 land on keys that
-already have an entry — so the cleanup is a rebuild-from-baseline re-key with
-its own receipt, not a chain step. And `kb/_join_cid_articulations.py`
-reproduces the committed dispositions exactly (21,108 joins: 10,741 already
-claimed, 9,676 new authority, 615 compatible, 76 conflicts), so a regeneration
-changes no routing and only refreshes the unread `current_home`; it was
-regenerated on the folded catalog in the follow-up.
-
-### Next
-
-1. The 122 legacy-anchor duplicates as a merge worklist on the CCR tab; the
-   promote step for `UC-CUR-*` placeholders; the seven held rows when a second
-   signal arrives.
-2. The identities map's rebuild-from-baseline re-key (measured above), with a
-   dry run and a receipt.
-3. Sam's second drive of SkyView; the three HOSP anchors.
 ## 2026-09-04 — SkyLand (Session 226): the duplicates become a lane, and the twenty were never missing
 
 The queue's head was the fold's aftermath: a check that the first scheduled
@@ -1842,3 +1579,108 @@ maintained by hand in three files. `prototype/skyview.html` is GENERATED —
 ⚠️ **Ruling 1's note that it "did not touch `takeHighlighted()`" is retired.**
 That was true when ticking committed on the spot; `takeHighlighted()` now commits
 the pending set, and there is no immediate multi-select pick to protect.
+
+## S237 (SkyFacet II), 2026-09-07 — a rule that is right for reading, wrong for moving
+
+Sam reported three things, all on the curation path. Two were one-line CSS and
+one-line data faults; the first was a hit test that had been correct for a
+different verb.
+
+### ① "Courses no longer responsive after 2nd drag and drop … no go"
+
+**The report named a count and the count was a red herring.** Five consecutive
+panel drags from *Introduction to Welding* onto *Introduction to the Welding
+Processes* all landed, at his zoom and at a higher one, on the source path he
+described. So did eight stand-alone drags, and eight click-carries. The failure
+is not the second drag; it is **which destination** you aim at.
+
+`pick()` carries a rule from S236: when an identity is open, its member stars
+outrank any circle they happen to overlap. That was measured and it was right —
+110 of 120 stars used to hand back the identity card instead of the course, and
+reading those courses is the entire point of the ring. But the ring **spreads**,
+and the same rule then eats the drop. With *Introduction to Welding* open at
+296%, **six identity circles inside the viewport sat under one of its own
+stars**; a drop on each of the first three resolved to the identity the course
+was already in, and `applyMove()` refused it — *"That course is already there."*
+— in a hint at the very foot of the window.
+
+⭐ **The verb decides the hit test.** `pick(px,py,forDrop)` resolves circles only
+while a course is carried; reading is untouched (24 of 24 drawn stars still open
+the college course). The panel's own sentence was the contract all along:
+*"Drag a course onto a circle on the map."*
+
+⚠️ **A refusal nobody can see is indistinguishable from a dead control.** Two
+things follow from that and both shipped: the carry now RINGS the destination and
+names it beside the code (`WELD 70 → Introduction to the Welding Processes`), and
+the receipt stopped saying *"Recorded below the map"* in SkyView-alone, where
+`body.u-solo` does not paint that pane at all. A message that names a place the
+reader cannot look is worse than no message.
+
+### ② Duplicated skills — and the fold has to happen where the counting does
+
+`olWords()` keeps a hyphen inside a token (`[A-Za-z][A-Za-z\-']+`), so
+`flux-cored arc welding` is a 3-token phrase and `flux cored arc welding` a
+4-token one. Neither containment nor length could see they were one name.
+Measured over all **46,317** identities carrying a catalog description: **209**
+shown rows differ from another on the same card only by a hyphen, **835** only by
+a plural, **762 identities (1.6%)** show at least one pair. `WELD M1109` — the
+card in his screenshot — is one of them.
+
+⭐ **Fold the KEY at the counting step; never collapse finished rows.** The
+confidence chip counts COLLEGES. A college that writes it both ways must count
+once; two colleges spelling it differently must count twice. Merging rows
+afterwards keeps whichever count was already wrong. The row then displays the
+surface form the most colleges published — nothing is rewritten into a spelling
+nobody wrote.
+
+⚠️ **`sses` belongs in the `-es` family.** Without it the first cut left 19 pairs
+standing, every one of them *process/processes*, *business/businesses*,
+*class/classes* or *discuss/discusses* — the exact words a course description
+reaches for. With it the corpus-wide sweep finds none.
+
+### The curate controls, and a removal that must not be a snapshot
+
+**Add a skill** and **Remove** stage in the browser beside the title and subject;
+nothing is written from this page. A removal is stored as an explicit
+`skillDrop` key and every one is restorable and named on the surface. That is
+S236's lesson applied one layer up: the imputation re-runs whenever a catalog
+description lands, so a surface that stored *what is left* would silently delete
+every skill that arrived after the reviewer last looked.
+
+### Two defects found on the way, both worse than what was reported
+
+⚠️ **An outline opened by its own link had NO college courses.**
+`buildMemberIndex()` ran only inside `__ccrUniverse`, so `#outline/<id>` — a
+shared link, a reload, the very thing the hash routing exists for — rendered an
+outline whose every layer said "none": no description to quote, no skills to
+impute, an empty member list. `members: 0, memberSource: ""` on an identity
+carrying 24 courses. That is not a rendering gap; it is a false statement about
+the data, and it is indistinguishable from an identity that genuinely carries
+nothing. `ensureCorpus()` now binds the payload for whichever view is entered
+first.
+
+⚠️ **A CLOSED `<details>` STILL MEASURES.** `npm run a11y` reported *"10
+focusable with no ring"* on the outline. Every one was a `Remove` button inside
+the collapsed *Named by a single college* section: Chromium hides a closed
+`<details>`'s content with content-visibility rather than `display:none`, so
+`getBoundingClientRect()` returns a real rect while `focus()` is a no-op and
+`:focus` never matches. The `height === 0` guard the script had could not see it.
+The fix is not to skip those controls — that trades a false positive for a
+coverage hole — but to OPEN the sections for the measurement and put them back.
+
+### What did not need fixing, and why that matters
+
+The moved-row background was three characters of CSS: `.mlist li.moved` and
+`.orbits li.moved` painted a raw `#EAF1E6`, which is a light green on a dark
+canvas under near-white text. Four other rules were stranded the same way. What
+is worth keeping is the **calibration**: the light design's tint is only 1.15:1
+against the surface it sits on, so the dark counterpart was chosen to match at
+1.13:1 rather than to be "visible". A tint that reads as a state is louder than
+the design it belongs to. `tests/ccr_skyview_drop_target.test.js` now fails on
+any rule that paints a raw hex background with no dark-canvas counterpart.
+
+**Suites:** `ccr_skyview_drop_target` 14/14 (new) · `ccr_skyview_outline` 50/50 ·
+`ccr_skyview_universe` 222/222 · `ccr_skyview_search_show` 130/130 ·
+`npm run a11y skyview` 8/8 routes. The three key guards are mutation-tested:
+reverting each fix reproduces the reported symptom, including the refusal text
+and the two spellings side by side.

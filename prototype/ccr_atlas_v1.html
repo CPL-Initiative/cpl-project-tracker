@@ -114,7 +114,7 @@ a{color:var(--cobalt)}
   cursor:pointer;padding:11px 13px;display:flex;flex-direction:column;gap:4px;border-radius:9px}
 .hits button:hover{background:var(--surface-muted)}
 .hits .why{font-size:.79rem;color:var(--text-muted)}
-.hits mark{background:#FBEFC9;color:var(--text-strong);padding:0 2px;border-radius:2px;font-weight:600}
+.hits mark{background:var(--mark-hit);color:var(--mark-hit-ink);padding:0 2px;border-radius:2px;font-weight:600}
 .hits .path{font-size:.76rem;color:var(--text-muted)}
 .crumbs{display:flex;gap:6px;flex-wrap:wrap;align-items:center;font-size:.85rem;
         color:var(--text-muted);margin:0 0 14px;padding:0;list-style:none}
@@ -161,7 +161,7 @@ a{color:var(--cobalt)}
      color:var(--text-strong);cursor:pointer}
 .btn:hover{background:var(--surface-muted)}
 .btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
-.btn.primary:hover{background:#003a8c}
+.btn.primary:hover{background:var(--btn-primary-hover)}
 .btn[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent,#fff)}
 
 /* ── forest grid ── */
@@ -259,16 +259,16 @@ a{color:var(--cobalt)}
            background:none;border:1px solid var(--border-strong);border-radius:5px;
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
-.mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
+.mlist li.moved{border-color:var(--hunter);background:var(--row-moved)}
 /* A card being dragged onto. Outline + tint, never tint alone: the cards
    already carry state colors and one more wash of color reads as noise. */
 #ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
-  background:#F4F0FC}
+  background:var(--row-drop)}
 /* A course whose control number names several courses cannot be re-homed —
    the CN: write key cannot say which. Dotted underline so the state survives
    greyscale; the chip beside it carries the words. */
 .mlist li.shared .cd{text-decoration:underline dotted}
-.mlist .chip.warn{background:#FBF1D8;color:#6B4E00;border:1px solid #8B6800}
+.mlist .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
 .writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
         background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
         padding:9px 11px;overflow-x:auto;color:var(--text-body)}
@@ -482,6 +482,15 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 :root{
   --u-chip-h:30px; --u-chip-fs:.8rem; --u-chip-r:6px;
   --on-accent:#fff; --tip-sub:#D6D6D0;
+  /* A row whose course has been re-homed. It was a raw #EAF1E6 and therefore
+     LIGHT on the dark canvas (Sam, 2026-09-07: "Merged courses on side view
+     have white background and shouldn't") — a near-white card with near-white
+     text, in the one place a curator reads their own work back. A role token,
+     so the two surfaces that carry it cannot drift apart again. */
+  --row-moved:#EAF1E6;
+  --row-drop:#F4F0FC; --mark-hit:#FBEFC9; --mark-hit-ink:#1C1C1A;
+  --chip-warn:#FBF1D8; --chip-warn-ink:#6B4E00; --chip-warn-edge:#8B6800;
+  --btn-primary-hover:#003a8c;
   /* the map's palette — the canvas reads these at draw time (ccr_universe.js readPal) */
   --sky-ground:#FFFFFF; --sky-island:#F7F5F1; --sky-island-hover:#F3F1EC; --sky-island-sel:#EDE7F8;
   --sky-island-stroke:rgba(28,28,26,.18); --sky-tether:rgba(109,40,217,.28); --sky-hollow:#FFFFFF;
@@ -520,6 +529,14 @@ body.u-dark{
   --sky-sq-moved-stroke:#89A67F; --sky-drag:#7DA1D4;
   --sky-sys0-fill:#2B2140; --sky-sys0-stroke:#B28DEB; --sky-sys1-fill:#1C2A44; --sky-sys1-stroke:#7DA1D4;
   --sky-sys2-fill:#3A2E10; --sky-sys2-stroke:#E3B341; --sky-sys3-fill:#2A2A28; --sky-sys3-stroke:#ABABA3;
+  /* ⚠️ A ROW TINT MUST SIT UNDER THE CHIP IT CARRIES, NOT ON TOP OF IT. The
+     "moved here" chip is #1F3320 here, so the row goes a step darker — the
+     hunter border and the chip stay the signals, and the tint only says which
+     rows they belong to. */
+  --row-moved:#1F2B1D;
+  --row-drop:#2A2340; --mark-hit:#4A3A10; --mark-hit-ink:#ECE9E2;
+  --chip-warn:#3A2E10; --chip-warn-ink:#E3B341; --chip-warn-edge:#6A5410;
+  --btn-primary-hover:#A8C2E4;
   color-scheme:dark;
 }
 body.u-dark .chip.cid{background:#1C2A44;border-color:#3A527A}
@@ -668,6 +685,11 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .ol-skills li{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;padding:6px 10px;
   border:1px solid var(--border);border-radius:7px;background:var(--surface-opaque)}
 .ol-sk{flex:1 1 220px;min-width:0;font-weight:600;font-size:.9rem;color:var(--text-strong)}
+/* The reviewer's own controls on a skill row. A WORD, never a glyph (Sam,
+   2026-08-29) — and pushed to the end of the row so the skill and its chips
+   read first and the verb sits where the eye lands last. min-height is WCAG
+   2.2 SC 2.5.8, not styling. */
+.ol-sk-act{margin-left:auto;font-size:.75rem;padding:2px 9px;min-height:24px}
 .ol-thin{margin:12px 0 0}
 .ol-thin summary{cursor:pointer;font-size:.86rem;color:var(--text-body);min-height:24px;
   display:inline-flex;align-items:center}
@@ -765,7 +787,7 @@ body.u-dark .u-views-menu,body.u-dark .u-show-menu,body.u-dark .sug{box-shadow:0
 .orbits{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
 .orbits li{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline;font-size:.8rem;
            border:1px solid var(--border);border-radius:6px;padding:5px 8px;background:var(--surface-opaque)}
-.orbits li.moved{border-color:var(--hunter);background:#EAF1E6}
+.orbits li.moved{border-color:var(--hunter);background:var(--row-moved)}
 .orbits .why{flex:1 1 100%;font-size:.74rem;color:var(--text-muted)}
 .orbits .accept{margin-left:auto}
 .mlist .cd,.orbits .cd{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:600;

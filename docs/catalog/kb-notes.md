@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-397 document(s).
+398 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -123,6 +123,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A rotating credential cannot be cached](../kb-notes/methodology-a-rotating-credential-cannot-be-cached.md) | methodology | published | 2026-08-15 | 2026-08-15 |
+| [A rule that is right for reading can be wrong for writing](../kb-notes/methodology-a-rule-that-is-right-for-reading-can-be-wrong-for-writing.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A rule you wrote down is not a rule you applied](../kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied.md) | methodology | published | 2026-08-21 | 2026-09-04 |
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
