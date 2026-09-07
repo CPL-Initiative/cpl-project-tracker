@@ -12144,8 +12144,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 210,
+   "count": 211,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 237,
+     "path": "docs/session_237_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the deferred commit landed; the two CPL views are still unbuilt",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-06",
      "governs": [],
@@ -15756,5 +15769,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 806
+ "total": 807
 }

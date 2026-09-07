@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-210 document(s).
+211 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 237 | [the deferred commit landed; the two CPL views are still unbuilt](../session_237_handoff.md) | 2026-09-07 |
 | 236 | [the outline is built; the next four asks are Sam's own](../session_236_handoff.md) | 2026-09-06 |
 | 235 | [the outline is STILL unbuilt, and now it has a ruling](../session_235_handoff.md) | 2026-09-06 |
 | 234 | [the outline is still unbuilt, and the queue is clear again](../session_234_handoff.md) | 2026-09-06 |
