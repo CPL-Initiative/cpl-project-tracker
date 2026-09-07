@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 403,
+   "count": 404,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6265,6 +6265,28 @@
      "updated": "2026-08-22"
     },
     {
+     "created": "2026-09-07",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "prototype/ccr_sky.json",
+      "tests/ccr_skyview_sky.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "skyview",
+      "ccr",
+      "ui",
+      "canvas",
+      "testing",
+      "globe"
+     ],
+     "title": "The sphere is the map through a projection, not a second renderer",
+     "type": "methodology",
+     "updated": "2026-09-07"
+    },
+    {
      "created": "2026-09-02",
      "governs": [
       "tests/cpl_funding_calm.test.js",
@@ -12322,7 +12344,7 @@
      "tags": [
       "handoff"
      ],
-     "title": "read the sheet's replies, then build the Sky view",
+     "title": "the Sky is in; his eye on it, then the frame budget",
      "type": null,
      "updated": "2026-09-07"
     },
@@ -15975,5 +15997,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 819
+ "total": 820
 }

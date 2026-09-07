@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 240 | [read the sheet's replies, then build the Sky view](../session_240_handoff.md) | 2026-09-07 |
+| 240 | [the Sky is in; his eye on it, then the frame budget](../session_240_handoff.md) | 2026-09-07 |
 | 239 | [the globe goes into SkyView; the staged-to-move mark rides second](../session_239_handoff.md) | 2026-09-07 |
 | 238 | [three defects fixed; the two CPL views are STILL unbuilt](../session_238_handoff.md) | 2026-09-07 |
 | 237 | [the deferred commit landed; the two CPL views are still unbuilt](../session_237_handoff.md) | 2026-09-07 |

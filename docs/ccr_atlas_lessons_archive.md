@@ -12,8 +12,8 @@ related:
 # SkyView / CCR Atlas lessons — archive
 
 > Sections moved verbatim out of [`docs/ccr_atlas_lessons.md`](ccr_atlas_lessons.md)
-> when it passed its 120 KB budget (Session 231, 2026-09-05; again S237,
-> 2026-09-07). Nothing here was edited on the way across; the live doc keeps the
+> when it passed its 120 KB budget (Session 231, 2026-09-05; again S237 and
+> S239, 2026-09-07). Nothing here was edited on the way across; the live doc keeps the
 > recent sessions and this holds the rest. Read it when you need the history of a
 > decision the live doc refers to but no longer narrates.
 
@@ -1342,3 +1342,266 @@ regenerated on the folded catalog in the follow-up.
 2. The identities map's rebuild-from-baseline re-key (measured above), with a
    dry run and a receipt.
 3. Sam's second drive of SkyView; the three HOSP anchors.
+
+## 2026-09-04 — SkyLand (Session 226): the duplicates become a lane, and the twenty were never missing
+
+The queue's head was the fold's aftermath: a check that the first scheduled
+cron kept the fold (baseline read on main at 03:50 UTC — 278 fold keys in the
+overlay, 0 old ids, 0 pointers on an old id, the audit at 113, SkyView on the
+new codes; a check-in armed for 06:45 UTC), the twenty "missing" identities to
+measure, and the 130 legacy-anchor duplicates to turn into a worklist.
+
+### The twenty were never missing
+
+The handoff read 31 of the 278 folded ids with no entry in
+`unified_courses_members.js` and called 20 of them an export gap to measure.
+Measured: all 31 have memberships or a curated `merge_into`; 19 of the 20 are
+not rows in `unified_courses_data.js` at all, and every one of them appears in
+some C-ID descriptor row's `consolidated_from` — `ARTH M1151` (Modern Art)
+under `ARTH 150`, `WMST M1069` under `SJS 120`, `THES M1295` (Stagecraft) under
+`THTR 171`. They are Phase B folds: the export's auto-fold consumes an M-ID
+whose promotions evidence names one official id and lists it under the
+descriptor row, so the members table is keyed by the descriptor and the M-ID
+has none of its own. The twentieth, `THES M1087`, is a row whose three member
+control numbers all route to descriptors (`_routed_live`), so its member table
+is empty by the routing rule. Nothing to fix; `_row_ents` loses nothing.
+SkyView draws the export's rows, so the 31 it does not draw are these.
+
+### A receipt measures a worklist once; a lane recomputes it every build
+
+`duplicates.json` was a JSON file the retirement wrote at dry-run time. The
+anchors it names render on the CCR tab as locked, read-only rows beside their
+twins, and no suggestion lane could pair them: the anchored lane's grouping
+skips locked rows on purpose. So the worklist became a lane of its own
+(`legacy_anchor_duplicate_groups`, #1465), recomputed from the live catalog on
+every build. One group per M-ID anchor of `kb/common_courses.json`, the live
+twin(s) first and the anchor last; the match is a STRICT title key (case,
+punctuation and whitespace only — the worklist's level-safe signature would
+pair Accounting I with Accounting II, which is exactly what a duplicate is
+not) on the discipline the tab displays, with a trailing parenthetical dropped
+and `kb/discipline_aliases.json` resolving spellings, as the dry run did. A
+twin merged away resolves through the flattened `merge_into` map (the lane runs
+after Phase B and the routing folds) to the row that displays; a twin that
+resolves to the anchor is dropped; an anchor carrying `merge_into` leaves.
+
+The receipt and the live lane disagree on exactly one anchor, and the
+disagreement is the point. `THTR M1377` (Beginning Stagecraft) matched
+`THEA M1087` in the receipt on the record's own discipline; the fold re-keyed
+that twin to `THES M1087`, and the trailcrew-ccr1-s111 bot cohort had written
+`discipline: Stagecraft` on it in July — a name outside the MQ list — so the
+tab shows the two under different disciplines and the lane, which follows the
+tab, does not pair them. The receipt was right about the record; the lane is
+right about the display; the bot row is the thing to look at. One pair the
+receipt lacked (`PHOT M10RG`) surfaces from the live catalog. 130 groups today
+either way; the "122" in two handoffs was a count from before the recode.
+
+### The direction is the survivor rule the worklist already has
+
+Which side survives was the design question. The catalog twin carries the
+memberships, articulations, promotions evidence and mirror classes, all keyed
+by its id; the anchor carries Sam's May review and no college courses. Folding
+the anchor into the twin leaves every keyed artifact untouched and retires a
+memberless duplicate row — and the generator already honors it: the anchor
+loop skips an anchor with `merge_into`, and the anchor becomes a title variant
+on the twin. The tab's `targetMemberOf` picks the first non-Stand-Alone member
+by CCN > C-ID > M-ID, so listing the twin first makes it the star with no new
+rule. When the only twin is a single-college Stand-Alone (31 of 130) the same
+rule makes the anchor the survivor: the stand-alone folds in, the anchor gains
+its first college course, and the merge-target loop synthesizes the row from
+the anchor file (`_member_v` reads `cc`). The curator can flip the star. The
+lane is exempt from the cohesion slider — an exact duplicate is not a
+similarity score — and its badge is words on First Light tokens.
+
+### Verification
+
+`tests/legacy_anchor_duplicates_test.py` (27 checks: the strict key, the
+discipline gate, the alias and parenthetical resolution, the live-target
+chain, the member order that IS the merge direction, and the committed files —
+every receipt anchor offered, merged, or explained by a curated discipline)
+runs in `js-tests.yml` beside the merge-chain lint; `tests/uc_worklist_legacy_anchor_lane.test.js`
+(21: the lane leads, the words-only badge, the star on the twin, Confirm
+writing `merge_into` on the anchor and never the twin, the stand-alone case
+writing on the stand-alone, the slider exemption, the hand-off into the
+anchored lane). All 27 existing worklist and CCR jsdom files green.
+
+### Next
+
+1. The promote step for `UC-CUR-*` placeholders (mint M numbers from
+   `Buckets`; 0 exist today); the identities map's rebuild-from-baseline re-key
+   as a dry run with a receipt; the seven held rows when a second signal
+   arrives.
+2. Measure how many curated `discipline` values sit outside the MQ list (the
+   `Stagecraft` row is one); the audit may already tag them.
+3. Sam drives the new lane: the first 130 groups of Suggested merges are his
+   May anchors; his confirms drain it.
+
+### The promote step, built before the first placeholder
+
+The Z-band retirement left one door open: a client mint on the CCR tab
+(`doConsolidate`) and the auto-merge bot both still write a transient
+`UC-CUR-*` target into kb_curation, and the Z scheme that used to number them
+is retired. `kb/_uc_cur_promote.py` closes it in the retirement's own shape:
+a placeholder becomes a real M-ID record (Sam, card 12), the discipline's
+canonical SUBJ4 (an umbrella keeps the members' split code), band 9 noncredit
+or 1 credit, the lowest free number with every id ever minted reserved —
+courses, singletons, curation keys, identities, the anchors, every id any
+ALIAS_MAPS receipt ever named, the CCN and C-ID reservations — and the
+continuation band when a bucket is full (card 11). The record is the
+retirement's aggregate re-stamped (`_promoted_from`; origin `curator mint`, or
+`machine cluster` for a `UC-CUR-AUTO` target; a client mint keeps its curator
+as `reviewed_by`), with no membership entry of its own. What it will not do is
+guess: one pointer (a mint is a merge), no discipline on the row or the
+members, no four-letter code, no readable band — each is held and reported.
+Dry run by default with a receipt; `--apply` needs the receipt and a fresh
+read, and the same P0 · P1 · P3 gates plus eight post-mutation gates the
+retirement used. Thirty-two fixture checks, including the 004-taken-by-an-
+alias-map case and the full WELD bucket continuing to `M2001`. Zero
+placeholders exist today; the tool exits saying so.
+
+### The identities map, planned
+
+The third build of the session is the dry run the handoff asked for:
+`kb/_identities_rekey_dryrun.py` resolves each of the 1,597 ghost keys in
+`kb/coci_articulations.json`'s `identities` map through the full ALIAS_MAPS
+chain with `_rekey_promotions.resolve` (one lookup per map, in order) and
+dispositions every one: 1,369 re-key onto a live id that has no entry; 44 land
+on a live id that already carries one and drop (the live entry was computed on
+the current catalog); 16 converge on 7 targets, where the ghost whose title
+agrees with the catalog wins, then the one with more colleges, then the
+alphabetical first (9 drop); 175 nothing names again, and nothing can display
+them. Titles agree on 1,217 of the 1,369; the 152 that differ are "I" versus
+"1" and their kin, which the catalog overrides anyway. The apply exists in the
+same file and needs the receipt and a ruling; the receipt is committed
+(`kb/identities_rekey_out/2026-09-04/`) and its report carries the five-item
+sheet Sam will see. It is not an ALIAS_MAPS receipt: it re-keys a side table
+and mints nothing. Twenty-three fixture checks, including the chained
+resolution and the three tie-breaks — the first cut recorded the first
+criterion the winner satisfied rather than the one that decided, and the test
+caught it.
+
+### The check-in, 06:46 UTC
+
+Run 446 (the dispatch after #1465 merged) rebuilt the overlay from Supabase
+and every fold invariant held on its main: 278 fold keys, 0 old ids, 0
+pointers on an old id, the audit at 113, all 2,836 mirror keys live, SkyView on
+the new codes, members 247 — and `legacy_count` 130 in the published
+suggestions payload, the lane's first publication. The 06:17 UTC rung of the
+cron ladder had not fired by 06:46, nor had any rung by 10:17; the day before,
+GitHub had slipped all three by four to five hours. One correction to the
+first draft of this note: `kpi_history.json` is keyed by Pacific date, so run
+446 (21:42 PDT on the 3rd) refreshed the 3rd's entry rather than writing the
+4th's — today's entry needs a run after 07:00 UTC, and a dispatch before the
+Pacific day ends is the Rule 3 fallback if the schedule never fires. The
+fold's proof is the invariants, which a scheduled run reproduces by the same
+steps a dispatch does.
+## 2026-09-04 — SkyMint (Session 227): item 2 was a grain error, not a missing link
+
+Sam's SkyView queue item ② read *"Add CCR List View link + clarify existing
+labels."* Both halves turned out to be about the same confusion.
+
+### "CCR list view" names a view that is not in this prototype
+
+The candidates inside SkyView were `__ccrDiscipline` (the discipline card) and
+`__ccrSubjectList` (the list) — and neither is the CCR *list view*. That is
+**COBI's Common Course Reference tab**, which is the page this map is embedded
+in: `unified_courses.js` mounts `prototype/skyview.html` as an iframe beside the
+list. So the link is a link **out** (`../index.html#unified-courses`, new tab),
+and it has to disappear when framed:
+
+```js
+var cl=document.getElementById("u-ccr-list");
+if(cl && window.top!==window.self) cl.remove();   // the list is already the page around this frame
+```
+
+⚠️ Same rule as the ESL link's `ne.remove()`, one step further: **never offer a
+door onto nothing — and never offer one onto the room you are standing in.**
+Inside the CCR tab the link would open a second copy of the page the reader is
+already looking at, which is worse than absent because it looks like it worked.
+
+### "Subjects as a list" listed disciplines
+
+`__ccrSubjectList` maps `U.islands` and reads `I.d` — the **discipline** name.
+So the two links differed only in FORM: "All disciplines" showed the same things
+as cards. And the word was already spent elsewhere: COBI's **Common Subjects
+Reference** tab is about SUBJ4 codes (`ENGL`, `WELD`), a different grain
+entirely, so a curator reading "subjects" in SkyView had every reason to expect
+codes and got disciplines.
+
+Every rendered use is now "discipline" — the nav link, the view's heading and
+filter, the legend, the hint, the keyboard announcements, the details panel, the
+suggestion rows. Two things deliberately did NOT change:
+
+- **`kind:"subject"` stays** as the internal branch key (`s.kind==="subject"` has
+  readers); only `kindWord`, which is what a reader sees, became "discipline".
+  The test asserts both, so the two cannot drift into one another.
+- **"subject code" stays** wherever it means SUBJ4 — the C-ID chip title, the
+  orbit reason, the rim explanation. Sweeping a word is not the same as
+  sweeping a sense, and this file's own rule about `american_spelling` applies:
+  scan prose, never blind-replace.
+
+This closes the SkyView half of the lane's queued NEXT ⑧; the CCR tab's dropdown
+labels (Subject as `CODE — title — discipline`) are still open.
+
+### The sweep caught the link I had just added
+
+`npm run a11y` reported all four `.linkish` controls in the top row at
+**21.3px** against WCAG 2.2 SC 2.5.8's 24px floor — including `#u-ccr-list`,
+written minutes earlier. The inline-target exception covers a link inside a
+sentence; a nav row of view switchers is not one. `display:inline-flex` is what
+lets a `min-height` apply to an inline-level control at all.
+
+It also reported an `h1 → h3` skip: the two panels below the map are headed
+`<h3>` under the page's `<h1>`, with no `<h2>` between. Fixed as `<h2>` with the
+size pinned to what the `h3` measured (18.4px/700), so the correction is to the
+outline a screen reader walks and not to the page. SkyView now passes the sweep
+clean at every width.
+
+⚠️ **Both were found by running the instrument on my own change, in the same
+session that shipped it.** That is the second time in two days
+([`public_pages_a11y_lessons`](public_pages_a11y_lessons.md)) — which is the
+argument for the command being cheap rather than for anyone being more careful.
+
+### The top row, and the search that was never broken (same session, later)
+
+Sam's items 1-5, 10 and 11 (PR #1476). Item 11 read like a bug report about a
+widget — *"the keyword search in full SkyView has a bug and doesn't allow me to
+click into it"* — and the widget was fine. **The page's one search field lived in
+the masthead, and browser full screen paints only the element you asked it to
+paint.** `#u-full` is the map section, so in full SkyView the box was not hard to
+reach; it did not exist. Its own note:
+[`methodology-ask-which-container-before-you-debug-the-control`](kb-notes/methodology-ask-which-container-before-you-debug-the-control.md).
+
+Three things worth carrying:
+
+- **`innerHTML =` detaches, it does not destroy.** The map now BORROWS the
+  page's one search form so the page still carries exactly one. Every other view
+  replaces `#view` wholesale, which would take the borrowed form with it — and a
+  detached node nobody references is gone, listeners and all. `homeSearch()`
+  returns it first, and it is wrapped **centrally** around the five view entry
+  points rather than called from each: they live in three files, and a missed
+  call site is invisible until someone navigates.
+- **A closed `<details>` still LAYS OUT its contents in Chromium.** It declines
+  to paint them; it does not remove them from layout or from a forced `focus()`.
+  `npm run a11y` measured all four menu items escaping the viewport at 390px and
+  reported them as focusables with no ring. `display:none` on
+  `.u-views:not([open]) .u-views-menu` is the difference between a hidden menu
+  and a hidden keyboard trap.
+- **A fitted zoom makes its own readout meaningless.** The old subject fly used
+  `Math.min(3.2, 190/I.r)`, so the same gesture landed at a different
+  magnification on every discipline and the percentage in the corner told the
+  reader nothing. Item 10 asks for exact figures — 1000% for a course, 150% for
+  a discipline — and exact is what makes the number worth showing.
+
+⚠️ **Reverted within the hour: hiding the search's submit button** as "redundant
+beside a live suggestion list". The row has slack at every width that fits one
+row, Sam never asked for it gone, and a control present in the DOM but invisible
+at desktop widths is one a harness clicks and a person cannot. The harness caught
+it in the same run that introduced it.
+
+⚠️ **And the title came back.** A title in this row was tried on 2026-09-03 and
+removed, because it pushed the view links under the MASTHEAD's absolutely
+positioned suggestion list and Chromium reported them unclickable. It returns
+only because the same edit moves the search into the row — the dropdown now
+belongs to this row, so there is nothing above the links to hide under. The test
+pins **that pairing**, not the title's absence: a guard written against the old
+symptom would have blocked the fix.

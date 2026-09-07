@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
   "_session": 239,
-  "_status": "The sky's design calls are on a sheet for Sam — eight of them, every figure measured, reply chips on each — and nothing is built on the answers until he gives them (the artifact link is the first item below). The two things that did not need his answers shipped in PR #1513: the islands' places on the sphere are a daily artifact the run rebuilds only when its inputs change, and the last open item of the screen-recording review is closed — a course staged to move now says so everywhere it appears: staged here at its destination, still drawn and listed at the identity it left, with a Put back, and counted as staged on the outline. Next session reads the replies and builds the Sky view.",
+  "_status": "Sam answered the sky's eight design calls in one sitting — eight of eight yes, no notes — and the Sky went in the same evening (PR #1514). SkyView now opens as the night sky seen through a window: Sky, Globe and Map are three words in the control row and three places to stand on the one canvas; the sky is dark by default and Day is one control away, with every dot rimmed so it still exists on the blue; it turns slowly until you touch it; a course drags and drops on the curve exactly as it did on the flat map; the CTE disciplines gather on one side of the sky and the academic ones on the other. What is left for Sam is his eye on it — and whether it moves smoothly on his machine, which nothing here can measure. Next session picks up from there.",
   "items": [
     {
-      "id": "s239-sam-eight-calls-sheet",
+      "id": "s239-sam-sky-eye",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "The sheet for the sky is ready: eight calls before the globe goes into SkyView, with reply chips on each — which view opens, whether the flat map stays, the day sky, whether the turn and twinkle run by default, drag-and-drop on a curve, By kind as the arrangement, which prototype controls come along, and one the measurements raised: the color of the M-ID stars on the dark ground, where your \"silver, like stars\" on the globe and your \"match our legend\" (violet) on the map meet — 99 of every 100 points wear that color. Every number on the sheet was measured on the prototype and the map. Reply on the sheet (it saves to itself) or by number in chat. Nothing is built on the answers until you give them. https://claude.ai/code/artifact/5d683e8a-baa7-4ecc-a0b8-140ad3aee18d"
+      "text": "The Sky is in. Open SkyView: it now opens as the night sky through a window, with Globe and Map one click away in the same row (Sky · Globe · Map). Every one of your eight answers is built as written — night by default and Day keeping the rim, the slow turn that stops at your first touch, drag-and-drop on the curve, the CTE side and the academic side with their two names, silver stars for the M-IDs. Two things only you can tell us: does it look the way you pictured it, and does it move smoothly on your machine? Our only measurement is from a headless test browser with no graphics card (about 13 frames a second at the opening window); your screen should do better, and if it does not, say so — there is a known next step."
     },
     {
       "id": "s238-sam-cpl-face-look",
@@ -35,10 +35,10 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
     },
     {
-      "id": "s239-fable-sky-view-after-replies",
+      "id": "s239-fable-frame-budget",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Once Sam's replies are in (read the sheet's store first), build the Sky view inside SkyView on the map's own canvas — no three.js; a full redraw of all 49,896 points measured 18 to 35 milliseconds. The islands' places on the sphere are already a daily artifact (prototype/ccr_sky.json, three placements and the CTE share per discipline), points are placed from their island's center as the prototype does, and the staged-to-move mark reads from the same model helpers. Re-earn every rule on the sphere with a test and a browser drive: the drop lands on a circle by angle, names drop rather than stack, Tab/Enter/Escape, fixed-size text, no motion for readers who asked for none, and the accessibility route."
+      "text": "Only if Sam says the Sky drags: measure on the served page first (a draw costs 42 milliseconds in software rendering after the star pass was batched), then draw the small stars to an offscreen layer that is redrawn only when the view moves, or move the point pass to WebGL behind the same projection — never per-point work. The drop test, the keyboard path and the accessibility run go again in the same change; item 1 of the sheet made that the condition for the Sky opening at all."
     },
     {
       "id": "s238-fable-dr24-surface",

@@ -133,6 +133,7 @@ const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
   url: "https://example.org/prototype/skyview.html",
   beforeParse(window) {
+    window.CPL_SKYVIEW_OPENS = "map";   // this suite measures the flat map; the Sky has its own (ccr_skyview_sky.test.js)
     window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(); };
     // The payload is bound from the window, the way the harness and a host
     // page can supply it, so no fetch is needed to reach the CPL face.

@@ -268,6 +268,11 @@ module.exports = {
          credential that reaches each point, with its coverage line and the
          two new controls in the row. */
       { hash: "skyview/cpl", name: "skyview-cpl" },
+      /* Where the reader stands (Sam's rulings, 2026-09-07): #skyview is the
+         Sky — the view that opens — and these are the Globe and the flat Map,
+         one click away in the row. */
+      { hash: "globe", name: "globe" },
+      { hash: "map", name: "map" },
       { hash: "comprehensive", name: "comprehensive" },
       { hash: "disciplines", name: "disciplines" },
       { hash: "subjects", name: "subjects" },
