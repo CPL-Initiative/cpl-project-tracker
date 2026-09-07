@@ -66,6 +66,27 @@ a{color:var(--cobalt)}
   padding:.28em .7em;min-height:24px}
 .sug .sug-sort:hover{background:var(--surface-muted,#ECE9E2)}
 .sug li.sug-more:hover{background:var(--surface-subtle,#F7F5F1)}
+/* ⭐ THE ORDER CONTROL SITS AT THE TOP RIGHT (Sam, 2026-09-06: "I did ask for
+   this sort by name to be moved in the upper right corner … so it's more
+   intuitively placed"). It rode in the footer beside the count, which is where
+   a reader looks to learn how many matched — not where they look to change the
+   order. The count travels with it: both are ABOUT the list, and the footer is
+   now the place you LEAVE from, which wants to hold one thing only. */
+.sug li.sug-head{position:sticky;top:0;z-index:1;cursor:default;display:flex;
+  gap:.8em;align-items:center;justify-content:space-between;
+  padding:.42em .8em;font-size:.78rem;color:var(--text-muted,#5C5C55);
+  background:var(--surface-subtle,#F7F5F1);border-bottom:1px solid var(--border,rgba(28,28,26,.16))}
+.sug li.sug-head:hover{background:var(--surface-subtle,#F7F5F1)}
+/* The way out. A deferred selection needs a VISIBLE commit, or a mouse-only
+   reader has ticked their rows and no way to say "done"; Enter is the keyboard
+   half of the same control and the button is what makes it discoverable. */
+.sug .sug-go{flex:none;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--on-accent,#fff);background:var(--seal-blue,#002F6D);
+  border:1px solid var(--seal-blue,#002F6D);border-radius:5px;
+  padding:.28em .9em;min-height:24px;display:inline-flex;align-items:center;gap:.45em}
+.sug .sug-go:hover{background:var(--cobalt,#0047AB);border-color:var(--cobalt,#0047AB)}
+.sug .sug-go kbd{font:inherit;font-size:.9em;opacity:.85}
+.sug .sug-pend{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 /* The kind is a WORD. Two different destinations must not be told apart by a
    color or an icon alone. */
 .sg-k{flex:none;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;
@@ -754,14 +775,18 @@ var provEl = document.getElementById("prov");
 if (provEl){ provEl.title = provText; provEl.setAttribute("aria-label", "prototype v1 — " + provText); }
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
-  // A highlighted suggestion IS the answer: pressing Enter on it must go where
-  // the reader is looking, not re-run a ranking rule that may pick differently.
+  /* ⭐ ENTER COMMITS THE TICKED ROWS AND DISMISSES (Sam, 2026-09-06: "Enter
+   * should dismiss the box"). What the reader ticked IS the answer, so Enter
+   * applies exactly that and never re-runs a ranking rule that may pick
+   * differently.
+   *
+   * ⚠️ This reverses item 6 of the SAME DAY ("Enter no longer hides the
+   * answer") and the reversal is safe only because ticking no longer commits.
+   * Item 6's objection was to Enter GUESSING: it closed the list and flew the
+   * map on a ranking, dismissing the very row the reader was hunting. Enter now
+   * closes on rows the reader chose by hand, so there is nothing left to guess.
+   * If ticking is ever made to commit again, this has to go back. */
   if (takeHighlighted()) return;
-  /* ⭐ ENTER NO LONGER HIDES THE ANSWER (Sam, item 6, 2026-09-06). It used to
-   * close the list and fly the map, which is a defensible two-behaviour design
-   * and also the thing that made the intro course look absent: Enter had
-   * dismissed the list showing it. The map search still runs; the list stays up
-   * with its first row highlighted, so the next Enter opens that row. */
   var term = document.getElementById("gq").value;
   // One search box, two behaviors, chosen by what is on screen: with the map
   // open it flies and rings; anywhere else it lists results. The canvas being
@@ -771,7 +796,9 @@ document.getElementById("msearch").addEventListener("submit", function(ev){
     window.__ccrUniverseSearch(term);
   else
     search(term);
-  if (sugItems.length && sugEl && !sugEl.hidden){ if (sugAt < 0) sugAt = 0; markSug(); }
+  // Nothing was ticked, so this Enter was a plain search — and it dismisses too.
+  // One key, one outcome: the box closes whether you chose rows or typed a term.
+  closeSug();
 });
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -805,8 +832,12 @@ if (sugEl) sugEl.addEventListener("scroll", function(){
   }
 });
 
+/* Closing ENDS the choosing session: Escape, a click outside, and the commit
+ * itself all land here, and all three mean the reader is done with this set of
+ * ticks. Refining the term does NOT come through here — see endPending(). */
 function closeSug(){
   sugItems = []; sugAt = -1; sugAll = []; sugShown = 0;
+  endPending();
   if (!sugEl) return;
   sugEl.hidden = true; sugEl.innerHTML = "";
   if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
@@ -830,52 +861,151 @@ document.addEventListener("pointerdown", function(e){
   closeSug();
 }, true);
 
+/* A row by its INDEX, not by its position among the children. The list carries
+ * a sticky header and a sticky footer that are not rows, so `children[i]` and
+ * "the i-th suggestion" are two different things — and the header made them
+ * differ by one, silently, for every arrow key. data-i is the row's own claim
+ * about which suggestion it is; ask it rather than counting. */
+function sugRow(i){
+  return sugEl ? sugEl.querySelector('li[data-i="' + i + '"]') : null;
+}
 function markSug(){
   if (!sugEl) return;
   // The cursor is a class and aria-activedescendant; aria-selected is the PICK
   // (the listbox is multi-select, and the checkbox on each row shows it).
-  Array.prototype.forEach.call(sugEl.children, function(li,i){
-    li.classList.toggle("on", i === sugAt);
+  Array.prototype.forEach.call(sugEl.children, function(li){
+    if (li.dataset.i == null) return;
+    li.classList.toggle("on", +li.dataset.i === sugAt);
   });
   /* A list of sixty is a list you scroll, so the arrow keys have to CARRY the
    * viewport with them. Without this the cursor walked off the bottom edge and
    * the reader watched a still list, which reads exactly like a list that has
    * stopped responding — the same complaint, one layer down. */
-  var cur = sugAt >= 0 ? sugEl.children[sugAt] : null;
+  var cur = sugAt >= 0 ? sugRow(sugAt) : null;
   if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
   if (gqEl){
     if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
     else gqEl.removeAttribute("aria-activedescendant");
   }
 }
-function takeHighlighted(){
-  if (sugAt < 0 || !sugItems[sugAt]) return false;
-  var it = sugItems[sugAt], at = sugAt;
-  var go = window.__ccrToggleSuggestion || window.__ccrGoSuggestion;
-  var ok = (typeof go === "function") ? !!go(it) : false;
-  // The list stays open with the pick ticked, so a second pick is one more click
-  // (Sam, 2026-09-05: the rows "should have checkboxes to clarify" multi-select).
-  //
-  // ⚠️ THE LIST MUST STAY WHERE IT WAS (Sam's ruling 3, 2026-09-05: "focus jumps
-  // back to the search bar on every selection when picking multiple courses and
-  // should stay put"). openSug() rebuilds the list and sets `scrollTop = 0`, so
-  // after S231 took the dropdown from 8 rows to 60 every tick threw the reader
-  // back to the top and they had to scroll down again to reach the next course.
-  // markSug()'s scrollIntoView does not undo it: from a scrollTop of 0 a row far
-  // down is "nearest" at the BOTTOM edge, so the row lands somewhere it never
-  // was. Restoring the exact offset AFTER markSug is what makes it sit still.
-  //
-  // ⚠️ Do NOT "fix" this by focusing the search box — that IS the complaint. The
-  // mousedown handler already calls preventDefault(), so the input never loses
-  // focus and the keyboard keeps working; a jsdom check confirmed focus is on
-  // #gq after a pick with no help at all.
-  var keepScroll = sugEl ? sugEl.scrollTop : 0;
-  if (gqEl && gqEl.value.trim().length >= 2){
-    openSug(gqEl.value); sugAt = Math.min(at, sugItems.length - 1); markSug();
-    if (sugEl) sugEl.scrollTop = keepScroll;
+/* ══ ticking is not committing ═════════════════════════════════════════════
+ * Sam, 2026-09-06: "Seems the problem is firing the routine to add the filter
+ * is the problem. Why not wait on that step until the user hits enter. That
+ * would be my normal expectation when choosing from multiple options."
+ *
+ * ⭐ THIS IS THE FIX FOR THE JUMPING LIST, AND IT IS A DIFFERENT FIX FROM THE
+ * ONE THAT DID NOT WORK. S233 tried to hold the list still while still
+ * committing on every tick: save scrollTop, let openSug() rebuild, put scrollTop
+ * back. That could never hold, because openSug() also resets `sugShown` to one
+ * page — a reader who had scrolled to 120 revealed rows had the list collapse
+ * to 60 underneath them, and the restored offset then pointed at a row that was
+ * no longer there. Preserving the offset across a list that changed LENGTH is
+ * preserving the wrong thing.
+ *
+ * A tick now writes to `pendKeys` and repaints ONE ROW. Nothing is ranked,
+ * nothing is rebuilt, nothing is revealed or hidden, the map does not move —
+ * so there is no scroll to restore and no page count to keep in step. The list
+ * cannot jump because nothing about it changed.
+ *
+ * The selection commits on Enter (Sam, same session: "Enter should dismiss the
+ * box"), which also settles a contradiction this file was carrying: item 6 of
+ * the same day says Enter must NOT hide the list, because Enter used to close
+ * it and fly the map on a RANKING — dismissing the very row the reader was
+ * hunting. That objection was to Enter GUESSING, not to Enter closing. Once the
+ * reader has ticked their own rows there is nothing left to guess, and closing
+ * on Enter is just honouring what they picked. */
+var pendKeys = [], pendItem = {}, pendLive = false;
+function keyOf(it){
+  return (typeof window.__ccrTokenKey === "function") ? window.__ccrTokenKey(it) : "";
+}
+/* Seeded from what is already committed, so rows the reader picked earlier show
+ * ticked and UNticking one is a real removal rather than a no-op. */
+function seedPending(){
+  pendKeys = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys().slice() : [];
+  pendItem = {};
+  pendLive = true;
+}
+/* ⚠️ A TICK SURVIVES A CHANGE OF TERM (Sam, 2026-09-06, watching it fail: he
+ * ticked "Introduction to Welding" on `weldi`, typed one more letter, and the
+ * tick vanished — the row was still listed, still matching, and no longer
+ * ticked). The first cut of this re-seeded on every openSug(), on the theory
+ * that a new term is a new choosing session. It isn't: REFINING A SEARCH IS HOW
+ * YOU HUNT FOR THE NEXT THING TO ADD, so throwing the picks away mid-hunt is
+ * the same bug as the jumping list one layer up — the interface discarding the
+ * reader's work while they are still working.
+ *
+ * A session therefore spans every term the reader types, and ONLY Enter
+ * (commit) or Escape / a click outside (abandon) ends it. `pendLive` is that
+ * session, held here rather than read off `sugEl.hidden` so it cannot drift
+ * with render timing.
+ *
+ * A tick held for a row that the CURRENT term no longer lists stays pending and
+ * still commits on Enter (Sam's ruling, same session): `pendItem` keeps the
+ * suggestion object, so the commit does not need the row to be on screen. */
+function endPending(){ pendKeys = []; pendItem = {}; pendLive = false; }
+/* The pending set, for tests. `__ccrTokenKeys()` reports what is COMMITTED;
+ * this reports what is merely ticked, and the gap between them is the whole
+ * point of deferring the commit — a test that can only see the committed side
+ * cannot tell "the tick did nothing" from "the tick is waiting for Enter". */
+window.__ccrPendKeys = function(){ return pendKeys.slice(); };
+function toggleRowAt(i){
+  var it = sugItems[i];
+  if (!it) return false;
+  var key = keyOf(it);
+  if (!key) return false;
+  var at = pendKeys.indexOf(key);
+  if (at >= 0) pendKeys.splice(at, 1);
+  else { pendKeys.push(key); pendItem[key] = it; }
+  // Repaint the ONE row. No render, no re-rank, no reveal — see above.
+  var li = sugRow(i);
+  if (li){
+    var on = pendKeys.indexOf(key) >= 0;
+    li.classList.toggle("picked", on);
+    li.setAttribute("aria-selected", on ? "true" : "false");
   }
-  else closeSug();
-  return ok;
+  sugAt = i; markSug(); paintPending();
+  return true;
+}
+/* What Enter is about to do, in the footer beside the button. Deferring the
+ * commit buys a still list and costs the running feedback the old design gave
+ * for free — the map moved on every tick, so you could see your selection being
+ * built. This is that feedback, in words: without it a reader ticks four rows,
+ * sees nothing happen anywhere, and reasonably concludes the ticks did nothing. */
+function paintPending(){
+  var el = sugEl && sugEl.querySelector("#sug-pend");
+  if (!el) return;
+  var have = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
+  var add  = pendKeys.filter(function(k){ return have.indexOf(k) < 0; }).length;
+  var drop = have.filter(function(k){ return pendKeys.indexOf(k) < 0; }).length;
+  var bits = [];
+  if (add)  bits.push(add + " to add");
+  if (drop) bits.push(drop + " to remove");
+  el.textContent = bits.length
+    ? bits.join(", ") + " — Enter applies"
+    : (pendKeys.length ? pendKeys.length + " selected" : "Tick the ones you want");
+}
+/* Commit, then leave. The removals go first so a reader who unticks A and ticks
+ * B does not momentarily hold both — applyTokens() fits the view to whatever is
+ * in `tokens` when it runs, and fitting an intermediate set is a visible lurch
+ * on the way to the right one. */
+function commitPending(){
+  var have = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
+  var drop = have.filter(function(k){ return pendKeys.indexOf(k) < 0; });
+  var add  = pendKeys.filter(function(k){ return have.indexOf(k) < 0; })
+                     .map(function(k){ return pendItem[k]; })
+                     .filter(Boolean);
+  if (!drop.length && !add.length) return false;
+  if (typeof window.__ccrCommitSelection === "function")
+    return !!window.__ccrCommitSelection(add, drop);
+  return false;
+}
+/* Enter, and the button that says so. Commits whatever is ticked and closes;
+ * with nothing ticked it falls through to the caller's term search, so Enter
+ * on a bare term still means "search for this" and still dismisses. */
+function takeHighlighted(){
+  var did = commitPending();
+  if (did) closeSug();
+  return did;
 }
 /* How many matches the list is built from. It was EIGHT, and eight is what Sam
  * saw: "Search box only delivers a short set of options and should show all or
@@ -909,7 +1039,21 @@ function openSug(term){
   if (!sugEl || typeof window.__ccrSuggest !== "function") return;
   sugAll = window.__ccrSuggest(term, SUG_MAX) || [];
   sugShown = Math.min(SUG_LIMIT, sugAll.length);
-  if (!sugAll.length){ sugItems = []; closeSug(); return; }
+  /* ⚠️ A TERM THAT MATCHES NOTHING MUST NOT END THE SESSION. closeSug() clears
+   * the pending ticks, and typing one letter too many is exactly how a reader
+   * arrives at an empty list — so routing that through closeSug() would delete
+   * their picks for a keystroke they are about to correct. Hide the list and
+   * keep the session; the ticks are still there when the term matches again. */
+  if (!sugAll.length){
+    sugItems = []; sugAt = -1;
+    if (sugEl){ sugEl.hidden = true; sugEl.innerHTML = ""; }
+    if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
+    return;
+  }
+  // Seed ONCE per session, not per term — see endPending() above. Here and not
+  // in renderSug(), which also runs on every page reveal; seeding there would
+  // throw away the ticks the reader made before they scrolled.
+  if (!pendLive) seedPending();
   renderSug(true);
 }
 /* `reset` distinguishes a new term (go to the top, drop the highlight) from a
@@ -922,7 +1066,9 @@ function renderSug(reset){
   sugAt = keepAt;
   var more = sugItems.more || 0;
   var byName = (typeof window.__ccrSuggestOrder === "function") && window.__ccrSuggestOrder() === "name";
-  var picked = (typeof window.__ccrTokenKeys === "function") ? window.__ccrTokenKeys() : [];
+  // The tick state is the PENDING set, not the committed one: a row is ticked
+  // because the reader ticked it, whether or not it has been applied yet.
+  var picked = pendKeys;
   sugEl.innerHTML = sugItems.map(function(it,i){
     // The KIND is a word, not a color or an icon: "subject" and "course" are
     // different destinations and the reader has to be able to tell which one
@@ -938,16 +1084,16 @@ function renderSug(reset){
       '<span class="sg-l">'+esc(it.label)+'</span>'+
       '<span class="sg-r">'+right+'</span></li>';
   }).join("");
-  /* The footer says there is more below the fold, and it is the LAST child, never
-   * a row between groups: sugItems indexes sugEl.children directly, so anything
-   * unselectable in the middle desyncs every arrow key after it. role=presentation
-   * keeps it out of the listbox's options; the same words go on the listbox's own
-   * label, which is what a screen reader hears on entry. */
-  /* The footer already carried the count; it now carries the ORDER too, because
-   * that is where a reader who has just read "showing the closest 60" is
-   * looking when they wonder what the other matches were (Sam, 2026-09-05:
-   * "would have seen 2 named similarly or the same"). Sorting by name puts
-   * near-identical titles next to each other, which popularity-ranking cannot. */
+  /* The count and the order control ride in a sticky HEADER; the footer holds
+   * the way out and nothing else. Neither carries a data-i, and neither is a
+   * destination \u2014 role=presentation keeps them out of the listbox's options,
+   * and every lookup by index goes through sugRow(), which asks the row which
+   * suggestion it is rather than counting children past a non-row.
+   *
+   * The count sits with the order control because they are one thought: a
+   * reader who has just read "showing the closest 60" and wonders what the
+   * other matches were is being answered by "sort by name" (Sam, 2026-09-05:
+   * "would have seen 2 named similarly or the same"). */
   var label = "Search suggestions";
   var restHere = sugAll.length - sugShown;   // ranked, not yet revealed
   var count = byName
@@ -957,34 +1103,47 @@ function renderSug(reset){
           (sugAll.more ? "+" : "") + " \u2014 scroll for more"
         : more > 0 ? "Showing the closest " + sugItems.length
         : sugItems.length + (sugItems.length === 1 ? " match" : " matches"));
-  sugEl.insertAdjacentHTML("beforeend",
-    '<li class="sug-more" role="presentation"><span>'+count+'</span>'+
+  sugEl.insertAdjacentHTML("afterbegin",
+    '<li class="sug-head" role="presentation"><span>'+count+'</span>'+
     '<button type="button" class="sug-sort" data-order="'+(byName ? "relevance" : "name")+'">'+
     (byName ? "Sort by best match" : "Sort by name")+'</button></li>');
+  sugEl.insertAdjacentHTML("beforeend",
+    '<li class="sug-more" role="presentation">'+
+    '<span class="sug-pend" id="sug-pend"></span>'+
+    '<button type="button" class="sug-go" id="sug-go">Enter <kbd>\u21b5</kbd></button></li>');
   label += " \u2014 " + count + (byName ? "" : ", sorted by best match");
   sugEl.setAttribute("aria-label", label);
   sugEl.hidden = false;
   sugEl.scrollTop = keepTop;
   if (keepAt >= 0) markSug();
   if (gqEl) gqEl.setAttribute("aria-expanded","true");
+  paintPending();
   Array.prototype.forEach.call(sugEl.children, function(li){
-    // The footer carries no data-i and is not a destination — skip it, or its
-    // mousedown would set sugAt to NaN and swallow the press. Its one control
-    // is wired below, on mousedown for the same blur reason the rows use.
+    // The header and footer carry no data-i and are not destinations — skip
+    // them, or a mousedown would set sugAt to NaN and swallow the press. Their
+    // controls are wired below, on mousedown for the same blur reason.
     if (li.dataset.i == null) return;
     // mousedown, not click: the input's blur fires first on a click and would
     // close the list out from under the pointer.
     li.addEventListener("mousedown", function(ev){
-      ev.preventDefault(); sugAt = +li.dataset.i; takeHighlighted();
+      // ⚠️ TICK ONLY. This used to commit the pick, which rebuilt the list and
+      // moved the map under a reader who was still choosing. It now writes to
+      // the pending set and repaints this one row; Enter is what applies it.
+      ev.preventDefault(); toggleRowAt(+li.dataset.i);
     });
     li.addEventListener("mouseenter", function(){ sugAt = +li.dataset.i; markSug(); });
+  });
+  var goBtn = sugEl.querySelector("#sug-go");
+  if (goBtn) goBtn.addEventListener("mousedown", function(ev){
+    ev.preventDefault();
+    if (!takeHighlighted()) closeSug();   // nothing ticked: the button still means "done"
   });
   var sortBtn = sugEl.querySelector(".sug-sort");
   if (sortBtn) sortBtn.addEventListener("mousedown", function(ev){
     ev.preventDefault();
     if (typeof window.__ccrSuggestOrder === "function")
       window.__ccrSuggestOrder(sortBtn.dataset.order);
-    openSug(gqEl ? gqEl.value : term);
+    openSug(gqEl ? gqEl.value : term);   // same session, so the ticks survive
     if (gqEl) gqEl.focus();
   });
 }
