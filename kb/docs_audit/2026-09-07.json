@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 825,
-    "bytes": 8798100,
+    "bytes": 8798209,
     "over_budget": 4,
     "handoff_max": 238,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 108,
-        "bytes": 2702032,
+        "bytes": 2702141,
         "over": 2
       },
       "index": {
@@ -61,10 +61,10 @@
       "vault_heavy_path": 46
     },
     "vault": {
-      "files": 2847,
-      "bytes": 1396988074,
-      "heavy_bytes": 679712410,
-      "heavy_share": 0.487,
+      "files": 2851,
+      "bytes": 1404456571,
+      "heavy_bytes": 680001837,
+      "heavy_share": 0.484,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/prototype",
@@ -455,10 +455,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 17819039,
+        "bytes": 18108437,
         "kind": "dir"
       },
-      "message": "directory totals 17,819,039 B inside the vault"
+      "message": "directory totals 18,108,437 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -625,10 +625,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9300590,
+        "bytes": 9300619,
         "kind": "file"
       },
-      "message": "9,300,590 B single file inside the vault"
+      "message": "9,300,619 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
