@@ -5,7 +5,7 @@
   "_generated_by": "kb/_seed_subject_discipline_map.py",
   "_generated_at": "2026-05-20",
   "_classified_by": "claude-opus-4-7 (subject->discipline draft)",
-  "count": 319,
+  "count": 320,
   "map": {
     "AB": "Auto Body Technology",
     "ACC": "Business",
@@ -154,7 +154,7 @@
     "ENGR": "Engineering",
     "ENGT": "Engineering Technology",
     "ENP": "Small Business Development",
-    "ENVS": "Environmental Technologies",
+    "ENVS": "Biological Sciences",
     "ES": "Ethnic Studies",
     "ESA": "Physical Education",
     "ESCI": "Environmental Technologies",
@@ -167,7 +167,8 @@
     "ESOL": "English as a Second Language",
     "EST": "Physical Education",
     "ETEC": "Engineering Technology",
-    "ETHN": "Ethnic Studies",
+    "ETHA": "Native American/American Indian Studies",
+    "ETHN": "Chicano Studies",
     "ETHS": "Ethnic Studies",
     "ETHST": "Ethnic Studies",
     "EXSC": "Kinesiology",
@@ -348,5 +349,5 @@
     "HOSP": "hospitality — sampled titles are mixed: its 8 disciplined identities split four ways (Hotel and Motel Services, Travel Services, Family and Consumer Studies/ Home Economics, Culinary Arts/Food Technology) and its 5 blanks span Hospitality Law and Introduction to Baking. Sam's ruling of 2026-09-08 (sheet item 6): leave it out, send it to the curation worklist."
   },
   "_updated_at": "2026-09-08",
-  "_updated_by": "Sam's rulings of 2026-09-08 — the subject-discipline edge sheet, items 1-5, 6 and 7"
+  "_updated_by": "Sam's rulings of 2026-09-08 — the subject-discipline edge sheet (items 1-7) and the hard-ones sheet (items 1, 6, 7)"
 }

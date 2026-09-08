@@ -419,14 +419,28 @@ Ruled a **curator pass, never an inference**: `kb/discipline_blanks_worklist.jso
 (`kb/_build_discipline_blanks_worklist.py`, rebuilt by the daily run's Step 4d5,
 guarded by `tests/discipline_blanks_worklist_test.py`) names every code with what
 corroboration exists.
-③ **The disagreements: 9 → 4, and they PRINT now** (S243). Sam ruled the five
-large ones to the courses' reading: ATHL→Kinesiology · THTR→Drama/Theater Arts ·
-ESCI→Environmental Technologies · ELEC→Electricity · MUSC→Commercial Music. ⭐ **All
-five moved the map INTO agreement with the CSR**, and three of the five had named a
-discipline the CSR does not carry at all ("Theater Arts", "Physical Education") —
-a second independent signal, not just the vote. Still open: **ETHN** (34 under
-Chicano Studies) · **PHTO** (a thin 3-of-12 plurality) · **ENVS** (1 of 1) ·
-**ESLN**, which is item 8's data defect below.
+③ **The disagreements: 9 → 2 in one day, and neither survivor is a map problem**
+(S243, Sam's two sheets of 2026-09-08). Morning: ATHL→Kinesiology · THTR→Drama/
+Theater Arts · ESCI→Environmental Technologies · ELEC→Electricity ·
+MUSC→Commercial Music. Evening: **ETHN→Chicano Studies** and **ENVS→Biological
+Sciences**, plus **ETHA→Native American/American Indian Studies ADDED** — 33
+courses and a canonical code with no map entry at all, and ⚠️ **a code with no
+entry never surfaces as a disagreement**, which is why nobody had looked. Left:
+**PHTO**, where Sam ruled the map right and its twelve courses mis-filed, and
+**ESLN**, which is ③b's rename. ⭐ **All nine had printed NOTHING until S243** —
+`standingHtml()` appended the note to ONE of four exits; fixed, note on every
+exit (`tests/ccr_subject_standing_note.test.js`).
+⭐ **WHICH MECHANISM A CASE NEEDS IS ONE QUESTION — NOW IN DR-25** (Sam, hard-ones
+item 5): **does the MQ list already carry the distinction?** No → **umbrella**,
+mint codes (Foreign Languages' 21 synthetic per-language SUBJ4s; Kinesiology's
+ATHL; the two Agriculture disciplines). Yes and the courses split → **fan-in**,
+one Common SUBJ and both names kept (`fan_in_with`; FTVE across Film and Media
+Studies 360 and Media Production 146). Yes and they do not → a plain
+**correction**. ⚠️ **Asking it re-sorts cases** — ETHN and PHTO both sat on a
+"hard" list until it was asked. A real MQ discipline carrying NO courses folds
+into its parent through `kb/discipline_aliases.json` instead: African American
+Studies and Asian American Studies into Ethnic Studies (item 2), which records
+where such a course is FILED, never that the names are synonyms.
 ⚠️ **ATHL IS AN UMBRELLA CODE, NOT A KINE VARIANT** (Sam's note, 2026-09-08:
 *"ATHL … is in Kinesiology but is differentiated from KINE which doesn't have the
 restrictions athletic PE or KIN course"*). The CSR lists ATHL as a Kinesiology
