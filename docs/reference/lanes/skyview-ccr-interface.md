@@ -408,12 +408,25 @@ link, never a github.io URL.
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
 ① **The skills layer's fetch problem** (NEEDS SAM ①).
-② **The 93 blanks the edge could not fill** (S242) — a named worklist now, not a
-silent residue: 15 are null in the identifier reference, 78 have a SUBJ4 the
-subject map does not carry. Adding a map entry fills a whole subject at once.
-③ **The four subjects where the edge overrules a real vote** — ETHN reads Ethnic
-Studies against 34 identities filed under Chicano Studies; ESLN against a
-malformed discipline name. The row prints both; someone should decide.
+② **The 93 blanks — NOT mechanically fillable, and the payload says so** (S242,
+re-measured S243). 15 null in the identifier reference, 78 with a SUBJ4 the map
+does not carry, across **50 codes**. ⚠️ **37 of the 50 have no other identity
+carrying that prefix at all** — nothing to corroborate against; 6 more read
+"unanimous" off a **single** row, and HUMN proves a vote of one is not a vote (its
+one voter is *Music for Video Games and Film* → Music; its three blanks are
+popular-culture titles). Only **five** codes carry weight — BSOT (369, 99% Office
+Technologies) · HUMA (112, 96%) · GRAF (72, Graphic Arts) · BCST (54, Broadcasting
+Technology) · BARB (5, Barbering) — **7 of the 93 rows**. DR-25 owns the map, so
+those five are a decision sheet, not a session edit.
+③ **NINE subjects disagree, not four — and NONE of them printed** (S243). ATHL
+(Physical Education vs Kinesiology, 1,101) · THTR (1,093/1,109) · ESCI (465/476) ·
+ELEC (342/353) · MUSC (127/134) · ETHN (34, Chicano Studies) · PHTO (3/12) · ESLN
+(a malformed name) · ENVS. ⚠️ **"The row prints both" was false**: `standingHtml()`
+appended the note to ONE of four exits — the Common-SUBJ branch — and a disagreeing
+subject is by construction usually not that, so it left by the umbrella or
+not-its-code exit; ATHL and THTR returned earlier, at the no-seed-entry guard.
+Fixed S243, note on every exit (`tests/ccr_subject_standing_note.test.js`). Which
+are corrections is Sam's call.
 ④ **The frame budget, if Sam still sees it step.** S242 took the median frame
 81 → 46 ms. The remaining named JS is the per-node loop (14%) and the island
 loop (10%) — the irreducible walk. **Fewer points per frame is the lever that

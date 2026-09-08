@@ -5275,14 +5275,20 @@ function standingHtml(r){
   if(noDiscipline(r.home))
     return 'no discipline yet <span class="ws-note">(no entry in the subject map, and its identities carry none)</span>';
   if(!authority) return '<span class="ws-note">loading…</span>';
-  var a=authority[r.home];
-  if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>';
-  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO. Measured 2026-09-08,
-   * four subjects disagree and all four are corrections — ETHN reads Ethnic
-   * Studies against 34 identities filed under Chicano Studies, ESLN reads
-   * English as a Second Language against a malformed discipline name — but a
-   * silent reassignment of 34 rows is the kind of thing a curator is entitled
-   * to see rather than discover. */
+  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO — ON EVERY BRANCH.
+   * Measured 2026-09-08 against ccr_universe.json and the map file the page
+   * itself fetches, NINE subjects disagree, not the four first recorded here:
+   * ATHL (Physical Education vs Kinesiology, 1,101 points), THTR (1,093 of
+   * 1,109), ESCI (465 of 476), ELEC (342 of 353), MUSC (127 of 134), ETHN
+   * (Ethnic Studies vs 34 under Chicano Studies), PHTO (3 of 12), ESLN (a
+   * malformed discipline name) and ENVS.
+   * ⚠️ AND NONE OF THE NINE PRINTED (S243). `via` was built here and then
+   * appended to ONE of the three returns below — the branch for a subject that
+   * IS its home's Common SUBJ. A subject whose identities sit somewhere else is
+   * by construction usually NOT that, so it fell to the umbrella or the
+   * not-its-code branch, both of which dropped the note; ATHL and THTR did not
+   * reach them at all, returning at the `!a` guard above. A note computed and
+   * discarded is the same as no note: it has to ride every exit. */
   var voted = r.rec ? r.rec.voted : r.voted;
   var via = r.homeSrc==="vote"
     ? ' <span class="ws-note">(discipline inferred from its identities — not in the subject map)</span>'
@@ -5290,11 +5296,16 @@ function standingHtml(r){
       ? ' <span class="ws-note">(the subject map says ' + esc(r.home) + '; its identities sit under ' +
         esc(voted) + ')</span>'
       : '';
+  var a=authority[r.home];
+  if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>'+via;
   if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a)+via;
   if(a.umbrella.indexOf(r.code)>=0)
-    return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>';
-  return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>';
+    return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>'+via;
+  return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>'+via;
 }
+/* Exposed for tests: the standing line is pure string-building off one row, so
+ * jsdom can assert every branch without a canvas or a layout. */
+window.__ccrStandingHtml = standingHtml;
 function subjectRowHtml(r){
   var others=r.others.length
     ? ' <span class="ws-note">also '+r.others.slice(0,3).map(function(n){
