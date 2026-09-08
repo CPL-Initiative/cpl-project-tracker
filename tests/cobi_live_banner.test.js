@@ -94,10 +94,41 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
   check("⭐ but a DIFFERENT session shows again — dismissing one never hides the next",
     !!d.window.document.getElementById("cobi-live"));
 
-  // ── the source-level half: the read is anon and the table is the only one ─
-  check("the banner reads cobi_live_session, one row, by anon",
+  // ── ⭐ THE TEAM GATE (Sam, 2026-09-08) ────────────────────────────────────
+  // "limit the folks who can use the banner link to users on the MAP Team
+  // Users (not MAP College Users)". The real gate is RLS —
+  // is_allowed_reviewer() OR team_pass_ok(), the same policy as the MAP Users
+  // roster, verified as anon against the live table at 0 rows. These check the
+  // client half: a reader with no reviewer token and no team phrase must not
+  // even ask, and one who has either must send it.
+  {
+    const d2 = build();
+    const w2 = d2.window;
+    check("⭐ with no reviewer token and no team phrase, it does not read at all",
+      w2.COBI_BRAND.liveAuthHeaders() === null);
+
+    try { w2.localStorage.setItem("cpl_team_pass", "a-phrase"); } catch (e) {}
+    const hp = w2.COBI_BRAND.liveAuthHeaders();
+    check("a team-phrase holder sends the phrase header",
+      !!hp && hp["x-team-pass"] === "a-phrase", JSON.stringify(hp));
+    check("...and still sends the anon key as the apikey", !!hp && !!hp.apikey);
+    try { w2.localStorage.removeItem("cpl_team_pass"); } catch (e) {}
+
+    const jwt = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc";
+    try { w2.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: jwt })); } catch (e) {}
+    const hr = w2.COBI_BRAND.liveAuthHeaders();
+    check("a signed-in reviewer sends their own bearer token",
+      !!hr && hr.Authorization === "Bearer " + jwt, JSON.stringify(hr));
+
+    try { w2.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "not-a-jwt" })); } catch (e) {}
+    check("⭐ a malformed token is not sent as a bearer (PostgREST 401s on one)",
+      w2.COBI_BRAND.liveAuthHeaders() === null);
+  }
+
+  // ── the source-level half: the read is one row, and it carries credentials ─
+  check("the banner reads cobi_live_session, one row, with the reader's credentials",
     /rest\/v1\/cobi_live_session"\s*\+\s*"\?id=eq\.1/.test(SRC) &&
-    /apikey: LIVE_ANON/.test(SRC));
+    /fetch\(LIVE_URL, \{ headers: headers \}\)/.test(SRC));
   check("a failed read renders nothing rather than throwing",
     /\.catch\(function \(\) \{ \/\* no banner is the right answer to a failed read/.test(SRC));
 

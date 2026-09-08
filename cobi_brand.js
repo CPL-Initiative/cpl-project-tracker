@@ -309,6 +309,41 @@
   var LIVE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var LIVE_DISMISS = "cobi_live_dismissed";
 
+  /* ⭐ THE BANNER IS FOR THE TEAM, NOT FOR COLLEGES (Sam, 2026-09-08:
+   * "limit the folks who can use the banner link to users on the MAP Team
+   * Users (not MAP College Users)").
+   *
+   * ⚠️ THE GATE IS IN RLS, NOT HERE. `cobi_live_session` reads under
+   * `is_allowed_reviewer() OR team_pass_ok()` — the same policy that guards the
+   * MAP Users roster's staff PII — so anon gets ZERO rows and the banner cannot
+   * render for a college user or the public even if this code were wrong.
+   * Verified against the live table as anon: 0 rows. What follows only decides
+   * whether the reader's own credentials travel with the read.
+   *
+   * The same session as the MAP Users and Team & RACI tabs: a magic-link
+   * reviewer token in `cpl_sb`, or the shared team phrase in `cpl_team_pass`.
+   * ⚠️ PostgREST rejects an empty or garbled Bearer with 401, so with no
+   * reviewer token the anon key rides in its place and the phrase header is
+   * what unlocks the row. */
+  function liveAuthHeaders() {
+    var tok = null, pass = null;
+    try {
+      var sess = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (sess && typeof sess.access_token === "string" &&
+          sess.access_token.split(".").length === 3 && sess.access_token.length > 40) {
+        tok = sess.access_token;
+      }
+    } catch (e) {}
+    try { pass = localStorage.getItem("cpl_team_pass") || null; } catch (e) {}
+    // Nobody signed in and no phrase: do not even ask. The row is unreadable,
+    // and a guaranteed empty read on every page load is noise in the network
+    // panel of anyone debugging something else.
+    if (!tok && !pass) return null;
+    var h = { apikey: LIVE_ANON, Authorization: "Bearer " + (tok || LIVE_ANON) };
+    if (pass) h["x-team-pass"] = pass;
+    return h;
+  }
+
   function liveBannerRender(row) {
     if (!row || !row.active || !row.session_url) return null;
     if (row.expires_at && new Date(row.expires_at).getTime() <= Date.now()) return null;
@@ -361,8 +396,10 @@
 
   function liveBanner() {
     if (typeof fetch !== "function") return;
+    var headers = liveAuthHeaders();
+    if (!headers) return;              // not team: no read, no banner
     var p;
-    try { p = fetch(LIVE_URL, { headers: { apikey: LIVE_ANON } }); }
+    try { p = fetch(LIVE_URL, { headers: headers }); }
     catch (e) { return; }
     p.then(function (r) { return r.ok ? r.json() : []; })
      .then(function (rows) { liveBannerRender(rows && rows[0]); })
@@ -382,6 +419,7 @@
   }
 
   window.COBI_BRAND = { init: init, liveBanner: liveBanner,
+                        liveAuthHeaders: liveAuthHeaders,
                         liveBannerRender: liveBannerRender, dropWordmarkTags: dropWordmarkTags,
                         addAlphaNotice: addAlphaNotice,
                         relocateRefresh: relocateRefresh };
