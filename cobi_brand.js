@@ -314,22 +314,36 @@
    * Users (not MAP College Users)").
    *
    * ⚠️ THE GATE IS IN RLS, NOT HERE. `cobi_live_session` reads under
-   * `is_map_team()` — membership of `team_members` (org='MAP'), the roster on
-   * the TEAM & RACI tab. Not map_college_users, which is the College Users &
-   * Roles roster and a different 2,801 people. So anon gets ZERO rows and the
-   * banner cannot render for a college user or the public even if this code
-   * were wrong. Verified against the live table as anon: 0 rows. What follows
-   * only decides whether the reader's own credentials travel with the read.
+   * `is_map_team() OR team_pass_ok()`: a signed-in member of `team_members`
+   * (org='MAP'), the roster on the TEAM & RACI tab — not map_college_users,
+   * which is College Users & Roles and a different 2,801 people — or a holder
+   * of the shared team phrase. So a plain visitor gets ZERO rows and the banner
+   * cannot render for the public even if this code were wrong. Verified against
+   * the live table as anon with no phrase: 0 rows. What follows only decides
+   * whether the reader's own credentials travel with the read.
    *
-   * ⚠️ A SHARED PHRASE IS NOT AN AUDIENCE, so it does not open this row. The
-   * team phrase in `cpl_team_pass` carries no identity — it cannot tell a team
-   * member from a college user who was handed it — and Sam's ask was about
-   * PEOPLE. So the only key here is the reader's OWN magic-link token from
-   * `cpl_sb`, whose email the policy matches against the roster. Without one
-   * the row is unreadable, and asking anyway would be a guaranteed empty
-   * request on every page load: noise for anyone reading a network panel. */
+   * TWO WAYS IN, AND NEITHER IS A SIGN-IN EACH VISIT (Sam, 2026-09-08: "they
+   * wouldn't need to be signed in to see the header, just ensure that they are
+   * on the team table"):
+   *   * the reader's own magic-link token in `cpl_sb` — exact, matched by
+   *     email against the Team & RACI roster;
+   *   * the shared team phrase in `cpl_team_pass` — entered ONCE and kept in
+   *     the browser, which is COBI's existing team credential and the reason a
+   *     team member does not have to log in every time.
+   *
+   * ⚠️ THE PHRASE IS A SHARED SECRET, NOT AN IDENTITY. It admits whoever holds
+   * it: wider than the 42-row roster, narrower than the public. That is the
+   * trade low friction buys, and it is why WRITING the banner does not accept
+   * it — a phrase holder may see the banner and must never be able to point it
+   * somewhere.
+   *
+   * ⚠️ PostgREST rejects an empty or garbled Bearer with 401, so with no
+   * reviewer token the anon key rides in its place and the phrase header is
+   * what opens the row. With neither we do not ask at all: the row is
+   * unreadable, and a guaranteed empty request on every page load is noise for
+   * anyone reading a network panel. */
   function liveAuthHeaders() {
-    var tok = null;
+    var tok = null, pass = null;
     try {
       var sess = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
       if (sess && typeof sess.access_token === "string" &&
@@ -337,8 +351,11 @@
         tok = sess.access_token;
       }
     } catch (e) {}
-    if (!tok) return null;
-    return { apikey: LIVE_ANON, Authorization: "Bearer " + tok };
+    try { pass = localStorage.getItem("cpl_team_pass") || null; } catch (e) {}
+    if (!tok && !pass) return null;
+    var h = { apikey: LIVE_ANON, Authorization: "Bearer " + (tok || LIVE_ANON) };
+    if (pass) h["x-team-pass"] = pass;
+    return h;
   }
 
   function liveBannerRender(row) {

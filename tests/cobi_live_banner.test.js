@@ -103,21 +103,24 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
   // The real gate is RLS: `is_map_team()` on both read and write, verified as
   // anon against the live table at 0 rows. These check the client half.
   //
-  // ⚠️ A SHARED PHRASE IS NOT AN AUDIENCE. `cpl_team_pass` carries no identity,
-  // so it cannot distinguish a team member from a college user who was handed
-  // it. A phrase alone must not even attempt the read.
+  // ⭐ NO SIGN-IN EACH VISIT (Sam: "they wouldn't need to be signed in to see
+  // the header"). Two ways in: the reader's own magic-link token, or the shared
+  // team phrase entered once and kept in the browser.
+  //
+  // ⚠️ The phrase is a SHARED SECRET, not an identity — wider than the 42-row
+  // roster, narrower than the public. Which is why WRITING never accepts it.
   {
     const d2 = build();
     const w2 = d2.window;
-    check("⭐ with no token, it does not read at all",
+    check("⭐ a plain visitor with neither credential does not read at all",
       w2.COBI_BRAND.liveAuthHeaders() === null);
 
     try { w2.localStorage.setItem("cpl_team_pass", "a-phrase"); } catch (e) {}
-    check("⭐ a shared team phrase alone does NOT open the banner",
-      w2.COBI_BRAND.liveAuthHeaders() === null,
-      JSON.stringify(w2.COBI_BRAND.liveAuthHeaders()));
-    check("and the phrase is never sent as a header",
-      !/x-team-pass/.test(SRC));
+    const hp = w2.COBI_BRAND.liveAuthHeaders();
+    check("⭐ the shared team phrase alone opens it — no sign-in needed",
+      !!hp && hp["x-team-pass"] === "a-phrase", JSON.stringify(hp));
+    check("...and the anon key rides as the bearer, since PostgREST 401s on an empty one",
+      !!hp && hp.Authorization === "Bearer " + hp.apikey);
     try { w2.localStorage.removeItem("cpl_team_pass"); } catch (e) {}
 
     const jwt = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc";
