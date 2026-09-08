@@ -199,7 +199,9 @@ window.COBI_ADMIN_SURFACE = {
         "admin.js",
         "cobi_admin_surface.js"
       ],
-      "reads": [],
+      "reads": [
+        "cobi_live_session"
+      ],
       "writes": [
         "cobi_nav"
       ],
