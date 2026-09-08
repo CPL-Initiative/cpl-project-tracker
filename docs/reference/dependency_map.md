@@ -608,6 +608,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrase.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrase_header.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
+| `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -825,5 +826,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 444 file
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 445 file
 datasets · 138 external services · 324 consumers · 33 workflows · 37 tabs.

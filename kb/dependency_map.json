@@ -4,7 +4,7 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 444,
+  "file_datasets": 445,
   "external_services": 138,
   "consumers": 324,
   "workflows": 33,
@@ -13183,6 +13183,19 @@
      "kind": "page",
      "direction": "read",
      "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/admin_live_banner_control.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
      "line": 0
     }
    ],
