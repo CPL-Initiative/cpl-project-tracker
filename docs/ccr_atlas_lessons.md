@@ -1977,3 +1977,99 @@ lever that works on the metric is not the same as a lever that fixes the cause.*
   two days** (the first was the staged-away row). Both are named in the code and
   in the suite beside the new assertion, because a reversal that isn't recorded
   reads as a regression to the next session.
+
+## 2026-09-08 · S242 (SkyTrue) — the frame budget, and a bill that moved instead of leaving
+
+S241 took the frame rate up by drawing fewer islands. This run took it up again by
+asking for fewer fonts and fewer dots. Back-to-back on the served page, same
+machine, same minute — a median frame of **81 ms → 46 ms**, about **12.3 → 21.7
+fps**.
+
+### Three defects, one shape
+
+A value that DRIFTS was being used as though it were stable, and work was being
+done for points nobody could see.
+
+**1 · A memo keyed on a drifting value is not a memo.** `textW` cached on
+`ctx.font + "\0" + string`, and an island label is sized off the drawn radius:
+`18.0263px`, `18.2506px`, `18.1185px`, a new number every frame as the sky turns.
+So the cache never hit once. It was not merely useless — each miss handed
+Chromium a font size it had never built, and building it is the expensive half:
+**`measureText` was 11.2% of the profile while `textW` itself was 0.5%**, on
+**fifteen calls a frame**. Half a millisecond each.
+
+**2 · ⭐ FIXING A COST CAN MOVE IT RATHER THAN REMOVE IT — AND ONLY A SECOND
+PROFILE SAYS WHICH.** Measuring at a reference size took `measureText` to zero:
+15.4 calls a frame → 0.17. The next profile had **`strokeText` at 9.6%, up from
+0.6%**. Nothing had been saved. Chromium builds a font at its first USE, and
+with the measure no longer asking, the stroke was simply first in line. The
+drifting size was never the memo's problem; it was the *drawing's* problem, and
+the memo had only been the messenger. ⚠️ Had this run stopped at "measureText is
+gone from the profile" it would have shipped a wash and reported a win — which is
+S240's lesson wearing a different hat.
+
+**3 · An island on screen is not an island whose points are on screen.** S241
+settled which ISLANDS the window shows. Within one that passes, a discipline
+wider than the window still spills its courses past every edge: **5,755 of 27,931
+batched dots a frame — 20.6% — lay wholly outside the canvas**, each paying a
+`starPush` (two string joins, a bucket lookup) and a `rect` into a path that then
+rasterizes.
+
+### What went in
+
+| | before | after |
+|---|---|---|
+| median frame (served, back-to-back) | 81 ms | **46 ms** |
+| `measureText` share of profile | 11.2% | absent |
+| `strokeText` share of profile | 0.6% → 9.6% mid-fix | absent |
+| off-screen dots batched per frame | 5,755 / 27,931 | **0** |
+| distinct fonts asked for per frame | ~15 | **~0.17** |
+
+- **`textW` measures once at `TW_REF` and scales.** One font for the life of the
+  page; the key is the typeface and the string again. Not bit-exact — hinting
+  moves a width up to 0.14px at these sizes — and it does not need to be: the
+  width feeds a collision box already padded 3px a side, and `placeLabels` draws
+  centered, so the width never positions anything.
+- **`labelSize()` rounds the drawn size to whole pixels, with a 0.6px dead band.**
+  `txPx()` has rounded since it was written — *"a fractional px font measures fine
+  and renders soft"* — and the island labels were simply never brought under that
+  rule. ⚠️ **The dead band is not optional.** A bare `Math.round` is a threshold
+  on a drifting value: a raw size sitting near 18.5 would flip 18↔19 every frame,
+  a worse shimmer than the one being fixed. This lane has paid for that twice
+  already (`NODE_ZOOM_KEEP`; the tint that became the sky).
+- **The star batch tests each point against the window.** Inside the fast branch
+  only, where the node is a plain dot of radius `dr` that returns at once — no
+  halo, no light, no ring, no label. ⚠️ Earlier would be wrong: a point on the
+  slow path throws light up to 22% of the canvas and can legitimately light the
+  window from off screen.
+
+### The guard, and two decorations caught before they shipped
+
+`tests/ccr_skyview_frame_budget.test.js`, 9 checks — **and the first draft's
+behavioral half was worthless.** Written against the standing fixture it passed
+with every fix reverted:
+
+- Both fixture islands sit at the label-size **clamp** (`max(11, min(19, r*0.17))`),
+  so no size could be fractional and no size could drift. Fixed by driving
+  `__ccrTextStep(0)` — `tx()` is 0.85 there, so the clamp itself lands on 9.35.
+- All three fixture points sit near the middle, so **no dot could be off screen**.
+  Fixed by adding a point 4,000 units out, in an island that still passes S241's
+  angular cull.
+
+⚠️ **And one check was deleted rather than fixed:** "40 turning frames ask for few
+distinct fonts" cannot fail, because once the drawn size is rounded the font is
+stable however `textW` keys its memo. The comment where it stood says so. Every
+remaining check was verified by reverting its fix — A: 7/9, B: 7/9, A+B: 6/9,
+C: 7/9.
+
+⚠️ **The revert harness overwrote its own backup** (`cp file $GOOD` after an
+earlier failed run had already reverted the file), and for two rounds the "good"
+state under test was missing `labelSize`. The suite caught it. A guard is also a
+guard on the process that verifies the guard.
+
+### Sam's question, answered mid-run
+
+*"See the grouping for no discipline… does PSYC C1000 really not have the
+discipline of Psychology?"* It has one, and the map is right that the payload does
+not. Root cause, counts and the fix in
+[`methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload`](kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md).
