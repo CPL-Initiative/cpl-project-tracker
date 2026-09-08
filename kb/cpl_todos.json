@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-08",
-  "_session": "S242 (SkyTrue)",
-  "_status": "Two things happened today. The Sky got faster — a frame now takes 46 milliseconds instead of 81, so it draws about twenty-one times a second rather than twelve. Two causes, both the same shape: the code was re-asking a question it had already answered every single frame, and it was drawing thousands of course dots that sat outside the window entirely. And you answered the five questions about how subjects and disciplines fit together, so all five were built: the subject map is now the authority, 233 courses that showed no discipline now show one — PSYC C1000 among them — and the subject table reads that map instead of guessing from whatever its own courses happened to say. Two governance rows gained an owner, which is you. The COBI header lost the seal and gained a banner that tells the team when you are working in a session and links them to it.",
+  "_session": "S243 (SkyGate)",
+  "_status": "Two things this session, and both are the same kind of problem: something was worked out correctly and never reached the screen. First, SkyView was supposed to tell you when the subject map files a subject under one discipline while its courses sit under another. It builds that sentence and then throws it away on three of the four paths the code can take, so none of it has ever appeared. There are nine such subjects, not the four recorded this morning, and two of them are large: ATHL says Physical Education while all 1,101 of its courses say Kinesiology, and THTR says Theater Arts against 1,093 saying Drama/Theater Arts. The sentence now prints on every path; which of the nine are corrections is a decision sheet waiting for you. Second, every COBI tab was failing its accessibility check, and one line of styling was most of the reason: the checkbox that turns off the morning painting was two-thirds the height a control has to be, and it sits on every tab. Fixing that and one faint paragraph took the sweep from 38 tabs failing to 19. The other 19 are counted and named, not yet fixed. Also measured: the 93 courses still showing no discipline cannot be filled automatically — 37 of their subject codes have no other course to check a guess against.",
   "items": [
+    {
+      "id": "s243-sam-nine-disagreements",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Nine subjects where the subject map and the courses disagree, and someone has to decide which is right. It was recorded as four this morning; measured against the map SkyView actually reads, it is nine — and none of them were being shown to you, because the sentence that says so was only printed on one of the four paths the code takes. That is fixed. The large ones: ATHL is filed Physical Education while all 1,101 of its courses sit under Kinesiology; THTR is Theater Arts against 1,093 under Drama/Theater Arts; then ESCI, ELEC, MUSC, ETHN (34 under Chicano Studies), PHTO, ESLN and ENVS. These are faculty discipline names, so which one is right is not something a measurement can settle. They are items 7 to 9 on the decision sheet."
+    },
     {
       "id": "s242-sam-banner-live",
       "for": "Sam",
@@ -17,16 +23,10 @@
       "text": "The Sky draws almost twice as fast as it did this morning. Open SkyView and say whether the drift reads smoothly now. If it still steps, the next lever is drawing fewer points per frame, which is what worked the last three times."
     },
     {
-      "id": "s242-sam-edge-disagreements",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Four subjects where the subject map and the courses disagree, and someone should decide. ETHN reads Ethnic Studies while 34 identities sit under Chicano Studies. ESLN reads English as a Second Language against a discipline name that is malformed. PHTO and ENVS are smaller. The row shows both readings rather than silently picking one."
-    },
-    {
-      "id": "s242-sam-a11y-cobi",
+      "id": "s243-sam-a11y-cobi",
       "for": "Sam",
       "tab": "admin",
-      "text": "Every COBI tab fails two accessibility checks, and has for a while — this is not new today. A checkbox is 182 by 20 pixels where the minimum is 24 by 24, and one paragraph's text sits at 3.24 to 1 contrast where 4.5 is required. Say the word and they get fixed."
+      "text": "The accessibility sweep across COBI went from all 38 tabs failing to 19. One line did most of it: the checkbox labeled “Don’t greet me with paintings” was 20 pixels tall where the standard asks for 24, and it sits on every tab, so it failed every tab on its own. The remaining 19 tabs are counted and named — 71 separate color and target-size problems — and are engineering work rather than anything you need to rule on. Nothing here changes what any tab shows you."
     },
     {
       "id": "s238-sam-cpl-face-look",
@@ -47,6 +47,24 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
     },
     {
+      "id": "s243-fable-read-sheet-replies",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Read the subject–discipline decision sheet’s replies BEFORE touching that lane. The artifact has no wake subscription — the service refused one — so nothing will announce that Sam has answered. Use the Artifact tool’s read_db against collection “replies” on https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b . Nine numbered calls: five map entries, HOSP, the nine disagreements, ESLN’s malformed discipline name, and what to do with the 37 uncorroborated codes."
+    },
+    {
+      "id": "s243-fable-a11y-remaining",
+      "for": "Fable",
+      "tab": "admin",
+      "text": "The 19 COBI tabs still failing the accessibility sweep: 71 distinct failing selectors, 5,332 sub-24px targets and 22 scrolling regions no keyboard can reach. our-process is six faults from two color tokens and pipeline is ten, so the first few tabs are cheap. This is the shape that pays for fanning out — many surfaces, and every hit verified by re-running one command."
+    },
+    {
+      "id": "s243-fable-93-blanks",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The 93 course identities with no discipline are NOT fillable automatically, and the data says so: they span 50 subject codes, 37 of which have no other identity carrying that code, so there is nothing to check a proposed answer against. Six more look unanimous off a single row — HUMN’s one voter is a film-music course while its three blanks are popular-culture courses, so that reading would file three humanities courses under Music. Five codes do carry weight (BSOT, HUMA, GRAF, BCST, BARB) and cover 7 of the 93; they are items 1 to 5 on the decision sheet. The other 37 belong on a curator pass."
+    },
+    {
       "id": "s238-fable-dr24-surface",
       "for": "Fable",
       "tab": "unified-courses",
@@ -63,12 +81,6 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
-    },
-    {
-      "id": "s242-fable-93-blanks",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Ninety-three course identities still show no discipline after today's fill. Fifteen are blank in the identifier reference itself; the other 78 carry a four-letter subject the subject map does not list. Adding one map entry fills a whole subject at once, so this is a short list of additions rather than 78 separate decisions."
     }
   ]
 }

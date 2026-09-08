@@ -27,6 +27,14 @@
 //  (f) .cplfl-imgfallback painted white-on-gradient at 3.08:1. Pure white would
 //      not have fixed it either (3.50:1 over #a8842f) — the gradient itself had
 //      to come down. That panel shows exactly when the network is poor.
+////  (g) 2026-09-08, S243: `input#cplfl-optout` measured 182.1x19.9. The checkbox
+//      is 15px and its own <label> WRAPS it, so the label box IS the hit area —
+//      and that box was the SOLE fault on 17 of the 38 routes and one fault line
+//      on all 38, because first_light.js paints on every one of them. Fixing it
+//      is what took the sweep from 38/38 failing to 21.
+//  (h) 2026-09-08, S243: p.tphx-intro sat on --text-faint (#87877F) at 3.24:1 —
+//      the same substitution (a) records, on the one paragraph that says what a
+//      team phrase opens. --text-faint's own comment reserves it for decoration.
 //
 // Run from repo root: `npm test` (or `node tests/cobi_a11y_baseline.test.js`).
 const fs = require("fs");
@@ -43,6 +51,7 @@ const DASH = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const NAV = fs.readFileSync("nav_groups.js", "utf8");
 const FL = fs.readFileSync("first_light.js", "utf8");
 const A11Y = fs.readFileSync("cobi_a11y.js", "utf8");
+const TPHX = fs.readFileSync("team_phrases.js", "utf8");
 
 // Rule 4: anything asserted about one HTML is asserted about both.
 function both(name, re) { val(name, () => re.test(IDX) && re.test(DASH)); }
@@ -100,6 +109,18 @@ val("first light: the fallback gradient no longer carries the sub-AA stops",
   () => !/linear-gradient\([^)]*#a8842f/i.test(FL) && !/linear-gradient\([^)]*#6e7d52/i.test(FL));
 val("first light: its text is full-opacity white",
   () => /\.cplfl-imgfallback\{[^}]*color:#fff/.test(FL));
+
+// ── (g) the First Light opt-out, on every route ──
+// ⚠️ The floor belongs on the LABEL, not the input. scripts/a11y.js measures the
+// hit area, and a wrapping label REPLACES its control's box — so growing the
+// 15px checkbox would move the number the sweep never reads.
+val("first light: the opt-out label clears the 24px target floor",
+  () => /\.cplfl-optout\{[^}]*min-height:24px/.test(FL));
+
+// ── (h) the team-phrases intro ──
+val("team phrases: the intro is --text-muted, never the decorative --text-faint",
+  () => /\.tphx-intro\{[^}]*color:var\(--text-muted/.test(TPHX) &&
+        !/\.tphx-intro\{[^}]*--text-faint/.test(TPHX));
 
 // ── the sweep's own reach ──
 // a11y.config.js discovers COBI's routes from the running nav. A stale selector

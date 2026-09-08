@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 408,
+   "count": 409,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1810,6 +1810,22 @@
      "title": "A memory table goes stale in its claims, not its links \u2014 lint the structure, read the claims",
      "type": "methodology",
      "updated": "2026-09-05"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-message-must-ride-every-exit.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "verification",
+      "skyview",
+      "pitfall"
+     ],
+     "title": "A message must ride every exit \u2014 a note computed and then dropped is the same as no note",
+     "type": "methodology",
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-26",
@@ -12396,8 +12412,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 217,
+   "count": 218,
    "docs": [
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "n": 244,
+     "path": "docs/session_244_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "nine disagreements that never printed, and 19 COBI tabs still red",
+     "type": null,
+     "updated": "2026-09-08"
+    },
     {
      "created": "2026-09-08",
      "governs": [],
@@ -16099,5 +16128,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 827
+ "total": 829
 }

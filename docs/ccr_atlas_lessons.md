@@ -1404,3 +1404,101 @@ state under test was missing the fix. The suite caught it.
 discipline of Psychology?"* It has one, and the map is right that the payload does
 not. Root cause, counts and the fix in
 [`methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload`](kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md).
+
+## 2026-09-08 · S243 (SkyGate) — a note that never printed, and one CSS line failing 38 tabs
+
+Two defects of the same family: **a value was computed correctly and never
+reached the reader.** One in SkyView's subject table, one in COBI's chrome.
+
+### The disagreement note printed on none of the nine
+
+S242 built the line that fires when the subject map overrules what a subject's
+courses actually say, and recorded four disagreements. Both halves were wrong in
+the same direction.
+
+**It is nine, not four.** Measured against `prototype/ccr_universe.json` — the
+payload the page draws — and `kb/reference/subject_discipline_map.json`, which is
+the file `EDGE_URLS` actually fetches:
+
+| SUBJ4 | the map says | its courses sit under | agreement |
+|---|---|---|---|
+| ATHL | Physical Education | Kinesiology | 1,101 of 1,101 |
+| THTR | Theater Arts | Drama/Theater Arts | 1,093 of 1,109 |
+| ESCI | Earth Science | Environmental Technologies | 465 of 476 |
+| ELEC | Electronics | Electricity | 342 of 353 |
+| MUSC | Music | Commercial Music | 127 of 134 |
+| ETHN | Ethnic Studies | Chicano Studies | 34 of 35 |
+| PHTO | Photography | Multimedia | 3 of 12 |
+| ESLN | English as a Second Language | …Noncredit 53412 | 5 of 5 |
+| ENVS | Environmental Technologies | Biological Sciences | 1 of 1 |
+
+⭐ **AND ZERO OF THE NINE PRINTED.** `standingHtml()` built `via` and appended it
+to ONE of its four exits — the branch for a subject that IS its home's Common
+SUBJ. A subject whose courses sit elsewhere is by construction usually not that,
+so it left by the umbrella exit or the not-its-code exit, and both dropped the
+note; ATHL and THTR returned earlier still, at the no-seed-entry guard, which
+also dropped it. **The lane file's "the row prints both" was false**, and so was
+the code comment beside it. Fixed: the note rides every exit.
+
+⚠️ **The count was wrong in the SAFE direction, which is why it survived.** Four
+does not look like a bug; it looks like a small problem. And the one exit that
+worked is the one anybody checking by hand would land on.
+
+⚠️ **`tests/ccr_subject_standing_note.test.js` has one check per EXIT**, not per
+message, because the wording was never wrong. Reverting the fix fails exactly
+four of nine — the four exits — and leaves the wording checks green.
+[`methodology-a-message-must-ride-every-exit`](kb-notes/methodology-a-message-must-ride-every-exit.md)
+
+### The 93 blanks are not fillable, and the payload says so
+
+Re-measured: 326 → 93 reproduces exactly (177 from the map, 56 from the
+identifier reference). The 93 span **50 subject codes**, and I looked for a
+second independent signal before proposing any value:
+
+- **37 of the 50 have no other identity carrying that prefix at all.** Nothing
+  to corroborate against.
+- **6 more read "unanimous" off a single row.** ⚠️ **A unanimous vote of one is
+  not a vote** — HUMN's one voter is *Music for Video Games and Film* (→ Music)
+  while its three blanks are *Honors Introduction to Popular Culture* and two
+  more popular-culture titles. Taking that reading files three humanities
+  courses under Music.
+- **5 carry real weight** — BSOT (369 identities, 99% Office Technologies),
+  HUMA (112, 96%), GRAF (72), BCST (54), BARB (5) — **7 of the 93 rows**.
+- HOSP is genuinely split four ways across 8 identities; its 5 blanks span
+  hospitality law and baking.
+
+DR-25 names Sam the owner of the map, so those five went on a decision sheet
+rather than into the file: `docs/visuals/2026-09-08-the-subject-discipline-edge-nine-and-five.html`,
+nine numbered calls. ⚠️ **The artifact carries no wake subscription** (the
+service refused one for this session), so a later session must READ the replies
+with the Artifact tool's `read_db` rather than expect to be woken.
+
+### One CSS line was failing every COBI tab
+
+`npm run a11y cobi` was 38/38 routes failing. The single fault common to all of
+them was `input#cplfl-optout` at **182.1 × 19.9** against WCAG 2.2 SC 2.5.8's
+24px floor — the First Light opt-out checkbox, and `first_light.js` paints on
+every tab. ⚠️ **The floor belongs on the LABEL, not the input**: the engine
+measures the hit area, and a wrapping label replaces its control's box, so
+growing the 15px checkbox would have moved a number nothing reads.
+
+With that and `p.tphx-intro` (3.24:1 on `--text-faint`, the decorative token,
+on the one paragraph that says what a team phrase opens):
+
+**Measured back-to-back, same machine: 38 of 38 routes failing → 19.** Two
+declarations, nineteen tabs.
+
+⚠️ **The remaining 19 are a real backlog, not a residue** — 71 distinct failing
+selectors, 5,332 sub-24px target instances and 22 keyboard-unreachable scrollers
+across the sweep. `our-process` is six faults from two tokens
+(`--op-ink-faint` #6C8188 at 3.49:1, `--op-amber` #B9772A at 3.13:1 — both
+reproduce exactly in `prototype/check_contrast.py`); `pipeline` is ten. Sized,
+not fixed.
+
+⚠️ **AND I CONTAMINATED MY OWN BEFORE/AFTER ONCE.** The first "after" sweep still
+showed the fault at 390px, and the theory-first reading was a narrow-width CSS
+override. There was none: my revert-verification `sed` had run *while the
+background sweep was in flight*, so the 390px pass read the temporarily-reverted
+file. A direct Playwright probe showed 24px at both widths in one command. Same
+shape as S242's revert harness overwriting its own backup — **a background
+measurement and a foreground edit of the same file cannot both be trusted.**

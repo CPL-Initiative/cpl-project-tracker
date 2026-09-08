@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 841,
-    "bytes": 8972502,
+    "files": 843,
+    "bytes": 8994258,
     "over_budget": 4,
-    "handoff_max": 243,
+    "handoff_max": 244,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59674,
     "superseded_files": 0,
@@ -26,45 +26,45 @@
       },
       "other": {
         "files": 109,
-        "bytes": 2788580,
+        "bytes": 2794017,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 29185,
+        "bytes": 27004,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1977097,
+        "bytes": 1982586,
         "over": 1
       },
       "kb_note": {
-        "files": 410,
-        "bytes": 2114446,
+        "files": 411,
+        "bytes": 2118493,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 159024,
+        "bytes": 160045,
         "over": 1
       },
       "handoff": {
-        "files": 217,
-        "bytes": 1844496,
+        "files": 218,
+        "bytes": 1852439,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 21,
       "oversized_doc": 4,
-      "vault_heavy_path": 48
+      "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2736,
-      "bytes": 1362588325,
-      "heavy_bytes": 625518737,
-      "heavy_share": 0.459,
+      "files": 2739,
+      "bytes": 1350525137,
+      "heavy_bytes": 613377452,
+      "heavy_share": 0.454,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -82,7 +82,6 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
-        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -328,26 +327,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 26220,
+        "bytes": 27241,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 14220,
-        "ratio": 2.19
+        "over_by": 15241,
+        "ratio": 2.27
       },
-      "message": "26,220 B is 2.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "27,241 B is 2.3× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 597375,
+        "bytes": 602604,
         "limit": 150000,
         "lane": "other",
-        "over_by": 447375,
-        "ratio": 3.98
+        "over_by": 452604,
+        "ratio": 4.02
       },
-      "message": "597,375 B is 4.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "602,604 B is 4.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -581,16 +580,6 @@
         "kind": "file"
       },
       "message": "14,342,484 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/ccr_atlas_v1.built.html",
-      "detail": {
-        "bytes": 12141285,
-        "kind": "file"
-      },
-      "message": "12,141,285 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

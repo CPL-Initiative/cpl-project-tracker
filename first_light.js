@@ -1056,7 +1056,11 @@
       "font-weight:600;background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
       ".cplfl-btn:hover{background:#003B8E}" +
       ".cplfl-btn.cplfl-ghost{background:transparent;color:var(--accent-link,#0047AB);border:1.5px solid var(--accent-link,#0047AB)}" +
-      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#5C5C55);display:flex;align-items:center;gap:.4rem}" +
+      // min-height 24px is WCAG 2.2 SC 2.5.8: the checkbox is 15px and its LABEL
+      // wraps it, so the label box IS the hit area — it measured 182.1x19.9 and
+      // failed the 24px floor on every COBI route, first_light.js being loaded on
+      // all of them. Same fix and same reason as .cobi-ident-btn.
+      ".cplfl-optout{font-size:.78rem;color:var(--text-muted,#5C5C55);display:flex;align-items:center;gap:.4rem;min-height:24px}" +
       ".cplfl-optout input{width:15px;height:15px}" +
       ".cplfl-lic{font-size:.73rem;color:var(--text-muted,#5C5C55);border-top:1px solid var(--border,rgba(28,28,26,.14));padding-top:.6rem}" +
       ".cplfl-chip{display:inline-flex;align-items:center;gap:.45rem;font-size:.78rem;font-weight:600;cursor:pointer;" +
