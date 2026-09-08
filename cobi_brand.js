@@ -314,19 +314,22 @@
    * Users (not MAP College Users)").
    *
    * ⚠️ THE GATE IS IN RLS, NOT HERE. `cobi_live_session` reads under
-   * `is_allowed_reviewer() OR team_pass_ok()` — the same policy that guards the
-   * MAP Users roster's staff PII — so anon gets ZERO rows and the banner cannot
-   * render for a college user or the public even if this code were wrong.
-   * Verified against the live table as anon: 0 rows. What follows only decides
-   * whether the reader's own credentials travel with the read.
+   * `is_map_team()` — membership of `team_members` (org='MAP'), the roster on
+   * the TEAM & RACI tab. Not map_college_users, which is the College Users &
+   * Roles roster and a different 2,801 people. So anon gets ZERO rows and the
+   * banner cannot render for a college user or the public even if this code
+   * were wrong. Verified against the live table as anon: 0 rows. What follows
+   * only decides whether the reader's own credentials travel with the read.
    *
-   * The same session as the MAP Users and Team & RACI tabs: a magic-link
-   * reviewer token in `cpl_sb`, or the shared team phrase in `cpl_team_pass`.
-   * ⚠️ PostgREST rejects an empty or garbled Bearer with 401, so with no
-   * reviewer token the anon key rides in its place and the phrase header is
-   * what unlocks the row. */
+   * ⚠️ A SHARED PHRASE IS NOT AN AUDIENCE, so it does not open this row. The
+   * team phrase in `cpl_team_pass` carries no identity — it cannot tell a team
+   * member from a college user who was handed it — and Sam's ask was about
+   * PEOPLE. So the only key here is the reader's OWN magic-link token from
+   * `cpl_sb`, whose email the policy matches against the roster. Without one
+   * the row is unreadable, and asking anyway would be a guaranteed empty
+   * request on every page load: noise for anyone reading a network panel. */
   function liveAuthHeaders() {
-    var tok = null, pass = null;
+    var tok = null;
     try {
       var sess = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
       if (sess && typeof sess.access_token === "string" &&
@@ -334,14 +337,8 @@
         tok = sess.access_token;
       }
     } catch (e) {}
-    try { pass = localStorage.getItem("cpl_team_pass") || null; } catch (e) {}
-    // Nobody signed in and no phrase: do not even ask. The row is unreadable,
-    // and a guaranteed empty read on every page load is noise in the network
-    // panel of anyone debugging something else.
-    if (!tok && !pass) return null;
-    var h = { apikey: LIVE_ANON, Authorization: "Bearer " + (tok || LIVE_ANON) };
-    if (pass) h["x-team-pass"] = pass;
-    return h;
+    if (!tok) return null;
+    return { apikey: LIVE_ANON, Authorization: "Bearer " + tok };
   }
 
   function liveBannerRender(row) {

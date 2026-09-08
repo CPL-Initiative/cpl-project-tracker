@@ -96,28 +96,34 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
 
   // ── ⭐ THE TEAM GATE (Sam, 2026-09-08) ────────────────────────────────────
   // "limit the folks who can use the banner link to users on the MAP Team
-  // Users (not MAP College Users)". The real gate is RLS —
-  // is_allowed_reviewer() OR team_pass_ok(), the same policy as the MAP Users
-  // roster, verified as anon against the live table at 0 rows. These check the
-  // client half: a reader with no reviewer token and no team phrase must not
-  // even ask, and one who has either must send it.
+  // Users (not MAP College Users)". The MAP team roster is `team_members`
+  // (org='MAP'), the one on the TEAM & RACI tab — 42 people. It is NOT
+  // map_college_users, which is College Users & Roles and a different 2,801.
+  //
+  // The real gate is RLS: `is_map_team()` on both read and write, verified as
+  // anon against the live table at 0 rows. These check the client half.
+  //
+  // ⚠️ A SHARED PHRASE IS NOT AN AUDIENCE. `cpl_team_pass` carries no identity,
+  // so it cannot distinguish a team member from a college user who was handed
+  // it. A phrase alone must not even attempt the read.
   {
     const d2 = build();
     const w2 = d2.window;
-    check("⭐ with no reviewer token and no team phrase, it does not read at all",
+    check("⭐ with no token, it does not read at all",
       w2.COBI_BRAND.liveAuthHeaders() === null);
 
     try { w2.localStorage.setItem("cpl_team_pass", "a-phrase"); } catch (e) {}
-    const hp = w2.COBI_BRAND.liveAuthHeaders();
-    check("a team-phrase holder sends the phrase header",
-      !!hp && hp["x-team-pass"] === "a-phrase", JSON.stringify(hp));
-    check("...and still sends the anon key as the apikey", !!hp && !!hp.apikey);
+    check("⭐ a shared team phrase alone does NOT open the banner",
+      w2.COBI_BRAND.liveAuthHeaders() === null,
+      JSON.stringify(w2.COBI_BRAND.liveAuthHeaders()));
+    check("and the phrase is never sent as a header",
+      !/x-team-pass/.test(SRC));
     try { w2.localStorage.removeItem("cpl_team_pass"); } catch (e) {}
 
     const jwt = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc";
     try { w2.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: jwt })); } catch (e) {}
     const hr = w2.COBI_BRAND.liveAuthHeaders();
-    check("a signed-in reviewer sends their own bearer token",
+    check("a signed-in reader sends their OWN bearer token — the email the policy matches",
       !!hr && hr.Authorization === "Bearer " + jwt, JSON.stringify(hr));
 
     try { w2.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "not-a-jwt" })); } catch (e) {}
