@@ -157,6 +157,13 @@ jobs:
             "_site/kb/row_audit/latest.json"
             "_site/kb/reference/cid_descriptors.json"
             "_site/kb/reference/ccn_courses.json"
+            # SkyView reads both of these live from prototype/skyview.html, by a
+            # RELATIVE ../kb/ href. Neither is fatal to the page — the code fails
+            # soft — which is exactly why they belong here: a prune that dropped
+            # one would leave the subject table quietly answering from a vote
+            # again, and the Common SUBJ column blank, with nothing in the log.
+            "_site/kb/discipline_canonical_subj4.json"
+            "_site/kb/reference/subject_discipline_map.json"
             "_site/credential_reference_data.js"
             "_site/kb/exhibit_audit/latest.json"
             "_site/kb/unified_titles.json"

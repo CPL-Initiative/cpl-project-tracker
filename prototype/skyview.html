@@ -3586,7 +3586,14 @@ function unitsShort(u){
   var n=Math.round(u*10)/10;
   return String(n)+"u";
 }
+var edgeLoading=false;
 function loadSubjectEdge(){
+  /* ⚠️ ONE LOAD, NOT ONE PER CALLER. Two views ask for the edge (the map and
+   * the workspace) and neither knows about the other, so without this flag the
+   * pair of URLs is walked twice — four fetches for one 12 KB file, and four
+   * lines in a network panel someone is trying to read. */
+  if(edgeLoading || subjEdge) return;
+  edgeLoading=true;
   var urls=EDGE_URLS.slice();
   (function next(){
     var url=urls.shift(); if(!url) return;
@@ -3597,11 +3604,11 @@ function loadSubjectEdge(){
         Object.keys(raw).forEach(function(k){
           if(typeof raw[k]==="string") out[String(k).toUpperCase()]=raw[k];
         });
-        subjEdge=out;
+        subjEdge=out; edgeLoading=false;
         subjIdx=null;                 // the homes were voted; re-derive them
         if(wsPaint) wsPaint();
      })
-     .catch(function(){ next(); });
+     .catch(function(){ if(!urls.length) edgeLoading=false; next(); });
   })();
 }
 function loadAuthority(){

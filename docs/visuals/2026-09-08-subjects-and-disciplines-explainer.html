@@ -1,0 +1,297 @@
+<title>Subjects and Disciplines</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+  /* First Light v1.6 tokens — values from prototype/first_light_theme_v1.html.
+     Deliberately single-theme: First Light is a light identity with no dark
+     page palette, so every surface and color is painted explicitly. The sheet
+     is about a dark canvas; the page around it stays light, as the product does. */
+  :root {
+    --paper: #F4F2ED;
+    --text-strong: #1C1C1A;
+    --text-body: #3A3A36;
+    --text-muted: #5C5C55;
+    --surface-opaque: #FFFFFF;
+    --surface-subtle: #F7F5F1;
+    --border: rgba(28,28,26,.14);
+    --border-strong: rgba(28,28,26,.30);
+    --crimson: #920000;
+    --cobalt: #0047AB;
+    --seal-blue: #002F6D;
+    --hunter: #2C601A;
+    --mustard-text: #8B6800;
+    --night: #15171A;
+    --night-ink: #ECE9E2;
+    --day: #A8C3E8;
+    --focus-ring: var(--cobalt);
+    --radius: 14px;
+  }
+  html { color-scheme: light; }
+  body {
+    background: var(--paper);
+    color: var(--text-body);
+    font-family: 'Source Sans 3', Arial, sans-serif;
+    font-size: 16px; line-height: 1.55;
+    margin: 0; padding: 0 16px 64px;
+  }
+  .wrap { max-width: 780px; margin: 0 auto; }
+  a { color: var(--cobalt); }
+  :focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 2px; border-radius: 4px; }
+  .skip { position: absolute; left: -9999px; top: 0; background: var(--surface-opaque); color: var(--cobalt); padding: 8px 14px; z-index: 10; }
+  .skip:focus { left: 8px; }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+  h1, h2 { font-family: 'Playfair Display', Georgia, serif; color: var(--text-strong); text-wrap: balance; }
+  h1 { font-size: clamp(1.7rem, 5vw, 2.4rem); line-height: 1.15; margin: 40px 0 6px; }
+  h2 { font-size: 1.25rem; margin: 40px 0 4px; }
+  h3 { font-family: 'Source Sans 3', Arial, sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-strong); margin: 0; }
+  .kicker { text-transform: uppercase; letter-spacing: .09em; font-size: .78rem; font-weight: 700; color: var(--text-muted); margin-top: 34px; }
+  .lede { font-size: 1.05rem; }
+  .subhead { color: var(--text-muted); margin: 0 0 4px; font-size: .95rem; }
+
+  .howto {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 20px; margin: 22px 0 8px;
+  }
+  .howto p { margin: 6px 0; }
+  .howto code, .assume code {
+    background: var(--surface-subtle); border: 1px solid var(--border);
+    border-radius: 5px; padding: 1px 6px; font-size: .92em;
+  }
+
+  .tally { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 22px; padding: 0; list-style: none; }
+  .tally li {
+    background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 14px; font-size: .9rem; color: var(--text-body);
+  }
+  .tally b { color: var(--text-strong); font-variant-numeric: tabular-nums; }
+
+  /* the ground the calls stand on: engineering, listed so the calls are the only open ground */
+  .assume { border-left: 3px solid var(--seal-blue); padding: 2px 0 2px 18px; margin: 8px 0 34px; }
+  .assume h2 { font-size: 1.05rem; margin: 0 0 6px; }
+  .assume p { margin: 0 0 6px; }
+  .assume ul { margin: 6px 0 0; padding-left: 20px; }
+  .assume li { margin: 4px 0; }
+
+  .card {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px 16px; margin: 14px 0;
+  }
+  .card header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 2px; }
+  .num {
+    font-family: 'Playfair Display', Georgia, serif; font-weight: 700;
+    font-size: 1.35rem; color: var(--text-strong); font-variant-numeric: tabular-nums; min-width: 1.4em;
+  }
+  .chip {
+    margin-left: auto; font-size: .8rem; font-weight: 700; letter-spacing: .04em;
+    border: 1.5px solid; border-radius: 999px; padding: 3px 12px; white-space: nowrap;
+  }
+  .chip.build   { color: var(--cobalt);       border-color: var(--cobalt);       background: var(--surface-opaque); }
+  .chip.ask     { color: var(--mustard-text); border-color: var(--mustard-text); background: var(--surface-opaque); }
+  .card dl { margin: 8px 0 0; }
+  .card dt {
+    text-transform: uppercase; letter-spacing: .08em; font-size: .72rem; font-weight: 700;
+    color: var(--text-muted); margin-top: 12px;
+  }
+  .card dd { margin: 2px 0 0; }
+  .card dd.ask { font-weight: 600; color: var(--text-strong); }
+  .card dd p { margin: 6px 0 0; }
+  .words { margin: 4px 0 0; padding: 8px 14px; border-left: 3px solid var(--border-strong); color: var(--text-body); font-style: italic; }
+  .words span { font-style: normal; color: var(--text-muted); font-size: .88rem; }
+
+  .tw { overflow-x: auto; margin-top: 6px; }
+  table { border-collapse: collapse; font-size: .9rem; min-width: 100%; }
+  th, td { text-align: left; padding: 5px 14px 5px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .07em; color: var(--text-muted); font-weight: 700; }
+  tbody th[scope="row"] { font-size: .9rem; text-transform: none; letter-spacing: 0; color: var(--text-body); font-weight: 600; }
+  td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; padding-right: 18px; white-space: nowrap; }
+  td.low { color: var(--crimson); font-weight: 700; }
+  .cap { color: var(--text-muted); font-size: .88rem; margin: 6px 0 0; }
+  /* the two skies, shown as what they are rather than described */
+  .swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-right: 6px; border: 1px solid var(--border-strong); box-sizing: border-box; }
+  .swatch.night { background: var(--night); }
+  .swatch.day { background: var(--day); }
+  .fate td:first-child { font-weight: 600; color: var(--text-strong); width: 38%; }
+  .fate td:last-child em { font-style: normal; font-weight: 700; }
+  .quiet { color: var(--text-muted); font-size: .92rem; }
+  @media (max-width: 560px) {
+    .card header { gap: 8px; }
+    .chip { margin-left: 0; }
+    .fate td:first-child { width: auto; }
+  }
+/* replies:css:start */
+  /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
+  .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
+  .reply-row { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .reply-lbl { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; font-weight: 700;
+    color: var(--text-muted); margin-right: 4px; }
+  .reply-chip { font: inherit; font-size: .86rem; font-weight: 600; min-height: 30px; padding: 3px 12px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); cursor: pointer; }
+  .reply-chip:hover { background: var(--surface-subtle); }
+  /* ⚠️ --seal-blue is a First Light token the HOST SHEET may not define — this
+     block has to stand on its own. Without the fallback the declaration is
+     invalid at computed-value time, background falls back to transparent, and
+     `color:#fff` paints white on the card's white: 1.00:1, so the SELECTED
+     chip is invisible and the reader cannot see which verdict they picked.
+     Measured 2026-09-06 on the seven-open-calls sheet. #002F6D on white is
+     12.90:1. */
+  .reply-chip[aria-pressed="true"] { background: var(--seal-blue, #002F6D); border-color: var(--seal-blue, #002F6D); color: #fff; }
+  .reply-chip.reply-fu { margin-left: auto; }
+  .reply-notelbl { display: block; font-size: .78rem; color: var(--text-muted); margin: 8px 0 3px; }
+  .reply-note { width: 100%; box-sizing: border-box; font: inherit; font-size: .92rem; padding: 7px 9px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque);
+    color: var(--text-body); resize: vertical; min-height: 34px; }
+  .reply-state { margin: 4px 0 0; font-size: .76rem; color: var(--text-muted); min-height: 1em; }
+  .reply-compact { margin-top: 8px; padding-top: 8px; }
+  .glist li .reply { margin: 6px 0 4px; padding-top: 6px; border-top: 1px dotted var(--border); }
+  .glist li .reply-chip { font-size: .8rem; min-height: 26px; padding: 2px 9px; }
+  .glist li .reply-note { font-size: .86rem; min-height: 30px; }
+  .glist li .reply-lbl { font-size: .66rem; }
+  .reply-compact .reply-notelbl { position: absolute; left: -9999px; }
+  .reply-compact .reply-note { margin-top: 6px; }
+  ol.done li { position: relative; }
+  .reply-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 5; background: var(--surface-opaque);
+    border-top: 1px solid var(--border-strong); padding: 8px 16px; display: flex; flex-wrap: wrap;
+    gap: 6px 14px; align-items: center; font-size: .9rem; box-shadow: 0 -6px 18px rgba(28,28,26,.08); }
+  .reply-count { font-weight: 700; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+  .reply-where { color: var(--text-muted); font-size: .82rem; flex: 1 1 240px; }
+  .reply-show { margin: 0; flex: 1 1 100%; }
+  .reply-show summary { font-size: .82rem; padding: 2px 0; }
+  .reply-line { width: 100%; box-sizing: border-box; font: inherit; font-size: .86rem; padding: 6px 8px;
+    border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-subtle); color: var(--text-body); }
+  body { padding-bottom: 120px; }
+  @media (max-width: 560px) { .reply-chip { padding: 3px 9px; } .reply-chip.reply-fu { margin-left: 0; } }
+/* replies:css:end */</style><style>
+  .diagram {
+    background: var(--surface-opaque); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px; margin: 18px 0;
+    overflow-x: auto;
+  }
+  .diagram pre {
+    margin: 0; font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+    font-size: .84rem; line-height: 1.55; color: var(--text-strong); white-space: pre;
+  }
+  .diagram .lbl { color: var(--text-muted); }
+  .rule-row { display: grid; gap: 2px 18px; margin: 14px 0; }
+  @media (min-width: 620px) { .rule-row { grid-template-columns: 15ch 1fr; } }
+  .rule-row dt { font-weight: 700; color: var(--text-strong); }
+  .rule-row dd { margin: 0 0 10px; }
+  .miss { border-left: 3px solid var(--crimson); padding-left: 14px; margin: 16px 0; }
+  .miss h3 { color: var(--crimson); }
+</style>
+<a class="skip" href="#main">Skip to the explainer</a>
+<div class="wrap">
+<main id="main">
+
+<p class="kicker">CPL Initiative &middot; 8 September 2026</p>
+<h1>Subjects and Disciplines</h1>
+<p class="lede">A course on the Common Course Reference carries a subject and a discipline. They are
+different things, they come from different places, and one is derived from the other. This page says
+which is which.</p>
+
+<h2>The two words</h2>
+<dl class="rule-row">
+<dt>Subject</dt>
+<dd>A four-letter code. <code>PSYC</code>, <code>WELD</code>, <code>ENGL</code>. It is the first
+part of a course identity: <code>PSYC C1000</code>. Every identity has one.</dd>
+<dt>Discipline</dt>
+<dd>A faculty area from the state Minimum Qualifications list. Psychology, Welding, English. It
+decides which faculty may teach the course, and it is what SkyView draws an island for.</dd>
+</dl>
+<p>Every subject belongs to one discipline. A discipline can carry several subjects. Foreign
+Languages carries one per language. So the relationship runs many subjects to one discipline, never
+the other way.</p>
+
+<h2>How a course gets its discipline</h2>
+<p>Read the chain from the course identity down. Each step names the file that answers it.</p>
+
+<div class="diagram" role="region" tabindex="0" aria-label="How a course identity resolves to a discipline and a Common SUBJ">
+<pre>
+  PSYC C1000   Introduction to Psychology
+  ----+-----
+      |
+      |  the first token IS the subject
+      v
+  PSYC                                        <span class="lbl">the subject</span>
+      |
+      |  kb/reference/subject_discipline_map.json
+      |  314 entries, one discipline each
+      v
+  Psychology                                  <span class="lbl">the discipline</span>
+      |
+      |  kb/discipline_canonical_subj4.json
+      |  147 disciplines, one canonical code each
+      v
+  PSYC                                        <span class="lbl">the Common SUBJ</span>
+</pre>
+</div>
+
+<p>The last step looks circular and is not. The first arrow answers <em>which discipline does this
+subject belong to</em>. The last answers <em>of the several subjects this discipline carries, which
+one is canonical</em>. Two questions. Two files. For Psychology the answer is the same code both
+times, which is why the chain above looks like it doubles back.</p>
+<p>Foreign Languages shows the two questions coming apart. The subject map files nine codes under
+it, among them <code>SPAN</code>, <code>FREN</code>, <code>GERM</code> and <code>JAPN</code>. Its
+canonical code is <code>FLNG</code>, which is none of them. So a Spanish course has subject
+<code>SPAN</code>, discipline Foreign Languages, and Common SUBJ <code>FLNG</code>: three values,
+all correct, none of them redundant.</p>
+
+<h2>Local codes are not the subject</h2>
+<p>Colleges type their own subject codes into COCI. Those codes are on the row, and they are not the
+SUBJ4. One identity can carry five of them.</p>
+
+<div class="diagram" role="region" tabindex="0" aria-label="An identity's canonical subject against the local college codes">
+<pre>
+  ARTF M1003
+  ----
+   |                        local codes the colleges typed:
+   |                          AHIS   ART   ARTF   ARTH   ARTHIST
+   v
+  ARTF  -->  Art            <span class="lbl">the subject is the id prefix, and it is the one that resolves</span>
+</pre>
+</div>
+
+<p>The hover on the Common Course Reference calls these <em>Local SUBJ code(s)</em>, which is what
+they are. Reading them instead of the id prefix files a course under the wrong discipline, or under
+none.</p>
+
+<h2>What happens when a step is missing</h2>
+<div class="miss">
+<h3>No discipline means no Common SUBJ</h3>
+<p>The Common SUBJ is looked up by discipline. A course with no discipline has nothing to look it up
+by, so that column stays blank too. One missing value shows up as two.</p>
+</div>
+<p>Until 8 September 2026 this happened to most courses that carry an official identifier. The five
+passes that infer a discipline all read one file, and that file holds M-IDs only, so a C-ID or a CCN
+was never seen by any of them.</p>
+
+<div class="tw" role="region" tabindex="0" aria-label="Courses with no discipline, by identifier system, before 8 September 2026">
+<table>
+<thead><tr><th scope="col">Identifier</th><th scope="col">Who mints it</th><th scope="col" class="n">Had no discipline</th></tr></thead>
+<tbody>
+<tr><th scope="row">M-ID</th><td>We do</td><td class="n">0.4%</td></tr>
+<tr><th scope="row">C-ID</th><td>ASCCC</td><td class="n">47.5%</td></tr>
+<tr><th scope="row">CCN</th><td>AB 1111</td><td class="n">49.1%</td></tr>
+</tbody></table></div>
+<p class="cap">Nothing about a C-ID makes a course harder to classify. The gap tracked where the row
+came from, not what the row was.</p>
+
+<h2>What changed</h2>
+<p>The generator now fills a blank discipline from the subject map, and from the identifier
+reference where the map has no entry. It fills blanks only, so a curated discipline still wins, and
+every fill records which file answered. Blank identities went from 326 to 93.</p>
+<p>SkyView's subject table used to work out a subject's discipline by taking the most common
+discipline among its own courses. When those were blank the answer was blank, and the table said
+<em>no discipline yet</em> as though that were a fact about the subject. It now reads the subject
+map first and says on each row whether the map or the courses answered.</p>
+
+<h2>Who decides</h2>
+<p>DR-25 in the governance register, owner Sam. It covers which file is authoritative for the
+subject to discipline edge, who may change a mapping, and what happens to the rows downstream when
+one changes. Before it existed, four files wrote this relationship in two directions and none of
+them had an owner.</p>
+<p class="cap">Measured 8 September 2026 from the live payloads, kb/reference/subject_discipline_map.json,
+kb/discipline_canonical_subj4.json and kb/governance_register.json.</p>
+
+</main>
+</div>
