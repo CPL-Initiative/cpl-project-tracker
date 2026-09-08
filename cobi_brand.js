@@ -62,7 +62,14 @@
       "position:relative;z-index:150;",
       "align-items:center;column-gap:1.1rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
       ".cobi-brand{grid-column:1;justify-self:start;display:flex;align-items:center;gap:.7rem;min-width:0;}",
-      ".cobi-seal{flex:0 0 auto;width:60px;height:60px;object-fit:contain;display:block;}",
+      // The seal is hidden (Sam, 2026-09-08: "hide the CO logo on the COBI
+      // header ... We'll just leave it plain COBI for now"). Hidden here rather
+      // than deleted from the two HTMLs: this file is one static asset that
+      // covers both (Rule 4) and the daily regen cannot undo it, and putting the
+      // mark back is one word. display:none also takes it out of the
+      // accessibility tree, which is right for a mark that names nothing the
+      // <h1> does not already say.
+      ".cobi-seal{display:none;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
       "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
@@ -162,7 +169,24 @@
       "@media (max-width:560px){.header{grid-template-columns:minmax(0,1fr);}",
       ".cobi-brand{grid-column:1;justify-self:stretch;}",
       ".cobi-utility{grid-column:1;justify-self:stretch;justify-content:flex-start;}",
-      ".cobi-seal{width:44px;height:44px;}.header h1{font-size:1.35rem;}}"
+      ".header h1{font-size:1.35rem;}}",
+      // ── the live-session banner (DR-26) ──
+      // A strip above the header, not inside it: the header is a three-column
+      // grid whose tracks are already tight, and a fourth thing in that row is
+      // what put controls on top of each other before.
+      ".cobi-live{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .9rem;",
+      "padding:.5rem 1.5rem;background:var(--seal-blue,#00356B);color:#fff;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.86rem;line-height:1.4;}",
+      ".cobi-live b{font-weight:700;}",
+      ".cobi-live a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;}",
+      ".cobi-live a:hover{text-decoration-thickness:2px;}",
+      ".cobi-live .cobi-live-note{opacity:.88;}",
+      ".cobi-live button{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.45);",
+      "color:#fff;font:inherit;font-size:.8rem;padding:3px 10px;border-radius:4px;cursor:pointer;}",
+      ".cobi-live button:hover{background:rgba(255,255,255,.14);}",
+      ".cobi-live :focus-visible{outline:3px solid #fff;outline-offset:2px;}",
+      "@media (max-width:560px){.cobi-live{padding:.5rem .9rem;}",
+      ".cobi-live button{margin-left:0;}}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -260,6 +284,142 @@
   }
 
   var inited = false;
+  /* ── the live-session banner (DR-26; Sam, 2026-09-08) ───────────────────────
+   * "a banner ... that notes when I am working in a cloud session in CC and
+   * include a link to the session for any team member who might want to hop in
+   * and observe."
+   *
+   * ⚠️ IT ANNOUNCES A SHARED SESSION; IT DOES NOT SHARE ONE. A Claude Code
+   * cloud session is PRIVATE to the account that created it, and sharing is a
+   * per-session toggle in claude.ai. So the banner is driven by a row Sam sets
+   * AFTER he has set that toggle — option A of the two he was offered — and it
+   * can never hand the team a link they cannot open. The table's own checks
+   * refuse an active row with no link, and refuse any link that is not a
+   * claude.ai session.
+   *
+   * ⚠️ AND IT DOES NOT SAY "WATCH". The docs are plain that a recipient sees
+   * the session's state when they OPEN the link and their view does not update
+   * in real time. Promising live observation would be promising something the
+   * product does not do, so the wording says to reload.
+   *
+   * Fails closed at every step: no row, an inactive row, an expired one, or a
+   * fetch that does not answer all render nothing. */
+  var LIVE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/cobi_live_session"
+               + "?id=eq.1&select=active,session_url,note,expires_at";
+  var LIVE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var LIVE_DISMISS = "cobi_live_dismissed";
+
+  /* ⭐ THE BANNER IS FOR THE TEAM, NOT FOR COLLEGES (Sam, 2026-09-08:
+   * "limit the folks who can use the banner link to users on the MAP Team
+   * Users (not MAP College Users)").
+   *
+   * ⚠️ THE GATE IS IN RLS, NOT HERE. `cobi_live_session` reads under
+   * `is_map_team() OR team_pass_ok()`: a signed-in member of `team_members`
+   * (org='MAP'), the roster on the TEAM & RACI tab — not map_college_users,
+   * which is College Users & Roles and a different 2,801 people — or a holder
+   * of the shared team phrase. So a plain visitor gets ZERO rows and the banner
+   * cannot render for the public even if this code were wrong. Verified against
+   * the live table as anon with no phrase: 0 rows. What follows only decides
+   * whether the reader's own credentials travel with the read.
+   *
+   * TWO WAYS IN, AND NEITHER IS A SIGN-IN EACH VISIT (Sam, 2026-09-08: "they
+   * wouldn't need to be signed in to see the header, just ensure that they are
+   * on the team table"):
+   *   * the reader's own magic-link token in `cpl_sb` — exact, matched by
+   *     email against the Team & RACI roster;
+   *   * the shared team phrase in `cpl_team_pass` — entered ONCE and kept in
+   *     the browser, which is COBI's existing team credential and the reason a
+   *     team member does not have to log in every time.
+   *
+   * ⚠️ THE PHRASE IS A SHARED SECRET, NOT AN IDENTITY. It admits whoever holds
+   * it: wider than the 42-row roster, narrower than the public. That is the
+   * trade low friction buys, and it is why WRITING the banner does not accept
+   * it — a phrase holder may see the banner and must never be able to point it
+   * somewhere.
+   *
+   * ⚠️ PostgREST rejects an empty or garbled Bearer with 401, so with no
+   * reviewer token the anon key rides in its place and the phrase header is
+   * what opens the row. With neither we do not ask at all: the row is
+   * unreadable, and a guaranteed empty request on every page load is noise for
+   * anyone reading a network panel. */
+  function liveAuthHeaders() {
+    var tok = null, pass = null;
+    try {
+      var sess = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (sess && typeof sess.access_token === "string" &&
+          sess.access_token.split(".").length === 3 && sess.access_token.length > 40) {
+        tok = sess.access_token;
+      }
+    } catch (e) {}
+    try { pass = localStorage.getItem("cpl_team_pass") || null; } catch (e) {}
+    if (!tok && !pass) return null;
+    var h = { apikey: LIVE_ANON, Authorization: "Bearer " + (tok || LIVE_ANON) };
+    if (pass) h["x-team-pass"] = pass;
+    return h;
+  }
+
+  function liveBannerRender(row) {
+    if (!row || !row.active || !row.session_url) return null;
+    if (row.expires_at && new Date(row.expires_at).getTime() <= Date.now()) return null;
+    // A viewer who closed THIS banner does not see it again; a new link is a
+    // new banner. Keyed on the url so dismissing one never hides the next.
+    try {
+      if (window.localStorage &&
+          localStorage.getItem(LIVE_DISMISS) === row.session_url) return null;
+    } catch (e) { /* private window: show it */ }
+
+    var header = document.querySelector(".header");
+    if (!header || document.getElementById("cobi-live")) return null;
+
+    var bar = document.createElement("div");
+    bar.id = "cobi-live";
+    bar.className = "cobi-live";
+    bar.setAttribute("role", "status");
+
+    var lead = document.createElement("b");
+    lead.textContent = "Working in Claude Code right now.";
+    bar.appendChild(lead);
+
+    var a = document.createElement("a");
+    a.href = row.session_url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Open the session";
+    bar.appendChild(a);
+
+    var note = document.createElement("span");
+    note.className = "cobi-live-note";
+    note.textContent = row.note
+      ? row.note
+      : "You will see where it has got to when you open it. Reload for anything newer.";
+    bar.appendChild(note);
+
+    var x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "Hide";
+    x.setAttribute("aria-label", "Hide this notice");
+    x.onclick = function () {
+      try { localStorage.setItem(LIVE_DISMISS, row.session_url); } catch (e) {}
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    };
+    bar.appendChild(x);
+
+    header.parentNode.insertBefore(bar, header);
+    return bar;
+  }
+
+  function liveBanner() {
+    if (typeof fetch !== "function") return;
+    var headers = liveAuthHeaders();
+    if (!headers) return;              // not team: no read, no banner
+    var p;
+    try { p = fetch(LIVE_URL, { headers: headers }); }
+    catch (e) { return; }
+    p.then(function (r) { return r.ok ? r.json() : []; })
+     .then(function (rows) { liveBannerRender(rows && rows[0]); })
+     .catch(function () { /* no banner is the right answer to a failed read */ });
+  }
+
   function init() {
     if (inited) return;
     inited = true;
@@ -269,9 +429,12 @@
     relocateRefresh();
     wireAbout();
     wirePainting();
+    liveBanner();
   }
 
-  window.COBI_BRAND = { init: init, dropWordmarkTags: dropWordmarkTags,
+  window.COBI_BRAND = { init: init, liveBanner: liveBanner,
+                        liveAuthHeaders: liveAuthHeaders,
+                        liveBannerRender: liveBannerRender, dropWordmarkTags: dropWordmarkTags,
                         addAlphaNotice: addAlphaNotice,
                         relocateRefresh: relocateRefresh };
 

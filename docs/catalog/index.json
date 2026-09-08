@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 405,
+   "count": 407,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2892,6 +2892,22 @@
      "updated": "2026-08-23"
     },
     {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ccr",
+      "discipline",
+      "data-quality",
+      "skyview"
+     ],
+     "title": "A value can exist in the repo and never reach the payload \u2014 two minting paths, one inference pipeline",
+     "type": "methodology",
+     "updated": "2026-09-08"
+    },
+    {
      "created": "2026-08-25",
      "governs": [
       "prototype/ccr_universe.js",
@@ -4070,6 +4086,21 @@
      "title": "Fix the root, not a counter-rule: decision-tracing a stack of interacting rules",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "performance",
+      "measurement",
+      "skyview"
+     ],
+     "title": "Fixing a cost can move it rather than remove it \u2014 and only a second profile says which",
+     "type": "methodology",
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-28",
@@ -12350,8 +12381,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 216,
+   "count": 217,
    "docs": [
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "n": 243,
+     "path": "docs/session_243_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the frame budget is bought; the subject\u2013discipline edge has no owner",
+     "type": null,
+     "updated": "2026-09-08"
+    },
     {
      "created": "2026-09-08",
      "governs": [],
@@ -16040,5 +16084,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 823
+ "total": 826
 }

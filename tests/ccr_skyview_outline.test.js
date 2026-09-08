@@ -310,8 +310,13 @@ const css = tpl;                                  // the stylesheet, as authored
         kAfter === kBefore, `${kBefore} -> ${kAfter}`);
   /* ⚠️ Scaling the font without the collision box would let the placer accept
    * labels that then overlap — worse than a dropped label. */
+  /* ⚠️ REWRITTEN, NOT RELAXED (S242). The island size now goes through
+   * labelSize() — whole pixels with a dead band, because a font size that
+   * drifts is rebuilt every frame and shimmers. `tx()` is still inside it, and
+   * that is what this check is about; the wrapper is why the old literal no
+   * longer matches. Region labels read tx() too, via Math.round(15*tx()). */
   check("(11) the collision boxes scale with the text, not just the font",
-        /var size=Math\.max\(11,Math\.min\(19,q\.r\*0\.17\)\)\*tx\(\)/.test(ujs) &&
+        /var size=labelSize\(q, Math\.max\(11,Math\.min\(19,q\.r\*0\.17\)\)\*tx\(\)\)/.test(ujs) &&
         /var mem=q\.band==="member", lh=Math\.round\(\(mem\?11:12\)\*tx\(\)\)/.test(ujs),
         "both the island label size and the course line-height must read tx()");
   check("(11) three bounded steps, not a slider the label placer cannot honor",

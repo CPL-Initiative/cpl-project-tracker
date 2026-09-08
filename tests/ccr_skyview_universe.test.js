@@ -559,7 +559,14 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // ── (G) descriptions: the bucket is reached when the local dir 404s ────────
   await tick(); await tick(); await tick();
   check("(G) ⭐ the deployed page reaches the shard in ONE fetch — no guaranteed 404 first",
-    (() => { const sh = fetches.filter((u) => !/discipline_canonical_subj4\.json$/.test(u));   // the seed read is a separate fetch
+    (() => { // The two REFERENCE reads are separate fetches, not shard reads: the
+             // canonical seed (Common SUBJ per discipline) and the subject-discipline
+             // edge (DR-25). Both are one small file for the whole page, and both are
+             // ordered so the deployed host's base comes first. This guard is about
+             // the PER-DISCIPLINE shard path, which is where a wasted 404 multiplies.
+             const sh = fetches.filter((u) =>
+               !/discipline_canonical_subj4\.json$/.test(u) &&
+               !/subject_discipline_map\.json$/.test(u));
              return sh.length === 1
                && /supabase\.co\/storage\/v1\/object\/public\/ccr-desc\/welding\.json$/.test(sh[0])
                && !sh.some((u) => /\/ccr_desc\/welding\.json$/.test(u)); })(), fetches.join(" | "));

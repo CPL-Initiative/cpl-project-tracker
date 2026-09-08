@@ -60,6 +60,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
 | `chatbox_exhibits` | `edgefn:cpl-chat` | — |
 | `chatbox_peer_articulations` | none found | scripts: `kb/_sync_peer_articulations.py` |
+| `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
@@ -512,7 +513,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py` | — |
-| `kb/reference/subject_discipline_map.json` | scripts: `kb/_apply_crossdisc_remint.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
+| `kb/reference/subject_discipline_map.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_crossdisc_remint.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py` | scripts: `kb/_seed_subject_discipline_map.py` |
 | `kb/reference/top_categories.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_build_ccr_sky.py`, `kb/_join_cte_from_top.py`, `kb/_seed_canonical_subj4.py` | — |
 | `kb/reference/topcip_2021_crosswalk.xlsx` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/row_audit` | none found | committed by: `overmerge-apply.yml`, `phase-1e-apply.yml` |
@@ -607,6 +608,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `team_phrase.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrase_header.js` | pages: `CPL_Dashboard.html` | — |
 | `team_phrases.js` | pages: `CPL_Dashboard.html` | — |
+| `tests/admin_live_banner_control.test.js` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -614,10 +616,12 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
+| `tests/discipline_edge_fill_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_index_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/doctrine_lookup_test.py` | workflows: `js-tests.yml` | — |
@@ -679,7 +683,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | workflows: `cpl-chat-health.yml` |
+| `claude.ai` | tabs: `admin` · workflows: `cpl-chat-health.yml` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_build_partner_crosswalk.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -822,5 +826,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 74 Supabase tables · 30 RPCs · 5 edge functions · 442 file
-datasets · 138 external services · 323 consumers · 33 workflows · 37 tabs.
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 445 file
+datasets · 138 external services · 324 consumers · 33 workflows · 37 tabs.

@@ -329,16 +329,46 @@ to the end first. ⚠️ The Sky's turn ran at 5 fps before the star pass was
 batched (S239); the served page, not the suite, is where a frame rate exists.
 
 ⚠️ **THE FRAME BUDGET IS PER-POINT JS, NOT THE CANVAS — S239's carry-forward
-named the wrong lever** (S240, profiled with CDP on the served page in software
-rendering: **12 fps at 150° across, 7.5 fps at 240°**). Drawing is nearly free:
-one batched path of 27,000 rects fills in **5.9 ms**, `clearRect` in 0.02, and
-`readPal()`'s style read is 0.03 ms a frame. The cost is the ~50,000-iteration
-per-node loop and the text: **`measureText` 12.3%** of samples (the same label
-strings re-measured every frame), **`emptied()` 6.7%** (fixed in S240 — it
-allocated a throwaway array per point), `save` 7.4%, `cw()`/`ch()` 2.7% (each a
-`clientWidth` read). So an offscreen star layer or a WebGL point pass — the two
-levers S239 proposed — would buy the 5.9 ms and leave the rest. ⚠️ Measured
-headless with a GPU absent; the ORDER should hold, the absolute numbers will not.
+named the wrong lever.** Drawing is nearly free: one batched path of 27,000 rects
+fills in **5.9 ms**, `clearRect` in 0.02, `readPal()` 0.03 ms a frame. So an
+offscreen star layer or a WebGL point pass — the two levers S239 proposed — buy
+almost nothing. **What has worked, every time, is doing less per point.**
+
+⭐ **A MEMO KEYED ON A VALUE THAT DRIFTS IS NOT A MEMO** (S242). `textW` cached on
+`ctx.font` + the string, and an island label is sized off its DRAWN radius:
+`18.0263px`, `18.2506px`, `18.1185px`, a new float every frame as the sky turns.
+It never hit once — and each miss handed Chromium a font size it had to build,
+which is the expensive half: **`measureText` 11.2% of the profile against
+`textW`'s own 0.5%**, on fifteen calls a frame. `textW` now measures at `TW_REF`
+and scales (one font for the life of the page; ~0.14px of hinting error into a
+collision box already padded 3px a side, and `placeLabels` draws centered so the
+width positions nothing).
+
+⚠️ **AND THAT FIX MOVED THE BILL RATHER THAN REMOVING IT.** Calls fell 15.4 → 0.17
+a frame and **`strokeText` went 0.6% → 9.6%**: a font is built at its first USE,
+so with the measure no longer asking, the stroke inherited the same work. Only
+stopping the drift helped — `labelSize()` rounds the drawn size to whole pixels
+(`txPx()` has done this since it was written: *"a fractional px font measures fine
+and renders soft"*), ⚠️ **with a 0.6px dead band**, because a bare `Math.round` is
+a threshold on a drifting value and 18↔19 every frame is a worse shimmer than the
+one being fixed. [`note`](../../kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md)
+
+⭐ **AN ISLAND ON SCREEN IS NOT AN ISLAND WHOSE POINTS ARE ON SCREEN** (S242).
+S241's angular cull settled which ISLANDS the window shows; within one that
+passes, a discipline wider than the window still spills its courses past every
+edge — **5,755 of 27,931 batched dots a frame, 20.6%, lay wholly outside the
+canvas**. ⚠️ **The test belongs INSIDE the fast branch and nowhere earlier**: only
+there is the node a plain dot of radius `dr` that returns at once, so `dr` is its
+whole extent. A point on the SLOW path throws light up to 22% of the canvas and
+can legitimately light the window from off screen.
+
+**Measured back-to-back on the served page, same machine, same minute: a median
+frame 81 ms → 46 ms, about 12.3 → 21.7 fps.** ⚠️ Measured headless with a GPU
+absent; the ORDER should hold, the absolute numbers will not, and nobody has a
+number from Sam's machine. `tests/ccr_skyview_frame_budget.test.js` guards all
+three. ⚠️ **Its first draft was a decoration** — both fixture islands sat at the
+label-size clamp and all three points near the middle, so it passed with every fix
+reverted.
 
 The round-by-round of every served-page drive (S237–S239) is in the lessons doc, dated.
 
@@ -391,18 +421,26 @@ link, never a github.io URL.
 
 ## NEXT
 
-⓪ **The frame budget, now that the flicker is off it** (S240 fixed the two
-causes; the rate is 7.5–12 fps in headless software rendering and nobody has a
-number from Sam's machine). ⚠️ **The lever is NOT what S239 proposed** — see the
-profile under *Measured in a browser*: the canvas is 5.9 ms of a 133 ms frame,
-so an offscreen star layer or a WebGL point pass buys almost nothing. The cost
-is the per-node loop and `measureText`; the cheap next steps are a text-width
-memo (the same label strings are re-measured every frame) and hoisting the
-`cw()`/`ch()` layout reads out of the loop. ⚠️ Whatever changes, the drop test,
-the keyboard path and `npm run a11y skyview` run again in the same PR.
-① **DR-24's write surface** — the curate phrase and the propose/second gate,
-routed through Governance first (Rule 10 a3). ② The skills layer's fetch problem
-(NEEDS SAM ①). ③ The rest of the queue:
+⓪ **The no-discipline pile is a PLUMBING gap, and 199 rows are recoverable**
+(S242, from Sam's question of 2026-09-08). `PSYC C1000` carries
+`"discipline": "Psychology"` in `kb/reference/coci_courses.json` and `disc:null`
+in the payload. All five inference passes read `kb/coci_minted_courses.json` —
+**19,568 records, every one M-ID** — so no externally-minted identifier has ever
+seen one; `excel_to_dashboard.py` loads the C-ID/CCN reference and reads **only
+`description`** from it. Blank rate **0.4% M-ID against 47.7% official**. Of the
+326: **199 recoverable now**, 15 null in the reference, 112 absent from it. The
+fix is a generator change (Rule 1) and wants its own `discipline_source` so the
+provenance stays visible. ⚠️ Not TOP's job — Rule 7 keeps it a corroborator.
+[`note`](../../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md)
+① **The frame budget, if Sam still sees it step.** S242 took the median frame
+81 → 46 ms; the remaining named JS is the per-node loop (14%) and the island loop
+(10%), which is the irreducible walk. **Fewer points per frame is the lever that
+has worked three times running.** ⚠️ Whatever changes, the drop test, the keyboard
+path and `npm run a11y skyview` run again in the same PR.
+② **DR-24's write surface** — the curate phrase and the propose/second gate,
+routed through Governance first (Rule 10 a3); the register row exists with Sam as
+owner, the phrase's SCOPE is what is open. ③ The skills layer's fetch problem
+(NEEDS SAM ①). ④ The rest of the queue:
 [`skyview_backlog`](../../skyview_backlog.md), including the CPL face's smaller
 asks (the 55 stale exhibits, the funnel sidecar refresh, a credentials column in
 the workspace tables).

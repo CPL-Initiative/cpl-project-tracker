@@ -76,7 +76,18 @@ var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
  * so the map never lags the seed; fail-soft when the file is not reachable. */
 var SEED_URLS = window.CPL_SKYVIEW_SEED_URLS ||
   ["../kb/discipline_canonical_subj4.json", "kb/discipline_canonical_subj4.json"];
+/* ⭐ THE SUBJECT-DISCIPLINE EDGE IS READ, NOT VOTED ON (DR-25; Sam's rulings
+ * of 2026-09-08, sheet items 1 and 3). Item 1: subject → discipline is the
+ * PRIMARY edge and kb/reference/subject_discipline_map.json is its authority.
+ * The CSR above answers the other question — which of a discipline's several
+ * codes is canonical — and is keyed BY DISCIPLINE, which is what made the loop
+ * Sam found: no discipline, so no Common SUBJ, so nothing to look the subject
+ * up by. Read live, fail-soft: with no map the table falls back to the vote it
+ * always used. */
+var EDGE_URLS = window.CPL_SKYVIEW_EDGE_URLS ||
+  ["../kb/reference/subject_discipline_map.json", "kb/reference/subject_discipline_map.json"];
 var authority=null;          // {discipline: {cs, chips:[{system,code}], source, flag}}
+var subjEdge=null;           // {SUBJ4: discipline} — the authority for the edge
 var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
@@ -741,16 +752,42 @@ function readPal(){
  * measures every candidate name on every draw, and the names do not change.
  * Text metrics depend only on the font and the string, so a memo on that pair
  * is exact, not an approximation. The cap keeps a long pan from growing it
- * without bound; clearing wholesale is fine, since a miss costs one measure. */
+ * without bound; clearing wholesale is fine, since a miss costs one measure.
+ *
+ * ⚠️ AND ON THE SPHERE THAT MEMO NEVER HIT ONCE (S242). The key was
+ * `ctx.font` + the string, and an island label's size is `q.r*0.17` — a float
+ * that drifts every frame as the sky turns: `18.0263px`, `18.2506px`,
+ * `18.1185px`. Every draw asked a question it had never asked, so the memo was
+ * a cache that only ever grew, and — the expensive half — every call handed
+ * Chromium a font size it had never built. Measured on the served page:
+ * `measureText` 11.2% of the profile while `textW` itself was 0.5%, on
+ * fifteen calls a frame. Half a millisecond each.
+ *
+ * A memo keyed on a continuously varying value is not a memo. Advance widths
+ * scale with the size, so measure once at TW_REF px and multiply: one font for
+ * the life of the page, and the key is the typeface and the string again.
+ *
+ * ⚠️ Not bit-exact — hinting moves a width by up to 0.14px at these sizes —
+ * and it does not need to be: the width feeds a collision box that already
+ * pads 3px a side, and `placeLabels` draws centered, so the width never
+ * positions anything. ⚠️ Rounding the DRAWN size instead would have been exact
+ * and wrong: it puts a threshold on a value that drifts, and a label flipping
+ * 18→19px between frames is the blink this lane keeps relearning
+ * (`NODE_ZOOM_KEEP`). The drawn size stays continuous. */
 var _twCache=Object.create(null), _twN=0;
+var TW_REF=100, TW_SPLIT=/^(.*?)(\d*\.?\d+)px(.*)$/;
 function textW(t){
-  var k=ctx.font+"\u0000"+t, v=_twCache[k];
+  var f=ctx.font, m=TW_SPLIT.exec(f);
+  if(!m) return ctx.measureText(t).width;          // an unexpected shape: measure it as it stands
+  var k=m[1]+"|"+m[3]+"\u0000"+t, v=_twCache[k];
   if(v===undefined){
-    v=ctx.measureText(t).width;
+    ctx.font=m[1]+TW_REF+"px"+m[3];
+    v=ctx.measureText(t).width/TW_REF;             // width per px of size
+    ctx.font=f;
     if(_twN>20000){ _twCache=Object.create(null); _twN=0; }
     _twCache[k]=v; _twN++;
   }
-  return v;
+  return v*parseFloat(m[2]);
 }
 function labelInk(nd){
   if(!nd || nd.a) return pal.ink;
@@ -941,6 +978,31 @@ function unitsShort(u){
   if(u==null) return "";
   var n=Math.round(u*10)/10;
   return String(n)+"u";
+}
+var edgeLoading=false;
+function loadSubjectEdge(){
+  /* ⚠️ ONE LOAD, NOT ONE PER CALLER. Two views ask for the edge (the map and
+   * the workspace) and neither knows about the other, so without this flag the
+   * pair of URLs is walked twice — four fetches for one 12 KB file, and four
+   * lines in a network panel someone is trying to read. */
+  if(edgeLoading || subjEdge) return;
+  edgeLoading=true;
+  var urls=EDGE_URLS.slice();
+  (function next(){
+    var url=urls.shift(); if(!url) return;
+    var p; try{ p=fetch(url); }catch(e){ p=Promise.reject(e); }
+    p.then(function(r){ if(!r.ok) throw new Error(String(r.status)); return r.json(); })
+     .then(function(doc){
+        var raw=(doc&&(doc.subjects||doc.map))||doc||{}, out={};
+        Object.keys(raw).forEach(function(k){
+          if(typeof raw[k]==="string") out[String(k).toUpperCase()]=raw[k];
+        });
+        subjEdge=out; edgeLoading=false;
+        subjIdx=null;                 // the homes were voted; re-derive them
+        if(wsPaint) wsPaint();
+     })
+     .catch(function(){ if(!urls.length) edgeLoading=false; next(); });
+  })();
 }
 function loadAuthority(){
   var urls=SEED_URLS.slice();
@@ -1590,8 +1652,27 @@ function drawFrame(){
         if(fast && !(lit && nd.ar>0) && !hitSet[nd.i] && nd!==selNode && !(isNC(nd) && dr>1.8) &&
            !(emitsLight(nd) && dr>=2.2 && !dimmed) && !(nd.a && emptied(nd))){
           var ddx=nd.x-ox, ddy=nd.y-oy;
+          var sx=S.px+ddx*S.ex[0]+ddy*S.ey[0], sy=S.py+ddx*S.ex[1]+ddy*S.ey[1];
+          /* ⭐ AN ISLAND ON SCREEN IS NOT AN ISLAND WHOSE POINTS ARE ON SCREEN
+           * (S242). S241's angular cull settled which ISLANDS the window shows;
+           * within one that passes, a discipline wider than the window keeps
+           * spilling its courses past every edge. Measured at the opening
+           * width: 5,755 of 27,931 batched dots a frame — 20.6% — lay wholly
+           * outside the canvas, each paying a `starPush` (two string joins and
+           * a bucket lookup) and a `rect` into a path that then rasterizes.
+           *
+           * ⚠️ The test belongs INSIDE this branch and nowhere earlier. Here
+           * the node is a plain batched dot of radius `dr` that returns at
+           * once: no halo, no articulations light, no search or selection ring,
+           * no queued label, nothing in `openList`. So `dr` is the whole extent
+           * and the test is exact. A point on the slow path can throw light up
+           * to 22% of the canvas from off screen, and culling it by its own
+           * center would put out a glow the reader can see. And `pick()` walks
+           * the islands itself rather than reading anything the draw leaves
+           * behind, so a dot skipped here is still a dot you can land on. */
+          if(sx+dr<0||sx-dr>W||sy+dr<0||sy-dr>H) return;
           starPush(pal["sys"+((nd.s===0||nd.s===1||nd.s===2)?nd.s:3)+"Stroke"], (dimmed?DIM_ALPHA:1)*tw*(nd.a?ORPHAN_ALPHA:1),
-                   S.px+ddx*S.ex[0]+ddy*S.ey[0], S.py+ddx*S.ex[1]+ddy*S.ey[1], dr);
+                   sx, sy, dr);
           return;
         }
         var p=w2s(nd.x+(isl.dx||0), nd.y+(isl.dy||0), isl);
@@ -1988,6 +2069,32 @@ function islandLabel(isl){
   }
   return s;
 }
+/* ⭐ A FONT SIZE THAT DRIFTS IS RE-BUILT EVERY FRAME, AND IT SHIMMERS (S242).
+ * An island label is sized off `q.r`, the drawn radius, so on the sphere it is
+ * a float that moves a little every frame as the sky turns: 18.0263, 18.2506,
+ * 18.1185. Two costs, and the second is the one Sam can see. Chromium builds a
+ * font per novel size at its first USE — `measureText` was paying 11.2% for
+ * that until the memo above stopped asking, whereupon `strokeText` picked up
+ * the same bill at 9.6%. And the glyphs re-rasterize at a new size every
+ * frame, which is a name that never quite settles.
+ *
+ * `txPx()` has rounded to whole pixels since it was written — "a fractional px
+ * font measures fine and renders soft" — and the island labels were simply
+ * never brought under that rule. They are now.
+ *
+ * ⚠️ WITH A DEAD BAND, because a bare round is a threshold on a drifting value
+ * and this lane has paid for that twice (`NODE_ZOOM_KEEP`, and the tint that
+ * became the sky). A raw size moving ~0.2px a frame would sit on 18.5 and flip
+ * 18↔19 forever — a worse shimmer than the one being fixed. The remembered
+ * size holds until the raw value is 0.6px away from it, so crossing costs a
+ * deliberate zoom and coming back costs another. Region labels are a fixed
+ * size already and never enter here. */
+function labelSize(q, raw){
+  var isl=q.isl; if(!isl) return Math.round(raw);
+  var L=isl._ls;
+  if(L===undefined || Math.abs(raw-L)>=0.6) L=isl._ls=Math.round(raw);
+  return L;
+}
 /* Biggest first, reject anything that would overlap an already-placed label.
    Hover/selection always wins a slot — it is the one the reader asked for. */
 function placeLabels(queue, showAll){
@@ -1999,7 +2106,7 @@ function placeLabels(queue, showAll){
   ctx.textAlign="center"; ctx.textBaseline="alphabetic";
   queue.forEach(function(q){
     if(!q.force && !showAll && q.r<26) return;          // too small to earn a name
-    var size=Math.max(11,Math.min(19,q.r*0.17))*tx(); if(q.region) size=15*tx();
+    var size=labelSize(q, Math.max(11,Math.min(19,q.r*0.17))*tx()); if(q.region) size=Math.round(15*tx());
     ctx.font=(q.force||q.region?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
     var lab=q.text || islandLabel(q.isl);
     var w=textW(lab), h=size*1.25;
@@ -2254,6 +2361,7 @@ window.__ccrUniverse = function(opts){
   spreadUniverse(U);
   nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null;
   if(!authority) loadAuthority();
+  if(!subjEdge) loadSubjectEdge();
   solo=wantSolo; face=wantFace;
   window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"SkyView"}],
                   {menu:false, view: solo?"skyview":"comprehensive"});
@@ -4970,6 +5078,7 @@ window.__ccrWorkspace=function(mode, opts){
   mode = WS_MODES[mode] ? mode : "discipline";
   if(mode==="esl" && !eslAvailable()) mode="discipline";
   if(!authority) loadAuthority();
+  if(!subjEdge) loadSubjectEdge();
   window.__crumbs([{label:"Disciplines and subjects"}], {view: wsKey(mode)});
   syncHash();
   var host=document.getElementById("view"); if(!host) return;
@@ -5124,7 +5233,27 @@ function subjectIndex(){
     var names=Object.keys(r.disc).sort(function(a,b){
       return (r.disc[b].n+r.disc[b].sa)-(r.disc[a].n+r.disc[a].sa) || a.localeCompare(b);
     });
-    r.home=names[0]; r.homeIsl=r.disc[r.home].isl; r.others=names.slice(1);
+    /* ⭐ THE EDGE ANSWERS; THE VOTE ONLY FILLS IN (DR-25, Sam's item 3 of
+     * 2026-09-08). The home discipline used to be the MODAL discipline of the
+     * identities carrying the subject — so when those were blank the vote
+     * returned blank, and the table reported "no discipline yet", which reads
+     * as a statement ABOUT THE SUBJECT rather than about the rows underneath
+     * it. Measured 2026-09-08: 148 of 344 subjects on the map voted blank, and
+     * this repo's own map file named a discipline for eleven of them
+     * (AERO→Aviation, PHTO→Photography, STAT→Mathematics …). A derived blank
+     * that looks like an asserted one is self-fulfilling.
+     * `homeSrc` is what each row says answered it. */
+    var edge = subjEdge && subjEdge[c];
+    r.voted = names[0];
+    if(edge){
+      r.home = edge; r.homeSrc = "edge";
+      r.others = names.filter(function(n){ return n!==edge; });
+      r.homeIsl = (r.disc[edge] && r.disc[edge].isl) || (r.disc[names[0]] && r.disc[names[0]].isl);
+    } else {
+      r.home = names[0]; r.homeSrc = subjEdge ? "vote" : "vote-unloaded";
+      r.homeIsl = r.disc[r.home].isl;
+      r.others = names.slice(1);
+    }
   });
   subjIdx=by;
   return by;
@@ -5134,15 +5263,34 @@ function subjectRows(){
   var by=subjectIndex();
   return Object.keys(by).map(function(c){
     var r=by[c];
-    return {key:(c+" "+r.home).toLowerCase(), code:c, n:r.n, sa:r.sa, home:r.home, others:r.others, rec:r};
+    return {key:(c+" "+r.home).toLowerCase(), code:c, n:r.n, sa:r.sa, home:r.home, others:r.others,
+            homeSrc:r.homeSrc, voted:r.voted, rec:r};
   }).sort(function(a,b){ return b.n-a.n || b.sa-a.sa || a.code.localeCompare(b.code); });
 }
 function standingHtml(r){
-  if(noDiscipline(r.home)) return 'no discipline yet';
+  /* Sam's item 3 (2026-09-08): "say on the row which of the two answered." A
+   * home that came from the edge is the authority speaking; one that came from
+   * the vote is an inference off the rows, and a reader is entitled to know
+   * which they are looking at. */
+  if(noDiscipline(r.home))
+    return 'no discipline yet <span class="ws-note">(no entry in the subject map, and its identities carry none)</span>';
   if(!authority) return '<span class="ws-note">loading…</span>';
   var a=authority[r.home];
   if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>';
-  if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a);
+  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO. Measured 2026-09-08,
+   * four subjects disagree and all four are corrections — ETHN reads Ethnic
+   * Studies against 34 identities filed under Chicano Studies, ESLN reads
+   * English as a Second Language against a malformed discipline name — but a
+   * silent reassignment of 34 rows is the kind of thing a curator is entitled
+   * to see rather than discover. */
+  var voted = r.rec ? r.rec.voted : r.voted;
+  var via = r.homeSrc==="vote"
+    ? ' <span class="ws-note">(discipline inferred from its identities — not in the subject map)</span>'
+    : (voted && voted!==r.home && !noDiscipline(voted))
+      ? ' <span class="ws-note">(the subject map says ' + esc(r.home) + '; its identities sit under ' +
+        esc(voted) + ')</span>'
+      : '';
+  if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a)+via;
   if(a.umbrella.indexOf(r.code)>=0)
     return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>';
   return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>';

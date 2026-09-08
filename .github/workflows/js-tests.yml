@@ -297,6 +297,30 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: SkyView orbit layout lint (kb/_build_ccr_universe.py)
         run: python3 tests/ccr_universe_orbits_test.py
+      # DR-25 — the subject-discipline edge fill (Sam, 2026-09-08). All five
+      # discipline-inference passes read kb/coci_minted_courses.json, which is
+      # 19,568 records every one an M-ID, so no externally-minted identifier has
+      # ever been seen by one: 326 identities carried no discipline, 0.4% of
+      # M-IDs against 47.5% of C-IDs. The guard's sharpest check is that the
+      # edge reads the SUBJ4 off the ID PREFIX and not row["subj"], which is the
+      # colleges' freehand local codes and mis-filed four rows before it was
+      # caught. Pure-stdlib python; same non-required check.
+      - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
+        run: python3 tests/discipline_edge_fill_test.py
+      # DR-26 — the COBI live-session banner. Every check is a FAIL-CLOSED case,
+      # because the failure mode of this surface is telling the whole
+      # organization to open a session that is still private: an inactive row,
+      # an active row with no link, an expired row, a missing row and a failed
+      # read must each render nothing. Also pins that the wording says reload
+      # rather than watch, which is what the product actually does.
+      - name: COBI live-session banner (DR-26, cobi_brand.js)
+        run: node tests/cobi_live_banner.test.js
+      # The Admin-tab control for the same banner. Its sharpest check is that a
+      # link which is not a claude.ai session is refused BEFORE any write, and
+      # that an expired row reads "not showing" — a stale "working right now"
+      # is the failure this whole surface is shaped around.
+      - name: Live-banner Admin control (DR-26, admin.js)
+        run: node tests/admin_live_banner_control.test.js
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
       # a button pointing at something that is not deployed: the self-contained

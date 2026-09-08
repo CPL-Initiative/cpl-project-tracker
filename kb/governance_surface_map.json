@@ -1,6 +1,6 @@
 {
   "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
-  "_as_of": "2026-09-07",
+  "_as_of": "2026-09-08",
   "mapped": {
     "workflow:daily-dashboard.yml": "CA-01",
     "workflow:map-users-sync.yml": "CA-02",
@@ -51,7 +51,13 @@
     "tab:college-briefing": "DR-09",
     "workflow:skyview-desc-shards.yml": "CA-01",
     "bucket:ccr-desc": "CA-01",
-    "tab:skyview-outline-skills": "DR-24"
+    "tab:skyview-outline-skills": "DR-24",
+    "field:kb_curation.anchor_discipline_proposal": "DR-25",
+    "field:kb_curation.discipline": "DR-25",
+    "file:kb/reference/subject_discipline_map.json": "DR-25",
+    "file:kb/discipline_canonical_subj4.json": "DR-25",
+    "tab:ccr-anchor-proposal-apply": "DR-25",
+    "table:cobi_live_session": "DR-26"
   },
   "dismissed": {
     "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",

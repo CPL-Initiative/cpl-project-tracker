@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-405 document(s).
+407 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -162,6 +162,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
+| [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A view swap that does not move the hash strands the user](../kb-notes/methodology-a-view-swap-that-does-not-move-the-hash-strands-the-user.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A word in a request may have no referent yet](../kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet.md) | methodology | published | 2026-08-25 | 2026-08-25 |
@@ -220,6 +221,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Fan-in discipline folds must re-point every inference lexicon (or re-derivation resurrects the alias)](../kb-notes/methodology-fanin-alias-lexicon-contamination.md) | methodology | published | 2026-06-12 |  |
 | [Filter live-derived counts against a current-catalog snapshot to drop retired identifiers](../kb-notes/methodology-filter-live-counts-against-current-catalog.md) | methodology | published | 2026-07-14 | 2026-07-14 |
 | [Fix the root, not a counter-rule: decision-tracing a stack of interacting rules](../kb-notes/methodology-fix-the-root-not-a-counter-rule.md) | methodology | published | 2026-07-21 |  |
+| [Fixing a cost can move it rather than remove it — and only a second profile says which](../kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [Fixing who may write does not rescue what was already written](../kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |

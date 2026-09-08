@@ -349,6 +349,14 @@ named here because a store nobody names is a store nobody finds —
     synergy · operationalize · impactful*. Reach for *invite · partnership ·
     shared aim · complement · warrant · examine together · practical first step*.
   - **No bold, bullets or glyphs in outward prose.** The argument carries itself.
+  - ⚠️ **MANNERLY LANGUAGE POINTS AT THE WRITER (Sam, 2026-09-08).** *"no
+    mannerly language, avoiding adjective phrases, metaphors, and redundant
+    asides. Mannerly language is irritating because it seeks to draw attention
+    to the writer rather than the reader… the reader is not impressed and looks
+    for a way out."* Cut adjective phrases, metaphors, asides, and any sentence
+    whose job is to show the writing. **The test is who the sentence points at.**
+    Scope is wider than the rest of this section: it covers explainers **and
+    replies to Sam in session**.
   - ⚠️ **A voice, not a template** — copying its shapes onto a piece with no
     concession to make produces parody, and length is not seriousness. Moves +
     exemplars + before/after:

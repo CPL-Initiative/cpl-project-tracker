@@ -3981,6 +3981,89 @@ _COLLEGE_DISTRICT_LOOKUP = None
 _COLLEGE_ACTIVITY_TEMPLATE = None
 
 
+def discipline_edge_fill(rows, kdir, subj_of=None):
+    """DR-25: fill a BLANK discipline from the subject-discipline edge.
+
+    Sam's rulings of 2026-09-08 (the subjects-and-disciplines sheet, items 1
+    and 2). Item 1 settles the shape: SUBJECT -> DISCIPLINE IS THE PRIMARY
+    EDGE, and kb/reference/subject_discipline_map.json is its authority. Every
+    SUBJ4 belongs to exactly one discipline; a discipline may carry several.
+    kb/discipline_canonical_subj4.json answers a different question (which of a
+    discipline's codes is canonical) and is not consulted here. The C-ID/CCN
+    identifier reference is an INPUT to the edge, not a parallel authority, so
+    it fills only where the map file has no entry.
+
+    WHY THIS EXISTS. All five discipline-inference passes read
+    kb/coci_minted_courses.json, which holds 19,568 records every one of them
+    an M-ID, so no externally-minted identifier has ever been seen by one.
+    Measured 2026-09-08: 326 identities carried no discipline -- 0.4% of
+    M-IDs against 47.5% of C-IDs and 49.1% of CCNs. A gap that tracks WHERE A
+    ROW CAME FROM rather than what the row is, is a plumbing gap.
+    `PSYC C1000` carried "discipline": "Psychology" in the identifier
+    reference, classified 2026-05-20, and disc:null on every surface.
+
+    Never overrides: a row that already has a discipline is untouched, so
+    curation and the seed keep winning. Every fill is stamped `dsrc` so it
+    shows its provenance rather than arriving anonymously.
+
+    NOT TOP. 219 of those 326 carry a TOP code and Rule 7 keeps it a
+    last-in-line corroborator. The edge is the identifier's own subject prefix
+    against the MQ discipline list, which is an independent signal.
+
+    Returns {"filled_map": n, "filled_ref": n, "blank_after": n}.
+    """
+    def _j(*parts):
+        p = os.path.join(kdir, *parts)
+        return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+    edge_doc = _j("reference", "subject_discipline_map.json") or {}
+    edge_raw = edge_doc.get("subjects") or edge_doc.get("map") or edge_doc
+    edge = {str(k).upper(): v for k, v in edge_raw.items() if isinstance(v, str)}
+
+    ref_doc = _j("reference", "coci_courses.json") or {}
+    ref = ref_doc.get("courses") if isinstance(ref_doc, dict) else None
+    if isinstance(ref, list):
+        ref = {str(r.get("course_id")): r for r in ref if isinstance(r, dict)}
+    ref = ref or {}
+
+    def _subj(r):
+        """The identity's canonical SUBJ4 -- which is its ID PREFIX.
+
+        NOT `row["subj"]`. That field is the LOCAL college subject code(s) the
+        colleges typed, which the CCR list labels "Local SUBJ code(s)" on
+        hover: freehand, multi-valued and dirty ("DANCE (DANCE)", "ARTHIST",
+        "AEROST"). Reading it mis-filed four rows on the live payload before
+        this was caught -- AERO M1001 carries local `AEROST`, ARTF M1003
+        carries five local codes, and neither is in the edge map because
+        neither is a SUBJ4. The id leads with the canonical code by
+        construction ("PSYC C1000", "WELD M1109"), which is the same rule
+        SkyView's own subjCode() applies.
+        """
+        if subj_of:
+            return subj_of(r)
+        t = str(r.get("id") or "").strip().split()
+        c = t[0] if t else ""
+        if c in ("M-ID", "C-ID", "CCN") and len(t) > 1:   # the older id shape
+            c = t[1]
+        return c.upper()
+
+    n_map = n_ref = 0
+    for r in rows:
+        if r.get("disc"):
+            continue
+        d = edge.get(_subj(r))
+        if d:
+            r["disc"], r["dsrc"] = d, "subject_map_edge"
+            n_map += 1
+            continue
+        d = (ref.get(str(r.get("id"))) or {}).get("discipline")
+        if d:
+            r["disc"], r["dsrc"] = d, "coci_reference"
+            n_ref += 1
+    blank = sum(1 for r in rows if not r.get("disc"))
+    return {"filled_map": n_map, "filled_ref": n_ref, "blank_after": blank}
+
+
 def _load_college_district_lookup():
     """Parse college_lookup.js into a {college_name: district} dict (cached).
     Returns an empty dict if the file is missing or unparseable.
@@ -9360,6 +9443,14 @@ def export_unified_courses():
           f"{len(evidence_groups)} evidence + {len(legacy_groups)} curated-anchor-duplicate groups "
           f"[{_sc_flagged} same-college flagged])")
 
+    # ---- DR-25: the subject-discipline edge fills what the M-ID-only passes
+    # never reached (Sam, 2026-09-08, sheet items 1 and 2). Blanks only; every
+    # fill carries its `dsrc`. See discipline_edge_fill().
+    _ef = discipline_edge_fill(rows, kdir)
+    print(f"  Unified Courses: discipline edge filled {_ef['filled_map']:,} from the subject map "
+          f"+ {_ef['filled_ref']:,} from the identifier reference; "
+          f"{_ef['blank_after']:,} still blank")
+
     mq = (_load(os.path.join("reference", "mq_disciplines.json")) or {}).get("disciplines", [])
     payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "beta": True,
                "colleges": colleges, "mq_disciplines": sorted(mq),
@@ -9458,6 +9549,12 @@ def export_unified_courses():
             m = _row_official(r)
             if m:
                 r["match"] = m
+    # DR-25 again: a stand-alone course is filed under a discipline by the same
+    # edge as an identity, and the blank island counts both.
+    _efs = discipline_edge_fill(sa_rows, kdir)
+    print(f"  Unified Courses: stand-alone edge filled {_efs['filled_map']:,} + {_efs['filled_ref']:,}; "
+          f"{_efs['blank_after']:,} still blank")
+
     out_sa = os.path.join(odir, "unified_courses_standalone.js")
     sa_payload = {"generated_at": _dt.now().strftime("%Y-%m-%d %H:%M"), "rows": sa_rows}
     with open(out_sa, "w", encoding="utf-8") as f:
