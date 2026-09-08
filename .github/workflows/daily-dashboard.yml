@@ -348,6 +348,18 @@ jobs:
           python3 kb/_build_ccr_sky.py --quiet \
             || echo "::warning title=SkyView sky placement not rebuilt::kb/_build_ccr_sky.py failed — the Sky view reads the previous placement until the next run. Check the step log."
 
+      # ── Step 4d5: the discipline-blank worklist (Session 243) ─────
+      # The identities discipline_edge_fill() cannot reach, named for a curator
+      # rather than filled by inference (Sam's ruling of 2026-09-08, sheet item
+      # 9). It reads unified_courses_data.js — regenerated above — and the
+      # subject map, so it has to be rebuilt HERE or it describes yesterday's
+      # payload. Read-only, ~2 s, local files only.
+      # tests/discipline_blanks_worklist_test.py fails CI on a stale file.
+      - name: Rebuild the discipline-blank worklist
+        run: |
+          python3 kb/_build_discipline_blanks_worklist.py \
+            || echo "::warning title=Discipline-blank worklist not rebuilt::kb/_build_discipline_blanks_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
+
       # ── Step 5: Prepare GitHub Pages entry point ─────────────────
       - name: Copy dashboard to index.html
         run: cp CPL_Dashboard.html index.html
@@ -387,6 +399,9 @@ jobs:
           git add prototype/ccr_cpl.json 2>/dev/null || true
           # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
           git add prototype/ccr_sky.json 2>/dev/null || true
+          # The discipline-blank worklist (Step 4d5): the identities the edge
+          # cannot reach, for a curator pass.
+          git add kb/discipline_blanks_worklist.json 2>/dev/null || true
           # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay

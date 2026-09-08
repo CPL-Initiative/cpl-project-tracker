@@ -1,5 +1,5 @@
 ---
-title: "Session 244 handoff — nine disagreements that never printed, and 19 COBI tabs still red"
+title: "Session 244 handoff — the nine were ruled, four remain, and 19 COBI tabs are still red"
 created: 2026-09-08
 updated: 2026-09-08
 tags: [handoff]
@@ -15,11 +15,13 @@ reached a reader. Predecessors: SkyClear S241 → SkyTrue S242 → **SkyGate S24
 
 ## What this run did
 
-One PR: [#1520](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1520).
-No decisions from Sam this run — he was not in session.
+Two PRs. [#1520](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1520)
+— the note that never printed, and the COBI a11y fix. Then Sam came back with
+**"Decisions done!"** and ruled all nine calls `yes`, which became a second PR.
 
 **Two defects of one family: a value computed correctly that never reached the
-reader.**
+reader** — and then a curator's one-line note that found a hazard no measurement
+had surfaced.
 
 ## ⭐ THE THINGS TO CARRY FORWARD
 
@@ -40,10 +42,12 @@ reader.**
 3. ⚠️ **A UNANIMOUS VOTE OF ONE IS NOT A VOTE.** HUMN's single voting identity
    is *Music for Video Games and Film* (→ Music); its three blanks are
    popular-culture titles. Filling from that reading files three humanities
-   courses under Music. **37 of the 93 blanks' 50 subject codes have no other
-   identity carrying the prefix at all** — there is nothing to corroborate
-   against, and inventing a discipline from one title is indistinguishable on
-   every surface from one a curator chose.
+   courses under Music. After Sam's ruling the blanks are **86 across 45 codes,
+   and 37 of those codes still have no other identity carrying the prefix at
+   all** — nothing to corroborate against, and a discipline invented from one
+   title is indistinguishable on every surface from one a curator chose. That is
+   why they are a named list (`kb/discipline_blanks_worklist.json`) and not a
+   fill.
 4. ⚠️ **A FAULT IN SHARED CHROME IS A FAULT ON EVERY ROUTE.** `input#cplfl-optout`
    at 182.1 × 19.9 was the SOLE fault on 17 of COBI's 38 tabs and one fault line
    on all 38, because `first_light.js` paints on every one. Two declarations took
@@ -63,32 +67,62 @@ reader.**
    `head_sha` against the PR head before you trust a green check — and note the
    fix is your next real commit, never an empty one.
 
-## The nine, for whoever rules them
+## Sam ruled all nine — what landed, and what is left
 
-| SUBJ4 | the map says | its courses sit under | agreement |
-|---|---|---|---|
-| ATHL | Physical Education | Kinesiology | 1,101 of 1,101 |
-| THTR | Theater Arts | Drama/Theater Arts | 1,093 of 1,109 |
-| ESCI | Earth Science | Environmental Technologies | 465 of 476 |
-| ELEC | Electronics | Electricity | 342 of 353 |
-| MUSC | Music | Commercial Music | 127 of 134 |
-| ETHN | Ethnic Studies | Chicano Studies | 34 of 35 |
-| PHTO | Photography | Multimedia | 3 of 12 |
-| ESLN | English as a Second Language | …Noncredit 53412 | 5 of 5 |
-| ENVS | Environmental Technologies | Biological Sciences | 1 of 1 |
+All `yes`. **Blanks 93 → 86** (five codes into the map: BSOT · HUMA · GRAF ·
+BCST · BARB; HOSP kept out, recorded in `_deliberately_unmapped`).
+**Disagreements 9 → 4** (ATHL→Kinesiology · THTR→Drama/Theater Arts ·
+ESCI→Environmental Technologies · ELEC→Electricity · MUSC→Commercial Music).
+⭐ All five moved the map INTO agreement with the CSR, and three had named a
+discipline the CSR does not carry at all — a second signal, not just the vote.
+
+**Still open:** ETHN (34 under Chicano Studies) · PHTO (a thin 3-of-12 plurality,
+where the row's wording overstates what the courses say) · ENVS (1 of 1) ·
+ESLN (the Title 5 name below).
+
+⭐ **HIS NOTE ON ATHL WAS THE MOST VALUABLE THING ON THE SHEET.** *"ATHL … is in
+Kinesiology but is differentiated from KINE which doesn't have the restrictions
+athletic PE or KIN course."* The CSR lists ATHL as a Kinesiology **variant** with
+1,468 M-IDs, and the CSR is consumed by the Phase 1e re-mint **to fold variants
+to the canonical**. Session 47 caught that fold doing exactly this. ATHL was
+safe — but only because of a **literal** in `_subj4_dryrun.py`, the one umbrella
+of four not declared as data. Now declared in the CSR
+(`is_umbrella`, `umbrella_codes ["ATHL","KINE"]`).
+
+⚠️ **AND MY OWN SHEET'S ITEM 8 HAD ITS PREMISE WRONG.** ESLN's discipline name is
+not malformed by us: **eight MQ names carry a Title 5 section number** (53412 /
+53414) because the 19th-edition index prints it beside the title. The tell is
+`Speech Language Pathology: Disabled Student Programs and 53414 Services`, where
+the number splits the phrase. 45 live rows, but **1,183 occurrences across 33
+files** including `coci_minted_courses.json` and four alias maps — an id-keyed
+rename needing a dry-run and a receipt. Held for its own PR. Sam ruled the item
+correctly anyway: **a sheet item can be ruled right and still have described the
+wrong size.**
 
 ## YOUR PRIORITY
 
-1. **READ THE DECISION SHEET'S REPLIES FIRST** — nine numbered calls on the
-   subject–discipline edge, live at
-   https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b
-   (source: `docs/visuals/2026-09-08-the-subject-discipline-edge-nine-and-five.html`).
-   ⚠️ **The artifact carries NO wake subscription** — the service refused one for
-   S243's session — so nothing will tell you a reply landed. **Read it with the
-   Artifact tool's `read_db`, collection `replies`, before doing anything else on
-   this lane.** Items 1–5 are five map entries (BSOT, HUMA, GRAF, BCST, BARB);
-   6 is HOSP; 7–9 are the nine disagreements, ESLN's data defect, and the 37
-   uncorroborated codes.
+0. **READ BOTH DECISION SHEETS' REPLIES FIRST.** Neither carries a wake
+   subscription — the artifact service refused one for this session — so nothing
+   will tell you a reply landed. `read_db`, collection `replies`, on each:
+   - the nine rulings, all answered:
+     https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b
+   - **the hard ones, OPEN** (8 items):
+     https://claude.ai/code/artifact/c165535f-3776-4f93-b2d6-6d1a0ad6e27d
+   ⭐ **Its framing finding, which changes how this lane is worked:** Sam asked
+   whether these are the foreign-languages case. They are the **opposite** shape.
+   FL had one MQ discipline with **no per-language discipline in the list**, so we
+   minted synthetic codes (SPAN, FREN…) and kept the discipline. Here the MQ list
+   **already carries** the distinctions — five ethnic-studies disciplines, six
+   photography/media. So: **does the MQ list already carry the distinction?** No →
+   umbrella, mint codes. Yes and the courses split → **fan-in** (FTVE, shared by
+   Film and Media Studies 360 and Media Production 146, both names kept). Yes and
+   they do not split → a plain **correction**. That one question sorts all four.
+1. **The Title 5 rename** — eight MQ discipline names, 1,183 occurrences, 33
+   files. Sam ruled it (item 8); the size is what held it. Needs the re-mint
+   shape: a dry-run, an alias map, `kb/promotions.json` re-keyed, landing in one
+   cron window with a receipt (Rule 7 mechanics live in
+   `docs/reference/mid_lifecycle.md`). ⚠️ Strip the section number from the
+   title and KEEP it — a `title5_section` field — rather than deleting it.
 2. **The 19 COBI tabs still failing `npm run a11y cobi`** — sized, not fixed: 71
    distinct failing selectors, 5,332 sub-24px target instances, 22
    keyboard-unreachable scrollers. `our-process` is six faults from two tokens
@@ -97,9 +131,20 @@ reader.**
    `--mustard` / `--mustard-text` pattern the design system already has);
    `pipeline` is ten. ⚠️ **This is the fan-out shape** — many surfaces, each hit
    cheap to verify by re-running the sweep. Say so before you start.
-3. **DR-24's write surface** — the curate phrase and the propose/second gate.
+3. **The four remaining disagreements — TWO ARE NOT JUDGMENT CALLS.** Measured
+   S243: **ETHN is a correction** (the map points ETHN *and* ETHS at Ethnic
+   Studies, and ETHN is Chicano Studies' own canonical code, 34 of its 35 courses
+   there). **ETHA is missing from the map entirely** — 33 courses, canonical code,
+   no entry; a code with no entry never shows as a disagreement, which is why
+   nobody looked. **PHTO's map value is right and its courses are mis-filed** —
+   all twelve titles are photography (*Color Photo Lab*, *Digital Photo Lab*,
+   *Introduction to Lighting*), scattered across five disciplines, two of them
+   plainly wrong (Machine Tool Technology, Engineering Technology). **ENVS** is one
+   row and a real question: there is no "Environmental Science" MQ discipline.
+   All four are on the second sheet. ESLN resolves with the rename above.
+4. **DR-24's write surface** — the curate phrase and the propose/second gate.
    The register row exists with Sam as owner; the phrase's SCOPE is open.
-4. `docs/skyview_backlog.md`.
+5. `docs/skyview_backlog.md`.
 
 ## NEEDS SAM
 
@@ -111,7 +156,7 @@ reader.**
 ⑥ His eye on the CPL face (`#skyview/cpl`).
 ⑦ His eye on the Sky at the new frame rate (~21.7 fps headless).
 ⑧ His eye on the live-session banner now Pages has deployed.
-⑨ **The nine subject–discipline disagreements** — on the sheet above.
+⑨ **ETHN, PHTO and ENVS** — the three disagreements his ruling did not cover.
 
 ## Read these, in this order
 
@@ -133,6 +178,12 @@ reader.**
 - ⚠️ **A figure is only wrong relative to the payload it names.** The nine were
   measured on `prototype/ccr_universe.json` against the map file `EDGE_URLS`
   fetches — the same rule the page applies, against the same file.
+- ⚠️ **A ruling can arrive on a premise the sheet got wrong.** Item 8 is the
+  worked case. Check the premise before executing the verdict, and say so when
+  it does not hold rather than doing the thing the words describe.
+- ⚠️ **`kb/discipline_blanks_worklist.json` is REBUILT BY THE DAILY RUN**
+  (Step 4d5) and `--check`ed by `scripts/check_generated.sh`; a subject-map edit
+  stales it in the same commit that makes it.
 - ⚠️ **The sandbox cannot reach `*.supabase.co`** (Rule 10c). Use the MCP tools.
 - Never force-push `main` (Rule 5). Squash-merge on a green `test` whose
   `head_sha` matches the PR head.

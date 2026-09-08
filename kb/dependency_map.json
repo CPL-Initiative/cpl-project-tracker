@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 445,
+  "file_datasets": 449,
   "external_services": 138,
-  "consumers": 324,
+  "consumers": 325,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -5794,6 +5794,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_discipline_blanks_worklist.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_docs_index.py": {
    "consumers": [
     {
@@ -8917,6 +8930,34 @@
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/discipline_blanks_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    },
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 38
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/discipline_canonical_subj4.json": {
    "consumers": [
@@ -13358,6 +13399,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/discipline_blanks_worklist_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/discipline_edge_fill_test.py": {
    "consumers": [
     {
@@ -13645,6 +13699,19 @@
    "main_committers": []
   },
   "file:tests/uc_cur_promote_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/umbrella_codes_are_declared_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -14003,6 +14070,13 @@
      "direction": "read",
      "how": "literal",
      "line": 738
+    },
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",
@@ -17797,7 +17871,8 @@
     "kb/_build_ccr_atlas_extract.py",
     "prototype/build_ccr_atlas.py",
     "kb/_build_ccr_cpl.py",
-    "kb/_build_ccr_sky.py"
+    "kb/_build_ccr_sky.py",
+    "kb/_build_discipline_blanks_worklist.py"
    ],
    "adds": [
     "index.html",
@@ -17830,6 +17905,7 @@
     "prototype/skyview.html",
     "prototype/ccr_cpl.json",
     "prototype/ccr_sky.json",
+    "kb/discipline_blanks_worklist.json",
     "kb/discipline_cpl_rollup.json",
     "kb/credential_review_overlay.json",
     "kb/governance_candidates.json",
@@ -17923,6 +17999,8 @@
     "tests/ccr_universe_members_test.py",
     "tests/ccr_universe_orbits_test.py",
     "tests/discipline_edge_fill_test.py",
+    "tests/discipline_blanks_worklist_test.py",
+    "tests/umbrella_codes_are_declared_test.py",
     "tests/cobi_live_banner.test.js",
     "tests/admin_live_banner_control.test.js",
     "tests/docs_audit_test.py",

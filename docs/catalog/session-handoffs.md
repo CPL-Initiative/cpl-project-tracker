@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 244 | [nine disagreements that never printed, and 19 COBI tabs still red](../session_244_handoff.md) | 2026-09-08 |
+| 244 | [the nine were ruled, four remain, and 19 COBI tabs are still red](../session_244_handoff.md) | 2026-09-08 |
 | 243 | [the frame budget is bought, DR-25/26 are owned, and the banner is live](../session_243_handoff.md) | 2026-09-08 |
 | 242 | [the asteroid field is culled; the frame budget is the remaining lever](../session_242_handoff.md) | 2026-09-08 |
 | 241 | [the recordings are answered; his eye on the sky, then the frame budget](../session_241_handoff.md) | 2026-09-07 |
