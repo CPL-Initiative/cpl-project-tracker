@@ -40,28 +40,32 @@ const done = () => {
 // ── fixture: one discipline, two identities, courses on the first ────────────
 const U = {
   _generated_from: "fixture",
-  counts: { identities: 2, stand_alone: 0, points: 2, orbiting: 0, orbiting_cross: 0, rim: 0, disciplines: 1,
-            member_rows: 6, member_rows_all_identities: 6, described_courses: 0 },
+  counts: { identities: 3, stand_alone: 0, points: 3, orbiting: 0, orbiting_cross: 0, rim: 0, disciplines: 1,
+            member_rows: 7, member_rows_all_identities: 7, described_courses: 0 },
   why_bits: { subject: 1, subj4: 2, title: 4, top: 8, units: 16, credit: 32 },
   bounds: { x0: -200, x1: 200, y0: -200, y1: 200 },
   islands: [
-    { d: "Welding", sh: "welding", x: 0, y: 0, r: 90, n: 2, sa: 0, al: 0, p: [
-      { i: "WELD M1109", x: 0,  y: 0, t: "Introduction to Welding",               n: 5, s: 0, f: 0, r: 0, u: 2 },
-      { i: "WELD M1106", x: 60, y: 0, t: "Introduction to the Welding Processes", n: 1, s: 0, f: 0, r: 0, u: 3 },
+    /* THREE identities on purpose: re-targeting a staged move needs somewhere
+       to go that is neither the origin nor the destination it is staged to. */
+    { d: "Welding", sh: "welding", x: 0, y: 0, r: 90, n: 3, sa: 0, al: 0, p: [
+      { i: "WELD M1109", x: 0,   y: 0, t: "Introduction to Welding",               n: 5, s: 0, f: 0, r: 0, u: 2 },
+      { i: "WELD M1106", x: 60,  y: 0, t: "Introduction to the Welding Processes", n: 1, s: 0, f: 0, r: 0, u: 3 },
+      { i: "WELD M1104", x: -60, y: 0, t: "Introduction to Welding Safety",        n: 1, s: 0, f: 0, r: 0, u: 1 },
     ] },
   ],
 };
 const MEM = {
   colleges: ["American River College", "Barstow Community College", "Chabot College", "Glendale Community College"],
-  counts: { identities: 2, members: 6, dropped_no_key: 0, cn_on_multiple_identities: 0 },
+  counts: { identities: 3, members: 7, dropped_no_key: 0, cn_on_multiple_identities: 0 },
   m: {
     "WELD M1109": [[300, "WELD 300", 0], [50, "WELD 50A", 1], [70, "WELD 70", 2], [117, "WELD 117", 3], [205, "WELD 205", 0]],
     "WELD M1106": [[901, "WELD 901", 1]],
+    "WELD M1104": [[902, "WELD 902", 2]],
   },
 };
-const ATLAS = { _generated_from: "fixture", totals: { decision_components: 0, identities_inbrowser: 2,
-                suggestion_groups: 0, member_rows: 6 },
-                disciplines: [{ name: "Welding", decisions: 0, ids: 2, members: 6, flagged: 0, reviewed: 0 }], detail: {} };
+const ATLAS = { _generated_from: "fixture", totals: { decision_components: 0, identities_inbrowser: 3,
+                suggestion_groups: 0, member_rows: 7 },
+                disciplines: [{ name: "Welding", decisions: 0, ids: 3, members: 7, flagged: 0, reviewed: 0 }], detail: {} };
 
 const tpl = fs.readFileSync(path.join(ROOT, "prototype/ccr_atlas_v1.html"), "utf8");
 const ujs = fs.readFileSync(path.join(ROOT, "prototype/ccr_universe.js"), "utf8");
@@ -157,20 +161,50 @@ const carrying = () => /Carrying/i.test(hint());
     JSON.stringify(st().moves));
   check("(11) the second carry is released too", !carrying(), hint().slice(0, 90));
 
+  // ── re-targeting a staged move FROM THE ROW THAT NAMES IT ────────────────
+  // Sam, 2026-09-07: "Note how I can't move this course out of its previous
+  // move to a new one — the correct intro course." The origin's "Staged to move
+  // away" row offered Put back and nothing else, so fixing a wrong destination
+  // meant undoing the move and starting over, or travelling to the identity the
+  // course had been staged INTO — the one place its Drag button survived.
+  const awayLi = q("#u-detail li.away");
+  check("(12) the origin's staged-away row names the course", !!awayLi && awayLi.dataset.cn === cn);
+  const reMv = awayLi && awayLi.querySelector(".mv");
+  check("(13) ⭐ and offers a re-target, not only Put back", !!reMv,
+    awayLi ? qa("#u-detail li.away button").map((b) => b.textContent.trim()).join(" / ") : "no row");
+  const stagedTo = st().moves[0] && st().moves[0].to;
+  // ⚠️ Guard the absence rather than dereferencing it: without the re-target
+  // button this file's whole point is gone, and a TypeError says that far less
+  // clearly than a named failing check does.
+  if (reMv) { reMv.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 })); await tick(); }
+  check("(14) it picks the course back up", !!reMv && carrying(),
+    reMv ? hint().slice(0, 90) : "no re-target button on the staged-away row");
+  const other = qa("#u-detail [data-go]").filter((b) => b.dataset.go !== stagedTo && b.dataset.go !== "WELD M1109")[0];
+  if (other) {
+    const to2 = other.dataset.go;
+    other.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 }));
+    await tick();
+    check("(15) ⭐ the move RE-TARGETS — one move, the new destination, no duplicate",
+      st().moves.length === 1 && st().moves[0].cn === cn && st().moves[0].to === to2 && to2 !== stagedTo,
+      JSON.stringify(st().moves.map((m) => ({ cn: m.cn, to: m.to }))) + " was " + stagedTo);
+  } else {
+    check("(15) ⭐ the move RE-TARGETS — one move, the new destination, no duplicate",
+      false, "the fixture offered no second destination to re-target onto");
+  }
+
   // ── a REFUSED move keeps the carry, so another destination can be chosen ──
   const pb2 = q("#u-detail [data-putback]");
   if (pb2) { pb2.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 })); await tick(); }
   const mv3 = qa("#u-detail ul.mlist > li .mv").filter((b) => b.dataset.cn === cn)[0];
-  mv3.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 }));
-  await tick();
+  if (mv3) { mv3.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 })); await tick(); }
   const home = qa("#u-detail [data-go]").filter((b) => b.dataset.go === "WELD M1109")[0];
   if (home) {
     home.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 }));
     await tick();
-    check("(12) a move onto the identity it already sits on is refused, carry intact",
+    check("(16) a move onto the identity it already sits on is refused, carry intact",
       st().moves.length === 0 && carrying(), `${st().moves.length} / ${hint().slice(0, 70)}`);
   } else {
-    check("(12) a move onto the identity it already sits on is refused, carry intact",
+    check("(16) a move onto the identity it already sits on is refused, carry intact",
       carrying(), "no self destination offered; carry checked alone");
   }
 

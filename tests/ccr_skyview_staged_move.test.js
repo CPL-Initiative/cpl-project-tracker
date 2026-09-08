@@ -145,8 +145,21 @@ const CX = 480, CY = 300;
   check("(5) ⭐ the origin's panel lists the course under \"Staged to move away\" with the destination's title and the words not saved",
     /Staged to move away \(1\)/.test(panel) && new RegExp(code).test(panel) &&
     /staged to move to Introduction to the Welding Processes — not saved/.test(panel), panel.slice(0, 400));
-  check("(6) the staged-away row is not a member row (it cannot be dragged as one) and offers Put back",
-    !!q('#u-detail li.away[data-cn="' + cn + '"]') && !q('#u-detail li.away .mv') && !!q('#u-detail li.away .putback'));
+  // ⚠️ CHANGED 2026-09-07 (S240), and the earlier assertion is worth naming so
+  // it is not "fixed" back. This check used to read `!q('#u-detail li.away .mv')`
+  // — the staged-away row carried NO drag button at all, on the reasoning that a
+  // course staged away is no longer a member here and must not masquerade as a
+  // member row. The first half of that still holds and is what this check now
+  // pins; the second half turned out to cost the reader the obvious correction.
+  // Sam, on a course staged to the wrong identity: "Note how I can't move this
+  // course out of its previous move to a new one — the correct intro course."
+  // Re-targeting from the row that NAMES the wrong destination is where anyone
+  // would reach, so the row now offers both. It is still not a member row: it
+  // keeps its `away` class and the staged words, and check (7) below holds the
+  // line that matters — the identity does not count it among its members.
+  check("(6) the staged-away row is marked away, not a member, and offers BOTH a re-target and Put back",
+    !!q('#u-detail li.away[data-cn="' + cn + '"]') && !!q('#u-detail li.away .mv') &&
+    !!q('#u-detail li.away .putback') && /staged to move to/.test(text('#u-detail li.away')));
   check("(7) the origin no longer counts the course among its members",
     st().memberPoints === 4 || w.__ccrMemberPoints().filter((m) => !m.ghost && m.id === "WELD M1109").length === 4,
     String(st().memberPoints));

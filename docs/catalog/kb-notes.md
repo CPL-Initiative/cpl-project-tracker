@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-404 document(s).
+405 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -39,6 +39,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [A bulk POST is one statement over the union of its keys](../kb-notes/methodology-a-bulk-post-is-one-statement-over-the-union-of-its-keys.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [A cache breakpoint must LEAD the prompt, and what sits behind it must not move](../kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A capped instruction list is a zero-sum budget, and the cap that binds is rarely the one on display](../kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md) | methodology | published | 2026-08-21 | 2026-08-21 |

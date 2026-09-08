@@ -4382,9 +4382,26 @@ function renderNode(){
       '<p class="sub">Listed here until the move is written, so what left this identity is never a silent absence. '+
       '<strong>Put back</strong> drops the staged move.</p>'+
       '<ul class="mlist">'+awayList.map(function(mv){
+        /* ⭐ A STAGED MOVE MUST BE RE-TARGETABLE FROM WHERE IT IS SHOWN (Sam,
+         * 2026-09-07, on a course staged to the wrong identity: "Note how I
+         * can't move this course out of its previous move to a new one — the
+         * correct intro course").
+         *
+         * This row offered Put back and nothing else, so correcting a
+         * destination meant undoing the move, finding the course again in the
+         * origin's member list, and re-dragging — or travelling to the identity
+         * it had been staged INTO, which is the one place its Drag button
+         * survived. Both are the reader saying "not there, THERE", and the row
+         * naming the wrong destination is exactly where they say it. The
+         * shared-key gate rides along, or a re-target could write a CN the
+         * corpus cannot resolve to one course. */
+        var shared=coursesOn(mv.cn).length>1;
         return '<li class="away" data-cn="'+esc(mv.cn)+'"><span class="cd">'+esc(mv.code)+'</span>'+
           '<span class="co" title="'+esc(mv.college)+'">'+esc(shortCollege(mv.college))+'</span>'+
           ' <span class="chip staged">'+esc(stagedWords(mv,"away"))+'</span>'+
+          '<button class="mv" type="button" data-cn="'+esc(mv.cn)+'" data-d="'+esc(mv.d||"")+
+            '" data-code="'+esc(mv.code)+'" data-col="'+esc(mv.college)+'"'+(shared?' data-shared="1"':"")+
+            ' title="Pick it up again and drop it on the identity it really belongs to">Move instead…</button>'+
           '<button class="putback" type="button" data-putback="'+esc(mv.cn)+'" title="Drop the staged move; the course is home again">Put back</button></li>';
       }).join("")+'</ul>';
   }

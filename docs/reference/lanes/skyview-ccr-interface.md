@@ -48,6 +48,16 @@ drop by angle; By kind as the arrangement with its two region names; silver
 M-IDs on every dark canvas. Rounds and measurements:
 [`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
+**S240 (#1515) is the first run driven entirely by SCREEN RECORDINGS** — three of
+them. Every finding in the invariants below was reproduced on the served page
+before it was touched: two flicker causes, the purple sky, a carry that stayed
+stuck for a whole session, the outline turned into a sheet over the map, a
+**Back** that keeps the camera, a sidebar that closes by its own border, and a
+re-target on a staged move. ⚠️ **None of the three reports named its own cause**,
+and the two obvious suspects (the twinkle, the star-alpha batching) were measured
+and ruled out — the lane's standing lesson about verifying an ask against the
+screen, now also against the profiler.
+
 ## Invariants — do not violate these
 
 ⭐ **AN ORBIT IS A PLACEMENT SUGGESTION, NEVER A CURATION DECISION.** Hollow,
@@ -335,23 +345,25 @@ so his call under his own glyph rule.
 credential-led label read right at his zoom, and is *Articulations* the word?
 ⑧ **The Sky is in — his eye on it as shipped** (S239): the opening window
 (150° across, the prototype's), the pace of the turn and the twinkle, the two
-region names, Day's rim, and **whether it runs smoothly on his machine** —
-42 ms a frame in headless software rendering (13.5 fps) is the only
-measurement we hold; a real GPU should do better, and if it does not, the
-lever is an offscreen star layer redrawn only when the view moves.
+region names and Day's rim. ⚠️ **The smoothness half of this is ANSWERED** — he
+recorded it flickering (S240), both causes are fixed and measured above, and the
+turn now runs at its intended rate. What is still open is whether it READS
+smooth on his machine now.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.
 
 ## NEXT
 
-⓪ **His eye on the Sky, then the frame budget** (NEEDS SAM ⑧). Measure on the
-served page before touching the draw: `scratchpad` drives exist for the turn
-(`time_draw.js`) and a real-mouse drag (`drive_sky.js`); the star pass is
-already batched, so the next lever is not per-point work but an offscreen
-layer for the sub-`ID_ZOOM` stars, invalidated by view change, or a WebGL
-point pass behind the same `w2s`. ⚠️ Whatever changes, the drop test, the
-keyboard path and `npm run a11y skyview` run again in the same PR.
+⓪ **The frame budget, now that the flicker is off it** (S240 fixed the two
+causes; the rate is 7.5–12 fps in headless software rendering and nobody has a
+number from Sam's machine). ⚠️ **The lever is NOT what S239 proposed** — see the
+profile under *Measured in a browser*: the canvas is 5.9 ms of a 133 ms frame,
+so an offscreen star layer or a WebGL point pass buys almost nothing. The cost
+is the per-node loop and `measureText`; the cheap next steps are a text-width
+memo (the same label strings are re-measured every frame) and hoisting the
+`cw()`/`ch()` layout reads out of the loop. ⚠️ Whatever changes, the drop test,
+the keyboard path and `npm run a11y skyview` run again in the same PR.
 ① **DR-24's write surface** — the curate phrase and the propose/second gate,
 routed through Governance first (Rule 10 a3). ② The skills layer's fetch problem
 (NEEDS SAM ①). ③ The rest of the queue:
