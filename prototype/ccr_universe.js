@@ -76,7 +76,18 @@ var DESC_BASES = window.CPL_SKYVIEW_DESC_BASES ||
  * so the map never lags the seed; fail-soft when the file is not reachable. */
 var SEED_URLS = window.CPL_SKYVIEW_SEED_URLS ||
   ["../kb/discipline_canonical_subj4.json", "kb/discipline_canonical_subj4.json"];
+/* ⭐ THE SUBJECT-DISCIPLINE EDGE IS READ, NOT VOTED ON (DR-25; Sam's rulings
+ * of 2026-09-08, sheet items 1 and 3). Item 1: subject → discipline is the
+ * PRIMARY edge and kb/reference/subject_discipline_map.json is its authority.
+ * The CSR above answers the other question — which of a discipline's several
+ * codes is canonical — and is keyed BY DISCIPLINE, which is what made the loop
+ * Sam found: no discipline, so no Common SUBJ, so nothing to look the subject
+ * up by. Read live, fail-soft: with no map the table falls back to the vote it
+ * always used. */
+var EDGE_URLS = window.CPL_SKYVIEW_EDGE_URLS ||
+  ["../kb/reference/subject_discipline_map.json", "kb/reference/subject_discipline_map.json"];
 var authority=null;          // {discipline: {cs, chips:[{system,code}], source, flag}}
+var subjEdge=null;           // {SUBJ4: discipline} — the authority for the edge
 var drag=null;               // {kind:'pan'|'island'|'course'|'node', ...}
 var searchHits=[], searchTerm="";
 var placedBoxes=[], titlesQueued=0, labelStats={ids:0,titles:0,full:0};
@@ -967,6 +978,24 @@ function unitsShort(u){
   if(u==null) return "";
   var n=Math.round(u*10)/10;
   return String(n)+"u";
+}
+function loadSubjectEdge(){
+  var urls=EDGE_URLS.slice();
+  (function next(){
+    var url=urls.shift(); if(!url) return;
+    var p; try{ p=fetch(url); }catch(e){ p=Promise.reject(e); }
+    p.then(function(r){ if(!r.ok) throw new Error(String(r.status)); return r.json(); })
+     .then(function(doc){
+        var raw=(doc&&(doc.subjects||doc.map))||doc||{}, out={};
+        Object.keys(raw).forEach(function(k){
+          if(typeof raw[k]==="string") out[String(k).toUpperCase()]=raw[k];
+        });
+        subjEdge=out;
+        subjIdx=null;                 // the homes were voted; re-derive them
+        if(wsPaint) wsPaint();
+     })
+     .catch(function(){ next(); });
+  })();
 }
 function loadAuthority(){
   var urls=SEED_URLS.slice();
@@ -2325,6 +2354,7 @@ window.__ccrUniverse = function(opts){
   spreadUniverse(U);
   nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null;
   if(!authority) loadAuthority();
+  if(!subjEdge) loadSubjectEdge();
   solo=wantSolo; face=wantFace;
   window.__crumbs([{label:"Disciplines and subjects", go:window.__ccrForest},{label:"SkyView"}],
                   {menu:false, view: solo?"skyview":"comprehensive"});
@@ -5041,6 +5071,7 @@ window.__ccrWorkspace=function(mode, opts){
   mode = WS_MODES[mode] ? mode : "discipline";
   if(mode==="esl" && !eslAvailable()) mode="discipline";
   if(!authority) loadAuthority();
+  if(!subjEdge) loadSubjectEdge();
   window.__crumbs([{label:"Disciplines and subjects"}], {view: wsKey(mode)});
   syncHash();
   var host=document.getElementById("view"); if(!host) return;
@@ -5195,7 +5226,27 @@ function subjectIndex(){
     var names=Object.keys(r.disc).sort(function(a,b){
       return (r.disc[b].n+r.disc[b].sa)-(r.disc[a].n+r.disc[a].sa) || a.localeCompare(b);
     });
-    r.home=names[0]; r.homeIsl=r.disc[r.home].isl; r.others=names.slice(1);
+    /* ⭐ THE EDGE ANSWERS; THE VOTE ONLY FILLS IN (DR-25, Sam's item 3 of
+     * 2026-09-08). The home discipline used to be the MODAL discipline of the
+     * identities carrying the subject — so when those were blank the vote
+     * returned blank, and the table reported "no discipline yet", which reads
+     * as a statement ABOUT THE SUBJECT rather than about the rows underneath
+     * it. Measured 2026-09-08: 148 of 344 subjects on the map voted blank, and
+     * this repo's own map file named a discipline for eleven of them
+     * (AERO→Aviation, PHTO→Photography, STAT→Mathematics …). A derived blank
+     * that looks like an asserted one is self-fulfilling.
+     * `homeSrc` is what each row says answered it. */
+    var edge = subjEdge && subjEdge[c];
+    r.voted = names[0];
+    if(edge){
+      r.home = edge; r.homeSrc = "edge";
+      r.others = names.filter(function(n){ return n!==edge; });
+      r.homeIsl = (r.disc[edge] && r.disc[edge].isl) || (r.disc[names[0]] && r.disc[names[0]].isl);
+    } else {
+      r.home = names[0]; r.homeSrc = subjEdge ? "vote" : "vote-unloaded";
+      r.homeIsl = r.disc[r.home].isl;
+      r.others = names.slice(1);
+    }
   });
   subjIdx=by;
   return by;
@@ -5205,15 +5256,34 @@ function subjectRows(){
   var by=subjectIndex();
   return Object.keys(by).map(function(c){
     var r=by[c];
-    return {key:(c+" "+r.home).toLowerCase(), code:c, n:r.n, sa:r.sa, home:r.home, others:r.others, rec:r};
+    return {key:(c+" "+r.home).toLowerCase(), code:c, n:r.n, sa:r.sa, home:r.home, others:r.others,
+            homeSrc:r.homeSrc, voted:r.voted, rec:r};
   }).sort(function(a,b){ return b.n-a.n || b.sa-a.sa || a.code.localeCompare(b.code); });
 }
 function standingHtml(r){
-  if(noDiscipline(r.home)) return 'no discipline yet';
+  /* Sam's item 3 (2026-09-08): "say on the row which of the two answered." A
+   * home that came from the edge is the authority speaking; one that came from
+   * the vote is an inference off the rows, and a reader is entitled to know
+   * which they are looking at. */
+  if(noDiscipline(r.home))
+    return 'no discipline yet <span class="ws-note">(no entry in the subject map, and its identities carry none)</span>';
   if(!authority) return '<span class="ws-note">loading…</span>';
   var a=authority[r.home];
   if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>';
-  if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a);
+  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO. Measured 2026-09-08,
+   * four subjects disagree and all four are corrections — ETHN reads Ethnic
+   * Studies against 34 identities filed under Chicano Studies, ESLN reads
+   * English as a Second Language against a malformed discipline name — but a
+   * silent reassignment of 34 rows is the kind of thing a curator is entitled
+   * to see rather than discover. */
+  var voted = r.rec ? r.rec.voted : r.voted;
+  var via = r.homeSrc==="vote"
+    ? ' <span class="ws-note">(discipline inferred from its identities — not in the subject map)</span>'
+    : (voted && voted!==r.home && !noDiscipline(voted))
+      ? ' <span class="ws-note">(the subject map says ' + esc(r.home) + '; its identities sit under ' +
+        esc(voted) + ')</span>'
+      : '';
+  if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a)+via;
   if(a.umbrella.indexOf(r.code)>=0)
     return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>';
   return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>';

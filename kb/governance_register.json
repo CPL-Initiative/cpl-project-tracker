@@ -1,7 +1,7 @@
 {
   "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
-  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is null EXCEPT DR-24, which Sam took on 2026-09-07 — the first owned row in the register. Who is accountable on OUR side is the one thing a session cannot infer from data; filling the rest in is the register's own OQ-01.",
-  "_as_of": "2026-09-07",
+  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is null EXCEPT DR-24 (Sam, 2026-09-07 — the first owned row) and DR-25 (Sam, 2026-09-08). Who is accountable on OUR side is the one thing a session cannot infer from data; filling the rest in is the register's own OQ-01.",
+  "_as_of": "2026-09-08",
   "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
   "decision_rights": [
     {
@@ -242,6 +242,16 @@
       "maintained_in": "Not yet built. Staged in the browser only (prototype/ccr_universe.js, `olState`); nothing is written from the page today. The write surface routes through this row and the privacy ADRs before it ships (Rule 10 a3).",
       "owner": "Sam",
       "when_empty": "Folding this into DR-04 would put skill statements under the identity layer, whose rules re-lock the moment M-IDs are declared faculty-published — two lifecycles under one right. Keeping it separate also stops the curate phrase's scope (still open) from being settled by accident.",
+      "load_bearing": true
+    },
+    {
+      "id": "DR-25",
+      "element": "The subject–discipline edge (which faculty discipline a SUBJ4 belongs to, and which of a discipline's codes is canonical)",
+      "drives": "Every surface that groups courses by faculty area: SkyView's islands and its subject table, the CCR list's Discipline and Common SUBJ columns, the canonical-SUBJ4 fold, and the discipline any externally-minted identifier is filed under. Four stores write this concept in two directions and none of them had an owner, which is how the same course could be Psychology in one file and blank in another.",
+      "decides": "Sam (named owner, ruled 2026-09-08 on the subjects-and-disciplines sheet, item 5). Sam's ruling on item 1 the same day settles the shape: SUBJECT → DISCIPLINE IS THE PRIMARY EDGE and kb/reference/subject_discipline_map.json is its authority — every SUBJ4 belongs to exactly one discipline, a discipline may carry several. kb/discipline_canonical_subj4.json (the CSR) answers a DIFFERENT question, which of a discipline's several codes is canonical, and stays authoritative for that. kb/_seed_coci_courses.py's prefix table and kb/discipline_inference.json's subject_map are INPUTS to the first, never parallel authorities: where they disagree with it, the map file wins and the disagreement is a worklist row.",
+      "maintained_in": "kb/reference/subject_discipline_map.json (the edge) and kb/discipline_canonical_subj4.json (the canonical code). A change to either re-files rows on every surface above, so it lands in one cron window with a receipt, per Rule 10.",
+      "owner": "Sam",
+      "when_empty": "Folding this into DR-04 would put the subject–discipline edge under the M-ID identity layer, whose rules re-lock the moment M-IDs are declared faculty-published — and the edge governs C-ID and CCN rows that DR-04 does not reach at all. It was the absence of this row that let four stores each do the sensible local thing: measured 2026-09-08, they agreed on 143 of 143 overlapping rows, so the gap was never disagreement, only unowned duplication.",
       "load_bearing": true
     }
   ],

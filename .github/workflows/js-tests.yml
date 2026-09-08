@@ -297,6 +297,16 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: SkyView orbit layout lint (kb/_build_ccr_universe.py)
         run: python3 tests/ccr_universe_orbits_test.py
+      # DR-25 — the subject-discipline edge fill (Sam, 2026-09-08). All five
+      # discipline-inference passes read kb/coci_minted_courses.json, which is
+      # 19,568 records every one an M-ID, so no externally-minted identifier has
+      # ever been seen by one: 326 identities carried no discipline, 0.4% of
+      # M-IDs against 47.5% of C-IDs. The guard's sharpest check is that the
+      # edge reads the SUBJ4 off the ID PREFIX and not row["subj"], which is the
+      # colleges' freehand local codes and mis-filed four rows before it was
+      # caught. Pure-stdlib python; same non-required check.
+      - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
+        run: python3 tests/discipline_edge_fill_test.py
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
       # a button pointing at something that is not deployed: the self-contained
