@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 446,
+  "file_datasets": 449,
   "external_services": 138,
-  "consumers": 324,
+  "consumers": 325,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -5794,6 +5794,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_discipline_blanks_worklist.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_docs_index.py": {
    "consumers": [
     {
@@ -8919,14 +8932,29 @@
    "main_committers": []
   },
   "file:kb/discipline_blanks_worklist.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    },
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 38
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -13371,6 +13399,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/discipline_blanks_worklist_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/discipline_edge_fill_test.py": {
    "consumers": [
     {
@@ -13658,6 +13699,19 @@
    "main_committers": []
   },
   "file:tests/uc_cur_promote_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/umbrella_codes_are_declared_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -14016,6 +14070,13 @@
      "direction": "read",
      "how": "literal",
      "line": 738
+    },
+    {
+     "id": "script:kb/_build_discipline_blanks_worklist.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     },
     {
      "id": "script:kb/_esl_ladder_relevel_dryrun.py",

@@ -101,6 +101,22 @@ wrong size.**
 
 ## YOUR PRIORITY
 
+0. **READ BOTH DECISION SHEETS' REPLIES FIRST.** Neither carries a wake
+   subscription — the artifact service refused one for this session — so nothing
+   will tell you a reply landed. `read_db`, collection `replies`, on each:
+   - the nine rulings, all answered:
+     https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b
+   - **the hard ones, OPEN** (8 items):
+     https://claude.ai/code/artifact/c165535f-3776-4f93-b2d6-6d1a0ad6e27d
+   ⭐ **Its framing finding, which changes how this lane is worked:** Sam asked
+   whether these are the foreign-languages case. They are the **opposite** shape.
+   FL had one MQ discipline with **no per-language discipline in the list**, so we
+   minted synthetic codes (SPAN, FREN…) and kept the discipline. Here the MQ list
+   **already carries** the distinctions — five ethnic-studies disciplines, six
+   photography/media. So: **does the MQ list already carry the distinction?** No →
+   umbrella, mint codes. Yes and the courses split → **fan-in** (FTVE, shared by
+   Film and Media Studies 360 and Media Production 146, both names kept). Yes and
+   they do not split → a plain **correction**. That one question sorts all four.
 1. **The Title 5 rename** — eight MQ discipline names, 1,183 occurrences, 33
    files. Sam ruled it (item 8); the size is what held it. Needs the re-mint
    shape: a dry-run, an alias map, `kb/promotions.json` re-keyed, landing in one
@@ -115,8 +131,17 @@ wrong size.**
    `--mustard` / `--mustard-text` pattern the design system already has);
    `pipeline` is ten. ⚠️ **This is the fan-out shape** — many surfaces, each hit
    cheap to verify by re-running the sweep. Say so before you start.
-3. **The four remaining disagreements** — ETHN, PHTO, ENVS are Sam's call and
-   now print on the row; ESLN resolves with the rename above.
+3. **The four remaining disagreements — TWO ARE NOT JUDGMENT CALLS.** Measured
+   S243: **ETHN is a correction** (the map points ETHN *and* ETHS at Ethnic
+   Studies, and ETHN is Chicano Studies' own canonical code, 34 of its 35 courses
+   there). **ETHA is missing from the map entirely** — 33 courses, canonical code,
+   no entry; a code with no entry never shows as a disagreement, which is why
+   nobody looked. **PHTO's map value is right and its courses are mis-filed** —
+   all twelve titles are photography (*Color Photo Lab*, *Digital Photo Lab*,
+   *Introduction to Lighting*), scattered across five disciplines, two of them
+   plainly wrong (Machine Tool Technology, Engineering Technology). **ENVS** is one
+   row and a real question: there is no "Environmental Science" MQ discipline.
+   All four are on the second sheet. ESLN resolves with the rename above.
 4. **DR-24's write surface** — the curate phrase and the propose/second gate.
    The register row exists with Sam as owner; the phrase's SCOPE is open.
 5. `docs/skyview_backlog.md`.
