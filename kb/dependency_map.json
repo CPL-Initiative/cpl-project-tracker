@@ -4,7 +4,7 @@
   "supabase_tables": 74,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 442,
+  "file_datasets": 443,
   "external_services": 138,
   "consumers": 323,
   "workflows": 33,
@@ -1090,7 +1090,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4394
+     "line": 4401
     }
    ],
    "main_committers": []
@@ -13310,6 +13310,19 @@
    "main_committers": []
   },
   "file:tests/dependency_map_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/discipline_edge_fill_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
