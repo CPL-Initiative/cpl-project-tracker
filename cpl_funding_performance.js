@@ -4,22 +4,22 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-09-07",
+ "as_of": "2026-09-08",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
   "pe": 43187,
   "pa": 39130,
-  "ppa": 105,
+  "ppa": 106,
   "p2": 3079,
   "p3": 14465,
   "pp": 5,
-  "ppe": 115,
+  "ppe": 116,
   "pac": 2826,
   "pe_u": 1392841.45,
   "pa_u": 216874.65,
-  "ppa_u": 652.5,
-  "ppe_u": 6605.5,
+  "ppa_u": 657.5,
+  "ppe_u": 6610.5,
   "pac_u": 24701.95,
   "p3_u": 72799.95,
   "pp_u": 25.0
@@ -1170,7 +1170,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 12725.5,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 53.5,
+   "ppa_u": 58.5,
    "p2": 455,
    "p3": 2019,
    "p3_u": 11819.0,
@@ -1178,7 +1178,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 265.5,
+   "ppe_u": 270.5,
    "pac": 698,
    "pac_u": 2206.5
   },
@@ -3758,8 +3758,8 @@ window.CPL_FUNDING_PERF = {
    "p3_u": 72799.95
   },
   "map": {
-   "pe_u": 1398970.45,
-   "pa_u": 217527.15,
+   "pe_u": 1398975.45,
+   "pa_u": 217532.15,
    "p3_u": 72824.95
   },
   "ratio": {
@@ -3885,7 +3885,7 @@ window.CPL_FUNDING_PERF = {
   "Cosumnes River": false,
   "Folsom Lake": false
  },
- "vet_star_as_of": "2026-09-07",
+ "vet_star_as_of": "2026-09-08",
  "vet_star_threshold": 0.75,
  "vet_star_n": 57
 };

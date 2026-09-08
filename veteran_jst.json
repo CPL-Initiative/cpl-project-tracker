@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-07T17:48:37.759285+00:00",
+  "scraped_at": "2026-09-08T00:25:14.599339+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27658,
+    "jst": 27659,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -37,7 +37,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 1014,
+      "jst": 1015,
       "star": true
     },
     "City College of San Francisco": {

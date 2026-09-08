@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-07T17:48:37.317Z",
+  "scraped_at": "2026-09-08T00:25:14.141Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -18,14 +18,14 @@
       "colleges": [
         {
           "college": "Moreno Valley College",
-          "students": 2505,
-          "units": 12779,
-          "avgUnits": 5.101397205588822,
+          "students": 2507,
+          "units": 12784,
+          "avgUnits": 5.0993218986836855,
           "transcriptionRate": 92.5,
-          "avgTranscribed": 4.718163672654691,
+          "avgTranscribed": 4.714399680893498,
           "criteriaMetCount": 5,
-          "militaryStudents": 1014,
-          "nonMilitaryStudents": 1508,
+          "militaryStudents": 1015,
+          "nonMilitaryStudents": 1510,
           "apprenticeStudents": 0,
           "savings": 17046862.5,
           "yearImpact": 68829340,
@@ -1757,15 +1757,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,057",
+      "value": "51,059",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,658"
+          "value": "27,659"
         },
         {
           "label": "Workforce/Other",
-          "value": "23,485"
+          "value": "23,487"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51057,
-    "Units": 217527.15000000002,
+    "Students": 51059,
+    "Units": 217532.15000000002,
     "TranscribedUnits": 72824.95000000001,
     "Savings": 325372915.25,
     "YearImpact": 1290627216.4,
-    "MilitaryStudents": 27658,
-    "NonMilitaryStudents": 23485,
+    "MilitaryStudents": 27659,
+    "NonMilitaryStudents": 23487,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.260476526235385,
-    "TranscribedAverage": 1.426346044616801
+    "AverageUnits": 4.26040756771578,
+    "TranscribedAverage": 1.4262901741123017
   }
 }
