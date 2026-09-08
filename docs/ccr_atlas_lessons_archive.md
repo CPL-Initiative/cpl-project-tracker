@@ -1605,3 +1605,734 @@ only because the same edit moves the search into the row — the dropdown now
 belongs to this row, so there is nothing above the links to hide under. The test
 pins **that pairing**, not the title's absence: a guard written against the old
 symptom would have blocked the fix.
+
+## 2026-09-05 — SkyQuiet (Session 228): what he saw, not what we changed
+
+Sam opened with three asks, and the first carried a verdict on three sessions
+of work: *"Make sure the CCR menu button opens the full screen SkyView, not the
+version it currently opens to. I've made several requests for this so far and
+none of them have worked."*
+
+### Three attempts, three mechanisms, one unchanged screen
+
+He was right, and the pattern is worth naming. 2026-08-25, "SkyView should be
+the initial CCR tab": Session 192 made the iframe the tab's landing view.
+2026-09-03, "have SkyView open full screen": `allow="fullscreen"` on the frame,
+so the map's own button stopped being refused. 2026-09-04, "open Skyview from
+CCR side menu link directly to the full window version of SkyView, not another
+view": a separate side-menu link to the page. Each was a real change and each
+was plausible from inside the code. What the tab SHOWED when he clicked it never
+moved: a boxed frame under a beta banner, a heading with a launcher, a toggle
+row and a note, and inside the frame a masthead, then the map, then panes.
+Nothing in that picture is "full screen".
+
+The third ask supplied the definition the first two attempts lacked: *"The full
+screen SkyView (which I would like to henceforth refer to as SkyView, but I
+haven't because it keeps apparently getting confused with the original
+SkyView)."* Full screen, to him, is what the Full screen button paints: `#u-full`
+and nothing else. "The original SkyView" (masthead, map, panes) is now **the
+comprehensive view**, reachable from the Views menu and never the default.
+
+⚠️ The lesson generalizes, and it is in `CLAUDE.md`'s naming section and its
+own KB note: when an ask comes back a third time with "none of them worked",
+diff what the reader SEES against what they asked for, not what the code does.
+Three sessions verified mechanisms; one screenshot would have failed all three.
+
+### Solo is a class, not a second render
+
+`body.u-solo` hides the masthead, the crumbs row, `#u-below` and the footer; the
+canvas takes `innerHeight` minus the top row and the legend strip, the same
+arithmetic `fitCanvas` already used for browser full screen. The comprehensive
+view is the SAME render with the class off, and that is the point: switching
+keeps the zoom, the selection and the moves, because nothing is rebuilt. A
+`__ccrUniverse({solo})` call on a page already showing the map only toggles the
+class; a bare `__ccrUniverse()` keeps the frame you were in, so the list's row
+click and the suggestion jump come back where you left. Narrow screens keep
+scrolling (the details panel docks under the canvas there and needs the room);
+`overflow:hidden` applies from 700px up.
+
+### One menu builder, and the item that is not offered
+
+Item 9, every view reachable from every other, was two menus in two files until
+it was one function. `viewsMenuInto(host)` renders the same `<details>` into the
+map's top row and into the crumbs row of every other view; the view you are on
+is a muted name with `aria-current="page"`, not a button, because a menu item
+that leads where you already are is a control that appears to do nothing.
+Framed inside COBI, the "CCR table view" item becomes a button that posts to
+the page around the frame, and an "Open in its own tab" link appears.
+Stand-alone, the link out points at `#unified-courses/list`: the tab itself now
+lands on the map, so a link to the bare tab would have opened a second map.
+
+### "Subject" is the SUBJ4 grain, and now it has a view
+
+SkyMint's handoff carried the constraint that made item 6 more than a rename:
+"All disciplines" and "Disciplines as a list" both listed disciplines, and his
+"view by subject" is the four-letter Common SUBJ code an identity is keyed by.
+After the 2026-09-03 recode those codes ARE the identity ids' prefixes, so the
+subject rows are read off the map itself, 344 codes across 159 islands, and
+joined to the seed for the standing column: *the Common SUBJ of Business* (with
+its C-ID chip), *an umbrella code under Foreign Languages*, or *not Business's
+code (its Common SUBJ is BUSI)*. TOP plays no part (Rule 7). The three legacy
+anchors read `M-ID HOSP 102` and take the second token. *On the map* flies to
+the discipline that carries most of the code at 150% and rings its identities
+up to 150; past that the count in the hint says more than the rings would,
+which is the 408-red-rings lesson of 2026-09-03 applied to a second grain.
+
+### The harness found the search box dying, one click in
+
+The moment the harness reached a discipline cell under the comprehensive map,
+`#gq` was gone. The embedded forest's cells call the template's own
+`discipline()`, not the wrapped `window.__ccrDiscipline`, so the view was
+replaced without the borrowed search form going home, and `innerHTML =`
+detaches, so the page's one search field simply ceased to exist. Latent since
+the box moved into the top row on 2026-09-04; never seen because the harness
+had only ever reached those cells from the stand-alone forest. The fix is not
+another wrapper: `setCrumbs()` is the one call every view makes before it
+renders, so it now sends the box home and names the view being entered. The
+wrapper stays as the belt to that brace.
+
+### The solo view had no heading
+
+`npm run a11y -- skyview` on the new default: *headings start at h—(none)*. The
+page's h1 lived in `#u-below`, which solo does not paint. The row's "SkyView"
+title is the h1 now, sized to the row; the panes' headings step down under it
+(h2, h3), and the embedded forest's hero heading steps down with them. Five
+routes swept, all green.
+
+### COBI's tab, and what the frame is allowed to be
+
+Map mode adds `uc-map-on` to the pane: the beta banner, the heading with its
+launcher and the toggle row hide, the container's padding and 1400px cap lift,
+and the frame takes `innerHeight` minus its own top. Measured, not assumed,
+because the COBI header's height is not the tab's to know, and measured AGAIN
+after the frame and the fonts load, because the first measurement caught the
+header before it settled and the frame ended 142px short until it did. Close
+and "CCR table view" arrive as `postMessage` from the frame and are honored
+only when `e.source` is our frame's window. The list keeps its toggle and
+launcher, and `#unified-courses/list` is the hash that lands on it.
+
+### Verification
+
+`tests/ccr_skyview_universe.test.js` 131 → 157 (solo and its hash, the menu's
+current marker, routing, the workspace on both grains, the subject index, the
+rings); `tests/ccr_skyview_first.test.js` 26 → 37 (the map-mode chrome, the
+message hand-off honoring only our frame, the `/list` hash both ways);
+`npm test` 300 files green; `prototype/check_ccr_atlas.js` rewritten for the
+workspace, the comprehensive view and solo geometry, every check green in
+Chromium with the shards built locally (`--shards-only`, 24 s, gitignored);
+`npm run a11y -- skyview` green on all five routes. The CCR tab's only sweep
+finding is First Light's 15px greeting opt-out checkbox, chrome-wide and in
+the backlog. PR #1479.
+
+### Next
+
+Sam drives the three asks. His reaction to the standing column is the thing to
+watch: it is the first SUBJ4 view a curator has had, and every "not X's code"
+row is either a stray the fold missed or an umbrella the seed does not know.
+## 2026-09-05 — SkyKeep (Session 230): the second list, and a class toggle is not a re-render
+
+Sam's second SkyView list arrived with two screenshots marked YES (the map
+alone, no COBI header) and NO (the map inside COBI's chrome), then a third of
+the OS window controls, then a fourth of Obsidian's canvas controls with the
+note *"These are nice controls from obsidian"*, and mid-run: *"add a hamburger
+menu glyph in upper left that can open the COBI side bar — should be default
+collapsed on open."* One PR (#1481).
+
+### What shipped, in his order
+
+The full window on the CCR click: `body.cpl-skyview-solo` takes COBI's header,
+rail, hamburger and To-Do button out and gives the frame the viewport; the rail
+becomes the slide-over it already was below 900px, at every width, and opens
+from the frame's ☰ by `postMessage` (menu · dock · undock · ready, answered
+with `skyview-host {docked, menu}`). The window controls are three states and
+two steps: 0 the page or COBI around the map, 1 the map alone, 2 the browser's
+full screen; the left control steps down, the middle steps up, the close is the
+same close. The Full screen chip went; the Hide legend chip went (the legend
+folds from the map's own corner, the word unbold with a fold mark); Details
+reads Sidebar; the Search label is the placeholder; the zoom label stacks over
+its percentage; every chip in the row is 30px with a 6px corner, the search box
+and its button included. Show is a menu of twelve switches. Views is Go To and
+carries How SkyView works. The search became a selection of chips. And a dark
+canvas.
+
+### A class toggle is not a re-render
+
+The window controls painted their state in `wire()`, once per render. But
+`__ccrUniverse({solo:false})` on a page already showing the map does not
+re-render: it toggles `body.u-solo` through `setSolo()`, keeping the zoom, the
+selection and the moves (S228's design). So stepping down left the old
+control's state on screen — the jsdom check saw state 0, `u-solo` off, and a
+down control still enabled. The fix is one line: `setSolo()` calls
+`paintWins()`. The rule underneath is the 2026-09-04 one ("paint the state,
+never hardcode it in the markup") with its second half: paint it from EVERY
+path that changes the state, and a class toggle is such a path.
+
+### A dimmed inert control fails the sweep twice
+
+The first cut disabled the down control at state 0 with `opacity:.45`.
+`npm run a11y` failed the comprehensive route on it twice over: 2.04:1 for the
+glyph, and "focusable with no ring", because the checker reasons from the tag.
+Not painting it at all (`hidden`) passes both and is what Sam's glyph rule asks
+for anyway: a mark that cannot say what it is for should not be there. And the
+`hidden` attribute needs its own CSS line when the element's display is set by
+a class — `.u-top .u-win{display:inline-flex}` overrides the user agent's
+`[hidden]{display:none}`.
+
+### A search means a search
+
+"Make it multi-select capable" had one design question: what does Enter do
+once picks accumulate? A pick from the list ADDS a chip; Enter REPLACES the
+selection with one term chip. One chip behaves exactly as a single pick or
+search always did — the 157 existing checks kept passing untouched — and
+several chips ring every course, outline every discipline and fit them all.
+Backspace in an empty box drops the last chip, the token-input convention.
+
+### The canvas palette is CSS tokens
+
+First Light says `var(--token)`, never a raw hex; a canvas cannot read CSS. So
+`readPal()` asks the body's computed style for each `--sky-*` token at draw
+time, `body.u-dark` redefines the set, and the legend swatches moved from
+inline colors to classes on the same tokens — one rule set colors the chrome,
+the legend and the canvas. jsdom answers "" for every custom property, so the
+light values are the fallback and every existing check kept its colors. The
+dark ground is opt-in and remembered per browser; every text pair on `#1E1E1C`
+is measured (ink 13.9:1, body 11.0, muted 6.9, the on-dark cobalt 6.5).
+
+### The harness met COBI's greeting
+
+The first Chromium drive of the framed page timed out clicking ☰: First
+Light's first-visit greeting dialog (`.cplfl-overlay`) sat over the frame and
+intercepted the pointer. A harness that drives COBI has to do what a
+first-time visitor does — dismiss the greeting — before it can reach anything.
+Recorded because it will meet the next harness too.
+
+### What the Obsidian screenshot gave, and what it did not
+
+Taken: the trio of window controls in the title row, a sidebar toggle at the
+top left, a dark ground. Left: the right-edge vertical rail of glyphs (zoom in,
+reset, fit, zoom out, undo, redo, help). The row already carries those as
+words, and a second copy as glyphs is exactly the noise his glyph rule names;
+whether the words should BECOME the rail is his call, and the lane file asks.
+
+### Verification
+
+`tests/ccr_skyview_universe.test.js` 157 → 188 (the row, the Show switches,
+the legend fold, the window states, the tokens, the dark canvas, the
+explainer); `tests/ccr_skyview_first.test.js` 37 → 51 (the full-window class,
+the menu / dock / undock / ready messages, the source check, leaving the tab);
+`npm test` green; `prototype/check_ccr_atlas.js` green with the shards built
+(`--shards-only`); `npm run a11y -- skyview` green on six routes at three
+widths; a Chromium drive of `index.html#unified-courses` confirmed the full
+window, the rail from ☰, the outside click, dock, undock and close.
+
+### The header's second cut: the header's own vocabulary
+
+Mid-run Sam sent a screenshot of Claude's own header — small ghosted icons at
+the left, a title in a rounded field, expand and close at the right — with
+*"If you can further simplify and complete SkyView header components by
+incorporating features like your own header, please do it."* So the row lost
+three word chips (Go To, Sidebar, Dark) to ONE More menu that holds *Go to*
+(every other view, rendered flat under a heading rather than as a menu inside a
+menu), *Show or hide* (Sidebar, Legend, Dark canvas, each a row with an on/off
+word) and the doors out; Out / In / Reset became − % + ↺ in one bordered
+group; the title became a field; expand (⤢, ⤡ in full screen) took the middle
+window control. Every icon carries words as its accessible name and tooltip,
+and the text controls stay words in boxes — the icons are his ask, twice over
+(the OS trio on 2026-09-05 morning, the header that afternoon), which is what
+the glyph rule requires: a mark that proves its worth.
+
+⚠️ **One id collision cost twenty minutes.** The menu was `id="u-more"`, and
+`#u-more` already existed: the forest's host under the map. `getElementById`
+returned the menu, and the comprehensive view rendered the entire forest inside
+it. The check that caught it was "the details panel starts hidden", failing
+with *no element* — the sidebar row had been overwritten. A new element takes a
+new id, and a grep for the id before minting it is cheaper than the debugging.
+## 2026-09-05 — SkyKeep (Session 230), the same afternoon: the third list, and Obsidian as the reference
+
+Sam drove the second cut within the hour and sent a third list, then two
+screenshots of Obsidian's graph view: *"See how obsidian uses dots for item,
+which we could do since we don't put info in the course circles, and see how
+it spreads more"* · *"color-coded dots to match our legend"* · *"Note how when
+you click on an entity, it shows the connections in contrast to unclicked."*
+
+### What "Show: 1 of 12" was
+
+His first screenshot read "Show: 1 of 12" in the row: eleven switches off,
+which is exactly the state in which an identity's hub and its spokes draw and
+no course does. A drive of the same pick landed with every switch on, and the
+menu's clicks, keyboard, "Show everything" and a row re-render all behaved;
+how his got there is not known. What changed: a pick now switches on what it
+needs to be seen (the point's credit status, its system, its kind; for an
+identity the college courses and the orbit) and the hint says which, and the
+row's tooltip names what is hidden. A pick that lands on a hidden point was a
+ring around nothing.
+
+### The rest of the list, in one pass
+
+- The sidebar hides from its own bar (*Hide*) and resizes from a grip on its
+  edge — dragged, or nudged with the arrow keys, Home resets — remembered per
+  browser as a custom property the CSS reads for the flex basis.
+- Every suggestion row carries a checkbox, the list is `aria-multiselectable`,
+  a pick from the list toggles, and the list stays open with the term still in
+  the box, so a second pick is one more click. ⚠️ The toggle belongs to the
+  LIST only: `__ccrGoSuggestion` is what the workspace and the sidebar call to
+  go somewhere, and making it toggle broke five tests that open a discipline
+  twice. Two entry points now: `__ccrToggleSuggestion` for the rows.
+- *Clear* looked like a large underlined link because `.linkish`, defined
+  later in the stylesheet at the same specificity, overrode the chip rule.
+  *Clear* and *Fit all* are `.u-tokens .u-tok-act` chips at the tokens' size.
+- The title is a word, not a box. The Search button is gone; the one field
+  submits on Enter, and the harness presses Enter where it clicked.
+- The newest pick gets the focus (the single-pick fly and details) and every
+  pick stays ringed; *Fit all* is the word for the union. Fitting all three of
+  his picks had landed at 26%, three unmarked circles on a whole map.
+- Rings are thin at every zoom (`ringWidth`).
+
+### Dots, spread, and the click highlight
+
+The builder packs every point with a footprint (`nodeRad`); the mark drawn is
+now a DOT inside it (`dotRad`: 0.66 of the footprint for an identity, 0.62
+for a stand-alone), so nothing moves and the air between points is the
+difference. Identities are solid dots in their system's color; stand-alones
+are smaller, lighter dots (alpha 0.6); noncredit keeps its broken ring, drawn
+just outside the dot. The islands spread apart once at load (`spreadUniverse`,
+×1.22 about the map's center; radii unchanged, nodes translated with their
+island, bounds rescaled) — in the client rather than the builder because the
+layout payload is a committed 7 MB file no workflow regenerates, and a factor
+in the client is a knob. ⚠️ The jsdom tests flew to typed fixture coordinates
+(`-120, 0`); they now READ positions from the page's copy (`AT(id)`,
+`AT_I(discipline)`), because a coordinate in a fixture is where a point was
+packed, not where it is drawn.
+
+The click highlight is Obsidian's: a selected identity lights its orbit ties
+solid in the selection color and every other point fades to 0.3; a selected
+stand-alone lights its identity; a click on empty ground drops it and keeps
+the panel. Our edges are the orbit ties and the college courses under an
+identity — Sam's own reading of Obsidian's (*"it uses the generated tags from
+our .md artifacts"*) maps onto them.
+
+Verified: jsdom 210 checks, the Chromium harness, `npm run a11y -- skyview`
+(six routes, three widths), and a drive of the pick, the grip and Hide.
+
+### Two more, at the session's end
+
+Sam, signing off: *"need to add a Deselect All option on the Show:All drop
+down AND need to be able to zoom to 7k — needed when working on a single
+course."* Both shipped before the session closed: **Deselect all** beside
+Show everything (every switch off, then tick the one or two wanted; the row
+reads "0 of 12" and the hint counts what is hidden), and `K_MAX` 60 → 70. The
+radius taper above `RAD_KNEE` is what makes 7,000% usable: the dot stays a
+dot while the positions keep spreading.
+## 2026-09-05 — SkyReply S231: two reports, and neither control was broken
+
+Sam, opening the session: *"1. Search box only delivers a short set of options
+and should show all or at least allow scroll to show others. 2. Show:All box
+does not respond when making changes. 3. Test other functionality to make sure
+everything works."*
+
+**Both were true, and neither was the control's fault.** That is the reusable
+part: a control reported as broken is worth ten minutes in a real browser
+before it is worth a line of code, because the two cases below would each have
+attracted a plausible fix that changed nothing.
+
+### The search box was already scrollable
+
+`.sug` has carried `max-height` + `overflow-y:auto` since it was written. The
+fault was one number in the caller: `__ccrSuggest(term, 8)`. Measured in
+Chromium, "art" rendered **8 rows against 200+ matches** — there was never
+anything below the fold to scroll to, so the box Sam was asking for already
+existed and had nothing to show him.
+
+⚠️ **Raising the limit alone would have half-fixed it.** The budget inside
+`suggest()` was written for a list of eight — disciplines took `limit-4`,
+courses `limit-2` of the rest — and read at sixty it starves the tail: a term
+matching many disciplines pushes every course off the end. The budget's JOB
+changed when the list became scrollable. It is no longer there to keep the
+dropdown short; it is there to stop any one kind from crowding the other two
+out of the TOP of it. So each kind gets a share with a floor and **whatever a
+kind cannot fill flows to the others** — otherwise a term with no college
+courses returns 45 rows and a gap, which is the original complaint again.
+
+Two more that only appear at depth: the candidate pool (`pts`) was capped at
+400 and that cap **truncates by island order, not by relevance**, so at a limit
+of 8 it never mattered and at 60 it decides the list — raised to 3,000, which
+costs nothing because a term matching little walks the whole corpus either way.
+And the arrow keys had to start carrying the viewport (`scrollIntoView({block:
+"nearest"})`): a cursor walking off the bottom edge of a still list reads
+exactly like a list that has stopped responding.
+
+### The Show switches were never inert — the map was
+
+Courses are only drawn past `NODE_ZOOM` (0.20). **SkyView opens at k = 0.100**,
+three zoom steps below it, because 49,896 dots at 10% are a smear and the
+disciplines are what is worth reading there. So every switch changed its label,
+changed the count in the hint, and moved **nothing whatever** on the canvas.
+Measured, stepping the zoom up from the opening view:
+
+| k | 0.100 | 0.141 | 0.197 | 0.276 | 0.386 |
+|---|---|---|---|---|---|
+| a filter change alters the canvas | ✗ | ✗ | ✗ | ✓ | ✓ |
+
+⭐ **The fix is not to draw the dots — it is to let the filter reach what IS
+drawn.** A discipline holding no course that passes the switches is no longer
+drawn (`islandPass`, memoized on a signature of the twelve switches, because
+`draw()` runs every pan and zoom frame). Deselect all now empties the map at
+the zoom it opens on. `pick()` honors the same filter — filtering to noncredit
+and clicking where a credit course sat was opening the inspector on an
+invisible point, the filter honored by the eye and not by the hand.
+
+⚠️ **And that created a second-order problem the sweep caught, not a test.**
+Dropping an empty discipline means picking that discipline from the search list
+lands on nothing at all. `healShow` had answered this for a COURSE pick; the
+discipline branch called `healShow(null)`, which turns on `ident` and nothing
+else, and a typed search never healed from either of its branches.
+`healIsland` / `healHits` close it — **and only when NOTHING passes.** A filter
+the reader set stands as long as it still leaves them something to look at;
+healing a filter that is working is how a control starts fighting the person
+holding it. Pinned in both directions in the test.
+
+### What testing everything else was actually worth
+
+The sweep — 32 checks driving the real page, 14 more inside COBI's CCR tab —
+found two things a green suite did not:
+
+1. **`skyview.html` shipped one edit stale.** The built page is an artifact
+   assembled by `build_ccr_atlas.py`; the jsdom tests read `ccr_universe.js`
+   directly and passed, while the served page had never seen the last edit.
+   **The build is part of the change, not a step after it.**
+2. The heal gap above.
+
+And two that looked like bugs and are not, recorded so nobody "fixes" them:
+**Clear and Fit all only render past ONE chip** (with one, its own × is the
+clear), and **the side rail closes on a click outside it**, not on a second
+press of ☰ — it is a slide-over with a full-viewport scrim, so the second press
+lands on the scrim and closes it anyway. A harness that clicks through frames
+has to drive both from the parent page.
+
+⚠️ One thing found and NOT fixed: in COBI's CCR tab the First Light greeting
+(`.cplfl-overlay.open`, `z-index:12000`) covers the whole SkyView frame until
+dismissed. It is a modal greeting with a working close button and it greets a
+browser once a day, so it is behaving as designed — but a harness meets it on
+every fresh profile, and a click on anything in the map times out until it is
+cleared.
+## 2026-09-05 (evening) — SkyReply S231: the course outline, planned not built
+
+Sam, after the two bug fixes: *"I would like the courses on double-click to open
+a basic course outline with real data you pull from CID, CCD, or the MID data we
+have plus a synthetic course description you create on the fly … editable and
+then verifiable by faculty reviewers in this process. Plan and recommend before
+taking action."* What followed was six more messages that turned a feature
+request into the lane's purpose. Nothing was built; the prototype is a Claude
+artifact on live **WELD M1109** data (Introduction to Welding, 24 member
+colleges).
+
+### The three sources are not comparable, and that shapes everything
+
+The ask names C-ID, CCN and M-ID as if they were three flavors of the same
+thing. Measured:
+
+| Source | Clustered identities | What it gives |
+|---|---:|---|
+| C-ID | 484 (473 with a descriptor) | Official approved descriptor prose |
+| CCN | 57 | Title and number — **no descriptor text exists** |
+| M-ID | 15,937 | No authority text at all |
+
+So **97% of the corpus has no authority prose** and the outline is built from
+member catalog descriptions plus the CO's course-basic file. That file joins on
+`"CCC" + control_number.zfill(9)` — the first join attempt returned 0 of 24
+because SkyView stores the digits stripped — and on the test course matched 22
+of 24, giving units, TOP, credit status, transfer and SAM. ⚠️ It carries
+**units but not hours**, so three MC slots (`lecture_hours`, `lab_hours`,
+`outside_of_class_hours`) stay unsourced even with it.
+
+### The synthesis works, and its evidence base varies by an order of magnitude
+
+For WELD M1109 all 24 members carry a description and they converge hard —
+17 name SMAW, 15 safety, 15 oxy-fuel, 15 GMAW. A description drafted from that
+is defensible and every clause traces to a count. But across the corpus:
+**90.4%** of clustered identities have ≥2 descriptions, **46.4%** ≥3, **23.5%**
+≥5, and all **33,418** stand-alones have exactly one. The same "synthesized"
+badge on a 24-source draft and a 1-source tidy-up would overclaim on the
+second. Provenance had to become the page's structure rather than a footnote:
+[`methodology-provenance-is-the-spine-of-a-generated-document`](kb-notes/methodology-provenance-is-the-spine-of-a-generated-document.md).
+
+### Sam's rulings, in the order he gave them
+
+1. **Interactive popup**, not a markdown file (he proposed the file, then
+   corrected himself in the same breath).
+2. **A synthetic description may be shown** *"as long as it is clearly labeled
+   MAP-Generated for faculty consideration and revision before use."* His words
+   are on the page verbatim, travelling with each generated field rather than
+   sitting once at the top.
+3. **Layered from the start** — *"layered is more manageable and scalable"* —
+   because MAP exhibits and military credit recommendations are coming as
+   further layers on the same identity.
+4. **Editable titles and re-subjecting**, but *"only when verified and given
+   admin permission should they be reminted."* A discipline change is an
+   ordinary `kb_curation` row; a SUBJ4 change re-keys the identity and queues.
+5. **Include the thin skills with a confidence chip** — *"More is better as
+   long as we don't stretch too far."* Twelve became fifteen.
+
+### The competency list, and what it cost to make honest
+
+Fifteen competencies drafted from the 24 descriptions, each carrying the number
+of colleges whose own text supports it, ordered by that count. Two caveats had
+to go on the page because both are true and neither is obvious: **no college
+gave us an outcome** (catalog descriptions say what a course *covers*, not what
+a student can *do*), and **no proficiency standard is attached** — for a CPL
+decision, "can operate SMAW" is not enough without to what standard, in which
+positions, on what material. That second gap is on the critical path to the
+Career Passport, not a nicety.
+
+⭐ **Including the thin three was the right call, and the data proved it within
+the hour.** *Interpret welding symbols* sat at 5 of 24 and was nearly dropped —
+and it turns out to carry its own published credit recommendation from three
+credentials. Had the list stopped at twelve, the one row where the two
+vocabularies most visibly disagree would not have been on the page.
+
+### The agency column is empty, and everything runs through it
+
+`kb/credentials.json` and `kb/cr_reference_worklist.json` were both checked
+field by field. For welding they hold **57 published credit recommendations
+across 129 credential links**, including real ASME BPVC Section IX welder
+qualifications — and **zero skill statements**. A recommendation names where
+credit *lands* ("3-4 hours in Introduction to SMAW"), never what the holder can
+*do*. The agency side of the comparison cannot be filled from anything we hold.
+
+### Sam reframed it twice, and both corrections changed the design
+
+**First:** the comparison runs **both ways**. *"Think of the impact to both
+constituents if we can adjust each other's training to align."* A
+one-directional panel reads as an audit of colleges and invites defensiveness
+from the people whose cooperation the thing needs. The data supported the
+reciprocal read immediately — 7 of the 15 competencies have no agency
+counterpart, including *work safely in a welding shop* at 17 of 24, the joint
+most-taught item on the page.
+
+**Second, and this one corrected a premise the session had been working from:**
+*"CCC CTE programs already teach to industry standards, but we have never
+examined it one certification at a time and have certainly not reported on it or
+cataloged it for our learners benefit."* Alignment is the design intent and
+largely the practice. So the expected finding is broad correspondence, the
+deliverable is the **learner-facing catalog** rather than a gap report, and the
+welding result may be a **division of labor** — agencies certify the narrow
+assessable specialty, colleges teach the whole occupational package with safety
+at the front — rather than misalignment. ⚠️ Both readings fit the data equally
+well, and the session had settled it on its own. That is exactly what the
+faculty verify step is for.
+
+### And the direction was wrong
+
+The outline was built course-first. The real evaluation runs **certification →
+courses**: one certification examined for which course or courses it aligns with
+**enough** for CPL — a sufficiency test, never equivalence. The guiding question
+the whole process answers, and the acceptance test for every screen this lane
+ships: *"Would I want this person to have to take my class when they already
+know this stuff?"*
+[`reference-the-cpl-guiding-question`](kb-notes/reference-the-cpl-guiding-question.md).
+
+Sam's six statements are captured verbatim in the `CPLBrain` vault
+(`03-professional/braindumps/`, 2026-09-05 19:00 through 20:15), including the
+Career Passport destination, the equity framing, and *"with foreknowledge"* —
+which inverts the whole transaction from *will you count this?* to *this
+already counts, and here is what for.*
+
+## 2026-09-05 (late) — SkyReply S231: the sort, the sky, and a rule that never fired
+
+**#1488 shipped after the checkpoint**, so the lane, the handoff and the feed were
+one PR behind until this pass. Worth naming on its own: *a checkpoint is a
+snapshot, and work that lands after it is invisible to the next session unless
+someone goes back.* The fix is cheap; noticing is the hard part.
+
+### The sort, not the depth
+
+Sam saw a duplicate he had missed and blamed the list length. The list was
+already sixty deep. What buried the twin was the **order**: after the relevance
+tier the list sorts by member count descending, and a duplicate of a
+well-adopted course is almost by definition the *less*-adopted one. So the
+ranking hides precisely the thing the reader is hunting.
+
+⚠️ **The first fix was wrong and the harness caught it.** Sorting the whole match
+set by name and taking the first N returns the titles beginning with "A" — both
+welding intro courses vanished. The window has to be **centered on the anchor**:
+rank by relevance, take the best match, re-sort by name, then slide a window
+with the anchor about a third of the way down.
+
+### The glow is a claim, not a decoration
+
+Sam's two sentences did the design work: members become muted stars, every
+circle gets a gentle glow, and *"leave all the loners and nonmembers without the
+halo effect — haven't earned their wings yet and are still moons."* That last
+clause turns an ornament into an assertion — **a lit point is one colleges have
+agreed on** — so a reader who never learns the rule still sees the settled
+identities as the bright ones.
+
+### A rule at the best possible address that was untrue the day it was written
+
+Checking whether a stored id still names a live course, I compared ids directly
+against the identity set and reported 44% and 36% dead. Through the 15 applied
+alias maps the real figures are **27%** and **22%**. Rule 7 documents the
+resolution semantics — on the PULL side, triggered by *"you read them when you
+are re-minting, which you already know you are doing."* **I was not re-minting.**
+That is the whole failure: the trigger assumed a self-awareness the task did not
+produce.
+
+Then the same shape again, one layer down. The chain is copy-pasted into two
+files — 15 maps in `kb/_rekey_promotions.py`, **7** in
+`kb/_analyze_official_fold_evidence.py`, which carries the comment *"Must stay in
+lockstep with kb/_rekey_promotions.py ALIAS_MAPS"*. That comment was added
+2026-09-03 **to a list that already omitted the 2026-06-12 and 2026-07-10 maps**,
+and `kb/README.md` calls the script a "read-only drift detector". The drift
+detector has drifted.
+
+⭐ **The lesson is about mechanism, not diligence.** A written instruction sat at
+the strongest address available — inside the file, at the point of use — and was
+false on arrival. In the same session CI's dependency-map check caught me
+**twice**, unread and unasked. What fires is code and CI; what needs a decision
+to invoke does not fire in the case that matters, because the failure mode is
+**confidence, not doubt**. `kb/doctrine.py` already reaches for this and says so
+in its own docstring; it would still have missed here, because it reads the
+*diff* and this error was in analysis — files read, none written.
+
+### Believe the curator over the inference
+
+I reported that the statewide "Introduction to Welding" recommendation pointed at
+a 2-college identity rather than the 24-college one. Sam corrected the premise:
+statewide CRs are titled from C-ID or CCN where one exists and neutrally where
+none does, *precisely so no local college title wins*; local CRs match local
+titles. The worklist is built from `chatbox_peer_articulations`, so a group's
+`courses` list is **uptake** — who articulated against the recommendation — not
+the recommendation naming a course. `introduction welding` reads 3 rows at 1
+college: one college's uptake. Confirmed alongside it that all **512** Welding
+identities are M-IDs, no C-ID and no CCN, which makes welding exactly the case
+his rule exists for. The merge candidate survives, on the titles alone.
+
+## 2026-09-05 (night) — SkyOutline S232: one chain, and the re-key that mostly should not happen
+
+Sam's rulings 8, 4 and 5, in his order. Ruling 8 first because the shared resolver
+is the tool the re-key is performed *with*, and that turned out to matter more
+than expected: writing the resolver forced the question *what is the live set*,
+and the answer overturned most of ruling 4.
+
+**The chain is declared once now.** `kb/alias_chain.py` holds the one
+`ALIAS_MAPS`, the one `resolve`, the one era guard. It had been copy-pasted into
+`kb/_analyze_official_fold_evidence.py` under a comment reading *"Must stay in
+lockstep with kb/_rekey_promotions.py ALIAS_MAPS"* while carrying seven maps
+against the real fifteen — eight applies behind, for months, failing nothing.
+⭐ **A comment promising lockstep is not a mechanism, and it fails silently in
+the one direction nobody checks.** `tests/alias_chain_single_source_test.py`
+now fails a second declaration under that name or any other, a copied resolver
+in a chain-aware file, and a chain that is duplicated, missing or out of order —
+all four perturbation-tested, because a guard nobody has seen fail is a guess.
+
+**Then ruling 4 mostly evaporated, and executing it literally would have done
+damage.** The instruction was to re-key `kb/cr_reference_worklist.json` and
+`kb/coci_articulations.json` through the fifteen maps. Measured:
+
+| surface | what the ruling assumed | what it is |
+|---|---|---|
+| `cr_reference_worklist.json` (2,006 M-IDs) | stale since September | **0 dead** — `daily-dashboard.yml` rebuilds it every morning from `coci_articulations.json`, so it cannot go stale. Re-keying would have **moved 1,197 live ids** off their rows. |
+| `articulations[].course_id` (2,319) | stale | **already current-era**: 2,299 of them equal a *resolved* identity key. Re-resolving is a double-applied permutation. |
+| `identities` side map (2,346) | — | **the one stale surface**: 1,597 ghost keys, 1,369 re-keyed, 2,290 entries now all live. |
+
+⭐ **The tell for which era a stored id is in is the DIRECTION the number moves.**
+Resolving an old-era key *heals* it (dead falls: identities went 1,597 → 175);
+resolving a current-era key *moves* it onto a live but unrelated row (dead rises:
+welding course ids went 44% → 50%). One file held both eras at once, which is
+exactly the state `alias_chain`'s docstring calls unrecoverable in place — except
+here the two eras were in two different fields, so each was recoverable alone.
+
+⚠️ **S231's death figures were an artifact of the measuring stick.**
+`unified_courses_data.js` declares `count_total: 76,008` and ships
+`count_inbrowser: 16,480`, so "not in the browser payload" read as "dead" and
+over-reported it about fourfold. Welding CR ids: 19 of 70 reported, **0 of 70**
+against the real catalog. **A display payload is not a catalog** — and the number
+was reproduced exactly (44%) before it was corrected, which is what made the
+correction safe to assert.
+
+⭐ **The near-miss worth remembering: a liveness set narrower than the identity
+space condemns an entire identity system.** 175 of the identities are
+`identity_system: C-ID`, keyed by the C-ID code itself (`ACCT 110`), which can
+never appear in an M-ID minted catalog. S229's dry run tested against minted ∪
+singletons, so every one of them came out `drop_dead` **by construction** — 172
+live identities carrying 662 articulation records, one `--apply` away, and all
+five of its gates would still have passed, because the gates check that the
+*post-state* is consistent, not that the *plan* was sane. Sam's ruling 5 ("a
+worklist, never a silent drop") is what turned a silent deletion into a thing
+that had to be written down and therefore looked at.
+
+The liveness set now includes `kb/reference/coci_courses.json` — the same C-ID/CCN
+reference the seed builder resolves them against. Dead remainder: **175 → 3**, and
+those three are malformed keys (`AG-AB 108 108`, `AG-PS 128 128 L`, `NULL`) — a
+seed-join defect, not a retirement. They land in `dead_worklist.md` beside the
+receipt. The 2026-09-04 receipt is marked `SUPERSEDED` rather than deleted, since
+it is the evidence of what was nearly applied.
+
+**Patterns that carried over from S231 and earned it again:** reproduce at the
+user's state, not a convenient one (the C-ID bug is invisible unless you look at
+*which* ids are dead, not how many); and hash the rendered output, not the control
+— here, the plan's counts, not the fact that the script ran.
+
+### The S231 look, moved here verbatim from the lane (2026-09-05, S232 compaction)
+
+The lane states current truth; this is the detail behind the glow ruling, kept once:
+
+> ⭐ **THE GLOW IS THE MEMBERSHIP SIGNAL, NOT DECORATION** — Sam: *"leave all the loners and nonmembers without the halo effect — haven't earned their wings yet and are still moons."* A point colleges have joined emits light; a stand-alone reflects it, so the map answers *has anyone agreed this is the same course?* without a word. Also his, in order: members as muted stars; a darker, grayer canvas (14.81:1 strong ink, 7.77:1 muted); short college names throughout, canonical kept on `title`; the catalog description on a member's hover card; the parent's name INSIDE the big circle when it fits (an open identity's middle is the emptiest space on screen) with no leader, because position is the tie; otherwise the leader lands ON the edge (`q.rad*0.98`), not at 0.71; the disc and the title wearing the identity system's color (5.15–8.44:1 light, 6.76–9.23:1 dark), a stand-alone keeping muted ink; and **no label transecting a disc** — `discBoxes` are seeded as occupied boxes before any label is placed. Verified: 55 checks in `tests/ccr_skyview_search_show.test.js`, 302 test files, `npm run a11y -- skyview` across 6 routes, a Chromium drive per change.
+
+## 2026-09-05 (late night) — SkyOutline S232: the other six rulings
+
+Rulings 11, 3, 1, 6 and 2, after 8/4/5 earlier the same night. Two of them taught
+something worth keeping.
+
+⭐ **A TEST THAT PASSES WITHOUT THE FIX IS TELLING YOU THE FIX IS WRONG.** Sam's
+ruling 3 said *"focus jumps back to the search bar on every selection when
+picking multiple courses and should stay put."* I read "focus stays put" as *put
+focus back* and made the pick re-focus the search box — which is the complaint
+restated as a feature. The suite then passed **just as well with that code
+deleted**, and that is the whole signal: an assertion that holds either way is
+asserting a half that was never in doubt. What actually moved was the SCROLL —
+`openSug()` rebuilds the list with `scrollTop = 0`, so after S231 took the
+dropdown from 8 rows to 60, every tick threw the reader back to the top. Focus
+never moved at all: the row's `mousedown` already calls `preventDefault()`.
+⚠️ The lesson is not "read the ask more carefully" — it is that **perturbation is
+what distinguishes a guard from a decoration**, and it costs one minute.
+
+⭐ **THE FLAGGED CANDIDATE IS THE ONE THAT JUSTIFIES THE TOOL.** Ruling 6's merge
+queue returns three Welding groups, and the third is `WELD M1009` / `WELD M90AI`
+— identical titles ("Advanced Welding Applications"), and any title-keyed rule
+would propose the merge. They cross the **band**: 1xxx credit against 9xxx
+noncredit, different courses for funding and for the student. A queue that only
+ever surfaced the easy merges would have been a slower way to do what the auto
+lane already does; surfacing the one you must NOT do is the value.
+
+⭐ **ARTICULATION IS ITS OWN SIGNAL AND THE MAP COULD NOT IMPLY IT.** SkyView
+sizes a point by adoption, and articulation runs opposite: `WELD M1061` is taught
+at 4 colleges and carries 12 articulations, `M1109` at 24 and carries 7, `M1057`
+at 7 and carries none. So the most-articulated identities were the map's dimmest
+points and nothing said so. ⚠️ `ar` is **absent, never 0** — "no articulation
+recorded" and "we did not look" are the same on this feed, and a `0` would assert
+the first. ⚠️ The join must **not** re-resolve through the alias chain; those ids
+are already current-era.
+
+⭐ **`doctrine.py --read` exists because `--changed` fires too late.** The diff
+mode is silent while you are still READING, which is where this session's worst
+finding was made. The read-side mode takes the files the session actually opened,
+from the live transcript. ⚠️ It has to parse **Bash command text**, not just
+`Read` calls — an auto-mode session opens forty files with zero `Read` calls
+(this one: 86 Bash, 0 Read). And it must strip **heredoc bodies**, or a session
+that writes documentation reports every path it wrote *about*; the first live run
+named `cpl_chat.js`, which appears only inside the docstring that run added.
+
+**Ruling 2 was routed, not built** — an ADR
+([`adr-remint-approval-queue-decision-rights`](kb-notes/adr-remint-approval-queue-decision-rights.md))
+because Sam ruled it goes through Governance and the privacy ADRs first. The
+argument that settled the shape is **reversibility**: an INSERT-only cohort
+reverts by `reviewer_email`; a re-mint that has rippled through the alias chain
+has no undo. And this session is its worked example — five post-state gates all
+passed on a plan that was one `--apply` from deleting 172 live identities.
+**Gates check that the post-state is consistent, not that the plan was sane.**
+
+**Housekeeping:** the SkyView lane was compacted (the eleven rulings, the five
+asks, the "map shows only adoption" claim that #1491 made false, and the S231
+look narrative, which is above). It is still ~2.6× its 12 KB budget; what is left
+is live design content for an active lane, and cutting further would delete it.

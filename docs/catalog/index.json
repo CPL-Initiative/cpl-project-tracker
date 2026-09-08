@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 407,
+   "count": 408,
    "docs": [
     {
      "created": "2026-08-14",
@@ -428,6 +428,21 @@
      "title": "The CPL merge lens \u2014 the student-repeat test (anchored to Title 5 \u00a755050's \"similar\" standard)",
      "type": "glossary",
      "updated": "2026-07-13"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "auth",
+      "access-control",
+      "governance"
+     ],
+     "title": "\\\"Not signed in\\\" and \\\"only these people\\\" cannot both hold",
+     "type": "methodology",
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-24",
@@ -12381,8 +12396,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 217,
+   "count": 218,
    "docs": [
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "n": 244,
+     "path": "docs/session_244_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the frame budget is bought, DR-25/26 are owned, and the banner is live",
+     "type": null,
+     "updated": "2026-09-08"
+    },
     {
      "created": "2026-09-08",
      "governs": [],
@@ -16084,5 +16112,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 826
+ "total": 828
 }
