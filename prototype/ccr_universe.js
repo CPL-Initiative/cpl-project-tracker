@@ -319,7 +319,18 @@ var proj="map";                       // "sky" | "globe" | "map" — where the r
 var OPENS = (window.CPL_SKYVIEW_OPENS==="map"||window.CPL_SKYVIEW_OPENS==="globe") ? window.CPL_SKYVIEW_OPENS : "sky";
 var SKY=null, skyState="", skyWaiters=[];
 var SKY_URL = window.CPL_SKYVIEW_SKY_URL || "ccr_sky.json";
-var sph={yaw:0, pitch:0.15, half:Math.PI*75/180, dist:3.0, spin:0};   // the sphere's view: where you look, how wide, how far, how far it has turned
+/* ⭐ THE OPENING WINDOW IS THE WIDEST ONE THAT STILL SHOWS EVERY STAR (Sam,
+ * 2026-09-08: "Default might look better a bit smaller...as long as the stars
+ * show up"). The caveat is the binding constraint, not a nicety: `NODE_ZOOM`
+ * (0.20) decides per island whether its courses draw at all, and the
+ * stereographic scale falls as the window widens. Measured by stepping the real
+ * zoom control, islands drawn / islands still showing their stars:
+ *     150 across  70/70  (scale from 0.438)      188 across  99/99  (from 0.313)
+ *     226 across 125/125 (from 0.224)            240 across 128/124 (from 0.195)
+ * 226 keeps them today but sits a whisker above the threshold, and an island's
+ * scale DRIFTS as the sky turns — the S240 flicker was exactly that band. 188
+ * is a step wider with a real margin, so nothing winks out mid-turn. */
+var sph={yaw:0, pitch:0.15, half:Math.PI*94/180, dist:3.0, spin:0};   // 188° across; where you look, how wide, how far, how far it has turned
 var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
 var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
 var SPIN=0.045;                       // radians per second — one turn in about 140 s, slower as you zoom in
@@ -442,6 +453,32 @@ function prepSphere(){
     var S=islSphere[isl.d]; if(!S){ isl._s=null; return; }
     var c=spun(S.c), p=projectDir(c,B);
     if(!p){ isl._s=null; return; }
+    /* ⭐ AN ISLAND BEHIND THE READER IS NOT A SMALL ISLAND, IT IS A HUGE ONE
+     * (Sam, 2026-09-08: "an enlarged grouping that is crossing over all the
+     * others — like a loose asteroid field spiraling around").
+     *
+     * The sky is stereographic: the scale at an angle `ang` off the view
+     * direction is sec²(ang/2), which is 1.3x at 60 degrees, 4x at 120, and
+     * 131x at 170. `projectDir` only refuses past 3.05 rad (174.8 degrees), so
+     * an island almost directly BEHIND the reader still projects — at a
+     * hundredfold scale. The screen cull downstream is a bounding box built
+     * from `isl.r * k`, so that inflated radius covers the whole window and the
+     * cull PASSES: the island is drawn as a giant sprawl of its courses across
+     * everything else, sweeping as the sky turns. It was in S240's own
+     * measurements (Music read k = 2.4 -> 71.5 -> culled) and read as a normal
+     * cull.
+     *
+     * The window shows a finite cone, so the test is angular, not projected: if
+     * the island's NEAREST edge (its centre less its own angular radius) lies
+     * beyond the screen corner, no part of it is in view. Exact, so nothing
+     * that belongs on screen is lost — a big island whose centre is off-view
+     * still draws while its edge reaches in. */
+    var cz0=c[0]*B.f[0]+c[1]*B.f[1]+c[2]*B.f[2];
+    if(proj!=="globe"){
+      var rhoMax=Math.sqrt(cw()*cw()+ch()*ch())/2/skyKpx();   // the screen's far corner
+      var angMax=2*Math.atan(rhoMax/2);
+      if(Math.acos(Math.max(-1,Math.min(1,cz0))) - (S.th||0) > angMax){ isl._s=null; return; }
+    }
     var pe=projectDir(spun(norm3([S.c[0]+EPS*S.E[0], S.c[1]+EPS*S.E[1], S.c[2]+EPS*S.E[2]])),B);
     var pn=projectDir(spun(norm3([S.c[0]+EPS*S.N[0], S.c[1]+EPS*S.N[1], S.c[2]+EPS*S.N[2]])),B);
     if(!pe||!pn){ isl._s=null; return; }
@@ -449,7 +486,7 @@ function prepSphere(){
     var ey=[-(pn[0]-p[0])/EPS*rpu, -(pn[1]-p[1])/EPS*rpu];   // per world unit down (north is up; world y grows down)
     var det=Math.abs(ex[0]*ey[1]-ex[1]*ey[0]);
     if(det<1e-12){ isl._s=null; return; }
-    isl._s={px:p[0], py:p[1], ex:ex, ey:ey, k:Math.sqrt(det), cz:c[0]*B.f[0]+c[1]*B.f[1]+c[2]*B.f[2]};
+    isl._s={px:p[0], py:p[1], ex:ex, ey:ey, k:Math.sqrt(det), cz:cz0};
   });
   if(skyRegions) skyRegions.forEach(function(rg){ rg.p=projectDir(spun(rg.c),B); });
 }
@@ -586,6 +623,9 @@ function drawClouds(W,H){
   ctx.restore();
 }
 /* The twinkle: slow, shallow, each star on its own phase, only while the sky turns. */
+/* True only while a twinkle can actually vary; the draw hoists it so the
+ * per-point call disappears entirely when the sky is still. */
+function twinkleOn(){ return !!(rotating && sphereOn() && !(drag&&drag.kind)); }
 function twinkleOf(nd){
   if(!rotating || !sphereOn() || (drag&&drag.kind)) return 1;
   if(nd._ph==null){ var h=0, sId=String(nd.i); for(var i=0;i<sId.length;i++) h=(h*31+sId.charCodeAt(i))>>>0; nd._ph=(h%628)/100; }
@@ -696,6 +736,22 @@ function readPal(){
  * 5.15–8.44:1 on white and 6.76–9.23:1 on the dark ground, all clear of AA. A
  * stand-alone keeps the muted ink — it is a moon, and coloring it would claim a
  * membership it does not have. */
+/* ⭐ THE SAME LABEL STRINGS ARE RE-MEASURED EVERY FRAME. `measureText` was
+ * 12.3% of the profile — the single largest JS entry — because the placer
+ * measures every candidate name on every draw, and the names do not change.
+ * Text metrics depend only on the font and the string, so a memo on that pair
+ * is exact, not an approximation. The cap keeps a long pan from growing it
+ * without bound; clearing wholesale is fine, since a miss costs one measure. */
+var _twCache=Object.create(null), _twN=0;
+function textW(t){
+  var k=ctx.font+"\u0000"+t, v=_twCache[k];
+  if(v===undefined){
+    v=ctx.measureText(t).width;
+    if(_twN>20000){ _twCache=Object.create(null); _twN=0; }
+    _twCache[k]=v; _twN++;
+  }
+  return v;
+}
 function labelInk(nd){
   if(!nd || nd.a) return pal.ink;
   var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3;
@@ -838,8 +894,19 @@ var WHY=[[1,"the same local subject code"],[4,"words in common in the title"],
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function num(n){return (n==null?0:n).toLocaleString("en-US");}
-function cw(){ return (cvs&&cvs.clientWidth)||960; }
-function ch(){ return (cvs&&cvs.clientHeight)||600; }
+/* ⚠️ `clientWidth` IS A LAYOUT READ, AND w2s CALLS THESE ONCE PER POINT.
+ * At 49,896 points that is ~100,000 style reads a frame; the profiler put cw()
+ * and ch() at 2.7% of a 128 ms frame on their own. The canvas cannot change
+ * size midway through a draw, so the frame caches them: draw() opens the frame
+ * (dimFrame) and every read inside it is a plain number. Outside a frame they
+ * read the DOM exactly as before, so pick() and the hit tests are unchanged. */
+var _dimW=0, _dimH=0, _dimOn=false;
+function dimFrame(on){
+  if(on){ _dimW=(cvs&&cvs.clientWidth)||960; _dimH=(cvs&&cvs.clientHeight)||600; _dimOn=true; }
+  else _dimOn=false;
+}
+function cw(){ return _dimOn ? _dimW : ((cvs&&cvs.clientWidth)||960); }
+function ch(){ return _dimOn ? _dimH : ((cvs&&cvs.clientHeight)||600); }
 function w2sFlat(x,y){return [(x+view.x)*view.k + cw()/2, (y+view.y)*view.k + ch()/2];}
 /* World → screen. On the flat map exactly as always. On the sphere a point is
  * placed from ITS ISLAND's projected center by the island's Jacobian (see
@@ -1287,6 +1354,12 @@ function orbitsOf(id){ if(!orbitIdx) indexNodes(); return orbitIdx[id]||[]; }
  * every miss. It measured 6.7% of the profile at 240° across, most of a frame's
  * garbage with it. Same answer, no array. */
 function emptied(nd){
+  /* ⭐ NOTHING IS EMPTIED UNTIL SOMETHING IS STAGED. `moves` and `movedTo` are
+   * filled and cleared together, so an empty `moves` is an EXACT answer, not a
+   * heuristic — and it is the usual case. Without it this ran a roster lookup
+   * per point, ~50,000 a frame, and measured 7.0% of the profile with nothing
+   * staged at all. */
+  if(!moves.length) return false;
   if(!nd.a) return false;
   var rs=roster&&roster[nd.i]; if(!rs||!rs.length) return false;
   var m=rs[0];
@@ -1354,6 +1427,10 @@ function stagedBandWords(nd){
 /* ── draw ───────────────────────────────────────────────────────────────── */
 function draw(){
   if(!ctx||!U) return;
+  dimFrame(true);                 // the canvas cannot resize mid-draw: read it once
+  try{ drawFrame(); } finally { dimFrame(false); }
+}
+function drawFrame(){
   var W=cw(), H=ch();
   ctx.setTransform(DPR,0,0,DPR,0,0);
   ctx.clearRect(0,0,W,H);
@@ -1503,12 +1580,13 @@ function draw(){
         }
       }
       var fast = sphereOn() && k<ID_ZOOM && isl._s;     // star-sized dots, no labels, no rings: batch them
+      var twOn = twinkleOn();                          // hoisted: cannot vary inside one frame
       var S=isl._s, ox=isl.x+(isl.dx||0), oy=isl.y+(isl.dy||0);
       isl.p.forEach(function(nd){
         if(!allShown && !creditShown(nd)) return;  // the CR / NC filter (item 9)
         var rad=nodeRad(nd, k), dr=dotRad(nd, rad);
         var dimmed = !!(focus && !focus[nd.i]);   // outside the clicked neighborhood
-        var tw=twinkleOf(nd);
+        var tw=twOn ? twinkleOf(nd) : 1;
         if(fast && !(lit && nd.ar>0) && !hitSet[nd.i] && nd!==selNode && !(isNC(nd) && dr>1.8) &&
            !(emitsLight(nd) && dr>=2.2 && !dimmed) && !(nd.a && emptied(nd))){
           var ddx=nd.x-ox, ddy=nd.y-oy;
@@ -1924,7 +2002,7 @@ function placeLabels(queue, showAll){
     var size=Math.max(11,Math.min(19,q.r*0.17))*tx(); if(q.region) size=15*tx();
     ctx.font=(q.force||q.region?"700 ":"600 ")+size+"px 'Source Sans 3',system-ui,sans-serif";
     var lab=q.text || islandLabel(q.isl);
-    var w=ctx.measureText(lab).width, h=size*1.25;
+    var w=textW(lab), h=size*1.25;
     var box=[q.cx-w/2-3, q.cy-h, q.cx+w/2+3, q.cy+4];
     if(box[2]<0||box[0]>cw()||box[3]<0||box[1]>ch()) return;
     var clash=false;
@@ -1965,7 +2043,7 @@ function placeNodeLabels(queue, boxes){
   queue.forEach(function(q){
     var mem=q.band==="member", lh=Math.round((mem?11:12)*tx());
     ctx.font=(q.force?"600 ":"")+txPx(mem?10:11)+"px 'Source Sans 3',system-ui,sans-serif";
-    var w=0; q.lines.forEach(function(t){ w=Math.max(w, ctx.measureText(t).width); });
+    var w=0; q.lines.forEach(function(t){ var tw=textW(t); if(tw>w) w=tw; });
     var h=q.lines.length*lh+2;
     /* The label sits AWAY from the circle and a thin line joins the two (Sam,
        2026-09-03: "have the course labels away from the course circle and have
@@ -2248,7 +2326,15 @@ window.__ccrUniverse = function(opts){
           '<span class="u-modes u-proj" role="group" aria-label="Where you stand">'+
             '<button class="btn mode" type="button" id="u-proj-sky" aria-pressed="true" title="Stand at the center and look out — the night sky through a window">Sky</button>'+
             '<button class="btn mode" type="button" id="u-proj-globe" aria-pressed="false" title="The sphere seen from outside">Globe</button>'+
-            '<button class="btn mode" type="button" id="u-proj-map" aria-pressed="false" title="The flat map — the whole at once">Map</button>'+
+            /* ⚠️ THE MAP BUTTON IS GONE FROM THE ROW, THE MAP IS NOT GONE FROM THE
+             * CODE (Sam, 2026-09-08: "WE don't need the map view anymore, not with
+             * this view showing so nicely"). This REVERSES his own sheet item 2 of
+             * 2026-09-07 ("Sky · Globe · Map as three words, the Map stays"), and
+             * the reversal is his — named here so it is not restored as a
+             * regression. Only the control leaves: `proj==="map"` is still the flat
+             * renderer the sphere is a projection OF, `#map` still routes, and
+             * seven suites declare `CPL_SKYVIEW_OPENS="map"` to test on it. Putting
+             * the word back is one line. */
           '</span>'+
           '<span class="u-modes u-turn" role="group" aria-label="Turning" id="u-turn-grp">'+
             '<button class="btn mode" type="button" id="u-rotate" aria-pressed="false" title="Turn the sky slowly on its own; it stops at your first touch">Rotate</button>'+
@@ -2439,7 +2525,11 @@ function resetView(){
   anchor=null;
   if(sphereOn()){
     sph.yaw=0; sph.pitch=0.15;
-    if(proj==="globe") sph.dist=3.0; else sph.half=Math.PI*75/180;   // 150° across: the prototype's opening window
+    /* ⚠️ THE OPENING WINDOW IS SET IN TWO PLACES — `sph`'s initializer and here,
+     * and resetView() is what actually runs on open, so changing only the
+     * initializer changes nothing (measured: still 150° across). Both say 94°
+     * half = 188° across; see the initializer for why that width. */
+    if(proj==="globe") sph.dist=3.0; else sph.half=Math.PI*94/180;   // 188° across
     syncViewK(); return;
   }
   var b=U.bounds, W=cw(), H=ch();

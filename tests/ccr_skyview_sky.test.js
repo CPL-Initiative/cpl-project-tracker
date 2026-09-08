@@ -131,9 +131,19 @@ const CX = 480, CY = 300;                        // jsdom's rects are zero; the 
   w.location.hash = "#skyview"; w.__ccrRoute(); await tick(20);
   check("(1) ⭐ #skyview opens the SKY — the inside window — not the flat map",
     st().proj === "sky" && q("#u-proj-sky").getAttribute("aria-pressed") === "true", st().proj);
-  check("(1) the three words are in the row, and the Globe and the Map are one click away",
-    !!q("#u-proj-sky") && !!q("#u-proj-globe") && !!q("#u-proj-map") && q("#u-proj-map").textContent === "Map");
-  check("(1) the window opens 150° across, as the prototype did", Math.abs(st().sph.half * 2 * 180 / Math.PI - 150) < 0.01 && /150° across/.test(text("#u-zoom")), text("#u-zoom"));
+  // Two words since 2026-09-08 — see the Map note further down; the Globe stays.
+  check("(1) the words in the row are Sky and Globe, and the Globe is one click away",
+    !!q("#u-proj-sky") && !!q("#u-proj-globe") && q("#u-proj-globe").textContent === "Globe" && !q("#u-proj-map"));
+  // ⚠️ 188°, not the prototype's 150°, since 2026-09-08 (Sam: "Default might look
+  // better a bit smaller...as long as the stars show up"). The caveat is the
+  // constraint: NODE_ZOOM decides per island whether its courses draw, and the
+  // scale falls as the window widens — measured, 188 keeps all 99 islands'
+  // stars with the lowest at 0.313 against the 0.20 threshold, where 240 drops
+  // four of them. ⚠️ The opening width is written in TWO places (sph's
+  // initializer and resetView); resetView is the one that runs, so this check
+  // pins the value the reader actually gets.
+  check("(1) the window opens 188° across, the widest that still shows every star",
+    Math.abs(st().sph.half * 2 * 180 / Math.PI - 188) < 0.01 && /188° across/.test(text("#u-zoom")), text("#u-zoom"));
   check("(1) the hash reads #skyview", w.location.hash === "#skyview", w.location.hash);
   check("(1) the placement payload bound", st().skyState === "ok", st().skyState);
 
@@ -252,8 +262,17 @@ const CX = 480, CY = 300;                        // jsdom's rects are zero; the 
   check("(3) the day tokens tint the ground to the CO blue and rim the legend swatches",
     /body\.u-day\{[^}]*--sky-ground:#A8C3E8/.test(tplSrc) && /body\.u-day \.u-sw\{box-shadow:inset 0 0 0 1\.5px var\(--sky-dot-rim\)\}/.test(tplSrc));
   check("(3) the canvas rims every dot by day", /if\(day\)\{ ctx\.lineWidth=Math\.max\(0\.8, dr\*0\.34\); ctx\.strokeStyle=pal\.dotRim; ctx\.stroke\(\); \}/.test(ujs));
-  q("#u-proj-map").click(); await tick();
-  check("(2) ⭐ the Map stays — one click away on the same canvas, and the hash says #map",
+  // ⚠️ CHANGED 2026-09-08 (S241). This read `q("#u-proj-map").click()` and pinned
+  // "the Map stays — one click away", which was Sam's own sheet item 2 of
+  // 2026-09-07. He reversed it the next day, having seen the Sky working: "WE
+  // don't need the map view anymore, not with this view showing so nicely." So
+  // the BUTTON is gone from the row and the MAP is not: the flat renderer the
+  // sphere is a projection of still exists, still routes, and is what seven
+  // suites declare CPL_SKYVIEW_OPENS="map" to test on. Both halves are pinned
+  // here so neither can be lost quietly — the word coming back is one line.
+  check("(2) ⭐ the Map button has left the row (Sam, 2026-09-08)", !q("#u-proj-map"));
+  w.__ccrSetProj("map"); await tick();
+  check("(2) ⭐ …and the Map itself still works on the same canvas, hash #map",
     st().proj === "map" && w.location.hash === "#map" && st().sel === null && !!q("#u-cvs"), `${st().proj} ${w.location.hash}`);
   check("(3) the light choice holds on the Map; the Map has no day", st().dark === false && st().day === false && !d.body.classList.contains("u-day"));
   check("(7) on the Map the readout is a percentage again and Rotate is gone", /%$/.test(text("#u-zoom")) && q("#u-turn-grp").hidden && !q("#u-dark").hidden);
