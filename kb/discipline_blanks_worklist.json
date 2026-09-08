@@ -1,0 +1,727 @@
+{
+  "_about": "Identities carrying no discipline after discipline_edge_fill(). Sam's ruling of 2026-09-08 (sheet item 9): a curator pass, not a fill.",
+  "_generated_by": "kb/_build_discipline_blanks_worklist.py",
+  "_read_this_first": "`corroboration` is the column that matters. Where it says none, or a single row, there is nothing in the payload to check a proposed discipline against — that is why these are here.",
+  "_counts": {
+    "blank_after_fill": 86,
+    "subject_codes": 45,
+    "codes_with_no_corroboration": 37,
+    "codes_corroborated_by_one_row": 6,
+    "filled_from_the_subject_map": 196,
+    "filled_from_the_identifier_reference": 44
+  },
+  "subjects": [
+    {
+      "subj4": "ADS",
+      "identities_blank": 11,
+      "ids": [
+        "ADS 140 X",
+        "ADS 130 X",
+        "ADS 110 X",
+        "ADS 190 X",
+        "ADS 120 X",
+        "ADS 160 X",
+        "ADS 180 X",
+        "ADS 170 X",
+        "ADS 210 X",
+        "ADS 195 X",
+        "ADS 200 X"
+      ],
+      "titles": [
+        "Pharmacology of Alcohol and Other Drugs",
+        "Group Process and Group Leadership",
+        "Introduction to Addiction Studies",
+        "Co-occurring Disorders",
+        "Basic Counseling Skills",
+        "Law and Ethics",
+        "Family and Addiction",
+        "Case Management",
+        "Addiction Studies Internship Seminar",
+        "Diverse Populations",
+        "Field Work/Internship in Addiction Studies"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Counseling",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "HOSP",
+      "identities_blank": 5,
+      "ids": [
+        "HOSP 120",
+        "HOSP 150",
+        "HOSP 160 X",
+        "HOSP 180 X",
+        "HOSP 170 X"
+      ],
+      "titles": [
+        "Hospitality Cost Control",
+        "Hospitality Law",
+        "Culinary Principles",
+        "Introduction to Baking",
+        "Supervision"
+      ],
+      "same_prefix_identities": 8,
+      "they_are_filed_under": "Hotel and Motel Services",
+      "how_many_agree": 2,
+      "corroboration": "2 of 8 identities"
+    },
+    {
+      "subj4": "WWTR",
+      "identities_blank": 5,
+      "ids": [
+        "WWTR 130 X",
+        "WWTR 140 X",
+        "WWTR 160 X",
+        "WWTR 110 X",
+        "WWTR 120 X"
+      ],
+      "titles": [
+        "Water Distribution Operator I",
+        "Water Distribution Operator II",
+        "Water Treatment II",
+        "Wastewater Treatment I",
+        "Wastewater Treatment II"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "TOUR",
+      "identities_blank": 4,
+      "ids": [
+        "TOUR M1001",
+        "TOUR M1002",
+        "TOUR M1003",
+        "TOUR M1004"
+      ],
+      "titles": [
+        "Advanced Airline Computer Training",
+        "Travel Destinations: Europe, Africa, and the Middle East",
+        "Destinations- Americas and Europe",
+        "World Destinations and Resorts--Western Hemisphere"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "AG-EH",
+      "identities_blank": 3,
+      "ids": [
+        "AG-EH 108 108 L",
+        "AG-EH 112 112 L",
+        "AG-EH 104 X"
+      ],
+      "titles": [
+        "Plant Materials and Usage I",
+        "Plant Materials and Usage II",
+        "Introduction to Environmental Horticulture"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Agricultural Production",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "AG-PS",
+      "identities_blank": 3,
+      "ids": [
+        "AG-PS 106 106 L",
+        "AG-PS 128 128 L",
+        "AG-PS 104 104"
+      ],
+      "titles": [
+        "Introduction to Plant Science (with Laboratory)",
+        "Introduction to Soil Science",
+        "Introduction to Plant Science"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Agriculture",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "HUMN",
+      "identities_blank": 3,
+      "ids": [
+        "HUMN M1002",
+        "HUMN M1003",
+        "HUMN M1004"
+      ],
+      "titles": [
+        "Honors Introduction to Popular Culture",
+        "Honors Popular Culture & United States History",
+        "Popular Culture & United States History"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Music",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "INFO",
+      "identities_blank": 3,
+      "ids": [
+        "INFO M1001",
+        "INFO M1002",
+        "INFO M1003"
+      ],
+      "titles": [
+        "AI Literacy",
+        "Library Research Fundamentals",
+        "Researching in the Digital Age"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "LIBS",
+      "identities_blank": 3,
+      "ids": [
+        "LIBS M1002",
+        "LIBS M1004",
+        "LIBS M1006"
+      ],
+      "titles": [
+        "Information and Computer Literacy",
+        "Information Literacy and Research Skills",
+        "Library Research Methods"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "MCOM",
+      "identities_blank": 3,
+      "ids": [
+        "MCOM M9001",
+        "MCOM M1002",
+        "MCOM M1003"
+      ],
+      "titles": [
+        "Social Media Content",
+        "Advanced KCTH TV Experience",
+        "Introduction to KCRH Radio Experience"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "MIS",
+      "identities_blank": 3,
+      "ids": [
+        "MIS 130",
+        "MIS 111",
+        "MIS 120"
+      ],
+      "titles": [
+        "History of American Popular Music",
+        "Digital Music Production",
+        "Music Careers and Entrepreneurship"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "ATC",
+      "identities_blank": 2,
+      "ids": [
+        "ATC M1001",
+        "ATC M1004"
+      ],
+      "titles": [
+        "Aerodynamics",
+        "Cultural Tourism"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "ATXX",
+      "identities_blank": 2,
+      "ids": [
+        "ATXX M1001",
+        "ATXX M1002"
+      ],
+      "titles": [
+        "Introduction Flight Attendant Training",
+        "Introduction to Travel Careers"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "FMT",
+      "identities_blank": 2,
+      "ids": [
+        "FMT M1001",
+        "FMT M1002"
+      ],
+      "titles": [
+        "Green Cleaning and Ergonomics",
+        "Workplace Safety and Infectious Disease Prevention"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "LIS",
+      "identities_blank": 2,
+      "ids": [
+        "LIS M1001",
+        "LIS M9001"
+      ],
+      "titles": [
+        "Introduction to Information Resources",
+        "Information Research Skills"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "PHTG",
+      "identities_blank": 2,
+      "ids": [
+        "PHTG M1002",
+        "PHTG M1003"
+      ],
+      "titles": [
+        "Commercial Lighting 1",
+        "Commercial Lighting 2"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "TAFI",
+      "identities_blank": 2,
+      "ids": [
+        "TAFI M1002",
+        "TAFI M1006"
+      ],
+      "titles": [
+        "Diversity in American Film",
+        "History of Film: 1880's Through 1950's"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Film and Media Studies",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "AFXX",
+      "identities_blank": 1,
+      "ids": [
+        "AFXX M1001"
+      ],
+      "titles": [
+        "Evolution of the U.S. Air Force Air and Space Power"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "AG-AB",
+      "identities_blank": 1,
+      "ids": [
+        "AG-AB 108 108"
+      ],
+      "titles": [
+        "Agricultural Computer Applications"
+      ],
+      "same_prefix_identities": 3,
+      "they_are_filed_under": "Agriculture",
+      "how_many_agree": 3,
+      "corroboration": "3 of 3 identities"
+    },
+    {
+      "subj4": "ARTN",
+      "identities_blank": 1,
+      "ids": [
+        "ARTN M1004"
+      ],
+      "titles": [
+        "Digital Prepress"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "ARTX",
+      "identities_blank": 1,
+      "ids": [
+        "ARTX M9001"
+      ],
+      "titles": [
+        "Drawing and Painting 1-2 - Oa"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "BRDC",
+      "identities_blank": 1,
+      "ids": [
+        "BRDC M1003"
+      ],
+      "titles": [
+        "Radio Broadcast Lab"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "CMRT",
+      "identities_blank": 1,
+      "ids": [
+        "CMRT M1001"
+      ],
+      "titles": [
+        "Commercial Layout and Design"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "DBAX",
+      "identities_blank": 1,
+      "ids": [
+        "DBAX M1001"
+      ],
+      "titles": [
+        "Beginning Radio Station Operations"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "DENA",
+      "identities_blank": 1,
+      "ids": [
+        "DENA 105 X"
+      ],
+      "titles": [
+        "Dental Materials"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "DGME",
+      "identities_blank": 1,
+      "ids": [
+        "DGME M1001"
+      ],
+      "titles": [
+        "Radio and Podcast Production Lab 2"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "DMC",
+      "identities_blank": 1,
+      "ids": [
+        "DMC M1001"
+      ],
+      "titles": [
+        "Writing for Social Media"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "EMER",
+      "identities_blank": 1,
+      "ids": [
+        "EMER M9015"
+      ],
+      "titles": [
+        "Mobile Information Literacy"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "EPHO",
+      "identities_blank": 1,
+      "ids": [
+        "EPHO M9001"
+      ],
+      "titles": [
+        "Fundamentals of Digital Show Presentations (Ei)"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "ESTI",
+      "identities_blank": 1,
+      "ids": [
+        "ESTI M1001"
+      ],
+      "titles": [
+        "Esthetics Intermediate Concepts Ll"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "F",
+      "identities_blank": 1,
+      "ids": [
+        "F M1002"
+      ],
+      "titles": [
+        "Pre-Columbian Art"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "FLGH",
+      "identities_blank": 1,
+      "ids": [
+        "FLGH M1002"
+      ],
+      "titles": [
+        "Human Factors and Crew Resource Management"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "FLTE",
+      "identities_blank": 1,
+      "ids": [
+        "FLTE M1002"
+      ],
+      "titles": [
+        "Photogrammetry"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "HOSM",
+      "identities_blank": 1,
+      "ids": [
+        "HOSM M9003"
+      ],
+      "titles": [
+        "Customer Care: Airline/Travel"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "LT",
+      "identities_blank": 1,
+      "ids": [
+        "LT M1001"
+      ],
+      "titles": [
+        "Digital Assets: Tools and Methodologies"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "MEA",
+      "identities_blank": 1,
+      "ids": [
+        "MEA M1005"
+      ],
+      "titles": [
+        "Soundtrack Production for Film/TV/New Media"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "NC",
+      "identities_blank": 1,
+      "ids": [
+        "NC M9009"
+      ],
+      "titles": [
+        "Business Practices for the Photographer"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "NCTH",
+      "identities_blank": 1,
+      "ids": [
+        "NCTH M9001"
+      ],
+      "titles": [
+        "Business of Acting"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "OFFT",
+      "identities_blank": 1,
+      "ids": [
+        "OFFT M9004"
+      ],
+      "titles": [
+        "Product Design"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "OLDR",
+      "identities_blank": 1,
+      "ids": [
+        "OLDR M9002"
+      ],
+      "titles": [
+        "Painting in Oils and Acrylics"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "PHO",
+      "identities_blank": 1,
+      "ids": [
+        "PHO M1003"
+      ],
+      "titles": [
+        "Marketing & Self-Promotion for Photographers"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "RTV",
+      "identities_blank": 1,
+      "ids": [
+        "RTV M1001"
+      ],
+      "titles": [
+        "Broadcast Media Announcing and Performance"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "TICU",
+      "identities_blank": 1,
+      "ids": [
+        "TICU M9001"
+      ],
+      "titles": [
+        "Custodial Training"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    },
+    {
+      "subj4": "TV",
+      "identities_blank": 1,
+      "ids": [
+        "TV M1001"
+      ],
+      "titles": [
+        "On-Camera Performance"
+      ],
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Broadcasting Technology",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
+    },
+    {
+      "subj4": "TVR",
+      "identities_blank": 1,
+      "ids": [
+        "TVR M1001"
+      ],
+      "titles": [
+        "Advanced Radio Production"
+      ],
+      "same_prefix_identities": 0,
+      "they_are_filed_under": null,
+      "how_many_agree": 0,
+      "corroboration": "none — no other identity carries this prefix"
+    }
+  ]
+}

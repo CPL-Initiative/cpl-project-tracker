@@ -408,25 +408,43 @@ link, never a github.io URL.
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
 ① **The skills layer's fetch problem** (NEEDS SAM ①).
-② **The 93 blanks — NOT mechanically fillable, and the payload says so** (S242,
-re-measured S243). 15 null in the identifier reference, 78 with a SUBJ4 the map
-does not carry, across **50 codes**. ⚠️ **37 of the 50 have no other identity
-carrying that prefix at all** — nothing to corroborate against; 6 more read
-"unanimous" off a **single** row, and HUMN proves a vote of one is not a vote (its
-one voter is *Music for Video Games and Film* → Music; its three blanks are
-popular-culture titles). Only **five** codes carry weight — BSOT (369, 99% Office
-Technologies) · HUMA (112, 96%) · GRAF (72, Graphic Arts) · BCST (54, Broadcasting
-Technology) · BARB (5, Barbering) — **7 of the 93 rows**. DR-25 owns the map, so
-those five are a decision sheet, not a session edit.
-③ **NINE subjects disagree, not four — and NONE of them printed** (S243). ATHL
-(Physical Education vs Kinesiology, 1,101) · THTR (1,093/1,109) · ESCI (465/476) ·
-ELEC (342/353) · MUSC (127/134) · ETHN (34, Chicano Studies) · PHTO (3/12) · ESLN
-(a malformed name) · ENVS. ⚠️ **"The row prints both" was false**: `standingHtml()`
-appended the note to ONE of four exits — the Common-SUBJ branch — and a disagreeing
-subject is by construction usually not that, so it left by the umbrella or
-not-its-code exit; ATHL and THTR returned earlier, at the no-seed-entry guard.
-Fixed S243, note on every exit (`tests/ccr_subject_standing_note.test.js`). Which
-are corrections is Sam's call.
+② **The blanks — RULED AND NARROWED: 93 → 86** (Sam, 2026-09-08, sheet items 1-6
+and 9). Five codes went into the subject map (BSOT · HUMA · GRAF · BCST · BARB),
+filling 7 rows; HOSP is genuinely split four ways and is recorded in the map's own
+`_deliberately_unmapped`. ⚠️ **The remaining 86 are NOT fillable and the payload
+says so**: across their 45 codes, **37 have no other identity carrying that
+prefix** and **6 read "unanimous" off a SINGLE row** — HUMN's one voter is *Music
+for Video Games and Film* while its three blanks are popular-culture titles.
+Ruled a **curator pass, never an inference**: `kb/discipline_blanks_worklist.json`
+(`kb/_build_discipline_blanks_worklist.py`, rebuilt by the daily run's Step 4d5,
+guarded by `tests/discipline_blanks_worklist_test.py`) names every code with what
+corroboration exists.
+③ **The disagreements: 9 → 4, and they PRINT now** (S243). Sam ruled the five
+large ones to the courses' reading: ATHL→Kinesiology · THTR→Drama/Theater Arts ·
+ESCI→Environmental Technologies · ELEC→Electricity · MUSC→Commercial Music. ⭐ **All
+five moved the map INTO agreement with the CSR**, and three of the five had named a
+discipline the CSR does not carry at all ("Theater Arts", "Physical Education") —
+a second independent signal, not just the vote. Still open: **ETHN** (34 under
+Chicano Studies) · **PHTO** (a thin 3-of-12 plurality) · **ENVS** (1 of 1) ·
+**ESLN**, which is item 8's data defect below.
+⚠️ **ATHL IS AN UMBRELLA CODE, NOT A KINE VARIANT** (Sam's note, 2026-09-08:
+*"ATHL … is in Kinesiology but is differentiated from KINE which doesn't have the
+restrictions athletic PE or KIN course"*). The CSR lists ATHL as a Kinesiology
+variant with **1,468 M-IDs**, and the Phase 1e fold re-keys variants to the
+canonical — it was caught doing exactly that in Session 47. The protection existed
+only as a literal in `_subj4_dryrun.py`'s `load_umbrella_allowances()`; it is now
+also **declared in the CSR** (`is_umbrella`, `umbrella_codes ["ATHL","KINE"]`),
+which survives a reseed and a Supabase sync, so SkyView reads ATHL as *an umbrella
+code under Kinesiology* rather than *not Kinesiology's code*.
+③b ⚠️ **EIGHT MQ DISCIPLINE NAMES CARRY A TITLE 5 SECTION NUMBER** — an extraction
+artifact from the 19th-edition index, not a vocabulary question. The tell is
+`Speech Language Pathology: Disabled Student Programs and 53414 Services`, where
+the number splits the phrase. `53412` (noncredit basic skills / ESL) and `53414`
+(DSPS) affect 45 live rows — ESLN 5, BSKL 40 — but **1,183 occurrences across 33
+files**, `coci_minted_courses.json` and four alias maps among them. Sam ruled ESLN
+a data defect to repair at source (item 8); the map side is already correct
+(`ESLN → English as a Second Language`). **The rename itself is an id-keyed
+corpus change and needs its own dry-run, alias map and receipt — a separate PR.**
 ④ **The frame budget, if Sam still sees it step.** S242 took the median frame
 81 → 46 ms. The remaining named JS is the per-node loop (14%) and the island
 loop (10%) — the irreducible walk. **Fewer points per frame is the lever that

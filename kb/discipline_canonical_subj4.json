@@ -6064,7 +6064,13 @@
         }
       ],
       "authority_flag": "proposed",
-      "authority_note": "Common SUBJ KINE is the CSR's four-letter code; the authority says C-ID KIN (rule 3: four letters, verbatim code on the chip)."
+      "authority_note": "Common SUBJ KINE is the CSR's four-letter code; the authority says C-ID KIN (rule 3: four letters, verbatim code on the chip).",
+      "is_umbrella": true,
+      "umbrella_codes": [
+        "ATHL",
+        "KINE"
+      ],
+      "_umbrella_note": "Umbrella discipline. ATHL is athletic PE and carries restrictions KINE courses do not (Sam, 2026-09-08, on the subject-discipline edge sheet: \"ATHL ... is in Kinesiology but is differentiated from KINE which doesn't have the restrictions athletic PE or KIN course\"). The protection already existed only as a literal in kb/_subj4_dryrun.py's load_umbrella_allowances() -- added there in Session 47 after that dry-run was caught folding ATHL's athletics rows into KINE. Declaring it here makes it DATA, like Foreign Languages and the two Agriculture disciplines, so the CSR, the CCR and SkyView read it too: ATHL now shows as an umbrella code under Kinesiology rather than \"not Kinesiology's code\". 1,468 M-IDs carry ATHL; folding them would burst the KINE M1### 999-seq capacity and erase the distinction."
     },
     "Law": {
       "canonical_subj4": "LEGL",

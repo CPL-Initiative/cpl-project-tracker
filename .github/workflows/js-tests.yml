@@ -307,6 +307,26 @@ jobs:
       # caught. Pure-stdlib python; same non-required check.
       - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
         run: python3 tests/discipline_edge_fill_test.py
+      # DR-25's other half (Sam's rulings of 2026-09-08, sheet item 9) — the
+      # identities the edge CANNOT reach are a curator list, never an inference.
+      # The guard's sharpest check is that a code with ONE same-prefix identity
+      # is never reported as agreement: HUMN's single voter is a film-music
+      # course while its three blanks are popular-culture titles, so the
+      # "unanimous" reading would file three humanities courses under Music.
+      # 37 of the 45 codes have no corroborating identity at all. Pure-stdlib
+      # python; same non-required check.
+      - name: Discipline-blank worklist guard (kb/_build_discipline_blanks_worklist.py)
+        run: python3 tests/discipline_blanks_worklist_test.py
+      # An umbrella discipline's protection must be DATA, not one literal (Sam,
+      # 2026-09-08: "ATHL ... is in Kinesiology but is differentiated from KINE
+      # which doesn't have the restrictions athletic PE or KIN course"). The CSR
+      # lists ATHL as a Kinesiology VARIANT with 1,468 M-IDs and is consumed by
+      # the Phase 1e re-mint to FOLD variants to the canonical; Session 47 caught
+      # that fold doing exactly this. Both halves are pinned: the allowance in
+      # kb/_subj4_dryrun.py AND the is_umbrella declaration every other CSR
+      # reader sees. Pure-stdlib python, no network.
+      - name: Umbrella codes are declared, not only literal (CSR + kb/_subj4_dryrun.py)
+        run: python3 tests/umbrella_codes_are_declared_test.py
       # DR-26 — the COBI live-session banner. Every check is a FAIL-CLOSED case,
       # because the failure mode of this surface is telling the whole
       # organization to open a session that is still private: an inactive row,

@@ -29,6 +29,9 @@ run "dependency map contents" "python3 tests/dependency_map_test.py"
 # script exists to save you.
 run "COBI admin surface"      "python3 kb/_build_cobi_admin_surface.py --check 2>/dev/null || node tests/admin_tab.test.js >/dev/null"
 run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 || python3 kb/_build_sierra_rule_defaults.py --check"
+# The discipline-blank worklist (S243) derives from unified_courses_data.js AND
+# the subject map, so a map edit staled it in the same commit that made it.
+run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
 echo
 if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"

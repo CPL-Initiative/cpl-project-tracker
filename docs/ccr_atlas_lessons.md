@@ -1502,3 +1502,43 @@ background sweep was in flight*, so the 390px pass read the temporarily-reverted
 file. A direct Playwright probe showed 24px at both widths in one command. Same
 shape as S242's revert harness overwriting its own backup — **a background
 measurement and a foreground edit of the same file cannot both be trusted.**
+
+### Later the same day — Sam ruled all nine, and one of his notes found a hazard
+
+All nine came back `yes`. Items 1–5 put five codes into the subject map (7 rows,
+**93 → 86 blanks**); item 7 moved five map values to what the courses say
+(**9 → 4 disagreements**). ⭐ **Every one of the five moved the map INTO agreement
+with the CSR**, and three had named a discipline the CSR does not carry at all
+("Theater Arts", "Physical Education") — so the vote was never the only signal.
+
+⭐ **HIS ONE NOTE WAS THE MOST VALUABLE THING ON THE SHEET.** Against item 7:
+*"The only one to double check is ATHL, which is in Kinesiology but is
+differentiated from KINE which doesn't have the restrictions athletic PE or KIN
+course."* Checked, and it names a real hazard: the CSR lists **ATHL as a variant
+of Kinesiology with 1,468 M-IDs**, and the CSR's own `_about` says it is consumed
+by the Phase 1e re-mint **to fold same-discipline SUBJ4 variants**. Session 47
+caught that fold doing exactly this — its comment still reads *"folding …
+Kinesiology's ATHL athletics rows into KINE (bursting the KINE M1### 999-seq
+capacity)"* — and fixed it with a literal, `{"Kinesiology": {"KINE","ATHL"}}`,
+inside `load_umbrella_allowances()`.
+
+So ATHL was safe. ⚠️ **But it was the only one of the four umbrella disciplines
+whose protection was a literal rather than data** — Foreign Languages and both
+Agriculture disciplines declare `is_umbrella` + `umbrella_codes` in the CSR, which
+the reseeder and the Supabase sync both preserve. Declared now, so the protection
+is readable by everything that reads the CSR, and SkyView's row says *an umbrella
+code under Kinesiology* instead of *not Kinesiology's code* — which is the
+distinction he was drawing.
+
+⚠️ **AND ITEM 8'S PREMISE WAS WRONG IN MY OWN SHEET.** I wrote that ESLN's
+discipline name was malformed and the trailing number was a TOP code. It is
+neither: **`English as a Second Language Noncredit 53412` is in the MQ discipline
+list**, and so are seven more carrying `53412` or `53414` — Title 5 section
+numbers the 19th-edition index prints beside those titles. The tell is
+`Speech Language Pathology: Disabled Student Programs and 53414 Services`, where
+the number splits the phrase; no official title reads that way. So Sam's ruling
+(a data defect, repair at source) is right and the source is our own PDF
+extraction — but it is **eight names, 1,183 occurrences across 33 files**
+including `coci_minted_courses.json` and four alias maps, not the 5-row string fix
+the sheet described. Held for its own PR with a dry-run and a receipt.
+**A sheet item can be ruled correctly and still have described the wrong size.**

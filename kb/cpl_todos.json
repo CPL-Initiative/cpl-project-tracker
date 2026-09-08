@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-08",
   "_session": "S243 (SkyGate)",
-  "_status": "Two things this session, and both are the same kind of problem: something was worked out correctly and never reached the screen. First, SkyView was supposed to tell you when the subject map files a subject under one discipline while its courses sit under another. It builds that sentence and then throws it away on three of the four paths the code can take, so none of it has ever appeared. There are nine such subjects, not the four recorded this morning, and two of them are large: ATHL says Physical Education while all 1,101 of its courses say Kinesiology, and THTR says Theater Arts against 1,093 saying Drama/Theater Arts. The sentence now prints on every path; which of the nine are corrections is a decision sheet waiting for you. Second, every COBI tab was failing its accessibility check, and one line of styling was most of the reason: the checkbox that turns off the morning painting was two-thirds the height a control has to be, and it sits on every tab. Fixing that and one faint paragraph took the sweep from 38 tabs failing to 19. The other 19 are counted and named, not yet fixed. Also measured: the 93 courses still showing no discipline cannot be filled automatically — 37 of their subject codes have no other course to check a guess against.",
+  "_status": "You ruled all nine calls on the subject–discipline sheet and they are built. Five subject codes went into the map, which filled seven of the courses that had no discipline; HOSP stayed out because its own courses split four ways. Five subjects where the map disagreed with its courses now read the way the courses do — ATHL is Kinesiology, THTR is Drama/Theater Arts, and so on — which took the disagreements from nine to four. Your note on ATHL was the most useful thing on the sheet: it sent me to check whether anything would quietly merge ATHL into KINE, and the answer is that a re-mint step would have, except that someone caught it in June and blocked it. That block was one line of code and nothing else knew about it; it is now written into the canonical-subject file, so every screen that reads that file knows ATHL is deliberately its own code. One correction to my own sheet: I called ESLN's discipline name malformed, and it is not — that name, and seven others, come to us that way from the official Minimum Qualifications index, which prints a Title 5 section number beside the title. Repairing it is a bigger job than the sheet said and is queued on its own.",
   "items": [
     {
-      "id": "s243-sam-nine-disagreements",
+      "id": "s243-sam-four-disagreements",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "Nine subjects where the subject map and the courses disagree, and someone has to decide which is right. It was recorded as four this morning; measured against the map SkyView actually reads, it is nine — and none of them were being shown to you, because the sentence that says so was only printed on one of the four paths the code takes. That is fixed. The large ones: ATHL is filed Physical Education while all 1,101 of its courses sit under Kinesiology; THTR is Theater Arts against 1,093 under Drama/Theater Arts; then ESCI, ELEC, MUSC, ETHN (34 under Chicano Studies), PHTO, ESLN and ENVS. These are faculty discipline names, so which one is right is not something a measurement can settle. They are items 7 to 9 on the decision sheet."
+      "text": "Four subjects are left where the map and the courses disagree, down from nine after your ruling. ETHN is the substantial one: the map says Ethnic Studies and 34 courses sit under Chicano Studies. PHTO is thin — the map says Photography and only 3 of its 12 courses say Multimedia, so the row overstates it. ENVS is a single course. ESLN is the name problem below, not a real disagreement. All four now say so on the row, which they did not before."
     },
     {
       "id": "s242-sam-banner-live",
@@ -47,22 +47,22 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
     },
     {
-      "id": "s243-fable-read-sheet-replies",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Read the subject–discipline decision sheet’s replies BEFORE touching that lane. The artifact has no wake subscription — the service refused one — so nothing will announce that Sam has answered. Use the Artifact tool’s read_db against collection “replies” on https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b . Nine numbered calls: five map entries, HOSP, the nine disagreements, ESLN’s malformed discipline name, and what to do with the 37 uncorroborated codes."
-    },
-    {
       "id": "s243-fable-a11y-remaining",
       "for": "Fable",
       "tab": "admin",
       "text": "The 19 COBI tabs still failing the accessibility sweep: 71 distinct failing selectors, 5,332 sub-24px targets and 22 scrolling regions no keyboard can reach. our-process is six faults from two color tokens and pipeline is ten, so the first few tabs are cheap. This is the shape that pays for fanning out — many surfaces, and every hit verified by re-running one command."
     },
     {
-      "id": "s243-fable-93-blanks",
+      "id": "s243-fable-86-blanks",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The 93 course identities with no discipline are NOT fillable automatically, and the data says so: they span 50 subject codes, 37 of which have no other identity carrying that code, so there is nothing to check a proposed answer against. Six more look unanimous off a single row — HUMN’s one voter is a film-music course while its three blanks are popular-culture courses, so that reading would file three humanities courses under Music. Five codes do carry weight (BSOT, HUMA, GRAF, BCST, BARB) and cover 7 of the 93; they are items 1 to 5 on the decision sheet. The other 37 belong on a curator pass."
+      "text": "86 course identities still have no discipline, down from 93. They are a named curator list now, not a silent residue: kb/discipline_blanks_worklist.json gives every subject code, its waiting courses and — the column that matters — what could be used to check a proposed answer. For 37 of the 45 codes the answer is nothing at all. The daily run rebuilds it."
+    },
+    {
+      "id": "s243-fable-title5-rename",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Eight discipline names in our Minimum Qualifications list carry a Title 5 section number that belongs beside the title, not in it — 53412 for noncredit basic skills and ESL, 53414 for the DSPS disciplines. It shows in only 45 live courses, but the strings appear 1,183 times across 33 files including the minted-course record and four alias maps, so this is an identifier rename with a dry run and a receipt, not a find-and-replace. Its own PR."
     },
     {
       "id": "s238-fable-dr24-surface",
