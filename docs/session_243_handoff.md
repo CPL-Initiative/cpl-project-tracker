@@ -1,5 +1,5 @@
 ---
-title: "Session 243 handoff — the frame budget is bought; the subject–discipline edge has no owner"
+title: "Session 243 handoff — the frame budget is bought, DR-25/26 are owned, and the banner is live"
 created: 2026-09-08
 updated: 2026-09-08
 tags: [handoff]
@@ -8,165 +8,126 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are Session 243
 
-Your moniker is **SkyLedger**. The name is the job: this run's findings were all
-about a *record* that quietly disagreed with itself — a memo that never hit, a
-warning erased by its own writer, a discipline that exists in the repo and never
-reaches the payload. Predecessors: SkyGlobe S239 → SkyDome S240 → SkyClear S241
-→ **SkyTrue S242** (this run).
+Your moniker is **SkyGate**. The name is the job: this run's three hardest
+mistakes were all about WHO or WHAT is allowed through — a memo whose key let
+everything through, a fill reading the wrong field, and an access gate that took
+three passes to name the right 42 people. Predecessors: SkyDome S240 →
+SkyClear S241 → **SkyTrue S242** (this run).
 
 ## What this run did
 
-One PR: [#1517](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1517),
-three commits. ⚠️ **It was still in CI when the session ended — check it first.**
+One PR, merged: [#1517](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1517)
+— 17 commits, 36 files, squashed to `152ecd71`. Plus CPLBrain #126.
 
-**The frame budget (the lane's NEXT ⓪, now done).** Measured back-to-back on the
-served page, same machine, same minute: a median frame **81 ms → 46 ms**, about
-**12.3 → 21.7 fps**. Three defects, one shape — a value that DRIFTS used as
-though it were stable, and work done for points nobody could see.
+**The frame budget.** Median frame **81 ms → 46 ms** (~12.3 → 21.7 fps),
+measured back-to-back on one machine in one minute.
 
-**Sam's question, answered mid-run.** `PSYC C1000` *does* carry Psychology. The
-map is right that the payload does not. Then he pushed further — is the model
-recursive or conflicted? — and asked for a decision sheet. It is out and
-unanswered.
+**Sam's five rulings**, all `yes`, all built: DR-25, the edge fill (326 → 93
+blanks), SkyView's subject table reading the map instead of voting.
+
+**The COBI header**: seal hidden, and **DR-26 — the live-session banner**, live
+and pointing at a shared session.
 
 ## ⭐ THE THINGS TO CARRY FORWARD
 
 1. ⭐ **FIXING A COST CAN MOVE IT RATHER THAN REMOVE IT.** `measureText` was
-   11.2% of the profile; the memo fix took its calls 15.4 → 0.17 a frame and
-   **`strokeText` went 0.6% → 9.6%**. Chromium builds a font at its first USE,
-   so removing one caller promotes the next. Nothing had been saved. **Stopping
-   at "it left the profile" would have shipped a wash and reported a win.**
-   [`note`](kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md)
-2. ⭐ **A MEMO KEYED ON A VALUE THAT DRIFTS IS NOT A MEMO.** The key was
-   `ctx.font` + the string; an island label is sized off its drawn radius, so
-   every frame asked a question it had never asked. It is now measured once at
-   `TW_REF` and scaled.
-3. ⚠️ **A ROUND IS A THRESHOLD.** `labelSize()` rounds the drawn size to whole
-   pixels **with a 0.6px dead band** — a bare `Math.round` on a drifting value
-   flips 18↔19 every frame, a worse shimmer than the one being fixed. Third time
-   this lane has paid for a bare threshold (`NODE_ZOOM_KEEP`; the tint that
-   became the sky).
-4. ⚠️ **THE FIRST DRAFT OF THE GUARD PASSED WITH EVERY FIX REVERTED.** Both
-   fixture islands sat at the label-size clamp (no size could be fractional or
-   drift) and all three points sat mid-canvas (no dot could be off screen).
-   Fixed with `__ccrTextStep(0)` and a point 4,000 units out; **one check was
-   deleted as unfailable**, and each survivor was verified by reverting its fix.
+   11.2% of the profile; the memo fix took it to zero and **`strokeText` went
+   0.6% → 9.6%**. A font is built at its first USE, so removing one caller
+   promotes the next. **Stopping at "it left the profile" would have shipped a
+   wash and reported a win.** Re-profile, and compare TOTALS, not entries.
+2. ⭐ **A MEMO KEYED ON A VALUE THAT DRIFTS IS NOT A MEMO**, and **a bare round
+   is a threshold** — `labelSize()` has a 0.6px dead band because 18↔19 every
+   frame is a worse shimmer than the one being fixed.
+3. ⚠️ **`row["subj"]` IS THE LOCAL COLLEGE CODES, NOT THE SUBJ4.** Freehand and
+   multi-valued (`AEROST`, `ARTHIST`, `DANCE (DANCE)`). The canonical code is
+   the **id prefix**. Caught only by chasing a 3-row gap between 233 predicted
+   and 230 produced — **a near-match is not a match**.
+4. ⚠️ **"NOT SIGNED IN" AND "ONLY THESE PEOPLE" CANNOT BOTH HOLD.** Identity
+   comes from a credential. Three passes to get the audience right; the note is
+   [`methodology-not-signed-in-and-only-these-people-cannot-both-hold`](kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md).
+   ⚠️ **Count the group before you gate on it** — an allowlist of 10 for an
+   audience of 42.
+5. ⚠️ **MAP Users ≠ Team & RACI.** MAP Users is the COLLEGE roster
+   (`map_college_users`, 2,801). The MAP TEAM is `team_members` (42, org MAP) on
+   **Team & RACI**. I got this wrong and Sam corrected it.
+6. ⚠️ **A GUARD'S FIRST DRAFT PASSED WITH EVERY FIX REVERTED.** Both fixture
+   islands sat at the label-size clamp; all three points sat mid-canvas.
    **Revert your guard before you trust it.**
-5. ⚠️ **THE REVERT HARNESS OVERWROTE ITS OWN BACKUP** (`cp file $GOOD` after an
-   earlier failed run had already reverted the file). For two rounds the "good"
-   state under test was missing `labelSize`. The suite caught it.
-6. ⚠️ **`npm run test:floor` ERASED ITS OWN SAFETY WARNING** — the `_note`
-   carrying "an interrupted run has written a LOWER floor before, so diff for
-   LOWERED numbers before committing." Restoring it by hand was worthless, since
-   the next run would erase it again; `tests/run.js` now carries the note
-   through. **A file whose safety instruction is deleted by its own writer loses
-   it silently.**
-7. **The three above are one lesson**: a fix verified against the property it
-   changed rather than the outcome it was for. S241 said it about correctness vs
-   appearance; this run hit it three more times.
+7. ⚠️ **THREE CI CYCLES WENT TO STALE GENERATED FILES**, each the same shape: a
+   generator run BEFORE the last edit. **Run `./scripts/check_generated.sh` LAST
+   before every push** — `node tests/run.js` covers none of them and passed
+   310/310 while two were stale. ⚠️ And the script shipped incomplete itself,
+   missing `cobi_admin_surface.js`. It covers four now.
 
-## Sam's question — and the sheet he asked for
+## Decisions Sam made this run
 
-`PSYC C1000` carries `"discipline": "Psychology"` in
-`kb/reference/coci_courses.json` (classified 2026-05-20) and `disc:null` in the
-payload. **Two minting paths, one inference pipeline**: all five inference passes
-read `kb/coci_minted_courses.json` — **19,568 records, every one an M-ID** — and
-`excel_to_dashboard.py` loads the C-ID/CCN reference but reads **only
-`description`** from it.
-
-- Blank rate **0.4% M-ID against 47.5% C-ID / 49.1% CCN**. A gap that tracks
-  *where a row came from* rather than *what the row is* is a plumbing gap.
-- **233 of the 326 fillable** from stores already held (199 identifier
-  reference · 177 subject map · **143 of 143 agreement** where both have an
-  opinion, zero disagreements). 93 would remain.
-- ⚠️ **Not TOP's job** — 219 of the 326 carry a TOP code; Rule 7 keeps it a
-  corroborator. The reference's discipline comes from the identifier's own
-  subject prefix against the MQ list.
-- Joins agree direct and through `kb/alias_chain.py` (199 both ways) — current-era.
-
-Then his sharper question: *"could our procedures be recursive or conflicted?"*
-
-- **Conflicted: no**, measured. **Recursive: yes**, in the display layer. COBI's
-  CCR list says it verbatim — *"Common SUBJ is a function of discipline, so it
-  stays blank until one is assigned"* — so no discipline means no Common SUBJ,
-  and nothing derives the discipline from the `PSYC` prefix sitting on the id.
-- SkyView's subject table votes: a subject's home discipline is the modal
-  discipline of its identities. **148 of 344 subjects vote blank**; our own map
-  file names a discipline for 11 (AERO→Aviation, PHTO→Photography,
-  STAT→Mathematics…). ⚠️ **PSYC is NOT one of them** (268 to 2) — two separate
-  defects that look like one.
-- **28 of the 326 are firewalled locked anchors** (all CCN-ID); 298 are editable
-  today. Sam filed the only `anchor_discipline_proposal` in the table at 14:05
-  on 2026-09-08 — *Psychology*, on `PSYC C1000` — and **nothing consumes it**.
-- **No register row exists for the subject–discipline edge.** DR-04 covers M-ID
-  canonical SUBJ4, DR-03 TOP, DR-17 CR wording; all three have `owner: null`.
-
-**THE SHEET IS OUT AND UNANSWERED** — five calls:
-https://claude.ai/code/artifact/2f42d0a6-4d71-43ab-a8be-f4506e5f7c2c
-(`docs/visuals/2026-09-08-subjects-disciplines-and-who-decides.html`).
-⚠️ **Read the replies FIRST** with the Artifact tool's `read_db`, collection
-`replies`. ⚠️ This session could NOT register a wake subscription on it
-(`subscribe_forbidden`, 403) — so nobody is notified; you must go and look.
+- **All five subjects-and-disciplines calls: `yes`**, no notes (sheet
+  `docs/visuals/2026-09-08-subjects-disciplines-and-who-decides.html`).
+- **"Hide the CO logo on the COBI header… We'll just leave it plain COBI."**
+- **Banner option A**: announce only a session already shared.
+- **"Limit the folks who can use the banner link to MAP Team Users."** Then:
+  **"they wouldn't need to be signed in… just ensure that they are on the team
+  table"** → the phrase is the trade.
+- ⭐ **VOICE, standing rule:** *"no mannerly language, avoiding adjective
+  phrases, metaphors, and redundant asides. Mannerly language is irritating
+  because it seeks to draw attention to the writer rather than the reader."*
+  His two examples of mine: *"Worth saying out loud though."* → **"Note:"**;
+  *"I would rather build that as its own PR than bolt it onto this one."* →
+  **"I'm making a PR for it."** In `CLAUDE.md` house voice, `cpl_memory`, and
+  the CPLBrain braindump. **Applies to explainers AND replies to Sam.**
 
 ## YOUR PRIORITY
 
-1. **PR #1517** — CI was still running at session end. Re-read `get_check_runs`
-   on the CURRENT head (`ebc7292` or later), squash-merge on green, fix and push
-   if red. A `send_later` check-in was armed for 15:31Z 2026-09-08; if it never
-   fired, do this by hand.
-2. **The sheet's replies.** Items 2 and 3 are buildable the moment he rules;
-   item 5 (who owns the subject–discipline edge) is the one only he can answer.
-3. **Sam's eye on the Sky at 21.7 fps** — still open from S241/S242. The
-   remaining named JS is the per-node loop (14%) and the island loop (10%), the
-   irreducible walk. **Fewer points per frame is the lever that has worked three
-   times running.**
-4. Then the standing queue: **DR-24's write surface** (the register row exists,
-   owner Sam; the phrase's SCOPE is what is open), the skills layer's fetch
-   problem (NEEDS SAM ①), and `docs/skyview_backlog.md`.
+1. **Sam's eye on the banner** once Pages deployed — and on the Sky at ~21.7 fps.
+2. **DR-24's write surface** — the curate phrase and the propose/second gate.
+   The register row exists with Sam as owner; the phrase's SCOPE is open.
+3. **The 93 blanks the edge could not fill** — 15 null in the identifier
+   reference, 78 with a SUBJ4 the map does not carry. One map entry fills a
+   whole subject.
+4. **The four subjects where the edge overrules a real vote** — ETHN (34
+   identities under Chicano Studies), ESLN (a malformed discipline name). The
+   row prints both; someone should decide.
+5. `docs/skyview_backlog.md`.
 
 ## NEEDS SAM
 
 ① Where agency skill statements come from when the three sources disagree.
 ② Which disciplines are grab bags besides Vocational and the no-discipline pile.
-③ The live-session banner — what link, which tabs.
+③ ~~The live-session banner~~ — **ANSWERED** (DR-26, built and live).
 ④ The three legacy anchors with no seed discipline (`M-ID HOSP 100`, `104`, `102`).
-⑤ Whether 60 is the right search depth; whether an emptied discipline vanishes
-or ghosts.
-⑥ The right-edge glyph rail from his Obsidian screenshot — his call.
+⑤ Whether 60 is the right search depth; whether an emptied discipline ghosts.
+⑥ The right-edge glyph rail from his Obsidian screenshot.
 ⑦ His eye on the CPL face (`#skyview/cpl`).
-⑧ His eye on the Sky as culled AND at the new frame rate.
-⑨ **The five calls on the subject–discipline sheet** (2026-09-08) — new.
+⑧ His eye on the Sky at the new frame rate.
+⑨ **The four edge/vote disagreements** (new).
+⑩ **`npm run a11y cobi` fails 38 of 38 routes on PRE-EXISTING faults** —
+`input#cplfl-optout` is 182×20 against the 24×24 minimum, and `p.tphx-intro`
+measures 3.24:1 against 4.5. Confirmed pre-existing by stashing and re-running.
+Not mine, not fixed, worth fixing.
 
 ## Read these, in this order
 
 1. This file.
-2. `docs/reference/lanes/skyview-ccr-interface.md` — the invariants; the S242
-   block and the rewritten NEXT are at the top of their sections.
-3. `docs/ccr_atlas_lessons.md`, the 2026-09-08 S242 section.
-4. `docs/kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md`
-   and `methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md`.
+2. `docs/reference/lanes/skyview-ccr-interface.md` — invariants + NEXT.
+3. `docs/reference/lanes/governance-team-enablement.md` — DR-25/26 and why the
+   audience took three passes.
+4. `docs/ccr_atlas_lessons.md`, the 2026-09-08 S242 section.
 
 ## Safety patterns to honor
 
-- **The page must be SERVED, not opened** — `file://` blocks the payload fetch.
-- **Edit the SOURCES** (`prototype/ccr_universe.js`, `prototype/ccr_atlas_v1.html`)
-  and rebuild with `python3 prototype/build_ccr_atlas.py`.
-- **`npm test` sees none of the layout.** Drive a real browser; run
-  `npm run a11y skyview`.
-- ⚠️ **A performance claim needs a BACK-TO-BACK measurement.** Before/after taken
-  minutes apart drifted 20% on this machine from load alone; the honest 81→46 ms
-  came from stashing and re-measuring in the same minute.
-- Never force-push `main` (Rule 5). Squash-merge on green `test`.
-
-## Not done this run
-
-⚠️ **This was NOT a full `/checkpoint`** — Rule 9's 13 artifacts were not all
-refreshed. Written: this handoff, the lane file, the lessons doc, two KB notes,
-`docs/INDEX.md`, the `cpl_memory` row, the decision sheet. **Not refreshed:** the
-To-Do feed, `CLAUDE.md` §11's narrative, and the rest of the 13. Offer
-`/checkpoint` early.
+- **`./scripts/check_generated.sh` LAST before every push.** Four generators.
+- **The page must be SERVED, not opened**; edit the SOURCES and rebuild with
+  `python3 prototype/build_ccr_atlas.py`.
+- **`npm test` sees no layout and no generated file.** `npm run a11y skyview`.
+- ⚠️ **A performance claim needs a BACK-TO-BACK measurement** — before/after
+  minutes apart drifted 20% on this machine from load alone.
+- ⚠️ **The sandbox cannot reach `*.supabase.co`** (Rule 10c). All Supabase work
+  goes through the MCP tools; a browser probe of a live read fails with
+  `ERR_TUNNEL_CONNECTION_FAILED`, which is the sandbox, not the code.
+- Never force-push `main` (Rule 5). Squash-merge on green `test`, and check the
+  job's `head_sha` matches the PR head — five superseded runs went by today.
 
 ---
 
-Greetings, you are SkyLedger (Session 243), see SkyTrue's handoff —
+Greetings, you are SkyGate (Session 243), see SkyTrue's handoff —
 `docs/session_243_handoff.md` — let's keep rolling with our queue.
