@@ -256,7 +256,16 @@ if (UPDATE) {
   // null rather than omitted, so the unprotected set stays countable.
   const next = {};
   for (const f of files) next[f] = observedCounts[f];
-  const p = ledgerLib.writeLedger(next, "Re-baselined by `npm run test:floor`.");
+  /* ⭐ THE NOTE IS THE ONE THING A RE-BASELINE MUST NOT REWRITE (S242). It
+     carries the accumulated history of who floored what, and — load-bearing —
+     the warning that an interrupted run has written a LOWER floor before, so
+     diff this file for lowered numbers before committing. Passing a fresh
+     one-liner here erased both, and the next run would erase whatever a
+     session restored by hand: a file whose safety instruction is deleted by
+     the tool that writes it loses that instruction silently. Carry the
+     existing note through and let a session edit it deliberately. */
+  const p = ledgerLib.writeLedger(
+    next, ledgerLib.loadLedger()._note || "Re-baselined by `npm run test:floor`.");
   const floored = files.filter((f) => next[f] !== null).length;
   cleanupTmp();
   console.log("\n════════════════════════════════════");
