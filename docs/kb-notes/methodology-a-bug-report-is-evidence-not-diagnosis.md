@@ -1,7 +1,7 @@
 ---
 title: "A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-08
 kb-status: published
 type: methodology
 tags: [debugging, measurement, methodology, skyview, video, profiling]
@@ -127,3 +127,44 @@ eye and the hand disagree about what is there.
   drag button" for good reasons that turned out to cost the reader the obvious
   correction. The check was changed *and* the old reasoning named in a comment,
   so the next session does not restore it as a regression.
+
+---
+
+## Postscript, the next day: the report that finally named it
+
+The three reports above were answered, and the reader still saw the problem. His
+fourth attempt is the one that landed:
+
+> *"an enlarged grouping that is crossing over all the others — like a loose
+> asteroid field spiraling around"*
+
+That sentence is a **description of the artifact's shape**, and it identified in
+one line a bug two rounds of measurement had missed: a projection whose scale
+diverges behind the viewer was drawing far-away objects hundreds of times
+oversized, and the cull — written in projected pixels rather than in angle —
+could not tell "far away" from "fills the screen."
+
+⭐ **The most useful report is not the most technical one. It is the one that
+describes the SHAPE of what is on screen.** "Flickers" named a category and
+narrowed nothing. "An enlarged grouping crossing over the others" named a
+geometry, and geometry is testable.
+
+Two further lessons, both self-inflicted:
+
+- ⚠️ **The evidence was already in my own output.** The run that missed this had
+  logged one object at `k = 71.5` while every other object in the same table sat
+  between 0.2 and 2.4 — a number thirty times larger than its neighbours, read as
+  routine. **Scan your measurements for outliers, not just for the value you went
+  looking for.**
+- ⚠️ **A correctness fix and an appearance fix are different claims needing
+  different measurements.** The earlier round proved an animation's timing was
+  now correct, and shipped without re-measuring how it *looked* — where the fix
+  had made things 18% worse, because correct motion at a low frame rate steps
+  further than broken slow motion. Verifying the property you changed is not the
+  same as verifying the outcome you were asked for.
+- ⚠️ **A lever that moves the metric is not the same as a lever that fixes the
+  cause.** Before finding the real bug, a rate sweep showed the symptom could be
+  cut threefold by slowing the animation. That would have shipped a constant to
+  hide a defect. It was reverted; the actual fix removed the artifact *and*
+  raised the frame rate by half.
+

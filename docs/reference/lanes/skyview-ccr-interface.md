@@ -125,6 +125,36 @@ MOTION** (Sam, sheet item 4). `startTurn()` returns under
 *Rotate* restarts it; the twinkle runs only while turning. A carried course
 never sees a moving target.
 
+⭐ **AN ISLAND BEHIND THE READER IS NOT A SMALL ISLAND, IT IS A HUGE ONE** (S241,
+Sam: *"an enlarged grouping that is crossing over all the others — like a loose
+asteroid field spiraling around"*). The sky is stereographic: the scale at `ang`
+off the view direction is `sec²(ang/2)` — 1.3× at 60°, 4× at 120°, **131× at
+170°** — and `projectDir` only refuses past 3.05 rad (174.8°). The screen cull is
+a bounding box built from `isl.r * k`, so that inflated radius covers the window
+and **the cull passes**: the island draws as a sprawl of its courses over
+everything else. Measured at 240° across: largest scale **88.4×**, an island over
+8× in **149 of 150 frames**. ⚠️ It was in S240's own numbers (Music `2.4 → 71.5 →
+culled`) and read as a normal cull. The test is ANGULAR — an island whose nearest
+edge (`acos(cz) - S.th`) lies beyond the screen's far corner is not in view.
+88.4× → 1.5×, 149/150 → 0/150 frames, and **89 of 159 islands at 150° across were
+being drawn having never been visible**: 11.4 → **17.4 fps**.
+
+⚠️ **THE OPENING WIDTH IS WRITTEN IN TWO PLACES** — `sph`'s initializer and
+`resetView()` — and **`resetView` is the one that runs**, so changing only the
+initializer changes nothing (measured: still 150° across). Both now say 94° half
+= **188° across** (Sam, 2026-09-08: *"Default might look better a bit
+smaller...as long as the stars show up"*). The caveat is the constraint:
+`NODE_ZOOM` decides per island whether its courses draw, and the scale falls as
+the window widens — 150°: 70/70 islands keep their stars (lowest 0.438) · **188°:
+99/99 (0.313)** · 226°: 125/125 (0.224, thin) · 240°: 128/**124** (0.195, four
+lose them). An island's scale drifts as the sky turns, so the margin is the point.
+
+⚠️ **THE MAP BUTTON HAS LEFT THE ROW; THE MAP HAS NOT LEFT THE CODE** (Sam,
+2026-09-08: *"WE don't need the map view anymore, not with this view showing so
+nicely"* — reversing his own sheet item 2 of the day before). `proj==="map"` is
+still the flat renderer the sphere is a projection OF, `#map` still routes, and
+seven suites declare `CPL_SKYVIEW_OPENS="map"`. Putting the word back is one line.
+
 ⚠️ **THE TURN'S `dt` CLAMP MUST SIT ABOVE THE REAL FRAME TIME** (`TURN_DT_MAX`,
 S240). It guards ONE case — a backgrounded tab — and is not a frame-rate limiter.
 At 0.1 s it sat *below* the measured frame (133 ms at 240° across, 83–267 ms), so
@@ -132,6 +162,12 @@ At 0.1 s it sat *below* the measured frame (133 ms at 240° across, 83–267 ms)
 interval swung 192–319 ms (a fixed step at an irregular cadence — the lurch), and
 the turn ran **0.0393 rad/s against an intended 0.0720**. Above the frame time:
 29 step sizes over 139 frames, angular-velocity IQR **0%**.
+⚠️ **AND IT MADE THE PICTURE WORSE, WHICH S240 DID NOT MEASURE**: time-true motion
+at 8 fps takes a BIGGER step than the broken half-speed one, so the per-frame
+visual change went **18.59 → 21.87**. The remainder is spread over 877 of 1008
+cells (top 5% hold 14%) — uniform motion plus ~27,000 one-pixel stars aliasing
+across pixel boundaries, not a defect to find. **Frame rate is what buys
+smoothness**, and S241's cull is where it came from. The pace stays as ruled.
 
 ⭐ **ON THE SPHERE EVERY ZOOM BAND NEEDS HYSTERESIS — A BARE THRESHOLD BLINKS**
 (S240, Sam: *"note how the skyview flickers around"*). On the flat map `k` is

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-215 document(s).
+216 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 242 | [the asteroid field is culled; the frame budget is the remaining lever](../session_242_handoff.md) | 2026-09-08 |
 | 241 | [the recordings are answered; his eye on the sky, then the frame budget](../session_241_handoff.md) | 2026-09-07 |
 | 240 | [the Sky is in; his eye on it, then the frame budget](../session_240_handoff.md) | 2026-09-07 |
 | 239 | [the globe goes into SkyView; the staged-to-move mark rides second](../session_239_handoff.md) | 2026-09-07 |

@@ -484,7 +484,7 @@
      ],
      "title": "A bug report is evidence, not diagnosis \u2014 and the control that kills your favorite hypothesis",
      "type": "methodology",
-     "updated": "2026-09-07"
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-15",
@@ -12350,8 +12350,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 215,
+   "count": 216,
    "docs": [
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "n": 242,
+     "path": "docs/session_242_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the asteroid field is culled; the frame budget is the remaining lever",
+     "type": null,
+     "updated": "2026-09-08"
+    },
     {
      "created": "2026-09-07",
      "governs": [],
@@ -16027,5 +16040,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 822
+ "total": 823
 }

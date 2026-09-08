@@ -1,20 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-07",
-  "_session": 240,
-  "_status": "Sam recorded three short videos of SkyView misbehaving and the session cleared all of them (PR #1515). The sky flickered for two reasons, neither of them the one anyone would guess: the slow turn was advancing the same fixed step every frame no matter how long the frame took — which also meant it was turning at little more than half the speed it was supposed to — and a zoom rule written for the flat map was being asked, island by island, on the sphere, so whole disciplines' stars switched off and back on as the sky drifted. Both are fixed and measured. The sky also turned purple once a course was selected and zoomed into, because the highlight colour for a selected discipline had quietly become the entire window; it stays night now. A worse one hid behind a Put back: once a course had been moved from the panel, the page still thought you were carrying it, so every Drag button after that did nothing at all for the rest of the session. Alongside those, four things Sam asked for: a course outline that opens over the map instead of taking you off it, a Back button that returns you to the view you were looking at, a sidebar you can close by dragging its edge, and a COBI link in the three-dot menu — plus the ability to send an already-staged course to a different home without undoing it first. What is still open is whether the sky now reads smooth on Sam's own machine: the frame rate itself has not changed, and the session's profile shows the cost is not where the last one thought it was.",
+  "_as_of": "2026-09-08",
+  "_session": 241,
+  "_status": "Sam kept reporting that SkyView flickered after the first round of fixes, and his own description found the cause: an enlarged grouping crossing over all the others, like a loose asteroid field. That is what it was. The sky is drawn by a projection whose scale grows the further round the sphere something sits, and an island directly behind the viewer was being drawn eighty-eight times oversized — its courses sprayed across every other discipline — because the check for whether something is on screen was written in pixels rather than in angle, and a thing that large always overlaps the window. Fixing it removed the artifact and, because eighty-nine of the hundred and fifty-nine islands were being drawn at the default zoom having never been visible at all, made the whole view half again faster. Also corrected: the previous round's timing fix was right in itself but made the picture worse, which had not been measured — smoothness comes from frame rate, not from the timing. Two of Sam's asks shipped with it: the sky now opens a step wider (the widest setting where every star still appears — one wider and four disciplines lose theirs), and the Map button leaves the row now that the Sky reads well, though the flat map itself stays as the thing the sphere is a projection of.",
   "items": [
     {
-      "id": "s240-sam-sky-smooth",
+      "id": "s241-sam-sky-clear",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "Open SkyView again and tell us whether it still flickers. The two causes you recorded are fixed: the sky now turns at a steady, correct pace instead of lurching, and disciplines no longer blink their stars on and off as it drifts. The sky also stays night after you filter and zoom, instead of going purple. What we cannot check from here is how it feels on your machine — if it still stutters, say roughly how often and at what zoom (the reading at the top of the window says how wide a view you are holding)."
+      "text": "Open SkyView and tell us whether the asteroid field is gone. Your description found it: one discipline was being drawn eighty-eight times too large and scattered over everything, because it sat behind you on the sphere where the projection blows up. It is culled now. Two things you asked for came with it — the sky opens a step wider (188 degrees across, the widest where every star still shows; one step further and four disciplines lose theirs), and the Map button has left the row. Still worth saying if the drift itself looks steppy: that is frame rate, and the fix above bought about half again more of it."
     },
     {
-      "id": "s240-sam-carry-fixed",
-      "for": "Sam",
+      "id": "s241-fable-frame-budget",
+      "for": "Fable",
       "tab": "unified-courses",
-      "text": "The course that would not move is fixed, and it was not the Put back button. Once you had moved one course from the panel, the page still believed you were carrying it, so every later Drag did nothing — for the rest of that session. You can also now send an already-staged course somewhere else without undoing it first: the row that names the wrong destination carries a Move instead button beside Put back."
+      "text": "The frame budget, with a corrected map of it. Drawing is not the cost — twenty-seven thousand stars fill in six milliseconds of a hundred-and-thirty millisecond frame. The time goes on work done once per course and on measuring label text. Two of those were fixed this round; the remaining shimmer is a dense field of one-pixel stars moving at about ten frames a second, which no smarter drawing removes. If more is wanted, the lever is fewer points drawn per frame, and the angular cull just showed how much that is worth."
     },
     {
       "id": "s238-sam-cpl-face-look",
@@ -39,12 +39,6 @@
       "for": "Sam",
       "tab": "admin",
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
-    },
-    {
-      "id": "s240-fable-frame-budget",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "The frame budget, now that the flicker is off it. The last session recorded that the cost was the drawing and that the fix was a cached star layer; a profile this session shows that is backwards — drawing 27,000 stars takes 6 milliseconds of a 133 millisecond frame. The time goes on measuring label text over and over and on per-course work inside the draw loop. Two contained steps: remember each label's measured width instead of re-measuring it every frame, and stop reading the canvas size from the page once per course. Measure on the served page before and after."
     },
     {
       "id": "s238-fable-dr24-surface",
