@@ -1886,3 +1886,94 @@ the frames, measure the pixels, build the rival hypothesis, and let the control
 kill it. Two of the most plausible explanations (the twinkle; the alpha
 quantization) were wrong, and a third "fix" was an artifact of measuring an empty
 canvas. The recordings were evidence, not diagnosis.
+
+---
+
+## 2026-09-08 · S241 (SkyClear) — the asteroid field, and a fix that made the picture worse
+
+S240 shipped two flicker fixes and Sam still saw it. This run is the correction,
+and the lesson is squarely about the previous one.
+
+### What S240 got wrong
+
+The `dt` clamp fix was **right and made it worse**. Time-true motion at 8 fps
+takes a *bigger* step per frame than the broken half-speed one, so the per-frame
+visual change went **18.59 → 21.87**. S240 verified the turn's *correctness*
+(step sizes, angular-velocity IQR) and never re-measured its *appearance*.
+
+⭐ **A correctness fix and an appearance fix are different claims and need
+different measurements.** Proving `dSpin/dt` is now constant says nothing about
+whether the picture looks smoother, and at a low frame rate the two can point in
+opposite directions.
+
+### The bug neither of us had found
+
+Sam's words located it: *"an enlarged grouping that is crossing over all the
+others — like a loose asteroid field spiraling around."* His screenshot showed a
+hard-edged wedge over two-thirds of the window at the **default** zoom.
+
+The sky is stereographic, so the scale at an angle `ang` off the view direction
+is `sec²(ang/2)`:
+
+| angle | scale |
+|---|---|
+| 60° | 1.3× |
+| 120° | 4× |
+| 170° | **131×** |
+
+`projectDir` refuses only past 3.05 rad (174.8°), so an island almost directly
+**behind the reader** still projects — at a hundredfold scale. And the screen
+cull is a bounding box built from `isl.r * k`, so the inflated radius covers the
+whole window and **the cull passes**. The island is drawn as a sprawl of its
+courses over everything else, sweeping as the sky turns.
+
+⚠️ **It was in S240's own measurements.** The island-scale probe logged Music at
+`k: 2.4 → 71.5 → culled` and the run read it as an ordinary cull. A number 30×
+larger than every other island in the same table was sitting in the output.
+
+⭐ **A CULL MUST BE EXPRESSED IN THE SPACE WHERE THE CONSTRAINT LIVES.** The
+constraint is angular — the window shows a finite cone — and the cull was written
+in projected pixels, where a divergent projection makes "too far away" and "fills
+the screen" the same thing. Testing `acos(cz) - S.th > angMax` is exact.
+
+| | before | after |
+|---|---|---|
+| largest island scale | 88.4× | **1.5×** |
+| frames with one over 8× | 149/150 | **0/150** |
+| islands drawn at 150° across | 159/159 | 70 |
+| frame interval at 150° across | 88 ms | **57 ms** (+53% fps) |
+
+**89 of 159 islands were being drawn at the default zoom having never been
+visible.** The correctness fix paid for itself twice: the artifact went away and
+the frame rate rose by half, which is the thing that actually buys smoothness.
+
+### The remainder is not a defect
+
+With the giant island gone, the per-frame change is spread over **877 of 1008
+cells** (the top 5% hold 14%) — uniform motion plus ~27,000 one-pixel stars
+aliasing across pixel boundaries. Nothing to find. A dense star field moved at
+~10 fps shimmers, and the lever is frame rate, not a smarter draw.
+
+⚠️ Before understanding that, this run measured a rate sweep and nearly shipped a
+slower turn (SPIN 0.045 → 0.010, per-frame change 21.87 → 7.72). That would have
+been a symptom-level constant papering over a real bug, and it was reverted. **A
+lever that works on the metric is not the same as a lever that fixes the cause.**
+
+### Sam's two asks, both settled by measurement
+
+- **"Default might look better a bit smaller...as long as the stars show up."**
+  The caveat is the binding constraint, not a nicety: `NODE_ZOOM` decides per
+  island whether its courses draw. Stepping the real control — 150°: 70/70 keep
+  their stars (lowest scale 0.438) · **188°: 99/99 (0.313)** · 226°: 125/125
+  (0.224) · 240°: 128/**124** (0.195). 226 keeps them *today* but sits a whisker
+  above the line, and an island's scale drifts as the sky turns — which is
+  exactly what S240's flicker was. 188 has margin.
+  ⚠️ **The opening width is written in TWO places** (`sph`'s initializer and
+  `resetView`), and `resetView` is the one that runs: changing only the
+  initializer changed nothing, and the probe caught it.
+- **"WE don't need the map view anymore."** The Map *button* goes; the Map does
+  not. It is the flat renderer the sphere is a projection of, it still routes,
+  and seven suites test on it. ⚠️ **The second reversal of a committed ruling in
+  two days** (the first was the staged-away row). Both are named in the code and
+  in the suite beside the new assertion, because a reversal that isn't recorded
+  reads as a regression to the next session.
