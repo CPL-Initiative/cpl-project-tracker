@@ -62,7 +62,14 @@
       "position:relative;z-index:150;",
       "align-items:center;column-gap:1.1rem;row-gap:.5rem;padding:.6rem 1.5rem;}",
       ".cobi-brand{grid-column:1;justify-self:start;display:flex;align-items:center;gap:.7rem;min-width:0;}",
-      ".cobi-seal{flex:0 0 auto;width:60px;height:60px;object-fit:contain;display:block;}",
+      // The seal is hidden (Sam, 2026-09-08: "hide the CO logo on the COBI
+      // header ... We'll just leave it plain COBI for now"). Hidden here rather
+      // than deleted from the two HTMLs: this file is one static asset that
+      // covers both (Rule 4) and the daily regen cannot undo it, and putting the
+      // mark back is one word. display:none also takes it out of the
+      // accessibility tree, which is right for a mark that names nothing the
+      // <h1> does not already say.
+      ".cobi-seal{display:none;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
       "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
@@ -162,7 +169,7 @@
       "@media (max-width:560px){.header{grid-template-columns:minmax(0,1fr);}",
       ".cobi-brand{grid-column:1;justify-self:stretch;}",
       ".cobi-utility{grid-column:1;justify-self:stretch;justify-content:flex-start;}",
-      ".cobi-seal{width:44px;height:44px;}.header h1{font-size:1.35rem;}}"
+      ".header h1{font-size:1.35rem;}}"
     ].join("");
     document.head.appendChild(s);
   }
