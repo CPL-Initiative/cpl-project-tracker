@@ -4,7 +4,7 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 443,
+  "file_datasets": 444,
   "external_services": 138,
   "consumers": 324,
   "workflows": 33,
@@ -447,6 +447,16 @@
   },
   "external:claude.ai": {
    "consumers": [
+    {
+     "id": "module:admin.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1376,
+     "tabs": [
+      "admin"
+     ]
+    },
     {
      "id": "workflow:cpl-chat-health.yml",
      "kind": "workflow",
@@ -8834,7 +8844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1163,
+     "line": 1178,
      "tabs": [
       "admin"
      ]
@@ -13270,6 +13280,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cobi_live_banner.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/context_budget_test.py": {
    "consumers": [
     {
@@ -15363,6 +15386,16 @@
   },
   "supabase:cobi_live_session": {
    "consumers": [
+    {
+     "id": "module:admin.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1358,
+     "tabs": [
+      "admin"
+     ]
+    },
     {
      "id": "module:cobi_brand.js",
      "kind": "module",
@@ -17878,6 +17911,7 @@
     "tests/ccr_universe_orbits_test.py",
     "tests/discipline_edge_fill_test.py",
     "tests/cobi_live_banner.test.js",
+    "tests/admin_live_banner_control.test.js",
     "tests/docs_audit_test.py",
     "tests/docs_index_build_test.py",
     "tests/american_spelling_test.py",

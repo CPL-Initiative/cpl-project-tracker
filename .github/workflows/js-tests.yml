@@ -315,6 +315,12 @@ jobs:
       # rather than watch, which is what the product actually does.
       - name: COBI live-session banner (DR-26, cobi_brand.js)
         run: node tests/cobi_live_banner.test.js
+      # The Admin-tab control for the same banner. Its sharpest check is that a
+      # link which is not a claude.ai session is refused BEFORE any write, and
+      # that an expired row reads "not showing" — a stale "working right now"
+      # is the failure this whole surface is shaped around.
+      - name: Live-banner Admin control (DR-26, admin.js)
+        run: node tests/admin_live_banner_control.test.js
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
       # a button pointing at something that is not deployed: the self-contained

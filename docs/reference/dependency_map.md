@@ -60,7 +60,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
 | `chatbox_exhibits` | `edgefn:cpl-chat` | — |
 | `chatbox_peer_articulations` | none found | scripts: `kb/_sync_peer_articulations.py` |
-| `cobi_live_session` | pages: `CPL_Dashboard.html` | — |
+| `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
@@ -615,6 +615,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
@@ -681,7 +682,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | workflows: `cpl-chat-health.yml` |
+| `claude.ai` | tabs: `admin` · workflows: `cpl-chat-health.yml` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_build_partner_crosswalk.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -824,5 +825,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 443 file
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 444 file
 datasets · 138 external services · 324 consumers · 33 workflows · 37 tabs.

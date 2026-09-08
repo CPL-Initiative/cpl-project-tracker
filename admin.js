@@ -749,6 +749,21 @@
       ".adm h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".adm h3 { color: var(--navy-primary); margin: 22px 0 8px; font-size: 1.02rem; }",
       ".adm-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
+      // ── the live-session banner control (DR-26) ──
+      ".adm-live { border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px;",
+      "margin: 22px 0; background: var(--surface-subtle, #F7F5F1); max-width: 720px; }",
+      ".adm-live h3 { margin-top: 0; }",
+      ".adm-live-note { color: var(--text-muted); font-size: .88rem; margin: 4px 0 10px; }",
+      ".adm-live-state { margin: 0 0 12px; font-size: .92rem; }",
+      ".adm-live-lbl { display: block; font-size: .82rem; font-weight: 700;",
+      "color: var(--text-strong, #1C1C1A); margin: 10px 0 3px; }",
+      ".adm-live-url { width: 100%; max-width: 520px; padding: 6px 9px; font: inherit;",
+      "font-size: .9rem; border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-hours { padding: 6px 9px; font: inherit; font-size: .9rem;",
+      "border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
+      ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
+      ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
+      "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
       ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".adm-warn { font-size:.85rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
@@ -1327,6 +1342,96 @@
     });
   }
 
+  /* ── DR-26: the live-session banner control ─────────────────────────────────
+   * Sam, 2026-09-08. He sets a Claude Code session's visibility to Team in
+   * claude.ai, then turns the banner on here rather than asking a session to
+   * write the row for him.
+   *
+   * ⚠️ THIS DOES NOT SHARE THE SESSION AND CANNOT. Visibility is a claude.ai
+   * control on the session itself; nothing in COBI can reach it. So the copy
+   * says so at the point of use, because the failure this guards against is
+   * turning the banner on for a session that is still Private and sending the
+   * whole organization at a link only its author can open.
+   *
+   * The table refuses an active row with no link and refuses any link that is
+   * not a claude.ai session, so a slip here is caught server-side too. */
+  var LIVE_REST = REST + "/cobi_live_session";
+  var liveRow = null;
+
+  function liveHtml() {
+    var on = !!(liveRow && liveRow.active);
+    var url = (liveRow && liveRow.session_url) || "";
+    var exp = liveRow && liveRow.expires_at ? new Date(liveRow.expires_at) : null;
+    var live = on && (!exp || exp.getTime() > Date.now());
+    return '<section class="adm-live"><h3>Live-session banner</h3>'
+      + '<p class="adm-live-note">Puts a line at the top of every COBI page saying you are working in '
+      + 'Claude Code, with a link to the session. <b>Set the session to Team visibility in claude.ai '
+      + 'first</b> — this control announces a session, it cannot share one.</p>'
+      + '<p class="adm-live-state">Now: <b>' + (live ? "showing" : "not showing") + '</b>'
+      + (on && exp && exp.getTime() <= Date.now() ? ' <span class="adm-live-note">(the link expired)</span>' : '')
+      + (live && exp ? ' <span class="adm-live-note">until ' + esc(exp.toLocaleString()) + '</span>' : '')
+      + '</p>'
+      + '<label class="adm-live-lbl" for="adm-live-url">Session link</label>'
+      + '<input id="adm-live-url" class="adm-live-url" type="url" spellcheck="false" '
+      + 'placeholder="https://claude.ai/code/session_..." value="' + esc(url) + '">'
+      + '<label class="adm-live-lbl" for="adm-live-hours">Show for</label>'
+      + '<select id="adm-live-hours" class="adm-live-hours">'
+      + '<option value="2">2 hours</option><option value="4" selected>4 hours</option>'
+      + '<option value="8">8 hours</option></select>'
+      + '<div class="adm-live-btns">'
+      + '<button type="button" class="adm-btn" id="adm-live-on">Show the banner</button>'
+      + '<button type="button" class="adm-btn" id="adm-live-off">Hide it</button>'
+      + '</div><p class="adm-live-msg" id="adm-live-msg" role="status"></p></section>';
+  }
+
+  function loadLive(done) {
+    fetch(LIVE_REST + "?id=eq.1&select=active,session_url,expires_at", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) { liveRow = (rows && rows[0]) || null; if (done) done(); })
+      .catch(function () { if (done) done(); });
+  }
+
+  function saveLive(on, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    var url = (root.querySelector("#adm-live-url") || {}).value || "";
+    var hrs = parseInt((root.querySelector("#adm-live-hours") || {}).value || "4", 10);
+    url = url.trim();
+    // Said here as well as enforced in the table: the reader gets the reason,
+    // not a rejected request.
+    if (on && !/^https:\/\/claude\.ai\/code\/[A-Za-z0-9_-]+/.test(url)) {
+      if (msg) msg.textContent = "That is not a claude.ai session link. Copy it from the session's address bar.";
+      return;
+    }
+    var body = on
+      ? { active: true, session_url: url, updated_by: "admin-tab",
+          expires_at: new Date(Date.now() + hrs * 3600000).toISOString() }
+      : { active: false, session_url: null, expires_at: null, updated_by: "admin-tab" };
+    if (msg) msg.textContent = "Saving…";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify(body)
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      liveRow = (rows && rows[0]) || null;
+      if (msg) msg.textContent = on
+        ? "Showing. Anyone on COBI sees it — check the session is set to Team visibility."
+        : "Hidden.";
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    }).catch(function (e) {
+      if (msg) msg.textContent = "Could not save (" + e.message + "). Sign in on this tab and try again.";
+    });
+  }
+
+  function wireLive(root) {
+    var on = root.querySelector("#adm-live-on"), off = root.querySelector("#adm-live-off");
+    if (on) on.onclick = function () { saveLive(true, root); };
+    if (off) off.onclick = function () { saveLive(false, root); };
+  }
+
   function render(root) {
     ensureCss();
     var h = '<div class="adm">';
@@ -1559,12 +1664,20 @@
       + "is on it. Folding it in here would hide the fact that the phrases exist from the people who most need "
       + "to know they do.</p>";
 
+    h += liveHtml();
     h += blastShellHtml();
 
     h += "</div>";
     root.innerHTML = h;
     wire(root);
+    wireLive(root);
     renderBlast();
+    // Repaint the one section once the live row lands, rather than blocking the
+    // whole tab on a read it does not need.
+    loadLive(function () {
+      var host = root.querySelector(".adm-live");
+      if (host) { host.outerHTML = liveHtml(); wireLive(root); }
+    });
   }
 
   function wire(root) {
@@ -1787,6 +1900,9 @@
   window.CPL_ADMIN_TAB = {
     activate: activate,
     render: render,
+    _liveHtml: liveHtml,
+    _saveLive: saveLive,
+    _setLiveRow: function (r) { liveRow = r; },
     _state: state,
     _classify: classify,
     _gateById: gateById,
