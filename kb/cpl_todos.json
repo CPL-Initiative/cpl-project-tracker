@@ -5,10 +5,10 @@
   "_status": "You ruled all nine calls on the subject–discipline sheet and they are built. Five subject codes went into the map, which filled seven of the courses that had no discipline; HOSP stayed out because its own courses split four ways. Five subjects where the map disagreed with its courses now read the way the courses do — ATHL is Kinesiology, THTR is Drama/Theater Arts, and so on — which took the disagreements from nine to four. Your note on ATHL was the most useful thing on the sheet: it sent me to check whether anything would quietly merge ATHL into KINE, and the answer is that a re-mint step would have, except that someone caught it in June and blocked it. That block was one line of code and nothing else knew about it; it is now written into the canonical-subject file, so every screen that reads that file knows ATHL is deliberately its own code. One correction to my own sheet: I called ESLN's discipline name malformed, and it is not — that name, and seven others, come to us that way from the official Minimum Qualifications index, which prints a Title 5 section number beside the title. Repairing it is a bigger job than the sheet said and is queued on its own.",
   "items": [
     {
-      "id": "s243-sam-four-disagreements",
+      "id": "s243-sam-two-disagreements",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "The four remaining subject disagreements are on a new sheet, and two of them turned out not to be judgment calls at all. ETHN is a plain correction: the map sends both ETHN and ETHS to Ethnic Studies, and ETHN is Chicano Studies' own code with 34 of its 35 courses filed there. PHTO's map value is right and its twelve courses are mis-filed — every title is a photography course, spread across five disciplines. Two real questions are left: what ENVS means, since there is no Environmental Science discipline in the list, and whether African American Studies and Asian American Studies having no courses anywhere is an absence or a gap. Eight items: https://claude.ai/code/artifact/c165535f-3776-4f93-b2d6-6d1a0ad6e27d"
+      "text": "Both decision sheets are answered and built — nothing in this lane is waiting on you. The subject disagreements went from nine this morning to two, and neither of the two is a map problem by your own rulings: PHTO's twelve courses are mis-filed rather than mis-mapped, and ESLN resolves when the Title 5 rename lands. Your ETHN call also turned up a code nobody had looked at — ETHA had 33 courses, a canonical code and no map entry at all, which is a shape no report was checking for."
     },
     {
       "id": "s242-sam-banner-live",
@@ -47,22 +47,28 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
     },
     {
-      "id": "s243-fable-a11y-remaining",
+      "id": "s243-fable-title5-rename",
       "for": "Fable",
-      "tab": "admin",
-      "text": "The 19 COBI tabs still failing the accessibility sweep: 71 distinct failing selectors, 5,332 sub-24px targets and 22 scrolling regions no keyboard can reach. our-process is six faults from two color tokens and pipeline is ten, so the first few tabs are cheap. This is the shape that pays for fanning out — many surfaces, and every hit verified by re-running one command."
+      "tab": "unified-courses",
+      "text": "RULED: strip the Title 5 section number from the eight discipline names and keep it in a field of its own, then land the rename the way a re-mint lands — dry run, alias map, promotions re-keyed, one cron window, a receipt. 45 live rows but 1,183 occurrences across 33 files including the minted-course record and four alias maps. Closes ESLN, one of the two remaining disagreements."
+    },
+    {
+      "id": "s243-fable-envs-retire",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "ENVS now maps to Biological Sciences, where its one course already sat. The retire half of your ruling is still open and is an identifier change: ENVS 100 is a legacy anchor the September 3 Z-band retirement did not cover, and it does not live in common_courses.json — find its authoritative home before re-keying anything. Twenty-two legacy anchors of the same shape remain, HOSP 100 among them."
     },
     {
       "id": "s243-fable-86-blanks",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "86 course identities still have no discipline, down from 93. They are a named curator list now, not a silent residue: kb/discipline_blanks_worklist.json gives every subject code, its waiting courses and — the column that matters — what could be used to check a proposed answer. For 37 of the 45 codes the answer is nothing at all. The daily run rebuilds it."
+      "text": "86 course identities still have no discipline, named in kb/discipline_blanks_worklist.json with what corroboration each code has; the daily run rebuilds it. Sam asked for a more aggressive pass than the eight codes carrying three or more identities, so work further down the list — but never invent a discipline from a single course title, which is what the corroboration column is there to prevent."
     },
     {
-      "id": "s243-fable-title5-rename",
+      "id": "s243-fable-a11y-remaining",
       "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Eight discipline names in our Minimum Qualifications list carry a Title 5 section number that belongs beside the title, not in it — 53412 for noncredit basic skills and ESL, 53414 for the DSPS disciplines. It shows in only 45 live courses, but the strings appear 1,183 times across 33 files including the minted-course record and four alias maps, so this is an identifier rename with a dry run and a receipt, not a find-and-replace. Its own PR."
+      "tab": "admin",
+      "text": "The 19 COBI tabs still failing the accessibility sweep: 71 distinct failing selectors, 5,332 sub-24px targets and 22 scrolling regions no keyboard can reach. our-process is six faults from two color tokens and pipeline is ten, so the first few tabs are cheap. This is the shape that pays for fanning out — many surfaces, and every hit verified by re-running one command."
     },
     {
       "id": "s238-fable-dr24-surface",
@@ -75,12 +81,6 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
-    },
-    {
-      "id": "s235-fable-decision-packs",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
     }
   ]
 }

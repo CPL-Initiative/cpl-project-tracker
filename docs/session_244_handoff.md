@@ -101,50 +101,69 @@ wrong size.**
 
 ## YOUR PRIORITY
 
-0. **READ BOTH DECISION SHEETS' REPLIES FIRST.** Neither carries a wake
-   subscription — the artifact service refused one for this session — so nothing
-   will tell you a reply landed. `read_db`, collection `replies`, on each:
-   - the nine rulings, all answered:
-     https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b
-   - **the hard ones, OPEN** (8 items):
-     https://claude.ai/code/artifact/c165535f-3776-4f93-b2d6-6d1a0ad6e27d
-   ⭐ **Its framing finding, which changes how this lane is worked:** Sam asked
-   whether these are the foreign-languages case. They are the **opposite** shape.
-   FL had one MQ discipline with **no per-language discipline in the list**, so we
-   minted synthetic codes (SPAN, FREN…) and kept the discipline. Here the MQ list
-   **already carries** the distinctions — five ethnic-studies disciplines, six
-   photography/media. So: **does the MQ list already carry the distinction?** No →
-   umbrella, mint codes. Yes and the courses split → **fan-in** (FTVE, shared by
-   Film and Media Studies 360 and Media Production 146, both names kept). Yes and
-   they do not split → a plain **correction**. That one question sorts all four.
-1. **The Title 5 rename** — eight MQ discipline names, 1,183 occurrences, 33
-   files. Sam ruled it (item 8); the size is what held it. Needs the re-mint
-   shape: a dry-run, an alias map, `kb/promotions.json` re-keyed, landing in one
-   cron window with a receipt (Rule 7 mechanics live in
-   `docs/reference/mid_lifecycle.md`). ⚠️ Strip the section number from the
-   title and KEEP it — a `title5_section` field — rather than deleting it.
-2. **The 19 COBI tabs still failing `npm run a11y cobi`** — sized, not fixed: 71
-   distinct failing selectors, 5,332 sub-24px target instances, 22
-   keyboard-unreachable scrollers. `our-process` is six faults from two tokens
-   (`--op-ink-faint` #6C8188 at 3.49:1 → #4F646B; `--op-amber` #B9772A at 3.13:1
-   → #925003 for its TEXT uses, keeping the accent for decoration, which is the
-   `--mustard` / `--mustard-text` pattern the design system already has);
-   `pipeline` is ten. ⚠️ **This is the fan-out shape** — many surfaces, each hit
-   cheap to verify by re-running the sweep. Say so before you start.
-3. **The four remaining disagreements — TWO ARE NOT JUDGMENT CALLS.** Measured
-   S243: **ETHN is a correction** (the map points ETHN *and* ETHS at Ethnic
-   Studies, and ETHN is Chicano Studies' own canonical code, 34 of its 35 courses
-   there). **ETHA is missing from the map entirely** — 33 courses, canonical code,
-   no entry; a code with no entry never shows as a disagreement, which is why
-   nobody looked. **PHTO's map value is right and its courses are mis-filed** —
-   all twelve titles are photography (*Color Photo Lab*, *Digital Photo Lab*,
-   *Introduction to Lighting*), scattered across five disciplines, two of them
-   plainly wrong (Machine Tool Technology, Engineering Technology). **ENVS** is one
-   row and a real question: there is no "Environmental Science" MQ discipline.
-   All four are on the second sheet. ESLN resolves with the rename above.
-4. **DR-24's write surface** — the curate phrase and the propose/second gate.
-   The register row exists with Sam as owner; the phrase's SCOPE is open.
-5. `docs/skyview_backlog.md`.
+⚠️ **BOTH DECISION SHEETS ARE ANSWERED AND EXECUTED.** Sam ruled the nine, then
+the eight. Nothing is waiting on him in this lane. What is left is work.
+
+1. **The Title 5 rename — RULED, NOT BUILT** (hard-ones item 3, `yes`). Eight MQ
+   discipline names carry a Title 5 section number the 19th-edition index prints
+   beside the title: `53412` (noncredit basic skills / ESL) and `53414` (the DSPS
+   disciplines). The tell is `Speech Language Pathology: Disabled Student Programs
+   and 53414 Services`, where the number splits the phrase. 45 live rows (ESLN 5,
+   BSKL 40) but **1,183 occurrences across 33 files**, `kb/coci_minted_courses.json`
+   and four alias maps among them. ⭐ **Sam's shape: strip the number from the
+   title and KEEP it in a field of its own** — it says which regulation sets the
+   minimum qualifications — then land it the way a re-mint lands: dry run, alias
+   map, `kb/promotions.json` re-keyed, one cron window, a receipt (Rule 7
+   mechanics: `docs/reference/mid_lifecycle.md`). This also closes ESLN, one of
+   the two remaining disagreements.
+2. **`ENVS` — the retire half** (hard-ones item 1: *"Let's put envs in biol and
+   retire it"*). The map now says Biological Sciences, which is where its one
+   course already sat. The retire is id-keyed and **its home is not
+   `common_courses.json`**: `ENVS 100` is a legacy anchor that the 2026-09-03
+   Z-band retirement did NOT cover (checked its applied alias map — no ENVS), and
+   it lives in `kb/coci_articulations.json`, `kb/cid_articulation_joins.json`,
+   `kb/cr_reference_worklist.json` and three prototype payloads. Find its
+   authoritative home first, then use or extend `kb/_zband_retire_*` rather than
+   hand-rolling a re-key. ⚠️ 22 legacy-anchor-shaped ids remain in
+   `common_courses.json` (`HOSP 100`, `ACCT 110`, …) — the same class.
+3. **The curator pass — Sam: "Go ahead and be more aggressive on the changes."**
+   He rejected my conservative first bite. `kb/discipline_blanks_worklist.json`
+   names **86 identities across 45 codes**, rebuilt nightly, with what
+   corroboration each has. Work more than the 8 codes carrying 3+ identities.
+   ⚠️ Still never invent a discipline from a single title — that is what the
+   corroboration column is for, and HUMN is why.
+4. **PHTO's twelve courses** (hard-ones item 8, `yes`): the map is right, the
+   courses are mis-filed. All twelve titles are photography; two are plainly
+   wrong (*Individual Projects B* under Machine Tool Technology, *Materials and
+   Processes Lab* under Engineering Technology). A per-course fix in the same
+   curator pass.
+5. **The 19 COBI tabs still failing `npm run a11y cobi`** — 71 distinct failing
+   selectors, 5,332 sub-24px target instances, 22 keyboard-unreachable scrollers.
+   `our-process` is six faults from two tokens (`--op-ink-faint` #6C8188 at 3.49:1
+   → #4F646B; `--op-amber` #B9772A at 3.13:1 → #925003 for its TEXT uses, keeping
+   the accent for decoration — the `--mustard` / `--mustard-text` pattern the
+   design system already has); `pipeline` is ten. ⚠️ **This is the fan-out shape**
+   — many surfaces, every hit verified by re-running one command.
+6. **DR-24's write surface** — the curate phrase and the propose/second gate. The
+   register row exists with Sam as owner; the phrase's SCOPE is open.
+7. `docs/skyview_backlog.md`.
+
+⭐ **THE ONE QUESTION THAT SORTS THIS LANE, now in DR-25** (hard-ones item 5,
+`yes`): **does the MQ list already carry the distinction?** No → an **umbrella**,
+and we mint codes (Foreign Languages' 21 synthetic per-language SUBJ4s;
+Kinesiology's ATHL; the two Agriculture disciplines). Yes and the courses genuinely
+split → a **fan-in**, one Common SUBJ with both names kept (`fan_in_with`; FTVE
+across Film and Media Studies 360 and Media Production 146). Yes and they do not
+split → a plain **correction**. ⚠️ Asking it re-sorted two cases that had been
+called hard. A real MQ discipline carrying NO courses folds into its parent
+through `kb/discipline_aliases.json` instead — African American Studies and Asian
+American Studies into Ethnic Studies, which records where such a course is FILED
+and never that the names are synonyms.
+
+⚠️ **NEITHER ARTIFACT CAN WAKE A SESSION** — the service refused a subscription for
+S243. If a sheet is live, read its replies with `read_db`, collection `replies`.
+Sheets: the nine — https://claude.ai/code/artifact/14c480c9-53e1-41eb-b530-60a1f53d479b ·
+the hard ones — https://claude.ai/code/artifact/c165535f-3776-4f93-b2d6-6d1a0ad6e27d
 
 ## NEEDS SAM
 
@@ -156,7 +175,7 @@ wrong size.**
 ⑥ His eye on the CPL face (`#skyview/cpl`).
 ⑦ His eye on the Sky at the new frame rate (~21.7 fps headless).
 ⑧ His eye on the live-session banner now Pages has deployed.
-⑨ **ETHN, PHTO and ENVS** — the three disagreements his ruling did not cover.
+⑨ ~~ETHN, PHTO and ENVS~~ — **ANSWERED** on the hard-ones sheet.
 
 ## Read these, in this order
 
