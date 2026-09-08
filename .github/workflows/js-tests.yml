@@ -307,6 +307,14 @@ jobs:
       # caught. Pure-stdlib python; same non-required check.
       - name: Discipline edge fill (DR-25, excel_to_dashboard.py)
         run: python3 tests/discipline_edge_fill_test.py
+      # DR-26 — the COBI live-session banner. Every check is a FAIL-CLOSED case,
+      # because the failure mode of this surface is telling the whole
+      # organization to open a session that is still private: an inactive row,
+      # an active row with no link, an expired row, a missing row and a failed
+      # read must each render nothing. Also pins that the wording says reload
+      # rather than watch, which is what the product actually does.
+      - name: COBI live-session banner (DR-26, cobi_brand.js)
+        run: node tests/cobi_live_banner.test.js
       # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
       # right and prominent". The failure this guards is not a missing button, it is
       # a button pointing at something that is not deployed: the self-contained

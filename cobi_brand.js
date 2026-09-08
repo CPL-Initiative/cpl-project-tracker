@@ -169,7 +169,24 @@
       "@media (max-width:560px){.header{grid-template-columns:minmax(0,1fr);}",
       ".cobi-brand{grid-column:1;justify-self:stretch;}",
       ".cobi-utility{grid-column:1;justify-self:stretch;justify-content:flex-start;}",
-      ".header h1{font-size:1.35rem;}}"
+      ".header h1{font-size:1.35rem;}}",
+      // ── the live-session banner (DR-26) ──
+      // A strip above the header, not inside it: the header is a three-column
+      // grid whose tracks are already tight, and a fourth thing in that row is
+      // what put controls on top of each other before.
+      ".cobi-live{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem .9rem;",
+      "padding:.5rem 1.5rem;background:var(--seal-blue,#00356B);color:#fff;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.86rem;line-height:1.4;}",
+      ".cobi-live b{font-weight:700;}",
+      ".cobi-live a{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;}",
+      ".cobi-live a:hover{text-decoration-thickness:2px;}",
+      ".cobi-live .cobi-live-note{opacity:.88;}",
+      ".cobi-live button{margin-left:auto;background:transparent;border:1px solid rgba(255,255,255,.45);",
+      "color:#fff;font:inherit;font-size:.8rem;padding:3px 10px;border-radius:4px;cursor:pointer;}",
+      ".cobi-live button:hover{background:rgba(255,255,255,.14);}",
+      ".cobi-live :focus-visible{outline:3px solid #fff;outline-offset:2px;}",
+      "@media (max-width:560px){.cobi-live{padding:.5rem .9rem;}",
+      ".cobi-live button{margin-left:0;}}"
     ].join("");
     document.head.appendChild(s);
   }
@@ -267,6 +284,91 @@
   }
 
   var inited = false;
+  /* ── the live-session banner (DR-26; Sam, 2026-09-08) ───────────────────────
+   * "a banner ... that notes when I am working in a cloud session in CC and
+   * include a link to the session for any team member who might want to hop in
+   * and observe."
+   *
+   * ⚠️ IT ANNOUNCES A SHARED SESSION; IT DOES NOT SHARE ONE. A Claude Code
+   * cloud session is PRIVATE to the account that created it, and sharing is a
+   * per-session toggle in claude.ai. So the banner is driven by a row Sam sets
+   * AFTER he has set that toggle — option A of the two he was offered — and it
+   * can never hand the team a link they cannot open. The table's own checks
+   * refuse an active row with no link, and refuse any link that is not a
+   * claude.ai session.
+   *
+   * ⚠️ AND IT DOES NOT SAY "WATCH". The docs are plain that a recipient sees
+   * the session's state when they OPEN the link and their view does not update
+   * in real time. Promising live observation would be promising something the
+   * product does not do, so the wording says to reload.
+   *
+   * Fails closed at every step: no row, an inactive row, an expired one, or a
+   * fetch that does not answer all render nothing. */
+  var LIVE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/cobi_live_session"
+               + "?id=eq.1&select=active,session_url,note,expires_at";
+  var LIVE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var LIVE_DISMISS = "cobi_live_dismissed";
+
+  function liveBannerRender(row) {
+    if (!row || !row.active || !row.session_url) return null;
+    if (row.expires_at && new Date(row.expires_at).getTime() <= Date.now()) return null;
+    // A viewer who closed THIS banner does not see it again; a new link is a
+    // new banner. Keyed on the url so dismissing one never hides the next.
+    try {
+      if (window.localStorage &&
+          localStorage.getItem(LIVE_DISMISS) === row.session_url) return null;
+    } catch (e) { /* private window: show it */ }
+
+    var header = document.querySelector(".header");
+    if (!header || document.getElementById("cobi-live")) return null;
+
+    var bar = document.createElement("div");
+    bar.id = "cobi-live";
+    bar.className = "cobi-live";
+    bar.setAttribute("role", "status");
+
+    var lead = document.createElement("b");
+    lead.textContent = "Working in Claude Code right now.";
+    bar.appendChild(lead);
+
+    var a = document.createElement("a");
+    a.href = row.session_url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = "Open the session";
+    bar.appendChild(a);
+
+    var note = document.createElement("span");
+    note.className = "cobi-live-note";
+    note.textContent = row.note
+      ? row.note
+      : "You will see where it has got to when you open it. Reload for anything newer.";
+    bar.appendChild(note);
+
+    var x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "Hide";
+    x.setAttribute("aria-label", "Hide this notice");
+    x.onclick = function () {
+      try { localStorage.setItem(LIVE_DISMISS, row.session_url); } catch (e) {}
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    };
+    bar.appendChild(x);
+
+    header.parentNode.insertBefore(bar, header);
+    return bar;
+  }
+
+  function liveBanner() {
+    if (typeof fetch !== "function") return;
+    var p;
+    try { p = fetch(LIVE_URL, { headers: { apikey: LIVE_ANON } }); }
+    catch (e) { return; }
+    p.then(function (r) { return r.ok ? r.json() : []; })
+     .then(function (rows) { liveBannerRender(rows && rows[0]); })
+     .catch(function () { /* no banner is the right answer to a failed read */ });
+  }
+
   function init() {
     if (inited) return;
     inited = true;
@@ -276,9 +378,11 @@
     relocateRefresh();
     wireAbout();
     wirePainting();
+    liveBanner();
   }
 
-  window.COBI_BRAND = { init: init, dropWordmarkTags: dropWordmarkTags,
+  window.COBI_BRAND = { init: init, liveBanner: liveBanner,
+                        liveBannerRender: liveBannerRender, dropWordmarkTags: dropWordmarkTags,
                         addAlphaNotice: addAlphaNotice,
                         relocateRefresh: relocateRefresh };
 

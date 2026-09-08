@@ -1,6 +1,6 @@
 {
   "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
-  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is null EXCEPT DR-24 (Sam, 2026-09-07 — the first owned row) and DR-25 (Sam, 2026-09-08). Who is accountable on OUR side is the one thing a session cannot infer from data; filling the rest in is the register's own OQ-01.",
+  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is null EXCEPT DR-24 (Sam, 2026-09-07 — the first owned row) DR-25 and DR-26 (both Sam, 2026-09-08). Who is accountable on OUR side is the one thing a session cannot infer from data; filling the rest in is the register's own OQ-01.",
   "_as_of": "2026-09-08",
   "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
   "decision_rights": [
@@ -252,6 +252,16 @@
       "maintained_in": "kb/reference/subject_discipline_map.json (the edge) and kb/discipline_canonical_subj4.json (the canonical code). A change to either re-files rows on every surface above, so it lands in one cron window with a receipt, per Rule 10.",
       "owner": "Sam",
       "when_empty": "Folding this into DR-04 would put the subject–discipline edge under the M-ID identity layer, whose rules re-lock the moment M-IDs are declared faculty-published — and the edge governs C-ID and CCN rows that DR-04 does not reach at all. It was the absence of this row that let four stores each do the sensible local thing: measured 2026-09-08, they agreed on 143 of 143 overlapping rows, so the gap was never disagreement, only unowned duplication.",
+      "load_bearing": true
+    },
+    {
+      "id": "DR-26",
+      "element": "The live-session banner — whether COBI tells every visitor that a Claude Code session is open, and links to it",
+      "drives": "What a person sees at the top of every COBI tab, and who they can watch working. The link points at a Claude Code cloud session, which by default is PRIVATE to the account that created it and may contain code, data and credentials from private repositories. Turning the banner on is therefore a disclosure decision, not a display setting.",
+      "decides": "Sam (named owner, ruled 2026-09-08). Option A of the two he was offered: THE BANNER APPEARS ONLY WHEN A SESSION HAS ALREADY BEEN SHARED. He sets the session's visibility to Team in claude.ai first, then turns the banner on; the banner never advertises a session that is still Private. Two facts from the Claude Code docs shape this: a cloud session is Private by default and sharing is a per-session toggle, and a recipient sees the session's state when they OPEN the link with no live updating, so the banner says what it actually offers rather than promising live observation.",
+      "maintained_in": "Supabase table `cobi_live_session`, one row. Read by anon (the banner is on public COBI); written only by a signed-in reviewer. Carries `expires_at` so a forgotten banner clears itself — a stale claim that Sam is working right now is worse than no banner at all.",
+      "owner": "Sam",
+      "when_empty": "No row, or an expired one, means no banner. That is the correct default: the failure mode of this surface is advertising a private session to the whole organization, so it fails closed.",
       "load_bearing": true
     }
   ],

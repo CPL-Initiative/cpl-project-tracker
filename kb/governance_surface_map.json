@@ -56,7 +56,8 @@
     "field:kb_curation.discipline": "DR-25",
     "file:kb/reference/subject_discipline_map.json": "DR-25",
     "file:kb/discipline_canonical_subj4.json": "DR-25",
-    "tab:ccr-anchor-proposal-apply": "DR-25"
+    "tab:ccr-anchor-proposal-apply": "DR-25",
+    "table:cobi_live_session": "DR-26"
   },
   "dismissed": {
     "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",
