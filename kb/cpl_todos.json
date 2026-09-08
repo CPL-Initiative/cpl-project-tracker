@@ -1,32 +1,38 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-08",
-  "_session": 241,
-  "_status": "Sam kept reporting that SkyView flickered after the first round of fixes, and his own description found the cause: an enlarged grouping crossing over all the others, like a loose asteroid field. That is what it was. The sky is drawn by a projection whose scale grows the further round the sphere something sits, and an island directly behind the viewer was being drawn eighty-eight times oversized — its courses sprayed across every other discipline — because the check for whether something is on screen was written in pixels rather than in angle, and a thing that large always overlaps the window. Fixing it removed the artifact and, because eighty-nine of the hundred and fifty-nine islands were being drawn at the default zoom having never been visible at all, made the whole view half again faster. Also corrected: the previous round's timing fix was right in itself but made the picture worse, which had not been measured — smoothness comes from frame rate, not from the timing. Two of Sam's asks shipped with it: the sky now opens a step wider (the widest setting where every star still appears — one wider and four disciplines lose theirs), and the Map button leaves the row now that the Sky reads well, though the flat map itself stays as the thing the sphere is a projection of.",
+  "_session": "S242 (SkyTrue)",
+  "_status": "Two things happened today. The Sky got faster — a frame now takes 46 milliseconds instead of 81, so it draws about twenty-one times a second rather than twelve. Two causes, both the same shape: the code was re-asking a question it had already answered every single frame, and it was drawing thousands of course dots that sat outside the window entirely. And you answered the five questions about how subjects and disciplines fit together, so all five were built: the subject map is now the authority, 233 courses that showed no discipline now show one — PSYC C1000 among them — and the subject table reads that map instead of guessing from whatever its own courses happened to say. Two governance rows gained an owner, which is you. The COBI header lost the seal and gained a banner that tells the team when you are working in a session and links them to it.",
   "items": [
     {
-      "id": "s241-sam-sky-clear",
+      "id": "s242-sam-banner-live",
       "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Open SkyView and tell us whether the asteroid field is gone. Your description found it: one discipline was being drawn eighty-eight times too large and scattered over everything, because it sat behind you on the sphere where the projection blows up. It is culled now. Two things you asked for came with it — the sky opens a step wider (188 degrees across, the widest where every star still shows; one step further and four disciplines lose theirs), and the Map button has left the row. Still worth saying if the drift itself looks steppy: that is frame rate, and the fix above bought about half again more of it."
+      "tab": "admin",
+      "text": "The live-session banner is on and pointing at today's session. Open COBI and check it reads the way you want. Two things to know: only people on the Team & RACI roster, or anyone who has entered the team phrase, can see it — college users and the public cannot. And whoever opens the link sees where the session had got to when they clicked; they reload for anything newer. That is why it says reload rather than watch."
     },
     {
-      "id": "s241-fable-frame-budget",
-      "for": "Fable",
+      "id": "s242-sam-sky-speed",
+      "for": "Sam",
       "tab": "unified-courses",
-      "text": "The frame budget, with a corrected map of it. Drawing is not the cost — twenty-seven thousand stars fill in six milliseconds of a hundred-and-thirty millisecond frame. The time goes on work done once per course and on measuring label text. Two of those were fixed this round; the remaining shimmer is a dense field of one-pixel stars moving at about ten frames a second, which no smarter drawing removes. If more is wanted, the lever is fewer points drawn per frame, and the angular cull just showed how much that is worth."
+      "text": "The Sky draws almost twice as fast as it did this morning. Open SkyView and say whether the drift reads smoothly now. If it still steps, the next lever is drawing fewer points per frame, which is what worked the last three times."
+    },
+    {
+      "id": "s242-sam-edge-disagreements",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Four subjects where the subject map and the courses disagree, and someone should decide. ETHN reads Ethnic Studies while 34 identities sit under Chicano Studies. ESLN reads English as a Second Language against a discipline name that is malformed. PHTO and ENVS are smaller. The row shows both readings rather than silently picking one."
+    },
+    {
+      "id": "s242-sam-a11y-cobi",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "Every COBI tab fails two accessibility checks, and has for a while — this is not new today. A checkbox is 182 by 20 pixels where the minimum is 24 by 24, and one paragraph's text sits at 3.24 to 1 contrast where 4.5 is required. Say the word and they get fixed."
     },
     {
       "id": "s238-sam-cpl-face-look",
       "for": "Sam",
       "tab": "unified-courses",
       "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
-    },
-    {
-      "id": "s238-sam-coverage-line-corrected",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "The coverage sentence on the sheet said 1,490 of 6,388 exhibits. Both numbers were from the wrong bucket: 1,490 is the count of courses that carry an articulation (the exhibits are 1,924), and 6,388 is the credit funnel, which shares only 570 exhibits with the articulated ones — it is the military record, and the articulations are mostly industry certifications and credit by exam. The map says 1,924 of 5,497 articulated exhibits, computed from the data rather than typed in. Say if you would rather it also named how many of those the funnel has acted on (536)."
     },
     {
       "id": "s236-sam-skill-text-fetch",
@@ -57,6 +63,12 @@
       "for": "Fable",
       "tab": "unified-courses",
       "text": "Decision packs still only exist for 5 of the 159 disciplines because they are baked into the page. Fetching them per discipline the way the course descriptions already are is the bottleneck behind several of the remaining asks."
+    },
+    {
+      "id": "s242-fable-93-blanks",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Ninety-three course identities still show no discipline after today's fill. Fifteen are blank in the identifier reference itself; the other 78 carry a four-letter subject the subject map does not list. Adding one map entry fills a whole subject at once, so this is a short list of additions rather than 78 separate decisions."
     }
   ]
 }

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-407 document(s).
+408 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -37,6 +37,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The side menu as a curator overlay over code defaults](../kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults.md) | adr | published | 2026-08-14 | 2026-08-14 |
 | [Unified memory table — one cross-repo store for facts, pitfalls, opportunities, wishlist, and timeline events](../kb-notes/adr-unified-memory-table.md) | adr | published | 2026-07-24 | 2026-07-24 |
 | [The CPL merge lens — the student-repeat test (anchored to Title 5 §55050's "similar" standard)](../kb-notes/glossary-cpl-merge-lens-student-repeat-test.md) | glossary | published | 2026-07-13 | 2026-07-13 |
+| [\"Not signed in\" and \"only these people\" cannot both hold](../kb-notes/methodology-not-signed-in-and-only-these-people-cannot-both-hold.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A blocked path hides every defect behind it — budget for a chain, not a fix](../kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A bound is tested by value, not by the model's clamp count](../kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A bug report is evidence, not diagnosis — and the control that kills your favorite hypothesis](../kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md) | methodology | published | 2026-09-07 | 2026-09-08 |

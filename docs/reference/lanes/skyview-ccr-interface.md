@@ -37,26 +37,15 @@ SkyView's islands are keyed by.
 canvas (16,482 identities, 33,423 stand-alone courses, 159 islands); keyword
 jump to anything; hover is a quick look and click the docked inspector; every
 stand-alone orbits its best-matching identity; drag and drop is real with a
-keyboard path. A course opens its **outline of record** (S235); the map has
-**two faces and a light** (S238, #1508); a **staged move is marked on the
-course itself** (S239, #1513). **Since S239's second checkpoint SkyView OPENS
-AS THE SKY** (#1514) — the inside window onto the night sky, built on Sam's
-eight `yes` replies to the sheet (2026-09-07): **Sky · Globe · Map** are three
-words in the row and three places to stand on ONE canvas; Night by default
-with Day keeping the rim; a slow turn that stops at the first touch; drag and
-drop by angle; By kind as the arrangement with its two region names; silver
-M-IDs on every dark canvas. Rounds and measurements:
-[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
+keyboard path. **`#skyview` OPENS AS THE SKY** since S239 (#1514) — the inside
+window onto the night sky, with **Sky · Globe · Map** as three places to stand
+on ONE canvas. A course opens its outline of record (S235); the map has two
+faces and a light (S238); a staged move is marked on the course itself (S239).
 
-**S240 (#1515) is the first run driven entirely by SCREEN RECORDINGS** — three of
-them. Every finding in the invariants below was reproduced on the served page
-before it was touched: two flicker causes, the purple sky, a carry that stayed
-stuck for a whole session, the outline turned into a sheet over the map, a
-**Back** that keeps the camera, a sidebar that closes by its own border, and a
-re-target on a staged move. ⚠️ **None of the three reports named its own cause**,
-and the two obvious suspects (the twinkle, the star-alpha batching) were measured
-and ruled out — the lane's standing lesson about verifying an ask against the
-screen, now also against the profiler.
+Round-by-round history — every measurement and every wrong reading — is in
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md) and its
+[archive](../../ccr_atlas_lessons_archive.md). **Do not restate it here**: this
+file is invariants and open work, and it is already over budget.
 
 ## Invariants — do not violate these
 
@@ -156,18 +145,13 @@ still the flat renderer the sphere is a projection OF, `#map` still routes, and
 seven suites declare `CPL_SKYVIEW_OPENS="map"`. Putting the word back is one line.
 
 ⚠️ **THE TURN'S `dt` CLAMP MUST SIT ABOVE THE REAL FRAME TIME** (`TURN_DT_MAX`,
-S240). It guards ONE case — a backgrounded tab — and is not a frame-rate limiter.
-At 0.1 s it sat *below* the measured frame (133 ms at 240° across, 83–267 ms), so
-`dt` pinned every frame: `sph.spin` advanced a FIXED 7.20e-3 rad while the
-interval swung 192–319 ms (a fixed step at an irregular cadence — the lurch), and
-the turn ran **0.0393 rad/s against an intended 0.0720**. Above the frame time:
-29 step sizes over 139 frames, angular-velocity IQR **0%**.
-⚠️ **AND IT MADE THE PICTURE WORSE, WHICH S240 DID NOT MEASURE**: time-true motion
-at 8 fps takes a BIGGER step than the broken half-speed one, so the per-frame
-visual change went **18.59 → 21.87**. The remainder is spread over 877 of 1008
-cells (top 5% hold 14%) — uniform motion plus ~27,000 one-pixel stars aliasing
-across pixel boundaries, not a defect to find. **Frame rate is what buys
-smoothness**, and S241's cull is where it came from. The pace stays as ruled.
+S240). It guards ONE case — a backgrounded tab — and is not a frame-rate
+limiter. Below the real frame time `dt` pins every frame: a FIXED angular step
+at an irregular cadence, which is the lurch, and the turn ran 0.0393 rad/s
+against an intended 0.0720. ⚠️ **Fixing it made the picture WORSE and S240 did
+not measure that** — time-true motion at 8 fps steps further than broken
+half-speed motion (per-frame change 18.59 → 21.87). **Frame rate is what buys
+smoothness**; see the frame budget below. The pace stays as ruled.
 
 ⭐ **ON THE SPHERE EVERY ZOOM BAND NEEDS HYSTERESIS — A BARE THRESHOLD BLINKS**
 (S240, Sam: *"note how the skyview flickers around"*). On the flat map `k` is
@@ -421,26 +405,19 @@ link, never a github.io URL.
 
 ## NEXT
 
-⓪ **The no-discipline pile is a PLUMBING gap, and 199 rows are recoverable**
-(S242, from Sam's question of 2026-09-08). `PSYC C1000` carries
-`"discipline": "Psychology"` in `kb/reference/coci_courses.json` and `disc:null`
-in the payload. All five inference passes read `kb/coci_minted_courses.json` —
-**19,568 records, every one M-ID** — so no externally-minted identifier has ever
-seen one; `excel_to_dashboard.py` loads the C-ID/CCN reference and reads **only
-`description`** from it. Blank rate **0.4% M-ID against 47.7% official**. Of the
-326: **199 recoverable now**, 15 null in the reference, 112 absent from it. The
-fix is a generator change (Rule 1) and wants its own `discipline_source` so the
-provenance stays visible. ⚠️ Not TOP's job — Rule 7 keeps it a corroborator.
-[`note`](../../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md)
-① **The frame budget, if Sam still sees it step.** S242 took the median frame
-81 → 46 ms; the remaining named JS is the per-node loop (14%) and the island loop
-(10%), which is the irreducible walk. **Fewer points per frame is the lever that
-has worked three times running.** ⚠️ Whatever changes, the drop test, the keyboard
-path and `npm run a11y skyview` run again in the same PR.
-② **DR-24's write surface** — the curate phrase and the propose/second gate,
-routed through Governance first (Rule 10 a3); the register row exists with Sam as
-owner, the phrase's SCOPE is what is open. ③ The skills layer's fetch problem
-(NEEDS SAM ①). ④ The rest of the queue:
-[`skyview_backlog`](../../skyview_backlog.md), including the CPL face's smaller
-asks (the 55 stale exhibits, the funnel sidecar refresh, a credentials column in
-the workspace tables).
+⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
+register row exists with Sam as owner; the phrase's SCOPE is what is open.
+① **The skills layer's fetch problem** (NEEDS SAM ①).
+② **The 93 blanks the edge could not fill** (S242) — a named worklist now, not a
+silent residue: 15 are null in the identifier reference, 78 have a SUBJ4 the
+subject map does not carry. Adding a map entry fills a whole subject at once.
+③ **The four subjects where the edge overrules a real vote** — ETHN reads Ethnic
+Studies against 34 identities filed under Chicano Studies; ESLN against a
+malformed discipline name. The row prints both; someone should decide.
+④ **The frame budget, if Sam still sees it step.** S242 took the median frame
+81 → 46 ms. The remaining named JS is the per-node loop (14%) and the island
+loop (10%) — the irreducible walk. **Fewer points per frame is the lever that
+has worked three times running.**
+⑤ The rest of the queue: [`skyview_backlog`](../../skyview_backlog.md).
+⚠️ Whatever changes, the drop test, the keyboard path and `npm run a11y skyview`
+run again in the same PR — and `scripts/check_generated.sh` LAST before a push.
