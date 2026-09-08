@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 404,
+   "count": 405,
    "docs": [
     {
      "created": "2026-08-14",
@@ -468,6 +468,23 @@
      "title": "A bound is tested by value, not by the model's clamp count",
      "type": "methodology",
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-bug-report-is-evidence-not-diagnosis.md",
+     "status": "published",
+     "tags": [
+      "debugging",
+      "measurement",
+      "methodology",
+      "skyview",
+      "video",
+      "profiling"
+     ],
+     "title": "A bug report is evidence, not diagnosis \u2014 and the control that kills your favorite hypothesis",
+     "type": "methodology",
+     "updated": "2026-09-07"
     },
     {
      "created": "2026-08-15",
@@ -12333,8 +12350,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 214,
+   "count": 215,
    "docs": [
+    {
+     "created": "2026-09-07",
+     "governs": [],
+     "n": 241,
+     "path": "docs/session_241_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the recordings are answered; his eye on the sky, then the frame budget",
+     "type": null,
+     "updated": "2026-09-07"
+    },
     {
      "created": "2026-09-07",
      "governs": [],
@@ -15997,5 +16027,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 820
+ "total": 822
 }

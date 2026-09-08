@@ -1,14 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-07",
-  "_session": 239,
-  "_status": "Sam answered the sky's eight design calls in one sitting — eight of eight yes, no notes — and the Sky went in the same evening (PR #1514). SkyView now opens as the night sky seen through a window: Sky, Globe and Map are three words in the control row and three places to stand on the one canvas; the sky is dark by default and Day is one control away, with every dot rimmed so it still exists on the blue; it turns slowly until you touch it; a course drags and drops on the curve exactly as it did on the flat map; the CTE disciplines gather on one side of the sky and the academic ones on the other. What is left for Sam is his eye on it — and whether it moves smoothly on his machine, which nothing here can measure. Next session picks up from there.",
+  "_session": 240,
+  "_status": "Sam recorded three short videos of SkyView misbehaving and the session cleared all of them (PR #1515). The sky flickered for two reasons, neither of them the one anyone would guess: the slow turn was advancing the same fixed step every frame no matter how long the frame took — which also meant it was turning at little more than half the speed it was supposed to — and a zoom rule written for the flat map was being asked, island by island, on the sphere, so whole disciplines' stars switched off and back on as the sky drifted. Both are fixed and measured. The sky also turned purple once a course was selected and zoomed into, because the highlight colour for a selected discipline had quietly become the entire window; it stays night now. A worse one hid behind a Put back: once a course had been moved from the panel, the page still thought you were carrying it, so every Drag button after that did nothing at all for the rest of the session. Alongside those, four things Sam asked for: a course outline that opens over the map instead of taking you off it, a Back button that returns you to the view you were looking at, a sidebar you can close by dragging its edge, and a COBI link in the three-dot menu — plus the ability to send an already-staged course to a different home without undoing it first. What is still open is whether the sky now reads smooth on Sam's own machine: the frame rate itself has not changed, and the session's profile shows the cost is not where the last one thought it was.",
   "items": [
     {
-      "id": "s239-sam-sky-eye",
+      "id": "s240-sam-sky-smooth",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "The Sky is in. Open SkyView: it now opens as the night sky through a window, with Globe and Map one click away in the same row (Sky · Globe · Map). Every one of your eight answers is built as written — night by default and Day keeping the rim, the slow turn that stops at your first touch, drag-and-drop on the curve, the CTE side and the academic side with their two names, silver stars for the M-IDs. Two things only you can tell us: does it look the way you pictured it, and does it move smoothly on your machine? Our only measurement is from a headless test browser with no graphics card (about 13 frames a second at the opening window); your screen should do better, and if it does not, say so — there is a known next step."
+      "text": "Open SkyView again and tell us whether it still flickers. The two causes you recorded are fixed: the sky now turns at a steady, correct pace instead of lurching, and disciplines no longer blink their stars on and off as it drifts. The sky also stays night after you filter and zoom, instead of going purple. What we cannot check from here is how it feels on your machine — if it still stutters, say roughly how often and at what zoom (the reading at the top of the window says how wide a view you are holding)."
+    },
+    {
+      "id": "s240-sam-carry-fixed",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "The course that would not move is fixed, and it was not the Put back button. Once you had moved one course from the panel, the page still believed you were carrying it, so every later Drag did nothing — for the rest of that session. You can also now send an already-staged course somewhere else without undoing it first: the row that names the wrong destination carries a Move instead button beside Put back."
     },
     {
       "id": "s238-sam-cpl-face-look",
@@ -35,10 +41,10 @@
       "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
     },
     {
-      "id": "s239-fable-frame-budget",
+      "id": "s240-fable-frame-budget",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "Only if Sam says the Sky drags: measure on the served page first (a draw costs 42 milliseconds in software rendering after the star pass was batched), then draw the small stars to an offscreen layer that is redrawn only when the view moves, or move the point pass to WebGL behind the same projection — never per-point work. The drop test, the keyboard path and the accessibility run go again in the same change; item 1 of the sheet made that the condition for the Sky opening at all."
+      "text": "The frame budget, now that the flicker is off it. The last session recorded that the cost was the drawing and that the fix was a cached star layer; a profile this session shows that is backwards — drawing 27,000 stars takes 6 milliseconds of a 133 millisecond frame. The time goes on measuring label text over and over and on per-course work inside the draw loop. Two contained steps: remember each label's measured width instead of re-measuring it every frame, and stop reading the canvas size from the page once per course. Measure on the served page before and after."
     },
     {
       "id": "s238-fable-dr24-surface",

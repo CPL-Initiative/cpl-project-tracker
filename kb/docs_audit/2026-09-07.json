@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 834,
-    "bytes": 8886146,
+    "files": 836,
+    "bytes": 8917558,
     "over_budget": 4,
-    "handoff_max": 240,
+    "handoff_max": 241,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59087,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 109,
-        "bytes": 2736717,
+        "bytes": 2740562,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 24996,
+        "bytes": 23919,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1999698,
+        "bytes": 2008743,
         "over": 1
       },
       "kb_note": {
-        "files": 406,
-        "bytes": 2095642,
+        "files": 407,
+        "bytes": 2101885,
         "over": 0
       },
       "roadmap_lane": {
         "files": 30,
-        "bytes": 148068,
+        "bytes": 153145,
         "over": 1
       },
       "handoff": {
-        "files": 214,
-        "bytes": 1821938,
+        "files": 215,
+        "bytes": 1830217,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 48
     },
     "vault": {
-      "files": 2720,
-      "bytes": 1358653092,
-      "heavy_bytes": 625193911,
-      "heavy_share": 0.46,
+      "files": 2722,
+      "bytes": 1354952757,
+      "heavy_bytes": 625214876,
+      "heavy_share": 0.461,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -328,26 +328,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 17599,
+        "bytes": 22676,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 5599,
-        "ratio": 1.47
+        "over_by": 10676,
+        "ratio": 1.89
       },
-      "message": "17,599 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "22,676 B is 1.9× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 592335,
+        "bytes": 595842,
         "limit": 150000,
         "lane": "other",
-        "over_by": 442335,
-        "ratio": 3.95
+        "over_by": 445842,
+        "ratio": 3.97
       },
-      "message": "592,335 B is 3.9× the other budget (150,000 B) — candidate for compaction",
+      "message": "595,842 B is 4.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -587,10 +587,10 @@
       "fixable": false,
       "path": "prototype/ccr_atlas_v1.built.html",
       "detail": {
-        "bytes": 12105888,
+        "bytes": 12126853,
         "kind": "file"
       },
-      "message": "12,105,888 B single file inside the vault"
+      "message": "12,126,853 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

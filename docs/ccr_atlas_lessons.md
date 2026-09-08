@@ -1719,3 +1719,170 @@ green (`universe` 222, `search_show` 130, `cpl_face` 62, `outline` 50,
   and an unseconded one stays visible with the objection. Nothing writes from the
   page until DR-24's surface ships. ⚠️ The sheet proposed "DR-22"; that id was
   already the GR register.
+
+---
+
+## 2026-09-07 · S240 (SkyDome) — three screen recordings, six bugs, and a profile that moved the frame-budget lever
+
+The first run driven entirely by **screen recordings**. Sam sent three, each one
+sentence long, and none of them named its own cause. Everything below was
+reproduced on the served page in Chromium before it was touched, and measured
+again after — `npm test` cannot see a frame rate, a color, or a stuck pointer.
+
+### The flicker — and the two suspects that were innocent
+
+*"See the video screen capture and note how the skyview flickers around."*
+
+The video is 12.3 s at 30 fps. Rather than eyeball 370 frames, a per-frame mean
+absolute difference located the problem mechanically: content changed on a **two
+frame cycle** for the whole clip, and one pair of frames showed the Dance and
+Humanities islands with **their labels and discs drawn but every dot gone**.
+
+Two hypotheses were built and **both were wrong**, which is the useful part:
+
+- **The twinkle.** Rebuilt the page with `twinkleOf()` returning 1. Per-frame
+  diff 18.26 → **19.46**. Not it.
+- **The star-alpha bucketing** (`Math.round(alpha*8)`, an 8-step quantization
+  applied to ~27,000 stars — a very plausible strobe). Rebuilt with full alpha.
+  18.26 → **18.20**. Not it either.
+
+⚠️ **A third variant looked like a cure and was an artifact.** Gating `showNodes`
+on `kCenter()` instead of the per-island `k` dropped the diff to 2.69 — a 7×
+"improvement" that was really `kCenter()=0.194 < NODE_ZOOM=0.20` switching *every*
+dot off. An empty canvas is very stable. **A metric that only goes down when the
+thing being measured stops existing is not measuring what you think.**
+
+The controls that did settle it:
+
+| variant | per-frame diff |
+|---|---|
+| as shipped, turning | 18.1 |
+| as shipped, **turn stopped** | **0.000** |
+| twinkle removed | 19.5 |
+| alpha quantization removed | 18.2 |
+
+Stopped is *exactly* zero, so all of it comes from the turn. Then the actual
+causes, both measured live:
+
+**1. `dt` was clamped BELOW the real frame time.** `Math.min(0.1, …)` guards a
+backgrounded tab. But the draw measures 133 ms a frame at 240° across (83–267 ms),
+so `dt` pinned at the clamp on every frame. Instrumenting `sph.spin` per frame:
+
+```
+dt(ms) dSpin(rad)
+ 257.4    -7.20e-3
+ 192.7    -7.20e-3
+ 307.5    -7.20e-3      ← identical step, wildly different elapsed time
+```
+
+A fixed angular step at an irregular cadence. It also meant the sky turned at
+**0.0393 rad/s against an intended 0.0720** — 55% speed, silently, for as long as
+the Sky has existed. `TURN_DT_MAX` now sits above the frame time: 29 distinct step
+sizes over 139 frames, angular-velocity IQR **18% → 0%**.
+
+**2. A bare threshold on a per-island scale.** `showNodes = k > NODE_ZOOM` is a
+flat-map idea: there `k` is `view.k`, one number for the whole map, crossed
+deliberately and together. On the sphere `k` is per island — `sec²(ang/2)` times
+the center's — and drifts continuously as the sky turns. At 240° across, **18 of
+159 islands sit within ±3% of `NODE_ZOOM`** (Dance 0.1998 against 0.2000) and 11
+flipped inside 120 frames, each switching a discipline's entire dot field while
+its disc and name stayed put. That is the blink in the recording, and it is why
+the labels survived it. Hysteresis (`NODE_ZOOM_KEEP`), with `pick()` reading the
+same memory rather than re-testing: **16 flips across 13 islands → 4 across 4**,
+one crossing each.
+
+⭐ **The general lesson: a constant tuned for a global scale becomes a flicker
+gate when the scale goes per-object.** Every other band on this map (`ID_ZOOM`,
+`TITLE_ZOOM`, `MEMBER_ZOOM`) has the same shape and will need the same treatment
+if a reader ever parks near one.
+
+### The frame budget — S239's carry-forward named the wrong lever
+
+S239 recorded: *"the lever is an offscreen star layer invalidated by view change,
+or a WebGL point pass behind the same `w2s` — never per-point work."* Profiled
+with CDP on the served page, that is **backwards**:
+
+| | cost |
+|---|---|
+| one batched path of 27,000 rects + fill | **5.9 ms** |
+| `clearRect` on the whole canvas | 0.02 ms |
+| `readPal()` (a full style read, every frame) | 0.03 ms |
+| the frame itself | **133 ms** |
+
+The canvas is 4% of the frame. The profile's top JS entries: **`measureText`
+12.3%** (the same label strings re-measured every frame), **`emptied()` 6.7%**
+(it allocated a throwaway array per point, ~50,000 times a frame — fixed this
+run), `save` 7.4%, `cw()`/`ch()` 2.7% (each a `clientWidth` layout read, called
+from `w2s`). An offscreen layer or a WebGL pass would buy the 5.9 ms and leave
+the other 127. ⚠️ Headless, no GPU: the ORDER should hold, the absolutes will not.
+
+### The purple sky
+
+*"after filters applied the sky turns purple and should stay the same as was
+selected (night) on opening screen"*
+
+Sampling the recording's canvas background gave `rgb(34,29,49)`; the dark theme's
+`--sky-island-sel` is `#2E2A44` = `rgb(46,42,68)` — the same hue, JPEG-scaled.
+That token is the **selected island's** fill, and it reads as a highlight only
+while the disc's edge is on screen. At 6° across the disc is bigger than the
+window, so the tint stops being a tint and simply *is* the sky. Reproduced at 4°:
+`rgb(46,42,68)`; after the fix `rgb(33,36,42)`, the plain night ground.
+
+⭐ **A highlight is a figure-ground relationship, not a color.** When the figure
+grows past the frame there is no ground left for it to read against.
+
+### The carry that stayed stuck
+
+*"Staged move seems to clear but I can't drag it to the new home"* — a report
+that sounds like a `Put back` bug and is not.
+
+Driving it in the browser: after Put back the Drag button **is** back in the
+panel, clicking it leaves the hint reading *"Put back WLDT 107 — nothing is
+staged for it now"* instead of *"Carrying…"*. The pick-up handler is guarded by
+`if(!(drag && drag.kind==="course"))`, and `drag` is cleared in four places — all
+of them canvas handlers. The **panel** routes (a destination click, *Move here*,
+*Accept*) call `applyMove` directly, which never cleared it. So the first move
+completed from the panel left the reader invisibly carrying the course, and from
+that moment **every Drag button in the session was a silent no-op**.
+
+⭐ **A guard needs an owner for its release.** `drag` had four release sites and
+none of them was the function every route actually converges on. The release now
+lives in `applyMove`, *after* the gates, so a refused move keeps the carry.
+
+### The rest, from the third recording and four asks
+
+- **Re-targeting a staged move.** *"Note how I can't move this course out of its
+  previous move to a new one — the correct intro course."* The origin's *Staged
+  to move away* row offered Put back and nothing else, so correcting a
+  destination meant undoing the move or travelling to the identity the course had
+  been staged INTO — the one place its Drag button survived. It now offers *Move
+  instead…*. ⚠️ This **reversed an S239 assertion**: `ccr_skyview_staged_move`
+  check (6) pinned `!q('li.away .mv')`, on the reasoning that a staged-away course
+  is not a member here. The reasoning still holds; the conclusion cost the reader
+  the obvious correction. The check now pins both buttons, with the old assertion
+  named in a comment so it is not "fixed" back.
+- **The outline as a sheet.** Sam proposed it himself — *"make the course outline
+  a popup that can be closed and we never have to exit skyview"* — and it is the
+  better fix than the Back button he asked for in the same sentence: a sheet has
+  no state to restore because none is lost. ⭐ **The cheapest way to preserve
+  state is not to leave.** Verified: yaw, pitch and half are bit-identical across
+  an open-and-close.
+- **Back, and the camera.** For the views he *does* switch to, `parkCamera` /
+  `restoreCamera` around `__ccrUniverse`'s `resetView()`. ⚠️ A parked SELECTION
+  still re-frames over the restored camera — `restoreTokens` already did that
+  deliberately ("Back on X, where you left it"), so the two layer rather than
+  fight. With no selection the camera is restored exactly.
+- **The sidebar.** The grip clamped at 260px, so closing lived only behind the ⋮
+  menu. ⚠️ Making `.closed` zero-width instead of `display:none` (so the grip
+  survives to be pulled back out) put the grip's 5px straddle at the stage's right
+  edge and **failed all 11 a11y routes at every width** — because the panel starts
+  closed. Caught by `npm run a11y skyview`, invisible to 309 green jsdom suites.
+
+### What this run is really about
+
+Three one-sentence reports, six defects, and **not one of the reports named its
+cause**. What worked was refusing to fix anything from the description: extract
+the frames, measure the pixels, build the rival hypothesis, and let the control
+kill it. Two of the most plausible explanations (the twinkle; the alpha
+quantization) were wrong, and a third "fix" was an artifact of measuring an empty
+canvas. The recordings were evidence, not diagnosis.
