@@ -15,6 +15,7 @@
     "card_actions.test.js": 15,
     "card_raci.test.js": 23,
     "card_updates.test.js": 23,
+    "ccr_skyview_ask.test.js": 25,
     "ccr_skyview_button.test.js": null,
     "ccr_skyview_carry_release.test.js": 16,
     "ccr_skyview_cpl_face.test.js": 62,

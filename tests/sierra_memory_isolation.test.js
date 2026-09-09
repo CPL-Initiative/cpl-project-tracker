@@ -37,6 +37,9 @@ const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
 const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
 const MEMORY = fs.readFileSync("cpl_memory.js", "utf8");
 const GR_PRI = fs.readFileSync("gr_priorities.js", "utf8");
+/* SkyView's question box is the fourth drafting client and the first one that
+ * is not a COBI tab — it lives in the prototype page's module. */
+const SKYVIEW = fs.readFileSync("prototype/ccr_universe.js", "utf8");
 
 // The request handler only — module-level constants above it carry the word
 // `drafting` for documentation reasons and are not behavior.
@@ -196,7 +199,8 @@ block("(5)", function () {
    * a few lines up. What belongs here is only that nothing is orphaned: a
    * drafting surface no client sends is a prompt path with no caller, and a
    * surface sent by a file not listed here is one nobody vetted. */
-  const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY, "gr-analysis": GR_PRI };
+  const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY,
+                         "gr-analysis": GR_PRI, "skyview-ask": SKYVIEW };
   check("(5) ⭐ every drafting surface is claimed by exactly one vetted client",
     drafts.every((d) => DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d)),
     "unowned: " + drafts.filter((d) => !(DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d))).join(", "));

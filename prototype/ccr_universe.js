@@ -3371,6 +3371,293 @@ window.__ccrToggleSuggestion = function(s){
 window.__ccrTokenKey = function(s){ return s ? tokenFromSuggestion(s).key : ""; };
 window.__ccrTokenKeys = function(){ return tokens.map(function(t){ return t.key; }); };
 
+/* ══ ASK SKYVIEW ══════════════════════════════════════════════════════════════
+ * Sam, 2026-09-09: "I'm thinking it would be good to be able to use the search
+ * box for questions, like Sierra handles, to query SkyView."
+ *
+ * ⭐ THE ANSWER IS THE MAP MOVING, NOT A PARAGRAPH — and that is a correctness
+ * requirement, not a taste. cpl-chat retrieves from the knowledge base, and the
+ * knowledge base does NOT contain SkyView's payload: 16,482 identities, 33,423
+ * stand-alone courses, 159 islands. "Which welding identities carry no
+ * articulation?" is a question retrieval structurally cannot answer, and a
+ * prose surface would answer it anyway, fluently, from the wrong corpus. So the
+ * model does the ONE thing it is better at than this file — reading intent out
+ * of an English sentence — and hands back a SELECTION in the token grammar the
+ * map already speaks. The counting is done here, against the payload.
+ *
+ * ⚠️ NOTHING THE MODEL NAMES IS TRUSTED AS A KEY. Every discipline and every
+ * course id is resolved against the live payload before it is used, and what
+ * does not resolve is REPORTED rather than dropped — the same posture Rule 7
+ * takes on stored ids, for the same reason: a bad key does not error, it
+ * silently selects nothing and looks like an empty answer.
+ *
+ * Sierra stays where she is (the Views menu). This is a different question:
+ * hers is "what does this credential get me", this one is "show me where that
+ * is on the map".
+ *
+ * ⚠️ TWO HALVES, TWO DEPLOYS. The surface name is the server-side opt-in: an
+ * unknown surface normalizes to null and silently takes the 1,000-character
+ * chat cap, which truncates the contract and produces prose about a fragment.
+ * This file ships with Pages on merge; `skyview-ask` ships when
+ * cpl-chat-deploy.yml runs. askError() names that, because the symptom points
+ * at the model and the cause is a deploy. */
+var ASK_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+/* The publishable anon key, already committed and served in sierra/sierra.js
+ * and gr_priorities.js — the same one every public caller of this function
+ * uses. Nothing here writes: `skyview-ask` is a DRAFTING surface, so cpl-chat
+ * skips its chat_interactions insert, and the map itself writes only through
+ * the curation row an explicit move creates. */
+var ASK_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+/* Pinned equal to QUERY_CAP_SKYVIEW in chatbox/supabase/functions/cpl-chat/
+ * index.ts by tests/ccr_skyview_ask.test.js — the client cannot see the cap the
+ * DEPLOYED function enforces, so the test is what keeps the two honest. */
+var ASK_BUDGET = 20000;
+var asking = false;
+
+/* ⭐ WHAT COUNTS AS A QUESTION, and it is deliberately narrow. The instant local
+ * search is the common case and must never pay for this one: a reader typing
+ * "weld" wants the suggestion list, now, with no network. So the test fires
+ * only on text that a keyword search would serve badly anyway.
+ * ⚠️ ONE DEFINITION, TWO CALLERS — the page's search host asks this to decide
+ * what Enter does AND to label it, so a reader is never told "Enter asks" by one
+ * rule and given a term search by another. */
+function isQuestion(raw){
+  var t=String(raw==null?"":raw).trim();
+  if(t.length<8) return false;
+  if(/\?\s*$/.test(t)) return true;
+  var words=t.split(/\s+/);
+  if(/^(which|what|who|where|when|why|how|show|find|list|are|is|do|does|can|whose)\b/i.test(t)) return true;
+  /* Past five words a keyword search is matching a sentence against course
+   * titles, which is how "courses that have no articulations" returns nothing
+   * and reads as an empty corpus. */
+  return words.length>5;
+}
+window.__ccrIsQuestion=isQuestion;
+
+/* The vocabulary the model may answer in. Sending the island names is what makes
+ * a hallucinated discipline impossible rather than merely unlikely — and the
+ * counts let it choose between near-synonyms ("Nursing" vs "Health") on size. */
+function askVocabulary(){
+  if(!U || !U.islands) return "";
+  return U.islands.map(function(I){
+    return I.d+" ("+I.n+")";
+  }).join(" · ");
+}
+function askEnvelope(question){
+  return [
+    "You are a query translator for SkyView, a map of the California Community",
+    "Colleges Common Course Reference. You do NOT answer in prose and you do NOT",
+    "describe the data. You turn one question into a SELECTION on the map, and the",
+    "map answers by moving. Reply with ONLY a single JSON object, no markdown fence.",
+    "",
+    "Keys:",
+    '  answer   one plain sentence saying what the map is about to show. No markdown.',
+    '  select   an array, in priority order, of at most 6 of:',
+    '             {"kind":"discipline","name":"<EXACTLY one name from the list below>"}',
+    '             {"kind":"term","term":"<a word or two to match against course titles>"}',
+    '             {"kind":"course","id":"<an exact course identity id, e.g. WELD M1109>"}',
+    '  lit      true to light the courses that carry an articulation, else false',
+    '  isolate  true to hide everything not selected, else false',
+    '  face     "courses" to name each point by its course, "cpl" to name it by the',
+    '           credential that reaches it. Use "cpl" only if the question is about',
+    '           credentials, prior learning, military training or exams.',
+    '  cannot   "" normally; otherwise one sentence saying why this question cannot',
+    '           be shown as a selection. Set it and leave select empty rather than',
+    '           inventing a selection that does not answer the question.',
+    "",
+    "Rules:",
+    "  · A discipline name must be copied EXACTLY from the list. Never invent one.",
+    "    If the question names something that is not a discipline, use a term instead.",
+    "  · Prefer ONE discipline plus at most one term over a long list.",
+    "  · isolate:true only when the question asks to exclude or focus ('only',",
+    "    'just', 'without the rest'). It is ignored when nothing is selected.",
+    "  · You cannot count, filter or aggregate — the page does that after you.",
+    "    Never state a number in `answer`.",
+    "",
+    "The disciplines, with their identity counts:",
+    askVocabulary(),
+    "",
+    "The question:",
+    String(question==null?"":question).trim(),
+  ].join("\n");
+}
+
+/* Drain the SSE stream to the text the model produced. Same shape as
+ * gr_priorities.js's — cpl-chat streams `text` events whatever the caller. */
+function askDrain(reader){
+  var decoder=new TextDecoder(), buffer="", full="";
+  function pump(){
+    return reader.read().then(function(chunk){
+      if(chunk.done) return full;
+      buffer+=decoder.decode(chunk.value, {stream:true});
+      var events=buffer.split("\n\n"); buffer=events.pop()||"";
+      events.forEach(function(blk){
+        var ev="message", data="";
+        blk.split("\n").forEach(function(line){
+          if(line.indexOf("event:")===0) ev=line.slice(6).trim();
+          else if(line.indexOf("data:")===0) data+=line.slice(5).trim();
+        });
+        if(ev==="text" && data){
+          try{ var dd=JSON.parse(data); if(dd && typeof dd.text==="string") full+=dd.text; }catch(e){}
+        }
+      });
+      return pump();
+    });
+  }
+  return pump();
+}
+/* ⚠️ A MODEL THAT WAS ASKED FOR JSON STILL SOMETIMES WRAPS IT. Take the outermost
+ * braces rather than trusting the whole body, and let a genuine parse failure
+ * reach askError(), which knows the likeliest cause is a deploy. */
+function askParse(text){
+  var t=String(text==null?"":text).trim();
+  var a=t.indexOf("{"), b=t.lastIndexOf("}");
+  if(a<0||b<=a) throw new Error("the reply was not JSON");
+  return JSON.parse(t.slice(a, b+1));
+}
+
+/* ⭐ RESOLVE, NEVER TRUST. Returns the tokens that resolved AND the names that
+ * did not, because "we could not find that discipline" and "that discipline has
+ * nothing in it" look identical on a map and mean opposite things. */
+function askResolve(sel){
+  var out={tokens:[], missed:[]};
+  if(!U || !sel || typeof sel.slice!=="function" || typeof sel.length!=="number") return out;
+  sel.slice(0,6).forEach(function(item){
+    if(!item || typeof item!=="object") return;
+    if(item.kind==="discipline"){
+      var want=String(item.name==null?"":item.name).trim().toLowerCase();
+      if(!want) return;
+      var hit=null;
+      for(var i=0;i<U.islands.length;i++)
+        if(U.islands[i].d.toLowerCase()===want){ hit=U.islands[i]; break; }
+      if(!hit){
+        /* One forgiving pass, and only when it is UNAMBIGUOUS: "Welding" for
+         * "Welding Technology" is a fair read, "Art" matching four islands is
+         * not, and picking the first would be the map lying about which one. */
+        var near=U.islands.filter(function(I){
+          var d=I.d.toLowerCase(); return d.indexOf(want)>=0 || want.indexOf(d)>=0; });
+        if(near.length===1) hit=near[0];
+      }
+      if(hit) out.tokens.push({kind:"subject", key:"disc:"+hit.d, label:hit.d, isl:hit});
+      else out.missed.push(String(item.name));
+      return;
+    }
+    if(item.kind==="course"){
+      var id=String(item.id==null?"":item.id).trim();
+      if(!id) return;
+      var h=nodeById(id);
+      if(h) out.tokens.push({kind:"course", key:"crs:"+h.nd.i, label:h.nd.t||h.nd.i, isl:h.isl, nd:h.nd});
+      else out.missed.push(id);
+      return;
+    }
+    if(item.kind==="term"){
+      var term=String(item.term==null?"":item.term).trim();
+      if(term.length<2) return;
+      out.tokens.push({kind:"term", key:"term:"+term.toLowerCase(), label:term, term:term});
+    }
+  });
+  return out;
+}
+
+function askError(msg){
+  asking=false;
+  setHint("<strong>Ask SkyView</strong> — "+esc(msg));
+  draw();
+}
+
+/* The one entry point. The page's search host calls this when Enter lands on a
+ * question with nothing ticked. */
+window.__ccrAsk = function(question){
+  var qtext=String(question==null?"":question).trim();
+  if(!qtext) return false;
+  if(asking){ return false; }
+  if(!U){ askError("the map has not finished loading."); return false; }
+  if(typeof fetch!=="function"){ askError("this browser cannot reach the assistant."); return false; }
+  if(!document.getElementById("u-cvs")) window.__ccrUniverse();
+  var envelope=askEnvelope(qtext);
+  if(envelope.length>ASK_BUDGET){
+    askError("this question is too long to send ("+envelope.length+" characters against a "
+      +ASK_BUDGET+"-character budget). Shorten it and try again.");
+    return false;
+  }
+  asking=true;
+  stopTurn();
+  setHint("<strong>Ask SkyView</strong> — reading “"+esc(qtext)+"”…");
+  draw();
+  fetch(ASK_URL+"/functions/v1/cpl-chat", {
+    method:"POST",
+    headers:{"Content-Type":"application/json", apikey:ASK_ANON, Authorization:"Bearer "+ASK_ANON},
+    /* ⭐ retrieval_query IS THE QUESTION, NOT THE ENVELOPE. Embedding the whole
+     * envelope searches the knowledge base for the CONTRACT — the key list and
+     * the 159 discipline names — and comes back with a healthy-looking score
+     * pointing nowhere near the subject. The lesson is cpl-chat's own, recorded
+     * where it reads this field. */
+    body:JSON.stringify({query:envelope, retrieval_query:qtext,
+                         session_id:"skyview-ask", surface:"skyview-ask"}),
+  }).then(function(resp){
+    if(!resp || !resp.ok) throw new Error("the assistant replied "+(resp&&resp.status));
+    if(resp.body && resp.body.getReader) return askDrain(resp.body.getReader());
+    return resp.text ? resp.text() : "";
+  }).then(function(full){
+    if(!full || !String(full).trim()) throw new Error("the answer came back empty");
+    return askParse(full);
+  }).then(function(res){
+    asking=false;
+    applyAsk(qtext, res);
+  }).catch(function(err){
+    askError((err && err.message ? err.message : "something went wrong")
+      + ". If this says the reply was not JSON, the likeliest cause is that the "
+      + "cpl-chat Edge Function has not been deployed with the “skyview-ask” "
+      + "surface yet — an unknown surface silently takes the 1,000-character chat "
+      + "limit, which cuts off the instructions. Dispatch cpl-chat-deploy.yml, then try again.");
+  });
+  return true;
+};
+
+/* Apply what came back. A question is a FRESH search — it replaces the
+ * selection, the same meaning Enter on a bare term has always had. */
+function applyAsk(qtext, res){
+  res = res && typeof res==="object" ? res : {};
+  var cannot=String(res.cannot==null?"":res.cannot).trim();
+  var got=askResolve(res.select);
+  var answer=String(res.answer==null?"":res.answer).trim();
+
+  if(!got.tokens.length){
+    /* ⚠️ CHANGE NOTHING. A question that produced no selection must leave the
+     * reader's map exactly as it was — clearing it would punish them for asking. */
+    setHint("<strong>Ask SkyView</strong> — "+esc(cannot || answer ||
+      "that question did not name anything on the map.")+
+      (got.missed.length ? " Nothing on the map is called "+esc(got.missed.join(", "))+"." : "")+
+      " The map is unchanged.");
+    draw();
+    return;
+  }
+
+  tokens=[];
+  if(res.face==="cpl" || res.face==="courses") setFace(res.face, true);
+  setLit(res.lit===true, true);
+  got.tokens.forEach(function(t){ if(!tokens.some(function(x){ return x.key===t.key; })) tokens.push(t); });
+  renderTokens();
+  applyTokens(got.tokens[got.tokens.length-1]);
+  /* Isolation goes on AFTER the selection exists — it is defined as "hide
+   * everything not selected", and applying it to an empty set empties the map.
+   * ⚠️ THIS READ `&& tokens.length>0` AND THAT CONDITION COULD NEVER BE FALSE:
+   * the empty case returns several lines above, and `tokens` was just filled
+   * from a list that early return proved non-empty. A condition that cannot
+   * fail describes a case that cannot happen, and the next reader has to work
+   * out which — so it is gone. The real protection is setIsolate's own `can`
+   * test, which refuses an empty selection whatever the caller asks for. */
+  setIsolate(res.isolate===true);
+
+  var said=answer || ("Showing "+got.tokens.map(function(t){ return t.label; }).join(", ")+".");
+  setHint("<strong>Ask SkyView</strong> — "+esc(said)+
+    (got.missed.length
+      ? " <em>Nothing on the map is called "+esc(got.missed.join(", "))+", so that part was left out.</em>"
+      : "")+
+    " Your question: “"+esc(qtext)+"”");
+  draw();
+}
+
 /* ── "Disciplines as a list" (Sam, 2026-08-25) is the workspace's By discipline
  * view since 2026-09-05: same rows, same filter seeded from the search box,
  * same fly to the map — beside the subject grain and ESL packaging. Kept as a

@@ -166,7 +166,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · pages: `fact-sheet/index.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
+| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js` · pages: `fact-sheet/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |

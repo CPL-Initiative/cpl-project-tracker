@@ -1101,6 +1101,21 @@ function runSearch(){
   // open it flies and rings; anywhere else it lists results. The canvas being
   // in the DOM is the test rather than a flag we keep in step by hand — every
   // other view replaces #view wholesale, so it cannot go stale.
+  /* ⭐ A QUESTION IS NOT A KEYWORD (Sam, 2026-09-09: "it would be good to be
+   * able to use the search box for questions, like Sierra handles, to query
+   * SkyView"). ONE box, and the INPUT decides which it is: everything above
+   * this line is untouched and still instant, and only text that a keyword
+   * search would serve badly anyway — a sentence, or something ending in a
+   * question mark — is sent anywhere. The map is the answer; __ccrAsk turns the
+   * question into a selection and this row never learns what the model said.
+   * ⚠️ The predicate lives in ccr_universe.js and BOTH callers use it, so the
+   * footer cannot promise "Enter asks" while this line runs a term search. */
+  if (document.getElementById("u-cvs") && typeof window.__ccrAsk === "function"
+      && typeof window.__ccrIsQuestion === "function" && window.__ccrIsQuestion(term)) {
+    window.__ccrAsk(term);
+    closeSug();
+    return;
+  }
   if (document.getElementById("u-cvs") && typeof window.__ccrUniverseSearch === "function")
     window.__ccrUniverseSearch(term);
   else
@@ -1321,8 +1336,27 @@ function paintPending(){
   var bits = [];
   if (add)  bits.push(add + " to add");
   if (drop) bits.push(drop + " to remove");
+  /* With nothing ticked the footer says what Enter WILL do, and on a question
+   * that is not a term search — so it says so. This is the only affordance the
+   * ask needs: the row that already exists to answer "what does Enter do here"
+   * answers it correctly, rather than a new control in a list whose whole
+   * interaction is ticking. */
+  /* ⚠️ THE CONDITION IS `!bits.length`, AND ONLY THAT — it is the SAME test
+   * commitPending() makes. pendKeys being non-empty does NOT stop Enter falling
+   * through to the search: a seeded key the reader never touched is inert in
+   * both directions, so a reader with a selection already on the map still gets
+   * an ask. An earlier draft also required !pendKeys.length and the footer then
+   * said "1 selected" while Enter asked — the exact disagreement between the
+   * label and the key that check (14) of tests/ccr_skyview_ask.test.js exists
+   * to catch, and it caught it. */
+  var asks = !bits.length
+    && typeof window.__ccrIsQuestion === "function"
+    && window.__ccrIsQuestion(gqEl ? gqEl.value : "")
+    && typeof window.__ccrAsk === "function"
+    && !!document.getElementById("u-cvs");
   el.textContent = bits.length
     ? bits.join(", ") + " — Enter applies"
+    : asks ? "Ask SkyView — Enter asks"
     : (pendKeys.length ? pendKeys.length + " selected" : "Tick the ones you want");
 }
 /* Commit, then leave. The removals go first so a reader who unticks A and ticks
@@ -1396,6 +1430,21 @@ function openSug(term){
    * their picks for a keystroke they are about to correct. Hide the list and
    * keep the session; the ticks are still there when the term matches again. */
   if (!sugAll.length){
+    /* ⭐ EXCEPT ON A QUESTION, WHERE ZERO MATCHES IS THE NORMAL CASE AND THE
+     * WHOLE POINT. "which welding courses carry an articulation?" matches no
+     * course title, so the list hid itself — and the footer that says "Enter
+     * asks" hid with it, leaving the ask invisible at exactly the moment it
+     * became available. Found by tests/ccr_skyview_ask.test.js (14), which
+     * looked for the label and found no list at all.
+     * Rendering with no options is the honest picture: no keyword matched, and
+     * Enter will ask instead. */
+    if (typeof window.__ccrIsQuestion === "function" && window.__ccrIsQuestion(term)
+        && typeof window.__ccrAsk === "function" && document.getElementById("u-cvs")) {
+      if (!pendLive) seedPending();
+      sugShown = 0;
+      renderSug(true);
+      return;
+    }
     sugItems = []; sugAt = -1;
     if (sugEl){ sugEl.hidden = true; sugEl.innerHTML = ""; }
     if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }

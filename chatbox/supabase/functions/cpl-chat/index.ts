@@ -2939,7 +2939,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
-  "memory-briefing", "gr-analysis",
+  "memory-briefing", "gr-analysis", "skyview-ask",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -2967,7 +2967,16 @@ function normalizeSurface(raw: any): string | null {
  * the call site: tests/cpl_memory_autogen.test.js reads QUERY_CAP_DRAFTING out
  * of this file and asserts the client's envelope still fits under it, which is
  * the check that was missing when the envelope grew to 984. */
-const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis"]);
+/* ⭐ `skyview-ask` IS THE LEAST CONVERSATIONAL CALLER OF ALL — it does not want
+ * an ANSWER, it wants a SELECTION. SkyView's payload (16,482 identities, 33,423
+ * stand-alone courses, 159 disciplines) is not in the knowledge base this
+ * function retrieves from, so a prose reply about it would be composed from a
+ * corpus that does not contain it. The model's job there is to turn a question
+ * into the map's own token grammar and let the MAP answer, by moving. The
+ * answer doctrine above — lead with a table, name colleges in two bands, close
+ * with the coordinator — is the wrong instruction for that, which is exactly
+ * what DRAFTING_BLOCK exists to replace. */
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis", "skyview-ask"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
@@ -3010,10 +3019,21 @@ const QUERY_CAP_GR_ANALYSIS = 40000;
  * one; tests/sierra_surface.test.js pins this keyset equal to
  * DRAFTING_SURFACES, so a surface declared in one and forgotten in the other is
  * a failing test rather than a caller quietly capped at 1,000. */
+/* SkyView's envelope is the CONTRACT plus the 159 discipline names with their
+ * counts — the vocabulary the model is allowed to answer in, so it cannot name
+ * an island that does not exist. Measured at 6,356 characters against the
+ * committed payload (159 islands = 4,286 of vocabulary, 2,070 of contract) —
+ * just OVER QUERY_CAP_DRAFTING's 6,000, which would have eaten the tail of the
+ * discipline list and taught the model that the corpus stops in the middle of
+ * the alphabet. That is the silent content swap the cap note above describes,
+ * and it would have looked like the model refusing to name real disciplines. tests/ccr_skyview_ask.test.js reads this number out of this file and
+ * asserts the client's real envelope still fits under it. */
+const QUERY_CAP_SKYVIEW = 20000;
 const SURFACE_QUERY_CAPS: Record<string, number> = {
   "memory-autogen": QUERY_CAP_DRAFTING,
   "memory-briefing": QUERY_CAP_BRIEFING,
   "gr-analysis": QUERY_CAP_GR_ANALYSIS,
+  "skyview-ask": QUERY_CAP_SKYVIEW,
 };
 function queryCapFor(surface: string | null): number {
   return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
