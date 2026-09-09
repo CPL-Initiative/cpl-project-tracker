@@ -2350,22 +2350,43 @@
   var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
     "(badges are informational in this draft — no dollar figure changes yet):";
   // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01).
-  // Written in the CCCCO house voice: no bold, no bullets, no glyphs, claims
-  // anchored to the instrument that carries them, and a short declarative after
-  // a long qualified one. It carries NO dollar figures, counts or weights —
-  // partly the sunshine rule, and partly because an introduction that has to be
-  // re-checked against a live solve every time a dial moves is a liability.
+  // These are HIS words, approved 2026-09-09 and baked here so that Restore the
+  // default text returns them rather than the pre-2026-09-09 house draft — which
+  // it would otherwise overwrite them with, since the live page reads an
+  // override layered on top of this string (sheet item 7).
+  //
+  // The statute is QUOTED rather than paraphrased, and it rides the blockquote
+  // convention the prose blocks gained the same day: every line of that
+  // paragraph opens with ">" once htmlToPlain() renders it into the textarea, so
+  // an editor sees the marks and the round trip is lossless.
+  //
+  // The $35 million is the appropriation, which is public law. The model's own
+  // derived figures stay out of here — an introduction that has to be re-checked
+  // against a live solve every time a dial moves is a liability, and the
+  // Summary beneath it already carries them.
   var ABOUT_DEFAULT_HTML =
-    "<p>The Legislature appropriated one-time funding to the Chancellor&rsquo;s Office to help colleges " +
-    "build the capacity to award credit for prior learning. This page is the model that distributes it.</p>" +
-    "<p>Every participating institution is sized by the teaching it actually does, its credit and " +
-    "noncredit FTES together, and receives a share of the total on that basis. That share is then held " +
-    "between a minimum and a maximum, so a small college still receives enough to staff the work and no " +
-    "single institution takes a disproportionate part of the allocation. What results is a maximum award, " +
-    "not a grant. An institution draws it down by meeting the outcomes Ed. Code &sect;78093.2(d)(1) names, " +
-    "measured from what its own students record in MAP, and any part it does not earn stays available to " +
-    "it rather than moving elsewhere.</p>" +
-    "<p>The model is in draft, and every figure here is computed live from the dials below.</p>";
+    "<p>In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor&rsquo;s " +
+    "Office to support colleges as they build the capacity to offer, award, and transcribe credit for " +
+    "prior learning (CPL). This page serves as the model for allocating those funds based on the " +
+    "measurable outcomes in Ed. Code &sect;78093.2(d), which sets forth the goals and the condition for " +
+    "allocation:</p>" +
+    "<blockquote><p>(d)(1) Upon appropriation by the Legislature for purposes of this article, the " +
+    "chancellor&rsquo;s office shall allocate designated funds to support implementation of this article " +
+    "at each campus using all of the following goals:<br>" +
+    "(A) Increasing access to credit for prior learning opportunities equitably for all eligible " +
+    "students.<br>" +
+    "(B) Increasing completion through credit for prior learning awards.<br>" +
+    "(C) Advancing career attainment through credit for prior learning.<br>" +
+    "(D) Supporting credit for prior learning opportunities through the chancellor&rsquo;s office&rsquo;s " +
+    "pilot projects, such as the California Mapping Articulated Pathways Initiative.<br>" +
+    "(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning " +
+    "initiative established pursuant to this article through the metrics described in paragraph (1) " +
+    "before receiving an allocation of funding for purposes of implementing this article.</p></blockquote>" +
+    "<p>The model measures outcomes in equivalent FTES from CPL and allocates funding to institutions " +
+    "proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) " +
+    "funding ensure sustainable support for every participant. The model calculates the priority " +
+    "outcomes required by Ed. Code &sect;78093.2(d)(1) from records in the MAP platform, which serves as " +
+    "the Chancellor&rsquo;s Office systemwide CPL infrastructure.</p>";
   var READING_DEFAULT_HTML =
     "<p>Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
     "&mdash; what has been earned to date &mdash; beneath it. Awards are based on outcomes, not automatically " +
@@ -4450,7 +4471,7 @@
     });
     var pubNote = (pubOff.length && !publicMode() && unlocked())
       ? '<div class="cplfund-reqrestore"><span class="dk">Hidden from the ' +
-        '<a href="cpl_funding_public.html" target="_blank" rel="noopener">public college page</a> ' +
+        '<a href="funding-model/" target="_blank" rel="noopener">public college page</a> ' +
         '(display only &mdash; the funding math is unchanged):</span> ' +
         pubOff.map(function (b) {
           var def = b.def || base().pool.admin_cost_label;
@@ -7438,7 +7459,7 @@
     return "<h2>Outcomes Reporting</h2><p>Outcome tracking will occur primarily through the Mapping Articulated Pathways " +
       "(MAP) platform, with colleges continuing to ensure accurate data via MIS reporting. This data will be used to " +
       "monitor systemwide progress toward the priority outcomes and to assess the return on this investment in support of " +
-      "working learners.</p><h2>Conclusion</h2><p>As districts utilize these funds, additional implementation guidance and " +
+      "working learners.</p><h2>Conclusion</h2><p>As districts use these funds, additional implementation guidance and " +
       "optional technical assistance will continue to be made available through the Chancellor&#39;s Office and the MAP " +
       "team. The intentional distribution of these funds reflects the state&#39;s expectation that colleges strengthen " +
       "structures, processes, and student supports to demonstrate clear progress and a strong return on investment.</p>";
@@ -8914,6 +8935,16 @@
     _newScenario: newScenario,
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
+    // ONE resolver for section curation, read by any surface that paints its
+    // own sections — the public explainer does (sheet item 8, 2026-09-09).
+    // Exposed rather than reimplemented because two surfaces describing one
+    // section would eventually disagree about it, and neither would look wrong
+    // alone: a rename applied on the tab and not the explainer reads as a
+    // stale page, and a section hidden on one public rendering and visible on
+    // the other shows a college what the CO decided to withhold.
+    sectionCuration: function (id) {
+      return { title: titleOverride(id), hidden: secHidden(id) };
+    },
     _model: function () { _allocCache = null; _ncoRows = null; return allocModel(); },
     // ── the EFFECTIVE dials, in one call (2026-08-26) ──────────────────────
     // Sam, after a session read yearPriorities["2"].factor from the live

@@ -327,24 +327,45 @@ function shareSumAll(T) {
     !!doc.querySelector("[data-edit]") && !!doc.querySelector('[data-subview="report"]'));
 }
 
-// U8 — the standalone page itself (static greps: it is hand-maintained HTML).
+// U8 — the ONE public page, and the redirect standing where the old one was.
+//
+// RE-AIMED 2026-09-09 (Sam's decision sheet, item 9). Until then two URLs
+// rendered this model: funding-model/ (the explainer, hosting the tab's own
+// institution section in embed mode) and cpl_funding_public.html (the tab in
+// public mode). That was untidy until a curator gained "Hide on the public
+// page" — hiding rides sectionShell(), which only the second page passes
+// through, so a section the CO held back stayed visible on the first. Two
+// renderings of one model is a correctness problem once either can be edited.
+//
+// So the contract these checks guard did not disappear; it moved. They now
+// assert it where it lives, plus that the retired URL still lands a reader
+// somewhere useful — it was handed to colleges, and Pages cannot issue a 301.
 {
   const pub = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_public.html"), "utf8");
-  check("U8: the public page sets the public-mode flag", /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(pub));
-  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
-    /src="cpl_funding_data\.js"/.test(pub) && /src="cpl_funding\.js"/.test(pub) &&
-    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(pub));
-  check("U8: it provides the CPL_TABS.loadScript contract so the sidecars still load",
-    /CPL_TABS\s*=\s*\{[\s\S]*loadScript/.test(pub));
-  check("U8: the sidecar loader FAILS OPEN (onerror still calls back)",
-    /onerror[\s\S]{0,80}cb\(\)/.test(pub));
-  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(pub));
-  check("U8: it states plainly that this is a draft model, not an award notice",
-    /not an award notice/i.test(pub));
-  check("U8: it documents that this is audience separation, NOT security",
-    /audience separation, NOT security/i.test(pub));
-  check("U8: it links back to the full dashboard rather than pretending to be the whole site",
+  check("U8: the retired URL redirects to the one public page, by meta refresh AND script",
+    /http-equiv="refresh"[^>]*url=funding-model\//i.test(pub) &&
+    /location\.replace\("funding-model\/"\)/.test(pub));
+  check("U8: it names funding-model/ as canonical and asks not to be indexed",
+    /rel="canonical"[^>]*funding-model\//.test(pub) && /name="robots"[^>]*noindex/.test(pub));
+  check("U8: a reader whose refresh is blocked still gets a link they can click",
+    /<a href="funding-model\/">/.test(pub));
+  check("U8: it still points at the full dashboard for anyone who wanted that instead",
     /index\.html#implementation-funding/.test(pub));
+  check("U8: it no longer boots the tab (no data, no consumer, no mount)",
+    !/src="cpl_funding_data\.js"/.test(pub) && !/src="cpl_funding\.js"/.test(pub) &&
+    !/id="cplFundingMount"/.test(pub));
+
+  const exp = fs.readFileSync(path.join(__dirname, "..", "funding-model", "index.html"), "utf8");
+  check("U8: the explainer is the public rendering — public mode, embed mode, college section",
+    /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(exp) &&
+    /window\.CPL_FUNDING_EMBED\s*=\s*"college"/.test(exp));
+  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
+    /src="\.\.\/cpl_funding_data\.js"/.test(exp) && /src="\.\.\/cpl_funding\.js"/.test(exp) &&
+    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(exp));
+  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(exp));
+  check("U8: it states plainly that this is a draft model, not adopted policy",
+    /Draft model &mdash; not adopted policy/.test(exp) &&
+    /working model for discussion, not adopted policy/.test(exp));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

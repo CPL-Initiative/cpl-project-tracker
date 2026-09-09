@@ -115,4 +115,39 @@ const STATUTE = [
   check("its border uses a token, never a raw hex", /var\(--/.test(rule) && !/#[0-9a-fA-F]{3,8}/.test(rule));
 }
 
+// 6 — THE HOUSE DEFAULT NOW CARRIES A QUOTATION (sheet item 7, 2026-09-09).
+//     This is the case htmlToPlain()'s reverse mapping exists for: the stored
+//     default is HTML, the textarea is plain text, and Save compares what was
+//     typed against the default to decide whether to store anything at all. If
+//     the round trip lost the ">" marks, opening Edit and pressing Save without
+//     typing would store an override that renders the statute as body prose.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  window.CPL_SESSION = reviewerSession();
+  T.render();
+
+  const block = doc.querySelector('.cplfund-prose[data-textblock="about"]');
+  const bq = block && block.querySelector("blockquote");
+  check("the house introduction renders Ed. Code §78093.2(d) as a quotation",
+    !!bq && /\(d\)\(1\) Upon appropriation by the Legislature/.test(bq.textContent) &&
+    /\(d\)\(2\) Each campus shall demonstrate/.test(bq.textContent));
+  check("the statute is quoted verbatim, including the goals (A) to (D)",
+    !!bq && ["(A) Increasing access", "(B) Increasing completion",
+             "(C) Advancing career attainment", "(D) Supporting credit for prior learning"]
+      .every((f) => bq.textContent.indexOf(f) >= 0));
+
+  clickSel(window, doc, '[data-textedit="about"]');
+  const ta = doc.querySelector('[data-textarea="about"]');
+  check("Edit shows the default as plain text, the quoted lines carrying their > marks",
+    !!ta && /^> \(d\)\(1\) Upon appropriation/m.test(ta.value) &&
+    /^> \(A\) Increasing access/m.test(ta.value) && !/<p>|<blockquote>|&rsquo;/.test(ta.value));
+  clickSel(window, doc, '[data-textsave="about"]');
+  check("saving the default back UNCHANGED stores no override (the round trip compares equal)",
+    !(T._getShared().text && T._getShared().text.about));
+  check("…and the introduction still renders its quotation afterwards",
+    !!doc.querySelector('.cplfund-prose[data-textblock="about"] blockquote'));
+}
+
 finish();

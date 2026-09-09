@@ -204,6 +204,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   .skip{display:none}
   body{background:#FFFFFF}
 }
+section[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -228,7 +229,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <main id="start">
 
-<section>
+<section data-fsec="lede">
   <div class="wrap">
     <p>Most of the one-time appropriation is allocated <strong>directly to institutions</strong> &mdash;
       to all 118&nbsp;institutions &mdash; the 115 colleges plus the three noncredit-only campuses &mdash;
@@ -236,9 +237,8 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       the statewide CPL projects and technology every college draws on, and two Chancellor&rsquo;s Office
       posts supporting that work. No institution is allocated less than <b id="f-floorv">$150,000</b> across the
       two years, and none more than <b id="f-capv">$400,000</b>.</p>
-    <p><strong>What an institution receives is driven by its own CPL results, as they happen.</strong> The
-      figure allocated to a college is what is available to it across the two years; what it draws down
-      tracks the prior-learning credit it actually puts on students&rsquo; records, measured from that
+    <p><strong>An institution&rsquo;s CPL outcomes determine its allocation spread over two years.</strong>
+      What it draws down tracks the prior-learning credit it puts on students&rsquo; records, measured from that
       college&rsquo;s own MAP data against three priorities. An institution establishes eligibility by
       meeting three baseline requirements; from that point the funding follows the outcomes.</p>
     <div class="topline">
@@ -294,7 +294,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
      same code in embed mode: the same rows, the same drill-in on an
      institution's name, the same footnote. Its introduction is the tab's
      editable block, so a curator's Publish reaches this page too. -->
-<section id="institutions">
+<section id="institutions" data-fsec="institutions">
   <div class="wrap">
     <div class="sec-head">
       <hr class="rule">
@@ -306,7 +306,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<section data-fsec="allocation">
   <div class="wrap">
     <details class="fold">
     <summary>
@@ -315,12 +315,12 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
-    <p>An institution&rsquo;s size is measured in <strong>full-time equivalent students</strong>, the
+    <p>The model measures an institution&rsquo;s size in <strong>full-time equivalent students</strong>, the
       Chancellor&rsquo;s Office&rsquo;s standard measure of instructional volume, counting credit and
       noncredit instruction together. Across the <span id="l-basis-n">118</span> institutions in the model
       the combined total is <span id="l-basis">1,151,171</span> FTES. An institution accounting for two
       percent of that total begins with two percent of the amount allocated to institutions.</p>
-    <p>Two adjustments are then applied to that proportional figure:</p>
+    <p>The model then applies two adjustments to that proportional figure:</p>
     <ul>
       <li><strong>A minimum of <span id="l-floor">$150,000</span></strong> across the two years.
         <span id="l-floorn">Forty-five</span> institutions&rsquo; proportional share fell below that
@@ -352,7 +352,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<section data-fsec="qualify">
   <div class="wrap">
     <details class="fold">
     <summary>
@@ -380,7 +380,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<section data-fsec="earning">
   <div class="wrap">
     <details class="fold">
     <summary>
@@ -389,16 +389,16 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
-    <p>Each institution&rsquo;s allocation is divided across three priorities. Each priority carries a
+    <p>The model divides each institution&rsquo;s allocation across three priorities. Each priority carries a
       share of the allocation and a single measure. The order and the shares below are those currently set
       in the model.</p>
     <div id="prios"></div>
-    <p>Every priority is measured in the same currency: <strong>units of prior learning, converted to
-      FTES</strong> at the college&rsquo;s own calendar &mdash; 30 semester units make one FTES, or 45 on a
+    <p>The model measures outcomes by <strong>units of credit for prior learning converted to
+      equivalent FTES</strong> at the college&rsquo;s own calendar &mdash; 30 semester units make one FTES, or 45 on a
       quarter calendar.</p>
 
     <h3 style="margin-top:1.6em">How a share becomes a target</h3>
-    <p>Each priority&rsquo;s share is divided by a price to produce its target. The price is the 2026-27
+    <p>The model divides each priority&rsquo;s share by a price to produce its target. The price is the 2026-27
       state rate of <strong><span id="l-rate">$5,649.63</span> per FTES</strong>, multiplied by that
       priority&rsquo;s <strong>funding factor</strong>. <span id="l-factors">The factors currently set in
       the model are 1.0, 1.0 and 1.0.</span></p>
@@ -442,7 +442,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<section data-fsec="timing">
   <div class="wrap">
     <details class="fold">
     <summary>
@@ -473,7 +473,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   </div>
 </section>
 
-<section>
+<section data-fsec="choices">
   <div class="wrap">
     <details class="fold">
     <summary>
@@ -515,9 +515,9 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <footer>
   <div class="wrap">
-    <p><strong>Where these numbers come from.</strong> Every figure on this page is produced by the same
-      code that runs the Implementation Funding tab, over the committed 2025-26 credit and noncredit FTES
-      roster for 118 institutions and the policy settings saved in the model. Change a setting on the tab
+    <p><strong>Where these numbers come from.</strong> The same model that runs the Implementation
+      Funding tab produces every figure on this page, over the committed 2025-26 credit and noncredit FTES
+      roster for 118 institutions and the policy settings saved in it. Change a setting on the tab
       and these figures move with it; the institution table above is the tab&rsquo;s own.</p>
     <p>This is a working model for discussion, not adopted policy. The figures shown are the maximum
       allocated to each institution; the amount actually disbursed depends on the baseline requirements it
@@ -845,9 +845,36 @@ window.CPL_TABS = {
     return;
   }
   var painted = false;
+  // Section curation (sheet item 8, 2026-09-09): the same `titles` and
+  // `secHidden` maps the tab writes, read through the tab's own resolver so one
+  // rename or one hide applies wherever that section appears. The house title
+  // is kept on the element the first time through, so un-renaming restores it
+  // rather than leaving whatever the last override said. textContent, never
+  // innerHTML, for an override: a curator types plain text on a page every
+  // visitor reads.
+  function curateSections() {
+    if (typeof T.sectionCuration !== "function") return;
+    var secs = document.querySelectorAll("[data-fsec]");
+    for (var i = 0; i < secs.length; i++) {
+      var sec = secs[i];
+      var c = T.sectionCuration(sec.getAttribute("data-fsec")) || {};
+      sec.hidden = !!c.hidden;
+      var h = sec.querySelector("h2");
+      if (!h) continue;
+      if (h.getAttribute("data-house-title") === null) h.setAttribute("data-house-title", h.innerHTML);
+      if (c.title) h.textContent = c.title;
+      else h.innerHTML = h.getAttribute("data-house-title");
+    }
+  }
+  // Exposed the way CPL_PAINT_EXPLAINER is, so a test can drive it directly:
+  // the paint path reaches it only through a model-change notification, and a
+  // curation bug that only shows on the second paint is exactly the kind that
+  // ships.
+  window.CPL_CURATE_SECTIONS = curateSections;
   function paint() {
     try {
       window.CPL_PAINT_EXPLAINER(B.buildPayload(T, window.CPL_FUNDING));
+      curateSections();
       painted = true;
       if (status) status.textContent = "";
     } catch (e) {

@@ -231,7 +231,7 @@ function mountWords(doc) {
     !doc.querySelector("[data-textedit]"));
   check("the introduction still opens the tab with the house text",
     !!doc.querySelector('.cplfund-prose[data-textblock="about"]') &&
-    /The Legislature appropriated one-time funding/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
+    /In 2026, the Legislature appropriated \$35 million in one-time funds/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
 
   // sign in → Edit → Save
   window.CPL_SESSION = reviewerSession();
@@ -270,7 +270,7 @@ function mountWords(doc) {
   check("Restore drops the override (text.about gone, and an empty text map is not left behind)",
     !(T._getShared().text && T._getShared().text.about) &&
     !!doc.querySelector('.cplfund-prose[data-textblock="about"]') &&
-    /The Legislature appropriated one-time funding/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
+    /In 2026, the Legislature appropriated \$35 million in one-time funds/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
 
   // saving the default back unchanged stores nothing
   clickSel(window, doc, '[data-textedit="reading"]', "Edit on Reading the funding");
