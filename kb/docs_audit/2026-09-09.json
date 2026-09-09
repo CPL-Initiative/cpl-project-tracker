@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 848,
-    "bytes": 9050648,
+    "files": 849,
+    "bytes": 9060360,
     "over_budget": 5,
     "handoff_max": 245,
     "always_loaded_files": 1,
@@ -40,29 +40,30 @@
         "over": 1
       },
       "kb_note": {
-        "files": 413,
-        "bytes": 2127075,
+        "files": 414,
+        "bytes": 2132097,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 177627,
+        "bytes": 180811,
         "over": 1
       },
       "handoff": {
         "files": 219,
-        "bytes": 1867753,
+        "bytes": 1869259,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
       "house_voice": 21,
+      "unindexed_kb_note": 1,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2920,
-      "bytes": 1416606330,
+      "files": 2922,
+      "bytes": 1416639414,
       "heavy_bytes": 678780414,
       "heavy_share": 0.479,
       "ignore_filters": [
@@ -255,6 +256,15 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-guard-that-depends-on-order-is-worse-than-none"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -342,13 +352,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 32294,
+        "bytes": 33746,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 20294,
-        "ratio": 2.69
+        "over_by": 21746,
+        "ratio": 2.81
       },
-      "message": "32,294 B is 2.7× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "33,746 B is 2.8× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {

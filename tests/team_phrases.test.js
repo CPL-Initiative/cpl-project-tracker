@@ -230,7 +230,7 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
     root.querySelector('[data-save="team"]').dispatchEvent(new w.Event("click"));
     await tick(40);
     check("a 200-but-zero-rows write is reported as a FAILURE, not success",
-      /not saved/i.test(root.textContent) && !/✓ Saved/.test(root.textContent));
+      /not saved/i.test(root.textContent) && !/Saved/.test(root.textContent));
     check("…and the local copy is NOT updated on a write that changed nothing",
       w.localStorage.getItem("cpl_team_pass") === "old-shared");
   }

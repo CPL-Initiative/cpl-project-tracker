@@ -10,7 +10,7 @@
 // Guards:
 //   (1) a 6-element row auto-matches a slot via its xcid (not just its primary);
 //   (2) the picker option shows the MATCHED C-ID (the xcid), not the primary;
-//   (3) statusFor labels an xcid match "✓ C-ID aligned" (same tier as COCI);
+//   (3) statusFor labels an xcid match "C-ID aligned" (same tier as COCI);
 //   (4) used-tracking: one physical course can't auto-fill two slots (a multi-C-ID
 //       course fills the first slot; the second falls to a different course);
 //   (5) backward-compat: a plain 5-element row still C-ID auto-matches;
@@ -110,9 +110,9 @@ function pickerBtns() { return document.querySelectorAll("#tab-tmc-builder .tmc-
   // (6) no false fill
   check("no local course carries ZZZ 999 → slot stays unfilled", /Select your/.test(txt(btns[4])));
 
-  // (3) status: all four filled slots are "✓ C-ID aligned" (xcid == same tier as COCI)
+  // (3) status: all four filled slots are "C-ID aligned" (xcid == same tier as COCI)
   const ok = document.querySelectorAll("#tab-tmc-builder .tmc-status.ok");
-  check("all 4 C-ID matches are ✓ C-ID aligned", ok.length === 4 &&
+  check("all 4 C-ID matches are C-ID aligned", ok.length === 4 &&
     Array.prototype.every.call(ok, (p) => /C-ID aligned/.test(txt(p))));
 
   // (2) the picker option shows the MATCHED C-ID (BUS 155), not the primary (MGT 100)

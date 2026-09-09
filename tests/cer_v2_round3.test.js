@@ -239,11 +239,11 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
   // ── 7. Initiated clarified ──
   const lanes = Array.from(doc.querySelectorAll(".cr-lane"));
   const openLane = lanes.find((b) => txt(b).indexOf("Not initiated") >= 0);
-  const doneLane = lanes.find((b) => txt(b).indexOf("✓ Initiated") >= 0);
+  const doneLane = lanes.find((b) => txt(b).indexOf("Initiated") === 0);
   check("initiated: ○ lane tooltip says sign-off changes nothing + no action required",
     /never changes the data/.test(openLane.title)
     && /no other action is required/.test(openLane.title));
-  check("initiated: ✓ lane tooltip says it is purely a review receipt",
+  check("initiated: Initiated lane tooltip says it is purely a review receipt",
     /review receipt/.test(doneLane.title));
   const statusTh = Array.from(doc.querySelectorAll(".cr-table th"))
     .find((th) => txt(th).indexOf("Status") === 0);

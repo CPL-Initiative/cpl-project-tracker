@@ -52,6 +52,24 @@ from a credential. With none, the server sees an anonymous visitor and cannot
 tell a team member from anyone else. Any surface asked for both gets the same
 answer: name the trade, do not pretend it is absent.
 
+⚠️ **THE BANNER HAS TWO SWITCHES AND FLIPPING ONE LOOKS LIKE ENOUGH (2026-09-09).**
+Sam: *"I already forgot to set this session to public when opening it! I just set
+it to public but I don't see the banner on COBI."* Nothing was broken. The
+claude.ai **visibility** toggle decides whether the link WORKS; the
+`cobi_live_session` row decides whether the banner SHOWS, and they know nothing
+about each other. Measured at the time: the row was `active: true` but pointing
+at `session_01PmWf…` — a **previous** session — with `expires_at` six hours in
+the past, so the banner correctly rendered nothing. It had never been switched
+off; it aged out. ⭐ **The Admin control already says exactly this** ("Now: not
+showing *(the link expired)*"), so the gap is not the UI but that an author who
+does not open Admin is never told their banner stopped. The 2/4/8-hour expiry is
+the right default for a disclosure — a session link should not outlive the
+session — so the fix is a notice to its author, never a longer life. Setting the
+row is deliberately a human act and a session should not do it: the control's own
+copy names the failure it guards, *"turning the banner on for a session that is
+still Private and sending the whole organization at a link only its author can
+open."*
+
 ⚠️ **Rule 10 a3 worked as designed.** Both rows were written BEFORE the code, and
 five write surfaces are mapped in `kb/governance_surface_map.json`. The gate is
 not paperwork: DR-26's first cut read under `using (true)`, and mapping it is

@@ -1184,9 +1184,9 @@
           + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(statusLabel(s)) + "</button>";
       });
       h += '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="fb:' + esc(f.turn_id) + '"'
-        + ' title="' + esc(HELP.writeRule) + '">✍️ Write an instruction about this</button>'
+        + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
         + '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '"'
-        + ' title="' + esc(HELP.testInSierra) + '">🧪 Try it on Sierra</button>'
+        + ' title="' + esc(HELP.testInSierra) + '">Try it on Sierra</button>'
         + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '"'
         + ' title="Copies the question to your clipboard.">⧉ Copy question</button>';
       h += "</div></div>";
@@ -1237,9 +1237,9 @@
         + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(t.response || "—") + "</div>"
         + '<div class="sit-actions">'
         + '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="gap:' + esc(t.id) + '"'
-        + ' title="' + esc(HELP.writeRule) + '">✍️ Write an instruction about this</button>'
+        + ' title="' + esc(HELP.writeRule) + '">Write an instruction about this</button>'
         + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '"'
-        + ' title="' + esc(HELP.testInSierra) + '">🧪 Try it on Sierra</button>'
+        + ' title="' + esc(HELP.testInSierra) + '">Try it on Sierra</button>'
         + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '"'
         + ' title="Copies the question to your clipboard.">⧉ Copy question</button>'
         + "</div>"
@@ -1276,8 +1276,8 @@
   function guidanceRow(r, sent) {
     var chip = r.active
       ? (sent
-        ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">✓ Sierra is using this</span>'
-        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp(r)) + '">⚠ On, but not reaching Sierra</span>')
+        ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">Sierra is using this</span>'
+        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp(r)) + '">On, but not reaching Sierra</span>')
       : '<span class="sit-chip" title="' + esc(HELP.ruleOff) + '">Switched off</span>';
     var h = '<div class="sit-row' + (r.active ? "" : " sit-rule-off") + '">'
       + '<div class="sit-row-head" style="cursor:default">'
@@ -1302,7 +1302,7 @@
       + '<label class="sit-meta" title="Where this instruction is sent. Narrow it only when the instruction names something one place has and the others do not.">'
       + "Applies: " + surfaceSelect('data-guid-surface-row="' + esc(r.id) + '"', r.surface) + "</label>"
       + '<button class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
-      + ' title="' + esc(HELP.ruleEdit) + '">✏️ Edit</button>'
+      + ' title="' + esc(HELP.ruleEdit) + '">Edit</button>'
       + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
       + ' title="' + (r.active
         ? "Stops sending this to Sierra. It stays on the list so you can turn it back on."
@@ -1597,7 +1597,7 @@
       + '<div class="box" title="How many recent conversations we looked through to find those.">'
       + '<div class="n">' + turns.length + '</div><div class="l">Conversations checked</div></div>'
       + '<div class="box" title="Instructions you have given Sierra that are currently switched on.">'
-      + '<div class="n">' + activeGuidance + '</div><div class="l">🧭 Instructions in use</div></div>'
+      + '<div class="n">' + activeGuidance + '</div><div class="l">Instructions in use</div></div>'
       + "</div>";
 
     // ── Pane 1: feedback queue ──
@@ -1701,7 +1701,7 @@
     }
 
     // ── Pane 3: guidance layer (Phase 2) ──
-    html += "<h3>🧭 Instructions for Sierra <span class=\"sit-meta\">(plain-English rules she follows — "
+    html += "<h3>Instructions for Sierra <span class=\"sit-meta\">(plain-English rules she follows — "
       + "they reach her within a minute, with nothing to deploy)</span></h3>";
     html += '<p class="sit-guid-warn">⚠ These change <b>every</b> place Sierra appears, including My College '
       + "and the public assistant. She is sent the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "

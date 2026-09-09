@@ -2782,7 +2782,7 @@
       ]),
     ]);
     var themeBtn = el("button", { class: "cipx-themetog", type: "button", "aria-label": "Toggle light or dark theme for this tab" }, []);
-    function paint() { themeBtn.textContent = isDark() ? "☀ Light" : "🌙 Dark"; }
+    function paint() { themeBtn.textContent = isDark() ? "Light" : "Dark"; }
     themeBtn.onclick = function () { var next = isDark() ? "light" : "dark"; applyTheme(next); storeTheme(next); paint(); };
     paint();
     // Top-right utility rail: Coco (the emotional-support pup) watches over the tab, then the Theme

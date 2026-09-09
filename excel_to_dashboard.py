@@ -2042,13 +2042,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'                <span style="display:inline-flex;gap:0.8rem;align-items:center;white-space:nowrap;">\n'
                  f'                <a href="#raci" class="act-raci-link" data-raci-key="activity:{act_num}" title="Who\'s Responsible / Accountable / Consulted / Informed for this Activity — hover for the roster, click to open Team &amp; RACI" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128101; RACI</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">RACI</a>\n'
                  f'                <a href="#raci" class="act-update-link" title="Braindump a quick status update for this Activity — CC writes it up and saves it" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128221; Update</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Update</a>\n'
                  f'                <a href="#raci" class="act-nudge-link" title="Nudge this Activity\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)" '
                  f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'activity:{act_num}\')}}catch(e){{}}" '
-                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">&#128227; Nudge</a>\n'
+                 f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Nudge</a>\n'
                  f'                <a href="#workplan-goals" class="act-targets-link" title="Annual + 2030 targets live on the Annual Workplan Goals tab" '
                  f'style="font-size:0.72rem;font-weight:600;color:var(--accent-link);text-decoration:none;white-space:nowrap;">Targets &#8599; Annual Workplan Goals</a>\n'
                  f'                </span>\n'
@@ -2346,33 +2346,33 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'download class="report-btn" '
                          f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
                          f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'">'
-                         f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
+                         f'Report</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
                          f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
                          f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
                          f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
-                         f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
+                         f'Attach'
                          f'{_att_badge(attachments, act_num)}</a>'
                          f'<a href="#raci" class="raci-link" data-raci-key="project:{kpi_pid_q}" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
                          f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
                          f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Who\'s Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">'
-                         f'<span style="font-size:0.8rem;">&#128101;</span> RACI</a>'
+                         f'RACI</a>'
                          f'<a href="#raci" class="update-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
                          f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
                          f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Braindump a quick status update — CC writes it up and saves it to this card">'
-                         f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>'
+                         f'Update</a>'
                          f'<a href="#raci" class="nudge-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
                          f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
                          f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Nudge this item\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">'
-                         f'<span style="font-size:0.8rem;">&#128227;</span> Nudge</a>\n')
+                         f'Nudge</a>\n')
 
                 html += '            </div>\n'  # close activity-kpi-card
 
@@ -2922,7 +2922,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
                     background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'">
-                    <span style="font-size:0.85rem;">&#128196;</span> Report</a>
+                    Report</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
@@ -2931,7 +2931,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
-                    <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
+                    Attach{_att_badge(attachments, project_id=pid)}</a>
                 <a href="#raci" class="raci-link" data-raci-key="project:{html_escape(str(pid), quote=True)}"
                     onclick="try{{sessionStorage.setItem('cpl_raci_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
@@ -2940,7 +2940,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">
-                    <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
+                    RACI</a>
                 <a href="#raci" class="update-link"
                     onclick="try{{sessionStorage.setItem('cpl_update_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
@@ -2949,7 +2949,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Braindump a quick status update — CC writes it up and saves it to this card">
-                    <span style="font-size:0.85rem;">&#128221;</span> Update</a>
+                    Update</a>
                 <a href="#raci" class="nudge-link"
                     onclick="try{{sessionStorage.setItem('cpl_nudge_focus','project:{html_escape(str(pid), quote=True)}')}}catch(e){{}}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
@@ -2958,7 +2958,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
                     onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">
-                    <span style="font-size:0.85rem;">&#128227;</span> Nudge</a>
+                    Nudge</a>
             </div>
         </div>
 '''
@@ -3155,7 +3155,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
             f'                <div class="tabled-meta" style="font-size:0.68rem;color:#888;font-style:italic;">{meta_line}</div>\n'
             f'                <button type="button" class="tabled-restore" data-pid="{html_escape(str(p["id"]), quote=True)}" '
             f'style="display:none;margin-top:0.5rem;font-size:0.72rem;background:transparent;border:1px solid #ccc;'
-            f'border-radius:4px;padding:0.25rem 0.6rem;cursor:pointer;color:var(--text-strong,#1a1a1a);">♻ Restore to active</button>\n'
+            f'border-radius:4px;padding:0.25rem 0.6rem;cursor:pointer;color:var(--text-strong,#1a1a1a);">Restore to active</button>\n'
             f'            </div>\n'
         )
 
@@ -3164,7 +3164,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
         'style="margin-top:1.5rem;border:1px solid var(--border);border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
         '            <summary class="tabled-archived-summary" '
         'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
-        f'🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
+        f'Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
         '            <div class="tabled-archived-note" '
         'style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
         'Paused or closed projects — kept for the record but excluded from active priorities, '
@@ -3961,7 +3961,7 @@ def render_kpi_history_card(history, kpi_params=None):
                   margin-bottom:0.8rem;">
         <div>
           <span style="font-family:Georgia,serif;font-size:1rem;font-weight:bold;
-                       color:var(--mustard-text);">&#128200; KPI Trends</span>
+                       color:var(--mustard-text);">KPI Trends</span>
           <span style="font-size:0.7rem;color:var(--text-muted);margin-left:0.8rem;">
             Academic {aq_label} &nbsp;·&nbsp; QTD resets each academic quarter (Jul/Oct/Jan/Apr)
           </span>

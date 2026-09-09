@@ -155,7 +155,7 @@
     var close = el("button", { class: "cpl-todo-close", type: "button", "aria-label": "Close" }, ["×"]);
     close.onclick = togglePanel;
     panel.appendChild(close);
-    panel.appendChild(el("h4", null, ["📋 Daily To-Do"]));
+    panel.appendChild(el("h4", null, ["Daily To-Do"]));
     panel.appendChild(el("p", { class: "cpl-todo-meta" },
       ["as of " + (feed._as_of || "—") + (feed._session ? " · Session " + feed._session : "") +
        " · " + tabLabel(tab)]));
@@ -227,7 +227,7 @@
         var btn = el("button", {
           class: "cpl-todo-btn", id: "cpl-todo-btn", type: "button",
           title: "Daily to-do list — curation work for Sam + the engineering queue for Fable, refreshed each work session.",
-        }, ["📋 To-Do", badge]);
+        }, ["To-Do", badge]);
         btn.onclick = togglePanel;
         document.body.appendChild(btn);
         document.body.appendChild(el("div", { class: "cpl-todo-panel", id: "cpl-todo-panel" }));

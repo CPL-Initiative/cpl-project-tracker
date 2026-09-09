@@ -204,7 +204,7 @@
     input.style.cssText = 'padding:4px 8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;font-size:0.8rem;font-family:inherit;max-width:160px;background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);';
     var btn = document.createElement('button');
     btn.type = 'button';
-    btn.textContent = opts.label || '🔓 Unlock editing';
+    btn.textContent = opts.label || 'Unlock editing';
     btn.style.cssText = 'padding:4px 10px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;background:var(--surface-muted,#ECE9E2);color:var(--text-body,#3A3A36);font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;';
     var msg = document.createElement('span');
     msg.style.cssText = 'font-size:0.75rem;color:var(--crimson,#920000);';
@@ -301,7 +301,7 @@
     // but leaves the page looking locked reads as a rejected phrase.
     wrap.appendChild(unlockRow({
       site: opts.site,
-      label: '🔓 Unlock',
+      label: 'Unlock',
       onUnlocked: function (sess) {
         if (typeof opts.onUnlocked === 'function') { opts.onUnlocked(sess); return; }
         try {

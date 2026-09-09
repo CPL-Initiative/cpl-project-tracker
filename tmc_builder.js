@@ -165,8 +165,8 @@
   // Coming soon' bucket was retired in Session 60 — all 45 TMCs are encoded, so
   // it was an empty, confusing category.
   var STATUS_META = {
-    official: { label: "✓ Official", cls: "ok" },
-    draft:    { label: "⚠ Draft", cls: "warn" },
+    official: { label: "Official", cls: "ok" },
+    draft:    { label: "Draft", cls: "warn" },
     pathway:  { label: "◆ UC Transfer Pathway", cls: "path" }
   };
   function tmcStatus(t) {
@@ -190,9 +190,9 @@
    *   activation) · ⏳ In progress · ◐ Teachout
    * (Inactive is kept in the data but hidden in the UI per Sam, 2026-06-18). */
   var ADT_BADGE = {
-    active:      { label: "✓ Active",      cls: "adt-ok" },
-    approved:    { label: "✓ Approved",    cls: "adt-appr" },
-    in_progress: { label: "⏳ In progress", cls: "adt-prog" },
+    active:      { label: "Active",      cls: "adt-ok" },
+    approved:    { label: "Approved",    cls: "adt-appr" },
+    in_progress: { label: "In progress", cls: "adt-prog" },
     teachout:    { label: "◐ Teachout",    cls: "adt-teach" },
     inactive:    { label: "○ Inactive",    cls: "adt-off" }
   };
@@ -616,12 +616,12 @@
       var gr = unitRange(slot.units);
       var gcu = course.units == null ? null : parseFloat(course.units);
       if (gr && gcu != null && !isNaN(gcu) && gcu + 0.01 < gr[0])
-        return { cls: "warn", label: "⚠ below the " + slot.units + "-unit minimum (" + fmtU(course.units) + ")" };
-      return { cls: "ok", label: "✓ selected" };
+        return { cls: "warn", label: "below the " + slot.units + "-unit minimum (" + fmtU(course.units) + ")" };
+      return { cls: "ok", label: "selected" };
     }
     if (slot.noncid && !slot.cid) {
-      if (ur === false) return { cls: "warn", label: "⚠ units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
-      return { cls: "ok", label: "✓ selected" };
+      if (ur === false) return { cls: "warn", label: "units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
+      return { cls: "ok", label: "selected" };
     }
     if (hasCid) {
       // title-inferred C-ID (tcid): the c-id.net approval names a retired or
@@ -632,9 +632,9 @@
       // synthesized c-id.net row: the approval is official, but the course has
       // no row in our COCI extract (units unknown) — aligned, with a verify nudge
       if (course.src === "cidnet")
-        return { cls: "ok", label: "✓ C-ID aligned · per c-id.net — verify course & units (not in our COCI extract)" };
-      if (ur === false) return { cls: "warn", label: "⚠ C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
-      return { cls: "ok", label: "✓ C-ID aligned" };
+        return { cls: "ok", label: "C-ID aligned · per c-id.net — verify course & units (not in our COCI extract)" };
+      if (ur === false) return { cls: "warn", label: "C-ID match · units differ (" + fmtU(course.units) + " vs " + slot.units + ")" };
+      return { cls: "ok", label: "C-ID aligned" };
     }
     // No C-ID on file, but the local title closely matches this slot's course — a
     // recovered "title match" (verify), distinct from a C-ID-aligned slot.
@@ -980,7 +980,7 @@
       var nslots = pathway ? null : countSlots(t), cov = (showCov && !pathway) ? coverageFor(t) : null;
       var src = tmcSource(t), pdf = pdfPath(t);
       var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official ↗</a>" : "") +
-                  (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>📎 PDF</a>" : "");
+                  (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>PDF</a>" : "");
       var tr = el("tr", "tmc-listrow");
       tr.tabIndex = 0;
       tr.setAttribute("role", "button");
@@ -1140,7 +1140,7 @@
       "<span class='tmc-stchip " + st.cls + "'>" + esc(st.label) + "</span></h3>" +
       "<div class='tmc-collegelbl'>" + (reviewMode ? "All colleges · review view" : esc(state.college)) + " · " + esc(t.version || "draft") +
       (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") +
-      (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>📎 PDF</a></span>" : "") + "</div>";
+      (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>PDF</a></span>" : "") + "</div>";
     head.appendChild(left);
     var meterBox = el("div", "tmc-meter");
     meterBox.id = "tmc-meter";
@@ -1327,12 +1327,12 @@
   function renderAuthInto(node) {
     node.innerHTML = "";
     if (state.email) {
-      node.innerHTML = "<span class='tmc-auth-on'>✓ Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
+      node.innerHTML = "<span class='tmc-auth-on'>Curator: " + esc(state.email) + "</span> · <a class='tmc-link' id='tmc-signout'>Sign out</a>";
       var so = node.querySelector("#tmc-signout");
       if (so) so.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else if (teamMode()) {
       // Phrase mode: notes unlock; approve/return stays magic-link-only.
-      node.innerHTML = "<span class='tmc-auth-on'>✓ Team unlocked (phrase)</span> — notes only · <a class='tmc-link' id='tmc-signout'>Lock</a>";
+      node.innerHTML = "<span class='tmc-auth-on'>Team unlocked (phrase)</span> — notes only · <a class='tmc-link' id='tmc-signout'>Lock</a>";
       var lk = node.querySelector("#tmc-signout");
       if (lk) lk.onclick = function () { signOut(); renderAuthInto(node); renderBody(); };
     } else {
@@ -1343,7 +1343,7 @@
         node.appendChild(document.createTextNode(" · "));
         node.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
           blurb: "or:",
-          label: "🔓 Unlock notes",
+          label: "Unlock notes",
           placeholder: "team phrase…",
           onUnlocked: function () { renderAuthInto(node); renderBody(); }
         }));
@@ -1359,7 +1359,7 @@
       if (!em) { msg.textContent = "Enter your email."; msg.className = "tmc-msg err"; return; }
       msg.textContent = "Sending…"; msg.className = "tmc-msg";
       signIn(em).then(function (r) {
-        msg.textContent = r.ok ? "✓ Check your email for the sign-in link." : "Sign-in failed (" + r.status + ").";
+        msg.textContent = r.ok ? "Check your email for the sign-in link." : "Sign-in failed (" + r.status + ").";
         msg.className = "tmc-msg " + (r.ok ? "ok" : "err");
       }).catch(function () { msg.textContent = "Network error."; msg.className = "tmc-msg err"; });
     });
@@ -1618,7 +1618,7 @@
   function renderBacklogProxy() {
     var det = document.createElement("details");
     det.className = "tmc-backlog";
-    det.innerHTML = "<summary>⏳ In progress in COCI — the statewide backlog proxy (expand to rank by computed alignment)</summary>";
+    det.innerHTML = "<summary>In progress in COCI — the statewide backlog proxy (expand to rank by computed alignment)</summary>";
     var bodyEl = el("div", "tmc-backlog-body", "");
     det.appendChild(bodyEl);
     var computed = false;
@@ -1693,7 +1693,7 @@
     } else {
       var cidHtml = slot.cid
         ? "<span class='tmc-cid'>" + esc(slot.cid) + "</span>" +
-          (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>⚠ not in C-ID ref</span>" : "")
+          (slot.cid_unverified ? "<span class='tmc-unv' title='This C-ID is not in our C-ID reference — a possible C-ID update signal'>not in C-ID ref</span>" : "")
         : "<span class='tmc-cid noncid'>non-C-ID</span>";
       var altHtml = slot.alts && slot.alts.length ? " <span class='tmc-units'>or " + slot.alts.map(esc).join(", ") + "</span>" : "";
       leftc.innerHTML = cidHtml + "<span class='tmc-ctitle'>" + esc(slot.title) + "</span>" +

@@ -1300,7 +1300,7 @@
     btn("⧉ Copy report", function (b) {
       var txt = buildReport(d, state.dorm, state.live);
       function done(ok) {
-        b.textContent = ok ? "✓ Copied" : "Copy failed";
+        b.textContent = ok ? "Copied" : "Copy failed";
         setTimeout(function () { b.textContent = "⧉ Copy report"; }, 1600);
       }
       if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -1323,7 +1323,7 @@
       var packet = buildPromotionPacket(d);
       if (!packet) {
         b.textContent = canWrite() ? "Nothing to promote" : "Unlock to use";
-        setTimeout(function () { b.textContent = "↑ Promote notes"; }, 1800);
+        setTimeout(function () { b.textContent = "Promote notes"; }, 1800);
         return;
       }
       downloadBlob(new Blob([packet], { type: "text/markdown;charset=utf-8" }),

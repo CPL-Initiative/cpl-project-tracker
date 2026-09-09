@@ -1301,7 +1301,7 @@
       + mapLine
       + '<div class="mapu-pick-actions">'
       + '<button class="mapu-rosterbtn" data-pick-cancel>Cancel</button>'
-      + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>✉ Open email draft</button>'
+      + '<button class="mapu-rosterbtn mapu-pick-go" data-pick-go>Open email draft</button>'
       + "</div></div>";
     document.body.appendChild(ov);
     function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
@@ -1516,7 +1516,7 @@
       + '<div class="box"><div class="n">' + asks.length + '</div><div class="l">Must be asked</div></div>'
       + "</div>";
 
-    h += '<div class="mapu-toolbar"><button class="mapu-rosterbtn" data-gap-csv>⬇ CSV</button>'
+    h += '<div class="mapu-toolbar"><button class="mapu-rosterbtn" data-gap-csv>CSV</button>'
       + '<span class="mapu-auth">Nothing here writes to MAP — MAP has no write API. '
       + "Set the value in MAP; this list clears itself at the next sync.</span></div>";
 
@@ -1662,8 +1662,8 @@
       + "</div>";
 
     h += '<div class="mapu-toolbar">'
-      + '<button class="mapu-rosterbtn" data-dir-csv><b>⬇ Export to CSV / Excel</b></button>'
-      + '<button class="mapu-rosterbtn" data-prop-csv><b>⬇ Proposed fills for MAP (' + nProp + ')</b></button>'
+      + '<button class="mapu-rosterbtn" data-dir-csv><b>Export to CSV / Excel</b></button>'
+      + '<button class="mapu-rosterbtn" data-prop-csv><b>Proposed fills for MAP (' + nProp + ')</b></button>'
       + '<label class="mapu-auth"><input type="checkbox" data-prop-only'
       + (state.propOnly ? " checked" : "") + '> Show only colleges with a proposed fill</label>'
       + '<span class="mapu-auth">Downloads a spreadsheet file — double-click it to open in Excel.</span>'

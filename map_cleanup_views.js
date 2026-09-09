@@ -238,7 +238,7 @@
     var TP = tp();
     if (TP && TP.unlockRow) {
       authEl.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "CSM clean-up worklist — unlock to view",
         onUnlocked: function () { refresh(); },
       }));

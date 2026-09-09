@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-411 document(s).
+412 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -88,6 +88,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A harness must verify its own healthy fixture, or growth repaints the scoreboard](../kb-notes/methodology-a-harness-must-verify-its-own-fixture.md) | methodology | published | 2026-08-30 |  |

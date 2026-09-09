@@ -395,7 +395,7 @@
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "Team memory — unlock to view + curate",
         onUnlocked: function (s) { sess = s; writeErrMsg = null; refresh(); },
       }));

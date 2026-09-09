@@ -180,7 +180,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     const bodies = log.writes.map((w) => w.body).filter(Boolean);
     check("strip confirm: unified_title_merge_confirm written naming the target",
       bodies.some((b) => b.field === "unified_title_merge_confirm" && b.value === TARGET));
-    check("strip confirm: row flips ✓ merge confirmed",
+    check("strip confirm: row flips to merge confirmed",
       rows[0].className.indexOf("cr-wl-done") >= 0
       && /merge confirmed/.test(txt(rows[0].querySelector(".cr-mg-confirm"))));
   }
@@ -210,7 +210,7 @@ const rowFor = (doc, name) => Array.from(doc.querySelectorAll(".cr-ni-row"))
     check("re-title: the STALE merge_confirm row deleted",
       log.writes.some((w) => w.method === "DELETE"
         && w.url.indexOf("unified_title_merge_confirm") >= 0));
-    check("re-title: row flips ✓ re-titled", /re-titled/.test(txt(btn)));
+    check("re-title: row flips to re-titled", /re-titled/.test(txt(btn)));
   }
 
   const failed = results.filter(([, ok]) => !ok);

@@ -833,7 +833,7 @@
     if (!btn) return;
     btn.addEventListener("click", function () {
       var md = toMarkdown();
-      var done = function () { btn.textContent = "✓ Copied"; setTimeout(function () { btn.textContent = "⧉ Copy as Markdown"; }, 1400); };
+      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "⧉ Copy as Markdown"; }, 1400); };
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(md).then(done, done);
       } else {

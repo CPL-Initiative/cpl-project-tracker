@@ -173,9 +173,12 @@ jobs:
       # 2026-09-09). ⚠️ This runs the GUARD, not the sweep: --apply rewrites
       # rendered labels across 139 files, so what it REFUSES to touch is the
       # thing worth pinning — a lone-glyph label, a mark mid-sentence, a glyph
-      # spliced onto a variable, and this repo's ⚠️/⭐ comment style. The sweep's
-      # own --check is deliberately not a gate yet: the backlog is 508
-      # control-class glyphs and a check that is red on day one gets ignored.
+      # spliced onto a variable, and this repo's ⚠️/⭐ comment style — plus, since
+      # the first real run (2026-09-09), the Rule 1 guard that refuses to rewrite
+      # a label the dashboard generator regenerates. The sweep's own --check is
+      # deliberately not a gate yet: the backlog is 401 control-class glyphs
+      # (was 516; the mechanical half ran) and a red-on-day-one check gets
+      # ignored.
       - name: Glyph sweep guard (kb/_glyph_sweep.py)
         run: python3 tests/glyph_sweep_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory

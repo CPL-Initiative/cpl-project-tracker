@@ -131,20 +131,126 @@ LEAD = re.compile(
 )
 
 
+# ── Rule 1: a hand-edit inside a regenerated section is overwritten ──────────
+# `excel_to_dashboard.py` REPLACES entire sections of CPL_Dashboard.html on every
+# daily run (Filter Bar, Activity KPIs, Projects Grid, KPI section, title/h1).
+# Stripping a glyph there "works", passes every test, and is silently undone by
+# the next cron. Measured 2026-09-09 on the first real run of this tool: of the
+# 16 rewritable sites in CPL_Dashboard.html, THIRTEEN were generator-owned — so
+# the naive tool would have reverted itself overnight and reported success.
+#
+# The test is exact rather than heuristic: a rewritable fragment that also
+# appears in the generator's SOURCE is written by the generator. Whatever the
+# generator emits, it emits from a literal in that file.
+GENERATOR = "excel_to_dashboard.py"
+_GEN_SRC = None
+
+# ⚠️ REGIONS, NOT FRAGMENTS. The first version of this guard asked "does this
+# glyph+label appear as a literal in the generator?" — which is true only until
+# somebody fixes the generator, and then the SAME html line reads as unowned.
+# Measured 2026-09-09: with the generator still carrying the marks, 13 of 16
+# sites were held; after fixing the generator first, 2. A guard whose protection
+# depends on the order you do things in is worse than none, because it reports
+# "held back: 2" either way.
+#
+# So the test is POSITIONAL and order-independent: these are the section
+# boundaries `excel_to_dashboard.py` replaces wholesale. Anything between a
+# start and its end is generator territory whatever the generator says today.
+# Each marker is asserted to still exist in the generator source, so a renamed
+# boundary fails loudly instead of quietly protecting nothing.
+REGENERATED = [
+    ("<!-- ═══ MAP Articulation Analysis Section ═══ -->",
+     "<!-- ═══ Dashboard Sections End ═══ -->"),
+    ("<!-- ═══ CPL Analytics Section ═══ -->",
+     "<!-- ═══ Dashboard Sections End ═══ -->"),
+    ("<!-- ═══ Workplan Activity Metrics Section ═══ -->",
+     "<!-- Filter Bar -->"),
+    ('<div class="activity-kpi-section" id="activityKpiSection">',
+     "<!-- Projects Grid -->"),
+    ("<!-- Projects Grid -->", "<!-- End Projects Grid -->"),
+]
+
+
+def generator_source():
+    global _GEN_SRC
+    if _GEN_SRC is None:
+        p = os.path.join(ROOT, GENERATOR)
+        _GEN_SRC = open(p, encoding="utf-8").read() if os.path.exists(p) else ""
+    return _GEN_SRC
+
+
+def regenerated_spans(src):
+    """Character ranges of `src` that the dashboard generator replaces."""
+    spans = []
+    for start, end in REGENERATED:
+        at = 0
+        while True:
+            i = src.find(start, at)
+            if i == -1:
+                break
+            j = src.find(end, i + len(start))
+            spans.append((i, j if j != -1 else len(src)))
+            at = i + len(start)
+    return spans
+
+
+def generator_owned(pos, spans, match=None):
+    """True when this site is the dashboard generator's to change, not ours.
+
+    ⚠️ TWO TESTS, AND THE UNION IS THE POINT — each covers the other's blind
+    spot, so the guard fails SAFE rather than plausibly:
+
+      * POSITION — inside a section the generator replaces wholesale. Order-
+        independent, but only as complete as REGENERATED, and Rule 1 names six
+        sections whose boundaries are not all marked in the HTML.
+      * FRAGMENT — this exact glyph+label is a literal in the generator source.
+        Catches what REGENERATED misses (the algo-details block is emitted by
+        render_algo_details() and sits inside none of the marked regions), but
+        stops recognizing a site the moment somebody fixes the generator.
+
+    Measured 2026-09-09 on the original CPL_Dashboard.html: position alone held
+    12 of 16, fragment alone 13, the union 13 — and only the union still holds
+    13 after the generator is fixed.
+    """
+    if any(a <= pos < b for a, b in spans):
+        return True
+    if match is None:
+        return False
+    frag = match.group("g") + match.group("sp") + match.group("rest")
+    return frag in generator_source()
+
+
 def apply_safe(rel):
     path = os.path.join(ROOT, rel)
     src = open(path, encoding="utf-8").read()
-    out, n = [], 0
-    for line in src.splitlines(keepends=True):
+    # Only the two dashboard HTMLs are generated; a .js file is a static asset
+    # the generator never rewrites, so it has no protected regions.
+    spans = regenerated_spans(src) if rel.endswith(".html") else []
+    out, n, held, off = [], 0, [], 0
+    for i, line in enumerate(src.splitlines(keepends=True), 1):
         if is_comment(line) or classify(line) != "control":
             out.append(line)
+            off += len(line)
             continue
-        new, k = LEAD.subn(lambda m: m.group("q") + m.group("rest"), line)
-        n += k
-        out.append(new)
+
+        # ⚠️ Count the REWRITES, not the matches — subn counts a held match too,
+        # so a fully-held line would otherwise report as remediated.
+        done = []
+
+        def sub(m, _i=i, _off=off):
+            if generator_owned(_off + m.start(), spans, m):
+                held.append((_i, m.group("g")))
+                return m.group(0)
+            done.append(1)
+            return m.group("q") + m.group("rest")
+
+        new_line, _ = LEAD.subn(sub, line)
+        n += len(done)
+        out.append(new_line)
+        off += len(line)
     if n:
         open(path, "w", encoding="utf-8").write("".join(out))
-    return n
+    return n, held
 
 
 def main():
@@ -155,13 +261,23 @@ def main():
 
     files = targets()
     if args.apply:
-        total = 0
+        total, all_held = 0, []
         for rel in files:
-            k = apply_safe(rel)
+            k, held = apply_safe(rel)
             if k:
                 print("  %-40s %d" % (rel, k))
                 total += k
+            if held:
+                all_held.append((rel, held))
         print("\nremoved %d leading control glyphs" % total)
+        if all_held:
+            n = sum(len(h) for _, h in all_held)
+            print("\nHELD BACK — %d generator-owned site(s) (Rule 1: fix %s,"
+                  " not the HTML):" % (n, GENERATOR))
+            for rel, held in all_held:
+                print("  %-40s %d  lines %s" % (
+                    rel, len(held), ", ".join(str(l) for l, _ in held[:8])
+                    + (" …" if len(held) > 8 else "")))
 
     findings = []
     for rel in files:

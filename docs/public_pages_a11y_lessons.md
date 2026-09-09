@@ -1,7 +1,7 @@
 ---
 title: Public standalone pages — accessibility and mobile lessons
 created: 2026-08-20
-updated: 2026-09-04
+updated: 2026-09-09
 tags: [lessons, accessibility, mobile, sierra, veteran-sprint-map, fact-sheet, public-surface, cobi]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -379,3 +379,61 @@ not the tab's, and it joins the 54-selector backlog rather than this lane.
 DEFAULT must be swept again as the default. The masthead-less page had passed
 before because the masthead was there.
 
+
+
+## 2026-09-09 — the first real remediation run, and the guard that had to be written twice
+
+Sam authorized the glyph clean-up on the decision sheet (*"run the glyph
+clean-up"*, and *yes*, the three previously-approved exceptions were in scope
+too). This is what running it actually taught.
+
+**The authorized number and the executed number were not the same, and saying so
+was the work.** The sheet said the run "rewrites 516 button and link labels".
+516 is the count of control-class **findings**; the tool's mechanical rule is
+narrower — a *leading* glyph followed by a space and a letter, inside a quoted
+string, on a non-comment control line — and only **117** sites matched it. The
+other 399 are control-class marks that need a reworded sentence, a decision
+about a lone glyph, or a human eye. Final: **115 stripped in the scanned files**
+(two of the 117 held back, correctly) plus **16 in the generator**, taking
+control-class findings 516 → 401. ⚠️ **A count of findings is not a count of
+work, and a tool that reports one while a sheet promises the other will
+overpromise every time.** Same family as the `--cobalt` "~140" figure corrected
+the day before: *a figure is only wrong relative to the payload it names.*
+
+**13 of 16 rewritable sites in the dashboard HTML belonged to the generator.**
+`excel_to_dashboard.py` replaces whole sections daily, so stripping a mark there
+passes every test and is reverted overnight with nobody told. The sweep had no
+notion of Rule 1 at all — it was written to scan rendered output and never asked
+who writes it. The generator's own labels (`👥 RACI`, `📝 Update`, `📢 Nudge`,
+`📄 Report`, `📎 Attach`, `♻ Restore`, `🗄 Tabled`, `📈 KPI Trends`) were fixed
+at the source instead: 16 sites, in two shapes — an entity directly inside the
+anchor, and a mark wrapped in a sizing `<span>` that had to be removed whole.
+
+⚠️ **The guard was written twice, and the second version is the lesson.** The
+first asked "is this glyph+label a literal in the generator source?" — correct,
+tested, and it held 13 of 16. Then the generator was fixed first and the same
+guard on the same HTML held **2**, with no error and no warning: the fragment
+was gone from the generator, so the HTML's stale copies read as unowned. The
+replacement is the **union** of a positional test (inside a replaced region) and
+the fragment test, because each covers the other's blind spot — the region list
+is only as complete as its markers (`render_algo_details()` sits inside none of
+them), and the fragment test expires the moment the generator is fixed. Pinned
+by an **order-independence** test and a **marker-drift** test, the latter
+verified by renaming a marker and watching it go red. Full write-up:
+[`methodology-a-guard-that-depends-on-order-is-worse-than-none`](kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md).
+
+**Two tests failed, and they were right to.** `✓ Saved` became `Saved` on save
+buttons and status lines in `credential_reference.js` and `unified_courses.js`,
+and five test files asserted the old string. The label change is correct — the
+word is complete without the mark — so the assertions moved with it, **including
+the `check()` names and comments**, or the tests would describe a guard they no
+longer hold. ⚠️ Editing those files while the suite was mid-run invalidated that
+run; it was killed and re-run clean rather than trusted.
+
+**The three approved exceptions cost six edits, not a redesign.** 📋 To-Do (5
+occurrences), 🧭 guidance (2), ⚖️ Governance (0). Every one already had its word
+beside it, so Sam's own rule decided the disposition: *remove all emoji glyphs
+and **if any are crucial** replace with a muted glyph* — none was crucial, so
+none was replaced. The one 📋 left is a different control (the MQ badge in
+`canonical_subj4.js`, a lone glyph carrying its whole meaning) and belongs to the
+808-item decorative backlog, not here.
