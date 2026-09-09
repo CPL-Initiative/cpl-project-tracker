@@ -6,7 +6,7 @@
 //       still surfaces, on the Common SUBJ cell (where the fix happens),
 //       and the Status chip still reads "needs review".
 //   (c) the SUBJ dropdown (cs-subj-filter) renders with two optgroups
-//       ("Common subjects ✓" canonical picks / "Local-derived variants"
+//       ("Common subjects" canonical picks / "Local-derived variants"
 //       leftover codes) and filters rows by canonical == code OR
 //       variants_observed carrying the code, ANDing with the search box.
 //   (d) the injected table-chrome CSS (cs-ui-css) makes the header text
@@ -151,8 +151,8 @@ setTimeout(() => {
     check("(c) cs-subj-filter select renders in the toolbar", !!sel);
     const ogs = sel ? [...sel.querySelectorAll("optgroup")] : [];
     check("(c) exactly two optgroups", ogs.length === 2);
-    check("(c) first optgroup is 'Common subjects ✓'",
-      ogs[0] && ogs[0].label === "Common subjects ✓");
+    check("(c) first optgroup is 'Common subjects'",
+      ogs[0] && ogs[0].label === "Common subjects");
     check("(c) second optgroup is 'Local-derived variants'",
       ogs[1] && ogs[1].label === "Local-derived variants");
     check("(c) first option is 'All subjects' (value '')",

@@ -95,18 +95,18 @@ and still does, because the global key reads `system` until someone picks. A
 
 **Dark mode is correct in the chrome and in the grounds; what is left is a
 long tail of raw hexes.** Re-run `npm run a11y cobi-dark` for the live list —
-and read it through `scripts/a11y_triage.js`, which now groups by COLOUR PAIR.
+and read it through `scripts/a11y_triage.js`, which now groups by COLOR PAIR.
 
 ⭐ **THE TRIAGE WAS RANKING BY THE WRONG KEY, AND THAT IS WHY THIS LANE LOOKED
 LONG-TAILED WHEN IT WAS NOT.** `a11y_triage.js` grouped by SELECTOR and ranked
 by route count. The largest single fault — 25 findings, 11 routes — wore 12
 different selectors, one route each, so it printed as twelve
 `one route — that tab's own CSS` lines at the BOTTOM of the list. Its own header
-already said *"a ratio repeated exactly is ONE colour, not many"*; it applied
+already said *"a ratio repeated exactly is ONE color, not many"*; it applied
 that along the route axis only. Grouping by pair turned **193 "distinct causes"
 into a handful**.
 
-⭐ **AND A RATIO WITHOUT ITS TWO COLOURS IS NOT ACTIONABLE.** `scripts/a11y.js`
+⭐ **AND A RATIO WITHOUT ITS TWO COLORS IS NOT ACTIONABLE.** `scripts/a11y.js`
 computed the composited background (`worstBg`) and threw it away. It now records
 `fg`/`bg` and prints `#FG on #BG`; the triage regex takes the pair as OPTIONAL,
 so older saved reports still parse.
@@ -129,9 +129,9 @@ so older saved reports still parse.
 54 in consumer JS), and the fill/white-ink pairs on all four flipping accents.
 
 ⭐ **THE LAST SHARED ROOT CAUSE WAS A FILL WITH NO INK OF ITS OWN.** The team-phrase
-Unlock gate painted `background:#f5f5f5` and let its text colour inherit — in light
+Unlock gate painted `background:#f5f5f5` and let its text color inherit — in light
 that reads deliberate, in dark it was light ink on near-white at **1.09:1**, on 7
-routes. A fill that sets no colour is the quietest way to break a theme.
+routes. A fill that sets no color is the quietest way to break a theme.
 
 ## ⭐ Three token roles, and why there are three
 
@@ -159,7 +159,7 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 
 ⚠️ **THE ROUTE COUNT IS TOO COARSE TO STEER BY** — a route fails on any one
 finding, so 38 fixes can leave it at 26. Steer by the finding count and the
-colour-pair ranking. ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, which made
+color-pair ranking. ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, which made
 the ground swap provably safe: light held at 18 across every pass.
 
 ⚠️ **THE GLYPH ROW IS MOSTLY A CORRECTION.** Of the 401 reported, **348 belong to
@@ -182,8 +182,8 @@ check → **triage** → remediate → re-measure → record.
 collapses a saved sweep into causes, because the number of findings is not the
 number of problems: this lane's first dark sweep was 38/38 routes and **511
 findings that were ~227 occurrences of six shared-chrome selectors**. It reads a
-saved report and never re-measures, so it is free. It ranks by **colour pair
-first** (one colour decision, however many selectors wear it), then by blast
+saved report and never re-measures, so it is free. It ranks by **color pair
+first** (one color decision, however many selectors wear it), then by blast
 radius across routes — see the remainder section above for why the second axis
 alone hid the biggest fault in this lane.
 

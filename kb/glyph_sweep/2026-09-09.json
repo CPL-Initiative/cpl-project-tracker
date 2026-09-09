@@ -3,7 +3,7 @@
  "files_scanned": 139,
  "counts": {
   "decoration": 812,
-  "control": 344,
+  "control": 346,
   "status": 222
  },
  "findings": [
@@ -5398,6 +5398,22 @@
    "kind": "decoration",
    "generator_owned": false,
    "context": "cp = null;   // cross-discipline pool that disagrees \u2192 discard, keep the course's discipline"
+  },
+  {
+   "file": "cip_crosswalk.js",
+   "line": 1385,
+   "glyph": "\u2713",
+   "kind": "control",
+   "generator_owned": false,
+   "context": "clear: { g: \"\u2713\", label: \"Ready\", cls: \"ok\" },"
+  },
+  {
+   "file": "cip_crosswalk.js",
+   "line": 1386,
+   "glyph": "\u21c4",
+   "kind": "control",
+   "generator_owned": false,
+   "context": "suggest: { g: \"\u21c4\", label: \"Suggested\", cls: \"suggest\" },"
   },
   {
    "file": "cip_crosswalk.js",

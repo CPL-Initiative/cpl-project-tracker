@@ -317,10 +317,10 @@ function CONTRAST() {
     const p = m[1].split(",").map((x) => parseFloat(x));
     return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 };
   };
-  /* ⭐ A RATIO WITHOUT ITS TWO COLOURS IS NOT ACTIONABLE. The fix for a contrast
+  /* ⭐ A RATIO WITHOUT ITS TWO COLORS IS NOT ACTIONABLE. The fix for a contrast
      fault is always "which token painted this", and the report used to name the
      selector and the ratio only — so a session had to grep and guess, and two
-     faults that were ONE colour looked like two problems. `worstBg` was already
+     faults that were ONE color looked like two problems. `worstBg` was already
      computed here and thrown away. */
   const hex = (c) => "#" + [c.r, c.g, c.b]
     .map((x) => Math.round(x).toString(16).padStart(2, "0")).join("").toUpperCase();
@@ -339,7 +339,7 @@ function CONTRAST() {
       ? "." + el.className.trim().split(/\s+/).slice(0, 2).join(".") : "");
 
   /* A gradient is not unmeasurable — it is a SET of backgrounds, and text has to
-     pass over all of them. Pull the colour stops and score the worst one. Only
+     pass over all of them. Pull the color stops and score the worst one. Only
      an image (which we genuinely cannot read) stays unmeasurable. Doing this
      matters here: Sierra's entire header is a gradient, so "unmeasurable" would
      permanently excuse the h1, the role line and the only link above the fold. */

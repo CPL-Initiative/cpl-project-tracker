@@ -45,7 +45,7 @@ const text = fs.readFileSync(file, "utf8");
    is the only thing at that indent that ends in FAIL, so the parser keys on it
    rather than on any finding wording, which changes as rules are added. */
 const ROUTE = /^\s{2,4}(\S[^\s].*?)\s+FAIL\s*$/;
-/* The colour pair is optional in the pattern ON PURPOSE: reports saved before
+/* The color pair is optional in the pattern ON PURPOSE: reports saved before
    the sweep recorded fg/bg still parse, and a triage that silently matches
    nothing is worse than one that says less. */
 const CONTRAST = /contrast\s+([0-9.]+):1 \(needs ([0-9.]+)\)\s+(?:(#[0-9A-Fa-f]{6}) on (#[0-9A-Fa-f]{6})\s+)?(\S+)\s+([0-9.]+)px/;
@@ -56,7 +56,7 @@ const OVERFLOW = /page scrolls sideways by (\d+)px/;
 let route = null;
 const routes = new Set();
 const contrast = new Map();   // "selector @ ratio" -> Set(routes)
-/* ⭐ THE SELECTOR IS NOT THE CAUSE; THE COLOUR PAIR IS. Ranking by selector
+/* ⭐ THE SELECTOR IS NOT THE CAUSE; THE COLOR PAIR IS. Ranking by selector
    scatters one bad token across a dozen "one route — that tab's own CSS" lines
    at the BOTTOM of the list. Measured on COBI's dark sweep, 2026-09-09: the
    single biggest fault was one pair appearing 25 times over 11 routes on 12
@@ -141,8 +141,8 @@ console.log(`${findings} finding(s) across ${c.length + t.length + s.length} dis
 const pairRank = [...pairs.entries()]
   .sort((a, b) => b[1].n - a[1].n || b[1].routes.size - a[1].routes.size);
 if (pairRank.length) {
-  console.log("\n── CONTRAST, by COLOUR PAIR (this is the cause) ──");
-  console.log("  Each line is ONE colour decision. Fix the pair and every selector under it clears.");
+  console.log("\n── CONTRAST, by COLOR PAIR (this is the cause) ──");
+  console.log("  Each line is ONE color decision. Fix the pair and every selector under it clears.");
   pairRank.forEach(([k, e]) => {
     console.log(`  ${String(e.n).padStart(3)} findings  ${k}  worst ${e.worst}:1`);
     console.log(`             ${e.routes.size} route(s), ${e.sels.size} selector(s): ` +
@@ -160,11 +160,11 @@ section("── SIDEWAYS SCROLL (mobile) ──", o,
   "Wide content scrolls inside its OWN container; the body never scrolls sideways.");
 
 console.log("\n── order of work ──");
-const all = [...pairRank.map(([k, e]) => ["colour", k, e.n]),
+const all = [...pairRank.map(([k, e]) => ["color", k, e.n]),
              ...c.map((x) => ["contrast", ...x]), ...t.map((x) => ["target", ...x]),
              ...s.map((x) => ["scroller", ...x])].sort((a, b) => b[2] - a[2]);
 all.slice(0, 12).forEach(([kind, k, n], i) =>
   console.log(`  ${String(i + 1).padStart(2)}. [${kind}] ${k}  — ${n} ` +
-              (kind === "colour" ? "finding(s)" : "route(s)")));
+              (kind === "color" ? "finding(s)" : "route(s)")));
 if (!all.length) console.log("  nothing to do — the sweep is clean.");
 console.log("\nRe-run the sweep after each root cause, not at the end: the count is the proof.");

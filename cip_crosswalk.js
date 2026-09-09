@@ -1382,8 +1382,8 @@
   //  • "suggest" = a peer field points at a DIFFERENT code than your TOP's crosswalk winner → a "⇄"
   //    (consider switching), kept DISTINCT from the review "?"; the two-box row shows the actual codes.
   var REV_STATUS = {
-    clear: { g: "", label: "Ready", cls: "ok" },
-    suggest: { g: "", label: "Suggested", cls: "suggest" },
+    clear: { g: "✓", label: "Ready", cls: "ok" },
+    suggest: { g: "⇄", label: "Suggested", cls: "suggest" },
     review: { g: "?", label: "Review", cls: "warn" },
     manual: { g: "◻", label: "Manual", cls: "muted" },
   };

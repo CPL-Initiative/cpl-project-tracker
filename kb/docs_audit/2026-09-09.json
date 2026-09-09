@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 849,
-    "bytes": 9066819,
+    "bytes": 9066811,
     "over_budget": 5,
     "handoff_max": 245,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180583,
+        "bytes": 180575,
         "over": 1
       },
       "handoff": {
@@ -57,12 +57,13 @@
     },
     "by_rule": {
       "oversized_doc": 5,
-      "house_voice": 21,
+      "house_voice": 23,
+      "american_spelling": 1,
       "vault_heavy_path": 47
     },
     "vault": {
       "files": 2762,
-      "bytes": 1351550714,
+      "bytes": 1351551588,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [
@@ -182,13 +183,32 @@
       "rule": "house_voice",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 10,
         "terms": {
-          "leverage": 3
+          "leverage": 10
         }
       },
-      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "message": "10 business-register terms — leverage x10 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/coursecontrolnumber_remint.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — modelling→modeling, labelled→labeled",
+      "path": "docs/cpl_funding_handoff.md"
     },
     {
       "rule": "oversized_doc",
@@ -337,6 +357,18 @@
       "path": "docs/public_private_repo_split_scope.md"
     },
     {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/kb_build_status.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
@@ -348,6 +380,18 @@
       },
       "message": "33,041 B is 2.8× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
+    },
+    {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "terms": {
+          "leverage": 4
+        }
+      },
+      "message": "4 business-register terms — leverage x4 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/pipeline_reference.md"
     },
     {
       "rule": "oversized_doc",
@@ -366,12 +410,12 @@
       "rule": "house_voice",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 7,
         "terms": {
-          "leverage": 3
+          "leverage": 7
         }
       },
-      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
     },
     {
