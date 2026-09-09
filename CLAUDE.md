@@ -34,9 +34,9 @@ was written for, where a session re-derived three settled facts that were
 already written down. When you move something out of this file, leave the line
 that says it is out there.
 
-Deep reference already offloaded: `docs/reference/` — pipeline_reference ·
+Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
-finished_workstreams · `lanes/` (see the stubs below).
+finished_workstreams · skyview_invariants · `lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, triggered by their own
 `description` rather than by a pointer: **consult-doctrine** (what has this repo

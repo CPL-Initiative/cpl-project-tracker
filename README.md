@@ -194,10 +194,13 @@ The whole ecosystem, end-to-end:
    the tab is a *reference faculty consult*, not an authority replacing them).
    **It opens on SkyView** — the whole reference as one map, filling the
    window on its own (2026-09-05) — and since 2026-09-07 **as the Sky**: the
-   reference as the night sky seen through a window, with the **Globe** and
-   the flat **Map** one click away on the same canvas (Sky · Globe · Map),
-   Night by default and Day one control away, a slow turn that stops at the
-   first touch, and drag and drop on the curve. COBI's header and side menu fold away and
+   reference as the night sky seen through a window, with the **Globe** one
+   click away on the same canvas (the flat **Map** is still routable at
+   `#map`, but its button left the row on 2026-09-08), Night by default and
+   Day one control away, a slow turn that stops at the first touch, and drag
+   and drop on the curve. **On a phone** (2026-09-09) the control row folds
+   behind the word *Controls* and opens as a sheet at the bottom, the legend
+   starts closed and the map takes 86% of the window; **pinch zooms**. COBI's header and side menu fold away and
    the ☰ at the map's top left brings the menu back, while the window controls
    at the row's right step between the map inside COBI, the map alone and the
    browser's full screen; the map's More menu reaches the comprehensive view,
@@ -207,7 +210,11 @@ The whole ecosystem, end-to-end:
    the credential that reaches it — the curated name, the issuing and training
    agencies, what it earns, the colleges holding it — and **Articulations**
    lights the courses that carry one; the face says its own coverage and
-   `#skyview/cpl` links to it —
+   `#skyview/cpl` links to it. **The search box also takes questions**
+   (2026-09-09): type a sentence rather than a keyword and Enter asks
+   SkyView, which turns it into a selection on the map — the map answers by
+   moving, and anything it cannot find on the map it says so rather than
+   quietly leaving out —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the
