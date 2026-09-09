@@ -364,8 +364,12 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
         si = 0
         ph = phase_of(r["id"])
         for R, slots in rings:
+            # Ladder order AROUND this ring; which ring was decided by score above.
+            ring_sats = by_level(sats[si:si + slots], lambda it: (it[0].get("title") or ""))
+            ri = 0
             for (x, y) in ring_positions(cx, cy, R, slots, ph):
-                item = sats[si]
+                item = ring_sats[ri] if ri < len(ring_sats) else sats[si]
+                ri += 1
                 s, (score, why) = item[0], item[1]
                 home = item[2] if len(item) > 2 else None
                 sp = point_of(s, x, y)
@@ -387,7 +391,8 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
     while left:
         cap = max(6, int(2 * math.pi * R / (2 * sat_r + RING_GAP)))
         take = min(cap, len(left))
-        for (x, y), s in zip(ring_positions(0, 0, R, take, 0.31 * ring_i), left[:take]):
+        for (x, y), s in zip(ring_positions(0, 0, R, take, 0.31 * ring_i),
+                             by_level(left[:take], lambda r: (r.get("title") or ""))):
             sp = point_of(s, x, y)
             sp["a"] = 1
             pts.append(sp)
@@ -433,6 +438,53 @@ def articulation_counts():
         except (OSError, ValueError):
             _ARTS = {}
     return _ARTS
+
+
+# ── course level, for layout proximity (Sam, 2026-09-09) ─────────────────────
+# "if you can also use level (beg, int, adv) when you have some indicator, that
+# would be helpful". The indicator is the TITLE, which is the only place we hold
+# it, and ccr_universe.js already reads it the same way for the sidebar's level
+# ladder (LEVEL_TESTS). These patterns mirror that function deliberately — one
+# rule for the ladder and the layout, or the map and the panel disagree about
+# what "Beginning" means.
+#
+# ⚠️ MEASURED FIRST: only 12% of the 49,896 points carry a level word at all
+# (2,565 beginning · 1,400 intermediate · 2,173 advanced), though 119 of the 159
+# islands hold at least three. So this ORDERS the levelled minority and must
+# leave the other 88% exactly as they were — hence a STABLE sort on the level
+# rank alone, never a re-sort of everything.
+_LEVEL_TESTS = [
+    ("Advanced", re.compile(r"\badvanced?\b", re.I)),          # most specific first:
+    ("Intermediate", re.compile(r"\bintermediate\b", re.I)),   # an Advanced course
+    ("Beginning", re.compile(r"\b(?:beginning|beginner|basics?|elementary)\b", re.I)),
+]
+_LEVEL_RANK = {"Beginning": 0, "Intermediate": 1, "Advanced": 2}
+
+
+def level_rank(title):
+    """0/1/2 for a title that names a level, 3 for one that does not.
+
+    3 sorts last, matching the panel's ladder, which lists "Level not stated"
+    after the three rungs rather than guessing at it.
+    """
+    v = title or ""
+    for name, rx in _LEVEL_TESTS:
+        if rx.search(v):
+            return _LEVEL_RANK[name]
+    return 3
+
+
+def by_level(rows, title_of):
+    """Stable reorder of one ring's worth of courses into ladder order.
+
+    ⚠️ STABLE AND LEVEL-ONLY. The caller has already chosen WHICH ring each
+    course sits on, by match score — the strongest candidates nearest their
+    parent — and that ordering is a real signal about placement confidence.
+    Re-sorting by level outright would put a weak match on the inner ring. This
+    only decides the order AROUND a ring the course was already assigned to, so
+    the levelled courses gather and everything else keeps its score order.
+    """
+    return sorted(rows, key=lambda r: level_rank(title_of(r)))
 
 
 _CTE_REF = None

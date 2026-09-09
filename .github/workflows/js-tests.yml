@@ -162,6 +162,13 @@ jobs:
       # than carrying a copy. Pure-stdlib python, no network.
       - name: SkyView sky placement guard (kb/_build_ccr_sky.py)
         run: python3 tests/ccr_sky_payload_test.py
+      # Course level in the island layout (Sam, 2026-09-09) — the rule must match
+      # ccr_universe.js's LEVEL_TESTS, or the map and the sidebar ladder disagree
+      # about what "Beginning" means, and the reorder must be STABLE: only 12% of
+      # points carry a level word, and the other 88% are ordered by the match
+      # score that decided which ring they sit on. Pure-stdlib python, no network.
+      - name: SkyView level-layout guard (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_level_layout_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory
       # row still true": dead paths, dangling pointers, a stale row wearing a
       # verification stamp, PRs not on main, null slugs, near-duplicates. Each

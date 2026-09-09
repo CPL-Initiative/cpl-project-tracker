@@ -6451,7 +6451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 428
+     "line": 433
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -11181,7 +11181,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 455
+     "line": 507
     },
     {
      "id": "script:kb/_join_cte_from_top.py",
@@ -12676,7 +12676,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 768
+     "line": 820
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12710,7 +12710,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 769
+     "line": 821
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -14089,7 +14089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 780
+     "line": 832
     },
     {
      "id": "script:kb/_build_discipline_blanks_worklist.py",
@@ -14285,7 +14285,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 806
+     "line": 858
     }
    ],
    "producers": [
@@ -14341,7 +14341,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 781
+     "line": 833
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -14411,7 +14411,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 797
+     "line": 849
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -18003,6 +18003,7 @@
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
     "tests/ccr_sky_payload_test.py",
+    "tests/ccr_level_layout_test.py",
     "tests/memory_audit_test.py",
     "tests/prefix_fold_dryrun_test.py",
     "tests/prefix_fold_apply_test.py",
