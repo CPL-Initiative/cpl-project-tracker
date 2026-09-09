@@ -81,7 +81,7 @@
   var reportIncludeProposed = false;     // DEFAULT OFF — verified-only (the pane's verified-default trust rule)
   // DOM refs
   var appEl, authBar, tilesEl, statusSegEl, tagCloudEl, activeEl, curateBarEl,
-    listMetaEl, listEl, listFootEl, rippleEl, searchEl, themeEl,
+    listMetaEl, listEl, listFootEl, rippleEl, searchEl,
     filtersEl, bodyEl, reportEl, viewSegEl;
 
   // ── report sections (in order) — plain-language briefing headings ──
@@ -245,9 +245,13 @@
     // view-mode toggle — 🧠 Curate (existing UI) vs 📄 Report (the briefing)
     viewSegEl = el("div", "mem-viewseg"); viewSegEl.setAttribute("role", "group"); viewSegEl.setAttribute("aria-label", "Switch view mode");
     actions.appendChild(viewSegEl);
-    themeEl = el("button", "mem-theme", "🌗 Theme"); themeEl.type = "button";
-    themeEl.setAttribute("aria-label", "Toggle light and dark theme");
-    actions.appendChild(themeEl);
+    // ⚠️ THE PER-TAB THEME BUTTON WAS REMOVED 2026-09-08 (Sam: "ensure that it
+    // sets all tabs and windows using that one control"). It wrote data-theme
+    // straight onto <html> and REMEMBERED NOTHING, so it disagreed with every
+    // other tab until reload and then silently lost the choice; it also wore
+    // 🌙/☀️ against the plain-words rule. The header's Theme selector
+    // (cpl_theme.js) is the one control now, and it reaches this tab because
+    // the CSS below already keys on :root[data-theme].
     head.appendChild(actions);
     wrap.appendChild(head);
 
@@ -291,7 +295,6 @@
 
     root.appendChild(wrap);
     appEl = wrap;
-    wireTheme();
   }
 
   // ── auth / curate-mode bar ──
@@ -1734,17 +1737,6 @@
   }
   function refresh() { return load(); }
 
-  // ── theme toggle (reflects the effective theme; re-syncs on OS flip) ──
-  function wireTheme() {
-    var root = document.documentElement;
-    var mqDark = window.matchMedia ? window.matchMedia("(prefers-color-scheme:dark)") : { matches: false, addEventListener: null, addListener: null };
-    function effectiveDark() { var cur = root.getAttribute("data-theme"); return cur ? cur === "dark" : mqDark.matches; }
-    function sync() { var dark = effectiveDark(); themeEl.textContent = dark ? "🌙 Dark" : "☀️ Light"; themeEl.setAttribute("aria-pressed", dark); themeEl.title = "Theme: currently " + (dark ? "dark" : "light") + " — click to switch"; }
-    themeEl.onclick = function () { root.setAttribute("data-theme", effectiveDark() ? "light" : "dark"); sync(); };
-    var onSys = function () { if (!root.getAttribute("data-theme")) sync(); };
-    if (mqDark.addEventListener) mqDark.addEventListener("change", onSys); else if (mqDark.addListener) mqDark.addListener(onSys);
-    sync();
-  }
 
   function clearAll() { state.kinds = {}; state.tag = ""; state.status = "verified"; state.q = ""; if (searchEl) searchEl.value = ""; view = { mode: "index" }; render(); }
 
@@ -2004,8 +1996,6 @@
       ".cpl-mem .mem-head-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;}",
       ".cpl-mem .mem-search{font:inherit;font-size:.86rem;min-width:220px;max-width:46vw;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-body);}",
       ".cpl-mem .mem-search::placeholder{color:var(--text-faint);}",
-      ".cpl-mem .mem-theme{font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
-      ".cpl-mem .mem-theme:hover{background:var(--surface-subtle);}",
       // auth bar
       ".cpl-mem .mem-authbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 2px;}",
       ".cpl-mem .mem-authok{font-size:.76rem;font-weight:600;color:var(--st-ok);background:color-mix(in srgb,var(--st-ok) 12%,transparent);border:1px solid color-mix(in srgb,var(--st-ok) 30%,transparent);padding:3px 10px;border-radius:9px;}",

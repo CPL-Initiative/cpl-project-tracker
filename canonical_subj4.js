@@ -654,7 +654,7 @@
   function ensureAuthorityCss() {
     if (document.getElementById("cs-auth-css")) return;
     document.head.appendChild(el("style", { id: "cs-auth-css" }, [
-      "#tab-canonical-subj4 .cs-badge.auth{color:var(--seal-blue);border-color:var(--cobalt-on-dark);" +
+      "#tab-canonical-subj4 .cs-badge.auth{color:var(--seal-blue-text,#002F6D);border-color:var(--cobalt-on-dark);" +
         "background:var(--surface-opaque);font-family:ui-monospace,Menlo,monospace;font-weight:600;}" +
       "#tab-canonical-subj4 .cs-badge.proposed{color:var(--text-muted);border-style:dashed;font-weight:500;}"
     ]));

@@ -72,9 +72,12 @@
       ".cobi-seal{display:none;}",
       ".cobi-brandtext{display:flex;flex-direction:column;line-height:1.12;min-width:0;}",
       ".header h1{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;font-weight:800;",
-      "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
+      "letter-spacing:.08em;color:var(--seal-blue-text,#002F6D);margin:0;white-space:nowrap;}",
       ".cobi-alpha{display:inline-block;margin-left:.5rem;padding:.08rem .38rem;vertical-align:.18em;",
       "font-family:'Source Sans 3',Arial,sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.10em;",
+      // ⚠️ --seal-blue, NOT the text grade: this ink sits on the MUSTARD FILL, not
+      // on the page ground, so it stays navy in both themes (5.2:1 either way).
+      // The on-dark grade here would be #7DA1D4 on #E3B341 — 1.9:1.
       "text-transform:uppercase;color:var(--seal-blue,#00356B);background:var(--mustard-fill,#E3B341);",
       "border-radius:3px;white-space:nowrap;}",
       // LOW-KEY, deliberately (Sam, 2026-09-04: "remove the formatting around
@@ -118,6 +121,21 @@
       "transition:color .15s;white-space:nowrap;letter-spacing:0!important;border-radius:0!important;}",
       ".cobi-util-link:hover,.header #refreshBtn:hover{color:var(--cobalt,#0047AB)!important;background:none!important;}",
       ".cobi-about{position:relative;order:1;}",
+      // The About caret is DRAWN, matching the Theme selector's exactly, so the
+      // two "opens something" controls in the strip read as one set — Sam,
+      // 2026-09-08: "as clean and consistent as possible". It replaces a typed
+      // ▾ (and a typed ℹ before the word), which the plain-words rule bars and
+      // which a screen reader read out as part of the button's name:
+      // "black down-pointing small triangle". currentColor keeps it right on
+      // the night ground with no second rule.
+      "#cobiAboutBtn{position:relative;padding-right:.85rem!important;}",
+      "#cobiAboutBtn::after{content:\"\";position:absolute;right:.2rem;top:50%;",
+      "width:0;height:0;border-left:3.5px solid transparent;border-right:3.5px solid transparent;",
+      "border-top:4px solid currentColor;transform:translateY(-2px);pointer-events:none;}",
+      // Open state points the caret up — the state is then carried by shape as
+      // well as by aria-expanded, which is "color is never the only signal"
+      // applied to a control that has no color change at all.
+      "#cobiAboutBtn[aria-expanded=\"true\"]::after{border-top:0;border-bottom:4px solid currentColor;}",
       // Refresh lives INSIDE the About panel now (Sam, 2026-09-04). It keeps
       // .cobi-util-link for the shared hover/focus treatment, so give it the
       // panel's own block-link geometry rather than the strip's inline one.
@@ -127,8 +145,16 @@
       ".cobi-about-panel #refreshBtn:hover{text-decoration:underline;}",
       // The stamp says how fresh the figures are — that is data a reader acts
       // on, so it takes the muted TEXT token too (was 3.53:1 on faint).
-      ".cobi-utility .last-updated{order:9;flex-basis:100%;text-align:right;font-size:.7rem!important;",
-      "color:var(--text-muted,#5C5C55)!important;margin:.05rem 0 0!important;font-weight:400;}",
+      // ⚠️ NO flex-basis:100% any more (Sam, 2026-09-08: "as clean and
+      // consistent as possible"). It forced the stamp onto a LINE OF ITS OWN,
+      // so the masthead carried three rows for two rows of content. Inline it
+      // and the row count drops by one without hiding the figure — and hiding
+      // it was the alternative, which the 2026-09-04 note rules out: the stamp
+      // says how fresh the numbers are, and that is data a reader acts on.
+      // It still wraps on its own below the breakpoint, because the cluster is
+      // flex-wrap:wrap and it is last.
+      ".cobi-utility .last-updated{order:9;font-size:.7rem!important;",
+      "color:var(--text-muted,#5C5C55)!important;margin:0!important;font-weight:400;white-space:nowrap;}",
       // ── About popover ──
       ".cobi-about-panel{position:absolute;right:0;top:calc(100% + .4rem);z-index:300;width:320px;",
       "background:var(--surface-opaque,#fff);border:1px solid var(--border-strong,rgba(28,28,26,.30));",
@@ -186,7 +212,17 @@
       ".cobi-live button:hover{background:rgba(255,255,255,.14);}",
       ".cobi-live :focus-visible{outline:3px solid #fff;outline-offset:2px;}",
       "@media (max-width:560px){.cobi-live{padding:.5rem .9rem;}",
-      ".cobi-live button{margin-left:0;}}"
+      ".cobi-live button{margin-left:0;}}",
+      /* ── dark (cpl_theme.js's contract) ──────────────────────────────────
+       * NOTHING HERE, and that is the point. The wordmark WAS overridden here
+       * with a scoped `:root[data-theme="dark"] .header h1` rule, because
+       * --seal-blue stays the navy in dark (200+ fills depend on it) and
+       * #002F6D on the night ground is 1.29:1 — an invisible brand on all 38
+       * tabs. That override is gone: the palette now carries --seal-blue-text
+       * as its own token, the h1 above reads it, and one token beats a special
+       * case bolted onto one selector. The alpha chip and the live banner need
+       * nothing either — both are ink on the navy FILL, which the ground never
+       * touches. */
     ].join("");
     document.head.appendChild(s);
   }

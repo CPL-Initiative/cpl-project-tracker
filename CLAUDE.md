@@ -298,6 +298,9 @@ named here because a store nobody names is a store nobody finds —
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
+- **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
+  Triage first: **findings are not problems** — 511 were ~227 occurrences of six
+  shared-chrome selectors, so top-to-bottom fixes the least important thing first.
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
   prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
   window** — the canvas of identities you pan, search and drag on, with its one row of
@@ -561,7 +564,11 @@ and one was carried out of this file entirely by a relocation.
   and mobile friendly."* **Do not invent a palette.** Spec:
   [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
   `prototype/first_light_theme_v1.html` v1.6; `var(--token)`, never a raw hex.
-  It is a **light** identity with no dark PAGE palette.
+  A **light** identity by default. ⚠️ Since 2026-09-08 one opt-in dark palette
+  exists (Sam's ask) — a TOKEN SWAP owned by `cpl_theme.js`, which owns the
+  contract themed components key on. **Dark is not license to invent a color**:
+  add the role to the dark `:root` in BOTH HTMLs (Rule 4), never a component
+  rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
 - **ACCESSIBLE TO TODAY'S STANDARDS — AND VERIFIED, NOT CLAIMED.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the maths. **Color is
@@ -607,9 +614,11 @@ and one was carried out of this file entirely by a relocation.
     That rule says a state already worth showing must not be shown by color
     ALONE; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **Existing approved exceptions stay** (the 📋 To-Do button, the 🧭
-    guidance pane, the ⚖️ Governance tab) — they are named here so nobody
-    "fixes" them, and they are the ceiling, not a precedent to extend.
+  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE SUPERSEDED (Sam, 2026-09-09):**
+    *"remove all emoji glyphs and if any are crucial replace with a muted glyph
+    using white and CO blue as default."* The 📋 To-Do button, 🧭 guidance pane
+    and ⚖️ Governance tab become muted CO-blue marks; nothing is a precedent to
+    extend. Sweep + backlog: [`/a11y-pass`](.claude/commands/a11y-pass.md).
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -734,12 +743,9 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > and every lane file — mechanically, because Sam does not review checkpoint
 > output by design.
 >
-> **Retiring a lane.** Completed rows through S32 are in
-> [`docs/roadmap_archive.md`](docs/roadmap_archive.md). A lane that has shipped
-> and is stable — **no NEXT, no NEEDS SAM, no BLOCKED in its own text** — moves
-> verbatim to
-> [`docs/reference/finished_workstreams.md`](docs/reference/finished_workstreams.md)
-> and its row leaves this table.
+> **Retiring a lane** — no NEXT, no NEEDS SAM, no BLOCKED in its own text; it
+> moves verbatim to `docs/reference/finished_workstreams.md` and its row leaves.
+> [How](docs/reference/lanes/README.md).
 >
 > ⚠️ **Do not grep for this; the lint already did.** `lane_retirement_signal`
 > in `kb/_docs_audit.py` runs the test over every lane file with a vocabulary
@@ -748,12 +754,9 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > confirmed by reading all 30). Then READ the ones it names — the lint is
 > fail-safe and deliberately never says "retire this".
 >
-> ⚠️ **Hand-grepping this has been wrong every single time it was tried.**
-> Session 206 called five rows retirable-with-no-judgment-calls; four carried an
-> explicit open-work list in their own text. Session 208 then mis-grepped it
-> three more times in one run — anchoring to line-start (0 hits), searching
-> `NEXT` and missing `Next:`, and requiring a trailing colon and missing bare
-> `BLOCKED` — each producing a confident, plausible, wrong list.
+> ⚠️ **Hand-grepping this has been wrong EVERY time it was tried** (four occasions
+> across S206 and S208, each a confident, plausible, wrong list) —
+> [why](docs/reference/lanes/README.md).
 
 | Phase | What | Status |
 |---|---|---|
@@ -788,6 +791,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
 | **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
+| **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-409 document(s).
+411 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -163,6 +163,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that writes to the queue it monitors — CI noise is indistinguishable from user signal](../kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A text measure must agree with what sits beside it](../kb-notes/methodology-a-text-measure-must-agree-with-what-sits-beside-it.md) | methodology | published | 2026-08-22 | 2026-08-22 |
+| [A token with two jobs cannot be themed — count a token's uses by ROLE before you give it a dark value](../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A total that balances is not a total that is right](../kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A value can exist in the repo and never reach the payload — two minting paths, one inference pipeline](../kb-notes/methodology-a-discipline-can-exist-in-the-repo-and-never-reach-the-payload.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A view must not fly where it cannot draw](../kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw.md) | methodology | published | 2026-08-25 | 2026-08-25 |
@@ -332,6 +333,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [The instrument may not live inside the system under test](../kb-notes/methodology-the-instrument-may-not-live-inside-the-system-under-test.md) | methodology | published | 2026-08-29 | 2026-08-30 |
 | [The mark is not the footprint — draw inside what you packed, and spread at load](../kb-notes/methodology-the-mark-is-not-the-footprint.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [The measuring browser can hide the defect](../kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [The number of findings is not the number of problems — rank an audit by blast radius before you read it](../kb-notes/methodology-the-number-of-findings-is-not-the-number-of-problems.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [The plausible cause is not the measured one, and the check is usually cheaper than the guess](../kb-notes/methodology-the-plausible-cause-is-not-the-measured-one.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [The same arithmetic can read as withholding or as investment](../kb-notes/methodology-the-same-arithmetic-can-read-as-withholding-or-as-investment.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [The sphere is the map through a projection, not a second renderer](../kb-notes/methodology-the-sphere-is-the-map-through-a-projection.md) | methodology | published | 2026-09-07 | 2026-09-07 |

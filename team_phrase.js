@@ -193,7 +193,7 @@
     wrap.style.cssText = 'display:inline-flex;align-items:center;gap:0.4rem;flex-wrap:wrap;';
     if (opts.blurb) {
       var b = document.createElement('span');
-      b.style.cssText = 'font-size:0.78rem;color:#666;';
+      b.style.cssText = 'font-size:0.78rem;color:var(--text-muted,#5C5C55);';
       b.textContent = opts.blurb;
       wrap.appendChild(b);
     }
@@ -201,13 +201,13 @@
     input.type = 'password';
     input.placeholder = opts.placeholder || 'team phrase…';
     input.autocomplete = 'off';
-    input.style.cssText = 'padding:4px 8px;border:1px solid #ccc;border-radius:4px;font-size:0.8rem;font-family:inherit;max-width:160px;';
+    input.style.cssText = 'padding:4px 8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;font-size:0.8rem;font-family:inherit;max-width:160px;background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);';
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = opts.label || '🔓 Unlock editing';
-    btn.style.cssText = 'padding:4px 10px;border:1px solid #ccc;border-radius:4px;background:#f5f5f5;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;';
+    btn.style.cssText = 'padding:4px 10px;border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:4px;background:var(--surface-muted,#ECE9E2);color:var(--text-body,#3A3A36);font-size:0.78rem;font-weight:600;cursor:pointer;font-family:inherit;';
     var msg = document.createElement('span');
-    msg.style.cssText = 'font-size:0.75rem;color:#c00;';
+    msg.style.cssText = 'font-size:0.75rem;color:var(--crimson,#920000);';
     function go() {
       msg.textContent = '';
       btn.disabled = true;

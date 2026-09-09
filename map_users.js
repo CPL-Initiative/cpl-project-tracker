@@ -117,7 +117,7 @@
       ".mapu-lens { display:flex; gap:6px; margin:0 0 10px; flex-wrap:wrap; }",
       ".mapu-lensbtn { font-size:.8rem; padding:5px 12px; border:1px solid var(--border);"
         + " border-radius:14px; background: var(--surface); color: var(--text-muted); cursor:pointer; }",
-      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color: var(--seal-blue); }",
+      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color:var(--seal-blue-text,#002F6D); }",
       ".mapu-lensbtn.on { background: var(--seal-blue); border-color: var(--seal-blue); color:#fff; }",
       ".mapu-lenscount { font-weight:700; }",
       ".mapu-subh { color: var(--navy-primary); margin:22px 0 2px; font-size:1rem; }",

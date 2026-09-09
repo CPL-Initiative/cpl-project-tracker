@@ -2744,12 +2744,24 @@ var solo=true, curView="skyview";
  * state, and so does this: `unrec` is a switch of its own, never folded into
  * credit. `members` is the ring of college-course squares an identity opens
  * into; the map is quieter with it off. */
-var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
+var SHOW_KEYS=["cr","nc","nce","unrec","cte","aca","ctena","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
 var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
 /* The word each switch shows in the menu, the hint and the row's tooltip. */
 var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014 noncredit enhanced", unrec:"Credit status not recorded",
   mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses",
-  arty:"Has articulations", noart:"No articulation recorded"};
+  arty:"Has articulations", noart:"No articulation recorded",
+  /* ── CTE vs academic (Sam, 2026-09-09) ──────────────────────────────────────
+   * "Need check boxes added to Show All drop down to show career technical ed
+   * (CTE) vs. academic … I believe the TOP codes with an asterisk are all CTE."
+   * He is right, and it is one of only TWO uses of TOP this repo trusts (the
+   * CLAUDE.md caveat names the CTE flag and the CIP crosswalk by name). The
+   * payload carries it as `e`, read from the manual's asterisk via
+   * kb/reference/top_categories.json.
+   *
+   * ⚠️ THREE SWITCHES, NOT TWO — the same shape as `unrec` on credit. 15% of
+   * points carry no resolvable TOP code, and folding them into "Academic" would
+   * assert something about 7,569 courses that the data does not say. */
+  cte:"CTE \u2014 career technical", aca:"Academic", ctena:"CTE status not recorded"};
 /* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
  * Each pick from the suggestion list becomes a TOKEN beside the search box; the
  * map rings every token and fits them all in view. One token behaves exactly as
@@ -2786,6 +2798,23 @@ var MEMBER_ZOOM=2.7;
  * of squares would otherwise sit over the identity you meant to click. */
 var MEMBER_ZOOM_ALL=4.2;
 var memberPts=[];
+/* ⭐ PARKED COURSES (Sam, 2026-09-09: "when I drag a course as if I am going to
+ * merge it with another course ... it stays where I leave it. Currently it snaps
+ * back if I don't merge it").
+ *
+ * A member has no position of its own — drawMembers puts it on a SPOKE of its
+ * parent's ring, at an angle derived from its index. So "leave it there" cannot
+ * be a screen coordinate: pan, zoom and the sky's turn would all walk away from
+ * it. It is stored in the same WORLD frame islands use for their own dx/dy, and
+ * projected back through w2s every frame — which is why a parked course holds
+ * its place while the sky turns underneath it.
+ *
+ * Keyed by control number. `isl` is the island whose Jacobian the world point
+ * belongs to (null on the flat map, where w2s needs no island). Cleared when the
+ * course is actually staged somewhere (applyMove) or put back (unstageMove) —
+ * parking is a resting place, never a record of anything. */
+var parkedMem={};
+function parkClear(cn){ if(cn in parkedMem){ delete parkedMem[cn]; return true; } return false; }
 /* The pale discs of the open identities — reserved ground for label placement. */
 var discBoxes=[];            // the member squares drawn this frame — {x,y,m,nd,isl} — for hit-testing
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
@@ -2951,7 +2980,13 @@ var SKY_URL = window.CPL_SKYVIEW_SKY_URL || "ccr_sky.json";
 var sph={yaw:0, pitch:0.15, half:Math.PI*94/180, dist:3.0, spin:0};   // 188° across; where you look, how wide, how far, how far it has turned
 var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
 var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
-var SPIN=0.045;                       // radians per second — one turn in about 140 s, slower as you zoom in
+// Radians per second. Sam, 2026-09-09: "Slow the rotation". 0.045 turned the
+// sky in ~140 s, which reads as motion you watch rather than drift you stop
+// noticing — and this is a canvas you stare at while curating. 0.018 is one
+// turn in about 350 s (~5.8 min), still alive, no longer competing with the
+// work. It is the ONE constant: the rate below scales it by zoom, so a slower
+// SPIN slows every projection together.
+var SPIN=0.018;
 /* ⭐ THE TURN'S TIME STEP MUST CLAMP ABOVE THE REAL FRAME TIME, NEVER BELOW IT
  * (the flicker Sam reported on 2026-09-07). The clamp exists for ONE case: a
  * backgrounded tab, where rAF stops and `t` jumps seconds, which would spin the
@@ -3455,14 +3490,42 @@ window.__ccrTextStep=function(i){ if(i==null) return textStep; setTextStep(i); }
 var darkChoice=null;
 try{ darkChoice = localStorage.getItem("skyview:theme"); }catch(e){}
 if(darkChoice!=="dark" && darkChoice!=="light") darkChoice=null;
-var dark = darkChoice ? darkChoice==="dark" : false;
+/* ⭐ AND THE COBI HEADER'S THEME IS THE LAYER BETWEEN (Sam, 2026-09-08: the one
+ * control "sets all tabs and windows"). SkyView opens full-window from COBI's
+ * side menu and shares its origin, so it reads the same key cpl_theme.js writes.
+ *
+ * ⚠️ IT IS A FALLBACK, NOT AN OVERRIDE, and the order is the whole point —
+ * it composes with ruling 3 above instead of replacing it:
+ *   1. this reader's own SkyView choice (skyview:theme)  — "one memory"
+ *   2. an EXPLICIT global choice from the COBI header    — "one control"
+ *   3. where the reader stands: Sky/Globe → Night, Map → light — "two defaults"
+ * Step 3 still owns the DEFAULT, because the global key reads "system" until
+ * someone actually picks, and "system" is not a choice — so the Sky still opens
+ * at Night for every reader who has never touched either control. */
+function globalChoice(){
+  var v=null;
+  try{ v = localStorage.getItem("cpl_theme"); }catch(e){}
+  return (v==="dark"||v==="light") ? v : null;
+}
+var dark = darkChoice ? darkChoice==="dark" : globalChoice()==="dark";
 if(dark && document.body) document.body.classList.add("u-dark");
 function applyDark(){
-  dark = darkChoice ? darkChoice==="dark" : sphereOn();
+  var g = globalChoice();
+  dark = darkChoice ? darkChoice==="dark"
+       : g ? g==="dark"
+       : sphereOn();
   document.body.classList.toggle("u-dark", dark);
   document.body.classList.toggle("u-day", dayOn());
   paintDark();
 }
+/* The COBI window changed the theme while this one was open. `storage` fires
+ * only in OTHER documents, which is exactly this case — a reader with SkyView
+ * beside COBI sees both follow the one control without reloading either. */
+window.addEventListener("storage", function(e){
+  if(!e || e.key!=="cpl_theme") return;
+  applyDark();
+  if(cvs && document.getElementById("u-cvs")===cvs) draw();
+});
 function setDark(on){
   darkChoice = on ? "dark" : "light";
   try{ localStorage.setItem("skyview:theme", darkChoice); }catch(e){}
@@ -3693,7 +3756,34 @@ function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; 
  * recorded" and "we did not look" are the same thing on this feed, so the
  * payload does not assert the first. */
 function artOK(nd){ return (nd.ar > 0) ? !!show.arty : !!show.noart; }
-function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd); }
+/* `e` is 1 CTE, 0 academic, absent when the TOP code does not resolve. Absent
+ * takes its own switch — never `aca`, which would file 7,569 unknowns as a
+ * positive claim. Mirrors creditOK's handling of `unrec`. */
+function cteOK(nd){ return nd.e===1 ? show.cte : nd.e===0 ? show.aca : show.ctena; }
+/* ── Isolate (Sam, 2026-09-09) ───────────────────────────────────────────────
+ * "Need an Isolate toggle in the header to show only the selected items
+ * filtered. This will allow users to eliminate the noise of other groupings on
+ * screen. Sometimes you need to keep the universe in view and other times not."
+ *
+ * A toggle, not a mode: the last sentence is the requirement. It rides on the
+ * selection that already exists — the search tokens (searchHits), the clicked
+ * point and the ties lit around it — rather than inventing a second idea of
+ * "selected" for the reader to keep straight.
+ *
+ * ⚠️ IT NO-OPS WITH NOTHING SELECTED, deliberately. Isolating an empty selection
+ * would empty the map, and a blank canvas is indistinguishable from a broken
+ * control — the exact failure the Show switches were fixed for (see islandPass).
+ * So the button says so and stays off instead. */
+var isolate=false;
+function isoActive(){ return isolate && (searchHits.length>0 || !!selNode || !!selIsl); }
+function isoNodeOK(nd){
+  if(!isoActive()) return true;
+  for(var i=0;i<searchHits.length;i++) if(searchHits[i].id===nd.i) return true;
+  if(nd===selNode) return true;
+  if(lastFocus && lastFocus[nd.i]) return true;   // the ties the click lit
+  return false;
+}
+function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd) && isoNodeOK(nd); }
 /* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
  * does not respond when making changes") ─────────────────────────────────────
  *
@@ -3713,7 +3803,18 @@ function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && a
  * Memoized on a signature of the switches: draw() runs on every pan and zoom
  * frame, and re-counting 49,896 courses per frame is exactly the kind of cost
  * that turns a filter into a stutter. */
-function showSig(){ var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0"; return t; }
+/* ⚠️ THE SIGNATURE CARRIES THE ISOLATION TOO. islandPass memoizes its count on
+ * this string; isolation changes which points pass without touching a single
+ * switch, so a signature of the switches alone would serve a stale count for
+ * every island until something else moved. The selection is folded in by its
+ * size and its head — enough to change whenever the selection does, and cheap
+ * on a frame. */
+function showSig(){
+  var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0";
+  if(isoActive()) t+="|iso"+searchHits.length+":"+(searchHits[0]?searchHits[0].id:"")+
+                    ":"+(selNode?selNode.i:"")+":"+(selIsl?selIsl.d:"");
+  return t;
+}
 function islandPass(isl){
   var sig=showSig();
   if(isl._passSig!==sig){
@@ -4067,6 +4168,10 @@ function stagedWords(m, at){
 }
 /* Put back: the staged move is dropped and the course is home again. */
 function unstageMove(cn){
+  /* Put back means BOTH halves: drop the staged move and return the course to
+   * its spoke. Clearing only the move would leave it parked in open space with
+   * nothing staged — visible, unexplained, and not what "put back" says. */
+  parkClear(cn);
   if(!(cn in movedTo)) return false;
   var mv=stagedMoveOf(cn);
   delete movedTo[cn];
@@ -4138,6 +4243,7 @@ function drawFrame(){
     else orbitsOf(selNode.i).forEach(function(o){ focus[o.i]=1; });
   }
   lastFocus=focus;
+  paintIso();
   var labelQueue=[], nodeQueue=[], openList=[];
   memberPts=[]; discBoxes=[];
   /* ⭐ THE STAR PASS (S239). On the sphere at its opening width every one of
@@ -4545,6 +4651,14 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     var R=R0+ring*15;
     var a=-Math.PI/2 + j*2*Math.PI/inRing + ring*0.35;
     var x=p[0]+R*Math.cos(a), y=p[1]+R*Math.sin(a);
+    /* Parked: drawn where the reader left it, not on its spoke. The spoke line
+     * below still runs from the parent to (x,y), which is the point — it says
+     * "this is still yours" while the course sits where it was put. */
+    var park=parkedMem[m.cn];
+    if(park){
+      var pk=w2s(park.wx, park.wy, park.isl);
+      if(pk){ x=pk[0]; y=pk[1]; }
+    }
     var movedHere=(m.cn in movedTo) && movedTo[m.cn]===nd.i;
     var carried=drag && drag.kind==="course" && drag.cn===m.cn;
     ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
@@ -5078,6 +5192,15 @@ window.__ccrUniverse = function(opts){
           '<span class="u-modes u-litgrp" role="group" aria-label="Lights">'+
             '<button class="btn mode" type="button" id="u-lit" aria-pressed="false" '+
               'title="Light the courses that carry an articulation">Articulations</button>'+
+          '</span>'+
+          /* ── Isolate (Sam, 2026-09-09) — beside Show, because it is a filter,
+           * not a light: it changes what is drawn, and the two next to each
+           * other read as the pair they are. A word and its pressed state,
+           * painted from module memory by paintIso like every other toggle
+           * here — never written into the markup. */
+          '<span class="u-modes u-isogrp" role="group" aria-label="Isolation">'+
+            '<button class="btn mode" type="button" id="u-iso" aria-pressed="false" '+
+              'title="Show only what is selected, and hide everything else">Isolate</button>'+
           '</span>'+
         '</div>'+
         '<span class="u-wins" role="group" aria-label="Window">'+
@@ -5824,6 +5947,11 @@ window.__ccrUniverseState = function(){
           staged:{awayFrom:stagedAwayFrom, here:stagedHere, countHere:stagedCountHere, of:stagedMoveOf, words:stagedWords, unstage:unstageMove},
           proj:proj, sph:{yaw:sph.yaw, pitch:sph.pitch, half:sph.half, dist:sph.dist, spin:sph.spin}, rotating:rotating, reduceMotion:reduceMotion,
           dark:dark, day:dayOn(), darkChoice:darkChoice, namesOn:namesOn, skyState:skyState,
+          /* Parked courses, so a test can assert a drop STAYED rather than
+           * inferring it from a hint string — the hint is wording, this is the
+           * state the drawing actually reads. */
+          parked:Object.keys(parkedMem),
+          parkedAt:function(cn){ var q=parkedMem[cn]; return q ? {wx:q.wx, wy:q.wy} : null; },
           regions:(skyRegions||[]).map(function(r){ return {text:r.text, on:!!r.p}; }),
           islandScreen:function(name){ var I=null; if(U) U.islands.forEach(function(x){ if(x.d===name) I=x; }); if(!I) return null; var c=islCenter(I); return c ? {x:c[0], y:c[1], k:islScale(I), r:I.r*islScale(I)} : null; },
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
@@ -5988,7 +6116,9 @@ function wire(){
   if(fc) fc.onclick=function(){ setFace("courses"); };
   if(fp) fp.onclick=function(){ setFace("cpl"); };
   if(lb) lb.onclick=function(){ setLit(!lit); };
-  paintFace(); paintLit();
+  var ib=document.getElementById("u-iso");
+  if(ib) ib.onclick=function(){ setIsolate(!isolate); };
+  paintFace(); paintLit(); paintIso();
   if(face==="cpl" && cplState!=="ok")
     loadCpl(function(){ paintFace(); if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
   /* The Views menu is built and wired by viewsMenuInto() — one builder for
@@ -6257,7 +6387,7 @@ function wire(){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
         var mem=drag.mem, mgate=canMove(mem.cn);
         if(!mgate.ok){ setHint(sharedKeyReason(mem.cn, mem.n, mgate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, moved:true}; return; }
-        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd};
+        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
         setHint("Carrying <strong>"+esc(mem.n)+"</strong> ("+esc(mem.c)+") — drop it on the identity it belongs to.");
         draw();
       }
@@ -6290,7 +6420,7 @@ function wire(){
           if(m && !emptied(drag.nd)){
             var gate=canMove(m.cn);
             if(!gate.ok){ setHint(sharedKeyReason(m.cn, m.n, gate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y}; return; }
-            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd};
+            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
             setHint("Carrying <strong>"+esc(m.n)+"</strong> ("+esc(m.c)+") — drop it on the identity it belongs to.");
             draw();
           }
@@ -6307,7 +6437,27 @@ function wire(){
         selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); drag=null; draw(); return;
       }
       if(hit && hit.nd) applyMove(drag.cn, drag.code, drag.college, hit.nd.i, drag.d);
-      else setHint("Dropped on empty space — nothing moved.");
+      else {
+        /* ⭐ IT STAYS WHERE IT WAS LEFT. The old branch said "nothing moved" and
+         * dropped the carry, so the course snapped back onto its spoke and the
+         * reader's arrangement was lost every time a merge was not the point.
+         *
+         * The frame is the island dropped ON if there is one, else the island it
+         * came FROM — a world point needs somebody's Jacobian on the sphere, and
+         * those are the only two islands the gesture names. On the flat map s2w
+         * needs none, so a null island is fine there and w2s takes the flat path.
+         * If neither is available on the sphere, s2w returns null and the old
+         * behavior stands rather than parking the course somewhere invented. */
+        var pisl=(hit&&hit.isl)||drag.fromIsl||null;
+        var w=s2w(px, py, pisl);
+        if(w){
+          parkedMem[drag.cn]={wx:w[0], wy:w[1], isl:pisl};
+          setHint("<strong>"+esc(drag.code)+"</strong> left where you dropped it — nothing merged. "+
+                  "Drag it onto an identity to merge it, or open it and press Put back.");
+        } else {
+          setHint("Dropped on empty space — nothing moved.");
+        }
+      }
       drag=null; draw(); return;
     }
     if(drag && drag.kind==="pan" && !drag.moved && drag.hit){          // a click, in Pan mode
@@ -6803,6 +6953,7 @@ function showMenuHtml(){
     ["Credit status", ["cr","nc","nce","unrec"].map(W)],
     ["Identity system", ["mid","cid","ccn","uni"].map(W)],
     ["Kind of point", ["ident","orbit","rim"].map(W)],
+    ["Career technical or academic", ["cte","aca","ctena"].map(W)],
     ["Articulations", ["arty","noart"].map(W)],
     ["Under an identity", ["members"].map(W)]
   ];
@@ -7392,6 +7543,8 @@ function applyMove(cn, code, college, toId, d){
    * the routes meet, so the release belongs here — after the gates, which
    * return with the carry intact so another destination can still be chosen. */
   if(drag && drag.kind==="course" && drag.cn===cn) drag=null;
+  /* A staged move re-homes the course, so its resting place is spent. */
+  parkClear(cn);
   var t=nodeById(toId);
   /* ⚠️ "Recorded below the map" NAMED A PLACE THE READER CANNOT SEE. `#u-writes`
    * lives in `#u-below`, and `body.u-solo` — SkyView, the default — hides that
@@ -7615,6 +7768,31 @@ function paintLit(){
   paintLegendLit();
 }
 function paintLegendLit(){ var el=document.getElementById("u-lg-lit"); if(el) el.hidden=!lit; }
+/* ⚠️ CALLED FROM draw(), SO IT IS MEMOIZED. The button's enabled state depends
+ * on the SELECTION, which changes from half a dozen places — a search, a token,
+ * a click on a point, a click on empty ground, Esc. Painting it from each of
+ * them is a list to keep in step and a bug the first time somebody adds a
+ * seventh; painting it from the one funnel every one of them already reaches
+ * cannot go stale. draw() runs on every rotation frame, so the work is guarded
+ * by a signature rather than done 60 times a second. */
+var _isoSig=null;
+function paintIso(force){
+  var b=document.getElementById("u-iso");
+  if(!b) return;
+  var can = searchHits.length>0 || !!selNode || !!selIsl;
+  var sig = (isolate?"1":"0")+(can?"1":"0");
+  if(!force && sig===_isoSig) return;
+  _isoSig=sig;
+  b.setAttribute("aria-pressed", isolate?"true":"false");
+  /* Disabled with nothing selected rather than silently doing nothing: a toggle
+   * that can be pressed and changes not one pixel is the "inert control" the
+   * Show switches were fixed for. The reason travels with it in the title. */
+  b.disabled = !can && !isolate;
+  b.title = b.disabled
+    ? "Select a discipline or a course first \u2014 Isolate hides everything else"
+    : isolate ? "Bring the rest of the universe back"
+              : "Show only what is selected, and hide everything else";
+}
 function repaintSelection(){ if(selNode && selIsl) renderNode(); else if(selIsl) showIsland(selIsl); }
 function cplFaceWords(){
   var c=cplCounts();
@@ -7650,6 +7828,24 @@ function setLit(on, quiet){
   }
   if(cvs && document.getElementById("u-cvs")===cvs) draw();
 }
+
+/* Isolate on/off. It re-counts every island (the signature changed), so the one
+ * draw() below is the whole update — and the hint says what happened, because a
+ * map that suddenly holds three points needs to say why. */
+function setIsolate(on){
+  var can = searchHits.length>0 || !!selNode || !!selIsl;
+  if(on && !can){
+    setHint("Nothing is selected yet \u2014 search for a discipline or click a course, then press <strong>Isolate</strong>.");
+    paintIso(true); return;
+  }
+  isolate=!!on;
+  paintIso(true);
+  setHint(isolate
+    ? "<strong>Isolated</strong> \u2014 only what you selected is drawn. Press Isolate again to bring the rest back."
+    : "The whole universe is back in view.");
+  draw();
+}
+window.__ccrIsolate=function(on){ if(on==null) return isolate; setIsolate(on); return isolate; };
 function setSolo(on, quiet){
   solo=!!on; curView=solo?"skyview":"comprehensive"; curArg=(face==="cpl")?"cpl":"";
   document.body.classList.toggle("u-solo", solo);
@@ -7882,14 +8078,20 @@ function standingHtml(r){
   if(noDiscipline(r.home))
     return 'no discipline yet <span class="ws-note">(no entry in the subject map, and its identities carry none)</span>';
   if(!authority) return '<span class="ws-note">loading…</span>';
-  var a=authority[r.home];
-  if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>';
-  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO. Measured 2026-09-08,
-   * four subjects disagree and all four are corrections — ETHN reads Ethnic
-   * Studies against 34 identities filed under Chicano Studies, ESLN reads
-   * English as a Second Language against a malformed discipline name — but a
-   * silent reassignment of 34 rows is the kind of thing a curator is entitled
-   * to see rather than discover. */
+  /* ⚠️ AND WHEN THE EDGE OVERRULES A REAL VOTE, SAY SO — ON EVERY BRANCH.
+   * Measured 2026-09-08 against ccr_universe.json and the map file the page
+   * itself fetches, NINE subjects disagree, not the four first recorded here:
+   * ATHL (Physical Education vs Kinesiology, 1,101 points), THTR (1,093 of
+   * 1,109), ESCI (465 of 476), ELEC (342 of 353), MUSC (127 of 134), ETHN
+   * (Ethnic Studies vs 34 under Chicano Studies), PHTO (3 of 12), ESLN (a
+   * malformed discipline name) and ENVS.
+   * ⚠️ AND NONE OF THE NINE PRINTED (S243). `via` was built here and then
+   * appended to ONE of the three returns below — the branch for a subject that
+   * IS its home's Common SUBJ. A subject whose identities sit somewhere else is
+   * by construction usually NOT that, so it fell to the umbrella or the
+   * not-its-code branch, both of which dropped the note; ATHL and THTR did not
+   * reach them at all, returning at the `!a` guard above. A note computed and
+   * discarded is the same as no note: it has to ride every exit. */
   var voted = r.rec ? r.rec.voted : r.voted;
   var via = r.homeSrc==="vote"
     ? ' <span class="ws-note">(discipline inferred from its identities — not in the subject map)</span>'
@@ -7897,11 +8099,16 @@ function standingHtml(r){
       ? ' <span class="ws-note">(the subject map says ' + esc(r.home) + '; its identities sit under ' +
         esc(voted) + ')</span>'
       : '';
+  var a=authority[r.home];
+  if(!a) return '<span class="ws-note">no seed entry for '+esc(r.home)+'</span>'+via;
   if(a.cs===r.code) return 'the Common SUBJ of '+esc(r.home)+' '+chipsHtml(a)+proposedHtml(a)+via;
   if(a.umbrella.indexOf(r.code)>=0)
-    return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>';
-  return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>';
+    return 'an umbrella code under '+esc(r.home)+' <span class="ws-note">(Common SUBJ '+esc(a.cs)+')</span>'+via;
+  return 'not '+esc(r.home)+'’s code <span class="ws-note">(its Common SUBJ is '+esc(a.cs)+')</span>'+via;
 }
+/* Exposed for tests: the standing line is pure string-building off one row, so
+ * jsdom can assert every branch without a canvas or a layout. */
+window.__ccrStandingHtml = standingHtml;
 function subjectRowHtml(r){
   var others=r.others.length
     ? ' <span class="ws-note">also '+r.others.slice(0,3).map(function(n){

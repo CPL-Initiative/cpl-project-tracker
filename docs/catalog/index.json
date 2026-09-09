@@ -4,8 +4,18 @@
  "lanes": [
   {
    "blurb": "The files that shape how a session BEHAVES rather than record what it did. `CLAUDE.md` auto-loads into every session, so it is the likeliest source of a recurring mismatch between what the system does and what you expected.",
-   "count": 4,
+   "count": 5,
    "docs": [
+    {
+     "created": "",
+     "governs": [],
+     "path": ".claude/commands/a11y-pass.md",
+     "status": null,
+     "tags": [],
+     "title": "`/a11y-pass` \u2014 check and remediate a surface",
+     "type": "doctrine",
+     "updated": ""
+    },
     {
      "created": "",
      "governs": [],
@@ -52,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 409,
+   "count": 411,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2902,6 +2912,22 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "design-system",
+      "dark-mode",
+      "pitfall"
+     ],
+     "title": "A token with two jobs cannot be themed \u2014 count a token's uses by ROLE before you give it a dark value",
+     "type": "methodology",
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-23",
@@ -6304,6 +6330,22 @@
      "title": "The measuring browser can hide the defect",
      "type": "methodology",
      "updated": "2026-08-20"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-the-number-of-findings-is-not-the-number-of-problems.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "tooling",
+      "triage",
+      "pitfall"
+     ],
+     "title": "The number of findings is not the number of problems \u2014 rank an audit by blast radius before you read it",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-08-09",
@@ -11832,7 +11874,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 42,
+   "count": 44,
    "docs": [
     {
      "created": "2026-08-28",
@@ -11859,6 +11901,21 @@
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/reference/lanes/cobi-dark-mode.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "ui",
+      "dark-mode"
+     ],
+     "title": "COBI dark mode / the one theme control \u2014 lane state",
+     "type": null,
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-28",
@@ -12160,6 +12217,19 @@
      "updated": "2026-08-28"
     },
     {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/reference/lanes/README.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Roadmap lanes \u2014 how the pointer index and the lane files divide",
+     "type": null,
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/audit-rules.md",
@@ -12412,8 +12482,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 218,
+   "count": 219,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 245,
+     "path": "docs/session_245_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "one control where there were four, and a remediation pass with a 516-item backlog",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-08",
      "governs": [],
@@ -16128,5 +16211,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 829
+ "total": 835
 }

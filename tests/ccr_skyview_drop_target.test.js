@@ -180,8 +180,21 @@ const CX = 480, CY = 300;
   pointer("pointermove", CX, CY + 900);
   check("(11) over empty ground the carry names no destination", st().dropTarget === null, String(st().dropTarget));
   pointer("pointerup", CX, CY + 900);
-  check("(12) a drop on empty ground moves nothing and says so",
-    st().moves.length === before2 && /empty space/i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+  // ⚠️ THE CONTRACT CHANGED 2026-09-09 (Sam: a course "stays where I leave it.
+  // Currently it snaps back if I don't merge it"). A drop on empty ground still
+  // stages NOTHING — that half is unchanged and is the half that matters for the
+  // write path — but it no longer discards the gesture: the course parks where it
+  // was dropped. The hint says so instead of "empty space".
+  check("(12) a drop on empty ground stages no move",
+    st().moves.length === before2, "moves=" + st().moves.length);
+  check("(12b) …and says what became of the course",
+    /left where you dropped it/i.test(q("#u-hint").textContent), q("#u-hint").textContent);
+  // ⭐ The guard that matters: it is PARKED, in state the drawing reads — not
+  // merely described in a hint. Asserting the hint alone would have passed
+  // against the snap-back this replaced.
+  check("(12c) ⭐ the course is parked, so it stays where it was left",
+    st().parked.indexOf("2071711") >= 0 || st().parked.length === 1,
+    "parked=" + JSON.stringify(st().parked));
 
   // ── the row that records a move has to READ on the canvas it sits on ──────
   // Sam, 2026-09-07: "Merged courses on side view have white background and

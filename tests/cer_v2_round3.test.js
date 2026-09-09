@@ -114,12 +114,16 @@ const visibleTitles = (doc) => Array.from(doc.querySelectorAll("tr.cr-row"))
   const css = doc.getElementById("cr-scope-css").textContent;
 
   // ── 5. violet → CO dark blue chips ──
-  check("chips: generated-suggestion chip text rides var(--seal-blue)",
-    css.indexOf(".cr-chip-gen{color:var(--seal-blue,#1e40af);}") >= 0);
-  check("chips: ⇆ merge chip text + border ride var(--seal-blue)",
-    css.indexOf(".cr-chip-mergesug{color:var(--seal-blue,#1e40af);border-color:var(--seal-blue,#1e40af);}") >= 0);
-  check("chips: merge-panel heading rides var(--seal-blue)",
-    css.indexOf(".cr-mergesug-h{color:var(--seal-blue,#1e40af);}") >= 0);
+  // ⚠️ --seal-blue-text, not --seal-blue, since 2026-09-08. The navy stays the
+  // FILL token (200+ surfaces carry white text on it); its TEXT grade is its
+  // own token so it can move in dark, where the navy is 1.29:1. The check is
+  // unchanged in intent: these chips ride the CO dark blue, not the violet.
+  check("chips: generated-suggestion chip text rides the CO dark blue",
+    css.indexOf(".cr-chip-gen{color:var(--seal-blue-text,#002F6D);}") >= 0);
+  check("chips: ⇆ merge chip text rides the text grade, its BORDER the fill token",
+    css.indexOf(".cr-chip-mergesug{color:var(--seal-blue-text,#002F6D);border-color:var(--seal-blue,#1e40af);}") >= 0);
+  check("chips: merge-panel heading rides the CO dark blue",
+    css.indexOf(".cr-mergesug-h{color:var(--seal-blue-text,#002F6D);}") >= 0);
 
   // ── 6. header row text white ──
   check("header: th text is white", css.indexOf(".cr-table th{color:#fff;}") >= 0);

@@ -2926,7 +2926,7 @@
           // existing identity or mints a brand-new unified course.
           var badge = isLegacy
             // Words, not a glyph (Sam, 2026-08-29); ghosted CO blue on white.
-            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--surface-opaque);border:1px solid var(--cobalt-on-dark);color:var(--seal-blue);margin:0 0 8px;" },
+            ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:var(--surface-opaque);border:1px solid var(--cobalt-on-dark);color:var(--seal-blue-text,#002F6D);margin:0 0 8px;" },
                 ["Curated common course · same title and discipline as a catalog course"])
             : isSingleton
             ? el("span", { style: "display:inline-block;font-size:.72rem;font-weight:600;padding:1px 8px;border-radius:10px;background:#ede9fe;color:#5b21b6;margin:0 0 8px;" },
