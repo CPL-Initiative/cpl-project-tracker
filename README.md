@@ -214,7 +214,8 @@ The whole ecosystem, end-to-end:
    (2026-09-09): type a sentence rather than a keyword and Enter asks
    SkyView, which turns it into a selection on the map — the map answers by
    moving, and anything it cannot find on the map it says so rather than
-   quietly leaving out —
+   quietly leaving out. Its answer prints **beside the search box**, where you
+   typed. **Isolate** draws only what you selected, a discipline included —
    authenticated reviewers (Supabase
    magic-link auth) curate disciplines, merge variants, and verify
    inferred values. Edits write to a live Supabase table and overlay the

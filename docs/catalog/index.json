@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 423,
+   "count": 425,
    "docs": [
     {
      "created": "2026-08-14",
@@ -630,6 +630,26 @@
      "title": "A change inherits every reference into it, and the same-cycle reference is the one you miss",
      "type": "methodology",
      "updated": "2026-08-26"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "prototype/ccr_atlas_v1.html",
+      "tests/ccr_skyview_ask.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-check-on-the-message-says-nothing-about-where-it-lands.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "ui",
+      "accessibility",
+      "skyview"
+     ],
+     "title": "A check on the message says nothing about where it lands",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-09-09",
@@ -6731,6 +6751,25 @@
      "updated": "2026-08-24"
     },
     {
+     "created": "2026-09-09",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_isolate.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "debugging",
+      "testing",
+      "skyview"
+     ],
+     "title": "Two expressions of one predicate will drift apart, and the drift is silent",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-06-11",
      "governs": [
       "kb/statewide_exhibit_categories.json",
@@ -12747,8 +12786,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 223,
+   "count": 224,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 250,
+     "path": "docs/session_250_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "a control that emptied the map, and an answer nobody could see",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16528,5 +16580,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 854
+ "total": 857
 }
