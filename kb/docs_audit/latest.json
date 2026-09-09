@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 862,
-    "bytes": 9150314,
-    "over_budget": 3,
+    "files": 863,
+    "bytes": 9156152,
+    "over_budget": 4,
     "handoff_max": 248,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59995,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 111,
-        "bytes": 2830534,
+        "bytes": 2830679,
         "over": 2
       },
       "index": {
@@ -40,14 +40,14 @@
         "over": 1
       },
       "kb_note": {
-        "files": 422,
-        "bytes": 2160852,
+        "files": 423,
+        "bytes": 2166298,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 156245,
-        "over": 0
+        "bytes": 156492,
+        "over": 1
       },
       "handoff": {
         "files": 222,
@@ -57,14 +57,15 @@
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 3,
-      "vault_heavy_path": 48
+      "oversized_doc": 4,
+      "unindexed_kb_note": 1,
+      "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2781,
-      "bytes": 1364280882,
-      "heavy_bytes": 626117184,
-      "heavy_share": 0.459,
+      "files": 2782,
+      "bytes": 1351864367,
+      "heavy_bytes": 613654685,
+      "heavy_share": 0.454,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -82,7 +83,6 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
-        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -241,6 +241,15 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme"
+      },
+      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -335,6 +344,19 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/reference/kb_build_status.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 12217,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 217,
+        "ratio": 1.02
+      },
+      "message": "12,217 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
       "rule": "house_voice",
@@ -592,16 +614,6 @@
         "kind": "file"
       },
       "message": "14,342,484 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/ccr_atlas_v1.built.html",
-      "detail": {
-        "bytes": 12462499,
-        "kind": "file"
-      },
-      "message": "12,462,499 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -239,7 +239,7 @@
       R + " .nclp-filters button{font:inherit;font-size:.79rem;padding:.28rem .68rem;cursor:pointer;",
       "border:1px solid var(--border-strong);border-radius:999px;background:var(--surface-opaque);color:var(--text-muted);}",
       R + " .nclp-filters button:hover{border-color:var(--cobalt);color:var(--text-body);}",
-      R + " .nclp-filters button[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--white);}",
+      R + " .nclp-filters button[aria-pressed=true]{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);}",
       // cards
       R + " .nclp-card{border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);",
       "padding:.8rem .9rem;margin:0 0 .55rem;}",

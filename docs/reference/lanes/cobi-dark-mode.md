@@ -29,12 +29,14 @@ reader gets no white flash. Three states, not two, because **forcing light on an
 OS-dark reader would have been a regression** against the four tabs that already
 honored `prefers-color-scheme`.
 
-⭐ **THE ASK NAMED A REAL SPLIT: there were FOUR answers to "is it dark."**
-`cpl_memory.js` had its own button that wrote `data-theme` and **persisted
-nothing**; two tabs were already correct; `our_process.js` keyed on
-`@media (prefers-color-scheme:dark)` **alone**, so it followed the OS and could
-not be told otherwise. Only `cpl_theme.js` writes the attribute now — asserted
-by `tests/cpl_theme.test.js`.
+⭐ **THE ASK NAMED A REAL SPLIT: there were FIVE answers to "is it dark."**
+`cpl_memory.js` had its own button that persisted **nothing**; two tabs were
+already correct; `our_process.js` keyed on the media query **alone**, so it
+followed the OS and could not be told otherwise; and `cip_crosswalk.js` (found
+S248) kept its own button, key and class-gated palette — invisible for four
+rounds because it used **neither** spelling anyone grepped for. Only
+`cpl_theme.js` decides now, asserted by `tests/cpl_theme.test.js`, whose general
+form is the durable one: **no tab may keep theme state of its own.**
 
 **The contract every themed component keys on** (it predates this work — three
 tabs already used it):
@@ -59,19 +61,17 @@ wordmark is exactly the symptom that invites a future session to "fix" the token
 and break 200+ surfaces.
 [`methodology-a-token-with-two-jobs-cannot-be-themed`](../../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md)
 
-⭐ **THE SWEEP FOUND WHAT READING THE PALETTE COULD NOT.** `npm run a11y
-cobi-dark` opened at **38/38 routes failing**, six shared-chrome selectors
-accounting for ~227 findings. The shared chrome is fixed; the remainder, and the
-two triage defects that hid its shape, are in the section below.
+⭐ **THE SWEEP FOUND WHAT READING THE PALETTE COULD NOT** — it opened at 38/38
+routes, six shared-chrome selectors being ~227 findings. ⚠️ **But it is not
+sufficient either**: it reports only what it PAINTS, so a tab that builds content
+on demand reads clean while both its panes are white. Pair it with the structural
+scan — see the note linked below.
 
-✅ **HEADER CLEANUP (the second half of the ask).** Glyphs out of every header
-control; About and Theme share one **drawn** caret (a bordered triangle
-inheriting `currentColor`, so it stays out of the accessible name and is correct
-in both themes); the `Last Updated` stamp no longer claims `flex-basis:100%`.
-
-✅ **HIGH CONTRAST STILL WORKS IN DARK.** `@media (prefers-contrast: more)` set
-`--text-muted` at `:root` (0,1,0); the dark palette is (0,2,0) and wins whatever
-the order, so the preference was silently dropped until a dark branch was added.
+✅ **HEADER CLEANUP · HIGH CONTRAST IN DARK.** Glyphs out of every header
+control; About and Theme share one **drawn** caret (out of the accessible name,
+correct in both themes). `@media (prefers-contrast: more)` set `--text-muted` at
+`:root` (0,1,0) against the dark palette's (0,2,0), so the preference was
+silently dropped until a dark branch was added.
 
 ✅ **SkyView follows the one control, as a FALLBACK not an override.** Order:
 this reader's own SkyView choice → an explicit global choice → where they stand
@@ -81,59 +81,57 @@ and still does, because the global key reads `system` until someone picks. A
 
 ## ⚠️ Open — the measured remainder
 
-**Dark mode is correct in the chrome and in the grounds; what is left is a
-long tail of raw hexes.** Re-run `npm run a11y cobi-dark` for the live list —
-and read it through `scripts/a11y_triage.js`, which now groups by COLOR PAIR.
+⭐ **S248 FOUND THE SHAPE OF THE REMAINDER, AND IT IS NOT "A LONG TAIL OF RAW
+HEXES."** It is four kinds of token that **cannot flip**, each of which reads as
+correct, tokenized code — so review cannot see them and grep does not catch them.
+The four shapes, the role-count rule, why the sweep under-reports, and the guard
+that could not fail are PULL, in one note:
+[`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](../../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md).
+**Read it before theming anything.** What is state, and belongs here:
 
-⭐ **THE TRIAGE WAS RANKING BY THE WRONG KEY.** `a11y_triage.js` grouped by
-SELECTOR and ranked by route count, so the largest fault — 25 findings, 11
-routes, 12 selectors at one route each — printed as twelve
-`one route — that tab's own CSS` lines at the BOTTOM. Its own header already
-said *"a ratio repeated exactly is ONE color, not many"*; it applied that on the
-route axis only. Grouping by pair turned **193 "causes" into a handful**.
+- ✅ **Phantom `--surface-1`/`--surface-2` — FIXED**, 26 sites, 19 of 128
+  findings. Defined in the **DARK blocks only**: light keeps each site's own
+  tint, so no light pixel moved. ⚠️ **Do not "complete" the pair in the light
+  `:root`** — the fallbacks are six different tints, so one light value repaints
+  six tabs. Sam's call. Guarded by `tests/cpl_theme.test.js`.
+  **25 phantom color tokens / 83 uses remain** (`--ok` 10, `--cpl-green` 10,
+  `--gold-soft` 8, `--danger` 7, `--cpl-cream` 6, `--link` 5 …) — now all INKS
+  and ACCENTS, no grounds.
+- ✅ **`var(--white)` as a ground — FIXED**, 7 sites. `.project-card` and
+  `.activity-kpi-card` were **Sam's first screenshot**.
+- ✅ **`--navy-*` fills carrying a fixed ink — FIXED**, 17 sites → `--on-accent`.
+  Measured first: **551/497 INK vs 26/179 FILL**. ⚠️ **The other ~160 navy fills
+  are NOT proven broken** — only where the ink cannot follow. Fix what the sweep
+  names.
+- ✅ **`cip_crosswalk.js`, the FIFTH answer to "is it dark" — FIXED.** Own
+  button, own `cipx_theme` key, 108 grounds gated on its own class. Now reads
+  `CPL_THEME.effective()`, writes through `.set()`, follows `cpl:themechange`.
+- ✅ **`our_process.js`'s contour canvas — FIXED.** Drew once under
+  `prefers-reduced-motion`; the first listener `cpl:themechange` has ever had.
 
-⭐ **A RATIO WITHOUT ITS TWO COLORS IS NOT ACTIONABLE.** `a11y.js` computed the
-composited background (`worstBg`) and discarded it. It now records `fg`/`bg` and
-prints `#FG on #BG`; the triage regex takes the pair as OPTIONAL, so older
-reports still parse.
 
-### What is left, by cause (measured 2026-09-09, S245)
+### Named, measured, and deliberately NOT fixed
 
-1. **Light fills that are not white** — `#FDF8EC` under the signed-out gate (6),
-   a literal `#ECE9E2` under RACI's buttons (6), `#FFFFFF on #D6D6D0` (4), and
-   `#ECE9E2 on #FFFFFF` still on the akpi cards (5). Same shape as the white
-   grounds, different hexes.
-2. **Raw greys in files the sweep does NOT name** — 18 more `#6b7280`, plus
-   `#374151`, in `credential_reference` · `sierra_training` · `unified_courses`
-   and others. ⚠️ **Latent, not pending**: they either sit on an explicit fill,
-   where a lighter grey is the WRONG direction, or are not painted in the
-   measured state. Fix them when a sweep names them, never by grep — `#666`
-   alone has 471 uses and a handful of failures.
-4. **`ctx.fillStyle` canvases are light-only by construction** — canvas ignores
-   `var()`. Theming one means reading the computed token in JS and repainting on
-   `cpl:themechange` (the event exists for this).
-5. **19 tabs were already failing in LIGHT** before any of this (S243's item 5).
+- **`--text-faint` (#7A7A74, 3.87:1) carrying essential text on Implementation
+  Funding** — 6 findings, ~12 sites (`cplfund-src`, `-card-note`, `-goal-cite`,
+  `-foot`, `-repnote`, `-saving`). S245 did this pass everywhere else; the tab
+  was excluded because Sam was working it. **`--text-muted` is the fix** (6.9:1);
+  it changes light too, on his tab, so it is his call.
+- **Raw dark inks on dark grounds** — `#666666` (8), `#374151` (6), `#5A6478` (4),
+  `#555555` (3). Latent-or-painted varies; fix what the sweep names.
+- **Printing while in dark mode.** The masthead is fixed, but consumer-JS dark
+  rules still apply to a print, so a dark-mode print is dark-on-dark in places.
+  The real fix is `@media screen` scoping on every dark rule — a separate pass.
+- **221 raw light-hex grounds** remain (index.html 68 in hand-maintained CSS,
+  tmc_builder 42, credential_reference 31, unified_courses 31). ⚠️ **Not a
+  worklist** — many are data payloads, generator-owned, or unpainted.
 
-✅ **DONE this run:** every literal white ground (100 in the HTMLs + generator,
-54 in consumer JS); the fill/white-ink pairs on all four flipping accents;
-`--text-faint` where it carried essential text (RACI's legend, count and auth
-hint; the annual report's column headers); and the `#6b7280` / `#555` / `#4b5563`
-greys **at the sites the sweep named**.
-
-⚠️ **EVERY GREY SWEEP HAD A SITE THAT MUST NOT MOVE, AND THE SPLIT WAS THE JOB.**
-`#555` is 69 uses of which **5 are ours** — the other 64 are inside the
-regenerated Activity KPI section, so the generator's 12 emission sites carry them
-(Rule 1) and a hand-edit would have been undone by the next cron.
-`project_lifecycle.js` paints `background:#6b7280;color:#fff` on the archived-state
-badge, and one `#4b5563` sits on `background:#f3f4f6` — text on an explicit fill,
-where a lighter token is the wrong direction. **A match count larger than the
-fault you set out to fix is a signal, never a windfall**: four times this run
-(20 border declarations in S244, course-title data, that badge, those 64).
-
-⭐ **THE LAST SHARED ROOT CAUSE WAS A FILL WITH NO INK OF ITS OWN.** The team-phrase
-Unlock gate painted `background:#f5f5f5` and let its text color inherit — in light
-that reads deliberate, in dark it was light ink on near-white at **1.09:1**, on 7
-routes. A fill that sets no color is the quietest way to break a theme.
+⚠️ **TWO PROCEDURE RULES FROM THIS RUN, in the note above:** the sweep
+UNDER-REPORTS (Annual Report showed 2 findings with both panes white — content
+built on demand is not sampled), and a screenshot must be checked against `main`
+before it is chased (Sam's third was a **cached asset**; the fix had merged five
+commits earlier, and `git merge-base` settled it in two minutes — the sandbox
+cannot reach the Pages site, so check git, not the URL).
 
 ## ⭐ Three token roles, and why there are three
 
@@ -152,12 +150,25 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 
 ## Measured
 
-| Sweep | S244 | S245 |
-|---|---|---|
-| `npm run a11y cobi-dark` — routes | 26 | 26 |
-| `cobi-dark` — **contrast findings** | 184 | **120** |
-| `npm run a11y cobi` (light) — routes | 18 | **18** (no regression, all eight passes) |
-| glyph control-class, **ours** | "401" | **26** |
+| Sweep | S244 | S245 | **S248** |
+|---|---|---|---|
+| `npm run a11y cobi-dark` — routes | 26 | 26 | **20** |
+| `cobi-dark` — **contrast findings** | 184 | 120 | **87** (−32% from 128) |
+| `npm run a11y cobi` (light) — routes | 18 | 18 | **18** |
+| `cobi` (light) — contrast findings | — | — | **62** (baseline 63) |
+| `npm test` | — | 316/316 | **321/321** |
+| glyph control-class, **ours** | "401" | **26** | 26 (ruled, untouched) |
+
+⚠️ **S245's 120 EXCLUDED Implementation Funding; S248's numbers INCLUDE it** —
+the like-for-like start of this run is **128**, measured, not carried over. Say
+which sweep a number came from or the next session cannot tell a regression from
+a widened scope.
+
+⭐ **THE LIGHT BASELINE WAS MEASURED, NOT ASSUMED.** S248 built a `git worktree`
+at `origin/main` and swept it: **63 findings / 18 routes**. Against 62 / 18 after
+40-odd edits, that is the proof the light theme did not move — and it cost two
+minutes. *"Light held at 18"* was previously an inference from the route count,
+which is too coarse to carry that claim.
 
 ⚠️ **THE ROUTE COUNT IS TOO COARSE TO STEER BY** — a route fails on any one
 finding, so 38 fixes can leave it at 26. Steer by the finding count and the
@@ -175,12 +186,9 @@ Findings carry `generator_owned`, the report counts the two apart, and
 every S245 edit** — Sam worked that tab in a parallel session.
 
 ✅ **THE GLYPH SWEEP IS CLOSED AT 26 — Sam, 2026-09-09: *"Keep all 26 glyphs as
-is for now."*** What remains after the control-class work is the MAP Star and
-Veteran Star designations (12 sites), `✕` close, `✎` edit, `⛔` gates, `⚠`
-flagged rows, the copy control, and arrows carrying sequence meaning
-(*open → reported → in progress → fixed → verified*). ⚠️ **RULED, not pending** —
-none of the 26 is an emoji, so his instruction is satisfied. Sweeping them
-repeats the `⇄` error above at twenty-six times the scale.
+is for now."*** ⚠️ **RULED, not pending — do not sweep them.** The list and the
+reasoning are in `CLAUDE.md`'s presentation rules, verbatim; restating it here is
+how the two copies drift.
 
 ✅ **THE BANNER'S 8-HOUR CAP IS RULED SUFFICIENT** (*"8 hours is enough."*) — a
 session outliving its own banner is intended.
@@ -188,26 +196,19 @@ session outliving its own banner is intended.
 ## The standing pass (Sam, 2026-09-09)
 
 *"I want a procedure that checks and remediates each COBI surface for AA and
-mobile friendly standards."* Built as [`/a11y-pass`](../../../.claude/commands/a11y-pass.md):
-check → **triage** → remediate → re-measure → record.
+mobile friendly standards."* Built as
+[`/a11y-pass`](../../../.claude/commands/a11y-pass.md) — check → **triage** →
+remediate → re-measure → record. **The command is the authority**; it carries the
+triage rationale, the per-class remedies and the glyph mechanics, and restating
+them here is how two copies drift.
 
-⭐ **THE TRIAGE STEP IS THE ONE THAT WAS MISSING.** `scripts/a11y_triage.js`
-collapses a saved sweep into causes — the first dark sweep was 511 findings that
-were ~227 occurrences of six selectors. It reads a saved report, so it is free.
-It ranks by **color pair first** (one color decision, however many selectors wear
-it), then by blast radius; the remainder section above says why the second axis
-alone hid this lane's biggest fault.
+⭐ **TRIAGE RANKS BY COLOR PAIR FIRST**, then blast radius — one color decision
+however many selectors wear it. It reads a saved report, so it is free.
 
-**Glyph state, end of S245** (`kb/_glyph_sweep.py`): **26 control · 220 status ·
-794 decoration OURS**, plus 340 the generator owns and the next cron clears. A
-comment line is never a finding — this repo's ⚠️/⭐ comment style renders to
-nobody. Only the control class was ever mechanical, and Sam has now closed it at
-26 (above). ⚠️ `--check` is NOT a CI gate and will not become one while those 26
-stand by his ruling.
-
-**NEXT:** the light fills that are not white — `#FDF8EC` under the signed-out
-gate, the literal `#ECE9E2` under RACI's buttons, the akpi cards. Fix what the
-sweep NAMES.
-**NEEDS SAM:** nothing. Both open questions were ruled on 2026-09-09 — the 26
-glyphs stay, the 8-hour banner cap is enough. The SkyView fallback ordering
-remains the one judgment worth his veto if he ever revisits it.
+**NEXT (S249):** the `--text-faint` sites on Implementation Funding (6 findings,
+~12 sites, Sam's tab — his call), then the raw dark inks the sweep names
+(`#666666` 8 · `#374151` 6 · `#5A6478` 4 · `#555555` 3). Fix what the sweep
+NAMES; use the structural scan only to size what is left.
+**NEEDS SAM:** (1) whether `--surface-1`/`--surface-2` should get LIGHT values
+too — it unifies six tabs' tints and repaints them, so it is a design call, not a
+fix; (2) the funding `--text-faint` sites, which change his tab in light as well.

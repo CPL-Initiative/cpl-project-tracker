@@ -362,7 +362,7 @@
       ".sit-chip-down { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
       ".sit-chip-up { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
       ".sit-chip-new { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); }",
-      ".sit-chip-triaged { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
+      ".sit-chip-triaged { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
       ".sit-chip-addressed { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); }",
       ".sit-chip-gap { color: var(--navy-secondary); background: var(--surface-muted); }",
       ".sit-row-body { border-top:1px solid var(--border); padding:10px 14px; font-size:.85rem; }",
@@ -395,7 +395,7 @@
       ".sit-logmatch { font-size:.78rem; color: var(--text-body); background: var(--surface-subtle); border-radius:6px; padding:6px 10px; }",
       ".sit-logmatch b { color: var(--navy-primary); }",
       ".sit-logmatch.sit-dim { color: var(--text-muted); }",
-      ".sit-guid-warn { font-size:.8rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:8px 12px; max-width:900px; }",
+      ".sit-guid-warn { font-size:.8rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:8px 12px; max-width:900px; }",
       ".sit-guid-composer { display:flex; flex-direction:column; gap:6px; margin:0 0 12px; }",
       ".sit-guid-composer textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
       ".sit-guid-row { display:flex; gap:6px; }",
@@ -412,7 +412,7 @@
       // Sierra from an instruction the team wrote — they sit on the same screen
       // and are read top to bottom, so they must not look interchangeable.
       ".sit-rule { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
-      ".sit-chip-prot { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); font-weight:700; }",
+      ".sit-chip-prot { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); font-weight:700; }",
       ".sit-chip-edited { color: var(--navy-primary); background: var(--surface-muted); font-weight:700; }",
       ".sit-row-body .txt.sit-dim { color: var(--text-muted); }",
       ".sit-guid-editbox .sit-rule-body { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong);"

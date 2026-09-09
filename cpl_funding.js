@@ -544,8 +544,13 @@
     // colour is never the only signal.
     ".cf-lanechip { font-size: .68rem; font-weight: 700; letter-spacing: .05em; " +
       "padding: 1px 6px; border-radius: 2px; border: 1px solid; vertical-align: middle; }",
-    ".cf-lane-cr { color: var(--green-progress); border-color: var(--green-progress); background: var(--white); }",
-    ".cf-lane-nc { color: var(--violet); border-color: var(--violet); background: var(--white); }",
+    // ⚠️ --white is #FFFFFF in BOTH themes (it is named for a color, not a role),
+    // so a ground built on it can never respond. Both inks here DO flip
+    // (--green-progress → --hunter #89A67F, --violet → #B28DEB), which put
+    // light ink on white in dark. --surface-opaque is #FFFFFF in light, so the
+    // light theme does not move a pixel.
+    ".cf-lane-cr { color: var(--green-progress); border-color: var(--green-progress); background: var(--surface-opaque); }",
+    ".cf-lane-nc { color: var(--violet); border-color: var(--violet); background: var(--surface-opaque); }",
     ".cplfund-awardrow { margin-top: 10px; }",
     ".cplfund-awardrow-h { font-size: .82rem; font-weight: 700; color: var(--text-strong); " +
       "margin: 0 0 4px 2px; }",

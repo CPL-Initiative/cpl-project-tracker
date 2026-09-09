@@ -11425,7 +11425,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # Funding sources table
     funding_html += '        <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.9rem;">\n'
     funding_html += '            <thead>\n'
-    funding_html += '                <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+    funding_html += '                <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
     funding_html += '                    <th style="padding:8px;text-align:left;font-weight:bold;">Funding Source</th>\n'
     for year in year_labels:
         funding_html += f'                    <th style="padding:8px;text-align:right;font-weight:bold;">{year}</th>\n'
@@ -11580,7 +11580,7 @@ def render_budget_html(budget, data_source_stamp=None):
         summary_html = (
             '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
-            '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
+            '        <p style="color:#666;font-style:italic;background:var(--surface-subtle);'
             'border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;'
             'margin:0;">Detailed expenditure line items and category breakdowns '
             'are being refreshed and will appear here once updated figures are '
@@ -11597,7 +11597,7 @@ def render_budget_html(budget, data_source_stamp=None):
         personnel_html += '        <div style="overflow-x:auto;">\n'
         personnel_html += '            <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">\n'
         personnel_html += '                <thead>\n'
-        personnel_html += '                    <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+        personnel_html += '                    <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
         personnel_html += '                        <th style="padding:8px;text-align:left;font-weight:bold;">Position Title</th>\n'
 
         for year in year_labels:
@@ -11656,7 +11656,7 @@ def render_budget_html(budget, data_source_stamp=None):
             except:
                 formatted = str(value)
 
-            personnel_html += f'            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
+            personnel_html += f'            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
             personnel_html += f'                <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
             personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">{formatted}</div>\n'
             personnel_html += f'            </div>\n'

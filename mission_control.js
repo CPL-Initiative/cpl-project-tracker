@@ -431,8 +431,14 @@
       ".mc-st-skip{background:#f0f0f2;color:#999;}" +
       ".mc-status-sel{font-size:.7rem;border:1px solid var(--border,#d4dde7);border-radius:5px;padding:.1rem .2rem;background:var(--surface,#fff);color:var(--text,#243b53);}" +
       ".mc-chip{font-size:.66rem;border-radius:4px;padding:.12rem .4rem;white-space:nowrap;}" +
-      ".mc-lane{background:var(--surface-2,#eef3f9);color:#4a5b70;}" +
-      ".mc-owner{background:var(--navy-secondary,#1c3d5a);color:#fff;}" +
+      // ⚠️ RAW INK, NOT A TOKEN, on a surface that now flips: --surface-2 was a
+      // phantom until this run, so #4a5b70 sat on a permanently light fill and
+      // read fine. The moment the surface goes dark it is 1.5:1. It is the ONLY
+      // one of the 26 --surface-1/-2 sites with an unthemed color; the rest
+      // inherit or already use a token, which is why they were merely low
+      // contrast rather than wrong.
+      ".mc-lane{background:var(--surface-2,#eef3f9);color:var(--text-body,#4a5b70);}" +
+      ".mc-owner{background:var(--navy-secondary,#1c3d5a);color:var(--on-accent);}" +
       ".mc-decision{border:1px solid var(--gold-accent,#B8860B);border-radius:8px;background:var(--gold-soft,#fbf3d9);padding:.5rem .6rem;}" +
       ".mc-decided{border-color:var(--ok,#2e7d32);background:#eef7f0;}" +
       ".mc-decision-head{display:flex;align-items:center;gap:.4rem;flex-wrap:wrap;}" +

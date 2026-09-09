@@ -120,8 +120,29 @@
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
-  function savedTheme() { try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; } }
-  function storeTheme(t) { try { localStorage.setItem(THEME_KEY, t); } catch (e) {} }
+  // ⚠️ THIS TAB WAS A FIFTH INDEPENDENT ANSWER TO "IS IT DARK" (found S248).
+  // Sam's ask was "one control ... sets all tabs and windows"; S244/S245 found
+  // and folded in four answers. This one survived because it uses NEITHER
+  // data-theme NOR prefers-color-scheme — it gates a 108-ground palette on its
+  // OWN class, from its OWN button, under its OWN localStorage key — so every
+  // scan that grepped for those two spellings walked straight past it, and the
+  // header Theme control moved every other tab while this one did not budge.
+  // The class stays (it is the mechanism, and it scopes cleanly); what changes
+  // is who decides. cpl_theme.js decides, exactly as for cpl_memory.js.
+  function savedTheme() {
+    try {
+      if (window.CPL_THEME && typeof window.CPL_THEME.effective === "function") {
+        return window.CPL_THEME.effective();
+      }
+    } catch (e) { /* fall through to the legacy key */ }
+    // cpl_theme.js is render-blocking in <head>, so this only runs if it failed
+    // to load at all. Honor whatever this tab remembered before S248.
+    try { return localStorage.getItem(THEME_KEY); } catch (e) { return null; }
+  }
+  function storeTheme(t) {
+    try { if (window.CPL_THEME && typeof window.CPL_THEME.set === "function") { window.CPL_THEME.set(t); return; } } catch (e) {}
+    try { localStorage.setItem(THEME_KEY, t); } catch (e) {}
+  }
   function isDark() { return !!(wrapEl && wrapEl.classList.contains("cipx-theme-dark")); }
   function applyTheme(t) { if (wrapEl) { if (t === "dark") wrapEl.classList.add("cipx-theme-dark"); else wrapEl.classList.remove("cipx-theme-dark"); } }
 
@@ -2781,10 +2802,17 @@
         el("a", { href: ESS_MEMO, target: "_blank", rel: "noopener" }, ["ESS 26-06 transition guidance ↗"]),
       ]),
     ]);
-    var themeBtn = el("button", { class: "cipx-themetog", type: "button", "aria-label": "Toggle light or dark theme for this tab" }, []);
+    // The label no longer says "for this tab" — it sets the theme everywhere,
+    // because storeTheme() now writes through to the one control.
+    var themeBtn = el("button", { class: "cipx-themetog", type: "button", "aria-label": "Switch COBI between light and dark" }, []);
     function paint() { themeBtn.textContent = isDark() ? "Light" : "Dark"; }
     themeBtn.onclick = function () { var next = isDark() ? "light" : "dark"; applyTheme(next); storeTheme(next); paint(); };
     paint();
+    // …and follows the header control (or another window) without a reload.
+    // Without this the tab would still only change when YOU pressed ITS button.
+    window.addEventListener("cpl:themechange", function () {
+      applyTheme(savedTheme() === "dark" ? "dark" : "light"); paint();
+    });
     // Top-right utility rail: Coco (the emotional-support pup) watches over the tab, then the Theme
     // toggle, then the review-only chips (Expand / CSV) that renderReview drops in below — all one
     // width for harmony (Sam, 2026-07-18). Reclaims the old full-width utils row.

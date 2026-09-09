@@ -765,7 +765,7 @@
       ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
       "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
       ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
-      ".adm-warn { font-size:.85rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
+      ".adm-warn { font-size:.85rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
       // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
       // the form reads as a form inside the centred explanatory block.
@@ -782,7 +782,7 @@
       ".adm-blast-bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
       ".adm-blast-kinds { display:flex; flex-wrap:wrap; gap:5px; }",
       ".adm-blast-kind { border:1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); border-radius:10px; padding:3px 10px; font-size:.76rem; font-weight:600; cursor:pointer; }",
-      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--white, #fff); }",
+      ".adm-blast-kind[aria-pressed=\"true\"] { background: var(--navy-primary); border-color: var(--navy-primary); color: var(--on-accent); }",
       ".adm-blast-panes { display:grid; grid-template-columns:minmax(230px,300px) 1fr; gap:12px; align-items:start; }",
       "@media (max-width:700px) { .adm-blast-panes { grid-template-columns:1fr; } }",
       ".adm-blast-list { background: var(--surface-opaque); border:1px solid var(--border); border-radius:10px; max-height:60vh; overflow-y:auto; padding:4px; }",
@@ -826,7 +826,7 @@
       ".adm-table .gatecol { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
       ".adm-g { font-size:.7rem; border-radius:10px; padding:1px 8px; white-space:nowrap; cursor:help; background: var(--surface-muted); color: var(--text-muted); }",
       ".adm-g-open, .adm-g-public { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
-      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
+      ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); }",
       ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
       // Neither a pass nor a fail: two states that are not findings about a tab.
       ".adm-g-nodata, .adm-g-unread, .adm-g-unknown, .adm-g-link { color: var(--text-muted); background: var(--surface-muted); }",
@@ -886,7 +886,7 @@
       ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
       ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
       ".adm-audnote { flex:1 1 100%; font-size:.75rem; color: var(--text-muted); margin-top:2px; }",
-      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
+      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--on-mustard); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
       ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
       ".adm-addcat { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0 4px; }",

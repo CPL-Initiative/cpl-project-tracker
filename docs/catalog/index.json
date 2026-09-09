@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 420,
+   "count": 421,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3016,6 +3016,22 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "design-system",
+      "dark-mode",
+      "pitfall"
+     ],
+     "title": "A token that cannot flip is a surface that cannot theme \u2014 the four shapes, and why every one of them reads as correct code",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-09-08",
@@ -16437,5 +16453,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 849
+ "total": 850
 }

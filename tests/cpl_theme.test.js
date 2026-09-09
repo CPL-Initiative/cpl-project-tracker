@@ -72,6 +72,35 @@ const memSrc = fs.readFileSync("cpl_memory.js", "utf8");
 check("cpl_memory.js: the competing theme button is gone",
   memSrc.indexOf("mem-theme") === -1 && memSrc.indexOf("wireTheme") === -1);
 
+// ⚠️ THE FIFTH ANSWER TO "IS IT DARK" (S248). cip_crosswalk.js kept its own
+// theme button, its own localStorage key (cipx_theme) and a 108-ground palette
+// gated on its own CLASS — using neither data-theme nor prefers-color-scheme,
+// which is exactly why four rounds of grepping for those two spellings never
+// saw it. The class is fine (it scopes the palette); deciding for itself was
+// not. The general form of the rule is the second check: a tab may not keep
+// its own theme STATE, whatever it calls it.
+const cipxSrc = fs.readFileSync("cip_crosswalk.js", "utf8");
+check("cip_crosswalk.js reads the one control, not just its own key",
+  /CPL_THEME[\s\S]{0,80}effective\(\)/.test(cipxSrc));
+check("cip_crosswalk.js writes THROUGH to the one control",
+  /CPL_THEME[\s\S]{0,120}\.set\(/.test(cipxSrc));
+check("cip_crosswalk.js follows a theme change without a reload",
+  /addEventListener\(\s*"cpl:themechange"/.test(cipxSrc));
+{
+  // Any consumer that PERSISTS a theme of its own is a competing control by
+  // definition. cpl_theme.js owns the only key; cip_crosswalk keeps its own as
+  // a read-only legacy fallback for the case where cpl_theme.js failed to load.
+  const others = require("fs").readdirSync(".")
+    .filter((f) => f.endsWith(".js") && f !== "cpl_theme.js");
+  const offenders = others.filter((f) => {
+    const t = require("fs").readFileSync(f, "utf8");
+    return /setItem\(\s*[A-Z_]*THEME[A-Z_]*KEY|setItem\(\s*["'][^"']*theme[^"']*["']/i.test(t)
+      && !/CPL_THEME[\s\S]{0,120}\.set\(/.test(t);
+  });
+  check("no tab persists a theme of its own" + (offenders.length ? " → " + offenders.join(", ") : ""),
+    offenders.length === 0);
+}
+
 // ── plain words, not glyphs, in the header controls ──
 const aboutBtn = (cpl.match(/<button[^>]*id="cobiAboutBtn"[^>]*>([^<]*)</) || [])[1] || "";
 check("About button is a plain word (no glyph in its accessible name)",
@@ -186,19 +215,113 @@ check("⭐ --gold-accent is NOT redefined dark either — the pair only works if
   !/--gold-accent:/.test(darkDecl));
 
 // The pairings themselves, across every surface that ships.
+// ⚠️ THE LIST IS THE GUARD. Both pairing checks below passed on 2026-09-09
+// while FOUR files not named here each carried exactly the defect they
+// describe — cr_reference.js and contracts.js (white ink on a --cobalt fill),
+// nc_learning_partners.js (the same, spelled var(--white)) and
+// sierra_training.js (a flipping ink on the mustard fill). A check whose
+// corpus omits the defect reads exactly like a clean result. Add a file here
+// when it starts painting an accent fill.
 const surfaces = ["CPL_Dashboard.html", "index.html", "excel_to_dashboard.py",
                   "cpl_todos.js", "admin.js", "raci.js", "tmc_builder.js",
-                  "workplan_goals.js", "unified_courses.js", "credential_reference.js"]
+                  "workplan_goals.js", "unified_courses.js", "credential_reference.js",
+                  "cr_reference.js", "contracts.js", "nc_learning_partners.js",
+                  "sierra_training.js", "mission_control.js", "cpl_pathways.js",
+                  "map_users.js", "cpl_news.js", "team_phrases.js",
+                  "card_updates.js", "project_lifecycle.js", "project_add.js",
+                  "master_report.js", "report_generator.js", "dashboard_filters.js",
+                  "college_report_generator.js", "annual_report.js", "cip_crosswalk.js"]
   .map((f) => fs.readFileSync(f, "utf8")).join("\n");
-check("⭐ no mustard/gold fill is paired with an ink token that flips",
-  !/background(-color)?:\s*var\(--(gold-accent|mustard-fill)[^)]*\)\s*;?\s*color:\s*var\(--(navy-primary|text-strong|mustard-text)/i
-    .test(surfaces));
-// --cobalt is the mirror case: #0047AB light (white ink right), #7DA1D4 dark
-// (white ink 2.65:1). --on-accent is exactly this token, and was already added
-// in S244 for two buttons; these are the rest of them.
-check("⭐ no literal white ink sits on a --cobalt fill",
-  !/background(-color)?:\s*var\(--cobalt[^)]*\)\s*;?\s*color:\s*(#fff(fff)?|white)\b/i
-    .test(surfaces));
+// ⚠️ BOTH PAIRING CHECKS WERE ONE REGEX EACH, AND NEITHER COULD FIRE ON A REAL
+// DECLARATION. They required `color:` to sit IMMEDIATELY after the background,
+// in that order. Every defect that actually shipped broke one of those two
+// assumptions: `background:var(--cobalt);border-color:var(--cobalt);color:#fff`
+// puts a declaration in between, and `.adm-warn{color:…;background:…}` writes
+// the ink FIRST. Verified 2026-09-09 by reverting each fix with the old regexes
+// in place — they stayed green. So the check now PARSES the block instead.
+function declBlocks(css) {
+  const out = [];
+  const re = /\{([^{}]*)\}/g;
+  let m; while ((m = re.exec(css)) !== null) out.push(m[1]);
+  return out;
+}
+function declValue(block, prop) {
+  const m = new RegExp("(?:^|;)\\s*" + prop + "\\s*:\\s*([^;]+)", "i").exec(block);
+  return m ? m[1].trim() : null;
+}
+// ⚠️ ONLY THE OUTERMOST var() IS THE FILL. `var(--seal-blue, var(--navy-primary))`
+// paints seal-blue; the navy is a fallback that never runs. Matching the raw value
+// called three correct cpl_pathways buttons offenders — a false positive is how a
+// guard gets weakened by the next person who has to make it green.
+// ⚠️ Returns the NORMALIZED "var(--token" form, not the bare name: every regex
+// below matches on that prefix, so returning just "--navy-primary" silently made
+// BOTH pairing checks unfireable. Caught only by reverting a fix and watching the
+// suite stay green — which is the whole reason that pass exists.
+function outerToken(value) {
+  const m = /^\s*var\(\s*(--[\w-]+)/.exec(value || "");
+  return m ? "var(" + m[1] : (value || "");
+}
+// Fills whose value CHANGES between themes → their ink must change with them.
+// ⚠️ --navy-primary/--navy-secondary ARE ON THE INK SCALE NOW (#1C1C1A / #3A3A36
+// light, #ECE9E2 / #D6D6D0 dark — the "legacy remaps" in the dark block). Measured
+// S248: 551/497 INK uses against 26/179 FILL uses, so flipping them was right and
+// the fills are the collateral. A fill on them is a DARK bar in light and a LIGHT
+// bar in dark, so its ink has to travel with it — that is --on-accent, whose light
+// value is #FFFFFF, which is why every one of these swaps moved no light pixel.
+const FLIPPING_FILL = /var\(--(cobalt|crimson|hunter|violet|navy-primary|navy-secondary)\b/i;
+// Inks that do NOT change → wrong on a flipping fill.
+const FIXED_INK = /^(#fff(fff)?|white)\b|var\(--white\b/i;
+// Fills that do NOT change → their ink must not change either.
+const FIXED_FILL = /var\(--(gold-accent|mustard-fill|seal-blue)\b/i;
+// Inks that DO change → wrong on a fixed fill.
+// --surface-opaque belongs here: #FFFFFF → #1E1E1C is near-black on a navy that
+// never flips. cpl_pathways.js had three buttons doing exactly that.
+const FLIPPING_INK = /var\(--(navy-primary|navy-secondary|text-strong|text-body|text-muted|paper|surface-opaque|surface-subtle|surface-muted)\b/i;
+
+const badFlipFill = [], badFixedFill = [];
+for (const b of declBlocks(surfaces)) {
+  const bg = declValue(b, "background") || declValue(b, "background-color");
+  const fg = declValue(b, "color");
+  if (!bg || !fg) continue;
+  if (FLIPPING_FILL.test(outerToken(bg)) && FIXED_INK.test(fg)) badFlipFill.push(b.trim().slice(0, 90));
+  if (FIXED_FILL.test(outerToken(bg)) && FLIPPING_INK.test(outerToken(fg))) badFixedFill.push(b.trim().slice(0, 90));
+}
+check("⭐ no fill that FLIPS carries an ink that does not (--cobalt & co. take --on-accent)"
+  + (badFlipFill.length ? " → " + badFlipFill[0] : ""), badFlipFill.length === 0);
+check("⭐ no fill that does NOT flip carries an ink that does (mustard/seal-blue take --on-mustard)"
+  + (badFixedFill.length ? " → " + badFixedFill[0] : ""), badFixedFill.length === 0);
+
+// ─── --white is a COLOR, not a ROLE (S248) ──────────────────────────────────
+// Sam, 2026-09-09, with two screenshots of dark COBI: the Activities project
+// cards and the Activity-KPI cards were still WHITE, their titles #ECE9E2 on
+// #FFFFFF at 1.21:1. The cause was `background-color: var(--white)` — a token
+// named for a color cannot carry a role that flips, so the ground was frozen
+// while every ink on it moved. --surface-opaque is #FFFFFF in light, so the
+// swap moved no light pixel. The ONE legitimate --white ground is inside
+// @media print: paper is white.
+{
+  const printAt = cpl.indexOf("@media print {");
+  const printEnd = cpl.indexOf("\n        }", printAt);
+  const outsidePrint = cpl.slice(0, printAt) + cpl.slice(printEnd);
+  check("⭐ --white is never a ground outside @media print (it cannot go dark)",
+    !/background(-color)?:\s*var\(--white\)/.test(outsidePrint));
+}
+
+// ─── the phantom-surface asymmetry (S248) ───────────────────────────────────
+// --surface-1/--surface-2 were referenced 26 times and DEFINED NOWHERE, so
+// every site fell through to a hardcoded light fallback in both themes: the
+// single largest cause in the dark sweep (19 of 128 contrast findings), and
+// invisible to review because `var(--surface-2,#eef3f9)` reads as themed code.
+// They are now defined in the DARK blocks ONLY — light keeps each site's own
+// tint, so the fix moved no light pixel. Defining them light too would repaint
+// six tabs; that is Sam's call, not a tidy-up.
+for (const tok of ["--surface-1", "--surface-2"]) {
+  check("⭐ " + tok + " IS defined in the dark block (it was a phantom token)",
+    new RegExp("\\" + tok + ":\\s*#").test(darkDecl));
+}
+const lightDecl = cpl.slice(cpl.indexOf(":root {"), cpl.indexOf(":root {") + 4000);
+check("⭐ --surface-1/--surface-2 are NOT defined in the light :root (deliberate)",
+  !/--surface-[12]:\s*#/.test(lightDecl));
 
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

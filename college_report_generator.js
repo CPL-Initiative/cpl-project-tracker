@@ -122,8 +122,8 @@
 
         // Header
         html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
-        html += '<h2 style="margin:0;color:#fff;font-size:1.1rem;">College Custom Report Generator</h2>';
-        html += '<button id="collegeReportModalClose" style="background:none;border:none;color:#fff;font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
+        html += '<h2 style="margin:0;color:var(--on-accent);font-size:1.1rem;">College Custom Report Generator</h2>';
+        html += '<button id="collegeReportModalClose" style="background:none;border:none;color:var(--on-accent);font-size:1.5rem;cursor:pointer;padding:0;line-height:1;">&times;</button>';
         html += '</div>';
 
         html += '<div style="padding:1.5rem;max-height:70vh;overflow-y:auto;">';

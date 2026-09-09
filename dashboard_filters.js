@@ -384,8 +384,8 @@ function resetFilters() {
         ov.innerHTML =
             '<div style="max-width:460px;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">'
             + '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:0.9rem 1.2rem;display:flex;justify-content:space-between;align-items:center;">'
-            + '<h3 style="margin:0;color:#fff;font-size:1rem;">&#128206; Attaching a document</h3>'
-            + '<button id="attachExplainerClose" type="button" style="background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;">&times;</button></div>'
+            + '<h3 style="margin:0;color:var(--on-accent);font-size:1rem;">&#128206; Attaching a document</h3>'
+            + '<button id="attachExplainerClose" type="button" style="background:none;border:none;color:var(--on-accent);font-size:1.4rem;cursor:pointer;line-height:1;">&times;</button></div>'
             + '<div style="padding:1.1rem 1.3rem;font-size:0.86rem;color:#333;line-height:1.5;">'
             + '<p style="margin:0 0 0.6rem 0;">Attachments live in the project\'s <strong>SharePoint folder</strong> — COBI links you there, and the upload happens in SharePoint itself:</p>'
             + '<ol style="margin:0 0 0.8rem 1.1rem;padding:0;">'
