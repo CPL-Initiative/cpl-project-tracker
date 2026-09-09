@@ -3106,7 +3106,7 @@
       "#tab-credential-reference .cr-wl-toggle-btn:last-child{border-radius:0 6px 6px 0;border-left:none;}" +
       "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);font-weight:600;}" +
       "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:#374151;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
-      "#tab-credential-reference .cr-wl-saveall{background:var(--hunter,#166534);color:#fff;border:none;border-radius:5px;font-size:.76rem;font-weight:600;cursor:pointer;padding:4px 10px;}" +
+      "#tab-credential-reference .cr-wl-saveall{background:var(--hunter,#166534);color:var(--on-accent);border:none;border-radius:5px;font-size:.76rem;font-weight:600;cursor:pointer;padding:4px 10px;}" +
       "#tab-credential-reference .cr-wl-saveall:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-preseeded{background:#fffdf5;}" +
       "#tab-credential-reference .cr-wl-preseed-badge{display:inline-block;margin-left:6px;font-size:.68rem;color:#92400e;background:#fef3c7;border:1px solid #fde68a;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
@@ -3253,7 +3253,7 @@
       // Inline merge-collision strip under the title input (PR-5b/2 at the
       // point of edit).
       "#tab-credential-reference .cr-merge-strip{margin:4px 0 0;padding:4px 8px;border:1px solid var(--crimson,#920000);border-radius:6px;background:#FBF1F1;font-size:.72rem;color:var(--crimson,#920000);display:flex;gap:8px;align-items:center;flex-wrap:wrap;text-align:left;}" +
-      "#tab-credential-reference .cr-merge-confirm{border:1px solid var(--crimson,#920000);background:var(--crimson,#920000);color:#fff;border-radius:5px;font-size:.7rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-merge-confirm{border:1px solid var(--crimson,#920000);background:var(--crimson,#920000);color:var(--on-accent);border-radius:5px;font-size:.7rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
       // ⚙ Columns popover.
       "#tab-credential-reference .cr-cols-dd{position:relative;display:inline-block;}" +
       "#tab-credential-reference .cr-cols-dd>summary{list-style:none;cursor:pointer;font-size:.8rem;font-weight:600;border:1px solid var(--border-strong);border-radius:6px;padding:6px 10px;background:var(--surface-opaque,#fff);color:var(--text-body,#3A3A36);user-select:none;}" +
@@ -3285,7 +3285,7 @@
       "#tab-credential-reference .cr-mergesug-title{font-weight:600;color:var(--text-strong,#1C1C1A);}" +
       "#tab-credential-reference .cr-mergesug-meta{color:var(--text-muted,#5C5C55);}" +
       "#tab-credential-reference .cr-mergesug-warn{color:var(--mustard-text,#8B6800);font-weight:600;cursor:help;}" +
-      "#tab-credential-reference .cr-mergesug-btn{border:1px solid var(--violet,#6D28D9);background:var(--violet,#6D28D9);color:#fff;border-radius:5px;font-size:.72rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-mergesug-btn{border:1px solid var(--violet,#6D28D9);background:var(--violet,#6D28D9);color:var(--on-accent);border-radius:5px;font-size:.72rem;font-weight:600;padding:2px 8px;cursor:pointer;}" +
       "#tab-credential-reference .cr-mergesug-btn:disabled{opacity:.6;}" +
       "#tab-credential-reference .cr-mergesug-close{border:none;background:none;color:var(--text-muted,#5C5C55);font-size:.7rem;cursor:pointer;text-decoration:underline;padding:2px 0 0;}" +
       // ── v2 round 3 (Sam, 2026-07-09 evening) ──
@@ -4201,7 +4201,7 @@
             var text = (json && json.content && json.content[0]
                         && json.content[0].text || "").trim();
             if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
-              out.textContent = "no confident suggestion — try 🔎";
+              out.textContent = "no confident suggestion — try Suggest";
               return;
             }
             if (/^none\b/i.test(text)) {
@@ -4221,7 +4221,7 @@
           })
           .catch(function () {
             aiBtn.disabled = false;
-            out.textContent = "suggestion failed — try 🔎";
+            out.textContent = "suggestion failed — try Suggest";
           });
       };
       wrap.appendChild(aiBtn);
@@ -4302,7 +4302,7 @@
             var text = (json && json.content && json.content[0]
                         && json.content[0].text || "").trim();
             if (!text || text.length > 120 || /^unknown\b/i.test(text)) {
-              out.textContent = "no confident suggestion — try 🔎";
+              out.textContent = "no confident suggestion — try Suggest";
               return;
             }
             out.textContent = "";
@@ -4318,7 +4318,7 @@
           })
           .catch(function () {
             aiBtn.disabled = false;
-            out.textContent = "suggestion failed — try 🔎";
+            out.textContent = "suggestion failed — try Suggest";
           });
       };
       wrap.appendChild(aiBtn);

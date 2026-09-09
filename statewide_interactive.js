@@ -645,7 +645,7 @@
     var note = withheld
       ? '<div class="cv-rx-note">+ ' + withheld + ' more flagged but withheld (identity over-merged).</div>'
       : "";
-    return '<details class="cv-rx"><summary>🎯 ' + n + ' college' + (n === 1 ? '' : 's') +
+    return '<details class="cv-rx"><summary>' + n + ' college' + (n === 1 ? '' : 's') +
       ' could adopt this — likely local course to articulate</summary>' +
       '<div class="cv-rx-body">' +
         '<div class="cv-rx-hint">These colleges already teach a course that maps to this credential’s identity — a likely match (membership key is approximate; confirm before articulating).</div>' +
@@ -1550,7 +1550,7 @@
           + '<option value="duplicate"'  + (currentFlag === "duplicate" ? ' selected' : '') + '>🚩 dup</option>'
           + '</select>';
       } else if (currentFlag) {
-        flagCell = '<span class="sw-flag-readonly" title="' + escAttr(flagTitle) + '">🚩 ' + esc(currentFlag) + '</span>';
+        flagCell = '<span class="sw-flag-readonly" title="' + escAttr(flagTitle) + '">' + esc(currentFlag) + '</span>';
       } else {
         flagCell = '<span class="sw-flag-none" title="Sign in via the Common Course Reference tab to flag cards.">—</span>';
       }

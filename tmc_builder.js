@@ -979,7 +979,7 @@
       var sm = statusMeta(t), pathway = !!t._pathway;
       var nslots = pathway ? null : countSlots(t), cov = (showCov && !pathway) ? coverageFor(t) : null;
       var src = tmcSource(t), pdf = pdfPath(t);
-      var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official ↗</a>" : "") +
+      var links = (src ? "<a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official</a>" : "") +
                   (pdf ? " <a class='tmc-srclink' href='" + esc(pdf) + "' target='_blank' rel='noopener' onclick='event.stopPropagation()'>PDF</a>" : "");
       var tr = el("tr", "tmc-listrow");
       tr.tabIndex = 0;
@@ -1139,7 +1139,7 @@
       (t.degree ? "<span class='tmc-deg'>" + esc(t.degree) + "</span>" : "") +
       "<span class='tmc-stchip " + st.cls + "'>" + esc(st.label) + "</span></h3>" +
       "<div class='tmc-collegelbl'>" + (reviewMode ? "All colleges · review view" : esc(state.college)) + " · " + esc(t.version || "draft") +
-      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template ↗</a>" : "") +
+      (src ? " · <a class='tmc-srclink' href='" + esc(src) + "' target='_blank' rel='noopener'>official template</a>" : "") +
       (pdf ? " <span class='tmc-pdf'>· <a href='" + esc(pdf) + "' target='_blank' rel='noopener'>PDF</a></span>" : "") + "</div>";
     head.appendChild(left);
     var meterBox = el("div", "tmc-meter");

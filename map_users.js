@@ -816,7 +816,7 @@
         + "</div>";
     });
     if (l.source) {
-      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC ↗</a></div>';
+      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC</a></div>';
     }
     return h;
   }
@@ -1530,7 +1530,7 @@
       h += "<tr><td>" + esc(g.college)
         + (g.landing_page_url
             ? ' <a class="mapu-lp" href="' + esc(g.landing_page_url) + '" target="_blank" rel="noopener"'
-              + ' title="Their MAP CPL landing page — the page a student uses">↗</a>'
+              + ' title="Their MAP CPL landing page — the page a student uses">Open</a>'
             : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
         + "</td>"
         + "<td>" + proposalCell(g) + "</td>"
@@ -1703,7 +1703,7 @@
           couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>") + "<br>" + srcLink;
         } else {
           couns = '<span class="mapu-st mapu-st-inactive">none published</span>'
-            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked ↗</a>'
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked</a>'
             + (f.note ? '<div class="mapu-prop-none">' + esc(f.note) + "</div>" : "");
         }
       }

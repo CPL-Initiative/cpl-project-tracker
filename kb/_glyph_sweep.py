@@ -82,7 +82,21 @@ def is_comment(line: str) -> bool:
     return t.startswith(("//", "/*", "*/", "*", "#"))
 
 
+# A generated data payload is one enormous line of JSON — course titles, college
+# names, curator notes — and any `title`/`label` key inside it trips CONTROL_HINT.
+# tmc_college_courses.js and unified_courses_suggestions.js contributed 8 "control"
+# findings that way: arrows inside course titles nobody types and nobody clicks.
+# Rewriting them would corrupt the data; they are not a surface at all.
+DATA_PAYLOAD = re.compile(r'^\s*(?:window|var|const|let)\s*[.\w\[\]"\']*\s*=\s*[\[{]"')
+
+
+def is_data_payload(line: str) -> bool:
+    return len(line) > 2000 and bool(DATA_PAYLOAD.match(line))
+
+
 def classify(line: str) -> str:
+    if is_data_payload(line):
+        return "decoration"          # reported, never rewritten
     if CONTROL_HINT.search(line):
         return "control"
     if STATUS_HINT.search(line):

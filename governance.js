@@ -103,7 +103,7 @@
       ".gov-noown { color: var(--danger, #b3261e); font-weight:600; }",
       ".gov-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".gov-chip.auth { background: var(--hunter, #2c601a); color:#fff; }",
+      ".gov-chip.auth { background: var(--hunter, #2c601a); color:var(--on-accent); }",
       ".gov-chip.corrob { background: var(--surface-muted); color: var(--text-body); }",
       ".gov-chip.advis { background: var(--surface-subtle); color: var(--text-muted); }",
       ".gov-live { font-size:.72rem; color: var(--text-muted); }",

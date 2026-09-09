@@ -132,13 +132,13 @@
   // so Sam can flip the label live while presenting; the published default only
   // changes by editing the data file.
   var STAGES = [
-    { id: "discussion-draft", label: "Discussion Draft", glyph: "📝", cls: "draft",
+    { id: "discussion-draft", label: "Discussion Draft", cls: "draft",
       big: "DISCUSSION DRAFT",
       note: "A mock-up for feedback — not an official college publication. The CPL ✓ marks are live from the MAP platform; the pathway itself is a concept for discussion." },
-    { id: "active", label: "Active", glyph: "✓", cls: "active",
+    { id: "active", label: "Active", cls: "active",
       big: "ACTIVE PATHWAY",
       note: "This pathway is live — students are advised under it." },
-    { id: "tabled", label: "Tabled", glyph: "⏸", cls: "tabled",
+    { id: "tabled", label: "Tabled", cls: "tabled",
       big: "TABLED",
       note: "This pathway is parked — kept for reference, not currently moving." },
   ];
@@ -174,7 +174,6 @@
     ".cplpw-pdfbtn:hover { opacity:.92; }",
     /* The BIG status banner */
     ".cplpw-stagebanner { display:flex; align-items:center; gap:14px; border-radius:10px; padding:12px 18px; margin: 8px 0 12px; }",
-    ".cplpw-stagebanner .glyph { font-size:1.5rem; line-height:1; }",
     ".cplpw-stagebanner .big { font-size:1.18rem; font-weight:800; letter-spacing:.16em; }",
     ".cplpw-stagebanner .note { font-size:.8rem; margin-top:2px; opacity:.92; }",
     ".cplpw-stagebanner.draft { background: var(--mustard-fill); color: var(--on-mustard); }",
@@ -892,7 +891,7 @@
       var b = document.createElement("button");
       b.type = "button";
       b.className = (s.id === stage) ? ("on " + s.cls) : "";
-      b.textContent = s.glyph + " " + s.label;
+      b.textContent = s.label;
       b.setAttribute("role", "radio");
       b.setAttribute("aria-checked", s.id === stage ? "true" : "false");
       b.title = s.note + " (Changes how this pathway is labeled in THIS browser; the published default is set in cpl_pathways_data.js.)";
@@ -914,7 +913,6 @@
 
     // The BIG status label
     var banner = el("div", "cplpw-stagebanner " + stagedef.cls);
-    banner.appendChild(el("span", "glyph", stagedef.glyph));
     banner.appendChild(el("div", null, [
       el("div", "big", stagedef.big),
       el("div", "note", stagedef.note),
@@ -926,7 +924,7 @@
     hero.appendChild(el("div", "college", prog.college || ""));
     hero.appendChild(el("h2", null, (prog.program || "") + (prog.degree ? " — " + prog.degree : "")));
     var meta = el("div", "meta");
-    meta.appendChild(el("span", "cplpw-chip stage-" + stagedef.cls, stagedef.glyph + " " + stagedef.label));
+    meta.appendChild(el("span", "cplpw-chip stage-" + stagedef.cls, stagedef.label));
     if (prog.start) meta.appendChild(el("span", "cplpw-chip start", "First cohort: " + prog.start));
     if (prog.status) meta.appendChild(el("span", "cplpw-chip", prog.status));
     if (prog.audience) meta.appendChild(el("span", "cplpw-chip", prog.audience));

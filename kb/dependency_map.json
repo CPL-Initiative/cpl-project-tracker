@@ -677,7 +677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1587,
+     "line": 1585,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1008,7 +1008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1586,
+     "line": 1584,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1736,7 +1736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1585,
+     "line": 1583,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2842,7 +2842,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 108
     },
     {
      "id": "script:prototype/check_contrast.py",
@@ -4073,7 +4073,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1725,
+     "line": 1723,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4143,7 +4143,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1719,
+     "line": 1717,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4429,7 +4429,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 996,
+     "line": 994,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4472,7 +4472,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1692,
+     "line": 1690,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4495,7 +4495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1155,
+     "line": 1153,
      "tabs": [
       "cpl-pathways"
      ]
@@ -4616,7 +4616,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1706,
+     "line": 1704,
      "tabs": [
       "cpl-pathways"
      ]
@@ -5517,7 +5517,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 108
     },
     {
      "id": "script:nudges/build_nudges.py",
@@ -12663,7 +12663,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 100
+     "line": 114
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",

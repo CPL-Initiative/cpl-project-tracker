@@ -1191,7 +1191,7 @@
     tb.appendChild(subjSearch);
     // SUBJ dropdown (mirrors the CCR's Subject filter concept) — pick a
     // 4-letter code and see the disciplines it belongs to. Two optgroups:
-    //   "Common subjects ✓"      — every distinct curator/seed canonical pick
+    //   "Common subjects"      — every distinct curator/seed canonical pick
     //   "Local-derived variants" — codes observed on CCR rows that are not a
     //                              canonical anywhere (post-fold this is
     //                              nearly empty — it's a progress meter)
@@ -1208,7 +1208,7 @@
         title: "Filter disciplines by subject code: canonical Common SUBJ picks first, then local-derived variant codes not yet folded to a canonical.",
       });
       subjSel.appendChild(el("option", { value: "" }, ["All subjects"]));
-      var ogCanon = el("optgroup", { label: "Common subjects ✓" });
+      var ogCanon = el("optgroup", { label: "Common subjects" });
       Object.keys(canonSet).sort().forEach(function (c) {
         ogCanon.appendChild(el("option", { value: c }, [c]));
       });

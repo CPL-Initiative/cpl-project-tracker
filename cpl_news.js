@@ -23,11 +23,11 @@
   var REST = SUPABASE_URL + "/rest/v1";
 
   var SOURCE_TYPES = {
-    news: { label: "News", icon: "📰" },
-    official: { label: "Official", icon: "🏛️" },
-    social: { label: "Social", icon: "💬" },
-    budget: { label: "Budget", icon: "💰" },
-    manual: { label: "Submitted", icon: "🔗" },
+    news: { label: "News" },
+    official: { label: "Official" },
+    social: { label: "Social" },
+    budget: { label: "Budget" },
+    manual: { label: "Submitted" },
   };
 
   var CSS_ID = "cpl-news-css";
@@ -239,7 +239,7 @@
     var st = SOURCE_TYPES[row.source_type] || SOURCE_TYPES.news;
     var top = el("div", { className: "top" }, [
       el("span", { className: "badge " + (row.scope === "ca" ? "ca" : "national") }, row.scope === "ca" ? "California" : (row.scope === "national" ? "National" : "Other")),
-      el("span", null, (st.icon || "") + " " + (st.label || row.source_type || "")),
+      el("span", null, st.label || row.source_type || ""),
       row.related_system && row.related_system !== "CPL" ? el("span", { className: "sys" }, "· " + row.related_system) : null,
       row.publisher ? el("span", null, "· " + row.publisher) : null,
       row.published_at ? el("span", null, "· " + fmtDate(row.published_at)) : null,

@@ -180,7 +180,7 @@
     b.onclick = function () {
       var text = textFn();
       var done = function (ok) {
-        b.textContent = ok ? "Copied ✓" : "Copy unavailable";
+        b.textContent = ok ? "Copied" : "Copy unavailable";
         setTimeout(function () { b.textContent = label; }, 1600);
       };
       try {

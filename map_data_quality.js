@@ -372,13 +372,13 @@
   function doExport(btn) {
     var text = buildExportText();
     var restore = function () { setTimeout(function () { btn.textContent = "⧉ Copy for MAP devs"; }, 1600); };
-    var ok = function () { btn.textContent = "Copied ✓"; restore(); };
+    var ok = function () { btn.textContent = "Copied"; restore(); };
     var fail = function () {
       try {
         var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "absolute"; ta.style.left = "-9999px";
         (document.body || document.documentElement).appendChild(ta); ta.select();
         var done = document.execCommand && document.execCommand("copy"); if (ta.parentNode) ta.parentNode.removeChild(ta);
-        btn.textContent = done ? "Copied ✓" : "Copy unavailable"; restore();
+        btn.textContent = done ? "Copied" : "Copy unavailable"; restore();
       } catch (e) { btn.textContent = "Copy unavailable"; restore(); }
     };
     try {

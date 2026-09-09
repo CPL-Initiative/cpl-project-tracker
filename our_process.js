@@ -368,7 +368,7 @@
           </div>
         </div>
         <div class="op-livecta op-reveal">
-          <a class="op-livebtn" href="#tmc-builder"><span class="op-livedot"></span> See the TMC Builder live <span aria-hidden="true">↗</span></a>
+          <a class="op-livebtn" href="#tmc-builder"><span class="op-livedot"></span> See the TMC Builder live</a>
           <div class="op-livenote">Opens the live tool · Reference &amp; Curation → TMC Builder</div>
         </div>
       </div>
