@@ -125,9 +125,14 @@ panes.** What remains is per-tab and is *measured*, not guessed — re-run
    is correct as a light chart; making it themed means reading the computed
    token in JS and repainting on `cpl:themechange` (the event exists for this).
 3. **The `--cobalt` fill/text split is only half done.** `--on-accent` was added
-   and applied to the two shared-chrome buttons; the other ~140 `--cobalt` fills
-   still pair with a hard-coded `#fff` and will read ~2.65:1 in dark wherever a
-   pane paints one.
+   and applied to the two shared-chrome buttons. ⚠️ **The remainder is 25, not
+   ~140 — that figure was wrong and is corrected here (2026-09-09).** Measured
+   over COBI's own surfaces (root `*.js` + the HTMLs): **59 `--cobalt`
+   backgrounds, of which 25 pair with a literal white in the same declaration**
+   and so read ~2.65:1 in dark; 30 pairs across all scanned surfaces including
+   `fact-sheet/` and the prototypes. The earlier number came from a looser
+   pattern over a wider file set and conflated "is a background" with "pairs
+   with white" — *a figure is only wrong relative to the payload it names*.
 4. **19 tabs were already failing `npm run a11y cobi` in LIGHT** before any of
    this (S243's item 5 — `our-process` is six faults from two tokens,
    `pipeline` ten). Those are the same lane's work and unchanged by this run.

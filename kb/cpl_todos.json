@@ -5,22 +5,28 @@
  "_status": "COBI has a dark mode, and one control drives it. The Theme selector in the header (System · Light · Dark) sets every tab and follows you into a second window; before this there were genuinely FOUR different answers to \"is it dark\" hiding behind what looked like one setting misbehaving. Measured across all 38 tabs, dark went from every route failing accessibility to 26, and light improved too (19 → 17) rather than regressing. SkyView got Sam's five: a slower turn, a course that stays where you drop it instead of snapping back, courses grouped by level where we have the indicator (only 12% of them do), CTE-vs-academic checkboxes, and an Isolate toggle. There is now a standing procedure for this kind of work — /a11y-pass — because the reports were being read in the wrong order: a sweep of 511 findings was really six problems repeated on every tab. The glyph sweep it comes with is built and tested but NOT run: it would rewrite 516 button and link labels across 139 files, and that needs Sam's go first.",
  "items": [
   {
+   "id": "s244-sam-decision-sheet",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "Eleven pending decisions are on one sheet with reply chips — three from this session (the glyph run, whether the three approved emoji exceptions are in scope, how SkyView should follow the header's Theme control), five carried from Session 244 that have never been answered, and three that are not decisions at all but want your eye on something already shipped. Reply on the sheet and the session reads it back: https://claude.ai/code/artifact/a6821715-4c49-43f1-be7a-b2a7a8f3b487"
+  },
+  {
    "id": "s244-sam-glyph-go",
    "for": "Sam",
    "tab": "dashboard",
-   "text": "Go / no-go on the glyph clean-up. You asked to remove all emoji glyphs and replace the crucial ones with a muted mark in white and CO blue. The tool is built and tested; running it rewrites 516 button and link labels across 139 files in one pass. It is deliberately not run yet — say go and it happens with the full test suite and both accessibility sweeps after it."
+   "text": "Go / no-go on the glyph clean-up. You asked to remove all emoji glyphs and replace the crucial ones with a muted mark in white and CO blue. The tool is built and tested; running it rewrites 516 button and link labels across 139 files in one pass. It is deliberately not run yet — say go and it happens with the full test suite and both accessibility sweeps after it. (item on the decision sheet — reply there.)"
   },
   {
    "id": "s244-sam-glyph-exceptions",
    "for": "Sam",
    "tab": "dashboard",
-   "text": "One reading to confirm: \"remove all emoji glyphs\" was taken to include the three we had previously approved and protected — the To-Do button, the guidance pane and the Governance tab. They are now in scope as muted CO-blue marks. If you meant to keep those three as they are, say so and the carve-out goes back."
+   "text": "One reading to confirm: \"remove all emoji glyphs\" was taken to include the three we had previously approved and protected — the To-Do button, the guidance pane and the Governance tab. They are now in scope as muted CO-blue marks. If you meant to keep those three as they are, say so and the carve-out goes back. (item on the decision sheet — reply there.)"
   },
   {
    "id": "s244-sam-skyview-theme",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "SkyView follows the header's Theme control only as a fallback: your own SkyView choice still wins, and \"Night by default\" still owns the default when nobody has chosen. That layering was a judgment call — worth your eye, and easy to change."
+   "text": "SkyView follows the header's Theme control only as a fallback: your own SkyView choice still wins, and \"Night by default\" still owns the default when nobody has chosen. That layering was a judgment call — worth your eye, and easy to change. (item on the decision sheet — reply there.)"
   },
   {
    "id": "s244-fable-cobalt-fills",

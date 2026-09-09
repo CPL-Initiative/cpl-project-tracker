@@ -89,9 +89,11 @@ only 12% of points carry a level word); **CTE vs academic** as three switches
    and decoration (808) need reworded sentences and judgment about legends.**
 2. **The rest of the a11y backlog, through the triage tool, not by reading the
    report.** `npm run a11y cobi-dark > /tmp/d.txt && node scripts/a11y_triage.js
-   /tmp/d.txt`. Named remainder in the lane: ~140 `--cobalt` fills still pair
-   with a hard-coded `#fff` (2.65:1 wherever a pane paints one) — **mechanical
-   and the largest single source left**; hard-coded light fills inside
+   /tmp/d.txt`. Named remainder in the lane: **25 `--cobalt` fills pair with a
+   literal white** in the same declaration (2.65:1 in dark), out of 59 `--cobalt`
+   backgrounds to review on COBI's own surfaces — ⚠️ **S244's handoff first said
+   ~140; that was measured with a looser pattern over a wider file set and is
+   corrected in the lane.** Mechanical, and still the largest single source left; hard-coded light fills inside
    generator-emitted panes (Rule 1: fix `excel_to_dashboard.py`, never the HTML);
    canvases that are light-only by construction (`ctx.fillStyle` ignores `var()`).
 3. **`docs/reference/lanes/skyview-ccr-interface.md` is 2.5× its budget** and the
