@@ -35,7 +35,7 @@
     ".cplnews { max-width: 1000px; margin: 0 auto; color: var(--text-body); }",
     ".cplnews h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
     ".cplnews-intro { color: var(--text-muted); max-width: 820px; margin: 0 0 14px; font-size: .92rem; }",
-    ".cplnews-intro .draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+    ".cplnews-intro .draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
     ".cplnews-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 12px; }",
     ".cplnews-toolbar input.q { flex:1 1 220px; min-width:180px; padding:8px 12px; border:1px solid var(--border-strong); border-radius:6px; font-size:.9rem; }",
     ".cplnews-toolbar input.q:focus { outline:none; border-color: var(--navy-secondary); }",

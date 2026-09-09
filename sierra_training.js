@@ -334,7 +334,7 @@
       ".sit h2 { color: var(--navy-primary); margin: 16px 0 4px; }",
       ".sit h3 { color: var(--navy-primary); margin: 20px 0 8px; font-size: 1.02rem; }",
       ".sit-intro { color: var(--text-muted); max-width: 900px; margin: 0 0 12px; font-size: .92rem; }",
-      ".sit-gatechip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".sit-gatechip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".sit-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
       ".sit-stat .box { flex:1 1 140px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; }",
       ".sit-stat .box .n { font-size:1.5rem; font-weight:700; color: var(--navy-primary); }",

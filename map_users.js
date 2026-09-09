@@ -141,7 +141,7 @@
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".mapu-nudged { display:block; font-size:.68rem; color: var(--text-muted); margin-top:3px; }",
       // recipient picker (the confirm/uncheck dialog before the mailto opens)
       ".mapu-picker-ov { position:fixed; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:9999; padding:16px; }",

@@ -317,6 +317,13 @@ function CONTRAST() {
     const p = m[1].split(",").map((x) => parseFloat(x));
     return { r: p[0], g: p[1], b: p[2], a: p.length > 3 ? p[3] : 1 };
   };
+  /* ⭐ A RATIO WITHOUT ITS TWO COLOURS IS NOT ACTIONABLE. The fix for a contrast
+     fault is always "which token painted this", and the report used to name the
+     selector and the ratio only — so a session had to grep and guess, and two
+     faults that were ONE colour looked like two problems. `worstBg` was already
+     computed here and thrown away. */
+  const hex = (c) => "#" + [c.r, c.g, c.b]
+    .map((x) => Math.round(x).toString(16).padStart(2, "0")).join("").toUpperCase();
   const over = (fg, bg) => ({                     // alpha compositing
     r: fg.r * fg.a + bg.r * (1 - fg.a),
     g: fg.g * fg.a + bg.g * (1 - fg.a),
@@ -404,15 +411,17 @@ function CONTRAST() {
     // Score against every candidate background and keep the WORST — text over a
     // gradient has to be legible at its lightest stop, not on average.
     const candidates = stops ? stops.slice() : [bg];
-    let worst = Infinity, worstBg = null;
+    let worst = Infinity, worstBg = null, worstFg = null;
     candidates.forEach((cand) => {
       let base = cand;
       for (let i = layers.length - 1; i >= 0; i--) base = over(layers[i], base);
-      const r = ratio(over(fg, base), base);
-      if (r < worst) { worst = r; worstBg = base; }
+      const composited = over(fg, base);
+      const r = ratio(composited, base);
+      if (r < worst) { worst = r; worstBg = base; worstFg = composited; }
     });
     results.push({ el: label, ratio: Math.round(worst * 100) / 100, need, pass: worst >= need - 0.005,
                    size: Math.round(size * 10) / 10, text,
+                   fg: worstFg ? hex(worstFg) : null, bg: worstBg ? hex(worstBg) : null,
                    over: stops ? `gradient (worst of ${candidates.length} stops)` : "solid" });
   });
   return { results, unmeasurable, notPainted };
@@ -684,7 +693,7 @@ function MOTION(known) {
         if (width === widths[0]) {
           const c = await page.evaluate(CONTRAST);
           const fails = c.results.filter((x) => !x.pass);
-          fails.forEach((f) => note(route.name, `contrast  ${f.ratio}:1 (needs ${f.need}) ${f.el} ${f.size}px [${f.over}] "${f.text}"`));
+          fails.forEach((f) => note(route.name, `contrast  ${f.ratio}:1 (needs ${f.need}) ${f.fg || "?"} on ${f.bg || "?"} ${f.el} ${f.size}px [${f.over}] "${f.text}"`));
           c.unmeasurable.forEach((u) => note(route.name, `contrast  unmeasurable: ${u.el} ${u.color} — ${u.why}`));
           if (verbose) console.log(`   ${route.name || "(page)"}: ${c.results.length - fails.length}/${c.results.length} painted pairs meet AA` +
             (c.notPainted.length ? `; ${c.notPainted.length} not painted yet (opacity 0 — scroll reveal)` : ""));

@@ -57,6 +57,20 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
     { active: true, session_url: LINK, expires_at: new Date(Date.now() + 3600000).toISOString() });
   check("an unexpired row does render", !!d.window.document.getElementById("cobi-live"));
 
+  /* ⚠️ AND AN EXPIRY THIS ENGINE CANNOT READ MUST HIDE IT TOO (Session 245).
+   * The check was `getTime() <= Date.now()`, and NaN <= anything is FALSE — so
+   * a malformed timestamp skipped the expiry test entirely and the banner would
+   * announce a dead session forever. That is the opposite of the "fails closed
+   * at every step" this block claims. PostgREST sends +00:00, which parses;
+   * `+00` without the colon is Invalid Date in V8, and a server, a migration or
+   * a hand-written row can produce it. Sam hit the ordinary version of this on
+   * 2026-09-09 — a row four hours past its window, correctly hidden. */
+  d = build();
+  d.window.COBI_BRAND.liveBannerRender(
+    { active: true, session_url: LINK, expires_at: "2026-09-08T20:29:52.666224+00" });
+  check("⭐ an UNPARSEABLE expiry hides the banner (fails closed, not open)",
+    !d.window.document.getElementById("cobi-live"));
+
   // ── nothing at all renders nothing ────────────────────────────────────────
   d = build();
   d.window.COBI_BRAND.liveBannerRender(null);

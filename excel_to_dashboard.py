@@ -1291,7 +1291,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
 
     year_cols = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
 
-    html = '''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    html = '''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h2 style="color:var(--navy-primary);margin:0 0 1rem 0;">Annual Workplan Goals</h2>
             <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;font-size:0.82rem;">
@@ -1346,7 +1346,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
         for rtype, vals, style in [
             ("Goal", row["goal"], "background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);"),
-            ("Current", row["current"], "background:#fff;color:var(--green-progress);font-weight:700;"),
+            ("Current", row["current"], "background:var(--surface-opaque);color:var(--green-progress);font-weight:700;"),
             ("Stretch", row["stretch"], "background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;"),
         ]:
             is_first = rtype == "Goal"
@@ -1416,7 +1416,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                                'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
                              f'border:1px solid #ddd;{_nest_style}'
-                             f'vertical-align:top;font-weight:600;background:#fff;">'
+                             f'vertical-align:top;font-weight:600;background:var(--surface-opaque);">'
                              f'{_sub_marker}'
                              f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
@@ -1849,7 +1849,7 @@ def _att_badge(attachments, act_num=None, project_id=None):
         count = attachments.get("by_activity", {}).get(str(act_num), 0)
     if count <= 0:
         return ""
-    return (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.6rem;'
+    return (f' <span style="background:var(--gold-accent);color:var(--on-mustard);font-size:0.6rem;'
             f'font-weight:700;padding:1px 5px;border-radius:8px;margin-left:2px;">'
             f'{count}</span>')
 
@@ -2302,7 +2302,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     # Workplan Note (col V)
                     if kpi_wp:
                         html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>'
                                  f'{kpi_wp}</div>\n')
 
@@ -2310,7 +2310,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     if len(kpi_notes_list) > 1:
                         type_badge_css = {
                             "update":   "background:var(--navy-secondary);color:#fff;",
-                            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
+                            "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
                         }
                         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
                         html += (f'                    <div class="notes-history" data-pid="{kpi_pid}" '
@@ -2524,7 +2524,7 @@ def render_workplan_goals_html(
                 <span style="color:var(--gold-accent);font-weight:700;font-size:0.9rem;">{header_label}</span>
             </div>
             <div style="overflow-x:auto;">
-            <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
+            <table style="width:100%;border-collapse:collapse;font-size:0.8rem;background:var(--surface-opaque);box-shadow:0 2px 8px rgba(0,0,0,0.06);border-radius:0 0 8px 8px;table-layout:fixed;">
                 <colgroup>
                     <col style="width:30%;">
                     <col style="width:8%;">
@@ -2766,7 +2766,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     )
     current_notes_html += (
         f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
         f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
     )
@@ -2777,7 +2777,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     if len(all_notes) > 1:
         type_badge_css = {
             "update":   "background:var(--navy-secondary);color:#fff;",
-            "workplan": "background:var(--gold-accent);color:var(--navy-primary);",
+            "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
         }
         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
         history_html += (
@@ -3161,7 +3161,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
 
     return (
         '\n        <details class="tabled-archived-wrap" '
-        'style="margin-top:1.5rem;border:1px solid var(--border);border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
+        'style="margin-top:1.5rem;border:1px solid var(--border);border-radius:10px;padding:0.5rem 1rem;background:var(--surface-opaque);">\n'
         '            <summary class="tabled-archived-summary" '
         'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
         f'Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
@@ -3402,7 +3402,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
 
     data_json = _json.dumps(chart_data)
 
-    html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:#fff;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    html = f'''        <div style="margin:2rem 0;padding:1.5rem;background:var(--surface-opaque);border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
@@ -10056,7 +10056,7 @@ EXHIBIT_ANALYSIS_CSS = """
     padding:0.7rem 1rem; margin:0 0 1.25rem 0; font-size:0.85rem; }
 .budget-auth-widget input[type=email] { padding:0.4rem 0.6rem; border:1px solid var(--border-strong);
     border-radius:5px; font-size:0.85rem; min-width:200px; }
-.budget-btn { background:var(--cobalt); color:#fff; border:none; border-radius:5px;
+.budget-btn { background:var(--cobalt); color:var(--on-accent); border:none; border-radius:5px;
     padding:0.4rem 0.9rem; font-size:0.82rem; cursor:pointer; }
 .budget-btn:hover { background:#003B8E; }
 .budget-btn-out { background:var(--text-muted); margin-left:auto; }
@@ -10082,7 +10082,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .cpl-analytics-body,
 .activity-kpi-body {
-    background-color: #ffffff;
+    background-color: var(--surface-opaque);
     padding: 1.5rem 2rem 2rem;
     margin: 0;
 }
@@ -10142,7 +10142,7 @@ EXHIBIT_ANALYSIS_CSS = """
 }
 .analytics-export-btn:hover {
     background: var(--gold-accent);
-    color: var(--navy-primary);
+    color: var(--on-mustard);
 }
 .exhibit-total-row td {
     background: rgba(227,179,65,0.12);
@@ -10330,7 +10330,7 @@ EXHIBIT_ANALYSIS_CSS = """
 #statewide-interactive-container { grid-column: 1 / -1; }
 .sw-interactive { background:var(--surface-opaque); border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 8px 30px rgba(20,20,30,0.08); }
 .sw-toolbar { padding:0.8rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
-.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:5px; background:#fff; color:var(--text-body); font-size:0.78rem; outline:none; }
+.sw-toolbar input[type=text] { flex:1 1 200px; padding:0.4rem 0.6rem; border:1px solid var(--border); border-radius:5px; background:var(--surface-opaque); color:var(--text-body); font-size:0.78rem; outline:none; }
 .sw-toolbar input[type=text]:focus { border-color:var(--cobalt); }
 .sw-toolbar input[type=text]::placeholder { color:var(--text-muted); }
 .sw-filter-group { position:relative; display:inline-block; }
@@ -10341,11 +10341,11 @@ EXHIBIT_ANALYSIS_CSS = """
 .sw-filter-dropdown label { display:flex; align-items:center; gap:0.4rem; padding:0.3rem 0.6rem; font-size:0.7rem; color:var(--text-body); cursor:pointer; }
 .sw-filter-dropdown label:hover { background:rgba(227,179,65,0.12); }
 .sw-filter-dropdown input[type=checkbox] { accent-color:var(--accent-link); }
-.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:4px; background:#fff; color:var(--text-body); font-size:0.68rem; }
+.sw-filter-search { width:calc(100% - 1rem); margin:0.4rem 0.5rem; padding:0.3rem 0.5rem; border:1px solid var(--border); border-radius:4px; background:var(--surface-opaque); color:var(--text-body); font-size:0.68rem; }
 .sw-action-bar { padding:0.5rem 1rem; display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; border-bottom:1px solid var(--border); }
 .sw-action-btn { padding:0.35rem 0.9rem; border:1px solid rgba(227,179,65,0.5); border-radius:5px; background:rgba(227,179,65,0.12); color:var(--mustard-text); font-size:0.72rem; font-weight:600; cursor:pointer; transition:all 0.15s; }
 .sw-action-btn:hover { background:rgba(227,179,65,0.25); }
-.sw-action-btn.primary { background:var(--gold-accent); color:var(--navy-primary); border-color:var(--gold-accent); }
+.sw-action-btn.primary { background:var(--gold-accent); color:var(--on-mustard); border-color:var(--gold-accent); }
 .sw-action-btn.primary:hover { background:#EBC25D; }
 .sw-count { font-size:0.7rem; color:var(--text-muted); margin-left:auto; }
 .sw-table-wrap { max-height:600px; overflow:auto; scrollbar-width:thin; scrollbar-color:rgba(227,179,65,0.4) transparent; }
@@ -10379,19 +10379,19 @@ EXHIBIT_ANALYSIS_CSS = """
 /* ═══ Projects inline editor (Phase 2 PR-5 — projects_editor.js) ═══ */
 .proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:var(--surface-subtle); border-radius:8px; font-size:0.85rem; color:var(--navy-primary); display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
 .proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }
-.proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:#fff; border-radius:5px; font-size:0.8rem; cursor:pointer; }
-.proj-btn-out { border:1px solid #ccc; background:#fff; color:#333; }
+.proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:var(--on-accent); border-radius:5px; font-size:0.8rem; cursor:pointer; }
+.proj-btn-out { border:1px solid #ccc; background:var(--surface-opaque); color:#333; }
 /* Click-to-edit affordance only lights up when signed in */
 .proj-editable.proj-on { cursor:pointer; border-bottom:1px dashed transparent; transition:background 0.15s, border-color 0.15s; }
 .proj-editable.proj-on:hover { background:rgba(0,71,171,0.06); border-bottom-color:var(--cobalt); }
-.proj-editing { background:#fff !important; }
-.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid var(--cobalt); border-radius:3px; background:#fff; min-width:60px; }
+.proj-editing { background:var(--surface-opaque) !important; }
+.proj-cell-input { box-sizing:border-box; padding:2px 4px; font:inherit; border:1px solid var(--cobalt); border-radius:3px; background:var(--surface-opaque); min-width:60px; }
 .proj-saving { background:#FFF8E1 !important; }
 .proj-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .proj-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Multi-line edit modal */
 .proj-modal-overlay { position:fixed; inset:0; background:rgba(28,28,26,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
-.proj-modal-card { background:#fff; border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
+.proj-modal-card { background:var(--surface-opaque); border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
 .proj-modal-card h3 { margin:0 0 0.5rem 0; color:var(--navy-primary); font-size:1.05rem; }
 .proj-modal-card .proj-modal-sub { color:#666; font-size:0.78rem; margin-bottom:0.75rem; }
 .proj-modal-card textarea { width:100%; min-height:140px; padding:0.5rem 0.6rem; border:1px solid #ccc; border-radius:6px; font-size:0.85rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
@@ -10399,8 +10399,8 @@ EXHIBIT_ANALYSIS_CSS = """
 .proj-modal-card .proj-modal-status.err { color:var(--crimson); }
 .proj-modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; }
 .proj-modal-actions button { padding:0.4rem 0.9rem; border-radius:5px; font-size:0.85rem; cursor:pointer; border:0; }
-.proj-btn-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.proj-btn-submit { background:var(--cobalt); color:#fff; font-weight:600; }
+.proj-btn-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:#333; }
+.proj-btn-submit { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 /* ── Activity↔Project association editor (workplan_goals.js) ── */
 /* Primary association chip (★) reads slightly bolder than a plain chip. */
@@ -10415,7 +10415,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-cell.wpg-assoc-saved { background:#E8F5E9 !important; transition:background 0.4s; }
 .wpg-assoc-cell.wpg-assoc-error { background:#FFEBEE !important; transition:background 0.4s; }
 /* Association popover (anchored near the clicked chip cell) */
-.wpg-assoc-pop { position:absolute; z-index:10000; background:#fff; border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
+.wpg-assoc-pop { position:absolute; z-index:10000; background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
 .wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:var(--navy-primary); }
 .wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
 .wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
@@ -10432,8 +10432,8 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-pop .wpg-assoc-pop-status.ok { color:var(--green-progress); }
 .wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
 .wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
-.wpg-assoc-pop .wpg-assoc-cancel { background:#fff; border:1px solid #ccc !important; color:#333; }
-.wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:#fff; font-weight:600; }
+.wpg-assoc-pop .wpg-assoc-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:#333; }
+.wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
 .wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
 /* ═══ End MAP Articulation Analysis Cards ═══ */
@@ -12222,7 +12222,7 @@ def main():
                 f'{escaped_desc}</div></details>'
                 f'<style>.project-description[open] .desc-arrow{{transform:rotate(90deg);}}</style>')
         att_count = attachments.get("total", 0)
-        badge_html = (f' <span style="background:var(--gold-accent);color:var(--navy-primary);font-size:0.65rem;'
+        badge_html = (f' <span style="background:var(--gold-accent);color:var(--on-mustard);font-size:0.65rem;'
                       f'font-weight:700;padding:1px 6px;border-radius:8px;margin-left:4px;">'
                       f'{att_count}</span>') if att_count > 0 else ''
         proj_info_parts.append(

@@ -236,13 +236,13 @@
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add",
-        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
+        "style": "margin-left:auto;padding:0.35rem 0.75rem;border:1px solid var(--cobalt);background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;font-weight:600;"
       }, ["+ Add new row"]);
       btnAdd.addEventListener("click", function () { openAddModal(state); });
       widget.appendChild(btnAdd);
       var btnOut = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:#fff;color:#333;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:var(--surface-opaque);color:#333;border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
@@ -259,7 +259,7 @@
       }, []);
       var btnIn = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:#fff;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, ["Sign in"]);
       var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
 
@@ -384,7 +384,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
 
     cell.classList.add("wpg-editing");
@@ -506,7 +506,7 @@
       "type": "text",
       "value": isPct && oldNum ? (Math.round(oldNum * 100) + "%") : (oldNum || ""),
       "class": "wpg-cell-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;text-align:right;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -580,7 +580,7 @@
       "type": "text",
       "value": oldName,
       "class": "wpg-title-input",
-      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;"
+      "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);"
     }, []);
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -638,9 +638,9 @@
     if (oldVal === "—") oldVal = "";  // the "—" placeholder means empty
     var field = opts.multiline
       ? el("textarea", { "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;color:#333;resize:vertical;" }, [])
+          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:#333;resize:vertical;" }, [])
       : el("input", { "type": "text", "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;color:#333;" }, []);
+          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:#333;" }, []);
     field.value = oldVal;
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -767,13 +767,13 @@
     var css = ''
       + '.wpg-editable { cursor: pointer; transition: background 0.15s; }'
       + '.wpg-editable:hover { background: #F0F4F8 !important; outline: 1px dashed #4D7EA8; }'
-      + '.wpg-editing { background: #fff !important; padding: 0 !important; }'
+      + '.wpg-editing { background: var(--surface-opaque) !important; padding: 0 !important; }'
       + '.wpg-saving { background: #FFF8E1 !important; }'
       + '.wpg-saved { background: #E8F5E9 !important; transition: background 0.4s; }'
       + '.wpg-error { background: #FFEBEE !important; transition: background 0.4s; }'
       // PR-C add-flow modal
       + '.wpg-modal-overlay { position:fixed;inset:0;background:rgba(10,34,64,0.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3rem 1rem; }'
-      + '.wpg-modal-card { background:#fff;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
+      + '.wpg-modal-card { background:var(--surface-opaque);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
       + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:var(--text-strong);font-size:1.1rem; }'
       + '.wpg-modal-card .wpg-sub { color:#666;font-size:0.8rem;margin-bottom:1rem; }'
       + '.wpg-modal-card label { display:block;font-size:0.78rem;color:#666;margin:0.6rem 0 0.2rem 0;font-weight:600; }'
@@ -788,12 +788,12 @@
       + '.wpg-modal-card .wpg-status.err { color:#A33; }'
       + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem; }'
       + '.wpg-modal-card .wpg-modal-actions button { padding:0.4rem 0.9rem;border-radius:5px;font-size:0.85rem;cursor:pointer;border:0; }'
-      + '.wpg-modal-card .wpg-btn-cancel { background:#fff;border:1px solid #ccc !important;color:#333; }'
-      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:#fff;font-weight:600; }'
+      + '.wpg-modal-card .wpg-btn-cancel { background:var(--surface-opaque);border:1px solid #ccc !important;color:#333; }'
+      + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:var(--on-accent);font-weight:600; }'
       + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
       // Session 85 — Current hybrid + title editor affordances
-      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:#fff;border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
+      + '.wpg-live-badge { display:inline-block;margin-left:0.35rem;padding:0.02rem 0.34rem;background:var(--cobalt,#2A6FB0);color:var(--on-accent);border-radius:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.02em;vertical-align:middle;white-space:nowrap; }'
       + '.wpg-manual-hint { color:#bbb;font-size:0.72rem; }'
       + '.wpg-editable.wpg-manual-hint, .wpg-editable .wpg-manual-hint { color:#4D7EA8; }'
       + '.wpg-title-cell { border-radius:3px; }';

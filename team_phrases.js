@@ -242,7 +242,7 @@
       // of what a phrase opens — essential text, which faint is never for.
       ".tphx-intro{color:var(--text-muted,#5C5C55);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);line-height:1.5;}",
       ".tphx-gatechip{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;",
-      "background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
+      "background:var(--gold-accent,#B8860B);color:var(--on-mustard);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
       ".tphx-card{background:var(--surface-0,#fff);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:14px 16px;margin-bottom:12px;}",
       ".tphx-card h3{margin:0 0 .2rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
       ".tphx-opens{font-size:.82rem;color:var(--text-body,#444);margin:.1rem 0 .3rem;line-height:1.45;}",
@@ -256,7 +256,7 @@
       ".tphx-msg{font-size:.78rem;margin-top:6px;min-height:1em;}",
       ".tphx-msg.err{color:var(--danger-text,#c00);}",
       ".tphx-msg.ok{color:var(--success-text,#2A7D4F);}",
-      ".tphx-warn{font-size:.82rem;background:var(--mustard-fill,#f2dca0);color:var(--text-strong,#3a2f00);border-radius:8px;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
+      ".tphx-warn{font-size:.82rem;background:var(--mustard-fill,#f2dca0);color:var(--on-mustard);border-radius:8px;padding:10px 14px;margin:0 0 1rem;line-height:1.5;}",
       ".tphx-gate{background:var(--surface-1,#fafbfc);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:18px;max-width:560px;}",
       ".tphx-gate h3{margin:0 0 .4rem;font-size:1rem;color:var(--navy-primary,#0A2240);}",
       ".tphx-gate p{font-size:.85rem;color:var(--text-body,#444);line-height:1.5;margin:.3rem 0 .8rem;}",

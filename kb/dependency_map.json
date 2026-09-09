@@ -169,7 +169,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 587
+     "line": 596
     },
     {
      "id": "module:scripts/check_memory_briefing_layout.js",
@@ -15555,7 +15555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 452,
+     "line": 460,
      "pages": [
       "CPL_Dashboard.html"
      ]

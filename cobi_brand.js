@@ -396,7 +396,15 @@
 
   function liveBannerRender(row) {
     if (!row || !row.active || !row.session_url) return null;
-    if (row.expires_at && new Date(row.expires_at).getTime() <= Date.now()) return null;
+    /* ⚠️ AN UNPARSEABLE EXPIRY FAILED *OPEN*, WHICH IS THE ONE THING THIS BLOCK
+     * PROMISES NOT TO DO. `NaN <= Date.now()` is false, so a date this engine
+     * cannot read skipped the check and the banner would have announced a dead
+     * session forever. PostgREST returns +00:00 today and parses fine — the bug
+     * was latent, not live — but "fails closed at every step" has to be true of
+     * the value the server MIGHT send, not only the one it sends now: drop the
+     * colon (a legal-looking `+00`) and V8 returns Invalid Date. Ask for a
+     * future instant and let every other answer, NaN included, hide it. */
+    if (row.expires_at && !(new Date(row.expires_at).getTime() > Date.now())) return null;
     // A viewer who closed THIS banner does not see it again; a new link is a
     // new banner. Keyed on the url so dismissing one never hides the next.
     try {

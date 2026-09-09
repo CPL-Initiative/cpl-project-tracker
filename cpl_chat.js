@@ -726,7 +726,7 @@
       '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
       '.cplchat-fb-note[hidden] { display:none; }',
       '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
-      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
+      '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:var(--on-accent); font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
       '.cplchat-fb-sending { color:var(--text-faint, #8a94a6); font-weight:600; }',

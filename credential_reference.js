@@ -3055,7 +3055,7 @@
       // Curate panel is now opened from the row's Action cell (2026-06-03).
       "#tab-credential-reference .cr-curate-toggle{background:var(--surface-muted);border:1px solid var(--border-strong);border-radius:6px;color:var(--text-strong);font-size:.74rem;font-weight:600;cursor:pointer;padding:3px 10px;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-curate-toggle:hover{background:#e2e8f0;}" +
-      "#tab-credential-reference .cr-curate-toggle.is-open{background:var(--cobalt);color:#fff;border-color:var(--cobalt);}" +
+      "#tab-credential-reference .cr-curate-toggle.is-open{background:var(--cobalt);color:var(--on-accent);border-color:var(--cobalt);}" +
       // Action cell stacks Curate over Mark-initiated / the ✓ initiated stamp.
       "#tab-credential-reference .cr-action-cell{display:flex;flex-direction:column;gap:4px;align-items:flex-start;}" +
       "#tab-credential-reference .cr-action-curate{margin-bottom:0;}" +
@@ -3095,7 +3095,7 @@
       "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
       "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
-      "#tab-credential-reference .cr-wl-save{background:var(--cobalt);color:#fff;border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
+      "#tab-credential-reference .cr-wl-save{background:var(--cobalt);color:var(--on-accent);border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
       "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-clear{font-size:.74rem;color:#b45309;margin-left:8px;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
@@ -3179,7 +3179,7 @@
       // with dark slate text — Sam's screenshot). Neutralize + restyle quiet.
       "#tab-credential-reference table.cr-table .cr-curation-tbl th{position:static;background:transparent;color:#475569;text-align:right;font-size:.8rem;z-index:auto;}" +
       "#tab-credential-reference .cr-curation-panel{background:var(--surface-opaque,#fff);border:1px solid var(--border);border-left:4px solid var(--seal-blue);}" +
-      "#tab-credential-reference .cr-curation-input{background:#fff;color:var(--text-body,#3A3A36);border:1px solid #cbd5e1;border-radius:5px;padding:4px 6px;font-size:.82rem;min-width:24ch;}" +
+      "#tab-credential-reference .cr-curation-input{background:var(--surface-opaque);color:var(--text-body,#3A3A36);border:1px solid #cbd5e1;border-radius:5px;padding:4px 6px;font-size:.82rem;min-width:24ch;}" +
       // A bulk/row save that failed is loud (2026-07-08 — a partial batch
       // previously read as success unless you noticed the button text).
       "#tab-credential-reference .cr-wl-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
@@ -3240,9 +3240,9 @@
       "#tab-credential-reference tr.cr-dirty td:first-child{box-shadow:inset 3px 0 0 var(--mustard-fill,#E3B341);}" +
       "#tab-credential-reference tr.cr-saved td:first-child{box-shadow:inset 3px 0 0 var(--hunter,#2C601A);}" +
       "#tab-credential-reference tr.cr-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
-      "#tab-credential-reference .cr-grid-save{background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:6px;font-size:.76rem;font-weight:600;padding:4px 10px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-grid-save{background:var(--cobalt,#0047AB);color:var(--on-accent);border:none;border-radius:6px;font-size:.76rem;font-weight:600;padding:4px 10px;cursor:pointer;}" +
       "#tab-credential-reference .cr-grid-save:disabled{opacity:.6;cursor:default;}" +
-      "#tab-credential-reference .cr-saveall{background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:7px;font-size:.8rem;font-weight:600;padding:6px 12px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-saveall{background:var(--cobalt,#0047AB);color:var(--on-accent);border:none;border-radius:7px;font-size:.8rem;font-weight:600;padding:6px 12px;cursor:pointer;}" +
       // Expand caret.
       "#tab-credential-reference .cr-caret{background:none;border:none;cursor:pointer;font-size:.8rem;color:var(--text-muted,#5C5C55);padding:2px 4px;line-height:1;}" +
       "#tab-credential-reference .cr-caret:hover{color:var(--cobalt,#0047AB);}" +

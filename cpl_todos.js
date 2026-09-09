@@ -109,7 +109,7 @@
         "padding:8px 14px;border-radius:20px;border:none;background:var(--cobalt);" +
         "color:var(--on-accent,#fff);font-size:.88rem;cursor:pointer;box-shadow:0 4px 12px rgba(20,20,30,0.25);}" +
       ".cpl-todo-btn:hover{background:var(--btn-primary-hover,#003B8E);}" +
-      ".cpl-todo-badge{background:var(--gold-accent);color:var(--navy-primary);border-radius:10px;font-size:.72rem;" +
+      ".cpl-todo-badge{background:var(--gold-accent);color:var(--on-mustard);border-radius:10px;font-size:.72rem;" +
         "font-weight:700;padding:1px 7px;}" +
       ".cpl-todo-panel{display:none;position:fixed;right:18px;bottom:104px;z-index:901;width:380px;max-width:92vw;" +
         "max-height:70vh;overflow-y:auto;background:var(--surface-opaque);border:1px solid var(--border-strong);" +

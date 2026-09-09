@@ -1422,15 +1422,15 @@
       ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);}" +
       ".raci-bar{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;justify-content:space-between;margin-bottom:.9rem;}" +
       ".raci-toggle{display:inline-flex;border:1px solid var(--border,#ddd);border-radius:7px;overflow:hidden;}" +
-      ".raci-tg{background:#fff;border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
+      ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
       ".raci-tg.on{background:var(--navy-primary,#0A2240);color:#fff;}" +
       ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
       ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;}" +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
       ".raci-auth-hint{font-size:.75rem;color:var(--text-faint,#777);flex-basis:100%;}" +
-      ".raci-btn{background:#fff;border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
+      ".raci-btn{background:var(--surface-opaque);border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
-      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
+      ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
       ".raci-table th{background:var(--navy-primary,#0A2240);color:#fff;font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
       ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary,#1b3a5c);}" +
       ".raci-th-active{background:var(--navy-secondary,#1b3a5c);}" +
@@ -1440,7 +1440,7 @@
       ".raci-th-item{min-width:240px;}" +
       ".raci-table td{padding:.45rem .6rem;border-top:1px solid var(--border,#eee);vertical-align:top;}" +
       ".raci-row-act{background:var(--surface-2,#f4f7fb);}" +
-      ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);}" +
+      ".raci-row-act .raci-item-id{background:var(--gold-accent,#B8860B);color:var(--on-mustard);}" +
       ".raci-row-act .raci-item-name{font-weight:700;}" +
       ".raci-row-sub{background:var(--surface-1,#fafcff);}" +
       ".raci-row-sub .raci-item-id{background:var(--navy-secondary,#1c3d5a);}" +
@@ -1499,7 +1499,7 @@
       ".raci-edit-cell{cursor:text;border-radius:4px;}.raci-edit-cell:hover{background:var(--surface-2,#eef3f9);outline:1px dashed var(--border,#cdd7e1);}" +
       ".raci-cell-in{width:100%;box-sizing:border-box;}" +
       ".raci-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding:4vh 1rem;overflow:auto;}" +
-      ".raci-modal{background:#fff;border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
+      ".raci-modal{background:var(--surface-opaque);border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
       ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:#fff;border-radius:10px 10px 0 0;font-size:.92rem;}" +
       ".raci-x{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}" +
       ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:#666;font-size:.82rem;margin-bottom:.6rem;}" +

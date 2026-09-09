@@ -102,19 +102,34 @@ def targets():
 
 
 def scan_file(rel):
+    """Findings for one file, each marked with whether it is OURS to fix.
+
+    ⚠️ A COUNT THAT MIXES THE TWO IS A COUNT NOBODY CAN ACT ON. `--apply`
+    already refuses a site inside a section the dashboard generator rewrites
+    (Rule 1), but the report counted it anyway — so after the generator was
+    fixed on 2026-09-09 the control class read 401 when 348 of those were
+    stale HTML the next cron clears and only 53 were anybody's work. The flag
+    is what lets the report say which is which.
+    """
     path = os.path.join(ROOT, rel)
+    src = open(path, encoding="utf-8").read()
+    spans = regenerated_spans(src) if rel.endswith(".html") else []
     findings = []
-    with open(path, encoding="utf-8") as fh:
-        for n, line in enumerate(fh, 1):
-            if is_comment(line):
-                continue                      # house style; renders to nobody
-            hits = EMOJI.findall(line) + ["&#%s;" % m for m in ENTITY.findall(line)]
-            if not hits:
-                continue
-            kind = classify(line)
-            for g in hits:
-                findings.append({"file": rel, "line": n, "glyph": g, "kind": kind,
-                                 "context": line.strip()[:160]})
+    pos = 0
+    for n, line in enumerate(src.split("\n"), 1):
+        start = pos
+        pos += len(line) + 1
+        if is_comment(line):
+            continue                          # house style; renders to nobody
+        hits = EMOJI.findall(line) + ["&#%s;" % m for m in ENTITY.findall(line)]
+        if not hits:
+            continue
+        kind = classify(line)
+        owned = any(a <= start < b for a, b in spans)
+        for g in hits:
+            findings.append({"file": rel, "line": n, "glyph": g, "kind": kind,
+                             "generator_owned": owned,
+                             "context": line.strip()[:160]})
     return findings
 
 
@@ -283,6 +298,12 @@ def main():
     for rel in files:
         findings.extend(scan_file(rel))
 
+    # Ours vs the generator's. Rule 1 makes the second set unfixable HERE, and
+    # the next daily run clears it — so it is reported apart, never summed in.
+    ours = [f for f in findings if not f.get("generator_owned")]
+    gen  = [f for f in findings if f.get("generator_owned")]
+    by_kind_ours = Counter(f["kind"] for f in ours)
+    gen_ctrl = sum(1 for f in gen if f["kind"] == "control")
     by_kind = Counter(f["kind"] for f in findings)
     by_file = Counter(f["file"] for f in findings)
     by_glyph = Counter(f["glyph"] for f in findings)
@@ -296,28 +317,53 @@ def main():
     lines = ["# Glyph sweep — %s" % stamp, "",
              "Rendered text only: a comment line is never a finding (this repo's",
              "⚠️/⭐ comment style renders to nobody and would bury the rest).", "",
-             "| Class | Count | What the rule says |", "|---|---|---|",
-             "| control | %d | every control is a WORD — strictest, and the safe fix |" % by_kind["control"],
-             "| status | %d | needs the sentence reworded, so reported not rewritten |" % by_kind["status"],
-             "| decoration | %d | may be load-bearing in a table or legend — judgment |" % by_kind["decoration"],
-             "", "**%d files scanned, %d findings.**" % (len(files), len(findings)), "",
+             "| Class | Ours | Generator's | What the rule says |", "|---|---|---|---|",
+             "| control | %d | %d | every control is a WORD — strictest, and the safe fix |"
+             % (by_kind_ours["control"], gen_ctrl),
+             "| status | %d | %d | needs the sentence reworded, so reported not rewritten |"
+             % (by_kind_ours["status"], sum(1 for f in gen if f["kind"] == "status")),
+             "| decoration | %d | %d | may be load-bearing in a table or legend — judgment |"
+             % (by_kind_ours["decoration"], sum(1 for f in gen if f["kind"] == "decoration")),
+             "",
+             "**%d files scanned, %d findings — %d ours, %d the generator's.**"
+             % (len(files), len(findings), len(ours), len(gen)),
+             "",
+             "⚠️ **The generator's column is NOT work.** Those sites sit inside a section",
+             "`excel_to_dashboard.py` rewrites wholesale (Rule 1), so `--apply` refuses them",
+             "and the next daily run clears them. Fix the generator, never the HTML.", "",
              "## Heaviest files", ""]
     for f, n in by_file.most_common(15):
         lines.append("- `%s` — %d" % (f, n))
     lines += ["", "## Most common glyphs", ""]
     for g, n in by_glyph.most_common(20):
         lines.append("- `%s` — %d" % (g, n))
-    lines += ["", "## Control-class findings (fix these first)", ""]
-    for f in [x for x in findings if x["kind"] == "control"][:120]:
-        lines.append("- `%s:%d` `%s` — %s" % (f["file"], f["line"], f["glyph"], f["context"][:100]))
+    lines += ["", "## Control-class findings that are OURS (fix these first)", ""]
+    ours_ctrl = [x for x in ours if x["kind"] == "control"]
+    if not ours_ctrl:
+        lines.append("_None — every remaining control-class glyph is the generator's._")
+    # Grouped by file so one heavy file cannot eat the whole listing, which is
+    # what the flat [:120] slice did: 120 slots, all of them one file.
+    for fname in sorted({x["file"] for x in ours_ctrl}):
+        rows = [x for x in ours_ctrl if x["file"] == fname]
+        lines.append("")
+        lines.append("**`%s`** — %d" % (fname, len(rows)))
+        for f in rows[:40]:
+            lines.append("- `%d` `%s` — %s" % (f["line"], f["glyph"], f["context"][:100]))
+        if len(rows) > 40:
+            lines.append("- _… %d more_" % (len(rows) - 40))
     md = os.path.join(OUTDIR, stamp + ".md")
     open(md, "w", encoding="utf-8").write("\n".join(lines) + "\n")
 
     print("glyph sweep — %d files, %d findings  (control %d · status %d · decoration %d)"
-          % (len(files), len(findings), by_kind["control"], by_kind["status"], by_kind["decoration"]))
+          % (len(files), len(findings), by_kind_ours["control"], by_kind_ours["status"],
+             by_kind_ours["decoration"]))
+    if gen:
+        print("  + %d generator-owned (Rule 1 — the next daily run clears them; %d control)"
+              % (len(gen), gen_ctrl))
     print("  -> %s" % os.path.relpath(md, ROOT))
 
-    if args.check and by_kind["control"]:
+    # The gate can only ever be about what a session can actually fix.
+    if args.check and by_kind_ours["control"]:
         print("\nFAIL: %d control-class glyphs remain — every control is a word."
               % by_kind["control"])
         return 1

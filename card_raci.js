@@ -127,7 +127,7 @@
     _pop.setAttribute("role", "tooltip");
     _pop.style.cssText =
       "position:fixed;z-index:10000;max-width:280px;max-height:240px;overflow:auto;" +
-      "background:#fff;border:1px solid #d8d8d8;border-radius:8px;padding:0.5rem 0.6rem;" +
+      "background:var(--surface-opaque);border:1px solid #d8d8d8;border-radius:8px;padding:0.5rem 0.6rem;" +
       "box-shadow:0 6px 24px rgba(0,0,0,0.18);font-size:0.72rem;color:#333;display:none;" +
       "pointer-events:none;";
     document.body.appendChild(_pop);

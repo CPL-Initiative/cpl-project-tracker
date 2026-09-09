@@ -176,14 +176,14 @@
       "#tab-unified-courses .uc-viewseg{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 14px;}" +
       "#tab-unified-courses .uc-vbtn{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;" +
       "padding:8px 15px;border-radius:8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));" +
-      "background:#fff;color:var(--seal-blue,#0b3d61);}" +
+      "background:var(--surface-opaque);color:var(--seal-blue,#0b3d61);}" +
       "#tab-unified-courses .uc-vbtn[aria-pressed=\"true\"]{background:var(--seal-blue,#0b3d61);" +
       "color:#fff;border-color:var(--seal-blue,#0b3d61);}" +
       "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
       "#tab-unified-courses .uc-vnote{font-size:.82rem;color:#5a6478;}" +
       "#tab-unified-courses #uc-map-pane{margin:0;}" +
       "#tab-unified-courses .uc-map-frame{display:block;width:100%;height:calc(100vh - 80px);min-height:480px;" +
-      "border:0;background:#fff;}" +
+      "border:0;background:var(--surface-opaque);}" +
       /* Map mode: SkyView is the whole tab. The banner, the heading with its
          launcher and the toggle row go; the container's padding and width cap
          go with them so the frame reaches the column's edges. */
@@ -681,7 +681,7 @@
     var mic = null, rec = null, recording = false;
     if (SR) {
       mic = el("button", { type: "button",
-        style: "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;cursor:pointer;",
+        style: "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);font-size:.82rem;cursor:pointer;",
         title: "Dictate — speech-to-text in your browser; nothing is uploaded until you Save" }, ["🎤 Dictate"]);
       mic.onclick = function () {
         if (recording) { try { rec.stop(); } catch (e) {} return; }
@@ -1431,8 +1431,8 @@
         // WkExp band row filters the candidate POOL instead. The dock shell
         // mirrors openSuggestions' (a small presentational duplication — the
         // load-bearing merge UX lives once in buildMergeEditor).
-        var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
-        var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
+        var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:var(--surface-opaque);box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+        var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
         var DOCK_KEY = "cplWorklistDock.v1", RAIL = 44;
         var dockState = (function () { try { return JSON.parse(localStorage.getItem(DOCK_KEY)) || {}; } catch (e) { return {}; } })();
         var dockW = Math.min(Math.max(dockState.width || 470, 360), 900);
@@ -1494,7 +1494,7 @@
         });
         shell.appendChild(bandRow);
         var content = el("div", { style: "flex:1;" }); shell.appendChild(content);
-        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
         editorApi = buildMergeEditor(content, {
           members: members,
@@ -1738,7 +1738,7 @@
         var cand = findCandidates({ id: "CN:" + e.cn, title: e.t, subj: [subj], units: e.u });
         var target = "";   // "" = mint a new standalone course
         var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10000;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-        var box = el("div", { style: "background:#fff;max-width:680px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+        var box = el("div", { style: "background:var(--surface-opaque);max-width:680px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
         overlay.appendChild(box);
         function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
         overlay.onclick = function (ev) { if (ev.target === overlay) close(); };
@@ -1805,9 +1805,9 @@
         resetBtn.onclick = function () { pick(""); };
         box.appendChild(resetBtn);
         var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
-        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Cancel"]);
+        var cancel = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Cancel"]);
         cancel.onclick = close;
-        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Re-home"]);
+        go = el("button", { type: "button", style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;" }, ["Re-home"]);
         go.onclick = function () { doRehome(e, srcRow.id, target, titleIn.value.trim(), (target ? "" : discSel.value), close, onDone); };
         actions.appendChild(cancel); actions.appendChild(go);
         box.appendChild(actions);
@@ -1862,7 +1862,7 @@
       // through opts.deps; goCss is a constant. Scope: docs/ccr_merge_workspace_epic_scope.md.
       var byId = (opts.deps && opts.deps.byId) || {};
       var rowPassesCcr = (opts.deps && opts.deps.rowPassesCcr) || function () { return true; };
-      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
       // Compact ⓘ that holds explanatory copy in a hover tooltip instead of an
       // always-on gray paragraph — reclaims vertical space in the panel (Sam,
       // S72 #4). Returns the span so callers that carry DYNAMIC copy (the
@@ -2507,10 +2507,10 @@
       // padding-right), it doesn't overlay the table; width + collapsed persist
       // per-browser. `dim` is now the dock wrapper (no full-screen backdrop);
       // `boxCss` is the scrollable content column that fills it.
-      var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:#fff;box-shadow:-4px 0 24px rgba(0,0,0,.18);";
-      var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:#fff;padding:18px 20px;font-size:.9rem;";
-      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;";
-      var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;";
+      var dim = "position:fixed;top:0;right:0;height:100vh;z-index:9999;display:flex;background:var(--surface-opaque);box-shadow:-4px 0 24px rgba(0,0,0,.18);";
+      var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
+      var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
+      var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;";
       Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
         var data = res[0], dismissed = res[1];
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
@@ -2719,7 +2719,7 @@
         // was no visible way to step BACKWARD). Jumps to the adjacent PASSING
         // group; disabled state is refreshed per render. nextPassing/renderGroup/i
         // are hoisted in this scope, resolved at click time.
-        var headNavCss = "border:1px solid #cbd5e1;background:#fff;border-radius:5px;cursor:pointer;font-size:.85rem;line-height:1;color:#334155;padding:2px 7px;";
+        var headNavCss = "border:1px solid #cbd5e1;background:var(--surface-opaque);border-radius:5px;cursor:pointer;font-size:.85rem;line-height:1;color:#334155;padding:2px 7px;";
         var headPrev = el("button", { type: "button", "aria-label": "Previous suggestion", title: "Previous suggestion", style: headNavCss }, ["‹"]);
         var headNext = el("button", { type: "button", "aria-label": "Next suggestion", title: "Next suggestion", style: headNavCss }, ["›"]);
         headPrev.onclick = function () { var p = nextPassing(i, -1); if (p >= 0) { i = p; renderGroup(); } };
@@ -3058,7 +3058,7 @@
           // ── Pager (Sam, S72 #1) ── A ‹ Prev · position · Next › selector at the
           // sidebar bottom so you can step BACKWARD/forward through the queue, not
           // only Skip-forward. Prev/Next jump to the adjacent PASSING group.
-          var pagerCss = "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;font-size:.82rem;";
+          var pagerCss = "padding:4px 12px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);font-size:.82rem;";
           var prevIdx = nextPassing(i, -1), nextIdx = nextPassing(i, 1);
           var pager = el("div", { style: "display:flex;align-items:center;justify-content:space-between;gap:8px;margin:14px 0 2px;padding-top:10px;border-top:1px solid #eef2f7;" });
           var prevB = el("button", { type: "button", style: pagerCss + (prevIdx < 0 ? "opacity:.45;cursor:not-allowed;" : "cursor:pointer;") }, ["‹ Prev"]);
@@ -3107,7 +3107,7 @@
     // ---- row-details modal (ⓘ) — full record + lazy, editable description ----
     function openDetailModal(r) {
       var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-      var box = el("div", { style: "background:#fff;max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      var box = el("div", { style: "background:var(--surface-opaque);max-width:720px;width:92%;margin:40px 0;border-radius:10px;padding:18px 22px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
       overlay.appendChild(box);
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
@@ -3146,7 +3146,7 @@
       box.appendChild(descWrap);
 
       var actions = el("div", { style: "margin-top:16px;display:flex;gap:10px;justify-content:flex-end;" });
-      var closeBtn = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:#fff;cursor:pointer;" }, ["Close"]);
+      var closeBtn = el("button", { type: "button", style: "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;" }, ["Close"]);
       closeBtn.onclick = close;
       actions.appendChild(closeBtn);
       box.appendChild(actions);
@@ -3162,7 +3162,7 @@
           ta.value = text || "";
           descWrap.appendChild(ta);
           var saveRow = el("div", { style: "margin-top:6px;display:flex;align-items:center;gap:10px;" });
-          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;" }, ["Save description"]);
+          var save = el("button", { type: "button", style: "padding:6px 12px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;" }, ["Save description"]);
           var note = el("span", { style: "font-size:.78rem;color:#94a3b8;" }, []);
           save.onclick = function () {
             var val = ta.value.trim();
@@ -3485,7 +3485,7 @@
       var byId = {}; rows.forEach(function (r) { byId[r.id] = r; });
       function titleOf(id) { var r = byId[id]; return (r && r.title) ? r.title : id; }
       var overlay = el("div", { style: "position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow:auto;" });
-      var box = el("div", { style: "background:#fff;max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
+      var box = el("div", { style: "background:var(--surface-opaque);max-width:760px;width:92%;margin:40px 0;border-radius:10px;padding:18px 20px;box-shadow:0 10px 40px rgba(0,0,0,.3);font-size:.9rem;" });
       overlay.appendChild(box);
       function close() { if (overlay.parentNode) document.body.removeChild(overlay); }
       overlay.onclick = function (e) { if (e.target === overlay) close(); };
@@ -3566,7 +3566,7 @@
         countSpan = el("p", { style: "margin:0 0 12px;color:#6b7280;" }, []);
         box.appendChild(countSpan);
         listWrap = el("div", {}); box.appendChild(listWrap);
-        var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:#fff;font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
+        var done = el("button", { style: "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;margin-top:4px;" }, ["Done"]);
         done.onclick = close; box.appendChild(done);
         renderList();
         if (search.focus) try { search.focus(); } catch (e) {}
@@ -4282,7 +4282,7 @@
       st.id = "uc-merge-css";
       st.textContent =
         "#tab-unified-courses .uc-merge-link{display:inline-block;margin-right:8px;padding:1px 7px;border:1px solid var(--gold-accent);border-radius:4px;text-decoration:none;white-space:nowrap;}" +
-        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--navy-primary);}" +
+        "#tab-unified-courses a.uc-merge-link:hover{background:var(--gold-accent);color:var(--on-mustard);}" +
         "#tab-unified-courses .uc-merge-disabled{color:#94a3b8;border-color:#cbd5e1;cursor:not-allowed;}";
       document.head.appendChild(st);
     }

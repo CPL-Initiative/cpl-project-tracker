@@ -382,7 +382,7 @@ function resetFilters() {
         ov.id = 'attachExplainer';
         ov.style.cssText = 'position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.5);display:flex;align-items:center;justify-content:center;padding:1.5rem;';
         ov.innerHTML =
-            '<div style="max-width:460px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">'
+            '<div style="max-width:460px;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.25);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">'
             + '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:0.9rem 1.2rem;display:flex;justify-content:space-between;align-items:center;">'
             + '<h3 style="margin:0;color:#fff;font-size:1rem;">&#128206; Attaching a document</h3>'
             + '<button id="attachExplainerClose" type="button" style="background:none;border:none;color:#fff;font-size:1.4rem;cursor:pointer;line-height:1;">&times;</button></div>'
@@ -397,7 +397,7 @@ function resetFilters() {
             + '<input type="checkbox" id="attachExplainerSkip" style="accent-color:var(--accent-link);cursor:pointer;">Got it — take me straight to the folder next time</label>'
             + '</div>'
             + '<div style="padding:0.8rem 1.3rem;border-top:1px solid #e8e8e8;display:flex;justify-content:flex-end;gap:0.5rem;">'
-            + '<a id="attachExplainerGo" target="_blank" rel="noopener" style="padding:8px 18px;background:var(--cobalt);color:#fff;border-radius:4px;font-weight:600;font-size:0.85rem;text-decoration:none;">Open the project folder &#8599;</a>'
+            + '<a id="attachExplainerGo" target="_blank" rel="noopener" style="padding:8px 18px;background:var(--cobalt);color:var(--on-accent);border-radius:4px;font-weight:600;font-size:0.85rem;text-decoration:none;">Open the project folder &#8599;</a>'
             + '</div></div>';
         document.body.appendChild(ov);
         var go = document.getElementById('attachExplainerGo');

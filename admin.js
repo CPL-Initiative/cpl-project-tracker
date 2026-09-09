@@ -764,7 +764,7 @@
       ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
       ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
       "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
-      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".adm-warn { font-size:.85rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
       // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
