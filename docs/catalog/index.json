@@ -12501,8 +12501,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 219,
+   "count": 220,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 246,
+     "path": "docs/session_246_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "a triage keyed on the wrong thing, and three checks that could not fail",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16230,5 +16243,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 836
+ "total": 837
 }
