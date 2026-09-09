@@ -12685,8 +12685,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 222,
+   "count": 223,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 249,
+     "path": "docs/session_249_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "four kinds of token that cannot flip, and a fifth theme control nobody could grep for",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16453,5 +16466,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 850
+ "total": 851
 }

@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 863,
-    "bytes": 9156152,
+    "files": 864,
+    "bytes": 9173129,
     "over_budget": 4,
-    "handoff_max": 248,
+    "handoff_max": 249,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59995,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 111,
-        "bytes": 2830679,
+        "bytes": 2831084,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 35776,
+        "bytes": 39277,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 2013727,
+        "bytes": 2019804,
         "over": 1
       },
       "kb_note": {
@@ -50,20 +50,19 @@
         "over": 1
       },
       "handoff": {
-        "files": 222,
-        "bytes": 1893185,
+        "files": 223,
+        "bytes": 1900179,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 4,
-      "unindexed_kb_note": 1,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2782,
-      "bytes": 1351864367,
+      "files": 2783,
+      "bytes": 1351883858,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [
@@ -239,15 +238,6 @@
       },
       "message": "1 business-register term — utilize x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md"
     },
     {
       "rule": "house_voice",
