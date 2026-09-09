@@ -474,7 +474,7 @@
       ".car-btn{font-size:.82rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);border-radius:6px;padding:.4rem .7rem;cursor:pointer;}" +
       ".car-btn:hover{background:var(--gold-soft,#fbf3d9);border-color:var(--gold-accent,#B8860B);}" +
       ".car-btn:disabled{opacity:.5;cursor:not-allowed;}" +
-      ".car-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
+      ".car-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
       ".car-btn-go:hover{background:var(--navy-secondary,#1c3d5a);}" +
       ".car-status{font-size:.8rem;color:var(--text-faint,#777);margin-left:.3rem;}" +
       ".car-sub{color:var(--text-muted,#777);font-size:.8rem;margin-bottom:.7rem;}" +

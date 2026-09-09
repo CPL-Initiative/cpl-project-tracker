@@ -392,7 +392,7 @@
       ".padd-status.err{color:var(--crimson,#a33);}" +
       ".padd-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".padd-cancel,.padd-save,.padd-go{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
-      ".padd-save,.padd-go{background:var(--navy-primary,#16324f);color:#fff;border-color:var(--navy-primary,#16324f);}" +
+      ".padd-save,.padd-go{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
       ".padd-new{border-left:4px solid var(--green-progress,#2C601A);padding:1rem;background:var(--surface-opaque);border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.08);}";
     var st = el("style", { "id": "padd-css" });
     st.textContent = css;

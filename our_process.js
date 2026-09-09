@@ -442,6 +442,16 @@
     opv._opResize = function () { size(); if (reduce) draw(0); };
     window.addEventListener("resize", opv._opResize);
 
+    // ⚠️ A CANVAS CANNOT BE THEMED BY CSS — IT HAS TO BE REPAINTED, AND UNDER
+    // prefers-reduced-motion THIS ONE DRAWS EXACTLY ONCE. contourColor() reads
+    // the live --op-contour, so the animated path self-corrects on the next
+    // frame and hid this: a reduced-motion reader who switched the theme kept
+    // the OLD theme's contour until they resized the window. cpl_theme.js
+    // dispatches cpl:themechange for consumers that PAINT rather than style —
+    // this is the first one to listen, which is why the event had no listeners.
+    opv._opTheme = function () { draw(0); };
+    window.addEventListener("cpl:themechange", opv._opTheme);
+
     if (reduce || typeof window.requestAnimationFrame !== "function") { draw(0); return; }
     var start = null;
     function loop(ts) {

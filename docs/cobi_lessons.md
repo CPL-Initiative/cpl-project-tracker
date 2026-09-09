@@ -777,3 +777,100 @@ treatment a step larger than everything else.
 **Accessibility, measured not asserted** — see
 [`public_pages_a11y_lessons`](public_pages_a11y_lessons.md) for the seven AA
 failures this found in the masthead alone, three of them written the same day.
+
+---
+
+## 2026-09-09 — SkyTouch (S248): four kinds of token that cannot flip, and a fifth theme control
+
+**PR [#1534](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1534).**
+Sam, mid-session, with three screenshots: *"the remaining COBI surfaces that are
+still not responsive to dark mode … and there are many more."*
+
+⭐ **THE REMAINDER WAS NEVER "A LONG TAIL OF RAW HEXES" — IT WAS FOUR SHAPES OF
+TOKEN THAT CANNOT CHANGE VALUE BETWEEN THEMES, EACH READING AS CORRECT CODE.**
+That is why three prior sessions of sweeping left so much: a raw `#ffffff` is
+caught by grep and by review; `var(--surface-2, #eef3f9)` is caught by neither.
+The four shapes, the role-count rule and the detection method are one KB note,
+[`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md);
+what belongs here is how the run went wrong and right.
+
+⭐ **THE BIGGEST CAUSE WAS A TOKEN THAT DID NOT EXIST.** `--surface-1` /
+`--surface-2` were referenced 26 times across seven files and defined nowhere,
+so every site painted its hardcoded light fallback in **both** themes — **19 of
+128** dark contrast findings from one missing declaration. Found by a
+**structural scan**, not the sweep: collect every `--x:` definition across the
+codebase, collect every `var(--x, …)` reference, subtract. That takes a second
+and needs no browser.
+
+⚠️ **DEFINING THEM IN LIGHT TOO WOULD HAVE BEEN A RESTYLE, NOT A FIX.** The 26
+fallbacks are six different tints (`#eef3f9` · `#f4f7fb` · `#fdf8ec` · `#f5f5f5`
+· `#fafbfc` · a translucent), so one light value repaints six tabs. Defining
+them in the **dark blocks only** leaves every light pixel where it was — an
+asymmetry that looks like an oversight and is the whole point, so it is
+commented in place and pinned by a test that fails if someone "completes" it.
+
+⭐ **COUNT A TOKEN'S USES BY ROLE BEFORE YOU DECIDE ANYTHING ABOUT IT.**
+`--navy-primary` measured **551 INK vs 26 FILL** — flipping it was right, the
+fills are collateral. `--seal-blue` measured **65 FILL vs 20 INK** — which is
+exactly why this repo refuses to flip it. Same question, opposite answers, and
+nothing but the count tells you which you are in. Guessing either would have
+been defensible and wrong.
+
+⚠️ **A FIFTH ANSWER TO "IS IT DARK", AND IT SURVIVED FOUR ROUNDS BECAUSE OF HOW
+WE LOOKED.** `cip_crosswalk.js` kept its own button, its own `cipx_theme` key
+and a 108-ground palette gated on its own **class** — using neither `data-theme`
+nor `prefers-color-scheme`, the two spellings every previous scan grepped for.
+**A search for known spellings cannot find an unknown one.** The durable fix is
+not a better grep but a behavioral invariant: *no tab may persist a theme of its
+own, whatever it calls it* — which is what the new guard asserts.
+
+⚠️ **BOTH PAIRING GUARDS COULD NOT FIRE, AND THE FIX FOR THAT COULD NOT FIRE
+EITHER.** They were single regexes requiring `color:` to sit immediately after
+`background:`, in that order; every defect that actually shipped broke one of
+those assumptions (`border-color:` in between, or the ink written first). Both
+were green against four real defects. Rewritten as a declaration-block parser —
+and then narrowing the match to the outermost `var()` returned a bare token name
+while every regex matched on the `var(--` prefix, so both stopped firing again.
+**Caught only by reverting each fix and watching the suite stay green.** Third
+session running to find a check of this shape; the falsification pass is the
+only thing that has ever caught one.
+
+⚠️ **`git checkout <file>` DISCARDS AN UNCOMMITTED FIX — IT DOES NOT UNDO A
+REVERT.** Falsifying a guard by `sed`-ing the fix out and restoring with
+`git checkout` silently threw away three of this run's own edits, because they
+had never been committed. Back up with `cp` and restore from the copy. The tell
+was a guard "firing" on a file it had no business reading.
+
+⚠️ **AND THE FALSIFICATION HARNESS ITSELF MISCOUNTED.** `stdout.count("\nFAIL")`
+misses a `FAIL` on the first line, which is exactly where the Rule-4 check
+prints. It reported a working guard as broken. Count with `grep -cE "^FAIL"`.
+
+⭐ **THE CONTRAST SWEEP UNDER-REPORTS, AND THIS RUN PROVED IT.** Annual Report
+showed **2** findings while both of its panes were white in Sam's screenshot —
+that tab builds its content on demand, so the sweep sampled it empty. The sweep
+finds what is wrong on screen and misses what is not drawn; the structural scan
+finds what cannot be right and over-reports. **Run both**; fix what the sweep
+names, and use the scan only to size what is left.
+
+⭐ **VERIFY A SCREENSHOT AGAINST `main` BEFORE CHASING IT.** That same Annual
+Report screenshot was **already fixed** — `.car-preview` took `--surface-opaque`
+five commits earlier, and `git merge-base --is-ancestor` proved it in two
+minutes. It was a cached asset. ⚠️ The sandbox cannot reach the Pages site (the
+proxy returns 403), so the check is git, never the deployed URL.
+
+⭐ **THE LIGHT BASELINE WAS MEASURED, NOT ASSUMED.** A `git worktree` at
+`origin/main` with a symlinked `node_modules` gives a clean-tree sweep in two
+minutes: **63 findings / 18 routes**, against 62 / 18 after forty-odd edits. The
+lane had been claiming "light held at 18" from the route count alone, which is
+far too coarse to carry that claim.
+
+⚠️ **AND SAY WHICH SWEEP A NUMBER CAME FROM.** S245 published 120 dark findings
+with Implementation Funding **excluded**; including it, this run started at
+**128**. Without that sentence the next session cannot tell a regression from a
+widened scope.
+
+**Measured:** dark **128 → 87** contrast findings (−32%), **26 → 20** failing
+routes; light **63 → 62**, 18 → 18 routes; `npm test` **321/321**. One suite
+failed and was right to — `uc_kinship_gate` pinned the literal `color:#fff` on
+the member-table band — so the assertion moved to the intent it was written for,
+per the S245 precedent for a guard with no ruling behind it.

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 421,
+   "count": 423,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1343,6 +1343,23 @@
      "title": "A floor lives in test fixtures as well as in code",
      "type": "methodology",
      "updated": "2026-09-03"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-floor-the-layout-cannot-go-under.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "mobile",
+      "a11y",
+      "css",
+      "pitfall"
+     ],
+     "title": "A floor the layout cannot go under \u2014 why a page scrolls sideways on a phone, in four spellings",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-08-17",
@@ -3016,6 +3033,22 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "design-system",
+      "dark-mode",
+      "pitfall"
+     ],
+     "title": "A token that cannot flip is a surface that cannot theme \u2014 the four shapes, and why every one of them reads as correct code",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-09-08",
@@ -12714,8 +12747,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 222,
+   "count": 223,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 249,
+     "path": "docs/session_249_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "four kinds of token that cannot flip, and a floor the layout could not go under",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16482,5 +16528,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 851
+ "total": 854
 }

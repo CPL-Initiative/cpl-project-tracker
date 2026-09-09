@@ -91,7 +91,7 @@
       ".mapu-chip { font-size:.68rem; background: var(--surface-muted); color: var(--text-muted); border-radius:10px; padding:1px 8px; white-space:nowrap; }",
       // A curator-set proposal must be visibly different from a MAP-derived one:
       // one is what a college designated, the other is what we would ask it to.
-      ".mapu-chip-cur { background: var(--navy-primary); color: var(--surface-page,#fff); }",
+      ".mapu-chip-cur { background: var(--navy-primary); color: var(--on-accent); }",
       ".mapu-propedit > td { background: var(--surface-subtle); }",
       ".mapu-propedit-in { padding:10px 12px; }",
       ".mapu-propedit-hd { font-weight:600; color: var(--navy-primary); margin-bottom:4px; }",

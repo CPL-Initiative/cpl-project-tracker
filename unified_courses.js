@@ -4311,7 +4311,7 @@
       st.id = "uc-fix-css";
       st.textContent =
         "#tab-unified-courses .uc-table td:nth-child(3) .uc-trunc{white-space:normal;overflow:visible;text-overflow:clip;}" +
-        "#tab-unified-courses .uc-member-table th{color:#fff;background:var(--navy-primary,#1C1C1A);}" +
+        "#tab-unified-courses .uc-member-table th{color:var(--on-accent);background:var(--navy-primary,#1C1C1A);}" +
         "#tab-unified-courses table.uc-table{table-layout:fixed;min-width:900px;}" +
         // Clip only the text-bearing columns (id/title/subj/disc/TOP/flags) —
         // numeric/enum cells can't overflow a fixed column, and a clip context

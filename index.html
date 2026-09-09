@@ -147,6 +147,21 @@
             --surface-opaque: #1E1E1C;
             --surface-subtle: #262624;
             --surface-muted: #30302E;
+            /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
+               AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
+               defined anywhere, so all 26 `var(--surface-2,#eef3f9)` sites in
+               raci · mission_control · team_phrase(s) · annual_report ·
+               reviewer_signin · cobi_orgs · unified_courses fell through to a
+               HARDCODED LIGHT FALLBACK in both themes. That reads as themed
+               code and is not: it is why the dark sweep kept naming light fills
+               that are not white (#FDF8EC, #F4F7FB, #EEF3F9, #F5F5F5, #FAFBFC).
+               Defining them in LIGHT too would repaint six tabs' blue/cream
+               tints as warm grey — a restyle nobody asked for — so light keeps
+               each site's own fallback and dark gets one raised surface.
+               ⚠️ DO NOT "complete" this by adding them to the light :root
+               without Sam's call; tests/cpl_theme.test.js fails if you do. */
+            --surface-1: #262624;   /* one step off the ground — cf. --surface-subtle */
+            --surface-2: #30302E;   /* two steps — cf. --surface-muted */
             --border: rgba(255,255,255,.14);
             --border-strong: rgba(255,255,255,.32);
             /* The glass edge inverts: a 55%-white hairline is a light-surface
@@ -202,6 +217,21 @@
             --surface-opaque: #1E1E1C;
             --surface-subtle: #262624;
             --surface-muted: #30302E;
+            /* ⚠️ --surface-1 / --surface-2 ARE DEFINED IN THE DARK BLOCKS ONLY,
+               AND THAT IS THE FIX, NOT AN OVERSIGHT. Neither token was ever
+               defined anywhere, so all 26 `var(--surface-2,#eef3f9)` sites in
+               raci · mission_control · team_phrase(s) · annual_report ·
+               reviewer_signin · cobi_orgs · unified_courses fell through to a
+               HARDCODED LIGHT FALLBACK in both themes. That reads as themed
+               code and is not: it is why the dark sweep kept naming light fills
+               that are not white (#FDF8EC, #F4F7FB, #EEF3F9, #F5F5F5, #FAFBFC).
+               Defining them in LIGHT too would repaint six tabs' blue/cream
+               tints as warm grey — a restyle nobody asked for — so light keeps
+               each site's own fallback and dark gets one raised surface.
+               ⚠️ DO NOT "complete" this by adding them to the light :root
+               without Sam's call; tests/cpl_theme.test.js fails if you do. */
+            --surface-1: #262624;   /* one step off the ground — cf. --surface-subtle */
+            --surface-2: #30302E;   /* two steps — cf. --surface-muted */
             --border: rgba(255,255,255,.14);
             --border-strong: rgba(255,255,255,.32);
             /* The glass edge inverts: a 55%-white hairline is a light-surface
@@ -457,6 +487,29 @@
             gap: 1.5rem;
             margin: 0;
         }
+        /* ⚠️ A GRID ITEM'S DEFAULT min-width:auto FLOORS THE TRACK AT ITS
+           MIN-CONTENT, AND TWO OF THESE ITEMS ARE NOT KPI CARDS. The KPI Trends
+           and College Activity blocks each wrap a ~1210px table, so at 390px the
+           single 1fr column could not shrink below 1261.56px and EVERY CARD
+           INHERITED THAT WIDTH — measured 2026-09-09: the page scrolled sideways
+           by 888px and the card labels ran off the right edge (Sam's screenshot).
+           ⚠️ The overflow-x:auto scrollers on those tables were already there and
+           were doing nothing, because the box they were meant to constrain was
+           itself 1262px wide. min-width:0 is what lets the track collapse; the
+           scrollers then work as written. Measured after: track 358px, page
+           1278 -> 532. Guarded by tests/kpi_cards.test.js. */
+        .kpi-section > * {
+            min-width: 0;
+        }
+
+        /* ⚠️ A WIDE TABLE MUST SCROLL INSIDE ITS OWN BOX, or it pushes the whole
+           page sideways — the presentation rule, and these two had no scroller at
+           all: the 5-Year Funding Plan ran 544px and RACI's matrix 721px on a
+           390px screen. The holders are focusable and named because a region that
+           scrolls has to be reachable from the keyboard and announced. */
+        .budget-funding-overview {
+            overflow-x: auto;
+        }
 
         .kpi-card {
             background: var(--surface);
@@ -582,7 +635,7 @@
             font-family: 'Source Sans 3', Arial, sans-serif;
             font-size: 0.85rem;
             color: var(--text-gray);
-            background-color: var(--white);
+            background-color: var(--surface-opaque);
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -681,7 +734,7 @@
             transition: border-color 0.15s;
         }
         .qs-input:focus { border-color: var(--cobalt); box-shadow: 0 0 0 2px rgba(0,71,171,0.15); }
-        .qs-input:disabled { background: #f5f5f5; color: #999; }
+        .qs-input:disabled { background: var(--surface-subtle); color: var(--text-muted); }
         .qs-go {
             flex: 0 0 auto;
             background: var(--cobalt);
@@ -981,7 +1034,7 @@
         }
 
         .project-card {
-            background-color: var(--white);
+            background-color: var(--surface-opaque);
             border-radius: 8px;
             padding: 1.5rem;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -1152,7 +1205,7 @@
             font-weight: 600;
             text-transform: uppercase;
             background-color: var(--navy-secondary);
-            color: var(--white);
+            color: var(--on-accent);
         }
 
         .tag.activity {
@@ -1228,7 +1281,7 @@
 
         /* Budget Section */
         .budget-section {
-            background-color: var(--white);
+            background-color: var(--surface-opaque);
             padding: 2rem;
             border-radius: 8px;
             margin-bottom: 2rem;
@@ -1315,12 +1368,15 @@
 
         .budget-table th {
             background-color: var(--navy-primary);
-            color: var(--white);
+            color: var(--on-accent);
             font-weight: 600;
         }
 
         .budget-table tr:nth-child(even) {
-            background-color: #F5F5F5;
+            /* the zebra row. A raw #F5F5F5 stayed light under dark ink (1.11:1);
+               --surface-subtle is #F7F5F1 in light — a 1-step shift no reader
+               can see — and #262624 in dark. */
+            background-color: var(--surface-subtle);
         }
 
         .budget-table .source-name {
@@ -1331,7 +1387,7 @@
 
         /* Vision 2030 Section */
         .vision-section {
-            background-color: var(--white);
+            background-color: var(--surface-opaque);
             padding: 2rem;
             border-radius: 8px;
             margin-bottom: 2rem;
@@ -1391,7 +1447,7 @@
         /* Footer */
         .footer {
             background-color: var(--navy-primary);
-            color: var(--white);
+            color: var(--on-accent);
             text-align: center;
             padding: 2rem;
             font-size: 0.9rem;
@@ -1551,8 +1607,17 @@
             }
 
             .header {
+                /* ⚠️ --on-accent, not --white: --navy-primary is on the INK scale,
+                   so printing while COBI is in dark mode paints this bar CREAM
+                   (#ECE9E2) and a fixed white ink vanishes on it. --on-accent
+                   travels with the fill — #FFFFFF on the light bar, #141413 on
+                   the cream one — so the masthead prints legibly in either theme.
+                   ⚠️ The wider problem is NOT fixed: consumer-JS dark rules still
+                   apply to a print, so a dark-mode print is dark-on-dark in
+                   places. Named in the lane; it needs @media screen scoping on
+                   every dark rule, not just this file's. */
                 background-color: var(--navy-primary);
-                color: var(--white);
+                color: var(--on-accent);
             }
 
             body {
@@ -1576,6 +1641,9 @@
 
         .activity-group-header {
             display: flex;
+            /* ⚠️ Without wrap this row held its children on one line at 390px and
+               pushed the page 127px sideways (measured 2026-09-09). */
+            flex-wrap: wrap;
             align-items: center;
             gap: 0.75rem;
             margin-bottom: 1rem;
@@ -1608,7 +1676,7 @@
         }
 
         .activity-kpi-card {
-            background-color: var(--white);
+            background-color: var(--surface-opaque);
             border-radius: 8px;
             padding: 1.25rem;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
@@ -3350,7 +3418,10 @@
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    /* ⚠️ minmax(500px, ...) is a HARD 500px floor — on a 390px phone it forced a
+       500px track and 142px of sideways scroll. min(500px, 100%) keeps the
+       desktop two-up and lets the track shrink on a narrow screen. */
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -4699,11 +4770,11 @@
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
@@ -7121,7 +7192,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         </div>
         <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.9rem;">
             <thead>
-                <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">
+                <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">
                     <th style="padding:8px;text-align:left;font-weight:bold;">Funding Source</th>
                     <th style="padding:8px;text-align:right;font-weight:bold;">2025-26</th>
                     <th style="padding:8px;text-align:right;font-weight:bold;">2026-27</th>
@@ -7169,7 +7240,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
 
     <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">
         <h3>Expenditure Detail</h3>
-        <p style="color:#666;font-style:italic;background:#f5f5f5;border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;margin:0;">Detailed expenditure line items and category breakdowns are being refreshed and will appear here once updated figures are entered. The funding plan and personnel below are current.</p>
+        <p style="color:#666;font-style:italic;background:var(--surface-subtle);border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;margin:0;">Detailed expenditure line items and category breakdowns are being refreshed and will appear here once updated figures are entered. The funding plan and personnel below are current.</p>
     </div>
 
 
@@ -7178,7 +7249,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         <div style="overflow-x:auto;">
             <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">
                 <thead>
-                    <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">
+                    <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">
                         <th style="padding:8px;text-align:left;font-weight:bold;">Position Title</th>
                         <th style="padding:8px;text-align:right;font-weight:bold;">FTE 2025-26</th>
                         <th style="padding:8px;text-align:right;font-weight:bold;">FTE 2026-27</th>
@@ -7319,19 +7390,19 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             </table>
         </div>
         <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:1rem;margin-top:1.5rem;">
-            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
+            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
                 <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">Avg. Annual FTE</div>
                 <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">0.0</div>
             </div>
-            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
+            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
                 <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">Avg. COLA Rate</div>
                 <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">2.1%</div>
             </div>
-            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
+            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
                 <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">Avg. Indirect Rate</div>
                 <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">9.0%</div>
             </div>
-            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
+            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">
                 <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">Avg. Platform Maint.</div>
                 <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">$0</div>
             </div>
@@ -9167,7 +9238,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-pipeline .pl-section-sub { color:var(--text-muted); font-size:.88rem; margin:0 0 12px; }
             #tab-pipeline .pl-card { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:10px; padding:18px 20px; }
             #tab-pipeline .pl-mermaid { background:var(--surface-opaque); overflow:auto; }
-            #tab-pipeline .pl-mermaid .mermaid { font-family:inherit; min-width:600px; }
+            #tab-pipeline .pl-mermaid .mermaid { font-family:inherit; min-width:min(600px, 100%); }
             #tab-pipeline .pl-status { color:#6b7280; font-size:.78rem; margin-top:6px; font-style:italic; }
             #tab-pipeline .pl-receipt { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:10px; }
             #tab-pipeline .pl-stat { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:8px; padding:14px 16px; }

@@ -3406,11 +3406,11 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
@@ -10092,7 +10092,10 @@ EXHIBIT_ANALYSIS_CSS = """
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    /* ⚠️ minmax(500px, ...) is a HARD 500px floor — on a 390px phone it forced a
+       500px track and 142px of sideways scroll. min(500px, 100%) keeps the
+       desktop two-up and lets the track shrink on a narrow screen. */
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -11425,7 +11428,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # Funding sources table
     funding_html += '        <table style="width:100%;border-collapse:collapse;margin-bottom:2rem;font-size:0.9rem;">\n'
     funding_html += '            <thead>\n'
-    funding_html += '                <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+    funding_html += '                <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
     funding_html += '                    <th style="padding:8px;text-align:left;font-weight:bold;">Funding Source</th>\n'
     for year in year_labels:
         funding_html += f'                    <th style="padding:8px;text-align:right;font-weight:bold;">{year}</th>\n'
@@ -11580,7 +11583,7 @@ def render_budget_html(budget, data_source_stamp=None):
         summary_html = (
             '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
-            '        <p style="color:#666;font-style:italic;background:#f5f5f5;'
+            '        <p style="color:#666;font-style:italic;background:var(--surface-subtle);'
             'border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;'
             'margin:0;">Detailed expenditure line items and category breakdowns '
             'are being refreshed and will appear here once updated figures are '
@@ -11597,7 +11600,7 @@ def render_budget_html(budget, data_source_stamp=None):
         personnel_html += '        <div style="overflow-x:auto;">\n'
         personnel_html += '            <table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;font-size:0.85rem;">\n'
         personnel_html += '                <thead>\n'
-        personnel_html += '                    <tr style="background-color:#f5f5f5;border-bottom:2px solid var(--navy-primary);">\n'
+        personnel_html += '                    <tr style="background-color:var(--surface-subtle);border-bottom:2px solid var(--navy-primary);">\n'
         personnel_html += '                        <th style="padding:8px;text-align:left;font-weight:bold;">Position Title</th>\n'
 
         for year in year_labels:
@@ -11656,7 +11659,7 @@ def render_budget_html(budget, data_source_stamp=None):
             except:
                 formatted = str(value)
 
-            personnel_html += f'            <div style="background-color:#f5f5f5;padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
+            personnel_html += f'            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
             personnel_html += f'                <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
             personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">{formatted}</div>\n'
             personnel_html += f'            </div>\n'

@@ -270,7 +270,7 @@
       ".ctr-btn{font:inherit;font-size:.83rem;font-weight:600;padding:7px 13px;border-radius:7px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-strong);cursor:pointer;}",
       ".ctr-btn:hover{border-color:var(--cobalt);color:var(--cobalt);}",
       ".ctr-btn[disabled]{opacity:.5;cursor:not-allowed;}",
-      ".ctr-btn-p{background:var(--cobalt);border-color:var(--cobalt);color:#fff;}",
+      ".ctr-btn-p{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);}",
       ".ctr-btn-p:hover{color:#fff;opacity:.9;}",
       ".ctr-chip{display:inline-flex;align-items:center;gap:5px;font-size:.71rem;font-weight:600;padding:2px 9px;border-radius:11px;border:1px solid;white-space:nowrap;line-height:1.7;}",
       ".ctr-c-due{color:var(--mustard-text);border-color:var(--mustard-text);}",

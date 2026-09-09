@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-09",
-  "_session": "S247 (SkyLedger) — SkyView on a phone, pinch, and a question box",
-  "_status": "SkyView works on a phone now. The row of controls at the top had grown to take about a third of the screen, with the legend underneath taking even more, so barely a fifth of the window was the map itself. The controls now fold away behind a single button called Controls and slide up from the bottom when you want them, the legend starts closed, and the map fills 86% of the screen. Pinching with two fingers zooms, which it never did — before today two fingers actually fought each other and did nothing at all. The search box also takes questions now: type a sentence instead of a keyword and SkyView works out what you meant and moves the map to show you, rather than writing you a paragraph. That last one needs one action from Sam before it works on the live site (below). Nothing on the desktop view changed. Separately, this session compacted the SkyView notes file that had been flagged as oversized for three sessions running, by moving the engineering rules into their own file.",
+  "_session": "S248 (SkyTouch) — dark-mode surfaces, then the mobile widths",
+  "_status": "Dark mode covers a lot more of COBI than it did this morning. Sam sent three screenshots of surfaces that had stayed light — the project cards on Activities with their titles almost invisible, the Team & RACI table, the Annual Report panes — and the cause turned out not to be a long list of stray colors but four kinds of color NAME that cannot change between light and dark. One of them was a name nothing had ever defined, so twenty-six places quietly fell back to a light color in both themes; that single missing definition accounted for about one in seven of every dark-mode fault we had. Another was a name that means the color white, which of course can never become dark, used as the background of the cards in his screenshot. A third was the CIP crosswalk tab, which turned out to have kept its own private light/dark switch all along and simply ignored the one in the header. Measured: dark-mode faults fell from 128 to 87 and failing tabs from 26 to 20, with the light theme measured before and after to prove it did not move. Two look-and-feel questions are waiting on Sam and are listed above; the rest is ordinary follow-up work. Separately, Sam sent a phone screenshot of the Dashboard: it was rendering more than three times wider than the screen, with the card labels running off the right edge. The cause was a single panel that could not shrink because of a wide table inside it — and because every card shared the same column, they all inherited its width. Every tab now fits a phone with no sideways scrolling. One caution: if a surface still looks wrong to you, refresh the page first — one of the three screenshots was a version your browser had cached, and the fix had already shipped.",
   "items": [
     {
       "id": "s247-sam-deploy-cpl-chat",
@@ -21,12 +21,6 @@
       "for": "Sam",
       "tab": "sierra-training",
       "text": "A small housekeeping one, not blocking anything. The new SkyView question surface is registered everywhere in the code, but the live database rule that lists which surfaces a Sierra instruction can be scoped to has not been widened to include it. It only matters the day you want to write an instruction that applies to SkyView questions and nothing else. Say the word and it is a one-line change."
-    },
-    {
-      "id": "s245-fable-light-fills",
-      "for": "Fable",
-      "tab": "raci",
-      "text": "The largest remaining group of dark-mode faults is the same shape repeated with different colors: a panel keeps a pale background that never follows the theme, and the dark text painted over it becomes unreadable. It is the signed-out message, the buttons on Team and RACI, and the activity cards. All of it is measured and named in the lane file, so it is mechanical work with a number to check against."
     },
     {
       "id": "s245-fable-unfailable-checks",
@@ -75,6 +69,30 @@
       "for": "Fable",
       "tab": "raci",
       "text": "A test guarding a phrase this run deleted kept passing while measuring nothing, because it asserted at most one occurrence and zero satisfies that. It is fixed, but it is the third time a test tied to exact wording has broken on correct work, and this was the first found by accident rather than by looking. Worth one pass over the suites for other at-most-N assertions whose subject could legitimately vanish."
+    },
+    {
+      "id": "s248-sam-surface-tint-unify",
+      "for": "Sam",
+      "tab": "team-raci",
+      "text": "Six tabs paint their panels in slightly different pale tints — a blue-grey on Team & RACI, a cream on the sign-in gate, a plain grey on Budget — because each one was written with its own color rather than a shared name. In dark mode they all now go to one dark panel, correctly. The question is only about LIGHT: should they also become one shared tint, or keep the six they have? Making them one is a look change across six tabs, not a fix, so it is yours to call. Nothing is broken either way."
+    },
+    {
+      "id": "s248-sam-funding-text-faint",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "About a dozen small grey notes on the Implementation Funding tab — the source line under the title, the notes under the cards, the goal citations, the footer — use the palette's faintest grey. It is meant for decoration, not for text you are supposed to read, and it falls below the accessibility floor in dark mode. Moving them one step darker fixes that, but it also darkens them on the light tab you have been working in, so it is your call rather than a silent fix."
+    },
+    {
+      "id": "s248-fable-dark-remainder",
+      "for": "Fable",
+      "tab": "credential-reference",
+      "text": "Twenty-one remaining dark-mode faults are dark greys sitting on dark backgrounds, mostly on Credential Reference, Common Subjects and Budget. They are named individually by the accessibility sweep, so the next session should fix exactly the ones it names rather than sweeping by color, which has produced a wrong list every time it has been tried. Separately, printing a page while COBI is in dark mode still comes out dark-on-dark in places — the masthead is fixed, the rest needs its own pass."
+    },
+    {
+      "id": "s248-fable-keep-mobile-clean",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "Mobile is clean now — every tab fits a 390px phone with no sideways scrolling, where the Dashboard alone used to be more than three times too wide. The thing that broke it was a panel that could not shrink because of what was inside it, and three more places had the same kind of hard minimum width baked in. A test now guards all four, so if someone reintroduces one it fails rather than shipping. Worth re-checking on a real phone after the next deploy."
     }
   ]
 }

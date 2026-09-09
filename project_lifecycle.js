@@ -585,7 +585,7 @@
       ".plc-modal-status.err{color:var(--crimson,#a33);}" +
       ".plc-modal-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".plc-btn,.plc-btn-go,.plc-btn-cancel,.plc-btn-submit{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +
-      ".plc-btn-submit,.plc-btn-go{background:var(--navy-primary,#16324f);color:#fff;border-color:var(--navy-primary,#16324f);}" +
+      ".plc-btn-submit,.plc-btn-go{background:var(--navy-primary,#16324f);color:var(--on-accent);border-color:var(--navy-primary,#16324f);}" +
       ".tabled-archived-summary::-webkit-details-marker{display:none;}";
     var st = el("style", { "id": "plc-css" });
     st.textContent = css;
