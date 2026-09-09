@@ -425,7 +425,7 @@
     box.appendChild(tp.unlockRow({
       site: SITE,
       blurb: "Finance phrase:",
-      label: "🔓 Unlock",
+      label: "Unlock",
       placeholder: "finance phrase…",
       onUnlocked: function () { activate(); }
     }));

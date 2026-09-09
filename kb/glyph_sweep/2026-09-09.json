@@ -2,8 +2,8 @@
  "generated": "2026-09-09",
  "files_scanned": 139,
  "counts": {
-  "decoration": 808,
-  "control": 516,
+  "decoration": 802,
+  "control": 401,
   "status": 225
  },
  "findings": [
@@ -45,16 +45,9 @@
   {
    "file": "CPL_Dashboard.html",
    "line": 3870,
-   "glyph": "\ud83d\udcc4",
-   "kind": "control",
-   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">\ud83d\udcc4 CPL Fact Sheet \u2197</a>"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 3870,
    "glyph": "\u2197",
    "kind": "control",
-   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">\ud83d\udcc4 CPL Fact Sheet \u2197</a>"
+   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">CPL Fact Sheet \u2197</a>"
   },
   {
    "file": "CPL_Dashboard.html",
@@ -177,34 +170,6 @@
   },
   {
    "file": "CPL_Dashboard.html",
-   "line": 4981,
-   "glyph": "&#128196;",
-   "kind": "control",
-   "context": "<span style=\"display:inline-flex;align-items:center;gap:0.9rem;flex-wrap:wrap;\"><span class=\"kpi-section-title\">Activities</span><a href=\"https://map.rccd.edu/w"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 4993,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:1\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 4994,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 4995,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
-  },
-  {
-   "file": "CPL_Dashboard.html",
    "line": 5087,
    "glyph": "&#128196;",
    "kind": "control",
@@ -447,27 +412,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/1.4_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5406,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:2\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5407,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5408,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "CPL_Dashboard.html",
@@ -622,27 +566,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/2.4_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5723,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:3\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5724,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 5725,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "CPL_Dashboard.html",
@@ -1070,27 +993,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/3.8_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 6482,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:4\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 6483,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 6484,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "CPL_Dashboard.html",
@@ -2106,13 +2008,6 @@
    "glyph": "\u2687",
    "kind": "status",
    "context": "<p class=\"uc-intro\">Consolidated course identities (M-IDs) and variant clusters with discipline, credit status, units, TOP code, and cross-college articulation "
-  },
-  {
-   "file": "CPL_Dashboard.html",
-   "line": 8917,
-   "glyph": "\ud83d\udcd8",
-   "kind": "control",
-   "context": "<button id=\"cs-guidelines-btn\" class=\"cs-guidelines-btn\" type=\"button\">\ud83d\udcd8 Curation guidelines</button>"
   },
   {
    "file": "CPL_Dashboard.html",
@@ -2320,16 +2215,9 @@
   {
    "file": "index.html",
    "line": 3870,
-   "glyph": "\ud83d\udcc4",
-   "kind": "control",
-   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">\ud83d\udcc4 CPL Fact Sheet \u2197</a>"
-  },
-  {
-   "file": "index.html",
-   "line": 3870,
    "glyph": "\u2197",
    "kind": "control",
-   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">\ud83d\udcc4 CPL Fact Sheet \u2197</a>"
+   "context": "title=\"Open the public CPL Fact Sheet (live data) in a new tab \u2014 standalone &amp; shareable\">CPL Fact Sheet \u2197</a>"
   },
   {
    "file": "index.html",
@@ -2452,34 +2340,6 @@
   },
   {
    "file": "index.html",
-   "line": 4981,
-   "glyph": "&#128196;",
-   "kind": "control",
-   "context": "<span style=\"display:inline-flex;align-items:center;gap:0.9rem;flex-wrap:wrap;\"><span class=\"kpi-section-title\">Activities</span><a href=\"https://map.rccd.edu/w"
-  },
-  {
-   "file": "index.html",
-   "line": 4993,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:1\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "index.html",
-   "line": 4994,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "index.html",
-   "line": 4995,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
-  },
-  {
-   "file": "index.html",
    "line": 5087,
    "glyph": "&#128196;",
    "kind": "control",
@@ -2722,27 +2582,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/1.4_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "index.html",
-   "line": 5406,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:2\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "index.html",
-   "line": 5407,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "index.html",
-   "line": 5408,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "index.html",
@@ -2897,27 +2736,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/2.4_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "index.html",
-   "line": 5723,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:3\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "index.html",
-   "line": 5724,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "index.html",
-   "line": 5725,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "index.html",
@@ -3345,27 +3163,6 @@
    "glyph": "&#128227;",
    "kind": "control",
    "context": "<a href=\"reports/projects/3.8_Report.docx\" download class=\"report-btn\" style=\"display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7r"
-  },
-  {
-   "file": "index.html",
-   "line": 6482,
-   "glyph": "&#128101;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-raci-link\" data-raci-key=\"activity:4\" title=\"Who's Responsible / Accountable / Consulted / Informed for this Activity \u2014 hover for the"
-  },
-  {
-   "file": "index.html",
-   "line": 6483,
-   "glyph": "&#128221;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-update-link\" title=\"Braindump a quick status update for this Activity \u2014 CC writes it up and saves it\" onclick=\"try{sessionStorage.set"
-  },
-  {
-   "file": "index.html",
-   "line": 6484,
-   "glyph": "&#128227;",
-   "kind": "control",
-   "context": "<a href=\"#raci\" class=\"act-nudge-link\" title=\"Nudge this Activity's Responsible / Accountable people for a status update (opens your mail app \u2014 nothing is auto-"
   },
   {
    "file": "index.html",
@@ -4381,13 +4178,6 @@
    "glyph": "\u2687",
    "kind": "status",
    "context": "<p class=\"uc-intro\">Consolidated course identities (M-IDs) and variant clusters with discipline, credit status, units, TOP code, and cross-college articulation "
-  },
-  {
-   "file": "index.html",
-   "line": 8917,
-   "glyph": "\ud83d\udcd8",
-   "kind": "control",
-   "context": "<button id=\"cs-guidelines-btn\" class=\"cs-guidelines-btn\" type=\"button\">\ud83d\udcd8 Curation guidelines</button>"
   },
   {
    "file": "index.html",
@@ -4971,13 +4761,6 @@
    "context": "}, [\"\ud83c\udf93 \" + r.n_creds + \" \u00b7 \" + r.n_colleges + \" coll.\"]);"
   },
   {
-   "file": "canonical_subj4.js",
-   "line": 1919,
-   "glyph": "\ud83c\udf93",
-   "kind": "control",
-   "context": "document.getElementById(\"cs-cpl-title\").textContent = \"\ud83c\udf93 CPL opportunities \u00b7 \" + entry.discipline;"
-  },
-  {
    "file": "cip_crosswalk.js",
    "line": 98,
    "glyph": "\u2192",
@@ -5336,20 +5119,6 @@
   },
   {
    "file": "cip_crosswalk.js",
-   "line": 2785,
-   "glyph": "\u2600",
-   "kind": "control",
-   "context": "function paint() { themeBtn.textContent = isDark() ? \"\u2600 Light\" : \"\ud83c\udf19 Dark\"; }"
-  },
-  {
-   "file": "cip_crosswalk.js",
-   "line": 2785,
-   "glyph": "\ud83c\udf19",
-   "kind": "control",
-   "context": "function paint() { themeBtn.textContent = isDark() ? \"\u2600 Light\" : \"\ud83c\udf19 Dark\"; }"
-  },
-  {
-   "file": "cip_crosswalk.js",
    "line": 2808,
    "glyph": "\ud83d\udc3e",
    "kind": "decoration",
@@ -5517,13 +5286,6 @@
    "context": "+ '3. **Opportunities to Maximize Funding & Student Impact** \u2014 Bullets or short paragraphs that turn any gap into an invitation: low transcription rate \u2192 \"oppor"
   },
   {
-   "file": "contracts.js",
-   "line": 428,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: \"\ud83d\udd13 Unlock\","
-  },
-  {
    "file": "cpl_coci_course_keys.js",
    "line": 1,
    "glyph": "\u2713",
@@ -5606,13 +5368,6 @@
    "glyph": "\ud83d\udd13",
    "kind": "decoration",
    "context": "\"\ud83d\udd13 Curate mode \u2014 \" + (who ? who + \", \" : \"\") + \"signed in by \" + how"
-  },
-  {
-   "file": "cpl_memory.js",
-   "line": 398,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: \"\ud83d\udd13 Unlock\", placeholder: \"team phrase\u2026\","
   },
   {
    "file": "cpl_memory.js",
@@ -5875,13 +5630,6 @@
   },
   {
    "file": "cpl_pathways.js",
-   "line": 48,
-   "glyph": "\u26a1",
-   "kind": "control",
-   "context": "go.textContent = \"\u26a1 Quick Adopt\";"
-  },
-  {
-   "file": "cpl_pathways.js",
    "line": 115,
    "glyph": "\u2713",
    "kind": "decoration",
@@ -5963,13 +5711,6 @@
    "glyph": "\u2713",
    "kind": "status",
    "context": "var glyph = r.status === \"cpl\" ? \"\u2713\" : (r.status === \"clep\" ? \"\u25c6\" : \"\u25cb\");"
-  },
-  {
-   "file": "cpl_pathways.js",
-   "line": 909,
-   "glyph": "\u2b07",
-   "kind": "control",
-   "context": "pdf.textContent = \"\u2b07 PDF\";"
   },
   {
    "file": "cpl_pathways.js",
@@ -6197,24 +5938,10 @@
   },
   {
    "file": "cpl_todos.js",
-   "line": 158,
-   "glyph": "\ud83d\udccb",
-   "kind": "decoration",
-   "context": "panel.appendChild(el(\"h4\", null, [\"\ud83d\udccb Daily To-Do\"]));"
-  },
-  {
-   "file": "cpl_todos.js",
    "line": 194,
    "glyph": "\u2192",
    "kind": "decoration",
    "context": "[tabLabel(it.tab) + \" \u2192\"]);"
-  },
-  {
-   "file": "cpl_todos.js",
-   "line": 230,
-   "glyph": "\ud83d\udccb",
-   "kind": "decoration",
-   "context": "}, [\"\ud83d\udccb To-Do\", badge]);"
   },
   {
    "file": "cr_reference.js",
@@ -6477,38 +6204,10 @@
   },
   {
    "file": "credential_reference.js",
-   "line": 2036,
-   "glyph": "\ud83d\udce5",
-   "kind": "control",
-   "context": "{ k: \"unc\",   label: \"\ud83d\udce5 Unclassified\", nText: uncN,"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 2038,
-   "glyph": "\ud83c\udff7",
-   "kind": "control",
-   "context": "{ k: \"noiss\", label: \"\ud83c\udff7 No issuer\", n: niQueue.length,"
-  },
-  {
-   "file": "credential_reference.js",
    "line": 2040,
    "glyph": "\u26a1",
    "kind": "decoration",
    "context": "+ (staged ? \" \u26a1 \" + staged + \" pre-filled from the staged plan.\" : \"\") },"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 2041,
-   "glyph": "\u21d2",
-   "kind": "control",
-   "context": "{ k: \"merge\", label: \"\u21d2 Merge confirms\", n: pendingMerges().length,"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 2045,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "{ k: \"done\",  label: \"\u2713 Initiated\", n: doneN,"
   },
   {
    "file": "credential_reference.js",
@@ -6551,20 +6250,6 @@
    "glyph": "\u2713",
    "kind": "decoration",
    "context": "}, [\"\u2713 Init\"]);"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 2241,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "b.disabled = false; b.textContent = \"\u2713 Init\";"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 2253,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "b.disabled = false; b.textContent = \"\u2713 Init\";"
   },
   {
    "file": "credential_reference.js",
@@ -6715,13 +6400,6 @@
   },
   {
    "file": "credential_reference.js",
-   "line": 3551,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "if (saveBtn) saveBtn.textContent = \"\u2713 Saved\";"
-  },
-  {
-   "file": "credential_reference.js",
    "line": 3557,
    "glyph": "\u2192",
    "kind": "decoration",
@@ -6824,27 +6502,6 @@
    "glyph": "\u2713",
    "kind": "decoration",
    "context": "[\"\u2713 Confirm merge\"]);"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 3863,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "btn.textContent = again ? \"\u2713 Confirm merge\" : \"Save re-title\";"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 3889,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "btn.textContent = target ? \"\u2713 merge confirmed\" : \"\u2713 re-titled\";"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 3889,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "btn.textContent = target ? \"\u2713 merge confirmed\" : \"\u2713 re-titled\";"
   },
   {
    "file": "credential_reference.js",
@@ -6971,20 +6628,6 @@
    "glyph": "\ud83d\udd0e",
    "kind": "control",
    "context": "out.textContent = \"suggestion failed \u2014 try \ud83d\udd0e\";"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 4471,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "sb.textContent = (issuerJob && issuerJob.value === \"\") ? \"\u2713 no issuer\" : \"\u2713 Saved\";"
-  },
-  {
-   "file": "credential_reference.js",
-   "line": 4471,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "sb.textContent = (issuerJob && issuerJob.value === \"\") ? \"\u2713 no issuer\" : \"\u2713 Saved\";"
   },
   {
    "file": "credential_reference.js",
@@ -7169,46 +6812,11 @@
    "context": "'<button class=\"cplfl-close\" id=\"cplfl-close\" type=\"button\" aria-label=\"Close\">\u2715</button></div>' +"
   },
   {
-   "file": "first_light.js",
-   "line": 1121,
-   "glyph": "\ud83d\udd0a",
-   "kind": "control",
-   "context": "'<button class=\"cplfl-btn cplfl-ghost\" id=\"cplfl-speak\" type=\"button\" aria-pressed=\"false\">\ud83d\udd0a Read aloud</button>' +"
-  },
-  {
-   "file": "first_light.js",
-   "line": 1214,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "btn.textContent = \"\u2713 Shared \u2014 thank you\";"
-  },
-  {
-   "file": "first_light.js",
-   "line": 1262,
-   "glyph": "\ud83d\udd0a",
-   "kind": "control",
-   "context": "if (b) { b.setAttribute(\"aria-pressed\", \"false\"); b.textContent = \"\ud83d\udd0a Read aloud\"; }"
-  },
-  {
-   "file": "first_light.js",
-   "line": 1280,
-   "glyph": "\u23f9",
-   "kind": "control",
-   "context": "b.textContent = \"\u23f9 Stop\";"
-  },
-  {
    "file": "governance.js",
    "line": 372,
    "glyph": "\u270e",
    "kind": "control",
    "context": "+ '\" title=\"Click to assign an owner\">' + body + '<span class=\"gov-pencil\">\u270e</span></button>';"
-  },
-  {
-   "file": "governance.js",
-   "line": 836,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "var done = function () { btn.textContent = \"\u2713 Copied\"; setTimeout(function () { btn.textContent = \"\u29c9 Copy as Markdown\"; }, 1400); };"
   },
   {
    "file": "gr_priorities.js",
@@ -7267,13 +6875,6 @@
    "context": "var wordBtn = el(\"button\", { class: \"gx-btn ghost\", type: \"button\", text: \"\u2b07 Word\" });"
   },
   {
-   "file": "kpi_reorder.js",
-   "line": 116,
-   "glyph": "\u21ba",
-   "kind": "control",
-   "context": "reset.innerHTML = \"<button type=\\\"button\\\" title=\\\"Restore the default card order\\\">\u21ba Reset card order</button>\";"
-  },
-  {
    "file": "map_cleanup_views.js",
    "line": 183,
    "glyph": "\u2713",
@@ -7300,13 +6901,6 @@
    "glyph": "\ud83d\udd13",
    "kind": "decoration",
    "context": "authEl.appendChild(el(\"span\", \"mcw-ok\", \"\ud83d\udd13 Team access \u2014 read-only views\"));"
-  },
-  {
-   "file": "map_cleanup_views.js",
-   "line": 241,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: \"\ud83d\udd13 Unlock\", placeholder: \"team phrase\u2026\","
   },
   {
    "file": "map_cleanup_views.js",
@@ -7377,13 +6971,6 @@
    "glyph": "\ud83d\udd13",
    "kind": "decoration",
    "context": "if (sess) { authBar.appendChild(el(\"span\", \"mdq-authok\", \"\ud83d\udd13 Team curate mode \u2014 edits write to map_data_quality\")); return; }"
-  },
-  {
-   "file": "map_data_quality.js",
-   "line": 198,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: \"\ud83d\udd13 Unlock\", placeholder: \"team phrase\u2026\","
   },
   {
    "file": "map_data_quality.js",
@@ -7541,13 +7128,6 @@
   },
   {
    "file": "map_users.js",
-   "line": 1304,
-   "glyph": "\u2709",
-   "kind": "control",
-   "context": "+ '<button class=\"mapu-rosterbtn mapu-pick-go\" data-pick-go>\u2709 Open email draft</button>'"
-  },
-  {
-   "file": "map_users.js",
    "line": 1408,
    "glyph": "\u26a0",
    "kind": "decoration",
@@ -7573,13 +7153,6 @@
    "glyph": "\u2715",
    "kind": "decoration",
    "context": "+ (open ? \"\u2715 hide\" : \"\\u{1F465} roster\") + \"</button>\" + nudgeBtn + nudgedLine + \"</td>\""
-  },
-  {
-   "file": "map_users.js",
-   "line": 1519,
-   "glyph": "\u2b07",
-   "kind": "control",
-   "context": "h += '<div class=\"mapu-toolbar\"><button class=\"mapu-rosterbtn\" data-gap-csv>\u2b07 CSV</button>'"
   },
   {
    "file": "map_users.js",
@@ -7650,20 +7223,6 @@
    "glyph": "\u2b07",
    "kind": "decoration",
    "context": "+ \"Refreshes from the monthly MAP sync, so it stays current; use \u2b07 when you need \""
-  },
-  {
-   "file": "map_users.js",
-   "line": 1665,
-   "glyph": "\u2b07",
-   "kind": "control",
-   "context": "+ '<button class=\"mapu-rosterbtn\" data-dir-csv><b>\u2b07 Export to CSV / Excel</b></button>'"
-  },
-  {
-   "file": "map_users.js",
-   "line": 1666,
-   "glyph": "\u2b07",
-   "kind": "control",
-   "context": "+ '<button class=\"mapu-rosterbtn\" data-prop-csv><b>\u2b07 Proposed fills for MAP (' + nProp + ')</b></button>'"
   },
   {
    "file": "map_users.js",
@@ -7940,13 +7499,6 @@
   },
   {
    "file": "nc_learning_partners.js",
-   "line": 1303,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "b.textContent = ok ? \"\u2713 Copied\" : \"Copy failed\";"
-  },
-  {
-   "file": "nc_learning_partners.js",
    "line": 1317,
    "glyph": "\u2193",
    "kind": "decoration",
@@ -7965,13 +7517,6 @@
    "glyph": "\u2191",
    "kind": "decoration",
    "context": "btn(\"\u2191 Promote notes\", function (b) {"
-  },
-  {
-   "file": "nc_learning_partners.js",
-   "line": 1326,
-   "glyph": "\u2191",
-   "kind": "control",
-   "context": "setTimeout(function () { b.textContent = \"\u2191 Promote notes\"; }, 1800);"
   },
   {
    "file": "nc_learning_partners.js",
@@ -8339,20 +7884,6 @@
   },
   {
    "file": "raci.js",
-   "line": 687,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "ta.value = txt; msg.textContent = \"\u2713 Polished \u2014 edit if needed, then Save.\";"
-  },
-  {
-   "file": "raci.js",
-   "line": 699,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "ta.value = \"\"; msg.textContent = \"\u2713 Saved.\"; save.disabled = false; paintHist(); render();"
-  },
-  {
-   "file": "raci.js",
    "line": 869,
    "glyph": "\ud83d\udcdd",
    "kind": "decoration",
@@ -8507,20 +8038,6 @@
   },
   {
    "file": "sierra_training.js",
-   "line": 1187,
-   "glyph": "\u270d\ufe0f",
-   "kind": "control",
-   "context": "+ ' title=\"' + esc(HELP.writeRule) + '\">\u270d\ufe0f Write an instruction about this</button>'"
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1189,
-   "glyph": "\ud83e\uddea",
-   "kind": "control",
-   "context": "+ ' title=\"' + esc(HELP.testInSierra) + '\">\ud83e\uddea Try it on Sierra</button>'"
-  },
-  {
-   "file": "sierra_training.js",
    "line": 1220,
    "glyph": "\u26a0",
    "kind": "decoration",
@@ -8528,45 +8045,10 @@
   },
   {
    "file": "sierra_training.js",
-   "line": 1240,
-   "glyph": "\u270d\ufe0f",
-   "kind": "control",
-   "context": "+ ' title=\"' + esc(HELP.writeRule) + '\">\u270d\ufe0f Write an instruction about this</button>'"
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1242,
-   "glyph": "\ud83e\uddea",
-   "kind": "control",
-   "context": "+ ' title=\"' + esc(HELP.testInSierra) + '\">\ud83e\uddea Try it on Sierra</button>'"
-  },
-  {
-   "file": "sierra_training.js",
    "line": 1266,
    "glyph": "\u21a9",
    "kind": "decoration",
    "context": "+ (state.busy[t.id] ? \" disabled\" : \"\") + \">\u21a9 Still to do</button>\""
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1279,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "? '<span class=\"sit-chip sit-chip-addressed\" title=\"' + esc(HELP.ruleSent) + '\">\u2713 Sierra is using this</span>'"
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1280,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": ": '<span class=\"sit-chip sit-chip-triaged\" title=\"' + esc(ruleNotSentHelp(r)) + '\">\u26a0 On, but not reaching Sierra</span>')"
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1305,
-   "glyph": "\u270f\ufe0f",
-   "kind": "control",
-   "context": "+ ' title=\"' + esc(HELP.ruleEdit) + '\">\u270f\ufe0f Edit</button>'"
   },
   {
    "file": "sierra_training.js",
@@ -8647,13 +8129,6 @@
   },
   {
    "file": "sierra_training.js",
-   "line": 1600,
-   "glyph": "\ud83e\udded",
-   "kind": "decoration",
-   "context": "+ '<div class=\"n\">' + activeGuidance + '</div><div class=\"l\">\ud83e\udded Instructions in use</div></div>'"
-  },
-  {
-   "file": "sierra_training.js",
    "line": 1606,
    "glyph": "\ud83d\udc4d",
    "kind": "decoration",
@@ -8672,13 +8147,6 @@
    "glyph": "\u26cf\ufe0f",
    "kind": "decoration",
    "context": "html += \"<h3>\u26cf\ufe0f Questions Sierra struggled with <span class=\\\"sit-meta\\\">(from the newest \""
-  },
-  {
-   "file": "sierra_training.js",
-   "line": 1704,
-   "glyph": "\ud83e\udded",
-   "kind": "decoration",
-   "context": "html += \"<h3>\ud83e\udded Instructions for Sierra <span class=\\\"sit-meta\\\">(plain-English rules she follows \u2014 \""
   },
   {
    "file": "sierra_training.js",
@@ -8738,13 +8206,6 @@
   },
   {
    "file": "statewide_interactive.js",
-   "line": 919,
-   "glyph": "\u2b07",
-   "kind": "control",
-   "context": "'<button class=\"sw-action-btn\" id=\"mx-export-csv\" type=\"button\">\u2b07 Matrix CSV</button>' +"
-  },
-  {
-   "file": "statewide_interactive.js",
    "line": 1068,
    "glyph": "\ud83c\udfdb",
    "kind": "decoration",
@@ -8784,27 +8245,6 @@
    "glyph": "\ud83d\udea9",
    "kind": "control",
    "context": "flagCell = '<span class=\"sw-flag-readonly\" title=\"' + escAttr(flagTitle) + '\">\ud83d\udea9 ' + esc(currentFlag) + '</span>';"
-  },
-  {
-   "file": "statewide_interactive.js",
-   "line": 1569,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "badgeBits += '<span class=\"sw-quality-badge\" title=\"At least one raw row was typed Industry Certification but appears to be a course with no associated credenti"
-  },
-  {
-   "file": "team_phrase.js",
-   "line": 207,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "btn.textContent = opts.label || '\ud83d\udd13 Unlock editing';"
-  },
-  {
-   "file": "team_phrase.js",
-   "line": 304,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: '\ud83d\udd13 Unlock',"
   },
   {
    "file": "team_phrase.js",
@@ -8847,90 +8287,6 @@
    "glyph": "\u2713",
    "kind": "decoration",
    "context": "state.signInMsg = r.ok ? \"\u2713 Check your email for the sign-in link.\""
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 168,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "official: { label: \"\u2713 Official\", cls: \"ok\" },"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 169,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "draft:    { label: \"\u26a0 Draft\", cls: \"warn\" },"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 193,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "active:      { label: \"\u2713 Active\",      cls: \"adt-ok\" },"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 194,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "approved:    { label: \"\u2713 Approved\",    cls: \"adt-appr\" },"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 195,
-   "glyph": "\u23f3",
-   "kind": "control",
-   "context": "in_progress: { label: \"\u23f3 In progress\", cls: \"adt-prog\" },"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 619,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "return { cls: \"warn\", label: \"\u26a0 below the \" + slot.units + \"-unit minimum (\" + fmtU(course.units) + \")\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 620,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "return { cls: \"ok\", label: \"\u2713 selected\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 623,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "if (ur === false) return { cls: \"warn\", label: \"\u26a0 units differ (\" + fmtU(course.units) + \" vs \" + slot.units + \")\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 624,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "return { cls: \"ok\", label: \"\u2713 selected\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 635,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "return { cls: \"ok\", label: \"\u2713 C-ID aligned \u00b7 per c-id.net \u2014 verify course & units (not in our COCI extract)\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 636,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "if (ur === false) return { cls: \"warn\", label: \"\u26a0 C-ID match \u00b7 units differ (\" + fmtU(course.units) + \" vs \" + slot.units + \")\" };"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 637,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "return { cls: \"ok\", label: \"\u2713 C-ID aligned\" };"
   },
   {
    "file": "tmc_builder.js",
@@ -8987,13 +8343,6 @@
    "glyph": "\u2197",
    "kind": "control",
    "context": "var links = (src ? \"<a class='tmc-srclink' href='\" + esc(src) + \"' target='_blank' rel='noopener' onclick='event.stopPropagation()'>official \u2197</a>\" : \"\") +"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 983,
-   "glyph": "\ud83d\udcce",
-   "kind": "control",
-   "context": "(pdf ? \" <a class='tmc-srclink' href='\" + esc(pdf) + \"' target='_blank' rel='noopener' onclick='event.stopPropagation()'>\ud83d\udcce PDF</a>\" : \"\");"
   },
   {
    "file": "tmc_builder.js",
@@ -9060,13 +8409,6 @@
   },
   {
    "file": "tmc_builder.js",
-   "line": 1143,
-   "glyph": "\ud83d\udcce",
-   "kind": "control",
-   "context": "(pdf ? \" <span class='tmc-pdf'>\u00b7 <a href='\" + esc(pdf) + \"' target='_blank' rel='noopener'>\ud83d\udcce PDF</a></span>\" : \"\") + \"</div>\";"
-  },
-  {
-   "file": "tmc_builder.js",
    "line": 1174,
    "glyph": "\ud83d\udc40",
    "kind": "decoration",
@@ -9127,34 +8469,6 @@
    "glyph": "\ud83d\udda8",
    "kind": "decoration",
    "context": "act.appendChild(mkBtn(\"\ud83d\udda8 Print / PDF\", \"\", function () { window.print(); }));"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 1330,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "node.innerHTML = \"<span class='tmc-auth-on'>\u2713 Curator: \" + esc(state.email) + \"</span> \u00b7 <a class='tmc-link' id='tmc-signout'>Sign out</a>\";"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 1335,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "node.innerHTML = \"<span class='tmc-auth-on'>\u2713 Team unlocked (phrase)</span> \u2014 notes only \u00b7 <a class='tmc-link' id='tmc-signout'>Lock</a>\";"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 1346,
-   "glyph": "\ud83d\udd13",
-   "kind": "control",
-   "context": "label: \"\ud83d\udd13 Unlock notes\","
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 1362,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "msg.textContent = r.ok ? \"\u2713 Check your email for the sign-in link.\" : \"Sign-in failed (\" + r.status + \").\";"
   },
   {
    "file": "tmc_builder.js",
@@ -9305,20 +8619,6 @@
   },
   {
    "file": "tmc_builder.js",
-   "line": 1621,
-   "glyph": "\u23f3",
-   "kind": "control",
-   "context": "det.innerHTML = \"<summary>\u23f3 In progress in COCI \u2014 the statewide backlog proxy (expand to rank by computed alignment)</summary>\";"
-  },
-  {
-   "file": "tmc_builder.js",
-   "line": 1696,
-   "glyph": "\u26a0",
-   "kind": "control",
-   "context": "(slot.cid_unverified ? \"<span class='tmc-unv' title='This C-ID is not in our C-ID reference \u2014 a possible C-ID update signal'>\u26a0 not in C-ID ref</span>\" : \"\")"
-  },
-  {
-   "file": "tmc_builder.js",
    "line": 1800,
    "glyph": "\u2713",
    "kind": "decoration",
@@ -9386,34 +8686,6 @@
    "glyph": "\ud83c\udfa4",
    "kind": "decoration",
    "context": "title: \"Dictate \u2014 speech-to-text in your browser; nothing is uploaded until you Save\" }, [\"\ud83c\udfa4 Dictate\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 697,
-   "glyph": "\ud83c\udfa4",
-   "kind": "control",
-   "context": "rec.onend = function () { recording = false; mic.textContent = \"\ud83c\udfa4 Dictate\"; mic.style.background = \"#fff\"; };"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 698,
-   "glyph": "\ud83c\udfa4",
-   "kind": "control",
-   "context": "rec.onerror = function () { recording = false; mic.textContent = \"\ud83c\udfa4 Dictate\"; mic.style.background = \"#fff\"; };"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 699,
-   "glyph": "\u23f9",
-   "kind": "control",
-   "context": "try { rec.start(); recording = true; mic.textContent = \"\u23f9 Stop\"; mic.style.background = \"#fee2e2\"; } catch (e) {}"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 741,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "status.textContent = \"\u2713 Saved \u2014 this trains the doctrine. Keep going!\";"
   },
   {
    "file": "unified_courses.js",
@@ -9505,20 +8777,6 @@
    "glyph": "\u2728",
    "kind": "decoration",
    "context": "mintWrap.appendChild(el(\"div\", { style: \"font-weight:600;margin-bottom:4px;\" }, [\"\u2728 Mint a new standalone course\"]));"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 1764,
-   "glyph": "\u2192",
-   "kind": "control",
-   "context": "chosenLine.textContent = target ? (\"\u2192 merge into \" + target) : \"\u2192 mint a NEW standalone course\";"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 1764,
-   "glyph": "\u2192",
-   "kind": "control",
-   "context": "chosenLine.textContent = target ? (\"\u2192 merge into \" + target) : \"\u2192 mint a NEW standalone course\";"
   },
   {
    "file": "unified_courses.js",
@@ -9641,13 +8899,6 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 2264,
-   "glyph": "\u2728",
-   "kind": "control",
-   "context": "mintHint.textContent = \"\u2728 No existing identity checked \u2014 Confirm will mint a brand-new unified course\""
-  },
-  {
-   "file": "unified_courses.js",
    "line": 2291,
    "glyph": "\u2192",
    "kind": "decoration",
@@ -9659,20 +8910,6 @@
    "glyph": "\u2605",
    "kind": "decoration",
    "context": ": \"Inherited from the \u2605 merge target \u2014 merging keeps it.\")"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2332,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "go.textContent = \"\u2713 Save\";"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2335,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "go.textContent = isSingleton ? \"\u2713 Create unified course\""
   },
   {
    "file": "unified_courses.js",
@@ -9722,27 +8959,6 @@
    "glyph": "\u2715",
    "kind": "decoration",
    "context": "var undo = el(\"a\", { href: \"#\", style: \"color:#b91c1c;font-weight:700;text-decoration:none;\" }, [\"\u2715 undo\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2436,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "go.textContent = \"\u2713 Fold into \" + entry[0];"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2441,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "go.textContent = isSingleton ? \"\u2713 Create unified course\" : \"\u2713 Confirm merge\";"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 2441,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "go.textContent = isSingleton ? \"\u2713 Create unified course\" : \"\u2713 Confirm merge\";"
   },
   {
    "file": "unified_courses.js",
@@ -10005,13 +9221,6 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 3553,
-   "glyph": "\ud83d\udccb",
-   "kind": "decoration",
-   "context": "head.appendChild(el(\"strong\", { style: \"color:var(--text-strong);font-size:.9rem;\" }, [\"\ud83d\udccb Pending merges\"]));"
-  },
-  {
-   "file": "unified_courses.js",
    "line": 3556,
    "glyph": "\u2715",
    "kind": "decoration",
@@ -10030,13 +9239,6 @@
    "glyph": "\u2197",
    "kind": "decoration",
    "context": "}, [\"Sync now \u2197\"]);"
-  },
-  {
-   "file": "unified_courses.js",
-   "line": 3617,
-   "glyph": "\ud83d\udccb",
-   "kind": "decoration",
-   "context": "[\"\ud83d\udccb Review merges (\" + nMerges + \")\"]);"
   },
   {
    "file": "unified_courses.js",
@@ -10243,13 +9445,6 @@
   },
   {
    "file": "unified_courses.js",
-   "line": 4446,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "verifyAllBtn.textContent = \"\u2713 Verify \" + nVerify.toLocaleString() + \" filtered\";"
-  },
-  {
-   "file": "unified_courses.js",
    "line": 4448,
    "glyph": "\u2699",
    "kind": "decoration",
@@ -10345,13 +9540,6 @@
    "glyph": "\u270e",
    "kind": "status",
    "context": "+ ' <span class=\"wpg-manual-hint\" aria-hidden=\"true\">\u270e</span>';"
-  },
-  {
-   "file": "workplan_goals.js",
-   "line": 1116,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "ctx.status.textContent = \"\u2713 Inserted. Reloading the page\u2026\";"
   },
   {
    "file": "fact-sheet/cpl_stories.js",
@@ -10691,27 +9879,6 @@
   },
   {
    "file": "fact-sheet/factsheet_edit.js",
-   "line": 793,
-   "glyph": "\ud83d\uddbc",
-   "kind": "control",
-   "context": "ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = '\ud83d\uddbc Add image';"
-  },
-  {
-   "file": "fact-sheet/factsheet_edit.js",
-   "line": 1024,
-   "glyph": "\ud83d\ude48",
-   "kind": "control",
-   "context": "btn.textContent = hidden ? '\ud83d\ude48 Show section' : '\ud83d\ude48 Hide section';"
-  },
-  {
-   "file": "fact-sheet/factsheet_edit.js",
-   "line": 1024,
-   "glyph": "\ud83d\ude48",
-   "kind": "control",
-   "context": "btn.textContent = hidden ? '\ud83d\ude48 Show section' : '\ud83d\ude48 Hide section';"
-  },
-  {
-   "file": "fact-sheet/factsheet_edit.js",
    "line": 1065,
    "glyph": "\u2192",
    "kind": "decoration",
@@ -10723,20 +9890,6 @@
    "glyph": "\u2192",
    "kind": "decoration",
    "context": "if (ov && ov.hidden) toggleHidden(bl, false);        // click the ghost \u2192 restore"
-  },
-  {
-   "file": "fact-sheet/factsheet_edit.js",
-   "line": 1242,
-   "glyph": "\u2713",
-   "kind": "control",
-   "context": "if (API._curating) { btn.textContent = '\u2713 Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }"
-  },
-  {
-   "file": "fact-sheet/factsheet_edit.js",
-   "line": 1243,
-   "glyph": "\u270e",
-   "kind": "control",
-   "context": "else { btn.textContent = '\u270e Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');"
   },
   {
    "file": "fact-sheet/factsheet_sierra.js",

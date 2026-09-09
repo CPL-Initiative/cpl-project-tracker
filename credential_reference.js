@@ -2033,16 +2033,16 @@
     var lanes = [
       { k: "all",   label: "All", n: state.rows.length,
         title: "Every canonical credential." },
-      { k: "unc",   label: "📥 Unclassified", nText: uncN,
+      { k: "unc",   label: "Unclassified", nText: uncN,
         title: "Raw MAP exhibit titles with no credential identity yet — assign each a unified title. Saved assignments fold on the daily sync (\"awaiting fold\")." },
-      { k: "noiss", label: "🏷 No issuer", n: niQueue.length,
+      { k: "noiss", label: "No issuer", n: niQueue.length,
         title: "Classified credentials still needing agency/title triage."
           + (staged ? " ⚡ " + staged + " pre-filled from the staged plan." : "") },
-      { k: "merge", label: "⇒ Merge confirms", n: pendingMerges().length,
+      { k: "merge", label: "Merge confirms", n: pendingMerges().length,
         title: "Saved renames that match an EXISTING credential — confirm the merge or re-title." },
       { k: "open",  label: "○ Not initiated", n: state.rows.length - doneN,
         title: "Awaiting a one-time curator sign-off. \"Initiated\" only records that a human reviewed the AI classification (who + when) — it never changes the data, and no other action is required. Work these at your own pace." },
-      { k: "done",  label: "✓ Initiated", n: doneN,
+      { k: "done",  label: "Initiated", n: doneN,
         title: "A curator has signed off on the AI classification (the ✓ name · date stamp on the row). Purely a review receipt — the data is identical either way." },
     ];
     lanes.forEach(function (l) {
@@ -2238,7 +2238,7 @@
         saveInitiated(r.unified_title)
           .then(function (resp) {
             if (!resp.ok) {
-              b.disabled = false; b.textContent = "✓ Init";
+              b.disabled = false; b.textContent = "Init";
               toast("Save failed (" + resp.status + ")", true); return;
             }
             r.curator_reviewed_at = new Date().toISOString();
@@ -2250,7 +2250,7 @@
             render();
           })
           .catch(function () {
-            b.disabled = false; b.textContent = "✓ Init";
+            b.disabled = false; b.textContent = "Init";
             toast("Save failed (network)", true);
           });
       };
@@ -3548,7 +3548,7 @@
     addIssuerOption(issuer);         // a NEW agency becomes pickable on the next row
     tr.className = "cr-wl-row cr-wl-done";
     var saveBtn = tr.querySelector(".cr-wl-save");
-    if (saveBtn) saveBtn.textContent = "✓ Saved";
+    if (saveBtn) saveBtn.textContent = "Saved";
     var actTd = tr.querySelector(".cr-wl-act");
     if (actTd && !actTd.querySelector(".cr-wl-clear")) {
       actTd.appendChild(makeClearLink(raw, tr, actTd, saveBtn));
@@ -3860,7 +3860,7 @@
         ["✓ Confirm merge"]);
       inp.oninput = function () {
         var again = mergeTargetFor(p.r, inp.value);
-        btn.textContent = again ? "✓ Confirm merge" : "Save re-title";
+        btn.textContent = again ? "Confirm merge" : "Save re-title";
       };
       btn.onclick = function () {
         var ut = p.r.unified_title;
@@ -3886,7 +3886,7 @@
           ov.merge_confirm = target ? val : "";
           tr.classList.remove("cr-wl-save-failed");
           tr.classList.add("cr-wl-done");
-          btn.textContent = target ? "✓ merge confirmed" : "✓ re-titled";
+          btn.textContent = target ? "merge confirmed" : "re-titled";
         }).catch(function () {
           btn.disabled = false; btn.textContent = "retry";
           tr.classList.add("cr-wl-save-failed");
@@ -4468,7 +4468,7 @@
     var sb = tr.querySelector(".cr-ni-save");
     if (sb) {
       sb.disabled = true;
-      sb.textContent = (issuerJob && issuerJob.value === "") ? "✓ no issuer" : "✓ Saved";
+      sb.textContent = (issuerJob && issuerJob.value === "") ? "no issuer" : "Saved";
     }
     updateIssuerLaneCount();
     renderToolbar();

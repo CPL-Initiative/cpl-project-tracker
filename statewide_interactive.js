@@ -916,7 +916,7 @@
             '<label for="' + id + '">' + esc(o[1]) + '</label>';
         }).join("") + '</div></fieldset>' +
       '<fieldset class="mx-fs"><legend class="mx-lg">Export</legend>' +
-        '<button class="sw-action-btn" id="mx-export-csv" type="button">⬇ Matrix CSV</button>' +
+        '<button class="sw-action-btn" id="mx-export-csv" type="button">Matrix CSV</button>' +
       '</fieldset></div>');
 
     out.push('<div class="mx-key">' +
@@ -1566,7 +1566,7 @@
         badgeBits += '<span class="sw-conf-badge" title="Modal title confidence ' + (e.confidence_title || 0).toFixed(2) + ' (threshold ' + CONFIDENCE_THRESHOLD.toFixed(2) + ' per vision §6.2).">needs review · ' + (e.confidence_title || 0).toFixed(2) + '</span>';
       }
       if (e.quality_flag === "suspect_course_as_exhibit") {
-        badgeBits += '<span class="sw-quality-badge" title="At least one raw row was typed Industry Certification but appears to be a course with no associated credential (data-entry artifact).">⚠ course-as-exhibit</span>';
+        badgeBits += '<span class="sw-quality-badge" title="At least one raw row was typed Industry Certification but appears to be a course with no associated credential (data-entry artifact).">course-as-exhibit</span>';
       }
       if (badgeBits) titleBits += '<div class="sw-title-badges">' + badgeBits + '</div>';
       if (e.issuing_agency) {

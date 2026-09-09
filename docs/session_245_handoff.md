@@ -130,18 +130,37 @@ only 12% of points carry a level word); **CTE vs academic** as three switches
 - **A standing procedure** that *"checks and remediates each COBI surface for AA
   and mobile friendly standards"*.
 
-## NEEDS SAM
+## THE SHEET IS ANSWERED — ALL ELEVEN, 2026-09-09
 
-① **Go / no-go on the 516-glyph remediation run.**
-② **Did "remove all emoji glyphs" mean the 📋/🧭/⚖️ trio too?** (assumed yes)
-③ The SkyView theme fallback ordering — his own choice, worth a veto.
-④–⑨ Carried from S244 unanswered: agency skill statements when sources
-disagree; which disciplines are grab bags; the three legacy anchors with no seed
-discipline; whether 60 is the right search depth; the right-edge glyph rail; his
-eye on the CPL face, the Sky's frame rate, and the live-session banner.
+Sam replied on every item the same night the sheet went over
+(`docs/visuals/2026-09-09-pending-decisions.html`; memory row
+`sam-eleven-rulings-2026-09-09-decision-sheet` carries his words). **Nothing is
+waiting on him.** What he ruled, and what is left of each:
+
+| # | He said | State |
+|---|---|---|
+| 1 | Run the glyph clean-up | ⭐ **DONE** — see below |
+| 2 | Yes, the three approved exceptions were in scope | ⭐ **DONE** — all six word-adjacent marks gone |
+| 3 | Keep SkyView's theme layering | no change |
+| 4 | *"use all 3 … err on the side of including anything possibly relevant"* | **unblocks the outline's skill layer** |
+| 5 | Grab bags: vocational, work experience, interdisciplinary studies | to apply in the modal vote |
+| 6 | **Retire** the legacy anchors | id-keyed → a re-mint, under the playbook |
+| 7 | Keep depth 60; an emptied discipline stays drawn | 60 verified; the other half is a BUILDER change |
+| 8 | **Retire** the right-edge glyph rail | closed |
+| 9 | CPL face: keep, refine later | closed |
+| 10 | *"Looks good now:)"* | ⭐ closed — the Sky question two sessions of measurement could not settle |
+| 11 | The banner needs follow-up | **nothing is broken** — see the governance lane |
+
+⚠️ **HOW A SHEET'S ANSWERS REACH YOU: THEY DO NOT.** The artifact service refuses
+the wake subscription (`relay_unavailable`), so nothing notifies a session that
+Sam has replied. Read the store deliberately — Artifact `read_db`, `db_op` list,
+collection `replies`, url = the sheet — and do it before planning, because on
+2026-09-09 the answers were sitting there within the hour.
 
 ## Read these, in this order
 
+0. **Any NEW sheet's `replies` store** — nothing tells you when one is answered.
+   The 2026-09-09 sheet is fully read and executed; do not re-read it for work.
 1. This file.
 2. [`/a11y-pass`](../.claude/commands/a11y-pass.md) — the procedure, before any
    accessibility work.

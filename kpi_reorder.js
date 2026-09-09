@@ -113,7 +113,7 @@
     // Reset affordance — only visible while a custom order is saved.
     var reset = document.createElement("div");
     reset.className = "kpi-reorder-reset";
-    reset.innerHTML = "<button type=\"button\" title=\"Restore the default card order\">↺ Reset card order</button>";
+    reset.innerHTML = "<button type=\"button\" title=\"Restore the default card order\">Reset card order</button>";
     reset.style.display = saved ? "" : "none";
     grid.insertAdjacentElement("afterend", reset);
     reset.firstChild.addEventListener("click", function () {

@@ -1118,7 +1118,7 @@
       '<div class="cplfl-actions">' +
       '<button class="cplfl-btn" id="cplfl-done" type="button">Begin the day</button>' +
       '<button class="cplfl-btn cplfl-ghost" id="cplfl-reflect-send" type="button">Share reflection</button>' +
-      '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">🔊 Read aloud</button>' +
+      '<button class="cplfl-btn cplfl-ghost" id="cplfl-speak" type="button" aria-pressed="false">Read aloud</button>' +
       '<label class="cplfl-optout" id="cplfl-optout-lbl"><input type="checkbox" id="cplfl-optout"> Don’t greet me with paintings</label>' +
       '<span class="cplfl-reflect-msg" id="cplfl-reflect-msg" role="status"></span>' +
       '</div><div class="cplfl-lic" id="cplfl-lic"></div></div></div>';
@@ -1211,7 +1211,7 @@
     if (lsGet(KEY_REFLECTED) === todayKey()) {
       ta.disabled = true;
       btn.disabled = true;
-      btn.textContent = "✓ Shared — thank you";
+      btn.textContent = "Shared — thank you";
     } else {
       ta.disabled = false;
       btn.disabled = false;
@@ -1259,7 +1259,7 @@
   function stopSpeaking() {
     if ("speechSynthesis" in window) window.speechSynthesis.cancel();
     var b = overlay && byId("cplfl-speak");
-    if (b) { b.setAttribute("aria-pressed", "false"); b.textContent = "🔊 Read aloud"; }
+    if (b) { b.setAttribute("aria-pressed", "false"); b.textContent = "Read aloud"; }
   }
   function wireSpeak() {
     var b = byId("cplfl-speak");
@@ -1277,7 +1277,7 @@
       u.onend = stopSpeaking;
       u.onerror = stopSpeaking;
       b.setAttribute("aria-pressed", "true");
-      b.textContent = "⏹ Stop";
+      b.textContent = "Stop";
       window.speechSynthesis.speak(u);
     });
   }

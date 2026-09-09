@@ -76,6 +76,92 @@ two = 'l = "\U0001F513 \U0001F4CB Both";'
 check("⭐ REFUSES a doubled mark — two in a row is an arrangement, not a prefix",
       rewrite(two) == two, rewrite(two))
 
+# ── Rule 1: never rewrite what the dashboard generator regenerates ──────────
+# ⚠️ THIS IS THE GUARD THAT WAS MISSING ON THE FIRST REAL RUN, and it is why the
+# run was staged rather than trusted: 13 of the 16 rewritable sites in
+# CPL_Dashboard.html live inside a section `excel_to_dashboard.py` replaces
+# wholesale, so a naive sweep "fixes" them and the next daily cron silently puts
+# them back — green tests, reverted overnight, reported as success.
+#
+# The guard is the UNION of a positional test and a fragment test, and the tests
+# below pin BOTH halves plus the union, because each half alone has a blind spot
+# that the first implementation actually shipped with.
+HTML = (
+    '<html>\n'
+    '<a class="btn" title="x">\U0001F4C4 Static</a>\n'
+    '<!-- \u2550\u2550\u2550 CPL Analytics Section \u2550\u2550\u2550 -->\n'
+    '<a class="btn" title="y">\U0001F465 Generated</a>\n'
+    '<!-- \u2550\u2550\u2550 Dashboard Sections End \u2550\u2550\u2550 -->\n'
+    '<a class="btn" title="z">\U0001F4E2 AlsoStatic</a>\n'
+    '</html>\n'
+)
+
+
+def owned_at(needle, html=HTML, gen=""):
+    """Is the LEAD match on the line containing `needle` held back?"""
+    gs._GEN_SRC = gen
+    spans = gs.regenerated_spans(html)
+    off = 0
+    for line in html.splitlines(keepends=True):
+        if needle in line:
+            for m in gs.LEAD.finditer(line):
+                return gs.generator_owned(off + m.start(), spans, m)
+        off += len(line)
+    return None
+
+
+check("regenerated_spans finds the marked region",
+      len(gs.regenerated_spans(HTML)) == 1)
+check("⭐ POSITION alone holds a site inside a regenerated section",
+      owned_at("Generated") is True)
+check("a site BEFORE the region is not held", owned_at("Static") is False)
+check("a site AFTER the region is not held", owned_at("AlsoStatic") is False)
+
+# The blind spot of the positional test: the generator also emits blocks that
+# sit inside none of the marked regions (render_algo_details is the live case).
+check("⭐ FRAGMENT alone holds a site the region list does not cover",
+      owned_at("Static", gen='>\U0001F4C4 Static<') is True)
+
+# The blind spot of the fragment test: it stops recognizing a site the moment
+# the generator is fixed — which is the order-dependence that made the first
+# implementation report "held back: 2" instead of 13.
+check("⭐ ORDER-INDEPENDENT — still held after the generator no longer has it",
+      owned_at("Generated", gen="") is True)
+
+# A .js file is a static asset; nothing there is ever the generator's.
+check("a .js file has no protected regions",
+      gs.regenerated_spans('var s = "\U0001F4CB To-Do";') == [])
+
+# Every marker must still exist in the generator, or the guard silently
+# protects nothing — the failure mode this whole section exists to prevent.
+# ⚠️ owned_at() above pokes the memoized gs._GEN_SRC; clear it or this reads an
+# EMPTY generator and "fails" for a reason that has nothing to do with drift.
+gs._GEN_SRC = None
+_gen = gs.generator_source()
+_missing = [m for pair in gs.REGENERATED for m in pair if m not in _gen]
+check("⭐ every REGENERATED marker still appears in the generator source",
+      not _missing, _missing)
+
+# apply_safe must REPORT what it held, not just skip it silently.
+import tempfile
+_fd, _tmp = tempfile.mkstemp(suffix=".html", dir=gs.ROOT)
+os.close(_fd)
+try:
+    with open(_tmp, "w", encoding="utf-8") as fh:
+        fh.write(HTML)
+    gs._GEN_SRC = ""
+    n, held = gs.apply_safe(os.path.basename(_tmp))
+    after = open(_tmp, encoding="utf-8").read()
+    check("apply_safe rewrites the two static labels", n == 2, n)
+    check("⭐ apply_safe REPORTS the held site rather than skipping it quietly",
+          len(held) == 1, held)
+    check("the generated label keeps its mark on disk",
+          "\U0001F465 Generated" in after)
+    check("the static labels lost theirs",
+          ">Static<" in after and ">AlsoStatic<" in after)
+finally:
+    os.unlink(_tmp)
+
 # ── the sweep still finds things after a rewrite pass (no silent zeroing) ────
 check("EMOJI matches a pictograph", bool(gs.EMOJI.search("\U0001F4CB")))
 check("EMOJI matches a dingbat arrow", bool(gs.EMOJI.search("→")))

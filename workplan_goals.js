@@ -1113,7 +1113,7 @@
       }
     }).then(function () {
       ctx.status.className = "wpg-status ok";
-      ctx.status.textContent = "✓ Inserted. Reloading the page…";
+      ctx.status.textContent = "Inserted. Reloading the page…";
       setTimeout(function () { window.location.reload(); }, 800);
     }).catch(function (e) {
       ctx.btnSubmit.disabled = false;

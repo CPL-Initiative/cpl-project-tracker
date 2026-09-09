@@ -694,9 +694,9 @@
             }
           }
         };
-        rec.onend = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
-        rec.onerror = function () { recording = false; mic.textContent = "🎤 Dictate"; mic.style.background = "#fff"; };
-        try { rec.start(); recording = true; mic.textContent = "⏹ Stop"; mic.style.background = "#fee2e2"; } catch (e) {}
+        rec.onend = function () { recording = false; mic.textContent = "Dictate"; mic.style.background = "#fff"; };
+        rec.onerror = function () { recording = false; mic.textContent = "Dictate"; mic.style.background = "#fff"; };
+        try { rec.start(); recording = true; mic.textContent = "Stop"; mic.style.background = "#fee2e2"; } catch (e) {}
       };
       row.appendChild(mic);
     } else {
@@ -738,7 +738,7 @@
             return;
           }
           ta.value = "";
-          status.textContent = "✓ Saved — this trains the doctrine. Keep going!";
+          status.textContent = "Saved — this trains the doctrine. Keep going!";
         }).catch(function () {
           save.disabled = false;
           status.textContent = "Could not save — network error.";
@@ -1761,7 +1761,7 @@
         var go;
         function pick(id) { target = id; syncTarget(); }
         function syncTarget() {
-          chosenLine.textContent = target ? ("→ merge into " + target) : "→ mint a NEW standalone course";
+          chosenLine.textContent = target ? ("merge into " + target) : "mint a NEW standalone course";
           mintWrap.style.display = target ? "none" : "";
           if (go) go.textContent = target ? ("Re-home into " + target) : "Re-home into NEW course";
         }
@@ -2261,7 +2261,7 @@
         // assigned at the next build, so the live id is a UC-CUR placeholder).
         if (!hasTgt) {
           var md0 = discSel.value, cs0 = md0 ? DISC_COMMON_SUBJ[md0] : "";
-          mintHint.textContent = "✨ No existing identity checked — Confirm will mint a brand-new unified course"
+          mintHint.textContent = "No existing identity checked — Confirm will mint a brand-new unified course"
             + (md0
                 ? (cs0 ? " under Common SUBJ " + cs0 : " under a new Common SUBJ for " + md0)
                 : "; pick a discipline to set its Common SUBJ")
@@ -2329,10 +2329,10 @@
           var discChanged = !discSel.disabled && !!discSel.value && discSel.value !== oneCur;
           var renameMode = !overrideTarget && !isSingleton && nChk === 1 && (titleChanged || discChanged);
           if (renameMode) {
-            go.textContent = "✓ Save";
+            go.textContent = "Save";
             go.disabled = false;
           } else {
-            go.textContent = isSingleton ? "✓ Create unified course"
+            go.textContent = isSingleton ? "Create unified course"
               : (overrideTarget ? ("✓ Fold into " + overrideTarget[0]) : "✓ Confirm merge");
             go.disabled = nChk < (overrideTarget ? 1 : 2);
           }
@@ -2433,12 +2433,12 @@
             ovBanner.appendChild(el("div", { style: "margin-top:2px;font-size:.76rem;color:#64748b;" },
               ["Editing the Proposed title above renames this course when you fold in."]));
           }
-          go.textContent = "✓ Fold into " + entry[0];
+          go.textContent = "Fold into " + entry[0];
         } else {
           ovBanner.style.display = "none";
           titleIn.value = titleDefault;
           titleIn.disabled = false; titleIn.style.opacity = "";
-          go.textContent = isSingleton ? "✓ Create unified course" : "✓ Confirm merge";
+          go.textContent = isSingleton ? "Create unified course" : "Confirm merge";
         }
         refreshTarget();
       }
@@ -3550,7 +3550,7 @@
       function rebuild() {
         box.innerHTML = "";
         var head = el("div", { style: "display:flex;align-items:center;gap:8px;margin:-18px -20px 12px;padding:9px 10px 9px 20px;border-bottom:1px solid #e5e7eb;border-radius:10px 10px 0 0;background:#f8fafc;" });
-        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["📋 Pending merges"]));
+        head.appendChild(el("strong", { style: "color:var(--text-strong);font-size:.9rem;" }, ["Pending merges"]));
         head.appendChild(el("span", { style: "flex:1;" }, []));
         var closeX = el("button", { type: "button", "aria-label": "Close", title: "Close",
           style: "border:none;background:none;cursor:pointer;font-size:1.05rem;line-height:1;color:#64748b;padding:2px 7px;" }, ["✕"]);
@@ -3614,7 +3614,7 @@
       if (nMerges) {
         var rev = el("a", { href: "#", class: "uc-auth-link",
           title: "Review and undo this session's merges before the daily build folds them in" },
-          ["📋 Review merges (" + nMerges + ")"]);
+          ["Review merges (" + nMerges + ")"]);
         rev.onclick = function (e) { e.preventDefault(); openPendingMerges(); };
         syncBadge.appendChild(rev);
       }
@@ -4443,7 +4443,7 @@
       }).length : 0;
       if (nVerify) {
         verifyAllBtn.style.display = "";
-        verifyAllBtn.textContent = "✓ Verify " + nVerify.toLocaleString() + " filtered";
+        verifyAllBtn.textContent = "Verify " + nVerify.toLocaleString() + " filtered";
         verifyAllBtn.title = "Accept the machine-inferred discipline as-is for all " + nVerify +
           " filtered Generated rows and mark them Verified. The ⚙ badge flags the lower-confidence fills to scrutinize first.";
       } else {

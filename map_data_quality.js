@@ -195,7 +195,7 @@
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
-        label: "🔓 Unlock", placeholder: "team phrase…",
+        label: "Unlock", placeholder: "team phrase…",
         blurb: "MAP Data Quality register — unlock to view + curate",
         onUnlocked: function (s) { sess = s; writeErrMsg = null; refresh(); },
       }));

@@ -684,7 +684,7 @@
         if (!raw) { msg.textContent = "Type a few details first."; return; }
         msg.textContent = "CC is writing it up…"; polish.disabled = true;
         callClaudeUpdate(raw, c.name).then(function (txt) {
-          ta.value = txt; msg.textContent = "✓ Polished — edit if needed, then Save.";
+          ta.value = txt; msg.textContent = "Polished — edit if needed, then Save.";
         }).catch(function (e) { msg.textContent = e.message; })
           .then(function () { polish.disabled = !window.CPL_REPORT_PROXY_URL ? true : false; });
       });
@@ -696,7 +696,7 @@
           var rec = (rows && rows[0]) || { body: text, author: (state.sess && state.sess.email) || null, created_at: new Date().toISOString() };
           var k = item.type + ":" + item.id;
           (state.updates[k] = state.updates[k] || []).unshift(rec);
-          ta.value = ""; msg.textContent = "✓ Saved."; save.disabled = false; paintHist(); render();
+          ta.value = ""; msg.textContent = "Saved."; save.disabled = false; paintHist(); render();
           // If the POST representation didn't carry the row id (rare), re-fetch
           // this item's updates so the entry has its ✏️/🗑 controls (they require
           // u.id) the next time the composer opens — no reload needed.

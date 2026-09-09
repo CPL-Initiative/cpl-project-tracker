@@ -45,7 +45,7 @@
     var go = document.createElement("button");
     go.type = "button";
     go.className = "go";
-    go.textContent = "⚡ Quick Adopt";
+    go.textContent = "Quick Adopt";
     go.title = "Ask the CPL team to bring this articulation to your college — records a request they follow up with your curriculum office.";
     var form = el("form", "cplpw-qa-form");
     form.style.display = "none";
@@ -906,7 +906,7 @@
     var pdf = document.createElement("button");
     pdf.type = "button";
     pdf.className = "cplpw-pdfbtn";
-    pdf.textContent = "⬇ PDF";
+    pdf.textContent = "PDF";
     pdf.title = "Open a print-ready extract of this course map (save as PDF from the print dialog; allow pop-ups)";
     pdf.addEventListener("click", function () { exportPdf(root, prog, stagedef); });
     bar.appendChild(pdf);

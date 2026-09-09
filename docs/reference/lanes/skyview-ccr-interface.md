@@ -412,27 +412,40 @@ ceiling in words.
 
 ## NEEDS SAM
 
-① **Where agency skill statements come from when the three sources disagree**
-(ruling 9's follow-up — published standards *and* ACE exhibits *and* the MAP
-team; he said "All three"). Pilot: an AWS welding certification. **The only
-thing blocking the outline's skill layer**; everything else is buildable.
-② Which disciplines are grab bags besides Vocational and the no-discipline pile?
-Interdisciplinary Studies (513 identities) is the candidate.
-③ The live-session banner — what link, on which tabs?
-④ The three legacy anchors without a seed discipline (`M-ID HOSP 100`, `104`,
-`102`) need one of the 146 MQ disciplines.
-⑤ Whether 60 is the right search depth, and whether an emptied discipline should
-vanish or ghost.
-⑥ The right-edge vertical glyph rail from his Obsidian screenshot — glyph-only,
-so his call under his own glyph rule.
-⑦ **The CPL face is on the map — his eye on it.** `#skyview/cpl`: does the
-credential-led label read right at his zoom, and is *Articulations* the word?
-⑧ **The Sky is in — his eye on it as shipped** (S239): the opening window
-(150° across, the prototype's), the pace of the turn and the twinkle, the two
-region names and Day's rim. ⚠️ **The smoothness half of this is ANSWERED** — he
-recorded it flickering (S240), both causes are fixed and measured above, and the
-turn now runs at its intended rate. What is still open is whether it READS
-smooth on his machine now.
+**Nothing — all eight answered 2026-09-09** (sheet
+`docs/visuals/2026-09-09-pending-decisions.html`; his words in memory row
+`sam-eleven-rulings-2026-09-09-decision-sheet`). They are work now, not questions:
+
+① **Skill statements: "use all 3 for now and consolidate them in a set of
+skills."** ⭐ With the acceptance bar: *"err on the side of including anything
+possibly relevant, as the faculty will revise and keep or toss."* There is no
+source ranking to derive — the union is the answer and the faculty are the
+filter. **The outline's skill layer is unblocked.**
+② **Grab bags: vocational, work experience, interdisciplinary studies** (+ the
+no-discipline pile). Interdisciplinary Studies was the lane's candidate at 513
+identities; work experience was not. None may vote in a modal decision; today
+they all do.
+③ **The banner** — nothing broken, see the governance lane.
+④ **Legacy anchors: RETIRE** (`M-ID HOSP 100`, `104`, `102`). Id-keyed, so it
+lands as a re-mint under
+[`coursecontrolnumber_remint.md`](../../coursecontrolnumber_remint.md).
+⑤ **Keep depth 60** — `SUG_LIMIT = 60` is the first page, revealed a page at a
+time to `SUG_MAX = 300`. Verified, no change. **An emptied discipline stays
+DRAWN.**
+⑥ **Glyph rail: RETIRE** — it collided with his own glyph rule.
+⑦ **CPL face: keep** — *"refine it in later sessions."*
+⑧ **The Sky reads right** — *"Looks good now:)"*. ⭐ Two sessions of measurement
+could not settle this, because every number was headless and on a machine that
+is not his. **His eye was the only instrument that could answer it.**
+
+⚠️ **"Stays drawn" is a BUILDER change, not the one-line renderer tweak the
+sheet claimed.** `isl.p` is never mutated at runtime, and `build_islands()`
+walks `all_discs = set(by_disc) | set(sa_by_disc)` — an emptied discipline is
+**absent from the payload** and never reaches `islandPass` at all. Drawing it
+needs a roster to emit from, a radius for a pointless island, and a ghost
+lifetime. ⚠️ Do **not** "fix" it in `islandPass`: hiding an island whose points
+are all *filtered off* is deliberate and `healShow` depends on it — two
+different empties, and only one is Sam's.
 
 ⚠️ The Pages deploy prunes `docs/`, so a sheet is handed over as an artifact
 link, never a github.io URL.

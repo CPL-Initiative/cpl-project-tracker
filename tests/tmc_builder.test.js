@@ -169,7 +169,7 @@ function rowFor(re) { return Array.prototype.filter.call(listRows(), (r) => re.t
   check("slot PSY 110 auto-populates PSYC 1 (C-ID match)", /PSYC\s*1/.test(txt(pickerBtns[0])) && /Introductory Psychology/.test(txt(pickerBtns[0])));
   check("slot MATH 110 auto-populates MATH 15 (C-ID match)", /MATH\s*15/.test(txt(pickerBtns[1])));
   const statuses = document.querySelectorAll("#tab-tmc-builder .tmc-status.ok");
-  check("auto-matched slots show a ✓ C-ID aligned status", statuses.length >= 2 && /C-ID aligned/.test(txt(statuses[0])));
+  check("auto-matched slots show a C-ID aligned status", statuses.length >= 2 && /C-ID aligned/.test(txt(statuses[0])));
   check("non-C-ID slot stays unselected until the college picks", /Select your/.test(txt(pickerBtns[2])));
 
   // (2) TOTAL UNITS of the right-side selected courses is shown (3 + 4 = 7)

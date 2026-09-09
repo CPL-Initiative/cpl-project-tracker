@@ -122,7 +122,7 @@ async function scenarioToggle() {
     Array.from(doc.querySelectorAll(".cr-wl-table tbody tr")).length === 4);
   const doneRow = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
     .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Assigned");
-  check("toggle: assigned row keeps its ✓ Saved state in All view",
+  check("toggle: assigned row keeps its Saved state in All view",
     doneRow && doneRow.className.indexOf("cr-wl-done") >= 0);
   Array.from(doc.querySelectorAll(".cr-wl-toggle-btn"))[0].click();
   await sleep(30);
@@ -170,7 +170,7 @@ async function scenarioPrefill() {
   check("prefill: badge tooltip carries the note",
     /Rule 5c fixture/.test(psRow.querySelector(".cr-wl-preseed-badge").getAttribute("title")));
   check("prefill: NOTHING auto-saved (ready to save, not saved)", log.writes.length === 0);
-  check("prefill: row still counts as OPEN (not ✓ Saved)",
+  check("prefill: row still counts as OPEN (not Saved)",
     psRow.className.indexOf("cr-wl-done") < 0);
   const plainRow = Array.from(doc.querySelectorAll(".cr-wl-table tbody tr"))
     .find((r) => txt(r.querySelector(".cr-wl-rawt")) === "Raw Plain");
@@ -233,11 +233,11 @@ async function scenarioBulkSave() {
     log.writes.length === 4);
   check("bulk: reviewer stamped from the session",
     psTitle.reviewer_email === "map@rccd.edu");
-  check("bulk: hand-typed row flipped to ✓ Saved in place",
+  check("bulk: hand-typed row flipped to Saved in place",
     plainRow.className.indexOf("cr-wl-done") >= 0);
-  check("bulk: saved row flipped to ✓ Saved in place",
+  check("bulk: saved row flipped to Saved in place",
     psRow.className.indexOf("cr-wl-done") >= 0
-    && txt(psRow.querySelector(".cr-wl-save")) === "✓ Saved"
+    && txt(psRow.querySelector(".cr-wl-save")) === "Saved"
     && !!psRow.querySelector(".cr-wl-clear"));
 }
 

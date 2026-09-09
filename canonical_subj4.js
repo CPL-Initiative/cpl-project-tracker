@@ -1916,7 +1916,7 @@
     var r = entry._cpl;
     if (!r) return;
     var bg = document.getElementById("cs-cpl-modal");
-    document.getElementById("cs-cpl-title").textContent = "🎓 CPL opportunities · " + entry.discipline;
+    document.getElementById("cs-cpl-title").textContent = "CPL opportunities · " + entry.discipline;
     var body = document.getElementById("cs-cpl-body");
     body.innerHTML = "";
     body.appendChild(el("p", {}, [

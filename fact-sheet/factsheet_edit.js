@@ -790,7 +790,7 @@
       });
       if (!sec.querySelector('.fs-add-img')) {
         var ib = document.createElement('button');
-        ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = '🖼 Add image';
+        ib.type = 'button'; ib.className = 'fs-add-img no-print'; ib.textContent = 'Add image';
         (function (id) { ib.addEventListener('click', function (e) { e.preventDefault(); addImage(id); }); })(sid);
         sec.appendChild(ib);
       }
@@ -1021,7 +1021,7 @@
     var sec = btn.closest && btn.closest('section');
     var h2 = sec && sec.querySelector('h2');
     var label = norm(h2 ? h2.textContent : (sec ? sec.id : 'section')).slice(0, 60) || 'section';
-    btn.textContent = hidden ? '🙈 Show section' : '🙈 Hide section';
+    btn.textContent = hidden ? 'Show section' : 'Hide section';
     btn.title = hidden
       ? 'This section is hidden from the public page, Print, and the Word export — click to show it'
       : 'Hide this whole section from the public page, Print, and the Word export';
@@ -1239,8 +1239,8 @@
     // keeper picking up a sign-in in another tab reveals it without a reload —
     // and a sign-out hides it again.
     btn.hidden = !isRevealed();
-    if (API._curating) { btn.textContent = '✓ Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
-    else { btn.textContent = '✎ Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
+    if (API._curating) { btn.textContent = 'Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
+    else { btn.textContent = 'Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
            btn.title = isReviewer() ? 'Edit boxes on this page' : 'Sign in to edit this fact sheet'; }
   }
   function wireButton() {
