@@ -79,8 +79,18 @@ function detRows(det) {
     /Baseline eligibility:/.test(txt) && !/the gate to participate/.test(txt) &&
     !/Baseline eligibility \(/.test(txt));
   check("T1d: nothing in the expand restates the gate's roll-forward sentence twice",
-    (txt.match(/qualifying later still lets it draw/g) || []).length <= 1 &&
+    (txt.match(/qualifying later still lets it earn/g) || []).length <= 1 &&
     !/nothing is redistributed, so qualifying later/.test(txt));
+  // ⚠ THE COUNT ABOVE TOLERATES ZERO, and must — this fixture's college is not
+  // always gated. That is also exactly how the guard went dead on 2026-09-09:
+  // "draw" left the rendered vocabulary, the regex stopped matching anything,
+  // and it counted 0 and passed forever while guarding nothing. Demanding the
+  // phrase in `txt` would be wrong (it fails on an ungated fixture), so the
+  // phrase is asserted against the MODULE instead: reword the sentence and this
+  // fails, pointing at the count that needs re-aiming. Third occurrence of
+  // a-test-coupled-to-position-or-wording-breaks-on-correct-work.
+  check("T1d: …and that sentence still exists to be counted (the guard is not dead)",
+    /qualifying later still lets it earn/.test(consumerSrc));
 
   // THE SPAN. The table is a direct child of the detail grid, and the grid is
   // auto-fit minmax(240px, 1fr) — without the span rule it lands in one column

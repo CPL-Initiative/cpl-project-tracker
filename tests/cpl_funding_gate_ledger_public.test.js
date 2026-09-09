@@ -143,9 +143,9 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
     /confirm participation/i.test(gatedRow.querySelector("td.cf-award").textContent));
   check("S5: …and the ⛔ chip that duplicated the pie is gone (Sam, 2026-09-01)",
     !gatedRow.querySelector(".cf-gatechip") && gatedRow.innerHTML.indexOf("⛔") === -1);
-  check("S5: the gated cell's hover explains the dollars roll forward",
-    /roll forward|held in reserve/i.test(gatedRow.querySelector("td.cf-award").getAttribute("title") || "") ||
-    /roll forward|reserve/i.test((gatedSub && gatedSub.getAttribute("title")) || ""));
+  check("S5: the gated cell's hover explains that the funding rolls forward",
+    /rolls? forward|held in reserve/i.test(gatedRow.querySelector("td.cf-award").getAttribute("title") || "") ||
+    /rolls? forward|reserve/i.test((gatedSub && gatedSub.getAttribute("title")) || ""));
 
   // AFTER the deadline the money genuinely is being held back, so the figure
   // returns. Driven by moving the deadline into the past rather than by mocking
