@@ -175,7 +175,8 @@ named here because a store nobody names is a store nobody finds —
    lint, and the only instruction to run the lint is step 0 of `/checkpoint`, so
    the signal that you are overdue fired only once you were already
    checkpointing. It is two git commands — run them at session start, after a
-   long stretch, and before any sign-off, and **OFFER `/checkpoint` above 6:**
+   long stretch, and before any sign-off, and **RUN `/checkpoint` above 6** —
+   run it, never offer it (his later ruling, same day):
 
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
@@ -338,6 +339,18 @@ named here because a store nobody names is a store nobody finds —
   and the statute's "Advancing career attainment" are the allowed senses.
   The anchor suite's D13 ban guard enforces it. Sweep prose only, never
   identifiers.
+  ⚠️ **NEVER THE BANKING SENSE OF "DRAW" (Sam, 2026-09-09):** *"'draws' is a
+  business term tied to banking and I don't want that connotation."* Say
+  **earns** (the model already runs on earned / unearned / Total Possible), or
+  **receives** where funding already earned is being released. Also retired:
+  **unspent** → *unearned*, **the dollars** → *the funding*. ⚠️ **But
+  *expended* STAYS where the subject is a COLLEGE spending (his rule, same
+  day): *"expended should be kept if I am referring to the colleges spending
+  the funds. Allocated should be used if I am referring to the CO awarding or
+  dispensing the funds to colleges."* The two words are not interchangeable —
+  check who the subject is before sweeping either. `cpl_funding_calm` bans
+  the draw stem and *unspent* in rendered text (`withdrawn` is a different
+  word and is excluded).
 - **HOUSE VOICE — write outward artifacts the way the CO writes (Sam,
   2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
   standard: *"the word choice and tone provide an extensive example of the tone
@@ -364,6 +377,15 @@ named here because a store nobody names is a store nobody finds —
     whose job is to show the writing. **The test is who the sentence points at.**
     Scope is wider than the rest of this section: it covers explainers **and
     replies to Sam in session**.
+  - ⚠️ **ACTIVE VOICE, AND NAME THE ACTOR (Sam, 2026-09-09).** He asked for
+    revisions that use *"active voice, avoidance of adjective phrases and
+    asides, and plain language or language consistent with the terminology used
+    in the T5 revision."* A passive that hides the model as the actor is the
+    common failure on funding prose (*"is measured"*, *"are then applied"*,
+    *"is produced by"*) — say **the model measures / applies / produces**. Say
+    **model**, not *engine*. And prefer the regulation's own words over an
+    invented gloss: *units of credit for prior learning*, not a metaphor like
+    *currency*. **Applies to ALL suggested revisions, not just outward prose.**
   - ⚠️ **A voice, not a template** — copying its shapes onto a piece with no
     concession to make produces parody, and length is not seriousness. Moves +
     exemplars + before/after:
@@ -414,23 +436,15 @@ first day.** Do the remembering for them.
   shape to it. Reacting is easier than specifying.
 - **DECISIONS ARRIVE AS DECISION SHEETS (Sam, 2026-08-30).** *"I'd like to
   handle all my current and future decisions this way."* When judgments only
-  Sam can make accumulate — in one lane or across many — build ONE numbered
-  sheet (a First Light artifact, committed to `docs/visuals/` with a dated
-  slug, handed over as a Claude artifact LINK — Pages prunes `docs/`, so a
-  github.io URL to it 404s): per item, what it is in plain words, the measured context (from the
-  maps and feeds, never guessed), a PROPOSED disposition with its draft
-  reason, and reply-by-number verdicts (`yes · edit: … · fold: … ·
-  dismiss: …`). **Every sheet carries reply chips** (S230:
-  `python3 kb/_decision_sheet_replies.py --inject <sheet.html>`) — a verdict,
-  a *Follow up* toggle and a note per item, saved to the artifact's own store
-  (publish with `capabilities: {db: {}}`) which the session reads FIRST with the
-  Artifact tool's `read_db` (collection `replies`); off the artifact, *Copy
-  replies* builds the line. The session executes the verdicts and commits the reasons.
-  This replaces asks scattered through chat and feed items parked for weeks;
-  the To-Do feed POINTS at the live sheet, never substitutes for it. Worked
-  example: `docs/visuals/2026-08-30-governance-fifteen-tables.html` —
-  fifteen rulings in one sitting. Human-facing version:
-  `docs/working_with_claude_code.md` §11.
+  Sam can make accumulate, build ONE numbered sheet rather than scattering
+  asks through chat: per item, what it is in plain words, the measured
+  context (from the maps and feeds, never guessed), a PROPOSED disposition
+  with its draft reason, and reply-by-number verdicts. Hand it over as a
+  Claude artifact LINK. ⚠️ **Read the replies BEFORE executing** — they are
+  the artifact's own store, not chat. Mechanics (the reply-chip injector,
+  `capabilities: {db: {}}`, the `replies` collection, where the file lives,
+  the worked example) are PULL:
+  [`decision_sheets`](docs/reference/decision_sheets.md).
 - **CAPTURE UNPLANNED SUBSTANCE ON THE FLY (Sam, 2026-08-30).** His important
   statements are never planned — *"just comes out of our interactions and I
   don't think to say specifically braindump."* When Sam or a team member says
@@ -471,8 +485,13 @@ first day.** Do the remembering for them.
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
   scripts, workflows and public surfaces — derived from the code
   (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
-- **Offer the checkpoint** — measurably, on Rule 9's commits-since-handoff count,
-  never on a feeling that the session is winding down.
+- **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
+  permission to checkpoint. Just run it when needed and we can refresh it if we
+  stay in the session for more work."* Fire on Rule 9's commits-since-handoff
+  count, never on a feeling that the session is winding down — then just run it.
+  ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
+  deferred for an answer that never comes costs the session's reasoning. If work
+  continues after, checkpoint again.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
@@ -525,22 +544,11 @@ against, and the toggle history are in
   - **Beyond `test`, merge on `clean` OR `unstable`.** `unstable` from any
     OTHER non-required check still merges — do NOT wait for it to flip to
     `clean`. Only `blocked`, `dirty` (conflict) or `behind` gate beyond that.
-  - **Poll CI via the MCP `github` tools, NOT `curl`.** The sandbox cannot reach
-    `api.github.com`; a curl loop watching CI silently times out. Use
-    `pull_request_read {method:"get"}` or `get_check_runs`. Webhooks do not
-    deliver CI *success*, so you must poll. ⚠️ **A `check_suite.completed` wake
-    is NOT a green light** — it names a routinely SUPERSEDED `head_sha`. Always
-    re-read `get_check_runs` on the CURRENT head before acting.
-  - **Hold only with a concrete reason** — a known gap pending something only
-    Sam supplies, or a decision only he can make. Being a thing he asked for is
-    **not** a reason to hold. When you hold: mark **ready**, state the reason.
-  - **Never PARK a PR in DRAFT.** Mark ready immediately (a PR can be ready
-    while CI runs) and squash-merge the instant it is mergeable, in the SAME
-    turn rather than ending the turn to wait.
-  - **Backstop:** `mcp__github__enable_pr_auto_merge` (squash) — but with no
-    required checks configured, GitHub auto-merge fires IMMEDIATELY, so it
-    cannot do the `test` wait for you. Call it (or merge manually) only
-    AFTER `test` reports success on the current head.
+  - **Poll CI via the MCP `github` tools, NOT `curl`** (the sandbox cannot reach
+    `api.github.com`), and ⚠️ **a `check_suite.completed` wake is NOT a green
+    light** — it routinely names a SUPERSEDED `head_sha`, so always re-read
+    `get_check_runs` on the CURRENT head. When to hold, and why never to park
+    in draft: [`branch_policy`](docs/reference/branch_policy.md).
   - **Method: squash and merge** (`mcp__github__merge_pull_request`,
     `merge_method: "squash"`).
   - **Branches auto-delete on merge.** Never run `git push origin --delete` from
@@ -665,14 +673,10 @@ Read it BEFORE: vault-sync or vault-path work, Obsidian exclusion, or the
 sparse-checkout fix. It holds the vault root, `scripts/sync-vault-clones.ps1`,
 and why exclusion is a relevance filter rather than a performance one.
 
-Three doc lanes in this repo, by lifecycle (see
-[`docs/INDEX.md`](docs/INDEX.md) for the landing page):
-
-| Lane | Path | Purpose |
-|---|---|---|
-| **KB notes** | `docs/kb-notes/<topic>.md` | Distilled, durable, reusable knowledge with `kb-status: published|archived|internal` (the `candidate` middle state was retired Session 11). **THE Obsidian-target lane.** |
-| **Lessons (WIP)** | `docs/<workstream>_lessons.md` | Workstream scratchpads, append a dated section every checkpoint. |
-| **Session handoffs** | `docs/session_<N>_handoff.md` | "Fattyfat" capsules for the next session. |
+Three doc lanes by lifecycle — **KB notes** (`docs/kb-notes/`, the durable,
+Obsidian-target lane), **lessons** (`docs/<workstream>_lessons.md`, appended
+every checkpoint) and **session handoffs** (`docs/session_<N>_handoff.md`).
+The table and the per-lane contract are in [`docs/INDEX.md`](docs/INDEX.md).
 
 The KB-notes lane is **proactive + auto-flowing**: when a session learns
 something durable, a new note lands in `docs/kb-notes/` with `kb-status:
@@ -808,9 +812,7 @@ the date moved · **duplicate sections / HTML growing** on every run ·
 404** (the lockfile is gitignored, so every range resolves live — pin exactly) ·
 **docx library errors**.
 
-⚠️ **The "N unpushed commits on `claude/...`" nag is FIXED (Session 228)** — the
-SessionStart patch makes the hook count commits on NO remote ref, which is what
-"unpushed" means. If it returns, the patch did not run:
-`python3 scripts/patch_stop_hook.py`. The "Unverified `noreply@github.com`"
-variant is still a false positive — **do not amend, do not push**; amending
-rewrites `main` (Rule 5). Both are covered there with the confirming commands.
+⚠️ **The stop-hook nags** — the "N unpushed commits" one (FIXED, Session 228) and the
+"Unverified `noreply@github.com`" false positive (**do not amend, do not push** —
+amending rewrites `main`, Rule 5) are both covered there, with the confirming
+commands.

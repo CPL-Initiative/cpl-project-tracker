@@ -167,3 +167,16 @@ branch fails the same way before debugging your own diff.
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:
   `npm pack docx@8.0.4`, extract, copy `umd/docx.min.js`.
+
+## The stop-hook nags
+
+*Relocated from `CLAUDE.md` at the 2026-09-09 checkpoint — symptom-triggered
+reference, read only once you have seen the nag, so it is PULL. The pointer in
+`CLAUDE.md`'s Troubleshooting section stays.*
+
+⚠️ **The "N unpushed commits on `claude/...`" nag is FIXED (Session 228)** — the
+SessionStart patch makes the hook count commits on NO remote ref, which is what
+"unpushed" means. If it returns, the patch did not run:
+`python3 scripts/patch_stop_hook.py`. The "Unverified `noreply@github.com`"
+variant is still a false positive — **do not amend, do not push**; amending
+rewrites `main` (Rule 5). Both are covered there with the confirming commands.

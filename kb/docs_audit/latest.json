@@ -10,60 +10,59 @@
     "other": 150000
   },
   "summary": {
-    "files": 853,
-    "bytes": 9100258,
+    "files": 857,
+    "bytes": 9125864,
     "over_budget": 4,
-    "handoff_max": 246,
+    "handoff_max": 247,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59882,
+    "always_loaded_bytes": 59989,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59882,
+        "bytes": 59989,
         "over": 0
       },
       "other": {
-        "files": 109,
-        "bytes": 2801300,
+        "files": 110,
+        "bytes": 2809369,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 35669,
+        "bytes": 33742,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1999987,
+        "bytes": 2006791,
         "over": 1
       },
       "kb_note": {
-        "files": 417,
-        "bytes": 2142810,
+        "files": 419,
+        "bytes": 2148324,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180631,
+        "bytes": 180624,
         "over": 1
       },
       "handoff": {
-        "files": 220,
-        "bytes": 1879979,
+        "files": 221,
+        "bytes": 1887025,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "american_spelling": 1,
       "oversized_doc": 4,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2766,
-      "bytes": 1351595909,
+      "files": 2773,
+      "bytes": 1351699829,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [
@@ -177,25 +176,6 @@
       },
       "message": "10 business-register terms — leverage x10 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/coursecontrolnumber_remint.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 2,
-        "forms": {
-          "modelling": {
-            "n": 1,
-            "prefer": "modeling"
-          },
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
-          }
-        }
-      },
-      "message": "2 British forms — modelling→modeling, labelled→labeled",
-      "path": "docs/cpl_funding_handoff.md"
     },
     {
       "rule": "oversized_doc",
@@ -384,13 +364,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 607001,
+        "bytes": 608948,
         "limit": 150000,
         "lane": "other",
-        "over_by": 457001,
-        "ratio": 4.05
+        "over_by": 458948,
+        "ratio": 4.06
       },
-      "message": "607,001 B is 4.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "608,948 B is 4.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
