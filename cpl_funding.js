@@ -678,6 +678,13 @@
     // word — Edit — under the block, and a plain textarea when they take it.
     ".cplfund-prose p { margin: 0 0 10px; font-size: .92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }",
     ".cplfund-prose p:last-of-type { margin-bottom: 0; }",
+    // A quoted passage (the statute in the introduction). An indent and a rule
+    // down the side, nothing else: the text keeps the body color, so no new
+    // foreground/background pair enters the contrast budget, and the indent —
+    // not a color — is what carries the distinction.
+    ".cplfund-prose blockquote { margin: 0 0 10px; padding: 2px 0 2px 14px; border-left: 3px solid var(--border-strong); }",
+    ".cplfund-prose blockquote:last-child { margin-bottom: 0; }",
+    ".cplfund-prose blockquote p { margin: 0; }",
     ".cplfund-college-intro { margin: 0 0 8px; }",
     ".cplfund-basis .cplfund-prose p { margin: 0; line-height: 1.5; }",
     ".cplfund-prose-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: .78rem; }",
@@ -686,6 +693,13 @@
     ".cplfund-textbtn.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     ".cplfund-prose-ta { display: block; width: 100%; box-sizing: border-box; font: inherit; font-size: .9rem; line-height: 1.5; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; resize: vertical; }",
     ".cplfund-prose-ta:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    // The section curator row (Rename / Hide on the public page) and the state
+    // word beside a held-back title. Both are quiet by construction: no color
+    // carries the meaning, the words do.
+    ".cplfund-sec-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin: 0 0 10px; font-size: .78rem; }",
+    ".cplfund-sec-ti { flex: 1 1 240px; min-width: 0; font: inherit; font-size: .85rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; }",
+    ".cplfund-sec-ti:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    ".cplfund-sec-flag { flex: 0 0 auto; margin-left: 10px; font-size: .72rem; font-weight: 600; color: var(--text-muted); }",
     // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
     // (privacy-suppressed) / not-yet / pending-feed.
     // Words, not marks (met / partial / not yet / n/a / pending), in ink grades.
@@ -2336,28 +2350,49 @@
   var DEFAULT_ELIG_INTRO = "Proposed baseline requirements to qualify for implementation funding " +
     "(badges are informational in this draft — no dollar figure changes yet):";
   // WHAT THIS IS, before any figure about it (Sam asked for it, 2026-09-01).
-  // Written in the CCCCO house voice: no bold, no bullets, no glyphs, claims
-  // anchored to the instrument that carries them, and a short declarative after
-  // a long qualified one. It carries NO dollar figures, counts or weights —
-  // partly the sunshine rule, and partly because an introduction that has to be
-  // re-checked against a live solve every time a dial moves is a liability.
+  // These are HIS words, approved 2026-09-09 and baked here so that Restore the
+  // default text returns them rather than the pre-2026-09-09 house draft — which
+  // it would otherwise overwrite them with, since the live page reads an
+  // override layered on top of this string (sheet item 7).
+  //
+  // The statute is QUOTED rather than paraphrased, and it rides the blockquote
+  // convention the prose blocks gained the same day: every line of that
+  // paragraph opens with ">" once htmlToPlain() renders it into the textarea, so
+  // an editor sees the marks and the round trip is lossless.
+  //
+  // The $35 million is the appropriation, which is public law. The model's own
+  // derived figures stay out of here — an introduction that has to be re-checked
+  // against a live solve every time a dial moves is a liability, and the
+  // Summary beneath it already carries them.
   var ABOUT_DEFAULT_HTML =
-    "<p>The Legislature appropriated one-time funding to the Chancellor&rsquo;s Office to help colleges " +
-    "build the capacity to award credit for prior learning. This page is the model that distributes it.</p>" +
-    "<p>Every participating institution is sized by the teaching it actually does, its credit and " +
-    "noncredit FTES together, and receives a share of the total on that basis. That share is then held " +
-    "between a minimum and a maximum, so a small college still receives enough to staff the work and no " +
-    "single institution takes a disproportionate part of the allocation. What results is a maximum award, " +
-    "not a grant. An institution draws it down by meeting the outcomes Ed. Code &sect;78093.2(d)(1) names, " +
-    "measured from what its own students record in MAP, and any part it does not earn stays available to " +
-    "it rather than moving elsewhere.</p>" +
-    "<p>The model is in draft, and every figure here is computed live from the dials below.</p>";
+    "<p>In 2026, the Legislature appropriated $35 million in one-time funds to the Chancellor&rsquo;s " +
+    "Office to support colleges as they build the capacity to offer, award, and transcribe credit for " +
+    "prior learning (CPL). This page serves as the model for allocating those funds based on the " +
+    "measurable outcomes in Ed. Code &sect;78093.2(d), which sets forth the goals and the condition for " +
+    "allocation:</p>" +
+    "<blockquote><p>(d)(1) Upon appropriation by the Legislature for purposes of this article, the " +
+    "chancellor&rsquo;s office shall allocate designated funds to support implementation of this article " +
+    "at each campus using all of the following goals:<br>" +
+    "(A) Increasing access to credit for prior learning opportunities equitably for all eligible " +
+    "students.<br>" +
+    "(B) Increasing completion through credit for prior learning awards.<br>" +
+    "(C) Advancing career attainment through credit for prior learning.<br>" +
+    "(D) Supporting credit for prior learning opportunities through the chancellor&rsquo;s office&rsquo;s " +
+    "pilot projects, such as the California Mapping Articulated Pathways Initiative.<br>" +
+    "(d)(2) Each campus shall demonstrate that it has implemented the credit for prior learning " +
+    "initiative established pursuant to this article through the metrics described in paragraph (1) " +
+    "before receiving an allocation of funding for purposes of implementing this article.</p></blockquote>" +
+    "<p>The model measures outcomes in equivalent FTES from CPL and allocates funding to institutions " +
+    "proportionally for each priority at an FTES reimbursement rate. Minimum (base) and maximum (cap) " +
+    "funding ensure sustainable support for every participant. The model calculates the priority " +
+    "outcomes required by Ed. Code &sect;78093.2(d)(1) from records in the MAP platform, which serves as " +
+    "the Chancellor&rsquo;s Office systemwide CPL infrastructure.</p>";
   var READING_DEFAULT_HTML =
     "<p>Every funding cell shows the <strong>max award</strong> on top and its <strong>Current Total</strong> " +
     "&mdash; what has been earned to date &mdash; beneath it. Awards are based on outcomes, not automatically " +
     "awarded: institutions earn on the CPL they actually post in MAP &mdash; " +
     "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
-    "target draws half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
+    "target earns half its cap; it never needs the full target to be funded). Unearned funding rolls forward. " +
     "The <strong>noncredit share</strong> of an award earns only against the noncredit measures.</p>";
   var NC_RULES_DEFAULT_HTML = "<ul>" +
     "<li><strong>A college&rsquo;s noncredit share</strong> of its combined award earns against the " +
@@ -2389,6 +2424,15 @@
   // they type back, so "unchanged" compares equal and stores nothing.
   function htmlToPlain(html) {
     var t = String(html || "")
+      // A <blockquote> becomes the "> " lines an author types, so a default
+      // that carries one round-trips into the textarea and compares equal.
+      .replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, function (_, inner) {
+        return "\n\n" + inner
+          .replace(/<br\s*\/?>/gi, "\n").replace(/<\/(p|li|div|h[1-6])>/gi, "\n")
+          .replace(/<[^>]+>/g, "")
+          .split("\n").map(function (ln) { return ln.trim(); }).filter(Boolean)
+          .map(function (ln) { return "> " + ln; }).join("\n") + "\n\n";
+      })
       .replace(/<br\s*\/?>/gi, "\n")
       .replace(/<\/(p|li|div|h[1-6])>/gi, "\n\n")
       .replace(/<[^>]+>/g, "")
@@ -2406,9 +2450,24 @@
       .map(function (para) { return para.replace(/[ \t]+/g, " ").replace(/ ?\n ?/g, "\n").trim(); })
       .filter(Boolean).join("\n\n");
   }
+  // A paragraph whose EVERY line begins with ">" renders as a quotation (Sam,
+  // 2026-09-09, for the Ed. Code §78093.2(d) text quoted in the introduction).
+  // All-or-nothing on purpose: a stray ">" inside a sentence — "3 > 2", a
+  // pasted email quote — must stay literal, and it does, because line one does
+  // not carry the mark. The body is still esc()aped, so this gives an author
+  // one BLOCK they can ask for and no markup they can inject.
+  var QUOTE_LINE = /^>[ \t]?/;
+  function isQuoteBlock(para) {
+    return para.split("\n").every(function (ln) { return QUOTE_LINE.test(ln); });
+  }
   function plainToHtml(t) {
     return plainNormalize(t).split(/\n\n/).map(function (para) {
-      return "<p>" + esc(para).replace(/\n/g, "<br>") + "</p>";
+      var quoted = isQuoteBlock(para);
+      var body = quoted
+        ? para.split("\n").map(function (ln) { return ln.replace(QUOTE_LINE, ""); }).join("\n")
+        : para;
+      var p = "<p>" + esc(body).replace(/\n/g, "<br>") + "</p>";
+      return quoted ? "<blockquote>" + p + "</blockquote>" : p;
     }).join("");
   }
   function textOverride(key) {
@@ -2432,6 +2491,77 @@
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
     persistActive();
   }
+  // ── section titles and public visibility (Sam, 2026-09-09) ───────────────
+  // "I also need to be able to edit the section titles, not just the text
+  // blocks on all funding surfaces", and on the public page "hide whole
+  // sections as I curate." Both ride the layers every dial already uses —
+  // SCENARIO ?? SHARED — so a rename travels with Publish and Reset returns
+  // the house title alongside the house numbers.
+  //
+  // A title override is PLAIN TEXT and escaped on render, for the reason prose
+  // is: the HOUSE title may carry markup (the priorities heading holds a link
+  // to the Ed. Code section it names) but nothing an author types may.
+  //
+  // Hiding is PUBLIC-ONLY and never removes a section from the curator, who
+  // has to be able to find it again to bring it back. Same asymmetry as
+  // poolPublicHidden() — the field a college does not see is still a field.
+  var SEC_TITLE_DEFAULT = {};   // id -> the house title HTML, recorded as sections render
+  function titleOverride(id) {
+    var v = firstDefined(SCENARIO.titles && SCENARIO.titles[id], SHARED.titles && SHARED.titles[id]);
+    return (v == null || !String(v).trim()) ? null : String(v);
+  }
+  function titleIsCustom(id) { return titleOverride(id) != null; }
+  function oneLine(t) { return String(t == null ? "" : t).replace(/\s+/g, " ").trim(); }
+  function titleDefaultPlain(id) { return oneLine(htmlToPlain(SEC_TITLE_DEFAULT[id] || "")); }
+  function titlePlain(id) {
+    var o = titleOverride(id);
+    return o != null ? oneLine(o) : titleDefaultPlain(id);
+  }
+  function setSecTitle(id, v) {
+    var ov = activeOverride();
+    var clean = oneLine(v);
+    ov.titles = isPlainObj(ov.titles) ? ov.titles : {};
+    if (!clean || clean === titleDefaultPlain(id)) delete ov.titles[id];
+    else ov.titles[id] = clean;
+    if (!Object.keys(ov.titles).length) delete ov.titles;
+    persistActive();
+  }
+  function secHidden(id) {
+    return !!firstDefined(SCENARIO.secHidden && SCENARIO.secHidden[id],
+      SHARED.secHidden && SHARED.secHidden[id]);
+  }
+  function setSecHidden(id, on) {
+    var ov = activeOverride();
+    ov.secHidden = isPlainObj(ov.secHidden) ? ov.secHidden : {};
+    if (on) ov.secHidden[id] = true; else delete ov.secHidden[id];
+    if (!Object.keys(ov.secHidden).length) delete ov.secHidden;
+    persistActive();
+  }
+  // The curator's controls for one section: words, and in the BODY rather than
+  // in the <summary>. A button inside a summary is nested interactive content —
+  // it fights the fold on click and screen readers expose it inconsistently —
+  // so the title is edited from just beneath itself.
+  function sectionCtlHtml(id) {
+    if (!unlocked() || publicMode()) return "";
+    var custom = titleIsCustom(id);
+    if (state.titleEditing === id) {
+      var draft = state.titleDraft[id] != null ? state.titleDraft[id] : titlePlain(id);
+      return '<div class="cplfund-sec-ctl">' +
+        '<input type="text" class="cplfund-sec-ti" data-sectitle="' + esc(id) + '" value="' + esc(draft) +
+        '" aria-label="Section title">' +
+        '<button type="button" class="cplfund-textbtn primary" data-sectitlesave="' + esc(id) + '">Save</button>' +
+        '<button type="button" class="cplfund-textbtn" data-sectitlecancel="' + esc(id) + '">Cancel</button>' +
+        (custom ? '<button type="button" class="cplfund-textbtn" data-sectitlereset="' + esc(id) + '">Restore the default title</button>' : "") +
+        '<span class="dk">Plain text. Saves for everyone.</span></div>';
+    }
+    return '<div class="cplfund-sec-ctl">' +
+      '<button type="button" class="cplfund-textbtn" data-secrename="' + esc(id) + '">Rename</button>' +
+      (secHidden(id)
+        ? '<button type="button" class="cplfund-textbtn" data-secshow="' + esc(id) + '">Show on the public page</button>'
+        : '<button type="button" class="cplfund-textbtn" data-sechide="' + esc(id) + '">Hide on the public page</button>') +
+      (custom ? '<span class="dk">Renamed.</span>' : "") + "</div>";
+  }
+
   // One prose block. Prose reads as prose for everyone; a signed-in reviewer
   // gets the word Edit beneath it, and a plain textarea when they take it —
   // Save · Cancel · Restore the default text. Public mode never sees a control
@@ -2450,7 +2580,7 @@
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
-        '<span class="dk">Plain text. A blank line starts a new paragraph. Saves for everyone.</span></div>';
+        '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>';
     } else {
       html += textHtml(key);
       if (canEdit) {
@@ -2497,7 +2627,9 @@
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
-    "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea"];
+    "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
+    "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
+    "data-sectitlereset", "data-sechide", "data-secshow"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -2848,7 +2980,7 @@
   function baselineGateText(college, held) {
     var g = baselineGate(college);
     if (g.pending) return "baseline participation status pending (MAP coordinator data not loaded) — funding is not withheld while pending";
-    if (!g.blocked) return "baseline participation met — this college can draw its earned funding";
+    if (!g.blocked) return "baseline participation met — this college can receive its earned funding";
     // Calm words, and each missing requirement numbered on its own — the
     // requirement texts are curator-written sentences, and joined with "and"
     // they ran together into one unreadable clause (Sam's screenshot, 2026-09-02).
@@ -2857,10 +2989,10 @@
     if (held > 0.5) {
       return "Baseline not met. " + fmtMoney(held) + " of its max award — earned on the CPL this college has " +
         "already posted in MAP — is held in reserve, not lost, until it meets " + scope +
-        ". The rest of the max award stays there to earn, and qualifying later still lets it draw.";
+        ". The rest of the max award stays there to earn, and qualifying later still lets it earn.";
     }
     return "Baseline not met. Earned funding is held in reserve until this college meets " + scope +
-      ". Its max award is unchanged and the dollars roll forward, so qualifying later still lets it draw.";
+      ". Its max award is unchanged and the funding rolls forward, so qualifying later still lets it earn.";
   }
   function eligScore(college) {
     if (!ELIG.coordOk) return null;
@@ -4060,7 +4192,7 @@
     if (ea.winHeld > 0.5) {
       items.push("<li><strong>" + fmtMoney(ea.winHeld) + " held in reserve</strong> &mdash; " +
         ea.gatedN + " institutions have not met baseline participation; held, never redistributed &mdash; " +
-        "qualifying later still lets an institution draw.</li>");
+        "qualifying later still lets an institution earn.</li>");
     }
     return '<div class="cplfund-summary" role="region" aria-label="Funding summary">' +
       '<span class="cplfund-summary-lbl">Summary</span><ul>' + items.join("") + "</ul></div>";
@@ -4240,7 +4372,7 @@
       out.push(card({ cls: " hero", v: fmtMoney(netCollege()),
         l: "Total credit and noncredit potential awards",
         note: (frontloaded()
-          ? esc(windowLabel()) + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr. "
+          ? esc(windowLabel()) + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unearned funding rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr. "
           : esc(windowLabel()) + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " to " + esc(y[y.length - 1]) + "). ") +
           "No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
           fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
@@ -4339,7 +4471,7 @@
     });
     var pubNote = (pubOff.length && !publicMode() && unlocked())
       ? '<div class="cplfund-reqrestore"><span class="dk">Hidden from the ' +
-        '<a href="cpl_funding_public.html" target="_blank" rel="noopener">public college page</a> ' +
+        '<a href="funding-model/" target="_blank" rel="noopener">public college page</a> ' +
         '(display only &mdash; the funding math is unchanged):</span> ' +
         pubOff.map(function (b) {
           var def = b.def || base().pool.admin_cost_label;
@@ -4900,7 +5032,7 @@
       var frontLine = flPrio && slotIsCarryover(slot)
         ? '<p class="nums cplfund-fl-line"><span class="dk">Year ' + esc(slot) + " is carryover under " +
           "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
-          "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
+          "against the Year-1 targets. Unearned Year-1 funding rolls forward and can be earned here.</span></p>"
         : "";
       return '<div class="p" data-priocard="' + i + '">' +
         (ro ? "" : prioMoveHtml(ps, i, p)) +
@@ -5771,7 +5903,7 @@
       ncSentence = " <strong>The noncredit share:</strong> every award decomposes into a credit and a " +
         "noncredit share by the institution&#39;s own FTES split &mdash; " + fmtMoney(ncFace) +
         " is carried within college awards, restricted to the noncredit measures (the credit program " +
-        "cannot draw it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
+        "cannot earn it) &mdash; and the " + trioN + " noncredit-only institutions hold " + fmtMoney(trioHeld) +
         " earned by origination: CPL from their programs, transcribed at a credit college.";
     })();
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
@@ -5784,7 +5916,7 @@
       ? "Under <strong>front-loaded</strong> timing the full " + windowLabel() + " window (" +
         fmtMoney(per * nYears()) + ") is disbursed <strong>up front in Year 1</strong> (" + esc(ys[0]) +
         ") &mdash; sized so smaller colleges can stand up the 1&ndash;2 FTE the first-year lift needs &mdash; " +
-        "while Years 2+ are carryover only (unspent Year-1 funds roll forward" +
+        "while Years 2+ are carryover only (unearned Year-1 funding rolls forward" +
         (closeout ? ", closing out by " + esc(closeout) : "") + "). Front-loading is timing only: a " +
         "college&#39;s window total is unchanged."
       : "That same " + fmtMoney(per) + " tranche disburses again in each of the " + nYears() +
@@ -5792,7 +5924,7 @@
     var basisSentence = " That allocation is the <strong>cap</strong> &mdash; the top line of every funding cell. A college is " +
       "paid <code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
       "(its funding &divide; the per-student rate) is the achievement <em>target</em> the MAP actuals are measured " +
-      "against (a college at half its target draws half its cap; it never needs the full target to be funded), and " +
+      "against (a college at half its target earns half its cap; it never needs the full target to be funded), and " +
       "unearned dollars roll forward. That earned figure is the second line of each cell.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
@@ -5881,7 +6013,7 @@
       { key: "cr_award", label: "CR award", cls: "c",
         title: "The credit share of the max award, " + awardWhen + " — earned against the credit priority measures, with the Current Total beneath. Awards are based on outcomes, not automatically awarded." },
       { key: "nc_award", label: "NC award", cls: "",
-        title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; the credit program cannot draw it. The pair's sum is the institution's one combined max award." },
+        title: "The noncredit share of the max award, " + awardWhen + " — earned only against the noncredit measures; the credit program cannot earn it. The pair's sum is the institution's one combined max award." },
       { key: "working_adults", label: "Working adults*", cls: "" }
     ];
   }
@@ -5901,6 +6033,8 @@
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
     textDraft: {},      // what they have typed so far, kept across the re-renders an edit triggers
+    titleEditing: null, // id of the section whose TITLE is being renamed, else null
+    titleDraft: {},     // the same draft-preservation for a rename in flight
   };
 
   // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
@@ -5928,10 +6062,18 @@
   }
   function saveSectionState(id, open) { SEC_STATE[id] = !!open; }
   function sectionShell(id, titleHtml, bodyHtml) {
+    SEC_TITLE_DEFAULT[id] = titleHtml;              // the house title, for Restore and for the rename seed
+    if (publicMode() && secHidden(id)) return "";   // curator-hidden — public only, never from the curator
+    var head = titleIsCustom(id) ? esc(titleOverride(id)) : titleHtml;
+    // The state word is a SPAN, not a control: a curator has to see that a
+    // section is held back without opening it, and nothing interactive may
+    // nest inside the summary.
+    var flag = (unlocked() && !publicMode() && secHidden(id))
+      ? '<span class="cplfund-sec-flag">Hidden on the public page</span>' : "";
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>' + titleHtml + '</h3>' +
+      '<summary class="cplfund-sec-sum"><h3>' + head + '</h3>' + flag +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
-      '<div class="cplfund-sec-body">' + bodyHtml + "</div></details>";
+      '<div class="cplfund-sec-body">' + sectionCtlHtml(id) + bodyHtml + "</div></details>";
   }
   // Inline section: explicit title + body.
   function section(id, title, body) { return sectionShell(id, title, body); }
@@ -6440,8 +6582,8 @@
       var tip = due
         ? (held > 0.5 ? earnedMoney(held) + " held in reserve — " : "Nothing is withheld yet — ") +
           "baseline participation was due " + participationDeadline() +
-          " and is not met. The allocation cap is unchanged and the dollars roll forward, so qualifying " +
-          "now still lets this college draw."
+          " and is not met. The allocation cap is unchanged and the funding rolls forward, so qualifying " +
+          "now still lets this college earn."
         : "Nothing is withheld yet — baseline participation is not due until " + participationDeadline() +
           ". Once this college opts in and has a CPL Coordinator on file in MAP, it starts earning against " +
           "its cap. The dollars roll forward either way.";
@@ -6577,7 +6719,7 @@
           : "") + "</div>";
     } else if (slotIsCarryover(slot)) {
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
-        "&mdash; the whole window is placed and earned in Year 1; unspent funds roll forward.</span></div>";
+        "&mdash; the whole window is placed and earned in Year 1; unearned funding rolls forward.</span></div>";
     } else {
       var rowsHtml = priorities(slot).map(function (p, i) {
         var crM = c[p.key] || 0;
@@ -7317,7 +7459,7 @@
     return "<h2>Outcomes Reporting</h2><p>Outcome tracking will occur primarily through the Mapping Articulated Pathways " +
       "(MAP) platform, with colleges continuing to ensure accurate data via MIS reporting. This data will be used to " +
       "monitor systemwide progress toward the priority outcomes and to assess the return on this investment in support of " +
-      "working learners.</p><h2>Conclusion</h2><p>As districts utilize these funds, additional implementation guidance and " +
+      "working learners.</p><h2>Conclusion</h2><p>As districts use these funds, additional implementation guidance and " +
       "optional technical assistance will continue to be made available through the Chancellor&#39;s Office and the MAP " +
       "team. The intentional distribution of these funds reflects the state&#39;s expectation that colleges strengthen " +
       "structures, processes, and student supports to demonstrate clear progress and a strong return on investment.</p>";
@@ -7766,6 +7908,10 @@
       var liveTa = mount.querySelector('[data-textarea="' + state.textEditing + '"]');
       if (liveTa) state.textDraft[state.textEditing] = liveTa.value;
     }
+    if (state.titleEditing) {
+      var liveTi = mount.querySelector('[data-sectitle="' + state.titleEditing + '"]');
+      if (liveTi) state.titleDraft[state.titleEditing] = liveTi.value;
+    }
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
@@ -7883,7 +8029,7 @@
       yearNote + "). " +
       (frontloaded()
         ? "Combined funding: the award columns are the full " + esc(windowLabel()) + " window, available up " +
-          "front &mdash; unspent funding rolls forward" +
+          "front &mdash; unearned funding rolls forward" +
           (nextFy(selectedYears()[selectedYears().length - 1])
             ? " and closes out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
         : "Annual funding: the award columns are each year&#39;s potential allocation. ") +
@@ -8386,6 +8532,46 @@
         setText(key, "");
       });
     });
+    // Section titles (2026-09-09): Rename opens a one-line input; Save commits
+    // to the active layer; Restore drops the override so the house title
+    // returns. Hide/Show flips the section's PUBLIC visibility only.
+    document.querySelectorAll("#cplFundingMount [data-secrename]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-secrename");
+        state.titleEditing = id; delete state.titleDraft[id];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlesave]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlesave");
+        var ti = document.querySelector('#cplFundingMount [data-sectitle="' + id + '"]');
+        state.titleEditing = null; delete state.titleDraft[id];
+        savingState = "";
+        setSecTitle(id, ti ? ti.value : "");
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlecancel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlecancel");
+        state.titleEditing = null; delete state.titleDraft[id];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlereset]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlereset");
+        state.titleEditing = null; delete state.titleDraft[id];
+        savingState = "";
+        setSecTitle(id, "");
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sechide]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-sechide"), true); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-secshow]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secshow"), false); });
+    });
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
     document.querySelectorAll("#cplFundingMount [data-edit]").forEach(function (el) {
@@ -8749,6 +8935,16 @@
     _newScenario: newScenario,
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
+    // ONE resolver for section curation, read by any surface that paints its
+    // own sections — the public explainer does (sheet item 8, 2026-09-09).
+    // Exposed rather than reimplemented because two surfaces describing one
+    // section would eventually disagree about it, and neither would look wrong
+    // alone: a rename applied on the tab and not the explainer reads as a
+    // stale page, and a section hidden on one public rendering and visible on
+    // the other shows a college what the CO decided to withhold.
+    sectionCuration: function (id) {
+      return { title: titleOverride(id), hidden: secHidden(id) };
+    },
     _model: function () { _allocCache = null; _ncoRows = null; return allocModel(); },
     // ── the EFFECTIVE dials, in one call (2026-08-26) ──────────────────────
     // Sam, after a session read yearPriorities["2"].factor from the live

@@ -28,7 +28,8 @@
 //      the draft. A control surface can look like a display (S219's lesson) —
 //      and a display can also quietly stop being editable, which is why the
 //      whole loop is exercised rather than the presence of a button.
-//   5. VOCABULARY. "pool", "money", "apportion" and the advance concept stay
+//   5. VOCABULARY. "pool", "money", "apportion", the advance concept, and —
+//      since 2026-09-09 — the banking sense of "draw" and the word "unspent" stay
 //      off the rendered text (identifiers and the model's name are not text).
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_calm.test.js`).
@@ -231,7 +232,7 @@ function mountWords(doc) {
     !doc.querySelector("[data-textedit]"));
   check("the introduction still opens the tab with the house text",
     !!doc.querySelector('.cplfund-prose[data-textblock="about"]') &&
-    /The Legislature appropriated one-time funding/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
+    /In 2026, the Legislature appropriated \$35 million in one-time funds/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
 
   // sign in → Edit → Save
   window.CPL_SESSION = reviewerSession();
@@ -270,7 +271,7 @@ function mountWords(doc) {
   check("Restore drops the override (text.about gone, and an empty text map is not left behind)",
     !(T._getShared().text && T._getShared().text.about) &&
     !!doc.querySelector('.cplfund-prose[data-textblock="about"]') &&
-    /The Legislature appropriated one-time funding/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
+    /In 2026, the Legislature appropriated \$35 million in one-time funds/.test(doc.querySelector('.cplfund-prose[data-textblock="about"]').textContent));
 
   // saving the default back unchanged stores nothing
   clickSel(window, doc, '[data-textedit="reading"]', "Edit on Reading the funding");
@@ -353,15 +354,23 @@ function mountWords(doc) {
   const row = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
   if (row) click(window, row.querySelector(".cplfund-caret"));
   const t = mountWords(doc);
-  const bad = [/\bpools?\b/i, /\bmoney\b/i, /\bapportion\w*/i, /\bpot\b/i, /\badvances?\b(?! (the|each|Vision))/i]
+  // "draw" in its banking sense and "unspent" joined the banned list on
+  // 2026-09-09 (Sam: "'draws' is a business term tied to banking and I don't
+  // want that connotation"; his vocabulary already reserved "spent"). Both are
+  // \b-anchored on the STEM so draws / drawn / drawing / draw-down are caught;
+  // "withdrawn" is a different word with a different meaning (a participation
+  // confirmation the CO revoked) and is excluded by the leading \b.
+  const bad = [/\bpools?\b/i, /\bmoney\b/i, /\bapportion\w*/i, /\bpot\b/i, /\badvances?\b(?! (the|each|Vision))/i,
+    /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i]
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
-  check("no 'pool' / 'money' / 'apportion' / 'pot' / the advance concept in the curate view's rendered text — " +
+  check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
   check("the $50K view's rendered text is clean too", (function () {
     T._setSubview("grants");
     const t2 = mountWords(doc);
-    return !/\bpools?\b/i.test(t2) && !/\bmoney\b/i.test(t2) && !/\bapportion/i.test(t2);
+    return !/\bpools?\b/i.test(t2) && !/\bmoney\b/i.test(t2) && !/\bapportion/i.test(t2) &&
+      !/\bdraws?\b|\bdrawn\b|\bunspent\b/i.test(t2);
   })());
 }
 

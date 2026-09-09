@@ -6,7 +6,7 @@
 // Sam's design: "if we doubled the per-student amount when Front Load is
 // selected (rather than doubling the students, which would make it twice as
 // hard) … offer big funding up front for a big push the first year and then roll
-// the unspent funds to Year 2. I would love to be out of funding at the end of
+// the unearned funding to Year 2. I would love to be out of funding at the end of
 // Year 1 because it would mean everyone is up and running."
 //
 // The mechanism is NOT a special-case multiplier. Front-load already puts the
@@ -236,7 +236,7 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   check("front-load: the noncredit share is the F1 hold — earned stops short of the total by exactly it",
     flRow.nc_award > 0 && near(flRow.total - flRow.earned_total, flRow.nc_award, 1) &&
     (flRow.earned_nc || 0) === 0);
-  // Under even, hitting the same Year-1 target draws only Year 1's half on the
+  // Under even, hitting the same Year-1 target earns only Year 1's half on the
   // measured side — the rest is a Year-2 advance, not an achievement.
   check("even: the same performance earns measurably LESS on achievement",
     (evenRow.earned_measured || 0) < (flRow.earned_measured || 0) - 1);

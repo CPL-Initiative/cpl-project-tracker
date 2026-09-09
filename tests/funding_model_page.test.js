@@ -369,6 +369,54 @@ check("the status line is empty on a successful paint",
       === Math.round(D3.pool.one_time));
 }
 
+// ── section curation: renaming and hiding, from the tab's OWN maps ─────────
+// Sheet item 8 (Sam, 2026-09-09). Rename and Hide ride sectionShell() on the
+// tab, which this page does not use — its sections are hand-written markup. So
+// it reads T.sectionCuration(), the tab's own resolver over the same `titles`
+// and `secHidden` maps, rather than a second copy of the lookup. What this
+// guards:
+//
+//   * The section a curator hides on the tab is hidden HERE. Before item 9 two
+//     public pages rendered this model and only one honored a hide, so a
+//     college could be shown what the CO had decided to withhold.
+//   * Un-renaming restores the HOUSE title. The h2 is replaced in place, so a
+//     naive implementation loses the original on the first rename and leaves
+//     whatever the last override said forever after.
+//   * A typed title is escaped. A curator types plain text on a page every
+//     visitor reads.
+{
+  const T2 = win.CPL_FUNDING_TAB;
+  const IDS = ["lede", "institutions", "allocation", "qualify", "earning", "timing", "choices"];
+  const secs = Array.from(doc.querySelectorAll("[data-fsec]"));
+  check("every section carries a data-fsec id, in page order",
+    secs.length === IDS.length &&
+    secs.every((s2, i2) => s2.getAttribute("data-fsec") === IDS[i2]));
+  check("the footer is deliberately NOT curatable — it carries the draft disclaimer",
+    !doc.querySelector("footer[data-fsec]") &&
+    /working model for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
+
+  const qualify = doc.querySelector('[data-fsec="qualify"]');
+  const house = qualify.querySelector("h2").textContent;
+  check("with no overrides, the house titles render and nothing is hidden",
+    /What a college has to do to qualify/.test(house) && secs.every((s2) => !s2.hidden));
+
+  T2._setShared({ titles: { qualify: "Baseline <b>requirements</b>" }, secHidden: { timing: true } });
+  win.CPL_CURATE_SECTIONS();
+  check("a rename from the tab reaches this page, escaped rather than rendered",
+    qualify.querySelector("h2").textContent === "Baseline <b>requirements</b>" &&
+    !qualify.querySelector("h2 b"));
+  check("a section hidden on the tab is hidden here too",
+    doc.querySelector('[data-fsec="timing"]').hidden === true &&
+    doc.querySelector('[data-fsec="qualify"]').hidden === false);
+
+  T2._setShared({});
+  win.CPL_CURATE_SECTIONS();
+  check("clearing the override restores the HOUSE title, not the last one typed",
+    qualify.querySelector("h2").textContent === house);
+  check("and un-hiding brings the section back",
+    doc.querySelector('[data-fsec="timing"]').hidden === false);
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

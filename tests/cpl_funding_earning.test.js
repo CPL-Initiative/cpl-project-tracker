@@ -188,7 +188,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const la = T._alloc("Laney");
   check("E: overachiever is capped at 100% of its CREDIT share (earned == cr_award)",
     Math.abs(la.earned_total - la.cr_award) < 1);
-  check("E: …and the credit program cannot draw the noncredit share (total − earned == nc_award)",
+  check("E: …and the credit program cannot earn the noncredit share (total − earned == nc_award)",
     Math.abs((la.total - la.earned_total) - la.nc_award) < 1);
   // Row expands are keyed "c:<college>" since the one-pool port (was "c:<order>").
   T._state.open["c:Laney"] = true;
