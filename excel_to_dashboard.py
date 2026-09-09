@@ -2032,7 +2032,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
             if parts:
                 annual_summary = (
                     '<div style="margin-top:0.3rem;display:flex;flex-wrap:wrap;gap:0.3rem 1rem;">'
-                    + ''.join(f'<span style="font-size:0.7rem;color:#555;">{p}</span>' for p in parts)
+                    + ''.join(f'<span style="font-size:0.7rem;color:var(--text-muted);">{p}</span>' for p in parts)
                     + '</div>'
                 )
 
@@ -2056,13 +2056,13 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         # Activity Lead — driven LIVE from the RACI Responsible by card_raci.js
         # (keyed `activity:N`); hidden until the overlay fills it (the activity
         # has no creation-era lead of its own).
-        html += (f'            <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:#555;">'
+        html += (f'            <div class="cpl-raci-lead-row" style="display:none;padding:0 0.5rem 0.4rem 0.5rem;font-size:0.74rem;color:var(--text-muted);">'
                  f'<strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="activity:{act_num}" '
                  f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
         # Activity progress bar with goal + annual targets
         html += (f'            <div style="padding:0 0.5rem 0.6rem 0.5rem;">\n'
                  f'                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.25rem;">\n'
-                 f'                    <span style="font-size:0.75rem;color:#555;">{html_escape(act_goal_text)}</span>\n'
+                 f'                    <span style="font-size:0.75rem;color:var(--text-muted);">{html_escape(act_goal_text)}</span>\n'
                  f'                    <span style="font-size:0.75rem;font-weight:700;color:{label_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
                  f'                <div style="height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
@@ -2148,7 +2148,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 # Sub-activity Lead — driven LIVE from the RACI Responsible by
                 # card_raci.js (keyed `project:<id>`, the same key its RACI row
                 # uses); hidden until the overlay fills it.
-                html += (f'                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:#555;margin:-0.1rem 0 0.3rem 0;">'
+                html += (f'                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:var(--text-muted);margin:-0.1rem 0 0.3rem 0;">'
                          f'<strong>Lead:</strong> <span class="cpl-raci-lead" '
                          f'data-raci-key="project:{html_escape(str(kpi["id"]), quote=True)}" '
                          f'title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>\n')
@@ -2851,7 +2851,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
 
     # Row-label style for the supplementary editable fields (matches the
     # existing Lead/Activity/Budget rows).
-    _row = 'font-size:0.85rem;color:#555;margin-bottom:0.5rem;'
+    _row = 'font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem;'
 
     # ── "Contributes to: Activity N" chip line + association editor ──
     # Shared assoc_editor.js popover. Rendered for ALL 34 cards (incl. 5.2-5.8,
@@ -3222,15 +3222,15 @@ def render_awg_projects_section_html(work_projects):
             f'                <tr data-awgp-pid="{pid}">\n'
             f'                    <td style="{td}white-space:nowrap;color:#888;font-weight:600;">{pid}</td>\n'
             f'                    <td style="{td}font-weight:600;color:var(--navy-primary);">{html_escape(str(p.get("name", "")))}</td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:#555;">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:var(--text-muted);" title="{html_escape(act_full, quote=True)}">{html_escape(act_disp)}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.78rem;color:var(--text-muted);">{html_escape(str(p.get("goal", "") or "")) or "&mdash;"}</td>\n'
             f'                    <td style="{td}font-size:0.78rem;"><span class="cpl-raci-lead" data-raci-key="project:{pid}" title="Responsible (from the Team &amp; RACI matrix)">{lead or "&mdash;"}</span></td>\n'
             f'                    <td style="{td}white-space:nowrap;">'
             f'<span class="status-badge status-{status_class}" style="font-size:0.62rem;padding:0.1rem 0.4rem;">{html_escape(status) or "&mdash;"}</span></td>\n'
             f'                    <td style="{td}min-width:110px;"><div style="display:flex;align-items:center;gap:0.4rem;">'
             f'<div style="flex:1;height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">'
             f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
-            f'<span style="font-size:0.72rem;color:#555;white-space:nowrap;">{pct}%</span></div></td>\n'
+            f'<span style="font-size:0.72rem;color:var(--text-muted);white-space:nowrap;">{pct}%</span></div></td>\n'
             f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
             f'                </tr>\n'
         )
@@ -3415,7 +3415,7 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
             </div>
-            <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:#555;align-items:center;">
+            <div style="display:flex;flex-wrap:wrap;gap:0.8rem 1.5rem;margin-top:0.8rem;font-size:0.8rem;color:var(--text-muted);align-items:center;">
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--navy-primary);vertical-align:middle;margin-right:4px;"></span> Total</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--mustard-text);vertical-align:middle;margin-right:4px;"></span> Military</span>
                 <span><span style="display:inline-block;width:20px;height:3px;background:var(--cobalt);vertical-align:middle;margin-right:4px;"></span> Workforce/Other</span>
@@ -12867,7 +12867,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 1"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 1"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 1"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += f'''
@@ -12883,7 +12883,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 2"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 2"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 2"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += f'''
@@ -12899,7 +12899,7 @@ def main():
                 <div class="vision-card">
                     <h3 style="color:var(--mustard-text);">{CPL_GOALS["Goal 3"]["title"]}</h3>
                     <p style="font-size:0.85rem;">{CPL_GOALS["Goal 3"]["target"]}</p>
-                    <ul style="font-size:0.82rem;color:#555;margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
+                    <ul style="font-size:0.82rem;color:var(--text-muted);margin:0.3rem 0 0.5rem 1.2rem;padding:0;">'''
                 for b in CPL_GOALS["Goal 3"]["bullets"]:
                     new_v2030 += f'\n                        <li style="margin-bottom:0.2rem;">{b}</li>'
                 new_v2030 += '''
