@@ -11,32 +11,32 @@
   },
   "summary": {
     "files": 849,
-    "bytes": 9060360,
+    "bytes": 9066893,
     "over_budget": 5,
     "handoff_max": 245,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60263,
+    "always_loaded_bytes": 60278,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60263,
+        "bytes": 60278,
         "over": 1
       },
       "other": {
         "files": 109,
-        "bytes": 2798344,
+        "bytes": 2798560,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 30568,
+        "bytes": 33055,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1989018,
+        "bytes": 1992987,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180811,
+        "bytes": 180657,
         "over": 1
       },
       "handoff": {
@@ -58,12 +58,11 @@
     "by_rule": {
       "oversized_doc": 5,
       "house_voice": 21,
-      "unindexed_kb_note": 1,
       "vault_heavy_path": 49
     },
     "vault": {
       "files": 2922,
-      "bytes": 1416639414,
+      "bytes": 1416646469,
       "heavy_bytes": 678780414,
       "heavy_share": 0.479,
       "ignore_filters": [
@@ -124,13 +123,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60263,
+        "bytes": 60278,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 263,
+        "over_by": 278,
         "ratio": 1.0
       },
-      "message": "60,263 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,278 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -256,15 +255,6 @@
       "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-guard-that-depends-on-order-is-worse-than-none"
-      },
-      "message": "not referenced from docs/INDEX.md or any catalog it links to — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -352,13 +342,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 33746,
+        "bytes": 33041,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 21746,
-        "ratio": 2.81
+        "over_by": 21041,
+        "ratio": 2.75
       },
-      "message": "33,746 B is 2.8× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "33,041 B is 2.8× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {

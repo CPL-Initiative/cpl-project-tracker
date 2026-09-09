@@ -149,15 +149,13 @@ routes. A fill that sets no color is the quietest way to break a theme.
 | `npm run a11y cobi-dark` | 38 routes failing (every route) | **26** |
 | `npm run a11y cobi` (light) | 19 routes failing (S243) | **17** at the time; **18** measured 2026-09-09 |
 
-⚠️ **The light figure has DRIFTED to 18, and the glyph clean-up is not the cause.**
-Measured 2026-09-09 by stashing the whole change and re-running: **18 before and
-18 after**, so the strip introduced nothing. The extra route arrived between
-S244's sweep and this one from something else, and both numbers are kept above
-rather than one quietly overwriting the other — a baseline you cannot reproduce
-is not a baseline. ⚠️ Removing a leading mark shortens a control, so target size
-was the thing to check: every failing target still clears 24px on WIDTH, and the
-ones that fail (`RACI` 28.1×18.4, `Nudge` 35.8×18.4) fail on HEIGHT, which no
-glyph ever contributed to.
+⚠️ **Light has DRIFTED to 18, and the glyph clean-up is not the cause.** Measured
+2026-09-09 by stashing the change: **18 before, 18 after**. Both numbers are
+kept rather than one overwriting the other — a baseline you cannot reproduce is
+not a baseline. Removing a leading mark shortens a control, so
+target size was the thing to check: every failing target still clears 24px on
+WIDTH; the two naming changed labels (`RACI` 28.1×18.4, `Nudge` 35.8×18.4) fail
+on HEIGHT, which no glyph contributed to.
 
 Light **improved** rather than regressed: `.cpl-tab` went `#666` → `--text-muted`
 (5.13:1 → 6.02:1) and the rail's auth line `#5a6478` → `--text-muted`

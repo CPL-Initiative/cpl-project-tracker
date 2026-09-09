@@ -614,11 +614,12 @@ and one was carried out of this file entirely by a relocation.
     That rule says a state already worth showing must not be shown by color
     ALONE; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE SUPERSEDED (Sam, 2026-09-09):**
-    *"remove all emoji glyphs and if any are crucial replace with a muted glyph
-    using white and CO blue as default."* The 📋 To-Do button, 🧭 guidance pane
-    and ⚖️ Governance tab become muted CO-blue marks; nothing is a precedent to
-    extend. Sweep + backlog: [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED**
+    (Sam, 2026-09-09: *"remove all emoji glyphs and if any are crucial replace
+    with a muted glyph"*). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six
+    rendered sites deleted, because *if any are crucial* is a CONDITION and none
+    was — each already had its word beside it. **Do not restore a mark here.**
+    Sweep + backlog: [`/a11y-pass`](.claude/commands/a11y-pass.md).
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -748,14 +749,12 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 > [How](docs/reference/lanes/README.md).
 >
 > ⚠️ **Do not grep for this; the lint already did.** `lane_retirement_signal`
-> in `kb/_docs_audit.py` runs the test over every lane file with a vocabulary
+> in `kb/_docs_audit.py` runs the test over every lane file against a vocabulary
 > measured from the live corpus, and names any lane whose own text claims no
-> open work. **Today it names none: all 30 lanes have open work** (Session 208,
-> confirmed by reading all 30). Then READ the ones it names — the lint is
-> fail-safe and deliberately never says "retire this".
->
-> ⚠️ **Hand-grepping this has been wrong EVERY time it was tried** (four occasions
-> across S206 and S208, each a confident, plausible, wrong list) —
+> open work — then READ the ones it names; it is fail-safe and never says
+> "retire this". **Today it names none: all 30 have open work** (S208, confirmed
+> by reading all 30). **Hand-grepping it has been wrong EVERY time** — four
+> occasions across S206/S208, each a confident, plausible, wrong list —
 > [why](docs/reference/lanes/README.md).
 
 | Phase | What | Status |
