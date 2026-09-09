@@ -1,50 +1,68 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-09-09",
- "_session": "S245 (SkyPlain)",
- "_status": "Dark mode is now correct on most of what a reader actually looks at: the contrast faults the sweep can see fell from 184 to 120, and the light theme did not move once across eight measured passes. The big win was not a color but a counting fix — the report was grouping faults by the HTML element wearing them instead of by the color decision behind them, so the single largest problem (one wrong color, 25 places, 11 tabs) sorted to the bottom looking like twelve small ones. Three separate checks turned out to be incapable of ever reporting a problem, which reads exactly like a clean result: the docs spell-checker was silently switched off below the first indented block in any file, the glyph counter was counting 348 findings that belong to the daily rebuild rather than to us, and it could not see emoji written in escaped form at all — which is how thirteen places telling people to click a padlock button that moved months ago went unnoticed. All fixed. Sam then settled the two open questions: the 26 remaining marks stay as they are, and eight hours is long enough for the session banner. Nothing on this list needs him.",
- "items": [
-  {
-   "id": "s245-fable-light-fills",
-   "for": "Fable",
-   "tab": "raci",
-   "text": "The largest remaining group of dark-mode faults is the same shape repeated with different colors: a panel keeps a pale background that never follows the theme, and the dark text painted over it becomes unreadable. It is the signed-out message, the buttons on Team and RACI, and the activity cards. All of it is measured and named in the lane file, so it is mechanical work with a number to check against."
-  },
-  {
-   "id": "s245-fable-unfailable-checks",
-   "for": "Fable",
-   "tab": "pipeline",
-   "text": "Seven test files print no readable count of what they checked, so if their checks quietly vanished nothing would notice. The build says so on every run and nobody has claimed it. This is the same failure that hid three real problems this session: a check that cannot fail looks exactly like a check that passed."
-  },
-  {
-   "id": "s244-fable-skyview-lane",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "The SkyView lane file is two and a half times its size budget and the docs lint says so every run. It is invariants rather than stacked history, so compacting it means reading and ruling on each one — several predate decisions that superseded them. Worth its own sitting rather than another append."
-  },
-  {
-   "id": "s236-sam-skill-text-fetch",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."
-  },
-  {
-   "id": "s235-sam-curate-phrase",
-   "for": "Sam",
-   "tab": "admin",
-   "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
-  },
-  {
-   "id": "s238-fable-dr24-surface",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
-  },
-  {
-   "id": "s238-fable-stale-exhibits-and-funnel",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-09-09",
+  "_session": "S245 (SkyPlain, dark mode) + SkyText (funding text) — two parallel sessions",
+  "_status": "Two sessions ran side by side today. One swept COBI for dark mode and accessibility; the other got the Implementation Funding tab ready to show people. On the funding side the introduction now quotes the Education Code section it relies on, set off as a quotation rather than running together with the page's own words, and the wording was revised against the norms Sam set: no borrowing from banking to describe how a college earns its funding, active sentences that name who is doing the thing, and the regulation's own vocabulary in preference to an invented one. Curators can now rename any section and hold any section back from the public page, and the two public pages showing this model became one — which mattered more than tidiness, because holding a section back only worked on one of them. Nine decisions went to Sam on a single sheet and all nine came back the same day.",
+  "items": [
+    {
+      "id": "s245-fable-light-fills",
+      "for": "Fable",
+      "tab": "raci",
+      "text": "The largest remaining group of dark-mode faults is the same shape repeated with different colors: a panel keeps a pale background that never follows the theme, and the dark text painted over it becomes unreadable. It is the signed-out message, the buttons on Team and RACI, and the activity cards. All of it is measured and named in the lane file, so it is mechanical work with a number to check against."
+    },
+    {
+      "id": "s245-fable-unfailable-checks",
+      "for": "Fable",
+      "tab": "pipeline",
+      "text": "Seven test files print no readable count of what they checked, so if their checks quietly vanished nothing would notice. The build says so on every run and nobody has claimed it. This is the same failure that hid three real problems this session: a check that cannot fail looks exactly like a check that passed."
+    },
+    {
+      "id": "s244-fable-skyview-lane",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "The SkyView lane file is two and a half times its size budget and the docs lint says so every run. It is invariants rather than stacked history, so compacting it means reading and ruling on each one — several predate decisions that superseded them. Worth its own sitting rather than another append."
+    },
+    {
+      "id": "s236-sam-skill-text-fetch",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."
+    },
+    {
+      "id": "s235-sam-curate-phrase",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
+    },
+    {
+      "id": "s238-fable-dr24-surface",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+    },
+    {
+      "id": "s238-fable-stale-exhibits-and-funnel",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+    },
+    {
+      "id": "s246-sam-explainer-footer",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "One call left over from the funding text sheet. The public explainer's footer holds two different things in one block: where the numbers come from, and the line saying this is a working model for discussion and not adopted policy. Section hiding now works everywhere else on that page, but the footer is deliberately excluded, because hiding the disclaimer would be the wrong outcome. Say whether you want the sources paragraph split off so it can be hidden on its own, and the disclaimer left always visible."
+    },
+    {
+      "id": "s246-fable-expended-sweep",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
+    },
+    {
+      "id": "s246-fable-count-guards",
+      "for": "Fable",
+      "tab": "raci",
+      "text": "A test guarding a phrase this run deleted kept passing while measuring nothing, because it asserted at most one occurrence and zero satisfies that. It is fixed, but it is the third time a test tied to exact wording has broken on correct work, and this was the first found by accident rather than by looking. Worth one pass over the suites for other at-most-N assertions whose subject could legitimately vanish."
+    }
+  ]
 }

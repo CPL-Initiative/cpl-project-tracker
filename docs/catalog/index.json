@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 415,
+   "count": 417,
    "docs": [
     {
      "created": "2026-08-14",
@@ -966,6 +966,20 @@
      "title": "A count gate cannot see a reorder",
      "type": "methodology",
      "updated": "2026-08-20"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-count-based-guard-passes-when-its-subject-disappears.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "verification"
+     ],
+     "title": "A count-based guard passes when its subject disappears",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-09-07",
@@ -2086,6 +2100,20 @@
      "title": "A piped test run reports the pipe's exit, not the suite's",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "verification"
+     ],
+     "title": "A pipeline's exit status is its last command's, so `| tail` reports success for a failing suite",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-08-29",
@@ -11953,7 +11981,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 44,
+   "count": 45,
    "docs": [
     {
      "created": "2026-08-28",
@@ -12437,6 +12465,19 @@
      "updated": ""
     },
     {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/reference/decision_sheets.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "governance"
+     ],
+     "title": "Decision sheets \u2014 how to build one, and how to read the replies",
+     "type": null,
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-30",
      "governs": [],
      "path": "docs/reference/dependency_map.md",
@@ -12561,8 +12602,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 220,
+   "count": 221,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 247,
+     "path": "docs/session_247_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the funding text surfaces, and the parallel-session numbering",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16303,5 +16357,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 840
+ "total": 844
 }

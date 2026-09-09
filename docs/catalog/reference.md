@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-44 document(s).
+45 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -55,6 +55,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
+| [Decision sheets — how to build one, and how to read the replies](../reference/decision_sheets.md) | — | `decision_sheets.md` | 2026-09-09 | 2026-09-09 |
 | [Dependency map — dataset to consuming tabs, scripts, workflows and surfaces](../reference/dependency_map.md) | — | `dependency_map.md` | 2026-08-30 |  |
 | [Engineering & UI practices (CLAUDE.md offload)](../reference/engineering_ui_practices.md) | — | `engineering_ui_practices.md` | 2026-08-28 | 2026-08-28 |
 | [Finished workstreams — archived §11 rows](../reference/finished_workstreams.md) | — | `finished_workstreams.md` | 2026-08-15 | 2026-08-15 |

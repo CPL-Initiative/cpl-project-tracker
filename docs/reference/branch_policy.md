@@ -167,3 +167,26 @@ every check EXCEPT `test`; the E gate's skip-list is what keeps the wait
 cheap (docs-only diffs ~1.5 min, code ~9); and `enable_pr_auto_merge`
 cannot do the waiting (with no required checks it merges immediately), so
 sessions poll `get_check_runs` and merge after success.
+
+## Auto-merge procedure (relocated from `CLAUDE.md`, 2026-09-09)
+
+*The GATE is PUSH and stays in `CLAUDE.md`: `test` must have succeeded on the
+current head, then merge on `clean` or `unstable`. This is the procedure you
+read once you are at the merge button.*
+
+- **Poll CI via the MCP `github` tools, NOT `curl`.** The sandbox cannot reach
+    `api.github.com`; a curl loop watching CI silently times out. Use
+    `pull_request_read {method:"get"}` or `get_check_runs`. Webhooks do not
+    deliver CI *success*, so you must poll. ⚠️ **A `check_suite.completed` wake
+    is NOT a green light** — it names a routinely SUPERSEDED `head_sha`. Always
+    re-read `get_check_runs` on the CURRENT head before acting.
+  - **Hold only with a concrete reason** — a known gap pending something only
+    Sam supplies, or a decision only he can make. Being a thing he asked for is
+    **not** a reason to hold. When you hold: mark **ready**, state the reason.
+  - **Never PARK a PR in DRAFT.** Mark ready immediately (a PR can be ready
+    while CI runs) and squash-merge the instant it is mergeable, in the SAME
+    turn rather than ending the turn to wait.
+  - **Backstop:** `mcp__github__enable_pr_auto_merge` (squash) — but with no
+    required checks configured, GitHub auto-merge fires IMMEDIATELY, so it
+    cannot do the `test` wait for you. Call it (or merge manually) only
+    AFTER `test` reports success on the current head.
