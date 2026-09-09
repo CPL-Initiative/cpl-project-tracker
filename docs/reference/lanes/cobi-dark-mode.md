@@ -49,16 +49,14 @@ So a component writes the media query **guarded by
 `:not([data-theme="light"])`**, plus an explicit `:root[data-theme="dark"]`
 rule. Dropping the guard is exactly `our_process.js`'s bug.
 
-⭐ **THE PALETTE IS A TOKEN SWAP, REUSING SKYVIEW'S MEASURED VALUES** — the names
-already matched, and `prototype/check_contrast.py` had computed them (ink 13.9:1,
-body 11.0, muted 6.9, cobalt 6.5, mustard 7.7). One palette across both.
+⭐ **THE PALETTE IS A TOKEN SWAP REUSING SKYVIEW'S MEASURED VALUES** — the names
+already matched and `prototype/check_contrast.py` had computed every pair. One
+palette across the map and the monolith.
 
-⚠️ **`--seal-blue` IS NOT REDEFINED DARK, AND THAT IS DELIBERATE.** 266 uses,
-mostly background fills carrying white text, against 48 text uses: flipping it
-rescues the 48 and turns every fill into white-on-`#7DA1D4` at 2.3:1.
-**`--seal-blue-text`** carries the text grade instead. Guarded — the invisible
-wordmark is exactly the symptom that invites a future session to "fix" the token
-and break 200+ surfaces.
+⚠️ **`--seal-blue` IS NOT REDEFINED DARK, AND THAT IS DELIBERATE** — 65 fills
+and 53 borders against 20 text uses, so flipping it rescues the wordmark and
+breaks 200+ surfaces. `--seal-blue-text` carries the text grade. Guarded, because
+the invisible wordmark is exactly the symptom that invites the wrong fix:
 [`methodology-a-token-with-two-jobs-cannot-be-themed`](../../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md)
 
 ⭐ **THE SWEEP FOUND WHAT READING THE PALETTE COULD NOT** — it opened at 38/38
@@ -73,11 +71,10 @@ correct in both themes). `@media (prefers-contrast: more)` set `--text-muted` at
 `:root` (0,1,0) against the dark palette's (0,2,0), so the preference was
 silently dropped until a dark branch was added.
 
-✅ **SkyView follows the one control, as a FALLBACK not an override.** Order:
-this reader's own SkyView choice → an explicit global choice → where they stand
-(Sky/Globe Night, Map light). Sam's ruling 3 of 2026-09-07 owns the *default*
-and still does, because the global key reads `system` until someone picks. A
-`storage` listener updates an open SkyView beside COBI without a reload.
+✅ **SkyView follows the one control as a FALLBACK, not an override.** Order:
+this reader's own SkyView choice → an explicit global choice → where they stand.
+Sam's ruling 3 of 2026-09-07 still owns the *default*, because the global key
+reads `system` until someone picks.
 
 ## ⚠️ Open — the measured remainder
 
@@ -132,6 +129,31 @@ built on demand is not sampled), and a screenshot must be checked against `main`
 before it is chased (Sam's third was a **cached asset**; the fix had merged five
 commits earlier, and `git merge-base` settled it in two minutes — the sandbox
 cannot reach the Pages site, so check git, not the URL).
+
+## ⚠️ MOBILE — a floor the layout cannot go under (S248)
+
+Sam, with a phone screenshot: *"the mobile view of COBI analytics, not easily
+readable."* The dashboard was **1278px wide on a 390px screen**. ✅ **FIXED, and
+mobile is now clean at 390px on every route.**
+
+⭐ **The cause was one line that isn't there:** a grid item's default
+`min-width:auto` floors the track at its min-content, and two of `.kpi-section`'s
+fifteen items are not cards but blocks wrapping ~1210px tables — so the single
+column could not shrink and **every card inherited that width**. ⚠️ Their
+`overflow-x:auto` scrollers were already present and doing nothing, because the
+box they were meant to constrain was itself 1262px. The four spellings of this
+fault, how to find it in one pass, and the guard that could not fail (twice) are
+PULL: [`methodology-a-floor-the-layout-cannot-go-under`](../../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md).
+
+**Measured, page scrollWidth at 390px:** dashboard **1278 → 390** · raci 782 →
+390 · budget 608 → 390 · activities-projects 517 → 390 · memory 504 → 390.
+Sweep: **sideways-scroll 5 → 0, viewport escapes 5 → 0.** Contrast unchanged in
+both themes, so the layout work regressed neither.
+
+⚠️ **Rule 1/2:** `.exhibit-cards-grid` and the 340px chart floors are inside the
+generator-injected `EXHIBIT_ANALYSIS_CSS` markers — the generator is the source
+of truth; the HTMLs are mirrored so it is live before the next cron.
+Guarded by `tests/kpi_cards.test.js` (three floors, each falsified).
 
 ## ⭐ Three token roles, and why there are three
 
@@ -205,7 +227,9 @@ them here is how two copies drift.
 ⭐ **TRIAGE RANKS BY COLOR PAIR FIRST**, then blast radius — one color decision
 however many selectors wear it. It reads a saved report, so it is free.
 
-**NEXT (S249):** the `--text-faint` sites on Implementation Funding (6 findings,
+**NEXT (S249):** ⚠️ **mobile is CLEAN at 390px on all 38 routes — keep it that
+way**; `tests/kpi_cards.test.js` guards the three floors. Then the `--text-faint`
+sites on Implementation Funding (6 findings,
 ~12 sites, Sam's tab — his call), then the raw dark inks the sweep names
 (`#666666` 8 · `#374151` 6 · `#5A6478` 4 · `#555555` 3). Fix what the sweep
 NAMES; use the structural scan only to size what is left.

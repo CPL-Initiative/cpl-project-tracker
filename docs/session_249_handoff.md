@@ -1,5 +1,5 @@
 ---
-title: "Session 249 handoff — four kinds of token that cannot flip, and a fifth theme control nobody could grep for"
+title: "Session 249 handoff — four kinds of token that cannot flip, and a floor the layout could not go under"
 created: 2026-09-09
 updated: 2026-09-09
 tags: [handoff]
@@ -25,6 +25,21 @@ surfaces that are still not responsive to dark mode … and there are many more.
 
 **Dark 128 → 87 contrast findings (−32%), 26 → 20 failing routes. Light 63 → 62,
 18 → 18 routes. `npm test` 321/321.**
+
+Then a second ask, with a phone screenshot: *"the mobile view of COBI analytics,
+not easily readable."* The dashboard was **1278px wide on a 390px screen**.
+⭐ **The cause was one line that isn't there** — a grid item's default
+`min-width:auto` floors the track at its min-content, and two of
+`.kpi-section`'s fifteen items are not cards but blocks wrapping ~1210px tables,
+so the single column could never shrink and **every KPI card inherited that
+width**. ⚠️ Their `overflow-x:auto` scrollers were already present and doing
+nothing, because the box they were meant to constrain was itself 1262px. **A
+scroller constrains nothing until something caps it.**
+**Page scrollWidth at 390px: dashboard 1278 → 390 · raci 782 → 390 · budget
+608 → 390 · activities-projects 517 → 390 · memory 504 → 390. Sweep findings:
+sideways-scroll 5 → 0, viewport escapes 5 → 0**, contrast unchanged in both
+themes. Note:
+[`methodology-a-floor-the-layout-cannot-go-under`](kb-notes/methodology-a-floor-the-layout-cannot-go-under.md).
 
 ## ⭐ THE THINGS TO CARRY FORWARD
 
@@ -68,7 +83,14 @@ surfaces that are still not responsive to dark mode … and there are many more.
 - **`git checkout <file>` discarded three of my own uncommitted fixes** while
   falsifying guards. Back up with `cp`, restore from the copy.
 - **My falsification harness miscounted** — `count("\nFAIL")` misses a FAIL on
-  line 1, which is where the Rule-4 check prints. Use `grep -cE "^FAIL"`.
+  line 1, which is where the Rule-4 check prints. Use `grep -cE "^FAIL"`. ⚠️ **I
+  then made the same mistake a second time** on the mobile guards.
+- ⚠️ **And the mobile guard could not fail, twice.** Appended to
+  `tests/kpi_cards.test.js` it landed AFTER the loop that tallies results, so its
+  checks were pushed once the count was taken — dead code that printed nothing.
+  Moved ahead of the tally it fired at once on `minmax(500px` **inside the
+  comment explaining the fix**. A check that reads the explanation of a defect
+  reports the explanation as the defect; it strips CSS comments now.
 - **I hand-typed a print palette and guessed `--crimson` wrong** (`#920000`, not
   what I typed). Never retype a palette; derive it or narrow the change.
 
@@ -90,6 +112,9 @@ surfaces that are still not responsive to dark mode … and there are many more.
    sites: `cplfund-src`, `-card-note`, `-goal-cite`, `-foot`, `-repnote`,
    `-saving`). `--text-muted` is the fix (3.87:1 → 6.9:1) but it changes his tab
    in light too. S245 did this pass everywhere else and excluded the tab.
+
+⚠️ **MOBILE IS CLEAN AT 390px ON ALL 38 ROUTES — KEEP IT THAT WAY.**
+`tests/kpi_cards.test.js` guards the three floor spellings; each was falsified.
 
 **THEN, in order:** the raw dark inks the sweep names (`#666666` 8 · `#374151` 6
 · `#5A6478` 4 · `#555555` 3) · the 25 remaining phantom tokens · **printing
@@ -122,6 +147,12 @@ No Supabase writes beyond `cpl_memory`.
 
 ⚠️ **`CLAUDE.md` is at 59,995 of 60,000 bytes.** Anything you add there has to
 come out of something else.
+
+⚠️ **The dark-mode lane file is 1.14× its budget** (13,657 of 12,000) because it
+now carries two workstreams — the theme layer and the a11y/mobile pass. I cut it
+from 15,020 while adding the mobile section and split two KB notes out of it;
+the rest is current state, not history. If it needs to come down further, the
+honest fix is a second lane, which needs a §11 row `CLAUDE.md` has no room for.
 
 ---
 

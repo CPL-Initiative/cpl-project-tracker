@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 249 | [four kinds of token that cannot flip, and a fifth theme control nobody could grep for](../session_249_handoff.md) | 2026-09-09 |
+| 249 | [four kinds of token that cannot flip, and a floor the layout could not go under](../session_249_handoff.md) | 2026-09-09 |
 | 248 | [SkyView on a phone, a question box that moves the map, and a lane that finally got compacted](../session_248_handoff.md) | 2026-09-09 |
 | 247 | [the funding text surfaces, and the parallel-session numbering](../session_247_handoff.md) | 2026-09-09 |
 | 246 | [a triage keyed on the wrong thing, and three checks that could not fail](../session_246_handoff.md) | 2026-09-09 |

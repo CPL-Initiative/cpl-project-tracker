@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-421 document(s).
+422 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -83,6 +83,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A fix can be right about the complaint and wrong about the axis](../kb-notes/methodology-a-fix-can-be-right-about-the-complaint-and-wrong-about-the-axis.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A fixture too small to reproduce the defect makes the guard a decoration](../kb-notes/methodology-a-fixture-too-small-to-fail-makes-a-guard-a-decoration.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A floor lives in test fixtures as well as in code](../kb-notes/methodology-a-floor-lives-in-fixtures-as-well-as-code.md) | methodology | published | 2026-09-03 | 2026-09-03 |
+| [A floor the layout cannot go under — why a page scrolls sideways on a phone, in four spellings](../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A fold at the label layer is not a fold — it hides the duplicate instead of resolving it](../kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [A gate cannot protect the step that fills it](../kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A generator committed behind its output is a trap, not a convenience](../kb-notes/methodology-a-generator-that-lags-its-output-is-a-trap.md) | methodology | published | 2026-09-05 | 2026-09-05 |

@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 864,
-    "bytes": 9173129,
+    "files": 865,
+    "bytes": 9182860,
     "over_budget": 4,
     "handoff_max": 249,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 111,
-        "bytes": 2831084,
+        "bytes": 2833792,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 39277,
+        "bytes": 38366,
         "over": 0
       },
       "lessons": {
@@ -40,18 +40,18 @@
         "over": 1
       },
       "kb_note": {
-        "files": 423,
-        "bytes": 2166298,
+        "files": 424,
+        "bytes": 2170660,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 156492,
+        "bytes": 157932,
         "over": 1
       },
       "handoff": {
         "files": 223,
-        "bytes": 1900179,
+        "bytes": 1902311,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2783,
-      "bytes": 1351883858,
+      "files": 2784,
+      "bytes": 1351902677,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [
@@ -339,13 +339,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 12217,
+        "bytes": 13657,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 217,
-        "ratio": 1.02
+        "over_by": 1657,
+        "ratio": 1.14
       },
-      "message": "12,217 B is 1.0× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "13,657 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
@@ -364,13 +364,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 608948,
+        "bytes": 611444,
         "limit": 150000,
         "lane": "other",
-        "over_by": 458948,
-        "ratio": 4.06
+        "over_by": 461444,
+        "ratio": 4.08
       },
-      "message": "608,948 B is 4.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "611,444 B is 4.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
