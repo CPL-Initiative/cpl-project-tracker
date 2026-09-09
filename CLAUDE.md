@@ -175,7 +175,8 @@ named here because a store nobody names is a store nobody finds —
    lint, and the only instruction to run the lint is step 0 of `/checkpoint`, so
    the signal that you are overdue fired only once you were already
    checkpointing. It is two git commands — run them at session start, after a
-   long stretch, and before any sign-off, and **OFFER `/checkpoint` above 6:**
+   long stretch, and before any sign-off, and **RUN `/checkpoint` above 6** —
+   run it, never offer it (his later ruling, same day):
 
        H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
        git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
