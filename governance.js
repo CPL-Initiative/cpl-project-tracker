@@ -394,7 +394,7 @@
         // worse than the copy this replaced, which at least named a tab.
         var p = document.createElement("p");
         p.setAttribute("data-tp-locked", "");
-        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the \u{1F512} button in the header.";
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the About menu in the header.";
         gate.appendChild(p);
       }
       return;
@@ -586,7 +586,7 @@
       render(root);
       saving.catch(function () {
         alert("Could not save that owner. Unlock with the team phrase "
-          + "(the \u{1F512} button in the header) and try again.");
+          + "(the About menu in the header) and try again.");
         loadOwners().then(function () { render(root); });
       });
     }

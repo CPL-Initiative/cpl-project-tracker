@@ -866,7 +866,7 @@
       var nUp = updatesFor(item).length;
       var upBtn = el("button", { "class": "raci-upd-btn" + (nUp ? " has" : ""),
         title: canEdit ? "Add / view status updates for this item" : "View status updates" },
-        ["📝" + (nUp ? " " + nUp : "")]);
+        ["Update" + (nUp ? " " + nUp : "")]);
       (function (it) { upBtn.addEventListener("click", function (e) { e.stopPropagation(); openUpdate(it); }); })(item);
       itemCell.appendChild(upBtn);
       // 📣 per-item nudge — on EVERY row when signed in, so a reviewer can nudge
@@ -1427,7 +1427,7 @@
       ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
       ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;}" +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
-      ".raci-auth-hint{font-size:.75rem;color:var(--text-faint,#777);flex-basis:100%;}" +
+      ".raci-auth-hint{font-size:.75rem;color:var(--text-muted,#777);flex-basis:100%;}" +
       ".raci-btn{background:var(--surface-opaque);border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
       ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
@@ -1454,15 +1454,15 @@
       ".raci-cell{min-width:120px;}" +
       ".raci-cell-edit{cursor:pointer;}.raci-cell-edit:hover{background:var(--surface-2,#eef3f9);}" +
       ".raci-chip{display:inline-block;background:var(--surface-2,#eef3f9);border:1px solid var(--border,#d4dde7);color:var(--navy-secondary,#1c3d5a);border-radius:11px;padding:.05rem .5rem;margin:.1rem .2rem .1rem 0;font-size:.75rem;font-weight:600;}" +
-      ".raci-empty{color:var(--text-faint,#aaa);font-size:.78rem;}" +
+      ".raci-empty{color:var(--text-muted,#aaa);font-size:.78rem;}" +
       ".raci-filter-bar{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.7rem;}" +
       ".raci-filter-sel{max-width:340px;}" +
       ".raci-filter-q{flex:1 1 200px;min-width:160px;}" +
       ".raci-filter-clear{padding:.35rem .6rem;}" +
-      ".raci-count{margin-top:.45rem;color:var(--text-faint,#777);font-size:.78rem;}" +
+      ".raci-count{margin-top:.45rem;color:var(--text-muted,#777);font-size:.78rem;}" +
       ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
       "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
-      ".raci-legend{margin-top:.5rem;color:var(--text-faint,#777);font-size:.78rem;}" +
+      ".raci-legend{margin-top:.5rem;color:var(--text-muted,#777);font-size:.78rem;}" +
       ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
       ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
@@ -1476,7 +1476,7 @@
       ".raci-st-wait{color:var(--text-faint,#777);}" +
       ".raci-st-overdue{color:#b3261e;font-weight:600;}" +
       ".raci-st-none{color:var(--text-faint,#aaa);}" +
-      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-faint,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
+      ".raci-upd-btn{margin-left:.4rem;font-size:.66rem;font-weight:600;color:var(--text-muted,#777);background:none;border:1px solid transparent;border-radius:4px;padding:.04rem .3rem;cursor:pointer;vertical-align:middle;}" +
       ".raci-upd-btn:hover{background:var(--surface-2,#eef3f9);border-color:var(--border,#d4dde7);}" +
       ".raci-upd-btn.has{color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-upd-summary{background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.5rem .6rem;margin:.2rem 0 .6rem;font-size:.82rem;line-height:1.4;}" +

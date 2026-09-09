@@ -1427,7 +1427,7 @@
       + "</select>"
       + '<span class="mapu-auth">' + (signedIn()
         ? "Signed in <b>✓</b> — roster visible"
-        : "Unlock with the team phrase (\u{1F512} in the header) to see names &amp; emails") + "</span>"
+        : "Unlock with the team phrase (the About menu in the header) to see names &amp; emails") + "</span>"
       + '<span class="mapu-count">' + rows.length + " college" + (rows.length === 1 ? "" : "s") + "</span>"
       + "</div>";
 
@@ -1484,7 +1484,7 @@
   function gapsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact worklist ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact worklist…</p>';
     var rows = gapRows();
@@ -1632,7 +1632,7 @@
   function contactsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact directory ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact directory…</p>';
     var rows = contactRows();
@@ -1801,7 +1801,7 @@
     if (!rows || !rows.length) {
       return '<div class="mapu-gate">No roster rows returned. '
         + (signedIn() ? "This college has no users on record." :
-          "Unlock with the team phrase (\u{1F512} in the header) to view names &amp; emails.") + "</div>";
+          "Unlock with the team phrase (the About menu in the header) to view names &amp; emails.") + "</div>";
     }
     var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th>"
       + "<th>Status</th><th>Disciplines</th><th>Last updated</th><th>Username</th>"
@@ -1823,7 +1823,7 @@
       cell.innerHTML = rosterHtml(rows);
     }).catch(function () {
       cell.innerHTML = '<div class="mapu-gate">Could not load the roster. '
-        + "Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + "Unlock with the team phrase (the About menu in the header) and try again.</div>";
     });
   }
 

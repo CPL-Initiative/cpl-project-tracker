@@ -590,7 +590,7 @@
       });
     }
     return req.catch(function () {
-      alert("Could not save that — unlock with the team phrase (\u{1F512} in the header) and try again.");
+      alert("Could not save that — unlock with the team phrase (the About menu in the header) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
     });
@@ -635,7 +635,7 @@
       if (!Array.isArray(out) || out.length === 0) throw new Error("not saved");
       out.forEach(function (rv) { state.turnReviews[rv.turn_id] = rv; });
     }).catch(function () {
-      alert("Could not mark those — unlock with the team phrase (\u{1F512} in the header) and try again.");
+      alert("Could not mark those — unlock with the team phrase (the About menu in the header) and try again.");
     }).then(function () {
       state.gBulkBusy = false; render(root);
     });
@@ -1030,7 +1030,7 @@
       if (!r.ok) throw new Error("status " + r.status);
       (state.feedback || []).forEach(function (f) { if (f.turn_id === turnId) f.status = status; });
     }).catch(function () {
-      alert("Could not save the status — unlock with the team phrase (\u{1F512} in the header) and try again.");
+      alert("Could not save the status — unlock with the team phrase (the About menu in the header) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
     });

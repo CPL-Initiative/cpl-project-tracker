@@ -64,6 +64,31 @@ EMOJI = re.compile(
 # reader, and only one of them greps.
 ENTITY = re.compile(r"&#(1[0-9]{5}|2[0-9]{4}|x[0-9A-Fa-f]{4,5});")
 
+# ⚠️ A JS UNICODE ESCAPE RENDERS AS AN EMOJI AND READS AS ASCII. "\\u{1F512}" is a
+# padlock on screen and seven plain characters to a scanner, so the sweep saw none
+# of the THIRTEEN lock references still telling readers to click a header button
+# that had moved into the About pane — found 2026-09-09 by reading a CONTRAST
+# finding, not a glyph one. Matched here and decoded, so the report names the mark
+# a reader actually sees.
+JS_ESCAPE = re.compile(r"\\u\{([0-9A-Fa-f]{4,6})\}|\\u(D[89AB][0-9A-Fa-f]{2})\\u(D[C-F][0-9A-Fa-f]{2})")
+
+
+def _escaped_glyphs(line):
+    """Emoji written as a JS escape — \\u{1F512} or a surrogate pair — decoded."""
+    out = []
+    for m in JS_ESCAPE.finditer(line):
+        try:
+            if m.group(1):
+                ch = chr(int(m.group(1), 16))
+            else:
+                hi, lo = int(m.group(2), 16), int(m.group(3), 16)
+                ch = chr(0x10000 + ((hi - 0xD800) << 10) + (lo - 0xDC00))
+        except (ValueError, OverflowError):
+            continue
+        if EMOJI.fullmatch(ch):
+            out.append(ch)
+    return out
+
 CONTROL_HINT = re.compile(
     r"<button|<summary|<a\s|class=\"(?:btn|u-ico|mode|linkish|cobi-util|cpl-tab)"
     r"|\.textContent\s*=|\.title\s*=|label:"
@@ -136,6 +161,7 @@ def scan_file(rel):
         if is_comment(line):
             continue                          # house style; renders to nobody
         hits = EMOJI.findall(line) + ["&#%s;" % m for m in ENTITY.findall(line)]
+        hits += _escaped_glyphs(line)
         if not hits:
             continue
         kind = classify(line)

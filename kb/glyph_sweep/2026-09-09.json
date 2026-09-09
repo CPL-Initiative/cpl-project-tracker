@@ -2,8 +2,8 @@
  "generated": "2026-09-09",
  "files_scanned": 139,
  "counts": {
-  "decoration": 812,
-  "control": 346,
+  "decoration": 829,
+  "control": 347,
   "status": 222
  },
  "findings": [
@@ -7521,6 +7521,14 @@
   },
   {
    "file": "governance.js",
+   "line": 232,
+   "glyph": "\ud83d\udd0e",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "var h = '<div class=\"gov-cand\"><h4>\\u{1F50E} Not on the register (' + list.length + \")</h4>\";"
+  },
+  {
+   "file": "governance.js",
    "line": 372,
    "glyph": "\u270e",
    "kind": "control",
@@ -7800,6 +7808,30 @@
    "context": "+ '\">Go to ' + esc(it.where.label) + \" \u2192</a></p>\";"
   },
   {
+   "file": "map_team_queue.js",
+   "line": 519,
+   "glyph": "\ud83d\udce5",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "root.innerHTML = '<div class=\"mtq\"><h2>\\u{1F4E5} MAP Team Queue</h2></div>';"
+  },
+  {
+   "file": "map_team_queue.js",
+   "line": 537,
+   "glyph": "\ud83d\udce5",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "root.innerHTML = '<div class=\"mtq\"><h2>\\u{1F4E5} MAP Team Queue</h2>'"
+  },
+  {
+   "file": "map_team_queue.js",
+   "line": 549,
+   "glyph": "\ud83d\udce5",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "var h = '<div class=\"mtq\"><h2>\\u{1F4E5} MAP Team Queue</h2>'"
+  },
+  {
    "file": "map_users.js",
    "line": 557,
    "glyph": "\u2192",
@@ -7873,8 +7905,24 @@
   },
   {
    "file": "map_users.js",
+   "line": 1449,
+   "glyph": "\ud83d\udce3",
+   "kind": "control",
+   "generator_owned": false,
+   "context": "+ '\" title=\"Email this college\u2019s Primary Contact + VP of Instruction + VP of Student Services + CEO to refresh their MAP users (you pick the recipients; opens y"
+  },
+  {
+   "file": "map_users.js",
    "line": 1466,
    "glyph": "\u2715",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ (open ? \"\u2715 hide\" : \"\\u{1F465} roster\") + \"</button>\" + nudgeBtn + nudgedLine + \"</td>\""
+  },
+  {
+   "file": "map_users.js",
+   "line": 1466,
+   "glyph": "\ud83d\udc65",
    "kind": "decoration",
    "generator_owned": false,
    "context": "+ (open ? \"\u2715 hide\" : \"\\u{1F465} roster\") + \"</button>\" + nudgeBtn + nudgedLine + \"</td>\""
@@ -7897,6 +7945,14 @@
   },
   {
    "file": "map_users.js",
+   "line": 1544,
+   "glyph": "\ud83d\udce3",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ \"\\u{1F4E3} tell them</button></td></tr>\";"
+  },
+  {
+   "file": "map_users.js",
    "line": 1569,
    "glyph": "\u270f\ufe0f",
    "kind": "decoration",
@@ -7910,6 +7966,14 @@
    "kind": "decoration",
    "generator_owned": false,
    "context": "+ (c ? \"\u270f\ufe0f edit proposal\" : \"\u270f\ufe0f propose\") + \"</button> \""
+  },
+  {
+   "file": "map_users.js",
+   "line": 1571,
+   "glyph": "\ud83d\udce3",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ \"\\u{1F4E3} ask them</button></td></tr>\";"
   },
   {
    "file": "map_users.js",
@@ -8689,14 +8753,6 @@
   },
   {
    "file": "raci.js",
-   "line": 869,
-   "glyph": "\ud83d\udcdd",
-   "kind": "decoration",
-   "generator_owned": false,
-   "context": "[\"\ud83d\udcdd\" + (nUp ? \" \" + nUp : \"\")]);"
-  },
-  {
-   "file": "raci.js",
    "line": 879,
    "glyph": "\ud83d\udce3",
    "kind": "decoration",
@@ -8849,6 +8905,30 @@
   },
   {
    "file": "sierra_training.js",
+   "line": 1140,
+   "glyph": "\ud83d\udc4e",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ (f.rating === \"down\" ? \"\\u{1F44E} down\" : \"\\u{1F44D} up\") + \"</span>\";"
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1140,
+   "glyph": "\ud83d\udc4d",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ (f.rating === \"down\" ? \"\\u{1F44E} down\" : \"\\u{1F44D} up\") + \"</span>\";"
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1145,
+   "glyph": "\ud83d\udcdd",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ (f.note ? '<span class=\"sit-chip\">\\u{1F4DD} note</span>' : \"\")"
+  },
+  {
+   "file": "sierra_training.js",
    "line": 1162,
    "glyph": "\u2713",
    "kind": "decoration",
@@ -8865,11 +8945,27 @@
   },
   {
    "file": "sierra_training.js",
+   "line": 1165,
+   "glyph": "\ud83d\udea7",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ (k === \"low-sim\" ? \"\u26a0 nothing close\" : \"\\u{1F6A7} said she didn\u2019t know\") + \"</span>\";"
+  },
+  {
+   "file": "sierra_training.js",
    "line": 1220,
    "glyph": "\u26a0",
    "kind": "decoration",
    "generator_owned": false,
    "context": "? \"\u26a0 nothing close in the knowledge base\""
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1222,
+   "glyph": "\ud83d\udea7",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": ": \"\\u{1F6A7} Sierra said she didn\u2019t know\";"
   },
   {
    "file": "sierra_training.js",
@@ -8969,6 +9065,38 @@
   },
   {
    "file": "sierra_training.js",
+   "line": 1545,
+   "glyph": "\ud83d\udc4d",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ \"(\\u{1F44D}/\\u{1F44E}), the questions she struggled to answer, and the \""
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1545,
+   "glyph": "\ud83d\udc4e",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ \"(\\u{1F44D}/\\u{1F44E}), the questions she struggled to answer, and the \""
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1594,
+   "glyph": "\ud83d\udc4e",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "+ '<div class=\"n\">' + downCount + '</div><div class=\"l\">\\u{1F44E} Thumbs-down</div></div>'"
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1605,
+   "glyph": "\ud83d\udcec",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "html += \"<h3>\\u{1F4EC} What people said about Sierra\u2019s answers \""
+  },
+  {
+   "file": "sierra_training.js",
    "line": 1606,
    "glyph": "\ud83d\udc4d",
    "kind": "decoration",
@@ -8982,6 +9110,22 @@
    "kind": "decoration",
    "generator_owned": false,
    "context": "+ \"<span class=\\\"sit-meta\\\">(from the \ud83d\udc4d/\ud83d\udc4e buttons wherever Sierra appears)</span></h3>\";"
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1640,
+   "glyph": "\ud83d\udc4d",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "html += '<div class=\"sit-empty\">' + (fb.length ? \"No feedback matches these filters.\" : \"No feedback yet \u2014 the \\u{1F44D}/\\u{1F44E} bar on the Sierra surfaces fe"
+  },
+  {
+   "file": "sierra_training.js",
+   "line": 1640,
+   "glyph": "\ud83d\udc4e",
+   "kind": "decoration",
+   "generator_owned": false,
+   "context": "html += '<div class=\"sit-empty\">' + (fb.length ? \"No feedback matches these filters.\" : \"No feedback yet \u2014 the \\u{1F44D}/\\u{1F44E} bar on the Sierra surfaces fe"
   },
   {
    "file": "sierra_training.js",
