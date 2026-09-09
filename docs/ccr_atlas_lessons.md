@@ -1542,3 +1542,69 @@ extraction — but it is **eight names, 1,183 occurrences across 33 files**
 including `coci_minted_courses.json` and four alias maps, not the 5-row string fix
 the sheet described. Held for its own PR with a dry-run and a receipt.
 **A sheet item can be ruled correctly and still have described the wrong size.**
+
+## 2026-09-09 — Session 244 (SkyExit): Sam's five, and three ways a correct-looking change does nothing
+
+Five asks in one message, all shipped. What they had in common is worth more than
+any one of them: **three of the five most valuable findings this run were a cache
+or a more specific rule quietly winning, where the code read correctly and did
+nothing.**
+
+### The five
+
+1. **Rotation** — `SPIN` 0.045 → 0.018 rad/s, one turn in ~350 s instead of ~140.
+   One constant; the per-projection rate scales it, so every projection slows
+   together.
+2. **A dropped course parks.** It snapped back because a member has **no position
+   of its own** — `drawMembers` puts it on a spoke of its parent's ring at an
+   angle derived from its index, so releasing the carry redrew it where it began.
+   That also rules out the obvious fix: a screen coordinate would be walked away
+   from by pan, zoom and the turn within seconds. It is stored in the **world
+   frame islands already use** for `dx`/`dy`.
+3. **Level proximity** — measured first, and the measurement shaped it. Only
+   **12%** of 49,896 points carry a level word (2,565 beginning · 1,400
+   intermediate · 2,173 advanced), though 119 of 159 islands hold ≥3. So level
+   orders **within a ring** the match score already chose, as a STABLE sort:
+   same-level pairs ended **19.9% closer** (15.54 → 12.44) over the same 1,990
+   pairs, with the point count and bounds unchanged as the proof nothing moved
+   that should not have.
+4. **CTE vs academic** — 25,857 · 16,470 · **7,569 with no verdict**, and the
+   third of those got its own switch.
+5. **Isolate**, which is where the interesting bug was.
+
+### ⭐ Three shapes of "correct code that does nothing"
+
+**A memo keyed on the wrong thing.** `islandPass` caches its per-island count on
+`showSig()`, a signature of the Show switches. Isolation changes which points
+pass **without touching a switch**, so every island served a stale count and the
+map did not change at all. The predicate was right; the cache never asked it.
+Reverting the signature reproduces it exactly — `shown=3 of 3`.
+
+**A more specific rule.** `.cpl-tab {color:#666}` was corrected during the dark
+sweep and the report still said 1.74:1 on all 38 tabs, because
+`.cpl-sidebar .cpl-tab {color:#444}` is what actually paints the rail. **Fixing
+the rule you found is not fixing the rule that applies** — grep for every rule
+setting the property, and prefer the most specific.
+
+**A test asserting a sentence.** `(12) a drop on empty ground moves nothing and
+says so` checked the HINT STRING. A hint-only assertion passes against the
+snap-back it was supposed to describe, so the replacement asserts the course is
+parked in **state the drawing reads**.
+
+### ⚠️ And two bugs in my own sweep, both caught by re-reading the diff
+
+Splitting `--seal-blue` into a text grade meant rewriting call sites. `color:`
+also ends `border-color:`, so the first pass rewrote **20 border declarations**
+into the text grade; and text on an explicit fill (the mustard alpha chip,
+`background:#fff` cells) is not text on the ground — the on-dark grade reads
+1.9–2.4:1 there. **A hit count above your estimate is a bug in the pattern, not a
+windfall.** Both reverted; the final sweep is 15 sites, each checked for what it
+sits on.
+
+### The order-of-work tool that came out of it
+
+The dark sweep opened at 38/38 routes and 511 findings, of which ~227 were six
+shared-chrome selectors. `scripts/a11y_triage.js` now groups a saved report by
+selector and ranks by blast radius; run against that same report it reproduces
+all six in the right order in a second, against the two manual re-reads it
+actually cost. See [`/a11y-pass`](../.claude/commands/a11y-pass.md).

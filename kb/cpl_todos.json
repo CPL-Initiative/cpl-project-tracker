@@ -1,86 +1,86 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-08",
-  "_session": "S243 (SkyGate)",
-  "_status": "You ruled all nine calls on the subject–discipline sheet and they are built. Five subject codes went into the map, which filled seven of the courses that had no discipline; HOSP stayed out because its own courses split four ways. Five subjects where the map disagreed with its courses now read the way the courses do — ATHL is Kinesiology, THTR is Drama/Theater Arts, and so on — which took the disagreements from nine to four. Your note on ATHL was the most useful thing on the sheet: it sent me to check whether anything would quietly merge ATHL into KINE, and the answer is that a re-mint step would have, except that someone caught it in June and blocked it. That block was one line of code and nothing else knew about it; it is now written into the canonical-subject file, so every screen that reads that file knows ATHL is deliberately its own code. One correction to my own sheet: I called ESLN's discipline name malformed, and it is not — that name, and seven others, come to us that way from the official Minimum Qualifications index, which prints a Title 5 section number beside the title. Repairing it is a bigger job than the sheet said and is queued on its own.",
-  "items": [
-    {
-      "id": "s243-sam-two-disagreements",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Both decision sheets are answered and built — nothing in this lane is waiting on you. The subject disagreements went from nine this morning to two, and neither of the two is a map problem by your own rulings: PHTO's twelve courses are mis-filed rather than mis-mapped, and ESLN resolves when the Title 5 rename lands. Your ETHN call also turned up a code nobody had looked at — ETHA had 33 courses, a canonical code and no map entry at all, which is a shape no report was checking for."
-    },
-    {
-      "id": "s242-sam-banner-live",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "The live-session banner is on and pointing at today's session. Open COBI and check it reads the way you want. Two things to know: only people on the Team & RACI roster, or anyone who has entered the team phrase, can see it — college users and the public cannot. And whoever opens the link sees where the session had got to when they clicked; they reload for anything newer. That is why it says reload rather than watch."
-    },
-    {
-      "id": "s242-sam-sky-speed",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "The Sky draws almost twice as fast as it did this morning. Open SkyView and say whether the drift reads smoothly now. If it still steps, the next lever is drawing fewer points per frame, which is what worked the last three times."
-    },
-    {
-      "id": "s243-sam-a11y-cobi",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "The accessibility sweep across COBI went from all 38 tabs failing to 19. One line did most of it: the checkbox labeled “Don’t greet me with paintings” was 20 pixels tall where the standard asks for 24, and it sits on every tab, so it failed every tab on its own. The remaining 19 tabs are counted and named — 71 separate color and target-size problems — and are engineering work rather than anything you need to rule on. Nothing here changes what any tab shows you."
-    },
-    {
-      "id": "s238-sam-cpl-face-look",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
-    },
-    {
-      "id": "s236-sam-skill-text-fetch",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."
-    },
-    {
-      "id": "s235-sam-curate-phrase",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
-    },
-    {
-      "id": "s243-fable-title5-rename",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "RULED: strip the Title 5 section number from the eight discipline names and keep it in a field of its own, then land the rename the way a re-mint lands — dry run, alias map, promotions re-keyed, one cron window, a receipt. 45 live rows but 1,183 occurrences across 33 files including the minted-course record and four alias maps. Closes ESLN, one of the two remaining disagreements."
-    },
-    {
-      "id": "s243-fable-envs-retire",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "ENVS now maps to Biological Sciences, where its one course already sat. The retire half of your ruling is still open and is an identifier change: ENVS 100 is a legacy anchor the September 3 Z-band retirement did not cover, and it does not live in common_courses.json — find its authoritative home before re-keying anything. Twenty-two legacy anchors of the same shape remain, HOSP 100 among them."
-    },
-    {
-      "id": "s243-fable-86-blanks",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "86 course identities still have no discipline, named in kb/discipline_blanks_worklist.json with what corroboration each code has; the daily run rebuilds it. Sam asked for a more aggressive pass than the eight codes carrying three or more identities, so work further down the list — but never invent a discipline from a single course title, which is what the corroboration column is there to prevent."
-    },
-    {
-      "id": "s243-fable-a11y-remaining",
-      "for": "Fable",
-      "tab": "admin",
-      "text": "The 19 COBI tabs still failing the accessibility sweep: 71 distinct failing selectors, 5,332 sub-24px targets and 22 scrolling regions no keyboard can reach. our-process is six faults from two color tokens and pipeline is ten, so the first few tabs are cheap. This is the shape that pays for fanning out — many surfaces, and every hit verified by re-running one command."
-    },
-    {
-      "id": "s238-fable-dr24-surface",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
-    },
-    {
-      "id": "s238-fable-stale-exhibits-and-funnel",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-09-09",
+ "_session": "S244 (SkyExit)",
+ "_status": "COBI has a dark mode, and one control drives it. The Theme selector in the header (System · Light · Dark) sets every tab and follows you into a second window; before this there were genuinely FOUR different answers to \"is it dark\" hiding behind what looked like one setting misbehaving. Measured across all 38 tabs, dark went from every route failing accessibility to 26, and light improved too (19 → 17) rather than regressing. SkyView got Sam's five: a slower turn, a course that stays where you drop it instead of snapping back, courses grouped by level where we have the indicator (only 12% of them do), CTE-vs-academic checkboxes, and an Isolate toggle. There is now a standing procedure for this kind of work — /a11y-pass — because the reports were being read in the wrong order: a sweep of 511 findings was really six problems repeated on every tab. The glyph sweep it comes with is built and tested but NOT run: it would rewrite 516 button and link labels across 139 files, and that needs Sam's go first.",
+ "items": [
+  {
+   "id": "s244-sam-glyph-go",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "Go / no-go on the glyph clean-up. You asked to remove all emoji glyphs and replace the crucial ones with a muted mark in white and CO blue. The tool is built and tested; running it rewrites 516 button and link labels across 139 files in one pass. It is deliberately not run yet — say go and it happens with the full test suite and both accessibility sweeps after it."
+  },
+  {
+   "id": "s244-sam-glyph-exceptions",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "One reading to confirm: \"remove all emoji glyphs\" was taken to include the three we had previously approved and protected — the To-Do button, the guidance pane and the Governance tab. They are now in scope as muted CO-blue marks. If you meant to keep those three as they are, say so and the carve-out goes back."
+  },
+  {
+   "id": "s244-sam-skyview-theme",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "SkyView follows the header's Theme control only as a fallback: your own SkyView choice still wins, and \"Night by default\" still owns the default when nobody has chosen. That layering was a judgment call — worth your eye, and easy to change."
+  },
+  {
+   "id": "s244-fable-cobalt-fills",
+   "for": "Fable",
+   "tab": "dashboard",
+   "text": "The largest remaining source of dark-mode faults is mechanical: about 140 places still pair a themed blue fill with a hard-coded white text color, which reads at 2.65:1 wherever a pane paints one. The --on-accent token exists and is already applied to the two that appeared on every tab."
+  },
+  {
+   "id": "s244-fable-generator-fills",
+   "for": "Fable",
+   "tab": "activities-projects",
+   "text": "Some cards and table cells hard-code a white background, so they stay light islands when the page goes dark. The Workplan Goals cells are the worked example and they are written by the daily generator — so the fix belongs in excel_to_dashboard.py, never in the HTML, which the next cron would overwrite."
+  },
+  {
+   "id": "s244-fable-skyview-lane",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "The SkyView lane file is two and a half times its size budget and the docs lint says so every run. It is invariants rather than stacked history, so compacting it means reading and ruling on each one — several predate decisions that superseded them. Worth its own sitting rather than another append."
+  },
+  {
+   "id": "s242-sam-banner-live",
+   "for": "Sam",
+   "tab": "admin",
+   "text": "The live-session banner is on and pointing at today's session. Open COBI and check it reads the way you want. Two things to know: only people on the Team & RACI roster, or anyone who has entered the team phrase, can see it — college users and the public cannot. And whoever opens the link sees where the session had got to when they clicked; they reload for anything newer. That is why it says reload rather than watch."
+  },
+  {
+   "id": "s242-sam-sky-speed",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "The Sky draws almost twice as fast as it did this morning. Open SkyView and say whether the drift reads smoothly now. If it still steps, the next lever is drawing fewer points per frame, which is what worked the last three times."
+  },
+  {
+   "id": "s238-sam-cpl-face-look",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "The CPL face and the light are on the map — open SkyView, press CPL and Articulations, or use the link #skyview/cpl. Two questions only you can answer: does the credential-led label read right at your zoom, and is Articulations the word you want on the button? Everything else on the face follows your eight rulings as written."
+  },
+  {
+   "id": "s236-sam-skill-text-fetch",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Your ruling on where skill statements come from unblocked the course outline's skills layer — published agency standards are the text of record, an ACE exhibit fills a gap they leave, the MAP team overrides either, and a genuine conflict shows both side by side. But we hold none of that text: of 1,987 credentials classified, 64 of them welding, not one carries a skill field. So this is now a fetching problem, not a decision. The question for you is which published standard to start with — an AWS welding certification is the natural pilot."
+  },
+  {
+   "id": "s235-sam-curate-phrase",
+   "for": "Sam",
+   "tab": "admin",
+   "text": "You asked for a magic phrase people type before they can move a course, shifting to a team phrase later. That would be the first time anything is written from the map, which today writes nothing at all — so it goes through Governance and the privacy review before it ships rather than after. DR-24 now carries your name as its owner; say the word and the phrase gets scoped."
+  },
+  {
+   "id": "s238-fable-dr24-surface",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+  },
+  {
+   "id": "s238-fable-stale-exhibits-and-funnel",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+  }
+ ]
 }

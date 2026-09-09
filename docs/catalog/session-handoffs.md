@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-218 document(s).
+219 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 245 | [one control where there were four, and a remediation pass with a 516-item backlog](../session_245_handoff.md) | 2026-09-09 |
 | 244 | [the nine were ruled, four remain, and 19 COBI tabs are still red](../session_244_handoff.md) | 2026-09-08 |
 | 243 | [the frame budget is bought, DR-25/26 are owned, and the banner is live](../session_243_handoff.md) | 2026-09-08 |
 | 242 | [the asteroid field is culled; the frame budget is the remaining lever](../session_242_handoff.md) | 2026-09-08 |

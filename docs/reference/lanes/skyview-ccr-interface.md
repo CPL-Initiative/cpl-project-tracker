@@ -47,7 +47,41 @@ Round-by-round history — every measurement and every wrong reading — is in
 [archive](../../ccr_atlas_lessons_archive.md). **Do not restate it here**: this
 file is invariants and open work, and it is already over budget.
 
+**S244 (2026-09-09) — Sam's five, all shipped.** Rotation `SPIN` 0.045→0.018
+(one turn ~350 s); a dropped course PARKS instead of snapping back; courses
+gather by level on the ring score already chose (same-level pairs **19.9%
+closer**, 15.54→12.44 over the same 1,990 pairs); **CTE vs academic** as three
+Show switches (25,857 · 16,470 · **7,569 with no verdict**); an **Isolate**
+toggle. Payload gained `e`/`em`; the builder is deterministic (a no-change re-run
+diffs one line).
+
 ## Invariants — do not violate these
+
+⭐ **A MEMBER HAS NO POSITION OF ITS OWN** (S244). It is drawn on a SPOKE of its
+parent's ring at an angle from its index, so "leave it where I dropped it" cannot
+be a screen coordinate — pan, zoom and the turn all walk away from it. A parked
+course lives in the WORLD frame islands use for `dx`/`dy` (`parkedMem`, projected
+through `w2s` every frame). Parking records NOTHING: `applyMove` and
+`unstageMove` both clear it, because "Put back" means both halves.
+
+⚠️ **`islandPass` MEMOIZES ON `showSig()` — ANYTHING THAT CHANGES WHAT PASSES
+MUST JOIN THAT SIGNATURE** (S244). Isolation changes which points pass without
+touching a switch; with the switch-only signature every island served a stale
+count and the map did not change at all. Reverting the signature reproduces it
+exactly (`tests/ccr_skyview_isolate.test.js` (7), shown=3 of 3).
+
+⚠️ **`e` (CTE) IS 1 / 0 / ABSENT, AND ABSENT IS ITS OWN SWITCH** (S244). 15% of
+points carry no resolvable TOP code; folding them into "Academic" asserts
+something about 7,569 courses the data does not say — the false-zero shape `c`
+and `ar` already avoid. ⚠️ On a `top_mixed` identity `e` is a SUMMARY, not a
+fact (39% of identities; those carry `em:1`). TOP is trusted here because
+CLAUDE.md names the CTE flag as one of only two places it is authoritative.
+
+⚠️ **LEVEL ORDERS WITHIN A RING, NEVER ACROSS THEM** (S244). Which ring a course
+sits on is decided by MATCH SCORE — best candidates nearest the parent — and
+that is real signal. Only 12% of points carry a level word, so `by_level` is a
+STABLE sort on the level rank alone: the levelled gather, the other 88% keep
+their score order, and a ring with no level words is returned untouched.
 
 ⭐ **AN ORBIT IS A PLACEMENT SUGGESTION, NEVER A CURATION DECISION.** Hollow,
 tethered, reasons named. Moves accept ONE course at a time as a
@@ -404,6 +438,11 @@ smooth on his machine now.
 link, never a github.io URL.
 
 ## NEXT
+
+⚠️ **THIS FILE IS 2.5× ITS BUDGET and the lint says so every run.** It is
+invariants, not stacked history, so the compaction is a real read-and-rule pass:
+several invariants below predate rulings that superseded them. Worth its own
+sitting — do not let a checkpoint keep appending to it in the meantime.
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.

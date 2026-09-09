@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 410,
+   "count": 411,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6332,6 +6332,22 @@
      "updated": "2026-08-20"
     },
     {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-the-number-of-findings-is-not-the-number-of-problems.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "tooling",
+      "triage",
+      "pitfall"
+     ],
+     "title": "The number of findings is not the number of problems \u2014 rank an audit by blast radius before you read it",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-09",
      "governs": [
       "scripts/sparse-vault-clone.ps1",
@@ -11858,7 +11874,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 43,
+   "count": 44,
    "docs": [
     {
      "created": "2026-08-28",
@@ -12201,6 +12217,19 @@
      "updated": "2026-08-28"
     },
     {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/reference/lanes/README.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Roadmap lanes \u2014 how the pointer index and the lane files divide",
+     "type": null,
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/audit-rules.md",
@@ -12453,8 +12482,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 218,
+   "count": 219,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 245,
+     "path": "docs/session_245_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "one control where there were four, and a remediation pass with a 516-item backlog",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-08",
      "governs": [],
@@ -16169,5 +16211,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 832
+ "total": 835
 }
