@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 849,
-    "bytes": 9066891,
+    "files": 850,
+    "bytes": 9076339,
     "over_budget": 5,
-    "handoff_max": 245,
+    "handoff_max": 246,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60278,
     "superseded_files": 0,
@@ -50,8 +50,8 @@
         "over": 1
       },
       "handoff": {
-        "files": 219,
-        "bytes": 1869259,
+        "files": 220,
+        "bytes": 1878707,
         "over": 0
       }
     },
@@ -59,12 +59,11 @@
       "oversized_doc": 5,
       "house_voice": 23,
       "american_spelling": 1,
-      "vault_heavy_path": 47,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2762,
-      "bytes": 1351558574,
+      "files": 2763,
+      "bytes": 1351568022,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [
@@ -948,17 +947,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_245_handoff.md",
-      "detail": {
-        "commits_since": 8,
-        "budget": 6,
-        "handoff": "session_245_handoff.md"
-      },
-      "message": "8 commit(s) have landed since `docs/session_245_handoff.md` was last written (budget 6). Rule 9's own trigger — 'roughly every ~100K tokens' — is a condition nothing can observe, so this is the observable stand-in. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
