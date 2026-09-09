@@ -1,32 +1,20 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-09",
- "_session": "S244 (SkyExit)",
- "_status": "Sam answered all eleven decisions on the sheet the same night it went over, and this session executed them. The glyph clean-up ran: 115 marks off control labels across 23 files, 16 more off the dashboard generator so the daily run cannot restore them, and the three previously protected marks went too. The sweep now refuses to touch a label the generator regenerates — 13 of the 16 sites in the dashboard HTML were the generator's, and without that guard the clean-up would have quietly undone itself overnight and reported success. Two of his answers closed questions rather than opening work: the Sky reads right at its current speed, which two sessions of headless measurement could not settle because every number was taken on a machine that is not his; and the live-session banner is not broken, it has two switches and only one was flipped. Two items were retired outright. Still open and none of it needs him: the 25 CO-blue-on-white pairs, the legacy-anchor retirement (id-keyed, so it lands as a re-mint), and drawing an emptied discipline, which turns out to be a builder change rather than the one-line tweak it was described as.",
+ "_session": "S245 (SkyPlain)",
+ "_status": "Dark mode is now correct on most of what a reader actually looks at: the contrast faults the sweep can see fell from 184 to 120, and the light theme did not move once across eight measured passes. The big win was not a color but a counting fix — the report was grouping faults by the HTML element wearing them instead of by the color decision behind them, so the single largest problem (one wrong color, 25 places, 11 tabs) sorted to the bottom looking like twelve small ones. Three separate checks turned out to be incapable of ever reporting a problem, which reads exactly like a clean result: the docs spell-checker was silently switched off below the first indented block in any file, the glyph counter was counting 348 findings that belong to the daily rebuild rather than to us, and it could not see emoji written in escaped form at all — which is how thirteen places telling people to click a padlock button that moved months ago went unnoticed. All fixed. Sam then settled the two open questions: the 26 remaining marks stay as they are, and eight hours is long enough for the session banner. Nothing on this list needs him.",
  "items": [
   {
-   "id": "s244-banner-two-switches",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "The live-session banner is not broken — it has two switches and you flipped one. The claude.ai visibility toggle decides whether the link WORKS; a row in COBI decides whether the banner SHOWS. That row is still pointing at an earlier session and its four-hour life ran out yesterday evening, so the banner correctly showed nothing. Admin → Live-session banner already says so (“Now: not showing (the link expired)”): paste this session's link, pick a duration, press Show the banner. Setting it is deliberately yours, not the session's — it announces a link anyone on the team can open."
-  },
-  {
-   "id": "s244-glyph-run-done",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "The glyph clean-up ran. 115 marks came off button and link labels across 23 files, and 16 more off the dashboard generator so the daily run cannot put them back — including the three we had previously protected, which you confirmed were in scope. Control-label glyphs went from 516 to 401; what is left needs a reworded sentence rather than a deletion, so it is not mechanical. Worth a look at the Activities cards and the curation buttons to say the labels still read right."
-  },
-  {
-   "id": "s244-fable-cobalt-fills",
+   "id": "s245-fable-light-fills",
    "for": "Fable",
-   "tab": "dashboard",
-   "text": "The largest remaining source of dark-mode faults is mechanical: 25 places paint a CO-blue background and then hard-code white text on it, so the pair cannot follow the theme. (An earlier note here said about 140 — that figure was measured with a looser pattern over a wider set of files, and counted every blue background rather than only the ones paired with a literal white.)"
+   "tab": "raci",
+   "text": "The largest remaining group of dark-mode faults is the same shape repeated with different colors: a panel keeps a pale background that never follows the theme, and the dark text painted over it becomes unreadable. It is the signed-out message, the buttons on Team and RACI, and the activity cards. All of it is measured and named in the lane file, so it is mechanical work with a number to check against."
   },
   {
-   "id": "s244-fable-generator-fills",
+   "id": "s245-fable-unfailable-checks",
    "for": "Fable",
-   "tab": "activities-projects",
-   "text": "Some cards and table cells hard-code a white background, so they stay light islands when the page goes dark. The Workplan Goals cells are the worked example and they are written by the daily generator — so the fix belongs in excel_to_dashboard.py, never in the HTML, which the next cron would overwrite."
+   "tab": "pipeline",
+   "text": "Seven test files print no readable count of what they checked, so if their checks quietly vanished nothing would notice. The build says so on every run and nobody has claimed it. This is the same failure that hid three real problems this session: a check that cannot fail looks exactly like a check that passed."
   },
   {
    "id": "s244-fable-skyview-lane",

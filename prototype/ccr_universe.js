@@ -5030,10 +5030,10 @@ function viewsMenuInto(host){
     items.push('<button class="linkish" type="button" id="u-ccr-list" '+
       'title="Show the Common Course Reference table in this tab">CCR table view</button>');
     items.push('<a class="linkish" id="u-own-tab" href="'+esc(ownUrl())+'" target="_blank" rel="noopener" '+
-      'title="Open SkyView in its own browser tab, to keep it beside the list">Open in its own tab ↗</a>');
+      'title="Open SkyView in its own browser tab, to keep it beside the list">Open in its own tab</a>');
   } else {
     items.push('<a class="linkish" id="u-ccr-list" href="../index.html#unified-courses/list" target="_blank" rel="noopener" '+
-      'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view ↗</a>');
+      'title="The Common Course Reference table in COBI — filters, quality flags and the Merge actions">CCR table view</a>');
     /* The way back to the rest of the work (Sam, 2026-09-07: "Need a COBI link
      * on the 3-dot menu"). Stand-alone, SkyView is a page on its own with no
      * route to COBI but the browser's history — and a reader who arrived on a
@@ -5041,7 +5041,7 @@ function viewsMenuInto(host){
      * inside COBI this would be a door onto the room you are standing in, the
      * same reason the CCR table view is a message rather than a link there. */
     items.push('<a class="linkish" id="u-cobi" href="../index.html" target="_blank" rel="noopener" '+
-      'title="COBI — the dashboard SkyView belongs to">COBI ↗</a>');
+      'title="COBI — the dashboard SkyView belongs to">COBI</a>');
   }
   /* Inside the map's More panel (host[data-flat]) the list renders FLAT under
    * the panel's own "Go to" heading — a menu inside a menu is a door behind a

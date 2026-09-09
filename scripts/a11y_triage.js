@@ -45,7 +45,10 @@ const text = fs.readFileSync(file, "utf8");
    is the only thing at that indent that ends in FAIL, so the parser keys on it
    rather than on any finding wording, which changes as rules are added. */
 const ROUTE = /^\s{2,4}(\S[^\s].*?)\s+FAIL\s*$/;
-const CONTRAST = /contrast\s+([0-9.]+):1 \(needs ([0-9.]+)\)\s+(\S+)\s+([0-9.]+)px/;
+/* The color pair is optional in the pattern ON PURPOSE: reports saved before
+   the sweep recorded fg/bg still parse, and a triage that silently matches
+   nothing is worse than one that says less. */
+const CONTRAST = /contrast\s+([0-9.]+):1 \(needs ([0-9.]+)\)\s+(?:(#[0-9A-Fa-f]{6}) on (#[0-9A-Fa-f]{6})\s+)?(\S+)\s+([0-9.]+)px/;
 const TARGET = /(\d+) target\(s\) under 24x24 in \d+ kind\(s\): (.+)$/;
 const SCROLLER = /scrolling (\S+) is not keyboard reachable/;
 const OVERFLOW = /page scrolls sideways by (\d+)px/;
@@ -53,6 +56,13 @@ const OVERFLOW = /page scrolls sideways by (\d+)px/;
 let route = null;
 const routes = new Set();
 const contrast = new Map();   // "selector @ ratio" -> Set(routes)
+/* ⭐ THE SELECTOR IS NOT THE CAUSE; THE COLOR PAIR IS. Ranking by selector
+   scatters one bad token across a dozen "one route — that tab's own CSS" lines
+   at the BOTTOM of the list. Measured on COBI's dark sweep, 2026-09-09: the
+   single biggest fault was one pair appearing 25 times over 11 routes on 12
+   different selectors, and it sorted below faults a tenth its size. A pair is
+   one CSS fix however many selectors wear it. */
+const pairs = new Map();      // "#FG on #BG" -> {routes:Set, n, sels:Set, worst}
 const targets = new Map();    // selector -> Set(routes)
 const scrollers = new Map();
 const overflow = new Map();
@@ -64,7 +74,17 @@ for (const line of text.split("\n")) {
   const add = (map, key) => { if (!map.has(key)) map.set(key, new Set()); map.get(key).add(route); };
 
   const c = line.match(CONTRAST);
-  if (c) { add(contrast, `${c[3]} @ ${c[1]}:1 (needs ${c[2]})`); continue; }
+  if (c) {
+    add(contrast, `${c[5]} @ ${c[1]}:1 (needs ${c[2]})`);
+    if (c[3] && c[4]) {
+      const key = `${c[3].toUpperCase()} on ${c[4].toUpperCase()}`;
+      if (!pairs.has(key)) pairs.set(key, { routes: new Set(), n: 0, sels: new Set(), worst: Infinity });
+      const e = pairs.get(key);
+      e.routes.add(route); e.n++; e.sels.add(c[5]);
+      e.worst = Math.min(e.worst, parseFloat(c[1]));
+    }
+    continue;
+  }
   const t = line.match(TARGET);
   if (t) {
     /* ⚠️ KEY ON THE SELECTOR ALONE. Each "kind" reads
@@ -116,6 +136,20 @@ const findings = [...contrast.values(), ...targets.values(), ...scrollers.values
 console.log(`${findings} finding(s) across ${c.length + t.length + s.length} distinct cause(s)` +
             (findings ? ` — ${(findings / Math.max(1, c.length + t.length + s.length)).toFixed(1)}x amplification` : ""));
 
+/* Ranked by OCCURRENCES, not routes: one pair on one route twenty-five times is
+   still one CSS fix, and it outranks a pair on three routes seen once each. */
+const pairRank = [...pairs.entries()]
+  .sort((a, b) => b[1].n - a[1].n || b[1].routes.size - a[1].routes.size);
+if (pairRank.length) {
+  console.log("\n── CONTRAST, by COLOR PAIR (this is the cause) ──");
+  console.log("  Each line is ONE color decision. Fix the pair and every selector under it clears.");
+  pairRank.forEach(([k, e]) => {
+    console.log(`  ${String(e.n).padStart(3)} findings  ${k}  worst ${e.worst}:1`);
+    console.log(`             ${e.routes.size} route(s), ${e.sels.size} selector(s): ` +
+                [...e.sels].slice(0, 4).join(", ") + (e.sels.size > 4 ? ", …" : ""));
+  });
+}
+
 section("── CONTRAST, by blast radius ──", c,
   "Fix top-down. A ratio repeated exactly across routes is ONE color, not many.");
 section("── TARGET SIZE (WCAG 2.2 SC 2.5.8), by blast radius ──", t,
@@ -126,9 +160,11 @@ section("── SIDEWAYS SCROLL (mobile) ──", o,
   "Wide content scrolls inside its OWN container; the body never scrolls sideways.");
 
 console.log("\n── order of work ──");
-const all = [...c.map((x) => ["contrast", ...x]), ...t.map((x) => ["target", ...x]),
+const all = [...pairRank.map(([k, e]) => ["color", k, e.n]),
+             ...c.map((x) => ["contrast", ...x]), ...t.map((x) => ["target", ...x]),
              ...s.map((x) => ["scroller", ...x])].sort((a, b) => b[2] - a[2]);
 all.slice(0, 12).forEach(([kind, k, n], i) =>
-  console.log(`  ${String(i + 1).padStart(2)}. [${kind}] ${k}  — ${n} route(s)`));
+  console.log(`  ${String(i + 1).padStart(2)}. [${kind}] ${k}  — ${n} ` +
+              (kind === "color" ? "finding(s)" : "route(s)")));
 if (!all.length) console.log("  nothing to do — the sweep is clean.");
 console.log("\nRe-run the sweep after each root cause, not at the end: the count is the proof.");

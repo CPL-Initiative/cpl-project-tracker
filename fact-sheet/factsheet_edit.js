@@ -1266,7 +1266,7 @@
       'body.fs-curating [data-fsk].fs-editable{cursor:pointer;}' +
       'body.fs-curating [data-fsk].fs-editable:hover{outline:2px solid var(--cobalt);background:rgba(0,71,171,.05);}' +
       'body.fs-curating [data-fsk].fs-editable::after{content:"\\270E edit";position:absolute;top:-9px;right:6px;' +
-        'font:600 11px var(--font-data);background:var(--cobalt);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'font:600 11px var(--font-data);background:var(--cobalt);color:var(--on-accent);padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-editable:hover::after{opacity:1;}' +
       // Move-only (KPI) boxes: a move/remove hint instead of "edit".
@@ -1279,7 +1279,7 @@
       'body.fs-curating [data-fsk].fs-tableblock{overflow:visible;}' +
       'body.fs-curating [data-fsk].fs-tableblock:hover{outline:2px solid var(--crimson);}' +
       'body.fs-curating [data-fsk].fs-tableblock::after{content:"\\2715 hide table";position:absolute;top:-9px;left:6px;' +
-        'font:600 11px var(--font-data);background:var(--crimson);color:#fff;padding:1px 6px;border-radius:6px;' +
+        'font:600 11px var(--font-data);background:var(--crimson);color:var(--on-accent);padding:1px 6px;border-radius:6px;' +
         'opacity:0;transition:opacity .12s;pointer-events:none;z-index:2;}' +
       'body.fs-curating [data-fsk].fs-tableblock:hover::after{opacity:1;}' +
       'body.fs-curating [data-fsk].fs-target{outline:2px solid var(--mustard-fill) !important;}' +
@@ -1311,11 +1311,11 @@
         'background:var(--surface,#fff);color:var(--crimson);font:700 12px var(--font-data);' +
         'cursor:pointer;z-index:3;display:none;}' +
       'body.fs-curating [data-fsk].fs-curatable:hover>.fs-del,body.fs-curating .fs-del:hover{display:block;}' +
-      '.fs-del:hover{background:var(--crimson);color:#fff;}' +
+      '.fs-del:hover{background:var(--crimson);color:var(--on-accent);}' +
       '.fs-add{grid-column:1 / -1;justify-self:start;display:inline-flex;align-items:center;gap:6px;' +
         'margin:10px 0 0;padding:7px 14px;border:1px dashed var(--cobalt);border-radius:var(--radius-sm);' +
         'background:rgba(0,71,171,.06);color:var(--cobalt);font:600 13px var(--font-data);cursor:pointer;}' +
-      '.fs-add:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-add:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-add-img{display:inline-flex;align-items:center;gap:6px;margin:10px 8px 0 0;padding:7px 14px;' +
         'border:1px dashed var(--seal-blue,#0a2240);border-radius:var(--radius-sm);background:rgba(10,34,64,.05);' +
         'color:var(--seal-blue,#0a2240);font:600 13px var(--font-data);cursor:pointer;}' +
@@ -1338,7 +1338,7 @@
         'padding:2px 10px;border-radius:8px;cursor:grab;border:1px solid var(--cobalt);background:var(--surface);' +
         'color:var(--cobalt);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
         '-webkit-user-select:none;user-select:none;}' +
-      '.fs-sec-handle:hover{background:var(--cobalt);color:#fff;}' +
+      '.fs-sec-handle:hover{background:var(--cobalt);color:var(--on-accent);}' +
       '.fs-sec-handle:active{cursor:grabbing;}' +
       // Per-section Hide/Show toggle — top-right, crimson when it will hide, blue
       // when the section is already hidden (label reads "Show section").
@@ -1346,7 +1346,7 @@
         'padding:2px 10px;border-radius:8px;cursor:pointer;border:1px solid var(--crimson);background:var(--surface);' +
         'color:var(--crimson);font:700 11px var(--font-data);box-shadow:0 1px 5px rgba(28,28,26,.14);' +
         '-webkit-user-select:none;user-select:none;}' +
-      '.fs-sec-hide:hover{background:var(--crimson);color:#fff;}' +
+      '.fs-sec-hide:hover{background:var(--crimson);color:var(--on-accent);}' +
       '.fs-sec-hide.is-hidden{border-color:var(--seal-blue);color:var(--seal-blue);}' +
       '.fs-sec-hide.is-hidden:hover{background:var(--seal-blue);color:#fff;}' +
       // Keep the handle + hide toggle visible even when its section is collapsed (the

@@ -1191,7 +1191,7 @@
     tb.appendChild(subjSearch);
     // SUBJ dropdown (mirrors the CCR's Subject filter concept) — pick a
     // 4-letter code and see the disciplines it belongs to. Two optgroups:
-    //   "Common subjects ✓"      — every distinct curator/seed canonical pick
+    //   "Common subjects"      — every distinct curator/seed canonical pick
     //   "Local-derived variants" — codes observed on CCR rows that are not a
     //                              canonical anywhere (post-fold this is
     //                              nearly empty — it's a progress meter)
@@ -1208,7 +1208,7 @@
         title: "Filter disciplines by subject code: canonical Common SUBJ picks first, then local-derived variant codes not yet folded to a canonical.",
       });
       subjSel.appendChild(el("option", { value: "" }, ["All subjects"]));
-      var ogCanon = el("optgroup", { label: "Common subjects ✓" });
+      var ogCanon = el("optgroup", { label: "Common subjects" });
       Object.keys(canonSet).sort().forEach(function (c) {
         ogCanon.appendChild(el("option", { value: c }, [c]));
       });
@@ -1505,7 +1505,7 @@
         var td = el("td", { colspan: String(colCount) });
         td.innerHTML = (collapsed ? "▶ " : "▼ ") +
           "<strong>" + title + "</strong> " +
-          "<span style='color:#6b7280;font-weight:400'>· " + rows.length + " discipline" + (rows.length === 1 ? "" : "s") + "</span>";
+          "<span style='color:var(--text-muted);font-weight:400'>· " + rows.length + " discipline" + (rows.length === 1 ? "" : "s") + "</span>";
         td.style.cursor = "pointer";
         (function (key) {
           td.onclick = function () { state.collapsedCats[key] = !state.collapsedCats[key]; render(); };
@@ -1670,7 +1670,7 @@
       tdCanon.appendChild(splitChip);
       var codesLine = el("div", {
         class: "cs-mono",
-        style: "font-size:.68rem;color:#6b7280;margin-top:3px;line-height:1.3;",
+        style: "font-size:.68rem;color:var(--text-muted);margin-top:3px;line-height:1.3;",
       }, [splitArr.map(function (x) { return x.code; }).join(" · ")]);
       tdCanon.appendChild(codesLine);
     }
@@ -1890,7 +1890,7 @@
     if (!document.getElementById("cs-cpl-css")) {
       document.head.appendChild(el("style", { id: "cs-cpl-css" }, [
         "#tab-canonical-subj4 .cs-cpl-table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:8px;}" +
-        "#tab-canonical-subj4 .cs-cpl-table th{text-align:left;color:#6b7280;font-weight:600;border-bottom:1px solid #e5e7eb;padding:4px 8px;}" +
+        "#tab-canonical-subj4 .cs-cpl-table th{text-align:left;color:var(--text-muted);font-weight:600;border-bottom:1px solid #e5e7eb;padding:4px 8px;}" +
         "#tab-canonical-subj4 .cs-cpl-table td{padding:4px 8px;border-bottom:1px solid #f1f5f9;vertical-align:top;}"
       ]));
     }
@@ -1933,7 +1933,7 @@
     (r.creds || []).forEach(function (c) {
       var row = el("tr");
       row.appendChild(el("td", {}, [c.c || "—"]));
-      row.appendChild(el("td", { style: "color:#6b7280;" }, [c.i || "—"]));
+      row.appendChild(el("td", { style: "color:var(--text-muted);" }, [c.i || "—"]));
       row.appendChild(el("td", { class: "cs-mono", style: "text-align:center;" }, [String(c.n)]));
       tb.appendChild(row);
     });

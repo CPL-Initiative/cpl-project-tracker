@@ -1920,7 +1920,7 @@
   function doCopy(btn) {
     var text = buildReportText();
     var restore = function () { setTimeout(function () { btn.textContent = "Copy"; }, 1600); };
-    var ok = function () { btn.textContent = "Copied ✓"; restore(); };
+    var ok = function () { btn.textContent = "Copied"; restore(); };
     var fail = function () { btn.textContent = "Copy unavailable"; restore(); };
     try {
       var nav = (typeof navigator !== "undefined") ? navigator : null;

@@ -156,6 +156,50 @@ check("a storage event from another window applies the theme",
   w.document.documentElement.getAttribute("data-theme") === "dark");
 check("a storage event also re-syncs this window's selector", sel.value === "dark");
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Part D — A SURFACE THAT DOES NOT FOLLOW THE THEME (Session 245)
+//
+// The dark sweep's biggest single cause was not a token with the wrong value —
+// it was a LITERAL that never had one. `background:#fff` on a card keeps a white
+// island on the night ground and drags the themed ink painted over it to 1.21:1.
+// `--surface-opaque` IS #FFFFFF in light, so the swap is a no-op there and the
+// light sweep held at 18 across all three passes; that is what makes it safe and
+// also what makes it easy for a future edit to slip a raw #fff back in.
+// ─────────────────────────────────────────────────────────────────────────────
+const styleBlocks = (cpl.match(/<style>[\s\S]*?<\/style>/g) || []).join("\n");
+check("⭐ no literal white background survives in the HTML stylesheets",
+  !/background(-color)?:\s*(#fff(fff)?|white)\b/i.test(styleBlocks));
+check("⭐ no literal white background survives in the HTML markup either",
+  !/style="[^"]*background(-color)?:\s*(#fff(fff)?|white)\b/i.test(cpl));
+
+// ⚠️ A FILL THAT IS THE SAME IN BOTH THEMES MUST CARRY INK THAT IS TOO.
+// --gold-accent resolves to #E3B341 in light AND dark (it is never redefined),
+// but .cpl-todo-badge painted --navy-primary on it — and --navy-primary flips
+// #1C1C1A -> #ECE9E2, so the badge read 8.77:1 in light and 1.61:1 in dark.
+// --on-accent is NOT the answer here: it is #FFFFFF in light, which would have
+// regressed the light theme to 1.95:1. Hence a third token, invariant by design.
+check("⭐ --on-mustard exists (ink on the theme-invariant mustard fill)",
+  /--on-mustard:\s*#1C1C1A/.test(cpl));
+check("⭐ --on-mustard is NOT redefined in the dark block (the fill never changes)",
+  !/--on-mustard:/.test(darkDecl));
+check("⭐ --gold-accent is NOT redefined dark either — the pair only works if both hold",
+  !/--gold-accent:/.test(darkDecl));
+
+// The pairings themselves, across every surface that ships.
+const surfaces = ["CPL_Dashboard.html", "index.html", "excel_to_dashboard.py",
+                  "cpl_todos.js", "admin.js", "raci.js", "tmc_builder.js",
+                  "workplan_goals.js", "unified_courses.js", "credential_reference.js"]
+  .map((f) => fs.readFileSync(f, "utf8")).join("\n");
+check("⭐ no mustard/gold fill is paired with an ink token that flips",
+  !/background(-color)?:\s*var\(--(gold-accent|mustard-fill)[^)]*\)\s*;?\s*color:\s*var\(--(navy-primary|text-strong|mustard-text)/i
+    .test(surfaces));
+// --cobalt is the mirror case: #0047AB light (white ink right), #7DA1D4 dark
+// (white ink 2.65:1). --on-accent is exactly this token, and was already added
+// in S244 for two buttons; these are the rest of them.
+check("⭐ no literal white ink sits on a --cobalt fill",
+  !/background(-color)?:\s*var\(--cobalt[^)]*\)\s*;?\s*color:\s*(#fff(fff)?|white)\b/i
+    .test(surfaces));
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} checks passed`);

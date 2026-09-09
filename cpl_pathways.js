@@ -132,13 +132,13 @@
   // so Sam can flip the label live while presenting; the published default only
   // changes by editing the data file.
   var STAGES = [
-    { id: "discussion-draft", label: "Discussion Draft", glyph: "📝", cls: "draft",
+    { id: "discussion-draft", label: "Discussion Draft", cls: "draft",
       big: "DISCUSSION DRAFT",
       note: "A mock-up for feedback — not an official college publication. The CPL ✓ marks are live from the MAP platform; the pathway itself is a concept for discussion." },
-    { id: "active", label: "Active", glyph: "✓", cls: "active",
+    { id: "active", label: "Active", cls: "active",
       big: "ACTIVE PATHWAY",
       note: "This pathway is live — students are advised under it." },
-    { id: "tabled", label: "Tabled", glyph: "⏸", cls: "tabled",
+    { id: "tabled", label: "Tabled", cls: "tabled",
       big: "TABLED",
       note: "This pathway is parked — kept for reference, not currently moving." },
   ];
@@ -167,20 +167,19 @@
     ".cplpw-stagesel { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; }",
     ".cplpw-stagesel button { background: var(--surface-opaque); border:none; border-right:1px solid var(--border); padding:6px 13px; font-size:.78rem; font-weight:600; color: var(--text-body); cursor:pointer; font-family:inherit; }",
     ".cplpw-stagesel button:last-child { border-right:none; }",
-    ".cplpw-stagesel button.on.draft { background: var(--mustard-fill); color: var(--text-strong); }",
+    ".cplpw-stagesel button.on.draft { background: var(--mustard-fill); color: var(--on-mustard); }",
     ".cplpw-stagesel button.on.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
     ".cplpw-stagesel button.on.tabled { background: var(--surface-muted); color: var(--text-strong); }",
     ".cplpw-pdfbtn { margin-left:auto; background: var(--seal-blue, var(--navy-primary)); color: var(--surface-opaque); border:none; border-radius:8px; padding:7px 14px; font-weight:600; font-size:.8rem; cursor:pointer; font-family:inherit; }",
     ".cplpw-pdfbtn:hover { opacity:.92; }",
     /* The BIG status banner */
     ".cplpw-stagebanner { display:flex; align-items:center; gap:14px; border-radius:10px; padding:12px 18px; margin: 8px 0 12px; }",
-    ".cplpw-stagebanner .glyph { font-size:1.5rem; line-height:1; }",
     ".cplpw-stagebanner .big { font-size:1.18rem; font-weight:800; letter-spacing:.16em; }",
     ".cplpw-stagebanner .note { font-size:.8rem; margin-top:2px; opacity:.92; }",
-    ".cplpw-stagebanner.draft { background: var(--mustard-fill); color: var(--text-strong); }",
+    ".cplpw-stagebanner.draft { background: var(--mustard-fill); color: var(--on-mustard); }",
     ".cplpw-stagebanner.active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); }",
     ".cplpw-stagebanner.tabled { background: var(--surface-muted); color: var(--text-muted); border:1px solid var(--border-strong); }",
-    ".cplpw-chip.stage-draft { background: var(--mustard-fill); color: var(--text-strong); border-color: transparent; font-weight:700; }",
+    ".cplpw-chip.stage-draft { background: var(--mustard-fill); color: var(--on-mustard); border-color: transparent; font-weight:700; }",
     ".cplpw-chip.stage-active { background: var(--hunter, var(--green-progress)); color: var(--surface-opaque); border-color: transparent; font-weight:700; }",
     ".cplpw-chip.stage-tabled { background: var(--surface-muted); color: var(--text-muted); font-weight:700; }",
     ".cplpw-progrow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin: 14px 0 4px; }",
@@ -191,7 +190,7 @@
     ".cplpw-hero h2 { margin:2px 0 4px; color: var(--text-strong); font-size:1.5rem; line-height:1.2; }",
     ".cplpw-hero .meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin: 6px 0 2px; }",
     ".cplpw-chip { display:inline-block; border-radius:10px; font-size:.7rem; font-weight:600; padding:2px 8px; border:1px solid var(--border-strong); color: var(--text-body); background: var(--surface-subtle); }",
-    ".cplpw-chip.start { background: var(--mustard-fill); color: var(--text-strong); border-color: transparent; }",
+    ".cplpw-chip.start { background: var(--mustard-fill); color: var(--on-mustard); border-color: transparent; }",
     ".cplpw-hero .blurb { margin: 8px 0 0; color: var(--text-body); font-size:.9rem; max-width: 860px; }",
     ".cplpw-hero .facts { display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px; }",
     ".cplpw-fact { font-size:.76rem; color: var(--text-muted); }",
@@ -280,7 +279,7 @@
     ".cplpw-cohort .peer { font-size:.74rem; border:1px solid var(--border); border-radius:10px; padding:2px 8px; background: var(--surface-subtle); color: var(--text-body); }",
     ".cplpw-cohort .peer.home { background: var(--hunter,var(--green-progress)); color: var(--surface-opaque); border-color:transparent; font-weight:700; }",
     ".cplpw-cohort .peer.other-status { opacity:.72; }",
-    ".cplpw-frontier { background: var(--mustard-fill); color: var(--text-strong); border-radius:10px; padding:12px 16px; margin:4px 0 10px; font-size:.86rem; }",
+    ".cplpw-frontier { background: var(--mustard-fill); color: var(--on-mustard); border-radius:10px; padding:12px 16px; margin:4px 0 10px; font-size:.86rem; }",
     ".cplpw-frontier b { font-weight:800; }",
     ".cplpw-course .cred { flex:0 0 auto; font-size:.72rem; color: var(--text-muted); font-style:italic; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:40%; }",
     "@media (max-width: 720px) { .cplpw-course .code { flex-basis:74px; } .cplpw-hero h2 { font-size:1.2rem; } .cplpw-course .cred { display:none; } }",
@@ -892,7 +891,7 @@
       var b = document.createElement("button");
       b.type = "button";
       b.className = (s.id === stage) ? ("on " + s.cls) : "";
-      b.textContent = s.glyph + " " + s.label;
+      b.textContent = s.label;
       b.setAttribute("role", "radio");
       b.setAttribute("aria-checked", s.id === stage ? "true" : "false");
       b.title = s.note + " (Changes how this pathway is labeled in THIS browser; the published default is set in cpl_pathways_data.js.)";
@@ -914,7 +913,6 @@
 
     // The BIG status label
     var banner = el("div", "cplpw-stagebanner " + stagedef.cls);
-    banner.appendChild(el("span", "glyph", stagedef.glyph));
     banner.appendChild(el("div", null, [
       el("div", "big", stagedef.big),
       el("div", "note", stagedef.note),
@@ -926,7 +924,7 @@
     hero.appendChild(el("div", "college", prog.college || ""));
     hero.appendChild(el("h2", null, (prog.program || "") + (prog.degree ? " — " + prog.degree : "")));
     var meta = el("div", "meta");
-    meta.appendChild(el("span", "cplpw-chip stage-" + stagedef.cls, stagedef.glyph + " " + stagedef.label));
+    meta.appendChild(el("span", "cplpw-chip stage-" + stagedef.cls, stagedef.label));
     if (prog.start) meta.appendChild(el("span", "cplpw-chip start", "First cohort: " + prog.start));
     if (prog.status) meta.appendChild(el("span", "cplpw-chip", prog.status));
     if (prog.audience) meta.appendChild(el("span", "cplpw-chip", prog.audience));

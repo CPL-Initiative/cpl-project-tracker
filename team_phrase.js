@@ -313,7 +313,7 @@
     }));
     var alt = document.createElement('div');
     alt.style.cssText = 'font-size:.78rem;color:var(--text-muted,#6b7280);margin-top:.4rem;';
-    alt.textContent = 'The 🔒 button in the header does the same thing, from any tab.';
+    alt.textContent = 'The About menu in the header holds the same box, from any tab.';
     wrap.appendChild(alt);
     return wrap;
   }

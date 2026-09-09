@@ -759,7 +759,7 @@
 
     var html = '';
     html += '<div id="masterReportModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);overflow-y:auto;padding:2rem;">';
-    html += '<div style="max-width:700px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
+    html += '<div style="max-width:700px;margin:0 auto;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
     // Header
     html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
@@ -807,7 +807,7 @@
     html += '<a href="reports/CPL_Master_Report.docx" download style="color:var(--accent-link);text-decoration:underline;">Download today\'s pre-built full copy</a>';
     html += '</div>';
     html += '<div style="display:flex;gap:0.5rem;">';
-    html += '<button id="masterReportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:#fff;border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Master Report</button>';
+    html += '<button id="masterReportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:var(--on-accent);border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Master Report</button>';
     html += '</div></div>';
 
     html += '</div></div>';

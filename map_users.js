@@ -141,7 +141,7 @@
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
-      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
+      ".mapu-draftchip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".mapu-nudged { display:block; font-size:.68rem; color: var(--text-muted); margin-top:3px; }",
       // recipient picker (the confirm/uncheck dialog before the mailto opens)
       ".mapu-picker-ov { position:fixed; inset:0; background:rgba(15,23,42,.45); display:flex; align-items:center; justify-content:center; z-index:9999; padding:16px; }",
@@ -816,7 +816,7 @@
         + "</div>";
     });
     if (l.source) {
-      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC ↗</a></div>';
+      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC</a></div>';
     }
     return h;
   }
@@ -1427,7 +1427,7 @@
       + "</select>"
       + '<span class="mapu-auth">' + (signedIn()
         ? "Signed in <b>✓</b> — roster visible"
-        : "Unlock with the team phrase (\u{1F512} in the header) to see names &amp; emails") + "</span>"
+        : "Unlock with the team phrase (the About menu in the header) to see names &amp; emails") + "</span>"
       + '<span class="mapu-count">' + rows.length + " college" + (rows.length === 1 ? "" : "s") + "</span>"
       + "</div>";
 
@@ -1484,7 +1484,7 @@
   function gapsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact worklist ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact worklist…</p>';
     var rows = gapRows();
@@ -1530,7 +1530,7 @@
       h += "<tr><td>" + esc(g.college)
         + (g.landing_page_url
             ? ' <a class="mapu-lp" href="' + esc(g.landing_page_url) + '" target="_blank" rel="noopener"'
-              + ' title="Their MAP CPL landing page — the page a student uses">↗</a>'
+              + ' title="Their MAP CPL landing page — the page a student uses">Open</a>'
             : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
         + "</td>"
         + "<td>" + proposalCell(g) + "</td>"
@@ -1632,7 +1632,7 @@
   function contactsHtml() {
     if (state.gapsError) {
       return '<div class="mapu-empty">Could not load the contact directory ('
-        + esc(state.gapsError) + "). Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + esc(state.gapsError) + "). Unlock with the team phrase (the About menu in the header) and try again.</div>";
     }
     if (!state.gaps) return '<p class="mapu-gate">Loading the contact directory…</p>';
     var rows = contactRows();
@@ -1703,7 +1703,7 @@
           couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>") + "<br>" + srcLink;
         } else {
           couns = '<span class="mapu-st mapu-st-inactive">none published</span>'
-            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked ↗</a>'
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked</a>'
             + (f.note ? '<div class="mapu-prop-none">' + esc(f.note) + "</div>" : "");
         }
       }
@@ -1801,7 +1801,7 @@
     if (!rows || !rows.length) {
       return '<div class="mapu-gate">No roster rows returned. '
         + (signedIn() ? "This college has no users on record." :
-          "Unlock with the team phrase (\u{1F512} in the header) to view names &amp; emails.") + "</div>";
+          "Unlock with the team phrase (the About menu in the header) to view names &amp; emails.") + "</div>";
     }
     var h = "<table><thead><tr><th>Name</th><th>Email</th><th>Role</th>"
       + "<th>Status</th><th>Disciplines</th><th>Last updated</th><th>Username</th>"
@@ -1823,7 +1823,7 @@
       cell.innerHTML = rosterHtml(rows);
     }).catch(function () {
       cell.innerHTML = '<div class="mapu-gate">Could not load the roster. '
-        + "Unlock with the team phrase (\u{1F512} in the header) and try again.</div>";
+        + "Unlock with the team phrase (the About menu in the header) and try again.</div>";
     });
   }
 

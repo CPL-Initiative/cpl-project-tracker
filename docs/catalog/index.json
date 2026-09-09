@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 412,
+   "count": 415,
    "docs": [
     {
      "created": "2026-08-14",
@@ -632,6 +632,26 @@
      "updated": "2026-08-26"
     },
     {
+     "created": "2026-09-09",
+     "governs": [
+      "kb/_docs_audit.py",
+      "kb/_glyph_sweep.py",
+      "scripts/a11y_triage.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "tooling",
+      "lint",
+      "testing",
+      "quality"
+     ],
+     "title": "A check that cannot fail reads exactly like a clean result",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-15",
      "governs": [
       "tests/lib/check_ledger.js",
@@ -1169,6 +1189,26 @@
      "title": "A figure is only wrong relative to the payload it names",
      "type": "methodology",
      "updated": "2026-09-06"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "CPL_Dashboard.html",
+      "tests/cpl_theme.test.js",
+      "docs/reference/lanes/cobi-dark-mode.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "dark-mode",
+      "ui",
+      "tokens",
+      "a11y"
+     ],
+     "title": "A fill that does not flip needs ink that does not flip either",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-08-18",
@@ -4252,6 +4292,26 @@
      "title": "Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "scripts/a11y.js",
+      "scripts/a11y_triage.js",
+      ".claude/commands/a11y-pass.md"
+     ],
+     "path": "docs/kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "a11y",
+      "tooling",
+      "dark-mode",
+      "quality"
+     ],
+     "title": "Group an audit by the decision, not by the symptom",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-09-01",
@@ -12501,8 +12561,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 219,
+   "count": 220,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 246,
+     "path": "docs/session_246_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "a triage keyed on the wrong thing, and three checks that could not fail",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16230,5 +16303,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 836
+ "total": 840
 }

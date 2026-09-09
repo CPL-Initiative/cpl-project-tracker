@@ -10,64 +10,64 @@
     "other": 150000
   },
   "summary": {
-    "files": 849,
-    "bytes": 9066893,
-    "over_budget": 5,
-    "handoff_max": 245,
+    "files": 853,
+    "bytes": 9100258,
+    "over_budget": 4,
+    "handoff_max": 246,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60278,
+    "always_loaded_bytes": 59882,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60278,
-        "over": 1
+        "bytes": 59882,
+        "over": 0
       },
       "other": {
         "files": 109,
-        "bytes": 2798560,
+        "bytes": 2801300,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 33055,
+        "bytes": 35669,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 1992987,
+        "bytes": 1999987,
         "over": 1
       },
       "kb_note": {
-        "files": 414,
-        "bytes": 2132097,
+        "files": 417,
+        "bytes": 2142810,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180657,
+        "bytes": 180631,
         "over": 1
       },
       "handoff": {
-        "files": 219,
-        "bytes": 1869259,
+        "files": 220,
+        "bytes": 1879979,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
-      "house_voice": 21,
-      "vault_heavy_path": 49
+      "house_voice": 23,
+      "american_spelling": 1,
+      "oversized_doc": 4,
+      "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2922,
-      "bytes": 1416646469,
-      "heavy_bytes": 678780414,
-      "heavy_share": 0.479,
+      "files": 2766,
+      "bytes": 1351595909,
+      "heavy_bytes": 613654685,
+      "heavy_share": 0.454,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
-        "cpl-project-tracker/prototype/ccr_desc",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/tmc",
@@ -83,7 +83,6 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
-        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -119,19 +118,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60278,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 278,
-        "ratio": 1.0
-      },
-      "message": "60,278 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
@@ -184,13 +170,32 @@
       "rule": "house_voice",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 10,
         "terms": {
-          "leverage": 3
+          "leverage": 10
         }
       },
-      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "message": "10 business-register terms — leverage x10 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/coursecontrolnumber_remint.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — modelling→modeling, labelled→labeled",
+      "path": "docs/cpl_funding_handoff.md"
     },
     {
       "rule": "oversized_doc",
@@ -339,6 +344,18 @@
       "path": "docs/public_private_repo_split_scope.md"
     },
     {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "terms": {
+          "leverage": 1
+        }
+      },
+      "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/kb_build_status.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
@@ -352,28 +369,40 @@
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
+      "rule": "house_voice",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "terms": {
+          "leverage": 4
+        }
+      },
+      "message": "4 business-register terms — leverage x4 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/reference/pipeline_reference.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 604968,
+        "bytes": 607001,
         "limit": 150000,
         "lane": "other",
-        "over_by": 454968,
-        "ratio": 4.03
+        "over_by": 457001,
+        "ratio": 4.05
       },
-      "message": "604,968 B is 4.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "607,001 B is 4.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 7,
         "terms": {
-          "leverage": 3
+          "leverage": 7
         }
       },
-      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "message": "7 business-register terms — leverage x7 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -445,16 +474,6 @@
         "kind": "dir"
       },
       "message": "directory totals 79,676,551 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/ccr_desc",
-      "detail": {
-        "bytes": 52695802,
-        "kind": "dir"
-      },
-      "message": "directory totals 52,695,802 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -605,16 +624,6 @@
         "kind": "file"
       },
       "message": "14,342,484 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype/ccr_atlas_v1.built.html",
-      "detail": {
-        "bytes": 12429927,
-        "kind": "file"
-      },
-      "message": "12,429,927 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -292,6 +292,53 @@ always-loaded file is fine, and only the LINK between them is gone.
   the check against the REAL `CLAUDE.md`, deleting each live bullet in turn and
   asserting exactly one topic is reported.
 
+⚠️ **THE MASK ITSELF WENT BLIND, 2026-09-09 (Session 245).** `prose_only()` —
+which every prose rule (`american_spelling`, `house_voice`,
+`self_corrected_word_pair`) masks through — built its mask by looping patterns
+and calling `re.finditer(pat, text, re.S | re.M)`: **DOTALL for every pattern**,
+including the line-anchored indented-code rule `^\s{4,}\S.*$`. Under DOTALL that
+`.*` runs past the newline and masks **to end of file**, so ONE four-space block
+exempted the whole remainder of a doc. Measured on
+`docs/reference/lanes/cobi-dark-mode.md`: last unmasked character **byte 1,996 of
+11,749**, and twelve British spellings below it went unreported. The loop was
+already computing a per-pattern `flags` on the line above and ignoring it; now
+only the fenced-block rule spans lines. Corpus went `american_spelling` 0 → 1,
+`house_voice` 21 → 23. ⚠️ **Found only by writing the error the rule exists to
+catch** — the word table's FIRST pair is `("colour", "color")` and it said
+nothing. This is the second unfailable check this file has shipped (2026-08-21:
+a rule reading `entry["text"]` when no such key existed). **A rule sitting at
+zero is unverified, not passing** — see
+[`methodology-a-check-that-cannot-fail-reads-as-a-clean-result`](../docs/kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md).
+
+**Glyph sweep (2026-09-09, `kb/_glyph_sweep.py`)** — the plain-words rule, swept.
+Reports every RENDERED glyph in three classes: **control** (inside a button /
+link / summary label or an `aria-label`; `--apply` strips a leading mark and its
+space, the only mechanical class), **status** and **decoration** (reported only —
+removing one needs a reworded sentence or a judgment about a legend). A comment
+line is never a finding: this repo's ⚠️/⭐ comment style renders to nobody.
+`--check` exits 1 on any control-class glyph and is deliberately NOT yet a CI
+gate — red on day one trains everyone to ignore it.
+
+Three corrections it needed, all the same shape as the mask bug above:
+
+- ⚠️ **A count that mixes OWNERS overstates the work.** `--apply` already refused
+  any site inside a section `excel_to_dashboard.py` rewrites (Rule 1) — but the
+  REPORT counted them, so after the generator was fixed the control class read
+  **401 when 348 were stale HTML the next cron clears**. Findings carry
+  `generator_owned` now, the report counts the two apart, and `--check` gates
+  only on what a session can actually fix.
+- ⚠️ **A generated data payload is not a surface.** `tmc_college_courses.js` and
+  `unified_courses_suggestions.js` are single lines of JSON where any `title` key
+  trips `CONTROL_HINT`; eight arrows **inside course titles** were being reported
+  as controls to fix, and rewriting them corrupts data. `classify()` treats a
+  large data assignment as decoration.
+- ⚠️ **A JS unicode escape renders as an emoji and reads as ASCII.**
+  `"\u{1F512}"` is a padlock on screen and seven plain characters to a scanner,
+  so the sweep saw **none of the thirteen** stale lock references telling readers
+  to click a header button moved into the About pane months earlier — found by
+  chasing a CONTRAST finding, not a glyph one. It decodes `\u{...}` and surrogate
+  pairs now, which is why the corpus total ROSE: it sees more than it did.
+
 ⚠️ **`stacked_roadmap_cell` guards TWO surfaces since 2026-08-28** — §11's
 pointer table in `CLAUDE.md` *and* every lane file under
 `docs/reference/lanes/`, which is where the detail moved (Session 206, #1381).

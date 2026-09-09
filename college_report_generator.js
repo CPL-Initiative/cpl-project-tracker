@@ -118,7 +118,7 @@
 
         var html = '';
         html += '<div id="collegeReportModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);overflow-y:auto;padding:2rem;">';
-        html += '<div style="max-width:760px;margin:0 auto;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
+        html += '<div style="max-width:760px;margin:0 auto;background:var(--surface-opaque);border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);overflow:hidden;font-family:\'Source Sans 3\',Arial,sans-serif;">';
 
         // Header
         html += '<div style="background:linear-gradient(135deg,var(--navy-primary) 0%,var(--navy-secondary) 100%);padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;">';
@@ -155,7 +155,7 @@
             html += '<div style="margin-bottom:0.8rem;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden;">';
             html += '<div style="padding:0.4rem 0.8rem;background:#f0f4f8;font-weight:700;color:var(--text-strong);font-size:0.85rem;display:flex;justify-content:space-between;align-items:center;">';
             html += '<span>' + tier + ' <span style="color:#666;font-weight:400;">(' + list.length + ')</span></span>';
-            html += '<button type="button" class="crpt-tier-toggle" data-tier="' + tier + '" style="font-size:0.7rem;padding:2px 8px;border:1px solid #aaa;border-radius:3px;background:#fff;cursor:pointer;font-family:inherit;">Toggle</button>';
+            html += '<button type="button" class="crpt-tier-toggle" data-tier="' + tier + '" style="font-size:0.7rem;padding:2px 8px;border:1px solid #aaa;border-radius:3px;background:var(--surface-opaque);cursor:pointer;font-family:inherit;">Toggle</button>';
             html += '</div>';
             html += '<div style="max-height:160px;overflow-y:auto;padding:0.4rem 0.8rem;">';
             list.forEach(function (r) {

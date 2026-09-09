@@ -169,24 +169,28 @@ named here because a store nobody names is a store nobody finds —
    accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
    flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
-   newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
-   original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
-   an exact counter; use proxies" — a condition no session could act on, and
-   whose premise was FALSE besides (Rule 9a: the counter is on disk).** The
-   heuristic still applies between runs of the lint — long conversations, many
-   tool calls, multi-phase work.
+   ⚠️ **THE TRIGGER WAS UNREACHABLE WITHOUT A CHECKPOINT — Sam, 2026-09-09:
+   *"you have not prompted me for a checkpoint per our rules… the rule has been
+   demoted or is now buried."*** `checkpoint_overdue` is computed ONLY by the
+   lint, and the only instruction to run the lint is step 0 of `/checkpoint`, so
+   the signal that you are overdue fired only once you were already
+   checkpointing. It is two git commands — run them at session start, after a
+   long stretch, and before any sign-off, and **OFFER `/checkpoint` above 6:**
+
+       H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
+       git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
+
+   ⚠️ Rule 9's ORIGINAL trigger was *"roughly every ~100K tokens… no exact
+   counter; use proxies"* — unactionable, and false besides (9a: it is on disk).
+   **Twice now the trigger has been the broken part, not the rule.**
 
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
-   a checkpoint under pressure on 2026-08-29 I named 2 of its 13 artifacts and
-   hand-waved the rest, and the answer looked competent. **The artifact list is
-   the checkpoint command, not this file** — all 13, none optional, all syncing
-   to Sam's Obsidian:
+   one under pressure on 2026-08-29 I named 2 of its 13 artifacts and hand-waved
+   the rest, and it looked competent. **The artifact list is the checkpoint
+   command, not this file** — all 13, none optional:
    [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
-   authority. ⚠️ This file carried a near-complete SECOND copy of it until
-   2026-08-29 (34 of the same artifact names), and the two had already drifted:
-   the copy here still said KB notes land `kb-status: candidate`, a state
-   retired in Session 11.
+   authority. ⚠️ This file carried a near-complete SECOND copy until 2026-08-29,
+   and the two had already drifted.
 
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
@@ -299,8 +303,8 @@ named here because a store nobody names is a store nobody finds —
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
 - **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
-  Triage first: **findings are not problems** — 511 were ~227 occurrences of six
-  shared-chrome selectors, so top-to-bottom fixes the least important thing first.
+  Triage first: **findings are not problems** — and group by the COLOR PAIR, not
+  the selector, or the biggest fault sorts to the bottom as many small ones.
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
   prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
   window** — the canvas of identities you pan, search and drag on, with its one row of
@@ -467,10 +471,8 @@ first day.** Do the remembering for them.
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
   scripts, workflows and public surfaces — derived from the code
   (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
-- **Offer the checkpoint.** Near the end of substantial work, or when a session
-  is winding down, proactively offer `/checkpoint` rather than waiting to be
-  asked. What isn't written down dies with the session, and a newer user has no
-  way to know that.
+- **Offer the checkpoint** — measurably, on Rule 9's commits-since-handoff count,
+  never on a feeling that the session is winding down.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
@@ -614,12 +616,16 @@ and one was carried out of this file entirely by a relocation.
     That rule says a state already worth showing must not be shown by color
     ALONE; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED**
-    (Sam, 2026-09-09: *"remove all emoji glyphs and if any are crucial replace
-    with a muted glyph"*). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six
-    rendered sites deleted, because *if any are crucial* is a CONDITION and none
-    was — each already had its word beside it. **Do not restore a mark here.**
-    Sweep + backlog: [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED** (Sam,
+    2026-09-09). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six rendered sites
+    deleted, because *if any are crucial* is a CONDITION and none was — each
+    already had its word beside it. **Do not restore a mark here.** Sweep:
+    [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
+    for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
+    carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
+    emoji. Clearing one repeats the `⇄` error: a mark Sam chose in July, removed
+    on a plain-words reading, caught only by its own test.
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -723,39 +729,27 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 
 ### Roadmap
 
-> **This table is a POINTER INDEX, not the state itself (2026-08-28, Session 206).**
+> **This table is a POINTER INDEX, not the state itself (2026-08-28, S206).**
 > Each lane's detail lives in [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/);
-> the row here carries only what a session **cannot know to ask for** — that the
-> lane exists, what it is, whether it is live, and whether anything is waiting.
-> The detail is PULL: you open the lane file when you work that lane.
+> the row carries only what a session **cannot know to ask for** — that the lane
+> exists, what it is, whether it is live, whether anything waits.
 >
 > **At checkpoint, update the LANE FILE, not the row.** Touch the row only when
-> the lane's *state* changes (live ⇄ in progress, open work appearing or
-> clearing). ⚠️ **Do not re-inflate a cell** — a row that grows back into a
-> paragraph puts this file back over budget, which is the whole reason the
-> §11 table was 90 KB of a 151 KB always-loaded file.
+> the lane's *state* changes. ⚠️ **Do not re-inflate a cell** — that is how §11
+> became 90 KB of a 151 KB always-loaded file.
 >
-> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts
-> what it says, **delete the superseded text** — do not prefix it with
-> `*Prior:*` and leave it below. History belongs in the workstream's lessons
-> doc, which Rule 9 already says to write **once**. The cost of stacking is not
-> bloat but CONTRADICTION, and **no reading order fixes a contradiction inside
-> one document.** `stacked_roadmap_cell` guards **both** surfaces — this table
-> and every lane file — mechanically, because Sam does not review checkpoint
-> output by design.
+> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts it,
+> **delete the superseded text**; never prefix `*Prior:*` and leave it below.
+> History goes to the lessons doc, once. The cost of stacking is not bloat but
+> CONTRADICTION, and **no reading order fixes a contradiction inside one
+> document.** `stacked_roadmap_cell` guards both surfaces, mechanically, because
+> Sam does not review checkpoint output by design.
 >
-> **Retiring a lane** — no NEXT, no NEEDS SAM, no BLOCKED in its own text; it
-> moves verbatim to `docs/reference/finished_workstreams.md` and its row leaves.
-> [How](docs/reference/lanes/README.md).
->
-> ⚠️ **Do not grep for this; the lint already did.** `lane_retirement_signal`
-> in `kb/_docs_audit.py` runs the test over every lane file against a vocabulary
-> measured from the live corpus, and names any lane whose own text claims no
-> open work — then READ the ones it names; it is fail-safe and never says
-> "retire this". **Today it names none: all 30 have open work** (S208, confirmed
-> by reading all 30). **Hand-grepping it has been wrong EVERY time** — four
-> occasions across S206/S208, each a confident, plausible, wrong list —
-> [why](docs/reference/lanes/README.md).
+> ⚠️ **Retiring a lane: do not grep for it — `lane_retirement_signal` already
+> ran the test** over every lane file and names any whose own text claims no open
+> work; READ those. It is fail-safe and never says "retire this".
+> **Hand-grepping has been wrong EVERY time** (four occasions, S206/S208).
+> Mechanics + why: [`lanes/README.md`](docs/reference/lanes/README.md).
 
 | Phase | What | Status |
 |---|---|---|

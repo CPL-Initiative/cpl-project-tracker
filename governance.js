@@ -103,7 +103,7 @@
       ".gov-noown { color: var(--danger, #b3261e); font-weight:600; }",
       ".gov-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".gov-chip.auth { background: var(--hunter, #2c601a); color:#fff; }",
+      ".gov-chip.auth { background: var(--hunter, #2c601a); color:var(--on-accent); }",
       ".gov-chip.corrob { background: var(--surface-muted); color: var(--text-body); }",
       ".gov-chip.advis { background: var(--surface-subtle); color: var(--text-muted); }",
       ".gov-live { font-size:.72rem; color: var(--text-muted); }",
@@ -394,7 +394,7 @@
         // worse than the copy this replaced, which at least named a tab.
         var p = document.createElement("p");
         p.setAttribute("data-tp-locked", "");
-        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the \u{1F512} button in the header.";
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the About menu in the header.";
         gate.appendChild(p);
       }
       return;
@@ -586,7 +586,7 @@
       render(root);
       saving.catch(function () {
         alert("Could not save that owner. Unlock with the team phrase "
-          + "(the \u{1F512} button in the header) and try again.");
+          + "(the About menu in the header) and try again.");
         loadOwners().then(function () { render(root); });
       });
     }

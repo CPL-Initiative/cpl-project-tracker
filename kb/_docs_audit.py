@@ -1269,13 +1269,25 @@ def prose_only(text):
         for i in range(m.start(g), m.end(g)):
             out[i] = "\0"
 
-    for pat, grp in ((r"```.*?```|~~~.*?~~~", 0), (r"`[^`\n]*`", 0),
-                     (r"\[\[[^\]]*\]\]", 0), (r"\]\(([^)]*)\)", 1),
-                     (r"https?://\S+", 0), (r"^\s{4,}\S.*$", 0),
-                     (r"[\w./-]+\.md\b", 0),
-                     (r"\"[^\"\n]*\"|\u201c[^\u201d\n]*\u201d", 0)):
-        flags = re.S | re.M if grp == 0 else 0
-        for m in re.finditer(pat, text, re.S | re.M):
+    # ⚠ FLAGS ARE PER-PATTERN, AND re.S ON THE INDENTED-CODE RULE MASKED THE REST
+    # OF THE FILE. `^\s{4,}\S.*$` under DOTALL lets `.*` run past the newline and
+    # swallow everything to EOF, so one indented block silently exempted the whole
+    # remainder of a doc from american_spelling, house_voice and
+    # self_corrected_word_pair. Measured 2026-09-09 on the cobi-dark-mode lane:
+    # the last unmasked character was at byte 1,996 of 11,749 — the four-space
+    # `<html data-theme=...>` contract block on line 44 — and "colour" written
+    # below it went unreported. Only the fenced-block pattern spans lines; every
+    # other one is line-local, and the loop was already computing a per-pattern
+    # `flags` it then ignored on the very next line.
+    for pat, grp, flags in ((r"```.*?```|~~~.*?~~~", 0, re.S | re.M),
+                            (r"`[^`\n]*`", 0, re.M),
+                            (r"\[\[[^\]]*\]\]", 0, re.M),
+                            (r"\]\(([^)]*)\)", 1, re.M),
+                            (r"https?://\S+", 0, re.M),
+                            (r"^\s{4,}\S.*$", 0, re.M),
+                            (r"[\w./-]+\.md\b", 0, re.M),
+                            (r"\"[^\"\n]*\"|\u201c[^\u201d\n]*\u201d", 0, re.M)):
+        for m in re.finditer(pat, text, flags):
             blank(m, grp)
     return "".join(out)
 

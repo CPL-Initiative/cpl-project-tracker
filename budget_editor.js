@@ -147,7 +147,7 @@
       widget.appendChild(el("span", { "style": "color:#666;" },
         ["Click any dollar figure to edit • Enter saves • Esc cancels"]));
       var btnOut = el("button", { "class": "budget-btn budget-btn-out" },
-        [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
+        [state.sess.teamPass ? "Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () { signOut(); onChange(); });
       widget.appendChild(btnOut);
     } else {

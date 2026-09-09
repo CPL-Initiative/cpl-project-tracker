@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-412 document(s).
+415 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -47,6 +47,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A capped retrieval must rank by relevance — popularity is only a tiebreaker](../kb-notes/methodology-capped-retrieval-ranks-by-relevance.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A change inherits every reference into it, and the same-cycle reference is the one you miss](../kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A check that cannot fail reads exactly like a clean result](../kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that never registers can never fail](../kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) | methodology | published | 2026-08-15 | 2026-08-21 |
 | [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
@@ -74,6 +75,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
 | [A filter, the column that justifies it, and the export must share one source](../kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A fix can be right about the complaint and wrong about the axis](../kb-notes/methodology-a-fix-can-be-right-about-the-complaint-and-wrong-about-the-axis.md) | methodology | published | 2026-09-06 | 2026-09-06 |
@@ -230,6 +232,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |
+| [Group an audit by the decision, not by the symptom](../kb-notes/methodology-group-an-audit-by-the-decision-not-the-symptom.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Grouping a flat list into containers silently breaks every querySelector that assumed one](../kb-notes/methodology-grouping-a-flat-list-breaks-single-container-wiring.md) | methodology | published | 2026-09-01 | 2026-09-01 |
 | [Hiding a control also hides the way to get access](../kb-notes/methodology-hiding-a-control-also-hides-the-way-in.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [In a parent/child ledger, totals sum PARENT rows only](../kb-notes/methodology-parent-child-ledger-totals.md) | methodology | published | 2026-07-30 |  |

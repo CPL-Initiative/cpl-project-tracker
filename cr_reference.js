@@ -128,7 +128,7 @@
       ".crr-badges{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding-top:1px}",
       ".crr-b{border-radius:5px;padding:2px 8px;font-size:11px;font-weight:600;white-space:nowrap;border:1px solid transparent}",
       ".crr-b.ok{background:rgba(31,107,61,.13);color:var(--hunter);border-color:rgba(31,107,61,.3)}",
-      ".crr-b.warn{background:var(--mustard-fill);color:var(--mustard-text);border-color:rgba(160,120,10,.32)}",
+      ".crr-b.warn{background:var(--mustard-fill);color:var(--on-mustard);border-color:rgba(160,120,10,.32)}",
       ".crr-b.muted{background:var(--surface-muted);color:var(--text-muted);border-color:var(--border)}",
       ".crr-b.held{background:rgba(155,35,53,.11);color:var(--crimson);border-color:rgba(155,35,53,.3)}",
       ".crr-b.set{background:rgba(43,74,138,.12);color:var(--cobalt);border-color:rgba(43,74,138,.3)}",
