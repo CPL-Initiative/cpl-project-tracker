@@ -2,20 +2,8 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-09",
  "_session": "S245 (SkyPlain)",
- "_status": "Dark mode is now correct on most of what a reader actually looks at: the contrast faults the sweep can see fell from 184 to 120, and the light theme did not move once across eight measured passes. The big win was not a color but a counting fix — the report was grouping faults by the HTML element wearing them instead of by the color decision behind them, so the single largest problem (one wrong color, 25 places, 11 tabs) sorted to the bottom of the list looking like twelve small ones. Three separate checks turned out to be incapable of ever reporting a problem, which reads exactly like a clean result: the docs spell-checker was silently switched off below the first indented block in any file, the glyph counter was counting 348 findings that belong to the daily rebuild rather than to us, and it could not see emoji written in escaped form at all — which is how thirteen places telling people to click a padlock button that moved months ago went unnoticed. Those are fixed. What is left for Sam is a judgment call, not a sweep: 26 marks whose removal is a design decision rather than a cleanup, and the banner row, which is not broken and just needs setting.",
+ "_status": "Dark mode is now correct on most of what a reader actually looks at: the contrast faults the sweep can see fell from 184 to 120, and the light theme did not move once across eight measured passes. The big win was not a color but a counting fix — the report was grouping faults by the HTML element wearing them instead of by the color decision behind them, so the single largest problem (one wrong color, 25 places, 11 tabs) sorted to the bottom looking like twelve small ones. Three separate checks turned out to be incapable of ever reporting a problem, which reads exactly like a clean result: the docs spell-checker was silently switched off below the first indented block in any file, the glyph counter was counting 348 findings that belong to the daily rebuild rather than to us, and it could not see emoji written in escaped form at all — which is how thirteen places telling people to click a padlock button that moved months ago went unnoticed. All fixed. Sam then settled the two open questions: the 26 remaining marks stay as they are, and eight hours is long enough for the session banner. Nothing on this list needs him.",
  "items": [
-  {
-   "id": "s245-sam-remaining-glyphs",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "Twenty-six glyphs are left and every one is a judgment call rather than a cleanup, so they are yours. The ones that matter: the star on MAP Star Colleges and Veteran Star, where the mark is arguably the name of the designation; the X on close buttons and the pencil on edit; the no-entry mark on blocked gates and the warning triangle on flagged rows. Your rule says a crucial mark stays as a muted CO-blue one — tell me which of these are crucial and I will do the rest. I ask because I swept one of yours this run (the two-way arrow on the crosswalk) and the tests caught it: your own note from July was sitting right there in the code."
-  },
-  {
-   "id": "s245-sam-banner-row",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "The session banner is not broken and never was. The row was switched on but its four-hour window had closed the day before, still pointing at an older session, so the page correctly showed nothing. Setting the session to public does not change this — that decides whether a teammate can OPEN the link, never whether the banner appears. To show it: Admin, Live-session banner, paste the session address, Show the banner. One thing worth deciding: the longest window on offer is eight hours, so a longer working session outlives its own banner with no warning. Say the word and I will add a longer option."
-  },
   {
    "id": "s245-fable-light-fills",
    "for": "Fable",

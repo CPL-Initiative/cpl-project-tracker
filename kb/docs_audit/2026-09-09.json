@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 853,
-    "bytes": 9099858,
+    "bytes": 9100258,
     "over_budget": 4,
     "handoff_max": 246,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59772,
+    "always_loaded_bytes": 59882,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59772,
+        "bytes": 59882,
         "over": 0
       },
       "other": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180655,
+        "bytes": 180631,
         "over": 1
       },
       "handoff": {
         "files": 220,
-        "bytes": 1879665,
+        "bytes": 1879979,
         "over": 0
       }
     },
@@ -63,7 +63,7 @@
     },
     "vault": {
       "files": 2766,
-      "bytes": 1351596984,
+      "bytes": 1351595909,
       "heavy_bytes": 613654685,
       "heavy_share": 0.454,
       "ignore_filters": [

@@ -107,11 +107,14 @@ every edit**, including two findings of its own (a `--text-faint` site and
 
 ## YOUR PRIORITY
 
-1. **NEEDS SAM — the 26 remaining glyphs are judgment, not mechanics.** The ⭐/★
-   **MAP Star** and **Veteran Star** designations (12 sites, where the mark
-   arguably IS the name), `✕` close, `✎` edit, `⛔` gates, `⚠` flagged rows. His
-   rule says a crucial mark becomes a muted CO-blue one; which are crucial is his
-   call. **Do not sweep these** — item 5 above is what happens.
+1. ✅ **RULED — THE 26 REMAINING GLYPHS STAY. Sam, 2026-09-09: *"Keep all 26
+   glyphs as is for now."*** The ⭐/★ **MAP Star** and **Veteran Star**
+   designations (12 sites), `✕` close, `✎` edit, `⛔` gates, `⚠` flagged rows,
+   the copy control, and the arrows carrying sequence meaning. ⚠️ **DO NOT SWEEP
+   THESE.** His *"remove all emoji glyphs"* is satisfied — what is left is
+   typographic marks and designations, not emoji — and item 5 above is what
+   happens when a session decides otherwise on its own. The glyph lane's
+   mechanical work is DONE at 26; reopen it only if he says so.
 2. **The dark remainder, through the triage tool.** `npm run a11y cobi-dark >
    /tmp/d.txt && node scripts/a11y_triage.js /tmp/d.txt`. Top causes are all
    light fills that are not white: `#FDF8EC` under the signed-out gate (6), a
@@ -138,8 +141,10 @@ governs whether a teammate can OPEN the link, never whether the bar RENDERS** �
 that is the natural thing to blame and it is wrong.
 
 To show it: **Admin → Live-session banner**, paste the session URL, *Show*.
-⚠️ **The longest window on offer is 8 hours**, so a session longer than that
-outlives its own banner silently. Sam has not ruled on extending it.
+✅ **The 8-hour maximum is RULED SUFFICIENT** (Sam, 2026-09-09: *"8 hours is
+enough."*). A longer session outlives its own banner, and that is deliberate: a
+banner pointing at a dead session is worse than none. **Do not add a longer
+option.**
 
 Fixed alongside: the expiry read `getTime() <= Date.now()`, and `NaN <= anything`
 is **false**, so a timestamp the browser cannot parse skipped the check entirely

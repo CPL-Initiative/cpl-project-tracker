@@ -185,15 +185,12 @@ named here because a store nobody names is a store nobody finds —
    **Twice now the trigger has been the broken part, not the rule.**
 
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
-   a checkpoint under pressure on 2026-08-29 I named 2 of its 13 artifacts and
-   hand-waved the rest, and the answer looked competent. **The artifact list is
-   the checkpoint command, not this file** — all 13, none optional, all syncing
-   to Sam's Obsidian:
+   one under pressure on 2026-08-29 I named 2 of its 13 artifacts and hand-waved
+   the rest, and it looked competent. **The artifact list is the checkpoint
+   command, not this file** — all 13, none optional:
    [`.claude/commands/checkpoint.md`](.claude/commands/checkpoint.md) is the
-   authority. ⚠️ This file carried a near-complete SECOND copy of it until
-   2026-08-29 (34 of the same artifact names), and the two had already drifted:
-   the copy here still said KB notes land `kb-status: candidate`, a state
-   retired in Session 11.
+   authority. ⚠️ This file carried a near-complete SECOND copy until 2026-08-29,
+   and the two had already drifted.
 
    ⚠️ **THE USUAL CHECKPOINT EDIT is the LANE FILE, not the §11 row.** §11's
    table is a POINTER INDEX; each lane's state lives in
@@ -306,8 +303,8 @@ named here because a store nobody names is a store nobody finds —
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
 - **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
-  Triage first: **findings are not problems** — 511 were ~227 occurrences of six
-  shared-chrome selectors, so top-to-bottom fixes the least important thing first.
+  Triage first: **findings are not problems** — and group by the COLOR PAIR, not
+  the selector, or the biggest fault sorts to the bottom as many small ones.
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
   prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
   window** — the canvas of identities you pan, search and drag on, with its one row of
@@ -619,12 +616,16 @@ and one was carried out of this file entirely by a relocation.
     That rule says a state already worth showing must not be shown by color
     ALONE; this one says most states are not worth showing. Satisfy the first
     with a **word** wherever you can, and a mark only when the word will not fit.
-  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED**
-    (Sam, 2026-09-09: *"remove all emoji glyphs and if any are crucial replace
-    with a muted glyph"*). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six
-    rendered sites deleted, because *if any are crucial* is a CONDITION and none
-    was — each already had its word beside it. **Do not restore a mark here.**
-    Sweep + backlog: [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ⚠️ **THE THREE APPROVED EXCEPTIONS ARE GONE — REMOVED, NOT RECOLORED** (Sam,
+    2026-09-09). 📋 To-Do · 🧭 guidance · ⚖️ Governance: all six rendered sites
+    deleted, because *if any are crucial* is a CONDITION and none was — each
+    already had its word beside it. **Do not restore a mark here.** Sweep:
+    [`/a11y-pass`](.claude/commands/a11y-pass.md).
+  - ✅ **THE SWEEP IS CLOSED AT 26 (Sam, 2026-09-09: *"Keep all 26 glyphs as is
+    for now."*)** — Star designations, `✕`, `✎`, `⛔`, `⚠`, copy, and arrows that
+    carry sequence. ⚠️ **RULED, not pending — do not sweep them**; none is an
+    emoji. Clearing one repeats the `⇄` error: a mark Sam chose in July, removed
+    on a plain-words reading, caught only by its own test.
 - **AMERICAN SPELLING, ALWAYS** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 

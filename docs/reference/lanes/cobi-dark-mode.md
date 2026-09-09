@@ -174,6 +174,17 @@ Findings carry `generator_owned`, the report counts the two apart, and
 **Implementation Funding is excluded from every S245 number and untouched by
 every S245 edit** — Sam worked that tab in a parallel session.
 
+✅ **THE GLYPH SWEEP IS CLOSED AT 26 — Sam, 2026-09-09: *"Keep all 26 glyphs as
+is for now."*** What remains after the control-class work is the MAP Star and
+Veteran Star designations (12 sites), `✕` close, `✎` edit, `⛔` gates, `⚠`
+flagged rows, the copy control, and arrows carrying sequence meaning
+(*open → reported → in progress → fixed → verified*). ⚠️ **RULED, not pending** —
+none of the 26 is an emoji, so his instruction is satisfied. Sweeping them
+repeats the `⇄` error above at twenty-six times the scale.
+
+✅ **THE BANNER'S 8-HOUR CAP IS RULED SUFFICIENT** (*"8 hours is enough."*) — a
+session outliving its own banner is intended.
+
 ## The standing pass (Sam, 2026-09-09)
 
 *"I want a procedure that checks and remediates each COBI surface for AA and
@@ -181,30 +192,22 @@ mobile friendly standards."* Built as [`/a11y-pass`](../../../.claude/commands/a
 check → **triage** → remediate → re-measure → record.
 
 ⭐ **THE TRIAGE STEP IS THE ONE THAT WAS MISSING.** `scripts/a11y_triage.js`
-collapses a saved sweep into causes, because the number of findings is not the
-number of problems: this lane's first dark sweep was 38/38 routes and **511
-findings that were ~227 occurrences of six shared-chrome selectors**. It reads a
-saved report and never re-measures, so it is free. It ranks by **color pair
-first** (one color decision, however many selectors wear it), then by blast
-radius across routes — see the remainder section above for why the second axis
-alone hid the biggest fault in this lane.
+collapses a saved sweep into causes — the first dark sweep was 511 findings that
+were ~227 occurrences of six selectors. It reads a saved report, so it is free.
+It ranks by **color pair first** (one color decision, however many selectors wear
+it), then by blast radius; the remainder section above says why the second axis
+alone hid this lane's biggest fault.
 
-**Glyph state, end of S245** (`kb/_glyph_sweep.py`): **1,378 findings across 139
-files — 24 control · 220 status · 794 decoration OURS**, plus 340 the generator
-owns. A comment line is never a finding; this repo's ⚠️/⭐ comment style renders
-to nobody and would bury the ones that do. Only the control class is mechanical
-(`--apply` strips a leading glyph and its space from a label); status and
-decoration are reported because removing them needs a reworded sentence or a
-judgment about a legend. ⚠️ `--check` is deliberately NOT yet a CI gate — red on
-day one trains everyone to ignore it. It becomes one when the control class
-reaches zero, and it now counts only what a session can actually fix.
+**Glyph state, end of S245** (`kb/_glyph_sweep.py`): **26 control · 220 status ·
+794 decoration OURS**, plus 340 the generator owns and the next cron clears. A
+comment line is never a finding — this repo's ⚠️/⭐ comment style renders to
+nobody. Only the control class was ever mechanical, and Sam has now closed it at
+26 (above). ⚠️ `--check` is NOT a CI gate and will not become one while those 26
+stand by his ruling.
 
-**NEXT:** the raw greys (item 1 of the remainder) and `--text-faint` carrying
-essential text (item 2) — between them ~17 of the 146. Fix what the sweep NAMES;
-`#666` has 471 uses and a handful of failures.
-**NEEDS SAM:** the 24 remaining control-class marks are judgment, not mechanics —
-the ⭐/★ **MAP Star** and **Veteran Star** designations (12 sites, where the mark
-arguably IS the name), `✕` close, `✎` edit, `⛔` gates, `⚠` flagged rows. Sam's
-rule says a crucial mark becomes a muted CO-blue one rather than an emoji; which
-of these are crucial is his call. The SkyView fallback ordering still stands as
-the other judgment worth his veto.
+**NEXT:** the light fills that are not white — `#FDF8EC` under the signed-out
+gate, the literal `#ECE9E2` under RACI's buttons, the akpi cards. Fix what the
+sweep NAMES.
+**NEEDS SAM:** nothing. Both open questions were ruled on 2026-09-09 — the 26
+glyphs stay, the 8-hour banner cap is enough. The SkyView fallback ordering
+remains the one judgment worth his veto if he ever revisits it.
