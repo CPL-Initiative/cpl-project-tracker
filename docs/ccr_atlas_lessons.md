@@ -1727,7 +1727,7 @@ Adding ~180 lines to `ccr_universe.js` shifted every mapped entry below them and
 turned CI red on a locally-green suite. The check is
 `python3 kb/_build_dependency_map.py --check`.
 
-## 2026-09-09 — S249: two defects on Sam's first real use, and a feature that worked into a dead spot
+## 2026-09-09 — SkySight: two defects on Sam’s first real use, and a feature that worked into a dead spot
 
 Sam opened SkyView and tried the two newest controls. Both reports were of the
 same shape — *the control did nothing* — and the two causes had nothing in
@@ -1809,3 +1809,61 @@ touches.
 ⚠️ **Three causes, one symptom, and only one of them was in the code Sam was
 testing.** The lane named the deploy; a session that trusted "the tests pass"
 would have found neither of the other two.
+
+### The deploy landed, and the post-deploy smoke test failed on something else
+
+Sam gave the go and `cpl-chat-deploy.yml` ran (34402962685, byte-verify clean).
+`cpl-chat-smoke.yml` then failed on mode 16a — a prose grep for LACCD college
+names. It was **not** the deploy, established three ways rather than assumed:
+
+1. **The deployed delta is five lines**, every one gated on the string
+   `"skyview-ask"`: one entry each in `KNOWN_SURFACES` and `DRAFTING_SURFACES`,
+   `QUERY_CAP_SKYVIEW = 20000`, and its cap-table row.
+2. **None of it is reachable from the smoke test**, which sends
+   `{"query":…,"session_id":"smoke-ci"}` with **no `surface` field** —
+   `normalizeSurface(undefined)` returns null, so every request takes the
+   identical pre-deploy path.
+3. **`index.ts` is byte-identical** between the previously deployed commit
+   (`0864b5a`, 2026-08-25) and #1530's parent, so the SkyView commit is the
+   *entire* two-week delta.
+
+⚠️ **The re-run did not confirm it by passing — it failed differently**, and the
+difference is the evidence. Run 152 missed `/pierce/`; run 153 missed `/pierce/`
+AND `/valley/`. Two runs naming different subsets of nine colleges is variance in
+*which* names appear, not a broken lookup. The answers are substantively correct:
+run 153 opens *"across its nine colleges"* — it knows the count — then names five
+of them with real coordinators and unit figures. And **16b passed both times**,
+which is the one that matters: the script's own header calls it *"the real
+regression guard"* because Peralta's colleges cannot be reached by name-matching
+at all, only through the district roster.
+
+⭐ **The script had already predicted this failure, in its own header**
+(`chatbox/smoke_test.sh` ~line 531): *"⚠ THESE ARE PROSE GREPS, and this file
+already knows what that costs — mode 7 is documented as going red intermittently
+on correct answers for exactly this reason (and mode 7's worst offender has since
+been moved to a retrieval assertion, 7r)."* The remedy is named in the same
+sentence: assert that the roster **retrieved** nine LACCD colleges, not that the
+prose names two particular ones. Left for Sam rather than swept into a SkyView PR.
+
+⚠️ **Two smaller things worth carrying.** The deploy cadence: two weeks and one
+functional commit shipped in a single dispatch, harmless here only because the
+delta was inert. And `smoke_test.sh` ~line 518 records that Pierce carries
+variants `["LA PIERCE", "LA Pierce"]` with **no `"Pierce College"`** — every
+internal table spells it the long way today, so nothing is broken, but a table
+arriving with the college's own name would join to nothing, silently. That is
+Rule 7's shape again.
+
+### And the checkpoint hit the parallel-session collision twice
+
+`main` moved under this run twice while the PR was open — #1533 (the statewide
+fire/electrical crosswalk) and #1534 (dark mode, Sam's other live session). The
+first turned the PR `dirty`; the conflicts were all in `kb/docs_audit/*`,
+resolved by **regenerating with `kb/_docs_audit.py`** rather than hand-merging,
+per the generated-files rule. ⚠️ **The merge then made `kb/_build_dependency_map.py`
+and `kb/_build_docs_index.py` both stale**, and neither is run by `npm test` — a
+green local suite is not a green CI, which is the same lesson handoff 248
+recorded and it repeated here inside one session.
+
+⚠️ **The handoff number collided too.** This run and the dark-mode run were both
+live on 2026-09-09; that run took 249 (SkyGround), so this one is filed under its
+moniker, **SkySight**, and writes handoff 250.

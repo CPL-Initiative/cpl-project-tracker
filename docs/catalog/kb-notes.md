@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-423 document(s).
+425 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -47,6 +47,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A capped list must never read as a census](../kb-notes/methodology-a-capped-list-must-never-read-as-a-census.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [A capped retrieval must rank by relevance — popularity is only a tiebreaker](../kb-notes/methodology-capped-retrieval-ranks-by-relevance.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A change inherits every reference into it, and the same-cycle reference is the one you miss](../kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A check on the message says nothing about where it lands](../kb-notes/methodology-a-check-on-the-message-says-nothing-about-where-it-lands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that cannot fail reads exactly like a clean result](../kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that cannot fire on what it names — disabled controls, and the falsification pass](../kb-notes/methodology-a-check-that-cannot-fire-on-what-it-names.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that never registers can never fail](../kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) | methodology | published | 2026-08-15 | 2026-08-21 |
@@ -354,6 +355,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Title-similarity merge candidates — the guard suite and the licensure-spec lesson](../kb-notes/methodology-title-similarity-merge-guards.md) | methodology | published | 2026-06-12 | 2026-06-12 |
 | [TOP is a last-in-line signal, never a gatekeeper](../kb-notes/methodology-top-is-a-last-in-line-signal.md) | methodology | published | 2026-07-16 | 2026-09-03 |
 | [Transitive closure is right for decisions and wrong for similarity](../kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md) | methodology | published | 2026-08-24 | 2026-08-24 |
+| [Two expressions of one predicate will drift apart, and the drift is silent](../kb-notes/methodology-two-expressions-of-one-predicate-will-drift-apart.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [User-vocabulary category maps — curated JSON + anchored-pattern fallback](../kb-notes/methodology-user-vocabulary-category-maps.md) | methodology | published | 2026-06-11 | 2026-06-11 |
 | [Validate a derived metric against the expert's ranking before publishing it](../kb-notes/methodology-validate-a-derived-metric-against-expert-ranking.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [Validate a supplied code column by its structural invariant, not by spot-checking values](../kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md) | methodology | published | 2026-08-12 | 2026-08-14 |

@@ -52,7 +52,7 @@ with no verdict**); an **Isolate** toggle.
 Header 254px → 114px at 390×844, map 62% → 86%; pinch zooms; a question in the
 search box becomes a map selection. Desktop unchanged. Detail in the lessons doc.
 
-**S249 (2026-09-09), PR #1532 — two defects Sam hit on his first real use.**
+**SkySight (2026-09-09), PR #1532 — two defects Sam hit on his first real use.**
 ⭐ **Isolate emptied the map on a DISCIPLINE selection** — a `subject` token is
 an ISLAND, not node hits, so `searchHits` was empty and `isoNodeOK` failed every
 node while `isoActive()` and the button's `can` test both counted `selIsl`:
