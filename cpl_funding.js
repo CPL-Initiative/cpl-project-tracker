@@ -200,7 +200,7 @@
     // a painted block in a ledger reads as a different KIND of row, and this is
     // the same kind, arrived at.
     ".cplfund-ledger .cplfund-card.hero { border-top: 2px solid var(--border-strong); background: none; }",
-    ".cplfund-ledger .cplfund-card.hero .v { color: var(--seal-blue); font-size: 1.3rem; }",
+    ".cplfund-ledger .cplfund-card.hero .v { color:var(--seal-blue-text,#002F6D); font-size: 1.3rem; }",
     ".cplfund-ledger .cplfund-card.hero .l { color: var(--text-strong); font-weight: 700; }",
     ".cplfund-ledger .cplfund-card.hero .cplfund-card-note { font-weight: 400; color: var(--text-muted); }",
     // Every left rule the boxes used to carry is off: in a stack they read as
@@ -221,7 +221,7 @@
     ".cplfund-bounds { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--border); }",
     ".cplfund-bounds h4 { margin: 0 0 6px; font-size: .95rem; color: var(--text-strong); }",
     ".cplfund-bounds .cplfund-card { background: none; border: 0; border-radius: 0; padding: 0; text-align: left; }",
-    ".cplfund-bounds .cplfund-card .v { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 4px 10px; font-size: 1.3rem; color: var(--seal-blue); text-align: left; }",
+    ".cplfund-bounds .cplfund-card .v { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 4px 10px; font-size: 1.3rem; color:var(--seal-blue-text,#002F6D); text-align: left; }",
     ".cplfund-bounds .cplfund-card .v .cplfund-ed { width: 9ch; font-size: 1.3rem; text-align: left; }",
     ".cplfund-bounds .cplfund-card .l { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; text-align: left; font-size: .9rem; margin-top: 4px; }",
     ".cplfund-bounds .cplfund-card .l .cplfund-pool-label-input { text-align: left; width: auto; min-width: 16ch; }",
@@ -749,7 +749,7 @@
     ".cplfund-band-head { padding: 10px 14px; background: var(--surface-subtle);",
     "  border-bottom: 1px solid var(--border); display: flex; flex-wrap: wrap;",
     "  align-items: baseline; gap: 4px 14px; }",
-    ".cplfund-band-key { font-weight: 700; color: var(--seal-blue); white-space: nowrap; }",
+    ".cplfund-band-key { font-weight: 700; color:var(--seal-blue-text,#002F6D); white-space: nowrap; }",
     ".cplfund-band-name { font-size: 1.1rem; font-weight: 700; color: var(--text-strong); }",
     ".cplfund-band-cite { font-size: .78rem; font-weight: 600; color: var(--text-muted); }",
     ".cplfund-band-tot { margin-left: auto; font-size: .88rem; color: var(--text-body);",

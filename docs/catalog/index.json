@@ -52,7 +52,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 409,
+   "count": 410,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2902,6 +2902,22 @@
      "title": "A text measure must agree with what sits beside it",
      "type": "methodology",
      "updated": "2026-08-22"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "design-system",
+      "dark-mode",
+      "pitfall"
+     ],
+     "title": "A token with two jobs cannot be themed \u2014 count a token's uses by ROLE before you give it a dark value",
+     "type": "methodology",
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-23",
@@ -11832,7 +11848,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 42,
+   "count": 43,
    "docs": [
     {
      "created": "2026-08-28",
@@ -11859,6 +11875,21 @@
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-09-08",
+     "governs": [],
+     "path": "docs/reference/lanes/cobi-dark-mode.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "ui",
+      "dark-mode"
+     ],
+     "title": "COBI dark mode / the one theme control \u2014 lane state",
+     "type": null,
+     "updated": "2026-09-08"
     },
     {
      "created": "2026-08-28",
@@ -16128,5 +16159,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 829
+ "total": 831
 }

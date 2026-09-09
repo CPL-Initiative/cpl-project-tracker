@@ -253,6 +253,35 @@ module.exports = {
     ],
   },
 
+  /* ── COBI, dark ──────────────────────────────────────────────────────────
+     The same 38 routes with the theme switched. It is a SEPARATE target, not a
+     width of `cobi`, because the two themes fail differently and a merged run
+     could not say which one a finding belongs to.
+
+     ⚠️ IT EXISTS BECAUSE A TOKEN SWAP IS NOT A PROOF. The dark palette reuses
+     SkyView's measured values, so the CHROME is known-good — but every surface
+     that reached for a raw hex instead of a token stays light-on-dark, and no
+     amount of reading the palette finds those. This target is what turns "dark
+     mode ships" into a number.
+
+     Seeded through the control's own API rather than by writing localStorage
+     and reloading: CPL_THEME.set() is the exact path the header uses, so the
+     measurement exercises the shipped code rather than a fixture of it. */
+  "cobi-dark": {
+    file: "index.html",
+    title: "COBI — every tab, dark",
+    discover: { selector: "nav.cpl-tabs .cpl-tab[data-tab]", attr: "data-tab" },
+    widths: [390, 1440],
+    seed: async (page) => {
+      await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+      await page.waitForTimeout(120);
+    },
+    mayHideBelow: [
+      ".cpl-sidebar", ".cpl-sidebar *",
+      ".cpl-tab-pane", ".cpl-tab-pane *",
+    ],
+  },
+
   /* ── SkyView ─────────────────────────────────────────────────────────────
      The built artifact, not its prototype/ccr_atlas_v1.html source: what ships
      is what gets measured. It opens full-window from the CCR side menu, so it

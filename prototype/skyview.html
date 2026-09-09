@@ -3455,14 +3455,42 @@ window.__ccrTextStep=function(i){ if(i==null) return textStep; setTextStep(i); }
 var darkChoice=null;
 try{ darkChoice = localStorage.getItem("skyview:theme"); }catch(e){}
 if(darkChoice!=="dark" && darkChoice!=="light") darkChoice=null;
-var dark = darkChoice ? darkChoice==="dark" : false;
+/* ⭐ AND THE COBI HEADER'S THEME IS THE LAYER BETWEEN (Sam, 2026-09-08: the one
+ * control "sets all tabs and windows"). SkyView opens full-window from COBI's
+ * side menu and shares its origin, so it reads the same key cpl_theme.js writes.
+ *
+ * ⚠️ IT IS A FALLBACK, NOT AN OVERRIDE, and the order is the whole point —
+ * it composes with ruling 3 above instead of replacing it:
+ *   1. this reader's own SkyView choice (skyview:theme)  — "one memory"
+ *   2. an EXPLICIT global choice from the COBI header    — "one control"
+ *   3. where the reader stands: Sky/Globe → Night, Map → light — "two defaults"
+ * Step 3 still owns the DEFAULT, because the global key reads "system" until
+ * someone actually picks, and "system" is not a choice — so the Sky still opens
+ * at Night for every reader who has never touched either control. */
+function globalChoice(){
+  var v=null;
+  try{ v = localStorage.getItem("cpl_theme"); }catch(e){}
+  return (v==="dark"||v==="light") ? v : null;
+}
+var dark = darkChoice ? darkChoice==="dark" : globalChoice()==="dark";
 if(dark && document.body) document.body.classList.add("u-dark");
 function applyDark(){
-  dark = darkChoice ? darkChoice==="dark" : sphereOn();
+  var g = globalChoice();
+  dark = darkChoice ? darkChoice==="dark"
+       : g ? g==="dark"
+       : sphereOn();
   document.body.classList.toggle("u-dark", dark);
   document.body.classList.toggle("u-day", dayOn());
   paintDark();
 }
+/* The COBI window changed the theme while this one was open. `storage` fires
+ * only in OTHER documents, which is exactly this case — a reader with SkyView
+ * beside COBI sees both follow the one control without reloading either. */
+window.addEventListener("storage", function(e){
+  if(!e || e.key!=="cpl_theme") return;
+  applyDark();
+  if(cvs && document.getElementById("u-cvs")===cvs) draw();
+});
 function setDark(on){
   darkChoice = on ? "dark" : "light";
   try{ localStorage.setItem("skyview:theme", darkChoice); }catch(e){}

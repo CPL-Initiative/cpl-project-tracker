@@ -3212,7 +3212,7 @@
       "#tab-credential-reference .cr-ni-table td.cr-wl-raw{width:34%;}" +
       "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:#64748b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
       "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
-      "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue,#1e40af);text-decoration:none;}" +
+      "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue-text,#002F6D);text-decoration:none;}" +
       "#tab-credential-reference .cr-ni-add-issuer:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-ni-iss2{margin-top:4px;}" +
       // ── CER v2 (2026-07-09) — one editable surface, full width ──
@@ -3291,9 +3291,9 @@
       // ── v2 round 3 (Sam, 2026-07-09 evening) ──
       // Violet chip TEXT → CO seal blue (Sam's call; the violet
       // machine-suggested coding yields to the CO palette on this tab).
-      "#tab-credential-reference .cr-chip-gen{color:var(--seal-blue,#1e40af);}" +
-      "#tab-credential-reference .cr-chip-mergesug{color:var(--seal-blue,#1e40af);border-color:var(--seal-blue,#1e40af);}" +
-      "#tab-credential-reference .cr-mergesug-h{color:var(--seal-blue,#1e40af);}" +
+      "#tab-credential-reference .cr-chip-gen{color:var(--seal-blue-text,#002F6D);}" +
+      "#tab-credential-reference .cr-chip-mergesug{color:var(--seal-blue-text,#002F6D);border-color:var(--seal-blue,#1e40af);}" +
+      "#tab-credential-reference .cr-mergesug-h{color:var(--seal-blue-text,#002F6D);}" +
       // Header row text: white, not gold.
       "#tab-credential-reference .cr-table th{color:#fff;}" +
       "#tab-credential-reference .cr-sort-indicator.active{color:#fff;}" +

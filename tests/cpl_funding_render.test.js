@@ -263,7 +263,15 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("DRAFT chip renders in the pane header, once",
     doc.querySelectorAll("#cplFundingDraftChip").length === 1 &&
     doc.querySelector("#tab-implementation-funding h2 .cplfund-draftchip").textContent === "Draft");
-  check("uses var(--token) CSS, no raw hex", !/#[0-9a-fA-F]{3,6}\b/.test(doc.getElementById("cpl-funding-css").textContent));
+  check("uses var(--token) CSS, no raw hex", (function () {
+  // A hex inside a var() FALLBACK is not painting with a raw hex — it is the
+  // degradation path for the two public pages that also load this file and do
+  // not define every COBI token. Strip those, then the check is what it always
+  // meant: no bare `color:#abc` anywhere in the injected sheet.
+  const css = doc.getElementById("cpl-funding-css").textContent
+    .replace(/,\s*#[0-9a-fA-F]{3,8}\s*\)/g, ")");
+  return !/#[0-9a-fA-F]{3,6}\b/.test(css);
+})());
   check("null working-adults cells render as —", tables[0].textContent.indexOf("NaN") === -1);
 
   // No-horizontal-scroll rule: the district fold survives (the column is in

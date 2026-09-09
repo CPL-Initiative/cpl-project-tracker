@@ -114,7 +114,7 @@
         + " border-radius:8px; background: var(--surface-subtle); }",
       ".gov-btn { font-size:.78rem; padding:4px 10px; border:1px solid var(--border); border-radius:6px;"
         + " background: var(--surface); color: var(--text-body); cursor:pointer; }",
-      ".gov-btn:hover { border-color: var(--seal-blue); color: var(--seal-blue); }",
+      ".gov-btn:hover { border-color: var(--seal-blue); color:var(--seal-blue-text,#002F6D); }",
       ".gov-toolbar { display:flex; gap:8px; align-items:center; margin:0 0 14px; flex-wrap:wrap; }",
       ".gov-q { border-left:3px solid var(--border-strong); padding:6px 12px; margin:0 0 10px; }",
       ".gov-q .qq { font-weight:600; }",
@@ -135,7 +135,7 @@
         + " border-radius:6px; padding:3px 5px; cursor:pointer; font:inherit; color:inherit; }",
       ".gov-ownbtn:hover { border-color: var(--seal-blue); background: var(--surface-subtle); }",
       ".gov-owner { font-weight:600; color: var(--navy-primary); }",
-      ".gov-pencil { opacity:0; float:right; font-size:.8rem; color: var(--seal-blue); }",
+      ".gov-pencil { opacity:0; float:right; font-size:.8rem; color:var(--seal-blue-text,#002F6D); }",
       ".gov-ownbtn:hover .gov-pencil { opacity:1; }",
       ".gov-ov { position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:400;"
         + " display:flex; align-items:center; justify-content:center; padding:20px; }",

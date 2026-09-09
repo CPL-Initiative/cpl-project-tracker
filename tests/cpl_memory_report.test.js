@@ -107,10 +107,14 @@ function boot(dom, { withPhrase } = {}) {
       root.querySelector(".mem-curatebar").style.display === "none" &&
       root.querySelector(".mem-body").style.display === "none";
   })());
-  check("masthead (title + theme + toggle) stays visible in report mode", (function () {
-    return !!root.querySelector(".mem-title h1") && !!root.querySelector(".mem-theme") &&
-      !!root.querySelector(".mem-viewseg");
+  // ⚠️ .mem-theme is deliberately NOT in this list any more. The tab's own theme
+  // button was removed 2026-09-08 — it wrote data-theme and remembered nothing,
+  // and the COBI header's Theme selector (cpl_theme.js) is the one control now.
+  // The assertion is still "the masthead survives the mode switch".
+  check("masthead (title + view toggle) stays visible in report mode", (function () {
+    return !!root.querySelector(".mem-title h1") && !!root.querySelector(".mem-viewseg");
   })());
+  check("the tab no longer ships a competing theme button", !root.querySelector(".mem-theme"));
   check("report has a title block ('Everything We Know')", (function () {
     const t = report.querySelector(".mr-title");
     return t && /Everything We Know/.test(t.textContent);

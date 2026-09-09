@@ -1946,7 +1946,7 @@ def _dual_progress_html(prog):
             f'                        <span style="color:{fill_color};font-weight:600;">{label}{" ✓" if met else ""}</span>\n'
             f'                        <span style="font-weight:700;color:{label_color};">{pct}%</span>\n'
             f'                    </div>\n'
-            f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
+            f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;margin-bottom:0.35rem;">\n'
             f'                        <div style="height:100%;width:{width}%;background:{"var(--green-progress)" if met else fill_color};border-radius:3px;"></div>\n'
             f'                    </div>\n'
         )
@@ -2065,7 +2065,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                  f'                    <span style="font-size:0.75rem;color:#555;">{html_escape(act_goal_text)}</span>\n'
                  f'                    <span style="font-size:0.75rem;font-weight:700;color:{label_color};white-space:nowrap;margin-left:0.5rem;">{avg_pct}% avg &middot; {completed}/{total_kpis} complete (toward 2030 goal)</span>\n'
                  f'                </div>\n'
-                 f'                <div style="height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
+                 f'                <div style="height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
                  f'                    <div style="height:100%;width:{avg_pct}%;background:{bar_color};border-radius:3px;transition:width 0.3s;"></div>\n'
                  f'                </div>\n'
                  f'            </div>\n')
@@ -2077,7 +2077,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         # Supabase `item_updates` table (RACI tab 📝 composer, keyed `activity:N`),
         # showing the newest posted Activity update with a timestamp. Hidden until populated.
         html += (f'            <div class="cpl-live-update" data-update-key="activity:{act_num}" '
-                 f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+                 f'style="display:none;margin:0 0.5rem 0.4rem 0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>\n')
 
         # Option-B (Activities reorg 2026-07-21): render ALL sub-activities in a
         # single grid per Activity, ordered by dotted id (build_activity_kpis
@@ -2242,7 +2242,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                          f'                        <span style="color:#666;">Progress</span>\n'
                          f'                        <span style="font-weight:700;color:{plabel_color};">{pct}%</span>\n'
                          f'                    </div>\n'
-                         f'                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;">\n'
+                         f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
                          f'                        <div style="height:100%;width:{pct}%;background:{pbar_color};border-radius:3px;"></div>\n'
                          f'                    </div>\n'
                          f'                </div>\n')
@@ -2271,7 +2271,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 # populated; when shown it hides the creation-era static line below.
                 html += (f'                <div class="cpl-live-update" '
                          f'data-update-key="project:{html_escape(str(kpi_pid), quote=True)}" '
-                         f'style="display:none;margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>\n')
+                         f'style="display:none;margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;"></div>\n')
 
                 if kpi_update or kpi_wp:
                     # Toggle for full history
@@ -2285,7 +2285,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                             f'Show all ({len(kpi_notes_list)})</label>\n'
                         )
 
-                    html += (f'                <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;">\n'
+                    html += (f'                <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.4rem;">\n'
                              f'                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">\n'
                              f'                        <span style="font-size:0.7rem;color:#888;">Last updated: '
                              f'<strong style="color:var(--navy-primary);">{kpi_date}</strong></span>\n'
@@ -2322,7 +2322,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                             badge_label = type_labels.get(ntype, "Update")
                             html += (f'                        <div style="margin-bottom:0.4rem;">'
                                      f'<span style="font-size:0.68rem;font-weight:700;color:var(--navy-primary);'
-                                     f'background:#f0f0f0;padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
+                                     f'background:var(--surface-muted);padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
                                      f' <span style="font-size:0.6rem;font-weight:600;{badge_style}'
                                      f'padding:0.1rem 0.3rem;border-radius:3px;">{badge_label}</span>'
                                      f'<div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">{n["note"]}</div>'
@@ -2344,33 +2344,33 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 kpi_pid_q = html_escape(str(kpi_pid), quote=True)
                 html += (f'                <a href="reports/projects/{kpi_pid}_Report.docx" '
                          f'download class="report-btn" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'">'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'">'
                          f'<span style="font-size:0.8rem;">&#128196;</span> Report</a>'
                          f'<a href="#" '
                          f'class="attach-btn" '
                          f'data-folder="{html_escape(str(kpi_pid) + " " + str(kpi.get("name", "")), quote=True)}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
                          f'<span style="font-size:0.8rem;">&#128206;</span> Attach'
                          f'{_att_badge(attachments, act_num)}</a>'
                          f'<a href="#raci" class="raci-link" data-raci-key="project:{kpi_pid_q}" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_raci_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Who\'s Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">'
                          f'<span style="font-size:0.8rem;">&#128101;</span> RACI</a>'
                          f'<a href="#raci" class="update-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_update_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Braindump a quick status update — CC writes it up and saves it to this card">'
                          f'<span style="font-size:0.8rem;">&#128221;</span> Update</a>'
                          f'<a href="#raci" class="nudge-link" '
                          f'onclick="try{{sessionStorage.setItem(\'cpl_nudge_focus\',\'project:{kpi_pid_q}\')}}catch(e){{}}" '
-                         f'style="{btn_style}color:var(--navy-secondary);background:#fafafa;"'
-                         f' onmouseover="this.style.background=\'#e8e8e8\'" onmouseout="this.style.background=\'#fafafa\'"'
+                         f'style="{btn_style}color:var(--navy-secondary);background:var(--surface-subtle);"'
+                         f' onmouseover="this.style.background=\'var(--surface-muted)\'" onmouseout="this.style.background=\'var(--surface-subtle)\'"'
                          f' title="Nudge this item\'s Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">'
                          f'<span style="font-size:0.8rem;">&#128227;</span> Nudge</a>\n')
 
@@ -2792,7 +2792,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             history_html += (
                 f'                <div style="margin-bottom:0.5rem;">'
                 f'<span style="font-size:0.72rem;font-weight:700;color:var(--navy-primary);'
-                f'background:#f0f0f0;padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
+                f'background:var(--surface-muted);padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
                 f' <span style="font-size:0.65rem;font-weight:600;{badge_style}'
                 f'padding:0.1rem 0.35rem;border-radius:3px;">{badge_label}</span>'
                 f'<div style="font-size:0.8rem;color:#444;margin-top:0.15rem;line-height:1.4;">{n["note"]}</div>'
@@ -2826,7 +2826,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
             f'style="display:none;margin-bottom:0.35rem;"></div>\n'
         )
         notes_html = (
-            f'            <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.5rem;">\n'
+            f'            <div style="margin-top:0.5rem;border-top:1px solid var(--border);padding-top:0.5rem;">\n'
             f'                <div style="display:flex;align-items:center;margin-bottom:0.35rem;">\n'
             f'                    <span style="font-size:0.75rem;color:#888;">Last updated: '
             f'{update_date_ed}</span>\n'
@@ -2920,16 +2920,16 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'">
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'">
                     <span style="font-size:0.85rem;">&#128196;</span> Report</a>
                 <a href="#" class="attach-btn"
                     data-folder="{html_escape(str(pid) + ' ' + str(p.get('name', '')), quote=True)}"
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Open SharePoint folder — use Upload or drag &amp; drop to add files">
                     <span style="font-size:0.85rem;">&#128206;</span> Attach{_att_badge(attachments, project_id=pid)}</a>
                 <a href="#raci" class="raci-link" data-raci-key="project:{html_escape(str(pid), quote=True)}"
@@ -2937,8 +2937,8 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI">
                     <span style="font-size:0.85rem;">&#128101;</span> RACI</a>
                 <a href="#raci" class="update-link"
@@ -2946,8 +2946,8 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Braindump a quick status update — CC writes it up and saves it to this card">
                     <span style="font-size:0.85rem;">&#128221;</span> Update</a>
                 <a href="#raci" class="nudge-link"
@@ -2955,8 +2955,8 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                     style="display:inline-flex;align-items:center;gap:0.3rem;
                     font-size:0.75rem;color:var(--navy-secondary);text-decoration:none;font-weight:600;
                     padding:0.3rem 0.6rem;border:1px solid #ddd;border-radius:4px;
-                    background:#fafafa;cursor:pointer;transition:background 0.2s;"
-                    onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"
+                    background:var(--surface-subtle);cursor:pointer;transition:background 0.2s;"
+                    onmouseover="this.style.background='var(--surface-muted)'" onmouseout="this.style.background='var(--surface-subtle)'"
                     title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)">
                     <span style="font-size:0.85rem;">&#128227;</span> Nudge</a>
             </div>
@@ -3144,7 +3144,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
         cards += (
             f'            <div class="tabled-card" data-pid="{html_escape(str(p["id"]), quote=True)}" '
             f'data-lifecycle="{html_escape(state, quote=True)}" '
-            f'style="border:1px solid #e3e3e3;border-radius:8px;padding:0.7rem 0.9rem;background:#fafafa;">\n'
+            f'style="border:1px solid var(--border);border-radius:8px;padding:0.7rem 0.9rem;background:var(--surface-subtle);">\n'
             f'                <div class="tabled-card-head" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">\n'
             f'                    {_badge(state)}\n'
             f'                    <span class="tabled-name" style="font-weight:600;color:var(--navy-primary,#16324f);">'
@@ -3161,7 +3161,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
 
     return (
         '\n        <details class="tabled-archived-wrap" '
-        'style="margin-top:1.5rem;border:1px solid #e3e3e3;border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
+        'style="margin-top:1.5rem;border:1px solid var(--border);border-radius:10px;padding:0.5rem 1rem;background:#fff;">\n'
         '            <summary class="tabled-archived-summary" '
         'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
         f'🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
@@ -3205,8 +3205,8 @@ def render_awg_projects_section_html(work_projects):
 
     th = ('style="text-align:left;padding:0.5rem 0.6rem;font-size:0.68rem;'
           'text-transform:uppercase;letter-spacing:0.04em;color:#888;'
-          'border-bottom:2px solid #e8e8e8;white-space:nowrap;"')
-    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid #f0f0f0;vertical-align:middle;'
+          'border-bottom:2px solid var(--border-strong);white-space:nowrap;"')
+    td = 'padding:0.5rem 0.6rem;border-bottom:1px solid var(--border);vertical-align:middle;'
     body = ""
     for p in sorted(work_projects, key=_idkey):
         pid = html_escape(str(p.get("id", "")), quote=True)
@@ -3228,7 +3228,7 @@ def render_awg_projects_section_html(work_projects):
             f'                    <td style="{td}white-space:nowrap;">'
             f'<span class="status-badge status-{status_class}" style="font-size:0.62rem;padding:0.1rem 0.4rem;">{html_escape(status) or "&mdash;"}</span></td>\n'
             f'                    <td style="{td}min-width:110px;"><div style="display:flex;align-items:center;gap:0.4rem;">'
-            f'<div style="flex:1;height:6px;background:#e8e8e8;border-radius:3px;overflow:hidden;">'
+            f'<div style="flex:1;height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">'
             f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
             f'<span style="font-size:0.72rem;color:#555;white-space:nowrap;">{pct}%</span></div></td>\n'
             f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
@@ -3467,6 +3467,9 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
                 ctx.fillRect(0, 0, W, H);
 
                 // Grid lines
+                // Literal, NOT a token: canvas ignores an invalid color rather than
+                // throwing, and var() is invalid here. This chart paints its own
+                // light ground (#F4F2ED above), so it is light either way.
                 ctx.strokeStyle = '#e8e8e8';
                 ctx.lineWidth = 0.7;
                 ctx.font = '10px Calibri, sans-serif';
@@ -11671,7 +11674,7 @@ def render_budget_html(budget, data_source_stamp=None):
     # Fails soft — if the fetch or the script is unavailable the mount stays
     # empty and the funding plan below is untouched.
     budget_section = f'''<!-- Budget Section -->
-    <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
+    <div class="budget-section" style="background-color:var(--surface-subtle);padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
 {stamp_html}        <div id="budgetLedgerMount"></div>
 {funding_html}
@@ -12211,7 +12214,7 @@ def main():
                 f'cursor:pointer;">'
                 f'<summary style="font-size:0.82rem;color:var(--light-blue);font-weight:600;'
                 f'list-style:none;display:inline-flex;align-items:center;gap:0.3rem;">'
-                f'<span class="desc-arrow" style="font-size:0.7rem;transition:transform 0.2s;">&#9654;</span>'
+                f'<span class="desc-arrow" style="width:0;height:0;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;border-left:4px solid currentColor;transition:transform 0.2s;flex:none;"></span>'
                 f' Project Description</summary>'
                 f'<div style="font-size:0.82rem;color:#ccc;line-height:1.5;'
                 f'margin-top:0.4rem;padding:0.5rem 0.8rem;'
@@ -12232,7 +12235,7 @@ def main():
             f' onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'"'
             f' onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'"'
             f' title="Open SharePoint folder — use Upload or drag &amp; drop to add files">'
-            f'&#128206; See Attachments{badge_html}</a></div>')
+            f'See Attachments{badge_html}</a></div>')
         # KB Cheat Sheet button — opens the static #kbcs-overlay modal (defined before </body>).
         # Plain string (no interpolation) so the hand-maintained HTML mirror stays byte-identical.
         proj_info_parts.append(
@@ -12245,7 +12248,7 @@ def main():
             'onmouseover="this.style.background=\'rgba(255,255,255,0.2)\'" '
             'onmouseout="this.style.background=\'rgba(255,255,255,0.1)\'" '
             'title="How to use Claude Code with the CPL Knowledge Base">'
-            '&#128214; Claude + KB Cheat Sheet</button></div>')
+            'Claude + KB Cheat Sheet</button></div>')
         proj_info_parts.append(PROJ_INFO_END)
         proj_info_html = '\n        '.join(proj_info_parts)
 
@@ -12742,12 +12745,12 @@ def main():
             refresh_btn = (
                 '<button id="refreshBtn" class="cobi-util-link" '
                 'title="Re-scrape live MAP data and regenerate the dashboard now" onclick="'
-                'if(!confirm(\'⚠️ Manual Pipeline Run\\n\\n'
+                'if(!confirm(\'Manual Pipeline Run\\n\\n'
                 'This will re-scrape live data from the MAP CPL Dashboard, '
                 'regenerate all charts and KPIs, and overwrite today\\\'s deployed dashboard.\\n\\n'
                 'The process typically takes 3-5 minutes.\\n\\n'
                 'Continue?\'))return;'
-                'var b=this;b.disabled=true;b.textContent=\'⏳ Pipeline triggered — updating...\';'
+                'var b=this;b.disabled=true;b.textContent=\'Pipeline triggered — updating...\';'
                 # Secret rides in BOTH the query string and the JSON body: the
                 # currently-deployed worker's /trigger reads url.searchParams
                 # (older paste), the repo version reads body.secret — sending
@@ -12758,11 +12761,11 @@ def main():
                 'body:JSON.stringify({secret:\'CPL_SCRAPE_2026\'})})'
                 '.then(function(r){return r.json()})'
                 '.then(function(d){'
-                'if(d.success){b.textContent=\'✅ Pipeline running — page will refresh in 5 min\';'
+                'if(d.success){b.textContent=\'Pipeline running — page will refresh in 5 min\';'
                 'setTimeout(function(){location.reload()},300000)}'
-                'else{b.textContent=\'❌ \'+( d.error||\'Unknown error\');b.disabled=false}})'
-                '.catch(function(e){b.textContent=\'❌ \'+e.message;b.disabled=false})">'
-                '&#x21bb; Manually Refresh COBI</button>'
+                'else{b.textContent=\'Error: \'+( d.error||\'Unknown error\');b.disabled=false}})'
+                '.catch(function(e){b.textContent=\'Error: \'+e.message;b.disabled=false})">'
+                'Manually Refresh COBI</button>'
             )
             # Remove any existing refresh button first, then insert after last-updated.
             # Consume the leading newline+indent too, else a blank indented line

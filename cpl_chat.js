@@ -691,7 +691,7 @@
       // as provisional. Dashed + unfilled so it cannot be mistaken for `.on` at
       // a glance, and never the only signal — .cplchat-aud-note carries it in
       // words for anyone who does not see the difference.
-      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue, #002F6D); }',
+      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue-text,#002F6D); }',
       '.cplchat-aud-note { flex-basis:100%; font-size:.78rem; color:var(--text-muted, #5a6478); }',
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
       // Waiting on a tap is not an error, so it is cobalt, not crimson.

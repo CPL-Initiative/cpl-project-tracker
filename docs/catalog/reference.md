@@ -15,12 +15,13 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-42 document(s).
+43 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
 | [$50k / ESS 25-82 tab — lane state](../reference/lanes/ess-25-82-tab.md) | lanes | `ess-25-82-tab.md` | 2026-08-28 | 2026-08-28 |
 | [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-08-30 |
+| [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-09-08 |
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-08-28 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-08-28 |

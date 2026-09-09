@@ -561,7 +561,14 @@ and one was carried out of this file entirely by a relocation.
   and mobile friendly."* **Do not invent a palette.** Spec:
   [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md) +
   `prototype/first_light_theme_v1.html` v1.6; `var(--token)`, never a raw hex.
-  It is a **light** identity with no dark PAGE palette.
+  It is a **light** identity **by default**, and light is still the spec.
+  ⚠️ Since 2026-09-08 there is exactly ONE opt-in dark palette, at Sam's ask
+  (*"a dark mode selector in the COBI header … sets all tabs and windows
+  using that one control"*). It is a TOKEN SWAP — the same token names, new
+  values — owned by `cpl_theme.js`, which also owns the contract every themed
+  component keys on. **Dark is not license to invent a color**: if a component
+  needs one, add the role to the dark `:root` block in BOTH HTMLs (Rule 4), and
+  never write a component rule there. [lane state](docs/reference/lanes/cobi-dark-mode.md)
 - **ACCESSIBLE TO TODAY'S STANDARDS — AND VERIFIED, NOT CLAIMED.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the maths. **Color is
@@ -788,6 +795,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
 | **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
+| **COBI dark mode / the one theme control** | One control in the header that sets the theme for every tab and window — and the token layer a theme needs. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
 | **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |

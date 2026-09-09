@@ -1053,8 +1053,8 @@
       ".cplfl-reflect-msg{font-size:.78rem;color:var(--text-muted,#5C5C55)}" +
       ".cplfl-actions{display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;margin:.4rem 0 .6rem}" +
       ".cplfl-btn{display:inline-flex;align-items:center;gap:.4rem;cursor:pointer;font-family:inherit;font-size:.85rem;" +
-      "font-weight:600;background:var(--cobalt,#0047AB);color:#fff;border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
-      ".cplfl-btn:hover{background:#003B8E}" +
+      "font-weight:600;background:var(--cobalt,#0047AB);color:var(--on-accent,#fff);border:none;border-radius:9px;padding:.5rem 1rem;min-height:32px}" +
+      ".cplfl-btn:hover{background:var(--btn-primary-hover,#003B8E)}" +
       ".cplfl-btn.cplfl-ghost{background:transparent;color:var(--accent-link,#0047AB);border:1.5px solid var(--accent-link,#0047AB)}" +
       // min-height 24px is WCAG 2.2 SC 2.5.8: the checkbox is 15px and its LABEL
       // wraps it, so the label box IS the hit area — it measured 182.1x19.9 and
