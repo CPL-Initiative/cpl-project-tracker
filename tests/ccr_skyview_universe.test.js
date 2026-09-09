@@ -347,8 +347,15 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     // ruling 1) — "has articulations" and "no articulation recorded", two
     // switches like every other group, because one box that starts ticked can
     // only ever mean "hide the rest".
-    check("(A) ⭐ Show is a menu of switches: credit status (with 'not recorded'), identity system, kind of point, articulations, college courses",
-      !!q("#u-show") && qa("#u-show-menu input[data-show]").length === 14 && !!q('#u-show-menu input[data-show="unrec"]') &&
+    // 17 since 2026-09-09: career technical vs academic (Sam's item 4), read
+    // from the TOP manual's asterisk. THREE switches, not two — "CTE status not
+    // recorded" is its own, exactly as `unrec` is on credit, because 15% of
+    // points carry no resolvable TOP code and filing them under Academic would
+    // assert something the data does not say.
+    check("(A) ⭐ Show is a menu of switches: credit status (with 'not recorded'), CTE/academic, identity system, kind of point, articulations, college courses",
+      !!q("#u-show") && qa("#u-show-menu input[data-show]").length === 17 && !!q('#u-show-menu input[data-show="unrec"]') &&
+      !!q('#u-show-menu input[data-show="cte"]') && !!q('#u-show-menu input[data-show="aca"]') &&
+      !!q('#u-show-menu input[data-show="ctena"]') &&
       !!q('#u-show-menu input[data-show="arty"]') && !!q('#u-show-menu input[data-show="noart"]') &&
       /Show/.test(text("#u-show-sum")) && /^All$/.test(text("#u-show-word").trim()) && !q("#u-cr-all"),
       qa("#u-show-menu input[data-show]").map((i) => i.getAttribute("data-show")).join(","));
@@ -368,14 +375,14 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       mid.checked = false; mid.dispatchEvent(new w.Event("change", { bubbles: true }));
       check("(A) ⭐ switching M-ID off hides the M-ID points; the chip counts the switches and the hint the hidden",
         st().show.mid === false && st().creditCounts.shown === 1 && st().creditFilter === "all" &&
-        /13 of 14/.test(text("#u-show-word")) && /hidden/.test(text("#u-hint")),
+        /16 of 17/.test(text("#u-show-word")) && /hidden/.test(text("#u-hint")),
         `shown=${st().creditCounts.shown} of ${total} · ${text("#u-show-word")}`);
       q("#u-show-every").click();
       check("(A) Show everything brings them all back", st().creditCounts.shown === total && /^All$/.test(text("#u-show-word").trim()));
       // Sam, 2026-09-05 (end of session): "need to add a Deselect All option on the Show:All drop down"
       q("#u-show-none").click();
-      check("(A) ⭐ Deselect all clears every switch, draws nothing, and the row says 0 of 14",
-        st().creditCounts.shown === 0 && /^0 of 14$/.test(text("#u-show-word").trim()) && Object.values(st().show).every((v) => v === false),
+      check("(A) ⭐ Deselect all clears every switch, draws nothing, and the row says 0 of 17",
+        st().creditCounts.shown === 0 && /^0 of 17$/.test(text("#u-show-word").trim()) && Object.values(st().show).every((v) => v === false),
         `${st().creditCounts.shown} · ${text("#u-show-word")}`);
       q("#u-show-every").click();
       check("(A) …and Show everything restores them", st().creditCounts.shown === total);

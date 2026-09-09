@@ -435,6 +435,30 @@ def articulation_counts():
     return _ARTS
 
 
+_CTE_REF = None
+
+
+def cte_of_top(top):
+    """CTE (bool) for a TOP code, or None when the code does not resolve.
+
+    Sam, 2026-09-09: "I believe the TOP codes with an asterisk are all CTE." He
+    is right, and this repo had already ruled it: CLAUDE.md's TOP caveat says TOP
+    is unreliable for almost everything, then names the CTE FLAG as one of only
+    TWO places it is authoritative BY DEFINITION (the other being the CIP<->TOP
+    crosswalk). kb/reference/top_categories.json carries the 2023 Taxonomy of
+    Programs manual's asterisk as `cte`; kb/_join_cte_from_top.py already stamps
+    it onto minted M-IDs from the same file. This reads the one reference rather
+    than re-deriving the rule.
+    """
+    global _CTE_REF
+    if _CTE_REF is None:
+        with open(os.path.join(ROOT, "kb", "reference", "top_categories.json"),
+                  encoding="utf-8") as fh:
+            _CTE_REF = (json.load(fh) or {}).get("codes") or {}
+    rec = _CTE_REF.get((top or "").strip())
+    return None if rec is None else rec.get("cte")
+
+
 def point_of(row, x, y):
     fl = row.get("flags") or {}
     pt = {
@@ -463,6 +487,24 @@ def point_of(row, x, y):
     c = CREDIT_CODE.get((row.get("credit") or "").strip())
     if c is not None:
         pt["c"] = c
+    # ── CTE vs academic (Sam, 2026-09-09) ─────────────────────────────────────
+    # ⚠️ ABSENT, NOT FALSE, when the TOP code does not resolve. "Academic" and
+    # "we could not tell" are different answers, and ~28% of identities are the
+    # second — either carrying no TOP code at all or one the manual does not
+    # list. Emitting 0 for those would file every one of them under Academic,
+    # which is the false-zero shape the credit block above was written to avoid.
+    # The client gives them their own switch, exactly as `unrec` does for credit.
+    #
+    # ⚠️ AND ON A top_mixed IDENTITY THIS IS A SUMMARY, NOT A FACT. 39% of
+    # identities span several TOP codes; `top` is then one of them, so `e` says
+    # what the identity's representative code says and no more. `em` marks those
+    # so a reader — and any later scorer — can tell the two apart rather than
+    # discovering it from a wrong count.
+    e = cte_of_top(row.get("top"))
+    if e is not None:
+        pt["e"] = 1 if e else 0
+        if (row.get("flags") or {}).get("top_mixed"):
+            pt["em"] = 1
     # Absent, not zero: "no articulation recorded" and "we did not look" are the
     # same on this feed today, and a 0 badge would assert the first.
     ar = articulation_counts().get(row["id"], 0)

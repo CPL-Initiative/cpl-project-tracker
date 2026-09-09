@@ -137,12 +137,24 @@ var solo=true, curView="skyview";
  * state, and so does this: `unrec` is a switch of its own, never folded into
  * credit. `members` is the ring of college-course squares an identity opens
  * into; the map is quieter with it off. */
-var SHOW_KEYS=["cr","nc","nce","unrec","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
+var SHOW_KEYS=["cr","nc","nce","unrec","cte","aca","ctena","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
 var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
 /* The word each switch shows in the menu, the hint and the row's tooltip. */
 var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014 noncredit enhanced", unrec:"Credit status not recorded",
   mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses",
-  arty:"Has articulations", noart:"No articulation recorded"};
+  arty:"Has articulations", noart:"No articulation recorded",
+  /* ── CTE vs academic (Sam, 2026-09-09) ──────────────────────────────────────
+   * "Need check boxes added to Show All drop down to show career technical ed
+   * (CTE) vs. academic … I believe the TOP codes with an asterisk are all CTE."
+   * He is right, and it is one of only TWO uses of TOP this repo trusts (the
+   * CLAUDE.md caveat names the CTE flag and the CIP crosswalk by name). The
+   * payload carries it as `e`, read from the manual's asterisk via
+   * kb/reference/top_categories.json.
+   *
+   * ⚠️ THREE SWITCHES, NOT TWO — the same shape as `unrec` on credit. 15% of
+   * points carry no resolvable TOP code, and folding them into "Academic" would
+   * assert something about 7,569 courses that the data does not say. */
+  cte:"CTE \u2014 career technical", aca:"Academic", ctena:"CTE status not recorded"};
 /* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
  * Each pick from the suggestion list becomes a TOKEN beside the search box; the
  * map rings every token and fits them all in view. One token behaves exactly as
@@ -1137,7 +1149,11 @@ function kindOK(nd){ return nd.a ? (nd.o ? show.orbit : show.rim) : show.ident; 
  * recorded" and "we did not look" are the same thing on this feed, so the
  * payload does not assert the first. */
 function artOK(nd){ return (nd.ar > 0) ? !!show.arty : !!show.noart; }
-function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd); }
+/* `e` is 1 CTE, 0 academic, absent when the TOP code does not resolve. Absent
+ * takes its own switch — never `aca`, which would file 7,569 unknowns as a
+ * positive claim. Mirrors creditOK's handling of `unrec`. */
+function cteOK(nd){ return nd.e===1 ? show.cte : nd.e===0 ? show.aca : show.ctena; }
+function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd); }
 /* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
  * does not respond when making changes") ─────────────────────────────────────
  *
@@ -4284,6 +4300,7 @@ function showMenuHtml(){
     ["Credit status", ["cr","nc","nce","unrec"].map(W)],
     ["Identity system", ["mid","cid","ccn","uni"].map(W)],
     ["Kind of point", ["ident","orbit","rim"].map(W)],
+    ["Career technical or academic", ["cte","aca","ctena"].map(W)],
     ["Articulations", ["arty","noart"].map(W)],
     ["Under an identity", ["members"].map(W)]
   ];

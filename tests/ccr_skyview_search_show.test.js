@@ -273,7 +273,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     st().islandsShown === 0 && st().coursesShown === 0,
     `${st().islandsShown} islands / ${st().coursesShown} courses`);
   check("(2) the summary word agrees with the switches",
-    q("#u-show-word").textContent === "0 of 14", q("#u-show-word").textContent);
+    q("#u-show-word").textContent === "0 of 17", q("#u-show-word").textContent);
   q("#u-show-every").dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
   check("(2) Show everything restores every discipline",
     st().islandsShown === 3 && q("#u-show-word").textContent === "All");
