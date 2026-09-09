@@ -320,6 +320,14 @@ module.exports = {
       // The detail panel opens hidden by design (Sam, 2026-09-04: "I want all
       // the real estate for the universe view") and the legend is foldable.
       ".u-inspector", ".u-inspector *", ".u-foot", ".u-foot *",
+      // ⭐ The control row folds behind the word Controls below 1100px (Sam,
+      // 2026-09-09: "It now takes up half the screen"). The harness is right
+      // that a panel present at 1440px and absent at 390px is normally a page
+      // silently losing a control — the difference here is that it is REACHABLE,
+      // by a button in the row that says so and carries aria-controls="u-bar".
+      // Declared rather than worked around: tests/ccr_skyview_mobile_row.test.js
+      // holds the disclosure to that contract.
+      "#u-bar", "#u-bar *",
     ],
   },
 
