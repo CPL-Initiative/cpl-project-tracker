@@ -179,6 +179,23 @@ var MEMBER_ZOOM=2.7;
  * of squares would otherwise sit over the identity you meant to click. */
 var MEMBER_ZOOM_ALL=4.2;
 var memberPts=[];
+/* ⭐ PARKED COURSES (Sam, 2026-09-09: "when I drag a course as if I am going to
+ * merge it with another course ... it stays where I leave it. Currently it snaps
+ * back if I don't merge it").
+ *
+ * A member has no position of its own — drawMembers puts it on a SPOKE of its
+ * parent's ring, at an angle derived from its index. So "leave it there" cannot
+ * be a screen coordinate: pan, zoom and the sky's turn would all walk away from
+ * it. It is stored in the same WORLD frame islands use for their own dx/dy, and
+ * projected back through w2s every frame — which is why a parked course holds
+ * its place while the sky turns underneath it.
+ *
+ * Keyed by control number. `isl` is the island whose Jacobian the world point
+ * belongs to (null on the flat map, where w2s needs no island). Cleared when the
+ * course is actually staged somewhere (applyMove) or put back (unstageMove) —
+ * parking is a resting place, never a record of anything. */
+var parkedMem={};
+function parkClear(cn){ if(cn in parkedMem){ delete parkedMem[cn]; return true; } return false; }
 /* The pale discs of the open identities — reserved ground for label placement. */
 var discBoxes=[];            // the member squares drawn this frame — {x,y,m,nd,isl} — for hit-testing
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
@@ -344,7 +361,13 @@ var SKY_URL = window.CPL_SKYVIEW_SKY_URL || "ccr_sky.json";
 var sph={yaw:0, pitch:0.15, half:Math.PI*94/180, dist:3.0, spin:0};   // 188° across; where you look, how wide, how far, how far it has turned
 var SKY_HALF_MIN=Math.PI*2/180, SKY_HALF_MAX=Math.PI*120/180;            // 4° to 240° across
 var GLOBE_DIST_MIN=0.15, GLOBE_DIST_MAX=6;
-var SPIN=0.045;                       // radians per second — one turn in about 140 s, slower as you zoom in
+// Radians per second. Sam, 2026-09-09: "Slow the rotation". 0.045 turned the
+// sky in ~140 s, which reads as motion you watch rather than drift you stop
+// noticing — and this is a canvas you stare at while curating. 0.018 is one
+// turn in about 350 s (~5.8 min), still alive, no longer competing with the
+// work. It is the ONE constant: the rate below scales it by zoom, so a slower
+// SPIN slows every projection together.
+var SPIN=0.018;
 /* ⭐ THE TURN'S TIME STEP MUST CLAMP ABOVE THE REAL FRAME TIME, NEVER BELOW IT
  * (the flicker Sam reported on 2026-09-07). The clamp exists for ONE case: a
  * backgrounded tab, where rAF stops and `t` jumps seconds, which would spin the
@@ -1488,6 +1511,10 @@ function stagedWords(m, at){
 }
 /* Put back: the staged move is dropped and the course is home again. */
 function unstageMove(cn){
+  /* Put back means BOTH halves: drop the staged move and return the course to
+   * its spoke. Clearing only the move would leave it parked in open space with
+   * nothing staged — visible, unexplained, and not what "put back" says. */
+  parkClear(cn);
   if(!(cn in movedTo)) return false;
   var mv=stagedMoveOf(cn);
   delete movedTo[cn];
@@ -1966,6 +1993,14 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
     var R=R0+ring*15;
     var a=-Math.PI/2 + j*2*Math.PI/inRing + ring*0.35;
     var x=p[0]+R*Math.cos(a), y=p[1]+R*Math.sin(a);
+    /* Parked: drawn where the reader left it, not on its spoke. The spoke line
+     * below still runs from the parent to (x,y), which is the point — it says
+     * "this is still yours" while the course sits where it was put. */
+    var park=parkedMem[m.cn];
+    if(park){
+      var pk=w2s(park.wx, park.wy, park.isl);
+      if(pk){ x=pk[0]; y=pk[1]; }
+    }
     var movedHere=(m.cn in movedTo) && movedTo[m.cn]===nd.i;
     var carried=drag && drag.kind==="course" && drag.cn===m.cn;
     ctx.beginPath(); ctx.moveTo(p[0]+rad*Math.cos(a), p[1]+rad*Math.sin(a)); ctx.lineTo(x,y);
@@ -3245,6 +3280,11 @@ window.__ccrUniverseState = function(){
           staged:{awayFrom:stagedAwayFrom, here:stagedHere, countHere:stagedCountHere, of:stagedMoveOf, words:stagedWords, unstage:unstageMove},
           proj:proj, sph:{yaw:sph.yaw, pitch:sph.pitch, half:sph.half, dist:sph.dist, spin:sph.spin}, rotating:rotating, reduceMotion:reduceMotion,
           dark:dark, day:dayOn(), darkChoice:darkChoice, namesOn:namesOn, skyState:skyState,
+          /* Parked courses, so a test can assert a drop STAYED rather than
+           * inferring it from a hint string — the hint is wording, this is the
+           * state the drawing actually reads. */
+          parked:Object.keys(parkedMem),
+          parkedAt:function(cn){ var q=parkedMem[cn]; return q ? {wx:q.wx, wy:q.wy} : null; },
           regions:(skyRegions||[]).map(function(r){ return {text:r.text, on:!!r.p}; }),
           islandScreen:function(name){ var I=null; if(U) U.islands.forEach(function(x){ if(x.d===name) I=x; }); if(!I) return null; var c=islCenter(I); return c ? {x:c[0], y:c[1], k:islScale(I), r:I.r*islScale(I)} : null; },
           nodeZoom:NODE_ZOOM, labelZooms:{id:ID_ZOOM, title:TITLE_ZOOM, full:FULL_ZOOM},
@@ -3678,7 +3718,7 @@ function wire(){
       if(Math.abs(px-drag.x0)+Math.abs(py-drag.y0)>5){
         var mem=drag.mem, mgate=canMove(mem.cn);
         if(!mgate.ok){ setHint(sharedKeyReason(mem.cn, mem.n, mgate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y, moved:true}; return; }
-        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd};
+        drag={kind:"course", cn:mem.cn, d:mem.d, code:mem.n, college:mem.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
         setHint("Carrying <strong>"+esc(mem.n)+"</strong> ("+esc(mem.c)+") — drop it on the identity it belongs to.");
         draw();
       }
@@ -3711,7 +3751,7 @@ function wire(){
           if(m && !emptied(drag.nd)){
             var gate=canMove(m.cn);
             if(!gate.ok){ setHint(sharedKeyReason(m.cn, m.n, gate.others)); drag={kind:"pan", x0:px, y0:py, vx:view.x, vy:view.y}; return; }
-            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd};
+            drag={kind:"course", cn:m.cn, d:m.d, code:m.n, college:m.c, px:px, py:py, fromNode:drag.nd, fromIsl:drag.isl};
             setHint("Carrying <strong>"+esc(m.n)+"</strong> ("+esc(m.c)+") — drop it on the identity it belongs to.");
             draw();
           }
@@ -3728,7 +3768,27 @@ function wire(){
         selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); drag=null; draw(); return;
       }
       if(hit && hit.nd) applyMove(drag.cn, drag.code, drag.college, hit.nd.i, drag.d);
-      else setHint("Dropped on empty space — nothing moved.");
+      else {
+        /* ⭐ IT STAYS WHERE IT WAS LEFT. The old branch said "nothing moved" and
+         * dropped the carry, so the course snapped back onto its spoke and the
+         * reader's arrangement was lost every time a merge was not the point.
+         *
+         * The frame is the island dropped ON if there is one, else the island it
+         * came FROM — a world point needs somebody's Jacobian on the sphere, and
+         * those are the only two islands the gesture names. On the flat map s2w
+         * needs none, so a null island is fine there and w2s takes the flat path.
+         * If neither is available on the sphere, s2w returns null and the old
+         * behavior stands rather than parking the course somewhere invented. */
+        var pisl=(hit&&hit.isl)||drag.fromIsl||null;
+        var w=s2w(px, py, pisl);
+        if(w){
+          parkedMem[drag.cn]={wx:w[0], wy:w[1], isl:pisl};
+          setHint("<strong>"+esc(drag.code)+"</strong> left where you dropped it — nothing merged. "+
+                  "Drag it onto an identity to merge it, or open it and press Put back.");
+        } else {
+          setHint("Dropped on empty space — nothing moved.");
+        }
+      }
       drag=null; draw(); return;
     }
     if(drag && drag.kind==="pan" && !drag.moved && drag.hit){          // a click, in Pan mode
@@ -4813,6 +4873,8 @@ function applyMove(cn, code, college, toId, d){
    * the routes meet, so the release belongs here — after the gates, which
    * return with the carry intact so another destination can still be chosen. */
   if(drag && drag.kind==="course" && drag.cn===cn) drag=null;
+  /* A staged move re-homes the course, so its resting place is spent. */
+  parkClear(cn);
   var t=nodeById(toId);
   /* ⚠️ "Recorded below the map" NAMED A PLACE THE READER CANNOT SEE. `#u-writes`
    * lives in `#u-below`, and `body.u-solo` — SkyView, the default — hides that

@@ -306,6 +306,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html` | — |
+| `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_todos.js` | pages: `CPL_Dashboard.html` | — |
 | `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `credential_reference.js` | pages: `CPL_Dashboard.html` | — |
@@ -830,5 +831,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 449 file
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 450 file
 datasets · 138 external services · 325 consumers · 33 workflows · 37 tabs.
