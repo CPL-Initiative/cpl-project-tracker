@@ -3760,7 +3760,30 @@ function artOK(nd){ return (nd.ar > 0) ? !!show.arty : !!show.noart; }
  * takes its own switch — never `aca`, which would file 7,569 unknowns as a
  * positive claim. Mirrors creditOK's handling of `unrec`. */
 function cteOK(nd){ return nd.e===1 ? show.cte : nd.e===0 ? show.aca : show.ctena; }
-function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd); }
+/* ── Isolate (Sam, 2026-09-09) ───────────────────────────────────────────────
+ * "Need an Isolate toggle in the header to show only the selected items
+ * filtered. This will allow users to eliminate the noise of other groupings on
+ * screen. Sometimes you need to keep the universe in view and other times not."
+ *
+ * A toggle, not a mode: the last sentence is the requirement. It rides on the
+ * selection that already exists — the search tokens (searchHits), the clicked
+ * point and the ties lit around it — rather than inventing a second idea of
+ * "selected" for the reader to keep straight.
+ *
+ * ⚠️ IT NO-OPS WITH NOTHING SELECTED, deliberately. Isolating an empty selection
+ * would empty the map, and a blank canvas is indistinguishable from a broken
+ * control — the exact failure the Show switches were fixed for (see islandPass).
+ * So the button says so and stays off instead. */
+var isolate=false;
+function isoActive(){ return isolate && (searchHits.length>0 || !!selNode || !!selIsl); }
+function isoNodeOK(nd){
+  if(!isoActive()) return true;
+  for(var i=0;i<searchHits.length;i++) if(searchHits[i].id===nd.i) return true;
+  if(nd===selNode) return true;
+  if(lastFocus && lastFocus[nd.i]) return true;   // the ties the click lit
+  return false;
+}
+function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd) && isoNodeOK(nd); }
 /* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
  * does not respond when making changes") ─────────────────────────────────────
  *
@@ -3780,7 +3803,18 @@ function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && a
  * Memoized on a signature of the switches: draw() runs on every pan and zoom
  * frame, and re-counting 49,896 courses per frame is exactly the kind of cost
  * that turns a filter into a stutter. */
-function showSig(){ var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0"; return t; }
+/* ⚠️ THE SIGNATURE CARRIES THE ISOLATION TOO. islandPass memoizes its count on
+ * this string; isolation changes which points pass without touching a single
+ * switch, so a signature of the switches alone would serve a stale count for
+ * every island until something else moved. The selection is folded in by its
+ * size and its head — enough to change whenever the selection does, and cheap
+ * on a frame. */
+function showSig(){
+  var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0";
+  if(isoActive()) t+="|iso"+searchHits.length+":"+(searchHits[0]?searchHits[0].id:"")+
+                    ":"+(selNode?selNode.i:"")+":"+(selIsl?selIsl.d:"");
+  return t;
+}
 function islandPass(isl){
   var sig=showSig();
   if(isl._passSig!==sig){
@@ -4209,6 +4243,7 @@ function drawFrame(){
     else orbitsOf(selNode.i).forEach(function(o){ focus[o.i]=1; });
   }
   lastFocus=focus;
+  paintIso();
   var labelQueue=[], nodeQueue=[], openList=[];
   memberPts=[]; discBoxes=[];
   /* ⭐ THE STAR PASS (S239). On the sphere at its opening width every one of
@@ -5158,6 +5193,15 @@ window.__ccrUniverse = function(opts){
             '<button class="btn mode" type="button" id="u-lit" aria-pressed="false" '+
               'title="Light the courses that carry an articulation">Articulations</button>'+
           '</span>'+
+          /* ── Isolate (Sam, 2026-09-09) — beside Show, because it is a filter,
+           * not a light: it changes what is drawn, and the two next to each
+           * other read as the pair they are. A word and its pressed state,
+           * painted from module memory by paintIso like every other toggle
+           * here — never written into the markup. */
+          '<span class="u-modes u-isogrp" role="group" aria-label="Isolation">'+
+            '<button class="btn mode" type="button" id="u-iso" aria-pressed="false" '+
+              'title="Show only what is selected, and hide everything else">Isolate</button>'+
+          '</span>'+
         '</div>'+
         '<span class="u-wins" role="group" aria-label="Window">'+
           '<button class="u-ico u-win" type="button" id="u-win-down" aria-label="Show the page around the map" '+
@@ -6072,7 +6116,9 @@ function wire(){
   if(fc) fc.onclick=function(){ setFace("courses"); };
   if(fp) fp.onclick=function(){ setFace("cpl"); };
   if(lb) lb.onclick=function(){ setLit(!lit); };
-  paintFace(); paintLit();
+  var ib=document.getElementById("u-iso");
+  if(ib) ib.onclick=function(){ setIsolate(!isolate); };
+  paintFace(); paintLit(); paintIso();
   if(face==="cpl" && cplState!=="ok")
     loadCpl(function(){ paintFace(); if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
   /* The Views menu is built and wired by viewsMenuInto() — one builder for
@@ -7722,6 +7768,31 @@ function paintLit(){
   paintLegendLit();
 }
 function paintLegendLit(){ var el=document.getElementById("u-lg-lit"); if(el) el.hidden=!lit; }
+/* ⚠️ CALLED FROM draw(), SO IT IS MEMOIZED. The button's enabled state depends
+ * on the SELECTION, which changes from half a dozen places — a search, a token,
+ * a click on a point, a click on empty ground, Esc. Painting it from each of
+ * them is a list to keep in step and a bug the first time somebody adds a
+ * seventh; painting it from the one funnel every one of them already reaches
+ * cannot go stale. draw() runs on every rotation frame, so the work is guarded
+ * by a signature rather than done 60 times a second. */
+var _isoSig=null;
+function paintIso(force){
+  var b=document.getElementById("u-iso");
+  if(!b) return;
+  var can = searchHits.length>0 || !!selNode || !!selIsl;
+  var sig = (isolate?"1":"0")+(can?"1":"0");
+  if(!force && sig===_isoSig) return;
+  _isoSig=sig;
+  b.setAttribute("aria-pressed", isolate?"true":"false");
+  /* Disabled with nothing selected rather than silently doing nothing: a toggle
+   * that can be pressed and changes not one pixel is the "inert control" the
+   * Show switches were fixed for. The reason travels with it in the title. */
+  b.disabled = !can && !isolate;
+  b.title = b.disabled
+    ? "Select a discipline or a course first \u2014 Isolate hides everything else"
+    : isolate ? "Bring the rest of the universe back"
+              : "Show only what is selected, and hide everything else";
+}
 function repaintSelection(){ if(selNode && selIsl) renderNode(); else if(selIsl) showIsland(selIsl); }
 function cplFaceWords(){
   var c=cplCounts();
@@ -7757,6 +7828,24 @@ function setLit(on, quiet){
   }
   if(cvs && document.getElementById("u-cvs")===cvs) draw();
 }
+
+/* Isolate on/off. It re-counts every island (the signature changed), so the one
+ * draw() below is the whole update — and the hint says what happened, because a
+ * map that suddenly holds three points needs to say why. */
+function setIsolate(on){
+  var can = searchHits.length>0 || !!selNode || !!selIsl;
+  if(on && !can){
+    setHint("Nothing is selected yet \u2014 search for a discipline or click a course, then press <strong>Isolate</strong>.");
+    paintIso(true); return;
+  }
+  isolate=!!on;
+  paintIso(true);
+  setHint(isolate
+    ? "<strong>Isolated</strong> \u2014 only what you selected is drawn. Press Isolate again to bring the rest back."
+    : "The whole universe is back in view.");
+  draw();
+}
+window.__ccrIsolate=function(on){ if(on==null) return isolate; setIsolate(on); return isolate; };
 function setSolo(on, quiet){
   solo=!!on; curView=solo?"skyview":"comprehensive"; curArg=(face==="cpl")?"cpl":"";
   document.body.classList.toggle("u-solo", solo);
