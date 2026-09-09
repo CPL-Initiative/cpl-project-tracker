@@ -717,6 +717,19 @@ function MOTION(known) {
             shut.forEach((d) => { d.open = true; });
             document.querySelectorAll('a[href],button,input:not([type="hidden"]),select,textarea,[tabindex="0"]').forEach((el) => {
               if (el.getBoundingClientRect().height === 0) return;
+              /* ⚠️ A DISABLED CONTROL CANNOT TAKE FOCUS, SO IT HAS NOTHING TO
+                 SHOW A RING FOR — el.focus() is a no-op exactly as it is inside
+                 a closed <details> above, and the element then reads as "no
+                 ring" for a reason that is not a defect. WCAG asks for a visible
+                 indicator on what CAN be focused; a control that declines focus
+                 is not in scope. Found 2026-09-09: SkyView's Isolate button is
+                 disabled until something is selected (by design), and it was
+                 reported on all five of that page's routes — a standing red that
+                 no amount of CSS could clear, on every view that disables a
+                 control. ⚠️ NOT the same as the <details> case: there the fix is
+                 to OPEN the section, because the reader can reveal it. Here
+                 there is nothing to reveal. */
+              if (el.disabled || el.getAttribute("aria-disabled") === "true") return;
               el.focus();
               const cs = getComputedStyle(el);
               const ring = (cs.outlineStyle !== "none" && parseFloat(cs.outlineWidth) > 0) ||

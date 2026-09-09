@@ -166,8 +166,31 @@ var tokens=[];
  * whether it has docked the map back inside its own chrome, and whether its
  * side menu is open. Stand-alone both stay false and the page is the window. */
 var hostDocked=false, hostMenu=false;
-/* The legend strip under the map folds away; the fold survives a re-render. */
-var legendOpen=true;
+/* Below this the row folds behind the word Controls and the legend starts shut
+ * (Sam, 2026-09-09). ⚠️ IT MUST EQUAL THE STYLESHEET'S BREAKPOINT — the CSS
+ * decides whether the Controls word is visible and this decides whether the
+ * legend starts shut, so a drift shows up as a legend folded on a screen with
+ * no way to unfold it. tests/ccr_skyview_mobile_row.test.js pins them equal.
+ * 1100px is where the sheet already gives up `flex-wrap:nowrap`: above it the
+ * row fits one line, below it the row was wrapping, which is the state Sam is
+ * describing. */
+var NARROW_MAX=1100;
+function narrowScreen(){
+  return typeof matchMedia==="function" && !!matchMedia("(max-width:"+NARROW_MAX+"px)").matches;
+}
+/* The legend strip under the map folds away; the fold survives a re-render.
+ * ⚠️ IT STARTS SHUT ON A PHONE, AND THE TEST IS RUN ONCE — at module load, not
+ * per render. Measured 2026-09-09 at 390x844: the legend is 430px, MORE than
+ * the 254px header, so opening it costs half the window. Re-testing per render
+ * would re-shut it under a reader who had just opened it, and module memory
+ * surviving a re-render is the whole point of this variable. */
+var legendOpen=!narrowScreen();
+/* The controls sheet on a narrow screen: shut until the reader asks. Module
+ * memory for the same reason as legendOpen — a re-render must not close it. */
+var ctlsOpen=false;
+/* The observer that keeps the canvas height honest; disconnected and rebuilt on
+ * each render so a torn-down row is not still being watched. */
+var chromeRO=null;
 /* A subject's identities are ringed on the map only up to this many: 408 red
  * rings on one island read as an alarm (Sam, 2026-09-03), and past this the
  * count in the hint says more than the rings would. */
@@ -2542,6 +2565,24 @@ window.__ccrUniverse = function(opts){
         '</details>'+
         '<h1 class="u-title" id="u-title">SkyView</h1>'+
         '<div class="u-search-slot" id="u-search-slot"></div>'+
+        /* ── the narrow-screen door to the row (Sam, 2026-09-09: "it now takes
+         * up half the screen") ──────────────────────────────────────────────
+         * Measured before building, at 390x844: #u-top was 254px over four
+         * wrapped rows — 30% of the viewport — with another 430px of legend
+         * under the map, so 81% of a screenful was not the map. That is the
+         * opposite of what SkyView names (the map ALONE, filling the window).
+         *
+         * ⭐ A WORD, NOT A RAIL. Sam asked whether the row should float as a
+         * vertical rail down the left edge. It should not: a rail is ~48px of a
+         * 390px canvas, and Rotate · Pan · Move · Articulations · Isolate do
+         * not stack in a 48px column — a rail decides the plain-words rule by
+         * geometry before anyone argues it. One word opens all of them instead.
+         *
+         * ⚠️ #u-bar DOES NOT MOVE IN THE DOM. Lifting it was tried and is wrong
+         * (see the ITEM 8 note below: two #u-bar under one id, and it vanishes
+         * in full screen). The fold is CSS ONLY, so every id, every handler and
+         * every paint* function keeps working untouched. */
+        '<button class="btn u-ctl" type="button" id="u-ctl" aria-expanded="false" aria-controls="u-bar">Controls</button>'+
         '<div class="u-bar" id="u-bar" role="toolbar" aria-label="Map controls">'+
           /* ── where the reader stands (Sam's rulings 1, 2 and 7, 2026-09-07):
            * three words. The Sky opens; the Globe and the Map are one click away. */
@@ -2730,11 +2771,23 @@ function fitCanvas(){
   var lineEl=document.getElementById("u-face-line");
   var th=(topEl?topEl.offsetHeight:0)+((lineEl&&!lineEl.hidden)?lineEl.offsetHeight:0), fh=footEl?footEl.offsetHeight:0, h;
   if(document.fullscreenElement && document.fullscreenElement===full) h=window.innerHeight-th-fh;
-  else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
   /* SkyView alone: nothing is painted above or below the section, so the canvas
    * takes the viewport minus the top row and the legend strip — the same
-   * arithmetic as browser full screen, which is what it looks like. */
+   * arithmetic as browser full screen, which is what it looks like.
+   *
+   * ⭐ THIS TEST NOW COMES BEFORE THE NARROW ONE, AND THAT IS THE FIX FOR HALF
+   * OF SAM'S 2026-09-09 REPORT ("It now takes up half the screen"). The 0.62
+   * below used to win at every width under 700px, solo or not, so the map was
+   * PINNED at 62% of a phone viewport by arithmetic — measured at 390x844:
+   * 0.62 x 844 = 523px, exactly the canvas that was there. Shrinking the header
+   * alone could never have helped; the freed pixels had nowhere to go.
+   * ⚠️ innerHeight is the DYNAMIC viewport on a phone (it shrinks when the URL
+   * bar shows), which is why this arithmetic is better than a `dvh` rule in the
+   * stylesheet and why the CSS deliberately does not try to own this height. */
   else if(solo && document.body.classList.contains("u-solo")) h=Math.max(320, window.innerHeight-th-fh);
+  /* The COMPREHENSIVE view on a phone still scrolls — the panes below the map
+   * are the point there, so the canvas takes a screenful's worth and no more. */
+  else if(window.innerWidth<700) h=Math.round(window.innerHeight*0.62);
   else {
     // Whatever sits above the canvas (the masthead, the crumbs, the control
     // strip) is measured, not assumed, and the legend strip below it is left
@@ -3472,6 +3525,27 @@ function hideTip(){ var tip=document.getElementById("u-tip"); if(tip) tip.hidden
 
 function wire(){
   window.addEventListener("resize", function(){ if(document.getElementById("u-cvs")===cvs){ fitCanvas(); syncViewK(); draw(); } });
+  /* ⚠️ THE CANVAS HEIGHT IS DERIVED FROM THE ROW'S HEIGHT, SO IT GOES STALE THE
+   * MOMENT THE ROW CHANGES HEIGHT — and until 2026-09-09 nothing re-ran it.
+   * Measured at 390x844: fitCanvas ran while the row was still 393px tall (the
+   * page's search form had not yet been borrowed into its slot), wrote a 451px
+   * canvas and left it there; dispatching one resize corrected it to 730px,
+   * which is the proof that the ARITHMETIC was right and only the TIMING was
+   * wrong. The resize listener above could never have caught it — the window
+   * never resized. ⭐ A one-shot rAF would have fixed this instance and nothing
+   * else; the observer also covers the row wrapping as a breakpoint is crossed,
+   * a font landing late, and the legend folding.
+   * It cannot loop: fitCanvas writes heights on #u-wrap and #u-stage, neither
+   * of which is observed here. */
+  if(typeof ResizeObserver!=="undefined"){
+    if(chromeRO && chromeRO.disconnect) chromeRO.disconnect();
+    chromeRO=new ResizeObserver(function(){
+      if(document.getElementById("u-cvs")===cvs){ fitCanvas(); syncViewK(); draw(); }
+    });
+    ["u-top","u-foot","u-face-line"].forEach(function(id){
+      var el=document.getElementById(id); if(el) chromeRO.observe(el);
+    });
+  }
   cvs.addEventListener("wheel", function(e){
     e.preventDefault();
     var r=cvs.getBoundingClientRect();
@@ -3658,6 +3732,38 @@ function wire(){
   var lmb=document.getElementById("u-legend-menu"); if(lmb) lmb.onclick=toggleLegend;
   paintLegend();
 
+  /* ── the Controls sheet (Sam, 2026-09-09) ────────────────────────────────
+   * ⚠️ PAINTED FROM MODULE MEMORY, NEVER WRITTEN INTO THE MARKUP. The markup
+   * above says aria-expanded="false" because that is the state at first render;
+   * every path that changes it comes back through here, which is the rule the
+   * lane states for setSolo/paintFace/paintLit/paintProj and the reason a
+   * re-render does not shut a sheet the reader opened.
+   *
+   * The sheet is ABSOLUTE inside #u-full, not fixed: #u-full is the element the
+   * browser paints in full screen, so a fixed sheet would be measured against a
+   * viewport the map no longer owns. */
+  function paintCtls(){
+    var full=document.getElementById("u-full"), b=document.getElementById("u-ctl");
+    if(full) full.classList.toggle("u-ctls-on", ctlsOpen);
+    if(b) b.setAttribute("aria-expanded", ctlsOpen?"true":"false");
+  }
+  function setCtls(on){
+    var next=!!on;
+    if(next===ctlsOpen) return;
+    ctlsOpen=next; paintCtls();
+  }
+  var ctlb=document.getElementById("u-ctl");
+  if(ctlb) ctlb.onclick=function(){ setCtls(!ctlsOpen); };
+  paintCtls();
+  /* Esc shuts it before anything else reads Esc — on the map Esc steps OUT of a
+   * discipline, and a reader whose last act was opening the sheet means the
+   * sheet. Registered on the section so it works in full screen too. */
+  var fullEl=document.getElementById("u-full");
+  if(fullEl) fullEl.addEventListener("keydown", function(e){
+    if(e.key==="Escape" && ctlsOpen){ e.stopPropagation(); setCtls(false);
+      var bb=document.getElementById("u-ctl"); if(bb&&bb.focus) bb.focus(); }
+  }, true);
+
   /* ── ITEM 8: the controls sit on the TITLE's row ──────────────────────────
    * Sam, 2026-09-04: "Try to consolidate the top of Sky view by moving the chips
    * up to the header and all on the same row as the title. I want all the real
@@ -3730,15 +3836,42 @@ function wire(){
   if(tsb) tsb.onclick=function(){ setTextStep((textStep+1) % TEXT_STEPS.length); };
   paintTextStep();
 
+  /* ── two fingers (Sam, 2026-09-09: "need to be able to zoom in out using
+   * pinch on mobile") ──────────────────────────────────────────────────────
+   * ⚠️ IT WAS NOT MERELY MISSING, IT WAS WORSE THAN MISSING. Measured before
+   * building, on a 390px touch context: a 5x two-finger spread left the zoom
+   * readout on "188° across" for all eight frames — because the canvas carries
+   * touch-action:none (so the browser's own pinch is off) and NOTHING here read
+   * a second pointer. The handler below set `drag` on EVERY pointerdown, so the
+   * second finger replaced the first one's grab and both fingers then fed the
+   * same pan: two fingers did not zoom, they fought over the turn.
+   *
+   * The registry is the fix and the guard at once — `pts` is what makes "how
+   * many fingers are down" answerable at all. zoomAt() already serves both the
+   * sphere and the flat map (on the sphere it zooms about the window's centre,
+   * which is where the turn is anchored), so no second zoom path exists here. */
+  var pts={}, pinch=null;
+  function ptList(){ var a=[], k; for(k in pts) if(Object.prototype.hasOwnProperty.call(pts,k)) a.push(pts[k]); return a; }
+  function ptSpan(p){ var dx=p[0].x-p[1].x, dy=p[0].y-p[1].y; return Math.sqrt(dx*dx+dy*dy); }
+  function endPinch(){ pinch=null; }
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
     if(cvs.setPointerCapture && e.pointerId!=null){ try{ cvs.setPointerCapture(e.pointerId); }catch(err){} }
+    pts[e.pointerId]={x:px, y:py};
     hideTip(); stopTurn();                                  // the first touch stops the turn (ruling 4)
+    setCtls(false);                     // a touch on the map puts the sheet away
     // A course already picked up survives the press. Without this the pointerdown
     // replaced `drag` with a fresh node/island/pan grab before pointerup could
     // read it, so pressing "Drag…" and then clicking the destination — the only
     // route the hint text describes — selected the destination and moved nothing.
+    // ⭐ IT ALSO OUTRANKS A PINCH: a carried course never sees a moving target
+    // (ruling 4's invariant), so a stray second finger must not start one.
     if(drag && drag.kind==="course"){ drag.px=px; drag.py=py; return; }
+    /* The second finger turns the gesture into a pinch and DROPS the first
+     * one's grab — otherwise the pan it started keeps running underneath and
+     * the sky lurches while the zoom changes. */
+    var open=ptList();
+    if(open.length>=2){ pinch={d:ptSpan(open)}; drag=null; return; }
     var hit=pick(px,py);
     // Pan mode: the drag moves the view whatever is under the pointer; the
     // click it started with still selects on release.
@@ -3754,6 +3887,25 @@ function wire(){
   });
   cvs.addEventListener("pointermove", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
+    if(pts[e.pointerId]){ pts[e.pointerId].x=px; pts[e.pointerId].y=py; }
+    if(pinch){
+      var open=ptList();
+      if(open.length<2) return;                 // a finger lifted mid-gesture; wait for the release
+      var d=ptSpan(open);
+      /* A ratio against the LAST span, not the first: the reader's fingers keep
+       * moving after the zoom clamps at either end, and an absolute ratio would
+       * bank all of that travel and spring back when they reverse. ⚠️ The span
+       * only advances when the gesture actually acts, so the dead zone filters
+       * jitter instead of swallowing slow travel a step at a time. */
+      if(pinch.d>0 && d>0){
+        var ratio=d/pinch.d;
+        if(ratio>1.004 || ratio<0.996){
+          zoomAt((open[0].x+open[1].x)/2, (open[0].y+open[1].y)/2, ratio);   // zoomAt draws
+          pinch.d=d;
+        }
+      }
+      return;
+    }
     if(!drag){
       var hit=pick(px,py);
       var ni=hit?hit.isl:null, nn=hit?hit.nd:null;
@@ -3823,6 +3975,12 @@ function wire(){
   });
   cvs.addEventListener("pointerup", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
+    delete pts[e.pointerId];
+    /* ⭐ THE RELEASE THAT ENDS A PINCH SELECTS NOTHING. Both fingers come up as
+     * two separate pointerups; without this the second one runs the click
+     * branches below and lands the reader on whatever happened to be under a
+     * finger — a selection they never asked for, at the end of a zoom. */
+    if(pinch){ if(ptList().length<2){ endPinch(); drag=null; draw(); } return; }
     if(drag && drag.kind==="course"){
       var hit=pick(px,py,true);
       if(hit && hit.nd && drag.fromNode && hit.nd===drag.fromNode){
@@ -3866,6 +4024,17 @@ function wire(){
      * highlight (Obsidian does the same); the panel keeps what it was showing. */
     else if(drag && drag.kind==="pan" && !drag.moved && !drag.hit && selNode){ selNode=null; }
     drag=null; draw();
+  });
+  /* ⚠️ WITHOUT THIS A CANCELLED TOUCH IS A PHANTOM FINGER. The OS takes a
+   * pointer away on a system gesture, an incoming call, a palm rejection — and
+   * that pointer never sends pointerup. It would sit in `pts` for the life of
+   * the page, so the NEXT single-finger drag would count two and start a pinch
+   * against a finger that is not there. The canvas had no pointercancel handler
+   * at all before the registry existed; now it needs one. */
+  cvs.addEventListener("pointercancel", function(e){
+    delete pts[e.pointerId];
+    if(pinch && ptList().length<2){ endPinch(); drag=null; }
+    hideTip();
   });
   cvs.addEventListener("pointerleave", function(){ hideTip(); });
   /* The accelerator for the button in the panel. It follows the button rather

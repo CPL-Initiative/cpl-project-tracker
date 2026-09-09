@@ -465,10 +465,64 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 }
 /* ── item 6: the legend folds away and the canvas takes the space ── */
 .u-foot.u-foot-hidden{display:none}
+/* The word that opens the row on a narrow screen. At desktop widths the row IS
+   the control, so the word does not exist there.
+   ⚠️ SCOPED TO #u-top, NOT .u-top. Measured at 1440px: `.u-top .u-ctl` is TWO
+   classes and so is the `.u-top .btn{display:inline-flex}` block further down —
+   a tie, decided by source order, which that block wins because it is later.
+   The desktop row grew a word that opens something already open. The id is what
+   settles it, and the media rule below must carry the id for the same reason. */
+#u-top .u-ctl{display:none}
 @media (max-width:900px){
   /* Below the masthead's own stacking breakpoint the lift would make a
      third cramped row, so let it wrap normally instead. */
   .u-bar.u-bar-mast{margin-left:0;flex-basis:100%}
+}
+/* ── SkyView on a phone (Sam, 2026-09-09: "It now takes up half the screen") ──
+   MEASURED BEFORE BUILDING, at 390x844: #u-top was 254px over four wrapped rows
+   (30% of the viewport) and .u-foot another 430px — MORE than the header — so
+   81% of a screenful was not the map. That is the opposite of what the name
+   means (the map ALONE, filling the window — Sam, 2026-09-05).
+
+   ⚠️ THE FOLD IS CSS ONLY — #u-bar KEEPS ITS PLACE IN THE DOM. Lifting the bar
+   elsewhere was tried and is wrong (see ccr_universe.js, the ITEM 8 note: two
+   #u-bar under one id, and it vanishes in full screen). Every id, every handler
+   and every paint* function is untouched here; only the box moves.
+
+   1100px is chosen, not invented: it is the width at which this sheet already
+   gives up `flex-wrap:nowrap` on the row. Above it the row fits on one line and
+   is left exactly as it is; below it the row was WRAPPING, which is the state
+   Sam is describing. Measured at 1024x900 mid-build: a three-line 186px header
+   (21% of the window) — an iPad landscape was in the wrapped zone, not the
+   comfortable one, so the earlier plan to hold the full row down to 900px was
+   keeping a tablet in the worse of the two states. ── */
+@media (max-width:1100px){
+  #u-top .u-ctl{display:inline-flex;align-items:center;flex:0 0 auto;white-space:nowrap}
+  /* The sheet is ABSOLUTE inside #u-full, never fixed: #u-full is the only
+     element the browser paints in full screen, so a fixed sheet would measure
+     itself against a viewport the map no longer owns. */
+  .u-top .u-bar{
+    position:absolute;left:0;right:0;bottom:0;z-index:6;display:none;
+    margin:0;padding:10px clamp(8px,3vw,16px);gap:8px;
+    justify-content:flex-start;align-content:flex-start;
+    background:var(--surface-opaque);border-top:1px solid var(--border-strong);
+    box-shadow:0 -6px 18px rgba(20,20,30,.22);
+    max-height:60vh;max-height:60dvh;overflow-y:auto}
+  .u-full.u-ctls-on .u-top .u-bar{display:flex}
+  /* Thumbs, not cursors: WCAG 2.2 SC 2.5.8 asks 24px and a sheet can afford
+     more, so the chips grow rather than shrink once they are off the row. */
+  .u-full.u-ctls-on .u-top .u-bar .btn{min-height:36px;padding:8px 12px}
+  .u-full.u-ctls-on .u-top .u-modes{height:auto}
+  .u-full.u-ctls-on .u-top .u-modes .btn.mode{height:auto;min-height:36px}
+  /* ⚠️ THE CANVAS HEIGHT IS NOT SET HERE, ON PURPOSE. fitCanvas() owns it and
+     writes it inline, so any rule here is overridden and only looks as though
+     it works. The narrow-screen fill is a two-line change in that function, not
+     a stylesheet rule — see the branch order note in ccr_universe.js. Setting
+     `height:auto` here was tried first and was silently beaten by the inline
+     style at every width where .u-stage lays out as a row.
+     Opened on a phone the legend is 430px and would eat the map, so it takes at
+     most a third and scrolls inside itself — the same treatment wide tables get. */
+  body.u-solo .u-foot{max-height:33vh;max-height:33dvh;overflow-y:auto}
 }
 .u-bar .btn{font-size:.8rem;padding:6px 10px;background:var(--surface);backdrop-filter:blur(4px)}
 .u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
@@ -921,6 +975,15 @@ body.u-sheet-open{overflow:hidden}
 @media (max-width:700px){
   .u-full{height:auto}
   .u-stage{flex-direction:column}
+  /* ⚠️ A CLOSED PANEL IS A ZERO-*WIDTH* RULE, and here .u-stage lays out as a
+     COLUMN — so the closed panel's grip still measured 1px TALL, the map section
+     came to 845px against an 844px window, and a phone could rubber-band a view
+     that is supposed to hold still under a finger. It belongs at THIS
+     breakpoint, not at the row's: between 700 and 1100 the stage is still a row,
+     the panel is a zero-width column that costs no height, and .u-insp-grip is
+     still the handle that resizes it — hiding the panel there would take the
+     grip with it. (Below 700 the grip is already display:none, just under.) */
+  body.u-solo .u-inspector.closed{display:none}
   .u-inspector{flex-basis:auto;width:auto;height:auto;max-height:50vh;border-left:0;border-top:1px solid var(--border-strong)}
   .u-insp-grip{display:none}
   .u-bar .btn{padding:5px 8px}
