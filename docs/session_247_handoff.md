@@ -85,6 +85,16 @@ mid-stream.
   said 15 *draw* sites (14 by then — an earlier item had absorbed one) and nine
   explainer sections (seven). Re-measure at execution.
 
+## ⭐ A STANDING RULE ARRIVED AFTER THE CHECKPOINT
+
+Sam, 2026-09-09, on being asked whether to checkpoint: *"you don't need
+permission to checkpoint. Just run it when needed and we can refresh it if we
+stay in the session for more work."* **Run it. Do not offer it.** Fire on Rule
+9's commits-since-handoff count, then just run it, and run it again if work
+continues. The asymmetry is the whole argument — one taken too early costs a
+re-run he explicitly invited; one deferred for an answer that never comes costs
+the session's reasoning. In `CLAUDE.md` and `working_with_claude_code.md` §7 now.
+
 ## Open — what to pick up
 
 1. **The explainer's footer.** Sam has not ruled whether the *sources* paragraph

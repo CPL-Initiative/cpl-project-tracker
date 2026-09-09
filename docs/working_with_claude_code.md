@@ -133,7 +133,12 @@ session on funding" saves that entirely.
 
 ## 7. Checkpoint before you leave
 
-Type **`/checkpoint`** before you close a session that did anything substantial.
+Type **`/checkpoint`** before you close a session that did anything substantial
+— though as of 2026-09-09 you should not have to. Sam's standing rule: *"you
+don't need permission to checkpoint. Just run it when needed and we can refresh
+it if we stay in the session for more work."* Sessions now run it on their own
+when the work warrants it, and run it **again** if you keep going afterwards.
+Asking you first was the old behavior and it was the wrong default.
 
 What it does: writes down what we figured out, what state things are in, and
 what's next — into files the next session reads. Takes a couple of minutes and I

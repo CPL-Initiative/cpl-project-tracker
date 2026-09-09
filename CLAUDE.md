@@ -484,8 +484,13 @@ first day.** Do the remembering for them.
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
   scripts, workflows and public surfaces — derived from the code
   (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
-- **Offer the checkpoint** — measurably, on Rule 9's commits-since-handoff count,
-  never on a feeling that the session is winding down.
+- **RUN the checkpoint; do not ask for it (Sam, 2026-09-09).** *"you don't need
+  permission to checkpoint. Just run it when needed and we can refresh it if we
+  stay in the session for more work."* Fire on Rule 9's commits-since-handoff
+  count, never on a feeling that the session is winding down — then just run it.
+  ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
+  deferred for an answer that never comes costs the session's reasoning. If work
+  continues after, checkpoint again.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
