@@ -1993,7 +1993,7 @@
       ".cpl-mem .mem-title .mem-emoji{font-size:1.5rem;line-height:1;}",
       ".cpl-mem .mem-title h1{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.45rem;margin:0;font-weight:700;line-height:1;}",
       ".cpl-mem .mem-title .mem-sub{color:var(--text-muted);font-size:.8rem;font-family:ui-monospace,Menlo,monospace;}",
-      ".cpl-mem .mem-head-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto;}",
+      ".cpl-mem .mem-head-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px;flex:0 1 auto;min-width:0;}"  /* flex:0 0 auto + nowrap held it at 410px on a phone */,
       ".cpl-mem .mem-search{font:inherit;font-size:.86rem;min-width:220px;max-width:46vw;padding:7px 11px;border-radius:9px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-body);}",
       ".cpl-mem .mem-search::placeholder{color:var(--text-faint);}",
       // auth bar

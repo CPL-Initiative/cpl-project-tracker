@@ -135,10 +135,49 @@ function dom() {
   check("saved EXPANDED re-applies across a regen (by label)", !cards[1].classList.contains("kc-collapsed"));
 }
 
+// ─── mobile: the grid must be able to collapse (S248) ────────────────────────
+// ⚠️ jsdom CANNOT see this — it returns zeroes for every rectangle — so these are
+// SOURCE assertions, and `npm run a11y cobi` is what actually measures it. They
+// exist because the failure is invisible in review and catastrophic on a phone.
+//
+// Two of .kpi-section's fifteen grid items are NOT KPI cards: the KPI Trends and
+// College Activity blocks, each wrapping a ~1210px table. A grid item's default
+// min-width:auto floors the track at its min-content, so at 390px the single 1fr
+// column could not shrink below 1261.56px and EVERY CARD INHERITED THAT WIDTH —
+// the page scrolled sideways by 888px and the card labels ran off the right edge
+// (Sam's screenshot, 2026-09-09). The overflow-x:auto scrollers on those tables
+// were already present and were doing NOTHING, because the box they were meant to
+// constrain was itself 1262px. Measured after: track 358px, page 1278 -> 390.
+// ⚠️ STRIP CSS COMMENTS FIRST. The comment written beside each of these fixes
+// NAMES the defect it prevents ("minmax(500px, ...) is a HARD floor"), so a
+// scanner that reads comments reports the explanation as the offence. This fired
+// on its very first run. Same family as the spelling rule that has to write the
+// wrong form in a code span to survive its own lint.
+const decommented = (src) => src.replace(/\/\*[\s\S]*?\*\//g, "");
+for (const [name, raw] of [["CPL_Dashboard.html", cpl], ["index.html", idx]]) {
+  const src = decommented(raw);
+  check(name + ": .kpi-section > * sets min-width:0 so the track can collapse",
+    /\.kpi-section\s*>\s*\*\s*\{[^}]*min-width:\s*0/.test(src));
+  // A hard px floor on a flex/grid item is the same bug spelled differently: it
+  // cannot go under that width, so anything above a phone's ~358px content box
+  // forces sideways scroll. min(Npx, 100%) keeps the desktop intent.
+  const hardFloors = (src.match(/min-width:\s*(\d{3,})px/g) || [])
+    .filter((m) => parseInt(m.match(/(\d+)/)[1], 10) >= 330);
+  check(name + ": no hard min-width floor >= 330px (use min(Npx, 100%))"
+    + (hardFloors.length ? " -> " + hardFloors.join(", ") : ""), hardFloors.length === 0);
+  // minmax()'s first argument is a floor too, and repeat(auto-fit, minmax(500px, 1fr))
+  // on a 390px screen produces a 500px track.
+  const hardTracks = (src.match(/minmax\(\s*(\d{3,})px/g) || [])
+    .filter((m) => parseInt(m.match(/(\d+)/)[1], 10) >= 400);
+  check(name + ": no minmax() track floor >= 400px"
+    + (hardTracks.length ? " -> " + hardTracks.join(", ") : ""), hardTracks.length === 0);
+}
+
 let failed = 0;
 for (const [name, ok] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + name);
   if (!ok) failed++;
 }
+
 console.log(failed === 0 ? `All ${results.length} checks passed.` : `${failed} of ${results.length} checks FAILED.`);
 process.exit(failed === 0 ? 0 : 1);

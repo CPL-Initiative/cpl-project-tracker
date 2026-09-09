@@ -916,7 +916,13 @@
 
   function renderMatrix() {
     var wrap = el("div", { "class": "raci-matrix-wrap" }, []);
-    var holder = el("div", { "class": "raci-table-holder" }, []);
+    // ⚠️ The holder existed but had NO overflow rule, so the 721px matrix pushed
+    // the page sideways at 390px instead of scrolling inside itself. A scrolling
+    // region also needs to be keyboard-reachable and announced (WCAG): Chromium
+    // 127+ focuses an overflowing div implicitly, which HIDES this defect in the
+    // measuring browser, so the explicit tabindex is still the correct fix.
+    var holder = el("div", { "class": "raci-table-holder", tabindex: "0",
+      role: "region", "aria-label": "Responsibility matrix, scrolls horizontally" }, []);
 
     // Filter bar: a hierarchical scope dropdown (Activity → its sub-activities)
     // + search box (matrix view only). optgroups group each Activity's
@@ -1425,12 +1431,13 @@
       ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
       ".raci-tg.on{background:var(--navy-primary,#0A2240);color:var(--on-accent);}" +
       ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
-      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;}" +
+      ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;min-width:0;max-width:100%;}"  /* a <select> has an intrinsic width flex will not shrink past without min-width:0 */ +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
       ".raci-auth-hint{font-size:.75rem;color:var(--text-muted,#777);flex-basis:100%;}" +
       ".raci-btn{background:var(--surface-opaque);border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-btn-go{background:var(--navy-primary,#0A2240);color:var(--on-accent);border-color:var(--navy-primary,#0A2240);}" +
       ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:var(--surface-opaque);border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
+      ".raci-table-holder{overflow-x:auto;max-width:100%;}" +
       ".raci-table th{background:var(--navy-primary,#0A2240);color:var(--on-accent);font-weight:600;text-align:left;padding:.5rem .6rem;font-size:.78rem;}" +
       ".raci-th-sort{cursor:pointer;user-select:none;}.raci-th-sort:hover{background:var(--navy-secondary,#1b3a5c);}" +
       ".raci-th-active{background:var(--navy-secondary,#1b3a5c);}" +

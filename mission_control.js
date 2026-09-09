@@ -405,12 +405,12 @@
       ".mc-count{font-size:.78rem;color:var(--text-muted,#667);font-weight:600;}" +
       ".mc-status-line{margin:.45rem 0 .2rem;font-size:.82rem;color:var(--text-muted,#556);font-style:italic;}" +
       ".mc-auth-hint{font-size:.75rem;color:var(--text-muted,#667);margin-top:.25rem;}" +
-      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2,#eef3f9);overflow:hidden;margin:.4rem 0;min-width:90px;flex:1 1 90px;}" +
+      ".mc-prog{height:7px;border-radius:5px;background:var(--surface-2,#eef3f9);overflow:hidden;margin:.4rem 0;min-width:0;flex:1 1 90px;}"  /* the 90px floor plus the label exceeded a phone row; flex-basis still asks for 90 */ +
       ".mc-prog-fill{height:100%;background:var(--ok,#2e7d32);border-radius:5px;transition:width .3s;}" +
       ".mc-phase{border-top:1px solid var(--border,#e3e9f0);padding:.35rem 0;}" +
       ".mc-phase>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:.6rem;padding:.4rem .1rem;}" +
       ".mc-phase>summary::-webkit-details-marker{display:none;}" +
-      ".mc-phase-label{font-weight:700;color:var(--navy-secondary,#1c3d5a);font-size:.9rem;flex:0 0 auto;}" +
+      ".mc-phase-label{font-weight:700;color:var(--navy-secondary,#1c3d5a);font-size:.9rem;flex:1 1 auto;min-width:0;overflow-wrap:anywhere;}"  /* flex:0 0 auto held a 396px label on one line at 390px */ +
       ".mc-phase-count{font-size:.74rem;color:var(--text-muted,#667);font-weight:600;}" +
       ".mc-gate{font-size:.74rem;color:var(--text-muted,#667);background:var(--surface-2,#f4f7fb);border-radius:6px;padding:.3rem .5rem;margin:.2rem 0 .5rem;}" +
       ".mc-list{display:flex;flex-direction:column;gap:.35rem;}" +

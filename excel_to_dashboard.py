@@ -3406,11 +3406,11 @@ def render_workplan_charts_html(current_students, sub_pops=None, workplan_goals=
             <h3 style="color:var(--navy-primary);margin:0 0 0.25rem 0;font-size:1.1rem;">CPL Workplan Progress — Path to 2030</h3>
             <p style="color:#888;font-size:0.8rem;margin:0 0 1rem 0;">Solid lines = actuals &middot; Dashed lines = projected &middot; Right-click any chart to copy image</p>
             <div style="display:flex;gap:1.5rem;flex-wrap:wrap;">
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Goal Trajectory (250K Target)</h4>
                     <canvas id="goalChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
-                <div style="flex:1;min-width:340px;">
+                <div style="flex:1;min-width:min(340px, 100%);">
                     <h4 style="color:var(--navy-primary);font-size:0.9rem;margin:0 0 0.5rem 0;text-align:center;">Stretch Trajectory (500K Target)</h4>
                     <canvas id="stretchChart" width="640" height="400" style="width:100%;height:auto;border-radius:6px;background:var(--bg-off-white);"></canvas>
                 </div>
@@ -10092,7 +10092,10 @@ EXHIBIT_ANALYSIS_CSS = """
 .activity-kpi-body .activity-kpi-section { margin-bottom: 0; }
 .exhibit-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    /* ⚠️ minmax(500px, ...) is a HARD 500px floor — on a 390px phone it forced a
+       500px track and 142px of sideways scroll. min(500px, 100%) keeps the
+       desktop two-up and lets the track shrink on a narrow screen. */
+    grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
     gap: 1.5rem;
     max-width: 1400px;
     margin: 0 auto;
