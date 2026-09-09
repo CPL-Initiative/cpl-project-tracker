@@ -256,7 +256,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
-| `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
+| `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
@@ -346,7 +346,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `generate_reports.js` | scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` | — |
 | `governance.js` | pages: `CPL_Dashboard.html` | — |
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
-| `index.html` | scripts: `excel_to_dashboard.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py` | committed by: `daily-dashboard.yml` |
+| `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py` | committed by: `daily-dashboard.yml` |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
 | `kb/README.md` | scripts: `kb/_build_docs_index.py` | — |
@@ -587,7 +587,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_cpl.json` | scripts: `kb/_build_ccr_cpl.py`, `prototype/globe/extract_globe_data.py` | committed by: `daily-dashboard.yml` |
 | `prototype/ccr_desc/*.json` | pages: `prototype/skyview.html` | — |
 | `prototype/ccr_sky.json` | scripts: `kb/_build_ccr_sky.py` | committed by: `daily-dashboard.yml` |
-| `prototype/ccr_universe.js` | scripts: `prototype/build_ccr_atlas.py` | — |
+| `prototype/ccr_universe.js` | scripts: `kb/_glyph_sweep.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/ccr_universe.json` | scripts: `kb/_build_ccr_cpl.py`, `kb/_build_ccr_sky.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py`, `prototype/globe/extract_globe_data.py` | — |
 | `prototype/ccr_universe_members.json` | scripts: `kb/_audit_control_number_claims.py`, `kb/_build_ccr_universe.py`, `prototype/build_ccr_atlas.py` | — |
 | `prototype/check_contrast.py` | workflows: `js-tests.yml` | — |
@@ -633,6 +633,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/esl_fold_spotcheck_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_origination_test.py` | workflows: `js-tests.yml` | — |
+| `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
 | `tests/identities_rekey_test.py` | workflows: `js-tests.yml` | — |
 | `tests/js_suite_gate_test.py` | workflows: `js-tests.yml` | — |
@@ -832,5 +833,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 451 file
-datasets · 138 external services · 325 consumers · 33 workflows · 37 tabs.
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 452 file
+datasets · 138 external services · 326 consumers · 33 workflows · 37 tabs.

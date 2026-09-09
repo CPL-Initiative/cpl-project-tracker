@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 451,
+  "file_datasets": 452,
   "external_services": 138,
-  "consumers": 325,
+  "consumers": 326,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -2838,6 +2838,13 @@
      "line": 134
     },
     {
+     "id": "script:kb/_glyph_sweep.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
+    },
+    {
      "id": "script:prototype/check_contrast.py",
      "kind": "script",
      "direction": "read",
@@ -5504,6 +5511,13 @@
      "direction": "read",
      "how": "literal",
      "line": 12991
+    },
+    {
+     "id": "script:kb/_glyph_sweep.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
     },
     {
      "id": "script:nudges/build_nudges.py",
@@ -12645,6 +12659,13 @@
   "file:prototype/ccr_universe.js": {
    "consumers": [
     {
+     "id": "script:kb/_glyph_sweep.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 100
+    },
+    {
      "id": "script:prototype/build_ccr_atlas.py",
      "kind": "script",
      "direction": "read",
@@ -13524,6 +13545,19 @@
    "main_committers": []
   },
   "file:tests/funding_origination_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/glyph_sweep_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
