@@ -678,6 +678,13 @@
     // word — Edit — under the block, and a plain textarea when they take it.
     ".cplfund-prose p { margin: 0 0 10px; font-size: .92rem; line-height: 1.6; max-width: var(--cpl-measure, none); }",
     ".cplfund-prose p:last-of-type { margin-bottom: 0; }",
+    // A quoted passage (the statute in the introduction). An indent and a rule
+    // down the side, nothing else: the text keeps the body color, so no new
+    // foreground/background pair enters the contrast budget, and the indent —
+    // not a color — is what carries the distinction.
+    ".cplfund-prose blockquote { margin: 0 0 10px; padding: 2px 0 2px 14px; border-left: 3px solid var(--border-strong); }",
+    ".cplfund-prose blockquote:last-child { margin-bottom: 0; }",
+    ".cplfund-prose blockquote p { margin: 0; }",
     ".cplfund-college-intro { margin: 0 0 8px; }",
     ".cplfund-basis .cplfund-prose p { margin: 0; line-height: 1.5; }",
     ".cplfund-prose-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin-top: 8px; font-size: .78rem; }",
@@ -686,6 +693,13 @@
     ".cplfund-textbtn.primary { background: var(--seal-blue); color: var(--white); border-color: var(--seal-blue); }",
     ".cplfund-prose-ta { display: block; width: 100%; box-sizing: border-box; font: inherit; font-size: .9rem; line-height: 1.5; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; resize: vertical; }",
     ".cplfund-prose-ta:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    // The section curator row (Rename / Hide on the public page) and the state
+    // word beside a held-back title. Both are quiet by construction: no color
+    // carries the meaning, the words do.
+    ".cplfund-sec-ctl { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin: 0 0 10px; font-size: .78rem; }",
+    ".cplfund-sec-ti { flex: 1 1 240px; min-width: 0; font: inherit; font-size: .85rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; }",
+    ".cplfund-sec-ti:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    ".cplfund-sec-flag { flex: 0 0 auto; margin-left: 10px; font-size: .72rem; font-weight: 600; color: var(--text-muted); }",
     // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
     // (privacy-suppressed) / not-yet / pending-feed.
     // Words, not marks (met / partial / not yet / n/a / pending), in ink grades.
@@ -2389,6 +2403,15 @@
   // they type back, so "unchanged" compares equal and stores nothing.
   function htmlToPlain(html) {
     var t = String(html || "")
+      // A <blockquote> becomes the "> " lines an author types, so a default
+      // that carries one round-trips into the textarea and compares equal.
+      .replace(/<blockquote[^>]*>([\s\S]*?)<\/blockquote>/gi, function (_, inner) {
+        return "\n\n" + inner
+          .replace(/<br\s*\/?>/gi, "\n").replace(/<\/(p|li|div|h[1-6])>/gi, "\n")
+          .replace(/<[^>]+>/g, "")
+          .split("\n").map(function (ln) { return ln.trim(); }).filter(Boolean)
+          .map(function (ln) { return "> " + ln; }).join("\n") + "\n\n";
+      })
       .replace(/<br\s*\/?>/gi, "\n")
       .replace(/<\/(p|li|div|h[1-6])>/gi, "\n\n")
       .replace(/<[^>]+>/g, "")
@@ -2406,9 +2429,24 @@
       .map(function (para) { return para.replace(/[ \t]+/g, " ").replace(/ ?\n ?/g, "\n").trim(); })
       .filter(Boolean).join("\n\n");
   }
+  // A paragraph whose EVERY line begins with ">" renders as a quotation (Sam,
+  // 2026-09-09, for the Ed. Code §78093.2(d) text quoted in the introduction).
+  // All-or-nothing on purpose: a stray ">" inside a sentence — "3 > 2", a
+  // pasted email quote — must stay literal, and it does, because line one does
+  // not carry the mark. The body is still esc()aped, so this gives an author
+  // one BLOCK they can ask for and no markup they can inject.
+  var QUOTE_LINE = /^>[ \t]?/;
+  function isQuoteBlock(para) {
+    return para.split("\n").every(function (ln) { return QUOTE_LINE.test(ln); });
+  }
   function plainToHtml(t) {
     return plainNormalize(t).split(/\n\n/).map(function (para) {
-      return "<p>" + esc(para).replace(/\n/g, "<br>") + "</p>";
+      var quoted = isQuoteBlock(para);
+      var body = quoted
+        ? para.split("\n").map(function (ln) { return ln.replace(QUOTE_LINE, ""); }).join("\n")
+        : para;
+      var p = "<p>" + esc(body).replace(/\n/g, "<br>") + "</p>";
+      return quoted ? "<blockquote>" + p + "</blockquote>" : p;
     }).join("");
   }
   function textOverride(key) {
@@ -2432,6 +2470,77 @@
     if (key === "elig_intro") delete ov.eligIntro;   // the legacy key this block replaced
     persistActive();
   }
+  // ── section titles and public visibility (Sam, 2026-09-09) ───────────────
+  // "I also need to be able to edit the section titles, not just the text
+  // blocks on all funding surfaces", and on the public page "hide whole
+  // sections as I curate." Both ride the layers every dial already uses —
+  // SCENARIO ?? SHARED — so a rename travels with Publish and Reset returns
+  // the house title alongside the house numbers.
+  //
+  // A title override is PLAIN TEXT and escaped on render, for the reason prose
+  // is: the HOUSE title may carry markup (the priorities heading holds a link
+  // to the Ed. Code section it names) but nothing an author types may.
+  //
+  // Hiding is PUBLIC-ONLY and never removes a section from the curator, who
+  // has to be able to find it again to bring it back. Same asymmetry as
+  // poolPublicHidden() — the field a college does not see is still a field.
+  var SEC_TITLE_DEFAULT = {};   // id -> the house title HTML, recorded as sections render
+  function titleOverride(id) {
+    var v = firstDefined(SCENARIO.titles && SCENARIO.titles[id], SHARED.titles && SHARED.titles[id]);
+    return (v == null || !String(v).trim()) ? null : String(v);
+  }
+  function titleIsCustom(id) { return titleOverride(id) != null; }
+  function oneLine(t) { return String(t == null ? "" : t).replace(/\s+/g, " ").trim(); }
+  function titleDefaultPlain(id) { return oneLine(htmlToPlain(SEC_TITLE_DEFAULT[id] || "")); }
+  function titlePlain(id) {
+    var o = titleOverride(id);
+    return o != null ? oneLine(o) : titleDefaultPlain(id);
+  }
+  function setSecTitle(id, v) {
+    var ov = activeOverride();
+    var clean = oneLine(v);
+    ov.titles = isPlainObj(ov.titles) ? ov.titles : {};
+    if (!clean || clean === titleDefaultPlain(id)) delete ov.titles[id];
+    else ov.titles[id] = clean;
+    if (!Object.keys(ov.titles).length) delete ov.titles;
+    persistActive();
+  }
+  function secHidden(id) {
+    return !!firstDefined(SCENARIO.secHidden && SCENARIO.secHidden[id],
+      SHARED.secHidden && SHARED.secHidden[id]);
+  }
+  function setSecHidden(id, on) {
+    var ov = activeOverride();
+    ov.secHidden = isPlainObj(ov.secHidden) ? ov.secHidden : {};
+    if (on) ov.secHidden[id] = true; else delete ov.secHidden[id];
+    if (!Object.keys(ov.secHidden).length) delete ov.secHidden;
+    persistActive();
+  }
+  // The curator's controls for one section: words, and in the BODY rather than
+  // in the <summary>. A button inside a summary is nested interactive content —
+  // it fights the fold on click and screen readers expose it inconsistently —
+  // so the title is edited from just beneath itself.
+  function sectionCtlHtml(id) {
+    if (!unlocked() || publicMode()) return "";
+    var custom = titleIsCustom(id);
+    if (state.titleEditing === id) {
+      var draft = state.titleDraft[id] != null ? state.titleDraft[id] : titlePlain(id);
+      return '<div class="cplfund-sec-ctl">' +
+        '<input type="text" class="cplfund-sec-ti" data-sectitle="' + esc(id) + '" value="' + esc(draft) +
+        '" aria-label="Section title">' +
+        '<button type="button" class="cplfund-textbtn primary" data-sectitlesave="' + esc(id) + '">Save</button>' +
+        '<button type="button" class="cplfund-textbtn" data-sectitlecancel="' + esc(id) + '">Cancel</button>' +
+        (custom ? '<button type="button" class="cplfund-textbtn" data-sectitlereset="' + esc(id) + '">Restore the default title</button>' : "") +
+        '<span class="dk">Plain text. Saves for everyone.</span></div>';
+    }
+    return '<div class="cplfund-sec-ctl">' +
+      '<button type="button" class="cplfund-textbtn" data-secrename="' + esc(id) + '">Rename</button>' +
+      (secHidden(id)
+        ? '<button type="button" class="cplfund-textbtn" data-secshow="' + esc(id) + '">Show on the public page</button>'
+        : '<button type="button" class="cplfund-textbtn" data-sechide="' + esc(id) + '">Hide on the public page</button>') +
+      (custom ? '<span class="dk">Renamed.</span>' : "") + "</div>";
+  }
+
   // One prose block. Prose reads as prose for everyone; a signed-in reviewer
   // gets the word Edit beneath it, and a plain textarea when they take it —
   // Save · Cancel · Restore the default text. Public mode never sees a control
@@ -2450,7 +2559,7 @@
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
-        '<span class="dk">Plain text. A blank line starts a new paragraph. Saves for everyone.</span></div>';
+        '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>';
     } else {
       html += textHtml(key);
       if (canEdit) {
@@ -2497,7 +2606,9 @@
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
-    "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea"];
+    "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
+    "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
+    "data-sectitlereset", "data-sechide", "data-secshow"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -5901,6 +6012,8 @@
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
     textDraft: {},      // what they have typed so far, kept across the re-renders an edit triggers
+    titleEditing: null, // id of the section whose TITLE is being renamed, else null
+    titleDraft: {},     // the same draft-preservation for a rename in flight
   };
 
   // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
@@ -5928,10 +6041,18 @@
   }
   function saveSectionState(id, open) { SEC_STATE[id] = !!open; }
   function sectionShell(id, titleHtml, bodyHtml) {
+    SEC_TITLE_DEFAULT[id] = titleHtml;              // the house title, for Restore and for the rename seed
+    if (publicMode() && secHidden(id)) return "";   // curator-hidden — public only, never from the curator
+    var head = titleIsCustom(id) ? esc(titleOverride(id)) : titleHtml;
+    // The state word is a SPAN, not a control: a curator has to see that a
+    // section is held back without opening it, and nothing interactive may
+    // nest inside the summary.
+    var flag = (unlocked() && !publicMode() && secHidden(id))
+      ? '<span class="cplfund-sec-flag">Hidden on the public page</span>' : "";
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>' + titleHtml + '</h3>' +
+      '<summary class="cplfund-sec-sum"><h3>' + head + '</h3>' + flag +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
-      '<div class="cplfund-sec-body">' + bodyHtml + "</div></details>";
+      '<div class="cplfund-sec-body">' + sectionCtlHtml(id) + bodyHtml + "</div></details>";
   }
   // Inline section: explicit title + body.
   function section(id, title, body) { return sectionShell(id, title, body); }
@@ -7766,6 +7887,10 @@
       var liveTa = mount.querySelector('[data-textarea="' + state.textEditing + '"]');
       if (liveTa) state.textDraft[state.textEditing] = liveTa.value;
     }
+    if (state.titleEditing) {
+      var liveTi = mount.querySelector('[data-sectitle="' + state.titleEditing + '"]');
+      if (liveTi) state.titleDraft[state.titleEditing] = liveTi.value;
+    }
     ensureCss();
     ensureDraftChip();
     paintTitleLink();
@@ -8385,6 +8510,46 @@
         savingState = "";
         setText(key, "");
       });
+    });
+    // Section titles (2026-09-09): Rename opens a one-line input; Save commits
+    // to the active layer; Restore drops the override so the house title
+    // returns. Hide/Show flips the section's PUBLIC visibility only.
+    document.querySelectorAll("#cplFundingMount [data-secrename]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-secrename");
+        state.titleEditing = id; delete state.titleDraft[id];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlesave]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlesave");
+        var ti = document.querySelector('#cplFundingMount [data-sectitle="' + id + '"]');
+        state.titleEditing = null; delete state.titleDraft[id];
+        savingState = "";
+        setSecTitle(id, ti ? ti.value : "");
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlecancel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlecancel");
+        state.titleEditing = null; delete state.titleDraft[id];
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sectitlereset]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-sectitlereset");
+        state.titleEditing = null; delete state.titleDraft[id];
+        savingState = "";
+        setSecTitle(id, "");
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-sechide]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-sechide"), true); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-secshow]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secshow"), false); });
     });
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
