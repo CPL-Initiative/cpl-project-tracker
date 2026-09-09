@@ -1,0 +1,1021 @@
+{
+ "_note": "Domain scoping + run narrative for the statewide Fire / Wildland / Cal-JAC / Electrical CPL crosswalk (kb/_build_domain_cpl_crosswalk.py). Companion to kb/occupation_credential_map.json (occupation -> credential) and kb/delta_offering_map.json (occupation -> one college's offerings). This one answers a THIRD question: for a training DOMAIN, does the chain training -> credential -> CPL -> college course -> certificate actually close, statewide? Narrative lives here, not in the generator, so the generator carries no findings.",
+ "_authored": "2026-09-09",
+ "_requested_by": "Ashley (SJCOE / MAP team) — statewide expansion of the San Joaquin crosswalk",
+ "_sources": [
+  "statewide_data.js (generated 2026-09-08) — 2,903 exhibits / 2,573 unified titles / 137 CCC-Collaborative",
+  "fact-sheet/statewide_recs.js — published statewide credit recommendations (same builder as the public Fact Sheet)",
+  "coci_programs_data.js — CCCCO COCI program export 2026-06-17 (29,147 programs / 121 colleges)",
+  "kb/statewide_exhibit_categories.json — statewide program-area map, per map.rccd.edu/statewidecpl/",
+  "Supabase chatbox_college_courses x college_geo (synced 2026-08-13), queried 2026-09-09 — cached below"
+ ],
+ "scoping": {
+  "_note": "Applied in order; first match wins. The exclusions are load-bearing. The fire list is INHERITED from docs/kb-notes/methodology-area-eligibility-rollup-from-cer.md; the electrical list was added this run after a first pass pulled in ASE A6 automotive electrical (24 adopters) and AP Physics C: Electricity and Magnetism (80 adopters), either of which would have dominated an electrical ranking.",
+  "fire_false_positives": "firearm|firestop|fireproof|pc 832|working drawings",
+  "electrical_false_positives": "automotive|\\bASE [A-L]\\d|collision|hybrid|vehicle|AP Physics|physics c|arc weld|welding|GTAW|GMAW|SMAW|FCAW",
+  "order": [
+   "Wildland Fire",
+   "Fire",
+   "EMS (fire-adjacent)",
+   "Electrical"
+  ],
+  "caljac_issuer": "California Joint Apprenticeship Committee|Cal-?JAC"
+ },
+ "join": {
+  "_note": "COCI short_caps -> roster canonical. Measured: 102 in-scope COCI names, 100 auto-resolved, 2 needed an explicit alias. All 45 MAP adopter names resolved.",
+  "aliases": {
+   "L.A. TRADE-TECH": "Los Angeles Trade Technical College",
+   "SAN FRANCISCO CITY": "City College Of San Francisco"
+  },
+  "folds": {
+   "_note": "Sam 2026-08-21: San Diego and North Orange are ONE entity each.",
+   "North Orange Continuing Education Credit": "North Orange Continuing Education",
+   "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+  }
+ },
+ "receipts": {
+  "_note": "Cached because the sandbox cannot reach *.supabase.co directly (CLAUDE.md Rule 10c) — a committed tool must read a receipt, not live SQL.",
+  "college_courses": [
+   {
+    "college": "Allan Hancock College",
+    "region": "Central Coast",
+    "fire_courses": 253,
+    "wildland_courses": 9,
+    "elec_courses": 7,
+    "ems_courses": 17
+   },
+   {
+    "college": "American River College",
+    "region": "Greater Sacramento",
+    "fire_courses": 201,
+    "wildland_courses": 13,
+    "elec_courses": 38,
+    "ems_courses": 38
+   },
+   {
+    "college": "Antelope Valley College",
+    "region": "Los Angeles",
+    "fire_courses": 51,
+    "wildland_courses": 11,
+    "elec_courses": 4,
+    "ems_courses": 5
+   },
+   {
+    "college": "Bakersfield College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 133,
+    "wildland_courses": 12,
+    "elec_courses": 21,
+    "ems_courses": 16
+   },
+   {
+    "college": "Barstow Community College",
+    "region": "Inland Empire",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 18,
+    "ems_courses": 2
+   },
+   {
+    "college": "Butte College",
+    "region": "Far North",
+    "fire_courses": 15,
+    "wildland_courses": 1,
+    "elec_courses": 4,
+    "ems_courses": 5
+   },
+   {
+    "college": "Cabrillo College",
+    "region": "Central Coast",
+    "fire_courses": 56,
+    "wildland_courses": 3,
+    "elec_courses": 3,
+    "ems_courses": 7
+   },
+   {
+    "college": "Cerritos College",
+    "region": "Los Angeles",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 15,
+    "ems_courses": 0
+   },
+   {
+    "college": "Cerro Coso Community College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 4,
+    "wildland_courses": 3,
+    "elec_courses": 1,
+    "ems_courses": 2
+   },
+   {
+    "college": "Chabot College",
+    "region": "Bay Area",
+    "fire_courses": 20,
+    "wildland_courses": 0,
+    "elec_courses": 20,
+    "ems_courses": 9
+   },
+   {
+    "college": "Chaffey College",
+    "region": "Inland Empire",
+    "fire_courses": 19,
+    "wildland_courses": 1,
+    "elec_courses": 12,
+    "ems_courses": 2
+   },
+   {
+    "college": "Citrus College",
+    "region": "Los Angeles",
+    "fire_courses": 1,
+    "wildland_courses": 1,
+    "elec_courses": 6,
+    "ems_courses": 2
+   },
+   {
+    "college": "City College of San Francisco",
+    "region": "Bay Area",
+    "fire_courses": 25,
+    "wildland_courses": 2,
+    "elec_courses": 10,
+    "ems_courses": 12
+   },
+   {
+    "college": "Clovis Community College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 5,
+    "ems_courses": 0
+   },
+   {
+    "college": "Coalinga College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 2,
+    "ems_courses": 0
+   },
+   {
+    "college": "Coastline Community College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 3,
+    "ems_courses": 0
+   },
+   {
+    "college": "College of Alameda",
+    "region": "Bay Area",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 0
+   },
+   {
+    "college": "College of Marin",
+    "region": "Bay Area",
+    "fire_courses": 12,
+    "wildland_courses": 1,
+    "elec_courses": 6,
+    "ems_courses": 5
+   },
+   {
+    "college": "College of San Mateo",
+    "region": "Bay Area",
+    "fire_courses": 20,
+    "wildland_courses": 1,
+    "elec_courses": 12,
+    "ems_courses": 4
+   },
+   {
+    "college": "College of the Canyons",
+    "region": "Los Angeles",
+    "fire_courses": 147,
+    "wildland_courses": 16,
+    "elec_courses": 5,
+    "ems_courses": 8
+   },
+   {
+    "college": "College of the Desert",
+    "region": "Inland Empire",
+    "fire_courses": 32,
+    "wildland_courses": 3,
+    "elec_courses": 13,
+    "ems_courses": 17
+   },
+   {
+    "college": "College of the Redwoods",
+    "region": "Far North",
+    "fire_courses": 17,
+    "wildland_courses": 4,
+    "elec_courses": 3,
+    "ems_courses": 5
+   },
+   {
+    "college": "College of the Sequoias",
+    "region": "San Joaquin Valley",
+    "fire_courses": 15,
+    "wildland_courses": 0,
+    "elec_courses": 13,
+    "ems_courses": 7
+   },
+   {
+    "college": "College of the Siskiyous",
+    "region": "Far North",
+    "fire_courses": 67,
+    "wildland_courses": 7,
+    "elec_courses": 4,
+    "ems_courses": 14
+   },
+   {
+    "college": "Columbia College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 20,
+    "wildland_courses": 4,
+    "elec_courses": 0,
+    "ems_courses": 4
+   },
+   {
+    "college": "Compton College",
+    "region": "Los Angeles",
+    "fire_courses": 4,
+    "wildland_courses": 0,
+    "elec_courses": 5,
+    "ems_courses": 1
+   },
+   {
+    "college": "Contra Costa College",
+    "region": "Bay Area",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 0,
+    "ems_courses": 10
+   },
+   {
+    "college": "Copper Mountain College",
+    "region": "Inland Empire",
+    "fire_courses": 23,
+    "wildland_courses": 6,
+    "elec_courses": 0,
+    "ems_courses": 3
+   },
+   {
+    "college": "Cosumnes River College",
+    "region": "Greater Sacramento",
+    "fire_courses": 45,
+    "wildland_courses": 7,
+    "elec_courses": 5,
+    "ems_courses": 8
+   },
+   {
+    "college": "Crafton Hills College",
+    "region": "Inland Empire",
+    "fire_courses": 97,
+    "wildland_courses": 5,
+    "elec_courses": 0,
+    "ems_courses": 22
+   },
+   {
+    "college": "Cuesta College",
+    "region": "Central Coast",
+    "fire_courses": 12,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 11
+   },
+   {
+    "college": "Cuyamaca College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 9,
+    "ems_courses": 1
+   },
+   {
+    "college": "Cypress College",
+    "region": "Orange County",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 11,
+    "ems_courses": 0
+   },
+   {
+    "college": "De Anza College",
+    "region": "Bay Area",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 7,
+    "ems_courses": 0
+   },
+   {
+    "college": "Diablo Valley College",
+    "region": "Bay Area",
+    "fire_courses": 24,
+    "wildland_courses": 0,
+    "elec_courses": 12,
+    "ems_courses": 0
+   },
+   {
+    "college": "East Los Angeles College",
+    "region": "Los Angeles",
+    "fire_courses": 60,
+    "wildland_courses": 6,
+    "elec_courses": 2,
+    "ems_courses": 8
+   },
+   {
+    "college": "El Camino College",
+    "region": "Los Angeles",
+    "fire_courses": 87,
+    "wildland_courses": 9,
+    "elec_courses": 12,
+    "ems_courses": 7
+   },
+   {
+    "college": "Evergreen Valley College",
+    "region": "Bay Area",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 3,
+    "ems_courses": 0
+   },
+   {
+    "college": "Feather River College",
+    "region": "Far North",
+    "fire_courses": 17,
+    "wildland_courses": 3,
+    "elec_courses": 0,
+    "ems_courses": 2
+   },
+   {
+    "college": "Folsom Lake College",
+    "region": "Greater Sacramento",
+    "fire_courses": 23,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 4
+   },
+   {
+    "college": "Foothill College",
+    "region": "Bay Area",
+    "fire_courses": 8,
+    "wildland_courses": 0,
+    "elec_courses": 28,
+    "ems_courses": 18
+   },
+   {
+    "college": "Fresno City College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 71,
+    "wildland_courses": 6,
+    "elec_courses": 9,
+    "ems_courses": 5
+   },
+   {
+    "college": "Fullerton College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 7,
+    "ems_courses": 0
+   },
+   {
+    "college": "Gavilan College",
+    "region": "Bay Area",
+    "fire_courses": 41,
+    "wildland_courses": 0,
+    "elec_courses": 5,
+    "ems_courses": 8
+   },
+   {
+    "college": "Glendale Community College",
+    "region": "Los Angeles",
+    "fire_courses": 75,
+    "wildland_courses": 1,
+    "elec_courses": 5,
+    "ems_courses": 8
+   },
+   {
+    "college": "Golden West College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 0
+   },
+   {
+    "college": "Grossmont College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 2,
+    "ems_courses": 1
+   },
+   {
+    "college": "Hartnell College",
+    "region": "Central Coast",
+    "fire_courses": 19,
+    "wildland_courses": 3,
+    "elec_courses": 21,
+    "ems_courses": 7
+   },
+   {
+    "college": "Imperial Valley College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 24,
+    "wildland_courses": 2,
+    "elec_courses": 19,
+    "ems_courses": 9
+   },
+   {
+    "college": "Irvine Valley College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 8,
+    "ems_courses": 0
+   },
+   {
+    "college": "Lake Tahoe Community College",
+    "region": "Greater Sacramento",
+    "fire_courses": 45,
+    "wildland_courses": 2,
+    "elec_courses": 1,
+    "ems_courses": 8
+   },
+   {
+    "college": "Laney College",
+    "region": "Bay Area",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 12,
+    "ems_courses": 0
+   },
+   {
+    "college": "Las Positas College",
+    "region": "Bay Area",
+    "fire_courses": 21,
+    "wildland_courses": 3,
+    "elec_courses": 4,
+    "ems_courses": 9
+   },
+   {
+    "college": "Lassen College",
+    "region": "Far North",
+    "fire_courses": 33,
+    "wildland_courses": 11,
+    "elec_courses": 2,
+    "ems_courses": 3
+   },
+   {
+    "college": "Lemoore College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 6,
+    "ems_courses": 8
+   },
+   {
+    "college": "Long Beach City College",
+    "region": "Los Angeles",
+    "fire_courses": 17,
+    "wildland_courses": 0,
+    "elec_courses": 23,
+    "ems_courses": 3
+   },
+   {
+    "college": "Los Angeles City College",
+    "region": "Los Angeles",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 2,
+    "ems_courses": 0
+   },
+   {
+    "college": "Los Angeles Harbor College",
+    "region": "Los Angeles",
+    "fire_courses": 11,
+    "wildland_courses": 1,
+    "elec_courses": 1,
+    "ems_courses": 2
+   },
+   {
+    "college": "Los Angeles Mission College",
+    "region": "Los Angeles",
+    "fire_courses": 6,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 0
+   },
+   {
+    "college": "Los Angeles Pierce College",
+    "region": "Los Angeles",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 0
+   },
+   {
+    "college": "Los Angeles Southwest College",
+    "region": "Los Angeles",
+    "fire_courses": 8,
+    "wildland_courses": 2,
+    "elec_courses": 2,
+    "ems_courses": 1
+   },
+   {
+    "college": "Los Angeles Trade Technical College",
+    "region": "Los Angeles",
+    "fire_courses": 2,
+    "wildland_courses": 0,
+    "elec_courses": 76,
+    "ems_courses": 0
+   },
+   {
+    "college": "Los Angeles Valley College",
+    "region": "Los Angeles",
+    "fire_courses": 14,
+    "wildland_courses": 1,
+    "elec_courses": 2,
+    "ems_courses": 1
+   },
+   {
+    "college": "Los Medanos College",
+    "region": "Bay Area",
+    "fire_courses": 18,
+    "wildland_courses": 1,
+    "elec_courses": 7,
+    "ems_courses": 5
+   },
+   {
+    "college": "Madera College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 6,
+    "ems_courses": 0
+   },
+   {
+    "college": "Mendocino College",
+    "region": "Far North",
+    "fire_courses": 18,
+    "wildland_courses": 1,
+    "elec_courses": 1,
+    "ems_courses": 2
+   },
+   {
+    "college": "Merced College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 41,
+    "wildland_courses": 1,
+    "elec_courses": 12,
+    "ems_courses": 10
+   },
+   {
+    "college": "Merritt College",
+    "region": "Bay Area",
+    "fire_courses": 12,
+    "wildland_courses": 1,
+    "elec_courses": 0,
+    "ems_courses": 6
+   },
+   {
+    "college": "Mission College",
+    "region": "Bay Area",
+    "fire_courses": 23,
+    "wildland_courses": 1,
+    "elec_courses": 7,
+    "ems_courses": 9
+   },
+   {
+    "college": "Modesto Junior College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 25,
+    "wildland_courses": 0,
+    "elec_courses": 8,
+    "ems_courses": 11
+   },
+   {
+    "college": "Monterey Peninsula College",
+    "region": "Central Coast",
+    "fire_courses": 14,
+    "wildland_courses": 3,
+    "elec_courses": 0,
+    "ems_courses": 10
+   },
+   {
+    "college": "Moorpark College",
+    "region": "Central Coast",
+    "fire_courses": 33,
+    "wildland_courses": 0,
+    "elec_courses": 5,
+    "ems_courses": 6
+   },
+   {
+    "college": "Moreno Valley College",
+    "region": "Inland Empire",
+    "fire_courses": 32,
+    "wildland_courses": 6,
+    "elec_courses": 2,
+    "ems_courses": 8
+   },
+   {
+    "college": "Mt. San Antonio College",
+    "region": "Los Angeles",
+    "fire_courses": 37,
+    "wildland_courses": 8,
+    "elec_courses": 9,
+    "ems_courses": 14
+   },
+   {
+    "college": "Mt. San Jacinto College",
+    "region": "Inland Empire",
+    "fire_courses": 16,
+    "wildland_courses": 0,
+    "elec_courses": 3,
+    "ems_courses": 1
+   },
+   {
+    "college": "Napa Valley College",
+    "region": "Bay Area",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 0,
+    "ems_courses": 3
+   },
+   {
+    "college": "Norco College",
+    "region": "Inland Empire",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 39,
+    "ems_courses": 0
+   },
+   {
+    "college": "North Orange Continuing Education",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 23,
+    "ems_courses": 0
+   },
+   {
+    "college": "North Orange Continuing Education Credit",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 23,
+    "ems_courses": 0
+   },
+   {
+    "college": "Ohlone College",
+    "region": "Bay Area",
+    "fire_courses": 21,
+    "wildland_courses": 0,
+    "elec_courses": 2,
+    "ems_courses": 4
+   },
+   {
+    "college": "Orange Coast College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 8,
+    "ems_courses": 5
+   },
+   {
+    "college": "Oxnard College",
+    "region": "Central Coast",
+    "fire_courses": 49,
+    "wildland_courses": 4,
+    "elec_courses": 7,
+    "ems_courses": 5
+   },
+   {
+    "college": "Palo Verde College",
+    "region": "Inland Empire",
+    "fire_courses": 30,
+    "wildland_courses": 4,
+    "elec_courses": 1,
+    "ems_courses": 4
+   },
+   {
+    "college": "Palomar College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 27,
+    "wildland_courses": 3,
+    "elec_courses": 26,
+    "ems_courses": 18
+   },
+   {
+    "college": "Pasadena City College",
+    "region": "Los Angeles",
+    "fire_courses": 16,
+    "wildland_courses": 6,
+    "elec_courses": 11,
+    "ems_courses": 4
+   },
+   {
+    "college": "Porterville College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 8,
+    "wildland_courses": 1,
+    "elec_courses": 0,
+    "ems_courses": 1
+   },
+   {
+    "college": "Reedley College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 26,
+    "wildland_courses": 22,
+    "elec_courses": 7,
+    "ems_courses": 2
+   },
+   {
+    "college": "Rio Hondo College",
+    "region": "Los Angeles",
+    "fire_courses": 42,
+    "wildland_courses": 11,
+    "elec_courses": 27,
+    "ems_courses": 3
+   },
+   {
+    "college": "Riverside City College",
+    "region": "Inland Empire",
+    "fire_courses": 24,
+    "wildland_courses": 0,
+    "elec_courses": 5,
+    "ems_courses": 0
+   },
+   {
+    "college": "Sacramento City College",
+    "region": "Greater Sacramento",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 21,
+    "ems_courses": 0
+   },
+   {
+    "college": "Saddleback College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 10
+   },
+   {
+    "college": "San Bernardino Valley College",
+    "region": "Inland Empire",
+    "fire_courses": 29,
+    "wildland_courses": 0,
+    "elec_courses": 21,
+    "ems_courses": 0
+   },
+   {
+    "college": "San Diego City College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 29,
+    "ems_courses": 0
+   },
+   {
+    "college": "San Diego College of Continuing Education",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 0
+   },
+   {
+    "college": "San Diego College of Continuing Education Credit",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 0
+   },
+   {
+    "college": "San Diego Mesa College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 1
+   },
+   {
+    "college": "San Diego Miramar College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 44,
+    "wildland_courses": 4,
+    "elec_courses": 10,
+    "ems_courses": 10
+   },
+   {
+    "college": "San Joaquin Delta College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 30,
+    "ems_courses": 8
+   },
+   {
+    "college": "San Jose City College",
+    "region": "Bay Area",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 4,
+    "ems_courses": 4
+   },
+   {
+    "college": "Santa Ana College",
+    "region": "Orange County",
+    "fire_courses": 63,
+    "wildland_courses": 10,
+    "elec_courses": 17,
+    "ems_courses": 7
+   },
+   {
+    "college": "Santa Barbara City College",
+    "region": "Central Coast",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 11,
+    "ems_courses": 3
+   },
+   {
+    "college": "Santa Monica College",
+    "region": "Los Angeles",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 0
+   },
+   {
+    "college": "Santa Rosa Junior College",
+    "region": "Bay Area",
+    "fire_courses": 41,
+    "wildland_courses": 4,
+    "elec_courses": 24,
+    "ems_courses": 17
+   },
+   {
+    "college": "Santiago Canyon College",
+    "region": "Orange County",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 27,
+    "ems_courses": 0
+   },
+   {
+    "college": "Shasta College",
+    "region": "Far North",
+    "fire_courses": 81,
+    "wildland_courses": 19,
+    "elec_courses": 3,
+    "ems_courses": 5
+   },
+   {
+    "college": "Sierra College",
+    "region": "Greater Sacramento",
+    "fire_courses": 58,
+    "wildland_courses": 9,
+    "elec_courses": 6,
+    "ems_courses": 9
+   },
+   {
+    "college": "Skyline College",
+    "region": "Bay Area",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 1,
+    "ems_courses": 3
+   },
+   {
+    "college": "Solano Community College",
+    "region": "Bay Area",
+    "fire_courses": 17,
+    "wildland_courses": 0,
+    "elec_courses": 6,
+    "ems_courses": 3
+   },
+   {
+    "college": "Southwestern College",
+    "region": "San Diego – Imperial",
+    "fire_courses": 57,
+    "wildland_courses": 2,
+    "elec_courses": 14,
+    "ems_courses": 23
+   },
+   {
+    "college": "Taft College",
+    "region": "San Joaquin Valley",
+    "fire_courses": 1,
+    "wildland_courses": 0,
+    "elec_courses": 2,
+    "ems_courses": 5
+   },
+   {
+    "college": "Ventura College",
+    "region": "Central Coast",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 10,
+    "ems_courses": 12
+   },
+   {
+    "college": "Victor Valley College",
+    "region": "Inland Empire",
+    "fire_courses": 86,
+    "wildland_courses": 6,
+    "elec_courses": 9,
+    "ems_courses": 28
+   },
+   {
+    "college": "West Los Angeles College",
+    "region": "Los Angeles",
+    "fire_courses": 11,
+    "wildland_courses": 1,
+    "elec_courses": 6,
+    "ems_courses": 3
+   },
+   {
+    "college": "West Valley College",
+    "region": "Bay Area",
+    "fire_courses": 2,
+    "wildland_courses": 2,
+    "elec_courses": 3,
+    "ems_courses": 0
+   },
+   {
+    "college": "Woodland Community College",
+    "region": "Greater Sacramento",
+    "fire_courses": 0,
+    "wildland_courses": 0,
+    "elec_courses": 0,
+    "ems_courses": 4
+   },
+   {
+    "college": "Yuba College",
+    "region": "Greater Sacramento",
+    "fire_courses": 32,
+    "wildland_courses": 3,
+    "elec_courses": 2,
+    "ems_courses": 5
+   }
+  ],
+  "receiving_course_taught_at": {
+   "_note": "How many colleges teach a course matching each receiving-course name. This is the LAST LINK of the chain and the whole finding turns on it.",
+   "building construction for fire protection": 56,
+   "fire behavior and combustion": 64,
+   "fire protection organization": 40,
+   "rough electrical": 1,
+   "introduction to construction safety": 22,
+   "construction law": 4,
+   "wildland 10x (Wildland 101-105)": 0
+  }
+ },
+ "findings": {
+  "_note": "Run-specific FINDINGS. They live with the data, never in the generator — hardcoding them would make the tool's reusability claim false.",
+  "fire": "The chain COMPLETES. 19 statewide credentials, 90.2 deduplicated units across 35 distinct receiving courses, several C-ID-carrying. Those courses are really taught (64 / 56 / 40 colleges). 38 of 63 colleges with a Fire program have adopted no fire CPL.",
+  "wildland": "The chain HALF-COMPLETES. 6 statewide credentials, 15.0 units, 5 receiving courses named 'Wildland 101-105 (Wildland Fire Behavior)' — which NO college teaches under that name, though 58 colleges teach 293 wildland courses. 16 of 19 colleges with a Wildland program have adopted nothing.",
+  "electrical": "The chain BREAKS at the course step. 12 statewide credentials (IBEW, NCCER 1-4, C-10, C-46, both apprenticeships) collapse onto 4 generic construction courses worth 11.5-18 units with NO C-IDs. Rough Electrical is taught at 1 college, Construction Law at 4 — against 1,047 electrical-trade courses at 106 colleges. 53 of 63 colleges with an Electrical program have adopted nothing.",
+  "caljac": "Cal-JAC has exactly 5 credentials in MAP, identified by issuer. Four are statewide; the fifth — Firefighter Journeyperson Certificate, the apprenticeship completion — is flagged LOCAL yet carries the highest potential-adopter count of the five (98). The ladder is missing its bottom rung.",
+  "wffs_absent": "Wildland Fire Fighter Specialist, named explicitly in the request, appears NOWHERE in MAP — zero hits across all 2,903 exhibit records, searching unified titles AND the raw college-entered titles. Build-new, first-in-state.",
+  "dedup": "Summing credential unit values overstates what a student can bank: fire sums naively to 147.2u but the distinct receiving-course ceiling is 90.2u (39% double-counted), because Firefighter 1, Firefighter EMT Certificate and the Fire Officer series all name the same courses.",
+  "exemplars": "City College of San Francisco is the wildland exemplar (all 6 statewide wildland credentials, the only college with the full set). Cabrillo College is the electrical exemplar (all 12, 86.5u). San Diego Miramar leads fire at 132.0u."
+ },
+ "counts": {
+  "in_scope_credentials": 221,
+  "statewide": 40,
+  "caljac": 5,
+  "college_lane_rows": 331,
+  "lane_ceiling": {
+   "Fire": {
+    "n_statewide": 19,
+    "naive_hi": 147.2,
+    "dedup_lo": 90.2,
+    "dedup_hi": 90.2
+   },
+   "Wildland Fire": {
+    "n_statewide": 6,
+    "naive_hi": 21.0,
+    "dedup_lo": 15.0,
+    "dedup_hi": 15.0
+   },
+   "Electrical": {
+    "n_statewide": 12,
+    "naive_hi": 86.5,
+    "dedup_lo": 11.5,
+    "dedup_hi": 18.0
+   },
+   "EMS": {
+    "n_statewide": 3,
+    "naive_hi": 38.0,
+    "dedup_lo": 31.5,
+    "dedup_hi": 38.0
+   }
+  }
+ }
+}

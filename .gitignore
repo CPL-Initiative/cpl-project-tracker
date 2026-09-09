@@ -106,3 +106,9 @@ prototype/ccr_desc/
 .video-context/
 # the globe prototype's derived data (prototype/globe/README.md)
 prototype/globe/globe_data*.json
+
+# Domain-scoped CPL crosswalk: the workbook and the HTML page are REGENERABLE
+# artifacts (kb/_build_domain_cpl_crosswalk.py). The domain map (scoping rules +
+# findings) and the small crosswalk.json receipt ARE committed.
+kb/domain_crosswalk_out/**/*.xlsx
+kb/domain_crosswalk_out/**/*.html

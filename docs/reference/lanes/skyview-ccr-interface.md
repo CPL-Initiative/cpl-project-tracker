@@ -52,6 +52,15 @@ with no verdict**); an **Isolate** toggle.
 Header 254px → 114px at 390×844, map 62% → 86%; pinch zooms; a question in the
 search box becomes a map selection. Desktop unchanged. Detail in the lessons doc.
 
+**S249 (2026-09-09), PR #1532 — two defects Sam hit on his first real use.**
+⭐ **Isolate emptied the map on a DISCIPLINE selection** — a `subject` token is
+an ISLAND, not node hits, so `searchHits` was empty and `isoNodeOK` failed every
+node while `isoActive()` and the button's `can` test both counted `selIsl`:
+49,896/159 → 0/0, now 191/1 for Chemistry. ⭐ **The Ask answered 850px from the
+box** — it ran and printed correctly into `#u-hint`, a 36px strip at the bottom
+edge, so what Sam saw was only the sky stopping. It now also answers in a
+`role="status"` panel inside the search FORM. Detail in the lessons doc.
+
 ## Invariants — in their own file
 
 ⚠️ **[`docs/reference/skyview_invariants.md`](../skyview_invariants.md) — READ
@@ -79,11 +88,10 @@ take one out — staged, nothing written.
 
 ## NEEDS SAM
 
-① **Dispatch `cpl-chat-deploy.yml`** — until it runs, `skyview-ask` is not a
-known surface on the deployed function and a question shows an error naming
-exactly that. The row and pinch are live; the question box is the half waiting.
-Held back deliberately: deploying the shared function touches Sierra, the Fact
-Sheet, My College, the GR register and the Memory tab.
+① **DONE — `cpl-chat-deploy.yml` ran 2026-09-09** (run 34402962685, byte-verify
+clean) on Sam's go, so `skyview-ask` is a known surface on the deployed function
+and the question box is live end to end. `cpl-chat-smoke.yml` re-checked the four
+search modes the same redeploy touched.
 ② **The live `sierra_guidance` CHECK constraint** does not yet allow
 `skyview-ask`. The schema of record does. Not blocking — nothing in the feature
 writes a guidance row — so it only matters to scope a Sierra rule to this surface.

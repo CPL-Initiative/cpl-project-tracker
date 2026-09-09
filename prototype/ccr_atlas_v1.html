@@ -56,6 +56,31 @@ a{color:var(--cobalt)}
   list-style:none;background:var(--surface-opaque,#fff);border-radius:9px;
   border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
   max-height:min(70vh,620px);overflow-y:auto;overscroll-behavior:contain}
+/* The ask's own answer, under the box. Same shell as .sug so the two read as
+   one surface; never both open at once (setAsk closes the list, and typing
+   closes this). Tokens only — no raw hex beyond .sug's own fallbacks. */
+.askbox{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:61;
+  padding:.6em .8em;font-size:.82rem;line-height:1.45;color:var(--text-body,#1C1C1A);
+  background:var(--surface-opaque,#fff);border-radius:9px;
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
+  max-height:min(50vh,420px);overflow-y:auto;overscroll-behavior:contain}
+.askbox .askhd{font-weight:600;color:var(--cobalt,#0047AB)}
+/* ⚠️ --crimson, NOT --red-alert. --red-alert is a COBI token this stylesheet
+   never redefines for the night palette, so it stays #B3261E on every ground:
+   measured 2.55:1 on --surface-opaque in dark, against 4.5 for the heading and
+   3 for the rule. --crimson is themed in BOTH :root blocks here (#920000 /
+   #CF8F8F) and measures 9.45:1 light, 6.34:1 dark. Dark is a token swap, never
+   a component rule — so the fix is picking the role that already swaps. */
+.askbox.err .askhd{color:var(--crimson,#920000)}
+/* Color is never the only signal: a refusal keeps a left rule as well as the
+   heading color, and says "could not" in its own words above. */
+.askbox.err{border-left:3px solid var(--crimson,#920000)}
+.askbox .askdismiss{margin-top:.5em;font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;
+  color:var(--cobalt,#0047AB);background:var(--surface-opaque,#fff);
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:5px;
+  padding:.28em .7em;min-height:24px}
+.askbox .askdismiss:hover{background:var(--surface-muted,#ECE9E2)}
+.askbox .askdismiss:focus-visible{outline:2px solid var(--focus-ring,#0047AB);outline-offset:2px}
 .sug li{display:flex;gap:.55em;align-items:baseline;padding:.42em .7em;cursor:pointer}
 .sug li.on{background:var(--surface-subtle,#F7F5F1)}
 /* ⭐ THE SORT CONTROL MOVED TO THE LIST'S TOP RIGHT and an Enter button took its
@@ -1024,6 +1049,16 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
              aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
              placeholder="Search a course, code or discipline">
       <ul class="sug" id="sug" role="listbox" aria-multiselectable="true" aria-label="Search suggestions" hidden></ul>
+      <!-- ⭐ WHERE THE ASK ANSWERS. #u-hint carries the long version at the FOOT
+           of the window, and measured at 1440x900 that is a 36px strip of muted
+           text 850px below the box, under three lines of legend: Sam asked a
+           question on 2026-09-09, got the whole "not deployed yet" explanation
+           there, and reported "the only response was to stop the rotation — no
+           other view change." A refusal that prints out of sight is a dead
+           control, so the ask says it HERE, beside the hand that typed it.
+           Absolutely positioned inside .sugwrap like #sug, so the controls row
+           never changes height and fitCanvas() is untouched. -->
+      <div class="askbox" id="askbox" role="status" aria-live="polite" hidden></div>
     </div>
   </form>
 </div>
@@ -1557,9 +1592,19 @@ function renderSug(reset){
   });
 }
 if (gqEl){
-  gqEl.addEventListener("input", function(){ openSug(gqEl.value); });
+  /* ⚠️ THE ASK PANEL AND THE SUGGESTION LIST OCCUPY THE SAME SPACE, and the
+   * panel sits above it — so editing the term must take the panel down or the
+   * next keystroke's suggestions render underneath it, invisible. Typing is
+   * also the honest signal that the previous answer is spent. */
+  gqEl.addEventListener("input", function(){
+    if (typeof window.__ccrClearAsk === "function") window.__ccrClearAsk();
+    openSug(gqEl.value);
+  });
   gqEl.addEventListener("keydown", function(ev){
-    if (ev.key === "Escape"){ closeSug(); return; }
+    if (ev.key === "Escape"){
+      if (typeof window.__ccrClearAsk === "function") window.__ccrClearAsk();
+      closeSug(); return;
+    }
     // An empty box and Backspace drops the last chip of the selection (2026-09-05).
     if (ev.key === "Backspace" && !gqEl.value && typeof window.__ccrTokenBack === "function"){
       if (window.__ccrTokenBack()) ev.preventDefault();

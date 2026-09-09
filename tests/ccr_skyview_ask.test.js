@@ -306,6 +306,59 @@ const keys = () => w.__ccrTokenKeys();
   check("(14b) …and does not on a keyword",
     !pend2 || !/Ask SkyView/.test(pend2.textContent), pend2 ? pend2.textContent : "");
 
+  /* ── (15) THE ANSWER REACHES THE READER ──────────────────────────────────
+   * ⭐ EVERY CHECK ABOVE PASSED ON 2026-09-09 AND THE FEATURE STILL READ AS
+   * BROKEN. Sam typed "Show me chemistry", pressed Enter, and reported "the
+   * only response was to stop the rotation — no other view change." The ask had
+   * in fact run, stopped the sky, and printed the whole explanation — into
+   * #u-hint, which at 1440x900 is a 36px strip at the very bottom of the
+   * window, 850px from the search box and under three lines of legend.
+   * The suite asserted the STRING and never asked where it lands, so a control
+   * that says nothing a reader can see passed sixteen checks.
+   * The lane's own invariant already said it: a refusal that prints out of
+   * sight is a dead control. These pin the surface beside the box. */
+  const askbox = () => q("#askbox");
+  reply = null; status = 200;
+  w.__ccrClearAsk();
+  reply = "not json at all";
+  w.__ccrAsk("which welding courses are there?");
+  await settle();
+  check("(15) ⭐ a refusal is shown BESIDE THE SEARCH BOX, not only at the foot",
+    askbox() && askbox().hidden === false && /could not answer/i.test(askbox().textContent),
+    askbox() ? `hidden=${askbox().hidden} text=${askbox().textContent.slice(0, 80)}` : "no #askbox");
+  check("(15b) …inside the search form, so it follows the box into the map's row " +
+    "— a control outside #u-full does not exist in full screen",
+    !!(q("#msearch") && askbox() && q("#msearch").contains(askbox())),
+    "the ask panel is not inside #msearch");
+  check("(15c) …and it is a live region, so the outcome is announced rather " +
+    "than only painted",
+    askbox().getAttribute("role") === "status" &&
+    askbox().getAttribute("aria-live") === "polite",
+    `role=${askbox().getAttribute("role")} live=${askbox().getAttribute("aria-live")}`);
+  check("(15d) the refusal does not lean on color alone",
+    /askbox/.test(askbox().className) && / err\b/.test(" " + askbox().className) &&
+    /could not/i.test(askbox().textContent), askbox().className);
+
+  /* Typing again must take it down: it is drawn OVER the suggestion list, so a
+   * panel that outlived its question would hide every later match. */
+  gq.value = "weldi";
+  gq.dispatchEvent(new w.Event("input", { bubbles: true }));
+  await settle();
+  check("(15e) ⭐ editing the term dismisses it — it sits above the suggestion " +
+    "list and would otherwise hide the next matches",
+    askbox().hidden === true, `hidden=${askbox().hidden}`);
+
+  reply = { answer: "Welding, with articulated courses lit.", cannot: "",
+            select: [{ kind: "discipline", name: "Welding" },
+                     { kind: "discipline", name: "Basket Weaving" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("which welding courses carry an articulation?");
+  await settle();
+  check("(15f) ⭐ a PARTIAL answer says so beside the box — the map moved, so " +
+    "the reader believes the whole question landed",
+    askbox().hidden === false && /Basket Weaving/.test(askbox().textContent) &&
+    /left out/.test(askbox().textContent), askbox().textContent.slice(0, 160));
+
   let pass = 0;
   for (const [n, ok, why] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + n + (ok || why === undefined ? "" : "  — " + why));

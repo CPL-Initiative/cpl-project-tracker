@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 452,
+  "file_datasets": 453,
   "external_services": 138,
-  "consumers": 325,
+  "consumers": 326,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -59,7 +59,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 3587
+     "line": 3640
     },
     {
      "id": "module:sierra/sierra.js",
@@ -873,6 +873,13 @@
      "line": 478
     },
     {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 695
+    },
+    {
      "id": "script:kb/memory_audit/2026-09-05-sheet_builder.py",
      "kind": "script",
      "direction": "read",
@@ -1114,7 +1121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5008
+     "line": 5102
     }
    ],
    "main_committers": []
@@ -3817,6 +3824,13 @@
      "direction": "read",
      "how": "literal",
      "line": 698
+    },
+    {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 222
     }
    ],
    "producers": [
@@ -5311,6 +5325,13 @@
      "direction": "write",
      "how": "literal",
      "line": 104
+    },
+    {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 117
     }
    ],
    "producers": [
@@ -8275,6 +8296,13 @@
      "direction": "read",
      "how": "literal",
      "line": 64
+    },
+    {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 200
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -12442,6 +12470,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:picks kb/<slug-with-underscores>_domain_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 915
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:pipeline.js": {
    "consumers": [
     {
@@ -13105,6 +13146,13 @@
      "direction": "read",
      "how": "literal",
      "line": 66
+    },
+    {
+     "id": "script:kb/_build_domain_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 116
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",

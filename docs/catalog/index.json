@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 422,
+   "count": 423,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4336,6 +4336,26 @@
      "updated": "2026-08-28"
     },
     {
+     "created": "2026-09-09",
+     "governs": [
+      "kb/_build_domain_cpl_crosswalk.py",
+      "kb/fire_electrical_domain_map.json"
+     ],
+     "path": "docs/kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "cpl",
+      "crosswalk",
+      "credit-recommendations",
+      "articulation",
+      "data-quality"
+     ],
+     "title": "Follow a credit recommendation to the course that receives it",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-06-24",
      "governs": [
       "unified_courses.js",
@@ -8580,7 +8600,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 76,
+   "count": 77,
    "docs": [
     {
      "created": "2026-08-14",
@@ -10177,6 +10197,31 @@
       "ui"
      ],
      "title": "Statewide Exhibits KPI card + KPI grid UX \u2014 lessons",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "kb/_build_domain_cpl_crosswalk.py",
+      "kb/fire_electrical_domain_map.json",
+      "kb/domain_crosswalk_out/2026-09-09-fire-electrical/crosswalk.json"
+     ],
+     "path": "docs/statewide_fire_electrical_crosswalk_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "cpl",
+      "crosswalk",
+      "fire",
+      "wildland",
+      "caljac",
+      "electrical",
+      "apprenticeship",
+      "statewide",
+      "partners"
+     ],
+     "title": "Statewide Fire / Wildland / Cal-JAC / Electrical CPL crosswalk \u2014 lessons",
      "type": null,
      "updated": ""
     },
@@ -16483,5 +16528,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 852
+ "total": 854
 }

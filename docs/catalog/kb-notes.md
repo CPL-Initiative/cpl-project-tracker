@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-422 document(s).
+423 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -235,6 +235,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Fix the root, not a counter-rule: decision-tracing a stack of interacting rules](../kb-notes/methodology-fix-the-root-not-a-counter-rule.md) | methodology | published | 2026-07-21 |  |
 | [Fixing a cost can move it rather than remove it — and only a second profile says which](../kb-notes/methodology-fixing-a-cost-can-move-it-rather-than-remove-it.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [Fixing who may write does not rescue what was already written](../kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md) | methodology | published | 2026-08-28 | 2026-08-28 |
+| [Follow a credit recommendation to the course that receives it](../kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Forward-looking display for a curate-now / re-key-later split](../kb-notes/methodology-forward-looking-display-curate-now-rekey-later.md) | methodology | published | 2026-06-24 | 2026-06-24 |
 | [Funding is restricted by its earning rule, not by a label](../kb-notes/methodology-funding-is-restricted-by-its-earning-rule-not-by-a-label.md) | methodology | published | 2026-08-31 | 2026-08-31 |
 | [Grounded lexical confidence: ranking a text against a taxonomy (finder-not-decider)](../kb-notes/methodology-grounded-lexical-cip-confidence.md) | methodology | published | 2026-07-17 |  |

@@ -1726,3 +1726,86 @@ you answer before standing down. The fix reaches every view.
 Adding ~180 lines to `ccr_universe.js` shifted every mapped entry below them and
 turned CI red on a locally-green suite. The check is
 `python3 kb/_build_dependency_map.py --check`.
+
+## 2026-09-09 — S249: two defects on Sam's first real use, and a feature that worked into a dead spot
+
+Sam opened SkyView and tried the two newest controls. Both reports were of the
+same shape — *the control did nothing* — and the two causes had nothing in
+common.
+
+> *"I tried it typing, 'Show me chemistry' and clicked enter, but the only
+> response was to stop the rotation--no other view change."*
+> *"Also, when I tried the Isolate function, it cleared the field with no
+> groupings displayed."* — Sam, 2026-09-09
+
+### ⭐ Isolate emptied the map on a discipline, and the guard read the OTHER half of the selection
+
+`tokenHits()` reports a `subject` token as an **island** — it is outlined in
+blue, not ringed in red — so a selection made of disciplines leaves
+`searchHits` **empty**. `isoNodeOK` tested `searchHits`, `selNode` and
+`lastFocus` and nothing else, so it failed **every node in the payload**.
+`isoActive()` and the button's `can` test, meanwhile, both counted `selIsl`, so
+the toggle armed and fired. Measured on the committed payload: **49,896 courses
+/ 159 islands → 0 and 0**; after the fix, 191 / 1 for Chemistry.
+
+⚠️ **Two tests of "is anything selected" that disagree is the whole bug.** One
+said yes and enabled the control; the other said no and drew nothing. Neither
+errored. It is Rule 7's stored-id failure in a different costume — the lookup
+does not fail, it silently matches nothing and looks like an answer — and it is
+also the blank canvas the button is *disabled* to prevent, reached from the
+side the disable never covers.
+
+⚠️ **The one-island fixture could not have caught it.** `tests/ccr_skyview_isolate.test.js`
+had ten checks and a single island, and "isolate a discipline and the OTHER
+disciplines go" is unstateable against one. The fixture now carries two, and
+(12) reports `shown=0 islands=0/2` when the fix's own line is reverted.
+
+⚠️ **The fix is stamped, not computed.** `islandPass` counts every course on a
+frame; rebuilding the island set 49,896 times a frame is the cost that turns a
+filter into a stutter. `isoMark()` rebuilds only when the selection's shape
+changes, compared by reference, and `showSig()` folds the stamp in or
+`islandPass` serves a stale count. A token's `isls` is rewritten **in place**
+while the array keeps its identity and length, so every path that does it calls
+`isoDirty()`.
+
+### ⭐ The Ask was never broken — it answered where nobody looks
+
+The ask ran, stopped the sky, and printed the complete "not deployed yet"
+explanation. Into `#u-hint` — measured in a browser at 1440×900, a **36px strip
+at the bottom edge, 850px below the search box, under three lines of legend**.
+Sam typed at the top, watched the map, and correctly reported that nothing
+happened.
+
+⚠️ **`tests/ccr_skyview_ask.test.js` had sixteen checks and every one passed.**
+They asserted the *string* `setHint` receives. Not one asked where that string
+lands, so a control that says nothing a reader can see was fully covered. The
+lane's own invariant had already written the rule — *a refusal that prints out
+of sight is a dead control* — and the feature shipped against it anyway, because
+the invariant lived in prose and nothing mechanical held it.
+
+The ask now also answers in a `role="status"` panel **inside the search form**,
+so it follows the box between the masthead and the map's row rather than being a
+control outside the one element full screen paints — and an ask outcome reaches
+a screen reader for the first time. Typing dismisses it: it is drawn over the
+suggestion list and would otherwise hide the next matches.
+
+⚠️ **`--crimson`, not `--red-alert`.** `--red-alert` is a COBI token this
+stylesheet never redefines for the night palette, so it stays #B3261E on every
+ground: **2.55:1** on `--surface-opaque` in dark, against 4.5 for the heading
+and 3 for the rule. `--crimson` is themed in both `:root` blocks here — 9.45:1
+light, 6.34:1 dark. Dark is a token swap, so the fix is picking the role that
+already swaps, never a component rule in the dark block.
+
+### The third cause was the one already written down
+
+Neither fix makes the Ask answer. `skyview-ask` was not a known surface on the
+**deployed** function, so the 20,000-character envelope was cut to the
+1,000-character chat cap and the reply came back as prose. That was lane item
+① NEEDS SAM the whole time; he gave the go this session and
+`cpl-chat-deploy.yml` ran (34402962685, byte-verify clean), with
+`cpl-chat-smoke.yml` re-checking the four search modes the shared redeploy also
+touches.
+
+⚠️ **Three causes, one symptom, and only one of them was in the code Sam was
+testing.** The lane named the deploy; a session that trusted "the tests pass"
+would have found neither of the other two.
