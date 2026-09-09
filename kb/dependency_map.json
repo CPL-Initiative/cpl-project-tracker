@@ -59,7 +59,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 3587
+     "line": 3640
     },
     {
      "id": "module:sierra/sierra.js",
@@ -1114,7 +1114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5008
+     "line": 5102
     }
    ],
    "main_committers": []
