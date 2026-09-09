@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-76 document(s).
+77 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -85,6 +85,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Sierra rules as data — lessons](../sierra_rules_lessons.md) | `sierra_rules_lessons.md` | 2026-08-14 |  |
 | [SkyView / CCR Atlas lessons — archive](../ccr_atlas_lessons_archive.md) | `ccr_atlas_lessons_archive.md` | 2026-09-05 | 2026-09-07 |
 | [Statewide Exhibits KPI card + KPI grid UX — lessons](../statewide_kpi_lessons.md) | `statewide_kpi_lessons.md` | 2026-06-11 |  |
+| [Statewide Fire / Wildland / Cal-JAC / Electrical CPL crosswalk — lessons](../statewide_fire_electrical_crosswalk_lessons.md) | `statewide_fire_electrical_crosswalk_lessons.md` | 2026-09-09 |  |
 | [Student-detail load — lessons](../student_detail_load_lessons.md) | `student_detail_load_lessons.md` | 2026-08-08 |  |
 | [SUBJ4 Canonicalization Re-Mint — Decisions & Lessons (Phase 1e)](../subj4_canonicalization_remint_lessons.md) | `subj4_canonicalization_remint_lessons.md` | 2026-05-23 |  |
 | [Subject/discipline cleanup lessons — mis-mint detection + blank-discipline pre-seed](../subject_discipline_cleanup_lessons.md) | `subject_discipline_cleanup_lessons.md` | 2026-07-13 |  |
