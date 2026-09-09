@@ -15,10 +15,11 @@ related:
 
 The files that shape how a session BEHAVES rather than record what it did. `CLAUDE.md` auto-loads into every session, so it is the likeliest source of a recurring mismatch between what the system does and what you expected.
 
-4 document(s).
+5 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
+| [`/a11y-pass` — check and remediate a surface](../../.claude/commands/a11y-pass.md) | `.claude/commands/a11y-pass.md` |  |  |
 | [checkpoint](../../.claude/commands/checkpoint.md) | `.claude/commands/checkpoint.md` |  |  |
 | [CPL Project Tracker — Claude Code Project Memory](../../CLAUDE.md) | `CLAUDE.md` |  |  |
 | [KB — Knowledge Base](../../kb/README.md) | `kb/README.md` |  |  |

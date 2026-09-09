@@ -298,6 +298,21 @@ named here because a store nobody names is a store nobody finds —
   docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
+- **THE PASS IS A PROCEDURE, NOT A GREP (Sam, 2026-09-09).** *"I want a procedure
+  that checks and remediates each COBI surface for AA and mobile friendly
+  standards."* [`/a11y-pass`](.claude/commands/a11y-pass.md) is the whole loop —
+  check → **triage** → remediate → re-measure → record — with
+  `scripts/a11y_triage.js` (rank a saved sweep by BLAST RADIUS; the first dark
+  sweep's 511 findings were ~227 occurrences of **six** shared-chrome selectors,
+  so reading the report top to bottom fixes the 38th-most-important thing first)
+  and `kb/_glyph_sweep.py` (find every glyph in RENDERED text — a comment line is
+  never a finding — and mechanically strip only the control class).
+  ⚠️ **Sam's 2026-09-09 glyph instruction SUPERSEDES the approved exceptions
+  below**: *"remove all emoji glyphs and if any are crucial replace with a muted
+  glyph using white and CO blue as default. If color is needed to clarify, keep
+  it muted and aligned with the CO palette."* The 📋/🧭/⚖️ trio are now in scope
+  as muted CO-blue marks. Baseline and remaining work:
+  [lane state](docs/reference/lanes/cobi-dark-mode.md).
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
   prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
   window** — the canvas of identities you pan, search and drag on, with its one row of

@@ -4,8 +4,18 @@
  "lanes": [
   {
    "blurb": "The files that shape how a session BEHAVES rather than record what it did. `CLAUDE.md` auto-loads into every session, so it is the likeliest source of a recurring mismatch between what the system does and what you expected.",
-   "count": 4,
+   "count": 5,
    "docs": [
+    {
+     "created": "",
+     "governs": [],
+     "path": ".claude/commands/a11y-pass.md",
+     "status": null,
+     "tags": [],
+     "title": "`/a11y-pass` \u2014 check and remediate a surface",
+     "type": "doctrine",
+     "updated": ""
+    },
     {
      "created": "",
      "governs": [],
@@ -16159,5 +16169,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 831
+ "total": 832
 }

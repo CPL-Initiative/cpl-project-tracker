@@ -169,6 +169,15 @@ jobs:
       # score that decided which ring they sit on. Pure-stdlib python, no network.
       - name: SkyView level-layout guard (kb/_build_ccr_universe.py)
         run: python3 tests/ccr_level_layout_test.py
+      # The glyph sweep's classifier and its safe-rewrite envelope (Sam,
+      # 2026-09-09). ⚠️ This runs the GUARD, not the sweep: --apply rewrites
+      # rendered labels across 139 files, so what it REFUSES to touch is the
+      # thing worth pinning — a lone-glyph label, a mark mid-sentence, a glyph
+      # spliced onto a variable, and this repo's ⚠️/⭐ comment style. The sweep's
+      # own --check is deliberately not a gate yet: the backlog is 508
+      # control-class glyphs and a check that is red on day one gets ignored.
+      - name: Glyph sweep guard (kb/_glyph_sweep.py)
+        run: python3 tests/glyph_sweep_test.py
       # Memory-table lint (Session 229) — the structural half of "is this memory
       # row still true": dead paths, dangling pointers, a stale row wearing a
       # verification stamp, PRs not on main, null slugs, near-duplicates. Each

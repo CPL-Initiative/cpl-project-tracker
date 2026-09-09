@@ -154,6 +154,35 @@ at a time: redefining `--seal-blue` dark, dropping `our_process.js`'s light
 guard, making `system` pin the resolved value, and removing the `storage`
 listener each fail exactly their own checks and nothing else.
 
+## The standing pass (Sam, 2026-09-09)
+
+*"I want a procedure that checks and remediates each COBI surface for AA and
+mobile friendly standards."* Built as [`/a11y-pass`](../../../.claude/commands/a11y-pass.md):
+check → **triage** → remediate → re-measure → record.
+
+⭐ **THE TRIAGE STEP IS THE ONE THAT WAS MISSING.** `scripts/a11y_triage.js`
+groups a saved sweep by selector and ranks by BLAST RADIUS, because the number of
+findings is not the number of problems: this lane's first dark sweep was 38/38
+routes and **511 findings that were ~227 occurrences of six shared-chrome
+selectors**. Run against that same report it reproduces all six, in the order
+they should be worked, in a second — against the two manual re-reads it actually
+took. It reads a saved report and never re-measures, so it is free.
+
+**Glyph baseline, 2026-09-09** (`kb/_glyph_sweep.py`): **1,549 findings across
+139 files — 516 control · 225 status · 808 decoration**. A comment line is never
+a finding; this repo's ⚠️/⭐ comment style renders to nobody and would bury the
+841 that do render. Only the control class is mechanical (`--apply` strips a
+leading glyph and its space from a label); status and decoration are reported
+because removing them needs a reworded sentence or a judgment about a legend.
+⚠️ `--check` is deliberately NOT yet a CI gate — red on day one trains everyone
+to ignore it. It becomes one when the control class reaches zero.
+
+⚠️ **This supersedes the named glyph exceptions.** CLAUDE.md's presentation rules
+list 📋 To-Do, 🧭 guidance and ⚖️ Governance as approved and "the ceiling, not a
+precedent"; Sam's 2026-09-09 instruction is *"remove all emoji glyphs and if any
+are crucial replace with a muted glyph using white and CO blue as default"*, so
+those three are now in scope as muted CO-blue marks rather than emoji.
+
 **NEXT:** work item 3 (mechanical, and it is the largest remaining source of
 dark faults), then item 1 in the generator. **NEEDS SAM:** nothing — he asked
 for the control and the control is in. The SkyView fallback ordering is the one
