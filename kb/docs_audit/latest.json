@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 864,
-    "bytes": 9164889,
+    "bytes": 9170215,
     "over_budget": 3,
     "handoff_max": 248,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 74,
-        "bytes": 2022507,
+        "bytes": 2027285,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 156245,
+        "bytes": 156793,
         "over": 0
       },
       "handoff": {
@@ -58,13 +58,13 @@
     "by_rule": {
       "house_voice": 23,
       "oversized_doc": 3,
-      "vault_heavy_path": 47
+      "vault_heavy_path": 48
     },
     "vault": {
-      "files": 2789,
-      "bytes": 1353204655,
-      "heavy_bytes": 613654685,
-      "heavy_share": 0.453,
+      "files": 2787,
+      "bytes": 1364995641,
+      "heavy_bytes": 626126107,
+      "heavy_share": 0.459,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -82,6 +82,7 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -591,6 +592,16 @@
         "kind": "file"
       },
       "message": "14,342,484 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_atlas_v1.built.html",
+      "detail": {
+        "bytes": 12471422,
+        "kind": "file"
+      },
+      "message": "12,471,422 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -1192,8 +1192,51 @@ function cteOK(nd){ return nd.e===1 ? show.cte : nd.e===0 ? show.aca : show.cten
  * So the button says so and stays off instead. */
 var isolate=false;
 function isoActive(){ return isolate && (searchHits.length>0 || !!selNode || !!selIsl); }
+/* ⭐ A DISCIPLINE IS SELECTED AS AN ISLAND AND CONTRIBUTES NO NODE HITS, so the
+ * test below has to ask about the island too. tokenHits() reports a `subject`
+ * token as an ISLAND — it is outlined in blue, not ringed in red — which leaves
+ * searchHits EMPTY for a selection made of disciplines. isoNodeOK knew only
+ * hits, selNode and the click's ties, so it then failed EVERY node in the
+ * payload, while isoActive() and the button's `can` test both counted selIsl
+ * and let the toggle be pressed: the map emptied. Sam, 2026-09-09: "when I
+ * tried the Isolate function, it cleared the field with no groupings
+ * displayed." That is the blank canvas this control is disabled to prevent,
+ * reached from the other side — and the same shape as Rule 7's stored ids: the
+ * lookup did not error, it silently matched nothing and looked like an answer.
+ * ⚠️ Isolating a DISCIPLINE is the headline case, not an edge one — Sam asked
+ * for the toggle to "eliminate the noise of other groupings on screen."
+ *
+ * ⚠️ THE ISLAND COUNTS ONLY WHEN THE ISLAND IS THE SELECTION. selIsl is set to
+ * the PARENT of a clicked course as well, so honoring it unconditionally would
+ * make "isolate this one course" open its whole discipline — the opposite of
+ * what the control promises, and what checks (7) and (8) pin.
+ *
+ * ⚠️ STAMPED ONTO THE NODES, NOT RE-DERIVED PER NODE. islandPass counts every
+ * course in the payload on a frame; rebuilding the island set 49,896 times a
+ * frame is exactly the cost that turns a filter into a stutter. The stamp is
+ * rebuilt only when the selection's own shape changes, compared by reference. */
+var _isoStamp=0, _isoToks=null, _isoTokN=-1, _isoIsl=null, _isoNode=null;
+function isoMark(){
+  if(_isoToks===tokens && _isoTokN===(tokens?tokens.length:-1)
+     && _isoIsl===selIsl && _isoNode===selNode) return;
+  _isoToks=tokens; _isoTokN=tokens?tokens.length:-1; _isoIsl=selIsl; _isoNode=selNode;
+  _isoStamp++;
+  var isls=[], i, j, ils;
+  if(tokens) for(i=0;i<tokens.length;i++){
+    ils=tokens[i].isls;                  // written by applyTokens / selectionUnion
+    if(ils) for(j=0;j<ils.length;j++) if(isls.indexOf(ils[j])<0) isls.push(ils[j]);
+  }
+  if(!selNode && selIsl && isls.indexOf(selIsl)<0) isls.push(selIsl);
+  for(i=0;i<isls.length;i++) for(j=0;j<isls[i].p.length;j++) isls[i].p[j]._iso=_isoStamp;
+}
+/* ⚠️ A token's `isls` is REWRITTEN IN PLACE while the array keeps its identity
+ * and its length (selectionUnion does exactly that on every apply), so the
+ * reference test above cannot see it. Every path that rewrites them says so. */
+function isoDirty(){ _isoToks=null; }
 function isoNodeOK(nd){
   if(!isoActive()) return true;
+  isoMark();
+  if(nd._iso===_isoStamp) return true;            // its discipline IS the selection
   for(var i=0;i<searchHits.length;i++) if(searchHits[i].id===nd.i) return true;
   if(nd===selNode) return true;
   if(lastFocus && lastFocus[nd.i]) return true;   // the ties the click lit
@@ -1227,8 +1270,12 @@ function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && a
  * on a frame. */
 function showSig(){
   var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0";
-  if(isoActive()) t+="|iso"+searchHits.length+":"+(searchHits[0]?searchHits[0].id:"")+
-                    ":"+(selNode?selNode.i:"")+":"+(selIsl?selIsl.d:"");
+  /* isoMark() settles the stamp BEFORE islandPass counts against this
+   * signature, and the stamp is what changes when the isolated island set does
+   * — selIsl alone cannot see a discipline that was selected as a token. */
+  if(isoActive()){ isoMark();
+    t+="|iso"+_isoStamp+":"+searchHits.length+":"+(searchHits[0]?searchHits[0].id:"")+
+       ":"+(selNode?selNode.i:"")+":"+(selIsl?selIsl.d:""); }
   return t;
 }
 function islandPass(isl){
@@ -3562,6 +3609,7 @@ function askResolve(sel){
 function askError(msg){
   asking=false;
   setHint("<strong>Ask SkyView</strong> — "+esc(msg));
+  setAsk("Ask SkyView could not answer.", esc(msg), true);
   draw();
 }
 
@@ -3582,7 +3630,12 @@ window.__ccrAsk = function(question){
   }
   asking=true;
   stopTurn();
+  /* ⚠️ SAY SOMETHING BEFORE THE NETWORK DOES. stopTurn() is the first thing the
+   * reader sees — the sky stops — and on its own it reads as the whole answer.
+   * Both surfaces say what is happening, so the pause is explained while it
+   * lasts rather than after it. */
   setHint("<strong>Ask SkyView</strong> — reading “"+esc(qtext)+"”…");
+  setAsk("Ask SkyView", "reading “"+esc(qtext)+"”…", false);
   draw();
   fetch(ASK_URL+"/functions/v1/cpl-chat", {
     method:"POST",
@@ -3625,10 +3678,13 @@ function applyAsk(qtext, res){
   if(!got.tokens.length){
     /* ⚠️ CHANGE NOTHING. A question that produced no selection must leave the
      * reader's map exactly as it was — clearing it would punish them for asking. */
-    setHint("<strong>Ask SkyView</strong> — "+esc(cannot || answer ||
-      "that question did not name anything on the map.")+
+    var why=esc(cannot || answer || "that question did not name anything on the map.")+
       (got.missed.length ? " Nothing on the map is called "+esc(got.missed.join(", "))+"." : "")+
-      " The map is unchanged.");
+      " The map is unchanged.";
+    setHint("<strong>Ask SkyView</strong> — "+why);
+    /* Nothing moved, so this panel is the ONLY evidence the question was heard.
+     * It is the case that most needs saying where the reader is looking. */
+    setAsk("Ask SkyView", why, true);
     draw();
     return;
   }
@@ -3650,11 +3706,15 @@ function applyAsk(qtext, res){
   setIsolate(res.isolate===true);
 
   var said=answer || ("Showing "+got.tokens.map(function(t){ return t.label; }).join(", ")+".");
-  setHint("<strong>Ask SkyView</strong> — "+esc(said)+
-    (got.missed.length
-      ? " <em>Nothing on the map is called "+esc(got.missed.join(", "))+", so that part was left out.</em>"
-      : "")+
+  var left=got.missed.length
+    ? " <em>Nothing on the map is called "+esc(got.missed.join(", "))+", so that part was left out.</em>"
+    : "";
+  setHint("<strong>Ask SkyView</strong> — "+esc(said)+left+
     " Your question: “"+esc(qtext)+"”");
+  /* ⚠️ THE PARTIAL ANSWER IS THE ONE THAT MUST TRAVEL. The map moved, so the
+   * reader believes they were understood — and `missed` is precisely the part
+   * they were NOT given, which at the foot of the window they never read. */
+  setAsk("Ask SkyView", esc(said)+left, false);
   draw();
 }
 
@@ -4427,6 +4487,38 @@ function wire(){
   });
 }
 function setHint(t){ var el=document.getElementById("u-hint"); if(el) el.innerHTML=t; }
+/* ⭐ THE ASK ANSWERS BESIDE THE BOX, NOT ONLY AT THE FOOT OF THE WINDOW.
+ * setHint writes #u-hint, which sits below the legend at the bottom edge —
+ * measured at 1440x900 it is a 36px strip 850px away from the search box. Sam
+ * asked SkyView a question on 2026-09-09, the deploy explanation printed there
+ * in full, and what he reported was "the only response was to stop the
+ * rotation — no other view change." The lane's own rule already said it: a
+ * refusal that prints out of sight is a dead control.
+ *
+ * Both surfaces are written, deliberately. #u-hint keeps the long form for a
+ * reader who is looking there; this is the short form where the hand is, and it
+ * is a `role="status"` live region, so it is also the first time an ask outcome
+ * is announced to a screen reader at all.
+ * ⚠️ It writes into the SEARCH FORM, which the map row BORROWS — so it follows
+ * the box between the masthead and #u-full instead of being a control outside
+ * the one element full screen paints. */
+function setAsk(head, body, isErr){
+  var el=document.getElementById("askbox");
+  if(!el) return;
+  el.className="askbox"+(isErr?" err":"");
+  el.innerHTML='<span class="askhd">'+head+'</span> '+body+
+    '<div><button type="button" class="askdismiss" id="askdismiss">Dismiss</button></div>';
+  el.hidden=false;
+  var sug=document.getElementById("sug");
+  if(sug && !sug.hidden){ sug.hidden=true; sug.innerHTML=""; }   // never both at once
+  var b=document.getElementById("askdismiss");
+  if(b) b.onclick=function(){ clearAsk(); var g=document.getElementById("gq"); if(g) g.focus(); };
+}
+function clearAsk(){
+  var el=document.getElementById("askbox");
+  if(el){ el.hidden=true; el.innerHTML=""; el.className="askbox"; }
+}
+window.__ccrClearAsk=clearAsk;
 
 /* ── keyword zoom ────────────────────────────────────────────────────────── */
 function memberHits(term){
@@ -4622,6 +4714,7 @@ window.__ccrTokenBack=function(){ if(tokens.length){ removeToken(tokens[tokens.l
 /* One token: the single behaviors. Several: the union, fitted. */
 function applyTokens(last){
   if(!U) return;
+  isoDirty();          // every branch below rewrites a token's `isls`
   if(tokens.length===1){
     var t=tokens[0];
     if(t.kind==="term"){ searchOne(t.term); }
@@ -4655,6 +4748,7 @@ function applyTokens(last){
   draw();
 }
 function selectionUnion(){
+  isoDirty();          // it writes t.isls below, in place
   var hits=[], seen={}, isls=[], seenI={};
   tokens.forEach(function(t){
     var h=tokenHits(t); t.isls=h.isls;
