@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 417,
+   "count": 420,
    "docs": [
     {
      "created": "2026-08-14",
@@ -648,6 +648,23 @@
       "quality"
      ],
      "title": "A check that cannot fail reads exactly like a clean result",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "scripts/a11y.js",
+      "tests/ccr_skyview_pinch.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-check-that-cannot-fire-on-what-it-names.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "testing"
+     ],
+     "title": "A check that cannot fire on what it names \u2014 disabled controls, and the falsification pass",
      "type": "methodology",
      "updated": "2026-09-09"
     },
@@ -3564,6 +3581,25 @@
      "updated": "2026-08-03"
     },
     {
+     "created": "2026-09-09",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/ccr_skyview_ask.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-ask-a-model-to-translate-not-to-answer.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "sierra",
+      "retrieval",
+      "ui"
+     ],
+     "title": "Ask a model to translate, not to answer, when the answer is not in its corpus",
+     "type": "methodology",
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-24",
      "governs": [
       "kb/_build_esl_fold_preview.py",
@@ -5492,6 +5528,24 @@
      "title": "One dependency derivation, many projections",
      "type": "methodology",
      "updated": "2026-08-30"
+    },
+    {
+     "created": "2026-09-09",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "tests/ccr_skyview_mobile_row.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-one-symptom-two-causes-and-the-obvious-fix-changes-nothing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "measurement",
+      "debugging"
+     ],
+     "title": "One symptom, two causes \u2014 and fixing the obvious one changes nothing",
+     "type": "methodology",
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-06-26",
@@ -11981,7 +12035,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 45,
+   "count": 46,
    "docs": [
     {
      "created": "2026-08-28",
@@ -12387,7 +12441,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-07"
+     "updated": "2026-09-09"
     },
     {
      "created": "2026-08-28",
@@ -12579,6 +12633,19 @@
      "updated": ""
     },
     {
+     "created": "2026-09-09",
+     "governs": [],
+     "path": "docs/reference/skyview_invariants.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "skyview"
+     ],
+     "title": "SkyView \u2014 the engineering invariants",
+     "type": null,
+     "updated": "2026-09-09"
+    },
+    {
      "created": "2026-08-19",
      "governs": [],
      "path": "docs/reference/troubleshooting.md",
@@ -12602,8 +12669,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 221,
+   "count": 222,
    "docs": [
+    {
+     "created": "2026-09-09",
+     "governs": [],
+     "n": 248,
+     "path": "docs/session_248_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "SkyView on a phone, a question box that moves the map, and a lane that finally got compacted",
+     "type": null,
+     "updated": "2026-09-09"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16357,5 +16437,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 844
+ "total": 849
 }

@@ -1608,3 +1608,121 @@ shared-chrome selectors. `scripts/a11y_triage.js` now groups a saved report by
 selector and ranks by blast radius; run against that same report it reproduces
 all six in the right order in a second, against the two manual re-reads it
 actually cost. See [`/a11y-pass`](../.claude/commands/a11y-pass.md).
+
+---
+
+## 2026-09-09 — S247 (SkyLedger): the phone, the pinch, and a question that moves the map
+
+Sam's three asks on SkyView in one message: the header toolbar "now takes up half
+the screen", pinch does not zoom on mobile, and the search box should take
+questions "like Sierra handles". Shipped as PR #1530 (`6148982`).
+
+### The number was not the number
+
+He said half the screen. Measured in Chromium at 390×844 before building:
+`#u-top` was **254px over four wrapped rows — 30%** of the viewport, and
+`.u-foot` another **430px**, *more than the header*. So the honest figure was
+**81% of a screenful is not the map**, and his "half" was low, not high.
+
+⭐ **AND THE HEADER WAS ONLY HALF THE PROBLEM.** `fitCanvas()` tested
+`window.innerWidth<700` BEFORE the solo test, so on a phone the canvas took
+`0.62 × innerHeight` — 523px at 844, which is exactly the canvas that was there.
+**Shrinking the row could not have helped: the freed pixels had nowhere to go.**
+This is the shape worth remembering — a visible symptom with two independent
+causes, where fixing the obvious one alone produces a smaller header and the same
+map. The fix is swapping two `else if` branches.
+
+⭐ **AND THE HEIGHT WENT STALE ANYWAY.** With both fixed, the canvas still opened
+at 451px: `fitCanvas` had run while the row was still 393px tall (before the
+page's search form was borrowed into its slot) and nothing re-ran it. Dispatching
+one `resize` corrected it to 730px — which is the proof that **the arithmetic was
+right and only the timing was wrong**. The resize listener could never have
+caught it, because a phone's window does not resize. A `ResizeObserver` on
+`#u-top` / `#u-foot` / `#u-face-line` is the fix, and unlike a one-shot `rAF` it
+also covers the row wrapping at a breakpoint and a font landing late.
+
+### The rail Sam proposed, and why it was refused
+
+He asked whether the row might become a floating vertical rail down the left
+edge. Refused, and the argument is geometric rather than aesthetic: a rail is
+~48px of a 390px canvas, and *Rotate · Pan · Move · Articulations · Isolate* do
+not stack in a 48px column — **a rail settles the plain-words rule by shape
+before anyone gets to argue it**. It also reverses his own 2026-09-03 ruling that
+nothing floats over the map. The answer was a horizontal row that folds behind
+one word, which he approved.
+
+⚠️ **The breakpoint moved 900 → 1100 mid-build, on a measurement.** The plan
+said 900 so an iPad landscape kept its full row. Measured at 1024: a **three-line
+186px header** — the wrapped zone, not the comfortable one. 1100 is where the
+stylesheet already gives up `flex-wrap:nowrap`, so above it the row fits one line
+and below it the row was wrapping. **The plan was wrong about which state a
+tablet was in.**
+
+### Two fingers were worse than no fingers
+
+A 5× two-finger spread left the zoom readout on "188° across" for all eight
+frames. `touch-action:none` turns the browser's own pinch off, nothing read a
+second pointer, and `pointerdown` set `drag` unconditionally — so the second
+finger replaced the first one's grab and **both fed the same pan**. Two fingers
+did not zoom; they fought over the turn. Fixed with a `pts` registry keyed by
+`pointerId`, a ratio against the LAST span (not the first — fingers keep moving
+after the zoom clamps, and an absolute ratio banks that travel and springs back),
+and `pointercancel`, without which a touch the OS takes away is a phantom finger
+for the life of the page.
+
+### The ask: translate, do not answer
+
+⭐ **The reason is correctness, not taste.** `cpl-chat` retrieves from the
+knowledge base; the knowledge base does not contain SkyView's payload (16,482
+identities, 33,423 stand-alone courses, 159 islands). *"Which welding identities
+carry no articulation?"* is a question retrieval **structurally cannot answer**,
+and a prose surface would answer it anyway, fluently, from the wrong corpus. So
+the model returns a SELECTION in the token grammar the map already speaks, and
+the page does the counting. Sierra stays where she is.
+
+⚠️ **A surface must be declared in five places, and the repo's guards found every
+one I missed.** `KNOWN_SURFACES` → `sierra_surface` went red on the SQL CHECK
+constraint; then `sierra_training_surface` on the curator's picker; then
+`sierra_memory_isolation` on the vetted-owner map. Three suites, in turn, each
+naming the next. **That is the system working**, and it is worth saying plainly
+because the alternative failure is silent: an undeclared surface normalizes to
+null and takes the 1,000-character chat cap, truncating the contract into a
+grammatical fragment.
+
+### Three defects the tests found that a reading would not have
+
+⭐ **The affordance was invisible exactly when it mattered.** A question matches
+no course title, so `openSug()` hid the list — and the footer that says "Enter
+asks" hid with it. The ask was unreachable at the moment it became available.
+Check (14) looked for the label and found no list at all.
+
+⭐ **The footer disagreed with the key.** It required `!pendKeys.length`, but a
+seeded key the reader never touched is inert in `pendingEdit()`, so Enter fell
+through and asked while the footer read "1 selected". The condition is now
+literally the same test `commitPending()` makes.
+
+⭐ **A guard of mine could not fail.** `setIsolate(res.isolate===true &&
+tokens.length>0)` sits after an early return that has already proved the
+selection non-empty, so the second half is unreachable-false. Removed rather than
+left implying a case that cannot happen — and the test now records what it really
+covers. ⚠️ **This is handoff 247's lesson recurring within a day**, which is why
+the falsification pass is now written down per check: revert each line, re-run,
+and record which check went red. Two checks in the pinch suite survive either
+single revert because the selection guard is deliberately doubled; that is stated
+in the suite header rather than discovered later as a hole.
+
+### Two harness gaps, both wider than this lane
+
+⚠️ **`scripts/a11y.js` reported every DISABLED control as "focusable with no
+ring".** `el.focus()` is a no-op on them, so they can never show one — the same
+shape as the closed-`<details>` case handled ten lines above it. SkyView's
+Isolate button (disabled until something is selected, by design) was a standing
+red on five routes that no CSS could clear. **Confirmed pre-existing by running
+the sweep against the stashed, unmodified prototype** before touching it — worth
+the two minutes, because "is this mine?" is the question the branch policy makes
+you answer before standing down. The fix reaches every view.
+
+⚠️ **The dependency map records LINE NUMBERS, and `npm test` does not check it.**
+Adding ~180 lines to `ccr_universe.js` shifted every mapped entry below them and
+turned CI red on a locally-green suite. The check is
+`python3 kb/_build_dependency_map.py --check`.

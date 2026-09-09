@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-417 document(s).
+420 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -48,6 +48,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A capped retrieval must rank by relevance — popularity is only a tiebreaker](../kb-notes/methodology-capped-retrieval-ranks-by-relevance.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A change inherits every reference into it, and the same-cycle reference is the one you miss](../kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A check that cannot fail reads exactly like a clean result](../kb-notes/methodology-a-check-that-cannot-fail-reads-as-a-clean-result.md) | methodology | published | 2026-09-09 | 2026-09-09 |
+| [A check that cannot fire on what it names — disabled controls, and the falsification pass](../kb-notes/methodology-a-check-that-cannot-fire-on-what-it-names.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A check that never registers can never fail](../kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) | methodology | published | 2026-08-15 | 2026-08-21 |
 | [A click-outside-closes overlay must test the click TARGET, never walk ancestors](../kb-notes/methodology-overlay-close-on-backdrop-target-only.md) | methodology | published | 2026-07-02 | 2026-07-02 |
 | [A client cannot see the cap the server enforces, so a two-half feature fails in the half that deployed](../kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | methodology | published | 2026-08-25 | 2026-08-25 |
@@ -197,6 +198,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Answer "eligible students & credits by program area × statewide/local" from the Credential Reference data](../kb-notes/methodology-area-eligibility-rollup-from-cer.md) | methodology | published | 2026-07-20 | 2026-07-20 |
 | [Answer a reviewer's \"make a version that…\" with a switch on the same page, not a second page](../kb-notes/methodology-answer-a-reaction-with-a-switch-not-a-version.md) | methodology | published | 2026-09-07 | 2026-09-07 |
 | [Answering "which programs at <college> have CPL for apprentices?" — the three-artifact join](../kb-notes/methodology-college-apprenticeship-cpl-roster.md) | methodology | published | 2026-08-03 | 2026-08-03 |
+| [Ask a model to translate, not to answer, when the answer is not in its corpus](../kb-notes/methodology-ask-a-model-to-translate-not-to-answer.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Ask whether the list can contain what you are counting](../kb-notes/methodology-ask-whether-the-list-can-contain-what-you-are-counting.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [Ask which container the control is in before you debug the control](../kb-notes/methodology-ask-which-container-before-you-debug-the-control.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [Assert that an argument arrives, not that it is last](../kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md) | methodology | published | 2026-08-22 | 2026-08-22 |
@@ -292,6 +294,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [One assistant, three files — compare them in a test or they drift](../kb-notes/methodology-one-assistant-three-files-is-a-drift-machine.md) | methodology | published | 2026-08-17 | 2026-08-17 |
 | [One college, many course numbers is an over-merge signal](../kb-notes/methodology-one-college-many-course-numbers-is-an-over-merge-signal.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [One dependency derivation, many projections](../kb-notes/methodology-one-dependency-derivation-many-projections.md) | methodology | published | 2026-08-30 | 2026-08-30 |
+| [One symptom, two causes — and fixing the obvious one changes nothing](../kb-notes/methodology-one-symptom-two-causes-and-the-obvious-fix-changes-nothing.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [Overlay live data onto generated cards via a stamped data-key hook](../kb-notes/methodology-live-overlay-onto-generated-cards.md) | methodology | published | 2026-06-26 | 2026-06-26 |
 | [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 |  |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |

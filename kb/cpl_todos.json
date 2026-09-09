@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-09",
-  "_session": "S245 (SkyPlain, dark mode) + SkyText (funding text) — two parallel sessions",
-  "_status": "Two sessions ran side by side today. One swept COBI for dark mode and accessibility; the other got the Implementation Funding tab ready to show people. On the funding side the introduction now quotes the Education Code section it relies on, set off as a quotation rather than running together with the page's own words, and the wording was revised against the norms Sam set: no borrowing from banking to describe how a college earns its funding, active sentences that name who is doing the thing, and the regulation's own vocabulary in preference to an invented one. Curators can now rename any section and hold any section back from the public page, and the two public pages showing this model became one — which mattered more than tidiness, because holding a section back only worked on one of them. Nine decisions went to Sam on a single sheet and all nine came back the same day.",
+  "_session": "S247 (SkyLedger) — SkyView on a phone, pinch, and a question box",
+  "_status": "SkyView works on a phone now. The row of controls at the top had grown to take about a third of the screen, with the legend underneath taking even more, so barely a fifth of the window was the map itself. The controls now fold away behind a single button called Controls and slide up from the bottom when you want them, the legend starts closed, and the map fills 86% of the screen. Pinching with two fingers zooms, which it never did — before today two fingers actually fought each other and did nothing at all. The search box also takes questions now: type a sentence instead of a keyword and SkyView works out what you meant and moves the map to show you, rather than writing you a paragraph. That last one needs one action from Sam before it works on the live site (below). Nothing on the desktop view changed. Separately, this session compacted the SkyView notes file that had been flagged as oversized for three sessions running, by moving the engineering rules into their own file.",
   "items": [
+    {
+      "id": "s247-sam-deploy-cpl-chat",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "The question box in SkyView is built and merged, but the shared assistant service needs one deploy before it will answer. Until that runs, typing a question shows a message saying exactly that instead of moving the map. It is a one-click action (the cpl-chat-deploy workflow), held for you rather than done automatically because deploying that service also touches Sierra, the Fact Sheet, My College, the regulation register and the Memory tab — a much wider blast radius than a page change."
+    },
+    {
+      "id": "s247-sam-skyview-phone-width",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "On a phone the sky opens wide enough that discipline names get cut off at both edges of the screen. Narrowing the opening view would fix it, but how wide the sky is also decides whether each discipline's individual courses are drawn at all — open it too narrow on a small screen and some disciplines lose their stars. It needs your eye rather than a measurement, because every number we have was taken on a machine that is not yours."
+    },
+    {
+      "id": "s247-sam-guidance-surface-constraint",
+      "for": "Sam",
+      "tab": "sierra-training",
+      "text": "A small housekeeping one, not blocking anything. The new SkyView question surface is registered everywhere in the code, but the live database rule that lists which surfaces a Sierra instruction can be scoped to has not been widened to include it. It only matters the day you want to write an instruction that applies to SkyView questions and nothing else. Say the word and it is a one-line change."
+    },
     {
       "id": "s245-fable-light-fills",
       "for": "Fable",
@@ -15,12 +33,6 @@
       "for": "Fable",
       "tab": "pipeline",
       "text": "Seven test files print no readable count of what they checked, so if their checks quietly vanished nothing would notice. The build says so on every run and nobody has claimed it. This is the same failure that hid three real problems this session: a check that cannot fail looks exactly like a check that passed."
-    },
-    {
-      "id": "s244-fable-skyview-lane",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "The SkyView lane file is two and a half times its size budget and the docs lint says so every run. It is invariants rather than stacked history, so compacting it means reading and ruling on each one — several predate decisions that superseded them. Worth its own sitting rather than another append."
     },
     {
       "id": "s236-sam-skill-text-fetch",

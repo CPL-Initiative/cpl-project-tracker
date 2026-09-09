@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-221 document(s).
+222 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 248 | [SkyView on a phone, a question box that moves the map, and a lane that finally got compacted](../session_248_handoff.md) | 2026-09-09 |
 | 247 | [the funding text surfaces, and the parallel-session numbering](../session_247_handoff.md) | 2026-09-09 |
 | 246 | [a triage keyed on the wrong thing, and three checks that could not fail](../session_246_handoff.md) | 2026-09-09 |
 | 245 | [one control where there were four, and a remediation pass with a 516-item backlog](../session_245_handoff.md) | 2026-09-09 |

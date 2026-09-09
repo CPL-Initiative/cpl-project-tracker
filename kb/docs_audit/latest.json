@@ -10,61 +10,61 @@
     "other": 150000
   },
   "summary": {
-    "files": 857,
-    "bytes": 9125864,
-    "over_budget": 4,
-    "handoff_max": 247,
+    "files": 862,
+    "bytes": 9150314,
+    "over_budget": 3,
+    "handoff_max": 248,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59989,
+    "always_loaded_bytes": 59995,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59989,
+        "bytes": 59995,
         "over": 0
       },
       "other": {
-        "files": 110,
-        "bytes": 2809369,
+        "files": 111,
+        "bytes": 2830534,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 33742,
+        "bytes": 35776,
         "over": 0
       },
       "lessons": {
         "files": 73,
-        "bytes": 2006791,
+        "bytes": 2013727,
         "over": 1
       },
       "kb_note": {
-        "files": 419,
-        "bytes": 2148324,
+        "files": 422,
+        "bytes": 2160852,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 180624,
-        "over": 1
+        "bytes": 156245,
+        "over": 0
       },
       "handoff": {
-        "files": 221,
-        "bytes": 1887025,
+        "files": 222,
+        "bytes": 1893185,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 4,
-      "vault_heavy_path": 47
+      "oversized_doc": 3,
+      "vault_heavy_path": 48
     },
     "vault": {
-      "files": 2773,
-      "bytes": 1351699829,
-      "heavy_bytes": 613654685,
-      "heavy_share": 0.454,
+      "files": 2781,
+      "bytes": 1364280882,
+      "heavy_bytes": 626117184,
+      "heavy_share": 0.459,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -82,6 +82,7 @@
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
+        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
@@ -334,19 +335,6 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/reference/kb_build_status.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 33041,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 21041,
-        "ratio": 2.75
-      },
-      "message": "33,041 B is 2.8× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "house_voice",
@@ -604,6 +592,16 @@
         "kind": "file"
       },
       "message": "14,342,484 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_atlas_v1.built.html",
+      "detail": {
+        "bytes": 12462499,
+        "kind": "file"
+      },
+      "message": "12,462,499 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
