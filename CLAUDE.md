@@ -169,13 +169,20 @@ named here because a store nobody names is a store nobody finds —
    accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
    flags **in scope for this run**. Rationale + the vault-weight finding:
    [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
-   **Trigger: `checkpoint_overdue` in the lint** — more than 6 commits since the
-   newest `session_<N>_handoff.md` was written. ⚠️ **That exists because Rule 9's
-   original trigger was "roughly every ~100K tokens… Claude Code doesn't expose
-   an exact counter; use proxies" — a condition no session could act on, and
-   whose premise was FALSE besides (Rule 9a: the counter is on disk).** The
-   heuristic still applies between runs of the lint — long conversations, many
-   tool calls, multi-phase work.
+   ⚠️ **THE TRIGGER WAS UNREACHABLE WITHOUT A CHECKPOINT — Sam, 2026-09-09:
+   *"you have not prompted me for a checkpoint per our rules… the rule has been
+   demoted or is now buried."*** `checkpoint_overdue` is computed ONLY by the
+   lint, and the only instruction to run the lint is step 0 of `/checkpoint`, so
+   the signal that you are overdue fired only once you were already
+   checkpointing. It is two git commands — run them at session start, after a
+   long stretch, and before any sign-off, and **OFFER `/checkpoint` above 6:**
+
+       H=$(ls docs/session_*_handoff.md | sort -V | tail -1)
+       git rev-list --count $(git log -1 --format=%H -- "$H")..HEAD
+
+   ⚠️ Rule 9's ORIGINAL trigger was *"roughly every ~100K tokens… no exact
+   counter; use proxies"* — unactionable, and false besides (9a: it is on disk).
+   **Twice now the trigger has been the broken part, not the rule.**
 
    ⚠️ **Run `/checkpoint`; do not improvise one from memory.** Asked to describe
    a checkpoint under pressure on 2026-08-29 I named 2 of its 13 artifacts and
@@ -467,10 +474,8 @@ first day.** Do the remembering for them.
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
   scripts, workflows and public surfaces — derived from the code
   (`python3 kb/_build_dependency_map.py` regenerates; CI `--check`s it).
-- **Offer the checkpoint.** Near the end of substantial work, or when a session
-  is winding down, proactively offer `/checkpoint` rather than waiting to be
-  asked. What isn't written down dies with the session, and a newer user has no
-  way to know that.
+- **Offer the checkpoint** — measurably, on Rule 9's commits-since-handoff count,
+  never on a feeling that the session is winding down.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
@@ -723,39 +728,27 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 
 ### Roadmap
 
-> **This table is a POINTER INDEX, not the state itself (2026-08-28, Session 206).**
+> **This table is a POINTER INDEX, not the state itself (2026-08-28, S206).**
 > Each lane's detail lives in [`docs/reference/lanes/<lane>.md`](docs/reference/lanes/);
-> the row here carries only what a session **cannot know to ask for** — that the
-> lane exists, what it is, whether it is live, and whether anything is waiting.
-> The detail is PULL: you open the lane file when you work that lane.
+> the row carries only what a session **cannot know to ask for** — that the lane
+> exists, what it is, whether it is live, whether anything waits.
 >
 > **At checkpoint, update the LANE FILE, not the row.** Touch the row only when
-> the lane's *state* changes (live ⇄ in progress, open work appearing or
-> clearing). ⚠️ **Do not re-inflate a cell** — a row that grows back into a
-> paragraph puts this file back over budget, which is the whole reason the
-> §11 table was 90 KB of a 151 KB always-loaded file.
+> the lane's *state* changes. ⚠️ **Do not re-inflate a cell** — that is how §11
+> became 90 KB of a 151 KB always-loaded file.
 >
-> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts
-> what it says, **delete the superseded text** — do not prefix it with
-> `*Prior:*` and leave it below. History belongs in the workstream's lessons
-> doc, which Rule 9 already says to write **once**. The cost of stacking is not
-> bloat but CONTRADICTION, and **no reading order fixes a contradiction inside
-> one document.** `stacked_roadmap_cell` guards **both** surfaces — this table
-> and every lane file — mechanically, because Sam does not review checkpoint
-> output by design.
+> **A lane file states CURRENT TRUTH, not a log.** When a finding contradicts it,
+> **delete the superseded text**; never prefix `*Prior:*` and leave it below.
+> History goes to the lessons doc, once. The cost of stacking is not bloat but
+> CONTRADICTION, and **no reading order fixes a contradiction inside one
+> document.** `stacked_roadmap_cell` guards both surfaces, mechanically, because
+> Sam does not review checkpoint output by design.
 >
-> **Retiring a lane** — no NEXT, no NEEDS SAM, no BLOCKED in its own text; it
-> moves verbatim to `docs/reference/finished_workstreams.md` and its row leaves.
-> [How](docs/reference/lanes/README.md).
->
-> ⚠️ **Do not grep for this; the lint already did.** `lane_retirement_signal`
-> in `kb/_docs_audit.py` runs the test over every lane file against a vocabulary
-> measured from the live corpus, and names any lane whose own text claims no
-> open work — then READ the ones it names; it is fail-safe and never says
-> "retire this". **Today it names none: all 30 have open work** (S208, confirmed
-> by reading all 30). **Hand-grepping it has been wrong EVERY time** — four
-> occasions across S206/S208, each a confident, plausible, wrong list —
-> [why](docs/reference/lanes/README.md).
+> ⚠️ **Retiring a lane: do not grep for it — `lane_retirement_signal` already
+> ran the test** over every lane file and names any whose own text claims no open
+> work; READ those. It is fail-safe and never says "retire this".
+> **Hand-grepping has been wrong EVERY time** (four occasions, S206/S208).
+> Mechanics + why: [`lanes/README.md`](docs/reference/lanes/README.md).
 
 | Phase | What | Status |
 |---|---|---|

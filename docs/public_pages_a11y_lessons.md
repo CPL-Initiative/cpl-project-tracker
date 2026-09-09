@@ -437,3 +437,124 @@ and **if any are crucial** replace with a muted glyph* — none was crucial, so
 none was replaced. The one 📋 left is a different control (the MQ badge in
 `canonical_subj4.js`, a lone glyph carrying its whole meaning) and belongs to the
 808-item decorative backlog, not here.
+
+## 2026-09-09 — SkyPlain S245: a triage keyed on the wrong thing, and three checks that could not fail
+
+Sam's ask was four lines: the CC session banner he could not see, keep sweeping
+COBI for dark mode, fix AA / mobile / glyphs as I go, and **leave the
+Implementation Funding tab alone** — he was working it in a parallel session.
+Dark contrast findings **184 → 120 (−35%)**; light **18 throughout, eight
+passes**; glyph control-class ours **26**; `npm test` 316/316.
+
+### The triage was ranking by the selector, and the cause is the color pair
+
+`scripts/a11y_triage.js` grouped findings by SELECTOR and ranked by route count.
+The largest single dark fault — **25 findings across 11 routes** — wore **12
+different selectors at one route each**, so it printed as twelve
+`one route — that tab's own CSS` lines at the BOTTOM of the list, below faults a
+tenth its size. Its own section header already said *"a ratio repeated exactly
+across routes is ONE color, not many"*; it applied that insight along the route
+axis and nowhere else.
+
+⭐ **And a ratio without its two colors is not actionable.** `scripts/a11y.js`
+computed the composited background — `worstBg`, right there in the loop — and
+then did not put it on the finding. So a report named `1.21:1` on `h3` and left
+the reader to grep for which of forty greys that was. Recording `fg`/`bg` and
+printing `#FG on #BG` collapsed **193 "distinct causes" into a handful**, and
+turned the whole remediation from selector-chasing into ten color decisions.
+The triage regex takes the pair as OPTIONAL so reports saved before the change
+still parse — a triage that silently matches nothing is worse than one that says
+less.
+
+### Three ink roles, not two — and the obvious token regresses light
+
+`--on-accent` (#FFFFFF light / #141413 dark) is correct for a fill that FLIPS:
+cobalt, crimson, hunter and violet all pass AA on both sides of it. The trap is
+`--gold-accent`, which resolves to `#E3B341` in **both** themes because
+`--mustard-on-dark` is never redefined. Badges painted `--navy-primary` on it,
+and that token flips `#1C1C1A → #ECE9E2`: **8.77:1 in light, 1.61:1 in dark.**
+Reaching for `--on-accent` — the obvious move, and the one a future session will
+make — paints white on gold at **1.95:1 and regresses LIGHT.** Hence
+`--on-mustard`, defined once at `:root` and never redefined: the `--seal-blue`
+family, for the same reason.
+
+Guarded by seven checks in `tests/cpl_theme.test.js`, each verified by reverting
+its own fix one at a time; each fails exactly its own check and nothing else.
+
+### Every sweep contained a site that must not move
+
+A match count larger than the fault you set out to fix is a signal, not a
+windfall. Five times, in one run:
+
+| Sweep | The site that had to stay |
+|---|---|
+| white grounds | `coci_lookup_desc_*.js` — a college's own pasted HTML inside **course-description data** |
+| white grounds | two archived decision sheets and a `kb/college_cr_evidence/` record |
+| `#6b7280` | `project_lifecycle.js` paints it as a **background** under white text |
+| `#4b5563` | one sits on `background:#f3f4f6` — text on an explicit fill |
+| `#555` | **64 of 69** are inside the regenerated Activity KPI section (Rule 1) |
+
+That last row is the shape worth remembering: the fix was five edits in the
+HTMLs and **twelve in `excel_to_dashboard.py`**, because a hand-edit inside a
+regenerated section is undone by the next cron. The split is the job.
+
+### `--text-faint` says "decorative only" in its own comment
+
+`#7A7A74 on #262624` at 3.51:1, six findings — RACI's legend, its item count,
+its auth hint, and the annual report's column headers. All essential text on a
+token whose declaration reads *"decorative only — never essential text"*. The
+fix is `--text-muted`; the lesson is that a token's comment is a constraint
+nobody enforces.
+
+### A stale instruction is worse than a glyph
+
+Chasing a 1.38:1 finding on *"You are not signed in."* I read the rest of the
+sentence: *"Unlock with the team phrase — the 🔒 button in the header."* That
+button moved into the About pane months ago; `cobi_identity.js` says so in the
+past tense in its own comment. **Thirteen occurrences across six files** were
+sending locked-out readers to a control that does not exist.
+
+⚠️ **They were invisible to the glyph sweep because they are written
+`"\u{1F512}"`** — a padlock on screen, seven plain ASCII characters to a scanner
+matching literal emoji and HTML entities. `kb/_glyph_sweep.py` now decodes JS
+escapes and surrogate pairs, which is why the corpus total ROSE 1,380 → 1,398:
+it sees more than it did.
+
+### A glyph the tests guard is somebody's decision
+
+Clearing `cip_crosswalk`'s `✓`/`⇄` turned CI red. The guarding comment reads *"a
+calm '⇄' glyph (distinct from the review '?', **Sam 2026-07-18**)"* — his own
+design call, a typographic mark rather than an emoji, and exactly the muted glyph
+his 2026-09-09 rule preserves when one is crucial. **Reverted the code, left the
+test.** The other failure — `Common subjects ✓` on a dropdown optgroup — carried
+no such history and the group is already named, so the assertion moved instead.
+Control-class ours is **26, not 24**: over-removed by two, and the tests were the
+thing that caught it.
+
+### The counting bug: 401 findings, 26 of them ours
+
+`--apply` already refused any site inside a section `excel_to_dashboard.py`
+rewrites — the Rule 1 guard, working exactly as designed. But the **report
+counted them anyway**, so after the generator was fixed the control class read
+401 when **348 were stale HTML the next cron clears** and 8 more were arrows
+inside COURSE TITLES in one-line generated JSON payloads, where any `title` key
+trips `CONTROL_HINT` and a rewrite would corrupt data. Findings now carry
+`generator_owned`, the report counts the two apart, `classify()` treats a large
+data payload as decoration, and `--check` gates only on what a session can fix.
+
+### Method notes
+
+- ⚠️ **Grep hexes case-insensitively.** `#6B7280` found nothing; `#6b7280` found
+  the largest remaining cause. A negative grep is not evidence.
+- ⚠️ **The ROUTE count is too coarse to steer by.** It sat at 26 dark / 18 light
+  through the entire run while findings fell 184 → 120, because a route fails on
+  any one finding. Steer by the finding count and the color-pair ranking.
+- ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, so swapping a literal white
+  ground for it is provably a no-op there. That is what let a 154-site change
+  ship with light unchanged across eight measured passes.
+- ⚠️ **Never edit a file while a suite is reading it.** Reverting three data
+  files mid-run invalidated that run; it was killed and re-run clean.
+- ⚠️ **`check_generated.sh` LAST means as its OWN step.** Chaining it with the
+  push in one command sent a stale docs index to the remote while the check was
+  still printing STALE — the fourth stale-artifact catch of the run and the only
+  one that escaped.

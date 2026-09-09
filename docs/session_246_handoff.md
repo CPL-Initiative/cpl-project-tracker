@@ -77,6 +77,17 @@ was working it in a parallel session.
    and 8 were arrows inside COURSE TITLES in one-line JSON payloads. Findings
    carry `generator_owned` now and `--check` gates only on what a session can fix.
 
+8. ⚠️ **AND THE CHECKPOINT RULE ITSELF HAD AN UNREACHABLE TRIGGER.** Sam,
+   2026-09-09: *"you have not prompted me for a checkpoint per our rules… the
+   rule has been demoted or is now buried."* It was neither. `checkpoint_overdue`
+   is computed ONLY by `kb/_docs_audit.py`, and the only instruction to run that
+   lint is **step 0 of `/checkpoint`** — so the signal that you are overdue fired
+   only once you were already checkpointing. Rule 9 now carries two git commands
+   any session can run unprompted, and says to run them **at session start,
+   after a long stretch, and before any sign-off**. ⭐ **Twice now the trigger
+   has been the broken part, not the rule** — its predecessor was *"roughly every
+   ~100K tokens… no exact counter"*, unactionable and false besides. **Run it.**
+
 ## Measured
 
 | Sweep | S244 | S245 |
@@ -111,7 +122,9 @@ every edit**, including two findings of its own (a `--text-faint` site and
    same shape as item 1 and nobody has claimed it.
 4. **`docs/reference/lanes/skyview-ccr-interface.md` is 2.75× its budget** and
    the lint says so every run. Still untouched; it is a read-and-rule pass.
-5. **`CLAUDE.md` is 278 bytes over** its 60,000 budget.
+5. ✅ **`CLAUDE.md` is UNDER budget** — 59,772 of 60,000, first time in weeks,
+   paid for by compressing §11's maintenance blockquote while ADDING the
+   reachable checkpoint trigger. Keep it there.
 6. Carryover, untouched: the **Title 5 rename** (ruled, not built — 1,183
    occurrences across 33 files), **ENVS's retire half**, the **curator pass on
    the 86 blanks**, **PHTO's twelve mis-filed courses**.
