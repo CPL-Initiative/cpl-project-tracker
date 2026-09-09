@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 862,
-    "bytes": 9150314,
+    "bytes": 9151007,
     "over_budget": 3,
     "handoff_max": 248,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 111,
-        "bytes": 2830534,
+        "bytes": 2830679,
         "over": 2
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 156245,
+        "bytes": 156793,
         "over": 0
       },
       "handoff": {
@@ -61,9 +61,9 @@
       "vault_heavy_path": 48
     },
     "vault": {
-      "files": 2781,
-      "bytes": 1364280882,
-      "heavy_bytes": 626117184,
+      "files": 2782,
+      "bytes": 1364336119,
+      "heavy_bytes": 626126107,
       "heavy_share": 0.459,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -598,10 +598,10 @@
       "fixable": false,
       "path": "prototype/ccr_atlas_v1.built.html",
       "detail": {
-        "bytes": 12462499,
+        "bytes": 12471422,
         "kind": "file"
       },
-      "message": "12,462,499 B single file inside the vault"
+      "message": "12,471,422 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
