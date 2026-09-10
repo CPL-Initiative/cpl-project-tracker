@@ -106,10 +106,21 @@ _watched = set(P.WATCH[P.STUDENT_AGG])
 _accounted = set(P.known_columns(P.STUDENT_AGG)) | set(P.WITHDRAWN.get(P.STUDENT_AGG, []))
 check("WATCH columns are all requested, or recorded as withdrawn, for the aggregated view",
       _watched <= _accounted, repr(_watched - _accounted))
-check("⭐ the six lifecycle booleans are WITHDRAWN from the request but still watched",
-      set(P.WITHDRAWN.get(P.STUDENT_AGG, [])) == _watched
-      and not (_watched & set(P.known_columns(P.STUDENT_AGG))),
-      "withdrawn=" + repr(sorted(P.WITHDRAWN.get(P.STUDENT_AGG, []))))
+# ⚠️ THIS ONCE ASSERTED "all six are withdrawn", which stopped being true on
+# 2026-09-10 when MAP restored them and Sam ruled we need exactly one. Pinning a
+# count would only have to be edited again; pin the PARTITION instead — every
+# watched column is withdrawn XOR requested, never both and never neither.
+_withdrawn = set(P.WITHDRAWN.get(P.STUDENT_AGG, []))
+_requested = set(P.known_columns(P.STUDENT_AGG))
+check("⭐ every watched lifecycle boolean is withdrawn XOR requested, never both",
+      _withdrawn | (_watched & _requested) == _watched and not (_withdrawn & _requested),
+      "withdrawn=" + repr(sorted(_withdrawn)) +
+      " requested=" + repr(sorted(_watched & _requested)))
+# Sam's ruling of 2026-09-10, pinned so a later sweep cannot quietly re-add the
+# other five: counselor verified is the ONE the funding model needs.
+check("⭐ Counselor_Verified is the one lifecycle boolean actually requested",
+      _watched & _requested == {"Counselor_Verified"},
+      repr(sorted(_watched & _requested)))
 
 # ── 6. profile_rows on a synthetic column-oriented dataset ──────────────
 # 30 students x 2 rows. Ed Plan sits on students 0-14, Analysis on 0-11 and
