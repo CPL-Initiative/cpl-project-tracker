@@ -17,8 +17,8 @@ related:
 > [archive](../../ccr_atlas_lessons_archive.md); the queue behind the priority is
 > [`skyview_backlog`](../../skyview_backlog.md).
 >
-> ⭐ **Compacted 2026-09-09 from 2.75× budget. Do not re-inflate a rule with its
-> evidence** — the story goes to the lessons doc and a pointer comes back.
+> ⭐ **Compacted 2026-09-09 (2.75×) and 2026-09-10. Do not re-inflate a rule
+> with its evidence** — the story goes to the lessons doc; a pointer comes back.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -63,9 +63,9 @@ IT BEFORE TOUCHING THE CODE.** Around forty rules, each written because a sessio
 wrong once, grouped as: the payload and the model · building and serving · the
 window, the row and the canvas · pointer, touch and the turn · the sphere ·
 labels and the frame budget · search, the ask and the lists · the outline, the
-skills and the CPL face. They moved out of THIS file on 2026-09-09 because they
-are reference, not state — but a store nobody names is a store nobody finds, so
-this pointer is the safety mechanism, not a courtesy.
+skills and the CPL universe. Moved out of THIS file on 2026-09-09 (reference, not
+state); a store nobody names is a store nobody finds, so this pointer is the
+safety mechanism.
 
 The ones most often needed first: the canvas height is **JS-owned** by
 `fitCanvas()` and CSS cannot take it; `npm test` proves **nothing** about layout
@@ -131,40 +131,13 @@ directly; the builder is a new one. Lane-sized, not a session's work.
 3,813 local exhibits in 97 islands · 1,603 with a ring · 534 grouped / 1,453
 singleton · 84 statewide, all articulated · 543 in the pile.**
 
-**The CER supplies every axis**, so the builder reads one file: `ut` the identity,
-`raw_variants` the members, `disc_modal` the island, `n_articulation_lines` the
-ring, `issuer`/`issuers`/`trainer` the agencies, plus `statewide` and `cpl_types`.
-
-⚠️ **Read agencies from the CER, NEVER the crosswalk's inlined `issuing_agency`** —
-a 2026-05-21 snapshot wrong on 1,743 of 4,592 records. Asserted at RUNTIME by
-recording what the build opens, because the first version of that check grepped
-the source and failed on the builder's own comment saying not to read it.
-⚠️ **Never mix in the credit funnel's exhibit count** — it and the articulation
-feed share 570 ids. A coverage line takes both numbers from one universe.
-
-✅ **SAM'S TWO SHAPE RULINGS, 2026-09-10** — each pinned by a check:
-- **A singleton draws as any other identity, a group of one.** 73% of CER titles
-  (1,453 of 1,987) hold exactly one local exhibit; the Firefighter-1 case he
-  described is the 534 that genuinely group (257 pairs, 118 with six or more,
-  max 31). Courses mode already draws 3,217 single-satellite identities so.
-- **The 543 with no discipline SHIP as a visible island**, not a blocked build.
-  ⚠️ There is no mechanical route to a discipline for them: TOP recovers 4 (and
-  Rule 7 bars TOP as a primary discipline call regardless), issuer recovers 11
-  (42 issuers are discipline-mixed against 19 unanimous). 159 are articulated,
-  so they are live points. A curator pass, never an inference.
-
-⚠️ **THE LAYOUT IS IMPORTED, NEVER COPIED.** `layout_island`/`build_islands` take
-a `point_fn` (default `point_of`, the course shape); the CPL builder passes an
-exhibit shape. Two packers would stop agreeing about what a discipline looks
-like — the reason `kb/alias_chain.py` is imported. Proven neutral: both universes
-regenerate **byte-identical** on the same data under either code version.
-
-⚠️ **`slug()` TRUNCATES AT 60 AND THAT COLLIDES CER TITLES.** It names a
-description shard FILE, so it must not be widened; two Carpenters titles differ
-only past the cut and merged into one entity on the first build. `ident_id()`
-appends a digest of the exact title. ⚠️ The id derives from the TITLE, so a
-rename re-mints it — safe while nothing stores a reference, but the first feature
-that persists one needs a real surrogate key on the CER (Rule 7).
+**Builder invariants are PULL** — the CER supplies every axis and agencies come
+from it, never the crosswalk's inlined issuer; the credit funnel's count is never
+mixed in; the layout is IMPORTED from the course universe; `slug()` truncates at
+60 and `ident_id()` appends a digest; a singleton draws as any identity and the
+543-credential pile ships visible (Sam's two rulings). Each is a check in
+`tests/ccr_cpl_universe_test.py`; the story is the SkyLedger section of
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
 ✅ **THE VIEW SHIPPED (S252)** — the CPL word swaps the universe under the same
 map (`bindUniverse` + a full re-render; hash · legend · Show menu · corpus · light
