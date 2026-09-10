@@ -2804,14 +2804,14 @@
             (r.citations_derived ? " (extracted from the text — unconfirmed)" : "") + "</span>" : "") + "</p>" +
         (r.blast_why ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b"><i>Why it matters &mdash; </i>' + rich(r.blast_why) + "</p>" : "") +
         (r.summary ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b">' + rich(r.summary) + "</p>" : "") +
-        '<p style="margin:0;font-size:9.5pt;color:#555"><b>Status:</b> ' + esc(stLabel(r.status)) +
+        '<p style="margin:0;font-size:9.5pt;color:var(--text-muted)"><b>Status:</b> ' + esc(stLabel(r.status)) +
           (r.ed_first ? " &nbsp;&#183;&nbsp; <b>Ed. Code change first?</b> " + esc(r.ed_first) : "") +
           (r.consideration ? " &nbsp;&#183;&nbsp; " + esc(r.consideration) : "") + "</p></div>";
     }).join("");
     var nar = (area && area.narrative) || {};
     return '<p style="font-family:Georgia,serif;font-size:22pt;font-weight:bold;margin:0 0 2pt 0;color:#23252b">' +
         esc((area && area.title) || "GR register") + "</p>" +
-      '<p style="font-size:11pt;color:#555;margin:0">Policy &amp; regulation review &#183; ' +
+      '<p style="font-size:11pt;color:var(--text-muted);margin:0">Policy &amp; regulation review &#183; ' +
         (rows || []).length + " entr" + ((rows || []).length === 1 ? "y" : "ies") +
         " &#183; for the Chancellor&rsquo;s Office</p>" +
       '<hr style="border:none;border-top:2px solid #3d4a60;margin:8pt 0 12pt 0">' +
@@ -2822,7 +2822,7 @@
       (nar.caveat ? '<p style="font-size:10pt;color:#7a5c00;margin:0 0 12pt 0;padding:7pt 10pt;' +
         'background:#fdf6e3;border-left:3px solid #b8901f"><b>Before this goes external — verify.</b> ' +
         rich(nar.caveat) + "</p>" : "") +
-      '<p style="font-size:9.5pt;color:#444;margin:0 0 14pt 0;padding:6pt 10pt;background:#eeeee9;border-left:3px solid #3d4a60">' +
+      '<p style="font-size:9.5pt;color:var(--text-body);margin:0 0 14pt 0;padding:6pt 10pt;background:#eeeee9;border-left:3px solid #3d4a60">' +
         "<b>Guidance</b> = a Chancellor&rsquo;s Office memo &#183; <b>Title 5</b> = Board of Governors rulemaking &#183; " +
         "<b>Ed. Code</b> = statutory amendment.</p>" +
       items +
@@ -2855,7 +2855,7 @@
     var head =
       '<p style="font-family:Georgia,serif;font-size:20pt;font-weight:bold;margin:0 0 2pt 0;color:#23252b">' +
         (unissued ? "DRAFT &mdash; " : "") + esc((m && m.title) || "Guidance memo") + "</p>" +
-      '<p style="font-size:11pt;color:#555;margin:0">Guidance memo ' + esc((m && m.memo_key) || "") +
+      '<p style="font-size:11pt;color:var(--text-muted);margin:0">Guidance memo ' + esc((m && m.memo_key) || "") +
         " &#183; " + esc((area && area.title) || "GR register") + " &#183; Chancellor&rsquo;s Office</p>" +
       '<hr style="border:none;border-top:2px solid #3d4a60;margin:8pt 0 12pt 0">';
     var meta = "";
@@ -2887,7 +2887,7 @@
           return '<p style="margin:0 0 6pt 0;font-size:10.5pt;line-height:1.4;color:#23252b">' + rich(p) + "</p>";
         }).join("") +
         (cites || rowRefs
-          ? '<p style="margin:0;font-size:9pt;color:#555">' +
+          ? '<p style="margin:0;font-size:9pt;color:var(--text-muted)">' +
             (cites ? "<b>Citations:</b> " + esc(cites) : "") +
             (rowRefs ? (cites ? " &nbsp;&#183;&nbsp; " : "") + "Draws on register row" +
               ((s.revision_ns || []).length === 1 ? " " : "s ") + esc(rowRefs) : "") + "</p>"

@@ -249,7 +249,7 @@
         html += '<label style="font-weight:700;color:var(--text-strong);font-size:0.9rem;display:block;margin-bottom:0.2rem;">Elevation &nbsp;<span id="reportElevOut" style="font-weight:600;color:var(--navy-secondary);"></span></label>';
         html += '<input type="range" id="reportElevation" min="0" max="30000" step="2500" value="' + savedElev + '" style="width:100%;accent-color:var(--accent-link);cursor:pointer;">';
         html += '<div style="display:flex;justify-content:space-between;font-size:0.72rem;color:#888;"><span>Sea level — every data point, explained</span><span>30,000 ft — high points only</span></div>';
-        html += '<div id="reportElevHint" style="font-size:0.78rem;color:#666;margin-top:0.25rem;"></div>';
+        html += '<div id="reportElevHint" style="font-size:0.78rem;color:var(--text-muted);margin-top:0.25rem;"></div>';
         html += '</div>';
 
         // Select All / None
@@ -277,7 +277,7 @@
             // Project checkboxes
             html += '<div style="padding:0.3rem 0.8rem 0.5rem 2rem;">';
             projects.forEach(function (p) {
-                html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:#333;">';
+                html += '<label style="display:flex;align-items:flex-start;gap:0.4rem;padding:0.2rem 0;cursor:pointer;font-size:0.82rem;color:var(--text-strong);">';
                 html += '<input type="checkbox" class="rpt-project-cb" data-pid="' + p.id + '" data-activity="' + actId + '" checked style="margin-top:2px;accent-color:var(--accent-link);cursor:pointer;">';
                 html += '<span><strong style="color:var(--navy-secondary);">' + p.id + '</strong> ' + p.name + '</span>';
                 html += '</label>';
@@ -295,7 +295,7 @@
         html += '<div id="reportProgressWrap" style="display:none;height:8px;background:#e8e8e8;border-radius:4px;overflow:hidden;margin-bottom:5px;">';
         html += '<div id="reportProgressBar" style="height:100%;width:0%;background:var(--cobalt);border-radius:4px;transition:width 0.4s ease;"></div>';
         html += '</div>';
-        html += '<div id="reportStatus" style="font-size:0.8rem;color:#666;"></div>';
+        html += '<div id="reportStatus" style="font-size:0.8rem;color:var(--text-muted);"></div>';
         html += '</div>';
         html += '<div style="display:flex;gap:0.5rem;">';
         html += '<button id="reportGenBtn" style="padding:8px 20px;background:var(--cobalt);color:var(--on-accent);border:none;border-radius:4px;font-weight:600;font-size:0.85rem;cursor:pointer;font-family:inherit;">Generate Report</button>';

@@ -93,10 +93,23 @@ check("diff: nothing reported gone", gone == [], repr(gone))
 _, gone2 = P.diff_columns(P.STUDENT_DETAIL, [c for c in live if c != "CPLPlanStatus"])
 check("diff: a vanished requested column is reported gone", gone2 == ["CPLPlanStatus"], repr(gone2))
 
-# ── 5b. the watch list names columns the daily fetch actually requests ──
-check("WATCH columns are all in the daily request for the aggregated view",
-      set(P.WATCH[P.STUDENT_AGG]) <= set(P.known_columns(P.STUDENT_AGG)),
-      repr(set(P.WATCH[P.STUDENT_AGG]) - set(P.known_columns(P.STUDENT_AGG))))
+# ── 5b. the watch list names columns the fetch requests, or WITHDREW ────
+# ⚠️ THE INVARIANT CHANGED 2026-09-10 AND WAS NOT LOOSENED. It read "everything
+# watched is also requested", which is what keeps a watch list from drifting
+# free of the request and profiling columns nobody collects. Then MAP removed
+# the six lifecycle booleans, asking for them started 400ing the whole view, and
+# the fetch had to stop requesting them — while the probe still has to WATCH
+# them, because the probe is how we learn the day they return. So a watched
+# column must now be requested OR named in WITHDRAWN with its reason; a column
+# in neither is still the drift this check was written for.
+_watched = set(P.WATCH[P.STUDENT_AGG])
+_accounted = set(P.known_columns(P.STUDENT_AGG)) | set(P.WITHDRAWN.get(P.STUDENT_AGG, []))
+check("WATCH columns are all requested, or recorded as withdrawn, for the aggregated view",
+      _watched <= _accounted, repr(_watched - _accounted))
+check("⭐ the six lifecycle booleans are WITHDRAWN from the request but still watched",
+      set(P.WITHDRAWN.get(P.STUDENT_AGG, [])) == _watched
+      and not (_watched & set(P.known_columns(P.STUDENT_AGG))),
+      "withdrawn=" + repr(sorted(P.WITHDRAWN.get(P.STUDENT_AGG, []))))
 
 # ── 6. profile_rows on a synthetic column-oriented dataset ──────────────
 # 30 students x 2 rows. Ed Plan sits on students 0-14, Analysis on 0-11 and

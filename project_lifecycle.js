@@ -92,7 +92,7 @@
     if (when) metaBits.push("Since " + when);
     if (by) metaBits.push(escapeHtml(by));
     var reasonHtml = reason
-      ? '<div class="tabled-reason" style="font-size:0.78rem;color:#444;margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
+      ? '<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);margin:0.3rem 0;line-height:1.4;">' + escapeHtml(reason) + '</div>'
       : "";
     return (
       '<div class="tabled-card-head" style="display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap;">' +
@@ -231,7 +231,7 @@
     wrap.innerHTML =
       '<summary class="tabled-archived-summary" style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">' +
         '🗄 Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">(0)</span></summary>' +
-      '<div class="tabled-archived-note" style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">' +
+      '<div class="tabled-archived-note" style="font-size:0.76rem;color:var(--text-muted);margin:0.5rem 0 0.8rem 0;line-height:1.4;">' +
         'Paused or closed projects — kept for the record but excluded from active priorities, reports, and the RACI matrix. ' +
         'Sign in (or unlock with the team phrase) to Restore one.</div>' +
       '<div class="tabled-archived-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:0.7rem;"></div>';
@@ -580,12 +580,12 @@
       ".plc-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
       ".plc-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:460px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".plc-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +
-      ".plc-modal-sub{font-size:0.8rem;color:#666;margin-bottom:0.7rem;line-height:1.4;}" +
-      ".plc-choice{display:flex;flex-direction:column;gap:0.4rem;margin:0.4rem 0 0.7rem 0;font-size:0.85rem;color:#333;}" +
+      ".plc-modal-sub{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.4;}" +
+      ".plc-choice{display:flex;flex-direction:column;gap:0.4rem;margin:0.4rem 0 0.7rem 0;font-size:0.85rem;color:var(--text-strong);}" +
       ".plc-reason{width:100%;min-height:70px;font-family:inherit;font-size:0.85rem;padding:0.5rem;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;}" +
       ".plc-in{font-family:inherit;font-size:0.85rem;padding:0.4rem 0.5rem;border:1px solid #ccc;border-radius:6px;margin:0.3rem 0.4rem 0.3rem 0;}" +
       ".plc-unlock{margin:0.4rem 0;}" +
-      ".plc-modal-status{font-size:0.78rem;color:#666;min-height:1.1em;margin-top:0.4rem;}" +
+      ".plc-modal-status{font-size:0.78rem;color:var(--text-muted);min-height:1.1em;margin-top:0.4rem;}" +
       ".plc-modal-status.err{color:var(--crimson,#a33);}" +
       ".plc-modal-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".plc-btn,.plc-btn-go,.plc-btn-cancel,.plc-btn-submit{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +

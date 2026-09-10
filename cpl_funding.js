@@ -3502,7 +3502,7 @@
       "tfoot td{font-weight:700;border-top:2px solid #002F6D;}" +
       ".cplfund-cards{display:flex;flex-wrap:wrap;gap:8px;}" +
       ".cplfund-card{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;flex:1 1 180px;}" +
-      ".cplfund-card .v{font-weight:700;color:#002F6D;}.cplfund-card .l{font-size:10px;color:#555;}" +
+      ".cplfund-card .v{font-weight:700;color:#002F6D;}.cplfund-card .l{font-size:10px;color:var(--text-muted);}" +
       ".cplfund-card.hero{background:#002F6D;}.cplfund-card.hero .v,.cplfund-card.hero .l{color:#fff;}" +
       // The Funding Breakdown prints as the LEDGER it is on screen (2026-09-01).
       // The print window clones the live tab, so without these it would keep the
@@ -3523,7 +3523,7 @@
       ".cplfund-context{margin-top:8px;}" +
       ".cplfund-prio{display:flex;gap:8px;}.cplfund-prio .p{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;flex:1;}" +
       ".cplfund-formula,.cplfund-elig{border:1px solid #C8C5BD;border-radius:6px;padding:8px 10px;margin:6px 0;}" +
-      ".cplfund-foot{font-size:9px;color:#555;}.cplfund-src{font-size:9px;color:#555;}" +
+      ".cplfund-foot{font-size:9px;color:var(--text-muted);}.cplfund-src{font-size:9px;color:var(--text-muted);}" +
       ".dk{color:#555;}@media print{body{margin:8mm;}}";
     return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — " +
       esc(windowLabel()) + "</title><style>" + css + "</style></head><body>" +
@@ -7141,12 +7141,12 @@
       ".bar button{font:inherit;font-size:13px;background:#C9A227;color:#1C1C1A;border:none;border-radius:5px;padding:6px 12px;margin-left:8px;cursor:pointer;}" +
       ".eyebrow{color:#0f7b3f;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}" +
       "h1{color:#002F6D;font-size:22px;margin:6px 0 2px;}" +
-      ".sub{color:#555;font-size:13px;margin:0 0 16px;}" +
+      ".sub{color:var(--text-muted);font-size:13px;margin:0 0 16px;}" +
       "h2{color:#002F6D;font-size:15px;margin:20px 0 6px;border-bottom:2px solid #C9A227;padding-bottom:3px;}" +
       "p{font-size:14px;line-height:1.55;}ol{font-size:14px;line-height:1.5;padding-left:22px;}li{margin:5px 0;}" +
-      ".note{color:#555;font-weight:400;}" +
+      ".note{color:var(--text-muted);font-weight:400;}" +
       ".draft{background:#fbf6e6;border-left:4px solid #C9A227;padding:8px 12px;font-size:12.5px;color:#5b5223;margin:18px 0 0;}" +
-      ".foot{margin-top:22px;border-top:1px solid #ccc;padding-top:10px;font-size:11.5px;color:#666;}" +
+      ".foot{margin-top:22px;border-top:1px solid #ccc;padding-top:10px;font-size:11.5px;color:var(--text-muted);}" +
       "@media print{.bar{display:none;}.wrap{max-width:none;padding:0;}body{background:#fff;}}";
     return "<!doctype html><html><head><meta charset='utf-8'><title>CPL Implementation Funding — Baseline Eligibility Brief</title>" +
       "<style>" + css + "</style></head><body>" +
@@ -7758,12 +7758,12 @@
       ".wrap{max-width:780px;margin:0 auto;padding:40px 48px;background:#fff;line-height:1.5;}" +
       "h1{color:#002F6D;font-size:19px;text-align:center;letter-spacing:.04em;margin:0 0 4px;}" +
       "h2{color:#002F6D;font-size:15px;border-bottom:1px solid #999;padding-bottom:3px;margin:18px 0 6px;}" +
-      ".masthead{text-align:center;font-size:12px;color:#555;border-bottom:2px solid #002F6D;padding-bottom:8px;margin-bottom:12px;}" +
+      ".masthead{text-align:center;font-size:12px;color:var(--text-muted);border-bottom:2px solid #002F6D;padding-bottom:8px;margin-bottom:12px;}" +
       ".masthead strong{color:#002F6D;}.fields{font-size:13px;margin:10px 0;}.fields .lab,.cc .lab{font-weight:700;color:#002F6D;}" +
       "p{font-size:14px;margin:8px 0;}ul{font-size:14px;}li{margin:5px 0;}" +
       "table{border-collapse:collapse;width:100%;font-size:11px;margin:8px 0;}" +
       "th{background:#002F6D;color:#fff;padding:4px 6px;text-align:right;}th.t,td.t{text-align:left;}" +
-      "td{border-top:1px solid #ccc;padding:3px 6px;text-align:right;}.cc{margin-top:16px;font-size:12px;color:#555;}" +
+      "td{border-top:1px solid #ccc;padding:3px 6px;text-align:right;}.cc{margin-top:16px;font-size:12px;color:var(--text-muted);}" +
       "@media print{.wrap{max-width:none;padding:0;}body{background:#fff;}}";
     return "<!doctype html><html><head><meta charset='utf-8'><title>" + esc(memoFilename()) +
       "</title><style>" + css + "</style></head><body><div class='wrap'>" + memoInnerHtml() + "</div></body></html>";

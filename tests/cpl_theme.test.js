@@ -327,6 +327,21 @@ check("⭐ no fill that does NOT flip carries an ink that does (mustard/seal-blu
 // Strip comments first — the note above NAMES the banned hexes, and a scanner
 // that reads its own explanation reports the explanation as the offence.
 const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*(\/\/|#).*$/gm, "");
+// ⚠️ Consumer JS carried 57 more of these (S249). The three EXCLUDED lines build
+// an exported docx or a print window — paper is its own world, and a themed token
+// would follow the reader's screen onto it. That exclusion is why this check reads
+// line by line instead of scanning the whole file.
+const jsGreyOffenders = require("fs").readdirSync(".")
+  .filter((f) => f.endsWith(".js") && !/^(cloudflare-worker-proxy|worker-to-paste)\.js$/.test(f))
+  .flatMap((f) => fs.readFileSync(f, "utf8").split("\n")
+    .map((ln, i) => [f, i + 1, ln])
+    .filter(([, , ln]) => /color:\s*#(?:333|444|555|666|777)(?![0-9A-Fa-f])/.test(ln))
+    .filter(([, , ln]) => !/(Exported from|print|docx|@page|window\.open|buildPrintHtml|memoPrintHtml|buildBriefHtml|PRINT_)/i.test(ln))
+    .map(([f2, n]) => f2 + ":" + n));
+check("⭐ no raw dark-grey ink in consumer JS either (export/print lines excluded)"
+  + (jsGreyOffenders.length ? " -> " + jsGreyOffenders.slice(0, 3).join(", ") : ""),
+  jsGreyOffenders.length === 0);
+
 for (const [name, raw] of [["CPL_Dashboard.html", cpl], ["index.html", idx],
                            ["excel_to_dashboard.py", fs.readFileSync("excel_to_dashboard.py", "utf8")]]) {
   const src = stripComments(raw);
@@ -344,13 +359,13 @@ for (const [name, raw] of [["CPL_Dashboard.html", cpl], ["index.html", idx],
 // They are now defined in the DARK blocks ONLY — light keeps each site's own
 // tint, so the fix moved no light pixel. Defining them light too would repaint
 // six tabs; that is Sam's call, not a tidy-up.
-for (const tok of ["--surface-1", "--surface-2"]) {
+for (const tok of ["--surface-1", "--surface-2", "--gold-soft"]) {
   check("⭐ " + tok + " IS defined in the dark block (it was a phantom token)",
     new RegExp("\\" + tok + ":\\s*#").test(darkDecl));
 }
 const lightDecl = cpl.slice(cpl.indexOf(":root {"), cpl.indexOf(":root {") + 4000);
-check("⭐ --surface-1/--surface-2 are NOT defined in the light :root (deliberate)",
-  !/--surface-[12]:\s*#/.test(lightDecl));
+check("⭐ --surface-1/--surface-2/--gold-soft are NOT defined in the light :root (deliberate)",
+  !/--surface-[12]:\s*#/.test(lightDecl) && !/--gold-soft:\s*#/.test(lightDecl));
 
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

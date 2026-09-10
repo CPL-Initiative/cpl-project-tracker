@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 427,
+   "count": 428,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1158,6 +1158,23 @@
      "title": "A derived summary field used as a filter is a membership test in disguise",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "pipeline",
+      "map-api",
+      "cron",
+      "guards",
+      "reliability"
+     ],
+     "title": "A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-07",
@@ -12395,7 +12412,7 @@
      ],
      "title": "MAP Custom Reports (3 new) / ITPI automation \u2014 lane state",
      "type": null,
-     "updated": "2026-09-03"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-28",
@@ -16626,5 +16643,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 860
+ "total": 861
 }

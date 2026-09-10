@@ -1061,7 +1061,7 @@
     var toolbar = pane.querySelector("#uc-toolbar");
     var summary = pane.querySelector("#uc-summary");
     if (!data || !data.rows || !data.rows.length) {
-      if (wrap) wrap.innerHTML = '<p style="padding:1rem;color:#666;">Unified course data is not available in this build.</p>';
+      if (wrap) wrap.innerHTML = '<p style="padding:1rem;color:var(--text-muted);">Unified course data is not available in this build.</p>';
       return;
     }
     var colleges = data.colleges || [];

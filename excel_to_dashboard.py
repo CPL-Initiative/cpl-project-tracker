@@ -4490,10 +4490,36 @@ def read_exhibit_metrics():
         return None
 
     # ── Index datasets by view name ──
-    datasets = {}
+    # ⚠️ A REPEATED viewName IS DROPPED, NOT OVERWRITTEN (2026-09-10). This dict
+    # is keyed by view name, so a second block of the same name used to replace
+    # the first in silence. On 2026-09-08 MAP 400'd
+    # View_StudentAggregatedValues_APIDataset over six columns it had just
+    # removed and labelled a neighbour's data with the same name; the second
+    # block won, its rows did not match its column map, and
+    # _compute_college_last_activity died on an IndexError. Nine nightly runs,
+    # three days dark, three steps from the cause.
+    #
+    # Neither copy can be trusted once the label is ambiguous — picking either
+    # one is a guess about which block MAP meant — so BOTH go and the layers
+    # above see the view as absent, which they already handle. The fetcher now
+    # refuses to save such a payload at all (fetch_custom_report.py); this is the
+    # second line of that defense, because a CustomReport file on disk did not
+    # necessarily come through today's fetcher.
+    seen = {}
     for report in data:
         view = report.get("viewName", "")
         if view and report.get("columnValue"):
+            seen[view] = seen.get(view, 0) + 1
+    ambiguous = {v for v, n in seen.items() if n > 1}
+    for view in sorted(ambiguous):
+        print(f"  WARNING: {view} appears {seen[view]}x — viewName cannot identify a "
+              f"dataset, so BOTH copies are dropped. Check the fetch log for MAP's "
+              f"responseMessage on this view.")
+
+    datasets = {}
+    for report in data:
+        view = report.get("viewName", "")
+        if view and view not in ambiguous and report.get("columnValue"):
             col_map = {c: i for i, c in enumerate(report.get("columnName", []))}
             datasets[view] = {
                 "rows": report["columnValue"],
@@ -4554,26 +4580,40 @@ def _compute_college_last_activity(datasets):
             return {}
         rows  = ds["rows"]
         cm    = ds["col_map"]
-        i_col  = cm.get("College", 0)
-        i_date = cm.get("Last Submitted On", 18)
-        i_pot  = -1
-        i_test = -1
+        i_col  = cm.get("College")
+        i_date = cm.get("Last Submitted On")
+        i_pot  = None
+        i_test = None
     else:
         rows   = ds["rows"]
         cm     = ds["col_map"]
-        i_col  = cm.get("College", 0)
-        i_date = cm.get("Uploaded Date", 22)
-        i_pot  = cm.get("Potential Student", 18)
-        i_test = cm.get("Test Student", 20)
+        i_col  = cm.get("College")
+        i_date = cm.get("Uploaded Date")
+        i_pot  = cm.get("Potential Student")
+        i_test = cm.get("Test Student")
+
+    # ⚠️ NO GUESSED POSITIONS. These read `cm.get(name, <number>)` until
+    # 2026-09-10, and the numbers were the column offsets of a 25-column view.
+    # The live view is 19 columns wide, so `cm.get("Uploaded Date", 22)` was a
+    # guess that indexes past the end of every row the day the name stops
+    # matching — the same shape as the crash that brought the cron down for
+    # three days. A column we cannot find BY NAME is a column we do not read:
+    # the two filters below simply do not apply, and without College or a date
+    # there is nothing to compute, so the caller gets {} and says so.
+    if i_col is None or i_date is None:
+        print("  WARNING: last-activity skipped — the student view carries no "
+              "'College' and/or upload-date column under the names we read. "
+              "Check the fetch log for MAP's schema.")
+        return {}
 
     college_latest = {}  # college_name -> datetime
     for row in rows:
         college = (row[i_col] or "").strip()
         if not college or college in _TEST_COLLEGES:
             continue
-        if i_pot >= 0 and str(row[i_pot]).strip().lower() in ("true", "1", "yes"):
+        if i_pot is not None and str(row[i_pot]).strip().lower() in ("true", "1", "yes"):
             continue
-        if i_test >= 0 and str(row[i_test]).strip().lower() in ("true", "1", "yes"):
+        if i_test is not None and str(row[i_test]).strip().lower() in ("true", "1", "yes"):
             continue
         raw_date = (row[i_date] or "").strip()
         if not raw_date:

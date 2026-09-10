@@ -154,13 +154,13 @@
             if (!list.length) return;
             html += '<div style="margin-bottom:0.8rem;border:1px solid #e8e8e8;border-radius:6px;overflow:hidden;">';
             html += '<div style="padding:0.4rem 0.8rem;background:#f0f4f8;font-weight:700;color:var(--text-strong);font-size:0.85rem;display:flex;justify-content:space-between;align-items:center;">';
-            html += '<span>' + tier + ' <span style="color:#666;font-weight:400;">(' + list.length + ')</span></span>';
+            html += '<span>' + tier + ' <span style="color:var(--text-muted);font-weight:400;">(' + list.length + ')</span></span>';
             html += '<button type="button" class="crpt-tier-toggle" data-tier="' + tier + '" style="font-size:0.7rem;padding:2px 8px;border:1px solid #aaa;border-radius:3px;background:var(--surface-opaque);cursor:pointer;font-family:inherit;">Toggle</button>';
             html += '</div>';
             html += '<div style="max-height:160px;overflow-y:auto;padding:0.4rem 0.8rem;">';
             list.forEach(function (r) {
                 var key = encodeURIComponent(r.college);
-                html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.15rem 0;font-size:0.8rem;cursor:pointer;color:#333;">';
+                html += '<label style="display:flex;align-items:center;gap:0.5rem;padding:0.15rem 0;font-size:0.8rem;cursor:pointer;color:var(--text-strong);">';
                 html += '<input type="checkbox" class="crpt-college-cb" data-tier="' + tier + '" data-college="' + key + '" style="accent-color:var(--accent-link);cursor:pointer;">';
                 html += '<span style="flex:1;">' + r.college + '</span>';
                 html += '<span style="color:#888;font-size:0.72rem;">' + fmtNum(r.students) + ' students</span>';
@@ -171,14 +171,14 @@
 
         // KB indicator
         var kbBytes = (window.CPL_KB || '').length;
-        html += '<div style="margin:0.6rem 0;font-size:0.72rem;color:#666;">';
+        html += '<div style="margin:0.6rem 0;font-size:0.72rem;color:var(--text-muted);">';
         html += (kbBytes
             ? '&#128218; CPL Knowledge Base attached (' + kbBytes.toLocaleString() + ' chars)'
             : '&#9888;&#65039; CPL Knowledge Base not loaded — commentary will be generic.');
         html += '</div>';
 
         // Status + Generate button
-        html += '<div id="collegeReportStatus" style="font-size:0.82rem;color:#666;margin:0.8rem 0;min-height:1.2em;"></div>';
+        html += '<div id="collegeReportStatus" style="font-size:0.82rem;color:var(--text-muted);margin:0.8rem 0;min-height:1.2em;"></div>';
         html += '<button id="collegeReportGenBtn" style="width:100%;padding:10px;background:linear-gradient(135deg,var(--mustard-fill),#FF9800);color:#000;border:none;border-radius:6px;font-weight:700;font-size:0.95rem;cursor:pointer;font-family:inherit;">Generate Report</button>';
 
         html += '</div></div></div>';

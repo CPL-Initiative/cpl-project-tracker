@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-09-01T11:46:45Z",
- "count": 199,
+ "_generated_at": "2026-09-10T13:27:14Z",
+ "count": 200,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -207,6 +207,14 @@
     "share": 1.0,
     "colleges": 16,
     "scoped": true
+   }
+  ],
+  "ART 140 Beginning Design: Two-Dimensional Media - Portfolio Review": [
+   {
+    "kind": "cid",
+    "id": "ARTS 100",
+    "title": "2-D Foundations",
+    "code": "ART 140"
    }
   ],
   "ASCI 012: Animal Science": [

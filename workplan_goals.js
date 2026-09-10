@@ -232,7 +232,7 @@
         state.sess.teamPass
           ? ["✓ Editing unlocked (team phrase)"]
           : ["Signed in as ", state.sess.email || "(no email)"]));
-      var sub = el("span", { "style": "color:#666;" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
+      var sub = el("span", { "style": "color:var(--text-muted);" }, ["Click any goal/stretch/current cell or a sub-activity title to edit • Enter saves • Esc cancels"]);
       widget.appendChild(sub);
       var btnAdd = el("button", {
         "class": "wpg-btn wpg-btn-add",
@@ -242,7 +242,7 @@
       widget.appendChild(btnAdd);
       var btnOut = el("button", {
         "class": "wpg-btn",
-        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:var(--surface-opaque);color:#333;border-radius:5px;font-size:0.8rem;cursor:pointer;"
+        "style": "padding:0.35rem 0.75rem;border:1px solid #ccc;background:var(--surface-opaque);color:var(--text-strong);border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, [state.sess.teamPass ? "🔒 Lock" : "Sign out"]);
       btnOut.addEventListener("click", function () {
         signOut();
@@ -250,7 +250,7 @@
       });
       widget.appendChild(btnOut);
     } else {
-      widget.appendChild(el("span", { "style": "color:#666;" },
+      widget.appendChild(el("span", { "style": "color:var(--text-muted);" },
         ["Sign in (CCCCO MAP only) to edit goal + stretch values."]));
       var emailInput = el("input", {
         "type": "email",
@@ -261,7 +261,7 @@
         "class": "wpg-btn",
         "style": "padding:0.35rem 0.75rem;border:0;background:var(--cobalt);color:var(--on-accent);border-radius:5px;font-size:0.8rem;cursor:pointer;"
       }, ["Sign in"]);
-      var status = el("span", { "style": "color:#666;flex-basis:100%;font-size:0.8rem;" }, []);
+      var status = el("span", { "style": "color:var(--text-muted);flex-basis:100%;font-size:0.8rem;" }, []);
 
       btnIn.addEventListener("click", function () {
         var email = (emailInput.value || "").trim();
@@ -638,9 +638,9 @@
     if (oldVal === "—") oldVal = "";  // the "—" placeholder means empty
     var field = opts.multiline
       ? el("textarea", { "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:#333;resize:vertical;" }, [])
+          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);resize:vertical;" }, [])
       : el("input", { "type": "text", "class": "wpg-title-input",
-          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:#333;" }, []);
+          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:var(--surface-opaque);color:var(--text-strong);" }, []);
     field.value = oldVal;
     cell.classList.add("wpg-editing");
     var prevHtml = cell.innerHTML;
@@ -775,8 +775,8 @@
       + '.wpg-modal-overlay { position:fixed;inset:0;background:rgba(10,34,64,0.55);z-index:9999;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:3rem 1rem; }'
       + '.wpg-modal-card { background:var(--surface-opaque);border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,0.25);max-width:640px;width:100%;padding:1.5rem;font-family:inherit;color:var(--text-strong); }'
       + '.wpg-modal-card h3 { margin:0 0 0.25rem 0;color:var(--text-strong);font-size:1.1rem; }'
-      + '.wpg-modal-card .wpg-sub { color:#666;font-size:0.8rem;margin-bottom:1rem; }'
-      + '.wpg-modal-card label { display:block;font-size:0.78rem;color:#666;margin:0.6rem 0 0.2rem 0;font-weight:600; }'
+      + '.wpg-modal-card .wpg-sub { color:var(--text-muted);font-size:0.8rem;margin-bottom:1rem; }'
+      + '.wpg-modal-card label { display:block;font-size:0.78rem;color:var(--text-muted);margin:0.6rem 0 0.2rem 0;font-weight:600; }'
       + '.wpg-modal-card input[type="text"], .wpg-modal-card input[type="number"] { width:100%;padding:0.4rem 0.55rem;border:1px solid #ccc;border-radius:5px;font-size:0.85rem;box-sizing:border-box; }'
       + '.wpg-modal-card .wpg-radio-row { display:flex;gap:1.5rem;margin:0.3rem 0 0.5rem 0; }'
       + '.wpg-modal-card .wpg-radio-row label { display:flex;align-items:center;gap:0.4rem;font-weight:500;color:var(--text-strong);margin:0;font-size:0.9rem;cursor:pointer; }'
@@ -788,7 +788,7 @@
       + '.wpg-modal-card .wpg-status.err { color:#A33; }'
       + '.wpg-modal-card .wpg-modal-actions { display:flex;justify-content:flex-end;gap:0.5rem;margin-top:1rem; }'
       + '.wpg-modal-card .wpg-modal-actions button { padding:0.4rem 0.9rem;border-radius:5px;font-size:0.85rem;cursor:pointer;border:0; }'
-      + '.wpg-modal-card .wpg-btn-cancel { background:var(--surface-opaque);border:1px solid #ccc !important;color:#333; }'
+      + '.wpg-modal-card .wpg-btn-cancel { background:var(--surface-opaque);border:1px solid #ccc !important;color:var(--text-strong); }'
       + '.wpg-modal-card .wpg-btn-submit { background:var(--cobalt);color:var(--on-accent);font-weight:600; }'
       + '.wpg-modal-card .wpg-btn-submit:disabled { opacity:0.6;cursor:not-allowed; }'
       + '.wpg-act-chip { display:inline-block;padding:0.05rem 0.4rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.7rem;font-weight:600; }'
