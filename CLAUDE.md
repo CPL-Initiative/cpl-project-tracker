@@ -29,14 +29,14 @@ rule placed there can be present and silently unread, which is strictly worse
 than a large `CLAUDE.md` that at least loads completely.
 
 ⚠️ **The pointer is the safety mechanism, not a courtesy.** A pulled store you
-were never told exists is the same as no store: it is exactly the failure Rule 8
-was written for, where a session re-derived three settled facts that were
-already written down. When you move something out of this file, leave the line
-that says it is out there.
+were never told exists is the same as no store — the failure Rule 8 was written
+for, where a session re-derived three settled facts already written down. When
+you move something out of this file, leave the line that says it is out there.
 
 Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
-finished_workstreams · skyview_invariants · `lanes/` (stubs below).
+finished_workstreams · skyview_invariants · live_session_banner ·
+`lanes/` (stubs below).
 
 **Skills** (`.claude/skills/`) are pull-side too, triggered by their own
 `description` rather than by a pointer: **consult-doctrine** (what has this repo

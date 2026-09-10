@@ -1,7 +1,7 @@
 ---
 title: "A token that cannot flip is a surface that cannot theme — the four shapes, and why every one of them reads as correct code"
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-10
 tags: [methodology, ui, design-system, dark-mode, pitfall]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -74,6 +74,37 @@ are complements, and neither is the whole picture:
 - **the scan** finds what cannot be right in principle, and over-reports
 
 Run both. Fix what the sweep names; use the scan to know how much is left.
+
+### ⭐ And the sweep's finding count is not an acceptance test (measured 2026-09-10)
+
+The sharper form of the same point, with a number. S249 defined the remaining
+**21 phantom tokens** — 62 uses across fourteen files — and the dark sweep moved
+**66 → 67**. Measured both ways on one tree with `git stash`, and the diff of the
+two finding lists is **empty in one direction**: not a single one of the 62 uses
+was ever being sampled, so not one could be reported fixed. `.cplccr` chips,
+`.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes are all built on
+demand. (The one extra line was a surface the earlier run simply had not
+sampled — a real, pre-existing defect that the run happened to surface.)
+
+So a token-layer fix cannot be accepted or rejected on the finding count. **Ask
+the token layer directly instead:**
+
+```js
+// load the page once per theme, then, on each:
+const cs = getComputedStyle(document.documentElement);
+for (const t of TOKENS) console.log(t, cs.getPropertyValue(t).trim());
+```
+
+A dark-only definition is correct when the token reads its intended value under
+`data-theme="dark"` and reads **empty** under `data-theme="light"` — empty is
+the point, because that is what leaves each site's own fallback in place. 21/21
+held, which is also a stronger proof that no light pixel moved than the light
+sweep gives (that merely agreed: 63 → 63, byte-identical).
+
+⚠️ **Falsify the probe.** Its first version could not fail — it compared the
+light value against `""` after an `|| "(unset)"` coalesce, so every token read
+BAD while the data underneath was perfect. Defining one of them in the light
+`:root` must flip that token, and only that token, to BAD.
 
 ## Verify a screenshot against `main` before you chase it
 

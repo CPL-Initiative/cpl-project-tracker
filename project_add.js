@@ -356,7 +356,7 @@
     card.innerHTML =
       '<div class="project-name" style="font-weight:700;color:var(--navy-primary,#16324f);">' + escapeHtml(body.name) +
       ' <span style="color:#999;font-weight:400;font-size:0.75rem;">' + escapeHtml(body.id) + "</span></div>" +
-      (body.description ? '<div style="font-size:0.78rem;color:#555;margin-top:0.3rem;">' + escapeHtml(body.description) + "</div>" : "") +
+      (body.description ? '<div style="font-size:0.78rem;color:var(--text-muted);margin-top:0.3rem;">' + escapeHtml(body.description) + "</div>" : "") +
       '<div style="font-size:0.7rem;color:#2C601A;margin-top:0.5rem;font-weight:600;">✓ Added — the full card (and its Annual Workplan row) appears after the next daily rebuild.</div>';
     target.insertBefore(card, target.firstChild);
   }
@@ -383,12 +383,12 @@
       ".padd-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
       ".padd-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".padd-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +
-      ".padd-sub{font-size:0.8rem;color:#666;margin-bottom:0.7rem;line-height:1.4;}" +
-      ".padd-field{display:flex;flex-direction:column;gap:0.15rem;margin-bottom:0.5rem;font-size:0.75rem;color:#555;font-weight:600;}" +
+      ".padd-sub{font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.4;}" +
+      ".padd-field{display:flex;flex-direction:column;gap:0.15rem;margin-bottom:0.5rem;font-size:0.75rem;color:var(--text-muted);font-weight:600;}" +
       ".padd-in,.padd-ta{width:100%;font-family:inherit;font-size:0.85rem;font-weight:400;padding:0.4rem 0.5rem;border:1px solid #ccc;border-radius:6px;box-sizing:border-box;}" +
       ".padd-ta{min-height:60px;}" +
       ".padd-dates{display:flex;gap:0.6rem;}.padd-dates .padd-field{flex:1;}" +
-      ".padd-status{font-size:0.78rem;color:#666;min-height:1.1em;margin-top:0.4rem;}" +
+      ".padd-status{font-size:0.78rem;color:var(--text-muted);min-height:1.1em;margin-top:0.4rem;}" +
       ".padd-status.err{color:var(--crimson,#a33);}" +
       ".padd-actions{display:flex;justify-content:flex-end;gap:0.5rem;margin-top:0.8rem;}" +
       ".padd-cancel,.padd-save,.padd-go{font-size:0.85rem;padding:0.4rem 0.9rem;border-radius:6px;cursor:pointer;border:1px solid #ccc;background:#f3f3f3;}" +

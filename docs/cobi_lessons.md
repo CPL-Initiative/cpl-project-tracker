@@ -874,3 +874,166 @@ routes; light **63 → 62**, 18 → 18 routes; `npm test` **321/321**. One suite
 failed and was right to — `uc_kinship_gate` pinned the literal `color:#fff` on
 the member-table band — so the assertion moved to the intent it was written for,
 per the S245 precedent for a guard with no ruling behind it.
+
+## 2026-09-10 — SkyTouch (S249): the rest of the phantoms, and a fix whose own measurement said nothing
+
+**PR #1542** (continued). Three findings, and the second is the one that changes
+how this lane should be worked.
+
+### 1 · The remaining 21 phantom color tokens
+
+S248 cleared `--surface-1`/`--surface-2`/`--gold-soft` and left 25 more measured
+but unfixed. 21 of them are now defined in the dark blocks only, covering 62
+uses across `cpl_pathways`, `map_users`, `team_phrases`, `unified_courses`,
+`gr_priorities`, `map_team_queue`, `credential_reference`, `annual_report`,
+`mission_control`, `raci`, `admin`, `sierra_training`, `reviewer_signin` and
+`governance`.
+
+Every value is an **alias**, never a new hex — inks to `--hunter` / `--crimson`
+/ `--mustard-text` / `--text-muted`, grounds to `--surface-subtle` /
+`--surface-muted` / `--surface-opaque` / `--gold-soft`, borders to `--border`.
+The role a token plays is then stated by the token it points at, which is the
+property that survives a palette change. All 12 new dark pairs computed with
+`prototype/check_contrast.py`: worst 4.93:1 against AA 4.5.
+
+⚠️ **The entry condition is "every use carries a fallback."** `--brand` (14
+uses), `--link` (6) and `--text` (4) were held out: they have uses written
+`var(--brand)` with no fallback, which are invalid at computed-value time and
+resolve to nothing in **both** themes today — `college_briefing.js`'s
+`.cb-bfrac>i` progress bar is `transparent` and its `.cb-lead`/`.cb-next`
+accent borders do not draw. A dark-only definition there would paint something
+light does not have. It is a both-themes bug whose fix changes light, so it went
+to Sam rather than into the sweep.
+
+### 2 · ⭐ The sweep measured nothing, and that is the finding
+
+The fix moved `npm run a11y cobi-dark` **66 → 67**. Measured both ways on the
+same tree with `git stash`, not inferred — and the diff of the two finding lists
+is **empty in one direction**. Not one of the 62 phantom uses was ever being
+sampled, so none could be reported fixed. (The single extra line is
+`map_data_quality`'s primary button, which the earlier run had not sampled; it
+is a pre-existing fixed-ink defect and is now fixed.)
+
+`.cplccr` chips, `.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes
+are all built on demand. **So a finding count cannot be the acceptance test for
+a token-layer fix.** Prove the token layer directly instead: load both themes
+and read each token off `getComputedStyle(document.documentElement)`. 21/21
+resolved to the intended value in dark and were unset in light — which is also
+a stronger proof that no light pixel moved than the sweep can give. The light
+sweep merely agreed: 63 → 63, byte-identical lists.
+
+⚠️ **Falsify the probe too.** Its first version could not fail — it compared the
+light value against `""` after an `|| "(unset)"` coalesce, so all 21 read BAD
+while the data underneath was perfect. That is the third check this lane has
+produced that could not fire.
+
+### 3 · Three CI failures, none of them this branch's
+
+- **`tests/discipline_edge_fill_test.py` was red on `main` itself.** Its live-
+  payload check asserted `filled >= blank_before * 0.5` — yield — and S242 had
+  wired the fill into the generator, so the committed payload now arrives
+  already at the fixed point and yield goes to zero **on success**. Reproduced
+  on a clean worktree at `9ba2551`.
+- ⚠️ **It went red with no CI run reporting it.** `js-tests.yml` runs on push to
+  `main`, but a push made with `GITHUB_TOKEN` does not trigger workflows, so the
+  cron's commits never test themselves. `main`'s last js-tests run was an
+  **ancestor** of the commit that broke it. Same mechanism as the four
+  `background:#fff` form controls earlier in this session.
+- **Another session fixed the same test from the other side** (#1541) while this
+  branch was working. Both fixes are kept, and the reason is measured rather than
+  polite — see the KB note below.
+- ⭐ **#1541 also shipped `tests/kpi_history_no_gaps_test.py` with no runner.**
+  Named in no workflow, no script and no `package.json`, and `tests/run.js`
+  auto-discovers `tests/*.test.js` only, so a `*_test.py` runs nowhere unless a
+  step names it. Rule 3's guard had been reporting nothing since it landed. Now
+  wired into `js-tests.yml` beside the other 40 python steps.
+
+### Carried forward
+
+`--text-faint` on Implementation Funding, the raw dark inks the sweep names, the
+raw light grounds under them, printing while in dark mode, and the 24
+unresolved `var(--brand)`/`var(--link)`/`var(--text)` declarations — the last
+one needs Sam because it changes light.
+
+### S249, second pass — fixing what the sweep NAMES, and the contrast with the first
+
+The same session, an hour later. The first pass fixed what reading the code
+said was wrong and moved the sweep by one finding. The second fixed what the
+sweep itself named and moved it **67 → 38 dark, 63 → 58 light, zero
+regressions**. Both passes were correct; only one of them was measurable, and
+the difference is worth remembering when planning the next one.
+
+**⭐ A fifth "cannot flip" shape, and it was the biggest single color pair.**
+`rgba(255,255,255,.5)` as a fill is a **light-only construct**: over the night
+ground it composites to a mid grey (`#8A8A8A`, `#8F8F8E` — measured, not
+computed) that fights every themed ink laid on it. Seven findings from three
+declarations: `.uc-badge`, `.cs-badge`, `.cr-chip`.
+
+⚠️ **The recipe was deliberate, and the repo had already said so.** It is First
+Light spec v1.6's "glass-quiet chip", pinned by `tests/retheme_tokens.test.js`
+— which is how the conflict surfaced: `npm test` went red on a test whose name
+explained the design decision I had just overwritten. So it got a **dark
+branch, not a removal**: the light value moved into the fallback slot of
+`var(--glass-quiet, rgba(255,255,255,.5))`, with `--glass-quiet: #262624`
+defined dark-only. Light renders byte-identically, every themed ink clears AA
+(worst `--hunter` at 5.65:1), and the recipe's own `--border-strong` keeps the
+chip boundary from being carried by color alone.
+
+**98 raw slate inks swept.** `#374151`/`#3A3A36`/`#4B5563` → `--text-body`;
+`#5A6478`/`#64748B`/`#94A3B8` → `--text-muted`. Each mapped to the token whose
+LIGHT value is equal or darker, so light cannot regress — except that
+`#64748B` (4.25:1) and `#94A3B8` (2.29:1) were **already failing AA in light**,
+so those darkened on purpose and fixed five light findings too.
+
+### ⚠️ Three regressions, and the check that let them through
+
+The sweep caused three, all the same fault. I had checked every rule for a
+light background **of its own** and found none on the sites I swept. But **a
+rule's own `background` is not its ground — the ground is the composited
+ancestor chain**:
+
+- `.cr-summary` inherits a `--gold-accent` band (composite `#CFCBB2`)
+- `.cr-sort-indicator` sits inside a `--seal-blue` table header (`#002F6D`)
+
+Both fills are **deliberately not redefined dark**, so flipping the ink to a
+token that does flip is exactly wrong. `.cr-sort-indicator`'s original
+`#94A3B8` was *correct* at 5.03:1 on the navy; sweeping it to `--text-muted`
+landed at **1.92:1 in light**. `--on-mustard` already existed for the gold
+case; the seal-blue equivalent did not, so `--on-seal-blue-muted: #94A3B8` is
+now declared once in the base `:root` beside it.
+
+The third was two JS variables — `const nc = row.tier === 'Leading' ?
+'#1C1C1A' : '#3A3A36'` — which a `color:` regex cannot see. A painted color
+does not have to be written next to the word `color`.
+
+**What caught all three: re-measuring BOTH themes and diffing the finding
+lists.** Not the tests, which stayed green. The diff named each one with its
+selector and its ratio.
+
+### ⭐ The most consequential find: a sanitizer that blinded every guard
+
+A new guard reported that `.cs-badge` had no background rule. The rule was
+plainly there in the file. The guard was right; its input was wrong:
+
+```js
+const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "")
+                              .replace(/^\s*(\/\/|#).*$/gm, "");
+```
+
+`#` starts a comment in Python and an **ID selector** in CSS. Applied to
+`index.html`, that helper deleted **942 lines** before any scanner saw them —
+329 CSS rules beginning with an ID selector, **179 carrying a `color:`
+declaration**. Every raw-hex ink guard in `tests/cpl_theme.test.js`, including
+the ones written earlier the same day, had been scanning a stylesheet with most
+of its color declarations already removed.
+
+Split into `stripComments` (JS/CSS) and `stripPyComments` (adds `#`, used only
+for `excel_to_dashboard.py`). Proven both ways: with the old helper the injected
+defect is invisible; with the new one the guard fires.
+
+⚠️ **A sanitizer is a check's blind spot and it is invisible in the check's own
+source.** Falsify through the whole pipeline, from the file on disk, and put the
+defect where real ones live — a defect injected into a string literal inside the
+test would have passed and proved nothing. And print the count once when you
+write a sanitizer: *how many lines does this blank?* would have caught it at any
+point in the months it was live.

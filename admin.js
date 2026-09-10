@@ -762,6 +762,9 @@
       ".adm-live-hours { padding: 6px 9px; font: inherit; font-size: .9rem;",
       "border: 1px solid var(--border-strong, rgba(28,28,26,.30)); border-radius: 5px; }",
       ".adm-live-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }",
+      ".adm-live-auto { display: flex; align-items: center; gap: 8px; margin: 14px 0 4px; font-size: .92rem; cursor: pointer; }",
+      ".adm-live-auto input { width: 16px; height: 16px; cursor: pointer; }",
+      ".adm-live-autonote { margin: 0 0 2px 24px; }",
       ".adm-live-msg { margin: 10px 0 0; font-size: .88rem; color: var(--text-body); min-height: 1.2em; }",
       "@media (max-width: 560px) { .adm-live-url { max-width: 100%; } }",
       ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--on-mustard); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
@@ -1363,6 +1366,9 @@
     var url = (liveRow && liveRow.session_url) || "";
     var exp = liveRow && liveRow.expires_at ? new Date(liveRow.expires_at) : null;
     var live = on && (!exp || exp.getTime() > Date.now());
+    // Absent on a row written before the column existed: treat that as ON, which
+    // is the column default, so the panel never claims a preference nobody set.
+    var auto = !liveRow || liveRow.auto_announce !== false;
     return '<section class="adm-live"><h3>Live-session banner</h3>'
       + '<p class="adm-live-note">Puts a line at the top of every COBI page saying you are working in '
       + 'Claude Code, with a link to the session. <b>Set the session to Team visibility in claude.ai '
@@ -1378,6 +1384,13 @@
       + '<select id="adm-live-hours" class="adm-live-hours">'
       + '<option value="2">2 hours</option><option value="4" selected>4 hours</option>'
       + '<option value="8">8 hours</option></select>'
+      + '<label class="adm-live-auto"><input type="checkbox" id="adm-live-auto"'
+      + (auto ? ' checked' : '') + '> Announce my sessions automatically</label>'
+      + '<p class="adm-live-note adm-live-autonote">On by default. A Claude Code session '
+      + 'sets this banner when it starts, so you do not have to. '
+      + '<b>It cannot tell whether you have shared the session</b> \u2014 nothing exposes that \u2014 '
+      + 'so if you have not set it to Team visibility, the team sees a link that will not '
+      + 'open for them. Untick to go back to setting the banner by hand.</p>'
       + '<div class="adm-live-btns">'
       + '<button type="button" class="adm-btn" id="adm-live-on">Show the banner</button>'
       + '<button type="button" class="adm-btn" id="adm-live-off">Hide it</button>'
@@ -1385,7 +1398,7 @@
   }
 
   function loadLive(done) {
-    fetch(LIVE_REST + "?id=eq.1&select=active,session_url,expires_at", { headers: authHeaders() })
+    fetch(LIVE_REST + "?id=eq.1&select=active,session_url,expires_at,auto_announce", { headers: authHeaders() })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) { liveRow = (rows && rows[0]) || null; if (done) done(); })
       .catch(function () { if (done) done(); });
@@ -1426,10 +1439,41 @@
     });
   }
 
+  /* The opt-out is a PREFERENCE, not a show/hide, so it saves on its own rather
+   * than riding saveLive(): ticking it must not also re-announce a stale link,
+   * and unticking it must not take the current banner down. */
+  function saveAutoAnnounce(want, root) {
+    var msg = root.querySelector("#adm-live-msg");
+    if (msg) msg.textContent = "Saving\u2026";
+    fetch(LIVE_REST + "?id=eq.1", {
+      method: "PATCH",
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=representation" }, authHeaders()),
+      body: JSON.stringify({ auto_announce: !!want, updated_by: "admin-tab" })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(String(r.status));
+      return r.json();
+    }).then(function (rows) {
+      if (rows && rows[0]) liveRow = rows[0];
+      if (msg) {
+        msg.textContent = want
+          ? "On. Sessions will announce themselves \u2014 remember to set each one to Team visibility, or the link will not open for the team."
+          : "Off. The banner only appears when you set it here.";
+      }
+    }).catch(function (e) {
+      // Put the box back where the row actually is, or it lies about a save
+      // that did not happen.
+      var box = root.querySelector("#adm-live-auto");
+      if (box) box.checked = !want;
+      if (msg) msg.textContent = "Could not save that (" + e.message + ").";
+    });
+  }
+
   function wireLive(root) {
     var on = root.querySelector("#adm-live-on"), off = root.querySelector("#adm-live-off");
     if (on) on.onclick = function () { saveLive(true, root); };
     if (off) off.onclick = function () { saveLive(false, root); };
+    var auto = root.querySelector("#adm-live-auto");
+    if (auto) auto.onchange = function () { saveAutoAnnounce(auto.checked, root); };
   }
 
   function render(root) {
