@@ -333,6 +333,20 @@ jobs:
           python3 kb/_build_ccr_cpl.py --quiet \
             || echo "::warning title=SkyView CPL payload not rebuilt::kb/_build_ccr_cpl.py failed — the CPL face and the articulations light read the previous build until the next run. Check the step log."
 
+      # ── Step 4d3b: SkyView's CPL UNIVERSE (Session 252) ──────────
+      # The second universe Sam ruled on 2026-09-10: the entities are EXHIBITS,
+      # not courses. Built from credential_reference_data.js's curated unified
+      # titles (step 3, regenerated above) — the identity, its local exhibits,
+      # its discipline, its articulated courses and its agencies all come from
+      # the CER, never from the crosswalk's inlined issuing_agency (a 2026-05-21
+      # snapshot wrong on 1,743 of 4,592 records). Pure Python over one local
+      # file, ~2 s. tests/ccr_cpl_universe_test.py fails CI on a stale file, so
+      # this runs unconditionally like its siblings.
+      - name: Rebuild SkyView's CPL universe
+        run: |
+          python3 kb/_build_ccr_cpl_universe.py --quiet \
+            || echo "::warning title=SkyView CPL universe not rebuilt::kb/_build_ccr_cpl_universe.py failed — CPL mode reads the previous build until the next run. Check the step log."
+
       # ── Step 4d4: SkyView's sky placement (Session 239) ───────────
       # The Sky view places the 159 discipline islands on a sphere three ways
       # (committed · spread · by kind) from prototype/ccr_universe.json and the

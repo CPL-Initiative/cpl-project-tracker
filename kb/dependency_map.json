@@ -6486,7 +6486,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 433
+     "line": 439
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -11223,7 +11223,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 507
+     "line": 513
     },
     {
      "id": "script:kb/_join_cte_from_top.py",
@@ -12738,7 +12738,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 820
+     "line": 827
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12772,7 +12772,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 821
+     "line": 828
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -14184,7 +14184,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 832
+     "line": 839
     },
     {
      "id": "script:kb/_build_discipline_blanks_worklist.py",
@@ -14380,7 +14380,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 858
+     "line": 865
     }
    ],
    "producers": [
@@ -14436,7 +14436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 833
+     "line": 840
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -14506,7 +14506,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 849
+     "line": 856
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -17986,6 +17986,7 @@
     "kb/_build_ccr_atlas_extract.py",
     "prototype/build_ccr_atlas.py",
     "kb/_build_ccr_cpl.py",
+    "kb/_build_ccr_cpl_universe.py",
     "kb/_build_ccr_sky.py",
     "kb/_build_discipline_blanks_worklist.py"
    ],
@@ -18097,6 +18098,7 @@
     "tests/uc_cur_promote_test.py",
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
+    "tests/ccr_cpl_universe_test.py",
     "tests/ccr_sky_payload_test.py",
     "tests/ccr_level_layout_test.py",
     "tests/glyph_sweep_test.py",

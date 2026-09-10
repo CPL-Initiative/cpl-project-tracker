@@ -180,6 +180,34 @@ Rule 7 forbids TOP as a primary discipline determination regardless. 159 of the
 it is a 2026-05-21 snapshot, wrong on 1,743 of 4,592 records (`cpl_memory`:
 `the-crosswalks-inlined-issuer-is-a-stale-snapshot`).
 
+✅ **THE PAYLOAD IS BUILT (S252)** — `kb/_build_ccr_cpl_universe.py` →
+`prototype/ccr_cpl_universe.json` (0.36 MB), rebuilt by the daily cron beside its
+siblings, guarded by `tests/ccr_cpl_universe_test.py` (25 checks).
+**1,987 exhibit identities folding 3,813 local exhibits in 97 islands · 1,603
+with a ring · 534 grouped / 1,453 singleton · 84 statewide, all articulated ·
+543 in the pile.** Both of Sam's rulings are pinned by a check.
+
+⚠️ **THE LAYOUT IS IMPORTED, NEVER COPIED.** `layout_island` and `build_islands`
+in `kb/_build_ccr_universe.py` now take a `point_fn` (default `point_of`, the
+course shape); the CPL builder passes an exhibit shape. Two universes drawn by
+two packers would stop agreeing about what a discipline looks like — the same
+reason `kb/alias_chain.py` is imported. The refactor was proven neutral by
+regenerating `ccr_universe.json` on the same data with both code versions:
+**byte-identical**, layout and members.
+
+⚠️ **`slug()` TRUNCATES AT 60 AND THAT COLLIDES CER TITLES.** It names a
+description shard FILE, so it must not be widened. Two Carpenters titles differ
+only past the cut and merged into one entity on the first build; `ident_id()`
+appends a digest of the exact title. ⚠️ The id is derived from the TITLE, so a
+rename re-mints it — safe while nothing stores a reference, but the first
+feature that persists one needs a real surrogate key on the CER (Rule 7).
+
+**NEXT on this lane:** the view itself. The payload is drawable; nothing draws it
+yet. Sam's statewide ask of 2026-09-10 (*"shown visibly on the sky so folks can
+easily see…"*, message truncated) is answered on the data side — every statewide
+point carries `sw` — but the treatment is open, and at 84 points a permanent
+LABEL is affordable where 1,987 points cannot be labeled.
+
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
 ① **The skills layer's fetch problem.** Unblocked by his ruling: use all three
