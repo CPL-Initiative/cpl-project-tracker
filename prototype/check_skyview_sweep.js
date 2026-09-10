@@ -689,11 +689,12 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   ok("the payload carries a statewide, articulated credential to walk", !!swId, String(swId));
   ok("the swap did not restart a turn the reader had stopped (the point stays where the click is aimed)", (await st(page)).rotating === false);
   await flyToId(page, swId, 3.4);
-  { const sp0 = await screenOf(page, swId); const bx0 = await cvsBox(page);
-    // A pointer arrives in several move events; the first one after an instant fly can read the island before the
-    // per-island zoom band has re-settled, so hover the way a hand does — two moves — before reading the tip.
-    await page.mouse.move(bx0.x + sp0.x - 2, bx0.y + sp0.y - 2); await sleep(150);
-    await page.mouse.move(bx0.x + sp0.x, bx0.y + sp0.y); await sleep(350);
+  { const sp0 = await screenOf(page, swId);
+    // ⚠️ screenOf's x/y are PAGE coordinates already (the canvas box is added inside it); adding the box again
+    // hovered 110px below the point — inside the island disc, off the node — and read the island's tip. The
+    // pick hook's detail is what showed it: pick() at the canvas point found the credential while the hover did not.
+    await page.mouse.move(sp0.x - 2, sp0.y - 2); await sleep(150);
+    await page.mouse.move(sp0.x, sp0.y); await sleep(350);
     const diag0 = await page.evaluate(([px, py, d]) => { const s = window.__ccrUniverseState(); const I = window.CPL_CCR_UNIVERSE.islands.find((x) => x.d === d); return JSON.stringify({ pick: window.__ccrPickAt(px, py), nodesOn: I && I._nodesOn, isl: s.islandScreen(d), k: s.view.k, half: s.sph && s.sph.half, rotating: s.rotating, hover: s.hover, shown: s.coursesShown, lit: s.lit }); }, [sp0.px, sp0.py, (await page.evaluate((id) => { for (const I of window.CPL_CCR_UNIVERSE.islands) for (const nd of I.p) if (nd.i === id) return I.d; return null; }, swId))]);
     ok("hovering a credential names it, its exhibits and its articulations", (await visible(page, "#u-tip")) && /local exhibit/.test(await page.textContent("#u-tip")) && /articulation/.test(await page.textContent("#u-tip")), (await page.textContent("#u-tip")).slice(0, 120) + " | " + `pt=${Math.round(sp0.px)},${Math.round(sp0.py)} ` + diag0);
     await page.mouse.move(5, 5); await sleep(200); }
