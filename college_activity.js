@@ -67,7 +67,7 @@
       function vetsJstCell(row) {
         const vets = row.vets || 0, jst = row.jst || 0;
         if (!vets && !jst) return '<span style="color:#8A867E;">—</span>';
-        const col = row.vstar ? GOLD : '#3A3A36';
+        const col = row.vstar ? GOLD : 'var(--text-body)';
         const wt = row.vstar ? '700' : '400';
         const pct = vets ? ' (' + (row.jst_rate || 0) + '%)' : '';
         return '<span title="' + jst + ' JSTs uploaded / ' + vets + ' reported veterans'
@@ -147,7 +147,7 @@
           const tr = document.createElement('tr');
           tr.style.borderBottom = '1px solid rgba(28,28,26,0.08)';
           const tc = tierColor(row.tier);
-          const nc = row.tier === 'Leading' ? '#1C1C1A' : '#3A3A36';
+          const nc = row.tier === 'Leading' ? 'var(--text-strong)' : 'var(--text-body)';
           const brc = bc(row.trans_rate);
           const ev = getExhibitVals(row);
 
@@ -177,17 +177,17 @@
             <td style="padding:0.2rem 0.2rem;text-align:center;font-size:0.7rem;">${star}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.68rem;color:${nc};white-space:nowrap;">${row.college}</td>
             <td style="padding:0.2rem 0.3rem;font-size:0.6rem;color:#5C5C55;max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;" title="${row.district}">${row.district}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.students)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(row.students)}</td>
             ${vetsJstTd}
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.working_adults)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(row.apprentices)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtU(row.eligible_units)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtU(row.transcribed_units)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(ev.exhibits)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtN(ev.credit_recs)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${ev.disciplines}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtD(row.savings)}</td>
-            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:#3A3A36;text-align:right;">${fmtD(row.year_impact)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(row.working_adults)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(row.apprentices)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtU(row.eligible_units)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtU(row.transcribed_units)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(ev.exhibits)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtN(ev.credit_recs)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${ev.disciplines}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtD(row.savings)}</td>
+            <td style="padding:0.2rem 0.3rem;font-size:0.67rem;color:var(--text-body);text-align:right;">${fmtD(row.year_impact)}</td>
             <td style="padding:0.2rem 0.3rem;text-align:center;">
               <div style="display:flex;align-items:center;gap:3px;justify-content:center;">
                 <div style="width:40px;height:5px;background:#E6E3DC;border-radius:3px;overflow:hidden;">

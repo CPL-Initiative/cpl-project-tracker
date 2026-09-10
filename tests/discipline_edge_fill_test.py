@@ -115,6 +115,27 @@ def main():
         check(f"the unfillable residue stays small ({blank_before} of {len(live)})",
               blank_before <= len(live) * 0.02,
               f"{blank_before} blank of {len(live)}")
+
+        # ⭐ AND THE ROUND TRIP, WHICH THE FIXED POINT CANNOT SEE (S249).
+        # Two sessions fixed this check the same day from opposite sides, and
+        # BOTH are kept because each is blind where the other looks. The fixed
+        # point above asks "did the GENERATOR apply the fill" -- but it reads
+        # `filled == 0`, and a discipline_edge_fill() that has stopped filling
+        # anything at all ALSO returns 0 against a payload an earlier run
+        # already filled. So ask the other question directly: CLEAR the edge's
+        # own fills on the live rows and make it re-derive every one. Measured
+        # by falsification -- emptying `edge` inside the function drops this to
+        # 155 of 196 while the fixed-point check above stays green.
+        stamped = [r for r in live if r.get("dsrc") == "subject_map_edge"]
+        for r in stamped:
+            r["disc"] = None
+            r.pop("dsrc", None)
+        discipline_edge_fill(live, KB)
+        refilled = sum(1 for r in stamped if r.get("disc"))
+        check(f"and the edge re-derives every fill it shipped "
+              f"({refilled} of {len(stamped)})",
+              bool(stamped) and refilled == len(stamped),
+              f"re-filled {refilled} of {len(stamped)}")
         psyc = [r for r in live if r["id"] == "PSYC C1000"]
         if psyc:
             check("PSYC C1000 lands in Psychology — the row Sam asked about",

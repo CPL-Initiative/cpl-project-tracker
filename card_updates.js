@@ -80,7 +80,7 @@
     if (when) meta.push(when + (rel ? " · " + rel : ""));
     if (u.edited_at) meta.push("edited");
     return (
-      '<div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">' +
+      '<div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;">' +
         '<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary,#1b3a5c);color:var(--on-accent);' +
         'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>' +
         escapeHtml(u.body) +

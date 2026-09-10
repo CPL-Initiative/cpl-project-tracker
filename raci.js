@@ -1430,7 +1430,7 @@
       ".raci-toggle{display:inline-flex;border:1px solid var(--border,#ddd);border-radius:7px;overflow:hidden;}" +
       ".raci-tg{background:var(--surface-opaque);border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +
       ".raci-tg.on{background:var(--navy-primary,#0A2240);color:var(--on-accent);}" +
-      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
+      ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:var(--text-muted);}" +
       ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;min-width:0;max-width:100%;}"  /* a <select> has an intrinsic width flex will not shrink past without min-width:0 */ +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
       ".raci-auth-hint{font-size:.75rem;color:var(--text-muted,#777);flex-basis:100%;}" +
@@ -1470,8 +1470,8 @@
       ".raci-row-focus td{background:var(--gold-soft,#fbf3d9)!important;box-shadow:inset 3px 0 0 var(--gold-accent,#B8860B);animation:raciFocusFade 2.6s ease-out;}" +
       "@keyframes raciFocusFade{0%{background:var(--gold-accent,#B8860B);}30%{background:var(--gold-soft,#fbf3d9);}100%{background:transparent;}}" +
       ".raci-legend{margin-top:.5rem;color:var(--text-muted,#777);font-size:.78rem;}" +
-      ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:#555;font-size:.85rem;}" +
-      ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:#555;}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
+      ".raci-dir-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:.5rem;color:var(--text-muted);font-size:.85rem;}" +
+      ".raci-dir-n{font-weight:600;color:var(--text-strong,#222);}.raci-dir-r{color:var(--text-muted);}.raci-dir-e a{color:var(--accent-link,#1c5d99);}" +
       ".raci-th-nudge{text-align:center;white-space:nowrap;}.raci-nudge-cell{text-align:center;}" +
       ".raci-th-nudge-wrap{display:flex;flex-direction:column;align-items:center;gap:.15rem;}" +
       ".raci-nudge-all-lbl{display:inline-flex;align-items:center;gap:.25rem;font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text-faint,#888);cursor:pointer;}" +
@@ -1509,7 +1509,7 @@
       ".raci-modal{background:var(--surface-opaque);border-radius:10px;max-width:480px;width:100%;box-shadow:0 8px 32px rgba(0,0,0,.25);}" +
       ".raci-modal-h{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.8rem 1rem;background:var(--navy-primary,#0A2240);color:var(--on-accent);border-radius:10px 10px 0 0;font-size:.92rem;}" +
       ".raci-x{background:none;border:0;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;}" +
-      ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:#666;font-size:.82rem;margin-bottom:.6rem;}" +
+      ".raci-modal-b{padding:1rem;max-height:60vh;overflow:auto;}.raci-modal-sub{color:var(--text-muted);font-size:.82rem;margin-bottom:.6rem;}" +
       ".raci-modal-f{display:flex;gap:.5rem;justify-content:flex-end;padding:.7rem 1rem;border-top:1px solid var(--border,#eee);}" +
       ".raci-modal-msg{font-size:.82rem;color:#A33;margin-top:.5rem;min-height:1em;}" +
       ".raci-unlock{margin-top:.4rem;padding-top:.6rem;border-top:1px solid var(--border,#eee);}" +
@@ -1527,7 +1527,7 @@
       ".raci-copy-rk{font-weight:700;color:var(--navy-secondary,#1c3d5a);min-width:1.1rem;}" +
       ".raci-copy-tools{display:flex;align-items:center;gap:.7rem;margin-bottom:.4rem;}" +
       ".raci-copy-tools .raci-in{flex:1 1 auto;margin-bottom:0;}" +
-      ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:#555;cursor:pointer;}" +
+      ".raci-copy-all{display:flex;align-items:center;gap:.35rem;white-space:nowrap;font-size:.78rem;color:var(--text-muted);cursor:pointer;}" +
       ".raci-copy-list{max-height:38vh;overflow:auto;border:1px solid var(--border,#e3e9f0);border-radius:6px;padding:.2rem;}" +
       ".raci-copy-warn{margin-top:.5rem;font-size:.76rem;color:#A33;}";
     document.head.appendChild(el("style", { id: "raci-css", html: css }));

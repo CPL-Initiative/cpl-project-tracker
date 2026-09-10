@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 456,
+  "file_datasets": 457,
   "external_services": 138,
-  "consumers": 328,
+  "consumers": 329,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -480,10 +480,17 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1376,
+     "line": 1382,
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:scripts/announce_session_hint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 44
     },
     {
      "id": "workflow:cpl-chat-health.yml",
@@ -8946,7 +8953,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1178,
+     "line": 1181,
      "tabs": [
       "admin"
      ]
@@ -13717,6 +13724,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/kpi_history_no_gaps_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/legacy_anchor_duplicates_test.py": {
    "consumers": [
     {
@@ -13958,7 +13978,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2152,
+     "line": 2157,
      "tabs": [
       "tmc-builder"
      ]
@@ -13994,7 +14014,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 537,
+     "line": 542,
      "tabs": [
       "tmc-builder"
      ]
@@ -14037,7 +14057,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2147,
+     "line": 2152,
      "tabs": [
       "tmc-builder"
      ]
@@ -14053,7 +14073,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2139,
+     "line": 2144,
      "tabs": [
       "tmc-builder"
      ]
@@ -15404,7 +15424,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1595,
+     "line": 1600,
      "tabs": [
       "tmc-builder"
      ]
@@ -15653,7 +15673,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1358,
+     "line": 1361,
      "tabs": [
       "admin"
      ]
@@ -15663,7 +15683,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 554,
+     "line": 563,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -17149,7 +17169,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 615,
+     "line": 619,
      "pages": [
       "CPL_Dashboard.html"
      ]
@@ -17519,7 +17539,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 497,
+     "line": 502,
      "tabs": [
       "tmc-builder"
      ]
@@ -17529,7 +17549,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 506,
+     "line": 511,
      "tabs": [
       "tmc-builder"
      ]
@@ -17544,7 +17564,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 429,
+     "line": 434,
      "tabs": [
       "tmc-builder"
      ]
@@ -17554,7 +17574,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 436,
+     "line": 441,
      "tabs": [
       "tmc-builder"
      ]
@@ -18192,7 +18212,8 @@
     "tests/merge_candidate_queue_test.py",
     "tests/alias_chain_single_source_test.py",
     "tests/stop_hook_git_check_test.py",
-    "tests/video_context_test.py"
+    "tests/video_context_test.py",
+    "tests/kpi_history_no_gaps_test.py"
    ],
    "adds": [],
    "push": null,

@@ -423,7 +423,7 @@
       ".cpl-mdq .mdq-metaactions{display:flex;gap:8px;flex-wrap:wrap;}",
       ".cpl-mdq .mdq-btn{font:inherit;font-size:.8rem;font-weight:600;cursor:pointer;padding:6px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
       ".cpl-mdq .mdq-btn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
-      ".cpl-mdq .mdq-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
+      ".cpl-mdq .mdq-btn-primary{background:var(--accent-link);color:var(--on-accent);border-color:var(--accent-link);}",
       ".cpl-mdq .mdq-btn-sm{font-size:.74rem;padding:4px 9px;}",
       ".cpl-mdq .mdq-list{display:flex;flex-direction:column;gap:10px;margin-top:6px;}",
       ".cpl-mdq .mdq-card{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--sev-medium);border-radius:11px;padding:12px 14px;}",

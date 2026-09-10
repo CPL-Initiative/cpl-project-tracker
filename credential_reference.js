@@ -3019,13 +3019,13 @@
     st.textContent =
       "#tab-credential-reference .cr-scope-block{margin:2px 0 14px;}" +
       "#tab-credential-reference #cr-subj-filter{max-width:6.5em;}" +
-      "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.5);border:1px solid var(--border-strong);}" +
+      "#tab-credential-reference .cr-chip{display:inline-block;padding:2px 8px;border-radius:8px;font-size:.72rem;font-weight:600;background:var(--glass-quiet, rgba(255,255,255,.5));border:1px solid var(--border-strong);}" +
       "#tab-credential-reference .cr-chip-ccc{color:var(--hunter);}" +
       "#tab-credential-reference .cr-chip-cos{color:var(--hunter);border-color:var(--hunter);}" +
       "#tab-credential-reference .cr-cos-attrib{display:block;margin-top:2px;font-size:.68rem;color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-local{color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-gen{color:var(--violet);}" +
-      "#tab-credential-reference .cr-chip-none{background:#f1f5f9;color:#94a3b8;}" +
+      "#tab-credential-reference .cr-chip-none{background:var(--surface-1,#f1f5f9);color:var(--text-muted);}" +
       "#tab-credential-reference .cr-chip-cpl{background:#f1f5f9;color:#475569;border-color:#e2e8f0;font-weight:500;}" +
       "#tab-credential-reference .cr-rec{font-size:.78rem;color:#334155;margin-bottom:8px;}" +
       "#tab-credential-reference .cr-rec-label{font-weight:600;}" +
@@ -3069,8 +3069,8 @@
       "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:#2563eb;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-back:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-wl-title{color:var(--text-strong);margin:8px 0 4px;}" +
-      "#tab-credential-reference .cr-wl-intro{color:#4b5563;font-size:.85rem;margin:0 0 8px;max-width:var(--cpl-measure,none);}" +
-      "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:#374151;margin-bottom:10px;}" +
+      "#tab-credential-reference .cr-wl-intro{color:var(--text-body);font-size:.85rem;margin:0 0 8px;max-width:var(--cpl-measure,none);}" +
+      "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:var(--text-body);margin-bottom:10px;}" +
       "#tab-credential-reference .cr-wl-note{color:#6b7280;font-style:italic;}" +
       "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
       // Dark headers ride the CO seal blue, never ink/black (Sam, 2026-07-08).
@@ -3078,7 +3078,7 @@
       "#tab-credential-reference .cr-wl-table td{padding:6px 10px;border-top:1px solid #eef2f7;vertical-align:top;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-done{background:#f0fdf4;}" +
       "#tab-credential-reference .cr-wl-raw{max-width:42ch;}" +
-      "#tab-credential-reference .cr-wl-band{color:#94a3b8;font-size:.72rem;}" +
+      "#tab-credential-reference .cr-wl-band{color:var(--text-muted);font-size:.72rem;}" +
       "#tab-credential-reference .cr-wl-suggs{margin-top:3px;display:flex;flex-wrap:wrap;gap:4px;}" +
       "#tab-credential-reference .cr-wl-sugg{cursor:pointer;font-size:.68rem;text-align:left;color:var(--hunter);background:rgba(255,255,255,.6);}" +
       "#tab-credential-reference .cr-wl-sugg:hover{background:#ecfdf5;}" +
@@ -3093,7 +3093,7 @@
       "#tab-credential-reference .cr-wl-rawfill:hover{background:var(--surface-subtle);}" +
       "#tab-credential-reference .cr-wl-rawfill:disabled{cursor:default;opacity:.55;}" +
       "#tab-credential-reference .cr-wl-input{width:100%;min-width:15ch;padding:4px 6px;border:1px solid #cbd5e1;border-radius:5px;font-size:.82rem;}" +
-      "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:#94a3b8;}" +
+      "#tab-credential-reference .cr-wl-input:disabled{background:#f8fafc;color:var(--text-muted);}" +
       "#tab-credential-reference .cr-wl-act{white-space:nowrap;}" +
       "#tab-credential-reference .cr-wl-save{background:var(--cobalt);color:var(--on-accent);border:none;border-radius:5px;font-size:.78rem;font-weight:600;cursor:pointer;padding:4px 12px;}" +
       "#tab-credential-reference .cr-wl-save:disabled{opacity:.6;cursor:default;}" +
@@ -3101,11 +3101,11 @@
       "#tab-credential-reference .cr-wl-clear:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-wl-assigned-by{color:#1e7e45;font-size:.78rem;font-weight:600;}" +
       "#tab-credential-reference .cr-wl-toggle{display:flex;gap:0;margin:0 0 8px;}" +
-      "#tab-credential-reference .cr-wl-toggle-btn{border:1px solid #cbd5e1;background:rgba(255,255,255,.6);color:#374151;font-size:.78rem;padding:4px 12px;cursor:pointer;}" +
+      "#tab-credential-reference .cr-wl-toggle-btn{border:1px solid #cbd5e1;background:rgba(255,255,255,.6);color:var(--text-body);font-size:.78rem;padding:4px 12px;cursor:pointer;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:first-child{border-radius:6px 0 0 6px;}" +
       "#tab-credential-reference .cr-wl-toggle-btn:last-child{border-radius:0 6px 6px 0;border-left:none;}" +
       "#tab-credential-reference .cr-wl-toggle-on{background:var(--seal-blue);color:#fff;border-color:var(--seal-blue);font-weight:600;}" +
-      "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:#374151;background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
+      "#tab-credential-reference .cr-wl-preseed-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:.8rem;color:var(--text-body);background:#fffbeb;border:1px solid #fde68a;border-radius:6px;padding:6px 10px;margin:0 0 8px;}" +
       "#tab-credential-reference .cr-wl-saveall{background:var(--hunter,#166534);color:var(--on-accent);border:none;border-radius:5px;font-size:.76rem;font-weight:600;cursor:pointer;padding:4px 10px;}" +
       "#tab-credential-reference .cr-wl-saveall:disabled{opacity:.6;cursor:default;}" +
       "#tab-credential-reference .cr-wl-row.cr-wl-preseeded{background:#fffdf5;}" +
@@ -3168,7 +3168,7 @@
       // Students-served column (path 1) — the count stands out for triage; the
       // masked "<N" is muted (small-cell suppression).
       "#tab-credential-reference .cr-served-n{font-weight:600;color:var(--text-strong);}" +
-      "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}" +
+      "#tab-credential-reference .cr-served-sup{color:var(--text-muted);font-style:italic;font-size:.85em;}" +
       // GE-Area coherence (item #3) — per-identity "off GE Area" badge (warn) +
       // the credential-level callout note.
       "#tab-credential-reference .cr-ge-off{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:#FEF3C7;color:#92400e;border:1px solid #F59E0B;white-space:nowrap;}" +
@@ -3210,7 +3210,7 @@
       "#tab-credential-reference .cr-ni-row.cr-wl-save-failed{background:#fef2f2;outline:1px solid #fca5a5;}" +
       // Session 106 — raw-title/college context + editable title in the lane.
       "#tab-credential-reference .cr-ni-table td.cr-wl-raw{width:34%;}" +
-      "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:#64748b;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
+      "#tab-credential-reference .cr-ni-rawline{margin-top:3px;font-size:.72rem;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}" +
       "#tab-credential-reference .cr-ni-trainer-chip{display:inline-block;margin-top:3px;font-size:.68rem;color:var(--hunter,#166534);background:#ecfdf5;border:1px solid #a7f3d0;border-radius:9px;padding:0 6px;cursor:help;white-space:nowrap;}" +
       "#tab-credential-reference .cr-ni-add-issuer{display:inline-block;margin-top:3px;font-size:.72rem;color:var(--seal-blue-text,#002F6D);text-decoration:none;}" +
       "#tab-credential-reference .cr-ni-add-issuer:hover{text-decoration:underline;}" +
@@ -3277,8 +3277,8 @@
       // In-cell SUBJ (uppercase display) + Discipline inputs.
       "#tab-credential-reference .cr-subj-in{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;text-transform:uppercase;max-width:9ch;}" +
       // ⇆ merge-suggestion chip (violet = machine-suggested) + panel.
-      "#tab-credential-reference .cr-chip-mergesug{color:var(--violet,#6D28D9);border-color:var(--violet,#6D28D9);background:#F6F2FD;cursor:pointer;}" +
-      "#tab-credential-reference .cr-chip-mergesug:hover{background:#EDE4FB;}" +
+      "#tab-credential-reference .cr-chip-mergesug{color:var(--violet,#6D28D9);border-color:var(--violet,#6D28D9);background:var(--surface-1,#F6F2FD);cursor:pointer;}" +
+      "#tab-credential-reference .cr-chip-mergesug:hover{background:var(--surface-2,#EDE4FB);}" +
       "#tab-credential-reference .cr-mergesug-panel{margin:5px 0 0;padding:7px 10px;border:1px solid var(--violet,#6D28D9);border-radius:6px;background:#F6F2FD;font-size:.76rem;text-align:left;}" +
       "#tab-credential-reference .cr-mergesug-h{font-weight:700;color:var(--violet,#6D28D9);margin-bottom:4px;}" +
       "#tab-credential-reference .cr-mergesug-row{padding:3px 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap;}" +
