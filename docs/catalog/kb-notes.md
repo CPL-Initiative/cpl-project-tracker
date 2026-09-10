@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-428 document(s).
+429 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -93,6 +93,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A grain-invariant measure can still be the wrong one](../kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
