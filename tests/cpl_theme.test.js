@@ -367,6 +367,67 @@ const lightDecl = cpl.slice(cpl.indexOf(":root {"), cpl.indexOf(":root {") + 400
 check("⭐ --surface-1/--surface-2/--gold-soft are NOT defined in the light :root (deliberate)",
   !/--surface-[12]:\s*#/.test(lightDecl) && !/--gold-soft:\s*#/.test(lightDecl));
 
+// ─── the same asymmetry, 21 tokens wider (S249) ─────────────────────────────
+// The rest of the phantom color tokens: --cpl-cream painted a cream chip on
+// the night ground, --cpl-green an ink at 1.6:1, --surface-page a white card.
+// Each is defined in the DARK blocks only and each is an ALIAS, so the role it
+// plays is stated by the token it points at rather than by a new hex.
+//
+// ⚠️ THE ENTRY CONDITION IS "EVERY USE CARRIES A FALLBACK", AND IT IS WHAT
+// MAKES THE ASYMMETRY SAFE. --brand, --link and --text are phantoms too and are
+// deliberately NOT here: they have uses written `var(--brand)` with no
+// fallback, which resolve to nothing in BOTH themes today, so defining them
+// dark-only would paint a border and a progress bar that the light theme does
+// not have. That is a both-themes bug and a separate, visible change.
+const DARK_ONLY_ALIASES = [
+  "--text-soft", "--ok", "--cpl-green", "--success-text", "--danger",
+  "--danger-text", "--brick", "--cpl-amber", "--cpl-warn", "--cpl-warn-text",
+  "--mustard", "--cpl-cream", "--gx-soft", "--cpl-green-soft",
+  "--surface-page", "--surface-0", "--cpl-warn-bg", "--border-soft",
+  "--border-subtle", "--line", "--brand-soft",
+];
+const missingDark = DARK_ONLY_ALIASES.filter(
+  (t) => !new RegExp("\\" + t + ":\\s*(var\\(|rgba?\\()").test(darkDecl));
+check("⭐ all 21 phantom color tokens ARE defined in the dark block"
+  + (missingDark.length ? " -> missing " + missingDark.join(", ") : ""),
+  missingDark.length === 0);
+
+const leakedLight = DARK_ONLY_ALIASES.filter(
+  (t) => new RegExp("\\" + t + ":\\s*\\S").test(lightDecl));
+check("⭐ and NONE of them leaks into the light :root — light keeps every fallback"
+  + (leakedLight.length ? " -> " + leakedLight.join(", ") : ""),
+  leakedLight.length === 0);
+
+// A fill whose token now flips cannot keep a fixed ink: --danger is used as
+// BOTH `color:` and `background:`, and its two fills carried `color:#fff`.
+// White on the on-dark crimson is 2.0:1; --on-accent is 7.0:1 and stays right
+// in light. This is the --navy-* fix of S248, applied to the one token in this
+// batch that has two jobs.
+// Generalized, because --danger was not the only one: the sweep surfaced
+// `#FFFFFF on #7DA1D4` at 2.65:1 on map_data_quality's primary button, and the
+// same rule was copy-pasted into cpl_memory. Both filled with --accent-link,
+// which resolves to --cobalt and flips. A grep finds this class in one pass;
+// waiting for the sweep to sample the surface does not.
+const FLIPPING_FILLS = ["--accent-link", "--cobalt", "--crimson", "--hunter",
+  "--violet", "--navy-primary", "--navy-secondary", "--danger", "--ok",
+  "--seal-blue-text", "--brick", "--danger-text", "--cpl-green",
+  "--success-text"];
+const fixedInk = [];
+for (const f of fs.readdirSync(".").filter((x) => x.endsWith(".js"))) {
+  const src = stripComments(fs.readFileSync(f, "utf8"));
+  for (const m of src.matchAll(/\{([^{}]{0,400})\}/g)) {
+    const body = m[1];
+    const bg = /background(?:-color)?\s*:\s*([^;]{0,90})/.exec(body);
+    if (!bg || !/color\s*:\s*(#fff\b|#ffffff\b|white\b)/i.test(body)) continue;
+    const tok = FLIPPING_FILLS.find((t) =>
+      new RegExp("var\\(\\s*\\" + t + "\\b").test(bg[1]));
+    if (tok) fixedInk.push(f + " (" + tok + ")");
+  }
+}
+check("⭐ no fixed white ink on a fill whose token flips — use --on-accent"
+  + (fixedInk.length ? " -> " + fixedInk.slice(0, 4).join(", ") : ""),
+  fixedInk.length === 0);
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} checks passed`);

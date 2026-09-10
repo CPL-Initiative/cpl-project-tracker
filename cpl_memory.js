@@ -2116,7 +2116,7 @@
       ".cpl-mem .mem-autogen-status.is-err{color:var(--st-warn);font-weight:600;}",
       ".cpl-mem .mem-btn{font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 13px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .mem-btn:hover{background:var(--surface-subtle);}",
-      ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
+      ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:var(--on-accent);border-color:var(--accent-link);}",
       ".cpl-mem .mem-btn-danger{background:var(--st-danger);color:var(--surface-opaque);border-color:var(--st-danger);}",
       ".cpl-mem .mem-btn-danger:disabled{opacity:.6;cursor:default;}",
       ".cpl-mem .mem-form-warn{font-size:.78rem;font-weight:600;color:var(--st-danger);background:color-mix(in srgb,var(--st-danger) 10%,transparent);border:1px solid color-mix(in srgb,var(--st-danger) 30%,transparent);border-radius:8px;padding:7px 10px;margin:0 0 10px;line-height:1.45;}",

@@ -165,6 +165,43 @@
             /* the soft gold ground: a phantom until S249, so its #fbf3d9 fallback
                painted cream in dark too. Light keeps the fallback deliberately. */
             --gold-soft: #4A3A10;
+
+            /* ⚠️ 21 MORE PHANTOM TOKENS — DARK BLOCKS ONLY, same rule and the
+               same reason as --surface-1/--surface-2 above (S249). Every one
+               of these was used ONLY as `var(--x, <light hex>)` and defined
+               NOWHERE, so the fallback painted in dark exactly as it did in
+               light: a cream chip on the night ground, a #2f6d3a ink at 1.6:1.
+               Because every remaining use carries a fallback, defining them
+               here moves NO light pixel — that is what makes the asymmetry
+               safe, and it is why --brand/--link/--text are NOT in this list
+               (they have uses with no fallback, so a dark-only definition
+               would paint something light does not have; see the lane file).
+               Values are aliases, never new colors: the role each token plays
+               is stated by the token it points at. */
+            /* inks */
+            --text-soft:      var(--text-muted);
+            --ok:             var(--hunter);
+            --cpl-green:      var(--hunter);
+            --success-text:   var(--hunter);
+            --danger:         var(--crimson);
+            --danger-text:    var(--crimson);
+            --brick:          var(--crimson);
+            --cpl-amber:      var(--mustard-text);
+            --cpl-warn:       var(--mustard-text);
+            --cpl-warn-text:  var(--mustard-text);
+            --mustard:        var(--mustard-text);
+            /* grounds */
+            --cpl-cream:      var(--surface-subtle);
+            --gx-soft:        var(--surface-subtle);
+            --cpl-green-soft: var(--surface-muted);
+            --surface-page:   var(--surface-opaque);
+            --surface-0:      var(--surface-opaque);
+            --cpl-warn-bg:    var(--gold-soft);
+            /* borders + the one derived tint */
+            --border-soft:    var(--border);
+            --border-subtle:  var(--border);
+            --line:           var(--border);
+            --brand-soft:     rgba(125,161,212,.22);   /* --cobalt at low alpha */
             --border: rgba(255,255,255,.14);
             --border-strong: rgba(255,255,255,.32);
             /* The glass edge inverts: a 55%-white hairline is a light-surface
@@ -238,6 +275,43 @@
             /* the soft gold ground: a phantom until S249, so its #fbf3d9 fallback
                painted cream in dark too. Light keeps the fallback deliberately. */
             --gold-soft: #4A3A10;
+
+            /* ⚠️ 21 MORE PHANTOM TOKENS — DARK BLOCKS ONLY, same rule and the
+               same reason as --surface-1/--surface-2 above (S249). Every one
+               of these was used ONLY as `var(--x, <light hex>)` and defined
+               NOWHERE, so the fallback painted in dark exactly as it did in
+               light: a cream chip on the night ground, a #2f6d3a ink at 1.6:1.
+               Because every remaining use carries a fallback, defining them
+               here moves NO light pixel — that is what makes the asymmetry
+               safe, and it is why --brand/--link/--text are NOT in this list
+               (they have uses with no fallback, so a dark-only definition
+               would paint something light does not have; see the lane file).
+               Values are aliases, never new colors: the role each token plays
+               is stated by the token it points at. */
+            /* inks */
+            --text-soft:      var(--text-muted);
+            --ok:             var(--hunter);
+            --cpl-green:      var(--hunter);
+            --success-text:   var(--hunter);
+            --danger:         var(--crimson);
+            --danger-text:    var(--crimson);
+            --brick:          var(--crimson);
+            --cpl-amber:      var(--mustard-text);
+            --cpl-warn:       var(--mustard-text);
+            --cpl-warn-text:  var(--mustard-text);
+            --mustard:        var(--mustard-text);
+            /* grounds */
+            --cpl-cream:      var(--surface-subtle);
+            --gx-soft:        var(--surface-subtle);
+            --cpl-green-soft: var(--surface-muted);
+            --surface-page:   var(--surface-opaque);
+            --surface-0:      var(--surface-opaque);
+            --cpl-warn-bg:    var(--gold-soft);
+            /* borders + the one derived tint */
+            --border-soft:    var(--border);
+            --border-subtle:  var(--border);
+            --line:           var(--border);
+            --brand-soft:     rgba(125,161,212,.22);   /* --cobalt at low alpha */
             --border: rgba(255,255,255,.14);
             --border-strong: rgba(255,255,255,.32);
             /* The glass edge inverts: a 55%-white hairline is a light-surface

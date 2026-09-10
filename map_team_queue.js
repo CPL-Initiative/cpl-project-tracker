@@ -390,14 +390,14 @@
       ".mtq-t { font-weight:600; flex:1 1 320px; }",
       ".mtq-age { font-size:.72rem; border-radius:10px; padding:1px 9px; white-space:nowrap;"
         + " background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-age.old { background: var(--danger, #b3261e); color:#fff; }",
+      ".mtq-age.old { background: var(--danger, #b3261e); color:var(--on-accent); }",
       ".mtq-d { font-size:.85rem; color: var(--text-body); margin:5px 0 0; }",
       ".mtq-why { font-size:.72rem; color: var(--text-muted); margin:6px 0 0; font-style:italic; }",
       ".mtq-names { font-size:.75rem; color: var(--text-muted); margin:5px 0 0; }",
       ".mtq-go { font-size:.75rem; }",
       ".mtq-badge { font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; border-radius:3px;"
         + " padding:1px 6px; background: var(--surface-muted); color: var(--text-muted); }",
-      ".mtq-badge.person { background: var(--danger, #b3261e); color:#fff; }",
+      ".mtq-badge.person { background: var(--danger, #b3261e); color:var(--on-accent); }",
       ".mtq-tracked { border-style:dashed; }",
       ".mtq-stale { color: var(--danger, #b3261e); font-weight:600; }",
       ".mtq-gate { color: var(--text-muted); padding:18px; border:1px dashed var(--border-strong);"

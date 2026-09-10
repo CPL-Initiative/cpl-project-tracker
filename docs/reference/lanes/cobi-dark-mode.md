@@ -91,20 +91,33 @@ that could not fail are PULL, in one note:
   tint, so no light pixel moved. ⚠️ **Do not "complete" the pair in the light
   `:root`** — the fallbacks are six different tints, so one light value repaints
   six tabs. Sam's call. Guarded by `tests/cpl_theme.test.js`.
-  **25 phantom color tokens / 83 uses remain** (`--ok` 10, `--cpl-green` 10,
-  `--gold-soft` 8, `--danger` 7, `--cpl-cream` 6, `--link` 5 …) — now all INKS
-  and ACCENTS, no grounds.
-- ✅ **`var(--white)` as a ground — FIXED**, 7 sites. `.project-card` and
-  `.activity-kpi-card` were **Sam's first screenshot**.
-- ✅ **`--navy-*` fills carrying a fixed ink — FIXED**, 17 sites → `--on-accent`.
-  Measured first: **551/497 INK vs 26/179 FILL**. ⚠️ **The other ~160 navy fills
-  are NOT proven broken** — only where the ink cannot follow. Fix what the sweep
-  names.
-- ✅ **`cip_crosswalk.js`, the FIFTH answer to "is it dark" — FIXED.** Own
-  button, own `cipx_theme` key, 108 grounds gated on its own class. Now reads
-  `CPL_THEME.effective()`, writes through `.set()`, follows `cpl:themechange`.
-- ✅ **`our_process.js`'s contour canvas — FIXED.** Drew once under
-  `prefers-reduced-motion`; the first listener `cpl:themechange` has ever had.
+- ✅ **The remaining 21 phantom color tokens — FIXED (S249)**, 62 uses, same
+  dark-blocks-only rule. Inks alias the measured accents (`--ok`/`--cpl-green`/
+  `--success-text` → `--hunter`; `--danger`/`--danger-text`/`--brick` →
+  `--crimson`; `--cpl-amber`/`--cpl-warn`/`--cpl-warn-text`/`--mustard` →
+  `--mustard-text`), grounds alias the surfaces (`--cpl-cream`/`--gx-soft` →
+  `--surface-subtle`, `--cpl-green-soft` → `--surface-muted`, `--surface-page`/
+  `--surface-0` → `--surface-opaque`, `--cpl-warn-bg` → `--gold-soft`), borders
+  → `--border`. **Values are aliases, never new hexes** — the role each token
+  plays is stated by the token it points at. All 12 new dark pairs computed
+  against `prototype/check_contrast.py`: worst is 4.93:1, AA is 4.5.
+
+  ⚠️ **THE ENTRY CONDITION IS "EVERY USE CARRIES A FALLBACK," AND IT IS THE
+  WHOLE SAFETY ARGUMENT.** `--brand` (14 uses), `--link` (6) and `--text` (4)
+  are phantoms too and are deliberately **NOT** in the batch: they have uses
+  written `var(--brand)` with **no fallback**, which are invalid at
+  computed-value time and so resolve to nothing in BOTH themes today — a
+  progress bar filled `transparent`, a `border-left` that draws no border.
+  Defining those dark-only would paint something the light theme does not have.
+  **That is a both-themes bug, not a dark-mode one** — see the open item below.
+- ✅ **`var(--white)` as a ground — FIXED**, 7 sites (Sam's first screenshot).
+- ✅ **Fixed ink on a fill that flips — FIXED**, 17 `--navy-*` sites (S248) plus
+  `--danger` ×2 and `--accent-link` ×2 (S249), all → `--on-accent`. ⚠️ **The
+  other ~160 navy fills are NOT proven broken** — only where the ink cannot
+  follow. This class is greppable, so `tests/cpl_theme.test.js` now scans every
+  consumer JS for it rather than waiting for the sweep to sample the surface.
+- ✅ **`cip_crosswalk.js` (the fifth answer to "is it dark") and
+  `our_process.js`'s contour canvas — FIXED.** Both now key on `cpl_theme.js`.
 
 
 ### Named, measured, and deliberately NOT fixed
@@ -114,6 +127,15 @@ that could not fail are PULL, in one note:
   `-foot`, `-repnote`, `-saving`). S245 did this pass everywhere else; the tab
   was excluded because Sam was working it. **`--text-muted` is the fix** (6.9:1);
   it changes light too, on his tab, so it is his call.
+- ⭐ **`--brand` · `--link` · `--text` — 24 declarations that resolve to
+  NOTHING, in both themes (found S249).** `college_briefing.js` writes
+  `background:var(--brand)` and `border-left:4px solid var(--brand)` with no
+  fallback and no definition anywhere, so the whole declaration is invalid and
+  the property falls back to its initial value: the `.cb-bfrac>i` progress bar
+  is transparent and the `.cb-lead`/`.cb-next` accent borders do not draw. This
+  is **not** a theming defect and the dark-only rule does not apply to it —
+  fixing it changes what LIGHT looks like, so it is Sam's call, same as
+  `--text-faint` below. Sizes: `--brand` 14 · `--link` 6 · `--text` 4.
 - **Raw dark inks on dark grounds** — `#666666` (8), `#374151` (6), `#5A6478` (4),
   `#555555` (3). Latent-or-painted varies; fix what the sweep names.
 - **Printing while in dark mode.** The masthead is fixed, but consumer-JS dark
@@ -122,6 +144,27 @@ that could not fail are PULL, in one note:
 - **221 raw light-hex grounds** remain (index.html 68 in hand-maintained CSS,
   tmc_builder 42, credential_reference 31, unified_courses 31). ⚠️ **Not a
   worklist** — many are data payloads, generator-owned, or unpainted.
+
+⭐ **S249 PUT A NUMBER ON "THE SWEEP UNDER-REPORTS," AND IT IS THE WHOLE
+FINDING COUNT.** The 21-token fix moved the dark sweep **66 → 67** — measured
+both ways on the same tree with `git stash`, not inferred. The diff of the two
+finding lists is EMPTY in one direction: not one of the 62 phantom uses was
+ever being sampled, so none could be reported fixed. The single extra line is
+`map_data_quality`'s primary button, which the sweep simply had not sampled on
+the earlier run (it is a pre-existing fixed-ink defect, now fixed).
+
+⚠️ **SO A FINDING COUNT CANNOT BE THE ACCEPTANCE TEST FOR A TOKEN-LAYER FIX** —
+`.cplccr` chips, `.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes
+are all built on demand, and a surface the sweep never paints contributes
+neither a finding nor a fix. **Prove the token layer directly instead:** load
+both themes and read `getComputedStyle(document.documentElement)` for each
+token. 21/21 resolved to the intended value in dark and were unset in light —
+which is also the strongest available proof that no light pixel moved, stronger
+than the sweep, which merely agreed (63 → 63, byte-identical lists).
+⚠️ **Falsify the probe too.** Its first version could not fail: it compared the
+light value against `""` after an `|| "(unset)"` coalesce, so every token read
+BAD while the data underneath was perfect. Defining `--cpl-cream` in the light
+`:root` now flips it to BAD, as it should.
 
 ⚠️ **TWO PROCEDURE RULES FROM THIS RUN, in the note above:** the sweep
 UNDER-REPORTS (Annual Report showed 2 findings with both panes white — content
@@ -176,6 +219,8 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 |---|---|---|---|
 | `npm run a11y cobi-dark` — routes | 26 | 26 | **20** |
 | `cobi-dark` — **contrast findings** | 184 | 120 | **87** (−32% from 128) |
+| `cobi-dark` — findings, **S249** | — | — | **66 → 67** (see below) |
+| `cobi` (light) — findings, **S249** | — | — | **63 → 63**, list identical |
 | `npm run a11y cobi` (light) — routes | 18 | 18 | **18** |
 | `cobi` (light) — contrast findings | — | — | **62** (baseline 63) |
 | `npm test` | — | 316/316 | **321/321** |
