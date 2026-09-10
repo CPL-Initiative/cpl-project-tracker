@@ -71,13 +71,33 @@ const html = tpl.replace("__DATA__", safe(ATLAS)).replace("__GRAPHJS__", "")
   .replace("__ESLDATA__", "null").replace("__ESLJS__", "")
   .replace("__UNIVDATA__", safe(U)).replace("__UNIVMEM__", safe(MEM)).replace("__UNIVJS__", ujs);
 
+/* ⚠️ ONE CONTEXT, AND IT RECORDS. A canvas draw cannot be asserted from the DOM
+ * and jsdom reports every rectangle as zero, so the only way to check that
+ * something was DRAWN is to record the calls the draw path makes. `getContext`
+ * used to hand back a fresh noop object per call, which is fine for "do not
+ * crash" and useless for "was this stroked" — the checks below need the same
+ * instance the renderer used. */
+let CTX = null;
 function fakeCtx() {
+  if (CTX) return CTX;
   const noop = () => {};
-  return { setTransform: noop, clearRect: noop, fillRect: noop, beginPath: noop, arc: noop, fill: noop,
-           closePath: noop, createRadialGradient: () => ({ addColorStop: noop }),
-           stroke: noop, moveTo: noop, lineTo: noop, save: noop, restore: noop, setLineDash: noop,
-           strokeText: noop, fillText: noop, measureText: (t) => ({ width: String(t).length * 6 }),
-           fillStyle: "", strokeStyle: "", lineWidth: 1, font: "", textAlign: "", textBaseline: "" };
+  const segs = [];          // every stroked straight segment, with its pen
+  let cur = null;
+  CTX = { setTransform: noop, clearRect: noop, fillRect: noop, fill: noop,
+          closePath: noop, createRadialGradient: () => ({ addColorStop: noop }),
+          save: noop, restore: noop, setLineDash: noop, arc: noop,
+          strokeText: noop, fillText: noop, measureText: (t) => ({ width: String(t).length * 6 }),
+          fillStyle: "", strokeStyle: "", lineWidth: 1, font: "", textAlign: "", textBaseline: "",
+          lineCap: "", lineJoin: "",
+          beginPath() { cur = null; },
+          moveTo(x, y) { cur = { x0: x, y0: y }; },
+          lineTo(x, y) { if (cur) { cur.x1 = x; cur.y1 = y; } },
+          stroke() {
+            if (cur && cur.x1 != null)
+              segs.push({ ...cur, w: CTX.lineWidth, color: String(CTX.strokeStyle) });
+          },
+          _segs: segs, _reset() { segs.length = 0; } };
+  return CTX;
 }
 const dom = new JSDOM(html, {
   runScripts: "dangerously", pretendToBeVisual: true,
@@ -146,6 +166,43 @@ const CX = 480, CY = 300;
   pointer("pointermove", star.x, star.y);
   check("(6) ⭐ the carry NAMES the identity the release would write to — a curator can see it land",
     st().dropTarget === "WELD M1106", String(st().dropTarget));
+
+  /* ── (6b)-(6d) THE CONNECTOR ──────────────────────────────────────────────
+   * Sam, 2026-09-10: "when a course is dragged to merge into another course,
+   * the connecting line should be more prominent. Now it gets lost in the
+   * crowd." There was NO connector — a 2.5px ring on the target and a dot at
+   * the cursor, one color, with up to fifty thousand dots of the same palette
+   * between them, and the eye left to infer the pair.
+   *
+   * ⚠️ ASSERTED AS DRAW CALLS, because a canvas cannot be queried and jsdom
+   * reports every rectangle as zero. The recording context above keeps each
+   * stroked SEGMENT with its pen; the target ring is an `arc` and is
+   * deliberately not a segment, so these checks cannot pass on the ring alone.
+   * ⚠️ Endpoints are not asserted for LENGTH: this fixture's drop target is
+   * eclipsed by the cursor, so the connector is legitimately near-zero here.
+   * What is asserted is that it is drawn, and drawn twice with different pens —
+   * the halo is what buys legibility on a dense field, not width. */
+  /* ⚠️ THE CONNECTOR IS FOUND BY ITS SIGNATURE, NOT BY POSITION. The same draw
+   * also strokes member spokes and orbit tethers, so "the first segment" is one
+   * of those — the pair is identified as two CONSECUTIVE strokes of the SAME
+   * line with different pens, which is what the halo treatment means. */
+  CTX._reset();
+  pointer("pointermove", star.x, star.y);
+  const segs = CTX._segs;
+  let pair = null;
+  for (let i = 0; i + 1 < segs.length; i++) {
+    const a = segs[i], b = segs[i + 1];
+    if (a.x0 === b.x0 && a.y0 === b.y0 && a.x1 === b.x1 && a.y1 === b.y1 && a.w > b.w) { pair = [a, b]; break; }
+  }
+  check("(6b) ⭐ carrying over a target STROKES A CONNECTOR — the merge reads as " +
+    "a line between two things, not two marks that happen to be lit",
+    !!pair, `no haloed pair among ${segs.length} stroked segments`);
+  check("(6c) …haloed first, then drawn — two pens over the same line",
+    !!pair && pair[0].color !== pair[1].color,
+    pair ? JSON.stringify(pair) : "no pair");
+  check("(6d) …and it is thicker than the 2.5px the ring used to carry alone",
+    !!pair && pair[1].w >= 3, `connector width=${pair && pair[1].w}`);
+
   pointer("pointerup", star.x, star.y);
   const last = st().moves[st().moves.length - 1];
   check("(7) ⭐ THE BUG: a drop on a circle eclipsed by the open identity's own star lands on the CIRCLE",

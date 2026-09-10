@@ -1953,8 +1953,31 @@ function drawFrame(){
     if(drag.over && drag.overIsl){
       var dp=w2s(drag.over.x+(drag.overIsl.dx||0), drag.over.y+(drag.overIsl.dy||0), drag.overIsl);
       if(dp){
-        ctx.beginPath(); ctx.arc(dp[0],dp[1],Math.max(9,nodeRad(drag.over, islScale(drag.overIsl))+6),0,6.2832);
-        ctx.strokeStyle=pal.drag; ctx.lineWidth=2.5; ctx.stroke();
+        /* ⭐ THE MERGE READS AS A LINE BETWEEN TWO THINGS, NOT AS TWO MARKS THAT
+         * HAPPEN TO BE LIT (Sam, 2026-09-10: "the connecting line should be more
+         * prominent. Now it gets lost in the crowd"). There was no connector at
+         * all — a ring on the target and a dot at the cursor, each 2.5px of one
+         * color, with up to fifty thousand dots of the same palette between them.
+         * The eye had to infer the pair.
+         *
+         * ⚠️ EVERY STROKE IS HALOED FIRST, and that is what buys prominence on a
+         * dense field rather than raw width: the ground under this line is a
+         * star field of the same value range, so a wider line in the same color
+         * gets no more legible. The halo is the page's existing label treatment
+         * (pal.halo), so the connector reads the way a placed name already does.
+         * ⚠️ Drawn BEFORE the cursor dot and the label so neither is covered. */
+        ctx.save();
+        ctx.lineCap="round"; ctx.lineJoin="round";
+        // the connector, haloed then drawn
+        ctx.beginPath(); ctx.moveTo(drag.px,drag.py); ctx.lineTo(dp[0],dp[1]);
+        ctx.strokeStyle=pal.halo; ctx.lineWidth=7; ctx.stroke();
+        ctx.strokeStyle=pal.drag; ctx.lineWidth=3; ctx.stroke();
+        // the target ring, same treatment so the two read as one gesture
+        var rr=Math.max(11,nodeRad(drag.over, islScale(drag.overIsl))+7);
+        ctx.beginPath(); ctx.arc(dp[0],dp[1],rr,0,6.2832);
+        ctx.strokeStyle=pal.halo; ctx.lineWidth=7; ctx.stroke();
+        ctx.strokeStyle=pal.drag; ctx.lineWidth=3.5; ctx.stroke();
+        ctx.restore();
       }
     }
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -3563,6 +3586,25 @@ function askParse(text){
   return JSON.parse(t.slice(a, b+1));
 }
 
+/* ⭐ A TOKEN THAT CANNOT FLY IS A SELECTION THE READER NEVER SEES.
+ * `applyTokens()` moves the camera through `goSuggestionSingle(t.s)` — the
+ * suggestion object the reader clicked — and an ask-resolved token had no `s`
+ * at all. `goSuggestionSingle` opens with `if(!s || !U) return false`, so the
+ * call was a SILENT NO-OP: the chip rendered, "Recenter on Welding" appeared,
+ * the answer sentence printed, and the map stayed exactly where it was.
+ * Sam, 2026-09-10: "when asked to center on welding, it stays on Fire."
+ *
+ * ⚠️ ONLY `term` TOKENS EVER FLEW, and that is why this survived a suite: the
+ * ask path's own checks asserted `__ccrTokenKeys()`, which is the SELECTION,
+ * and a selection is set correctly here. Nothing asked whether the VIEW moved —
+ * the same shape as the message that printed 850px from the box, one day later
+ * and in the same feature.
+ * [note](../docs/kb-notes/methodology-a-check-on-the-message-says-nothing-about-where-it-lands.md)
+ *
+ * The token already carries everything goSuggestionSingle reads (kind, isl, nd,
+ * label), so `s` is the token itself rather than a second object that could
+ * drift from it. */
+function askToken(t){ t.s=t; return t; }
 /* ⭐ RESOLVE, NEVER TRUST. Returns the tokens that resolved AND the names that
  * did not, because "we could not find that discipline" and "that discipline has
  * nothing in it" look identical on a map and mean opposite things. */
@@ -3585,7 +3627,7 @@ function askResolve(sel){
           var d=I.d.toLowerCase(); return d.indexOf(want)>=0 || want.indexOf(d)>=0; });
         if(near.length===1) hit=near[0];
       }
-      if(hit) out.tokens.push({kind:"subject", key:"disc:"+hit.d, label:hit.d, isl:hit});
+      if(hit) out.tokens.push(askToken({kind:"subject", key:"disc:"+hit.d, label:hit.d, isl:hit}));
       else out.missed.push(String(item.name));
       return;
     }
@@ -3593,7 +3635,7 @@ function askResolve(sel){
       var id=String(item.id==null?"":item.id).trim();
       if(!id) return;
       var h=nodeById(id);
-      if(h) out.tokens.push({kind:"course", key:"crs:"+h.nd.i, label:h.nd.t||h.nd.i, isl:h.isl, nd:h.nd});
+      if(h) out.tokens.push(askToken({kind:"course", key:"crs:"+h.nd.i, label:h.nd.t||h.nd.i, isl:h.isl, nd:h.nd}));
       else out.missed.push(id);
       return;
     }
