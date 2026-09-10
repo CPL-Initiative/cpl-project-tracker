@@ -5,10 +5,10 @@
   "_counts": {
     "blank_after_fill": 86,
     "subject_codes": 45,
-    "codes_with_no_corroboration": 37,
-    "codes_corroborated_by_one_row": 6,
-    "filled_from_the_subject_map": 196,
-    "filled_from_the_identifier_reference": 44
+    "codes_with_no_corroboration": 35,
+    "codes_corroborated_by_one_row": 5,
+    "filled_from_the_subject_map": 0,
+    "filled_from_the_identifier_reference": 0
   },
   "subjects": [
     {
@@ -84,10 +84,10 @@
         "Wastewater Treatment I",
         "Wastewater Treatment II"
       ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
+      "same_prefix_identities": 2,
+      "they_are_filed_under": "Environmental Technologies",
+      "how_many_agree": 2,
+      "corroboration": "2 of 2 identities"
     },
     {
       "subj4": "TOUR",
@@ -122,10 +122,10 @@
         "Plant Materials and Usage II",
         "Introduction to Environmental Horticulture"
       ],
-      "same_prefix_identities": 1,
-      "they_are_filed_under": "Agricultural Production",
-      "how_many_agree": 1,
-      "corroboration": "a single row, which is not a vote"
+      "same_prefix_identities": 7,
+      "they_are_filed_under": "Ornamental Horticulture",
+      "how_many_agree": 6,
+      "corroboration": "6 of 7 identities"
     },
     {
       "subj4": "AG-PS",
@@ -140,10 +140,10 @@
         "Introduction to Soil Science",
         "Introduction to Plant Science"
       ],
-      "same_prefix_identities": 1,
+      "same_prefix_identities": 2,
       "they_are_filed_under": "Agriculture",
-      "how_many_agree": 1,
-      "corroboration": "a single row, which is not a vote"
+      "how_many_agree": 2,
+      "corroboration": "2 of 2 identities"
     },
     {
       "subj4": "HUMN",
@@ -354,10 +354,10 @@
       "titles": [
         "Agricultural Computer Applications"
       ],
-      "same_prefix_identities": 3,
+      "same_prefix_identities": 4,
       "they_are_filed_under": "Agriculture",
-      "how_many_agree": 3,
-      "corroboration": "3 of 3 identities"
+      "how_many_agree": 4,
+      "corroboration": "4 of 4 identities"
     },
     {
       "subj4": "ARTN",
@@ -438,10 +438,10 @@
       "titles": [
         "Dental Materials"
       ],
-      "same_prefix_identities": 0,
-      "they_are_filed_under": null,
-      "how_many_agree": 0,
-      "corroboration": "none — no other identity carries this prefix"
+      "same_prefix_identities": 1,
+      "they_are_filed_under": "Dental Technology",
+      "how_many_agree": 1,
+      "corroboration": "a single row, which is not a vote"
     },
     {
       "subj4": "DGME",
