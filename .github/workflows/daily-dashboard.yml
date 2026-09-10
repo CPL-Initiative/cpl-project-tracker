@@ -411,6 +411,11 @@ jobs:
           # SkyView's CPL payload (Step 4d3): the crosswalk joined to the curated
           # agencies and the articulated-exhibit feed, rebuilt every run.
           git add prototype/ccr_cpl.json 2>/dev/null || true
+          # ⚠️ REBUILT EVERY RUN AND NEVER LANDED (found 2026-09-10, S252): step
+          # 4d3b regenerated this payload daily while this list did not name it,
+          # so main's copy went stale against the refreshed CER and
+          # tests/ccr_cpl_universe_test.py read red on main itself.
+          git add prototype/ccr_cpl_universe.json 2>/dev/null || true
           # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
           git add prototype/ccr_sky.json 2>/dev/null || true
           # The discipline-blank worklist (Step 4d5): the identities the edge
