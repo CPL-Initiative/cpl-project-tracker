@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 428,
+   "count": 429,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1537,6 +1537,26 @@
      "title": "A grouping key must come from the authoritative set, not from the rows being grouped",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [
+      "college_activity_template.html",
+      "tests/cpl_theme.test.js",
+      "excel_to_dashboard.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "generators",
+      "testing",
+      "ci",
+      "design-system"
+     ],
+     "title": "A guard on generated output cannot see a regression staged in its source",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-19",
@@ -16658,5 +16678,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 862
+ "total": 863
 }

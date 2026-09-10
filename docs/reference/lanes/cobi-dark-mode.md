@@ -242,6 +242,16 @@ finding, so 38 fixes can leave it at 26. Steer by the finding count and the
 color-pair ranking. ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, which made
 the ground swap provably safe: light held at 18 across every pass.
 
+⚠️ **SWEEP THE GENERATOR'S INPUT, NOT ONLY THE HTML (S246, 2026-09-10).**
+S245 swept the four College Activity filter controls in both HTMLs and left
+`background:#fff` standing in `college_activity_template.html`, which
+`excel_to_dashboard.py` emits verbatim — so the first cron run after the outage
+put all four back. The check added in the same PR read `CPL_Dashboard.html` only
+and could not see it. `cpl_theme.test.js` now guards the template too
+(`GENERATED_FROM`); add any future emitted template to that list, and expect a
+red artifact check after a generator repair to be latent source drift surfacing.
+[`methodology-a-guard-on-generated-output-cannot-see-its-source`](../../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md)
+
 ⚠️ **THE GLYPH ROW IS MOSTLY A CORRECTION.** Of the 401 reported, **348 belong to
 `excel_to_dashboard.py`** (plain words there already, cleared by the next cron,
 correctly refused by `--apply`) and 8 were arrows inside COURSE TITLES in

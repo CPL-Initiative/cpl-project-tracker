@@ -443,3 +443,11 @@ jobs:
       # Pure-stdlib python, no network, no ffmpeg.
       - name: Video context frame planner (kb/_video_context.py)
         run: python3 tests/video_context_test.py
+      # Rule 3, the no-date-gaps guard (added by #1541, wired here in S249).
+      # ⚠️ IT WAS COMMITTED WITHOUT A RUNNER. `tests/run.js` auto-discovers
+      # `tests/*.test.js` only, so a `*_test.py` runs nowhere unless a step
+      # names it — and this file was referenced in no workflow, no script and
+      # no package.json. A guard nobody runs reports nothing, which is the
+      # failure mode #1541 was itself written about. Pure-stdlib python.
+      - name: KPI history has no date gaps (Rule 3)
+        run: python3 tests/kpi_history_no_gaps_test.py

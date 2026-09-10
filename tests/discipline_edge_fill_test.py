@@ -88,26 +88,52 @@ def main():
         src = open(payload, encoding="utf-8").read()
         i = src.index("window."); i = src.index("=", i) + 1
         live = json.loads(src[i:].strip().rstrip(";"))["rows"]
-        # ⚠️ THE PAYLOAD NOW SHIPS WITH THE FILL ALREADY APPLIED, so the rows
-        # still blank IN IT are, by construction, the ones the edge cannot
-        # reach -- counting how many of THOSE it fills can only ever read 0.
-        # The old assertion here ("filled >= blank_before * 0.5") measured
-        # whether the fix works against a payload generated BEFORE the fix
-        # existed, and so it went red the first time the cron regenerated one
-        # carrying it: main 9ba2551, 2026-09-10, "filled 0 of 86". Nothing in
-        # the code had changed. Ask the question the other way round -- CLEAR
-        # the edge's own fills and make it re-derive them -- and it survives
-        # every regeneration, because it no longer depends on there being
-        # unfilled work left in the artifact.
+        blank_before = sum(1 for r in live if not r.get("disc"))
+        st = discipline_edge_fill(live, KB)
+        filled = blank_before - st["blank_after"]
+        # ⚠️ THIS CHECK ONCE MEASURED YIELD, AND YIELD GOES TO ZERO ON SUCCESS
+        # (2026-09-10). It read `filled >= blank_before * 0.5` -- written when
+        # the fill was a post-hoc repair a reader applied to a committed
+        # payload. S242 (#1517, 2026-09-08) wired discipline_edge_fill() INTO
+        # excel_to_dashboard.py, so the generator now fills at generation time
+        # and the committed payload arrives already at the fixed point. The
+        # cron died the same day and ran no payload until 2026-09-10, so the
+        # old assertion stayed green on a payload predating its own premise;
+        # the first run afterwards filled 240 of 326 upstream and the check
+        # failed 0-of-86 ON SUCCESS.
+        #
+        # So assert the FIXED POINT instead, which catches the same failure
+        # from the other side: if the generator ever stops applying the fill,
+        # the blanks come back and `filled` jumps off zero.
+        check(f"the committed payload is already edge-filled -- re-running finds "
+              f"nothing to do ({blank_before} blank, {filled} fillable)",
+              filled == 0,
+              f"{filled} of {blank_before} blanks are still fillable -- the "
+              f"generator emitted a payload it had not run the edge fill over")
+        # The residue is real (SUBJ4s absent from every store), not a stall, so
+        # it is bounded rather than zero. 86 on 2026-09-10 of 16,480 rows.
+        check(f"the unfillable residue stays small ({blank_before} of {len(live)})",
+              blank_before <= len(live) * 0.02,
+              f"{blank_before} blank of {len(live)}")
+
+        # ⭐ AND THE ROUND TRIP, WHICH THE FIXED POINT CANNOT SEE (S249).
+        # Two sessions fixed this check the same day from opposite sides, and
+        # BOTH are kept because each is blind where the other looks. The fixed
+        # point above asks "did the GENERATOR apply the fill" -- but it reads
+        # `filled == 0`, and a discipline_edge_fill() that has stopped filling
+        # anything at all ALSO returns 0 against a payload an earlier run
+        # already filled. So ask the other question directly: CLEAR the edge's
+        # own fills on the live rows and make it re-derive every one. Measured
+        # by falsification -- emptying `edge` inside the function drops this to
+        # 155 of 196 while the fixed-point check above stays green.
         stamped = [r for r in live if r.get("dsrc") == "subject_map_edge"]
         for r in stamped:
             r["disc"] = None
             r.pop("dsrc", None)
-        st = discipline_edge_fill(live, KB)
+        discipline_edge_fill(live, KB)
         refilled = sum(1 for r in stamped if r.get("disc"))
-        check(f"on the live payload the edge re-derives every fill it shipped "
-              f"({refilled} of {len(stamped)}; {st['blank_after']} rows stay "
-              f"blank — subjects the map carries no entry for)",
+        check(f"and the edge re-derives every fill it shipped "
+              f"({refilled} of {len(stamped)})",
               bool(stamped) and refilled == len(stamped),
               f"re-filled {refilled} of {len(stamped)}")
         psyc = [r for r in live if r["id"] == "PSYC C1000"]

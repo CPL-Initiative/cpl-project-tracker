@@ -201,6 +201,22 @@ check("⭐ no literal white background survives in the HTML stylesheets",
 check("⭐ no literal white background survives in the HTML markup either",
   !/style="[^"]*background(-color)?:\s*(#fff(fff)?|white)\b/i.test(cpl));
 
+// ⚠️ AND THE GENERATOR SOURCE, NOT ONLY THE ARTIFACT IT WRITES (Session 246).
+// The two checks above pass on CPL_Dashboard.html, which the daily cron
+// REGENERATES section by section (Rule 1). S245 swept the four filter controls
+// in both HTMLs and left `background:#fff` standing in the template
+// excel_to_dashboard.py reads to emit that card — so these checks went green on
+// a swept artifact whose source still held the literal. They stayed green only
+// because the cron was broken from 09-08; its first successful run afterwards
+// (5545e018) put all four back and turned this file red. A check that guards
+// the output of a generator and not its input cannot see the regression coming.
+const GENERATED_FROM = ["college_activity_template.html"];
+for (const f of GENERATED_FROM) {
+  const src = fs.readFileSync(f, "utf8");
+  check(`⭐ ${f}: no literal white background in the generator source either`,
+    !/background(-color)?:\s*(#fff(fff)?|white)\b/i.test(src));
+}
+
 // ⚠️ A FILL THAT IS THE SAME IN BOTH THEMES MUST CARRY INK THAT IS TOO.
 // --gold-accent resolves to #E3B341 in light AND dark (it is never redefined),
 // but .cpl-todo-badge painted --navy-primary on it — and --navy-primary flips
