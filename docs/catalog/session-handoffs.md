@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-227 document(s).
+228 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 254 | [the sweep is an instrument, and CPL is a universe](../session_254_handoff.md) | 2026-09-10 |
 | 253 | [the rest of the phantoms, and three guards that reported nothing](../session_253_handoff.md) | 2026-09-10 |
 | 252 | [the four blind checks, and CPL mode's universe](../session_252_handoff.md) | 2026-09-10 |
 | 251 | [three silences, and a description that belongs to nobody](../session_251_handoff.md) | 2026-09-10 |

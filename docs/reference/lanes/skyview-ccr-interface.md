@@ -17,13 +17,8 @@ related:
 > [archive](../../ccr_atlas_lessons_archive.md); the queue behind the priority is
 > [`skyview_backlog`](../../skyview_backlog.md).
 >
-> ⭐ **COMPACTED 2026-09-09, from 33,041 B (2.75× budget) to under it.** Three
-> checkpoints had deferred this as "worth its own sitting". Every invariant was
-> KEPT as a rule; what left was its derivation — the fps numbers, the session
-> archaeology, the verbatim quotes restating the rule beside it — all of which
-> the lessons doc already holds, dated. **Do not re-inflate a rule with its
-> evidence.** If an invariant needs its story, the story goes to the lessons doc
-> and a pointer comes back.
+> ⭐ **Compacted 2026-09-09 (2.75×) and 2026-09-10. Do not re-inflate a rule
+> with its evidence** — the story goes to the lessons doc; a pointer comes back.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -43,6 +38,13 @@ keyboard path. **`#skyview` OPENS AS THE SKY** since S239 — **Sky · Globe** a
 places to stand on ONE canvas. A course opens its outline of record (S235); a
 staged move is marked on the course itself (S239).
 
+**Swept end to end 2026-09-10 (S252):** `npm run sweep` drives the served page
+through every reader and curator action (~200 checks) and passes. The two defects
+it found shipped the same day — the Ask's union where a question meant an
+intersection (Sam's *"introductory welding courses"* screenshot), and the *Drag…*
+mouse path that left Esc dead — and what it observed and did not change is
+[`skyview_backlog` ⑩](../../skyview_backlog.md).
+
 **Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
 dropped course PARKS; courses gather by level on the ring score already chose;
 **CTE vs academic** is three Show switches (25,857 · 16,470 · **7,569 with no
@@ -61,9 +63,9 @@ IT BEFORE TOUCHING THE CODE.** Around forty rules, each written because a sessio
 wrong once, grouped as: the payload and the model · building and serving · the
 window, the row and the canvas · pointer, touch and the turn · the sphere ·
 labels and the frame budget · search, the ask and the lists · the outline, the
-skills and the CPL face. They moved out of THIS file on 2026-09-09 because they
-are reference, not state — but a store nobody names is a store nobody finds, so
-this pointer is the safety mechanism, not a courtesy.
+skills and the CPL universe. Moved out of THIS file on 2026-09-09 (reference, not
+state); a store nobody names is a store nobody finds, so this pointer is the
+safety mechanism.
 
 The ones most often needed first: the canvas height is **JS-owned** by
 `fitCanvas()` and CSS cannot take it; `npm test` proves **nothing** about layout
@@ -129,45 +131,30 @@ directly; the builder is a new one. Lane-sized, not a session's work.
 3,813 local exhibits in 97 islands · 1,603 with a ring · 534 grouped / 1,453
 singleton · 84 statewide, all articulated · 543 in the pile.**
 
-**The CER supplies every axis**, so the builder reads one file: `ut` the identity,
-`raw_variants` the members, `disc_modal` the island, `n_articulation_lines` the
-ring, `issuer`/`issuers`/`trainer` the agencies, plus `statewide` and `cpl_types`.
+**Builder invariants are PULL** — the CER supplies every axis and agencies come
+from it, never the crosswalk's inlined issuer; the credit funnel's count is never
+mixed in; the layout is IMPORTED from the course universe; `slug()` truncates at
+60 and `ident_id()` appends a digest; a singleton draws as any identity and the
+543-credential pile ships visible (Sam's two rulings). Each is a check in
+`tests/ccr_cpl_universe_test.py`; the story is the SkyLedger section of
+[`ccr_atlas_lessons`](../../ccr_atlas_lessons.md).
 
-⚠️ **Read agencies from the CER, NEVER the crosswalk's inlined `issuing_agency`** —
-a 2026-05-21 snapshot wrong on 1,743 of 4,592 records. Asserted at RUNTIME by
-recording what the build opens, because the first version of that check grepped
-the source and failed on the builder's own comment saying not to read it.
-⚠️ **Never mix in the credit funnel's exhibit count** — it and the articulation
-feed share 570 ids. A coverage line takes both numbers from one universe.
+✅ **THE VIEW SHIPPED (S252)** — the CPL word swaps the universe under the same
+map (`bindUniverse` + a full re-render; hash · legend · Show menu · corpus · light
+all this universe's). A credential's card lists the courses articulated to it,
+each a door onto the Courses map, and the local exhibits folded in; a statewide
+credential wears a second ring and the word on its label. Nothing moves there.
+Members payload: `kb/_build_ccr_cpl_universe_members.py` (0.99 MB, cron beside
+4d3b, `tests/ccr_cpl_universe_members_test.py`). Swept: `npm run sweep` §K + §R.
+[invariants](../skyview_invariants.md#the-outline-the-skills-and-the-cpl-universe)
 
-✅ **SAM'S TWO SHAPE RULINGS, 2026-09-10** — each pinned by a check:
-- **A singleton draws as any other identity, a group of one.** 73% of CER titles
-  (1,453 of 1,987) hold exactly one local exhibit; the Firefighter-1 case he
-  described is the 534 that genuinely group (257 pairs, 118 with six or more,
-  max 31). Courses mode already draws 3,217 single-satellite identities so.
-- **The 543 with no discipline SHIP as a visible island**, not a blocked build.
-  ⚠️ There is no mechanical route to a discipline for them: TOP recovers 4 (and
-  Rule 7 bars TOP as a primary discipline call regardless), issuer recovers 11
-  (42 issuers are discipline-mixed against 19 unanimous). 159 are articulated,
-  so they are live points. A curator pass, never an inference.
-
-⚠️ **THE LAYOUT IS IMPORTED, NEVER COPIED.** `layout_island`/`build_islands` take
-a `point_fn` (default `point_of`, the course shape); the CPL builder passes an
-exhibit shape. Two packers would stop agreeing about what a discipline looks
-like — the reason `kb/alias_chain.py` is imported. Proven neutral: both universes
-regenerate **byte-identical** on the same data under either code version.
-
-⚠️ **`slug()` TRUNCATES AT 60 AND THAT COLLIDES CER TITLES.** It names a
-description shard FILE, so it must not be widened; two Carpenters titles differ
-only past the cut and merged into one entity on the first build. `ident_id()`
-appends a digest of the exact title. ⚠️ The id derives from the TITLE, so a
-rename re-mints it — safe while nothing stores a reference, but the first feature
-that persists one needs a real surrogate key on the CER (Rule 7).
-
-**NEXT: the view.** The payload is drawable; nothing draws it. Sam's statewide ask
-(*"shown visibly on the sky so folks can easily see…"*, message truncated — the
-rest is unanswered) is met on the data side: every statewide point carries `sw`.
-At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled.
+**NEXT: refine in prod.** Sam's statewide ask (*"shown visibly on the sky so
+folks can easily see…"*, truncated) is met with the ring and the label word; a
+PERMANENT label for the 84 is the next call (1,987 cannot be labeled, 84 can).
+The 543-credential pile island draws as *(no discipline yet)*; the card caps the
+course list at 40 and the members at a page. Ask SkyView still resolves against
+the course vocabulary on the CPL map (the envelope's discipline list is the
+same; the terms are not).
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
@@ -205,5 +192,5 @@ per-node loop (14%) and the island loop (10%) — the irreducible walk. **Fewer
 points per frame is the lever that has worked three times running.**
 ⑦ The rest of the queue: [`skyview_backlog`](../../skyview_backlog.md).
 
-⚠️ Whatever changes, the drop test, the keyboard path and `npm run a11y skyview`
-run again in the same PR — and `scripts/check_generated.sh` LAST before a push.
+⚠️ Whatever changes, `npm run sweep` and `npm run a11y skyview` run again in the
+same PR — and `scripts/check_generated.sh` LAST before a push.

@@ -1666,3 +1666,132 @@ them arrived mid-turn and **cut off at "so folks can easily see…"**; the data 
 is done (`sw` on every one), the treatment waits on the rest of his sentence.
 ⚠️ At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled —
 which would satisfy "color is never the only signal" with a word, not a mark.
+
+## 2026-09-10 — SkyLabel (Session 252): the sweep, a union that should have been an intersection, and a checker older than its page
+
+**Sam's ask:** sweep SkyView's functionality through every action a user and a
+curator can take, and advise. Mid-run he sent a screenshot of the deployed page:
+*"show me all introductory welding courses"* had not presented intro welding.
+
+### ⭐ The instrument, and what the existing one could not see
+
+`prototype/check_skyview_sweep.js` (`npm run sweep`) drives the SERVED page in
+Chromium through ~200 checks: the Sky opening, the row, the More menu, Show,
+ticking then Enter and the chips, the Ask with a mocked assistant and with the
+network refused, hover and click and empty ground, the carry, the drop target, the
+park, Put back and Move instead, the outline sheet's staged edits, the grip, the
+window steps, every hash route, reduced motion, Close, a phone's pinch and the
+768px sheet. `npm test` (321 files), `npm run a11y skyview` (11 routes) and the
+sweep all pass on the page as shipped.
+
+`prototype/check_ccr_atlas.js` read **13 FAILs on a page that is right.** It clicks
+a suggestion row expecting a fly (a row only ticks since 2026-09-06), expects the
+flat map's percent readout on a page that opens as the Sky, expects `Pan/Move` as
+the only chips, a `#prov` hover, "moved here" where the words are now "staged here
+— not saved", a course to have LEFT its origin card when the origin now lists it
+under *Staged to move away* with a re-target button carrying the same `data-cn`,
+and measures the hidden *Controls* word as a 24px wrap. **A check written for one
+ruling reads red under the next**, and nothing dates a check. The sweep's header
+says which of its own FAILs are harness assumptions; the a11y run's header says
+what it cannot see. Both are the same discipline: an instrument states its blind
+spots, or its red is a ghost the next session chases.
+
+### ⭐ The Ask's union was an intersection to the reader
+
+The model answered Sam's question exactly as instructed — `{discipline Welding}`
+plus `{term introductory}` — and the page did exactly what chips do: a UNION. Every
+introductory title in every discipline ringed (141 of them), the camera flew to
+the densest island, and Welding was not in view while the answer beside the box
+promised *"all introductory welding courses"*. The envelope even asks for "one
+discipline plus at most one term", which is the shape of every *X courses in Y*
+question, and the grammar had no *within*.
+
+Two facts decided the fix. **Scope:** a term named beside a discipline now carries
+`within` (the ask path only — a reader ticking rows still gets the union they
+asked for), `tokenHits()` searches inside those islands, and the camera lands on
+the hits. **Vocabulary:** measured before writing a line, *introductory* names 2
+Welding titles and *Introduction to …* 44 — scoping alone would have answered
+"2". A scoped word with under three hits is retried as its first five letters and
+the answer beside the box says so (*"introductory" names 2 titles there, so
+"intro" is shown*). Live: 47 courses ringed inside Welding at 25° across. ⚠️ The
+envelope now asks the model for the stem; the fallback is for the day it does not.
+
+### ⚠️ A mouse click is two events, and the second one was dead
+
+*Drag…* in the panel picks a course up on `pointerdown` (with `preventDefault`,
+so focus stays where it was) and the `click` handler acted only when nothing was
+carried — which after a pointerdown is never. So a mouse user's panel never said
+*Carrying*, focus stayed on the body, and *Esc puts it back* — the hint's own
+promise — reached nothing. The reader's next click on the map, made to get focus
+back, parked the course. Every jsdom check dispatched a bare `click`, the
+keyboard's path, and passed. The click now completes the pick-up it started;
+`ccr_skyview_carry_release.test.js` (17) dispatches both events.
+
+### What the sweep saw and left alone
+
+Six observations, none a defect, in [`skyview_backlog` ⑩](skyview_backlog.md):
+two zooms for one destination, the wheel not stopping the turn, a hidden panel
+giving a selection no words, a chip that reads `I…`, Close after a sheet edit
+landing on the canvas, and the stale checker.
+
+### The CPL view: a second universe under the same map, and four things the first cut got wrong
+
+Sam's ruling of 2026-09-10 — *"another universe where the entities are exhibits
+rather than courses"* — shipped as a payload swap, not a second renderer. The
+CPL word calls `bindUniverse("cpl")`, which points `U` and the window payloads at
+`ccr_cpl_universe.json` + its members, drops every memo of the leaving universe,
+and re-enters `__ccrUniverse`. Everything the course map already does — the
+islands, the rings, the hover, the card, search, the Show menu, the sphere —
+runs on credentials unchanged. The first cut got six things wrong, each of
+them found by a check rather than on screen:
+
+- **The swap rendered nothing.** `__ccrUniverse` keeps the render when
+  `U===window.CPL_CCR_UNIVERSE` — and after the swap both point at the NEW
+  payload, so the guard read the swap as nothing to do. The canvas drew
+  credentials under the course legend, the course Show menu, an empty roster and
+  a course jump that never fired. A `rebound` flag now forces the full render.
+- **The legend read `undefined`.** `return` followed by a newline returns
+  undefined (ASI); the whole exhibit legend was an unreachable expression
+  statement. One paren.
+- **A route whose payload never comes drew nothing.** `__ccrUniverse` hands the
+  face off to `setUniverse` before rendering; on a missing file the fallback
+  repainted the word and stopped. It re-enters with the route's other options now,
+  and the hash follows the WORD the reader pressed rather than the payload.
+- **`ar` is not "courses articulated".** It is the CER's `n_articulation_lines`
+  — one per receiving college course, so AP English Language reads one identity
+  and three lines. The members guard pinning ring = card caught it on 201 points.
+  The word is *articulations*, and the card's header says both numbers.
+- **The swap restarted a turn the reader had stopped.** The render starts the
+  sky turning because that is what an OPENING does; a swap is a re-render, and
+  the sweep's click landed on ground the point had just left. `turnBefore` is
+  read at the swap and the render honors it.
+- **The staged-moves pane came back empty.** The render seeds `#u-writes` with
+  *No moves yet* and only `applyMove` ever painted it — so any re-render (a trip
+  to the workspace, an outline, now a swap) blanked a curator's list until their
+  next move. Pre-existing; `drawWrites()` runs at render now.
+
+Two memories were added so the maps stop leaking into each other: the Show
+switches and the light are kept per universe (`showMemo`, `litMemo`). CPL opens
+lit — the ring is the point of it — and Deselect all on one map never touches
+the other's. The members payload is a builder of its own
+(`kb/_build_ccr_cpl_universe_members.py`) that IMPORTS `ident_id` rather than
+restating it: a members file keyed one character differently is a universe of
+credentials with no members, and a dict lookup does not error.
+
+### Checkpoint addendum — two harness lessons and one red check
+
+- **A harness coordinate is a claim about geometry, and the page can be asked.**
+  The sweep's hover read the island's tip on a point the click then selected.
+  `screenOf()` already returns PAGE coordinates (canvas offset added); the hover
+  added the offset again and aimed 110px low. Four sweep runs went to hypotheses
+  (a turn restarting, a menu left open, a hidden panel — each real, none this).
+  `window.__ccrPickAt(px,py)` now says what the page found under a pointer, and
+  the check stated its coordinates: one run. **Give the harness a way to ask the
+  page, before guessing why the page disagrees.**
+- **Rebuild derived files after the LAST edit.** CI read the dependency map
+  STALE on the PR's final push: the map was regenerated, then the client and the
+  sweep were edited once more. The S251 lesson (stage before you rebuild) has a
+  sibling: the rebuild goes last, or `check_generated.sh` is run last, every time.
+- Merged: **#1546** (`e45a77d`, the sweep and its two defects) and **#1547**
+  (`f09a567`, the CPL universe); the vault's session note in CPLBrain **#136**.
+

@@ -431,6 +431,74 @@ const keys = () => w.__ccrTokenKeys();
     moved2.k > parked2.k,
     `parked=${JSON.stringify(parked2)} moved=${JSON.stringify(moved2)}`);
 
+  /* ── (17) A TERM BESIDE A DISCIPLINE IS THE TERM WITHIN IT ──────────────────
+   * Sam, 2026-09-10, from a screenshot of the deployed page: "show me all
+   * introductory welding courses" resolved to {Welding} + {introductory}. The
+   * chips are a UNION, so the map ringed every introductory title in every
+   * discipline and flew to the densest one — Welding was not in view, and the
+   * answer beside the box still said "Showing all introductory welding
+   * courses". The fixture's "Practice" titles sit in all four islands, which is
+   * that shape in miniature: 8 titles say Practice, 2 of them in Welding.
+   * ⚠️ (4) above asserts the same reply and passes on the union; this asserts
+   * what is RINGED and where the camera lands, which is what the reader gets. */
+  w.__ccrCommitSelection([], keys().slice());
+  await settle();
+  reply = { answer: "Welding practice courses.", cannot: "",
+            select: [{ kind: "discipline", name: "Welding" }, { kind: "term", term: "practice" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("show me all practice welding courses");
+  await settle();
+  check("(17) ⭐ the term rings only the titles INSIDE the discipline it was named with",
+    st().hits === 2, `hits=${st().hits} — 8 titles say Practice, 2 of them in Welding`);
+  check("(17b) …and the chip says so",
+    /practice in Welding/.test((q("#u-tokens") || {}).textContent || ""),
+    ((q("#u-tokens") || {}).textContent || "").slice(0, 80));
+  /* The page SPREADS the islands on load, so the fixture's raw x is not where a
+   * point sits; ask the payload the page drew rather than the numbers typed above. */
+  const scopedView = viewOf();
+  const wI = w.CPL_CCR_UNIVERSE.islands.find((I) => I.d === "Welding");
+  const wxs = wI.p.map((p) => p.x + (wI.dx || 0));
+  const wMid = (Math.min(...wxs) + Math.max(...wxs)) / 2;
+  check("(17c) ⭐ …and the camera lands on those courses, inside Welding, not on the densest island",
+    Math.abs(scopedView.x + wMid) < 1 && scopedView.k > st().nodeZoom,
+    `view=${JSON.stringify(scopedView)} — Welding's Practice titles center on x=${wMid.toFixed(1)}`);
+  const termChip = Array.prototype.slice.call(d.querySelectorAll("#u-tokens .u-tok")).filter((c) => /practice/.test(c.getAttribute("title") || ""))[0];
+  check("(17d) …and the chip's full title carries the scope too",
+    !!termChip && /practice in Welding/.test(termChip.getAttribute("title")),
+    termChip ? termChip.getAttribute("title") : "no term chip");
+  w.__ccrCommitSelection([], ["disc:Welding"]);
+  await settle();
+  check("(17e) dropping the discipline chip takes the scope with it — the term searches the whole map again",
+    st().hits === 8 && !/in Welding/.test((q("#u-tokens") || {}).textContent || ""),
+    `hits=${st().hits} chips=${((q("#u-tokens") || {}).textContent || "").slice(0, 60)}`);
+
+  /* ── (18) THE MODEL'S WORD IS NOT THE CATALOG'S ───────────────────────────
+   * Measured 2026-09-10: "introductory" names 2 Welding titles, "Introduction
+   * to …" names 44. A scoped word that finds almost nothing inside its
+   * discipline is retried as its first five letters, and the answer beside the
+   * box says which word was used — an honest substitution, never a silent one.
+   * "practicing" is in no title; "pract" is in eight, two of them in Welding. */
+  w.__ccrCommitSelection([], keys().slice());
+  await settle();
+  reply = { answer: "Welding practicing courses.", cannot: "",
+            select: [{ kind: "discipline", name: "Welding" }, { kind: "term", term: "practicing" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("show me the welding practicing courses");
+  await settle();
+  check("(18) ⭐ a scoped word with no hits falls back to its stem, still inside the discipline",
+    st().hits === 2 && keys().indexOf("term:pract") >= 0, `hits=${st().hits} keys=${JSON.stringify(keys())}`);
+  check("(18b) …and the answer beside the box says which word was used",
+    /“practicing” names 0 titles there, so “pract” is shown/.test(askbox().textContent),
+    askbox().textContent.slice(0, 160));
+  w.__ccrCommitSelection([], keys().slice());
+  await settle();
+  reply = { answer: "Practice, everywhere.", cannot: "",
+            select: [{ kind: "term", term: "practicing" }], lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("show me the practicing courses");
+  await settle();
+  check("(18c) an UNscoped term stays literal — no stem without a discipline to scope it",
+    keys().indexOf("term:practicing") >= 0 && st().hits === 0, `keys=${JSON.stringify(keys())} hits=${st().hits}`);
+
   let pass = 0;
   for (const [n, ok, why] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + n + (ok || why === undefined ? "" : "  — " + why));

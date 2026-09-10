@@ -163,6 +163,13 @@ jobs:
       # is a fresh build. Pure-stdlib python, no network.
       - name: SkyView CPL universe guard (kb/_build_ccr_cpl_universe.py)
         run: python3 tests/ccr_cpl_universe_test.py
+      # Its members payload (the rows behind the counts). Guards that the id is
+      # imported from the universe builder rather than restated, that every key
+      # is a point the universe carries, that a point's `ar` and `n` equal the
+      # rows its card lists (the ring and the card are one join), the row
+      # shapes the client reads, and that the committed file is a fresh build.
+      - name: SkyView CPL universe members guard (kb/_build_ccr_cpl_universe_members.py)
+        run: python3 tests/ccr_cpl_universe_members_test.py
       # SkyView's sky placement (Session 239) — where each discipline island
       # sits on the sphere, three ways, and the CTE reading behind the third.
       # Guards that the committed prototype/ccr_sky.json is a build of today's

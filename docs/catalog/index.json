@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 430,
+   "count": 431,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2118,6 +2118,26 @@
      "title": "A one-shot hand-off must not consume what it cannot deliver",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [
+      "prototype/ccr_universe.js",
+      "prototype/check_skyview_sweep.js",
+      "tests/ccr_skyview_exhibits.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "skyview",
+      "rendering",
+      "state",
+      "testing"
+     ],
+     "title": "A pane painted only by its event is blank after every re-render",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-16",
@@ -11896,7 +11916,7 @@
      ],
      "title": "SkyView \u2014 the smaller backlog",
      "type": null,
-     "updated": "2026-09-07"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-07-03",
@@ -12848,7 +12868,7 @@
      ],
      "title": "SkyView \u2014 the engineering invariants",
      "type": null,
-     "updated": "2026-09-09"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-09-10",
@@ -12889,8 +12909,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 227,
+   "count": 228,
    "docs": [
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "n": 254,
+     "path": "docs/session_254_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "skyview",
+      "ccr",
+      "cpl-mode",
+      "sweep",
+      "guards"
+     ],
+     "title": "the sweep is an instrument, and CPL is a universe",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-10",
      "governs": [],
@@ -16727,5 +16765,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 866
+ "total": 868
 }

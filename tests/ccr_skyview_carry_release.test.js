@@ -208,5 +208,33 @@ const carrying = () => /Carrying/i.test(hint());
       carrying(), "no self destination offered; carry checked alone");
   }
 
+  /* ── (17) THE MOUSE PATH: press AND release on Drag… ─────────────────────
+   * Every check above dispatches a bare click, which is the keyboard's path.
+   * A mouse click is pointerdown THEN click: pointerdown picks the course up
+   * (and preventDefault keeps focus where it was), so the click handler saw a
+   * live carry and did nothing. Measured in Chromium 2026-09-10 (S252): the
+   * panel never said "Carrying", focus stayed on the body, Esc — which the
+   * hint promises — reached nothing, and the reader's next click on the map
+   * PARKED the course. Reverting the click branch turns (17b)-(17c) red. */
+  if (carrying()) { pointer("pointerdown", 5, 5); pointer("pointerup", 5, 5); await tick(); }
+  st().staged.unstage(cn);
+  pointer("pointerdown", CX, CY); pointer("pointerup", CX, CY);      // the origin again
+  await tick();
+  d.body.focus && d.body.focus();
+  const mv4 = qa("#u-detail ul.mlist > li .mv").filter((b) => b.dataset.cn === cn)[0];
+  check("(17) the origin lists the course again after the carry is dropped", !!mv4 && !carrying());
+  if (mv4) {
+    mv4.dispatchEvent(new w.MouseEvent("pointerdown", { bubbles: true, button: 0, cancelable: true }));
+    mv4.dispatchEvent(new w.MouseEvent("click", { bubbles: true, button: 0 }));
+    await tick();
+  }
+  check("(17b) ⭐ a MOUSE click on Drag… carries AND repaints the panel to offer the drop",
+    carrying() && /Carrying/.test(q("#u-detail").textContent), q("#u-detail").textContent.slice(0, 90));
+  check("(17c) ⭐ …and hands focus to the canvas, so Esc can keep the hint's promise",
+    d.activeElement === q("#u-cvs"), d.activeElement ? d.activeElement.id || d.activeElement.tagName : "none");
+  q("#u-cvs").dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  await tick();
+  check("(17d) Esc puts it back", !carrying(), hint().slice(0, 60));
+
   done();
 })().catch((e) => { console.error(e); process.exit(1); });

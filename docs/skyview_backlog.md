@@ -1,7 +1,7 @@
 ---
 title: "SkyView — the smaller backlog"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-10
 tags: [reference, skyview, ccr, backlog]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -129,3 +129,43 @@ description; TF-IDF places ~130 well and agrees with the title-based parent only
 held rows move on a second signal; the identities map's ghost keys have a dry run
 and a receipt awaiting Sam's sheet.
 ⑨ Identity-level chips once members are classified.
+⑩ **From the 2026-09-10 functional sweep (S252, `npm run sweep`).** Observed and
+left as is — each is a call, not a defect:
+- **Two zooms for "go to Welding".** A typed discipline term lands fitted to the
+  island (k=0.88, 47° across on the Sky); a DISC pick from the list lands at the
+  ruled 150% (28° across). One destination, two magnifications.
+- **The wheel does not stop the turn.** Ruling 4 names a drag, a click, a key, a
+  search and a carry; a scroll-zoom turns on. Whether a wheel is a touch is Sam's.
+- **A hidden panel gives a selection no words.** After *Hide*, a click or a search
+  still selects — the mark on the map, the hint — but nothing says the details
+  panel is hidden, and the More menu's *Sidebar* is the only way back.
+- **A chip can read `CRSE IDENTITY I…`.** The kind word takes the room the label
+  needs; the full title is on hover (ruling 3), but a one-letter label names
+  nothing.
+- **Close after a staged edit on the outline sheet hands focus to the canvas**,
+  not the opener — each edit re-renders the sheet and forgets what opened it. With
+  no edit, focus returns to the button.
+- **`prototype/check_ccr_atlas.js` is older than the page** (eleven red checks on a
+  right page — see the invariants). Re-cut it against the served page or retire it.
+
+⑪ **The CPL universe, first cut (S252).** Shipped to refine in prod; each of
+these is a call for Sam, not a defect:
+- **The 84 statewide credentials wear a second ring and the word on their label.**
+  A PERMANENT label (84 can carry one; 1,987 cannot) waits on the rest of his
+  truncated ask — *"shown visibly on the sky so folks can easily see…"*.
+- **Inside a big island the full-band labels crowd** (Computer Information
+  Systems, 74 credentials at 6° across) — the same placer as the courses, and the
+  issuer line is longer than a course code. A shorter full band, or the issuer on
+  hover only.
+- **The pile island draws as *(no discipline yet)* with 543 credentials** — a
+  curator pass, never an inference (S251). It reads as the biggest discipline.
+- **The card caps the course list at 40 and the local exhibits at a page.** The
+  ITIS credentials carry 15–17 course identities; nothing yet is near the cap.
+- **Ask SkyView on the CPL map resolves against the course vocabulary.** The
+  envelope's discipline list is the same 97-of-159 names; the terms are course
+  titles. A credential-aware envelope is a lane-sized change.
+- **The Courses map's Articulations light and the CPL map are two joins of the
+  same record** (`ccr_cpl.json` course → credentials; the universe credential →
+  courses). They agree today because both read the CER; a drift check between
+  them is one test away.
+
