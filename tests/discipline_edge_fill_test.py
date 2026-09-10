@@ -88,16 +88,28 @@ def main():
         src = open(payload, encoding="utf-8").read()
         i = src.index("window."); i = src.index("=", i) + 1
         live = json.loads(src[i:].strip().rstrip(";"))["rows"]
-        blank_before = sum(1 for r in live if not r.get("disc"))
+        # ⚠️ THE PAYLOAD NOW SHIPS WITH THE FILL ALREADY APPLIED, so the rows
+        # still blank IN IT are, by construction, the ones the edge cannot
+        # reach -- counting how many of THOSE it fills can only ever read 0.
+        # The old assertion here ("filled >= blank_before * 0.5") measured
+        # whether the fix works against a payload generated BEFORE the fix
+        # existed, and so it went red the first time the cron regenerated one
+        # carrying it: main 9ba2551, 2026-09-10, "filled 0 of 86". Nothing in
+        # the code had changed. Ask the question the other way round -- CLEAR
+        # the edge's own fills and make it re-derive them -- and it survives
+        # every regeneration, because it no longer depends on there being
+        # unfilled work left in the artifact.
+        stamped = [r for r in live if r.get("dsrc") == "subject_map_edge"]
+        for r in stamped:
+            r["disc"] = None
+            r.pop("dsrc", None)
         st = discipline_edge_fill(live, KB)
-        filled = blank_before - st["blank_after"]
-        # A floor, not an equality: the payload is regenerated daily and the
-        # stores are curated, so the number moves. What must not happen is the
-        # fill quietly stopping.
-        check(f"on the live payload the edge still fills the bulk of the blanks "
-              f"({filled} of {blank_before})",
-              blank_before == 0 or filled >= blank_before * 0.5,
-              f"filled {filled} of {blank_before}")
+        refilled = sum(1 for r in stamped if r.get("disc"))
+        check(f"on the live payload the edge re-derives every fill it shipped "
+              f"({refilled} of {len(stamped)}; {st['blank_after']} rows stay "
+              f"blank — subjects the map carries no entry for)",
+              bool(stamped) and refilled == len(stamped),
+              f"re-filled {refilled} of {len(stamped)}")
         psyc = [r for r in live if r["id"] == "PSYC C1000"]
         if psyc:
             check("PSYC C1000 lands in Psychology — the row Sam asked about",

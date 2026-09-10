@@ -691,7 +691,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · workflows: `cpl-chat-health.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_build_partner_crosswalk.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -835,4 +835,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 453 file
-datasets · 138 external services · 326 consumers · 33 workflows · 37 tabs.
+datasets · 138 external services · 327 consumers · 33 workflows · 37 tabs.

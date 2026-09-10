@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 453,
   "external_services": 138,
-  "consumers": 326,
+  "consumers": 327,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -470,6 +470,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:scripts/announce_session_hint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 44
     },
     {
      "id": "workflow:cpl-chat-health.yml",
