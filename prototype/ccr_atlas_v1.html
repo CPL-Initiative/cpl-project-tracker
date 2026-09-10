@@ -584,6 +584,16 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .cpl-list .cpl-earn{color:var(--text-body)}
 .cpl-list .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
 .ol .cpl-list li{padding:.65em 0}
+/* The consolidated description (Sam, 2026-09-10). The sentences run together as
+   prose because that is what a description is; the per-sentence vote rides in a
+   title and the counts that matter are in text below it. Tokens only — the
+   blockquote's own rule already carries the ground and ink. */
+.ol-note{margin:0 0 10px;padding:8px 12px;border-left:3px solid var(--cobalt);
+  background:var(--surface-subtle);color:var(--text-body);font-size:.88rem;line-height:1.5}
+.ol-also{margin:14px 0 4px;color:var(--text-body);font-size:.9rem}
+.ol-also-l{margin:0;padding:0 0 0 1.1em;color:var(--text-body);font-size:.9rem;line-height:1.55}
+.ol-also-l li{margin:0 0 .35em}
+.ol-also-l .sub{color:var(--text-muted);white-space:nowrap}
 /* The exhibit names above the fold, when the Articulations chip is on (Sam,
    2026-09-10). Gold rail because the chip that turns it on paints the map gold
    — the same signal in two places, and --mustard-text is the pair that carries

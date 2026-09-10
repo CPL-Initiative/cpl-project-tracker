@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-426 document(s).
+427 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -218,6 +218,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Coarse TOP-division discipline fallback — make the orphan tail visible without faking precision](../kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |
 | [College-homonym subject codes — detect, scope, retract](../kb-notes/methodology-college-homonym-subject-codes.md) | methodology | published | 2026-06-11 |  |
 | [Confirmed merges via a decision row — never infer, never block the clean set](../kb-notes/methodology-confirmed-merge-via-decision-row.md) | methodology | published | 2026-07-08 |  |
+| [Consolidate sentences, not documents: what a course description is when fourteen colleges wrote it](../kb-notes/methodology-consolidate-sentences-not-documents.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [Consolidating near-duplicate course identities within one credential (the ordinal rule)](../kb-notes/methodology-within-credential-identity-consolidation.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Context pressure is measurable — the counter was on disk the whole time](../kb-notes/methodology-context-pressure-is-measurable.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [Cron-as-window — reach egress-blocked data via a workflow + run logs](../kb-notes/methodology-cron-as-discovery-window.md) | methodology | published | 2026-06-09 | 2026-06-09 |

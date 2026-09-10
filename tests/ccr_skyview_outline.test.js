@@ -94,6 +94,46 @@ const DESCS = {
   6003: ["Fabrication of sheet metal ductwork, including layout and seaming.", "Sheet Metal", 3],
   /* WELD M10EX — the only description is one that says there is none. */
   7001: ["Experimental course.", "Experimental", 1],
+  /* ⭐ WELD M10CN — the CONSOLIDATION case (Sam's ruling, 2026-09-10). Four
+     colleges. Three open with the same sentence in near-identical words; two
+     add a second shared sentence; one adds a line only it carries. The opening
+     sentence sits SECOND in one catalog, so ordering by agreement alone would
+     start the card mid-thought — the real defect on ITIS M1449. */
+  8001: ["This course introduces the principles of hydraulic systems used in mobile equipment. "
+       + "Students diagnose and repair pumps, valves and cylinders. Field trips may be required.", "Hydraulics I", 3],
+  8002: ["This course introduces the principles of hydraulic systems used on mobile equipment. "
+       + "Students diagnose and repair pumps, valves and cylinders.", "Hydraulics I", 3],
+  8003: ["Students diagnose and repair pumps, valves and cylinders.", "Hydraulics I", 3],
+  8004: ["Students diagnose and repair pumps, valves and cylinders. "
+       + "A survey of pneumatic control circuits for industrial machinery.", "Pneumatics", 3],
+  /* WELD M10AD — every college fills the description field with the catalog's
+     administration, and one of them runs the hour block straight into the only
+     real sentence with no full stop between. That sentence is the whole
+     description on PLGL M1026, and the first draft of the filter deleted it. */
+  9001: ["Advisory: WELD 10 or equivalent.", "Special Topics", 1],
+  9002: ["Prerequisite(s): None. Not repeatable.", "Special Topics", 1],
+  9003: ["Lec Hrs: 24.00 Out of Class Hrs: 48.00 Total Student Learning Hrs: 72.00 "
+       + "Current developments in the substantive law of an area of legal practice.", "Special Topics", 1],
+  /* WELD M10HD — the record dump: a course code, its own title, and an inline
+     "Prerequisite: None" in front of the sentence that actually describes it.
+     Unanimous across all three, so it leads the card unless it is stripped. */
+  9101: ["WLD-51 : Shop Safety Prerequisite: None Shop safety covers the handling of compressed "
+       + "gas cylinders and personal protective equipment.", "Shop Safety", 2],
+  9102: ["WLD-52 : Shop Safety Prerequisite: None Shop safety covers the handling of compressed "
+       + "gas cylinders and personal protective equipment.", "Shop Safety", 2],
+  9103: ["(See general education pages for the requirement this course meets.) Advisory: ENGL 1A. "
+       + "Shop safety covers the handling of compressed gas cylinders and protective equipment. "
+       + "(Also listed as WLD-99.) Torch cutting is introduced in the second half of the term.", "Shop Safety", 2],
+  /* ⭐ WELD M10CH — the CHAIN. Three sentences where the first and third share
+     nothing, and the middle one touches both. Single-link clustering welds all
+     three into one "agreed" sentence through the middle; complete-link cannot,
+     because the weakest pair has to clear the bar too. Measured on the real
+     corpus, single-link at 0.4 left a loose pair in 10.1% of multi-sentence
+     clusters — "the fundamentals of acting in film and television" bound to
+     "acting in film and television commercials, episodic screen work". */
+  9201: ["Welders practice aluminum brazing.", "Brazing", 2],
+  9202: ["Welders practice aluminum brazing and titanium soldering.", "Brazing", 2],
+  9203: ["Titanium soldering and copper flaring.", "Brazing", 2],
 };
 const U = { counts: { identities: 3, standalone: 0 },
   bounds: { x0: -60, x1: 160, y0: -60, y1: 60 }, islands: [
@@ -103,7 +143,11 @@ const U = { counts: { identities: 3, standalone: 0 },
       { i: "WELD M10TJ", t: "Welding Basics",                    x: 12, y: 0, s: 0, u: 2, n: 1 },
       { i: "WELD M1041", t: "Flux Cored Arc Welding",            x: 18, y: 0, s: 0, u: 3, n: 4 },
       { i: "WELD M10PH", t: "Special Topics in Sheet Metal",      x: 24, y: 0, s: 0, u: 3, n: 3 },
-      { i: "WELD M10EX", t: "Experimental Welding Topics",        x: 30, y: 0, s: 0, u: 1, n: 1 } ] },
+      { i: "WELD M10EX", t: "Experimental Welding Topics",        x: 30, y: 0, s: 0, u: 1, n: 1 },
+      { i: "WELD M10CN", t: "Mobile Hydraulics",                  x: 36, y: 0, s: 0, u: 3, n: 4 },
+      { i: "WELD M10AD", t: "Special Topics in Welding",          x: 42, y: 0, s: 0, u: 1, n: 3 },
+      { i: "WELD M10HD", t: "Shop Safety",                        x: 48, y: 0, s: 1, u: 2, n: 3 },
+      { i: "WELD M10CH", t: "Brazing and Soldering",              x: 54, y: 0, s: 0, u: 2, n: 3 } ] },
   { d: "Nursing", sh: "nursing", x: 90, y: 0, r: 40, p: [
       { i: "NRSR M1101", t: "Fundamentals of Nursing", x: 90, y: 0, s: 0, u: 4, n: 3 } ] },
 ]};
@@ -115,7 +159,11 @@ const MEM = { colleges: ["Alpha College", "Beta College", "Gamma College", "Delt
        "WELD M10TJ": [[4001,"WELD 5",0]],
        "WELD M1041": [[5001,"WELD 40",0],[5002,"WELD 41",1],[5003,"WELD 42",2],[5004,"WELD 43",3]],
        "WELD M10PH": [[6001,"WELD 88",0],[6002,"WELD 88",1],[6003,"WELD 89",2]],
-       "WELD M10EX": [[7001,"WELD 99",0]] } };
+       "WELD M10EX": [[7001,"WELD 99",0]],
+       "WELD M10CN": [[8001,"WELD 60A",0],[8002,"WELD 60B",1],[8003,"WELD 60C",2],[8004,"WELD 60D",3]],
+       "WELD M10AD": [[9001,"WELD 70",0],[9002,"WELD 71",1],[9003,"WELD 72",2]],
+       "WELD M10HD": [[9101,"WLD 51",0],[9102,"WLD 52",1],[9103,"WLD 53",2]],
+       "WELD M10CH": [[9201,"WLD 61",0],[9202,"WLD 62",1],[9203,"WLD 63",2]] } };
 const ATLAS = { _generated_from: "2026-09-06 15:35", totals: { decision_components: 0, identities_inbrowser: 3,
   suggestion_groups: 0, member_rows: 11 }, disciplines: [
   { name: "Welding", decisions: 0, ids: 2, members: 8, flagged: 0, reviewed: 0 },
@@ -478,11 +526,18 @@ const css = tpl;                                  // the stylesheet, as authored
     check("(12) ⭐ the card quotes the real description, not the migration stub",
       !!quote && /sheet metal ductwork/.test(quote.textContent) &&
       !/data migration/.test(quote.textContent), quote && quote.textContent.slice(0, 120));
-    check("(12a) the attribution follows the college that actually wrote one",
-      /Gamma College/.test(desc.querySelector(".ol-attr").textContent),
+    /* ⭐ AND NO COLLEGE IS NAMED — Sam's ruling, 2026-09-10: "I don't want to
+     * choose the single most representative description and attribute it to
+     * the college it came from. Doing so could lead to division as some
+     * faculty may question the choice." The card used to print "Gamma College
+     * · WELD 89 — the description most typical of the 3 colleges"; naming the
+     * winner is the thing that was wrong with it, not the choosing. */
+    check("(12a) ⭐ no college is named in the Description layer at all",
+      !/Alpha|Beta|Gamma|Delta|Epsilon/.test(desc.textContent), desc.textContent.slice(0, 240));
+    check("(12a) …and it says what it is instead: consolidated, and the reviewer's to revise",
+      /Consolidated from|in its own words/.test(desc.querySelector(".ol-attr").textContent) &&
+      /Revise it/.test(desc.querySelector(".ol-attr").textContent),
       desc.querySelector(".ol-attr").textContent);
-    check("(12a) …and it is named the ONLY one, since one real description is not a vote",
-      /the only catalog description under this identity/.test(desc.querySelector(".ol-attr").textContent));
     check("(12b) ⭐ the count says 1 of 3, not 3 of 3 — a stub is not a published description",
       /<strong>1 of 3<\/strong>/.test(desc.querySelector(".ol-src").innerHTML),
       desc.querySelector(".ol-src").textContent.slice(0, 200));
@@ -537,6 +592,155 @@ const css = tpl;                                  // the stylesheet, as authored
     check("(12d) ⭐ and no real description is — a length rule would kill the 38-character Shakespeare",
       real.every((x) => !f(x)), real.filter(f).join(" | "));
   }
+
+  /* ── (13) ⭐ THE CONSOLIDATION, AND NO COLLEGE NAMED (Sam, 2026-09-10) ─────
+   * "I don't want to choose the single most representative description and
+   * attribute it to the college it came from. Doing so could lead to division
+   * as some faculty may question the choice… It's better to generate a
+   * description that best represents what most agree upon and note the few
+   * additional descriptive items… If we always provide a generative
+   * description and note such, it will allow the faculty reviewers the freedom
+   * to revise and accept by consensus."
+   *
+   * ⚠️ NOTHING IS COMPOSED. Every sentence on the card was written by a college
+   * — the unit is the SENTENCE rather than the whole document, and the selector
+   * is agreement rather than typicality. That is the half of the medoid's old
+   * defense worth keeping: a card that reads as authoritative and belongs to
+   * nobody would be worse than either. Check (13e) is what holds it. */
+  w.__ccrOutline("WELD M10CN");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc");
+    const quote = desc.querySelector(".ol-desc");
+    check("(13) the card carries a consolidation, not a quotation", !!quote);
+    check("(13) ⭐ no college is named anywhere in the layer",
+      !/Alpha|Beta|Gamma|Delta|Epsilon/.test(desc.textContent), desc.textContent.slice(0, 200));
+    check("(13) it holds BOTH shared sentences, each once",
+      !!quote && /principles of hydraulic systems/.test(quote.textContent) &&
+      /diagnose and repair pumps/.test(quote.textContent) &&
+      quote.textContent.match(/principles of hydraulic systems/g).length === 1,
+      quote && quote.textContent);
+    /* ⭐ THE ORDERING IS THE ONE FROM ITIS M1449, where the card opened
+     * "Key topics include text preprocessing…" — a sentence that carried a
+     * majority while four differently-worded OPENING sentences each carried
+     * one. Here "Students diagnose and repair…" is in all four catalogs and
+     * the opener is in two, so ordering by agreement puts the card's first
+     * sentence second. Position decides, and the support still decides the
+     * held-out list below. */
+    check("(13a) ⭐ it opens with the sentence the colleges open with",
+      !!quote && quote.textContent.indexOf("principles of hydraulic systems") <
+                 quote.textContent.indexOf("diagnose and repair pumps"),
+      quote && quote.textContent);
+    check("(13b) a line only one college carries is held out, and counted",
+      /Some colleges also include/.test(desc.textContent) &&
+      /pneumatic control circuits/.test(desc.textContent) &&
+      /1 of 4/.test(desc.textContent), desc.textContent.slice(0, 400));
+    check("(13b) …and the held-out line is NOT in the consolidation",
+      !!quote && !/pneumatic/.test(quote.textContent));
+    check("(13c) the source line says what it is and hands the reviewer the pen",
+      /MAP-Generated/.test(desc.querySelector(".ol-src").textContent) &&
+      /Revise it/.test(desc.querySelector(".ol-attr").textContent) &&
+      /no college is named/.test(desc.querySelector(".ol-src").textContent),
+      desc.querySelector(".ol-src").textContent.slice(0, 200));
+    check("(13d) the field trips line, carried by one college, is held out too",
+      !!quote && !/Field trips/.test(quote.textContent) && /Field trips/.test(desc.textContent));
+    /* (13e) ⭐ THE INVARIANT: every sentence on the card is a college's own. */
+    const src4 = [
+      "This course introduces the principles of hydraulic systems used in mobile equipment.",
+      "Students diagnose and repair pumps, valves and cylinders.",
+      "Field trips may be required.",
+      "This course introduces the principles of hydraulic systems used on mobile equipment.",
+      "A survey of pneumatic control circuits for industrial machinery."];
+    const norm = (t) => t.replace(/[…]/g, "").replace(/\s+/g, " ").trim();
+    const shown = [...desc.querySelectorAll(".ol-desc span, .ol-also-l li")]
+      .map((e) => norm(e.textContent.replace(/\s*\d+ of \d+\s*$/, "")));
+    check("(13e) ⭐ every sentence shown was written by a college — nothing composed",
+      shown.length > 0 && shown.every((t) => src4.some((o) => norm(o) === t)),
+      shown.filter((t) => !src4.some((o) => norm(o) === t)).join(" | "));
+  }
+
+  /* (13f) Every college fills the field with the catalog's administration. The
+   * one real sentence is glued to an hour block with no full stop in between —
+   * dropping the sentence for its heading deletes the only description these
+   * colleges have, which is what happened to PLGL M1026's four. */
+  w.__ccrOutline("WELD M10AD");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc");
+    /* ⚠️ THE BODY, NOT THE LAYER. The source line above it explains that
+     * "advisories, prerequisites, hour counts and transfer codes are dropped",
+     * so a scan of the whole layer finds those words and fails on its own
+     * explanation. The first draft of this check did exactly that. */
+    const txt = [...desc.querySelectorAll(".ol-desc, .ol-also-l, .empty")]
+      .map((e) => e.textContent).join(" ");
+    check("(13f) ⭐ the sentence glued to an hour block survives its heading",
+      /substantive law of an area of legal practice/.test(txt), txt.slice(0, 260));
+    check("(13f) …and the hour block itself does not reach the card",
+      !/Lec Hrs|Out of Class|Total Student Learning/.test(txt), txt.slice(0, 260));
+    check("(13f) nor do the advisory, the prerequisite, or the repeatability note",
+      !/Advisory|Prerequisite|repeatable/i.test(txt), txt.slice(0, 260));
+  }
+
+  /* (13g) The record dump: a course code, the course's own title, and an inline
+   * "Prerequisite: None" in front of the sentence that describes it. Every
+   * college copies the same header format, so a header is the ONE thing that
+   * reaches unanimous agreement and leads the card — ENTR M1004 opened with
+   * "ENP-51 : Entrepreneurship Basics Prerequisite: None Entrepreneurship has
+   * been described as…" on 7 of 7. And a parenthetical cross-reference ends
+   * with ".)", which a splitter that wants a stop followed by a space will not
+   * break on, so the advisory behind it stops being at the front of anything. */
+  w.__ccrOutline("WELD M10HD");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc"), quote = desc.querySelector(".ol-desc");
+    check("(13g) ⭐ the consolidation opens with the description, not the header",
+      !!quote && /^Shop safety covers the handling/.test(quote.textContent.trim()),
+      quote && quote.textContent.slice(0, 160));
+    check("(13g) the course code, the repeated title and the inline prerequisite are gone",
+      !!quote && !/WLD-5|Prerequisite/i.test(quote.textContent), quote && quote.textContent);
+    const body = [...desc.querySelectorAll(".ol-desc, .ol-also-l, .empty")]
+      .map((e) => e.textContent).join(" ");
+    check("(13g) …and so is the parenthetical cross-reference and the advisory behind it",
+      !/general education pages|Advisory|Also listed as/.test(body), body.slice(0, 300));
+    /* ⚠️ A CROSS-REFERENCE ENDS ".)" AND THE DESCRIPTION FOLLOWS IT IN THE SAME
+     * BREATH. A splitter that wants a stop followed by a space never breaks
+     * there, so "(Also listed as WLD-99.) Torch cutting is introduced…" is one
+     * sentence, it starts with a cross-reference, and the sentence a college
+     * actually wrote is DELETED rather than merely mis-ordered. */
+    check("(13g) ⭐ the sentence behind a cross-reference survives, rather than going with it",
+      /Torch cutting is introduced/.test(body), body.slice(0, 300));
+    /* Sam: "when a course is a CID or CCN the description should come from the
+     * template (assuming we have those in our dataset)." We hold the
+     * designation, not the descriptor text — 541 of 49,896 identities. Say so
+     * rather than presenting a consolidation as the statewide text. */
+    check("(13h) ⭐ a C-ID identity names the descriptor as the authority and says MAP lacks it",
+      /C-ID/.test(desc.textContent) && /statewide descriptor is the authority/.test(desc.textContent) &&
+      /not the descriptor text/.test(desc.textContent), desc.textContent.slice(0, 320));
+  }
+  /* (13i) ⭐ THE CHAIN. Complete-link, not single-link: a sentence joins a
+   * cluster only if it clears the bar against EVERY member. "Welders practice
+   * aluminum brazing" and "Titanium soldering and copper flaring" share no
+   * content word at all; the middle sentence touches both. Single-link welds
+   * all three and reports a unanimous agreed sentence that no two colleges
+   * actually share. */
+  w.__ccrOutline("WELD M10CH");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc");
+    const quote = desc.querySelector(".ol-desc");
+    const also = [...desc.querySelectorAll(".ol-also-l li")].map((e) => e.textContent).join(" ");
+    check("(13i) ⭐ a sentence sharing nothing with the first is NOT folded in with it",
+      /copper flaring/.test(also) && !(quote && /copper flaring/.test(quote.textContent)),
+      "quote=" + (quote ? quote.textContent : "(none)") + " | also=" + also);
+    check("(13i) …and the two that do share words are folded, once",
+      !!quote && /aluminum brazing/.test(quote.textContent) &&
+      quote.textContent.match(/aluminum brazing/g).length === 1, quote && quote.textContent);
+  }
+
+  w.__ccrOutline("WELD M1012");
+  await tick(); await tick(); await tick();
+  check("(13h) …and an M-ID identity carries no such note",
+    !/statewide descriptor is the authority/.test(q("#ol-desc").textContent));
 
   done();
 })().catch((e) => { console.error(e); process.exit(1); });
