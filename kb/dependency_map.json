@@ -59,7 +59,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 4001
+     "line": 4003
     },
     {
      "id": "module:prototype/check_skyview_sweep.js",
@@ -1142,7 +1142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5541
+     "line": 5543
     }
    ],
    "main_committers": []
