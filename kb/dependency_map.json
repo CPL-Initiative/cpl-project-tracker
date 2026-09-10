@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 453,
+  "file_datasets": 456,
   "external_services": 138,
-  "consumers": 326,
+  "consumers": 327,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -4708,6 +4708,13 @@
      "line": 71
     },
     {
+     "id": "script:kb/_build_ccr_cpl_universe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5712,6 +5719,19 @@
    "main_committers": []
   },
   "file:kb/_build_ccr_cpl.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_ccr_cpl_universe.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -12663,6 +12683,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:prototype/ccr_cpl_universe.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_ccr_cpl_universe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:prototype/ccr_desc/*.json": {
    "consumers": [
     {
@@ -13372,6 +13405,19 @@
    "main_committers": []
   },
   "file:tests/ccr_cpl_payload_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_cpl_universe_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",

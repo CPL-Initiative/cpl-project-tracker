@@ -223,7 +223,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py` |
-| `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py` |
+| `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py` |
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_domain_cpl_crosswalk.py` |
 | `scripts/check_funding_nc_row_layout.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | none found |
@@ -357,6 +357,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_audit_exhibits.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_ccr_atlas_extract.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_ccr_cpl.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_build_ccr_cpl_universe.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_ccr_sky.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_ccr_universe.py` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `kb/_build_college_courses.py` | workflows: `credential-catalog-sync.yml` | — |
@@ -586,6 +587,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/ccr_atlas_graph.js` | scripts: `prototype/build_ccr_atlas.py` | — |
 | `prototype/ccr_atlas_v1.html` | scripts: `prototype/build_ccr_atlas.py` | — |
 | `prototype/ccr_cpl.json` | scripts: `kb/_build_ccr_cpl.py`, `prototype/globe/extract_globe_data.py` | committed by: `daily-dashboard.yml` |
+| `prototype/ccr_cpl_universe.json` | scripts: `kb/_build_ccr_cpl_universe.py` | — |
 | `prototype/ccr_desc/*.json` | pages: `prototype/skyview.html` | — |
 | `prototype/ccr_sky.json` | scripts: `kb/_build_ccr_sky.py` | committed by: `daily-dashboard.yml` |
 | `prototype/ccr_universe.js` | scripts: `kb/_glyph_sweep.py`, `prototype/build_ccr_atlas.py` | — |
@@ -617,6 +619,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_payload_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ccr_cpl_universe_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_level_layout_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
@@ -834,5 +837,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 453 file
-datasets · 138 external services · 326 consumers · 33 workflows · 37 tabs.
+Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 456 file
+datasets · 138 external services · 327 consumers · 33 workflows · 37 tabs.

@@ -19,7 +19,7 @@ artifacts:
 # A guard on generated output cannot see a regression staged in its source
 
 > **One-sentence summary** — a check that reads a generated artifact reports the
-> state of the last run, not the state of the generator, so a regression sitting
+> state of the generator's last view of the repo, not the state of the repo, so a regression sitting
 > in the generator's input stays invisible until the generator next runs — and
 > while the generator is broken, that check is green for the wrong reason.
 
@@ -81,6 +81,16 @@ catches the real failure — the generator silently ceasing to apply the fill �
 from the side that survives the move, because the blanks would come back and the
 yield would jump off zero. Falsified against the pre-cron payload: `240 of 326
 blanks are still fillable`.
+
+**And a generator that enumerates through `git ls-files` cannot see unstaged
+work.** A third case, the same afternoon. `kb/_build_dependency_map.py` builds
+its repo inventory with `subprocess.run(["git", "ls-files"])` — **tracked files
+only**. Rebuilding it while three new files were still untracked produced a map
+that silently omitted them, and `--check` then passed locally against that map.
+CI checked out a commit where the same three files *were* tracked, rebuilt, and
+called the committed map stale. The local green meant "the generator could not
+see the new work", not "the map is complete". **Stage before you rebuild
+anything whose inputs come from git.**
 
 **The practical consequence: fixing a broken generator surfaces every regression
 its silence was hiding.** A red artifact check immediately after a generator
