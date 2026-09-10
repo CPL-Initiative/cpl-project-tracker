@@ -17,13 +17,8 @@ related:
 > [archive](../../ccr_atlas_lessons_archive.md); the queue behind the priority is
 > [`skyview_backlog`](../../skyview_backlog.md).
 >
-> ⭐ **COMPACTED 2026-09-09, from 33,041 B (2.75× budget) to under it.** Three
-> checkpoints had deferred this as "worth its own sitting". Every invariant was
-> KEPT as a rule; what left was its derivation — the fps numbers, the session
-> archaeology, the verbatim quotes restating the rule beside it — all of which
-> the lessons doc already holds, dated. **Do not re-inflate a rule with its
-> evidence.** If an invariant needs its story, the story goes to the lessons doc
-> and a pointer comes back.
+> ⭐ **Compacted 2026-09-09 from 2.75× budget. Do not re-inflate a rule with its
+> evidence** — the story goes to the lessons doc and a pointer comes back.
 
 **What this lane is:** An interactive view of the Common Course Reference —
 common courses by discipline, their constituent local courses, and moving a
@@ -42,6 +37,13 @@ stand-alone orbits its best-matching identity; drag and drop is real with a
 keyboard path. **`#skyview` OPENS AS THE SKY** since S239 — **Sky · Globe** as
 places to stand on ONE canvas. A course opens its outline of record (S235); a
 staged move is marked on the course itself (S239).
+
+**Swept end to end 2026-09-10 (S252):** `npm run sweep` drives the served page
+through every reader and curator action (~200 checks) and passes. The two defects
+it found shipped the same day — the Ask's union where a question meant an
+intersection (Sam's *"introductory welding courses"* screenshot), and the *Drag…*
+mouse path that left Esc dead — and what it observed and did not change is
+[`skyview_backlog` ⑩](../../skyview_backlog.md).
 
 **Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
 dropped course PARKS; courses gather by level on the ring score already chose;
@@ -205,5 +207,5 @@ per-node loop (14%) and the island loop (10%) — the irreducible walk. **Fewer
 points per frame is the lever that has worked three times running.**
 ⑦ The rest of the queue: [`skyview_backlog`](../../skyview_backlog.md).
 
-⚠️ Whatever changes, the drop test, the keyboard path and `npm run a11y skyview`
-run again in the same PR — and `scripts/check_generated.sh` LAST before a push.
+⚠️ Whatever changes, `npm run sweep` and `npm run a11y skyview` run again in the
+same PR — and `scripts/check_generated.sh` LAST before a push.

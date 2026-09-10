@@ -1,7 +1,7 @@
 ---
 title: "SkyView — the smaller backlog"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-10
 tags: [reference, skyview, ccr, backlog]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -129,3 +129,22 @@ description; TF-IDF places ~130 well and agrees with the title-based parent only
 held rows move on a second signal; the identities map's ghost keys have a dry run
 and a receipt awaiting Sam's sheet.
 ⑨ Identity-level chips once members are classified.
+⑩ **From the 2026-09-10 functional sweep (S252, `npm run sweep`).** Observed and
+left as is — each is a call, not a defect:
+- **Two zooms for "go to Welding".** A typed discipline term lands fitted to the
+  island (k=0.88, 47° across on the Sky); a DISC pick from the list lands at the
+  ruled 150% (28° across). One destination, two magnifications.
+- **The wheel does not stop the turn.** Ruling 4 names a drag, a click, a key, a
+  search and a carry; a scroll-zoom turns on. Whether a wheel is a touch is Sam's.
+- **A hidden panel gives a selection no words.** After *Hide*, a click or a search
+  still selects — the mark on the map, the hint — but nothing says the details
+  panel is hidden, and the More menu's *Sidebar* is the only way back.
+- **A chip can read `CRSE IDENTITY I…`.** The kind word takes the room the label
+  needs; the full title is on hover (ruling 3), but a one-letter label names
+  nothing.
+- **Close after a staged edit on the outline sheet hands focus to the canvas**,
+  not the opener — each edit re-renders the sheet and forgets what opened it. With
+  no edit, focus returns to the button.
+- **`prototype/check_ccr_atlas.js` is older than the page** (eleven red checks on a
+  right page — see the invariants). Re-cut it against the served page or retire it.
+

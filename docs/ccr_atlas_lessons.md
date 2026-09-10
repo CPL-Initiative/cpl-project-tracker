@@ -1666,3 +1666,71 @@ them arrived mid-turn and **cut off at "so folks can easily see…"**; the data 
 is done (`sw` on every one), the treatment waits on the rest of his sentence.
 ⚠️ At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled —
 which would satisfy "color is never the only signal" with a word, not a mark.
+
+## 2026-09-10 — SkyLabel (Session 252): the sweep, a union that should have been an intersection, and a checker older than its page
+
+**Sam's ask:** sweep SkyView's functionality through every action a user and a
+curator can take, and advise. Mid-run he sent a screenshot of the deployed page:
+*"show me all introductory welding courses"* had not presented intro welding.
+
+### ⭐ The instrument, and what the existing one could not see
+
+`prototype/check_skyview_sweep.js` (`npm run sweep`) drives the SERVED page in
+Chromium through ~200 checks: the Sky opening, the row, the More menu, Show,
+ticking then Enter and the chips, the Ask with a mocked assistant and with the
+network refused, hover and click and empty ground, the carry, the drop target, the
+park, Put back and Move instead, the outline sheet's staged edits, the grip, the
+window steps, every hash route, reduced motion, Close, a phone's pinch and the
+768px sheet. `npm test` (321 files), `npm run a11y skyview` (11 routes) and the
+sweep all pass on the page as shipped.
+
+`prototype/check_ccr_atlas.js` read **13 FAILs on a page that is right.** It clicks
+a suggestion row expecting a fly (a row only ticks since 2026-09-06), expects the
+flat map's percent readout on a page that opens as the Sky, expects `Pan/Move` as
+the only chips, a `#prov` hover, "moved here" where the words are now "staged here
+— not saved", a course to have LEFT its origin card when the origin now lists it
+under *Staged to move away* with a re-target button carrying the same `data-cn`,
+and measures the hidden *Controls* word as a 24px wrap. **A check written for one
+ruling reads red under the next**, and nothing dates a check. The sweep's header
+says which of its own FAILs are harness assumptions; the a11y run's header says
+what it cannot see. Both are the same discipline: an instrument states its blind
+spots, or its red is a ghost the next session chases.
+
+### ⭐ The Ask's union was an intersection to the reader
+
+The model answered Sam's question exactly as instructed — `{discipline Welding}`
+plus `{term introductory}` — and the page did exactly what chips do: a UNION. Every
+introductory title in every discipline ringed (141 of them), the camera flew to
+the densest island, and Welding was not in view while the answer beside the box
+promised *"all introductory welding courses"*. The envelope even asks for "one
+discipline plus at most one term", which is the shape of every *X courses in Y*
+question, and the grammar had no *within*.
+
+Two facts decided the fix. **Scope:** a term named beside a discipline now carries
+`within` (the ask path only — a reader ticking rows still gets the union they
+asked for), `tokenHits()` searches inside those islands, and the camera lands on
+the hits. **Vocabulary:** measured before writing a line, *introductory* names 2
+Welding titles and *Introduction to …* 44 — scoping alone would have answered
+"2". A scoped word with under three hits is retried as its first five letters and
+the answer beside the box says so (*"introductory" names 2 titles there, so
+"intro" is shown*). Live: 47 courses ringed inside Welding at 25° across. ⚠️ The
+envelope now asks the model for the stem; the fallback is for the day it does not.
+
+### ⚠️ A mouse click is two events, and the second one was dead
+
+*Drag…* in the panel picks a course up on `pointerdown` (with `preventDefault`,
+so focus stays where it was) and the `click` handler acted only when nothing was
+carried — which after a pointerdown is never. So a mouse user's panel never said
+*Carrying*, focus stayed on the body, and *Esc puts it back* — the hint's own
+promise — reached nothing. The reader's next click on the map, made to get focus
+back, parked the course. Every jsdom check dispatched a bare `click`, the
+keyboard's path, and passed. The click now completes the pick-up it started;
+`ccr_skyview_carry_release.test.js` (17) dispatches both events.
+
+### What the sweep saw and left alone
+
+Six observations, none a defect, in [`skyview_backlog` ⑩](skyview_backlog.md):
+two zooms for one destination, the wheel not stopping the turn, a hidden panel
+giving a selection no words, a chip that reads `I…`, Close after a sheet edit
+landing on the canvas, and the stale checker.
+

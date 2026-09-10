@@ -3413,7 +3413,7 @@ window.__ccrCommitSelection = function(add, dropKeys){
   if(!document.getElementById("u-cvs")) window.__ccrUniverse();
   add = add || []; dropKeys = dropKeys || [];
   if(!add.length && !dropKeys.length) return false;
-  dropKeys.forEach(function(k){ tokens = tokens.filter(function(x){ return x.key !== k; }); });
+  dropKeys.forEach(dropTokenKey);
   var last = null;
   add.forEach(function(s){
     var t = tokenFromSuggestion(s);
@@ -3524,7 +3524,7 @@ function askEnvelope(question){
     '  answer   one plain sentence saying what the map is about to show. No markdown.',
     '  select   an array, in priority order, of at most 6 of:',
     '             {"kind":"discipline","name":"<EXACTLY one name from the list below>"}',
-    '             {"kind":"term","term":"<a word or two to match against course titles>"}',
+    '             {"kind":"term","term":"<the shortest STEM a course title would contain: intro, not introductory; weld, not welding>"}',
     '             {"kind":"course","id":"<an exact course identity id, e.g. WELD M1109>"}',
     '  lit      true to light the courses that carry an articulation, else false',
     '  isolate  true to hide everything not selected, else false',
@@ -3539,6 +3539,8 @@ function askEnvelope(question){
     "  · A discipline name must be copied EXACTLY from the list. Never invent one.",
     "    If the question names something that is not a discipline, use a term instead.",
     "  · Prefer ONE discipline plus at most one term over a long list.",
+    "  · A term beside a discipline means titles WITHIN that discipline: for",
+    "    'introductory welding courses' send {discipline Welding} and {term intro}.",
     "  · isolate:true only when the question asks to exclude or focus ('only',",
     "    'just', 'without the rest'). It is ignored when nothing is selected.",
     "  · You cannot count, filter or aggregate — the page does that after you.",
@@ -3645,6 +3647,30 @@ function askResolve(sel){
       out.tokens.push({kind:"term", key:"term:"+term.toLowerCase(), label:term, term:term});
     }
   });
+  /* ⭐ A TERM BESIDE A DISCIPLINE MEANS THE TERM WITHIN THAT DISCIPLINE (Sam,
+   * 2026-09-10, from a screenshot: "show me all introductory welding courses"
+   * came back as {Welding} + {introductory}. The chips are a UNION on the map —
+   * right for a reader ticking rows — so it ringed every introductory title in
+   * every discipline and flew to the densest one; Welding was not in view.) A
+   * question that names a discipline and a word means the intersection, so the
+   * term carries its scope and tokenHits() honors it. */
+  var scope=out.tokens.filter(function(t){ return t.kind==="subject"; }).map(function(t){ return t.isl; });
+  if(scope.length) out.tokens=out.tokens.map(function(t){
+    if(t.kind!=="term") return t;
+    t.within=scope.slice();
+    /* ⚠️ THE MODEL'S WORD IS NOT THE CATALOG'S. "introductory" names 2 Welding
+     * titles; "Introduction to …" names 44 (measured 2026-09-10). When the
+     * exact word finds almost nothing inside the scope, its first five letters
+     * are tried, and the answer says which word was used. Only on this path —
+     * a typed search stays literal. */
+    var n=tokenHits(t).hits.length;
+    if(n<3 && t.term.length>=7){
+      var stem=t.term.slice(0,5);
+      var t2={kind:"term", key:"term:"+stem.toLowerCase(), label:stem, term:stem, within:scope.slice(), asked:t.term, askedHits:n};
+      if(tokenHits(t2).hits.length>n) return t2;
+    }
+    return t;
+  });
   return out;
 }
 
@@ -3748,9 +3774,12 @@ function applyAsk(qtext, res){
   setIsolate(res.isolate===true);
 
   var said=answer || ("Showing "+got.tokens.map(function(t){ return t.label; }).join(", ")+".");
-  var left=got.missed.length
+  var stemmed=got.tokens.filter(function(t){ return t.asked; }).map(function(t){
+    return "\u201c"+esc(t.asked)+"\u201d names "+num(t.askedHits)+" title"+(t.askedHits===1?"":"s")+" there, so \u201c"+esc(t.term)+"\u201d is shown";
+  });
+  var left=(got.missed.length
     ? " <em>Nothing on the map is called "+esc(got.missed.join(", "))+", so that part was left out.</em>"
-    : "";
+    : "")+(stemmed.length ? " <em>"+stemmed.join("; ")+".</em>" : "");
   setHint("<strong>Ask SkyView</strong> — "+esc(said)+left+
     " Your question: “"+esc(qtext)+"”");
   /* ⚠️ THE PARTIAL ANSWER IS THE ONE THAT MUST TRAVEL. The map moved, so the
@@ -4709,6 +4738,21 @@ function tokenHits(t){
     out.hits.push({id:t.nd.i, x:t.nd.x+(t.isl.dx||0), y:t.nd.y+(t.isl.dy||0), isl:t.isl, nd:t.nd}); return out;
   }
   var term=String(t.term||"").toLowerCase();
+  if(t.within){
+    /* A scoped term: the titles and college-course codes INSIDE the named
+     * disciplines — never the island-name jump, and never an outline of its
+     * own (the discipline chip already outlines it). */
+    var inScope=function(h){ return t.within.indexOf(h.isl)>=0; };
+    if(face==="cpl" && cplState==="ok"){ out.hits=cplHits(term).filter(inScope); return out; }
+    t.within.forEach(function(I){ I.p.forEach(function(nd){
+      if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
+        out.hits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
+    }); });
+    memberHits(term).filter(inScope).forEach(function(h){
+      if(!out.hits.some(function(x){ return x.id===h.id; })) out.hits.push(h);
+    });
+    return out;
+  }
   var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
   if(named.length){ out.isls=named; return out; }
   if(face==="cpl" && cplState==="ok"){ out.hits=cplHits(term); return out; }
@@ -4726,8 +4770,19 @@ function addToken(t){
   // next pick is one more click rather than a retype.
   renderTokens(); applyTokens(t); return true;
 }
-function removeToken(key){
+/* Dropping a chip. A discipline chip that scoped a term takes the scope with
+ * it — the term then searches the whole map, which is what the chip now says. */
+function dropTokenKey(key){
+  var gone=tokens.filter(function(x){ return x.key===key; })[0];
   tokens=tokens.filter(function(x){ return x.key!==key; });
+  if(gone && gone.kind==="subject") tokens.forEach(function(t){
+    if(!t.within) return;
+    t.within=t.within.filter(function(I){ return I!==gone.isl; });
+    if(!t.within.length) delete t.within;
+  });
+}
+function removeToken(key){
+  dropTokenKey(key);
   renderTokens();
   if(!tokens.length){ searchHits=[]; searchTerm=""; setHint("Selection cleared."); draw(); return; }
   applyTokens(null);
@@ -4774,12 +4829,13 @@ function applyTokens(last){
    * the same button reads Recenter and goes back to it — ↺ resets to the whole
    * universe, which is what ↺ is for (Sam's ruling 3, 2026-09-05). */
   if(last){
-    if(last.kind==="term") searchOne(last.term); else goSuggestionSingle(last.s);
+    if(last.kind==="term"){ if(last.within) focusScoped(last); else searchOne(last.term); }
+    else goSuggestionSingle(last.s);
   } else {
     fitSelection(hits, isls);
   }
   searchHits=hits; searchTerm="";
-  var words=tokens.map(function(t){ return "<strong>"+esc(t.label)+"</strong>"; });
+  var words=tokens.map(function(t){ return "<strong>"+esc(t.label)+"</strong>"+scopeWords(t); });
   setHint((last ? "Focused on <strong>"+esc(last.label)+"</strong>. " : "")+
     "Showing "+tokens.length+" selections: "+words.join(" · ")+". "+
     (hits.length ? num(hits.length)+" course"+(hits.length===1?"":"s")+" ringed in red" : "")+
@@ -4788,6 +4844,27 @@ function applyTokens(last){
       ? ". <em>Fit all</em> beside the search box shows them together; remove a chip to narrow it."
       : ". <em>Recenter</em> beside the search box returns to it.")+healWords());
   draw();
+}
+function scopeWords(t){
+  return t.within ? " in "+t.within.map(function(I){ return esc(I.d); }).join(", ") : "";
+}
+/* Where a scoped term lands: on its hits, inside the discipline that scopes it.
+ * One hit opens as a course pick; none flies to the discipline and its card
+ * says so in the count the hint prints. */
+function focusScoped(t){
+  var h=tokenHits(t).hits, I=t.within[0];
+  if(!h.length){
+    healIsland(I);
+    flyTo(I.x+(I.dx||0), I.y+(I.dy||0), SUBJECT_ZOOM);
+    selIsl=I; selNode=null; showIsland(I); return;
+  }
+  healHits(h);
+  if(h.length===1){
+    selNode=h[0].nd; selIsl=h[0].isl; memFilter="";
+    flyTo(selNode.x+(selIsl.dx||0), selNode.y+(selIsl.dy||0), COURSE_ZOOM);
+    showNode(selNode, selIsl, false); return;
+  }
+  selNode=null; selIsl=I; fitSelection(h, []); showIsland(I);
 }
 function selectionUnion(){
   isoDirty();          // it writes t.isls below, in place
@@ -4837,7 +4914,8 @@ function renderTokens(){
      * hang on that span alone, so hovering the kind, the padding or the × showed
      * nothing, which is most of the chip's surface. Kind included, because the
      * clipped word is often the half that says WHICH "Introduction to…" this is. */
-    var full=tokenShort(t)+" · "+t.label;
+    var scoped=t.within ? " in "+t.within.map(function(I){ return I.d; }).join(", ") : "";
+    var full=tokenShort(t)+" · "+t.label+scoped;
     /* ⭐ THE LABEL IS A CONTROL (Sam, item 2, 2026-09-06). The chips sit where a
      * trail of breadcrumbs would sit and read as one, but the only working
      * control inside a chip was its ×, so the only way back to a pick you had
@@ -4846,7 +4924,7 @@ function renderTokens(){
     return '<span class="u-tok" data-key="'+esc(t.key)+'" title="'+esc(full)+'">'+
       '<button type="button" class="u-tok-go" data-key="'+esc(t.key)+
         '" aria-label="Go back to '+esc(t.label)+'"><span class="u-tok-k">'+esc(tokenShort(t))+'</span>'+
-        '<span class="u-tok-l">'+esc(t.label)+'</span></button>'+
+        '<span class="u-tok-l">'+esc(t.label+scoped)+'</span></button>'+
       '<button type="button" class="u-tok-x" aria-label="Remove '+esc(t.label)+' from the selection" title="Remove">\u00d7</button></span>';
   }).join("")+(tokens.length
     /* ⚠️ ONE pick needs this button too (Sam's ruling 3). It used to render only
@@ -5565,7 +5643,22 @@ function renderNode(){
      * ⚠️ Only on the click and keyboard paths: the pointerdown path is starting
      * a real drag across the canvas, and rebuilding the panel under the pressed
      * pointer would take the button out from under it. */
-    b.addEventListener("click", function(){ if(!(drag&&drag.kind==="course")) { if(pickUp()){ renderNode(); cvs.focus(); } } });
+    b.addEventListener("click", function(){
+      if(drag && drag.kind==="course"){
+        /* ⭐ THE POINTERDOWN ABOVE ALREADY PICKED IT UP, AND THIS BRANCH USED TO
+         * DO NOTHING. A plain mouse click is press AND release on the button, so
+         * the carry was live but the panel never repainted and focus never moved
+         * (preventDefault kept it where it was — measured in Chromium 2026-09-10:
+         * on the body). The Similar list still read as places to go and look at,
+         * Esc — which the hint promises — reached nothing, and the reader's next
+         * click on the map to get focus back PARKED the course. Only a click that
+         * completes on this button's own course does this; a drag that starts
+         * here and ends on the canvas never fires a click at all. */
+        if(drag.cn===b.dataset.cn){ renderNode(); cvs.focus(); }
+        return;
+      }
+      if(pickUp()){ renderNode(); cvs.focus(); }
+    });
     b.addEventListener("keydown", function(e){ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); if(pickUp()){ renderNode(); cvs.focus(); } } });
   });
 }

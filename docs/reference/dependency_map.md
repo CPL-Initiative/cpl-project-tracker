@@ -166,7 +166,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js` · pages: `fact-sheet/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
+| `cpl-chat` | tabs: `chatbot`, `gr-priorities`, `memory` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `fact-sheet/index.html`, `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts`, `cpl-chat-deploy.yml` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
 | `cpl-news-harvest` | none found | produced by: `chatbox/supabase/functions/cpl-news-harvest/index.ts` |
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
@@ -678,7 +678,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | Service | Called by |
 |---|---|
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_funding_explainer.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api.anthropic.com` | tabs: `annual-report` · pages: `CPL_Dashboard.html` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
@@ -838,4 +838,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 456 file
-datasets · 138 external services · 327 consumers · 33 workflows · 37 tabs.
+datasets · 138 external services · 328 consumers · 33 workflows · 37 tabs.

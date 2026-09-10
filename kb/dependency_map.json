@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 456,
   "external_services": 138,
-  "consumers": 327,
+  "consumers": 328,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -59,7 +59,14 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 3682
+     "line": 3708
+    },
+    {
+     "id": "module:prototype/check_skyview_sweep.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 387
     },
     {
      "id": "module:sierra/sierra.js",
@@ -177,6 +184,13 @@
      "direction": "read",
      "how": "url",
      "line": 56
+    },
+    {
+     "id": "module:prototype/check_skyview_sweep.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 84
     },
     {
      "id": "module:scripts/a11y.js",
@@ -1121,7 +1135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5147
+     "line": 5225
     }
    ],
    "main_committers": []
