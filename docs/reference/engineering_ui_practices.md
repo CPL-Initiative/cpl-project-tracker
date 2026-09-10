@@ -1,7 +1,7 @@
 ---
 title: "Engineering & UI practices (CLAUDE.md offload)"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-10
 tags: [reference, engineering, ui, first-light, claude-md-offload]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -23,6 +23,20 @@ related:
 From a retrospective Sam asked for (Session 32, 2026-06-04). These are
 lightweight standing practices — honor them in normal work.
 
+- ⭐ **FAILING CLOSED AND FAILING SILENTLY ARE SEPARABLE — and only the first is
+  ever the requirement (2026-09-10, #1537).** A guard that hides something on
+  purpose still owes a word to the person who can fix it. Sam's live-session
+  banner row was active, carried a link, and had expired; the expiry guard hid it
+  exactly as designed, and he reported the feature as never built, twice, days
+  apart. ⚠️ **A green suite is not evidence here**: every check in
+  `tests/cobi_live_banner.test.js` asked whether the banner was ABSENT, and
+  absent was the correct answer each time, so nothing went red for the whole day
+  he spent diagnosing a working feature. The test to write is *"the person who
+  set this is told why"*, not *"the wrong thing does not render"*. Cost of the
+  diagnostic: one line, its own dismiss key, and no link — the link is what
+  expired. ⚠️ **The same shape reaches rendering**: a message that prints where
+  nobody looks is a silent failure with a passing string assertion beside it
+  ([`methodology-a-check-on-the-message-says-nothing-about-where-it-lands`](../kb-notes/methodology-a-check-on-the-message-says-nothing-about-where-it-lands.md)).
 - **Commit your verification.** Front-end (consumer JS) changes get a jsdom test
   under `tests/` (run with `npm test`; `tests/run.js` auto-discovers
   `tests/*.test.js`). Don't write a throwaway `/tmp` test and discard it — a test

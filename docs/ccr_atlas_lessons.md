@@ -1867,3 +1867,147 @@ recorded and it repeated here inside one session.
 ⚠️ **The handoff number collided too.** This run and the dark-mode run were both
 live on 2026-09-09; that run took 249 (SkyGround), so this one is filed under its
 moniker, **SkySight**, and writes handoff 250.
+
+---
+
+## 2026-09-10 — SkyReach (Session 251): three silences, and a description that belongs to nobody
+
+Sam opened with six reports and a standing note: *"Advise and pushback always
+welcome."* Four of the six needed judgment he alone could make, so they went to
+a decision sheet (`docs/visuals/2026-09-10-skyview-four-calls.html`). Two PRs
+landed: **#1537** (items 4, 2, 1a) and **#1538** (item 1b).
+
+### ⭐ THREE SURFACES WERE WORKING AS DESIGNED AND SAID SO TO NOBODY
+
+This is the run's headline and it is one shape, three times.
+
+1. **The live-session banner.** *"I still don't see the banner saying I'm active
+   in a CC session."* His `cobi_live_session` row was active, carried a link, and
+   had expired two days earlier. The expiry guard hid it — correctly; a stale
+   link invites the team into a dead session. ⚠️ **Every check in
+   `cobi_live_banner.test.js` asked whether the banner was ABSENT, and absent was
+   the right answer each time.** The suite was green for the whole day Sam spent
+   believing the feature had never been built. Failing closed and failing
+   silently are separable, and only the first was ever the requirement.
+2. **The exhibit names.** *"Add the name of any articulated exhibits to the
+   course description card."* ⚠️ **They were already there, and check (6) of
+   `ccr_skyview_cpl_face.test.js` had asserted so since #1508** — it passed the
+   entire time he was asking for it. `MAP exhibit: Fire Prevention FIRE 002 Cx`
+   renders as the last muted line of a nested block, below the description and
+   below every member row: 55 of them on the FIRE 110 X in his screenshot.
+   **Present and unreadable is absent to the reader** — the same lesson S250
+   wrote up one surface over, where an answer printed 850px from the hand.
+3. **A course with no description.** 65 identities quoted the March 2012
+   migration notice as if it were a description.
+
+### ⭐ THE OBVIOUS DETECTOR MEASURED THE WRONG THING
+
+*"Some of the course descriptions have boilerplate test for descriptions."* The
+first instinct is a repetition detector, and on this corpus it is backwards: the
+six most-reused description strings are the **C-ID descriptors** for statistics,
+psychology, government, composition, public speaking and critical thinking —
+1,149 rows of the best text we hold, identical because colleges adopted a
+statewide descriptor on purpose. A repetition rule ranks those first and deletes
+them.
+
+What is junk announces itself. **247 of 127,266 non-empty rows (0.19%), 171
+identities, 107 distinct strings** — few enough that all 107 were read by hand
+before shipping. Never by length: *"Study of selected works of Shakespeare."* is
+38 characters and real.
+
+⚠️ **THE FALSE POSITIVE THE MEASUREMENT COULD NOT SEE.** The first rule matched
+*"Experimental course in advanced welding techniques, covering plate and pipe."*
+No such row is in the corpus, so re-running the measurement returned the same 247
+and **looked like confirmation**. The predicate's own unit check found it, with
+strings written to the boundary rather than sampled from the data. A measurement
+over the data you have cannot find a rule that is wrong about data you do not
+have yet.
+
+### ⭐ SAM OVERRULED THE MEDOID, AND HIS REASON IS ONE THE CODE NEVER PRICED
+
+> *"I don't want to choose the single most representative description and
+> attribute it to the college it came from. Doing so could lead to division as
+> some faculty may question the choice… If we always provide a generative
+> description and note such, it will allow the faculty reviewers the freedom to
+> revise and accept by consensus."*
+
+Session 235's defense of the medoid was half right — composing prose out of
+several catalogs *"would read as authoritative while belonging to nobody."* The
+half it never priced: **naming a winner is a curatorial act performed in public,
+and the losers are faculty.**
+
+Both constraints hold once the **unit is the sentence, not the document**.
+Nothing is composed; the selector is agreement rather than typicality; no college
+is named. His own earlier words describe it exactly: *"a consolidation of all
+without repetition."*
+
+### ⚠️ THE CLUSTERING LINK MATTERED MORE THAN THE THRESHOLD
+
+| link | threshold | majority-supported sentence | clusters holding a pair under 0.25 |
+|---|---|---|---|
+| single | 0.4 | 64% | **10.1%** |
+| single | 0.5 | 50% | 4.5% |
+| **complete** | **0.3** | **64%** | **0.0%** |
+| complete | 0.5 | 46% | 0.0% |
+
+Single-link chains through a middle sentence: *"the fundamentals of acting in
+film and television"* was welded to *"acting in film and television commercials,
+episodic screen work"*, and the card then reported agreement no two colleges had.
+**Complete-link at 0.3 reaches exactly as far with zero drift, by construction.**
+The threshold fell from 0.5 to 0.3 because the rule got STRICTER — a number that
+drops is not always a standard that slipped.
+
+### ⚠️ ADMINISTRATION IS THE MOST-AGREED TEXT IN THE CORPUS
+
+PLGL M1026's four colleges agree on exactly one thing:
+`Lec Hrs: 24.00 Out of Class Hrs: 48.00 Total Student Learning Hrs: 72.00`.
+Advisories, prerequisites, hour counts, repeatability notes and cross-references
+are 2.9% of sentences and a far larger share of the agreed ones, because
+administration is what colleges copy from a template.
+
+Three details, each of which broke something first:
+
+- **A numeric heading is STRIPPED and its sentence KEPT; a prose-valued key takes
+  its sentence with it.** The hour block runs into the prose with no full stop,
+  and the first filter deleted four colleges' only description that way (71
+  sentences per 1,500-identity sample carry real text after their numbers).
+- **A record dump needs its own course title stripped, AFTER the code in front of
+  it.** ENTR M1004 led all seven catalogs with `ENP-51 : Entrepreneurship Basics
+  Prerequisite: None Entrepreneurship has been described as…`. Ordering matters:
+  the title is not at the front until the code is gone.
+- **A sentence can end `.)`.** `(Also listed as CHLX 26.) This course is an
+  introduction to the study of race.` is ONE sentence beginning with a
+  cross-reference — the description is **deleted**, not mis-ordered.
+
+⚠️ **`"".indexOf("")` IS 0.** The bracket-aware scan hung the page: `charAt` past
+the end returns `""`, which every `indexOf` reports as found at 0, so
+`")]".indexOf(t.charAt(i+1+n)) >= 0` is true forever at the end of every
+description. The character has to EXIST before it can be a bracket.
+
+### ⚠️ A FIXTURE THAT CANNOT FAIL IS NOT A FIXTURE
+
+`ccr_skyview_outline.test.js`'s consolidation fixture was rebuilt **twice**.
+Its first version left 78/78 green under BOTH a revert to support-ordering and a
+revert to single-link, because the opener happened to win on support too and no
+three sentences could chain. Falsifying each new check by reverting its own line
+is the only thing that caught it. The second rebuild made the opener carry 2 of 4
+against a later sentence's 4 of 4, and added three sentences where the first and
+third share no content word.
+
+Same shape one file over: the item-4 test comment claimed a shared dismiss key
+would break the banner. **It does not** — the two paths compare the key against
+different values, and reverting to one key leaves every check green. The comment
+now names the mistake it actually catches (dismissing on the session url).
+
+### Where the run left the lane
+
+All six reports are closed. **C-ID/CCN is the one ask not built**: Sam wants the
+statewide descriptor where one exists, and MAP holds the DESIGNATION, not the
+descriptor text (541 of 49,896 — 484 C-ID, 57 CCN). Those cards now name the
+descriptor as the authority and say MAP does not hold it. Loading them is a data
+feed, not a rendering change.
+
+**CPL mode is scoped, not built.** Sam's words are in the lane's NEXT verbatim: a
+second universe whose entities are exhibits, with CER titles as identities, local
+exhibits as members, and rings where a course articulates. ⚠️ `ccr_cpl.json` is
+keyed the INVERSE way and cannot be reused — the builder is a new one.
