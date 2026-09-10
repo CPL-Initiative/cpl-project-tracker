@@ -874,3 +874,83 @@ routes; light **63 → 62**, 18 → 18 routes; `npm test` **321/321**. One suite
 failed and was right to — `uc_kinship_gate` pinned the literal `color:#fff` on
 the member-table band — so the assertion moved to the intent it was written for,
 per the S245 precedent for a guard with no ruling behind it.
+
+## 2026-09-10 — SkyTouch (S249): the rest of the phantoms, and a fix whose own measurement said nothing
+
+**PR #1542** (continued). Three findings, and the second is the one that changes
+how this lane should be worked.
+
+### 1 · The remaining 21 phantom color tokens
+
+S248 cleared `--surface-1`/`--surface-2`/`--gold-soft` and left 25 more measured
+but unfixed. 21 of them are now defined in the dark blocks only, covering 62
+uses across `cpl_pathways`, `map_users`, `team_phrases`, `unified_courses`,
+`gr_priorities`, `map_team_queue`, `credential_reference`, `annual_report`,
+`mission_control`, `raci`, `admin`, `sierra_training`, `reviewer_signin` and
+`governance`.
+
+Every value is an **alias**, never a new hex — inks to `--hunter` / `--crimson`
+/ `--mustard-text` / `--text-muted`, grounds to `--surface-subtle` /
+`--surface-muted` / `--surface-opaque` / `--gold-soft`, borders to `--border`.
+The role a token plays is then stated by the token it points at, which is the
+property that survives a palette change. All 12 new dark pairs computed with
+`prototype/check_contrast.py`: worst 4.93:1 against AA 4.5.
+
+⚠️ **The entry condition is "every use carries a fallback."** `--brand` (14
+uses), `--link` (6) and `--text` (4) were held out: they have uses written
+`var(--brand)` with no fallback, which are invalid at computed-value time and
+resolve to nothing in **both** themes today — `college_briefing.js`'s
+`.cb-bfrac>i` progress bar is `transparent` and its `.cb-lead`/`.cb-next`
+accent borders do not draw. A dark-only definition there would paint something
+light does not have. It is a both-themes bug whose fix changes light, so it went
+to Sam rather than into the sweep.
+
+### 2 · ⭐ The sweep measured nothing, and that is the finding
+
+The fix moved `npm run a11y cobi-dark` **66 → 67**. Measured both ways on the
+same tree with `git stash`, not inferred — and the diff of the two finding lists
+is **empty in one direction**. Not one of the 62 phantom uses was ever being
+sampled, so none could be reported fixed. (The single extra line is
+`map_data_quality`'s primary button, which the earlier run had not sampled; it
+is a pre-existing fixed-ink defect and is now fixed.)
+
+`.cplccr` chips, `.cplmem` cards, `.mtq` items, `.tphx` cards and `.grx` boxes
+are all built on demand. **So a finding count cannot be the acceptance test for
+a token-layer fix.** Prove the token layer directly instead: load both themes
+and read each token off `getComputedStyle(document.documentElement)`. 21/21
+resolved to the intended value in dark and were unset in light — which is also
+a stronger proof that no light pixel moved than the sweep can give. The light
+sweep merely agreed: 63 → 63, byte-identical lists.
+
+⚠️ **Falsify the probe too.** Its first version could not fail — it compared the
+light value against `""` after an `|| "(unset)"` coalesce, so all 21 read BAD
+while the data underneath was perfect. That is the third check this lane has
+produced that could not fire.
+
+### 3 · Three CI failures, none of them this branch's
+
+- **`tests/discipline_edge_fill_test.py` was red on `main` itself.** Its live-
+  payload check asserted `filled >= blank_before * 0.5` — yield — and S242 had
+  wired the fill into the generator, so the committed payload now arrives
+  already at the fixed point and yield goes to zero **on success**. Reproduced
+  on a clean worktree at `9ba2551`.
+- ⚠️ **It went red with no CI run reporting it.** `js-tests.yml` runs on push to
+  `main`, but a push made with `GITHUB_TOKEN` does not trigger workflows, so the
+  cron's commits never test themselves. `main`'s last js-tests run was an
+  **ancestor** of the commit that broke it. Same mechanism as the four
+  `background:#fff` form controls earlier in this session.
+- **Another session fixed the same test from the other side** (#1541) while this
+  branch was working. Both fixes are kept, and the reason is measured rather than
+  polite — see the KB note below.
+- ⭐ **#1541 also shipped `tests/kpi_history_no_gaps_test.py` with no runner.**
+  Named in no workflow, no script and no `package.json`, and `tests/run.js`
+  auto-discovers `tests/*.test.js` only, so a `*_test.py` runs nowhere unless a
+  step names it. Rule 3's guard had been reporting nothing since it landed. Now
+  wired into `js-tests.yml` beside the other 40 python steps.
+
+### Carried forward
+
+`--text-faint` on Implementation Funding, the raw dark inks the sweep names, the
+raw light grounds under them, printing while in dark mode, and the 24
+unresolved `var(--brand)`/`var(--link)`/`var(--text)` declarations — the last
+one needs Sam because it changes light.

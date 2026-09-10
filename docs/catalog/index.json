@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 429,
+   "count": 430,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3105,7 +3105,7 @@
      ],
      "title": "A token that cannot flip is a surface that cannot theme \u2014 the four shapes, and why every one of them reads as correct code",
      "type": "methodology",
-     "updated": "2026-09-09"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-09-08",
@@ -6838,6 +6838,24 @@
      "title": "Two expressions of one predicate will drift apart, and the drift is silent",
      "type": "methodology",
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [
+      "tests/discipline_edge_fill_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-two-fixes-to-one-guard-may-both-be-right.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "ci",
+      "merge-conflicts",
+      "guards"
+     ],
+     "title": "Two sessions fixing one guard may both be right \u2014 measure before you pick",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-06-11",
@@ -12263,7 +12281,7 @@
      ],
      "title": "COBI dark mode / the one theme control \u2014 lane state",
      "type": null,
-     "updated": "2026-09-08"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-28",
@@ -12871,8 +12889,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 225,
+   "count": 226,
    "docs": [
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "n": 252,
+     "path": "docs/session_252_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "the rest of the phantoms, and three guards that reported nothing",
+     "type": null,
+     "updated": "2026-09-10"
+    },
     {
      "created": "2026-09-10",
      "governs": [],
@@ -16678,5 +16709,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 863
+ "total": 865
 }

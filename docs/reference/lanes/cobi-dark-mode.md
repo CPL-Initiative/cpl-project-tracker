@@ -1,7 +1,7 @@
 ---
 title: "COBI dark mode / the one theme control — lane state"
 created: 2026-09-08
-updated: 2026-09-08
+updated: 2026-09-10
 tags: [reference, roadmap-lane, ui, dark-mode]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -24,22 +24,12 @@ header ... ensure that it sets all tabs and windows using that one control."*
 the single owner: a `Theme` selector in the masthead (**System · Light · Dark**),
 `localStorage` key `cpl_theme`, `data-theme` on `<html>`, and a `storage`
 listener so a second window follows without a reload. Loaded in `<head>` and
-render-blocking on purpose — the attribute lands before first paint, so a dark
-reader gets no white flash. Three states, not two, because **forcing light on an
-OS-dark reader would have been a regression** against the four tabs that already
-honored `prefers-color-scheme`.
+render-blocking on purpose, so the attribute lands before first paint and a dark
+reader gets no white flash. Three states, not two: **forcing light on an OS-dark
+reader would have been a regression** against the tabs already honoring
+`prefers-color-scheme`.
 
-⭐ **THE ASK NAMED A REAL SPLIT: there were FIVE answers to "is it dark."**
-`cpl_memory.js` had its own button that persisted **nothing**; two tabs were
-already correct; `our_process.js` keyed on the media query **alone**, so it
-followed the OS and could not be told otherwise; and `cip_crosswalk.js` (found
-S248) kept its own button, key and class-gated palette — invisible for four
-rounds because it used **neither** spelling anyone grepped for. Only
-`cpl_theme.js` decides now, asserted by `tests/cpl_theme.test.js`, whose general
-form is the durable one: **no tab may keep theme state of its own.**
-
-**The contract every themed component keys on** (it predates this work — three
-tabs already used it):
+**The contract every themed component keys on** (it predates this work):
 
     <html>                     → follow the OS
     <html data-theme="light">  → light, whatever the OS says
@@ -47,29 +37,29 @@ tabs already used it):
 
 So a component writes the media query **guarded by
 `:not([data-theme="light"])`**, plus an explicit `:root[data-theme="dark"]`
-rule. Dropping the guard is exactly `our_process.js`'s bug.
+rule. Dropping the guard was `our_process.js`'s bug.
 
-⭐ **THE PALETTE IS A TOKEN SWAP REUSING SKYVIEW'S MEASURED VALUES** — the names
-already matched and `prototype/check_contrast.py` had computed every pair. One
-palette across the map and the monolith.
+⭐ **NO TAB MAY KEEP THEME STATE OF ITS OWN** — the durable form of the rule,
+asserted by `tests/cpl_theme.test.js`. The ask uncovered **five** answers to
+"is it dark": `cpl_memory.js` persisted nothing, `our_process.js` keyed on the
+media query alone, and `cip_crosswalk.js` kept its own button, key and
+class-gated palette — invisible for four rounds because it used **neither**
+spelling anyone grepped for. All now defer to `cpl_theme.js`.
 
 ⚠️ **`--seal-blue` IS NOT REDEFINED DARK, AND THAT IS DELIBERATE** — 65 fills
 and 53 borders against 20 text uses, so flipping it rescues the wordmark and
-breaks 200+ surfaces. `--seal-blue-text` carries the text grade. Guarded, because
-the invisible wordmark is exactly the symptom that invites the wrong fix:
+breaks 200+ surfaces. `--seal-blue-text` carries the text grade. Guarded,
+because the invisible wordmark is the symptom that invites the wrong fix:
 [`methodology-a-token-with-two-jobs-cannot-be-themed`](../../kb-notes/methodology-a-token-with-two-jobs-cannot-be-themed.md)
 
-⭐ **THE SWEEP FOUND WHAT READING THE PALETTE COULD NOT** — it opened at 38/38
-routes, six shared-chrome selectors being ~227 findings. ⚠️ **But it is not
-sufficient either**: it reports only what it PAINTS, so a tab that builds content
-on demand reads clean while both its panes are white. Pair it with the structural
-scan — see the note linked below.
+⚠️ **`@media (prefers-contrast: more)` NEEDS ITS OWN DARK BRANCH.** It set
+`--text-muted` at `:root` (0,1,0) against the dark palette's (0,2,0), so the
+reader's preference was silently dropped until one was added.
 
-✅ **HEADER CLEANUP · HIGH CONTRAST IN DARK.** Glyphs out of every header
-control; About and Theme share one **drawn** caret (out of the accessible name,
-correct in both themes). `@media (prefers-contrast: more)` set `--text-muted` at
-`:root` (0,1,0) against the dark palette's (0,2,0), so the preference was
-silently dropped until a dark branch was added.
+⚠️ **THE SWEEP REPORTS ONLY WHAT IT PAINTS** — a tab that builds content on
+demand reads clean while both its panes are white. It opened at 38/38 routes
+with six shared-chrome selectors worth ~227 findings, so it is necessary; it is
+not sufficient. Pair it with the structural scan and the token probe below.
 
 ✅ **SkyView follows the one control as a FALLBACK, not an override.** Order:
 this reader's own SkyView choice → an explicit global choice → where they stand.
@@ -78,47 +68,36 @@ reads `system` until someone picks.
 
 ## ⚠️ Open — the measured remainder
 
-⭐ **S248 FOUND THE SHAPE OF THE REMAINDER, AND IT IS NOT "A LONG TAIL OF RAW
-HEXES."** It is four kinds of token that **cannot flip**, each of which reads as
-correct, tokenized code — so review cannot see them and grep does not catch them.
-The four shapes, the role-count rule, why the sweep under-reports, and the guard
-that could not fail are PULL, in one note:
+⭐ **THE REMAINDER IS NOT "A LONG TAIL OF RAW HEXES."** It is four kinds of
+token that **cannot flip**, each of which reads as correct, tokenized code — so
+review cannot see them and grep does not catch them. The four shapes, the
+role-count rule, why the sweep under-reports, and the guard that could not fail
+are PULL, in one note:
 [`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](../../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md).
-**Read it before theming anything.** What is state, and belongs here:
+**Read it before theming anything.** Cleared so far — all four classes:
 
-- ✅ **Phantom `--surface-1`/`--surface-2` — FIXED**, 26 sites, 19 of 128
-  findings. Defined in the **DARK blocks only**: light keeps each site's own
-  tint, so no light pixel moved. ⚠️ **Do not "complete" the pair in the light
-  `:root`** — the fallbacks are six different tints, so one light value repaints
-  six tabs. Sam's call. Guarded by `tests/cpl_theme.test.js`.
-- ✅ **The remaining 21 phantom color tokens — FIXED (S249)**, 62 uses, same
-  dark-blocks-only rule. Inks alias the measured accents (`--ok`/`--cpl-green`/
-  `--success-text` → `--hunter`; `--danger`/`--danger-text`/`--brick` →
-  `--crimson`; `--cpl-amber`/`--cpl-warn`/`--cpl-warn-text`/`--mustard` →
-  `--mustard-text`), grounds alias the surfaces (`--cpl-cream`/`--gx-soft` →
-  `--surface-subtle`, `--cpl-green-soft` → `--surface-muted`, `--surface-page`/
-  `--surface-0` → `--surface-opaque`, `--cpl-warn-bg` → `--gold-soft`), borders
-  → `--border`. **Values are aliases, never new hexes** — the role each token
-  plays is stated by the token it points at. All 12 new dark pairs computed
-  against `prototype/check_contrast.py`: worst is 4.93:1, AA is 4.5.
+- ✅ **Phantom tokens — CLEARED**, 47 tokens / 88 uses (26 in S248, 62 in S249),
+  defined in the **DARK blocks only** so light keeps every site's own fallback.
+  S249's values are **aliases, never new hexes** — inks → `--hunter` /
+  `--crimson` / `--mustard-text` / `--text-muted`, grounds → `--surface-subtle`
+  / `--surface-muted` / `--surface-opaque` / `--gold-soft`, borders →
+  `--border`; worst new pair 4.93:1 against AA 4.5, computed with
+  `prototype/check_contrast.py`. ⚠️ **Do not "complete" any of them in the
+  light `:root`** — `--surface-1`/`--surface-2`'s fallbacks alone are six
+  different tints, so one light value repaints six tabs. Sam's call. Guarded.
+- ✅ **`var(--white)` as a ground — CLEARED**, 7 sites (Sam's first screenshot).
+- ✅ **Fixed ink on a fill that flips — CLEARED**, 17 `--navy-*` sites (S248)
+  plus `--danger` ×2 and `--accent-link` ×2 (S249), all → `--on-accent`.
+  ⚠️ **The other ~160 navy fills are NOT proven broken** — only where the ink
+  cannot follow. The class is greppable, so `tests/cpl_theme.test.js` scans
+  every consumer JS for it rather than waiting for the sweep to sample it.
+- ✅ **Tabs holding their own theme state — CLEARED** (`cip_crosswalk.js`,
+  `our_process.js`); both key on `cpl_theme.js` now.
 
-  ⚠️ **THE ENTRY CONDITION IS "EVERY USE CARRIES A FALLBACK," AND IT IS THE
-  WHOLE SAFETY ARGUMENT.** `--brand` (14 uses), `--link` (6) and `--text` (4)
-  are phantoms too and are deliberately **NOT** in the batch: they have uses
-  written `var(--brand)` with **no fallback**, which are invalid at
-  computed-value time and so resolve to nothing in BOTH themes today — a
-  progress bar filled `transparent`, a `border-left` that draws no border.
-  Defining those dark-only would paint something the light theme does not have.
-  **That is a both-themes bug, not a dark-mode one** — see the open item below.
-- ✅ **`var(--white)` as a ground — FIXED**, 7 sites (Sam's first screenshot).
-- ✅ **Fixed ink on a fill that flips — FIXED**, 17 `--navy-*` sites (S248) plus
-  `--danger` ×2 and `--accent-link` ×2 (S249), all → `--on-accent`. ⚠️ **The
-  other ~160 navy fills are NOT proven broken** — only where the ink cannot
-  follow. This class is greppable, so `tests/cpl_theme.test.js` now scans every
-  consumer JS for it rather than waiting for the sweep to sample the surface.
-- ✅ **`cip_crosswalk.js` (the fifth answer to "is it dark") and
-  `our_process.js`'s contour canvas — FIXED.** Both now key on `cpl_theme.js`.
-
+⚠️ **THE ENTRY CONDITION FOR A DARK-ONLY DEFINITION IS "EVERY USE CARRIES A
+FALLBACK," AND IT IS THE WHOLE SAFETY ARGUMENT.** Without one, light gets
+nothing and dark gets a value, which is a change light never asked for. That is
+why `--brand`/`--link`/`--text` are held below rather than swept.
 
 ### Named, measured, and deliberately NOT fixed
 
@@ -175,28 +154,24 @@ cannot reach the Pages site, so check git, not the URL).
 
 ## ⚠️ MOBILE — a floor the layout cannot go under (S248)
 
-Sam, with a phone screenshot: *"the mobile view of COBI analytics, not easily
-readable."* The dashboard was **1278px wide on a 390px screen**. ✅ **FIXED, and
-mobile is now clean at 390px on every route.**
+✅ **FIXED — clean at 390px on every route.** The dashboard had been 1278px wide
+on a 390px screen (raci 782 · budget 608 · activities-projects 517 · memory
+504, all now 390). Sweep: sideways-scroll 5 → 0, viewport escapes 5 → 0, and
+contrast unchanged in both themes.
 
-⭐ **The cause was one line that isn't there:** a grid item's default
-`min-width:auto` floors the track at its min-content, and two of `.kpi-section`'s
-fifteen items are not cards but blocks wrapping ~1210px tables — so the single
-column could not shrink and **every card inherited that width**. ⚠️ Their
-`overflow-x:auto` scrollers were already present and doing nothing, because the
-box they were meant to constrain was itself 1262px. The four spellings of this
-fault, how to find it in one pass, and the guard that could not fail (twice) are
-PULL: [`methodology-a-floor-the-layout-cannot-go-under`](../../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md).
+⭐ **THE CAUSE IS A LINE THAT ISN'T THERE:** a grid item's default
+`min-width:auto` floors its track at min-content, so two `.kpi-section` items
+wrapping ~1210px tables held the whole single column open and every card
+inherited the width — while their `overflow-x:auto` scrollers sat there doing
+nothing, because the box they were meant to constrain was itself 1262px. The
+four spellings of the fault, how to find them in one pass, and the guard that
+could not fail (twice) are PULL:
+[`methodology-a-floor-the-layout-cannot-go-under`](../../kb-notes/methodology-a-floor-the-layout-cannot-go-under.md).
 
-**Measured, page scrollWidth at 390px:** dashboard **1278 → 390** · raci 782 →
-390 · budget 608 → 390 · activities-projects 517 → 390 · memory 504 → 390.
-Sweep: **sideways-scroll 5 → 0, viewport escapes 5 → 0.** Contrast unchanged in
-both themes, so the layout work regressed neither.
-
-⚠️ **Rule 1/2:** `.exhibit-cards-grid` and the 340px chart floors are inside the
-generator-injected `EXHIBIT_ANALYSIS_CSS` markers — the generator is the source
-of truth; the HTMLs are mirrored so it is live before the next cron.
-Guarded by `tests/kpi_cards.test.js` (three floors, each falsified).
+⚠️ **Rule 1/2:** `.exhibit-cards-grid` and the 340px chart floors live inside
+the generator-injected `EXHIBIT_ANALYSIS_CSS` markers — change the generator;
+the HTMLs are mirrored so it is live before the next cron. Guarded by
+`tests/kpi_cards.test.js` (three floors, each falsified).
 
 ## ⭐ Three token roles, and why there are three
 
@@ -215,60 +190,46 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 
 ## Measured
 
-| Sweep | S244 | S245 | **S248** |
-|---|---|---|---|
-| `npm run a11y cobi-dark` — routes | 26 | 26 | **20** |
-| `cobi-dark` — **contrast findings** | 184 | 120 | **87** (−32% from 128) |
-| `cobi-dark` — findings, **S249** | — | — | **66 → 67** (see below) |
-| `cobi` (light) — findings, **S249** | — | — | **63 → 63**, list identical |
-| `npm run a11y cobi` (light) — routes | 18 | 18 | **18** |
-| `cobi` (light) — contrast findings | — | — | **62** (baseline 63) |
-| `npm test` | — | 316/316 | **321/321** |
-| glyph control-class, **ours** | "401" | **26** | 26 (ruled, untouched) |
+| Sweep | S244 | S245 | S248 | **S249** |
+|---|---|---|---|---|
+| `cobi-dark` — **contrast findings** | 184 | 120 | 87 | **67** |
+| `cobi` (light) — contrast findings | — | — | 62 | **63** |
+| `npm test` | — | 316/316 | 321/321 | **321/321** |
+| glyph control-class, ours | "401" | 26 | 26 | 26 (ruled, untouched) |
 
-⚠️ **S245's 120 EXCLUDED Implementation Funding; S248's numbers INCLUDE it** —
-the like-for-like start of this run is **128**, measured, not carried over. Say
-which sweep a number came from or the next session cannot tell a regression from
-a widened scope.
+⚠️ **SAY WHICH SWEEP A NUMBER CAME FROM, AND WHETHER THE SCOPE MOVED.** S245's
+120 excluded Implementation Funding (Sam was working that tab); S248's include
+it, so S248's like-for-like start was **128**, measured rather than carried
+over. Without the provenance the next session cannot tell a regression from a
+widened scope. The 401 glyph figure is the same trap: 348 of them belong to
+`excel_to_dashboard.py`, where plain words already stand.
 
-⭐ **THE LIGHT BASELINE WAS MEASURED, NOT ASSUMED.** S248 built a `git worktree`
-at `origin/main` and swept it: **63 findings / 18 routes**. Against 62 / 18 after
-40-odd edits, that is the proof the light theme did not move — and it cost two
-minutes. *"Light held at 18"* was previously an inference from the route count,
-which is too coarse to carry that claim.
+⚠️ **STEER BY THE FINDING COUNT, NEVER THE ROUTE COUNT** — a route fails on any
+one finding, so 38 fixes can leave it unchanged, and the count is not even
+stable run to run (22 vs 21 on identical code). ⚠️ **AND THE FINDING COUNT IS
+NOT AN ACCEPTANCE TEST FOR A TOKEN-LAYER FIX**: S249's 21-token fix moved dark
+**66 → 67** with an empty diff in one direction, because none of the 62 phantom
+uses was ever being sampled. Prove the token layer directly instead — load both
+themes and read each token off `getComputedStyle(documentElement)`. That is
+also the strongest available proof that light did not move.
 
-⚠️ **THE ROUTE COUNT IS TOO COARSE TO STEER BY** — a route fails on any one
-finding, so 38 fixes can leave it at 26. Steer by the finding count and the
-color-pair ranking. ⚠️ **`--surface-opaque` IS `#FFFFFF` in light**, which made
-the ground swap provably safe: light held at 18 across every pass.
+⚠️ **MEASURE THE LIGHT BASELINE, DO NOT INFER IT.** A `git stash` or a
+`git worktree` at `origin/main`, swept both ways, costs two minutes and turns
+"light held" from an inference into a byte-identical finding list.
 
-⚠️ **SWEEP THE GENERATOR'S INPUT, NOT ONLY THE HTML (S246, 2026-09-10).**
-S245 swept the four College Activity filter controls in both HTMLs and left
-`background:#fff` standing in `college_activity_template.html`, which
-`excel_to_dashboard.py` emits verbatim — so the first cron run after the outage
-put all four back. The check added in the same PR read `CPL_Dashboard.html` only
-and could not see it. `cpl_theme.test.js` now guards the template too
-(`GENERATED_FROM`); add any future emitted template to that list, and expect a
-red artifact check after a generator repair to be latent source drift surfacing.
+⚠️ **SWEEP THE GENERATOR'S INPUT, NOT ONLY THE HTML (S246).** S245 swept the
+four College Activity filter controls in both HTMLs and left `background:#fff`
+standing in `college_activity_template.html`, which `excel_to_dashboard.py`
+emits verbatim, so the first cron run put all four back — and the check added
+in the same PR read `CPL_Dashboard.html` only and could not see it.
+`cpl_theme.test.js` guards the template now (`GENERATED_FROM`); add any future
+emitted template to that list.
 [`methodology-a-guard-on-generated-output-cannot-see-its-source`](../../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md)
 
-⚠️ **THE GLYPH ROW IS MOSTLY A CORRECTION.** Of the 401 reported, **348 belong to
-`excel_to_dashboard.py`** (plain words there already, cleared by the next cron,
-correctly refused by `--apply`) and 8 were arrows inside COURSE TITLES in
-one-line JSON payloads, where any `title` key trips the control heuristic.
-Findings carry `generator_owned`, the report counts the two apart, and
-`classify()` treats a large data payload as decoration.
-
-**Implementation Funding is excluded from every S245 number and untouched by
-every S245 edit** — Sam worked that tab in a parallel session.
-
-✅ **THE GLYPH SWEEP IS CLOSED AT 26 — Sam, 2026-09-09: *"Keep all 26 glyphs as
-is for now."*** ⚠️ **RULED, not pending — do not sweep them.** The list and the
-reasoning are in `CLAUDE.md`'s presentation rules, verbatim; restating it here is
-how the two copies drift.
-
-✅ **THE BANNER'S 8-HOUR CAP IS RULED SUFFICIENT** (*"8 hours is enough."*) — a
-session outliving its own banner is intended.
+✅ **THE GLYPH SWEEP IS CLOSED AT 26** and **THE BANNER'S 8-HOUR CAP IS
+SUFFICIENT** — both Sam's rulings of 2026-09-09; the glyph list and its
+reasoning live verbatim in `CLAUDE.md`'s presentation rules, and restating them
+here is how two copies drift.
 
 ## The standing pass (Sam, 2026-09-09)
 
@@ -282,12 +243,20 @@ them here is how two copies drift.
 ⭐ **TRIAGE RANKS BY COLOR PAIR FIRST**, then blast radius — one color decision
 however many selectors wear it. It reads a saved report, so it is free.
 
-**NEXT (S249):** ⚠️ **mobile is CLEAN at 390px on all 38 routes — keep it that
-way**; `tests/kpi_cards.test.js` guards the three floors. Then the `--text-faint`
-sites on Implementation Funding (6 findings,
-~12 sites, Sam's tab — his call), then the raw dark inks the sweep names
-(`#666666` 8 · `#374151` 6 · `#5A6478` 4 · `#555555` 3). Fix what the sweep
-NAMES; use the structural scan only to size what is left.
+**NEXT (S250):** ⚠️ **mobile is CLEAN at 390px on all 38 routes and all four
+cannot-flip classes are cleared — keep both that way**; `tests/kpi_cards.test.js`
+and `tests/cpl_theme.test.js` hold the guards. What is left is (a) the raw dark
+inks the sweep NAMES (`#666666` 8 · `#374151` 6 · `#5A6478` 4 · `#555555` 3),
+(b) the raw LIGHT grounds under them (`#8F8F8E`, `#F1F5F9`, `#F6F2FD`,
+`#F7F9FC` all appear as backgrounds in dark-mode findings), and (c) printing
+while in dark mode, which wants `@media screen` scoping on every dark rule and
+is its own pass. Fix what the sweep NAMES; use the structural scan only to size
+what is left, and the token probe to prove a token-layer fix landed.
+
 **NEEDS SAM:** (1) whether `--surface-1`/`--surface-2` should get LIGHT values
-too — it unifies six tabs' tints and repaints them, so it is a design call, not a
-fix; (2) the funding `--text-faint` sites, which change his tab in light as well.
+too — it unifies six tabs' tints and repaints them, so it is a design call, not
+a fix; (2) the funding `--text-faint` sites, which change his tab in light as
+well; (3) ⭐ **the 24 `var(--brand)` / `var(--link)` / `var(--text)`
+declarations that resolve to NOTHING in both themes** — College Briefing's
+progress bar is transparent and its accent borders do not draw. Fixing it is
+correct but changes what light looks like, so it is his call like (1) and (2).

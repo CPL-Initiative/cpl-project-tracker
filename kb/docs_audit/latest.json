@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 875,
-    "bytes": 9279086,
-    "over_budget": 4,
-    "handoff_max": 251,
+    "files": 878,
+    "bytes": 9305709,
+    "over_budget": 5,
+    "handoff_max": 252,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
     "superseded_files": 0,
@@ -26,44 +26,43 @@
       },
       "other": {
         "files": 112,
-        "bytes": 2846231,
+        "bytes": 2851390,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 37677,
+        "bytes": 34481,
         "over": 0
       },
       "lessons": {
         "files": 74,
-        "bytes": 2045070,
+        "bytes": 2049719,
         "over": 1
       },
       "kb_note": {
-        "files": 430,
-        "bytes": 2205497,
+        "files": 432,
+        "bytes": 2218032,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 167582,
-        "over": 1
+        "bytes": 168139,
+        "over": 2
       },
       "handoff": {
-        "files": 225,
-        "bytes": 1917032,
+        "files": 226,
+        "bytes": 1923951,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 4,
-      "vault_heavy_path": 47,
-      "checkpoint_overdue": 1
+      "oversized_doc": 5,
+      "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2803,
-      "bytes": 1360303180,
+      "files": 2807,
+      "bytes": 1360341285,
       "heavy_bytes": 613976276,
       "heavy_share": 0.451,
       "ignore_filters": [
@@ -340,14 +339,27 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 17020,
+        "bytes": 15791,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 5020,
-        "ratio": 1.42
+        "over_by": 3791,
+        "ratio": 1.32
       },
-      "message": "17,020 B is 1.4× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "15,791 B is 1.3× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 13369,
+        "limit": 12000,
+        "lane": "roadmap_lane",
+        "over_by": 1369,
+        "ratio": 1.11
+      },
+      "message": "13,369 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
       "rule": "house_voice",
@@ -365,13 +377,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 616185,
+        "bytes": 620932,
         "limit": 150000,
         "lane": "other",
-        "over_by": 466185,
-        "ratio": 4.11
+        "over_by": 470932,
+        "ratio": 4.14
       },
-      "message": "616,185 B is 4.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "620,932 B is 4.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -915,17 +927,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_251_handoff.md",
-      "detail": {
-        "commits_since": 7,
-        "budget": 6,
-        "handoff": "session_251_handoff.md"
-      },
-      "message": "7 commit(s) have landed since `docs/session_251_handoff.md` was last written (budget 6). Rule 9's own trigger — 'roughly every ~100K tokens' — is a condition nothing can observe, so this is the observable stand-in. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
