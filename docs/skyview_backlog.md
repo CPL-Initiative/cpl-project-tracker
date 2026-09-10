@@ -148,3 +148,24 @@ left as is — each is a call, not a defect:
 - **`prototype/check_ccr_atlas.js` is older than the page** (eleven red checks on a
   right page — see the invariants). Re-cut it against the served page or retire it.
 
+⑪ **The CPL universe, first cut (S252).** Shipped to refine in prod; each of
+these is a call for Sam, not a defect:
+- **The 84 statewide credentials wear a second ring and the word on their label.**
+  A PERMANENT label (84 can carry one; 1,987 cannot) waits on the rest of his
+  truncated ask — *"shown visibly on the sky so folks can easily see…"*.
+- **Inside a big island the full-band labels crowd** (Computer Information
+  Systems, 74 credentials at 6° across) — the same placer as the courses, and the
+  issuer line is longer than a course code. A shorter full band, or the issuer on
+  hover only.
+- **The pile island draws as *(no discipline yet)* with 543 credentials** — a
+  curator pass, never an inference (S251). It reads as the biggest discipline.
+- **The card caps the course list at 40 and the local exhibits at a page.** The
+  ITIS credentials carry 15–17 course identities; nothing yet is near the cap.
+- **Ask SkyView on the CPL map resolves against the course vocabulary.** The
+  envelope's discipline list is the same 97-of-159 names; the terms are course
+  titles. A credential-aware envelope is a lane-sized change.
+- **The Courses map's Articulations light and the CPL map are two joins of the
+  same record** (`ccr_cpl.json` course → credentials; the universe credential →
+  courses). They agree today because both read the CER; a drift check between
+  them is one test away.
+

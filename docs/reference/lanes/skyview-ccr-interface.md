@@ -166,10 +166,22 @@ appends a digest of the exact title. ⚠️ The id derives from the TITLE, so a
 rename re-mints it — safe while nothing stores a reference, but the first feature
 that persists one needs a real surrogate key on the CER (Rule 7).
 
-**NEXT: the view.** The payload is drawable; nothing draws it. Sam's statewide ask
-(*"shown visibly on the sky so folks can easily see…"*, message truncated — the
-rest is unanswered) is met on the data side: every statewide point carries `sw`.
-At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled.
+✅ **THE VIEW SHIPPED (S252)** — the CPL word swaps the universe under the same
+map (`bindUniverse` + a full re-render; hash · legend · Show menu · corpus · light
+all this universe's). A credential's card lists the courses articulated to it,
+each a door onto the Courses map, and the local exhibits folded in; a statewide
+credential wears a second ring and the word on its label. Nothing moves there.
+Members payload: `kb/_build_ccr_cpl_universe_members.py` (0.99 MB, cron beside
+4d3b, `tests/ccr_cpl_universe_members_test.py`). Swept: `npm run sweep` §K + §R.
+[invariants](../skyview_invariants.md#the-outline-the-skills-and-the-cpl-universe)
+
+**NEXT: refine in prod.** Sam's statewide ask (*"shown visibly on the sky so
+folks can easily see…"*, truncated) is met with the ring and the label word; a
+PERMANENT label for the 84 is the next call (1,987 cannot be labeled, 84 can).
+The 543-credential pile island draws as *(no discipline yet)*; the card caps the
+course list at 40 and the members at a page. Ask SkyView still resolves against
+the course vocabulary on the CPL map (the envelope's discipline list is the
+same; the terms are not).
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.

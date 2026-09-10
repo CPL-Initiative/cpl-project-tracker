@@ -572,6 +572,7 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .u-sw.orphan{width:7px;height:7px;border:0;background:var(--sky-sys0-stroke);opacity:.6;margin:0 1.5px}
 /* the articulations light (2026-09-07): the swatch glows the way the point does */
 .u-sw.lit{background:var(--sky-lit-fill);border-color:var(--sky-lit);box-shadow:0 0 0 3px var(--sky-lit-glow)}
+.u-sw.sw{background:var(--sky-sys0-stroke);border-color:var(--sky-sys0-stroke);box-shadow:0 0 0 1.5px var(--surface),0 0 0 3px var(--sky-sys0-stroke)}
 /* the CPL face's coverage line: one sentence under the top row, computed, never quoted */
 .u-face-line{margin:0;padding:5px clamp(12px,2vw,24px);font-size:.8rem;line-height:1.4;color:var(--text-muted);
   background:var(--surface-subtle);border-bottom:1px solid var(--border)}
@@ -2925,7 +2926,21 @@ var solo=true, curView="skyview";
  * credit. `members` is the ring of college-course squares an identity opens
  * into; the map is quieter with it off. */
 var SHOW_KEYS=["cr","nc","nce","unrec","cte","aca","ctena","mid","cid","ccn","uni","ident","orbit","rim","members","arty","noart"];
-var show={}; SHOW_KEYS.forEach(function(k){ show[k]=true; });
+/* The exhibit universe answers to its own switches: the six CPL types (and the
+ * seventh state, none recorded — the same shape as `unrec`), the articulation
+ * pair, statewide or not, and the ring of local exhibits. The two lists share
+ * `show`, so a switch set in one universe is still set in the other. */
+var EX_TYPE_KEYS=["cbe","icert","port","stdz","mil","oth"];
+var SHOW_KEYS_EX=EX_TYPE_KEYS.concat(["tna","arty","noart","sw","nsw","members"]);
+var ALL_SHOW_KEYS=SHOW_KEYS.concat(SHOW_KEYS_EX.filter(function(k){ return SHOW_KEYS.indexOf(k)<0; }));
+function showKeys(){ return isExhibits() ? SHOW_KEYS_EX : SHOW_KEYS; }
+var show={}; ALL_SHOW_KEYS.forEach(function(k){ show[k]=true; });
+/* One set of switches PER UNIVERSE. `members`, `arty` and `noart` are keys in
+ * both menus, so a shared object would let Deselect all on the CPL map turn
+ * the course map's college courses off behind the reader's back. bindUniverse
+ * parks the leaving universe's switches here and restores the arriving one's. */
+var showMemo={}, litMemo={};
+function freshShow(){ var o={}; ALL_SHOW_KEYS.forEach(function(k){ o[k]=true; }); return o; }
 /* The word each switch shows in the menu, the hint and the row's tooltip. */
 var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014 noncredit enhanced", unrec:"Credit status not recorded",
   mid:"M-ID", cid:"C-ID", ccn:"CCN", uni:"Unified", ident:"Identities", orbit:"Orphans in orbit", rim:"Orphans on the rim", members:"College courses",
@@ -2941,7 +2956,9 @@ var SHOW_WORDS={cr:"CR \u2014 credit", nc:"NC \u2014 noncredit", nce:"NCE \u2014
    * ⚠️ THREE SWITCHES, NOT TWO — the same shape as `unrec` on credit. 15% of
    * points carry no resolvable TOP code, and folding them into "Academic" would
    * assert something about 7,569 courses that the data does not say. */
-  cte:"CTE \u2014 career technical", aca:"Academic", ctena:"CTE status not recorded"};
+  cte:"CTE \u2014 career technical", aca:"Academic", ctena:"CTE status not recorded",
+  cbe:"Credit By Exam", icert:"Industry Certification", port:"Portfolio Review", stdz:"Standardized Assessment",
+  mil:"Military", oth:"Other", tna:"CPL type not recorded", sw:"Statewide", nsw:"Not statewide"};
 /* ── the search selection (Sam, 2026-09-05: "make it multi-select capable") ──
  * Each pick from the suggestion list becomes a TOKEN beside the search box; the
  * map rings every token and fits them all in view. One token behaves exactly as
@@ -3121,6 +3138,233 @@ var face="courses";            // "courses" | "cpl" — what a point is named by
 var lit=false;                 // the articulations light
 var CPL=null, cplState="", cplWaiters=[], cplIslCache=null, cplIndexCache=null;
 var CPL_URL = window.CPL_SKYVIEW_CPL_URL || "ccr_cpl.json";
+
+/* ══ THE EXHIBIT UNIVERSE — "CPL mode" (Sam's ruling, 2026-09-10) ═════════════
+ * "It's like another universe where the entities are exhibits rather than
+ * courses, but just like in course view, circles around the exhibits can
+ * indicate that courses are articulated to them." One point per curated
+ * credential (a CER unified title), its local MAP exhibits as the stars that
+ * ring it, its discipline as its island, the Articulations light on the ones
+ * courses are articulated to, and a second ring on the statewide ones. The
+ * word CPL in the row switches UNIVERSES: the two payloads
+ * (kb/_build_ccr_cpl_universe.py, kb/_build_ccr_cpl_universe_members.py) are
+ * fetched on demand and cached beside the course universe, so switching back
+ * is a re-bind, never a reload.
+ *
+ * ⚠️ THIS SUPERSEDES THE CPL FACE OF S238 (course points renamed by the
+ * credential that reaches them). Sam dismissed "courses colored by CPL type"
+ * for this on 2026-09-10; the face's own helpers (cplLabelLines, cplTipHtml,
+ * cplSuggestRows, cplIslandHtml) are retired from every path but kept in the
+ * file for one round in case a ruling wants a piece of them back. What stays
+ * live from that payload: the course card's credential block, the exhibit
+ * names the chip prints, and the outline's CPL layer — all on the Courses map.
+ *
+ * ⚠️ ONE RENDERER, TWO SHAPES. The exhibit point keeps i/x/y/t/n so every
+ * shared path (hit-testing, the halo, the batching, the label placer, the
+ * ring of members) runs unchanged; what differs is WORDS — the card, the
+ * hover, the label's second line, the legend, the Show menu — and every one
+ * of those asks isExhibits() rather than reading a field that happens to be
+ * absent. `nd.c` is a LIST of CPL type codes here, not a credit status. */
+var EXU_URL = window.CPL_SKYVIEW_EXU_URL || "ccr_cpl_universe.json";
+var EXM_URL = window.CPL_SKYVIEW_EXM_URL || "ccr_cpl_universe_members.json";
+var universe="courses";                     // which universe U is: "courses" | "cpl" (exhibits)
+var UNIVERSES={courses:null, cpl:null};     // {u, mem} per universe, once bound
+var exState="", exWaiters=[], exCourses=null, rebound=false, turnBefore=null;   // rebound: a payload swap that the next __ccrUniverse must render; turnBefore: whether the sky was turning when it swapped  // exCourses: identity -> the course identities articulated to it
+var pendingOpen=null;                       // an identity to open once the other universe is drawn (the course jump)
+function isExhibits(){ return universe==="cpl"; }
+function exTypeWord(i){ var T=(U&&U.cpl_types)||[]; return T[i]||"CPL type not recorded"; }
+function loadExhibits(then){
+  if(exState==="ok"||exState==="missing"||exState==="blocked") return then&&then();
+  if(window.CPL_CCR_EXHIBITS && window.CPL_CCR_EXHIBITS.islands){   // a harness inlines the payloads
+    UNIVERSES.cpl={u:window.CPL_CCR_EXHIBITS, mem:window.CPL_CCR_EXHIBITS_MEMBERS||null};
+    exState="ok"; return then&&then();
+  }
+  if(then) exWaiters.push(then);
+  if(exState==="loading") return;
+  var flush=function(){ var w=exWaiters; exWaiters=[]; w.forEach(function(f){ try{ f(); }catch(e){} }); };
+  if(typeof fetch!=="function"){ exState="missing"; flush(); return; }
+  exState="loading";
+  var get=function(u){ return fetch(u).then(function(r){ if(!r.ok) throw new Error("http "+r.status); return r.json(); }); };
+  /* The members are a second file so the layout stays small; a universe with
+   * no members still draws, and its card says the payload is missing rather
+   * than claiming a credential folds nothing. */
+  get(EXU_URL).then(function(u){
+    return get(EXM_URL).then(function(m){ return {u:u, mem:m}; }, function(){ return {u:u, mem:null}; });
+  }).then(function(pair){ UNIVERSES.cpl=pair; exState="ok"; flush(); })
+    .catch(function(){ exState=(location.protocol==="file:")?"blocked":"missing"; flush(); });
+}
+/* The pure swap: which payload U is, and every memo that belonged to the
+ * universe leaving. No rendering — setUniverse() re-enters __ccrUniverse, and
+ * the workspace binds Courses back before it paints its tables. */
+function bindUniverse(kind){
+  var pick=UNIVERSES[kind]; if(!pick) return false;
+  showMemo[universe]=show; show=showMemo[kind]||freshShow();
+  litMemo[universe]=lit; if(!(kind in litMemo)) litMemo[kind]=(kind==="cpl"); lit=litMemo[kind];   // CPL opens lit (Sam: "circles around the exhibits"); Courses keeps the reader's choice
+  universe=kind; face=kind; rebound=true; turnBefore=rotating;
+  window.CPL_CCR_UNIVERSE=pick.u; window.CPL_CCR_UNIVERSE_MEMBERS=pick.mem;
+  U=pick.u; A=window.CPL_ATLAS_DATA||null; spreadUniverse(U);
+  exCourses=(kind==="cpl" && pick.mem && pick.mem.courses) ? pick.mem.courses : null;
+  selNode=null; selIsl=null; hoverNode=null; hoverIsl=null; searchHits=[]; searchTerm="";
+  tokens=[]; drag=null; memFilter=""; parkedCam=null; isolate=false;
+  roster=null; nodeIdx=null; orbitIdx=null; subjIdx=null; wsPaint=null; islSphere=null;
+  U.islands.forEach(function(I){ I._s=null; });
+  isoDirty();
+  return true;
+}
+function exWords(){
+  if(exState==="ok" && isExhibits()) return "<strong>CPL</strong>: "+exLineText()+
+    " Search finds credentials and the local exhibits folded into them; the light marks the ones that carry an articulation.";
+  if(exState==="loading"||exState==="") return "Loading the exhibit universe\u2026";
+  if(exState==="blocked") return "The exhibit universe cannot be loaded from a file:// page \u2014 serve the page to open CPL.";
+  return "The exhibit universe could not be loaded (ccr_cpl_universe.json), so the courses stay on the map.";
+}
+function exLineText(){
+  if(!isExhibits() || !U || !U.counts) return exWords();
+  var c=U.counts;
+  return num(c.identities)+" credential"+(c.identities===1?"":"s")+" folding "+num(c.members)+" local MAP exhibit"+(c.members===1?"":"s")+" across "+num(c.disciplines)+
+    " discipline"+(c.disciplines===1?"":"s")+"; "+num(c.articulated)+(c.articulated===1?" carries":" carry")+" an articulation and "+num(c.statewide)+(c.statewide===1?" is":" are")+" statewide"+
+    (c.no_discipline?"; "+num(c.no_discipline)+" wait for a discipline":"")+".";
+}
+function exLineHtml(){
+  if(exState!=="ok" || !isExhibits() || !U || !U.counts) return esc(exWords());
+  var c=U.counts;
+  return "<strong>"+num(c.identities)+"</strong> credential"+(c.identities===1?"":"s")+" folding "+num(c.members)+" local MAP exhibit"+(c.members===1?"":"s")+" across "+
+    num(c.disciplines)+" discipline"+(c.disciplines===1?"":"s")+"; <strong>"+num(c.articulated)+"</strong>"+(c.articulated===1?" carries":" carry")+" an articulation and <strong>"+
+    num(c.statewide)+"</strong>"+(c.statewide===1?" is":" are")+" statewide"+(c.no_discipline?"; "+num(c.no_discipline)+" wait for a discipline":"")+".";
+}
+/* The hash follows the WORD, not the payload: a reader who pressed CPL and
+ * reloads while it loads should land on CPL. syncHash is a no-op off the map. */
+function syncFaceHash(){
+  if(curView!=="skyview" && curView!=="comprehensive") return;
+  curArg=(face==="cpl")?"cpl":""; syncHash(curArg||undefined);
+}
+function setUniverse(kind, quiet, opts){
+  kind = kind==="cpl" ? "cpl" : "courses";
+  if(kind===universe){ face=kind; paintFace(); syncFaceHash(); return; }
+  if(!UNIVERSES.courses) UNIVERSES.courses={u:window.CPL_CCR_UNIVERSE, mem:window.CPL_CCR_UNIVERSE_MEMBERS||null};
+  if(kind==="cpl" && !UNIVERSES.cpl){
+    /* ⚠️ A ROUTE MUST STILL DRAW. __ccrUniverse returns to us before it renders
+     * when the face is not the bound universe, so a #skyview/cpl arrival whose
+     * payload never comes has to be handed back as the courses, with the
+     * route's other options intact — or the page is blank with a hint. */
+    var fallBack=function(){
+      face="courses"; paintFace(); syncFaceHash(); setHint(exWords());
+      if(opts) window.__ccrUniverse(Object.assign({}, opts, {face:"courses"}));
+    };
+    if(exState==="missing"||exState==="blocked"){ fallBack(); return; }
+    if(!quiet) setHint(exWords());
+    face="cpl"; paintFace(); syncFaceHash();  // the word reads pressed while the payload is on its way
+    loadExhibits(function(){
+      if(UNIVERSES.cpl) setUniverse("cpl", quiet, opts);
+      else fallBack();
+    });
+    return;
+  }
+  bindUniverse(kind);
+  if(opts || (cvs && document.getElementById("u-cvs")===cvs)){
+    window.__ccrUniverse(Object.assign({}, opts||{}, {face:kind}));
+    renderTokens();                          // the chip host lives in the borrowed form and outlives a render
+    if(!quiet) setHint(kind==="cpl" ? exWords()
+      : "<strong>Courses</strong>: the course universe again. Switch to <strong>CPL</strong> for the credentials and their exhibits.");
+  }
+}
+window.__ccrSetUniverse=function(k, quiet){ setUniverse(k, quiet==null?true:!!quiet); };
+/* The legend says what the universe on screen draws. Both keep #u-lg-lit, so
+ * the light's row folds and unfolds the same way in each. */
+function legendHtml(){
+  if(isExhibits()) return (   // ⚠️ the paren: `return` then a newline returns undefined (ASI), and the legend read "undefined"
+    '<span title="A curated credential from the Credential Reference: one unified title folding every local MAP exhibit that names it."><i class="u-sw s0"></i>credential \u2014 a curated CER title; bigger with more local exhibits folded in</span>'+
+    '<span id="u-lg-lit" hidden><i class="u-sw lit"></i>lit \u2014 a gold glow on a credential that courses are articulated to; the rest are drawn as they are</span>'+
+    '<span title="MAP marks the exhibit as statewide."><i class="u-sw sw"></i>statewide \u2014 a second ring around the credential</span>'+
+    '<span><i class="u-sw member"></i>local MAP exhibit under a credential \u2014 a small star; click or hover a credential to open it</span>');
+  return '<span title="'+esc(SYSWHY[0])+'"><i class="u-sw s0"></i>M-ID, our working label</span>'+
+    '<span title="'+esc(SYSWHY[1])+'"><i class="u-sw s1"></i>C-ID, official</span>'+
+    '<span title="'+esc(SYSWHY[2])+'"><i class="u-sw s2"></i>CCN, official</span>'+
+    /* v4 item 8 (Sam, 2026-09-06): "Maybe add a note to Unified and that
+     * would be fine" — the note in the legend's own style, and the three
+     * id systems carry their SYSWHY as the hover he asked for. */
+    '<span title="'+esc(SYSWHY[3])+'"><i class="u-sw s3"></i>unified \u2014 a synthetic row standing in for a course identity; it carries no minted number of its own</span>'+
+    '<span id="u-lg-lit" hidden><i class="u-sw lit"></i>lit \u2014 a gold glow on a course that carries an articulation; the rest are drawn as they are</span>'+
+    '<span><i class="u-sw orphan"></i>stand-alone course \u2014 a smaller, lighter dot in orbit around its closest match</span>'+
+    '<span><i class="u-sw nc"></i>noncredit \u2014 a broken ring around the dot, whatever the identity system</span>'+
+    '<span><i class="u-sw member"></i>college course under an identity \u2014 a small star; click or hover an identity to open it</span>';
+}
+/* What an exhibit label says at this zoom: the credential, "statewide" where it
+ * is, and on the full band the issuer with the counts. */
+function exLabelLines(nd, k){
+  var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(nd.sw?" \u00b7 statewide":"");
+  if(k>FULL_ZOOM)
+    return {band:"full", lines:[head, trunc(nd.g||"issuing agency not recorded", 48)+" \u00b7 "+num(nd.n)+" local exhibit"+(nd.n===1?"":"s")+
+      (nd.ar?" \u00b7 "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):"")]};
+  if(k>TITLE_ZOOM) return {band:"titled", lines:[head]};
+  return {band:"brief", lines:[head]};
+}
+function exTipHtml(hit){
+  var nd=hit.nd, types=(nd.c||[]).map(exTypeWord);
+  return '<b>'+esc(nd.t||nd.i)+'</b>'+(nd.sw?' <span class="sub">\u00b7 statewide</span>':'')+
+    '<br><span class="sub">'+esc(nd.g||"Issuing agency not recorded")+'</span>'+
+    '<br><span class="sub">'+(types.length?esc(types.join(" \u00b7 "))+' \u00b7 ':'')+num(nd.n)+' local exhibit'+(nd.n===1?'':'s')+
+      (nd.ar?' \u00b7 '+num(nd.ar)+' articulation'+(nd.ar===1?'':'s'):' \u00b7 no articulation yet')+
+      (nd.ss?' \u00b7 '+num(nd.ss)+' students served':'')+(hit.isl?' \u00b7 '+esc(hit.isl.d):'')+'</span>';
+}
+function exMemberTipHtml(hit){
+  var m=hit.mem;
+  return '<b>'+esc(m.n)+'</b><br><span class="sub">a local MAP exhibit folded into '+esc(hit.nd.t||hit.nd.i)+
+    (m.conf!=null?' \u00b7 confidence '+Math.round(m.conf*100)+'%':'')+(m.q?' \u00b7 '+esc(String(m.q).replace(/_/g," ")):'')+'</span>';
+}
+/* The exhibit card: the credential, its issuer and types, the COURSES
+ * articulated to it (Sam: "show the course(s), perhaps on the exhibit cards,
+ * that have CPL based on the exhibit"), each a door onto the Courses map, and
+ * the local MAP exhibits the Credential Reference folds into it. Nothing here
+ * moves: exhibits are curated in the CER, not on this map. */
+function renderExhibitNode(){
+  var nd=selNode, isl=selIsl, el=document.getElementById("u-detail"); if(!nd||!el) return;
+  var mine=membersOf(nd.i), types=(nd.c||[]).map(exTypeWord), crs=(exCourses&&exCourses[nd.i])||[];
+  var h=(isl?'<p class="sub" style="margin:0 0 .4em"><button type="button" class="linkish" id="u-back-isl">Back to '+esc(isl.d)+'</button></p>':"")+
+    "<h3>"+esc(nd.t||nd.i)+"</h3>"+
+    "<p>"+chipFor(nd)+(isl?" \u00b7 "+esc(isl.d):"")+" \u00b7 "+num(nd.n)+" local exhibit"+(nd.n===1?"":"s")+
+      (nd.ar?" \u00b7 "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):"")+"</p>"+
+    '<p class="sub">'+(nd.g?'Issued by <strong>'+esc(nd.g)+'</strong>':'Issuing agency not recorded')+
+      (types.length?' \u00b7 '+esc(types.join(" \u00b7 ")):'')+(nd.ss?' \u00b7 '+num(nd.ss)+' students served':'')+'</p>';
+  h+='<h4 style="margin:.9em 0 .3em">Courses articulated to it ('+num(crs.length)+' course identit'+(crs.length===1?'y':'ies')+
+    (nd.ar?' \u00b7 '+num(nd.ar)+' receiving college course'+(nd.ar===1?'':'s'):'')+')</h4>';
+  if(crs.length){
+    h+='<p class="sub">Course identities on the Courses map that carry an articulation from this credential \u2014 the ring counts the receiving college courses under them. Open one to see it there.</p>'+
+      '<ul class="idlist">'+crs.slice(0,40).map(function(c){
+        var loc=c[4]||[];
+        return '<li><button type="button" class="ttl linkish" data-course="'+esc(c[0])+'" title="Open this course on the Courses map">'+esc(c[2]||c[0])+'</button> '+
+          '<span class="chip '+(c[1]==="M-ID"?"gen":"cid")+'">'+esc(c[1]||"")+'</span>'+
+          '<div class="sub">'+esc(c[0])+(c[3]?" \u00b7 "+esc(c[3]):"")+" \u00b7 "+num(loc.length)+" receiving college course"+(loc.length===1?"":"s")+
+          (loc.length?": "+esc(loc.slice(0,3).map(function(l){ return l[0]+(l[2]&&l[2].length?" ("+shortCollege(l[2][0])+(l[2].length>1?" +"+(l[2].length-1):"")+")":""); }).join(", "))+(loc.length>3?" \u2026":""):"")+'</div></li>';
+      }).join("")+'</ul>'+(crs.length>40?'<p class="sub">Showing 40 of '+num(crs.length)+'.</p>':"");
+  } else if(exCourses) {
+    h+='<p class="empty">No course is articulated to this credential yet \u2014 a gap in MAP\u2019s record, not a finding about the credential.</p>';
+  } else {
+    h+='<p class="empty">The articulated courses cannot be listed \u2014 ccr_cpl_universe_members.json did not load. This is not the same as a credential no course is articulated to.</p>';
+  }
+  h+='<h4 style="margin:.9em 0 .3em">Local MAP exhibits folded in ('+num(mine.length)+')</h4>';
+  if(!roster || !Object.keys(roster).length)
+    h+='<p class="empty">No member payload loaded \u2014 ccr_cpl_universe_members.json is missing, so the local exhibits cannot be listed. This is not the same as a credential folding none.</p>';
+  else if(!mine.length) h+='<p class="empty">No local exhibit is carried under this credential.</p>';
+  else h+='<p class="sub">The titles colleges typed into MAP that the Credential Reference folds into this one credential, best confidence first.</p>'+
+    '<ul class="mlist">'+mine.slice(0,MEMBER_PAGE).map(function(m){
+      return '<li><span class="cd" title="A local MAP exhibit">'+esc(m.n)+'</span>'+
+        (m.conf!=null?'<span class="un" title="How confidently the Credential Reference folds this title into the credential">'+Math.round(m.conf*100)+'%</span>':'')+
+        (m.q?' <span class="chip mut" title="A quality flag from the Credential Reference">'+esc(String(m.q).replace(/_/g," "))+'</span>':'')+'</li>';
+    }).join("")+'</ul>'+(mine.length>MEMBER_PAGE?'<p class="sub">Showing '+MEMBER_PAGE+' of '+num(mine.length)+'.</p>':"");
+  h+='<p class="empty" style="margin-top:.6em">Exhibits are curated in the Credential Reference; nothing is moved from this map.</p>';
+  el.innerHTML=h;
+  var bk=document.getElementById("u-back-isl");
+  if(bk) bk.addEventListener("click", function(){ selNode=null; showIsland(isl); draw(); });
+  Array.prototype.forEach.call(el.querySelectorAll("[data-course]"), function(b){
+    b.addEventListener("click", function(){ jumpToCourse(b.dataset.course, nd); });
+  });
+}
+function jumpToCourse(cid, fromEx){
+  pendingOpen={id:cid, words:"Opened <strong>"+esc(cid)+"</strong> on the Courses map \u2014 one of the courses articulated to <strong>"+
+    esc(fromEx.t||fromEx.i)+"</strong>. Press <strong>CPL</strong> to return to the credentials."};
+  setUniverse("courses", true, {solo:solo});
+}
 function bindCpl(j){ CPL=j; cplState="ok"; cplIslCache=null; cplIndexCache=null; }
 
 /* ══ THE SKY — WHERE THE READER STANDS (Sam's eight rulings, 2026-09-07) ═════
@@ -3640,7 +3884,9 @@ function labelInk(nd){
   return pal["sys"+i+"Stroke"] || pal.ink;
 }
 function sysPal(nd){
-  var i=(nd.s===0||nd.s===1||nd.s===2)?nd.s:3, w=SYS[i];
+  /* A credential carries no identity system; it takes the working-label
+   * color, the way the CER is our working vocabulary for exhibits. */
+  var i=isExhibits() ? 0 : (nd.s===0||nd.s===1||nd.s===2)?nd.s:3, w=SYS[i];
   return [pal["sys"+i+"Fill"], pal["sys"+i+"Stroke"], w[2], w[3]];
 }
 /* ⭐ TEXT SIZE IS A SECOND AXIS, NOT A CHANGE TO ZOOM (Sam's ruling 3,
@@ -3779,6 +4025,8 @@ function setProj(p, quiet){
 }
 window.__ccrSetProj=function(p){ setProj(p); };
 /* For the harness: the projection by name, both ways. */
+/* For the harness: what the page finds under a canvas point — the same pick() the pointer uses. */
+window.__ccrPickAt=function(px,py){ if(!U) return null; var h=pick(px,py); return h ? {nd:h.nd?h.nd.i:null, isl:h.isl?h.isl.d:null, mem:h.mem?h.mem.n:null, nodesOn:h.isl?h.isl._nodesOn:null, k:h.isl?islScale(h.isl):null} : null; };
 window.__ccrW2S=function(x,y,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return w2s(x,y,I||undefined); };
 window.__ccrS2W=function(px,py,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return s2w(px,py,I||undefined); };
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
@@ -4029,7 +4277,18 @@ function isoNodeOK(nd){
   if(lastFocus && lastFocus[nd.i]) return true;   // the ties the click lit
   return false;
 }
-function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd) && isoNodeOK(nd); }
+/* An exhibit passes when one of its CPL types is on (none recorded takes its
+ * own switch), its articulation state is on, and its statewide state is on. */
+function exTypeOK(nd){
+  var c=nd.c; if(!c || !c.length) return !!show.tna;
+  for(var i=0;i<c.length;i++) if(show[EX_TYPE_KEYS[c[i]]||"oth"]) return true;
+  return false;
+}
+function swOK(nd){ return nd.sw ? !!show.sw : !!show.nsw; }
+function creditShown(nd){
+  if(isExhibits()) return exTypeOK(nd) && artOK(nd) && swOK(nd) && isoNodeOK(nd);
+  return creditOK(nd) && systemOK(nd) && kindOK(nd) && artOK(nd) && cteOK(nd) && isoNodeOK(nd);
+}
 /* ── an island answers to the Show switches TOO (Sam, 2026-09-05: "Show:All box
  * does not respond when making changes") ─────────────────────────────────────
  *
@@ -4056,7 +4315,7 @@ function creditShown(nd){ return creditOK(nd) && systemOK(nd) && kindOK(nd) && a
  * size and its head — enough to change whenever the selection does, and cheap
  * on a frame. */
 function showSig(){
-  var t=""; for(var i=0;i<SHOW_KEYS.length;i++) t+=show[SHOW_KEYS[i]]?"1":"0";
+  var K=showKeys(), t=universe+":"; for(var i=0;i<K.length;i++) t+=show[K[i]]?"1":"0";
   /* isoMark() settles the stamp BEFORE islandPass counts against this
    * signature, and the stamp is what changes when the isolated island set does
    * — selIsl alone cannot see a discipline that was selected as a token. */
@@ -4084,6 +4343,11 @@ function islandPass(isl){
 var showHealed=[];
 function showNeeds(nd){
   var need={};
+  if(isExhibits()){
+    var c=nd.c; need[(c&&c.length)?(EX_TYPE_KEYS[c[0]]||"oth"):"tna"]=true;
+    need[nd.sw?"sw":"nsw"]=true; need[nd.ar>0?"arty":"noart"]=true; need.members=true;
+    return need;
+  }
   need[nd.c===0?"cr":nd.c===1?"nc":nd.c===2?"nce":"unrec"]=true;
   need[nd.s===0?"mid":nd.s===1?"cid":nd.s===2?"ccn":"uni"]=true;
   need[nd.a?(nd.o?"orbit":"rim"):"ident"]=true;
@@ -4092,7 +4356,7 @@ function showNeeds(nd){
 }
 function healShow(nd){
   var need=nd?showNeeds(nd):{ident:true}, patch={}, turned=[];
-  SHOW_KEYS.forEach(function(k){ if(need[k] && !show[k]){ patch[k]=true; turned.push(k); } });
+  showKeys().forEach(function(k){ if(need[k] && !show[k]){ patch[k]=true; turned.push(k); } });
   showHealed=turned;
   if(turned.length && typeof window.__ccrSetShow==="function") window.__ccrSetShow(patch, true);
   return turned;
@@ -4114,7 +4378,7 @@ function healUnion(nodes){
   var need={}, i, k;
   for(i=0;i<nodes.length;i++){ var n=showNeeds(nodes[i]); for(k in n) need[k]=true; }
   var patch={}, turned=[];
-  SHOW_KEYS.forEach(function(key){ if(need[key] && !show[key]){ patch[key]=true; turned.push(key); } });
+  showKeys().forEach(function(key){ if(need[key] && !show[key]){ patch[key]=true; turned.push(key); } });
   showHealed=turned;
   if(turned.length && typeof window.__ccrSetShow==="function") window.__ccrSetShow(patch, true);
   return turned;
@@ -4138,6 +4402,7 @@ function healWords(){
  * Discipline to DISC; Course to CRSE; Credit to CR"). */
 function creditShort(nd){ return nd.c===0 ? "CR" : nd.c===1 ? "NC" : nd.c===2 ? "NCE" : "CR status not recorded"; }
 function kindShort(kind, nd){
+  if(isExhibits()) return kind==="subject" ? "DISC" : kind==="member" ? "LOCAL EXHIBIT" : kind==="term" ? "SEARCH" : "EXHIBIT";
   return kind==="subject" ? "DISC" : kind==="member" ? "COLLEGE CRSE"
        : kind==="term" ? "SEARCH" : kind==="cpl" ? "CPL" : (nd&&nd.a) ? "STAND-ALONE CRSE" : "CRSE IDENTITY";
 }
@@ -4235,6 +4500,25 @@ function ensureCorpus(){
 function buildMemberIndex(){
   roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource=""; memIndex=[];
   var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
+  if(MEM && MEM.m && isExhibits()){
+    /* The exhibit universe's members are LOCAL MAP EXHIBITS — [title,
+     * confidence, quality flag] — with no control number and no college. The
+     * key is minted here per identity so the ring, the hover and the search
+     * index work unchanged; canMove refuses every one of them, so nothing
+     * written here can ever read as a CN: row. */
+    Object.keys(MEM.m).forEach(function(id){
+      roster[id]=MEM.m[id].map(function(r, k){
+        var rec={cn:"EX:"+id+"#"+k, d:"", n:r[0]||"", c:"", conf:r[1], q:r[2]||"", ex:true};
+        noteCourse(rec.cn, rec);
+        byCn[rec.cn]=rec; cnHome[rec.cn]=id;
+        memIndex.push({id:id, cn:rec.cn, d:"", code:rec.n, lc:rec.n.toLowerCase(), c:"local exhibit"});
+        return rec;
+      });
+    });
+    exCourses=MEM.courses||null;
+    memberSource="exhibits";
+    return;
+  }
   if(MEM && MEM.m){
     var cols=MEM.colleges||[];
     Object.keys(MEM.m).forEach(function(id){
@@ -4279,6 +4563,8 @@ function coursesOn(cn){ return (cnCourses&&cnCourses[cn])||[]; }
 /* One sentence, used by the chip and by the refusal, so the warning a curator
  * reads before clicking and the message they get after cannot disagree. */
 function sharedKeyReason(cn, code, others){
+  if(isExhibits()) return "Exhibits are curated in the Credential Reference; nothing is moved from the CPL map. "+
+    "Switch to <strong>Courses</strong> to move a course.";
   var them=(others||coursesOn(cn)).filter(function(o){return o.n!==code;});
   var list=them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", ");
   return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
@@ -4293,6 +4579,7 @@ function sharedKeyReason(cn, code, others){
  * an ambiguous key a move is not merely risky, it is INEXPRESSIBLE. Refusing is
  * the honest answer. Widening the key is a schema decision. */
 function canMove(cn){
+  if(isExhibits()) return {ok:false, others:[], exhibits:true};
   var l=coursesOn(cn);
   if(l.length<2) return {ok:true};
   return {ok:false, others:l};
@@ -4504,7 +4791,7 @@ function drawFrame(){
    * filled once. Anything decorated — lit, ringed by a search or the selection,
    * halo-sized, a broken noncredit ring, an emptied shell, a label — keeps the
    * per-node path, so nothing the reader can see at that size changes. */
-  var starBatches={}, starOrder=[], allShown=SHOW_KEYS.every(function(kk){ return show[kk]; });
+  var starBatches={}, starOrder=[], allShown=showKeys().every(function(kk){ return show[kk]; });
   function starPush(color, alpha, x, y, r){
     var b=Math.round(alpha*8), key=color+"|"+b, B=starBatches[key];
     if(!B){ B=starBatches[key]={color:color, alpha:b/8, pts:[]}; starOrder.push(B); }
@@ -4672,6 +4959,13 @@ function drawFrame(){
         if(isNC(nd) && dr>1.8 && !(nd.a&&emptied(nd))){
           ctx.beginPath(); ctx.arc(p[0],p[1],dr+2.2,0,6.2832);
           ctx.save(); ctx.setLineDash(ncDash(dr+2.2)); ctx.lineWidth=1; ctx.strokeStyle=s[1]; ctx.stroke(); ctx.restore();
+        }
+        /* A statewide exhibit wears a second ring (Sam, 2026-09-10: "shown
+         * visibly on the sky") — a mark, not a color, so it reads by day and by
+         * night; the word rides the label and the card. */
+        if(isExhibits() && nd.sw && dr>1.8){
+          ctx.beginPath(); ctx.arc(p[0],p[1],dr+3.2,0,6.2832);
+          ctx.lineWidth=1.1; ctx.strokeStyle=s[1]; ctx.stroke();
         }
         if(lit && nd.ar>0) lightAround(p[0], p[1], dr);   // the articulations light
         if(hitSet[nd.i]){                                  // search match ring
@@ -4881,7 +5175,7 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   var rings=Math.ceil(n/perRing);
   /* With the light on or the CPL face up, the star of a college whose course
    * here is the RECEIVING course of an articulation takes the light's fill. */
-  var artSet=(lit||face==="cpl") ? cplCollegesOf(nd) : null;
+  var artSet=(lit && !isExhibits()) ? cplCollegesOf(nd) : null;
   if(focus){
     /* Sam, 2026-09-05: "probably no labels should transect the CCR circle."
      * The disc is the one thing on screen the reader is studying, and a
@@ -4948,7 +5242,8 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
       // names on the colleges throughout") — a ring of 24 spokes is where the
       // repeated word "College" costs the most and says the least.
       queue.push({mem:m, nd:nd, px:x, py:y, rad:4,
-                  lines:[m.n+" · "+trunc(shortCollege(m.c),26)+(movedHere?" · staged here":"")], band:"member",
+                  lines:[m.ex ? trunc(m.n,34)+(movedHere?" · staged here":"")     // a local exhibit: its title, no college on the row
+                              : m.n+" · "+trunc(shortCollege(m.c),26)+(movedHere?" · staged here":"")], band:"member",
                   out:[Math.cos(a), Math.sin(a)],
                   force:!!focus || !!(memFilter && m.n===memFilter) || carried || movedHere});
   }
@@ -4977,7 +5272,7 @@ function drawMembers(nd, isl, p, rad, k, queue, focus){
   if(rest>0){
     var ry=p[1]+R0+(rings-1)*15+14;
     ctx.font="600 "+txPx(10)+"px 'Source Sans 3',system-ui,sans-serif"; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
-    var more="and "+num(rest)+" more college course"+(rest===1?"":"s")+" — see the details panel";
+    var more="and "+num(rest)+" more "+(isExhibits()?"local exhibit":"college course")+(rest===1?"":"s")+" — see the details panel";
     ctx.lineWidth=3; ctx.strokeStyle=pal.halo; ctx.strokeText(more,p[0],ry);
     ctx.fillStyle=pal.inkMuted; ctx.fillText(more,p[0],ry);
   }
@@ -5039,7 +5334,7 @@ function cplLabelLines(nd, k){
 }
 function labelLines(nd, k){
   if(k<=ID_ZOOM) return null;
-  if(face==="cpl") return cplLabelLines(nd, k);
+  if(isExhibits()) return exLabelLines(nd, k);
   var u=unitsShort(nd.u);
   var head=trunc(nd.t||nd.i, k>TITLE_ZOOM?44:28)+(u?" · "+u:"")+stagedLabelSuffix(nd);
   if(k>FULL_ZOOM){
@@ -5056,12 +5351,7 @@ function labelLines(nd, k){
  * plain name rather than gaining a "0", which would claim a measurement the
  * join cannot make (95.7% of MAP's credit rows name no receiving course). */
 function islandLabel(isl){
-  var s=isl.d+" ("+num(isl.n)+")";
-  if(face==="cpl" && cplState==="ok"){
-    var c=cplIslandCounts()[isl.d];
-    if(c) s+=" \u00b7 "+num(c.creds)+" credential"+(c.creds===1?"":"s");
-  }
-  return s;
+  return isl.d+" ("+num(isl.n)+")";
 }
 /* ⭐ A FONT SIZE THAT DRIFTS IS RE-BUILT EVERY FRAME, AND IT SHIMMERS (S242).
  * An island label is sized off `q.r`, the drawn radius, so on the sphere it is
@@ -5339,12 +5629,20 @@ window.__ccrUniverse = function(opts){
   opts=opts||{};
   var wantSolo = opts.solo==null ? solo : !!opts.solo;
   var wantFace = opts.face ? (opts.face==="cpl"?"cpl":"courses") : face;
+  /* CPL is a UNIVERSE, not a lens (2026-09-10): a face the page is not on means
+   * the other payload has to be bound first, and setUniverse re-enters here
+   * once it is — with universe===wantFace, so this cannot loop. */
+  if(wantFace!==universe){ setUniverse(wantFace, true, opts); return; }
   /* Already on the map: switch the frame and keep the render. SkyView alone and
    * the comprehensive view are ONE canvas — the second merely shows the panes
    * below it — so switching between them keeps the zoom, the selection and the
    * moves. Re-rendering would have thrown all three away. */
   var wantProj = opts.proj ? ((opts.proj==="globe"||opts.proj==="map") ? opts.proj : "sky") : proj;
-  if(cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){
+  /* ⚠️ `U===window.CPL_CCR_UNIVERSE` is TRUE right after a payload swap too —
+   * bindUniverse points both at the new one — so the swap carries its own
+   * flag, or the legend, the Show menu, the corpus and the course jump all
+   * stay the old universe's while the canvas draws the new. */
+  if(!rebound && cvs && document.getElementById("u-cvs")===cvs && U && U===window.CPL_CCR_UNIVERSE){
     if(wantFace!==face) setFace(wantFace, true);
     if(wantProj!==proj) setProj(wantProj);
     setSolo(wantSolo); return;
@@ -5537,19 +5835,7 @@ window.__ccrUniverse = function(opts){
         '</aside>'+
       '</div>'+
       '<div class="u-foot" id="u-foot">'+
-        '<div class="u-legend" aria-label="How to read the map">'+
-          '<span title="'+esc(SYSWHY[0])+'"><i class="u-sw s0"></i>M-ID, our working label</span>'+
-          '<span title="'+esc(SYSWHY[1])+'"><i class="u-sw s1"></i>C-ID, official</span>'+
-          '<span title="'+esc(SYSWHY[2])+'"><i class="u-sw s2"></i>CCN, official</span>'+
-          /* v4 item 8 (Sam, 2026-09-06): "Maybe add a note to Unified and that
-           * would be fine" — the note in the legend's own style, and the three
-           * id systems carry their SYSWHY as the hover he asked for. */
-          '<span title="'+esc(SYSWHY[3])+'"><i class="u-sw s3"></i>unified \u2014 a synthetic row standing in for a course identity; it carries no minted number of its own</span>'+
-          '<span id="u-lg-lit" hidden><i class="u-sw lit"></i>lit \u2014 a gold glow on a course that carries an articulation; the rest are drawn as they are</span>'+
-          '<span><i class="u-sw orphan"></i>stand-alone course — a smaller, lighter dot in orbit around its closest match</span>'+
-          '<span><i class="u-sw nc"></i>noncredit — a broken ring around the dot, whatever the identity system</span>'+
-          '<span><i class="u-sw member"></i>college course under an identity — a small star; click or hover an identity to open it</span>'+
-        '</div>'+
+        '<div class="u-legend" aria-label="How to read the map">'+legendHtml()+'</div>'+
         /* The footer hint takes the sky's words when the reader stands on the
          * sphere (ruling 7): a drag turns, the arrows turn, and the sky holds
          * still while a course is carried. */
@@ -5600,7 +5886,7 @@ window.__ccrUniverse = function(opts){
 
   cvs=document.getElementById("u-cvs");
   ctx=cvs.getContext?cvs.getContext("2d"):null;
-  roster=null; nodeIdx=null; ensureCorpus();   // the map re-binds after a payload swap
+  roster=null; nodeIdx=null; ensureCorpus();   // the map re-binds after a payload swap (rebound clears below, after the turn decision)
   islSphere=null; U.islands.forEach(function(I){ I._s=null; });
   viewsMenuInto(document.getElementById("u-views-slot"));
   setSolo(solo, true);          // the body class must be on before fitCanvas measures
@@ -5608,8 +5894,16 @@ window.__ccrUniverse = function(opts){
   fitCanvas();
   if(!restoreCamera()) resetView();   // a return keeps the reader's place; a first open opens
   wire(); draw();
-  if(sphereOn()) startTurn();   // the sky turns when it opens (ruling 4)
+  /* The sky turns when it OPENS (ruling 4). A universe swap is a re-render, not
+   * an opening: a reader who had stopped the turn keeps it stopped, or the
+   * point they were about to click walks away under the new payload. */
+  if(sphereOn() && !(rebound && turnBefore===false)) startTurn();
+  rebound=false;
   restoreTokens();              // a selection parked by a trip off the map comes back
+  drawWrites();                 // the staged moves survive every re-render (a trip off the map, a universe swap) — the pane is seeded empty
+  /* The course jump from an exhibit card: the other universe is drawn now, so
+   * open the identity it named and say where the reader came from. */
+  if(pendingOpen){ var po=pendingOpen; pendingOpen=null; if(nodeById(po.id)){ goNode(po.id); if(po.words) setHint(po.words); } }
   tellParent("ready");          // the page around the frame answers with its state
   if(typeof window.__ccrForestInto==="function")
     window.__ccrForestInto(document.getElementById("u-more"));
@@ -5828,7 +6122,7 @@ function suggest(raw, limit, order){
    * credential, agency, recommendation and exhibit rows; disciplines and
    * college-course codes keep their places, because both are still how a
    * reader says "take me there". */
-  var cplRows = (face==="cpl" && cplState==="ok") ? cplSuggestRows(term, startsWord) : null;
+  var cplRows = null;   // the CPL face's vocabulary rows retired 2026-09-10: the exhibit universe searches credentials directly
   if(cplRows) pts=[];
   pts.sort(function(a,b){ return a.tier-b.tier || b.n-a.n; });
   var anchor = pts.length ? pts[0] : null;
@@ -5874,8 +6168,11 @@ function suggest(raw, limit, order){
     }
     pre.concat(inn).slice(0,limit).forEach(function(r){
       var h=nodeById(r.id); if(!h) return;
-      mems.push({kind:"member", kindWord:"college course", kindShort:"COLLEGE CRSE", label:r.code+" · "+r.c,
-                 sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
+      mems.push(isExhibits()
+        ? {kind:"member", kindWord:"local exhibit", kindShort:"LOCAL EXHIBIT", label:r.code,
+           sub:"folded into "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code}
+        : {kind:"member", kindWord:"college course", kindShort:"COLLEGE CRSE", label:r.code+" · "+r.c,
+           sub:"under "+(h.nd.t||h.nd.i)+" · "+h.isl.d, isl:h.isl, nd:h.nd, cn:r.cn, code:r.code});
     });
   }
 
@@ -5932,9 +6229,11 @@ function suggest(raw, limit, order){
     cr.slice(0, want[1]).forEach(function(s){ out.push(s); });
   }
   else shown.forEach(function(p){
-    out.push({kind:"course", kindWord:p.nd.a?"stand-alone course":"course identity",
+    out.push({kind:"course", kindWord:isExhibits()?"credential":p.nd.a?"stand-alone course":"course identity",
               kindShort:kindShort("course", p.nd), label:p.nd.t||p.nd.i,
-              sub:p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd), credit:creditWord(p.nd),
+              sub:isExhibits() ? (p.nd.g||"issuing agency not recorded")+" · "+p.isl.d+(p.nd.sw?" · statewide":"")
+                               : p.nd.i+" · "+p.isl.d+" · "+creditShort(p.nd),
+              credit:isExhibits()?"":creditWord(p.nd),
               isl:p.isl, nd:p.nd});
   });
   var takeM = mems.slice(0, want[2]);
@@ -6315,9 +6614,6 @@ function askEnvelope(question){
     '             {"kind":"course","id":"<an exact course identity id, e.g. WELD M1109>"}',
     '  lit      true to light the courses that carry an articulation, else false',
     '  isolate  true to hide everything not selected, else false',
-    '  face     "courses" to name each point by its course, "cpl" to name it by the',
-    '           credential that reaches it. Use "cpl" only if the question is about',
-    '           credentials, prior learning, military training or exams.',
     '  cannot   "" normally; otherwise one sentence saying why this question cannot',
     '           be shown as a selection. Set it and leave select empty rather than',
     '           inventing a selection that does not answer the question.',
@@ -6545,7 +6841,6 @@ function applyAsk(qtext, res){
   }
 
   tokens=[];
-  if(res.face==="cpl" || res.face==="courses") setFace(res.face, true);
   setLit(res.lit===true, true);
   got.tokens.forEach(function(t){ if(!tokens.some(function(x){ return x.key===t.key; })) tokens.push(t); });
   renderTokens();
@@ -6617,7 +6912,8 @@ window.__ccrUniverseState = function(){
           islandsTotal:U?U.islands.length:0,
           coursesShown:(function(){ var n=0; if(U) U.islands.forEach(function(I){ n+=islandPass(I); }); return n; })(),
           solo:solo, curView:curView, framed:framed(), ringMax:RING_MAX,
-          tokens:tokens.map(function(t){ return t.label; }), show:JSON.parse(JSON.stringify(show)),
+          tokens:tokens.map(function(t){ return t.label; }),
+          show:(function(){ var o={}; showKeys().forEach(function(k){ o[k]=!!show[k]; }); return o; })(),   // this universe's switches
           winState:winState(), legendOpen:legendOpen, hostDocked:hostDocked, dark:dark,
           carrying:(drag&&drag.kind==="course")?drag.code:null,
           // Where the release would write. A ring painted on a canvas cannot be
@@ -6643,7 +6939,8 @@ window.__ccrUniverseState = function(){
           ghostPoints:memberPts.filter(function(mp){ return !!mp.ghost; }).length,
           memberOwners:memberPts.reduce(function(o,mp){ o[mp.nd.i]=(o[mp.nd.i]||0)+1; return o; }, {}),
           hover:hoverNode?hoverNode.i:null,
-          face:face, lit:lit, cpl:cplState, cplLine:(face==="cpl"?cplLineText():null),
+          face:face, lit:lit, cpl:cplState, cplLine:(face==="cpl"?exLineText():null),
+          universe:universe, exhibits:exState, exCourses:exCourses?Object.keys(exCourses).length:0,
           cplReached:(CPL&&CPL.by)?Object.keys(CPL.by).length:0};
 };
 
@@ -6665,7 +6962,7 @@ function cplTipHtml(hit){
       (hit.isl?' \u00b7 '+esc(hit.isl.d):'')+'</span>';
 }
 function tipHtml(hit){
-  if(face==="cpl" && hit.nd && !hit.mem && cplState==="ok"){ var ch=cplTipHtml(hit); if(ch) return ch; }
+  if(isExhibits() && hit.nd){ return hit.mem ? exMemberTipHtml(hit) : exTipHtml(hit); }
   if(hit.ghost){
     var g=hit.ghost, gt=nodeById(g.to);
     return '<b>'+esc(g.code)+'</b> '+esc(shortCollege(g.college))+
@@ -6685,7 +6982,7 @@ function tipHtml(hit){
              : st==="loading" ? "Loading the catalog description…"
              : st==="ok" ? "No catalog description for this course."
              : "";
-    var artic=(lit||face==="cpl") ? ((cplCollegesOf(hit.nd)||{})[m.c]||null) : null;
+    var artic=lit ? ((cplCollegesOf(hit.nd)||{})[m.c]||null) : null;
     return '<b>'+esc(m.n)+'</b> '+esc(shortCollege(m.c))+
       (info&&info.title?'<br>'+esc(info.title):'')+
       '<br><span class="sub">'+(info&&info.units!=null?esc(unitsWord(info.units))+' · ':'')+
@@ -6711,6 +7008,11 @@ function tipHtml(hit){
       h+='<br><span class="sub">'+num(nd.k)+' stand-alone course'+(nd.k===1?'':'s')+' in orbit</span>';
     }
     return h;
+  }
+  if(isExhibits()){
+    var folded=hit.isl.p.reduce(function(a,p){ return a+(p.n||0); }, 0), lit2=hit.isl.p.filter(function(p){ return p.ar>0; }).length;
+    return '<b>'+esc(hit.isl.d)+'</b><br><span class="sub">'+num(hit.isl.n)+' credential'+(hit.isl.n===1?'':'s')+' folding '+
+           num(folded)+' local MAP exhibit'+(folded===1?'':'s')+' · '+num(lit2)+' with an articulation</span>';
   }
   var auth=authorityWords(hit.isl);
   return '<b>'+esc(hit.isl.d)+'</b><br><span class="sub">'+num(hit.isl.n)+' identities · '+
@@ -6791,8 +7093,6 @@ function wire(){
   var ib=document.getElementById("u-iso");
   if(ib) ib.onclick=function(){ setIsolate(!isolate); };
   paintFace(); paintLit(); paintIso();
-  if(face==="cpl" && cplState!=="ok")
-    loadCpl(function(){ paintFace(); if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); } });
   /* The Views menu is built and wired by viewsMenuInto() — one builder for
    * the map's row and for every other view's crumbs row (item 9). */
 
@@ -6847,11 +7147,11 @@ function wire(){
    * point. `__ccrSetCredit` survives as a shim for the harness and for any
    * caller that still thinks in the three words. */
   function paintShow(){
-    var on=0; SHOW_KEYS.forEach(function(k){ if(show[k]) on++; });
+    var K=showKeys(), on=0; K.forEach(function(k){ if(show[k]) on++; });
     var w=document.getElementById("u-show-word"), sm=document.getElementById("u-show-sum");
-    if(w) w.textContent = on===SHOW_KEYS.length ? "All" : (on+" of "+SHOW_KEYS.length);
+    if(w) w.textContent = on===K.length ? "All" : (on+" of "+K.length);
     // The count alone says nothing about WHAT is off; the tooltip names it.
-    var offWords=SHOW_KEYS.filter(function(k){ return !show[k]; }).map(function(k){ return SHOW_WORDS[k].replace(/ \u2014 .*$/, ""); });
+    var offWords=K.filter(function(k){ return !show[k]; }).map(function(k){ return SHOW_WORDS[k].replace(/ \u2014 .*$/, ""); });
     if(sm) sm.title = offWords.length ? "Hidden: "+offWords.join(", ") : "Everything is drawn";
     Array.prototype.forEach.call(document.querySelectorAll("#u-show-menu input[data-show]"), function(i){
       i.checked=!!show[i.getAttribute("data-show")];
@@ -6865,7 +7165,7 @@ function wire(){
       if(nd.c==null){ unrec++; if(!creditShown(nd)) unrecHidden++; }
       if(creditShown(nd)) n++; else hidden++;
     }); });
-    var off=SHOW_KEYS.filter(function(k){ return !show[k]; });
+    var off=showKeys().filter(function(k){ return !show[k]; }), noun=isExhibits()?"credential":"course";
     /* Below NODE_ZOOM the canvas draws disciplines, not courses. Say so, in the
      * same breath as the count — otherwise a reader who filters at the zoom the
      * map OPENS on watches a number change beside a picture that does not, and
@@ -6876,16 +7176,18 @@ function wire(){
                  "not individual courses \u2014 a discipline disappears when nothing in it is shown. "+
                  "Zoom in to see the courses themselves." : "";
     setHint(off.length===0
-      ? "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
-        "they appear here and nowhere else."+wide
-      : "Showing <strong>"+num(n)+"</strong> of "+num(n+hidden)+" courses; "+num(hidden)+" hidden"+
-        (unrecHidden?" ("+num(unrecHidden)+" with no recorded credit status)":"")+
-        (show.members?"":"; the college courses under an identity are not drawn")+
-        ". Noncredit is drawn with a broken ring."+wide);
+      ? (isExhibits()
+          ? "Showing every credential."+wide
+          : "Showing every course. <strong>"+num(unrec)+"</strong> have no recorded credit status; "+
+            "they appear here and nowhere else."+wide)
+      : "Showing <strong>"+num(n)+"</strong> of "+num(n+hidden)+" "+noun+"s; "+num(hidden)+" hidden"+
+        (!isExhibits() && unrecHidden?" ("+num(unrecHidden)+" with no recorded credit status)":"")+
+        (show.members?"":isExhibits()?"; the local exhibits under a credential are not drawn":"; the college courses under an identity are not drawn")+
+        (isExhibits()?".":". Noncredit is drawn with a broken ring.")+wide);
     draw();
   }
   function setShow(patch, quiet){
-    Object.keys(patch||{}).forEach(function(k){ if(SHOW_KEYS.indexOf(k)>=0) show[k]=!!patch[k]; });
+    Object.keys(patch||{}).forEach(function(k){ if(ALL_SHOW_KEYS.indexOf(k)>=0) show[k]=!!patch[k]; });
     applyShow(quiet);
   }
   function setCredit(v){
@@ -6895,9 +7197,9 @@ function wire(){
     i.addEventListener("change", function(){ var p={}; p[i.getAttribute("data-show")]=i.checked; setShow(p); });
   });
   var every=document.getElementById("u-show-every");
-  if(every) every.onclick=function(){ var p={}; SHOW_KEYS.forEach(function(k){ p[k]=true; }); setShow(p); };
+  if(every) every.onclick=function(){ var p={}; showKeys().forEach(function(k){ p[k]=true; }); setShow(p); };
   var none=document.getElementById("u-show-none");
-  if(none) none.onclick=function(){ var p={}; SHOW_KEYS.forEach(function(k){ p[k]=false; }); setShow(p); };
+  if(none) none.onclick=function(){ var p={}; showKeys().forEach(function(k){ p[k]=false; }); setShow(p); };
   window.__ccrSetCredit=setCredit;
   window.__ccrSetShow=setShow;
   paintShow(); syncCreditWord();
@@ -7256,8 +7558,11 @@ function wire(){
      * SPLIT by what is under the pointer rather than reassigned wholesale, which
      * would have cost the only fast way into the decision packs. What he
      * double-clicked was a course, and a course is what he expected to open. */
-    if(hit.nd){ window.__ccrOutline(hit.nd.i); return; }
-    var d=hasWorkSurface(hit.isl);
+    if(hit.nd){
+      if(isExhibits()){ selNode=hit.nd; selIsl=hit.isl; showNode(hit.nd, hit.isl); draw(); return; }
+      window.__ccrOutline(hit.nd.i); return;
+    }
+    var d=!isExhibits() && hasWorkSurface(hit.isl);
     if(d){ window.__ccrDiscipline(d); return; }
     selIsl=hit.isl; selNode=null; showIsland(hit.isl);
     setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet — the "+
@@ -7399,8 +7704,7 @@ function searchOne(raw){
   var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
-  if(face==="cpl" && cplState==="ok") searchHits=cplHits(term);   // the vocabulary, not the titles
-  else U.islands.forEach(function(I){
+  U.islands.forEach(function(I){
     I.p.forEach(function(nd){
       if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         searchHits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
@@ -7465,11 +7769,11 @@ function searchOne(raw){
   var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
   var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
   var head="<strong>"+num(searchHits.length)+"</strong>"+
-    (face==="cpl" ? " course"+(searchHits.length===1?"":"s")+" reached by a credential, agency or credit recommendation matching “" : " match “")+esc(term)+
+    " match “"+esc(term)+
     "” across <strong>"+names.length+"</strong> discipline"+(names.length===1?"":"s")+
     ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
     (names.length>4?" · …":"")+"."+
-    (mh.length?" "+num(mh.length)+" of them carry a college course numbered like that.":"");
+    (mh.length?" "+num(mh.length)+" of them "+(isExhibits()?"fold a local exhibit named like that.":"carry a college course numbered like that."):"");
   var xs=searchHits.map(function(h){return h.x;}), ys=searchHits.map(function(h){return h.y;});
   var cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/2;
   var cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/2;
@@ -7530,7 +7834,6 @@ function tokenHits(t){
      * disciplines — never the island-name jump, and never an outline of its
      * own (the discipline chip already outlines it). */
     var inScope=function(h){ return t.within.indexOf(h.isl)>=0; };
-    if(face==="cpl" && cplState==="ok"){ out.hits=cplHits(term).filter(inScope); return out; }
     t.within.forEach(function(I){ I.p.forEach(function(nd){
       if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         out.hits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
@@ -7542,7 +7845,6 @@ function tokenHits(t){
   }
   var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
   if(named.length){ out.isls=named; return out; }
-  if(face==="cpl" && cplState==="ok"){ out.hits=cplHits(term); return out; }
   U.islands.forEach(function(I){ I.p.forEach(function(nd){
     if((nd.t||"").toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
       out.hits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
@@ -7798,8 +8100,13 @@ window.addEventListener("message", function(e){
 
 /* ── Show menu markup ─────────────────────────────────────────────────────── */
 function showMenuHtml(){
-  var W=function(k){ return [k, SHOW_WORDS[k]]; };
-  var groups=[
+  var W=function(k){ return [k, (isExhibits() && k==="members") ? "Local exhibits" : SHOW_WORDS[k]]; };
+  var groups=isExhibits() ? [
+    ["CPL type", EX_TYPE_KEYS.concat(["tna"]).map(W)],
+    ["Articulations", ["arty","noart"].map(W)],
+    ["Statewide", ["sw","nsw"].map(W)],
+    ["Under a credential", ["members"].map(W)]
+  ] : [
     ["Credit status", ["cr","nc","nce","unrec"].map(W)],
     ["Identity system", ["mid","cid","ccn","uni"].map(W)],
     ["Kind of point", ["ident","orbit","rim"].map(W)],
@@ -7888,6 +8195,8 @@ function similarTo(nd, isl){
 
 /* ── panels ─────────────────────────────────────────────────────────────── */
 function chipFor(nd){
+  if(isExhibits()) return '<span class="chip mut" title="A credential from the Credential Reference: one curated title folding every local MAP exhibit that names it. Curated by the MAP team, never re-keyed from this map.">credential \u2014 CER unified title</span>'+
+    (nd.sw?' <span class="chip cid" title="MAP marks this exhibit as statewide.">statewide</span>':'');
   var s=SYS[nd.s]||SYS[3];
   return '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+
     '" title="'+esc(SYSWHY[nd.s]||SYSWHY[3])+'">'+esc(s[2])+' — '+esc(s[3])+'</span>';
@@ -7924,22 +8233,31 @@ function showIsland(isl){
   var idents=isl.p.filter(function(p){ return !p.a; });
   var top=idents.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
   var authLine=authorityWords(isl);
+  var ex=isExhibits();
+  var exFolded=ex ? isl.p.reduce(function(a,p){ return a+(p.n||0); }, 0) : 0;
+  var exLit=ex ? isl.p.filter(function(p){ return p.ar>0; }).length : 0;
   el.innerHTML="<h3>"+esc(isl.d)+"</h3>"+
     (authLine?'<p class="sub u-auth">'+authLine+"</p>":"")+
-    "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
-      ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
-      num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another discipline":"")+")":"")+".</p>"+
-    (face==="cpl" ? cplIslandHtml(isl) : "")+
+    (ex
+      ? "<p>"+num(isl.n)+" credential"+(isl.n===1?"":"s")+" folding "+num(exFolded)+" local MAP exhibit"+(exFolded===1?"":"s")+
+        " \u00b7 "+num(exLit)+" with an articulation"+(isl.p.some(function(p){ return p.sw; })?" \u00b7 "+num(isl.p.filter(function(p){ return p.sw; }).length)+" statewide":"")+".</p>"
+      : "<p>"+num(isl.n)+" course identit"+(isl.n===1?"y":"ies")+" · "+num(isl.sa||0)+" stand-alone course"+
+        ((isl.sa||0)===1?"":"s")+((isl.sa||0)?" ("+num(isl.al||0)+" in orbit around an identity, "+
+        num((isl.sa||0)-(isl.al||0))+" on the rim"+(isl.xin?"; "+num(isl.xin)+" of those in orbit are filed under another discipline":"")+")":"")+".</p>")+
     (top.length?'<p class="sub">Biggest first — pick one to open it:</p><ul class="idlist">'+top.map(function(nd){
       return '<li><button type="button" class="ttl linkish" data-go="'+esc(nd.i)+'">'+esc(nd.t||nd.i)+"</button> "+
         chipFor(nd)+
-        '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+
-        (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+
-        (nd.ar?" · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):"")+"</div></li>";
-    }).join("")+"</ul>":'<p class="empty">No clustered identity in this discipline yet — every course here is a stand-alone.</p>')+
-    workSurfaceOffer(isl)+
-    '<p class="empty" style="margin-top:.5em">Drag this discipline on the map to bring it '+
-    'beside another, then drag a course across.</p>';
+        '<div class="sub">'+(ex
+          ? esc(trunc(nd.g||"issuing agency not recorded", 44))+" · "+num(nd.n)+" local exhibit"+(nd.n===1?"":"s")+
+            (nd.ar?" · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):"")
+          : esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+
+            (nd.k?" · "+num(nd.k)+" in orbit":"")+(nd.u!=null?" · "+esc(unitsWord(nd.u)):"")+
+            (nd.ar?" · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s"):""))+"</div></li>";
+    }).join("")+"</ul>":'<p class="empty">'+(ex?'No credential in this discipline yet.':'No clustered identity in this discipline yet — every course here is a stand-alone.')+'</p>')+
+    (ex ? '<p class="empty" style="margin-top:.6em">Exhibits are curated in the Credential Reference; nothing is moved from this map.</p>'
+        : workSurfaceOffer(isl)+
+          '<p class="empty" style="margin-top:.5em">Drag this discipline on the map to bring it '+
+          'beside another, then drag a course across.</p>');
   Array.prototype.forEach.call(el.querySelectorAll("[data-go]"), function(b){
     b.addEventListener("click", function(){ goNode(b.dataset.go); });
   });
@@ -7976,6 +8294,7 @@ function showNode(nd, isl, keepFilter){
   if(!keepFilter) memFilter="";
   openInspector();
   if(kbSync) kbSync(isl, nd);
+  if(isExhibits()){ renderExhibitNode(); resetPanelScroll(); return; }
   renderNode();
   resetPanelScroll();
   loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
@@ -8141,7 +8460,7 @@ function renderNode(){
    * and the light): a course that carries an articulation lists what reaches
    * it on either face. Only while nothing has been asked yet — a terminal state
    * calls back at once and would re-render forever. */
-  if((face==="cpl" || nd.ar>0) && (cplState===""||cplState==="loading"))
+  if(nd.ar>0 && (cplState===""||cplState==="loading"))
     loadCpl(function(){ if(selNode===nd && document.getElementById("u-detail")) renderNode(); });
   var mine=membersOf(nd.i), total=mine.length;
   // A course a curator just moved here is the row they are looking for: it
@@ -8183,10 +8502,9 @@ function renderNode(){
     (nd.ar ? " · "+num(nd.ar)+" articulation"+(nd.ar===1?"":"s") : "")+"</p>";
   // On the CPL face the credentials LEAD; on the Courses face they follow the
   // college courses (below), and only for a course that carries an articulation.
-  if(face==="cpl") h+=cplPanelHtml(nd, isl);
-  // ...and on the Courses face the Articulations chip names them up here, since
-  // the block itself sits below 55 member rows on a course like FIRE 110 X.
-  else if(lit) h+=cplNamesHtml(nd, "u-exl");
+  // The Articulations chip names the exhibits up here, since the block itself
+  // sits below 55 member rows on a course like FIRE 110 X.
+  if(lit) h+=cplNamesHtml(nd, "u-exl");
   // The orbit: where a stand-alone sits and WHY, with the accept verb beside it.
   if(nd.a){
     var par=nd.o?nodeById(nd.o):null;
@@ -8273,7 +8591,7 @@ function renderNode(){
           '<button class="putback" type="button" data-putback="'+esc(mv.cn)+'" title="Drop the staged move; the course is home again">Put back</button></li>';
       }).join("")+'</ul>';
   }
-  if(face!=="cpl" && nd.ar>0) h+=cplPanelHtml(nd, isl);
+  if(nd.ar>0) h+=cplPanelHtml(nd, isl);
   // The stand-alone courses in orbit around this identity: the map's suggestions,
   // each with the verb that accepts it.
   var orbs=nd.a?[]:orbitsOf(nd.i);
@@ -8686,7 +9004,8 @@ function paintFace(){
   if(b) b.setAttribute("aria-pressed", face==="cpl"?"true":"false");
   var full=document.getElementById("u-full"); if(full) full.classList.toggle("u-face-cpl", face==="cpl");
   var line=document.getElementById("u-face-line");
-  if(line){ line.hidden = face!=="cpl"; if(face==="cpl") line.innerHTML=cplLineHtml(); }
+  if(line){ line.hidden = face!=="cpl"; if(face==="cpl") line.innerHTML=exLineHtml(); }
+  var lg=document.querySelector("#u-foot .u-legend"); if(lg) lg.innerHTML=legendHtml();
   paintLegendLit();
 }
 function paintLit(){
@@ -8727,22 +9046,9 @@ function cplFaceWords(){
     num(c.exhibits_on_map||0)+" of "+num(c.exhibits_articulated||0)+" articulated exhibits reach a course on this map. "+
     "Search finds credentials, agencies and credit recommendations; a point no exhibit reaches stays drawn and unlabeled.";
 }
-function setFace(f, quiet){
-  face = (f==="cpl") ? "cpl" : "courses";
-  if(curView==="skyview"||curView==="comprehensive"){ curArg = face==="cpl" ? "cpl" : ""; syncHash(curArg||undefined); }
-  var after=function(){
-    paintFace(); repaintSelection();
-    if(cvs && document.getElementById("u-cvs")===cvs){ fitCanvas(); draw(); }
-  };
-  if(face==="cpl" && cplState!=="ok"){
-    if(!quiet) setHint("Loading MAP\u2019s articulation record\u2026");
-    loadCpl(function(){ if(!quiet && face==="cpl") setHint(cplState==="ok" ? cplFaceWords() : esc(cplLineText())); after(); });
-    after(); return;
-  }
-  if(!quiet) setHint(face==="cpl" ? cplFaceWords()
-    : "<strong>Courses</strong>: each point is named by its course again. Switch to <strong>CPL</strong> to name it by the credential that reaches it.");
-  after();
-}
+/* The CPL word switches UNIVERSES (2026-09-10); `face` tracks `universe` so
+ * the hash, the pressed state and the coverage line follow as they always did. */
+function setFace(f, quiet){ setUniverse(f==="cpl"?"cpl":"courses", quiet); }
 function setLit(on, quiet){
   lit=!!on; paintLit();
   /* ⚠️ REPAINT THE PANEL, NOT ONLY THE CANVAS. The chip now decides whether an
@@ -8759,8 +9065,10 @@ function setLit(on, quiet){
     var n=0, recs=0; if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){ if(nd.ar>0){ n++; recs+=nd.ar; } }); });
     var wide = view.k<=NODE_ZOOM ? " At this magnification the map draws <strong>disciplines</strong>: a discipline holding a lit course carries the ring, and the courses take it over as you zoom in." : "";
     setHint(lit
-      ? "Lighting <strong>"+num(n)+"</strong> courses that carry an articulation ("+num(recs)+" articulation records). The rest are drawn as they are: no mark says \u201cnone\u201d, because a course nobody has looked at and a course nobody has articulated are the same thing on this feed."+wide
-      : "Light out. Every course is drawn as it was.");
+      ? (isExhibits()
+          ? "Lighting <strong>"+num(n)+"</strong> credentials that courses are articulated to ("+num(recs)+" articulation lines). The rest are drawn as they are."+wide
+          : "Lighting <strong>"+num(n)+"</strong> courses that carry an articulation ("+num(recs)+" articulation records). The rest are drawn as they are: no mark says \u201cnone\u201d, because a course nobody has looked at and a course nobody has articulated are the same thing on this feed."+wide)
+      : "Light out. Every "+(isExhibits()?"credential":"course")+" is drawn as it was.");
   }
   if(cvs && document.getElementById("u-cvs")===cvs) draw();
   repaintSelection();
@@ -8814,6 +9122,7 @@ function wsKey(mode){ return mode==="subject"?"subjects":mode==="esl"?"esl":"dis
 function wsFilterValue(){ var q=document.getElementById("ws-q"); return q ? q.value : ""; }
 window.__ccrWorkspace=function(mode, opts){
   opts=opts||{};
+  if(isExhibits() && UNIVERSES.courses) bindUniverse("courses");   // the tables are the course universe's
   if(!ensureCorpus()){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   mode = WS_MODES[mode] ? mode : "discipline";
   if(mode==="esl" && !eslAvailable()) mode="discipline";
@@ -9802,6 +10111,7 @@ function openOutlineSheet(nd, isl){
   return true;
 }
 window.__ccrOutline=function(id){
+  if(isExhibits() && UNIVERSES.courses) bindUniverse("courses");   // an outline of record is a course's
   if(!ensureCorpus()){ if(typeof window.__ccrForest==="function") window.__ccrForest(); return; }
   var hit=nodeById(id);
   /* The map is on screen: open over it and leave the camera alone. The hash is

@@ -346,6 +346,15 @@ jobs:
         run: |
           python3 kb/_build_ccr_cpl_universe.py --quiet \
             || echo "::warning title=SkyView CPL universe not rebuilt::kb/_build_ccr_cpl_universe.py failed — CPL mode reads the previous build until the next run. Check the step log."
+      # Its MEMBERS (the rows behind the counts: per credential, the local MAP
+      # exhibits folded in and the course identities articulated to it) are a
+      # second file so the layout stays small — the same split as the course
+      # universe. Same one input, ~2 s; tests/ccr_cpl_universe_members_test.py
+      # fails CI on a stale file, and on a members key the universe does not carry.
+      - name: Rebuild SkyView's CPL universe members
+        run: |
+          python3 kb/_build_ccr_cpl_universe_members.py --quiet \
+            || echo "::warning title=SkyView CPL universe members not rebuilt::kb/_build_ccr_cpl_universe_members.py failed — the CPL map's cards read the previous build until the next run. Check the step log."
 
       # ── Step 4d4: SkyView's sky placement (Session 239) ───────────
       # The Sky view places the 159 discipline islands on a sphere three ways
@@ -416,6 +425,7 @@ jobs:
           # so main's copy went stale against the refreshed CER and
           # tests/ccr_cpl_universe_test.py read red on main itself.
           git add prototype/ccr_cpl_universe.json 2>/dev/null || true
+          git add prototype/ccr_cpl_universe_members.json 2>/dev/null || true
           # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
           git add prototype/ccr_sky.json 2>/dev/null || true
           # The discipline-blank worklist (Step 4d5): the identities the edge

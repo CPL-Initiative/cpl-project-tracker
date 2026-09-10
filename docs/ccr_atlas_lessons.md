@@ -1734,3 +1734,47 @@ two zooms for one destination, the wheel not stopping the turn, a hidden panel
 giving a selection no words, a chip that reads `I…`, Close after a sheet edit
 landing on the canvas, and the stale checker.
 
+### The CPL view: a second universe under the same map, and four things the first cut got wrong
+
+Sam's ruling of 2026-09-10 — *"another universe where the entities are exhibits
+rather than courses"* — shipped as a payload swap, not a second renderer. The
+CPL word calls `bindUniverse("cpl")`, which points `U` and the window payloads at
+`ccr_cpl_universe.json` + its members, drops every memo of the leaving universe,
+and re-enters `__ccrUniverse`. Everything the course map already does — the
+islands, the rings, the hover, the card, search, the Show menu, the sphere —
+runs on credentials unchanged. The first cut got six things wrong, each of
+them found by a check rather than on screen:
+
+- **The swap rendered nothing.** `__ccrUniverse` keeps the render when
+  `U===window.CPL_CCR_UNIVERSE` — and after the swap both point at the NEW
+  payload, so the guard read the swap as nothing to do. The canvas drew
+  credentials under the course legend, the course Show menu, an empty roster and
+  a course jump that never fired. A `rebound` flag now forces the full render.
+- **The legend read `undefined`.** `return` followed by a newline returns
+  undefined (ASI); the whole exhibit legend was an unreachable expression
+  statement. One paren.
+- **A route whose payload never comes drew nothing.** `__ccrUniverse` hands the
+  face off to `setUniverse` before rendering; on a missing file the fallback
+  repainted the word and stopped. It re-enters with the route's other options now,
+  and the hash follows the WORD the reader pressed rather than the payload.
+- **`ar` is not "courses articulated".** It is the CER's `n_articulation_lines`
+  — one per receiving college course, so AP English Language reads one identity
+  and three lines. The members guard pinning ring = card caught it on 201 points.
+  The word is *articulations*, and the card's header says both numbers.
+- **The swap restarted a turn the reader had stopped.** The render starts the
+  sky turning because that is what an OPENING does; a swap is a re-render, and
+  the sweep's click landed on ground the point had just left. `turnBefore` is
+  read at the swap and the render honors it.
+- **The staged-moves pane came back empty.** The render seeds `#u-writes` with
+  *No moves yet* and only `applyMove` ever painted it — so any re-render (a trip
+  to the workspace, an outline, now a swap) blanked a curator's list until their
+  next move. Pre-existing; `drawWrites()` runs at render now.
+
+Two memories were added so the maps stop leaking into each other: the Show
+switches and the light are kept per universe (`showMemo`, `litMemo`). CPL opens
+lit — the ring is the point of it — and Deselect all on one map never touches
+the other's. The members payload is a builder of its own
+(`kb/_build_ccr_cpl_universe_members.py`) that IMPORTS `ident_id` rather than
+restating it: a members file keyed one character differently is a universe of
+credentials with no members, and a dict lookup does not error.
+
