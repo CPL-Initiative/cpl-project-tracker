@@ -91,14 +91,27 @@ REQUEST_PAYLOAD = [
                        "Last Updated", "MAP Internal StudentID",
                        "Military Credits", "NonMilitary Credits",
                        "Potential Student", "Test Student",
-                       "Transcribed Credits", "Uploaded Date"]
-        # ── ⚠️ THE SIX CPL LIFECYCLE BOOLEANS ARE OFF THE LIVE VIEW ──────────
-        # WITHDRAWN FROM THIS REQUEST 2026-09-10, AND THE CRON WAS DARK FOR
-        # THREE DAYS BECAUSE THEY WERE NOT. Pedro added them 2026-09-02 and they
-        # were real: '0'/'1' strings, 100% fill over 53,267 rows, enumerated from
-        # the API itself (discover-map-datasets run 33693966335). By 2026-09-08
-        # MAP had removed all six, and asking for a column the view does not have
-        # 400s the WHOLE view:
+                       "Transcribed Credits", "Uploaded Date",
+                       # ⬇ RESTORED 2026-09-10 — see the note below. ONE of the
+                       # six, deliberately: Sam ruled "only counselor verified
+                       # that we need now, not student -- so just 1."
+                       "Counselor_Verified"]
+        # ── ⚠️ ONE OF THE SIX LIFECYCLE BOOLEANS IS REQUESTED; FIVE ARE NOT ──
+        # RESTORED 2026-09-10 after Pedro put all six back and the probe proved
+        # it (run 34493245398): every one at 100% fill and constant within a
+        # student — Counselor_Verified 3,439 TRUE, Analysis_Completed 4,318,
+        # Ed_Plan_Created 4,435, Student_Verified 3,333, Transcribed 17,406,
+        # CPL_Docs_Verified 28,223.
+        #
+        # ⚠️ THE OTHER FIVE STAY OUT ON PURPOSE. Sam, 2026-09-10: "it's actually
+        # only counselor verified that we need now, not student -- so just 1."
+        # Nothing reads them, and this response is already ~14 MB. Adding a
+        # column nothing consumes buys nothing and costs payload on every run.
+        #
+        # ⚠️ THE HISTORY BELOW IS WHY THIS LINE IS DANGEROUS TO EDIT CASUALLY.
+        # Pedro first added the six 2026-09-02; by 2026-09-08 MAP had removed
+        # them, and asking for a column the view does not have 400s the WHOLE
+        # view — which took the cron dark for three days:
         #
         #   View_StudentAggregatedValues_APIDataset contains invalid columns:
         #   CPL_Docs_Verified, Ed_Plan_Created, Analysis_Completed,
@@ -126,11 +139,13 @@ REQUEST_PAYLOAD = [
         # designed degradation: srcDelivered() in cpl_funding.js reads an absent
         # key as "no feed yet" and pays $0 rather than measuring a false zero.
         #
-        # ⭐ TO RESTORE: put the six names back on the line above. Nothing else
-        # changes — the builder's sweep picks `Counselor_Verified` up on its own
-        # and prints the match. kb/_probe_lifecycle_checks.py still WATCHES all
-        # six every discover-map-datasets run, so the day MAP serves them again
-        # the probe says so.
+        # ⭐ IF MAP DROPS IT AGAIN the whole view 400s and the cron dies three
+        # steps away, so REMOVE the name from the line above rather than letting
+        # a run fail. kb/_probe_lifecycle_checks.py WATCHES all six every
+        # discover-map-datasets run and says when they move.
+        # ⚠️ The funding model needed no change: ACCEPT_CANDIDATES in
+        # funding/_build_funding_performance.py already carried this exact
+        # spelling, and the probe confirmed the sweep matches it.
     },
     {
         # ── College Exhibit CRs, BY CATALOG YEAR (NEW 2026-08-19) ─────────

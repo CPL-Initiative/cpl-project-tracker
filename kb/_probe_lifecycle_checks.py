@@ -152,9 +152,15 @@ WATCH = {
 # still worth keeping for anything NOT named here: a watch list that drifts free
 # of the request is how a column gets profiled that nobody collects. Named here,
 # with the reason, rather than loosened away.
+# Watched but deliberately NOT requested. ⚠️ Counselor_Verified left this list on
+# 2026-09-10: MAP restored all six (probe run 34493245398, every one at 100% fill)
+# and Sam ruled we need exactly one of them — "only counselor verified that we
+# need now, not student -- so just 1." The other five stay out because nothing
+# reads them and the response is already ~14 MB; a column nobody consumes is pure
+# payload. They stay WATCHED so we learn the day MAP moves them again.
 WITHDRAWN = {
     STUDENT_AGG: ["CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
-                  "Counselor_Verified", "Student_Verified", "Transcribed"],
+                  "Student_Verified", "Transcribed"],
 }
 
 # If the booleans landed on a NEW view rather than a new column, these are the
