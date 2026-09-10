@@ -102,7 +102,17 @@ const CPL = {
            ["MAPICI-AWS-2-001", "AWS Certified Welder — GMAW", 0, ["3 hours in gas metal arc welding"], [0]]]],
       [1, [["MAPCXN-V1IT-1-001", "VCNST 101: Introduction to Welding", 1, ["3 hours in Introduction to Welding"], [1], 1]]],
     ],
-    "WELD M1002": [[0, [["MAPICI-AWS-3-001", "AWS Certified Welder — Advanced", 0, ["2 hours in advanced welding"], [0]]]]],
+    /* Eight exhibits under one credential, so the six-name cap on the card's
+     * exhibit line has something to cut. Rows, not credentials: `ar` is
+     * untouched, so the light still counts three points. */
+    "WELD M1002": [[0, [["MAPICI-AWS-3-001", "AWS Certified Welder — Advanced", 0, ["2 hours in advanced welding"], [0]],
+           ["MAPICI-AWS-3-002", "AWS D1.1 SMAW Plate", 0, ["2 hours in plate welding"], [0]],
+           ["MAPICI-AWS-3-003", "AWS D1.1 GMAW Plate", 0, ["2 hours in plate welding"], [0]],
+           ["MAPICI-AWS-3-004", "AWS D1.1 FCAW Plate", 0, ["2 hours in plate welding"], [0]],
+           ["MAPICI-AWS-3-005", "AWS D1.5 Bridge Welding", 0, ["2 hours in bridge welding"], [0]],
+           ["MAPICI-AWS-3-006", "AWS D17.1 Aerospace", 0, ["2 hours in aerospace welding"], [0]],
+           ["MAPICI-AWS-3-007", "AWS B2.1 Procedure Qualification", 0, ["2 hours in procedure qualification"], [0]],
+           ["MAPICI-AWS-3-008", "AWS D1.1 GTAW Plate", 0, ["2 hours in plate welding"], [0]]]]],
     "ARTS M1002": [[2, [["MAPICI-ASE-5-001", "ASE A5 Brakes", 0, ["2 hours in brakes"], [1]]]]],
   },
 };
@@ -358,6 +368,100 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
   w.dispatchEvent(new w.Event("hashchange"));
   await tick();
   check("(12) …and Back to #skyview puts the course names back", st().face === "courses", st().face);
+
+  /* ── (13) ⭐ THE EXHIBIT NAMES, ON THE CARD, ABOVE THE FOLD (Sam, 2026-09-10)
+   * "Add the name of any articulated exhibits to the course description card
+   * for the MID as well" — and, on the decision sheet, the surface: "I would
+   * like the exhibits list on the course cards in course view (not just CPL
+   * view) when the Articulations chip is selected."
+   *
+   * ⚠️ THE SHEET'S FIRST ANSWER WAS "THEY ARE ALREADY THERE", AND THAT ANSWER
+   * WAS TRUE AND USELESS. Check (6) above already asserts `MAP exhibit: AWS
+   * Certified Welder — SMAW` renders on the Courses face — it passed the whole
+   * time Sam was asking for it. It renders as the last muted line of a nested
+   * block, below the description and below every member row: 55 of them on the
+   * FIRE 110 X he was looking at. So these checks are about POSITION, not
+   * presence, which is the same lesson S250 wrote up one surface over.
+   *
+   * ⚠️ AND THE LIGHT NOW REPAINTS THE PANEL. The chip decides what an OPEN card
+   * says, so a chip that repainted only the canvas would land the line on the
+   * next course opened. Check (13d) turns it on with the card already open. */
+  w.__ccrSetFace("courses"); await tick();
+  w.__ccrSetLit(false); await tick();
+  w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1001"), label: "Introduction to Welding" });
+  await tick();
+  check("(13) with the chip OFF the card is exactly what it was", !q("#u-detail .u-exl"));
+
+  w.__ccrSetLit(true); await tick();
+  let exl = q("#u-detail .u-exl");
+  check("(13a) ⭐ the chip names the exhibits on the card, in course view", !!exl, q("#u-detail").innerHTML.slice(0, 200));
+  check("(13a) all three, by name, with the count",
+    !!exl && /3\b/.test(exl.textContent) &&
+    /AWS Certified Welder — SMAW/.test(exl.textContent) &&
+    /AWS Certified Welder — GMAW/.test(exl.textContent) &&
+    /VCNST 101: Introduction to Welding/.test(exl.textContent), exl && exl.textContent);
+  {
+    const h = q("#u-detail").innerHTML;
+    check("(13b) ⭐ ABOVE the member list — the position IS the fix",
+      h.indexOf('class="u-exl') < h.indexOf('<ul class="mlist">'),
+      `line@${h.indexOf('class="u-exl')} members@${h.indexOf('<ul class="mlist">')}`);
+    check("(13b) …and the full block still follows it, uncut",
+      h.indexOf('<ul class="mlist">') < h.indexOf("Credit for prior learning") &&
+      /3 hours in shielded metal arc welding/.test(h));
+  }
+
+  /* (13c) The cap. Eight exhibits, six named, and the tail says how many are
+   * held back AND where they are — a truncation that does not name its
+   * remainder is just a shorter lie. */
+  w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1002"), label: "Advanced Welding" });
+  await tick();
+  exl = q("#u-detail .u-exl");
+  check("(13c) a long list is capped at six names, and says how many more",
+    !!exl && /8\b/.test(exl.textContent) && /and 2 more/.test(exl.textContent) &&
+    /AWS D1\.1 SMAW Plate/.test(exl.textContent) && !/AWS D1\.1 GTAW Plate/.test(exl.textContent),
+    exl && exl.textContent);
+  check("(13c) …and it says where the rest are, rather than stopping",
+    !!exl && /Credit for prior learning/.test(exl.textContent));
+
+  /* (13d) The repaint. The card is ALREADY open; the chip has to change it. */
+  w.__ccrSetLit(false); await tick();
+  check("(13d) chip off, card open: the line goes with it", !q("#u-detail .u-exl"));
+  w.__ccrSetLit(true); await tick();
+  check("(13d) ⭐ chip on, card still open: the line arrives WITHOUT reopening the course",
+    !!q("#u-detail .u-exl"), q("#u-detail").innerHTML.slice(0, 200));
+
+  /* (13e) Absence is not a finding on this feed — the same reason the light
+   * marks presence only. A course nothing reaches grows no line at all. */
+  w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1003"), label: "Welding Metallurgy" });
+  await tick();
+  check("(13e) ⭐ a course no exhibit reaches says nothing, rather than \"none\"",
+    !q("#u-detail .u-exl") && !/no exhibit|none/i.test((q("#u-detail .u-exl") || { textContent: "" }).textContent));
+
+  /* (13f) The CPL face already led with the credentials, and must not now
+   * carry the same names twice. */
+  w.__ccrSetFace("cpl"); await tick();
+  w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1001"), label: "Introduction to Welding" });
+  await tick();
+  check("(13f) on the CPL face the credentials still lead and the line is not repeated",
+    !q("#u-detail .u-exl") && /Credit for prior learning reaching this course/.test(q("#u-detail").innerHTML));
+  w.__ccrSetFace("courses"); await tick();
+
+  /* (13g) The outline card, whose own CPL layer is the fourth section down and
+   * collapsible — so without this the card could name a course and no exhibit
+   * until somebody opened the layer. */
+  w.__ccrOutline("WELD M1001");
+  await tick();
+  const oex = q(".ol .u-exl");
+  check("(13g) the outline card names them too, above Sam's MAP-Generated line",
+    !!oex && /AWS Certified Welder — SMAW/.test(oex.textContent), oex && oex.textContent);
+  {
+    const h = q("#view").innerHTML;
+    check("(13g) …above the description layer, not buried under it",
+      h.indexOf('class="u-exl') < h.indexOf('id="ol-desc"') &&
+      h.indexOf('class="u-exl') < h.indexOf('id="ol-cpl"'));
+  }
+  check("(13g) every word of it is a word — no glyph stands in for a label",
+    !!oex && !/[←-⇿☀-➿\uD83C-\uDBFF]/.test(oex.textContent), oex && oex.textContent);
 
   done();
 })().catch((e) => { console.error(e && e.stack || e); process.exit(1); });

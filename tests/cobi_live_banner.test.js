@@ -148,6 +148,119 @@ const LINK = "https://claude.ai/code/session_01PmWfWVNTwivV5D4KYkmA9R";
       w2.COBI_BRAND.liveAuthHeaders() === null);
   }
 
+  /* ── ⭐ THE CURATOR-ONLY EXPIRY DIAGNOSTIC (Sam, 2026-09-10) ───────────────
+   * "I still don't see the banner saying I'm active in a CC session with a
+   * link in the header." Nothing was broken. His row was active, carried a
+   * link, and had expired two days earlier — the block above hid it exactly as
+   * designed, and hiding it IS right, because a stale link invites the team
+   * into a dead session.
+   *
+   * ⭐ THE DEFECT WAS THAT AN EXPIRED ROW AND AN UNBUILT FEATURE LOOK THE SAME
+   * TO THE ONE PERSON WHO CAN FIX EITHER. Every check above this point asks
+   * whether the banner is absent, and absent was the correct answer each time,
+   * so the whole suite was green while Sam spent a day believing the feature
+   * did not exist. Failing closed and failing silently are separable, and only
+   * the first one was ever the requirement.
+   *
+   * These guard the separation: the LINK still never renders for a dead
+   * session (unchanged, and the checks above still say so), and the reader who
+   * already passed the RLS gate gets told why. */
+  {
+    const HOUR = 3600000;
+    const twoDaysAgo = new Date(Date.now() - 48 * HOUR).toISOString();
+
+    let e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: twoDaysAgo });
+    const note = e.window.document.getElementById("cobi-live-stale");
+    check("⭐ an active row whose expiry passed says so, instead of nothing", !!note);
+    check("⚠️ and it is NOT the banner — #cobi-live stays absent for a dead session",
+      !e.window.document.getElementById("cobi-live"));
+    check("it says how long ago, in words a person would use",
+      !!note && /expired 2 days ago\./.test(note.textContent),
+      note ? note.textContent : "no note");
+    check("⭐ it carries NO link — the link is the thing that expired",
+      !!note && !note.querySelector("a"));
+    check("it names the row to fix, so the fix does not need a search",
+      !!note && /expires_at/.test(note.textContent) && /cobi_live_session/.test(note.textContent),
+      note ? note.textContent : "no note");
+    check("it says who can see it, so a curator note is never mistaken for a public one",
+      !!note && /Only the MAP team sees this line/.test(note.textContent),
+      note ? note.textContent : "no note");
+    check("it sits ABOVE the header, where the banner would have",
+      !!note && note.nextElementSibling && note.nextElementSibling.className === "header");
+    check("it announces itself to a screen reader without stealing focus",
+      !!note && note.getAttribute("role") === "status");
+    check("every control is a word here too, per the glyph rule",
+      !!note && /Hide/.test(note.textContent) &&
+      !/[←-⇿☀-➿\uD83C-\uDBFF]/.test(note.textContent),
+      note ? note.textContent : "no note");
+
+    /* ⚠️ AND IT NEVER PRINTS THE ENGINE'S FAILURE AT THE READER. `+00` without
+     * the colon is Invalid Date in V8 (the case the block above was fixed for
+     * in S245), and `Date.now() - NaN` is NaN — so the obvious version of this
+     * diagnostic says "expired NaN days ago", which is worse than silence. */
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: "2026-09-08T20:29:52.666224+00" });
+    const bad = e.window.document.getElementById("cobi-live-stale");
+    check("⭐ an UNREADABLE expiry gets its own sentence, never \"NaN days ago\"",
+      !!bad && !/NaN|Invalid/.test(bad.textContent) &&
+      /not a readable date/.test(bad.textContent),
+      bad ? bad.textContent : "no note");
+    check("...and the banner is still hidden for it (fails closed, unchanged)",
+      !e.window.document.getElementById("cobi-live"));
+    check("...and it quotes the value that is wrong, so the row can be corrected",
+      !!bad && /666224\+00/.test(bad.textContent), bad ? bad.textContent : "no note");
+
+    // ── an inactive row still says nothing at all: no row, no diagnosis ──────
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: false, session_url: LINK, expires_at: twoDaysAgo });
+    check("an inactive row renders neither banner nor note",
+      !e.window.document.getElementById("cobi-live") &&
+      !e.window.document.getElementById("cobi-live-stale"));
+
+    // ── dismissal: keyed on the expiry it reports ───────────────────────────
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: twoDaysAgo });
+    const hideNote = (dom) => {
+      const n = dom.window.document.getElementById("cobi-live-stale");
+      if (n) n.querySelector("button").click();
+      return !!n;
+    };
+    check("the note offers a Hide control at all", hideNote(e));
+    check("Hide removes the note", !e.window.document.getElementById("cobi-live-stale"));
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: twoDaysAgo });
+    check("and it stays hidden for that same expiry",
+      !e.window.document.getElementById("cobi-live-stale"));
+    e.window.COBI_BRAND.liveBannerRender({
+      active: true, session_url: LINK,
+      expires_at: new Date(Date.now() - 3 * HOUR).toISOString() });
+    check("⭐ but a NEW expiry reports itself again — dismissing one never hides the next",
+      !!e.window.document.getElementById("cobi-live-stale"));
+
+    /* ⭐ THE ONE THAT WOULD HAVE RE-CREATED THE ORIGINAL FAILURE — and note
+     * WHICH mistake it catches, because the obvious answer is wrong. Sharing
+     * the storage KEY does not break this: the two paths compare it against
+     * different values (an expiry, a url), so they never collide, and reverting
+     * to one key leaves all 40 checks green. What breaks it is dismissing the
+     * note ON THE SESSION URL — the natural-reading bug, since the note is
+     * about that session. Then the sequence Sam is most likely to run — hide
+     * the note, set a fresh expiry, reload — shows him nothing, a second time,
+     * for a new reason. Keyed on the expiry, this stays green. */
+    e = build();
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: twoDaysAgo });
+    hideNote(e);
+    e.window.COBI_BRAND.liveBannerRender(
+      { active: true, session_url: LINK, expires_at: new Date(Date.now() + HOUR).toISOString() });
+    check("⭐ hiding the note does NOT hide the live banner a fresh row then produces",
+      !!e.window.document.getElementById("cobi-live"));
+  }
+
   // ── the source-level half: the read is one row, and it carries credentials ─
   check("the banner reads cobi_live_session, one row, with the reader's credentials",
     /rest\/v1\/cobi_live_session"\s*\+\s*"\?id=eq\.1/.test(SRC) &&

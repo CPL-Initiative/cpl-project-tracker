@@ -211,6 +211,12 @@
       "color:#fff;font:inherit;font-size:.8rem;padding:3px 10px;border-radius:4px;cursor:pointer;}",
       ".cobi-live button:hover{background:rgba(255,255,255,.14);}",
       ".cobi-live :focus-visible{outline:3px solid #fff;outline-offset:2px;}",
+      /* The curator-only expiry note reuses .cobi-live wholesale and adds NO
+         color of its own. A quieter ground was drafted and cut: it would have
+         needed a fill role neither palette defines, and the burden of proof is
+         on the mark. Nobody reads "Your live-session banner expired" as an
+         announcement that one is live — the words carry it, which is what the
+         plain-words rule asks for. */
       "@media (max-width:560px){.cobi-live{padding:.5rem .9rem;}",
       ".cobi-live button{margin-left:0;}}",
       /* ── dark (cpl_theme.js's contract) ──────────────────────────────────
@@ -344,6 +350,11 @@
                + "?id=eq.1&select=active,session_url,note,expires_at";
   var LIVE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var LIVE_DISMISS = "cobi_live_dismissed";
+  /* ⚠️ A SEPARATE KEY, ON PURPOSE. Dismissing the expired-row diagnostic must
+   * not hide the real banner a fresh row produces, and the two are keyed on
+   * different values — the diagnostic on the expiry it is reporting, so a new
+   * expiry reports itself again. */
+  var LIVE_DISMISS_EXPIRED = "cobi_live_expired_dismissed";
 
   /* ⭐ THE BANNER IS FOR THE TEAM, NOT FOR COLLEGES (Sam, 2026-09-08:
    * "limit the folks who can use the banner link to users on the MAP Team
@@ -394,6 +405,73 @@
     return h;
   }
 
+  /* How long ago, in the words a person would use. Rounds DOWN past the hour so
+   * the number is never larger than the elapsed time. Returns null for a date
+   * this engine cannot read — there is nothing truthful to say about NaN, and
+   * the caller has a different sentence for that case. */
+  function liveAgo(ms) {
+    if (isNaN(ms)) return null;
+    var s = Math.max(0, Math.round((Date.now() - ms) / 1000));
+    if (s < 3600) { var m = Math.max(1, Math.round(s / 60)); return m + (m === 1 ? " minute ago" : " minutes ago"); }
+    if (s < 86400) { var h = Math.max(1, Math.floor(s / 3600)); return h + (h === 1 ? " hour ago" : " hours ago"); }
+    var d = Math.max(1, Math.floor(s / 86400));
+    return d + (d === 1 ? " day ago" : " days ago");
+  }
+
+  /* The curator-only line that replaces a silent nothing.
+   *
+   * ⚠️ ITS OWN id, NOT "cobi-live". Two suites assert `!getElementById(
+   * "cobi-live")` on an expired row and on an unreadable one, and both mean
+   * exactly what they say: the banner that CARRIES THE LINK must never render
+   * for a dead session. That stays true. Reusing the id would have flipped two
+   * green checks red and, worse, made the wrong thing pass later. The class IS
+   * shared, so the strip inherits every rule the banner already proved. */
+  function liveExpiredNote(row) {
+    var header = document.querySelector(".header");
+    if (!header || document.getElementById("cobi-live")
+        || document.getElementById("cobi-live-stale")) return null;
+    try {
+      if (window.localStorage &&
+          localStorage.getItem(LIVE_DISMISS_EXPIRED) === String(row.expires_at)) return null;
+    } catch (e) { /* private window: show it */ }
+
+    var ago = liveAgo(new Date(row.expires_at).getTime());
+
+    var bar = document.createElement("div");
+    bar.id = "cobi-live-stale";
+    bar.className = "cobi-live cobi-live-stale";
+    bar.setAttribute("role", "status");
+
+    var lead = document.createElement("b");
+    lead.textContent = ago
+      ? "Your live-session banner expired " + ago + "."
+      : "Your live-session banner is hidden: its expiry is not a readable date.";
+    bar.appendChild(lead);
+
+    var note = document.createElement("span");
+    note.className = "cobi-live-note";
+    note.textContent = ago
+      ? "Only the MAP team sees this line. Set a new expires_at on the "
+        + "cobi_live_session row to announce a session again."
+      : "Only the MAP team sees this line. expires_at on the cobi_live_session "
+        + "row reads " + String(row.expires_at) + "; a full ISO timestamp brings "
+        + "the banner back.";
+    bar.appendChild(note);
+
+    var x = document.createElement("button");
+    x.type = "button";
+    x.textContent = "Hide";
+    x.setAttribute("aria-label", "Hide this notice");
+    x.onclick = function () {
+      try { localStorage.setItem(LIVE_DISMISS_EXPIRED, String(row.expires_at)); } catch (e) {}
+      if (bar.parentNode) bar.parentNode.removeChild(bar);
+    };
+    bar.appendChild(x);
+
+    header.parentNode.insertBefore(bar, header);
+    return bar;
+  }
+
   function liveBannerRender(row) {
     if (!row || !row.active || !row.session_url) return null;
     /* ⚠️ AN UNPARSEABLE EXPIRY FAILED *OPEN*, WHICH IS THE ONE THING THIS BLOCK
@@ -404,7 +482,23 @@
      * the value the server MIGHT send, not only the one it sends now: drop the
      * colon (a legal-looking `+00`) and V8 returns Invalid Date. Ask for a
      * future instant and let every other answer, NaN included, hide it. */
-    if (row.expires_at && !(new Date(row.expires_at).getTime() > Date.now())) return null;
+    /* ⭐ AN EXPIRED ROW AND AN UNBUILT FEATURE LOOK IDENTICAL TO THE PERSON WHO
+     * SET THE ROW. Sam set this one, saw nothing, and reported the banner as
+     * never built (2026-09-10); it had simply expired two days earlier and was
+     * failing closed exactly as designed. Failing closed is right — a stale link
+     * must stop advertising itself — but failing SILENTLY costs the only person
+     * who can fix it the time to diagnose it.
+     *
+     * ⚠️ THE DIAGNOSTIC IS SAFE BY CONSTRUCTION, NOT BY A CHECK HERE. Reaching
+     * this line means the reader already read the row, and `cobi_live_session`
+     * is gated in RLS by `is_map_team() OR team_pass_ok()`. A plain visitor gets
+     * ZERO rows and never enters this function, so there is no audience to leak
+     * to and no second gate to keep in step with the first.
+     * ⚠️ It does NOT link the session. The link is what expired; offering it
+     * would invite the team into a dead session, which is the thing the expiry
+     * exists to prevent. It names the state and what to do about it. */
+    if (row.expires_at && !(new Date(row.expires_at).getTime() > Date.now()))
+      return liveExpiredNote(row);
     // A viewer who closed THIS banner does not see it again; a new link is a
     // new banner. Keyed on the url so dismissing one never hides the next.
     try {
