@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-10",
-  "_session": "SkyReach (2026-09-10) — the description that names no college, and three surfaces that failed silently",
-  "_status": "All six things Sam reported on 10 September are fixed and live. Three of them were surfaces working exactly as designed that told nobody: the header banner announcing a live Claude Code session had simply expired two days earlier and showed nothing, so an expired setting and a feature that was never built looked identical — it now says which it is, and names the row to change. The exhibit names asked for on a course card turned out to already be there, buried below fifty-five college courses; with the Articulations control on they now sit directly under the course title. And the biggest change: the course description on a MAP course card no longer quotes one college and names them. Sam's reason was that picking a winner among colleges invites faculty to contest the choice. The card now shows the sentences most of the colleges wrote, each once, with no college named, and lists separately what only some of them add. Every sentence on the card was still written by a college — nothing is invented — and text that says the field is blank (a 2012 migration notice on 65 courses) is set aside rather than quoted. Two things remain open from this run: the statewide C-ID and CCN descriptions, which MAP does not hold the text for, and a CPL view built around exhibits rather than courses, which Sam has described and which needs a new data build.",
+  "_session": "SkyReach (2026-09-10) — the cron outage: a diagnosis that did not stop the run",
+  "_status": "The daily dashboard stopped running on 8 September and nobody was told. MAP removed six columns from the student report that we had started asking for on 2 September; asking for a column a report no longer has makes MAP reject the whole report, and the rejection also scrambled the labels on a second report, so the build crashed. Nine runs failed the same way over three days while the fetch step printed the correct explanation each time and carried on anyway. Fixed three ways: we no longer ask for the six columns, a scrambled response is now refused outright instead of being passed along, and the build drops a report it cannot identify rather than half-reading it. Sam has asked Pedro to restore the columns; until then the funding model's counselor-accepted measure is left out rather than reported as zero, which is how it was designed to behave.",
   "items": [
+    {
+      "id": "s251-fable-restore-lifecycle-columns",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "The moment MAP restores the six CPL lifecycle checks, put them back in the daily fetch — it is one line, and the funding model's counselor-accepted measure starts publishing again with no other change. They were removed on MAP's side around 8 September, which is what took the dashboard down for three days; we stopped asking for them so the rest of the data could flow. The schema probe (Actions, Discover MAP datasets) still watches all six every run, so it will say when they are back."
+    },
+    {
+      "id": "s251-fable-kpi-history-backfill",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "The daily history file stops at 7 September because the dashboard did not run for three days. Once a fresh run lands, fill in 8 and 9 September as interpolated entries and mark them as such — otherwise the dashboard's one-day change figure silently compares against a date three days back. Cannot be done before the new run exists: interpolation needs both ends."
+    },
+    {
+      "id": "s251-fable-guessed-column-offsets",
+      "for": "Fable",
+      "tab": "pipeline",
+      "text": "The dashboard builder reads MAP columns by name but falls back to a guessed POSITION when the name is missing, in 51 places. Those positions were written when one report had 25 columns; it now has 19, so the guess points past the end of the row and crashes. That is exactly what took the cron down. One was fixed where it crashed; the other 50 are the same hazard waiting. Each should either read by name only, or say plainly that it cannot find the column."
+    },
     {
       "id": "s251-sam-cid-descriptor-text",
       "for": "Sam",

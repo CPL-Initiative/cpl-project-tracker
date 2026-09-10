@@ -91,25 +91,46 @@ REQUEST_PAYLOAD = [
                        "Last Updated", "MAP Internal StudentID",
                        "Military Credits", "NonMilitary Credits",
                        "Potential Student", "Test Student",
-                       "Transcribed Credits", "Uploaded Date",
-                       # ── The CPL lifecycle checks as BOOLEANS (Pedro, 2026-09-02) ──
-                       # Enumerated from the API itself on 2026-09-02
-                       # (kb/_probe_lifecycle_checks.py, discover-map-datasets run
-                       # 33693966335): six new columns, '0'/'1' strings, 100% fill
-                       # over 53,267 rows. They are the six checks the student-
-                       # detail view's pipe-delimited CPLPlanStatus carries — CPL
-                       # Docs · Ed Plan · Analysis · Counselor · Student ·
-                       # Transcribed — split out, at this view's grain.
-                       # `Counselor_Verified` is the counselor stage: Sam,
-                       # 2026-09-02 — "signifies the student met with a counselor
-                       # and accepted their CPL". Fetched so the feed carries them;
-                       # funding/_build_funding_performance.py reads the accepted
-                       # step ONLY once its sweep names this spelling, which waits
-                       # on Sam confirming the column's meaning with Pedro.
-                       # ⚠️ `Transcribed` is a CHECK, not units — the same fork as
-                       # at CR-row grain (17,342 flagged vs 14,455 with units > 0).
-                       "CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
-                       "Counselor_Verified", "Student_Verified", "Transcribed"]
+                       "Transcribed Credits", "Uploaded Date"]
+        # ── ⚠️ THE SIX CPL LIFECYCLE BOOLEANS ARE OFF THE LIVE VIEW ──────────
+        # WITHDRAWN FROM THIS REQUEST 2026-09-10, AND THE CRON WAS DARK FOR
+        # THREE DAYS BECAUSE THEY WERE NOT. Pedro added them 2026-09-02 and they
+        # were real: '0'/'1' strings, 100% fill over 53,267 rows, enumerated from
+        # the API itself (discover-map-datasets run 33693966335). By 2026-09-08
+        # MAP had removed all six, and asking for a column the view does not have
+        # 400s the WHOLE view:
+        #
+        #   View_StudentAggregatedValues_APIDataset contains invalid columns:
+        #   CPL_Docs_Verified, Ed_Plan_Created, Analysis_Completed,
+        #   Counselor_Verified, Student_Verified, Transcribed
+        #
+        # ⚠️ AND A 400 ON ONE VIEW CORRUPTS THE LABELS OF ANOTHER. One invalid
+        # view in the batch and MAP labels a neighbour's data with the invalid
+        # name: View_ProgramsofStudy_APIDataset vanished from the response and
+        # this view came back TWICE. Nine consecutive nightly runs then died in
+        # excel_to_dashboard.py's `_compute_college_last_activity` on an
+        # IndexError, three steps from the cause. That is the exact failure
+        # summarize_response() was written for in the 2026-08-24 outage.
+        #
+        # CONFIRMED GONE, NOT RENAMED AND NOT MOVED (probe run 34478781366,
+        # 2026-09-10): the live view enumerates 19 columns, "NEW vs our
+        # request+held: none", and ten candidate new view names
+        # (View_StudentCPLPlan, View_StudentLifecycle, View_StudentPlanChecks …)
+        # all answer "is not Valid".
+        #
+        # ⚠️ WHAT THIS COSTS, NAMED SO NOBODY HAS TO REDISCOVER IT: the funding
+        # model's `pac` / `pac_u` — applied CPL units on a counselor-accepted
+        # Student CPL Plan, the Success band's measure — read `Counselor_Verified`
+        # through ACCEPT_CANDIDATES in funding/_build_funding_performance.py.
+        # With the column absent those keys are OMITTED, not zeroed, which is the
+        # designed degradation: srcDelivered() in cpl_funding.js reads an absent
+        # key as "no feed yet" and pays $0 rather than measuring a false zero.
+        #
+        # ⭐ TO RESTORE: put the six names back on the line above. Nothing else
+        # changes — the builder's sweep picks `Counselor_Verified` up on its own
+        # and prints the match. kb/_probe_lifecycle_checks.py still WATCHES all
+        # six every discover-map-datasets run, so the day MAP serves them again
+        # the probe says so.
     },
     {
         # ── College Exhibit CRs, BY CATALOG YEAR (NEW 2026-08-19) ─────────
@@ -381,16 +402,22 @@ def summarize_response(data, requested=None):
         lines.append(line)
         seen[view] = seen.get(view, 0) + 1
 
-    problems = []
+    problems, duplicated = [], sorted(v for v, n in seen.items() if n > 1)
     for view, code, message in failed:
         problems.append(f"{view}: MAP returned {code} — {message or 'no message'}")
-    for view in sorted(v for v, n in seen.items() if n > 1):
+    for view in duplicated:
         problems.append(f"{view}: returned {seen[view]}x — viewName cannot identify a dataset")
     for view in requested:
         if view not in seen:
             problems.append(f"{view}: requested but not present in the response")
 
-    return {"lines": lines, "problems": problems, "usable": not problems}
+    # `duplicated` is reported SEPARATELY because it is a different kind of
+    # problem from the rest. A 400 on one view leaves the others readable; a
+    # repeated viewName means the payload cannot be keyed by name AT ALL, and
+    # every consumer keys it that way. Callers act on this without matching
+    # strings in `problems`.
+    return {"lines": lines, "problems": problems, "duplicated": duplicated,
+            "usable": not problems}
 
 
 def fetch_report(output_path=None, timeout=120, strict=False):
@@ -436,18 +463,34 @@ def fetch_report(output_path=None, timeout=120, strict=False):
     if report["problems"]:
         # PRINTING IS UNCONDITIONAL, FAILING IS NOT — and the split is load-bearing.
         # .github/workflows/daily-dashboard.yml runs this same fetcher and falls
-        # back on a non-zero exit. It consumes none of the views involved in the
-        # 2026-08-24 outage, so failing the whole pull here would drop the
-        # dashboard to its fallback path over a dataset it never reads. The
-        # Supabase load DOES need to stop, and passes --strict.
-        label = "ERROR" if strict else "WARNING"
+        # back on a non-zero exit, so failing the whole pull over a 400 on a view
+        # the dashboard never reads would cost a day's dashboard for nothing. The
+        # Supabase load stops on any problem and passes --strict.
+        #
+        # ⚠️ EXCEPT A REPEATED viewName, WHICH IS FATAL EITHER WAY (2026-09-10).
+        # The split above used to rest on "it consumes none of the views involved
+        # in the 2026-08-24 outage" — a claim about WHICH view MAP mislabels,
+        # which is not ours to control. On 2026-09-08 it landed on
+        # View_StudentAggregatedValues_APIDataset, which the dashboard does read;
+        # the payload was saved with the diagnosis already printed, and nine
+        # consecutive nightly runs died three steps downstream on an IndexError.
+        # A duplicate does not mean one view is unreadable — it means the payload
+        # cannot be keyed by name at all, which is the one thing every consumer
+        # does with it. Saving it is handing on a file we have already proved we
+        # cannot read. The dashboard survives the absence: read_exhibit_metrics()
+        # returns None for a missing file and main() prints "No exhibit data
+        # found — skipping exhibit KPIs".
+        fatal = strict or report["duplicated"]
+        label = "ERROR" if fatal else "WARNING"
         print(f"  {label}: MAP did not return every requested dataset cleanly.")
         for line in report["problems"]:
             print(f"    {line}")
         print("    Check whether the view was renamed, retired or redefined on the")
         print("    MAP side before changing anything here.")
-        if strict:
-            print("    --strict: nothing has been saved.")
+        if fatal:
+            why = ("--strict" if strict
+                   else "a repeated viewName makes the response unkeyable")
+            print(f"    {why}: nothing has been saved.")
             return None
         print("    Continuing: the datasets that DID arrive are saved (--strict to stop).")
 
