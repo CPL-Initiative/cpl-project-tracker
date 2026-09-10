@@ -18,41 +18,69 @@ const MATCH_THRESHOLD = 0.5;
 const MATCH_COUNT = 5;
 const MAX_TOKENS = 2048;
 
-/* ── WHICH MODEL ANSWERS (2026-08-25) ─────────────────────────────────────────
+/* ── WHICH MODEL ANSWERS (2026-09-10) ─────────────────────────────────────────
  *
- * ⚠ TEMPORARY: Sam, 2026-08-25, hours after Sierra went down on an exhausted
- * Anthropic credit balance for the THIRD time — "set Sierra to run on Haiku 4.5
- * rather than Opus or Sonnet… a temporary fix until we can get our corporate
- * billing released." It was Sonnet 4.6, never Opus.
+ * ⭐ SONNET 5, and the temporary Haiku window is CLOSED. Sam, 2026-08-25, hours
+ * after Sierra went down on an exhausted Anthropic credit balance for the THIRD
+ * time: "set Sierra to run on Haiku 4.5 rather than Opus or Sonnet… a temporary
+ * fix until we can get our corporate billing released." It was Sonnet 4.6, never
+ * Opus. He set the revert condition himself on 2026-08-30 — "revert immediately
+ * if it disappoints, else when corporate billing lands" — and the corporate
+ * account landed 2026-09-10. This is that revert.
  *
- * ⭐ REVERTING NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the Supabase
- * project and it wins over the default below; unset it to come back here. That
- * matters because the person who will want Sonnet back is the one who gets the
- * billing news, and he should not have to wait for a session to ship a one-line
- * PR. The default stays Haiku so an unset secret is the intended state rather
- * than an accident.
+ * ⭐ IT COMES BACK CHEAPER THAN IT LEFT. Sonnet 5 is $2/$10 per MTok against the
+ * Sonnet 4.6 it was on ($3/$15) — a third less — and $2/$10 against Haiku 4.5's
+ * $1/$5 is 2x on paper. On the STABLE PREFIX it is cheaper in absolute terms;
+ * see the caching note below, which is the real reason this moved.
+ *
+ * ⭐ CHANGING MODEL NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the
+ * Supabase project and it wins over the default below; unset it to come back
+ * here. The default is now Sonnet 5 so an unset secret is the INTENDED state
+ * rather than an accident — that is the whole point of the default, and it is
+ * why the default moved rather than the secret being set and forgotten. To go
+ * back to Haiku in a hurry, set the secret; no code change, no deploy.
  *
  * ⚠ THE PRICE CUT IS REAL BUT IT IS NOT THE WHOLE BILL. Haiku 4.5 is $1/$5 per
  * MTok against Sonnet 4.6's $3/$15 — 3× both directions. This endpoint is
  * INPUT-dominated (MAX_TOKENS caps every answer at 2,048), so the saving lands
  * where the spend is.
  *
- * ⚠ PROMPT CACHING STILL WORKS, AND THAT IS NOT AUTOMATIC. Haiku's minimum
- * cacheable prefix is 2,048 tokens — DOUBLE Sonnet's 1,024 — and a breakpoint on
- * a shorter prefix is accepted while caching nothing, silently. The `stable`
- * block is ~3,234 tokens, so it clears the higher bar with room; if it is ever
- * trimmed below 2,048 the cache stops paying on Haiku before anyone notices.
- * tests/sierra_model_choice.test.js pins that reasoning.
+ * ⛔ PROMPT CACHING IS OFF ON THIS MODEL, AND THAT WAS NOT NOTICED FOR WEEKS.
+ * The line above used to read "Haiku's minimum cacheable prefix is 2,048 tokens
+ * — DOUBLE Sonnet's 1,024 … so it clears the higher bar with room." Both halves
+ * were wrong for the model actually configured. THE FLOOR IS PER-MODEL, NOT PER
+ * FAMILY: Haiku 4.5 is 4,096 (2,048 is Haiku 3.5), Sonnet 5 and Sonnet 4.6 are
+ * 1,024, Opus 5 is 512 — and within one family Opus ranges 512 to 4,096 across
+ * versions, so no family-keyed number can be right.
  *
- * ⚠ CONTEXT IS 200K, NOT 1M. Nothing here needs more: the largest caller is the
- * GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
- * prompt in the single-digit thousands.
+ * The `stable` block is ~3,234 tokens, which is BELOW Haiku 4.5's 4,096 floor,
+ * so the breakpoint is accepted and caches nothing — `cache_creation_input_tokens`
+ * comes back 0, with no error. On an INPUT-DOMINATED endpoint that is the whole
+ * lever, lost. On Sonnet 5 (floor 1,024) the same prefix caches, and a cache read
+ * costs ~0.1x base input — so the stable prefix is CHEAPER on Sonnet 5 than the
+ * uncached prefix is on Haiku 4.5, before any quality argument.
+ *
+ * ⚠ 3,234 IS AN ESTIMATE, NOT A MEASUREMENT — 12,938 chars / 4. It has never been
+ * through count_tokens, and it sits near the 4,096 line. The decisive evidence is
+ * `usage.cache_read_input_tokens` on a live request: zero across repeated calls
+ * means the prefix is not caching. Measure before trusting either number.
+ * tests/sierra_model_choice.test.js now keys the floor to the exact model id and
+ * FAILS CLOSED on an id it does not know.
+ *
+ * ⚠ CONTEXT IS 1M, AND NOTHING HERE NEEDS IT. The largest caller is
+ * the GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
+ * prompt in the single-digit thousands. This line named 200K
+ * through the Haiku 4.5 window — 200K was that model's ceiling, and it stopped
+ * being true the moment the model changed. ⚠ A MODEL SWITCH CARRIES STALE FACTS
+ * WITH IT: the context window, the cache floor and the per-token price are all
+ * properties of the MODEL, and every one of them was written down here as though
+ * it were a property of this endpoint. Re-read this block whenever MODEL moves.
  *
  * ⚠ WHAT TO WATCH. The most demanding thing on this endpoint is not a student
  * question — it is the GR area sweep, which asks for a legal instrument
  * determination across sixteen rows returned as strict JSON and nothing else.
  * If quality slips anywhere first, it will slip there. */
-const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-haiku-4-5-20251001";
+const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-sonnet-5";
 const RATE_LIMIT_PER_MIN = 20;
 
 const rateLimits = new Map<string, { count: number; resetAt: number }>();

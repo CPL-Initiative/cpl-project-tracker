@@ -36,7 +36,25 @@ const SRC = fs.readFileSync(path.join(ROOT, "chatbox/supabase/functions/cpl-chat
 
 // Minimum cacheable prefix, per family. Haiku's is double Sonnet's, and that is
 // the whole hazard: the number that has to be cleared changes with the model.
-const CACHE_MIN = { haiku: 2048, sonnet: 1024, opus: 1024 };
+// ⚠️ THE CACHE FLOOR IS A PROPERTY OF THE MODEL, NOT THE FAMILY — and this
+// table was keyed by family, with the wrong number for the model we actually
+// run. Haiku 4.5's floor is 4,096; 2,048 is Haiku 3.5's. "opus" ranges 512
+// (Opus 5) to 4,096 (Opus 4.6/4.5) ACROSS VERSIONS, so no family key can be
+// right. Anthropic's published table (2026-06), and the minimum is not
+// monotonic across generations:
+const CACHE_MIN_BY_MODEL = [
+  [/^claude-(opus-5|fable-5-1|mythos-5-1|fable-5|mythos-5)\b/, 512],
+  [/^claude-(opus-4-8|sonnet-5|sonnet-4-6|sonnet-4-5|opus-4-1|opus-4|sonnet-4)\b/, 1024],
+  [/^claude-(opus-4-7|haiku-3-5)\b/, 2048],
+  [/^claude-(opus-4-6|opus-4-5|haiku-4-5)\b/, 4096],
+];
+// ⚠️ FAIL CLOSED on an id this table does not know. Returning a permissive
+// default is how the old constant passed: it asserted a floor the running model
+// does not have, so the check was green while the prefix cached nothing.
+function cacheMinFor(id) {
+  for (const [re, min] of CACHE_MIN_BY_MODEL) if (re.test(id)) return min;
+  return null;
+}
 
 block("(1) one constant", () => {
   const m = /const MODEL = Deno\.env\.get\("CPL_CHAT_MODEL"\) \|\| "([^"]+)";/.exec(SRC);
@@ -55,9 +73,11 @@ block("(1) one constant", () => {
 block("(2) the cache floor moves with the family", () => {
   const m = /const MODEL = Deno\.env\.get\("CPL_CHAT_MODEL"\) \|\| "([^"]+)";/.exec(SRC);
   if (!m) return check("(2) model constant readable", false);
-  const family = (/claude-(haiku|sonnet|opus)/.exec(m[1]) || [])[1];
-  check("(2) the model id names a known family", !!family, m[1]);
-  if (!family) return;
+  const floor = cacheMinFor(m[1]);
+  check("(2) ⭐ the configured model id has a KNOWN cache floor", floor !== null,
+    m[1] + " is not in the published floor table — add it rather than guessing, "
+    + "or this check asserts a floor the running model may not have");
+  if (floor === null) return;
 
   // The breakpoint must still exist — this is what we are reasoning about.
   check("(2) the stable block still carries the cache breakpoint",
@@ -75,14 +95,17 @@ block("(2) the cache floor moves with the family", () => {
     "without it, nobody can tell whether the cache breakpoint does anything");
   if (!sz) return;
   const tokens = Number(sz[1].replace(/,/g, ""));
-  check("(2) ⭐ …and it clears the floor for THIS family (" + family + ": "
-    + CACHE_MIN[family] + ")", tokens > CACHE_MIN[family],
-    tokens + " tokens vs a " + CACHE_MIN[family] + "-token minimum");
-  // ⚠️ The trap is specifically that Haiku's floor is double Sonnet's, so a
-  // prefix sized for Sonnet can be silently uncached on Haiku.
-  check("(2) ⚠ …and the file says the floor is family-dependent",
-    /2,?048 tokens/.test(SRC) && /1,?024/.test(SRC),
-    "the hazard is that a prefix sized for one family caches nothing on another");
+  check("(2) ⭐ …and it clears the floor for THIS MODEL (" + m[1] + ": "
+    + floor + ")", tokens > floor,
+    tokens + " tokens vs a " + floor + "-token minimum — the breakpoint is "
+    + "accepted and caches NOTHING, silently (cache_creation_input_tokens: 0)");
+  // ⚠️ The size is an estimate from a character count (12,938 chars / 4), never
+  // a count_tokens measurement, and it sits near Haiku 4.5's real floor. The
+  // only decisive evidence is usage.cache_read_input_tokens on a live request.
+  check("(2) ⚠ …and the file says the floor is MODEL-dependent, not family-",
+    /model-dependent|per-model|4,?096/.test(SRC),
+    "a prefix sized for one model caches nothing on another — including within "
+    + "one family, where Opus ranges 512 to 4,096 across versions");
 });
 
 block("(3) reverting needs no deploy", () => {
@@ -90,10 +113,21 @@ block("(3) reverting needs no deploy", () => {
     /Deno\.env\.get\("CPL_CHAT_MODEL"\)/.test(SRC));
   check("(3) …and the secret's name is written down for whoever sets it",
     /CPL_CHAT_MODEL/.test(SRC) && /no deploy/i.test(SRC));
-  // ⚠️ A temporary change has to say it is temporary, or it becomes permanent by
-  // forgetting. The comment must name what it was and why it moved.
-  check("(3) ⚠ the change is labelled TEMPORARY and names what it replaced",
-    /TEMPORARY/.test(SRC) && /sonnet-4-6|Sonnet 4\.6/.test(SRC));
+  // ⚠️ THIS CHECK USED TO READ "the change is labelled TEMPORARY and names what
+  // it replaced", and it did its job: the 2026-08-25 Haiku switch said it was
+  // temporary, so it did not become permanent by forgetting — it was reverted on
+  // 2026-09-10 when the corporate account landed, the condition Sam set himself.
+  // A check that pins a past state has to move when the state does, or it fails
+  // for being RIGHT.
+  //
+  // What is worth pinning now is the EXPENSIVE LESSON from that window, because
+  // the next cost push will reach for a smaller model again: a cache breakpoint
+  // on a prefix below the model's floor is accepted and caches NOTHING, silently.
+  // Sierra ran that way for weeks because the floor was recorded per-FAMILY with
+  // Haiku 3.5's number. Keep the worked example in the file.
+  check("(3) ⚠ the Haiku episode and its floor survive as the worked example",
+    /Haiku 4\.5/.test(SRC) && /4,?096/.test(SRC),
+    "the next model switch needs to see that a sub-floor prefix caches nothing");
 });
 
 block("(4) what to watch", () => {
@@ -102,8 +136,32 @@ block("(4) what to watch", () => {
   // message nobody will find.
   check("(4) the file names the caller most at risk from a smaller model",
     /GR area sweep/.test(SRC) && /strict JSON|JSON and nothing else/i.test(SRC));
-  check("(4) ⚠ the 200K context is noted, with the largest caller measured",
-    /200K/.test(SRC) && /40,000/.test(SRC));
+  // ⚠️ THIS CHECK PINNED "200K" AND SO IT PASSED WHILE THE CLAIM WENT FALSE.
+  // 200K is Haiku 4.5's ceiling; Sonnet 5 is 1M. The check could not tell the
+  // difference because it matched a literal instead of asking whether the stated
+  // window belongs to the configured model. Assert the pairing.
+  const CONTEXT = [
+    [/^claude-(opus-5|fable-5|mythos-5|fable-5-1|mythos-5-1|opus-4-8|opus-4-7|opus-4-6|sonnet-5|sonnet-4-6)\b/, "1M"],
+    [/^claude-haiku-4-5\b/, "200K"],
+  ];
+  const mm = /const MODEL = Deno\.env\.get\("CPL_CHAT_MODEL"\) \|\| "([^"]+)";/.exec(SRC);
+  const id = mm ? mm[1] : "";
+  const want = (CONTEXT.find(([re]) => re.test(id)) || [])[1];
+  // ⚠️ ANCHORED TO THE DECLARATION, NOT TO THE STRING ANYWHERE IN THE FILE. The
+  // first version tested new RegExp(want).test(SRC) and passed while the claim
+  // was false, because the historical note QUOTES the old "CONTEXT IS 200K, NOT
+  // 1M" line — so "1M" matched a sentence saying the opposite. index.ts warns
+  // about exactly this for the stable-block size; the same trap, two blocks down.
+  const decl = /CONTEXT IS ([0-9]+[KM])\b/.exec(SRC);
+  check("(4) ⭐ the file DECLARES a context window in a parseable form", !!decl,
+    "expected a line reading 'CONTEXT IS <n>K|M' — without it this cannot be checked");
+  check("(4) ⭐ …and the declared window is the CONFIGURED model's",
+    !!want && !!decl && decl[1] === want,
+    want ? id + " has a " + want + " window; the file declares "
+           + (decl ? decl[1] : "nothing")
+         : id + " is not in the context table — add it rather than guessing");
+  check("(4) …and the largest caller is still measured, not asserted",
+    /40,000/.test(SRC));
 });
 
 let pass = 0;
