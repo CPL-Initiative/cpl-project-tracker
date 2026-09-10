@@ -694,7 +694,8 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
     // per-island zoom band has re-settled, so hover the way a hand does — two moves — before reading the tip.
     await page.mouse.move(bx0.x + sp0.x - 2, bx0.y + sp0.y - 2); await sleep(150);
     await page.mouse.move(bx0.x + sp0.x, bx0.y + sp0.y); await sleep(350);
-    ok("hovering a credential names it, its exhibits and its articulations", (await visible(page, "#u-tip")) && /local exhibit/.test(await page.textContent("#u-tip")) && /articulation/.test(await page.textContent("#u-tip")), (await page.textContent("#u-tip")).slice(0, 120));
+    const diag0 = await page.evaluate(([px, py, d]) => { const s = window.__ccrUniverseState(); const I = window.CPL_CCR_UNIVERSE.islands.find((x) => x.d === d); return JSON.stringify({ pick: window.__ccrPickAt(px, py), nodesOn: I && I._nodesOn, isl: s.islandScreen(d), k: s.view.k, half: s.sph && s.sph.half, rotating: s.rotating, hover: s.hover, shown: s.coursesShown, lit: s.lit }); }, [sp0.px, sp0.py, (await page.evaluate((id) => { for (const I of window.CPL_CCR_UNIVERSE.islands) for (const nd of I.p) if (nd.i === id) return I.d; return null; }, swId))]);
+    ok("hovering a credential names it, its exhibits and its articulations", (await visible(page, "#u-tip")) && /local exhibit/.test(await page.textContent("#u-tip")) && /articulation/.test(await page.textContent("#u-tip")), (await page.textContent("#u-tip")).slice(0, 120) + " | " + `pt=${Math.round(sp0.px)},${Math.round(sp0.py)} ` + diag0);
     await page.mouse.move(5, 5); await sleep(200); }
   await clickId(page, swId, 3.4); s = await st(page);
   ok("clicking the credential selects it", s.sel === swId, `${s.sel} vs ${swId}`);

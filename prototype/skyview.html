@@ -4025,6 +4025,8 @@ function setProj(p, quiet){
 }
 window.__ccrSetProj=function(p){ setProj(p); };
 /* For the harness: the projection by name, both ways. */
+/* For the harness: what the page finds under a canvas point — the same pick() the pointer uses. */
+window.__ccrPickAt=function(px,py){ if(!U) return null; var h=pick(px,py); return h ? {nd:h.nd?h.nd.i:null, isl:h.isl?h.isl.d:null, mem:h.mem?h.mem.n:null, nodesOn:h.isl?h.isl._nodesOn:null, k:h.isl?islScale(h.isl):null} : null; };
 window.__ccrW2S=function(x,y,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return w2s(x,y,I||undefined); };
 window.__ccrS2W=function(px,py,name){ var I=null; if(U&&name) U.islands.forEach(function(q){ if(q.d===name) I=q; }); return s2w(px,py,I||undefined); };
 var SYS=[["#F1EAFC","#6D28D9","M-ID","our working label"],
