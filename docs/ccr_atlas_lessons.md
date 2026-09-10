@@ -1778,3 +1778,20 @@ the other's. The members payload is a builder of its own
 restating it: a members file keyed one character differently is a universe of
 credentials with no members, and a dict lookup does not error.
 
+### Checkpoint addendum — two harness lessons and one red check
+
+- **A harness coordinate is a claim about geometry, and the page can be asked.**
+  The sweep's hover read the island's tip on a point the click then selected.
+  `screenOf()` already returns PAGE coordinates (canvas offset added); the hover
+  added the offset again and aimed 110px low. Four sweep runs went to hypotheses
+  (a turn restarting, a menu left open, a hidden panel — each real, none this).
+  `window.__ccrPickAt(px,py)` now says what the page found under a pointer, and
+  the check stated its coordinates: one run. **Give the harness a way to ask the
+  page, before guessing why the page disagrees.**
+- **Rebuild derived files after the LAST edit.** CI read the dependency map
+  STALE on the PR's final push: the map was regenerated, then the client and the
+  sweep were edited once more. The S251 lesson (stage before you rebuild) has a
+  sibling: the rebuild goes last, or `check_generated.sh` is run last, every time.
+- Merged: **#1546** (`e45a77d`, the sweep and its two defects) and **#1547**
+  (`f09a567`, the CPL universe); the vault's session note in CPLBrain **#136**.
+

@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-430 document(s).
+431 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -123,6 +123,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A one-shot hand-off must not consume what it cannot deliver](../kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A pane painted only by its event is blank after every re-render](../kb-notes/methodology-a-pane-painted-only-by-its-event-is-blank-after-a-re-render.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |

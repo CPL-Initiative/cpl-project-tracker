@@ -206,11 +206,13 @@ The whole ecosystem, end-to-end:
    browser's full screen; the map's More menu reaches the comprehensive view,
    the *Disciplines and subjects* workspace, *How SkyView works* and the table,
    and `#unified-courses/list` opens the table directly. Two words next to
-   *Show* (2026-09-07): **Courses | CPL** names each point by its course or by
-   the credential that reaches it — the curated name, the issuing and training
-   agencies, what it earns, the colleges holding it — and **Articulations**
-   lights the courses that carry one; the face says its own coverage and
-   `#skyview/cpl` links to it. **The search box also takes questions**
+   *Show*: **Courses | CPL** (2026-09-10) swaps the map's universe — the
+   courses, or the 1,987 curated credentials with the local MAP exhibits
+   folded into each, the courses articulated to them (each a door back onto
+   the Courses map) and a second ring on the 84 statewide ones; nothing moves
+   on the CPL map — and **Articulations** lights what carries one; the
+   coverage line says the universe's own counts and `#skyview/cpl` links to
+   it. **The search box also takes questions**
    (2026-09-09): type a sentence rather than a keyword and Enter asks
    SkyView, which turns it into a selection on the map — the map answers by
    moving, and anything it cannot find on the map it says so rather than
