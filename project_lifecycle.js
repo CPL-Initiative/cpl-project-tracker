@@ -570,9 +570,13 @@
     if (document.getElementById("plc-css")) return;
     var css =
       ".plc-ctl-row{margin-top:0.5rem;text-align:right;}" +
-      ".plc-table-btn{font-size:0.7rem;background:transparent;border:1px solid #ddd;border-radius:4px;padding:0.2rem 0.55rem;" +
-        "cursor:pointer;color:#777;transition:background .15s,color .15s;}" +
-      ".plc-table-btn:hover{background:#faf3e0;border-color:var(--gold-accent,#E3B341);color:var(--text-strong,#1a1a1a);}" +
+      // ⚠️ Three frozen values on a ground that flips: #ddd border, #777 ink and a
+      // #faf3e0 hover fill all assumed a white card. Measured dark 2026-09-10:
+      // the ink read 3.73:1 and the hover painted near-white behind
+      // --text-strong, which is #ECE9E2 there.
+      ".plc-table-btn{font-size:0.7rem;background:transparent;border:1px solid var(--border-strong);border-radius:4px;padding:0.2rem 0.55rem;" +
+        "cursor:pointer;color:var(--text-muted);transition:background .15s,color .15s;}" +
+      ".plc-table-btn:hover{background:var(--surface-muted);border-color:var(--gold-accent,#E3B341);color:var(--text-strong);}" +
       ".plc-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:9000;display:flex;align-items:center;justify-content:center;padding:1rem;}" +
       ".plc-modal{background:var(--surface-opaque);border-radius:12px;padding:1.2rem 1.4rem;max-width:460px;width:100%;box-shadow:0 12px 40px rgba(0,0,0,0.3);}" +
       ".plc-modal h3{margin:0 0 0.4rem 0;font-size:1.05rem;color:var(--navy-primary,#16324f);}" +

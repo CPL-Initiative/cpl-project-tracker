@@ -1339,7 +1339,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 )
             else:
                 header_inner = html_escape(current_activity)
-            html += (f'                    <tr style="background:var(--navy-secondary);color:#fff;">\n'
+            html += (f'                    <tr style="background:var(--navy-secondary);color:var(--on-accent);">\n'
                      f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{header_inner}</td>\n'
                      f'                    </tr>\n')
 
@@ -1399,7 +1399,7 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     f'<div class="wpg-desc-cell" data-desc-edit="1" '
                     f'data-pid="{html_escape(row["id"], quote=True)}" '
                     f'data-val="{html_escape(proj_desc, quote=True)}" '
-                    f'style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">'
+                    f'style="font-weight:400;font-size:0.72rem;color:var(--text-muted);margin-top:0.2rem;">'
                     f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
                 )
                 # Hierarchy: a three-level id (X.Y.Z, e.g. 4.1.1 "29 Palms" under
@@ -2160,7 +2160,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     sub_parts = [f'2030 Goal: {g2930}']
                     if s2930_val:
                         sub_parts.append(f'Stretch: {s2930_val}')
-                    html += (f'                <div style="font-size:0.7rem;color:#666;margin:-0.2rem 0 0.3rem 0;">'
+                    html += (f'                <div style="font-size:0.7rem;color:var(--text-muted);margin:-0.2rem 0 0.3rem 0;">'
                              f'{" &nbsp; ".join(sub_parts)}</div>\n')
 
                 if has_metric:
@@ -2188,7 +2188,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if any_goal:
                     tbl_style = ('font-size:0.65rem;border-collapse:collapse;width:100%;'
                                  'margin-top:0.3rem;text-align:center;')
-                    th_style = 'padding:2px 4px;color:#666;font-weight:600;border-bottom:1px solid #ddd;'
+                    th_style = 'padding:2px 4px;color:var(--text-muted);font-weight:600;border-bottom:1px solid #ddd;'
                     td_style = 'padding:2px 4px;'
                     html += f'                <table style="{tbl_style}">\n'
                     # Header row: YEAR
@@ -2239,7 +2239,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                 if continue_manual_bar:
                     html += (f'                <div class="akpi-progress" style="margin-top:0.5rem;">\n'
                          f'                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">\n'
-                         f'                        <span style="color:#666;">Progress</span>\n'
+                         f'                        <span style="color:var(--text-muted);">Progress</span>\n'
                          f'                        <span style="font-weight:700;color:{plabel_color};">{pct}%</span>\n'
                          f'                    </div>\n'
                          f'                    <div style="height:5px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">\n'
@@ -2294,14 +2294,14 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
 
                     # Latest Update (col P)
                     if kpi_update:
-                        html += (f'                    <div class="cpl-static-update" style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
-                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
+                        html += (f'                    <div class="cpl-static-update" style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;">'
+                                 f'<span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>'
                                  f'{kpi_update}</div>\n')
 
                     # Workplan Note (col V)
                     if kpi_wp:
-                        html += (f'                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;">'
+                        html += (f'                    <div style="font-size:0.75rem;color:var(--text-body);line-height:1.4;margin-bottom:0.3rem;">'
                                  f'<span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
                                  f'padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>'
                                  f'{kpi_wp}</div>\n')
@@ -2309,7 +2309,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                     # Full history (hidden by default)
                     if len(kpi_notes_list) > 1:
                         type_badge_css = {
-                            "update":   "background:var(--navy-secondary);color:#fff;",
+                            "update":   "background:var(--navy-secondary);color:var(--on-accent);",
                             "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
                         }
                         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
@@ -2325,7 +2325,7 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
                                      f'background:var(--surface-muted);padding:0.1rem 0.35rem;border-radius:3px;">{n["date"]}</span>'
                                      f' <span style="font-size:0.6rem;font-weight:600;{badge_style}'
                                      f'padding:0.1rem 0.3rem;border-radius:3px;">{badge_label}</span>'
-                                     f'<div style="font-size:0.73rem;color:#444;margin-top:0.1rem;line-height:1.3;">{n["note"]}</div>'
+                                     f'<div style="font-size:0.73rem;color:var(--text-body);margin-top:0.1rem;line-height:1.3;">{n["note"]}</div>'
                                      f'</div>\n')
                         html += '                    </div>\n'
 
@@ -2538,7 +2538,7 @@ def render_workplan_goals_html(
                 <thead>
                     <tr style="background:var(--surface-subtle);">
                         <th style="text-align:left;padding:0.5rem 0.7rem;border-bottom:2px solid #ddd;">Activity</th>
-                        <th style="text-align:center;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;color:#666;">Type</th>
+                        <th style="text-align:center;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;color:var(--text-muted);">Type</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2025-26</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2026-27</th>
                         <th style="text-align:right;padding:0.5rem 0.4rem;border-bottom:2px solid #ddd;">2027-28</th>
@@ -2566,7 +2566,7 @@ def render_workplan_goals_html(
         )
     html = f'''        <div class="workplan-goals-section" style="margin:2.5rem 0;">
             <h2 style="color:var(--navy-primary);margin-bottom:0.5rem;">Annual Workplan Goals & Stretch Targets</h2>
-            <p style="color:#666;font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem;">Five-year trajectory from the CCCCO CPL Workplan — Goal and Stretch targets per activity per year.</p>
             {stamp_html}
 '''
 
@@ -2653,7 +2653,7 @@ def render_workplan_goals_html(
                 f'data-assoc="{html_escape(assoc_json, quote=True)}" '
                 f'data-assoc-backfilled="{1 if p.get("assoc_backfilled") else 0}" '
                 f'data-activities="{html_escape(activity_options_json, quote=True)}" '
-                f'style="font-size:0.72rem;color:#666;font-weight:400;'
+                f'style="font-size:0.72rem;color:var(--text-muted);font-weight:400;'
                 f'margin-top:0.2rem;">'
                 f'<span style="color:#888;">Contributes to:</span> '
                 f'{chips_html}'
@@ -2759,13 +2759,13 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     # so a curator can add a first note (preview shows "(none — click to add)").
     current_notes_html = ""
     current_notes_html += (
-        f'            <div class="cpl-static-update" style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
-        f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:#fff;'
+        f'            <div class="cpl-static-update" style="font-size:0.8rem;color:var(--text-body);line-height:1.4;margin-bottom:0.35rem;">'
+        f'<span style="font-size:0.65rem;font-weight:600;background:var(--navy-secondary);color:var(--on-accent);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Latest Update</span>'
         f'{_ed("latest_update", update_text, update_text, multiline=True)}</div>\n'
     )
     current_notes_html += (
-        f'            <div style="font-size:0.8rem;color:#444;line-height:1.4;margin-bottom:0.35rem;">'
+        f'            <div style="font-size:0.8rem;color:var(--text-body);line-height:1.4;margin-bottom:0.35rem;">'
         f'<span style="font-size:0.65rem;font-weight:600;background:var(--gold-accent);color:var(--on-mustard);'
         f'padding:0.1rem 0.35rem;border-radius:3px;margin-right:0.3rem;">Workplan Note</span>'
         f'{_ed("wp_notes", wp_text, wp_text, multiline=True)}</div>\n'
@@ -2776,7 +2776,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
     history_html = ""
     if len(all_notes) > 1:
         type_badge_css = {
-            "update":   "background:var(--navy-secondary);color:#fff;",
+            "update":   "background:var(--navy-secondary);color:var(--on-accent);",
             "workplan": "background:var(--gold-accent);color:var(--on-mustard);",
         }
         type_labels = {"update": "Progress Update", "workplan": "Workplan Note"}
@@ -2795,7 +2795,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
                 f'background:var(--surface-muted);padding:0.1rem 0.4rem;border-radius:3px;">{n["date"]}</span>'
                 f' <span style="font-size:0.65rem;font-weight:600;{badge_style}'
                 f'padding:0.1rem 0.35rem;border-radius:3px;">{badge_label}</span>'
-                f'<div style="font-size:0.8rem;color:#444;margin-top:0.15rem;line-height:1.4;">{n["note"]}</div>'
+                f'<div style="font-size:0.8rem;color:var(--text-body);margin-top:0.15rem;line-height:1.4;">{n["note"]}</div>'
                 f'</div>\n'
             )
         history_html += '            </div>\n'
@@ -2865,7 +2865,7 @@ def _render_single_project_card(p, update_log=None, attachments=None,
         assoc_line = render_assoc_chip_line(
             str(pid), recs, activity_options_json,
             sb_activity_labels=sb_activity_labels,
-            cell_style="font-size:0.72rem;color:#666;font-weight:400;margin:0.15rem 0 0.6rem 0;",
+            cell_style="font-size:0.72rem;color:var(--text-muted);font-weight:400;margin:0.15rem 0 0.6rem 0;",
         )
 
     # Tabled / Archived projects (project_lifecycle overlay) render as a HIDDEN
@@ -3137,7 +3137,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
             meta_bits.append(html_escape(by))
         meta_line = " · ".join(meta_bits)
         reason_html = (
-            f'<div class="tabled-reason" style="font-size:0.78rem;color:#444;'
+            f'<div class="tabled-reason" style="font-size:0.78rem;color:var(--text-body);'
             f'margin:0.3rem 0;line-height:1.4;">{html_escape(reason)}</div>'
             if reason else ''
         )
@@ -3166,7 +3166,7 @@ def render_tabled_archived_section(inactive_projects, lifecycle):
         'style="cursor:pointer;font-weight:700;color:var(--navy-primary,#16324f);font-size:0.95rem;list-style:none;">'
         f'Tabled &amp; Archived <span class="tabled-archived-count" style="color:#888;font-weight:400;font-size:0.85rem;">({len(rows)})</span></summary>\n'
         '            <div class="tabled-archived-note" '
-        'style="font-size:0.76rem;color:#666;margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
+        'style="font-size:0.76rem;color:var(--text-muted);margin:0.5rem 0 0.8rem 0;line-height:1.4;">'
         'Paused or closed projects — kept for the record but excluded from active priorities, '
         'reports, and the RACI matrix. Sign in (or unlock with the team phrase) to Restore one.</div>\n'
         '            <div class="tabled-archived-grid" '
@@ -3231,7 +3231,7 @@ def render_awg_projects_section_html(work_projects):
             f'<div style="flex:1;height:6px;background:var(--surface-muted);border-radius:3px;overflow:hidden;">'
             f'<div style="height:100%;width:{pct}%;background:var(--green-progress);border-radius:3px;"></div></div>'
             f'<span style="font-size:0.72rem;color:var(--text-muted);white-space:nowrap;">{pct}%</span></div></td>\n'
-            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:#666;">{html_escape(timeline) or "&mdash;"}</td>\n'
+            f'                    <td style="{td}white-space:nowrap;font-size:0.75rem;color:var(--text-muted);">{html_escape(timeline) or "&mdash;"}</td>\n'
             f'                </tr>\n'
         )
 
@@ -10383,7 +10383,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .proj-auth-widget { margin:0 0 1rem 0; padding:0.75rem 1rem; background:var(--surface-subtle); border-radius:8px; font-size:0.85rem; color:var(--navy-primary); display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap; }
 .proj-auth-widget input[type=email] { padding:0.35rem 0.5rem; border:1px solid #ccc; border-radius:5px; font-size:0.8rem; min-width:180px; }
 .proj-btn { padding:0.35rem 0.75rem; border:0; background:var(--cobalt); color:var(--on-accent); border-radius:5px; font-size:0.8rem; cursor:pointer; }
-.proj-btn-out { border:1px solid #ccc; background:var(--surface-opaque); color:#333; }
+.proj-btn-out { border:1px solid #ccc; background:var(--surface-opaque); color:var(--text-strong); }
 /* Click-to-edit affordance only lights up when signed in */
 .proj-editable.proj-on { cursor:pointer; border-bottom:1px dashed transparent; transition:background 0.15s, border-color 0.15s; }
 .proj-editable.proj-on:hover { background:rgba(0,71,171,0.06); border-bottom-color:var(--cobalt); }
@@ -10396,13 +10396,13 @@ EXHIBIT_ANALYSIS_CSS = """
 .proj-modal-overlay { position:fixed; inset:0; background:rgba(28,28,26,0.55); z-index:9999; display:flex; align-items:flex-start; justify-content:center; overflow-y:auto; padding:3rem 1rem; }
 .proj-modal-card { background:var(--surface-opaque); border-radius:10px; box-shadow:0 8px 32px rgba(0,0,0,0.25); max-width:640px; width:100%; padding:1.5rem; font-family:inherit; color:var(--navy-primary); }
 .proj-modal-card h3 { margin:0 0 0.5rem 0; color:var(--navy-primary); font-size:1.05rem; }
-.proj-modal-card .proj-modal-sub { color:#666; font-size:0.78rem; margin-bottom:0.75rem; }
+.proj-modal-card .proj-modal-sub { color:var(--text-muted); font-size:0.78rem; margin-bottom:0.75rem; }
 .proj-modal-card textarea { width:100%; min-height:140px; padding:0.5rem 0.6rem; border:1px solid #ccc; border-radius:6px; font-size:0.85rem; font-family:inherit; box-sizing:border-box; resize:vertical; }
 .proj-modal-card .proj-modal-status { margin-top:0.5rem; font-size:0.82rem; min-height:1.2em; }
 .proj-modal-card .proj-modal-status.err { color:var(--crimson); }
 .proj-modal-actions { display:flex; justify-content:flex-end; gap:0.5rem; margin-top:1rem; }
 .proj-modal-actions button { padding:0.4rem 0.9rem; border-radius:5px; font-size:0.85rem; cursor:pointer; border:0; }
-.proj-btn-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:#333; }
+.proj-btn-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:var(--text-strong); }
 .proj-btn-submit { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .proj-btn-submit:disabled { opacity:0.6; cursor:not-allowed; }
 /* ── Activity↔Project association editor (workplan_goals.js) ── */
@@ -10420,7 +10420,7 @@ EXHIBIT_ANALYSIS_CSS = """
 /* Association popover (anchored near the clicked chip cell) */
 .wpg-assoc-pop { position:absolute; z-index:10000; background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:8px; box-shadow:0 8px 28px rgba(28,28,26,0.22); width:300px; max-width:92vw; padding:0.75rem 0.85rem; font-family:inherit; color:var(--navy-primary); }
 .wpg-assoc-pop h4 { margin:0 0 0.15rem 0; font-size:0.9rem; color:var(--navy-primary); }
-.wpg-assoc-pop .wpg-assoc-pop-sub { color:#666; font-size:0.72rem; margin-bottom:0.5rem; }
+.wpg-assoc-pop .wpg-assoc-pop-sub { color:var(--text-muted); font-size:0.72rem; margin-bottom:0.5rem; }
 .wpg-assoc-pop .wpg-assoc-list { display:flex; flex-direction:column; gap:0.15rem; max-height:240px; overflow-y:auto; }
 .wpg-assoc-pop .wpg-assoc-row { display:flex; align-items:center; gap:0.45rem; padding:0.2rem 0.25rem; border-radius:5px; font-size:0.8rem; }
 .wpg-assoc-pop .wpg-assoc-row:hover { background:var(--surface-subtle); }
@@ -10435,7 +10435,7 @@ EXHIBIT_ANALYSIS_CSS = """
 .wpg-assoc-pop .wpg-assoc-pop-status.ok { color:var(--green-progress); }
 .wpg-assoc-pop .wpg-assoc-pop-actions { display:flex; justify-content:flex-end; gap:0.4rem; margin-top:0.6rem; }
 .wpg-assoc-pop .wpg-assoc-pop-actions button { padding:0.3rem 0.7rem; border-radius:5px; font-size:0.78rem; cursor:pointer; border:0; }
-.wpg-assoc-pop .wpg-assoc-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:#333; }
+.wpg-assoc-pop .wpg-assoc-cancel { background:var(--surface-opaque); border:1px solid #ccc !important; color:var(--text-strong); }
 .wpg-assoc-pop .wpg-assoc-save { background:var(--cobalt); color:var(--on-accent); font-weight:600; }
 .wpg-assoc-pop .wpg-assoc-save:disabled { opacity:0.6; cursor:not-allowed; }
 .wpg-assoc-pop .wpg-assoc-note { font-size:0.68rem; color:#999; margin-top:0.45rem; line-height:1.3; }
@@ -10495,7 +10495,7 @@ def build_assoc_records_by_project(associations):
 
 def render_assoc_chip_line(pid, assoc_records, activity_options_json,
                            sb_activity_labels=None,
-                           cell_style="font-size:0.72rem;color:#666;font-weight:400;margin-top:0.2rem;"):
+                           cell_style="font-size:0.72rem;color:var(--text-muted);font-weight:400;margin-top:0.2rem;"):
     """
     Render the "Contributes to: Activity N …" chip line + the click-to-edit
     association-editor anchor. This is the SAME `data-assoc-edit` shape the
@@ -11466,7 +11466,7 @@ def render_budget_html(budget, data_source_stamp=None):
         for idx in range(5):
             val = budget_by_year[idx] if idx < len(budget_by_year) else 0
             funding_html += _bcell(YEAR_COLS[idx], val, bid)
-        funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:#666;")
+        funding_html += _bcell("yr_2025_26_expense", expense_2025, bid, "color:var(--text-muted);")
         funding_html += _bcell("total", total, bid, "border-right:2px solid var(--navy-primary);font-weight:bold;")
         funding_html += f'                </tr>\n'
 
@@ -11538,7 +11538,7 @@ def render_budget_html(budget, data_source_stamp=None):
 
         detail_html += f'        <details style="margin-bottom:1rem;border:1px solid #ddd;border-radius:4px;padding:1rem;">\n'
         detail_html += f'            <summary style="font-weight:bold;cursor:pointer;padding:0.5rem 0;user-select:none;">\n'
-        detail_html += f'                {exp_type} <span style="float:right;color:#666;">{fmt_dollars(type_total)}</span>\n'
+        detail_html += f'                {exp_type} <span style="float:right;color:var(--text-muted);">{fmt_dollars(type_total)}</span>\n'
         detail_html += f'            </summary>\n'
         detail_html += f'            <div style="margin-top:1rem;overflow-x:auto;">\n'
         detail_html += f'                <table style="width:100%;border-collapse:collapse;font-size:0.8rem;">\n'
@@ -11583,7 +11583,7 @@ def render_budget_html(budget, data_source_stamp=None):
         summary_html = (
             '    <div class="budget-expenditure-summary" id="budget-expenditure" style="margin-top:2rem;">\n'
             '        <h3>Expenditure Detail</h3>\n'
-            '        <p style="color:#666;font-style:italic;background:var(--surface-subtle);'
+            '        <p style="color:var(--text-muted);font-style:italic;background:var(--surface-subtle);'
             'border-left:4px solid var(--gold-accent);padding:0.9rem 1.1rem;border-radius:4px;'
             'margin:0;">Detailed expenditure line items and category breakdowns '
             'are being refreshed and will appear here once updated figures are '
@@ -11660,7 +11660,7 @@ def render_budget_html(budget, data_source_stamp=None):
                 formatted = str(value)
 
             personnel_html += f'            <div style="background-color:var(--surface-subtle);padding:1rem;border-radius:4px;border-left:4px solid var(--navy-primary);">\n'
-            personnel_html += f'                <div style="font-size:0.75rem;color:#666;text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
+            personnel_html += f'                <div style="font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;font-weight:bold;margin-bottom:0.5rem;">{label}</div>\n'
             personnel_html += f'                <div style="font-size:1.3rem;font-weight:bold;color:var(--navy-primary);">{formatted}</div>\n'
             personnel_html += f'            </div>\n'
 

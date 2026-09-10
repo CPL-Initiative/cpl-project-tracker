@@ -237,7 +237,12 @@
       "#tab-tmc-builder .tmc-wrap{max-width:1100px;}" +
       "#tab-tmc-builder h2{margin:0 0 12px;}" +
       "#tab-tmc-builder .tmc-sub{font-weight:400;color:var(--text-muted);font-size:1rem;}" +
-      "#tab-tmc-builder .tmc-draftnote{color:#92400e;font-weight:600;}" +
+      // ⚠️ A bare caution ink on the themed ground: #92400e measured 2.58:1 on the
+      // night palette. --mustard-text is the caution TEXT grade and is themed in
+      // both blocks (#8B6800 light, #E3B341 dark). The sweep only catches this
+      // when the builder has already drawn a draft, which is why it reads as
+      // intermittent rather than as the standing defect it is.
+      "#tab-tmc-builder .tmc-draftnote{color:var(--mustard-text);font-weight:600;}" +
       "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
       // consolidated filter block (College · Show · Find · Curator) — replaces the old topbar + pickers
       "#tab-tmc-builder .tmc-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:12px 16px;margin-bottom:16px;}" +

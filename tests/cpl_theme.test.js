@@ -307,6 +307,35 @@ check("⭐ no fill that does NOT flip carries an ink that does (mustard/seal-blu
     !/background(-color)?:\s*var\(--white\)/.test(outsidePrint));
 }
 
+// ─── raw dark-grey ink on a themed ground (S249) ────────────────────────────
+// Sam, 2026-09-10, with a dark screenshot of Activities: "the text that is too
+// dark to read ... I believe this is common throughout." He was right — ONE tab
+// carried 340 sub-AA text nodes in four colors: #444 (1.71:1), #555 (2.24),
+// #666 (2.91), #777 (3.73), all on --surface-opaque. They are inline styles in
+// the Activity-KPI markup, so excel_to_dashboard.py emits them (Rule 1) and the
+// HTMLs mirror them: 421 sites each, 24 in the generator.
+//
+// ⚠️ #888 (4.65:1) and #999 (5.78:1) PASS on the night ground and are NOT swept —
+// the threshold is a measurement, not a tidy round number, and sweeping them
+// would be a restyle. #333 is banned because it reads 1.3:1 there.
+//
+// Every one of these inherits or sits on a THEMED ground: the single site that
+// set its own background used var(--surface-subtle), which flips too. That is
+// what made a blanket sweep safe here, and it is the thing to re-check before
+// widening this list — "text on an explicit light fill" wants a DARKER ink, not
+// a lighter one, and this guard cannot tell the difference.
+// Strip comments first — the note above NAMES the banned hexes, and a scanner
+// that reads its own explanation reports the explanation as the offence.
+const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*(\/\/|#).*$/gm, "");
+for (const [name, raw] of [["CPL_Dashboard.html", cpl], ["index.html", idx],
+                           ["excel_to_dashboard.py", fs.readFileSync("excel_to_dashboard.py", "utf8")]]) {
+  const src = stripComments(raw);
+  const banned = (src.match(/color:\s*#(?:333|444|555|666|777)(?![0-9A-Fa-f])/g) || []);
+  check(name + ": no raw dark-grey ink (#333/#444/#555/#666/#777) — they sit on a ground that flips"
+    + (banned.length ? " -> " + banned.length + " site(s), e.g. " + banned[0] : ""),
+    banned.length === 0);
+}
+
 // ─── the phantom-surface asymmetry (S248) ───────────────────────────────────
 // --surface-1/--surface-2 were referenced 26 times and DEFINED NOWHERE, so
 // every site fell through to a hardcoded light fallback in both themes: the
