@@ -359,6 +359,78 @@ const keys = () => w.__ccrTokenKeys();
     askbox().hidden === false && /Basket Weaving/.test(askbox().textContent) &&
     /left out/.test(askbox().textContent), askbox().textContent.slice(0, 160));
 
+  /* ── (16) THE MAP ACTUALLY MOVES ─────────────────────────────────────────
+   * ⭐ CHECK (4) ASSERTS THE SELECTION AND PASSED WHILE THE VIEW NEVER MOVED.
+   * Sam, 2026-09-10: "when asked to center on welding, it stays on Fire." The
+   * ask resolved `disc:Welding`, rendered the chip, printed the answer — and
+   * `applyTokens()` flies via `goSuggestionSingle(t.s)`, which an ask-resolved
+   * token did not have. `goSuggestionSingle` opens `if(!s || !U) return false`,
+   * so it was a silent no-op and ONLY `term` tokens ever flew.
+   *
+   * ⚠️ This is the SAME failure as (15): a suite that asserts state a layer too
+   * early. (4) reads __ccrTokenKeys(), which is what the ask WROTE; this reads
+   * the camera, which is what the reader SEES. Reverting askToken() takes this
+   * check to a zero-distance move with (4) still green. */
+  const viewOf = () => { const v = st().view; return { x: v.x, y: v.y, k: v.k }; };
+  const park = async () => {
+    w.__ccrCommitSelection([], keys().slice());
+    await settle();
+    reply = { answer: "Music History.", cannot: "",
+              select: [{ kind: "discipline", name: "Music History" }],
+              lit: false, isolate: false, face: "courses" };
+    w.__ccrAsk("show me music history");
+    await settle();
+    return viewOf();
+  };
+
+  const parked = await park();
+  reply = { answer: "Welding.", cannot: "", select: [{ kind: "discipline", name: "Welding" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("can you center me on welding?");
+  await settle();
+  const moved = viewOf();
+  check("(16) ⭐ a resolved DISCIPLINE moves the camera — the selection is not " +
+    "the answer, the view is",
+    Math.abs(moved.x - parked.x) > 1 || Math.abs(moved.y - parked.y) > 1,
+    `parked=${JSON.stringify(parked)} moved=${JSON.stringify(moved)}`);
+
+  /* ⚠️ THE ASK MUST LAND WHERE THE CLICK LANDS, and that is the whole contract —
+   * asserted against the CLICK rather than against a world coordinate, because
+   * `view` is a pan offset and jsdom reports every rectangle as zero, so no
+   * screen-space assertion means anything here (the lane invariant). Driving the
+   * same discipline through the reader's own path gives the answer to compare
+   * with, in whatever coordinate system the page actually uses. */
+  await park();
+  const clicked = (function () {
+    const s = (w.__ccrSuggest("Welding", 20) || []).find((x) => x.kind === "subject");
+    w.__ccrGoSuggestion(s);
+    return viewOf();
+  })();
+  check("(16b) …and it lands exactly where clicking that discipline lands",
+    Math.abs(moved.x - clicked.x) < 0.5 && Math.abs(moved.y - clicked.y) < 0.5 &&
+    Math.abs(moved.k - clicked.k) < 0.001,
+    `ask=${JSON.stringify(moved)} click=${JSON.stringify(clicked)}`);
+
+  /* A COURSE resolves through the same `t.s` path and had the same no-op. */
+  w.__ccrCommitSelection([], keys().slice());
+  await settle();
+  reply = { answer: "Music History.", cannot: "",
+            select: [{ kind: "discipline", name: "Music History" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("show me music history");
+  await settle();
+  const parked2 = viewOf();
+  reply = { answer: "That welding course.", cannot: "",
+            select: [{ kind: "course", id: "WELD M1000" }],
+            lit: false, isolate: false, face: "courses" };
+  w.__ccrAsk("take me to WELD M1000 please");
+  await settle();
+  const moved2 = viewOf();
+  check("(16c) ⭐ …and so does a resolved COURSE",
+    (Math.abs(moved2.x - parked2.x) > 1 || Math.abs(moved2.y - parked2.y) > 1) &&
+    moved2.k > parked2.k,
+    `parked=${JSON.stringify(parked2)} moved=${JSON.stringify(moved2)}`);
+
   let pass = 0;
   for (const [n, ok, why] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + n + (ok || why === undefined ? "" : "  — " + why));
