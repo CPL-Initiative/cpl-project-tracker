@@ -308,7 +308,7 @@ asks" footer with it — the affordance was invisible exactly when it became
 available. It renders with no options instead. ⚠️ And the footer's condition must
 be the SAME test the commit makes, or the label promises what the key will not do.
 
-### The outline, the skills and the CPL face
+### The outline, the skills and the CPL universe
 
 ⭐ **THE OUTLINE IS A SHEET OVER THE MAP, NOT A VIEW INSTEAD OF IT** (Sam: *"we
 never have to exit skyview"*). `__ccrOutline` opens `#u-outline-sheet` and
@@ -334,16 +334,45 @@ drawn as it is (1,490 of 49,896 carry `ar`). The Show menu keeps the *filter*.
 ⚠️ "Where they differ college to college" is NOT a map layer — four cases, two of
 them data defects, in `kb/ccr_articulation_disagreements.json`.
 
-⭐ **THE CPL FACE LEADS WITH THE CREDENTIAL, AND A POINT NOTHING REACHES IS
-UNLABELED.** Curated name → issuing AND training agency where they differ → what
-it earns → the colleges holding it. Agencies come from the curated CER artifact,
-never the crosswalk's inlined issuer (stale on 1,743 of 4,592).
+⭐ **CPL IS A UNIVERSE, NOT A LENS (Sam, 2026-09-10; shipped S252).** The CPL
+word swaps the PAYLOAD under the same map: `prototype/ccr_cpl_universe.json`
+places one point per curated credential and `…_members.json` carries the rows
+(local MAP exhibits folded in; course identities articulated to it). `universe`
+is the state; `face` tracks it so the hash (`#skyview/cpl`, `#globe/cpl`,
+`#comprehensive/cpl`), the pressed word and the coverage line follow.
+`bindUniverse` swaps `U`, `window.CPL_CCR_UNIVERSE[_MEMBERS]` and every memo of
+the leaving universe, then `__ccrUniverse` re-enters and RENDERS IN FULL.
+⚠️ `U===window.CPL_CCR_UNIVERSE` is true right after the swap too, so the swap
+carries its own `rebound` flag — without it the guard read the swap as nothing to
+do and the legend, the Show menu, the corpus and the course jump stayed the old
+universe's while the canvas drew the new. ⚠️ The hash follows the WORD, not the
+payload (`syncFaceHash`), and a route whose payload never comes still draws the
+courses (`fallBack` re-enters with the route's other options) — a blank page with
+a hint was the first cut. The Show switches and the light are remembered PER
+UNIVERSE (`showMemo`, `litMemo`): CPL opens lit (Sam: *"circles around the
+exhibits"*); Deselect all on one map never touches the other's. **A swap keeps
+the turn as the reader left it** (`turnBefore`) — the render starts the turn
+only for an OPENING. ⚠️ **The render repaints `#u-writes`** (`drawWrites()`):
+it is seeded empty, and until S252 only a new move ever painted it, so every
+re-render blanked the staged list. **Nothing moves
+on the CPL map** (`canMove` refuses with the reason; no *Drag…*; the card says
+curation lives in the Credential Reference); the workspace tables and the outline
+of record bind the courses first. `tests/ccr_skyview_exhibits.test.js`.
 
-⭐ **THE COVERAGE LINE TAKES BOTH NUMBERS FROM ONE UNIVERSE**: **1,924 of 5,497
-articulated exhibits**, from `ccr_cpl.json`'s own counts.
+⭐ **`ar` COUNTS ARTICULATION LINES, NOT COURSE IDENTITIES.** It is the CER's
+`n_articulation_lines` — one per receiving college course under the identities
+the card lists (AP English Language: one identity, three lines). Say
+*articulations*; the card's header says both numbers.
+`tests/ccr_cpl_universe_members_test.py` pins ring = card.
+
+⭐ **THE COVERAGE LINE TAKES BOTH NUMBERS FROM ONE UNIVERSE** — now the CPL
+universe's own counts (credentials · local exhibits · disciplines · articulated ·
+statewide), never a figure from `ccr_cpl.json` or the credit funnel.
 [note](../../kb-notes/methodology-a-coverage-line-takes-both-numbers-from-one-universe.md)
-⚠️ The 55 crosswalk exhibits absent from today's feed are flagged `s:1`, never
-dropped.
+`ccr_cpl.json` (course → credentials) still serves the COURSES map: the
+Articulations light's card line, the course card's CPL block, and the outline's
+CPL layer. ⚠️ Its 55 crosswalk exhibits absent from today's feed stay flagged
+`s:1`, never dropped.
 
 ⚠️ **`ensureCorpus()`, NOT `__ccrUniverse` ALONE.** An outline reached by its own
 `#outline/<id>` link had ZERO college courses — a false statement about the data.
@@ -367,7 +396,7 @@ selection.
 discipline; `CN:` names more than one course on 1,761 keys and those moves are
 refused with the reason.
 
-## The outline of record — BUILT (S235, CPL layer S238)
+## The outline of record — BUILT (S235, CPL layer S238, the CPL universe S252)
 
 *Moved here from the SkyView lane at the S251 checkpoint: these are
 invariants, and invariants live in the invariants file. The lane states

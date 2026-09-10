@@ -1,5 +1,12 @@
-// SkyView — the CPL face and the articulations light (Sam's rulings 1-3 of the
-// 2026-09-07 decision sheet, all "yes", one note).
+// SkyView — the articulations light and the CPL record on a COURSE card (Sam's
+// rulings 1-3 of the 2026-09-07 decision sheet, all "yes", one note).
+//
+// ⚠️ THE "CPL FACE" IS GONE (2026-09-10). Sam ruled CPL a UNIVERSE — a second
+// payload whose points are the credentials themselves — so the face that
+// relabeled course points by the credential reaching them (its labels, hovers,
+// discipline panel, vocabulary search and #skyview/cpl route) has no surface
+// left to assert. Those live in tests/ccr_skyview_exhibits.test.js as universe
+// checks. What stays here is everything that holds on the COURSES map:
 //
 //   1. THE CEILING IS THE RECEIVING COURSE. A MAP exhibit reaches a point only
 //      through the college course the credit is awarded against, so the CPL
@@ -188,57 +195,14 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
   check("(2) …and a point no exhibit reaches is named too", (lab("WELD M1003", titled) || { lines: [""] }).lines[0].indexOf("Welding Metallurgy") === 0);
   check("(2) the island label is the discipline and its count", w.__ccrIslandLabel(islFor("Welding")) === "Welding (6)");
 
-  // ── (3) switching the face: state, hash, coverage line ────────────────────
-  w.__ccrSetFace("cpl");
-  await tick();
-  check("(3) the face switches and the state says so", st().face === "cpl" && st().cpl === "ok");
-  check("(3) the pressed state moved with it", fp.getAttribute("aria-pressed") === "true" && fc.getAttribute("aria-pressed") === "false");
-  check("(3) ⭐ the face is a link: #skyview/cpl", String(w.location.hash) === "#skyview/cpl", w.location.hash);
-  const line = q("#u-face-line");
-  check("(3) ⭐ the CPL face says its own coverage, on the surface, from the payload's counts",
-    line.hidden === false && /\b4 of 777 articulated exhibits reach a course on this map/.test(line.textContent), line.textContent);
-  check("(3) …and says what an unlabeled point means", /stays drawn and unlabeled/.test(line.textContent));
-  check("(3) the coverage sentence carries no literal figure in the source",
-    (() => { const m = ujs.match(/function cplLineText\(\)[\s\S]*?\n}/); return !!m && !/\d,\d{3}/.test(m[0]); })());
-  check("(3) the canvas height accounts for the line (the contract fitCanvas reads)",
-    /lineEl&&!lineEl\.hidden\)\?lineEl\.offsetHeight/.test(ujs));
-
-  // ── (4) the CPL face's labels ─────────────────────────────────────────────
-  const l1 = lab("WELD M1001", titled);
-  check("(4) ⭐ the point is named by the credential that reaches it, most-held first",
-    !!l1 && l1.lines[0] === "Certified Welder — AWS +1", JSON.stringify(l1));
-  const l1f = lab("WELD M1001", full);
-  check("(4) the full band adds the issuing agency AND the training agency where it differs",
-    !!l1f && l1f.lines.length === 2 && /American Welding Society/.test(l1f.lines[1]) && /trained by Welding Training/.test(l1f.lines[1]), JSON.stringify(l1f));
-  const l2f = lab("ARTS M1002", full);
-  check("(4) a credential with no separate trainer names the issuer alone",
-    !!l2f && /National Institute/.test(l2f.lines[1]) && !/trained by/.test(l2f.lines[1]), JSON.stringify(l2f));
-  check("(4) ⭐ a point no exhibit reaches is UNLABELED — no gray, no hollow, no \"none\"",
-    lab("WELD M1003", titled) === null && lab("WELD M1004", full) === null && lab("NRSG M1001", full) === null);
-  check("(4) a stand-alone nothing reaches is unlabeled too", lab("WELD M10ZZ", full) === null);
-  check("(4) the island label says how many credentials reach it — and only where any does",
-    w.__ccrIslandLabel(islFor("Welding")) === "Welding (6) · 2 credentials" && w.__ccrIslandLabel(islFor("Nursing")) === "Nursing (1)",
-    w.__ccrIslandLabel(islFor("Welding")) + " | " + w.__ccrIslandLabel(islFor("Nursing")));
-
-  // ── (5) the hover leads with the credential ───────────────────────────────
-  const tip1 = w.__ccrTipHtml({ nd: nodeFor("WELD M1001"), isl: islFor("Welding") });
-  check("(5) ⭐ credential → issuer → trainer → what it earns → who holds it → the course last",
-    /^<b>Certified Welder — AWS<\/b>/.test(tip1) && /American Welding Society/.test(tip1) && /Training: Welding Training Center/.test(tip1) &&
-    /earns 3 hours in shielded metal arc welding/.test(tip1) && /held by 2 colleges/.test(tip1) && /2 credentials reach WELD M1001/.test(tip1) &&
-    tip1.indexOf("Certified Welder") < tip1.indexOf("American Welding") && tip1.indexOf("American Welding") < tip1.indexOf("WELD M1001"), tip1);
-  const tip2 = w.__ccrTipHtml({ nd: nodeFor("ARTS M1002"), isl: islFor("Art") });
-  check("(5) no trainer line when the credential names none", /ASE A5/.test(tip2) && !/Training:/.test(tip2), tip2);
-  const tip3 = w.__ccrTipHtml({ nd: nodeFor("WELD M1003"), isl: islFor("Welding") });
-  check("(5) a point nothing reaches still answers a hover — as the course it is", /Welding Metallurgy/.test(tip3) && !/Certified Welder/.test(tip3), tip3);
-
-  // ── (6) the panel ─────────────────────────────────────────────────────────
+  // ── (6) the panel: a course that carries an articulation lists what reaches it ──
   w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1001"), label: "Introduction to Welding" });
   await tick();
   let det = q("#u-detail").innerHTML;
   const at = (re) => { const m = det.search(re); return m; };
   check("(6) the panel opened on the course", st().sel === "WELD M1001");
-  check("(6) ⭐ on the CPL face the credentials LEAD the college courses",
-    at(/Credit for prior learning reaching this course/) > 0 && at(/Credit for prior learning/) < at(/<ul class="mlist">/), `cpl@${at(/Credit for prior learning/)} members@${at(/<ul class="mlist">/)}`);
+  check("(6) ⭐ the block FOLLOWS the college courses on the Courses map",
+    at(/Credit for prior learning reaching this course/) > 0 && at(/Credit for prior learning/) > at(/<ul class="mlist">/), `cpl@${at(/Credit for prior learning/)} members@${at(/<ul class="mlist">/)}`);
   check("(6) the block names the count and the join",
     /2 credentials, 3 exhibits/.test(det) && /joined through the receiving college course/.test(det));
   check("(6) each credential carries its issuer, and the trainer only where it differs",
@@ -248,59 +212,9 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
     /3 hours in shielded metal arc welding/.test(det) && /Alpha, Beta ·/.test(det) && /MAP exhibit: AWS Certified Welder — SMAW/.test(det));
   check("(6) ⭐ an exhibit missing from today's feed is flagged in words, never dropped",
     /not in today’s feed/.test(det) && det.indexOf("VCNST 101") < det.indexOf("not in today’s feed"));
-  // Courses face: the block follows the members, and only for an articulated course.
-  w.__ccrSetFace("courses"); await tick();
-  det = q("#u-detail").innerHTML;
-  check("(6) on the Courses face the same block FOLLOWS the college courses",
-    at(/Credit for prior learning/) > at(/<ul class="mlist">/), `cpl@${at(/Credit for prior learning/)} members@${at(/<ul class="mlist">/)}`);
   w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1003"), label: "Welding Metallurgy" });
   await tick();
-  check("(6) …and a course with no articulation carries no block there", !/Credit for prior learning/.test(q("#u-detail").innerHTML));
-  w.__ccrSetFace("cpl"); await tick();
-  det = q("#u-detail").innerHTML;
-  check("(6) ⭐ on the CPL face an empty answer states the ceiling in words — from the funnel counts",
-    /No MAP exhibit reaches this course/.test(det) && /Absence here is not evidence/.test(det) && /4 of 777/.test(det) && /4\.3% of its rows/.test(det), det.slice(0, 400));
-
-  // ── (7) the discipline panel on the CPL face ──────────────────────────────
-  w.__ccrGoSuggestion({ kind: "subject", isl: islFor("Welding"), label: "Welding" });
-  await tick();
-  det = q("#u-detail").innerHTML;
-  check("(7) the discipline panel says what reaches it, most-held first",
-    /<strong>2<\/strong> credentials reach 2 courses in this discipline/.test(det) &&
-    det.indexOf("Certified Welder — AWS") < det.indexOf("Introduction to Welding</button>"), det.slice(0, 600));
-  w.__ccrGoSuggestion({ kind: "subject", isl: islFor("Nursing"), label: "Nursing" });
-  await tick();
-  check("(7) a discipline nothing reaches says so, with the ceiling", /No MAP exhibit reaches a course in this discipline/.test(q("#u-detail").innerHTML));
-
-  // ── (8) search switches with the face ─────────────────────────────────────
-  const sug = (t) => w.__ccrSuggest(t, 60) || [];
-  const agency = sug("american").find((s) => s.kind === "cpl" && s.kindWord === "agency");
-  check("(8) ⭐ typing an agency finds it, with the courses it reaches",
-    !!agency && agency.label === "American Welding Society (AWS)" && agency.ids.indexOf("WELD M1001") >= 0 && agency.ids.indexOf("WELD M1002") >= 0, JSON.stringify(agency && agency.label));
-  const cred = sug("welder").find((s) => s.kind === "cpl" && s.kindWord === "credential");
-  check("(8) a credential name is found", !!cred && cred.label === "Certified Welder — AWS");
-  const rec = sug("shielded").find((s) => s.kind === "cpl" && s.kindWord === "credit recommendation");
-  check("(8) a credit recommendation is found by its words", !!rec && /shielded metal arc welding/.test(rec.label));
-  check("(8) ⭐ on the CPL face course titles give way to the vocabulary", !sug("welding").some((s) => s.kind === "course") &&
-    sug("welding").some((s) => s.kind === "subject"), JSON.stringify(sug("welding").map((s) => s.kind)));
-  check("(8) the kind is a word on the row", ["CREDENTIAL", "AGENCY", "CREDIT REC"].indexOf(agency.kindShort) >= 0 && /reaches 2 courses/.test(agency.sub));
-  // The dropdown renders the new kind.
-  const gq = q("#gq");
-  gq.value = "american"; gq.dispatchEvent(new w.Event("input", { bubbles: true }));
-  await tick();
-  check("(8) the dropdown renders an agency row with its kind word", qa("#sug li[role=option] .sg-k").some((e) => e.textContent === "AGENCY"));
-  // A pick rings every course it reaches — on its own, so the earlier picks are cleared first.
-  w.__ccrClearSelection();
-  w.__ccrGoSuggestion(agency);
-  await tick();
-  check("(8) ⭐ picking the agency rings both courses it reaches and makes a chip", st().hits === 2 && st().tokens.indexOf("American Welding Society (AWS)") >= 0, `hits=${st().hits} tokens=${st().tokens}`);
-  w.__ccrClearSelection();
-  w.__ccrUniverseSearch("brakes");
-  await tick();
-  check("(8) Enter on a term searches the vocabulary: one hit opens the course it reaches", st().hits === 1 && st().sel === "ARTS M1002", `hits=${st().hits} sel=${st().sel}`);
-  w.__ccrClearSelection();
-  w.__ccrSetFace("courses"); await tick();
-  check("(8) on the Courses face the vocabulary is out of the way again", !sug("american").some((s) => s.kind === "cpl") && sug("welding").some((s) => s.kind === "course"));
+  check("(6) …and a course with no articulation carries no block", !/Credit for prior learning/.test(q("#u-detail").innerHTML));
 
   // ── (9) the light: what has a number glows, the rest is untouched ─────────
   const litRings = () => strokes.filter(([s, wd]) => s === LIT && wd === 1.6).length;
@@ -356,19 +270,6 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
   check("(11) a course nothing reaches says so — a gap in the record, not a finding",
     !!ol && ol.classList.contains("empty") && /Absence here is not evidence/.test(ol.textContent) && /none reaches it/.test(ol.textContent));
 
-  // ── (12) routing: the hash restores the face ──────────────────────────────
-  w.__ccrUniverse({ solo: true });
-  await tick();
-  check("(12) back on the map, the face is what it was left at", st().face === "courses");
-  w.location.hash = "#skyview/cpl";
-  w.dispatchEvent(new w.Event("hashchange"));
-  await tick();
-  check("(12) ⭐ #skyview/cpl opens the CPL face", st().face === "cpl", st().face);
-  w.location.hash = "#skyview";
-  w.dispatchEvent(new w.Event("hashchange"));
-  await tick();
-  check("(12) …and Back to #skyview puts the course names back", st().face === "courses", st().face);
-
   /* ── (13) ⭐ THE EXHIBIT NAMES, ON THE CARD, ABOVE THE FOLD (Sam, 2026-09-10)
    * "Add the name of any articulated exhibits to the course description card
    * for the MID as well" — and, on the decision sheet, the surface: "I would
@@ -386,7 +287,6 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
    * ⚠️ AND THE LIGHT NOW REPAINTS THE PANEL. The chip decides what an OPEN card
    * says, so a chip that repainted only the canvas would land the line on the
    * next course opened. Check (13d) turns it on with the card already open. */
-  w.__ccrSetFace("courses"); await tick();
   w.__ccrSetLit(false); await tick();
   w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1001"), label: "Introduction to Welding" });
   await tick();
@@ -436,15 +336,6 @@ const LIT = "#8B6800";   // --sky-lit on the light canvas (the PAL_LIGHT fallbac
   await tick();
   check("(13e) ⭐ a course no exhibit reaches says nothing, rather than \"none\"",
     !q("#u-detail .u-exl") && !/no exhibit|none/i.test((q("#u-detail .u-exl") || { textContent: "" }).textContent));
-
-  /* (13f) The CPL face already led with the credentials, and must not now
-   * carry the same names twice. */
-  w.__ccrSetFace("cpl"); await tick();
-  w.__ccrGoSuggestion({ kind: "course", isl: islFor("Welding"), nd: nodeFor("WELD M1001"), label: "Introduction to Welding" });
-  await tick();
-  check("(13f) on the CPL face the credentials still lead and the line is not repeated",
-    !q("#u-detail .u-exl") && /Credit for prior learning reaching this course/.test(q("#u-detail").innerHTML));
-  w.__ccrSetFace("courses"); await tick();
 
   /* (13g) The outline card, whose own CPL layer is the fourth section down and
    * collapsible — so without this the card could name a course and no exhibit

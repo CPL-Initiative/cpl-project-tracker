@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 457,
+  "file_datasets": 460,
   "external_services": 138,
-  "consumers": 329,
+  "consumers": 330,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -59,14 +59,14 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 3708
+     "line": 4001
     },
     {
      "id": "module:prototype/check_skyview_sweep.js",
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 387
+     "line": 388
     },
     {
      "id": "module:sierra/sierra.js",
@@ -1142,7 +1142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5225
+     "line": 5541
     }
    ],
    "main_committers": []
@@ -5753,6 +5753,19 @@
    "main_committers": []
   },
   "file:kb/_build_ccr_cpl_universe.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_ccr_cpl_universe_members.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -12725,6 +12738,27 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:prototype/ccr_cpl_universe_members.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_ccr_cpl_universe_members.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:prototype/ccr_desc/*.json": {
    "consumers": [
     {
@@ -13434,6 +13468,19 @@
    "main_committers": []
   },
   "file:tests/ccr_cpl_payload_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_cpl_universe_members_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -18075,6 +18122,7 @@
     "prototype/build_ccr_atlas.py",
     "kb/_build_ccr_cpl.py",
     "kb/_build_ccr_cpl_universe.py",
+    "kb/_build_ccr_cpl_universe_members.py",
     "kb/_build_ccr_sky.py",
     "kb/_build_discipline_blanks_worklist.py"
    ],
@@ -18109,6 +18157,7 @@
     "prototype/skyview.html",
     "prototype/ccr_cpl.json",
     "prototype/ccr_cpl_universe.json",
+    "prototype/ccr_cpl_universe_members.json",
     "prototype/ccr_sky.json",
     "kb/discipline_blanks_worklist.json",
     "kb/discipline_cpl_rollup.json",
@@ -18188,6 +18237,7 @@
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
     "tests/ccr_cpl_universe_test.py",
+    "tests/ccr_cpl_universe_members_test.py",
     "tests/ccr_sky_payload_test.py",
     "tests/ccr_level_layout_test.py",
     "tests/glyph_sweep_test.py",

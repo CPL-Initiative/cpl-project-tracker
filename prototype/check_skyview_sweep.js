@@ -119,6 +119,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
       parked: s.parked, islandsShown: s.islandsShown, islandsTotal: s.islandsTotal, coursesShown: s.coursesShown,
       solo: s.solo, curView: s.curView, tokens: s.tokens, show: s.show, winState: s.winState, legendOpen: s.legendOpen,
       carrying: s.carrying, dropTarget: s.dropTarget, face: s.face, lit: s.lit, cpl: s.cpl, cplLine: s.cplLine,
+      universe: s.universe, exhibits: s.exhibits, exCourses: s.exCourses,
       inspectorOpen: s.inspectorOpen, inspectorWidth: s.inspectorWidth, nodeZoom: s.nodeZoom, hover: s.hover,
       memberPoints: s.memberPoints, ghostPoints: s.ghostPoints, mode: s.mode, skyState: s.skyState, hash: location.hash,
       descState: s.descState }; };
@@ -167,7 +168,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const { ctx, page } = await openPage();
   armDialogs(page);
   let b0, bb1, before, plan, artNd, big, amb, mc, kDisc, rows, camBefore, cam1;
-  RECOVER = async () => { await page.evaluate(() => { try { window.__ccrCloseOutlineSheet(); } catch (e) {} document.querySelectorAll("details[open]").forEach((d) => { d.open = false; }); try { window.__ccrClearAsk(); } catch (e) {} }); await page.keyboard.press("Escape"); await sleep(200); };
+  RECOVER = async () => { await page.evaluate(() => { try { window.__ccrCloseOutlineSheet(); } catch (e) {} document.querySelectorAll("details[open]").forEach((d) => { d.open = false; }); try { window.__ccrClearAsk(); } catch (e) {} try { window.__ccrSetUniverse("courses"); } catch (e) {} }); await page.keyboard.press("Escape"); await sleep(600); };
   DIAG = async () => { const r = await st(page); const h3 = await page.locator("#u-detail h3").first().textContent().catch(() => "?"); const ob = await page.locator("#u-open-outline").count(); const vis = await page.locator("#u-detail").isVisible().catch(() => "?"); return `hash=${r.hash} view=${r.curView} sel=${r.sel} panelOpen=${r.inspectorOpen} detailVisible=${vis} h3="${(h3 || "").trim().slice(0, 40)}" outlineBtn=${ob} sheet=${await page.locator("#u-outline-sheet:not([hidden])").count()}`; };
   await load(page, "skyview");
 
@@ -642,18 +643,23 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
   });
   await run("K. Courses | CPL and the Articulations light", async () => {
-  await page.click("#u-face-cpl"); await sleep(900); s = await st(page);
-  ok("CPL: the face switches, the hash carries it, the coverage line shows", s.face === "cpl" && s.hash === "#skyview/cpl" && !(await page.evaluate(() => document.getElementById("u-face-line").hidden)) && /of [\d,]+ articulated exhibits/.test(await page.textContent("#u-face-line")), (await page.textContent("#u-face-line")).slice(0, 90));
-  ok("the CPL payload loaded locally (ccr_cpl.json)", s.cpl === "ok");
-  await page.click("#gq"); await page.fill("#gq", ""); await page.keyboard.type("welding"); await sleep(500);
+  /* CPL is a UNIVERSE since 2026-09-10: the word swaps the payload under the
+   * same map (ccr_cpl_universe.json + its members), so the points ARE the
+   * credentials. Section R walks that universe; this section checks the swap
+   * and the light on the courses. */
+  await page.click("#u-face-cpl"); await sleep(1500); s = await st(page);
+  ok("CPL: the universe swaps, the hash carries it, the coverage line says the payload's counts", s.universe === "cpl" && s.face === "cpl" && s.hash === "#skyview/cpl" && !(await page.evaluate(() => document.getElementById("u-face-line").hidden)) && /[\d,]+ credentials folding [\d,]+ local MAP exhibits across [\d,]+ disciplines/.test(await page.textContent("#u-face-line")), `${s.universe} ${s.exhibits} ` + (await page.textContent("#u-face-line")).slice(0, 90));
+  ok("both payload files loaded locally (ccr_cpl_universe.json + its members)", s.exhibits === "ok" && s.exCourses > 1000, `${s.exhibits} ${s.exCourses}`);
+  ok("the light comes on with the universe", s.lit === true && (await pressed(page, "#u-lit")) === "true");
+  await page.click("#gq"); await page.fill("#gq", ""); await page.keyboard.type("firefighter"); await sleep(500);
   rows = await page.$$eval("#sug li[data-i]", (ls) => ls.map((l) => l.textContent.trim().replace(/\s+/g, " ")));
-  const cplRow = rows.findIndex((r) => /CREDENTIAL|AGENCY|RECOMMEND|EXHIBIT|CPL/.test(r) && !/CRSE IDENTITY|STAND-ALONE|COLLEGE CRSE|^DISC/.test(r));
-  ok("on the CPL face the suggestions are credentials, agencies and recommendations", cplRow >= 0, rows.slice(0, 4).join(" | "));
-  await page.dispatchEvent(`#sug li[data-i="${cplRow}"]`, "mousedown"); await page.keyboard.press("Enter"); await sleep(700); s = await st(page);
-  ok("picking one rings the courses it reaches", s.hits > 0 && /reaches/.test(await hint(page)), (await hint(page)).slice(0, 90));
+  const exRow = rows.findIndex((r) => /^EXHIBIT/.test(r));
+  ok("on the CPL map the suggestions are credentials (EXHIBIT rows), not course identities", exRow >= 0 && !rows.some((r) => /CRSE IDENTITY|STAND-ALONE/.test(r)), rows.slice(0, 4).join(" | "));
+  await page.dispatchEvent(`#sug li[data-i="${exRow}"]`, "mousedown"); await page.keyboard.press("Enter"); await sleep(900); s = await st(page);
+  ok("picking one opens the credential's card", s.hits >= 1 && /^CPL-/.test(String(s.sel)) && /Local MAP exhibits folded in/.test(await page.textContent("#u-detail")), `${s.hits} ${s.sel}`);
   await page.evaluate(() => window.__ccrClearSelection()); await sleep(150);
-  await page.click("#u-face-courses"); await sleep(300); s = await st(page);
-  ok("Courses: back, hash plain", s.face === "courses" && s.hash === "#skyview");
+  await page.click("#u-face-courses"); await sleep(1200); s = await st(page);
+  ok("Courses: back, hash plain, the courses under the map again, the light as it was left (off)", s.universe === "courses" && s.face === "courses" && s.hash === "#skyview" && s.lit === false && (await page.evaluate(() => !!window.CPL_CCR_UNIVERSE.why_bits)));
   await page.click("#u-lit"); await sleep(400); s = await st(page);
   ok("Articulations lights presence only: the legend row appears, the hint counts, nothing is filtered", s.lit === true && !(await page.evaluate(() => document.getElementById("u-lg-lit").hidden)) && /Lighting [\d,]+ courses/.test(await hint(page)) && s.coursesShown === before.coursesShown);
   artNd = await page.evaluate(() => { for (const I of window.CPL_CCR_UNIVERSE.islands) for (const nd of I.p) if (nd.ar > 0 && !nd.a && I.p.length < 500) return nd.i; return null; });
@@ -661,6 +667,72 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   ok("with the light on, an articulated course's card names its exhibits up top", (await page.locator("#u-detail #u-exl").count()) === 1 || /MAP exhibit/.test(await page.textContent("#u-detail")));
   await page.click("#u-lit"); await sleep(200);
 
+  });
+  await run("R. the CPL universe — credentials, their exhibits, and the door back to the courses", async () => {
+  await page.click("#u-face-cpl"); await sleep(1500); s = await st(page);
+  ok("CPL again: the credentials, lit, nothing carried across", s.universe === "cpl" && s.lit === true && s.sel === null && s.tokens.length === 0);
+  const lg = await page.$$eval("#u-foot .u-legend span", (xs) => xs.map((x) => x.textContent.trim()));
+  ok("the legend describes this universe: credential, statewide, local MAP exhibit — and no M-ID", lg.some((t) => /^credential/.test(t)) && lg.some((t) => /^statewide/.test(t)) && lg.some((t) => /^local MAP exhibit/.test(t)) && !lg.some((t) => /^M-ID/.test(t)), lg.join(" | "));
+  await page.click("#u-show-sum"); await sleep(200);
+  const showKeys = await page.$$eval("#u-show-menu input[data-show]", (is) => is.map((i) => i.getAttribute("data-show")));
+  ok("the Show menu is the CPL menu: types, statewide and the light's two; no M-ID, no credit status", ["icert", "cbe", "mil", "tna", "sw", "nsw", "members", "arty", "noart"].every((k) => showKeys.includes(k)) && !showKeys.includes("mid") && !showKeys.includes("cr"), showKeys.join(","));
+  await page.click("#u-show-none"); await sleep(400); s = await st(page);
+  ok("Deselect all empties the CPL map and says 0 of 12", s.coursesShown === 0 && /0 of 12/.test(await page.textContent("#u-show-word")), `${s.coursesShown} ${await page.textContent("#u-show-word")}`);
+  await page.click("#u-show-every"); await sleep(400); s = await st(page);
+  ok("Show everything brings the credentials back", s.coursesShown > 1500, `${s.coursesShown}`);
+  // Close the menu by its own word: an open menu takes the first click on the map (the outside-click closer), as it does for a reader.
+  await page.click("#u-show-sum"); await sleep(200);
+  ok("the menu closes by its word", (await page.evaluate(() => !document.querySelector(".u-show[open]"))));
+  // a statewide credential with an articulation, in a small island — the ring, the chip, the card, the door
+  // (a small island, so the click lands on the point it was aimed at rather than a dense neighbor)
+  const swId = await page.evaluate(() => { let best = null; for (const I of window.CPL_CCR_UNIVERSE.islands) for (const nd of I.p) if (nd.sw && nd.ar > 0 && I.p.length < 30 && (!best || I.p.length < best.n)) best = { id: nd.i, n: I.p.length }; return best && best.id; });
+  ok("the payload carries a statewide, articulated credential to walk", !!swId, String(swId));
+  ok("the swap did not restart a turn the reader had stopped (the point stays where the click is aimed)", (await st(page)).rotating === false);
+  await flyToId(page, swId, 3.4);
+  { const sp0 = await screenOf(page, swId); const bx0 = await cvsBox(page);
+    // A pointer arrives in several move events; the first one after an instant fly can read the island before the
+    // per-island zoom band has re-settled, so hover the way a hand does — two moves — before reading the tip.
+    await page.mouse.move(bx0.x + sp0.x - 2, bx0.y + sp0.y - 2); await sleep(150);
+    await page.mouse.move(bx0.x + sp0.x, bx0.y + sp0.y); await sleep(350);
+    ok("hovering a credential names it, its exhibits and its articulations", (await visible(page, "#u-tip")) && /local exhibit/.test(await page.textContent("#u-tip")) && /articulation/.test(await page.textContent("#u-tip")), (await page.textContent("#u-tip")).slice(0, 120));
+    await page.mouse.move(5, 5); await sleep(200); }
+  await clickId(page, swId, 3.4); s = await st(page);
+  ok("clicking the credential selects it", s.sel === swId, `${s.sel} vs ${swId}`);
+  const card = await page.textContent("#u-detail");
+  ok("clicking it opens the exhibit card: the CER chip, statewide in words, the issuer", s.sel === swId && /credential — CER unified title/.test(card) && /statewide/.test(card) && /Issued by|Issuing agency not recorded/.test(card), card.slice(0, 160));
+  ok("the courses articulated to it are listed with their receiving college courses", /Courses articulated to it \(\d+ course identit/.test(card) && (await page.locator("#u-detail [data-course]").count()) >= 1, card.slice(0, 300));
+  ok("the local MAP exhibits folded in are listed, best confidence first", /Local MAP exhibits folded in \(\d+\)/.test(card) && (await page.locator("#u-detail ul.mlist li").count()) >= 1);
+  ok("nothing moves here: no Drag…, no Move instead…, and the card says where curation lives", !/Drag…/.test(card) && !/Move instead/.test(card) && (await page.locator("#u-detail button.mv").count()) === 0 && /Exhibits are curated in the Credential Reference; nothing is moved from this map/.test(card));
+  // the door: a course on the card opens on the Courses map (the panel was hidden in J — show it, as a reader would, from More → Sidebar)
+  const sidebarWasHidden = !(await st(page)).inspectorOpen;
+  if (sidebarWasHidden) { await page.click("#u-more-sum"); await page.click("#u-insp-toggle"); await sleep(300); }
+  const doorId = await page.getAttribute("#u-detail [data-course]", "data-course");
+  await page.click("#u-detail [data-course]"); await sleep(1500); s = await st(page);
+  ok("a course on the card opens on the Courses map, selected, with the hash plain and a way back in the hint", s.universe === "courses" && s.sel === doorId && s.hash === "#skyview" && /Opened/.test(await hint(page)) && /Press CPL to return/.test(await hint(page)), `${s.universe} ${s.sel} ${s.hash} ` + (await hint(page)).slice(0, 80));
+  ok("the course card is the course card: its college courses and its CPL block", /Credit for prior learning reaching this course/.test(await page.textContent("#u-detail")));
+  await page.click("#u-face-cpl"); await sleep(1500); s = await st(page);
+  ok("CPL brings the credentials back with the selection cleared", s.universe === "cpl" && s.sel === null);
+  // Enter on a term searches credentials and their local exhibits
+  await page.fill("#gq", "firefighter"); await page.keyboard.press("Enter"); await sleep(700); s = await st(page);
+  ok("Enter on a term rings the credentials that carry it", s.hits >= 1 && s.tokens.length === 1, `${s.hits} ${s.tokens}`);
+  await page.evaluate(() => window.__ccrClearSelection()); await sleep(150);
+  // the discipline card
+  const exIsl = await page.evaluate((id) => { for (const I of window.CPL_CCR_UNIVERSE.islands) for (const nd of I.p) if (nd.i === id) return I.d; return null; }, swId);
+  await page.fill("#gq", exIsl); await page.keyboard.press("Enter"); await sleep(700);
+  const dcard = await page.textContent("#u-detail");
+  ok("a discipline's card counts credentials, exhibits folded, articulations and statewide — and offers no work surface", /credentials? folding [\d,]+ local MAP exhibit/.test(dcard) && /with an articulation/.test(dcard) && !/work surface/i.test(dcard) && !/Drag this discipline/.test(dcard), dcard.slice(0, 200));
+  await page.evaluate(() => window.__ccrClearSelection()); await sleep(150);
+  // the workspace binds the courses; the map comes back as the credentials
+  await page.click("#u-more-sum"); await page.click("#u-nav-forest"); await sleep(600); s = await st(page);
+  ok("By discipline from the CPL map: the tables are the course universe's", s.universe === "courses" && /Disciplines and subjects/.test(await page.textContent("h1")));
+  await page.click(".crumbs [data-back]"); await sleep(1200); s = await st(page);
+  ok("Back returns to the map — the courses (the workspace bound them), with the CPL word one click away", s.curView === "skyview" && (await page.locator("#u-face-cpl").count()) === 1, `${s.universe}`);
+  await page.click("#u-face-courses"); await sleep(600); s = await st(page);
+  ok("Courses pressed: the course universe, its 17 switches all on (one set per universe)", s.universe === "courses" && Object.keys(s.show).length === 17 && Object.values(s.show).every((v) => v === true), JSON.stringify(s.show));
+  // leave the page as K left it: the articulated course selected, the sidebar as it was
+  if (sidebarWasHidden) { await page.click("#u-more-sum"); await page.click("#u-insp-toggle"); await sleep(300); }
+  await clickId(page, artNd, 3.4);
+  ok("the section leaves the course selected again for the sections after it", (await st(page)).sel === artNd);
   });
   await run("L. window steps, the comprehensive view, and the views", async () => {
   s = await st(page);
@@ -723,7 +795,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   ok("the Dark canvas row toggles the flat map's ground", s.dark === false && !(await page.evaluate(() => document.body.classList.contains("u-dark"))));
   await page.click("#u-dark"); await sleep(150); await page.mouse.click(60, 400);
   await page.evaluate(() => { location.hash = "#skyview/cpl"; }); await sleep(800); s = await st(page);
-  ok("#skyview/cpl opens the CPL face", s.face === "cpl" && s.proj === "sky");
+  ok("#skyview/cpl opens the CPL universe on the Sky", s.universe === "cpl" && s.face === "cpl" && s.proj === "sky", `${s.universe} ${s.proj}`);
   await page.evaluate(() => { location.hash = "#nonsense"; }); await sleep(500); s = await st(page);
   ok("an unknown hash falls back to the map", (await page.locator("#u-cvs").count()) === 1);
   await page.evaluate(() => { location.hash = "#outline/NOPE"; }); await sleep(500);

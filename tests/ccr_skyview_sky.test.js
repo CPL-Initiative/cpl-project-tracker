@@ -99,6 +99,21 @@ function fakeCtx(log) {
   return c;
 }
 const canvasLog = { arcs: 0, texts: [] };
+/* The exhibit universe, inline, so the CPL word can switch for real here: since
+ * 2026-09-10 CPL is a UNIVERSE (a second payload), not a lens over this one,
+ * and a word whose payload is missing hands the reader back to the courses —
+ * which would make check (1) below read false for the wrong reason. */
+const EXU = { _generated_from: "fixture",
+  counts: { identities: 2, members: 3, disciplines: 1, articulated: 1, statewide: 1, statewide_articulated: 1, no_discipline: 0 },
+  cpl_types: ["Credit By Exam", "Industry Certification", "Portfolio Review", "Standardized Assessment", "Military", "Other"],
+  bounds: { x0: -300, x1: 300, y0: -200, y1: 200 },
+  islands: [{ d: "Fire Technology", sh: "fire-technology", x: 0, y: 0, r: 60, n: 2, sa: 0, al: 0, xin: 0, p: [
+    { i: "CPL-firefighter-1-5728d7", x: 0, y: 0, t: "Firefighter 1", n: 2, ar: 3, sw: 1, c: [1], g: "California State Fire Training (SFT)", ss: 33 },
+    { i: "CPL-emt-basic-0a1b2c", x: 30, y: 10, t: "EMT Basic", n: 1, c: [1, 4], g: "National Registry of EMTs", ss: 0 } ] }] };
+const EXM = { counts: { identities_with_members: 2, members: 3, identities_with_courses: 1, courses: 1, local_receiving_courses: 1 },
+  m: { "CPL-firefighter-1-5728d7": [["Firefighter I Certificate", 0.9, ""], ["Fire Fighter 1 - SFT", 0.8, ""]],
+       "CPL-emt-basic-0a1b2c": [["EMT-B", 0.7, ""]] },
+  courses: { "CPL-firefighter-1-5728d7": [["FIRE M1001", "M-ID", "Firefighter 1 Academy", "Fire Technology", [["FIRE 110", "Firefighter 1", ["Alpha College"]]]]] } };
 function build(opts) {
   opts = opts || {};
   const dom = new JSDOM(html, {
@@ -108,6 +123,7 @@ function build(opts) {
       window.HTMLCanvasElement.prototype.getContext = function () { return fakeCtx(opts.log); };
       window.fetch = () => Promise.resolve({ ok: false, status: 404, json: () => Promise.reject(new Error("404")) });
       window.CPL_CCR_SKY = SKY;                       // the placement payload, inline (as CPL_CCR_CPL is for the face)
+      window.CPL_CCR_EXHIBITS = EXU; window.CPL_CCR_EXHIBITS_MEMBERS = EXM;   // the CPL universe, inline
       if (opts.reduce) window.matchMedia = () => ({ matches: true, addListener() {}, removeListener() {}, addEventListener() {}, removeEventListener() {} });
     },
   });
@@ -279,8 +295,20 @@ const CX = 480, CY = 300;                        // jsdom's rects are zero; the 
   q("#u-proj-globe").click(); await tick();
   check("(1) the Globe: the sphere from outside, the readout in radii, the hash #globe",
     st().proj === "globe" && /R$/.test(text("#u-zoom")) && w.location.hash === "#globe" && st().islandScreen("Welding"), `${st().proj} ${text("#u-zoom")} ${w.location.hash}`);
+  /* A universe swap is a re-render, not an opening: the turn the reader stopped
+   * stays stopped (or the point they aim at walks away under the new payload),
+   * and a turn they left running keeps running. Both directions, whatever the
+   * state was when this line ran. */
+  const turn0 = st().rotating;
   q("#u-face-cpl").click(); await tick();
   check("(1) the CPL face is a link on every place to stand: #globe/cpl", w.location.hash === "#globe/cpl", w.location.hash);
+  check("(1) ⭐ the swap keeps the turn as the reader left it", st().rotating === turn0 && st().universe === "cpl", `${turn0} → ${st().rotating} ${st().universe}`);
+  q("#u-rotate").click(); await tick();
+  const turn1 = st().rotating;
+  q("#u-face-courses").click(); await tick();
+  check("(1) …in the other state too, on the swap back", turn1 !== turn0 && st().rotating === turn1 && st().universe === "courses", `${turn1} → ${st().rotating}`);
+  if (st().rotating !== turn0) { q("#u-rotate").click(); await tick(); }   // leave the turn as this suite found it
+  q("#u-proj-globe").click(); await tick();
   q("#u-face-courses").click(); await tick();
 
   // ── 8 · silver on every dark canvas ─────────────────────────────────────────
