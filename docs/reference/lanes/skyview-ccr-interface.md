@@ -147,8 +147,38 @@ payload with the same shape as `ccr_universe.json`: **CER canonical titles as
 identities, local MAP exhibits as their members, disciplines as islands, and a
 ring where a course articulates to the exhibit.** ⚠️ `prototype/ccr_cpl.json` is
 keyed the INVERSE way — course identity → credentials — so it cannot be reused
-directly; the builder is a new one. Lane-sized, not a session's work. Measured
-inputs it needs: 3,124 exhibit rows, six CPL types, 135 issuing agencies.
+directly; the builder is a new one. Lane-sized, not a session's work.
+
+⭐ **THE CER ALREADY CARRIES EVERY AXIS — measured 2026-09-10 on the CER the cron
+regenerated at 13:40.** `credential_reference_data.js` `unified_titles` supplies
+all four: `ut` the identity, `raw_variants` the members, `disc_modal` the island,
+`articulations`/`n_articulation_lines` the ring, and `issuer`/`issuers`/`trainer`
+the agencies. **1,987 identities · 3,813 member variants · 96 disciplines · 1,603
+carrying an articulation (81%) · six CPL types · 172 issuers (208 with `issuers[]`)
+· 67 trainers.** ⚠️ The earlier figures here — *"3,124 exhibit rows, 135 issuing
+agencies"* — were stale and are deleted; today's statewide feed carries 2,909
+exhibits, a third number again, because these are different universes (see the
+`cpl_memory` row `the-credit-funnel-and-the-articulation-feed-are-nearly-disjoint`).
+
+⚠️ **TWO SHAPE FACTS DECIDE WHAT THE VIEW LOOKS LIKE, AND BOTH ARE SAM'S CALL:**
+
+|            | singleton | grouped |
+|---|---:|---:|
+| **no discipline** | 442 | 101 |
+| **has discipline** | 1,011 | 433 |
+
+**73% of CER titles group exactly ONE local exhibit** (1,453 of 1,987), so the
+Firefighter-1-with-its-variants case Sam described is the 534 that genuinely
+group (257 pairs, 118 with six or more, max 31) — the rest would draw as a group
+of one. And **27% have no discipline** (543), 81% of those also singletons, which
+is a far larger blank pile than the course view's 86 of 16,480.
+⚠️ **TOP CANNOT RESCUE THE BLANKS** — only 4 of the 543 carry a `top_modal`, and
+Rule 7 forbids TOP as a primary discipline determination regardless. 159 of the
+543 carry an articulation, so they are not inert.
+
+⚠️ **Read agencies from the CER, never the crosswalk's inlined `issuing_agency`** —
+it is a 2026-05-21 snapshot, wrong on 1,743 of 4,592 records (`cpl_memory`:
+`the-crosswalks-inlined-issuer-is-a-stale-snapshot`).
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
