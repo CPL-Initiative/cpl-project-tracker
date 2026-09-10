@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 875,
-    "bytes": 9282017,
-    "over_budget": 5,
-    "handoff_max": 251,
+    "files": 876,
+    "bytes": 9296410,
+    "over_budget": 6,
+    "handoff_max": 252,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59995,
     "superseded_files": 0,
@@ -26,44 +26,43 @@
       },
       "other": {
         "files": 111,
-        "bytes": 2842042,
-        "over": 2
+        "bytes": 2875941,
+        "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 37677,
+        "bytes": 34797,
         "over": 0
       },
       "lessons": {
         "files": 74,
-        "bytes": 2045070,
+        "bytes": 2025407,
         "over": 1
       },
       "kb_note": {
         "files": 431,
-        "bytes": 2212112,
+        "bytes": 2212802,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 168089,
+        "bytes": 165232,
         "over": 2
       },
       "handoff": {
-        "files": 225,
-        "bytes": 1917032,
+        "files": 226,
+        "bytes": 1922236,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 5,
-      "american_spelling": 1,
+      "oversized_doc": 6,
       "vault_heavy_path": 49
     },
     "vault": {
-      "files": 2966,
-      "bytes": 1425672575,
+      "files": 2967,
+      "bytes": 1425689349,
       "heavy_bytes": 678993413,
       "heavy_share": 0.476,
       "ignore_filters": [
@@ -143,6 +142,19 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/catalog/kb-notes.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 166759,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 16759,
+        "ratio": 1.11
+      },
+      "message": "166,759 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/ccr_atlas_lessons_archive.md"
     },
     {
       "rule": "house_voice",
@@ -342,41 +354,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 14422,
+        "bytes": 13809,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 2422,
-        "ratio": 1.2
+        "over_by": 1809,
+        "ratio": 1.15
       },
-      "message": "14,422 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "13,809 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 15187,
+        "bytes": 12943,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 3187,
-        "ratio": 1.27
+        "over_by": 943,
+        "ratio": 1.08
       },
-      "message": "15,187 B is 1.3× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/skyview-ccr-interface.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 1,
-        "forms": {
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
-          }
-        }
-      },
-      "message": "1 British form — labelled→labeled",
+      "message": "12,943 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -395,13 +392,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 616185,
+        "bytes": 620967,
         "limit": 150000,
         "lane": "other",
-        "over_by": 466185,
-        "ratio": 4.11
+        "over_by": 470967,
+        "ratio": 4.14
       },
-      "message": "616,185 B is 4.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "620,967 B is 4.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

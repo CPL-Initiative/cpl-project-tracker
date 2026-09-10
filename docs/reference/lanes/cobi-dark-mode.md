@@ -86,25 +86,20 @@ that could not fail are PULL, in one note:
 [`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](../../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md).
 **Read it before theming anything.** What is state, and belongs here:
 
-- ✅ **Phantom `--surface-1`/`--surface-2` — FIXED**, 26 sites, 19 of 128
-  findings. Defined in the **DARK blocks only**: light keeps each site's own
-  tint, so no light pixel moved. ⚠️ **Do not "complete" the pair in the light
-  `:root`** — the fallbacks are six different tints, so one light value repaints
-  six tabs. Sam's call. Guarded by `tests/cpl_theme.test.js`.
-  **25 phantom color tokens / 83 uses remain** (`--ok` 10, `--cpl-green` 10,
+✅ **Fixed in S248:** the phantom `--surface-1`/`--surface-2` pair (26 sites),
+`var(--white)` as a ground (7), `--navy-*` fills carrying a fixed ink (17 →
+`--on-accent`), `cip_crosswalk.js`'s own private theme (108 grounds, now on the
+one control), and `our_process.js`'s contour canvas. The invariants they leave:
+
+- ⚠️ **`--surface-1`/`--surface-2` are defined in the DARK blocks ONLY. Do not
+  "complete" the pair in the light `:root`** — the fallbacks are six different
+  tints, so one light value repaints six tabs. Sam's call. Guarded by
+  `tests/cpl_theme.test.js`.
+- **25 phantom color tokens / 83 uses remain** (`--ok` 10, `--cpl-green` 10,
   `--gold-soft` 8, `--danger` 7, `--cpl-cream` 6, `--link` 5 …) — now all INKS
   and ACCENTS, no grounds.
-- ✅ **`var(--white)` as a ground — FIXED**, 7 sites. `.project-card` and
-  `.activity-kpi-card` were **Sam's first screenshot**.
-- ✅ **`--navy-*` fills carrying a fixed ink — FIXED**, 17 sites → `--on-accent`.
-  Measured first: **551/497 INK vs 26/179 FILL**. ⚠️ **The other ~160 navy fills
-  are NOT proven broken** — only where the ink cannot follow. Fix what the sweep
-  names.
-- ✅ **`cip_crosswalk.js`, the FIFTH answer to "is it dark" — FIXED.** Own
-  button, own `cipx_theme` key, 108 grounds gated on its own class. Now reads
-  `CPL_THEME.effective()`, writes through `.set()`, follows `cpl:themechange`.
-- ✅ **`our_process.js`'s contour canvas — FIXED.** Drew once under
-  `prefers-reduced-motion`; the first listener `cpl:themechange` has ever had.
+- ⚠️ **The other ~160 navy fills are NOT proven broken** — only where the ink
+  cannot follow. Measured 551/497 INK vs 26/179 FILL. Fix what the sweep names.
 
 
 ### Named, measured, and deliberately NOT fixed
@@ -207,15 +202,11 @@ and could not see it. `cpl_theme.test.js` now guards the template too
 red artifact check after a generator repair to be latent source drift surfacing.
 [`methodology-a-guard-on-generated-output-cannot-see-its-source`](../../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md)
 
-⚠️ **THE GLYPH ROW IS MOSTLY A CORRECTION.** Of the 401 reported, **348 belong to
-`excel_to_dashboard.py`** (plain words there already, cleared by the next cron,
-correctly refused by `--apply`) and 8 were arrows inside COURSE TITLES in
-one-line JSON payloads, where any `title` key trips the control heuristic.
-Findings carry `generator_owned`, the report counts the two apart, and
-`classify()` treats a large data payload as decoration.
-
-**Implementation Funding is excluded from every S245 number and untouched by
-every S245 edit** — Sam worked that tab in a parallel session.
+⚠️ **THE GLYPH ROW'S "401" WAS NEVER 401 ACTIONABLE** — 348 belong to
+`excel_to_dashboard.py` (generator-owned, correctly refused by `--apply`) and 8
+were arrows inside COURSE TITLES in one-line JSON, where any `title` key trips
+the control heuristic. Findings carry `generator_owned` and `classify()` treats a
+large data payload as decoration. Settled at 26 and ruled closed below.
 
 ✅ **THE GLYPH SWEEP IS CLOSED AT 26 — Sam, 2026-09-09: *"Keep all 26 glyphs as
 is for now."*** ⚠️ **RULED, not pending — do not sweep them.** The list and the

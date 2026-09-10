@@ -81,3 +81,51 @@ The retrospective pulled real numbers from the repo rather than guessing:
 Either pick up the two staged items (CLAUDE.md trim first — biggest per-session
 win), or fold these practices into normal feature work (tests committed under
 `tests/`, CSS via `var()` + the reference note, prototype-first for new tabs).
+
+## 2026-09-10 — SkyLedger S251: four green checks that could not see what they checked
+
+Repairing the cron (#1540) produced its first successful run in three days, and
+that run turned three checks red. A fourth went red on my own PR the same
+afternoon. **All four are one shape: the check was green because the tool could
+not see the thing it was checking.** None was a false alarm; each named real
+drift that had been accumulating invisibly.
+
+| # | the check | why it was green | what it could not see |
+|---|---|---|---|
+| 1 | `cpl_theme.test.js` "no literal white background" | the cron was dead, so the section was never re-emitted | `college_activity_template.html`, the generator's INPUT |
+| 2 | `discipline_edge_fill_test.py` "still fills half the blanks" | the payload predated the fill moving into the generator | that yield goes to ZERO when the work moves upstream |
+| 3 | the whole suite, for two days | no generator ran at all | every deferred generator change at once |
+| 4 | `_build_dependency_map.py --check` | rebuilt while the new files were untracked | `git ls-files` lists TRACKED files only |
+
+### The rules that fall out
+
+- ⚠️ **Guard a generator's INPUT, not only its output.** A check reading a
+  committed artifact reports the state of the last run. S245 swept both HTMLs and
+  left `background:#fff` in the template `excel_to_dashboard.py` emits verbatim;
+  measured at that commit, HTML 0 / template 4. `cpl_theme.test.js` now carries a
+  `GENERATED_FROM` list — add every emitted template to it.
+- ⚠️ **Never measure a transformation's YIELD on an artifact that has already had
+  it applied.** `filter >= blank_before * 0.5` was sound while the fill was a
+  post-hoc repair; once S242 wired it into the generator, the correct result was
+  `0 of 86` and the check failed ON SUCCESS. Assert the FIXED POINT instead —
+  re-running finds nothing to do — which catches the real failure (the fill
+  stopping) from the side that survives the move.
+- ⚠️ **STAGE BEFORE YOU REBUILD ANYTHING WHOSE INPUTS COME FROM GIT.**
+  `kb/_build_dependency_map.py` inventories via `git ls-files`, so three untracked
+  new files were invisible: it wrote a map missing them (710/326) and `--check`
+  passed against that same blind view. CI, with the files tracked, got 713/327.
+- ⭐ **Read a red check right after a generator repair as a BACKLOG COMING DUE**,
+  not as the repair misbehaving. The reds are deferred drift arriving all at once.
+- ⭐ **Run the full CI guard list locally, not the subset you think is relevant.**
+  After the first cycle I had run only the guards I judged related and missed #2;
+  extracting every `python3 …` line from `js-tests.yml` and running all 41 caught
+  #4's sibling before a second red cycle. One command, ~2 minutes.
+
+### A check that greps source cannot tell a warning from a call
+
+Writing the guard for #1's sibling, I asserted "the builder never reads the stale
+crosswalk" by grepping its source — and it failed on the builder's own comment
+saying not to read it. Replaced with a runtime assertion that records what the
+build actually opens. **Assert the behavior, not a proxy for it.**
+
+Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md).

@@ -43,23 +43,16 @@ keyboard path. **`#skyview` OPENS AS THE SKY** since S239 — **Sky · Globe** a
 places to stand on ONE canvas. A course opens its outline of record (S235); a
 staged move is marked on the course itself (S239).
 
-**S244 (2026-09-09).** Rotation `SPIN` 0.045→0.018; a dropped course PARKS;
-courses gather by level on the ring score already chose (same-level pairs 19.9%
-closer); **CTE vs academic** as three Show switches (25,857 · 16,470 · **7,569
-with no verdict**); an **Isolate** toggle.
+**Current behavior worth knowing before you touch it:** rotation `SPIN` 0.018; a
+dropped course PARKS; courses gather by level on the ring score already chose;
+**CTE vs academic** is three Show switches (25,857 · 16,470 · **7,569 with no
+verdict**); **Isolate** is a toggle; the phone header is 114px at 390×844 (map
+86%) and pinch zooms; a question typed in the search box becomes a map selection
+AND answers in a `role="status"` panel inside the search form.
 
-**S247/SkyLedger (2026-09-09), PR #1530 — the phone, and the question box.**
-Header 254px → 114px at 390×844, map 62% → 86%; pinch zooms; a question in the
-search box becomes a map selection. Desktop unchanged. Detail in the lessons doc.
-
-**SkySight (2026-09-09), PR #1532 — two defects Sam hit on his first real use.**
-⭐ **Isolate emptied the map on a DISCIPLINE selection** — a `subject` token is
-an ISLAND, not node hits, so `searchHits` was empty and `isoNodeOK` failed every
-node while `isoActive()` and the button's `can` test both counted `selIsl`:
-49,896/159 → 0/0, now 191/1 for Chemistry. ⭐ **The Ask answered 850px from the
-box** — it ran and printed correctly into `#u-hint`, a 36px strip at the bottom
-edge, so what Sam saw was only the sky stopping. It now also answers in a
-`role="status"` panel inside the search FORM. Detail in the lessons doc.
+⚠️ Session-by-session narrative for all of the above lives in
+[`docs/ccr_atlas_lessons.md`](../../ccr_atlas_lessons.md) — this file states
+current truth, so do not re-inflate it with a log.
 
 ## Invariants — in their own file
 
@@ -80,34 +73,19 @@ The ones most often needed first: the canvas height is **JS-owned** by
 
 ## The outline of record — BUILT (S235, CPL layer S238)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`.
-
-⭐ **The description is CONSOLIDATED and NAMES NO COLLEGE** (Sam, 2026-09-10:
-attributing one college's wording *"could lead to division as some faculty may
-question the choice"*). The unit is the SENTENCE, so nothing is composed; the
-selector is agreement, not typicality; what only some add sits under *Some
-colleges also include* with its count. ⚠️ **COMPLETE-link at Dice 0.3, never
-single-link** — single-link chains and reports agreement no two colleges have.
-⚠️ **Ordered by position in the source, not by support.** ⚠️ **The catalog's
-administration is stripped FIRST and is the most-agreed text in the corpus**; a
-numeric heading is stripped and its sentence KEPT, a prose-valued key takes its
-sentence with it. ⚠️ **Placeholder text never enters a derived layer** — marked
-in the member lists, never in the quote or the imputed skills. ⚠️ **C-ID/CCN:
-NOT HANDLED and the card says so** — MAP holds the designation, not the
-descriptor text (541 identities); loading them is a data feed, not a rendering
-change. Every measurement:
-[`methodology-consolidate-sentences-not-documents`](../../kb-notes/methodology-consolidate-sentences-not-documents.md).
-
-⭐ Sam's MAP-Generated sentence prints verbatim. ⭐ Two level axes, neither
-derived. ⚠️ Confidence is agreement BETWEEN colleges. ⭐ A reviewer may add a
-skill and take one out — staged, nothing written.
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`. ⚠️ **Its invariants moved to**
+[`skyview_invariants.md`](../skyview_invariants.md) **at the S251 checkpoint** — the
+consolidated description that names no college, complete-link at Dice 0.3, the
+administration strip, placeholder text, and C-ID/CCN being unhandled. **Read them
+before touching the outline**; they are the kind of rule you only look up once you
+already suspect it, which is why the pointer is here.
 
 ## NEEDS SAM
 
-① **DONE — `cpl-chat-deploy.yml` ran 2026-09-09** (run 34402962685, byte-verify
-clean) on Sam's go, so `skyview-ask` is a known surface on the deployed function
-and the question box is live end to end. `cpl-chat-smoke.yml` re-checked the four
-search modes the same redeploy touched.
+① **What the statewide exhibits are FOR.** His 2026-09-10 ask cut off at *"shown
+visibly on the sky so folks can easily see…"*. The data side is done (`sw` on all
+84); the treatment depends on the rest of the sentence — see which are statewide,
+see what a college could adopt, or see where they are already in use.
 ② **The live `sierra_guidance` CHECK constraint** does not yet allow
 `skyview-ask`. The schema of record does. Not blocking — nothing in the feature
 writes a guidance row — so it only matters to scope a Sierra rule to this surface.
@@ -115,10 +93,6 @@ writes a guidance row — so it only matters to scope a Sierra rule to this surf
 discipline labels clip off both edges. Narrowing is a real improvement but
 `NODE_ZOOM` decides per island whether courses draw at all, and the margin is the
 point (see the invariant), so this is a ruling, not a sweep.
-
-The eight of 2026-09-09 are all answered — sheet
-`docs/visuals/2026-09-09-pending-decisions.html`, memory row
-`sam-eleven-rulings-2026-09-09-decision-sheet`. They are work now, in NEXT.
 
 ⚠️ **"An emptied discipline stays DRAWN" is a BUILDER change, not a renderer
 tweak.** `build_islands()` walks `all_discs`, so an emptied discipline is absent
@@ -149,64 +123,51 @@ ring where a course articulates to the exhibit.** ⚠️ `prototype/ccr_cpl.json
 keyed the INVERSE way — course identity → credentials — so it cannot be reused
 directly; the builder is a new one. Lane-sized, not a session's work.
 
-⭐ **THE CER ALREADY CARRIES EVERY AXIS — measured 2026-09-10 on the CER the cron
-regenerated at 13:40.** `credential_reference_data.js` `unified_titles` supplies
-all four: `ut` the identity, `raw_variants` the members, `disc_modal` the island,
-`articulations`/`n_articulation_lines` the ring, and `issuer`/`issuers`/`trainer`
-the agencies. **1,987 identities · 3,813 member variants · 96 disciplines · 1,603
-carrying an articulation (81%) · six CPL types · 172 issuers (208 with `issuers[]`)
-· 67 trainers.** ⚠️ The earlier figures here — *"3,124 exhibit rows, 135 issuing
-agencies"* — were stale and are deleted; today's statewide feed carries 2,909
-exhibits, a third number again, because these are different universes (see the
-`cpl_memory` row `the-credit-funnel-and-the-articulation-feed-are-nearly-disjoint`).
+✅ **BUILT (S251)** — `kb/_build_ccr_cpl_universe.py` → `prototype/ccr_cpl_universe.json`
+(0.36 MB), rebuilt by the daily cron beside its siblings, guarded by
+`tests/ccr_cpl_universe_test.py` (25 checks). **1,987 exhibit identities folding
+3,813 local exhibits in 97 islands · 1,603 with a ring · 534 grouped / 1,453
+singleton · 84 statewide, all articulated · 543 in the pile.**
 
-⚠️ **TWO SHAPE FACTS DECIDE WHAT THE VIEW LOOKS LIKE, AND BOTH ARE SAM'S CALL:**
+**The CER supplies every axis**, so the builder reads one file: `ut` the identity,
+`raw_variants` the members, `disc_modal` the island, `n_articulation_lines` the
+ring, `issuer`/`issuers`/`trainer` the agencies, plus `statewide` and `cpl_types`.
 
-|            | singleton | grouped |
-|---|---:|---:|
-| **no discipline** | 442 | 101 |
-| **has discipline** | 1,011 | 433 |
+⚠️ **Read agencies from the CER, NEVER the crosswalk's inlined `issuing_agency`** —
+a 2026-05-21 snapshot wrong on 1,743 of 4,592 records. Asserted at RUNTIME by
+recording what the build opens, because the first version of that check grepped
+the source and failed on the builder's own comment saying not to read it.
+⚠️ **Never mix in the credit funnel's exhibit count** — it and the articulation
+feed share 570 ids. A coverage line takes both numbers from one universe.
 
-**73% of CER titles group exactly ONE local exhibit** (1,453 of 1,987), so the
-Firefighter-1-with-its-variants case Sam described is the 534 that genuinely
-group (257 pairs, 118 with six or more, max 31) — the rest would draw as a group
-of one. And **27% have no discipline** (543), 81% of those also singletons, which
-is a far larger blank pile than the course view's 86 of 16,480.
-⚠️ **TOP CANNOT RESCUE THE BLANKS** — only 4 of the 543 carry a `top_modal`, and
-Rule 7 forbids TOP as a primary discipline determination regardless. 159 of the
-543 carry an articulation, so they are not inert.
+✅ **SAM'S TWO SHAPE RULINGS, 2026-09-10** — each pinned by a check:
+- **A singleton draws as any other identity, a group of one.** 73% of CER titles
+  (1,453 of 1,987) hold exactly one local exhibit; the Firefighter-1 case he
+  described is the 534 that genuinely group (257 pairs, 118 with six or more,
+  max 31). Courses mode already draws 3,217 single-satellite identities so.
+- **The 543 with no discipline SHIP as a visible island**, not a blocked build.
+  ⚠️ There is no mechanical route to a discipline for them: TOP recovers 4 (and
+  Rule 7 bars TOP as a primary discipline call regardless), issuer recovers 11
+  (42 issuers are discipline-mixed against 19 unanimous). 159 are articulated,
+  so they are live points. A curator pass, never an inference.
 
-⚠️ **Read agencies from the CER, never the crosswalk's inlined `issuing_agency`** —
-it is a 2026-05-21 snapshot, wrong on 1,743 of 4,592 records (`cpl_memory`:
-`the-crosswalks-inlined-issuer-is-a-stale-snapshot`).
-
-✅ **THE PAYLOAD IS BUILT (S252)** — `kb/_build_ccr_cpl_universe.py` →
-`prototype/ccr_cpl_universe.json` (0.36 MB), rebuilt by the daily cron beside its
-siblings, guarded by `tests/ccr_cpl_universe_test.py` (25 checks).
-**1,987 exhibit identities folding 3,813 local exhibits in 97 islands · 1,603
-with a ring · 534 grouped / 1,453 singleton · 84 statewide, all articulated ·
-543 in the pile.** Both of Sam's rulings are pinned by a check.
-
-⚠️ **THE LAYOUT IS IMPORTED, NEVER COPIED.** `layout_island` and `build_islands`
-in `kb/_build_ccr_universe.py` now take a `point_fn` (default `point_of`, the
-course shape); the CPL builder passes an exhibit shape. Two universes drawn by
-two packers would stop agreeing about what a discipline looks like — the same
-reason `kb/alias_chain.py` is imported. The refactor was proven neutral by
-regenerating `ccr_universe.json` on the same data with both code versions:
-**byte-identical**, layout and members.
+⚠️ **THE LAYOUT IS IMPORTED, NEVER COPIED.** `layout_island`/`build_islands` take
+a `point_fn` (default `point_of`, the course shape); the CPL builder passes an
+exhibit shape. Two packers would stop agreeing about what a discipline looks
+like — the reason `kb/alias_chain.py` is imported. Proven neutral: both universes
+regenerate **byte-identical** on the same data under either code version.
 
 ⚠️ **`slug()` TRUNCATES AT 60 AND THAT COLLIDES CER TITLES.** It names a
-description shard FILE, so it must not be widened. Two Carpenters titles differ
-only past the cut and merged into one entity on the first build; `ident_id()`
-appends a digest of the exact title. ⚠️ The id is derived from the TITLE, so a
-rename re-mints it — safe while nothing stores a reference, but the first
-feature that persists one needs a real surrogate key on the CER (Rule 7).
+description shard FILE, so it must not be widened; two Carpenters titles differ
+only past the cut and merged into one entity on the first build. `ident_id()`
+appends a digest of the exact title. ⚠️ The id derives from the TITLE, so a
+rename re-mints it — safe while nothing stores a reference, but the first feature
+that persists one needs a real surrogate key on the CER (Rule 7).
 
-**NEXT on this lane:** the view itself. The payload is drawable; nothing draws it
-yet. Sam's statewide ask of 2026-09-10 (*"shown visibly on the sky so folks can
-easily see…"*, message truncated) is answered on the data side — every statewide
-point carries `sw` — but the treatment is open, and at 84 points a permanent
-LABEL is affordable where 1,987 points cannot be labeled.
+**NEXT: the view.** The payload is drawable; nothing draws it. Sam's statewide ask
+(*"shown visibly on the sky so folks can easily see…"*, message truncated — the
+rest is unanswered) is met on the data side: every statewide point carries `sw`.
+At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled.
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.
