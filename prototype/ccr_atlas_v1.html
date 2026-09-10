@@ -584,6 +584,19 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .cpl-list .cpl-earn{color:var(--text-body)}
 .cpl-list .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
 .ol .cpl-list li{padding:.65em 0}
+/* The exhibit names above the fold, when the Articulations chip is on (Sam,
+   2026-09-10). Gold rail because the chip that turns it on paints the map gold
+   — the same signal in two places, and --mustard-text is the pair that carries
+   on BOTH grounds (#8B6800 light, #E3B341 dark), which --mustard-fill does not.
+   Measured on --surface-subtle (light/dark): body 10.49/10.39, strong
+   15.67/12.50, muted 6.19/6.56, the rail itself 4.73/7.79 — every pair clears
+   AA text, the rail included, though it carries nothing the words do not. The
+   block wraps: the longest exhibit title in the feed is 164 characters. */
+.u-exl{margin:.55em 0 0;padding:.45em .7em;border-left:3px solid var(--mustard-text);
+  background:var(--surface-subtle);color:var(--text-body);font-size:.86rem;line-height:1.5}
+.u-exl b{color:var(--text-strong)}
+.u-exl .sub{color:var(--text-muted)}
+.ol-exl{margin:.7em 0 14px;font-size:.9rem}
 .idlist.cpl-isl li{padding:.35em 0}
 .u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;

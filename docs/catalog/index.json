@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 425,
+   "count": 426,
    "docs": [
     {
      "created": "2026-08-14",
@@ -6580,6 +6580,22 @@
      "title": "The number of findings is not the number of problems \u2014 rank an audit by blast radius before you read it",
      "type": "methodology",
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-the-obvious-detector-measures-the-wrong-thing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "descriptions",
+      "ccr",
+      "skyview"
+     ],
+     "title": "The obvious detector measures the wrong thing: boilerplate is not repetition",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-09",
@@ -16580,5 +16596,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 857
+ "total": 858
 }

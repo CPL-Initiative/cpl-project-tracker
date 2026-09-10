@@ -584,6 +584,19 @@ details.u-views:not([open]) .u-views-menu{display:none}   /* the flat list in th
 .cpl-list .cpl-earn{color:var(--text-body)}
 .cpl-list .chip.warn{background:var(--chip-warn);color:var(--chip-warn-ink);border:1px solid var(--chip-warn-edge)}
 .ol .cpl-list li{padding:.65em 0}
+/* The exhibit names above the fold, when the Articulations chip is on (Sam,
+   2026-09-10). Gold rail because the chip that turns it on paints the map gold
+   — the same signal in two places, and --mustard-text is the pair that carries
+   on BOTH grounds (#8B6800 light, #E3B341 dark), which --mustard-fill does not.
+   Measured on --surface-subtle (light/dark): body 10.49/10.39, strong
+   15.67/12.50, muted 6.19/6.56, the rail itself 4.73/7.79 — every pair clears
+   AA text, the rail included, though it carries nothing the words do not. The
+   block wraps: the longest exhibit title in the feed is 164 characters. */
+.u-exl{margin:.55em 0 0;padding:.45em .7em;border-left:3px solid var(--mustard-text);
+  background:var(--surface-subtle);color:var(--text-body);font-size:.86rem;line-height:1.5}
+.u-exl b{color:var(--text-strong)}
+.u-exl .sub{color:var(--text-muted)}
+.ol-exl{margin:.7em 0 14px;font-size:.9rem}
 .idlist.cpl-isl li{padding:.35em 0}
 .u-tip{position:absolute;z-index:6;pointer-events:none;background:var(--text-strong);color:var(--surface-opaque,#fff);
        font-size:.78rem;line-height:1.35;padding:7px 9px;border-radius:7px;max-width:300px;
@@ -7900,7 +7913,10 @@ function memberRow(m, isl, nd, moved){
     '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-d="'+esc(m.d||"")+'" data-code="'+esc(m.n)+
     '" data-col="'+esc(m.c)+'"'+(shared?' data-shared="1"':"")+' title="Pick this course up and drop it on the identity it belongs to">Drag…</button>';
   if(open){
-    if(info && info.desc) h+='<div class="mdesc">'+esc(info.desc)+"</div>";
+    if(info && info.desc) h+='<div class="mdesc">'+
+      (olIsPlaceholder(info.desc)
+        ? '<span class="chip mut" title="Text where the description goes that says the field is blank. Printed as the college published it; the quoted description and the imputed skills are not drawn from it.">placeholder</span> '
+        : '')+esc(info.desc)+"</div>";
     else if(st==="ok") h+='<div class="mdesc none">No catalog description for this course.</div>';
     else if(st==="loading") h+='<div class="mdesc none">Loading the catalog description…</div>';
     else if(st==="blocked") h+='<div class="mdesc none">Catalog descriptions need the page SERVED, not opened '+
@@ -7939,6 +7955,62 @@ function cplListHtml(b, cap){
   }).join("");
   return '<ul class="cpl-list">'+items+'</ul>'+
     (b.length>cap?'<p class="sub">Showing '+cap+' of '+num(b.length)+' credentials.</p>':'');
+}
+/* ── the exhibit names, where the reader already is (Sam, 2026-09-10) ───────
+ * "Add the name of any articulated exhibits to the course description card for
+ * the MID as well" — and on the decision sheet, in his own words: "I would like
+ * the exhibits list on the course cards in course view (not just CPL view) when
+ * the Articulations chip is selected."
+ *
+ * ⚠️ THEY WERE ALREADY ON THE CARD, AND THAT IS THE POINT. `cplListHtml` prints
+ * every exhibit title — as the last line of a nested block, in muted type,
+ * below the description and the full member list. On FIRE 110 X that member
+ * list is 55 rows. Present and unreadable is the same as absent to the person
+ * reading, which is the second time this lane has learned it (S250: an answer
+ * printed 850px from the hand). So this names them ABOVE the fold and leaves
+ * the full block below untouched — one line, not a second copy of the record.
+ *
+ * ⚠️ NOTHING RENDERS FOR A COURSE WITH NO EXHIBIT, deliberately. This feed
+ * cannot tell a course nobody articulated from a course nobody has looked at
+ * (the same reason the light marks presence and never absence), so a line
+ * reading "no exhibits" would state a finding the data does not carry. */
+function cplExhibitNames(nd){
+  var b=(cplState==="ok")?cplOf(nd):null, out=[], seen={};
+  if(!b) return out;
+  b.forEach(function(e){
+    (e[1]||[]).forEach(function(r){
+      var t=r[1]||r[0];
+      if(t && !seen[t]){ seen[t]=1; out.push(t); }
+    });
+  });
+  return out;
+}
+/* Median 1 name, p95 six, one identity carries 21 (measured against
+ * ccr_cpl.json, 2026-09-10) — so six in full covers 95% and the tail says how
+ * many it is holding back and where the rest are. */
+function cplNamesHtml(nd, cls){
+  /* Two conditions, each load-bearing where it stands. While the record is in
+   * flight only a course the MAP data already calls articulated says anything —
+   * `ar` is the one signal we hold before the join lands, and it agrees with the
+   * join exactly (1,490 = 1,490, measured 2026-09-10), so it is the honest
+   * stand-in for that second. Once the record is here the JOIN decides, and a
+   * course it reaches with nothing prints nothing.
+   * ⚠️ The loading branch is verified in Chromium against the served page, not
+   * here: this suite binds the payload on the window, so `cplState` is "ok"
+   * before the first paint and jsdom never sees the in-flight second. */
+  if(cplState==="loading"||cplState===""){
+    return (nd.ar>0)
+      ? '<p class="'+cls+'"><b>Articulated exhibits</b> <span class="sub">· loading MAP’s articulation record…</span></p>'
+      : "";
+  }
+  var names=cplExhibitNames(nd), cap=6;
+  if(!names.length) return "";
+  return '<p class="'+cls+'"><b>Articulated exhibit'+(names.length===1?"":"s")+
+    ' ('+num(names.length)+')</b> '+esc(names.slice(0,cap).join(" · "))+
+    (names.length>cap
+      ? ' <span class="sub">and '+num(names.length-cap)+' more — all of them, with what each earns, under '+
+        '<em>Credit for prior learning</em> below.</span>'
+      : '')+'</p>';
 }
 function cplPanelHtml(nd, isl){
   var b=(cplState==="ok")?cplOf(nd):null;
@@ -8024,6 +8096,9 @@ function renderNode(){
   // On the CPL face the credentials LEAD; on the Courses face they follow the
   // college courses (below), and only for a course that carries an articulation.
   if(face==="cpl") h+=cplPanelHtml(nd, isl);
+  // ...and on the Courses face the Articulations chip names them up here, since
+  // the block itself sits below 55 member rows on a course like FIRE 110 X.
+  else if(lit) h+=cplNamesHtml(nd, "u-exl");
   // The orbit: where a stand-alone sits and WHY, with the accept verb beside it.
   if(nd.a){
     var par=nd.o?nodeById(nd.o):null;
@@ -8567,7 +8642,16 @@ function setFace(f, quiet){
 }
 function setLit(on, quiet){
   lit=!!on; paintLit();
-  if(lit && cplState==="") loadCpl(function(){ if(cvs && document.getElementById("u-cvs")===cvs) draw(); });
+  /* ⚠️ REPAINT THE PANEL, NOT ONLY THE CANVAS. The chip now decides whether an
+   * open course card names its exhibits, so a chip that repainted only the sky
+   * would put the line on the NEXT course opened — the reader turns it on to
+   * see exhibits on the course in front of them and sees nothing. Both finish
+   * points: the record may still be loading when the chip goes on, and the
+   * line says so until it lands. setFace has always repainted for this reason. */
+  if(lit && cplState==="") loadCpl(function(){
+    if(cvs && document.getElementById("u-cvs")===cvs) draw();
+    repaintSelection();
+  });
   if(!quiet){
     var n=0, recs=0; if(U) U.islands.forEach(function(I){ I.p.forEach(function(nd){ if(nd.ar>0){ n++; recs+=nd.ar; } }); });
     var wide = view.k<=NODE_ZOOM ? " At this magnification the map draws <strong>disciplines</strong>: a discipline holding a lit course carries the ring, and the courses take it over as you zoom in." : "";
@@ -8576,6 +8660,7 @@ function setLit(on, quiet){
       : "Light out. Every course is drawn as it was.");
   }
   if(cvs && document.getElementById("u-cvs")===cvs) draw();
+  repaintSelection();
 }
 
 /* Isolate on/off. It re-counts every island (the signature changed), so the one
@@ -9100,12 +9185,60 @@ function olSegments(t){
     .map(olWords).filter(function(w){ return w.length>=2; });
 }
 /* Every college course under this identity that carries a catalog description. */
+/* ── a placeholder is not a description (Sam, 2026-09-10) ───────────────────
+ * "Some of the course descriptions have boilerplate test for descriptions."
+ * He was right, and the shape is narrower than it looks: literal reuse is a bad
+ * detector here, because the MOST reused strings in the corpus are the C-ID
+ * descriptors for statistics, psychology and government — good descriptions
+ * that many colleges share on purpose. What is actually junk is text that
+ * announces it is not a description.
+ *
+ * Measured against unified_courses_member_desc.js on 2026-09-10: 247 of the
+ * 127,266 non-empty rows (0.19%), 171 identities, 107 distinct strings — every one of them
+ * read by hand before this shipped. 65 identities go from "quotes a stub" to
+ * "says it has none", which is the honest answer; 106 keep a real description
+ * and stop losing the medoid vote to stubs beside it.
+ *
+ * ⚠️ ANCHORED, AND NEVER BY LENGTH. "Study of selected works of Shakespeare."
+ * is 38 characters and a real description; a length rule kills it. Each pattern
+ * below matches the WHOLE trimmed string, except the March-2012 migration
+ * boilerplate, which is 345 characters of prose whose entire content is that
+ * the field is blank.
+ *
+ * ⚠️ NOTHING IS HIDDEN — IT IS LABELLED. The map panel's member list still
+ * prints the stub verbatim when a curator opens that college's course: that
+ * list is each college's own record, and suppressing what a college published
+ * would launder the data. The outline's member list, which prints no
+ * description text at all, marks the row with the word "placeholder" beside the
+ * "no description" chip it already had. Only the DERIVED layers — the quoted
+ * description and the imputed skills — refuse to build on text that says
+ * nothing. */
+var OL_STUB = /text field is blank due to the .{0,40}data migration/i;
+var OL_EMPTY = new RegExp("^(?:n/?a|tbd|tba|none|null|xx+|[.\\-–—\\s]*"
+  /* ⚠️ NO COMMA IN THE SUBJECT CLAUSE, AND A BOUND ON IT. With `,` allowed and
+   * the clause unbounded, "Experimental course in advanced welding techniques,
+   * covering plate and pipe." matched — a real sentence, thrown away. No such
+   * row is in the corpus today, so the measurement did not catch it; the
+   * predicate's own check did. The longest real placeholder clause is
+   * "Computer Information Science - Applications" at 43. */
+  + "|experimental(?:\\s+(?:course|offering))?(?:\\s+in\\s+[\\w &/'-]{1,50})?"
+  + "|see\\s+experimental\\s+offerings?)[.\\s]*$", "i");
+function olIsPlaceholder(d){
+  var t=String(d==null?"":d).trim();
+  return !t || OL_STUB.test(t) || OL_EMPTY.test(t);
+}
+/* The real descriptions, with a count of what was set aside — the empty state
+ * says which of the two silences it is looking at, because "nobody wrote one"
+ * and "somebody wrote a placeholder" call for different work. */
 function olDescs(nd, isl){
-  var out=[];
+  var out=[], stubs=0;
   membersOf(nd.i).forEach(function(m){
     var info=courseInfo(isl, m);
-    if(info && info.desc) out.push({college:m.c, code:m.n, desc:info.desc, title:info.title, units:info.units});
+    if(!info || !info.desc) return;
+    if(olIsPlaceholder(info.desc)){ stubs++; return; }
+    out.push({college:m.c, code:m.n, desc:info.desc, title:info.title, units:info.units});
   });
+  out.stubs=stubs;
   return out;
 }
 /* Dice over content-word sets — the same shape the orbit scorer uses, so the
@@ -9447,6 +9580,13 @@ function olHtml(nd, isl){
       '">'+esc(lvl||"Level not stated")+'</span></div>'+
     '</div>';
 
+  /* The Articulations chip names the exhibits here too — the outline's own CPL
+   * layer is the fourth section down and collapsible, so the card could name a
+   * course and no exhibit until it was opened. Same gate as the map's panel:
+   * the chip is the lens, and turning it on names exhibits wherever a course is
+   * named. */
+  if(lit) h+=cplNamesHtml(nd, "u-exl ol-exl");
+
   /* Sam's sentence, verbatim, above everything it governs. */
   h+='<p class="ol-gen"><strong>MAP-Generated</strong> — for faculty consideration '+
      'and revision before use. This outline is assembled from what the colleges '+
@@ -9456,7 +9596,12 @@ function olHtml(nd, isl){
   var med=olMedoid(descs), dbody;
   if(loading) dbody='<p class="empty">Loading the catalog descriptions for '+esc(isl.d)+'…</p>';
   else if(!descs.length) dbody='<p class="empty">None of the '+num(total)+' college course'+
-    (total===1?"":"s")+' under this identity carries a catalog description, so there is nothing to draw a description from.</p>';
+    (total===1?"":"s")+' under this identity carries a catalog description, so there is nothing to draw a description from.'+
+    (descs.stubs
+      ? ' '+num(descs.stubs)+' publish'+(descs.stubs===1?"es":"")+' a placeholder instead — the March 2012 migration '+
+        'notice, or “Experimental course” — which is set aside here and left in the member list below, where it is '+
+        'each college’s own record.'
+      : '')+'</p>';
   else dbody='<blockquote class="ol-desc">'+esc(med.pick.desc)+'</blockquote>'+
     '<p class="ol-attr">'+esc(med.pick.college)+' · '+esc(med.pick.code)+
       (med.score!=null
@@ -9468,7 +9613,12 @@ function olHtml(nd, isl){
     (descs.length
       ? 'Quoted from a college catalog and attributed. MAP chose which one; it did not write it. '+
         '<strong>'+descs.length+' of '+num(total)+'</strong> college course'+(total===1?"":"s")+
-        ' under this identity publish a description.'
+        ' under this identity publish a description.'+
+        (descs.stubs
+          ? ' A further '+num(descs.stubs)+' publish'+(descs.stubs===1?"es":"")+' a placeholder — the March 2012 '+
+            'migration notice, or “Experimental course” — which cannot win the vote below, because text that '+
+            'says the field is blank would otherwise be the most typical thing on an identity where most of them say it.'
+          : '')
       : 'Drawn from the catalog descriptions of the colleges carrying this course.'),
     dbody, {empty: !descs.length && !loading});
 
@@ -9606,14 +9756,18 @@ function olHtml(nd, isl){
 
   /* The colleges, last: the evidence the layers above were drawn from. */
   h+=olLayer("members","The college courses under this identity",
-    'The rows every layer above was drawn from.',
+    'The rows every layer above was drawn from \u2014 and any it set aside, marked.',
     total
       ? '<ul class="ol-mem">'+mine.slice(0,40).map(function(m){
           var info=courseInfo(isl,m);
           return '<li><span class="ol-mem-c">'+esc(m.n)+'</span>'+
             '<span class="ol-mem-t">'+esc((info&&info.title)||"")+'</span>'+
             '<span class="ol-mem-g">'+esc(shortCollege(m.c))+'</span>'+
-            (info&&info.desc?'':'<span class="chip mut" title="This college publishes no catalog description for the course.">no description</span>')+
+            (info&&info.desc
+              ? (olIsPlaceholder(info.desc)
+                  ? '<span class="chip mut" title="This college publishes text where the description goes, but the text says the field is blank — the March 2012 migration notice, or “Experimental course”. The layers above are not drawn from it.">placeholder</span>'
+                  : '')
+              : '<span class="chip mut" title="This college publishes no catalog description for the course.">no description</span>')+
           '</li>';
         }).join("")+'</ul>'+(total>40?'<p class="ol-src">Showing 40 of '+num(total)+'.</p>':"")
       : '<p class="empty">No college course is carried under this identity.</p>');

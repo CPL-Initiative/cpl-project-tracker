@@ -53,6 +53,10 @@ const done = () => {
  *
  * ⚠️ A fixture too small to fail makes a guard a decoration. Each phrase below
  * appears in ENOUGH colleges to clear the two-college confidence tier. */
+/* The migration boilerplate as the corpus actually carries it — 345 characters
+ * of prose whose whole content is that the field is blank. 49 rows carry this
+ * exact string; it is the single most-reused description in the corpus. */
+const STUB = "This text field is blank due to the March 2012 data migration and CCC Curriculum Inventory Version 1 protocol. In an effort to maximize the accuracy of your college data in the CCC Curriculum Inventory, it is recommended but not required that the college takes action to amend via correction this data field to update the inventory record.";
 const DESCS = {
   // WELD M1012 — five colleges, four naming the process, none naming a level
   1001: ["Students practice gas tungsten arc welding on plate and pipe.", "Welding I", 3],
@@ -78,6 +82,18 @@ const DESCS = {
   5002: ["Practice in flux cored arc welding and the safety data sheet.", "FCAW II", 3],
   5003: ["This course covers flux cored arc welding of carbon steel.", "FCAW III", 3],
   5004: ["Training in flux-cored arc welding for structural steel.", "FCAW IV", 3],
+  /* ⭐ WELD M10PH — the PLACEHOLDER case (Sam, 2026-09-10: "some of the course
+     descriptions have boilerplate"). Two colleges publish the March 2012
+     migration notice and one publishes a real sentence. The two stubs are
+     IDENTICAL to each other and share almost no content words with the real
+     one, so the medoid — the description most typical of the rest — hands the
+     card a paragraph whose entire content is that the field is blank. It is not
+     a tie the fix breaks; the stub wins outright. */
+  6001: [STUB, "Special Topics", 3],
+  6002: [STUB, "Special Topics", 3],
+  6003: ["Fabrication of sheet metal ductwork, including layout and seaming.", "Sheet Metal", 3],
+  /* WELD M10EX — the only description is one that says there is none. */
+  7001: ["Experimental course.", "Experimental", 1],
 };
 const U = { counts: { identities: 3, standalone: 0 },
   bounds: { x0: -60, x1: 160, y0: -60, y1: 60 }, islands: [
@@ -85,7 +101,9 @@ const U = { counts: { identities: 3, standalone: 0 },
       { i: "WELD M1012", t: "Advanced Gas Tungsten Arc Welding", x: 0, y: 0, s: 0, u: 3, n: 5, ar: 6 },
       { i: "WELD M1073", t: "Blueprint Reading (Metal Trades)",  x: 6, y: 0, s: 0, u: 2, n: 3 },
       { i: "WELD M10TJ", t: "Welding Basics",                    x: 12, y: 0, s: 0, u: 2, n: 1 },
-      { i: "WELD M1041", t: "Flux Cored Arc Welding",            x: 18, y: 0, s: 0, u: 3, n: 4 } ] },
+      { i: "WELD M1041", t: "Flux Cored Arc Welding",            x: 18, y: 0, s: 0, u: 3, n: 4 },
+      { i: "WELD M10PH", t: "Special Topics in Sheet Metal",      x: 24, y: 0, s: 0, u: 3, n: 3 },
+      { i: "WELD M10EX", t: "Experimental Welding Topics",        x: 30, y: 0, s: 0, u: 1, n: 1 } ] },
   { d: "Nursing", sh: "nursing", x: 90, y: 0, r: 40, p: [
       { i: "NRSR M1101", t: "Fundamentals of Nursing", x: 90, y: 0, s: 0, u: 4, n: 3 } ] },
 ]};
@@ -95,7 +113,9 @@ const MEM = { colleges: ["Alpha College", "Beta College", "Gamma College", "Delt
        "NRSR M1101": [[2001,"NURS 10",0],[2002,"NURS 10",1],[2003,"NURS 11",2]],
        "WELD M1073": [[3001,"WELD 20",0],[3002,"WELD 21",1],[3003,"WELD 22",2]],
        "WELD M10TJ": [[4001,"WELD 5",0]],
-       "WELD M1041": [[5001,"WELD 40",0],[5002,"WELD 41",1],[5003,"WELD 42",2],[5004,"WELD 43",3]] } };
+       "WELD M1041": [[5001,"WELD 40",0],[5002,"WELD 41",1],[5003,"WELD 42",2],[5004,"WELD 43",3]],
+       "WELD M10PH": [[6001,"WELD 88",0],[6002,"WELD 88",1],[6003,"WELD 89",2]],
+       "WELD M10EX": [[7001,"WELD 99",0]] } };
 const ATLAS = { _generated_from: "2026-09-06 15:35", totals: { decision_components: 0, identities_inbrowser: 3,
   suggestion_groups: 0, member_rows: 11 }, disciplines: [
   { name: "Welding", decisions: 0, ids: 2, members: 8, flagged: 0, reviewed: 0 },
@@ -435,6 +455,88 @@ const css = tpl;                                  // the stylesheet, as authored
   check("(15) …and the outline it renders carries them",
         w.__ccrUniverseState().members > 0 && qa("#ol-members li").length === 4,
         `members ${w.__ccrUniverseState().members}, rows ${qa("#ol-members li").length}`);
+
+  /* ── (12) ⭐ A PLACEHOLDER IS NOT A DESCRIPTION (Sam, 2026-09-10) ──────────
+   * "Some of the course descriptions have boilerplate test for descriptions."
+   *
+   * ⚠️ THE OBVIOUS DETECTOR IS THE WRONG ONE. Reuse looks like the signal and
+   * is not: the six most-reused description strings in the corpus are the C-ID
+   * descriptors for statistics, psychology, government, composition, public
+   * speaking and critical thinking — 1,149 rows of GOOD text that many colleges
+   * publish identically on purpose. What is junk is text that announces it is
+   * not a description, and there is little of it: 247 of 127,266 non-empty rows
+   * (0.19%) across 107 distinct strings, every one read by hand before this
+   * shipped (measured 2026-09-10).
+   *
+   * ⚠️ AND NEVER BY LENGTH. "Study of selected works of Shakespeare." is 38
+   * characters and real. Check (12d) pins that. */
+  w.__ccrOutline("WELD M10PH");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc");
+    const quote = desc.querySelector(".ol-desc");
+    check("(12) ⭐ the card quotes the real description, not the migration stub",
+      !!quote && /sheet metal ductwork/.test(quote.textContent) &&
+      !/data migration/.test(quote.textContent), quote && quote.textContent.slice(0, 120));
+    check("(12a) the attribution follows the college that actually wrote one",
+      /Gamma College/.test(desc.querySelector(".ol-attr").textContent),
+      desc.querySelector(".ol-attr").textContent);
+    check("(12a) …and it is named the ONLY one, since one real description is not a vote",
+      /the only catalog description under this identity/.test(desc.querySelector(".ol-attr").textContent));
+    check("(12b) ⭐ the count says 1 of 3, not 3 of 3 — a stub is not a published description",
+      /<strong>1 of 3<\/strong>/.test(desc.querySelector(".ol-src").innerHTML),
+      desc.querySelector(".ol-src").textContent.slice(0, 200));
+    check("(12b) …and it says what it set aside, and why, rather than dropping it silently",
+      /A further 2 publish a placeholder/.test(desc.querySelector(".ol-src").textContent) &&
+      /March 2012/.test(desc.querySelector(".ol-src").textContent),
+      desc.querySelector(".ol-src").textContent.slice(0, 300));
+    /* ⚠️ NOTHING IS HIDDEN — IT IS LABELLED, and the first draft of this check
+     * asserted the wrong surface. The outline's member list prints no
+     * description text at all, so "the stub is still there" was never true of
+     * it; the map panel is where a curator reads a college's own words. What
+     * the outline owes the reader is which rows the layers above skipped. */
+    check("(12b) ⚠️ the outline's member list marks the two rows the layers above did not use",
+      q("#ol-members").querySelectorAll(".chip").length === 2 &&
+      /placeholder/.test(q("#ol-members").textContent) &&
+      !/no description/.test(q("#ol-members").textContent),
+      q("#ol-members").textContent.slice(0, 200));
+    check("(12b) …and nowhere in the imputed skills, which must not read a blank field as content",
+      !/migration|inventory|curriculum inventory/i.test(q("#ol-skills").textContent),
+      q("#ol-skills").textContent.slice(0, 200));
+  }
+
+  /* (12c) The other silence: an identity whose ONLY description says there is
+   * none. Quoting it would launder a placeholder into prose, which is exactly
+   * what Sam asked not to happen. */
+  w.__ccrOutline("WELD M10EX");
+  await tick(); await tick(); await tick();
+  {
+    const desc = q("#ol-desc");
+    check("(12c) ⭐ an identity with nothing but a placeholder says it has NO description",
+      desc.classList.contains("empty") && /nothing to draw a description from/.test(desc.textContent) &&
+      !desc.querySelector(".ol-desc"), desc.textContent.slice(0, 200));
+    check("(12c) …and names the placeholder, so the two silences are told apart",
+      /1 publishes a placeholder/.test(desc.textContent) && /Experimental course/.test(desc.textContent),
+      desc.textContent.slice(0, 300));
+  }
+
+  /* (12d) The false positives the rule must not make — checked against the
+   * predicate itself, since a fixture cannot carry 107 strings. */
+  {
+    const src = ujs;
+    const m = src.match(/var OL_STUB =[\s\S]*?^\}/m);
+    const f = new Function(m[0] + "; return olIsPlaceholder;")();
+    const junk = ["Experimental course.", "Experimental Offering in Biology", "See Experimental Offerings",
+                  "N/A", "n/a", ".", "tbd", "  ", STUB];
+    const real = ["Study of selected works of Shakespeare.",
+                  "Experimental course in advanced welding techniques, covering plate and pipe.",
+                  "An introduction to the experimental method in psychology.",
+                  "Students practice gas tungsten arc welding on plate and pipe.",
+                  "None of the above applies; this course surveys the None Group of compilers."];
+    check("(12d) every placeholder shape is caught", junk.every(f), junk.filter((x) => !f(x)).join(" | "));
+    check("(12d) ⭐ and no real description is — a length rule would kill the 38-character Shakespeare",
+      real.every((x) => !f(x)), real.filter(f).join(" | "));
+  }
 
   done();
 })().catch((e) => { console.error(e); process.exit(1); });
