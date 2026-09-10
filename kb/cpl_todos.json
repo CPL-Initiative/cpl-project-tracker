@@ -1,20 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-10",
-  "_session": "SkyReach (2026-09-10) — the cron outage: a diagnosis that did not stop the run",
-  "_status": "The daily dashboard stopped running on 8 September and nobody was told. MAP removed six columns from the student report that we had started asking for on 2 September; asking for a column a report no longer has makes MAP reject the whole report, and the rejection also scrambled the labels on a second report, so the build crashed. Nine runs failed the same way over three days while the fetch step printed the correct explanation each time and carried on anyway. Fixed three ways: we no longer ask for the six columns, a scrambled response is now refused outright instead of being passed along, and the build drops a report it cannot identify rather than half-reading it. Sam has asked Pedro to restore the columns; until then the funding model's counselor-accepted measure is left out rather than reported as zero, which is how it was designed to behave.",
+  "_session": "SkyLedger (2026-09-10) — the cron came back, and it brought three years of quiet drift with it",
+  "_status": "Repairing the daily dashboard was the easy half. Its first successful run in three days turned three separate checks red, and a fourth went red the same afternoon — every one of them a real problem that had been sitting there unseen, because a check can only report on what its tools can see. One was guarding the published page while the template that generates it kept the fault. One was asking whether a repair still had work to do, after the repair moved upstream and correctly had none. One map of how our files depend on each other was rebuilt while the new files were still invisible to it. All four are fixed and each now has a guard that can actually fail. Alongside that, CPL mode got its universe built: the map can now show credentials as the things you look at, with the courses that reach them drawn around each one. MAP also restored the student report columns that caused the outage, verified live.",
   "items": [
     {
       "id": "s251-fable-restore-lifecycle-columns",
       "for": "Fable",
       "tab": "implementation-funding",
-      "text": "The moment MAP restores the six CPL lifecycle checks, put them back in the daily fetch — it is one line, and the funding model's counselor-accepted measure starts publishing again with no other change. They were removed on MAP's side around 8 September, which is what took the dashboard down for three days; we stopped asking for them so the rest of the data could flow. The schema probe (Actions, Discover MAP datasets) still watches all six every run, so it will say when they are back."
-    },
-    {
-      "id": "s251-fable-kpi-history-backfill",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "The daily history file stops at 7 September because the dashboard did not run for three days. Once a fresh run lands, fill in 8 and 9 September as interpolated entries and mark them as such — otherwise the dashboard's one-day change figure silently compares against a date three days back. Cannot be done before the new run exists: interpolation needs both ends."
+      "text": "MAP has restored these and the probe proved it — all six checks are back on the student aggregate report at full fill (run 34493245398, 10 September). Sam has narrowed what we need to ONE of them: counselor verified, not student. The funding model's counselor-accepted measure already looks for that exact spelling, so this is a single column added back to the daily fetch and nothing else changes. The other five stay out on purpose — asking for columns nothing reads only makes an already large response larger."
     },
     {
       "id": "s251-fable-guessed-column-offsets",
@@ -27,12 +21,6 @@
       "for": "Sam",
       "tab": "unified-courses",
       "text": "You asked that a course carrying a C-ID or CCN designation take its description from the statewide template rather than from the colleges. We cannot do that yet: MAP holds the designation itself but not the wording that goes with it, on 541 courses (484 C-ID and 57 CCN). Those cards now say so plainly — they name the statewide descriptor as the authority and note that MAP does not hold its text — instead of presenting a consolidation as if it were the official wording. The question for you is whether ASCCC publishes the descriptor text in a form we can load, and who to ask. Once we have it, using it is a small change."
-    },
-    {
-      "id": "s251-fable-cpl-universe-builder",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Sam described what CPL mode should be, and it is not the current one. Instead of course circles renamed after credentials, he wants a second map whose entities are the exhibits themselves — a Firefighter 1 exhibit shown the way a course is shown, with each college's local version of it as a member underneath, grouped into disciplines, and a ring around any exhibit that courses have been articulated to. This needs a new data build: the file we have runs course-to-credential, which is the opposite direction. His exact words are recorded in the SkyView lane notes. It is a sizeable piece of work, not a session's tidy-up."
     },
     {
       "id": "s247-sam-skyview-phone-width",
@@ -129,6 +117,18 @@
       "for": "Sam",
       "tab": "unified-courses",
       "text": "A quiet one worth knowing about before it bites. Los Angeles Pierce College is recorded under the spellings 'LA PIERCE' and 'LA Pierce', but not under its own name, 'Pierce College'. Every internal table spells it the long way today, so nothing is broken right now. If a file ever arrives from outside using the college's own name, it would match nothing and the college would simply be absent, with no error to notice. Adding the third spelling now costs nothing."
+    },
+    {
+      "id": "s251-fable-cpl-universe-view",
+      "for": "Fable",
+      "tab": "skyview",
+      "text": "CPL mode's data is built and nothing draws it yet. The map now has a second universe where the entities are credentials rather than courses: 1,987 of them, folding 3,813 local exhibits colleges typed in, grouped into 97 discipline islands, with a ring on the 1,603 that a college course already articulates to. The next step is the view itself — the same sky, showing exhibits."
+    },
+    {
+      "id": "s251-sam-statewide-treatment",
+      "for": "Sam",
+      "tab": "skyview",
+      "text": "You asked that the statewide exhibits show up clearly on the sky, and the message cut off at “so folks can easily see…”. The data side is done — all 84 are marked, and they are the tidiest part of the map: every one has a discipline, every one already has a college course articulated to it, and most group several local exhibits together. What is open is what the seeing is FOR: telling which exhibits are statewide, showing a college what it could adopt, or showing where they are already in use. At 84 we can print the name beside each one, which we cannot do for all 1,987."
     }
   ]
 }

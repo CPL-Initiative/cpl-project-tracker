@@ -335,7 +335,7 @@ def pack_rings(items, gap=NODE_GAP):
     return pos, R_prev + f_prev
 
 
-def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
+def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R, point_fn=None):
     """Lay out one discipline: identities (with their orbiting stand-alones) on
     concentric rings, then the unaligned stand-alones on rim rings outside them.
 
@@ -345,7 +345,13 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
     (the discipline the course is filed under) when that is not this island —
     or, on the rim, a:1 with no `o`. `sats_by_parent` values are
     (row, (score, why)) or (row, (score, why), home) tuples.
+
+    `point_fn` builds one point from (row, x, y); it defaults to point_of(),
+    the course shape. SkyView's CPL universe passes an exhibit shape so that
+    both universes share ONE layout rather than a copy that drifts — the same
+    reason kb/alias_chain.py is imported and never duplicated.
     """
+    point_fn = point_fn or point_of
     plans = []
     for r in idents:
         base = node_r(int(r.get("members") or 0))
@@ -357,7 +363,7 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
 
     pts = []
     for (r, base, rings, foot, sats), (cx, cy) in zip(plans, centres):
-        pt = point_of(r, cx, cy)
+        pt = point_fn(r, cx, cy)
         if sats:
             pt["k"] = len(sats)
         pts.append(pt)
@@ -372,7 +378,7 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
                 ri += 1
                 s, (score, why) = item[0], item[1]
                 home = item[2] if len(item) > 2 else None
-                sp = point_of(s, x, y)
+                sp = point_fn(s, x, y)
                 sp.update({"a": 1, "o": r["id"], "q": score, "w": why})
                 if home is not None:
                     sp["h"] = home                  # filed under another discipline
@@ -384,7 +390,7 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
     if not plans and left:
         # A discipline with no identities at all: one course at the centre, the
         # rest on rings from the first radius two satellites can share.
-        sp = point_of(left[0], 0.0, 0.0); sp["a"] = 1; pts.append(sp)
+        sp = point_fn(left[0], 0.0, 0.0); sp["a"] = 1; pts.append(sp)
         left = left[1:]
         R = 2 * sat_r + RING_GAP
     ring_i = 0
@@ -393,7 +399,7 @@ def layout_island(idents, sats_by_parent, rim_sats, sat_r=SAT_R):
         take = min(cap, len(left))
         for (x, y), s in zip(ring_positions(0, 0, R, take, 0.31 * ring_i),
                              by_level(left[:take], lambda r: (r.get("title") or ""))):
-            sp = point_of(s, x, y)
+            sp = point_fn(s, x, y)
             sp["a"] = 1
             pts.append(sp)
         left = left[take:]
@@ -775,12 +781,13 @@ def group_corpus(rows, sa_rows):
     return order, by_disc, sa_by_disc, sats_by_parent, rim_by_disc, disc_of_ident, stats
 
 
-def build_islands(order, by_disc, sa_by_disc, sats_by_parent, rim_by_disc):
+def build_islands(order, by_disc, sa_by_disc, sats_by_parent, rim_by_disc, point_fn=None):
     GAP = 34.0
     islands, placed = [], []
     for k, disc in enumerate(order):
         idents = by_disc.get(disc, [])
-        pts, r_isl = layout_island(idents, sats_by_parent, rim_by_disc.get(disc, []))
+        pts, r_isl = layout_island(idents, sats_by_parent, rim_by_disc.get(disc, []),
+                                   point_fn=point_fn)
         r_isl = max(26.0, r_isl)
         # walk outward on a golden-angle spiral until this disc clears every
         # island already placed — biggest first keeps the centre dense

@@ -152,6 +152,17 @@ jobs:
       # no network.
       - name: SkyView CPL payload guard (kb/_build_ccr_cpl.py)
         run: python3 tests/ccr_cpl_payload_test.py
+      # SkyView's CPL UNIVERSE (Session 252) — the second universe Sam ruled on
+      # 2026-09-10, where the entities are EXHIBITS rather than courses. Guards
+      # that two CER titles differing only past slug()'s 60-char filename cut do
+      # not collide into one entity (they did on the first build), that the
+      # builder's only data input is the curated CER and never the crosswalk's
+      # 2026-05-21 issuer snapshot, that Sam's two rulings hold (a singleton
+      # draws as a full identity; the no-discipline pile ships as an island),
+      # that every statewide exhibit is marked, and that the committed payload
+      # is a fresh build. Pure-stdlib python, no network.
+      - name: SkyView CPL universe guard (kb/_build_ccr_cpl_universe.py)
+        run: python3 tests/ccr_cpl_universe_test.py
       # SkyView's sky placement (Session 239) — where each discipline island
       # sits on the sphere, three ways, and the CTE reading behind the third.
       # Guards that the committed prototype/ccr_sky.json is a build of today's
