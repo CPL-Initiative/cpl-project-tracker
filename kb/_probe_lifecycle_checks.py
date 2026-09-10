@@ -141,6 +141,22 @@ WATCH = {
                   "Counselor_Verified", "Student_Verified", "Transcribed"],
 }
 
+# ⚠️ WATCHED BUT NO LONGER REQUESTED (2026-09-10). MAP served these six from
+# 2026-09-02 and had removed them by 2026-09-08; asking for a column a view does
+# not have 400s the WHOLE view, and the 400 made MAP label a neighbour's data
+# with this view's name, which took the daily cron down for three days. So
+# fetch_custom_report.py no longer asks for them — and this probe MUST keep
+# watching them, because the probe is how we find out the day they come back.
+#
+# The invariant "everything watched is also requested" held until then and is
+# still worth keeping for anything NOT named here: a watch list that drifts free
+# of the request is how a column gets profiled that nobody collects. Named here,
+# with the reason, rather than loosened away.
+WITHDRAWN = {
+    STUDENT_AGG: ["CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
+                  "Counselor_Verified", "Student_Verified", "Transcribed"],
+}
+
 # If the booleans landed on a NEW view rather than a new column, these are the
 # spellings worth one bounded request each. A miss here proves nothing; a hit
 # or a 5xx is a lead.
