@@ -91,13 +91,30 @@ def main():
         blank_before = sum(1 for r in live if not r.get("disc"))
         st = discipline_edge_fill(live, KB)
         filled = blank_before - st["blank_after"]
-        # A floor, not an equality: the payload is regenerated daily and the
-        # stores are curated, so the number moves. What must not happen is the
-        # fill quietly stopping.
-        check(f"on the live payload the edge still fills the bulk of the blanks "
-              f"({filled} of {blank_before})",
-              blank_before == 0 or filled >= blank_before * 0.5,
-              f"filled {filled} of {blank_before}")
+        # ⚠️ THIS CHECK ONCE MEASURED YIELD, AND YIELD GOES TO ZERO ON SUCCESS
+        # (2026-09-10). It read `filled >= blank_before * 0.5` -- written when
+        # the fill was a post-hoc repair a reader applied to a committed
+        # payload. S242 (#1517, 2026-09-08) wired discipline_edge_fill() INTO
+        # excel_to_dashboard.py, so the generator now fills at generation time
+        # and the committed payload arrives already at the fixed point. The
+        # cron died the same day and ran no payload until 2026-09-10, so the
+        # old assertion stayed green on a payload predating its own premise;
+        # the first run afterwards filled 240 of 326 upstream and the check
+        # failed 0-of-86 ON SUCCESS.
+        #
+        # So assert the FIXED POINT instead, which catches the same failure
+        # from the other side: if the generator ever stops applying the fill,
+        # the blanks come back and `filled` jumps off zero.
+        check(f"the committed payload is already edge-filled -- re-running finds "
+              f"nothing to do ({blank_before} blank, {filled} fillable)",
+              filled == 0,
+              f"{filled} of {blank_before} blanks are still fillable -- the "
+              f"generator emitted a payload it had not run the edge fill over")
+        # The residue is real (SUBJ4s absent from every store), not a stall, so
+        # it is bounded rather than zero. 86 on 2026-09-10 of 16,480 rows.
+        check(f"the unfillable residue stays small ({blank_before} of {len(live)})",
+              blank_before <= len(live) * 0.02,
+              f"{blank_before} blank of {len(live)}")
         psyc = [r for r in live if r["id"] == "PSYC C1000"]
         if psyc:
             check("PSYC C1000 lands in Psychology — the row Sam asked about",

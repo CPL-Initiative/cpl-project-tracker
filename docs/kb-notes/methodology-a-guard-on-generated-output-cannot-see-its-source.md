@@ -62,11 +62,31 @@ still passed, because it reads `CPL_Dashboard.html`.
   `background:#fff` in `CPL_Dashboard.html` from 0 to 4, turning the suite red on
   the next PR.
 
+**And the guard can invert when the work moves upstream.** A second check failed
+the same morning for the mirror reason. `tests/discipline_edge_fill_test.py`
+asserted that re-running `discipline_edge_fill()` over the committed
+`unified_courses_data.js` still fills *half* the blank disciplines — a sound
+measure while the fill was a post-hoc repair a reader applied. S242 (#1517,
+2026-09-08) wired that same function into `excel_to_dashboard.py`, so the
+generator began filling at generation time and the payload started arriving
+already at the fixed point. The cron died the same day, so the assertion sat
+green against a payload that predated its own premise; the first run afterwards
+filled 240 of 326 upstream and the check reported `0 of 86` — **failing on
+success.**
+
+**A guard that measures a transformation's YIELD breaks when the transformation
+moves upstream of the artifact it reads.** Measure the fixed point instead: *the
+committed payload is already filled, so re-running finds nothing to do.* That
+catches the real failure — the generator silently ceasing to apply the fill —
+from the side that survives the move, because the blanks would come back and the
+yield would jump off zero. Falsified against the pre-cron payload: `240 of 326
+blanks are still fillable`.
+
 **The practical consequence: fixing a broken generator surfaces every regression
 its silence was hiding.** A red artifact check immediately after a generator
 repair is evidence of latent source drift, not of the repair being wrong. Read it
 that way before reaching for a revert — the reds are a backlog coming due, and
-each one names a source file the last sweep missed.
+each one names a source file the last sweep missed, or a guard whose premise the generator moved out from under it.
 
 ## How we got here
 
