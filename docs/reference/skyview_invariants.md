@@ -1,7 +1,7 @@
 ---
 title: "SkyView — the engineering invariants"
 created: 2026-09-09
-updated: 2026-09-09
+updated: 2026-09-10
 tags: [reference, skyview]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -80,6 +80,19 @@ tests fail CI on a stale file.
 
 ⚠️ **`npm test` proves nothing about layout** — jsdom returns zeroes for every
 rectangle. Run `npm run a11y skyview` (11 routes) or drive a real browser.
+⭐ **`npm run sweep` DRIVES THE SERVED PAGE THROUGH EVERY ACTION** (S252,
+`prototype/check_skyview_sweep.js`, ~200 checks): the Sky opening, the row, the
+More menu, Show, ticking then Enter and the chips, the Ask with a MOCKED assistant
+and with the network refused, hover and click, the carry and the drop, the outline
+sheet's staged edits, the grip, the window steps, every route, a phone's pinch. It
+needs the shards (`--shards-only`) and a Chromium; a FAIL is a defect or a harness
+assumption gone stale — read the bracketed detail before deciding which.
+⚠️ **`prototype/check_ccr_atlas.js` is OLDER THAN THE PAGE.** It drives the built
+page as the flat map and clicks a suggestion row expecting a fly; since the
+2026-09-06 ruling a row only ticks and Enter applies, so eleven of its checks read
+red on a page that is right (the row's chips, the Sky's readout, `#prov`, the
+hidden Controls word, the staged words). Read its FAILs as stale until it is re-cut
+or retired in favor of the sweep.
 ⚠️ **And `npm test` does not run the dependency-map check.** The map records LINE
 NUMBERS, so any edit to a mapped file makes it stale and turns CI red on a green
 local suite: `python3 kb/_build_dependency_map.py --check`.
@@ -157,6 +170,14 @@ every *Drag…* became a silent no-op for the session. Released in `applyMove`
 member ring spreads over its neighbors and `pick()` gives those stars absolute
 priority — right for reading, wrong for aiming. `pick(px,py,forDrop)` resolves
 circles only while carrying. ⚠️ Neither rule may be widened onto the other.
+
+⚠️ **A MOUSE CLICK ON *Drag…* IS `pointerdown` THEN `click`, AND THE CLICK BRANCH
+MUST NOT BE DEAD** (S252). `pointerdown` picks the course up and `preventDefault`
+keeps focus where it was; a click handler that acts only when nothing is carried
+never repaints the panel or focuses the canvas, so *Esc puts it back* was a promise
+only the keyboard kept — and the reader's next click on the map, made to get focus
+back, PARKED the course. The click completes the pick-up it started:
+`tests/ccr_skyview_carry_release.test.js` (17).
 
 ⚠️ **THE TURN'S `dt` CLAMP MUST SIT ABOVE THE REAL FRAME TIME** (`TURN_DT_MAX`).
 It guards a backgrounded tab and is not a frame-rate limiter; below the real
@@ -259,6 +280,17 @@ id resolves against the live payload, and what does not resolve is REPORTED, not
 dropped — a dropped name and an empty island look identical and mean opposite
 things. An ambiguous near-match resolves to NOTHING rather than the first hit.
 ⚠️ A question that resolves to nothing leaves the map exactly as it was.
+
+⭐ **A TERM BESIDE A DISCIPLINE IS THE TERM WITHIN IT — on the ask path only**
+(S252, from Sam's screenshot: *"show me all introductory welding courses"* came
+back as {Welding} + {introductory}; the chips are a UNION, so every introductory
+title in every discipline was ringed and the map flew to the densest one — Welding
+was not in view). `askResolve()` stamps `within` on the term, `tokenHits()` searches
+inside those islands only, and `focusScoped()` lands on the hits. ⚠️ **The model's
+word is not the catalog's**: *introductory* names 2 Welding titles, *Introduction
+to …* 44 — a scoped word with under three hits is retried as its first five letters
+and the answer beside the box says so. A typed search stays literal; dropping the
+discipline chip drops the scope. `tests/ccr_skyview_ask.test.js` (17)-(18).
 
 ⚠️ **A NEW cpl-chat SURFACE MUST BE DECLARED IN FIVE PLACES**, and three suites
 enforce it: `KNOWN_SURFACES`, `DRAFTING_SURFACES` + its cap table, the

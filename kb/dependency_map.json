@@ -6,7 +6,7 @@
   "edge_functions": 5,
   "file_datasets": 457,
   "external_services": 138,
-  "consumers": 328,
+  "consumers": 329,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -59,7 +59,14 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 3682
+     "line": 3708
+    },
+    {
+     "id": "module:prototype/check_skyview_sweep.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 387
     },
     {
      "id": "module:sierra/sierra.js",
@@ -177,6 +184,13 @@
      "direction": "read",
      "how": "url",
      "line": 56
+    },
+    {
+     "id": "module:prototype/check_skyview_sweep.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 84
     },
     {
      "id": "module:scripts/a11y.js",
@@ -1128,7 +1142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5147
+     "line": 5225
     }
    ],
    "main_committers": []
@@ -12700,8 +12714,16 @@
      "line": 65
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:prototype/ccr_desc/*.json": {
    "consumers": [
@@ -18086,6 +18108,7 @@
     "prototype/ccr_atlas_data.json",
     "prototype/skyview.html",
     "prototype/ccr_cpl.json",
+    "prototype/ccr_cpl_universe.json",
     "prototype/ccr_sky.json",
     "kb/discipline_blanks_worklist.json",
     "kb/discipline_cpl_rollup.json",
