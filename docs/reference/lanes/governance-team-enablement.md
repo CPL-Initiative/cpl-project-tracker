@@ -1,7 +1,7 @@
 ---
 title: "Governance & team enablement — lane state"
 created: 2026-08-28
-updated: 2026-08-30
+updated: 2026-09-10
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -61,10 +61,29 @@ about each other. Measured at the time: the row was `active: true` but pointing
 at `session_01PmWf…` — a **previous** session — with `expires_at` six hours in
 the past, so the banner correctly rendered nothing. It had never been switched
 off; it aged out. ⭐ **The Admin control already says exactly this** ("Now: not
-showing *(the link expired)*"), so the gap is not the UI but that an author who
-does not open Admin is never told their banner stopped. The 2/4/8-hour expiry is
-the right default for a disclosure — a session link should not outlive the
-session — so the fix is a notice to its author, never a longer life. Setting the
+showing *(the link expired)*"), so the gap was never the UI but that an author
+who does not open Admin was never told their banner stopped. The 2/4/8-hour
+expiry is the right default for a disclosure — a session link should not outlive
+the session — so the fix was a notice to its author, never a longer life.
+
+✅ **BUILT 2026-09-10 (#1537), because Sam hit it a second time** and reported
+the banner as never built: *"I still don't see the banner saying I'm active in a
+CC session with a link in the header."* An active row past its expiry now renders
+a curator-only line where the banner would have been — *"Your live-session banner
+expired 2 days ago"* — naming `expires_at` on `cobi_live_session` and what to
+set. ⚠️ **It carries NO link**: the link is what expired, and offering it invites
+the team into the dead session the expiry exists to prevent. ⚠️ **Its own dismiss
+key**, so hiding the notice can never hide the real banner a fresh row produces.
+⚠️ **Safe by construction, not by a second gate** — reaching that code means the
+reader already read the row, and RLS gates the table by `is_map_team() OR
+team_pass_ok()`, so a plain visitor never enters the function. An expiry this
+engine cannot read gets its own sentence rather than "expired NaN days ago".
+
+⭐ **THE LESSON IS BIGGER THAN THE BANNER: failing closed and failing silently
+are separable, and only the first was ever the requirement.** Every check in
+`tests/cobi_live_banner.test.js` asked whether the banner was ABSENT, and absent
+was the correct answer each time — the suite was green for the whole day Sam
+spent believing the feature did not exist. Setting the
 row is deliberately a human act and a session should not do it: the control's own
 copy names the failure it guards, *"turning the banner on for a session that is
 still Private and sending the whole organization at a link only its author can

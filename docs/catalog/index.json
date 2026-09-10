@@ -12343,7 +12343,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-08-30"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-28",
@@ -12712,7 +12712,7 @@
      ],
      "title": "Engineering & UI practices (CLAUDE.md offload)",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-15",
@@ -12819,8 +12819,21 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 224,
+   "count": 225,
    "docs": [
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "n": 251,
+     "path": "docs/session_251_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff"
+     ],
+     "title": "three silences, and a description that belongs to nobody",
+     "type": null,
+     "updated": "2026-09-10"
+    },
     {
      "created": "2026-09-09",
      "governs": [],
@@ -16613,5 +16626,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 859
+ "total": 860
 }
