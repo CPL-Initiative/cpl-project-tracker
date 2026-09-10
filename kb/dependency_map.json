@@ -4,7 +4,7 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 453,
+  "file_datasets": 454,
   "external_services": 138,
   "consumers": 327,
   "workflows": 33,
@@ -13664,6 +13664,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/kpi_history_no_gaps_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/legacy_anchor_duplicates_test.py": {
    "consumers": [
     {
@@ -18137,7 +18150,8 @@
     "tests/merge_candidate_queue_test.py",
     "tests/alias_chain_single_source_test.py",
     "tests/stop_hook_git_check_test.py",
-    "tests/video_context_test.py"
+    "tests/video_context_test.py",
+    "tests/kpi_history_no_gaps_test.py"
    ],
    "adds": [],
    "push": null,

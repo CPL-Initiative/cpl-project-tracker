@@ -243,14 +243,14 @@
       // when the builder has already drawn a draft, which is why it reads as
       // intermittent rather than as the standing defect it is.
       "#tab-tmc-builder .tmc-draftnote{color:var(--mustard-text);font-weight:600;}" +
-      "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
+      "#tab-tmc-builder .tmc-intro{color:var(--text-body);margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
       // consolidated filter block (College · Show · Find · Curator) — replaces the old topbar + pickers
       "#tab-tmc-builder .tmc-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:12px 16px;margin-bottom:16px;}" +
       "#tab-tmc-builder .tmc-filters .tmc-auth{margin-left:auto;align-self:center;}" +
       "#tab-tmc-builder .tmc-pick-find{flex:1 1 180px;min-width:150px;}" +
       "#tab-tmc-builder .tmc-pick-find input{width:100%;box-sizing:border-box;padding:8px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;}" +
       // TMC directory (list view)
-      "#tab-tmc-builder .tmc-listhead{font-size:.9rem;color:#4b5563;margin:0 2px 12px;}" +
+      "#tab-tmc-builder .tmc-listhead{font-size:.9rem;color:var(--text-body);margin:0 2px 12px;}" +
       "#tab-tmc-builder .tmc-listcount{display:inline-block;font-weight:700;color:var(--navy-primary);background:#eef2fb;border:1px solid #d6e0f5;border-radius:20px;padding:1px 10px;margin-right:8px;font-size:.82rem;}" +
       "#tab-tmc-builder .tmc-listbox{border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;overflow:hidden;}" +
       "#tab-tmc-builder .tmc-listtable{width:100%;border-collapse:collapse;font-size:.9rem;}" +
@@ -278,7 +278,7 @@
       "#tab-tmc-builder .tmc-ge-pick{display:flex;align-items:center;gap:8px;}" +
       "#tab-tmc-builder .tmc-ge-pick label{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);font-weight:700;}" +
       "#tab-tmc-builder .tmc-ge-pick select{padding:7px 10px;border:1px solid var(--border-strong,#cbd5e1);border-radius:7px;font-size:.9rem;background:var(--surface-opaque);}" +
-      "#tab-tmc-builder .tmc-ge-note{padding:9px 18px;font-size:.82rem;color:#4b5563;background:#fffdf6;border-bottom:1px solid #f0e8d6;}" +
+      "#tab-tmc-builder .tmc-ge-note{padding:9px 18px;font-size:.82rem;color:var(--text-body);background:#fffdf6;border-bottom:1px solid #f0e8d6;}" +
       "#tab-tmc-builder .tmc-ge-note em{color:#92400e;font-style:italic;}" +
       "#tab-tmc-builder .tmc-ge-legacy{display:inline-block;font-size:.66rem;font-weight:700;color:#92400e;background:#fffbeb;border:1px solid #fcd34d;border-radius:20px;padding:0 8px;}" +
       "#tab-tmc-builder .tmc-ge-tag{display:inline-block;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;font-weight:700;color:#7a5c00;background:#fdf3d4;border:1px solid var(--gold-accent,#e3b341);border-radius:5px;padding:1px 7px;margin-right:6px;}" +
@@ -414,7 +414,7 @@
       "#tab-tmc-builder .tmc-modal-bg{position:fixed;inset:0;background:rgba(28,28,26,.5);z-index:100000;display:flex;align-items:flex-start;justify-content:center;padding:5rem 1rem;}" +
       "#tab-tmc-builder .tmc-modal{background:var(--surface-opaque);max-width:520px;width:100%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,.35);padding:20px 22px;}" +
       "#tab-tmc-builder .tmc-modal h3{margin:0 0 10px;color:var(--navy-primary);}" +
-      "#tab-tmc-builder .tmc-modal label{display:block;font-size:.78rem;font-weight:700;color:#374151;margin:8px 0 3px;}" +
+      "#tab-tmc-builder .tmc-modal label{display:block;font-size:.78rem;font-weight:700;color:var(--text-body);margin:8px 0 3px;}" +
       "#tab-tmc-builder .tmc-modal input,#tab-tmc-builder .tmc-modal textarea{width:100%;box-sizing:border-box;border:1px solid var(--border-strong,#cbd5e1);border-radius:6px;padding:7px 9px;font-size:.85rem;font-family:inherit;}" +
       "@media (max-width:720px){#tab-tmc-builder .tmc-slot,#tab-tmc-builder .tmc-colhead{grid-template-columns:1fr;}}" +
       "@media print{body *{visibility:hidden;}#tab-tmc-builder,#tab-tmc-builder *{visibility:visible;}#tab-tmc-builder .tmc-pickers,#tab-tmc-builder .tmc-actions,#tab-tmc-builder .tmc-pop{display:none!important;}#tab-tmc-builder{position:absolute;left:0;top:0;width:100%;}}";

@@ -85,6 +85,13 @@
                Hard-coded #fff on a themed fill measured 2.65:1 on every tab. */
             --on-accent: #FFFFFF;
             --on-mustard: #1C1C1A;            /* ink ON the bright mustard fill — NEVER redefined dark */
+            /* ink ON the seal-blue fill, quiet grade — NEVER redefined dark, for the
+               same reason --on-mustard is not: --seal-blue is deliberately the
+               same navy in both themes (65 fills, 53 borders), so ink laid on it
+               must be fixed too. 5.03:1 on #002F6D. ⚠️ Sweeping such a site to
+               --text-muted reads as a tidy-up and lands at 1.92:1 in LIGHT —
+               measured, S249, on .cr-sort-indicator. */
+            --on-seal-blue-muted: #94A3B8;
             --rail-hover: rgba(28,28,26,.06);
             /* ⚠️ THE SPLIT --seal-blue COULD NOT HAVE (see the dark block). The navy
                is a FILL for 200+ surfaces carrying white text, so the token stays
@@ -165,6 +172,14 @@
             /* the soft gold ground: a phantom until S249, so its #fbf3d9 fallback
                painted cream in dark too. Light keeps the fallback deliberately. */
             --gold-soft: #4A3A10;
+            /* the glass-quiet chip recipe (First Light spec v1.6) needs a DARK
+               BRANCH, not a removal: rgba(255,255,255,.5) is a light-only
+               construct that composites to a mid grey over the night ground
+               (#8A8A8A and #8F8F8E, measured) and fought every themed ink laid
+               on it — 7 findings from three declarations. Light keeps the
+               recipe verbatim via the fallback. Every themed ink clears AA on
+               this fill: worst is --hunter at 5.65:1. */
+            --glass-quiet: #262624;
 
             /* ⚠️ 21 MORE PHANTOM TOKENS — DARK BLOCKS ONLY, same rule and the
                same reason as --surface-1/--surface-2 above (S249). Every one
@@ -275,6 +290,14 @@
             /* the soft gold ground: a phantom until S249, so its #fbf3d9 fallback
                painted cream in dark too. Light keeps the fallback deliberately. */
             --gold-soft: #4A3A10;
+            /* the glass-quiet chip recipe (First Light spec v1.6) needs a DARK
+               BRANCH, not a removal: rgba(255,255,255,.5) is a light-only
+               construct that composites to a mid grey over the night ground
+               (#8A8A8A and #8F8F8E, measured) and fought every themed ink laid
+               on it — 7 findings from three declarations. Light keeps the
+               recipe verbatim via the fallback. Every themed ink clears AA on
+               this fill: worst is --hunter at 5.65:1. */
+            --glass-quiet: #262624;
 
             /* ⚠️ 21 MORE PHANTOM TOKENS — DARK BLOCKS ONLY, same rule and the
                same reason as --surface-1/--surface-2 above (S249). Every one
@@ -8859,7 +8882,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-unified-courses .uc-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
             #tab-unified-courses .uc-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:var(--surface-opaque); }
             #tab-unified-courses input.uc-filter { min-width:200px; }
-            #tab-unified-courses .uc-flag-toggle { font-size:.85rem; color:#374151; display:flex; align-items:center; gap:4px; }
+            #tab-unified-courses .uc-flag-toggle { font-size:.85rem; color:var(--text-body); display:flex; align-items:center; gap:4px; }
             #tab-unified-courses .uc-export { margin-left:auto; background:var(--seal-blue); color:var(--gold-accent); padding:7px 12px; border-radius:6px; text-decoration:none; font-size:.85rem; font-weight:600; }
             #tab-unified-courses .uc-export:hover { background:#0d2c52; }
             #tab-unified-courses .uc-summary { color:#6b7280; font-size:.82rem; margin-bottom:8px; }
@@ -8895,18 +8918,18 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-unified-courses .uc-id { font-family:ui-monospace,Menlo,monospace; white-space:nowrap; color:#334155; }
             #tab-unified-courses .uc-info { text-decoration:none; color:var(--navy-primary); cursor:pointer; font-size:.95rem; }
             #tab-unified-courses .uc-info:hover { color:var(--gold-accent); }
-            #tab-unified-courses .uc-caret { text-decoration:none; color:#64748b; cursor:pointer; font-size:.8rem; }
+            #tab-unified-courses .uc-caret { text-decoration:none; color:var(--text-muted); cursor:pointer; font-size:.8rem; }
             #tab-unified-courses .uc-caret:hover { color:var(--navy-primary); }
             #tab-unified-courses .uc-member-cell { background:#f8fafc; padding:8px 14px 12px; }
-            #tab-unified-courses .uc-member-count { font-size:.78rem; color:#64748b; margin:2px 0 6px; }
+            #tab-unified-courses .uc-member-count { font-size:.78rem; color:var(--text-muted); margin:2px 0 6px; }
             #tab-unified-courses .uc-member-table { width:100%; border-collapse:collapse; font-size:.82rem; background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:6px; }
-            #tab-unified-courses .uc-member-table th { text-align:left; padding:5px 8px; color:#64748b; font-weight:600; border-bottom:1px solid #eef2f7; }
+            #tab-unified-courses .uc-member-table th { text-align:left; padding:5px 8px; color:var(--text-muted); font-weight:600; border-bottom:1px solid #eef2f7; }
             #tab-unified-courses .uc-member-table td { text-align:left; padding:5px 8px; border-top:1px solid #f1f5f9; }
-            #tab-unified-courses .uc-member-empty { font-size:.82rem; color:#94a3b8; }
+            #tab-unified-courses .uc-member-empty { font-size:.82rem; color:var(--text-muted); }
             #tab-unified-courses .uc-adopt { font-weight:600; cursor:default; }
             #tab-unified-courses .uc-adopt.adopted { color:var(--hunter); }
             #tab-unified-courses .uc-adopt.potential { color:var(--mustard-text); }
-            #tab-unified-courses .uc-badge { display:inline-block; font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:8px; margin:1px 3px 1px 0; white-space:nowrap; background:rgba(255,255,255,.5); border:1px solid var(--border-strong); }
+            #tab-unified-courses .uc-badge { display:inline-block; font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:8px; margin:1px 3px 1px 0; white-space:nowrap; background:var(--glass-quiet, rgba(255,255,255,.5)); border:1px solid var(--border-strong); }
             /* Flags chips wrap inside a width-capped inner block (left-aligned) so the
                chip column stacks 2-up instead of stringing the row past the viewport —
                the nowrap version was the remaining horizontal-scroll culprit. */
@@ -8917,7 +8940,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-unified-courses .uc-badge.mix { color:var(--mustard-text); }
             #tab-unified-courses .uc-badge.muted { color:var(--text-muted); }
             #tab-unified-courses .uc-badge.ok { color:var(--hunter); }
-            #tab-unified-courses .uc-auth { font-size:.82rem; color:#374151; margin-left:6px; }
+            #tab-unified-courses .uc-auth { font-size:.82rem; color:var(--text-body); margin-left:6px; }
             #tab-unified-courses .uc-auth-link { color:var(--navy-primary); font-weight:600; text-decoration:underline; cursor:pointer; font-size:.68rem; }
             #tab-unified-courses .uc-auth-on { color:#166534; font-weight:600; }
             /* Sign-in feedback panel — inline replacement for alert() */
@@ -8960,7 +8983,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 .cs-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
             #tab-canonical-subj4 .cs-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:var(--surface-opaque); }
             #tab-canonical-subj4 input.cs-filter { min-width:200px; }
-            #tab-canonical-subj4 .cs-summary { color:#374151; font-size:.85rem; margin-bottom:8px; }
+            #tab-canonical-subj4 .cs-summary { color:var(--text-body); font-size:.85rem; margin-bottom:8px; }
             #tab-canonical-subj4 .cs-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
             #tab-canonical-subj4 table.cs-table { border-collapse:collapse; width:100%; font-size:.85rem; }
             #tab-canonical-subj4 .cs-table th { position:sticky; top:0; background:var(--seal-blue); color:var(--gold-accent); text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
@@ -8982,24 +9005,24 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 .cs-mono { font-family:ui-monospace,Menlo,monospace; }
             #tab-canonical-subj4 .cs-variants { color:#475569; font-size:.78rem; max-width:42ch; }
             #tab-canonical-subj4 .cs-variants .cs-var-modal { font-weight:400; color:#000; }
-            #tab-canonical-subj4 .cs-variants .cs-var-other { color:#64748b; }
+            #tab-canonical-subj4 .cs-variants .cs-var-other { color:var(--text-muted); }
             #tab-canonical-subj4 input.cs-canon { font-family:ui-monospace,Menlo,monospace; text-transform:uppercase; width:7ch; padding:3px 6px; border:1px solid #cbd5e1; border-radius:5px; font-size:.78rem; letter-spacing:0.25px; }
             #tab-canonical-subj4 input.cs-canon.cs-invalid { border-color:#dc2626; background:#fef2f2; }
             #tab-canonical-subj4 input.cs-canon.cs-saved { border-color:#16a34a; background:#f0fdf4; }
             #tab-canonical-subj4 textarea.cs-notes { width:30ch; min-height:34px; resize:vertical; font-size:.78rem; padding:4px 6px; border:1px solid #cbd5e1; border-radius:5px; }
-            #tab-canonical-subj4 .cs-badge { display:inline-block; font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:8px; background:rgba(255,255,255,.5); border:1px solid var(--border-strong); }
+            #tab-canonical-subj4 .cs-badge { display:inline-block; font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:8px; background:var(--glass-quiet, rgba(255,255,255,.5)); border:1px solid var(--border-strong); }
             #tab-canonical-subj4 .cs-badge.warn { color:var(--crimson); }
             #tab-canonical-subj4 .cs-badge.mix { color:var(--mustard-text); }
             #tab-canonical-subj4 .cs-badge.ok { color:var(--hunter); }
             #tab-canonical-subj4 .cs-badge.muted { color:var(--text-muted); }
-            #tab-canonical-subj4 .cs-auth { font-size:.85rem; color:#374151; margin-left:auto; }
+            #tab-canonical-subj4 .cs-auth { font-size:.85rem; color:var(--text-body); margin-left:auto; }
             #tab-canonical-subj4 .cs-auth-link { color:var(--navy-primary); font-weight:600; text-decoration:underline; cursor:pointer; }
             #tab-canonical-subj4 .cs-auth-on { color:#166534; font-weight:600; }
             #tab-canonical-subj4 .cs-toast { position:fixed; right:18px; bottom:18px; background:var(--seal-blue); color:#fff; padding:10px 14px; border-radius:8px; font-size:.85rem; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:1000; opacity:0; transition:opacity 0.2s; pointer-events:none; }
             #tab-canonical-subj4 .cs-toast.show { opacity:1; }
             #tab-canonical-subj4 .cs-toast.err { background:#991b1b; }
             #tab-canonical-subj4 .cs-reviewed { color:var(--text-muted); font-size:.75rem; white-space:nowrap; }
-            #tab-canonical-subj4 .cs-help { display:inline-block; color:#64748b; font-size:.72rem; padding:1px 6px; border:1px solid #e5e7eb; border-radius:10px; cursor:help; }
+            #tab-canonical-subj4 .cs-help { display:inline-block; color:var(--text-muted); font-size:.72rem; padding:1px 6px; border:1px solid #e5e7eb; border-radius:10px; cursor:help; }
             #tab-canonical-subj4 .cs-stamp { display:inline-block; font-size:.7rem; color:var(--text-muted); padding:2px 8px; border:1px solid #e5e7eb; border-radius:10px; margin-left:8px; vertical-align:middle; font-weight:400; }
             #tab-canonical-subj4 .cs-stamp.draft { color:#92400e; background:#FEF3C7; border-color:#F59E0B; font-weight:600; }
             #tab-canonical-subj4 .cs-guidelines-btn { background:var(--seal-blue); color:#fff; border:none; padding:7px 14px; border-radius:6px; font-size:.85rem; cursor:pointer; font-weight:600; }
@@ -9020,14 +9043,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 .cs-modal { background:var(--surface-opaque); max-width:680px; width:92%; max-height:80vh; overflow:auto; border-radius:10px; padding:24px 28px; box-shadow:0 10px 40px rgba(0,0,0,0.25); }
             #tab-canonical-subj4 .cs-modal h3 { margin:0 0 12px; color:var(--navy-primary); }
             #tab-canonical-subj4 .cs-modal h4 { margin:16px 0 6px; color:var(--navy-primary); font-size:1rem; }
-            #tab-canonical-subj4 .cs-modal p { color:#374151; line-height:1.5; margin:6px 0 10px; }
-            #tab-canonical-subj4 .cs-modal ul { color:#374151; line-height:1.55; margin:4px 0 10px; padding-left:22px; }
+            #tab-canonical-subj4 .cs-modal p { color:var(--text-body); line-height:1.5; margin:6px 0 10px; }
+            #tab-canonical-subj4 .cs-modal ul { color:var(--text-body); line-height:1.55; margin:4px 0 10px; padding-left:22px; }
             #tab-canonical-subj4 .cs-modal li { margin:3px 0; }
             #tab-canonical-subj4 .cs-modal .cs-modal-close { float:right; background:none; border:none; font-size:1.4rem; cursor:pointer; color:#6b7280; line-height:1; padding:0 4px; }
             #tab-canonical-subj4 .cs-modal .cs-modal-close:hover { color:var(--navy-primary); }
             #tab-canonical-subj4 .cs-modal code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.88em; }
             /* Variants column + modal */
-            #tab-canonical-subj4 .cs-var-show { color:#4b5563; cursor:pointer; font-size:.7rem; padding:1px 6px; border:1px solid #cbd5e1; border-radius:10px; background:var(--surface-opaque); margin-left:6px; vertical-align:middle; }
+            #tab-canonical-subj4 .cs-var-show { color:var(--text-body); cursor:pointer; font-size:.7rem; padding:1px 6px; border:1px solid #cbd5e1; border-radius:10px; background:var(--surface-opaque); margin-left:6px; vertical-align:middle; }
             #tab-canonical-subj4 .cs-var-show:hover { background:#eef6ff; border-color:var(--navy-primary); }
             #tab-canonical-subj4 .cs-var-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); gap:6px; margin:8px 0 14px; }
             #tab-canonical-subj4 .cs-var-chip { background:#f8fafc; border:1px solid #e5e7eb; border-radius:6px; padding:5px 8px; font-size:.82rem; }
@@ -9061,7 +9084,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-canonical-subj4 button.cs-validate-btn:disabled { background:#9ca3af; cursor:not-allowed; }
             #tab-canonical-subj4 .cs-muted-dash { color:#cbd5e1; font-size:.85rem; }
             /* Group-by toggle inline flag */
-            #tab-canonical-subj4 .cs-flag-toggle { display:inline-flex; align-items:center; gap:4px; font-size:.85rem; color:#374151; padding:0 6px; }
+            #tab-canonical-subj4 .cs-flag-toggle { display:inline-flex; align-items:center; gap:4px; font-size:.85rem; color:var(--text-body); padding:0 6px; }
             /* Collapse-all twisty (shown above the table when grouping is on) */
             #tab-canonical-subj4 .cs-collapse-all { background:var(--surface-opaque); border:1px solid #cbd5e1; color:var(--navy-primary); padding:5px 10px; border-radius:5px; font-size:.78rem; cursor:pointer; margin:0 0 8px; font-weight:600; }
             #tab-canonical-subj4 .cs-collapse-all:hover { background:#eef6ff; border-color:var(--navy-primary); }
@@ -9137,8 +9160,8 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-filter { padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:.85rem; background:var(--surface-opaque); }
             #tab-credential-reference input.cr-filter { min-width:200px; }
             #tab-credential-reference .cr-search-wide { min-width:260px; }
-            #tab-credential-reference .cr-flag-toggle { font-size:.85rem; color:#374151; cursor:pointer; user-select:none; padding:6px 4px; }
-            #tab-credential-reference .cr-summary { color:#374151; font-size:.85rem; margin-bottom:8px; }
+            #tab-credential-reference .cr-flag-toggle { font-size:.85rem; color:var(--text-body); cursor:pointer; user-select:none; padding:6px 4px; }
+            #tab-credential-reference .cr-summary { color:var(--on-mustard); font-size:.85rem; margin-bottom:8px; }
             #tab-credential-reference .cr-table-wrap { overflow:auto; max-height:75vh; border:1px solid #e5e7eb; border-radius:8px; }
             #tab-credential-reference table.cr-table { border-collapse:collapse; width:100%; font-size:.85rem; }
             #tab-credential-reference .cr-table th { position:sticky; top:0; background:var(--seal-blue); color:var(--gold-accent); text-align:center; vertical-align:middle; padding:8px 10px; white-space:nowrap; z-index:1; }
@@ -9149,13 +9172,13 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-table th:first-child,
             #tab-credential-reference .cr-table td:first-child { text-align:left; }
             #tab-credential-reference .cr-table tr.cr-expanded:hover td { background:var(--surface-opaque); }
-            #tab-credential-reference .cr-sort-indicator { color:#94a3b8; font-size:.75rem; margin-left:4px; }
+            #tab-credential-reference .cr-sort-indicator { color:var(--on-seal-blue-muted); font-size:.75rem; margin-left:4px; }
             #tab-credential-reference .cr-sort-indicator.active { color:var(--gold-accent); }
             #tab-credential-reference .cr-title-cell { max-width:32ch; }
             #tab-credential-reference .cr-title-toggle { background:none; border:none; padding:0; color:var(--navy-primary); font-weight:600; font-size:.9rem; cursor:pointer; text-align:left; }
             #tab-credential-reference .cr-title-toggle:hover { text-decoration:underline; }
-            #tab-credential-reference .cr-issuer-cell { max-width:32ch; color:#374151; }
-            #tab-credential-reference .cr-null { color:#94a3b8; font-style:italic; }
+            #tab-credential-reference .cr-issuer-cell { max-width:32ch; color:var(--text-body); }
+            #tab-credential-reference .cr-null { color:var(--text-muted); font-style:italic; }
             #tab-credential-reference .cr-conf-cell { font-family:ui-monospace,Menlo,monospace; font-weight:500; }
             #tab-credential-reference .cr-conf-high { color:#166534; }
             #tab-credential-reference .cr-conf-ok   { color:var(--navy-primary); }
@@ -9165,15 +9188,15 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-audit-chip { display:inline-block; font-size:.72rem; padding:2px 7px; border-radius:10px; font-weight:600; cursor:help; }
             #tab-credential-reference .cr-audit-chip.warn  { background:#fee2e2; color:#991b1b; }
             #tab-credential-reference .cr-audit-chip.mix   { background:#fef3c7; color:#92400e; }
-            #tab-credential-reference .cr-audit-chip.muted { background:#eef2f7; color:#64748b; }
+            #tab-credential-reference .cr-audit-chip.muted { background:#eef2f7; color:var(--text-muted); }
             #tab-credential-reference .cr-flag-cell { font-size:.78rem; }
             #tab-credential-reference .cr-flag-badge { display:inline-block; background:#fef3c7; color:#92400e; padding:2px 7px; border-radius:10px; font-size:.7rem; }
             #tab-credential-reference .cr-rev-on { color:#166534; font-weight:600; font-size:.75rem; white-space:nowrap; }
             #tab-credential-reference .cr-action-btn { background:var(--seal-blue); color:#fff; border:none; padding:5px 11px; border-radius:5px; font-size:.78rem; cursor:pointer; }
             #tab-credential-reference .cr-action-btn:hover { background:#0d2c52; }
             #tab-credential-reference .cr-action-btn:disabled { background:#cbd5e1; cursor:wait; }
-            #tab-credential-reference .cr-action-noop { color:#94a3b8; }
-            #tab-credential-reference .cr-auth { font-size:.85rem; color:#374151; margin-left:auto; }
+            #tab-credential-reference .cr-action-noop { color:var(--text-muted); }
+            #tab-credential-reference .cr-auth { font-size:.85rem; color:var(--text-body); margin-left:auto; }
             #tab-credential-reference .cr-auth-link { color:var(--navy-primary); font-weight:600; text-decoration:underline; cursor:pointer; }
             #tab-credential-reference .cr-auth-on   { color:#166534; font-weight:600; }
             #tab-credential-reference .cr-auth-tag  { display:block; font-size:.7rem; color:#9ca3af; margin-top:2px; }
@@ -9198,7 +9221,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-curation-panel { background:var(--surface-opaque); border:1px solid #c7d2e0; border-left:4px solid var(--navy-primary); border-radius:6px; padding:10px 14px; margin:4px 0 14px; }
             #tab-credential-reference .cr-curation-h { margin:0 0 6px !important; color:var(--navy-primary) !important; font-size:.85rem !important; }
             #tab-credential-reference .cr-curation-note { color:#6b7280; font-size:.78rem; font-style:italic; margin:4px 0 0; }
-            #tab-credential-reference .cr-curation-readonly { list-style:none; margin:8px 0 0; padding:0; font-size:.78rem; color:#374151; }
+            #tab-credential-reference .cr-curation-readonly { list-style:none; margin:8px 0 0; padding:0; font-size:.78rem; color:var(--text-body); }
             #tab-credential-reference .cr-curation-readonly li { padding:2px 0; }
             #tab-credential-reference .cr-curation-tbl { border-collapse:collapse; margin-top:4px; font-size:.82rem; }
             #tab-credential-reference .cr-curation-tbl th { text-align:right; padding:5px 10px 5px 0; color:#475569; font-weight:600; vertical-align:top; white-space:nowrap; width:130px; }
@@ -9223,21 +9246,21 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-variants-list { list-style:none; margin:0; padding:0; }
             #tab-credential-reference .cr-variants-list li { padding:3px 0; font-size:.85rem; }
             #tab-credential-reference .cr-variant-conf { display:inline-block; min-width:3.5ch; font-family:ui-monospace,Menlo,monospace; font-size:.75rem; margin-right:4px; }
-            #tab-credential-reference .cr-variant-code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.82rem; color:#374151; }
+            #tab-credential-reference .cr-variant-code { background:#f3f4f6; padding:1px 5px; border-radius:3px; font-size:.82rem; color:var(--text-body); }
             #tab-credential-reference .cr-variant-notes { color:#6b7280; font-size:.78rem; margin:2px 0 0 4ch; }
-            #tab-credential-reference .cr-cred-record { padding:4px 0; font-size:.85rem; color:#374151; }
+            #tab-credential-reference .cr-cred-record { padding:4px 0; font-size:.85rem; color:var(--text-body); }
             #tab-credential-reference .cr-cred-notes { color:#6b7280; font-size:.78rem; font-style:italic; margin-top:2px; }
-            #tab-credential-reference .cr-audit-list { margin:4px 0 0; padding-left:22px; font-size:.82rem; color:#374151; }
+            #tab-credential-reference .cr-audit-list { margin:4px 0 0; padding-left:22px; font-size:.82rem; color:var(--text-body); }
             /* Scope (Local / Statewide) badge — PR-1 addition */
             #tab-credential-reference .cr-scope-cell { white-space:nowrap; }
             #tab-credential-reference .cr-scope-badge { display:inline-block; padding:2px 7px; border-radius:10px; font-size:.7rem; font-weight:600; }
             #tab-credential-reference .cr-scope-state { background:#dbeafe; color:#1e40af; border:1px solid #93c5fd; }
-            #tab-credential-reference .cr-scope-local { background:#f3f4f6; color:#4b5563; border:1px solid #d1d5db; }
+            #tab-credential-reference .cr-scope-local { background:#f3f4f6; color:var(--text-body); border:1px solid #d1d5db; }
             /* Discipline column */
-            #tab-credential-reference .cr-disc-cell { font-size:.82rem; color:#374151; max-width:24ch; }
+            #tab-credential-reference .cr-disc-cell { font-size:.82rem; color:var(--text-body); max-width:24ch; }
             /* Articulations table inside the expanded body */
             #tab-credential-reference .cr-arts-table { border-collapse:collapse; width:100%; font-size:.82rem; margin:4px 0 14px; background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:6px; overflow:hidden; }
-            #tab-credential-reference .cr-arts-table th { background:#f8fafc; color:#374151; font-weight:600; padding:6px 10px; text-align:left; border-bottom:1px solid #e5e7eb; font-size:.78rem; }
+            #tab-credential-reference .cr-arts-table th { background:#f8fafc; color:var(--text-body); font-weight:600; padding:6px 10px; text-align:left; border-bottom:1px solid #e5e7eb; font-size:.78rem; }
             #tab-credential-reference .cr-arts-table td { padding:6px 10px; vertical-align:top; border-top:1px solid #eef2f7; }
             #tab-credential-reference .cr-art-first td { border-top:2px solid #cbd5e1; }
             #tab-credential-reference .cr-art-ident { background:#fafbfc; min-width:22ch; max-width:32ch; }
@@ -9251,14 +9274,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-id-meta { color:#6b7280; font-size:.72rem; margin-top:2px; }
             #tab-credential-reference .cr-art-local { min-width:18ch; }
             #tab-credential-reference .cr-lc-code { font-family:ui-monospace,Menlo,monospace; font-weight:600; color:var(--navy-primary); }
-            #tab-credential-reference .cr-lc-title { color:#374151; }
-            #tab-credential-reference .cr-art-colleges { color:#4b5563; font-size:.78rem; }
+            #tab-credential-reference .cr-lc-title { color:var(--text-body); }
+            #tab-credential-reference .cr-art-colleges { color:var(--text-body); font-size:.78rem; }
             #tab-credential-reference .cr-empty-note { color:#6b7280; font-size:.82rem; font-style:italic; margin:4px 0 12px; }
             /* PR-2: bulk-select + bulk "Mark N initiated" workflow */
             #tab-credential-reference .cr-chk-cell { width:28px; min-width:28px; padding:6px 4px; text-align:center; }
             #tab-credential-reference .cr-chk-cell input[type="checkbox"] { cursor:pointer; }
             #tab-credential-reference .cr-chk-cell input[type="checkbox"][disabled] { opacity:0.35; cursor:not-allowed; }
-            #tab-credential-reference .cr-bulk { display:inline-flex; align-items:center; gap:6px; font-size:.82rem; color:#374151; }
+            #tab-credential-reference .cr-bulk { display:inline-flex; align-items:center; gap:6px; font-size:.82rem; color:var(--text-body); }
             #tab-credential-reference .cr-bulk-btn { background:#16a34a; color:#fff; border:none; padding:6px 12px; border-radius:6px; font-size:.82rem; font-weight:600; cursor:pointer; }
             #tab-credential-reference .cr-bulk-btn:hover { background:#15803d; }
             #tab-credential-reference .cr-bulk-clear { color:var(--navy-primary); font-size:.75rem; text-decoration:underline; cursor:pointer; }
@@ -9267,7 +9290,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-credential-reference .cr-group-hdr td { background:#f1f5f9; padding:0 !important; border-top:2px solid #cbd5e1; border-bottom:1px solid #cbd5e1; }
             #tab-credential-reference .cr-group-toggle { width:100%; text-align:left; padding:8px 14px; background:transparent; border:none; cursor:pointer; font-size:.88rem; color:var(--navy-primary); font-weight:600; }
             #tab-credential-reference .cr-group-toggle:hover { background:#e2e8f0; }
-            #tab-credential-reference .cr-group-twisty { display:inline-block; min-width:14px; color:#64748b; font-size:.72rem; }
+            #tab-credential-reference .cr-group-twisty { display:inline-block; min-width:14px; color:var(--text-muted); font-size:.72rem; }
             #tab-credential-reference .cr-group-label { color:var(--navy-primary); }
             #tab-credential-reference .cr-group-count { color:#6b7280; font-size:.78rem; font-weight:500; margin-left:4px; }
             /* Toast */
@@ -9309,7 +9332,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         data-sections='[{"slug":"adoption","id":"statewide-interactive-container","label":"Exhibit Adoption table"}]'>
       <div class="main-container">
         <h2 style="color:var(--navy-primary);margin:0 0 4px;">Exhibit Adoption &amp; Credit Recommendations</h2>
-        <p style="color:#4b5563;margin:0 0 14px;">Statewide CPL exhibit adoption — each unified exhibit credential with its CPL type, collaborative type, modal credit recommendation, and the colleges that have earned the articulation. Moved out of CPL Analytics into its own tab for room to work.</p>
+        <p style="color:var(--text-body);margin:0 0 14px;">Statewide CPL exhibit adoption — each unified exhibit credential with its CPL type, collaborative type, modal credit recommendation, and the colleges that have earned the articulation. Moved out of CPL Analytics into its own tab for room to work.</p>
         <div id="statewide-interactive-container" style="margin-top:1rem;"></div>
       </div>
     </div>
@@ -9331,7 +9354,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-pipeline .pl-status { color:#6b7280; font-size:.78rem; margin-top:6px; font-style:italic; }
             #tab-pipeline .pl-receipt { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:10px; }
             #tab-pipeline .pl-stat { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:8px; padding:14px 16px; }
-            #tab-pipeline .pl-stat .pl-stat-label { font-size:.78rem; color:#64748b; text-transform:uppercase; letter-spacing:0.5px; }
+            #tab-pipeline .pl-stat .pl-stat-label { font-size:.78rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px; }
             #tab-pipeline .pl-stat .pl-stat-value { font-size:1.6rem; font-weight:700; color:var(--navy-primary); margin-top:4px; font-family:ui-monospace,Menlo,monospace; }
             #tab-pipeline .pl-stat .pl-stat-delta { font-size:.78rem; color:#6b7280; margin-top:2px; }
             #tab-pipeline .pl-stat.ok .pl-stat-value { color:#166534; }
@@ -9341,14 +9364,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-pipeline .pl-roadmap { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:10px; margin-top:10px; }
             #tab-pipeline .pl-phase { background:var(--surface-opaque); border:1px solid #e5e7eb; border-radius:8px; padding:10px 12px; font-size:.82rem; }
             #tab-pipeline .pl-phase .pl-phase-id { font-weight:700; color:var(--navy-primary); font-family:ui-monospace,Menlo,monospace; }
-            #tab-pipeline .pl-phase .pl-phase-title { color:#374151; margin:4px 0; }
+            #tab-pipeline .pl-phase .pl-phase-title { color:var(--text-body); margin:4px 0; }
             #tab-pipeline .pl-phase .pl-phase-status { font-size:.7rem; padding:2px 7px; border-radius:10px; }
             #tab-pipeline .pl-phase.done { border-left:4px solid #16a34a; }
             #tab-pipeline .pl-phase.done .pl-phase-status { background:#dcfce7; color:#166534; }
             #tab-pipeline .pl-phase.active { border-left:4px solid var(--gold-accent); background:#FFFBEC; }
             #tab-pipeline .pl-phase.active .pl-phase-status { background:#FEF3C7; color:#92400E; }
-            #tab-pipeline .pl-phase.parked { border-left:4px solid #cbd5e1; color:#64748b; }
-            #tab-pipeline .pl-phase.parked .pl-phase-status { background:#eef2f7; color:#64748b; }
+            #tab-pipeline .pl-phase.parked { border-left:4px solid #cbd5e1; color:var(--text-muted); }
+            #tab-pipeline .pl-phase.parked .pl-phase-status { background:var(--surface-1,#eef2f7); color:var(--text-muted); }
             #tab-pipeline .pl-loading { color:#9ca3af; font-style:italic; padding:20px; text-align:center; }
             #tab-pipeline .pl-footer { margin-top:24px; color:var(--text-muted); font-size:.78rem; text-align:center; }
             #tab-pipeline .pl-footer a { color:var(--navy-primary); text-decoration:none; border-bottom:1px dotted #94a3b8; }
@@ -9413,7 +9436,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         <div class="main-container">
             <div style="margin: 16px 0 12px 0;">
                 <h2 style="margin: 0 0 6px 0; color: var(--navy-primary);">CPL Budget Support Letters</h2>
-                <p style="margin: 0 0 14px 0; color: #5a6478; max-width: var(--cpl-measure,none);">
+                <p style="margin: 0 0 14px 0; color: var(--text-muted); max-width: var(--cpl-measure,none);">
                     Curator surface for the May 2026 Revise RC support-letter campaign. Edits the shared letter
                     blocks (statewide, joint, individual) that <code>generate-letter</code> assembles into per-invitee
                     DOCX downloads. Read-only by default; a curator passcode unlocks edits. New letter campaigns
@@ -9726,7 +9749,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                  paragraph still cannot. Mirrored in index.html per Rule 4. */
               .cplchat { max-width: none; margin: 0; }
               .cplchat-intro h2 { margin: 16px 0 6px; color: var(--navy-primary); }
-              .cplchat-intro p { margin: 0 0 8px; color: #5a6478; max-width:var(--cpl-measure,none); }
+              .cplchat-intro p { margin: 0 0 8px; color: var(--text-muted); max-width:var(--cpl-measure,none); }
               /* The yellow Beta box was deleted 2026-08-21 (Sam) — its two duties, saying
                  Sierra is unfinished and saying not to type personal information, are
                  carried by the Note sentence in cpl_chat.js's intro. That sentence styles
@@ -9759,7 +9782,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
               .cplchat-suggest { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 2px; }
               .cplchat-chip { background: var(--surface-opaque); border: 1px solid #cdd6e3; color: var(--navy-primary); border-radius: 16px; padding: 7px 12px; font-size: .85rem; cursor: pointer; transition: background .15s, border-color .15s; }
               .cplchat-chip:hover { background: #eef3fa; border-color: #9bb4d4; }
-              .cplchat-status { min-height: 18px; font-size: .85rem; color: #5a6478; margin: 2px 0; }
+              .cplchat-status { min-height: 18px; font-size: .85rem; color: var(--text-muted); margin: 2px 0; }
               .cplchat-status.cplchat-error { color: #b3261e; }
               .cplchat-inputrow { display: flex; gap: 8px; }
               .cplchat-input { flex: 1 1 auto; padding: 12px 14px; border: 1px solid #cdd6e3; border-radius: 8px; font-size: .95rem; }

@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 878,
-    "bytes": 9305709,
+    "bytes": 9309507,
     "over_budget": 5,
     "handoff_max": 252,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 112,
-        "bytes": 2851390,
+        "bytes": 2851581,
         "over": 2
       },
       "index": {
@@ -41,12 +41,12 @@
       },
       "kb_note": {
         "files": 432,
-        "bytes": 2218032,
+        "bytes": 2219935,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 168139,
+        "bytes": 169843,
         "over": 2
       },
       "handoff": {
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 2807,
-      "bytes": 1360341285,
+      "bytes": 1360355434,
       "heavy_bytes": 613976276,
       "heavy_share": 0.451,
       "ignore_filters": [
@@ -339,13 +339,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 15791,
+        "bytes": 17495,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 3791,
-        "ratio": 1.32
+        "over_by": 5495,
+        "ratio": 1.46
       },
-      "message": "15,791 B is 1.3× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "17,495 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {

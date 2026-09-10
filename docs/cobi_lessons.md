@@ -954,3 +954,86 @@ produced that could not fire.
 raw light grounds under them, printing while in dark mode, and the 24
 unresolved `var(--brand)`/`var(--link)`/`var(--text)` declarations — the last
 one needs Sam because it changes light.
+
+### S249, second pass — fixing what the sweep NAMES, and the contrast with the first
+
+The same session, an hour later. The first pass fixed what reading the code
+said was wrong and moved the sweep by one finding. The second fixed what the
+sweep itself named and moved it **67 → 38 dark, 63 → 58 light, zero
+regressions**. Both passes were correct; only one of them was measurable, and
+the difference is worth remembering when planning the next one.
+
+**⭐ A fifth "cannot flip" shape, and it was the biggest single color pair.**
+`rgba(255,255,255,.5)` as a fill is a **light-only construct**: over the night
+ground it composites to a mid grey (`#8A8A8A`, `#8F8F8E` — measured, not
+computed) that fights every themed ink laid on it. Seven findings from three
+declarations: `.uc-badge`, `.cs-badge`, `.cr-chip`.
+
+⚠️ **The recipe was deliberate, and the repo had already said so.** It is First
+Light spec v1.6's "glass-quiet chip", pinned by `tests/retheme_tokens.test.js`
+— which is how the conflict surfaced: `npm test` went red on a test whose name
+explained the design decision I had just overwritten. So it got a **dark
+branch, not a removal**: the light value moved into the fallback slot of
+`var(--glass-quiet, rgba(255,255,255,.5))`, with `--glass-quiet: #262624`
+defined dark-only. Light renders byte-identically, every themed ink clears AA
+(worst `--hunter` at 5.65:1), and the recipe's own `--border-strong` keeps the
+chip boundary from being carried by color alone.
+
+**98 raw slate inks swept.** `#374151`/`#3A3A36`/`#4B5563` → `--text-body`;
+`#5A6478`/`#64748B`/`#94A3B8` → `--text-muted`. Each mapped to the token whose
+LIGHT value is equal or darker, so light cannot regress — except that
+`#64748B` (4.25:1) and `#94A3B8` (2.29:1) were **already failing AA in light**,
+so those darkened on purpose and fixed five light findings too.
+
+### ⚠️ Three regressions, and the check that let them through
+
+The sweep caused three, all the same fault. I had checked every rule for a
+light background **of its own** and found none on the sites I swept. But **a
+rule's own `background` is not its ground — the ground is the composited
+ancestor chain**:
+
+- `.cr-summary` inherits a `--gold-accent` band (composite `#CFCBB2`)
+- `.cr-sort-indicator` sits inside a `--seal-blue` table header (`#002F6D`)
+
+Both fills are **deliberately not redefined dark**, so flipping the ink to a
+token that does flip is exactly wrong. `.cr-sort-indicator`'s original
+`#94A3B8` was *correct* at 5.03:1 on the navy; sweeping it to `--text-muted`
+landed at **1.92:1 in light**. `--on-mustard` already existed for the gold
+case; the seal-blue equivalent did not, so `--on-seal-blue-muted: #94A3B8` is
+now declared once in the base `:root` beside it.
+
+The third was two JS variables — `const nc = row.tier === 'Leading' ?
+'#1C1C1A' : '#3A3A36'` — which a `color:` regex cannot see. A painted color
+does not have to be written next to the word `color`.
+
+**What caught all three: re-measuring BOTH themes and diffing the finding
+lists.** Not the tests, which stayed green. The diff named each one with its
+selector and its ratio.
+
+### ⭐ The most consequential find: a sanitizer that blinded every guard
+
+A new guard reported that `.cs-badge` had no background rule. The rule was
+plainly there in the file. The guard was right; its input was wrong:
+
+```js
+const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "")
+                              .replace(/^\s*(\/\/|#).*$/gm, "");
+```
+
+`#` starts a comment in Python and an **ID selector** in CSS. Applied to
+`index.html`, that helper deleted **942 lines** before any scanner saw them —
+329 CSS rules beginning with an ID selector, **179 carrying a `color:`
+declaration**. Every raw-hex ink guard in `tests/cpl_theme.test.js`, including
+the ones written earlier the same day, had been scanning a stylesheet with most
+of its color declarations already removed.
+
+Split into `stripComments` (JS/CSS) and `stripPyComments` (adds `#`, used only
+for `excel_to_dashboard.py`). Proven both ways: with the old helper the injected
+defect is invisible; with the new one the guard fires.
+
+⚠️ **A sanitizer is a check's blind spot and it is invisible in the check's own
+source.** Falsify through the whole pipeline, from the file on disk, and put the
+defect where real ones live — a defect injected into a string literal inside the
+test would have passed and proved nothing. And print the count once when you
+write a sanitizer: *how many lines does this blank?* would have caught it at any
+point in the months it was live.

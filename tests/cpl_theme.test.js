@@ -342,7 +342,15 @@ check("⭐ no fill that does NOT flip carries an ink that does (mustard/seal-blu
 // a lighter one, and this guard cannot tell the difference.
 // Strip comments first — the note above NAMES the banned hexes, and a scanner
 // that reads its own explanation reports the explanation as the offence.
-const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*(\/\/|#).*$/gm, "");
+// ⚠️ `#` STARTS A COMMENT IN PYTHON AND AN ID SELECTOR IN CSS, and treating
+// them alike blinded every guard below to most of the stylesheet. Measured
+// 2026-09-10: index.html has 329 CSS lines beginning with an ID selector, 179
+// of them carrying a `color:` declaration — all silently deleted before the
+// scanners ever saw them. Same family as the other checks-that-cannot-fire in
+// this file; it surfaced only because a NEW guard reported a rule it could see
+// in the file with its own eyes.
+const stripComments = (t) => t.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+const stripPyComments = (t) => stripComments(t).replace(/^\s*#.*$/gm, "");
 // ⚠️ Consumer JS carried 57 more of these (S249). The three EXCLUDED lines build
 // an exported docx or a print window — paper is its own world, and a themed token
 // would follow the reader's screen onto it. That exclusion is why this check reads
@@ -358,9 +366,9 @@ check("⭐ no raw dark-grey ink in consumer JS either (export/print lines exclud
   + (jsGreyOffenders.length ? " -> " + jsGreyOffenders.slice(0, 3).join(", ") : ""),
   jsGreyOffenders.length === 0);
 
-for (const [name, raw] of [["CPL_Dashboard.html", cpl], ["index.html", idx],
-                           ["excel_to_dashboard.py", fs.readFileSync("excel_to_dashboard.py", "utf8")]]) {
-  const src = stripComments(raw);
+for (const [name, raw, isPy] of [["CPL_Dashboard.html", cpl], ["index.html", idx],
+                           ["excel_to_dashboard.py", fs.readFileSync("excel_to_dashboard.py", "utf8"), true]]) {
+  const src = (isPy ? stripPyComments : stripComments)(raw);
   const banned = (src.match(/color:\s*#(?:333|444|555|666|777)(?![0-9A-Fa-f])/g) || []);
   check(name + ": no raw dark-grey ink (#333/#444/#555/#666/#777) — they sit on a ground that flips"
     + (banned.length ? " -> " + banned.length + " site(s), e.g. " + banned[0] : ""),
@@ -443,6 +451,52 @@ for (const f of fs.readdirSync(".").filter((x) => x.endsWith(".js"))) {
 check("⭐ no fixed white ink on a fill whose token flips — use --on-accent"
   + (fixedInk.length ? " -> " + fixedInk.slice(0, 4).join(", ") : ""),
   fixedInk.length === 0);
+
+// ─── the six-digit raw inks the sweep named (S249, second pass) ─────────────
+// The short-hex ban above misses the slate family, which is where the rest of
+// the dark-mode ink findings lived. Measured on --paper #F4F2ED, each maps to
+// the token whose LIGHT value is equal or DARKER, so light cannot regress:
+//   #374151 9.21 · #3A3A36 10.21 · #4B5563 6.75  -> --text-body  (10.21)
+//   #5A6478 5.32 · #64748B 4.25  · #94A3B8 2.29  -> --text-muted ( 6.02)
+// ⚠️ #64748B and #94A3B8 were ALREADY FAILING AA IN LIGHT (5 findings in the
+// light sweep), so darkening them is a fix in both themes, not a restyle.
+// ⚠️ #3A3A36 IS --text-body's own light value, so those sites are byte-identical
+// in light — a hardcoded token value is still a token that cannot flip.
+// Standalone light-only pages (cpl_funding_public.html, pipeline-diagram.html)
+// define no dark palette and are not swept routes, so they keep their raw inks.
+const SLATE_INKS = /color:\s*#(374151|3A3A36|4B5563|5A6478|64748B|94A3B8)\b/i;
+const slateOffenders = fs.readdirSync(".")
+  .filter((f) => (f.endsWith(".js") || f === "index.html" || f === "CPL_Dashboard.html")
+    && !/^(cloudflare-worker-proxy|worker-to-paste)\.js$/.test(f))
+  .flatMap((f) => stripComments(fs.readFileSync(f, "utf8")).split("\n")
+    .map((ln, i) => [f, i + 1, ln]))
+  .filter(([, , ln]) => SLATE_INKS.test(ln))
+  .filter(([, , ln]) => !/(Exported from|print|docx|@page|window\.open|buildPrintHtml|memoPrintHtml|buildBriefHtml|PRINT_)/i.test(ln))
+  .map(([f, n]) => f + ":" + n);
+check("⭐ no raw slate ink on a themed ground (#374151/#3A3A36/#4B5563/#5A6478/#64748B/#94A3B8)"
+  + (slateOffenders.length ? " -> " + slateOffenders.length + " site(s), e.g. " + slateOffenders[0] : ""),
+  slateOffenders.length === 0);
+
+// ⭐ A TRANSLUCENT WHITE FILL IS A LIGHT-ONLY CONSTRUCT, and it was the single
+// biggest remaining color pair: over the night ground rgba(255,255,255,.5)
+// composites to a mid grey (#8A8A8A and #8F8F8E, measured) that fights every
+// themed ink laid on it — SEVEN findings from THREE declarations, .uc-badge,
+// .cs-badge and .cr-chip.
+// ⚠️ THE RECIPE IS DELIBERATE — First Light spec v1.6's "glass-quiet chip",
+// pinned by tests/retheme_tokens.test.js. It needed a DARK BRANCH, not a
+// removal, so the light value moved into the fallback slot of
+// `var(--glass-quiet, rgba(255,255,255,.5))` and light renders unchanged.
+// This guard is the general form: a BARE translucent white must not come back
+// on any of the three, whatever the recipe is called next.
+for (const [file, sel] of [["index.html", ".uc-badge {"],
+                           ["index.html", ".cs-badge {"],
+                           ["credential_reference.js", ".cr-chip{"]]) {
+  const src = stripComments(fs.readFileSync(file, "utf8"));
+  const rule = src.split("\n").find((ln) => ln.includes(sel) && /background/.test(ln)) || "";
+  check("⭐ " + file + " " + sel.trim() + " does not fill with a BARE translucent white"
+    + (rule === "" ? " -> the rule was not found at all" : ""),
+    rule !== "" && !/background:\s*rgba\(255,\s*255,\s*255/.test(rule));
+}
 
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

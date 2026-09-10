@@ -74,25 +74,38 @@ review cannot see them and grep does not catch them. The four shapes, the
 role-count rule, why the sweep under-reports, and the guard that could not fail
 are PULL, in one note:
 [`methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme`](../../kb-notes/methodology-a-token-that-cannot-flip-is-a-surface-that-cannot-theme.md).
-**Read it before theming anything.** Cleared so far — all four classes:
+**Read it before theming anything.** ✅ **ALL FIVE SHAPES ARE CLEARED** — the
+detail and the measurements are in `docs/cobi_lessons.md` (S248 and S249); what
+a future session needs from here is the shape and the rule beside it:
 
-- ✅ **Phantom tokens — CLEARED**, 47 tokens / 88 uses (26 in S248, 62 in S249),
-  defined in the **DARK blocks only** so light keeps every site's own fallback.
-  S249's values are **aliases, never new hexes** — inks → `--hunter` /
-  `--crimson` / `--mustard-text` / `--text-muted`, grounds → `--surface-subtle`
-  / `--surface-muted` / `--surface-opaque` / `--gold-soft`, borders →
-  `--border`; worst new pair 4.93:1 against AA 4.5, computed with
-  `prototype/check_contrast.py`. ⚠️ **Do not "complete" any of them in the
-  light `:root`** — `--surface-1`/`--surface-2`'s fallbacks alone are six
-  different tints, so one light value repaints six tabs. Sam's call. Guarded.
-- ✅ **`var(--white)` as a ground — CLEARED**, 7 sites (Sam's first screenshot).
-- ✅ **Fixed ink on a fill that flips — CLEARED**, 17 `--navy-*` sites (S248)
-  plus `--danger` ×2 and `--accent-link` ×2 (S249), all → `--on-accent`.
-  ⚠️ **The other ~160 navy fills are NOT proven broken** — only where the ink
-  cannot follow. The class is greppable, so `tests/cpl_theme.test.js` scans
-  every consumer JS for it rather than waiting for the sweep to sample it.
-- ✅ **Tabs holding their own theme state — CLEARED** (`cip_crosswalk.js`,
-  `our_process.js`); both key on `cpl_theme.js` now.
+| Shape | Cleared | The rule that outlives it |
+|---|---|---|
+| Phantom token — `var(--x, #light)`, `--x` defined nowhere | 47 tokens / 88 uses | Dark blocks ONLY, and only when **every** use carries a fallback |
+| `var(--white)` as a ground | 7 sites | A ground token must have both values |
+| Fixed ink on a fill that flips | 21 sites → `--on-accent` | ⚠️ And the converse: a fill that does NOT flip needs ink that does not either (`--on-mustard`, `--on-seal-blue-muted`) |
+| A tab holding its own theme state | 2 tabs | No tab may keep theme state of its own |
+| ⭐ A **translucent white fill** — `rgba(255,255,255,.5)` composites to a mid grey (**#8A8A8A**, **#8F8F8E**) over the night ground | 3 declarations, **7 findings** | It is a light-only construct. The First Light v1.6 "glass-quiet chip" recipe is deliberate, so it got a **dark branch, not a removal**: `var(--glass-quiet, rgba(255,255,255,.5))`, `--glass-quiet: #262624` dark-only, worst themed ink 5.65:1, boundary carried by `--border-strong` |
+
+Also cleared (S249): **98 raw slate inks** — `#374151`/`#3A3A36`/`#4B5563` →
+`--text-body`, `#5A6478`/`#64748B`/`#94A3B8` → `--text-muted`, each mapped to
+the token whose LIGHT value is equal or darker so light cannot regress.
+`#64748B` and `#94A3B8` were **already failing AA in light**, so those are
+fixes in both themes. ⚠️ Standalone light-only pages
+(`cpl_funding_public.html`, `pipeline-diagram.html`) define no dark palette and
+are not swept routes — they keep their raw inks on purpose.
+
+⚠️ **A RULE'S OWN `background` IS NOT ITS GROUND — THE GROUND IS THE COMPOSITED
+ANCESTOR CHAIN (S249, learned by causing it).** Before sweeping 98 raw inks I
+checked each rule for a light background of its own and found none on the sites
+I swept. Three still regressed, because the ground was somewhere else: two
+inherited a `--gold-accent` band (`.cr-summary`, composite **#CFCBB2**) and one
+sat inside a `--seal-blue` table header (`.cr-sort-indicator`, **#002F6D**) —
+and its original `#94A3B8` was CORRECT there at 5.03:1, so the tidy-up to
+`--text-muted` landed at **1.92:1 in light**. ⚠️ **A fill that does not flip
+needs ink that does not flip**: `--on-mustard` already existed for the gold,
+and the seal-blue equivalent did not, so `--on-seal-blue-muted: #94A3B8` is now
+declared once in the base `:root` beside it. **Sweep, then re-measure BOTH
+themes and diff the finding lists** — that is what caught all three.
 
 ⚠️ **THE ENTRY CONDITION FOR A DARK-ONLY DEFINITION IS "EVERY USE CARRIES A
 FALLBACK," AND IT IS THE WHOLE SAFETY ARGUMENT.** Without one, light gets
@@ -192,8 +205,8 @@ redefined dark; `tests/cpl_theme.test.js` guards all three roles.
 
 | Sweep | S244 | S245 | S248 | **S249** |
 |---|---|---|---|---|
-| `cobi-dark` — **contrast findings** | 184 | 120 | 87 | **67** |
-| `cobi` (light) — contrast findings | — | — | 62 | **63** |
+| `cobi-dark` — **contrast findings** | 184 | 120 | 87 | **38** |
+| `cobi` (light) — contrast findings | — | — | 62 | **58** |
 | `npm test` | — | 316/316 | 321/321 | **321/321** |
 | glyph control-class, ours | "401" | 26 | 26 | 26 (ruled, untouched) |
 
@@ -206,12 +219,20 @@ widened scope. The 401 glyph figure is the same trap: 348 of them belong to
 
 ⚠️ **STEER BY THE FINDING COUNT, NEVER THE ROUTE COUNT** — a route fails on any
 one finding, so 38 fixes can leave it unchanged, and the count is not even
-stable run to run (22 vs 21 on identical code). ⚠️ **AND THE FINDING COUNT IS
-NOT AN ACCEPTANCE TEST FOR A TOKEN-LAYER FIX**: S249's 21-token fix moved dark
-**66 → 67** with an empty diff in one direction, because none of the 62 phantom
-uses was ever being sampled. Prove the token layer directly instead — load both
-themes and read each token off `getComputedStyle(documentElement)`. That is
-also the strongest available proof that light did not move.
+stable run to run (22 vs 21 on identical code).
+
+⚠️ **BUT THE FINDING COUNT IS NOT AN ACCEPTANCE TEST FOR A TOKEN-LAYER FIX**:
+S249's 21-token fix moved dark **66 → 67** with an empty diff in one direction,
+because none of the 62 phantom uses was ever being sampled. Prove the token
+layer directly instead — load both themes and read each token off
+`getComputedStyle(documentElement)`. That is also the strongest available proof
+that light did not move.
+
+⭐ **THE CONTRAST IS THE POINT.** The SAME session's second pass — fixing what
+the sweep NAMES rather than what the code says is wrong — moved dark
+**67 → 38** and light **63 → 58**, zero regressions in either. Two passes, one
+lane, one afternoon: the structural scan says how much is left, the sweep says
+what to fix next, and only the second one moves the number.
 
 ⚠️ **MEASURE THE LIGHT BASELINE, DO NOT INFER IT.** A `git stash` or a
 `git worktree` at `origin/main`, swept both ways, costs two minutes and turns
@@ -243,20 +264,32 @@ them here is how two copies drift.
 ⭐ **TRIAGE RANKS BY COLOR PAIR FIRST**, then blast radius — one color decision
 however many selectors wear it. It reads a saved report, so it is free.
 
-**NEXT (S250):** ⚠️ **mobile is CLEAN at 390px on all 38 routes and all four
-cannot-flip classes are cleared — keep both that way**; `tests/kpi_cards.test.js`
-and `tests/cpl_theme.test.js` hold the guards. What is left is (a) the raw dark
-inks the sweep NAMES (`#666666` 8 · `#374151` 6 · `#5A6478` 4 · `#555555` 3),
-(b) the raw LIGHT grounds under them (`#8F8F8E`, `#F1F5F9`, `#F6F2FD`,
-`#F7F9FC` all appear as backgrounds in dark-mode findings), and (c) printing
-while in dark mode, which wants `@media screen` scoping on every dark rule and
-is its own pass. Fix what the sweep NAMES; use the structural scan only to size
-what is left, and the token probe to prove a token-layer fix landed.
+**NEXT (S250) — 38 dark findings left, and ONE token is 10 of them.** Triaged
+by color pair on the S249 post-sweep run:
 
-**NEEDS SAM:** (1) whether `--surface-1`/`--surface-2` should get LIGHT values
-too — it unifies six tabs' tints and repaints them, so it is a design call, not
-a fix; (2) the funding `--text-faint` sites, which change his tab in light as
-well; (3) ⭐ **the 24 `var(--brand)` / `var(--link)` / `var(--text)`
-declarations that resolve to NOTHING in both themes** — College Briefing's
-progress bar is transparent and its accent borders do not draw. Fixing it is
-correct but changes what light looks like, so it is his call like (1) and (2).
+| n | worst | pair | what it is |
+|---:|---:|---|---|
+| **10** | 3.06:1 | `#7A7A74` on the dark grounds | ⭐ **`--text-faint` carrying essential text.** Its own dark-block comment says *decorative only — never essential text*, so every one of these is a SITE using the wrong role, not a bad token value. `--text-muted` is the fix, per site. **NEEDS SAM** where the site is on Implementation Funding (his tab, and it changes light). |
+| 5 | 3.21:1 | `#7C7A72` · `#838382` · `#888888` · `#6D6D6B` | near-faint greys, all 3.2–4.4:1 — one step from AA |
+| 4 | 1.11:1 | `#ECE9E2` on `#CFCBB2` / `#F1F5F9` | themed ink on a **raw light ground** that stays light in dark — the grounds S249 did not reach |
+| 3 | 2.82:1 | `#8B6800` / `#B89133` on warm darks | `--mustard-text`'s LIGHT value painting in dark |
+
+⚠️ **Do the raw light grounds with the pattern S249 proved**:
+`var(--surface-1, <the same value>)` — light byte-identical, dark raised. And
+**re-measure both themes and diff the lists**, which is what caught the three
+regressions this run.
+
+Also open: **printing while in dark mode** — consumer-JS dark rules still apply
+to a print, so it comes out dark-on-dark in places. That wants `@media screen`
+scoping on every dark rule and is its own pass.
+
+**NEEDS SAM** — three, all of which change the LIGHT theme, which is why none
+was swept:
+1. Whether `--surface-1`/`--surface-2` get light values too (unifies six tabs'
+   tints and repaints them — a design call).
+2. The `--text-faint` sites on Implementation Funding (part of the 10 above).
+3. ⭐ **The 24 `var(--brand)` / `var(--link)` / `var(--text)` declarations that
+   resolve to NOTHING in both themes** — written with no fallback, invalid at
+   computed-value time, so `college_briefing.js`'s `.cb-bfrac>i` progress bar is
+   `transparent` and its `.cb-lead`/`.cb-next` accent borders do not draw. Not a
+   theming bug; fixing it is visible in light.
