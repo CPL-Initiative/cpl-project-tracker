@@ -37,12 +37,27 @@ const MAX_TOKENS = 2048;
  * INPUT-dominated (MAX_TOKENS caps every answer at 2,048), so the saving lands
  * where the spend is.
  *
- * ⚠ PROMPT CACHING STILL WORKS, AND THAT IS NOT AUTOMATIC. Haiku's minimum
- * cacheable prefix is 2,048 tokens — DOUBLE Sonnet's 1,024 — and a breakpoint on
- * a shorter prefix is accepted while caching nothing, silently. The `stable`
- * block is ~3,234 tokens, so it clears the higher bar with room; if it is ever
- * trimmed below 2,048 the cache stops paying on Haiku before anyone notices.
- * tests/sierra_model_choice.test.js pins that reasoning.
+ * ⛔ PROMPT CACHING IS OFF ON THIS MODEL, AND THAT WAS NOT NOTICED FOR WEEKS.
+ * The line above used to read "Haiku's minimum cacheable prefix is 2,048 tokens
+ * — DOUBLE Sonnet's 1,024 … so it clears the higher bar with room." Both halves
+ * were wrong for the model actually configured. THE FLOOR IS PER-MODEL, NOT PER
+ * FAMILY: Haiku 4.5 is 4,096 (2,048 is Haiku 3.5), Sonnet 5 and Sonnet 4.6 are
+ * 1,024, Opus 5 is 512 — and within one family Opus ranges 512 to 4,096 across
+ * versions, so no family-keyed number can be right.
+ *
+ * The `stable` block is ~3,234 tokens, which is BELOW Haiku 4.5's 4,096 floor,
+ * so the breakpoint is accepted and caches nothing — `cache_creation_input_tokens`
+ * comes back 0, with no error. On an INPUT-DOMINATED endpoint that is the whole
+ * lever, lost. On Sonnet 5 (floor 1,024) the same prefix caches, and a cache read
+ * costs ~0.1x base input — so the stable prefix is CHEAPER on Sonnet 5 than the
+ * uncached prefix is on Haiku 4.5, before any quality argument.
+ *
+ * ⚠ 3,234 IS AN ESTIMATE, NOT A MEASUREMENT — 12,938 chars / 4. It has never been
+ * through count_tokens, and it sits near the 4,096 line. The decisive evidence is
+ * `usage.cache_read_input_tokens` on a live request: zero across repeated calls
+ * means the prefix is not caching. Measure before trusting either number.
+ * tests/sierra_model_choice.test.js now keys the floor to the exact model id and
+ * FAILS CLOSED on an id it does not know.
  *
  * ⚠ CONTEXT IS 200K, NOT 1M. Nothing here needs more: the largest caller is the
  * GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
