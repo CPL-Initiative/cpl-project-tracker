@@ -4,9 +4,9 @@
   "supabase_tables": 75,
   "rpcs": 30,
   "edge_functions": 5,
-  "file_datasets": 454,
+  "file_datasets": 457,
   "external_services": 138,
-  "consumers": 327,
+  "consumers": 328,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -4715,6 +4715,13 @@
      "line": 71
     },
     {
+     "id": "script:kb/_build_ccr_cpl_universe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5731,6 +5738,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_ccr_cpl_universe.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_ccr_sky.py": {
    "consumers": [
     {
@@ -6493,7 +6513,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 433
+     "line": 439
     },
     {
      "id": "script:kb/_build_cpl_pathway_ccr.py",
@@ -11230,7 +11250,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 507
+     "line": 513
     },
     {
      "id": "script:kb/_join_cte_from_top.py",
@@ -12670,6 +12690,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:prototype/ccr_cpl_universe.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_ccr_cpl_universe.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:prototype/ccr_desc/*.json": {
    "consumers": [
     {
@@ -12745,7 +12778,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 820
+     "line": 827
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -12779,7 +12812,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 821
+     "line": 828
     },
     {
      "id": "script:prototype/build_ccr_atlas.py",
@@ -13379,6 +13412,19 @@
    "main_committers": []
   },
   "file:tests/ccr_cpl_payload_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ccr_cpl_universe_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -14204,7 +14250,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 832
+     "line": 839
     },
     {
      "id": "script:kb/_build_discipline_blanks_worklist.py",
@@ -14400,7 +14446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 858
+     "line": 865
     }
    ],
    "producers": [
@@ -14456,7 +14502,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 833
+     "line": 840
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -14526,7 +14572,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 849
+     "line": 856
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -18006,6 +18052,7 @@
     "kb/_build_ccr_atlas_extract.py",
     "prototype/build_ccr_atlas.py",
     "kb/_build_ccr_cpl.py",
+    "kb/_build_ccr_cpl_universe.py",
     "kb/_build_ccr_sky.py",
     "kb/_build_discipline_blanks_worklist.py"
    ],
@@ -18117,6 +18164,7 @@
     "tests/uc_cur_promote_test.py",
     "tests/identities_rekey_test.py",
     "tests/ccr_cpl_payload_test.py",
+    "tests/ccr_cpl_universe_test.py",
     "tests/ccr_sky_payload_test.py",
     "tests/ccr_level_layout_test.py",
     "tests/glyph_sweep_test.py",

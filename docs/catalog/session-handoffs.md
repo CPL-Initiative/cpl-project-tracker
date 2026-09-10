@@ -15,11 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-226 document(s).
+227 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
-| 252 | [the rest of the phantoms, and three guards that reported nothing](../session_252_handoff.md) | 2026-09-10 |
+| 253 | [the rest of the phantoms, and three guards that reported nothing](../session_253_handoff.md) | 2026-09-10 |
+| 252 | [the four blind checks, and CPL mode's universe](../session_252_handoff.md) | 2026-09-10 |
 | 251 | [three silences, and a description that belongs to nobody](../session_251_handoff.md) | 2026-09-10 |
 | 250 | [a control that emptied the map, and an answer nobody could see](../session_250_handoff.md) | 2026-09-09 |
 | 249 | [four kinds of token that cannot flip, and a floor the layout could not go under](../session_249_handoff.md) | 2026-09-09 |

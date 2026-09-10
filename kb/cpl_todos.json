@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-10",
- "_session": "SkyTouch (2026-09-10) — the rest of the phantoms, and three guards that reported nothing",
- "_status": "The dark-mode work is now through all four kinds of fault that a person reading the code cannot see: color names that were never defined, white backgrounds hard-coded as panels, white text sitting on a colored button whose color flips, and two tabs that kept their own private light/dark switch. Forty-seven color names and eighty-eight places in total. Mobile is clean on every tab at phone width, and a test now guards it. What is left is ordinary and individually named by the accessibility sweep. Three questions are waiting on Sam, and all three are the same shape: the fix is correct but it changes how things look in normal light mode, so it is a design call rather than a repair. Separately, three checks that were supposed to be protecting us turned out to be reporting nothing at all — one because the daily robot's own commits never run the tests, one because the test file was never wired to anything, and one because it was written so it could never fail. All three are fixed.",
+ "_session": "SkyTouch S249 + SkyLabel S252 (2026-09-10) — two sessions ran in parallel; this feed is the union of both",
+ "_status": "The dark-mode work is now through all four kinds of fault that a person reading the code cannot see: color names that were never defined, white backgrounds hard-coded as panels, white text sitting on a colored button whose color flips, and two tabs that kept their own private light/dark switch. Forty-seven color names and eighty-eight places in total. Mobile is clean on every tab at phone width, and a test now guards it. What is left is ordinary and individually named by the accessibility sweep. Three questions are waiting on Sam, and all three are the same shape: the fix is correct but it changes how things look in normal light mode, so it is a design call rather than a repair. Separately, three checks that were supposed to be protecting us turned out to be reporting nothing at all — one because the daily robot's own commits never run the tests, one because the test file was never wired to anything, and one because it was written so it could never fail. All three are fixed. Separately and in parallel, another session worked SkyView's CPL mode; its items are in this list too and its handoff is docs/session_252_handoff.md.",
  "items": [
   {
    "id": "s249-sam-unresolved-brand-link-text",
@@ -135,6 +135,24 @@
    "for": "Sam",
    "tab": "unified-courses",
    "text": "A quiet one worth knowing about before it bites. Los Angeles Pierce College is recorded under the spellings 'LA PIERCE' and 'LA Pierce', but not under its own name, 'Pierce College'. Every internal table spells it the long way today, so nothing is broken right now. If a file ever arrives from outside using the college's own name, it would match nothing and the college would simply be absent, with no error to notice. Adding the third spelling now costs nothing."
+  },
+  {
+   "id": "s248-fable-keep-mobile-clean",
+   "for": "Fable",
+   "tab": "dashboard",
+   "text": "Mobile is clean now — every tab fits a 390px phone with no sideways scrolling, where the Dashboard alone used to be more than three times too wide. The thing that broke it was a panel that could not shrink because of what was inside it, and three more places had the same kind of hard minimum width baked in. A test now guards all four, so if someone reintroduces one it fails rather than shipping. Worth re-checking on a real phone after the next deploy."
+  },
+  {
+   "id": "s251-fable-cpl-universe-view",
+   "for": "Fable",
+   "tab": "skyview",
+   "text": "CPL mode's data is built and nothing draws it yet. The map now has a second universe where the entities are credentials rather than courses: 1,987 of them, folding 3,813 local exhibits colleges typed in, grouped into 97 discipline islands, with a ring on the 1,603 that a college course already articulates to. The next step is the view itself — the same sky, showing exhibits."
+  },
+  {
+   "id": "s251-sam-statewide-treatment",
+   "for": "Sam",
+   "tab": "skyview",
+   "text": "You asked that the statewide exhibits show up clearly on the sky, and the message cut off at “so folks can easily see…”. The data side is done — all 84 are marked, and they are the tidiest part of the map: every one has a discipline, every one already has a college course articulated to it, and most group several local exhibits together. What is open is what the seeing is FOR: telling which exhibits are statewide, showing a college what it could adopt, or showing where they are already in use. At 84 we can print the name beside each one, which we cannot do for all 1,987."
   }
  ]
 }

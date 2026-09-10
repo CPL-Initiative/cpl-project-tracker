@@ -243,6 +243,22 @@ def find_handoff_max(docs):
     return max(ns) if ns else None
 
 
+def handoff_day(fm):
+    """The day a handoff was written, whichever spelling its frontmatter uses.
+
+    ⚠️ THE SIBLING TEST READ ONE SPELLING AND THE COLLISION USED THE OTHER
+    (2026-09-10). rule_superseded_handoff has treated same-day handoffs as
+    parallel siblings since 2026-08-10, and it worked by comparing `created`.
+    Handoffs in this repo carry EITHER `created:` (the docs-lane frontmatter) or
+    `date:` (the older handoff shape), so on the day two sessions actually
+    collided — SkyLabel's 252 with `date:`, SkyTouch's 253 with `created:` — the
+    comparison read None against a date, missed, and offered to stamp a live
+    sibling `superseded`. The fix the rule already had could not fire on the
+    frontmatter it was pointed at.
+    """
+    return fm.get("created") or fm.get("date")
+
+
 def rule_superseded_handoff(entry, handoff_max, authoritative_created=None):
     """A lower-numbered handoff is superseded — UNLESS it is a parallel sibling.
 
@@ -267,7 +283,7 @@ def rule_superseded_handoff(entry, handoff_max, authoritative_created=None):
     n = int(HANDOFF_RE.match(os.path.basename(entry["path"])).group(1))
     if n >= handoff_max:
         return None
-    if authoritative_created and entry["fm"].get("created") == authoritative_created:
+    if authoritative_created and handoff_day(entry["fm"]) == authoritative_created:
         return None   # parallel sibling, not superseded
     if str(entry["fm"].get("superseded", "")).lower() == "true":
         return None
@@ -1732,7 +1748,7 @@ def main():
         if e["lane"] == "handoff" and handoff_max is not None:
             m = HANDOFF_RE.match(os.path.basename(e["path"]))
             if m and int(m.group(1)) == handoff_max:
-                auth_created = e["fm"].get("created")
+                auth_created = handoff_day(e["fm"])
 
     findings = []
     for e in entries:
@@ -1838,7 +1854,7 @@ def main():
             # failure this file exists to catch.
             same_day = [e for e in entries
                         if e["lane"] == "handoff" and auth_created
-                        and e["fm"].get("created") == auth_created
+                        and handoff_day(e["fm"]) == auth_created
                         and HANDOFF_RE.match(os.path.basename(e["path"]))
                         and int(HANDOFF_RE.match(
                             os.path.basename(e["path"])).group(1)) < handoff_max]

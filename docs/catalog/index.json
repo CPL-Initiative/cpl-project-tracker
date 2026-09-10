@@ -12889,13 +12889,13 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 226,
+   "count": 227,
    "docs": [
     {
      "created": "2026-09-10",
      "governs": [],
-     "n": 252,
-     "path": "docs/session_252_handoff.md",
+     "n": 253,
+     "path": "docs/session_253_handoff.md",
      "status": null,
      "tags": [
       "handoff"
@@ -12903,6 +12903,24 @@
      "title": "the rest of the phantoms, and three guards that reported nothing",
      "type": null,
      "updated": "2026-09-10"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "n": 252,
+     "path": "docs/session_252_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "skyview",
+      "ccr",
+      "cpl-mode",
+      "guards",
+      "generators"
+     ],
+     "title": "the four blind checks, and CPL mode's universe",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-09-10",
@@ -16709,5 +16727,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 865
+ "total": 866
 }

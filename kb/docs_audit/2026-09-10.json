@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 878,
-    "bytes": 9309507,
-    "over_budget": 5,
-    "handoff_max": 252,
+    "files": 879,
+    "bytes": 9332618,
+    "over_budget": 6,
+    "handoff_max": 253,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
     "superseded_files": 0,
@@ -26,43 +26,43 @@
       },
       "other": {
         "files": 112,
-        "bytes": 2851581,
-        "over": 2
+        "bytes": 2887398,
+        "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 34481,
+        "bytes": 29966,
         "over": 0
       },
       "lessons": {
         "files": 74,
-        "bytes": 2049719,
+        "bytes": 2034634,
         "over": 1
       },
       "kb_note": {
         "files": 432,
-        "bytes": 2219935,
+        "bytes": 2220625,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 169843,
+        "bytes": 170355,
         "over": 2
       },
       "handoff": {
-        "files": 226,
-        "bytes": 1923951,
+        "files": 227,
+        "bytes": 1929643,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 23,
-      "oversized_doc": 5,
+      "oversized_doc": 6,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2807,
-      "bytes": 1360355434,
+      "files": 2811,
+      "bytes": 1360765693,
       "heavy_bytes": 613976276,
       "heavy_share": 0.451,
       "ignore_filters": [
@@ -140,6 +140,19 @@
       },
       "message": "1 business-register term — leverage x1 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
       "path": "docs/catalog/kb-notes.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 166759,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 16759,
+        "ratio": 1.11
+      },
+      "message": "166,759 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/ccr_atlas_lessons_archive.md"
     },
     {
       "rule": "house_voice",
@@ -339,26 +352,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 17495,
+        "bytes": 18433,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 5495,
-        "ratio": 1.46
+        "over_by": 6433,
+        "ratio": 1.54
       },
-      "message": "17,495 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "18,433 B is 1.5× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 13369,
+        "bytes": 12943,
         "limit": 12000,
         "lane": "roadmap_lane",
-        "over_by": 1369,
-        "ratio": 1.11
+        "over_by": 943,
+        "ratio": 1.08
       },
-      "message": "13,369 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
+      "message": "12,943 B is 1.1× the roadmap_lane budget (12,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/skyview-ccr-interface.md"
     },
     {
@@ -377,13 +390,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 620932,
+        "bytes": 627741,
         "limit": 150000,
         "lane": "other",
-        "over_by": 470932,
-        "ratio": 4.14
+        "over_by": 477741,
+        "ratio": 4.18
       },
-      "message": "620,932 B is 4.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "627,741 B is 4.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

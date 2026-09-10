@@ -335,3 +335,28 @@ selection.
 discipline; `CN:` names more than one course on 1,761 keys and those moves are
 refused with the reason.
 
+## The outline of record — BUILT (S235, CPL layer S238)
+
+*Moved here from the SkyView lane at the S251 checkpoint: these are
+invariants, and invariants live in the invariants file. The lane states
+current truth about the lane; this states what must not be violated.*
+
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`.
+
+⭐ **The description is CONSOLIDATED and NAMES NO COLLEGE** (Sam, 2026-09-10:
+attribution *"could lead to division as some faculty may question the choice"*).
+The unit is the SENTENCE; the selector is agreement, not typicality; what only
+some add sits under *Some colleges also include* with its count. Invariants, none
+optional: ⚠️ **COMPLETE-link at Dice 0.3, never single-link** (single-link chains
+and reports agreement no two colleges have); ⚠️ **ordered by position in the
+source, not by support**; ⚠️ **the catalog's administration is stripped FIRST**
+and is the most-agreed text in the corpus — a numeric heading is stripped and its
+sentence KEPT, a prose-valued key takes its sentence with it; ⚠️ **placeholder
+text never enters a derived layer**; ⚠️ **C-ID/CCN is NOT HANDLED and the card
+says so** — MAP holds the designation, not the descriptor text (541 identities),
+so loading them is a data feed. Measurements:
+[`methodology-consolidate-sentences-not-documents`](../../kb-notes/methodology-consolidate-sentences-not-documents.md).
+
+⭐ Sam's MAP-Generated sentence prints verbatim. ⭐ Two level axes, neither
+derived. ⚠️ Confidence is agreement BETWEEN colleges. ⭐ A reviewer may add a
+skill and take one out — staged, nothing written.

@@ -39,422 +39,6 @@ curation task and a bit lost in the process."*
 > 2026-09-05, Sessions 224–225 on 2026-09-07 (S237), Sessions 226–227 on
 > 2026-09-07 (S239). Nothing is edited in the move.
 
-## 2026-09-06 — SkyBuild S233: an observation session's findings, and the two that were wrong
-
-Sam pointed a Claude Desktop computer-use session at the deployed SkyView with
-the brief S232 wrote (#1492), then handed the log over: *"Not sure if
-SkyOutline's audit caught all of them."* Sixteen findings across boundary, data
-layer, navigation, fetch behavior and keyboard model. **Four were real and are
-fixed; two were confidently wrong; one was right about the arithmetic and wrong
-about the mechanism, and the correct mechanism is a defect nobody had noticed.**
-
-⭐ **VERIFY EVERY REPORTED DEFECT AGAINST THE SOURCE — S231's lesson, paid
-again.** Two findings dissolved on a single grep:
-
-- *"`#u-mode-pan` and `#u-mode-move` carry neither `title` nor `aria-label`, and
-  the active mode is conveyed by styling alone with no `aria-pressed`."* Both
-  buttons carry `aria-pressed`, `setMode()` maintains it on every switch, and
-  their visible text ("Pan", "Move") **is** their accessible name — a labeled
-  button needs no `aria-label`. Nothing to fix.
-- *"214 identities show `0 college courses carried` and `row count 3` side by
-  side with no explanation of what `row count` means."* The count carries a
-  `title` that explains exactly that, and says why the two differ. The
-  explanation is there; it is on hover.
-
-⚠️ **THE FINDING RANKED FIRST WAS THE ONE MOST WRONG.** The session reported the
-brief's payload figure as off by ~4,000 and recommended correcting it. Both
-number pairs are correct — they describe different files, and the one the brief
-quoted belongs to a surface SkyView never loads. Applying the recommendation as
-written would have put a number in the brief that described nothing. Full
-worked case, and the rule it yields:
-[`methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names`](kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md).
-
-⭐ **THE 117-DISCIPLINE DISAGREEMENT IS A TWELVE-DAY BUILD GAP, NOT
-CANONICALIZATION.** The session's arithmetic reproduced exactly (117 of 158
-differ, gap 1,904, net −6, `(no discipline yet)` 955 lower in the universe) and
-its proposed mechanism — universe post-canonicalization, atlas pre- — is wrong.
-`_generated_from` reads `2026-08-24 15:34` on the atlas payload and `2026-09-05
-15:22` on the universe: two builds spanning the authority recode, the Z-band
-retirement and the prefix fold. Nothing rebuilds the atlas payload on a
-schedule. So the −6 the session left open as "the only part that warrants
-investigation" needed none — **but the staleness does**: the discipline tables
-read the older payload while the map reads the newer one, so one screen can show
-Health 43 apart. Open for Sam, alongside his standing question ② (should the
-daily run rebuild the universe layout?).
-
-### The four that were real, and what each cost
-
-⭐ **TWO REPORTS, ONE DEFECT — the keyboard model's cursor was never set by the
-mouse.** *"There is no click path from an identity back to its discipline"* and
-*"Escape backs out only if you arrived by keyboard"* are the same bug.
-`kbIsl`/`kbNode`/`kbInside` were set only by the Tab/Enter path, so a mouse user
-pressing Escape — as the footer hint tells them to, unconditionally — hit
-`if(kbInside)` and got nothing. The back path existed the whole time and was
-unreachable by the route almost everyone takes. Fixed with one seam: `kbSync()`,
-assigned by `wire()` and called from `showNode`/`showIsland`, so **every**
-selection path points the cursor. Idempotent for the keyboard path, which sets
-the same values and then calls the same functions. The panel also gains a
-**Back to `<discipline>`** control, because Escape needs canvas focus and a
-click in the panel does not leave it there — a word, per the glyph rule.
-
-⭐ **RESET THE SCROLL WHERE THE DOCUMENT CHANGES, NOT WHERE IT REPAINTS.**
-Opening an identity kept the panel's offset, landing the reader mid-document in
-a course they had never seen, below its title, code, units and articulation line
-(reproduced 2/2: 400→399, 600→627 — the inexact copy is browser scroll
-anchoring, not a deliberate restore). ⚠️ **The obvious fix is a regression.**
-`renderNode()` fires on every filter keystroke, description toggle and staged
-move; resetting there throws the reader to the top mid-task — which is precisely
-the friction Sam reported in the search list the day before (ruling 3a), whose
-first cut had already been wrong once in the same way. So the reset goes in the
-**entry points** — `showNode`, `showIsland` — and a test asserts a re-render
-does *not* touch the scroll. jsdom does no layout, so the property is
-instrumented rather than measured; that is the contract anyway.
-
-⭐ **A BASE THAT CANNOT EXIST ON THIS HOST MUST NOT BE TRIED FIRST.**
-`DESC_BASES` was the fixed pair `["ccr_desc", <bucket>]`. The shards are 50 MB
-of derived text and deliberately uncommitted, so on the deployed page the first
-base **can never succeed** — every discipline paid a guaranteed 404 (which
-downloads a 5 KB GitHub 404 page) before the fetch that works. Measured by the
-session: three disciplines, three 404s, ~350 ms of pure latency, and a network
-panel that reads like a broken page to anyone debugging something else. Now
-ordered by `location.hostname`: localhost and `file://` keep the local directory
-first, every other host leads with the bucket. Extracted as `descBasesFor(host)`
-and exposed on the debug state, so the per-host contract is testable without
-standing up a second 847 KB window just to change the URL.
-
-⭐ **THE MOST REPEATED CHIP ON THE SURFACE HAD THE LEAST TO SAY.** 13 of 16
-chips in a typical panel carried no `title`. The two that did cite their ruling
-and its date; the identity-system chip — the one on every identity — said
-"M-ID — our working label" and nothing more. That names the system without
-saying what follows from it: who may re-key it, and whether it is a statewide
-claim. `SYSWHY` now carries that per system.
-
-**All six fixes perturbation-tested red before green** — including the
-regression direction: moving the scroll reset into `renderNode()` fails the test
-written to forbid it, and reverting `DESC_BASES` to the fixed order shows
-`ccr_desc/welding.json` fetched ahead of the bucket in the test's own output.
-That is what the 404 looked like.
-
-### Still open from the log — *all closed the next morning; see the 2026-09-06 (morning after) section*
-
-Logged, not fixed: the token chips read as breadcrumbs but only their `×` is a
-control (**§2.2** — they are a pick list, not a location, and Sam should decide
-whether they become navigable); only the title is a hit target in a panel row
-(**§2.4**); a carried course has no in-panel destination, so every staged move
-goes through the canvas (**§2.5**); *Recenter* targets the token rather than
-what the panel shows (**§1 ruling 6** — the title says so, the wording is Sam's
-call); the canvas is reachable by Tab but sits behind 217 controls (**§2.3**);
-and a search-box focus loss the session logged as unreproduced (**§6.3**),
-which matches a non-defect S231 already diagnosed. The `⋮` menu's same-origin
-link out to COBI is now named in the brief as a boundary the observer must not
-cross — the single most likely accidental crossing, and the old rule did not
-cover it.
-
-## 2026-09-06 (later) — SkyBuild S233: Sam drove it, and five reports became five fixes
-
-Sam used SkyView while the audit fixes were landing and reported as he went.
-Every one was real, and two of them were **not** what the report said they were —
-which is why each was measured before it was touched.
-
-⭐ **"THE HOVER SHOWED THE SAME DESCRIPTOR FOR THE WELDING DISCIPLINE INSTEAD OF
-COURSE DETAILS."** Not the discipline card — the **identity** card, repeated. An
-opened identity's ring SPREADS (`drawMembers`, `spread` up to 70px), so its own
-college-course stars sit over its neighbors, and `pick()`'s rule that "a
-pointer inside the nearest identity's circle means that identity" took them.
-Measured with the pointer exactly on each drawn star: **16 of 30 gave the course
-card, 14 gave an identity's**. Reading those courses is the entire purpose of
-the ring, so a focused identity's own members now outrank the circle they happen
-to overlap — `lastFocus` is the set `draw()` just used, so hit-testing and
-painting cannot disagree about what is open. ⚠️ `pickMember` also returned the
-FIRST star scanned rather than the NEAREST, so an unrelated neighbor's course
-could shadow the one under the pointer; it takes the nearest now and accepts a
-filter. 30 of 30 after.
-
-⭐ **"THE BACKGROUND CHANGES TO PURPLE… CHANGES WHEN A SEARCH ITEM IS
-SELECTED."** Two mechanisms, and the first one found was the smaller. The focus
-disc is tinted with the identity's system color and grows with the member count;
-capping it was right but did not explain the report, because at the zoom a
-search pick flies to, the disc is not even drawn. **It is the membership glow.**
-`haloAround()` paints a radial gradient out to `r*2.6` where `r` is the DRAWN
-radius, so opening a well-adopted identity threw its system color across the
-whole viewport at 30% alpha — measured at **983px on a 960×600 canvas**. The
-glow is Sam's own signal (*"haven't earned their wings yet"*) and reads fine at
-a fraction of that, so its reach is bounded. ⚠️ **Neither cap was testable on
-the existing fixture** — 6 identities and 11 members never make a ring that
-overlaps or a disc that clamps — and both perturbations passed until a fixture
-built for the purpose replaced them (`tests/ccr_skyview_hover_disc.test.js`,
-120 identities packed two units apart, one carrying 30 college courses). A test
-that survives deleting the code it covers is a decoration.
-
-⭐ **"TRY 'weldi' AFTER YOU INITIALLY TRY 'weld' AND THERE IS NO INTRO COURSE IN
-THE LIST."** Reproduced on the real payload: `weld` returns *Introduction to
-Welding* **first**, `weldi` returns it **nowhere**. The tiers were tested
-against the STRING start only, and `weld` prefix-matches every Welding
-identity's **id** (`weld m1109`) — so all 549 sit in tier 1 and sort by
-adoption, and the 24-college intro course wins. One more character and the id
-stops matching: only the **109** titles beginning "Weldi…" are tier 1, they fill
-all 60 slots, and the **299** titles where the word appears later never reach
-the list. ⭐ **The invariant is that typing more of a word must not delete a
-match the shorter term found**, so a term beginning a WORD now ranks with one
-beginning the string; which word of the title it is was never a relevance
-signal. `weld`, `weldi`, `weldin` and `welding` return the same first course
-now. A match *inside* a word stays tier 2, which is the distinction that was
-actually wanted. ⚠️ Sam withdrew this report mid-session (*"seems to be working
-now, maybe transient"*) and then reproduced it precisely; the first measurement
-had already shown the ranking was sound, which is exactly why the second one was
-worth taking at face value.
-
-⭐ **"THE SIDE BAR UNHID, AND DOES SO EVERY TIME I ADD A COURSE."**
-`openInspector()` fires on every selection, so Hide survived exactly until the
-next pick. Hide is an instruction about the workspace, not about one course. The
-content still follows the selection underneath, so reopening shows the right
-card. ⚠️ A test asserted the OLD behavior (*"selecting something opens it
-again"*) — it now asserts the new contract, because the reader's instruction
-outranks the convenience.
-
-⭐ **"CAN WE MAKE THE LIST LONGER THAN 60? MAYBE WITH LAZY LOAD?"** 60 is the
-PAGE now, not the list: the ranking is computed once to `SUG_MAX` (300) and
-revealed a page at a time as the reader reaches the bottom. ⚠️ **It has to be
-ranked once, not re-ranked per page.** `suggest()` gives each kind a share of
-the LIMIT (30/45/25), so asking for 120 instead of 60 does not append — it
-re-cuts, and row 19 changes from a course to a discipline under the reader's
-eyes. The footer says "Showing 60 of 408 — scroll for more", and the scroll
-position and the highlighted row both survive a reveal.
-
-⭐ **"SHOW COURSES SIMILAR TO THE SELECTED COURSE IN ORDER — ALL THE BEG INTROS
-FOLLOWED BY INT INTROS."** The identity panel gains a **Similar courses**
-section: same discipline, Dice over the same lightly stemmed title tokens the
-builder scores orbits with, grouped into Beginning → Intermediate → Advanced
-with the unmarked last, adoption ordering within a rung. ⚠️ **The level word
-must not drive the similarity** — with "Beginning" and "Advanced" counted as
-title words, the two rungs of one course score as LESS alike than two unrelated
-beginning courses, and the ladder is the whole point; they are stripped before
-scoring and read back after. ⚠️ **And every rung needs a share of the cap.** The
-first cut filled 24 slots in order, the fixture's 24 beginning courses took all
-of them, and the reader never learned an advanced version existed — the same
-"a budget written for eight starves the tail at sixty" failure as the suggestion
-list, three weeks later in a different function. A floor each, then the slack
-flows. Levels are read from the title because that is the only place we hold
-them (44% of Welding's 512 titles carry one), and a course whose title does not
-say is listed last rather than guessed at — course level and skill level are
-different axes and neither is derived from the other.
-
-
-## 2026-09-06 (morning after) — SkyBuild S233: seven rulings, and three numbers of mine that were wrong
-
-Sam asked for a decision sheet covering the payload-rebuild question and the five
-SkyView calls left with him, answered all seven `yes` in one sitting with no edits
-and no follow-ups, and they shipped as PR #1494. The engineering is in the commit;
-what belongs here is what **measuring for the sheet** turned up.
-
-⭐ **THREE CLAIMS DID NOT SURVIVE BEING MEASURED, AND TWO OF THEM I HAD ALREADY TOLD
-SAM.** The sheet's rule is that every item carries measured context rather than a
-guess, and applying that rule to my own carryover is what caught them:
-
-- **"The map and the discipline tables can differ by 43 on one screen."** They
-  cannot. `disciplineRows()` takes its identity and stand-alone counts from the
-  **universe** payload; the stale atlas file supplies only the Decisions column, the
-  work-surface offer and a provenance tooltip. The claim had been written into the
-  lane, the handoff, `CLAUDE.md`, the To-Do feed and the brief before anyone read
-  the function. ⚠️ **The staleness was still real and still worth the ruling** — it
-  just cost something else: of the 593 identity ids in the five embedded decision
-  packs, **89 (15%) resolve to nothing** through the alias chain, worst in Fire
-  Technology at 32 of 136. A curator could be offered a decision about a course that
-  no longer exists under that id. The right finding was one function away from the
-  wrong one, and the wrong one was more alarming, which is presumably why it stuck.
-- **"The canvas sits behind 217 tab stops."** 39, and it already carried
-  `tabindex="0"`. Inherited from the observation log and repeated without counting.
-- **"Dropping `fetch-depth: 0` saves ~650 min/month."** Mine, from first principles,
-  and the job log disproved it in one read: TruffleHog was already scanning
-  `base → head`, 45 chunks, 66 KB. The 3 minutes are 75s of `git fetch`, 8s of
-  `docker pull` and 88s of detector startup — none of it scan depth. Narrowing the
-  fetch would have saved ~60s and risked leaving `BASE` unreachable, at which point
-  the scanner covers nothing and still reports green.
-
-⚠️ **`ALIAS_MAPS` IS A LIST OF PATHS, AND PASSING IT UNLOADED FAILS SILENTLY.**
-`resolve_id(id, ALIAS_MAPS)` does not error; it resolves nothing. The tell was in the
-output and nearly went past me: direct and chained liveness agreed **EXACTLY** at 440.
-Two numbers produced by two different code paths do not land on the same integer.
-`load_maps()` first gives 504 live / 89 dead. Rule 7 already says resolve through the
-chain before comparing to the live set; it now also matters *how*.
-
-⭐ **A FILTER MUST BE TESTED IN BOTH DIRECTIONS, AGAINST REAL COMMITS.** The
-`paths-ignore` draft for CodeQL looked obviously right and was wrong twice: it missed
-`reports/**` and `veteran_jst.json`, so it would never have fired on an actual cron
-push and would have saved nothing; and a bare `kb/**` skipped
-`kb/_build_ccr_universe.py` and `kb/alias_chain.py` — real Python source, and a
-genuine coverage regression. Both were found by replaying the globs over the last
-cron pushes AND over a list of files that must still be analyzed. Asserting the
-globs would have caught neither. The same shape as the fixture lesson from the night
-before: a check that only ever runs the case you expect confirms your expectation.
-
-⚠️ **AND THE FAILURE MODE UNDERNEATH ALL OF IT.** Three times in one run I read one
-thing carefully and missed the adjacent field that falsified it — the payload figure
-(right for the file it named), `mergeable_state` (sitting in a PR payload I had
-already fetched twice while diagnosing missing CI as a dropped webhook, when Sam's
-screenshot showed a merge conflict), and the `fetch-depth` theory. The reading was
-careful each time. What was missing was the second look at what sat beside it.
-
-⚠️ **AND ONE PROCEDURAL GAP, FOUND BY CHECKING RATHER THAN BY FAILING.** The
-previous night's checkpoint wrote 8 `cpl_memory` rows, said so in its commit body,
-and logged **none** of them to `cpl_memory_log`. The log is a separate
-`insert ... select`, so skipping it is invisible from the `cpl_memory` side, and no
-test can see it — the sandbox cannot reach `*.supabase.co`, so the suite has no
-view of that table at all. It was found only because this run happened to group the
-log by slug. Backfilled with late-entry notes, and the playbook now carries a
-one-query verification as part of step 6. **A step whose omission produces no error
-and no failing test is not a step; it is a hope.**
-
-⭐ **AND THE ONE THAT CAME BACK TO BITE THE SAME DAY: `test` went red on a file
-this run had not touched, and it was ours.** `ccr_skyview_search_show.test.js`
-exited 1 on CI while passing 116/116 here — standalone, in a full 303-file
-concurrent suite, and on CI forty minutes earlier on byte-identical content.
-Every cheap hypothesis was wrong: not the check-floor raise in the same push
-(`tests/run.js:231` consults the ledger only when the child exited 0, and a floor
-violation prints *"check count fell"*, not `exit 1`), not memory (`exit 134` /
-`SIGABRT`), not dependency drift (jsdom pinned exactly), and **not the Node 20 vs
-22 gap I flagged — I installed Node 20 and it passed 116/116 there too.**
-
-⚠️ **The CI log was unreadable, and the fix for that was not to try harder to read
-it.** `get_job_logs` caps its window at roughly the last minute of a nine-minute
-run, and the full-log blob on `results-receiver.actions.githubusercontent.com` is
-refused by this environment's egress policy. So the failing assertion was never
-visible. **Running the file 24 times CONCURRENTLY reproduced it in one command** —
-7 failures, and `grep ^FAIL | sort | uniq -c` named all three failing checks. The
-missing variable was contention, and a re-run does not vary it.
-
-⭐ **The product was right; the test was racing a deadline the product owns.**
-`gqEl.addEventListener("blur", function(){ setTimeout(closeSug, 120); })` closes
-the suggestion list 120ms after the search box blurs — deliberate, so a click
-elsewhere dismisses it. The test focuses that box at §11; §15 then clicks a row,
-a move control and a destination, each scheduling that close. `tick()` is ONE
-macrotask, so an idle machine finishes inside 120ms and a loaded runner does not.
-All three failures were in §15's Enter block — **ruling 6, shipped that morning.**
-Before: 7 of 24. After: 24 of 24 at 116/116. New KB note:
-[`methodology-a-test-that-only-fails-under-load-is-racing-a-timer`](kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md).
-
-
----
-
-## 2026-09-06 — S234: a screen recording, measured in a browser
-
-Sam recorded 6m50s of driving the deployed SkyView and narrating. The recording
-was processed entirely on his machine by the new `video-context` skill
-(`kb/_video_context.py`): 23 scene-aware frames and a 138-segment faster-whisper
-transcript, no audio or frames leaving the laptop. Triage:
-[`skyview_video2_findings`](skyview_video2_findings.md).
-
-### The two defects, and why one of them survived its own fix
-
-⭐ **A FIX CAN BE RIGHT ABOUT THE COMPLAINT AND WRONG ABOUT THE AXIS.** Ruling 3
-(2026-09-05) fixed "the list jumps when I pick" by preserving `sugEl.scrollTop`
-across a pick, with a careful comment explaining why `scrollIntoView` does not
-undo it. That fix works — measured, `scrollTop` holds at 300 through three
-picks. Sam still said *"jumping again, driving me nuts."*
-
-Measured in Chromium at 1440px: on the **fourth** pick the toolbar wraps to a
-second line, `#u-bar` grows 30 → 76px, `#sug`'s top goes 40 → 76, and every row
-moves down **36px — almost exactly one row height**. The scroll offset is
-preserved; the list's position on screen is not. `.u-tokens{display:contents}`
-makes each chip a flex child of `#u-bar`, so the Nth chip reflows the bar and
-everything below it.
-
-Two lessons. **A complaint can have more than one mechanism**, and fixing the
-one you found does not retire the complaint. And **a guard must assert the thing
-the user experiences** — a test that pins `scrollTop` passes while the reader's
-row walks out from under the pointer.
-
-⭐ **A VIEW SWAP THAT DOES NOT MOVE THE HASH STRANDS THE USER.** `discipline()`
-paints over SkyView, sets `state.v` and the crumbs, and never calls
-`syncHash()`. Measured: after `__ccrDiscipline('Welding')` the canvas is gone
-and `h1` reads "Welding" while `location.hash` still reads `#skyview`. Four
-consequences, all of which Sam hit in sequence: Back creates no history entry;
-`hashchange` cannot fire, so the router never learns; the Views menu disagrees
-with the screen (*"now I'm over here in no man's land"*); and a refresh silently
-returns to SkyView. Returning rebuilds the canvas, losing every pick — *"it's
-going to reset sky view… I have to start all over"*, said before he tested it.
-
-⚠️ **The masthead reads "SkyView — prototype v1" (`skyview.html:714`), and that
-label did real damage** — it made a view swap inside one page read as landing in
-an old prototype. Both Sam and this session believed a navigation had occurred.
-I told him it had left for `ccr_atlas_v1.html`; measuring corrected me.
-
-### The retraction is a finding
-
-Between 05:24 and 05:55 Sam reported at length that hovering a college course
-returned the identity card rather than the course, with a specific expectation
-(*"it should say weld 100 Fullerton, two, three units"*). At 06:08:
-
-> *"You know what? My bad. Forget everything I said there. It's not a problem.
-> There it is."*
-
-That passage is **S233's hover fix working** — he found it a moment later. A
-session reading the transcript for defects and stopping at the complaint would
-have undone a shipped fix. ⭐ **When a recording is the input, the retraction
-travels with the complaint and must be read to the end.** It is recorded in the
-findings doc as loudly as the defects, under a "Do not act on this" heading.
-
-### What the tooling taught
-
-The cloud cannot do this and the reason is worth keeping: the file is on a local
-machine, the egress proxy denies OneDrive, SharePoint and Drive, **and it denies
-`huggingface.co` and `openaipublic.azureedge.net`, so Whisper's weights are
-unreachable in principle**. ffmpeg itself works fine in a container from the
-`imageio-ffmpeg` wheel — so "the cloud cannot do video" is too strong, and the
-distinction matters the next time someone reaches for a cloud session.
-
-⚠️ Two defaults shipped wrong and were caught by Sam running it, not by tests:
-`python3` inside a PowerShell block (Windows has `python`; `python3` hits the
-Microsoft Store alias), and `device="auto"` for faster-whisper, which selects
-CUDA whenever a GPU is visible and then dies on `cublas64_12.dll` — the normal
-state of a work laptop. **A Windows-facing example authored on Linux gets no
-check at all**; the helper was mutation-tested, smoke-tested and CI-guarded, and
-none of that touches the copy-pasteable line a human starts from.
-
----
-
-## S234's triage of the 2026-09-06 recording, as written (moved from the lane, S235)
-
-Kept verbatim because two of its readings were corrected by driving the page:
-the element that wraps is `.sugwrap`, not `#u-bar`, and the picks were destroyed
-leaving the map rather than returning to it.
-
-## Measured 2026-09-06 (S234) — from Sam's screen recording
-
-Two defects found by driving the deployed map and measured in Chromium.
-Full triage: [`skyview_video2_findings`](../../skyview_video2_findings.md).
-
-⭐ **THE DROPDOWN DROPPED A FULL ROW WHEN THE CHIP ROW WRAPPED — FIXED S235.**
-⚠️ **It is `.sugwrap` that grows, NOT `#u-bar`.** S234's triage named `#u-bar`
-30 → 76; walking the real ancestor chain in Chromium on the fourth pick shows
-`#u-bar` **unchanged** and `.u-search-slot .sugwrap` going 30 → 66, which pushes
-`#sug` 40 → 76. A `min-height` on `#u-bar` would have read as a fix and changed
-nothing. Ruling 3 shipped as a two-row reserve on `.sugwrap`
-(`calc(var(--u-chip-h) * 2 + 5px)` = 65px, exactly the wrapped height) plus
-tighter chip padding/gap/max-width. Measured after: `#sug` top holds at 75
-across five picks. ⚠️ Target size, not contrast, is the tightening constraint —
-`.u-tok-x` 24×24 and `.u-tok-go` min-height 24px are on the WCAG 2.2 SC 2.5.8 AA
-floor and were verified still 24 after the change.
-
-⭐ **DOUBLE-CLICK STRANDED THE USER BECAUSE THE HASH NEVER MOVED — FIXED S235.**
-`discipline()` painted over SkyView without calling `syncHash()`. ⚠️ **Measured
-WORSE than triaged:** `homeSearch()` called `clearTokens()` on every view entry,
-so the picks were destroyed **on the way OUT** (`__ccrTokenKeys()` reads `[]` on
-the Welding surface, not on the way back), and Back left the document entirely.
-Now `#work/<discipline>`, a named crumb back to SkyView, and the selection
-**parked** and re-rung by `restoreTokens()` on return. History: `pushState`
-stand-alone, `replaceState` framed — an entry in COBI's frame is an entry on
-COBI's own back button, and that hazard still holds.
-
-⚠️ **Sam RETRACTED a finding on camera.** He reported at length that hover
-returns the identity card rather than the course, then found it working:
-*"My bad. Forget everything I said there. It's not a problem."* That passage is
-S233's hover fix working. **Do not act on the first half of it.**
-
-**Praised, do not break:** Fit all; the panel moving to the selection.
-
----
-
 ## 2026-09-06 — S235 (SkyOutline II): the outline built, three rulings shipped
 
 **What shipped.** The course outline of record (`#outline/<id>`), Sam's three
@@ -2011,3 +1595,74 @@ feed, not a rendering change.
 second universe whose entities are exhibits, with CER titles as identities, local
 exhibits as members, and rings where a course articulates. ⚠️ `ccr_cpl.json` is
 keyed the INVERSE way and cannot be reused — the builder is a new one.
+
+## 2026-09-10 — SkyLedger S251: the cron came back, and CPL mode got its universe
+
+**Sam's asks:** find out what went wrong with the cron (done in S251/#1540, this
+run dealt with its aftermath), then build CPL mode; make the statewide exhibits
+visible on the sky; Pedro fixed the Student Aggregate report.
+
+### The CER already carried every axis — the builder reads ONE file
+
+The lane had this as "lane-sized, not a session's work" with inputs of "3,124
+exhibit rows, 135 issuing agencies". Neither number reproduced. Measuring the CER
+the cron regenerated at 13:40 showed it supplies all four axes directly — `ut`
+the identity, `raw_variants` the members, `disc_modal` the island,
+`n_articulation_lines` the ring — so the build was a session's work after all.
+**1,987 identities · 3,813 members · 97 islands · 1,603 rings · 84 statewide.**
+
+⭐ **THREE `cpl_memory` ROWS WERE LANDMINES FOR THIS EXACT BUILDER, AND RULE 8's
+QUERY FOUND ALL THREE BEFORE A LINE WAS WRITTEN.** The crosswalk's inlined
+`issuing_agency` is a 2026-05-21 snapshot wrong on 1,743 of 4,592 records; the
+credit funnel and the articulation feed share only 570 exhibit ids; a coverage
+line must take both numbers from one universe. Any of them would have produced a
+plausible, wrong payload. This is the clearest return the query step has paid.
+
+### Two shape facts that were Sam's to decide, not mine to design around
+
+|            | singleton | grouped |
+|---|---:|---:|
+| **no discipline** | 442 | 101 |
+| **has discipline** | 1,011 | 433 |
+
+73% of CER titles hold exactly ONE local exhibit, so the Firefighter-1 case Sam
+described is the 534 that genuinely group. And 27% have no discipline at all.
+Both change what the view looks like; both went to him rather than being quietly
+resolved. He ruled: a singleton draws as any identity, and the pile ships visible.
+⚠️ **Neither had a mechanical escape** — TOP recovers 4 of the 543 (and Rule 7
+bars it anyway), issuing agency recovers 11 (42 issuers are discipline-mixed
+against 19 unanimous). Measuring that *before* offering the options is what kept
+"infer it from the agency" off the sheet as a false hope.
+
+### The layout is imported, and that was proven, not asserted
+
+`layout_island`/`build_islands` took a `point_fn` so both universes share one
+packer. The proof that Courses mode did not move: regenerate `ccr_universe.json`
+on the same data under both code versions — **byte-identical**, layout and
+members. Two packers would drift the way the copied alias chain did.
+
+### `slug()` truncates at 60 because it names a FILE
+
+Two Carpenters titles differ only past the cut and merged into one entity on the
+first build. The collision check caught it on run one. ⚠️ `slug()` must not be
+widened — it names every committed description shard. `ident_id()` appends a
+digest instead. ⚠️ The id derives from the title, so a rename re-mints it; the
+first feature that persists one needs a real surrogate key on the CER.
+
+### A guard that dies reports nothing
+
+Removing the digest made `rows_from_cer` raise `SystemExit` inside the freshness
+check and killed the test before one line printed — the regression read as a
+broken test. Every call into the builder now goes through `try_build()`. Same
+shape as S251's `hideNote()` fix: **a test must report its failure, not become
+one.**
+
+### The statewide exhibits are the well-formed subset
+
+84 of 1,987 (4.2%), and they invert the universe: 84/84 have a discipline, 84/84
+are articulated, 61/84 group — against 73%/81%/27% overall. They concentrate in
+10 islands (Fire Tech 25, Welding 23, CIS 14, Automotive 11). Sam's ask to show
+them arrived mid-turn and **cut off at "so folks can easily see…"**; the data side
+is done (`sw` on every one), the treatment waits on the rest of his sentence.
+⚠️ At 84 points a permanent LABEL is affordable where 1,987 cannot be labeled —
+which would satisfy "color is never the only signal" with a word, not a mark.

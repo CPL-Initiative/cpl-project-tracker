@@ -82,7 +82,7 @@ a future session needs from here is the shape and the rule beside it:
 |---|---|---|
 | Phantom token — `var(--x, #light)`, `--x` defined nowhere | 47 tokens / 88 uses | Dark blocks ONLY, and only when **every** use carries a fallback |
 | `var(--white)` as a ground | 7 sites | A ground token must have both values |
-| Fixed ink on a fill that flips | 21 sites → `--on-accent` | ⚠️ And the converse: a fill that does NOT flip needs ink that does not either (`--on-mustard`, `--on-seal-blue-muted`) |
+| Fixed ink on a fill that flips | 21 sites → `--on-accent` | ⚠️ The other ~160 navy fills are NOT proven broken (measured 551/497 INK vs 26/179 FILL) — fix what the sweep names. ⚠️ And the converse: a fill that does NOT flip needs ink that does not either (`--on-mustard`, `--on-seal-blue-muted`) |
 | A tab holding its own theme state | 2 tabs | No tab may keep theme state of its own |
 | ⭐ A **translucent white fill** — `rgba(255,255,255,.5)` composites to a mid grey (**#8A8A8A**, **#8F8F8E**) over the night ground | 3 declarations, **7 findings** | It is a light-only construct. The First Light v1.6 "glass-quiet chip" recipe is deliberate, so it got a **dark branch, not a removal**: `var(--glass-quiet, rgba(255,255,255,.5))`, `--glass-quiet: #262624` dark-only, worst themed ink 5.65:1, boundary carried by `--border-strong` |
 
