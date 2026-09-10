@@ -6473,29 +6473,220 @@ function olDice(a,b){
   for(i=0;i<b.length;i++) if(s[b[i]]===1){ s[b[i]]=2; hit++; }
   return 2*hit/(a.length+b.length);
 }
-/* ⭐ THE REPRESENTATIVE DESCRIPTION IS CHOSEN, NOT WRITTEN. Every word a
- * faculty reader sees here was written by a college and is attributed to it.
- * The medoid — the description with the highest mean similarity to the others —
- * is the one that says what the rest say. Composing new prose out of several
- * catalogs would read as authoritative while belonging to nobody, which is a
- * worse answer than quoting the college that already said it. The MAP-Generated
- * label covers the ASSEMBLY: the choosing, and the shared-topic list below it. */
-function olMedoid(descs){
-  if(!descs.length) return null;
-  if(descs.length===1) return {pick:descs[0], score:null};
-  var sets=descs.map(function(d){
-    var seen={}, out=[], w=olWords(d.desc.toLowerCase());
-    for(var i=0;i<w.length;i++){ if(w[i].length<3||OL_FUNC[w[i]]||seen[w[i]]) continue; seen[w[i]]=1; out.push(w[i]); }
-    return out;
-  });
-  var best=-1, at=0;
-  for(var i=0;i<sets.length;i++){
-    var tot=0;
-    for(var j=0;j<sets.length;j++) if(i!==j) tot+=olDice(sets[i], sets[j]);
-    var mean=tot/Math.max(1, sets.length-1);
-    if(mean>best){ best=mean; at=i; }
+/* ── the consolidated description (Sam's ruling, 2026-09-10) ────────────────
+ * ⭐ NO COLLEGE IS NAMED, AND THE REASON IS POLITICAL, NOT TECHNICAL. This card
+ * quoted the MEDOID — the one description most typical of the rest — and
+ * attributed it. Sam overruled that: "I don't want to choose the single most
+ * representative description and attribute it to the college it came from.
+ * Doing so could lead to division as some faculty may question the choice…
+ * If we always provide a generative description and note such, it will allow
+ * the faculty reviewers the freedom to revise and accept by consensus."
+ *
+ * The medoid's own defense was that composing prose "would read as
+ * authoritative while belonging to nobody". Half of it survives and is the
+ * design: EVERY SENTENCE BELOW WAS WRITTEN BY A COLLEGE. Nothing is composed,
+ * nothing is paraphrased, and no claim about a course appears that no catalog
+ * makes. What changed is that the unit is the SENTENCE rather than the
+ * document, and the selector is agreement rather than typicality — which is
+ * what his own earlier words asked for: "a consolidation of all without
+ * repetition."
+ *
+ * ⚠️ COMPLETE-LINK, AND THE THRESHOLD IS A CONSEQUENCE OF THAT CHOICE, NOT A
+ * TUNING. A sentence joins a cluster only if it clears the bar against EVERY
+ * member, not the closest one. Single-link chains: measured on 400 identities,
+ * 10.1% of multi-sentence clusters at 0.4 held a pair scoring under 0.25 to
+ * each other — "the fundamentals of acting in film and television" welded to
+ * "acting in film and television commercials, episodic screen work" through a
+ * third sentence touching both. Complete-link makes that unrepresentable.
+ *
+ * Measured, 400-identity samples, identities with ≥3 real descriptions
+ * (2026-09-10) — a majority of colleges share a sentence on:
+ *   single-link   0.4 → 64%, with 10.1% of clusters holding a loose pair
+ *   COMPLETE-link 0.3 → 64%, with 0.0%. Same reach, no drift, by construction.
+ *   complete-link 0.5 → 46%: the same bar costs 18 points once every pair has
+ *   to clear it, which is why the number moved and the rule got stricter.
+ * A card with no shared sentence says so, rather than promoting one college's
+ * sentence to a consensus it does not have.
+ *
+ * ⚠️ ADMINISTRATIVE SENTENCES ARE DROPPED FIRST, and skipping this step does
+ * not merely add noise — it produces a CONFIDENT WRONG ANSWER. PLGL M1026's
+ * four colleges agree on exactly one thing: "Lec Hrs: 24.00 Out of Class Hrs:
+ * 48.00 Total Student Learning Hrs: 72.00", which the machinery faithfully
+ * promoted to a unanimous consensus description. 2.9% of sentences are
+ * advisories, prerequisites, hour counts, repeatability notes and transfer
+ * codes; they are the MOST shared sentences in the corpus, because
+ * administration is what colleges copy from each other.
+ *
+ * ⚠️ C-ID AND CCN ARE NOT HANDLED, AND THE CARD SAYS SO. Sam: "when a course is
+ * a CID or CCN the description should come from the template (assuming we have
+ * those in our dataset)." We do not — we hold the DESIGNATION, not the
+ * descriptor text. 541 of 49,896 identities carry one (484 C-ID, 57 CCN). Those
+ * cards name the descriptor as the authority and say MAP does not hold it,
+ * rather than presenting a consolidation as if it were the statewide text. */
+var OL_ABBR=/(?:\b(?:no|nos|e\.g|i\.e|u\.s|dr|mr|mrs|ms|etc|vs|approx|inc|co|st|jr|sr|ph\.d|m\.a|b\.a|a\.a|a\.s)\.)$/i;
+/* A hand-rolled scan rather than a lookbehind split: the same result, and it
+ * runs wherever the rest of this file does. */
+function olSentences(t){
+  t=String(t==null?"":t).replace(/_x000D_/g," ").replace(/\s+/g," ").trim();
+  var out=[], buf="", i, ch;
+  for(i=0;i<t.length;i++){
+    ch=t.charAt(i); buf+=ch;
+    /* ⚠️ A CLOSING BRACKET OR QUOTE MAY SIT BETWEEN THE STOP AND THE SPACE.
+     * Without this, "(See general education pages for the requirement this
+     * course meets.) Advisory: EWRT 1A…" is ONE sentence, the advisory is no
+     * longer at the front, and the whole administrative block leads the card —
+     * which is what SOCS M1045 did. */
+    /* ⚠️ `"".indexOf("")` IS 0, SO AN UNGUARDED SCAN NEVER ENDS. charAt past the
+     * end of the string returns "", which every indexOf reports as found at 0 —
+     * the first draft of this loop hung on the last sentence of every
+     * description. The character has to EXIST before it can be a bracket. */
+    var close=0, nx;
+    if(ch==="."||ch==="!"||ch==="?"){
+      while((nx=t.charAt(i+1+close)) && ")]\u201d\u2019\"'".indexOf(nx)>=0) close++;
+    }
+    if((ch==="."||ch==="!"||ch==="?") && t.charAt(i+1+close)===" " && /[A-Z0-9"'(]/.test(t.charAt(i+2+close)||"")){
+      if(!OL_ABBR.test(buf)){
+        buf+=t.substr(i+1, close);
+        out.push(buf.trim()); buf=""; i+=close+1;
+      }
+    }
   }
-  return {pick:descs[at], score:best};
+  if(buf.trim()) out.push(buf.trim());
+  return out;
+}
+/* The catalog's administration, not its description. Anchored at the start of
+ * a sentence so a description MENTIONING hours in passing survives. */
+/* `\w*` catches the plurals; `(?:\(s\))?` catches "Prerequisite(s):", which was
+ * the one administrative lead left in a 1,500-identity sweep. */
+var OL_ADMIN=/^\s*(?:advisor(?:y|ies)|prerequisite|pre-requisite|corequisite|co-requisite|recommended\s+preparation|enrollment\s+limitation|limitation\s+on\s+enrollment|formerly(?:\s+listed\s+as)?|note|grading|repeatab)\w*(?:\(s\))?\s*[:\-]/i;
+var OL_HOURS=/^\s*(?:(?:lec(?:ture)?|lab(?:oratory)?|out\s+of\s+class|total(?:\s+student)?(?:\s+learning)?)\s*(?:hrs?|hours)\s*[:\-]|total\s+(?:lecture|lab)\s+\d|\d+(?:\.\d+)?\s*(?:lecture|lab)\s+hours\b|\d+(?:\.\d+)?\s*units?\b)/i;
+var OL_REPEAT=/^\s*(?:may\s+be\s+repeated|not\s+repeatable|this\s+course\s+is\s+not\s+repeatable)/i;
+var OL_XFER=/^\s*(?:transfers?\s+to|c-?id\s*[:\-]|uc\/csu|csu\/uc|\(?[A-Z](?:,\s*[A-Z])+\)?\s*$)/i;
+/* A wholly parenthetical cross-reference — where the course also lives, what
+ * requirement it meets, what it used to be called. It describes the catalog,
+ * not the course. */
+var OL_XREF=/^\s*\(\s*(?:see\b|also\s+listed\s+as\b|formerly\b|same\s+as\b|cross-?listed\b)/i;
+/* ⚠️ A NUMBER-VALUED HEADING IS STRIPPED, NOT DROPPED — AND THE FIRST DRAFT OF
+ * THIS FILTER ATE FOUR COLLEGES' ONLY DESCRIPTION. Some catalogs run the hour
+ * block straight into the prose with no full stop between them: "Lec Hrs: 24.00
+ * Out of Class Hrs: 48.00 Total Student Learning Hrs: 72.00 Current
+ * developments in the substantive law…" is ONE sentence, and dropping it for
+ * starting with an hour count discards the description too. PLGL M1026 went
+ * from four descriptions to none that way.
+ *
+ * A numeric value has a knowable end, so the heading comes off and the sentence
+ * survives. A PROSE value does not — "Advisory: EWRT 211 and READ 211…" runs to
+ * the end — so those sentences are still dropped whole. Measured on a
+ * 1,500-identity sample: 71 sentences carry real text after their numbers. */
+var OL_NUMKEY=/^\s*(?:(?:lec(?:ture)?|lab(?:oratory)?|out\s+of\s+class|outside-of-class|total(?:\s+student)?(?:\s+learning)?)\s*(?:hrs?|hours)\s*[:=]?\s*[\d.,]+\s*[,=]?\s*|\d[\d.,]*\s*(?:lecture|lab|outside-of-class|total\s+student\s+learning)\s+hours?\b[\s,=]*|total\s+(?:lecture|lab)\s+\d[\d.,]*\s*hours?\.?\s*|\d[\d.,]*\s*units?\b[\s.,]*)/i;
+/* Three more headings whose end is knowable, all of them found leading a
+ * "sentence" that is really a record dump with no punctuation in it. They are
+ * 1.2% of sentences and they punch far above that: every college copies the
+ * same header format, so a header is the one thing that reaches UNANIMOUS
+ * agreement. ENTR M1004 led its card with "ENP-51 : Entrepreneurship Basics
+ * Prerequisite: None Entrepreneurship has been described as…" at 7 of 7.
+ * ⚠️ A record dump that carries prose-valued keys MID-sentence ("Prerequisite:
+ * MDA-10 Advisory: MDA-50, CIS-1A or…") is left alone: those values have no
+ * knowable end, and guessing one would cut description text. Some header text
+ * therefore survives into a card. That is a data-quality item, not something to
+ * fix by widening a regex until it takes prose with it. */
+var OL_CODEHEAD=/^\s*[A-Z]{2,8}[ \-]?\d{1,4}[A-Z]?\s*:\s*/;
+var OL_NONEKEY=/\b(?:pre-?requisites?|co-?requisites?|advisory|advisories)\s*:\s*none\.?\s*/i;
+var OL_OEOE=/^\s*open\s+entry\s*\/\s*open\s+exit\.?\s*/i;
+var OL_COLLEGE=/^\s*college\s*:\s*[A-Z]{2,8}\s*/;
+function olStripNum(t){
+  var prev=null;
+  while(prev!==t){
+    prev=t;
+    t=t.replace(OL_NUMKEY, "").replace(OL_CODEHEAD, "").replace(OL_NONEKEY, "")
+       .replace(OL_OEOE, "").replace(OL_COLLEGE, "");
+  }
+  return t.replace(/^[\s,;=.-]+/, "");
+}
+/* Returns what is left of a sentence once the catalog's administration is off
+ * it — "" when nothing is. `own` is the member's own course title, stripped
+ * only AFTER the headings: a record dump reads "ENP-51 : Entrepreneurship
+ * Basics Entrepreneurship has been described as…", so the title is not at the
+ * front until the code in front of it is gone. */
+function olDescPart(t, own){
+  if(OL_ADMIN.test(t)||OL_REPEAT.test(t)||OL_XFER.test(t)||OL_XREF.test(t)) return "";
+  var r=olStripNum(t);
+  if(own && own.length>3 && r.toLowerCase().indexOf(own.toLowerCase())===0)
+    r=olStripNum(r.slice(own.length).replace(/^[\s:;,.\-]+/, ""));
+  if(!r || OL_ADMIN.test(r)||OL_REPEAT.test(r)||OL_XFER.test(r)||OL_XREF.test(r)) return "";
+  return OL_HOURS.test(r) ? "" : r;
+}
+/* The content words of one sentence, as a set, on the same stoplist the skills
+ * layer folds by. Two sentences saying the same thing in different word order
+ * land on the same set. */
+function olBag(t){
+  var w=olWords(String(t).toLowerCase()), seen={}, out=[], i;
+  for(i=0;i<w.length;i++){ if(w[i].length<3||OL_FUNC[w[i]]||seen[w[i]]) continue; seen[w[i]]=1; out.push(w[i]); }
+  return out;
+}
+var OL_SIM=0.3;   // complete-link; measured, not chosen — see the block above
+/* Every distinct thing the colleges say, once, ordered by how many of them say
+ * it. `core` is what a majority wrote; `extra` is the rest. */
+function olConsensus(descs){
+  var n=descs.length, units=[], i, j;
+  for(i=0;i<n;i++){
+    /* `p` is where the sentence sat in ITS OWN description, 0..1 — the lead of
+     * the consolidation has to be the sentence colleges OPEN with, not merely
+     * the most-agreed one. ITIS M1449 read "Key topics include text
+     * preprocessing…" as its first line, because that clause carried a
+     * majority while four differently-worded opening sentences each carried
+     * one. A description starting mid-thought is a worse artifact than the
+     * catalogs it came from. */
+    var ss=olSentences(descs[i].desc), kept=0, own=descs[i].title||"";
+    ss.forEach(function(raw, k){
+      /* A description that opens with its own course title is repeating the
+       * catalog's header, not describing anything. ENTR M1004 led its card with
+       * "Entrepreneurship Basics Entrepreneurship has been described as…" on all
+       * seven colleges. The title is the one part of a record dump whose end IS
+       * knowable, because we hold it. */
+      var st=olDescPart(raw, own);
+      if(!st) return;
+      var b=olBag(st);
+      if(b.length>=2){ units.push({c:i, t:st, b:b, p:ss.length>1 ? k/(ss.length-1) : 0}); kept++; }
+    });
+  }
+  var cl=[];
+  for(i=0;i<units.length;i++){
+    var best=null, bs=0;
+    for(j=0;j<cl.length;j++){
+      /* The WEAKEST pair decides. Math.max here is single-link and chains. */
+      var sc=1;
+      for(var k=0;k<cl[j].u.length;k++) sc=Math.min(sc, olDice(units[i].b, cl[j].u[k].b));
+      if(sc>bs){ bs=sc; best=cl[j]; }
+    }
+    if(best && bs>=OL_SIM){ best.u.push(units[i]); if(best.cols.indexOf(units[i].c)<0) best.cols.push(units[i].c); }
+    else cl.push({u:[units[i]], cols:[units[i].c]});
+  }
+  cl.forEach(function(c){
+    /* The sentence closest to the rest of its own cluster; the shorter one
+     * breaks a tie, because the shorter of two near-identical catalog
+     * sentences is the one without the local course number bolted on. */
+    var bestT=c.u[0].t, bestS=-1;
+    c.u.forEach(function(v){
+      var tot=0;
+      c.u.forEach(function(w){ tot+=olDice(v.b, w.b); });
+      if(tot>bestS || (tot===bestS && v.t.length<bestT.length)){ bestS=tot; bestT=v.t; }
+    });
+    c.text=bestT; c.n=c.cols.length;
+    var ps=c.u.map(function(v){ return v.p; }).sort(function(a,b){ return a-b; });
+    c.p=ps[Math.floor(ps.length/2)];
+  });
+  var core=[], extra=[];
+  cl.forEach(function(c){ (c.n*2>=n && n>1 ? core : extra).push(c); });
+  /* The consolidation reads in the order the colleges wrote it; the list of
+   * what only some of them add is ordered by how many do. */
+  core.sort(function(a,b){ return (a.p-b.p) || (b.n-a.n) || (a.text.length-b.text.length); });
+  extra.sort(function(a,b){ return (b.n-a.n) || (a.p-b.p) || (a.text.length-b.text.length); });
+  /* One college publishing alone has no agreement to measure, and its sentences
+   * are the whole of what is known — they lead rather than sitting under a
+   * heading that says some colleges also include them. */
+  if(n===1){ core=cl; extra=[]; }
+  return {colleges:n, core:core, extra:extra};
 }
 /* ⭐ ONE SKILL, ONE ROW — THE KEY IS FOLDED, THE WORDS STAY THE COLLEGES'.
  * Sam, 2026-09-07: "duplicated skills." WELD M1109 listed "flux cored arc
@@ -6816,7 +7007,25 @@ function olHtml(nd, isl){
      'already publish. Nothing on this page is written back.</p>';
 
   /* ── layer 1: description ─────────────────────────────────────────────── */
-  var med=olMedoid(descs), dbody;
+  var con=descs.length?olConsensus(descs):null, dbody, dcap=8;
+  /* Sam, 2026-09-10: "when a course is a CID or CCN the description should come
+   * from the template (assuming we have those in our dataset)." We do not. Say
+   * that on the card rather than letting a consolidation stand where a
+   * statewide descriptor is the authority. */
+  var tmpl=(nd.s===1||nd.s===2)
+    ? '<p class="ol-note">This identity carries a <strong>'+esc((SYS[nd.s]||[])[2]||"")+
+      '</strong> designation, and its statewide descriptor is the authority for the description. '+
+      'MAP holds the designation, not the descriptor text, so what follows is still consolidated '+
+      'from the colleges — read it as a draft until the descriptor is loaded.</p>'
+    : '';
+  var alsoHtml=function(list, head){
+    if(!list.length) return "";
+    return '<p class="ol-also"><b>'+head+'</b></p><ul class="ol-also-l">'+
+      list.slice(0,dcap).map(function(c){
+        return '<li>'+esc(c.text)+' <span class="sub">'+num(c.n)+' of '+num(con.colleges)+'</span></li>';
+      }).join("")+'</ul>'+
+      (list.length>dcap?'<p class="sub">Showing '+dcap+' of '+num(list.length)+'.</p>':"");
+  };
   if(loading) dbody='<p class="empty">Loading the catalog descriptions for '+esc(isl.d)+'…</p>';
   else if(!descs.length) dbody='<p class="empty">None of the '+num(total)+' college course'+
     (total===1?"":"s")+' under this identity carries a catalog description, so there is nothing to draw a description from.'+
@@ -6825,25 +7034,54 @@ function olHtml(nd, isl){
         'notice, or “Experimental course” — which is set aside here and left in the member list below, where it is '+
         'each college’s own record.'
       : '')+'</p>';
-  else dbody='<blockquote class="ol-desc">'+esc(med.pick.desc)+'</blockquote>'+
-    '<p class="ol-attr">'+esc(med.pick.college)+' · '+esc(med.pick.code)+
-      (med.score!=null
-        ? ' — the description most typical of the '+descs.length+' colleges that publish one'+
-          ' <span class="sub" title="Mean Dice similarity of this description’s content words to the other '+
-          (descs.length-1)+'. The description that says what the rest say.">('+med.score.toFixed(2)+')</span>'
-        : ' — the only catalog description under this identity')+'</p>';
+  else if(con.core.length) dbody=tmpl+
+    '<blockquote class="ol-desc">'+con.core.map(function(c){
+      /* The stored descriptions are cut at 500 characters, so the last sentence
+       * of a long one arrives without its ending. Mark it rather than letting
+       * the consolidation read as a sentence that simply stops. */
+      var cut=!/[.!?\u2026]$/.test(c.text);
+      return '<span title="'+esc(num(c.n)+' of the '+con.colleges+' catalog'+(con.colleges===1?'':'s')+
+        ' say this'+(cut?'; the stored text is cut at 500 characters':''))+'">'+
+        esc(c.text)+(cut?'\u2026':'')+'</span>';
+    }).join(" ")+'</blockquote>'+
+    '<p class="ol-attr">'+(con.colleges===1
+      ? 'The one college that describes this course, in its own words, with the catalog’s administration removed.'
+      : 'Consolidated from the '+num(con.colleges)+' colleges that describe this course: the sentences a majority '+
+        'of them wrote, each once, no college named.')+
+      ' Revise it — nothing here is MAP’s claim about the course.</p>'+
+    alsoHtml(con.extra, "Some colleges also include");
+  /* ⚠️ NO SENTENCE CARRIES A MAJORITY. Promoting the best of them anyway would
+   * put one college's wording forward as a consensus it does not have — the
+   * exact move Sam ruled out. Say what is true and show all of them.
+   * ⚠️ AND SAY THE RIGHT TRUE THING: the first draft printed "all of them are
+   * below" above an EMPTY list, on every identity whose text was nothing but
+   * catalog administration. A sentence promising a list is a bug when there is
+   * no list, so the two cases are separated here. */
+  else if(con.extra.length) dbody=tmpl+'<p class="empty">The '+num(con.colleges)+' colleges that describe this course '+
+    'do not share a sentence. There is no consolidation to make: each wrote its own, and all of them are below.</p>'+
+    alsoHtml(con.extra, "What each college says");
+  else dbody=tmpl+'<p class="empty">The '+num(con.colleges)+' college course'+(con.colleges===1?"":"s")+
+    ' under this identity fill the description field with the catalog’s administration — advisories, '+
+    'prerequisites, hour counts — and nothing that describes the course. Each is in the member list below, '+
+    'as the college published it.</p>';
   h+=olLayer("desc","Description",
     (descs.length
-      ? 'Quoted from a college catalog and attributed. MAP chose which one; it did not write it. '+
+      ? 'MAP-Generated: the colleges’ own sentences, consolidated and de-duplicated. No sentence here was written '+
+        'or reworded by MAP, and no college is named — a quoted description would put one college’s wording forward '+
+        'as the course’s, which is a choice faculty should make, not this page. '+
         '<strong>'+descs.length+' of '+num(total)+'</strong> college course'+(total===1?"":"s")+
         ' under this identity publish a description.'+
         (descs.stubs
           ? ' A further '+num(descs.stubs)+' publish'+(descs.stubs===1?"es":"")+' a placeholder — the March 2012 '+
-            'migration notice, or “Experimental course” — which cannot win the vote below, because text that '+
-            'says the field is blank would otherwise be the most typical thing on an identity where most of them say it.'
-          : '')
+            'migration notice, or “Experimental course” — which is set aside, because text saying the field is blank '+
+            'is otherwise the most-agreed sentence on an identity where most of them say it.'
+          : '')+
+        ' Advisories, prerequisites, hour counts and transfer codes are dropped before anything is compared: '+
+        'administration is what colleges copy from each other, so it outvotes the description every time.'
       : 'Drawn from the catalog descriptions of the colleges carrying this course.'),
-    dbody, {empty: !descs.length && !loading});
+    dbody, {empty: !descs.length && !loading,
+            tag: descs.length && !loading ? (con.core.length ? num(con.core.length)+" agreed" : "no agreement") : "",
+            tagClass: descs.length && con.core.length ? "cid" : "mut"});
 
   /* ── layer 2: skills ──────────────────────────────────────────────────── */
   /* ⭐ A REVIEWER MAY ADD ONE AND TAKE ONE OUT (Sam, 2026-09-07: "need to be

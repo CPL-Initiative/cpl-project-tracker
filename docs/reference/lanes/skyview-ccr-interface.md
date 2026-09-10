@@ -1,7 +1,7 @@
 ---
 title: "SkyView / the CCR curation interface — lane state"
 created: 2026-08-28
-updated: 2026-09-09
+updated: 2026-09-10
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -80,11 +80,27 @@ The ones most often needed first: the canvas height is **JS-owned** by
 
 ## The outline of record — BUILT (S235, CPL layer S238)
 
-`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`. ⭐ The
-description is CHOSEN, never written (the medoid member catalog, attributed);
-Sam's MAP-Generated sentence prints verbatim. ⭐ Two level axes, neither derived.
-⚠️ Confidence is agreement BETWEEN colleges. ⭐ A reviewer may add a skill and
-take one out — staged, nothing written.
+`#outline/<id>`, six layers, `tests/ccr_skyview_outline.test.js`.
+
+⭐ **The description is CONSOLIDATED and NAMES NO COLLEGE** (Sam, 2026-09-10:
+attributing one college's wording *"could lead to division as some faculty may
+question the choice"*). The unit is the SENTENCE, so nothing is composed; the
+selector is agreement, not typicality; what only some add sits under *Some
+colleges also include* with its count. ⚠️ **COMPLETE-link at Dice 0.3, never
+single-link** — single-link chains and reports agreement no two colleges have.
+⚠️ **Ordered by position in the source, not by support.** ⚠️ **The catalog's
+administration is stripped FIRST and is the most-agreed text in the corpus**; a
+numeric heading is stripped and its sentence KEPT, a prose-valued key takes its
+sentence with it. ⚠️ **Placeholder text never enters a derived layer** — marked
+in the member lists, never in the quote or the imputed skills. ⚠️ **C-ID/CCN:
+NOT HANDLED and the card says so** — MAP holds the designation, not the
+descriptor text (541 identities); loading them is a data feed, not a rendering
+change. Every measurement:
+[`methodology-consolidate-sentences-not-documents`](../../kb-notes/methodology-consolidate-sentences-not-documents.md).
+
+⭐ Sam's MAP-Generated sentence prints verbatim. ⭐ Two level axes, neither
+derived. ⚠️ Confidence is agreement BETWEEN colleges. ⭐ A reviewer may add a
+skill and take one out — staged, nothing written.
 
 ## NEEDS SAM
 
@@ -115,6 +131,24 @@ emit from, a radius, and a ghost lifetime. ⚠️ Do **not** "fix" it in `island
 link, never a github.io URL.
 
 ## NEXT
+
+⭐ **CPL MODE IS A SECOND UNIVERSE, NOT A RELABELLING — Sam's ruling, 2026-09-10,
+his words:** *"Instead of courses, it groups exhibits in discipline groupings
+like the course view but relies on the CER titles to show Exhibits like we show
+the courses — as entities. So a Firefighter 1 Exhibit would be like a MID
+grouping showing all the local exhibits as members of the group as if they were
+courses. Then we would show the course(s), perhaps on the exhibit cards, that
+have CPL based on the exhibit… It's like another universe where the entities are
+exhibits rather than courses, but just like in course view, circles around the
+exhibits can indicate that courses are articulated to them."*
+
+This is not the shipped CPL face, which renames the same points. It is a second
+payload with the same shape as `ccr_universe.json`: **CER canonical titles as
+identities, local MAP exhibits as their members, disciplines as islands, and a
+ring where a course articulates to the exhibit.** ⚠️ `prototype/ccr_cpl.json` is
+keyed the INVERSE way — course identity → credentials — so it cannot be reused
+directly; the builder is a new one. Lane-sized, not a session's work. Measured
+inputs it needs: 3,124 exhibit rows, six CPL types, 135 issuing agencies.
 
 ⓪ **DR-24's write surface** — the curate phrase and the propose/second gate. The
 register row exists with Sam as owner; the phrase's SCOPE is what is open.

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 426,
+   "count": 427,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3976,6 +3976,23 @@
      "title": "Confirmed merges via a decision row \u2014 never infer, never block the clean set",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-consolidate-sentences-not-documents.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "descriptions",
+      "ccr",
+      "skyview",
+      "clustering"
+     ],
+     "title": "Consolidate sentences, not documents: what a course description is when fourteen colleges wrote it",
+     "type": "methodology",
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-06-04",
@@ -12574,7 +12591,7 @@
      ],
      "title": "SkyView / the CCR curation interface \u2014 lane state",
      "type": null,
-     "updated": "2026-09-09"
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-28",
@@ -16596,5 +16613,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 858
+ "total": 859
 }
