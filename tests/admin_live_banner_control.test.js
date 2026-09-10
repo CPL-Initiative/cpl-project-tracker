@@ -100,6 +100,45 @@ if (A && A._liveHtml) {
     /showing/.test(host.textContent) && !/not showing/.test(host.textContent));
 }
 
+// ─── DR-26 Option B: the auto-announce opt-out (Sam, 2026-09-10) ────────────
+// He reversed the 2026-09-08 ruling: a session announces itself now, and the
+// manual Show/Hide is the fallback rather than the path. What he actually asked
+// for — "automatic as long as I set the CC session public" — CANNOT be built,
+// because nothing exposes a session's visibility. So the banner may point at a
+// Private session, and these checks pin the two things that keep that honest:
+// the control admits it, and the preference saves WITHOUT touching the banner.
+check("the opt-out exists and is a checkbox, not another button to forget",
+  /id="adm-live-auto"/.test(SRC) && /type="checkbox"/.test(SRC));
+check("⭐ it admits the thing it cannot check — that the session may still be Private",
+  /cannot tell whether you have shared/i.test(SRC));
+check("a row written before the column existed reads as ON (the column default)",
+  /auto_announce !== false/.test(SRC));
+check("the panel actually reads the column back",
+  /select=[^"']*auto_announce/.test(SRC));
+// ⚠️ Ticking the box must not re-announce a stale link and unticking must not
+// take a live banner down, so the preference has its OWN write. If this ever
+// folds into saveLive() the two actions become one and both get it wrong.
+check("⭐ the preference saves on its own, not through saveLive()",
+  // ⚠️ anchored on the paren: /function saveAutoAnnounce/ alone also matches
+  // `function saveAutoAnnounceX`, so the first version of this check passed
+  // against a rename that had removed the function it was guarding.
+  /function saveAutoAnnounce\s*\(/.test(SRC)
+  && /\bsaveAutoAnnounce\(auto\.checked/.test(SRC));
+check("a failed save puts the box back rather than lying about it",
+  /box\.checked = !want/.test(SRC));
+
+// The hook can only ever be a HINT: the container knows a different UUID than
+// the claude.ai id, and the sandbox cannot reach Supabase. Both are recorded in
+// the script itself, and the settings entry is what makes it fire at all.
+const HINT = fs.readFileSync(path.join(ROOT, "scripts/announce_session_hint.py"), "utf8");
+const SETTINGS = fs.readFileSync(path.join(ROOT, ".claude/settings.json"), "utf8");
+check("the SessionStart hook is registered, or the hint never fires",
+  /announce_session_hint\.py/.test(SETTINGS));
+check("the hint tells the session to check the opt-out FIRST",
+  /auto_announce/.test(HINT) && /STOP/.test(HINT));
+check("⭐ the hint keeps the opt-out in the UPDATE too — Sam curates live beside sessions",
+  /and auto_announce is true/.test(HINT));
+
 let pass = 0;
 for (const [n, ok, why] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));

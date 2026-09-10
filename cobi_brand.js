@@ -527,9 +527,18 @@
 
     var note = document.createElement("span");
     note.className = "cobi-live-note";
+    /* ⚠️ THE SECOND SENTENCE IS THE WHOLE COST OF DR-26 OPTION B (Sam,
+     * 2026-09-10). A session announces itself now, and it CANNOT read its own
+     * claude.ai visibility — no API exposes it — so this banner may point at a
+     * session that is still Private. Under Option A that could not happen,
+     * because a human turned the banner on only after sharing. The failure is
+     * a link that will not open, and a reader who is told why is merely mildly
+     * put out rather than confused; a reader who is not told files a bug. Do
+     * not trim this back to the old one-liner without restoring Option A. */
     note.textContent = row.note
       ? row.note
-      : "You will see where it has got to when you open it. Reload for anything newer.";
+      : "You will see where it has got to when you open it. Reload for anything "
+        + "newer. If it will not open, it has not been shared yet.";
     bar.appendChild(note);
 
     var x = document.createElement("button");

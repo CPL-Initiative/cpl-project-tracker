@@ -12202,7 +12202,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 46,
+   "count": 47,
    "docs": [
     {
      "created": "2026-08-28",
@@ -12811,6 +12811,21 @@
      "title": "SkyView \u2014 the engineering invariants",
      "type": null,
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-10",
+     "governs": [],
+     "path": "docs/reference/live_session_banner.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "governance",
+      "banner",
+      "dr-26"
+     ],
+     "title": "The live-session banner \u2014 how a session announces itself, and the two things it cannot know",
+     "type": null,
+     "updated": "2026-09-10"
     },
     {
      "created": "2026-08-19",
@@ -16643,5 +16658,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 861
+ "total": 862
 }

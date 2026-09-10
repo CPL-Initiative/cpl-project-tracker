@@ -83,11 +83,18 @@ engine cannot read gets its own sentence rather than "expired NaN days ago".
 are separable, and only the first was ever the requirement.** Every check in
 `tests/cobi_live_banner.test.js` asked whether the banner was ABSENT, and absent
 was the correct answer each time — the suite was green for the whole day Sam
-spent believing the feature did not exist. Setting the
-row is deliberately a human act and a session should not do it: the control's own
-copy names the failure it guards, *"turning the banner on for a session that is
-still Private and sending the whole organization at a link only its author can
-open."*
+spent believing the feature did not exist.
+
+⚠️ **DR-26 REVERSED TO OPTION B (Sam, 2026-09-10) — a session DOES set the row
+now.** *"It's a hassle to do it that way; I'd prefer it be automatic ... perhaps
+add an opt out."* The opt-out is `cobi_live_session.auto_announce`, on by
+default, in Admin. ⚠️ **What he asked for could not be built:** "automatic as
+long as I set the CC session public" needs a visibility signal, and nothing
+exposes one — so the banner may now point at a Private session and the team
+sees a link that will not open. Option A's fail-closed property is gone; the
+failure is a dead link, and the banner copy names it. Procedure, the two things
+a session cannot know, and why the hook is only a hint:
+[`docs/reference/live_session_banner.md`](../live_session_banner.md).
 
 ⚠️ **Rule 10 a3 worked as designed.** Both rows were written BEFORE the code, and
 five write surfaces are mapped in `kb/governance_surface_map.json`. The gate is
