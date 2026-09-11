@@ -57,10 +57,20 @@ const MAX_TOKENS = 2048;
  * own requests whatever key authenticates them. To check where the spend lands,
  * filter the Console by key and look for traffic in this endpoint's window.
  *
- * ⭐ THE REAL LEVER IS THE 81%, NOT THE MODEL. There is ONE breakpoint, on the
- * system prefix; the conversation history carries none, so every turn resends and
- * re-pays for every prior turn. A breakpoint on the last history message would let
- * turn N read turns 1..N-1 at 0.1x. Unbuilt, and worth more here than any model swap.
+ * ⭐ THE 81% IS RETRIEVAL, AND WHETHER IT HAS A LEVER IS UNMEASURED. I first wrote
+ * here that it was conversation history re-paid every turn, and that a breakpoint on
+ * the last history message would fix it. WRONG, and the code three thousand lines
+ * down says so: history is capped at the last 6 turns and 2,000 chars each (~3,000
+ * tokens at the absolute ceiling), and THE PRODUCTION WIDGET OMITS `history`
+ * ENTIRELY — single-turn, so in production it is zero. History cannot be 81% of
+ * anything here.
+ *
+ * So `uncached_input` running 3,536 to 48,271 is the RETRIEVAL block sizing itself to
+ * the question, not a conversation accumulating. Whether any of it repeats enough to
+ * cache is an open question and not one to guess at a third time: break the input down
+ * IN THE LOG LINE (prefix / retrieval / history / question) and read it off. Until
+ * then the honest statement is that 81% of the spend is retrieval and nobody has
+ * looked at its composition.
  *
  * ⭐ CHANGING MODEL NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the
  * Supabase project and it wins over the default below; unset it to come back
