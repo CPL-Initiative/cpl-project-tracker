@@ -60,8 +60,10 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `chatbox_credentials` | tabs: `college-briefing` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
 | `chatbox_exhibits` | `edgefn:cpl-chat` | — |
 | `chatbox_peer_articulations` | none found | scripts: `kb/_sync_peer_articulations.py` |
+| `class` | scripts: `kb/_identity_daily_check.py` | — |
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
+| `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
@@ -79,7 +81,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
+| `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
+| `findings` | scripts: `kb/_identity_daily_check.py` | — |
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |
 | `gr_areas` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `gr_artifacts` | tabs: `gr-priorities` | tabs: `gr-priorities` |
@@ -97,7 +101,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_goal2` | tabs: `college-briefing` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_college_users` | tabs: `map-queue`, `map-users` | — |
-| `map_colleges` | tabs: `college-briefing`, `college-identity` · scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `map_colleges` | tabs: `college-briefing`, `college-identity`, `map-queue`, `map-users` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
 | `map_contact_gaps` | tabs: `governance`, `map-queue`, `map-users` | — |
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing` | — |
@@ -107,6 +111,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_student_credit` | scripts: `chatbox/smoke_test.sh` | — |
 | `map_student_key_sketch` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `merge_doctrine_notes` | none found | tabs: `unified-courses` |
+| `name` | scripts: `kb/_identity_daily_check.py` | — |
 | `nc_artifacts` | tabs: `nc-learning-partners` | — |
 | `nc_integration_backlog` | tabs: `nc-learning-partners` | — |
 | `nc_partner_notes` | tabs: `nc-learning-partners` | — |
@@ -213,7 +218,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `coci_lookup_desc_Y.js` | `CPL_COCI_DESC` | not stated in header | none found |
 | `coci_lookup_desc_Z.js` | `CPL_COCI_DESC` | not stated in header | tabs: `coci-lookup` |
 | `coci_programs_data.js` | `CPL_COCI_PROGRAMS` | `kb/_build_coci_programs.py` | tabs: `cip-crosswalk`, `coci-lookup` · modules: `kb/_college_apprenticeship_cpl_roster.js` · scripts: `kb/_build_coci_programs.py`, `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py` |
-| `college_identity_data.js` | `CPL_COLLEGE_IDENTITY` | `kb/_build_college_identity_crosswalk.py` | tabs: `college-identity` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_college_identity_crosswalk.py` |
+| `college_identity_data.js` | `CPL_COLLEGE_IDENTITY` | `kb/_build_college_identity_crosswalk.py` | tabs: `college-identity` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_college_identity_crosswalk.py`, `kb/_identity_daily_check.py` |
 | `college_lookup.js` | `CCC_COLLEGE_LOOKUP` | not stated in header | tabs: `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` |
 | `cpl_baccalaureates_data.js` | `CPL_BACCALAUREATES` | `kb/_build_baccalaureate_pathways.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py` |
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
@@ -377,6 +382,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_cred_rename_dryrun.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_identity_daily_check.py` | workflows: `map-users-sync.yml` | — |
 | `kb/_match_cos_authority.py` | workflows: `cos-authority-sync.yml` | — |
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
@@ -699,7 +705,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
-| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml` |
+| `claude.ai` | tabs: `admin` · scripts: `scripts/announce_session_hint.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `college-briefing`, `implementation-funding`, `map-queue`, `map-users` · scripts: `kb/_build_partner_crosswalk.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
@@ -846,5 +852,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 460 file
-datasets · 143 external services · 331 consumers · 33 workflows · 37 tabs.
+Coverage: 80 Supabase tables · 30 RPCs · 5 edge functions · 461 file
+datasets · 143 external services · 332 consumers · 33 workflows · 37 tabs.
