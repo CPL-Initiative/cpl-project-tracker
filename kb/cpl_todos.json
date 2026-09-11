@@ -2,7 +2,7 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-11",
  "_session": "257 (SkyBeat)",
- "_status": "Session 257 answered the question left on the queue and found a defect on the way. The College Identity tab — the one that lists every college and district MAP knows, with their IDs and every spelling any of our systems uses — had never actually shown that table to anyone. It was asking the database for the list without identifying itself, so the database refused, and the page quietly showed only the problem list underneath. Sam spotted it immediately on opening the tab. It is fixed, the full table now leads the page, and the discrepancies sit below it behind a link, which is how Sam asked for it. The page also had a heading-structure fault that screen readers would trip on; that is fixed and re-checked. Separately, the question about whether Sierra's answers are being cut short is now answered: they are not. The two cases that looked like cut-off answers were leftovers from the previous version still running for about twenty-five seconds after the update went out. Worth knowing, though: almost nobody is using Sierra yet — over thirty hours, six real questions were asked, against four hundred and forty from our own automated tests. So watching for problems in live traffic will mostly watch ourselves. Two things now wait on Sam: whether to wire the college taxonomy into the MAP Users tab, and whether to run the daily identity check he suggested. Neither has been started.",
+ "_status": "Session 257 answered the queued question about Sierra, found a broken tab on the way, and then built the two things Sam asked for. The College Identity tab — every college and district MAP knows, with their IDs and every spelling our systems use — had never actually shown that table to anyone: it was asking the database for the list without identifying itself, so the database refused, and the page quietly showed only the problem list underneath. Fixed; the full table now leads the page with the discrepancies below it behind a link, as Sam asked. Then both of his follow-ups shipped. The identity check now runs every day against the names we pull from MAP and flags any change, without ever committing anything. And the MAP Users tab now looks colleges up by identity rather than by their name as a piece of text. Worth saying plainly: nothing was broken before — every lookup already worked, because MAP happens to spell things the same way we do and nothing made sure it kept doing so. The wiring replaced luck. It did recover one real thing: a college landing-page link that the old lookup had been dropping without saying so. Also settled: Sierra's answers are not being cut short. And almost nobody is using her yet — six real questions in thirty hours against four hundred and forty from our own automated tests — so watching live traffic for problems mostly watches ourselves. Nothing is waiting on Sam.",
  "items": [
   {
    "id": "s257-fable-smoke-15a-15c",
@@ -15,18 +15,6 @@
    "for": "Fable",
    "tab": "cobi-assistant",
    "text": "Raise Sierra's health probe from every three hours to hourly. Its own notes say to do this once billing moved to the corporate account, which happened on 10 September. Also worth doing in the same pass: the probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that. Rather than pay for a second question every run, the probe should read how many blank answers the live table recorded. That costs nothing and sees real visitors instead of its own test question."
-  },
-  {
-   "id": "s257-sam-daily-identity-diff",
-   "for": "Sam",
-   "tab": "college-identity",
-   "text": "You suggested running the identity check daily in the cron against what we pull from MAP and flagging any differences. Most of it is already built — the checker takes a list of every college name our live tables use and reports the ones no identity claims (10 findings over 130 names at the last run). What is missing is only the daily trigger. The MAP Users sync already runs every day at 6am Pacific and is the job that pulls the fresh names, so it is the natural home. Small change. Say go and it ships."
-  },
-  {
-   "id": "s257-sam-map-users-taxonomy",
-   "for": "Sam",
-   "tab": "map-users",
-   "text": "You said the college taxonomy should be wired to the MAP Users tab and data, and that you were sure it already was. It is not. MAP Users looks colleges up by their NAME as a piece of text — and it carries three hand-written lists of names on top of that (78 fallback contacts, 16 landing pages, 1 liaison). Nothing in it uses the college ID or the name-variations list that the College Identity tab shows. That is the weak link you have been noticing across sessions: a name typed one way in one system does not find the same college in another. Rewiring it to use the college ID is real work and it is your call whether it goes next. Say the word and it goes."
   },
   {
    "id": "s256-sam-forward-kynd-memo",

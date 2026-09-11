@@ -484,3 +484,89 @@ already is"). `map_users.js` holds **zero** references to `map_colleges`,
 (checked; the repeats are the same college across two different objects). Name-
 string keying is the weak link he has been noticing across sessions, and the
 `variants` column exists precisely to end it. Not started — it is his call.
+
+---
+
+## 2026-09-11 — SkyBeat (S257), part 2: wiring MAP Users to the taxonomy, and what that was actually worth
+
+Sam: *"do both a and b"* — (a) run the identity lint daily in the cron against
+what we pull from MAP and flag any diffs; (b) make MAP Users resolve through
+`college_id`/variants instead of name strings. Both shipped in #1561.
+
+⭐ **THE MEASUREMENT CAME FIRST, AND IT CHANGED WHAT (b) WAS WORTH.**
+
+| | |
+|---|---:|
+| `map_college_users` names matching a canonical `college_name` | **128 / 128** |
+| distinct hardcoded keys that are canonical | **74 / 78** |
+| non-canonical names in `map_college_contacts` | **3 / 123** |
+
+**Nothing was broken.** Every lookup in the tab worked. It worked because MAP
+happens to spell things canonically, and nothing anywhere enforced that it keeps
+doing so. Reporting that plainly mattered more than the code did: the honest
+framing is *the wiring replaced luck*, not *the wiring fixed a pile of breakage*.
+
+⚠️ **WHAT `normCollege()` COULD NEVER DO.** It already folded case, Unicode form
+and whitespace — so `Cypress College ` already found `Cypress College`. It can
+**never** bridge a VARIANT to its canonical name: `San Diego College of Continuing
+Education Credit` and `…Continuing Education` normalize to different strings, and
+only `map_colleges.variants` knows they are one institution. That is the whole
+capability the taxonomy adds, and it is why "we already normalize" was not an
+answer to Sam's question.
+
+**One concrete recovery.** `map_college_contacts` stores SDCCE's contacts on the
+canonical row and a `landing_page_url` on the `… Credit` variant row. The old
+`eq.<canonical>` read returned one row and dropped the URL silently. Contacts now
+merge across spellings, canonical-first, and the merged row names which rows
+contributed — an invisible merge cannot be questioned.
+
+⭐ **THE RULING DOES THE WORK, NOT A SPECIAL CASE.** Merging rows across spellings
+is only safe because the taxonomy encodes Sam's 2026-08-21 ruling: Calbright and
+LAUNCH are two entities each, San Diego and North Orange one. The
+continuing-education arms merge because the data says they are one identity.
+`Calbright College Credit` does **not** merge into `Calbright College Non-Credit`
+— not because the code checks for Calbright, but because it resolves to no
+identity at all. **There is no mention of Calbright anywhere in the logic.** If he
+ever revises that ruling, the behavior follows from the data with no code change.
+
+⚠️ **A VARIANT MUST NEVER SHADOW A CANONICAL NAME**, and this is where the index
+build earns its shape. `Mission College` is BOTH — its own college in West
+Valley-Mission, and a variant of Los Angeles Mission College. Canonicals are
+indexed in their own pass first; the variant pass refuses to overwrite them. The
+first cut did this with three passes and a null-and-refill, which was hard to
+reason about; it is two clean passes now, and the test asserts the answer is the
+same with the payload reversed.
+
+## Two of my own regressions, both caught by guards
+
+⚠️ **A CACHE THAT CHANGES THE THING IT CACHES IS NOT A CACHE.** My first
+`pickByIdentity` stored its normalized index as `map.__norm` — mutating
+`FALLBACK_CONTACTS`, which then grew an entry with no provenance.
+`map_users.test.js`'s *"every entry declares a provenance"* went red immediately.
+**A test I did not write caught it on the first run.** The index sits beside the
+map now, and `map_users_taxonomy.test.js` guards the property directly.
+
+⚠️ **THE DEPENDENCY MAP WENT STALE TWICE IN ONE SESSION, SAME CAUSE BOTH TIMES.**
+It records LINE OFFSETS into the files it maps, so any edit moves it — and both
+times I rebuilt it and *then* made one more edit. The rule already sits in the
+session handoff's safety patterns; knowing it is not the same as sequencing it.
+**Rebuild it as the genuinely last step before a push**, and check every generated
+artifact together (`_build_dependency_map.py --check`, `_build_docs_index.py
+--check`, and `admin_tab.test.js` for `cobi_admin_surface.js`) rather than only
+the one CI happened to name.
+
+## The daily lint (a)
+
+It lives in `map-users-sync.yml` rather than its own workflow because that job
+already runs daily, already holds `SUPABASE_SERVICE_KEY`, and is the one that
+pulls from MAP — a second scheduled workflow would be a second cron reading the
+same rows minutes apart. **Read-only; it never commits.** It reports whether the
+FINDING SET moved and raises one reusable issue. Landing regenerated identity
+decisions by schedule is exactly what `college_identity_rulings.json` exists to
+prevent, and a daily commit would also race the dashboard cron (Rule 6's lesson).
+
+⚠️ Its two guards are the interesting part: it **refuses on a short read** (<100
+colleges or <100 names), because a failed read would otherwise report the entire
+roster as findings — a failure wearing the shape of a catastrophic result. And it
+restores `college_identity_data.js` from git afterwards, because the builder
+writes that file at the repo root regardless of `--out`.

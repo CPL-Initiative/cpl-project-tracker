@@ -42,21 +42,43 @@ view's only a11y failure, in both themes; re-verified 38→36 total). Guards:
 names against `team_phrase.js`'s own api; `college_identity_tab.test.js` block 5 (10)
 asserts ORDER, not presence.
 
-⚠️ **MAP USERS IS NOT WIRED TO THIS TAXONOMY — measured 2026-09-11, and Sam assumed
-it was.** `map_users.js` holds **zero** references to `map_colleges`, `college_id`
-or `variants`; it keys on the college **NAME STRING** (`map_college_users?college=eq.<name>`)
-plus three hardcoded name-keyed objects — `FALLBACK_CONTACTS` (78), `CPL_PAGES` (16),
-`CPL_LIAISONS` (1). No duplicate keys (checked; repeats are one college across two
-objects). Name-string keying is the recurring weak link, and `variants` exists to end
-it. Live taxonomy: **128 rows, `college_id` on all 128, `variants` on 118, district +
-MIS codes on 118, 73 districts.**
+✅ **MAP USERS RESOLVES THROUGH THIS TAXONOMY (#1561, 2026-09-11)** — and ⚠️ **the
+wiring replaced LUCK, not a break.** Measured before building: **128 of 128** names in
+`map_college_users` match a canonical `college_name` exactly, **74 of 78** distinct
+hardcoded keys do too, and only **3 of 123** names in `map_college_contacts` do not.
+Nothing was failing. It worked because MAP happens to spell things canonically and
+nothing enforced that it keeps doing so. ⭐ **What `normCollege()` could never do is
+bridge a VARIANT to its canonical name** — it folds case and whitespace, but
+`San Diego College of Continuing Education Credit` and `…Continuing Education`
+normalize to different strings and only `variants` joins them. Now: both reads ask for
+every spelling (`in.("canonical","variant",…)`, an unresolved name yielding exactly the
+old query); `loadContacts` **merges canonical-first**, recovering SDCCE's
+`landing_page_url` that the `eq.<canonical>` read dropped silently; and `CPL_PAGES` +
+`CPL_LIAISONS`, which had **no normalization at all**, route through `pickByIdentity`.
+⭐ **MERGING IS SAFE ONLY BECAUSE THE TAXONOMY ENCODES SAM'S 2026-08-21 RULING** —
+the continuing-education arms merge because it says they are one identity, and
+`Calbright College Credit` does not merge into Non-Credit because it resolves to
+nothing. **No special case for Calbright exists in the code**; the ruling does the work,
+and `tests/map_users_taxonomy.test.js` (28) asserts it in both payload orders.
+⚠️ Fail-open but **not fail-silent**: a failed taxonomy read degrades to the old
+behavior and records `taxonomy.status`. Live taxonomy: **128 rows, `college_id` on all
+128, `variants` on 118, district + MIS on 118, 73 districts.**
+
+✅ **THE DAILY LINT RUNS (#1561)** — `kb/_identity_daily_check.py`, from
+`map-users-sync.yml` (already daily at `0 13 * * *`, already holding
+`SUPABASE_SERVICE_KEY`, and the job that pulls from MAP, so the names are fresh in the
+same run). **Read-only; it never commits** — the reviewed `college_identity_data.js`
+stays the artifact and this only reports whether the finding set MOVED, raising one
+reusable issue and closing it when they match again. Landing regenerated identity
+decisions by schedule is what `college_identity_rulings.json` exists to prevent.
+⚠️ Two guards: it **refuses on a short read** (<100 colleges or <100 names — a failed
+read would report the whole roster as findings), and it restores the artifact from git
+because the builder writes it regardless of `--out`. Sources are pinned to the
+committed baseline's two tables (`chatbox_college_profiles` + `map_college_contacts`);
+adding `map_college_users` is a deliberate re-baseline, not a freebie.
 
 **Still open:** nothing in `cpl-chat` stops an equivalent sandbox row arriving tomorrow.
-**NEXT — both AWAITING SAM, do not start without a reply:** (a) wire the identity lint
-into `map-users-sync.yml` (already daily at `0 13 * * *`, and it is the job that pulls
-from MAP, so it holds the fresh names) for the daily diff Sam proposed — the builder
-already takes `--observed-json`, only the trigger is missing; (b) make MAP Users
-resolve through `college_id`/variants instead of name strings. Also: MAP supplies the
-two `awaiting_map_id` ids; district columns (done) vs its own `districts` table.
-⚠️ `map-users-sync.yml`'s header says "schedule (monthly)" while its cron is daily —
-the comment is wrong. Story: `docs/college_identity_lessons.md`.
+**NEXT:** MAP supplies the two `awaiting_map_id` ids (`Calbright College Credit`,
+`Launch Apprenticeship Non-Credit`) — the only thing here nobody on our side can do;
+district columns (done) vs its own `districts` table. Story:
+`docs/college_identity_lessons.md`.
