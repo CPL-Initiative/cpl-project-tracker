@@ -90,6 +90,23 @@ sufficient, and adding in-band error reporting is redundant.
 *what to do* about it — retry, fall back, surface it to the user — is a separate
 question, and this note does not answer it.
 
+## Correction, later the same day
+
+The Sierra case that motivated this note was **not** an upstream error. The
+blank answers were adaptive thinking spending the 2,048-token output cap: on
+Sonnet 5 a request that omits `thinking` runs adaptive thinking, thinking tokens
+count against `max_tokens`, and the loop collects only text. See
+`[[methodology-a-model-switch-carries-its-defaults-not-just-its-price]]`.
+
+The claim above stands and the instrumentation stays. What caught this class in
+the end was the corollary, not the error branch: **zero text frames is a
+distinct outcome**, and the `EMPTY ANSWER` line now carries `stop_reason` and
+`output_tokens`, which is exactly the pair that separates an upstream error
+(no `stop_reason`) from thinking that ran out the cap (`max_tokens` at exactly
+the cap) from a model that chose to say nothing (`end_turn`). Naming a cause
+from the shape of the code, before reading what the failed turns recorded, is
+the mistake this correction exists to remember.
+
 ## See also
 
 - `[[docs/cpl_assistant_lessons]]` — the workstream that produced this

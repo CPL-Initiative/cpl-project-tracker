@@ -4,6 +4,8 @@ date: 2026-09-11
 session: 255 (SkySignal)
 tags: [handoff, sierra, cpl-chat, observability, cost, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_256_handoff.md
 ---
 
 # You are Session 255

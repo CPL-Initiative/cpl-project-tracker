@@ -1777,6 +1777,51 @@ this run made that survived scrutiny.
   header said "3,234 IS AN ESTIMATE … measure it." It was read and reasoned past.
   Replace the number; do not annotate it.
 
+## 2026-09-11 — The blank answers were a default, not an error and not the cap (S255, SkySignal)
+
+**What moved.** Sam: *"see if you can get Sierra ai back up? Last session quit
+responding."* The previous session had measured the blank answers exactly (35 of
+35 at `output_tokens=2048` with no text, zero blanks in fourteen days on Haiku)
+and named two causes in turn — an unhandled upstream `error` event, then
+"`MAX_TOKENS = 2048` is the bug" — shipping only the logging (#1550). Its
+mention of a Haiku revert via the secret never happened: the one request after
+it wrote a 4,476-token cache prefix, which Haiku never did.
+
+**The cause is a model default.** On Sonnet 5 a request that omits `thinking`
+runs adaptive thinking; on Haiku 4.5 and Sonnet 4.6 the same request runs none.
+Thinking tokens are output tokens under the same `max_tokens` cap, and the loop
+collects only text deltas, so on a question the model chose to reason about it
+spent the whole budget before the first word. Anthropic's Sonnet 5 migration
+guide says it in one sentence: *"a workload that ran thinking-off on Sonnet 4.6
+by omission may now truncate."* The four numbers the file already held — every
+blank at exactly the cap, a fifth of the real answers capped too, none of it
+on Haiku, HTTP 200 throughout — are all explained by that sentence and by
+neither earlier diagnosis. The fix is one field, `thinking: { type: "disabled" }`,
+the request Sierra always made spelled out (#1551). `MAX_TOKENS` stays 2048;
+raising it would have paid for the thinking rather than stopped it.
+
+**Why two sessions missed it.** Every guard on a model switch pinned a property
+that was written down — price, context window, cache floor — and each held. A
+default is an absence, and nothing checks an absence. The guard now asks, per
+model id, what the configured model does when the field is missing, and fails
+closed on an id it does not know; falsified against the pre-change file (20/20
+after, 18/20 before, both reds naming the defect). Distilled to
+`[[docs/kb-notes/methodology-a-model-switch-carries-its-defaults-not-just-its-price]]`;
+the previous note carries a correction section.
+
+**Two more things the guide settles.** The tokenizer changed with the model
+(~30% more tokens for the same text), which is most of why the prefix measured
+4,476 against the 3,234 that chars/4 predicted, and why 2,048 output tokens now
+hold roughly 6,000 characters rather than 8,000 — whether that truncates real
+answers with thinking off is unmeasured until the cap-hit count is read after
+the deploy. And Fable/Mythos reject `disabled` with a 400, so the field is
+model-dependent like the cache floor; the secret can still point `MODEL` at a
+model whose default differs, and the guard reads only the committed default.
+
+**Left with Sam.** Whether Sierra should think at all — adaptive at low effort
+with a larger output budget — is a product call (latency before the first
+word, output spend, answer style), not a default to inherit.
+
 
 ### 2026-09-11, later the same night — the root cause, and two wrong diagnoses before it
 
