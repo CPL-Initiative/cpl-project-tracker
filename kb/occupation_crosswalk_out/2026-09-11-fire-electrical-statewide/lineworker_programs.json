@@ -1,0 +1,122 @@
+{
+ "Imperial Valley College": [
+  {
+   "title": "Apprenticeship: Power Lineman",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "units": "32.00-32.00/32.00-32.00",
+   "ctrl": "21469"
+  },
+  {
+   "title": "Apprenticeship: Power Lineman",
+   "award": "A.S. Degree",
+   "units": "32.00-32.00",
+   "ctrl": "16812"
+  }
+ ],
+ "Los Angeles Trade Technical College": [
+  {
+   "title": "Electrical Lineman Apprenticeship",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "units": "0.00-0.00",
+   "ctrl": "08482"
+  },
+  {
+   "title": "Powerline Worker: Pole Climbing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "units": "18.00-18.00/20.00-20.00",
+   "ctrl": "30905"
+  },
+  {
+   "title": "Powerline Mechanic",
+   "award": "A.S. Degree",
+   "units": "40.00-40.00",
+   "ctrl": "30963"
+  },
+  {
+   "title": "Utility Industry Fundamentals",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "units": "0.00-0.00",
+   "ctrl": "30904"
+  }
+ ],
+ "San Diego City College": [
+  {
+   "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+   "award": "A.S. Degree",
+   "units": "28.00-28.00",
+   "ctrl": "09461"
+  },
+  {
+   "title": "San Diego Trolley Inc Wayside Lineman Apprenticeship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "units": "28.00-28.00/28.00-28.00",
+   "ctrl": "22337"
+  },
+  {
+   "title": "Lineman",
+   "award": "A.S. Degree",
+   "units": "30.00-30.00",
+   "ctrl": "22332"
+  },
+  {
+   "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "units": "30.00-30.00/30.00-30.00",
+   "ctrl": "22334"
+  },
+  {
+   "title": "San Diego Gas and Electric Company Lineman Apprenticeship",
+   "award": "A.S. Degree",
+   "units": "30.00-30.00",
+   "ctrl": "09457"
+  },
+  {
+   "title": "Lineman",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "units": "30.00-30.00/30.00-30.00",
+   "ctrl": "38198"
+  },
+  {
+   "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "units": "33.00-33.00/33.00-33.00",
+   "ctrl": "38311"
+  },
+  {
+   "title": "San Diego Trolley Inc Light Rail Vehicle Lineman Apprenticeship",
+   "award": "A.S. Degree",
+   "units": "33.00-33.00",
+   "ctrl": "38313"
+  }
+ ],
+ "Santiago Canyon College": [
+  {
+   "title": "Apprenticeship: Power Lineman",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) units",
+   "units": "0.00-0.00",
+   "ctrl": "21652"
+  },
+  {
+   "title": "Apprenticeship: Power Lineman",
+   "award": "A.S. Degree",
+   "units": "24.00-24.00",
+   "ctrl": "11981"
+  }
+ ],
+ "College Of The Desert": [
+  {
+   "title": "Power Generation and Distribution",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "units": "24.00-24.00/25.00-25.00",
+   "ctrl": "33321"
+  }
+ ],
+ "Mission College": [
+  {
+   "title": "Overhead Line Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "units": "25.50-25.50/28.50-28.50",
+   "ctrl": "36623"
+  }
+ ]
+}

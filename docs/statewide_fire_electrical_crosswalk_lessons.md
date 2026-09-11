@@ -156,3 +156,88 @@ Ashley takes this into the statewide conversations. The single highest-value inp
 back is **which colleges confirm they do not teach the named receiving courses** —
 that turns the "chain breaks" finding from a measurement into a documented
 requirement for new exhibits.
+
+---
+
+## 2026-09-11 — SkyLine (Session 257): the correction, and what a classifier miss costs
+
+### What prompted it
+
+**Ashley, fourth engagement in this lineage.** She asked to take the SJCOE occupation
+list statewide for Fire, Wildland Fire and Electrical, with a specified 16-column
+structure, four alignment tiers, and — new — **source links and explicit flags on
+anything unverified**. She described attached documents; **none reached the session**,
+but every one of them was already committed here, so the run proceeded from the
+originals rather than blocking.
+
+### What we learned
+
+**1. ⭐ THE CORRECTION: a classifier miss reads exactly like an absent pathway.**
+On 2026-09-09 this lane reported the lineworker / utility cluster — **16 of the 60
+in-scope occupations** — as having no college pathway in California. That was wrong.
+**Six colleges run 18 active lineworker / powerline programs**: College of the Desert,
+Imperial Valley, Los Angeles Trade-Technical, Mission, San Diego City and Santiago
+Canyon. The cause was a one-word gap in a regex — the program-title pattern matched
+`lineworker` and `line worker` but not **`Lineman`** or **`Powerline`**.
+
+The lesson is not "write better regexes". It is that **a classifier's false negative
+becomes an ABSENCE CLAIM, and absence is the thing people act on.** "No college teaches
+this" sends a partnership down a build-it path; "six colleges teach it" sends it down an
+adopt-it path. Nothing in the output distinguished the two — the row was simply not
+there. This is the same failure class as
+[`methodology-follow-the-recommendation-to-the-course-that-receives-it`](kb-notes/methodology-follow-the-recommendation-to-the-course-that-receives-it.md),
+one layer earlier: that note says measure the last link; this one says **make sure your
+filter can see the thing you are about to declare missing.**
+
+**What changes:** the largest gap on the SJCOE list is an **adoption** gap, not a
+training gap. The training exists (California-Nevada JATC, four utilities, Northwest
+Lineman College Oroville), the college programs exist, and **ACE has already published a
+25-semester-credit recommendation** for the electrical training ALLIANCE Outside
+Apprenticeship, with year bundles of 16 / 16 / 19. Nobody in California has written it
+down as CPL. **Santiago Canyon is the first call** — it already articulates the
+Cal-Nev JATC apprenticeship into both a Certificate of Achievement and an A.S.
+
+**What stands:** there is still no MAP credit-recommendation exhibit anywhere in
+California for these occupations. That half of the earlier finding was correct.
+
+**2. ⚠️ VERIFICATION WAS IMPOSSIBLE AND HAD TO BE SAID, NOT WORKED AROUND.** The request
+asked for confirmation against official sources. **Every authoritative domain is blocked
+at the network level** — `osfm.fire.ca.gov`, `caljac.org`, `dir.ca.gov`, `cslb.ca.gov`,
+`nwcg.gov`, `nccer.org`, `acenet.edu`, `cccco.edu` all refuse connection, tested
+directly rather than inferred from an agent's report. Domain-restricted **search** still
+returns content extracted from those pages, which is how the external credential set was
+assembled — but that is not a fetch, and the workbook says so on every row that depends
+on it. The Sources & Verification tab lists each unconfirmed fact with the URL to check.
+
+**3. ⭐ 60 occupations are only 31 credential signatures — dedupe before emitting.**
+All five "Electrician" variants share one seven-credential set; sixteen utility
+occupations share the empty set. A row per occupation per college would have been
+**2,342 near-duplicates**. Grouping the signatures into **14 credential families** — the
+grain a college conversation actually happens at — brought it to **872 actionable rows**
+with every occupation still listed and filterable.
+
+**4. ⚠️ A sort key can empty a filter.** The shortlist was sorted by priority, so the
+top 260 were *all* P2 — the Promote and Build-new filters rendered empty and the six
+lineworker rows, the whole point of the run, never appeared. Fixed with a balanced slice
+(120 P2 / 110 P3 / 57 P4). **Check that every control you ship has something to show.**
+
+**5. ⚠️ Two classifier bugs caught before shipping.** A SQL `CASE` sent anything that was
+not fire or wildland to the electrical lane, so hazmat courses read as electrical — 131
+courses (9% of the matched set) were in the wrong lane. And a verification script's own
+`crit.startswith('P')` branch caught `"Possible - Additional Research Needed"` and
+reported a false mismatch. **The checker needs checking too.**
+
+### The numbers
+
+60 in-scope occupations · 31 credential signatures · 14 families · **872 actionable
+college connections** across 106 colleges · 102 existing articulations · 388 adopt-now ·
+306 promote-to-statewide · 57 build-new. Cal-JAC holds exactly 5 credentials in MAP,
+14 colleges have already made Cal-JAC credit determinations, and the Firefighter
+Journeyperson Certificate — the apprenticeship completion — has **98 potential adopters
+and zero published credit-recommendation lines**.
+
+### Next concrete step
+
+Santiago Canyon on lineworker, and the ACE 25-credit recommendation as the instrument.
+Separately: ask whether the Firefighter Journeyperson Certificate's Local flag is a
+decision or an artifact — promoting it reaches 98 colleges.

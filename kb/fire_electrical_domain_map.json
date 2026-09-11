@@ -19,7 +19,9 @@
    "EMS (fire-adjacent)",
    "Electrical"
   ],
-  "caljac_issuer": "California Joint Apprenticeship Committee|Cal-?JAC"
+  "caljac_issuer": "California Joint Apprenticeship Committee|Cal-?JAC",
+  "lineworker_programs": "lineman|line worker|lineworker|powerline|power line|overhead line|utility industry|power generation and distribution",
+  "lineworker_exclusions": "automotive|transmission (service|repair|specialist)|automatic transmission|transaxle|warehouse|logistics|new media|powertrain|drive train|engine  — \"transmission\" and \"distribution\" are dominated by automotive and logistics programs"
  },
  "join": {
   "_note": "COCI short_caps -> roster canonical. Measured: 102 in-scope COCI names, 100 auto-resolved, 2 needed an explicit alias. All 45 MAP adopter names resolved.",
@@ -984,7 +986,8 @@
   "caljac": "Cal-JAC has exactly 5 credentials in MAP, identified by issuer. Four are statewide; the fifth — Firefighter Journeyperson Certificate, the apprenticeship completion — is flagged LOCAL yet carries the highest potential-adopter count of the five (98). The ladder is missing its bottom rung.",
   "wffs_absent": "Wildland Fire Fighter Specialist, named explicitly in the request, appears NOWHERE in MAP — zero hits across all 2,903 exhibit records, searching unified titles AND the raw college-entered titles. Build-new, first-in-state.",
   "dedup": "Summing credential unit values overstates what a student can bank: fire sums naively to 147.2u but the distinct receiving-course ceiling is 90.2u (39% double-counted), because Firefighter 1, Firefighter EMT Certificate and the Fire Officer series all name the same courses.",
-  "exemplars": "City College of San Francisco is the wildland exemplar (all 6 statewide wildland credentials, the only college with the full set). Cabrillo College is the electrical exemplar (all 12, 86.5u). San Diego Miramar leads fire at 132.0u."
+  "exemplars": "City College of San Francisco is the wildland exemplar (all 6 statewide wildland credentials, the only college with the full set). Cabrillo College is the electrical exemplar (all 12, 86.5u). San Diego Miramar leads fire at 132.0u.",
+  "lineworker_correction": "CORRECTION, 2026-09-11, to what this lane reported on 2026-09-09. The lineworker / utility cluster (16 of the 60 in-scope SJCOE occupations) was reported as having no college pathway in California. THAT WAS WRONG. Six colleges run 18 active lineworker / powerline programs: College of the Desert (Power Generation and Distribution), Imperial Valley (Apprenticeship: Power Lineman, Cert + A.S.), Los Angeles Trade-Technical (Powerline Mechanic A.S., Powerline Worker: Pole Climbing, Electrical Lineman Apprenticeship, Utility Industry Fundamentals), Mission (Overhead Line Worker), San Diego City (Lineman A.S./Cert plus the SDG&E and San Diego Trolley apprenticeships) and Santiago Canyon (Apprenticeship: Power Lineman, Cert + A.S.). CAUSE: the program-title classifier matched \"lineworker\" and \"line worker\" but NOT \"Lineman\" or \"Powerline\". WHAT CHANGES: the largest gap on the list is an ADOPTION gap, not a training gap — the training exists, the college programs exist, and ACE has published a 25-semester-credit recommendation for the electrical training ALLIANCE Outside Apprenticeship. WHAT STANDS: there is still no MAP credit-recommendation exhibit anywhere in California for these occupations."
  },
  "counts": {
   "in_scope_credentials": 221,
@@ -1017,5 +1020,6 @@
     "dedup_hi": 38.0
    }
   }
- }
+ },
+ "_verification_limits_2026_09_11": "Requirement to verify credential facts against official sources could NOT be met: osfm.fire.ca.gov, caljac.org, dir.ca.gov, cslb.ca.gov, nwcg.gov, nccer.org, acenet.edu and cccco.edu are all blocked at the network level for these sessions (tested directly). MAP/COCI/catalog facts are solid; every external credential fact is carried as unverified with its URL."
 }

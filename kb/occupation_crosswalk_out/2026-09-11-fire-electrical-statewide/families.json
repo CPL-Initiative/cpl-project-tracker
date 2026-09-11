@@ -1,0 +1,1443 @@
+[
+ {
+  "name": "Construction Electrician (IBEW / NCCER commercial / C-10)",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "ELECTRICIAN CONSTRUCTION",
+   "Electrician - Electric & Hydro",
+   "Electrician GC",
+   "Electricians",
+   "HYDRO ELECTRICIAN",
+   "RESIDENTIAL WIREMAN"
+  ],
+  "creds": [
+   {
+    "title": "C-10 Electrical Contractor",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "Copper Mountain College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "Contractors State License Board (CSLB)"
+    ]
+   },
+   {
+    "title": "Commercial Electrical Apprenticeship",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "Copper Mountain College"
+    ],
+    "n_pot": 25,
+    "issuers": []
+   },
+   {
+    "title": "Residential Electrical Apprenticeship",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "Copper Mountain College"
+    ],
+    "n_pot": 25,
+    "issuers": []
+   },
+   {
+    "title": "NCCER Commercial Electrician Level 1",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Commercial Electrician Level 2",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Commercial Electrician Level 3",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Commercial Electrician Level 4/Journey Level",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "IBEW Electrician Apprenticeship",
+    "sw": false,
+    "adopters": [
+     "Norco College"
+    ],
+    "n_pot": 24,
+    "issuers": [
+     "International Brotherhood of Electrical Workers (IBEW)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Cabrillo College",
+   "Copper Mountain College",
+   "Norco College"
+  ],
+  "n_sw": 7
+ },
+ {
+  "name": "Industrial & Substation Electrician (NCCER industrial)",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "Electrical Technician",
+   "Electrical Technician GC",
+   "HYDRO ELECTRICAL TECHNICIAN",
+   "SUBSTATION ELECTRICIAN"
+  ],
+  "creds": [
+   {
+    "title": "NCCER Industrial Electrician Level 1",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Industrial Electrician Level 2",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Industrial Electrician Level 3",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "NCCER Industrial Electrician Level 4/Journey Level",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College"
+    ],
+    "n_pot": 25,
+    "issuers": [
+     "NCCER"
+    ]
+   },
+   {
+    "title": "IBEW Electrician Apprenticeship",
+    "sw": false,
+    "adopters": [
+     "Norco College"
+    ],
+    "n_pot": 24,
+    "issuers": [
+     "International Brotherhood of Electrical Workers (IBEW)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Cabrillo College",
+   "Norco College"
+  ],
+  "n_sw": 4
+ },
+ {
+  "name": "Lineworker & utility field (NO credential exists)",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "CABLE SPLICER GC",
+   "Cable Splicer",
+   "Electrical Power-Line Installers and Repairers",
+   "Electrical and Electronics Repairers, Powerhouse, Substation, and Relay",
+   "HYDRO PLANT MECHANIC",
+   "Hydro Stationary Engineer",
+   "LINEMAN - TRANSMISSION",
+   "Line Technician",
+   "Lineman GC",
+   "Lineworker",
+   "Nuclear Monitoring Technicians",
+   "Nuclear Power Reactor Operators",
+   "Power Distributors and Dispatchers",
+   "Power Lineman",
+   "Power System Operator",
+   "STATION OPERATOR"
+  ],
+  "creds": [],
+  "adopters": [],
+  "n_sw": 0
+ },
+ {
+  "name": "Sound & Communications / VDV",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "Communication Technician GC",
+   "SOUND AND COMMUNICATIONS SYSTEMS INSTALLER (Voice-Data-Video)",
+   "TELECOM-TECH",
+   "TELECOMMUNICATIONS TECHNICIAN",
+   "Telecommunications Equipment Installers and Repairers, Except Line Installers"
+  ],
+  "creds": [
+   {
+    "title": "Communications Systems",
+    "sw": false,
+    "adopters": [
+     "Mt. San Antonio College"
+    ],
+    "n_pot": 85,
+    "issuers": []
+   },
+   {
+    "title": "Sound and Communication Systems Installer Apprenticeship",
+    "sw": false,
+    "adopters": [
+     "Norco College"
+    ],
+    "n_pot": 24,
+    "issuers": [
+     "International Brotherhood of Electrical Workers (IBEW)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Mt. San Antonio College",
+   "Norco College"
+  ],
+  "n_sw": 0
+ },
+ {
+  "name": "Instrumentation / Metering / Gas Control",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "Gas Control Technician",
+   "METER TECHNICIAN",
+   "Metering Systems Technician"
+  ],
+  "creds": [
+   {
+    "title": "Instrumentation Devices and Systems",
+    "sw": false,
+    "adopters": [
+     "Modesto Junior College"
+    ],
+    "n_pot": 36,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   }
+  ],
+  "adopters": [
+   "Modesto Junior College"
+  ],
+  "n_sw": 0
+ },
+ {
+  "name": "Electro-mechanical / Machining / Generator / Hydro plant",
+  "lane": "Electrical",
+  "cat": "Electrical / Utility",
+  "occupations": [
+   "Electrical Machinist",
+   "Electrical and Electronic Engineering Technologists and Technicians",
+   "Generator Technician",
+   "Hydro Plant Operator"
+  ],
+  "creds": [
+   {
+    "title": "Electrical Motors and Controls 1",
+    "sw": false,
+    "adopters": [
+     "Chaffey College"
+    ],
+    "n_pot": 10,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Instrumentation Devices and Systems",
+    "sw": false,
+    "adopters": [
+     "Modesto Junior College"
+    ],
+    "n_pot": 36,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Introduction to Electrical and Instrumentation Processes",
+    "sw": false,
+    "adopters": [
+     "Evergreen Valley College"
+    ],
+    "n_pot": 18,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Basic Machining Concepts and Operations",
+    "sw": false,
+    "adopters": [
+     "Santa Ana College"
+    ],
+    "n_pot": 28,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "CNC Machine Set-Up and Operation",
+    "sw": false,
+    "adopters": [
+     "Norco College"
+    ],
+    "n_pot": 40,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "CNC Mill Programming",
+    "sw": false,
+    "adopters": [
+     "Modesto Junior College"
+    ],
+    "n_pot": 28,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "General Machine Shop and Theory of Machining",
+    "sw": false,
+    "adopters": [
+     "Norco College"
+    ],
+    "n_pot": 40,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Introduction to CNC Machining",
+    "sw": false,
+    "adopters": [
+     "Modesto Junior College"
+    ],
+    "n_pot": 28,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "MSSC Certified Production Technician (CPT) \u2014 Machinist",
+    "sw": false,
+    "adopters": [
+     "Los Angeles Trade Technical College"
+    ],
+    "n_pot": 28,
+    "issuers": [
+     "Manufacturing Skill Standards Council (MSSC)"
+    ]
+   },
+   {
+    "title": "Electrical Motors and Controls 2",
+    "sw": false,
+    "adopters": [
+     "Chaffey College"
+    ],
+    "n_pot": 10,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Wastewater Treatment Plant Operator Grade 1",
+    "sw": false,
+    "adopters": [
+     "San Bernardino Valley College"
+    ],
+    "n_pot": 18,
+    "issuers": [
+     "California Water Environment Association (CWEA)"
+    ]
+   },
+   {
+    "title": "Wastewater Treatment Plant Operator Grade 2",
+    "sw": false,
+    "adopters": [
+     "San Bernardino Valley College"
+    ],
+    "n_pot": 18,
+    "issuers": [
+     "California Water Environment Association (CWEA)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Chaffey College",
+   "Evergreen Valley College",
+   "Los Angeles Trade Technical College",
+   "Modesto Junior College",
+   "Norco College",
+   "San Bernardino Valley College",
+   "Santa Ana College"
+  ],
+  "n_sw": 0
+ },
+ {
+  "name": "SFT Fire Inspector / Prevention / Marshal",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "FIRE INSPECTOR",
+   "FIRE MARSHAL",
+   "FIRE PREVENTION OFFICER"
+  ],
+  "creds": [
+   {
+    "title": "California State Fire Officer Certification",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Las Positas College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 52,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Inspector 1",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chabot College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 52,
+    "issuers": [
+     "International Code Council (ICC)"
+    ]
+   },
+   {
+    "title": "Fire Inspector 1A",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 57,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Inspector 1B",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Sierra College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Inspector 1C",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Sierra College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Inspector 1D",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Lake Tahoe Community College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "SFT Fire Inspector 1C",
+    "sw": true,
+    "adopters": [
+     "Chaffey College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 57,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Prevention 1B",
+    "sw": false,
+    "adopters": [
+     "Palo Verde College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Prevention 1C",
+    "sw": false,
+    "adopters": [
+     "Palo Verde College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Bakersfield College",
+   "Cabrillo College",
+   "Chabot College",
+   "Chaffey College",
+   "City College of San Francisco",
+   "College of the Desert",
+   "College of the Sequoias",
+   "Lake Tahoe Community College",
+   "Las Positas College",
+   "Mendocino College",
+   "Palo Verde College",
+   "San Diego Miramar College",
+   "Santa Ana College",
+   "Sierra College"
+  ],
+  "n_sw": 7
+ },
+ {
+  "name": "SFT Fire Officer / Company Officer",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "FIRE OFFICER",
+   "Fire Dept. TRAINING OFFICER"
+  ],
+  "creds": [
+   {
+    "title": "Fire Officer \u2014 Company Officer 2A",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 50,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Officer \u2014 Company Officer 2B",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 50,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Officer \u2014 Company Officer 2C",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 50,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Officer \u2014 Company Officer 2D",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 50,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Officer \u2014 Company Officer 2E",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 51,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "California State Fire Officer Certification",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Las Positas College",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 52,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Officer Journeyperson Certificate",
+    "sw": true,
+    "adopters": [
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Mendocino College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 53,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "Fire Instructor 1",
+    "sw": false,
+    "adopters": [
+     "Modesto Junior College",
+     "Palo Verde College",
+     "Santa Ana College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "International Fire Service Accreditation Congress (IFSAC) / Pro Board"
+    ]
+   },
+   {
+    "title": "Fire Instructor 2",
+    "sw": false,
+    "adopters": [
+     "Palo Verde College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Training Instructor 1A",
+    "sw": false,
+    "adopters": [
+     "Palo Verde College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Bakersfield College",
+   "Cabrillo College",
+   "City College of San Francisco",
+   "College of the Desert",
+   "College of the Sequoias",
+   "Lake Tahoe Community College",
+   "Las Positas College",
+   "Mendocino College",
+   "Modesto Junior College",
+   "Palo Verde College",
+   "San Diego Miramar College",
+   "Santa Ana College",
+   "Sierra College"
+  ],
+  "n_sw": 7
+ },
+ {
+  "name": "EMS - EMT / Paramedic (incl. Cal-JAC)",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "EMERGENCY MEDICAL TECHNICIAN",
+   "FIRE FIGHTER PARAMEDIC",
+   "FIRE MEDIC",
+   "Firefighter EMT",
+   "PARAMEDIC"
+  ],
+  "creds": [
+   {
+    "title": "EMT Certification",
+    "sw": true,
+    "adopters": [
+     "Antelope Valley College",
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chabot College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Columbia College",
+     "Contra Costa College",
+     "Cuesta College",
+     "East Los Angeles College",
+     "Lake Tahoe Community College",
+     "Los Angeles Pierce College",
+     "Los Medanos College",
+     "Mendocino College",
+     "Merced College",
+     "Modesto Junior College",
+     "Monterey Peninsula College",
+     "Moreno Valley College",
+     "Mt. San Antonio College",
+     "Napa Valley College",
+     "Norco College",
+     "Palo Verde College",
+     "Rio Hondo College",
+     "Riverside City College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "West Los Angeles College",
+     "Woodland Community College"
+    ],
+    "n_pot": 103,
+    "issuers": [
+     "National Registry of Emergency Medical Technicians (NREMT)"
+    ]
+   },
+   {
+    "title": "Firefighter 1",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chabot College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Columbia College",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "Palo Verde College",
+     "San Diego City College",
+     "San Diego Mesa College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 64,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Paramedic License",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "Cuesta College",
+     "Las Positas College",
+     "Merced College",
+     "Moreno Valley College",
+     "Napa Valley College",
+     "Palo Verde College",
+     "West Los Angeles College"
+    ],
+    "n_pot": 83,
+    "issuers": [
+     "California Emergency Medical Services Authority (EMSA)"
+    ]
+   },
+   {
+    "title": "Firefighter EMT Certificate",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Sequoias",
+     "East Los Angeles College",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Sierra College"
+    ],
+    "n_pot": 61,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "Fire Fighter Paramedic Journeyperson Certificate",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Chaffey College",
+     "Glendale Community College",
+     "Lake Tahoe Community College"
+    ],
+    "n_pot": 57,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "Paramedic Journeyperson Certificate",
+    "sw": true,
+    "adopters": [
+     "Chaffey College"
+    ],
+    "n_pot": 31,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "EMT-2 Certification",
+    "sw": false,
+    "adopters": [
+     "Cabrillo College",
+     "West Los Angeles College"
+    ],
+    "n_pot": 88,
+    "issuers": [
+     "California Emergency Medical Services Authority (EMSA)"
+    ]
+   },
+   {
+    "title": "Paramedic Certification",
+    "sw": false,
+    "adopters": [
+     "Bakersfield College"
+    ],
+    "n_pot": 34,
+    "issuers": [
+     "National Registry of Emergency Medical Technicians (NREMT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Antelope Valley College",
+   "Bakersfield College",
+   "Cabrillo College",
+   "Chabot College",
+   "Chaffey College",
+   "City College of San Francisco",
+   "College of the Desert",
+   "College of the Sequoias",
+   "Columbia College",
+   "Contra Costa College",
+   "Cuesta College",
+   "East Los Angeles College",
+   "Glendale Community College",
+   "Lake Tahoe Community College",
+   "Las Positas College",
+   "Los Angeles Pierce College",
+   "Los Medanos College",
+   "Mendocino College",
+   "Merced College",
+   "Modesto Junior College",
+   "Monterey Peninsula College",
+   "Moreno Valley College",
+   "Mt. San Antonio College",
+   "Napa Valley College",
+   "Norco College",
+   "Palo Verde College",
+   "Rio Hondo College",
+   "Riverside City College",
+   "San Diego City College",
+   "San Diego Mesa College",
+   "San Diego Miramar College",
+   "Santa Ana College",
+   "Sierra College",
+   "West Los Angeles College",
+   "Woodland Community College"
+  ],
+  "n_sw": 6
+ },
+ {
+  "name": "SFT Firefighter series",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "FIRE FIGHTER",
+   "FIRE FIGHTER DIVER",
+   "FIRE FIGHTER I I",
+   "FIRE SUPPRESSION TECHNICIAN"
+  ],
+  "creds": [
+   {
+    "title": "Firefighter 1",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chabot College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Desert",
+     "College of the Sequoias",
+     "Columbia College",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "Mendocino College",
+     "Palo Verde College",
+     "San Diego City College",
+     "San Diego Mesa College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 64,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Firefighter 1A",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chabot College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Sequoias",
+     "Columbia College",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Sierra College"
+    ],
+    "n_pot": 70,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Firefighter EMT Certificate",
+    "sw": true,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "Chaffey College",
+     "City College of San Francisco",
+     "College of the Sequoias",
+     "East Los Angeles College",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College",
+     "Sierra College"
+    ],
+    "n_pot": 61,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "Firefighter Journeyperson Certificate",
+    "sw": false,
+    "adopters": [
+     "Bakersfield College",
+     "Cabrillo College",
+     "City College of San Francisco",
+     "College of the Sequoias",
+     "Glendale Community College",
+     "Lake Tahoe Community College",
+     "San Diego Miramar College"
+    ],
+    "n_pot": 98,
+    "issuers": [
+     "California Joint Apprenticeship Committee (Cal-JAC)"
+    ]
+   },
+   {
+    "title": "Firefighter 2",
+    "sw": false,
+    "adopters": [
+     "Fresno City College",
+     "Palo Verde College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Protection Equipment and Systems",
+    "sw": false,
+    "adopters": [
+     "Copper Mountain College",
+     "Merced College"
+    ],
+    "n_pot": 61,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Open Water Rescuer \u2014 Basic",
+    "sw": false,
+    "adopters": [
+     "Palo Verde College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Swiftwater Rescue Technician 1",
+    "sw": false,
+    "adopters": [
+     "San Diego Miramar College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Bakersfield College",
+   "Cabrillo College",
+   "Chabot College",
+   "Chaffey College",
+   "City College of San Francisco",
+   "College of the Desert",
+   "College of the Sequoias",
+   "Columbia College",
+   "Copper Mountain College",
+   "East Los Angeles College",
+   "Fresno City College",
+   "Glendale Community College",
+   "Lake Tahoe Community College",
+   "Mendocino College",
+   "Merced College",
+   "Palo Verde College",
+   "San Diego City College",
+   "San Diego Mesa College",
+   "San Diego Miramar College",
+   "Santa Ana College",
+   "Sierra College"
+  ],
+  "n_sw": 3
+ },
+ {
+  "name": "SFT Fire Apparatus Driver/Operator",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "FIRE ENGINEER",
+   "Fire Apparatus Engineer",
+   "HEAVY FIRE EQUIPMENT OPERATOR"
+  ],
+  "creds": [
+   {
+    "title": "Fire Apparatus Driver/Operator 1A",
+    "sw": true,
+    "adopters": [
+     "Chaffey College",
+     "College of the Sequoias",
+     "Columbia College",
+     "Lake Tahoe Community College",
+     "Modesto Junior College",
+     "Palo Verde College",
+     "San Diego Miramar College",
+     "Santa Ana College",
+     "Sierra College"
+    ],
+    "n_pot": 51,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Apparatus Driver/Operator 1B",
+    "sw": false,
+    "adopters": [
+     "Lake Tahoe Community College",
+     "Modesto Junior College",
+     "Palo Verde College",
+     "San Diego Miramar College"
+    ],
+    "n_pot": 84,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Apparatus and Equipment",
+    "sw": false,
+    "adopters": [
+     "Chaffey College",
+     "Copper Mountain College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Apparatus Driver/Operator 1A and 1B",
+    "sw": false,
+    "adopters": [
+     "San Diego Miramar College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Chaffey College",
+   "College of the Sequoias",
+   "Columbia College",
+   "Copper Mountain College",
+   "Lake Tahoe Community College",
+   "Modesto Junior College",
+   "Palo Verde College",
+   "San Diego Miramar College",
+   "Santa Ana College",
+   "Sierra College"
+  ],
+  "n_sw": 1
+ },
+ {
+  "name": "Fire Investigation",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "ARSON & BOMB INVESTIGATOR",
+   "Fire Investigator"
+  ],
+  "creds": [
+   {
+    "title": "Certified Crime Scene Investigator (CCSI)",
+    "sw": false,
+    "adopters": [
+     "Los Angeles Mission College"
+    ],
+    "n_pot": 101,
+    "issuers": [
+     "International Association for Identification (IAI)"
+    ]
+   },
+   {
+    "title": "Fire Investigator 1A",
+    "sw": false,
+    "adopters": [
+     "Santa Ana College"
+    ],
+    "n_pot": 31,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Los Angeles Mission College",
+   "Santa Ana College"
+  ],
+  "n_sw": 0
+ },
+ {
+  "name": "Fire Equipment / Hazardous Materials",
+  "lane": "Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "FIRE EQUIPMENT SPECIALIST",
+   "HAZARDOUS MATERIALS TECHNICIAN"
+  ],
+  "creds": [
+   {
+    "title": "Fire Apparatus and Equipment",
+    "sw": false,
+    "adopters": [
+     "Chaffey College",
+     "Copper Mountain College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Fire Protection Equipment and Systems",
+    "sw": false,
+    "adopters": [
+     "Copper Mountain College",
+     "Merced College"
+    ],
+    "n_pot": 61,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   },
+   {
+    "title": "Hazardous Materials Technician",
+    "sw": false,
+    "adopters": [
+     "Bakersfield College"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "National Fire Protection Association (NFPA)"
+    ]
+   }
+  ],
+  "adopters": [
+   "Bakersfield College",
+   "Chaffey College",
+   "Copper Mountain College",
+   "Merced College"
+  ],
+  "n_sw": 0
+ },
+ {
+  "name": "Wildland Fire (NWCG bundles)",
+  "lane": "Wildland Fire",
+  "cat": "Fire / Wildland / EMS",
+  "occupations": [
+   "WILDLAND FIRE FIGHTER SPECIALIST"
+  ],
+  "creds": [
+   {
+    "title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
+    "sw": true,
+    "adopters": [
+     "Chaffey College",
+     "City College of San Francisco",
+     "Lake Tahoe Community College"
+    ],
+    "n_pot": 58,
+    "issuers": [
+     "National Wildfire Coordinating Group (NWCG)"
+    ]
+   },
+   {
+    "title": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)",
+    "sw": true,
+    "adopters": [
+     "City College of San Francisco"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "National Wildfire Coordinating Group (NWCG)"
+    ]
+   },
+   {
+    "title": "NWCG Wildland Fire Certifications (S-130 / S-219 / S-230 / S-231 / S-270 bundle)",
+    "sw": true,
+    "adopters": [
+     "City College of San Francisco"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "National Wildfire Coordinating Group (NWCG)"
+    ]
+   },
+   {
+    "title": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+    "sw": true,
+    "adopters": [
+     "City College of San Francisco"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "National Wildfire Coordinating Group (NWCG)"
+    ]
+   },
+   {
+    "title": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
+    "sw": true,
+    "adopters": [
+     "City College of San Francisco"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "California State Fire Training (SFT)"
+    ]
+   },
+   {
+    "title": "Wildland Fire ICS/NWCG Certification Bundle",
+    "sw": true,
+    "adopters": [
+     "City College of San Francisco"
+    ],
+    "n_pot": 59,
+    "issuers": [
+     "National Wildfire Coordinating Group (NWCG) / FEMA"
+    ]
+   },
+   {
+    "title": "Wildland Fire Control",
+    "sw": false,
+    "adopters": [
+     "Chaffey College",
+     "Columbia College"
+    ],
+    "n_pot": 15,
+    "issuers": [
+     "California Community Colleges"
+    ]
+   }
+  ],
+  "adopters": [
+   "Chaffey College",
+   "City College of San Francisco",
+   "Columbia College",
+   "Lake Tahoe Community College"
+  ],
+  "n_sw": 6
+ }
+]
