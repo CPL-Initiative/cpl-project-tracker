@@ -3989,8 +3989,21 @@ Deno.serve(async (req: Request) => {
                     const u = event.message.usage;
                     cacheRead = u.cache_read_input_tokens || 0;
                     cacheWrite = u.cache_creation_input_tokens || 0;
+                    /* ⚠ NAME THE MODEL THAT ANSWERED — Sam's ruling, decision sheet
+                     * item 3, 2026-09-11. Taken from `event.message.model`, the
+                     * model the API says it SERVED, never the MODEL constant we
+                     * asked for: a typo'd secret, a fallback or an override all
+                     * differ from the request, and the request is the one thing
+                     * we already know. Without this the only ways to learn which
+                     * model is answering are to read a secret or infer it from
+                     * cache behaviour across a deploy boundary — which is what
+                     * this cost on 2026-09-10, and the inference was wrong twice.
+                     * ⚠ Keep `cache:` and the `read=`/`write=`/`uncached_input=`
+                     * tokens — session_186's log query prefix-matches the first
+                     * and the cost analysis parses the rest. */
                     console.log(
-                      `cpl-chat cache: read=${cacheRead} write=${cacheWrite} ` +
+                      `cpl-chat cache: model=${event.message.model || MODEL} ` +
+                      `read=${cacheRead} write=${cacheWrite} ` +
                       `uncached_input=${u.input_tokens || 0}` +
                       (cacheRead === 0 && cacheWrite === 0
                         ? " ⚠ NEITHER — the breakpoint is not taking effect"

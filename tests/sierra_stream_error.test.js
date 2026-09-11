@@ -76,6 +76,27 @@ block("(2) an empty answer is never a silent success", () => {
     + "indistinguishable in the log that exists to tell them apart");
 });
 
+block("(2b) the model that answered is named on every request", () => {
+  // Sam's ruling, decision sheet item 3 (2026-09-11): "Have Sierra name her
+  // model in the log." ⚠️ From event.message.model — what the API says it
+  // SERVED — not the MODEL constant, which is only what we asked for. A secret
+  // with a typo in it, an override, or a fallback all differ from the request.
+  check("(2b) ⭐ the cache line names the model",
+    /cpl-chat cache: model=\$\{/.test(SRC),
+    "without it the only ways to learn which model answers are to read a secret "
+    + "or infer it from cache behaviour across a deploy — both tried, both wrong");
+  check("(2b) ⭐ …and it is the SERVED model, not the requested one",
+    /model=\$\{event\.message\.model/.test(SRC),
+    "MODEL is what we asked for; event.message.model is what answered, and the "
+    + "gap between them is exactly the failure this is meant to catch");
+  // ⚠️ The line is parsed: session_186's log query prefix-matches "cpl-chat
+  // cache:" and the cost work reads read=/write=/uncached_input=. Inserting a
+  // field is safe; renaming one is not.
+  check("(2b) …and the parsed field names survive the insertion",
+    /cpl-chat cache: model=[\s\S]{0,80}?read=\$\{cacheRead\} write=\$\{cacheWrite\}/.test(SRC)
+    && /uncached_input=\$\{u\.input_tokens/.test(SRC));
+});
+
 block("(3) the client is told, and old clients still work", () => {
   check("(3) ⭐ an error frame is emitted to the caller on an empty answer",
     /event:\s*error\\ndata:/.test(SRC),
