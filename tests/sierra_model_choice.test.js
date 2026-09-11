@@ -168,6 +168,65 @@ block("(4) what to watch", () => {
     /40,000/.test(SRC));
 });
 
+block("(5) thinking is configured for the model actually running", () => {
+  // ⛔ FOUND 2026-09-11, two hours into the Sonnet 5 window: 35 of 35 blank
+  // answers had output_tokens=2048 and no text. On Sonnet 5 a request that
+  // OMITS `thinking` runs adaptive thinking; on Haiku 4.5 and Sonnet 4.6 the
+  // same request runs none. Thinking tokens are billed against max_tokens, so
+  // the model reasoned through the whole budget and never reached the answer.
+  // The model switch touched no line about thinking — the default moved under
+  // it. So this is keyed to the model id, like the cache floor: it asks what
+  // the CONFIGURED model does when the field is absent, and fails closed on an
+  // id it does not know. Anthropic's migration guide, 2026-06.
+  const THINKING_BY_DEFAULT = [
+    // omitted `thinking` → adaptive thinking ON; `{type:"disabled"}` accepted
+    [/^claude-(sonnet-5|opus-5)\b/, "on-disable-ok"],
+    // thinking always on; `{type:"disabled"}` is REJECTED with a 400
+    [/^claude-(fable-5-1|fable-5|mythos-5-1|mythos-5)\b/, "always-on"],
+    // omitted `thinking` → no thinking (the world before 2026-09-10)
+    [/^claude-(opus-4-8|opus-4-7|opus-4-6|sonnet-4-6|sonnet-4-5|haiku-4-5)\b/, "off"],
+  ];
+  const m = /const MODEL = Deno\.env\.get\("CPL_CHAT_MODEL"\) \|\| "([^"]+)";/.exec(SRC);
+  if (!m) return check("(5) model constant readable", false);
+  const mode = (THINKING_BY_DEFAULT.find(([re]) => re.test(m[1])) || [])[1];
+  check("(5) ⭐ the configured model's thinking default is KNOWN", !!mode,
+    m[1] + " is not in the thinking-default table — add it rather than guessing; "
+    + "an unknown default is how a quarter of answers went blank");
+  if (!mode) return;
+  // ⚠ ANCHORED TO THE ANTHROPIC REQUEST BODY — the one that sends `model: MODEL`
+  // — not to the word `thinking` anywhere in a 4,000-line file whose comments
+  // now discuss it at length.
+  const body = /body: JSON\.stringify\(\{\s*model: MODEL,([\s\S]*?)\}\),/.exec(SRC);
+  check("(5) the Anthropic request body is readable", !!body,
+    "expected `body: JSON.stringify({ model: MODEL, … }),`");
+  if (!body) return;
+  const sendsDisabled = /thinking:\s*\{\s*type:\s*"disabled"\s*\}/.test(body[1]);
+  const sendsAdaptive = /thinking:\s*\{\s*type:\s*"adaptive"/.test(body[1]);
+  if (mode === "on-disable-ok") {
+    check("(5) ⭐ a model that thinks by default is told explicitly what to do (" + m[1] + ")",
+      sendsDisabled || sendsAdaptive,
+      "omitting `thinking` on " + m[1] + " runs adaptive thinking inside "
+      + "max_tokens — the 2026-09-10 blank answers");
+    // Adaptive is a choice, not a mistake — but thinking and text share one
+    // budget, so turning it on without room repeats the outage in a new shape.
+    if (sendsAdaptive) {
+      const mt = /const MAX_TOKENS = (\d+);/.exec(SRC);
+      check("(5) …and adaptive thinking has an output budget above 2048",
+        !!mt && Number(mt[1]) > 2048,
+        "2048 is the budget that went blank; thinking needs room of its own");
+    }
+  } else if (mode === "always-on") {
+    check("(5) ⭐ a model that cannot disable thinking is not sent `disabled` (" + m[1] + ")",
+      !sendsDisabled,
+      m[1] + " rejects thinking:{type:\"disabled\"} with a 400 — every request fails");
+  } else {
+    check("(5) a thinking-off-by-default model needs no thinking field (" + m[1] + ")", true);
+  }
+  check("(5) the file says thinking tokens count against max_tokens",
+    /thinking[\s\S]{0,200}?max_tokens|max_tokens[\s\S]{0,200}?thinking/i.test(SRC),
+    "without that sentence the next model switch repeats the blank answers");
+});
+
 let pass = 0;
 for (const [n, ok, why] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));

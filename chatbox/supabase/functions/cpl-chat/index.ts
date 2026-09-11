@@ -122,6 +122,31 @@ const MAX_TOKENS = 2048;
  * properties of the MODEL, and every one of them was written down here as though
  * it were a property of this endpoint. Re-read this block whenever MODEL moves.
  *
+ * ⛔ THINKING IS ON BY DEFAULT ON SONNET 5, AND IT IS BILLED AGAINST max_tokens
+ * (2026-09-11). The one property of a model switch no price table shows: on
+ * Sonnet 5 (and Opus 5) a request with NO `thinking` field runs ADAPTIVE
+ * thinking; on Haiku 4.5 and Sonnet 4.6 the same request runs none. Thinking
+ * tokens are output tokens under the same `max_tokens` cap, so for two hours
+ * after the 2026-09-10 deploy a quarter of answers came back blank — the model
+ * reasoned through the whole 2,048-token budget and never reached the text —
+ * while HTTP 200, the cache line and the error log all read healthy. The
+ * request body sends `thinking: { type: "disabled" }` explicitly now; see the
+ * note beside it. Turning thinking ON is a product decision (latency before the
+ * first word, output spend, answer style), not a default to inherit: if it is
+ * ever wanted, use `{ type: "adaptive" }` with `output_config.effort` AND raise
+ * MAX_TOKENS to hold the thinking, in the same change.
+ * ⚠ IF MODEL EVER MOVES TO FABLE OR MYTHOS, `disabled` IS REJECTED WITH A 400
+ * (thinking is always on there): the field must go and MAX_TOKENS must grow, or
+ * every request fails. tests/sierra_model_choice.test.js keys the thinking
+ * default to the exact model id, like the cache floor, and fails closed.
+ * ⚠ AND THE TOKENIZER CHANGED. Sonnet 5 counts ~30% more tokens for the same
+ * text than Sonnet 4.6 / Haiku 4.5, which is most of why the cached prefix
+ * measured 4,476 tokens against the 3,234 that chars/4 predicted (the same
+ * breakpoint read 3,027 on Sonnet 4.6 on 2026-08-23), and why MAX_TOKENS = 2048
+ * now holds roughly 6,000 characters of answer rather than 8,000. Whether that
+ * truncates real answers with thinking OFF is UNMEASURED: read the cap-hit
+ * count in chat_interactions after this deploy before touching MAX_TOKENS.
+ *
  * ⚠ WHAT TO WATCH. The most demanding thing on this endpoint is not a student
  * question — it is the GR area sweep, which asks for a legal instrument
  * determination across sixteen rows returned as strict JSON and nothing else.
@@ -3878,6 +3903,16 @@ Deno.serve(async (req: Request) => {
         model: MODEL,
         max_tokens: MAX_TOKENS,
         stream: true,
+        /* ⛔ THINKING OFF, EXPLICITLY (2026-09-11). On Sonnet 5 a request that
+         * OMITS `thinking` runs adaptive thinking, and `max_tokens` caps thinking
+         * and text TOGETHER — so on a question the model chose to reason about it
+         * spent the whole 2,048-token budget before the first word and the answer
+         * came back blank (35 of 35 blanks: output_tokens=2048, zero text). Haiku
+         * 4.5 and Sonnet 4.6 ran thinking-off by omission; on Sonnet 5 omission
+         * means ON. This line is the request Sierra always made, spelled out.
+         * ⚠ Fable / Mythos REJECT `disabled` with a 400 — see the header block
+         * before pointing CPL_CHAT_MODEL at one of those. */
+        thinking: { type: "disabled" },
         // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
         // The first is byte-identical on every request (4,476 tokens of
         // preamble + always-rules, measured) and is the only thing cached; the second
@@ -3906,27 +3941,29 @@ Deno.serve(async (req: Request) => {
     // 5. Stream response
     const encoder = new TextEncoder();
     let fullResponse = "";
-    /* ⛔ THE BLANK ANSWERS ARE THE OUTPUT CAP, NOT AN UPSTREAM ERROR (2026-09-11).
-     * I diagnosed this as an unhandled `error` event and shipped a branch for it.
-     * WRONG — there is no error. chat_interactions, every turn since the Sonnet 5
-     * deploy:
+    /* ⛔ THE BLANK ANSWERS WERE ADAPTIVE THINKING SPENDING THE OUTPUT CAP
+     * (2026-09-11). Diagnosed twice before it was seen: first as an unhandled
+     * `error` event (there was no error), then as "MAX_TOKENS = 2048 is the bug"
+     * (the same cap produced zero blanks in fourteen days on Haiku 4.5).
+     * chat_interactions, every turn in the first two hours on Sonnet 5:
      *
      *                      turns   hit the 2048 cap   min_out   max_out
      *     blank answer        35                 35      2048      2048
      *     real answer         98                 28       100      2048
      *
-     * 35 of 35 blanks spent the FULL `MAX_TOKENS` budget and emitted zero
-     * characters of text; one spent 2,048 and emitted 88. So the output budget is
-     * being consumed by content this loop does not collect as text, and on a
-     * question needing enough of it the cap is reached before the answer starts.
-     * Haiku 4.5 produced ZERO blanks in the fourteen days before the switch.
-     *
-     * ⚠ MAX_TOKENS = 2048 IS THE BUG, not the model. Raising it (or suppressing
-     * the non-text output) is the fix; reverting the model only avoids it.
-     * ⚠ The `error` branch below is still correct and still worth having — it just
-     * does not fire for THIS, and I should not have named a cause I had not seen
-     * in the data. `stop_reason` is what settles it: on these turns it will read
-     * `max_tokens`. */
+     * 35 of 35 blanks spent the FULL budget and emitted zero characters of text.
+     * What consumed it was THINKING: Sonnet 5 runs adaptive thinking when the
+     * request omits `thinking` (Haiku 4.5 and Sonnet 4.6 ran thinking-off by
+     * omission), thinking tokens count against `max_tokens`, and this loop —
+     * correctly — collects only text deltas. On a question the model chose to
+     * reason about, the budget was gone before the first text frame; on the 28
+     * capped real answers it was partly gone. The request now sends
+     * `thinking: { type: "disabled" }`, which is the pre-switch request spelled
+     * out. MAX_TOKENS stays 2048: raising it would have PAID for the thinking
+     * rather than stopped it.
+     * ⚠ The `error` branch below is still correct and still worth having — it
+     * just does not fire for THIS. `stop_reason` settles it: on a blank turn it
+     * reads `max_tokens`; on a real upstream failure it never arrives. */
     let streamError = "";   // upstream mid-stream error type, "" if none
     let stopReason = "";    // the model's own stop_reason, "" if never sent
     let responseTokens = 0;
