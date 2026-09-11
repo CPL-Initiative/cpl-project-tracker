@@ -53,17 +53,43 @@ and send every model-dependent field explicitly.
 
 ## Sam's decisions this run
 
-None taken in session — Sam asked for the recovery and was not present for the
-rest. The decision he now owns is in NEEDS SAM.
+From the decision sheet [Two Calls on Sierra](https://claude.ai/code/artifact/79ef62e3-5034-425f-a657-0973f0a92171) (`docs/visuals/2026-09-11-two-calls-on-sierra.html`), replies read from its store:
+
+1. **Reasoning stays off** — verdict Yes: *"Let's keep it off but test for better
+   options if they exist. Currently, it's giving fantastic answers!"* Any trial of
+   adaptive thinking runs on the preview slug first (`cpl-chat-preview-ab.yml`).
+2. **The answer stop is 8,192 tokens** — verdict 8,192 over the proposed 3,072:
+   *"Let's make it high for now so folks playing around with it always get a
+   complete answer."* `MAX_TOKENS` moved 2,048 → 8,192; a ceiling, not a spend.
+   Shipped in #1555 (merged 16:45Z). Deployed as v65 (run 42, 16:41:58Z, from main 05f2b06d).
+3. **Sierra's page on a phone** — *"the current mobile view is mostly consumed by
+   the header text… consolidate all this text to hover overs in the header… and
+   fix the ghosted mountain logo so the peak fits."* Shipped as the About Sierra
+   control (hover for a mouse, tap or Enter for everyone), the peak unclipped, one
+   header row on any phone. Measured at 390×844: the conversation now starts 163px
+   down (19%) against 540px (64%) before.
+4. **A floating Sierra bubble on every COBI tab** — asked for advice, not built;
+   the advice and the open call are in the To-Do feed.
+5. **Don't lock a session into a long wait** — Sam, on the CI polling loop:
+   *"I really don't like how you can get locked in a long process (30-60 mins or
+   more) without a way to interrupt and get you a note--escape doesn't work when
+   you're locked in on something."* Now a PUSH bullet in `CLAUDE.md` (Working
+   with the MAP team) and a `cpl_memory` decision row: end the turn when the
+   next step waits on anything external; one batch of calls per turn while a
+   wait is in play; a scheduled wake or the PR webhook brings the session back.
+6. **The context meter travels with the repo** — *"make it so"* to the one-line
+   fix: the Rule 9a `PostToolUse` hook now lives in `.claude/settings.json`,
+   guarded by `tests/context_budget_test.py` (7a–c). Why: this session compacted
+   at 785,955 tokens with the meter never having run — its only install was per
+   machine, and a remote container is never that machine — while Rule 9's
+   commit-count proxy read zero because the handoff had just been touched inside
+   a PR and the context had gone to reading and polling (58 PR check reads,
+   136,000 tokens). Detail: `docs/reference/context_pressure_hook.md` and the
+   correction on `methodology-context-pressure-is-measurable`.
 
 ## NEEDS SAM
 
-1. ⭐ **Should Sierra think at all?** — on the decision sheet [Two Calls on Sierra](https://claude.ai/code/artifact/79ef62e3-5034-425f-a657-0973f0a92171) with item 2, the output stop (proposed 3,072); `docs/visuals/2026-09-11-two-calls-on-sierra.html`. Read the replies with `read_db` (collection `replies`) before executing. The fix restores thinking-off, which is
-   how she ran on Haiku 4.5 and Sonnet 4.6. Adaptive thinking at low effort is
-   the vendor's recommendation for quality, but it means a pause before the
-   first word, output spend, a different answer style, and `MAX_TOKENS` raised
-   in the same change. Off keeps her as she was. His call; the To-Do feed
-   carries it in plain words.
+1. Decided — see above. What remains from the sheet is the follow-up: run the sixteen-row register sweep once on Sonnet 5, and an A/B of reasoning on the preview slug only if a gap appears.
 2. Carried from 255: the `sierra_guidance` CHECK constraint lacks `skyview-ask`;
    eleven decision-sheet items settled and waiting to be built (4, 5, 8, 9, 10,
    11, 13, 15, 16, 17, 18, 19 — ruling 3 shipped in #1550).
@@ -75,7 +101,7 @@ rest. The decision he now owns is in NEEDS SAM.
   2,048 output tokens hold about 6,000 characters now, not 8,000; if real
   answers are being cut short, raise `MAX_TOKENS` — a measured change, not a
   guess.
-- **Smoke mode 15c's regex matches Sierra's own correct negation** (*"different from saying it has awarded 'zero'"*) — the same shape as 16a: fix the assertion, not the answer.
+- ✅ **Smoke modes 15a and 15c matched Sierra's own correct negations** (*"not a failure to act"*, *"I can't say they've awarded zero"*) — fixed in #1555 by stripping the negated clause before the match (`answer_must_not_match_unnegated`). 16a's roster-lookup rewrite is still the open one.
 - **The health probe cannot see this outage class.** It asks one simple question
   and passed straight through two hours of blanks on broad questions. Decide
   whether a second, broader question is worth one more model call per run.

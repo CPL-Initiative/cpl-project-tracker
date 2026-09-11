@@ -36,11 +36,17 @@
        gets before focus moves somewhere they did not ask for. It becomes a
        visually-hidden phrase — the accessible form the arrow was only
        gesturing at. Same treatment as the My College resource links (#1231). -->
+  <!-- "About Sierra" holds the introduction and the beta note that used to sit
+       above the conversation and took most of a phone's first screen (Sam,
+       2026-09-11: "consolidate all this text to hover overs in the header").
+       Hover alone would fail 1.4.13 and every touch and keyboard user, so it is
+       a real control: opens on hover for a mouse, on tap or Enter for everyone,
+       stays open until dismissed, closes on Escape and on a click outside. -->
+  <button class="s-about" id="s-about-btn" type="button" aria-expanded="false" aria-controls="s-about">About Sierra</button>
   <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu<span class="s-sr">(opens in a new tab)</span></a>
 </header>
-
-<main class="s-main" id="s-main" tabindex="-1">
-  <div class="s-intro">
+<div class="s-about-panel" id="s-about" hidden>
+  <div class="s-about-inner">
     <p>Hi, I'm <strong>Sierra</strong>. Ask me about <strong>Credit for Prior Learning</strong> —
       where students can turn a license, certification, apprenticeship, or military training into
       <strong>college credit</strong>, which California community colleges teach or already award credit
@@ -49,7 +55,9 @@
       college's CPL coordinator (I point you to the right one). Don't enter personal information;
       questions are logged anonymously to help me improve.</p>
   </div>
+</div>
 
+<main class="s-main" id="s-main" tabindex="-1">
   <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
        aria-pressed>, and a radiogroup promises children with role="radio",
        single-selection semantics and arrow-key roving focus — none of which are
@@ -73,7 +81,8 @@
 </main>
 
 <footer class="s-foot">
-  Sierra offers guidance, not a guarantee of credit — your college's CPL coordinator makes the final call.
+  Sierra is in beta and offers guidance, not a guarantee of credit — your college's CPL coordinator makes the final call.
+  Please don't enter personal information; questions are logged anonymously.
   Questions? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a> ·
   <a href="https://map.rccd.edu" target="_blank" rel="noopener">MAP CPL platform<span class="s-sr">(opens in a new tab)</span></a>
 </footer>

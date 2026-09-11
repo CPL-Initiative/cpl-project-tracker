@@ -492,6 +492,18 @@ first day.** Do the remembering for them.
   ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
   deferred for an answer that never comes costs the session's reasoning. If work
   continues after, checkpoint again.
+- **DON'T LOCK IN — END THE TURN WHEN YOU ARE WAITING (Sam, 2026-09-11).**
+  *"I really don't like how you can get locked in a long process (30-60 mins or
+  more) without a way to interrupt and get you a note--escape doesn't work when
+  you're locked in on something."* A turn that chains background sleeps and
+  re-polls while CI, a deploy or a smoke run finishes IS the failure. When the
+  next step waits on anything external, END THE TURN: the PR webhook or a
+  `send_later` self-wake (a plain user turn, 1–5 min out) brings the session
+  back, and Sam can type in between. One batch of calls per turn while a wait
+  is in play; a note he types mid-turn is addressed at the very next tool
+  boundary, before the wait continues. The stop hook's "uncommitted changes"
+  nag is not a reason to keep a turn alive — say in one line why the files
+  wait, and stop.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.

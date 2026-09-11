@@ -58,7 +58,13 @@ body {
    Padding leaves the ghost room to overhang the wordmark, which is the effect. */
 .s-name-peak {
   position: relative; display: inline-block;
-  padding: 0 .35em; margin: 0 -.35em; overflow: clip;
+  padding: 0 .35em; margin: 0 -.35em;
+  /* Clip sideways only. `overflow: clip` on both axes cut the ridgeline off at
+     the top of the wordmark's line box — the peak was missing (Sam, 2026-09-11:
+     "fix the ghosted mountain logo so the peak fits"). `clip visible` keeps the
+     horizontal containment the comment above is about and lets the peak rise
+     into the header's own padding, where there is room for it. */
+  overflow: clip visible;
 }
 .s-name-peak > h1 { position: relative; z-index: 1; }
 .s-whitney-ghost {
@@ -76,6 +82,31 @@ body {
   white-space: nowrap;
 }
 .s-back:hover { background: rgba(255, 255, 255, .14); }
+/* The About control shares the pill; it is a <button>, so font and color are
+   spelled out (a button inherits neither). */
+.s-about {
+  color: #fff; background: transparent; cursor: pointer;
+  font: 600 .82rem var(--sierra-font);
+  border: 1px solid rgba(255, 255, 255, .5); border-radius: 999px; padding: 6px 13px;
+  white-space: nowrap; margin-right: 10px;
+}
+.s-about:hover, .s-about[aria-expanded="true"] { background: rgba(255, 255, 255, .14); }
+/* The panel drops below the header and spans it; the text inside is the same
+   introduction and beta note that stood above the conversation until
+   2026-09-11. The [hidden] companion rule is deliberate: an author `display`
+   would otherwise beat the UA's [hidden] (the 2026-08-14 lesson on .s-fb-note). */
+.s-about-panel {
+  background: var(--sierra-subtle); border-bottom: 1px solid var(--sierra-border);
+  box-shadow: 0 2px 8px rgba(11, 61, 97, .08);
+}
+.s-about-panel[hidden] { display: none; }
+.s-about-inner {
+  width: min(820px, 100%); margin: 0 auto; padding: 12px clamp(10px, 3vw, 20px) 14px;
+  color: var(--sierra-muted); font-size: .92rem; line-height: 1.5;
+}
+.s-about-inner p { margin: 0; }
+.s-about-inner p + p { margin-top: 8px; }
+.s-about-inner strong { color: var(--sierra-ink); }
 
 /* Visually hidden, still announced. Carries the "(opens in a new tab)" cue that
    replaced the ↗ — clipped rather than display:none, because display:none and
@@ -93,10 +124,6 @@ body {
   display: flex; flex-direction: column;
   padding: 0 clamp(10px, 3vw, 20px);
 }
-.s-intro {
-  margin: 16px 2px 6px; color: var(--sierra-muted); font-size: .92rem; line-height: 1.5;
-}
-.s-intro strong { color: var(--sierra-ink); }
 .s-beta {
   margin-top: 6px; font-size: .8rem; color: var(--sierra-faint);
   background: var(--sierra-subtle); border: 1px solid var(--sierra-border);
@@ -300,11 +327,41 @@ body {
 .s-skip:focus { top: 8px; }
 
 @media (max-width: 560px) {
-  .s-head { flex-wrap: wrap; gap: 10px 12px; }
-  .s-head .s-brand-logo { height: 34px; }
-  .s-brand { gap: 12px; }
-  .s-brand-name { padding-left: 12px; }
-  .s-head h1 { font-size: 1.15rem; }
-  .s-head .s-role { font-size: .76rem; }
+  /* One header row on a phone. Measured before this (2026-09-11, 390px wide,
+     844 tall): the header wrapped to 104px, the introduction and beta note took
+     287px, the audience picker 119px, and the conversation began 540px down —
+     64% of the screen. The text now lives behind About Sierra, the map.rccd.edu
+     pill yields to the footer link that says the same thing, and the chips
+     tighten. The 24px target floor holds: chips and the About pill are 25px. */
+  .s-head { flex-wrap: nowrap; gap: 8px; padding: 10px 12px; }
+  .s-head .s-brand-logo { height: 28px; }
+  .s-brand { gap: 10px; }
+  .s-brand-name { padding-left: 10px; }
+  .s-head h1 { font-size: 1.05rem; }
+  .s-head .s-role { font-size: .7rem; }
+  .s-back { display: none; }
+  .s-about { padding: 5px 10px; font-size: .78rem; margin-right: 0; }
+  .s-audience { margin: 8px 2px 2px; padding: 6px 9px; gap: 6px; }
+  .s-aud-chip { padding: 5px 10px; font-size: .78rem; }
   .s-bubble { max-width: 92%; }
+}
+/* Narrower still: measured at 360 and 320 the tagline wrapped to three lines
+   and at 320 the About pill overlapped it. Below 400 the tagline yields (the
+   name and the page title still carry it) and the logo steps down, so the
+   header stays one row of about 50px on any phone. */
+@media (max-width: 400px) {
+  .s-head .s-role { display: none; }
+  .s-head .s-brand-logo { height: 26px; }
+  /* The name block must not shrink below its word: with min-width:0 the
+     wordmark overflowed its box into the gap and touched the pill at 320px. */
+  .s-brand-name { flex: 0 0 auto; }
+  .s-about { padding: 4px 9px; }
+}
+@media (max-width: 340px) {
+  .s-head .s-brand-logo { height: 20px; }
+  .s-head { gap: 6px; }
+  .s-brand { gap: 8px; }
+  .s-brand-name { padding-left: 8px; }
+  .s-head h1 { font-size: 1rem; }
+  .s-about { padding: 4px 7px; font-size: .74rem; }
 }

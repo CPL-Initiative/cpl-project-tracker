@@ -149,3 +149,20 @@ The EMERGENCY threshold first crosses at the exact turn where Sam typed:
 He wrote the scenario about running out of context **while running out of
 context**, and neither of us noticed, because nothing was watching. That is the
 entire argument for the hook in one line.
+
+## Correction (2026-09-11): a meter that is installed per machine never runs on a machine that is new every session
+
+The meter measured correctly and warned nobody, because it was not running.
+Its install lived in `~/.claude/settings.json` on the machine it was installed
+on, and a remote Claude Code session is a fresh container every time. A 15-hour
+remote session on 2026-09-11 compacted at 785,955 tokens (the fallback ceiling,
+786,077, was right to within 122) with the hook never having fired; the session
+ran it by hand afterwards and got the exact figure in 50 ms. Rule 9's other
+trigger, commits since the handoff, read zero sixteen minutes before the
+compaction: the handoff had just been touched inside a PR, and the context had
+been spent on reading and polling (58 reads of PR check runs alone cost 136,000
+tokens), which produce no commits. The hook now lives in the repo's own
+`.claude/settings.json`, so it travels with the checkout, and the test fails if
+it leaves. The lesson is the same shape as the one this note already carries:
+**recording a measurement and having it fire are two events**, and an install
+step is a third.
