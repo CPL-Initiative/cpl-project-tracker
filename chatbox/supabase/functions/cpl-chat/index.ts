@@ -3906,6 +3906,8 @@ Deno.serve(async (req: Request) => {
     // 5. Stream response
     const encoder = new TextEncoder();
     let fullResponse = "";
+    let streamError = "";   // upstream mid-stream error type, "" if none
+    let stopReason = "";    // the model's own stop_reason, "" if never sent
     let responseTokens = 0;
     let cacheRead = 0;
     let cacheWrite = 0;
@@ -3950,6 +3952,30 @@ Deno.serve(async (req: Request) => {
                   if (event.type === "message_delta" && event.usage) {
                     responseTokens = event.usage.output_tokens || 0;
                   }
+                  /* stop_reason is the other half of an empty answer's cause: an
+                   * upstream `error` and a model that produced no text look the
+                   * same from outside, and they are different bugs. Captured
+                   * here because message_delta is the only event carrying it. */
+                  if (event.type === "message_delta" && event.delta?.stop_reason) {
+                    stopReason = event.delta.stop_reason;
+                  }
+                  /* ⚠ AN UPSTREAM ERROR ARRIVES AS A STREAM EVENT, NOT A BAD
+                   * STATUS. The request is already 200 and `message_start` has
+                   * already been logged when it lands, so nothing above notices:
+                   * this branch is the ONLY thing standing between an
+                   * `overloaded_error` and a blank answer with clean logs. It
+                   * did not exist until 2026-09-11, and the loop handled exactly
+                   * three types — an "error" matched none of them, fell through
+                   * every `if`, and the stream then closed with `event: done`.
+                   * Measured cost of that: 5 of 22 smoke modes came back empty
+                   * with 200s in the edge log and not one line saying why. */
+                  if (event.type === "error") {
+                    streamError = event.error?.type || "unknown";
+                    console.error(
+                      "cpl-chat: UPSTREAM STREAM ERROR — " +
+                      JSON.stringify(event.error || {}).slice(0, 300)
+                    );
+                  }
                   /* PROMPT-CACHE TELEMETRY (2026-08-23).
                    *
                    * ⚠ A CACHE THAT NEVER HITS IS WORSE THAN NO CACHE — a write
@@ -3977,6 +4003,25 @@ Deno.serve(async (req: Request) => {
           }
         } finally {
           reader.releaseLock();
+        }
+
+        /* ⚠ ZERO TEXT FRAMES IS A FAILED ANSWER, AND IT USED TO LOOK LIKE A
+         * SUCCESSFUL ONE — 200, a cache line, `event: done`, and a caller left
+         * to infer from an empty string. Say it in the log, and tell the client
+         * so a surface can show something other than blank. `error` is a new
+         * frame type; SSE clients dispatch by name, so one that only listens for
+         * text/sources/done ignores it exactly as before. */
+        if (!fullResponse) {
+          console.error(
+            "cpl-chat: EMPTY ANSWER — 0 text frames" +
+            (streamError ? ` after upstream ${streamError}` : " with NO upstream error") +
+            `; stop_reason=${stopReason || "(never sent)"}` +
+            ` output_tokens=${responseTokens}` +
+            `; input=${cacheRead + cacheWrite ? "cached" : "uncached"} model=${MODEL}`
+          );
+          controller.enqueue(encoder.encode(
+            `event: error\ndata: ${JSON.stringify({ error: streamError || "empty_answer" })}\n\n`
+          ));
         }
 
         controller.enqueue(encoder.encode(`event: done\ndata: {}\n\n`));

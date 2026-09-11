@@ -78,7 +78,17 @@ run() { # label  json-body
   ans="$(printf '%s' "$raw" | extract)"
   LAST_ANSWER="$ans"
   echo "$ans"
-  if [ -z "${ans// /}" ]; then echo "::error::empty answer for $label"; fail=1; fi
+  # ⚠ AN EMPTY ANSWER USED TO PRINT NO REASON, and the reason was in the stream
+  # the whole time. cpl-chat emits `event: error` when the upstream stream fails
+  # mid-answer (2026-09-11); the parser above only collects `event: text`, so
+  # without this the run reports "empty" and the five downstream assertions each
+  # report a regex that never had any text to match. Print the frame.
+  if [ -z "${ans// /}" ]; then
+    local why
+    why="$(printf '%s' "$raw" | grep -A1 '^event: error' | grep '^data:' | head -1 | cut -c1-200)"
+    echo "::error::empty answer for $label${why:+ — stream carried $why}"
+    fail=1
+  fi
   echo
   sleep 1   # stay well under the 20 req/min/IP rate limit
 }
