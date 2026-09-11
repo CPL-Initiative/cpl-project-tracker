@@ -4,6 +4,8 @@ date: 2026-09-10
 session: 254 (SkyStar)
 tags: [handoff, skyview, ccr, cpl-mode, sweep, guards]
 status: current
+superseded: true
+superseded_by: session_255_handoff.md
 ---
 
 # You are Session 254

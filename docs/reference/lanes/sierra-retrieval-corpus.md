@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-08-28
+updated: 2026-09-11
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -22,3 +22,53 @@ related:
 ## Status
 
 ✅ **`chatbox_credentials` LIVE (1,987 rows)** — public-read/no-write, loaded by `kb/_sync_credential_catalog.py` from the PUBLISHED artifact so suppression is inherited by construction. Routes CRED·STD, CRED·VOLUME, COLLEGE·ADOPT, ALIGN live. ✅ **`chatbox_credential_recs` — 2,205 rows LIVE** (134 statewide/351 lines · 2,071 local/3,357) on the nightly `credential-catalog-sync`. ⭐ **Sam's rule:** statewide exists → quote the **statewide set ONLY**; no statewide → the **most common** local recs with their college counts. Never both. ⭐ **The builder REUSES `fact-sheet/_build_statewide_recs.py`** — Sierra quoting different credit from the Fact Sheet is a credibility failure. ⚠️ **Lead with the LIST, never a count:** POST measures **10 lines · 9 carrying a C-ID · 8 DISTINCT · 1 with none**, and the `AJ 110` repeat is **flagged, never auto-resolved** (Sam: *"AJ 110 may be C-ID and it is Elective"*). **Standing retrieval rules, each earned by a failing probe:** search is **TRIGRAM, never `tsquery`** (`to_tsquery('english','aed:*')` → `'a':*` took the CPR corpus out); score the **best single name**, never the concatenation (length-normalized similarity ranks the BEST-CURATED record WORST); **`statewide` is a FILTER, not a tie-break**; **no pure-fuzzy** (tier-4 floor 0.25 + `matched_via`); **zero rows is a RESULT**, not a license to offer a neighbour. ⚠️ **Every student count is a FLOOR and the denominator ships as a COLUMN** — only 4.2% of student rows are nameable; `students_suppressed=true` must never render like `colleges_with_student_data=0`. ⚠️ **The statewide-rec gate is `ccc_rec` OR a published statewide set** — `ccc_rec` is derived from ADOPTIONS, so gating on it alone hid **38 statewide credentials with zero adopters, 36 of them carrying 75 published rec lines** (Carpenters ladder, NCCER, CSLB, ICC, OSHA 10/30) from *every* credential route. ⚠️ **Rec lines are ENRICHMENT, never a filter** — the map is declared OUTSIDE the try and a credential with no line is **still named**; dropping it re-creates the false zero. Every credential route renders through the **shared** `renderRecLines` off **one** batched `credential_recs_for_titles()` — a second lookup is a second matcher that can drift. ⚠️ **GUIDANCE AUDIT (SkyScope, on Sam's go): 1 of 7 active rules referenced a fact the request does not carry** — `15ec666b` named neither the tab nor the institution, so it was an instruction to GUESS. Budget is **not** binding (4,095/9,000 chars, 7/20 rows, 0 `display`). ⚠️ **All 7 ship to all 6 surfaces**, so that rule's opening condition is UNEVALUABLE everywhere, the public page included. **RECOMMENDED, NOT BUILT: a `surface` field** on the request + a nullable `surface` column on `sierra_guidance` — NOT a forked Sierra and NOT a `mode` enum (the differences are already separate fields: `audience`, `ctx`, `history`, `scope`). ⚠️ It will NOT deliver behavior contradicting a BUILT-IN rule (built-ins win in practice); that needs the rule registry to become surface-aware. **Blocked on Sam's go.** **Open:** corpus covers **59 of 123** colleges; `chatbox_college_profiles` stale since 2026-06-25 **except contacts** (live — see the MAP Users row); ⚠️ its **`credit_distribution` column is no longer read by anyone** — it was Sierra's per-college credit source until 2026-08-24 and had drifted two months (#1325, see the My College row); 12 adoption-file statewide titles absent from `chatbox_credentials`; ✅ **Sierra Training queue CLEARED by Sam 2026-08-26 — 0 still to do, 51 of 51 handled, 7 instructions in use** (screenshot; supersedes the 25-untriaged backlog and unblocks the alignment feedback loop, which `alignment-tested-via-sierra-training` called load-bearing). **NEXT:** Sam reads the actual prose — no session has, the sandbox is egress-blocked from `*.supabase.co`. Story: `docs/sierra_credit_recs_lessons.md` · `docs/sierra_credential_naming_lessons.md` · `docs/cpl_assistant_lessons.md`.
+
+
+## The endpoint itself — model, cost, reliability (added 2026-09-11)
+
+**MODEL is `claude-sonnet-5`**, committed default since v63 (deployed
+`2026-09-10T22:35:17Z`, Sam's dispatch). The `CPL_CHAT_MODEL` Supabase secret
+still overrides it with **no deploy** and is the fast revert lever — ⚠️ **do not
+delete it**, which reverses the advice given earlier that same day. Reverting to
+`claude-haiku-4-5-20251001` is one secret and no code change.
+
+⚠️ **BLANK ANSWERS, 27% OF REQUESTS, AND NOTHING LOGGED IT.** `chat_interactions`
+shows **0 empty responses every day for two weeks**, then 5 of 62 on 09-10 (all
+after the deploy) and 20 of 76 on 09-11 — 25 of 93 turns since. **Only one
+non-smoke turn has run since the deploy**, so no real user has been failed yet;
+the exposure is the next broad question. Cause: an upstream failure arrives as a
+*stream event*, not a status — the response is already 200 and the cache line
+already written — and the loop handled only `content_block_delta`,
+`message_delta`, `message_start`, so `{"type":"error",…}` fell through into
+nothing and the stream closed normally. **FIXED IN CODE, NOT YET DEPLOYED**
+(PR #1550): the error event is handled and logged, `stop_reason` is captured from
+`message_delta`, zero text frames logs `EMPTY ANSWER` with error + stop_reason +
+output_tokens + model, and an `event: error` frame reaches the client (`done`
+still follows it, so old clients are unaffected). **NEEDS: a `cpl-chat deploy`
+dispatch, then read one failing request** — the three fields separate upstream
+error from refusal from empty generation, which no one can distinguish today.
+
+**Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
+
+| | requests | input tokens | cached | blended $/MTok in |
+|---|---|---:|---:|---:|
+| Haiku 4.5 | 48 | 760,274 | 0.0% | $1.00 |
+| Sonnet 5 | 23 | 554,161 | 18.6% | **$1.72** |
+
+Sonnet 5 is **1.72× Haiku per input token** (2.00× with no cache) — the cache
+recovers 28% of the step and does not close it. ⚠️ **The cached prefix is 4,476
+tokens, 19% of a 24,093-token average request** — NOT most of it, and `chars/4`
+estimated it 28% low. The other **81% is RETRIEVAL**, not conversation history
+(history is capped at 6 turns × 2,000 chars and the production widget omits it
+entirely). Whether any of that 81% repeats enough to cache is **unmeasured** —
+settle it by breaking the input down in the log line, not by guessing again.
+Absolute spend is trivial either way (23 requests = $1.21), so **choose on answer
+quality and treat price as a tiebreak.**
+
+⭐ **The cache line now names the model that answered** (Sam's ruling, decision
+sheet item 3) — from `event.message.model`, what the API says it SERVED, never the
+`MODEL` constant we asked for. ⚠️ **Nothing on our side can see which Anthropic
+ACCOUNT pays**: the code reads a Supabase secret *named* `ANTHROPIC_API_KEY` and a
+Console key *displayed as* `ANTHROPIC_API_KEY` is a different namespace — matching
+the strings is not evidence. To check where spend lands, filter the Console by key
+and group by key.

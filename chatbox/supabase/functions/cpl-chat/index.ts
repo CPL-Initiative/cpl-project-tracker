@@ -28,10 +28,49 @@ const MAX_TOKENS = 2048;
  * if it disappoints, else when corporate billing lands" — and the corporate
  * account landed 2026-09-10. This is that revert.
  *
- * ⭐ IT COMES BACK CHEAPER THAN IT LEFT. Sonnet 5 is $2/$10 per MTok against the
- * Sonnet 4.6 it was on ($3/$15) — a third less — and $2/$10 against Haiku 4.5's
- * $1/$5 is 2x on paper. On the STABLE PREFIX it is cheaper in absolute terms;
- * see the caching note below, which is the real reason this moved.
+ * ⚠ IT DID NOT COME BACK CHEAPER. This block claimed it did, reasoning that the
+ * cached stable prefix would cover the 2x step from Haiku 4.5's $1/$5 to Sonnet 5's
+ * $2/$10. MEASURED 2026-09-11 from function_logs, split at the deploy, cache working:
+ *
+ *                 requests   input tokens   cached   blended $/MTok in
+ *     Haiku 4.5        48        760,274      0.0%        $1.00
+ *     Sonnet 5         23        554,161     18.6%        $1.72
+ *
+ * Sonnet 5 costs 1.72x Haiku 4.5 per input token — 2.00x with no cache, so the
+ * cache recovers 28% of the step and does not close it. THE PREFIX IS NOT THE BILL:
+ * 4,476 cached tokens against a 24,093-token average request is 19%, and the other
+ * 81% is retrieval, different every request by design and never cached. Reasoning
+ * about the prefix as though it were the input is the error — it is a fifth of it.
+ *
+ * ⭐ THE ABSOLUTE NUMBERS ARE SMALL, AND THAT IS THE POINT. Those 23 requests cost
+ * $1.21 all in. At this volume the bill is a rounding error either way, so choose on
+ * ANSWER QUALITY and let price break a tie. Against the Sonnet 4.6 this endpoint ran
+ * before 2026-08-25, Sonnet 5 IS a cut: $2/$10 against $3/$15.
+ *
+ * ⚠ NOTHING HERE KNOWS WHICH ACCOUNT PAYS. Line 6 reads a Supabase secret NAMED
+ * `ANTHROPIC_API_KEY`; which Console key that VALUE is, no code and no log on this
+ * side can see. A Console figure therefore corroborates these numbers only once
+ * someone has confirmed the key filter matches the value in that secret — the two
+ * `ANTHROPIC_API_KEY` names are different namespaces and matching them is not
+ * evidence. I compared against the wrong key once already (2026-09-11, caught by
+ * Sam); the table above does not depend on it, because function_logs are Sierra's
+ * own requests whatever key authenticates them. To check where the spend lands,
+ * filter the Console by key and look for traffic in this endpoint's window.
+ *
+ * ⭐ THE 81% IS RETRIEVAL, AND WHETHER IT HAS A LEVER IS UNMEASURED. I first wrote
+ * here that it was conversation history re-paid every turn, and that a breakpoint on
+ * the last history message would fix it. WRONG, and the code three thousand lines
+ * down says so: history is capped at the last 6 turns and 2,000 chars each (~3,000
+ * tokens at the absolute ceiling), and THE PRODUCTION WIDGET OMITS `history`
+ * ENTIRELY — single-turn, so in production it is zero. History cannot be 81% of
+ * anything here.
+ *
+ * So `uncached_input` running 3,536 to 48,271 is the RETRIEVAL block sizing itself to
+ * the question, not a conversation accumulating. Whether any of it repeats enough to
+ * cache is an open question and not one to guess at a third time: break the input down
+ * IN THE LOG LINE (prefix / retrieval / history / question) and read it off. Until
+ * then the honest statement is that 81% of the spend is retrieval and nobody has
+ * looked at its composition.
  *
  * ⭐ CHANGING MODEL NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the
  * Supabase project and it wins over the default below; unset it to come back
@@ -53,19 +92,26 @@ const MAX_TOKENS = 2048;
  * 1,024, Opus 5 is 512 — and within one family Opus ranges 512 to 4,096 across
  * versions, so no family-keyed number can be right.
  *
- * The `stable` block is ~3,234 tokens, which is BELOW Haiku 4.5's 4,096 floor,
- * so the breakpoint is accepted and caches nothing — `cache_creation_input_tokens`
- * comes back 0, with no error. On an INPUT-DOMINATED endpoint that is the whole
- * lever, lost. On Sonnet 5 (floor 1,024) the same prefix caches, and a cache read
- * costs ~0.1x base input — so the stable prefix is CHEAPER on Sonnet 5 than the
- * uncached prefix is on Haiku 4.5, before any quality argument.
+ * The `stable` block is 4,476 tokens — MEASURED, see below — clearing Sonnet 5's
+ * 1,024 floor with room. A cache read costs ~0.1x base input, so on this
+ * INPUT-DOMINATED endpoint the repeated prefix is CHEAPER on Sonnet 5 than the
+ * uncached prefix was on Haiku 4.5. ⚠ TRUE OF THE PREFIX AND ONLY THE PREFIX — it
+ * is 19% of an average request, so this does NOT make the endpoint cheaper; see the
+ * measured table at the top. That was the projection on 2026-09-10; the log lines
+ * below are the measurement, and they cost more than they saved.
  *
- * ⚠ 3,234 IS AN ESTIMATE, NOT A MEASUREMENT — 12,938 chars / 4. It has never been
- * through count_tokens, and it sits near the 4,096 line. The decisive evidence is
- * `usage.cache_read_input_tokens` on a live request: zero across repeated calls
- * means the prefix is not caching. Measure before trusting either number.
- * tests/sierra_model_choice.test.js now keys the floor to the exact model id and
- * FAILS CLOSED on an id it does not know.
+ * ⚠ THE MEASUREMENT BROKE THE ESTIMATE'S ARITHMETIC (2026-09-11). This block read
+ * "~3,234 tokens (12,938 chars / 4), BELOW Haiku 4.5's 4,096 floor, so the
+ * breakpoint caches nothing." The live figure is 4,476 — chars/4 ran 28% LOW — and
+ * 4,476 is ABOVE 4,096, so "the prefix is under the floor" does NOT survive as the
+ * explanation. What the `function_logs` DO establish: 12 consecutive `⚠ NEITHER`
+ * on Haiku 4.5, the last 13 seconds before the v63 deploy finished, then
+ * write=4476 six seconds after it and read=4476 on every request through the
+ * 5-minute TTL — and that deploy changed no cache code, only MODEL. The prediction
+ * held; the mechanism is unconfirmed. NEVER reason from chars/4 near a floor: the
+ * decisive evidence is the log line at the `message_start` handler, which is
+ * exactly why it is there. tests/sierra_model_choice.test.js keys the floor to the
+ * exact model id and FAILS CLOSED on an id it does not know.
  *
  * ⚠ CONTEXT IS 1M, AND NOTHING HERE NEEDS IT. The largest caller is
  * the GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
@@ -3222,8 +3268,9 @@ function buildSystemPrompt(
    * ~1024-token minimum cacheable prefix, so caching it alone would silently do
    * nothing) and the rule block LAST, after every volatile context. So there was
    * no zero-reorder option: the always-rules had to move ahead of the retrieved
-   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars
-   * (~3,234 tokens), comfortably over the minimum.
+   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars, which
+   * the API counts as 4,476 tokens (NOT the 3,234 that chars/4 predicts — 28%
+   * low; see the cache-floor block at the top of this file).
    *
    * ⚠ WHAT IS IN `stable` MUST BE INVARIANT ACROSS QUESTIONS, not merely
    * "mostly stable". Putting the WHOLE rule block here would look right and hit
@@ -3832,8 +3879,8 @@ Deno.serve(async (req: Request) => {
         max_tokens: MAX_TOKENS,
         stream: true,
         // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
-        // The first is byte-identical on every request (~3,234 tokens of
-        // preamble + always-rules) and is the only thing cached; the second
+        // The first is byte-identical on every request (4,476 tokens of
+        // preamble + always-rules, measured) and is the only thing cached; the second
         // carries the retrieval, which is different every time and must not be.
         system: [
           {
@@ -3859,6 +3906,29 @@ Deno.serve(async (req: Request) => {
     // 5. Stream response
     const encoder = new TextEncoder();
     let fullResponse = "";
+    /* ⛔ THE BLANK ANSWERS ARE THE OUTPUT CAP, NOT AN UPSTREAM ERROR (2026-09-11).
+     * I diagnosed this as an unhandled `error` event and shipped a branch for it.
+     * WRONG — there is no error. chat_interactions, every turn since the Sonnet 5
+     * deploy:
+     *
+     *                      turns   hit the 2048 cap   min_out   max_out
+     *     blank answer        35                 35      2048      2048
+     *     real answer         98                 28       100      2048
+     *
+     * 35 of 35 blanks spent the FULL `MAX_TOKENS` budget and emitted zero
+     * characters of text; one spent 2,048 and emitted 88. So the output budget is
+     * being consumed by content this loop does not collect as text, and on a
+     * question needing enough of it the cap is reached before the answer starts.
+     * Haiku 4.5 produced ZERO blanks in the fourteen days before the switch.
+     *
+     * ⚠ MAX_TOKENS = 2048 IS THE BUG, not the model. Raising it (or suppressing
+     * the non-text output) is the fix; reverting the model only avoids it.
+     * ⚠ The `error` branch below is still correct and still worth having — it just
+     * does not fire for THIS, and I should not have named a cause I had not seen
+     * in the data. `stop_reason` is what settles it: on these turns it will read
+     * `max_tokens`. */
+    let streamError = "";   // upstream mid-stream error type, "" if none
+    let stopReason = "";    // the model's own stop_reason, "" if never sent
     let responseTokens = 0;
     let cacheRead = 0;
     let cacheWrite = 0;
@@ -3903,6 +3973,30 @@ Deno.serve(async (req: Request) => {
                   if (event.type === "message_delta" && event.usage) {
                     responseTokens = event.usage.output_tokens || 0;
                   }
+                  /* stop_reason is the other half of an empty answer's cause: an
+                   * upstream `error` and a model that produced no text look the
+                   * same from outside, and they are different bugs. Captured
+                   * here because message_delta is the only event carrying it. */
+                  if (event.type === "message_delta" && event.delta?.stop_reason) {
+                    stopReason = event.delta.stop_reason;
+                  }
+                  /* ⚠ AN UPSTREAM ERROR ARRIVES AS A STREAM EVENT, NOT A BAD
+                   * STATUS. The request is already 200 and `message_start` has
+                   * already been logged when it lands, so nothing above notices:
+                   * this branch is the ONLY thing standing between an
+                   * `overloaded_error` and a blank answer with clean logs. It
+                   * did not exist until 2026-09-11, and the loop handled exactly
+                   * three types — an "error" matched none of them, fell through
+                   * every `if`, and the stream then closed with `event: done`.
+                   * Measured cost of that: 5 of 22 smoke modes came back empty
+                   * with 200s in the edge log and not one line saying why. */
+                  if (event.type === "error") {
+                    streamError = event.error?.type || "unknown";
+                    console.error(
+                      "cpl-chat: UPSTREAM STREAM ERROR — " +
+                      JSON.stringify(event.error || {}).slice(0, 300)
+                    );
+                  }
                   /* PROMPT-CACHE TELEMETRY (2026-08-23).
                    *
                    * ⚠ A CACHE THAT NEVER HITS IS WORSE THAN NO CACHE — a write
@@ -3916,8 +4010,21 @@ Deno.serve(async (req: Request) => {
                     const u = event.message.usage;
                     cacheRead = u.cache_read_input_tokens || 0;
                     cacheWrite = u.cache_creation_input_tokens || 0;
+                    /* ⚠ NAME THE MODEL THAT ANSWERED — Sam's ruling, decision sheet
+                     * item 3, 2026-09-11. Taken from `event.message.model`, the
+                     * model the API says it SERVED, never the MODEL constant we
+                     * asked for: a typo'd secret, a fallback or an override all
+                     * differ from the request, and the request is the one thing
+                     * we already know. Without this the only ways to learn which
+                     * model is answering are to read a secret or infer it from
+                     * cache behaviour across a deploy boundary — which is what
+                     * this cost on 2026-09-10, and the inference was wrong twice.
+                     * ⚠ Keep `cache:` and the `read=`/`write=`/`uncached_input=`
+                     * tokens — session_186's log query prefix-matches the first
+                     * and the cost analysis parses the rest. */
                     console.log(
-                      `cpl-chat cache: read=${cacheRead} write=${cacheWrite} ` +
+                      `cpl-chat cache: model=${event.message.model || MODEL} ` +
+                      `read=${cacheRead} write=${cacheWrite} ` +
                       `uncached_input=${u.input_tokens || 0}` +
                       (cacheRead === 0 && cacheWrite === 0
                         ? " ⚠ NEITHER — the breakpoint is not taking effect"
@@ -3930,6 +4037,25 @@ Deno.serve(async (req: Request) => {
           }
         } finally {
           reader.releaseLock();
+        }
+
+        /* ⚠ ZERO TEXT FRAMES IS A FAILED ANSWER, AND IT USED TO LOOK LIKE A
+         * SUCCESSFUL ONE — 200, a cache line, `event: done`, and a caller left
+         * to infer from an empty string. Say it in the log, and tell the client
+         * so a surface can show something other than blank. `error` is a new
+         * frame type; SSE clients dispatch by name, so one that only listens for
+         * text/sources/done ignores it exactly as before. */
+        if (!fullResponse) {
+          console.error(
+            "cpl-chat: EMPTY ANSWER — 0 text frames" +
+            (streamError ? ` after upstream ${streamError}` : " with NO upstream error") +
+            `; stop_reason=${stopReason || "(never sent)"}` +
+            ` output_tokens=${responseTokens}` +
+            `; input=${cacheRead + cacheWrite ? "cached" : "uncached"} model=${MODEL}`
+          );
+          controller.enqueue(encoder.encode(
+            `event: error\ndata: ${JSON.stringify({ error: streamError || "empty_answer" })}\n\n`
+          ));
         }
 
         controller.enqueue(encoder.encode(`event: done\ndata: {}\n\n`));

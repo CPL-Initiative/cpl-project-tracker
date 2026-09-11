@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 431,
+   "count": 433,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2635,6 +2635,23 @@
      "updated": "2026-08-13"
     },
     {
+     "created": "2026-09-11",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts"
+     ],
+     "path": "docs/kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "reasoning",
+      "cost",
+      "measurement"
+     ],
+     "title": "A share is not a fact until you have measured the whole",
+     "type": "methodology",
+     "updated": "2026-09-11"
+    },
+    {
      "created": "2026-08-12",
      "governs": [
       "team_phrase.js",
@@ -3470,6 +3487,24 @@
      "title": "An empty read is only evidence if the set cannot legitimately be empty",
      "type": "methodology",
      "updated": "2026-08-14"
+    },
+    {
+     "created": "2026-09-11",
+     "governs": [
+      "chatbox/supabase/functions/cpl-chat/index.ts",
+      "tests/sierra_stream_error.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "observability",
+      "streaming",
+      "sierra"
+     ],
+     "title": "An error that arrives inside a successful response is invisible to every status check",
+     "type": "methodology",
+     "updated": "2026-09-11"
     },
     {
      "created": "2026-08-06",
@@ -12640,7 +12675,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-09-11"
     },
     {
      "created": "2026-08-28",
@@ -12909,8 +12944,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 228,
+   "count": 229,
    "docs": [
+    {
+     "created": "2026-09-11",
+     "governs": [],
+     "n": 255,
+     "path": "docs/session_255_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "cpl-chat",
+      "observability",
+      "cost",
+      "decision-sheet"
+     ],
+     "title": "Sierra went quiet and every instrument said she was fine",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-10",
      "governs": [],
@@ -16765,5 +16818,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 868
+ "total": 871
 }
