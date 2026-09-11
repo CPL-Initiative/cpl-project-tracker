@@ -45,9 +45,21 @@ COBI live-session banner (DR-26 Option B, Sam 2026-09-10) — announce this sess
               expires_at  = now() + interval '8 hours',
               updated_by  = '<your moniker> — auto-announce'
         where id = 1 and auto_announce is true;
-  4. Mention it in ONE line so Sam can veto it, and remember: the banner cannot
-     tell whether he has shared the session, so the link only opens for the team
-     once he sets it to Team visibility in claude.ai.
+  4. Say it to Sam in ONE line so he can veto it — and that line MUST carry the
+     visibility reminder. It is the only prompt he gets. Nothing can read a
+     session's sharing state (measured 2026-09-10), so a Private session
+     announces a link that opens for nobody, and the team meets a dead link.
+
+     ⭐ SAM ASKED FOR EXACTLY THIS PROMPT, 2026-09-11: "I set it to public
+     shortly after starting the session. Wish there was a way to make sessions
+     public by default or perhaps a prompt when you spin up to alert me so I
+     don't forget :)" — public-by-default is a claude.ai setting we do not
+     control, so THIS LINE is the alert. Do not drop it because the banner copy
+     also mentions sharing: that copy is read by the TEAM, after the fact. He
+     needs it at spin-up.
+
+     Shape it like: "Banner points at this session until <time> — set it to Team
+     visibility in claude.ai if you haven't, or the link won't open for them."
 
 Full procedure and the reasoning: docs/reference/live_session_banner.md
 """

@@ -138,6 +138,36 @@ answer_must_not_match_unnegated() { # [-i] regex label
   fi
 }
 
+# NAME AT LEAST N OF A SET — a THRESHOLD, not a named member. Mode 16a used to
+# require the LACCD answer to say "pierce" AND "valley" specifically, and it went
+# red twice on 2026-09-09 (runs 153/154) on DIFFERENT subsets while both answers
+# were correct: asked what a district should DO, Sierra names the members her
+# advice bears on, and which of the nine that is is EMPHASIS, not capability.
+# This file's own header already warns what a prose grep costs, and mode 7 paid
+# it for four handoffs before 7r moved the property to retrieval.
+#
+# ⚠ The floor is what makes it a guard: naming NONE of the nine is the real
+# regression (the roster did not reach her and she fell back to the caveat), and
+# that still fails loudly. Pass patterns, not a single alternation, so the
+# failure message can say WHICH ones were missing.
+answer_must_name_at_least() { # [-i] count label pattern...
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local need="$1" label="$2"; shift 2
+  local total=$# hits=0 found="" missed="" p
+  for p in "$@"; do
+    if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$p"; then
+      hits=$((hits+1)); found="$found /$p/"
+    else
+      missed="$missed /$p/"
+    fi
+  done
+  if [ "$hits" -ge "$need" ]; then
+    echo "  [assert ok] $label — named $hits of $total (needed $need):$found"
+  else
+    echo "::error::$label: named only $hits of $total, needed $need. Not named:$missed"; fail=1
+  fi
+}
+
 run "1 general" \
   '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci"}'
 
@@ -572,11 +602,78 @@ echo
 # NAMES that the context supplies verbatim, and one banned LABEL. Deliberately
 # NOT asserted: any particular count, ordering, or phrasing of the caveat, all of
 # which the model may legitimately word many ways.
+# ── 16r. THE ROSTER ITSELF, ASSERTED IN DATA RATHER THAN IN PROSE (2026-09-11)
+# Same move 7r made, for the same reason and after the same failure. 16a's three
+# name greps went red on 2026-09-09 (runs 153/154) on two DIFFERENT subsets of
+# the nine, both times against a correct answer — recorded in `cpl_memory` as
+# `smoke-16a-prose-grep-fails-not-the-function-2026-09-09`, which says the
+# assertion failed, not the function, and that this file's header predicted it.
+#
+# The question 16a exists to ask splits in two, and only one half is prose:
+#   (a) does the district's ACTUAL membership reach Sierra?  — data, deterministic
+#   (b) does she answer without the obsolete caveat?          — prose, a BAN
+# (a) moves here. (b) stays below, where a ban does not care which colleges the
+# model chose to name.
+#
+# ⚠ THIS IS THE FUNCTION'S OWN QUERY, TRANSCRIBED — `map_colleges` filtered to
+# `district` non-null with test orgs dropped (index.ts ~line 420). Transcriptions
+# drift: if the roster route is ever re-pointed at another table, this keeps
+# passing while the answer stops having data. The guard against that is the
+# entity_kind filter below going red, not this comment.
+district_roster() { # district name
+  curl -sS --max-time 30 -G "$REST_BASE/map_colleges" \
+    --data-urlencode "select=college_name,entity_kind" \
+    --data-urlencode "district=eq.$1" \
+    -H "apikey: $ANON" -H "Authorization: Bearer $ANON"
+}
+echo "===================================================================="
+echo "MODE: 16r the LACCD roster is reachable in map_colleges"
+# NEGATIVE CONTROL FIRST, as in 7r: "did these names come back?" is answered by
+# an empty body just as convincingly by a broken call as by a real miss.
+neg="$(district_roster 'Zzqq Nonexistent Community College District')"
+case "$neg" in
+  "[]") echo "  [assert ok] negative control: an unknown district returns no colleges" ;;
+  *) echo "::error::16r negative control FAILED — an unknown district returned $(printf '%s' "$neg" | head -c 160). The assertion below proves nothing."; fail=1 ;;
+esac
+roster="$(district_roster 'Los Angeles Community College District')"
+case "$roster" in
+  "[{"*) echo "  [assert ok] positive control: the district query returned rows" ;;
+  *) echo "::error::16r positive control FAILED — map_colleges returned $(printf '%s' "$roster" | head -c 200)"; fail=1 ;;
+esac
+# A THRESHOLD over the nine, not the nine: a college can leave a district on any
+# nightly load, and mode 14 learned that an assertion pinned to a value which can
+# leave the data stops being a guard the moment it does. Seven of nine still
+# fails loudly if the district column empties or the route is re-pointed.
+roster_hits=$(printf '%s' "$roster" | python3 -c '
+import json, sys
+LACCD = ["East Los Angeles College", "Los Angeles City College", "Los Angeles Harbor College",
+         "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Southwest College",
+         "Los Angeles Trade Technical College", "Los Angeles Valley College", "West Los Angeles College"]
+try:
+    rows = json.loads(sys.stdin.read())
+    # Test orgs are MAP sandbox rows and the function drops them; so must this.
+    names = {r.get("college_name") for r in rows
+             if isinstance(r, dict) and (r.get("entity_kind") or "college") == "college"}
+except Exception:
+    names = set()
+print(len([c for c in LACCD if c in names]))
+')
+if [ "${roster_hits:-0}" -ge 7 ]; then
+  echo "  [assert ok] 16r ⭐ $roster_hits of 9 LACCD colleges are in the roster Sierra reads"
+else
+  echo "::error::16r ⭐ only ${roster_hits:-0} of 9 LACCD colleges came back from map_colleges — the district route has no data to stand on (check the district column and entity_kind)"; fail=1
+fi
+echo
+
 run "16a LACCD district question answers from the roster" \
   '{"query":"What should Los Angeles Community College District do to help its colleges award more CPL?","session_id":"smoke-ci"}'
-answer_must_match -i "pierce" "16a names LA Pierce (one of the nine)"
-answer_must_match -i "valley" "16a names LA Valley (one of the nine)"
-answer_must_match -i "harbor|southwest|trade" "16a names a third member college"
+# WAS: three greps requiring "pierce" AND "valley" AND one of harbor/southwest/trade.
+# Asked what the DISTRICT should do, Sierra names the members her advice bears on
+# — a different two or three each time, all correct. Naming none of them is the
+# regression this keeps: it means the roster did not reach her.
+answer_must_name_at_least -i 2 "16a ⭐ names member colleges of the district" \
+  "east los angeles|\bELAC\b" "los angeles city college|\bLACC\b" "harbor" "mission" \
+  "pierce" "southwest" "trade.?tech" "valley" "west los angeles|west la\b"
 # The caveat is now WRONG for a district we can enumerate, and Sam reported it as
 # the first thing he noticed. Hedging over a complete answer teaches the reader
 # to discount every hedge — including the ones that are load-bearing.

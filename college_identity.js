@@ -1,12 +1,26 @@
-/* College & District Identity — a LINT SURFACE, not a lookup.
- * ===========================================================
+/* College & District Identity — the lookup FIRST, the lint under it.
+ * ==================================================================
  * Sam, 2026-08-21: "Maybe it's time to add a new COBI tab to visually show the
  * key source lookup tables we rely upon, particularly the college/district
  * table that should list loc IDs and all variations of the names found in the
  * DB."
  *
- * ⭐ THE VALUE IS SHOWING WHAT IS EMPTY OR DISAGREEING, not mirroring what SQL
- * would show. `map_colleges.variants` existed from the day the column shipped
+ * ⚠ THIS FILE'S HEADER READ "a LINT SURFACE, not a lookup" UNTIL 2026-09-11,
+ * AND THAT FRAMING HAD DRIFTED FROM THE ASK ABOVE — which is a lookup, in his
+ * own words, and was answered by the roster table this file has always built.
+ * Nobody could tell, because `authHeaders()` sent no apikey, map_colleges came
+ * back 401, and the roster is drawn under `if (live)`. The lint rendered; the
+ * lookup did not; the header then described what was on the screen.
+ *
+ * Sam re-asked for it on 2026-09-11 — "a COBI tab that shows the college and
+ * district taxonomy, including CollegeIDs and all the college name variations
+ * in a single tabular view" — read the tab, and ruled the order: "Yes, above
+ * the findings. Better yet, show the full table and just give a link to the
+ * discrepancies." So the roster leads, and the findings sit below it behind a
+ * jump link. Both still render; only the order changed.
+ *
+ * ⭐ THE LINT'S VALUE IS STILL SHOWING WHAT IS EMPTY OR DISAGREEING, not
+ * mirroring what SQL would show. `map_colleges.variants` existed from the day the column shipped
  * and was empty on all 128 rows for months; the documented Obsidian exclusions
  * were documented and never applied. Both hid the same way — nobody could SEE
  * the absence. A page that renders "0 of 128" makes that impossible.
@@ -49,16 +63,53 @@
   function num(n) { return (n == null || !isFinite(n)) ? "unknown" : Number(n).toLocaleString("en-US"); }
 
   /* Auth headers: the anon key alone reads map_colleges; the contacts read needs
-   * a reviewer session or the team phrase. Both are OPTIONAL — the tab degrades
-   * to the public half and SAYS which half it lost, rather than rendering a
-   * confident, wrong zero. */
-  function authHeaders() {
-    var h = {};
+   * a reviewer session or the team phrase. The contact half is OPTIONAL — the
+   * tab degrades to the public half and SAYS which half it lost, rather than
+   * rendering a confident, wrong zero.
+   *
+   * ⚠ THIS SENT NO HEADERS AT ALL UNTIL 2026-09-11, SO THE TAB'S MAIN TABLE HAD
+   * NEVER RENDERED FOR ANYONE. The old body read:
+   *
+   *     if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
+   *       h = window.CPL_TEAM_PHRASE.headers() || {};
+   *     }
+   *
+   * `CPL_TEAM_PHRASE` exposes `decorateHeaders`, never `headers` — so the guard
+   * was ALWAYS false, `h` stayed `{}`, and every fetch went out with no apikey.
+   * PostgREST answered 401, `state.live` stayed null, and the roster is drawn
+   * under `if (live)`. Sam saw a page of findings and asked where the table was
+   * (2026-09-11): "This tab only shows the colleges with problems that need to
+   * be fixed. The main view should be a complete table of all MAP locations."
+   * It was built all along; nothing could read the rows to draw it.
+   *
+   * ⭐ THE BUG SHAPE IS THE LESSON: a feature-test on a method that does not
+   * exist reads as "not mounted" and fails silent. tests/college_identity_auth
+   * .test.js now checks every CPL_TEAM_PHRASE member this file names against
+   * team_phrase.js's own api object, so the next typo fails in CI, not in a
+   * browser nobody was watching.
+   *
+   * Session shape mirrors cr_reference.js: the magic-link JWT in sessionStorage
+   * `cpl_sb`, the phrase in localStorage `cpl_team_pass`. */
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+
+  function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
+  function getSession() {
     try {
-      if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
-        h = window.CPL_TEAM_PHRASE.headers() || {};
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (s && isValidJwt(s.access_token)) return { access_token: s.access_token };
+    } catch (e) {}
+    return null;
+  }
+  function authHeaders() {
+    var s = getSession();
+    var token = (s && s.access_token) || SUPABASE_ANON;
+    /* The apikey is NEVER conditional — it is what makes the public half public. */
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    try {
+      if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.decorateHeaders) {
+        h = window.CPL_TEAM_PHRASE.decorateHeaders(h, null) || h;
       }
-    } catch (e) { /* not mounted */ }
+    } catch (e) { /* not mounted — the public half still reads */ }
     return h;
   }
 
@@ -185,10 +236,15 @@
     shedPlaceholder(root);
     var s = snap();
     var live = state.live;
-    var h = '<h3 class="cid-h">College &amp; District Identity</h3>'
-      + '<p class="cid-sub">Every entity MAP knows, the CCCCO MIS codes behind it, and every spelling '
-      + 'any of our systems uses. This page exists to show what is <b>missing or disagreeing</b> — a name '
-      + 'in a live table that resolves to no identity is a finding, not a curiosity.</p>';
+    /* ⚠ h2, NOT h3 — `npm run a11y` reported "headings skips: h1 -> h3" on this
+     * view and nothing else (2026-09-11). The COBI shell owns the h1, and every
+     * sibling tab opens at h2 (cr_reference, governance, map_users all do); this
+     * file alone opened at h3, so its sections then sat at h4 and the whole
+     * outline was one level adrift. Section headings move to h3 to match. */
+    var h = '<h2 class="cid-h">College &amp; District Identity</h2>'
+      + '<p class="cid-sub">Every entity MAP knows — colleges, continuing-education arms and partner '
+      + 'agencies alike — with its MAP college ID, its district, the CCCCO MIS codes behind it, and every '
+      + 'spelling any of our systems uses.</p>';
 
     if (state.loading) h += '<p class="cid-note">Reading map_colleges&hellip;</p>';
 
@@ -233,9 +289,36 @@
                         why: f.why, decided_by: f.decided_by, decided_on: f.decided_on, live: false });
       });
     }
-    h += '<div class="cid-sec"><h4 class="cid-h">Names that resolve to no identity ('
-      + (findings.length ? findings.length : "0") + ")</h4>";
-    h += '<p class="cid-note">'
+    /* ⭐ THE TABLE LEADS; THE DISCREPANCIES ARE A LINK (Sam, 2026-09-11).
+     * "Yes, above the findings. Better yet, show the full table and just give a
+     * link to the discrepancies." He said it after opening the tab and seeing
+     * only findings — which was the 401 hiding the roster, but the ordering was
+     * his call either way, and it reverses this file's original framing (a LINT
+     * SURFACE, not a lookup). The lint still runs and still renders; it simply
+     * stops being the first thing on the page.
+     *
+     * ⚠ A LINK, NOT A DISCLOSURE. The findings stay in the DOM and in the
+     * document order below the table, so Ctrl-F, a screen reader's heading list
+     * and a deep link all still reach them. A collapsed section would hide them
+     * from all three to save a scroll. */
+    var fh = "";
+    if (findings.length) {
+      h += '<p class="cid-sub"><a href="#cid-findings">'
+        + findings.length + (findings.length === 1 ? " name resolves" : " names resolve")
+        + ' to no identity</a> — the detail is below the table.</p>';
+    } else if (s && s.linted === false) {
+      h += '<p class="cid-sub"><a href="#cid-findings">Sierra\u2019s corpus was not checked</a>'
+        + ' — that is not \u201cnothing outstanding\u201d.</p>';
+    } else {
+      h += '<p class="cid-sub">No names resolve to no identity'
+        + (s && s.observed_names ? " — " + s.observed_names + " checked against the roster." : ".")
+        + "</p>";
+    }
+
+
+    fh += '<div class="cid-sec" id="cid-findings"><h3 class="cid-h">Names that resolve to no identity ('
+      + (findings.length ? findings.length : "0") + ")</h3>";
+    fh += '<p class="cid-note">'
       + (state.contacts
           ? "Contact names checked <b>live</b>. "
           : "<b>Contact names not read</b> — map_college_contacts is gated on a reviewer sign-in or the team phrase, "
@@ -272,12 +355,12 @@
        * AND stamps `linted`; this reads it, because a tab whose whole job is
        * making absence visible must not present its own absence as health. */
       if (s && s.linted === false) {
-        h += '<div class="cid-flag"><b>The snapshot was generated without its lint '
+        fh += '<div class="cid-flag"><b>The snapshot was generated without its lint '
           + 'input, so Sierra\u2019s corpus was NOT checked.</b> This is not '
           + '\u201cnothing outstanding\u201d \u2014 it is \u201cnot looked at\u201d. '
           + 'Re-run the builder with <code>--observed-json</code>.</div>';
       } else {
-        h += '<p class="cid-note">Nothing outstanding'
+        fh += '<p class="cid-note">Nothing outstanding'
           + (s && s.observed_names
               ? ' \u2014 ' + s.observed_names + ' names checked against the roster.'
               : ".")
@@ -285,7 +368,7 @@
       }
     }
     findings.forEach(function (f) {
-      h += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"
+      fh += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"
         + '<span class="nm">' + esc(JSON.stringify(f.name)) + "</span>"
         + (f.resolves_to ? ' <span class="cid-var">&rarr; ' + esc(f.resolves_to) + "</span>" : "")
         + (f.sibling ? ' <span class="cid-var">sibling of ' + esc(f.sibling) + "</span>" : "")
@@ -294,7 +377,7 @@
         + (f.decided_by ? " — ruled by " + esc(f.decided_by) + ", " + esc(f.decided_on) : "")
         + "</div></div>";
     });
-    h += "</div>";
+    fh += "</div>";
 
     // ── The roster ──
     if (live) {
@@ -311,8 +394,8 @@
       var suppCount = live.filter(function (c) {
         return String(c.entity_kind || "") === "test" || c.is_test === true;
       }).length;
-      h += '<div class="cid-sec"><h4 class="cid-h">Every entity (' + rows.length + " of " + live.length
-        + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h4>"
+      h += '<div class="cid-sec"><h3 class="cid-h">Every entity (' + rows.length + " of " + live.length
+        + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h3>"
         + '<label class="cid-note" for="cid-q">Filter by name, district or variant</label><br>'
         + '<input id="cid-q" class="cid-search" type="search" value="' + esc(state.q) + '" placeholder="e.g. Mt. San Antonio, or 740">'
         + '<div class="cid-wrap" tabindex="0" role="region" aria-label="College and district identity table">'
@@ -374,6 +457,9 @@
       h += "</tbody></table></div></div>";
     }
 
+    /* The lint, below the table it qualifies. */
+    h += fh;
+
     root.innerHTML = h;
 
     var slot = root.querySelector("#cid-unlock");
@@ -431,6 +517,7 @@
     activate: activate,
     _render: render,
     _liveFindings: liveFindings,      // pure — the lint, testable without a DOM
+    _authHeaders: authHeaders,        // exposed 2026-09-11: the 401 that hid the roster
     _state: state,
     _shedPlaceholder: shedPlaceholder,
   };
