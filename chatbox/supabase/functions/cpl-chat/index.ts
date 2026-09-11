@@ -3906,6 +3906,27 @@ Deno.serve(async (req: Request) => {
     // 5. Stream response
     const encoder = new TextEncoder();
     let fullResponse = "";
+    /* ⛔ THE BLANK ANSWERS ARE THE OUTPUT CAP, NOT AN UPSTREAM ERROR (2026-09-11).
+     * I diagnosed this as an unhandled `error` event and shipped a branch for it.
+     * WRONG — there is no error. chat_interactions, every turn since the Sonnet 5
+     * deploy:
+     *
+     *                      turns   hit the 2048 cap   min_out   max_out
+     *     blank answer        35                 35      2048      2048
+     *     real answer         98                 28       100      2048
+     *
+     * 35 of 35 blanks spent the FULL `MAX_TOKENS` budget and emitted zero
+     * characters of text; one spent 2,048 and emitted 88. So the output budget is
+     * being consumed by content this loop does not collect as text, and on a
+     * question needing enough of it the cap is reached before the answer starts.
+     * Haiku 4.5 produced ZERO blanks in the fourteen days before the switch.
+     *
+     * ⚠ MAX_TOKENS = 2048 IS THE BUG, not the model. Raising it (or suppressing
+     * the non-text output) is the fix; reverting the model only avoids it.
+     * ⚠ The `error` branch below is still correct and still worth having — it just
+     * does not fire for THIS, and I should not have named a cause I had not seen
+     * in the data. `stop_reason` is what settles it: on these turns it will read
+     * `max_tokens`. */
     let streamError = "";   // upstream mid-stream error type, "" if none
     let stopReason = "";    // the model's own stop_reason, "" if never sent
     let responseTokens = 0;
