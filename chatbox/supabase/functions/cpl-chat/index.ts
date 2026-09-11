@@ -16,7 +16,15 @@ const ALLOWED_ORIGINS = [
 
 const MATCH_THRESHOLD = 0.5;
 const MATCH_COUNT = 5;
-const MAX_TOKENS = 2048;
+/* 8,192 by Sam's ruling on the 2026-09-11 decision sheet ("Two Calls on Sierra",
+ * item 2): "Let's make it high for now so folks playing around with it always get
+ * a complete answer." A ceiling, not a spend: an answer costs what it uses, and
+ * the log's `stop_reason` names any turn that reaches it. It was 2,048 from launch
+ * until then; Sonnet 5's tokenizer counts ~27% more tokens for the same text, so
+ * 2,048 had come to hold about 6,000 characters, and one answer in nine on v64 sat
+ * within a fifth of it. With thinking OFF (item 1, same sheet) nothing but the
+ * answer itself reaches this ceiling. */
+const MAX_TOKENS = 8192;
 
 /* ── WHICH MODEL ANSWERS (2026-09-10) ─────────────────────────────────────────
  *
@@ -131,10 +139,13 @@ const MAX_TOKENS = 2048;
  * reasoned through the whole 2,048-token budget and never reached the text —
  * while HTTP 200, the cache line and the error log all read healthy. The
  * request body sends `thinking: { type: "disabled" }` explicitly now; see the
- * note beside it. Turning thinking ON is a product decision (latency before the
- * first word, output spend, answer style), not a default to inherit: if it is
- * ever wanted, use `{ type: "adaptive" }` with `output_config.effort` AND raise
- * MAX_TOKENS to hold the thinking, in the same change.
+ * note beside it. ⭐ SAM RULED IT STAYS OFF (decision sheet "Two Calls on
+ * Sierra", item 1, 2026-09-11): "Let's keep it off but test for better options
+ * if they exist. Currently, it's giving fantastic answers!" Turning it ON is a
+ * product decision (latency before the first word, output spend, answer style),
+ * never a default to inherit: if it is ever tried, use `{ type: "adaptive" }`
+ * with `output_config.effort` on the PREVIEW slug first (cpl-chat-preview-ab.yml),
+ * and MAX_TOKENS must hold the thinking as well as the answer.
  * ⚠ IF MODEL EVER MOVES TO FABLE OR MYTHOS, `disabled` IS REJECTED WITH A 400
  * (thinking is always on there): the field must go and MAX_TOKENS must grow, or
  * every request fails. tests/sierra_model_choice.test.js keys the thinking
@@ -142,10 +153,9 @@ const MAX_TOKENS = 2048;
  * ⚠ AND THE TOKENIZER CHANGED. Sonnet 5 counts ~30% more tokens for the same
  * text than Sonnet 4.6 / Haiku 4.5, which is most of why the cached prefix
  * measured 4,476 tokens against the 3,234 that chars/4 predicted (the same
- * breakpoint read 3,027 on Sonnet 4.6 on 2026-08-23), and why MAX_TOKENS = 2048
- * now holds roughly 6,000 characters of answer rather than 8,000. Whether that
- * truncates real answers with thinking OFF is UNMEASURED: read the cap-hit
- * count in chat_interactions after this deploy before touching MAX_TOKENS.
+ * breakpoint read 3,027 on Sonnet 4.6 on 2026-08-23), and why 2,048 output
+ * tokens had come to hold roughly 6,000 characters of answer rather than 8,000
+ * — the reason MAX_TOKENS moved to 8,192 (see its own note).
  *
  * ⚠ WHAT TO WATCH. The most demanding thing on this endpoint is not a student
  * question — it is the GR area sweep, which asks for a legal instrument
@@ -3909,7 +3919,8 @@ Deno.serve(async (req: Request) => {
          * spent the whole 2,048-token budget before the first word and the answer
          * came back blank (35 of 35 blanks: output_tokens=2048, zero text). Haiku
          * 4.5 and Sonnet 4.6 ran thinking-off by omission; on Sonnet 5 omission
-         * means ON. This line is the request Sierra always made, spelled out.
+         * means ON. This line is the request Sierra always made, spelled out,
+         * and Sam ruled it stays this way (2026-09-11).
          * ⚠ Fable / Mythos REJECT `disabled` with a 400 — see the header block
          * before pointing CPL_CHAT_MODEL at one of those. */
         thinking: { type: "disabled" },
@@ -3959,8 +3970,9 @@ Deno.serve(async (req: Request) => {
      * reason about, the budget was gone before the first text frame; on the 28
      * capped real answers it was partly gone. The request now sends
      * `thinking: { type: "disabled" }`, which is the pre-switch request spelled
-     * out. MAX_TOKENS stays 2048: raising it would have PAID for the thinking
-     * rather than stopped it.
+     * out. MAX_TOKENS was left at 2048 in that fix — raising it would have PAID
+     * for the thinking rather than stopped it — and moved to 8,192 afterwards on
+     * Sam's ruling, with thinking off, as a ceiling for complete answers.
      * ⚠ The `error` branch below is still correct and still worth having — it
      * just does not fire for THIS. `stop_reason` settles it: on a blank turn it
      * reads `max_tokens`; on a real upstream failure it never arrives. */
