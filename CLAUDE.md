@@ -218,8 +218,8 @@ named here because a store nobody names is a store nobody finds —
    discovering it after.** Claude Code writes the exact live context size to the
    session transcript every turn, and `compactMetadata.preTokens` at every
    compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
-   ✅ **It fires from the repo's own `.claude/settings.json` (PostToolUse, since
-   2026-09-11; the test fails if the entry leaves)** — mechanics:
+   ✅ **It fires from the repo's own `.claude/settings.json` (PostToolUse; a test
+   guards the entry)** — mechanics:
    [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
@@ -232,10 +232,8 @@ named here because a store nobody names is a store nobody finds —
      rows** · **commit + push**. Everything else defers to the next session —
      which is exactly why the handoff has to name it.
 
-   ⚠️ **Both thresholds are measured, not chosen** (a checkpoint cost 49,723
-   tokens, the worst turn 50,425; a round 100,000 misses by 336). Derivation,
-   the replay that warns 10 turns early, and why the meter never ran on
-   2026-09-11:
+   ⚠️ **Both thresholds are measured, not chosen** — derivation, the replay
+   that warns 10 turns early, and why the meter never ran on 2026-09-11:
    [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
@@ -493,8 +491,8 @@ first day.** Do the remembering for them.
   locked in a long process (30-60 mins or more) without a way to interrupt and
   get you a note--escape doesn't work when you're locked in on something."*
   When the next step waits on CI, a deploy or a smoke run, END THE TURN — a
-  `send_later` wake or the PR webhook brings the session back. One batch of
-  calls per turn while a wait is in play; never chain background sleeps.
+  scheduled wake or the PR webhook brings the session back. One batch of calls
+  per turn while a wait is in play; never chain background sleeps.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
