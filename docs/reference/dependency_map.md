@@ -695,6 +695,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `c-idsystem.org` | scripts: `tmc/_parse_tmc_pdfs.py` |
 | `california.public.law` | tabs: `college-briefing`, `implementation-funding` |
 | `calmatters.org` | `edgefn:cpl-news-harvest` |
+| `calnevjatc.org` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
@@ -772,8 +773,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.craftonhills.edu` | tabs: `map-queue`, `map-users` |
 | `www.cuyamaca.edu` | tabs: `map-queue`, `map-users` |
 | `www.cypresscollege.edu` | tabs: `map-queue`, `map-users` |
-| `www.dir.ca.gov` | scripts: `kb/_preseed_null_issuers.py` |
+| `www.dir.ca.gov` | scripts: `kb/_preseed_null_issuers.py`, `kb/fire_electrical_external_credentials.py` |
 | `www.dvc.edu` | tabs: `map-queue`, `map-users` |
+| `www.electricaltrainingalliance.org` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `www.frc.edu` | tabs: `map-queue`, `map-users` |
 | `www.fresnocitycollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.gavilan.edu` | tabs: `map-queue`, `map-users` |
@@ -795,7 +797,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.mendocino.edu` | tabs: `map-queue`, `map-users` |
 | `www.miracosta.edu` | tabs: `map-queue`, `map-users` |
 | `www.mtsac.edu` | tabs: `map-queue`, `map-users` |
+| `www.nafri.gov` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `www.napavalley.edu` | tabs: `map-queue`, `map-users` |
+| `www.nccer.org` | scripts: `kb/fire_electrical_external_credentials.py` |
+| `www.nwcg.gov` | scripts: `kb/fire_electrical_external_credentials.py` |
 | `www.onetcenter.org` | scripts: `kb/_sync_moc_crosswalk.py` · workflows: `moc-crosswalk-sync.yml` |
 | `www.oxnardcollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.palomar.edu` | tabs: `map-queue`, `map-users` |
@@ -842,4 +847,4 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 
 Coverage: 75 Supabase tables · 30 RPCs · 5 edge functions · 460 file
-datasets · 138 external services · 330 consumers · 33 workflows · 37 tabs.
+datasets · 143 external services · 331 consumers · 33 workflows · 37 tabs.

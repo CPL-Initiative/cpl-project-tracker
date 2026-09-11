@@ -112,3 +112,11 @@ prototype/globe/globe_data*.json
 # findings) and the small crosswalk.json receipt ARE committed.
 kb/domain_crosswalk_out/**/*.xlsx
 kb/domain_crosswalk_out/**/*.html
+
+# Statewide occupation crosswalk: the workbook and the HTML page are REGENERABLE
+# artifacts (kb/_build_domain_cpl_crosswalk.py driven by the SJCOE occupation list).
+# The domain map, kb/fire_electrical_external_credentials.py and the run receipt
+# (clusters / families / rows / lineworker_programs) ARE committed — the workbook
+# is gitignored, so the receipt is the only record of what was produced.
+kb/occupation_crosswalk_out/**/*.xlsx
+kb/occupation_crosswalk_out/**/*.html

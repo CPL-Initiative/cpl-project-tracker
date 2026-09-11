@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 436,
+   "count": 437,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1295,6 +1295,25 @@
      "title": "A fill that does not flip needs ink that does not flip either",
      "type": "methodology",
      "updated": "2026-09-09"
+    },
+    {
+     "created": "2026-09-11",
+     "governs": [
+      "kb/fire_electrical_domain_map.json",
+      "kb/occupation_crosswalk_out/2026-09-11-fire-electrical-statewide/"
+     ],
+     "path": "docs/kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "data-quality",
+      "absence-claims",
+      "classifiers",
+      "crosswalk"
+     ],
+     "title": "A filter must be able to see what you are about to declare missing",
+     "type": "methodology",
+     "updated": "2026-09-11"
     },
     {
      "created": "2026-08-18",
@@ -16913,5 +16932,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 876
+ "total": 877
 }
