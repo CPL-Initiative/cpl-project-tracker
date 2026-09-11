@@ -32,43 +32,55 @@ still overrides it with **no deploy** and is the fast revert lever — ⚠️ **
 delete it**, which reverses the advice given earlier that same day. Reverting to
 `claude-haiku-4-5-20251001` is one secret and no code change.
 
-⚠️ **BLANK ANSWERS, 09-10 22:35Z → the #1551 deploy, AND THE CAUSE WAS A MODEL
-DEFAULT.** `chat_interactions`: 0 empty responses every day for two weeks, then
-5 of 62 on 09-10 (all after the Sonnet 5 deploy) and 39 of 137 on 09-11, three
-of them real users. On Sonnet 5 a request that OMITS `thinking` runs adaptive
-thinking; on Haiku 4.5 and Sonnet 4.6 the same request runs none. Thinking
-tokens count against `max_tokens`, and the loop collects only text — so on a
-broad question the model spent the whole 2,048-token budget before the first
-word (35 of 35 blanks at `output_tokens=2048`, zero text). Not an upstream error
-and not the cap: the same cap produced zero blanks in fourteen days on Haiku.
-**FIXED (#1551): the request sends `thinking: { type: "disabled" }`**, the
-request Sierra always made spelled out. ⭐ **Sam ruled it STAYS OFF (2026-09-11,
-decision sheet *Two Calls on Sierra*, item 1: *"Let's keep it off but test for
-better options if they exist. Currently, it's giving fantastic answers!"*)** —
-any trial of adaptive thinking runs on the preview slug (`cpl-chat-preview-ab.yml`),
-never live. The guard
-(`tests/sierra_model_choice.test.js` block 5) keys the thinking default to the
-model id — adaptive-by-default / always-on (Fable, Mythos: `disabled` is a 400) /
-off — and fails closed on an unknown id. **Deployed as v64** by `cpl-chat deploy` run 41 at 02:03:41Z on 2026-09-11, byte-identical to `main` (sha256 `0624be54…`), `verify_jwt` false; the health probe passed at 02:04:49Z. **Verified on v64 (02:03–02:10Z): 54 turns, 0 blanks, 0 cap hits**; the NCCER question that blanked on v63 answered twice (4,148 and 3,733 chars); output per 4 chars of answer 1.91 → 1.46, the residual being the tokenizer. ⚠️ **The secret can
-still point `MODEL` at a model whose default differs; the guard reads only the
-committed default.** #1550's instrumentation shipped in the same deploy: a blank
-turn now logs `EMPTY ANSWER` with its `stop_reason` (`max_tokens` at exactly the
-cap = thinking ran it out; none = upstream error; `end_turn` = the model chose
-silence) and sends the client `event: error` before `done`. ⚠️ **The health probe
+⚠️ **THINKING IS OFF, AND THAT IS WHAT FIXED THE BLANK ANSWERS.** On Sonnet 5 a
+request that OMITS `thinking` runs adaptive thinking, those tokens count against
+`max_tokens`, and the loop collects only text — so a broad question spent the whole
+2,048-token budget before the first word (39 of 137 turns blank on 09-11, three of
+them real users). **#1551 sends `thinking: { type: "disabled" }`**, and ⭐ **Sam
+ruled it STAYS OFF** (2026-09-11, sheet *Two Calls on Sierra* item 1: *"Let's keep
+it off but test for better options if they exist. Currently, it's giving fantastic
+answers!"*) — any trial runs on the preview slug (`cpl-chat-preview-ab.yml`), never
+live. The guard `tests/sierra_model_choice.test.js` block 5 keys the thinking
+default to the model id (adaptive-by-default / always-on, where `disabled` is a
+400 / off) and fails closed on an unknown id. ⚠️ **The secret can still point
+`MODEL` at a model whose default differs; the guard reads only the committed
+default.** ⭐ **`MAX_TOKENS` is 8,192** (same sheet, item 2: *"Let's make it high
+for now so folks playing around with it always get a complete answer"*; #1555) — a
+ceiling, not a spend. Shipped as **v64** (02:03:41Z) and **v65** (16:41:58Z); smoke
+run 176 passed 22 of 22 and health run 110 passed. #1550's instrumentation rides
+along: a blank turn logs `EMPTY ANSWER` with its `stop_reason` and the client gets
+`event: error` before `done`. Full story:
+[`cpl_assistant_lessons`](../../cpl_assistant_lessons.md). ⚠️ **The health probe
 cannot see this class** — one simple question, and it passed straight through two
-hours of blanks on broad questions. ⭐ **`MAX_TOKENS` is 8,192 (Sam's ruling, same
-sheet, item 2: *"Let's make it high for now so folks playing around with it always
-get a complete answer"*; #1555)** — a ceiling, not a spend: an answer costs what it
-uses, and `stop_reason` names any turn that reaches it. It was 2,048 from launch;
-the tokenizer counts ~30% more tokens for the same text, so 2,048 had come to hold
-about 6,000 characters, and one answer in nine on v64 sat within a fifth of it.
-**Deployed as v65** by `cpl-chat deploy` run 42 at 16:41:58Z on 2026-09-11 from `main` 05f2b06d, `verify_jwt` false. **Verified on v65:** smoke run 176 passed 22 of 22 (16:45–16:50Z, the first green smoke since the 15a/15c guards were fixed) and health run 110 passed at 16:45:45Z. **NEXT:** the sixteen-row register sweep once on Sonnet 5 (Sam's standing
-rule of 2026-08-30); an A/B of adaptive thinking on the preview slug only if a
-measured quality gap appears; and watch for a cap hit over the following week — `response_tokens` at 8,192 in
-`chat_interactions` (the table has no `stop_reason` column; the reason is on the
-`EMPTY ANSWER` line in `function_logs`). With an 8,192 ceiling and thinking off,
-any hit is a real answer that long. First quarter hour on v65 (16:42–16:57Z): 37
-turns, 0 blanks, longest answer 4,964 characters.
+hours of blanks on broad questions.
+
+✅ **THE CAP-HIT READ IS DONE (S257, 2026-09-11 ~19:00Z) — 0 real cap hits and 0
+blanks on the fixed code.** v65 (8,192): 37 turns, 0 cap hits, max **1,930**
+tokens. v64 (2,048, 159 turns): 2 rows sit AT the cap and both are **zero-character
+blanks** from `smoke-ci` at 02:04:04 and 02:04:22, not answers cut short.
+⚠️ **A DEPLOY TIMESTAMP IS NOT AN ERA BOUNDARY — warm isolates served v63 for ~25
+seconds past it**, and two instruments say so independently: there are **0
+`EMPTY ANSWER` lines in 17 hours** (v64 logs one on any zero-text answer, guarded
+by `tests/sierra_stream_error.test.js`), and the cache line's own FORMAT dates the
+code — ruling 3 added `model=` in that same deploy, last line without it
+**02:04:02.384Z**, first with it **02:04:06.434Z**, only 5 of 200 pre-cutover. When
+a measurement straddles a deploy, date the rows by something whose SHAPE changed,
+not by the wall clock.
+
+⚠️ **AND THERE IS ALMOST NOTHING TO MEASURE.** Over 30 hours `chat_interactions`
+holds **`smoke-ci` 432 turns, `health-probe` 9, and 6 HUMAN turns across 4 UUID
+sessions.** So "watch for a cap hit over the following week" observes the smoke
+suite, not people, and an 8,192 ceiling exercised only by our own synthetic
+questions is not evidence about real answers. **NEXT:** the **sixteen-row register
+sweep** on Sonnet 5 (Sam's standing rule of 2026-08-30) is now the only instrument
+that would actually test the ceiling — it is the hardest thing the assistant does;
+an A/B of adaptive thinking on the preview slug only if a measured quality gap
+appears. ⚠️ Smoke **15a/15c are still red and #1555 did NOT close them** — two
+correct answers trip the negation stripper's two narrow shapes (a negation four
+words upstream of the stem; a match running across an em-dash into the next
+clause). Proposed patch in the #1559 comment, unpushed. Mode **16a is fixed**
+(#1559): the roster is asserted at retrieval as **16r**, prose keeps only floors
+and bans.
 
 **Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
 

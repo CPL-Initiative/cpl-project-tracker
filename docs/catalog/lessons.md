@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-77 document(s).
+78 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -43,6 +43,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Common Subject Code Tab — Evolution & Lessons](../common_subject_code_tab_lessons.md) | `common_subject_code_tab_lessons.md` | 2026-05-23 |  |
 | [Context pressure and doctrine probes — lessons](../context_pressure_lessons.md) | `context_pressure_lessons.md` | 2026-08-29 |  |
 | [CPL Assistant (in-dashboard RAG chatbot) — lessons](../cpl_assistant_lessons.md) | `cpl_assistant_lessons.md` | 2026-06-01 |  |
+| [CPL Assistant (Sierra) lessons — archive](../cpl_assistant_lessons_archive.md) | `cpl_assistant_lessons_archive.md` | 2026-09-11 | 2026-09-11 |
 | [CPL executive presentations — lessons (BOG update + CBO budget workshop)](../cpl_presentations_lessons.md) | `cpl_presentations_lessons.md` | 2026-07-20 |  |
 | [CPL Fact Sheet — lessons](../fact_sheet_lessons.md) | `fact_sheet_lessons.md` | 2026-06-25 | 2026-08-21 |
 | [CPL Implementation Funding tab — archived lessons (2026-06-11 → 2026-08-27)](../cpl_funding_lessons_archive.md) | `cpl_funding_lessons_archive.md` | 2026-06-11 | 2026-09-03 |

@@ -420,3 +420,67 @@ arriving tomorrow. The structural guard is for the Edge Function to refuse to
 surface a college absent from (or flagged `test` in) the authoritative roster.
 Not built here: it needs a deploy and a smoke verification, and Sierra was down
 for most of this run.
+
+---
+
+## 2026-09-11 — SkyBeat (S257): the tab's main table had never rendered, for anyone
+
+**Sam opened the tab** and said it *"only shows the colleges with problems that
+need to be fixed. The main view should be a complete table of all MAP locations
+(college, district, variation names, including any noncredit entities and
+agencies like LAUNCH and Furuto, etc.)"*
+
+**That table was already built.** `Every entity (N of M · K suppressed)` —
+filterable by name, district or variant, `continuing_education` and `partner`
+rows beside the colleges, `th scope`, a fixed colgroup, an `aria-label`led
+scrolling region. It is his own 2026-08-21 ask, quoted in the file's header:
+*"the college/district table that should list loc IDs and all variations of the
+names found in the DB."*
+
+⭐ **IT HAD NEVER RENDERED, BECAUSE `authHeaders()` SENT NOTHING.**
+
+```js
+if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
+  h = window.CPL_TEAM_PHRASE.headers() || {};
+}
+```
+
+`CPL_TEAM_PHRASE` exposes **`decorateHeaders`**. It has never exposed `headers`.
+So the guard was **always false**, `h` stayed `{}`, every fetch went out with no
+`apikey`, PostgREST answered **401**, `state.live` stayed null — and the roster
+draws under `if (live)`. Signed in or not, phrase or not, since the tab shipped.
+
+⚠️ **THE ELSE-BRANCH IS WHY IT SURVIVED.** The tab is deliberately built to
+"degrade politely and say which half you lost" rather than render a confident
+wrong zero — good design that, pointed at a *typo*, reports the symptom as an
+expected state. A missing method and an unmounted module are indistinguishable
+to a truthiness guard, so the page calmly explained a gate that was not the
+problem. The fix mirrors `cr_reference.js`: apikey never conditional, bearer
+carries the reviewer JWT when there is one, phrase applied via `decorateHeaders`.
+
+⚠️ **AND THE FILE'S HEADER HAD DRIFTED TO DESCRIBE THE BROKEN SCREEN.** It read
+*"a LINT SURFACE, not a lookup"* — directly contradicting the ask quoted three
+lines below it. Nobody mis-specified anything; the lint was simply the only half
+that rendered, and the prose caught up to it. **A comment that describes what you
+observe rather than what was asked for will ratify a bug.**
+
+**Sam's ruling on order:** *"Yes, above the findings. Better yet, show the full
+table and just give a link to the discrepancies."* Roster leads; findings below
+under `id="cid-findings"`; a one-line jump link above the table names the count,
+and is not drawn when there is nothing to link to. A **link, not a disclosure** —
+the findings stay in the DOM and in document order, so Ctrl-F, a screen reader's
+heading list and a deep link all still reach them.
+
+**a11y:** the view's only failure, in both themes, was `headings skips: h1 -> h3`.
+Every sibling tab (`cr_reference`, `governance`, `map_users`) opens at h2; this
+file alone opened at h3, so its sections sat at h4. Fixed, and re-verified by
+re-running the sweep: the view leaves the output and the total falls 38 → 36.
+
+⚠️ **MAP USERS IS NOT WIRED TO THIS TAXONOMY.** Sam assumed it was ("I'm sure it
+already is"). `map_users.js` holds **zero** references to `map_colleges`,
+`college_id` or `variants`. It keys on the college **name string** —
+`map_college_users?college=eq.<name>` — plus three hardcoded name-keyed objects:
+`FALLBACK_CONTACTS` (78), `CPL_PAGES` (16), `CPL_LIAISONS` (1). No duplicate keys
+(checked; the repeats are the same college across two different objects). Name-
+string keying is the weak link he has been noticing across sessions, and the
+`variants` column exists precisely to end it. Not started — it is his call.

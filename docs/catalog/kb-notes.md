@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-437 document(s).
+438 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -77,6 +77,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
+| [A feature-test on a method that does not exist is indistinguishable from the feature being absent](../kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
