@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 436,
+   "count": 437,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7280,6 +7280,28 @@
      "updated": "2026-09-05"
     },
     {
+     "created": "2026-09-11",
+     "governs": [
+      ".github/workflows/cpl-stories.yml",
+      "tools/source_cpl_stories.mjs",
+      "fact-sheet/cpl_stories_render.js",
+      "chatbox/supabase/functions/cpl-chat/index.ts"
+     ],
+     "path": "docs/kb-notes/playbook-answering-a-vulnerability-notice-about-a-host-we-link-to.md",
+     "status": "published",
+     "tags": [
+      "playbook",
+      "security",
+      "map-website",
+      "sierra",
+      "fact-sheet",
+      "dependency-map"
+     ],
+     "title": "Answering a vulnerability notice about a host we link to",
+     "type": "playbook",
+     "updated": "2026-09-11"
+    },
+    {
      "created": "2026-06-28",
      "governs": [
       "fact-sheet/factsheet_edit.js",
@@ -13000,8 +13022,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 230,
+   "count": 231,
    "docs": [
+    {
+     "created": "2026-09-11",
+     "governs": [],
+     "n": 257,
+     "path": "docs/session_257_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "cpl-chat",
+      "security",
+      "map-website",
+      "observability"
+     ],
+     "title": "a sidebar on a security notice, and SkySignal's queue carried forward untouched",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-11",
      "governs": [],
@@ -16892,5 +16932,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 875
+ "total": 877
 }

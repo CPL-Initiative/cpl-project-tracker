@@ -159,7 +159,7 @@ requirement for new exhibits.
 
 ---
 
-## 2026-09-11 — SkyLine (Session 257): the correction, and what a classifier miss costs
+## 2026-09-11 — SkyLine (Ashley crosswalk lane): the correction, and what a classifier miss costs
 
 ### What prompted it
 

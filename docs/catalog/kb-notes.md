@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-436 document(s).
+437 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -383,6 +383,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
 | [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |
 | [A decision sheet takes its replies on the page, and the session reads them from the store](../kb-notes/playbook-decision-sheet-replies.md) | playbook | published | 2026-09-05 | 2026-09-05 |
+| [Answering a vulnerability notice about a host we link to](../kb-notes/playbook-answering-a-vulnerability-notice-about-a-host-we-link-to.md) | playbook | published | 2026-09-11 | 2026-09-11 |
 | [Curate-editable overlay for a standalone static page](../kb-notes/playbook-curate-editable-standalone-page.md) | playbook | published | 2026-06-28 | 2026-06-28 |
 | [Deploy a Supabase Edge Function from the runner, not by hand](../kb-notes/playbook-deploy-an-edge-function-from-the-runner.md) | playbook | published | 2026-08-07 | 2026-08-07 |
 | [Diagnose a stalled GitHub Actions repo — check runner_id before anything else](../kb-notes/playbook-diagnose-a-starved-actions-runner.md) | playbook | published | 2026-08-06 | 2026-08-06 |

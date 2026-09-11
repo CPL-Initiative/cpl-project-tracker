@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-230 document(s).
+231 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 257 | [a sidebar on a security notice, and SkySignal's queue carried forward untouched](../session_257_handoff.md) | 2026-09-11 |
 | 256 | [Sierra is answering again, and the cause was a default](../session_256_handoff.md) | 2026-09-11 |
 | 255 | [Sierra went quiet and every instrument said she was fine](../session_255_handoff.md) | 2026-09-11 |
 | 254 | [the sweep is an instrument, and CPL is a universe](../session_254_handoff.md) | 2026-09-10 |

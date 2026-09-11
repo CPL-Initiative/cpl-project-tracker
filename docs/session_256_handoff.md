@@ -4,6 +4,8 @@ date: 2026-09-11
 session: 256 (SkyPulse)
 tags: [handoff, sierra, cpl-chat, model-choice, thinking, observability]
 status: current
+superseded: true
+superseded_by: session_257_handoff.md
 ---
 
 # You are Session 256
