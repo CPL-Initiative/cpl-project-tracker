@@ -39,7 +39,7 @@ Read in order:
   (`tests/sierra_model_choice.test.js` block 5) keys the thinking default to the
   model id and fails closed on an unknown one; 20/20 after, 18/20 before.
 - **Deployed:** v64 by `cpl-chat deploy` run 41 at 02:03:41Z, byte-identical to `main` (sha256 `0624be54…`), `verify_jwt` false; health probe green at 02:04:49Z.
-- **Verified:** 54 turns in the first six minutes on v64: **0 blanks, 0 cap hits** (the two blanks at 02:04 were v63 instances during rollover, cache lines with no `model=` field); the NCCER question that blanked on v63 answered twice on v64 (4,148 and 3,733 chars); output per 4 chars of answer **1.91 → 1.46**, the residual being the tokenizer (Sonnet 4.6 measured 1.14). One 500 at 02:04:23 from Supabase's embedding runtime (`Failed to load model because protobuf parsing failed`) on a cold v64 isolate, not repeated — watch for it.
+- **Verified:** 54 turns in the first six minutes on v64: **0 blanks, 0 cap hits** (the two blanks at 02:04 were v63 instances during rollover, cache lines with no `model=` field); the NCCER question that blanked on v63 answered twice on v64 (4,148 and 3,733 chars); output per 4 chars of answer **1.91 → 1.46**, the residual being the tokenizer (Sonnet 4.6 measured 1.14). One 500 at 02:04:23 from Supabase's embedding runtime (`Failed to load model because protobuf parsing failed`) on a cold v64 isolate, not repeated — watch for it. Smoke runs against v64: **169 passed 22/22**; 170 failed only mode 15c, on the assertion — Sierra wrote *"that's different from saying it has awarded 'zero'"*, the correct refusal of a false zero, and the regex matched the negation; 168 started before the deploy and failed on v63 blanks.
 
 ## The one thing to carry forward
 
@@ -75,6 +75,7 @@ rest. The decision he now owns is in NEEDS SAM.
   2,048 output tokens hold about 6,000 characters now, not 8,000; if real
   answers are being cut short, raise `MAX_TOKENS` — a measured change, not a
   guess.
+- **Smoke mode 15c's regex matches Sierra's own correct negation** (*"different from saying it has awarded 'zero'"*) — the same shape as 16a: fix the assertion, not the answer.
 - **The health probe cannot see this outage class.** It asks one simple question
   and passed straight through two hours of blanks on broad questions. Decide
   whether a second, broader question is worth one more model call per run.

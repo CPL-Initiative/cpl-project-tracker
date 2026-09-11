@@ -44,7 +44,7 @@
       "id": "s249-sam-smoke-16a-assertion",
       "for": "Fable",
       "tab": "unified-courses",
-      "text": "The check that runs after we deploy the shared assistant has two separate faults and only one was known. The known one: it asks whether an answer about the Los Angeles district happens to spell out two particular colleges out of nine, and the assistant names a different five each time, so a good answer fails. You have ruled that it should ask whether the roster was looked up instead. The new one, found on the 11th: the check reports 'empty answer' and then five unreadable failures underneath it, because it never printed the reason the answer was empty. It does now."
+      "text": "The check that runs after we deploy the shared assistant has two separate faults and only one was known. The known one: it asks whether an answer about the Los Angeles district happens to spell out two particular colleges out of nine, and the assistant names a different five each time, so a good answer fails. You have ruled that it should ask whether the roster was looked up instead. The new one, found on the 11th: the check reports 'empty answer' and then five unreadable failures underneath it, because it never printed the reason the answer was empty. It does now. A second check of the same shape appeared on the 11th: mode 15c, which guards against reporting an absent college as zero, failed on an answer that explicitly refused to say zero, because its pattern matches the negation. The answer was right; the check is what needs fixing."
     },
     {
       "id": "s252-fable-cpl-ask-and-join-check",
