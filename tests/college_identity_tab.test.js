@@ -301,6 +301,24 @@ block("(5)", function () {
   check("(5) …and the link sits ABOVE the table it precedes",
     !!a && html.indexOf('href="#cid-findings"') < iRoster);
 
+  /* ⚠ HEADING LEVELS, because `npm run a11y` is the only thing that measures
+   * them and it is not in `npm test`. This view's sole a11y failure on
+   * 2026-09-11 was "headings skips: h1 -> h3": the COBI shell owns the h1 and
+   * every sibling tab opens at h2 (cr_reference, governance, map_users), but
+   * this file opened at h3 and its sections sat at h4 — the whole outline one
+   * level adrift. jsdom cannot see contrast or target size, but it can see
+   * this, so the cheap half of the sweep runs on every `npm test`. */
+  const firstHeading = root.querySelector("h1,h2,h3,h4,h5,h6");
+  check("(5) ⚠ the tab's FIRST heading is h2 — the shell owns the h1",
+    !!firstHeading && firstHeading.tagName === "H2" && !root.querySelector("h1"),
+    "first heading is " + (firstHeading ? firstHeading.tagName : "(none)")
+      + "; a11y reported 'headings skips: h1 -> h3' when this was an h3");
+  check("(5) …and the section headings are h3, not h4",
+    root.querySelectorAll("h3.cid-h").length >= 2
+      && root.querySelectorAll("h4").length === 0,
+    "found " + root.querySelectorAll("h3.cid-h").length + " h3 and "
+      + root.querySelectorAll("h4").length + " h4");
+
   check("(5) ⚠ the findings stay in the DOM, not behind a disclosure",
     /Pima Medical Institute/.test(html) && !/<details/i.test(html),
     "Ctrl-F, the heading list and a deep link must all still reach them");

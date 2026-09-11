@@ -236,7 +236,12 @@
     shedPlaceholder(root);
     var s = snap();
     var live = state.live;
-    var h = '<h3 class="cid-h">College &amp; District Identity</h3>'
+    /* ⚠ h2, NOT h3 — `npm run a11y` reported "headings skips: h1 -> h3" on this
+     * view and nothing else (2026-09-11). The COBI shell owns the h1, and every
+     * sibling tab opens at h2 (cr_reference, governance, map_users all do); this
+     * file alone opened at h3, so its sections then sat at h4 and the whole
+     * outline was one level adrift. Section headings move to h3 to match. */
+    var h = '<h2 class="cid-h">College &amp; District Identity</h2>'
       + '<p class="cid-sub">Every entity MAP knows — colleges, continuing-education arms and partner '
       + 'agencies alike — with its MAP college ID, its district, the CCCCO MIS codes behind it, and every '
       + 'spelling any of our systems uses.</p>';
@@ -311,8 +316,8 @@
     }
 
 
-    fh += '<div class="cid-sec" id="cid-findings"><h4 class="cid-h">Names that resolve to no identity ('
-      + (findings.length ? findings.length : "0") + ")</h4>";
+    fh += '<div class="cid-sec" id="cid-findings"><h3 class="cid-h">Names that resolve to no identity ('
+      + (findings.length ? findings.length : "0") + ")</h3>";
     fh += '<p class="cid-note">'
       + (state.contacts
           ? "Contact names checked <b>live</b>. "
@@ -389,8 +394,8 @@
       var suppCount = live.filter(function (c) {
         return String(c.entity_kind || "") === "test" || c.is_test === true;
       }).length;
-      h += '<div class="cid-sec"><h4 class="cid-h">Every entity (' + rows.length + " of " + live.length
-        + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h4>"
+      h += '<div class="cid-sec"><h3 class="cid-h">Every entity (' + rows.length + " of " + live.length
+        + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h3>"
         + '<label class="cid-note" for="cid-q">Filter by name, district or variant</label><br>'
         + '<input id="cid-q" class="cid-search" type="search" value="' + esc(state.q) + '" placeholder="e.g. Mt. San Antonio, or 740">'
         + '<div class="cid-wrap" tabindex="0" role="region" aria-label="College and district identity table">'
