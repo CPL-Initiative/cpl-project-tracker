@@ -58,7 +58,7 @@ rest. The decision he now owns is in NEEDS SAM.
 
 ## NEEDS SAM
 
-1. ⭐ **Should Sierra think at all?** The fix restores thinking-off, which is
+1. ⭐ **Should Sierra think at all?** — on the decision sheet [Two Calls on Sierra](https://claude.ai/code/artifact/79ef62e3-5034-425f-a657-0973f0a92171) with item 2, the output stop (proposed 3,072); `docs/visuals/2026-09-11-two-calls-on-sierra.html`. Read the replies with `read_db` (collection `replies`) before executing. The fix restores thinking-off, which is
    how she ran on Haiku 4.5 and Sonnet 4.6. Adaptive thinking at low effort is
    the vendor's recommendation for quality, but it means a pause before the
    first word, output spend, a different answer style, and `MAX_TOKENS` raised

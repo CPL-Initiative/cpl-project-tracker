@@ -5,10 +5,10 @@
   "_status": "The assistant is answering again. She had been returning blank answers to about a quarter of questions since the move to Sonnet 5 on the 10th, and the cause was neither an error nor the answer length limit: the new model reasons privately before it answers unless told not to, that reasoning counts against the same length limit as the answer, and on a broad question it used up the whole allowance before writing a word. The fix tells her not to, which is how she always ran, and a check now asks what each model does when that instruction is missing. What is left is a decision for Sam on whether she should reason at all, and three engineering follow-ups behind the deploy. The rest of the feed is as the last session left it: eleven decisions from the sheet of the 11th waiting to be built, the SkyView follow-ups, and the housekeeping items.",
   "items": [
     {
-      "id": "s255-sam-sierra-should-she-think",
+      "id": "s255-sam-sierra-two-calls",
       "for": "Sam",
       "tab": "unified-courses",
-      "text": "A decision about the assistant, now that she is answering again. The blank answers came from a setting the new model turns on by itself: it reasons privately before answering, and that private reasoning counts against the same length limit as the answer, so on a broad question it used up the whole allowance and said nothing. The fix switches that reasoning off, which is exactly how she ran before. Whether to turn it back on is your call, not a default to inherit: on, she may answer harder questions better, but every answer starts after a pause and costs more, and the answer length limit would have to rise with it. Off keeps her as she was. Say which, and if it is on, we raise the limit in the same change."
+      "text": "Two settings on the assistant are yours to decide, and both are on one decision sheet with the measured numbers, an options row for each, and a proposal: whether the model reasons privately before it answers (proposed: off, as now, with the register sweep run once to confirm), and how long an answer may run (proposed: raise the stop from 2,048 to 3,072 tokens, the same budget in the new model's units). Reply on the sheet; the words under each item are the options. https://claude.ai/code/artifact/79ef62e3-5034-425f-a657-0973f0a92171"
     },
     {
       "id": "s251-sam-cid-descriptor-text",
