@@ -5,8 +5,8 @@
   "rpcs": 30,
   "edge_functions": 5,
   "file_datasets": 460,
-  "external_services": 138,
-  "consumers": 330,
+  "external_services": 143,
+  "consumers": 331,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -426,6 +426,18 @@
      "direction": "read",
      "how": "url",
      "line": 83
+    }
+   ],
+   "main_committers": []
+  },
+  "external:calnevjatc.org": {
+   "consumers": [
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 19
     }
    ],
    "main_committers": []
@@ -1954,6 +1966,13 @@
      "direction": "read",
      "how": "url",
      "line": 230
+    },
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 16
     }
    ],
    "main_committers": []
@@ -1970,6 +1989,18 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:www.electricaltrainingalliance.org": {
+   "consumers": [
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 17
     }
    ],
    "main_committers": []
@@ -2309,6 +2340,18 @@
    ],
    "main_committers": []
   },
+  "external:www.nafri.gov": {
+   "consumers": [
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 68
+    }
+   ],
+   "main_committers": []
+  },
   "external:www.napavalley.edu": {
    "consumers": [
     {
@@ -2321,6 +2364,30 @@
       "map-queue",
       "map-users"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:www.nccer.org": {
+   "consumers": [
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 18
+    }
+   ],
+   "main_committers": []
+  },
+  "external:www.nwcg.gov": {
+   "consumers": [
+    {
+     "id": "script:kb/fire_electrical_external_credentials.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 67
     }
    ],
    "main_committers": []
