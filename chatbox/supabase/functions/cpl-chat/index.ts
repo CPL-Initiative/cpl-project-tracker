@@ -28,10 +28,29 @@ const MAX_TOKENS = 2048;
  * if it disappoints, else when corporate billing lands" — and the corporate
  * account landed 2026-09-10. This is that revert.
  *
- * ⭐ IT COMES BACK CHEAPER THAN IT LEFT. Sonnet 5 is $2/$10 per MTok against the
- * Sonnet 4.6 it was on ($3/$15) — a third less — and $2/$10 against Haiku 4.5's
- * $1/$5 is 2x on paper. On the STABLE PREFIX it is cheaper in absolute terms;
- * see the caching note below, which is the real reason this moved.
+ * ⚠ IT DID NOT COME BACK CHEAPER. This block claimed it did, reasoning that the
+ * cached stable prefix would cover the 2x step from Haiku 4.5's $1/$5 to Sonnet 5's
+ * $2/$10. MEASURED 2026-09-11 from function_logs, split at the deploy, cache working:
+ *
+ *                 requests   input tokens   cached   blended $/MTok in
+ *     Haiku 4.5        48        760,274      0.0%        $1.00
+ *     Sonnet 5         23        554,161     18.6%        $1.72
+ *
+ * Sonnet 5 costs 1.72x Haiku 4.5 per input token — 2.00x with no cache, so the
+ * cache recovers 28% of the step and does not close it. THE PREFIX IS NOT THE BILL:
+ * 4,476 cached tokens against a 24,093-token average request is 19%, and the other
+ * 81% is retrieval, different every request by design and never cached. Reasoning
+ * about the prefix as though it were the input is the error — it is a fifth of it.
+ *
+ * ⭐ THE ABSOLUTE NUMBERS ARE SMALL, AND THAT IS THE POINT. Those 23 requests cost
+ * $1.21 all in. At this volume the bill is a rounding error either way, so choose on
+ * ANSWER QUALITY and let price break a tie. Against the Sonnet 4.6 this endpoint ran
+ * before 2026-08-25, Sonnet 5 IS a cut: $2/$10 against $3/$15.
+ *
+ * ⭐ THE REAL LEVER IS THE 81%, NOT THE MODEL. There is ONE breakpoint, on the
+ * system prefix; the conversation history carries none, so every turn resends and
+ * re-pays for every prior turn. A breakpoint on the last history message would let
+ * turn N read turns 1..N-1 at 0.1x. Unbuilt, and worth more here than any model swap.
  *
  * ⭐ CHANGING MODEL NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the
  * Supabase project and it wins over the default below; unset it to come back
@@ -56,8 +75,10 @@ const MAX_TOKENS = 2048;
  * The `stable` block is 4,476 tokens — MEASURED, see below — clearing Sonnet 5's
  * 1,024 floor with room. A cache read costs ~0.1x base input, so on this
  * INPUT-DOMINATED endpoint the repeated prefix is CHEAPER on Sonnet 5 than the
- * uncached prefix was on Haiku 4.5, before any quality argument. That was the
- * projection on 2026-09-10; the log lines below are now the measurement.
+ * uncached prefix was on Haiku 4.5. ⚠ TRUE OF THE PREFIX AND ONLY THE PREFIX — it
+ * is 19% of an average request, so this does NOT make the endpoint cheaper; see the
+ * measured table at the top. That was the projection on 2026-09-10; the log lines
+ * below are the measurement, and they cost more than they saved.
  *
  * ⚠ THE MEASUREMENT BROKE THE ESTIMATE'S ARITHMETIC (2026-09-11). This block read
  * "~3,234 tokens (12,938 chars / 4), BELOW Haiku 4.5's 4,096 floor, so the
