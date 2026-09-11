@@ -1821,3 +1821,44 @@ model whose default differs, and the guard reads only the committed default.
 **Left with Sam.** Whether Sierra should think at all — adaptive at low effort
 with a larger output budget — is a product call (latency before the first
 word, output spend, answer style), not a default to inherit.
+
+
+### 2026-09-11, later the same night — the root cause, and two wrong diagnoses before it
+
+**It was adaptive thinking.** On **Sonnet 5 and Opus 5** a request with no
+`thinking` field runs *adaptive* thinking; on **Haiku 4.5 and Sonnet 4.6** the
+identical request runs none. So code that had been correct for 2,200 turns began
+spending its entire answer budget on reasoning the stream loop does not collect as
+text. Fixed in **#1551** by sending `thinking: { type: "disabled" }` explicitly;
+`MAX_TOKENS` stayed at 2,048. Verified live: **53 consecutive turns, zero blanks**,
+overhead falling from **6.5 to 1.45** output tokens per 4 characters of answer.
+
+⚠️ **I got it wrong twice first, and both times by inferring from log SHAPE rather
+than measuring.** First as an unhandled upstream `error` event — there was no
+error, and the branch I shipped for it can never fire on this. Then as `MAX_TOKENS`
+being too small — it had been fine for 2,200 turns, so the cap was the constraint
+the new behavior ran into, not the fault. I prepared a cap raise; it was superseded
+before merge and correctly so.
+
+⭐ **Sam's recollection was the decisive evidence, and it was available from the
+start.** *"This didn't happen when I was originally running sonnet."* Same 2,048
+cap in every era: Sonnet 4.6 **2,200 turns / 0 blank / 0.9% at the cap**; Haiku 4.5
+**300 / 0 / 0.3%**; Sonnet 5 **202 / 61 / 47%**. A model-specific behavior change
+is the only hypothesis that fits all three rows, and I had the rows before I had
+either wrong answer. **The repo's own rule — their domain knowledge outranks your
+inference — is not only about facts they supply; it is about which hypothesis to
+test first.**
+
+⭐ **And a separate trap cost half an hour on its own: a workflow RE-RUN deploys
+nothing.** Re-running on the same `head_sha` uploads byte-identical source,
+Supabase deduplicates it, no new version is created, the workers never restart, and
+the secret changed minutes earlier is never read — with success reported at every
+step. Confirmed by `list_edge_functions` still reading **version 63,
+`updated_at 2026-09-10T22:35:10Z`**. Distilled to
+`[[docs/kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running]]`.
+
+**Still open:** 28 of 98 successful answers were hitting the 2,048 cap *before* the
+incident, truncated mid-sentence with nothing logged — unrelated to thinking and
+unfixed. And `smoke` fires on every push touching `index.ts`, comment-only ones
+included; ~11 runs today at ~22 live questions each is where the day's API spend
+went.
