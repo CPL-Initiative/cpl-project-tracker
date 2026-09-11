@@ -49,16 +49,53 @@
   function num(n) { return (n == null || !isFinite(n)) ? "unknown" : Number(n).toLocaleString("en-US"); }
 
   /* Auth headers: the anon key alone reads map_colleges; the contacts read needs
-   * a reviewer session or the team phrase. Both are OPTIONAL — the tab degrades
-   * to the public half and SAYS which half it lost, rather than rendering a
-   * confident, wrong zero. */
-  function authHeaders() {
-    var h = {};
+   * a reviewer session or the team phrase. The contact half is OPTIONAL — the
+   * tab degrades to the public half and SAYS which half it lost, rather than
+   * rendering a confident, wrong zero.
+   *
+   * ⚠ THIS SENT NO HEADERS AT ALL UNTIL 2026-09-11, SO THE TAB'S MAIN TABLE HAD
+   * NEVER RENDERED FOR ANYONE. The old body read:
+   *
+   *     if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
+   *       h = window.CPL_TEAM_PHRASE.headers() || {};
+   *     }
+   *
+   * `CPL_TEAM_PHRASE` exposes `decorateHeaders`, never `headers` — so the guard
+   * was ALWAYS false, `h` stayed `{}`, and every fetch went out with no apikey.
+   * PostgREST answered 401, `state.live` stayed null, and the roster is drawn
+   * under `if (live)`. Sam saw a page of findings and asked where the table was
+   * (2026-09-11): "This tab only shows the colleges with problems that need to
+   * be fixed. The main view should be a complete table of all MAP locations."
+   * It was built all along; nothing could read the rows to draw it.
+   *
+   * ⭐ THE BUG SHAPE IS THE LESSON: a feature-test on a method that does not
+   * exist reads as "not mounted" and fails silent. tests/college_identity_auth
+   * .test.js now checks every CPL_TEAM_PHRASE member this file names against
+   * team_phrase.js's own api object, so the next typo fails in CI, not in a
+   * browser nobody was watching.
+   *
+   * Session shape mirrors cr_reference.js: the magic-link JWT in sessionStorage
+   * `cpl_sb`, the phrase in localStorage `cpl_team_pass`. */
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+
+  function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
+  function getSession() {
     try {
-      if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.headers) {
-        h = window.CPL_TEAM_PHRASE.headers() || {};
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      if (s && isValidJwt(s.access_token)) return { access_token: s.access_token };
+    } catch (e) {}
+    return null;
+  }
+  function authHeaders() {
+    var s = getSession();
+    var token = (s && s.access_token) || SUPABASE_ANON;
+    /* The apikey is NEVER conditional — it is what makes the public half public. */
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    try {
+      if (window.CPL_TEAM_PHRASE && window.CPL_TEAM_PHRASE.decorateHeaders) {
+        h = window.CPL_TEAM_PHRASE.decorateHeaders(h, null) || h;
       }
-    } catch (e) { /* not mounted */ }
+    } catch (e) { /* not mounted — the public half still reads */ }
     return h;
   }
 
@@ -431,6 +468,7 @@
     activate: activate,
     _render: render,
     _liveFindings: liveFindings,      // pure — the lint, testable without a DOM
+    _authHeaders: authHeaders,        // exposed 2026-09-11: the 401 that hid the roster
     _state: state,
     _shedPlaceholder: shedPlaceholder,
   };
