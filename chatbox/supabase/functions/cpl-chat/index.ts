@@ -47,6 +47,16 @@ const MAX_TOKENS = 2048;
  * ANSWER QUALITY and let price break a tie. Against the Sonnet 4.6 this endpoint ran
  * before 2026-08-25, Sonnet 5 IS a cut: $2/$10 against $3/$15.
  *
+ * ⚠ NOTHING HERE KNOWS WHICH ACCOUNT PAYS. Line 6 reads a Supabase secret NAMED
+ * `ANTHROPIC_API_KEY`; which Console key that VALUE is, no code and no log on this
+ * side can see. A Console figure therefore corroborates these numbers only once
+ * someone has confirmed the key filter matches the value in that secret — the two
+ * `ANTHROPIC_API_KEY` names are different namespaces and matching them is not
+ * evidence. I compared against the wrong key once already (2026-09-11, caught by
+ * Sam); the table above does not depend on it, because function_logs are Sierra's
+ * own requests whatever key authenticates them. To check where the spend lands,
+ * filter the Console by key and look for traffic in this endpoint's window.
+ *
  * ⭐ THE REAL LEVER IS THE 81%, NOT THE MODEL. There is ONE breakpoint, on the
  * system prefix; the conversation history carries none, so every turn resends and
  * re-pays for every prior turn. A breakpoint on the last history message would let
