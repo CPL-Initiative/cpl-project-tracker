@@ -50,6 +50,7 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "map_college_contacts",
         "map_college_users",
+        "map_colleges",
         "map_contact_gaps"
       ],
       "writes": [
@@ -219,6 +220,7 @@ window.COBI_ADMIN_SURFACE = {
         "governance_owners",
         "map_college_contacts",
         "map_college_users",
+        "map_colleges",
         "map_contact_gaps",
         "map_data_loads",
         "sierra_feedback"

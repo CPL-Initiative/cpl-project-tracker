@@ -211,8 +211,12 @@
     });
   }
   function loadRoster(college) {
+    /* Every spelling of this identity, not just the one MAP happened to send.
+     * All 128 names in map_college_users are canonical today (measured
+     * 2026-09-11), so this changes nothing now and keeps working when one is
+     * not. Unresolved name → in.("<the name>"), i.e. exactly the old query. */
     var url = REST + "/map_college_users?select=first_name,last_name,email,role_name,username,user_status,disciplines,last_updated_on"
-      + "&college=eq." + encodeURIComponent(college) + "&order=role_name.asc,last_name.asc";
+      + "&college=" + encodeURIComponent(inList(spellingsFor(college))) + "&order=role_name.asc,last_name.asc";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("roster " + r.status);
       return r.json();
@@ -605,6 +609,152 @@
   function normCollege(s) {
     return String(s == null ? "" : s).normalize("NFC").replace(/\s+/g, " ").trim().toLowerCase();
   }
+
+  /* ── THE COLLEGE TAXONOMY (2026-09-11) ────────────────────────────────────
+   * Sam: "College taxonomy should be wired to the MAP Users tab and data as
+   * well. I'm sure it already is..." It was not. This tab looked every college
+   * up by its NAME AS A PIECE OF TEXT — the roster read, the contacts read, and
+   * three hand-written lists of 95 names between them — with nothing but
+   * normCollege() above to absorb a spelling change.
+   *
+   * ⚠ AND IT WORKED, WHICH IS THE PROBLEM. Measured 2026-09-11: all 128 names in
+   * map_college_users match a canonical map_colleges.college_name exactly, and 74
+   * of the 78 distinct hand-written keys do too. Nothing is broken today. It
+   * works because MAP happens to spell things canonically, and nothing anywhere
+   * enforces that it keeps doing so — the same shape as the whitespace join this
+   * file's normCollege comment already records paying for once.
+   *
+   * ⭐ WHAT normCollege CANNOT DO, AND WHY THE TAXONOMY EARNS ITS PLACE: it folds
+   * case and whitespace, so "Cypress College " finds "Cypress College". It can
+   * never bridge a VARIANT to its canonical name — "San Diego College of
+   * Continuing Education Credit" and "San Diego College of Continuing Education"
+   * normalize to different strings, and only map_colleges.variants knows they are
+   * one institution. Measured: map_college_contacts holds 3 names that are not
+   * canonical; 2 of them are exactly that case.
+   *
+   * ⭐ AND THE TAXONOMY ENFORCES SAM'S OWN RULINGS. He ruled (2026-08-21) that
+   * Calbright and LAUNCH are TWO entities each while San Diego and North Orange
+   * are ONE. That is why merging rows across spellings below is safe: the two
+   * continuing-education arms merge because the taxonomy says they are one
+   * identity, and "Calbright College Credit" does NOT merge into "Calbright
+   * College Non-Credit" because it resolves to nothing at all. The ruling does
+   * the work; this code just reads it.
+   *
+   * ⚠ FAIL-OPEN, BUT NOT FAIL-SILENT. If the taxonomy cannot be read, every
+   * lookup degrades to exactly today's behavior (exact, then normalized) — the
+   * tab must never go blank over an enrichment. But the state is RECORDED, because
+   * a polite else-branch that hides a broken read is precisely what kept the
+   * College Identity tab's main table from ever rendering (see the KB note
+   * `methodology-a-feature-test-on-a-missing-method-fails-silent`, 2026-09-11). */
+  var taxonomy = { status: "unread", byExact: null, byNorm: null, count: 0, error: null };
+
+  function loadTaxonomy() {
+    if (taxonomy.status === "ok" || taxonomy.status === "loading") return Promise.resolve(taxonomy);
+    taxonomy.status = "loading";
+    var url = REST + "/map_colleges?select=college_id,college_name,district,"
+      + "mis_district_code,mis_college_code,variants,entity_kind&limit=2000";
+    return fetch(url, { headers: authHeaders() }).then(function (r) {
+      if (!r.ok) throw new Error("taxonomy " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      /* ⚠ A VARIANT MUST NEVER SHADOW A CANONICAL NAME — the identity lane's
+       * standing invariant. "Mission College" is BOTH: its own college in the
+       * West Valley-Mission district, and a variant of Los Angeles Mission
+       * College. So canonical names are indexed FIRST, in their own pass, and
+       * the variant pass then refuses to overwrite any name a canonical already
+       * claims. Payload order cannot change the answer. */
+      var byExact = {}, byNorm = {}, n = 0;
+      function identOf(c) {
+        return {
+          college_id: c.college_id, canonical: c.college_name,
+          district: c.district || null,
+          mis: c.mis_district_code ? (c.mis_district_code + "/" + (c.mis_college_code || "—")) : null,
+          entity_kind: c.entity_kind || "college",
+          spellings: [c.college_name].concat(Array.isArray(c.variants) ? c.variants : []),
+        };
+      }
+      var rows2 = (rows || []).filter(function (c) { return c && c.college_name; });
+      rows2.forEach(function (c) {                       // pass 1 — canonical wins
+        var id = identOf(c);
+        n++;
+        byExact[c.college_name] = id;
+        byNorm[normCollege(c.college_name)] = id;
+      });
+      rows2.forEach(function (c) {                       // pass 2 — variants fill gaps only
+        var id = byExact[c.college_name];
+        (Array.isArray(c.variants) ? c.variants : []).forEach(function (v) {
+          if (!v) return;
+          if (!byExact[v]) byExact[v] = id;
+          var k = normCollege(v);
+          if (!byNorm[k]) byNorm[k] = id;
+        });
+      });
+      taxonomy.byExact = byExact; taxonomy.byNorm = byNorm; taxonomy.count = n;
+      taxonomy.status = "ok"; taxonomy.error = null;
+      return taxonomy;
+    }).catch(function (e) {
+      taxonomy.status = "failed"; taxonomy.error = (e && e.message) || "error";
+      taxonomy.byExact = null; taxonomy.byNorm = null;
+      return taxonomy;
+    });
+  }
+
+  /* The identity a name belongs to, or null. Null is a RESULT — "Calbright
+   * College Credit" resolves to nothing because MAP has not issued it an id, and
+   * inventing one would fabricate an identity the whole system trusts. */
+  function identityFor(college) {
+    if (!college || taxonomy.status !== "ok") return null;
+    return taxonomy.byExact[college] || taxonomy.byNorm[normCollege(college)] || null;
+  }
+
+  /* Every spelling a query should look for. Falls back to the name itself, so a
+   * failed taxonomy read leaves the query exactly as it was before this existed. */
+  function spellingsFor(college) {
+    var id = identityFor(college);
+    return (id && id.spellings && id.spellings.length) ? id.spellings : [college];
+  }
+
+  /* PostgREST `in.("A","B")`. Values are quoted so a comma inside a name is not
+   * read as the separator; the whole value is encoded by the caller. */
+  function inList(names) {
+    return "in.(" + names.map(function (n) {
+      return '"' + String(n).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"';
+    }).join(",") + ")";
+  }
+
+  /* One lookup for all three hand-written lists. Exact key, then normalized, then
+   * every other spelling of the same identity — so a list written against the
+   * canonical name still answers when MAP sends a variant, and vice versa. */
+  /* ⚠ THE INDEX IS CACHED BESIDE THE MAP, NEVER ON IT. The first cut stored it as
+   * `map.__norm`, which MUTATES the data object — and FALLBACK_CONTACTS grew an
+   * entry with no provenance, which map_users.test.js's "every entry declares a
+   * provenance" caught immediately. A cache that changes the thing it is caching
+   * is not a cache. Three maps, so a linear scan of pairs is the whole cost. */
+  var _normIdxCache = [];
+  function normIndexOf(map) {
+    for (var i = 0; i < _normIdxCache.length; i++) {
+      if (_normIdxCache[i][0] === map) return _normIdxCache[i][1];
+    }
+    var idx = {};
+    Object.keys(map).forEach(function (k) { idx[normCollege(k)] = map[k]; });
+    _normIdxCache.push([map, idx]);
+    return idx;
+  }
+  function pickByIdentity(map, college) {
+    if (!map || !college) return null;
+    if (map[college]) return map[college];
+    var normIdx = normIndexOf(map);
+    var hit = normIdx[normCollege(college)];
+    if (hit) return hit;
+    var sp = spellingsFor(college);
+    for (var i = 0; i < sp.length; i++) {
+      if (map[sp[i]]) return map[sp[i]];
+      var h2 = normIdx[normCollege(sp[i])];
+      if (h2) return h2;
+    }
+    return null;
+  }
+
   function fallbackFor(college) {
     if (FALLBACK_CONTACTS[college]) return FALLBACK_CONTACTS[college];
     if (!_fbNorm) {
@@ -613,7 +763,7 @@
         _fbNorm[normCollege(k)] = FALLBACK_CONTACTS[k];
       });
     }
-    return _fbNorm[normCollege(college)] || null;
+    return _fbNorm[normCollege(college)] || pickByIdentity(FALLBACK_CONTACTS, college) || null;
   }
 
   // ── Address quality: FLAG, never filter ───────────────────────────────────
@@ -778,7 +928,7 @@
       title: "District CPL", name: null, email: null,
       note: "SDCCD runs CPL at district level with student and faculty resource pages.", },
   };
-  function cplPageFor(college) { return CPL_PAGES[college] || null; }
+  function cplPageFor(college) { return pickByIdentity(CPL_PAGES, college); }
 
   // ── ASCCC CPL Liaison (Jessica, 2026-08-05) ───────────────────────────────
   // A DIFFERENT thing from the CPL-page contact, and kept in its own column at
@@ -801,7 +951,7 @@
       ],
     },
   };
-  function cplLiaisonFor(college) { return CPL_LIAISONS[college] || null; }
+  function cplLiaisonFor(college) { return pickByIdentity(CPL_LIAISONS, college); }
 
   function cplLiaisonCell(college) {
     var l = cplLiaisonFor(college);
@@ -1034,11 +1184,49 @@
   function loadContacts(college) {
     // The gated contacts (Primary Contact / VPAA = VP Instruction / VPSS = VP
     // Student Services) for the refresh nudge. Reviewer/team-phrase only.
-    var url = REST + "/map_college_contacts?college=eq." + encodeURIComponent(college) + "&limit=1";
+    /* ⭐ EVERY SPELLING, MERGED CANONICAL-FIRST. map_college_contacts holds 3
+     * names that are not canonical (measured 2026-09-11); 2 are the "… Credit"
+     * arms of North Orange and San Diego continuing education, which Sam ruled
+     * are ONE entity each with their credit counterpart. Their canonical row
+     * carries the contacts and the variant row carries a landing_page_url the
+     * canonical one lacks, so an eq.<canonical> read silently dropped it.
+     *
+     * ⚠ MERGING IS SAFE ONLY BECAUSE THE TAXONOMY SAYS WHO IS ONE. Calbright
+     * Credit does NOT merge into Calbright Non-Credit — Sam ruled those two
+     * entities, and it resolves to no identity at all, so it is never in this
+     * set. The ruling does the work. Canonical wins every field it fills; a
+     * variant only supplies what canonical left empty. */
+    var spellings = spellingsFor(college);
+    var url = REST + "/map_college_contacts?college=" + encodeURIComponent(inList(spellings));
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("contacts " + r.status);
       return r.json();
-    }).then(function (rows) { return (rows && rows[0]) || null; });
+    }).then(function (rows) {
+      if (!rows || !rows.length) return null;
+      if (rows.length === 1) return rows[0];
+      var id = identityFor(college);
+      var canon = id && id.canonical;
+      var ordered = rows.slice().sort(function (a, b) {
+        return (b.college === canon ? 1 : 0) - (a.college === canon ? 1 : 0);
+      });
+      var merged = {}, from = [];
+      ordered.forEach(function (row) {
+        var used = false;
+        Object.keys(row).forEach(function (k) {
+          var v = row[k];
+          if (merged[k] == null || merged[k] === "") {
+            if (v != null && v !== "") { merged[k] = v; if (k !== "college") used = true; }
+            else if (!(k in merged)) merged[k] = v;
+          }
+        });
+        if (used) from.push(row.college);
+      });
+      merged.college = canon || ordered[0].college;
+      /* Say which rows contributed — a merge nobody can see is a merge nobody
+       * can question. Read by the nudge UI and by the tests. */
+      if (from.length > 1) merged._merged_from = from;
+      return merged;
+    });
   }
 
   // ── Nudge — a recipient PICKER, then a pre-filled mailto: (like the RACI
@@ -1972,6 +2160,10 @@
     // The "last nudged" log (signed-in only) loads alongside the summary and
     // repaints when it lands — never blocks the public counts from rendering.
     loadNudges().then(function () { if (state.summary) render(root); });
+    /* Side-loaded like the nudges: it enriches lookups, it never gates the
+     * counts. A failure leaves every lookup at today's exact+normalized
+     * behavior and is recorded on `taxonomy.status`, not swallowed. */
+    loadTaxonomy().then(function () { if (state.summary) render(root); });
     loadSummary().then(function (data) {
       state.summary = Array.isArray(data) ? data : [];
       state.loading = false; render(root);
@@ -2024,6 +2216,17 @@
     _cplLiaisonCell: cplLiaisonCell,
     _CPL_LIAISONS: CPL_LIAISONS,
     _CPL_PAGES: CPL_PAGES,
+    // the taxonomy wiring (2026-09-11)
+    _taxonomy: taxonomy,
+    _loadTaxonomy: loadTaxonomy,
+    _identityFor: identityFor,
+    _spellingsFor: spellingsFor,
+    _inList: inList,
+    _pickByIdentity: pickByIdentity,
+    _fallbackFor: fallbackFor,
+    _cplPageFor: cplPageFor,
+    _cplLiaisonFor: cplLiaisonFor,
+    _loadContacts: loadContacts,
     _gapsHtml: gapsHtml,
     _gapsCsv: gapsCsv,
     _contactsCsv: contactsCsv,
