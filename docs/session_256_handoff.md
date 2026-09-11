@@ -61,7 +61,7 @@ From the decision sheet [Two Calls on Sierra](https://claude.ai/code/artifact/79
 2. **The answer stop is 8,192 tokens** — verdict 8,192 over the proposed 3,072:
    *"Let's make it high for now so folks playing around with it always get a
    complete answer."* `MAX_TOKENS` moved 2,048 → 8,192; a ceiling, not a spend.
-   Shipped in #1555 (merged 16:45Z). Deployed as v65 (run 42, 16:41:58Z, from main 05f2b06d).
+   Shipped in #1555 (merged 16:45Z). Deployed as v65 (run 42, 16:41:58Z, from main 05f2b06d); smoke 176 passed 22/22 and health 110 passed on it.
 3. **Sierra's page on a phone** — *"the current mobile view is mostly consumed by
    the header text… consolidate all this text to hover overs in the header… and
    fix the ghosted mountain logo so the peak fits."* Shipped as the About Sierra

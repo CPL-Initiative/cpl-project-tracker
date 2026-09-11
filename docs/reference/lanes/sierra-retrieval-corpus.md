@@ -62,7 +62,7 @@ get a complete answer"*; #1555)** — a ceiling, not a spend: an answer costs wh
 uses, and `stop_reason` names any turn that reaches it. It was 2,048 from launch;
 the tokenizer counts ~30% more tokens for the same text, so 2,048 had come to hold
 about 6,000 characters, and one answer in nine on v64 sat within a fifth of it.
-**Deployed as v65** by `cpl-chat deploy` run 42 at 16:41:58Z on 2026-09-11 from `main` 05f2b06d, `verify_jwt` false; smoke and health dispatched right after. **NEXT:** the sixteen-row register sweep once on Sonnet 5 (Sam's standing
+**Deployed as v65** by `cpl-chat deploy` run 42 at 16:41:58Z on 2026-09-11 from `main` 05f2b06d, `verify_jwt` false. **Verified on v65:** smoke run 176 passed 22 of 22 (16:45–16:50Z, the first green smoke since the 15a/15c guards were fixed) and health run 110 passed at 16:45:45Z. **NEXT:** the sixteen-row register sweep once on Sonnet 5 (Sam's standing
 rule of 2026-08-30); an A/B of adaptive thinking on the preview slug only if a
 measured quality gap appears; and read `stop_reason = 'max_tokens'` in
 `chat_interactions` over the following week — with an 8,192 ceiling and thinking
