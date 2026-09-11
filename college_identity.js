@@ -1,12 +1,26 @@
-/* College & District Identity — a LINT SURFACE, not a lookup.
- * ===========================================================
+/* College & District Identity — the lookup FIRST, the lint under it.
+ * ==================================================================
  * Sam, 2026-08-21: "Maybe it's time to add a new COBI tab to visually show the
  * key source lookup tables we rely upon, particularly the college/district
  * table that should list loc IDs and all variations of the names found in the
  * DB."
  *
- * ⭐ THE VALUE IS SHOWING WHAT IS EMPTY OR DISAGREEING, not mirroring what SQL
- * would show. `map_colleges.variants` existed from the day the column shipped
+ * ⚠ THIS FILE'S HEADER READ "a LINT SURFACE, not a lookup" UNTIL 2026-09-11,
+ * AND THAT FRAMING HAD DRIFTED FROM THE ASK ABOVE — which is a lookup, in his
+ * own words, and was answered by the roster table this file has always built.
+ * Nobody could tell, because `authHeaders()` sent no apikey, map_colleges came
+ * back 401, and the roster is drawn under `if (live)`. The lint rendered; the
+ * lookup did not; the header then described what was on the screen.
+ *
+ * Sam re-asked for it on 2026-09-11 — "a COBI tab that shows the college and
+ * district taxonomy, including CollegeIDs and all the college name variations
+ * in a single tabular view" — read the tab, and ruled the order: "Yes, above
+ * the findings. Better yet, show the full table and just give a link to the
+ * discrepancies." So the roster leads, and the findings sit below it behind a
+ * jump link. Both still render; only the order changed.
+ *
+ * ⭐ THE LINT'S VALUE IS STILL SHOWING WHAT IS EMPTY OR DISAGREEING, not
+ * mirroring what SQL would show. `map_colleges.variants` existed from the day the column shipped
  * and was empty on all 128 rows for months; the documented Obsidian exclusions
  * were documented and never applied. Both hid the same way — nobody could SEE
  * the absence. A page that renders "0 of 128" makes that impossible.
@@ -223,9 +237,9 @@
     var s = snap();
     var live = state.live;
     var h = '<h3 class="cid-h">College &amp; District Identity</h3>'
-      + '<p class="cid-sub">Every entity MAP knows, the CCCCO MIS codes behind it, and every spelling '
-      + 'any of our systems uses. This page exists to show what is <b>missing or disagreeing</b> — a name '
-      + 'in a live table that resolves to no identity is a finding, not a curiosity.</p>';
+      + '<p class="cid-sub">Every entity MAP knows — colleges, continuing-education arms and partner '
+      + 'agencies alike — with its MAP college ID, its district, the CCCCO MIS codes behind it, and every '
+      + 'spelling any of our systems uses.</p>';
 
     if (state.loading) h += '<p class="cid-note">Reading map_colleges&hellip;</p>';
 
@@ -270,9 +284,36 @@
                         why: f.why, decided_by: f.decided_by, decided_on: f.decided_on, live: false });
       });
     }
-    h += '<div class="cid-sec"><h4 class="cid-h">Names that resolve to no identity ('
+    /* ⭐ THE TABLE LEADS; THE DISCREPANCIES ARE A LINK (Sam, 2026-09-11).
+     * "Yes, above the findings. Better yet, show the full table and just give a
+     * link to the discrepancies." He said it after opening the tab and seeing
+     * only findings — which was the 401 hiding the roster, but the ordering was
+     * his call either way, and it reverses this file's original framing (a LINT
+     * SURFACE, not a lookup). The lint still runs and still renders; it simply
+     * stops being the first thing on the page.
+     *
+     * ⚠ A LINK, NOT A DISCLOSURE. The findings stay in the DOM and in the
+     * document order below the table, so Ctrl-F, a screen reader's heading list
+     * and a deep link all still reach them. A collapsed section would hide them
+     * from all three to save a scroll. */
+    var fh = "";
+    if (findings.length) {
+      h += '<p class="cid-sub"><a href="#cid-findings">'
+        + findings.length + (findings.length === 1 ? " name resolves" : " names resolve")
+        + ' to no identity</a> — the detail is below the table.</p>';
+    } else if (s && s.linted === false) {
+      h += '<p class="cid-sub"><a href="#cid-findings">Sierra\u2019s corpus was not checked</a>'
+        + ' — that is not \u201cnothing outstanding\u201d.</p>';
+    } else {
+      h += '<p class="cid-sub">No names resolve to no identity'
+        + (s && s.observed_names ? " — " + s.observed_names + " checked against the roster." : ".")
+        + "</p>";
+    }
+
+
+    fh += '<div class="cid-sec" id="cid-findings"><h4 class="cid-h">Names that resolve to no identity ('
       + (findings.length ? findings.length : "0") + ")</h4>";
-    h += '<p class="cid-note">'
+    fh += '<p class="cid-note">'
       + (state.contacts
           ? "Contact names checked <b>live</b>. "
           : "<b>Contact names not read</b> — map_college_contacts is gated on a reviewer sign-in or the team phrase, "
@@ -309,12 +350,12 @@
        * AND stamps `linted`; this reads it, because a tab whose whole job is
        * making absence visible must not present its own absence as health. */
       if (s && s.linted === false) {
-        h += '<div class="cid-flag"><b>The snapshot was generated without its lint '
+        fh += '<div class="cid-flag"><b>The snapshot was generated without its lint '
           + 'input, so Sierra\u2019s corpus was NOT checked.</b> This is not '
           + '\u201cnothing outstanding\u201d \u2014 it is \u201cnot looked at\u201d. '
           + 'Re-run the builder with <code>--observed-json</code>.</div>';
       } else {
-        h += '<p class="cid-note">Nothing outstanding'
+        fh += '<p class="cid-note">Nothing outstanding'
           + (s && s.observed_names
               ? ' \u2014 ' + s.observed_names + ' names checked against the roster.'
               : ".")
@@ -322,7 +363,7 @@
       }
     }
     findings.forEach(function (f) {
-      h += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"
+      fh += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"
         + '<span class="nm">' + esc(JSON.stringify(f.name)) + "</span>"
         + (f.resolves_to ? ' <span class="cid-var">&rarr; ' + esc(f.resolves_to) + "</span>" : "")
         + (f.sibling ? ' <span class="cid-var">sibling of ' + esc(f.sibling) + "</span>" : "")
@@ -331,7 +372,7 @@
         + (f.decided_by ? " — ruled by " + esc(f.decided_by) + ", " + esc(f.decided_on) : "")
         + "</div></div>";
     });
-    h += "</div>";
+    fh += "</div>";
 
     // ── The roster ──
     if (live) {
@@ -410,6 +451,9 @@
       });
       h += "</tbody></table></div></div>";
     }
+
+    /* The lint, below the table it qualifies. */
+    h += fh;
 
     root.innerHTML = h;
 

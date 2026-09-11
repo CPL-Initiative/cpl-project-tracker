@@ -249,6 +249,74 @@ block("(6)", function () {
     "consumers filter on entity_kind; a row flagged only by is_test would slip through");
 });
 
+// ── (5) ⭐ THE ROSTER LEADS; THE FINDINGS SIT BELOW IT BEHIND A LINK ────────
+// Sam, 2026-09-11, after reading the tab: "Yes, above the findings. Better yet,
+// show the full table and just give a link to the discrepancies."
+//
+// He had asked for this page on 2026-08-21 as a LOOKUP — "the college/district
+// table that should list loc IDs and all variations of the names found in the
+// DB" — and the roster answering that has always been built. It never rendered:
+// authHeaders() sent no apikey, map_colleges answered 401, and the roster draws
+// under `if (live)`. So the findings were the whole visible page, and the file's
+// own header had drifted to match ("a LINT SURFACE, not a lookup").
+//
+// ⚠ ORDER IS THE ASSERTION, not presence — both sections rendered before and
+// both render now. A future edit that moves the lint back on top passes every
+// other check in this file.
+block("(5)", function () {
+  const { w, M, root } = loadModule();
+  w.CPL_COLLEGE_IDENTITY = {
+    generated: "2026-08-23", linted: true, observed_names: 130,
+    counts: { entities: 4, with_variants: 2, with_district: 3, districts: 3, with_mis_code: 3 },
+    findings: [{ name: "Pima Medical Institute", "class": "unknown", resolves_to: null,
+                 why: "In a live table and claimed by no identity." }],
+  };
+  M._state.live = COLLEGES;
+  M._state.contacts = null;
+  M._state.error = null;
+  M._render(root);
+  const html = root.innerHTML;
+
+  /* ⚠ MATCH THE HEADING, NOT THE PHRASE. The intro paragraph now opens "Every
+   * entity MAP knows — colleges, continuing-education arms and partner agencies
+   * alike", so indexOf("Every entity") finds the INTRO at index 73 and this
+   * whole block asserts nothing. The heading is the only place the phrase is
+   * followed by its count. */
+  const iRoster = html.indexOf(">Every entity (");
+  const iFind = html.indexOf('id="cid-findings"');
+  check("(5) precondition: both sections rendered",
+    iRoster >= 0 && iFind >= 0,
+    "roster at " + iRoster + ", findings at " + iFind);
+  check("(5) ⭐ the roster table comes BEFORE the findings",
+    iRoster >= 0 && iFind >= 0 && iRoster < iFind,
+    "Sam ruled the full table leads and the discrepancies are a link under it");
+
+  const a = root.querySelector('a[href="#cid-findings"]');
+  check("(5) ⭐ a jump link points at the findings", !!a,
+    "'just give a link to the discrepancies' — without it the lint is only "
+    + "reachable by scrolling past the whole roster");
+  check("(5) …and it names the count rather than a bare 'see below'",
+    !!a && /\b1 name resolves\b/.test(a.textContent),
+    a ? JSON.stringify(a.textContent) : "(no link)");
+  check("(5) …and the link sits ABOVE the table it precedes",
+    !!a && html.indexOf('href="#cid-findings"') < iRoster);
+
+  check("(5) ⚠ the findings stay in the DOM, not behind a disclosure",
+    /Pima Medical Institute/.test(html) && !/<details/i.test(html),
+    "Ctrl-F, the heading list and a deep link must all still reach them");
+
+  // Nothing outstanding: the line stays, the link goes — there is nothing to link to.
+  const two = loadModule();
+  two.w.CPL_COLLEGE_IDENTITY = { generated: "2026-08-23", linted: true, observed_names: 130, findings: [] };
+  two.M._state.live = COLLEGES; two.M._state.contacts = null; two.M._state.error = null;
+  two.M._render(two.root);
+  check("(5) with no findings there is no link to a section with nothing in it",
+    !two.root.querySelector('a[href="#cid-findings"]'),
+    "a link that lands on 'Nothing outstanding' teaches the reader to ignore it");
+  check("(5) …and the roster still renders",
+    two.root.innerHTML.indexOf(">Every entity (") >= 0);
+});
+
 let pass = 0;
 for (const [name, ok, why] of results) {
   console.log((ok ? "  ok  " : "FAIL  ") + name + (!ok && why ? "\n        > " + why : ""));
