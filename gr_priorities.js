@@ -1390,8 +1390,10 @@
    * and this sweep itself proposes new rows.
    *
    * ⚠️ THE OUTPUT BUDGET IS THE TIGHTER ONE AND IT IS NOT THIS NUMBER. cpl-chat
-   * answers with MAX_TOKENS = 2048 (~8,000 characters), which has to hold a
-   * verdict for every row. That is why the sweep contract asks for one line per
+   * answers with a ceiling of MAX_TOKENS = 8192 (Sam's ruling 2026-09-11; it was
+   * 2048, ~8,000 characters, until then), which has to hold a verdict for every
+   * row — the contract below still budgets ~8,000 characters so the sweep stays
+   * terse by design. That is why the sweep contract asks for one line per
    * row, and why a reply cut off mid-object is diagnosed as an OUTPUT problem
    * rather than sending someone to redeploy the function. */
   var GR_QUERY_BUDGET = 40000;
@@ -1581,8 +1583,9 @@
    * area: 16 rows are 12,665 raw characters, 9,291 after the tags come off, plus
    * 1,839 of artifacts — about 17,000 with the doctrine and the contract, which
    * is why QUERY_CAP_GR_ANALYSIS went to 40,000 rather than the row lane's
-   * 14,000. But cpl-chat answers with MAX_TOKENS = 2048, roughly 8,000
-   * characters, and that has to hold a verdict for EVERY row plus the gaps. So
+   * 14,000. But cpl-chat answers under a MAX_TOKENS ceiling (8192 since Sam's
+   * 2026-09-11 ruling; 2048, roughly 8,000 characters, before it), and the reply
+   * has to hold a verdict for EVERY row plus the gaps. So
    * the contract below budgets the reply explicitly: one line per row, not a
    * paragraph. A sweep that runs out of output tokens returns half a JSON
    * object, which is a different failure from a truncated INPUT and is reported

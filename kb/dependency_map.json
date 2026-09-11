@@ -49,7 +49,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1418,
+     "line": 1420,
      "tabs": [
       "gr-priorities"
      ]
@@ -232,7 +232,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 3895
+     "line": 3905
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -778,7 +778,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 2632
+     "line": 2642
     }
    ],
    "main_committers": []
@@ -1468,7 +1468,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 3331
+     "line": 3341
     }
    ],
    "main_committers": []
@@ -2621,7 +2621,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2834,
+     "line": 2837,
      "tabs": [
       "gr-priorities"
      ]
@@ -2728,7 +2728,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2069,
+     "line": 2072,
      "tabs": [
       "gr-priorities"
      ]
@@ -15060,7 +15060,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1458
+     "line": 1468
     }
    ],
    "main_committers": []
@@ -15100,7 +15100,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1586
+     "line": 1596
     }
    ],
    "main_committers": []
@@ -15112,7 +15112,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1483
+     "line": 1493
     }
    ],
    "main_committers": []
@@ -15244,7 +15244,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 3614
+     "line": 3624
     }
    ],
    "main_committers": []
@@ -15286,7 +15286,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1347
+     "line": 1357
     }
    ],
    "main_committers": []
@@ -15298,7 +15298,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 990
+     "line": 1000
     },
     {
      "id": "script:chatbox/smoke_test.sh",
@@ -15317,7 +15317,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1438
+     "line": 1448
     }
    ],
    "main_committers": []
@@ -15329,7 +15329,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1303
+     "line": 1313
     }
    ],
    "main_committers": []
@@ -15341,7 +15341,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 920
+     "line": 930
     }
    ],
    "main_committers": []
@@ -15353,7 +15353,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 904
+     "line": 914
     }
    ],
    "main_committers": []
@@ -15365,7 +15365,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 1262
+     "line": 1272
     }
    ],
    "main_committers": []
@@ -15610,7 +15610,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 4110
+     "line": 4122
     },
     {
      "id": "module:sierra_training.js",
@@ -15644,7 +15644,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 461
+     "line": 471
     },
     {
      "id": "script:map/sync_map_users.py",
@@ -15675,7 +15675,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 1523
+     "line": 1533
     },
     {
      "id": "module:college_briefing.js",
@@ -15704,7 +15704,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 936
+     "line": 946
     }
    ],
    "main_committers": []
@@ -15778,7 +15778,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 1008
+     "line": 1018
     }
    ],
    "main_committers": []
@@ -16749,7 +16749,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 2337
+     "line": 2347
     },
     {
      "id": "module:college_briefing.js",
@@ -16814,7 +16814,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 1076
+     "line": 1086
     },
     {
      "id": "module:college_briefing.js",
@@ -16843,7 +16843,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 1079
+     "line": 1089
     },
     {
      "id": "module:college_briefing.js",
@@ -16935,7 +16935,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 411
+     "line": 421
     },
     {
      "id": "module:college_briefing.js",
@@ -17067,7 +17067,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 1080
+     "line": 1090
     },
     {
      "id": "module:map_team_queue.js",
@@ -17402,7 +17402,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 3402
+     "line": 3412
     },
     {
      "id": "module:sierra_training.js",
@@ -17434,7 +17434,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 2922
+     "line": 2932
     },
     {
      "id": "module:sierra_training.js",
