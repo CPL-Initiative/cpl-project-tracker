@@ -53,19 +53,24 @@ const MAX_TOKENS = 2048;
  * 1,024, Opus 5 is 512 — and within one family Opus ranges 512 to 4,096 across
  * versions, so no family-keyed number can be right.
  *
- * The `stable` block is ~3,234 tokens, which is BELOW Haiku 4.5's 4,096 floor,
- * so the breakpoint is accepted and caches nothing — `cache_creation_input_tokens`
- * comes back 0, with no error. On an INPUT-DOMINATED endpoint that is the whole
- * lever, lost. On Sonnet 5 (floor 1,024) the same prefix caches, and a cache read
- * costs ~0.1x base input — so the stable prefix is CHEAPER on Sonnet 5 than the
- * uncached prefix is on Haiku 4.5, before any quality argument.
+ * The `stable` block is 4,476 tokens — MEASURED, see below — clearing Sonnet 5's
+ * 1,024 floor with room. A cache read costs ~0.1x base input, so on this
+ * INPUT-DOMINATED endpoint the repeated prefix is CHEAPER on Sonnet 5 than the
+ * uncached prefix was on Haiku 4.5, before any quality argument. That was the
+ * projection on 2026-09-10; the log lines below are now the measurement.
  *
- * ⚠ 3,234 IS AN ESTIMATE, NOT A MEASUREMENT — 12,938 chars / 4. It has never been
- * through count_tokens, and it sits near the 4,096 line. The decisive evidence is
- * `usage.cache_read_input_tokens` on a live request: zero across repeated calls
- * means the prefix is not caching. Measure before trusting either number.
- * tests/sierra_model_choice.test.js now keys the floor to the exact model id and
- * FAILS CLOSED on an id it does not know.
+ * ⚠ THE MEASUREMENT BROKE THE ESTIMATE'S ARITHMETIC (2026-09-11). This block read
+ * "~3,234 tokens (12,938 chars / 4), BELOW Haiku 4.5's 4,096 floor, so the
+ * breakpoint caches nothing." The live figure is 4,476 — chars/4 ran 28% LOW — and
+ * 4,476 is ABOVE 4,096, so "the prefix is under the floor" does NOT survive as the
+ * explanation. What the `function_logs` DO establish: 12 consecutive `⚠ NEITHER`
+ * on Haiku 4.5, the last 13 seconds before the v63 deploy finished, then
+ * write=4476 six seconds after it and read=4476 on every request through the
+ * 5-minute TTL — and that deploy changed no cache code, only MODEL. The prediction
+ * held; the mechanism is unconfirmed. NEVER reason from chars/4 near a floor: the
+ * decisive evidence is the log line at the `message_start` handler, which is
+ * exactly why it is there. tests/sierra_model_choice.test.js keys the floor to the
+ * exact model id and FAILS CLOSED on an id it does not know.
  *
  * ⚠ CONTEXT IS 1M, AND NOTHING HERE NEEDS IT. The largest caller is
  * the GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
@@ -3222,8 +3227,9 @@ function buildSystemPrompt(
    * ~1024-token minimum cacheable prefix, so caching it alone would silently do
    * nothing) and the rule block LAST, after every volatile context. So there was
    * no zero-reorder option: the always-rules had to move ahead of the retrieved
-   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars
-   * (~3,234 tokens), comfortably over the minimum.
+   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars, which
+   * the API counts as 4,476 tokens (NOT the 3,234 that chars/4 predicts — 28%
+   * low; see the cache-floor block at the top of this file).
    *
    * ⚠ WHAT IS IN `stable` MUST BE INVARIANT ACROSS QUESTIONS, not merely
    * "mostly stable". Putting the WHOLE rule block here would look right and hit
@@ -3832,8 +3838,8 @@ Deno.serve(async (req: Request) => {
         max_tokens: MAX_TOKENS,
         stream: true,
         // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
-        // The first is byte-identical on every request (~3,234 tokens of
-        // preamble + always-rules) and is the only thing cached; the second
+        // The first is byte-identical on every request (4,476 tokens of
+        // preamble + always-rules, measured) and is the only thing cached; the second
         // carries the retrieval, which is different every time and must not be.
         system: [
           {

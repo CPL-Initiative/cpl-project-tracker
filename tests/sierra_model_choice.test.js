@@ -90,7 +90,7 @@ block("(2) the cache floor moves with the family", () => {
   // first "~N tokens" in the file. There are five such figures in index.ts and
   // one of them is 242 — a loose match reads whichever happens to come first,
   // which is a different number every time someone adds a comment above.
-  const sz = /`stable`[\s\S]{0,60}?block is ~([\d,]+) tokens/.exec(SRC);
+  const sz = /`stable`[\s\S]{0,60}?block is ~?([\d,]+) tokens/.exec(SRC);
   check("(2) ⭐ the stable block's size is written down", !!sz,
     "without it, nobody can tell whether the cache breakpoint does anything");
   if (!sz) return;
@@ -99,9 +99,13 @@ block("(2) the cache floor moves with the family", () => {
     + floor + ")", tokens > floor,
     tokens + " tokens vs a " + floor + "-token minimum — the breakpoint is "
     + "accepted and caches NOTHING, silently (cache_creation_input_tokens: 0)");
-  // ⚠️ The size is an estimate from a character count (12,938 chars / 4), never
-  // a count_tokens measurement, and it sits near Haiku 4.5's real floor. The
-  // only decisive evidence is usage.cache_read_input_tokens on a live request.
+  // ⚠️ MEASURED 2026-09-11, and the measurement broke the estimate: the API
+  // counts the stable block at 4,476 tokens, not the 3,234 that chars/4 predicted
+  // (28% low). 4,476 is ABOVE Haiku 4.5's 4,096 floor, so the sub-floor story this
+  // check was written to defend is NOT what killed caching on Haiku — only the
+  // before/after in function_logs is established. Hence `~?` above: the figure may
+  // be approximate or exact, and the check cares that it is written down and
+  // clears the configured model's floor, not how it was arrived at.
   check("(2) ⚠ …and the file says the floor is MODEL-dependent, not family-",
     /model-dependent|per-model|4,?096/.test(SRC),
     "a prefix sized for one model caches nothing on another — including within "
