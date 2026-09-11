@@ -11,18 +11,18 @@
   },
   "summary": {
     "files": 887,
-    "bytes": 9426684,
-    "over_budget": 7,
+    "bytes": 9426546,
+    "over_budget": 6,
     "handoff_max": 256,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60123,
+    "always_loaded_bytes": 59985,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60123,
-        "over": 1
+        "bytes": 59985,
+        "over": 0
       },
       "other": {
         "files": 112,
@@ -56,13 +56,13 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 7,
       "house_voice": 23,
+      "oversized_doc": 6,
       "vault_heavy_path": 47
     },
     "vault": {
       "files": 2833,
-      "bytes": 1369984541,
+      "bytes": 1369984403,
       "heavy_bytes": 614344361,
       "heavy_share": 0.448,
       "ignore_filters": [
@@ -117,19 +117,6 @@
     }
   },
   "findings": [
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60123,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 123,
-        "ratio": 1.0
-      },
-      "message": "60,123 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
     {
       "rule": "house_voice",
       "fixable": false,
