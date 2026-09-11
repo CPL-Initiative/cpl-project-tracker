@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-11T13:36:52.940Z",
+  "scraped_at": "2026-09-11T16:36:33.829Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,17 +198,17 @@
         },
         {
           "college": "Bakersfield College",
-          "students": 617,
-          "units": 8751.5,
-          "avgUnits": 14.183954619124798,
+          "students": 618,
+          "units": 8756.5,
+          "avgUnits": 14.169093851132686,
           "transcriptionRate": 11.1,
-          "avgTranscribed": 1.579416531604538,
+          "avgTranscribed": 1.5768608414239482,
           "criteriaMetCount": 3,
-          "militaryStudents": 570,
+          "militaryStudents": 571,
           "nonMilitaryStudents": 61,
           "apprenticeStudents": 0,
-          "savings": 15708835,
-          "yearImpact": 56275015.5,
+          "savings": 15717485,
+          "yearImpact": 56305350.5,
           "transcribedUnits": 974.5
         },
         {
@@ -1013,17 +1013,17 @@
         },
         {
           "college": "Cerro Coso Community College",
-          "students": 178,
-          "units": 865,
-          "avgUnits": 4.859550561797753,
+          "students": 180,
+          "units": 875,
+          "avgUnits": 4.861111111111111,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 178,
+          "militaryStudents": 180,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1496450,
-          "yearImpact": 5247955,
+          "savings": 1513750,
+          "yearImpact": 5308625,
           "transcribedUnits": 0
         },
         {
@@ -1207,6 +1207,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Sacramento City College",
+          "students": 106,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 106,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Skyline College",
           "students": 105,
           "units": 315,
@@ -1219,21 +1234,6 @@
           "apprenticeStudents": 0,
           "savings": 544950,
           "yearImpact": 1911105,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Sacramento City College",
-          "students": 105,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 105,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,383",
+      "value": "51,387",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "27,931"
+          "value": "27,935"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51383,
-    "Units": 219476.15000000002,
+    "Students": 51387,
+    "Units": 219491.15000000002,
     "TranscribedUnits": 73055.45,
-    "Savings": 328553192.75,
-    "YearImpact": 1302166966.9,
-    "MilitaryStudents": 27931,
+    "Savings": 328579142.75,
+    "YearImpact": 1302257971.9,
+    "MilitaryStudents": 27935,
     "NonMilitaryStudents": 23538,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.271376719926825,
-    "TranscribedAverage": 1.4217824961563161
+    "AverageUnits": 4.2713361355984985,
+    "TranscribedAverage": 1.421671823612976
   }
 }

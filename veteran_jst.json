@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-11T13:36:53.196029+00:00",
+  "scraped_at": "2026-09-11T16:36:34.192328+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27931,
+    "jst": 27935,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 570,
+      "jst": 571,
       "star": true
     },
     "Merced College": {
@@ -230,15 +230,15 @@
       "jst": 154,
       "star": true
     },
+    "Cerro Coso Community College": {
+      "vets": 115,
+      "jst": 180,
+      "star": true
+    },
     "College of the Sequoias": {
       "vets": 260,
       "jst": 174,
       "star": false
-    },
-    "Cerro Coso Community College": {
-      "vets": 115,
-      "jst": 178,
-      "star": true
     },
     "Citrus College": {
       "vets": 181,
@@ -477,7 +477,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 105,
+      "jst": 106,
       "star": false
     },
     "Cuyamaca College": {
