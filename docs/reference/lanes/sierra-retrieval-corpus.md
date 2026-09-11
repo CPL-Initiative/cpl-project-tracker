@@ -32,21 +32,32 @@ still overrides it with **no deploy** and is the fast revert lever — ⚠️ **
 delete it**, which reverses the advice given earlier that same day. Reverting to
 `claude-haiku-4-5-20251001` is one secret and no code change.
 
-⚠️ **BLANK ANSWERS, 27% OF REQUESTS, AND NOTHING LOGGED IT.** `chat_interactions`
-shows **0 empty responses every day for two weeks**, then 5 of 62 on 09-10 (all
-after the deploy) and 20 of 76 on 09-11 — 25 of 93 turns since. **Only one
-non-smoke turn has run since the deploy**, so no real user has been failed yet;
-the exposure is the next broad question. Cause: an upstream failure arrives as a
-*stream event*, not a status — the response is already 200 and the cache line
-already written — and the loop handled only `content_block_delta`,
-`message_delta`, `message_start`, so `{"type":"error",…}` fell through into
-nothing and the stream closed normally. **FIXED IN CODE, NOT YET DEPLOYED**
-(PR #1550): the error event is handled and logged, `stop_reason` is captured from
-`message_delta`, zero text frames logs `EMPTY ANSWER` with error + stop_reason +
-output_tokens + model, and an `event: error` frame reaches the client (`done`
-still follows it, so old clients are unaffected). **NEEDS: a `cpl-chat deploy`
-dispatch, then read one failing request** — the three fields separate upstream
-error from refusal from empty generation, which no one can distinguish today.
+⚠️ **BLANK ANSWERS, 09-10 22:35Z → the #1551 deploy, AND THE CAUSE WAS A MODEL
+DEFAULT.** `chat_interactions`: 0 empty responses every day for two weeks, then
+5 of 62 on 09-10 (all after the Sonnet 5 deploy) and 39 of 137 on 09-11, three
+of them real users. On Sonnet 5 a request that OMITS `thinking` runs adaptive
+thinking; on Haiku 4.5 and Sonnet 4.6 the same request runs none. Thinking
+tokens count against `max_tokens`, and the loop collects only text — so on a
+broad question the model spent the whole 2,048-token budget before the first
+word (35 of 35 blanks at `output_tokens=2048`, zero text). Not an upstream error
+and not the cap: the same cap produced zero blanks in fourteen days on Haiku.
+**FIXED (#1551): the request sends `thinking: { type: "disabled" }`**, the
+request Sierra always made spelled out; `MAX_TOKENS` stays 2048. The guard
+(`tests/sierra_model_choice.test.js` block 5) keys the thinking default to the
+model id — adaptive-by-default / always-on (Fable, Mythos: `disabled` is a 400) /
+off — and fails closed on an unknown id. **Deployed as v64** by `cpl-chat deploy` run 41 at 02:03:41Z on 2026-09-11, byte-identical to `main` (sha256 `0624be54…`), `verify_jwt` false; the health probe passed at 02:04:49Z. **Verified on v64 (02:03–02:10Z): 54 turns, 0 blanks, 0 cap hits**; the NCCER question that blanked on v63 answered twice (4,148 and 3,733 chars); output per 4 chars of answer 1.91 → 1.46, the residual being the tokenizer. ⚠️ **The secret can
+still point `MODEL` at a model whose default differs; the guard reads only the
+committed default.** #1550's instrumentation shipped in the same deploy: a blank
+turn now logs `EMPTY ANSWER` with its `stop_reason` (`max_tokens` at exactly the
+cap = thinking ran it out; none = upstream error; `end_turn` = the model chose
+silence) and sends the client `event: error` before `done`. ⚠️ **The health probe
+cannot see this class** — one simple question, and it passed straight through two
+hours of blanks on broad questions. **NEEDS SAM: whether Sierra should think at
+all** (adaptive at low effort + a larger `MAX_TOKENS`, in one change) — a product
+call, not a default to inherit. **NEXT:** read the cap-hit count a day after the
+deploy — the tokenizer counts ~30% more tokens for the same text, so 2,048
+output tokens hold about 6,000 characters now, not 8,000; raise `MAX_TOKENS`
+only on that measurement.
 
 **Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
 

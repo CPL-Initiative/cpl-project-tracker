@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-433 document(s).
+434 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -119,6 +119,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A message must ride every exit — a note computed and then dropped is the same as no note](../kb-notes/methodology-a-message-must-ride-every-exit.md) | methodology | published | 2026-09-08 | 2026-09-08 |
 | [A metric matched by its prose mis-measures the moment a second lane exists](../kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A model switch carries its defaults with it, not just its price](../kb-notes/methodology-a-model-switch-carries-its-defaults-not-just-its-price.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
