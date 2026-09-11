@@ -150,3 +150,47 @@ datasets from the MAP API on the cron, so three more is three entries in
 report *builder* UI) while our fetcher consumes `mapwebapinew.azurewebsites.net`
 (the API). Whether the three are exposed on the existing endpoint decides whether
 this is twenty lines or a real integration.
+
+
+## 2026-09-11 — SkyPulse (S256): a scanner's notice about a host we only link to
+
+**What happened.** KYND (for the California Schools JPA) flagged `map.rccd.edu`
+for wp2shell — CVE-2026-63030 + CVE-2026-60137 in WordPress core, fixed
+2026-07-17 in 6.9.5 / 7.0.2, exploited in the wild since 2026-07-20 — and Sam
+asked whether the links we give out for the Fact Sheet or Sierra could be
+involved. They cannot: the host is a SiteGround WordPress site outside our
+stack, and a server-side flaw is indifferent to who links to it. The whole
+finding, the four touchpoints and the recommendation are in
+[`playbook-answering-a-vulnerability-notice-about-a-host-we-link-to`](kb-notes/playbook-answering-a-vulnerability-notice-about-a-host-we-link-to.md);
+the memo Sam forwards is in the vault
+(`04-projects/cpl-initiative/20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx`).
+
+**Lessons.**
+
+- ⭐ **The repo already knew what the host was.** Two workflow comments said
+  "SiteGround-bot-protected" and the platform strategy doc said "map.rccd.edu
+  (WordPress)" — but no one place said it, so Rule 8's query found nothing and
+  the answer was re-derived from four files. The KB note and the `cpl_memory`
+  row exist so the next notice costs one query.
+- **Grep for fetches, not for the hostname.** 167 files mention map.rccd.edu;
+  exactly one code path pulls content from it (`cpl-stories.yml` →
+  `fact-sheet/cpl_stories.js`, committed to `main` weekly, renderer escapes).
+  That is the whole ingest surface, and it was found in one grep for
+  `urlopen|fetch\(|goto\(`.
+- **A scanner names one FQDN; the host may have siblings.** `staging2.map.rccd.edu`
+  is a second public WordPress install (all 36 story images hot-link to it) and
+  KYND did not list it. Always look for the staging copy.
+- ⚠️ **LibreOffice in the remote container cannot load ANY file** — `soffice
+  24.2` answers "source file could not be loaded" for a plain `.txt`, by absolute
+  path, `file://` URL or a private `-env:UserInstallation` profile. The docx
+  skill's render-to-PDF step never runs here. What works: the skill's
+  `validate.py` after `pip install defusedxml lxml`, then `mammoth` → HTML → a
+  headless-Chromium screenshot (`/opt/pw-browsers/chromium-*/chrome-linux/chrome
+  --headless=new --screenshot`). Three soffice variants were tried after the
+  `.txt` had already failed — a tool that fails on a trivial input is the
+  environment, and the next move is a different instrument, not a fourth flag.
+  Sam noticed the delay (*"grinding?"*).
+- **The sandbox cannot reach `map.rccd.edu` either** (egress proxy 403, same as
+  `*.supabase.co` and `api.github.com`), so the live WordPress version was never
+  read. The memo says so in its second paragraph; a memo that implied a check
+  it did not make would be the wrong kind of reassurance.
