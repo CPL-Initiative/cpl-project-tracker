@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-10T16:43:48.121162+00:00",
+  "scraped_at": "2026-09-11T11:27:24.182959+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27817,
+    "jst": 27931,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,22 +17,22 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 346,
+      "jst": 345,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1610,
+      "jst": 1611,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1495,
+      "jst": 1499,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1646,
+      "jst": 1649,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,7 +42,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1444,
+      "jst": 1481,
       "star": true
     },
     "Bakersfield College": {
@@ -105,6 +105,11 @@
       "jst": 207,
       "star": false
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 687,
+      "star": true
+    },
     "College of the Desert": {
       "vets": 235,
       "jst": 405,
@@ -123,11 +128,6 @@
     "Santa Ana College": {
       "vets": 334,
       "jst": 377,
-      "star": true
-    },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 618,
       "star": true
     },
     "Barstow Community College": {
@@ -217,7 +217,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 184,
+      "jst": 185,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -252,7 +252,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 236,
+      "jst": 235,
       "star": false
     },
     "Evergreen Valley College": {
@@ -352,7 +352,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 62,
+      "jst": 63,
       "star": false
     },
     "Crafton Hills College": {
