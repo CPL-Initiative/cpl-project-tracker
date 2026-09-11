@@ -64,19 +64,44 @@ Read in order:
    sessions public by default or perhaps a prompt when you spin up."* Built into
    the SessionStart hint.
 
-## NEEDS SAM — do not start either without a reply
+## Both of Sam's asks SHIPPED after the checkpoint (#1561)
 
-1. **Wire the identity lint into `map-users-sync.yml`** for his daily diff. The
-   builder already takes `--observed-json`; only the trigger is missing. That
-   workflow already runs daily at `0 13 * * *` and is the job that pulls from MAP,
-   so it holds the fresh names. ⚠️ Its header says "schedule (monthly)" — wrong.
-2. **Make MAP Users resolve through `college_id`/variants**, not name strings.
-   `map_users.js` has **zero** references to `map_colleges`/`college_id`/`variants`
-   and keys on `map_college_users?college=eq.<name>` plus `FALLBACK_CONTACTS` (78),
-   `CPL_PAGES` (16), `CPL_LIAISONS` (1). This is the weak link he keeps noticing.
-3. Carried: the sixteen-row register sweep on Sonnet 5; `sierra_guidance`'s CHECK
+He said *"do both a and b"*, so neither is pending any more.
+
+- **(a) The daily identity lint** — `kb/_identity_daily_check.py`, run from
+  `map-users-sync.yml`. Read-only, never commits; it reports whether the FINDING
+  SET moved and raises one reusable issue. ⚠️ Two guards worth knowing: it
+  **refuses on a short read** (<100 colleges or <100 names — a failed read would
+  otherwise report the whole roster as findings), and it restores
+  `college_identity_data.js` from git because the builder writes that file
+  regardless of `--out`.
+- **(b) MAP Users resolves through the taxonomy** — both reads ask for every
+  spelling, `loadContacts` merges canonical-first, and all three hand-written
+  lists route through `pickByIdentity`.
+
+⭐ **SAY THE HONEST VERSION OF (b) IF IT COMES UP.** Measured before building:
+**128/128** roster names and **74/78** hardcoded keys were already canonical, and
+only **3/123** names in `map_college_contacts` were not. **Nothing was broken.**
+It worked because MAP happens to spell things canonically and nothing enforced
+that it keeps doing so — the wiring replaced LUCK. What `normCollege()` could
+never do is bridge a VARIANT to its canonical name; that is the capability added.
+One concrete recovery: SDCCE's `landing_page_url` lives on its `… Credit` variant
+row and the old `eq.<canonical>` read dropped it silently.
+
+⭐ **MERGING IS SAFE ONLY BECAUSE THE TAXONOMY ENCODES SAM'S 2026-08-21 RULING.**
+`Calbright College Credit` does not merge into Non-Credit because it resolves to
+no identity — **not** because the code checks for Calbright. There is no mention
+of Calbright in the logic. If he revises that ruling, behavior follows the data.
+
+## NEEDS SAM
+
+1. **Nothing blocking.** Both asks above are done.
+2. Carried: the sixteen-row register sweep on Sonnet 5; `sierra_guidance`'s CHECK
    constraint lacks `skyview-ask`; eleven decision-sheet items settled and waiting
    (4, 5, 8, 9, 10, 11, 13, 15, 16, 17, 18, 19).
+3. **Only MAP can supply** the two `awaiting_map_id` ids — `Calbright College
+   Credit` and `Launch Apprenticeship Non-Credit`. Minting one ourselves would
+   fabricate an identity the whole system trusts.
 
 ## Queue
 
@@ -123,6 +148,22 @@ is a production dispatch · MAP read-only · the public KB untouched · **rebuil
 `kb/dependency_map.json` before pushing — it records LINE OFFSETS, so any edit
 moves it and `test` goes red** · DON'T LOCK IN: end the turn when the next step
 waits on anything external.
+
+## Added after the checkpoint (S257 part 2, #1561)
+
+⚠️ **TWO REGRESSIONS OF MINE, BOTH CAUGHT BY GUARDS — read these before pushing.**
+
+- **A cache that changes the thing it caches is not a cache.** `pickByIdentity`
+  first stored its index as `map.__norm`, mutating `FALLBACK_CONTACTS`, which then
+  grew an entry with no provenance. `map_users.test.js` — a test I did not write —
+  went red on the first run.
+- ⚠️ **THE DEPENDENCY MAP WENT STALE TWICE, SAME CAUSE.** It records LINE OFFSETS,
+  so any edit moves them, and both times the rebuild happened *before* one more
+  edit. **Rebuild `kb/dependency_map.json` as the genuinely LAST step before a
+  push**, and check every generated artifact together — `_build_dependency_map.py
+  --check`, `_build_docs_index.py --check`, and `node tests/admin_tab.test.js`
+  (which is what catches a stale `cobi_admin_surface.js`) — rather than only the
+  one CI happened to name. The second failure cost a full ~9-minute cycle.
 
 ## KB notes added this run
 
