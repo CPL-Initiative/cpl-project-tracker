@@ -210,6 +210,22 @@ try:
     check("(6d) the last pre-compaction turn is a full emergency",
           at_late.get("status") == "emergency"
           and at_late.get("remaining", 1e9) < 49_723)
+    # ── (7) the hook is INSTALLED where every session finds it ──
+    # 2026-09-11: the meter was right to within 122 tokens of the ceiling and
+    # warned nobody, because its only install was per machine and a remote
+    # session is a fresh container every time. The repo's own settings carry it
+    # now; this fails if it leaves. Recording a rule and having it fire are two
+    # events, and an install step is a third.
+    with open(os.path.join(ROOT, ".claude", "settings.json")) as fh:
+        settings = json.load(fh)
+    post = settings.get("hooks", {}).get("PostToolUse", [])
+    cmds = [h.get("command", "") for entry in post for h in entry.get("hooks", [])]
+    check("(7a) .claude/settings.json carries a PostToolUse hook", bool(post))
+    check("(7b) it runs kb/_context_budget.py --hook via $CLAUDE_PROJECT_DIR",
+          any("_context_budget.py" in c and "--hook" in c and "$CLAUDE_PROJECT_DIR" in c
+              for c in cmds))
+    check("(7c) the matcher covers every tool", any(e.get("matcher") == "*" for e in post))
+
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 

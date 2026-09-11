@@ -19,6 +19,29 @@ list). This carries what you look up when you actually install it.
 
 ## Install
 
+**Every session, every machine — it is in the repo now (2026-09-11).** The
+repo's own `.claude/settings.json` carries the hook as a `PostToolUse` entry
+beside the two `SessionStart` hooks:
+
+```json
+"PostToolUse": [ { "matcher": "*", "hooks": [
+  { "type": "command", "command": "python3 \"$CLAUDE_PROJECT_DIR/kb/_context_budget.py\" --hook" }
+] } ]
+```
+
+⚠️ **Why it moved.** The per-machine install below was the ONLY install, and a
+remote Claude Code session is a fresh container every time — never the machine
+the hook was installed on. On 2026-09-11 a 15-hour remote session (385 tool
+calls, about 1,200 tokens a turn, no single large read) compacted at 785,955
+tokens with the meter never having run once: nothing computed "tokens left"
+until it was run by hand afterwards, and Rule 9's commit-count proxy read zero
+because the handoff had just been touched inside a PR. The fallback ceiling was
+right to within 122 tokens; installed, the meter would have warned about ten
+turns early. Sam: *"make it so."* `tests/context_budget_test.py` now fails if
+the entry leaves the file. The per-machine routes below still work and are
+harmless beside it (announce-once is keyed by session, so two installs do not
+double-warn), but they are no longer required.
+
 **Windows** (Sam's machine — Windows PowerShell **5.1**, not 7):
 
 ```powershell

@@ -86,6 +86,7 @@
     background: var(--surface-subtle); border-radius: 0 var(--radius) var(--radius) 0;
   }
   .foot { color: var(--text-muted); font-size: .92rem; margin-top: 30px; }
+  .decided { margin: 8px 0 0; padding: 8px 12px; border-left: 3px solid var(--seal-blue); background: var(--surface-subtle); color: var(--text-strong); }
 /* replies:css:start */
   /* ── replies: chips, a note, a follow-up flag (Sam, 2026-09-05) ── */
   .reply { margin: 12px 0 0; padding-top: 10px; border-top: 1px dashed var(--border); }
@@ -135,7 +136,7 @@
 <div class="wrap">
 <p class="kicker">Decision sheet &middot; Sierra &middot; 2026-09-11</p>
 <h1>Two Calls on Sierra</h1>
-<p class="lede">Sierra is answering again. Two settings on her request are now yours to
+<p class="lede"><strong>Both items are decided (2026-09-11); the replies stay on this sheet as the record.</strong> Sierra is answering again. Two settings on her request are now yours to
 decide, and both were invisible until the switch to Sonnet 5 made them matter: whether
 the model reasons privately before it writes, and how long an answer may run. Each item
 below says what the setting is in plain words, what her own logs measure, what each
@@ -158,6 +159,7 @@ are not available.</p>
 
 <article class="card" id="i1">
 <h3>1 &middot; Should Sierra reason privately before she answers?</h3>
+<p class="decided"><strong>Decided 2026-09-11, Sam:</strong> off, as proposed. <em>&ldquo;Let&rsquo;s keep it off but test for better options if they exist. Currently, it&rsquo;s giving fantastic answers!&rdquo;</em> Any trial of reasoning runs on the preview copy first.</p>
 <dl>
 <dt>What this is</dt>
 <dd>The model behind Sierra can work through a question privately before it writes the
@@ -235,6 +237,7 @@ one line and one deploy, so choosing off now closes no door.</dd>
 
 <article class="card" id="i2">
 <h3>2 &middot; How long may an answer run?</h3>
+<p class="decided"><strong>Decided 2026-09-11, Sam:</strong> 8,192. <em>&ldquo;Let&rsquo;s make it high for now so folks playing around with it always get a complete answer.&rdquo;</em> Shipped as the stop in the request; with reasoning off only the answer itself reaches it.</p>
 <dl>
 <dt>What this is</dt>
 <dd>Every answer has a hard stop, set at 2,048 tokens since Sierra launched. A token is

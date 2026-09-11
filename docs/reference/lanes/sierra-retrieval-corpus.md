@@ -42,7 +42,11 @@ broad question the model spent the whole 2,048-token budget before the first
 word (35 of 35 blanks at `output_tokens=2048`, zero text). Not an upstream error
 and not the cap: the same cap produced zero blanks in fourteen days on Haiku.
 **FIXED (#1551): the request sends `thinking: { type: "disabled" }`**, the
-request Sierra always made spelled out; `MAX_TOKENS` stays 2048. The guard
+request Sierra always made spelled out. ⭐ **Sam ruled it STAYS OFF (2026-09-11,
+decision sheet *Two Calls on Sierra*, item 1: *"Let's keep it off but test for
+better options if they exist. Currently, it's giving fantastic answers!"*)** —
+any trial of adaptive thinking runs on the preview slug (`cpl-chat-preview-ab.yml`),
+never live. The guard
 (`tests/sierra_model_choice.test.js` block 5) keys the thinking default to the
 model id — adaptive-by-default / always-on (Fable, Mythos: `disabled` is a 400) /
 off — and fails closed on an unknown id. **Deployed as v64** by `cpl-chat deploy` run 41 at 02:03:41Z on 2026-09-11, byte-identical to `main` (sha256 `0624be54…`), `verify_jwt` false; the health probe passed at 02:04:49Z. **Verified on v64 (02:03–02:10Z): 54 turns, 0 blanks, 0 cap hits**; the NCCER question that blanked on v63 answered twice (4,148 and 3,733 chars); output per 4 chars of answer 1.91 → 1.46, the residual being the tokenizer. ⚠️ **The secret can
@@ -52,12 +56,19 @@ turn now logs `EMPTY ANSWER` with its `stop_reason` (`max_tokens` at exactly the
 cap = thinking ran it out; none = upstream error; `end_turn` = the model chose
 silence) and sends the client `event: error` before `done`. ⚠️ **The health probe
 cannot see this class** — one simple question, and it passed straight through two
-hours of blanks on broad questions. **NEEDS SAM: whether Sierra should think at
-all** (adaptive at low effort + a larger `MAX_TOKENS`, in one change) — a product
-call, not a default to inherit. **NEXT:** read the cap-hit count a day after the
-deploy — the tokenizer counts ~30% more tokens for the same text, so 2,048
-output tokens hold about 6,000 characters now, not 8,000; raise `MAX_TOKENS`
-only on that measurement.
+hours of blanks on broad questions. ⭐ **`MAX_TOKENS` is 8,192 (Sam's ruling, same
+sheet, item 2: *"Let's make it high for now so folks playing around with it always
+get a complete answer"*; #1555)** — a ceiling, not a spend: an answer costs what it
+uses, and `stop_reason` names any turn that reaches it. It was 2,048 from launch;
+the tokenizer counts ~30% more tokens for the same text, so 2,048 had come to hold
+about 6,000 characters, and one answer in nine on v64 sat within a fifth of it.
+**Deployed as v65** by `cpl-chat deploy` run 42 at 16:41:58Z on 2026-09-11 from `main` 05f2b06d, `verify_jwt` false. **Verified on v65:** smoke run 176 passed 22 of 22 (16:45–16:50Z, the first green smoke since the 15a/15c guards were fixed) and health run 110 passed at 16:45:45Z. **NEXT:** the sixteen-row register sweep once on Sonnet 5 (Sam's standing
+rule of 2026-08-30); an A/B of adaptive thinking on the preview slug only if a
+measured quality gap appears; and watch for a cap hit over the following week — `response_tokens` at 8,192 in
+`chat_interactions` (the table has no `stop_reason` column; the reason is on the
+`EMPTY ANSWER` line in `function_logs`). With an 8,192 ceiling and thinking off,
+any hit is a real answer that long. First quarter hour on v65 (16:42–16:57Z): 37
+turns, 0 blanks, longest answer 4,964 characters.
 
 **Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
 
@@ -83,3 +94,25 @@ ACCOUNT pays**: the code reads a Supabase secret *named* `ANTHROPIC_API_KEY` and
 Console key *displayed as* `ANTHROPIC_API_KEY` is a different namespace — matching
 the strings is not evidence. To check where spend lands, filter the Console by key
 and group by key.
+
+## The standalone page on a phone — the About Sierra control (2026-09-11)
+
+Sam: *"the current mobile view is mostly consumed by the header text… consolidate
+all this text to hover overs in the header… and fix the ghosted mountain logo so
+the peak fits."* The intro and beta paragraphs left the flow for an **About
+Sierra** control in the header — a real `<button aria-expanded>` opening a panel:
+hover opens it where a pointer can hover, tap or Enter opens it everywhere, Escape
+and a click outside close it. Nothing hover-only, nothing deleted; the footer
+carries the beta and privacy lines. The ridgeline mark's peak had been clipped by
+`overflow:hidden` on a box it overshoots — now `overflow: clip visible`. On a phone
+the header is one row: the map.rccd.edu pill hides ≤560px and the tagline ≤400px,
+declared as `mayHideBelow` in `a11y.config.js` and nothing else. **Measured at
+390×844: the conversation starts 163px down (19% of the viewport) against 540px
+(64%) before; at 320px, 161px against 689px.** `npm run a11y -- sierra` is clean
+at all nine widths and `kb/_glyph_sweep.py` finds nothing in `sierra/`. Guard:
+`tests/sierra_header_about.test.js` (23 checks; 3 of 14 on the pre-change files).
+⚠️ The sweep was clean BEFORE the change too — a header that pushes the
+conversation below the fold breaks no rule the engine measures; the number that
+mattered was the y-offset of the first message at a phone width. **Open (Sam's
+ask, advice given, not built):** a floating Sierra bubble on every COBI tab —
+`kb/cpl_todos.json` `s255-sam-sierra-bubble-on-every-tab`.

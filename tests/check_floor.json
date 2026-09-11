@@ -228,6 +228,7 @@
     "sierra_feedback_ci_rows.test.js": 19,
     "sierra_geo_ranking.test.js": 50,
     "sierra_guidance.test.js": 34,
+    "sierra_header_about.test.js": 23,
     "sierra_guidance_edit.test.js": 26,
     "sierra_health_probe.test.js": 21,
     "sierra_host_scope.test.js": 26,

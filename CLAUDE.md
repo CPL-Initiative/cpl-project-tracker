@@ -218,10 +218,9 @@ named here because a store nobody names is a store nobody finds —
    discovering it after.** Claude Code writes the exact live context size to the
    session transcript every turn, and `compactMetadata.preTokens` at every
    compaction. `kb/_context_budget.py` reads it in ~50 ms; run it any time.
-   ⚠️ **It only fires if the PostToolUse hook is INSTALLED, and it is not by
-   default** — install + mechanics:
-   [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md)
-   (Windows: `scripts\install-context-hook.ps1`).
+   ✅ **It fires from the repo's own `.claude/settings.json` (PostToolUse; tested)** —
+   mechanics:
+   [`docs/reference/context_pressure_hook.md`](docs/reference/context_pressure_hook.md).
    - **WARN — ≤110,000 tokens left.** Finish the thought you are on, then run a
      FULL `/checkpoint`. **Say the number to Sam** rather than checkpointing
      silently; he may want to spend the runway differently.
@@ -233,12 +232,8 @@ named here because a store nobody names is a store nobody finds —
      rows** · **commit + push**. Everything else defers to the next session —
      which is exactly why the handoff has to name it.
 
-   ⚠️ **Both thresholds are measured, not chosen.** A checkpoint cost 49,723
-   tokens; the worst single turn 50,425. WARN is their SUM plus slack — a round
-   "2× checkpoint" (100,000) misses by 336 and fires with the runway already
-   gone. ⚠️ Rule 9's older note that Claude Code *"doesn't expose an exact
-   counter"* was **factually wrong**; it does, on disk. Derivation + the replay
-   proving this warns 10 turns early:
+   ⚠️ **Both thresholds are measured, not chosen** — derivation and the
+   2026-09-11 post-mortem:
    [`methodology-context-pressure-is-measurable`](docs/kb-notes/methodology-context-pressure-is-measurable.md).
 
 10. **Supabase live-curation safety.** Sam curates LIVE beside sessions — his
@@ -492,6 +487,11 @@ first day.** Do the remembering for them.
   ⚠️ **Asking first is the failure.** One taken too early costs a re-run; one
   deferred for an answer that never comes costs the session's reasoning. If work
   continues after, checkpoint again.
+- **DON'T LOCK IN (Sam, 2026-09-11).** *"I really don't like how you can get
+  locked in a long process (30-60 mins or more) without a way to interrupt and
+  get you a note--escape doesn't work when you're locked in on something."*
+  When the next step waits on anything external, END THE TURN — a scheduled
+  wake brings the session back. One batch of calls per turn during a wait.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.

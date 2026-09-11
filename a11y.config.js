@@ -53,7 +53,12 @@ module.exports = {
   sierra: {
     file: "sierra/index.html",
     title: "Sierra (public CPL assistant)",
-    mayHideBelow: [],
+    /* .s-back (the map.rccd.edu pill) yields to the footer link that carries the
+       same destination and the same "(opens in a new tab)" cue, and below 400
+       the tagline (.s-role, "Your CPL Sherpa") yields too — the name and the
+       page title carry it — so a phone's header holds one row (2026-09-11).
+       Nothing else may vanish. */
+    mayHideBelow: [".s-back", ".s-role"],
     /* The log is made focusable by sierra.js only while it overflows. Proving
        that means growing it and asking, not reading the markup. */
     keyboard: async (page) => {

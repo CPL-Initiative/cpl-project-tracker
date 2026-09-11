@@ -1862,3 +1862,53 @@ incident, truncated mid-sentence with nothing logged — unrelated to thinking a
 unfixed. And `smoke` fires on every push touching `index.ts`, comment-only ones
 included; ~11 runs today at ~22 live questions each is where the day's API spend
 went.
+
+### 2026-09-11, the morning after — two rulings, and a header that ate the phone (SkySignal)
+
+**Both calls went to Sam as one sheet and came back inside the hour.** Reasoning
+stays off — *"Let's keep it off but test for better options if they exist.
+Currently, it's giving fantastic answers!"* — and the answer stop is **8,192**,
+over the 3,072 the sheet proposed: *"Let's make it high for now so folks playing
+around with it always get a complete answer."* The proposal was sized from the
+measurement (one answer in nine on v64 sat within a fifth of 2,048); the verdict
+was sized from the reader — someone *playing around with it* should never meet a
+cut-off. A ceiling costs nothing until an answer uses it, and the only argument
+for a low one was the thinking that is now off. **Write the proposal from the
+numbers and let the verdict come from the audience; do not defend the number.**
+The rulings are in the code beside the constant, on the sheet itself (a visual
+that asked a question keeps its answer), and in `cpl_memory` as two
+human-sourced decision rows.
+
+**The page's phone view was 64% header.** Sam's ask named the fix — *consolidate
+all this text to hover overs* — and the trap inside it: a hover-only control is
+unreachable from the device the complaint came from. The intro and beta text moved
+into an About Sierra button that opens on hover where a pointer can hover and on
+tap or Enter everywhere, closes on Escape and click-outside, and is a real
+`aria-expanded` control. Nothing was deleted. The ridgeline peak that had been
+clipped for weeks (`overflow:hidden` on a box the peak overshoots) is whole.
+Measured at 390×844 the conversation now begins 163px down (19%) against 540px
+(64%). ⚠️ **Measure the thing the person saw, not the sweep.** `npm run a11y --
+sierra` was clean *before* the change — no contrast, target or overflow fault —
+because a header that pushes the content below the fold breaks no rule the
+engine checks. The number that mattered was the y-offset of the first message,
+and only a screenshot at a phone width surfaces it.
+
+**Smoke modes 15a and 15c were assertion faults, not Sierra faults.** Both
+regexes matched a correct negation — *not a failure to act*, *I can't say they've
+awarded zero* — so a right answer read as a regression. Fixed in #1555: the two
+framing guards strip the negated clause before matching
+(`answer_must_not_match_unnegated`); a bare *awarded zero* still fails, and the
+privacy guard stays strict. Verified against the recorded answers and seven
+controls before the push.
+
+**The checkpoint did not fire before the compaction, and the reason was an
+install step.** The meter was right to within 122 tokens of the ceiling and never
+ran: its only install was per machine, and a remote session is a fresh container
+every time. Rule 9's commit proxy read zero because the handoff had just been
+touched inside a PR, and the context had gone to reading and polling — 58 reads
+of PR check runs alone cost 136,000 tokens, and produce no commits. The hook is
+in the repo's own settings now, with a test that fails if it leaves. Sam, on the
+same polling loop: *"I really don't like how you can get locked in a long process
+(30-60 mins or more) without a way to interrupt and get you a note."* So a turn
+that waits on CI now ends, and a scheduled wake brings the session back; both are
+`CLAUDE.md` bullets.
