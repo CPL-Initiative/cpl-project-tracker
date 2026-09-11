@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-11",
-  "_session": "255 (SkySignal)",
-  "_status": "Both Sierra decisions of the 11th are ruled and shipped or shipping: private reasoning stays off because the answers are already good, and the answer stop rises from 2,048 to 8,192 tokens so nobody gets an answer that stops mid-sentence. Sierra's own page now keeps its introduction and beta note behind an About Sierra control in the header, the ridgeline's peak shows, and on a phone the conversation starts a fifth of the way down the screen instead of two thirds. One new call for Sam: a floating Sierra bubble on every COBI tab, with the advice in its item. The rest of the feed is as before: eleven decisions from the sheet of the 11th waiting to be built, the SkyView follow-ups, and the housekeeping items.",
+  "_session": "256 (SkyPulse)",
+  "_status": "Session 256 was a sidebar: KYND, scanning rccd.edu for the California Schools JPA, flagged the MAP website at map.rccd.edu for the wp2shell WordPress flaw, and Sam asked whether the links we give out for the Fact Sheet or Sierra could be involved. They cannot. The website runs WordPress on SiteGround and is administered outside the team; our dashboard, Sierra and the Fact Sheet run no WordPress, and links in either direction change nothing. A memo for the site's administrator is in the vault, with three checks: confirm the version from inside WordPress on both the production site and the staging copy the notice missed, look for signs of entry before trusting the patch, and block only the one endpoint rather than the whole REST API. Every Sierra item below stands exactly where SkySignal left it; the next session picks them up.",
   "items": [
+    {
+      "id": "s256-sam-forward-kynd-memo",
+      "for": "Sam",
+      "tab": "cobi-assistant",
+      "text": "Forward the KYND memo (vault: 20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx) to whoever holds the SiteGround login for map.rccd.edu, filling in the TO line. Two things come back: the WordPress version on both the production site and staging2.map.rccd.edu, which the notice did not list, and whether the log search found anything. Then answer KYND. Until the site is confirmed clean, the Monday job that copies the site's story cards onto the Fact Sheet keeps running; pausing it is your call, and the current cards checked clean."
+    },
     {
       "id": "s255-sam-sierra-bubble-on-every-tab",
       "for": "Sam",
