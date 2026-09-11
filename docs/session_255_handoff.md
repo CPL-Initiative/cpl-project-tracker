@@ -25,39 +25,49 @@ Read in order:
 [`docs/cpl_assistant_lessons.md`](cpl_assistant_lessons.md) (2026-09-11) ·
 the two KB notes below · [PR #1550](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1550).
 
-## The one thing that is not done
+## RESOLVED — read this before acting on anything below
 
-⚠️ **PR #1550 IS NOT DEPLOYED, AND THE FIX DOES NOTHING UNTIL IT IS.**
+✅ **Sierra is fixed.** The blank answers were **adaptive thinking spending the
+output cap**, fixed in **#1551** by sending `thinking: { type: "disabled" }`
+explicitly. `MAX_TOKENS` stays at 2,048. Verified live at 02:05–02:09Z: **53
+consecutive turns, zero blanks, zero cap hits**, with the output-overhead ratio
+collapsing from **6.5 to 1.45** tokens per 4 characters of answer at the moment
+the fix went live.
 
-Sierra returns blank answers. `chat_interactions` measures it: **0 empty responses
-every day for two weeks**, then 5 of 62 on 09-10 (all after the `22:35:17Z` Sonnet 5
-deploy) and 20 of 76 on 09-11 — **25 of 93 turns, 27%**. Only **one** non-smoke turn
-has run since the deploy, so no real user has been failed yet. The exposure is the
-next broad question.
+⭐ **THE MECHANISM, AND WHY THE OBVIOUS SUSPECT WAS WRONG.** On **Sonnet 5 and
+Opus 5**, a request with NO `thinking` field runs **adaptive** thinking; on
+**Haiku 4.5 and Sonnet 4.6** the identical request runs none. So the same code
+that had been correct for 2,200 turns started spending its whole answer budget on
+reasoning the stream loop does not collect as text. Sam supplied the decisive
+clue — *"this didn't happen when I was originally running sonnet"* — and the data
+backed him: same 2,048 cap throughout, **Sonnet 4.6 2,200 turns / 0 blank / 0.9%
+at the cap**, **Sonnet 5 202 turns / 61 blank / 47% at the cap**.
 
-**Why nothing saw it:** an upstream failure in a stream arrives as *data*, not a
-status. The response is already 200 and `message_start` has already fired the cache
-log. The loop handled three event types; `{"type":"error",…}` matched none, fell
-through into nothing, and the stream closed through its normal `event: done` path.
+⚠️ **I DIAGNOSED THIS WRONG TWICE** before that landed — first as an unhandled
+upstream `error` event (there was no error), then as `MAX_TOKENS` being too small
+(it had been fine for 2,200 turns). Both were inferred from log *shape* rather than
+measured. The cap raise I prepared is **superseded and was not merged**: with
+thinking off it would only raise the cost ceiling.
 
-**What #1550 adds** (code only, not deployed): the error event is handled and
-logged · `stop_reason` captured from `message_delta` · zero text frames logs
-`EMPTY ANSWER` with error + stop_reason + output_tokens + model · an `event: error`
-frame reaches the client, with `done` still after it so old clients are unaffected ·
-the cache line names the **served** model (Sam's ruling 3).
+⛔ **THE ONE FINDING THAT STILL MATTERS, because nothing else records it:**
+**A WORKFLOW RE-RUN DEPLOYS NOTHING, AND A SECRET CHANGE ALONE DOES NOTHING.**
+Sam re-ran the deploy and set `CPL_CHAT_MODEL` to Haiku; neither took effect. The
+re-run was **run 40, attempt 2, on the same `head_sha`** — byte-identical source,
+which Supabase **deduplicates**, leaving the function at **version 63**,
+`updated_at 2026-09-10T22:35:10Z`. No new version means the workers never restart,
+and **a worker that never restarts never re-reads its environment**. Both the
+workflow and the dashboard reported success. Full note:
+[`methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running`](kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md).
+**Always verify with `list_edge_functions` that `version` MOVED.**
 
-**NEXT, in order:** get Sam to dispatch `cpl-chat deploy` → read one failing
-request → the three fields separate *upstream error* from *refusal* from *empty
-generation*, which nobody can distinguish today → then decide whether the answer is
-a rate-limit increase or reverting the model.
-
-⚠️ **The revert lever is the `CPL_CHAT_MODEL` secret and it still exists. DO NOT
-DELETE IT** — earlier advice that day said to, and that was before the blank
-answers. Setting it to `claude-haiku-4-5-20251001` reverts with no deploy.
-
-⚠️ **The `smoke` check on #1550 is red and will stay red until the deploy.** It
-tests the live endpoint; the diff cannot change it. Documented in a PR comment —
-do not re-diagnose it, and do not re-run it.
+**Open, and genuinely open:**
+- **28 of 98 successful answers were hitting the 2,048 cap** even before this —
+  truncated mid-sentence, nothing logged. Predates the incident; unfixed.
+- **`smoke` fires on every push touching `index.ts`, comment-only ones included.**
+  It ran ~11 times today at ~22 live questions each; that, not real users, is where
+  the day's API spend went. Narrowing its trigger is proposed and awaits Sam.
+- **`stop_reason` now logs on every empty answer** (#1550). It is the instrument
+  that would have named this in one request instead of two wrong diagnoses.
 
 ## What shipped
 

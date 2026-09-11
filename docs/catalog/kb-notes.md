@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-433 document(s).
+434 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -73,6 +73,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A deduplication has a scope, and the scope is one measure — not the record](../kb-notes/methodology-a-deduplication-has-a-scope.md) | methodology | published | 2026-08-23 | 2026-08-23 |
 | [A default payout masks the data gap beneath it](../kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md) | methodology | published | 2026-07-31 | 2026-07-31 |
 | [A defect that produces the value you expected is invisible](../kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md) | methodology | published | 2026-08-27 | 2026-08-27 |
+| [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A failed read is not an empty result — and an optimistic write must precede its repaint](../kb-notes/methodology-a-failed-read-is-not-an-empty-result.md) | methodology | published | 2026-08-07 | 2026-08-07 |
