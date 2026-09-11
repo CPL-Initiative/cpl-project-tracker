@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 890,
-    "bytes": 9456226,
-    "over_budget": 6,
-    "handoff_max": 257,
+    "files": 893,
+    "bytes": 9483966,
+    "over_budget": 5,
+    "handoff_max": 258,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59985,
     "superseded_files": 0,
@@ -25,44 +25,44 @@
         "over": 0
       },
       "other": {
-        "files": 112,
-        "bytes": 2910369,
+        "files": 113,
+        "bytes": 3014135,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 27533,
+        "bytes": 23056,
         "over": 0
       },
       "lessons": {
         "files": 74,
-        "bytes": 2064274,
-        "over": 2
+        "bytes": 1976743,
+        "over": 1
       },
       "kb_note": {
-        "files": 439,
-        "bytes": 2257500,
+        "files": 440,
+        "bytes": 2262981,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 176519,
+        "bytes": 179324,
         "over": 1
       },
       "handoff": {
-        "files": 231,
-        "bytes": 1960046,
+        "files": 232,
+        "bytes": 1967742,
         "over": 0
       }
     },
     "by_rule": {
-      "house_voice": 23,
-      "oversized_doc": 6,
+      "house_voice": 24,
+      "oversized_doc": 5,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2845,
-      "bytes": 1371219135,
+      "files": 2846,
+      "bytes": 1370548799,
       "heavy_bytes": 614344361,
       "heavy_share": 0.448,
       "ignore_filters": [
@@ -191,17 +191,16 @@
       "path": "docs/coursecontrolnumber_remint.md"
     },
     {
-      "rule": "oversized_doc",
+      "rule": "house_voice",
       "fixable": false,
       "detail": {
-        "bytes": 122980,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 2980,
-        "ratio": 1.02
+        "total": 3,
+        "terms": {
+          "leverage": 3
+        }
       },
-      "message": "122,980 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/cpl_assistant_lessons.md"
+      "message": "3 business-register terms — leverage x3 (house voice: docs/kb-notes/reference-cccco-house-voice.md)",
+      "path": "docs/cpl_assistant_lessons_archive.md"
     },
     {
       "rule": "oversized_doc",
@@ -390,13 +389,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 638416,
+        "bytes": 645623,
         "limit": 150000,
         "lane": "other",
-        "over_by": 488416,
-        "ratio": 4.26
+        "over_by": 495623,
+        "ratio": 4.3
       },
-      "message": "638,416 B is 4.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "645,623 B is 4.3× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

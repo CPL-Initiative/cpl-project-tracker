@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 437,
+   "count": 438,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1213,6 +1213,26 @@
      "title": "A failed read is not an empty result \u2014 and an optimistic write must precede its repaint",
      "type": "methodology",
      "updated": "2026-08-07"
+    },
+    {
+     "created": "2026-09-11",
+     "governs": [
+      "college_identity.js",
+      "tests/college_identity_auth.test.js",
+      "team_phrase.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "javascript",
+      "defensive-coding",
+      "testing",
+      "auth"
+     ],
+     "title": "A feature-test on a method that does not exist is indistinguishable from the feature being absent",
+     "type": "methodology",
+     "updated": "2026-09-11"
     },
     {
      "created": "2026-09-02",
@@ -8860,7 +8880,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 77,
+   "count": 78,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9440,6 +9460,23 @@
      "title": "CPL Assistant (in-dashboard RAG chatbot) \u2014 lessons",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-11",
+     "governs": [],
+     "path": "docs/cpl_assistant_lessons_archive.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "cpl-assistant",
+      "sierra",
+      "chatbox",
+      "rag"
+     ],
+     "title": "CPL Assistant (Sierra) lessons \u2014 archive",
+     "type": null,
+     "updated": "2026-09-11"
     },
     {
      "created": "2026-07-20",
@@ -13022,8 +13059,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 231,
+   "count": 232,
    "docs": [
+    {
+     "created": "2026-09-11",
+     "governs": [],
+     "n": 258,
+     "path": "docs/session_258_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "college-identity",
+      "sierra",
+      "cpl-chat",
+      "map-users",
+      "a11y"
+     ],
+     "title": "a tab whose main table had never rendered, and a deploy boundary that is not one",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-11",
      "governs": [],
@@ -16932,5 +16987,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 877
+ "total": 880
 }
