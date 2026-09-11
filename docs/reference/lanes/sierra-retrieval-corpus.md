@@ -64,9 +64,11 @@ the tokenizer counts ~30% more tokens for the same text, so 2,048 had come to ho
 about 6,000 characters, and one answer in nine on v64 sat within a fifth of it.
 **Deployed as v65** by `cpl-chat deploy` run 42 at 16:41:58Z on 2026-09-11 from `main` 05f2b06d, `verify_jwt` false. **Verified on v65:** smoke run 176 passed 22 of 22 (16:45–16:50Z, the first green smoke since the 15a/15c guards were fixed) and health run 110 passed at 16:45:45Z. **NEXT:** the sixteen-row register sweep once on Sonnet 5 (Sam's standing
 rule of 2026-08-30); an A/B of adaptive thinking on the preview slug only if a
-measured quality gap appears; and read `stop_reason = 'max_tokens'` in
-`chat_interactions` over the following week — with an 8,192 ceiling and thinking
-off, any hit is a real answer that long.
+measured quality gap appears; and watch for a cap hit over the following week — `response_tokens` at 8,192 in
+`chat_interactions` (the table has no `stop_reason` column; the reason is on the
+`EMPTY ANSWER` line in `function_logs`). With an 8,192 ceiling and thinking off,
+any hit is a real answer that long. First quarter hour on v65 (16:42–16:57Z): 37
+turns, 0 blanks, longest answer 4,964 characters.
 
 **Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
 
