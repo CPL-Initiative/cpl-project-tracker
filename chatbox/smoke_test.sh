@@ -112,6 +112,31 @@ answer_must_not_match() { # [-i] regex label
     echo "  [assert ok] $label does not match /$re/"
   fi
 }
+# The same NOT-match, but a NEGATED phrase does not count. A framing guard asks
+# "does the answer call this a failure / report an absent college as zero"; a
+# correct answer often says the opposite in the guard's own words — 15a read
+# "that's real work and a correct outcome, not a failure to act" and 15c read
+# "I can't say they've awarded zero" (both red on 2026-09-11, run 34621090976,
+# against a right answer). So the negated clause comes out FIRST and the regex
+# runs on what is left. Two shapes only, on purpose: a negation word directly
+# before the phrase ("not a failure to", "isn't failing", "rather than poorly"),
+# and a "can't say / cannot claim / not report …" clause to the end of its
+# CLAUSE (comma, semicolon, colon, dash or period) — not its sentence, so
+# "I cannot say more, but X awarded 0" still fails on X. A bare "awarded zero" or "is failing" still fails. Privacy guards
+# (14b) stay on the strict form — naming a contact inside a negation is still
+# naming it.
+answer_must_not_match_unnegated() { # [-i] regex label
+  local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
+  local re="$1" label="$2" stripped
+  stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
+    -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) (a |an |the )?($re)//Ig" \
+    -e "s/\\b(can.?t|cannot|can not|don.?t|do not|won.?t|not|never) (say|claim|report|confirm|state|tell you)\\b[^.,;:—–]*//Ig")"
+  if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
+    echo "::error::$label: answer should NOT match /$re/ outside a negation (regression)"; fail=1
+  else
+    echo "  [assert ok] $label does not match /$re/ outside a negation"
+  fi
+}
 
 run "1 general" \
   '{"query":"What is Credit for Prior Learning?","session_id":"smoke-ci"}'
@@ -362,8 +387,9 @@ answer_must_match "[0-9],[0-9]{3}" "15a states an actual credit figure"
 # as a debt, which is the single most likely way this feature misleads.
 answer_must_match -i "not applicable|ceiling|correctly (ruled|declined|closed)|doesn.?t fit|not every" \
   "15a carries the Not-Applicable ceiling caveat"
-# Framing guard: never a report card.
-answer_must_not_match -i "failing|failure to|worst|poorly|negligent|shameful" \
+# Framing guard: never a report card. Negation-aware — "not a failure to act"
+# is the caveat doing its job, not a regression.
+answer_must_not_match_unnegated -i "failing|failure to|worst|poorly|negligent|shameful" \
   "15a does not frame the backlog as failure"
 
 run "15b credit disposition per-college (San Diego Mesa)" \
@@ -406,7 +432,8 @@ answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as oppo
 # come from a different dataset and are true.
 run "15c absent college is not zero (Calbright)" \
   '{"query":"How many CPL credits has Calbright College awarded?","session_id":"smoke-ci"}'
-answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
+# Negation-aware — "I can't say they've awarded zero" is the right answer.
+answer_must_not_match_unnegated -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
   "15c does not report an absent college as zero"
 
 # ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
