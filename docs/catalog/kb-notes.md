@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-431 document(s).
+433 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -150,6 +150,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A shared credential can only scope to a surface that is exclusive to its group](../kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A silent input cap is a content swap, and the model fills the vacuum with its own instructions](../kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [A similarity threshold can't bridge a zero-overlap synonym — use a curated synonym map](../kb-notes/methodology-synonym-map-vs-similarity-threshold.md) | methodology | published | 2026-06-16 | 2026-06-18 |
@@ -193,6 +194,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [An auto-triggered smoke test validates the version it is replacing](../kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |
+| [An error that arrives inside a successful response is invisible to every status check](../kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [An incentive teaches where the finish line is](../kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [An inline placeholder style outranks the CSS your module injects](../kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md) | methodology | published | 2026-08-21 | 2026-08-21 |
 | [An instruction that names another surface is a dependency nothing enforces](../kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md) | methodology | published | 2026-08-14 | 2026-08-14 |

@@ -1708,3 +1708,71 @@ assertion so the next reader knows what was removed; the "is it gone?" grep read
 the quote as live code. Comments are not code — strip them before judging what a
 script *does*. The repo warned about this one handoff ago ("a marker is
 load-bearing text").
+
+
+---
+
+## 2026-09-11 — Three wrong claims about cost, and a blank answer nobody could see (S255, SkyLedger→)
+
+**What moved.** Sam's corporate API account landed, he dispatched the Sonnet 5
+deploy (v63, `22:35:17Z`), and asked whether to stay there. Answering that
+properly turned into four corrections and one production defect.
+
+**The defect, first, because it matters most.** Sierra returned **blank answers to
+27% of requests** for two hours and every instrument said she was fine — 200 on
+every call, a cache telemetry line on every call, no exception, no error log.
+`chat_interactions` is unambiguous: **0 empty responses every day for two weeks**,
+then 5 of 62 on 09-10 (all post-deploy) and 20 of 76 on 09-11. Only **one**
+non-smoke turn has run since the deploy, so nobody real has been failed yet.
+
+The cause is worth internalizing: **an upstream failure in a stream is delivered
+as data, not as a status.** By the time it lands the response is already 200 and
+`message_start` has already fired the cache log. The loop handled exactly three
+event types, so `{"type":"error",…}` matched none, fell through into nothing, and
+the stream closed through its normal `event: done` path. A well-formed, empty,
+successful answer. Distilled to
+`[[docs/kb-notes/methodology-an-error-inside-a-success-is-invisible-to-every-status-check]]`.
+
+⚠️ **The smoke check was the only thing that noticed, and its report was
+unreadable** — "empty answer", then five content assertions each reporting a regex
+that never had any text to match. It now prints the `event: error` frame, so the
+next failure says what it was.
+
+**The three wrong claims**, all one shape — reasoning about a *share* of an input
+whose total I had never measured:
+
+1. the cached prefix is ~3,234 tokens → **4,476** (`chars/4` ran 28% low)
+2. Sonnet 5 "comes back cheaper" → **1.72× dearer** per input token; the prefix is
+   **19%** of a request, so a lever on it cannot offset a doubling of all of it
+3. the uncached 81% is conversation history → history is **~0** in production
+   (capped at 6 turns × 2,000 chars; the widget omits it), so the 81% is retrieval
+
+Each was checkable in the file or the log, and I checked none of them first. The
+second was pure arithmetic and needed no measurement at all. Distilled to
+`[[docs/kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole]]`.
+
+**Plus a withdrawal.** I "reconciled" the Supabase logs against an Anthropic
+Console figure and reported 4.2% agreement. Sam caught it: the Console key was not
+the one Sierra bills to. The Supabase *secret* named `ANTHROPIC_API_KEY` and a
+Console *key* displayed as `ANTHROPIC_API_KEY` are different namespaces, and I
+matched the strings. The cost table never depended on it — `function_logs` are
+Sierra's own requests whatever key authenticates them — but the agreement was luck
+and reporting it as corroboration was wrong.
+
+**What actually held.** Every load-bearing number came from Sierra's own logs, and
+the before/after across the deploy boundary is clean: 48 Haiku requests, not one
+cached; 23 Sonnet requests, all 23 cached, first write 6 seconds after the deploy
+finished and the last `⚠ NEITHER` 13 seconds before it. That is the one inference
+this run made that survived scrutiny.
+
+**Patterns worth keeping.**
+- **Falsify a new guard against the pre-change file before trusting it.** The
+  stream-error test passes 13/13 on the fix and **1/13** on the pre-fix file, and
+  the single pass is a precondition asserted on purpose. Two guards earlier this
+  session read green on nothing.
+- **`tsc --noEmit` on a Deno file still catches syntax.** Compare the *error
+  profile* against the committed version rather than reading the errors — identical
+  counts mean the edit introduced nothing. Cheap, and it does not need Deno.
+- **A caveat beside a number does not stop the number being used as a fact.** The
+  header said "3,234 IS AN ESTIMATE … measure it." It was read and reasoned past.
+  Replace the number; do not annotate it.

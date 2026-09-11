@@ -4,6 +4,8 @@ date: 2026-09-10
 session: 252 (SkyLabel)
 tags: [handoff, skyview, ccr, cpl-mode, guards, generators]
 status: current
+superseded: true
+superseded_by: session_255_handoff.md
 ---
 
 # You are Session 252
