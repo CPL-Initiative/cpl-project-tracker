@@ -118,18 +118,24 @@ answer_must_not_match() { # [-i] regex label
 # "that's real work and a correct outcome, not a failure to act" and 15c read
 # "I can't say they've awarded zero" (both red on 2026-09-11, run 34621090976,
 # against a right answer). So the negated clause comes out FIRST and the regex
-# runs on what is left. Two shapes only, on purpose: a negation word directly
-# before the phrase ("not a failure to", "isn't failing", "rather than poorly"),
-# and a "can't say / cannot claim / not report …" clause to the end of its
-# CLAUSE (comma, semicolon, colon, dash or period) — not its sentence, so
-# "I cannot say more, but X awarded 0" still fails on X. A bare "awarded zero" or "is failing" still fails. Privacy guards
-# (14b) stay on the strict form — naming a contact inside a negation is still
-# naming it.
+# runs on what is left. Two shapes only, on purpose: a negation word ahead of
+# the phrase INSIDE THE SAME CLAUSE ("not a failure to", "isn't failing",
+# "rather than poorly" — and, since 2026-09-12, "not a backlog it's failing to
+# work through": the gap is bounded at 40 characters and cannot cross a comma,
+# semicolon, colon, dash or period), and a "can't say / cannot claim / not
+# report …" clause to the end of its CLAUSE — not its sentence, so "I cannot say
+# more, but X awarded 0" still fails on X, and so does "not a problem, but
+# colleges are failing to act". A bare "awarded zero" or "is failing" still
+# fails. Privacy guards (14b) stay on the strict form — naming a contact inside
+# a negation is still naming it. tests/smoke_negation_stripper.test.js runs
+# these two expressions through real sed against the recorded answers that
+# went red (runs 34621090976 and 34639257647) and against controls that must
+# stay red.
 answer_must_not_match_unnegated() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2" stripped
   stripped="$(printf '%s' "$LAST_ANSWER" | sed -E \
-    -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) (a |an |the )?($re)//Ig" \
+    -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) [^.,;:—–]{0,40}($re)//Ig" \
     -e "s/\\b(can.?t|cannot|can not|don.?t|do not|won.?t|not|never) (say|claim|report|confirm|state|tell you)\\b[^.,;:—–]*//Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
     echo "::error::$label: answer should NOT match /$re/ outside a negation (regression)"; fail=1
@@ -463,7 +469,10 @@ answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as oppo
 run "15c absent college is not zero (Calbright)" \
   '{"query":"How many CPL credits has Calbright College awarded?","session_id":"smoke-ci"}'
 # Negation-aware — "I can't say they've awarded zero" is the right answer.
-answer_must_not_match_unnegated -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
+# The gap cannot cross a dash (2026-09-12): "…awarded, applied, or transcribed —
+# it's not that the number is zero" went red on run 34639257647 because the
+# match ran across the em-dash into the next clause, where the "not" lives.
+answer_must_not_match_unnegated -i "(awarded|applied|transcribed)[^.—–-]{0,40}\b(0|zero|none)\b" \
   "15c does not report an absent college as zero"
 
 # ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
