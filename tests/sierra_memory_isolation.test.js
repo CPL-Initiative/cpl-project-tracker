@@ -107,17 +107,25 @@ block("(2)", function () {
     ["the guidance filter", /fetchTeamGuidance\([^;]*\bhostSurface\b[^;]*\)/],
     ["the system prompt", /if \(drafting\) systemPrompt\.volatile \+= DRAFTING_BLOCK/],
     ["the interactions log", /if \(!drafting\) await sb\.from\("chat_interactions"\)/],
+    /* v66 (2026-09-12): the surface is now FILED with the turn and ECHOED to the
+     * caller in the meta frame, so a read of chat_interactions can separate the
+     * COBI tabs from the public page and a COBI reader can see how the server
+     * normalized its surface. Both widened on purpose — tests/sierra_viewer.test.js
+     * carries the reasoning and the rest of that change. */
+    ["the interactions log's surface column", /surface: hostSurface,/],
+    ["the meta frame", /event: meta\\ndata: \$\{JSON\.stringify\(\{ surface: hostSurface, viewer: viewer\.kind \}\)\}/],
   ];
   consumers.forEach(([label, re]) =>
     check("(2) consumer present — " + label, re.test(HANDLER)));
 
   // Count every mention in the handler's CODE and reconcile it against the list
-  // above: 4 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
-  // of hostSurface inside the derivation = 7.
+  // above: 6 consumers + 2 definitions (`hostSurface`, `drafting`) + the 1 use
+  // of hostSurface inside the derivation = 9 (7 until v66 added the log column
+  // and the meta frame).
   const mentions = (HANDLER_CODE.match(/hostSurface|\bdrafting\b/g) || []).length;
-  check("(2) ⭐ the surface reaches these four places and no others",
-    mentions === 7,
-    "found " + mentions + " code mentions, expected 7 (4 consumers + 2 definitions + 1 derivation). "
+  check("(2) ⭐ the surface reaches these six places and no others",
+    mentions === 9,
+    "found " + mentions + " code mentions, expected 9 (6 consumers + 2 definitions + 1 derivation). "
     + "If you widened the surface deliberately, add it to the list above and update this count.");
   // ⚠ And prove the stripper did not simply delete everything it was counting —
   // a codeOnly() that ate the handler would make the line above read 0 and the

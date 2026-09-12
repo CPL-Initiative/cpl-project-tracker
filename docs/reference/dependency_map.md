@@ -146,6 +146,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `credential_recs_for_titles` | `edgefn:cpl-chat` | — |
 | `fin_pass_ok` | pages: `CPL_Dashboard.html` | — |
 | `gr_pass_ok` | tabs: `gr-priorities` · pages: `CPL_Dashboard.html` | — |
+| `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `implementation-funding` | — |
@@ -164,7 +165,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `search_statewide_recommendations` | `edgefn:cpl-chat` | — |
 | `sierra_feedback_set_status` | tabs: `sierra-training` | — |
 | `sierra_feedback_upsert` | tabs: `chatbot` · pages: `sierra/index.html` · scripts: `chatbox/smoke_test.sh` | — |
-| `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` | — |
+| `team_pass_ok` | tabs: `raci` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · `edgefn:cpl-chat` | — |
 | `tmc_review_submission` | tabs: `tmc-builder` | — |
 
 ## Edge functions
@@ -852,5 +853,5 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `reviewer_signin.js`
 
-Coverage: 80 Supabase tables · 30 RPCs · 5 edge functions · 461 file
+Coverage: 80 Supabase tables · 31 RPCs · 5 edge functions · 461 file
 datasets · 143 external services · 332 consumers · 33 workflows · 37 tabs.

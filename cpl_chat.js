@@ -259,7 +259,7 @@
   var hostSurface = null;
 
   // ── Chat transcript helpers ──
-  var logEl, inputEl, sendBtn, statusEl, audEl;
+  var logEl, inputEl, sendBtn, statusEl, audEl, viewerEl;
 
   // ── Audience (primary population) ──
   // Required before the first question (Sam, 2026-07-01): the visitor picks who
@@ -683,6 +683,8 @@
     if (document.getElementById('cplchat-aud-css')) return;
     var css = [
       '.cplchat-audience { display:flex; flex-wrap:wrap; align-items:center; gap:7px; margin:8px 0 2px; padding:8px 11px; background:var(--surface-subtle, #f2f6fb); border:1px solid var(--border, #d8dde6); border-radius:10px; }',
+      '.cplchat-viewer { margin:4px 0 0; font-size:.78rem; color:var(--text-muted, #5C5C55); }',
+      '.cplchat-viewer[hidden] { display:none; }',
       '.cplchat-aud-label { font-size:.82rem; font-weight:600; color:var(--text-muted, #5a6478); margin-right:2px; }',
       '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
       '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
@@ -892,6 +894,49 @@
     statusEl.className = 'cplchat-status' + (kind ? ' cplchat-' + kind : '');
   }
 
+  /* The credential this COBI reader holds, sent so the FUNCTION can decide who
+   * is asking (v66, 2026-09-12). The magic-link session's JWT replaces the anon
+   * bearer when one is held; the shared team phrase rides in x-team-pass — the
+   * same two shapes every gated tab already sends to PostgREST
+   * (college_briefing.js authHeaders()). ⚠ THE PAGE NEVER DECLARES A VIEWER —
+   * no body field, no header of our own. It carries the credential, and the
+   * function asks the database what that credential is worth; that is what
+   * keeps "I am internal" from being a claim any caller can make. The public
+   * Sierra page holds no credential and is untouched: it keeps the anon key. */
+  function credentialHeaders() {
+    var h = { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON };
+    var sess = null;
+    try {
+      var K = window.CPL_SESSION;
+      sess = (K && typeof K.get === 'function') ? K.get() : null;
+    } catch (e) { sess = null; }
+    var tok = sess && sess.access_token;
+    if (typeof tok === 'string' && tok.split('.').length === 3 && tok.length > 40) h['Authorization'] = 'Bearer ' + tok;
+    try {
+      var P = window.CPL_TEAM_PHRASE;
+      if (P && typeof P.decorateHeaders === 'function') P.decorateHeaders(h, sess);
+    } catch (e) { /* helper absent — the bearer above stands */ }
+    return h;
+  }
+
+  // ── Who the FUNCTION took us to be (v66) ──
+  // The masthead's "Signed in" reports what the BROWSER holds; this line reports
+  // what the function concluded from the credential it was sent — the check no
+  // page can make for itself, and the reason the flag is derived server-side.
+  // Words only, and nothing at all for a public reader: the line's default
+  // state is empty and hidden, which is the plain-words rule's default too.
+  var VIEWER_WORDS = {
+    reviewer: 'Recognized by the assistant as a signed-in reviewer.',
+    team: 'Recognized by the assistant as CPL team.'
+  };
+  function noteViewer(meta) {
+    if (!viewerEl) return;
+    var kind = meta && typeof meta.viewer === 'string' ? meta.viewer : 'public';
+    var words = Object.prototype.hasOwnProperty.call(VIEWER_WORDS, kind) ? VIEWER_WORDS[kind] : '';
+    viewerEl.textContent = words;
+    viewerEl.hidden = !words;
+  }
+
   // ── Call the Edge Function + stream the SSE response ──
   async function ask(query) {
     var msg = addAssistantMsg();
@@ -903,11 +948,7 @@
     try {
       resp = await fetch(CHAT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'apikey': SUPABASE_ANON,
-          'Authorization': 'Bearer ' + SUPABASE_ANON,
-        },
+        headers: credentialHeaders(),
         // Send the PRIOR turns; the function appends this query as the final
         // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
         // `scope` names the institution whose page this is, so the function
@@ -964,6 +1005,9 @@
                 scrollDown();
               }
             } catch (e) { /* skip malformed delta */ }
+          } else if (evt.event === 'meta') {
+            // Who the FUNCTION took us to be — see noteViewer().
+            try { noteViewer(JSON.parse(evt.data)); } catch (e) { /* skip malformed meta */ }
           } else if (evt.event === 'done') {
             // stream complete
           }
@@ -1126,6 +1170,11 @@
 
     statusEl = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
     wrap.appendChild(statusEl);
+    // The recognition line (v66) — empty and hidden until a turn's `meta` frame
+    // says the function recognized a sign-in. See noteViewer().
+    viewerEl = el('p', { className: 'cplchat-viewer' });
+    viewerEl.hidden = true;
+    wrap.appendChild(viewerEl);
 
     var row = el('div', { className: 'cplchat-inputrow' });
     inputEl = el('input', {
@@ -1271,6 +1320,7 @@
   window.CPL_CHAT = {
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, AUD_OK_KEY: AUD_OK_KEY,
     feedbackPayload: feedbackPayload,
+    credentialHeaders: credentialHeaders, noteViewer: noteViewer, VIEWER_WORDS: VIEWER_WORDS,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
     consumeTestQuestion: consumeTestQuestion,
