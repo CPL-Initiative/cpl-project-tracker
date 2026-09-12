@@ -183,7 +183,10 @@ function corsHeaders(origin: string) {
   return {
     "Access-Control-Allow-Origin": allowed ? origin : "",
     "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type, Authorization, x-client-info, apikey",
+    // x-team-pass (v66): the shared team phrase a COBI reader may hold, so the
+    // function can ask team_pass_ok() who is asking. A preflight that does not
+    // list it drops the header silently and every phrase holder reads as public.
+    "Access-Control-Allow-Headers": "Content-Type, Authorization, x-client-info, apikey, x-team-pass",
   };
 }
 
@@ -3164,6 +3167,91 @@ function normalizeHostScope(raw: any) {
   return { kind, label };
 }
 
+/* ── WHO IS ASKING — the viewer, derived server-side (v66, 2026-09-12) ─────────
+ *
+ * ⭐ THE ACCESS BIT IS NEVER SENT BY THE PAGE. Sam's ask (2026-09-11; ruled
+ * "Yes" 2026-09-12) is one assistant on every COBI surface that may, in a LATER
+ * build, use non-public data. A body field saying "I am the internal bubble" is
+ * a claim any caller can make with the public anon key, which would turn this
+ * public endpoint into a read API for COBI's internals. So the flag is
+ * PER-VIEWER, derived here from the credential the request actually carries:
+ *
+ *   reviewer — the Authorization bearer is a user JWT (the magic-link session
+ *              COBI holds) whose email is on allowed_reviewers
+ *   team     — the request carries the shared team phrase in x-team-pass
+ *   public   — everything else, including every error path
+ *
+ * ⚠ VERIFIED BY THE DATABASE'S OWN PREDICATES, NOT BY DECODING THE TOKEN. The
+ * check calls is_allowed_reviewer() and team_pass_ok() through PostgREST from a
+ * client signed with the ANON key and carrying only the caller's credential —
+ * the same two functions every RLS gate in this project evaluates, so
+ * "reviewer" means exactly what it means on every gated table, and an expired
+ * or forged JWT is a 401 from PostgREST rather than a judgment this code makes.
+ * The SERVICE key is never used for the check: under it auth.jwt() names nobody
+ * and team_pass_ok() reads no header, so its answer would be meaningless.
+ *
+ * ⚠ FAIL CLOSED. Any error, timeout or missing key resolves to public. The flag
+ * can only ever GRANT, so its failure mode is a reviewer treated as the public,
+ * a nuisance — never the public treated as a reviewer.
+ *
+ * ⚠ AND IT WIDENS NOTHING BY ITSELF. This build derives the flag, files it
+ * beside the turn (chat_interactions.viewer) and reports it in an `event: meta`
+ * frame so a COBI reader can see the server recognized their sign-in. Retrieval
+ * is unchanged: every viewer reads the same purpose-built chatbox tables.
+ * Letting a verified reviewer see COBI data is a second, separate build — the
+ * boundary inside COBI is aggregate vs student-detail — and it routes through
+ * Governance and the student-detail disclosure ADR (Rule 10 a3) first.
+ * tests/sierra_viewer.test.js pins every claim in this comment. */
+const VIEWER_KINDS = new Set(["reviewer", "team", "public"]);
+const VIEWER_PUBLIC = Object.freeze({ kind: "public" });
+const TEAM_PASS_MAX = 200;
+
+/* Split the credential out of the request headers. Pure, so a Node test can
+ * call it. A bearer equal to the anon key is the public key every page sends,
+ * not a user credential, and is dropped here so the reviewer RPC is only spent
+ * when there is a user JWT to check. */
+function viewerCredentials(headers: any, anonKey: string) {
+  const read = (name: string) => {
+    try {
+      const v = headers && typeof headers.get === "function" ? headers.get(name) : null;
+      return typeof v === "string" ? v.trim() : "";
+    } catch { return ""; }
+  };
+  const m = /^Bearer\s+(\S+)$/i.exec(read("authorization"));
+  const bearer = m ? m[1] : "";
+  const looksLikeJwt = bearer.split(".").length === 3 && bearer.length > 40;
+  const jwt = looksLikeJwt && anonKey && bearer !== anonKey ? bearer : null;
+  const pass = read("x-team-pass");
+  const teamPass = pass && pass.length <= TEAM_PASS_MAX ? pass : null;
+  return { jwt, teamPass };
+}
+
+/* A PostgREST client that is exactly a browser request: the anon key, plus the
+ * one credential header the caller sent. Injectable so the test can stand in a
+ * fake and prove which key and headers the check is made with. */
+function userScopedClient(anonKey: string, extraHeaders: any) {
+  return createClient(SUPABASE_URL, anonKey, { global: { headers: extraHeaders } });
+}
+
+async function deriveViewer(headers: any, makeClient: any = userScopedClient) {
+  try {
+    const anonKey = Deno.env.get("SUPABASE_ANON_KEY") || "";
+    if (!anonKey) return VIEWER_PUBLIC;   // nothing to sign the check with: nobody is anybody
+    const { jwt, teamPass } = viewerCredentials(headers, anonKey);
+    if (jwt) {
+      const { data, error } = await makeClient(anonKey, { Authorization: `Bearer ${jwt}` }).rpc("is_allowed_reviewer");
+      if (!error && data === true) return { kind: "reviewer" };
+    }
+    if (teamPass) {
+      const { data, error } = await makeClient(anonKey, { "x-team-pass": teamPass }).rpc("team_pass_ok");
+      if (!error && data === true) return { kind: "team" };
+    }
+  } catch (e) {
+    console.error("cpl-chat: viewer check failed — treating the caller as public:", e);
+  }
+  return VIEWER_PUBLIC;
+}
+
 function hostScopeBlock(scope: any) {
   if (!scope) return "";
   let out = `\n\nTHE PAGE THIS READER IS ON — READ THIS BEFORE ANSWERING:\n`;
@@ -3620,7 +3708,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap, creditData] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap, creditData, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -3633,6 +3721,7 @@ Deno.serve(async (req: Request) => {
       fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
+      deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
 
     const sections = searchResult.data;
@@ -3992,6 +4081,13 @@ Deno.serve(async (req: Request) => {
         controller.enqueue(
           encoder.encode(`event: sources\ndata: ${JSON.stringify(sourcesData)}\n\n`)
         );
+        /* Who the server took the caller to be, and which surface asked (v66) —
+         * so a COBI reader can see their sign-in was recognized, and a caller
+         * can see how its surface normalized. A client that dispatches by
+         * event name and never listens for `meta` is unchanged. */
+        controller.enqueue(
+          encoder.encode(`event: meta\ndata: ${JSON.stringify({ surface: hostSurface, viewer: viewer.kind })}\n\n`)
+        );
 
         const reader = anthropicRes.body!.getReader();
         const decoder = new TextDecoder();
@@ -4128,6 +4224,11 @@ Deno.serve(async (req: Request) => {
             response_tokens: responseTokens,
             topic_match: searchMode === "topic" || searchMode === "college_topic",
             audience: audienceKey,
+            // Who the server took the caller to be (v66) — derived from the
+            // credential, never the body — and which surface asked. Both
+            // nullable and additive: a row from before the migration has neither.
+            viewer: viewer.kind,
+            surface: hostSurface,
             // Which rules were actually in play for THIS answer, and which of
             // them a curator had overridden. Recorded per turn because the
             // question that matters is asked about a turn that misbehaved, and

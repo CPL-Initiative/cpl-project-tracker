@@ -1,32 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-12",
-  "_session": 258,
-  "_status": "Session 258 shipped Sam's four funding-tab asks: sections you can reorder while curating, a card for the one statutory outcome the model funds but cannot measure (career attainment) with the activities designated to it, a dropdown of all 32 register activities to designate from, and per-section exclude controls on the public preview. On the way it found that six of the public explainer's seven sections could never actually be curated — a section held back on the tab stayed visible on the page colleges read — because the two pages name their sections differently and the test covering it supplied the name it then checked. Fixed. One bug of ours went out and came back on the first CI run: a styling shortcut made the new card look like a funding priority to every part of the code that counts them; caught, fixed, and the test that missed it now checks the thing that matters. Sam closed the session by ruling all three open questions: the LWDA designation is held rather than pending, the explainer video will frame the institution table rather than blur it, and the Sierra surface field is a go. Nothing is waiting on him.",
+  "_session": 259,
+  "_status": "Session 259 opened on a queue item that turned out to be already built — the field that lets an assistant instruction apply to one place shipped three weeks ago — and worked out what Sam's yes of the 12th actually covered: that whether the assistant may use non-public data is decided by the server from your sign-in, never by the page. That is built and waiting on a deploy: a signed-in COBI reader gets one line saying the assistant recognized the sign-in, the log records who asked and from where, and nothing changes for the public. Two smaller items closed on the way: the two Sierra checks that went red on correct answers now read the negation properly, and the public funding explainer is measured by the accessibility sweep for the first time (it fails, on the same undersized controls as the tab). Waiting on Sam: the deploy, and the go for the hourly health probe.",
   "items": [
     {
-      "id": "s258-fable-sierra-surface-field",
-      "for": "Fable",
+      "id": "s259-sam-dispatch-cpl-chat-v66",
+      "for": "Sam",
       "tab": "cobi-assistant",
-      "text": "Build the Sierra surface field — Sam said yes on 12 September. A surface field on the request and a nullable surface column on sierra_guidance, so a guidance rule can apply to one place rather than all six. Two cautions carry with it: whether Sierra may read non-public data has to be decided by the server from the reviewer's sign-in and never claimed by the page, or the public Sierra becomes a way to read COBI's internal data; and the flag by itself does not widen what she can retrieve — she reads the purpose-built chatbox tables, so letting her see COBI data is a separate build, and the line inside COBI is aggregate versus student-level, which goes through Governance first."
+      "text": "Put the assistant's sign-in awareness live: dispatch the cpl-chat deploy workflow. What changes: nothing for the public page, the Fact Sheet drawer, map.rccd.edu or the vendor iframe. On COBI, a signed-in reviewer or team-phrase holder sees one line under the assistant saying it recognized the sign-in — the proof that the server, not the page, decided who is asking. The log also records who asked and from where. The database change is already in place, so the order does not matter. Then try it: sign in, ask one question on the CPL Assistant tab, look for the line."
     },
     {
-      "id": "s258-fable-funding-followups",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Two small follow-ups behind the funding tab. The Implementation Funding lane file (14.5 KB against a 12 KB budget) and cpl_funding_lessons.md (just over 120 KB) both grew for good reasons this session and were trimmed twice; they need older sections moved to their archives rather than another squeeze. And the public explainer (funding-model/) is a shipped public page that no accessibility target covers, so the one-command sweep has never measured it — add it to a11y.config.js."
+      "id": "s259-sam-health-probe-hourly",
+      "for": "Sam",
+      "tab": "cobi-assistant",
+      "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
     },
     {
-      "id": "s257-fable-smoke-15a-15c",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "Two of Sierra's automated checks keep going red on answers that are correct. Both trip on her caution doing its job — she says a number is NOT a failure, or that she cannot report a figure rather than reporting zero, and the check reads the words without the 'not'. A fix for this shipped on 11 September but only covers two narrow phrasings, and she has since used two others. The patch is written up and small; it was held back because it belongs to a different check than the one that run was changing."
-    },
-    {
-      "id": "s257-fable-health-probe-hourly",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "Raise Sierra's health probe from every three hours to hourly. Its own notes say to do this once billing moved to the corporate account, which happened on 10 September. Also worth doing in the same pass: the probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that. Rather than pay for a second question every run, the probe should read how many blank answers the live table recorded. That costs nothing and sees real visitors instead of its own test question."
+      "id": "s259-sam-skyview-ask-check",
+      "for": "Sam",
+      "tab": "sierra-training",
+      "text": "One database statement lets an instruction apply only to SkyView questions. The live list of places an instruction can be scoped to still lacks 'skyview-ask', so choosing it in Sierra Training fails to save even though the assistant already understands it. Carried since the 9th; say the word and a session applies it — the statement is in the session 260 handoff."
     },
     {
       "id": "s256-sam-forward-kynd-memo",
@@ -51,6 +45,36 @@
       "for": "Sam",
       "tab": "governance",
       "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+    },
+    {
+      "id": "s259-fable-verify-v66-after-deploy",
+      "for": "Fable",
+      "tab": "cobi-assistant",
+      "text": "After Sam's deploy, read the new log columns: how many turns came from a signed-in reviewer, how many from the team phrase, how many from the public, and from which surface. The count of six real questions in thirty hours could not tell the COBI tabs from the public page; now it can. Also show those two columns in Sierra Training's conversation list, which reads the same table."
+    },
+    {
+      "id": "s259-fable-sierra-bubble-ui",
+      "for": "Fable",
+      "tab": "cobi-assistant",
+      "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
+    },
+    {
+      "id": "s259-fable-a11y-pass-funding",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Run the accessibility remediation on the Implementation Funding tab and the public explainer together. Measured: the tab has 317 controls under the 24-pixel minimum and 18 faint-text contrast pairs; the explainer has 245 of the same controls at every width, plus two scrolling tables a keyboard cannot reach on a phone. All of it is one shared section of code, so one pass fixes both."
+    },
+    {
+      "id": "s259-fable-funding-lessons-archive",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "The funding lessons doc sits exactly at its 120 KB budget. Move its oldest sections to its archive before the next session appends to it. The lane file itself is back under budget for the first time since 3 September."
+    },
+    {
+      "id": "s259-fable-health-probe-blind-spot",
+      "for": "Fable",
+      "tab": "cobi-assistant",
+      "text": "The health probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that on the 11th. Rather than pay for a second question every run, have the probe read how many blank answers the live table recorded since its last run. That costs nothing and watches real visitors instead of its own test question."
     },
     {
       "id": "s255-fable-sierra-after-the-deploy",

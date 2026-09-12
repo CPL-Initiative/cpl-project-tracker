@@ -157,3 +157,30 @@ drop policy if exists chat_interactions_reviewer_select on public.chat_interacti
 create policy chat_interactions_reviewer_select on public.chat_interactions
   for select to anon, authenticated
   using (public.is_allowed_reviewer() or public.team_pass_ok());
+
+-- ── chat_interactions additions — viewer + surface (2026-09-12, cpl-chat v66) ─
+
+-- WHO the function took the caller to be, and WHICH surface asked. Both are
+-- written by the edge function under the service key; nothing else writes them.
+--
+--   viewer   'reviewer' | 'team' | 'public' — derived SERVER-SIDE from the
+--            credential the request carried (a user JWT whose email is on
+--            allowed_reviewers, or the x-team-pass phrase), never from the
+--            request body. Sam's "3. Yes" of 2026-09-12; the reasoning is the
+--            "WHO IS ASKING" block in chatbox/supabase/functions/cpl-chat/index.ts.
+--   surface  the caller's normalized surface (KNOWN_SURFACES), so a read of
+--            this table can separate the COBI tabs from the public page — the
+--            2026-09-11 count of "6 human turns" could not.
+--
+-- NULLABLE AND ADDITIVE ON PURPOSE: rows logged before this migration carry
+-- neither, and a function deployed before it simply does not write them, so
+-- the order of (migrate, deploy) cannot matter. No CHECK on surface — it is
+-- telemetry normalized upstream by the function, and constraining it here
+-- would make a new surface a SIXTH place to edit. The viewer vocabulary is
+-- closed and small, so that one is constrained; tests/sierra_viewer.test.js
+-- pins it equal to VIEWER_KINDS in the function.
+alter table public.chat_interactions add column if not exists viewer text;
+alter table public.chat_interactions drop constraint if exists chat_interactions_viewer_ck;
+alter table public.chat_interactions add constraint chat_interactions_viewer_ck
+  check (viewer is null or viewer in ('reviewer', 'team', 'public'));
+alter table public.chat_interactions add column if not exists surface text;
