@@ -415,6 +415,53 @@ check("the status line is empty on a successful paint",
     qualify.querySelector("h2").textContent === house);
   check("and un-hiding brings the section back",
     doc.querySelector('[data-fsec="timing"]').hidden === false);
+
+  // ── THE GUARD THAT WAS MISSING (Sam, 2026-09-11) ──────────────────────
+  //
+  // ⚠️ Every check above writes the id it then reads — `{ titles: { qualify } }`
+  // straight into the shared map — so together they prove the RESOLVER works
+  // and say nothing about whether a curator can ever reach that id. They
+  // could not: `timing` is the ONLY id these seven share with the tab's own
+  // section set, and it collides by coincidence of naming. Six of the seven
+  // sections on this page therefore honored a rename and a hide that no
+  // control anywhere could produce. A guard that supplies its own input can
+  // only test the half after the input.
+  //
+  // So: the tab DECLARES this page's sections (PUBLIC_SECTIONS), and the
+  // declaration has to agree with the markup — in membership AND in order,
+  // because the declared order is what "Restore the default order" restores to.
+  check("the tab's declared public sections ARE this page's sections, in page order",
+    typeof T2.publicSectionOrder === "function" &&
+    T2.publicSectionOrder().join(",") === IDS.join(","));
+
+  // The reorder appends each section to their shared parent, which is only
+  // correct while that parent holds the sections and nothing else. The day a
+  // banner or a nav is added inside <main>, this loop would move it to the top.
+  const main = doc.querySelector('[data-fsec="lede"]').parentNode;
+  check("the sections' parent holds the sections and nothing else",
+    main.tagName === "MAIN" &&
+    Array.from(main.children).length === IDS.length &&
+    Array.from(main.children).every(function (el) { return el.hasAttribute("data-fsec"); }));
+
+  const fsecOrder = function () {
+    return Array.from(doc.querySelectorAll("[data-fsec]"))
+      .map(function (el) { return el.getAttribute("data-fsec"); });
+  };
+  T2._setShared({ pubSecOrder: ["timing", "lede"] });
+  win.CPL_ORDER_SECTIONS();
+  const reordered = fsecOrder();
+  check("a curator's order MOVES the sections on this page",
+    reordered[0] === "timing" && reordered[1] === "lede");
+  check("...the ones not named append in the page's own order, none lost or doubled",
+    reordered.length === IDS.length &&
+    reordered.slice(2).join(",") ===
+      IDS.filter(function (id) { return id !== "timing" && id !== "lede"; }).join(",") &&
+    reordered.slice().sort().join(",") === IDS.slice().sort().join(","));
+
+  T2._setShared({});
+  win.CPL_ORDER_SECTIONS();
+  check("clearing it restores the order the page ships with",
+    fsecOrder().join(",") === IDS.join(","));
 }
 
 let pass = 0;

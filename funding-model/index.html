@@ -397,6 +397,12 @@ section[hidden]{display:none}
       equivalent FTES</strong> at the college&rsquo;s own calendar &mdash; 30 semester units make one FTES, or 45 on a
       quarter calendar.</p>
 
+    <!-- Outcomes the model funds but does not measure (Sam, 2026-09-11). Painted
+         from the same config the tab curates, so a designation made on the tab
+         reaches this page; a goal with nothing designated paints nothing rather
+         than an empty heading. -->
+    <div id="reported"></div>
+
     <h3 style="margin-top:1.6em">How a share becomes a target</h3>
     <p>The model divides each priority&rsquo;s share by a price to produce its target. The price is the 2026-27
       state rate of <strong><span id="l-rate">$5,649.63</span> per FTES</strong>, multiplied by that
@@ -539,7 +545,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   // (The page's own every-college table, whose draw() cleared itself, is
   // retired — the institution table is the tab's embed now, and the tab owns
   // its rendering. The milestone list joins the emptied set.)
-  ["prios", "workedbody", "cards", "nc-list", "timing-list"].forEach(function (id) {
+  ["prios", "workedbody", "cards", "nc-list", "timing-list", "reported"].forEach(function (id) {
     var el = document.getElementById(id);
     if (el) el.textContent = "";
   });
@@ -607,6 +613,49 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     }
     box.appendChild(el);
   });
+
+  // ── outcomes the model funds but does not measure ─────────────────────
+  // Sam, 2026-09-11: goal (C) has no campus measure, so it is reported on
+  // designated projects instead. Built with createElement and textContent like
+  // every other painter here — a curator types a project name and a college
+  // reads it, so nothing on this path goes through innerHTML.
+  //
+  // The project STATUS is deliberately not here. It changes week to week and
+  // this page would carry whatever the config last stored; the live outcome is
+  // on the project dashboard, which the closing line points at.
+  (function () {
+    var host = document.getElementById("reported");
+    if (!host || !D.reported || !D.reported.length) return;
+    D.reported.forEach(function (r) {
+      var h = document.createElement("h3");
+      h.style.marginTop = "1.6em";
+      h.textContent = "Reported, not measured: " + r.text;
+      var lead = document.createElement("p");
+      lead.textContent = "No campus measure scores this outcome, so no institution earns against it and " +
+        "no figure on this page prices it. The Chancellor\u2019s Office funds this goal through the " +
+        "statewide project allocation and reports on the work below.";
+      host.appendChild(h);
+      host.appendChild(lead);
+      var ul = document.createElement("ul");
+      ul.className = "strat";
+      r.projects.forEach(function (pr) {
+        var li = document.createElement("li");
+        li.textContent = pr.name;
+        ul.appendChild(li);
+      });
+      host.appendChild(ul);
+      var close = document.createElement("p");
+      close.appendChild(document.createTextNode("Each project reports its own progress on the "));
+      var a = document.createElement("a");
+      a.href = "https://cpl-initiative.github.io/cpl-project-tracker/";
+      a.target = "_blank";
+      a.rel = "noopener";
+      a.textContent = "CPL project dashboard";
+      close.appendChild(a);
+      close.appendChild(document.createTextNode("."));
+      host.appendChild(close);
+    });
+  })();
 
   // ── the timing milestones (Step four) ─────────────────────────────────
   // The tab's Timing section, verbatim from the same config layers; a
@@ -866,15 +915,39 @@ window.CPL_TABS = {
       else h.innerHTML = h.getAttribute("data-house-title");
     }
   }
+  // The order a curator set for THIS page's sections (Sam, 2026-09-11: "make
+  // the sections movable when curating"). The tab stores it and resolves it;
+  // this moves the DOM to match.
+  //
+  // <main> holds the seven sections and nothing else — the footer is its
+  // sibling — so appending in order is the whole operation, and the last
+  // section keeps its own border because section:last-of-type follows the DOM.
+  // funding_model_page.test.js asserts that main's element children ARE exactly
+  // the sections, because the day something else is added in there this loop
+  // would quietly move it to the top.
+  function orderSections() {
+    if (typeof T.publicSectionOrder !== "function") return;
+    var order = T.publicSectionOrder();
+    if (!order || !order.length) return;
+    var first = document.querySelector("[data-fsec]");
+    var parent = first && first.parentNode;
+    if (!parent) return;
+    for (var i = 0; i < order.length; i++) {
+      var el = parent.querySelector('[data-fsec="' + order[i] + '"]');
+      if (el) parent.appendChild(el);
+    }
+  }
   // Exposed the way CPL_PAINT_EXPLAINER is, so a test can drive it directly:
   // the paint path reaches it only through a model-change notification, and a
   // curation bug that only shows on the second paint is exactly the kind that
   // ships.
   window.CPL_CURATE_SECTIONS = curateSections;
+  window.CPL_ORDER_SECTIONS = orderSections;
   function paint() {
     try {
       window.CPL_PAINT_EXPLAINER(B.buildPayload(T, window.CPL_FUNDING));
       curateSections();
+      orderSections();
       painted = true;
       if (status) status.textContent = "";
     } catch (e) {
