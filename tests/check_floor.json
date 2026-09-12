@@ -257,6 +257,7 @@
     "sierra_training_surface.test.js": 15,
     "sierra_turn_review.test.js": 32,
     "sierra_viewer.test.js": 63,
+    "smoke_negation_stripper.test.js": 24,
     "statewide_recs_render.test.js": 22,
     "suppression_floor.test.js": 6,
     "team_phrase_affordance.test.js": 14,
