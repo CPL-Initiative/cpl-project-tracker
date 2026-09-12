@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-438 document(s).
+440 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -99,6 +99,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A guard that fails on truth gets muted](../kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md) | methodology | published | 2026-08-09 | 2026-08-09 |
+| [A guard that supplies its own input tests only the half after the input](../kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md) | methodology | published | 2026-09-12 | 2026-09-12 |
 | [A guard whose protection depends on the order you work in is worse than no guard](../kb-notes/methodology-a-guard-that-depends-on-order-is-worse-than-none.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A guardrail that only forbids disables the feature — restrain salesmanship, not facts](../kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md) | methodology | published | 2026-08-07 | 2026-08-07 |
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
@@ -168,6 +169,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A store's echo is not your state — clone what a snapshot delivers](../kb-notes/methodology-a-stores-echo-is-not-your-state.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A store's freshness tracks whether its update is unconditional](../kb-notes/methodology-freshness-tracks-conditionality-not-intent.md) | methodology | published | 2026-08-29 | 2026-08-29 |
+| [A styling class is an API, so borrowing one joins every selector that reads it](../kb-notes/methodology-a-styling-class-is-an-api.md) | methodology | published | 2026-09-12 | 2026-09-12 |
 | [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
 | [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |

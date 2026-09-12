@@ -4,6 +4,8 @@ date: 2026-09-11
 session: 258 (SkyList)
 tags: [handoff, college-identity, sierra, cpl-chat, map-users, a11y]
 status: current
+superseded: true
+superseded_by: session_259_handoff.md
 ---
 
 # You are Session 258

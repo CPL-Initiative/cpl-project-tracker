@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 438,
+   "count": 440,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1654,6 +1654,25 @@
      "updated": "2026-08-09"
     },
     {
+     "created": "2026-09-12",
+     "governs": [
+      "tests/funding_model_page.test.js",
+      "tests/cpl_funding_section_order.test.js",
+      "cpl_funding.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "curation",
+      "funding"
+     ],
+     "title": "A guard that supplies its own input tests only the half after the input",
+     "type": "methodology",
+     "updated": "2026-09-12"
+    },
+    {
      "created": "2026-09-09",
      "governs": [
       "kb/_glyph_sweep.py",
@@ -2989,6 +3008,25 @@
      "title": "A store's freshness tracks whether its update is unconditional",
      "type": "methodology",
      "updated": "2026-08-29"
+    },
+    {
+     "created": "2026-09-12",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_render.test.js",
+      "tests/cpl_funding_rollup.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-styling-class-is-an-api.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "frontend",
+      "funding"
+     ],
+     "title": "A styling class is an API, so borrowing one joins every selector that reads it",
+     "type": "methodology",
+     "updated": "2026-09-12"
     },
     {
      "created": "2026-08-08",
@@ -9573,7 +9611,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-03"
+     "updated": "2026-09-12"
     },
     {
      "created": "2026-06-21",
@@ -12594,7 +12632,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-09-03"
+     "updated": "2026-09-12"
     },
     {
      "created": "2026-08-28",
@@ -13059,8 +13097,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 232,
+   "count": 233,
    "docs": [
+    {
+     "created": "2026-09-12",
+     "governs": [],
+     "n": 259,
+     "path": "docs/session_259_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "curation",
+      "testing",
+      "sierra"
+     ],
+     "title": "four asks on the funding tab, and a resolver nobody could reach",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-11",
      "governs": [],
@@ -16987,5 +17042,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 880
+ "total": 883
 }
