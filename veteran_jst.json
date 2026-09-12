@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-11T16:36:34.192328+00:00",
+  "scraped_at": "2026-09-12T10:53:14.994310+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27935,
+    "jst": 28019,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -42,7 +42,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1481,
+      "jst": 1552,
       "star": true
     },
     "Bakersfield College": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 552,
+      "jst": 553,
       "star": false
     },
     "Long Beach City College": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 517,
+      "jst": 518,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -220,14 +220,14 @@
       "jst": 185,
       "star": false
     },
+    "Mission College": {
+      "vets": 158,
+      "jst": 156,
+      "star": true
+    },
     "Los Angeles Mission College": {
       "vets": 112,
       "jst": 152,
-      "star": true
-    },
-    "Mission College": {
-      "vets": 158,
-      "jst": 154,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -375,6 +375,11 @@
       "jst": 44,
       "star": false
     },
+    "Madera College": {
+      "vets": 43,
+      "jst": 50,
+      "star": true
+    },
     "Las Positas College": {
       "vets": 233,
       "jst": 21,
@@ -394,11 +399,6 @@
       "vets": 42,
       "jst": 17,
       "star": false
-    },
-    "Madera College": {
-      "vets": 43,
-      "jst": 44,
-      "star": true
     },
     "Cañada College": {
       "vets": 47,
@@ -445,6 +445,11 @@
       "jst": 8,
       "star": false
     },
+    "Rio Hondo College": {
+      "vets": 172,
+      "jst": 2,
+      "star": false
+    },
     "Moorpark College": {
       "vets": 179,
       "jst": 229,
@@ -477,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 106,
+      "jst": 107,
       "star": false
     },
     "Cuyamaca College": {
@@ -530,13 +535,13 @@
       "jst": 1,
       "star": false
     },
-    "Rio Hondo College": {
-      "vets": 172,
-      "jst": 0,
+    "Grossmont College": {
+      "vets": 415,
+      "jst": 1,
       "star": false
     },
-    "Orange Coast College": {
-      "vets": 396,
+    "College of Marin": {
+      "vets": 69,
       "jst": 1,
       "star": false
     },
@@ -545,13 +550,8 @@
       "jst": 0,
       "star": false
     },
-    "Grossmont College": {
-      "vets": 415,
-      "jst": 1,
-      "star": false
-    },
-    "College of Marin": {
-      "vets": 69,
+    "Orange Coast College": {
+      "vets": 396,
       "jst": 1,
       "star": false
     },
