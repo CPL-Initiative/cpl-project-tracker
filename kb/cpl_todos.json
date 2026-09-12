@@ -2,25 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-12",
   "_session": 258,
-  "_status": "Session 258 shipped Sam's four funding-tab asks: sections you can reorder while curating, a card for the one statutory outcome the model funds but cannot measure (career attainment) with the activities designated to it, a dropdown of all 32 register activities to designate from, and per-section exclude controls on the public preview. On the way it found that six of the public explainer's seven sections could never actually be curated — a section held back on the tab stayed visible on the page colleges read — because the two pages name their sections differently and the test covering it supplied the name it then checked. Fixed, and the guard now reads the names the system produces. One bug of ours went out and came back on the first CI run: a styling shortcut made the new card look like a funding priority to every part of the code that counts them. Caught, fixed, and the test that missed it now checks the thing that matters. Waiting on Sam: the LWDA designation, how the institution table should appear in the explainer video, and whether to build the Sierra access-scope flag.",
+  "_status": "Session 258 shipped Sam's four funding-tab asks: sections you can reorder while curating, a card for the one statutory outcome the model funds but cannot measure (career attainment) with the activities designated to it, a dropdown of all 32 register activities to designate from, and per-section exclude controls on the public preview. On the way it found that six of the public explainer's seven sections could never actually be curated — a section held back on the tab stayed visible on the page colleges read — because the two pages name their sections differently and the test covering it supplied the name it then checked. Fixed. One bug of ours went out and came back on the first CI run: a styling shortcut made the new card look like a funding priority to every part of the code that counts them; caught, fixed, and the test that missed it now checks the thing that matters. Sam closed the session by ruling all three open questions: the LWDA designation is held rather than pending, the explainer video will frame the institution table rather than blur it, and the Sierra surface field is a go. Nothing is waiting on him.",
   "items": [
     {
-      "id": "s258-sam-designate-lwda",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Designate the LWDA partnership on the new (C) Career attainment card. Your other three examples resolved to register projects (Credential Registry 1.4, Apprenticeship Sprint 4.2, Student Stories 3.5) and are already on the card. There is no LWDA project — the agency only appears inside 1.4's own update text, and 4.3 Strategic Partnerships names no partner — so this one is yours to pick rather than ours to guess. Open the card, choose from the dropdown of all 32 activities, press Designate."
-    },
-    {
-      "id": "s258-sam-blur-or-frame-video",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Decide how the institution table appears in the explainer video. You floated blurring the college names; the recommendation is not to — a blur has to track every scroll, one slipped frame shows what it hid, and the names are already public on the project dashboard. Instead use the page's own search box on camera to show one college, then open its drill-in. Student counts under 10 and $1,000-rounded public figures are already handled on that page."
-    },
-    {
-      "id": "s258-sam-sierra-bubble-scope",
-      "for": "Sam",
+      "id": "s258-fable-sierra-surface-field",
+      "for": "Fable",
       "tab": "cobi-assistant",
-      "text": "Say whether to build the Sierra scope flag. One bubble everywhere is the right shape, but whether Sierra may read non-public data has to be decided by the server from your sign-in, not claimed by the page — otherwise the public Sierra becomes a way to read COBI's internal data. And 'any information' still needs a floor: the line inside COBI is aggregate versus student-level, not public versus internal."
+      "text": "Build the Sierra surface field — Sam said yes on 12 September. A surface field on the request and a nullable surface column on sierra_guidance, so a guidance rule can apply to one place rather than all six. Two cautions carry with it: whether Sierra may read non-public data has to be decided by the server from the reviewer's sign-in and never claimed by the page, or the public Sierra becomes a way to read COBI's internal data; and the flag by itself does not widen what she can retrieve — she reads the purpose-built chatbox tables, so letting her see COBI data is a separate build, and the line inside COBI is aggregate versus student-level, which goes through Governance first."
     },
     {
       "id": "s258-fable-funding-followups",

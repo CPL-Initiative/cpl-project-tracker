@@ -59,36 +59,47 @@ Read in order:
    dropdown"** — both built; already-designated rows say so rather than leaving.
 3. **"That would be the same for the Opportunities card"** — (D) is the same code
    path, no special case.
-4. **LWDA acknowledged, not designated** — see NEEDS SAM.
+4. **LWDA acknowledged, not designated.**
+5. ⭐ **ALL THREE OPEN QUESTIONS RULED AT SESSION END (2026-09-12).** He answered
+   them by number: **"1. Hold, no action / 2. Frame / 3. Yes"** —
+   (1) the LWDA designation is **held**, not pending; (2) the video **frames**
+   the institution table rather than blurring it; (3) **build the Sierra scope
+   flag**. Nothing in this handoff is waiting on him.
 
 ## NEEDS SAM
 
-1. ⓪ **Designate the LWDA partnership.** No LWDA project exists; the agency
-   appears in **1.4's own update text**, and 4.3 Strategic Partnerships names no
-   partner. Two clicks in the new multi-select, or the register gains a project.
-   Deliberately not guessed.
-2. **Whether to blur college names in the video.** He proposed it; I pushed back
-   (a blur must track every scroll, the names are already public in
-   `index.html`, and a blurred table reads as withholding). **Recommended
-   instead:** search to one college on camera, open the drill-in. Per-college
-   counts under 10 and $1,000-floored public dollars already handle the
-   sensitive cells. **Not ruled.**
-3. **Sierra bubble on every COBI surface — scope, not surface.** He wants one
-   Sierra that may use non-public data from a COBI bubble. ⚠️ The access bit
-   cannot come from the page (any caller can claim it); derive it **server-side
-   from the reviewer credential**, which makes it per-VIEWER, not per-surface.
-   The real boundary inside COBI is **aggregate vs student-detail**, not
-   public/non-public. The `surface` field in
-   [`lanes/sierra-retrieval-corpus.md`](reference/lanes/sierra-retrieval-corpus.md)
-   is still blocked on his go and is the prerequisite.
-4. Carried: the funding dials (Accepted 25% / factor 1.0); the sixteen-row
-   register sweep; `sierra_guidance`'s CHECK constraint lacks `skyview-ask`.
+1. **Nothing from this run.** He ruled all three before signing off.
+2. Carried from earlier sessions: the funding dials (Accepted 25% / factor 1.0);
+   the sixteen-row register sweep; `sierra_guidance`'s CHECK constraint lacks
+   `skyview-ask`.
+
+⚠️ **HELD, NOT PENDING — do not re-ask and do not act on inference.** The
+**LWDA partnership** stays undesignated on the (C) card. No LWDA project exists
+(the agency appears only inside 1.4's own update text; 4.3 Strategic
+Partnerships names no partner) and he chose to leave it rather than file it
+under the nearest row. The multi-select is built and waiting for him.
 
 ## Queue
 
 - ⚠️ **15a/15c still red** and #1555 did not close them — two correct answers
   trip the stripper's narrow shapes. Patch proposed in the #1559 comment,
   unpushed.
+- ⭐ **BUILD THE SIERRA `surface` FIELD — Sam ruled "Yes" (2026-09-12).** A
+  `surface` field on the request plus a nullable `surface` column on
+  `sierra_guidance`; not a forked Sierra, not a `mode` enum. ⚠️ **The access bit
+  is derived SERVER-SIDE from the reviewer credential, never sent by the page** —
+  a browser-declared "I am the internal bubble" is a claim any caller can make,
+  which would turn the public Sierra endpoint into a read API for COBI's
+  internals. It is per-VIEWER, not per-surface. ⚠️ **It does not widen retrieval
+  by itself:** Sierra reads the purpose-built `chatbox_*` tables, so letting her
+  see COBI data is a SECOND build, and the boundary inside COBI is aggregate vs
+  student-detail — that one routes through Governance and the student-detail
+  disclosure ADR (Rule 10 a3) before it ships.
+  [lane](reference/lanes/sierra-retrieval-corpus.md)
+- **The explainer video FRAMES rather than blurs** (Sam, 2026-09-12). Search to
+  one college on camera, then open its drill-in; no blur anywhere. The
+  [shot sheet](https://claude.ai/code/artifact/c88e9677-9585-4171-8634-9aeee7c38f8e)
+  already carries this as beat 2.
 - **Raise `cpl-chat-health.yml` to hourly** — its own header says to.
 - **The probe's blind spot:** read the blank rate from `chat_interactions`
   rather than adding a second question.
