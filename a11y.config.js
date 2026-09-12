@@ -346,5 +346,30 @@ module.exports = {
     title: "CPL Fact Sheet (public)",
     mayHideBelow: [],
   },
+
+  /* ── The public funding explainer ────────────────────────────────────────
+     funding-model/index.html hosts the Implementation Funding tab's own
+     college section in embed mode and paints the rest from the engine. It is
+     a shipped PUBLIC view — cpl_funding_public.html has redirected here since
+     2026-09-09 and the URL went to colleges — and until 2026-09-12 no a11y
+     target covered it: the tab it embeds is measured under `cobi`, the page
+     around it by nothing. Distinct from scripts/check_public_page_layout.js
+     (the lane's NEXT ⑥), which asserts one page's grid; this asks what every
+     page must answer. Nothing may vanish at a narrow width: its breakpoints
+     only re-stack grids.
+
+     Measured when added (9 widths): 245 targets under 24x24 at every width
+     — the embedded college section's per-college Confirm Participation links
+     (cplfund-optin-jump), the detail carets (cplfund-caret, 19-22px tall), the
+     Download-as-Excel button (cplfund-optbtn) and eight inputs — and, at
+     430px and below, two scrolling .tablebox regions not keyboard reachable.
+     All of it is cpl_funding.js's shared section, so the /a11y-pass on the
+     funding tab fixes both surfaces at once. A target that fails is still the
+     right target: this file measures, it does not certify. */
+  "funding-model": {
+    file: "funding-model/index.html",
+    title: "Funding model explainer (public)",
+    mayHideBelow: [],
+  },
   },
 };
