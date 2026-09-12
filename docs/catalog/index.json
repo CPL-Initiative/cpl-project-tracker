@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 440,
+   "count": 441,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7084,6 +7084,25 @@
      "updated": "2026-08-14"
     },
     {
+     "created": "2026-09-12",
+     "governs": [
+      "docs/reference/lanes/sierra-retrieval-corpus.md",
+      "kb/cpl_todos.json",
+      "chatbox/supabase/functions/cpl-chat/index.ts"
+     ],
+     "path": "docs/kb-notes/methodology-verify-a-queue-item-against-the-code-before-it-reaches-the-decider.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "governance",
+      "sierra",
+      "checkpoint"
+     ],
+     "title": "Verify a queue item against the code before it reaches the decider",
+     "type": "methodology",
+     "updated": "2026-09-12"
+    },
+    {
      "created": "2026-09-05",
      "governs": [
       "prototype/ccr_universe.js",
@@ -12828,7 +12847,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-09-11"
+     "updated": "2026-09-12"
     },
     {
      "created": "2026-08-28",
@@ -13097,8 +13116,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 233,
+   "count": 234,
    "docs": [
+    {
+     "created": "2026-09-12",
+     "governs": [],
+     "n": 260,
+     "path": "docs/session_260_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "sierra",
+      "curation",
+      "testing",
+      "a11y"
+     ],
+     "title": "the flag that was unbuilt, and the field that was not",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-12",
      "governs": [],
@@ -17042,5 +17078,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 883
+ "total": 885
 }

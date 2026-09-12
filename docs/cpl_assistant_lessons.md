@@ -509,3 +509,74 @@ that the number is **zero**"* (the guarded regex matches straight across the
 em-dash into the next clause). Proposed patch in the #1559 comment; not pushed,
 because it is a different mode from what that PR changes and `smoke` is
 non-required.
+
+## 2026-09-12 — SkyGuard (S259): the field that was already built, and the flag that was not
+
+**The queue item.** SkyList's handoff led with *"BUILD THE SIERRA `surface`
+FIELD — Sam ruled 'Yes'."* The session's first grep found `KNOWN_SURFACES`,
+`normalizeSurface`, the `sierra_guidance.surface` column with its CHECK, the
+Training-tab picker and two guard suites — all shipped 2026-08-22 as v56 — and
+two live rows (`15ec666b`, `7d8641be`) already scoped to `my-college`. The lane
+had read *"RECOMMENDED, NOT BUILT … blocked on Sam's go"* since it was relocated
+out of `CLAUDE.md` on 2026-08-28, three weeks after the thing it described went
+live, and S258 lifted that line into open question 3 without a grep.
+
+**What Sam actually answered.** The To-Do he read (`s258-sam-sierra-bubble-scope`)
+asked whether to build the *scope flag*, with the caution that the access bit
+must be decided by the server from the sign-in and never claimed by the page.
+His *"3. Yes"* is a ruling on that. The checkpoint relabeled it "the surface
+field" in the handoff, the lane, the To-Do and the memory row in one commit.
+Recovering the real question took the pre-ruling handoff, the pre-ruling To-Do,
+the lane's history and a read of the live table. Durable form:
+[`methodology-verify-a-queue-item-against-the-code-before-it-reaches-the-decider`](kb-notes/methodology-verify-a-queue-item-against-the-code-before-it-reaches-the-decider.md).
+
+**What was built (cpl-chat v66, not yet deployed).** `deriveViewer()` reads the
+`Authorization` bearer and `x-team-pass` and asks the database's own predicates
+— `is_allowed_reviewer()` and `team_pass_ok()` by RPC, from a client signed with
+the ANON key and carrying only the caller's credential. `reviewer` · `team` ·
+`public`; every error path is `public`; the anon bearer alone costs zero round
+trips. It runs inside the parallel retrieval batch, so a reviewer costs the
+public no latency. The turn's log row gains `viewer` and `surface` (migration
+`chat_interactions_viewer_surface`, applied live; schema of record in
+`chatbox/supabase_sierra_feedback.sql`), and the stream gains `event: meta`
+`{surface, viewer}` after `sources`. The COBI widget sends what it holds through
+`credentialHeaders()` — the magic-link JWT as bearer, the team phrase via the
+shared `decorateHeaders()` — and renders the frame as one line of words,
+*Recognized by the assistant as a signed-in reviewer*, nothing for the public.
+The public page and the Fact Sheet drawer are untouched. Guard:
+`tests/sierra_viewer.test.js` (63 checks, the derivation exercised under a fake
+client factory). ⚠️ **It widens nothing.** No prompt line, no retrieval change.
+Letting a verified reviewer see COBI data is the second build; the boundary
+inside COBI is aggregate vs student-detail and that one routes through
+Governance and the student-detail disclosure ADR first.
+
+⭐ **Why the check is a browser request and not a decode.** `is_allowed_reviewer()`
+reads `auth.jwt()`. Through PostgREST with the user's own bearer, PostgREST
+validates signature and expiry before the function body runs, so an expired or
+forged token is a 401 and never a judgment made in Deno — and "reviewer" means
+exactly what it means on every RLS-gated table, because it is the same
+predicate. Under the service key `auth.jwt()` names nobody, so a check signed
+that way says "no" to everyone; a hand-rolled read of `allowed_reviewers` with
+an email pulled out of an undecoded token says "yes" to anyone who can type
+one. The anon key plus the caller's header is the only shape that verifies.
+
+**Two observations filed, not acted on.** `chat_interactions` still carries an
+`anon_insert_only` policy (`with_check true`) from before the function logged
+under the service key; any holder of the public key can insert a log row, the
+new columns included. Not widened by this change and not this session's to
+remove. And `cpl-chat-health.yml`'s own header says to raise the cadence to
+hourly *once billing moves to the corporate account*. It has: the 2026-09-11
+section above records the account landing on 2026-09-10, and three consecutive
+handoffs carry it — a fact this session first missed because it asked
+`cpl_memory` and the table never got that row. One store's silence is not the
+corpus's. The one-line change (`'7 */3 * * *'` → `'7 * * * *'` plus the header)
+was then stopped by the remote environment's permission rules, which treat a
+scheduled workflow as a shared resource that spends funding; it is a NEEDS SAM
+item with the diff written out, not a dropped one.
+
+**15a/15c closed (PR #1566).** The #1559 patch as its own PR: shape 1 spans a
+bounded 40-character gap that cannot cross `, ; : — –` or a period; 15c's class
+excludes the dashes. `tests/smoke_negation_stripper.test.js` reads both sed
+expressions and both mode regexes out of the script and runs real `sed` and
+`grep`: the two recorded answers pass, the failure shapes still fail, and the
+suite fails 6 of 24 against the previous script.

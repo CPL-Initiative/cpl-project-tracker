@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 896,
-    "bytes": 9519312,
-    "over_budget": 7,
-    "handoff_max": 259,
+    "files": 898,
+    "bytes": 9540000,
+    "over_budget": 6,
+    "handoff_max": 260,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59985,
     "superseded_files": 0,
@@ -26,45 +26,45 @@
       },
       "other": {
         "files": 113,
-        "bytes": 3015158,
+        "bytes": 3015673,
         "over": 3
       },
       "index": {
         "files": 1,
-        "bytes": 23814,
+        "bytes": 25943,
         "over": 0
       },
       "lessons": {
         "files": 74,
-        "bytes": 1985619,
+        "bytes": 1990630,
         "over": 2
       },
       "kb_note": {
-        "files": 442,
-        "bytes": 2272472,
+        "files": 443,
+        "bytes": 2277378,
         "over": 0
       },
       "roadmap_lane": {
         "files": 32,
-        "bytes": 183495,
-        "over": 2
+        "bytes": 181003,
+        "over": 1
       },
       "handoff": {
-        "files": 233,
-        "bytes": 1978769,
+        "files": 234,
+        "bytes": 1989388,
         "over": 0
       }
     },
     "by_rule": {
       "house_voice": 24,
-      "oversized_doc": 7,
+      "oversized_doc": 6,
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2852,
-      "bytes": 1370692284,
-      "heavy_bytes": 614344361,
-      "heavy_share": 0.448,
+      "files": 2858,
+      "bytes": 1378180259,
+      "heavy_bytes": 614644275,
+      "heavy_share": 0.446,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -387,19 +387,6 @@
       "path": "docs/reference/lanes/cobi-dark-mode.md"
     },
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 14457,
-        "limit": 12000,
-        "lane": "roadmap_lane",
-        "over_by": 2457,
-        "ratio": 1.2
-      },
-      "message": "14,457 B is 1.2× the roadmap_lane budget (12,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -521,10 +508,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 18976631,
+        "bytes": 19266029,
         "kind": "dir"
       },
-      "message": "directory totals 18,976,631 B inside the vault"
+      "message": "directory totals 19,266,029 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -681,10 +668,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 9400074,
+        "bytes": 9410552,
         "kind": "file"
       },
-      "message": "9,400,074 B single file inside the vault"
+      "message": "9,410,552 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -931,10 +918,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354159,
+        "bytes": 2354197,
         "kind": "file"
       },
-      "message": "2,354,159 B single file inside the vault"
+      "message": "2,354,197 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
