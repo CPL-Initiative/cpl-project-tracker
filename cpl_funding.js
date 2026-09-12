@@ -317,7 +317,7 @@
     ".cplfund-grip { cursor: grab; border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-opaque); user-select: none; }",
     ".cplfund-grip:active { cursor: grabbing; }",
     ".cplfund-posl { display: inline-flex; align-items: center; gap: 4px; }",
-    ".cplfund-pos { font-size: .75rem; padding: 1px 4px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-pos { font-size: .75rem; padding: 1px 4px; min-height: 24px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplfund-prio .p.cplfund-dragging { opacity: .45; }",
     ".cplfund-prio .p.cplfund-dropover { box-shadow: inset 0 0 0 2px var(--navy-secondary); }",
     ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
@@ -705,6 +705,47 @@
     ".cplfund-sec-ti { flex: 1 1 240px; min-width: 0; font: inherit; font-size: .85rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; }",
     ".cplfund-sec-ti:focus { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
     ".cplfund-sec-flag { flex: 0 0 auto; margin-left: 10px; font-size: .72rem; font-weight: 600; color: var(--text-muted); }",
+    // The curator's row on the PUBLIC PREVIEW, and the stub left where an
+    // excluded section was. Both are DASHED and sit on the subtle surface:
+    // nothing else on that view is a control, so the one thing these must
+    // communicate before they are read is that they are not part of the page a
+    // college gets. No new color role — the dashes carry it, and the words
+    // carry the meaning.
+    ".cplfund-sec-pv { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; margin: 0 0 10px; padding: 6px 10px; font-size: .78rem; border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); }",
+    ".cplfund-sec-pvlab { font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }",
+    ".cplfund-pvchip { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 999px; padding: 3px 12px; min-height: 24px; cursor: pointer; font-size: .75rem; font-family: inherit; }",
+    ".cplfund-pvchip:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    ".cplfund-sec-stub { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; margin: 0 0 10px; padding: 10px 14px; border: 1px dashed var(--border-strong); border-radius: 10px; background: var(--surface-subtle); }",
+    ".cplfund-sec-stub .cplfund-sec-sum { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; flex: 1 1 240px; }",
+    ".cplfund-sec-stub h3 { margin: 0; font-size: 1rem; color: var(--text-muted); }",
+    ".cplfund-sec-stub .cplfund-sec-flag { margin-left: 0; }",
+    ".cplfund-sec-stub .cplfund-sec-pv { margin: 0; padding: 0; border: 0; background: none; }",
+    // The public explainer's section list, on the preview. Dashed like the rest
+    // of the curator's overlay; an excluded row reads as excluded from its WORD
+    // (the chip flips to Include) before any of its styling is noticed.
+    ".cplfund-pubsec { margin: 0 0 14px; padding: 10px 14px; border: 1px dashed var(--border-strong); border-radius: 10px; background: var(--surface-subtle); font-size: .82rem; }",
+    ".cplfund-pubsec-h { margin: 0 0 8px; color: var(--text-body); }",
+    ".cplfund-pubsec-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--border); }",
+    ".cplfund-pubsec-name { flex: 1 1 220px; font-weight: 600; color: var(--text-strong); }",
+    ".cplfund-pubsec-row.is-out .cplfund-pubsec-name { font-weight: 400; color: var(--text-muted); text-decoration: line-through; }",
+    ".cplfund-pubsec-ctl { display: inline-flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; }",
+    // A REPORTED priority box. It sits in the same grid as the measured cards
+    // and must read as a peer rather than as a lesser thing — so the only
+    // difference is a left rule, and the words inside carry that it earns
+    // nothing. No new color role.
+    ".cplfund-rprio { border-left: 3px solid var(--border-strong); }",
+    ".cplfund-rprio-list { margin: 6px 0 0; padding: 0 0 0 2px; list-style: none; }",
+    ".cplfund-rprio-p { padding: 6px 0; border-top: 1px solid var(--border); font-size: .82rem; }",
+    ".cplfund-rprio-nm { font-weight: 600; color: var(--text-strong); }",
+    ".cplfund-rprio-state { font-weight: 600; color: var(--text-body); }",
+    ".cplfund-rprio-upd { margin: 4px 0 0; font-size: .78rem; color: var(--text-muted); }",
+    ".cplfund-rprio-drift { display: block; margin-top: 3px; font-size: .75rem; color: var(--mustard-text); }",
+    ".cplfund-rprio-add { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; margin-top: 8px; font-size: .78rem; }",
+    ".cplfund-desig-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; margin-top: 10px; padding: 8px 12px; border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; color: var(--text-body); }",
+    ".cplfund-desig-row .cplfund-rprio-add { margin-top: 0; }",
+    ".cplfund-multil { display: flex; flex-direction: column; gap: 3px; flex: 1 1 260px; min-width: 0; }",
+    ".cplfund-multi { font: inherit; font-size: .78rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 4px; max-width: 100%; }",
+    ".cplfund-multi:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
     // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
     // (privacy-suppressed) / not-yet / pending-feed.
     // Words, not marks (met / partial / not yet / n/a / pending), in ink grades.
@@ -2542,11 +2583,212 @@
     if (!Object.keys(ov.secHidden).length) delete ov.secHidden;
     persistActive();
   }
+
+  // ── the SECTION order seam (Sam, 2026-09-11) ──────────────────────────
+  // "Make the sections movable when curating so I can change the order of
+  // appearance." Same layers as every other curator edit — SCENARIO ?? SHARED
+  // — so an order travels with Publish and Reset returns the house order.
+  //
+  // ⚠️ ID-KEYED, not a permutation of positions. priorityOrder() above is a
+  // permutation because a priority is a row in a config array whose length the
+  // CURATOR controls, and its identity has no name we could store. The sections
+  // are a fixed, NAMED set this file emits, and that set grows every time we
+  // ship a section: a stored [0,3,1,2] would re-point at different sections the
+  // first time one is added or retired, which is the identity-vs-slot failure
+  // priorityOrder() exists to avoid, reintroduced by choosing the weaker key.
+  //
+  // Two rules make a stored order survive OUR edits rather than the curator's:
+  // an id we no longer emit is IGNORED, and an id we emit that the stored order
+  // does not name is APPENDED in house order. So a curator who dragged four
+  // sections in September still sees their arrangement after we add a fifth,
+  // with the new one last instead of the page silently reverting.
+  var SECTION_HOUSE_ORDER = ["about", "college", "window", "pools", "formula",
+                             "eligibility", "priorities", "timing"];
+
+  // The PUBLIC EXPLAINER's own sections (funding-model/index.html), declared
+  // here so a curator can exclude and reorder them too — Sam's ask names the
+  // public view, and that page IS the public view since cpl_funding_public.html
+  // became a redirect.
+  //
+  // ⚠️ NOT ALIASED ONTO THE TAB'S SECTIONS, and that is the decision worth
+  // reading. `qualify` and the tab's `eligibility` do describe the same
+  // requirement, so an alias is tempting — but `lede` and `choices` have no tab
+  // twin at all, and `allocation` spans two tab sections. A semantic alias would
+  // make one hide mean two different things on two pages and be wrong in a way
+  // nobody could see from either. So each public section curates under its OWN
+  // id; only the machinery is shared.
+  //
+  // `timing` is the ONE id in both sets, and that collision is deliberate and
+  // pre-existing: one subject, one switch. The chip says so, because a curator
+  // is otherwise looking at two controls that are secretly one.
+  //
+  // ⚠️ This list is a SECOND COPY of the page's data-fsec attributes — the thing
+  // this file avoids elsewhere — and it is here because cpl_funding.js cannot
+  // read a sibling page's markup at render time.
+  // tests/funding_model_page.test.js asserts the two agree, which is the guard
+  // that was missing: the old test wrote its own id into the shared map and then
+  // read it back, so it proved the resolver worked and could never notice that
+  // NO CONTROL ANYWHERE emitted six of the seven ids.
+  var PUBLIC_SECTIONS = [
+    { id: "lede",         label: "Introduction and the headline figures" },
+    { id: "institutions", label: "Every institution" },
+    { id: "allocation",   label: "How much each institution is allocated" },
+    { id: "qualify",      label: "What a college has to do to qualify" },
+    { id: "earning",      label: "How the funding is earned" },
+    { id: "timing",       label: "When the funding is disbursed" },
+    { id: "choices",      label: "What is a choice, and what is a given" }
+  ];
+  function publicHouseOrder() {
+    return PUBLIC_SECTIONS.map(function (x) { return x.id; });
+  }
+  // ONE implementation over a (house order, storage key) pair. Two orders exist
+  // — the tab's sections and the public page's — and a second copy of these six
+  // functions is how they would eventually disagree about what "custom" means.
+  function orderFrom(house, v) {
+    var out = [], seen = {};
+    if (Array.isArray(v)) {
+      v.forEach(function (id) {
+        var k = String(id);
+        if (house.indexOf(k) >= 0 && !seen[k]) { seen[k] = 1; out.push(k); }
+      });
+    }
+    house.forEach(function (id) { if (!seen[id]) out.push(id); });
+    return out;
+  }
+  function storedOrder(house, key) {
+    return orderFrom(house, firstDefined(SCENARIO[key], SHARED[key], base()[key]));
+  }
+  function orderIsHouse(house, list) {
+    return !orderFrom(house, list).some(function (id, i) { return id !== house[i]; });
+  }
+  function setOrderKey(house, key, list) {
+    activeOverride()[key] = orderFrom(house, list);
+    persistActive();
+  }
+  // Reset means "show them in the order the house emits them". Deleting the
+  // active layer's key is not enough on its own — the layer below may hold an
+  // order that would surface instead — so pin the house order when it does.
+  // (The same asymmetry resetPriorityOrder() carries, for the same reason.)
+  function resetOrderKey(house, key) {
+    var ov = activeOverride();
+    delete ov[key];
+    if (!orderIsHouse(house, storedOrder(house, key))) ov[key] = house.slice();
+    persistActive();
+  }
+  function moveIn(house, key, from, to) {
+    setOrderKey(house, key, reorderList(storedOrder(house, key), Number(from), Number(to)));
+  }
+
+  function sectionOrder() { return storedOrder(SECTION_HOUSE_ORDER, "secOrder"); }
+  function secOrderIsCustom() { return !orderIsHouse(SECTION_HOUSE_ORDER, sectionOrder()); }
+  function resetSectionOrder() { resetOrderKey(SECTION_HOUSE_ORDER, "secOrder"); }
+  function moveSection(from, to) { moveIn(SECTION_HOUSE_ORDER, "secOrder", from, to); }
+
+  function publicSectionOrder() { return storedOrder(publicHouseOrder(), "pubSecOrder"); }
+  function pubOrderIsCustom() { return !orderIsHouse(publicHouseOrder(), publicSectionOrder()); }
+  function resetPublicSectionOrder() { resetOrderKey(publicHouseOrder(), "pubSecOrder"); }
+  function movePublicSection(from, to) { moveIn(publicHouseOrder(), "pubSecOrder", from, to); }
   // The curator's controls for one section: words, and in the BODY rather than
   // in the <summary>. A button inside a summary is nested interactive content —
   // it fights the fold on click and screen readers expose it inconsistently —
   // so the title is edited from just beneath itself.
+  // Reorder affordance on one section. A POSITION PICKER ONLY — no drag handle,
+  // and that is a considered difference from the priority cards rather than an
+  // omission. A card's grip sits in the card body; a section's only
+  // always-visible strip is its <summary>, and a draggable span there is the
+  // nested-interactive-content problem the Rename button already avoids — a
+  // mousedown meant to start a drag toggles the fold instead. The picker is
+  // also the control that stays truthful for a stack of full-width sections,
+  // where "left" and "right" mean nothing, and it is the one that works from a
+  // keyboard and a screen reader. Sam's own framing for the priorities applies
+  // unchanged: moving a section to the position you want it in.
+  function secMoveHtml(id) {
+    var o = sectionOrder(), i = o.indexOf(id);
+    if (i < 0) return "";      // a NESTED section (ftes-factors): renameable, never movable on its own
+    var opts = o.map(function (_, j) {
+      return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
+    }).join("");
+    return '<label class="cplfund-posl">Position ' +
+      '<select class="cplfund-pos" data-secpos="' + esc(id) + '" aria-label="Position of the ' +
+      esc(titlePlain(id)) + ' section, of ' + o.length + '">' + opts + "</select></label>";
+  }
+
+  // The curator's controls on the PUBLIC PREVIEW. Sam asked for them there
+  // (2026-09-11) and the reason the ask arrived is that the preview carried
+  // none: sectionCtlHtml() returned "" for every public rendering, the
+  // preview included, so the one view that shows what a college sees was the
+  // one view with no way to act on it.
+  //
+  // Narrower than the internal set on purpose — exclude and position, not
+  // Rename — because those are the two questions that view asks. Renaming is
+  // an editing act and belongs where the other editing lives.
+  function secPreviewCtlHtml(id) {
+    if (sectionOrder().indexOf(id) < 0) return "";
+    return '<div class="cplfund-sec-pv">' +
+      '<span class="cplfund-sec-pvlab">Curator only</span>' +
+      (secHidden(id)
+        ? '<button type="button" class="cplfund-pvchip" data-secpvshow="' + esc(id) +
+          '">Include on the public page</button>'
+        : '<button type="button" class="cplfund-pvchip" data-secpvhide="' + esc(id) +
+          '">Exclude from the public page</button>') +
+      secPvMoveHtml(id) + "</div>";
+  }
+  function secPvMoveHtml(id) {
+    var o = sectionOrder(), i = o.indexOf(id);
+    var opts = o.map(function (_, j) {
+      return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
+    }).join("");
+    return '<label class="cplfund-posl">Position ' +
+      '<select class="cplfund-pos" data-secpvpos="' + esc(id) + '" aria-label="Position of the ' +
+      esc(titlePlain(id)) + ' section, of ' + o.length + '">' + opts + "</select></label>";
+  }
+
+  // The public explainer's OWN sections, curated from here. It renders on the
+  // public preview, which is where the question "should colleges see this?"
+  // actually occurs — and it names the page it governs, because the preview
+  // around it is the TAB's rendering, not the explainer's layout. Saying which
+  // page each control reaches is the whole job of this block.
+  function publicSectionsCtlHtml() {
+    if (!publicPreview()) return "";
+    var order = publicSectionOrder();
+    var byId = {};
+    PUBLIC_SECTIONS.forEach(function (x) { byId[x.id] = x; });
+    var rows = order.map(function (id, i) {
+      var meta = byId[id] || { id: id, label: id };
+      var opts = order.map(function (_, j) {
+        return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
+      }).join("");
+      return '<div class="cplfund-pubsec-row' + (secHidden(id) ? " is-out" : "") + '">' +
+        '<span class="cplfund-pubsec-name">' + esc(meta.label) + "</span>" +
+        (id === "timing"
+          ? ' <span class="dk">&mdash; one switch with this tab&rsquo;s Timing section</span>'
+          : "") +
+        '<span class="cplfund-pubsec-ctl">' +
+        '<label class="cplfund-posl">Position ' +
+        '<select class="cplfund-pos" data-pubsecpos="' + esc(id) + '" aria-label="Position of the ' +
+        esc(meta.label) + ' section on the public explainer, of ' + order.length + '">' + opts + "</select></label>" +
+        (secHidden(id)
+          ? '<button type="button" class="cplfund-pvchip" data-pubsecshow="' + esc(id) +
+            '">Include on the public page</button>'
+          : '<button type="button" class="cplfund-pvchip" data-pubsechide="' + esc(id) +
+            '">Exclude from the public page</button>') +
+        "</span></div>";
+    }).join("");
+    return '<div class="cplfund-pubsec">' +
+      '<div class="cplfund-pubsec-h"><span class="cplfund-sec-pvlab">Curator only</span> ' +
+      "The public explainer&rsquo;s own sections &mdash; " +
+      '<a href="funding-model/" target="_blank" rel="noopener">funding-model/</a>, the page colleges read. ' +
+      "Excluding one here removes it from that page; the arrangement below is the order it appears in." +
+      "</div>" + rows +
+      (pubOrderIsCustom()
+        ? '<button type="button" class="cplfund-optbtn" id="cplFundPubOrderReset" ' +
+          'title="Put the public explainer\u2019s sections back in the order the page ships with">' +
+          "Restore the default order</button>"
+        : "") + "</div>";
+  }
+
   function sectionCtlHtml(id) {
+    if (publicPreview()) return secPreviewCtlHtml(id);
     if (!unlocked() || publicMode()) return "";
     var custom = titleIsCustom(id);
     if (state.titleEditing === id) {
@@ -2564,6 +2806,7 @@
       (secHidden(id)
         ? '<button type="button" class="cplfund-textbtn" data-secshow="' + esc(id) + '">Show on the public page</button>'
         : '<button type="button" class="cplfund-textbtn" data-sechide="' + esc(id) + '">Hide on the public page</button>') +
+      secMoveHtml(id) +
       (custom ? '<span class="dk">Renamed.</span>' : "") + "</div>";
   }
 
@@ -2623,6 +2866,16 @@
   function embedMode() {
     return window.CPL_FUNDING_EMBED === "college";
   }
+  // The curator PREVIEWING the public page from inside the tab — not the public
+  // page itself. The distinction did not need a name until Sam asked for the
+  // exclude control to live on that view (2026-09-11); publicMode() answers
+  // "does this rendering hide the dials", which is true for the preview and for
+  // both real public surfaces alike, and that is the wrong question for a
+  // control only a signed-in curator may see.
+  function publicPreview() {
+    if (window.CPL_FUNDING_PUBLIC || embedMode()) return false;
+    return typeof state === "object" && !!state && !!state.previewPublic && unlocked();
+  }
   // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
   // of the DOM after each render rather than relying on each emitter to check
   // publicMode() — a missed call site is the failure mode that matters, and a
@@ -2634,7 +2887,18 @@
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind",
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
-    "data-sectitlereset", "data-sechide", "data-secshow"];
+    "data-sectitlereset", "data-sechide", "data-secshow",
+    "data-projsel", "data-projadd", "data-projrelease"];
+  // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
+  // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
+  // above keeps meaning exactly one thing: every attribute in it leaves the DOM
+  // in public mode, no exceptions to read past. These three are emitted only by
+  // publicPreview(), which is false on both real public surfaces, so the sweep
+  // is still what stands between a public reader and a control — it just stops
+  // removing the controls a curator asked to have in their own preview.
+  var PREVIEW_ATTRS = ["data-secpvhide", "data-secpvshow", "data-secpvpos",
+                       "data-pubsechide", "data-pubsecshow", "data-pubsecpos"];
+  var PREVIEW_IDS = ["cplFundSecOrderReset", "cplFundPubOrderReset"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -2642,10 +2906,10 @@
     "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1"];
   function stripCurateAffordances(root) {
     if (!root) return;
-    CURATE_ATTRS.forEach(function (a) {
+    CURATE_ATTRS.concat(publicPreview() ? [] : PREVIEW_ATTRS).forEach(function (a) {
       root.querySelectorAll("[" + a + "]").forEach(function (el) { el.remove(); });
     });
-    CURATE_IDS.forEach(function (id) {
+    CURATE_IDS.concat(publicPreview() ? [] : PREVIEW_IDS).forEach(function (id) {
       var el = root.querySelector("#" + id);
       if (el) el.remove();
     });
@@ -4546,15 +4810,87 @@
     return list.map(function (p) {
       return { id: String(p.id || ""), name: String(p.name || ""), lead: p.lead || "",
                status: p.status || "", budget: p.budget || "", budget_source: p.budget_source || "",
-               register_goal: p.goal || "", goals: projectGoals(String(p.id || "")) };
+               register_goal: p.goal || "", goals: projectGoals(String(p.id || "")),
+               // Carried for the designation control and the reported box
+               // (2026-09-11): `activity` groups the picker, and pct/update are
+               // the project OUTCOME Sam asked those boxes to report. Reading a
+               // field this mapper does not copy fails silently — every project
+               // lands in one group, every outcome line comes out blank, and
+               // nothing errors (see
+               // methodology-a-feature-test-on-a-missing-method-fails-silent).
+               activity: p.activity || "", pct: p.pct == null ? "" : p.pct,
+               update: p.update || "", update_date: p.update_date || "" };
     });
   }
+  // Sam's designation for goal (C), 2026-09-11: "Although we don't have a
+  // measure for this, I want to designate certain projects to this and report
+  // on project outcomes. For example: Credential Registry, Partnership with
+  // LWDA, Apprenticeship Sprint, CPL Stories."
+  //
+  // Three of the four resolve against the Activities register unambiguously.
+  // ⚠️ THE FOURTH DOES NOT AND IS DELIBERATELY NOT SEEDED. There is no LWDA
+  // project: the agency appears in 1.4's own update text (the Credential
+  // Registry planning session), and 4.3 Strategic Partnerships is the plausible
+  // home but names no partner. Picking one would file Sam's judgment under a
+  // session's inference, and the register is the place that has to be right —
+  // so the designation control is the answer, not a guess. He designates it in
+  // two clicks, and the register gets a project if it deserves one.
+  var PROJECT_GOAL_DEFAULTS = { "1.4": ["C"], "4.2": ["C"], "3.5": ["C"] };
+  var PROJECT_NAME_DEFAULTS = {
+    "1.4": "California Credential Registry",
+    "4.2": "Apprenticeship Sprint",
+    "3.5": "Student Stories"
+  };
   function projectGoals(id) {
     var v = firstDefined(
       SCENARIO.projectGoals && SCENARIO.projectGoals[id],
       SHARED.projectGoals && SHARED.projectGoals[id],
-      base().project_goals && base().project_goals[id]);
+      base().project_goals && base().project_goals[id],
+      PROJECT_GOAL_DEFAULTS[id]);
     return Array.isArray(v) ? v.slice() : [];
+  }
+  // The designated project's NAME, captured at designation time.
+  //
+  // The register (window.CPL_DATA) is the source of truth for a name and is
+  // loaded on the TAB. The public explainer does not load it, and should not:
+  // 228 KB of internal register — leads, budget sources, working update text —
+  // has no business on a page colleges read for a funding model. So the name
+  // travels in the config, which both surfaces already load.
+  //
+  // ⚠️ A stored name is a SECOND COPY of a fact and can go stale — the register
+  // renames a project and the config keeps the old title. So the tab, which HAS
+  // the register, renders the LIVE name and says when the two differ: the same
+  // provenance-and-drift posture the pool cards take toward the Budget ledger.
+  // Silent agreement needs no words; disagreement gets them.
+  function projectName(id) {
+    var v = firstDefined(
+      SCENARIO.projectNames && SCENARIO.projectNames[id],
+      SHARED.projectNames && SHARED.projectNames[id],
+      base().project_names && base().project_names[id],
+      PROJECT_NAME_DEFAULTS[id]);
+    return v == null ? "" : String(v);
+  }
+  // Designate (or release) one register project against one statutory goal. The
+  // name is written beside the tag, from the register, so the public page can
+  // paint what the curator designated without loading the register itself.
+  function setProjectGoal(id, gkey, on, name) {
+    var ov = activeOverride();
+    var keys = projectGoals(id).filter(function (k) { return k !== gkey; });
+    if (on) keys.push(gkey);
+    ov.projectGoals = isPlainObj(ov.projectGoals) ? ov.projectGoals : {};
+    ov.projectNames = isPlainObj(ov.projectNames) ? ov.projectNames : {};
+    if (keys.length) {
+      ov.projectGoals[id] = keys;
+      if (name) ov.projectNames[id] = String(name);
+    } else {
+      // An empty list is STORED, not deleted: deleting it would let
+      // PROJECT_GOAL_DEFAULTS surface again and the release would undo itself
+      // on the next render. Same reason resetOrderKey() pins the house order.
+      ov.projectGoals[id] = [];
+      delete ov.projectNames[id];
+    }
+    if (!Object.keys(ov.projectNames).length) delete ov.projectNames;
+    persistActive();
   }
 
   // What the CPL story corpus actually evidences, COUNTED at load rather than
@@ -5132,6 +5468,178 @@
       : "";
   }
 
+  // Every project designated to one goal. Read from the CONFIG, not from the
+  // register: the config is what BOTH surfaces load, so this list is identical
+  // on the tab and on the public page, and the register only ENRICHES a row
+  // where it is present. The candidate ids are the union of every layer's keys;
+  // each one then resolves through projectGoals(), the single resolver, rather
+  // than through a second copy of the layering — which is how a release stored
+  // as an empty list stays released instead of a merge putting it back.
+  function designatedProjects(gkey) {
+    var seen = {}, out = [];
+    [SCENARIO.projectGoals, SHARED.projectGoals, base().project_goals, PROJECT_GOAL_DEFAULTS]
+      .forEach(function (m) {
+        if (!isPlainObj(m)) return;
+        Object.keys(m).forEach(function (id) { seen[id] = 1; });
+      });
+    Object.keys(seen).forEach(function (id) {
+      if (projectGoals(id).indexOf(gkey) >= 0) out.push(id);
+    });
+    return out.sort();
+  }
+
+  // ── reported priorities (Sam, 2026-09-11) ─────────────────────────────
+  // His two asks together: the outcomes section should carry "the measurable
+  // and non-measurable priorities", and (C) should get a box — "Although we
+  // don't have a measure for this, I want to designate certain projects to this
+  // and report on project outcomes."
+  //
+  // ⚠️ THIS IS NOT A PRIORITY IN THE MODEL, and the distinction is the whole
+  // safety of it. priorities(slot) drives the funding: a share, a factor, a
+  // target, a cap. An entry there with share 0 would earn nothing and still
+  // enter every share-sum, ledger line, drill-in column, export and memo — so a
+  // display box that merely LOOKED like a priority would by then have become
+  // one. This box reads goalFunding() and the designation map, and DRIVES NO
+  // MATH: the same posture as the goal tags themselves, where a wrong entry is
+  // a wrong caption a curator can see rather than a wrong number nobody can.
+  //
+  // It is DERIVED, never a typed list: a goal earns a box by carrying
+  // designated projects, so (D) gets one on the day it is designated and (C)
+  // keeps one whether or not a measured priority is ever tagged to it. FUNDED
+  // and MEASURED are two axes, which is exactly what the box exists to show.
+  function reportedPrioHtml(slot, gkey) {
+    var g = goalByKey(gkey);
+    if (!g) return "";
+    var ids = designatedProjects(gkey);
+    if (!ids.length) return "";
+    var reg = {};
+    registerProjects().forEach(function (pr) { reg[pr.id] = pr; });
+    var pub = publicMode();
+    var rows = ids.map(function (id) {
+      var live = reg[id];
+      var stored = projectName(id);
+      // The live register name wins where there is one; the stored name is the
+      // fallback the public page runs on. A DISAGREEMENT is stated, because the
+      // config is what colleges read and a curator is the only one who can fix
+      // it.
+      var shown = (live && live.name) || stored || id;
+      var drift = (!pub && live && live.name && stored && live.name !== stored)
+        ? ' <span class="cplfund-rprio-drift">The register now calls this &ldquo;' + esc(live.name) +
+          '&rdquo;; the public page still reads &ldquo;' + esc(stored) + '&rdquo;.</span>'
+        : "";
+      var outcome = live
+        ? '<span class="cplfund-rprio-state">' + esc(live.status || "no status") + "</span>" +
+          (live.pct != null && live.pct !== "" ? ' <span class="dk">' + fmtInt(live.pct) + "% complete</span>" : "")
+        : '<span class="dk">Outcomes are reported in the Activities register.</span>';
+      var note = (!pub && live && live.update)
+        ? '<p class="cplfund-rprio-upd">' + esc(String(live.update).slice(0, 420)) +
+          (String(live.update).length > 420 ? "&hellip;" : "") +
+          (live.update_date ? ' <span class="dk">&mdash; ' + esc(live.update_date) + "</span>" : "") + "</p>"
+        : "";
+      return '<li class="cplfund-rprio-p"><span class="cplfund-rprio-nm">' + esc(shown) + "</span> " +
+        outcome + drift + note +
+        (pub || !unlocked() ? "" :
+          ' <button type="button" class="cplfund-textbtn" data-projrelease="' + esc(id) +
+          '" data-projgoal="' + esc(gkey) + '">Remove</button>') +
+        "</li>";
+    }).join("");
+    return '<div class="p cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
+      '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.text) + "</h4>" +
+      '<p class="desc">No campus measure scores this outcome, so no college earns against it and no ' +
+      "figure on this page prices it. It is funded through the statewide project allocation and reported " +
+      "on the work below.</p>" +
+      '<p class="nums"><span class="dk">Reported, not measured &mdash; ' +
+      esc(String(ids.length)) + " designated " + (ids.length === 1 ? "project" : "projects") +
+      "</span></p>" +
+      '<ul class="cplfund-rprio-list">' + rows + "</ul>" +
+      projectDesignateHtml(gkey) + "</div>";
+  }
+
+  // The designation control: one register project, onto one goal. It lists only
+  // projects NOT already designated here, so the control never offers a no-op,
+  // and it carries the register's name into the config as it goes.
+  // The designation control: any entry in the Activities register, onto any
+  // goal, at the curator's discretion (Sam, 2026-09-11: "allow me to add any of
+  // the activities we have on file at my discretion to the card").
+  //
+  // GROUPED BY ACTIVITY, because the register is 32 rows and a flat list of 32
+  // is a list nobody reads to the end. Sam's own usage is the reason it is
+  // grouped this way rather than sorted: "Activities" means the workplan
+  // activities AND the projects under them, so the activity is how he names the
+  // thing he is looking for.
+  //
+  // ⚠️ THE WHOLE REGISTER, every time (Sam, 2026-09-11: "Show the whole list so
+  // I can choose any"). An earlier pass filtered out the entries already
+  // designated to this goal, on the reasoning that the control should never
+  // offer a no-op — which quietly made the list a different length on every
+  // goal and left the curator wondering where a project had gone. A complete
+  // list he can scan against the register beats a tidy one. The already-chosen
+  // rows say so instead of disappearing, and designating one again is harmless:
+  // setProjectGoal() filters before it pushes, so there is no duplicate to make.
+  //
+  // The register's name rides into the config with the tag, because the public
+  // page has no register to look it up in.
+  function projectDesignateHtml(gkey) {
+    if (publicMode() || !unlocked()) return "";
+    var taken = {};
+    designatedProjects(gkey).forEach(function (id) { taken[id] = 1; });
+    var groups = [], byAct = {};
+    registerProjects().forEach(function (pr) {
+      if (!pr.id) return;
+      var act = pr.activity || "Other";
+      if (!byAct[act]) { byAct[act] = []; groups.push(act); }
+      byAct[act].push(pr);
+    });
+    if (!groups.length) {
+      return '<p class="dk cplfund-rprio-add">The Activities register is not loaded on this page.</p>';
+    }
+    var opts = groups.map(function (act) {
+      return '<optgroup label="' + esc(act) + '">' +
+        byAct[act].map(function (pr) {
+          return '<option value="' + esc(pr.id) + '">' + esc(pr.id + " " + pr.name) +
+            (taken[pr.id] ? esc(" \u2014 already designated") : "") + "</option>";
+        }).join("") + "</optgroup>";
+    }).join("");
+    // MULTI-SELECT, and ADDITIVE (Sam, 2026-09-11: "make it a multi-select
+    // dropdown"). The selection means "what I am adding now", never "the
+    // designated set": if the widget's selection WERE the set, one plain click
+    // in a 32-row list would deselect every other row and release every
+    // designation on the goal — a full replacement, from a click that looks
+    // like a selection. So nothing is pre-selected, the rows already designated
+    // say so in their own label, and taking one off is still the Remove word
+    // beside it, where a removal is deliberate and singular.
+    return '<div class="cplfund-rprio-add">' +
+      '<label class="cplfund-multil">Designate activities' +
+      '<select class="cplfund-multi" multiple size="8" data-projsel="' + esc(gkey) +
+      '" aria-describedby="cplfund-multihint-' + esc(gkey) +
+      '" aria-label="Activities to designate to goal ' + esc(gkey) + '">' + opts + "</select></label>" +
+      '<button type="button" class="cplfund-textbtn" data-projadd="' + esc(gkey) + '">Designate selected</button>' +
+      '<span class="dk" id="cplfund-multihint-' + esc(gkey) + '">Choose one or more from the ' +
+      "Activities register. Saves for everyone.</span></div>";
+  }
+
+  // The EMPTY state, for a goal with nothing designated yet. It exists because
+  // the box itself does not: reportedPrioHtml() renders nothing without
+  // projects, so without this a curator could only ever add to a goal that had
+  // already been seeded — (C) — and "any of them at my discretion" would be
+  // false for the other three.
+  //
+  // Compact on purpose. Four empty cards would be four claims the page cannot
+  // support, and the calm pass (Sam, 2026-09-04) is against exactly that; this
+  // is one line, curator-only, that says what is not there and offers the way
+  // to change it.
+  function designateRowHtml(gkey) {
+    if (publicMode() || !unlocked()) return "";
+    if (designatedProjects(gkey).length) return "";
+    var g = goalByKey(gkey);
+    if (!g) return "";
+    return '<div class="cplfund-desig-row" data-desig="' + esc(gkey) + '">' +
+      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
+      "<span>No activity is designated to (" + esc(gkey) + ") " + esc(g.short) +
+      ". Designating one adds a reported box to this band, on the public page too.</span>" +
+      projectDesignateHtml(gkey) + "</div>";
+  }
+
   function bandsHtml(slot, ps, cards) {
     var used = {}, out = "";
     BANDS.forEach(function (b) {
@@ -5145,7 +5653,19 @@
       // the chancellor's office, not at the campuses, so no college earns
       // against it. It still gets a band, because a reader asked to allocate
       // "using all of the following goals" must be able to see all of them.
-      if (!members.length && b.id !== "opps") return;
+      // A REPORTED box for each of this band's goals that carries designated
+      // projects. It renders beside the measured cards rather than instead of
+      // them: Sam asked the section to hold both, and a band showing only what
+      // it can price is the reading the statute's own "all of the following
+      // goals" rules out.
+      var reported = [], desig = [];
+      b.keys.forEach(function (k) {
+        var rh = reportedPrioHtml(slot, k);
+        if (rh) reported.push(rh);
+        var dr = designateRowHtml(k);
+        if (dr) desig.push(dr);
+      });
+      if (!members.length && !reported.length && !desig.length && b.id !== "opps") return;
       var shareSum = 0, dollarSum = 0;
       members.forEach(function (i) {
         shareSum += Number(ps[i].share) || 0;
@@ -5163,15 +5683,21 @@
               " &mdash; CPL Projects &amp; Innovation</span>") +
         "</div>" +
         '<p class="cplfund-band-quote">' + bandQuote(b.keys) + "</p>" +
-        (members.length
-          ? '<div class="cplfund-band-body"><div class="cplfund-prio">' +
-            members.map(function (i) { return cards[i]; }).join("") + "</div>" +
-            bandEvidenceHtml(slot, b.keys) + "</div>"
-          : '<p class="cplfund-band-note">Outcomes here are reported by the MAP and Chancellor&rsquo;s ' +
+        // The (D) note still renders whenever the band carries no MEASURED
+        // card — it explains why no college earns there — and the reported
+        // boxes now follow it rather than replacing it.
+        (!members.length && b.id === "opps"
+          ? '<p class="cplfund-band-note">Outcomes here are reported by the MAP and Chancellor&rsquo;s ' +
             "Office teams: the statute points this goal at the Chancellor&rsquo;s Office rather than at the " +
             "campuses. It is funded from the project allocation, read live from the Budget ledger, and " +
-            "evidenced by the named projects in the Activities register.</p>" +
-            '<div class="cplfund-band-body cplfund-band-body-bare">' + bandEvidenceHtml(slot, b.keys) + "</div>") +
+            "evidenced by the named projects in the Activities register.</p>"
+          : "") +
+        (members.length || reported.length
+          ? '<div class="cplfund-band-body"><div class="cplfund-prio">' +
+            members.map(function (i) { return cards[i]; }).concat(reported).join("") + "</div>" +
+            desig.join("") + bandEvidenceHtml(slot, b.keys) + "</div>"
+          : '<div class="cplfund-band-body cplfund-band-body-bare">' + desig.join("") +
+            bandEvidenceHtml(slot, b.keys) + "</div>") +
         "</section>";
     });
     // Orphans: any priority whose goal did not resolve. Loud, not silent.
@@ -6068,8 +6594,20 @@
   function saveSectionState(id, open) { SEC_STATE[id] = !!open; }
   function sectionShell(id, titleHtml, bodyHtml) {
     SEC_TITLE_DEFAULT[id] = titleHtml;              // the house title, for Restore and for the rename seed
-    if (publicMode() && secHidden(id)) return "";   // curator-hidden — public only, never from the curator
     var head = titleIsCustom(id) ? esc(titleOverride(id)) : titleHtml;
+    if (publicMode() && secHidden(id)) {
+      // Excluded. A real public rendering drops the section entirely; the
+      // curator's own preview keeps a STUB — the title, the state, and the way
+      // back. A section excluded from the preview with nothing left behind
+      // could only be restored from the internal view, and not having to go
+      // there is the whole point of acting here. The stub carries no body, so
+      // the preview stays an honest account of what a college reads.
+      if (!publicPreview()) return "";
+      return '<div class="cplfund-sec cplfund-sec-stub" data-secstub="' + esc(id) + '">' +
+        '<div class="cplfund-sec-sum"><h3>' + head + "</h3>" +
+        '<span class="cplfund-sec-flag">Excluded from the public page</span></div>' +
+        secPreviewCtlHtml(id) + "</div>";
+    }
     // The state word is a SPAN, not a control: a curator has to see that a
     // section is held back without opening it, and nothing interactive may
     // nest inside the summary.
@@ -7900,7 +8438,26 @@
       (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn" id="cplFundDraftMemo" title="Open the draft memo — the Report sub-view, carrying this allocation.">Draft memo</button>') +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdfTop" title="Open a print-ready view of the whole tab, then use your browser&#39;s Print and choose Save as PDF">Save as PDF</button>' +
+      // ONE reset for the section arrangement, and only once it differs from
+      // the house order — a curator who has never moved a section has nothing
+      // to restore, and a button that does nothing teaches that buttons here
+      // do nothing. It shows on the public preview too: that is where Sam
+      // rearranges, so that is where he needs the way back.
+      (unlocked() && secOrderIsCustom()
+        ? '<button type="button" class="cplfund-optbtn" id="cplFundSecOrderReset" ' +
+          'title="Put the sections back in the order this page ships with">Restore the default section order</button>'
+        : "") +
       view + "</div>";
+  }
+
+  // Build every section, then emit them in the stored order. The builder runs
+  // FIRST and in full: a section's own html can depend on nothing about where
+  // it lands, and an id in the order with no entry in the map contributes
+  // nothing rather than throwing — which is what makes a retired id harmless.
+  function orderedSectionsHtml(build) {
+    var SEC = {};
+    build(SEC);
+    return sectionOrder().map(function (id) { return SEC[id] || ""; }).join("");
   }
 
   function render() {
@@ -7982,36 +8539,47 @@
       '<div class="cplfund-src">Version as of ' + esc(String(d.model_version).replace(/\.\d+$/, "")) + "</div>" +
       actionsRowHtml() +
       authbarHtml() +
-      // The introduction CARRIES the Summary (Sam, 2026-09-02: "move the text
-      // from the intro summary section … into the same box as the intro
-      // text"). R11 (2026-08-31) kept the Summary out of every fold; it now
-      // sits inside the one section that is open on every visit, still ahead
-      // of every figure-bearing section — the readout is never hidden on open.
-      section("about", "About this funding model", aboutHtml() + summaryHtml()) +
-      // The institution table comes FIRST (Sam, 2026-09-02: "so folks don't
-      // have to scroll down through the steps to see it — most won't care
-      // about the details, just their funding"): right after the introduction,
-      // ahead of the model's mechanics.
-      section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeSection) +
-      section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
-      section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml()) +
-      section("formula", "How an allocation is computed", formulaHtml()) +
-      section("eligibility", "Eligibility Requirements", eligibilityHtml()) +
-      // ONE section, not two (Sam, 2026-09-01). The priorities and the statutory
-      // goals described the same allocation in two vocabularies, stitched by a
-      // raised letter; the bands make the outcome the structure and the
-      // priority the thing inside it. goalSpineHtml() is NOT retired — it is the
-      // §78093.2(d)(2) reporting artifact, including the honest empty on goal
-      // (C) — so it stays, one click down, rather than becoming a rival section.
-      section("priorities",
-        'Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>',
-        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
-        '<details class="cplfund-goalspine-fold"><summary><strong>Statutory reporting detail</strong> ' +
-        '<span class="dk">&mdash; what funds each goal and how it is evidenced (&sect;78093.2(d)(2))</span>' +
-        "</summary>" + goalSpineHtml() + "</details>" +
-        ncEarningRulesFoldHtml() + ftesFactorsHtml()) +
-      // Sam, 2026-08-28: the Timing block is independently collapsible.
-      collapseH3("timing", timingSectionHtml()) +
+      publicSectionsCtlHtml() +
+      // ONE id-keyed map, emitted in the curator's stored order (Sam,
+      // 2026-09-11). Every section is BUILT here in house order — the order of
+      // these assignments is what SECTION_HOUSE_ORDER names, and the two have
+      // to agree or a section goes missing — and the arrangement is applied
+      // once, at the join. Building in house order keeps each section's
+      // SEC_TITLE_DEFAULT recorded exactly as before, so Rename and Restore do
+      // not depend on where a curator dragged the section to.
+      orderedSectionsHtml(function (SEC) {
+        // The introduction CARRIES the Summary (Sam, 2026-09-02: "move the text
+        // from the intro summary section … into the same box as the intro
+        // text"). R11 (2026-08-31) kept the Summary out of every fold; it now
+        // sits inside the one section that is open on every visit, still ahead
+        // of every figure-bearing section — the readout is never hidden on open.
+        SEC.about = section("about", "About this funding model", aboutHtml() + summaryHtml());
+        // The institution table comes FIRST (Sam, 2026-09-02: "so folks don't
+        // have to scroll down through the steps to see it — most won't care
+        // about the details, just their funding"): right after the introduction,
+        // ahead of the model's mechanics. A curator may now move it; the HOUSE
+        // order is still his.
+        SEC.college = section("college", "Outcomes-based awards &mdash; the full allocation detail on click", collegeSection);
+        SEC.window = section("window", "Funding window", yearControlsHtml() + basisNoteHtml());
+        SEC.pools = section("pools", "Funding Breakdown", ledgerNoteHtml() + poolCardsHtml());
+        SEC.formula = section("formula", "How an allocation is computed", formulaHtml());
+        SEC.eligibility = section("eligibility", "Eligibility Requirements", eligibilityHtml());
+        // ONE section, not two (Sam, 2026-09-01). The priorities and the statutory
+        // goals described the same allocation in two vocabularies, stitched by a
+        // raised letter; the bands make the outcome the structure and the
+        // priority the thing inside it. goalSpineHtml() is NOT retired — it is the
+        // §78093.2(d)(2) reporting artifact — so it stays, one click down, rather
+        // than becoming a rival section.
+        SEC.priorities = section("priorities",
+          'Funding Outcomes Required by <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank" rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>',
+          metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
+          '<details class="cplfund-goalspine-fold"><summary><strong>Statutory reporting detail</strong> ' +
+          '<span class="dk">&mdash; what funds each goal and how it is evidenced (&sect;78093.2(d)(2))</span>' +
+          "</summary>" + goalSpineHtml() + "</details>" +
+          ncEarningRulesFoldHtml() + ftesFactorsHtml());
+        // Sam, 2026-08-28: the Timing block is independently collapsible.
+        SEC.timing = collapseH3("timing", timingSectionHtml());
+      }) +
       "</div>";
     updateCount();
     wire();
@@ -8577,6 +9145,85 @@
     document.querySelectorAll("#cplFundingMount [data-secshow]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secshow"), false); });
     });
+    // ── section reorder + the public-preview chips (Sam, 2026-09-11) ──
+    // Both position pickers land on moveSection(), which is pure over the id
+    // list, so the tests drive the reordering directly. The preview chips are
+    // the same two writes the internal buttons make — one setter, so the two
+    // views can never disagree about what "excluded" means.
+    document.querySelectorAll("#cplFundingMount [data-secpos]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        savingState = "";
+        moveSection(sectionOrder().indexOf(sel.getAttribute("data-secpos")), Number(sel.value));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-secpvpos]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        savingState = "";
+        moveSection(sectionOrder().indexOf(sel.getAttribute("data-secpvpos")), Number(sel.value));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-secpvhide]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secpvhide"), true); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-secpvshow]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-secpvshow"), false); });
+    });
+    // ── project designation against a statutory goal (Sam, 2026-09-11) ──
+    // The name is read off the register HERE, at designation time, and stored
+    // with the tag: the public page has no register to look it up in.
+    document.querySelectorAll("#cplFundingMount [data-projadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var gkey = b.getAttribute("data-projadd");
+        var sel = document.querySelector('#cplFundingMount [data-projsel="' + gkey + '"]');
+        if (!sel) return;
+        // Read .selected off every option rather than trusting selectedOptions:
+        // the collection is not implemented everywhere the suites run, and an
+        // undefined length here would silently designate nothing at all.
+        var picked = [];
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].selected && sel.options[i].value) picked.push(sel.options[i].value);
+        }
+        if (!picked.length) return;
+        var reg = {};
+        registerProjects().forEach(function (pr) { reg[pr.id] = pr; });
+        savingState = "";
+        // persistActive() and a re-render fire per call. That is the same cost
+        // the single-select had, paid once per chosen row, and it keeps ONE
+        // setter — a batch path here would be a second place that decides what
+        // a designation is.
+        picked.forEach(function (id) {
+          setProjectGoal(id, gkey, true, reg[id] && reg[id].name);
+        });
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-projrelease]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        setProjectGoal(b.getAttribute("data-projrelease"), b.getAttribute("data-projgoal"), false);
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-pubsecpos]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        savingState = "";
+        movePublicSection(publicSectionOrder().indexOf(sel.getAttribute("data-pubsecpos")), Number(sel.value));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-pubsechide]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-pubsechide"), true); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-pubsecshow]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; setSecHidden(b.getAttribute("data-pubsecshow"), false); });
+    });
+    var pubOrderReset = document.getElementById("cplFundPubOrderReset");
+    if (pubOrderReset) pubOrderReset.addEventListener("click", function () {
+      savingState = "";
+      resetPublicSectionOrder();
+    });
+    var secOrderReset = document.getElementById("cplFundSecOrderReset");
+    if (secOrderReset) secOrderReset.addEventListener("click", function () {
+      savingState = "";
+      resetSectionOrder();
+    });
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
     document.querySelectorAll("#cplFundingMount [data-edit]").forEach(function (el) {
@@ -8949,6 +9596,29 @@
     // the other shows a college what the CO decided to withhold.
     sectionCuration: function (id) {
       return { title: titleOverride(id), hidden: secHidden(id) };
+    },
+    // The order the public explainer's own sections should appear in. Exposed
+    // beside sectionCuration() for the same reason: the page paints its own
+    // markup, and a second copy of the resolution would drift from this one.
+    // The ids are the page's data-fsec values; PUBLIC_SECTIONS declares them
+    // and funding_model_page.test.js asserts the two lists agree.
+    publicSectionOrder: publicSectionOrder,
+    // The statutory outcomes carried by DESIGNATED PROJECTS rather than by a
+    // campus measure (Sam, 2026-09-11). Read by the public explainer, which has
+    // no Activities register to look a project up in — so the NAME travels in
+    // the config and the STATUS deliberately does not. A status changes weekly;
+    // a stale "In Progress" on a page colleges read is worse than no status,
+    // and the live one is already public on the project dashboard. Goals with
+    // nothing designated are omitted rather than emitted empty.
+    reportedGoals: function () {
+      var out = [];
+      STATUTORY_GOALS.forEach(function (g) {
+        var ids = designatedProjects(g.key);
+        if (!ids.length) return;
+        out.push({ key: g.key, short: g.short, text: g.text,
+          projects: ids.map(function (id) { return { id: id, name: projectName(id) || id }; }) });
+      });
+      return out;
     },
     _model: function () { _allocCache = null; _ncoRows = null; return allocModel(); },
     // ── the EFFECTIVE dials, in one call (2026-08-26) ──────────────────────

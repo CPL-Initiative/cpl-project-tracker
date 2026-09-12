@@ -93,6 +93,15 @@
              // no list rather than a wrong one.
              strategies: Array.isArray(p.strategies) ? p.strategies.slice() : [] };
   });
+  // The outcomes the model FUNDS but does not MEASURE — each with the projects
+  // a curator designated to it (Sam, 2026-09-11). Absent on an older engine,
+  // which paints nothing rather than a wrong list.
+  const reported = (typeof T.reportedGoals === "function" ? T.reportedGoals() : []).map(function (r) {
+    return { key: String(r.key || ""), short: String(r.short || ""), text: String(r.text || ""),
+             projects: (r.projects || []).map(function (x) {
+               return { id: String(x.id || ""), name: String(x.name || "") };
+             }) };
+  });
   // The timing milestones, from the same layers the tab renders — the list a
   // curator edited, never a typed copy of it. Absent on an older engine.
   const timing = (typeof T._timing === "function" ? T._timing() : []).map(function (t) {
@@ -201,6 +210,7 @@
     effRate: Math.round(effRate),
     prios: prios,
     timing: timing,
+    reported: reported,
     rows: rows,
   };
     return payload;
