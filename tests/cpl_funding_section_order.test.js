@@ -270,9 +270,19 @@ function registerStub() {
     !doc.querySelector("[data-projsel]") && !doc.querySelector("[data-projrelease]"));
 
   // ⚠️ The box must not have become a priority in the model.
+  //
+  // ⚠️ AND THE SELECTOR IS THE INVARIANT, not the data attribute. The first
+  // version of this check tested `data-priocard` only, while the box carried
+  // class "p" for the card look — and `.cplfund-prio .p` is what eleven
+  // assertions across five other suites count and index. Seven test files went
+  // red on a styling shortcut this check was watching the wrong half of. So
+  // pin the selector other code actually uses.
   const cardsBefore = doc.querySelectorAll("[data-priocard]").length;
+  const pCards = doc.querySelectorAll(".cplfund-prio .p").length;
   check("4g: a reported box is NOT a priority card", cardsBefore > 0 &&
     !cBox.hasAttribute("data-priocard"));
+  check("4g2: ...and does not answer to `.cplfund-prio .p`, the card selector five other suites count",
+    pCards === cardsBefore && !cBox.matches(".p"));
   check("4h: ...and it is not inside the priority GRID as a card either — the grid is\n" +
     "      what the reorder handlers bind over, so a box that looked like a card\n" +
     "      would collect a position picker and reorder a priority that does not exist",

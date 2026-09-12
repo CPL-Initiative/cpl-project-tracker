@@ -733,7 +733,11 @@
     // and must read as a peer rather than as a lesser thing — so the only
     // difference is a left rule, and the words inside carry that it earns
     // nothing. No new color role.
-    ".cplfund-rprio { border-left: 3px solid var(--border-strong); }",
+    ".cplfund-prio .cplfund-rprio { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 3px solid var(--border-strong); border-radius: 8px; padding: 14px 16px; }",
+    ".cplfund-prio .cplfund-rprio h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
+    ".cplfund-prio .cplfund-rprio h4 .cplfund-prio-num { color: var(--navy-primary); }",
+    ".cplfund-prio .cplfund-rprio .desc { font-size: .8rem; margin: 0 0 8px; text-align: left; }",
+    ".cplfund-prio .cplfund-rprio .nums { font-size: .8rem; color: var(--text-body); margin: 0 0 6px; text-align: left; }",
     ".cplfund-rprio-list { margin: 6px 0 0; padding: 0 0 0 2px; list-style: none; }",
     ".cplfund-rprio-p { padding: 6px 0; border-top: 1px solid var(--border); font-size: .82rem; }",
     ".cplfund-rprio-nm { font-weight: 600; color: var(--text-strong); }",
@@ -5543,7 +5547,13 @@
           '" data-projgoal="' + esc(gkey) + '">Remove</button>') +
         "</li>";
     }).join("");
-    return '<div class="p cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
+    // ⚠️ NEVER class "p". It is the priority CARD class, and eleven assertions
+    // across five suites count or index `.cplfund-prio .p` — so borrowing it for
+    // the card look made this box a priority card to every selector in the
+    // codebase, which is the exact thing the comment above says it must not be.
+    // Seven test files went red on one styling shortcut. The box gets the card
+    // look from its own rules instead.
+    return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
       '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.text) + "</h4>" +
       '<p class="desc">No campus measure scores this outcome, so no college earns against it and no ' +
       "figure on this page prices it. It is funded through the statewide project allocation and reported " +
