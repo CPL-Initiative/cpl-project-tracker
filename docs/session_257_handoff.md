@@ -4,6 +4,8 @@ date: 2026-09-11
 session: 257 (SkyBeat)
 tags: [handoff, sierra, cpl-chat, security, map-website, observability]
 status: current
+superseded: true
+superseded_by: session_259_handoff.md
 ---
 
 # You are Session 257

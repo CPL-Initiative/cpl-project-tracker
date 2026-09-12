@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-03
+updated: 2026-09-12
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1933,3 +1933,63 @@ stem and *unspent* alongside pool / money / apportion / the advance concept.
 Open: the explainer's footer (whether *sources* splits from the "not adopted policy"
 disclaimer so the first becomes hideable), and sweeping the rest of the memo builder
 against the expended/allocated rule.
+
+## 2026-09-12 — Session 258 (SkyList): four asks, an unreachable resolver, and a class that was an API
+
+Sam's four asks — movable sections, the outcomes section carrying measurable
+*and* non-measurable priorities, a box for goal (C) with designated projects,
+and the changes reaching the public view — all shipped in PR #1563.
+[Lane state](reference/lanes/implementation-funding.md).
+
+**Six of the explainer's seven sections could never be curated, and the test
+proved the wrong half.** Rename and Hide ride `sectionShell()`; the explainer
+hand-writes its markup and asks `T.sectionCuration()` by `data-fsec` id. Only
+`timing` appears in both id sets, and by coincidence of naming — so for six of
+seven, a section the CO held back stayed visible on the page colleges read.
+`funding_model_page.test.js` had a whole block on this, and every assertion in
+it wrote `{ titles: { qualify } }` into the shared map and then read it back.
+That proves the resolver resolves. It cannot notice that **no control anywhere
+emits `qualify`**, because the test supplied the id itself. The fix declares the
+page's sections (`PUBLIC_SECTIONS`) and asserts the declaration equals the
+markup, in membership and order — an assertion whose input comes from the
+system, not from the test.
+
+Deliberately **not** aliased onto the tab's sections: `lede` and `choices` have
+no tab twin and `allocation` spans two, so an alias would make one hide mean two
+different things on two pages and be wrong in a way neither page could show.
+
+**A styling class is an API.** `reportedPrioHtml()` rendered its box as
+`<div class="p cplfund-rprio">` to inherit the priority-card look.
+`.cplfund-prio .p` is counted or indexed by eleven assertions across five
+suites, so the box became a priority card to every selector in the codebase —
+the exact thing the paragraph directly above that line says it must never be.
+CI went red on seven files from one class attribute. The paragraph was right
+about the design and blind to the attribute implementing it.
+
+**And the guard was watching the wrong half.** The new suite asserted the box
+carries no `data-priocard` attribute — true the whole time, and not what other
+code selects on. It now pins the `.cplfund-prio .p` count against the
+`data-priocard` count. Two failures of the same shape in one run: an assertion
+can be about the right subject and still test nothing that would move.
+
+**When a suite fails in a full run and passes alone, re-run it alone at the
+current tree before reaching for an environmental explanation.** I read these
+seven failures as memory pressure — `lead_with_the_table` had passed standalone
+and the harness documents heap aborts in exactly these suites. It had passed
+because I ran it *before* the edits that broke it. Two later confusions were
+also self-inflicted: `render` looked hung under three of my own overlapping
+background runs, and one clean re-run died at exit 144 because
+`pkill -f cpl_funding_render` matched the wrapper shell that had just launched
+it.
+
+**The register is inline, not a script tag.** `registerProjects()` reads
+`window.CPL_DATA`, and `CPL_Data.js` (228 KB) is generated and deployed but
+loaded by *no* HTML — both dashboards carry the object inline, `projects` array
+included. Worth knowing before adding a consumer: the picker works on the tab
+for that reason, and the public explainer has no register at all, which is why a
+designated project's NAME travels in the config and its weekly-changing STATUS
+deliberately does not.
+
+`registerProjects()` copies named fields, so reading one it does not copy
+(`activity`, `pct`, `update`) silently groups every project under "Other" —
+the shape of [`a-feature-test-on-a-missing-method-fails-silent`](kb-notes/methodology-a-feature-test-on-a-missing-method-fails-silent.md).
