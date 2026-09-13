@@ -130,7 +130,7 @@ const cCard = goalCard(doc, "C");
 const cFund = flat(axis(cCard, "what funds it"));
 const cMeas = flat(axis(cCard, "how it is evidenced"));
 check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
-check("goal (C) reports NO performance measure", /no performance measure/i.test(cMeas));
+check("goal (C) reports through statewide work, with no campus measure", /reported through statewide work/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
 const cBand = bandRow(doc, "C");
@@ -143,7 +143,7 @@ check("goal (C) names what its qualitative evidence actually documents",
 // The account and the band must not disagree about the SAME goal — they read
 // one goalEvidence(), and this is what would catch a second copy appearing.
 check("the (d)(2) account and the band agree that (C) has no performance measure",
-  /no performance measure/i.test(cMeas) && /no performance measure/i.test(flat(cBand)));
+  /reported through statewide work/i.test(cMeas) && /reported through statewide work/i.test(flat(cBand)));
 // The figures are COUNTED, so they must agree with the corpus in the window —
 // a hardcoded pair would pass the line above and drift the moment a story lands.
 check("(C)'s story figures are counted from the corpus, not hardcoded", (function () {
@@ -161,12 +161,14 @@ check("(C) reports the educational majority, which is the finding", (function ()
 // be overclaiming against the statute's own wording. (Sam's item-12 ruling,
 // 2026-08-30: the limit is POLICY — student-level equity belongs to the
 // system's three-year legislative reports, never to college outcome funding.)
-check("goal (A) states that 'equitably' is not measured",
-  /equitably.{0,40}not measured/i.test(flat(bandRow(doc, "A"))));
+// Positive-first (Sam, 2026-09-13): the limit reads "measured elsewhere — by
+// design", never "not measured" — the sentence opens with where it IS measured.
+check("goal (A) states that 'equitably' is measured elsewhere, by design",
+  /equitably.{0,40}measured elsewhere/i.test(flat(bandRow(doc, "A"))));
 // ⚠️ The limits are stated ONCE. Carrying them in both places is the exact
 // duplication the band consolidation removed, and a second copy drifts.
 check("...on the band only — the (d)(2) account points at it rather than repeating it",
-  !/equitably.{0,40}not measured/i.test(flat(goalCard(doc, "A"))) &&
+  !/equitably.{0,40}measured elsewhere/i.test(flat(goalCard(doc, "A"))) &&
   /stated on its band/i.test(flat(axis(goalCard(doc, "A"), "how it is evidenced"))));
 
 // ── 6. superscript markers link cards back to the spine ─────────────────────

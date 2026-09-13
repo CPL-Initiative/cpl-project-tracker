@@ -351,7 +351,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     cells(0)[4].indexOf("200") !== -1 && cells(0)[4].indexOf("%") !== -1);
   check("G: an unmeasured priority row reads a plain 'no data yet' — never a measured zero, and " +
         "never the retired advance wording (2026-09-01)",
-    cells(1)[4].indexOf("no data yet") !== -1 && cells(1)[4].indexOf("advance") === -1 &&
+    cells(1)[4].indexOf("awaiting measurement") !== -1 && cells(1)[4].indexOf("advance") === -1 &&
     cells(1)[4].indexOf("0 · 0%") === -1);
   check("G: the priority rows carry funding ($ figures) alongside the measures",
     /\$/.test(cells(0)[1]) && /\$/.test(cells(0)[6]));

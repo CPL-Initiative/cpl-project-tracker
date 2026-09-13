@@ -42,7 +42,7 @@ function measure(metric) {
 
 check("the metric-wiring diagnostic exists (a gap can't hide silently)",
   /function metricDiagnosticHtml/.test(consumerSrc) &&
-  /inheriting baked default/.test(consumerSrc));
+  /hand-maintained default/.test(consumerSrc));
 check("the diagnostic is curator-only (public readers don't need it)",
   /function metricDiagnosticHtml\(\)\s*\{\s*\n\s*if \(publicMode\(\)\) return "";/.test(consumerSrc));
 check("prioMetricSource distinguishes curated from baked-default",

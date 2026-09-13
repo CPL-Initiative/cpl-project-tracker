@@ -360,17 +360,39 @@ function mountWords(doc) {
   // \b-anchored on the STEM so draws / drawn / drawing / draw-down are caught;
   // "withdrawn" is a different word with a different meaning (a participation
   // confirmation the CO revoked) and is excluded by the leading \b.
+  // Sam, 2026-09-13: no "baked", "scored", "falling back" or "pin it" in what a
+  // curator reads, and an unmeasured metric reads "awaiting measurement" rather
+  // than "no data yet" — the plain-absence ruling of 2026-09-01 kept, its
+  // wording turned to face forward.
   const bad = [/\bpools?\b/i, /\bmoney\b/i, /\bapportion\w*/i, /\bpot\b/i, /\badvances?\b(?! (the|each|Vision))/i,
-    /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i]
+    /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i,
+    /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i]
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
   check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
+  // Sam, 2026-09-13: "revise all text that starts with a negative statement and
+  // just start with the positive." Sentence-initial only: a mid-sentence "no"
+  // is grammar; an opening one is the rhetorical pattern he named. "Not
+  // Applicable" is a MAP disposition status and is exempt by name.
+  const NEG_START = /(?:^|[.!?]\s+)(No|Nothing|Not|Never|Cannot|None)\b(?! Applicable)/g;
+  function negStarts(text) {
+    const out = []; let m;
+    while ((m = NEG_START.exec(text))) out.push(text.slice(m.index, m.index + 70).replace(/\s+/g, " ").trim());
+    return out;
+  }
+  const negs = negStarts(t);
+  check("no rendered sentence opens with No / Nothing / Not / Never / Cannot / None (curate view) — " +
+    (negs.length ? negs.join(" | ") : "clean"), negs.length === 0);
   check("the $50K view's rendered text is clean too", (function () {
     T._setSubview("grants");
     const t2 = mountWords(doc);
+    const negs2 = negStarts(t2);
+    if (negs2.length) console.log("   $50K view negative openers: " + negs2.join(" | "));
     return !/\bpools?\b/i.test(t2) && !/\bmoney\b/i.test(t2) && !/\bapportion/i.test(t2) &&
-      !/\bdraws?\b|\bdrawn\b|\bunspent\b/i.test(t2);
+      !/\bdraws?\b|\bdrawn\b|\bunspent\b/i.test(t2) &&
+      !/\bbaked\b|\bscored\b|\bfalling back\b|\bpin it\b|\bno data yet\b/i.test(t2) &&
+      negs2.length === 0;
   })());
 }
 

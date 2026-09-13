@@ -4000,7 +4000,7 @@
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
       status = '<span class="mode shared">Signed in as ' + esc(curatorEmail()) + ".</span> " +
-        '<span class="dk">Changes save for everyone' + (dirty ? "." : "; nothing is customized yet.") + "</span>";
+        '<span class="dk">Changes save for everyone' + (dirty ? "." : "; every value is still the shared default.") + "</span>";
       // ⚠️ WORK THAT EXISTS ONLY HERE MUST SAY SO, and offer the way out. A
       // reviewer who edited before signing in now holds a local overlay that
       // masks the shared model — the screen looks published and is not. The
@@ -4218,38 +4218,38 @@
         if ((!measurable && !meas.bad_src && bearing) || srcOf === "baked") anyRisk = true;
         rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
           (meas.bad_src
-            ? '<span class="cplfund-warn-text">Not wired &mdash; pinned to ' + esc(String(meas.bad_src)) +
-              ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong>.</span>"
+            ? '<span class="cplfund-warn-text">Awaiting a known measure &mdash; <code>metric_src</code> is ' + esc(String(meas.bad_src)) +
+              ", which MAP does not report, so this priority earns <strong>$0</strong> until it names one.</span>"
             : measurable
             ? (msMismatch
                 ? '<span class="cplfund-warn-text">Milestone mismatch &mdash; this metric asks for ' +
                   esc(wantM.toUpperCase()) + " CPL but " + esc(meas.src) + " returns " +
                   esc(meas.milestone) + ". These are different rungs of MAP&#39;s funnel and are not " +
-                  "interchangeable&#59; pin the priority with <code>metric_src</code>, or reword it.</span>"
+                  "interchangeable&#59; set <code>metric_src</code> on the priority, or reword it.</span>"
                 : mismatch
                 ? '<span class="cplfund-warn-text">Unit mismatch &mdash; this metric asks for ' +
                   (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
                   esc(meas.unit) + '</span>'
                 : meas.undelivered
-                  ? '<span class="dk">Declared, not delivered yet &mdash; the daily feed carries no ' +
+                  ? '<span class="dk">Declared, awaiting delivery &mdash; the daily feed carries no ' +
                     esc(meas.src) + " column, so this earns <strong>$0</strong>. " +
                     "It starts earning the day the feed carries it, with no edit here.</span>"
                 : wording
                   ? '<span class="cf-ok">Measurable</span> <span class="cplfund-warn-text">&mdash; but the ' +
-                    "wording says " + (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " while the pin measures " +
-                    esc(meas.unit) + "; reword the metric so it matches what it scores</span>"
+                    "wording says " + (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " while the measure counts " +
+                    esc(meas.unit) + "; reword the metric to match the measure</span>"
                 : '<span class="cf-ok">Measurable</span>') +
               ' <span class="dk">&mdash; ' + esc(meas.src) +
               (meas.unit ? " (" + esc(meas.unit) + ")" : "") +
               (pinned ? ", pinned" : "") +
               (live ? ", " + live : "") + "</span>"
             : bearing
-              ? '<span class="cplfund-warn-text">Not measurable &mdash; nothing can score it, so every institution would receive this share without earning it</span> <span class="dk">(' +
-                esc(meas.gap_short || "no matching feed") + ")</span>"
-              : '<span class="dk">Not measurable &mdash; but no funding depends on it (front-loaded: Year ' +
+              ? '<span class="cplfund-warn-text">Awaiting measurement &mdash; until MAP measures it, every institution would receive this share without earning it</span> <span class="dk">(' +
+                esc(meas.gap_short || "awaiting a matching feed") + ")</span>"
+              : '<span class="dk">Awaiting measurement &mdash; funding is unaffected (front-loaded: Year ' +
                 esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
-            ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">inheriting baked default</span>'
+            ? ' <span class="cplfund-warn-text" title="This priority reads its metric from the hand-maintained default in cpl_funding_data.js. Setting the metric here makes this tab the source.">hand-maintained default</span>'
             : ' <span class="dk">&middot; curated</span>') +
           ' <span class="dk">&mdash; ' + esc(stripTags(p.metric || "(no metric set)")) + "</span></li>");
       });
@@ -4261,11 +4261,9 @@
         ? '<span class="cplfund-warn-text">&mdash; needs attention</span>'
         : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
       ' <span class="dk">(curator view only)</span></summary>' +
-      '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure cannot be scored: every ' +
-      "institution would receive that share without earning it, so it incentivizes nothing. A slot marked " +
-      '<em>inheriting baked default</em> is falling back to the hand-maintained defaults in ' +
-      "<code>cpl_funding_data.js</code>; nothing keeps those in sync with your edits here, so set the " +
-      "metric to pin it.</div>" +
+      '<div class="dk" style="margin:6px 0;">Data used to measure real-time outcomes. Each priority earns against the MAP ' +
+      "measure named beside it. A priority marked <em>hand-maintained default</em> reads its metric from " +
+      "<code>cpl_funding_data.js</code>; setting the metric here makes this tab the source.</div>" +
       "<ul style='margin:0;padding-left:20px;font-size:.8rem;line-height:1.7;'>" + rows.join("") + "</ul></details>";
   }
 
@@ -4647,7 +4645,7 @@
         note: (frontloaded()
           ? esc(windowLabel()) + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unearned funding rolls forward); institutions receive " + fmtMoney(perTotal) + "/yr. "
           : esc(windowLabel()) + " &mdash; " + nYears() + " annual tranches; institutions receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " to " + esc(y[y.length - 1]) + "). ") +
-          "No carve-out line: noncredit FTES carry funding to where the teaching is, inside the one split &mdash; " +
+          "Noncredit FTES carry funding to where the teaching is, inside the one split rather than a carve-out line &mdash; " +
           fmtMoney(ncFace + trioHeld) + " of it is noncredit (" + fmtMoney(trioHeld) +
           " at the noncredit-only institutions + " + fmtMoney(ncFace) +
           " carried within college awards, restricted to noncredit outcomes)" }));
@@ -4968,17 +4966,16 @@
         }).join(" and ") + ", per the daily MAP feed." };
     }
     if (broken.length) {
-      return { cls: "warn", word: "Declared, not delivered",
-        text: "A priority is tagged to this goal but its measure is not reaching the model, so nothing " +
-          "here can be scored yet. See the metric diagnostic above." };
+      return { cls: "warn", word: "Declared, awaiting delivery",
+        text: "A priority is tagged to this goal and its measure is awaiting delivery to the model. " +
+          "See the metric diagnostic above." };
     }
     if (f.pools.length || f.projects.length) {
-      return { cls: "warn", word: "No performance measure",
-        text: "Funded through statewide work rather than a campus target, so no college earns against it " +
-          "and no figure on this tab scores it." };
+      return { cls: "warn", word: "Reported through statewide work",
+        text: "Funded through the statewide project allocation and reported based on the aligned activities." };
     }
-    return { cls: "gap", word: "Nothing tagged",
-      text: "No priority, funding line or project is tagged to this goal in the model as it stands." };
+    return { cls: "gap", word: "Open",
+      text: "Every priority, funding line and project in the model is tagged to another goal; this one is open." };
   }
 
   // The two goals whose LIMIT is a ruling rather than a gap. Each renders in
@@ -4992,11 +4989,11 @@
       // Sam's item-12 ruling (2026-08-30): the limit stands AND is policy,
       // not an open problem — student-level equity belongs to the system's
       // 3-year legislative reports, never to college outcome funding.
-      return '<p class="cplfund-goal-limit"><strong>&ldquo;Equitably&rdquo; is not measured here &mdash; by design.</strong> ' +
+      return '<p class="cplfund-goal-limit"><strong>&ldquo;Equitably&rdquo; is measured elsewhere &mdash; by design.</strong> ' +
         "The measures behind this goal count CPL volume; none describes how that volume is distributed " +
         "across student populations, and the model&rsquo;s equity devices &mdash; the minimum-award floor " +
         "and the award ceiling &mdash; equalize between <em>colleges</em>, a different claim from equitable " +
-        "access <em>for students</em>. Student-level equity is deliberately not scored in college outcome " +
+        "access <em>for students</em>. Student-level equity is deliberately left out of college outcome " +
         "funding: it belongs to the system&rsquo;s <strong>three-year reports to the Legislature</strong>, " +
         "where MIS, CCCApply, and MAP data are pulled together, disaggregated, and analyzed (Sam, 2026-08-30).</p>";
     }
@@ -5028,8 +5025,8 @@
       bits.push('<li><strong>' + esc(x.p.label + ": " + x.p.title) + "</strong> &mdash; " +
         fmtMoney(x.dollars) + " over the " + esc(windowLabel()) + " window" +
         (x.derived ? ' <span class="cplfund-goal-derived" title="' +
-          esc("Derived from this priority's measure (" + (x.meas.milestone || "no milestone") +
-              "), not stored. A curator can pin it.") + '">derived</span>' : "") + "</li>");
+          esc("Derived from this priority's measure (" + (x.meas.milestone || "awaiting a milestone") +
+              "). A curator can set it.") + '">derived</span>' : "") + "</li>");
     });
     f.pools.forEach(function (x) {
       bits.push("<li><strong>" + esc(x.label) + "</strong> &mdash; " + fmtMoney(x.amount) +
@@ -5042,7 +5039,7 @@
         (f.projects.length > 6 ? ", &hellip;" : "") + "</li>");
     }
     return bits.length ? "<ul>" + bits.join("") + "</ul>"
-      : '<p class="cplfund-goal-empty">Nothing in this model is tagged to this goal.</p>';
+      : '<p class="cplfund-goal-empty">Open &mdash; every priority, funding line and project in this model is tagged to another goal.</p>';
   }
 
   function goalSpineHtml() {
@@ -5087,7 +5084,7 @@
             '<span class="dk">Each already records its CPL Workplan goal (' +
             esc(PROJECT_REGISTER_GOALS.join(", ")) + ") and its Vision 2030 action. Those were set before " +
             "&sect;78093.2 was enacted and are the operational plan that delivers these outcomes &mdash; " +
-            "not a rival vocabulary, and nothing here needs correcting. A statutory tag is an addition, " +
+            "not a rival vocabulary, and everything here stands as written. A statutory tag is an addition, " +
             "recording which funding outcome a project&rsquo;s work evidences, which is a judgment about " +
             "delivery rather than a match between two goal names.</span>"
           : "All of them also carry a statutory goal tag.") + "</p>"
@@ -5323,13 +5320,13 @@
     if (publicMode() || nYears() < 2) return "";
     var on = mirrorYears(), match = yearsMatch();
     var note = on
-      ? "Every later year shows and edits the Year-1 set. Nothing is written over &mdash; clearing this " +
+      ? "Every later year shows and edits the Year-1 set. Each year keeps its own values underneath &mdash; clearing this " +
         "restores each year\u2019s own values."
       : match
         ? '<span class="cf-ok">The years currently hold the same priorities.</span>'
         : '<span class="cplfund-warn-text">Year 2 differs from Year 1.</span>' +
           (frontloaded()
-            ? " Under front-loaded disbursement Year 2 carries no funding, so its metrics are never scored " +
+            ? " Under front-loaded disbursement Year 2 is carryover, so its metrics are shown for reference " +
               "\u2014 but the difference becomes real the moment timing moves back to even tranches."
             : "");
     return '<div class="cplfund-yearsync">' +
@@ -5555,10 +5552,8 @@
     // look from its own rules instead.
     return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
       '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.text) + "</h4>" +
-      '<p class="desc">No campus measure scores this outcome, so no college earns against it and no ' +
-      "figure on this page prices it. It is funded through the statewide project allocation and reported " +
-      "on the work below.</p>" +
-      '<p class="nums"><span class="dk">Reported, not measured &mdash; ' +
+      '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.</p>' +
+      '<p class="nums"><span class="dk">Reported through ' +
       esc(String(ids.length)) + " designated " + (ids.length === 1 ? "project" : "projects") +
       "</span></p>" +
       '<ul class="cplfund-rprio-list">' + rows + "</ul>" +
@@ -5645,8 +5640,8 @@
     if (!g) return "";
     return '<div class="cplfund-desig-row" data-desig="' + esc(gkey) + '">' +
       '<span class="cplfund-sec-pvlab">Curator only</span> ' +
-      "<span>No activity is designated to (" + esc(gkey) + ") " + esc(g.short) +
-      ". Designating one adds a reported box to this band, on the public page too.</span>" +
+      "<span>Designate an activity to (" + esc(gkey) + ") " + esc(g.short) +
+      " and a reported box appears in this band, on the public page too.</span>" +
       projectDesignateHtml(gkey) + "</div>";
   }
 
@@ -5715,7 +5710,7 @@
     ps.forEach(function (p, i) { if (!used[i]) orphans.push(i); });
     if (orphans.length) {
       out += '<section class="cplfund-band cplfund-band-orphan"><div class="cplfund-band-head">' +
-        '<span class="cplfund-band-name">Not yet tied to a statutory outcome</span> ' +
+        '<span class="cplfund-band-name">Awaiting a statutory outcome</span> ' +
         '<span class="cplfund-band-cite">' + fmtInt(orphans.length) +
         " of " + fmtInt(ps.length) + " priorities</span></div>" +
         '<p class="cplfund-band-note">These priorities carry a metric whose milestone does not resolve to a ' +
@@ -6070,8 +6065,8 @@
       var reg = METRIC_SOURCES[pin];
       if (!reg) {
         return { bad_src: pin, unit: (p.unit === "ftes" ? "units" : "students"),
-                 gap: "priority pins metric_src=&quot;" + esc(String(pin)) + "&quot;, which is not a known " +
-                      "measure &mdash; nothing can score it",
+                 gap: "metric_src=&quot;" + esc(String(pin)) + "&quot; names a measure outside the known " +
+                      "MAP feeds",
                  gap_short: "unknown metric_src" };
       }
       return { src: pin, unit: reg.unit, basis: reg.basis, pinned: true,
@@ -6255,7 +6250,7 @@
     if (meas.gap) {
       // The WHY lives in the curator-only metric-wiring diagnostic (Sam,
       // 2026-09-01: the rendered copy names no unshipped feed and no advance).
-      return '<p class="nums dk">Actual: no data yet.</p>';
+      return '<p class="nums dk">Actual: awaiting measurement.</p>';
     }
     // A DECLARED-BUT-UNDELIVERED measure is not a slow refresh (2026-08-28).
     // measureOf() sets `undelivered` when the feed does not carry a measure's
@@ -6276,7 +6271,7 @@
     function undeliveredLine() {
       // The feed key lives in the title, not the sentence (Sam, 2026-08-28) —
       // a reader should not need to know MAP's key names to read a card.
-      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">No actuals yet &mdash; ' +
+      return '<p class="nums dk" title="' + esc("MAP feed key: " + meas.src) + '">Awaiting actuals &mdash; ' +
         "this measure earns <strong>$0</strong> today.</p>";
     }
     if (!pf || !pf.statewide) {
@@ -7133,13 +7128,13 @@
       // being shown "held $0", which would claim a withholding that isn't real.
       var showFig = due && held > 0.5;
       var tip = due
-        ? (held > 0.5 ? earnedMoney(held) + " held in reserve — " : "Nothing is withheld yet — ") +
+        ? (held > 0.5 ? earnedMoney(held) + " held in reserve — " : "All of the max award remains available — ") +
           "baseline participation was due " + participationDeadline() +
-          " and is not met. The allocation cap is unchanged and the funding rolls forward, so qualifying " +
+          " and remains unmet. The allocation cap is unchanged and the funding rolls forward, so qualifying " +
           "now still lets this college earn."
-        : "Nothing is withheld yet — baseline participation is not due until " + participationDeadline() +
+        : "All of the max award remains available — baseline participation is due by " + participationDeadline() +
           ". Once this college opts in and has a CPL Coordinator on file in MAP, it starts earning against " +
-          "its cap. The dollars roll forward either way.";
+          "its cap. The funding rolls forward either way.";
       return '<span class="sub cf-withheld" title="' + esc(tip) + '">' +
         (showFig ? "held " + earnedMoney(held) : "confirm participation to start earning") + "</span>";
     }
@@ -7186,8 +7181,8 @@
       // Sam's data-quality instrument (2026-08-28): a zero row is a CHECKABLE
       // claim — "if they disagree and say, Yes, we have NC, we can find the
       // error and fix it."
-      return '<td class="cf-award dk" title="No noncredit FTES on record for this institution in the 2025-26 MIS data, so its award has no noncredit share. If it runs a noncredit program, this is a data error worth reporting — tell the MAP team and it can be traced and fixed.">$0' +
-        '<span class="sub">none on record</span></td>';
+      return '<td class="cf-award dk" title="This institution&#39;s award is all credit: the 2025-26 MIS data records zero noncredit FTES for it. If it runs a noncredit program, that is a data error to find and fix.">$0' +
+        '<span class="sub">credit only</span></td>';
     }
     // The feeds-waiting branch retired 2026-09-01 (Sam: the rendered copy
     // names no unshipped feed) — a $0-earning noncredit share renders exactly
@@ -7240,7 +7235,7 @@
       '<td class="c" title="' + esc(sizeCellTitle(c)) + '">' + fmtInt(c.cr_ftes) + "</td>" +
       '<td class="c" title="' + esc((c.nco
         ? "This institution's own noncredit teaching — its whole size in the one split" +
-          (c.feeder && c.feeder.noncredit_ftes_placeholder ? " (a stand-in figure; nothing disburses on a placeholder — N3 a)" : "")
+          (c.feeder && c.feeder.noncredit_ftes_placeholder ? " (a stand-in figure; disbursement waits for a measured one — N3 a)" : "")
         : "Annual noncredit FTES (MIS 2025-26) — sizes the award with the credit FTES and sets the award's noncredit share, restricted to noncredit outcomes") + ".") + '">' +
         fmtInt(c.nc_ftes) + "</td>" +
       '<td class="c" title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
@@ -7268,7 +7263,7 @@
         "</strong>, its max award." +
         (c.feeder && c.feeder.noncredit_ftes_placeholder
           ? ' <span class="dk">Its ' + fmtInt(c.feeder.noncredit_ftes_placeholder) +
-            "-FTES size is a stand-in; nothing publishes or disburses on a placeholder (N3 a).</span>"
+            "-FTES size is a stand-in; publication and disbursement wait for a measured figure (N3 a).</span>"
           : "") + "</div>";
     } else if (slotIsCarryover(slot)) {
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
@@ -7287,9 +7282,9 @@
             fmtPctTrim(Math.min(1, fr.target > 0 ? fr.actual / fr.target : 0));
         } else if (fr.status === "none") act = "0 &middot; 0%";
         else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
-        else if (fr.status === "undelivered") act = "no data yet";
-        else if (fr.status === "bad_src") act = "not wired";
-        else act = "no data yet";   // gap / pending — plain absence on the surface (2026-09-01)
+        else if (fr.status === "undelivered") act = "awaiting measurement";
+        else if (fr.status === "bad_src") act = "awaiting a known measure";
+        else act = "awaiting measurement";   // gap / pending — plain absence on the surface (2026-09-01)
         // TO GO — the distance between where this college is and where it could
         // be, which is what Sam asked the detail to say (2026-09-01). Only a
         // MEASURED state has a distance: a suppressed actual is masked, so its
@@ -7490,7 +7485,7 @@
     }).join("");
     var body;
     if (!rows.length) {
-      body = '<tr><td colspan="' + cols.length + '" class="t">No institutions match the search.</td></tr>';
+      body = '<tr><td colspan="' + cols.length + '" class="t">Every institution is hidden by this search &mdash; clear it to show them all.</td></tr>';
     } else if (grouped()) {
       body = groupRowsByDistrict(rows).map(function (g) {
         return districtGroupHeaderHtml(g, cols.length) +
@@ -7577,12 +7572,12 @@
           var pfv = perf();
           status = '<div class="cplfund-reqstatus"><strong>' + starN + " of " + total +
             "</strong> colleges qualify " +
-            '<span class="dk">(auto-scored &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
+            '<span class="dk">(auto-measured &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
             (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>" +
             '<div class="dk">For the three noncredit-only campuses this gate is replaced by noncredit ' +
             "certificates posted as exhibits in MAP (N1 a, ruled 2026-08-31).</div>";
         } else {
-          status = '<div class="cplfund-reqstatus"><span class="dk">auto-scored from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
+          status = '<div class="cplfund-reqstatus"><span class="dk">auto-measured from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
         }
       }
       return '<div class="cplfund-reqitem">' + bullet(
@@ -7677,7 +7672,7 @@
           return "<li><strong>" + esc(r.text) + "</strong>" +
             (r.note ? ' <span class="note">&mdash; ' + esc(r.note) + "</span>" : "") + "</li>";
         }).join("")
-      : "<li><em>No requirements defined.</em></li>";
+      : "<li><em>Awaiting requirements.</em></li>";
     var steps = [];
     if (coordShown()) steps.push("Confirm your college has a <strong>CPL Coordinator listed in MAP</strong> (update via the MAP platform&#39;s College Contacts).");
     if (partShown()) steps.push("Submit your college&#39;s <strong>participation request by " + esc(participationDeadline()) + "</strong>.");
@@ -7796,7 +7791,7 @@
       "; test/potential records excluded; counts under " + pf.suppress_below +
       " read &lt;" + pf.suppress_below + "; statewide figures " +
       "deduplicate across colleges (not the column sum). Only the metrics MAP measures today show an actual; the " +
-      "rest read <span class=\"cf-gap\">no data yet</span> in the expand.</div>" + unLine;
+      "rest read <span class=\"cf-gap\">awaiting measurement</span> in the expand.</div>" + unLine;
   }
 
   // Segmented single-choice control. role=group + a label for screen readers,
@@ -7970,7 +7965,7 @@
         grp.map(function (it) {
           return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
             (it.nco ? " <em>(noncredit-only &mdash; earns by origination)</em>" : "") +
-            (it.placeholder ? " <em class='dk'>(size is a stand-in; nothing disburses on a placeholder)</em>" : "") +
+            (it.placeholder ? " <em class='dk'>(size is a stand-in; disbursement waits for a measured figure)</em>" : "") +
             "</td><td>" + cell(it.cr) + "</td><td>" + cell(it.nc) + "</td><td>" + cell(it.total) + "</td></tr>";
         }).join("");
     }).join("");
@@ -8440,7 +8435,7 @@
         '<button type="button" class="cplfund-optbtn" data-viewmode="internal" aria-pressed="' + (!state.previewPublic) +
         '" title="The MAP-team rendering — dials, diagnostics, and the Report sub-view.">Internal</button>' +
         '<button type="button" class="cplfund-optbtn" data-viewmode="public" aria-pressed="' + (!!state.previewPublic) +
-        '" title="Preview what colleges see — the reviewer-only controls drop out; nothing changes for anyone else.">Public</button>';
+        '" title="Preview what colleges see — the reviewer-only controls drop out; everyone else sees the page as it is.">Public</button>';
     }
     return '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundXall">' +

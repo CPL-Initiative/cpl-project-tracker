@@ -136,8 +136,8 @@ function gateSub(row) { return row.querySelector("td.cf-award .cf-withheld"); }
     !/\bopt[- ]?in\b/i.test(gatedSub.textContent) &&
     !/held/i.test(gatedSub.textContent) && !/\$/.test(gatedSub.textContent) &&
     !/^\s*\$0\s*$/.test(gatedSub.textContent));
-  check("S5: ...and its hover says plainly that nothing is withheld yet",
-    !!gatedSub && /nothing is withheld yet/i.test(gatedSub.getAttribute("title") || ""));
+  check("S5: ...and its hover says plainly that all of the max award remains available",
+    !!gatedSub && /all of the max award remains available/i.test(gatedSub.getAttribute("title") || ""));
   check("S5: the gate is visible WITHOUT a hover — the Elig pie plus the award cell's own words",
     !!gatedRow.querySelector("svg.cf-eligpie") &&
     /confirm participation/i.test(gatedRow.querySelector("td.cf-award").textContent));

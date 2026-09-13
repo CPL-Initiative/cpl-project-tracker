@@ -1,6 +1,6 @@
 ---
 title: Session 260 handoff — the flag that was unbuilt, and the field that was not
-date: 2026-09-12
+date: 2026-09-13
 session: 260 (SkyKey)
 tags: [handoff, sierra, curation, testing, a11y]
 status: current
@@ -50,15 +50,38 @@ PR #1568 (the flag) · PR #1566 (smoke 15a/15c) · PR #1567 (the explainer a11y 
   24×24 at every width and two `.tablebox` regions not keyboard reachable
   ≤430px — all in `cpl_funding.js`'s shared section, so the funding-tab
   `/a11y-pass` fixes both surfaces.
-- Sierra lane corrected and under budget (11.9 KB); funding lane compacted.
+- Sierra lane corrected and under budget (11.9 KB); funding lane compacted to
+  budget.
+- **Funding tab, ask 3 of three (2026-09-13):** every rendered sentence now opens
+  with the positive; `baked` · `scored` · `falling back` · `pin it` · `no data yet`
+  are banned stems, an unmeasured metric reads *awaiting measurement*, and the
+  (C) box carries Sam's sentence verbatim. Guarded in `cpl_funding_calm` §5
+  (sentence starts + stems); the suites that pinned the old words re-pinned.
 
 ## Sam's decisions this run
 
-None — Sam was not in the session. Every ruling honored here is his of
-2026-09-12 as recorded by S258, re-read from the To-Do he answered.
+Sam returned on 2026-09-13 with three asks on the Implementation Funding tab
+and ruled, verbatim:
+
+1. *"Earned still smacks of banking... would be better to use something like
+   'measured... or... qualified for'"* — **retire "earn"**, reversing his
+   2026-09-09 choice of *earns* over *draws*. The proposed map is NEEDS SAM 0.
+2. *"Yes to reported cards for outcomes without a measure"* (ask 2).
+3. *"Yes to Ask 1: four bands, (A) (B) (C) (D)"* — the outcome chosen on the
+   card, the merged (B)+(C) band split.
+4. *"Go with your sequence"* — sweep now, checkpoint at the warning line, the
+   two builds to you.
+
+The positive-first rule is his: *"revise all text that starts with a negative
+statement and just start with the positive"*, naming *"the nos and nothings and
+informal terminology like baked, scored, earned, falling back, pin it."*
 
 ## NEEDS SAM
 
+0. **Confirm the words that replace "earn"** before the 93-site sweep: *counts
+   toward* (a priority's measure counts toward funding), *qualifies for* (a
+   college qualifies for its award), *demonstrated* (the result — the statute's
+   own verb in §78093.2(d)(2)), *remaining* (for unearned). Identifiers stay.
 1. **Dispatch `cpl-chat-deploy.yml` to put v66 live.** Blast radius, in plain
    words: the one function behind every Sierra surface redeploys. The public
    page, the Fact Sheet drawer, map.rccd.edu and the vendor iframe get no
@@ -95,6 +118,17 @@ partnership stays undesignated on the (C) card (Sam, 2026-09-12).
 
 ## Queue
 
+- ⭐ **FUNDING TAB, IN THIS ORDER (Sam's rulings of 2026-09-13; lane NEXT ⑪–⑬):**
+  (1) retire "earn" across `cpl_funding.js` (93 rendered sites), the 31 funding
+  suites that pin it, and the explainer's `earning` label, adding the stems to
+  the calm bans — after Sam confirms the map; (2) ask 2: the designate-activities
+  picker moves under each card's Recommended Strategies, sized to the card, with
+  REPORTED CARDS (activities only, never in `priorities(slot)`) for outcomes
+  without a measure — the (C) band box retires into one; (3) ask 1: an outcome
+  picker on each card, four bands (A)(B)(C)(D) derived from the cards as
+  headings, the measure-derived outcome as the default and a curator's
+  assignment shown in words as the CPL team's; the public explainer follows.
+  Mutation-test every new guard; the anchor suite is `cpl_funding_one_pool`.
 - ⭐ **After the dispatch, verify v66 the only way it can be verified:** signed
   in on COBI, one question on the CPL Assistant tab, the recognition line
   appears; then `select viewer, surface, count(*) from chat_interactions where

@@ -158,8 +158,8 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
     P.length === 3 && /(^|[^\d.])0\.1 FTES/.test(P[1].actual));
   check("3b2: so the pin changes the answer — identical prose, different earning",
     P.length === 3 && P[0].actual !== P[1].actual && P[0].current !== P[1].current);
-  check("3c: an unknown pin renders 'not wired' rather than a plausible number",
-    P.length === 3 && /not wired/.test(P[2].actual) && P[2].current === "$0");
+  check("3c: an unknown pin renders 'awaiting a known measure' rather than a plausible number",
+    P.length === 3 && /awaiting a known measure/.test(P[2].actual) && P[2].current === "$0");
   check("3d: a pinned unit source forces the FTES unit, whatever the prose sniffs",
     T._prios("Laney", "1")[0].unit === "FTES");
 
@@ -197,13 +197,13 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   } } });
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
-  check("3e: an undelivered NC source earns $0 and reads 'no data yet' (2026-09-01 wording)",
-    P.length === 3 && /no data yet/.test(P[0].actual) && P[0].current === "$0");
+  check("3e: an undelivered NC source earns $0 and reads 'awaiting measurement' (2026-09-13 wording)",
+    P.length === 3 && /awaiting measurement/.test(P[0].actual) && P[0].current === "$0");
   // Both statuses read "no data yet" on the SURFACE since 2026-09-01; the
   // contrast that matters (the gap row's Current Total pays, the undelivered
   // row's is strictly $0) is 3e4's check, on the dollars.
-  check("3e2: the gap row beside it also reads 'no data yet' — never a measured zero",
-    P.length === 3 && /no data yet/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
+  check("3e2: the gap row beside it also reads 'awaiting measurement' — never a measured zero",
+    P.length === 3 && /awaiting measurement/.test(P[1].actual) && !/0 · 0%/.test(P[1].actual));
   check("3e3: and it is not reported as a measured zero ('0.0 FTES · 0%')",
     P.length === 3 && !actFtes(P[0], 0));
   // The data-gap row ADVANCES its whole CR funding; the undelivered row earns
@@ -226,7 +226,7 @@ check("4c: a declared-but-undelivered source earns f=0 — Sam's NC ruling, not 
 // the expand's Actual column now (one pool, 2026-08-31): "no feed" vs "0 · 0%".
 check("4d: undelivered is a separate LABEL from none (absent zero vs measured zero) — " +
       "'no data yet' vs '0 · 0%' since the 2026-09-01 rewording",
-  /status === "undelivered"\) act = "no data yet"/.test(consumerSrc) &&
+  /status === "undelivered"\) act = "awaiting measurement"/.test(consumerSrc) &&
   /status === "none"\) act = "0 &middot; 0%"/.test(consumerSrc));
 
 // ── 5. one place decides whether a number is a measurement ───────────────────
@@ -272,9 +272,9 @@ check("5c: the CSV emits BLANK for an unmeasured priority, never 0",
 // measure still never renders as a college's measured zero (4d above), and
 // the undelivered branch still decides before the catch-all.
 check("5d: an undelivered measure never falls through to the catch-all label",
-  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') !== -1 &&
-  consumerSrc.indexOf('status === "undelivered") act = "no data yet"') <
-    consumerSrc.indexOf('else act = "no data yet"'));
+  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') !== -1 &&
+  consumerSrc.indexOf('status === "undelivered") act = "awaiting measurement"') <
+    consumerSrc.indexOf('else act = "awaiting measurement"'));
 
 // ── 6. the curator diagnostic must not lie about the new states ──────────────
 // It previously classified anything without a `src` as "not measurable — pays a
@@ -298,10 +298,10 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   T.render();
   const diag = doc.querySelector(".cplfund-metricdiag");
   const txt = diag ? diag.textContent : "";
-  check("6a: an undelivered pin reads 'declared, not delivered yet', not 'pays a FULL ADVANCE'",
-    /declared, not delivered yet/i.test(txt));
-  check("6b: a bad pin reads NOT WIRED and says it earns $0",
-    /not wired/i.test(txt) && /earns \$0/.test(txt));
+  check("6a: an undelivered pin reads 'declared, awaiting delivery', not 'pays a FULL ADVANCE'",
+    /declared, awaiting delivery/i.test(txt));
+  check("6b: a bad pin reads AWAITING A KNOWN MEASURE and says it earns $0",
+    /awaiting a known measure/i.test(txt) && /earns \$0/.test(txt));
   check("6c: neither new state is described as advancing",
     !/nc_pa_u[\s\S]{0,120}FULL ADVANCE/.test(txt) && !/nope_u[\s\S]{0,120}FULL ADVANCE/.test(txt));
   check("6d: a prose/pin wording disagreement is flagged as WORDING, not as a unit mismatch",
@@ -416,7 +416,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const card3 = cardAt(doc, 2);
   const P = detRows(openDetail(window, doc, "Bakersfield"));
   check("8a: with ppa_u present the Access column starts earning, no code change",
-    /Actual/.test(card3.textContent) && !/No actuals yet/.test(card3.textContent) &&
+    /Actual/.test(card3.textContent) && !/Awaiting actuals/.test(card3.textContent) &&
     P.length === 3 && /[\d,.]+ FTES · /.test(P[2].actual) && !/no feed/.test(P[2].actual));
   check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
     /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
@@ -442,8 +442,8 @@ check("9a: an empty-string metric_src clears the pin rather than being an unknow
   } } });
   T.render();
   const P = detRows(openDetail(window, doc, "Laney"));
-  check("9b: a cleared pin falls back to the prose matcher, not to 'not wired'",
-    P.length === 3 && !/not wired/.test(P[0].actual) && actFtes(P[0], 400));
+  check("9b: a cleared pin returns to the prose matcher, not to 'awaiting a known measure'",
+    P.length === 3 && !/awaiting a known measure/.test(P[0].actual) && actFtes(P[0], 400));
 }
 
 finish();
