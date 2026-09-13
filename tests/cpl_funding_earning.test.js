@@ -83,19 +83,21 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const awardCells = potRow.querySelectorAll("td.cf-award");
   check("E: one row carries the CR award / NC award pair (the retired Total/Yr columns' successor)",
     awardCells.length === 2);
-  check("E: the CR award cell stacks the max award over the earning figure, unconditionally",
+  check("E: the CR award cell stacks the max award over the qualifying figure, unconditionally",
     !!awardCells[0].querySelector(".sub") &&
-    // ⚠️ "earning", not "earned" (Sam, 2026-08-27): the money is not a done deal
-    // until the college qualifies, and the past tense read like a settled award.
-    // Asserted BOTH ways so a revert to the past tense fails rather than passing
-    // on a loose /earn/ match.
-    (function (t) { return /earning/i.test(t) && !/\bearned\b/i.test(t); })(
+    // ⚠️ THE PRESENT PARTICIPLE, NEVER THE PAST (Sam, 2026-08-27): the funding is
+    // not a done deal until the college qualifies, and the past tense read like a
+    // settled award. His 2026-09-13 sweep retired "earn", so the word is now
+    // "qualifying" — the TENSE ruling is what survives, and both are load-bearing.
+    // Asserted BOTH ways so a revert to a past tense fails rather than passing on
+    // a loose match.
+    (function (t) { return /qualifying/i.test(t) && !/\b(earned|qualified|demonstrated)\b/i.test(t); })(
       awardCells[0].querySelector(".sub").textContent));
   // Reworded 2026-09-01 (Sam: no unshipped-feed references on the surface):
-  // the F1 arithmetic shows as the STANDARD earning sub at $0.
-  check("E: the NC award cell carries the standard earning sub at $0 (F1 arithmetic; no feeds-waiting label)",
+  // the F1 arithmetic shows as the STANDARD qualifying sub at $0.
+  check("E: the NC award cell carries the standard qualifying sub at $0 (F1 arithmetic; no feeds-waiting label)",
     !!awardCells[1].querySelector(".sub") &&
-    /earning \$0/.test(awardCells[1].textContent) &&
+    /qualifying \$0/.test(awardCells[1].textContent) &&
     !/until feeds report/.test(awardCells[1].textContent));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
@@ -117,10 +119,13 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // The earned / unearned / balance POOL CARDS were consolidated into the
   // Summary at the top (R11, ruled 2026-08-31) — the boxes are retired and the
   // same readout rides .cplfund-summary, advances named so it reads honestly.
-  check("E: the earned/unearned pool cards are retired (R11) — the Summary carries the readout",
+  // The CLASS NAMES stay `.cplfund-card.earned` / `.unearned` — an absence guard
+  // names the selector it proves gone, and the 2026-09-13 vocabulary sweep moved
+  // rendered WORDS, never identifiers.
+  check("E: the demonstrated/remaining pool cards are retired (R11) — the Summary carries the readout",
     !doc.querySelector(".cplfund-card.earned") && !doc.querySelector(".cplfund-card.unearned") &&
     (function (s) {
-      return !!s && /earned so far/.test(s.textContent) && /unearned rolls forward/.test(s.textContent);
+      return !!s && /demonstrated so far/.test(s.textContent) && /remaining rolls forward/.test(s.textContent);
     })(doc.querySelector(".cplfund-summary")));
 
   const pcards = doc.querySelectorAll(".cplfund-prio .p");
@@ -136,10 +141,11 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     pcards[2].textContent.indexOf("full advance") === -1);
 
   const crTxt = awardCells[0].textContent;
-  check("E: the CR award cell carries BOTH the max award and the earning figure",
-    (crTxt.match(/\$/g) || []).length >= 2 && /earning/i.test(crTxt) && !/\bearned\b/i.test(crTxt));
-  check("E: the CR award cell hover names the earning figure — the measured/advance breakdown is retired",
-    /earning so far/.test(awardCells[0].getAttribute("title") || "") &&
+  check("E: the CR award cell carries BOTH the max award and the qualifying figure",
+    (crTxt.match(/\$/g) || []).length >= 2 && /qualifying/i.test(crTxt) &&
+    !/\b(earned|qualified|demonstrated)\b/i.test(crTxt));
+  check("E: the CR award cell hover names the qualifying figure — the measured/advance breakdown is retired",
+    /qualifying so far/.test(awardCells[0].getAttribute("title") || "") &&
     !/advance|measured on actual/.test(awardCells[0].getAttribute("title") || ""));
 
   // Earned splits TWO ways since the guaranteed rural slice was retired
@@ -154,15 +160,18 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     !/\badv\b/.test(awardCells[0].textContent));
 
   const csv = T._csv().split("\r\n");
-  check("E: CSV always carries Earned + % of max award columns",
-    csv[1].indexOf("Earned ") !== -1 && csv[1].indexOf("% of max award") !== -1);
+  // The CSV export is READ BY A HUMAN, so the 2026-09-13 vocabulary sweep reaches
+  // its column headers too — and no DOM-rendered-text guard can see them, which
+  // is why "Earned <window>" survived the first pass of that sweep.
+  check("E: CSV always carries Demonstrated + % of max award columns",
+    csv[1].indexOf("Demonstrated ") !== -1 && csv[1].indexOf("% of max award") !== -1);
   // The measured/advance breakdown columns RETIRED 2026-09-01 (Sam: no
   // mention of the advance concept anywhere rendered, the CSV included).
   check("E: CSV carries no measured/advance breakdown columns — the earned total and the reserve remain",
     csv[1].indexOf("Earned: measured") === -1 && csv[1].indexOf("Earned: advance") === -1 &&
     csv[1].indexOf("Withheld") !== -1);
-  check("E: CSV meta describes max-awards-with-earned rather than a basis mode",
-    csv[0].indexOf("earned-to-date") !== -1 && csv[0].indexOf("EARNED basis") === -1);
+  check("E: CSV meta describes max-awards-with-the-Current-Total rather than a basis mode",
+    csv[0].indexOf("the Current Total beside them") !== -1 && csv[0].indexOf("EARNED basis") === -1);
 }
 {
   // Capped at 100%: an overachiever earns its FULL credit share (never more) —

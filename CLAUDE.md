@@ -334,18 +334,32 @@ named here because a store nobody names is a store nobody finds —
   and the statute's "Advancing career attainment" are the allowed senses.
   The anchor suite's D13 ban guard enforces it. Sweep prose only, never
   identifiers.
-  ⚠️ **NEVER THE BANKING SENSE OF "DRAW" (Sam, 2026-09-09):** *"'draws' is a
-  business term tied to banking and I don't want that connotation."* Say
-  **earns** (the model already runs on earned / unearned / Total Possible), or
-  **receives** where funding already earned is being released. Also retired:
-  **unspent** → *unearned*, **the dollars** → *the funding*. ⚠️ **But
+  ⚠️ **NEVER THE BANKING SENSE OF "DRAW" (Sam, 2026-09-09) — AND "EARN" IS
+  RETIRED TOO (Sam, 2026-09-13).** *"'draws' is a business term tied to banking
+  and I don't want that connotation"*; then, of the replacement he had himself
+  chosen: *"Earned still smacks of banking... would be better to use something
+  like 'measured... or... qualified for'"*. **The map, confirmed 2026-09-13:** a
+  measure **counts toward** funding · a college **qualifies for** its award · the
+  result is **demonstrated** (the statute's own verb, §78093.2(d)(2)) · unearned
+  is **remaining**. **receives** still fits where funding already qualified for
+  is being released. Also retired: **unspent**, **the dollars** → *the funding*.
+  ⚠️ **The award cells keep the PRESENT PARTICIPLE — *qualifying*, never a past
+  tense:** his 2026-08-27 ruling (the past tense "read like a settled award")
+  SURVIVES the sweep, and flattening those labels to *demonstrated* reverses him.
+  ⚠️ **"Students earn credit" STAYS — CHECK WHO THE SUBJECT IS.** A COLLEGE
+  earning FUNDING is the banking sense he retired; a STUDENT earning CREDIT is
+  ordinary academic English and the language the statute uses. Same subject test
+  as *expended* below. ⚠️ **But
   *expended* STAYS where the subject is a COLLEGE spending (his rule, same
   day): *"expended should be kept if I am referring to the colleges spending
   the funds. Allocated should be used if I am referring to the CO awarding or
   dispensing the funds to colleges."* The two words are not interchangeable —
   check who the subject is before sweeping either. `cpl_funding_calm` bans
-  the draw stem and *unspent* in rendered text (`withdrawn` is a different
-  word and is excluded).
+  the draw stem, *unspent* and the earn stems in rendered text (`withdrawn` is a
+  different word and is excluded, and the `\b` is load-bearing — without it the
+  ban forbids *credit for prior learning*). ⚠️ **A rendered-text ban covers only
+  the branches a fixture paints** — `cpl_funding_earn_retired.test.js` reads the
+  SOURCE for the same words, and that is the one that caught the CSV header.
 - **HOUSE VOICE — write outward artifacts the way the CO writes (Sam,
   2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
   standard: *"the word choice and tone provide an extensive example of the tone
@@ -774,7 +788,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **Disposition grain / student detail** | What a college has ACTED on, not just what credit exists. | ✅ live — [lane state](docs/reference/lanes/disposition-grain-student-detail.md) |
 | **CPL clean-up worklist** | What to fix in the CPL data, in what order, and who fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/cpl-cleanup-worklist.md) |
 | **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 in progress · open work — [lane state](docs/reference/lanes/ess-25-82-tab.md) |
-| **Implementation Funding tab / the $35M model** | The three priorities, their shares and factors, what each earns against, and the college-by-college allocation. | ✅ live · open work — [lane state](docs/reference/lanes/implementation-funding.md) |
+| **Implementation Funding tab / the $35M model** | The three priorities, their shares and factors, what counts toward each, and the college-by-college allocation. | ✅ live · open work — [lane state](docs/reference/lanes/implementation-funding.md) |
 | **My College (college action page) / MAP-team queue** | One page (not 123) where a college picks itself and gets its stats, its opportunities against the goals, and concrete to-dos — plus the same engine pointed INWARD at the MAP team's own backlog. | ✅ live · open work — [lane state](docs/reference/lanes/my-college-action-page.md) |
 | **College & district identity** | One taxonomy: every college/district name variant resolving to MAP's authoritative `college_id`, the CCCCO MIS district code, and every spelling any system uses. | ✅ live · open work — [lane state](docs/reference/lanes/college-district-identity.md) |
 | **Admin tab / the side menu as data** | One place to manage the COBI side menu — order, grouping, naming, which sites show what, who sees it — beside what actually protects each tab. | ✅ live · open work — [lane state](docs/reference/lanes/admin-tab-side-menu.md) |

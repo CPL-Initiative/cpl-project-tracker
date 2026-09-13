@@ -300,8 +300,8 @@ check("5d: an undelivered measure never falls through to the catch-all label",
   const txt = diag ? diag.textContent : "";
   check("6a: an undelivered pin reads 'declared, awaiting delivery', not 'pays a FULL ADVANCE'",
     /declared, awaiting delivery/i.test(txt));
-  check("6b: a bad pin reads AWAITING A KNOWN MEASURE and says it earns $0",
-    /awaiting a known measure/i.test(txt) && /earns \$0/.test(txt));
+  check("6b: a bad pin reads AWAITING A KNOWN MEASURE and says it stays at $0",
+    /awaiting a known measure/i.test(txt) && /stays at \$0/.test(txt));
   check("6c: neither new state is described as advancing",
     !/nc_pa_u[\s\S]{0,120}FULL ADVANCE/.test(txt) && !/nope_u[\s\S]{0,120}FULL ADVANCE/.test(txt));
   check("6d: a prose/pin wording disagreement is flagged as WORDING, not as a unit mismatch",

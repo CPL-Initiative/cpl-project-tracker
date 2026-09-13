@@ -79,7 +79,7 @@ function detRows(det) {
     /Baseline eligibility:/.test(txt) && !/the gate to participate/.test(txt) &&
     !/Baseline eligibility \(/.test(txt));
   check("T1d: nothing in the expand restates the gate's roll-forward sentence twice",
-    (txt.match(/qualifying later still lets it earn/g) || []).length <= 1 &&
+    (txt.match(/qualifying later still counts toward it/g) || []).length <= 1 &&
     !/nothing is redistributed, so qualifying later/.test(txt));
   // ⚠ THE COUNT ABOVE TOLERATES ZERO, and must — this fixture's college is not
   // always gated. That is also exactly how the guard went dead on 2026-09-09:
@@ -90,7 +90,7 @@ function detRows(det) {
   // fails, pointing at the count that needs re-aiming. Third occurrence of
   // a-test-coupled-to-position-or-wording-breaks-on-correct-work.
   check("T1d: …and that sentence still exists to be counted (the guard is not dead)",
-    /qualifying later still lets it earn/.test(consumerSrc));
+    /qualifying later still counts toward it/.test(consumerSrc));
 
   // THE SPAN. The table is a direct child of the detail grid, and the grid is
   // auto-fit minmax(240px, 1fr) — without the span rule it lands in one column
@@ -143,8 +143,8 @@ function detRows(det) {
   const R = detRows(openDetail(window, doc, "Laney"));
 
   check("T2: the table carries a To go column", R.length === 3 && "to go" in R[0]);
-  check("T2a: under target — To go names the distance AND the funding it would earn",
-    R.length === 3 && /\d/.test(R[0]["to go"]) && /\$[\d,]+ still to earn/.test(R[0]["to go"]));
+  check("T2a: under target — To go names the distance AND the funding still remaining",
+    R.length === 3 && /\d/.test(R[0]["to go"]) && /\$[\d,]+ remaining/.test(R[0]["to go"]));
   check("T2a2: …and the distance is not the whole target (the posted amount is subtracted)",
     R.length === 3 && R[0]["to go"] !== R[0].target);
   check("T2b: at or over target — To go says target met, and offers no negative distance",
@@ -154,7 +154,7 @@ function detRows(det) {
   // just the cell it was applied to.
   check("T2c: a privacy-suppressed actual gets NO distance — it would leak the value by subtraction",
     R.length === 3 && /privacy/.test(R[2].actual) &&
-    !/\d/.test(R[2]["to go"]) && !/still to earn/.test(R[2]["to go"]));
+    !/\d/.test(R[2]["to go"]) && !/remaining/.test(R[2]["to go"]));
   check("T2c2: …and the masked row's To go is a plain absence, not a zero",
     R.length === 3 && !/^0\b/.test(R[2]["to go"]) && !/target met/.test(R[2]["to go"]));
 }
