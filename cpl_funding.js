@@ -536,6 +536,28 @@
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; min-height: 24px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
     ".cplfund-srclink { padding: 5px 0; }",
+    /* ⚠ THE CURATE-ONLY CONTROLS, AND THE PUBLIC SWEEP CANNOT SEE THEM. These
+       five render only for a signed-in curator on the COBI tab, so
+       `npm run a11y funding-model` — which loads the explainer's embed of the
+       college section — reported ZERO for them while the tab was still failing.
+       Measured on `npm run a11y cobi`: cplfund-ed 97.8x22 · pool-label-input
+       175x21 and 240x22 · reqdel 67.6x21.3 · timing-date 100x21. A surface the
+       public sweep clears is not a surface that passes. box-sizing because each
+       already carries its own padding. */
+    /* ⚠ THE CURATE-ONLY CONTROLS, AS A FAMILY — AND THE PUBLIC SWEEP CANNOT SEE
+       ANY OF THEM. These render only for a signed-in curator on the COBI tab, so
+       `npm run a11y funding-model` — which loads the explainer's embed of the
+       college section — reports ZERO while the tab is failing. A surface the
+       public sweep clears is not a surface that passes.
+       ⚠ LISTED AS A FAMILY ON PURPOSE, not one class per sweep. Fixing the four
+       that the first `npm run a11y cobi` named surfaced two more on the next run
+       (cplfund-ed-t, cplfund-timing-label), because the curate surface paints
+       many controls and each sweep only reports what that run happened to
+       render. The list is every interactive class in the tab's markup, so a
+       control that appears under a curator state no sweep has reached is
+       already floored. Checkboxes are NOT here: their wrapping label is the
+       measured box (see .cplfund-colmenu-item). */
+    ".cplfund-ed, .cplfund-ed-s, .cplfund-ed-t, .cplfund-ed-area, .cplfund-ed-sel, .cplfund-pool-label-input, .cplfund-prio-title-input, .cplfund-reqdel, .cplfund-timing-date, .cplfund-timing-label, .cplfund-sec-ti, .cplfund-prose-ta, .cplfund-textbtn, .cplfund-card-eye, .cplfund-card-x, .cplfund-pos, .cplfund-multi, .cplfund-note, .cplfund-stratadd, .cplfund-timingadd, .cplfund-optin-open, .cplfund-optin-submit, .cplfund-kindtoggle, .cplfund-colane-ok, .cplfund-colane-no, .cplfund-pvchip { min-height: 24px; box-sizing: border-box; }",
     // Column show/hide menu (Sam, 2026-07-24) — a ⚙ Columns dropdown of checkboxes.
     ".cplfund-colmenu { position: relative; display: inline-block; }",
     ".cplfund-colmenu > summary { list-style: none; cursor: pointer; display: inline-block; }",
