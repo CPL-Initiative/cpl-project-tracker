@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-234 document(s).
+235 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 261 | [the number that had never been near the engine](../session_261_handoff.md) | 2026-09-13 |
 | 260 | [the flag that was unbuilt, and the field that was not](../session_260_handoff.md) | 2026-09-13 |
 | 259 | [four asks on the funding tab, and a resolver nobody could reach](../session_259_handoff.md) | 2026-09-12 |
 | 258 | [a tab whose main table had never rendered, and a deploy boundary that is not one](../session_258_handoff.md) | 2026-09-11 |

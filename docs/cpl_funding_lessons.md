@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-12
+updated: 2026-09-13
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -43,259 +43,6 @@ shell-first, then new-files-only.
 > migration) on **2026-09-01** — each time because the doc crossed its size
 > budget and the checkpoint needed to append. Those phases are shipped and settled; read the archive only for the
 > reasoning behind a decision you are about to change.
-## 2026-08-27 (Session 200, SkyLane) — the noncredit lane earns, and the trap ran the other way
-
-Sam ruled the last open dial in one line — **NC inherits credit's shares,
-34/33/33** — and build step 2 landed: the noncredit lane now EARNS against its
-own three measures, and the Option A row renders under every college that has a
-noncredit program.
-
-### The shape of the build
-
-The lane needed exactly one new idea and no new plumbing. `prioTarget()` already
-computes *pot ÷ price*; what changed is **which pot**:
-
-```js
-function prioEntitlement(c, p) {
-  if (p && p.lane === "nc") return ncPrioEntitlement(c, p);   // route, don't split
-  return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
-}
-```
-
-That is Sam's *"route, don't split"* made structural: a priority belongs to one
-lane and is measured against that lane's pot; `share` splits the MONEY inside the
-lane, never the FTES. Everything downstream — the clamp, the earning ladder, the
-front-load carryover states, the floor/ceiling asymmetry — is reused unchanged.
-
-`ncPriorities(slot)` is credit's three, re-pointed. Titles, descriptions,
-strategies, shares and the funding factor are **inherited** (Sam: "the same three
-priorities", "no discount for being the newer lane"), with an `ncPriorities`
-override layer resolving scenario → shared → baked so diverging any of them later
-is one field rather than a refactor.
-
-### ⭐ The prose trap, running in the opposite direction
-
-#1364 fixed a CREDIT metric that prose-matched its way onto the wrong measure.
-This lane is the mirror, and it is worse: **the NC priorities inherit credit's
-wording by construction.** An unpinned NC priority does not fail to resolve — it
-resolves confidently onto a CREDIT source and scores noncredit money on credit
-performance. Every figure would be non-zero, in range, and wrong.
-
-So `ncPriorities()` **always** emits a `metric_src`, mapped by MILESTONE out of
-`METRIC_SOURCES` itself rather than written down a second time, and a milestone
-with no noncredit counterpart gets a deliberately-unknown key so it lands in the
-loud `bad_src` branch — $0, named on the cell — instead of falling through to the
-prose. There is no unpinned path in this lane by construction, not by discipline.
-
-⚠️ **And the coupling runs both ways.** Because the NC rung is taken from how the
-CREDIT priority resolved, a mis-resolved credit metric hands its error straight to
-noncredit. `F9`/`F10` pin this: un-pin the credit Access metric and its noncredit
-counterpart follows it onto the transcribed rung, collapsing two NC priorities
-onto one source. **Sam's `ppa_u` pin is now load-bearing for both lanes.**
-
-### ⚠️ Three ways this build could have quietly disbursed the carve-out
-
-1. **The advance.** `earnFraction()` pays the FULL CAP when the perf artifact has
-   not loaded — a sensible transient for credit, and catastrophic here: Sam ruled
-   NC shows $0, never an advance. That branch fires *before* `srcDelivered()` can
-   be asked anything, so without a lane test a slow artifact load (or any harness
-   without one) disburses the whole **$1.8M**. Lane-guarded now.
-2. **The share sum.** `prioCap()` normalizes by the CREDIT share sum. Identical
-   today, because Sam set NC's shares to credit's — and silently wrong the moment
-   he moves one. `ncShareSum`/`ncSlotEntitlement`/`ncPrioCap` exist for exactly
-   that day. ⚠️ Measured while writing the guard: **a share set is a MULTIPLIER on
-   the pot, not a normalizer** — shares summing to 1.30 place 1.30 × W, in credit
-   too. My first assertion encoded an invariant the credit lane does not have.
-3. **The wrong floor in the hover.** Reusing `prioCellHtml()` wholesale would have
-   printed the **$150,000 credit floor** on a row held by the **$50,000 noncredit**
-   one — a real dollar figure, in the right place, describing the wrong dial. The
-   NC cell is its own function for this reason.
-
-### ⚠️ `fmtCountK` misstates a noncredit target — found in Chromium, not jsdom
-
-The row was structurally perfect and the numbers were wrong. Credit targets are in
-the hundreds or thousands, so the compact formatter rounds to a whole number
-harmlessly. **Noncredit targets are order 1–25 CPL FTES**, where `1.4` paints
-`"1"` (−29%) and anything under 0.5 paints **`"0"`** — an absent-looking zero, on
-the one lane whose honest zeros are the entire point of the design.
-
-Nine jsdom assertions about that cell passed. It took a screenshot to see it.
-`fmtFtesSmall()` keeps one decimal below 100 and defers to the shared compaction
-above it. ⚠️ **The credit lane has the same latent case** — a small college's
-FTES-denominated credit target can also fall under 100 — left alone deliberately
-rather than widened into a live tab mid-build.
-
-### Measured on the LIVE config, not the bake
-
-Sam, mid-build: *"The config is likely old news. Check the tab for current numbers
-and metrics."* He was right to say it — every block of the new suite runs on the
-BAKED defaults, which differ from live on **all four** properties that matter
-here: shares, factor, `mirrorYears`, and (decisively) the bake has **two
-priorities on the transcribed rung**, so it cannot exercise the three-distinct-
-sources mapping at all.
-
-Dumped live via MCP, verified **byte-identical** (`md5 23531c14…`, 8,607 chars —
-not hand-checked, compared against `md5(config::text)` in Postgres), and run
-through `_effective()`:
-
-| | live |
-|---|---|
-| NC carve-out | **$1,800,000** |
-| entry threshold | 500 FTES → **33 institutions** |
-| NC floor / cap | **$50,000 / $100,000** |
-| at floor / at cap | **30 / 2** |
-| NC sources | three DISTINCT (`nc_pe_u` · `nc_pa_u` · `nc_pt_u`) |
-| earned across all 33 | **$0** |
-
-⭐ **30 of 33 sit at the floor and 2 at the cap — exactly ONE institution is
-earning proportionally.** `ncModel().breakEven` already said so (3,909 FTES);
-seeing it as 30/33 makes the point sharper. As an incentive the lane is currently
-almost entirely a grant, and that is a dial question for Sam, not a defect.
-
-⚠️ A live-shaped FIXTURE went into the suite, never the live config — a test
-carrying today's shares goes red the next time Sam edits one, which is how a
-guard becomes a chore and then a deletion. It reproduces the four structural
-properties and pins no dial.
-
-### Verification
-
-`tests/cpl_funding_nc_lane.test.js` — **48 assertions**, six blocks. Five
-mutations run, all caught: dropping the pin (7 fail), routing the entitlement at
-the credit pool (4), letting the not-loaded branch advance NC (3), normalizing on
-the credit share sum (3), reverting the target precision (1).
-
-`scripts/check_funding_nc_row_layout.js` — **9 Chromium checks** for the four
-claims jsdom structurally cannot make: the row does not widen the table, every
-cell lines up under its credit counterpart, the CR/NC chips are painted words at
-a readable size, and the body never scrolls sideways at 390px.
-
-⚠️ **Do not mutate a source file while a full-suite background run is in flight** —
-I invalidated a 15-minute run that way, then compounded it with a `git checkout --`
-in the restore step that wiped the file. A copy taken before the first mutation is
-what saved it.
-
-### Next
-
-1. **Sam looks at the row** — density and the tint are his calls.
-2. The credit-lane variant of the rounding (a small college's FTES target).
-3. **NC's own strategy text.** Year-1 P-Success still lists *"noncredit mirror
-   courses"* among CREDIT strategies (the carryover from Session 199). The NC
-   priorities inherit credit's strategies today; moving that line is a change to
-   curator-authored text in the live config, so it is Sam's, not a session's.
-
-## 2026-08-27 (later, Session 200) — twelve tweaks, and the two guards I broke without noticing
-
-The NC lane merged as **#1367** after Sam drove the row through roughly a dozen
-visual passes in one sitting. The build lessons are in the section above; these
-are the ones the *iteration* produced.
-
-### ⭐ Sam arrived at the grouping problem from the other end
-
-I had rendered three options for his "gray underline below the CR row" and
-recommended the opposite — heavier rules BETWEEN institutions, lighter WITHIN
-the pair — because underlining inside the pair makes a noncredit row read as a
-separate college. He accepted that, then found the same defect independently
-from the zebra striping:
-
-> *"rather than alternating gray/white rows, which makes them look like
-> different colleges, would be better to alternate between colleges and keep the
-> CR and NC same background."*
-
-`tr:nth-child(even)` is **row** parity. The moment a college can occupy two
-rows, its credit row and its noncredit row land on opposite stripes. Two
-independent routes to one conclusion is the strongest signal a design has that
-it is right; the stripe is now emitted per COLLEGE and carried by every row of
-that college's block, so it survives a future third row.
-
-### ⚠️ I broke two suites I never ran, twice, the same way
-
-`cpl_funding_metric_pin` (9 of 43) and `cpl_funding_basis` (1 of 37). Neither
-failure was about what the suite tests:
-
-- metric_pin indexed priority cells off the row's `<td>` list — `cells[4]`,
-  `[5]`, `[6]` — and matched on the inline `"Now"` label. A **TGT/NOW label
-  column** shifted every index by one and removed the label.
-- basis asserted `/Credit FTES/` against the whole `<thead>`. Sam **renamed the
-  header**, which changed nothing about the allocation basis that assertion
-  exists to protect.
-
-**Both times I ran the suites my change was ABOUT rather than the ones it could
-REACH.** CI found one; the merge conflict made me re-run and find the other. The
-rule is not "run everything" (30+ minutes) — it is that a *layout* change reaches
-every suite that locates an element, and a *wording* change reaches every suite
-that matches a string.
-
-Both are now written against the CONTRACT: `td.cf-prio` in document order IS
-P1/P2/P3, `.cf-t`/`.cf-a` ARE the target and actual lines, and the size column
-NAMES THE BASIS IN FORCE rather than saying one particular phrase. ⚠️ basis's
-paired assertion had also gone **vacuous** — "the header does NOT say Credit
-FTES" became trivially true once nothing said it anywhere; it now asserts the
-positive and the negative on the same scoped element.
-
-### ⛔ The threshold cannot go below 400, and that is a finding about the FLOOR
-
-Sam asked whether to show all noncredit rows because *"I may adjust the minimum
-500 threshold"*. Building that surfaced the constraint behind his question.
-Swept through the model (not re-derived):
-
-| threshold | in lane | floor demanded | vs $1.8M |
-|---|---|---|---|
-| 500 | 33 | $1.65M | ok, 2 also capped |
-| 450 | 34 | $1.70M | ok, ceiling stops binding |
-| **400** | **35** | **$1.75M** | **last feasible step** |
-| 350 | 38 | $1.90M | ✗ `floorInfeasible` |
-| 200 | 58 | $2.90M | ✗ |
-| 50 | 88 | $4.40M | ✗ |
-
-**The threshold and the floor are one decision, not two.** Widening the lane
-below 400 makes the $50k minimum unpayable, so the lever for a bigger lane is
-the floor or the carve-out. Also: at 450 and below the $100k ceiling stops
-binding entirely (capped 2 → 0), so it is inert the moment the lane widens.
-
-### ⭐ Showing the 78 below-threshold colleges is a DIAL argument
-
-While the table listed only qualifiers, moving the threshold changed **which
-rows exist** — so the table could not show the consequence of the curator's own
-edit; you had to already know who was missing to see who joined.
-`ncInstitutions()` has returned the roster unfiltered since it was written, for
-exactly this reason. The ROW layer simply never honored it.
-
-⚠️ **A below-threshold row must not print $0.** "$0 earned" and "never eligible
-to earn" are different facts. Em-dashes with the reason, plus a `below 500` chip
-naming the gap — 476.7 short by 23 is a different story from 0.26, and both were
-equally invisible before.
-
-### ⚠️ "Opt in" was hiding a live typo, two layers down
-
-Sam asked for wording that sounds less optional without a compliance tone.
-"Confirm participation" — opt-in is mailing-list language presuming a default of
-OUT, when nothing here turns on a choice, only on results.
-
-Chasing the label found that **`partLabel` ends in the word "by" and two of its
-three call sites appended their own**, so the eligibility hover and the
-baseline-gate text had been rendering *"Opt-in participation **by by**
-2026-11-01"*. The third site appended nothing — so the same label had to end in
-"by" there and not end in "by" at the other two. **No single value satisfies
-that**, which is why editing the text could never have fixed it.
-
-⚠️ It is guarded through a **hook**, not the screen: both render surfaces need
-live eligibility data (`baselineGate()` short-circuits to "pending" when the
-coordinator feed has not loaded), so the join is unreachable from jsdom — which
-is exactly why it shipped wrong and stayed wrong.
-
-### Next
-
-1. **The ⬆/⬇ glyph → the words `min`/`max`.** Sam asked what it meant, which is
-   the finding: one mark doing two jobs ($150k credit floor on a credit row,
-   $50k noncredit floor on an NC row), told apart only by hover, against his own
-   standing preference for plain words over glyphs.
-2. **His call on the threshold**, given it is really a floor decision.
-3. The credit-lane variant of the `fmtCountK` rounding.
-4. NC's own strategy text (Year-1 P-Success still lists "noncredit mirror
-   courses" among CREDIT strategies).
-
----
-
 ## 2026-08-28 — SkyLens: the lane switch, and a gate stricter than its own policy
 
 ### What shipped (PR #1369, merged as `80d96b6`)
@@ -1890,3 +1637,111 @@ or... qualified for"* — reversing 2026-09-09's *earns*. It is 93 rendered site
 and 31 suites, so it is the next session's, with the proposed map (counts
 toward · qualifies for · demonstrated · remaining) awaiting his word.
 Identifiers keep the old stem; prose never.
+
+---
+
+## 2026-09-13 — S260 (SkyKey): the sweep, the a11y pass, and a number that had never been near the engine
+
+**Shipped.** PR #1570 retired "earn" across the tab, the CSV export and the public
+explainer (69 sites) and cleared the funding target-size findings; PR #1571 landed ask 2;
+PR #1572 corrected two stale lines in this lane.
+
+### The lesson that cost the most: a lane file is a summary of a measurement, not the measurement
+
+Asked to prototype ask 1, I drew the priority shares from this lane's own `NEEDS SAM ⓪`
+line — *"starting set Eligible 40% · Accepted 25% · Transcribed 35%"* — and published
+them. Sam's reply was one question: *"Did you read the values and metrics from config or
+the live funding tab — they don't seem to line up to me."* They did not. The live
+Scenario 1 is **33 / 33 / 34**, titles **Outreach · Completion · Awards**, all at factor
+0.5, displayed `[0, 2, 1]`, Awards pinned to `ppa_u`.
+
+The line I trusted was a **proposal he never applied**. Nothing in the lane marked it as
+one, and a session reading top-to-bottom cannot tell a proposed dial from a live one.
+`CLAUDE.md` already says *never read the config, call the accessors*, and
+`scripts/funding_effective.js` **refuses to run** without a live config, printing that
+baked defaults are stale by design. I walked past both by reading prose instead.
+
+Two corrections followed from actually reading the config, neither of which any amount of
+re-reading the lane would have produced:
+
+- **`pac`/`pac_u` are back in the bake.** The lane said OMITTED since 2026-09-08; Pedro
+  restored the lifecycle booleans on 2026-09-10 and the daily bake picked them up.
+  Measured on `as_of 2026-09-13`: `pac_u` 24,777.95 statewide across 110 college rows.
+- **(C) has four designated projects, not three.** The config's own `projectGoals` carries
+  4.3 Strategic Partnerships, which Sam designated himself — what his 2026-09-12 "Hold,
+  no action" on LWDA left room for.
+
+### The finding that matters most for ask 1
+
+`prioGoals()` resolves the `accepted` milestone to **(B) AND (C)** — Sam's 2026-09-01
+ruling that the advising step is the part of career attainment a campus controls. That is
+**the only path to a campus measure for goal (C)**. The live Awards priority is pinned to
+`ppa_u`, whose `applied` milestone resolves to (A) alone, so the Counselor step sits in
+Awards' *strategies* as prose while its *metric* points elsewhere. Sam, 2026-09-13:
+*"I included the Counselor step in the Award priority, so it should be wired there."*
+
+⚠️ **And this is why the (B)+(C) band is merged.** Wire Awards to the accepted measure and
+one card serves two goals; `bandsHtml` assigns each card to the FIRST band it matches, so
+a four-band split needs a rule for that card. The proposal put to Sam: show it once under
+(B) where its funding sits, and give (C) a **reference card** naming it with no figure
+restated — no double-count reading. Unanswered at session end; ask 1 is not ported until
+it is.
+
+### A rendered-text ban covers only the branches a fixture paints
+
+Extending `cpl_funding_calm` §5 with the earn stems looked sufficient. Mutating the source
+to check proved it was not: reintroducing *"They still earn normally"* into the orphan-band
+note left the suite **57/57 green**, because that note renders only when a milestone fails
+to resolve and the fixture has no such priority. Hence `cpl_funding_earn_retired`, which
+reads every quoted string in the SOURCE — and which is what caught `"Earned <window>"`
+still sitting in the **CSV column header**, reader-facing text no DOM test can ever see.
+
+`detail_trim` already carried this lesson from 2026-09-09, in almost the same words: a
+guard counted a phrase, the phrase left the vocabulary, and *"it counted 0 and passed
+forever while guarding nothing."* Two sessions found it independently; that is an argument
+for reading the comments before writing the guard.
+
+### The a11y pass: every number was measured, not chosen
+
+245 findings collapsed to **six causes** — one selector was 118 of them, so reading the
+report top-to-bottom would have started with the least important thing. Four details worth
+keeping:
+
+- `padding: 1px` cleared 1440px and left 118 targets at 21.6px **below 561px**, where the
+  table font is smaller. And **Taft** — four characters, the shortest college name in the
+  state — fails on *width* alone, cleared at 2px on the explainer and still failed at 23.5
+  on the tab. One college in 118 sets that number, and it had to be measured on **both**
+  surfaces.
+- **The floor goes on whichever box the engine measures, and it differs per control.** A
+  wrapping `<label>` REPLACES its checkbox's box, so the 13×13 column checkbox is measured
+  as its 156×21.7 label; the opt-in label is a flex COLUMN that already clears the floor
+  while its input did not. Opposite fixes, same rule.
+- **Fixing the rule you found is not fixing the rule that applies.** A first `min-height`
+  measured *exactly* the same 21.7px — an identical selector was declared later in the
+  same array.
+- ⚠️ **A `.tablebox:focus-visible` rule I added named `--gold-accent`, which the explainer
+  does not define.** Being more specific than the page's global `:focus-visible`, it made
+  the declaration invalid and REMOVED the ring (137→139). "Use `var(--token)`" is not
+  satisfied by naming a token; it has to be one **that page** defines.
+
+⚠️ **The curate-only controls are invisible to the public sweep.** They render only for a
+signed-in curator, so `a11y funding-model` reported zero while the tab failed — and one
+`a11y cobi` run does not enumerate them either (fixing the four it named surfaced two
+more). The rule therefore floors a **family** of 26 classes; do not trim it to what a
+sweep last named.
+
+### Process notes
+
+- **Running 45 jsdom suites at `-P 6` starved every one of them** — `cpl_funding_render`
+  sat at 3:17 with no progress. Not slowness; contention. Run the suites that pin the
+  changed surface, and let CI run the 331.
+- **`grep -cE "^FAIL"` read `cpl_funding_public_dollars` as clean** while it was failing:
+  it prints indented ` FAIL D2:` and `4/10 passed`. The harness, not the code — and it is
+  how a red branch reached CI.
+- **Rebuild `kb/dependency_map.json` LAST.** It records line numbers, so the 24 lines of
+  a11y comments invalidated a map rebuilt three commits earlier. CI caught it.
+- **A test coupled to POSITION breaks on correct work** — fourth occurrence. Ask 2 gave
+  earlier bands a `.cplfund-prio` grid, so `querySelector(".cplfund-prio")` moved off the
+  band under test. Instrumenting the failing test (rather than two hand-built probes that
+  never reproduced the state) showed the carryover line was never missing.
+

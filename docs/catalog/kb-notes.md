@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-441 document(s).
+442 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -108,6 +108,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
 | [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |
 | [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
