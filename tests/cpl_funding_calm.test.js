@@ -364,12 +364,24 @@ function mountWords(doc) {
   // curator reads, and an unmeasured metric reads "awaiting measurement" rather
   // than "no data yet" — the plain-absence ruling of 2026-09-01 kept, its
   // wording turned to face forward.
+  // ⚠ THE EARN FAMILY JOINED THE BAN THE SAME DAY, reversing his 2026-09-09
+  // choice of "earns" over "draws" (Sam: "Earned still smacks of banking... would
+  // be better to use something like 'measured... or... qualified for'"). The map
+  // he confirmed: earns against -> counts toward · a college earns -> qualifies
+  // for · earned (the result) -> demonstrated · unearned -> remaining.
+  // \b-anchored so "learning" and "learners" — which contain the letters and are
+  // the program's own name — are untouched; that leading \b is load-bearing, and
+  // a sweep that drops it bans "credit for prior learning" from the CPL tab.
+  // The IDENTIFIERS stay (earnedMoney, earnFraction, .cplfund-earned-line, the
+  // status value "earned", the explainer's `earning` section id — a stored
+  // curation key); this reads rendered TEXT, so it never sees them.
   const bad = [/\bpools?\b/i, /\bmoney\b/i, /\bapportion\w*/i, /\bpot\b/i, /\badvances?\b(?! (the|each|Vision))/i,
     /\bdraws?\b/i, /\bdrawn\b/i, /\bdraw(ing|-?down)\b/i, /\bunspent\b/i, /\bthe dollars\b/i,
-    /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i]
+    /\bbaked\b/i, /\bscored\b/i, /\bfalling back\b/i, /\bpin it\b/i, /\bno data yet\b/i,
+    /\b(un)?earn(s|ed|ing|ings|able)?\b/i]
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
-  check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' in the curate view's rendered text — " +
+  check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
   // Sam, 2026-09-13: "revise all text that starts with a negative statement and
   // just start with the positive." Sentence-initial only: a mid-sentence "no"
@@ -392,6 +404,7 @@ function mountWords(doc) {
     return !/\bpools?\b/i.test(t2) && !/\bmoney\b/i.test(t2) && !/\bapportion/i.test(t2) &&
       !/\bdraws?\b|\bdrawn\b|\bunspent\b/i.test(t2) &&
       !/\bbaked\b|\bscored\b|\bfalling back\b|\bpin it\b|\bno data yet\b/i.test(t2) &&
+      !/\b(un)?earn(s|ed|ing|ings|able)?\b/i.test(t2) &&
       negs2.length === 0;
   })());
 }

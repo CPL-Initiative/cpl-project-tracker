@@ -246,7 +246,7 @@ section[hidden]{display:none}
       <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
     </div>
     <div class="figs">
-      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 118 institutions &mdash; the 115 colleges and the three noncredit-only campuses &mdash; earned against CPL outcomes</p></div>
+      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 118 institutions &mdash; the 115 colleges and the three noncredit-only campuses &mdash; qualified for on CPL outcomes</p></div>
       <div class="fig"><div class="v num" id="f-proj">$8,959,692</div><p class="k">statewide CPL projects and technology, serving every college rather than any one of them</p></div>
       <div class="fig"><div class="v num" id="f-staff">$800,000</div><p class="k">two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
     </div>
@@ -256,7 +256,7 @@ section[hidden]{display:none}
       into a credit share and a <b>noncredit</b> share by the institution&rsquo;s own teaching mix.
       Statewide, <b id="f-nc">$1,783,399</b> of the funding is noncredit, carried within
       <b id="l-nc-count">108</b> college awards and restricted to noncredit outcomes, plus the three
-      noncredit-only institutions&rsquo; awards, earned only as CPL originating from them posts at a credit
+      noncredit-only institutions&rsquo; awards, qualified for only as CPL originating from them posts at a credit
       college. The $9.04&nbsp;million remaining from 2025-26 is a separate distribution and is not part of
       this appropriation.</p>
     <div class="figs">
@@ -329,7 +329,7 @@ section[hidden]{display:none}
         <span id="l-capn">Six</span> institutions&rsquo; proportional share exceeded that amount and is
         held there. The difference, <span id="l-capr">$262,241</span>, is redistributed across the
         institutions below the maximum. An institution held at the maximum is assessed against a
-        correspondingly smaller target, so it earns at the same rate as every other institution above the
+        correspondingly smaller target, so it qualifies at the same rate as every other institution above the
         minimum.</li>
     </ul>
     <!-- Built from the payload (D.cards) — see build_funding_model_explainer.js.
@@ -343,7 +343,7 @@ section[hidden]{display:none}
          what terms. Every figure here is written from D.nc by the painter. -->
     <h3 class="nc-h">How noncredit funding is calculated</h3>
     <p id="nc-body">Noncredit funding is calculated from the noncredit FTES each institution reports to MIS,
-      and is earned against the priorities set out in this model. Noncredit FTES are counted where the
+      and counts toward the priorities set out in this model. Noncredit FTES are counted where the
       instruction originates in the noncredit program and the credit is awarded at a credit college in the
       district.</p>
     <ul id="nc-list"></ul>
@@ -372,7 +372,7 @@ section[hidden]{display:none}
     <div class="note">
       <p><strong>Meeting the baseline does not change the size of the allocation.</strong> An institution
         that has not yet met the requirements is allocated the same amount, and <strong>that allocation is
-        not redistributed in the interim</strong>. Funding an institution has not yet earned is held in
+        not redistributed in the interim</strong>. Funding an institution has not yet qualified for is held in
         reserve for it rather than reallocated to institutions that qualified earlier.</p>
     </div>
     </div>
@@ -385,7 +385,7 @@ section[hidden]{display:none}
     <details class="fold">
     <summary>
       <span class="step-no">Step three</span>
-      <h2>How the funding is earned</h2>
+      <h2>How outcomes count toward funding</h2>
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
@@ -430,17 +430,17 @@ section[hidden]{display:none}
         <tbody id="workedbody"></tbody>
       </table>
     </div>
-    <p style="margin-top:1.1em">An institution that reaches half of a priority&rsquo;s target earns half
-      of that priority&rsquo;s share. Exceeding the target does not increase the amount earned: the share
+    <p style="margin-top:1.1em">An institution that reaches half of a priority&rsquo;s target qualifies for
+      half of that priority&rsquo;s share. Exceeding the target does not increase the amount: the share
       is the ceiling.</p>
     <div class="note">
       <p><strong>One consequence of the minimum.</strong> Because the minimum is funded from within the
-        same total, an institution above the minimum earns approximately <strong id="f-eff">$5,158 for each
+        same total, an institution above the minimum qualifies for approximately <strong id="f-eff">$5,158 for each
         FTES of prior learning it records</strong> rather than the full <span id="f-rate">$5,650</span>,
         while an institution brought up to the minimum reaches its target on considerably less. This is the
         intended effect of the minimum, and the consequence is that the effective rate is not uniform
         across institutions. The maximum introduces no second reduction: an institution held at the maximum
-        is assessed against a proportionally smaller target, so it earns at the same rate as every other
+        is assessed against a proportionally smaller target, so it qualifies at the same rate as every other
         institution above the minimum.</p>
     </div>
     </div>
@@ -458,12 +458,12 @@ section[hidden]{display:none}
     </summary>
     <div class="fold-body">
     <p>Two timing settings are in effect in the current model. Neither changes the amount an institution
-      can earn.</p>
+      can qualify for.</p>
     <ul>
       <li><strong>The full two-year amount is made available in year one.</strong> The capacity this work
         requires &mdash; staff time, faculty review of credit recommendations, and local process design
         &mdash; is concentrated at the outset, and withholding half of the allocation until year two would
-        delay it. Funding not earned in year one carries forward. Because the entire allocation is
+        delay it. Funding remaining at the end of year one carries forward. Because the entire allocation is
         available in year one, the targets shown are the full two-year figures.</li>
       <li><strong>Year two mirrors year one.</strong> The two years are held identical so that a change to
         one is reflected in the other. Nothing is overwritten: disabling the mirror leaves both years as
@@ -631,9 +631,9 @@ window.CPL_PAINT_EXPLAINER = function (D) {
       h.style.marginTop = "1.6em";
       h.textContent = "Reported, not measured: " + r.text;
       var lead = document.createElement("p");
-      lead.textContent = "No campus measure scores this outcome, so no institution earns against it and " +
-        "no figure on this page prices it. The Chancellor\u2019s Office funds this goal through the " +
-        "statewide project allocation and reports on the work below.";
+      lead.textContent = "The Chancellor\u2019s Office funds this outcome through the statewide project " +
+        "allocation rather than a campus measure, so no figure on this page prices it. The work is " +
+        "reported below.";
       host.appendChild(h);
       host.appendChild(lead);
       var ul = document.createElement("ul");
@@ -784,10 +784,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     if (!n || !body || !list) return;
     while (list.firstChild) list.removeChild(list.firstChild);
     body.textContent = "Noncredit funding is calculated from the noncredit FTES each institution reports " +
-      "to MIS, and is earned against the priorities set out in this model. Each institution's award is " +
+      "to MIS, and counts toward the priorities set out in this model. Each institution's award is " +
       "sized by its combined credit and noncredit instruction, and that award is then divided into a " +
       "credit share and a noncredit share in proportion to the institution's own instructional mix. The " +
-      "noncredit share is restricted: it is earned only against the noncredit measures and is not " +
+      "noncredit share is restricted: only the noncredit measures count toward it, and it is not " +
       "available to the credit program. Noncredit FTES are counted where the instruction originates in " +
       "the noncredit program and the credit is awarded at a credit college in the district. The noncredit " +
       "share is reported separately on every screen and in every export rather than being combined with " +
@@ -798,7 +798,7 @@ window.CPL_PAINT_EXPLAINER = function (D) {
         "cannot be measured."],
       ["The noncredit-only institutions", money(n.trioHeld) + " allocated to NOCE, San Diego College of " +
         "Continuing Education, and Calbright — ordinary awards subject to the same minimum and maximum, " +
-        "earned as CPL originating in their programs is recorded at a credit college."],
+        "qualified for as CPL originating in their programs is recorded at a credit college."],
       ["A single window", "The " + money(D.pool.floor) + " minimum and the " + money(D.pool.cap) +
         " maximum apply to the combined award, credit and noncredit together, across all " +
         n.institutions + " institutions in one allocation."]
