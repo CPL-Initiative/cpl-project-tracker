@@ -19,7 +19,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 
 | N | Handoff | Created |
 |---|---|---|
-| 260 | [the flag that was unbuilt, and the field that was not](../session_260_handoff.md) | 2026-09-12 |
+| 260 | [the flag that was unbuilt, and the field that was not](../session_260_handoff.md) | 2026-09-13 |
 | 259 | [four asks on the funding tab, and a resolver nobody could reach](../session_259_handoff.md) | 2026-09-12 |
 | 258 | [a tab whose main table had never rendered, and a deploy boundary that is not one](../session_258_handoff.md) | 2026-09-11 |
 | 257 | [a sidebar on a security notice, and SkySignal's queue carried forward untouched](../session_257_handoff.md) | 2026-09-11 |

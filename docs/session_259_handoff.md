@@ -4,6 +4,8 @@ date: 2026-09-12
 session: 259 (SkyGuard)
 tags: [handoff, implementation-funding, curation, testing, sierra]
 status: current
+superseded: true
+superseded_by: session_260_handoff.md
 ---
 
 # You are Session 259

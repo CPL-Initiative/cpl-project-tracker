@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-12",
+  "_as_of": "2026-09-13",
   "_session": 259,
-  "_status": "Session 259 opened on a queue item that turned out to be already built — the field that lets an assistant instruction apply to one place shipped three weeks ago — and worked out what Sam's yes of the 12th actually covered: that whether the assistant may use non-public data is decided by the server from your sign-in, never by the page. That is built and waiting on a deploy: a signed-in COBI reader gets one line saying the assistant recognized the sign-in, the log records who asked and from where, and nothing changes for the public. Two smaller items closed on the way: the two Sierra checks that went red on correct answers now read the negation properly, and the public funding explainer is measured by the accessibility sweep for the first time (it fails, on the same undersized controls as the tab). Waiting on Sam: the deploy, and the go for the hourly health probe.",
+  "_status": "Session 259 opened on a queue item that turned out to be already built — the field that lets an assistant instruction apply to one place shipped three weeks ago — and worked out what Sam's yes of the 12th actually covered: that whether the assistant may use non-public data is decided by the server from your sign-in, never by the page. That is built and waiting on a deploy: a signed-in COBI reader gets one line saying the assistant recognized the sign-in, the log records who asked and from where, and nothing changes for the public. Two smaller items closed on the way: the two Sierra checks that went red on correct answers now read the negation properly, and the public funding explainer is measured by the accessibility sweep for the first time (it fails, on the same undersized controls as the tab). Waiting on Sam: the deploy, and the go for the hourly health probe. On the 13th Sam returned with three asks on the funding tab: the text sweep shipped (every sentence opens with the positive, the informal terms are gone and guarded), he ruled that the outcome will be chosen on each priority card with four statutory bands and reported cards for outcomes without a measure, and he retired the word earn; those two builds and the earn sweep are the next session's, with his rulings recorded.",
   "items": [
+    {
+      "id": "s259-sam-earn-word-map",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Confirm the words that replace 'earn' on the funding tab before the sweep: a priority's measure counts toward funding; a college qualifies for its award; the result is demonstrated (the statute's own verb); what is left is remaining. Function and class names keep the old word. Say yes, or give the words you prefer."
+    },
     {
       "id": "s259-sam-dispatch-cpl-chat-v66",
       "for": "Sam",
@@ -45,6 +51,12 @@
       "for": "Sam",
       "tab": "governance",
       "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+    },
+    {
+      "id": "s259-fable-funding-card-builds",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Sam's rulings of the 13th, in order: first the sweep that retires 'earn' (93 places on the tab, 31 test files, the explainer's section label) once he confirms the words; then move the activity picker under each priority card's Recommended Strategies, with reported cards for outcomes that have no measure; then let each card name its statutory outcome, with four bands drawn from the cards and the measure-derived outcome as the default."
     },
     {
       "id": "s259-fable-verify-v66-after-deploy",
