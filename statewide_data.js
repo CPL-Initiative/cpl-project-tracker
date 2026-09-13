@@ -50845,8 +50845,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAH-AAH(-1-001"
       ],
-      "title": "AP Art History (Score 3-5)",
-      "unified_title": "AP Art History (Score 3-5)",
+      "title": "AP Art History (Score 3-5) (ARTH C1100)",
+      "unified_title": "AP Art History (Score 3-5) (ARTH C1100)",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -50854,7 +50854,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "AP Art History (Score 3-5)"
+        "AP Art History (Score 3-5) (ARTH C1100)"
       ],
       "cpl_type": "Standardized Assessment",
       "discipline": "Fine and Applied Arts",
@@ -306707,8 +306707,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 8246,
-        "exhibits": 3319,
+        "credit_recs": 8247,
+        "exhibits": 3320,
         "colleges": 90,
         "pct": 62.0
       },
@@ -306728,9 +306728,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "High school coursework (H)",
-        "credit_recs": 385,
-        "exhibits": 339,
-        "colleges": 21,
+        "credit_recs": 384,
+        "exhibits": 338,
+        "colleges": 20,
         "pct": 2.9
       },
       {
@@ -307205,6 +307205,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-13T11:57:26",
+  "generated_at": "2026-09-13T13:49:21",
   "total_credit_recs": 13299
 };
