@@ -423,12 +423,14 @@
        the engine measures — without changing the line box, and the background is
        none so it is invisible. 3px because the floor has to hold at the NARROW
        widths: 1px cleared 1440px (22.3→24.3) and still left 118 targets at
-       21.6px ≤561px, where the table font is smaller. 2px HORIZONTAL because the
-       shortest name in the state fails on WIDTH alone — Taft, four characters,
-       measured 23.4 at 1440 with every other name passing, and 1px left it at
-       23.7, still 0.3 short. It is the whole reason this is 2 and not 1. Removing either number puts the
+       21.6px ≤561px, where the table font is smaller. 3px HORIZONTAL because the
+       shortest name in the state fails on WIDTH alone — Taft, four characters.
+       It measured 23.4 at 1440 with every other name passing; 1px left it at
+       23.7 and 2px cleared it on the EXPLAINER (25.7) but NOT on the COBI tab
+       (23.5), whose table font differs slightly. One college in 118 sets this
+       number, and it had to be measured on BOTH surfaces to land. Removing either number puts the
        targets back under the floor. */
-    ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 3px 2px; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
+    ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 3px 3px; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
     ".cplfund-caret:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }",
     ".cplfund-caret:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
