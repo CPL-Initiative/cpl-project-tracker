@@ -152,7 +152,7 @@ check("the memo does NOT print the retired re-split figures ($779,862 / $672,453
   check("…its Credit cell is — (no credit program), and the row is FLAGGED noncredit-only / origination " +
         "(the 'no advances' wording retired 2026-09-01 — Sam: no mention of the concept)",
     !!row && row.cr === null && /noncredit-only/.test(row.name) &&
-    /earns by origination/.test(row.name) && !/no advances/.test(row.name));
+    /qualifies by origination/.test(row.name) && !/no advances/.test(row.name));
 });
 // N3 a: Calbright's 1,000-FTES size is a stand-in — the memo must say nothing
 // disburses on a placeholder, on Calbright's own row.
