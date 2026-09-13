@@ -156,8 +156,8 @@ check("the memo does NOT print the retired re-split figures ($779,862 / $672,453
 });
 // N3 a: Calbright's 1,000-FTES size is a stand-in — the memo must say nothing
 // disburses on a placeholder, on Calbright's own row.
-check("Calbright's row carries the N3 a stand-in caveat (nothing disburses on a placeholder)",
-  (function () { const r = rowFor(rows, "Calbright College"); return !!r && /stand-in/.test(r.name) && /nothing disburses on a placeholder/.test(r.name); })());
+check("Calbright's row carries the N3 a stand-in caveat (disbursement waits for a measured figure)",
+  (function () { const r = rowFor(rows, "Calbright College"); return !!r && /stand-in/.test(r.name) && /disbursement waits for a measured figure/.test(r.name); })());
 
 // ─────────────────────────────────────────────────────────────────────────────
 // N5 — noncredit money is shown BESIDE credit money, never folded into it

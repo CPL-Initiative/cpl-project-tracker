@@ -193,8 +193,8 @@ check("A6: the NC lane normalizes by its OWN share sum, never the credit one",
       const c = ncCell("NOCE");
       return !!c && /earning \$0/.test(c.textContent) && !/awaits origination/.test(c.textContent);
     })());
-  check("B16: a no-noncredit college's cell is the checkable claim — '$0 · none on record', inviting the correction",
-    (function () { const c = ncCell("Taft"); return !!c && /none on record/.test(c.textContent); })());
+  check("B16: a no-noncredit college's cell is the checkable claim — '$0 · credit only', inviting the correction",
+    (function () { const c = ncCell("Taft"); return !!c && /credit only/.test(c.textContent); })());
   check("B17: no paired NC row and no NC SYSTEM row survives (R6) — the share lives ON the one row",
     !doc.querySelector("tr.cplfund-ncrow") && !doc.querySelector("tr.cplfund-ncsysrow"));
 })();

@@ -347,7 +347,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   commit(window, doc.getElementById("cplFundSearch"), "zzz-no-such-college");
   doc.getElementById("cplFundSearch").dispatchEvent(new window.Event("input"));
   check("no-match search shows an explicit empty row",
-    doc.querySelector("#cplFundTable tbody").textContent.indexOf("No institutions match") !== -1);
+    doc.querySelector("#cplFundTable tbody").textContent.indexOf("Every institution is hidden by this search") !== -1);
 }
 
 // C1b — PR-A editable content (Sam, 2026-07-23): priority TITLE + STRATEGIES
@@ -534,7 +534,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
       // Case-insensitive: the phrase became the start of its own sentence when
       // the timing moved out of the hero LABEL into its note (2026-09-01), and
       // this check is deliberately about the figures rather than the wording.
-      /no carve-out line/i.test(note) &&
+      /rather than a carve-out line/i.test(note) &&
       note.indexOf(money(eff.pool.nc_only_held_by_origination)) !== -1 &&
       // The claim is that the note says the college shares are carried WITHIN
       // college awards — not one idiom for it. "Riding college awards" was the

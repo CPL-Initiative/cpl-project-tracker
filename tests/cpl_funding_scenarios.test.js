@@ -274,7 +274,7 @@ const fmtM = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); 
       .every(function (f) { return memo.indexOf(f.name) !== -1; }));
   check("memo gives Mt. SAC Noncredit no row of its own (its FTES ride the Mt San Antonio row)",
     memo.indexOf("Mt. San Antonio College — Noncredit") === -1);
-  check("memo flags Calbright's stand-in size (nothing disburses on a placeholder — N3 a)",
+  check("memo flags Calbright's stand-in size (disbursement waits for a measured figure — N3 a)",
     memo.indexOf("stand-in") !== -1);
   // $50k seed-funding intro (Sam, 2026-08-04) + the ESS 25-82 reference.
   check("memo intro cites the $50,000 seed grant and ESS 25-82",

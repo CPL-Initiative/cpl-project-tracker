@@ -180,10 +180,10 @@ function detRows(det) {
   T.render();
   const R = detRows(openDetail(window, doc, "Laney"));
 
-  check("T3a: an undelivered source reads no data yet and shows no distance",
-    R.length === 3 && /no data yet/.test(R[0].actual) && !/\d/.test(R[0]["to go"]));
-  check("T3b: a miswired pin reads not wired and shows no distance",
-    R.length === 3 && /not wired/.test(R[1].actual) && !/\d/.test(R[1]["to go"]));
+  check("T3a: an undelivered source reads awaiting measurement and shows no distance",
+    R.length === 3 && /awaiting measurement/.test(R[0].actual) && !/\d/.test(R[0]["to go"]));
+  check("T3b: a miswired pin reads awaiting a known measure and shows no distance",
+    R.length === 3 && /awaiting a known measure/.test(R[1].actual) && !/\d/.test(R[1]["to go"]));
   check("T3c: the measured row beside them DOES show one — the column is not dead",
     R.length === 3 && (/\d/.test(R[2]["to go"]) || /target met/.test(R[2]["to go"])));
 }

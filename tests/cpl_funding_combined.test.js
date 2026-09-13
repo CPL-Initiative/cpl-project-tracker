@@ -108,10 +108,10 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const taftRow = crRows.find(function (r) { return /Taft/.test(r.textContent); });
   const taftCells = taftRow.querySelectorAll("td.cf-award");
   const taft = T._alloc("Taft");
-  check("row: a no-noncredit institution's pair is CR + $0 'none on record' (combined = CR alone)",
+  check("row: a no-noncredit institution's pair is CR + $0 'credit only' (combined = CR alone)",
     taft.nc_award === 0 &&
     Math.abs(firstMoney(taftCells[0]) - taft.total / 2) <= 1 &&
-    firstMoney(taftCells[1]) === 0 && /none on record/.test(taftCells[1].textContent));
+    firstMoney(taftCells[1]) === 0 && /credit only/.test(taftCells[1].textContent));
 
   // THE SUM, on the SYSTEM row: the statewide pair must reconstitute the pool.
   const sysCells = table.querySelector("tr.cplfund-systemrow").querySelectorAll("td.cf-award");

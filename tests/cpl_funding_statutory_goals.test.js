@@ -130,7 +130,7 @@ const cCard = goalCard(doc, "C");
 const cFund = flat(axis(cCard, "what funds it"));
 const cMeas = flat(axis(cCard, "how it is evidenced"));
 check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
-check("goal (C) reports NO performance measure", /no performance measure/i.test(cMeas));
+check("goal (C) reports through statewide work, with no campus measure", /reported through statewide work/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
 const cBand = bandRow(doc, "C");
@@ -143,7 +143,7 @@ check("goal (C) names what its qualitative evidence actually documents",
 // The account and the band must not disagree about the SAME goal — they read
 // one goalEvidence(), and this is what would catch a second copy appearing.
 check("the (d)(2) account and the band agree that (C) has no performance measure",
-  /no performance measure/i.test(cMeas) && /no performance measure/i.test(flat(cBand)));
+  /reported through statewide work/i.test(cMeas) && /reported through statewide work/i.test(flat(cBand)));
 // The figures are COUNTED, so they must agree with the corpus in the window —
 // a hardcoded pair would pass the line above and drift the moment a story lands.
 check("(C)'s story figures are counted from the corpus, not hardcoded", (function () {

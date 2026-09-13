@@ -255,8 +255,8 @@ function registerStub() {
   check("4a: goal (C) carries a reported box with nothing signed in — it is a READING, not a dial",
     !!cBox && /Advancing career attainment/.test(cBox.textContent));
   check("4b: the box says plainly that nothing prices it",
-    !!cBox && /No campus measure scores this outcome/.test(cBox.textContent) &&
-    /Reported, not measured/.test(cBox.textContent));
+    !!cBox && /Funded through the statewide project allocation/.test(cBox.textContent) &&
+    /Reported through/.test(cBox.textContent));
   check("4c: the seeded designations are the three that resolve in the register",
     doc.querySelectorAll('[data-rprio="C"] .cplfund-rprio-p').length === 3 &&
     /California Credential Registry/.test(designatedText(doc, "C")) &&
