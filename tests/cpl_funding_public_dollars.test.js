@@ -82,15 +82,18 @@ function rowSubs(doc) {
   return row ? Array.from(row.querySelectorAll(".cf-award .sub")).map(function (e) { return e.textContent; }) : [];
 }
 const pubSubs = rowSubs(pubDoc), privSubs = rowSubs(privDoc);
-const pubEarn = pubSubs.find(function (t) { return /earning/.test(t); }) || "";
-const privEarn = privSubs.find(function (t) { return /earning/.test(t); }) || "";
-// Parse the figure the row prints after "earning " rather than pattern-match
+const pubEarn = pubSubs.find(function (t) { return /qualifying/.test(t); }) || "";
+const privEarn = privSubs.find(function (t) { return /qualifying/.test(t); }) || "";
+// ⚠ THE WORD IS "qualifying", PRESENT TENSE, and both halves are rulings: Sam
+// retired "earn" on 2026-09-13, and on 2026-08-27 he required the present
+// participle because a past tense "read like a settled award".
+// Parse the figure the row prints after "qualifying " rather than pattern-match
 // it: a regex that forbids a trailing non-zero digit misread "$101,000" as
 // exact on the first run (the "1" before ",000"). The public figure must be the
 // earned total rounded to the nearest $1,000 (or "<$1,000" under the floor);
 // the curator figure must be the exact rounded dollar.
 function earnFigure(t) {
-  const m = /earning (<\$1,000|\$[\d,]+)/.exec(t);
+  const m = /qualifying (<\$1,000|\$[\d,]+)/.exec(t);
   return m ? m[1] : null;
 }
 const pubFig = earnFigure(pubEarn), privFig = earnFigure(privEarn);
@@ -123,9 +126,12 @@ check("D3: the public CR max-award cell is exact — identical to the curator vi
 // 4. The CSV follows the same rule: never a figure the screen withholds.
 function alamedaCsvEarned(T) {
   const lines = T._csv().split("\n");
-  const head = lines.find(function (l) { return /Institution/.test(l) && /Earned/.test(l); }) || "";
+  // The CSV column header followed the same sweep: "Earned <window>" is now
+  // "Demonstrated <window>". The export is read by a human, so the vocabulary
+  // ruling reaches it — and no DOM-rendered-text guard can see a CSV.
+  const head = lines.find(function (l) { return /Institution/.test(l) && /Demonstrated/.test(l); }) || "";
   const cols = head.split(",");
-  const iEarn = cols.findIndex(function (h) { return /^Earned/.test(h); });
+  const iEarn = cols.findIndex(function (h) { return /^Demonstrated/.test(h); });
   const line = lines.find(function (l) { return /^\d+,Alameda,/.test(l); }) || "";
   return line.split(",")[iEarn];
 }

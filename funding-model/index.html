@@ -416,7 +416,13 @@ section[hidden]{display:none}
         stands behind a priority, and the factor determines the volume of prior learning required to earn
         it.</p>
     </div>
-    <div class="tablebox">
+    <!-- ⚠ tabindex + a name are the SCROLLER pair, and BOTH are required: the
+         region scrolls sideways at ≤430px, so a keyboard user must be able to
+         reach it and a screen reader must be able to say what it is. Chromium
+         127+ focuses an overflowing div with no tabindex at all, so the
+         measuring browser HIDES this defect — the attribute is still the fix. -->
+    <div class="tablebox" role="region" tabindex="0"
+         aria-label="What Mt San Antonio would have to show, across the two-year window">
       <table>
         <caption>What Mt San Antonio would have to show, across the two-year window</caption>
         <thead>
@@ -489,7 +495,8 @@ section[hidden]{display:none}
     <div class="fold-body">
     <p>Some of the figures in this model are policy decisions the Chancellor&rsquo;s Office can change.
       Others are given, and the model takes them as it finds them.</p>
-    <div class="tablebox">
+    <div class="tablebox" role="region" tabindex="0"
+         aria-label="Which figures in the model are policy choices and which are given">
       <table>
         <thead>
           <tr>

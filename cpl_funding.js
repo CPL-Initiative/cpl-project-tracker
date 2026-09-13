@@ -417,7 +417,18 @@
     // so it still reads as a bare caret glyph, keep it keyboard-focusable.
     // The row toggle is the institution's NAME, as a real <button> (a11y): every
     // control is a word, and the name is the word. No caret, no rotation.
-    ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 0; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
+    /* ⚠ `padding: 3px 1px` is the WCAG 2.2 SC 2.5.8 floor, not decoration, and BOTH
+       numbers were measured rather than chosen. The name is the row toggle:
+       vertical padding on an INLINE element enters getBoundingClientRect — what
+       the engine measures — without changing the line box, and the background is
+       none so it is invisible. 3px because the floor has to hold at the NARROW
+       widths: 1px cleared 1440px (22.3→24.3) and still left 118 targets at
+       21.6px ≤561px, where the table font is smaller. 2px HORIZONTAL because the
+       shortest name in the state fails on WIDTH alone — Taft, four characters,
+       measured 23.4 at 1440 with every other name passing, and 1px left it at
+       23.7, still 0.3 short. It is the whole reason this is 2 and not 1. Removing either number puts the
+       targets back under the floor. */
+    ".cplfund-caret { display: inline; width: auto; color: inherit; background: none; border: none; padding: 3px 2px; margin: 0; font: inherit; line-height: inherit; cursor: pointer; text-align: left; }",
     ".cplfund-caret:hover { text-decoration: underline; text-decoration-style: dotted; text-underline-offset: 2px; }",
     ".cplfund-caret:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
@@ -520,8 +531,9 @@
     ".cplfund-reqrestore { margin: 8px 0 0 20px; font-size: .82rem; }",
     ".cplfund-reqactions { margin: 10px 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }",
     ".cplfund-copymsg { color: var(--text-body); font-size: .8rem; font-weight: 600; }",
-    ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
+    ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; min-height: 24px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
+    ".cplfund-srclink { padding: 5px 0; }",
     // Column show/hide menu (Sam, 2026-07-24) — a ⚙ Columns dropdown of checkboxes.
     ".cplfund-colmenu { position: relative; display: inline-block; }",
     ".cplfund-colmenu > summary { list-style: none; cursor: pointer; display: inline-block; }",
@@ -529,7 +541,14 @@
     ".cplfund-colmenu > summary::marker { content: ''; }",
     ".cplfund-colmenu-panel { position: absolute; z-index: 30; top: 100%; left: 0; margin-top: 4px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 11px; box-shadow: 0 3px 12px rgba(0,0,0,.14); min-width: 180px; max-height: 320px; overflow-y: auto; display: grid; gap: 4px; }",
     ".cplfund-colmenu-h { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }",
-    ".cplfund-colmenu-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; white-space: nowrap; cursor: pointer; }",
+    /* ⚠ THE FLOOR GOES ON THE LABEL HERE, AND THAT IS THE OPPOSITE OF THE
+       OPT-IN FIELDS ABOVE — the difference is which box the engine MEASURES. A
+       wrapping <label> REPLACES its control's box, so for this 13x13 checkbox
+       the measured target is the 156x21.7 label and growing the checkbox moves
+       a number nothing reads; the opt-in label is a flex COLUMN that already
+       clears the floor while its field did not, so there the floor goes on the
+       field. Check which box is measured before choosing. */
+    ".cplfund-colmenu-item { display: flex; align-items: center; gap: 7px; min-height: 24px; font-size: .8rem; white-space: nowrap; cursor: pointer; }",
     // Per-priority P1/P2/P3 columns: each cell stacks the TARGET line
     // (Tgt: projected students · funding cap) over the ACTUAL line (Now: students
     // posted in MAP · earned $ · % of target) — so a college sees its standing
@@ -638,13 +657,19 @@
     ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
     ".cplfund-optin-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
     ".cplfund-optin-grid label:first-child { grid-column: 1 / -1; }",
-    ".cplfund-optin-grid input, .cplfund-optin-grid select { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; }",
+    /* ⚠ THE FLOOR GOES ON THE CONTROL, NOT THE WRAPPING LABEL — the label is a
+       flex COLUMN, taller than its field, so growing it moves a number nothing
+       reads. And it goes on THIS rule, not a new one: an identical selector was
+       already declared here, so an earlier `min-height` of the same specificity
+       measured exactly the same 21.7px. Fixing the rule you found is not fixing
+       the rule that applies. */
+    ".cplfund-optin-grid input, .cplfund-optin-grid select { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; min-height: 24px; box-sizing: border-box; }",
     ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
     // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
-    ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; font-size: .68rem; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
+    ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; min-height: 24px; font-size: .68rem; font-weight: 600; border: 1px solid var(--border-strong); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
     ".cplfund-optin-jump:hover { background: var(--surface-subtle); border-color: var(--navy-secondary); }",
     // CO confirm/revoke block shown inline in a reviewer's row drill-in.
     ".cplfund-corow { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 7px 10px; margin-top: 8px; }",
@@ -7763,7 +7788,11 @@
     if (!d.headcount_label && !d.headcount_source) return "";
     var src = d.headcount_source || {};
     var inner = esc(src.name || "source") + (src.selection ? " (" + esc(src.selection) + ")" : "");
-    var linked = src.url ? '<a href="' + esc(src.url) + '" target="_blank" rel="noopener">' + inner + "</a>" : inner;
+    // The citation sits inside a sentence, which is SC 2.5.8's own Inline
+    // exception — but the exception is claimed with an `equivalent` route in
+    // a11y.config.js, and there is no second route to this link. Padding costs
+    // nothing and needs no claim, so it is the honest fix: 15px -> 25px.
+    var linked = src.url ? '<a class="cplfund-srclink" href="' + esc(src.url) + '" target="_blank" rel="noopener">' + inner + "</a>" : inner;
     // Mixed-vintage honesty note (data-driven — disappears once every row is refreshed).
     var stale = d.colleges.filter(function (c) { return c.hc_vintage === "2022-23"; }).length;
     var staleLine = stale
