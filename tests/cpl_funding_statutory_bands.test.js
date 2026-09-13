@@ -85,8 +85,8 @@ check("Success's card is placed without the word 'Success' appearing in its titl
 // against it. It still gets a band: a reader told to allocate "using all of the
 // following goals" has to be able to see all of them.
 check("Opportunities carries no priority card", cardsIn(bandById(doc, "opps")).length === 0);
-check("Opportunities says no campus earns against it",
-  /no (campus|college) earns against/i.test(flat(bandById(doc, "opps"))));
+check("Opportunities says the statute points it at the Chancellor's Office, not the campuses",
+  /points this goal at the Chancellor.{0,8}Office rather than at the campuses/i.test(flat(bandById(doc, "opps"))));
 check("Opportunities names its funding source rather than showing a share",
   /CPL Projects & Innovation/i.test(flat(bandById(doc, "opps"))));
 

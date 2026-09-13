@@ -161,12 +161,14 @@ check("(C) reports the educational majority, which is the finding", (function ()
 // be overclaiming against the statute's own wording. (Sam's item-12 ruling,
 // 2026-08-30: the limit is POLICY — student-level equity belongs to the
 // system's three-year legislative reports, never to college outcome funding.)
-check("goal (A) states that 'equitably' is not measured",
-  /equitably.{0,40}not measured/i.test(flat(bandRow(doc, "A"))));
+// Positive-first (Sam, 2026-09-13): the limit reads "measured elsewhere — by
+// design", never "not measured" — the sentence opens with where it IS measured.
+check("goal (A) states that 'equitably' is measured elsewhere, by design",
+  /equitably.{0,40}measured elsewhere/i.test(flat(bandRow(doc, "A"))));
 // ⚠️ The limits are stated ONCE. Carrying them in both places is the exact
 // duplication the band consolidation removed, and a second copy drifts.
 check("...on the band only — the (d)(2) account points at it rather than repeating it",
-  !/equitably.{0,40}not measured/i.test(flat(goalCard(doc, "A"))) &&
+  !/equitably.{0,40}measured elsewhere/i.test(flat(goalCard(doc, "A"))) &&
   /stated on its band/i.test(flat(axis(goalCard(doc, "A"), "how it is evidenced"))));
 
 // ── 6. superscript markers link cards back to the spine ─────────────────────

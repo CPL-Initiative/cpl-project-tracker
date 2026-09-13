@@ -4972,8 +4972,7 @@
     }
     if (f.pools.length || f.projects.length) {
       return { cls: "warn", word: "Reported through statewide work",
-        text: "Funded through the statewide project allocation and reported based on the aligned " +
-          "activities, rather than earned against a campus measure." };
+        text: "Funded through the statewide project allocation and reported based on the aligned activities." };
     }
     return { cls: "gap", word: "Open",
       text: "Every priority, funding line and project in the model is tagged to another goal; this one is open." };
