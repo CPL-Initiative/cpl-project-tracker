@@ -797,6 +797,16 @@
     ".cplfund-desig-row { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; margin-top: 10px; padding: 8px 12px; border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; color: var(--text-body); }",
     ".cplfund-desig-row .cplfund-rprio-add { margin-top: 0; }",
     ".cplfund-multil { display: flex; flex-direction: column; gap: 3px; flex: 1 1 260px; min-width: 0; }",
+    /* ASK 2 (Sam, 2026-09-13): the picker sits on EVERY card, below the
+       Recommended-strategies fold and always visible to a curator — his choice
+       over hiding it inside the fold, so the affordance does not depend on
+       opening something a curator has no other reason to open. SIZED TO THE
+       CARD: the select fills the card's width instead of the 260px flex basis
+       it takes in the old band-width row, which overflowed a card. */
+    ".cplfund-card-desig { margin-top: 8px; border-top: 1px dashed var(--border-strong); padding-top: 8px; }",
+    ".cplfund-card-desig .cplfund-rprio-add { margin-top: 4px; }",
+    ".cplfund-card-desig .cplfund-multil, .cplfund-rprio .cplfund-multil { flex: 1 1 100%; }",
+    ".cplfund-card-desig .cplfund-multi, .cplfund-rprio .cplfund-multi { width: 100%; box-sizing: border-box; }",
     ".cplfund-multi { font: inherit; font-size: .78rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 4px; max-width: 100%; }",
     ".cplfund-multi:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
     // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
@@ -5460,7 +5470,8 @@
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        strategiesHtml(slot, i) + "</div>";
+        strategiesHtml(slot, i) +
+        cardDesignateHtml(prioGoals(slot, i, p).keys) + "</div>";
     });
     return bandsHtml(slot, ps, cards);
   }
@@ -5557,11 +5568,20 @@
   // designated projects, so (D) gets one on the day it is designated and (C)
   // keeps one whether or not a measured priority is ever tagged to it. FUNDED
   // and MEASURED are two axes, which is exactly what the box exists to show.
-  function reportedPrioHtml(slot, gkey) {
+  // ⚠️ RENDERS WHEN EMPTY, and that REVERSES the reasoning this file used to
+  // carry (Sam, 2026-09-13, told the trade-off and choosing anyway). The old
+  // band-level row existed because "four empty cards would be four claims the
+  // page cannot support, and the calm pass is against exactly that". Asked
+  // directly whether a measureless outcome should show a card before anything
+  // is designated, he said yes. So the compact row retires and every outcome
+  // the statute names shows as a card. `always` is passed by bandsHtml only for
+  // a goal NO measured card serves — a goal that already has a measured card
+  // does not get a second, empty box beside it.
+  function reportedPrioHtml(slot, gkey, always) {
     var g = goalByKey(gkey);
     if (!g) return "";
     var ids = designatedProjects(gkey);
-    if (!ids.length) return "";
+    if (!ids.length && !always) return "";
     var reg = {};
     registerProjects().forEach(function (pr) { reg[pr.id] = pr; });
     var pub = publicMode();
@@ -5602,8 +5622,12 @@
     return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
       '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.text) + "</h4>" +
       '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.</p>' +
-      '<p class="nums"><span class="dk">Reported through ' +
-      esc(String(ids.length)) + " designated " + (ids.length === 1 ? "project" : "projects") +
+      // Positive-first (Sam, 2026-09-13): the empty state says what the card is
+      // waiting for, never "No activities designated".
+      '<p class="nums"><span class="dk">' +
+      (ids.length
+        ? "Reported through " + esc(String(ids.length)) + " designated " + (ids.length === 1 ? "project" : "projects")
+        : "Awaiting designated activities") +
       "</span></p>" +
       '<ul class="cplfund-rprio-list">' + rows + "</ul>" +
       projectDesignateHtml(gkey) + "</div>";
@@ -5633,6 +5657,29 @@
   //
   // The register's name rides into the config with the tag, because the public
   // page has no register to look it up in.
+  // ASK 2 (Sam, 2026-09-13, answering by number): the picker goes on EVERY
+  // card, measured and reported alike, below the Recommended-strategies fold.
+  // His 2026-09-12 words are the reason it is not limited to the measureless
+  // outcomes it was built for: "allow me to add any of the activities we have
+  // on file at my discretion to the card" and "That would be the same for the
+  // Opportunities card" — any card can carry designated activities, whether or
+  // not it also earns on a metric.
+  //
+  // A card can serve more than one goal, so this renders one picker per goal
+  // the card resolves to, each naming its own goal. Cards usually resolve to
+  // exactly one, and an unresolved card lands in the orphan band with none.
+  function cardDesignateHtml(gkeys) {
+    if (publicMode() || !unlocked()) return "";
+    var keys = (gkeys || []).filter(function (k) { return !!goalByKey(k); });
+    if (!keys.length) return "";
+    return keys.map(function (k) {
+      return '<div class="cplfund-card-desig" data-carddesig="' + esc(k) + '">' +
+        '<span class="cplfund-sec-pvlab">Curator only</span> ' +
+        '<span class="dk">Designate activities to (' + esc(k) + ')</span>' +
+        projectDesignateHtml(k) + "</div>";
+    }).join("");
+  }
+
   function projectDesignateHtml(gkey) {
     if (publicMode() || !unlocked()) return "";
     var taken = {};
@@ -5672,27 +5719,12 @@
       "Activities register. Saves for everyone.</span></div>";
   }
 
-  // The EMPTY state, for a goal with nothing designated yet. It exists because
-  // the box itself does not: reportedPrioHtml() renders nothing without
-  // projects, so without this a curator could only ever add to a goal that had
-  // already been seeded — (C) — and "any of them at my discretion" would be
-  // false for the other three.
-  //
-  // Compact on purpose. Four empty cards would be four claims the page cannot
-  // support, and the calm pass (Sam, 2026-09-04) is against exactly that; this
-  // is one line, curator-only, that says what is not there and offers the way
-  // to change it.
-  function designateRowHtml(gkey) {
-    if (publicMode() || !unlocked()) return "";
-    if (designatedProjects(gkey).length) return "";
-    var g = goalByKey(gkey);
-    if (!g) return "";
-    return '<div class="cplfund-desig-row" data-desig="' + esc(gkey) + '">' +
-      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
-      "<span>Designate an activity to (" + esc(gkey) + ") " + esc(g.short) +
-      " and a reported box appears in this band, on the public page too.</span>" +
-      projectDesignateHtml(gkey) + "</div>";
-  }
+  // designateRowHtml() RETIRED 2026-09-13 (ask 2). It was the compact band-level
+  // empty state — "Designate an activity to (C) … and a reported box appears" —
+  // and it existed because empty CARDS were judged four unsupported claims. Sam
+  // reversed that directly: a measureless outcome now shows a card whether or
+  // not anything is designated, and the picker rides every card, so there is no
+  // state left for a band-level row to cover.
 
   function bandsHtml(slot, ps, cards) {
     var used = {}, out = "";
@@ -5712,14 +5744,20 @@
       // them: Sam asked the section to hold both, and a band showing only what
       // it can price is the reading the statute's own "all of the following
       // goals" rules out.
-      var reported = [], desig = [];
+      // A goal is MEASURELESS when no measured card in this band resolves to it.
+      // Those get a reported card ALWAYS, empty or not (ask 2). A goal that a
+      // measured card already serves gets one only once something is designated
+      // to it — otherwise every band would carry an empty box beside a card that
+      // is already saying more than the box could.
+      var reported = [];
       b.keys.forEach(function (k) {
-        var rh = reportedPrioHtml(slot, k);
+        var served = members.some(function (i) {
+          return (prioGoals(slot, i, ps[i]).keys || []).indexOf(k) >= 0;
+        });
+        var rh = reportedPrioHtml(slot, k, !served);
         if (rh) reported.push(rh);
-        var dr = designateRowHtml(k);
-        if (dr) desig.push(dr);
       });
-      if (!members.length && !reported.length && !desig.length && b.id !== "opps") return;
+      if (!members.length && !reported.length && b.id !== "opps") return;
       var shareSum = 0, dollarSum = 0;
       members.forEach(function (i) {
         shareSum += Number(ps[i].share) || 0;
@@ -5749,8 +5787,8 @@
         (members.length || reported.length
           ? '<div class="cplfund-band-body"><div class="cplfund-prio">' +
             members.map(function (i) { return cards[i]; }).concat(reported).join("") + "</div>" +
-            desig.join("") + bandEvidenceHtml(slot, b.keys) + "</div>"
-          : '<div class="cplfund-band-body cplfund-band-body-bare">' + desig.join("") +
+            bandEvidenceHtml(slot, b.keys) + "</div>"
+          : '<div class="cplfund-band-body cplfund-band-body-bare">' +
             bandEvidenceHtml(slot, b.keys) + "</div>") +
         "</section>";
     });

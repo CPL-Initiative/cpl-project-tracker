@@ -317,8 +317,19 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   T.render();
   check("carryover year: no misleading 'earned $0 of $0 cap' line",
     !doc.querySelector(".cplfund-prio .cplfund-earned-line"));
+  // ⚠️ ASK THE CARDS, NOT THE FIRST GRID. This read
+  // `doc.querySelector(".cplfund-prio")` — the first priority grid in the
+  // document — and broke on a CORRECT change: ask 2 (2026-09-13) gives a
+  // measureless goal a reported card always, so bands that rendered no grid at
+  // all now render one, and the first grid became the Access band's instead of
+  // the band holding the carryover cards. Measured at the time of the fix: the
+  // line was still on the cards (Success and the orphan band both carried it),
+  // and only the selector had moved off them. Fourth occurrence of
+  // a-test-coupled-to-position-breaks-on-correct-work — so this asks every
+  // priority CARD, which is what the assertion's own name claims.
   check("carryover year: the priority card explains where the money went",
-    doc.querySelector(".cplfund-prio").textContent.indexOf("carryover") !== -1);
+    Array.from(doc.querySelectorAll(".cplfund-prio .p"))
+      .some(function (c) { return c.textContent.indexOf("carryover") !== -1; }));
 
   // The money columns themselves are unchanged by the viewed year.
   const row = T._alloc("Alameda");

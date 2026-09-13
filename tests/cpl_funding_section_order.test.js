@@ -305,10 +305,21 @@ function registerStub() {
     doc.querySelectorAll("[data-priocard]").length === cardsBefore);
 
   // (D) Opportunities gets the same affordance, with nothing designated yet.
-  check("4n: a goal with nothing designated offers the row rather than a box",
-    !!doc.querySelector('[data-desig="D"]') && !doc.querySelector('[data-rprio="D"]'));
+  // ⚠️ REVERSED 2026-09-13 (ask 2, Sam answering by number). This pinned the
+  // OPPOSITE: a goal with nothing designated offered a compact band-level row
+  // (data-desig) and NOT a box, because four empty cards were judged four
+  // claims the page could not support. Asked directly, told that trade-off, he
+  // chose the card — so a measureless outcome now shows a reported CARD whether
+  // or not anything is designated, the band row is retired, and the picker
+  // rides every card. Both halves are asserted so a silent return of the row
+  // fails here rather than passing on the box alone.
+  check("4n: a goal with nothing designated shows a reported CARD, and the band row is gone",
+    !!doc.querySelector('[data-rprio="D"]') && !doc.querySelector('[data-desig="D"]'));
   check("4o: ...inside the Opportunities band, where its funding already sits",
-    !!doc.querySelector('#cplfund-band-opps [data-desig="D"]'));
+    !!doc.querySelector('#cplfund-band-opps [data-rprio="D"]'));
+  check("4o2: ...and that empty card carries the picker and says what it awaits",
+    !!doc.querySelector('#cplfund-band-opps [data-rprio="D"] [data-projsel="D"]') &&
+    /Awaiting designated activities/.test(doc.querySelector('[data-rprio="D"]').textContent));
 
   // Designate two activities to (D) in one action.
   const dSel = doc.querySelector('[data-projsel="D"]');
