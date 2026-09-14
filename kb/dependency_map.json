@@ -4,9 +4,9 @@
   "supabase_tables": 80,
   "rpcs": 31,
   "edge_functions": 5,
-  "file_datasets": 461,
+  "file_datasets": 463,
   "external_services": 143,
-  "consumers": 332,
+  "consumers": 333,
   "workflows": 33,
   "data_js_files": 59,
   "tabs": 37
@@ -4817,6 +4817,13 @@
      "line": 64
     },
     {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 209
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5441,6 +5448,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 210
     }
    ],
    "producers": [
@@ -9676,6 +9690,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/fire_electrical_domain_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 204
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/fl_subj4_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -11483,6 +11510,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/sjcoe_occupation_scope_map.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 205
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/statewide_exhibit_categories.json": {
    "consumers": [
     {
@@ -11491,6 +11531,13 @@
      "direction": "read",
      "how": "literal",
      "line": 5329
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 142
     },
     {
      "id": "script:kb/_seed_statewide_categories.py",
@@ -13345,6 +13392,13 @@
      "line": 116
     },
     {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 208
+    },
+    {
      "id": "script:kb/_build_partner_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -14167,6 +14221,13 @@
      "tabs": [
       "tmc-builder"
      ]
+    },
+    {
+     "id": "script:kb/_build_occupation_cpl_crosswalk.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 100
     },
     {
      "id": "script:tmc/_build_college_adts.py",
