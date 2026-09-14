@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-444 document(s).
+445 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -199,6 +199,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
+| [An articulation's college list belongs to the group, not to each course in it](../kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
 | [An auto-triggered smoke test validates the version it is replacing](../kb-notes/methodology-order-the-post-deploy-check-after-the-deploy.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An empty read is only evidence if the set cannot legitimately be empty](../kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md) | methodology | published | 2026-08-14 | 2026-08-14 |

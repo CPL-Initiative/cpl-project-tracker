@@ -10,8 +10,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 903,
-    "bytes": 9590558,
+    "files": 904,
+    "bytes": 9596225,
     "over_budget": 7,
     "handoff_max": 262,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 113,
-        "bytes": 3037138,
+        "bytes": 3037633,
         "over": 3
       },
       "index": {
@@ -40,8 +40,8 @@
         "over": 1
       },
       "kb_note": {
-        "files": 446,
-        "bytes": 2292379,
+        "files": 447,
+        "bytes": 2297551,
         "over": 0
       },
       "roadmap_lane": {
@@ -61,10 +61,10 @@
       "vault_heavy_path": 47
     },
     "vault": {
-      "files": 2871,
-      "bytes": 1393191191,
-      "heavy_bytes": 615256212,
-      "heavy_share": 0.442,
+      "files": 2875,
+      "bytes": 1394670218,
+      "heavy_bytes": 615256250,
+      "heavy_share": 0.441,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -931,10 +931,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354159,
+        "bytes": 2354197,
         "kind": "file"
       },
-      "message": "2,354,159 B single file inside the vault"
+      "message": "2,354,197 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
