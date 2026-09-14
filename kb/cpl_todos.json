@@ -1,15 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-09-13",
-  "_session": 259,
-  "_status": "Session 259 opened on a queue item that turned out to be already built — the field that lets an assistant instruction apply to one place shipped three weeks ago — and worked out what Sam's yes of the 12th actually covered: that whether the assistant may use non-public data is decided by the server from your sign-in, never by the page. That is built and waiting on a deploy: a signed-in COBI reader gets one line saying the assistant recognized the sign-in, the log records who asked and from where, and nothing changes for the public. Two smaller items closed on the way: the two Sierra checks that went red on correct answers now read the negation properly, and the public funding explainer is measured by the accessibility sweep for the first time (it fails, on the same undersized controls as the tab). Waiting on Sam: the deploy, and the go for the hourly health probe. On the 13th Sam returned with three asks on the funding tab: the text sweep shipped (every sentence opens with the positive, the informal terms are gone and guarded), he ruled that the outcome will be chosen on each priority card with four statutory bands and reported cards for outcomes without a measure, and he retired the word earn; those two builds and the earn sweep are the next session's, with his rulings recorded.",
+  "_session": 260,
+  "_status": "Session 260 retired the word 'earn' from everything a reader sees on the funding tab, the export and the public page, and cleared every too-small control on both — two hundred and forty-five faults down to none. It also built Sam's second funding ask: the control that ties an activity to an outcome now sits on every card. The most useful thing that happened was a correction: a prototype quoted funding percentages taken from our own notes rather than from the live model, and Sam caught it in one question. The notes said forty/twenty-five/thirty-five; the model says thirty-three/thirty-three/thirty-four. Reading the live settings then turned up two more things the notes had wrong, including that the counselor measure came back three days ago. Waiting on Sam: whether one card in the new four-band layout earns its place, and whether the Awards priority should be measured on the counselor step — which is the only way Career attainment ever gets measured at a college at all.",
   "items": [
-    {
-      "id": "s259-sam-earn-word-map",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Confirm the words that replace 'earn' on the funding tab before the sweep: a priority's measure counts toward funding; a college qualifies for its award; the result is demonstrated (the statute's own verb); what is left is remaining. Function and class names keep the old word. Say yes, or give the words you prefer."
-    },
     {
       "id": "s259-sam-dispatch-cpl-chat-v66",
       "for": "Sam",
@@ -21,12 +15,6 @@
       "for": "Sam",
       "tab": "cobi-assistant",
       "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
-    },
-    {
-      "id": "s259-sam-skyview-ask-check",
-      "for": "Sam",
-      "tab": "sierra-training",
-      "text": "One database statement lets an instruction apply only to SkyView questions. The live list of places an instruction can be scoped to still lacks 'skyview-ask', so choosing it in Sierra Training fails to save even though the assistant already understands it. Carried since the 9th; say the word and a session applies it — the statement is in the session 260 handoff."
     },
     {
       "id": "s256-sam-forward-kynd-memo",
@@ -69,18 +57,6 @@
       "for": "Fable",
       "tab": "cobi-assistant",
       "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
-    },
-    {
-      "id": "s259-fable-a11y-pass-funding",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Run the accessibility remediation on the Implementation Funding tab and the public explainer together. Measured: the tab has 317 controls under the 24-pixel minimum and 18 faint-text contrast pairs; the explainer has 245 of the same controls at every width, plus two scrolling tables a keyboard cannot reach on a phone. All of it is one shared section of code, so one pass fixes both."
-    },
-    {
-      "id": "s259-fable-funding-lessons-archive",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "The funding lessons doc sits exactly at its 120 KB budget. Move its oldest sections to its archive before the next session appends to it. The lane file itself is back under budget for the first time since 3 September."
     },
     {
       "id": "s259-fable-health-probe-blind-spot",
@@ -135,6 +111,30 @@
       "for": "Fable",
       "tab": "implementation-funding",
       "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
+    },
+    {
+      "id": "s260-sam-c-reference-card",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "One look, one answer: does the (C) reference card earn its place? On the four-band prototype, the Awards priority would serve both Completion and Career attainment, and a card can only sit under one heading. The prototype shows it under Completion where its funding is, and gives Career attainment a card that names it without repeating the figure — so the same funding is never printed twice. If that reads as an apology rather than an answer, say so and the four-band split waits. Nothing is built until you read it."
+    },
+    {
+      "id": "s260-sam-awards-counselor-measure",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "The Counselor step is the only way Career attainment ever gets a campus measure, and the dial is still pointed elsewhere. You put the step into the Awards priority, and the model already treats an accepted CPL plan as serving both Completion and Career attainment. But Awards is currently measured on applied units from the portal, which only serves Access. The counselor data is available again — 24,778 units across 110 colleges. Changing what Awards measures is a dial, and dials are yours to set on the tab."
+    },
+    {
+      "id": "s260-fable-ask-1-four-bands",
+      "for": "Fable",
+      "tab": "implementation-funding",
+      "text": "Build the four bands once Sam answers on the reference card. Each statutory outcome gets its own heading, the outcome is chosen on the card with the measure deciding by default, and a curator's choice says in words that the CPL team made it. Sam approved the card shape: a simple face with one collapsed Detail section holding the description, the measure, the price and the strategies — and the activities picker stays on the face, not inside the fold."
+    },
+    {
+      "id": "s260-fable-cobi-contrast-pass",
+      "for": "Fable",
+      "tab": "cobi-dark-mode",
+      "text": "Seventeen of thirty-eight COBI tabs have text that is hard or impossible to read. The worst is white text on white — invisible. Grouped by colour pair rather than by page it is a short list of colour decisions, not a hundred separate problems. This is not in any lane yet and nobody has claimed it."
     }
   ]
 }

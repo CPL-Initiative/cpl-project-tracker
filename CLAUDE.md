@@ -289,77 +289,65 @@ named here because a store nobody names is a store nobody finds —
   analyze · center · judgment · program · catalog · license (n and v) · gray ·
   enroll · while (not `whilst`) · among (not `amongst`)** and the
   `-ize`/`-ization` family. ⚠️ **The British form in a word pair MUST be written
-  in a code span.** Bare, the sweeper rewrites it: this list read
-  `while (not while)` · `among (not among)` for weeks, because `american_spelling`
-  corrected the very words the rule was documenting — and a bare quotation of the
-  corruption trips `self_corrected_word_pair` in turn, so even the POST-MORTEM
-  needs the backticks. `prose_only()` masks code spans, so
-  backticks are what make a word-list entry survive its own lint. **Rendered UI text first**, then
-  docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
+  in a code span.** Bare, the sweeper rewrites it — this list read
+  `while (not while)` for weeks because `american_spelling` corrected the very
+  words the rule documents, and a bare quotation of that trips
+  `self_corrected_word_pair` in turn. `prose_only()` masks code spans, so the
+  backticks are what let an entry survive its own lint. **Rendered UI text
+  first**, then docs, then comments. Enforced by `american_spelling` in `kb/_docs_audit.py`.
   ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name is not
   a spelling, so never blind-replace inside code.
 - **REMEDIATE WITH [`/a11y-pass`](.claude/commands/a11y-pass.md) (Sam, 2026-09-09).**
   Triage first: **findings are not problems** — and group by the COLOR PAIR, not
   the selector, or the biggest fault sorts to the bottom as many small ones.
 - **SkyView, not "Atlas" (Sam, 2026-08-24; tightened 2026-09-05).** The CCR curation
-  prototype is **SkyView**. ⚠️ **When Sam says "SkyView" he means the MAP ALONE, filling the
-  window** — the canvas of identities you pan, search and drag on, with its one row of
-  controls and nothing else painted (Sam, 2026-09-05: *"The full screen SkyView (which I
-  would like to henceforth refer to as SkyView…)"*). The map with the panes below it is
-  **the comprehensive view**, one Views-menu click away and never the default; the
-  discipline table, the subject table and the ESL packaging card are the **workspace**
-  (the *Disciplines and subjects* tab). Verify such an ask against the SCREEN, not the
-  code (KB note `methodology-verify-an-ask-against-what-the-reader-sees`). Files still
-  carry `ccr_atlas_*` paths; the user-facing name is what changed.
+  prototype is **SkyView**, and ⚠️ **when Sam says it he means the MAP ALONE, filling the
+  window** — the canvas you pan, search and drag on, one row of controls, nothing else
+  painted. The map with panes below is **the comprehensive view**, one Views-menu click
+  away and never the default; the discipline and subject tables and the ESL card are the
+  **workspace** (*Disciplines and subjects* tab). Verify such an ask against the SCREEN,
+  not the code (`methodology-verify-an-ask-against-what-the-reader-sees`). Files keep
+  `ccr_atlas_*` paths; the user-facing name is what changed.
 - **FUNDING VOCABULARY — CCC NORMS, NOT BUSINESS NORMS (Sam, 2026-08-31).** Say
   **funding**, never "money," on any funding surface. Prefer sector terms:
-  *allocated / fully allocated* (not "spent"/"apportioned" for this program's
-  split — apportionment is the SCFF term), *restricted / designated* (not
-  "fenced"), *redirect* (not "absorb"), *brought up to the minimum* (not
-  "topped up"); avoid "double count" (an MIS audit-error term — say *the same
-  CPL credits both institutions by design*). The per-institution figure is the
-  **max award** — *"communicates that awards are based on outcomes, not
-  automatically awarded"* — defined on the tab in his verbatim (2026-09-01):
-  *"maximum funding to be awarded based on measurable outcomes and allocated
-  as credit and noncredit subtotals."* **Tightened 2026-08-31/09-01:** say
-  **funding**, not "pool," for the model's total (vary the wording — "the
-  total", "the allocation" — rather than drumming "funding"; the model's NAME
-  "one-pool" and code identifiers stay); **never the phrase "on its face"** —
-  end the statement instead. **NEVER the concept of ADVANCES and NEVER a
+  *allocated / fully allocated* (not "spent"/"apportioned" — apportionment is
+  the SCFF term), *restricted / designated* (not "fenced"), *redirect* (not
+  "absorb"), *brought up to the minimum* (not "topped up"); avoid "double count"
+  (an MIS audit-error term — say *the same CPL credits both institutions by
+  design*). The per-institution figure is the **max award**, his verbatim
+  (2026-09-01): *"maximum funding to be awarded based on measurable outcomes and
+  allocated as credit and noncredit subtotals."* Say **funding**, not "pool," for
+  the model's total (vary it — "the total", "the allocation" — rather than
+  drumming "funding"; the NAME "one-pool" and code identifiers stay); **never
+  "on its face"** — end the statement instead. **NEVER the concept of ADVANCES, and never a
   reference to a not-yet-live data feed, anywhere rendered (Sam, 2026-09-01):**
   *"I don't want to suggest that advances are possible in the model,
-  regardless of current missing data feeds or any other factor"* — an
-  unmeasured metric reads a plain "no data yet" (the why lives in the
-  curator-only diagnostic); "advancing the priority outcomes" (to further)
-  and the statute's "Advancing career attainment" are the allowed senses.
-  The anchor suite's D13 ban guard enforces it. Sweep prose only, never
-  identifiers.
-  ⚠️ **NEVER THE BANKING SENSE OF "DRAW" (Sam, 2026-09-09) — AND "EARN" IS
-  RETIRED TOO (Sam, 2026-09-13).** *"'draws' is a business term tied to banking
-  and I don't want that connotation"*; then, of the replacement he had himself
-  chosen: *"Earned still smacks of banking... would be better to use something
-  like 'measured... or... qualified for'"*. **The map, confirmed 2026-09-13:** a
-  measure **counts toward** funding · a college **qualifies for** its award · the
-  result is **demonstrated** (the statute's own verb, §78093.2(d)(2)) · unearned
-  is **remaining**. **receives** still fits where funding already qualified for
-  is being released. Also retired: **unspent**, **the dollars** → *the funding*.
-  ⚠️ **The award cells keep the PRESENT PARTICIPLE — *qualifying*, never a past
-  tense:** his 2026-08-27 ruling (the past tense "read like a settled award")
-  SURVIVES the sweep, and flattening those labels to *demonstrated* reverses him.
-  ⚠️ **"Students earn credit" STAYS — CHECK WHO THE SUBJECT IS.** A COLLEGE
-  earning FUNDING is the banking sense he retired; a STUDENT earning CREDIT is
-  ordinary academic English and the language the statute uses. Same subject test
-  as *expended* below. ⚠️ **But
+  regardless of current missing data feeds or any other factor"*. An unmeasured
+  metric reads **awaiting measurement** — ⚠️ this line said *"no data yet"* until
+  2026-09-13, when his positive-first ruling BANNED that exact phrase, so the
+  doctrine file was instructing the words its own guard rejects. "Advancing the
+  priority outcomes" and the statute's "Advancing career attainment" are the
+  allowed senses; the D13 guard enforces it. Prose only, never identifiers.
+  ⚠️ **NEITHER THE BANKING SENSE OF "DRAW" (2026-09-09) NOR "EARN" (2026-09-13).**
+  *"Earned still smacks of banking... better to use something like 'measured...
+  or... qualified for'"*. **The map:** a measure **counts toward** funding · a
+  college **qualifies for** its award · the result is **demonstrated** (the
+  statute's verb, §78093.2(d)(2)) · unearned is **remaining**; **receives** fits
+  where funding already qualified for is released. Also retired: **unspent**,
+  **the dollars** → *the funding*. ⚠️ **Award cells keep the PRESENT PARTICIPLE —
+  *qualifying*:** his 2026-08-27 ruling (a past tense "read like a settled
+  award") survives the sweep. ⚠️ **"Students earn credit" STAYS — CHECK WHO THE
+  SUBJECT IS:** a COLLEGE earning FUNDING is the banking sense; a STUDENT earning
+  CREDIT is ordinary academic English. Same subject test as *expended*. ⚠️ **But
   *expended* STAYS where the subject is a COLLEGE spending (his rule, same
   day): *"expended should be kept if I am referring to the colleges spending
   the funds. Allocated should be used if I am referring to the CO awarding or
   dispensing the funds to colleges."* The two words are not interchangeable —
   check who the subject is before sweeping either. `cpl_funding_calm` bans
-  the draw stem, *unspent* and the earn stems in rendered text (`withdrawn` is a
-  different word and is excluded, and the `\b` is load-bearing — without it the
-  ban forbids *credit for prior learning*). ⚠️ **A rendered-text ban covers only
-  the branches a fixture paints** — `cpl_funding_earn_retired.test.js` reads the
-  SOURCE for the same words, and that is the one that caught the CSV header.
+  the draw, *unspent* and earn stems in rendered text (the `\b` is load-bearing —
+  without it the ban forbids *credit for prior learning*). ⚠️ **A rendered-text
+  ban covers only the branches a fixture paints** — `cpl_funding_earn_retired`
+  reads the SOURCE, and is what caught the CSV header no DOM test can see.
 - **HOUSE VOICE — write outward artifacts the way the CO writes (Sam,
   2026-09-01).** He shared his VC of Academic Affairs' letter to CSU as the
   standard: *"the word choice and tone provide an extensive example of the tone
@@ -469,18 +457,16 @@ first day.** Do the remembering for them.
   multi-agent fan-out and why — don't make the user guess a dial they have no
   way to calibrate. **The governing test is whether a hit is cheap to VERIFY**
   (Sam's refinement, 2026-08-08, from *"sometimes better to be lucky than smart"*):
-  fan-out is **manufactured luck** — more independent draws raise the odds one
-  lands — and luck only pays when you can recognize the hit. A bug reproduces; a
-  suppressed cell either is or isn't recoverable by subtraction; **fan out there**
-  (also the usual shape of MISS-risk: many files/surfaces, audits, unknown-size
-  discovery). A definition, a naming call, where credit belongs in the Sprint —
-  nothing to score candidates against, so **stay single-threaded and think harder**
-  (WRONG-risk). A majority among agents is not evidence; it regresses toward the
-  most common intuition, which is precisely what fails on a counter-intuitive
-  problem — Sam's framing: *too many cooks in the kitchen can lead to chasing our
-  tails endlessly.* Before either, **check whether this repo has already answered
-  it**: the best catches of the last several sessions came from re-reading a
-  committed note, not from generating a new one. Human-facing version:
+  fan-out is **manufactured luck** — more draws raise the odds one lands — and luck
+  only pays when you can recognize the hit. A bug reproduces; a suppressed cell
+  either is or isn't recoverable by subtraction; **fan out there** (the usual
+  shape of MISS-risk: many files, audits, unknown-size discovery). A definition or
+  a naming call has nothing to score candidates against, so **stay single-threaded
+  and think harder** (WRONG-risk). A majority among agents is not evidence — it
+  regresses toward the most common intuition, which is what fails on a
+  counter-intuitive problem (*too many cooks… chasing our tails endlessly*).
+  Before either, **check whether this repo has already answered it**: the best
+  catches of recent sessions came from re-reading a committed note. Human-facing version:
   `docs/working_with_claude_code.md` §9.
 - **Explain approval requests in plain language.** Before a write that touches
   shared ground, say what changes and who else sees it — don't assume a new user
