@@ -147,8 +147,12 @@ check("a Total Possible by outcome row renders", !!totals(doc));
   check("the totals row names goal (" + k + ")",
     new RegExp("\\(" + k + "\\)").test(flat(totals(doc))));
 });
-check("a goal no priority serves reads as reported through statewide work",
-  /reported through statewide work/i.test(flat(totals(doc))));
+// Deliberately NOT the account's "reported through statewide work": that phrase
+// names a goal's EVIDENCE STATE under §78093.2(d)(2), and this row is saying
+// something else — that no priority counts toward this goal. Two claims sharing
+// one phrase is how a near-duplicate drifts.
+check("a goal no priority serves says how it IS reported",
+  /reported through its designated activities/i.test(flat(totals(doc))));
 check("a goal priorities DO serve carries a Total Possible figure",
   /\$[\d,]+/.test(flat(totals(doc))));
 

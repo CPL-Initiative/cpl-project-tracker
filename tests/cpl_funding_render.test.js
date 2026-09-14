@@ -370,8 +370,11 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
        T._getScenario().yearPriorities["1"]["0"].title === "Access & Onboarding"));
 
   // #2 — recommended strategies: empty by default; add, edit, delete (Year 1).
+  // Scoped to `.p` since 2026-09-14: the reported outcome cards carry their own
+  // strategies fold now, so an unscoped count is no longer "per priority box".
   check("Recommended strategies header + Add button per priority box",
-    doc.querySelectorAll(".cplfund-strat-h").length === 3 && doc.querySelectorAll("[data-stratadd]").length === 3);
+    doc.querySelectorAll(".cplfund-prio .p .cplfund-strat-h").length === 3 &&
+    doc.querySelectorAll("[data-stratadd]").length === 3);
   check("no strategies by default", doc.querySelectorAll('.cplfund-strat input[data-edit="strategy"]').length === 0);
   click(window, doc.querySelector('[data-stratadd="1:0"]'));
   const stratInput = doc.querySelector('.cplfund-strat input[data-edit="strategy"]');

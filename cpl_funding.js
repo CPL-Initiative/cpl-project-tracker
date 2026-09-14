@@ -4626,7 +4626,7 @@
       : '<span class="cplfund-cardgoal-name cplfund-cardgoal-orphan">Awaiting a statutory outcome</span> ' +
         '<span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span>';
     var sel = "";
-    if (selAttr && !publicMode() && unlocked()) {
+    if (selAttr && !publicMode()) {
       // A REPORTED card has no metric, so "Derived from the metric" is not on
       // offer there (opt.derivable false), and `opt.choices` narrows the list
       // to the goals no OTHER reported card already holds — one card per goal,
@@ -4667,10 +4667,14 @@
   // Open by default where his earlier ruling requires it — the designate
   // picker is ALWAYS VISIBLE (2026-09-13, ask 2). Collapsible and collapsed are
   // two different things, and only the first was asked for there.
-  function cardSectionHtml(label, value, body, open) {
+  // `cls` keeps a section's own identity alongside the family's. The strategies
+  // fold has been `details.cplfund-strat` with a `summary.cplfund-strat-h`
+  // since 2026-08-31, and its styling and three suites key on that; joining the
+  // card-section family is an addition, not a rename.
+  function cardSectionHtml(label, value, body, open, cls) {
     if (!body) return "";
-    return '<details class="cplfund-cardsec"' + (open ? " open" : "") + ">" +
-      '<summary><span class="cplfund-cardsec-lab">' + esc(label) + "</span>" +
+    return '<details class="cplfund-cardsec' + (cls ? " " + cls : "") + '"' + (open ? " open" : "") + ">" +
+      '<summary' + (cls ? ' class="' + cls + '-h"' : "") + '><span class="cplfund-cardsec-lab">' + esc(label) + "</span>" +
       (value ? '<span class="cplfund-cardsec-val">' + value + "</span>" : "") +
       '<span class="cplfund-cardsec-word"></span></summary>' +
       '<div class="cplfund-cardsec-body">' + body + "</div></details>";
@@ -5529,7 +5533,7 @@
     // many strategies the card carries.
     return (rows ||
         '<p class="nums dk">Awaiting recommended strategies for this outcome.</p>') +
-      (publicMode() || !unlocked() ? "" :
+      (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
         '" title="Add a recommended strategy">Add strategy</button>');
   }
@@ -5746,7 +5750,7 @@
           strategiesCount(slot, i)
             ? fmtInt(strategiesCount(slot, i)) + " for Year " + esc(slot)
             : "Awaiting",
-          strategiesHtml(slot, i)) +
+          strategiesHtml(slot, i), false, "cplfund-strat") +
         // OPEN by default: his 2026-09-13 ruling put the picker always visible.
         // Collapsible and collapsed are different asks, and only the first was
         // made on 2026-09-14.
@@ -5977,7 +5981,8 @@
           : '<span class="dk">held by this outcome alone</span>') +
         // No college award moves: pool line items are taken off the top before
         // either lane's pot exists.
-        '<span class="dk cplfund-rfund-note">A reporting designation. No college award moves.</span>' +
+        '<span class="dk cplfund-rfund-note">A reporting designation, which leaves every college ' +
+        "award exactly as the model computes it.</span>" +
         "</div>";
     }).join("");
   }
@@ -6005,13 +6010,13 @@
     var rows = list.map(function (str, j) {
       return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
         edText("rstrategy", str, { field: gkey + "::" + j, label: "Recommended strategy", placeholder: "Add a strategy\u2026" }) +
-        (publicMode() || !unlocked() ? "" :
+        (publicMode() ? "" :
           '<button type="button" class="cplfund-reqdel" data-rstratdel="' + esc(gkey + ":" + j) +
           '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">Remove</button>') +
         "</div>";
     }).join("");
     return (rows || '<p class="nums dk">Awaiting recommended strategies for this outcome.</p>') +
-      (publicMode() || !unlocked() ? "" :
+      (publicMode() ? "" :
         '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-rstratadd="' + esc(gkey) +
         '" title="Add a recommended strategy">Add strategy</button>');
   }
@@ -6053,7 +6058,7 @@
         reportedFundHtml(gkey), true) +
       cardSectionHtml("Recommended strategies",
         reportedStrategies(gkey).length ? fmtInt(reportedStrategies(gkey).length) + "" : "Awaiting",
-        reportedStrategiesHtml(gkey)) +
+        reportedStrategiesHtml(gkey), false, "cplfund-strat") +
       cardSectionHtml("Designated activities",
         ids.length ? fmtInt(ids.length) + "" : "Awaiting",
         designatedListHtml(gkey, true) +
@@ -6259,9 +6264,9 @@
       return '<span class="cplfund-otot-item' + (has ? "" : " cplfund-otot-quiet") + '">' +
         '<span class="cplfund-otot-key">(' + esc(g.key) + ")</span> " + esc(g.short) + " " +
         (has
-          ? "<strong>" + fmtMoney(totals[g.key]) + "</strong> " +
-            '<span class="dk">' + fmtRatePct(shares[g.key]) + "% Total Possible</span>"
-          : '<span class="dk">reported through statewide work</span>') +
+          ? '<span class="dk">' + fmtRatePct(shares[g.key]) + "% &mdash;</span> <strong>" +
+            fmtMoney(totals[g.key]) + '</strong> <span class="dk">Total Possible</span>'
+          : '<span class="dk">reported through its designated activities</span>') +
         "</span>";
     }).join("");
     return '<div class="cplfund-otot" role="group" aria-label="Total Possible by statutory outcome">' +
