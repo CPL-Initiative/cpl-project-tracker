@@ -380,6 +380,21 @@
     ".cplfund-otot-item strong { color: var(--text-strong); }",
     ".cplfund-otot-key { font-weight: 700; color: var(--seal-blue-text,#002F6D); }",
     ".cplfund-desig-count { margin: 0 0 4px; }",
+    ".cplfund-prio .p, .cplfund-prio .cplfund-rprio { min-height: var(--cplfund-card-h, 0); }",
+    ".cplfund-cardsize { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center;",
+    "  margin: 0 0 10px; padding: 7px 12px; font-size: .78rem; color: var(--text-muted);",
+    "  border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); }",
+    ".cplfund-cardsize-d { display: flex; align-items: center; gap: 6px; }",
+    ".cplfund-cardsize-d input[type=\"range\"] { width: 120px; max-width: 38vw; accent-color: var(--seal-blue-text,#002F6D); }",
+    ".cplfund-cardsize-d output { font-weight: 600; color: var(--text-body); min-width: 7ch; }",
+    ".cplfund-rfund { display: flex; flex-wrap: wrap; gap: 3px 8px; align-items: baseline; margin: 0 0 6px; }",
+    ".cplfund-rfund-lab { font-weight: 600; color: var(--text-body); font-size: .82rem; }",
+    ".cplfund-rfund-amt { font-size: .9rem; color: var(--text-strong); }",
+    ".cplfund-rfund-amt .cplfund-ed { max-width: 11ch; }",
+    ".cplfund-rfund-note { flex-basis: 100%; font-size: .76rem; }",
+    ".cplfund-rprio-add-card { display: flex; flex-wrap: wrap; gap: 5px 9px; align-items: baseline;",
+    "  margin: 10px 0 0; padding: 8px 12px; font-size: .8rem;",
+    "  border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); }",
     // The local-only save acknowledgment. Caution colour + a word, never a bare
     // tick: colour is not the only signal, and a green "saved" is the exact
     // misreading this exists to prevent.
@@ -2985,7 +3000,8 @@
     "data-textedit", "data-textsave", "data-textcancel", "data-textreset", "data-textarea",
     "data-secrename", "data-sectitle", "data-sectitlesave", "data-sectitlecancel",
     "data-sectitlereset", "data-sechide", "data-secshow",
-    "data-projsel", "data-projadd", "data-projrelease", "data-priogoal"];
+    "data-projsel", "data-projadd", "data-projrelease", "data-priogoal",
+    "data-rcgoal", "data-rcdel", "data-rstratadd", "data-rstratdel"];
   // PREVIEW-ONLY affordances, swept everywhere the curator is not previewing.
   // Kept OUT of CURATE_ATTRS rather than conditioned inside it, so the registry
   // above keeps meaning exactly one thing: every attribute in it leaves the DOM
@@ -4447,6 +4463,84 @@
   // supports (D), but "plausibly" is not a statutory claim, and a default tag
   // would put a $800,000 figure under a goal nobody decided to put it under.
   var POOL_GOAL_DEFAULTS = { scaling_projects_tech: ["C", "D"] };
+  // ── the project allocation, SPLIT across the outcomes it funds ────────
+  // Sam, 2026-09-14: "allow me to assign part or all of the available funding
+  // (not assigned to the colleges) on the cards. Start by keeping the total
+  // available (8959692) on D but make it editable so that if I enter something
+  // like 1000000, C auto populates 7959692...and vice versa."
+  //
+  // ⚠️ THIS FIXES A DOUBLE CLAIM, it does not merely add a dial. The project
+  // pool is tagged to (C) AND (D) — both for good reasons (see
+  // POOL_GOAL_DEFAULTS) — and goalFunding() pushed its FULL amount into each,
+  // so the same $8,959,692 reported under two statutory goals at once. Nothing
+  // summed the goals, so nothing ever caught it. A split makes the account add
+  // up, which is what §78093.2(d)(2) is for.
+  //
+  // ⚠️ THE DEFAULT PUTS THE WHOLE ALLOCATION ON THE LAST GOAL IN STATUTE ORDER
+  // — (D) for this pool, which is his "start by keeping the total on D" and
+  // also the statute's own reading: (D) names the chancellor's office pilot
+  // projects this pool funds. Splitting it evenly instead would invent a
+  // designation nobody made.
+  //
+  // ⚠️ AND IT MOVES NO COLLEGE AWARD. These are pool line items, taken off the
+  // top before either lane's pot exists; which goal reports one changes a
+  // caption, never an allocation. Same posture as the goal tags themselves.
+  function poolSplitMap(field) {
+    var v = firstDefined(
+      SCENARIO.poolSplit && SCENARIO.poolSplit[field],
+      SHARED.poolSplit && SHARED.poolSplit[field],
+      base().pool_split && base().pool_split[field]);
+    return isPlainObj(v) ? v : null;
+  }
+  // The goals one pool field funds, in STATUTE order — so "the last one" is a
+  // stable answer rather than whatever order a stored array happens to carry.
+  function poolGoalKeys(field) {
+    var keys = poolGoals(field);
+    return STATUTORY_GOALS.filter(function (g) { return keys.indexOf(g.key) >= 0; })
+      .map(function (g) { return g.key; });
+  }
+  function poolGoalAmount(field, key) {
+    var keys = poolGoalKeys(field);
+    var total = Number(poolField(field)) || 0;
+    if (keys.indexOf(key) < 0) return 0;
+    if (keys.length <= 1) return total;
+    var m = poolSplitMap(field);
+    if (m) {
+      var v = Number(m[key]);
+      return isFinite(v) ? Math.max(0, Math.min(total, v)) : 0;
+    }
+    return key === keys[keys.length - 1] ? total : 0;
+  }
+  function setPoolGoalAmount(field, key, n) {
+    var keys = poolGoalKeys(field);
+    var total = Number(poolField(field)) || 0;
+    var v = Math.max(0, Math.min(total, Number(n) || 0));
+    var m = {};
+    keys.forEach(function (k) { m[k] = poolGoalAmount(field, k); });
+    m[key] = v;
+    // TWO goals and one allocation: the other takes the remainder, so the pair
+    // sums to the allocation exactly and neither can be typed into a state that
+    // over- or under-claims it. With MORE than two the others are left alone
+    // and the shortfall is STATED rather than silently absorbed — a figure
+    // quietly rebalanced under a curator is the failure this whole split is
+    // about.
+    if (keys.length === 2) {
+      var other = keys[0] === key ? keys[1] : keys[0];
+      m[other] = total - v;
+    }
+    var ov = activeOverride();
+    ov.poolSplit = isPlainObj(ov.poolSplit) ? ov.poolSplit : {};
+    ov.poolSplit[field] = m;
+    persistActive();
+  }
+  // What is designated of one pool field, and what is still unassigned.
+  function poolSplitRemainder(field) {
+    var total = Number(poolField(field)) || 0;
+    var used = 0;
+    poolGoalKeys(field).forEach(function (k) { used += poolGoalAmount(field, k); });
+    return total - used;
+  }
+
   function poolGoals(field) {
     var v = firstDefined(
       SCENARIO.poolGoals && SCENARIO.poolGoals[field],
@@ -4518,7 +4612,8 @@
   // resolves to (B) AND (C) — Sam's 2026-09-01 ruling that the advising step
   // serves both — and no single-choice list can express a pair. Choosing
   // derived restores whatever the measure yields, pair included.
-  function goalRowHtml(res, ctx, selAttr) {
+  function goalRowHtml(res, ctx, selAttr, opt) {
+    opt = opt || {};
     var keys = (res.keys || []).filter(function (k) { return !!goalByKey(k); });
     var head = keys.length
       ? '<span class="cplfund-cardgoal-key">(' + keys.map(esc).join(") + (") + ")</span> " +
@@ -4532,9 +4627,18 @@
         '<span class="cplfund-cardgoal-cite">Set the metric, or choose an outcome, to place this card.</span>';
     var sel = "";
     if (selAttr && !publicMode() && unlocked()) {
-      var opts = '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
-        ">Derived from the metric</option>" +
-        STATUTORY_GOALS.map(function (g) {
+      // A REPORTED card has no metric, so "Derived from the metric" is not on
+      // offer there (opt.derivable false), and `opt.choices` narrows the list
+      // to the goals no OTHER reported card already holds — one card per goal,
+      // enforced by not offering the collision rather than by refusing it after
+      // the click.
+      var offer = opt.choices
+        ? STATUTORY_GOALS.filter(function (g) { return opt.choices.indexOf(g.key) >= 0; })
+        : STATUTORY_GOALS;
+      var opts = (opt.derivable === false ? "" :
+        '<option value="' + GOAL_DERIVED + '"' + (res.derived ? " selected" : "") +
+        ">Derived from the metric</option>") +
+        offer.map(function (g) {
           var on = !res.derived && keys.length === 1 && keys[0] === g.key;
           return '<option value="' + esc(g.key) + '"' + (on ? " selected" : "") +
             ">(" + esc(g.key) + ") " + esc(g.short) + "</option>";
@@ -5137,8 +5241,10 @@
     CORE_DEDUCTION.forEach(function (b) {
       if (poolHidden(b.field)) return;
       poolGoals(b.field).forEach(function (k) {
+        // THE SPLIT, not the full amount (2026-09-14). Pushing the whole figure
+        // into every tagged goal is what let the project pool report twice.
         if (map[k]) map[k].pools.push({ label: poolLabel(b.field, b.def || base().pool.admin_cost_label),
-                                        amount: Number(poolField(b.field)) || 0, field: b.field });
+                                        amount: poolGoalAmount(b.field, k), field: b.field });
       });
     });
     customPool().forEach(function (it, i) {
@@ -5721,38 +5827,233 @@
   // the statute names shows as a card. `always` is passed by bandsHtml only for
   // a goal NO measured card serves — a goal that already has a measured card
   // does not get a second, empty box beside it.
-  function reportedPrioHtml(slot, gkey, always) {
+  // ── reported cards are STORED, with their own identity ────────────────
+  // Sam, 2026-09-14: "Seems the card should be stored with its own identity."
+  // A reported card stops being a pure function of the goals and becomes a
+  // thing a curator creates, points and removes.
+  //
+  // ⚠️ THE DEFAULT IS STILL DERIVED, which is what keeps his 2026-09-13 ruling
+  // alive: a measureless outcome shows a card whether or not anything is
+  // designated to it. An UNSET list means "the derived set"; the stored list
+  // takes over the moment a curator touches the control, so nothing changes at
+  // all for anyone who never opens it.
+  //
+  // ⚠️ ONE CARD PER GOAL. Designation is project → GOAL (setProjectGoal), which
+  // is also what §78093.2(d)(2) reports against, so two cards pointed at one
+  // goal would print the same list twice and leave a reader to work out they
+  // were one thing. The reader below collapses duplicates and the picker does
+  // not offer a goal another card already holds.
+  //
+  // ⚠️ AND A GOAL CAN NOW END UP WITH NO CARD — that is the price of identity,
+  // and it is exactly why outcomeTotalsHtml() names every statutory goal
+  // whether or not anything serves it. The statute asks for an allocation
+  // "using all of the following goals"; a goal that went quiet because someone
+  // removed its card is the failure that row exists to catch.
+  function goalsServedByPriorities(slot) {
+    var served = {};
+    priorities(slot).forEach(function (p, i) {
+      (prioGoals(slot, i, p).keys || []).forEach(function (k) { served[k] = true; });
+    });
+    return served;
+  }
+  function derivedReportedGoals(slot) {
+    var served = goalsServedByPriorities(slot);
+    return STATUTORY_GOALS.filter(function (g) {
+      return !served[g.key] || designatedProjects(g.key).length > 0;
+    }).map(function (g) { return g.key; });
+  }
+  function reportedCards(slot) {
+    var v = firstDefined(SCENARIO.reportedCards, SHARED.reportedCards, base().reported_cards);
+    var keys;
+    if (Array.isArray(v)) {
+      keys = v.map(function (c) { return c && (typeof c === "string" ? c : c.goal); });
+    } else {
+      keys = derivedReportedGoals(slot);
+    }
+    var seen = {}, out = [];
+    keys.forEach(function (k) {
+      if (!goalByKey(k) || seen[k]) return;
+      seen[k] = 1;
+      out.push({ id: "rc-" + k, goal: k });
+    });
+    return out;
+  }
+  // STORED AS THE GOAL LIST, not as {id, goal} objects: the id is derived from
+  // the goal (one card per goal), so persisting both would be persisting the
+  // same fact twice and inviting them to disagree.
+  function setReportedCards(list) {
+    activeOverride().reportedCards = (list || []).map(function (c) { return c.goal; });
+    persistActive();
+  }
+  function pointReportedCard(slot, id, goal) {
+    var list = reportedCards(slot);
+    if (!goalByKey(goal)) return;
+    var taken = list.some(function (c) { return c.id !== id && c.goal === goal; });
+    if (taken) return;                    // the picker does not offer it either
+    setReportedCards(list.map(function (c) {
+      return c.id === id ? { id: "rc-" + goal, goal: goal } : c;
+    }));
+  }
+  function removeReportedCard(slot, id) {
+    setReportedCards(reportedCards(slot).filter(function (c) { return c.id !== id; }));
+  }
+  function addReportedCard(slot) {
+    var list = reportedCards(slot);
+    var held = {};
+    list.forEach(function (c) { held[c.goal] = 1; });
+    for (var i = 0; i < STATUTORY_GOALS.length; i++) {
+      var k = STATUTORY_GOALS[i].key;
+      if (!held[k]) { setReportedCards(list.concat([{ id: "rc-" + k, goal: k }])); return; }
+    }
+  }
+  function reportedChoices(slot, id) {
+    var held = {};
+    reportedCards(slot).forEach(function (c) { if (c.id !== id) held[c.goal] = 1; });
+    return STATUTORY_GOALS.filter(function (g) { return !held[g.key]; })
+      .map(function (g) { return g.key; });
+  }
+  function addReportedCardHtml(slot) {
+    if (publicMode() || !unlocked()) return "";
+    var held = {};
+    reportedCards(slot).forEach(function (c) { held[c.goal] = 1; });
+    var free = STATUTORY_GOALS.filter(function (g) { return !held[g.key]; });
+    return '<div class="cplfund-rprio-add-card">' +
+      '<span class="cplfund-sec-pvlab">Curator only</span> ' +
+      (free.length
+        ? '<button type="button" class="cplfund-textbtn" id="cplFundAddReported">Add a reported outcome card</button> ' +
+          '<span class="dk">' + esc(free.map(function (g) { return "(" + g.key + ") " + g.short; }).join(" \u00b7 ")) +
+          " " + (free.length === 1 ? "has" : "have") + " no card.</span>"
+        : '<span class="dk">Every statutory outcome has a card.</span>') +
+      "</div>";
+  }
+
+  // What this outcome is funded FROM, and how much of it — the control Sam
+  // asked for on 2026-09-14. A field shared with another outcome is editable
+  // here; a field this outcome holds alone just states its figure, because
+  // there is nothing to split.
+  function reportedFundHtml(gkey) {
+    var items = [];
+    CORE_DEDUCTION.forEach(function (b) {
+      if (poolHidden(b.field) || poolGoals(b.field).indexOf(gkey) < 0) return;
+      items.push({ field: b.field, label: poolLabel(b.field, b.def || base().pool.admin_cost_label) });
+    });
+    customPool().forEach(function (it, i) {
+      var keys = Array.isArray(it.goals) ? it.goals : [];
+      if (keys.indexOf(gkey) < 0) return;
+      items.push({ field: null, label: it.label || "(untitled)", amount: Number(it.amount) || 0 });
+    });
+    if (!items.length) {
+      return '<p class="nums dk">Awaiting a designated share of the statewide allocation.</p>';
+    }
+    return items.map(function (it) {
+      if (!it.field) {
+        return '<p class="nums">' + esc(it.label) + " <strong>" + fmtMoney(it.amount) + "</strong></p>";
+      }
+      var keys = poolGoalKeys(it.field);
+      var total = Number(poolField(it.field)) || 0;
+      var amt = poolGoalAmount(it.field, gkey);
+      var shared = keys.length > 1;
+      var rem = poolSplitRemainder(it.field);
+      var others = keys.filter(function (k) { return k !== gkey; }).map(function (k) {
+        var g = goalByKey(k);
+        return "(" + k + ") " + (g ? g.short + " " + fmtMoney(poolGoalAmount(it.field, k)) : "");
+      }).join(" \u00b7 ");
+      return '<div class="cplfund-rfund">' +
+        '<span class="cplfund-rfund-lab">' + esc(it.label) + "</span>" +
+        (shared && !publicMode() && unlocked()
+          ? '<span class="cplfund-rfund-amt">$' +
+            edNum("poolsplit", fmtInt(amt),
+              { field: it.field + "::" + gkey, label: "Funding designated to goal " + gkey + " from " + it.label }) +
+            "</span>"
+          : '<span class="cplfund-rfund-amt"><strong>' + fmtMoney(amt) + "</strong></span>") +
+        (shared
+          ? '<span class="dk">of ' + fmtMoney(total) + (others ? " \u2014 " + esc(others) : "") + "</span>" +
+            // A shortfall is STATED, never quietly absorbed.
+            (Math.abs(rem) > 0.5
+              ? '<span class="cplfund-warn-text">' + fmtMoney(Math.abs(rem)) +
+                (rem > 0 ? " of this allocation is still undesignated." : " more is designated than the allocation holds.") +
+                "</span>"
+              : "")
+          : '<span class="dk">held by this outcome alone</span>') +
+        // No college award moves: pool line items are taken off the top before
+        // either lane's pot exists.
+        '<span class="dk cplfund-rfund-note">A reporting designation. No college award moves.</span>' +
+        "</div>";
+    }).join("");
+  }
+
+  // Recommended strategies for a REPORTED outcome (Sam, 2026-09-14: "please add
+  // a recommended strategies section to C and D"). A reported card is not an
+  // entry in priorities(slot) — that is the whole safety of it — so its
+  // strategies cannot ride prioStrategies(); they get their own goal-keyed
+  // store, with the same shape and the same editor.
+  function reportedStrategies(gkey) {
+    var v = firstDefined(
+      SCENARIO.reportedStrategies && SCENARIO.reportedStrategies[gkey],
+      SHARED.reportedStrategies && SHARED.reportedStrategies[gkey],
+      base().reported_strategies && base().reported_strategies[gkey]);
+    return Array.isArray(v) ? v.slice() : [];
+  }
+  function setReportedStrategies(gkey, list) {
+    var ov = activeOverride();
+    ov.reportedStrategies = isPlainObj(ov.reportedStrategies) ? ov.reportedStrategies : {};
+    ov.reportedStrategies[gkey] = (list || []).slice();
+    persistActive();
+  }
+  function reportedStrategiesHtml(gkey) {
+    var list = reportedStrategies(gkey);
+    var rows = list.map(function (str, j) {
+      return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+        edText("rstrategy", str, { field: gkey + "::" + j, label: "Recommended strategy", placeholder: "Add a strategy\u2026" }) +
+        (publicMode() || !unlocked() ? "" :
+          '<button type="button" class="cplfund-reqdel" data-rstratdel="' + esc(gkey + ":" + j) +
+          '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">Remove</button>') +
+        "</div>";
+    }).join("");
+    return (rows || '<p class="nums dk">Awaiting recommended strategies for this outcome.</p>') +
+      (publicMode() || !unlocked() ? "" :
+        '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-rstratadd="' + esc(gkey) +
+        '" title="Add a recommended strategy">Add strategy</button>');
+  }
+
+  // One reported card. Same family as a measured card — outcome row, title,
+  // Metric block, collapsing sections — and its picker is live now that the
+  // card has an identity to re-point.
+  function reportedPrioHtml(slot, card, served) {
+    var gkey = card.goal;
     var g = goalByKey(gkey);
     if (!g) return "";
     var ids = designatedProjects(gkey);
-    if (!ids.length && !always) return "";
     // ⚠️ NEVER class "p". It is the priority CARD class, and eleven assertions
     // across five suites count or index `.cplfund-prio .p` — so borrowing it for
     // the card look made this box a priority card to every selector in the
-    // codebase, which is the exact thing the comment above says it must not be.
-    // Seven test files went red on one styling shortcut. The box gets the card
-    // look from its own rules instead.
-    //
-    // ONE CARD FAMILY (Sam, 2026-09-14: "Just to be consistent"). A reported
-    // card now carries the same outcome row, the same Metric block and the same
-    // collapsing sections as a measured one. Its outcome row states rather than
-    // offers: a reported card IS its outcome — it exists because that goal has
-    // no measured card, or because activities are designated to it — so a
-    // picker there would be a control with nothing to change. Re-pointing one
-    // is the open question in the handoff.
+    // codebase. Seven test files went red on one styling shortcut. The box gets
+    // the card look from its own rules instead.
     var noMeasure = '<div class="metric">METRIC (Year ' + esc(slot) + mirroredNote(slot) + "): " +
       "Awaiting a campus measure. This outcome reports through its designated activities.</div>";
-    return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '">' +
-      goalRowHtml({ keys: [gkey], derived: false }, g.short, null) +
+    return '<div class="cplfund-rprio" data-rprio="' + esc(gkey) + '" data-rcard="' + esc(card.id) + '">' +
+      (publicMode() || !unlocked() ? "" :
+        '<div class="cplfund-prio-move"><span class="cplfund-posl dk">Reported outcome</span>' +
+        '<button type="button" class="cplfund-textbtn" data-rcdel="' + esc(card.id) +
+        '" title="Remove this reported outcome card">Remove</button></div>') +
+      goalRowHtml({ keys: [gkey], derived: false }, g.short,
+        'data-rcgoal="' + esc(card.id) + '"',
+        { derivable: false, choices: reportedChoices(slot, card.id) }) +
       '<h4><span class="cplfund-prio-num">(' + esc(gkey) + "):</span> " + esc(g.short) + "</h4>" +
       '<p class="desc">Funded through the statewide project allocation and reported based on the aligned activities.' +
-      // The note the (D) band carried — it explains why no college qualifies
-      // here — moves onto the card the moment no measured card serves the goal.
-      (always
-        ? " The statute points this outcome at the Chancellor&rsquo;s Office rather than at the campuses, " +
-          "so no college qualifies against it."
-        : "") + "</p>" +
+      // The note the (D) band carried — why no college qualifies here — moves
+      // onto the card the moment no measured card serves the goal.
+      (served ? "" :
+        " The statute points this outcome at the Chancellor&rsquo;s Office rather than at the campuses, " +
+        "so no college qualifies against it.") + "</p>" +
       noMeasure +
+      cardSectionHtml("Project allocation",
+        fmtMoney(poolGoalKeys("scaling_projects_tech").indexOf(gkey) >= 0
+          ? poolGoalAmount("scaling_projects_tech", gkey) : 0),
+        reportedFundHtml(gkey), true) +
+      cardSectionHtml("Recommended strategies",
+        reportedStrategies(gkey).length ? fmtInt(reportedStrategies(gkey).length) + "" : "Awaiting",
+        reportedStrategiesHtml(gkey)) +
       cardSectionHtml("Designated activities",
         ids.length ? fmtInt(ids.length) + "" : "Awaiting",
         designatedListHtml(gkey, true) +
@@ -5972,16 +6273,70 @@
   // earns one by carrying designated activities, and a goal no measured card
   // serves gets one whether or not anything is designated (his 2026-09-13
   // ruling, which survives the bands that carried it).
+  // ── card size, per browser (Sam, 2026-09-14) ──────────────────────────
+  // "Make the height and width of the priority boxes changeable in curation
+  // mode."
+  //
+  // ⚠️ PER BROWSER, NOT IN THE CONFIG. Shares, titles and pins are the MODEL and
+  // belong to everyone who opens the tab; how wide a card looks on the screen
+  // you happen to be working at is a viewing preference. Storing it in
+  // cpl_funding_config would make one curator's window decide everyone else's
+  // layout, which is a shared write nobody asked for.
+  //
+  // ⚠️ HEIGHT IS A MINIMUM, NEVER A FIXED HEIGHT. A card set shorter than its
+  // content grows rather than clipping it — "text that can outgrow its track
+  // wraps or scrolls in its own container; clipped text is a bug" — and a fixed
+  // height would cut the strategies fold off whichever card ran longest.
+  //
+  // ⚠️ AND AN UNSET WIDTH KEEPS TODAY'S LAYOUT EXACTLY. The grid stays at its
+  // two fixed columns until a curator moves the dial; only then does it switch
+  // to auto-fit. A default that silently reflowed to three columns would be a
+  // restyle nobody asked for, arriving as a side effect of adding a control.
+  var CARD_SIZE_KEY = "cpl_funding_cardsize_v1";
+  function cardSize() {
+    try {
+      var raw = window.localStorage.getItem(CARD_SIZE_KEY);
+      var v = raw ? JSON.parse(raw) : null;
+      if (!isPlainObj(v)) return { w: 0, h: 0 };
+      return { w: Number(v.w) || 0, h: Number(v.h) || 0 };
+    } catch (e) { return { w: 0, h: 0 }; }
+  }
+  function setCardSize(w, h) {
+    try { window.localStorage.setItem(CARD_SIZE_KEY, JSON.stringify({ w: w, h: h })); } catch (e) {}
+  }
+  function cardGridStyle() {
+    var cs = cardSize();
+    var bits = [];
+    if (cs.w) bits.push("grid-template-columns:repeat(auto-fit,minmax(" + cs.w + "px,1fr))");
+    if (cs.h) bits.push("--cplfund-card-h:" + cs.h + "px");
+    return bits.length ? ' style="' + esc(bits.join(";")) + '"' : "";
+  }
+  function cardSizeHtml() {
+    if (publicMode() || !unlocked()) return "";
+    var cs = cardSize();
+    return '<div class="cplfund-cardsize">' +
+      '<span class="cplfund-sec-pvlab">Curator only &middot; Card size</span>' +
+      '<label class="cplfund-cardsize-d">Width ' +
+      '<input type="range" id="cplFundCardW" min="240" max="640" step="10" value="' + (cs.w || 320) +
+      '" aria-describedby="cplFundCardWOut">' +
+      '<output id="cplFundCardWOut">' + (cs.w ? esc(cs.w + "px") : "Two per row") + "</output></label>" +
+      '<label class="cplfund-cardsize-d">Height ' +
+      '<input type="range" id="cplFundCardH" min="0" max="900" step="20" value="' + cs.h +
+      '" aria-describedby="cplFundCardHOut">' +
+      '<output id="cplFundCardHOut">' + (cs.h ? esc(cs.h + "px") : "Auto") + "</output></label>" +
+      '<button type="button" class="cplfund-textbtn" id="cplFundCardSizeReset">Reset</button>' +
+      '<span class="dk">Height sets a minimum. A card holding more than that grows rather than clipping. ' +
+      "This setting stays in your browser.</span></div>";
+  }
+
   function outcomeGridHtml(slot, ps, cards) {
-    var served = {};
-    ps.forEach(function (p, i) {
-      (prioGoals(slot, i, p).keys || []).forEach(function (k) { served[k] = true; });
-    });
-    var reported = STATUTORY_GOALS.map(function (g) {
-      return reportedPrioHtml(slot, g.key, !served[g.key]);
+    var served = goalsServedByPriorities(slot);
+    var reported = reportedCards(slot).map(function (c) {
+      return reportedPrioHtml(slot, c, !!served[c.goal]);
     }).filter(Boolean);
-    return outcomeTotalsHtml(slot, ps) +
-      '<div class="cplfund-prio">' + cards.concat(reported).join("") + "</div>";
+    return cardSizeHtml() + outcomeTotalsHtml(slot, ps) +
+      '<div class="cplfund-prio"' + cardGridStyle() + ">" + cards.concat(reported).join("") + "</div>" +
+      addReportedCardHtml(slot);
   }
 
   // The earning rules for noncredit (the locked mock's fold, 2026-08-31) —
@@ -9111,6 +9466,15 @@
       setPool(field, Math.max(0, n));
       return;
     }
+    // The project-allocation split, typed on a reported card. field carries
+    // "<poolField>::<goalKey>" so edNum needs no new option to pass both.
+    if (edit === "poolsplit") {
+      var ps = String(el.getAttribute("data-field") || "").split("::");
+      var pn2 = parseNum(raw);
+      if (ps.length !== 2 || pn2 == null) { render(); return; }
+      setPoolGoalAmount(ps[0], ps[1], pn2);
+      return;
+    }
     if (edit === "ftesrate") {
       // Reject <= 0 rather than clamping. A zero rate is not a cheap edit: every
       // prioTarget() would come back 0, earnFraction() reads target <= 0 as
@@ -9187,6 +9551,16 @@
     if (edit === "coord-label") { setCoordLabel(raw); return; }
     if (edit === "part-label") { setPartLabel(raw); return; }
     if (edit === "prio-title") { setPrio(slot, Number(idx), "title", raw); return; }
+    // A REPORTED outcome's strategy: goal-keyed, since a reported card is not
+    // an entry in priorities(slot). field carries "<goalKey>::<index>".
+    if (edit === "rstrategy") {
+      var rp = String(el.getAttribute("data-field") || "").split("::");
+      if (rp.length !== 2) return;
+      var rlist = reportedStrategies(rp[0]);
+      var rj = Number(rp[1]);
+      if (rj >= 0 && rj < rlist.length) { rlist[rj] = raw; setReportedStrategies(rp[0], rlist); }
+      return;
+    }
     if (edit === "strategy") {
       var sj = Number(el.getAttribute("data-sidx"));
       var slist = prioStrategies(slot, Number(idx));
@@ -9622,6 +9996,51 @@
           render();
         });
       });
+      // A reported card has its own identity now (Sam, 2026-09-14), so its
+      // picker re-points the CARD rather than re-tagging anything: the
+      // designations stay project -> goal, which is what §78093.2(d)(2)
+      // reports against.
+      qsa("[data-rcgoal]").forEach(function (sel) {
+        sel.addEventListener("change", function () {
+          savingState = "";
+          pointReportedCard(state.viewSlot, sel.getAttribute("data-rcgoal"), sel.value);
+          render();
+        });
+      });
+      qsa("[data-rcdel]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          savingState = "";
+          removeReportedCard(state.viewSlot, b.getAttribute("data-rcdel"));
+          render();
+        });
+      });
+      var cw = document.getElementById("cplFundCardW");
+      var ch = document.getElementById("cplFundCardH");
+      if (cw && ch) {
+        var grid = document.querySelector("#cplFundingMount .cplfund-prio");
+        var paint = function () {
+          var w = Number(cw.value) || 0, h = Number(ch.value) || 0;
+          if (grid) {
+            grid.style.gridTemplateColumns = "repeat(auto-fit,minmax(" + w + "px,1fr))";
+            grid.style.setProperty("--cplfund-card-h", h ? h + "px" : "0px");
+          }
+          var wo = document.getElementById("cplFundCardWOut");
+          var ho = document.getElementById("cplFundCardHOut");
+          if (wo) wo.textContent = w + "px";
+          if (ho) ho.textContent = h ? h + "px" : "Auto";
+          setCardSize(w, h);
+        };
+        cw.addEventListener("input", paint);
+        ch.addEventListener("input", paint);
+        var csr = document.getElementById("cplFundCardSizeReset");
+        if (csr) csr.addEventListener("click", function () { setCardSize(0, 0); render(); });
+      }
+      var addRc = document.getElementById("cplFundAddReported");
+      if (addRc) addRc.addEventListener("click", function () {
+        savingState = "";
+        addReportedCard(state.viewSlot);
+        render();
+      });
     }
     var orderReset = document.getElementById("cplFundOrderReset");
     if (orderReset) orderReset.addEventListener("click", function () {
@@ -9662,6 +10081,23 @@
         var pslot = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
         var slist = prioStrategies(pslot, pi);
         if (sj >= 0 && sj < slist.length) { slist.splice(sj, 1); setPrioStrategies(pslot, pi, slist); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-rstratadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var gk = b.getAttribute("data-rstratadd");
+        setReportedStrategies(gk, reportedStrategies(gk).concat([""]));
+        render();
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-rstratdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-rstratdel").split(":");
+        var gk2 = parts[0], rj2 = Number(parts[1]);
+        var rl = reportedStrategies(gk2);
+        if (rj2 >= 0 && rj2 < rl.length) { rl.splice(rj2, 1); setReportedStrategies(gk2, rl); render(); }
       });
     });
     document.querySelectorAll("#cplFundingMount [data-ncstratadd]").forEach(function (b) {
