@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-442 document(s).
+444 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -81,6 +81,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A field defaulted in the consumer looks computed and never moves](../kb-notes/methodology-a-defaulted-field-looks-computed-and-never-moves.md) | methodology | published | 2026-09-02 | 2026-09-02 |
 | [A field the resolver never reaches can disagree with the record forever](../kb-notes/methodology-a-field-the-resolver-never-reaches-can-disagree-forever.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
+| [A figure tagged to two owners is claimed twice](../kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A filter must be able to see what you are about to declare missing](../kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
@@ -335,6 +336,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Resolving the V4 articulation-ripple gate when folding a CER unclassified title](../kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
 | [Retire a global dial into per-item dials without moving any numbers](../kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md) | methodology | published | 2026-08-04 | 2026-08-04 |
 | [Retire a mode toggle by making both modes coexist](../kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md) | methodology | published | 2026-07-30 | 2026-07-30 |
+| [Retiring a structure means rewriting its guard, not deleting it](../kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [Retiring an auto-seeded data layer — check for curator decisions riding on it](../kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
 | [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
 | [Revoking from anon does not remove the PUBLIC grant](../kb-notes/methodology-revoking-from-anon-does-not-remove-the-public-grant.md) | methodology | published | 2026-08-19 | 2026-08-19 |

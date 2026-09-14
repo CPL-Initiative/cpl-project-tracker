@@ -4,6 +4,8 @@ date: 2026-09-13
 session: 260 (SkyKey)
 tags: [handoff, sierra, curation, testing, a11y]
 status: current
+superseded: true
+superseded_by: session_262_handoff.md
 ---
 
 # You are Session 260

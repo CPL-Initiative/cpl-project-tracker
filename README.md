@@ -110,12 +110,16 @@ The whole ecosystem, end-to-end:
    Quick Adopt request form; status stages (Discussion Draft / Active /
    Tabled) + a print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
-   **year-specific funding priorities grouped under the three statutory bands**
-   the four Ed. Code §78093.2(d)(1) outcomes fold into — **Access · Success ·
-   Opportunities** — where a priority's band is derived from what its metric
-   measures rather than from its name (Year 1 / Year 2 filter; every metric
-   and description editable, **draggable into a different order** within its
-   band — the order is stored as a permutation beside the config, so a
+   **year-specific funding priorities, each card carrying its own Ed. Code
+   §78093.2(d)(1) outcome** — its letter, name, citation and the statute's own
+   sentence — which is DERIVED from what the priority's metric measures rather
+   than from its name, and which a curator can override on the card (Year 1 /
+   Year 2 filter; every metric and description editable, **draggable into a
+   different order**, with every section below the metric collapsing behind a
+   summary that still carries its own figure; outcomes with no campus measure
+   get their own reported cards, which carry designated activities and a share
+   of the statewide project allocation — the order is stored as a permutation
+   beside the config, so a
    priority's wording, share, funding factor and strategies all travel with it
    and no stored figure moves — and an optional **Year 2 mirrors Year 1**
    switch), **one funding total over

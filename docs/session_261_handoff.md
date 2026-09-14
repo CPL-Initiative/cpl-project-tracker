@@ -4,6 +4,8 @@ date: 2026-09-13
 session: 261 (SkyLedger)
 tags: [handoff, implementation-funding, a11y, measurement]
 status: current
+superseded: true
+superseded_by: session_262_handoff.md
 ---
 
 # You are Session 261

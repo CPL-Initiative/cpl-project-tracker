@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-13
+updated: 2026-09-14
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1745,3 +1745,53 @@ sweep last named.
   band under test. Instrumenting the failing test (rather than two hand-built probes that
   never reproduced the state) showed the carryover line was never missing.
 
+
+## 2026-09-14 — S262 (SkySave): the band wrapper retires, and a double claim surfaces
+
+**PR #1574.** Sam's asks arrived as a marked-up screenshot and four numbered lines, after
+S261 "went off the rails a little" by building past the brief. The corrective was to build
+the mockup FIRST and let him rule on it — which he did, five times, mid-turn.
+
+- **VERIFY AN ASK AGAINST THE SCREEN, NOT YOUR READING OF IT.** The red arrow ran from the
+  `(A) Access` band head into the top of the Priority 1 card. I read that as "put a picker
+  on the card" and moved the band's other content — the citation, the statute quote — off
+  to a totals row and a fold. His one-line correction ("The bands are included on the
+  priority cards and illustrated on the screenshot") was the whole design: the band goes
+  **on** the card, all four pieces. One mockup round cost minutes; building it would have
+  cost the session.
+- **A FIGURE TAGGED TO TWO OWNERS IS CLAIMED TWICE.** The project allocation was tagged to
+  (C) AND (D), and `goalFunding()` pushed its FULL amount into each — $17.9M of reporting
+  against an $8.96M allocation. Every row was correct in isolation and nothing ever summed
+  the goals, which is precisely why it survived. Found only because Sam asked for a
+  split — the feature request exposed the defect, not an audit.
+  → [`methodology-a-figure-tagged-to-two-owners-is-claimed-twice`](kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md)
+- **A SUITE WRITTEN AGAINST A STRUCTURE IS PROTECTING AN INVARIANT.** `cpl_funding_statutory_bands.test.js`
+  was 26 assertions of `.cplfund-band`, and its header said what it was really for: no
+  priority may go missing, because an invisible priority still qualifies for funding
+  against a target nobody can see. Rewritten, not deleted. One inherited check had become
+  VACUOUS while still passing — "the account and the band agree" is trivially true once
+  there is one renderer — which is the harder failure to notice.
+  → [`methodology-retiring-a-structure-means-rewriting-its-guard`](kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md)
+- **MEASURE A11Y AGAINST THE BASE, DON'T CLAIM IT.** Sam asked for AA and mobile "as you
+  build". The tab reported FAIL — but a worktree run of `main` reported the same findings
+  plus three more. Every finding was pre-existing; this PR removed three (the raised-letter
+  goal markers) and added none. A baseline turns "the sweep fails" into "the sweep fails
+  identically, minus three", which is a completely different report to give.
+- **THE DEPENDENCY MAP RECORDS LINE NUMBERS.** CI went red on `dependency map is STALE`
+  while all 331 files passed locally. Several hundred lines moved in `cpl_funding.js`. The
+  standing note says rebuild it as the genuinely LAST step, and it was right. The diff was
+  15 line numbers and nothing else — which doubles as proof the rework added no new data
+  dependency.
+- **`unlocked()` DECIDES WHERE A WRITE LANDS, NOT WHETHER A CONTROL RENDERS.** I added
+  `!unlocked()` gates to the Add-strategy button and the outcome picker, which would have
+  taken a control away from signed-out viewers who have it today. `edText`/`edNum` gate on
+  `publicMode()` alone. Caught by a crash in `cpl_funding_render`, not by review.
+- **A GUARD CATCHES THE PROSE YOU CANNOT SEE.** Two of my own rendered sentences broke
+  house rules — one opened with "No" (positive-first), and the totals row borrowed the
+  account's phrase for a goal's evidence state. Both were caught by `cpl_funding_calm`,
+  neither by re-reading. The second is the subtler: two different claims wearing one
+  phrase, which is how near-duplicates drift.
+- **THE LANE FILE FIGHTS BACK.** `oversized_doc` flagged it at 1.19x. Two rounds of
+  "compaction" REWROTE text at the same length and one actually grew the file. What worked
+  was deleting settled history outright and pointing at the KB notes instead of retelling
+  them. Ended at 1.09x while absorbing a run's worth of new state.
