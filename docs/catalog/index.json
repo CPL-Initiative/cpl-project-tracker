@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 442,
+   "count": 444,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1295,6 +1295,24 @@
      "title": "A figure is only wrong relative to the payload it names",
      "type": "methodology",
      "updated": "2026-09-06"
+    },
+    {
+     "created": "2026-09-14",
+     "governs": [
+      "cpl_funding.js",
+      "tests/cpl_funding_outcome_cards.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "funding",
+      "reporting",
+      "data-integrity"
+     ],
+     "title": "A figure tagged to two owners is claimed twice",
+     "type": "methodology",
+     "updated": "2026-09-14"
     },
     {
      "created": "2026-09-09",
@@ -6327,6 +6345,23 @@
      "updated": "2026-07-30"
     },
     {
+     "created": "2026-09-14",
+     "governs": [
+      "tests/cpl_funding_outcome_cards.test.js",
+      "tests/check_floor.json"
+     ],
+     "path": "docs/kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "refactoring"
+     ],
+     "title": "Retiring a structure means rewriting its guard, not deleting it",
+     "type": "methodology",
+     "updated": "2026-09-14"
+    },
+    {
      "created": "2026-05-30",
      "governs": [
       "kb/coci_curation.json",
@@ -9649,7 +9684,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-13"
+     "updated": "2026-09-14"
     },
     {
      "created": "2026-06-21",
@@ -13135,8 +13170,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 235,
+   "count": 236,
    "docs": [
+    {
+     "created": "2026-09-14",
+     "governs": [],
+     "n": 262,
+     "path": "docs/session_262_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "testing",
+      "a11y"
+     ],
+     "title": "the band wrapper retires, and a double claim surfaces",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-13",
      "governs": [],
@@ -17113,5 +17164,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 887
+ "total": 890
 }

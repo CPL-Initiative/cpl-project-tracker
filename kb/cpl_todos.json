@@ -1,140 +1,143 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-09-13",
-  "_session": 260,
-  "_status": "Session 260 retired the word 'earn' from everything a reader sees on the funding tab, the export and the public page, and cleared every too-small control on both — two hundred and forty-five faults down to none. It also built Sam's second funding ask: the control that ties an activity to an outcome now sits on every card. The most useful thing that happened was a correction: a prototype quoted funding percentages taken from our own notes rather than from the live model, and Sam caught it in one question. The notes said forty/twenty-five/thirty-five; the model says thirty-three/thirty-three/thirty-four. Reading the live settings then turned up two more things the notes had wrong, including that the counselor measure came back three days ago. Waiting on Sam: whether one card in the new four-band layout earns its place, and whether the Awards priority should be measured on the counselor step — which is the only way Career attainment ever gets measured at a college at all.",
-  "items": [
-    {
-      "id": "s259-sam-dispatch-cpl-chat-v66",
-      "for": "Sam",
-      "tab": "cobi-assistant",
-      "text": "Put the assistant's sign-in awareness live: dispatch the cpl-chat deploy workflow. What changes: nothing for the public page, the Fact Sheet drawer, map.rccd.edu or the vendor iframe. On COBI, a signed-in reviewer or team-phrase holder sees one line under the assistant saying it recognized the sign-in — the proof that the server, not the page, decided who is asking. The log also records who asked and from where. The database change is already in place, so the order does not matter. Then try it: sign in, ask one question on the CPL Assistant tab, look for the line."
-    },
-    {
-      "id": "s259-sam-health-probe-hourly",
-      "for": "Sam",
-      "tab": "cobi-assistant",
-      "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
-    },
-    {
-      "id": "s256-sam-forward-kynd-memo",
-      "for": "Sam",
-      "tab": "cobi-assistant",
-      "text": "Forward the KYND memo (vault: 20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx) to whoever holds the SiteGround login for map.rccd.edu, filling in the TO line. Two things come back: the WordPress version on both the production site and staging2.map.rccd.edu, which the notice did not list, and whether the log search found anything. Then answer KYND. Until the site is confirmed clean, the Monday job that copies the site's story cards onto the Fact Sheet keeps running; pausing it is your call, and the current cards checked clean."
-    },
-    {
-      "id": "s251-sam-cid-descriptor-text",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "The statewide course descriptions you want a C-ID course to inherit are not in our data. You thought they came with the TMC tab work — that work gave us the 293 C-ID codes, which is probably what you are remembering, but not a word of the descriptive text behind them. So the ask to ASCCC is narrower than it looked: we have the identifiers and need only the descriptor prose."
-    },
-    {
-      "id": "s252-sam-sweep-observations",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Six observations from the full sweep of SkyView are still open for your read. You have already ruled on one of them: the check boxes stay for now, because people cannot know what is available unless the list is in front of them. The rest are waiting."
-    },
-    {
-      "id": "s238-fable-dr24-surface",
-      "for": "Sam",
-      "tab": "governance",
-      "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
-    },
-    {
-      "id": "s259-fable-funding-card-builds",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Sam's rulings of the 13th, in order: first the sweep that retires 'earn' (93 places on the tab, 31 test files, the explainer's section label) once he confirms the words; then move the activity picker under each priority card's Recommended Strategies, with reported cards for outcomes that have no measure; then let each card name its statutory outcome, with four bands drawn from the cards and the measure-derived outcome as the default."
-    },
-    {
-      "id": "s259-fable-verify-v66-after-deploy",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "After Sam's deploy, read the new log columns: how many turns came from a signed-in reviewer, how many from the team phrase, how many from the public, and from which surface. The count of six real questions in thirty hours could not tell the COBI tabs from the public page; now it can. Also show those two columns in Sierra Training's conversation list, which reads the same table."
-    },
-    {
-      "id": "s259-fable-sierra-bubble-ui",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
-    },
-    {
-      "id": "s259-fable-health-probe-blind-spot",
-      "for": "Fable",
-      "tab": "cobi-assistant",
-      "text": "The health probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that on the 11th. Rather than pay for a second question every run, have the probe read how many blank answers the live table recorded since its last run. That costs nothing and watches real visitors instead of its own test question."
-    },
-    {
-      "id": "s255-fable-sierra-after-the-deploy",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "What is left behind the assistant after Sam's two rulings of the 11th. The sixteen-row register sweep on Sonnet 5 with reasoning off has still not been run — it is the hardest thing she does and the one caller with no record yet, and it now matters more than it did: the check for whether her answers are being cut short came back clean, but almost nobody is using her yet (six real questions in thirty hours against four hundred and forty of our own), so watching live traffic mostly watches ourselves. The sweep is the only test that would really exercise the new, much higher answer limit. After it, an A/B of private reasoning at low effort on the preview copy, but only if the sweep shows a gap — Sam's words were \"test for better options if they exist.\""
-    },
-    {
-      "id": "s255-fable-sheet-rulings-outstanding",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Eleven decisions from the sheet of the 11th are settled and waiting to be built. Two carry an instruction rather than a plain yes: every panel tint becomes the one pale gray rather than six near-identical shades, and Pierce College keeps the Los Angeles in its name — the bare spelling was a mistake, not a variant to support. The rest: a permanent name beside each statewide credential, five refinements to the CPL view, the twenty-four places asking for a colour that was never defined, the faint grey notes on the Implementation Funding tab, splitting the explainer footer so sources can be hidden, the published standard to start from, the phrase people type before moving a course, and letting an assistant instruction apply only to SkyView questions."
-    },
-    {
-      "id": "s252-fable-cpl-ask-and-join-check",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Two follow-ups behind the CPL view. Ask SkyView on the CPL map still asks the assistant in course words (the discipline list is shared; the terms are course titles), so a question about credentials lands on discipline chips at best — the envelope needs a credential vocabulary. And the Courses map's Articulations light and the CPL map read the same record through opposite joins; a one-file test that they name the same pairs would catch the day one build drifts."
-    },
-    {
-      "id": "s248-fable-theme-remainder",
-      "for": "Fable",
-      "tab": "team-raci",
-      "text": "What is left of the theme work, in one place. The faults still outstanding are dark greys sitting on dark backgrounds and a handful of pale backgrounds that never flipped, each individually named by the accessibility sweep. There is also a genuine bug found during that work which is wrong in both themes, not just the dark one: an unresolved brand link renders its own placeholder text. And a note for whoever picks this up — the probe that finds missing colour names reports what it fixed but not how many it found, so a run that finds nothing looks the same as a run that finds everything."
-    },
-    {
-      "id": "s251-fable-dashboard-data-gaps",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "Three things behind the daily dashboard, all data rather than display. The history file stops at 7 September because the build did not run for three days, and the gap has to be filled or the one-day comparison silently reads from the wrong date. The builder finds MAP's columns by name but falls back to a guessed position when a name moves, which is how it would produce confident wrong numbers rather than failing. And the moment MAP restores the CPL lifecycle checks, the counsellor-verified column goes back into the daily fetch."
-    },
-    {
-      "id": "s245-fable-unfailable-checks",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Several of our own tests cannot fail. Seven files print no readable count of what they checked, so if their checks quietly vanished nobody would notice; and a test guarding a phrase that was later deleted kept passing while measuring nothing at all. This run added a third example and a habit that catches it: run a new test against the code as it was BEFORE the fix, and confirm it fails there."
-    },
-    {
-      "id": "s238-fable-stale-exhibits-and-funnel",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
-    },
-    {
-      "id": "s246-fable-expended-sweep",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
-    },
-    {
-      "id": "s260-sam-c-reference-card",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "One look, one answer: does the (C) reference card earn its place? On the four-band prototype, the Awards priority would serve both Completion and Career attainment, and a card can only sit under one heading. The prototype shows it under Completion where its funding is, and gives Career attainment a card that names it without repeating the figure — so the same funding is never printed twice. If that reads as an apology rather than an answer, say so and the four-band split waits. Nothing is built until you read it."
-    },
-    {
-      "id": "s260-sam-awards-counselor-measure",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "The Counselor step is the only way Career attainment ever gets a campus measure, and the dial is still pointed elsewhere. You put the step into the Awards priority, and the model already treats an accepted CPL plan as serving both Completion and Career attainment. But Awards is currently measured on applied units from the portal, which only serves Access. The counselor data is available again — 24,778 units across 110 colleges. Changing what Awards measures is a dial, and dials are yours to set on the tab."
-    },
-    {
-      "id": "s260-fable-ask-1-four-bands",
-      "for": "Fable",
-      "tab": "implementation-funding",
-      "text": "Build the four bands once Sam answers on the reference card. Each statutory outcome gets its own heading, the outcome is chosen on the card with the measure deciding by default, and a curator's choice says in words that the CPL team made it. Sam approved the card shape: a simple face with one collapsed Detail section holding the description, the measure, the price and the strategies — and the activities picker stays on the face, not inside the fold."
-    },
-    {
-      "id": "s260-fable-cobi-contrast-pass",
-      "for": "Fable",
-      "tab": "cobi-dark-mode",
-      "text": "Seventeen of thirty-eight COBI tabs have text that is hard or impossible to read. The worst is white text on white — invisible. Grouped by colour pair rather than by page it is a short list of colour decisions, not a hundred separate problems. This is not in any lane yet and nobody has claimed it."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-09-14",
+ "_session": 262,
+ "_status": "Session 262 rebuilt the funding tab's outcomes the way Sam drew them on a screenshot. The band that used to wrap the priority boxes is gone; each box now carries its own outcome at the top — the letter, the name, the law it comes from and the sentence the law uses — and a menu to change it. Everything below the measure folds away, and a folded section still shows its own number, so closing one costs nothing. Activities can be added and removed on any card and the count follows. The two reported outcomes, Career attainment and Pilot projects, are now cards in their own right with their own strategies, and the statewide project funding splits between them: type a figure on one and the other takes the rest. That last one turned up a real fault. The same $8,959,692 had been reported under both outcomes at once — each line was right on its own, nothing ever added them up, and it took a feature request to expose it. Waiting on Sam: how the two reported cards should be ordered among the priority boxes, and one word — the control says activities, the count says projects.",
+ "items": [
+  {
+   "id": "s259-sam-dispatch-cpl-chat-v66",
+   "for": "Sam",
+   "tab": "cobi-assistant",
+   "text": "Put the assistant's sign-in awareness live: dispatch the cpl-chat deploy workflow. What changes: nothing for the public page, the Fact Sheet drawer, map.rccd.edu or the vendor iframe. On COBI, a signed-in reviewer or team-phrase holder sees one line under the assistant saying it recognized the sign-in — the proof that the server, not the page, decided who is asking. The log also records who asked and from where. The database change is already in place, so the order does not matter. Then try it: sign in, ask one question on the CPL Assistant tab, look for the line."
+  },
+  {
+   "id": "s259-sam-health-probe-hourly",
+   "for": "Sam",
+   "tab": "cobi-assistant",
+   "text": "Say go on the hourly health probe, or make the one-line change yourself. Its own notes say to raise it from every three hours to hourly once billing moved to the corporate account, which happened on 10 September; the remote session that tried to make the change was stopped by its permission rules because a scheduled workflow is a shared resource that spends real funding (about $22 a month at the notes' estimate). The change is the cron line in cpl-chat-health.yml: '7 */3 * * *' becomes '7 * * * *'."
+  },
+  {
+   "id": "s256-sam-forward-kynd-memo",
+   "for": "Sam",
+   "tab": "cobi-assistant",
+   "text": "Forward the KYND memo (vault: 20260911_Memo_map_rccd_edu_WordPress_wp2shell_Notice.docx) to whoever holds the SiteGround login for map.rccd.edu, filling in the TO line. Two things come back: the WordPress version on both the production site and staging2.map.rccd.edu, which the notice did not list, and whether the log search found anything. Then answer KYND. Until the site is confirmed clean, the Monday job that copies the site's story cards onto the Fact Sheet keeps running; pausing it is your call, and the current cards checked clean."
+  },
+  {
+   "id": "s251-sam-cid-descriptor-text",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "The statewide course descriptions you want a C-ID course to inherit are not in our data. You thought they came with the TMC tab work — that work gave us the 293 C-ID codes, which is probably what you are remembering, but not a word of the descriptive text behind them. So the ask to ASCCC is narrower than it looked: we have the identifiers and need only the descriptor prose."
+  },
+  {
+   "id": "s252-sam-sweep-observations",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Six observations from the full sweep of SkyView are still open for your read. You have already ruled on one of them: the check boxes stay for now, because people cannot know what is available unless the list is in front of them. The rest are waiting."
+  },
+  {
+   "id": "s238-fable-dr24-surface",
+   "for": "Sam",
+   "tab": "governance",
+   "text": "DR-24 is a governance row with an owner and no surface yet: an added skill lands as proposed with the reviewer's name and the day, and joins the published outline when a second curator agrees; a removal works the same way in reverse. Building that means the map's first write, so it routes through Governance and the privacy review first."
+  },
+  {
+   "id": "s259-fable-verify-v66-after-deploy",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "After Sam's deploy, read the new log columns: how many turns came from a signed-in reviewer, how many from the team phrase, how many from the public, and from which surface. The count of six real questions in thirty hours could not tell the COBI tabs from the public page; now it can. Also show those two columns in Sierra Training's conversation list, which reads the same table."
+  },
+  {
+   "id": "s259-fable-sierra-bubble-ui",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "Build the floating assistant bubble on every COBI tab — Sam's ask from the 11th. The flag it needed exists now; the control does not. It mounts the same assistant the CPL Assistant tab uses, in the house style, with controls at least 24 pixels tall and a single column on a phone. What a signed-in reader may additionally see is a separate decision that goes through Governance first."
+  },
+  {
+   "id": "s259-fable-health-probe-blind-spot",
+   "for": "Fable",
+   "tab": "cobi-assistant",
+   "text": "The health probe asks one simple question, so it cannot see the failure where Sierra answers broad questions with silence — it passed straight through two hours of that on the 11th. Rather than pay for a second question every run, have the probe read how many blank answers the live table recorded since its last run. That costs nothing and watches real visitors instead of its own test question."
+  },
+  {
+   "id": "s255-fable-sierra-after-the-deploy",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "What is left behind the assistant after Sam's two rulings of the 11th. The sixteen-row register sweep on Sonnet 5 with reasoning off has still not been run — it is the hardest thing she does and the one caller with no record yet, and it now matters more than it did: the check for whether her answers are being cut short came back clean, but almost nobody is using her yet (six real questions in thirty hours against four hundred and forty of our own), so watching live traffic mostly watches ourselves. The sweep is the only test that would really exercise the new, much higher answer limit. After it, an A/B of private reasoning at low effort on the preview copy, but only if the sweep shows a gap — Sam's words were \"test for better options if they exist.\""
+  },
+  {
+   "id": "s255-fable-sheet-rulings-outstanding",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Eleven decisions from the sheet of the 11th are settled and waiting to be built. Two carry an instruction rather than a plain yes: every panel tint becomes the one pale gray rather than six near-identical shades, and Pierce College keeps the Los Angeles in its name — the bare spelling was a mistake, not a variant to support. The rest: a permanent name beside each statewide credential, five refinements to the CPL view, the twenty-four places asking for a colour that was never defined, the faint grey notes on the Implementation Funding tab, splitting the explainer footer so sources can be hidden, the published standard to start from, the phrase people type before moving a course, and letting an assistant instruction apply only to SkyView questions."
+  },
+  {
+   "id": "s252-fable-cpl-ask-and-join-check",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Two follow-ups behind the CPL view. Ask SkyView on the CPL map still asks the assistant in course words (the discipline list is shared; the terms are course titles), so a question about credentials lands on discipline chips at best — the envelope needs a credential vocabulary. And the Courses map's Articulations light and the CPL map read the same record through opposite joins; a one-file test that they name the same pairs would catch the day one build drifts."
+  },
+  {
+   "id": "s248-fable-theme-remainder",
+   "for": "Fable",
+   "tab": "team-raci",
+   "text": "What is left of the theme work, in one place. The faults still outstanding are dark greys sitting on dark backgrounds and a handful of pale backgrounds that never flipped, each individually named by the accessibility sweep. There is also a genuine bug found during that work which is wrong in both themes, not just the dark one: an unresolved brand link renders its own placeholder text. And a note for whoever picks this up — the probe that finds missing colour names reports what it fixed but not how many it found, so a run that finds nothing looks the same as a run that finds everything."
+  },
+  {
+   "id": "s251-fable-dashboard-data-gaps",
+   "for": "Fable",
+   "tab": "dashboard",
+   "text": "Three things behind the daily dashboard, all data rather than display. The history file stops at 7 September because the build did not run for three days, and the gap has to be filled or the one-day comparison silently reads from the wrong date. The builder finds MAP's columns by name but falls back to a guessed position when a name moves, which is how it would produce confident wrong numbers rather than failing. And the moment MAP restores the CPL lifecycle checks, the counsellor-verified column goes back into the daily fetch."
+  },
+  {
+   "id": "s245-fable-unfailable-checks",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Several of our own tests cannot fail. Seven files print no readable count of what they checked, so if their checks quietly vanished nobody would notice; and a test guarding a phrase that was later deleted kept passing while measuring nothing at all. This run added a third example and a habit that catches it: run a new test against the code as it was BEFORE the fix, and confirm it fails there."
+  },
+  {
+   "id": "s238-fable-stale-exhibits-and-funnel",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Two housekeeping items behind the CPL face. Fifty-five exhibits in the articulation crosswalk are no longer in today's MAP feed; they stay on the map flagged in words rather than dropped, and the fix is a re-seed of the crosswalk from a fresh custom report. And the credit-funnel numbers the face carries for context were read by hand on 2026-09-07; refresh them after the next custom-report load."
+  },
+  {
+   "id": "s246-fable-expended-sweep",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
+  },
+  {
+   "id": "s260-sam-awards-counselor-measure",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "The Counselor step is the only way Career attainment ever gets a campus measure, and the dial is still pointed elsewhere. You put the step into the Awards priority, and the model already treats an accepted CPL plan as serving both Completion and Career attainment. But Awards is currently measured on applied units from the portal, which only serves Access. The counselor data is available again — 24,778 units across 110 colleges. Changing what Awards measures is a dial, and dials are yours to set on the tab."
+  },
+  {
+   "id": "s260-fable-ask-1-four-bands",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Build the four bands once Sam answers on the reference card. Each statutory outcome gets its own heading, the outcome is chosen on the card with the measure deciding by default, and a curator's choice says in words that the CPL team made it. Sam approved the card shape: a simple face with one collapsed Detail section holding the description, the measure, the price and the strategies — and the activities picker stays on the face, not inside the fold."
+  },
+  {
+   "id": "s260-fable-cobi-contrast-pass",
+   "for": "Fable",
+   "tab": "cobi-dark-mode",
+   "text": "Seventeen of thirty-eight COBI tabs have text that is hard or impossible to read. The worst is white text on white — invisible. Grouped by colour pair rather than by page it is a short list of colour decisions, not a hundred separate problems. This is not in any lane yet and nobody has claimed it."
+  },
+  {
+   "id": "s262-sam-card-order",
+   "for": "Sam",
+   "text": "One choice about ordering. The two reported cards — Career attainment and Pilot projects — sit after the three priority boxes and cannot yet be dragged among them. Making them fully orderable means one list that covers both kinds of card, which has to stay in step with the order the priorities already use everywhere else (the ledger, the exports). The alternative is simpler: they order among themselves and always follow the priorities. The mock-up you approved showed the first. Either is quick once you say which."
+  },
+  {
+   "id": "s262-sam-count-noun",
+   "for": "Sam",
+   "text": "One word. On a card the control reads 'Designate activities' and the count beneath it reads 'Reported through 4 designated projects'. Both are your own wording and both are right on their own — you use Activities to mean the workplan activities and the projects under them — but side by side on one card they read as two different things. Say which noun wins and it is a one-line sweep."
+  },
+  {
+   "id": "s262-fable-funding-contrast",
+   "for": "Fable",
+   "text": "Seven faint-grey texts on the funding tab fall below the contrast standard — the version line, the qualifying figure under an award, the table footnote, the goal citations. All seven are older than this month's work and appear identically on the live site, so they were deliberately left alone rather than widening a merged change. They use one colour token that the design system itself marks decorative and never for real text, so this is one decision rather than seven fixes, and it belongs with the wider contrast sweep across the other tabs."
+  }
+ ]
 }
