@@ -57,6 +57,17 @@ python3 kb/doctrine.py --topic <alias|rekey|caps|liveness|privacy>
 4. **Whose number is this?** A figure inherited from a handoff or a lane file is
    a claim, not a measurement. Reproduce it before you build on it — and if you
    correct it, say what the old one was measured against.
+5. **Does this list belong to the row, or to the group around it?** Before you
+   join two lists inside one record, ask what each is a list *of*. In
+   `credential_reference_data.js` an articulation's `colleges` belong to the
+   articulation, not to each `local` course variant in it; pairing them produced
+   **4,106 phantom rows out of 7,332** (2026-09-14), every one carrying a real
+   exhibit ID, a real college and a real course title. ⭐ **The spot check
+   confirms the wrong reading** — small groups genuinely do vary per row, and the
+   error scales with group size, so the most-adopted credential is the worst
+   offender. Re-attach each pair through the authority that actually knows
+   (here, the COCI per-college catalog) and count what the gate drops.
+   [`methodology-an-articulation-college-list-belongs-to-the-group-not-the-course`](../../../docs/kb-notes/methodology-an-articulation-college-list-belongs-to-the-group-not-the-course.md)
 
 ## Before a drop, a merge, or a bulk write
 
