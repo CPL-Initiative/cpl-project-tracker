@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-09-14T15:56:05.903Z",
+  "scraped_at": "2026-09-14T18:08:44.660Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -518,17 +518,17 @@
         },
         {
           "college": "Glendale Community College",
-          "students": 226,
-          "units": 1244.5,
-          "avgUnits": 5.506637168141593,
+          "students": 227,
+          "units": 1249.5,
+          "avgUnits": 5.504405286343612,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 225,
+          "militaryStudents": 226,
           "nonMilitaryStudents": 1,
           "apprenticeStudents": 0,
-          "savings": 2152985,
-          "yearImpact": 7550381.5,
+          "savings": 2161635,
+          "yearImpact": 7580716.5,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,472",
+      "value": "51,473",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "28,019"
+          "value": "28,020"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51472,
-    "Units": 220008.65000000002,
+    "Students": 51473,
+    "Units": 220013.65000000002,
     "TranscribedUnits": 73009.95,
-    "Savings": 329460977.75,
-    "YearImpact": 1305355910.4,
-    "MilitaryStudents": 28019,
+    "Savings": 329469627.75,
+    "YearImpact": 1305386245.4,
+    "MilitaryStudents": 28020,
     "NonMilitaryStudents": 23539,
     "AprenticeStudents": 851,
-    "AverageUnits": 4.274336532483681,
-    "TranscribedAverage": 1.4184401227852035
+    "AverageUnits": 4.2743506304276035,
+    "TranscribedAverage": 1.418412565811202
   }
 }

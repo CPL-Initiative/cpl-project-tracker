@@ -8,16 +8,16 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43590,
-  "pa": 39539,
+  "pe": 43593,
+  "pa": 39542,
   "ppa": 107,
   "p2": 3083,
   "p3": 14513,
   "pp": 5,
   "ppe": 117,
   "pac": 2830,
-  "pe_u": 1407408.45,
-  "pa_u": 219342.15,
+  "pe_u": 1407508.45,
+  "pa_u": 219353.15,
   "ppa_u": 666.5,
   "ppe_u": 6683.5,
   "pac_u": 24777.95,
@@ -536,10 +536,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 61.5
   },
   "Diablo Valley": {
-   "pe": 172,
-   "pe_u": 7441.0,
-   "pa": 172,
-   "pa_u": 516.0,
+   "pe": 174,
+   "pe_u": 7522.0,
+   "pa": 174,
+   "pa_u": 522.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -705,10 +705,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Glendale": {
-   "pe": 225,
-   "pe_u": 10044.5,
-   "pa": 225,
-   "pa_u": 1244.5,
+   "pe": 226,
+   "pe_u": 10063.5,
+   "pa": 226,
+   "pa_u": 1249.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2409,8 +2409,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Diablo Valley": {
    "Military": {
-    "pe": 172,
-    "pa": 172,
+    "pe": 174,
+    "pa": 174,
     "p3": 0
    }
   },
@@ -2474,8 +2474,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Glendale": {
    "Military": {
-    "pe": 225,
-    "pa": 225,
+    "pe": 226,
+    "pa": 226,
     "p3": 0
    }
   },
@@ -3732,8 +3732,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27460,
-   "pa": 25316,
+   "pe": 27463,
+   "pa": 25319,
    "p3": 2494
   },
   "Military | Portfolio Review": {
@@ -3783,17 +3783,17 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1406931.95,
-   "pa_u": 219342.15,
+   "pe_u": 1407031.95,
+   "pa_u": 219353.15,
    "p3_u": 72984.95
   },
   "map": {
-   "pe_u": 1413615.45,
-   "pa_u": 220008.65,
+   "pe_u": 1413634.45,
+   "pa_u": 220013.65,
    "p3_u": 73009.95
   },
   "ratio": {
-   "pe_u": 1.0048,
+   "pe_u": 1.0047,
    "pa_u": 1.003,
    "p3_u": 1.0003
   }
