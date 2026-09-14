@@ -113,30 +113,79 @@ def course_catalog():
 
 # ------------------------------------------------------------- scoping ------
 def make_domain(DM, OM):
-    """The committed lane classifier from kb/fire_electrical_domain_map.json,
-    plus this run's extra electrical false positives. The 2026-09-09 map is NOT
-    edited - it keeps meaning what it meant then."""
+    """Scope an exhibit title to a lane using MAP'S OWN PROGRAM AREAS FIRST.
+
+    Ashley, 2026-09-14: "use the knowledge base in the MAP Platform". MAP publishes
+    its statewide CPL program areas at map.rccd.edu/statewidecpl/, mirrored in
+    kb/statewide_exhibit_categories.json, and that taxonomy — not this repo's
+    regexes — is the authority on what counts as Fire, Wildland or Electrical.
+
+    It resolves in MAP's own order:
+      1. MAP's explicit title -> category assignment.
+      2. MAP's own fallback patterns, in MAP's order (which deliberately tests
+         paramedic / emt / emergency-medical BEFORE fire, and wildland before fire).
+      3. Only for titles MAP's logic does not reach — overwhelmingly LOCAL exhibits,
+         since MAP's list covers the statewide set — this repo's committed lane
+         regex from kb/fire_electrical_domain_map.json.
+
+    ⚠️ "Emergency Medical Services" is a HARD EXCLUSION that overrides step 3. MAP
+    files Firefighter EMT Certificate and Fire Fighter Paramedic Journeyperson
+    Certificate there, not under Fire Technology; a fire-shaped title is not a fire
+    program if MAP says it is EMS.
+
+    ⚠️ MAP has no Electrical category — its electrical credentials (C-10, C-46, NCCER
+    Commercial/Industrial Electrician 1-4, both apprenticeships) sit inside
+    Construction Technology, which also holds masonry, plumbing and carpentry. So a
+    Construction Technology title is in scope only if it is also electrical TRADE,
+    which is what the false-positive lists are for.
+    """
+    SC = jload("kb/statewide_exhibit_categories.json")
+    TITLES = SC["titles"]
+    PATTERNS = [(re.compile(pat, re.I), cat) for pat, cat in SC["patterns"]]
+
     S = DM["scoping"]
     FIRE_FP = re.compile(S["fire_false_positives"], re.I)
     ELEC_FP = re.compile(S["electrical_false_positives"], re.I)
     ELEC_FP2 = re.compile(OM["extra_electrical_false_positives"]["pattern"], re.I)
+    ELEC_TRADE = re.compile(r"electric|wireman|lineman|lineworker|ibew|c-10\b|c-46\b"
+                            r"|photovoltaic|solar|motors and controls", re.I)
+
+    CAT_TO_LANE = {"Fire Technology": "Fire", "Fire Technology - Wildland": "Wildland Fire"}
+
+    def map_category(title):
+        if title in TITLES: return TITLES[title]
+        for rx, cat in PATTERNS:
+            if rx.search(title): return cat
+        return None
+
+    def is_electrical_trade(t):
+        return bool(ELEC_TRADE.search(t)) and not (ELEC_FP.search(t) or ELEC_FP2.search(t))
 
     def domain(t, issuers):
+        cat = map_category(t)
+
+        # MAP has spoken: its category decides, and EMS is never fire.
+        if cat == "Emergency Medical Services": return None
+        if cat in CAT_TO_LANE:
+            return None if FIRE_FP.search(t) else CAT_TO_LANE[cat]
+        if cat == "Construction Technology":
+            return "Electrical" if is_electrical_trade(t) else None
+        if cat is not None:
+            return None                      # every other MAP program area is out of scope
+
+        # MAP's list does not reach this title (a local exhibit). Repo regex, same order.
         s = t.lower(); iss = " ".join(issuers).lower()
         if FIRE_FP.search(s): return None
         if re.search(r"wildland|nwcg|wildfire", s) or "wildfire coordinating" in iss:
             return "Wildland Fire"
+        if re.search(r"paramedic|\bemt\b|emergency medical", s): return None   # EMS, per MAP
         if (re.search(r"\bfire\b|firefight|fire fighter|fire officer|fire inspector|fire apparatus"
                       r"|fire instructor|fire prevention|rescue systems|hazardous materials"
                       r"|driver/operator|fire academy|fire service|fire control|fire behavior"
                       r"|fire protection|fire science|fire technology", s)
                 or "state fire training" in iss or "cal fire" in iss):
             return "Fire"
-        if re.search(r"paramedic|\bemt\b|emergency medical", s): return "EMS"
-        if ELEC_FP.search(s) or ELEC_FP2.search(s): return None
-        if re.search(r"electric|wireman|lineman|lineworker|ibew|c-10\b|c-46\b"
-                     r"|photovoltaic|solar|motors and controls", s):
-            return "Electrical"
+        if is_electrical_trade(s): return "Electrical"
         return None
     return domain
 
@@ -210,7 +259,6 @@ def build(slug):
         lane = spec["lane"]
         pools = list(LANE_POOL[lane])
         fams = spec["families"]
-        if any(f.startswith("EMS_") for f in fams): pools.append("EMS")
         if "WILDLAND" in fams and "Wildland Fire" not in pools: pools.append("Wildland Fire")
         cands = {t for p in pools for t in lane_titles.get(p, [])}
         pats = [FAM[f] for f in fams if f in FAM]
@@ -357,6 +405,14 @@ def main():
         ("Date", date),
         ("Scope", "Electrical, Fire and Wildland Fire program areas only, drawn from the SJCOE "
                   "occupation list. Occupations outside these three areas are not included."),
+        ("How program areas were decided", "MAP's own statewide CPL program areas "
+                                           "(map.rccd.edu/statewidecpl) are the authority. In scope: "
+                                           "Fire Technology, Fire Technology - Wildland, and the "
+                                           "electrical trade credentials MAP files under Construction "
+                                           "Technology. Emergency Medical Services is a separate MAP "
+                                           "program area and is excluded — MAP files Firefighter EMT "
+                                           "and Fire Fighter Paramedic certificates there, not under "
+                                           "Fire Technology."),
         ("What a row means", "A California Community College has adopted this MAP exhibit AND recorded "
                              "the local course that receives the credit. A student holding the credential "
                              "can present it to that college for that course."),
@@ -377,7 +433,10 @@ def main():
                     f"(tmc_college_courses.js, {cat_at[:10]})."),
         ("Coverage", f"{len(rows)} opportunities · {len(occs)} occupations · {len(exhibits)} exhibits · "
                      f"{len(colleges)} colleges · {len(regions)} regions."),
-        ("Note on EMS", OM["scope_decisions"]["ems_included_only_for_fire_service_occupations"]),
+        ("Note on EMS", "Excluded. EMT and Paramedic credentials are their own MAP program area. "
+                        "Fire-service occupations that require them (FIRE MEDIC, FIRE FIGHTER "
+                        "PARAMEDIC, Firefighter EMT) remain in the crosswalk and show their fire "
+                        "credentials; ask the MAP team if you want the EMS side as a separate sheet."),
         ("Questions", "MAP@rccd.edu"),
     ]
 

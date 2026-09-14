@@ -12,11 +12,12 @@
   "_why_a_fourth_instrument": "Per docs/kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md. The domain tool's best outcome is a DEFECT IN THE CHAIN (analysis, for the MAP team). This one's best outcome is 'a student in this occupation can walk into THIS college and present THIS credential for THIS course' — a referral, for a student. A chain-break analysis is the wrong artifact to hand a student, and a referral list is the wrong artifact to plan from.",
   "scope_decisions": {
     "_note": "Ashley scoped the request to Electrical, Fire and Wildland Fire ONLY, explicitly excluding unrelated occupations in the source list. These are the judgment calls that scoping required; they are recorded so the boundary can be argued with rather than guessed at.",
-    "ems_included_only_for_fire_service_occupations": "EMT / Paramedic credentials are NOT a fire program on their own, so the standalone SJCOE occupations 'PARAMEDIC' and 'EMERGENCY MEDICAL TECHNICIAN' are out of scope. But 'FIRE MEDIC', 'FIRE FIGHTER PARAMEDIC' and 'Firefighter EMT' are fire-service occupations whose required training IS the EMS credential, and Ashley asked for fire-service occupations and certifications where applicable. EMS credentials therefore attach to those three occupations and to no others.",
+    "ems_included_only_for_fire_service_occupations": "SUPERSEDED 2026-09-14 by Ashley: 'only provide information on Electrical and Fire/Wildland occupations'. MAP's own statewide program areas (map.rccd.edu/statewidecpl, mirrored in kb/statewide_exhibit_categories.json) file 'Firefighter EMT Certificate', 'Fire Fighter Paramedic Journeyperson Certificate', 'EMT Certification', 'Paramedic License' and 'Paramedic Journeyperson Certificate' under EMERGENCY MEDICAL SERVICES — a category distinct from Fire Technology — and its fallback patterns test paramedic/emt/emergency-medical BEFORE fire. The earlier judgment that EMS credentials should attach to fire-service occupations was mine, not MAP's, and it is withdrawn. FIRE MEDIC, FIRE FIGHTER PARAMEDIC and Firefighter EMT stay in scope as fire occupations; they draw fire credentials only.",
     "low_voltage_and_utility_classifications_are_electrical": "'Communication Technician GC', 'SOUND AND COMMUNICATIONS SYSTEMS INSTALLER (Voice-Data-Video)', 'TELECOMMUNICATIONS TECHNICIAN' and 'TELECOM-TECH' are IBEW / utility electrical classifications, not IT roles; they are in scope as Electrical.",
     "plant_and_mechanical_operations_excluded": "'Gas Plant Operators', 'STATION OPERATOR', 'Plant Operator', 'Hydro Plant Operator', 'Hydro Stationary Engineer', 'HYDRO PLANT MECHANIC', 'Nuclear Power Reactor Operators', 'Nuclear Monitoring Technicians', 'CORROSION MECHANIC' and 'Generator Technician' are power-generation or mechanical roles rather than the electrical trade. Out of scope. The hydro roles that ARE electrical ('HYDRO ELECTRICIAN', 'HYDRO ELECTRICAL TECHNICIAN', 'Electrician - Electric & Hydro') are in scope.",
     "heavy_fire_equipment_operator_carries_wildland": "Heavy fire equipment operation (dozer / engine) is primarily a wildland-fire assignment, so this occupation draws both apparatus and wildland credentials.",
-    "duplicate_occupation_names_collapsed": "The source list repeats several names with different capitalization ('PLUMBER'/'Plumber', 'Electrical Technician'/'ELECTRICAL TECHNICIAN') and repeats SOC-style titles verbatim. In-scope duplicates are collapsed to one occupation row set, using the source list's own wording."
+    "duplicate_occupation_names_collapsed": "The source list repeats several names with different capitalization ('PLUMBER'/'Plumber', 'Electrical Technician'/'ELECTRICAL TECHNICIAN') and repeats SOC-style titles verbatim. In-scope duplicates are collapsed to one occupation row set, using the source list's own wording.",
+    "scoping_authority_is_maps_own_program_areas": "Ashley, 2026-09-14: 'use the knowledge base in the MAP Platform'. Exhibit scoping now resolves in MAP's order — MAP's explicit title->category assignment first, then MAP's own fallback patterns, and only for titles MAP's logic does not reach does this repo's committed lane regex apply. In scope: 'Fire Technology', 'Fire Technology - Wildland', and the electrical-trade members of 'Construction Technology' (C-10, C-46, NCCER Commercial/Industrial Electrician 1-4, Commercial and Residential Electrical Apprenticeship). Every other MAP category is out, and 'Emergency Medical Services' is a hard exclusion that overrides the fallback."
   },
   "extra_electrical_false_positives": {
     "_note": "ADDED 2026-09-14, on top of scoping.electrical_false_positives in kb/fire_electrical_domain_map.json. The committed list caught automotive and AP Physics; these survived it and are equally not the electrical trade. Kept here rather than edited into the domain map so the domain map keeps meaning what it meant on 2026-09-09.",
@@ -37,13 +38,12 @@
     "RESCUE": "rescue system|rope rescue|trench rescue|confined space rescue|auto extrication|swiftwater rescue|open water rescuer",
     "WATER_RESCUE": "swiftwater rescue|open water rescuer",
     "WILDLAND": "wildland|nwcg|s-190|s-290|s-130|s-212",
-    "EMS_EMT": "^emt |^emt-|^emergency medical (technician|responder)|emt certification|emt refresher|emergency medical response",
-    "EMS_MEDIC": "paramedic|paramedicine",
     "ELEC_APPRENTICE": "ibew electrician apprenticeship|^general electrician certification$|electrician certificate of proficiency",
     "ELEC_FUNDAMENTALS": "fundamentals of electricity and electronics|^introduction to electricity$|electrical safety|blueprint reading for electricians|cal-osha 30-hour construction industry training for electrical",
     "ELEC_CONTROLS": "electrical motors and controls|electrical control of (hydraulic|pneumatic) systems",
     "ELEC_SOLAR": "general electrician certification . solar|solar installer level",
-    "_solar_note": "ELEC_APPRENTICE is anchored with ^...$ on 'General Electrician Certification' so the separate 'General Electrician Certification - Solar' exhibit reaches only occupations carrying ELEC_SOLAR. Unanchored, it put Solar Photovoltaic Design and Installation in front of cable splicers and line workers."
+    "_solar_note": "ELEC_APPRENTICE is anchored with ^...$ on 'General Electrician Certification' so the separate 'General Electrician Certification - Solar' exhibit reaches only occupations carrying ELEC_SOLAR. Unanchored, it put Solar Photovoltaic Design and Installation in front of cable splicers and line workers.",
+    "_ems_note": "EMS families removed 2026-09-14. See scope_decisions.ems_included_only_for_fire_service_occupations."
   },
   "occupations": {
     "_note": "SJCOE occupation name (verbatim from their list) -> lane + the credential families that meaningfully align with it. An occupation appears here ONLY if it is an Electrical, Fire or Wildland Fire program area.",
@@ -104,8 +104,7 @@
     "FIRE FIGHTER PARAMEDIC": {
       "lane": "Fire",
       "families": [
-        "FF_BASIC",
-        "EMS_MEDIC"
+        "FF_BASIC"
       ]
     },
     "FIRE INSPECTOR": {
@@ -132,9 +131,7 @@
     "FIRE MEDIC": {
       "lane": "Fire",
       "families": [
-        "FF_BASIC",
-        "EMS_EMT",
-        "EMS_MEDIC"
+        "FF_BASIC"
       ]
     },
     "FIRE OFFICER": {
@@ -160,8 +157,7 @@
     "Firefighter EMT": {
       "lane": "Fire",
       "families": [
-        "FF_BASIC",
-        "EMS_EMT"
+        "FF_BASIC"
       ]
     },
     "HAZARDOUS MATERIALS TECHNICIAN": {

@@ -326,3 +326,42 @@ honest answer, and padding it would have hidden the finding.
   construction trades, IT) — the tool is occupation-agnostic; only the map changes.
 - The catalog gate belongs in the other three crosswalk builders; they have the
   same pairwise join and have not been re-measured against it.
+
+### 2026-09-14, second pass — MAP's taxonomy, not ours
+
+Ashley, after reviewing the first build: *"use the knowledge base in the MAP
+Platform and only provide information on Electrical and Fire/Wildland
+occupations."*
+
+**7. ⭐ The platform's own taxonomy outranks a regex built to approximate it.** I
+had attached EMT and Paramedic credentials to three fire-service occupations
+(FIRE MEDIC, FIRE FIGHTER PARAMEDIC, Firefighter EMT) on the reasoning that the
+occupation requires the credential. MAP does not agree, and MAP is the authority:
+`map.rccd.edu/statewidecpl/` files **Firefighter EMT Certificate** and **Fire
+Fighter Paramedic Journeyperson Certificate** under **Emergency Medical
+Services**, a program area distinct from Fire Technology — and its own fallback
+patterns test `paramedic` / `emt` / `emergency medical` *before* `fire` so that a
+fire-shaped title cannot capture them. 266 rows removed. The judgment was mine,
+flagged as mine, and wrong.
+
+⚠️ **The mirror of that taxonomy was already committed** as
+`kb/statewide_exhibit_categories.json` and I did not consult it — I wrote lane
+regexes instead. Scoping now resolves in MAP's order: explicit assignment, then
+MAP's patterns, then the repo regex only for titles MAP's list does not reach.
+
+**8. ⚠️ MAP has no Electrical category.** Its electrical credentials (C-10, C-46,
+NCCER Commercial/Industrial Electrician 1–4, both apprenticeships) live inside
+**Construction Technology**, beside masonry, plumbing and carpentry. That category
+needs an electrical-trade test layered on top, not wholesale inclusion.
+
+**9. ⭐ All 12 of MAP's statewide electrical credentials have adopters and ZERO
+recorded receiving courses.** 1–2 adopters each, no `local` articulation lines.
+Not one can produce a verified row, so every electrical row in the deliverable
+comes from a *local* exhibit (IBEW apprenticeship, General Electrician
+Certification, Introduction to Electricity). This is the 2026-09-09 "electrical
+chain breaks" finding confirmed from the articulation side rather than the
+receiving-course side.
+
+**Second pass:** 2,941 rows · 52 occupations · 118 exhibits · 24 colleges · 9
+regions. Colleges fell 36 → 24 because EMT Certification alone carried 28
+adopters.

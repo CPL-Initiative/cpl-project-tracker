@@ -93,6 +93,24 @@ credential that recommends it — it labeled *CEM 155 Blueprint Reading* under
 discipline of the credit recommendation" must come from the credential
 (`disc_modal`), with the articulation's value as fallback and not the reverse.
 
+## Corollary: the platform's own taxonomy outranks a regex built to approximate it
+
+MAP publishes its statewide CPL program areas at `map.rccd.edu/statewidecpl/`,
+mirrored in `kb/statewide_exhibit_categories.json`. A lane regex written in this
+repo is an *approximation* of that taxonomy, and the two disagree on the rows that
+matter: MAP files **Firefighter EMT Certificate** and **Fire Fighter Paramedic
+Journeyperson Certificate** under **Emergency Medical Services**, a category
+distinct from Fire Technology, and its own fallback patterns test
+`paramedic` / `emt` / `emergency medical` **before** `fire` precisely so a
+fire-shaped title does not capture them. A session reading the titles alone will
+put them under Fire and be wrong by the platform's own definition.
+
+Scope an exhibit in MAP's order — explicit assignment, then MAP's patterns, then a
+repo regex only for titles MAP's list does not reach (overwhelmingly local
+exhibits). ⚠️ **MAP has no Electrical category**: its electrical credentials sit
+inside Construction Technology beside masonry, plumbing and carpentry, so that
+category needs a trade test on top rather than wholesale inclusion.
+
 ## Scope
 
 Applies to any consumer of `credential_reference_data.js` `articulations[].local[]`
