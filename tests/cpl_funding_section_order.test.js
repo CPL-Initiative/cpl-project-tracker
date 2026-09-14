@@ -264,8 +264,12 @@ function registerStub() {
     /Student Stories/.test(designatedText(doc, "C")));
   check("4d: each one reports its OUTCOME from the register, not from the config",
     /Foundational Year/.test(designatedText(doc, "C")) && /15% complete/.test(designatedText(doc, "C")));
-  check("4e: the box sits in the Success band, beside the measured cards",
-    !!doc.querySelector('#cplfund-band-success [data-rprio="C"]'));
+  // The bands are retired (Sam, 2026-09-14): one flat grid, and the reported
+  // card sits in it beside the measured ones rather than inside a wrapper.
+  // What the check is really about — a reported box is IN the card grid, not
+  // stranded outside it — is unchanged.
+  check("4e: the box sits in the card grid, beside the measured cards",
+    !!doc.querySelector('.cplfund-prio [data-rprio="C"]'));
   check("4f: signed out there is no designation control anywhere",
     !doc.querySelector("[data-projsel]") && !doc.querySelector("[data-projrelease]"));
 
@@ -315,10 +319,10 @@ function registerStub() {
   // fails here rather than passing on the box alone.
   check("4n: a goal with nothing designated shows a reported CARD, and the band row is gone",
     !!doc.querySelector('[data-rprio="D"]') && !doc.querySelector('[data-desig="D"]'));
-  check("4o: ...inside the Opportunities band, where its funding already sits",
-    !!doc.querySelector('#cplfund-band-opps [data-rprio="D"]'));
+  check("4o: ...in the card grid, beside the measured cards",
+    !!doc.querySelector('.cplfund-prio [data-rprio="D"]'));
   check("4o2: ...and that empty card carries the picker and says what it awaits",
-    !!doc.querySelector('#cplfund-band-opps [data-rprio="D"] [data-projsel="D"]') &&
+    !!doc.querySelector('.cplfund-prio [data-rprio="D"] [data-projsel="D"]') &&
     /Awaiting designated activities/.test(doc.querySelector('[data-rprio="D"]').textContent));
 
   // Designate two activities to (D) in one action.

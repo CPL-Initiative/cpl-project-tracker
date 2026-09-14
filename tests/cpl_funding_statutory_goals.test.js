@@ -41,12 +41,13 @@ const axis = (row, name) => {
   // The goal cell is a <th scope=row>; the axis cells are the <td>s after it.
   return Array.from(row.querySelectorAll("th[scope=row], td"))[i] || null;
 };
-// The design LIMIT on a goal renders on that goal's band (Sam, 2026-09-01) —
-// one line per goal, keyed by "(K) Short name", with the reasoning behind a
-// fold. Locate it structurally, the same way the goal rows are located.
-const bandRow = (doc, k) =>
-  Array.from(doc.querySelectorAll(".cplfund-evrow")).find((r) =>
-    new RegExp("^\\(" + k + "\\)").test(flat(r.querySelector(".cplfund-evk"))));
+// The design LIMIT on a goal used to render on that goal's BAND (Sam,
+// 2026-09-01). The bands are retired (Sam, 2026-09-14) and the limit renders in
+// the (d)(2) account itself, inside the goal's own "how it is evidenced" cell —
+// it had to move, because a cell that pointed at a section which no longer
+// exists would send the reader looking for something unfindable. Locate it
+// structurally, the same way the goal rows are located.
+const evidenceCell = (doc, k) => axis(goalCard(doc, k), "how it is evidenced");
 
 const dom = freshDom();
 const win = dom.window;
@@ -133,17 +134,27 @@ check("goal (C) is shown as FUNDED", /\$[\d,]+/.test(cFund));
 check("goal (C) reports through statewide work, with no campus measure", /reported through statewide work/i.test(cMeas));
 check("goal (C) does not claim a metric it does not have",
   !/earned against/i.test(cMeas));
-const cBand = bandRow(doc, "C");
-check("goal (C) has an evidence line on its band", !!cBand);
+const cBand = evidenceCell(doc, "C");
+check("goal (C) has an evidence line in the (d)(2) account", !!cBand);
 check("goal (C) carries Sam's demonstrated-not-measured ruling in words (items 3 + 12)",
   /Demonstrated, not directly measured/i.test(flat(cBand)));
 // And the honest half: the qualitative evidence documents a different goal.
 check("goal (C) names what its qualitative evidence actually documents",
   /\bevidence for \(B\)/i.test(flat(cBand)));
-// The account and the band must not disagree about the SAME goal — they read
-// one goalEvidence(), and this is what would catch a second copy appearing.
-check("the (d)(2) account and the band agree that (C) has no performance measure",
-  /reported through statewide work/i.test(cMeas) && /reported through statewide work/i.test(flat(cBand)));
+// ⚠️ ONE RENDERER, so there is nothing left to disagree. The account and the
+// band each printed this goal's evidence until 2026-09-14, and the check that
+// they agreed existed to catch a second copy appearing. With the bands retired
+// the account is the only place it renders — so the check becomes that the
+// phrase appears ONCE on the page, which is what would catch a second copy
+// coming back.
+check("(C)'s evidence state renders once, in the account, with no rival copy", (function () {
+  if (!/reported through statewide work/i.test(cMeas)) return false;
+  const inMount = (flat(doc.querySelector("#cplFundingMount")).match(/reported through statewide work/gi) || []).length;
+  const inAccount = (flat(doc.querySelector(".cplfund-goals")).match(/reported through statewide work/gi) || []).length;
+  // Every occurrence on the page is inside the (d)(2) account. A band printing
+  // its own copy — the shape this replaced — would make inMount exceed it.
+  return inAccount > 0 && inMount === inAccount;
+})());
 // The figures are COUNTED, so they must agree with the corpus in the window —
 // a hardcoded pair would pass the line above and drift the moment a story lands.
 check("(C)'s story figures are counted from the corpus, not hardcoded", (function () {
@@ -164,12 +175,15 @@ check("(C) reports the educational majority, which is the finding", (function ()
 // Positive-first (Sam, 2026-09-13): the limit reads "measured elsewhere — by
 // design", never "not measured" — the sentence opens with where it IS measured.
 check("goal (A) states that 'equitably' is measured elsewhere, by design",
-  /equitably.{0,40}measured elsewhere/i.test(flat(bandRow(doc, "A"))));
-// ⚠️ The limits are stated ONCE. Carrying them in both places is the exact
-// duplication the band consolidation removed, and a second copy drifts.
-check("...on the band only — the (d)(2) account points at it rather than repeating it",
-  !/equitably.{0,40}measured elsewhere/i.test(flat(goalCard(doc, "A"))) &&
-  /stated on its band/i.test(flat(axis(goalCard(doc, "A"), "how it is evidenced"))));
+  /equitably.{0,40}measured elsewhere/i.test(flat(evidenceCell(doc, "A"))));
+// ⚠️ The limits are stated ONCE, and since 2026-09-14 the one place is the
+// (d)(2) account itself. It used to render on the band with this cell pointing
+// at it; with the bands retired, a pointer to a section that no longer exists
+// would send the reader looking for something unfindable — so the limit moved
+// here rather than the pointer staying behind.
+check("...in the account itself, once, with no pointer to a section that is gone",
+  (flat(doc.querySelector("#cplFundingMount")).match(/measured elsewhere/gi) || []).length === 1 &&
+  !/stated on its band/i.test(flat(doc.querySelector("#cplFundingMount"))));
 
 // ── 6. superscript markers link cards back to the spine ─────────────────────
 const sups = Array.from(doc.querySelectorAll(".cplfund-goalsup"));
@@ -182,9 +196,16 @@ check("every marker links to a goal anchor that exists", sups.every((a) => {
 check("every marker carries an accessible name", sups.every((a) => !!a.getAttribute("aria-label")));
 check("every marker names its goal in words on hover", sups.every((a) =>
   /78093\.2/.test(a.getAttribute("title") || "")));
-check("a priority card carries a goal marker", (function () {
+// ⚠️ THE RAISED LETTER IS RETIRED FROM THE CARD (Sam, 2026-09-14). It existed
+// to stitch a card to the band above it, and the band is gone; the card now
+// NAMES its outcome in words, in a row carrying the key, the short name, the
+// citation and the statute's own sentence. The markers themselves survive
+// elsewhere, which is why the checks above still run.
+check("a priority card names its outcome in words rather than a raised letter", (function () {
   const c = doc.querySelector(".cplfund-prio .p");
-  return !!(c && c.querySelector(".cplfund-goalsup"));
+  const row = c && c.querySelector(".cplfund-cardgoal");
+  return !!row && !c.querySelector("h4 .cplfund-goalsup") &&
+    /78093\.2\(d\)\(1\)\([ABCD]\)/.test(flat(row));
 })());
 
 // ── 7. the Workplan register is honoured, not corrected ─────────────────────
@@ -196,7 +217,8 @@ check("a priority card carries a goal marker", (function () {
 // longer has a section of its own: the priorities and the §78093.2(d)(1) goals
 // were two sections describing one allocation, and they are now one section
 // whose title carries the statutory outcomes and whose body carries the three
-// bands, with this spine as a fold inside it (see cpl_funding_statutory_bands).
+// bands, with this spine as a fold inside it (the bands retired 2026-09-14;
+// see cpl_funding_outcome_cards).
 // So the section is located by THE STATUTE LINK ITSELF rather than by a
 // `data-sec` name — which is what these two assertions were always about, and
 // is the structural locator the header of this file asks for. The guard is

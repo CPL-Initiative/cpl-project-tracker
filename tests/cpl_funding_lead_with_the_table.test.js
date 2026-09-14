@@ -111,8 +111,11 @@ function storageKeys(window) {
   check("L4: ...while every figure it restated is still on the card — the window figure on the Current Total line, the target",
     cards.every((c) => /of \$[\d,]+ full-window Total Possible/.test(c.textContent) &&
       (/Target [\d,.]+ CPL FTES/.test(c.textContent) || /so [\d,]+ students/.test(c.textContent))));
-  check("L4: ...and on the band head, as Total Possible",
-    Array.from(doc.querySelectorAll(".cplfund-band-tot"))
+  // The band head retired with the bands (Sam, 2026-09-14). Its per-outcome
+  // Total Possible is the one figure no single card can state — it sums two or
+  // more — so it survives as the totals row above the grid, one item per goal.
+  check("L4: ...and on the outcome totals row, as Total Possible",
+    Array.from(doc.querySelectorAll(".cplfund-otot .cplfund-otot-item"))
       .filter((e) => /\$[\d,]+ Total Possible/.test(e.textContent)).length >= 2);
   // The carryover year keeps its one line: a Year-2 card with no funding on
   // it has to say why.

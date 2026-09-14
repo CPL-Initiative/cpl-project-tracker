@@ -294,9 +294,12 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   const card1 = doc.querySelector(".cplfund-prio .p");
   check("front-load: the Year-1 priority card carries NO restating 'Combined funding' line (retired 2026-09-02)",
     !!card1 && !doc.querySelector(".cplfund-prio .cplfund-fl-line"));
+  // The band head is retired (Sam, 2026-09-14) — the per-outcome Total Possible
+  // it carried is the one figure no single card can state, so it moved to the
+  // totals row above the grid. The CARD half of this check is unchanged.
   check("front-load: the card still states the window figure — its Current Total line reads the full-window Total Possible",
     !!card1 && /of \$[\d,]+ full-window Total Possible/.test(card1.textContent) &&
-    /Total Possible/.test((doc.querySelector(".cplfund-band-tot") || {}).textContent || ""));
+    /Total Possible/.test((doc.querySelector(".cplfund-otot") || {}).textContent || ""));
 
   // Switch the viewed year to the carryover year. The in-table P-cells are
   // retired (one-pool port, 2026-08-31) — per-priority money lives in the row
