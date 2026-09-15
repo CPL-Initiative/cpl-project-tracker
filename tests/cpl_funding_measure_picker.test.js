@@ -132,6 +132,13 @@ function fire(window, sel, v) {
   check("3e: the origin options name the ROUTES, not the internal cohort",
     opts.some((o) => /CPL Portal/.test(o.text) && /Landing Page/.test(o.text)) &&
     !opts.some((o) => /portal-origin/i.test(o.text)));
+  // ⚠️ BATCH UPLOAD IS NAMED ON PURPOSE though the measure cannot see it yet
+  // (Sam, 2026-09-15: "Include batch in P1. It will have an indicator in the
+  // origination dataset later."). Pinned so a later reader does not "correct"
+  // the label back to what Potential Student currently counts — the label is
+  // written for what the measure becomes, as his P1 pin is.
+  check("3g: the origin options name batch upload, the third route",
+    opts.filter((o) => /batch upload/.test(o.text)).length === 3);
   check("3f: the counselor option echoes the wording Sam writes on the card",
     opts.some((o) => /Counselor step checked/.test(o.text)));
   check("3c: the feed key still rides the metric block's tooltip, where Sam put it",
