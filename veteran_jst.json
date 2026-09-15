@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-09-15T14:22:13.849995+00:00",
+  "scraped_at": "2026-09-15T17:08:22.462464+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 28085,
+    "jst": 28089,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 571,
+      "jst": 572,
       "star": true
     },
     "Merced College": {
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 405,
+      "jst": 406,
       "star": true
     },
     "Modesto Junior College": {
@@ -182,7 +182,7 @@
     },
     "Clovis Community College": {
       "vets": 117,
-      "jst": 192,
+      "jst": 193,
       "star": true
     },
     "Shasta College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 107,
+      "jst": 108,
       "star": false
     },
     "Cuyamaca College": {

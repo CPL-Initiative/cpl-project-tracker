@@ -35184,8 +35184,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-PCOP-1-001"
       ],
-      "title": "POST Certificate or POST Training Transcripts",
-      "unified_title": "POST Certificate or POST Training Transcripts",
+      "title": "P.O.S.T Certificate or P.O.S.T Training Transcripts",
+      "unified_title": "P.O.S.T Certificate or P.O.S.T Training Transcripts",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -35193,7 +35193,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "POST Certificate or POST Training Transcripts"
+        "P.O.S.T Certificate or P.O.S.T Training Transcripts"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
@@ -308276,6 +308276,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-09-15T14:21:07",
+  "generated_at": "2026-09-15T17:07:15",
   "total_credit_recs": 13308
 };

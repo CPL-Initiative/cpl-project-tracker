@@ -8,16 +8,16 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 43654,
-  "pa": 39604,
+  "pe": 43658,
+  "pa": 39607,
   "ppa": 107,
   "p2": 3083,
   "p3": 14518,
   "pp": 5,
   "ppe": 117,
   "pac": 2836,
-  "pe_u": 1410529.45,
-  "pa_u": 219704.15,
+  "pe_u": 1410778.45,
+  "pa_u": 219719.15,
   "ppa_u": 666.5,
   "ppe_u": 6683.5,
   "pac_u": 24804.45,
@@ -98,10 +98,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Bakersfield": {
-   "pe": 600,
-   "pe_u": 26212.5,
-   "pa": 593,
-   "pa_u": 8694.5,
+   "pe": 601,
+   "pe_u": 26299.5,
+   "pa": 594,
+   "pa_u": 8699.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 66.0,
@@ -314,10 +314,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Clovis": {
-   "pe": 188,
-   "pe_u": 8131.0,
-   "pa": 188,
-   "pa_u": 1135.0,
+   "pe": 189,
+   "pe_u": 8181.0,
+   "pa": 189,
+   "pa_u": 1141.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 12.0,
@@ -516,10 +516,10 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Desert": {
-   "pe": 438,
-   "pe_u": 18159.5,
-   "pa": 438,
-   "pa_u": 2435.5,
+   "pe": 439,
+   "pe_u": 18222.5,
+   "pa": 439,
+   "pa_u": 2439.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -1440,8 +1440,8 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0
   },
   "Sacramento City": {
-   "pe": 71,
-   "pe_u": 2758.0,
+   "pe": 72,
+   "pe_u": 2807.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -2085,8 +2085,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 556,
-    "pa": 553,
+    "pe": 557,
+    "pa": 554,
     "p3": 27
    }
   },
@@ -2241,8 +2241,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Clovis": {
    "Military": {
-    "pe": 188,
-    "pa": 188,
+    "pe": 189,
+    "pa": 189,
     "p3": 0
    }
   },
@@ -2402,8 +2402,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 401,
-    "pa": 401,
+    "pe": 402,
+    "pa": 402,
     "p3": 0
    }
   },
@@ -3148,7 +3148,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 71,
+    "pe": 72,
     "pa": 0,
     "p3": 0
    }
@@ -3732,8 +3732,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 27524,
-   "pa": 25381,
+   "pe": 27528,
+   "pa": 25384,
    "p3": 2499
   },
   "Military | Portfolio Review": {
@@ -3783,13 +3783,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1410052.95,
-   "pa_u": 219704.15,
+   "pe_u": 1410301.95,
+   "pa_u": 219719.15,
    "p3_u": 72999.95
   },
   "map": {
-   "pe_u": 1416736.45,
-   "pa_u": 220370.65,
+   "pe_u": 1416985.45,
+   "pa_u": 220385.65,
    "p3_u": 73024.95
   },
   "ratio": {
