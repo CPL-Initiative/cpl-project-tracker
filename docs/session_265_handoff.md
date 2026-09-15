@@ -69,6 +69,8 @@ and he answers while the session works.
 |---|---|---|
 | 1 | edit | Drove the route-named picker labels (#1585). Done. |
 | 2 | yes | Sam trimmed it himself — verified 2026-09-15 21:3xZ against his screenshot of the live tab: P2 read *"Applied CPL units (FTES) for students with Counselor step checked"*, no origin clause. ⚠️ **He said immediately after that he was still correcting the text, so RE-READ `cpl_funding_config` before relying on this** — and re-run the diagnostic, because a reworded metric can outrun its pin. ⚠️ S264 also had this as P1's clause; it was always P2's. |
+
+⛔ **DO NOT "FIX" P1'S PROSE FALLBACK — Sam ruled *"1 leave it"* (2026-09-15).** Checking the pins after his text edit turned up that P1's wording resolves to `pp_u` (portal TRANSCRIBED, ~25 units statewide) before `pa_u`, and that **no wording derives `ppa_u`** — P1 is correct only because it is pinned. He was shown both the finding and a fix (rung-aware portal rules plus a `ppa_u` prose entry) and chose to leave it. The pin holds; nothing is wrong on screen. Re-raising this is re-litigating a settled call.
 | 3 | edit (*"see screenshot and chat"*) | Resolved to `ppa_u`, NOT the `pa_u` the sheet proposed. He set it. Done. |
 | 4 | yes | Headcount basis removed; `allocationBasis()` locked to `ftes`. Done. |
 | 5 | yes | Per-CPL-type unit portion added to the standing Pedro request (lane NEXT ⓪). Done. |
