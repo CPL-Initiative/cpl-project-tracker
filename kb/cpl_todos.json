@@ -1,9 +1,33 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-15",
- "_session": 263,
- "_status": "Session 263 fixed something every reader of the funding tab has been seeing. The drill-in table under each college was dropping one column: the noncredit funding cell disappeared, every figure after it slid one place to the left under the wrong heading, and the last column came up blank. It was not a setting anyone chose — the tab hides the District column out of the box, and a styling rule meant for the main table was reaching down into the smaller table inside it and hiding whatever sat in the same position. Sam spotted it from a screenshot. The statewide row now opens the same way a college row does, so the totals can be read against the priorities. A percentage that read 100% when a college was actually at 221% of its target now tells the truth, and the printed version of the table has its college names back — it had been printing 118 blank rows. Two things were built and then removed at Sam's direction: a second way to set priority targets that turned out to duplicate one we already had, and a plan to combine two measures that are already counted separately. Waiting on Sam: whether to point the Outreach measure at applied credit, which is one setting in the tab and no code, and whether to remove the leftover Headcount option from the allocation basis control.",
+ "_session": 264,
+ "_status": "The counselor lifecycle check is now something the funding model can measure, and the measure itself finally has a control on the priority card — it was the last funding dial that only a session could change. Sam set both live dials himself: Priority 1 measures applied CPL by origin, Priority 2 measures applied CPL where the Counselor step is checked, and Priority 2's wording and its number now say the same thing. The Headcount allocation basis is gone: it had been ruled dead but the control survived, and flipping it moved 69 of 118 awards. Priority 1 counts very little today because the origination data is still being added; that is expected and accepted. All seven items on the 15 September decision sheet are answered and all seven are carried out.",
  "items": [
+  {
+   "id": "s264-sam-sheet-remaining",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "One thing from the 15 September decision sheet is yours: a note to MAP about the Dashboard's \"Eligible\" label, which actually shows applied credit. It is drafted and waiting for you to send at docs/map_eligible_label_note_draft.md — check the figures again first, because the reconciliation is the whole argument."
+  },
+  {
+   "id": "s264-sam-origination-owner",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "When the origination data lands, half of it works by itself and half does not. The noncredit location side switches on automatically. The landing page / portal / batch upload side waits for a deliberate one-line change, made only once the exact spellings are confirmed, and the only signal that it is waiting is a line in a daily log. Worth giving that to someone by name."
+  },
+  {
+   "id": "s264-fable-ppa-cutover",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Make the origination cutover the moment MAP ships the Origin column: read the origin_values histogram the daily build emits, confirm the spellings, then switch the portal measure from the Potential Student stand-in to the named origins. Only that makes Priority 1's three-route label true and gives it real units."
+  },
+  {
+   "id": "s264-fable-counselor-fetch",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Carry Counselor_Verified into the daily fetch column list so the counselor measure cannot quietly stop being emitted."
+  },
   {
    "id": "s259-sam-dispatch-cpl-chat-v66",
    "for": "Sam",
@@ -105,30 +129,6 @@
    "for": "Fable",
    "tab": "implementation-funding",
    "text": "Sam's rule that expended and allocated are not interchangeable — colleges spend, the Chancellor's Office allocates — was applied at the one place it was found in the memo builder. The rest of the memo and report text has not been read against it. Check who the subject is in each sentence before changing either word; a blanket sweep would get it backwards."
-  },
-  {
-   "id": "s263-sam-pin-p1-applied",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Point the Outreach priority at applied credit instead of eligible. This is one setting in the funding tab, no code: it makes our number match what colleges already see on the MAP dashboard, where the column called Eligible is in fact applied credit. Today Outreach counts 17 times what it asks for statewide, and 97 of 115 colleges clear it without trying; on applied that becomes 2.7 times and 52 of 115. Nothing else needs to change — the portal half of applied is already counted under Awards."
-  },
-  {
-   "id": "s263-sam-headcount-option",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Decide whether to remove the Headcount choice from the Allocation basis control. You have ruled that student headcount is not a metric here, but the control still offers it, and one click would re-size every college's award. There are also two lines of on-screen text that tell a reader the metrics are headcount-based. Removing all three is small and would make the rule something the page enforces rather than something each session has to remember."
-  },
-  {
-   "id": "s263-fable-eligible-hover",
-   "for": "Fable",
-   "tab": "implementation-funding",
-   "text": "Once Sam has decided on applied, add the short explanation he asked for where eligible credit is named, so a reader comparing this tab with the MAP dashboard knows which of the two numbers they are looking at. Worth doing once, after the measure settles, rather than writing it twice."
-  },
-  {
-   "id": "s263-fable-calbright-ftes",
-   "for": "Fable",
-   "tab": "implementation-funding",
-   "text": "Calbright's noncredit size is still a stand-in figure of 1,000. Sam is pulling fresh reported sizes for every college from the Chancellor's Office next week, before the model is finalised. When that lands it re-sizes all 118 institutions, not just Calbright, so re-check which colleges sit at the minimum or the maximum afterwards."
   }
  ]
 }

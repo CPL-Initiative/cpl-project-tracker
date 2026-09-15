@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 446,
+   "count": 448,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2339,6 +2339,24 @@
      "title": "A phrase sweep misses what a line break splits",
      "type": "methodology",
      "updated": "2026-08-31"
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [
+      "tests/run.js",
+      "kb/_build_dependency_map.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-pipe-discards-a-commands-verdict.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "verification",
+      "testing",
+      "ci"
+     ],
+     "title": "A pipe discards a command's verdict",
+     "type": "methodology",
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-08-30",
@@ -6374,6 +6392,23 @@
      "updated": "2026-07-30"
     },
     {
+     "created": "2026-09-15",
+     "governs": [
+      "tests/cpl_funding_basis.test.js",
+      "tests/cpl_funding_basis_locked.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-retiring-a-behavior-means-inverting-its-tests.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "governance"
+     ],
+     "title": "Retiring a behavior means inverting its tests, not deleting them",
+     "type": "methodology",
+     "updated": "2026-09-15"
+    },
+    {
      "created": "2026-09-14",
      "governs": [
       "tests/cpl_funding_outcome_cards.test.js",
@@ -9713,7 +9748,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-09-14"
+     "updated": "2026-09-15"
     },
     {
      "created": "2026-06-21",
@@ -10918,7 +10953,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 80,
+   "count": 81,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11437,6 +11472,22 @@
      "title": "Dashboard card metrics \u2014 consistency recommendations (Sam's recommend list)",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "path": "docs/map_eligible_label_note_draft.md",
+     "status": "internal",
+     "tags": [
+      "map",
+      "terminology",
+      "funding",
+      "draft",
+      "outward"
+     ],
+     "title": "Draft note to MAP \u2014 the word \"Eligible\" on the CPL Dashboard",
+     "type": null,
+     "updated": "2026-09-15"
     },
     {
      "created": "",
@@ -13199,8 +13250,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 237,
+   "count": 238,
    "docs": [
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "n": 265,
+     "path": "docs/session_265_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "measures",
+      "curator-controls"
+     ],
+     "title": "the counselor step becomes a measure, and the last dial gets a control",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-09-15",
      "governs": [],
@@ -17209,5 +17276,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 893
+ "total": 897
 }
