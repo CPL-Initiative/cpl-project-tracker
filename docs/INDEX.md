@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 446 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 448 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 78 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 80 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 47 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 237 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **893** | |
+| Session handoffs | 238 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **896** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-09-15 (S264, SkyMantis)** — the counselor step became a measurable rung and `metric_src` got a control: PRs #1582 (counselor measure + measure picker), #1583 (builder's retired causal story + decision sheet), #1584 (Credit FTES locked as the only allocation basis), #1585 (measure options named by route). Two KB notes: a pipe discards a command's verdict; retiring a behavior means inverting its tests.
 - **2026-09-15 (S263 SkyOrder)** — a column-hide rule reached through the detail row into the nested
   drill-in table and hid one of its columns, on the SHIPPED DEFAULT (#1578); the statewide row now expands
   from the same renderer as a college row and the printed table got its 118 names back (#1577); the

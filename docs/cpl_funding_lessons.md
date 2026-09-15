@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-09-14
+updated: 2026-09-15
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1844,3 +1844,101 @@ Activity as "Eligible Units". So COBI itself carried both readings.
 wrong hypotheses (stale cache, truncated git history, a missing data field) and found the CSS. Mutating
 every new guard to prove it fails on the real defect. Baselining a11y against a `main` worktree before
 reporting. And treating the user's "this was never a problem" as evidence.
+
+---
+
+## 2026-09-15 — S264 (SkyMantis): the counselor step becomes a measure, and the last dial gets a control
+
+**What shipped.** Four PRs: #1582 (the counselor step as a measure + the measure picker), #1583
+(the builder's retired causal story + the decision sheet), #1584 (Credit FTES locked as the only
+allocation basis), #1585 (measure options named by route).
+
+### The defect Sam found by describing his own tab
+
+He said the counselor lifecycle check was on P2. It was — **in the metric text**. The pin was
+`ppa_u`, applied units among portal-origin students, which never reads the counselor field. The
+priority carrying the largest share (34%) promised a condition its measure did not apply, and
+nothing on screen said so, because the diagnostic that compares a metric's rung to its measure's
+rung had no `accepted` branch to compare WITH. Two seams, one missing concept.
+
+⚠️ **I had it backwards first.** I read "I added the counselor lifecycle check to P1" and built an
+entire mockup on P1 before he corrected me. The correction cost a rebuild; the lesson is that his
+FIRST description of a change is a description, and the live config is the fact. I did read the live
+config — and still let his sentence override what it said.
+
+### The control that did not exist
+
+`metric_src` was the last funding dial with no control: share, factor, title, metric text, goals,
+pool figures and strategies were all curator edits; the measure could only be changed by a session
+writing to the shared Supabase row. ⚠️ **The lane file and two handoffs called it "one dial in the
+tab, zero code", so I told Sam twice that the control existed before checking the screen.** That is
+the failure `methodology-verify-an-ask-against-what-the-reader-sees` was written for, committed by
+the session that had just read that note.
+
+**The picker's load-bearing detail is the un-pin.** `firstDefined()` skips null and undefined, so
+clearing a pin by DELETING the key lets a lower override layer's pin resurface — a curator would
+appear to un-pin and silently inherit someone else's measure. Storing `""` is what prevents it, and
+the mutation that deletes instead reds four assertions including the one that catches `ppa_u`
+coming back.
+
+### Sam's resolution beat the one I was about to build
+
+Asked for a measure carrying counselor AND origin, I was going to declare a combined `ppac_u`
+(undeliverable today — `Origin` is not in the feed). He instead **split the elements across two
+priorities**: origin onto P1, the counselor step onto P2. P2's text and measure now match exactly.
+Simpler, buildable today, and it made the S263 "do not build a combined source" caution moot rather
+than needing to be worked around.
+
+### Two verification failures, same shape
+
+⚠️ **A PIPE DISCARDS A COMMAND'S VERDICT.** Twice in one day:
+
+  * `node tests/run.js 2>&1 | grep -E "FAIL|passed"` — the grep swallowed the failing file's NAME
+    and replaced npm's exit code with grep's, so a genuinely red run printed "exited with code 0".
+    I reported the suite green and pushed on it. The unfiltered rerun named the file in seconds.
+  * `python3 kb/_build_dependency_map.py --check 2>&1 | tail -1 && git push` — same mechanism: the
+    exit code became `tail`'s, "dependency map is STALE" printed on screen, and the `&&` chain
+    pushed anyway.
+
+**Rule: never put a gate behind a pipe.** Run it bare, read the exit code, then act. Both were
+caught, but the first cost a cycle and a false report to Sam.
+
+### CI knows things `npm test` does not
+
+`test` went red on #1582 with **`dependency map is STALE`** — not a test failure. My local
+`node tests/run.js` passed 334/334 at the same commit. "Local suite green" and "CI green" were
+never the same claim, and I had been treating them as equivalent. `python3 kb/_build_dependency_map.py --check`
+is now part of the pre-push routine.
+
+### Retiring a behavior means inverting its tests, not deleting them
+
+Locking the allocation basis broke six assertions in `cpl_funding_basis` that PROVED the switch
+worked. Each became an absence guard naming the ruling; Part D's proportional-split maths was
+**retargeted** onto credit+noncredit FTES rather than dropped, and still holds to under $1 — which
+independently confirms the one-pool sizing formula. The suite went 38 → 39 assertions.
+
+⚠️ **And one sweep of mine went too far.** I removed the per-student rate card's "this year's
+metrics are headcount-denominated" as part of the basis removal. `cpl_funding_render` failed,
+correctly: that sentence describes the METRIC, not the basis, and is true on the baked Scenario-2
+path. The guard is now scoped to the basis claim rather than the bare word, because asserting on the
+word would re-break a true sentence on every future run.
+
+### What Sam ruled
+
+  * **The counselor check is on P2, not P1** — and he split origin onto P1 rather than combining.
+  * **"Don't worry about measurable but for the moment stranded funding."** P1 measures 666.5 units
+    against an ~88,000-unit target and 0 of 118 institutions reach it; he accepts that because the
+    origination element is coming. His pin is forward-correct: `ppa_u` is the key the cut lands on.
+  * **"Include batch in P1"** — the dropdown label names three routes though the measure counts two,
+    written for what the measure becomes.
+  * **"Effective" is retired vocabulary** — "we don't use it anymore". Its absence from all three
+    repos is correct, not a gap.
+  * **Eligible is the whole JST by design** — the parse decision from the early military-CPL days,
+    and industry CPL avoids the problem because colleges only adopt an exhibit when they hold a
+    course to articulate with it.
+
+**Patterns that worked.** Measuring before advising, every time — the Headcount removal became
+obvious when it was "69 of 118 awards, largest swing $110,391" rather than "dead policy". Asking the
+model instead of re-deriving. Mutating every new guard. And reading the builder before advising on
+P1 a second time, which is what showed his pin was already right and my advice aimed at the wrong
+horizon.

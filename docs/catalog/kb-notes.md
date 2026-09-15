@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-446 document(s).
+448 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -135,6 +135,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
 | [A percentage must never round up into a claim it cannot support](../kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A phrase sweep misses what a line break splits](../kb-notes/methodology-a-phrase-sweep-misses-what-a-line-break-splits.md) | methodology | published | 2026-08-31 | 2026-08-31 |
+| [A pipe discards a command's verdict](../kb-notes/methodology-a-pipe-discards-a-commands-verdict.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A piped test run reports the pipe's exit, not the suite's](../kb-notes/methodology-a-piped-test-run-reports-the-pipes-exit.md) | methodology | published | 2026-08-30 |  |
 | [A pipeline's exit status is its last command's, so `\| tail` reports success for a failing suite](../kb-notes/methodology-a-pipelines-exit-status-is-its-last-commands.md) | methodology | published | 2026-09-09 | 2026-09-09 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
@@ -338,6 +339,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Resolving the V4 articulation-ripple gate when folding a CER unclassified title](../kb-notes/methodology-cer-fold-articulation-ripple-sync.md) | methodology | published | 2026-06-03 | 2026-06-03 |
 | [Retire a global dial into per-item dials without moving any numbers](../kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md) | methodology | published | 2026-08-04 | 2026-08-04 |
 | [Retire a mode toggle by making both modes coexist](../kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md) | methodology | published | 2026-07-30 | 2026-07-30 |
+| [Retiring a behavior means inverting its tests, not deleting them](../kb-notes/methodology-retiring-a-behavior-means-inverting-its-tests.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [Retiring a structure means rewriting its guard, not deleting it](../kb-notes/methodology-retiring-a-structure-means-rewriting-its-guard.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [Retiring an auto-seeded data layer — check for curator decisions riding on it](../kb-notes/methodology-retiring-an-auto-seeded-layer.md) | methodology | published | 2026-05-30 | 2026-05-30 |
 | [Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches](../kb-notes/methodology-reuse-the-model-not-its-formula.md) | methodology | published | 2026-08-11 | 2026-08-22 |
