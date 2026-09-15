@@ -436,6 +436,9 @@
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
     ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
     ".cplfund-table tbody tr.cplfund-row { cursor: pointer; }",
+    // The statewide row expands too (2026-09-14) — it is not an institution
+    // row, so it takes the affordance without taking .cplfund-row's meaning.
+    ".cplfund-table tbody tr.cplfund-systemrow { cursor: pointer; }",
     // ⚠️ ZEBRA IS PER COLLEGE, NOT PER ROW (Sam, 2026-08-27). This was
     // `tr:nth-child(even)`, which is row parity — and the moment a college can
     // occupy TWO rows, its credit row and its noncredit row land on opposite
@@ -3861,6 +3864,19 @@
     clone.querySelectorAll("textarea[data-edit], textarea[data-textarea]").forEach(function (el) {
       var span = el.ownerDocument.createElement("strong");
       span.textContent = el.value || el.textContent || "";
+      el.parentNode.replaceChild(span, el);
+    });
+    // ⚠️ THE ROW TOGGLE IS A BUTTON WHOSE TEXT IS THE INSTITUTION'S NAME, so the
+    // blanket button sweep below was deleting the name column outright: measured
+    // 2026-09-14 on main, every one of the 118 printed rows had an EMPTY name
+    // cell, and the only labelled row was SYSTEM (statewide) — which read as
+    // fine precisely because it was the one row whose label was not yet a
+    // button. Flatten the caret to its text first, exactly as the editable
+    // textareas above are flattened before the textarea sweep: the NAME is
+    // content, the control around it is chrome, and only the chrome goes.
+    clone.querySelectorAll(".cplfund-caret").forEach(function (el) {
+      var span = el.ownerDocument.createElement("span");
+      span.textContent = el.textContent || "";
       el.parentNode.replaceChild(span, el);
     });
     clone.querySelectorAll("textarea, button, .cplfund-authbar").forEach(function (el) {
@@ -7870,6 +7886,133 @@
       (state.open[id] ? collegeDetailHtml(c, alt) : "");
   }
 
+  // ── the per-priority detail table — ONE renderer, two scopes ──────────────
+  // A college row's expand and the SYSTEM (statewide) row's expand (Sam,
+  // 2026-09-14: "Add the same college detail dropdown at the system level")
+  // are the SAME table, and they are one function on purpose. This repo has
+  // already paid for a statewide surface that disagreed with the per-college
+  // cells by 30x — see actualLineHtml's UNIT AGREEMENT note — and the way that
+  // happens is a second copy drifting from the first. `figures` decides only
+  // WHERE a row's numbers come from; the columns, their formats, their order
+  // and their headers are one definition here.
+  //
+  // ⚠️ THE SCOPE SUPPLIES `earned`; IT IS NEVER DERIVED HERE. Statewide Current
+  // Total is the SUM of what each college earned, which is NOT the statewide
+  // cap times a statewide fraction — a gated college contributes its measure to
+  // the second and $0 to the first, and every college's fraction is capped at
+  // its own 100% before it is summed. Deriving it here would silently pick one.
+  function prioDetailTableHtml(scope) {
+    var rowsHtml = priorities(scope.slot).map(function (p, i) {
+      var f = scope.figures(p, i);
+      var fr = f.fr;
+      var isF = prioIsFtes(p);
+      var act;
+      if (fr.status === "earned") {
+        // ⚠️ THE PERCENT IS THE TRUE RATIO, NOT THE CAPPED ONE (2026-09-14).
+        // This read Math.min(1, actual / target), so Alameda printed
+        // "17.6 FTES &middot; 100%" in the cell beside "Target 8.0 FTES" — two
+        // cells of one row contradicting each other, and the statewide priority
+        // card directly above prints that same ratio UNCAPPED (actualLineHtml),
+        // so the page disagreed with itself as well. The cap belongs to the
+        // MONEY and is already visible in the money: Current Total stops at
+        // Total Possible, and To go reads `target met`.
+        act = (isF ? fmtNum1(fr.actual) + " FTES" : fmtInt(fr.actual) + " stu") + " &middot; " +
+          fmtPctTrim(fr.target > 0 ? fr.actual / fr.target : 0);
+      } else if (fr.status === "none") act = "0 &middot; 0%";
+      else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
+      else if (fr.status === "undelivered") act = "awaiting measurement";
+      else if (fr.status === "bad_src") act = "awaiting a known measure";
+      else act = "awaiting measurement";   // gap / pending — plain absence on the surface (2026-09-01)
+      // TO GO — the distance between where this scope is and where it could be,
+      // which is what Sam asked the detail to say (2026-09-01). Only a MEASURED
+      // state has a distance: a suppressed actual is masked, so its gap would
+      // leak the value by subtraction, and an unmeasured one has no number to
+      // subtract. Both read the plain absence rather than a zero. The funding
+      // beside it is the measure's own remainder, never the gate's — a gated
+      // college's funding is held in reserve, a different fact with its own line.
+      var toGo;
+      if (fr.status === "earned" || fr.status === "none") {
+        var short = Math.max(0, f.target - (fr.status === "earned" ? fr.actual : 0));
+        toGo = short <= 0
+          ? '<span class="dk">target met</span>'
+          : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu") +
+            '<span class="sub">' + earnedMoney(f.remaining) + " remaining</span>";
+      } else toGo = '<span class="dk">&mdash;</span>';
+      return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(f.cr) +
+        "</td><td>" + fmtMoney(f.nc) + "</td><td>" + (isF ? fmtNum1(f.target) + " FTES" : fmtInt(f.target) + " stu") +
+        "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + earnedMoney(f.earned) +
+        // Total Possible defaults to the two shares added up, which is what it
+        // IS for a college. Statewide passes its own, because earnAgg() sums the
+        // whole-award slice and the two lane slices by three different calls and
+        // the priority card above prints that whole-award figure — so deriving
+        // it here would let the expand disagree with the card it opened under.
+        "</td><td>" + fmtMoney(f.totalPossible == null ? f.cr + f.nc : f.totalPossible) + "</td></tr>";
+    }).join("");
+    return '<div class="cplfund-dtl-tscroll" role="region" aria-label="' + esc(scope.label) + '" tabindex="0">' +
+      '<table class="cplfund-dtl-table"><caption class="dk">' + scope.caption + "</caption>" +
+      '<colgroup><col style="width:16%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:15%"><col style="width:14%"><col style="width:11%"><col style="width:10%"></colgroup>' +
+      '<tr><th scope="col">Priority</th>' +
+      '<th scope="col" title="The credit share of this priority&#39;s funding — the credit actuals count toward it.">CR funding</th>' +
+      '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
+      '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
+      '<th scope="col" title="What has been posted against the target so far, and that as a percent of it.">Actual</th>' +
+      '<th scope="col" title="How far this still is from the target, and the funding it would qualify for by closing it.">To go</th>' +
+      '<th scope="col" title="Demonstrated to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
+      '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; remaining funding rolls forward.">Total Possible</th></tr>' +
+      rowsHtml + "</table></div>";
+  }
+
+  // ── the SYSTEM (statewide) row's expand ───────────────────────────────────
+  // Sam, 2026-09-14: "Add the same college detail dropdown at the system level."
+  // SAME table, same renderer, statewide figures — see prioDetailTableHtml for
+  // why these are one function and not two.
+  //
+  // ⚠️ EVERY FIGURE HERE IS A SUM OVER INSTITUTIONS, NOT A STATEWIDE RATIO.
+  // earnAgg() adds each college's own capped earning, so a college at 220% of
+  // its target contributes its cap and no more. The ACTUAL column is the one
+  // exception and is deliberately the statewide measure over the statewide
+  // target — the same pair the priority card above prints (actualLineHtml), so
+  // the expand and the card agree by construction rather than by coincidence.
+  function systemDetailHtml() {
+    var slot = state.viewSlot;
+    var agg = earnAgg();
+    var prio;
+    if (slotIsCarryover(slot)) {
+      prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
+        "&mdash; the whole window is placed in Year 1 and counts against the Year-1 targets; remaining funding rolls forward.</span></div>";
+    } else {
+      prio = prioDetailTableHtml({
+        slot: slot,
+        label: "Statewide priority funding detail",
+        caption: "Where the system stands on each priority &mdash; the target, what institutions have posted so far, " +
+          "and what remains. Current Total: " + earnedMoney(agg.winEarned) +
+          (agg.winHeld > 0.5
+            ? " &middot; " + earnedMoney(agg.winHeld) + " held in reserve at " + fmtInt(agg.gatedN) +
+              (agg.gatedN === 1 ? " institution" : " institutions") + " until baseline participation is met"
+            : "") +
+          " &middot; Total Possible: " + fmtMoney(agg.winCap) + " &mdash; every institution's max award added up",
+        figures: function (p, i) {
+          var pp = agg.perPrio[i] || { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0 };
+          var crEarned = pp.earned - (pp.ncEarned || 0);
+          return {
+            cr: pp.crCap, nc: pp.ncCap, fr: earnFraction(null, p),
+            target: prioTarget(null, p),
+            earned: pp.earned,
+            totalPossible: pp.cap,
+            remaining: Math.max(0, pp.crCap - crEarned)
+          };
+        }
+      });
+    }
+    return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
+      '<div class="cplfund-detail-grid">' +
+      '<div><span class="dk">' + (usesFtes() ? "FTES:" : "Headcount:") + "</span> " +
+      fmtInt(totalSize()) + " statewide " + basisLabel() + " across " +
+      fmtInt(oneRoster().length) + " institutions</div>" +
+      prio +
+      "</div></td></tr>";
+  }
+
   function collegeDetailHtml(c, alt) {
     var m = allocModel();
     var slot = state.viewSlot;
@@ -7893,62 +8036,31 @@
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
         "&mdash; the whole window is placed in Year 1 and counts against the Year-1 targets; remaining funding rolls forward.</span></div>";
     } else {
-      var rowsHtml = priorities(slot).map(function (p, i) {
-        var crM = c[p.key] || 0;
-        var ncM = c["nc_" + p.key] || 0;
-        var fr = earnFraction(c, p);
-        var target = c[p.key + "_heads"] || 0;
-        var isF = prioIsFtes(p);
-        var earnedP = c.gate_blocked ? 0 : crM * fr.f;
-        var act;
-        if (fr.status === "earned") {
-          act = (isF ? fmtNum1(fr.actual) + " FTES" : fmtInt(fr.actual) + " stu") + " &middot; " +
-            fmtPctTrim(Math.min(1, fr.target > 0 ? fr.actual / fr.target : 0));
-        } else if (fr.status === "none") act = "0 &middot; 0%";
-        else if (fr.status === "suppressed") act = maskLt(true) + " (privacy)";
-        else if (fr.status === "undelivered") act = "awaiting measurement";
-        else if (fr.status === "bad_src") act = "awaiting a known measure";
-        else act = "awaiting measurement";   // gap / pending — plain absence on the surface (2026-09-01)
-        // TO GO — the distance between where this college is and where it could
-        // be, which is what Sam asked the detail to say (2026-09-01). Only a
-        // MEASURED state has a distance: a suppressed actual is masked, so its
-        // gap would leak the value by subtraction, and an unmeasured one has no
-        // number to subtract. Both read the plain absence rather than a zero.
-        // The dollars beside it are the measure's own remainder (crM × (1 − f)),
-        // never the gate's — a gated college's funding is held in reserve, which
-        // is a different fact and already has its own line.
-        var toGo;
-        if (fr.status === "earned" || fr.status === "none") {
-          var short = Math.max(0, target - (fr.status === "earned" ? fr.actual : 0));
-          toGo = short <= 0
-            ? '<span class="dk">target met</span>'
-            : (isF ? fmtNum1(short) + " FTES" : fmtInt(short) + " stu") +
-              '<span class="sub">' + earnedMoney(crM * (1 - fr.f)) + " remaining</span>";
-        } else toGo = '<span class="dk">&mdash;</span>';
-        return "<tr><td>" + esc(p.label) + (p.title ? " " + esc(p.title) : "") + "</td><td>" + fmtMoney(crM) +
-          "</td><td>" + fmtMoney(ncM) + "</td><td>" + (isF ? fmtNum1(target) + " FTES" : fmtInt(target) + " stu") +
-          "</td><td>" + act + "</td><td>" + toGo + "</td><td>" + earnedMoney(earnedP) +
-          "</td><td>" + fmtMoney(crM + ncM) + "</td></tr>";
-      }).join("");
-      prio = '<div class="cplfund-dtl-tscroll" role="region" aria-label="Priority funding detail" tabindex="0">' +
-        '<table class="cplfund-dtl-table"><caption class="dk">' +
-        "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
-        "remains. Current Total: " + earnedMoney(c.earned_total || 0) +
-        (c.gate_blocked
-          ? " &middot; " + (c.earned_withheld > 0.5 ? earnedMoney(c.earned_withheld) + " held in reserve" : "funding held in reserve") +
-            " until baseline participation is met"
-          : "") +
-        " &middot; Total Possible: " + fmtMoney(c.total || 0) + " &mdash; its max award</caption>" +
-        '<colgroup><col style="width:16%"><col style="width:11%"><col style="width:11%"><col style="width:12%"><col style="width:15%"><col style="width:14%"><col style="width:11%"><col style="width:10%"></colgroup>' +
-        '<tr><th scope="col">Priority</th>' +
-        '<th scope="col" title="The credit share of this priority&#39;s funding — the credit actuals count toward it.">CR funding</th>' +
-        '<th scope="col" title="The noncredit share of this priority&#39;s funding — restricted to the noncredit measures.">NC funding</th>' +
-        '<th scope="col" title="What the credit share funds at the priority&#39;s price.">Target</th>' +
-        '<th scope="col" title="What this college has posted against the target so far, and that as a percent of it.">Actual</th>' +
-        '<th scope="col" title="How far this college still is from the target, and the funding it would qualify for by closing it.">To go</th>' +
-        '<th scope="col" title="Demonstrated to date — actual ÷ target, capped at 100%, applied to the credit funding.">Current Total</th>' +
-        '<th scope="col" title="This priority&#39;s full funding — credit and noncredit shares together; remaining funding rolls forward.">Total Possible</th></tr>' +
-        rowsHtml + "</table></div>" +
+      prio = prioDetailTableHtml({
+        slot: slot,
+        label: "Priority funding detail",
+        caption: "Where this college stands on each priority &mdash; its target, what it has posted so far, and what " +
+          "remains. Current Total: " + earnedMoney(c.earned_total || 0) +
+          (c.gate_blocked
+            ? " &middot; " + (c.earned_withheld > 0.5 ? earnedMoney(c.earned_withheld) + " held in reserve" : "funding held in reserve") +
+              " until baseline participation is met"
+            : "") +
+          " &middot; Total Possible: " + fmtMoney(c.total || 0) + " &mdash; its max award",
+        figures: function (p) {
+          var crM = c[p.key] || 0;
+          var ncM = c["nc_" + p.key] || 0;
+          var fr = earnFraction(c, p);
+          return {
+            cr: crM, nc: ncM, fr: fr,
+            target: c[p.key + "_heads"] || 0,
+            // The gate holds the FUNDING, never the measurement: a blocked
+            // college still shows what it posted, and its Current Total reads
+            // $0 with the reserve named in the caption above.
+            earned: c.gate_blocked ? 0 : crM * fr.f,
+            remaining: crM * (1 - fr.f)
+          };
+        }
+      }) +
         (c.nc_award > 0.5
           ? '<div class="dk">Noncredit share of this award: ' + fmtMoney(c.nc_award) + " (" + fmtNum1(c.nc_ftes) +
             " noncredit FTES) &mdash; the noncredit measures count toward it, and it is kept on its own line, so the " +
@@ -8127,8 +8239,22 @@
       earned_cr: sys.earned_cr, earned_nc: sys.earned_nc,
       earned_total: sys.earned_total, earned_measured: sys.earned_measured,
       earned_advance: sys.earned_advance, earned_withheld: sys.earned_withheld };
-    var foot = '<tr class="cplfund-systemrow">' +
-      '<td></td><td class="t">SYSTEM (statewide)</td>' +
+    // The statewide row EXPANDS like an institution row (Sam, 2026-09-14), and
+    // the NAME is the toggle here too — every control is a word.
+    //
+    // ⚠️ IT DOES NOT BORROW .cplfund-row, though that is the obvious way to
+    // reach the existing toggle handler. That class is an API: eleven selectors
+    // and several suites read it as "an INSTITUTION row", so joining it made the
+    // statewide row an institution — "all 118 institutions render up front"
+    // counted 119, and the row-legibility suite found a bold cell in a row that
+    // may not have one. Nine suites went red on one class name. The toggle is
+    // keyed on data-id instead, which is already exactly the set of expandable
+    // rows (group headers and detail rows carry none).
+    // See cpl_memory: a-styling-class-is-an-api.
+    var sysOpen = !!state.open["sys"];
+    var foot = '<tr class="cplfund-systemrow" data-id="sys">' +
+      '<td></td><td class="t"><button type="button" class="cplfund-caret" aria-expanded="' +
+      (sysOpen ? "true" : "false") + '" aria-label="Statewide totals, per-priority detail">SYSTEM (statewide)</button></td>' +
       '<td class="t">' + esc(base().system.district || "") + "</td>" +
       '<td class="c" title="Statewide credit FTES — Σ of every institution row.">' + fmtInt(sys.cr_ftes) + "</td>" +
       '<td class="c" title="Statewide noncredit FTES — Σ of every institution row (Mt. SAC Noncredit counted once, on the Mt. San Antonio row; Calbright at its stand-in size).">' +
@@ -8136,7 +8262,8 @@
       '<td class="c" title="institutions satisfying ALL tracked baseline requirements (fully-green glyph)">' +
       (ELIG.coordOk ? eligAllMetCount() + "/" + oneRoster().length : "—") + "</td>" +
       crAwardCellHtml(sysRow) + ncAwardCellHtml(sysRow) +
-      "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
+      "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>" +
+      (sysOpen ? systemDetailHtml() : "");
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
     // sorted rows and is not itself a sortable/clickable .cplfund-row.
@@ -9358,7 +9485,12 @@
     });
     // Row toggle: mouse click anywhere on the row; keyboard via the caret <button>
     // (its native Enter/Space fires a click that bubbles here).
-    holder.querySelectorAll("tr.cplfund-row").forEach(function (tr) {
+    //
+    // KEYED ON data-id, NOT ON .cplfund-row (2026-09-14): data-id is precisely
+    // the set of expandable rows — every institution row plus the statewide
+    // row — while .cplfund-row carries the separate meaning "is an institution",
+    // which the statewide row is not. One handler, still; no class borrowed.
+    holder.querySelectorAll("tbody tr[data-id]").forEach(function (tr) {
       tr.addEventListener("click", function () {
         var id = tr.getAttribute("data-id");
         if (state.open[id]) delete state.open[id];
