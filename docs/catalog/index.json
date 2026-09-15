@@ -10953,7 +10953,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 80,
+   "count": 81,
    "docs": [
     {
      "created": "2026-05-30",
@@ -11472,6 +11472,22 @@
      "title": "Dashboard card metrics \u2014 consistency recommendations (Sam's recommend list)",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-09-15",
+     "governs": [],
+     "path": "docs/map_eligible_label_note_draft.md",
+     "status": "internal",
+     "tags": [
+      "map",
+      "terminology",
+      "funding",
+      "draft",
+      "outward"
+     ],
+     "title": "Draft note to MAP \u2014 the word \"Eligible\" on the CPL Dashboard",
+     "type": null,
+     "updated": "2026-09-15"
     },
     {
      "created": "",
@@ -17260,5 +17276,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 896
+ "total": 897
 }

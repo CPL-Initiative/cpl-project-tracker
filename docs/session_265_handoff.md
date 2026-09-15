@@ -59,10 +59,21 @@ Read in order:
 ## NEEDS SAM
 
 The [2026-09-15 decision sheet](visuals/2026-09-15-counselor-measure-and-carried-dials.html) has
-seven items; he answered **1** (edit) and **4** (yes). ⚠️ **Items 2, 3, 5, 6, 7 have NO reply
-document, which is NOT a silent yes** — read them with `read_db` on collection `replies` before
-acting: trim P1's origin clause · pin P1 explicitly · ask Pedro for per-CPL-type unit portions ·
-raise the MAP Dashboard "Eligible" label · merge or close CPLBrain PR #148.
+seven items and **all seven are answered** — executed 2026-09-15 after Sam asked whether a new
+sheet existed. ⚠️ **S264 reported five of them unanswered and was WRONG**: it read the `replies`
+collection BEFORE he wrote items 2, 3, 5, 6 and 7 (timestamps 20:02–20:03Z) and never re-read.
+**Re-read a sheet's store at execution time, not once at the top of the run** — the store is live
+and he answers while the session works.
+
+| # | Verdict | State |
+|---|---|---|
+| 1 | edit | Drove the route-named picker labels (#1585). Done. |
+| 2 | yes | Trim P2's metric text to *"Applied CPL units (FTES) for students with Counselor checked"*. ⚠️ **NOT the P1 clause** — S264's lane text said P1 and that was wrong. **OPEN**: Supabase was in scheduled maintenance until 21:45Z, so the live text was never verified. **Read `cpl_funding_config` first — he may have trimmed it himself when he adjusted P1 and P2.** If it still carries the origin clause, hand him the sentence; the metric text is a live dial and a session does not write it by SQL. |
+| 3 | edit (*"see screenshot and chat"*) | Resolved to `ppa_u`, NOT the `pa_u` the sheet proposed. He set it. Done. |
+| 4 | yes | Headcount basis removed; `allocationBasis()` locked to `ftes`. Done. |
+| 5 | yes | Per-CPL-type unit portion added to the standing Pedro request (lane NEXT ⓪). Done. |
+| 6 | yes | Note drafted: [`docs/map_eligible_label_note_draft.md`](map_eligible_label_note_draft.md). **Sam sends it, a session never does** — and re-measure the reconciliation before he does, because the numbers ARE the argument. |
+| 7 | yes | CPLBrain PR #148 merged (`9bd12af`). Done. |
 
 ## Queue
 

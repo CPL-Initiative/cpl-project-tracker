@@ -2,13 +2,13 @@
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 9 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
  "_as_of": "2026-09-15",
  "_session": 264,
- "_status": "The counselor lifecycle check is now something the funding model can measure, and the measure itself finally has a control on the priority card — it was the last funding dial that only a session could change. Sam set both live dials himself: Priority 1 measures applied CPL by origin, Priority 2 measures applied CPL where the Counselor step is checked, and Priority 2's wording and its number now say the same thing. The Headcount allocation basis is gone: it had been ruled dead but the control survived, and flipping it moved 69 of 118 awards. Priority 1 counts very little today because the origination data is still being added; that is expected and accepted. Five items on the 15 September decision sheet are still unanswered.",
+ "_status": "The counselor lifecycle check is now something the funding model can measure, and the measure itself finally has a control on the priority card — it was the last funding dial that only a session could change. Sam set both live dials himself: Priority 1 measures applied CPL by origin, Priority 2 measures applied CPL where the Counselor step is checked, and Priority 2's wording and its number now say the same thing. The Headcount allocation basis is gone: it had been ruled dead but the control survived, and flipping it moved 69 of 118 awards. Priority 1 counts very little today because the origination data is still being added; that is expected and accepted. All seven items on the 15 September decision sheet are answered and six are carried out; the one left is shortening Priority 2's wording, which could not be checked while the database was in scheduled maintenance.",
  "items": [
   {
    "id": "s264-sam-sheet-remaining",
    "for": "Sam",
    "tab": "implementation-funding",
-   "text": "Five items on the 15 September decision sheet have no reply yet: trim Priority 1's origin wording so the sentence matches what it counts; pin Priority 1's measure so a later rewording cannot move it; ask MAP for a per-CPL-type unit breakdown (we can say military is 63% of eligible students but not how the units split); raise the MAP Dashboard's Eligible label, which actually shows applied credit; and merge or close the vault note capturing your account of why Eligible counts the whole JST."
+   "text": "Two things from the 15 September decision sheet are yours. Priority 2's wording still asks for an origin condition the measure does not apply — shortening it to \"Applied CPL units (FTES) for students with Counselor checked\" is one edit on the card, and you may already have made it. And a note to MAP about the Dashboard's \"Eligible\" label, which actually shows applied credit, is drafted and waiting for you to send: docs/map_eligible_label_note_draft.md."
   },
   {
    "id": "s264-sam-origination-owner",
