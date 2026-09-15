@@ -1655,10 +1655,20 @@
   //
   // CREDIT FTES specifically: CPL awards credit, and the noncredit feeders have
   // their own carve-out — using total FTES would fund that population twice.
-  function allocationBasis() {
-    var v = firstDefined(SCENARIO.allocationBasis, SHARED.allocationBasis, base().allocation_basis);
-    return v === "headcount" ? "headcount" : "ftes";
-  }
+  // ⚠️ CREDIT FTES IS THE ONLY BASIS (Sam, 2026-09-15, decision sheet item 4:
+  // "we do not use student headcount for any metrics in this tab"). The stored
+  // value is READ NO LONGER — a config carrying allocationBasis:"headcount" is
+  // inert rather than silently re-sizing the allocation, which is the whole
+  // point of closing this: measured on the live config the day it was removed,
+  // flipping the basis moved 69 of 118 awards, the largest single change
+  // $110,391 (Saddleback $224,394 -> $334,785). A ruling the code does not
+  // enforce is one misclick from being undone.
+  //
+  // The headcount BRANCHES below (usesFtes() false) are now unreachable and are
+  // left in place deliberately: removing them is a wide, separate diff, and a
+  // dead branch that cannot be entered is safer than a half-finished sweep.
+  // Headcount stays on screen as CONTEXT, which it always was.
+  function allocationBasis() { return "ftes"; }
   function usesFtes() { return allocationBasis() === "ftes"; }
   function basisLabel() { return usesFtes() ? "credit + noncredit FTES" : "headcount"; }
   // An institution's size under ONE POOL (Sam, adopted 2026-08-31): its
@@ -1762,10 +1772,9 @@
         " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
         " (" + ftesVintage() + "), context only.";
   }
-  function setAllocationBasis(v) {
-    activeOverride().allocationBasis = v === "headcount" ? "headcount" : "ftes";
-    persistActive();
-  }
+  // setAllocationBasis() is GONE with its control (2026-09-15). A writer with no
+  // reader is an invitation: allocationBasis() is a constant now, so anything
+  // this wrote would be stored and ignored, which is worse than not offering it.
 
   function prioField(slot, idx, field) {
     slot = prioSlot(slot); idx = srcIdx(slot, idx);
@@ -4265,10 +4274,7 @@
         "each year&rsquo;s outcomes count toward that year&rsquo;s tranche." + reprio;
     return '<div class="cplfund-years">' + selects +
       (publicMode() ? "" :
-        '<label>Allocation basis ' + segHtml("cplFundAllocBasis", [
-          { val: "ftes", label: "Credit FTES" },
-          { val: "headcount", label: "Headcount" }
-        ], allocationBasis()) + "</label>") +
+        "") +
       // Sam, 2026-08-28: "Disbursement / Even tranches / Front-load Year 1" was
       // jargon on all three halves. What the choice actually is: does a college
       // get its money one year at a time, or the whole window at once. The
@@ -8766,7 +8772,7 @@
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
     cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
-    cplFundDisb: "Disbursement timing", cplFundAllocBasis: "Allocation basis",
+    cplFundDisb: "Disbursement timing",
     cplFundDocType: "Document type"
   };
   function segHtml(id, items, current) {
@@ -9981,12 +9987,10 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
-    // The Lane seg control is retired (R1, 2026-08-31).
-    wireSeg("cplFundAllocBasis", function (v) {
-      if (v === allocationBasis()) return;
-      savingState = "";
-      setAllocationBasis(v);
-    });
+    // The Lane seg control is retired (R1, 2026-08-31); the Allocation basis
+    // control with it (2026-09-15) — its writer would have nothing to write to
+    // now that allocationBasis() is a constant, and leaving a live handler for
+    // a removed control is how a retired dial comes back.
     wireSeg("cplFundDisb", function (v) {
       if (v === disbursement()) return;
       savingState = "";
