@@ -97,6 +97,13 @@ const wantsUnits = (function () {
   const m = consumerSrc.match(/function wantsUnits\(m\) \{[\s\S]*?\n  \}/);
   return eval("(" + m[0].replace(/^function wantsUnits/, "function") + ")");
 })();
+// The counselor-step predicate, rebuilt the same way and for the same reason:
+// MEASURES's first entry calls it, so a copy here would be a second reader of
+// the one fact metricMilestone() also reads (added 2026-09-15).
+const saysCounselorAccepted = (function () {
+  const m = consumerSrc.match(/function saysCounselorAccepted\(m\) \{[\s\S]*?\n  \}/);
+  return eval("(" + m[0].replace(/^function saysCounselorAccepted/, "function") + ")");
+})();
 const MEASURES = (function () {
   const start = consumerSrc.indexOf("var MEASURES = [");
   const end = consumerSrc.indexOf("];", start) + 2;

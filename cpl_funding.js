@@ -6407,12 +6407,58 @@
   function wantsUnits(m) {
     return !has(m, "headcount") && (has(m, "ftes") || has(m, "unit"));
   }
+  // THE COUNSELOR STEP, READ FROM PROSE (2026-09-15, Sam's P2 correction).
+  //
+  // ⚠️ ONE PREDICATE, TWO READERS. measurability() picks the MEASURE and
+  // metricMilestone() picks the RUNG the diagnostic compares against, and they
+  // have to agree about what "counselor" in a metric means or the check fires on
+  // its own disagreement. This repo has already paid for two readers of one fact
+  // (the alias chain, copy-pasted and drifted to 7 maps against 15). So the test
+  // lives HERE, once, and both call it.
+  //
+  // Sam ruled the step is named for the CREDIT's state, not for who clicked it —
+  // the student, the counselor, the coordinator or an initiator may all check it
+  // — so the prose colleges actually write ("with Counselor checked", "counselor
+  // verified", "an accepted CPL Plan") all have to land on the same rung.
+  function saysCounselorAccepted(m) {
+    return has(m, "counselor") || has(m, "counseling") ||
+           has(m, "accepted plan") || has(m, "plan accepted") || has(m, "accepted cpl plan");
+  }
   var MEASURES = [
     // ── UNIT/FTES measures ────────────────────────────────────────────────
     // Sam moved the priorities to FTES (2026-07-31). Each entry carries an
     // explicit `unit` so the diagnostic can catch a metric whose text asks for
     // FTES but whose measure returns students — the exact mis-wire his three new
     // strings hit, which nothing detected because both sides were "measurable".
+    //
+    // THE COUNSELOR ENTRY SITS FIRST, AHEAD OF PORTAL AND APPLIED, and the order
+    // is the whole content of the rule. Sam's live P2 names THREE things at once
+    // — "Applied CPL units (FTES) for students with Counselor checked and
+    // originating from either CPL Portal, College CPL Landing Page, or batch
+    // upload" — so without this entry the text resolves to `pp_u` (portal-origin
+    // TRANSCRIBED units, 25.0 statewide across 3 colleges) on the portal clause
+    // alone, and the counselor clause it leads with reaches nothing.
+    //
+    // ⚠️ WHY COUNSELOR WINS OVER THE ORIGIN CLAUSE, measured 2026-09-15 on the
+    // published artifact: the counselor cut carries 24,804 units across 23
+    // college rows; portal origin carries 666.5. A metric naming BOTH can only
+    // be honored on one of them today, because no measure cuts the counselor
+    // step BY origin — and the clause with the data is the one that makes the
+    // priority measurable at all. `pac_u` also spans both cohorts, which is what
+    // lets it honor the "batch upload" route Sam's text names and `ppa_u`
+    // (Potential Student = Yes) excludes entirely.
+    //
+    // ⚠️ THIS ENTRY IS THE UNPINNED SAFETY NET, NOT THE LIVE PATH. P2 carries an
+    // explicit `metric_src`, and a pin always wins in measureOf(). The entry
+    // exists because a metric naming the counselor with NO pin previously fell
+    // through every rule to `{}` — a data gap, which pays every college its FULL
+    // cap. Measured on the live config: clearing P2's pin against the text
+    // "Counselor-accepted CPL Units (FTES)" paid Norco its whole $51,699 share
+    // with nothing measured behind it. See
+    // docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md.
+    { test: function (m) { return wantsUnits(m) && saysCounselorAccepted(m); },
+      src: "pac_u", unit: "units",
+      basis: "units of APPLIED CPL on counselor-accepted Student CPL Plans" },
     { test: function (m) { return wantsUnits(m) && (has(m, "portal") || has(m, "landing page")); },
       src: "pp_u", unit: "units",
       basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
@@ -6463,6 +6509,16 @@
       src: "p3_u", unit: "units",
       basis: "units of transcribed CPL, per MAP" },
     // ── HEADCOUNT measures (unchanged) ────────────────────────────────────
+    // The counselor step's headcount twin, first for the same reason its unit
+    // entry is first. `pac` is already in the registry and the feed, so leaving
+    // this one out would close the full-advance path on the FTES axis and leave
+    // it open on the headcount axis — the asymmetry is the bug, not the saving.
+    // (Headcount metrics are dead policy per Sam, 2026-09-15: "we do not use
+    // student headcount for any metrics in this tab." This entry exists so a
+    // metric nobody should write cannot pay a full cap if somebody writes it.)
+    { test: function (m) { return saysCounselorAccepted(m); },
+      src: "pac", unit: "students",
+      basis: "students whose CPL Plan a counselor accepted (the MAP Counselor lifecycle step)" },
     // Origin (CPL Student Portal / CPL Landing Page). The daily builder counts
     // portal-origin transcribed students (Potential Student = Yes, Test Student
     // ≠ Yes) into `pp` — a normal achievement-based metric (Sam, 2026-07-27):
@@ -6707,6 +6763,15 @@
     // Order matters and mirrors MEASURES: a metric naming two rungs is scored on
     // the one MEASURES would pick, so the check compares like with like rather
     // than inventing a second precedence nobody else follows.
+    //
+    // ACCEPTED SITS FIRST, mirroring the counselor entry's position in MEASURES.
+    // Sam's live P2 reads "Applied CPL units (FTES) for students with Counselor
+    // checked and …", so it names the applied rung and the accepted rung in one
+    // sentence; without this branch the check reads "applied" off the prose,
+    // compares it to `pac_u`'s "accepted", and reports a milestone mismatch
+    // against a pin that is exactly right. A diagnostic that fires on the
+    // correct configuration trains its reader to ignore it.
+    if (saysCounselorAccepted(m)) return "accepted";
     if (has(m, "applied")) return "applied";
     if (has(m, "eligible")) return "eligible";
     if (has(m, "transcribed")) return "transcribed";
