@@ -90,11 +90,16 @@ function awardsWith(basis) {
   const txt = doc.getElementById("cplFundingMount").textContent.replace(/\s+/g, " ");
   check("4a: headcount still appears somewhere as context",
     /[Hh]eadcount/.test(txt));
-  // ⚠️ The claim that had to go: the metrics are NOT headcount-denominated, and
-  // a sentence saying so outlived the ruling that made it false.
-  check("4b: nothing claims the metrics are headcount-denominated",
-    !/headcount-denominated/.test(txt) && !/headcount-denominated/.test(consumerSrc));
-  check("4c: the basis the page names is the FTES one",
+  // ⚠️ SCOPED TO THE BASIS, NOT TO THE WORD. I first swept the per-student rate
+  // card's "this year's metrics are headcount-denominated" as part of this item
+  // and cpl_funding_render caught it: that sentence describes the METRIC on the
+  // baked Scenario-2 path, where a headcount metric genuinely does denominate
+  // that card, and it has nothing to do with the allocation basis. Sam's item 4
+  // retired the BASIS. Asserting on the bare word would have re-broken a true
+  // sentence on every future run.
+  check("4b: nothing names headcount as the ALLOCATION BASIS",
+    !/allocation basis is headcount/i.test(txt) && !/basis.{0,20}headcount/i.test(txt));
+  check("4c: the basis in force reads as the FTES one wherever it is named",
     !/allocation basis is headcount/i.test(txt));
 }
 

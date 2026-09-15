@@ -7214,7 +7214,7 @@
     } else {
       out.push(card({ v: fmtRate(perStudent()),
         l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) +
-          " headcount (informational &mdash; headcount is context, never the basis)" }));
+          " headcount (informational; this year&#39;s metrics are headcount-denominated)" }));
     }
     return out.length ? '<div class="cplfund-cards cplfund-context">' + out.join("") + "</div>" : "";
   }

@@ -148,23 +148,33 @@ check("sizePct is COMPUTED, never read from a baked percentage",
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part D — the headcount basis still reduces to the proportional split
+// Part D — the basis reduces to the proportional split
 // ─────────────────────────────────────────────────────────────────────────────
-// The regression guard: swapping the DEFAULT must not change what the headcount
-// basis computes. An unbound institution's share should equal its headcount
-// share of the unbound remainder — the historical formula, now over the
-// ONE-POOL roster (the noncredit-only three are sized by their own headcounts
-// on this basis; one-pool adoption 2026-08-31).
+// An unbound institution's share should equal its SIZE share of the unbound
+// remainder, over the ONE-POOL roster (one-pool adoption 2026-08-31).
+//
+// ⚠️ RETARGETED 2026-09-15 ONTO CREDIT+NONCREDIT FTES. This part used to prove
+// the property on the HEADCOUNT basis, which Sam retired that day (decision
+// sheet item 4) — allocationBasis() is a constant now and a stored headcount
+// value is inert, so the old form was asserting a computation nothing can
+// reach. The PROPERTY is what mattered and it is kept; only the size it is
+// proven against moved to the one basis that survives. Part E holds the
+// absence guard for the retired switch.
 {
   const { window } = freshDom();
   boot(window);
   const T = window.CPL_FUNDING_TAB;
-  T._setScenario({ allocationBasis: "headcount" });
   T.render();
   const m = T._model();
+  // The one-pool size: an institution's COMBINED teaching (credit FTES + annual
+  // noncredit FTES); the noncredit-only rows are sized by their own NC FTES.
   const hcOf = {};
-  D.colleges.forEach(function (c) { hcOf[c.college] = c.headcount; });
-  D.feeders.forEach(function (f) { if (!f.nc_ftes_on_credit_row) hcOf[f.short] = f.headcount; });
+  D.colleges.forEach(function (c) {
+    hcOf[c.college] = (Number(c.credit_ftes) || 0) + (Number(c.noncredit_ftes) || 0);
+  });
+  D.feeders.forEach(function (f) {
+    if (!f.nc_ftes_on_credit_row) hcOf[f.short] = Number(f.noncredit_ftes) || 0;
+  });
   // UNBOUND = neither brought up to the base nor held at the cap. Sam's
   // $400K maximum (2026-08-22) added the second way to be bound; a capped
   // institution's share is its ceiling, not its headcount share, exactly as a
@@ -178,8 +188,8 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     const expect = hcOf[n] / baseHc * remaining;
     return Math.max(mx, Math.abs((m.W[n] || 0) - expect));
   }, 0);
-  check("headcount basis reproduces the proportional split over the roster (max err < $1)", worst < 1);
-  check("headcount basis: every bound institution sits exactly on its bound (base or cap)",
+  check("the basis reduces to the proportional split over the roster (max err < $1)", worst < 1);
+  check("every bound institution sits exactly on its bound (base or cap)",
     ROSTER.filter(function (n) { return m.floored[n] || m.capped[n]; })
       .every(function (n) {
         const total = T._alloc(n).total;
@@ -190,7 +200,19 @@ check("sizePct is COMPUTED, never read from a baked percentage",
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part E — the switch does what the measurement said it would
+// Part E — the switch is RETIRED, and a stored basis moves nothing
+// ─────────────────────────────────────────────────────────────────────────────
+// ⚠️ THIS PART USED TO PROVE THE SWITCH WORKED. Sam retired the headcount basis
+// on 2026-09-15 (decision sheet item 4: "we do not use student headcount for any
+// metrics in this tab"), so what has to be proven is the opposite — and proven
+// HERE, in the file named for the basis, not only in the lock's own suite.
+//
+// The measurement that made the removal worth doing, taken the same day on the
+// live config: flipping the basis moved 69 of 118 awards, the largest single
+// change $110,391 (Saddleback $224,394 -> $334,785). The risk was never the
+// control alone but the STORED value behind it — allocationBasis() read the
+// scenario, then the shared layer, then the bake, so deleting the control would
+// have left a saved "headcount" silently re-sizing the allocation.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -206,13 +228,14 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   const hc = get("headcount"), ft = get("ftes");
   const moved = Object.keys(hc).reduce(function (s, k) { return s + Math.abs(ft[k] - hc[k]); }, 0) / 2;
   const pool = Object.keys(hc).reduce(function (s, k) { return s + hc[k]; }, 0);
-  // Measured at ~11.8% of the pool. Pin a band: a switch that moves almost
-  // nothing means the seam isn't wired; one that moves most of the pool means
-  // something is wrong with the data.
-  check("the basis switch moves a material but bounded share of the pool (2%-25%)",
-    moved / pool > 0.02 && moved / pool < 0.25);
-  check("Pasadena — the clearest headcount defect — gains under FTES",
-    ft["Pasadena"] > hc["Pasadena"]);
+  // The inversion of the old guard: this used to require the switch to move
+  // 2%-25% of the pool. It must now move NOTHING.
+  check("a stored allocationBasis \"headcount\" moves not one dollar — the basis is locked",
+    moved === 0);
+  check("...and every institution reads identically on both stored values",
+    Object.keys(hc).every(function (k) { return hc[k] === ft[k]; }));
+  check("Pasadena — once the clearest headcount defect — is unaffected either way",
+    ft["Pasadena"] === hc["Pasadena"] && ft["Pasadena"] > 0);
   check("the two bases still distribute the SAME total",
     near(Object.values(ft).reduce(function (s, x) { return s + x; }, 0), pool, 5));
 }
@@ -246,7 +269,13 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   const T = window.CPL_FUNDING_TAB;
   T._setScenario({ allocationBasis: "ftes" });
   T.render();
-  check("a curator-visible control selects the basis", !!doc.querySelector("#cplFundAllocBasis"));
+  // ⚠️ INVERTED 2026-09-15. There is no basis control any more: Credit FTES is
+  // the only basis, so a control offering a choice would offer a choice that
+  // does not exist. The page still NAMES the basis in force (below) — retiring
+  // the dial is not the same as making the basis invisible, which is what this
+  // part is for.
+  check("no curator control offers a basis choice — there is only one basis",
+    !doc.querySelector("#cplFundAllocBasis"));
   // ⚠️ Assert the CONTRACT, not Sam's current wording — a pinned label string
   // goes red on a routine rename. Under ONE POOL (2026-08-31) the single
   // basis-flipping size column is RETIRED: the table carries the CR FTES / NC
@@ -268,14 +297,18 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     /allocation basis/.test(cell.getAttribute("title")) &&
     /context only/.test(cell.getAttribute("title")));
 
+  // A stored headcount value must not change one word of what the page says the
+  // basis is — the display half of the lock. Before 2026-09-15 both of these
+  // flipped; that they no longer do is the assertion.
   T._setScenario({ allocationBasis: "headcount" });
   T.render();
-  const hcCell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td[title*='headcount']");
-  check("the size hover flips with the basis — headcount named as the basis, FTES demoted to context",
-    !!hcCell && /the allocation basis/.test(hcCell.getAttribute("title")) &&
-    /Credit FTES:.*context only/.test(hcCell.getAttribute("title")));
-  check("the explainer follows the basis too",
-    /headcount share/.test(doc.body.textContent));
+  const hcCell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td[title*='credit FTES']");
+  check("the size hover does NOT flip — FTES is still named as the basis in force",
+    !!hcCell && /allocation basis/.test(hcCell.getAttribute("title")) &&
+    /context only/.test(hcCell.getAttribute("title")));
+  check("the explainer does not follow a stored basis either",
+    !/headcount share/.test(doc.body.textContent) &&
+    /credit \+ noncredit FTES share/.test(doc.body.textContent));
   // Public readers get the numbers, not the modelling control.
   const pub = freshDom();
   pub.window.CPL_FUNDING_PUBLIC = true;
