@@ -85,6 +85,14 @@
   const example = (unbound[0] || rows[0])[0];
   const prios = T._prios(example, "1").map(function (p) {
     return { label: p.label, title: p.title || "", metric: p.metric, share: p.share,
+             // THE MODEL'S OWN SENTENCE for the priority (2026-09-15). The page
+             // used to hold a hand-written gloss keyed on the priority TITLE —
+             // and the titles moved (Access / Outreach / Success became
+             // Outreach / Completion / Awards), so two of the three cards fell
+             // through to the raw metric and the third described a measure the
+             // model no longer uses. A description typed on one surface about a
+             // dial set on another is stale the day the dial moves.
+             description: p.description || "",
              factor: p.factor == null ? 1 : p.factor,
              cap: Math.round(p.cap), target: +p.target.toFixed(1),
              // The recommended strategies for the year, as the tab's card
@@ -107,6 +115,18 @@
   const timing = (typeof T._timing === "function" ? T._timing() : []).map(function (t) {
     return { label: String(t.label || ""), date: String(t.date || "") };
   });
+  // The BASELINE REQUIREMENTS, from the model rather than typed beside it. The
+  // page listed three of its own until 2026-09-15 and the first had drifted:
+  // it said "A CPL Coordinator or Counselor listed in MAP" while the live
+  // model said "Primary CPL Contact listed in MAP and the college public CPL
+  // Landing Page". An older engine emits none, and the page then says so
+  // rather than printing a list nothing stands behind.
+  const requirements = (function () {
+    if (typeof T._requirements !== "function") return { intro: "", items: [] };
+    const r = T._requirements() || {};
+    return { intro: String(r.intro || ""), deadline: String(r.deadline || ""),
+             items: (r.items || []).map(function (t) { return String(t); }) };
+  })();
 
   // The effective rate an UNBOUND college earns at, measured off the model rather
   // than derived by hand: its whole window offer over the sum of its window
@@ -210,6 +230,7 @@
     effRate: Math.round(effRate),
     prios: prios,
     timing: timing,
+    requirements: requirements,
     reported: reported,
     rows: rows,
   };

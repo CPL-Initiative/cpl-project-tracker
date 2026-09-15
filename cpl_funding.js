@@ -2786,6 +2786,13 @@
   var PUBLIC_SECTIONS = [
     { id: "lede",         label: "Introduction and the headline figures" },
     { id: "institutions", label: "Every institution" },
+    // The priorities and the milestones, together and unfolded (Sam,
+    // 2026-09-15: "a brief integration of the priorities and timeline"). They
+    // were one fold apart before — the three things that count sat inside Step
+    // three and the dates inside Step four, so a reader who opened neither
+    // learned neither. The mechanics stay in those steps; this section is what
+    // counts and when.
+    { id: "priorities",   label: "What counts, and when" },
     { id: "allocation",   label: "How much each institution is allocated" },
     { id: "qualify",      label: "What a college has to do to qualify" },
     { id: "earning",      label: "How outcomes count toward funding" },
@@ -7495,6 +7502,9 @@
   // excluded so a drill-in never collapses). The view's identity column
   // (College / District) is never hideable.
   var COLS_STORE = "cplfund_cols_v1";
+  // The teardown for the Columns menu's dismissal listeners — see wire(). One
+  // render's listeners are removed when the next render installs its own.
+  var COLMENU_OFF = [];
   var COL_PREFS = (function () {
     try { var r = JSON.parse(localStorage.getItem(COLS_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
     // Default hidden: district and the county context — the mock's default
@@ -10073,7 +10083,7 @@
     });
 
     // Column show/hide checkboxes — toggle, persist, refresh the table only (the
-    // ⚙ menu lives in the toolbar so it stays open across the toggle).
+    // menu lives in the toolbar so it stays open across the toggle).
     document.querySelectorAll(".cplfund-colmenu input[data-colkey]").forEach(function (cb) {
       cb.addEventListener("change", function () {
         var key = cb.getAttribute("data-colkey");
@@ -10083,6 +10093,44 @@
         refreshTable();
       });
     });
+    // ⚠️ AND A WAY TO PUT IT AWAY (Sam, 2026-09-15: "the column selector drop
+    // down stays up after opening — not sure how to close it").
+    //
+    // A bare <details> closes only by clicking its own summary again, which is
+    // not where a reader's hand goes: they click the table, the panel stays up
+    // over the rows it is meant to reveal, and nothing on screen says how to
+    // dismiss it. Staying open ACROSS A TOGGLE is deliberate (several columns
+    // in one visit) — this closes it on the two gestures that mean "done":
+    // a click outside the menu, and Escape.
+    //
+    // Registered on the document per render, so the listener is removed the
+    // moment the menu it belongs to leaves the DOM — the mount is rewritten
+    // whole on every render, and a listener that outlived its panel would
+    // stack one deep per render for the life of the visit.
+    (function () {
+      var menu = document.querySelector(".cplfund-colmenu");
+      if (!menu) return;
+      var onDown = function (e) {
+        if (!menu.open) return;
+        if (menu.contains(e.target)) return;      // inside: a checkbox, or the summary's own toggle
+        menu.open = false;
+      };
+      var onKey = function (e) {
+        if (!menu.open || (e.key !== "Escape" && e.key !== "Esc")) return;
+        menu.open = false;
+        // Escape returns the reader to the control they opened, not to the top
+        // of the document — the summary IS the button here.
+        var sum = menu.querySelector("summary");
+        if (sum && typeof sum.focus === "function") sum.focus();
+      };
+      document.addEventListener("mousedown", onDown, true);
+      document.addEventListener("keydown", onKey, true);
+      COLMENU_OFF.forEach(function (off) { off(); });
+      COLMENU_OFF = [function () {
+        document.removeEventListener("mousedown", onDown, true);
+        document.removeEventListener("keydown", onKey, true);
+      }];
+    })();
 
     // Editable prose blocks (2026-09-02): Edit opens a textarea; Save commits
     // to the active layer (shared when signed in); Cancel discards; Restore
@@ -10847,6 +10895,30 @@
     // (SCENARIO ?? SHARED ?? baked) — so the explainer prints the list a
     // curator edited, never a typed copy of it.
     _timing: function () { return timingItems(); },
+    // The BASELINE REQUIREMENTS, from the same accessors the tab's eligibility
+    // section renders (coordLabel / partReqText / extraReqs) and its intro
+    // prose block. Exposed 2026-09-15 because the public explainer had TYPED
+    // its own three — "A CPL Coordinator or Counselor listed in MAP" — while a
+    // curator had since changed the live label to "Primary CPL Contact listed
+    // in MAP and the college public CPL Landing Page". Neither surface looked
+    // wrong alone; the page simply told colleges to meet a requirement the
+    // model no longer states. Same rule as every figure on that page: ask the
+    // model, never keep a second copy.
+    //
+    // The per-college `note` requirementsList() carries ("N of 115 currently
+    // have one on file") is deliberately NOT projected — it is a live count on
+    // a curator's screen, and a public page that printed it would be quoting a
+    // number nobody refreshed.
+    _requirements: function () {
+      return { intro: textPlain("elig_intro"),
+               // The raw date as well as the composed sentence: the explainer's
+               // "what is a choice, and what is a given" table prints the
+               // deadline in a cell of its own, and had it hand-typed as
+               // "1 Nov 2026" against a model holding 2026-11-01.
+               deadline: participationDeadline(),
+               items: requirementsList().map(function (r) { return String(r.text || ""); })
+                        .filter(function (t) { return t.trim(); }) };
+    },
     _prios: function (name, slot) {
       var c = rosterRow(name);
       if (!c) return null;
